@@ -1,0 +1,13 @@
+# Environment variables (contains API keys)
+.env
+
+# Tracked posts (local state)
+seen_posts.json
+
+# Manual imports
+linkedin_import.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.log

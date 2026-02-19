@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "see2-596",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Qualified Business Income",
+    "difficulty": "hard",
+    "question": "Which of the following is considered a specified service trade or business (SSTB) that phases out of the QBI deduction at higher incomes?",
+    "options": [
+      "Engineering",
+      "Architecture",
+      "Manufacturing",
+      "Consulting"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SSTBs include health, law, accounting, actuarial, consulting, financial services, brokerage, and performing arts. Architecture and engineering are specifically excluded. Manufacturing is not an SSTB."
+  },
+  {
+    "id": "see2-107",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Formation",
+    "difficulty": "medium",
+    "question": "A partner's holding period for a partnership interest acquired by contribution of a capital asset:",
+    "options": [
+      "Begins on the date of contribution",
+      "Is determined by the partnership agreement",
+      "Includes the holding period of the contributed property",
+      "Is always long-term"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under IRC §1223(1), when a partner receives a partnership interest in exchange for a capital asset or Section 1231 asset, the holding period includes the time the contributed property was held."
+  },
+  {
+    "id": "see1-124",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Itemized Deductions",
+    "difficulty": "hard",
+    "question": "For mortgages taken out after December 15, 2017, interest is deductible on acquisition debt up to:",
+    "options": [
+      "$1,000,000",
+      "$500,000",
+      "$1,500,000",
+      "$750,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under TCJA, mortgage interest is deductible on up to $750,000 of acquisition debt for mortgages originating after December 15, 2017. Pre-existing mortgages retain the $1 million limit."
+  },
+  {
+    "id": "see3-615",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "OIC",
+    "difficulty": "hard",
+    "question": "A Doubt as to Liability OIC is appropriate when:",
+    "options": [
+      "The taxpayer cannot afford to pay",
+      "The taxpayer is experiencing economic hardship",
+      "There is a genuine dispute regarding the existence or amount of the correct tax",
+      "The taxpayer wants to negotiate a lower payment"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Doubt as to Liability OICs are for situations where the tax liability is in question (e.g., computational errors, different legal interpretations, evidence not considered). Requires showing why the assessment may be incorrect."
+  },
+  {
+    "id": "see1-176",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Gross Income",
+    "difficulty": "easy",
+    "question": "Taxpayer Kim received: $52,000 wages, $8,200 state unemployment compensation, $3,000 workers' compensation for a job injury, and $1,500 municipal bond interest. What amount must Kim include in gross income?",
+    "options": [
+      "$60,200",
+      "$64,700",
+      "$63,200",
+      "$52,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Gross income includes wages ($52,000) and unemployment ($8,200) = $60,200. Workers' compensation for job injuries is excluded under IRC §104(a)(1). Municipal bond interest is excluded under IRC §103."
+  },
+  {
+    "id": "see1-249",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Deductions",
+    "difficulty": "hard",
+    "question": "The Section 163(j) business interest limitation restricts deductions to:",
+    "options": [
+      "50% of gross income",
+      "$1 million",
+      "Net income",
+      "30% of adjusted taxable income plus business interest income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Section 163(j) limits business interest deductions to 30% of adjusted taxable income plus business interest income. Excess is carried forward indefinitely."
+  },
+  {
+    "id": "see2-734",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Sole Proprietorship",
+    "difficulty": "medium",
+    "question": "A self-employed sole proprietor pays $8,000 for health insurance premiums for themselves and their family. This premium is deductible:",
+    "options": [
+      "As an itemized deduction on Schedule A",
+      "As an above-the-line deduction on Schedule 1 of Form 1040",
+      "Only if the business is profitable",
+      "On Schedule C as a business expense"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Self-employed individuals may deduct 100% of health insurance premiums for themselves, their spouse, dependents, and children under 27 as an above-the-line deduction (adjustment to income) on Schedule 1 of Form 1040 under IRC §162(l). The deduction cannot exceed the net profit from the business."
+  },
+  {
+    "id": "see1-068",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Tax Planning",
+    "difficulty": "hard",
+    "question": "Under current law, a Section 1031 like-kind exchange is available for:",
+    "options": [
+      "Any type of property held for investment",
+      "Primary residences",
+      "Personal property such as vehicles and equipment",
+      "Real property held for business or investment purposes only"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Tax Cuts and Jobs Act limited Section 1031 like-kind exchanges to real property (real estate) held for productive use in a trade or business or for investment. Personal property and primary residences do not qualify."
+  },
+  {
+    "id": "see1-185",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Gross Income",
+    "difficulty": "easy",
+    "question": "Cash gifts received from family members are:",
+    "options": [
+      "Reported on Schedule C",
+      "Only excluded up to $18,000",
+      "Taxable as ordinary income",
+      "Excluded from the recipient's gross income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Gifts are excluded from the recipient's gross income. The donor may be subject to gift tax if gifts exceed annual exclusion amounts, but the recipient never pays income tax on gifts."
+  },
+  {
+    "id": "see3-596",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Tax Court",
+    "difficulty": "medium",
+    "question": "The Tax Court small tax case procedure is available when the disputed amount is:",
+    "options": [
+      "$25,000 or less per year",
+      "$50,000 or less per year",
+      "$75,000 or less per year",
+      "$100,000 or less per year"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Small tax case (S case) procedure is available if disputed amount per year is $50,000 or less. Proceedings are informal, no briefs required, and the decision is final (not appealable). Taxpayer must elect this procedure."
+  },
+  {
+    "id": "see1-203",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Basis",
+    "difficulty": "easy",
+    "question": "Capital improvements to property:",
+    "options": [
+      "Are deducted immediately",
+      "Have no effect on basis",
+      "Reduce the property's basis",
+      "Increase the property's basis"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Capital improvements (additions, improvements with useful life over one year) increase the property's basis. Repairs and maintenance do not affect basis."
+  },
+  {
+    "id": "see3-441",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Penalty Provisions",
+    "difficulty": "medium",
+    "question": "The failure to pay penalty under IRC §6651(a)(2):",
+    "options": [
+      "Is never assessed",
+      "Is 0.5% per month (up to 25%) of unpaid tax, increased to 1% if notice of levy issued",
+      "Is 5% per month",
+      "Has no maximum"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The failure to pay penalty is 0.5% per month (or part of month) of unpaid tax, up to 25%. It increases to 1% per month if IRS issues a notice of intent to levy and the taxpayer doesn't pay within 10 days."
+  },
+  {
+    "id": "see1-157",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Self-Employment",
+    "difficulty": "medium",
+    "question": "Quarterly estimated tax payments are due on:",
+    "options": [
+      "March 15, June 15, September 15, and December 15",
+      "The last day of each quarter",
+      "The 1st of each quarter",
+      "April 15, June 15, September 15, and January 15"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Estimated tax payments are due April 15, June 15, September 15, and January 15 of the following year. These dates may shift if they fall on weekends or holidays."
+  },
+  {
+    "id": "see3-app-009",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Refund Litigation",
+    "difficulty": "medium",
+    "question": "After exhausting administrative remedies, a taxpayer wants to sue for a refund of $8,000 in overpaid income taxes. The taxpayer has already paid the full tax and filed a claim for refund that was denied. In which courts may the taxpayer file a refund suit?",
+    "options": [
+      "U.S. District Court or U.S. Court of Federal Claims",
+      "U.S. Tax Court only",
+      "Any state court with jurisdiction over tax matters",
+      "U.S. District Court only — the Court of Federal Claims handles only government contracts"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Refund suits after full payment and denial of a claim may be filed in either U.S. District Court or the U.S. Court of Federal Claims. U.S. Tax Court is a prepayment forum (the taxpayer petitions BEFORE paying the tax). District Court provides a jury trial option; the Court of Federal Claims does not. Both apply the preponderance of evidence standard, with the burden of proof on the taxpayer."
+  },
+  {
+    "id": "see3-466",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Special Programs",
+    "difficulty": "hard",
+    "question": "A jeopardy assessment may be made:",
+    "options": [
+      "When delay would jeopardize collection due to flight risk, asset dissipation, or financial insolvency",
+      "Only for estimated taxes",
+      "On all taxpayers",
+      "Only after Tax Court petition"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under IRC §6861, jeopardy assessments bypass normal deficiency procedures when collection is in jeopardy (taxpayer may leave U.S., hide assets, or become insolvent). Taxpayer can petition Tax Court afterward."
+  },
+  {
+    "id": "see1-010",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement Income",
+    "difficulty": "medium",
+    "question": "Tom, age 58, takes a $10,000 distribution from his traditional IRA. He has made no nondeductible contributions. What is the tax consequence?",
+    "options": [
+      "$10,000 is taxed at capital gains rates",
+      "$10,000 is taxable as ordinary income plus a 10% early withdrawal penalty",
+      "$10,000 is taxable as ordinary income with no penalty",
+      "$10,000 is tax-free"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Distributions from a traditional IRA funded with deductible contributions are fully taxable as ordinary income. Since Tom is under age 59½, he also owes a 10% early withdrawal penalty ($1,000) unless an exception applies."
+  },
+  {
+    "id": "see3-calc-028",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Statute of Limitations",
+    "difficulty": "easy",
+    "question": "What is the statute of limitations if a taxpayer never files a return?",
+    "options": [
+      "No statute - assessment can occur at any time",
+      "3 years",
+      "10 years",
+      "6 years"
+    ],
+    "correctAnswer": 0,
+    "explanation": "If no return is filed, or if a fraudulent return is filed, there is no statute of limitations. The IRS can assess tax at any time."
+  },
+  {
+    "id": "see2-554",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Depreciation",
+    "difficulty": "hard",
+    "question": "For a passenger automobile placed in service in 2024, the first-year depreciation limit (including bonus) is approximately:",
+    "options": [
+      "$12,200",
+      "$20,400",
+      "$10,200",
+      "$19,200"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 2024 luxury auto limits with bonus depreciation: Year 1: $20,400 (vs. $12,400 without bonus), Year 2: $19,800, Year 3: $11,900, Subsequent years: $7,160. These limits apply to passenger autos regardless of cost."
+  },
+  {
+    "id": "see3-321",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Examination Process",
+    "difficulty": "medium",
+    "question": "Returns may be selected for audit based on:",
+    "options": [
+      "Random selection only",
+      "Computer scoring (DIF), document matching, related returns, or other criteria",
+      "Only if a tip is received",
+      "Every 5th return filed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Returns are selected through DIF scoring (Discriminant Function), document matching programs (e.g., W-2/1099 mismatch), related examinations, and special projects targeting specific issues."
+  },
+  {
+    "id": "see3-488",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Advanced Representation",
+    "difficulty": "hard",
+    "question": "Before filing a refund suit in federal district court:",
+    "options": [
+      "Nothing is required",
+      "A Tax Court petition must be filed first",
+      "The taxpayer must file a claim for refund, wait for denial or 6 months, and file suit within 2 years of denial",
+      "The full tax must be waived"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Flora rule: taxpayer must pay the full tax, file a refund claim (Form 1040X or 843), wait for formal denial or 6 months, then file suit within 2 years of denial. Full payment required before district court suit."
+  },
+  {
+    "id": "see2-056",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Business Expenses",
+    "difficulty": "hard",
+    "question": "Under IRC §163(j), business interest expense deductions are generally limited to:",
+    "options": [
+      "There is no limitation",
+      "50% of business income",
+      "30% of adjusted taxable income",
+      "$1 million per year"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under §163(j), business interest expense is limited to 30% of adjusted taxable income (plus business interest income and floor plan financing interest). Small businesses meeting the gross receipts test are exempt from this limitation."
+  },
+  {
+    "id": "see1-080",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Bartering",
+    "difficulty": "easy",
+    "question": "When goods or services are exchanged through bartering, the amount included in income is:",
+    "options": [
+      "Half the value of what was exchanged",
+      "The cost basis of the goods given up",
+      "Zero, since no cash is received",
+      "The fair market value of the goods or services received"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Bartering results in taxable income equal to the fair market value of the goods or services received. Both parties to the exchange must report the FMV of what they received as income."
+  },
+  {
+    "id": "see3-825",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Electronic Filing",
+    "difficulty": "easy",
+    "question": "The Electronic Federal Tax Payment System (EFTPS) is used to:",
+    "options": [
+      "File tax returns",
+      "Make federal tax payments, including estimated tax payments, payroll tax deposits, and balance due payments",
+      "Request tax transcripts",
+      "Register for a PTIN"
+    ],
+    "correctAnswer": 1,
+    "explanation": "EFTPS is a free service provided by the U.S. Department of the Treasury for making all federal tax payments. Businesses that owe more than $2,500 per quarter in payroll taxes must use electronic deposit methods (usually EFTPS). Individuals may use EFTPS for estimated tax payments and any other federal tax payments. Payments can be scheduled in advance, and EFTPS provides payment history and confirmation numbers."
+  },
+  {
+    "id": "see1-368",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement",
+    "difficulty": "medium",
+    "question": "When an IRA is transferred to a spouse incident to divorce:",
+    "options": [
+      "It must be rolled over within 60 days",
+      "It's subject to 10% penalty",
+      "It's a taxable distribution",
+      "It's tax-free and becomes the recipient spouse's IRA"
+    ],
+    "correctAnswer": 3,
+    "explanation": "IRA transfers incident to divorce are tax-free. The receiving spouse treats it as their own IRA, not an inherited IRA. No QDRO needed for IRAs."
+  },
+  {
+    "id": "see2-131",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Liquidations",
+    "difficulty": "medium",
+    "question": "Partner F's basis in their partnership interest is $60,000. Upon liquidation, Partner F receives only $50,000 cash. What is the tax consequence?",
+    "options": [
+      "$10,000 capital gain",
+      "$10,000 capital loss",
+      "$10,000 ordinary loss",
+      "No loss recognized"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §731(a)(2), loss is recognized on a liquidating distribution only when only cash, unrealized receivables, and/or inventory are received, and the amount is less than basis. The $10,000 loss is capital."
+  },
+  {
+    "id": "see2-774",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Corporate Taxation",
+    "difficulty": "easy",
+    "question": "When is Form 1120 (C corporation return) due for a calendar-year corporation, without extension?",
+    "options": [
+      "March 15",
+      "April 15",
+      "June 15",
+      "September 15"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Form 1120 is due on the 15th day of the 4th month following the close of the corporation's tax year. For a calendar-year corporation, this is April 15. The corporation may request a 6-month extension using Form 7004, extending the due date to October 15. Note: partnerships and S corporations file earlier (March 15)."
+  },
+  {
+    "id": "see3-275",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "E-File Requirements",
+    "difficulty": "medium",
+    "question": "An EFIN (Electronic Filing Identification Number):",
+    "options": [
+      "Is only for software companies",
+      "Is required for tax professionals to e-file returns as an Electronic Return Originator",
+      "Is the same as a PTIN",
+      "Is optional"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An EFIN is required for authorized IRS e-file providers (Electronic Return Originators). Preparers must apply for an EFIN through the IRS e-Services program to electronically file returns."
+  },
+  {
+    "id": "see2-674",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Entity Selection",
+    "difficulty": "easy",
+    "question": "A C corporation files its tax return on which form?",
+    "options": [
+      "Form 1040",
+      "Form 1065",
+      "Form 1120",
+      "Form 1120-S"
+    ],
+    "correctAnswer": 2,
+    "explanation": "C corporations file their federal income tax return on Form 1120, U.S. Corporation Income Tax Return. Form 1065 is for partnerships, Form 1120-S is for S corporations, and Form 1040 is for individuals."
+  },
+  {
+    "id": "see2-scorp-004",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation Election",
+    "difficulty": "easy",
+    "question": "The election to be treated as an S corporation is made on:",
+    "options": [
+      "Form 2553",
+      "Form SS-4",
+      "Form 8832",
+      "Form 1120-S"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Form 2553, Election by a Small Business Corporation, is used to elect S corporation status. The form must be signed by all shareholders and filed by the 15th day of the 3rd month of the tax year for which the election is to be effective, or at any time during the preceding tax year."
+  },
+  {
+    "id": "see1-048",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Foreign Income",
+    "difficulty": "hard",
+    "question": "For 2025, the maximum foreign earned income exclusion is approximately:",
+    "options": [
+      "$100,000",
+      "$150,000",
+      "$126,500",
+      "$112,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The foreign earned income exclusion is adjusted annually for inflation. For 2025, it is approximately $126,500. To qualify, taxpayers must have their tax home in a foreign country and meet either the bona fide residence test or physical presence test."
+  },
+  {
+    "id": "see2-026",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "C Corporation Taxation",
+    "difficulty": "easy",
+    "question": "The federal corporate income tax rate for C corporations is:",
+    "options": [
+      "Graduated rates from 15% to 35%",
+      "21% flat rate",
+      "15% on the first $50,000",
+      "25% flat rate"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Tax Cuts and Jobs Act established a flat 21% corporate tax rate for C corporations, replacing the previous graduated rate structure that ranged from 15% to 35%."
+  },
+  {
+    "id": "see2-010",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Business Expenses",
+    "difficulty": "easy",
+    "question": "A self-employed consultant took three clients to dinner at a restaurant in 2024. The total bill was $480, and the consultant discussed business during the meal. Under current tax law, what amount can the consultant deduct as a business meal expense?",
+    "options": [
+      "$240",
+      "$480",
+      "$0",
+      "$360"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business meals at restaurants are 50% deductible under IRC §274 when directly related to or associated with the active conduct of business. The deduction is 50% × $480 = $240. The temporary 100% deduction for restaurant meals (2021-2022 under the Consolidated Appropriations Act) has expired, reverting to the standard 50% limitation for 2023 and beyond."
+  },
+  {
+    "id": "see1-165",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement Distributions",
+    "difficulty": "hard",
+    "question": "An indirect IRA rollover must be completed within:",
+    "options": [
+      "30 days",
+      "120 days",
+      "90 days",
+      "60 days"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Indirect rollovers must be completed within 60 days to avoid taxation. The one-rollover-per-year rule applies to indirect IRA-to-IRA rollovers."
+  },
+  {
+    "id": "see1-306",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Self-Employment",
+    "difficulty": "hard",
+    "question": "Listed property business use must exceed what percentage to claim accelerated depreciation?",
+    "options": [
+      "25%",
+      "75%",
+      "90%",
+      "50%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Listed property (vehicles, computers, phones) must be used more than 50% for business to claim MACRS accelerated depreciation. Otherwise, ADS straight-line is required."
+  },
+  {
+    "id": "see3-590",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Taxpayer Rights",
+    "difficulty": "easy",
+    "question": "The Taxpayer Bill of Rights includes all of the following EXCEPT:",
+    "options": [
+      "The right to quality service",
+      "The right to be informed",
+      "The right to pay no taxes",
+      "The right to appeal IRS decisions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Taxpayer Bill of Rights includes 10 rights: be informed, quality service, pay no more than correct amount, challenge IRS and be heard, appeal, finality, privacy, confidentiality, retain representation, and fair/just tax system."
+  },
+  {
+    "id": "see2-364",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Self-Employment Tax",
+    "difficulty": "easy",
+    "question": "Self-employment tax is NOT required if net self-employment earnings are less than:",
+    "options": [
+      "$1,000",
+      "$100",
+      "$400",
+      "$600"
+    ],
+    "correctAnswer": 2,
+    "explanation": "No self-employment tax is due if net earnings from self-employment are less than $400 for the year. Above $400, the entire amount (×92.35%) is subject to SE tax."
+  },
+  {
+    "id": "see2-741",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Entity Selection",
+    "difficulty": "medium",
+    "question": "An S corporation must generally use which tax year?",
+    "options": [
+      "Any fiscal year elected by the shareholders",
+      "A calendar year ending December 31",
+      "The same tax year as its majority shareholder",
+      "A 52-53 week fiscal year only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §1378, an S corporation must use a permitted year, which is generally a calendar year. An S corporation may elect a fiscal year only if it can establish a business purpose or makes a Section 444 election (which requires a deposit of deferred tax). This rule prevents deferral of income recognition by shareholders."
+  },
+  {
+    "id": "see2-587",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation",
+    "difficulty": "hard",
+    "question": "Which item does NOT increase an S corporation shareholder's stock basis?",
+    "options": [
+      "Separately stated income items",
+      "Nonseparately stated income",
+      "Corporate liabilities",
+      "Tax-exempt income"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Unlike partnerships, S corp shareholders do not get basis for corporate liabilities. Stock basis is increased by income (taxable and tax-exempt) and decreased by distributions, losses, and nondeductible expenses."
+  },
+  {
+    "id": "see2-040",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation Filing",
+    "difficulty": "easy",
+    "question": "A calendar-year S corporation's Form 1120-S is due on:",
+    "options": [
+      "September 15",
+      "March 15",
+      "April 15",
+      "April 18"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Form 1120-S for a calendar-year S corporation is due on March 15 (the 15th day of the 3rd month after the tax year ends). This earlier deadline allows shareholders to receive Schedule K-1s before their individual return deadlines."
+  },
+  {
+    "id": "see2-005",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Accounting Methods",
+    "difficulty": "medium",
+    "question": "Under the accrual method, an expense is deductible when:",
+    "options": [
+      "All events have occurred that fix the liability and the amount can be determined with reasonable accuracy",
+      "Paid in cash",
+      "The check is written",
+      "The invoice is received"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under the accrual method, expenses are deductible when the \"all events test\" is met: all events have occurred to establish the liability, the amount can be determined with reasonable accuracy, and economic performance has occurred."
+  },
+  {
+    "id": "see3-610",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Practice Before IRS",
+    "difficulty": "easy",
+    "question": "The third-party designee checkbox on Form 1040 allows the designee to:",
+    "options": [
+      "Receive refund checks",
+      "Represent the taxpayer in an audit",
+      "Discuss the return with the IRS and receive account information",
+      "File amended returns"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The third-party designee can respond to certain IRS notices and discuss the return processing but cannot represent in audits or make changes. Authority expires when the current return is processed or after the due date of the following year's return."
+  },
+  {
+    "id": "see3-087",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Information Return Penalties",
+    "difficulty": "medium",
+    "question": "The penalty for failure to file correct information returns (such as Forms W-2 or 1099) can be:",
+    "options": [
+      "Up to $310 per return for 2024, with increased maximums",
+      "$10 per return",
+      "No penalty applies",
+      "$1,000 flat fee"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The penalty for failure to file correct information returns ranges from $60 to $310 per return depending on how late corrections are made. Annual maximum limits apply, with smaller maximums for small businesses."
+  },
+  {
+    "id": "see3-pen-010",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Interest",
+    "difficulty": "hard",
+    "question": "A taxpayer was assessed $50,000 in tax, and the IRS charged $8,200 in interest on the underpayment. The taxpayer believes the interest was charged incorrectly in part because they relied on erroneous written advice from the IRS. Under what provision can the taxpayer seek abatement of interest?",
+    "options": [
+      "IRC §6404(e) allows abatement of interest due to IRS errors or delays, and §6404(f) allows abatement for erroneous written advice from the IRS",
+      "Interest can never be abated — it is a mandatory statutory charge",
+      "Interest abatement is available only through a private letter ruling",
+      "The taxpayer must file a formal lawsuit in federal district court to abate interest"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IRC §6404(e) authorizes the IRS to abate interest when it is attributable to unreasonable errors or delays by IRS employees. IRC §6404(f) provides for interest abatement when the taxpayer reasonably relied on erroneous written advice from the IRS in response to the taxpayer's specific written request. The taxpayer must file Form 843 to request interest abatement."
+  },
+  {
+    "id": "see3-030",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Electronic Filing",
+    "difficulty": "medium",
+    "question": "A paid preparer who prepares more than 10 individual returns in a year:",
+    "options": [
+      "Must obtain special IRS permission to prepare returns",
+      "Must file all returns on paper",
+      "Must file all returns electronically",
+      "Has the option to file paper or electronically"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Paid preparers who reasonably expect to file more than 10 individual income tax returns in a calendar year must file electronically. This e-file mandate helps the IRS process returns more efficiently."
+  },
+  {
+    "id": "see3-755",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Taxpayer Rights",
+    "difficulty": "easy",
+    "question": "An Identity Protection PIN (IP PIN) issued by the IRS is:",
+    "options": [
+      "The taxpayer's Social Security number",
+      "A 6-digit number assigned to eligible taxpayers to help prevent the misuse of their SSN on fraudulent tax returns",
+      "The taxpayer's CAF number",
+      "A password for IRS online services only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An IP PIN is a 6-digit number assigned by the IRS to help prevent identity theft on federal tax returns. When a taxpayer has an IP PIN, their return must include it to be accepted. A new IP PIN is issued each year. All taxpayers who can verify their identity are eligible to opt into the IP PIN program through their IRS online account. Previously, it was only available to confirmed victims of identity theft."
+  },
+  {
+    "id": "see3-007",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Who May Practice",
+    "difficulty": "easy",
+    "question": "An Enrolled Agent earns their status by:",
+    "options": [
+      "Passing the Special Enrollment Examination (SEE) or having relevant IRS experience",
+      "Working for a tax preparation company for 5 years",
+      "Passing the CPA Exam",
+      "Graduating from law school"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Individuals become Enrolled Agents by passing the three-part SEE or by having at least 5 years of past IRS employment that qualifies them for enrollment. EAs must also pass a background check."
+  },
+  {
+    "id": "see1-082",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Itemized Deductions",
+    "difficulty": "easy",
+    "question": "For 2025, the standard mileage rate for medical purposes is approximately:",
+    "options": [
+      "67 cents per mile",
+      "70 cents per mile",
+      "14 cents per mile",
+      "21 cents per mile"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The standard mileage rate for medical transportation is 21 cents per mile for 2025. This is much lower than the business rate (67 cents) because it only covers variable vehicle costs, not fixed costs."
+  },
+  {
+    "id": "see1-232",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Stock Options",
+    "difficulty": "hard",
+    "question": "When an employee exercises a nonqualified stock option (NQSO):",
+    "options": [
+      "Only AMT applies",
+      "No tax consequences occur",
+      "Capital gain is recognized",
+      "The bargain element is ordinary income subject to withholding"
+    ],
+    "correctAnswer": 3,
+    "explanation": "NQSO exercises result in ordinary income equal to the bargain element (FMV minus exercise price), subject to income and employment tax withholding."
+  },
+  {
+    "id": "see1-029",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Business Income",
+    "difficulty": "easy",
+    "question": "A sole proprietor reports business income and expenses on:",
+    "options": [
+      "Form 1065",
+      "Schedule E of Form 1040",
+      "Schedule C of Form 1040",
+      "Form 1120"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sole proprietors report their business income and expenses on Schedule C (Profit or Loss From Business) of Form 1040. Form 1065 is for partnerships, Form 1120 is for C corporations, and Schedule E is for rental/passive income."
+  },
+  {
+    "id": "see2-388",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Passive Activity Rules",
+    "difficulty": "medium",
+    "question": "The $25,000 rental real estate loss allowance:",
+    "options": [
+      "Is phased out for AGI between $100,000 and $150,000",
+      "Is available for commercial rentals only",
+      "Applies to all taxpayers regardless of income",
+      "Only applies to real estate professionals"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The $25,000 allowance permits active participants to deduct up to $25,000 of rental losses against non-passive income. It phases out $1 for every $2 of AGI over $100,000 (fully eliminated at $150,000)."
+  },
+  {
+    "id": "see1-209",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Itemized Deductions",
+    "difficulty": "easy",
+    "question": "The medical mileage rate for 2024 is:",
+    "options": [
+      "67 cents per mile",
+      "14 cents per mile",
+      "70 cents per mile",
+      "21 cents per mile"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The 2024 medical and moving mileage rate is 21 cents per mile. This rate applies to travel for medical care."
+  },
+  {
+    "id": "see3-803",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Practitioner Ethics",
+    "difficulty": "hard",
+    "question": "Under Circular 230 §10.37, written advice provided by a practitioner must:",
+    "options": [
+      "Always recommend the most aggressive tax position",
+      "Be based on reasonable factual and legal assumptions, reasonably consider all relevant facts known to the practitioner, and not unreasonably rely on representations of the taxpayer",
+      "Include a guarantee that the position will be sustained",
+      "Be approved by the OPR before issuance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under 31 CFR §10.37, a practitioner must not give written advice that: (1) is based on unreasonable factual or legal assumptions, (2) unreasonably relies on representations of the taxpayer or others, (3) does not reasonably consider all relevant facts that the practitioner knows or reasonably should know, or (4) takes into account the possibility that a return will not be audited. The practitioner must use reasonable efforts to identify relevant facts and relate applicable law to the facts."
+  },
+  {
+    "id": "see3-054",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Offers in Compromise",
+    "difficulty": "hard",
+    "question": "An offer in compromise may be accepted based on:",
+    "options": [
+      "Political connections",
+      "Doubt as to collectibility, doubt as to liability, or effective tax administration",
+      "Hardship only",
+      "The taxpayer's promise to pay in the future"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The IRS accepts OICs based on: (1) doubt as to liability - uncertainty about the correct tax, (2) doubt as to collectibility - doubt the tax can be collected in full, or (3) effective tax administration - exceptional hardship."
+  },
+  {
+    "id": "see2-102",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Formation",
+    "difficulty": "hard",
+    "question": "Partner B contributes land with a FMV of $100,000 and basis of $40,000 to a partnership. If the partnership later sells the land for $120,000, how is the $80,000 gain allocated?",
+    "options": [
+      "$60,000 to Partner B, $20,000 shared by all partners",
+      "$80,000 entirely to Partner B",
+      "$40,000 to Partner B, $40,000 shared by all partners",
+      "Shared equally among all partners"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under IRC §704(c), the $60,000 built-in gain ($100,000 FMV - $40,000 basis) at contribution must be allocated to Partner B. The $20,000 post-contribution appreciation is allocated per the partnership agreement."
+  },
+  {
+    "id": "see2-310",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation Advanced",
+    "difficulty": "hard",
+    "question": "A shareholder with suspended S corporation losses due to basis limitations can deduct them when:",
+    "options": [
+      "A new shareholder buys the stock",
+      "Never - suspended losses are permanently lost",
+      "Basis is increased by income allocations or additional contributions",
+      "The S election terminates"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Suspended losses due to basis limitations are carried forward indefinitely and can be deducted when the shareholder's basis increases (through income allocations, capital contributions, or additional loans to the corporation)."
+  },
+  {
+    "id": "see2-801",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Depreciation",
+    "difficulty": "medium",
+    "question": "Qualified improvement property (QIP) placed in service after December 31, 2017, is depreciated over what MACRS recovery period?",
+    "options": [
+      "7 years",
+      "15 years",
+      "27.5 years",
+      "39 years"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The CARES Act corrected the TCJA drafting error and assigned qualified improvement property a 15-year MACRS recovery period (20 years under ADS), making it eligible for bonus depreciation. QIP includes improvements to the interior of nonresidential real property placed in service after the building was first placed in service, excluding elevators, escalators, structural framework, and building enlargements."
+  },
+  {
+    "id": "see3-717",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Penalties",
+    "difficulty": "hard",
+    "question": "The civil fraud penalty under IRC §6663 is:",
+    "options": [
+      "20% of the underpayment due to fraud",
+      "50% of the underpayment due to fraud",
+      "75% of the underpayment due to fraud",
+      "100% of the underpayment due to fraud"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under IRC §6663, the civil fraud penalty is 75% of the portion of the underpayment attributable to fraud. The burden of proof for fraud is on the IRS, which must establish fraud by clear and convincing evidence. If the IRS establishes that any portion of an underpayment is due to fraud, the entire underpayment is treated as attributable to fraud unless the taxpayer proves otherwise. The fraud penalty and accuracy-related penalty cannot both apply to the same portion."
+  },
+  {
+    "id": "see3-640",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Form 8821",
+    "difficulty": "easy",
+    "question": "Form 8821 differs from Form 2848 in that Form 8821:",
+    "options": [
+      "Only authorizes inspection and receipt of confidential tax information",
+      "Grants full representation authority",
+      "Is used for criminal matters",
+      "Expires immediately"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Form 8821 (Tax Information Authorization) allows designated person to receive and inspect tax information BUT not represent the taxpayer before IRS. Useful for financial planners, mortgage companies, and others who need access to tax info."
+  },
+  {
+    "id": "see2-742",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Operations",
+    "difficulty": "medium",
+    "question": "A general partner's distributive share of partnership ordinary income is generally subject to:",
+    "options": [
+      "Corporate income tax at 21%",
+      "Self-employment tax under IRC §1402",
+      "Personal holding company tax",
+      "Unrelated business income tax"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §1402(a), a general partner's distributive share of income from a trade or business is subject to self-employment tax (Social Security and Medicare). Limited partners are generally exempt from SE tax on their distributive share (except for guaranteed payments for services). This is a key distinction in entity selection."
+  },
+  {
+    "id": "see2-071",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Sole Proprietorship",
+    "difficulty": "hard",
+    "question": "For the Section 199A QBI deduction, specified service trades or businesses (SSTBs) have the deduction:",
+    "options": [
+      "Phased out above certain taxable income thresholds",
+      "Fully available regardless of income",
+      "Only available if the business has employees",
+      "Never available"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SSTBs (health, law, accounting, consulting, etc.) can take the QBI deduction only if taxable income is below the threshold ($191,950 single/$383,900 MFJ for 2025). The deduction phases out completely above the threshold."
+  },
+  {
+    "id": "see3-058",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Levies",
+    "difficulty": "medium",
+    "question": "Under IRC §6331, which of the following best describes a levy as a tax collection tool?",
+    "options": [
+      "Is the same as a lien",
+      "Is the legal seizure of property to satisfy a tax debt",
+      "Requires court approval first",
+      "Is only used for debts over $50,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A levy is the legal seizure of property to satisfy a tax debt. Unlike a lien (which is a claim), a levy actually takes the property, including wages, bank accounts, and other assets."
+  },
+  {
+    "id": "see2-790",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "medium",
+    "question": "The Federal Unemployment Tax Act (FUTA) tax rate is applied to the first how many dollars of each employee's wages per year?",
+    "options": [
+      "$3,000",
+      "$7,000",
+      "$15,000",
+      "$50,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The FUTA tax rate of 6.0% is applied to the first $7,000 of wages paid to each employee per calendar year. However, employers receive a credit of up to 5.4% for state unemployment taxes paid, resulting in an effective FUTA rate of 0.6% ($42 per employee per year). FUTA is paid entirely by the employer; it is not withheld from employee wages."
+  },
+  {
+    "id": "see1-067",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Self-Employment Tax",
+    "difficulty": "medium",
+    "question": "The Additional Medicare Tax of 0.9% applies to:",
+    "options": [
+      "All earned income",
+      "Wages only, not self-employment income",
+      "Investment income only",
+      "Wages and self-employment income exceeding $200,000 ($250,000 MFJ)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Additional Medicare Tax of 0.9% applies to wages and self-employment income that exceeds threshold amounts: $200,000 for single filers, $250,000 for married filing jointly, and $125,000 for married filing separately."
+  },
+  {
+    "id": "see1-252",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Income",
+    "difficulty": "medium",
+    "question": "To qualify for preferential qualified dividend rates, the holding period requirement is:",
+    "options": [
+      "30 days",
+      "1 year",
+      "90 days",
+      "60 days during the 121-day period around ex-dividend date"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Qualified dividends require holding the stock more than 60 days during the 121-day period beginning 60 days before the ex-dividend date."
+  },
+  {
+    "id": "see2-226",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Inventory",
+    "difficulty": "medium",
+    "question": "Which businesses are exempt from the uniform capitalization (UNICAP) rules?",
+    "options": [
+      "Small businesses with gross receipts under $29 million (indexed)",
+      "Only cash-method taxpayers",
+      "All manufacturers",
+      "Retailers only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under IRC §263A(i), small businesses meeting the $25 million gross receipts test (indexed for inflation) are exempt from UNICAP. Farmers using cash method and certain creative producers also have exceptions."
+  },
+  {
+    "id": "see1-366",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement",
+    "difficulty": "medium",
+    "question": "Under SECURE 2.0, Roth 401(k) accounts are:",
+    "options": [
+      "Subject to RMDs during owner's lifetime",
+      "Taxable upon distribution",
+      "Subject to 10-year rule",
+      "Exempt from RMDs starting in 2024"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SECURE 2.0 eliminated lifetime RMDs for Roth 401(k) accounts starting in 2024, matching Roth IRA rules."
+  },
+  {
+    "id": "see1-569",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Expatriation",
+    "difficulty": "hard",
+    "question": "A \"covered expatriate\" subject to the exit tax is a U.S. citizen who meets any of the following tests EXCEPT:",
+    "options": [
+      "Having been a U.S. citizen for less than 5 years",
+      "Failure to certify 5-year tax compliance",
+      "Average annual net income tax liability exceeding $201,000 for the prior 5 years",
+      "Net worth of $2 million or more on the expatriation date"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Covered expatriate tests are: (1) average income tax > $201,000 (2024) for prior 5 years, (2) net worth ≥ $2 million, or (3) failure to certify tax compliance for prior 5 years. Length of citizenship is not a determining factor for these tests."
+  },
+  {
+    "id": "see3-294",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Continuing Education",
+    "difficulty": "medium",
+    "question": "EAs must retain CE records for:",
+    "options": [
+      "3 years",
+      "4 years from the date of renewal",
+      "1 year",
+      "10 years"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circular 230 requires enrolled practitioners to retain CE records for 4 years after renewal. The IRS may request verification of CE completion."
+  },
+  {
+    "id": "see2-309",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation Advanced",
+    "difficulty": "medium",
+    "question": "Buy-sell agreements between S corporation shareholders can use which valuation method without creating a second class of stock?",
+    "options": [
+      "Only book value",
+      "Any reasonable method including formula, appraisal, or fixed price",
+      "Only the original purchase price",
+      "Only fair market value at time of sale"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under Treas. Reg. §1.1361-1(l)(2)(iii), bona fide buy-sell agreements don't create a second class of stock even if they use non-FMV formulas, as long as rights are not designed to avoid the one-class requirement."
+  },
+  {
+    "id": "see3-024",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Statute of Limitations",
+    "difficulty": "hard",
+    "question": "The statute of limitations extends to 6 years when:",
+    "options": [
+      "The taxpayer files an extension",
+      "Gross income is understated by more than 25%",
+      "The return includes itemized deductions",
+      "The taxpayer is self-employed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The statute of limitations extends to 6 years if the taxpayer omits more than 25% of gross income from the return. This substantial understatement gives the IRS additional time to assess."
+  },
+  {
+    "id": "see2-032",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "C Corporation Taxation",
+    "difficulty": "hard",
+    "question": "A personal holding company (PHC) is subject to a penalty tax of:",
+    "options": [
+      "15%",
+      "10%",
+      "35%",
+      "20%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A PHC is subject to a 20% penalty tax on undistributed personal holding company income. A PHC is a corporation where more than 50% of stock is owned by 5 or fewer individuals and 60%+ of income is passive (dividends, interest, rents, royalties)."
+  },
+  {
+    "id": "see1-188",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Adjustments",
+    "difficulty": "easy",
+    "question": "The penalty forfeited on early withdrawal of savings from a time deposit is:",
+    "options": [
+      "Not deductible",
+      "Only deductible as itemized deduction",
+      "Deductible up to $1,000",
+      "Deductible as an adjustment to income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The penalty forfeited for early withdrawal of savings (CDs) is deductible as an adjustment to gross income. It reduces AGI."
+  },
+  {
+    "id": "see2-138",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Terminations",
+    "difficulty": "hard",
+    "question": "When a partnership divides into two or more partnerships:",
+    "options": [
+      "Each partner must recognize gain on their share of appreciated assets",
+      "The original partnership terminates in all cases",
+      "All resulting partnerships are considered new entities",
+      "A resulting partnership is a continuation if its partners had more than 50% interest in the original"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under IRC §708(b)(2)(B), when a partnership divides, any resulting partnership whose partners had more than 50% capital/profits interest in the original is a continuation of the original partnership."
+  },
+  {
+    "id": "see3-810",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Taxpayer Remedies",
+    "difficulty": "medium",
+    "question": "The Taxpayer Advocate may issue a Taxpayer Assistance Order (TAO) under IRC §7811 to:",
+    "options": [
+      "Waive all penalties",
+      "Order the IRS to release a levy, cease collection action, or take other remedial action when the taxpayer is suffering or about to suffer a significant hardship",
+      "Dismiss a Tax Court case",
+      "Approve an Offer in Compromise"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §7811, the National Taxpayer Advocate may issue a Taxpayer Assistance Order (TAO) ordering the IRS to cease, or refrain from taking, any action that would result in significant hardship to the taxpayer. A TAO may order the release of property from levy, mandate a specific action, or require the IRS to expedite a case. \"Significant hardship\" includes an immediate threat of adverse action, a delay of more than 30 days in resolving problems, or significant cost to the taxpayer."
+  },
+  {
+    "id": "see3-212",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Information Document Requests",
+    "difficulty": "medium",
+    "question": "When responding to an IDR, a taxpayer should generally:",
+    "options": [
+      "Wait until the audit closing conference",
+      "Ignore it until a summons is issued",
+      "Respond within the timeframe specified, typically 10-30 days",
+      "Respond only in person"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IDRs specify a response deadline, typically 10-30 days. Taxpayers and representatives should respond timely or request an extension if more time is needed."
+  },
+  {
+    "id": "see2-351",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "easy",
+    "question": "FICA taxes consist of:",
+    "options": [
+      "Unemployment taxes only",
+      "Social Security and Medicare taxes",
+      "Federal income tax only",
+      "State income tax only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FICA (Federal Insurance Contributions Act) includes Social Security tax (6.2% on wages up to the annual limit) and Medicare tax (1.45% on all wages, plus 0.9% additional Medicare on high earners)."
+  },
+  {
+    "id": "see3-609",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Circular 230",
+    "difficulty": "medium",
+    "question": "A practitioner may charge:",
+    "options": [
+      "Only hourly fees",
+      "A fee based solely on findings or results",
+      "Contingent fees only in limited circumstances defined by Circular 230",
+      "A percentage of the refund in all cases"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Circular 230 §10.27 limits contingent fees to: (1) matters before the IRS except original return preparation, (2) IRS examination or challenge, (3) judicial proceedings. Cannot charge contingent fee for original return preparation."
+  },
+  {
+    "id": "see1-541",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Filing Requirements",
+    "difficulty": "medium",
+    "question": "For 2024, a single taxpayer under age 65 must file a return if gross income exceeds:",
+    "options": [
+      "$15,700",
+      "$12,550",
+      "$14,600",
+      "$13,850"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For 2024, the filing threshold for a single taxpayer under 65 is $14,600 (standard deduction amount). This threshold equals the standard deduction since taxable income would otherwise be zero or less."
+  },
+  {
+    "id": "see2-754",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Entity Selection",
+    "difficulty": "easy",
+    "question": "A single-member LLC that has not elected corporate treatment is classified for federal tax purposes as:",
+    "options": [
+      "A partnership",
+      "An S corporation",
+      "A disregarded entity",
+      "A C corporation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under the check-the-box regulations, a domestic entity with a single owner that does not elect to be treated as a corporation is a disregarded entity. This means the LLC is not recognized as separate from its owner for tax purposes, and the owner reports the LLC's income and deductions on Schedule C (if owned by an individual) or as a branch (if owned by another entity)."
+  },
+  {
+    "id": "see3-554",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Circular 230",
+    "difficulty": "medium",
+    "question": "Which of the following may practice before the IRS in all matters?",
+    "options": [
+      "Registered Tax Return Preparers",
+      "Enrolled Agents",
+      "Unenrolled return preparers",
+      "Annual Filing Season Program participants"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Enrolled Agents, CPAs, and attorneys may practice before the IRS in all matters. Unenrolled preparers have limited representation rights only for returns they prepared, and only before revenue agents and customer service reps."
+  },
+  {
+    "id": "see1-514",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement Planning",
+    "difficulty": "hard",
+    "question": "A self-employed consultant earns $150,000 net self-employment income. What is the maximum SEP-IRA contribution?",
+    "options": [
+      "$27,868",
+      "$37,500",
+      "$22,500",
+      "$30,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SEP-IRA max is 25% of net SE income after SE tax adjustment: $150,000 × 0.9235 = $138,525 adjusted; $138,525 × 20% effective rate = $27,705 (calculation varies slightly by method). The effective rate is ~20% because you must reduce by the deductible portion of SE tax."
+  },
+  {
+    "id": "see3-calc-046",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Circular 230",
+    "difficulty": "easy",
+    "question": "How many hours of continuing education must an EA complete per enrollment cycle (3 years)?",
+    "options": [
+      "40 hours",
+      "24 hours",
+      "16 hours",
+      "72 hours"
+    ],
+    "correctAnswer": 3,
+    "explanation": "EAs must complete 72 hours of CE per 3-year cycle, with minimum 16 hours per year (including 2 hours ethics/professional conduct annually)."
+  },
+  {
+    "id": "see3-672",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Examination Process",
+    "difficulty": "easy",
+    "question": "Which of the following is a method used by the IRS to select returns for examination?",
+    "options": [
+      "Random selection only",
+      "Discriminant Information Function (DIF) scoring system",
+      "Mandatory audit of all returns over $500,000",
+      "Alphabetical order by last name"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The IRS uses the Discriminant Information Function (DIF) system to score returns based on the likelihood of significant tax adjustments. Higher DIF scores indicate a greater audit potential. Other selection methods include information matching (W-2s, 1099s), related examinations (auditing a business partner), and special projects targeting specific compliance issues."
+  },
+  {
+    "id": "see2-564",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "C Corporations",
+    "difficulty": "easy",
+    "question": "The corporate income tax rate for C corporations is:",
+    "options": [
+      "Progressive rates from 15% to 35%",
+      "Flat 28%",
+      "Flat 21%",
+      "Flat 25%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The TCJA established a flat 21% corporate tax rate for C corporations, replacing the graduated rate structure (15%-35%) that existed before 2018."
+  },
+  {
+    "id": "see3-089",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Appeals Conferences",
+    "difficulty": "hard",
+    "question": "Ex parte communications between Appeals and other IRS employees:",
+    "options": [
+      "Are generally prohibited to ensure Appeals' independence",
+      "Are only allowed in criminal cases",
+      "Are encouraged to resolve cases quickly",
+      "Are required in all cases"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ex parte communications are prohibited to maintain Appeals' independence. Appeals cannot have one-sided communications with IRS examination or collection about the merits of the case without the taxpayer present."
+  },
+  {
+    "id": "see1-311",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Depreciation",
+    "difficulty": "hard",
+    "question": "The mid-quarter convention must be used when:",
+    "options": [
+      "Property is disposed of at a loss",
+      "Property is sold mid-year",
+      "All property is used for business",
+      "More than 40% of property (by basis) is placed in service in Q4"
+    ],
+    "correctAnswer": 3,
+    "explanation": "If more than 40% of total depreciable property (by basis) is placed in service in the 4th quarter, mid-quarter convention applies to all property for the year."
+  },
+  {
+    "id": "see1-544",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Taxpayer Identification",
+    "difficulty": "medium",
+    "question": "An ITIN (Individual Taxpayer Identification Number) is issued to:",
+    "options": [
+      "Taxpayers who lost their Social Security card",
+      "U.S. citizens working abroad",
+      "Any taxpayer who requests one",
+      "Foreign nationals who have a federal tax filing requirement but are not eligible for an SSN"
+    ],
+    "correctAnswer": 3,
+    "explanation": "ITINs are issued to individuals who have a federal tax filing or reporting requirement but are not eligible for a Social Security Number. This includes nonresident aliens, resident aliens, and their dependents who cannot get an SSN."
+  },
+  {
+    "id": "see1-149",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Capital Gains",
+    "difficulty": "hard",
+    "question": "Unrecaptured Section 1250 gain on real property is taxed at a maximum rate of:",
+    "options": [
+      "25%",
+      "28%",
+      "15%",
+      "20%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Unrecaptured Section 1250 gain (depreciation on real property) is taxed at a maximum 25% rate. Any remaining gain is taxed at regular capital gains rates."
+  },
+  {
+    "id": "see2-786",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "medium",
+    "question": "Which of the following factors most strongly indicates that a worker is an employee rather than an independent contractor?",
+    "options": [
+      "The worker uses their own tools and equipment",
+      "The business controls when, where, and how the work is performed",
+      "The worker sets their own schedule",
+      "The worker provides services to multiple clients"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The IRS uses common-law rules to determine worker classification, focusing on the degree of control and independence. Behavioral control (when, where, and how work is performed) is a primary factor. Other factors include financial control (how the worker is paid, expense reimbursement) and the type of relationship (written contracts, benefits). Workers who control their own methods are more likely independent contractors."
+  },
+  {
+    "id": "see3-235",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Federal Tax Liens",
+    "difficulty": "medium",
+    "question": "The difference between a lien and a levy is:",
+    "options": [
+      "A lien is a claim against property; a levy is the actual seizure of property",
+      "They are the same thing",
+      "A levy comes before a lien",
+      "Only a lien requires notice"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A lien is a legal claim securing the government's interest (does not take the property). A levy is the actual taking/seizure of property or rights to property to satisfy the debt."
+  },
+  {
+    "id": "see3-553",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Centralized Authorization File",
+    "difficulty": "easy",
+    "question": "A CAF number is:",
+    "options": [
+      "The taxpayer's identification number",
+      "A unique 9-digit number assigned to each authorized representative",
+      "The same as an EFIN",
+      "Only valid for one tax year"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The CAF (Centralized Authorization File) number is a unique 9-digit identifier assigned to practitioners who file Form 2848 or Form 8821. It helps the IRS track and manage powers of attorney."
+  },
+  {
+    "id": "see2-109",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Formation",
+    "difficulty": "medium",
+    "question": "Partnership syndication costs (costs of issuing and marketing partnership interests) are:",
+    "options": [
+      "Amortizable over 180 months like organizational costs",
+      "Deductible in the first year of operations",
+      "Deductible when the partnership terminates",
+      "Capitalized and never amortizable or deductible"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Unlike organizational costs, syndication costs must be capitalized and cannot be amortized or deducted. They include brokerage fees, registration fees, and costs of printing prospectuses for selling partnership interests."
+  },
+  {
+    "id": "see2-168",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Corporate Operations",
+    "difficulty": "medium",
+    "question": "A C corporation receives $100,000 in dividends from a domestic corporation in which it owns 25% of the stock. The dividends received deduction is:",
+    "options": [
+      "$65,000",
+      "$0",
+      "$50,000",
+      "$100,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under IRC §243, the DRD is 50% for ownership less than 20%, 65% for 20-79% ownership, and 100% for 80%+ ownership. With 25% ownership, the deduction is 65% × $100,000 = $65,000."
+  },
+  {
+    "id": "see3-453",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Collection Alternatives",
+    "difficulty": "hard",
+    "question": "An Offer in Compromise based on Doubt as to Liability:",
+    "options": [
+      "Uses financial ability to pay analysis",
+      "Is the most common type",
+      "Asserts that the assessed tax is wrong and provides evidence supporting a different amount",
+      "Requires financial disclosure forms"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Doubt as to Liability OICs are appropriate when there's genuine dispute about whether the tax is correct or how much is owed. No financial disclosure is required - the taxpayer submits evidence supporting their position."
+  },
+  {
+    "id": "see1-350",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Capital Gains",
+    "difficulty": "medium",
+    "question": "After TCJA, like-kind (Section 1031) exchanges are available for:",
+    "options": [
+      "Personal property only",
+      "Securities and real property",
+      "All business property",
+      "Real property only"
+    ],
+    "correctAnswer": 3,
+    "explanation": "TCJA limited Section 1031 to real property only. Personal property like-kind exchanges are no longer permitted for exchanges after December 31, 2017."
+  },
+  {
+    "id": "see2-839",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Real Estate",
+    "difficulty": "hard",
+    "question": "A taxpayer qualifies as a real estate professional under IRC §469(c)(7) if they spend more than 750 hours AND more than 50% of their personal service hours in:",
+    "options": [
+      "Managing a single rental property",
+      "Real property trades or businesses in which they materially participate",
+      "Any real estate investment trust (REIT)",
+      "Real estate sales transactions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §469(c)(7), a taxpayer is a real estate professional if they (1) spend more than 750 hours in real property trades or businesses in which they materially participate, and (2) more than 50% of their total personal service hours are in real property trades or businesses. Qualifying as a real estate professional allows rental real estate losses to be treated as nonpassive (fully deductible) if the taxpayer materially participates in each rental activity."
+  },
+  {
+    "id": "see2-370",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Self-Employment Tax",
+    "difficulty": "easy",
+    "question": "Self-employment tax is calculated and reported on:",
+    "options": [
+      "Form 941",
+      "Schedule SE",
+      "Schedule C",
+      "Schedule E"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Schedule SE (Form 1040), Self-Employment Tax, is used to calculate SE tax. The SE tax is then entered on Schedule 2 of Form 1040."
+  },
+  {
+    "id": "see2-803",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Entity Selection",
+    "difficulty": "medium",
+    "question": "For employment tax purposes, a single-member LLC that is a disregarded entity:",
+    "options": [
+      "Cannot have employees",
+      "Reports employment taxes under its own EIN and is treated as a separate entity",
+      "Must use the owner's SSN for all employment tax returns",
+      "Is exempt from employment taxes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While a single-member LLC is disregarded for income tax purposes, it is treated as a separate entity for employment tax and certain excise tax purposes. The LLC must obtain its own EIN and file employment tax returns (Forms 941, 940, W-2) under its own name and EIN. This rule was established by final regulations in 2009."
+  },
+  {
+    "id": "see2-093",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Corporate Taxation",
+    "difficulty": "medium",
+    "question": "A C corporation's charitable contribution deduction is limited to:",
+    "options": [
+      "10% of taxable income before certain adjustments",
+      "There is no limit for corporations",
+      "25% of taxable income",
+      "50% of taxable income"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Corporate charitable contributions are limited to 10% of taxable income computed before the contribution deduction, DRD, NOL carryback, and capital loss carryback. Excess contributions are carried forward 5 years."
+  },
+  {
+    "id": "see1-092",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "American Opportunity Credit",
+    "difficulty": "easy",
+    "question": "The maximum American Opportunity Tax Credit per eligible student is:",
+    "options": [
+      "$2,500",
+      "$1,500",
+      "$4,000",
+      "$2,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The AOTC is worth up to $2,500 per eligible student (100% of first $2,000 + 25% of next $2,000 in qualified expenses). 40% of the credit (up to $1,000) is refundable."
+  },
+  {
+    "id": "see1-231",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Stock Options",
+    "difficulty": "hard",
+    "question": "When an employee exercises an incentive stock option (ISO):",
+    "options": [
+      "Capital gain is recognized",
+      "Ordinary income is recognized immediately",
+      "The employer takes a deduction",
+      "No income is recognized for regular tax, but the bargain element is an AMT preference"
+    ],
+    "correctAnswer": 3,
+    "explanation": "ISO exercises create no regular tax income but the bargain element (FMV minus exercise price) is an AMT preference item. Income is recognized when shares are sold."
+  },
+  {
+    "id": "see2-748",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Operations",
+    "difficulty": "medium",
+    "question": "How are guaranteed payments to a partner for services treated for tax purposes?",
+    "options": [
+      "As tax-free distributions",
+      "As ordinary income to the partner and deductible by the partnership",
+      "As capital gains to the partner",
+      "As self-employment income only if the partner works more than 500 hours"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §707(c), guaranteed payments to a partner for services are treated as ordinary income to the partner (regardless of partnership income) and are deductible by the partnership in computing ordinary income. They are also subject to self-employment tax. Guaranteed payments are similar to salary payments but are not subject to withholding."
+  },
+  {
+    "id": "see2-341",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Installment Sales",
+    "difficulty": "medium",
+    "question": "The installment method under IRC §453 allows:",
+    "options": [
+      "Deferral of gain recognition until payments are received",
+      "Immediate recognition of all gain",
+      "Capital loss carry-forward",
+      "Complete exclusion of gain"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The installment method under §453 allows taxpayers to defer gain recognition, reporting a proportionate amount of gain as each payment is received rather than all gain in the year of sale."
+  },
+  {
+    "id": "see2-146",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation Election",
+    "difficulty": "medium",
+    "question": "To be effective for the current tax year, Form 2553 (S election) must be filed:",
+    "options": [
+      "By the 15th day of the 3rd month of the tax year",
+      "By December 31 of the prior year",
+      "Within 75 days after incorporation",
+      "By the 15th day of the 3rd month of the tax year OR anytime in the prior year"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under IRC §1362(b), an S election is effective for the current year if made by the 15th day of the 3rd month (March 15 for calendar year) or anytime during the preceding tax year."
+  },
+  {
+    "id": "see3-calc-019",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Preparer Penalties",
+    "difficulty": "easy",
+    "question": "What is the penalty for failure to furnish a PTIN on a return?",
+    "options": [
+      "$500 per return",
+      "$50 per return",
+      "$100 per return",
+      "$60 per return"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Penalty for failure to furnish PTIN = $60 per return (2024), max $30,000 per year."
+  },
+  {
+    "id": "see2-566",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Basis",
+    "difficulty": "hard",
+    "question": "The order for reducing a partner's basis is:",
+    "options": [
+      "Distributions, nondeductible expenses, then losses in that order",
+      "Losses, then distributions, then nondeductible expenses",
+      "Distributions, then losses, then nondeductible expenses",
+      "Nondeductible expenses, then distributions, then losses"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Partner basis is reduced in this order: (1) distributions (to extent of basis), (2) nondeductible, non-capitalized expenditures, (3) deductible losses. This ordering matters when basis is limited."
+  },
+  {
+    "id": "see3-751",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Practitioner Due Diligence",
+    "difficulty": "easy",
+    "question": "A paid tax return preparer must sign the return and include:",
+    "options": [
+      "Only their name",
+      "Their name, PTIN, firm name and address, and EIN of the firm (if applicable)",
+      "Only their Social Security number",
+      "Only their firm's name"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §6695(b) and Treas. Reg. §1.6695-1, a paid preparer must sign every return they prepare for compensation and include: their name, their PTIN, the firm's name, the firm's address, and the firm's EIN (if applicable). Failure to sign a return results in a $50 penalty per failure (up to $27,000 per year). The signing preparer is the individual with primary responsibility for the return's overall substantive accuracy."
+  },
+  {
+    "id": "see3-593",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Circular 230",
+    "difficulty": "hard",
+    "question": "The Office of Professional Responsibility can impose which sanction for Circular 230 violations?",
+    "options": [
+      "Criminal prosecution",
+      "State license revocation",
+      "Censure, suspension, or disbarment from practice",
+      "Civil tax penalties"
+    ],
+    "correctAnswer": 2,
+    "explanation": "OPR can impose: censure (public reprimand), suspension from practice, or disbarment. Monetary penalties up to the statutory maximum can also be imposed. Criminal matters are referred to DOJ; state licenses are state matters."
+  },
+  {
+    "id": "see2-251",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Retirement Plans",
+    "difficulty": "medium",
+    "question": "A qualified retirement plan must meet which of the following requirements?",
+    "options": [
+      "Cover only highly compensated employees",
+      "Be funded only with employee contributions",
+      "Be in writing, for exclusive benefit of employees/beneficiaries, and meet minimum coverage and participation requirements",
+      "Distribute all earnings annually"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Qualified plans must be in writing, exclusively benefit employees and beneficiaries, meet coverage and participation requirements, satisfy vesting rules, and follow contribution and benefit limits."
+  },
+  {
+    "id": "see3-080",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Refund Offset",
+    "difficulty": "medium",
+    "question": "Under the Treasury Offset Program, the IRS may apply a refund to:",
+    "options": [
+      "Federal tax debts, past-due child support, student loans, and other federal or state debts",
+      "Only federal tax debts",
+      "Credit card debt",
+      "Only child support"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Treasury Offset Program allows refunds to be applied to past-due federal taxes, child support, federal agency debts (including student loans), and state income tax obligations."
+  },
+  {
+    "id": "see2-128",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Distributions",
+    "difficulty": "hard",
+    "question": "A partnership has hot assets worth $100,000. Partner E (25% interest) receives a distribution of $40,000 in cash and no hot assets. This is:",
+    "options": [
+      "A disproportionate distribution triggering §751(b)",
+      "A tax-free proportionate distribution",
+      "A guaranteed payment",
+      "A liquidating distribution"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under IRC §751(b), when a partner receives more or less than their proportionate share of hot assets, the distribution is disproportionate and triggers ordinary income recognition as if the partner sold their share of hot assets."
+  },
+  {
+    "id": "see3-457",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Taxpayer Rights",
+    "difficulty": "medium",
+    "question": "Under IRC §6103, tax return information:",
+    "options": [
+      "Can be shared with anyone",
+      "Is confidential and may only be disclosed in limited circumstances prescribed by law",
+      "Is public record",
+      "Is only protected for 3 years"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IRC §6103 strictly limits disclosure of tax returns and return information. Exceptions exist for disclosure to state agencies, federal crime investigations, certain court proceedings, and with taxpayer consent."
+  },
+  {
+    "id": "see3-035",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Fraud Penalty",
+    "difficulty": "medium",
+    "question": "The IRS assesses a civil fraud penalty against a taxpayer who intentionally underreported income. What is the burden of proof required for the IRS to sustain a civil fraud penalty?",
+    "options": [
+      "Clear and convincing evidence",
+      "Preponderance of the evidence",
+      "Beyond a reasonable doubt",
+      "Substantial authority"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For civil fraud penalties under IRC §6663, the IRS must prove fraud by clear and convincing evidence. This is a higher standard than preponderance of the evidence (used in most civil cases) but lower than beyond a reasonable doubt (the criminal standard). The IRS must establish that the taxpayer intentionally acted to evade tax."
+  },
+  {
+    "id": "see3-642",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "CDP Hearings",
+    "difficulty": "hard",
+    "question": "At a CDP hearing, the taxpayer can:",
+    "options": [
+      "Appeal to the Supreme Court",
+      "Challenge the underlying liability if no prior opportunity, request collection alternatives, and argue spousal defenses",
+      "Only discuss payment options",
+      "Request a new examination"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CDP hearings allow: challenging the liability (if no prior opportunity), requesting innocent spouse relief, proposing collection alternatives (installment, OIC, CNC), and challenging lien/levy appropriateness. Settlement Officer handles."
+  },
+  {
+    "id": "see2-247",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Business Credits",
+    "difficulty": "medium",
+    "question": "The credit for employer-provided childcare facilities under IRC §45F provides:",
+    "options": [
+      "100% of construction costs",
+      "15% of employee wages for childcare",
+      "25% of qualified childcare facility expenditures plus 10% of resource and referral costs",
+      "50% of all childcare-related expenses"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under IRC §45F, the credit is 25% of qualified childcare facility expenditures plus 10% of qualified childcare resource and referral expenditures, up to $150,000 maximum credit annually."
+  },
+  {
+    "id": "see3-211",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Information Document Requests",
+    "difficulty": "medium",
+    "question": "An Information Document Request (IDR) is:",
+    "options": [
+      "A written request from the IRS examiner for documents and information during an audit",
+      "A taxpayer request for records",
+      "A court order",
+      "A summons"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An IDR is a formal written request issued by an IRS examiner during an audit to obtain specific documents, records, or information from the taxpayer."
+  },
+  {
+    "id": "see3-281",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Due Diligence",
+    "difficulty": "medium",
+    "question": "Preparer due diligence requirements under IRC §6695(g) apply to:",
+    "options": [
+      "EITC, CTC/ACTC/ODC, AOTC, and Head of Household filing status",
+      "All deductions",
+      "Only EITC",
+      "Itemized deductions only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The due diligence requirements apply to (1) Earned Income Tax Credit, (2) Child Tax Credit/Additional CTC/Other Dependent Credit, (3) American Opportunity Tax Credit, and (4) Head of Household filing status."
+  },
+  {
+    "id": "see2-calc-049",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Business Expenses",
+    "difficulty": "easy",
+    "question": "A business owner spent $2,000 on business meals with clients in 2024 (properly documented). What is the deductible amount?",
+    "options": [
+      "$2,000",
+      "$500",
+      "$0",
+      "$1,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Business meals are 50% deductible (the 100% deduction for restaurant meals expired after 2022). $2,000 × 50% = $1,000."
+  },
+  {
+    "id": "see2-130",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Distributions",
+    "difficulty": "hard",
+    "question": "A partner receives inventory in a distribution and sells it 3 years later at a gain. The gain is:",
+    "options": [
+      "Capital gain because held more than one year",
+      "Ordinary income if sold within 5 years of distribution",
+      "Section 1231 gain",
+      "Ordinary income regardless of when sold"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §735(a)(2), gain on sale of distributed inventory is ordinary income if the property is sold within 5 years of distribution. After 5 years, character depends on how the partner uses the property."
+  },
+  {
+    "id": "see3-644",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Innocent Spouse",
+    "difficulty": "hard",
+    "question": "Relief under IRC §6015(c) (separation of liability):",
+    "options": [
+      "Requires proof of no knowledge",
+      "Is available to currently married couples filing jointly",
+      "Separates liability between spouses; only available if divorced, separated, or widowed",
+      "Only applies to understatements"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Section 6015(c) allocates the understatement between spouses based on the items attributable to each. Requires divorce, legal separation, or not living together for 12 months. Cannot benefit from fraudulent scheme."
+  },
+  {
+    "id": "see1-358",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Adjustments",
+    "difficulty": "hard",
+    "question": "The HSA last-month rule allows full-year contribution if:",
+    "options": [
+      "Any day of coverage in the year",
+      "Only if started January 1",
+      "HDHP coverage all 12 months",
+      "HDHP coverage on December 1, but must maintain 13 months or recapture applies"
+    ],
+    "correctAnswer": 3,
+    "explanation": "If eligible on December 1, the full annual contribution is allowed. However, coverage must be maintained for entire following year (testing period) or excess is taxable plus 10% penalty."
+  },
+  {
+    "id": "see1-088",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Tax Planning",
+    "difficulty": "medium",
+    "question": "Under the doctrine of constructive receipt, income is taxable when:",
+    "options": [
+      "Received the following year",
+      "Deposited in a bank account",
+      "Actually received in cash",
+      "Credited to the taxpayer's account or made available without restriction"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under constructive receipt, income is taxable when it is credited to the taxpayer's account, set apart for them, or otherwise made available so they can draw on it. Income is not constructively received if substantial limitations exist."
+  },
+  {
+    "id": "see3-665",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Taxpayer Rights",
+    "difficulty": "easy",
+    "question": "The Taxpayer Bill of Rights includes the right to:",
+    "options": [
+      "Receive unlimited extensions for filing returns",
+      "Be informed, quality service, pay no more than the correct amount of tax, and finality",
+      "Refuse all IRS audits",
+      "Receive free tax preparation from the IRS"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Taxpayer Bill of Rights includes 10 rights: (1) Be Informed, (2) Quality Service, (3) Pay No More Than the Correct Amount of Tax, (4) Challenge the IRS's Position and Be Heard, (5) Appeal, (6) Finality, (7) Privacy, (8) Confidentiality, (9) Retain Representation, and (10) A Fair and Just Tax System. These rights are codified in IRC §7803(a)(3)."
+  },
+  {
+    "id": "see2-582",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Business Credits",
+    "difficulty": "hard",
+    "question": "The Work Opportunity Tax Credit provides a credit for hiring individuals from targeted groups equal to:",
+    "options": [
+      "40% of first-year wages up to $6,000 if worked 400+ hours",
+      "100% of first-year wages up to $2,400",
+      "25% of first-year wages up to $6,000",
+      "50% of first-year wages with no limit"
+    ],
+    "correctAnswer": 0,
+    "explanation": "WOTC is 40% of up to $6,000 wages ($2,400 max) for most groups if the employee works 400+ hours. If 120-399 hours, credit is 25%. Higher limits apply for certain veterans and long-term TANF recipients."
+  },
+  {
+    "id": "see3-031",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Failure to File Penalty",
+    "difficulty": "medium",
+    "question": "The failure to file penalty is generally:",
+    "options": [
+      "0.5% of unpaid tax per month, up to 25%",
+      "1% per day",
+      "5% of unpaid tax per month, up to 25%",
+      "10% flat penalty"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The failure to file penalty is 5% of the unpaid tax for each month or part of a month the return is late, up to a maximum of 25%. If both failure to file and failure to pay apply, the combined penalty is adjusted."
+  },
+  {
+    "id": "see3-773",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Practitioner Ethics",
+    "difficulty": "easy",
+    "question": "Under Circular 230 §10.23, a practitioner must not unreasonably delay the prompt disposition of any matter before the IRS. This means:",
+    "options": [
+      "The practitioner must complete every return in one day",
+      "The practitioner must handle IRS matters without unnecessary delay and respond to IRS requests in a timely manner",
+      "The practitioner must file returns only electronically",
+      "The practitioner must attend IRS appointments in person only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under 31 CFR §10.23, a practitioner must not unreasonably delay the prompt disposition of any matter before the IRS. This includes promptly responding to IRS inquiries, requests for information, and scheduled appointments. Unreasonable delays can result in disciplinary action. The duty applies to all aspects of representation, including examinations, appeals, collections, and return preparation."
+  },
+  {
+    "id": "see1-136",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Tax Credits",
+    "difficulty": "medium",
+    "question": "The Child and Dependent Care Credit is based on expenses up to:",
+    "options": [
+      "$3,000 for one dependent, $6,000 for two or more",
+      "Unlimited expenses",
+      "$8,000 for one dependent, $16,000 for two or more",
+      "$6,000 for one dependent, $12,000 for two or more"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The credit is calculated on up to $3,000 of expenses for one qualifying individual, or $6,000 for two or more. The credit rate ranges from 20% to 35% based on AGI."
+  },
+  {
+    "id": "see2-896",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation",
+    "difficulty": "medium",
+    "question": "For a more-than-2% shareholder of an S corporation, employer-paid health insurance premiums are:",
+    "options": [
+      "Completely tax-free",
+      "Included in the shareholder's W-2 wages as income (subject to income tax but not FICA), then deductible by the shareholder on Schedule 1 of Form 1040",
+      "Not deductible by anyone",
+      "Deductible only by the corporation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §1372, a more-than-2% S corporation shareholder is treated like a partner for purposes of fringe benefits. Health insurance premiums paid by the S corporation must be included in the shareholder-employee's W-2 wages (Box 1 only — not subject to FICA). The shareholder may then claim the self-employed health insurance deduction on Line 17 of Schedule 1 (Form 1040), which is an above-the-line deduction. This effectively makes the premium deductible but through a different mechanism than for C corporation shareholder-employees."
+  },
+  {
+    "id": "see2-348",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Installment Sales",
+    "difficulty": "medium",
+    "question": "A taxpayer may elect OUT of installment sale treatment:",
+    "options": [
+      "Only with IRS permission",
+      "By reporting entirety of gain in year of sale",
+      "Only if the sale results in a loss",
+      "Never - installment treatment is mandatory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Taxpayers may elect out of installment treatment by reporting the entire gain in the year of sale on their tax return. The election must be made by the return due date (with extensions)."
+  },
+  {
+    "id": "see1-110",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Gross Income",
+    "difficulty": "easy",
+    "question": "Jury duty pay that is remitted to an employer:",
+    "options": [
+      "Is tax-free",
+      "Is subject to self-employment tax",
+      "Cannot be deducted",
+      "Is included in income but can be deducted as an adjustment to income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Jury duty pay is includible in income. If required to remit the pay to an employer who continued paying salary, the amount can be deducted as an adjustment to gross income."
+  },
+  {
+    "id": "see2-269",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Trusts and Estates",
+    "difficulty": "hard",
+    "question": "A decedent owned a traditional IRA worth $150,000 at death. The decedent had a $0 basis in the IRA (all pre-tax contributions and earnings). The beneficiary received a distribution of $150,000 from the inherited IRA. How is this income in respect of a decedent (IRD) treated?",
+    "options": [
+      "The $150,000 is fully taxable as ordinary income to the beneficiary, with no step-up in basis",
+      "The $150,000 receives a step-up in basis and is not taxable",
+      "Only amounts exceeding the decedent's contributions are taxable",
+      "The beneficiary pays capital gains tax on the $150,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IRA distributions are income in respect of a decedent (IRD) under IRC §691 and do NOT receive a stepped-up basis. The full $150,000 is taxable as ordinary income to the beneficiary. IRD items retain the same character they would have had if received by the decedent. However, the beneficiary may claim a deduction for any estate tax attributable to the IRD inclusion."
+  },
+  {
+    "id": "see3-136",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Offers in Compromise",
+    "difficulty": "hard",
+    "question": "After an OIC is accepted, the taxpayer must remain in filing and payment compliance for:",
+    "options": [
+      "3 years",
+      "No compliance period required",
+      "5 years from acceptance",
+      "10 years"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Accepted OIC terms require 5 years of tax compliance (file all returns, pay all taxes). Noncompliance during this period can reinstate the original liability minus payments made."
+  },
+  {
+    "id": "see2-356",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "easy",
+    "question": "Form 941 is used by employers to:",
+    "options": [
+      "Report quarterly employment taxes withheld and employer's share",
+      "Report annual federal income tax",
+      "Report annual wage and tax statements",
+      "Request employer identification number"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Form 941, Employer's Quarterly Federal Tax Return, reports wages paid, tips reported, federal income tax withheld, and both employer and employee shares of Social Security and Medicare taxes."
+  },
+  {
+    "id": "see1-363",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement",
+    "difficulty": "medium",
+    "question": "For those turning 72 after December 31, 2022, the RMD required beginning date age is:",
+    "options": [
+      "72",
+      "70½",
+      "75",
+      "73"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SECURE 2.0 raised RMD age to 73 for those turning 72 after 2022. It increases to 75 for those born after 1960 (starting in 2033)."
+  },
+  {
+    "id": "see2-656",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Franchise Taxes",
+    "difficulty": "easy",
+    "question": "State franchise taxes are generally:",
+    "options": [
+      "Deductible as a business expense for federal tax purposes",
+      "Never deductible",
+      "Creditable against federal tax",
+      "Only deductible by S corporations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "State franchise taxes (privilege of doing business) are deductible as ordinary business expenses. State income taxes are also deductible. This differs from federal income taxes which are never deductible."
+  },
+  {
+    "id": "see1-300",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Self-Employment",
+    "difficulty": "easy",
+    "question": "Schedule C is used to report:",
+    "options": [
+      "Partnership income",
+      "Wages and salaries",
+      "Rental income",
+      "Sole proprietorship business income and expenses"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Schedule C reports profit or loss from a sole proprietorship or single-member LLC. Net profit is subject to self-employment tax."
+  },
+  {
+    "id": "see3-127",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Installment Agreements",
+    "difficulty": "hard",
+    "question": "The IRS may terminate an installment agreement if the taxpayer:",
+    "options": [
+      "Fails to pay an installment, incurs new liability, fails to file, or provides inaccurate financial information",
+      "Makes all payments on time",
+      "Moves to a new address",
+      "Requests a modification"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IRS may terminate an IA for: default on payment, new tax liability, failure to file returns, inaccurate/incomplete financial disclosure, or changed financial condition. 30-day notice required before termination."
+  },
+  {
+    "id": "see2-601",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Partnership Distributions",
+    "difficulty": "hard",
+    "question": "When a partnership distributes appreciated property to a partner in a non-liquidating distribution:",
+    "options": [
+      "The partner takes a carryover basis limited to their outside basis",
+      "The partnership recognizes gain",
+      "The property is taxed at a capital gains rate",
+      "The partner recognizes gain immediately"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In a non-liquidating distribution, the partnership generally doesn't recognize gain. The partner takes a carryover basis in the property, but limited to their predistribution outside basis (minus any cash received)."
+  },
+  {
+    "id": "see2-342",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Installment Sales",
+    "difficulty": "medium",
+    "question": "Which sale does NOT qualify for installment sale treatment?",
+    "options": [
+      "Sale of dealer inventory",
+      "Sale of farm equipment",
+      "Sale of real property used in business",
+      "Sale of capital assets"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Dealer dispositions (inventory sales) do not qualify for installment treatment. Also ineligible: publicly traded property and property resulting in a loss."
+  },
+  {
+    "id": "see3-832",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Due Dates",
+    "difficulty": "easy",
+    "question": "If the due date for filing a tax return falls on a Saturday, Sunday, or legal holiday, the return is considered timely filed if filed by:",
+    "options": [
+      "The previous business day",
+      "The next business day",
+      "Only the exact due date — no extension applies",
+      "Two business days later"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IRC §7503, if the due date for filing a return, making a payment, or performing any other act falls on a Saturday, Sunday, or legal holiday, the deadline is extended to the next business day. For example, if April 15 falls on a Saturday, the filing deadline moves to Monday, April 17 (or Tuesday, April 18 if Monday is a holiday such as Emancipation Day in D.C.). This rule applies to all federal tax returns and payments."
+  },
+  {
+    "id": "see1-059",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement Income",
+    "difficulty": "medium",
+    "question": "Qualified distributions from a Roth IRA are:",
+    "options": [
+      "Taxable as ordinary income",
+      "Subject to a 10% penalty regardless of age",
+      "Taxed at capital gains rates",
+      "Tax-free"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Qualified distributions from a Roth IRA are completely tax-free. To be qualified, the distribution must be made at least 5 years after the first contribution year AND the owner must be 59½, disabled, or the distribution must be for first-time home purchase (up to $10,000) or made to a beneficiary after death."
+  },
+  {
+    "id": "see3-482",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Advanced Representation",
+    "difficulty": "hard",
+    "question": "Post-Appeals Mediation (PAM) is available:",
+    "options": [
+      "After Appeals and taxpayer reach impasse on some but not all issues",
+      "Before any Appeals conference",
+      "Only in Tax Court",
+      "For all cases automatically"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PAM is used when Appeals and the taxpayer have reached impasse on factual or legal issues after initial settlement attempts. A trained mediator assists negotiations on remaining issues."
+  },
+  {
+    "id": "see2-352",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "easy",
+    "question": "The Social Security tax applies to:",
+    "options": [
+      "Wages up to the annual wage base limit",
+      "Only salary, not hourly wages",
+      "All wages without limit",
+      "Only tips and bonuses"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Social Security tax (OASDI) applies only to wages up to the annual wage base ($168,600 for 2024). Wages above this amount are not subject to Social Security tax (but are subject to Medicare)."
+  },
+  {
+    "id": "see2-359",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "easy",
+    "question": "Form W-2 must be furnished to employees by:",
+    "options": [
+      "Within 30 days of termination",
+      "January 31 of the following year",
+      "December 31 of the tax year",
+      "April 15 of the following year"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Employers must furnish Form W-2 to employees by January 31 following the calendar year. Copies must also be filed with SSA by January 31."
+  },
+  {
+    "id": "see1-178",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Gross Income",
+    "difficulty": "easy",
+    "question": "Life insurance proceeds paid by reason of death are generally:",
+    "options": [
+      "Taxable above $500,000",
+      "Fully taxable",
+      "Subject to estate tax only",
+      "Excluded from gross income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Life insurance proceeds paid by reason of the insured's death are generally excluded from gross income. Interest earned on proceeds may be taxable."
+  },
+  {
+    "id": "see3-592",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Levies",
+    "difficulty": "hard",
+    "question": "Which of the following is exempt from levy?",
+    "options": [
+      "Business inventory",
+      "Wages above a specified exempt amount",
+      "Bank accounts",
+      "Investment accounts"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Certain property is exempt from levy: wearing apparel and school books, fuel/provisions/furniture/personal effects up to $11,820, books/tools of trade up to $5,910, unemployment benefits, workers' comp, certain pension payments, and wages up to the exempt amount."
+  },
+  {
+    "id": "see3-551",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Power of Attorney",
+    "difficulty": "medium",
+    "question": "Form 2848 can authorize a representative to do all of the following EXCEPT:",
+    "options": [
+      "Sign a tax return on behalf of the taxpayer",
+      "Receive confidential tax information",
+      "Represent the taxpayer before the IRS",
+      "Receive refund checks on behalf of the taxpayer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Form 2848 does not authorize signing a return unless specific authorization is granted on line 5. Separate authorization (e.g., Form 2848 with specific signing authority or Form 8821) is needed for return signing."
+  },
+  {
+    "id": "see2-scorp-039",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation Estimated Tax",
+    "difficulty": "medium",
+    "question": "Estimated tax payments for S corporation income are made by:",
+    "options": [
+      "The shareholders individually",
+      "No estimated payments are required",
+      "Both the corporation and shareholders",
+      "The S corporation quarterly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Since S corporations are pass-through entities, the shareholders (not the corporation) must make estimated tax payments for their share of S corp income. The S corp itself only makes estimated payments for certain corporate-level taxes (BIG tax, excess net passive income tax)."
+  },
+  {
+    "id": "see3-103",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "IRS Notices",
+    "difficulty": "hard",
+    "question": "A Statutory Notice of Deficiency (90-day letter):",
+    "options": [
+      "Gives the taxpayer 90 days (150 if abroad) to petition Tax Court",
+      "Is issued after Tax Court decision",
+      "Is a final bill that must be paid immediately",
+      "Can be responded to by telephone"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A Statutory Notice of Deficiency is the taxpayer's ticket to Tax Court. The taxpayer has 90 days (150 days if addressed outside the US) to file a Tax Court petition."
+  },
+  {
+    "id": "see3-069",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Estimated Tax Penalty",
+    "difficulty": "medium",
+    "question": "An individual can avoid the estimated tax penalty by paying at least:",
+    "options": [
+      "90% of current year tax or 100% of prior year tax (110% if AGI exceeds $150,000)",
+      "80% of current year tax",
+      "100% of current year tax only",
+      "95% of current year tax"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The estimated tax safe harbors are 90% of the current year's tax or 100% of the prior year's tax. For taxpayers with AGI over $150,000 ($75,000 MFS), the prior year requirement is 110%."
+  },
+  {
+    "id": "see3-094",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Lien",
+    "difficulty": "hard",
+    "question": "A discharge of property from a federal tax lien means:",
+    "options": [
+      "The entire tax debt is released",
+      "The lien is transferred to another taxpayer",
+      "Specific property is released from the lien while the lien continues on other property",
+      "The taxpayer can no longer own property"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A discharge releases specific property from the lien, often to allow a sale, while the lien remains attached to other property. This is different from a release which eliminates the entire lien."
+  },
+  {
+    "id": "see3-179",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Power of Attorney",
+    "difficulty": "easy",
+    "question": "Form 2848 may be submitted to the IRS:",
+    "options": [
+      "Only by mail",
+      "Only in person at a TAC",
+      "By mail, fax, or online through Tax Pro Account",
+      "Only by the taxpayer directly"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Form 2848 may be submitted by mail, fax, or online. Tax professionals with Tax Pro Accounts can submit authorizations online, and taxpayers with IRS accounts can approve them digitally."
+  },
+  {
+    "id": "see1-038",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Adjustments to Income",
+    "difficulty": "easy",
+    "question": "For 2025, eligible educators can deduct up to how much in unreimbursed classroom expenses as an adjustment to income?",
+    "options": [
+      "$500",
+      "$200",
+      "$300",
+      "$250"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Eligible educators (K-12 teachers, counselors, principals, aides with at least 900 hours of work) can deduct up to $300 in unreimbursed classroom expenses as an adjustment to income. This includes books, supplies, computer equipment, and supplementary materials."
+  },
+  {
+    "id": "see1-003",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Dependents",
+    "difficulty": "medium",
+    "question": "Which of the following is NOT a requirement for a child to be claimed as a qualifying child?",
+    "options": [
+      "The child must be under age 19, or under 24 if a full-time student",
+      "The child must be younger than the taxpayer",
+      "The child must provide more than half of their own support",
+      "The child must have the same principal residence as the taxpayer for more than half the year"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For qualifying child status, the CHILD must NOT provide more than half of their own support (the support test). The taxpayer providing support is a requirement for qualifying RELATIVES, not qualifying children. Options A, B, and D are actual requirements."
+  },
+  {
+    "id": "see2-048",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Tax-Exempt Organizations",
+    "difficulty": "easy",
+    "question": "501(c)(3) organizations with gross receipts of $200,000 or more must file:",
+    "options": [
+      "Form 990-EZ",
+      "Form 990-N (e-Postcard)",
+      "Form 1120",
+      "Form 990"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Tax-exempt organizations with gross receipts of $200,000 or more, or total assets of $500,000 or more, must file Form 990. Smaller organizations may file Form 990-EZ or Form 990-N."
+  },
+  {
+    "id": "see1-291",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Income",
+    "difficulty": "medium",
+    "question": "Gambling winnings are reported as:",
+    "options": [
+      "Not taxable if under $600",
+      "Self-employment income",
+      "Other income on Line 8",
+      "Capital gain"
+    ],
+    "correctAnswer": 2,
+    "explanation": "All gambling winnings are taxable and reported as other income, regardless of whether a W-2G is issued. The $600 threshold only determines if a W-2G is required for certain winnings."
+  },
+  {
+    "id": "see2-445",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Hobby Losses",
+    "difficulty": "hard",
+    "question": "A taxpayer can elect to postpone the hobby loss determination until:",
+    "options": [
+      "After the fifth year (or seventh for horses) when the presumption period ends",
+      "After the first year of losses",
+      "10 years of operation",
+      "After audit notice"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under §183(e), a taxpayer can elect to postpone the hobby/business determination until after the presumption period (5 or 7 years) ends, keeping the statute of limitations open."
+  },
+  {
+    "id": "see3-813",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Extensions",
+    "difficulty": "easy",
+    "question": "Form 4868 grants an individual taxpayer an automatic extension of time to file of:",
+    "options": [
+      "2 months",
+      "4 months",
+      "6 months (to October 15 for calendar year filers)",
+      "12 months"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Form 4868 (Application for Automatic Extension of Time to File U.S. Individual Income Tax Return) grants an automatic 6-month extension — extending the filing deadline from April 15 to October 15 for calendar-year filers. An extension of time to file is NOT an extension of time to pay. The taxpayer must estimate and pay any expected tax liability with the extension request to avoid penalties and interest."
+  },
+  {
+    "id": "see2-633",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "S Corporation",
+    "difficulty": "hard",
+    "question": "A shareholder-employee of an S corporation who takes only $0 in salary and $200,000 in distributions:",
+    "options": [
+      "Is correctly minimizing employment taxes",
+      "Can deduct all distributions as business expenses",
+      "May be subject to IRS recharacterization of distributions as wages",
+      "Owes no self-employment tax on distributions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The IRS can recharacterize excessive distributions as wages subject to employment tax if the shareholder-employee provides services. Reasonable compensation must be paid for services rendered before distributions."
+  },
+  {
+    "id": "see1-066",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Tax Computation",
+    "difficulty": "easy",
+    "question": "For 2025, the highest marginal tax rate for ordinary income is:",
+    "options": [
+      "39.6%",
+      "35%",
+      "40%",
+      "37%"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under the Tax Cuts and Jobs Act (through 2025), the highest marginal tax rate for ordinary income is 37%. This applies to taxable income exceeding certain thresholds ($626,350 for single filers in 2025)."
+  },
+  {
+    "id": "see2-641",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "hard",
+    "question": "The Trust Fund Recovery Penalty (IRC §6672) can be assessed against:",
+    "options": [
+      "The IRS if it fails to collect timely",
+      "Responsible persons who willfully fail to remit withheld employment taxes",
+      "Only the corporate entity",
+      "All employees equally"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The TFRP equals 100% of the unpaid trust fund taxes (employee's share of FICA and income tax withheld). It applies to responsible persons (officers, directors, payroll managers) who willfully failed to collect or remit the taxes."
+  },
+  {
+    "id": "see1-416",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Income",
+    "difficulty": "hard",
+    "question": "At ISO exercise, the bargain element is:",
+    "options": [
+      "Regular income only",
+      "Capital gain",
+      "Neither regular nor AMT income",
+      "Not regular income but an AMT preference item"
+    ],
+    "correctAnswer": 3,
+    "explanation": "ISO exercise creates no regular tax income but the bargain element (FMV minus exercise price) is an AMT adjustment. This can trigger AMT liability."
+  },
+  {
+    "id": "see1-196",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Tax Computation",
+    "difficulty": "easy",
+    "question": "Tax tables are used by taxpayers with taxable income of:",
+    "options": [
+      "$100,000 or more",
+      "Any amount",
+      "Less than $50,000",
+      "Less than $100,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Taxpayers with taxable income less than $100,000 use the tax tables. Those with $100,000 or more use the tax computation worksheet."
+  },
+  {
+    "id": "see1-501",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Tax Planning",
+    "difficulty": "medium",
+    "question": "A self-employed taxpayer expects significantly higher income next year. Which strategy would you advise AGAINST for the current tax year?",
+    "options": [
+      "Maximizing retirement contributions in the current year",
+      "Accelerating deductible expenses into the current year",
+      "Accelerating income recognition to the current year",
+      "Deferring income to the next year when possible"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If income is expected to be higher next year (pushing into higher brackets), you should AVOID accelerating income to the current year. Instead, defer income and accelerate deductions to balance tax liability across years."
+  },
+  {
+    "id": "see3-app-003",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "IRS Appeals",
+    "difficulty": "hard",
+    "question": "A taxpayer disagrees with the findings in an IRS examination report proposing $32,000 in additional tax. The taxpayer wants to appeal before paying. What document must the taxpayer file with the IRS Appeals Office?",
+    "options": [
+      "A written protest that includes a statement of facts, applicable law, and arguments supporting the taxpayer's position",
+      "A simple letter requesting an appeal with no supporting documentation required",
+      "A petition to U.S. Tax Court within 30 days",
+      "Form 12203 (Request for Appeals Review) only — no written protest is needed for this amount"
+    ],
+    "correctAnswer": 0,
+    "explanation": "When the total tax, penalties, and interest for any period exceeds $25,000, a formal written protest is required for IRS Appeals. The protest must include: a statement that the taxpayer wants to appeal, identification of the year/period, a list of proposed changes disagreed with, a statement of facts under penalties of perjury, and the law or arguments supporting the position. For amounts of $25,000 or less, the simplified Form 12203 may be used."
+  },
+  {
+    "id": "see1-329",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Filing",
+    "difficulty": "medium",
+    "question": "Estimated tax payments are due:",
+    "options": [
+      "Annually on April 15",
+      "Monthly",
+      "Quarterly on last day of each quarter",
+      "April 15, June 15, September 15, January 15"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Individual estimated tax payments are due April 15, June 15, September 15, and January 15. Each payment should be 25% of required annual payment."
+  },
+  {
+    "id": "see1-128",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Standard Deduction",
+    "difficulty": "easy",
+    "question": "Taxpayers age 65 or older receive an additional standard deduction amount that is:",
+    "options": [
+      "Equal to twice the regular standard deduction",
+      "Available only to itemizers",
+      "The same for all filing statuses",
+      "Higher for unmarried taxpayers than for married taxpayers"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The additional standard deduction for age 65+ or blind is larger for unmarried taxpayers ($1,950 for 2024) than for married taxpayers ($1,550 for 2024)."
+  },
+  {
+    "id": "see2-614",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Worker Classification",
+    "difficulty": "hard",
+    "question": "Section 530 relief protects employers from employment tax liability for misclassified workers if:",
+    "options": [
+      "The worker agrees to independent contractor status",
+      "The IRS approves the classification in advance",
+      "The employer had a reasonable basis and filed consistent 1099s",
+      "The worker earned less than $600"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Section 530 provides relief if: (1) employer had reasonable basis for classification (prior IRS audit, judicial precedent, industry practice, or other basis), (2) consistent filing of Form 1099s, and (3) consistent treatment of similar workers."
+  },
+  {
+    "id": "see3-c230-005",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Practices and Procedures",
+    "difficulty": "easy",
+    "question": "Enrolled Agent Tom runs a radio ad stating: \"I guarantee I will get you a refund, or my services are free!\" Under Circular 230, is this advertisement permissible?",
+    "options": [
+      "Yes, because it is commercial speech protected by the First Amendment.",
+      "Yes, as long as he honestly intends to waive the fee.",
+      "No, because radio advertising is not allowed for Enrolled Agents.",
+      "No, because it implies a guaranteed result which is prohibited."
+    ],
+    "correctAnswer": 3,
+    "explanation": "Circular 230 §10.30 prohibits any form of public communication containing a false, fraudulent, coercive, misleading, or deceptive statement or claim. Guaranteeing a refund implies a result that cannot be controlled (as refunds depend on the facts and law), and is considered misleading."
+  },
+  {
+    "id": "see2-722",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Entity Selection",
+    "difficulty": "medium",
+    "question": "Which of the following is an advantage of forming an LLC rather than a C corporation?",
+    "options": [
+      "An LLC can issue stock to the public",
+      "An LLC provides limited liability and default pass-through taxation",
+      "An LLC has no filing requirements with the state",
+      "An LLC is exempt from all state taxes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An LLC provides limited liability protection for its members while defaulting to pass-through taxation (partnership for multi-member, disregarded entity for single-member). This avoids the double taxation problem of C corporations while maintaining liability protection. LLCs do require state filings and are subject to applicable state taxes."
+  },
+  {
+    "id": "see3-pen-013",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Preparer Penalties",
+    "difficulty": "hard",
+    "question": "The penalty for willful or reckless conduct by a tax preparer under §6694(b) is:",
+    "options": [
+      "$500",
+      "Automatic suspension of PTIN",
+      "$1,000 or 50% of preparer fee, whichever is greater",
+      "$5,000 or 75% of preparer fee, whichever is greater"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For willful attempt to understate tax or reckless/intentional disregard of rules, the penalty is the GREATER of $5,000 or 75% of the income derived by the preparer from the return. This is much higher than the negligent ($1,000/50%) penalty."
+  },
+  {
+    "id": "see3-456",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Taxpayer Rights",
+    "difficulty": "medium",
+    "question": "The Taxpayer Bill of Rights includes the right to privacy, which means:",
+    "options": [
+      "IRS inquiries and enforcement won't be more intrusive than necessary",
+      "No one can see tax returns",
+      "The IRS cannot contact the taxpayer",
+      "Audits are voluntary"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The privacy right means IRS actions won't be more intrusive than necessary. This includes proper use of summons authority, limitation on third-party contacts, and respect for lawful compliance procedures."
+  },
+  {
+    "id": "see3-726",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Examination Process",
+    "difficulty": "easy",
+    "question": "Which type of IRS examination is conducted entirely by mail?",
+    "options": [
+      "Field audit",
+      "Correspondence audit",
+      "Office audit",
+      "TCMP audit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A correspondence audit is conducted entirely by mail. The IRS sends a letter requesting documentation or clarification of specific items on the return. Correspondence audits are the simplest and most common type of IRS audit, typically addressing single issues like unreported income or questionable deductions. Office audits require the taxpayer to visit an IRS office, while field audits are conducted at the taxpayer's home, business, or representative's office."
+  },
+  {
+    "id": "see3-pen-020",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Preparer Penalties",
+    "difficulty": "easy",
+    "question": "The penalty for failure to furnish a PTIN on a return is:",
+    "options": [
+      "$100 per failure",
+      "$500 per failure",
+      "$50 per failure",
+      "$250 per failure"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Tax return preparers must include their PTIN on every return they prepare. Failure to do so results in a $50 penalty per failure. The maximum annual penalty is $27,000 (for 2024). Using a false or expired PTIN is a separate violation."
+  },
+  {
+    "id": "see1-163",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement Distributions",
+    "difficulty": "hard",
+    "question": "Required minimum distributions from traditional IRAs must begin by:",
+    "options": [
+      "Age 59½",
+      "December 31 of the year the owner turns 70½",
+      "April 1 following the year the owner turns 73",
+      "Age 65"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under SECURE 2.0, RMDs must begin by April 1 following the year the owner reaches age 73 (for those born 1951-1959). The age increases to 75 for those born 1960 or later."
+  },
+  {
+    "id": "see2-257",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Retirement Plans",
+    "difficulty": "medium",
+    "question": "For 2024, the employee contribution limit for a SIMPLE IRA is:",
+    "options": [
+      "$23,000",
+      "$7,000",
+      "$15,500",
+      "$16,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For 2024, the SIMPLE IRA employee deferral limit is $16,000 ($19,500 with catch-up for age 50+). Employers must either match up to 3% or contribute 2% for all eligible employees."
+  },
+  {
+    "id": "see3-241",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Levies",
+    "difficulty": "medium",
+    "question": "Under IRC §6331, the IRS may levy:",
+    "options": [
+      "Only bank accounts",
+      "Only wages",
+      "All property or rights to property belonging to the taxpayer",
+      "Only real estate"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IRC §6331 authorizes the IRS to levy on all property and rights to property (except exemptions) belonging to a person who neglects or refuses to pay within 10 days of notice and demand."
+  },
+  {
+    "id": "see2-360",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Employment Taxes",
+    "difficulty": "easy",
+    "question": "The purpose of Form W-4 is to:",
+    "options": [
+      "Provide information to employer for calculating federal income tax withholding",
+      "Report independent contractor income",
+      "Report wages earned during the year",
+      "Claim exempt status from FICA taxes"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Form W-4, Employee's Withholding Certificate, provides information about filing status, dependents, other income, and deductions so employers can calculate proper federal income tax withholding."
+  },
+  {
+    "id": "see1-268",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Income",
+    "difficulty": "hard",
+    "question": "Gift loans between individuals below $10,000 are exempt from imputed interest rules if:",
+    "options": [
+      "Always exempt",
+      "Never exempt",
+      "The loan is for education",
+      "The borrower has no net investment income"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Gift loans of $10,000 or less are generally exempt from imputed interest rules. For loans between $10,000 and $100,000, imputed interest is limited to borrower's net investment income."
+  },
+  {
+    "id": "see3-291",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Continuing Education",
+    "difficulty": "medium",
+    "question": "Enrolled Agents must complete how many hours of continuing education per enrollment cycle?",
+    "options": [
+      "40 hours",
+      "72 hours (minimum 16 hours per year)",
+      "24 hours total",
+      "100 hours"
+    ],
+    "correctAnswer": 1,
+    "explanation": "EAs must complete 72 hours of CE per 3-year enrollment cycle, with a minimum of 16 hours per year (including 2 hours of ethics/professional conduct per year)."
+  },
+  {
+    "id": "see3-395",
+    "exam": "EA",
+    "section": "SEE3",
+    "topic": "Client Relationship",
+    "difficulty": "medium",
+    "question": "Under Circular 230, practitioners must:",
+    "options": [
+      "Never give bad news to clients",
+      "Promptly submit records requested and respond to proper IRS communications",
+      "Handle all client mail personally",
+      "Respond to IRS within 24 hours"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circular 230 §10.23 requires practitioners to promptly submit records or information properly requested by the IRS and to exercise due diligence in preparing, approving, and filing documents."
+  },
+  {
+    "id": "see1-367",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Retirement",
+    "difficulty": "medium",
+    "question": "A Qualified Domestic Relations Order (QDRO) allows:",
+    "options": [
+      "Tax-free conversions",
+      "Loans from retirement accounts",
+      "Early withdrawal without penalty from any account",
+      "Division of retirement plan assets incident to divorce without triggering income or penalty"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A QDRO divides employer retirement plan assets in divorce. The alternate payee (spouse) can receive without penalty; it becomes taxable when distributed to recipient."
+  },
+  {
+    "id": "see2-451",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Farm Taxation",
+    "difficulty": "easy",
+    "question": "Farm income and expenses for a sole proprietor are reported on:",
+    "options": [
+      "Schedule C",
+      "Form 4835",
+      "Schedule F",
+      "Schedule E"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Schedule F (Profit or Loss From Farming) is used by sole proprietor farmers to report farm income and expenses. Form 4835 is used for crop share landlords."
+  },
+  {
+    "id": "see1-006",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Wages and Compensation",
+    "difficulty": "easy",
+    "question": "Which box on Form W-2 shows the total federal income tax withheld from an employee's wages?",
+    "options": [
+      "Box 3",
+      "Box 4",
+      "Box 1",
+      "Box 2"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Box 2 of Form W-2 shows the total federal income tax withheld from the employee's wages. Box 1 shows wages, tips, and other compensation. Box 3 shows Social Security wages, and Box 4 shows Social Security tax withheld."
+  },
+  {
+    "id": "see1-147",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Capital Gains",
+    "difficulty": "hard",
+    "question": "Long-term capital gains on collectibles are taxed at a maximum rate of:",
+    "options": [
+      "39.6%",
+      "28%",
+      "15%",
+      "20%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Collectibles (art, antiques, coins, stamps, precious metals) have a maximum 28% long-term capital gains rate, higher than the standard 20% maximum."
+  },
+  {
+    "id": "see1-calc-030",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Taxable Income",
+    "difficulty": "medium",
+    "question": "Wendy (single) has gross income of $85,000, above-the-line deductions of $5,000, and itemized deductions of $18,000. What is her taxable income?",
+    "options": [
+      "$67,000",
+      "$66,400",
+      "$62,000",
+      "$80,000"
+    ],
+    "correctAnswer": 2,
+    "explanation": "AGI = $85,000 - $5,000 = $80,000. Taxable income = AGI - greater of (standard deduction or itemized). $80,000 - $18,000 = $62,000. (Itemized > standard of $14,600)"
+  },
+  {
+    "id": "see1-234",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Adjustments",
+    "difficulty": "hard",
+    "question": "The Domestic Production Activities Deduction (Section 199) was:",
+    "options": [
+      "Increased by TCJA",
+      "Unchanged by TCJA",
+      "Only available to corporations",
+      "Repealed by TCJA and replaced by Section 199A for pass-through entities"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Section 199 DPAD was repealed by TCJA effective after 2017. Section 199A (QBI deduction) was enacted for pass-through businesses."
+  },
+  {
+    "id": "see1-486",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Filing",
+    "difficulty": "hard",
+    "question": "The 6-year assessment period applies when:",
+    "options": [
+      "Always",
+      "Any error exceeds $5,000",
+      "The return is late",
+      "Gross income omission exceeds 25% of stated gross income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The statute extends to 6 years when there is a substantial omission of income (more than 25% of gross income stated on the return)."
+  },
+  {
+    "id": "see2-496",
+    "exam": "EA",
+    "section": "SEE2",
+    "topic": "Business Expenses",
+    "difficulty": "easy",
+    "question": "The simplified home office deduction method allows a deduction of:",
+    "options": [
+      "Actual expenses only",
+      "$10 per square foot, max 500 sq ft",
+      "$5 per square foot, max 300 sq ft",
+      "$15 per square foot, no limit"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The simplified method allows $5 per square foot of home office space, up to 300 sq ft ($1,500 max). This avoids complex calculations of actual expense percentage."
+  },
+  {
+    "id": "see1-027",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Social Security Benefits",
+    "difficulty": "medium",
+    "question": "At most, what percentage of Social Security benefits may be subject to federal income tax?",
+    "options": [
+      "85%",
+      "50%",
+      "100%",
+      "75%"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Up to 85% of Social Security benefits may be taxable, depending on the taxpayer's combined income (AGI + nontaxable interest + 50% of SS benefits). If combined income exceeds certain thresholds, 50% or 85% of benefits are taxable."
+  },
+  {
+    "id": "see1-054",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Taxpayer Identification",
+    "difficulty": "easy",
+    "question": "An Adoption Taxpayer Identification Number (ATIN) is used for:",
+    "options": [
+      "International adoptions only",
+      "Foster children only",
+      "Any adopted child",
+      "A child placed in a household for legal adoption who cannot get an SSN before the return is due"
+    ],
+    "correctAnswer": 3,
+    "explanation": "An ATIN is a temporary number issued to a child who has been placed for legal adoption but cannot obtain an SSN before the tax return is due. Once the adoption is finalized and an SSN is obtained, the ATIN is no longer used."
+  },
+  {
+    "id": "see1-009",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Capital Gains",
+    "difficulty": "easy",
+    "question": "To qualify for long-term capital gains treatment, an asset must be held for:",
+    "options": [
+      "At least 6 months",
+      "At least 18 months",
+      "More than 24 months",
+      "More than 12 months"
+    ],
+    "correctAnswer": 3,
+    "explanation": "To qualify for long-term capital gains treatment, an asset must be held for MORE than 12 months (not 12 months exactly). Assets held for 12 months or less are considered short-term and taxed at ordinary income rates."
+  },
+  {
+    "id": "see1-315",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Self-Employment",
+    "difficulty": "medium",
+    "question": "De minimis fringe benefits provided by an employer are:",
+    "options": [
+      "Fully taxable",
+      "Subject to FICA only",
+      "Taxable if over $100",
+      "Excluded from employee income if small value and infrequent"
+    ],
+    "correctAnswer": 3,
+    "explanation": "De minimis fringes are so small in value and infrequently provided that accounting for them is unreasonable. Examples: coffee, occasional snacks, holiday gifts of low value."
+  },
+  {
+    "id": "see1-448",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Income",
+    "difficulty": "medium",
+    "question": "Resident aliens are taxed on:",
+    "options": [
+      "Only wages and dividends",
+      "U.S.-source income only",
+      "Only income over $100,000",
+      "Worldwide income, same as U.S. citizens"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Resident aliens are taxed on worldwide income, the same as U.S. citizens. They use Form 1040 and claim the same deductions and credits."
+  },
+  {
+    "id": "see1-466",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Self-Employment",
+    "difficulty": "medium",
+    "question": "Backup withholding applies when:",
+    "options": [
+      "Only to wage payments",
+      "At taxpayer request",
+      "To all 1099 payments",
+      "Payee fails to furnish correct TIN or is notified of underreporting"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Backup withholding (24%) applies when payee doesn't provide correct TIN, IRS notifies payer of underreporting, or payee fails to certify not subject to backup withholding."
+  },
+  {
+    "id": "see1-113",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Gross Income",
+    "difficulty": "medium",
+    "question": "Income from a hobby is:",
+    "options": [
+      "Reported as self-employment income",
+      "Only taxable if over $400",
+      "Excluded from gross income",
+      "Reported as gross income with no deduction for expenses"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Hobby income is fully includible in gross income. Under TCJA, hobby expenses are not deductible (suspended miscellaneous itemized deductions through 2025)."
+  },
+  {
+    "id": "see1-107",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Gross Income",
+    "difficulty": "easy",
+    "question": "Gambling winnings are:",
+    "options": [
+      "Excluded if offset by losses",
+      "Tax-free if under $5,000",
+      "Only taxable if from casinos",
+      "Fully includible in gross income"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All gambling winnings are fully includible in gross income regardless of the amount. Gambling losses may be deducted as an itemized deduction, but only to the extent of winnings."
+  },
+  {
+    "id": "see1-171",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Dependents",
+    "difficulty": "medium",
+    "question": "To claim a qualifying relative as a dependent, the taxpayer must provide:",
+    "options": [
+      "At least 25% of support",
+      "Any amount of support",
+      "100% of support",
+      "More than half of the person's total support"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For a qualifying relative, the taxpayer must provide more than half of the person's total support for the calendar year."
+  },
+  {
+    "id": "see1-207",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Itemized Deductions",
+    "difficulty": "medium",
+    "question": "Employee home office expenses are:",
+    "options": [
+      "Deductible on Schedule C",
+      "Limited to $1,500",
+      "Deductible on Schedule A",
+      "Not deductible (suspended through 2025)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under TCJA, unreimbursed employee business expenses (including home office) are not deductible through 2025. Self-employed individuals can still claim home office deductions."
+  },
+  {
+    "id": "see1-395",
+    "exam": "EA",
+    "section": "SEE1",
+    "topic": "Capital Gains",
+    "difficulty": "hard",
+    "question": "For cryptocurrency, taxpayers may use:",
+    "options": [
+      "LIFO only",
+      "Only FIFO",
+      "Average cost only",
+      "Specific identification if adequate records exist, otherwise FIFO"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Cryptocurrency can use specific identification if the taxpayer can identify and document which units are sold. Otherwise, FIFO is the default method."
+  }
+]

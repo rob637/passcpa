@@ -1037,6 +1037,22 @@ const Settings: React.FC = () => {
                         Report a Bug
                       </a>
                     </div>
+
+                    <div className="p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl border border-indigo-100 dark:border-indigo-800">
+                      <h3 className="font-medium text-indigo-900 dark:text-indigo-200 mb-2">Join our Community</h3>
+                      <p className="text-sm text-indigo-700 dark:text-indigo-300 mb-4">
+                        Connect with other exam candidates, share study tips, and practice daily quiz questions in our Discord server.
+                      </p>
+                      <a
+                        href="https://discord.gg/XBjzDrws"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"
+                      >
+                        Join Discord
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

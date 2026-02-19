@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "aud-d4-014",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Accounting and Review Services",
+    "difficulty": "hard",
+    "question": "A key difference between International Standards on Auditing (ISAs) and US GAAS is that ISAs:",
+    "options": [
+      "Do not require independence",
+      "Are only for non-public companies",
+      "Are identical to GAAS in every respect",
+      "Use different terminology (e.g., \"Key Audit Matters\" instead of \"Critical Audit Matters\"), have different going concern requirements, and are issued by the IAASB rather than the ASB"
+    ],
+    "correctAnswer": 3,
+    "explanation": "ISAs (issued by the IAASB — International Auditing and Assurance Standards Board) vs. GAAS (issued by AICPA ASB for non-issuers): Key differences: (1) Terminology: Key Audit Matters (KAMs) vs. no current GAAS equivalent (PCAOB has CAMs), (2) Going concern: ISA 570 requires explicit statement about management's use of going concern assumption, (3) ISAs are generally more principles-based, GAAS more rules-based, (4) ISA 701 KAMs are required for all listed entities; GAAS does not require equivalent for non-issuers, (5) ISA report format differs slightly (responsibilities, scope). US GAAS is converging toward ISAs. PCAOB standards apply to public company audits."
+  },
+  {
+    "id": "far-d7-014",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Fair Value Measurement",
+    "difficulty": "easy",
+    "question": "Under ASC 820, Level 1 inputs in the fair value hierarchy are:",
+    "options": [
+      "Unobservable inputs based on the entity's own assumptions",
+      "Quoted prices in active markets for identical assets or liabilities",
+      "Observable inputs other than quoted prices (e.g., interest rates, yield curves)",
+      "Cost less accumulated depreciation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ASC 820 establishes a three-level fair value hierarchy: Level 1: Quoted prices (unadjusted) in active markets for identical assets or liabilities — the most reliable measurement. Level 2: Observable inputs other than Level 1 quotes — includes quoted prices for similar assets, quoted prices in inactive markets, or observable market data (interest rates, yield curves, credit spreads). Level 3: Unobservable inputs — the entity's own assumptions about what market participants would use, subject to more extensive disclosure. Entities must maximize the use of observable inputs and minimize unobservable inputs."
+  },
+  {
+    "id": "reg-prop-054",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Property Transactions",
+    "difficulty": "medium",
+    "question": "Net §1231 gains are treated as:",
+    "options": [
+      "Long-term capital gains",
+      "Short-term capital gains",
+      "Tax-exempt income",
+      "Ordinary income"
+    ],
+    "correctAnswer": 0,
+    "explanation": "§1231 provides best of both worlds: net gains are long-term capital gains (preferential rates), but net losses are ordinary losses (fully deductible)."
+  },
+  {
+    "id": "reg-easy-exp-010",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "AGI stands for:",
+    "options": [
+      "Accumulated Gross Income",
+      "Adjusted Gross Income",
+      "Alternative Gross Income",
+      "Annual Gross Income"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AGI (Adjusted Gross Income) = Gross Income - Adjustments. AGI is important because many deductions and credits are based on AGI limitations."
+  },
+  {
+    "id": "reg-comp-024",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Property Transactions",
+    "difficulty": "hard",
+    "question": "A charitable remainder annuity trust (CRAT):",
+    "options": [
+      "Allows additional contributions",
+      "Has no minimum payout",
+      "Is fully taxable",
+      "Pays a fixed dollar amount annually, must be 5-50% of initial value"
+    ],
+    "correctAnswer": 3,
+    "explanation": "CRAT: fixed annuity (5-50% of initial FMV), no additional contributions, term ≤20 years or lives, 10% remainder test. CRUT: fixed percentage of annual FMV, allows additions. Donor gets immediate deduction for remainder value."
+  },
+  {
+    "id": "far-d23-014",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Related Party Transactions",
+    "difficulty": "easy",
+    "question": "Under ASC 850, which of the following would NOT be considered a related party?",
+    "options": [
+      "An entity under common control with the reporting entity",
+      "A customer who purchases 15% of the entity's products at arm's-length terms",
+      "A principal owner of the entity (more than 10% ownership)",
+      "An equity method investee"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 850-10-20, related parties include: (a) affiliates (entities controlling or controlled by the entity, or under common control); (b) principal owners (owners of more than 10% of voting interests) and their immediate family; (c) management and their immediate family; (d) other parties that can significantly influence or be influenced by the entity (including equity method investees). A customer purchasing 15% of products at arm's-length terms is NOT automatically a related party — the key factor is control or significant influence over the entity, not the volume of transactions. However, such concentrations may require disclosure under ASC 275."
+  },
+  {
+    "id": "far-d12-004",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Consolidation",
+    "difficulty": "medium",
+    "question": "In a consolidation, Parent owns 80% of Subsidiary. Subsidiary sells inventory to Parent (an upstream sale) for $100,000 (cost of $70,000), and 30% remains in Parent's ending inventory. In the eliminating entries, how is the unrealized profit attributed?",
+    "options": [
+      "100% eliminated against the parent's income",
+      "$9,000 eliminated ($30,000 × 30% = $9,000 unrealized profit), with NCI absorbing 20% of the elimination",
+      "100% of unrealized profit eliminated, but no effect on NCI",
+      "$30,000 eliminated entirely against NCI"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For upstream sales (subsidiary sells to parent): Unrealized intercompany profit = ($100,000 − $70,000) × 30% unsold = $9,000. In the eliminating entry: Debit Sales $100,000, Credit COGS $91,000, Credit Inventory $9,000. Since this is an UPSTREAM sale, the subsidiary recorded the profit. Therefore, the unrealized profit elimination reduces the subsidiary's income, which affects both the controlling and noncontrolling interests in proportion to their ownership: NCI absorbs 20% × $9,000 = $1,800 of the eliminated profit. For downstream sales (parent sells to subsidiary), the parent absorbs 100% of the elimination — NCI is not affected."
+  },
+  {
+    "id": "reg-add-029",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Entity Taxation",
+    "difficulty": "medium",
+    "question": "A C corporation must make estimated tax payments if expected tax liability is:",
+    "options": [
+      "$1,000 or more",
+      "$10,000 or more",
+      "$500 or more",
+      "$100 or more"
+    ],
+    "correctAnswer": 2,
+    "explanation": "C corporations must make estimated payments if expected tax is $500 or more. Payments are due the 15th day of the 4th, 6th, 9th, and 12th months of the tax year."
+  },
+  {
+    "id": "reg-d6-006",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "S Corporation Taxation",
+    "difficulty": "easy",
+    "question": "An S corporation files Form 1120-S, which is due for a calendar-year corporation on:",
+    "options": [
+      "April 15",
+      "March 15, with an automatic 6-month extension available (to September 15)",
+      "June 15",
+      "January 31"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under §6072(b), Form 1120-S is due on the 15th day of the 3rd month following the close of the tax year — March 15 for calendar-year S corporations (one month earlier than C corporation returns). An automatic 6-month extension to September 15 is available by filing Form 7004. This earlier deadline was established by the Surface Transportation Act of 2015 to align flow-through entity filing deadlines (partnerships: March 15, S corps: March 15) before individual returns (April 15), giving shareholders/partners time to receive their K-1 information. The S corporation issues Schedule K-1 to each shareholder showing their pro rata share of income, deductions, credits, and other items."
+  },
+  {
+    "id": "reg-ext-163",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Tax Practice Ethics",
+    "difficulty": "medium",
+    "question": "A tax preparer's due diligence requirement includes:",
+    "options": [
+      "Auditing the client's books",
+      "Making reasonable inquiries to determine correctness of information",
+      "Reviewing all bank statements",
+      "Guaranteeing no audit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Due diligence: cannot ignore implications of information furnished. Make reasonable inquiries if information appears incorrect, inconsistent, or incomplete. Increased diligence for certain credits (EITC, CTC, AOTC)."
+  },
+  {
+    "id": "far-d13-015",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Fair Value Measurement",
+    "difficulty": "medium",
+    "question": "Under ASC 820, Level 3 fair value measurements require all of the following disclosures EXCEPT:",
+    "options": [
+      "A reconciliation of beginning and ending balances (rollforward)",
+      "Quantitative information about significant unobservable inputs used",
+      "A description of the valuation technique(s) used",
+      "The name of the independent appraiser who determined the fair value"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under ASC 820-10-50 (as amended by ASU 2018-13), Level 3 disclosures include: (1) A rollforward of beginning to ending balances showing purchases, sales, issuances, settlements, and gains/losses (unrealized and realized, separately). (2) Quantitative information about significant UNOBSERVABLE inputs (e.g., discount rates, growth rates, mortality assumptions). (3) A description of the valuation technique(s) and changes thereto. (4) A sensitivity analysis or narrative discussion of inputs. The identity of the appraiser is NOT a required disclosure. ASU 2018-13 also eliminated the requirement to disclose the amount and reasons for transfers between Level 1 and Level 2 (but retained Level 3 transfer disclosures)."
+  },
+  {
+    "id": "reg-ext-137",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Professional Ethics",
+    "difficulty": "medium",
+    "question": "The AICPA conceptual framework approach to ethics requires:",
+    "options": [
+      "Strict rule following only",
+      "Identifying threats, evaluating significance, and applying safeguards",
+      "Following only state board rules",
+      "Avoiding all client relationships"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Conceptual framework: identify threats (self-interest, self-review, advocacy, familiarity, undue influence), evaluate significance, apply safeguards. Used when specific rules don't cover situation."
+  },
+  {
+    "id": "isc-d4-019",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Operating Systems",
+    "difficulty": "medium",
+    "question": "System hardening involves:",
+    "options": [
+      "Reducing the attack surface by removing unnecessary services, applying patches, configuring security settings, and disabling default accounts",
+      "Adding more software to a server",
+      "Increasing CPU speed",
+      "Making hardware physically harder to access"
+    ],
+    "correctAnswer": 0,
+    "explanation": "System hardening reduces vulnerability: (1) remove unnecessary software, services, and protocols, (2) apply security patches promptly, (3) disable or rename default accounts and change default passwords, (4) configure security settings per benchmarks (CIS Benchmarks, DISA STIGs), (5) implement host-based firewalls, (6) enable logging and auditing, (7) use configuration management tools for consistency. Hardened configurations should be baselined and monitored for drift. Applies to servers, workstations, network devices, and databases."
+  },
+  {
+    "id": "far-d18-004",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Bonds Payable",
+    "difficulty": "medium",
+    "question": "A company retires bonds with a carrying amount of $960,000 by paying $980,000 in the open market. The company should recognize:",
+    "options": [
+      "A gain of $20,000",
+      "A loss of $20,000 on early extinguishment of debt",
+      "No gain or loss",
+      "A reduction in equity of $20,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 470-50-40-2, the difference between the reacquisition price ($980,000) and the net carrying amount of the debt ($960,000) is recognized as a loss on extinguishment of $20,000 in the current period. Gains and losses on early extinguishment of debt are reported in income from continuing operations. The net carrying amount includes unamortized premium or discount, and any unamortized debt issuance costs. These amounts are written off at the time of extinguishment."
+  },
+  {
+    "id": "reg-easy-sp-008",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "Adjustments to income (above-the-line deductions) include:",
+    "options": [
+      "Student loan interest",
+      "Charitable contributions",
+      "State income taxes",
+      "Mortgage interest"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Above-the-line adjustments reduce AGI: student loan interest (up to $2,500), educator expenses, HSA, self-employed health insurance, IRA contributions, SE tax deduction."
+  },
+  {
+    "id": "reg-ind-051",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "Which of the following is excluded from gross income?",
+    "options": [
+      "Life insurance proceeds paid by reason of death",
+      "Punitive damages in a lawsuit",
+      "Unemployment compensation",
+      "Gambling winnings"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Life insurance proceeds paid by reason of death are excluded from gross income under IRC §101. Gambling winnings, unemployment, and punitive damages are all taxable."
+  },
+  {
+    "id": "far-d15-021",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Fair Value Measurement",
+    "difficulty": "medium",
+    "question": "An acquirer in a business combination acquires a trademark with the intent to discontinue its use (a \"defensive asset\"). Under ASC 820 and ASC 350, the defensive trademark is:",
+    "options": [
+      "Not recognized because it will not be used",
+      "Recognized at fair value based on the highest and best use from a market participant's perspective (which may include defensive use — preventing competitors from using it)",
+      "Recognized at zero value",
+      "Expensed immediately"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 820-10-35-10, fair value is based on the HIGHEST AND BEST USE from a market participant's perspective, not the entity's intended use. Even if the acquirer plans to discontinue the trademark, a market participant might use it offensively (actively marketing under the brand). Therefore, the defensive trademark is recognized at fair value based on market participant assumptions. Under ASC 350-30-35-18, a defensive intangible asset has a finite life based on the period during which the entity would be expected to hold it (considering legal, contractual, and economic factors). The useful life may be shorter than the legal life. The asset is amortized over this period. Impairment testing under ASC 360 applies."
+  },
+  {
+    "id": "bar-plan-001",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Financial Planning",
+    "difficulty": "easy",
+    "question": "The Net Present Value (NPV) method requires which of the following?",
+    "options": [
+      "Historical financial data only",
+      "Payback period calculation",
+      "Straight-line depreciation",
+      "A discount rate to present value future cash flows"
+    ],
+    "correctAnswer": 3,
+    "explanation": "NPV discounts all future cash flows to their present value using a required rate of return (discount rate), then subtracts the initial investment. A positive NPV indicates the project adds value."
+  },
+  {
+    "id": "aud-d9-002",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Group Audits",
+    "difficulty": "hard",
+    "question": "When determining materiality for components in a group audit, component materiality should be set:",
+    "options": [
+      "Equal to group materiality",
+      "Lower than group materiality, to reduce the risk that the aggregate of uncorrected and undetected misstatements across all components exceeds group materiality",
+      "Higher than group materiality",
+      "The component auditor decides without any guidance from the group engagement partner"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C 600.21 requires that component materiality be set at an amount less than group materiality. The rationale: if each component were audited at group materiality, the aggregate misstatement across all components could far exceed group materiality. For example, if group materiality is $1 million and there are 10 components, each could have up to $1 million in undetected misstatements (total $10 million). Setting component materiality lower (e.g., $200,000 to $500,000) reduces this aggregation risk. Component materiality need not be an arithmetically proportional share — it requires professional judgment considering each component's significance."
+  },
+  {
+    "id": "bar-easy-sp-028",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Prospective Information",
+    "difficulty": "easy",
+    "question": "A financial forecast differs from a projection because a forecast:",
+    "options": [
+      "Reflects expected results based on most likely assumptions",
+      "Is always audited",
+      "Cannot be distributed externally",
+      "Uses historical data only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Forecast: expected results based on most likely conditions. Projection: results based on hypothetical assumptions (what-if scenarios). Forecasts for general use; projections for limited use."
+  },
+  {
+    "id": "reg-d4-013",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "Under the simplified method for the home office deduction, the deduction is:",
+    "options": [
+      "Not available to self-employed individuals",
+      "$10 per square foot with no limit",
+      "Unlimited based on actual expenses",
+      "$5 per square foot of home office space, up to a maximum of 300 square feet ($1,500 maximum)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "IRC §280A: Home office deduction requires regular and exclusive use for business (principal place of business, or place where taxpayer meets clients). Two methods: (1) Simplified method: $5/sq ft × up to 300 sq ft = max $1,500. No depreciation deduction, no home expenses tracking. (2) Regular method: actual expenses allocated by percentage of home used (mortgage interest, property tax, utilities, insurance, depreciation, repairs). Limited to gross income from the home-based business (cannot create a loss). Note: employees generally cannot deduct home offices under TCJA (W-2 employees lost unreimbursed employee expense deduction 2018-2025)."
+  },
+  {
+    "id": "far-comp-020",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Lease Accounting",
+    "difficulty": "hard",
+    "question": "A lessor accounts for a sales-type lease by recognizing:",
+    "options": [
+      "Depreciation on asset",
+      "Rental income only",
+      "Operating lease expense",
+      "Net investment in lease, selling profit/loss at commencement, and interest income over term"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Sales-type (lessor): Dr. Net investment (PV of payments + residual). Cr. Asset carrying amount. Recognize selling profit/loss at commencement. Interest income = effective rate × net investment. Derecognize underlying asset."
+  },
+  {
+    "id": "bar-d3-018",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Cost Accounting",
+    "difficulty": "medium",
+    "question": "Which of the following is an external failure cost in a cost of quality (COQ) framework?",
+    "options": [
+      "Warranty repairs and product recalls",
+      "Employee training on quality procedures",
+      "Rework of defective units before shipment",
+      "Inspection of incoming materials"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cost of Quality (COQ) categories: (1) Prevention costs — quality planning, training, process design, supplier certification, (2) Appraisal costs — inspection, testing, quality audits, sampling, (3) Internal failure costs — scrap, rework, reinspection, downgrading (defects found BEFORE delivery), (4) External failure costs — warranty, returns, recalls, lawsuits, lost customers (defects found AFTER delivery). External failures are the most expensive. Investing in prevention reduces total COQ — the 1-10-100 rule: $1 to prevent, $10 to fix internally, $100 to fix externally."
+  },
+  {
+    "id": "aud-d1-021",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Forming Conclusions and Reporting",
+    "difficulty": "hard",
+    "question": "When the group engagement partner decides to make reference to a component auditor in the group audit report:",
+    "options": [
+      "The component auditor's report is attached",
+      "The opinion is not modified; the report mentions the component auditor and indicates the portion of the financial statements audited by the component auditor",
+      "The group auditor must re-audit the component",
+      "The group opinion is modified"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C §600 (Group Audits): The group engagement partner can either: (1) Make reference — opinion is NOT modified, but the group auditor's report identifies the component auditor and indicates the magnitude of the portion audited (percentage of total assets and revenues). Divides responsibility between auditors. (2) Not make reference — group auditor assumes full responsibility for the entire audit. Must then perform additional procedures (evaluate component auditor's work, review working papers, perform supplemental procedures). Reference decision depends on: materiality of component, knowledge of component auditor, risk assessment."
+  },
+  {
+    "id": "reg-d5-006",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "C Corporation Taxation",
+    "difficulty": "hard",
+    "question": "The accumulated earnings tax (AET) under §531 is imposed when:",
+    "options": [
+      "A corporation has any retained earnings",
+      "A corporation accumulates earnings beyond the reasonable needs of the business with the purpose of avoiding the tax on dividends to shareholders — the tax is 20% of accumulated taxable income",
+      "A corporation pays dividends",
+      "A corporation has gross receipts over $10 million"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The accumulated earnings tax (§531-537) is a penalty tax designed to discourage corporations from accumulating earnings to avoid shareholder-level dividend taxes: (1) imposed at 20% on \"accumulated taxable income\" (taxable income minus income taxes, charitable contributions in excess of the 10% limit, certain adjustments, dividends paid, and the accumulated earnings credit); (2) the accumulated earnings credit is the greater of: (a) $250,000 ($150,000 for personal service corporations) minus accumulated E&P at the beginning of the year, or (b) the amount of E&P retained for reasonable business needs; (3) \"reasonable needs\" include business expansion, debt retirement, working capital needs (Bardahl formula), investments, or contingencies; (4) the tax applies only when the purpose of the ..."
+  },
+  {
+    "id": "aud-ext-151",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Audit Evidence",
+    "difficulty": "medium",
+    "question": "Testing the completeness assertion for liabilities is best accomplished by:",
+    "options": [
+      "Vouching entries to invoices",
+      "Reviewing the general ledger",
+      "Searching for unrecorded liabilities through subsequent payments and open invoices",
+      "Confirming recorded liabilities"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Completeness for liabilities: search for unrecorded items. Examine subsequent disbursements, open invoice files, receiving reports without invoices, loan agreements. Tracing starts outside records."
+  },
+  {
+    "id": "aud-d2-020",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Professional Responsibilities",
+    "difficulty": "easy",
+    "question": "Under the AICPA Code, which is considered an act discreditable to the profession?",
+    "options": [
+      "Charging reasonable fees",
+      "Disagreeing with a client on an accounting issue",
+      "Retention of client records after a demand for their return, discrimination or harassment in employment practices, or negligence in the preparation of financial statements or tax returns",
+      "Declining an engagement"
+    ],
+    "correctAnswer": 2,
+    "explanation": "AICPA ET §1.400 (Acts Discreditable): Specific acts include: (1) Retaining client records after a demand (client-provided records must be returned even if fees are unpaid; CPA work product may be withheld), (2) Discrimination and harassment in employment, (3) Negligence in preparation of financial statements or records, (4) Government employment — failing to follow government rules, (5) Solicitation or disclosure of CPA exam questions, (6) Failure to file own tax returns or pay tax liabilities, (7) Negligence in preparing tax returns for others, (8) False/misleading/deceptive advertising. These are minimum standards — state boards may have additional provisions."
+  },
+  {
+    "id": "aud-d4-013",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Forming Conclusions and Reporting",
+    "difficulty": "medium",
+    "question": "When a client makes a justified change in accounting principle with proper disclosure, the auditor should:",
+    "options": [
+      "Issue an adverse opinion",
+      "Require the client to use the old method",
+      "Issue a qualified opinion",
+      "Issue an unmodified opinion with an emphasis-of-matter paragraph highlighting the accounting change"
+    ],
+    "correctAnswer": 3,
+    "explanation": "AU-C §708 (Consistency of Financial Statements): When a change in accounting principle is: (1) In conformity with GAAP (e.g., switching depreciation methods, adopting a new standard — ASC 842 leases, ASC 606 revenue), (2) Properly applied and adequately disclosed. The auditor issues an unmodified opinion with an emphasis-of-matter paragraph (or \"change paragraph\") referencing the note that discusses the change. If the change is NOT in conformity with GAAP: qualified or adverse opinion (depending on materiality/pervasiveness). If prior periods are retrospectively restated: the consistency paragraph notes the restatement."
+  },
+  {
+    "id": "isc-d7-014",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Systems Development",
+    "difficulty": "medium",
+    "question": "User Acceptance Testing (UAT) in the SDLC is performed by:",
+    "options": [
+      "Software developers only",
+      "End users (business stakeholders) to validate that the system meets business requirements and functions correctly in real-world scenarios before production deployment",
+      "The database administrator",
+      "External auditors"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Testing levels in SDLC: (1) Unit testing — developers test individual modules/functions, (2) Integration testing — test interfaces between modules, (3) System testing — test the complete system against specifications, (4) User Acceptance Testing (UAT) — business users test against requirements. UAT types: (1) Alpha testing — internal users in development environment, (2) Beta testing — external users in production-like environment, (3) Contract acceptance testing — against contractual requirements, (4) Regulation acceptance testing — verify compliance requirements. UAT best practices: (1) Business users write test cases based on requirements, (2) Sign-off required before go-live, (3) Defect tracking and resolution, (4) Testing with realistic data. Audit focus: (1) Was UAT completed sati..."
+  },
+  {
+    "id": "bar-ba-004",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Business Valuation",
+    "difficulty": "hard",
+    "question": "A project is expected to generate cash flows of $10,000 per year for 5 years. If the discount rate is 10%, what is the present value of these cash flows? (PV annuity factor for 5 years at 10% = 3.791)",
+    "options": [
+      "$50,000",
+      "$37,910",
+      "$42,000",
+      "$33,333"
+    ],
+    "correctAnswer": 1,
+    "explanation": "PV = Annual Cash Flow × PV Annuity Factor = $10,000 × 3.791 = $37,910. DCF analysis discounts future cash flows to their present value using the appropriate discount rate."
+  },
+  {
+    "id": "far-d16-009",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Receivables",
+    "difficulty": "easy",
+    "question": "Under ASC 326 (CECL model), the allowance for credit losses on trade receivables reflects:",
+    "options": [
+      "Only losses that have already been incurred",
+      "Expected credit losses over the remaining contractual life of the receivables",
+      "The fair value of the receivables",
+      "The maximum possible loss"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Current Expected Credit Losses (CECL) model under ASC 326-20 requires entities to measure expected credit losses over the contractual life of financial assets at the reporting date, based on historical experience, current conditions, and reasonable and supportable forecasts. Unlike the prior \"incurred loss\" model, CECL is forward-looking and requires recognition of expected losses from Day 1, even before a loss event has occurred. For trade receivables, entities may use a practical expedient (aging schedule, loss-rate method, or roll-rate method)."
+  },
+  {
+    "id": "far-exp-039",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Subsequent Events",
+    "difficulty": "hard",
+    "question": "A subsequent event providing evidence about conditions existing at the balance sheet date:",
+    "options": [
+      "Is disclosed only",
+      "Requires adjustment to the financial statements (recognized)",
+      "Is ignored",
+      "Results in qualification of audit opinion"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Type 1 (recognized): conditions existed at B/S date, adjust F/S. Type 2 (non-recognized): conditions arose after B/S date, disclose if material. Period: B/S date through F/S issuance/availability."
+  },
+  {
+    "id": "isc-d4-003",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Cryptography",
+    "difficulty": "easy",
+    "question": "The key difference between symmetric and asymmetric encryption is:",
+    "options": [
+      "Symmetric uses one shared key for encrypt/decrypt; asymmetric uses a public-private key pair",
+      "Symmetric encryption is always more secure",
+      "Symmetric encryption requires a certificate authority",
+      "Asymmetric encryption is faster than symmetric"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Symmetric encryption (AES, 3DES): single shared key, fast, used for bulk data encryption. Challenge: secure key distribution. Asymmetric encryption (RSA, ECC): public key (encrypt/verify) and private key (decrypt/sign), slower, solves key distribution problem. In practice, TLS uses both: asymmetric to exchange a session key, then symmetric for data transfer (hybrid approach). Digital signatures use asymmetric: sign with private key, verify with public key."
+  },
+  {
+    "id": "far-d21-016",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Derivatives and Hedging",
+    "difficulty": "easy",
+    "question": "A company enters into a commodity futures contract but does not designate it as a hedge. Changes in fair value of this derivative are:",
+    "options": [
+      "Deferred in OCI until settlement",
+      "Recognized in net income in each period",
+      "Not recorded until settlement",
+      "Capitalized as part of inventory cost"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 815-10-35-2, derivatives not designated as hedging instruments (speculative or trading derivatives) are recognized at fair value on the balance sheet, with all changes in fair value recognized in net income currently. There is no deferral mechanism — gains and losses flow through earnings each reporting period. This applies to all types of derivatives (forwards, futures, options, swaps) that are either not designated or do not qualify for hedge accounting under ASC 815-20."
+  },
+  {
+    "id": "far-d17-020",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Intangible Assets",
+    "difficulty": "medium",
+    "question": "Under ASC 350-40, costs incurred during which stage of internal-use software development should be capitalized?",
+    "options": [
+      "Preliminary project stage",
+      "Application development stage",
+      "Post-implementation/operation stage",
+      "All stages"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ASC 350-40-25 identifies three stages: (1) Preliminary project stage — costs are expensed (conceptual formulation, evaluation of alternatives, determining technology requirements); (2) Application development stage — costs are capitalized (design, coding, testing, installation); (3) Post-implementation/operation stage — costs are expensed (training, maintenance, minor upgrades). Data conversion costs are capitalized only to the extent necessary for the software to be placed in service. ASU 2018-15 extended this guidance to cloud computing arrangements (implementation costs of hosting arrangements)."
+  },
+  {
+    "id": "aud-ssars-053",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Other Services",
+    "difficulty": "easy",
+    "question": "A preparation engagement differs from a compilation because:",
+    "options": [
+      "Preparation requires analytical procedures",
+      "No report is required in a preparation engagement",
+      "Independence is required for preparation",
+      "Preparation provides more assurance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In a preparation engagement, no report is issued by the accountant. A legend is required on each page stating no assurance is provided. Compilations require an accountant's report."
+  },
+  {
+    "id": "aud-d9-008",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Audit Planning",
+    "difficulty": "easy",
+    "question": "Under AU-C 300, the auditor must establish an overall audit strategy that:",
+    "options": [
+      "Replaces the need for an audit plan",
+      "Sets the scope, timing, and direction of the audit and guides the development of the detailed audit plan",
+      "Is optional for recurring engagements",
+      "Is developed after fieldwork is completed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C 300.07 requires the auditor to establish an overall audit strategy that sets the scope, timing, and direction of the audit. The strategy guides the development of the more detailed audit plan. Key elements include: (1) characteristics of the engagement (reporting framework, industry, locations); (2) reporting objectives and timing; (3) significant factors affecting the engagement team's efforts (materiality, risk areas, IT considerations); (4) results of preliminary engagement activities; (5) resources needed (team composition, budget, specialists). The audit strategy is developed before the detailed audit plan and is updated as necessary throughout the engagement."
+  },
+  {
+    "id": "reg-corp-050",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Corporate Taxation",
+    "difficulty": "medium",
+    "question": "For §351 nonrecognition treatment, transferors must receive:",
+    "options": [
+      "At least 80% control immediately after exchange",
+      "At least 50% control immediately after exchange",
+      "100% of all stock",
+      "Any stock"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For §351 tax-free incorporation, transferors as a group must control 80% or more of the corporation immediately after the exchange. Control means 80% voting and 80% of each class."
+  },
+  {
+    "id": "tcp-d5-001",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "For 2025, a single taxpayer under age 65 who does not itemize deductions claims a standard deduction of:",
+    "options": [
+      "$15,000",
+      "$14,600",
+      "$21,900",
+      "$12,950"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The standard deduction is adjusted annually for inflation. For 2025 the amount for single filers is $15,000 ($30,000 MFJ). Taxpayers age 65+ or blind get additional amounts ($1,950 for single/HOH, $1,550 for MFJ per qualifying spouse in 2025). The taxpayer claims the GREATER of the standard deduction or total itemized deductions (Schedule A). Key itemized deductions: state/local taxes (capped at $10,000 SALT), mortgage interest (acquisition debt up to $750K), charitable contributions, medical expenses (> 7.5% AGI). Dependents claimed on another's return have a limited standard deduction (greater of $1,350 or earned income + $450, capped at the regular standard deduction)."
+  },
+  {
+    "id": "aud-d6-016",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Risk Assessment",
+    "difficulty": "hard",
+    "question": "When a client uses a service organization that is significant to the audit, the user auditor may obtain a SOC 1 Type 2 report. This report includes:",
+    "options": [
+      "Only management's description of the service organization's system",
+      "A description of the system AND the service auditor's opinion on whether controls were suitably designed AND operating effectively during the specified period",
+      "Only the operating effectiveness of controls",
+      "The service organization's financial statements"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under AU-C 402 and SSAE 18 (AT-C 320): SOC 1 Type 1 report: (1) Management's description of the service organization's system. (2) Service auditor's opinion on whether controls are SUITABLY DESIGNED as of a specified date. (3) Does NOT test operating effectiveness. SOC 1 Type 2 report: (1) Description of the system. (2) Service auditor's opinion on the DESIGN and OPERATING EFFECTIVENESS of controls over a specified PERIOD (e.g., Oct 1 – Sep 30). (3) Includes test results and control objectives tested. The user auditor evaluates the SOC report's: coverage period, scope/complementary user entity controls, any exceptions/deviations noted, and whether the report covers the relevant period. SOC 2 and SOC 3 reports focus on trust services criteria (security, availability, etc.) and are genera..."
+  },
+  {
+    "id": "reg-law-010",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Business Law",
+    "difficulty": "easy",
+    "question": "Which of the following terminates an agency by operation of law?",
+    "options": [
+      "Death of the principal",
+      "Mutual agreement of the parties",
+      "Revocation by the principal",
+      "Completion of the agency purpose"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Agency terminates by operation of law upon death or incapacity of either party, impossibility, or change in law. Completion, mutual agreement, and revocation are terminations by acts of the parties."
+  },
+  {
+    "id": "isc-wc-022",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Control Design",
+    "difficulty": "hard",
+    "question": "Proper segregation of duties in IT separates which functions?",
+    "options": [
+      "System administration, programming, and computer operations",
+      "Email management and web browsing",
+      "Hardware purchasing and installation",
+      "User training and help desk support"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IT segregation of duties: Systems development/programming (create/modify), Computer operations (run systems), Security administration (access control), Data control (input/output). One person should not have conflicting responsibilities that could allow errors or fraud."
+  },
+  {
+    "id": "isc-wc-029",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Security Controls",
+    "difficulty": "medium",
+    "question": "Defense in depth is a security strategy that:",
+    "options": [
+      "Prioritizes speed over security",
+      "Uses multiple layers of security controls",
+      "Focuses only on endpoint protection",
+      "Relies on a single strong perimeter firewall"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Defense in depth: Multiple overlapping security layers (physical, network, host, application, data). If one layer fails, others provide protection. Includes: firewalls, IDS/IPS, encryption, access controls, training, monitoring. No single point of failure."
+  },
+  {
+    "id": "far-easy-sp-020",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Equity",
+    "difficulty": "easy",
+    "question": "A 2-for-1 stock split:",
+    "options": [
+      "Doubles retained earnings",
+      "Decreases the number of shares",
+      "Doubles the number of shares and halves the par value per share",
+      "Increases total stockholders equity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Stock split: proportionally increases shares and decreases par value. Total equity unchanged. 2-for-1: twice as many shares at half the par."
+  },
+  {
+    "id": "aud-d8-024",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Tests of Controls",
+    "difficulty": "hard",
+    "question": "When testing a daily control procedure, an auditor typically needs a sample of approximately 25-60 items for a moderate-risk control. If the same control operated weekly instead of daily, the appropriate sample size would be:",
+    "options": [
+      "The same 25-60 items",
+      "Smaller — approximately 5-15 items, because there are only about 52 occurrences in a year",
+      "Larger — 100 items",
+      "Zero — weekly controls cannot be tested through sampling"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The frequency of control operation directly affects sample size. Common guidance suggests: daily controls (250+ occurrences/year): test 25-60+ items; weekly controls (52 occurrences/year): test 5-15 items; monthly controls (12 occurrences/year): test 2-5 items; quarterly controls (4 occurrences/year): test 1-2 items. The sample size is influenced by the population size (number of times the control operates) and the tolerable and expected deviation rates. For a weekly control with only 52 occurrences, a sample of 5-15 provides reasonable coverage while being practical."
+  },
+  {
+    "id": "aud-report-003",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Audit Reports",
+    "difficulty": "easy",
+    "question": "An adverse audit opinion indicates that the financial statements:",
+    "options": [
+      "Have minor errors that do not affect the overall presentation",
+      "Are materially and pervasively misstated",
+      "Are presented fairly with some exceptions",
+      "Cannot be audited due to scope limitations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An adverse opinion is the most severe modification. It is issued when misstatements are both material and pervasive to the financial statements, meaning the statements do not present fairly."
+  },
+  {
+    "id": "bar-d1-007",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Performance Measurement",
+    "difficulty": "easy",
+    "question": "In responsibility accounting, a profit center manager is evaluated based on:",
+    "options": [
+      "Only the center's total costs",
+      "Only the center's revenue",
+      "Both the center's revenue and controllable costs (contribution margin)",
+      "The entire company's net income"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Responsibility center types: (1) Cost center — manager controls costs only (manufacturing, service departments), (2) Revenue center — manager controls revenue (sales departments), (3) Profit center — manager controls both revenue and costs (divisions, product lines), (4) Investment center — manager controls revenue, costs, AND capital investment decisions (ROI, RI). The key principle: managers should only be evaluated on factors they can control."
+  },
+  {
+    "id": "tcp-easy-sp-025",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "The SALT deduction (state and local taxes) is currently limited to:",
+    "options": [
+      "$10,000",
+      "$15,000",
+      "No limit",
+      "$5,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "TCJA capped the SALT deduction at $10,000 ($5,000 MFS) for state/local income, sales, and property taxes combined. This limit is set to expire after 2025."
+  },
+  {
+    "id": "bar-d2-013",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Business Combinations",
+    "difficulty": "easy",
+    "question": "Under ASC 805, what method is required for accounting for business combinations?",
+    "options": [
+      "Cost method",
+      "Acquisition method (formerly purchase method)",
+      "Pooling-of-interests method",
+      "Equity method"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ASC 805 requires the acquisition method for all business combinations. Key steps: (1) Identify the acquirer, (2) Determine the acquisition date, (3) Measure consideration transferred at fair value, (4) Recognize and measure identifiable assets acquired and liabilities assumed at fair value, (5) Recognize goodwill (or a bargain purchase gain). The pooling-of-interests method was eliminated by SFAS 141 (2001). Acquisition costs (legal, accounting, due diligence fees) are expensed, not capitalized."
+  },
+  {
+    "id": "bar-d10-020",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Income Tax Accounting",
+    "difficulty": "medium",
+    "question": "Intraperiod tax allocation under ASC 740 requires:",
+    "options": [
+      "Allocating total income tax expense entirely to continuing operations",
+      "Allocating total income tax expense among continuing operations, discontinued operations, other comprehensive income, and items charged directly to equity",
+      "Deferring all tax effects to future periods",
+      "Reporting taxes only in the footnotes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Intraperiod tax allocation distributes total income tax expense across the components that generated taxable income or deductions within the same period. The tax effect is allocated to: (1) Continuing operations (using a computed effective rate on pre-tax income from continuing operations), (2) Discontinued operations, (3) Other comprehensive income (e.g., unrealized gains/losses on AFS securities, pension adjustments, translation adjustments, cash flow hedge gains/losses), (4) Items charged/credited directly to equity (e.g., prior period adjustments, certain stock compensation items). This ensures each component reflects its own tax impact, providing meaningful after-tax presentation for each."
+  },
+  {
+    "id": "reg-ext-92",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Business Law",
+    "difficulty": "medium",
+    "question": "To be negotiable under UCC Article 3, an instrument must contain:",
+    "options": [
+      "An unconditional promise or order to pay a fixed amount of money",
+      "A statement of the underlying obligation",
+      "A conditional promise to pay",
+      "The signature of the payee"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Negotiability requires: unconditional promise/order, fixed amount of money, payable to bearer or order, payable on demand or at definite time, no unauthorized undertaking. Conditions destroy negotiability."
+  },
+  {
+    "id": "isc-wc-019",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Processing Controls",
+    "difficulty": "medium",
+    "question": "A validity check verifies that:",
+    "options": [
+      "Numerical data falls within an acceptable range",
+      "A transaction has proper authorization",
+      "All required fields contain data",
+      "Input data matches predetermined valid values or format"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Input validation controls: Validity/format check (matches expected values), Completeness check (all fields present), Range check (within limits), Reasonableness check (logical), Limit check (does not exceed maximum). Validity ensures data conforms to defined parameters."
+  },
+  {
+    "id": "tcp-wc-060",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Entity Tax Compliance",
+    "difficulty": "hard",
+    "question": "A C corporation expects tax liability of $1,000,000 for the current year. Last year's tax was $800,000. To avoid estimated tax penalty, the corporation must pay estimated taxes of at least:",
+    "options": [
+      "$1,000,000 (100% of current year)",
+      "The lesser of $800,000 or $900,000",
+      "$800,000 (100% of prior year)",
+      "$900,000 (90% of current year)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Corporations avoid underpayment penalty by paying the lesser of: (1) 100% of prior year tax ($800,000), or (2) 100% of current year tax ($1,000,000). Unlike individuals, there's no 90% rule. For large corporations (prior year > $1M), the prior-year option is limited to the first quarter."
+  },
+  {
+    "id": "tcp-est-002",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Estate Planning",
+    "difficulty": "hard",
+    "question": "Under current law (post-H.R. 1), a decedent's estate can pass approximately how much to non-spouse heirs tax-free using the unified credit?",
+    "options": [
+      "$5 million",
+      "$27.2 million (married couple, indexed)",
+      "$13.6 million (indexed)",
+      "$1 million"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The unified credit exempts approximately $13.6 million (2026, indexed) per individual from estate/gift tax. A married couple can pass approximately $27.2 million using portability of the deceased spouse's unused exemption."
+  },
+  {
+    "id": "isc-access-001",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Access Controls",
+    "difficulty": "easy",
+    "question": "Multi-factor authentication requires at least two factors from different categories. Which combination satisfies this requirement?",
+    "options": [
+      "Password and hardware token",
+      "Password and PIN",
+      "Two different passwords",
+      "Fingerprint and facial recognition"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The three authentication factor categories are: something you know (password), something you have (token), something you are (biometric). Password + token combines two different categories."
+  },
+  {
+    "id": "tcp-base-corp-002",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "C Corporation Taxation",
+    "difficulty": "hard",
+    "question": "The accumulated earnings tax applies to C corporations that:",
+    "options": [
+      "Fail to pay dividends for 3 consecutive years",
+      "Accumulate earnings beyond reasonable business needs to avoid shareholder tax",
+      "Have more than 100 shareholders",
+      "Have accumulated earnings exceeding $250,000"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The accumulated earnings tax (currently 20%) penalizes corporations that accumulate earnings beyond reasonable business needs to help shareholders avoid dividend taxes. The $250,000 is just a safe harbor, not a trigger."
+  },
+  {
+    "id": "aud-d7-014",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Fraud Risk",
+    "difficulty": "medium",
+    "question": "Under AU-C 240, the auditor must perform which procedures to address the presumed risk of management override of controls, regardless of the assessment of other fraud risks?",
+    "options": [
+      "No specific procedures are required",
+      "Test the appropriateness of journal entries and other adjustments, review accounting estimates for bias, and evaluate the business rationale for significant unusual transactions",
+      "Only review the minutes of board meetings",
+      "Only confirm receivables"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C 240.32 requires three specific procedures to address the risk of management override, which is always present: (1) Test the appropriateness of journal entries recorded in the general ledger and other adjustments (especially those made at the end of the reporting period) — select entries based on characteristics of fraudulent entries; (2) Review accounting estimates for biases (hindsight review of prior-year estimates, assessment of current estimates for management bias); (3) Evaluate the business rationale for significant unusual transactions outside the normal course of business. These procedures are mandatory regardless of the auditor's overall fraud risk assessment."
+  },
+  {
+    "id": "isc-appsec-004",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Application Security",
+    "difficulty": "hard",
+    "question": "Broken Object Level Authorization (BOLA) in APIs occurs when:",
+    "options": [
+      "Rate limiting is not implemented",
+      "API documentation is publicly available",
+      "Encryption is not used for API calls",
+      "APIs fail to verify that users can only access their authorized objects"
+    ],
+    "correctAnswer": 3,
+    "explanation": "BOLA (OWASP API #1) occurs when APIs don't properly check authorization for each object accessed. Attackers manipulate object IDs to access unauthorized data belonging to other users."
+  },
+  {
+    "id": "bar-elite-018",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Risk Management",
+    "difficulty": "hard",
+    "question": "Company X has fixed costs of $3 million and variable costs of 40% of sales. Company Y has fixed costs of $1 million and variable costs of 70% of sales. Both have $5 million in revenue. If revenue increases 10%, which company experiences a larger percentage increase in operating income?",
+    "options": [
+      "Company Y, because its lower fixed costs make it more responsive",
+      "Company X, because higher operating leverage amplifies the revenue change",
+      "Both experience the same percentage increase in operating income",
+      "Neither sees a material change because the variable cost offset cancels the increase"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Company X: CM = $5M × 60% = $3M; OI = $3M − $3M FC = $0 at breakeven. With 10% revenue increase: $5.5M × 60% − $3M = $300K. Company Y: CM = $5M × 30% = $1.5M; OI = $1.5M − $1M = $500K. With 10% increase: $5.5M × 30% − $1M = $650K, a 30% increase. X goes from $0 to $300K — higher DOL amplifies both gains and losses."
+  },
+  {
+    "id": "isc-easy-004",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Controls",
+    "difficulty": "easy",
+    "question": "A backup is an example of which type of control?",
+    "options": [
+      "Input control",
+      "Corrective control",
+      "Detective control",
+      "Preventive control"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Backups are corrective controls—they help restore systems after a problem occurs. Preventive controls stop problems. Detective controls identify problems."
+  },
+  {
+    "id": "far-comp-025",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Nonmonetary Transactions",
+    "difficulty": "hard",
+    "question": "A nonmonetary exchange has commercial substance when:",
+    "options": [
+      "Items have equal value",
+      "The configuration of future cash flows changes significantly (timing, amount, or risk)",
+      "Any exchange occurs",
+      "No boot is received"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Commercial substance: entity's cash flows change significantly due to exchange (timing, amount, risk). If commercial substance: record at fair value, recognize gain/loss. If not: record at book value (no gain), unless boot received."
+  },
+  {
+    "id": "far-lease-053",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Leases",
+    "difficulty": "easy",
+    "question": "A short-term lease exemption applies to leases with a term of:",
+    "options": [
+      "6 months or less",
+      "36 months or less",
+      "24 months or less",
+      "12 months or less"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Lessees may elect not to recognize lease assets/liabilities for short-term leases (12 months or less at commencement with no purchase option reasonably certain to exercise)."
+  },
+  {
+    "id": "far-d8-022",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Intangible Assets",
+    "difficulty": "medium",
+    "question": "In a business combination, a company acquires an identifiable customer list intangible asset with a fair value of $300,000 and estimated useful life of 5 years. How is this asset accounted for after the acquisition?",
+    "options": [
+      "Expensed immediately as there is no contractual right",
+      "Amortized straight-line over 5 years and tested for impairment when events indicate",
+      "Tested for impairment annually but not amortized",
+      "Written off at the end of the first year"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 350-30-35, an intangible asset with a finite useful life is amortized over that useful life. The customer list ($300,000, 5-year life) would be amortized at $60,000 per year (straight-line) or another systematic method reflecting the pattern of economic benefits. Finite-lived intangibles are NOT tested for impairment annually — they are tested only when events or changes in circumstances indicate the carrying amount may not be recoverable (trigger-based impairment under ASC 360-10). This contrasts with goodwill and indefinite-lived intangibles, which require annual impairment testing."
+  },
+  {
+    "id": "tcp-ext-048",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Property Transactions",
+    "difficulty": "medium",
+    "question": "The home sale exclusion under §121 allows exclusion of up to:",
+    "options": [
+      "$500,000 single / $1,000,000 MFJ",
+      "$250,000 single / $500,000 MFJ",
+      "$125,000 single / $250,000 MFJ",
+      "$250,000 for all filing statuses"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Section 121 allows exclusion of gain up to $250,000 ($500,000 MFJ) on sale of principal residence. Requirements: owned and used as principal residence for 2 of 5 years before sale. Generally can only use once every 2 years."
+  },
+  {
+    "id": "aud-d6-022",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Audit Evidence",
+    "difficulty": "medium",
+    "question": "Under AU-C 610, when the external auditor uses the work of internal auditors, the external auditor:",
+    "options": [
+      "Can outsource all testing to internal audit",
+      "Must evaluate internal audit's competence, objectivity, and systematic/disciplined approach, and then REPERFORM some of the work to evaluate its adequacy",
+      "Accepts internal audit's conclusions without review",
+      "Must perform all procedures independently without using internal audit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under AU-C 610.07-.09, the external auditor may use internal auditors' work but must: (1) Evaluate the internal audit function's: COMPETENCE (qualifications, training), OBJECTIVITY (reporting structure, freedom from conflicting responsibilities), and APPLICATION OF A SYSTEMATIC AND DISCIPLINED APPROACH (quality control, documentation). (2) Evaluate the ADEQUACY of specific internal audit work for the external audit's purposes — including REPERFORMING some of the work. (3) Not use internal audit to perform procedures in areas of: significant judgment, higher risk of material misstatement, or where the external auditor's own procedures are needed. The external auditor remains SOLELY RESPONSIBLE for the audit opinion. Internal auditors may also provide DIRECT ASSISTANCE under specific circ..."
+  },
+  {
+    "id": "far-fa-004",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Fixed Assets",
+    "difficulty": "hard",
+    "question": "A company installs equipment with a legal obligation to remove it in 10 years at an estimated cost of $50,000. The credit-adjusted risk-free rate is 6%. The PV factor is 0.5584. What is the initial ARO liability?",
+    "options": [
+      "$27,920",
+      "$50,000",
+      "$5,000",
+      "$30,000"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Initial ARO = PV of future removal cost = $50,000 × 0.5584 = $27,920. The asset is also increased by $27,920. Each year, accretion expense increases the liability."
+  },
+  {
+    "id": "reg-bl-debt-003",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Business Law",
+    "difficulty": "hard",
+    "question": "In bankruptcy, secured creditors are paid:",
+    "options": [
+      "Last, after all unsecured creditors",
+      "Equally with unsecured creditors",
+      "From their collateral first, then as unsecured for any deficiency",
+      "Only if the business reorganizes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Secured creditors have priority to the extent of collateral value. If collateral < debt, the deficiency becomes unsecured claim. Unsecured creditor priority: admin, wages, taxes, general."
+  },
+  {
+    "id": "far-d20-014",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Business Combinations",
+    "difficulty": "hard",
+    "question": "An entity holds a 30% equity method investment in Target Corp. The entity then acquires an additional 40% of Target, obtaining control. Under ASC 805, the previously held equity interest is:",
+    "options": [
+      "Maintained at its existing carrying amount",
+      "Remeasured to fair value at the acquisition date, with any gain or loss recognized in net income",
+      "Written off",
+      "Amortized over the remaining useful life"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 805-10-25-10, in a step acquisition (business combination achieved in stages), the acquirer remeasures its previously held equity interest at acquisition-date fair value and recognizes any resulting gain or loss in net income. The total consideration for goodwill calculation includes both the cash paid for the additional 40% AND the fair value of the previously held 30% interest. This effectively treats the transaction as if the acquirer disposed of the old investment and acquired 70% at fair value, ensuring that 100% of identifiable net assets are measured at acquisition-date fair value."
+  },
+  {
+    "id": "aud-d3-004",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Risk Assessment",
+    "difficulty": "easy",
+    "question": "Performance materiality is set by the auditor:",
+    "options": [
+      "At zero",
+      "At an amount less than overall materiality to reduce the risk that the aggregate of undetected and uncorrected misstatements exceeds overall materiality",
+      "Equal to overall materiality",
+      "Higher than overall materiality"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C §320 (Materiality): Performance materiality = one or more amounts set at less than overall materiality. Purpose: reduce the probability that the total of undetected misstatements + uncorrected known misstatements exceeds overall materiality. Typically 50-75% of overall materiality. Example: if overall materiality is $100K, performance materiality might be $60K-$75K. The auditor uses performance materiality to: (1) determine the nature, timing, and extent of further audit procedures, (2) select items for testing, (3) evaluate misstatements identified. Materiality benchmarks: 5% of pre-tax income, 0.5-1% of revenue, 1-2% of total assets."
+  },
+  {
+    "id": "aud-ext-145",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Professional Responsibilities",
+    "difficulty": "easy",
+    "question": "An auditor conducting a first-year audit of a manufacturing client has limited knowledge of the client's specific production processes. Under AU-C 200, which aspect of due professional care is most directly implicated?",
+    "options": [
+      "The auditor must obtain additional CPE credits before starting the audit",
+      "The auditor must assess whether they have sufficient competence and capabilities to perform the engagement",
+      "Due professional care only requires following the audit program",
+      "The auditor must hire an industry specialist for every first-year engagement"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Due professional care requires auditors to possess and maintain the competence necessary for the engagement. For a first-year audit in an unfamiliar industry, the auditor should evaluate whether additional expertise (team members, specialists, training) is needed to appropriately address industry-specific risks and accounting practices."
+  },
+  {
+    "id": "tcp-ext-027",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "C Corporation Taxation",
+    "difficulty": "medium",
+    "question": "A C corporation owns 25% of another domestic corporation and receives $100,000 in dividends. The dividends received deduction is:",
+    "options": [
+      "$50,000 (50%)",
+      "$65,000 (65%)",
+      "$100,000 (100%)",
+      "$0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The DRD percentage depends on ownership: <20% = 50%, 20-79% = 65%, ≥80% = 100% (if affiliated group election made). At 25% ownership, the DRD is 65%, so $100,000 × 65% = $65,000."
+  },
+  {
+    "id": "bar-add-036",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Stock Compensation",
+    "difficulty": "hard",
+    "question": "Stock option compensation cost is recognized:",
+    "options": [
+      "At intrinsic value on exercise date",
+      "Over the requisite service period based on grant-date fair value",
+      "When the stock price increases",
+      "Only when options are exercised"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ASC 718 requires measuring options at grant-date fair value (usually Black-Scholes) and recognizing expense over the vesting (requisite service) period. No adjustment for subsequent fair value changes."
+  },
+  {
+    "id": "aud-d1-014",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Professional Responsibilities",
+    "difficulty": "easy",
+    "question": "The PCAOB (Public Company Accounting Oversight Board) was created by SOX to:",
+    "options": [
+      "Oversee the audits of public companies, including setting auditing standards, registering audit firms, conducting inspections, and enforcing compliance",
+      "Issue tax regulations",
+      "Replace the SEC",
+      "Audit all public companies directly"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PCAOB created by SOX Title I (2002): Functions: (1) Register public accounting firms that audit issuers (public companies), (2) Establish auditing and related attestation, quality control, ethics, and independence standards, (3) Conduct inspections of registered firms (annually for firms auditing >100 issuers, triennially for smaller firms), (4) Investigate and discipline registered firms and associated persons. PCAOB is not a government agency — it is a nonprofit corporation, but it operates under SEC oversight. All firms auditing issuers must register with the PCAOB."
+  },
+  {
+    "id": "tcp-ext-009",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Gross Income",
+    "difficulty": "medium",
+    "question": "For divorce agreements executed after December 31, 2018, alimony payments are:",
+    "options": [
+      "Deductible by the payor and taxable to the recipient",
+      "Not deductible by the payor and not taxable to the recipient",
+      "Deductible by the payor but not taxable to the recipient",
+      "Not deductible by the payor but taxable to the recipient"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The TCJA eliminated the alimony deduction for divorce agreements executed after 2018. Alimony is now treated like child support - no deduction for the payor and no income for the recipient."
+  },
+  {
+    "id": "far-d22-001",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Stock Compensation",
+    "difficulty": "easy",
+    "question": "Under ASC 718, share-based payment awards to employees are measured at:",
+    "options": [
+      "Intrinsic value at the grant date",
+      "Fair value at the grant date",
+      "Par value of the shares",
+      "Book value of the shares at vesting"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ASC 718-10-30-2 requires all share-based payment awards (stock options, restricted stock, RSUs, SARs) to be measured at fair value at the grant date. For stock options, fair value is typically estimated using an option-pricing model (Black-Scholes or lattice model). For restricted stock and RSUs, fair value is generally the stock price at the grant date (adjusted for any market conditions). The fair value determined at grant date is not subsequently remeasured for equity-classified awards — it is recognized as compensation expense over the requisite service period."
+  },
+  {
+    "id": "far-d23-005",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Discontinued Operations",
+    "difficulty": "medium",
+    "question": "Discontinued operations are presented in the income statement:",
+    "options": [
+      "As a component of operating income",
+      "As a separate section below income from continuing operations, net of income tax",
+      "Above gross profit",
+      "Only in the notes to financial statements"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 205-20-45-3, the results of discontinued operations (including any gain or loss on disposal) are presented as a separate component of the income statement, below income from continuing operations. The discontinued operations section is reported net of tax as a single line item (or with separate lines for operating results and disposal gain/loss). This presentation ensures that users can distinguish recurring operating performance from the effects of divested operations. Both basic and diluted EPS are presented for discontinued operations (either on the face or in the notes)."
+  },
+  {
+    "id": "tcp-123",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Estate and Gift Planning",
+    "difficulty": "easy",
+    "question": "The 2024 annual gift tax exclusion is:",
+    "options": [
+      "$20,000 per donee",
+      "$18,000 per donee",
+      "$15,000 per donee",
+      "$17,000 per donee"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Annual exclusion: $18,000 per donee (2024). Married couples can gift $36,000/donee ($18K each or split gifts). Present interest required. No limit on number of donees. No return if within exclusion."
+  },
+  {
+    "id": "isc-d9-022",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Audit Techniques",
+    "difficulty": "medium",
+    "question": "When using data analytics in an audit, the auditor must first ensure:",
+    "options": [
+      "The analytics tool is the most expensive available",
+      "The completeness and accuracy of the data being analyzed — by reconciling extracted data to source system totals, verifying record counts, and assessing data quality before performing analytics",
+      "All data is stored in the cloud",
+      "The client's IT staff performs the analysis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data analytics audit process: (1) Define objectives — what assertions or risks are being addressed, (2) Data acquisition — obtain data from the client's systems (database extracts, API queries, file transfers), (3) Data validation — CRITICAL: verify completeness and accuracy of extracted data: compare record counts to source system, reconcile financial totals to GL, check for truncated or missing fields, verify date ranges match intended period. (4) Data preparation — clean, transform, standardize data for analysis, (5) Analysis — apply analytics (stratification, regression, Benford's law, trend analysis, outlier detection, matching/comparison), (6) Evaluation — interpret results, investigate exceptions, assess findings, (7) Documentation — document methodology, data sources, validation..."
+  },
+  {
+    "id": "isc-comp-010",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT General Controls",
+    "difficulty": "hard",
+    "question": "Periodic access reviews should:",
+    "options": [
+      "Occur only at year-end",
+      "Be performed by IT only",
+      "Have data owners verify appropriateness of user access rights on a regular basis",
+      "Focus on new employees only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Access reviews: data owners review and certify appropriateness of access. Frequency based on risk. Review terminated employees, transfers, privilege changes. Detect access creep. Document reviews and remediation."
+  },
+  {
+    "id": "bar-144",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Cost Accounting",
+    "difficulty": "medium",
+    "question": "The high-low method calculates variable cost per unit by:",
+    "options": [
+      "Using only the highest cost",
+      "Dividing change in cost by change in activity between highest and lowest activity levels",
+      "Averaging all costs",
+      "Subtracting fixed from total cost"
+    ],
+    "correctAnswer": 1,
+    "explanation": "High-low method: Variable rate = (High cost - Low cost) / (High activity - Low activity). Then Fixed cost = Total cost - (Variable rate × Activity). Simple but uses only two data points."
+  },
+  {
+    "id": "reg-ext-law-004",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Business Law",
+    "difficulty": "hard",
+    "question": "A third party deals with an agent believing the agent has authority based on the principal's representations. This is:",
+    "options": [
+      "Emergency authority",
+      "Express authority",
+      "Apparent authority",
+      "Implied authority"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Apparent (ostensible) authority exists when the principal's conduct leads a third party to reasonably believe the agent has authority. It is based on the principal's representations to third parties, not the agent."
+  },
+  {
+    "id": "isc-d4-018",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Assurance",
+    "difficulty": "hard",
+    "question": "A penetration test differs from a vulnerability scan in that:",
+    "options": [
+      "They are the same thing",
+      "Penetration tests actively attempt to exploit vulnerabilities to demonstrate real-world impact, while vulnerability scans only identify potential vulnerabilities",
+      "Penetration tests are less thorough than vulnerability scans",
+      "Vulnerability scans require more skill than penetration tests"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Vulnerability scans are automated tools that identify known vulnerabilities (missing patches, misconfigurations, weak ciphers) — they produce a list but do not verify exploitability. Penetration tests are manual/semi-automated engagements where testers actively exploit vulnerabilities to demonstrate actual risk — showing data exfiltration, privilege escalation, or system compromise. Types: black box (no knowledge), gray box (partial), white box (full knowledge). PCI-DSS and many regulations require both."
+  },
+  {
+    "id": "reg-ext-104",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Corporate Taxation",
+    "difficulty": "medium",
+    "question": "Under TCJA, corporate NOLs arising after 2017 can offset:",
+    "options": [
+      "80% of taxable income with indefinite carryforward",
+      "50% of taxable income for 10 years",
+      "100% of taxable income",
+      "90% of taxable income for 20 years"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Post-2017 NOLs: limited to 80% of taxable income, indefinite carryforward, no carryback (except farming). CARES Act temporarily allowed carryback for 2018-2020 losses."
+  },
+  {
+    "id": "bar-ba-001",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "medium",
+    "question": "A company has current assets of $500,000 including inventory of $150,000, and current liabilities of $250,000. What is the quick (acid-test) ratio?",
+    "options": [
+      "2.8",
+      "1.4",
+      "2.0",
+      "1.0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Quick ratio = (Current Assets - Inventory) / Current Liabilities = ($500,000 - $150,000) / $250,000 = $350,000 / $250,000 = 1.4. The quick ratio excludes inventory because it may not be quickly convertible to cash."
+  },
+  {
+    "id": "aud-d9-001",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Group Audits",
+    "difficulty": "medium",
+    "question": "Under AU-C 600, when the group engagement partner involves component auditors in a group audit, the group engagement partner:",
+    "options": [
+      "Has no responsibility for the component auditor's work",
+      "Remains responsible for the direction, supervision, and performance of the group audit engagement, including the work performed by component auditors",
+      "Must personally reperform all component auditor work",
+      "Must only review the component auditor's report, not the workpapers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C 600.11 establishes that the group engagement partner is responsible for the overall quality of the group audit engagement, including the direction, supervision, and performance of the engagement. This includes responsibility for component auditor work, even though the component auditor performs the procedures. The group engagement partner must: (1) communicate with component auditors about their responsibilities; (2) evaluate the sufficiency and appropriateness of audit evidence obtained; (3) evaluate whether component auditor competence and independence are adequate; (4) review component auditor workpapers when appropriate."
+  },
+  {
+    "id": "reg-easy-004",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "A taxpayer uses the standard deduction when:",
+    "options": [
+      "Their itemized deductions are less than the standard deduction",
+      "They are not a U.S. citizen",
+      "They have no income",
+      "They have only capital gains"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Taxpayers choose between the standard deduction and itemizing. They should itemize only if total itemized deductions exceed the standard deduction amount for their filing status."
+  },
+  {
+    "id": "bar-d10-016",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Fair Value Measurement",
+    "difficulty": "medium",
+    "question": "Under ASC 820, fair value measurements are classified as recurring or nonrecurring. Which is an example of a nonrecurring fair value measurement?",
+    "options": [
+      "Trading securities measured at fair value each period",
+      "An impaired long-lived asset written down to fair value",
+      "Derivatives reported at fair value every quarter",
+      "Available-for-sale debt securities at each reporting date"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Recurring measurements are required at every reporting period (e.g., trading securities, AFS debt securities, derivatives, pension plan assets). Nonrecurring measurements are triggered by specific events or circumstances — they are not measured at fair value every period. Examples: (1) long-lived assets impaired and written down to fair value, (2) assets acquired in a business combination (measured at fair value on the acquisition date), (3) assets held for sale at lower of carrying amount or fair value less costs to sell, (4) goodwill impairment. Both recurring and nonrecurring measurements require disclosure of the fair value hierarchy level and, for Level 3, the valuation techniques and inputs used."
+  },
+  {
+    "id": "bar-da-001",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Data Analytics",
+    "difficulty": "easy",
+    "question": "Which type of analytics answers the question \"What happened?\"",
+    "options": [
+      "Predictive analytics",
+      "Descriptive analytics",
+      "Prescriptive analytics",
+      "Diagnostic analytics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Descriptive analytics summarizes historical data to answer \"what happened.\" Diagnostic explains \"why,\" predictive forecasts \"what will happen,\" and prescriptive recommends \"what should we do.\""
+  },
+  {
+    "id": "tcp-comp-003",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Compensation",
+    "difficulty": "medium",
+    "question": "Which fringe benefit is generally excludable from employee income?",
+    "options": [
+      "Gym membership at a commercial facility",
+      "Cash bonuses",
+      "Personal use of company car",
+      "Employer-paid group term life insurance up to $50,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Employer-paid group term life up to $50,000 is excludable under §79. Cost of coverage over $50,000 is taxable to employee. Other options are taxable fringe benefits."
+  },
+  {
+    "id": "tcp-170",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Estate Planning",
+    "difficulty": "hard",
+    "question": "A Grantor Retained Annuity Trust (GRAT) is designed to:",
+    "options": [
+      "Provide immediate charitable deduction",
+      "Defer estate taxes indefinitely",
+      "Generate income tax deductions",
+      "Transfer appreciation in excess of IRS assumed rate to beneficiaries tax-free"
+    ],
+    "correctAnswer": 3,
+    "explanation": "GRAT: grantor receives annuity, remainder to beneficiaries. If assets appreciate above Section 7520 rate, transfer tax-free."
+  },
+  {
+    "id": "tcp-add-028",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Tax Research",
+    "difficulty": "medium",
+    "question": "Primary sources of tax law include:",
+    "options": [
+      "News articles about tax",
+      "IRC, Treasury Regulations, court cases, and IRS rulings",
+      "Tax textbooks and treatises",
+      "CPA firm memoranda"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Primary sources: IRC (statutory), Treasury Regulations (administrative), court cases (judicial), revenue rulings/procedures, private letter rulings. Secondary sources interpret primary sources."
+  },
+  {
+    "id": "isc-easy-exp-008",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Security",
+    "difficulty": "easy",
+    "question": "Integrity in information security means:",
+    "options": [
+      "Data is encrypted",
+      "Data has not been improperly modified",
+      "Data is backed up regularly",
+      "Data is always accessible"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Integrity ensures that data has not been altered or corrupted, either accidentally or intentionally, without authorization."
+  },
+  {
+    "id": "tcp-114",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Retirement Planning",
+    "difficulty": "hard",
+    "question": "A cash balance plan is a type of:",
+    "options": [
+      "Nonqualified plan",
+      "IRA",
+      "Defined benefit plan with individual account balances",
+      "Defined contribution plan"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Cash balance: DB plan with individual hypothetical accounts. Pay credits (% of salary) plus interest credits. Benefit is account balance. Allows high contributions for older owners. Portable like DC plan."
+  },
+  {
+    "id": "far-debt-003",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Long-Term Debt",
+    "difficulty": "hard",
+    "question": "Under the book value method, when convertible bonds are converted to common stock:",
+    "options": [
+      "The carrying value of bonds becomes the value of equity issued",
+      "The conversion is recorded at par value of stock only",
+      "Fair value of stock issued determines the conversion value",
+      "A gain or loss is recognized"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Book value method: no gain/loss on conversion. Debit Bonds Payable, debit Premium (if any) or credit Discount, credit Common Stock at par, credit APIC for excess. Total equity = carrying value of bonds."
+  },
+  {
+    "id": "reg-prop-ext-004",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Property Transactions",
+    "difficulty": "hard",
+    "question": "A taxpayer has: LTCG $20,000; LTCL $5,000; STCG $3,000; STCL $10,000. What is the net capital gain/loss?",
+    "options": [
+      "$15,000 net long-term gain",
+      "$8,000 net long-term gain",
+      "$3,000 net loss",
+      "$12,000 net long-term gain"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Net LTCG = $20,000 - $5,000 = $15,000. Net STCL = $10,000 - $3,000 = $7,000. Overall = $15,000 - $7,000 = $8,000 net LTCG."
+  },
+  {
+    "id": "far-ext-nfp-005",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Not-for-Profit",
+    "difficulty": "hard",
+    "question": "Contributed services are recognized as revenue if they:",
+    "options": [
+      "Create or enhance nonfinancial assets or require specialized skills",
+      "Exceed $5,000 in value",
+      "Are provided by licensed professionals only",
+      "Have any fair value"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Contributed services are recognized if they: (1) create or enhance nonfinancial assets, or (2) require specialized skills, are provided by persons with those skills, and would typically need to be purchased."
+  },
+  {
+    "id": "reg-add-034",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Entity Taxation",
+    "difficulty": "medium",
+    "question": "A C corporation's taxable income differs from book income because:",
+    "options": [
+      "Certain items have different treatment for book vs tax (e.g., depreciation methods, meal deductions)",
+      "Tax income is always higher",
+      "Book income includes only cash transactions",
+      "Book and tax always use the same rules"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Book-tax differences arise from: (1) permanent differences (municipal bond interest, 50% meals), (2) temporary differences (depreciation methods, bad debt timing). M-1/M-3 reconciles these differences."
+  },
+  {
+    "id": "tcp-wc-104",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Entity Tax Compliance",
+    "difficulty": "medium",
+    "question": "Form 2553, S Corporation election, must generally be filed:",
+    "options": [
+      "Within 75 days after the effective date or the entire preceding year",
+      "Any time before the first tax return is due",
+      "Within 6 months after formation",
+      "By year-end"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Form 2553 must be filed: by the 15th day of the 3rd month (2½ months) after the beginning of the tax year for which the election is to be effective, OR any time during the preceding tax year. Late election relief available."
+  },
+  {
+    "id": "isc-comp-020",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Control Frameworks",
+    "difficulty": "hard",
+    "question": "COBIT 2019 governance objectives include:",
+    "options": [
+      "Programming standards",
+      "Technical specifications only",
+      "Hardware requirements",
+      "Evaluate, Direct, and Monitor (EDM) covering IT governance alignment with enterprise goals"
+    ],
+    "correctAnswer": 3,
+    "explanation": "COBIT 2019: IT governance framework. Governance objectives: Evaluate, Direct, Monitor. Management objectives: APO (Align, Plan, Organize), BAI (Build, Acquire, Implement), DSS (Deliver, Service, Support), MEA (Monitor, Evaluate, Assess)."
+  },
+  {
+    "id": "tcp-wc-015",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Partnership Compliance",
+    "difficulty": "medium",
+    "question": "Guaranteed payments to a partner for services:",
+    "options": [
+      "Are not deductible by the partnership",
+      "Are treated as distributions of capital",
+      "Reduce the receiving partner's distributive share",
+      "Are deductible by the partnership and ordinary income to the partner"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Guaranteed payments (IRC §707(c)): Deductible by partnership in computing ordinary income. Ordinary income to partner (subject to SE tax if for services). Determined without regard to partnership income. Do not affect partner's capital account like distributions."
+  },
+  {
+    "id": "reg-d6-001",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "S Corporation Taxation",
+    "difficulty": "easy",
+    "question": "To qualify for S corporation status, a corporation must meet all of the following requirements EXCEPT:",
+    "options": [
+      "Have no more than 100 shareholders (with family members treated as one)",
+      "Have only individuals, estates, and certain trusts as shareholders",
+      "Have shareholders who are citizens or resident aliens",
+      "Must have at least 2 shareholders"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under §1361(b), S corporation eligibility requires: (1) domestic corporation; (2) no more than 100 shareholders (members of a family within 6 generations can elect to be treated as one shareholder); (3) only eligible shareholders — individuals, estates, certain trusts (grantor trusts, QSSTs, ESBTs), and tax-exempt organizations under §401(a) or §501(c)(3); (4) shareholders must be US citizens or resident aliens (no nonresident alien shareholders); (5) only one class of stock (voting rights may differ); (6) not an ineligible corporation (certain financial institutions, insurance companies, DISCs). An S corporation may have only ONE shareholder — there is no minimum requirement. Partnerships, corporations, and nonresident aliens cannot be S corporation shareholders."
+  },
+  {
+    "id": "tcp-177",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Tax Practice",
+    "difficulty": "medium",
+    "question": "The accuracy-related penalty under Section 6662 is:",
+    "options": [
+      "50% of underpayment",
+      "20% of underpayment for negligence, substantial understatement, or valuation misstatements",
+      "10% of underpayment",
+      "75% of underpayment"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Section 6662: 20% penalty. Negligence, substantial understatement (greater of $5,000 or 10%), valuation misstatement."
+  },
+  {
+    "id": "far-d8-005",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Leases",
+    "difficulty": "medium",
+    "question": "A lessor offers a lessee $50,000 in lease incentives (reimbursement for leasehold improvements). Under ASC 842, the lessee should treat the incentive as:",
+    "options": [
+      "Income recognized immediately at lease commencement",
+      "A reduction of the right-of-use asset, amortized over the lease term",
+      "A deferred credit amortized over the useful life of the improvements",
+      "A reduction of lease expense only in the first year"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 842-10-30-2, lease incentives paid or payable by the lessor to the lessee reduce the measurement of the right-of-use (ROU) asset. The ROU asset is initially measured as: lease liability + initial direct costs + prepaid lease payments − lease incentives received. The reduced ROU asset is then amortized over the lease term (for operating leases) as part of the single lease cost. This approach effectively spreads the benefit of the incentive over the entire lease term rather than recognizing it immediately."
+  },
+  {
+    "id": "tcp-wc-103",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Individual Tax Compliance",
+    "difficulty": "hard",
+    "question": "A cash-basis taxpayer received a check for $10,000 on December 28 but did not deposit it until January 3 of the following year. In which year is the income recognized?",
+    "options": [
+      "The current year (December) — constructive receipt applies when the check is received, not when deposited",
+      "The following year — income is recognized when the check is deposited",
+      "Split equally between both years",
+      "The year the check was issued by the payer"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under the constructive receipt doctrine (Treas. Reg. §1.451-2), income is recognized when it is made available to the taxpayer without substantial limitations, regardless of actual possession. Receiving a check constitutes constructive receipt — the taxpayer has the ability to cash it. Delaying deposit to the next year does not defer recognition. The $10,000 is includible in the year the check was received (December)."
+  },
+  {
+    "id": "aud-d5-017",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Risk Assessment",
+    "difficulty": "medium",
+    "question": "Under AU-C 240, the auditor is REQUIRED to make inquiries of management regarding:",
+    "options": [
+      "Only the company's marketing strategy",
+      "Management's assessment of the risk of material misstatement due to fraud, including the nature, extent, and frequency of such assessments, and knowledge of any fraud or suspected fraud",
+      "Only employee satisfaction surveys",
+      "The company's competitive position only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under AU-C 240.18, the auditor is REQUIRED to make inquiries of management regarding: (1) Management's assessment of the risk of material misstatement of the financial statements due to fraud. (2) Management's process for identifying and responding to fraud risks. (3) Management's communication to those charged with governance about fraud risks and controls. (4) Management's communication to employees about business practices and ethical behavior. (5) Whether management has knowledge of any fraud or SUSPECTED fraud — including any allegations received (e.g., from employees, former employees, tip lines). These inquiries are complemented by inquiries of internal auditors and others within the entity (AU-C 240.19-.21). Responses are evaluated with professional skepticism."
+  },
+  {
+    "id": "reg-eth-004",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Ethics and Professional Responsibility",
+    "difficulty": "easy",
+    "question": "Which of the following individuals may practice before the IRS?",
+    "options": [
+      "A tax software developer",
+      "Any individual with a college degree in accounting",
+      "An enrolled agent who has passed the IRS Special Enrollment Examination",
+      "A bookkeeper with 10 years of experience"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Enrolled agents are authorized to practice before the IRS by passing the Special Enrollment Examination or through former IRS employment. CPAs and attorneys are also authorized. Education or experience alone does not grant practice rights."
+  },
+  {
+    "id": "isc-d4-011",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Cloud Computing",
+    "difficulty": "hard",
+    "question": "When auditing a client's cloud computing environment, the auditor should evaluate:",
+    "options": [
+      "The cloud provider's SOC report, the shared responsibility model, data residency, and the client's cloud configuration and access controls",
+      "Only the client's on-premises systems",
+      "Nothing — cloud providers are responsible for all controls",
+      "Only the cloud provider's financial statements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cloud audit considerations: (1) SOC reports — evaluate the provider's control environment (SOC 2 Type II preferred), (2) shared responsibility — understand which controls are the client's responsibility, (3) data residency — ensure compliance with regulations on data location, (4) configuration — misconfigurations (public S3 buckets, open ports) are a leading cause of cloud breaches, (5) identity/access management — cloud IAM policies, (6) encryption — in transit and at rest, (7) data portability — vendor lock-in risks, (8) incident notification — contractual SLAs."
+  },
+  {
+    "id": "bar-d4-015",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Decision Analysis",
+    "difficulty": "easy",
+    "question": "Sensitivity analysis in capital budgeting involves:",
+    "options": [
+      "Changing one key assumption at a time (e.g., sales volume, price, cost) to see how the project's NPV or IRR is affected",
+      "Accepting all projects regardless of NPV",
+      "Using only the payback period for evaluation",
+      "Running the NPV calculation only once with the best estimates"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sensitivity (\"what-if\") analysis tests how sensitive the project outcome is to changes in key variables. Example: recalculate NPV with (1) 10% lower sales volume, (2) 5% higher materials cost, (3) different discount rates. Variables with the greatest impact on NPV are the critical risk factors. Scenario analysis goes further: tests combinations of multiple variable changes simultaneously (best case, worst case, most likely). Monte Carlo simulation generates thousands of random combinations for a probability distribution of outcomes."
+  },
+  {
+    "id": "tcp-intl-001",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "International Taxation",
+    "difficulty": "hard",
+    "question": "Foreign-Derived Intangible Income (FDII) provides a deduction resulting in an effective tax rate of:",
+    "options": [
+      "21%",
+      "10.5%",
+      "13.125%",
+      "0%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "FDII deduction = 37.5% of FDII, resulting in 21% × (1 - 0.375) = 13.125% effective rate on export income exceeding deemed tangible income return. Encourages domestic production for export."
+  },
+  {
+    "id": "aud-d1-011",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Single Audit",
+    "difficulty": "medium",
+    "question": "In a single audit, the auditor tests compliance with requirements for major federal programs. The types of compliance requirements include:",
+    "options": [
+      "Activities allowed/unallowed, allowable costs, cash management, eligibility, matching, period of performance, procurement, reporting, and others",
+      "Only matching requirements",
+      "Only eligibility requirements",
+      "Only financial reporting requirements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Compliance Supplement (formerly OMB Circular A-133 Supplement) identifies 12 types of compliance requirements: (1) Activities Allowed or Unallowed, (2) Allowable Costs/Cost Principles, (3) Cash Management, (4) Eligibility, (5) Equipment/Real Property Management, (6) Matching/Level of Effort/Earmarking, (7) Period of Performance, (8) Procurement/Suspension and Debarment, (9) Program Income, (10) Reporting, (11) Subrecipient Monitoring, (12) Special Tests and Provisions. Not all apply to every program — the Compliance Supplement identifies which requirements are applicable to each program."
+  },
+  {
+    "id": "far-eq-003",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Stockholders' Equity",
+    "difficulty": "hard",
+    "question": "Stock options granted to employees are measured at:",
+    "options": [
+      "Par value of underlying shares",
+      "Fair value at grant date",
+      "Fair value at exercise date",
+      "Intrinsic value at grant date"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 718, share-based payments to employees are measured at grant-date fair value, typically using an option pricing model like Black-Scholes."
+  },
+  {
+    "id": "bar-d10-011",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Pensions and OPEB",
+    "difficulty": "medium",
+    "question": "Under ASC 715, the funded status of a defined benefit pension plan is presented on the balance sheet as:",
+    "options": [
+      "Off-balance-sheet in the notes only",
+      "A net asset (if overfunded) or net liability (if underfunded), measured as the difference between plan assets at fair value and the projected benefit obligation",
+      "The accumulated benefit obligation only",
+      "The expected return on plan assets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ASC 715 requires recognition of the funded status on the balance sheet. Funded status = Fair value of plan assets − Projected benefit obligation (PBO). If plan assets > PBO: noncurrent asset (prepaid pension). If PBO > plan assets: current liability (to the extent of next year's expected contributions) and noncurrent liability (remainder). Items not yet recognized as components of net periodic pension cost (prior service cost, actuarial gains/losses) are recorded in AOCI. The PBO is used (not the ABO) because it includes future salary increases in the benefit formula — providing a more complete measure of the obligation."
+  },
+  {
+    "id": "bar-d7-012",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Working Capital Management",
+    "difficulty": "medium",
+    "question": "A company offers credit terms of 2/10, net 30. The approximate annualized cost of not taking the discount is:",
+    "options": [
+      "12%",
+      "36.7%",
+      "24%",
+      "2%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cost of not taking discount = [Discount % ÷ (100% − Discount %)] × [365 ÷ (Full payment period − Discount period)]. = [2% ÷ 98%] × [365 ÷ (30 − 10)] = 0.020408 × 18.25 = 0.3724 or approximately 36.7%. This means a buyer who forgoes the 2% discount to pay on day 30 (instead of day 10) is effectively borrowing at an annualized rate of about 36.7%. This is extremely expensive compared to typical borrowing rates, so the discount should almost always be taken if cash or bank borrowing is available at a lower rate."
+  },
+  {
+    "id": "aud-d4-001",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Ethics and Independence",
+    "difficulty": "easy",
+    "question": "Under the AICPA conceptual framework for independence, which of the following is a category of threat to independence?",
+    "options": [
+      "Timing threat",
+      "Size threat",
+      "Location threat",
+      "Self-review threat — performing non-audit services that are then subject to audit (e.g., preparing financial statements then auditing them)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "AICPA Independence framework — seven categories of threats: (1) Self-review — auditing your own work, (2) Advocacy — promoting/appearing to promote the client's position, (3) Adverse interest — interests in conflict with the client, (4) Familiarity — close/long-standing relationships, (5) Undue influence — threats/coercion from the client, (6) Management participation — taking on management responsibilities, (7) Self-interest — financial interest in the client. Safeguards are applied to reduce threats to an acceptable level. If no safeguard can reduce the threat: the engagement should not be accepted (or the relationship must be terminated)."
+  },
+  {
+    "id": "bar-d11-012",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Fair Value Measurement",
+    "difficulty": "medium",
+    "question": "Under ASC 825, the fair value option (FVO) allows an entity to elect fair value measurement for:",
+    "options": [
+      "All assets and liabilities without exception",
+      "Eligible financial instruments at specified election dates — once elected, the election is irrevocable for that instrument, and unrealized gains/losses are reported in earnings",
+      "Only equity securities",
+      "Only short-term receivables"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ASC 825-10-15 permits entities to irrevocably elect fair value measurement for eligible financial instruments at initial recognition or certain other specified dates (e.g., consolidation, business combination). Once elected, the instrument is measured at fair value each reporting period with changes in fair value recognized in earnings (not OCI). This is an instrument-by-instrument election (not all-or-nothing). Eligible items include: recognized financial assets/liabilities, firm commitments, certain insurance contract rights/obligations, and certain nonfinancial insurance obligations. Benefits: can reduce accounting complexity for items that would otherwise require bifurcation or hedge accounting. The election must be disclosed."
+  },
+  {
+    "id": "aud-fraud-053",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Fraud",
+    "difficulty": "easy",
+    "question": "When fraud is detected that involves senior management, the auditor should communicate the matter to:",
+    "options": [
+      "The SEC",
+      "Law enforcement",
+      "Lower level management",
+      "Those charged with governance"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Fraud involving senior management should be communicated to those charged with governance (e.g., audit committee). External reporting to law enforcement or regulators is generally not required unless legally mandated."
+  },
+  {
+    "id": "isc-d1-009",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Emerging Technologies",
+    "difficulty": "easy",
+    "question": "Which characteristic of blockchain technology makes it particularly relevant to accounting and auditing?",
+    "options": [
+      "Higher processing speed than traditional databases",
+      "Blockchain does not require internet connectivity",
+      "Lower cost than traditional transaction processing",
+      "Immutability — once recorded, transactions cannot be altered"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Blockchain's immutability is its most audit-relevant feature. Once a block is added to the chain and validated by consensus, it cannot be retroactively altered without consensus from the network. This creates a tamper-evident, time-stamped record of transactions — potentially providing reliable audit evidence. However, immutability does not guarantee the accuracy of the initial input (garbage in, garbage out)."
+  },
+  {
+    "id": "bar-ext-019",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Cost Accounting",
+    "difficulty": "easy",
+    "question": "Fixed costs per unit:",
+    "options": [
+      "Are always zero",
+      "Increase as production volume increases",
+      "Decrease as production volume increases",
+      "Remain constant regardless of production volume"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Total fixed costs remain constant, but fixed cost per unit decreases as volume increases (spreading the fixed cost over more units). This is why high-volume production can achieve economies of scale."
+  },
+  {
+    "id": "bar-174",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Planning and Budgeting",
+    "difficulty": "hard",
+    "question": "When capital is limited, projects should be ranked by:",
+    "options": [
+      "Shortest payback",
+      "Highest NPV alone",
+      "Profitability Index or NPV per dollar of constrained resource",
+      "Highest IRR alone"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Capital rationing: limited funds. Rank by PI (NPV/Investment) or NPV per constrained dollar. Maximize total NPV within budget."
+  },
+  {
+    "id": "far-easy-exp-003",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Conceptual Framework",
+    "difficulty": "easy",
+    "question": "Under the accrual basis of accounting, revenue is recognized when:",
+    "options": [
+      "Payment is promised",
+      "Cash is received",
+      "The contract is signed",
+      "Earned, regardless of when cash is received"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Accrual accounting recognizes revenue when it is earned (typically when goods are delivered or services are performed), regardless of when cash is received."
+  },
+  {
+    "id": "aud-wc-042",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Audit Reports",
+    "difficulty": "hard",
+    "question": "Under PCAOB standards, which of the following matters would most likely be communicated as a critical audit matter (CAM) in the auditor's report?",
+    "options": [
+      "The auditor's selection of materiality for the audit",
+      "A disagreement with management that was resolved during the audit",
+      "Information about the audit firm's quality control procedures",
+      "Significant estimates involving subjective management judgments"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Critical Audit Matters under AS 3101 are matters that (1) were communicated to the audit committee, (2) relate to material accounts or disclosures, and (3) involved especially challenging, subjective, or complex auditor judgment. Significant estimates with subjective judgments (like goodwill impairment, loan loss reserves) are prime CAM candidates."
+  },
+  {
+    "id": "reg-ext-corp-001",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Corporate Taxation",
+    "difficulty": "medium",
+    "question": "Two individuals form a corporation. Person A contributes property (FMV $80,000, basis $50,000) for 80 shares. Person B contributes services valued at $20,000 for 20 shares. What is Person B's taxable income?",
+    "options": [
+      "$0 - no gain on formation",
+      "$20,000 ordinary income",
+      "$4,000 (20% of A's gain)",
+      "$20,000 capital gain"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Contributing services for stock is a taxable exchange. Person B recognizes $20,000 of ordinary income (compensation). The §351 nonrecognition rule only applies to property contributions, not services."
+  },
+  {
+    "id": "tcp-d2-021",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Tax Procedures",
+    "difficulty": "easy",
+    "question": "What is the statute of limitations for the IRS to assess tax when a taxpayer files a fraudulent return?",
+    "options": [
+      "3 years",
+      "10 years",
+      "There is no statute of limitations",
+      "6 years"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under IRC §6501(c)(1), if a return is false or fraudulent with intent to evade tax, the tax may be assessed at any time — there is no statute of limitations. Similarly, under §6501(c)(3), if no return is filed, there is no limitations period. The burden of proving fraud is on the IRS by clear and convincing evidence."
+  },
+  {
+    "id": "bar-d1-024",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Consolidation",
+    "difficulty": "medium",
+    "question": "Under ASC 810, noncontrolling interest (NCI) in a subsidiary is presented in the consolidated financial statements as:",
+    "options": [
+      "A liability on the balance sheet",
+      "A separate component within equity on the balance sheet",
+      "An expense on the income statement",
+      "A contra-asset on the balance sheet"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Since ASC 810-10-45 (SFAS 160), NCI is presented: (1) Balance sheet — within equity, but separate from the parent's equity, (2) Income statement — net income attributable to NCI is presented as a deduction from consolidated net income to arrive at net income attributable to the parent. NCI is measured at fair value at the acquisition date (full goodwill method). Changes in ownership that do not result in loss of control are treated as equity transactions."
+  },
+  {
+    "id": "tcp-d4-022",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Tax Credits",
+    "difficulty": "easy",
+    "question": "A taxpayer adopted a child in the current year and incurred $18,000 in qualified adoption expenses. The taxpayer's modified AGI is $210,000 (filing jointly). What is the adoption credit for 2024?",
+    "options": [
+      "The maximum credit of $16,810 (2024 limit), subject to partial phaseout based on MAGI",
+      "$18,000 — the full amount of qualified expenses",
+      "$0 — the credit is not available for adoption",
+      "$8,000 — half of expenses"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The adoption credit under IRC §23 allows up to $16,810 (2024) per eligible child for qualified adoption expenses. The credit phases out for MAGI between $252,150 and $292,150 (2024) for MFJ. At $210,000 MAGI, the taxpayer is below the phaseout range, so the full credit of $16,810 applies (capped at the maximum, not the $18,000 paid). The credit is nonrefundable but can be carried forward for up to 5 years."
+  },
+  {
+    "id": "tcp-est-b4-004",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Gift Tax",
+    "difficulty": "medium",
+    "question": "Gift splitting between spouses allows:",
+    "options": [
+      "Gifts to be treated as made half by each spouse, doubling the annual exclusion",
+      "Gifts to be deferred until death",
+      "Gifts to be made tax-free regardless of amount",
+      "Each spouse to give the annual exclusion to the same person"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Gift splitting election treats each gift as made 50% by each spouse. A $36,000 gift split = $18,000 from each, using each spouse's $18,000 (2024) annual exclusion. Requires consent of both spouses."
+  },
+  {
+    "id": "tcp-d8-006",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Property Transactions",
+    "difficulty": "easy",
+    "question": "For individual taxpayers, net capital losses are deductible against ordinary income up to:",
+    "options": [
+      "$1,000 per year",
+      "Unlimited amount",
+      "$3,000 per year ($1,500 if MFS) — unused capital losses are carried forward indefinitely retaining their character as short-term or long-term",
+      "$10,000 per year"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IRC §1211(b) / §1212(b) (Capital Loss Limitations — Individuals): Net capital losses: deductible against ordinary income up to $3,000/year ($1,500 MFS). Netting process: (1) Net short-term gains/losses (STCG vs. STCL). (2) Net long-term gains/losses (LTCG vs. LTCL). (3) If both are net gains: each taxed at applicable rate. (4) If both are net losses: $3,000 deduction, short-term losses used first. (5) If one is gain and one is loss: net them together. Carryforward: unlimited years, retains character (STCL carries forward as STCL, LTCL as LTCL). Carryback: NOT allowed for individuals (corporations can carry back 3 years). Corporations: capital losses only offset capital gains (no $3,000 deduction for ordinary income); carryback 3, forward 5 years (all as STCL). At death: unused capital l..."
+  },
+  {
+    "id": "bar-plan-009",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Financial Planning",
+    "difficulty": "easy",
+    "question": "A flexible budget differs from a static budget because it:",
+    "options": [
+      "Does not include sales forecasts",
+      "Is prepared only at year-end",
+      "Uses only fixed costs",
+      "Adjusts budgeted amounts for actual activity levels"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A flexible budget adjusts for actual activity levels, allowing meaningful variance analysis. A static budget is prepared for one expected activity level and does not adjust."
+  },
+  {
+    "id": "far-d12-010",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Derivatives and Hedging",
+    "difficulty": "medium",
+    "question": "Under ASU 2017-12, a company that uses the shortcut method for a fair value hedge of a fixed-rate financial asset must verify that all criteria are met. The shortcut method assumes:",
+    "options": [
+      "The hedge is approximately 80% effective",
+      "Perfect effectiveness — no hedge ineffectiveness is recognized, and no ongoing effectiveness testing is required",
+      "The hedge must be reassessed quarterly for effectiveness",
+      "Only 50% of the gain/loss on the hedging instrument offsets the hedged item"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 815-20-25-104 (the shortcut method for interest rate swaps), if very specific criteria are met (e.g., swap notional = hedged item principal, fair value of swap at inception is zero, filing date matches, swap is not cancellable, etc.), the entity may ASSUME perfect effectiveness — the change in fair value of the swap exactly offsets the change in fair value of the hedged item. No hedge ineffectiveness is recognized, and no ongoing effectiveness testing is required. If any shortcut criteria are not met (or cease to be met), the entity must use another method (e.g., regression, critical terms match). ASU 2017-12 relaxed some requirements for other methods but retained shortcut criteria."
+  },
+  {
+    "id": "tcp-150",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Compensation Planning",
+    "difficulty": "medium",
+    "question": "Tax-advantaged employee benefits include:",
+    "options": [
+      "Stock options only",
+      "Deferred compensation only",
+      "Health insurance, retirement plans, FSAs, HSAs, and educational assistance",
+      "Cash bonuses only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Tax-favored benefits: group health (excludable), retirement plans (deferred), FSA/HSA (pre-tax), dependent care (up to $5K), educational assistance ($5,250), group-term life ($50K), and more."
+  },
+  {
+    "id": "bar-d2-017",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Financial Reporting",
+    "difficulty": "easy",
+    "question": "A company has total liabilities of $600,000 and total equity of $400,000. Its debt-to-equity ratio is:",
+    "options": [
+      "0.67",
+      "1.50",
+      "0.40",
+      "2.50"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Debt-to-equity ratio = Total Liabilities / Total Equity = $600,000 / $400,000 = 1.50. This means the company has $1.50 of debt for every $1.00 of equity. Solvency ratios measure long-term financial stability: (1) Debt-to-equity — leverage level, (2) Debt ratio = Total liabilities / Total assets = $600K / $1,000K = 0.60, (3) Times interest earned = EBIT / Interest expense — ability to cover interest payments, (4) Equity multiplier = Total assets / Equity = 2.5."
+  },
+  {
+    "id": "tcp-comp-002",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Compensation",
+    "difficulty": "hard",
+    "question": "For incentive stock options (ISOs), the employee recognizes income:",
+    "options": [
+      "When underlying stock is sold (for regular tax)",
+      "Never, ISOs are completely tax-free",
+      "When options are granted",
+      "When options are exercised (for regular tax)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ISOs have no regular tax at grant or exercise (but AMT applies at exercise on bargain element). Regular income is recognized at sale. If holding period met (2 yrs from grant, 1 yr from exercise), gain is LTCG."
+  },
+  {
+    "id": "bar-wc-069",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Technical Accounting",
+    "difficulty": "hard",
+    "question": "Under ASC 820, which fair value input is considered Level 2?",
+    "options": [
+      "Unobservable inputs based on entity's own assumptions",
+      "Quoted prices for identical assets in active markets",
+      "Quoted prices for similar assets in active markets",
+      "Cash flow projections using management estimates"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Level 1: Quoted prices for identical assets in active markets. Level 2: Observable inputs OTHER than Level 1 (quoted prices for similar assets, quoted prices in inactive markets, observable rates). Level 3: Unobservable inputs (entity assumptions). Similar asset quotes are Level 2."
+  },
+  {
+    "id": "isc-easy-sp-011",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Security",
+    "difficulty": "easy",
+    "question": "Which of the following best describes ransomware as a form of malware?",
+    "options": [
+      "Is always harmless",
+      "Improves system performance",
+      "Only affects mobile devices",
+      "Encrypts data and demands payment for decryption"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ransomware encrypts victim's files and demands ransom for decryption key. Prevention: backups, patching, user training, endpoint protection."
+  },
+  {
+    "id": "reg-mast-011",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Tax Procedures",
+    "difficulty": "hard",
+    "question": "First-time penalty abatement applies when:",
+    "options": [
+      "Amount is under $1,000",
+      "Taxpayer has clean 3-year compliance history and meets other criteria",
+      "Taxpayer requests it",
+      "Any penalty is assessed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FTA: administrative waiver for failure to file, failure to pay, failure to deposit. Requirements: (1) no penalties in prior 3 years, (2) all required returns filed or on extension, (3) any tax due paid or in payment plan."
+  },
+  {
+    "id": "reg-easy-exp-014",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "easy",
+    "question": "Which of the following best describes the effect of a tax credit on a taxpayer's liability?",
+    "options": [
+      "Increases AGI",
+      "Is the same as a deduction",
+      "Reduces tax liability dollar-for-dollar",
+      "Reduces taxable income"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A tax credit directly reduces tax liability dollar-for-dollar. A $1,000 credit saves $1,000 in taxes. Deductions only reduce taxable income."
+  },
+  {
+    "id": "isc-d1-024",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Information Security",
+    "difficulty": "easy",
+    "question": "The primary purpose of encryption in transit (TLS/SSL) is to:",
+    "options": [
+      "Compress data for faster transmission",
+      "Verify the identity of the recipient",
+      "Prevent unauthorized access to stored data",
+      "Protect data as it travels over networks from interception and tampering"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Encryption in transit (TLS/SSL) protects data while it moves between systems, preventing eavesdropping (interception) and man-in-the-middle attacks. It ensures confidentiality and integrity of data during transmission. Encryption at rest protects stored data. A comprehensive encryption strategy includes both. TLS 1.3 (the latest version) provides improved security and performance over TLS 1.2."
+  },
+  {
+    "id": "bar-deriv-001",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Derivatives and Hedging",
+    "difficulty": "hard",
+    "question": "A company hedges a firm commitment to purchase inventory using a forward contract designated as a fair value hedge. How are gains/losses on the derivative reported?",
+    "options": [
+      "As an adjustment to the cost of inventory",
+      "Deferred on the balance sheet until hedge maturity",
+      "In earnings, along with offsetting gains/losses on the hedged item",
+      "In Other Comprehensive Income until the inventory is sold"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In a fair value hedge, both the derivative gains/losses and the offsetting gains/losses on the hedged item are recognized in current period earnings. This creates earnings offset."
+  },
+  {
+    "id": "bar-d3-009",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Cost Accounting",
+    "difficulty": "medium",
+    "question": "Normal spoilage in a production process is treated as:",
+    "options": [
+      "Revenue from scrap sales",
+      "An abnormal loss expensed immediately",
+      "A warranty expense",
+      "A cost of finished goods production (included in the cost of good units)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Normal spoilage is expected and unavoidable — it is a cost of doing business. Treatment: allocated to good units produced (product cost). Abnormal spoilage is unexpected and avoidable — treated as a period expense (loss) on the income statement, not inventoriable. In job costing: normal spoilage specific to a job → charged to that job. Normal spoilage common to all jobs → charged to manufacturing overhead. Separating normal from abnormal spoilage is important for cost management and process improvement."
+  },
+  {
+    "id": "aud-wc-024",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Group Audits",
+    "difficulty": "hard",
+    "question": "When a group engagement team uses the work of a component auditor, the group auditor:",
+    "options": [
+      "Can disclaim responsibility for the component auditor's work",
+      "Must re-perform all of the component auditor's work",
+      "Is not required to communicate with the component auditor",
+      "Remains responsible for the overall audit opinion"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The group engagement partner is responsible for the group audit opinion. The group auditor must evaluate component auditor competence, supervise or review their work, and be involved in risk assessment. The group auditor cannot disclaim responsibility for components."
+  },
+  {
+    "id": "aud-d3-014",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Audit Evidence",
+    "difficulty": "medium",
+    "question": "When the auditor uses the work of an auditor's specialist (AU-C §620), the auditor should:",
+    "options": [
+      "Evaluate the specialist's competency, capabilities, and objectivity; evaluate the adequacy of the specialist's work for the auditor's purposes; the auditor remains responsible for the opinion",
+      "Blindly accept the specialist's findings",
+      "Delegate the audit opinion to the specialist",
+      "Include the specialist's name in the audit report"
+    ],
+    "correctAnswer": 0,
+    "explanation": "AU-C §620 (Using an Auditor's Specialist): The auditor may use a specialist when expert knowledge is needed (e.g., actuaries for pension liabilities, appraisers for FMV, engineers for environmental remediation). Auditor's responsibilities: (1) Evaluate competence, capabilities, and objectivity of the specialist, (2) Obtain understanding of the specialist's field, (3) Evaluate the adequacy and reasonableness of the specialist's work and conclusions, (4) The auditor is SOLELY responsible for the audit opinion — using a specialist does not reduce that responsibility, (5) The specialist's name should NOT be referenced in the auditor's report (unless modified opinion and reference is relevant)."
+  },
+  {
+    "id": "aud-d7-017",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Risk Assessment",
+    "difficulty": "medium",
+    "question": "Under AU-C 330, overall responses to assessed risks of material misstatement at the financial statement level include:",
+    "options": [
+      "Only increasing sample sizes",
+      "Assigning more experienced staff, increasing professional skepticism, incorporating more unpredictability into audit procedures, and making changes to timing or nature of procedures",
+      "Only performing more inquiries of management",
+      "Reducing the scope of the audit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C 330.05 describes overall responses to assessed risks at the financial statement level (pervasive risks). These include: (1) emphasizing professional skepticism during the audit; (2) assigning more experienced staff or using specialists; (3) providing more supervision; (4) incorporating additional elements of unpredictability in selecting procedures (e.g., performing procedures at different locations or at unexpected times); (5) making general changes to the nature, timing, and extent of procedures (e.g., performing more procedures at year-end rather than at interim, using substantive procedures rather than tests of controls). These responses address broad-level risks that affect multiple assertions."
+  },
+  {
+    "id": "isc-wc-142",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Audit",
+    "difficulty": "hard",
+    "question": "SOC 2 reports evaluate controls based on Trust Services Criteria, which include:",
+    "options": [
+      "Only backup procedures",
+      "Physical security exclusively",
+      "Security, availability, processing integrity, confidentiality, and privacy",
+      "Only financial statement assertions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "TSC: Security (CC—common criteria, always included), Availability, Processing Integrity, Confidentiality, Privacy. Security is foundational. Designed for technology companies, cloud providers, service organizations. Type I (point-in-time) vs Type II (period)."
+  },
+  {
+    "id": "bar-d10-004",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Segment Reporting",
+    "difficulty": "medium",
+    "question": "Under ASC 280, an operating segment is a reportable segment if it meets any of the following quantitative thresholds EXCEPT:",
+    "options": [
+      "Its reported revenue (including intersegment sales) is 10% or more of combined revenue of all operating segments",
+      "Its profit or loss is 10% or more of the greater of (a) combined profit of all profitable segments or (b) combined loss of all loss segments",
+      "Its assets are 10% or more of combined assets of all operating segments",
+      "Its number of employees is 10% or more of the total workforce"
+    ],
+    "correctAnswer": 3,
+    "explanation": "ASC 280 quantitative thresholds (any ONE makes a segment reportable): (1) Revenue test: Segment revenue (internal + external) ≥ 10% of total combined revenue of all segments, (2) Profit/loss test: Segment profit/loss ≥ 10% of the greater of combined profit of profitable segments or combined loss of loss-reporting segments (in absolute value), (3) Asset test: Segment assets ≥ 10% of combined assets of all segments. Employee count is NOT a threshold. Additionally, all reportable segments together must account for at least 75% of total external (consolidated) revenue. If not, additional segments must be identified as reportable until the 75% threshold is met."
+  },
+  {
+    "id": "far-ext-inv-003",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Inventory",
+    "difficulty": "hard",
+    "question": "A retailer uses the conventional retail method. Which items are included in the cost-to-retail ratio calculation?",
+    "options": [
+      "Beginning inventory, purchases, and net markups",
+      "Beginning inventory, purchases, net markups, and net markdowns",
+      "Beginning inventory, purchases, and markdowns",
+      "Purchases, markups, and markdowns"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Conventional (LCM) retail method includes beginning inventory at cost/retail plus purchases and net markups in the cost ratio. Markdowns are excluded from ratio (only deducted from goods available at retail)."
+  },
+  {
+    "id": "isc-d13-010",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Network Security",
+    "difficulty": "medium",
+    "question": "Network segmentation as a security control works by:",
+    "options": [
+      "Connecting all systems to one large flat network",
+      "Dividing the network into smaller, isolated segments with access controls between them — limiting lateral movement if a breach occurs and containing the potential blast radius of an attack",
+      "Disconnecting all systems from the network",
+      "Only creating one VLAN for the entire organization"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Network segmentation benefits and methods: (1) Reduced attack surface — compromising one segment does not grant access to all segments, (2) Lateral movement prevention — attackers cannot freely move between network zones, (3) Regulatory compliance — PCI DSS requires cardholder data environment segmentation, HIPAA requires ePHI network isolation, (4) Access control enforcement — granular policies between segments. Implementation methods: VLANs — virtual LANs for logical separation, Firewalls — control traffic between segments with rule sets, ACLs (Access Control Lists) — filter traffic on routers/switches, Software-Defined Networking (SDN) — programmable network policies, Micro-segmentation — granular, workload-level segmentation (Zero Trust). Common segments: DMZ (public-facing servers)..."
+  },
+  {
+    "id": "far-d15-023",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Segment Reporting",
+    "difficulty": "medium",
+    "question": "Under ASC 280, entities must reconcile the total of reportable segments' measures to consolidated amounts for all of the following EXCEPT:",
+    "options": [
+      "Revenue",
+      "Profit or loss",
+      "Total assets",
+      "Number of employees"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Under ASC 280-10-50-30, entities must reconcile total reportable segments' amounts to consolidated amounts for: (1) Revenue: Segment revenues to consolidated revenues. (2) Profit or loss: Segment profit/loss to consolidated income before taxes and discontinued operations. (3) Assets: Segment assets to consolidated total assets. (4) Other significant items: Depreciation, interest, capital expenditures, etc. (if disclosed). Reconciling items include intersegment eliminations, corporate headquarters costs, and other items not allocated to segments. The NUMBER OF EMPLOYEES is NOT among the required reconciliation items. Reconciliations must identify and describe all material reconciling items separately."
+  },
+  {
+    "id": "reg-ind-b3-001",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "medium",
+    "question": "A self-employed taxpayer has net self-employment income of $150,000. What is the deduction for the employer-equivalent portion of SE tax (ignore additional Medicare tax)?",
+    "options": [
+      "$22,950",
+      "$11,475",
+      "$21,194",
+      "$10,597"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SE income × 92.35% = $138,525 (net earnings). SE tax = $138,525 × 15.3% = $21,194. Deduction = 50% × $21,194 = $10,597. This is the \"employer equivalent\" portion."
+  },
+  {
+    "id": "reg-elite-007",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "hard",
+    "question": "Individual AMT preferences and adjustments include:",
+    "options": [
+      "Medical expenses",
+      "ISO exercise bargain element, private activity bond interest, accelerated depreciation, state/local taxes",
+      "Charitable contributions",
+      "Standard deduction"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AMT add-backs: SALT deduction, ISO bargain element (at exercise), private activity bond tax-exempt interest, percentage depletion excess, depreciation differences. TCJA exemptions significantly reduced AMT impact for individuals."
+  },
+  {
+    "id": "aud-d8-011",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Analytical Procedures",
+    "difficulty": "medium",
+    "question": "The purpose of analytical procedures performed during the final overall review of the audit is to:",
+    "options": [
+      "Replace substantive testing",
+      "Assist the auditor in forming an overall conclusion about whether the financial statements are consistent with the auditor's understanding of the entity",
+      "Identify all remaining adjustments",
+      "Determine the exact amount of unrecorded misstatements"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C 520.06 requires analytical procedures near the end of the audit to assist the auditor in forming an overall conclusion. These procedures are a \"big picture\" review — comparing financial statements to expectations and identifying any unusual relationships or unexpected fluctuations not previously addressed. If the analytical procedures identify material inconsistencies or unexpected results, the auditor must investigate and may need to perform additional procedures. This is NOT a substitute for substantive testing already performed — it serves as a final reasonableness check before issuing the opinion."
+  },
+  {
+    "id": "far-d15-007",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Derivatives and Hedging",
+    "difficulty": "medium",
+    "question": "A company with variable-rate debt enters into a pay-fixed, receive-variable interest rate swap designated as a cash flow hedge. The fair value of the swap increases by $30,000 during the period. Under ASC 815, this gain is recorded as:",
+    "options": [
+      "A gain in net income",
+      "A gain in OCI (effective portion) until the hedged interest payments affect earnings",
+      "A reduction of the debt balance",
+      "A deferred asset with no income statement or OCI effect"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 815-30-35, in a qualifying CASH FLOW hedge: the effective portion of the gain/loss on the hedging instrument is reported in OCI. As the hedged variable-rate interest payments are made (and affect earnings), amounts in AOCI are reclassified to net income to offset the variable interest expense. In this case, the $30,000 gain on the swap goes to OCI and will be reclassified to reduce interest expense in the periods the variable-rate interest is paid. This achieves the entity's objective: converting variable-rate debt to effectively fixed-rate debt. The swap is reported as an asset (or liability) at fair value on the balance sheet."
+  },
+  {
+    "id": "aud-d5-016",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Internal Control",
+    "difficulty": "easy",
+    "question": "Internal control, no matter how well designed, can provide only REASONABLE (not absolute) assurance. A key inherent limitation is:",
+    "options": [
+      "Controls can be automated",
+      "Management override of controls — management can direct employees to circumvent controls or can override them directly",
+      "Controls are audited annually",
+      "Controls evolve over time"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Inherent limitations of internal control include: (1) MANAGEMENT OVERRIDE — management can circumvent or override controls, which is why it is always a fraud risk. (2) Human error — mistakes in judgment, fatigue, distraction. (3) Collusion — two or more people working together can circumvent segregation of duties. (4) Cost-benefit constraints — controls should not cost more than the benefit they provide. (5) Unusual or non-routine transactions that existing controls may not address. Management override is particularly significant because it means that even well-designed controls can be rendered ineffective by the people who operate the system. This is why AU-C 240 requires the auditor to address management override of controls as a PRESUMED fraud risk in every audit."
+  },
+  {
+    "id": "reg-eth-009",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Ethics and Professional Responsibility",
+    "difficulty": "medium",
+    "question": "Generally, the IRS must assess tax within how many years after a return is filed?",
+    "options": [
+      "Two years",
+      "Six years",
+      "Three years",
+      "Five years"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The general statute of limitations for assessment is three years from the later of the due date or the filing date of the return under IRC §6501(a)."
+  },
+  {
+    "id": "bar-da-003",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Data Analytics",
+    "difficulty": "easy",
+    "question": "Which visualization is BEST for showing composition as a percentage of a whole?",
+    "options": [
+      "Scatter plot",
+      "Line chart",
+      "Pie chart",
+      "Histogram"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Pie charts display parts of a whole as percentages. Line charts show trends over time, scatter plots show relationships between variables, and histograms show frequency distributions."
+  },
+  {
+    "id": "isc-comp-004",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Systems Development",
+    "difficulty": "hard",
+    "question": "Effective IT change management should include:",
+    "options": [
+      "Immediate implementation without approval",
+      "Request, impact assessment, approval, testing, implementation, and documentation",
+      "Only programmer changes",
+      "Monthly reviews only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Change management: (1) formal request, (2) impact/risk assessment, (3) appropriate approval, (4) testing, (5) scheduled implementation, (6) back-out plan, (7) documentation, (8) post-implementation review. Prevents unauthorized changes."
+  },
+  {
+    "id": "far-exp-018",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Bonds Payable",
+    "difficulty": "hard",
+    "question": "Under the effective interest method, interest expense equals:",
+    "options": [
+      "Face amount × stated rate",
+      "Cash paid",
+      "Carrying amount of the bond × market rate at issuance",
+      "Premium amortization only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Effective interest: Interest expense = Carrying value × effective (market) rate at issuance. Cash interest = Face × stated rate. Difference amortizes premium (expense < cash) or discount (expense > cash)."
+  },
+  {
+    "id": "tcp-145",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Tax Practice Ethics",
+    "difficulty": "medium",
+    "question": "Under SSTS, a CPA may rely on client-provided information:",
+    "options": [
+      "Only if verified by third parties",
+      "Unless the information appears incorrect, incomplete, or inconsistent",
+      "Always without question",
+      "Never"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SSTS No. 3: CPA may rely on client information unless it appears incorrect, incomplete, or inconsistent. No audit required. Must make reasonable inquiries if information seems questionable."
+  },
+  {
+    "id": "isc-wc-101",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Audit",
+    "difficulty": "medium",
+    "question": "Hash totals are used to verify:",
+    "options": [
+      "Network bandwidth",
+      "Data completeness and integrity during processing",
+      "Password complexity",
+      "User authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hash totals sum numeric fields (even non-meaningful sums like account numbers) before and after processing. Matching totals verify that all records were processed and no data was lost or corrupted. Different from encryption hashes."
+  },
+  {
+    "id": "aud-wc-101",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Audit Reports",
+    "difficulty": "hard",
+    "question": "When making reference to a component auditor in the group audit report, the group auditor:",
+    "options": [
+      "Takes full responsibility for the component audit",
+      "Must reperform all component audit work",
+      "Cannot issue an unmodified opinion",
+      "Shares responsibility by identifying the component auditor"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Making reference divides responsibility: group auditor takes responsibility for their portion, component auditor for theirs. The report identifies the magnitude of the component (% of assets, revenues). Reference is not a qualification."
+  },
+  {
+    "id": "reg-comp-007",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Corporate Taxation",
+    "difficulty": "hard",
+    "question": "Section 382 limits the use of NOL carryforwards when:",
+    "options": [
+      "The corporation has any loss",
+      "Any stock sale occurs",
+      "There is a greater than 50% ownership change within a 3-year period",
+      "Dividends are paid"
+    ],
+    "correctAnswer": 2,
+    "explanation": "§382 limitation: if >50% ownership change in 3-year testing period, annual NOL use limited to FMV of loss corporation × long-term tax-exempt rate. Prevents trafficking in losses through acquisitions."
+  },
+  {
+    "id": "bar-base-gov-003",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Government Accounting",
+    "difficulty": "hard",
+    "question": "When a government records an encumbrance for a purchase order, the entry debits:",
+    "options": [
+      "Appropriations and credits Estimated Revenues",
+      "Supplies Expense and credits Accounts Payable",
+      "Encumbrances and credits Budgetary Fund Balance Reserved for Encumbrances",
+      "Expenditures and credits Cash"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Encumbrances reserve budget authority for commitments. Entry: Debit Encumbrances, Credit Reserve for Encumbrances. When goods arrive, reverse the encumbrance and record the actual expenditure."
+  },
+  {
+    "id": "reg-add-004",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Tax Procedures",
+    "difficulty": "medium",
+    "question": "A taxpayer failed to pay the tax shown on their timely filed return. What is the per-month penalty rate for failure to pay under IRC §6651(a)(2)?",
+    "options": [
+      "0.5% per month, up to a maximum of 25%",
+      "5% per month, up to a maximum of 25%",
+      "1% per month, up to a maximum of 50%",
+      "0.25% per month, with no maximum"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The failure-to-pay penalty under IRC §6651(a)(2) is 0.5% of the unpaid tax for each month (or fraction thereof) the tax remains unpaid, up to a maximum of 25% (50 months). If an installment agreement is in effect, the rate is reduced to 0.25% per month. This penalty is much lower than the failure-to-file penalty (5% per month), providing an incentive to file on time even when full payment is not possible."
+  },
+  {
+    "id": "reg-add-007",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Contracts",
+    "difficulty": "medium",
+    "question": "A software developer orally agrees to create a custom application for a client for $15,000. The project is expected to take approximately 8 months. Upon completion, the client refuses to pay, asserting the Statute of Frauds. Is the client's defense valid?",
+    "options": [
+      "No, because the contract can be performed within one year and the UCC sale of goods provision does not apply to service contracts",
+      "Yes, because the contract exceeds $500 and must be in writing",
+      "No, because the developer's full performance takes the contract outside the Statute of Frauds",
+      "Yes, because all contracts exceeding $5,000 must be in writing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Statute of Frauds applies to contracts that cannot be performed within one year from formation. An 8-month service contract CAN be performed within one year, so it does not fall under the one-year provision. The UCC $500 threshold applies only to the sale of goods, not services. Once performance is complete, most jurisdictions also allow recovery under full performance doctrine."
+  },
+  {
+    "id": "isc-wc-043",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Business Continuity",
+    "difficulty": "medium",
+    "question": "A company's business continuity plan specifies that critical financial systems must be restored within 4 hours of a disaster and that no more than 1 hour of data can be lost. These specifications define:",
+    "options": [
+      "Maximum Tolerable Downtime of 4 hours and Minimum Recovery Time of 1 hour",
+      "Recovery Time Objective of 4 hours and Recovery Point Objective of 1 hour",
+      "Service Level Agreement terms only",
+      "Recovery Point Objective of 4 hours and Recovery Time Objective of 1 hour"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Recovery Time Objective (RTO) is the maximum time to restore systems after disruption (4 hours). Recovery Point Objective (RPO) is the maximum acceptable data loss measured in time (1 hour)—meaning backups must occur at least hourly. These are key metrics in business continuity planning."
+  },
+  {
+    "id": "isc-d2-003",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "SOC Reporting",
+    "difficulty": "hard",
+    "question": "When evaluating a SOC 2 report, a user entity auditor identifies a control exception. The MOST appropriate response is to:",
+    "options": [
+      "Request the service organization to restate the report",
+      "Issue a qualified audit opinion immediately",
+      "Evaluate the nature and extent of the exception and determine if the user entity's compensating controls mitigate the risk",
+      "Disregard the SOC report entirely"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A control exception does not automatically invalidate the SOC report. The user entity auditor should: (1) evaluate the nature, cause, and frequency of the exception, (2) assess whether it affects the controls relevant to the user entity's financial reporting, (3) determine if compensating controls at the service organization or user entity mitigate the risk, and (4) consider the effect on the audit plan — additional testing may be needed."
+  },
+  {
+    "id": "aud-d4-007",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Forming Conclusions and Reporting",
+    "difficulty": "medium",
+    "question": "When the auditor reports on condensed financial statements derived from audited financial statements (AU-C §810):",
+    "options": [
+      "A disclaimer must be issued",
+      "The condensed statements are considered audited",
+      "No report is needed",
+      "The auditor expresses an opinion on whether the condensed financial statements are consistent, in all material respects, with the audited financial statements from which they were derived"
+    ],
+    "correctAnswer": 3,
+    "explanation": "AU-C §810 (Condensed Financial Statements): When condensed financial statements are derived from audited financial statements: (1) The auditor must have audited the underlying financial statements, (2) The auditor evaluates whether the condensed statements are consistent with the underlying audited statements, (3) The report states the condensed statements were derived from audited financial statements and references the auditor's report on those financial statements, (4) The opinion states whether the condensed statements are consistent in all material respects with the underlying statements. The condensed-statement report refers to (but does not repeat) the auditor's full report."
+  },
+  {
+    "id": "tcp-121",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "International Taxation",
+    "difficulty": "hard",
+    "question": "The FDII (Foreign-Derived Intangible Income) deduction:",
+    "options": [
+      "Applies only to individuals",
+      "Taxes foreign income at higher rates",
+      "Eliminates all taxes on exports",
+      "Provides a deduction for income from serving foreign markets, resulting in effective 13.125% rate"
+    ],
+    "correctAnswer": 3,
+    "explanation": "FDII: 37.5% deduction for C corps on income serving foreign markets (export incentive). Effective rate: 21% × 62.5% = 13.125%. Counterpart to GILTI for encouraging US location. Calculation similar to GILTI."
+  },
+  {
+    "id": "bar-ext-029",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "medium",
+    "question": "Free Cash Flow (FCF) is typically calculated as:",
+    "options": [
+      "Net income plus depreciation",
+      "Cash from investing activities",
+      "Operating cash flow minus capital expenditures",
+      "Revenue minus expenses"
+    ],
+    "correctAnswer": 2,
+    "explanation": "FCF = Operating Cash Flow - Capital Expenditures. It represents cash available to pay debt, dividends, or invest after maintaining productive capacity. It's a key metric for valuation and financial health."
+  },
+  {
+    "id": "aud-wc-114",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Internal Control",
+    "difficulty": "hard",
+    "question": "A material weakness in internal control is:",
+    "options": [
+      "A minor deficiency unlikely to affect financial reporting",
+      "A disagreement with management over accounting policies",
+      "Any control environment issue",
+      "A deficiency where there is a reasonable possibility of material misstatement not being prevented or detected"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Material weakness: control deficiency (or combination) where reasonable possibility exists that material misstatement won't be prevented/detected timely. More severe than significant deficiency. Must be communicated in writing to those charged with governance."
+  },
+  {
+    "id": "far-easy-exp-023",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Not-for-Profit",
+    "difficulty": "easy",
+    "question": "Not-for-profit entities classify net assets as:",
+    "options": [
+      "Current and noncurrent",
+      "Restricted and unrestricted",
+      "With donor restrictions and without donor restrictions",
+      "Temporarily restricted and permanently restricted"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Under ASU 2016-14, NFPs report two classes: net assets WITH donor restrictions and net assets WITHOUT donor restrictions."
+  },
+  {
+    "id": "aud-d2-003",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Forming Conclusions and Reporting",
+    "difficulty": "medium",
+    "question": "A comfort letter (AU-C §920) is issued by the auditor to:",
+    "options": [
+      "The IRS",
+      "Underwriters in connection with a securities offering — providing negative assurance on unaudited interim financial data and commenting on financial information in the registration statement",
+      "The entity's customers",
+      "The entity's employees"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C §920 (Letters for Underwriters): Comfort letters are issued by the auditor to underwriters (not to the company or public). Contents: (1) Independence of the auditor, (2) Compliance of audited financial statements with SEC requirements, (3) Negative assurance on unaudited interim financial information, (4) Comments on specific financial data in the registration statement (tables, statistics, ratios), (5) Changes in financial items since the latest financial statements. Comfort letters are requested as part of the \"due diligence\" defense under §11 of the Securities Act of 1933."
+  },
+  {
+    "id": "far-d7-015",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Fair Value Measurement",
+    "difficulty": "medium",
+    "question": "Under ASC 825-10 (Fair Value Option), an entity may irrevocably elect to measure certain financial instruments at fair value. The election is made:",
+    "options": [
+      "At any time during the life of the instrument",
+      "At the date the entity first recognizes the eligible item or upon certain triggering events",
+      "Only at year end",
+      "Only for publicly traded instruments"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under ASC 825-10-25, the fair value option (FVO) allows entities to irrevocably elect fair value measurement for eligible financial assets and financial liabilities on an instrument-by-instrument basis. The election is typically made at initial recognition. Subsequent changes in fair value are reported in net income. Eligible items include: loans, receivables, debt, investments, and financial guarantees. The FVO simplifies hedge accounting by reducing gains/losses mismatches. Once elected, the FVO cannot be revoked. Disclosure of reasons for the election is required."
+  },
+  {
+    "id": "reg-dep-002",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "Individual Taxation",
+    "difficulty": "hard",
+    "question": "A single taxpayer provides 100% support for their 30-year-old child who lives with them but earned $6,000 in wages. Can the taxpayer claim the child as a dependent in 2024?",
+    "options": [
+      "Yes, as a qualifying relative",
+      "No, the child is too old",
+      "Yes, as a qualifying child",
+      "No, the child fails the gross income test"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The 30-year-old fails the age test for qualifying child. For qualifying relative: the gross income test requires income below $5,050 (2024). With $6,000 income, the child fails the qualifying relative test. Not a dependent."
+  },
+  {
+    "id": "tcp-d2-024",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Tax Practice Ethics",
+    "difficulty": "easy",
+    "question": "Under Circular 230, a practitioner must return a client's records upon request:",
+    "options": [
+      "Only if the client has not changed practitioners",
+      "Only after all outstanding fees are paid",
+      "Only if the client provides a written request",
+      "Regardless of any fee dispute between the practitioner and client"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Circular 230 §10.28 requires practitioners to promptly return client records upon request, regardless of any fee dispute. \"Records\" means records necessary for the client to comply with federal tax obligations. The practitioner may retain copies. State laws may impose additional requirements."
+  },
+  {
+    "id": "tcp-base-corp-001",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "C Corporation Taxation",
+    "difficulty": "medium",
+    "question": "Under IRC §351, no gain or loss is recognized on transfer of property to a corporation if transferors:",
+    "options": [
+      "Transfer property worth at least $100,000",
+      "Receive only stock in exchange",
+      "Control the corporation immediately after the exchange",
+      "File a special election with the IRS"
+    ],
+    "correctAnswer": 2,
+    "explanation": "§351 nonrecognition requires: (1) property transferred for stock, (2) transferors control corporation (80% voting + 80% each class) immediately after exchange. Services don't count; boot triggers gain recognition."
+  },
+  {
+    "id": "far-d16-001",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Revenue Recognition",
+    "difficulty": "easy",
+    "question": "Under ASC 606, the five-step revenue recognition model begins with which step?",
+    "options": [
+      "Determine the transaction price",
+      "Identify the contract with a customer",
+      "Identify the performance obligations in the contract",
+      "Recognize revenue when (or as) the entity satisfies a performance obligation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The five-step model under ASC 606 is: (1) Identify the contract with a customer, (2) Identify the performance obligations in the contract, (3) Determine the transaction price, (4) Allocate the transaction price to the performance obligations, (5) Recognize revenue when (or as) the entity satisfies a performance obligation. The process starts with identifying a valid contract that meets the criteria in ASC 606-10-25-1."
+  },
+  {
+    "id": "bar-cost-b3-005",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Cost Accounting",
+    "difficulty": "hard",
+    "question": "Division A can sell externally at $100 with variable costs of $60. Division B wants to buy 1,000 units. What is the minimum transfer price Division A should accept if operating at full capacity?",
+    "options": [
+      "$100",
+      "$40",
+      "$80",
+      "$60"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At full capacity, the minimum transfer price equals the market price ($100) because Division A would forgo external sales. The opportunity cost is the contribution margin lost."
+  },
+  {
+    "id": "bar-d11-023",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Income Tax Accounting",
+    "difficulty": "medium",
+    "question": "Post-TCJA (for losses arising in tax years beginning after December 31, 2017), net operating losses (NOLs) can be:",
+    "options": [
+      "Carried back 2 years and forward 20 years with no limitation",
+      "Carried forward indefinitely but can only offset up to 80% of taxable income in the carryforward year (no carryback for most taxpayers)",
+      "Carried forward for 5 years only",
+      "Applied only against capital gains"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Tax Cuts and Jobs Act (2017) changed NOL rules for losses arising after 2017: (1) No carryback (with some exceptions, e.g., farming losses, certain insurance companies; also the CARES Act temporarily allowed 5-year carryback for 2018-2020 losses), (2) Indefinite carryforward period (previously 20 years), (3) 80% limitation — NOLs can offset only 80% of taxable income in any carryforward year (previously 100%). The 80% limitation does not apply to NOLs arising before 2018 (pre-TCJA losses follow old rules). For deferred tax asset purposes, the DTA includes both the carryforward benefit and any valuation allowance assessment. The indefinite carryforward period means NOLs do not expire and a DTA is measured at the enacted tax rate."
+  },
+  {
+    "id": "far-d7-010",
+    "exam": "CPA",
+    "section": "FAR",
+    "topic": "Foreign Currency",
+    "difficulty": "medium",
+    "question": "A U.S. company purchases goods from a German supplier for €100,000 when the exchange rate is $1.10/€. At year end, the rate is $1.15/€. The payable is settled in the next year at $1.12/€. What exchange gain or loss is recognized at year end?",
+    "options": [
+      "Loss of $5,000",
+      "Gain of $5,000",
+      "Loss of $2,000",
+      "No gain or loss until settlement"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under ASC 830-20, foreign currency transactions are recorded at the spot rate on the transaction date: $1.10 × €100,000 = $110,000. At year end, the payable is remeasured at the current rate: $1.15 × €100,000 = $115,000. The increase in the payable from $110,000 to $115,000 = $5,000 exchange loss (it will cost more dollars to settle the payable). This exchange loss is recognized in net income for the current year. Upon settlement, a separate adjustment for the change from $1.15 to $1.12 will be a $3,000 gain in the following year."
+  },
+  {
+    "id": "reg-wc-037",
+    "exam": "CPA",
+    "section": "REG",
+    "topic": "C Corporations",
+    "difficulty": "hard",
+    "question": "A C corporation that owns 25% of another domestic corporation is entitled to a dividends received deduction (DRD) of:",
+    "options": [
+      "0%",
+      "100%",
+      "65%",
+      "50%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DRD tiers: <20% ownership = 50%, 20%-79% ownership = 65%, ≥80% (affiliated group) = 100%. DRD eliminates/reduces double taxation of intercorporate dividends. 25% ownership triggers the 65% tier."
+  },
+  {
+    "id": "isc-d9-009",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Governance",
+    "difficulty": "easy",
+    "question": "A Service Level Agreement (SLA) between an IT service provider and a customer should specify:",
+    "options": [
+      "Only the total contract price",
+      "Measurable service metrics including availability targets, response times, performance benchmarks, escalation procedures, and remedies/penalties for non-compliance",
+      "The provider's internal staffing decisions",
+      "The customer's marketing strategy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SLA key components: (1) Service description — what services are covered (scope), (2) Availability — uptime targets (e.g., 99.9% = 8.76 hours downtime/year), (3) Performance — response time, throughput, transaction processing speed, (4) Support — response time by severity (Critical: 15 min, High: 1 hour, Medium: 4 hours), (5) Escalation procedures — who is contacted at each level, (6) Maintenance windows — scheduled downtime for updates, (7) Reporting — regular performance reports and service reviews, (8) Penalties/credits — remedies if SLA is not met (service credits, termination rights), (9) Exclusions — what is NOT covered. SLA monitoring: dashboards tracking KPIs, regular review meetings. CPA relevance: (1) SLAs for financial system hosting define acceptable system reliability, (2) S..."
+  },
+  {
+    "id": "aud-d10-009",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "Substantive Procedures",
+    "difficulty": "medium",
+    "question": "Under AU-C 501, the auditor should attend the physical inventory count when inventory is material to the financial statements. The purpose of attendance is to:",
+    "options": [
+      "Count all inventory items personally",
+      "Evaluate management's instructions and procedures for recording and controlling the count, observe the performance of the count, and inspect the inventory",
+      "Take ownership of the inventory count process",
+      "Only observe from a distance without performing test counts"
+    ],
+    "correctAnswer": 1,
+    "explanation": "AU-C 501.04 requires the auditor to attend the physical inventory count to: (1) evaluate the adequacy of management's instructions and procedures for recording and controlling the count results; (2) observe the performance of the count (watching how personnel count, tag, and record); (3) inspect the inventory (examining the physical condition, obsolescence indicators); (4) perform test counts — the auditor independently counts selected items and compares to the client's count sheets to verify accuracy. The auditor does NOT take over the count process — inventory counting is management's responsibility. The auditor's role is to gather audit evidence about the existence and condition of inventory."
+  },
+  {
+    "id": "tcp-easy-exp-016",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Estate and Gift",
+    "difficulty": "easy",
+    "question": "The gift tax is paid by:",
+    "options": [
+      "Both donor and donee equally",
+      "The donor (giver)",
+      "The recipient (donee)",
+      "The IRS"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The gift tax is a transfer tax paid by the DONOR, not the recipient. The annual exclusion allows tax-free gifts up to a certain amount per donee."
+  },
+  {
+    "id": "isc-add-023",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Emerging Technology",
+    "difficulty": "medium",
+    "question": "Robotic Process Automation (RPA) is best suited for:",
+    "options": [
+      "Tasks requiring complex judgment",
+      "Repetitive, rule-based tasks with structured data",
+      "One-time projects",
+      "Tasks with constantly changing rules"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RPA automates repetitive, rule-based tasks using software bots. Best for high-volume, structured processes with clear rules (data entry, reconciliations, report generation). Not suited for judgment-intensive or highly variable tasks."
+  },
+  {
+    "id": "bar-add-007",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Revenue Recognition",
+    "difficulty": "hard",
+    "question": "A contract modification that adds distinct goods at standalone selling price should be accounted for as:",
+    "options": [
+      "A restatement of prior periods",
+      "A termination of the old contract",
+      "A cumulative catch-up adjustment",
+      "A separate contract prospectively"
+    ],
+    "correctAnswer": 3,
+    "explanation": "When a modification adds distinct goods/services at their standalone selling prices, it's treated as a separate contract. The original contract continues unchanged, and the new goods are accounted for prospectively."
+  },
+  {
+    "id": "bar-145",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Cost Accounting",
+    "difficulty": "hard",
+    "question": "High operating leverage indicates:",
+    "options": [
+      "Low breakeven point",
+      "No debt in capital structure",
+      "Low fixed costs relative to variable costs",
+      "High fixed costs relative to variable costs, amplifying profit changes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Operating leverage: sensitivity of operating income to sales changes. High fixed costs = high leverage = profits change faster than sales. DOL = Contribution margin / Operating income. Risk and reward amplified."
+  },
+  {
+    "id": "isc-wc-094",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Governance",
+    "difficulty": "easy",
+    "question": "IT governance ensures:",
+    "options": [
+      "The newest technology is always adopted",
+      "All employees have laptops",
+      "IT investments support business objectives",
+      "Maximum spending on technology"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IT governance aligns IT strategy with business strategy, ensuring technology investments deliver value, manage risk, and support organizational objectives. It's about optimization and alignment, not maximum spending or newest tech."
+  },
+  {
+    "id": "isc-d2-024",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Digital Transformation",
+    "difficulty": "medium",
+    "question": "A key audit consideration for enterprise resource planning (ERP) systems is:",
+    "options": [
+      "Integrated modules may propagate errors throughout the system, and complex access controls require careful configuration",
+      "ERP systems cannot process financial transactions",
+      "ERP systems are immune to cybersecurity threats",
+      "ERP systems eliminate the need for internal controls"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ERP audit considerations: (1) integration — errors in one module (e.g., procurement) flow automatically to others (accounts payable, general ledger), (2) access controls — role-based access must prevent toxic combinations (SoD violations), (3) configuration — custom settings affect control effectiveness, (4) change management — upgrades/patches affect all modules, (5) data conversion — initial migration requires validation, (6) master data management — centralized data requires integrity controls."
+  },
+  {
+    "id": "isc-wc-112",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Information Systems",
+    "difficulty": "medium",
+    "question": "A data warehouse is characterized by:",
+    "options": [
+      "Subject-oriented, integrated, time-variant, and non-volatile data",
+      "Daily deletion of old records",
+      "Single-user access",
+      "Real-time transaction processing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data warehouse characteristics (Inmon): subject-oriented (organized by topic), integrated (consistent formats), time-variant (historical data), non-volatile (stable, not updated frequently). Used for analytics and reporting."
+  },
+  {
+    "id": "isc-d3-006",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Cybersecurity Threats",
+    "difficulty": "medium",
+    "question": "An SQL injection attack targets:",
+    "options": [
+      "Web applications that pass unsanitized user input directly to a database query",
+      "Physical servers in a data center",
+      "Network firewalls",
+      "Email servers exclusively"
+    ],
+    "correctAnswer": 0,
+    "explanation": "SQL injection inserts malicious SQL code through application input fields, potentially: reading sensitive data, modifying/deleting records, executing administrative operations, or accessing the OS. Prevention: (1) parameterized queries/prepared statements (most effective), (2) input validation and sanitization, (3) web application firewalls (WAF), (4) least privilege database accounts, (5) stored procedures. SQL injection remains a top OWASP vulnerability and a key concern for financial applications."
+  },
+  {
+    "id": "bar-exp-028",
+    "exam": "CPA",
+    "section": "BAR",
+    "topic": "Capital Budgeting",
+    "difficulty": "hard",
+    "question": "A project requires a $100,000 initial investment and generates cash flows of $40,000 per year for 3 years. The NPV at 8% is $3,083 and the NPV at 12% is −$3,942. Using linear interpolation, what is the approximate IRR?",
+    "options": [
+      "8.9%",
+      "9.8%",
+      "10.5%",
+      "11.2%"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IRR ≈ Lower rate + [NPV at lower rate / (NPV at lower rate − NPV at higher rate)] × (Higher rate − Lower rate) = 8% + [$3,083 / ($3,083 + $3,942)] × 4% = 8% + (3,083/7,025) × 4% = 8% + 1.76% ≈ 9.8%. IRR is where NPV = 0; accept if IRR exceeds cost of capital."
+  },
+  {
+    "id": "tcp-d4-011",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Professional Ethics",
+    "difficulty": "easy",
+    "question": "Sanctions for violating Circular 230 may include all of the following EXCEPT:",
+    "options": [
+      "Suspension from practice before the IRS",
+      "Disbarment from practice before the IRS",
+      "Private reprimand (censure)",
+      "Criminal imprisonment by the OPR"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Office of Professional Responsibility (OPR) can impose: censure (public or private reprimand), suspension (temporary), or disbarment (permanent bar from IRS practice). Monetary penalties are also available under §10.50. Criminal prosecution is handled by the Department of Justice, not the OPR. Additionally, practitioners may face sanctions under §6694 (preparer penalties) issued by the IRS."
+  },
+  {
+    "id": "tcp-cred-003",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Tax Credits",
+    "difficulty": "easy",
+    "question": "The disabled access credit is available to:",
+    "options": [
+      "All businesses regardless of size",
+      "Businesses in specific industries only",
+      "Only non-profit organizations",
+      "Eligible small businesses with $1 million or less in revenue or 30 or fewer employees"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Credit = 50% of eligible access expenditures between $250 and $10,250 (max $5,000 credit). Available to eligible small businesses: ≤$1M revenue or ≤30 full-time employees in prior year."
+  },
+  {
+    "id": "isc-wc-068",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "SOX Section 404 requires:",
+    "options": [
+      "Disclosure of all material contracts",
+      "Management assessment and auditor attestation on internal control over financial reporting",
+      "Quarterly review of financial statements",
+      "Annual financial statement audit by external auditors"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SOX 404 requires management to annually assess and report on the effectiveness of internal control over financial reporting (ICFR). For larger companies, the external auditor must attest to (audit) management's assessment. This is separate from the financial statement audit."
+  },
+  {
+    "id": "tcp-d1-023",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Retirement Planning",
+    "difficulty": "medium",
+    "question": "Under SECURE 2.0 Act provisions, what is the required beginning date for required minimum distributions (RMDs) for an individual who turns 73 in 2025?",
+    "options": [
+      "April 1 of the year following the year they turn 73",
+      "January 1 of the year they turn 75",
+      "April 15 of the year following the year they turn 73",
+      "December 31 of the year they turn 73"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under SECURE 2.0, the RMD age increased to 73 (for those born 1951-1959) and will increase to 75 (for those born 1960+). The required beginning date is April 1 of the year following the year the account holder reaches the applicable age. Subsequent RMDs must be taken by December 31 of each year. Taking the first RMD in the following year means two RMDs in that year."
+  },
+  {
+    "id": "tcp-wc-172",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Individual Tax Compliance",
+    "difficulty": "hard",
+    "question": "Distributions from traditional IRAs are taxed as:",
+    "options": [
+      "Tax-free",
+      "Capital gains",
+      "Self-employment income",
+      "Ordinary income (attributable to deductible contributions and earnings)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Traditional IRA: deductible contributions + earnings taxed as ordinary income when distributed. Nondeductible contributions back tax-free (pro-rata rule). Early distribution penalty (10%) may apply. RMDs required at 73."
+  },
+  {
+    "id": "tcp-ext-036",
+    "exam": "CPA",
+    "section": "TCP",
+    "topic": "Retirement Planning",
+    "difficulty": "medium",
+    "question": "For 2025, the maximum annual contribution to a traditional or Roth IRA for someone under 50 is:",
+    "options": [
+      "$6,500",
+      "$7,500",
+      "$8,000",
+      "$7,000"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The 2025 IRA contribution limit is $7,000 for those under 50 ($8,000 for those 50+). This is a combined limit for traditional and Roth IRAs. Roth IRA contributions have income phase-outs."
+  },
+  {
+    "id": "isc-d7-011",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "Enterprise Systems",
+    "difficulty": "hard",
+    "question": "When evaluating interface controls between two financial systems, an auditor should verify that:",
+    "options": [
+      "The systems use the same programming language",
+      "Completeness and accuracy controls exist — such as record counts, hash totals, and reconciliation procedures — to ensure that all transactions are transferred correctly and completely between systems",
+      "Both systems are hosted on the same server",
+      "The interface runs only during business hours"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Interface/integration controls ensure data transferred between systems is complete, accurate, and authorized. Key controls: (1) Completeness — record counts, control totals (hash totals, batch totals) compared between sending and receiving systems, (2) Accuracy — validation of data types, formats, and values on receipt, (3) Authorization — only authorized interfaces can send/receive data, (4) Error handling — exception reports for failed transfers, error queues, reprocessing procedures, (5) Timeliness — monitoring to ensure transfers complete within expected windows, (6) Reconciliation — automated or manual reconciliation between systems (e.g., AP subledger to GL). Types: (1) Batch interfaces — periodic file transfers (nightly, hourly), (2) Real-time interfaces — API calls, message queu..."
+  },
+  {
+    "id": "isc-wc-060",
+    "exam": "CPA",
+    "section": "ISC",
+    "topic": "IT Governance",
+    "difficulty": "easy",
+    "question": "An acceptable use policy (AUP) primarily addresses:",
+    "options": [
+      "Vendor management requirements",
+      "Employee use of organizational IT resources",
+      "Software development standards",
+      "System backup procedures"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An Acceptable Use Policy defines what employees may and may not do when using organizational IT resources (computers, networks, email, internet). It covers authorized uses, prohibited activities, monitoring disclosures, and consequences for violations."
+  },
+  {
+    "id": "aud-wc-050",
+    "exam": "CPA",
+    "section": "AUD",
+    "topic": "IT Considerations",
+    "difficulty": "hard",
+    "question": "An auditor discovers that programmers have administrative access to production systems without compensating controls. This weakness most directly affects:",
+    "options": [
+      "Business continuity planning",
+      "Physical access controls",
+      "Application controls only",
+      "The auditor's ability to rely on any IT-dependent controls"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Programmer access to production without segregation is a pervasive general IT control weakness. General IT controls (access security, program change, computer operations) affect ALL applications running in that environment. If compromised, the auditor cannot rely on IT-dependent controls throughout the system."
+  }
+]

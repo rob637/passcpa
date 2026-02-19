@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "cisa3-103",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Architecture",
+    "difficulty": "medium",
+    "question": "Microservices architecture benefits include:",
+    "options": [
+      "Independent scaling and deployment of services",
+      "Simpler deployment",
+      "Reduced testing",
+      "No monitoring needed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Microservices enable independent scaling, deployment, and development of individual services."
+  },
+  {
+    "id": "cisa1-048",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Application Controls",
+    "difficulty": "medium",
+    "question": "Processing controls ensure:",
+    "options": [
+      "Input accuracy",
+      "User training",
+      "Data is processed correctly according to specifications",
+      "Output distribution"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Processing controls ensure that data is processed correctly and completely according to program specifications and business rules."
+  },
+  {
+    "id": "cisa1-139",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Tools",
+    "difficulty": "medium",
+    "question": "Automated audit tools should be:",
+    "options": [
+      "Validated for accuracy and appropriateness for the audit objective",
+      "Used without validation",
+      "Used only by IT auditors",
+      "Eliminated to reduce risk"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Automated tools should be validated to ensure accuracy and appropriateness for audit objectives."
+  },
+  {
+    "id": "cisa1-059",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Professional Standards",
+    "difficulty": "easy",
+    "question": "Professional skepticism requires an auditor to:",
+    "options": [
+      "Accept prior year conclusions",
+      "Trust all management statements",
+      "Question assumptions and critically evaluate evidence",
+      "Assume fraud exists"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Professional skepticism means questioning assumptions, critically evaluating evidence, and maintaining an attitude of doubt without assuming dishonesty."
+  },
+  {
+    "id": "cisa1-071",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Sampling",
+    "difficulty": "easy",
+    "question": "Judgmental sampling is most appropriate when:",
+    "options": [
+      "Statistical conclusions are required",
+      "The auditor needs to focus on specific high-risk items",
+      "Large samples are needed",
+      "Population is uniform"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Judgmental sampling allows auditors to focus on specific items of interest, high-risk transactions, or unusual items."
+  },
+  {
+    "id": "cisa1-182",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Professional Standards",
+    "difficulty": "medium",
+    "question": "The IS auditor is asked to provide consulting services on a new system implementation. Before accepting, the auditor should FIRST consider:",
+    "options": [
+      "The availability of audit staff",
+      "Whether the fee is sufficient",
+      "The potential impact on future audit independence",
+      "The technical complexity of the project"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Consulting on design or implementation could impair independence for future audits of that system. This must be evaluated first."
+  },
+  {
+    "id": "cisa5-b13-067",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Access Control",
+    "difficulty": "hard",
+    "question": "Just-in-time (JIT) access:",
+    "options": [
+      "Provides permanent privileges",
+      "Only uses service accounts",
+      "Grants access only when needed and revokes when no longer required",
+      "Only applies to administrators"
+    ],
+    "correctAnswer": 2,
+    "explanation": "JIT access provides privileges only when needed for a specific task and removes them after completion."
+  },
+  {
+    "id": "cisa3-034",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Requirements",
+    "difficulty": "medium",
+    "question": "Use cases describe:",
+    "options": [
+      "Database structure",
+      "Technical architecture",
+      "How actors interact with the system to achieve goals",
+      "Network topology"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Use cases describe how actors (users or systems) interact with the system to achieve specific goals, capturing functional requirements."
+  },
+  {
+    "id": "cisa1-153",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "IT General Controls",
+    "difficulty": "hard",
+    "question": "When evaluating IT general controls, the IS auditor should FIRST:",
+    "options": [
+      "Interview developers",
+      "Understand the control environment and IT organization",
+      "Test access controls",
+      "Review change management logs"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Understanding the control environment provides context for evaluating specific controls."
+  },
+  {
+    "id": "cisa2-161",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Organization",
+    "difficulty": "easy",
+    "question": "Centers of excellence (CoE) provide:",
+    "options": [
+      "Specialized expertise, standards, and best practice guidance",
+      "Only cost savings",
+      "Only project delivery",
+      "Only training"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CoEs provide specialized expertise, standards development, and best practice guidance."
+  },
+  {
+    "id": "cisa1-008",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Documentation",
+    "difficulty": "easy",
+    "question": "The PRIMARY purpose of documenting audit work is to:",
+    "options": [
+      "Provide evidence supporting audit conclusions",
+      "Satisfy regulatory requirements",
+      "Comply with professional standards",
+      "Create a training resource for new auditors"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The primary purpose of audit documentation is to provide sufficient evidence to support the audit conclusions and opinions. While compliance is important, evidence support is the fundamental purpose."
+  },
+  {
+    "id": "cisa1-003",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "IS Audit Standards and Guidelines",
+    "difficulty": "medium",
+    "question": "Which of the following BEST describes the purpose of an IS audit charter?",
+    "options": [
+      "To define the audit schedule for the year",
+      "To identify all systems to be audited",
+      "To establish the authority, responsibility, and accountability of the IS audit function",
+      "To document specific audit procedures"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The IS audit charter establishes the authority, responsibility, and accountability of the IS audit function. It provides the mandate for the audit function and should be approved by senior management."
+  },
+  {
+    "id": "cisa3-056",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Practices",
+    "difficulty": "medium",
+    "question": "Kubernetes is primarily used for:",
+    "options": [
+      "Database administration",
+      "Container orchestration and management",
+      "Code compilation",
+      "User authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Kubernetes orchestrates and manages containerized applications, handling deployment, scaling, and operational tasks."
+  },
+  {
+    "id": "cisa2-040",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Organization",
+    "difficulty": "medium",
+    "question": "IT organizational structure should ensure:",
+    "options": [
+      "Clear roles, responsibilities, and accountability",
+      "No oversight",
+      "Maximum centralization",
+      "Minimum staff"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IT organizational structure should clearly define roles, responsibilities, and accountability to ensure effective operations and governance."
+  },
+  {
+    "id": "cisa3-074",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Design",
+    "difficulty": "easy",
+    "question": "Technical specifications should include:",
+    "options": [
+      "Architecture, interfaces, data models, and security requirements",
+      "Only business requirements",
+      "Only user stories",
+      "Only test cases"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Technical specifications detail architecture, component interfaces, data models, security requirements, and implementation standards."
+  },
+  {
+    "id": "cisa2-167",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "easy",
+    "question": "Control effectiveness metrics track:",
+    "options": [
+      "Only existence",
+      "Whether controls achieve their intended objectives",
+      "Only compliance",
+      "Only cost"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Control effectiveness metrics measure whether controls achieve their intended risk reduction."
+  },
+  {
+    "id": "cisa2-b12-032",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "Vendor Management",
+    "difficulty": "hard",
+    "question": "Exit strategies for outsourcing should be:",
+    "options": [
+      "Planned before entering agreements to ensure transition capability",
+      "Left to the vendor",
+      "Not necessary",
+      "Developed when exiting"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Exit strategies should be planned before signing agreements to ensure data, services, and operations can transition if needed."
+  },
+  {
+    "id": "cisa3-037",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Methodologies",
+    "difficulty": "easy",
+    "question": "Prototyping is useful when:",
+    "options": [
+      "No user involvement is possible",
+      "Requirements are unclear and need user feedback",
+      "Requirements are completely defined",
+      "Time is unlimited"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Prototyping is valuable when requirements are unclear, allowing users to interact with a working model and provide feedback."
+  },
+  {
+    "id": "cisa1-084",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Privacy Auditing",
+    "difficulty": "easy",
+    "question": "Privacy audits should assess:",
+    "options": [
+      "Only data deletion",
+      "Data collection, use, protection, and compliance with regulations",
+      "Only technical controls",
+      "Only user consent"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Privacy audits assess the entire data lifecycle: collection practices, use, protection measures, retention, and regulatory compliance."
+  },
+  {
+    "id": "cisa2-b11-023",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Risk Management",
+    "difficulty": "easy",
+    "question": "IT risk assessment should be:",
+    "options": [
+      "Performed by external parties only",
+      "Performed once and filed",
+      "Only following incidents",
+      "Ongoing and updated as conditions change"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Risk assessment is a continuous process, updated as the environment, threats, and organization change."
+  },
+  {
+    "id": "cisa3-128",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Agile",
+    "difficulty": "easy",
+    "question": "Definition of Done (DoD) ensures:",
+    "options": [
+      "Fast delivery only",
+      "Code compilation only",
+      "Consistent quality criteria for completed work",
+      "Developer discretion"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DoD defines consistent quality criteria that must be met before work is considered complete."
+  },
+  {
+    "id": "cisa1-b11-002",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Execution",
+    "difficulty": "hard",
+    "question": "Control self-assessment (CSA) primarily relies on:",
+    "options": [
+      "Board oversight",
+      "External auditors",
+      "Automated testing tools",
+      "Facilitated sessions where staff assess their own controls"
+    ],
+    "correctAnswer": 3,
+    "explanation": "CSA uses facilitated workshops or surveys where staff members assess the adequacy and effectiveness of controls in their areas."
+  },
+  {
+    "id": "cisa2-001",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "Effective IT governance is MAINLY the responsibility of:",
+    "options": [
+      "The Board of Directors",
+      "The Audit Committee",
+      "The Chief Information Officer (CIO)",
+      "The IT Steering Committee"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Governance is the responsibility of the Board of Directors and executive management. They set the strategic direction and ensure objectives are achieved."
+  },
+  {
+    "id": "cisa2-191",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "Organization Structure",
+    "difficulty": "hard",
+    "question": "Segregation of duties in IT is MOST critical between:",
+    "options": [
+      "Development and production operations",
+      "Business analysis and testing",
+      "Helpdesk and network operations",
+      "Project management and training"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Separation between development and production prevents unauthorized code changes and ensures proper change control."
+  },
+  {
+    "id": "cisa3-180",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Acquisition",
+    "difficulty": "medium",
+    "question": "An escrow agreement for software source code is important because it:",
+    "options": [
+      "Reduces license costs",
+      "Provides access to source code if the vendor fails",
+      "Eliminates need for vendor support",
+      "Allows unlimited modifications"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Escrow agreements provide access to source code if the vendor goes out of business or fails to maintain the software."
+  },
+  {
+    "id": "cisa3-068",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Methodologies",
+    "difficulty": "easy",
+    "question": "Kanban methodology focuses on:",
+    "options": [
+      "Fixed sprints",
+      "Extensive planning",
+      "Visualizing workflow and limiting work in progress",
+      "Phase gates"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Kanban visualizes workflow, limits work in progress (WIP), and focuses on continuous flow rather than fixed iterations."
+  },
+  {
+    "id": "cisa1-089",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Reporting",
+    "difficulty": "easy",
+    "question": "Audit report distribution should be based on:",
+    "options": [
+      "Need to know and organizational requirements",
+      "Auditor preference",
+      "Maximum distribution",
+      "Auditee request"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Report distribution follows the need-to-know principle, distributing to those who need the information for their responsibilities."
+  },
+  {
+    "id": "cisa2-059",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Management",
+    "difficulty": "easy",
+    "question": "IT asset lifecycle management covers:",
+    "options": [
+      "Only procurement",
+      "Only disposal",
+      "Acquisition through disposition",
+      "Only maintenance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Asset lifecycle management covers the entire life of an asset: planning, acquisition, deployment, operation, maintenance, and secure disposal."
+  },
+  {
+    "id": "cisa3-041",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Practices",
+    "difficulty": "easy",
+    "question": "Code refactoring involves:",
+    "options": [
+      "Restructuring code without changing its behavior",
+      "Removing all comments",
+      "Adding new features",
+      "Converting to a new language"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Refactoring restructures existing code to improve its internal structure without changing its external behavior, improving maintainability."
+  },
+  {
+    "id": "cisa1-056",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Risk Assessment",
+    "difficulty": "medium",
+    "question": "Control risk represents the risk that:",
+    "options": [
+      "Auditors detect all errors",
+      "Controls will not prevent or detect material misstatements",
+      "Controls will prevent errors",
+      "Errors do not exist"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Control risk is the risk that internal controls will not prevent or detect material misstatements in a timely manner."
+  },
+  {
+    "id": "cisa1-064",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Planning",
+    "difficulty": "hard",
+    "question": "When developing an audit program, the FIRST step should be to:",
+    "options": [
+      "Draft the audit report",
+      "Understand the area being audited and its risks",
+      "Select audit tools",
+      "Schedule interviews"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Before developing procedures, the auditor must understand the area being audited, its objectives, and associated risks."
+  },
+  {
+    "id": "cisa2-014",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Service Management",
+    "difficulty": "easy",
+    "question": "The PRIMARY benefit of an IT service catalog is:",
+    "options": [
+      "Automating service delivery",
+      "Reducing IT costs",
+      "Providing visibility into available IT services",
+      "Eliminating the need for service level agreements"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A service catalog provides visibility into the IT services available to the organization, helping users understand what services exist and how to request them."
+  },
+  {
+    "id": "cisa3-170",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "API Development",
+    "difficulty": "medium",
+    "question": "API gateway security functions include:",
+    "options": [
+      "Authentication, rate limiting, and request validation",
+      "Routing only",
+      "Load balancing only",
+      "Caching only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "API gateways provide authentication, rate limiting, validation, and other security controls."
+  },
+  {
+    "id": "cisa3-032",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Documentation",
+    "difficulty": "easy",
+    "question": "System documentation should be updated:",
+    "options": [
+      "Only during initial development",
+      "Annually regardless of changes",
+      "Whenever changes are made to the system",
+      "Only by external auditors"
+    ],
+    "correctAnswer": 2,
+    "explanation": "System documentation should be updated whenever changes are made to ensure it accurately reflects the current system state and supports maintenance."
+  },
+  {
+    "id": "cisa4-b12-067",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "medium",
+    "question": "Simulation testing of DR plans:",
+    "options": [
+      "Replaces all other testing",
+      "Uses actual failover",
+      "Simulates disaster scenarios to test decision-making without actual activation",
+      "Is less valuable than tabletop"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Simulation tests disaster scenarios more realistically than tabletops without requiring actual system failover."
+  },
+  {
+    "id": "cisa4-b11-069",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "easy",
+    "question": "Data replication strategies range from:",
+    "options": [
+      "Synchronous to asynchronous with different RPO implications",
+      "Only tape backup",
+      "Only synchronous",
+      "Only cloud backup"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Synchronous replication has zero data loss (RPO=0) but higher cost; asynchronous has some data loss but is more practical for distance."
+  },
+  {
+    "id": "cisa4-140",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Disaster Recovery",
+    "difficulty": "medium",
+    "question": "Off-site backup storage should:",
+    "options": [
+      "Be online only",
+      "Be at same facility",
+      "Be sufficiently distant to survive regional disasters",
+      "Be next door"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Off-site storage should be sufficiently distant to survive regional disasters affecting primary site."
+  },
+  {
+    "id": "cisa3-008",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Controls",
+    "difficulty": "easy",
+    "question": "Configuration management ensures that:",
+    "options": [
+      "Changes to software components are controlled and tracked",
+      "Software is developed faster",
+      "Developers work independently",
+      "Testing is minimized"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Configuration management provides control and tracking of changes to software components, ensuring integrity and enabling rollback if issues arise."
+  },
+  {
+    "id": "cisa1-087",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Reporting",
+    "difficulty": "easy",
+    "question": "Management response to audit findings should include:",
+    "options": [
+      "Only acknowledgment",
+      "Only budget impact",
+      "Planned corrective actions, responsible parties, and target dates",
+      "Only disagreement if applicable"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Management responses should include specific corrective actions, responsible individuals, and target completion dates."
+  },
+  {
+    "id": "cisa1-063",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Planning",
+    "difficulty": "medium",
+    "question": "The PRIMARY reason for planning IS audits is to:",
+    "options": [
+      "Ensure audit objectives are achieved efficiently",
+      "Minimize audit costs",
+      "Document audit procedures",
+      "Satisfy management requirements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Audit planning ensures that audit objectives are achievable and resources are used efficiently, focusing on the most significant risks."
+  },
+  {
+    "id": "cisa1-053",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Documentation",
+    "difficulty": "medium",
+    "question": "Audit working papers should be:",
+    "options": [
+      "Discarded after the audit",
+      "Retained according to policy and protected appropriately",
+      "Given to the auditee",
+      "Shared publicly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Working papers should be retained according to organizational policy and regulatory requirements, and protected to maintain confidentiality."
+  },
+  {
+    "id": "cisa4-059",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "easy",
+    "question": "Emergency response procedures should be:",
+    "options": [
+      "Known only to management",
+      "Updated only after incidents",
+      "Clear, simple, and regularly tested",
+      "Complex and detailed"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Emergency procedures should be clear, simple to follow under stress, and regularly tested to ensure effectiveness."
+  },
+  {
+    "id": "cisa4-065",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Resilience",
+    "difficulty": "medium",
+    "question": "Circuit breaker pattern prevents:",
+    "options": [
+      "Load balancing",
+      "Cascading failures by stopping requests to failing services",
+      "Successful requests",
+      "All requests"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit breakers prevent cascading failures by stopping requests to failing services, allowing them to recover."
+  },
+  {
+    "id": "cisa1-013",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Planning",
+    "difficulty": "medium",
+    "question": "An IS auditor reviewing a previous audit's working papers should PRIMARILY be concerned with:",
+    "options": [
+      "The format and organization of documentation",
+      "The qualifications of the previous auditor",
+      "Whether findings were closed",
+      "Changes in the control environment since the last audit"
+    ],
+    "correctAnswer": 3,
+    "explanation": "When reviewing prior working papers, the auditor should primarily assess changes in the control environment that may affect current audit scope and approach."
+  },
+  {
+    "id": "cisa1-b10-001",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Planning",
+    "difficulty": "medium",
+    "question": "Risk-based audit planning ensures that:",
+    "options": [
+      "Management selects audit areas",
+      "Audit resources are allocated to areas with the highest risk",
+      "Audits are completed faster",
+      "All areas receive equal audit attention"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Risk-based planning prioritizes audit resources toward areas with the highest risk to organizational objectives."
+  },
+  {
+    "id": "cisa3-005",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "SDLC",
+    "difficulty": "medium",
+    "question": "The software development life cycle (SDLC) phase where detailed design specifications are created is:",
+    "options": [
+      "Requirements analysis",
+      "Implementation",
+      "System design",
+      "Maintenance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "During the system design phase, detailed technical specifications including architecture, data models, and interface designs are created based on the requirements."
+  },
+  {
+    "id": "cisa3-222",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Acquisition",
+    "difficulty": "hard",
+    "question": "When auditing system acquisition, the MOST important control is:",
+    "options": [
+      "Single vendor relationship",
+      "Formal vendor evaluation against defined criteria",
+      "Lowest price selection",
+      "Fastest implementation timeline"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Formal vendor evaluation against business, technical, and risk criteria ensures appropriate selection."
+  },
+  {
+    "id": "cisa2-131",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Resource Management",
+    "difficulty": "easy",
+    "question": "IT demand management helps:",
+    "options": [
+      "Deny all requests",
+      "Prioritize and manage IT resource requests against capacity",
+      "Eliminate backlogs",
+      "Increase all budgets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Demand management helps prioritize and manage IT resource requests against available capacity."
+  },
+  {
+    "id": "cisa3-042",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Security Testing",
+    "difficulty": "hard",
+    "question": "Static application security testing (SAST) analyzes:",
+    "options": [
+      "Network traffic",
+      "Running applications",
+      "Source code or binaries without executing them",
+      "User behavior"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SAST analyzes source code or compiled binaries without executing them, identifying vulnerabilities through code review."
+  },
+  {
+    "id": "cisa3-135",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Secure Development",
+    "difficulty": "hard",
+    "question": "Parameterized queries prevent:",
+    "options": [
+      "SQL injection by separating code from data",
+      "XSS attacks only",
+      "All attacks",
+      "Authentication attacks"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Parameterized queries prevent SQL injection by treating user input as data, never as executable SQL."
+  },
+  {
+    "id": "cisa4-046",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Network Operations",
+    "difficulty": "easy",
+    "question": "Network operations center (NOC) is responsible for:",
+    "options": [
+      "Only development",
+      "Monitoring and managing network infrastructure",
+      "Only security functions",
+      "Only help desk functions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The NOC monitors and manages network infrastructure, identifying and resolving issues to maintain network availability and performance."
+  },
+  {
+    "id": "cisa1-098",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Findings",
+    "difficulty": "easy",
+    "question": "An audit finding consists of:",
+    "options": [
+      "Criteria, condition, cause, and effect",
+      "Only the condition",
+      "Only risk rating",
+      "Only recommendation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A complete finding includes criteria (what should be), condition (what is), cause (why), and effect (risk/impact)."
+  },
+  {
+    "id": "cisa5-013",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Cryptography",
+    "difficulty": "easy",
+    "question": "Encryption protects data by:",
+    "options": [
+      "Moving data offsite",
+      "Compressing data",
+      "Deleting sensitive data",
+      "Converting data into an unreadable format without the key"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Encryption transforms data into an unreadable format that can only be decrypted with the appropriate key, protecting confidentiality."
+  },
+  {
+    "id": "cisa5-145",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Network Security",
+    "difficulty": "easy",
+    "question": "Network Access Control (NAC) verifies:",
+    "options": [
+      "Only time of access",
+      "Only location",
+      "Only identity",
+      "Device health and compliance before granting network access"
+    ],
+    "correctAnswer": 3,
+    "explanation": "NAC verifies device identity, health, and policy compliance before allowing network access."
+  },
+  {
+    "id": "cisa4-145",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "medium",
+    "question": "Log retention periods should consider:",
+    "options": [
+      "Regulatory requirements, investigation needs, and operational use",
+      "Only convenience",
+      "Only technical limits",
+      "Only storage costs"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Log retention should consider regulatory requirements, investigation needs, and operational requirements."
+  },
+  {
+    "id": "cisa1-104",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Follow-up",
+    "difficulty": "medium",
+    "question": "Follow-up audits verify:",
+    "options": [
+      "Implementation of agreed remediation actions",
+      "New areas only",
+      "Financial statements",
+      "Only new findings"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Follow-up audits verify that management has implemented agreed remediation actions for prior findings."
+  },
+  {
+    "id": "cisa4-131",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Incident Management",
+    "difficulty": "easy",
+    "question": "Incident classification criteria should include:",
+    "options": [
+      "Only system type",
+      "Only response time",
+      "Business impact, urgency, and scope of affected services",
+      "Only technical impact"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Classification should consider business impact, urgency, scope, and affected services/users."
+  },
+  {
+    "id": "cisa3-094",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Release Management",
+    "difficulty": "medium",
+    "question": "Canary deployments:",
+    "options": [
+      "Are only for testing",
+      "Release to a small subset before full rollout",
+      "Deploy to all users",
+      "Skip testing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Canary deployments release changes to a small user subset first to validate before broader rollout."
+  },
+  {
+    "id": "cisa2-047",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Service Management",
+    "difficulty": "medium",
+    "question": "Operational level agreements (OLAs) differ from SLAs in that OLAs:",
+    "options": [
+      "Cover only financial terms",
+      "Define internal support relationships",
+      "Are external agreements",
+      "Are more formal"
+    ],
+    "correctAnswer": 1,
+    "explanation": "OLAs define internal support relationships between IT groups that underpin the SLAs provided to business customers."
+  },
+  {
+    "id": "cisa3-016",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Implementation",
+    "difficulty": "medium",
+    "question": "The PRIMARY purpose of a pilot implementation is to:",
+    "options": [
+      "Train all users at once",
+      "Test the system in a limited production environment",
+      "Avoid user involvement",
+      "Reduce implementation costs"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Pilot implementation tests the system in a limited production environment with a subset of users to identify issues before full rollout."
+  },
+  {
+    "id": "cisa1-062",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Process",
+    "difficulty": "medium",
+    "question": "Audit follow-up ensures that:",
+    "options": [
+      "Management has implemented corrective actions",
+      "Audits are completed on time",
+      "Reports are distributed",
+      "Staff are properly trained"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Audit follow-up verifies that management has implemented corrective actions in response to audit findings within agreed timeframes."
+  },
+  {
+    "id": "cisa2-198",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "Policy Management",
+    "difficulty": "easy",
+    "question": "The PRIMARY purpose of IT policies is to:",
+    "options": [
+      "Document system configurations",
+      "Communicate management's expectations and requirements",
+      "Provide technical procedures",
+      "Replace training"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Policies communicate management's expectations and requirements that guide organizational behavior."
+  },
+  {
+    "id": "cisa4-007",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Service Management",
+    "difficulty": "easy",
+    "question": "Incident management primarily aims to:",
+    "options": [
+      "Implement permanent solutions",
+      "Restore normal service operation as quickly as possible",
+      "Prevent all future incidents",
+      "Identify root causes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Incident management aims to restore normal service operation as quickly as possible, minimizing impact on business operations."
+  },
+  {
+    "id": "cisa3-162",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Security Architecture",
+    "difficulty": "hard",
+    "question": "Zero-trust architecture in development requires:",
+    "options": [
+      "Authentication and authorization at every service interaction",
+      "Perimeter security only",
+      "No security controls",
+      "Trust all internal traffic"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Zero-trust requires authentication and authorization at every service interaction point."
+  },
+  {
+    "id": "cisa3-102",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Software Development",
+    "difficulty": "hard",
+    "question": "SOLID principles in software design:",
+    "options": [
+      "Only apply to databases",
+      "Are outdated",
+      "Guide creation of maintainable and extensible code",
+      "Only apply to web applications"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SOLID principles (Single responsibility, Open-closed, Liskov, Interface segregation, Dependency inversion) guide maintainable design."
+  },
+  {
+    "id": "cisa5-b10-093",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Management",
+    "difficulty": "medium",
+    "question": "Security awareness training should:",
+    "options": [
+      "Be a one-time event",
+      "Only address policies",
+      "Be ongoing and include current threats and practical guidance",
+      "Only be for IT staff"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Security awareness should be ongoing, relevant to current threats, and provide practical guidance applicable to employees' roles."
+  },
+  {
+    "id": "cisa3-080",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Security",
+    "difficulty": "easy",
+    "question": "Threat modeling identifies:",
+    "options": [
+      "Only network threats",
+      "Only external threats",
+      "Potential threats and vulnerabilities in system design",
+      "Only compliance risks"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Threat modeling identifies potential threats, attack vectors, and vulnerabilities in system design, enabling proactive mitigation."
+  },
+  {
+    "id": "cisa1-b11-009",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Execution",
+    "difficulty": "medium",
+    "question": "Interview techniques should include:",
+    "options": [
+      "Minimal preparation",
+      "Only closed-ended questions",
+      "Leading questions",
+      "Open-ended questions, active listening, and documentation"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Effective interviews use open-ended questions to elicit detailed responses, active listening to understand, and thorough documentation."
+  },
+  {
+    "id": "cisa1-006",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Execution",
+    "difficulty": "easy",
+    "question": "An IS auditor discovers that a critical control is not operating effectively. The FIRST action should be to:",
+    "options": [
+      "Report to the audit committee",
+      "Determine the business impact",
+      "Document the finding in the audit report",
+      "Recommend immediate remediation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Before escalating or recommending remediation, the auditor should first assess the business impact of the control failure to understand the significance and urgency of the issue."
+  },
+  {
+    "id": "cisa5-039",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Endpoint Security",
+    "difficulty": "hard",
+    "question": "Endpoint detection and response (EDR) provides:",
+    "options": [
+      "Only patch management",
+      "Only inventory",
+      "Only antivirus protection",
+      "Continuous monitoring, threat detection, and response on endpoints"
+    ],
+    "correctAnswer": 3,
+    "explanation": "EDR continuously monitors endpoints, detects threats through behavioral analysis, and provides investigation and response capabilities."
+  },
+  {
+    "id": "cisa5-017",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Cryptography",
+    "difficulty": "medium",
+    "question": "Public key infrastructure (PKI) provides:",
+    "options": [
+      "Backup services",
+      "Physical security",
+      "Network segmentation",
+      "Framework for managing digital certificates"
+    ],
+    "correctAnswer": 3,
+    "explanation": "PKI provides a framework for issuing, managing, and validating digital certificates that bind public keys to identities."
+  },
+  {
+    "id": "cisa2-122",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "IT metrics and reporting should align with:",
+    "options": [
+      "Business objectives and stakeholder needs",
+      "Technical details only",
+      "IT department goals only",
+      "Industry averages only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IT metrics should align with business objectives and address the information needs of various stakeholders."
+  },
+  {
+    "id": "cisa1-090",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Reporting",
+    "difficulty": "medium",
+    "question": "An audit conclusion should be based on:",
+    "options": [
+      "Sufficient, reliable evidence gathered during the audit",
+      "Management assertions",
+      "Auditor assumptions",
+      "Prior year conclusions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Audit conclusions must be supported by sufficient, reliable, and relevant evidence gathered through appropriate audit procedures."
+  },
+  {
+    "id": "cisa4-224",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "hard",
+    "question": "A reciprocal agreement for disaster recovery has what PRIMARY disadvantage?",
+    "options": [
+      "Complex implementation",
+      "Capacity constraints if both parties experience disaster simultaneously",
+      "Regulatory prohibition",
+      "High cost"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Reciprocal agreements may fail if both parties need capacity simultaneously, and excess capacity may not be available."
+  },
+  {
+    "id": "cisa2-b10-024",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Management",
+    "difficulty": "hard",
+    "question": "The IT balanced scorecard measures IT performance from perspectives including:",
+    "options": [
+      "Financial only",
+      "Financial, customer, internal processes, and learning/growth",
+      "User satisfaction only",
+      "Compliance only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The balanced scorecard framework measures performance from financial, customer, internal process, and learning/growth perspectives."
+  },
+  {
+    "id": "cisa2-102",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "hard",
+    "question": "IT steering committee effectiveness depends on:",
+    "options": [
+      "Technical expertise only",
+      "IT-only membership",
+      "Appropriate business representation and decision authority",
+      "Meeting frequency only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Steering committee effectiveness requires appropriate business stakeholder representation and decision-making authority."
+  },
+  {
+    "id": "cisa5-b10-085",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Network Security",
+    "difficulty": "medium",
+    "question": "An IS auditor reviewing network architecture finds that the database servers, web servers, and user workstations are all on the same network segment. What is the PRIMARY risk of this flat network architecture?",
+    "options": [
+      "Network performance will be optimal due to reduced routing",
+      "An attacker compromising any device can laterally move to all other systems, including databases containing sensitive data, without crossing a security boundary",
+      "Network management is more complex with a flat network",
+      "Users will experience slower application response times"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A flat network without segmentation allows unrestricted lateral movement. An attacker who compromises a user workstation can directly access database servers, web servers, and all other systems on the same segment. Network segmentation with firewalls between zones limits the blast radius of a security breach."
+  },
+  {
+    "id": "cisa3-006",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Methodologies",
+    "difficulty": "easy",
+    "question": "The Agile development methodology is characterized by:",
+    "options": [
+      "Extensive upfront documentation",
+      "Iterative development with frequent feedback",
+      "Rigid phase gates",
+      "Minimal user involvement"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Agile uses iterative development cycles (sprints) with frequent customer feedback, enabling rapid adaptation to changing requirements and continuous improvement."
+  },
+  {
+    "id": "cisa5-127",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Access Management",
+    "difficulty": "easy",
+    "question": "Emergency access procedures should include:",
+    "options": [
+      "No documentation",
+      "Permanent elevation",
+      "Unlimited access",
+      "Time-limited access with monitoring and post-review"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Emergency access should be time-limited, logged, monitored, and reviewed after the emergency."
+  },
+  {
+    "id": "cisa4-b13-056",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "hard",
+    "question": "Geographic redundancy for DR should consider:",
+    "options": [
+      "Distance, common risks, latency, and legal/regulatory requirements",
+      "Only distance",
+      "Only network speed",
+      "Only cost"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Geographic redundancy planning considers distance, shared risk factors, latency, and jurisdictional requirements."
+  },
+  {
+    "id": "cisa3-093",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Release Management",
+    "difficulty": "hard",
+    "question": "Feature flags enable:",
+    "options": [
+      "Controlled feature rollout and rapid rollback capability",
+      "Code deletion",
+      "Only bug fixes",
+      "Only security patches"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Feature flags enable controlled gradual rollout of features and rapid rollback without code deployment."
+  },
+  {
+    "id": "cisa1-002",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Execution",
+    "difficulty": "hard",
+    "question": "When an IS auditor identifies a significant control weakness, the FIRST step should be to:",
+    "options": [
+      "Develop a recommendation for remediation",
+      "Validate the finding with the auditee",
+      "Report the finding to the audit committee immediately",
+      "Conduct a root cause analysis"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The auditor should first validate the finding with the auditee to ensure the factual accuracy of the observation before proceeding to analysis or reporting."
+  },
+  {
+    "id": "cisa2-cobit-002",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance Frameworks",
+    "difficulty": "hard",
+    "question": "COBIT 2019's principle of \"Separating Governance from Management\" means:",
+    "options": [
+      "Senior management should not be involved in IT decisions",
+      "The audit function should be separate from operations",
+      "IT and business should operate independently",
+      "Governance evaluates, directs, and monitors while management plans, builds, runs, and monitors"
+    ],
+    "correctAnswer": 3,
+    "explanation": "COBIT 2019 distinguishes governance (the board's responsibility to evaluate, direct, and monitor) from management (which plans, builds, runs, and monitors activities to achieve objectives)."
+  },
+  {
+    "id": "cisa4-067",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Disaster Recovery",
+    "difficulty": "easy",
+    "question": "Geographic redundancy protects against:",
+    "options": [
+      "Regional disasters affecting entire facilities",
+      "Only network issues",
+      "Only power outages",
+      "Only server failures"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Geographic redundancy provides protection against regional disasters by maintaining capabilities in different geographic locations."
+  },
+  {
+    "id": "cisa5-b12-077",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Management",
+    "difficulty": "easy",
+    "question": "Security risk assessment should identify:",
+    "options": [
+      "Only high risks",
+      "Only technical issues",
+      "Only compliance gaps",
+      "Assets, threats, vulnerabilities, and potential impacts"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Risk assessment identifies assets, threats, vulnerabilities, existing controls, and potential impacts."
+  },
+  {
+    "id": "cisa2-189",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "Service Management",
+    "difficulty": "hard",
+    "question": "The PRIMARY benefit of implementing ITIL is:",
+    "options": [
+      "Lower hardware costs",
+      "Standardized and improved IT service management processes",
+      "Reduced IT headcount",
+      "Elimination of all IT incidents"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ITIL provides best practice guidance for standardizing and improving IT service management processes."
+  },
+  {
+    "id": "cisa3-033",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Estimation",
+    "difficulty": "hard",
+    "question": "Function point analysis is used to:",
+    "options": [
+      "Test application functionality",
+      "Debug applications",
+      "Estimate software size and effort based on functionality",
+      "Design user interfaces"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Function point analysis estimates software size based on the functionality it provides to users, helping estimate development effort and cost."
+  },
+  {
+    "id": "cisa4-b10-068",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "hard",
+    "question": "Differential backups differ from incremental because:",
+    "options": [
+      "Differential backs up changes since last full; incremental since last backup of any type",
+      "Incremental is always faster to restore",
+      "Differential requires more storage than incremental",
+      "They are identical"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Differential backs up all changes since the last full backup; incremental backs up changes since the last backup (full or incremental)."
+  },
+  {
+    "id": "cisa5-093",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Architecture",
+    "difficulty": "hard",
+    "question": "Security architecture design should be:",
+    "options": [
+      "Reactive",
+      "Technology-focused only",
+      "Single layer only",
+      "Based on defense-in-depth principles"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Security architecture should follow defense-in-depth with multiple layers of complementary controls."
+  },
+  {
+    "id": "cisa2-b13-026",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "hard",
+    "question": "An IS auditor discovers that business units are procuring and implementing SaaS applications without IT approval or security assessment. What is the GREATEST risk associated with this shadow IT?",
+    "options": [
+      "The applications may use a different user interface than standard corporate tools",
+      "Sensitive corporate data may be processed and stored in unapproved environments without adequate security controls or data governance",
+      "The applications may have lower licensing costs than IT-approved alternatives",
+      "Business unit managers may receive recognition for their initiative"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Shadow IT's greatest risk is uncontrolled data exposure — corporate data flows into unapproved applications without security assessment, data classification, encryption, access controls, or regulatory compliance verification. This creates blind spots in governance, incident response, and data protection obligations."
+  },
+  {
+    "id": "cisa4-019",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "hard",
+    "question": "When reviewing IT asset management, an IS auditor should be MOST concerned if:",
+    "options": [
+      "Depreciation schedules are followed",
+      "There is no complete inventory of IT assets",
+      "Assets are disposed of when obsolete",
+      "Assets are tagged with identifiers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Without a complete inventory, the organization cannot properly manage, secure, or account for all IT assets, increasing risk of loss and security gaps."
+  },
+  {
+    "id": "cisa2-b11-032",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "hard",
+    "question": "Portfolio management for IT enables:",
+    "options": [
+      "Only cost tracking",
+      "Only vendor selection",
+      "Only project tracking",
+      "Holistic view and optimization of IT investments across programs"
+    ],
+    "correctAnswer": 3,
+    "explanation": "IT portfolio management provides a holistic view of all IT investments, enabling optimization and alignment with strategic goals."
+  },
+  {
+    "id": "cisa3-163",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Database Development",
+    "difficulty": "medium",
+    "question": "Database performance tuning during development should address:",
+    "options": [
+      "Only backup",
+      "Query optimization, indexing, and connection pooling",
+      "Only storage",
+      "Only security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Performance tuning addresses query optimization, indexing strategies, and connection pooling."
+  },
+  {
+    "id": "cisa2-b11-026",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Management",
+    "difficulty": "hard",
+    "question": "IT policies differ from procedures because:",
+    "options": [
+      "They are the same",
+      "Procedures are more important",
+      "Policies are optional",
+      "Policies state what must happen; procedures describe how"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Policies define requirements and expectations; procedures provide step-by-step instructions for implementing policies."
+  },
+  {
+    "id": "cisa4-172",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "easy",
+    "question": "Capacity planning for cloud resources should consider:",
+    "options": [
+      "Growth projections, burst capacity, and cost optimization",
+      "Only peak loads",
+      "Only average usage",
+      "Only current usage"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cloud capacity planning considers growth, burst needs, and cost optimization strategies."
+  },
+  {
+    "id": "cisa5-163",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Operations",
+    "difficulty": "easy",
+    "question": "Security orchestration, automation, and response (SOAR) enables:",
+    "options": [
+      "Only manual workflows",
+      "Only reporting",
+      "Only ticketing",
+      "Automated incident response playbooks and workflow integration"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SOAR enables automated incident response playbooks and security tool integration."
+  },
+  {
+    "id": "cisa1-049",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Application Controls",
+    "difficulty": "hard",
+    "question": "Hash totals are used to:",
+    "options": [
+      "Encrypt data",
+      "Compress data",
+      "Detect unauthorized changes or loss of records",
+      "Speed processing"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Hash totals (sums of non-financial fields like account numbers) detect unauthorized changes or loss of records during transmission or processing."
+  },
+  {
+    "id": "cisa2-157",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "Platform governance for digital ecosystems should address:",
+    "options": [
+      "Partner management, API governance, and ecosystem security",
+      "Only technology",
+      "Only costs",
+      "Only internal systems"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Platform governance addresses partner management, API governance, and ecosystem security."
+  },
+  {
+    "id": "cisa3-083",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Security",
+    "difficulty": "medium",
+    "question": "Secure defaults mean:",
+    "options": [
+      "Everything is enabled",
+      "Systems are configured securely out of the box",
+      "Users configure security",
+      "No security is applied"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Secure defaults ensure systems are configured securely by default, requiring explicit action to reduce security."
+  },
+  {
+    "id": "cisa4-197",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "hard",
+    "question": "An organization has RPO of 4 hours. This means:",
+    "options": [
+      "Incidents must be resolved in 4 hours",
+      "Maximum 4 hours of data loss is acceptable",
+      "Backups run every 4 hours",
+      "Systems must be recovered within 4 hours"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RPO (Recovery Point Objective) defines the maximum acceptable data loss, measured in time."
+  },
+  {
+    "id": "cisa2-125",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Organization",
+    "difficulty": "medium",
+    "question": "IT organizational structure should:",
+    "options": [
+      "Reflect business needs, strategy, and regulatory requirements",
+      "Report only to CFO",
+      "Be identical across all organizations",
+      "Minimize IT headcount"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IT structure should reflect business needs, strategic objectives, and applicable regulatory requirements."
+  },
+  {
+    "id": "cisa1-b12-005",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Execution",
+    "difficulty": "easy",
+    "question": "Inquiry as an audit procedure should be:",
+    "options": [
+      "Avoided entirely",
+      "Corroborated with other evidence",
+      "Used alone for conclusions",
+      "Limited to management only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Inquiry alone is not sufficient evidence; it should be supported by other corroborating evidence."
+  },
+  {
+    "id": "cisa4-b13-060",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "hard",
+    "question": "Backup verification testing should:",
+    "options": [
+      "Only check storage",
+      "Only check file existence",
+      "Perform actual data restores to confirm recoverability",
+      "Only verify checksums"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Backup testing should include actual restores to confirm data can be successfully recovered when needed."
+  },
+  {
+    "id": "cisa1-086",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Reporting",
+    "difficulty": "medium",
+    "question": "Audit recommendations should be:",
+    "options": [
+      "Limited to technical solutions",
+      "As detailed as possible",
+      "Practical, actionable, and address the root cause",
+      "Directed to specific individuals"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Recommendations should be practical, actionable, cost-effective, and address root causes rather than just symptoms."
+  },
+  {
+    "id": "cisa5-060",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Cloud Security",
+    "difficulty": "hard",
+    "question": "Cloud security shared responsibility model means:",
+    "options": [
+      "No one is responsible",
+      "Customer handles all security",
+      "Cloud provider handles all security",
+      "Security responsibilities are divided between provider and customer"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The shared responsibility model divides security responsibilities between the cloud provider and customer based on the service model (IaaS, PaaS, SaaS)."
+  },
+  {
+    "id": "cisa2-002",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "Risk Management",
+    "difficulty": "hard",
+    "question": "Which of the following creates the GREATEST risk in a segregation of duties (SoD) conflict?",
+    "options": [
+      "A systems analyst who reviews system logs",
+      "A librarian who controls program versions",
+      "A database administrator who backs up the database",
+      "A developer who has promoting rights to production"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A developer with access to move code to production (promoting rights) creates a significant risk because they could introduce unauthorized code or bypass change controls without detection."
+  },
+  {
+    "id": "cisa3-137",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Secure Development",
+    "difficulty": "medium",
+    "question": "Session management controls should include:",
+    "options": [
+      "Only login",
+      "Only cookies",
+      "Secure generation, timeout, and proper invalidation",
+      "Only encryption"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Session management requires secure generation, appropriate timeout, and proper invalidation on logout."
+  },
+  {
+    "id": "cisa1-009",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Reporting",
+    "difficulty": "hard",
+    "question": "When an IS auditor identifies a material weakness, notification to the audit committee should occur:",
+    "options": [
+      "Only if management fails to remediate",
+      "At the next scheduled audit committee meeting",
+      "After the final report is issued",
+      "In a timely manner before the final report"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Material weaknesses should be communicated to the audit committee in a timely manner, not delayed until the final report or next meeting. Prompt notification enables appropriate governance oversight."
+  },
+  {
+    "id": "cisa1-145",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Risk Assessment",
+    "difficulty": "medium",
+    "question": "Audit risk assessment should consider:",
+    "options": [
+      "Only inherent risk",
+      "Only detection risk",
+      "Inherent risk, control risk, and detection risk",
+      "Only control risk"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Audit risk considers inherent risk, control risk, and detection risk to determine appropriate procedures."
+  },
+  {
+    "id": "cisa2-067",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Organization",
+    "difficulty": "easy",
+    "question": "Centralized IT governance provides:",
+    "options": [
+      "No oversight",
+      "Maximum flexibility",
+      "Consistency, economies of scale, and standardization",
+      "Fastest response to business needs"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Centralized IT governance provides consistency, economies of scale, standardization, and unified direction but may be less responsive to local needs."
+  },
+  {
+    "id": "cisa5-133",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Authentication",
+    "difficulty": "medium",
+    "question": "Context-aware authentication considers:",
+    "options": [
+      "Only IP address",
+      "Only password",
+      "Only username",
+      "Location, device, time, and behavior patterns"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Context-aware authentication considers multiple factors like location, device, time, and behavior."
+  },
+  {
+    "id": "cisa2-210",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "hard",
+    "question": "The PRIMARY role of IT governance is to ensure IT:",
+    "options": [
+      "Aligns with and supports business objectives",
+      "Minimizes costs",
+      "Uses the latest technology",
+      "Reports directly to CEO"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IT governance ensures IT strategy aligns with business goals and delivers value while managing risk."
+  },
+  {
+    "id": "cisa1-054",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Planning",
+    "difficulty": "easy",
+    "question": "Materiality in IS auditing considers:",
+    "options": [
+      "Quantitative and qualitative factors affecting significance",
+      "Only financial amounts",
+      "Audit budget only",
+      "Only technical issues"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Materiality considers both quantitative (financial impact) and qualitative factors (regulatory, reputational) when determining significance."
+  },
+  {
+    "id": "cisa4-b10-072",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "hard",
+    "question": "Business continuity planning addresses:",
+    "options": [
+      "Maintaining critical business functions during and after disruption",
+      "Only data recovery",
+      "Only natural disasters",
+      "Only IT recovery"
+    ],
+    "correctAnswer": 0,
+    "explanation": "BCP addresses maintaining or resuming critical business functions, not just IT, during and after any type of disruption."
+  },
+  {
+    "id": "cisa1-114",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Documentation",
+    "difficulty": "hard",
+    "question": "Audit metadata and indexing:",
+    "options": [
+      "Is only for large audits",
+      "Facilitates efficient review and retrieval of work papers",
+      "Is unnecessary overhead",
+      "Slows down audits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Proper metadata and indexing enables efficient review, retrieval, and cross-referencing of audit documentation."
+  },
+  {
+    "id": "cisa1-100",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Reporting",
+    "difficulty": "easy",
+    "question": "When management disagrees with audit findings:",
+    "options": [
+      "Escalate immediately",
+      "Remove the finding",
+      "Document both the finding and management response",
+      "Change the finding"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Management disagreement should be documented along with the finding, allowing readers to understand both perspectives."
+  },
+  {
+    "id": "cisa4-056",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "medium",
+    "question": "Automated provisioning of resources:",
+    "options": [
+      "Improves consistency and reduces deployment time",
+      "Is less secure",
+      "Requires more staff",
+      "Increases errors"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Automated provisioning improves consistency by using predefined templates, reduces deployment time, and decreases human errors."
+  },
+  {
+    "id": "cisa3-b12-045",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development",
+    "difficulty": "medium",
+    "question": "Technical debt accumulates when:",
+    "options": [
+      "Documentation is complete",
+      "Testing is thorough",
+      "Short-term solutions create future rework requirements",
+      "Projects are cancelled"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Technical debt results from shortcuts or suboptimal solutions that require future rework to address properly."
+  },
+  {
+    "id": "cisa5-228",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Information Security",
+    "difficulty": "hard",
+    "question": "Supply chain security for software should include:",
+    "options": [
+      "Only using well-known vendors",
+      "Monthly vendor reviews only",
+      "Avoiding all third-party code",
+      "SBOM, code signing, and dependency vulnerability management"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Modern supply chain security requires software bill of materials, code signing verification, and active dependency management."
+  },
+  {
+    "id": "cisa3-220",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "SDLC",
+    "difficulty": "hard",
+    "question": "Infrastructure as Code (IaC) provides security benefits by:",
+    "options": [
+      "Enabling version control, review, and consistency of infrastructure",
+      "Eliminating all security controls",
+      "Making changes faster without review",
+      "Reducing visibility"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IaC enables infrastructure changes to be reviewed, version controlled, and consistently applied."
+  },
+  {
+    "id": "cisa2-cobit-010",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance Frameworks",
+    "difficulty": "easy",
+    "question": "An organization wants to use COBIT 2019 to improve its IT governance. Which design factor should it consider FIRST?",
+    "options": [
+      "IT Implementation Methods",
+      "Threat Landscape",
+      "Technology Adoption Strategy",
+      "Enterprise Strategy"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Enterprise Strategy is typically considered first as it drives how IT should support the business. The four enterprise strategies in COBIT 2019 are: Growth/Acquisition, Innovation/Differentiation, Cost Leadership, and Client Service/Stability."
+  },
+  {
+    "id": "cisa2-174",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Performance",
+    "difficulty": "medium",
+    "question": "A key performance indicator (KPI) for IT service delivery should be:",
+    "options": [
+      "Number of servers deployed",
+      "Number of IT staff",
+      "IT budget variance",
+      "System availability percentage"
+    ],
+    "correctAnswer": 3,
+    "explanation": "System availability directly measures service delivery effectiveness, which is a key IT service metric."
+  },
+  {
+    "id": "cisa4-104",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Service Management",
+    "difficulty": "medium",
+    "question": "Service request fulfillment:",
+    "options": [
+      "Requires CAB approval",
+      "Handles pre-approved routine requests",
+      "Only handles emergencies",
+      "Is same as incident management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Request fulfillment handles pre-approved routine requests (password resets, access requests) through standardized processes."
+  },
+  {
+    "id": "cisa2-018",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT HR Management",
+    "difficulty": "medium",
+    "question": "Which of the following is MOST important when onboarding IT personnel?",
+    "options": [
+      "Conducting security awareness training",
+      "Assigning a parking space",
+      "Providing company merchandise",
+      "Scheduling social events"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Security awareness training is critical when onboarding IT personnel to ensure they understand security policies, acceptable use, and their role in protecting information assets."
+  },
+  {
+    "id": "cisa1-b11-014",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Reporting",
+    "difficulty": "hard",
+    "question": "Risk ratings in audit findings should reflect:",
+    "options": [
+      "Ease of remediation",
+      "Management preference",
+      "Auditor opinion only",
+      "Impact and likelihood of the risk if the control weakness is not addressed"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Risk ratings should objectively reflect the potential impact and likelihood of adverse events if the issue is not corrected."
+  },
+  {
+    "id": "cisa2-053",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "Project Management",
+    "difficulty": "medium",
+    "question": "Project scope management ensures:",
+    "options": [
+      "Project delivers agreed-upon scope without unauthorized additions",
+      "Projects include all possible features",
+      "Timelines are flexible",
+      "Budgets are unlimited"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Scope management ensures the project includes all required work and only required work, preventing scope creep that increases cost and risk."
+  },
+  {
+    "id": "cisa1-138",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Continuous Auditing",
+    "difficulty": "hard",
+    "question": "Continuous auditing techniques:",
+    "options": [
+      "Replace periodic audits",
+      "Enable ongoing monitoring and more timely identification of issues",
+      "Are only for financial audits",
+      "Require no human oversight"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Continuous auditing enables ongoing monitoring and earlier identification of control issues."
+  },
+  {
+    "id": "cisa5-061",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Cloud Security",
+    "difficulty": "medium",
+    "question": "Cloud access security brokers (CASBs) provide:",
+    "options": [
+      "Only encryption",
+      "Only authentication",
+      "Only cloud storage",
+      "Visibility and control over cloud service usage"
+    ],
+    "correctAnswer": 3,
+    "explanation": "CASBs provide visibility into cloud service usage, enable policy enforcement, and offer security controls between users and cloud services."
+  },
+  {
+    "id": "cisa4-027",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Disaster Recovery",
+    "difficulty": "easy",
+    "question": "A warm site provides:",
+    "options": [
+      "Only backup storage",
+      "Partial equipment and connectivity with moderate setup time",
+      "Immediate failover",
+      "No infrastructure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A warm site has partial equipment and connectivity already in place, requiring moderate time to become fully operational."
+  },
+  {
+    "id": "cisa2-186",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Strategy",
+    "difficulty": "easy",
+    "question": "An enterprise architecture should PRIMARILY:",
+    "options": [
+      "Document all current systems",
+      "Provide a roadmap from current state to target state",
+      "List all IT vendors",
+      "Replace the IT strategy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Enterprise architecture provides a structured view of current and target states with a roadmap for achieving transformation."
+  },
+  {
+    "id": "cisa5-010",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Authentication",
+    "difficulty": "easy",
+    "question": "Single sign-on (SSO) provides:",
+    "options": [
+      "Reduced security",
+      "Stronger authentication",
+      "Elimination of passwords",
+      "Access to multiple systems with one authentication"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SSO allows users to authenticate once and access multiple systems without re-authenticating, improving user experience and reducing password fatigue."
+  },
+  {
+    "id": "cisa1-117",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Resources",
+    "difficulty": "hard",
+    "question": "Co-sourcing of audit activities:",
+    "options": [
+      "Is not allowed",
+      "Replaces internal audit",
+      "Supplements internal audit with external expertise",
+      "Reduces independence"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Co-sourcing supplements internal audit capabilities with external expertise for specialized areas while maintaining independence."
+  },
+  {
+    "id": "cisa5-037",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Network Security",
+    "difficulty": "easy",
+    "question": "Wireless security best practices include:",
+    "options": [
+      "No encryption for convenience",
+      "Using WEP encryption",
+      "Broadcasting SSID always",
+      "Using WPA3/WPA2-Enterprise with strong authentication"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Wireless security should use WPA3 or WPA2-Enterprise with strong authentication, disable unnecessary features, and segment wireless networks."
+  },
+  {
+    "id": "cisa3-069",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Methodologies",
+    "difficulty": "hard",
+    "question": "Scaled Agile Framework (SAFe) addresses:",
+    "options": [
+      "Individual development",
+      "Small team projects",
+      "Agile at enterprise scale across multiple teams",
+      "Waterfall projects"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SAFe provides guidance for implementing Agile practices at enterprise scale, coordinating multiple teams and aligning with business strategy."
+  },
+  {
+    "id": "cisa5-022",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Network Security",
+    "difficulty": "medium",
+    "question": "A virtual private network (VPN) provides:",
+    "options": [
+      "Antivirus protection",
+      "Faster internet speeds",
+      "Physical network isolation",
+      "Encrypted communications over public networks"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A VPN creates an encrypted tunnel for communications over public networks, providing confidentiality and secure remote access."
+  },
+  {
+    "id": "cisa3-131",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Version Control",
+    "difficulty": "easy",
+    "question": "Trunk-based development emphasizes:",
+    "options": [
+      "No branching",
+      "Long-lived branches",
+      "Frequent integration to main branch with short-lived branches",
+      "Monthly merges"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Trunk-based development emphasizes frequent integration to main branch with short-lived feature branches."
+  },
+  {
+    "id": "cisa4-015",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Data Center",
+    "difficulty": "medium",
+    "question": "Environmental controls in a data center include:",
+    "options": [
+      "Only backup power",
+      "Only access controls",
+      "HVAC, fire suppression, and humidity control",
+      "Only fire suppression"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Data center environmental controls include HVAC for cooling, fire suppression systems, humidity control, and water detection to protect equipment."
+  },
+  {
+    "id": "cisa5-115",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Privacy",
+    "difficulty": "medium",
+    "question": "Right to be forgotten (erasure):",
+    "options": [
+      "Is immediate",
+      "Is absolute",
+      "Applies to all data",
+      "Must be balanced against other legal obligations"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Right to erasure must be balanced against legal retention requirements and other legitimate interests."
+  },
+  {
+    "id": "cisa4-b12-058",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Service Management",
+    "difficulty": "hard",
+    "question": "Root cause analysis (RCA) techniques include:",
+    "options": [
+      "Only brainstorming",
+      "Only interviewing",
+      "5 Whys, fishbone diagrams, and fault tree analysis",
+      "Only log review"
+    ],
+    "correctAnswer": 2,
+    "explanation": "RCA uses techniques like 5 Whys, Ishikawa/fishbone diagrams, and fault tree analysis to identify underlying causes."
+  },
+  {
+    "id": "cisa5-092",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Incident Response",
+    "difficulty": "medium",
+    "question": "Evidence preservation in incident response requires:",
+    "options": [
+      "Quick recovery only",
+      "Immediate deletion",
+      "No documentation",
+      "Chain of custody documentation and forensic imaging"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Evidence preservation requires proper chain of custody documentation, forensic imaging, and secure storage for potential legal proceedings."
+  },
+  {
+    "id": "cisa2-cobit-003",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Risk Management",
+    "difficulty": "medium",
+    "question": "The COBIT 2019 management objective APO12 (Managed Risk) is part of which domain?",
+    "options": [
+      "Deliver, Service and Support",
+      "Align, Plan and Organize",
+      "Build, Acquire and Implement",
+      "Monitor, Evaluate and Assess"
+    ],
+    "correctAnswer": 1,
+    "explanation": "APO12 (Managed Risk) belongs to the Align, Plan and Organize (APO) domain. The APO domain covers IT strategy, architecture, innovation, portfolio, and risk management."
+  },
+  {
+    "id": "cisa1-175",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Risk Assessment",
+    "difficulty": "hard",
+    "question": "An IS auditor is reviewing an organization's risk assessment methodology. Which of the following findings would be MOST concerning?",
+    "options": [
+      "Qualitative and quantitative methods are both used",
+      "Risk assessments are performed annually",
+      "Residual risk is documented after controls",
+      "Risk owners are not formally identified"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Without formal risk owners, there is no accountability for risk treatment decisions and ongoing monitoring."
+  },
+  {
+    "id": "cisa2-172",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Strategy",
+    "difficulty": "medium",
+    "question": "IT investment business cases should include:",
+    "options": [
+      "Benefits, costs, risks, and alternatives analysis",
+      "Only technical requirements",
+      "Only costs",
+      "Only timeline"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Business cases should include expected benefits, costs, risks, alternatives, and assumptions."
+  },
+  {
+    "id": "cisa1-b13-008",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "CAATs",
+    "difficulty": "hard",
+    "question": "Integrated test facility (ITF) uses:",
+    "options": [
+      "Only offline testing",
+      "Separate test systems",
+      "Fictitious entities in production to test processing without affecting real data",
+      "Only historical data"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ITF creates dummy entities (like fake departments) in production to test processing controls with real transactions."
+  },
+  {
+    "id": "cisa2-211",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "COBIT 2019 is primarily a framework for:",
+    "options": [
+      "IT governance and management",
+      "Software development methodology",
+      "Financial reporting only",
+      "Network security"
+    ],
+    "correctAnswer": 0,
+    "explanation": "COBIT provides a comprehensive framework for enterprise IT governance and management."
+  },
+  {
+    "id": "cisa2-094",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "The distinction between governance and management is:",
+    "options": [
+      "Governance directs and evaluates; management plans and executes",
+      "Management does not report to governance",
+      "They are identical",
+      "Governance only applies to IT"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Governance involves directing, evaluating, and monitoring while management involves planning, building, running, and monitoring."
+  },
+  {
+    "id": "cisa4-232",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "hard",
+    "question": "During a BCP audit, the IS auditor finds that the crisis communication plan has not been tested. Which scenario BEST illustrates why untested crisis communication creates significant risk?",
+    "options": [
+      "Stakeholders may receive overly positive communications during a crisis",
+      "During a ransomware attack, unclear communication roles and outdated contact lists could delay incident response, extend downtime, and damage stakeholder confidence",
+      "The marketing team may publish press releases too quickly",
+      "Internal communications may use too much technical jargon"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Untested crisis communication creates risk because roles, contact lists, escalation procedures, and communication templates may be outdated or unclear. During an actual incident, communication delays, inconsistent messaging, and inability to reach key stakeholders can worsen the crisis impact."
+  },
+  {
+    "id": "cisa4-077",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "medium",
+    "question": "Mean time to repair (MTTR) measures:",
+    "options": [
+      "Time between failures",
+      "Time to restore service after failure",
+      "Backup duration",
+      "Time to detect"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MTTR measures the average time to restore service after a failure, indicating repair and recovery efficiency."
+  },
+  {
+    "id": "cisa5-164",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Operations",
+    "difficulty": "medium",
+    "question": "Attack surface management (ASM) continuously:",
+    "options": [
+      "Only tests applications",
+      "Only reviews policies",
+      "Only scans internal systems",
+      "Discovers and monitors external-facing assets and exposures"
+    ],
+    "correctAnswer": 3,
+    "explanation": "ASM continuously discovers and monitors external-facing assets and potential exposures."
+  },
+  {
+    "id": "cisa4-128",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Incident Management",
+    "difficulty": "easy",
+    "question": "Communication plans during incidents should address:",
+    "options": [
+      "Only executives",
+      "Only vendors",
+      "Internal stakeholders, customers, regulators, and media",
+      "Only IT staff"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Communication plans should address all stakeholders including employees, customers, regulators, and media."
+  },
+  {
+    "id": "cisa4-146",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "easy",
+    "question": "Time synchronization (NTP) is important for:",
+    "options": [
+      "Only backups",
+      "Log correlation, authentication, and forensic investigation",
+      "Only performance",
+      "Only scheduling"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Time synchronization is critical for log correlation, authentication protocols, and forensic investigations."
+  },
+  {
+    "id": "cisa2-b10-021",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "IT governance ensures that:",
+    "options": [
+      "IT supports and enables the achievement of business objectives",
+      "IT decisions are made only by IT staff",
+      "IT operates independently of business",
+      "IT costs are minimized above all"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IT governance aligns IT strategy with business strategy to ensure IT investments support business objectives."
+  },
+  {
+    "id": "cisa5-001",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Information Security",
+    "difficulty": "hard",
+    "question": "Which of the following creates a digital signature?",
+    "options": [
+      "Encrypting the message digest with the sender's private key",
+      "Encrypting the message with a shared secret key",
+      "Encrypting the message digest with the receiver's public key",
+      "Encrypting the message digest with the sender's public key"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A digital signature is created by hashing the message to create a digest, and then encrypting that digest with the sender's private key. This ensures authenticity and non-repudiation."
+  },
+  {
+    "id": "cisa5-054",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Privacy",
+    "difficulty": "hard",
+    "question": "Privacy by design requires:",
+    "options": [
+      "Adding privacy controls after development",
+      "Ignoring privacy in IT",
+      "Only legal review",
+      "Building privacy into systems from the beginning"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Privacy by design incorporates privacy considerations into system design from the beginning, not as an afterthought."
+  },
+  {
+    "id": "cisa5-b13-078",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Data Security",
+    "difficulty": "medium",
+    "question": "DLP (data loss prevention) controls:",
+    "options": [
+      "Only encrypt data",
+      "Detect and prevent unauthorized data transfer",
+      "Only block email",
+      "Only monitor traffic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DLP identifies, monitors, and prevents unauthorized transmission or disclosure of sensitive data."
+  },
+  {
+    "id": "cisa5-002",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Logical Access",
+    "difficulty": "medium",
+    "question": "The principle of \"least privilege\" is best described as:",
+    "options": [
+      "Requiring two people to complete a sensitive task",
+      "Granting users access to all data but logging their actions",
+      "Rotation of duties to prevent fraud",
+      "Granting users only the access necessary to perform their job functions"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Least privilege ensures that users are granted the minimum level of access rights necessary to perform their assigned job responsibilities, reducing security risk."
+  },
+  {
+    "id": "cisa3-003",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Project Initiation",
+    "difficulty": "medium",
+    "question": "The PRIMARY purpose of a feasibility study for a new IT project is to:",
+    "options": [
+      "Determine if the project is viable and worth pursuing",
+      "Create the project schedule",
+      "Develop detailed technical specifications",
+      "Assign project team members"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A feasibility study determines whether a project is viable from technical, operational, economic, and scheduling perspectives before committing significant resources."
+  },
+  {
+    "id": "cisa5-124",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Access Management",
+    "difficulty": "medium",
+    "question": "Access certification reviews should:",
+    "options": [
+      "Be IT-owned",
+      "Be annual only",
+      "Only review privileged access",
+      "Be performed by business managers who understand access needs"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Certification reviews should be performed by managers who understand business needs for access."
+  },
+  {
+    "id": "cisa1-020",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Professional Ethics",
+    "difficulty": "easy",
+    "question": "The ISACA Code of Professional Ethics requires IS auditors to:",
+    "options": [
+      "Maintain confidentiality of information obtained during audits",
+      "Refuse audits where management is uncooperative",
+      "Report all findings to regulatory authorities",
+      "Accept only audits within their area of expertise"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The ISACA Code requires IS auditors to maintain confidentiality of information obtained during audits, using it only for legitimate audit purposes and protecting it from unauthorized disclosure."
+  },
+  {
+    "id": "cisa3-b11-045",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Testing",
+    "difficulty": "medium",
+    "question": "Load testing determines:",
+    "options": [
+      "Functional correctness",
+      "Security vulnerabilities",
+      "System behavior under expected and peak usage conditions",
+      "Code quality"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Load testing evaluates system performance and stability under expected and peak load conditions."
+  },
+  {
+    "id": "cisa3-018",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Implementation",
+    "difficulty": "medium",
+    "question": "Data conversion during system implementation should:",
+    "options": [
+      "Include data cleansing and validation",
+      "Only include current data",
+      "Be performed without validation",
+      "Be done after go-live"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Data conversion should include cleansing and validation to ensure data quality and accuracy in the new system. Poor data migration can cause significant issues."
+  },
+  {
+    "id": "cisa2-074",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Strategy",
+    "difficulty": "easy",
+    "question": "Technology roadmaps should:",
+    "options": [
+      "Change daily",
+      "Align technology evolution with business strategy",
+      "Focus only on current systems",
+      "Ignore business requirements"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Technology roadmaps align technology evolution with business strategy, showing how current and planned technologies support business objectives."
+  },
+  {
+    "id": "cisa3-013",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Testing",
+    "difficulty": "easy",
+    "question": "User acceptance testing (UAT) should be performed by:",
+    "options": [
+      "Developers",
+      "Business users",
+      "Quality assurance team",
+      "IT operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "UAT should be performed by business users who verify that the system meets their requirements and is suitable for their intended use."
+  },
+  {
+    "id": "cisa3-b11-047",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Development Controls",
+    "difficulty": "easy",
+    "question": "Configuration management during development ensures:",
+    "options": [
+      "Version control and traceability of all project artifacts",
+      "Faster coding",
+      "No documentation needed",
+      "Automatic testing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Configuration management controls versions and changes to all project artifacts, ensuring traceability and controlled baselines."
+  },
+  {
+    "id": "cisa3-b10-039",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Secure Development",
+    "difficulty": "medium",
+    "question": "The \"shift left\" approach in DevSecOps means:",
+    "options": [
+      "Delaying security until production",
+      "Moving applications to cloud",
+      "Moving security testing earlier in the development lifecycle",
+      "Shifting work to the left team"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Shift left integrates security testing earlier in the SDLC (left on the timeline) to find and fix issues before deployment."
+  },
+  {
+    "id": "cisa2-092",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Governance",
+    "difficulty": "medium",
+    "question": "IT ethical considerations include:",
+    "options": [
+      "Only regulatory compliance",
+      "Data privacy, algorithmic bias, and responsible technology use",
+      "Only financial matters",
+      "Only security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IT ethics extends beyond compliance to include data privacy, algorithmic fairness, AI ethics, and responsible technology deployment."
+  },
+  {
+    "id": "cisa5-095",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Management",
+    "difficulty": "medium",
+    "question": "Hardening standards address:",
+    "options": [
+      "Only encryption",
+      "Only network settings",
+      "Only passwords",
+      "Removing unnecessary services, patching, and secure configuration"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Hardening includes removing unnecessary services, applying patches, disabling defaults, and secure configuration."
+  },
+  {
+    "id": "cisa3-156",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Data Management",
+    "difficulty": "hard",
+    "question": "Data lineage in development environments tracks:",
+    "options": [
+      "Only storage location",
+      "Only access",
+      "Origin, transformations, and usage of data throughout systems",
+      "Only cost"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Data lineage tracks data origin, transformations, and usage for governance and compliance."
+  },
+  {
+    "id": "cisa2-b12-024",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Risk Management",
+    "difficulty": "hard",
+    "question": "Enterprise risk management (ERM) scope includes:",
+    "options": [
+      "Strategic, operational, reporting, and compliance risks across the enterprise",
+      "Only regulatory risks",
+      "Only IT risks",
+      "Only financial risks"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ERM takes a comprehensive view of all enterprise risks including strategic, operational, financial, and compliance."
+  },
+  {
+    "id": "cisa4-154",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Operations",
+    "difficulty": "medium",
+    "question": "Edge computing operations require consideration of:",
+    "options": [
+      "Only cloud integration",
+      "Latency requirements, connectivity, and distributed security",
+      "Only cost",
+      "Only centralized management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Edge computing requires managing latency, connectivity challenges, and distributed security."
+  },
+  {
+    "id": "cisa5-076",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Network Security",
+    "difficulty": "easy",
+    "question": "Network segmentation reduces risk by:",
+    "options": [
+      "Allowing all traffic",
+      "Removing firewalls",
+      "Increasing connectivity",
+      "Limiting lateral movement and containing breaches"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Network segmentation limits lateral movement by attackers and contains breaches to smaller network segments."
+  },
+  {
+    "id": "cisa1-023",
+    "exam": "CISA",
+    "section": "CISA1",
+    "topic": "Audit Sampling",
+    "difficulty": "medium",
+    "question": "The PRIMARY reason for using statistical sampling in an IS audit is to:",
+    "options": [
+      "Ensure all transactions are tested",
+      "Reduce audit time and cost",
+      "Provide a mathematically based conclusion about the population",
+      "Eliminate the need for professional judgment"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Statistical sampling allows the auditor to draw mathematically based conclusions about an entire population from a sample, with known confidence levels and precision."
+  },
+  {
+    "id": "cisa4-195",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Physical Security",
+    "difficulty": "hard",
+    "question": "When assessing data center physical security, the IS auditor should be MOST concerned if:",
+    "options": [
+      "Access requires badge and PIN",
+      "Cameras record entry points",
+      "Former employees still have active access badges",
+      "Visitors are logged and escorted"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Former employees with active access creates immediate unauthorized access risk."
+  },
+  {
+    "id": "cisa2-068",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT Organization",
+    "difficulty": "easy",
+    "question": "Federated IT governance combines:",
+    "options": [
+      "No governance",
+      "Only central control",
+      "Central governance with delegated authority to business units",
+      "Only local control"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Federated governance combines central standards and oversight with delegated authority for business units to make local decisions within guardrails."
+  },
+  {
+    "id": "cisa2-017",
+    "exam": "CISA",
+    "section": "CISA2",
+    "topic": "IT HR Management",
+    "difficulty": "medium",
+    "question": "The PRIMARY purpose of IT human resource management is to:",
+    "options": [
+      "Ensure adequate skilled resources for IT operations",
+      "Minimize IT salary expenses",
+      "Automate HR processes",
+      "Reduce IT staff turnover to zero"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IT HR management ensures that the organization has adequate personnel with the right skills to support IT operations and achieve organizational objectives."
+  },
+  {
+    "id": "cisa4-029",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Disaster Recovery",
+    "difficulty": "medium",
+    "question": "Virtualization in disaster recovery provides benefits including:",
+    "options": [
+      "Faster recovery through hardware independence",
+      "Reduced need for testing",
+      "Permanent data protection",
+      "Elimination of hardware requirements"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Virtualization enables faster recovery by abstracting systems from specific hardware, allowing recovery on different physical equipment."
+  },
+  {
+    "id": "cisa4-024",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Disaster Recovery",
+    "difficulty": "medium",
+    "question": "A tabletop disaster recovery exercise:",
+    "options": [
+      "Is only for IT staff",
+      "Replaces the need for full tests",
+      "Walks through scenarios without actually recovering systems",
+      "Fully tests all recovery capabilities"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Tabletop exercises walk through disaster scenarios in a discussion format without actually recovering systems, testing plan completeness and team coordination."
+  },
+  {
+    "id": "cisa4-006",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Service Management",
+    "difficulty": "easy",
+    "question": "Problem management differs from incident management in that it:",
+    "options": [
+      "Does not require documentation",
+      "Only involves operations staff",
+      "Identifies and addresses root causes",
+      "Focuses on quick restoration of service"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Problem management focuses on identifying root causes and preventing recurrence, while incident management focuses on quick service restoration."
+  },
+  {
+    "id": "cisa4-199",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Cloud Operations",
+    "difficulty": "hard",
+    "question": "When cloud services are used for disaster recovery, the IS auditor should verify:",
+    "options": [
+      "Recovery procedures are tested and data can be accessed as needed",
+      "Cloud provider has more data centers",
+      "Cloud subscription is annual",
+      "Cloud costs are minimized"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Cloud-based DR must be tested to verify recoverability and data accessibility."
+  },
+  {
+    "id": "cisa5-059",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Management",
+    "difficulty": "easy",
+    "question": "Security control effectiveness should be:",
+    "options": [
+      "Reported once",
+      "Delegated to vendors",
+      "Assumed",
+      "Regularly tested and measured"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Control effectiveness should be regularly tested and measured to ensure controls actually work as intended."
+  },
+  {
+    "id": "cisa5-005",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Data Security",
+    "difficulty": "hard",
+    "question": "Data classification is important because it:",
+    "options": [
+      "Reduces storage costs",
+      "Eliminates the need for encryption",
+      "Simplifies user access",
+      "Enables appropriate protection based on sensitivity"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Data classification enables organizations to apply appropriate protection based on data sensitivity, ensuring critical data receives adequate protection."
+  },
+  {
+    "id": "cisa3-036",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "System Modeling",
+    "difficulty": "hard",
+    "question": "Data flow diagrams (DFDs) show:",
+    "options": [
+      "Only physical storage",
+      "How data moves through a system",
+      "Only user interfaces",
+      "Only network topology"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DFDs show how data moves through a system, depicting processes, data stores, external entities, and the data flows between them."
+  },
+  {
+    "id": "cisa4-122",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Cloud Operations",
+    "difficulty": "medium",
+    "question": "FinOps (Cloud Financial Operations) focuses on:",
+    "options": [
+      "Only performance",
+      "Only compliance",
+      "Optimizing cloud spend through visibility and accountability",
+      "Only security"
+    ],
+    "correctAnswer": 2,
+    "explanation": "FinOps focuses on cloud financial management, optimizing spend through visibility, accountability, and optimization."
+  },
+  {
+    "id": "cisa4-060",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Business Continuity",
+    "difficulty": "hard",
+    "question": "The PRIMARY goal of business continuity testing is to:",
+    "options": [
+      "Train new staff",
+      "Verify plans work and identify gaps for improvement",
+      "Update documentation",
+      "Satisfy auditors"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BC testing primarily verifies that plans work as expected, identifies gaps and weaknesses, and validates that objectives can be met."
+  },
+  {
+    "id": "cisa4-186",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Operations Management",
+    "difficulty": "medium",
+    "question": "Scheduled maintenance windows should be:",
+    "options": [
+      "Performed without notice to test resilience",
+      "Limited to overnight hours only",
+      "Planned with business stakeholders and communicated in advance",
+      "Avoided entirely"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Maintenance windows should be planned with business input and communicated to minimize impact."
+  },
+  {
+    "id": "cisa5-090",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Operations",
+    "difficulty": "hard",
+    "question": "MITRE ATT&CK framework:",
+    "options": [
+      "Is a compliance standard",
+      "Is a vulnerability database",
+      "Is a policy framework",
+      "Documents adversary tactics, techniques, and procedures"
+    ],
+    "correctAnswer": 3,
+    "explanation": "MITRE ATT&CK documents adversary TTPs, providing a knowledge base for understanding and defending against threats."
+  },
+  {
+    "id": "cisa5-185",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Access Control",
+    "difficulty": "hard",
+    "question": "When evaluating privileged access management, the IS auditor should verify:",
+    "options": [
+      "Permanent privileged access for IT staff",
+      "All users have admin access for convenience",
+      "No monitoring of admin activities",
+      "Just-in-time access with session recording and approval workflows"
+    ],
+    "correctAnswer": 3,
+    "explanation": "PAM should provide just-in-time access with approval workflows and session recording."
+  },
+  {
+    "id": "cisa5-211",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Information Security",
+    "difficulty": "medium",
+    "question": "Defense in depth strategy means:",
+    "options": [
+      "Relying on user awareness alone",
+      "Having one very strong security control",
+      "Focusing only on network perimeter",
+      "Implementing multiple layers of security controls"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Defense in depth uses multiple overlapping security layers so if one control fails, others still provide protection."
+  },
+  {
+    "id": "cisa4-b12-059",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Service Management",
+    "difficulty": "easy",
+    "question": "An IS auditor reviewing ITIL-based service management finds that the service catalog has not been updated in 18 months. What is the PRIMARY risk?",
+    "options": [
+      "New services may not appear in the catalog, causing users to submit ad-hoc requests and bypass standard provisioning, support, and cost allocation processes",
+      "The catalog may contain too many services",
+      "Users will automatically discover all available services",
+      "Service level agreements will automatically update"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An outdated service catalog means newly deployed services lack defined SLAs, support processes, and cost allocation. Users may not know what services are available or how to request them properly, leading to ad-hoc provisioning, shadow IT, inconsistent service delivery, and inability to accurately charge back costs."
+  },
+  {
+    "id": "cisa4-176",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Incident Management",
+    "difficulty": "medium",
+    "question": "Incident response procedures should include:",
+    "options": [
+      "Automatic resolution without investigation",
+      "External reporting only for major breaches",
+      "Detection, containment, eradication, recovery, and lessons learned",
+      "Only technical team contacts"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Incident response should follow a structured process including detection, containment, eradication, recovery, and lessons learned."
+  },
+  {
+    "id": "cisa4-064",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "Resilience",
+    "difficulty": "medium",
+    "question": "Service degradation strategies enable:",
+    "options": [
+      "Immediate shutdown",
+      "Reduced functionality to maintain core services under stress",
+      "Full functionality always",
+      "Complete failure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Graceful degradation maintains core services with reduced functionality when systems are under stress rather than failing completely."
+  },
+  {
+    "id": "cisa5-b11-091",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Endpoint Security",
+    "difficulty": "medium",
+    "question": "Endpoint protection platforms (EPP) provide:",
+    "options": [
+      "Only network protection",
+      "Integrated protection including antimalware, firewall, and device control",
+      "Only data loss prevention",
+      "Only antivirus"
+    ],
+    "correctAnswer": 1,
+    "explanation": "EPP integrates multiple endpoint protections including antimalware, personal firewall, device control, and more."
+  },
+  {
+    "id": "cisa5-158",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Data Security",
+    "difficulty": "easy",
+    "question": "Data loss prevention (DLP) in cloud environments requires:",
+    "options": [
+      "Only network monitoring",
+      "Only on-premise tools",
+      "Only endpoint agents",
+      "Cloud-native DLP capabilities and API integration"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Cloud DLP requires cloud-native capabilities and API integration for visibility."
+  },
+  {
+    "id": "cisa5-105",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Operations",
+    "difficulty": "hard",
+    "question": "SOAR (Security Orchestration, Automation and Response):",
+    "options": [
+      "Only performs automation",
+      "Only creates reports",
+      "Replaces analysts",
+      "Integrates tools, automates workflows, and orchestrates response"
+    ],
+    "correctAnswer": 3,
+    "explanation": "SOAR integrates security tools, automates repetitive tasks, and orchestrates incident response workflows."
+  },
+  {
+    "id": "cisa5-082",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Data Security",
+    "difficulty": "easy",
+    "question": "Secure file transfer should use:",
+    "options": [
+      "FTP only",
+      "Unencrypted channels",
+      "Email attachments only",
+      "Encrypted protocols like SFTP or FTPS"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Secure file transfer should use encrypted protocols like SFTP or FTPS to protect data in transit."
+  },
+  {
+    "id": "cisa5-020",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Network Security",
+    "difficulty": "easy",
+    "question": "An intrusion prevention system (IPS) differs from an IDS in that it:",
+    "options": [
+      "Only monitors traffic",
+      "Works only on endpoints",
+      "Does not generate alerts",
+      "Can automatically block detected threats"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Unlike IDS which only detects and alerts, IPS can automatically take action to block or prevent detected threats."
+  },
+  {
+    "id": "cisa4-b11-055",
+    "exam": "CISA",
+    "section": "CISA4",
+    "topic": "IT Service Management",
+    "difficulty": "medium",
+    "question": "IT service desk is responsible for:",
+    "options": [
+      "Only hardware repair",
+      "Initial contact, logging, and resolution or escalation of user issues",
+      "Only software development",
+      "Only network management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Service desk provides single point of contact for users, logging incidents and requests, resolving or escalating as appropriate."
+  },
+  {
+    "id": "cisa3-081",
+    "exam": "CISA",
+    "section": "CISA3",
+    "topic": "Security",
+    "difficulty": "hard",
+    "question": "STRIDE is a threat modeling approach for:",
+    "options": [
+      "Capacity planning",
+      "Performance analysis",
+      "Identifying security threats by category",
+      "Cost estimation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "STRIDE categorizes threats: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, and Elevation of privilege."
+  },
+  {
+    "id": "cisa5-012",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Access Control",
+    "difficulty": "hard",
+    "question": "User access reviews should be performed to:",
+    "options": [
+      "Increase user productivity",
+      "Satisfy audit requirements only",
+      "Reduce IT workload",
+      "Ensure access remains appropriate and remove unnecessary access"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Access reviews ensure that user access remains appropriate for current job functions and that unnecessary access is removed, reducing the risk of unauthorized access."
+  },
+  {
+    "id": "cisa5-b12-093",
+    "exam": "CISA",
+    "section": "CISA5",
+    "topic": "Security Threats",
+    "difficulty": "medium",
+    "question": "Supply chain attacks target:",
+    "options": [
+      "Only networks",
+      "Only physical facilities",
+      "Only end users",
+      "Vendors or software to compromise downstream customers"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Supply chain attacks compromise vendors, software, or components to affect downstream customers."
+  }
+]

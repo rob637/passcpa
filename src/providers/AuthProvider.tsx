@@ -458,6 +458,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           ...newProfile,
           id: user.uid, 
         } as UserProfile);
+
+        // Track Google signup conversion for Google Ads SEM optimization
+        analytics.trackSignupConversion(user.uid, 'google');
+        analytics.trackTrialStartConversion(user.uid, 'pending');
       } else {
         // Update last login for existing user
         await updateDoc(userRef, { lastLogin: serverTimestamp() });

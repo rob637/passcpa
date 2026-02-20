@@ -260,6 +260,16 @@ const FROM_EMAIL = 'VoraPrep <noreply@voraprep.com>';
 // Email to receive admin notifications (e.g. new signups)
 const ADMIN_EMAIL = 'support@voraprep.com';
 
+// Generate RFC 8058 compliant List-Unsubscribe headers for marketing emails
+// Required by Gmail/Yahoo for bulk senders (>5000 emails/day) since Feb 2024
+function getMarketingEmailHeaders(userEmail) {
+  const encodedEmail = encodeURIComponent(userEmail);
+  return {
+    'List-Unsubscribe': `<https://voraprep.com/unsubscribe?email=${encodedEmail}>, <mailto:unsubscribe@voraprep.com?subject=Unsubscribe%20${encodedEmail}>`,
+    'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+  };
+}
+
 let resend = null;
 if (RESEND_API_KEY) {
   resend = new Resend(RESEND_API_KEY);
@@ -730,6 +740,7 @@ exports.sendWeeklyReports = onSchedule({
           to: userEmail,
           subject: `📊 Your Weekly ${courseConfig.name} Study Report - ${now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`,
           html: emailContent,
+          headers: getMarketingEmailHeaders(userEmail),
         });
         
         if (error) throw new Error(error.message);
@@ -821,6 +832,7 @@ exports.sendOnboardingReminders = onSchedule({
           to: userEmail,
           subject: `⏰ Finish setting up your ${courseConfig.name.replace(' Exam', '')} study plan, ${displayName}!`,
           html: generateOnboardingReminderEmail(displayName, courseConfig),
+          headers: getMarketingEmailHeaders(userEmail),
         });
         
         if (error) throw new Error(error.message);
@@ -860,6 +872,424 @@ exports.sendOnboardingReminders = onSchedule({
     throw error;
   }
 });
+
+// ============================================================================
+// DIAGNOSTIC QUIZ REMINDER EMAIL
+// Runs daily at 11am - sends reminder to users who completed onboarding but skipped diagnostic
+// ============================================================================
+
+exports.sendDiagnosticReminders = onSchedule({
+  schedule: 'every day 11:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 180,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+  
+  console.log('Checking for users who skipped diagnostic quiz...');
+  
+  try {
+    const now = new Date();
+    const fortyEightHoursAgo = new Date(now.getTime() - 48 * 60 * 60 * 1000);
+    const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    
+    // Find users who completed onboarding 2-7 days ago
+    const usersSnapshot = await db.collection('users')
+      .where('onboardingComplete', '==', true)
+      .where('onboardingCompletedAt', '<=', fortyEightHoursAgo)
+      .where('onboardingCompletedAt', '>=', sevenDaysAgo)
+      .get();
+    
+    console.log(`Found ${usersSnapshot.size} users who completed onboarding 2-7 days ago`);
+    
+    let sentCount = 0;
+    let skippedCount = 0;
+    let errorCount = 0;
+    
+    for (const userDoc of usersSnapshot.docs) {
+      const userData = userDoc.data();
+      
+      // Skip users who have unsubscribed
+      if (userData.emailUnsubscribed) {
+        skippedCount++;
+        continue;
+      }
+      
+      // Skip if already sent this reminder (track with flag)
+      if (userData.diagnosticReminderSent) {
+        skippedCount++;
+        continue;
+      }
+      
+      try {
+        // Check if user has any diagnostic results
+        const diagnosticSnap = await db.collection('users')
+          .doc(userDoc.id)
+          .collection('diagnosticResults')
+          .limit(1)
+          .get();
+        
+        if (!diagnosticSnap.empty) {
+          // User already took diagnostic - skip
+          skippedCount++;
+          continue;
+        }
+        
+        // Check if user has any question history (they're actively studying)
+        const questionHistorySnap = await db.collection('users')
+          .doc(userDoc.id)
+          .collection('questionHistory')
+          .limit(1)
+          .get();
+        
+        if (!questionHistorySnap.empty) {
+          // User is actively practicing - skip (they don't need diagnostic)
+          skippedCount++;
+          continue;
+        }
+        
+        // Check Firebase Auth for email verification
+        const authUser = await admin.auth().getUser(userDoc.id);
+        
+        if (!authUser.emailVerified) {
+          skippedCount++;
+          continue;
+        }
+        
+        const userEmail = authUser.email;
+        const displayName = userData.displayName || authUser.displayName || 'there';
+        
+        if (!userEmail) {
+          skippedCount++;
+          continue;
+        }
+        
+        // Get course-specific content
+        const courseConfig = getCourseConfig(userData.activeCourse);
+        
+        // Send diagnostic reminder email
+        const { error } = await resend.emails.send({
+          from: FROM_EMAIL,
+          to: userEmail,
+          subject: `📊 ${displayName}, take 5 minutes to discover your weak spots`,
+          html: generateDiagnosticReminderEmail(displayName, courseConfig),
+          headers: getMarketingEmailHeaders(userEmail),
+        });
+        
+        if (error) throw new Error(error.message);
+        
+        // Mark that we sent this reminder
+        await db.collection('users').doc(userDoc.id).update({
+          diagnosticReminderSent: true,
+          diagnosticReminderSentAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+        
+        console.log(`Sent diagnostic reminder to ${userEmail}`);
+        sentCount++;
+        
+      } catch (authError) {
+        console.error(`Error processing user ${userDoc.id}:`, authError.message);
+        errorCount++;
+      }
+    }
+    
+    console.log(`Diagnostic reminders: ${sentCount} sent, ${skippedCount} skipped, ${errorCount} errors`);
+    
+  } catch (error) {
+    console.error('Error sending diagnostic reminders:', error);
+    throw error;
+  }
+});
+
+// Diagnostic Reminder Email Template
+function generateDiagnosticReminderEmail(displayName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Weak Spots</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0;">
+        Hey ${displayName}! 🎯
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        You haven't taken the <strong>diagnostic quiz</strong> yet — and that's the key to efficient studying!
+      </p>
+      
+      <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 20px; margin: 0 0 25px 0;">
+        <h3 style="color: #0369a1; font-size: 18px; margin: 0 0 10px 0;">
+          Why take the diagnostic?
+        </h3>
+        <ul style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0; padding-left: 18px;">
+          <li><strong>5 minutes</strong> — just 15 questions</li>
+          <li><strong>Discover weak areas</strong> you didn't know you had</li>
+          <li><strong>Personalized plan</strong> based on your results</li>
+          <li><strong>No guessing</strong> — study what matters</li>
+        </ul>
+      </div>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        Students who take the diagnostic pass at <strong>2× the rate</strong> of those who skip it. Don't study blind!
+      </p>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${APP_BASE_URL}/diagnostic" style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Take 5-Minute Diagnostic →
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Find your weak spots. Study smarter. Pass the ${examName}. 💪
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - ${courseConfig.tagline}
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
+// FIRST PRACTICE REMINDER EMAIL
+// Runs daily at 2pm - sends reminder to users who took diagnostic but never practiced
+// ============================================================================
+
+exports.sendFirstPracticeReminders = onSchedule({
+  schedule: 'every day 14:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 180,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+  
+  console.log('Checking for users who need first practice reminder...');
+  
+  try {
+    const now = new Date();
+    const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    
+    // Find users who completed onboarding 1-7 days ago
+    const usersSnapshot = await db.collection('users')
+      .where('onboardingComplete', '==', true)
+      .where('onboardingCompletedAt', '<=', twentyFourHoursAgo)
+      .where('onboardingCompletedAt', '>=', sevenDaysAgo)
+      .get();
+    
+    console.log(`Found ${usersSnapshot.size} users completed onboarding 1-7 days ago`);
+    
+    let sentCount = 0;
+    let skippedCount = 0;
+    let errorCount = 0;
+    
+    for (const userDoc of usersSnapshot.docs) {
+      const userData = userDoc.data();
+      
+      // Skip users who have unsubscribed
+      if (userData.emailUnsubscribed) {
+        skippedCount++;
+        continue;
+      }
+      
+      // Skip if already sent this reminder
+      if (userData.firstPracticeReminderSent) {
+        skippedCount++;
+        continue;
+      }
+      
+      try {
+        // Check if user has any question history
+        const questionHistorySnap = await db.collection('users')
+          .doc(userDoc.id)
+          .collection('questionHistory')
+          .limit(1)
+          .get();
+        
+        if (!questionHistorySnap.empty) {
+          // User already started practicing - skip
+          skippedCount++;
+          continue;
+        }
+        
+        // Check Firebase Auth for email verification
+        const authUser = await admin.auth().getUser(userDoc.id);
+        
+        if (!authUser.emailVerified) {
+          skippedCount++;
+          continue;
+        }
+        
+        const userEmail = authUser.email;
+        const displayName = userData.displayName || authUser.displayName || 'there';
+        
+        if (!userEmail) {
+          skippedCount++;
+          continue;
+        }
+        
+        // Get course-specific content
+        const courseConfig = getCourseConfig(userData.activeCourse);
+        
+        // Send first practice reminder email
+        const { error } = await resend.emails.send({
+          from: FROM_EMAIL,
+          to: userEmail,
+          subject: `⚡ ${displayName}, your first 10 questions are waiting`,
+          html: generateFirstPracticeReminderEmail(displayName, courseConfig),
+          headers: getMarketingEmailHeaders(userEmail),
+        });
+        
+        if (error) throw new Error(error.message);
+        
+        // Mark that we sent this reminder
+        await db.collection('users').doc(userDoc.id).update({
+          firstPracticeReminderSent: true,
+          firstPracticeReminderSentAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+        
+        console.log(`Sent first practice reminder to ${userEmail}`);
+        sentCount++;
+        
+      } catch (authError) {
+        console.error(`Error processing user ${userDoc.id}:`, authError.message);
+        errorCount++;
+      }
+    }
+    
+    console.log(`First practice reminders: ${sentCount} sent, ${skippedCount} skipped, ${errorCount} errors`);
+    
+  } catch (error) {
+    console.error('Error sending first practice reminders:', error);
+    throw error;
+  }
+});
+
+// First Practice Reminder Email Template
+function generateFirstPracticeReminderEmail(displayName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Practicing Today</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0;">
+        Hey ${displayName}! ⚡
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        You set up your study plan, but you haven't answered any practice questions yet!
+      </p>
+      
+      <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 20px; margin: 0 0 25px 0; text-align: center;">
+        <p style="color: #92400e; font-size: 28px; font-weight: 700; margin: 0;">
+          10 questions = 5 minutes
+        </p>
+        <p style="color: #b45309; font-size: 14px; margin: 10px 0 0 0;">
+          That's all it takes to build momentum
+        </p>
+      </div>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        The <strong>${examName}</strong> has thousands of concepts to master. The key to passing? <strong>Daily practice</strong> — even just 10 questions a day compounds over time.
+      </p>
+      
+      <ul style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>✅ Each session adapts to your weak areas</li>
+        <li>✅ Instant AI explanations when you're stuck</li>
+        <li>✅ Build a study streak for motivation</li>
+      </ul>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${APP_BASE_URL}/practice" style="display: inline-block; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Start My First 10 Questions →
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Your future self will thank you! 🙌
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - ${courseConfig.tagline}
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
 
 // Onboarding Reminder Email Template
 function generateOnboardingReminderEmail(displayName, courseConfig = getCourseConfig('cpa')) {
@@ -998,6 +1428,7 @@ exports.checkTrialExpirations = onSchedule({
                 to: userEmail,
                 subject: `Your VoraPrep trial has ended - upgrade to continue studying`,
                 html: generateTrialExpiredEmail(displayName, courseConfig),
+                headers: getMarketingEmailHeaders(userEmail),
               });
               
               if (error) {
@@ -1207,6 +1638,7 @@ exports.sendTrialReminderEmails = onSchedule({
             to: userEmail,
             subject: subject,
             html: generateTrialReminderEmail(displayName, courseConfig, reminder.template, reminder.day, userStats),
+            headers: getMarketingEmailHeaders(userEmail),
           });
           
           if (error) {
@@ -1617,6 +2049,7 @@ exports.sendWelcomeDripEmails = onSchedule({
             to: userEmail,
             subject: subject,
             html: generateWelcomeDripEmail(displayName, courseConfig, drip.template, userStats),
+            headers: getMarketingEmailHeaders(userEmail),
           });
           
           if (error) {

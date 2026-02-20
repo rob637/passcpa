@@ -40,18 +40,26 @@ const getValidatedCourseContext = (courseId: CourseId | undefined): typeof COURS
 };
 
 // Course-specific context for AI prompts
-const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics: string; sections: string; topicList: string[] }> = {
+const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics: string; sections: string; topicList: string[]; examStructure?: string }> = {
   cpa: {
     name: 'CPA (Certified Public Accountant)',
     shortName: 'CPA',
     topics: 'accounting, auditing, tax, and business concepts',
-    sections: 'FAR, AUD, REG, BAR, ISC, or TCP',
+    sections: 'FAR, AUD, REG, plus one discipline section (BAR, ISC, or TCP)',
+    examStructure: `CRITICAL 2024+ CPA EXAM STRUCTURE:
+- The CPA Exam has 4 sections: 3 CORE sections + 1 DISCIPLINE section
+- CORE sections (all required): FAR (Financial Accounting & Reporting), AUD (Auditing & Attestation), REG (Taxation & Regulation)
+- DISCIPLINE sections (choose 1): BAR (Business Analysis & Reporting), ISC (Information Systems & Controls), TCP (Tax Compliance & Planning)
+- **BEC (Business Environment & Concepts) was RETIRED on December 15, 2023** - never mention BEC as a current section
+- The new discipline sections replaced BEC starting January 2024
+- If asked about BEC, explain it was replaced by the three discipline sections`,
     topicList: ['accounting', 'audit', 'tax', 'gaap', 'fasb', 'asc', 'irc', 'basis', 'depreciation', 
       'amortization', 'lease', 'revenue', 'expense', 'asset', 'liability', 'equity', 'debit', 'credit',
       'financial', 'statement', 'balance sheet', 'income', 'ratio', 'inventory', 'fifo', 'lifo',
       'receivable', 'payable', 'bond', 'stock', 'dividend', 'partnership', 's corp', 'c corp',
       'aicpa', 'pcaob', 'sec', 'sox', 'internal control', 'fraud', 'materiality', 'sampling',
-      'cpa', 'far', 'aud', 'reg', 'bec', 'bar', 'isc', 'tcp', '1031', 'like-kind', 'capital gain']
+      'cpa', 'far', 'aud', 'reg', 'bar', 'isc', 'tcp', '1031', 'like-kind', 'capital gain',
+      'discipline', 'core', 'data analytics', 'information systems', 'soc', 'cybersecurity']
   },
   ea: {
     name: 'EA (Enrolled Agent)',
@@ -116,6 +124,9 @@ const COURSE_CONTEXT: Record<CourseId, { name: string; shortName: string; topics
 const getSystemPrompts = (courseId: CourseId): Record<string, string> => {
   const course = getValidatedCourseContext(courseId);
   
+  // Add exam structure context for CPA (critical for avoiding BEC mentions)
+  const examStructureContext = course.examStructure ? `\n\n${course.examStructure}\n` : '';
+  
   return {
     explain: `You are Vory, an expert ${course.shortName} exam tutor for VoraPrep. Your role is to:
 - Give clear, complete explanations of ${course.topics} ONLY
@@ -124,7 +135,7 @@ const getSystemPrompts = (courseId: CourseId): Record<string, string> => {
 - Include relevant references (IRC sections, IRS publications, regulations, etc.)
 - Provide mnemonics and memory tricks when helpful
 - Keep explanations concise but thorough
-
+${examStructureContext}
 IMPORTANT CONVERSATION RULES:
 1. You ONLY help with ${course.shortName} exam topics. If asked about unrelated topics (politics, sports, random questions, personal advice, etc.), politely redirect: "I'm Vory, your ${course.shortName} exam tutor! I can only help with ${course.topics}. What ${course.shortName} concept can I explain for you?"
 2. When the user provides a question with the correct answer, IMMEDIATELY explain why that answer is correct. Do NOT ask clarifying questions - just explain the concept clearly.
@@ -142,7 +153,7 @@ Format your responses with **bold** for key terms, bullet points for lists, and 
 - Praise correct reasoning and gently redirect incorrect thinking
 - Only reveal the answer after they've worked through the logic
 - Help them build understanding, not just memorization
-
+${examStructureContext}
 IMPORTANT CONVERSATION RULES:
 1. You ONLY help with ${course.shortName} exam topics. If asked about unrelated topics, politely redirect to ${course.shortName} study.
 2. When the user responds with "yes", "sure", "ok" to your offers, proceed with what you offered. Don't ask what they mean by "yes".
@@ -157,7 +168,8 @@ Start by asking what they already know, then build from there with questions.`,
 - Provide specific feedback on what they missed.
 - Ignore minor grammar/spelling issues unless they affect meaning (this is a test of knowledge, not English).
 - Be strict but constructive. The user needs to pass a rigorous professional exam.
-- Do NOT output your internal reasoning process. Only output the final grading and feedback.`,
+- Do NOT output your internal reasoning process. Only output the final grading and feedback.
+${examStructureContext}`,
 
     quiz: `You are Vory, a ${course.shortName} exam quiz master for VoraPrep. Your role is to:
 - Generate realistic ${course.shortName} exam-style multiple choice questions
@@ -165,7 +177,7 @@ Start by asking what they already know, then build from there with questions.`,
 - After the user answers, explain why the correct answer is right AND why each wrong answer is wrong
 - Focus on commonly tested topics and exam traps
 - Vary difficulty based on user's performance
-
+${examStructureContext}
 IMPORTANT CONVERSATION RULES:
 1. You ONLY create quizzes about ${course.shortName} exam topics. If asked about unrelated topics, politely redirect to ${course.shortName} study.
 2. When the user responds "yes" or "sure" to "want another question?", give them another question immediately.

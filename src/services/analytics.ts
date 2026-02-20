@@ -32,7 +32,7 @@ export const initAnalytics = (): void => {
 
   // Skip if no measurement ID configured
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.startsWith('G-XXXX')) {
-    logger.log('Analytics disabled: No GA4 Measurement ID configured. Set VITE_GA_MEASUREMENT_ID in your .env file.');
+    logger.log('Analytics disabled: No GA4 Measurement ID configured.');
     return;
   }
 
@@ -48,28 +48,37 @@ export const initAnalytics = (): void => {
     return;
   }
 
+  // Initialize dataLayer and gtag function BEFORE loading the script
+  // This is the standard Google-recommended pattern
+  window.dataLayer = window.dataLayer || [];
+  // Always create a fresh gtag function to avoid conflicts with Firebase SDK
+  window.gtag = function (...args: any[]) {
+    // @ts-ignore - Argument spread is intended
+    window.dataLayer.push(arguments);
+  };
+
+  // Google Consent Mode V2 (required since March 2024)
+  // Without this, gtag.js silently drops ALL events
+  window.gtag('consent', 'default', {
+    'analytics_storage': 'granted',
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+  });
+
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    send_page_view: false, // We'll track manually for SPA
+  });
+
   // Load gtag script
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   document.head.appendChild(script);
 
-  // Initialize gtag
-  window.dataLayer = window.dataLayer || [];
-  // Use existing gtag function if defined (prevents overwriting if GTM/Firebase SDK injected it)
-  window.gtag = window.gtag || function (...args: any[]) {
-    // @ts-ignore - Argument spread is intended
-    window.dataLayer.push(args);
-  };
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    send_page_view: false, // We'll track manually for SPA
-    anonymize_ip: true,
-    cookie_flags: 'SameSite=None;Secure',
-  });
-
   initialized = true;
-  logger.log('Analytics initialized');
+  logger.log('Analytics initialized with Consent Mode V2');
 
   // Track session start for PWA install threshold
   trackPWAEngagement('session_start');

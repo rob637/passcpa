@@ -19,6 +19,7 @@ import { format } from 'date-fns';
 import logger from '../utils/logger';
 import { recordQuestionAnswer, recordTBSResult } from '../services/questionHistoryService';
 import { recordAnswerToEngine } from '../services/adaptiveEngineAdapter';
+import analytics, { trackEvent } from '../services/analytics';
 import { getStudyPlanId, getCurrentSection } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { COURSES } from '../courses';
@@ -322,6 +323,10 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             break;
           }
         }
+        // GA4 analytics — track streaks
+        if (streak >= 2) {
+          analytics.maintainStreak(streak);
+        }
         setCurrentStreak(streak);
       } catch (error) {
         logger.error('Error fetching weekly data:', error);
@@ -385,6 +390,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             timeSpentSeconds,
           }
         );
+
+        // GA4 analytics — track every question answered
+        analytics.answerQuestion(isCorrect, section, topic || 'General');
     } catch (e) {
         logger.error("Error recording answer", e);
     }
@@ -411,6 +419,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         
         // Record in TBS history for mastery tracking
         await recordTBSResult(user.uid, id, score, section || 'unknown', timeSpent * 60);
+
+        // GA4 analytics — track simulation/exam completion
+        analytics.completeExam(section || 'unknown', score, score >= 75);
       } catch (e) {
           logger.error("Error completing simulation", e);
       }
@@ -472,6 +483,14 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           timeSpent,
         }, { merge: true });
         
+        // GA4 analytics — track lesson completion
+        trackEvent('lesson_complete', {
+          lesson_id: lessonId,
+          exam_section: section,
+          course_id: activeCourse,
+          time_spent_minutes: timeSpent,
+        });
+
         logger.log('Lesson completed:', lessonId);
       } catch (e) {
           logger.error("Error completing lesson", e);

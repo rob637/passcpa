@@ -31,6 +31,7 @@ import { fetchQuestions } from '../../services/questionService';
 import { getFlashcardsBySection, Flashcard as DedicatedFlashcard } from '../../services/flashcardService';
 import { calculateNextReview, getDueCards, getStudyStats } from '../../services/spacedRepetition';
 import feedback from '../../services/feedback';
+import { trackEvent } from '../../services/analytics';
 import clsx from 'clsx';
 import { Question, ExamSection, AllExamSections } from '../../types';
 
@@ -246,6 +247,15 @@ const Flashcards: React.FC = () => {
         setCurrentIndex(0); // Reset to first card when cards change
         setIsFlipped(false); // Reset flip state
         setStudyStats(getStudyStats(cardsWithSRS));
+
+        // GA4 analytics — track flashcard session start
+        if (filteredCards.length > 0) {
+          trackEvent('flashcard_session_start', {
+            exam_section: currentSection,
+            card_count: filteredCards.length,
+            mode,
+          });
+        }
       } catch (error) {
         logger.error('Error loading flashcards:', error);
       } finally {
@@ -390,6 +400,12 @@ const Flashcards: React.FC = () => {
         nextCard();
       } else {
         // This was the last card - advance past end to trigger completion screen
+        // GA4 analytics — track flashcard session completion
+        trackEvent('flashcard_session_complete', {
+          exam_section: currentSection,
+          reviewed: sessionStats.reviewed + 1,
+          cards_total: cards.length,
+        });
         setCurrentIndex(cards.length);
         setIsFlipped(false);
         setSelectedRating(null);

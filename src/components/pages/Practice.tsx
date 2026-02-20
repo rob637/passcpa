@@ -52,6 +52,7 @@ import { shuffleQuestionOptions, ShuffledQuestion } from '../../utils/questionSh
 import { ShareNudge, shouldShowHighScoreNudge } from '../common/ShareNudge';
 import { useNavigation } from '../navigation';
 import { markActivityCompleted } from '../../services/dailyPlanPersistence';
+import analytics from '../../services/analytics';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct';
@@ -1105,6 +1106,9 @@ const Practice: React.FC = () => {
       setLoading(false);
       // Scroll to top when entering question view
       scrollToTop();
+
+      // GA4 analytics — track practice session start
+      analytics.startPractice(config.section, fetchedQuestions.length);
     } catch (error) {
       logger.error('Error starting session:', error);
       setLoading(false);
@@ -1339,6 +1343,10 @@ const Practice: React.FC = () => {
     const answeredCount = Object.keys(answers).length;
     const correctCount = Object.values(answers).filter((a) => a.correct).length;
     const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+
+    // GA4 analytics — track practice session completion
+    const totalElapsed = startTime ? Math.round((Date.now() - startTime) / 1000) : 0;
+    analytics.completePractice(sessionConfig?.section || '', correctCount, answeredCount, totalElapsed);
 
     if (logActivity) {
       logActivity('practice_completed', {

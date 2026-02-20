@@ -6,7 +6,8 @@ import { getAuth, connectAuthEmulator, browserLocalPersistence, browserSessionPe
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import { getStorage, connectStorageEmulator } from 'firebase/storage';
 import { getFunctions, connectFunctionsEmulator } from 'firebase/functions';
-import { getAnalytics, isSupported } from 'firebase/analytics';
+// Firebase Analytics SDK import removed — we use manual gtag in src/services/analytics.ts
+// import { getAnalytics, isSupported } from 'firebase/analytics';
 import logger from '../utils/logger';
 
 // ============================================

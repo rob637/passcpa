@@ -246,6 +246,8 @@ interface UserDocument {
   isAdmin?: boolean;
   createdAt?: { seconds: number; nanoseconds: number };
   examSection?: string;
+  examDate?: string | { seconds: number } | null; // Legacy single exam date
+  examDates?: Record<string, string | { seconds: number } | null>; // Per-section exam dates
   activeCourse?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
   courseId?: string; // Legacy alias for activeCourse
   lastLogin?: string; // If you track this
@@ -333,6 +335,26 @@ interface AnalyticsData {
   byCourse: Record<string, number>;
   bySection: Record<string, number>;
   bySubscription: Record<string, number>;
+  // User activation funnel
+  funnel: {
+    signedUp: number;           // Total users
+    completedOnboarding: number; // onboardingComplete = true
+    hasExamDate: number;        // Set an exam date
+    completedDiagnostic: number; // Has diagnosticResults
+    answeredQuestion: number;   // Has questionHistory
+    activeLast7Days: number;    // Active in the last 7 days
+    recentSignups: Array<{      // Last 20 signups with status
+      email: string;
+      uid: string;
+      signedUpAt: Date | null;
+      courseId: string;
+      onboardingComplete: boolean;
+      hasExamDate: boolean;
+      hasDiagnostic: boolean;
+      questionsAnswered: number;
+      daysSinceSignup: number;
+    }>;
+  };
 }
 
 interface FeatureFlagState {
@@ -1304,6 +1326,70 @@ const AdminCMS: React.FC = () => {
         }
       });
 
+      // Calculate funnel metrics
+      let completedOnboarding = 0;
+      let hasExamDate = 0;
+      const recentSignups: AnalyticsData['funnel']['recentSignups'] = [];
+
+      // Sort users by createdAt descending and take last 20 for detailed analysis
+      const sortedByRecent = [...users].sort((a, b) => {
+        const aTime = a.createdAt?.seconds || 0;
+        const bTime = b.createdAt?.seconds || 0;
+        return bTime - aTime;
+      });
+
+      users.forEach(u => {
+        // Check onboarding completion
+        const onboarded = u.onboardingComplete === true || 
+          (u.onboardingCompleted && Object.values(u.onboardingCompleted).some((v: unknown) => v === true));
+        if (onboarded) completedOnboarding++;
+        
+        // Check if they have an exam date set
+        const hasDate = !!(u.examDate || (u.examDates && Object.values(u.examDates).some(v => v)));
+        if (hasDate) hasExamDate++;
+      });
+
+      // Build recent signups list (last 20) with enriched activity data
+      // Check diagnosticResults and questionHistory subcollections for these users
+      for (const u of sortedByRecent.slice(0, 20)) {
+        const signedUpAt = u.createdAt ? new Date(u.createdAt.seconds * 1000) : null;
+        const daysSinceSignup = signedUpAt 
+          ? Math.floor((now.getTime() - signedUpAt.getTime()) / (1000 * 60 * 60 * 24))
+          : 0;
+        const onboarded = u.onboardingComplete === true || 
+          !!(u.onboardingCompleted && Object.values(u.onboardingCompleted).some((v: unknown) => v === true));
+        const hasDate = !!(u.examDate || (u.examDates && Object.values(u.examDates).some(v => v)));
+        
+        // Check for diagnostic results and question history
+        let hasDiagnostic = false;
+        let questionsAnswered = 0;
+        try {
+          const diagSnap = await getDocs(collection(db, 'users', u.id, 'diagnosticResults'));
+          hasDiagnostic = diagSnap.size > 0;
+          
+          const qHistorySnap = await getDocs(query(collection(db, 'users', u.id, 'questionHistory'), limit(1)));
+          questionsAnswered = qHistorySnap.size > 0 ? 1 : 0; // Just check if any exist
+        } catch {
+          // Permission or missing collection - ignore
+        }
+        
+        recentSignups.push({
+          email: u.email || u.id.slice(0, 12),
+          uid: u.id,
+          signedUpAt,
+          courseId: getUserCourse(u),
+          onboardingComplete: onboarded,
+          hasExamDate: hasDate,
+          hasDiagnostic,
+          questionsAnswered,
+          daysSinceSignup,
+        });
+      }
+      
+      // Calculate diagnostic and question counts from recentSignups (sampled)
+      const completedDiagnostic = recentSignups.filter(u => u.hasDiagnostic).length;
+      const answeredQuestion = recentSignups.filter(u => u.questionsAnswered > 0).length;
+
       setAnalytics({
         totalUsers,
         activeToday,
@@ -1313,6 +1399,15 @@ const AdminCMS: React.FC = () => {
         byCourse,
         bySection,
         bySubscription,
+        funnel: {
+          signedUp: totalUsers,
+          completedOnboarding,
+          hasExamDate,
+          completedDiagnostic,
+          answeredQuestion,
+          activeLast7Days: activeThisWeek,
+          recentSignups,
+        },
       });
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error);
@@ -3768,6 +3863,142 @@ const AdminCMS: React.FC = () => {
                   </div>
                 </div>
 
+                {/* User Activation Funnel */}
+                <Card className="p-6 bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-900/20 dark:to-orange-900/20 border-rose-200 dark:border-rose-800">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                    🚦 User Activation Funnel
+                    <span className="text-xs bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">
+                      Where are users dropping off?
+                    </span>
+                  </h4>
+                  
+                  {/* Funnel Bars */}
+                  <div className="space-y-3 mb-6">
+                    {[
+                      { label: 'Signed Up', count: analytics.funnel.signedUp, color: 'bg-blue-500', note: '' },
+                      { label: 'Completed Onboarding', count: analytics.funnel.completedOnboarding, color: 'bg-green-500', note: 'from all users' },
+                      { label: 'Set Exam Date', count: analytics.funnel.hasExamDate, color: 'bg-amber-500', note: 'from all users' },
+                      { label: 'Took Diagnostic Quiz', count: analytics.funnel.completedDiagnostic, color: 'bg-cyan-500', note: 'sampled from last 20' },
+                      { label: 'Answered First Question', count: analytics.funnel.answeredQuestion, color: 'bg-purple-500', note: 'sampled from last 20' },
+                      { label: 'Active Last 7 Days', count: analytics.funnel.activeLast7Days, color: 'bg-primary-500', note: 'from all users' },
+                    ].map((step, i) => {
+                      // For sampled metrics, calculate percent based on sample size (20)
+                      const baseCount = step.note.includes('sampled') ? 20 : analytics.funnel.signedUp;
+                      const percent = baseCount > 0 
+                        ? Math.round((step.count / baseCount) * 100) 
+                        : 0;
+                      const dropOff = i > 0 && !step.note.includes('sampled')
+                        ? Math.round(((analytics.funnel.signedUp - step.count) / analytics.funnel.signedUp) * 100)
+                        : 0;
+                      return (
+                        <div key={step.label}>
+                          <div className="flex justify-between text-sm mb-1">
+                            <span className="font-medium text-gray-700 dark:text-gray-300">
+                              {step.label}
+                              {step.note && <span className="text-xs text-gray-400 ml-1">({step.note})</span>}
+                            </span>
+                            <span className="text-gray-600 dark:text-gray-400">
+                              {step.count.toLocaleString()}{step.note.includes('sampled') ? '/20' : ''} ({percent}%)
+                              {dropOff > 0 && (
+                                <span className="text-red-500 ml-2">↓ {dropOff}% dropped</span>
+                              )}
+                            </span>
+                          </div>
+                          <div className="h-6 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full ${step.color} transition-all duration-500`}
+                              style={{ width: `${percent}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Recent Signups Analysis */}
+                  <div className="border-t border-rose-200 dark:border-rose-700 pt-4">
+                    <h5 className="font-medium text-gray-800 dark:text-gray-200 mb-3">📋 Last 20 Signups — Status Check</h5>
+                    <div className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-sm overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-gray-100 dark:bg-slate-700">
+                          <tr>
+                            <th className="p-2 text-left">Email</th>
+                            <th className="p-2 text-center">Course</th>
+                            <th className="p-2 text-center">Days</th>
+                            <th className="p-2 text-center" title="Completed onboarding">Onb</th>
+                            <th className="p-2 text-center" title="Set exam date">Date</th>
+                            <th className="p-2 text-center" title="Completed diagnostic quiz">Diag</th>
+                            <th className="p-2 text-center" title="Answered questions">Q&apos;s</th>
+                            <th className="p-2 text-center">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {analytics.funnel.recentSignups.map((user) => {
+                            // Determine status based on funnel progression
+                            let status = '✅ Active';
+                            let statusColor = '';
+                            if (!user.onboardingComplete) {
+                              status = '❌ No Onboarding';
+                              statusColor = 'text-red-600';
+                            } else if (!user.hasDiagnostic) {
+                              status = '⚠️ Skipped Diag';
+                              statusColor = 'text-amber-600';
+                            } else if (user.questionsAnswered === 0) {
+                              status = '🔸 No Practice';
+                              statusColor = 'text-orange-500';
+                            }
+                            const isAtRisk = !user.onboardingComplete || user.questionsAnswered === 0;
+                            return (
+                              <tr 
+                                key={user.uid} 
+                                className={`border-t border-gray-200 dark:border-slate-700 ${isAtRisk ? 'bg-red-50 dark:bg-red-900/20' : ''}`}
+                              >
+                                <td className="p-2 font-medium truncate max-w-[180px]" title={user.email}>
+                                  {user.email}
+                                </td>
+                                <td className="p-2 text-center">
+                                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-slate-700">
+                                    {user.courseId.toUpperCase()}
+                                  </span>
+                                </td>
+                                <td className="p-2 text-center text-gray-600 dark:text-gray-400 text-xs">
+                                  {user.daysSinceSignup === 0 ? 'Today' : `${user.daysSinceSignup}d`}
+                                </td>
+                                <td className="p-2 text-center">
+                                  {user.onboardingComplete 
+                                    ? <span className="text-green-600">✓</span> 
+                                    : <span className="text-red-500">✗</span>}
+                                </td>
+                                <td className="p-2 text-center">
+                                  {user.hasExamDate 
+                                    ? <span className="text-green-600">✓</span> 
+                                    : <span className="text-gray-400">—</span>}
+                                </td>
+                                <td className="p-2 text-center">
+                                  {user.hasDiagnostic 
+                                    ? <span className="text-green-600">✓</span> 
+                                    : <span className="text-red-500">✗</span>}
+                                </td>
+                                <td className="p-2 text-center">
+                                  {user.questionsAnswered > 0 
+                                    ? <span className="text-green-600">✓</span> 
+                                    : <span className="text-red-500">✗</span>}
+                                </td>
+                                <td className={`p-2 text-center text-xs font-medium whitespace-nowrap ${statusColor}`}>
+                                  {status}
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                      💡 Users who don&apos;t complete onboarding within 24 hours rarely return. Email reminders are sent automatically after 24-48h.
+                    </p>
+                  </div>
+                </Card>
+
                 {/* Revenue Dashboard */}
                 {revenueMetrics && (
                   <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 dark:border-green-800">
@@ -5356,10 +5587,18 @@ const AdminCMS: React.FC = () => {
                 <div>
                   <h2 className="text-xl font-bold">{selectedUser.email || 'Unknown User'}</h2>
                   <p className="text-blue-100 text-sm font-mono">{selectedUser.id}</p>
-                  <div className="flex gap-3 mt-2 text-sm">
+                  <div className="flex gap-3 mt-2 text-sm flex-wrap">
                     <span className="bg-white/20 px-2 py-1 rounded font-medium">{getUserCourse(selectedUser).toUpperCase()}</span>
                     <span className="bg-white/20 px-2 py-1 rounded font-medium">{selectedUser.examSection || 'No section'}</span>
                     <span className="bg-white/20 px-2 py-1 rounded font-medium">{selectedUser.subscription?.tier || 'free'}</span>
+                    {/* Onboarding Status Badge */}
+                    {(() => {
+                      const onboarded = selectedUser.onboardingComplete === true || 
+                        (selectedUser.onboardingCompleted && Object.values(selectedUser.onboardingCompleted).some((v: unknown) => v === true));
+                      return onboarded 
+                        ? <span className="bg-green-500 px-2 py-1 rounded font-medium">✓ Onboarded</span>
+                        : <span className="bg-red-500 px-2 py-1 rounded font-medium">✗ No Onboarding</span>;
+                    })()}
                     {selectedUser.isAdmin && <span className="bg-amber-500 px-2 py-1 rounded font-medium">Admin</span>}
                   </div>
                 </div>

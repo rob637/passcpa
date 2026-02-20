@@ -90,8 +90,10 @@ const Register = () => {
 
     try {
       const displayName = `${formData.firstName} ${formData.lastName}`.trim();
-      await signUp(formData.email, formData.password, displayName);
+      const userCredential = await signUp(formData.email, formData.password, displayName);
       trackEvent('signup_completed', { method: 'email' });
+      // Note: Google Ads conversion tracking is handled inside AuthProvider.signUp()
+      void userCredential;
       navigate('/verify-email');
     } catch (err: any) {
       logger.error('Registration error:', err);
@@ -112,8 +114,10 @@ const Register = () => {
   const handleGoogleSignUp = async () => {
     setError('');
     try {
-      await signInWithGoogle();
+      const googleResult = await signInWithGoogle();
       trackEvent('signup_completed', { method: 'google' });
+      // Note: Google Ads conversion tracking for new Google users is handled in AuthProvider
+      void googleResult;
       navigate('/onboarding');
     } catch (err: any) {
       logger.error('Google sign-up error:', err);

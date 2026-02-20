@@ -41,6 +41,7 @@ import {
   getExamDescription,
   ExamConfig,
 } from '../../services/examService';
+import analytics from '../../services/analytics';
 // Keep mock exam imports for blueprint weights and configurations
 import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mock-exams';
 import { getTBSBySection } from '../../data/cpa/tbs';
@@ -200,6 +201,9 @@ const ExamSimulator: React.FC = () => {
       setTbsAnswers({});
       setFlagged(new Set());
       setBlueprintScores({});
+
+      // GA4 analytics — track exam start
+      analytics.startExam(currentSection);
     } catch (error) {
       logger.error('Error starting exam:', error);
     } finally {
@@ -428,6 +432,9 @@ const ExamSimulator: React.FC = () => {
 
     // Record simulation
     await completeSimulation('exam-sim-' + Date.now(), results.percentage, timeSpent);
+
+    // GA4 analytics — track exam completion
+    analytics.completeExam(currentSection, results.percentage, results.percentage >= examConfig.passingScore);
   };
 
   const calculateResults = () => {

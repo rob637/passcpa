@@ -353,6 +353,8 @@ interface AnalyticsData {
       hasDiagnostic: boolean;
       questionsAnswered: number;
       daysSinceSignup: number;
+      timezone?: string;        // Timezone hint for country
+      utmSource?: string;       // Traffic source
     }>;
   };
 }
@@ -1383,6 +1385,8 @@ const AdminCMS: React.FC = () => {
           hasDiagnostic,
           questionsAnswered,
           daysSinceSignup,
+          timezone: (u as Record<string, unknown>).signupSource?.timezone as string | undefined,
+          utmSource: (u as Record<string, unknown>).signupSource?.utm_source as string | undefined,
         });
       }
       
@@ -3925,6 +3929,7 @@ const AdminCMS: React.FC = () => {
                             <th className="p-2 text-left">Email</th>
                             <th className="p-2 text-center">Course</th>
                             <th className="p-2 text-center">Days</th>
+                            <th className="p-2 text-center" title="Region (from timezone)">Region</th>
                             <th className="p-2 text-center" title="Completed onboarding">Onb</th>
                             <th className="p-2 text-center" title="Set exam date">Date</th>
                             <th className="p-2 text-center" title="Completed diagnostic quiz">Diag</th>
@@ -3963,6 +3968,15 @@ const AdminCMS: React.FC = () => {
                                 </td>
                                 <td className="p-2 text-center text-gray-600 dark:text-gray-400 text-xs">
                                   {user.daysSinceSignup === 0 ? 'Today' : `${user.daysSinceSignup}d`}
+                                </td>
+                                <td className="p-2 text-center text-xs" title={user.timezone || 'Unknown'}>
+                                  {user.timezone 
+                                    ? user.timezone.includes('Asia') ? '🌏 Asia'
+                                    : user.timezone.includes('Europe') ? '🇪🇺 EU'
+                                    : user.timezone.includes('America') ? '🇺🇸 US'
+                                    : user.timezone.includes('Africa') ? '🌍 Africa'
+                                    : '🌐 Other'
+                                    : <span className="text-gray-400">—</span>}
                                 </td>
                                 <td className="p-2 text-center">
                                   {user.onboardingComplete 

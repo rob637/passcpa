@@ -147,10 +147,21 @@ const ScrollToTop = () => {
 // Global page tracker - initializes analytics and tracks ALL page views (including public landing pages)
 const GlobalPageTracker = () => {
   const { pathname } = useLocation();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     initAnalytics();
-  }, []);
+    
+    // Capture UTM params and gclid on first landing for attribution
+    // These persist in localStorage until user signs up
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid'];
+    utmParams.forEach(param => {
+      const value = searchParams.get(param);
+      if (value) {
+        localStorage.setItem(param, value);
+      }
+    });
+  }, [searchParams]);
 
   useEffect(() => {
     const title = document.title || 'VoraPrep';

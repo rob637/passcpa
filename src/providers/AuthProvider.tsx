@@ -259,6 +259,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       saveCoursePreference(pendingCourse as CourseId);
 
       // Create user document in Firestore
+      // Capture signup source for analytics (UTM params, gclid, timezone for country hint)
+      const urlParams = new URLSearchParams(window.location.search);
+      const signupSource = {
+        utm_source: urlParams.get('utm_source') || localStorage.getItem('utm_source') || null,
+        utm_medium: urlParams.get('utm_medium') || localStorage.getItem('utm_medium') || null,
+        utm_campaign: urlParams.get('utm_campaign') || localStorage.getItem('utm_campaign') || null,
+        gclid: urlParams.get('gclid') || localStorage.getItem('gclid') || null,
+        referrer: document.referrer || null,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
+        language: navigator.language || null,
+      };
+      
       const newUserProfile: Omit<UserProfile, 'id'> = {
         email,
         displayName,
@@ -270,6 +282,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         examDate: null,
         dailyGoal: 50,
         studyPlanId: null,
+        signupSource, // Track where user came from
         settings: {
           notifications: true,
           darkMode: false,

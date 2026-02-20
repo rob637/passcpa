@@ -200,7 +200,15 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   }
 
   // Require email verification before accessing protected routes
-  if (!user.emailVerified && location.pathname !== '/verify-email') {
+  // Grace period: new accounts get 3 days before we require verification
+  // This reduces friction during initial signup flow
+  const accountAgeMs = user.metadata?.creationTime 
+    ? Date.now() - new Date(user.metadata.creationTime).getTime()
+    : Infinity;
+  const gracePeriodMs = 3 * 24 * 60 * 60 * 1000; // 3 days
+  const withinGracePeriod = accountAgeMs < gracePeriodMs;
+  
+  if (!user.emailVerified && !withinGracePeriod && location.pathname !== '/verify-email') {
     return <Navigate to="/verify-email" replace />;
   }
 
@@ -268,9 +276,15 @@ const PublicRoute = ({ children }: RouteProps) => {
   }
 
   if (user) {
-    // Unverified users must verify their email first
-    // Don't sign them out - redirect to verification page
-    if (!user.emailVerified) {
+    // Unverified users must verify their email first (after 3-day grace period)
+    // Grace period allows new users to explore before requiring verification
+    const accountAgeMs = user.metadata?.creationTime 
+      ? Date.now() - new Date(user.metadata.creationTime).getTime()
+      : Infinity;
+    const gracePeriodMs = 3 * 24 * 60 * 60 * 1000; // 3 days
+    const withinGracePeriod = accountAgeMs < gracePeriodMs;
+    
+    if (!user.emailVerified && !withinGracePeriod) {
       return <Navigate to="/verify-email" replace />;
     }
 

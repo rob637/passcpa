@@ -262,13 +262,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // Capture signup source for analytics (UTM params, gclid, timezone for country hint)
       const urlParams = new URLSearchParams(window.location.search);
       const signupSource = {
-        utm_source: urlParams.get('utm_source') || localStorage.getItem('utm_source') || null,
-        utm_medium: urlParams.get('utm_medium') || localStorage.getItem('utm_medium') || null,
-        utm_campaign: urlParams.get('utm_campaign') || localStorage.getItem('utm_campaign') || null,
-        gclid: urlParams.get('gclid') || localStorage.getItem('gclid') || null,
-        referrer: document.referrer || null,
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
-        language: navigator.language || null,
+        utm_source: urlParams.get('utm_source') || localStorage.getItem('utm_source') || undefined,
+        utm_medium: urlParams.get('utm_medium') || localStorage.getItem('utm_medium') || undefined,
+        utm_campaign: urlParams.get('utm_campaign') || localStorage.getItem('utm_campaign') || undefined,
+        gclid: urlParams.get('gclid') || localStorage.getItem('gclid') || undefined,
+        referrer: document.referrer || undefined,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || undefined,
+        language: navigator.language || undefined,
       };
       
       const newUserProfile: Omit<UserProfile, 'id'> = {

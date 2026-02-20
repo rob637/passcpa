@@ -52,8 +52,9 @@ export const initAnalytics = (): void => {
   // This is the standard Google-recommended pattern
   window.dataLayer = window.dataLayer || [];
   // Always create a fresh gtag function to avoid conflicts with Firebase SDK
-  window.gtag = function (...args: any[]) {
-    // @ts-ignore - Argument spread is intended
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  window.gtag = function (..._args: unknown[]) {
+    // Using `arguments` object instead of spread for gtag compatibility
     window.dataLayer.push(arguments);
   };
 

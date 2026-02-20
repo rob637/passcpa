@@ -264,6 +264,18 @@ interface UserDocument {
   _trials?: Record<string, { startDate?: { seconds: number }; endDate?: { seconds: number } }>;
   // Per-exam paid subscriptions (loaded from subscriptions collection)
   _paidExams?: Record<string, { tier?: string; status?: string; currentPeriodEnd?: { seconds: number } }>;
+  // Signup source tracking (UTM, timezone, etc.)
+  signupSource?: {
+    utm_source?: string;
+    utm_medium?: string;
+    utm_campaign?: string;
+    utm_content?: string;
+    utm_term?: string;
+    gclid?: string;
+    referrer?: string;
+    timezone?: string;
+    language?: string;
+  };
 }
 
 interface UserActivityData {
@@ -814,6 +826,9 @@ const AdminCMS: React.FC = () => {
     tbs: FEATURES.tbs,
     writtenCommunication: FEATURES.writtenCommunication,
     offlineMode: FEATURES.offlineMode,
+    fastTrackOnboarding: FEATURES.fastTrackOnboarding,
+    gamification: FEATURES.gamification,
+    blueprint2026Preview: FEATURES.blueprint2026Preview,
   });
   const [maintenanceMode, setMaintenanceMode] = useState(false);
 
@@ -1385,8 +1400,8 @@ const AdminCMS: React.FC = () => {
           hasDiagnostic,
           questionsAnswered,
           daysSinceSignup,
-          timezone: (u as Record<string, unknown>).signupSource?.timezone as string | undefined,
-          utmSource: (u as Record<string, unknown>).signupSource?.utm_source as string | undefined,
+          timezone: u.signupSource?.timezone,
+          utmSource: u.signupSource?.utm_source,
         });
       }
       

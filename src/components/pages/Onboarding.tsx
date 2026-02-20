@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '../common/Button';
 import { trackEvent } from '../../services/analytics';
 import { FEATURES } from '../../config/featureFlags';
-// getCourseHomePath removed — onboarding now navigates to /diagnostic
+import { getCourseHomePath } from '../../utils/courseNavigation';
 import { useCourse } from '../../providers/CourseProvider';
 import { createExamDateUpdate, createStudyPlanUpdate } from '../../utils/profileHelpers';
 import {
@@ -831,16 +831,24 @@ const Onboarding: React.FC = () => {
         }
       }
       
-      // Navigate to diagnostic quiz to assess baseline knowledge
-      // Users can skip the diagnostic from within the quiz page
       // Sync the selected course to CourseProvider so everything
       // downstream (subscription, routing, etc.) uses the right course
       if (selectedCourse && selectedCourse !== currentCourseId) {
         setCourse(selectedCourse as CourseId);
       }
-      // Pass selected section via router state so the diagnostic page
-      // can use it immediately without waiting for profile state to propagate
-      navigate('/diagnostic', { state: { section: selectedSection } });
+
+      // FastTrack: Skip diagnostic entirely and go straight to dashboard
+      // This reduces friction for new users - they can explore immediately
+      // and get prompted to take diagnostic later after trying practice
+      if (FEATURES.fastTrackOnboarding) {
+        logger.info('FastTrack: skipping diagnostic, going to dashboard');
+        navigate(getCourseHomePath(selectedCourse as CourseId));
+      } else {
+        // Navigate to diagnostic quiz to assess baseline knowledge
+        // Pass selected section via router state so the diagnostic page
+        // can use it immediately without waiting for profile state to propagate
+        navigate('/diagnostic', { state: { section: selectedSection } });
+      }
     } catch (error) {
       logger.error('Error completing onboarding:', error);
     } finally {

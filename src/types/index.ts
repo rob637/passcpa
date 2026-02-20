@@ -482,6 +482,19 @@ export interface UserProfile {
   // If omitted, all 7 days are assumed.
   studyDayPreferences?: number[];
   
+  // Signup source tracking (UTM, timezone, etc.)
+  signupSource?: {
+    utm_source?: string;
+    utm_medium?: string;
+    utm_campaign?: string;
+    utm_content?: string;
+    utm_term?: string;
+    gclid?: string;
+    referrer?: string;
+    timezone?: string;
+    language?: string;
+  };
+  
   // Timestamps (FieldValue allowed for serverTimestamp() during writes)
   createdAt?: FirestoreTimestamp;
   updatedAt?: FirestoreTimestamp;

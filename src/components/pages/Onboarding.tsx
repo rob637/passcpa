@@ -461,7 +461,7 @@ const ExamDateStep: React.FC<ExamDateStepProps> = ({ value, onChange, courseId, 
           onClick={onSkip}
           className="w-full mt-4 text-center text-sm text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
         >
-          Skip for now — I'll set this later
+          Skip — use default (3 months from now)
         </button>
       )}
     </div>
@@ -887,13 +887,15 @@ const Onboarding: React.FC = () => {
     trackEvent('onboarding_daily_goal_set', { goal, course: selectedCourse });
   };
 
-  // Skip exam date - set default 3 months from now
+  // Skip exam date - set default 3 months from now and auto-advance
   const handleSkipExamDate = () => {
     const defaultDate = new Date();
     defaultDate.setMonth(defaultDate.getMonth() + 3);
     const dateStr = defaultDate.toISOString().split('T')[0];
     setExamDate(dateStr);
     trackEvent('onboarding_exam_date_skipped', { course: selectedCourse, default_date: dateStr });
+    // Auto-advance to next step (users expect skip to move forward)
+    handleNext();
   };
 
   const renderStep = () => {

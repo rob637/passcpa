@@ -72,6 +72,16 @@ export const initAnalytics = (): void => {
     send_page_view: false, // We'll track manually for SPA
   });
 
+  // Configure Google Ads for conversion tracking
+  if (GOOGLE_ADS_CONVERSION_ID) {
+    // Extract the AW-XXXXXXXXX part from the full conversion ID
+    const googleAdsId = GOOGLE_ADS_CONVERSION_ID.split('/')[0];
+    if (googleAdsId) {
+      window.gtag('config', googleAdsId);
+      logger.log('Google Ads configured:', googleAdsId);
+    }
+  }
+
   // Load gtag script
   const script = document.createElement('script');
   script.async = true;

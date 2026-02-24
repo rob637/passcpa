@@ -1,0 +1,107 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { getPublishedArticles, getExamName, getExamColor } from '../lib/articles';
+
+const articles = await getPublishedArticles();
+
+// Group by exam
+const groupedByExam = articles.reduce((acc, article) => {
+  const exam = article.courseId || 'general';
+  if (!acc[exam]) acc[exam] = [];
+  acc[exam].push(article);
+  return acc;
+}, {} as Record<string, typeof articles>);
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+};
+---
+
+<BlogLayout 
+  title="VoraPrep Blog — CPA, EA, CMA, CIA, CFP & CISA Exam Prep"
+  description="Free study guides, practice questions, exam tips, and career advice for professional certification exams including CPA, EA, CMA, CIA, CFP, and CISA."
+>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        VoraPrep Blog
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Free study guides, exam strategies, and career advice for accounting and finance professionals.
+      </p>
+    </div>
+
+    <!-- Quick Filters -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12">
+      <a href="#all" class="px-4 py-2 rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 font-medium text-sm">
+        All Articles
+      </a>
+      {Object.keys(groupedByExam)
+        .filter(exam => exam !== 'general')
+        .sort()
+        .map(exam => (
+          <a href={`#${exam}`} class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            {exam.toUpperCase()}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Articles List -->
+    {articles.length === 0 ? (
+      <div class="text-center py-16">
+        <p class="text-gray-500 dark:text-gray-400 text-lg">
+          No articles published yet. Check back soon!
+        </p>
+      </div>
+    ) : (
+      <div class="space-y-8" id="all">
+        {articles.map((article) => (
+          <article class="border-b border-gray-200 dark:border-gray-800 pb-8">
+            <a href={`/blog/${article.slug}`} class="block group">
+              <div class="flex items-center gap-2 mb-2">
+                {article.courseId && (
+                  <span class={`px-2 py-0.5 rounded text-xs font-medium text-white uppercase ${getExamColor(article.courseId)}`}>
+                    {article.courseId}
+                  </span>
+                )}
+                <span class="text-sm text-gray-500 dark:text-gray-400">
+                  {formatDate(article.publishedAt)}
+                </span>
+              </div>
+              <h2 class="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+                {article.title}
+              </h2>
+              {article.metaDescription && (
+                <p class="text-gray-600 dark:text-gray-400 line-clamp-2">
+                  {article.metaDescription}
+                </p>
+              )}
+              <span class="inline-flex items-center mt-3 text-primary-600 dark:text-primary-400 font-medium text-sm group-hover:underline">
+                Read more →
+              </span>
+            </a>
+          </article>
+        ))}
+      </div>
+    )}
+
+    <!-- CTA Section -->
+    <div class="mt-16 bg-primary-50 dark:bg-primary-900/20 rounded-2xl p-8 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+        Ready to start studying?
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
+        Join thousands of candidates using AI-powered study plans to pass their exams.
+      </p>
+      <a href="https://voraprep.com/register" class="inline-flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+        Start Free Trial
+      </a>
+    </div>
+  </div>
+</BlogLayout>

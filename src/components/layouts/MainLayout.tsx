@@ -203,6 +203,8 @@ const MainLayout = () => {
             <img 
               src={darkMode ? "/logo-white.svg" : "/logo.svg"} 
               alt="VoraPrep" 
+              width="120" 
+              height="40" 
               className="h-10" 
             />
           </div>

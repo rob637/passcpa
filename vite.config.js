@@ -108,9 +108,12 @@ export default defineConfig(({ mode }) => {
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Exclude large data chunks from precache - they cache on-demand via runtimeCaching
+        // This reduces initial SW install from ~25MB to ~3MB for faster first load
+        globPatterns: ['**/*.{css,html,ico,png,svg,woff2}', 'assets/vendor-*.js', 'assets/index-*.js'],
+        globIgnores: ['**/data-*.js', '**/feature-*.js'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024, // 8 MiB - CPA questions bundle is ~5.8MB
-        skipWaiting: false, // Don't auto-activate new service worker during exam!
+        skipWaiting: true, // Force SW update - temporarily enabled to fix stale cache issue
         clientsClaim: true, // Take control immediately after activation (when user clicks Update)
         cleanupOutdatedCaches: true,
         runtimeCaching: [
@@ -123,6 +126,21 @@ export default defineConfig(({ mode }) => {
               expiration: {
                 maxEntries: 200,
                 maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days (hashed = immutable)
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          // Cache feature chunks (admin, AI tutor, etc.)
+          {
+            urlPattern: /\/assets\/feature-.*\.js$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'feature-chunks-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
               },
               cacheableResponse: {
                 statuses: [0, 200]
@@ -272,7 +290,7 @@ export default defineConfig(({ mode }) => {
           }
           
           // Feature chunks
-          if (id.includes('AdminCMS')) {
+          if (id.includes('AdminCMS') || id.includes('ArticleReview')) {
             return 'feature-admin-cms';
           }
           if (id.includes('AdminSeed')) {

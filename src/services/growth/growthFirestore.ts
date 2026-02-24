@@ -151,6 +151,32 @@ export async function updateKeywordRank(
 }
 
 /**
+ * Get top tracked keywords with rank data.
+ * Returns keywords sorted by most recent check, with position data.
+ */
+export async function getTrackedKeywordsWithRanks(maxResults = 100): Promise<TrackedKeyword[]> {
+  // First try to get keywords that have been checked (have position data)
+  const q = query(
+    collection(db, COLLECTIONS.keywords),
+    orderBy('updatedAt', 'desc'),
+    limit(maxResults),
+  );
+
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(d => {
+    const data = d.data();
+    // The Cloud Function writes currentPosition/previousPosition,
+    // but the type uses currentRank/previousRank - handle both
+    return {
+      id: d.id,
+      ...data,
+      currentRank: data.currentPosition ?? data.currentRank ?? null,
+      previousRank: data.previousPosition ?? data.previousRank ?? null,
+    } as TrackedKeyword;
+  });
+}
+
+/**
  * Get total keyword count.
  */
 export async function getKeywordCount(): Promise<number> {
@@ -192,6 +218,85 @@ export async function saveContentBriefs(briefs: ContentBrief[]): Promise<number>
 }
 
 /**
+ * Reseed content briefs — update titles/outlines from new templates while preserving existing generated content.
+ * Only updates briefs with status 'brief'. Leaves 'review', 'published', 'rejected' items unchanged.
+ */
+export async function reseedContentBriefs(newBriefs: ContentBrief[]): Promise<{ updated: number; skipped: number }> {
+  // Get all existing briefs
+  const existingSnapshot = await getDocs(collection(db, COLLECTIONS.content));
+  const existingMap = new Map<string, { status: string; generatedContent?: string; title?: string }>();
+  
+  existingSnapshot.docs.forEach(d => {
+    const data = d.data();
+    existingMap.set(d.id, { status: data.status, generatedContent: data.generatedContent, title: data.title });
+  });
+
+  let updated = 0;
+  let skipped = 0;
+  const batchSize = 450;
+
+  for (let i = 0; i < newBriefs.length; i += batchSize) {
+    const batch = writeBatch(db);
+    const chunk = newBriefs.slice(i, i + batchSize);
+
+    for (const brief of chunk) {
+      const existing = existingMap.get(brief.id);
+      
+      // Skip items that have been generated (have content or are in review/published)
+      if (existing && existing.status !== 'brief') {
+        skipped++;
+        continue;
+      }
+
+      const ref = doc(db, COLLECTIONS.content, brief.id);
+      batch.set(ref, {
+        ...brief,
+        createdAt: Timestamp.now(),
+        updatedAt: Timestamp.now(),
+        status: 'brief',
+      });
+      updated++;
+    }
+
+    await batch.commit();
+  }
+
+  logger.info(`[GrowthEngine] Reseeded briefs: ${updated} updated, ${skipped} skipped (already generated)`);
+  return { updated, skipped };
+}
+
+/**
+ * Delete all briefs with status 'brief' (not generated/published).
+ * Use this to clear and start fresh with new templates.
+ */
+export async function deleteAllPendingBriefs(): Promise<number> {
+  const snapshot = await getDocs(
+    query(collection(db, COLLECTIONS.content), where('status', '==', 'brief'))
+  );
+
+  if (snapshot.empty) return 0;
+
+  const batchSize = 450;
+  const docs = snapshot.docs;
+  let deleted = 0;
+
+  for (let i = 0; i < docs.length; i += batchSize) {
+    const batch = writeBatch(db);
+    const chunk = docs.slice(i, i + batchSize);
+    
+    for (const doc of chunk) {
+      batch.delete(doc.ref);
+      deleted++;
+    }
+    
+    await batch.commit();
+  }
+
+  logger.info(`[GrowthEngine] Deleted ${deleted} pending briefs`);
+  return deleted;
+}
+
+/**
  * Get content briefs by status.
  */
 export async function getContentBriefsByStatus(status: ContentStatus): Promise<ContentBrief[]> {
@@ -200,6 +305,20 @@ export async function getContentBriefsByStatus(status: ContentStatus): Promise<C
     where('status', '==', status),
     orderBy('priority', 'asc'),
     limit(50),
+  );
+
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ContentBrief));
+}
+
+/**
+ * Get all content briefs from Firestore (up to limit).
+ */
+export async function getAllContentBriefs(maxResults = 500): Promise<ContentBrief[]> {
+  const q = query(
+    collection(db, COLLECTIONS.content),
+    orderBy('priority', 'asc'),
+    limit(maxResults),
   );
 
   const snapshot = await getDocs(q);

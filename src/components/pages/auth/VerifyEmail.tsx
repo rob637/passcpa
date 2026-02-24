@@ -25,10 +25,10 @@ const VerifyEmail = () => {
       return;
     }
 
-    // If already verified, redirect to onboarding
+    // If already verified, redirect to dashboard
     if (user.emailVerified) {
       trackEvent('email_verified', {});
-      navigate('/onboarding');
+      navigate('/'); // Go directly to dashboard - contextual prompts handle setup
       return;
     }
 
@@ -37,7 +37,7 @@ const VerifyEmail = () => {
       await user.reload();
       if (user.emailVerified) {
         trackEvent('email_verified', {});
-        navigate('/onboarding');
+        navigate('/'); // Go directly to dashboard
       }
     }, 3000);
 

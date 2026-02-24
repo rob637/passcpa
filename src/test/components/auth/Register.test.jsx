@@ -144,7 +144,7 @@ describe('Register Component', () => {
       });
     });
 
-    it('should navigate to onboarding on successful Google sign up', async () => {
+    it('should navigate to dashboard on successful Google sign up', async () => {
       mockSignInWithGoogle.mockResolvedValueOnce({});
       renderRegister();
 
@@ -152,7 +152,7 @@ describe('Register Component', () => {
       fireEvent.click(googleButton);
 
       await waitFor(() => {
-        expect(mockNavigate).toHaveBeenCalledWith('/onboarding');
+        expect(mockNavigate).toHaveBeenCalledWith('/');
       });
     });
 

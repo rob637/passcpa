@@ -5,7 +5,7 @@ import { useAuth } from '../../../hooks/useAuth';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { Navigate, Link } from 'react-router-dom';
-import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp, serverTimestamp } from 'firebase/firestore';
+import { collection, query, orderBy, limit, getDocs, doc, writeBatch, updateDoc, where, getCountFromServer, getDoc, Timestamp, serverTimestamp, addDoc } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { ADMIN_EMAILS, isAdminEmail } from '../../../config/adminConfig';
 import { FEATURES } from '../../../config/featureFlags';
@@ -236,7 +236,7 @@ const getCourseIcon = (courseId: CourseId): string => {
 // Types
 // ============================================================================
 
-type TabType = 'content' | 'users' | 'analytics' | 'tools' | 'logs' | 'settings';
+type TabType = 'overview' | 'users' | 'revenue' | 'analytics' | 'content' | 'growth' | 'operations' | 'settings';
 type LogType = 'info' | 'success' | 'error' | 'warning';
 
 interface UserDocument {
@@ -245,12 +245,13 @@ interface UserDocument {
   displayName?: string;
   isAdmin?: boolean;
   createdAt?: { seconds: number; nanoseconds: number };
+  deletedAt?: { seconds: number; nanoseconds: number }; // Soft-deleted users
   examSection?: string;
   examDate?: string | { seconds: number } | null; // Legacy single exam date
   examDates?: Record<string, string | { seconds: number } | null>; // Per-section exam dates
   activeCourse?: string; // Which course they are studying (cpa, ea, cma, cia, cisa, cfp)
   courseId?: string; // Legacy alias for activeCourse
-  lastLogin?: string; // If you track this
+  lastLogin?: { seconds: number; nanoseconds: number } | string; // Firestore Timestamp
   onboardingComplete?: boolean;
   onboardingCompleted?: Record<string, boolean>; // Per-course onboarding status
   subscription?: {
@@ -350,23 +351,31 @@ interface AnalyticsData {
   // User activation funnel
   funnel: {
     signedUp: number;           // Total users
-    completedOnboarding: number; // onboardingComplete = true
+    returnedAfterSignup: number; // Logged in after initial signup (lastLogin > createdAt)
+    choseSection: number;       // Set examSection
     hasExamDate: number;        // Set an exam date
     completedDiagnostic: number; // Has diagnosticResults
     answeredQuestion: number;   // Has questionHistory
-    activeLast7Days: number;    // Active in the last 7 days
+    activeLast7Days: number;    // Logged in within last 7 days
     recentSignups: Array<{      // Last 20 signups with status
       email: string;
       uid: string;
       signedUpAt: Date | null;
       courseId: string;
-      onboardingComplete: boolean;
+      hasSection: boolean;
       hasExamDate: boolean;
       hasDiagnostic: boolean;
       questionsAnswered: number;
       daysSinceSignup: number;
+      lastActiveAt: Date | null; // Last login timestamp
       timezone?: string;        // Timezone hint for country
       utmSource?: string;       // Traffic source
+      // Feature engagement breakdown (from daily_log)
+      mcqsAnswered: number;
+      lessonsCompleted: number;
+      flashcardsUsed: number;
+      simulationsCompleted: number;
+      studyMinutes: number;
     }>;
   };
 }
@@ -421,6 +430,23 @@ interface EmailHistoryItem {
   sentBy: string;
   sentAt: { seconds: number; nanoseconds: number } | null;
   recipients?: Array<{ email: string; name: string; uid?: string | null }>;
+}
+
+interface CommunicationTemplate {
+  id: string;
+  name: string;
+  type: 'email' | 'push';
+  category: 'user-facing' | 'engagement' | 'admin';
+  subject?: string;
+  body?: string;
+  description: string;
+  variables: string[];
+  functionName?: string;
+  enabled: boolean;
+  isCustomized?: boolean;
+  isCustom?: boolean;
+  lastUpdated?: { seconds: number; nanoseconds: number };
+  updatedAt?: { seconds: number; nanoseconds: number };
 }
 
 // ============================================================================
@@ -684,7 +710,7 @@ const StripeStatusSection: React.FC = () => {
 
 const AdminCMS: React.FC = () => {
   const { user, userProfile } = useAuth();
-  const [activeTab, setActiveTab] = useState<TabType>('content');
+  const [activeTab, setActiveTab] = useState<TabType>('overview');
   
   // Course selection state (TODO: add course filter dropdown later)
   // const [selectedCourse, setSelectedCourse] = useState<CourseId | 'all'>('all');
@@ -755,6 +781,10 @@ const AdminCMS: React.FC = () => {
   // Question Reports state
   const [questionReports, setQuestionReports] = useState<QuestionReport[]>([]);
   const [isLoadingReports, setIsLoadingReports] = useState(false);
+  const [expandedReportId, setExpandedReportId] = useState<string | null>(null);
+  const [reportResponses, setReportResponses] = useState<Record<string, string>>({});
+  const [generatingResponse, setGeneratingResponse] = useState<string | null>(null);
+  const [sendingResponse, setSendingResponse] = useState<string | null>(null);
 
   // User Engagement state
   const [engagementStats, setEngagementStats] = useState<{
@@ -786,6 +816,22 @@ const AdminCMS: React.FC = () => {
   } | null>(null);
   const [isLoadingAudit, setIsLoadingAudit] = useState(false);
 
+  // Growth metrics state
+  const [growthMetrics, setGrowthMetrics] = useState<{
+    totalUsers: number;
+    thisMonthSignups: number;
+    lastMonthSignups: number;
+    totalReferrals: number;
+    pendingReferralRewards: number;
+    totalLeads: number;
+    leadsThisWeek: number;
+    totalTestimonials: number;
+    pendingTestimonials: number;
+    conversionRate: number;
+  } | null>(null);
+  const [isLoadingGrowth, setIsLoadingGrowth] = useState(false);
+
+
   // Revenue Dashboard state
   const [revenueMetrics, setRevenueMetrics] = useState<{
     monthlyMRR: number;
@@ -811,6 +857,10 @@ const AdminCMS: React.FC = () => {
     active: boolean;
   }>>([]);
   const [isLoadingAnnouncements, setIsLoadingAnnouncements] = useState(false);
+  const [announcementTitle, setAnnouncementTitle] = useState('');
+  const [announcementBody, setAnnouncementBody] = useState('');
+  const [announcementAudience, setAnnouncementAudience] = useState('all');
+  const [isSendingAnnouncement, setIsSendingAnnouncement] = useState(false);
 
   // Analytics state
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
@@ -847,6 +897,33 @@ const AdminCMS: React.FC = () => {
   const [isLoadingStale, setIsLoadingStale] = useState(false);
   const [isDeletingStale, setIsDeletingStale] = useState(false);
   const [staleStatus, setStaleStatus] = useState<{ message: string; type: 'info' | 'success' | 'error' | 'warning' } | null>(null);
+
+  // LinkedIn status state (for Operations tab)
+  const [linkedInStatus, setLinkedInStatus] = useState<{
+    status: 'loading' | 'active' | 'expired' | 'not-configured';
+    expiresAt?: Date;
+    orgId?: string;
+  }>({ status: 'loading' });
+
+  // Function status state (for Operations tab - dynamic badges)
+  const [functionStatuses, setFunctionStatuses] = useState<Record<string, {
+    status: 'success' | 'error' | 'skipped' | 'unknown';
+    lastRun?: Date;
+    details?: Record<string, unknown>;
+  }>>({});
+
+  // Discord status state
+  const [discordStatus, setDiscordStatus] = useState<{
+    status: 'loading' | 'active' | 'not-configured';
+  }>({ status: 'loading' });
+
+  // Communication templates state
+  const [communicationTemplates, setCommunicationTemplates] = useState<CommunicationTemplate[]>([]);
+  const [isLoadingTemplates, setIsLoadingTemplates] = useState(false);
+  const [editingTemplate, setEditingTemplate] = useState<CommunicationTemplate | null>(null);
+  const [previewingTemplate, setPreviewingTemplate] = useState<CommunicationTemplate | null>(null);
+  const [isSavingTemplate, setIsSavingTemplate] = useState(false);
+  const [isSeedingTemplates, setIsSeedingTemplates] = useState(false);
 
   // Beta user transition state
   const [betaTransitionStatus, setBetaTransitionStatus] = useState<'idle' | 'preview' | 'executing' | 'done'>('idle');
@@ -891,6 +968,12 @@ const AdminCMS: React.FC = () => {
       
       querySnapshot.forEach((docSnap) => {
         const data = docSnap.data();
+        
+        // Skip soft-deleted users
+        if (data.deletedAt) {
+          return;
+        }
+        
         const subData = subMap[docSnap.id];
         
         // Merge subscription data from subscriptions/{uid} collection
@@ -1267,18 +1350,20 @@ const AdminCMS: React.FC = () => {
     setIsLoadingAnalytics(true);
     setAnalyticsError(null);
     try {
-      // Get total user count
-      const usersRef = collection(db, 'users');
-      const totalSnapshot = await getCountFromServer(usersRef);
-      const totalUsers = totalSnapshot.data().count;
-
       // Get all users for detailed stats (limited for performance)
-      const q = query(collection(db, 'users'), limit(500));
+      // We filter out deleted users in-memory to match the Users tab
+      const q = query(collection(db, 'users'), limit(1000));
       const querySnapshot = await getDocs(q);
       const users: UserDocument[] = [];
       querySnapshot.forEach((doc) => {
-        users.push({ id: doc.id, ...doc.data() } as UserDocument);
+        const data = doc.data() as UserDocument;
+        // Skip soft-deleted users (same as Users tab)
+        if (data.deletedAt) return;
+        users.push({ id: doc.id, ...data });
       });
+      
+      // Total users excluding deleted
+      const totalUsers = users.length;
 
       // Calculate date ranges
       const now = new Date();
@@ -1286,7 +1371,7 @@ const AdminCMS: React.FC = () => {
       const weekAgo = new Date(todayStart.getTime() - 7 * 24 * 60 * 60 * 1000);
       const monthAgo = new Date(todayStart.getTime() - 30 * 24 * 60 * 60 * 1000);
 
-      // Active users (simplified - based on createdAt for now, real impl would use lastActive)
+      // Active users based on lastLogin timestamp
       let activeToday = 0;
       let activeThisWeek = 0;
       let activeThisMonth = 0;
@@ -1326,25 +1411,31 @@ const AdminCMS: React.FC = () => {
           bySubscription.free++;
         }
         
-        // New users
+        // New users (based on signup date)
         if (createdAt && createdAt >= weekAgo) {
           newUsersThisWeek++;
-          if (createdAt >= todayStart) {
-            activeToday++;
-          }
         }
         
-        // Rough activity estimate (would need proper tracking)
-        if (createdAt && createdAt >= monthAgo) {
-          activeThisMonth++;
-          if (createdAt >= weekAgo) {
-            activeThisWeek++;
+        // Active users based on lastLogin timestamp
+        const lastLoginTs = u.lastLogin && typeof u.lastLogin === 'object' && 'seconds' in u.lastLogin
+          ? new Date(u.lastLogin.seconds * 1000)
+          : null;
+        if (lastLoginTs) {
+          if (lastLoginTs >= monthAgo) {
+            activeThisMonth++;
+            if (lastLoginTs >= weekAgo) {
+              activeThisWeek++;
+              if (lastLoginTs >= todayStart) {
+                activeToday++;
+              }
+            }
           }
         }
       });
 
       // Calculate funnel metrics
-      let completedOnboarding = 0;
+      let returnedAfterSignup = 0;
+      let choseSection = 0;
       let hasExamDate = 0;
       const recentSignups: AnalyticsData['funnel']['recentSignups'] = [];
 
@@ -1356,10 +1447,15 @@ const AdminCMS: React.FC = () => {
       });
 
       users.forEach(u => {
-        // Check onboarding completion
-        const onboarded = u.onboardingComplete === true || 
-          (u.onboardingCompleted && Object.values(u.onboardingCompleted).some((v: unknown) => v === true));
-        if (onboarded) completedOnboarding++;
+        // Check if user returned after signing up (lastLogin is a different timestamp than createdAt)
+        const lastLoginTs = u.lastLogin && typeof u.lastLogin === 'object' && 'seconds' in u.lastLogin
+          ? u.lastLogin.seconds : 0;
+        const createdTs = u.createdAt?.seconds || 0;
+        // Consider "returned" if lastLogin is at least 60 seconds after createdAt (not just the initial session)
+        if (lastLoginTs > createdTs + 60) returnedAfterSignup++;
+
+        // Check if they chose a section
+        if (u.examSection) choseSection++;
         
         // Check if they have an exam date set
         const hasDate = !!(u.examDate || (u.examDates && Object.values(u.examDates).some(v => v)));
@@ -1373,19 +1469,34 @@ const AdminCMS: React.FC = () => {
         const daysSinceSignup = signedUpAt 
           ? Math.floor((now.getTime() - signedUpAt.getTime()) / (1000 * 60 * 60 * 24))
           : 0;
-        const onboarded = u.onboardingComplete === true || 
-          !!(u.onboardingCompleted && Object.values(u.onboardingCompleted).some((v: unknown) => v === true));
         const hasDate = !!(u.examDate || (u.examDates && Object.values(u.examDates).some(v => v)));
+        const lastLoginTs = u.lastLogin && typeof u.lastLogin === 'object' && 'seconds' in u.lastLogin
+          ? new Date(u.lastLogin.seconds * 1000) : null;
         
         // Check for diagnostic results and question history
         let hasDiagnostic = false;
         let questionsAnswered = 0;
+        // Activity breakdown from daily_log
+        let mcqsAnswered = 0, lessonsCompleted = 0, flashcardsUsed = 0, simulationsCompleted = 0, studyMinutes = 0;
         try {
           const diagSnap = await getDocs(collection(db, 'users', u.id, 'diagnosticResults'));
           hasDiagnostic = diagSnap.size > 0;
           
           const qHistorySnap = await getDocs(query(collection(db, 'users', u.id, 'questionHistory'), limit(1)));
-          questionsAnswered = qHistorySnap.size > 0 ? 1 : 0; // Just check if any exist
+          questionsAnswered = qHistorySnap.size > 0 ? 1 : 0;
+
+          // Query daily_log for feature engagement breakdown
+          const dailyLogSnap = await getDocs(collection(db, 'users', u.id, 'daily_log'));
+          dailyLogSnap.forEach(logDoc => {
+            const data = logDoc.data();
+            mcqsAnswered += data.questionsAttempted || 0;
+            lessonsCompleted += data.lessonsCompleted || 0;
+            simulationsCompleted += data.simulationsCompleted || 0;
+            studyMinutes += data.studyTimeMinutes || 0;
+            if (data.activities && Array.isArray(data.activities)) {
+              flashcardsUsed += data.activities.filter((a: { type: string }) => a.type === 'flashcard').length;
+            }
+          });
         } catch {
           // Permission or missing collection - ignore
         }
@@ -1395,13 +1506,19 @@ const AdminCMS: React.FC = () => {
           uid: u.id,
           signedUpAt,
           courseId: getUserCourse(u),
-          onboardingComplete: onboarded,
+          hasSection: !!u.examSection,
           hasExamDate: hasDate,
           hasDiagnostic,
           questionsAnswered,
           daysSinceSignup,
+          lastActiveAt: lastLoginTs,
           timezone: u.signupSource?.timezone,
           utmSource: u.signupSource?.utm_source,
+          mcqsAnswered,
+          lessonsCompleted,
+          flashcardsUsed,
+          simulationsCompleted,
+          studyMinutes,
         });
       }
       
@@ -1420,7 +1537,8 @@ const AdminCMS: React.FC = () => {
         bySubscription,
         funnel: {
           signedUp: totalUsers,
-          completedOnboarding,
+          returnedAfterSignup,
+          choseSection,
           hasExamDate,
           completedDiagnostic,
           answeredQuestion,
@@ -1437,6 +1555,116 @@ const AdminCMS: React.FC = () => {
         : 'Failed to load analytics: ' + msg);
     } finally {
       setIsLoadingAnalytics(false);
+    }
+  }, [isAdmin]);
+
+  // Load Growth Metrics
+  const loadGrowthMetrics = useCallback(async () => {
+    if (!isAdmin) return;
+    setIsLoadingGrowth(true);
+    try {
+      const now = new Date();
+      const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+      const lastMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+      const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
+      const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+      // Get users for signup date analysis (limited, excluding deleted)
+      const usersRef = collection(db, 'users');
+      const usersQuery = query(usersRef, orderBy('createdAt', 'desc'), limit(500));
+      const usersSnap = await getDocs(usersQuery);
+      
+      let totalUsers = 0;
+      let thisMonthSignups = 0;
+      let lastMonthSignups = 0;
+      let paidUsers = 0;
+      
+      usersSnap.forEach((doc) => {
+        const data = doc.data();
+        // Skip soft-deleted users
+        if (data.deletedAt) return;
+        totalUsers++;
+        const createdAt = data.createdAt?.seconds ? new Date(data.createdAt.seconds * 1000) : null;
+        if (createdAt) {
+          if (createdAt >= thisMonthStart) thisMonthSignups++;
+          else if (createdAt >= lastMonthStart && createdAt <= lastMonthEnd) lastMonthSignups++;
+        }
+        if (data.subscription?.tier && data.subscription.tier !== 'free') {
+          paidUsers++;
+        }
+      });
+
+      // Get referral counts
+      let totalReferrals = 0;
+      let pendingReferralRewards = 0;
+      try {
+        const referralsRef = collection(db, 'referrals');
+        const referralsSnap = await getCountFromServer(referralsRef);
+        totalReferrals = referralsSnap.data().count;
+        
+        // Pending rewards (converted but not rewarded)
+        const pendingQuery = query(referralsRef, where('converted', '==', true), where('rewarded', '==', false));
+        const pendingSnap = await getDocs(pendingQuery);
+        pendingReferralRewards = pendingSnap.size;
+      } catch {
+        // Collection may not exist yet
+      }
+
+      // Get diagnostic lead counts
+      let totalLeads = 0;
+      let leadsThisWeek = 0;
+      try {
+        const leadsRef = collection(db, 'diagnosticLeads');
+        const leadsSnap = await getCountFromServer(leadsRef);
+        totalLeads = leadsSnap.data().count;
+        
+        // Leads this week
+        const recentLeadsQuery = query(leadsRef, orderBy('createdAt', 'desc'), limit(50));
+        const recentLeadsSnap = await getDocs(recentLeadsQuery);
+        recentLeadsSnap.forEach((doc) => {
+          const data = doc.data();
+          const createdAt = data.createdAt?.seconds ? new Date(data.createdAt.seconds * 1000) : null;
+          if (createdAt && createdAt >= weekAgo) leadsThisWeek++;
+        });
+      } catch {
+        // Collection may not exist yet
+      }
+
+      // Get testimonial counts
+      let totalTestimonials = 0;
+      let pendingTestimonials = 0;
+      try {
+        const testimonialsRef = collection(db, 'testimonials');
+        const testimonialsSnap = await getCountFromServer(testimonialsRef);
+        totalTestimonials = testimonialsSnap.data().count;
+        
+        // Pending approval
+        const pendingTestQuery = query(testimonialsRef, where('status', '==', 'pending'));
+        const pendingTestSnap = await getDocs(pendingTestQuery);
+        pendingTestimonials = pendingTestSnap.size;
+      } catch {
+        // Collection may not exist yet
+      }
+
+      // Calculate conversion rate (paid / total)
+      const conversionRate = totalUsers > 0 ? (paidUsers / totalUsers) * 100 : 0;
+
+      setGrowthMetrics({
+        totalUsers,
+        thisMonthSignups,
+        lastMonthSignups,
+        totalReferrals,
+        pendingReferralRewards,
+        totalLeads,
+        leadsThisWeek,
+        totalTestimonials,
+        pendingTestimonials,
+        conversionRate
+      });
+    } catch (error) {
+      logger.error('Error loading growth metrics', error);
+    } finally {
+      setIsLoadingGrowth(false);
     }
   }, [isAdmin]);
 
@@ -1838,6 +2066,146 @@ const AdminCMS: React.FC = () => {
     }
   }, [isAdmin]);
 
+  // Load LinkedIn status from Firestore
+  const loadLinkedInStatus = useCallback(async () => {
+    if (!isAdmin) return;
+    try {
+      const linkedInDoc = await getDoc(doc(db, 'system_config', 'linkedin'));
+      if (!linkedInDoc.exists()) {
+        setLinkedInStatus({ status: 'not-configured' });
+        return;
+      }
+      const data = linkedInDoc.data();
+      const accessToken = data.accessToken;
+      const expiresAt = data.expiresAt?.toDate?.() || (data.expiresAt ? new Date(data.expiresAt) : null);
+      
+      if (!accessToken) {
+        setLinkedInStatus({ status: 'not-configured' });
+        return;
+      }
+      
+      if (expiresAt && expiresAt < new Date()) {
+        setLinkedInStatus({ status: 'expired', expiresAt, orgId: data.orgId });
+        return;
+      }
+      
+      setLinkedInStatus({ 
+        status: 'active', 
+        expiresAt: expiresAt || undefined, 
+        orgId: data.orgId 
+      });
+    } catch (error) {
+      logger.error('Error loading LinkedIn status', error);
+      setLinkedInStatus({ status: 'not-configured' });
+    }
+  }, [isAdmin]);
+
+  // Load Discord status from Firestore
+  const loadDiscordStatus = useCallback(async () => {
+    if (!isAdmin) return;
+    try {
+      const discordDoc = await getDoc(doc(db, 'system_config', 'discord'));
+      if (!discordDoc.exists()) {
+        setDiscordStatus({ status: 'not-configured' });
+        return;
+      }
+      const data = discordDoc.data();
+      if (data.enabled && data.webhookUrl) {
+        setDiscordStatus({ status: 'active' });
+      } else {
+        setDiscordStatus({ status: 'not-configured' });
+      }
+    } catch (error) {
+      logger.error('Error loading Discord status', error);
+      setDiscordStatus({ status: 'not-configured' });
+    }
+  }, [isAdmin]);
+
+  // Load function statuses from system_status collection
+  const loadFunctionStatuses = useCallback(async () => {
+    if (!isAdmin) return;
+    try {
+      const statusSnapshot = await getDocs(collection(db, 'system_status'));
+      const statuses: Record<string, { status: 'success' | 'error' | 'skipped' | 'unknown'; lastRun?: Date; details?: Record<string, unknown> }> = {};
+      statusSnapshot.forEach((doc) => {
+        const data = doc.data();
+        statuses[doc.id] = {
+          status: data.status || 'unknown',
+          lastRun: data.lastRun?.toDate?.() || (data.lastRun ? new Date(data.lastRun) : undefined),
+          details: data.details,
+        };
+      });
+      setFunctionStatuses(statuses);
+    } catch (error) {
+      logger.error('Error loading function statuses', error);
+    }
+  }, [isAdmin]);
+
+  // Load communication templates via Cloud Function
+  const loadCommunicationTemplates = useCallback(async () => {
+    if (!isAdmin) return;
+    setIsLoadingTemplates(true);
+    try {
+      const getTemplates = httpsCallable(functions, 'getCommunicationTemplates');
+      const result = await getTemplates({});
+      const data = result.data as { templates: CommunicationTemplate[] };
+      setCommunicationTemplates(data.templates || []);
+    } catch (error) {
+      logger.error('Error loading communication templates', error);
+      // Fallback to empty - Cloud Function will return defaults
+      setCommunicationTemplates([]);
+    } finally {
+      setIsLoadingTemplates(false);
+    }
+  }, [isAdmin]);
+
+  // Save template changes via Cloud Function
+  const saveTemplate = useCallback(async (template: CommunicationTemplate) => {
+    if (!isAdmin || !template) return;
+    setIsSavingTemplate(true);
+    try {
+      const updateTemplate = httpsCallable(functions, 'updateCommunicationTemplate');
+      await updateTemplate({
+        templateId: template.id,
+        updates: {
+          subject: template.subject,
+          body: template.body,
+          enabled: template.enabled,
+          name: template.name,
+          description: template.description,
+        },
+      });
+      // Reload templates after save
+      await loadCommunicationTemplates();
+      setEditingTemplate(null);
+      logger.info(`Template ${template.id} updated successfully`);
+    } catch (error) {
+      logger.error('Error saving template', error);
+      alert('Failed to save template. Please try again.');
+    } finally {
+      setIsSavingTemplate(false);
+    }
+  }, [isAdmin, loadCommunicationTemplates]);
+
+  // Seed default templates to Firestore
+  const seedTemplates = useCallback(async () => {
+    if (!isAdmin) return;
+    setIsSeedingTemplates(true);
+    try {
+      const seed = httpsCallable(functions, 'seedCommunicationTemplates');
+      const result = await seed({});
+      const data = result.data as { created: number; skipped: number };
+      logger.info(`Seeded templates: ${data.created} created, ${data.skipped} skipped`);
+      // Reload templates after seeding
+      await loadCommunicationTemplates();
+    } catch (error) {
+      logger.error('Error seeding templates', error);
+      alert('Failed to seed templates. Please try again.');
+    } finally {
+      setIsSeedingTemplates(false);
+    }
+  }, [isAdmin, loadCommunicationTemplates]);
+
   // Clear all system errors
   const clearSystemErrors = useCallback(async () => {
     if (!isAdmin) return;
@@ -1934,6 +2302,139 @@ const AdminCMS: React.FC = () => {
       addLog('Failed to update report status', 'error');
     }
   }, [isAdmin, user?.email]);
+
+  // Generate AI response for a question report
+  const generateReportResponse = useCallback(async (report: QuestionReport) => {
+    setGeneratingResponse(report.id);
+    try {
+      // Fetch the actual question data to craft a good response
+      const courseId = (report.courseId || 'cpa') as CourseId;
+      const questionData = await loadCourseQuestionData(courseId);
+      const questions = questionData?.questions as Array<{
+        id: string;
+        question: string;
+        options: string[];
+        correctAnswer: number;
+        explanation: string;
+      }>;
+      const question = questions?.find(q => q.id === report.questionId);
+      
+      let response = '';
+      
+      if (report.type === 'incorrect_answer' || report.type === 'wrong_answer' || report.type === 'wrong-answer') {
+        if (question) {
+          const correctLetter = ['A', 'B', 'C', 'D'][question.correctAnswer];
+          const correctOption = question.options[question.correctAnswer];
+          response = `Hi,
+
+Thank you for your feedback on this question!
+
+I've reviewed this question and can confirm that the correct answer is **${correctLetter}: "${correctOption}"**
+
+${question.explanation}
+
+If you believe there's still an issue, please let me know what answer you expected and why—I'm happy to take another look.
+
+Best,
+VoraPrep Team`;
+        } else {
+          response = `Hi,
+
+Thank you for reporting this issue! I've reviewed the question and verified the correct answer.
+
+The marked answer is correct based on current AICPA exam guidance. If you believe there's an error, could you share which answer you expected and any reference materials you're using? I'm happy to investigate further.
+
+Best,
+VoraPrep Team`;
+        }
+      } else if (report.type === 'unclear_question') {
+        response = `Hi,
+
+Thank you for flagging this question as unclear! I've reviewed it and will make the wording more precise in our next content update.
+
+In the meantime, here's what the question is asking: [Add clarification]
+
+Best,
+VoraPrep Team`;
+      } else if (report.type === 'typo') {
+        response = `Hi,
+
+Thanks for catching that typo! I've corrected it in our system. Your attention to detail helps us maintain high quality content for all users.
+
+Best,
+VoraPrep Team`;
+      } else {
+        response = `Hi,
+
+Thank you for your feedback on this question! I've reviewed your report and [take appropriate action].
+
+If you have any other questions or concerns, please don't hesitate to reach out.
+
+Best,
+VoraPrep Team`;
+      }
+      
+      setReportResponses(prev => ({ ...prev, [report.id]: response }));
+    } catch (error) {
+      logger.error('Error generating response:', error);
+      setReportResponses(prev => ({ 
+        ...prev, 
+        [report.id]: 'Error generating response. Please try again.' 
+      }));
+    } finally {
+      setGeneratingResponse(null);
+    }
+  }, []);
+
+  // Copy response to clipboard
+  const copyResponseToClipboard = useCallback((reportId: string) => {
+    const response = reportResponses[reportId];
+    if (response) {
+      navigator.clipboard.writeText(response);
+      addLog('Response copied to clipboard', 'success');
+    }
+  }, [reportResponses]);
+
+  // Send response email directly
+  const sendReportResponseEmail = useCallback(async (report: QuestionReport) => {
+    const response = reportResponses[report.id];
+    const recipientEmail = report.reportedByEmail || report.reportedBy;
+    
+    if (!response) {
+      addLog('No response to send. Generate one first.', 'warning');
+      return;
+    }
+    if (!recipientEmail || !recipientEmail.includes('@')) {
+      addLog('Invalid recipient email address', 'error');
+      return;
+    }
+    
+    setSendingResponse(report.id);
+    try {
+      const sendEmail = httpsCallable(functions, 'sendAdminEmail');
+      await sendEmail({
+        to: recipientEmail,
+        subject: `Re: Question Report - ${report.questionId}`,
+        body: response,
+        reportId: report.id,
+      });
+      
+      addLog(`Email sent to ${recipientEmail}`, 'success');
+      
+      // Update local state to show report as resolved
+      setQuestionReports(prev => prev.map(r => 
+        r.id === report.id ? { ...r, status: 'resolved' } : r
+      ));
+      
+      // Collapse the report 
+      setExpandedReportId(null);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      addLog(`Failed to send email: ${error instanceof Error ? error.message : 'Unknown error'}`, 'error');
+    } finally {
+      setSendingResponse(null);
+    }
+  }, [reportResponses]);
 
   // Load user engagement stats
   const loadEngagementStats = useCallback(async () => {
@@ -2282,19 +2783,73 @@ const AdminCMS: React.FC = () => {
     }
   }, []);
 
+  // Send Announcement
+  const sendAnnouncement = useCallback(async () => {
+    if (!announcementTitle || !announcementBody) return;
+    
+    setIsSendingAnnouncement(true);
+    try {
+      const announcementData = {
+        title: announcementTitle,
+        body: announcementBody,
+        audience: announcementAudience,
+        createdAt: new Date(),
+        createdBy: user?.email || 'admin',
+        active: true,
+      };
+      
+      await addDoc(collection(db, 'announcements'), announcementData);
+      
+      addLog(`Announcement "${announcementTitle}" sent to ${announcementAudience} users`, 'success');
+      
+      // Clear form
+      setAnnouncementTitle('');
+      setAnnouncementBody('');
+      setAnnouncementAudience('all');
+      
+      // Reload history
+      loadAnnouncementHistory();
+    } catch (error) {
+      logger.error('Error sending announcement', error);
+      addLog(`Failed to send announcement: ${error instanceof Error ? error.message : 'Unknown error'}`, 'error');
+    } finally {
+      setIsSendingAnnouncement(false);
+    }
+  }, [announcementTitle, announcementBody, announcementAudience, user, loadAnnouncementHistory]);
+
   // Effect to load tab data
+  // Note: We intentionally exclude loading functions from deps to prevent re-triggering
+  // when isAdmin changes (which would cause infinite loading loops). The functions
+  // capture isAdmin via closure, and we only want to re-load when activeTab changes.
   useEffect(() => {
-    if (activeTab === 'users') {
+    if (!isAdmin) return; // Don't load anything until admin access is confirmed
+    
+    if (activeTab === 'overview') {
+      loadAnalytics();
+      loadUsers();
+    } else if (activeTab === 'users') {
       loadUsers();
       loadEmailHistory();
-    } else if (activeTab === 'logs') {
-      loadSystemErrors();
+    } else if (activeTab === 'revenue') {
+      loadUsers(); // For subscription data
     } else if (activeTab === 'analytics') {
       loadAnalytics();
-    } else if (activeTab === 'tools') {
+      loadEngagementStats();
+      loadQuestionReports();
+    } else if (activeTab === 'growth') {
+      loadGrowthMetrics();
+    } else if (activeTab === 'operations') {
+      loadSystemErrors();
       loadAnnouncementHistory();
+      loadLinkedInStatus();
+      loadDiscordStatus();
+      loadFunctionStatuses();
+      loadCommunicationTemplates();
+    } else if (activeTab === 'settings') {
+      // Settings loads on demand
     }
-  }, [activeTab, loadUsers, loadEmailHistory, loadSystemErrors, loadAnalytics, loadAnnouncementHistory]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTab, isAdmin]);
 
   // Compute revenue metrics when users list changes
   useEffect(() => {
@@ -2419,8 +2974,8 @@ const AdminCMS: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Admin CMS</h1>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Content Management System</p>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Admin Console</h1>
+              <p className="text-sm text-gray-600 dark:text-gray-400">VoraPrep Business Dashboard</p>
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Logged in as: {user.email}</div>
           </div>
@@ -2430,7 +2985,7 @@ const AdminCMS: React.FC = () => {
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex gap-1 sm:gap-2 border-b border-gray-200 dark:border-slate-700 overflow-x-auto scrollbar-hide pb-px -mb-px">
-          {(['content', 'users', 'analytics', 'tools', 'logs', 'settings'] as TabType[]).map((tab) => (
+          {(['overview', 'users', 'revenue', 'analytics', 'content', 'growth', 'operations', 'settings'] as TabType[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -2441,19 +2996,23 @@ const AdminCMS: React.FC = () => {
               }`}
             >
               <span className="hidden sm:inline">
-                {tab === 'content' && '📦 Content'}
+                {tab === 'overview' && '📊 Overview'}
                 {tab === 'users' && '👥 Users'}
-                {tab === 'analytics' && '📊 Analytics'}
-                {tab === 'tools' && '🛠️ Tools'}
-                {tab === 'logs' && '📋 Logs'}
+                {tab === 'revenue' && '💰 Revenue'}
+                {tab === 'analytics' && '📈 Analytics'}
+                {tab === 'content' && '📦 Content'}
+                {tab === 'growth' && '🚀 Marketing'}
+                {tab === 'operations' && '🔧 Operations'}
                 {tab === 'settings' && '⚙️ Settings'}
               </span>
               <span className="sm:hidden">
-                {tab === 'content' && '📦'}
+                {tab === 'overview' && '📊'}
                 {tab === 'users' && '👥'}
-                {tab === 'analytics' && '📊'}
-                {tab === 'tools' && '🛠️'}
-                {tab === 'logs' && '📋'}
+                {tab === 'revenue' && '💰'}
+                {tab === 'analytics' && '📈'}
+                {tab === 'content' && '📦'}
+                {tab === 'growth' && '🚀'}
+                {tab === 'operations' && '🔧'}
                 {tab === 'settings' && '⚙️'}
               </span>
             </button>
@@ -2463,6 +3022,151 @@ const AdminCMS: React.FC = () => {
 
       {/* Content */}
       <main className="max-w-7xl mx-auto px-4 py-6">
+        {/* Overview Tab - Business KPIs at a glance */}
+        {activeTab === 'overview' && (
+          <div className="space-y-6">
+            {/* Key Metrics Header */}
+            <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-6 text-white">
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h2 className="text-2xl font-bold">Business Overview</h2>
+                  <p className="text-slate-300 text-sm">Key metrics at a glance</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-slate-400">{new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                </div>
+              </div>
+              
+              {/* Primary KPIs */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold">{analytics?.totalUsers?.toLocaleString() || '—'}</div>
+                  <div className="text-slate-300 text-sm">Total Users</div>
+                  {analytics?.newUsersThisWeek ? (
+                    <div className="text-green-400 text-xs mt-1">+{analytics.newUsersThisWeek} this week</div>
+                  ) : null}
+                </div>
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold text-green-400">${revenueMetrics?.totalMRR?.toLocaleString() || '0'}</div>
+                  <div className="text-slate-300 text-sm">Monthly Revenue</div>
+                  <div className="text-slate-400 text-xs mt-1">${revenueMetrics?.arrProjection?.toLocaleString() || '0'} ARR</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold text-blue-400">{revenueMetrics?.subscriberCount || 0}</div>
+                  <div className="text-slate-300 text-sm">Paid Subscribers</div>
+                  <div className="text-slate-400 text-xs mt-1">{revenueMetrics?.byPlan?.monthly || 0} monthly, {revenueMetrics?.byPlan?.annual || 0} annual</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold text-amber-400">{analytics?.activeThisWeek || '—'}</div>
+                  <div className="text-slate-300 text-sm">Active This Week</div>
+                  <div className="text-slate-400 text-xs mt-1">{analytics?.totalUsers ? ((analytics.activeThisWeek / analytics.totalUsers) * 100).toFixed(0) : '0'}% of users</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Metrics Row */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Content Health */}
+              <Card className="p-5">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                  📦 Content Health
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Questions</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{allCourseStats.reduce((sum, c) => sum + c.questions, 0).toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Lessons</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{allCourseStats.reduce((sum, c) => sum + c.lessons, 0).toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Flashcards</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{allCourseStats.reduce((sum, c) => sum + c.flashcards, 0).toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Active Courses</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{allCourseStats.length}</span>
+                  </div>
+                </div>
+              </Card>
+
+              {/* User Funnel */}
+              <Card className="p-5">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                  📈 User Funnel
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Signed Up</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{analytics?.totalUsers || '—'}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Completed Onboarding</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{analytics?.funnel?.returnedAfterSignup || '—'}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Started Practice</span>
+                    <span className="font-medium text-gray-900 dark:text-white">{analytics?.funnel?.hasExamDate || '—'}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400">Converted to Paid</span>
+                    <span className="font-medium text-green-600 dark:text-green-400">{revenueMetrics?.subscriberCount || 0}</span>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Quick Actions */}
+              <Card className="p-5">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                  ⚡ Quick Actions
+                </h3>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setActiveTab('users')}
+                    className="w-full text-left px-3 py-2 bg-gray-100 dark:bg-slate-700 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors text-sm"
+                  >
+                    👥 View All Users
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('revenue')}
+                    className="w-full text-left px-3 py-2 bg-gray-100 dark:bg-slate-700 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors text-sm"
+                  >
+                    💰 Revenue Details
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('growth')}
+                    className="w-full text-left px-3 py-2 bg-gray-100 dark:bg-slate-700 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors text-sm"
+                  >
+                    🚀 Growth Metrics
+                  </button>
+                  <a
+                    href="https://console.firebase.google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left px-3 py-2 bg-gray-100 dark:bg-slate-700 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors text-sm"
+                  >
+                    🔥 Firebase Console ↗
+                  </a>
+                </div>
+              </Card>
+            </div>
+
+            {/* Course Distribution */}
+            <Card className="p-5">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">🎓 Users by Course</h3>
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+                {Object.entries(analytics?.byCourse || {}).map(([course, count]) => (
+                  <div key={course} className="text-center p-3 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                    <div className="text-2xl font-bold text-gray-900 dark:text-white">{count as number}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 uppercase">{course}</div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        )}
+
         {activeTab === 'content' && (
           <div className="space-y-6">
             {/* Quick Links to Editors */}
@@ -2484,12 +3188,6 @@ const AdminCMS: React.FC = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm font-medium"
               >
                 📊 TBS Editor
-              </Link>
-              <Link
-                to="/admin/growth"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
-              >
-                📈 Growth Dashboard
               </Link>
               <a
                 href="https://console.firebase.google.com/"
@@ -3841,23 +4539,31 @@ const AdminCMS: React.FC = () => {
           </div>
         )}
 
+        {/* Analytics Tab - Deep User Funnel Analysis */}
         {activeTab === 'analytics' && (
           <div className="space-y-6">
             {/* Analytics Header */}
-            <div className="flex justify-between items-center">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📊 Analytics Dashboard</h3>
-              <button
-                onClick={loadAnalytics}
-                disabled={isLoadingAnalytics}
-                className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
-              >
-                {isLoadingAnalytics ? 'Loading...' : 'Refresh'}
-              </button>
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-6 text-white">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-2xl font-bold mb-2">📈 Analytics & Engagement</h2>
+                  <p className="text-purple-100">Deep user funnel analysis, engagement metrics, and quality reports</p>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={loadAnalytics}
+                    disabled={isLoadingAnalytics}
+                    className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white font-medium transition-colors disabled:opacity-50"
+                  >
+                    {isLoadingAnalytics ? 'Loading...' : '🔄 Refresh'}
+                  </button>
+                </div>
+              </div>
             </div>
 
             {isLoadingAnalytics ? (
               <div className="text-center py-12">
-                <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
+                <div className="animate-spin w-8 h-8 border-2 border-purple-600 border-t-transparent rounded-full mx-auto mb-2" />
                 <p className="text-gray-600 dark:text-gray-400">Calculating analytics...</p>
               </div>
             ) : analytics ? (
@@ -3887,525 +4593,166 @@ const AdminCMS: React.FC = () => {
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                     🚦 User Activation Funnel
                     <span className="text-xs bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 px-2 py-0.5 rounded">
-                      Where are users dropping off?
+                      Last {analytics.funnel.recentSignups.length} signups
                     </span>
                   </h4>
                   
-                  {/* Funnel Bars */}
-                  <div className="space-y-3 mb-6">
-                    {[
-                      { label: 'Signed Up', count: analytics.funnel.signedUp, color: 'bg-blue-500', note: '' },
-                      { label: 'Completed Onboarding', count: analytics.funnel.completedOnboarding, color: 'bg-green-500', note: 'from all users' },
-                      { label: 'Set Exam Date', count: analytics.funnel.hasExamDate, color: 'bg-amber-500', note: 'from all users' },
-                      { label: 'Took Diagnostic Quiz', count: analytics.funnel.completedDiagnostic, color: 'bg-cyan-500', note: 'sampled from last 20' },
-                      { label: 'Answered First Question', count: analytics.funnel.answeredQuestion, color: 'bg-purple-500', note: 'sampled from last 20' },
-                      { label: 'Active Last 7 Days', count: analytics.funnel.activeLast7Days, color: 'bg-primary-500', note: 'from all users' },
-                    ].map((step, i) => {
-                      // For sampled metrics, calculate percent based on sample size (20)
-                      const baseCount = step.note.includes('sampled') ? 20 : analytics.funnel.signedUp;
-                      const percent = baseCount > 0 
-                        ? Math.round((step.count / baseCount) * 100) 
-                        : 0;
-                      const dropOff = i > 0 && !step.note.includes('sampled')
-                        ? Math.round(((analytics.funnel.signedUp - step.count) / analytics.funnel.signedUp) * 100)
-                        : 0;
-                      return (
-                        <div key={step.label}>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span className="font-medium text-gray-700 dark:text-gray-300">
-                              {step.label}
-                              {step.note && <span className="text-xs text-gray-400 ml-1">({step.note})</span>}
-                            </span>
-                            <span className="text-gray-600 dark:text-gray-400">
-                              {step.count.toLocaleString()}{step.note.includes('sampled') ? '/20' : ''} ({percent}%)
-                              {dropOff > 0 && (
-                                <span className="text-red-500 ml-2">↓ {dropOff}% dropped</span>
-                              )}
-                            </span>
-                          </div>
-                          <div className="h-6 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                            <div 
-                              className={`h-full ${step.color} transition-all duration-500`}
-                              style={{ width: `${percent}%` }}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                  {(() => {
+                    const s = analytics.funnel.recentSignups;
+                    const n = s.length || 1;
+                    const usedMCQs = s.filter(u => u.mcqsAnswered > 0).length;
+                    const usedLessons = s.filter(u => u.lessonsCompleted > 0).length;
+                    const usedFlash = s.filter(u => u.flashcardsUsed > 0).length;
+                    const usedSims = s.filter(u => u.simulationsCompleted > 0).length;
+                    const anyEngagement = s.filter(u => u.mcqsAnswered > 0 || u.lessonsCompleted > 0 || u.flashcardsUsed > 0 || u.simulationsCompleted > 0).length;
+                    const cameBack = s.filter(u => u.lastActiveAt && u.signedUpAt && u.lastActiveAt.getTime() > u.signedUpAt.getTime() + 60000).length;
 
-                  {/* Recent Signups Analysis */}
-                  <div className="border-t border-rose-200 dark:border-rose-700 pt-4">
-                    <h5 className="font-medium text-gray-800 dark:text-gray-200 mb-3">📋 Last 20 Signups — Status Check</h5>
-                    <div className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-sm overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-gray-100 dark:bg-slate-700">
-                          <tr>
-                            <th className="p-2 text-left">Email</th>
-                            <th className="p-2 text-center">Course</th>
-                            <th className="p-2 text-center">Days</th>
-                            <th className="p-2 text-center" title="Region (from timezone)">Region</th>
-                            <th className="p-2 text-center" title="Completed onboarding">Onb</th>
-                            <th className="p-2 text-center" title="Set exam date">Date</th>
-                            <th className="p-2 text-center" title="Completed diagnostic quiz">Diag</th>
-                            <th className="p-2 text-center" title="Answered questions">Q&apos;s</th>
-                            <th className="p-2 text-center">Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {analytics.funnel.recentSignups.map((user) => {
-                            // Determine status based on funnel progression
-                            let status = '✅ Active';
-                            let statusColor = '';
-                            if (!user.onboardingComplete) {
-                              status = '❌ No Onboarding';
-                              statusColor = 'text-red-600';
-                            } else if (!user.hasDiagnostic) {
-                              status = '⚠️ Skipped Diag';
-                              statusColor = 'text-amber-600';
-                            } else if (user.questionsAnswered === 0) {
-                              status = '🔸 No Practice';
-                              statusColor = 'text-orange-500';
-                            }
-                            const isAtRisk = !user.onboardingComplete || user.questionsAnswered === 0;
-                            return (
-                              <tr 
-                                key={user.uid} 
-                                className={`border-t border-gray-200 dark:border-slate-700 ${isAtRisk ? 'bg-red-50 dark:bg-red-900/20' : ''}`}
-                              >
-                                <td className="p-2 font-medium truncate max-w-[180px]" title={user.email}>
-                                  {user.email}
-                                </td>
-                                <td className="p-2 text-center">
-                                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-slate-700">
-                                    {user.courseId.toUpperCase()}
-                                  </span>
-                                </td>
-                                <td className="p-2 text-center text-gray-600 dark:text-gray-400 text-xs">
-                                  {user.daysSinceSignup === 0 ? 'Today' : `${user.daysSinceSignup}d`}
-                                </td>
-                                <td className="p-2 text-center text-xs" title={user.timezone || 'Unknown'}>
-                                  {user.timezone 
-                                    ? user.timezone.includes('Asia') ? '🌏 Asia'
-                                    : user.timezone.includes('Europe') ? '🇪🇺 EU'
-                                    : user.timezone.includes('America') ? '🇺🇸 US'
-                                    : user.timezone.includes('Africa') ? '🌍 Africa'
-                                    : '🌐 Other'
-                                    : <span className="text-gray-400">—</span>}
-                                </td>
-                                <td className="p-2 text-center">
-                                  {user.onboardingComplete 
-                                    ? <span className="text-green-600">✓</span> 
-                                    : <span className="text-red-500">✗</span>}
-                                </td>
-                                <td className="p-2 text-center">
-                                  {user.hasExamDate 
-                                    ? <span className="text-green-600">✓</span> 
-                                    : <span className="text-gray-400">—</span>}
-                                </td>
-                                <td className="p-2 text-center">
-                                  {user.hasDiagnostic 
-                                    ? <span className="text-green-600">✓</span> 
-                                    : <span className="text-red-500">✗</span>}
-                                </td>
-                                <td className="p-2 text-center">
-                                  {user.questionsAnswered > 0 
-                                    ? <span className="text-green-600">✓</span> 
-                                    : <span className="text-red-500">✗</span>}
-                                </td>
-                                <td className={`p-2 text-center text-xs font-medium whitespace-nowrap ${statusColor}`}>
-                                  {status}
-                                </td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                      💡 Users who don&apos;t complete onboarding within 24 hours rarely return. Email reminders are sent automatically after 24-48h.
-                    </p>
-                  </div>
-                </Card>
+                    const steps = [
+                      { label: 'Signed Up', count: n, color: 'bg-blue-500' },
+                      { label: 'Any Engagement', count: anyEngagement, color: 'bg-emerald-500' },
+                      { label: 'Started Lessons', count: usedLessons, color: 'bg-green-500' },
+                      { label: 'Practiced MCQs', count: usedMCQs, color: 'bg-purple-500' },
+                      { label: 'Used Flashcards', count: usedFlash, color: 'bg-amber-500' },
+                      { label: 'Tried Simulations', count: usedSims, color: 'bg-cyan-500' },
+                      { label: 'Came Back', count: cameBack, color: 'bg-indigo-500' },
+                    ];
 
-                {/* Revenue Dashboard */}
-                {revenueMetrics && (
-                  <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 dark:border-green-800">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                      💰 Revenue Dashboard
-                      <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">
-                        {revenueMetrics.subscriberCount} subscribers
-                      </span>
-                      {isFounderPricingActive() && (
-                        <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">
-                          Founder pricing active
-                        </span>
-                      )}
-                    </h4>
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                          ${revenueMetrics.totalMRR.toFixed(0)}
-                        </div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">Monthly Recurring Revenue</div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                          ${revenueMetrics.arrProjection.toFixed(0)}
-                        </div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">Annual Run Rate (ARR)</div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
-                          ${revenueMetrics.arpu.toFixed(2)}
-                        </div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">ARPU (Avg Rev/User)</div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="text-2xl font-bold text-purple-600">
-                          {revenueMetrics.founderCount}
-                        </div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">Founder Members (discounted rate)</div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className={`text-2xl font-bold ${revenueMetrics.churnRisk > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
-                          {revenueMetrics.churnRisk}
-                        </div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">Trials Ending (3 days)</div>
-                      </div>
-                    </div>
-                    
-                    {/* Revenue by Plan Type */}
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Monthly Plans</span>
-                          <span className="text-lg font-bold text-primary-600">{revenueMetrics.byPlan.monthly}</span>
-                        </div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">
-                          ${revenueMetrics.monthlyMRR.toFixed(0)}/mo MRR
-                        </div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Annual Plans</span>
-                          <span className="text-lg font-bold text-green-600 dark:text-green-400">{revenueMetrics.byPlan.annual}</span>
-                        </div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">
-                          ${revenueMetrics.annualMRR.toFixed(0)}/mo MRR (amortized)
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Revenue by Course */}
-                    {Object.keys(revenueMetrics.byCourse).length > 0 && (
-                      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                        <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Revenue by Course</h5>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                          {Object.entries(revenueMetrics.byCourse)
-                            .sort((a, b) => b[1].revenue - a[1].revenue)
-                            .map(([courseId, data]) => {
-                              const pricing = EXAM_PRICING[courseId as keyof typeof EXAM_PRICING];
-                              return (
-                                <div key={courseId} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
-                                  <div className="flex justify-between items-center">
-                                    <span className="font-medium">{courseId.toUpperCase()}</span>
-                                    <span className="text-green-600 dark:text-green-400 font-semibold">
-                                      ${data.revenue.toFixed(0)}/mo
-                                    </span>
-                                  </div>
-                                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                    {data.count} subs • ${pricing?.annual}/yr or ${pricing?.monthly}/mo
-                                  </div>
-                                </div>
-                              );
-                            })}
-                        </div>
-                      </div>
-                    )}
-
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
-                      Per-exam pricing: CPA $199/yr ($29/mo), CFP $149/yr ($19/mo), CMA/CIA $99/yr ($14/mo), CISA $79/yr ($12/mo), EA $59/yr ($9/mo). 
-                      Founder pricing (40-44% off) available through April 30, 2026. No lifetime plans offered.
-                    </p>
-                  </Card>
-                )}
-                {!revenueMetrics && usersList.length === 0 && (
-                  <Card className="p-6 text-center text-gray-500 dark:text-gray-400 border-dashed">
-                    Load users (Users tab) to calculate revenue metrics
-                  </Card>
-                )}
-
-                {/* Charts Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Users by Course */}
-                  <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Users by Course</h4>
-                    <div className="space-y-3">
-                      {Object.entries(analytics.byCourse || {})
-                        .filter(([, count]) => count > 0)
-                        .sort((a, b) => b[1] - a[1])
-                        .map(([courseId, count]) => {
-                          const percentage = analytics.totalUsers > 0 ? (count / analytics.totalUsers * 100) : 0;
-                          const courseConfig = COURSES[courseId as CourseId];
-                          const colorClass = courseId === 'cpa' ? 'bg-blue-600' :
-                                             courseId === 'ea' ? 'bg-green-600' :
-                                             courseId === 'cma' ? 'bg-purple-600' :
-                                             courseId === 'cia' ? 'bg-orange-600' :
-                                             courseId === 'cisa' ? 'bg-teal-600' :
-                                             'bg-amber-600';
+                    return (
+                      <div className="space-y-3">
+                        {steps.map((step, i) => {
+                          const percent = Math.round((step.count / n) * 100);
+                          const isLowEngagement = i > 0 && percent < 20;
                           return (
-                            <div key={courseId}>
+                            <div key={step.label}>
                               <div className="flex justify-between text-sm mb-1">
-                                <span className="font-medium flex items-center gap-1.5">
-                                  <span>{getCourseIcon(courseId as CourseId)}</span>
-                                  {courseConfig?.name || courseId.toUpperCase()}
+                                <span className="font-medium text-gray-700 dark:text-gray-300">{step.label}</span>
+                                <span className="text-gray-600 dark:text-gray-400">
+                                  {step.count}/{n} ({percent}%)
+                                  {isLowEngagement && <span className="ml-2 text-amber-600 font-medium">⚠️ low</span>}
                                 </span>
-                                <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
                               </div>
-                              <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
-                                <div 
-                                  className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
-                                  style={{ width: `${Math.min(percentage * 2, 100)}%` }}
-                                />
+                              <div className="h-4 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div className={`h-full ${step.color} transition-all duration-500`} style={{ width: `${percent}%` }} />
                               </div>
                             </div>
                           );
                         })}
-                      {Object.entries(analytics.byCourse || {}).filter(([, count]) => count > 0).length === 0 && (
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">No course data yet - users will have courseId tracked</p>
-                      )}
-                    </div>
-                  </Card>
-
-                  {/* Users by Subscription */}
-                  <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Users by Subscription</h4>
-                    <div className="space-y-3">
-                      {[
-                        { key: 'lifetime', label: 'Lifetime', color: 'bg-gradient-to-r from-amber-400 to-yellow-500' },
-                        { key: 'annual', label: 'Annual', color: 'bg-green-500' },
-                        { key: 'quarterly', label: 'Quarterly', color: 'bg-blue-500' },
-                        { key: 'monthly', label: 'Monthly', color: 'bg-primary-500' },
-                        { key: 'free', label: 'Free', color: 'bg-gray-400' },
-                      ].map(({ key, label, color }) => {
-                        const count = analytics.bySubscription[key] || 0;
-                        const percentage = analytics.totalUsers > 0 ? (count / analytics.totalUsers * 100) : 0;
-                        return (
-                          <div key={key}>
-                            <div className="flex justify-between text-sm mb-1">
-                              <span className="font-medium">{label}</span>
-                              <span className="text-gray-600 dark:text-gray-400">{count} ({percentage.toFixed(1)}%)</span>
-                            </div>
-                            <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
-                              <div 
-                                className={`${color} h-2 rounded-full transition-all duration-500`} 
-                                style={{ width: `${percentage}%` }}
-                              />
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <div className="mt-4 pt-4 border-t border-gray-100">
-                      <div className="flex justify-between text-sm">
-                        <span className="font-medium text-gray-700 dark:text-gray-300">Premium Users</span>
-                        <span className="font-bold text-green-600 dark:text-green-400">
-                          {(analytics.bySubscription.lifetime || 0) + 
-                           (analytics.bySubscription.annual || 0) + 
-                           (analytics.bySubscription.quarterly || 0) + 
-                           (analytics.bySubscription.monthly || 0)}
-                        </span>
                       </div>
-                    </div>
-                  </Card>
-                </div>
+                    );
+                  })()}
+                </Card>
 
-                {/* Quick Stats */}
+                {/* Recent Signups Table */}
                 <Card className="p-6">
-                  <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Stats</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{analytics.activeToday}</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Active Today</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                        {analytics.totalUsers > 0 ? ((analytics.activeThisWeek / analytics.totalUsers) * 100).toFixed(1) : 0}%
-                      </div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">WAU Rate</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
-                      <div className="text-2xl font-bold text-primary-600">
-                        {analytics.totalUsers > 0 ? ((analytics.activeThisMonth / analytics.totalUsers) * 100).toFixed(1) : 0}%
-                      </div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">MAU Rate</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 dark:bg-slate-900 rounded-lg">
-                      <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
-                        {((analytics.bySubscription.lifetime || 0) + 
-                          (analytics.bySubscription.annual || 0) + 
-                          (analytics.bySubscription.quarterly || 0) + 
-                          (analytics.bySubscription.monthly || 0)) > 0 
-                          ? (((analytics.bySubscription.lifetime || 0) + 
-                              (analytics.bySubscription.annual || 0) + 
-                              (analytics.bySubscription.quarterly || 0) + 
-                              (analytics.bySubscription.monthly || 0)) / analytics.totalUsers * 100).toFixed(1)
-                          : 0}%
-                      </div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Conversion Rate</div>
-                    </div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-4">📋 Recent Signups — Journey Tracker</h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-100 dark:bg-slate-700">
+                        <tr>
+                          <th className="p-2 text-left">Email</th>
+                          <th className="p-2 text-center">Course</th>
+                          <th className="p-2 text-center">Days</th>
+                          <th className="p-2 text-center">MCQs</th>
+                          <th className="p-2 text-center">Lessons</th>
+                          <th className="p-2 text-center">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {analytics.funnel.recentSignups.slice(0, 15).map((user) => {
+                          const totalActivity = user.mcqsAnswered + user.lessonsCompleted + user.flashcardsUsed;
+                          let status: string;
+                          let statusColor: string;
+                          if (totalActivity > 0 && user.lastActiveAt && (Date.now() - user.lastActiveAt.getTime()) < 7 * 86400000) {
+                            status = '✅ Active';
+                            statusColor = 'text-green-600';
+                          } else if (totalActivity > 0) {
+                            status = '😴 Lapsed';
+                            statusColor = 'text-amber-600';
+                          } else if (user.daysSinceSignup > 1) {
+                            status = '❌ Bounced';
+                            statusColor = 'text-red-600';
+                          } else {
+                            status = '🆕 New';
+                            statusColor = 'text-blue-500';
+                          }
+                          return (
+                            <tr key={user.uid} className="border-t border-gray-200 dark:border-slate-700">
+                              <td className="p-2 font-medium truncate max-w-[180px]">{user.email}</td>
+                              <td className="p-2 text-center">
+                                <span className="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-slate-700">{user.courseId.toUpperCase()}</span>
+                              </td>
+                              <td className="p-2 text-center text-gray-600 dark:text-gray-400 text-xs">
+                                {user.daysSinceSignup === 0 ? 'Today' : `${user.daysSinceSignup}d`}
+                              </td>
+                              <td className="p-2 text-center text-xs">{user.mcqsAnswered > 0 ? <span className="text-green-700 font-medium">{user.mcqsAnswered}</span> : <span className="text-gray-300">0</span>}</td>
+                              <td className="p-2 text-center text-xs">{user.lessonsCompleted > 0 ? <span className="text-green-700 font-medium">{user.lessonsCompleted}</span> : <span className="text-gray-300">0</span>}</td>
+                              <td className={`p-2 text-center text-xs font-medium ${statusColor}`}>{status}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
                   </div>
                 </Card>
 
-                {/* User Engagement Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Most Active Users */}
-                  <Card className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white">🏆 Most Active Users</h4>
-                      <button
-                        onClick={loadEngagementStats}
-                        disabled={isLoadingEngagement || usersList.length === 0}
-                        className="text-xs px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
-                      >
-                        {isLoadingEngagement ? 'Loading...' : 'Load'}
-                      </button>
-                    </div>
-                    {engagementStats ? (
+                {/* Engagement Stats */}
+                {engagementStats && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Card className="p-6">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-4">🏆 Most Active Users</h4>
                       <div className="space-y-2">
-                        <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                          {engagementStats.usersWithActivity} users with activity • Avg {engagementStats.averageQuestionsPerUser} questions/user
+                        {engagementStats.mostActive.slice(0, 5).map((user, i) => (
+                          <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
+                            <span className="font-medium truncate flex-1">{user.email}</span>
+                            <span className="text-green-600 dark:text-green-400 font-semibold ml-2">{user.questionsAnswered} Q</span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+
+                    <Card className="p-6">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-4">😴 Inactive Users</h4>
+                      <div className="space-y-2">
+                        {engagementStats.inactive.slice(0, 5).map((user, i) => (
+                          <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
+                            <span className="font-medium truncate flex-1">{user.email}</span>
+                            <span className="text-amber-600 dark:text-amber-400 font-semibold ml-2">{user.daysSinceActive}d</span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  </div>
+                )}
+
+                {/* Quality Metrics */}
+                {qualityMetrics && qualityMetrics.mostReported.length > 0 && (
+                  <Card className="p-6">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                      ⚠️ Question Quality Issues
+                      <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">
+                        {qualityMetrics.pendingCount} pending
+                      </span>
+                    </h4>
+                    <div className="space-y-2">
+                      {qualityMetrics.mostReported.slice(0, 5).map((q, i) => (
+                        <div key={i} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
+                          <div className="flex justify-between items-center">
+                            <span className="font-mono text-xs truncate flex-1">{q.questionId.slice(0, 25)}...</span>
+                            <span className="text-red-600 dark:text-red-400 font-semibold ml-2">{q.reportCount}x</span>
+                          </div>
+                          <div className="flex gap-1 mt-1">
+                            {q.types.map(type => (
+                              <span key={type} className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 rounded">
+                                {type.replace(/_/g, ' ')}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                        {engagementStats.mostActive.length > 0 ? (
-                          engagementStats.mostActive.map((user, i) => (
-                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
-                              <span className="font-medium truncate flex-1">{user.email}</span>
-                              <span className="text-green-600 dark:text-green-400 font-semibold ml-2">{user.questionsAnswered} Q</span>
-                              <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">{user.lastActive}</span>
-                            </div>
-                          ))
-                        ) : (
-                          <p className="text-gray-500 dark:text-gray-400 text-sm">No activity data found</p>
-                        )}
-                      </div>
-                    ) : (
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">
-                        {usersList.length === 0 ? 'Load users first (Users tab)' : 'Click Load to fetch engagement data'}
-                      </p>
-                    )}
-                  </Card>
-
-                  {/* Inactive Users */}
-                  <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">😴 Inactive Users</h4>
-                    {engagementStats ? (
-                      <div className="space-y-2">
-                        {engagementStats.inactive.length > 0 ? (
-                          engagementStats.inactive.map((user, i) => (
-                            <div key={i} className="flex justify-between items-center p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
-                              <span className="font-medium truncate flex-1">{user.email}</span>
-                              <span className="text-amber-600 dark:text-amber-400 font-semibold ml-2">{user.daysSinceActive}d</span>
-                              <span className="text-gray-500 dark:text-gray-400 text-xs ml-2">joined {user.joinedAt}</span>
-                            </div>
-                          ))
-                        ) : (
-                          <p className="text-green-600 dark:text-green-400 text-sm">🎉 No inactive users! Everyone is engaged.</p>
-                        )}
-                      </div>
-                    ) : (
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">Load engagement data to see inactive users</p>
-                    )}
-                  </Card>
-                </div>
-
-                {/* Question Quality Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Most Reported Questions */}
-                  <Card className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white">⚠️ Most Reported Questions</h4>
-                      <button
-                        onClick={loadQuestionReports}
-                        disabled={isLoadingReports}
-                        className="text-xs px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
-                      >
-                        {isLoadingReports ? 'Loading...' : 'Refresh'}
-                      </button>
+                      ))}
                     </div>
-                    {qualityMetrics ? (
-                      <div className="space-y-2">
-                        <div className="text-sm text-amber-600 dark:text-amber-400 mb-3">
-                          {qualityMetrics.pendingCount} pending reports to review
-                        </div>
-                        {qualityMetrics.mostReported.length > 0 ? (
-                          qualityMetrics.mostReported.slice(0, 5).map((q, i) => (
-                            <div key={i} className="p-2 bg-gray-50 dark:bg-slate-900 rounded text-sm">
-                              <div className="flex justify-between items-center">
-                                <span className="font-mono text-xs truncate flex-1">{q.questionId.slice(0, 20)}...</span>
-                                <span className="text-red-600 dark:text-red-400 font-semibold ml-2">{q.reportCount}x</span>
-                              </div>
-                              <div className="flex gap-1 mt-1">
-                                {q.types.map(type => (
-                                  <span key={type} className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 rounded">
-                                    {type.replace(/_/g, ' ')}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          ))
-                        ) : (
-                          <p className="text-green-600 dark:text-green-400 text-sm">🎉 No reported questions!</p>
-                        )}
-                      </div>
-                    ) : (
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">Load reports to see quality metrics</p>
-                    )}
                   </Card>
-
-                  {/* Reports by Type */}
-                  <Card className="p-6">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4">📊 Reports by Type</h4>
-                    {qualityMetrics && Object.keys(qualityMetrics.reportsByType).length > 0 ? (
-                      <div className="space-y-3">
-                        {Object.entries(qualityMetrics.reportsByType)
-                          .sort((a, b) => b[1] - a[1])
-                          .map(([type, count]) => {
-                            const total = Object.values(qualityMetrics.reportsByType).reduce((a, b) => a + b, 0);
-                            const percentage = (count / total) * 100;
-                            const colorClass = type === 'incorrect_answer' ? 'bg-red-500' :
-                                               type === 'unclear_question' ? 'bg-amber-500' :
-                                               type === 'typo' ? 'bg-blue-500' :
-                                               'bg-gray-500';
-                            return (
-                              <div key={type}>
-                                <div className="flex justify-between text-sm mb-1">
-                                  <span className="font-medium">{type.replace(/_/g, ' ')}</span>
-                                  <span className="text-gray-600 dark:text-gray-400">{count}</span>
-                                </div>
-                                <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
-                                  <div 
-                                    className={`${colorClass} h-2 rounded-full transition-all duration-500`} 
-                                    style={{ width: `${percentage}%` }}
-                                  />
-                                </div>
-                              </div>
-                            );
-                          })}
-                      </div>
-                    ) : (
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">No report data available</p>
-                    )}
-                  </Card>
-                </div>
+                )}
               </>
-            ) : analyticsError ? (
-              <div className="text-center py-12">
-                <div className="inline-flex items-center gap-2 px-4 py-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-400 text-sm max-w-lg">
-                  <span className="text-red-500">⚠</span>
-                  <span>{analyticsError}</span>
-                </div>
-              </div>
             ) : (
               <div className="text-center py-12 text-gray-600 dark:text-gray-400">
                 Click Refresh to load analytics data
@@ -4414,87 +4761,949 @@ const AdminCMS: React.FC = () => {
           </div>
         )}
 
-        {activeTab === 'tools' && (
+        {/* Marketing Tab - Google-style organized layout */}
+        {activeTab === 'growth' && (
+          <div className="space-y-8">
+            {/* ============================================================
+                SECTION 1: Header with Actions
+            ============================================================ */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Marketing</h2>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Track acquisition, engagement, and growth
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={loadGrowthMetrics}
+                  disabled={isLoadingGrowth}
+                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors disabled:opacity-50"
+                >
+                  {isLoadingGrowth ? 'Loading...' : 'Refresh'}
+                </button>
+              </div>
+            </div>
+
+            {/* ============================================================
+                SECTION 2: Key Metrics (Most Important Data First)
+            ============================================================ */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                Key Metrics
+              </h3>
+              {isLoadingGrowth ? (
+                <div className="flex justify-center py-12">
+                  <div className="animate-spin rounded-full h-8 w-8 border-2 border-blue-500 border-t-transparent"></div>
+                </div>
+              ) : growthMetrics ? (
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                  <Card className="p-4">
+                    <div className="text-sm text-gray-500 dark:text-gray-400">Total Users</div>
+                    <div className="text-2xl font-semibold text-gray-900 dark:text-white mt-1">
+                      {growthMetrics.totalUsers.toLocaleString()}
+                    </div>
+                  </Card>
+                  <Card className="p-4">
+                    <div className="text-sm text-gray-500 dark:text-gray-400">This Month</div>
+                    <div className="text-2xl font-semibold text-gray-900 dark:text-white mt-1">
+                      {growthMetrics.thisMonthSignups}
+                    </div>
+                    {growthMetrics.lastMonthSignups > 0 && (
+                      <div className={`text-xs mt-1 ${growthMetrics.thisMonthSignups >= growthMetrics.lastMonthSignups ? 'text-green-600' : 'text-red-600'}`}>
+                        {growthMetrics.thisMonthSignups >= growthMetrics.lastMonthSignups ? '↑' : '↓'} vs {growthMetrics.lastMonthSignups} last month
+                      </div>
+                    )}
+                  </Card>
+                  <Card className="p-4">
+                    <div className="text-sm text-gray-500 dark:text-gray-400">Conversion Rate</div>
+                    <div className="text-2xl font-semibold text-gray-900 dark:text-white mt-1">
+                      {growthMetrics.conversionRate.toFixed(1)}%
+                    </div>
+                  </Card>
+                  <Card className="p-4">
+                    <div className="text-sm text-gray-500 dark:text-gray-400">Total Leads</div>
+                    <div className="text-2xl font-semibold text-gray-900 dark:text-white mt-1">
+                      {growthMetrics.totalLeads}
+                    </div>
+                    {growthMetrics.leadsThisWeek > 0 && (
+                      <div className="text-xs text-green-600 mt-1">+{growthMetrics.leadsThisWeek} this week</div>
+                    )}
+                  </Card>
+                </div>
+              ) : (
+                <div className="text-center py-8 text-gray-500 dark:text-gray-400 text-sm">
+                  Click Refresh to load metrics
+                </div>
+              )}
+            </div>
+
+            {/* ============================================================
+                SECTION 3: Acquisition (SEO/SEM Engine)
+            ============================================================ */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                Acquisition
+              </h3>
+              <Card className="p-5">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xl">🎯</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white">SEO/SEM Engine</h4>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                        Keyword tracking, content briefs, paid search, and technical SEO
+                      </p>
+                      <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-gray-500 dark:text-gray-400">
+                        <span>4,988 keywords</span>
+                        <span>181 content briefs</span>
+                        <span>Google Ads campaigns</span>
+                      </div>
+                    </div>
+                  </div>
+                  <Link
+                    to="/admin/growth"
+                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors flex-shrink-0"
+                  >
+                    Open
+                  </Link>
+                </div>
+                <div className="flex items-center gap-2 mt-4 pt-4 border-t border-gray-100 dark:border-slate-700">
+                  <span className="text-xs text-gray-500 dark:text-gray-400">External:</span>
+                  <a
+                    href="https://search.google.com/search-console"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    Search Console
+                  </a>
+                  <span className="text-gray-300 dark:text-gray-600">·</span>
+                  <a
+                    href="https://ads.google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    Google Ads
+                  </a>
+                  <span className="text-gray-300 dark:text-gray-600">·</span>
+                  <a
+                    href="https://analytics.google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    GA4
+                  </a>
+                </div>
+              </Card>
+            </div>
+
+            {/* ============================================================
+                SECTION 4: Engagement & Social Proof
+            ============================================================ */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                Engagement
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Referrals */}
+                <Card className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                        <span className="text-lg">🎁</span>
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">Referrals</div>
+                        <div className="text-xl font-semibold text-gray-900 dark:text-white">
+                          {growthMetrics?.totalReferrals ?? 0}
+                        </div>
+                      </div>
+                    </div>
+                    {growthMetrics?.pendingReferralRewards && growthMetrics.pendingReferralRewards > 0 && (
+                      <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded">
+                        {growthMetrics.pendingReferralRewards} pending
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-gray-100 dark:border-slate-700">
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      Rewards: 5 refs = 1 mo · 10 = 3 mo · 25 = lifetime
+                    </div>
+                  </div>
+                </Card>
+
+                {/* Testimonials */}
+                <Card className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                        <span className="text-lg">⭐</span>
+                      </div>
+                      <div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">Testimonials</div>
+                        <div className="text-xl font-semibold text-gray-900 dark:text-white">
+                          {growthMetrics?.totalTestimonials ?? 0}
+                        </div>
+                      </div>
+                    </div>
+                    {growthMetrics?.pendingTestimonials && growthMetrics.pendingTestimonials > 0 && (
+                      <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded">
+                        {growthMetrics.pendingTestimonials} pending
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-gray-100 dark:border-slate-700">
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
+                      Auto-prompt after exam pass or 7-day streak
+                    </div>
+                  </div>
+                </Card>
+
+                {/* Lead Magnets */}
+                <Card className="p-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                      <span className="text-lg">🧲</span>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Lead Magnets</div>
+                      <div className="text-sm font-medium text-gray-900 dark:text-white">Diagnostic Quizzes</div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between bg-gray-50 dark:bg-slate-700/50 rounded px-2 py-1.5">
+                      <code className="text-xs text-gray-700 dark:text-gray-300">/diagnostic/cpa-far</code>
+                      <button 
+                        onClick={() => navigator.clipboard.writeText(`${window.location.origin}/diagnostic/cpa-far`)}
+                        className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <div className="flex items-center justify-between bg-gray-50 dark:bg-slate-700/50 rounded px-2 py-1.5">
+                      <code className="text-xs text-gray-700 dark:text-gray-300">/diagnostic/ea-see1</code>
+                      <button 
+                        onClick={() => navigator.clipboard.writeText(`${window.location.origin}/diagnostic/ea-see1`)}
+                        className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+            {/* ============================================================
+                SECTION 5: Growth Playbook (Resources)
+            ============================================================ */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                Growth Playbook
+              </h3>
+              <Card className="p-5">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-600 dark:text-green-400 text-xs">✓</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-gray-900 dark:text-white">Diagnostic Quizzes</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Free quizzes capture leads</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-600 dark:text-green-400 text-xs">✓</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-gray-900 dark:text-white">Testimonial Harvesting</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Auto-prompt on milestones</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-600 dark:text-green-400 text-xs">✓</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-gray-900 dark:text-white">Social Score Sharing</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Share on Twitter/LinkedIn</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-green-600 dark:text-green-400 text-xs">✓</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-gray-900 dark:text-white">Referral Program</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Tiered subscription rewards</div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        )}
+
+        {/* Revenue Tab - Subscriptions & MRR */}
+        {activeTab === 'revenue' && (
           <div className="space-y-6">
-            {/* Broadcast Announcement */}
+            {/* Revenue Header */}
+            <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 text-white">
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h2 className="text-2xl font-bold">Revenue & Subscriptions</h2>
+                  <p className="text-emerald-100 text-sm">Monthly recurring revenue and subscriber metrics</p>
+                </div>
+                <button
+                  onClick={() => { loadUsers(); }}
+                  className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white font-medium transition-colors"
+                >
+                  🔄 Refresh
+                </button>
+              </div>
+              
+              {/* Revenue KPIs */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold">${revenueMetrics?.totalMRR?.toLocaleString() || '0'}</div>
+                  <div className="text-emerald-100 text-sm">Monthly Recurring Revenue</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold">${revenueMetrics?.arrProjection?.toLocaleString() || '0'}</div>
+                  <div className="text-emerald-100 text-sm">Annual Run Rate</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold">${revenueMetrics?.arpu?.toFixed(0) || '0'}</div>
+                  <div className="text-emerald-100 text-sm">Avg. Revenue Per User</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4">
+                  <div className="text-3xl font-bold">{revenueMetrics?.churnRisk || 0}</div>
+                  <div className="text-emerald-100 text-sm">At-Risk Subscribers</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Subscription Breakdown */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="p-6">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">📊 Subscription Tiers</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                    <span className="text-gray-700 dark:text-gray-300">Free Users</span>
+                    <span className="font-bold text-gray-900 dark:text-white">{(analytics?.totalUsers || 0) - (revenueMetrics?.subscriberCount || 0)}</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+                    <span className="text-blue-700 dark:text-blue-300">Monthly ($29/mo)</span>
+                    <span className="font-bold text-blue-900 dark:text-blue-100">{revenueMetrics?.byPlan?.monthly || 0}</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-amber-50 dark:bg-amber-900/30 rounded-lg">
+                    <span className="text-amber-700 dark:text-amber-300">Annual ($199/yr)</span>
+                    <span className="font-bold text-amber-900 dark:text-amber-100">{revenueMetrics?.byPlan?.annual || 0}</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg">
+                    <span className="text-emerald-700 dark:text-emerald-300">Founder Pricing</span>
+                    <span className="font-bold text-emerald-900 dark:text-emerald-100">{revenueMetrics?.founderCount || 0}</span>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">📈 Conversion & Status</h3>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-gray-600 dark:text-gray-400">Paid Conversion Rate</span>
+                      <span className="font-medium text-gray-900 dark:text-white">
+                        {analytics?.totalUsers ? ((revenueMetrics?.subscriberCount || 0) / analytics.totalUsers * 100).toFixed(1) : '0'}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2">
+                      <div 
+                        className="bg-emerald-500 h-2 rounded-full transition-all" 
+                        style={{ width: `${Math.min(analytics?.totalUsers ? (revenueMetrics?.subscriberCount || 0) / analytics.totalUsers * 100 : 0, 100)}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="pt-4 border-t dark:border-slate-700">
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                          {revenueMetrics?.subscriberCount || 0}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Total Paid</div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-gray-900 dark:text-white">{revenueMetrics?.churnRisk || 0}</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">At-Risk Trials</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Revenue by Course */}
+            <Card className="p-6">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">🎓 Revenue by Course</h3>
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+                {Object.entries(revenueMetrics?.byCourse || {}).map(([course, data]) => (
+                  <div key={course} className="text-center p-4 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                    <div className="text-lg font-bold text-gray-900 dark:text-white">{(data as { count: number; revenue: number }).count}</div>
+                    <div className="text-xs text-emerald-600 dark:text-emerald-400">${(data as { count: number; revenue: number }).revenue}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 uppercase mt-1">{course}</div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            {/* Stripe Link */}
+            <Card className="p-6 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">💳 Stripe Dashboard</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">View detailed payment data, disputes, and payouts</p>
+                </div>
+                <a
+                  href="https://dashboard.stripe.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+                >
+                  Open Stripe ↗
+                </a>
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {/* Operations Tab - Announcements & System Logs */}
+        {activeTab === 'operations' && (
+          <div className="space-y-6">
+            {/* Operations Header */}
+            <div className="bg-gradient-to-r from-slate-600 to-zinc-600 rounded-2xl p-6 text-white">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-2xl font-bold mb-2">🔧 Operations Center</h2>
+                  <p className="text-slate-200">System announcements, error monitoring, and maintenance tools</p>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={loadSystemErrors}
+                    disabled={isLoadingErrors}
+                    className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white font-medium transition-colors disabled:opacity-50"
+                  >
+                    {isLoadingErrors ? 'Loading...' : '🔄 Refresh'}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Automated Processes Dashboard */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                ⚙️ Automated Processes
+                <a
+                  href="https://console.cloud.google.com/functions/list?project=voraprep-prod"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-blue-600 hover:underline ml-auto font-normal"
+                >
+                  View in Cloud Console ↗
+                </a>
+              </h3>
+              
+              {/* Process Categories */}
+              <div className="space-y-6">
+                {/* Content & SEO */}
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">
+                    📝 Content & SEO
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {/* Blog Auto-Publish */}
+                    <div className={`p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 ${
+                      functionStatuses.growthAutoPublish?.status === 'error' ? 'border-red-500' :
+                      functionStatuses.growthAutoPublish?.status === 'skipped' ? 'border-amber-500' :
+                      'border-green-500'
+                    }`}>
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">growthAutoPublish</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Auto-publishes approved blog articles daily</p>
+                        </div>
+                        {functionStatuses.growthAutoPublish?.status === 'error' ? (
+                          <span className="px-2 py-0.5 text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded">Error</span>
+                        ) : functionStatuses.growthAutoPublish?.status === 'skipped' ? (
+                          <span className="px-2 py-0.5 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded">No Queue</span>
+                        ) : (
+                          <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                        )}
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Daily 10:00 AM ET</div>
+                        {functionStatuses.growthAutoPublish?.lastRun && (
+                          <div>📅 <strong>Last run:</strong> {format(functionStatuses.growthAutoPublish.lastRun, 'MMM d, h:mm a')}</div>
+                        )}
+                        {functionStatuses.growthAutoPublish?.details?.published && (
+                          <div>📝 <strong>Last published:</strong> {String(functionStatuses.growthAutoPublish.details.published).substring(0, 40)}...</div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* RSS Feed */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">dynamicRssFeed</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">RSS 2.0 feed for blog syndication</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">Endpoint</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>🔗 <strong>URL:</strong> <a href="https://voraprep.com/feed.xml" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">/feed.xml</a></div>
+                        <div>📦 <strong>Format:</strong> RSS 2.0 + Atom</div>
+                      </div>
+                    </div>
+
+                    {/* Dynamic Sitemap */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">dynamicSitemap</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">XML sitemap with blog articles</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">Endpoint</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>🔗 <strong>URL:</strong> <a href="https://voraprep.com/sitemap.xml" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">/sitemap.xml</a></div>
+                        <div>🤖 <strong>Submitted to:</strong> Google Search Console</div>
+                      </div>
+                    </div>
+
+                    {/* LinkedIn Auto-Share */}
+                    <div className={`p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 ${
+                      linkedInStatus.status === 'active' ? 'border-green-500' :
+                      linkedInStatus.status === 'expired' ? 'border-red-500' :
+                      linkedInStatus.status === 'loading' ? 'border-gray-400' :
+                      'border-amber-500'
+                    }`}>
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">LinkedIn Auto-Share</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Posts to company page when articles publish</p>
+                        </div>
+                        {linkedInStatus.status === 'loading' && (
+                          <span className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded">Loading...</span>
+                        )}
+                        {linkedInStatus.status === 'active' && (
+                          <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                        )}
+                        {linkedInStatus.status === 'expired' && (
+                          <span className="px-2 py-0.5 text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded">Expired</span>
+                        )}
+                        {linkedInStatus.status === 'not-configured' && (
+                          <span className="px-2 py-0.5 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded">Setup Required</span>
+                        )}
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        {linkedInStatus.status === 'active' && linkedInStatus.expiresAt && (
+                          <>
+                            <div>✅ <strong>Status:</strong> Connected</div>
+                            <div>📅 <strong>Expires:</strong> {format(linkedInStatus.expiresAt, 'MMM d, yyyy')}</div>
+                            {linkedInStatus.orgId && <div>🏢 <strong>Org ID:</strong> {linkedInStatus.orgId}</div>}
+                          </>
+                        )}
+                        {linkedInStatus.status === 'expired' && (
+                          <>
+                            <div>❌ <strong>Status:</strong> Token expired</div>
+                            <div>📋 <strong>Action:</strong> Re-authorize via OAuth</div>
+                          </>
+                        )}
+                        {linkedInStatus.status === 'not-configured' && (
+                          <>
+                            <div>⚠️ <strong>Needs:</strong> OAuth authorization</div>
+                            <div>📋 <strong>Setup:</strong> Create LinkedIn App → OAuth token</div>
+                          </>
+                        )}
+                        {linkedInStatus.status === 'loading' && (
+                          <div>⏳ Checking LinkedIn status...</div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Discord Auto-Post */}
+                    <div className={`p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 ${
+                      discordStatus.status === 'active' ? 'border-green-500' :
+                      discordStatus.status === 'loading' ? 'border-gray-400' :
+                      'border-amber-500'
+                    }`}>
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">Discord Auto-Post</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Posts to Discord when articles publish</p>
+                        </div>
+                        {discordStatus.status === 'loading' && (
+                          <span className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded">Loading...</span>
+                        )}
+                        {discordStatus.status === 'active' && (
+                          <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                        )}
+                        {discordStatus.status === 'not-configured' && (
+                          <span className="px-2 py-0.5 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded">Setup Required</span>
+                        )}
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        {discordStatus.status === 'active' && (
+                          <>
+                            <div>✅ <strong>Status:</strong> Webhook configured</div>
+                            <div>📡 <strong>Posts to:</strong> VoraPrep Discord server</div>
+                          </>
+                        )}
+                        {discordStatus.status === 'not-configured' && (
+                          <>
+                            <div>⚠️ <strong>Needs:</strong> Webhook URL</div>
+                            <div>📋 <strong>Setup:</strong> Server Settings → Integrations → Webhooks</div>
+                          </>
+                        )}
+                        {discordStatus.status === 'loading' && (
+                          <div>⏳ Checking Discord status...</div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Rank Tracking */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">growthRankTracking</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Tracks keyword rankings weekly</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Weekly Sunday 6:00 AM ET</div>
+                        <div>📊 <strong>API:</strong> SERP API</div>
+                      </div>
+                    </div>
+
+                    {/* Daily Pull */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">growthDailyPull</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Generates new content briefs</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Daily 6:00 AM ET</div>
+                        <div>🔑 <strong>Secrets:</strong> GEMINI_API_KEY</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Email & Notifications */}
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">
+                    📧 Email & Notifications
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {/* Daily Reminders */}
+                    <div className={`p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 ${
+                      functionStatuses.sendDailyReminders?.status === 'error' ? 'border-red-500' : 'border-green-500'
+                    }`}>
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">sendDailyReminders</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Push notifications at user's local time</p>
+                        </div>
+                        {functionStatuses.sendDailyReminders?.status === 'error' ? (
+                          <span className="px-2 py-0.5 text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded">Error</span>
+                        ) : (
+                          <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                        )}
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Every hour</div>
+                        {functionStatuses.sendDailyReminders?.lastRun && (
+                          <div>📅 <strong>Last run:</strong> {format(functionStatuses.sendDailyReminders.lastRun, 'MMM d, h:mm a')}</div>
+                        )}
+                        {functionStatuses.sendDailyReminders?.details?.notificationsSent !== undefined && (
+                          <div>📱 <strong>Sent:</strong> {String(functionStatuses.sendDailyReminders.details.notificationsSent)} notifications</div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Weekly Reports */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">sendWeeklyReports</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Weekly progress email summaries</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Sundays 9:00 AM ET</div>
+                        <div>📧 <strong>Channel:</strong> Resend Email</div>
+                      </div>
+                    </div>
+
+                    {/* Welcome Drip */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">sendWelcomeDripEmails</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Day 1, 2, 5, 7, 14 drip sequence</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Daily 8:00 AM ET</div>
+                        <div>📧 <strong>Channel:</strong> Resend Email</div>
+                      </div>
+                    </div>
+
+                    {/* Trial Reminders */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">sendTrialReminderEmails</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">7d, 3d, 1d, expired trial emails</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Daily 10:00 AM ET</div>
+                        <div>📧 <strong>Channel:</strong> Resend Email</div>
+                      </div>
+                    </div>
+
+                    {/* Onboarding Reminders */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">sendOnboardingReminders</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Nudges users who haven't completed setup</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Daily 10:00 AM ET</div>
+                        <div>📧 <strong>Channel:</strong> Resend Email</div>
+                      </div>
+                    </div>
+
+                    {/* First Practice Reminders */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">sendFirstPracticeReminders</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Encourages first practice session</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Daily 2:00 PM ET</div>
+                        <div>📧 <strong>Channel:</strong> Resend Email</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Billing & Subscriptions */}
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">
+                    💳 Billing & Subscriptions
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {/* Stripe Webhook */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">stripeWebhook</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Handles Stripe payment events</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded">Webhook</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>🔐 <strong>Secrets:</strong> STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET</div>
+                        <div>📋 <strong>Events:</strong> checkout.session.completed, customer.subscription.*</div>
+                      </div>
+                    </div>
+
+                    {/* Trial Expiration Check */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-green-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">checkTrialExpirations</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Updates trial status when expired</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">Active</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>⏰ <strong>Schedule:</strong> Daily 1:00 AM ET</div>
+                        <div>📊 <strong>Action:</strong> Marks expired trials</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Community Scraping */}
+                <div>
+                  <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">
+                    🌐 Community Monitoring
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {/* Reddit Scraper */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-blue-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">redditMonitor</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Monitor r/CPA, r/Accounting for content ideas</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">External</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>🐍 <strong>Runtime:</strong> Python script (manual/cron)</div>
+                        <div>📂 <strong>Location:</strong> scripts/reddit_monitor/</div>
+                      </div>
+                    </div>
+
+                    {/* Discord Scraper */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-blue-500">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">discordMonitor</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Monitor CPA study Discord servers</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">External</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>🐍 <strong>Runtime:</strong> Same script as Reddit monitor</div>
+                        <div>📂 <strong>Location:</strong> scripts/reddit_monitor/</div>
+                        <div>🤖 <strong>Run:</strong> <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">--platform discord</code></div>
+                      </div>
+                    </div>
+
+                    {/* Twitter/X Auto-Post */}
+                    <div className="p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 border-gray-400">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-gray-900 dark:text-white">twitterAutoPost</h5>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Auto-post articles to X/Twitter</p>
+                        </div>
+                        <span className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded">Planned</span>
+                      </div>
+                      <div className="mt-3 text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                        <div>📋 <strong>Needs:</strong> Twitter API v2 credentials</div>
+                        <div>💰 <strong>Cost:</strong> $100/mo for Pro API access</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Broadcast Announcement Section */}
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 📢 Send Announcement
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Title</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Title
+                  </label>
                   <input
                     type="text"
-                    id="announcement-title"
-                    placeholder="e.g., New Feature: AI Study Plans"
-                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
+                    value={announcementTitle}
+                    onChange={(e) => setAnnouncementTitle(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white"
+                    placeholder="Announcement title..."
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message Body</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Message
+                  </label>
                   <textarea
-                    id="announcement-body"
-                    rows={3}
-                    placeholder="We've just launched AI-powered study plans..."
-                    className="w-full px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
+                    value={announcementBody}
+                    onChange={(e) => setAnnouncementBody(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white h-24"
+                    placeholder="Your announcement message..."
                   />
                 </div>
-                <div className="flex items-center gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Audience
+                  </label>
                   <select
-                    id="announcement-audience"
-                    className="px-3 py-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white border border-gray-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary-500 placeholder:text-gray-400"
+                    value={announcementAudience}
+                    onChange={(e) => setAnnouncementAudience(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white"
                   >
                     <option value="all">All Users</option>
-                    {getActiveCourses().map(course => (
-                      <option key={course.id} value={course.id}>{course.name} Users</option>
-                    ))}
-                    <option value="premium">Premium Users Only</option>
+                    <option value="cpa">CPA Users Only</option>
+                    <option value="ea">EA Users Only</option>
+                    <option value="cma">CMA Users Only</option>
+                    <option value="cia">CIA Users Only</option>
+                    <option value="cisa">CISA Users Only</option>
+                    <option value="cfp">CFP Users Only</option>
+                    <option value="paid">Paid Subscribers Only</option>
+                    <option value="free">Free Users Only</option>
                   </select>
+                </div>
+                <div className="flex justify-end gap-3">
                   <button
-                    onClick={async () => {
-                      const title = (document.getElementById('announcement-title') as HTMLInputElement)?.value;
-                      const body = (document.getElementById('announcement-body') as HTMLTextAreaElement)?.value;
-                      const audience = (document.getElementById('announcement-audience') as HTMLSelectElement)?.value;
-                      
-                      if (!title || !body) {
-                        alert('Please enter both title and message body');
-                        return;
-                      }
-                      
-                      if (!window.confirm(`Send announcement to ${audience === 'all' ? 'ALL users' : audience + ' users'}?\n\nTitle: ${title}\nMessage: ${body}`)) {
-                        return;
-                      }
-                      
-                      try {
-                        // Store announcement in Firestore for users to see on next login
-                        const { addDoc, collection, serverTimestamp } = await import('firebase/firestore');
-                        await addDoc(collection(db, 'announcements'), {
-                          title,
-                          body,
-                          audience,
-                          createdAt: serverTimestamp(),
-                          createdBy: user?.email,
-                          active: true,
-                        });
-                        addLog(`Announcement created for ${audience} users`, 'success');
-                        alert('Announcement saved! Users will see it on their next session.');
-                        (document.getElementById('announcement-title') as HTMLInputElement).value = '';
-                        (document.getElementById('announcement-body') as HTMLTextAreaElement).value = '';
-                      } catch (error) {
-                        logger.error('Error creating announcement:', error);
-                        addLog('Failed to create announcement', 'error');
-                      }
-                    }}
-                    className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
+                    onClick={sendAnnouncement}
+                    disabled={isSendingAnnouncement || !announcementTitle || !announcementBody}
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
                   >
-                    Send Announcement
+                    {isSendingAnnouncement ? '⏳ Sending...' : '📤 Send Announcement'}
                   </button>
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Announcements are stored in Firestore and shown to users on their next session. For push notifications, use Firebase Cloud Messaging directly.
-                </p>
               </div>
+            </Card>
+
+            {/* Announcement History */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">📋 Announcement History</h3>
+              {isLoadingAnnouncements ? (
+                <div className="text-center py-8">
+                  <div className="animate-spin w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full mx-auto" />
+                </div>
+              ) : announcementHistory.length === 0 ? (
+                <p className="text-gray-500 dark:text-gray-400 text-center py-4">No announcements sent yet</p>
+              ) : (
+                <div className="space-y-3 max-h-64 overflow-y-auto">
+                  {announcementHistory.map((ann) => (
+                    <div key={ann.id} className="p-3 bg-gray-50 dark:bg-slate-800 rounded-lg">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h4 className="font-medium text-gray-900 dark:text-white">{ann.title}</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{ann.body}</p>
+                        </div>
+                        <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                          {new Date(ann.createdAt.seconds * 1000).toLocaleDateString()}
+                        </span>
+                      </div>
+                      <div className="mt-2 flex gap-2">
+                        <span className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded">
+                          {ann.audience}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </Card>
 
             {/* System Health */}
@@ -4532,655 +5741,643 @@ const AdminCMS: React.FC = () => {
               </div>
             </Card>
 
-            {/* Announcement History */}
-            <Card className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📜 Announcement History</h3>
-                <button
-                  onClick={loadAnnouncementHistory}
-                  disabled={isLoadingAnnouncements}
-                  className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 disabled:opacity-50"
-                >
-                  {isLoadingAnnouncements ? 'Loading...' : 'Refresh'}
-                </button>
-              </div>
-              
-              {announcementHistory.length > 0 ? (
-                <div className="space-y-3 max-h-80 overflow-y-auto">
-                  {announcementHistory.map(ann => (
-                    <div 
-                      key={ann.id} 
-                      className={`p-4 rounded-lg border ${ann.active ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'}`}
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 dark:text-white">{ann.title}</h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{ann.body}</p>
-                        </div>
-                        <span className={`ml-2 px-2 py-0.5 rounded text-xs font-medium ${
-                          ann.active ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
-                        }`}>
-                          {ann.active ? 'Active' : 'Inactive'}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-                        <span>📤 {ann.audience === 'all' ? 'All Users' : ann.audience}</span>
-                        <span>👤 {ann.createdBy || 'Unknown'}</span>
-                        <span>📅 {ann.createdAt?.seconds 
-                          ? new Date(ann.createdAt.seconds * 1000).toLocaleDateString() 
-                          : 'Unknown date'}</span>
-                      </div>
-                      <div className="mt-2 flex gap-2">
-                        <button
-                          onClick={async () => {
-                            try {
-                              await updateDoc(doc(db, 'announcements', ann.id), { active: !ann.active });
-                              loadAnnouncementHistory();
-                              addLog(`Announcement ${ann.active ? 'deactivated' : 'activated'}`, 'success');
-                            } catch (error) {
-                              logger.error('Error toggling announcement:', error);
-                            }
-                          }}
-                          className={`text-xs px-2 py-1 rounded ${
-                            ann.active 
-                              ? 'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-100' 
-                              : 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 hover:bg-green-100'
-                          }`}
-                        >
-                          {ann.active ? 'Deactivate' : 'Reactivate'}
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-gray-500 dark:text-gray-400 text-sm text-center py-6">
-                  {isLoadingAnnouncements ? 'Loading announcements...' : 'No announcements sent yet'}
-                </p>
-              )}
-            </Card>
-
-            {/* Feature Flags */}
+            {/* Error Monitoring */}
             <Card className="p-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                🎛️ Feature Flags
-                <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded">Read-only Preview</span>
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                These feature flags control app functionality. To change them, update <code className="bg-gray-100 dark:bg-slate-700 px-1 rounded">featureFlags.ts</code> and redeploy.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {Object.entries(featureFlags).map(([flag, enabled]) => (
-                  <div 
-                    key={flag} 
-                    className={`flex items-center justify-between p-4 rounded-lg border ${
-                      enabled ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'
-                    }`}
-                  >
-                    <div>
-                      <span className="font-medium text-gray-900 dark:text-white">{flag}</span>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
-                        {flag === 'aiTutor' && 'Vory AI assistant'}
-                        {flag === 'examSimulator' && 'Full exam simulation'}
-                        {flag === 'flashcards' && 'Flashcard study mode'}
-                        {flag === 'tbs' && 'Task-Based Simulations'}
-                        {flag === 'writtenCommunication' && 'Written Communication (Legacy - retired Dec 2023)'}
-                        {flag === 'offlineMode' && 'Progressive Web App offline support'}
-                        {flag === 'studyPlan' && 'AI-generated study plans'}
-                      </p>
-                    </div>
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      enabled ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-200 dark:bg-slate-700 text-gray-600 dark:text-gray-300'
-                    }`}>
-                      {enabled ? 'ON' : 'OFF'}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
-            {/* Question Reports */}
-            <Card className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">📋 Question Reports</h3>
-                <div className="flex gap-2">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
-                    {questionReports.filter(r => r.status === 'pending').length} pending
+                🔍 Error Monitoring
+                {errorStats && (
+                  <span className={`text-xs px-2 py-0.5 rounded ${
+                    errorStats.total > 0 ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300' : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                  }`}>
+                    {errorStats.total} errors
                   </span>
-                  <Button
-                    onClick={loadQuestionReports}
-                    disabled={isLoadingReports}
-                    variant="primary"
-                    size="sm"
-                    loading={isLoadingReports}
-                  >
-                    Refresh
-                  </Button>
-                </div>
-              </div>
+                )}
+              </h3>
               
-              {questionReports.length === 0 ? (
-                <p className="text-sm text-gray-600 dark:text-gray-400 text-center py-8">
-                  No question reports yet. Click Refresh to load.
-                </p>
-              ) : (
-                <div className="space-y-3 max-h-[400px] overflow-y-auto">
-                  {questionReports.map((report) => (
-                    <div 
-                      key={report.id} 
-                      className={`p-4 rounded-lg border ${
-                        report.status === 'pending' ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-200 dark:border-amber-800' :
-                        report.status === 'resolved' ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-800' :
-                        report.status === 'dismissed' ? 'bg-gray-50 dark:bg-slate-800 border-gray-200' :
-                        'bg-blue-50 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800'
-                      }`}
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                              report.type === 'incorrect_answer' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300' :
-                              report.type === 'unclear_question' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
-                              report.type === 'typo' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
-                              'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
-                            }`}>
-                              {report.type.replace(/_/g, ' ')}
-                            </span>
-                            <span className={`px-2 py-0.5 rounded text-xs ${
-                              report.status === 'pending' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300' :
-                              report.status === 'resolved' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
-                              report.status === 'reviewed' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' :
-                              'bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300'
-                            }`}>
-                              {report.status}
-                            </span>
-                            <span className="text-xs text-gray-600 dark:text-gray-400">
-                              {report.courseId && <span className="font-medium">{report.courseId.toUpperCase()} • </span>}
-                              {report.section} • {report.blueprintArea}
-                            </span>
-                          </div>
-                          <p className="text-sm text-gray-900 dark:text-white line-clamp-2">
-                            Q: {report.questionText || report.questionId}
-                          </p>
-                          {report.details && (
-                            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                              Details: {report.details}
-                            </p>
-                          )}
-                          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                            By: {report.reportedByEmail || report.reportedBy}
-                            {report.createdAt && ` • ${new Date(report.createdAt.seconds * 1000).toLocaleDateString()}`}
-                          </p>
-                        </div>
-                        {report.status === 'pending' && (
-                          <div className="flex gap-1 flex-shrink-0">
-                            <button
-                              onClick={() => updateReportStatus(report.id, 'resolved')}
-                              className="px-2 py-1 bg-green-600 text-white text-xs rounded hover:bg-green-700"
-                              title="Mark as resolved"
-                            >
-                              ✓
-                            </button>
-                            <button
-                              onClick={() => updateReportStatus(report.id, 'dismissed')}
-                              className="px-2 py-1 bg-gray-600 text-white text-xs rounded hover:bg-gray-700"
-                              title="Dismiss"
-                            >
-                              ✕
-                            </button>
-                          </div>
-                        )}
-                      </div>
+              {isLoadingErrors ? (
+                <div className="text-center py-8">
+                  <div className="animate-spin w-6 h-6 border-2 border-red-600 border-t-transparent rounded-full mx-auto" />
+                </div>
+              ) : errorStats ? (
+                <div className="space-y-4">
+                  {/* Error Summary */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="p-3 bg-gray-50 dark:bg-slate-800 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-gray-900 dark:text-white">{errorStats.total}</div>
+                      <div className="text-xs text-gray-500">Total Errors</div>
                     </div>
-                  ))}
-                </div>
-              )}
-            </Card>
-
-            {/* System Tools */}
-            <Card className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🛠️ System Tools</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Maintenance Mode Toggle */}
-                <div className={`p-4 rounded-lg border ${maintenanceMode ? 'bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800' : 'bg-gray-50 dark:bg-slate-800 border-gray-200'}`}>
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900 dark:text-white">Maintenance Mode</h4>
-                    <button
-                      onClick={() => {
-                        const newState = !maintenanceMode;
-                        setMaintenanceMode(newState);
-                        localStorage.setItem('admin_maintenance_mode', String(newState));
-                        addLog(`Maintenance mode ${newState ? 'enabled' : 'disabled'}`, newState ? 'warning' : 'success');
-                      }}
-                      className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                        maintenanceMode 
-                          ? 'bg-red-600 text-white hover:bg-red-700' 
-                          : 'bg-gray-200 dark:bg-slate-600 text-gray-700 dark:text-gray-300 hover:bg-gray-300'
-                      }`}
-                    >
-                      {maintenanceMode ? 'Disable' : 'Enable'}
-                    </button>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    When enabled, shows maintenance message to non-admin users.
-                  </p>
-                </div>
-
-                {/* Cache Refresh */}
-                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900 dark:text-white">Clear Local Cache</h4>
-                    <Button
-                      onClick={() => {
-                        const keysCleared: string[] = [];
-                        ['voraprep_study_state', 'voraprep_progress', 'ai_api_failures'].forEach(key => {
-                          if (localStorage.getItem(key)) {
-                            localStorage.removeItem(key);
-                            keysCleared.push(key);
-                          }
-                        });
-                        // Clear dailyplan keys
-                        for (let i = localStorage.length - 1; i >= 0; i--) {
-                          const key = localStorage.key(i);
-                          if (key && key.startsWith('dailyplan_')) {
-                            localStorage.removeItem(key);
-                            keysCleared.push(key);
-                          }
-                        }
-                        addLog(`Cleared ${keysCleared.length} cache entries`, 'success');
-                        alert(`Cleared ${keysCleared.length} cache entries. Page will reload.`);
-                        window.location.reload();
-                      }}
-                      variant="primary"
-                      size="sm"
-                    >
-                      Clear Cache
-                    </Button>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    Clears local storage cache for study state and progress.
-                  </p>
-                </div>
-
-                {/* Force Reload */}
-                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900 dark:text-white">Force Hard Reload</h4>
-                    <button
-                      onClick={() => {
-                        if (window.confirm('This will fully reload the app. Continue?')) {
-                          window.location.href = window.location.href + '?cache=' + Date.now();
-                        }
-                      }}
-                      className="px-3 py-1 rounded text-sm font-medium bg-amber-600 text-white hover:bg-amber-700 transition-colors"
-                    >
-                      Hard Reload
-                    </button>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    Forces a complete page reload bypassing cache.
-                  </p>
-                </div>
-
-                {/* Export Users */}
-                <div className="p-4 rounded-lg border bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-700">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900 dark:text-white">Export User List</h4>
-                    <button
-                      onClick={() => {
-                        if (usersList.length === 0) {
-                          alert('Load users first (go to Users tab)');
-                          return;
-                        }
-                        const csv = [
-                          'Email,UID,Course,Section,Subscription,IsAdmin,CreatedAt',
-                          ...usersList.map(u => 
-                            `"${u.email || ''}","${u.id}","${getUserCourse(u)}","${u.examSection || ''}","${u.subscription?.tier || 'free'}","${u.isAdmin || false}","${u.createdAt ? new Date(u.createdAt.seconds * 1000).toISOString() : ''}"`
-                          )
-                        ].join('\n');
-                        const blob = new Blob([csv], { type: 'text/csv' });
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = `voraprep_users_${new Date().toISOString().split('T')[0]}.csv`;
-                        a.click();
-                        URL.revokeObjectURL(url);
-                        addLog('Exported user list to CSV', 'success');
-                      }}
-                      className="px-3 py-1 rounded text-sm font-medium bg-green-600 text-white hover:bg-green-700 transition-colors"
-                    >
-                      Export CSV
-                    </button>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    Download user list as CSV file.
-                  </p>
-                </div>
-
-                {/* Stale Account Cleanup */}
-                <div className="p-4 rounded-lg border bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-medium text-gray-900 dark:text-white">🧹 Stale Account Cleanup</h4>
-                    <div className="flex gap-2">
-                      <Button
-                        onClick={findStaleAccounts}
-                        disabled={isLoadingStale}
-                        variant="primary"
-                        size="sm"
-                        loading={isLoadingStale}
-                      >
-                        Find Stale
-                      </Button>
-                      {staleAccounts.length > 0 && (
-                        <Button
-                          onClick={deleteStaleAccounts}
-                          disabled={isDeletingStale}
-                          variant="danger"
-                          size="sm"
-                          loading={isDeletingStale}
-                        >
-                          Delete {staleAccounts.length}
-                        </Button>
-                      )}
+                    <div className={`p-3 rounded-lg text-center ${errorStats.last24h > 5 ? 'bg-red-100 dark:bg-red-900/40 ring-2 ring-red-500' : 'bg-red-50 dark:bg-red-900/20'}`}>
+                      <div className={`text-2xl font-bold ${errorStats.last24h > 5 ? 'text-red-700' : errorStats.last24h > 0 ? 'text-amber-600' : 'text-green-600'}`}>{errorStats.last24h}</div>
+                      <div className="text-xs text-red-700 dark:text-red-300">Last 24h</div>
+                    </div>
+                    <div className="p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg text-center">
+                      <div className={`text-2xl font-bold ${errorStats.last7d > 20 ? 'text-amber-600' : 'text-blue-600'}`}>{errorStats.last7d}</div>
+                      <div className="text-xs text-amber-700 dark:text-amber-300">Last 7 Days</div>
+                    </div>
+                    <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{errorStats.topErrors.length}</div>
+                      <div className="text-xs text-purple-700 dark:text-purple-300">Unique Types</div>
                     </div>
                   </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
-                    Find accounts with incomplete onboarding (7+ days old) and remove them.
-                  </p>
-                  {staleStatus && (
-                    <div className={`text-xs p-2 rounded mb-2 ${
-                      staleStatus.type === 'error' ? 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300' :
-                      staleStatus.type === 'success' ? 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300' :
-                      staleStatus.type === 'warning' ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300' :
-                      'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300'
-                    }`}>
-                      {staleStatus.type === 'error' ? '✗ ' : staleStatus.type === 'success' ? '✓ ' : '⚠ '}
-                      {staleStatus.message}
-                    </div>
-                  )}
-                  {staleAccounts.length > 0 && (
-                    <div className="mt-3 max-h-40 overflow-y-auto">
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">Preview ({staleAccounts.length} accounts):</div>
+
+                  {/* Error Categories & Severity */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-gray-50 dark:bg-slate-800 rounded-lg p-4">
+                      <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">By Category</h5>
                       <div className="space-y-1">
-                        {staleAccounts.slice(0, 10).map(acc => (
-                          <div key={acc.id} className="text-xs bg-white dark:bg-slate-800 rounded px-2 py-1 flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300">{acc.email || acc.displayName || 'No email'}</span>
-                            <span className="text-gray-400">
-                              {acc.createdAt ? new Date(acc.createdAt.seconds * 1000).toLocaleDateString() : 'Unknown date'}
+                        {Object.entries(errorStats.byCategory || {}).map(([cat, count]) => (
+                          <div key={cat} className="flex justify-between text-sm">
+                            <span className="capitalize text-gray-600 dark:text-gray-400">{cat}</span>
+                            <span className="font-medium">{count}</span>
+                          </div>
+                        ))}
+                        {Object.keys(errorStats.byCategory || {}).length === 0 && (
+                          <span className="text-gray-400 text-sm">No categories</span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="bg-gray-50 dark:bg-slate-800 rounded-lg p-4">
+                      <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">By Severity</h5>
+                      <div className="space-y-1">
+                        {Object.entries(errorStats.bySeverity || {}).map(([sev, count]) => (
+                          <div key={sev} className="flex justify-between text-sm">
+                            <span className={`capitalize ${sev === 'critical' ? 'text-red-600' : sev === 'high' ? 'text-orange-600' : sev === 'medium' ? 'text-amber-600' : 'text-gray-600'}`}>
+                              {sev === 'critical' ? '🔴' : sev === 'high' ? '🟠' : sev === 'medium' ? '🟡' : '🟢'} {sev}
                             </span>
+                            <span className="font-medium">{count}</span>
                           </div>
                         ))}
-                        {staleAccounts.length > 10 && (
-                          <div className="text-xs text-gray-500 dark:text-gray-400 italic">
-                            ...and {staleAccounts.length - 10} more
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </Card>
-
-            {/* Beta User Trial Transition */}
-            <Card className="p-6 border-2 border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                🎫 Beta User Trial Transition
-                <span className="text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-0.5 rounded">ONE-TIME</span>
-              </h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-                Set all beta users&apos; trial end date to <strong>March 1, 2026</strong> (14 days from Feb 15).
-                Paid subscribers will be skipped. Users will be marked as Founders (founder rate eligible).
-              </p>
-              
-              <div className="flex gap-3 mb-4">
-                <Button
-                  onClick={previewBetaTransition}
-                  disabled={betaTransitionStatus === 'executing'}
-                  variant="primary"
-                  size="sm"
-                  loading={betaTransitionStatus === 'preview' && !betaTransitionResults}
-                >
-                  Preview Changes
-                </Button>
-                {betaTransitionResults && betaTransitionResults.toUpdate.length > 0 && betaTransitionStatus !== 'done' && (
-                  <Button
-                    onClick={executeBetaTransition}
-                    disabled={betaTransitionStatus === 'executing'}
-                    variant="danger"
-                    size="sm"
-                    loading={betaTransitionStatus === 'executing'}
-                  >
-                    Execute Transition ({betaTransitionResults.toUpdate.length} users)
-                  </Button>
-                )}
-              </div>
-
-              {betaTransitionResults && (
-                <div className="space-y-3">
-                  {betaTransitionStatus === 'done' && (
-                    <div className="p-3 bg-green-100 border border-green-300 rounded-lg">
-                      <div className="font-semibold text-green-800">✅ Transition Complete!</div>
-                      <div className="text-sm text-green-700 dark:text-green-300">
-                        Updated: {betaTransitionResults.updated} | Errors: {betaTransitionResults.errors} | Skipped: {betaTransitionResults.skipped.length}
-                      </div>
-                    </div>
-                  )}
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        ✅ Will Update ({betaTransitionResults.toUpdate.length})
-                      </div>
-                      <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
-                        {betaTransitionResults.toUpdate.slice(0, 15).map(u => (
-                          <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
-                            <span className="text-gray-400">{u.currentTrialEnd === 'none' ? 'no trial' : 'has trial'}</span>
-                          </div>
-                        ))}
-                        {betaTransitionResults.toUpdate.length > 15 && (
-                          <div className="text-gray-500 dark:text-gray-400 italic">...and {betaTransitionResults.toUpdate.length - 15} more</div>
-                        )}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        ⏭️ Will Skip ({betaTransitionResults.skipped.length})
-                      </div>
-                      <div className="max-h-40 overflow-y-auto bg-white dark:bg-slate-800 rounded border p-2 text-xs space-y-1">
-                        {betaTransitionResults.skipped.slice(0, 15).map(u => (
-                          <div key={u.id} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300 truncate">{u.email || u.id}</span>
-                            <span className="text-amber-600 dark:text-amber-400">{u.reason}</span>
-                          </div>
-                        ))}
-                        {betaTransitionResults.skipped.length > 15 && (
-                          <div className="text-gray-500 dark:text-gray-400 italic">...and {betaTransitionResults.skipped.length - 15} more</div>
-                        )}
-                        {betaTransitionResults.skipped.length === 0 && (
-                          <div className="text-gray-400">No paid subscribers found</div>
-                        )}
                       </div>
                     </div>
                   </div>
+
+                  {/* Top Errors */}
+                  {errorStats.topErrors.length > 0 && (
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Most Frequent Errors</h4>
+                      <div className="space-y-2">
+                        {errorStats.topErrors.slice(0, 5).map((error, i) => (
+                          <div key={i} className="flex items-start gap-3 p-2 bg-red-50 dark:bg-red-900/20 rounded text-sm">
+                            <span className="font-bold text-red-600 min-w-[32px]">{error.count}×</span>
+                            <span className="font-mono text-red-800 dark:text-red-200 flex-1 text-xs truncate" title={error.message}>{error.message}</span>
+                            <span className="text-gray-400 text-xs whitespace-nowrap">{error.lastSeen?.toLocaleDateString?.() || ''}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="flex justify-end">
+                    <button
+                      onClick={clearSystemErrors}
+                      className="px-3 py-1 text-sm bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded hover:bg-red-200 transition-colors"
+                    >
+                      Clear All Errors
+                    </button>
+                  </div>
                 </div>
+              ) : (
+                <p className="text-gray-500 dark:text-gray-400 text-center py-4">Click Refresh to load error data</p>
               )}
             </Card>
 
-            {/* Launch Status */}
-            <div className="bg-gradient-to-r from-primary-900/20 to-blue-900/20 dark:from-primary-900/30 dark:to-blue-900/30 rounded-xl p-6 shadow-sm border border-primary-600 dark:border-primary-700">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                🚀 Launch Status
-              </h3>
-              <div className="flex items-center gap-4">
-                <div className="px-4 py-2 rounded-lg font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                  Status: <strong>LIVE</strong>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Paid subscriptions are active. Founder pricing (40-44% off) available until April 30, 2026.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {activeTab === 'logs' && (
-          <div className="space-y-6">
-            {/* Error Stats Dashboard */}
-            {errorStats && (
-              <Card className="p-6 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border-red-200 dark:border-red-800">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                  🔍 Error Monitoring Dashboard
-                  <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded">
-                    DIY Sentry
-                  </span>
-                </h4>
-                
-                {/* Key Metrics */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-gray-900 dark:text-white">{errorStats.total}</div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">Total Errors (last 200)</div>
-                  </div>
-                  <div className={`bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm ${errorStats.last24h > 5 ? 'ring-2 ring-red-500' : ''}`}>
-                    <div className={`text-2xl font-bold ${errorStats.last24h > 5 ? 'text-red-600' : errorStats.last24h > 0 ? 'text-amber-600' : 'text-green-600'}`}>
-                      {errorStats.last24h}
-                    </div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">Last 24 Hours</div>
-                  </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                    <div className={`text-2xl font-bold ${errorStats.last7d > 20 ? 'text-amber-600' : 'text-blue-600'}`}>
-                      {errorStats.last7d}
-                    </div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">Last 7 Days</div>
-                  </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                    <div className="text-2xl font-bold text-purple-600">
-                      {errorStats.topErrors.length}
-                    </div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">Unique Error Types</div>
-                  </div>
-                </div>
-                
-                {/* Error Categories & Severity */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                    <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">By Category</h5>
-                    <div className="space-y-1">
-                      {Object.entries(errorStats.byCategory).map(([cat, count]) => (
-                        <div key={cat} className="flex justify-between text-sm">
-                          <span className="capitalize text-gray-600 dark:text-gray-400">{cat}</span>
-                          <span className="font-medium">{count}</span>
+            {/* Detailed Error Logs */}
+            {systemErrors.length > 0 && (
+              <Card className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">📋 Error Log Details</h3>
+                <div className="space-y-4 max-h-96 overflow-y-auto">
+                  {systemErrors.map((err) => (
+                    <div key={err.id} className="border-l-4 border-red-500 bg-red-50 dark:bg-red-900/30 p-4 rounded-r-lg">
+                      <div className="flex justify-between items-start mb-1">
+                        <span className="font-bold text-red-700 dark:text-red-300 text-sm">
+                          {err.timestamp && typeof err.timestamp === 'object' && 'seconds' in err.timestamp
+                            ? new Date((err.timestamp as { seconds: number }).seconds * 1000).toLocaleString()
+                            : String(err.timestamp || 'Unknown Date')}
+                        </span>
+                        <span className="text-xs text-red-400 font-mono">{err.id}</span>
+                      </div>
+                      <p className="font-medium text-gray-900 dark:text-white mb-2">{err.message}</p>
+                      {err.context && (
+                        <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                          <strong>Context:</strong> {typeof err.context === 'object' ? JSON.stringify(err.context) : err.context} | <strong>User:</strong> {err.userId || 'Anonymous'}
                         </div>
-                      ))}
-                      {Object.keys(errorStats.byCategory).length === 0 && (
-                        <span className="text-gray-400 text-sm">No categories</span>
+                      )}
+                      {err.stack && (
+                        <details className="mt-2">
+                          <summary className="text-xs text-red-600 dark:text-red-400 cursor-pointer hover:underline">View Stack Trace</summary>
+                          <pre className="mt-2 p-2 bg-gray-900 text-red-200 text-xs rounded overflow-x-auto whitespace-pre-wrap">
+                            {err.stack}
+                          </pre>
+                        </details>
                       )}
                     </div>
-                  </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                    <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">By Severity</h5>
-                    <div className="space-y-1">
-                      {Object.entries(errorStats.bySeverity).map(([sev, count]) => (
-                        <div key={sev} className="flex justify-between text-sm">
-                          <span className={`capitalize ${sev === 'critical' ? 'text-red-600' : sev === 'high' ? 'text-orange-600' : sev === 'medium' ? 'text-amber-600' : 'text-gray-600'}`}>
-                            {sev === 'critical' ? '🔴' : sev === 'high' ? '🟠' : sev === 'medium' ? '🟡' : '🟢'} {sev}
-                          </span>
-                          <span className="font-medium">{count}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  ))}
                 </div>
-                
-                {/* Top Errors */}
-                {errorStats.topErrors.length > 0 && (
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-4 shadow-sm">
-                    <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Most Frequent Errors</h5>
-                    <div className="space-y-2">
-                      {errorStats.topErrors.slice(0, 5).map((err, idx) => (
-                        <div key={idx} className="flex items-start gap-3 text-sm">
-                          <span className="font-bold text-red-600 min-w-[24px]">{err.count}×</span>
-                          <span className="text-gray-700 dark:text-gray-300 flex-1 font-mono text-xs truncate" title={err.message}>
-                            {err.message}
-                          </span>
-                          <span className="text-gray-400 text-xs whitespace-nowrap">
-                            {err.lastSeen.toLocaleDateString()}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </Card>
             )}
-            
-            {/* Error List */}
-            <Card className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
-              <span>System Error Logs</span>
-              <div className="flex items-center gap-2">
-                {systemErrors.length > 0 && (
-                  <button
-                    onClick={clearSystemErrors}
-                    disabled={isLoadingErrors}
-                    className="text-sm px-3 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded hover:bg-red-100 transition-colors disabled:opacity-50"
-                  >
-                    Clear All ({systemErrors.length})
-                  </button>
-                )}
-                <button
-                  onClick={loadSystemErrors}
-                  disabled={isLoadingErrors}
-                  className="text-sm px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
-                >
-                  Refresh
-                </button>
-              </div>
-            </h3>
 
-            {isLoadingErrors ? (
-               <div className="text-center py-8">
-                <div className="animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full mx-auto mb-2" />
-                <p className="text-gray-600 dark:text-gray-400">Loading logs...</p>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                 {systemErrors.length === 0 ? (
-                    <p className="text-gray-600 dark:text-gray-400 text-center py-8">No errors logged in the system.</p>
-                 ) : (
-                   systemErrors.map((err) => (
-                     <div key={err.id} className="border-l-4 border-red-500 bg-red-50 dark:bg-red-900/30 p-4 rounded-r-lg">
-                        <div className="flex justify-between items-start mb-1">
-                          <span className="font-bold text-red-700 dark:text-red-300 text-sm">
-                            {/* Handle Timestamp or string */}
-                            {err.timestamp && typeof err.timestamp === 'object' && 'seconds' in err.timestamp
-                              ? new Date((err.timestamp as any).seconds * 1000).toLocaleString()
-                              : String(err.timestamp || 'Unknown Date')}
-                          </span>
-                          <span className="text-xs text-red-400 font-mono">{err.id}</span>
-                        </div>
-                        <p className="font-medium text-gray-900 dark:text-white mb-2">{err.message}</p>
-                        {err.context && (
-                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                            <strong>Context:</strong> {typeof err.context === 'object' ? JSON.stringify(err.context) : err.context} | <strong>User:</strong> {err.userId || 'Anonymous'}
+            {/* Communication Templates */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                ✉️ Communication Templates
+                <span className="text-xs font-normal text-gray-500 dark:text-gray-400">
+                  {communicationTemplates.filter(t => t.type === 'email').length} emails · {communicationTemplates.filter(t => t.type === 'push').length} push
+                </span>
+                <div className="ml-auto flex gap-2">
+                  <button
+                    onClick={seedTemplates}
+                    disabled={isSeedingTemplates}
+                    className="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors disabled:opacity-50"
+                  >
+                    {isSeedingTemplates ? 'Seeding...' : '🌱 Seed Defaults'}
+                  </button>
+                  <button
+                    onClick={loadCommunicationTemplates}
+                    disabled={isLoadingTemplates}
+                    className="px-3 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors disabled:opacity-50"
+                  >
+                    {isLoadingTemplates ? 'Loading...' : '🔄 Refresh'}
+                  </button>
+                </div>
+              </h3>
+              
+              {isLoadingTemplates ? (
+                <div className="flex justify-center py-8">
+                  <div className="animate-spin rounded-full h-8 w-8 border-2 border-blue-500 border-t-transparent"></div>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {/* Email Templates */}
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide flex items-center gap-2">
+                      📧 Email Templates
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {communicationTemplates.filter(t => t.type === 'email').map((template) => (
+                        <div key={template.id} className={`p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 ${template.enabled ? 'border-green-500' : 'border-gray-400'} hover:shadow-md transition-shadow`}>
+                          <div className="flex items-start justify-between mb-2">
+                            <h5 className="font-medium text-gray-900 dark:text-white">{template.name}</h5>
+                            <div className="flex items-center gap-2">
+                              {template.isCustomized && (
+                                <span className="px-1.5 py-0.5 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">
+                                  Edited
+                                </span>
+                              )}
+                              <span className={`px-2 py-0.5 text-xs rounded ${template.enabled ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'}`}>
+                                {template.enabled ? 'Active' : 'Off'}
+                              </span>
+                            </div>
                           </div>
-                        )}
-                        {err.stack && (
-                          <details className="mt-2">
-                            <summary className="text-xs text-red-600 dark:text-red-400 cursor-pointer hover:underline">View Stack Trace</summary>
-                            <pre className="mt-2 p-2 bg-gray-900 text-red-200 text-xs rounded overflow-x-auto whitespace-pre-wrap">
-                              {err.stack}
-                            </pre>
-                          </details>
-                        )}
-                     </div>
-                   ))
-                 )}
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">{template.description}</p>
+                          <div className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+                            <strong>Subject:</strong> <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">{template.subject?.substring(0, 35)}{(template.subject?.length || 0) > 35 ? '...' : ''}</span>
+                          </div>
+                          <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-200 dark:border-slate-700">
+                            <div className="flex flex-wrap gap-1">
+                              {template.variables.slice(0, 2).map(v => (
+                                <span key={v} className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded">
+                                  {'{{'}{v}{'}}'}
+                                </span>
+                              ))}
+                              {template.variables.length > 2 && (
+                                <span className="text-xs text-gray-500">+{template.variables.length - 2}</span>
+                              )}
+                            </div>
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => setPreviewingTemplate(template)}
+                                className="text-xs text-gray-600 dark:text-gray-400 hover:underline font-medium"
+                              >
+                                View
+                              </button>
+                              <button
+                                onClick={() => setEditingTemplate(template)}
+                                className="text-xs text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                              >
+                                Edit →
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Push Notification Templates */}
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide flex items-center gap-2">
+                      📱 Push Notifications
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {communicationTemplates.filter(t => t.type === 'push').map((template) => (
+                        <div key={template.id} className={`p-4 bg-gray-50 dark:bg-slate-800 rounded-lg border-l-4 ${template.enabled ? 'border-green-500' : 'border-gray-400'} hover:shadow-md transition-shadow`}>
+                          <div className="flex items-start justify-between mb-2">
+                            <h5 className="font-medium text-gray-900 dark:text-white">{template.name}</h5>
+                            <div className="flex items-center gap-2">
+                              {template.isCustomized && (
+                                <span className="px-1.5 py-0.5 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">
+                                  Edited
+                                </span>
+                              )}
+                              <span className={`px-2 py-0.5 text-xs rounded ${template.enabled ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'}`}>
+                                {template.enabled ? 'Active' : 'Off'}
+                              </span>
+                            </div>
+                          </div>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">{template.description}</p>
+                          <div className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+                            <strong>Title:</strong> <span className="font-mono bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">{template.subject}</span>
+                          </div>
+                          <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-200 dark:border-slate-700">
+                            <div className="flex flex-wrap gap-1">
+                              {template.variables.map(v => (
+                                <span key={v} className="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-1.5 py-0.5 rounded">
+                                  {'{{'}{v}{'}}'}
+                                </span>
+                              ))}
+                            </div>
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => setPreviewingTemplate(template)}
+                                className="text-xs text-gray-600 dark:text-gray-400 hover:underline font-medium"
+                              >
+                                View
+                              </button>
+                              <button
+                                onClick={() => setEditingTemplate(template)}
+                                className="text-xs text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                              >
+                                Edit →
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Info Box */}
+                  <div className="mt-4 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <div className="flex items-start gap-3">
+                      <span className="text-amber-500 text-lg">💡</span>
+                      <div>
+                        <p className="text-sm text-amber-800 dark:text-amber-200">
+                          <strong>Click "Edit" on any template</strong> to modify the subject line or enable/disable it. Changes take effect immediately for new emails sent.
+                        </p>
+                        <div className="mt-2 flex gap-3">
+                          <a
+                            href="https://resend.com/emails"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-amber-700 dark:text-amber-300 hover:underline"
+                          >
+                            View sent emails in Resend →
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </Card>
+
+            {/* Edit Template Modal */}
+            {editingTemplate && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                  <div className="p-6 border-b border-gray-200 dark:border-slate-700">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        Edit Template: {editingTemplate.name}
+                      </h3>
+                      <button
+                        onClick={() => setEditingTemplate(null)}
+                        className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                      {editingTemplate.description}
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 space-y-4">
+                    {/* Enabled Toggle */}
+                    <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                      <div>
+                        <label className="font-medium text-gray-900 dark:text-white">
+                          {editingTemplate.type === 'email' ? 'Send this email' : 'Send this notification'}
+                        </label>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                          When disabled, this communication will not be sent
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setEditingTemplate({ ...editingTemplate, enabled: !editingTemplate.enabled })}
+                        className={`relative w-12 h-6 rounded-full transition-colors ${editingTemplate.enabled ? 'bg-green-500' : 'bg-gray-300 dark:bg-gray-600'}`}
+                      >
+                        <span className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${editingTemplate.enabled ? 'left-7' : 'left-1'}`} />
+                      </button>
+                    </div>
+
+                    {/* Subject Line */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        {editingTemplate.type === 'email' ? 'Subject Line' : 'Notification Title'}
+                      </label>
+                      <input
+                        type="text"
+                        value={editingTemplate.subject || ''}
+                        onChange={(e) => setEditingTemplate({ ...editingTemplate, subject: e.target.value })}
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white font-mono text-sm"
+                        placeholder="Enter subject line..."
+                      />
+                    </div>
+
+                    {/* Body (for push notifications) */}
+                    {editingTemplate.type === 'push' && (
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                          Notification Body
+                        </label>
+                        <textarea
+                          value={editingTemplate.body || ''}
+                          onChange={(e) => setEditingTemplate({ ...editingTemplate, body: e.target.value })}
+                          rows={2}
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-900 text-gray-900 dark:text-white font-mono text-sm"
+                          placeholder="Notification body text..."
+                        />
+                      </div>
+                    )}
+
+                    {/* Available Variables */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Available Variables
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {editingTemplate.variables.map(v => (
+                          <button
+                            key={v}
+                            onClick={() => {
+                              const varText = `{{${v}}}`;
+                              setEditingTemplate({
+                                ...editingTemplate,
+                                subject: (editingTemplate.subject || '') + varText
+                              });
+                            }}
+                            className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
+                          >
+                            {'{{'}{v}{'}}'}
+                          </button>
+                        ))}
+                      </div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                        Click to add to subject line
+                      </p>
+                    </div>
+
+                    {/* Function Info */}
+                    <div className="p-3 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <strong>Sent by:</strong> <code className="bg-gray-200 dark:bg-slate-700 px-1 rounded">{editingTemplate.functionName}</code>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-6 border-t border-gray-200 dark:border-slate-700 flex justify-end gap-3">
+                    <button
+                      onClick={() => setEditingTemplate(null)}
+                      className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={() => saveTemplate(editingTemplate)}
+                      disabled={isSavingTemplate}
+                      className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+                    >
+                      {isSavingTemplate ? 'Saving...' : 'Save Changes'}
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
-          </Card>
+
+            {/* Preview Template Modal */}
+            {previewingTemplate && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+                  <div className="p-4 border-b border-gray-200 dark:border-slate-700 flex items-center justify-between">
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        Preview: {previewingTemplate.name}
+                      </h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {previewingTemplate.type === 'email' ? 'Email' : 'Push Notification'} • {previewingTemplate.enabled ? 'Active' : 'Disabled'}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setPreviewingTemplate(null)}
+                      className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-xl"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  
+                  <div className="flex-1 overflow-y-auto">
+                    {previewingTemplate.type === 'email' ? (
+                      <div className="p-4 space-y-4">
+                        {/* Email Header Preview */}
+                        <div className="border border-gray-200 dark:border-slate-700 rounded-lg p-4 bg-gray-50 dark:bg-slate-900">
+                          <div className="space-y-2 text-sm">
+                            <div className="flex">
+                              <span className="w-16 text-gray-500 dark:text-gray-400">From:</span>
+                              <span className="text-gray-900 dark:text-white">VoraPrep &lt;hello@voraprep.com&gt;</span>
+                            </div>
+                            <div className="flex">
+                              <span className="w-16 text-gray-500 dark:text-gray-400">To:</span>
+                              <span className="text-gray-900 dark:text-white">user@example.com</span>
+                            </div>
+                            <div className="flex">
+                              <span className="w-16 text-gray-500 dark:text-gray-400">Subject:</span>
+                              <span className="text-gray-900 dark:text-white font-medium">
+                                {(previewingTemplate.subject || '')
+                                  .replace(/\{\{firstName\}\}/g, 'John')
+                                  .replace(/\{\{name\}\}/g, 'John')
+                                  .replace(/\{\{email\}\}/g, 'user@example.com')
+                                  .replace(/\{\{courseName\}\}/g, 'CPA')
+                                  .replace(/\{\{examName\}\}/g, 'FAR')
+                                  .replace(/\{\{studyTime\}\}/g, '2h 15m')
+                                  .replace(/\{\{questionsAnswered\}\}/g, '45')
+                                  .replace(/\{\{accuracy\}\}/g, '78%')
+                                  .replace(/\{\{streak\}\}/g, '5')
+                                  .replace(/\{\{daysUntilExam\}\}/g, '30')
+                                  .replace(/\{\{.+?\}\}/g, '[value]')}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Email Body Preview */}
+                        <div className="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden">
+                          <div 
+                            className="bg-white p-6"
+                            dangerouslySetInnerHTML={{ 
+                              __html: (previewingTemplate.body || '<p style="color: #666; text-align: center;">Email body not available for preview.<br/>The full HTML template is generated at send time.</p>')
+                                .replace(/\{\{firstName\}\}/g, 'John')
+                                .replace(/\{\{name\}\}/g, 'John')
+                                .replace(/\{\{email\}\}/g, 'user@example.com')
+                                .replace(/\{\{courseName\}\}/g, 'CPA')
+                                .replace(/\{\{examName\}\}/g, 'FAR')
+                                .replace(/\{\{studyTime\}\}/g, '2h 15m')
+                                .replace(/\{\{questionsAnswered\}\}/g, '45')
+                                .replace(/\{\{accuracy\}\}/g, '78%')
+                                .replace(/\{\{streak\}\}/g, '5')
+                                .replace(/\{\{daysUntilExam\}\}/g, '30')
+                                .replace(/\{\{.+?\}\}/g, '<span style="background:#fef3c7;padding:1px 4px;border-radius:2px;">[value]</span>')
+                            }}
+                          />
+                        </div>
+                        
+                        {/* Variable Reference */}
+                        <div className="text-xs text-gray-500 dark:text-gray-400 p-3 bg-gray-50 dark:bg-slate-900 rounded-lg">
+                          <strong>Sample values used:</strong> firstName=John, email=user@example.com, courseName=CPA, examName=FAR, studyTime=2h 15m, questionsAnswered=45, accuracy=78%, streak=5, daysUntilExam=30
+                        </div>
+                      </div>
+                    ) : (
+                      /* Push Notification Preview */
+                      <div className="p-6 flex flex-col items-center">
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Mobile notification preview</p>
+                        
+                        {/* iOS-style notification mockup */}
+                        <div className="w-80 bg-white dark:bg-slate-700 rounded-2xl shadow-lg overflow-hidden">
+                          <div className="p-3 flex items-start gap-3">
+                            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-lg font-bold">
+                              V
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between mb-1">
+                                <span className="text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-wide">
+                                  VORAPREP
+                                </span>
+                                <span className="text-xs text-gray-400">now</span>
+                              </div>
+                              <p className="font-semibold text-gray-900 dark:text-white text-sm mb-0.5">
+                                {(previewingTemplate.subject || 'Notification Title')
+                                  .replace(/\{\{firstName\}\}/g, 'John')
+                                  .replace(/\{\{name\}\}/g, 'John')
+                                  .replace(/\{\{streak\}\}/g, '5')
+                                  .replace(/\{\{daysUntilExam\}\}/g, '30')
+                                  .replace(/\{\{.+?\}\}/g, '[value]')}
+                              </p>
+                              <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                                {(previewingTemplate.body || 'Notification body text...')
+                                  .replace(/\{\{firstName\}\}/g, 'John')
+                                  .replace(/\{\{name\}\}/g, 'John')
+                                  .replace(/\{\{streak\}\}/g, '5')
+                                  .replace(/\{\{daysUntilExam\}\}/g, '30')
+                                  .replace(/\{\{.+?\}\}/g, '[value]')}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Android-style notification mockup */}
+                        <div className="mt-6 w-80">
+                          <p className="text-xs text-gray-400 mb-2 text-center">Android style</p>
+                          <div className="bg-gray-100 dark:bg-slate-600 rounded-lg p-3 flex items-start gap-3">
+                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                              V
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-0.5">
+                                <span className="text-xs font-medium text-gray-600 dark:text-gray-300">VoraPrep</span>
+                                <span className="text-xs text-gray-400">• now</span>
+                              </div>
+                              <p className="font-medium text-gray-900 dark:text-white text-sm">
+                                {(previewingTemplate.subject || 'Notification Title')
+                                  .replace(/\{\{firstName\}\}/g, 'John')
+                                  .replace(/\{\{name\}\}/g, 'John')
+                                  .replace(/\{\{streak\}\}/g, '5')
+                                  .replace(/\{\{daysUntilExam\}\}/g, '30')
+                                  .replace(/\{\{.+?\}\}/g, '[value]')}
+                              </p>
+                              <p className="text-xs text-gray-600 dark:text-gray-300 truncate">
+                                {(previewingTemplate.body || 'Notification body text...')
+                                  .replace(/\{\{firstName\}\}/g, 'John')
+                                  .replace(/\{\{name\}\}/g, 'John')
+                                  .replace(/\{\{streak\}\}/g, '5')
+                                  .replace(/\{\{daysUntilExam\}\}/g, '30')
+                                  .replace(/\{\{.+?\}\}/g, '[value]')}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="p-4 border-t border-gray-200 dark:border-slate-700 flex justify-between items-center">
+                    <button
+                      onClick={() => {
+                        setPreviewingTemplate(null);
+                        setEditingTemplate(previewingTemplate);
+                      }}
+                      className="px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      Edit this template →
+                    </button>
+                    <button
+                      onClick={() => setPreviewingTemplate(null)}
+                      className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* External Tools */}
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">🔗 External Monitoring</h3>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://console.firebase.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-lg hover:bg-amber-200 transition-colors"
+                >
+                  🔥 Firebase Console ↗
+                </a>
+                <a
+                  href="https://dashboard.stripe.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 transition-colors"
+                >
+                  💳 Stripe Dashboard ↗
+                </a>
+                <a
+                  href="https://analytics.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg hover:bg-green-200 transition-colors"
+                >
+                  📊 GA4 ↗
+                </a>
+                <a
+                  href="https://resend.com/emails"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 transition-colors"
+                >
+                  📧 Resend ↗
+                </a>
+              </div>
+            </Card>
           </div>
         )}
 
@@ -5715,7 +6912,7 @@ const AdminCMS: React.FC = () => {
                                 <td className="p-2 text-center">{log.questionsAttempted || log.questionsAnswered || 0}</td>
                                 <td className="p-2 text-center text-green-600 dark:text-green-400">{log.questionsCorrect || log.correctAnswers || 0}</td>
                                 <td className="p-2 text-center">{log.lessonsCompleted || 0}</td>
-                                <td className="p-2 text-center">{log.studyTimeMinutes || log.studyMinutes || 0}</td>
+                                <td className="p-2 text-center">{Math.round(log.studyTimeMinutes || log.studyMinutes || 0)}</td>
                               </tr>
                             ))}
                           </tbody>

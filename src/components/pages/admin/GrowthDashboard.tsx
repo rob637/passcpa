@@ -7,13 +7,15 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import clsx from 'clsx';
 import {
   BarChart3, Search, FileText, Megaphone, Zap,
   AlertTriangle, CheckCircle, Target, DollarSign, Eye, MousePointer,
   Globe, Layers, Settings, RefreshCw, ArrowUpRight,
-  ArrowDownRight, ChevronDown, ChevronRight,
+  ArrowDownRight, ChevronDown, ChevronRight, ChevronLeft,
   Lightbulb, BookOpen, PenTool, Award,
-  Shield, Pause, Save, Sliders,
+  Shield, Pause, Save, Sliders, Newspaper, Trash2, Radio,
 } from 'lucide-react';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
@@ -35,14 +37,19 @@ import {
 import {
   getGrowthConfig,
   updateGrowthConfig,
+  getTrackedKeywordsWithRanks,
+  getAllContentBriefs,
+  reseedContentBriefs,
+  deleteAllPendingBriefs,
   type GrowthEngineConfig,
 } from '../../../services/growth/growthFirestore';
+import { SEOStatusTab } from './SEOStatus';
 
 // ============================================================================
 // Types
 // ============================================================================
 
-type DashboardTab = 'overview' | 'keywords' | 'content' | 'sem' | 'technical' | 'settings';
+type DashboardTab = 'overview' | 'keywords' | 'content' | 'sem' | 'technical' | 'seo-status' | 'settings';
 
 const EXAM_COLORS: Record<CourseId, string> = {
   cpa: 'bg-blue-500',
@@ -51,6 +58,43 @@ const EXAM_COLORS: Record<CourseId, string> = {
   cia: 'bg-amber-500',
   cfp: 'bg-green-500',
   cisa: 'bg-cyan-500',
+};
+
+// Section name lookup for all exams (section ID -> full name)
+const SECTION_NAMES: Record<string, string> = {
+  // CPA
+  FAR: 'Financial Accounting and Reporting',
+  AUD: 'Auditing and Attestation',
+  REG: 'Taxation and Regulation',
+  BAR: 'Business Analysis and Reporting',
+  ISC: 'Information Systems and Controls',
+  TCP: 'Tax Compliance and Planning',
+  // EA
+  SEE1: 'Individual Taxation',
+  SEE2: 'Business Taxation',
+  SEE3: 'Representation and Ethics',
+  // CMA
+  CMA1: 'Financial Planning, Performance & Analytics',
+  CMA2: 'Strategic Financial Management',
+  // CIA
+  CIA1: 'Essentials of Internal Auditing',
+  CIA2: 'Practice of Internal Auditing',
+  CIA3: 'Business Knowledge for Internal Auditing',
+  // CFP
+  CFP1: 'Professional Conduct & Regulation',
+  CFP2: 'General Principles of Financial Planning',
+  CFP3: 'Education Planning',
+  CFP4: 'Risk Management & Insurance',
+  CFP5: 'Investment Planning',
+  CFP6: 'Tax Planning',
+  CFP7: 'Retirement Savings & Income Planning',
+  CFP8: 'Estate Planning',
+  // CISA
+  CISA1: 'Information Systems Auditing Process',
+  CISA2: 'Governance and Management of IT',
+  CISA3: 'IS Acquisition, Development & Implementation',
+  CISA4: 'IS Operations and Business Resilience',
+  CISA5: 'Protection of Information Assets',
 };
 
 // ============================================================================
@@ -86,6 +130,7 @@ export default function GrowthDashboard() {
     { id: 'content', label: 'Content', icon: FileText },
     { id: 'sem', label: 'Paid Search', icon: Megaphone },
     { id: 'technical', label: 'Technical SEO', icon: Settings },
+    { id: 'seo-status', label: 'SEO Status', icon: Radio },
     { id: 'settings', label: 'Settings & Budget', icon: Sliders },
   ];
 
@@ -95,15 +140,30 @@ export default function GrowthDashboard() {
       <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-              <Zap className="w-6 h-6 text-amber-500" />
-              Growth Engine
-            </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+            <div className="flex items-center gap-3 mb-1">
+              <Link
+                to="/admin"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                <Zap className="w-6 h-6 text-amber-500" />
+                Growth Engine
+              </h1>
+            </div>
+            <p className="text-sm text-gray-500 dark:text-gray-400 ml-8">
               Automated SEO, SEM & Content — All 6 exams, one dashboard
             </p>
           </div>
           <div className="flex items-center gap-3">
+            <Link
+              to="/admin/articles"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 rounded-lg text-sm font-medium hover:bg-amber-200 dark:hover:bg-amber-900/50 transition-colors"
+            >
+              <Newspaper className="w-4 h-4" />
+              Review Articles
+            </Link>
             <Button
               variant="ghost"
               size="sm"
@@ -147,6 +207,7 @@ export default function GrowthDashboard() {
             {activeTab === 'content' && <ContentTab status={engineStatus} />}
             {activeTab === 'sem' && <SEMTab status={engineStatus} />}
             {activeTab === 'technical' && <TechnicalTab />}
+            {activeTab === 'seo-status' && <SEOStatusTab />}
             {activeTab === 'settings' && <SettingsTab />}
           </>
         )}
@@ -159,7 +220,67 @@ export default function GrowthDashboard() {
 // Overview Tab
 // ============================================================================
 
+type QuickActionStatus = 'ready' | 'running' | 'done';
+
 function OverviewTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> | null }) {
+  const [actionStates, setActionStates] = useState<Record<string, QuickActionStatus>>({
+    seedKeywords: 'ready',
+    generateBriefs: 'ready',
+    buildCampaigns: 'ready',
+    buildSitemap: 'ready',
+    runAudit: 'ready',
+    generateArticle: 'ready',
+  });
+  const [loadingAction, setLoadingAction] = useState<string | null>(null);
+
+  const runAction = async (actionKey: string, actionFn: () => Promise<void>) => {
+    setLoadingAction(actionKey);
+    setActionStates(prev => ({ ...prev, [actionKey]: 'running' }));
+    try {
+      await actionFn();
+      setActionStates(prev => ({ ...prev, [actionKey]: 'done' }));
+    } catch (error) {
+      logger.error(`Quick action ${actionKey} failed:`, error);
+      setActionStates(prev => ({ ...prev, [actionKey]: 'ready' }));
+    } finally {
+      setLoadingAction(null);
+    }
+  };
+
+  const handleSeedKeywords = async () => {
+    // This would call a Cloud Function to seed keywords
+    // For now, show an alert that this requires the Cloud Function
+    alert('Keyword seeding requires running the Cloud Function. Go to Settings → API Connections → Seed Keywords.');
+  };
+
+  const handleGenerateBriefs = async () => {
+    const seedBriefs = httpsCallable(functions, 'growthSeedBriefs');
+    await seedBriefs();
+    alert('Content briefs seeded! Check the Content tab.');
+  };
+
+  const handleBuildCampaigns = async () => {
+    // Generate campaigns locally and show them
+    const cfg = await getGrowthConfig();
+    const allCampaigns = generateAllCampaigns(cfg.examBudgets || {});
+    alert(`Generated ${allCampaigns.length} campaigns! Go to the SEM tab to view them.`);
+  };
+
+  const handleBuildSitemap = async () => {
+    // Sitemap is auto-generated at build time
+    alert('Sitemap is auto-generated at build time. Check /sitemap.xml');
+  };
+
+  const handleRunAudit = async () => {
+    // Switch to Technical tab
+    alert('Go to the Technical tab and click "Run Audit" to perform an on-page SEO audit.');
+  };
+
+  const handleGenerateArticle = async () => {
+    // Redirect to Content tab
+    alert('Go to the Content tab, click on a brief, and use "Generate Draft" to create an article with Gemini AI.');
+  };
+
   if (!status) return null;
 
   const { content, keywords, campaigns } = status;
@@ -300,42 +421,54 @@ function OverviewTab({ status }: { status: ReturnType<typeof getGrowthEngineStat
             title="Seed Keyword Database"
             description={`Generate ${keywords.totalKeywords.toLocaleString()} keywords across all 6 exams`}
             action="Seed Keywords"
-            status="ready"
+            status={actionStates.seedKeywords}
+            loading={loadingAction === 'seedKeywords'}
+            onClick={() => runAction('seedKeywords', handleSeedKeywords)}
           />
           <QuickActionCard
             icon={FileText}
             title="Generate Content Briefs"
             description={`Create ${content.totalBriefs} article briefs from templates`}
             action="Generate Briefs"
-            status="ready"
+            status={actionStates.generateBriefs}
+            loading={loadingAction === 'generateBriefs'}
+            onClick={() => runAction('generateBriefs', handleGenerateBriefs)}
           />
           <QuickActionCard
             icon={Megaphone}
             title="Build SEM Campaigns"
             description={`Set up ${campaigns.totalCampaigns} campaigns with ${campaigns.totalKeywords} keywords`}
             action="Generate Campaigns"
-            status="ready"
+            status={actionStates.buildCampaigns}
+            loading={loadingAction === 'buildCampaigns'}
+            onClick={() => runAction('buildCampaigns', handleBuildCampaigns)}
           />
           <QuickActionCard
             icon={Globe}
             title="Regenerate Sitemap"
             description="Auto-build sitemap.xml from all routes + published articles"
             action="Build Sitemap"
-            status="ready"
+            status={actionStates.buildSitemap}
+            loading={loadingAction === 'buildSitemap'}
+            onClick={() => runAction('buildSitemap', handleBuildSitemap)}
           />
           <QuickActionCard
             icon={Award}
             title="Run SEO Audit"
             description="Check meta tags, structured data, and Core Web Vitals"
             action="Run Audit"
-            status="ready"
+            status={actionStates.runAudit}
+            loading={loadingAction === 'runAudit'}
+            onClick={() => runAction('runAudit', handleRunAudit)}
           />
           <QuickActionCard
             icon={PenTool}
             title="Generate Article"
             description="Pick a brief and auto-generate with Gemini AI"
             action="Generate Content"
-            status="ready"
+            status={actionStates.generateArticle}
+            loading={loadingAction === 'generateArticle'}
+            onClick={() => runAction('generateArticle', handleGenerateArticle)}
           />
         </div>
       </Card>
@@ -347,8 +480,38 @@ function OverviewTab({ status }: { status: ReturnType<typeof getGrowthEngineStat
 // Keywords Tab
 // ============================================================================
 
+interface TrackedKeywordWithRank {
+  id: string;
+  keyword: string;
+  courseId?: string;
+  currentRank: number | null;
+  previousRank: number | null;
+  impressions?: number;
+  clicks?: number;
+  rankingUrl?: string;
+  lastChecked?: { toDate?: () => Date };
+}
+
 function KeywordsTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> | null }) {
   const [selectedExam, setSelectedExam] = useState<CourseId | 'all'>('all');
+  const [trackedKeywords, setTrackedKeywords] = useState<TrackedKeywordWithRank[]>([]);
+  const [loadingRanks, setLoadingRanks] = useState(false);
+  const [ranksLoaded, setRanksLoaded] = useState(false);
+
+  const loadRankData = async () => {
+    setLoadingRanks(true);
+    try {
+      const keywords = await getTrackedKeywordsWithRanks(100);
+      // Filter to only show keywords that have rank data
+      const withRanks = keywords.filter(kw => kw.currentRank !== null && kw.currentRank !== undefined);
+      setTrackedKeywords(withRanks as unknown as TrackedKeywordWithRank[]);
+      setRanksLoaded(true);
+    } catch (error) {
+      logger.error('Failed to load rank data:', error);
+    } finally {
+      setLoadingRanks(false);
+    }
+  };
 
   if (!status) return null;
 
@@ -426,6 +589,125 @@ function KeywordsTab({ status }: { status: ReturnType<typeof getGrowthEngineStat
         </div>
       </Card>
 
+      {/* Rank Tracking Results */}
+      <Card className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+            <BarChart3 className="w-5 h-5 text-blue-500" />
+            Rank Tracking Results
+          </h2>
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={loadRankData}
+            leftIcon={RefreshCw}
+            loading={loadingRanks}
+          >
+            {ranksLoaded ? 'Refresh' : 'Load Ranks'}
+          </Button>
+        </div>
+
+        {!ranksLoaded && !loadingRanks && (
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Click "Load Ranks" to fetch the latest position data from Google Search Console.
+            Ranks are updated daily at 7:00 AM UTC via Cloud Function.
+          </p>
+        )}
+
+        {ranksLoaded && trackedKeywords.length === 0 && (
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            No rank data available yet. The rank tracking Cloud Function runs daily at 7:00 AM UTC. 
+            Make sure your keywords are seeded and the Search Console API is connected.
+          </p>
+        )}
+
+        {trackedKeywords.length > 0 && (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-200 dark:border-gray-700 text-left">
+                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300">Keyword</th>
+                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300 text-center w-20">Position</th>
+                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300 text-center w-20">Change</th>
+                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300 text-right w-24">Impr.</th>
+                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300 text-right w-20">Clicks</th>
+                  <th className="pb-2 font-semibold text-gray-700 dark:text-gray-300">Ranking URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                {trackedKeywords.slice(0, 50).map((kw) => {
+                  const change = kw.previousRank && kw.currentRank 
+                    ? kw.previousRank - kw.currentRank // positive = improved
+                    : 0;
+                  return (
+                    <tr key={kw.id} className="border-b border-gray-100 dark:border-gray-800">
+                      <td className="py-2 text-gray-900 dark:text-white">
+                        <div className="flex items-center gap-2">
+                          <span>{kw.keyword}</span>
+                          {kw.courseId && (
+                            <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-500 uppercase">
+                              {kw.courseId}
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="py-2 text-center">
+                        <span className={clsx(
+                          'font-bold',
+                          kw.currentRank && kw.currentRank <= 10 && 'text-green-600 dark:text-green-400',
+                          kw.currentRank && kw.currentRank > 10 && kw.currentRank <= 30 && 'text-amber-600 dark:text-amber-400',
+                          kw.currentRank && kw.currentRank > 30 && 'text-gray-500',
+                        )}>
+                          {kw.currentRank ?? '-'}
+                        </span>
+                      </td>
+                      <td className="py-2 text-center">
+                        {change !== 0 && (
+                          <span className={clsx(
+                            'flex items-center justify-center gap-0.5 text-xs font-medium',
+                            change > 0 && 'text-green-600 dark:text-green-400',
+                            change < 0 && 'text-red-600 dark:text-red-400',
+                          )}>
+                            {change > 0 ? (
+                              <><ArrowUpRight className="w-3 h-3" />+{change}</>
+                            ) : (
+                              <><ArrowDownRight className="w-3 h-3" />{change}</>
+                            )}
+                          </span>
+                        )}
+                      </td>
+                      <td className="py-2 text-right text-gray-600 dark:text-gray-400">
+                        {(kw.impressions ?? 0).toLocaleString()}
+                      </td>
+                      <td className="py-2 text-right text-gray-600 dark:text-gray-400">
+                        {(kw.clicks ?? 0).toLocaleString()}
+                      </td>
+                      <td className="py-2 text-gray-500 dark:text-gray-500 truncate max-w-[200px]">
+                        {kw.rankingUrl ? (
+                          <a 
+                            href={kw.rankingUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:text-blue-600 dark:hover:text-blue-400"
+                          >
+                            {kw.rankingUrl.replace('https://voraprep.com', '')}
+                          </a>
+                        ) : '-'}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            {trackedKeywords.length > 50 && (
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-center">
+                Showing top 50 of {trackedKeywords.length} tracked keywords
+              </p>
+            )}
+          </div>
+        )}
+      </Card>
+
       {/* Instructions */}
       <Card className="p-6 border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20">
         <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-400 mb-2 flex items-center gap-2">
@@ -452,18 +734,222 @@ function ContentTab({ status }: { status: ReturnType<typeof getGrowthEngineStatu
   const [showBriefs, setShowBriefs] = useState(false);
   const [briefExam, setBriefExam] = useState<CourseId | 'all'>('all');
   const [briefs, setBriefs] = useState<ContentBrief[]>([]);
+  const [loadingBriefs, setLoadingBriefs] = useState(false);
+  const [generatingIds, setGeneratingIds] = useState<Set<string>>(new Set());
+  const [batchGenerating, setBatchGenerating] = useState(false);
+  const [seeding, setSeeding] = useState(false);
+  const [reseeding, setReseeding] = useState(false);
+  const [seeded, setSeeded] = useState(false);
+  const [results, setResults] = useState<{ success: number; failed: number; messages: string[] }>({ success: 0, failed: 0, messages: [] });
+  const [briefsPage, setBriefsPage] = useState(0);
+  const BRIEFS_PER_PAGE = 50;
 
   if (!status) return null;
 
   const { content } = status;
 
-  const loadBriefs = () => {
-    const all = [...generateFullContentMatrix(), ...generateStateCPABriefs()];
-    setBriefs(all);
-    setShowBriefs(true);
+  // Load briefs from Firestore (after seeding)
+  const loadBriefs = async () => {
+    setLoadingBriefs(true);
+    try {
+      const firestoreBriefs = await getAllContentBriefs(500);
+      if (firestoreBriefs.length > 0) {
+        setBriefs(firestoreBriefs);
+        logger.info(`Loaded ${firestoreBriefs.length} briefs from Firestore`);
+      } else {
+        // Fallback to client-side generation for display only (won't work for generation)
+        const all = [...generateFullContentMatrix(), ...generateStateCPABriefs()];
+        setBriefs(all);
+        logger.warn('No briefs in Firestore - showing client-side preview. Seed briefs first!');
+      }
+    } catch (error) {
+      logger.error('Error loading briefs from Firestore', error);
+      // Fallback to client-side
+      const all = [...generateFullContentMatrix(), ...generateStateCPABriefs()];
+      setBriefs(all);
+    } finally {
+      setLoadingBriefs(false);
+      setShowBriefs(true);
+    }
+  };
+
+  // Seed briefs to Firestore (required before generating)
+  const handleSeedBriefs = async () => {
+    setSeeding(true);
+    setResults({ success: 0, failed: 0, messages: ['Seeding briefs to Firestore...'] });
+    
+    try {
+      const seedFn = httpsCallable(functions, 'growthSeedBriefs');
+      const result = await seedFn({});
+      const data = result.data as { seeded: number; skipped: number; message: string };
+      
+      setSeeded(true);
+      setResults({
+        success: data.seeded,
+        failed: 0,
+        messages: [`✓ ${data.message}`]
+      });
+      logger.info('Briefs seeded', data);
+      
+      // Reload briefs from Firestore after seeding
+      await loadBriefs();
+    } catch (error: unknown) {
+      const errMsg = error instanceof Error ? error.message : 'Seeding failed';
+      logger.error('Seed briefs failed', { error: errMsg });
+      setResults({
+        success: 0,
+        failed: 1,
+        messages: [`✗ Failed to seed briefs: ${errMsg}`]
+      });
+    } finally {
+      setSeeding(false);
+    }
+  };
+
+  // Reseed briefs — update titles/outlines from templates (preserves generated content)
+  const handleReseedBriefs = async () => {
+    setReseeding(true);
+    setResults({ success: 0, failed: 0, messages: ['Regenerating brief titles from updated templates...'] });
+    
+    try {
+      // Generate fresh briefs from templates
+      const freshBriefs = [...generateFullContentMatrix(), ...generateStateCPABriefs()];
+      
+      // Reseed — updates 'brief' status items only, preserves generated/published
+      const result = await reseedContentBriefs(freshBriefs);
+      
+      // Show a sample brief title for verification
+      const cfpSample = freshBriefs.find(b => b.id.includes('cfp') && b.id.includes('study-guide'));
+      const sampleMsg = cfpSample ? `💡 Sample: "${cfpSample.title}"` : '';
+      
+      setResults({
+        success: result.updated,
+        failed: 0,
+        messages: [
+          `✓ Updated ${result.updated} briefs with new titles`,
+          result.skipped > 0 ? `↳ Skipped ${result.skipped} (already generated/published)` : '',
+          sampleMsg
+        ].filter(Boolean)
+      });
+      logger.info('Briefs reseeded', result);
+      
+      // Reload briefs from Firestore
+      await loadBriefs();
+    } catch (error: unknown) {
+      const errMsg = error instanceof Error ? error.message : 'Reseed failed';
+      logger.error('Reseed briefs failed', { error: errMsg });
+      setResults({
+        success: 0,
+        failed: 1,
+        messages: [`✗ Failed to reseed briefs: ${errMsg}`]
+      });
+    } finally {
+      setReseeding(false);
+    }
+  };
+
+  // Clear all pending briefs and re-seed from scratch
+  const handleClearAndReseed = async () => {
+    if (!confirm('This will DELETE all pending briefs and re-seed from templates. Generated/published content will be preserved. Continue?')) {
+      return;
+    }
+    
+    setReseeding(true);
+    setResults({ success: 0, failed: 0, messages: ['Deleting pending briefs...'] });
+    
+    try {
+      // Delete all pending briefs
+      const deleted = await deleteAllPendingBriefs();
+      setResults({ success: 0, failed: 0, messages: [`Deleted ${deleted} briefs. Re-seeding...`] });
+      
+      // Re-seed using Cloud Function
+      const seedFn = httpsCallable(functions, 'growthSeedBriefs');
+      const result = await seedFn({});
+      const data = result.data as { seeded: number; skipped: number; message: string };
+      
+      setResults({
+        success: data.seeded,
+        failed: 0,
+        messages: [`✓ Deleted ${deleted} → Seeded ${data.seeded} fresh briefs with correct titles`]
+      });
+      
+      setSeeded(true);
+      await loadBriefs();
+    } catch (error: unknown) {
+      const errMsg = error instanceof Error ? error.message : 'Clear & Reseed failed';
+      logger.error('Clear & Reseed failed', { error: errMsg });
+      setResults({ success: 0, failed: 1, messages: [`✗ ${errMsg}`] });
+    } finally {
+      setReseeding(false);
+    }
+  };
+
+  const handleGenerate = async (brief: ContentBrief) => {
+    if (generatingIds.has(brief.id)) return;
+    
+    setGeneratingIds(prev => new Set([...prev, brief.id]));
+    
+    try {
+      const generateFn = httpsCallable(functions, 'growthGenerateArticle');
+      const result = await generateFn({ briefId: brief.id });
+      const data = result.data as { status: string; wordCount: number; message: string };
+      
+      // Update brief status locally
+      setBriefs(prev => prev.map(b => 
+        b.id === brief.id ? { ...b, status: data.status as 'brief' | 'review' | 'published' } : b
+      ));
+      
+      setResults(prev => ({
+        ...prev,
+        success: prev.success + 1,
+        messages: [...prev.messages, `✓ ${brief.title.substring(0, 40)}... (${data.wordCount} words)`]
+      }));
+      
+      logger.info('Article generated', { briefId: brief.id, status: data.status });
+    } catch (error: unknown) {
+      const errMsg = error instanceof Error ? error.message : 'Generation failed';
+      logger.error('Article generation failed', { briefId: brief.id, error: errMsg });
+      
+      setResults(prev => ({
+        ...prev,
+        failed: prev.failed + 1,
+        messages: [...prev.messages, `✗ ${brief.title.substring(0, 40)}... - ${errMsg}`]
+      }));
+    } finally {
+      setGeneratingIds(prev => {
+        const next = new Set(prev);
+        next.delete(brief.id);
+        return next;
+      });
+    }
+  };
+
+  const handleBatchGenerate = async (count: number = 10) => {
+    // Get briefs that haven't been generated yet
+    const pendingBriefs = filteredBriefs.filter(b => b.status === 'brief').slice(0, count);
+    
+    if (pendingBriefs.length === 0) {
+      setResults({ success: 0, failed: 0, messages: ['No pending briefs to generate.'] });
+      return;
+    }
+    
+    setBatchGenerating(true);
+    setResults({ success: 0, failed: 0, messages: [`Starting batch generation of ${pendingBriefs.length} articles...`] });
+    
+    // Generate sequentially to avoid rate limits
+    for (const brief of pendingBriefs) {
+      await handleGenerate(brief);
+      // Small delay between generations
+      await new Promise(r => setTimeout(r, 500));
+    }
+    
+    setBatchGenerating(false);
   };
 
   const filteredBriefs = briefExam === 'all' ? briefs : briefs.filter(b => b.courseId === briefExam);
+  const pendingCount = filteredBriefs.filter(b => b.status === 'brief').length;
+  const reviewCount = filteredBriefs.filter(b => b.status === 'review').length;
+  const publishedCount = filteredBriefs.filter(b => b.status === 'published').length;
 
   return (
     <div className="space-y-6">
@@ -522,39 +1008,166 @@ function ContentTab({ status }: { status: ReturnType<typeof getGrowthEngineStatu
       {/* Browse Briefs */}
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Content Briefs</h2>
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Content Briefs</h2>
+            {showBriefs && (
+              <div className="text-sm text-gray-500 mt-1">
+                <span className="text-gray-600 dark:text-gray-400">{pendingCount} pending</span>
+                {reviewCount > 0 && <span className="ml-2 text-blue-600 dark:text-blue-400">{reviewCount} in review</span>}
+                {publishedCount > 0 && <span className="ml-2 text-green-600 dark:text-green-400">{publishedCount} published</span>}
+              </div>
+            )}
+          </div>
           <div className="flex items-center gap-3">
             {showBriefs && (
-              <select
-                value={briefExam}
-                onChange={(e) => setBriefExam(e.target.value as CourseId | 'all')}
-                className="text-sm rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1.5"
-              >
-                <option value="all">All Exams ({briefs.length})</option>
-                {(['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'] as CourseId[]).map(id => (
-                  <option key={id} value={id}>{id.toUpperCase()} ({briefs.filter(b => b.courseId === id).length})</option>
-                ))}
-              </select>
+              <>
+                <select
+                  value={briefExam}
+                  onChange={(e) => {
+                    setBriefExam(e.target.value as CourseId | 'all');
+                    setBriefsPage(0); // Reset to first page when filter changes
+                  }}
+                  className="text-sm rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1.5"
+                >
+                  <option value="all">All Exams ({briefs.length})</option>
+                  {(['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'] as CourseId[]).map(id => (
+                    <option key={id} value={id}>{id.toUpperCase()} ({briefs.filter(b => b.courseId === id).length})</option>
+                  ))}
+                </select>
+                {!seeded && (
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    onClick={handleSeedBriefs}
+                    disabled={seeding}
+                    leftIcon={seeding ? RefreshCw : Save}
+                    className={seeding ? '[&_svg]:animate-spin' : ''}
+                  >
+                    {seeding ? 'Seeding...' : 'Seed to Firestore'}
+                  </Button>
+                )}
+                {seeded && (
+                  <>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleReseedBriefs}
+                      disabled={reseeding}
+                      leftIcon={reseeding ? RefreshCw : RefreshCw}
+                      className={reseeding ? '[&_svg]:animate-spin' : ''}
+                      title="Regenerate brief titles from updated templates (preserves generated content)"
+                    >
+                      {reseeding ? 'Reseeding...' : 'Reseed Briefs'}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleClearAndReseed}
+                      disabled={reseeding}
+                      leftIcon={Trash2}
+                      className="text-red-600 hover:text-red-700 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20"
+                      title="Delete all pending briefs and re-seed with new templates"
+                    >
+                      Clear & Reseed
+                    </Button>
+                  </>
+                )}
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={() => handleBatchGenerate(10)}
+                  disabled={batchGenerating || pendingCount === 0 || !seeded}
+                  leftIcon={batchGenerating ? RefreshCw : Zap}
+                  className={batchGenerating ? '[&_svg]:animate-spin' : ''}
+                  title={!seeded ? 'Seed briefs to Firestore first' : ''}
+                >
+                  {batchGenerating ? 'Generating...' : `Generate Batch (10)`}
+                </Button>
+              </>
             )}
             <Button
               variant={showBriefs ? 'ghost' : 'primary'}
               size="sm"
               onClick={loadBriefs}
               leftIcon={showBriefs ? RefreshCw : FileText}
+              disabled={loadingBriefs}
             >
-              {showBriefs ? 'Refresh' : 'Load Briefs'}
+              {loadingBriefs ? 'Loading...' : showBriefs ? 'Refresh' : 'Load Briefs'}
             </Button>
           </div>
         </div>
 
+        {/* Generation Results */}
+        {results.messages.length > 0 && (
+          <div className="mb-4 p-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Generation Results
+              </span>
+              <div className="flex items-center gap-3 text-xs">
+                {results.success > 0 && (
+                  <span className="text-green-600 dark:text-green-400">
+                    {results.success} generated
+                  </span>
+                )}
+                {results.failed > 0 && (
+                  <span className="text-red-600 dark:text-red-400">
+                    {results.failed} failed
+                  </span>
+                )}
+                <button 
+                  onClick={() => setResults({ success: 0, failed: 0, messages: [] })}
+                  className="text-gray-400 hover:text-gray-600"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
+            <div className="space-y-1 max-h-32 overflow-y-auto text-xs text-gray-600 dark:text-gray-400">
+              {results.messages.slice(-10).map((msg, i) => (
+                <div key={i} className={msg.startsWith('✓') ? 'text-green-600 dark:text-green-400' : msg.startsWith('✗') ? 'text-red-600 dark:text-red-400' : ''}>
+                  {msg}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {showBriefs ? (
           <div className="space-y-2 max-h-[600px] overflow-y-auto">
-            {filteredBriefs.slice(0, 50).map((brief, idx) => (
-              <BriefRow key={brief.id} brief={brief} index={idx + 1} />
+            {!seeded && (
+              <div className="mb-3 p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-400 text-sm">
+                <strong>Step 1:</strong> Click "Seed to Firestore" to save briefs before generating articles.
+              </div>
+            )}
+            {filteredBriefs.slice(briefsPage * BRIEFS_PER_PAGE, (briefsPage + 1) * BRIEFS_PER_PAGE).map((brief, idx) => (
+              <BriefRow 
+                key={brief.id} 
+                brief={brief} 
+                index={briefsPage * BRIEFS_PER_PAGE + idx + 1}
+                isGenerating={generatingIds.has(brief.id)}
+                onGenerate={seeded ? handleGenerate : undefined}
+              />
             ))}
-            {filteredBriefs.length > 50 && (
-              <div className="text-center py-3 text-sm text-gray-500">
-                Showing 50 of {filteredBriefs.length} briefs
+            {filteredBriefs.length > BRIEFS_PER_PAGE && (
+              <div className="flex items-center justify-between py-3 px-2 border-t border-gray-200 dark:border-gray-700">
+                <button
+                  onClick={() => setBriefsPage(p => Math.max(0, p - 1))}
+                  disabled={briefsPage === 0}
+                  className="px-3 py-1.5 text-sm rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  ← Previous
+                </button>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  Page {briefsPage + 1} of {Math.ceil(filteredBriefs.length / BRIEFS_PER_PAGE)} ({filteredBriefs.length} briefs)
+                </span>
+                <button
+                  onClick={() => setBriefsPage(p => Math.min(Math.ceil(filteredBriefs.length / BRIEFS_PER_PAGE) - 1, p + 1))}
+                  disabled={briefsPage >= Math.ceil(filteredBriefs.length / BRIEFS_PER_PAGE) - 1}
+                  className="px-3 py-1.5 text-sm rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Next →
+                </button>
               </div>
             )}
           </div>
@@ -748,8 +1361,123 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
 // Technical SEO Tab
 // ============================================================================
 
+interface AuditResult {
+  category: string;
+  item: string;
+  status: 'pass' | 'warning' | 'fail';
+  detail: string;
+}
+
 function TechnicalTab() {
   const [auditRunning, setAuditRunning] = useState(false);
+  const [auditResults, setAuditResults] = useState<AuditResult[] | null>(null);
+
+  const runSeoAudit = async () => {
+    setAuditRunning(true);
+    setAuditResults(null);
+
+    // Small delay to show the loading state
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    const results: AuditResult[] = [];
+
+    // Check meta tags
+    const title = document.querySelector('title')?.textContent;
+    results.push({
+      category: 'Meta',
+      item: 'Title Tag',
+      status: title && title.length >= 10 && title.length <= 60 ? 'pass' : title ? 'warning' : 'fail',
+      detail: title ? `"${title}" (${title.length} chars)` : 'Missing title tag',
+    });
+
+    const metaDesc = document.querySelector('meta[name="description"]')?.getAttribute('content');
+    results.push({
+      category: 'Meta',
+      item: 'Meta Description',
+      status: metaDesc && metaDesc.length >= 50 && metaDesc.length <= 160 ? 'pass' : metaDesc ? 'warning' : 'fail',
+      detail: metaDesc ? `${metaDesc.length} chars` : 'Missing meta description',
+    });
+
+    const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href');
+    results.push({
+      category: 'Meta',
+      item: 'Canonical URL',
+      status: canonical ? 'pass' : 'warning',
+      detail: canonical || 'No canonical URL set',
+    });
+
+    // Check Open Graph
+    const ogTitle = document.querySelector('meta[property="og:title"]')?.getAttribute('content');
+    const ogDesc = document.querySelector('meta[property="og:description"]')?.getAttribute('content');
+    const ogImage = document.querySelector('meta[property="og:image"]')?.getAttribute('content');
+    results.push({
+      category: 'Social',
+      item: 'Open Graph Tags',
+      status: ogTitle && ogDesc && ogImage ? 'pass' : ogTitle || ogDesc ? 'warning' : 'fail',
+      detail: `Title: ${ogTitle ? '✓' : '✗'}, Desc: ${ogDesc ? '✓' : '✗'}, Image: ${ogImage ? '✓' : '✗'}`,
+    });
+
+    // Check structured data
+    const jsonLdScripts = document.querySelectorAll('script[type="application/ld+json"]');
+    results.push({
+      category: 'Schema',
+      item: 'JSON-LD Structured Data',
+      status: jsonLdScripts.length > 0 ? 'pass' : 'warning',
+      detail: `${jsonLdScripts.length} JSON-LD script(s) found`,
+    });
+
+    // Check headings
+    const h1s = document.querySelectorAll('h1');
+    results.push({
+      category: 'Content',
+      item: 'H1 Heading',
+      status: h1s.length === 1 ? 'pass' : h1s.length === 0 ? 'fail' : 'warning',
+      detail: h1s.length === 1 ? 'Single H1 found' : `${h1s.length} H1 tags (should be exactly 1)`,
+    });
+
+    const h2s = document.querySelectorAll('h2');
+    results.push({
+      category: 'Content',
+      item: 'H2 Subheadings',
+      status: h2s.length >= 2 ? 'pass' : h2s.length > 0 ? 'warning' : 'fail',
+      detail: `${h2s.length} H2 tags found`,
+    });
+
+    // Check images
+    const images = document.querySelectorAll('img');
+    const imagesWithoutAlt = Array.from(images).filter(img => !img.alt || img.alt.trim() === '');
+    results.push({
+      category: 'Accessibility',
+      item: 'Image Alt Tags',
+      status: imagesWithoutAlt.length === 0 ? 'pass' : imagesWithoutAlt.length <= 2 ? 'warning' : 'fail',
+      detail: `${images.length} images, ${imagesWithoutAlt.length} missing alt text`,
+    });
+
+    // Check internal links
+    const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="' + window.location.origin + '"]');
+    results.push({
+      category: 'Links',
+      item: 'Internal Links',
+      status: internalLinks.length >= 3 ? 'pass' : internalLinks.length > 0 ? 'warning' : 'fail',
+      detail: `${internalLinks.length} internal links found`,
+    });
+
+    // Check external links
+    const allLinks = document.querySelectorAll('a[href]');
+    const externalLinks = Array.from(allLinks).filter(a => {
+      const href = a.getAttribute('href');
+      return href && (href.startsWith('http://') || href.startsWith('https://')) && !href.includes(window.location.hostname);
+    });
+    results.push({
+      category: 'Links',
+      item: 'External Links',
+      status: 'pass',
+      detail: `${externalLinks.length} external links found`,
+    });
+
+    setAuditResults(results);
+    setAuditRunning(false);
+  };
 
   return (
     <div className="space-y-6">
@@ -782,17 +1510,53 @@ function TechnicalTab() {
           <Button
             variant="primary"
             size="sm"
-            onClick={() => setAuditRunning(true)}
+            onClick={runSeoAudit}
             leftIcon={Search}
             loading={auditRunning}
           >
             Run Audit
           </Button>
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
           Scans the current page for meta tags, headings, structured data, images, and internal links.
           For a full site audit, use the Cloud Function which crawls all public pages.
         </p>
+
+        {/* Audit Results */}
+        {auditResults && (
+          <div className="mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Audit Results</h3>
+            <div className="space-y-2">
+              {auditResults.map((result, idx) => (
+                <div key={idx} className="flex items-center gap-3 text-sm">
+                  <span className={clsx(
+                    'w-2 h-2 rounded-full flex-shrink-0',
+                    result.status === 'pass' && 'bg-green-500',
+                    result.status === 'warning' && 'bg-amber-500',
+                    result.status === 'fail' && 'bg-red-500'
+                  )} />
+                  <span className="font-medium text-gray-700 dark:text-gray-300 w-40 flex-shrink-0">
+                    {result.item}
+                  </span>
+                  <span className="text-gray-500 dark:text-gray-400 truncate">
+                    {result.detail}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 flex gap-4 text-xs text-gray-500 dark:text-gray-400">
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-green-500" /> Pass
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-amber-500" /> Warning
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-red-500" /> Fail
+              </span>
+            </div>
+          </div>
+        )}
       </Card>
 
       {/* Architecture Recommendations */}
@@ -832,6 +1596,8 @@ function SettingsTab() {
   const [saved, setSaved] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [testing, setTesting] = useState(false);
+  const [seeding, setSeeding] = useState(false);
+  const [seedResult, setSeedResult] = useState<{ success: boolean; message: string } | null>(null);
   const [testResult, setTestResult] = useState<{
     googleAds?: {connected: boolean; accountName?: string; error?: string};
     searchConsole?: {connected: boolean; siteUrl?: string; error?: string};
@@ -970,6 +1736,26 @@ function SettingsTab() {
       });
     } finally {
       setTesting(false);
+    }
+  };
+
+  // Seed content briefs to Firestore
+  const seedContentBriefs = async () => {
+    setSeeding(true);
+    setSeedResult(null);
+    try {
+      const seedFn = httpsCallable(functions, 'growthSeedBriefs');
+      const result = await seedFn({});
+      const data = result.data as { seeded?: number; skipped?: number; total?: number; message?: string };
+      setSeedResult({
+        success: true,
+        message: data.message || `Seeded ${data.seeded || 0} briefs (${data.skipped || 0} already existed)`,
+      });
+    } catch (error: unknown) {
+      const errMsg = error instanceof Error ? error.message : 'Unknown error';
+      setSeedResult({ success: false, message: errMsg });
+    } finally {
+      setSeeding(false);
     }
   };
 
@@ -1264,6 +2050,33 @@ function SettingsTab() {
               onChange={(e) => updateField('maxArticlesPerWeek', Number(e.target.value))}
               className="w-20 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white px-2 py-1 text-sm"
             />
+          </div>
+
+          {/* Seed Content Briefs */}
+          <div className="flex items-center justify-between p-4 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
+            <div>
+              <div className="text-sm font-medium text-blue-800 dark:text-blue-300 flex items-center gap-2">
+                <Layers className="w-4 h-4" />
+                Seed Content Briefs
+              </div>
+              <div className="text-xs text-blue-700 dark:text-blue-400">
+                Populate 100+ article topics (study guides, comparisons, etc.) for auto-publishing.
+              </div>
+              {seedResult && (
+                <div className={`text-xs mt-1 ${seedResult.success ? 'text-green-600' : 'text-red-600'}`}>
+                  {seedResult.message}
+                </div>
+              )}
+            </div>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={seedContentBriefs}
+              loading={seeding}
+              leftIcon={Zap}
+            >
+              {seeding ? 'Seeding...' : 'Seed Briefs'}
+            </Button>
           </div>
         </div>
       </Card>
@@ -1579,13 +2392,17 @@ function QuickActionCard({
   title,
   description,
   action,
-  status: _status,
+  status,
+  onClick,
+  loading,
 }: {
   icon: typeof Search;
   title: string;
   description: string;
   action: string;
   status: 'ready' | 'running' | 'done';
+  onClick?: () => void;
+  loading?: boolean;
 }) {
   return (
     <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
@@ -1596,9 +2413,33 @@ function QuickActionCard({
         <div className="flex-1">
           <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{title}</h3>
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{description}</p>
-          <button className="mt-2 text-xs font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 flex items-center gap-1">
-            {action}
-            <ArrowUpRight className="w-3 h-3" />
+          <button 
+            onClick={onClick}
+            disabled={loading || status === 'done'}
+            className={clsx(
+              "mt-2 text-xs font-medium flex items-center gap-1 transition-colors",
+              status === 'done' 
+                ? 'text-green-600 dark:text-green-400' 
+                : 'text-blue-600 dark:text-blue-400 hover:text-blue-700',
+              loading && 'opacity-50 cursor-wait'
+            )}
+          >
+            {loading ? (
+              <>
+                <RefreshCw className="w-3 h-3 animate-spin" />
+                Running...
+              </>
+            ) : status === 'done' ? (
+              <>
+                <CheckCircle className="w-3 h-3" />
+                Done
+              </>
+            ) : (
+              <>
+                {action}
+                <ArrowUpRight className="w-3 h-3" />
+              </>
+            )}
           </button>
         </div>
       </div>
@@ -1606,36 +2447,235 @@ function QuickActionCard({
   );
 }
 
-function BriefRow({ brief, index }: { brief: ContentBrief; index: number }) {
+function BriefRow({ 
+  brief, 
+  index,
+  isGenerating,
+  onGenerate,
+}: { 
+  brief: ContentBrief; 
+  index: number;
+  isGenerating?: boolean;
+  onGenerate?: (brief: ContentBrief) => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const isGenerated = brief.status === 'review' || brief.status === 'published';
+  
   return (
-    <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 transition-colors">
-      <div className="w-8 text-center text-xs text-gray-400">{index}</div>
-      <div className={`w-3 h-3 rounded-full ${EXAM_COLORS[brief.courseId]}`} />
-      <div className="flex-1 min-w-0">
-        <div className="text-sm font-medium text-gray-900 dark:text-white truncate">
-          {brief.title}
+    <div className="rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors overflow-hidden">
+      <div 
+        className="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800"
+        onClick={() => setExpanded(!expanded)}
+      >
+        <div className="w-8 text-center text-xs text-gray-400">{index}</div>
+        <div className={`w-3 h-3 rounded-full ${EXAM_COLORS[brief.courseId]}`} />
+        <div className="flex-1 min-w-0">
+          <div className="text-sm font-medium text-gray-900 dark:text-white truncate">
+            {brief.title}
+          </div>
+          <div className="text-xs text-gray-500 flex items-center gap-2 mt-0.5">
+            <span className="capitalize">{brief.contentType.replace(/-/g, ' ')}</span>
+            <span>•</span>
+            <span>{brief.courseId.toUpperCase()}</span>
+            {brief.section && <><span>•</span><span title={brief.section}>{SECTION_NAMES[brief.section] || brief.section}</span></>}
+            <span>•</span>
+            <span>{brief.wordCountTarget.toLocaleString()} words</span>
+          </div>
         </div>
-        <div className="text-xs text-gray-500 flex items-center gap-2 mt-0.5">
-          <span className="capitalize">{brief.contentType.replace(/-/g, ' ')}</span>
-          <span>•</span>
-          <span>{brief.courseId.toUpperCase()}</span>
-          {brief.section && <><span>•</span><span>{brief.section}</span></>}
-          <span>•</span>
-          <span>{brief.wordCountTarget.toLocaleString()} words</span>
+        <div className="flex items-center gap-2">
+          <span className={`text-xs px-2 py-0.5 rounded font-medium ${
+            brief.priority === 1 ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400' :
+            brief.priority === 2 ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
+            'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
+          }`}>
+            P{brief.priority}
+          </span>
+          <span className={`text-xs px-2 py-0.5 rounded font-medium capitalize ${
+            brief.status === 'published' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+            brief.status === 'approved' ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400' :
+            brief.status === 'review' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
+            'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
+          }`}>
+            {brief.status}
+          </span>
+          {/* Distribution icons for published articles */}
+          {brief.status === 'published' && (
+            <div className="flex items-center gap-1 ml-1" title="Distribution Status">
+              <span 
+                className={`w-5 h-5 flex items-center justify-center rounded ${
+                  brief.distribution?.blog?.status === 'posted' 
+                    ? 'bg-green-100 text-green-600 dark:bg-green-900/40 dark:text-green-400' 
+                    : 'bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-500'
+                }`}
+                title={`Blog: ${brief.distribution?.blog?.status || 'published'}`}
+              >
+                <Globe className="w-3 h-3" />
+              </span>
+              <span 
+                className={`w-5 h-5 flex items-center justify-center rounded ${
+                  brief.distribution?.rss?.status === 'included' 
+                    ? 'bg-orange-100 text-orange-600 dark:bg-orange-900/40 dark:text-orange-400' 
+                    : 'bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-500'
+                }`}
+                title={`RSS: ${brief.distribution?.rss?.status || 'included'}`}
+              >
+                <Newspaper className="w-3 h-3" />
+              </span>
+              <span 
+                className={`w-5 h-5 flex items-center justify-center rounded ${
+                  brief.distribution?.linkedin?.status === 'posted' 
+                    ? 'bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400' 
+                    : brief.distribution?.linkedin?.status === 'skipped'
+                    ? 'bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-400'
+                    : 'bg-gray-100 text-gray-400 dark:bg-gray-700 dark:text-gray-500'
+                }`}
+                title={`LinkedIn: ${brief.distribution?.linkedin?.status || 'pending'}`}
+              >
+                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </span>
+            </div>
+          )}
+          {expanded ? <ChevronDown className="w-4 h-4 text-gray-400" /> : <ChevronRight className="w-4 h-4 text-gray-400" />}
         </div>
       </div>
-      <div className="flex items-center gap-2">
-        <span className={`text-xs px-2 py-0.5 rounded font-medium ${
-          brief.priority === 1 ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400' :
-          brief.priority === 2 ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
-          'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
-        }`}>
-          P{brief.priority}
-        </span>
-        <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 capitalize">
-          {brief.status}
-        </span>
-      </div>
+      
+      {/* Expanded Section */}
+      {expanded && (
+        <div className="px-4 pb-4 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+          {/* Outline Preview */}
+          {brief.outline && brief.outline.length > 0 && (
+            <div className="mt-3">
+              <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase mb-2">Outline</h4>
+              <div className="space-y-2">
+                {brief.outline.map((section, i) => (
+                  <div key={i} className="text-xs">
+                    <div className="font-medium text-gray-800 dark:text-gray-200">{section.heading}</div>
+                    {section.keyPoints && section.keyPoints.length > 0 && (
+                      <ul className="mt-1 ml-3 text-gray-500 dark:text-gray-400 list-disc">
+                        {section.keyPoints.slice(0, 3).map((kp, j) => (
+                          <li key={j}>{kp}</li>
+                        ))}
+                        {section.keyPoints.length > 3 && (
+                          <li className="text-gray-400">+{section.keyPoints.length - 3} more...</li>
+                        )}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {/* Target Keywords */}
+          {brief.targetKeywords && brief.targetKeywords.length > 0 && (
+            <div className="mt-3">
+              <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase mb-2">Target Keywords</h4>
+              <div className="flex flex-wrap gap-1">
+                {brief.targetKeywords.map((kw, i) => (
+                  <span key={i} className="text-xs px-2 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-gray-700 dark:text-gray-300">
+                    {kw}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {/* Distribution Details for published articles */}
+          {brief.status === 'published' && (
+            <div className="mt-3">
+              <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase mb-2">Distribution</h4>
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-xs">
+                  <Globe className="w-3.5 h-3.5 text-green-500" />
+                  <span className="text-gray-600 dark:text-gray-400">Blog:</span>
+                  <a 
+                    href={`https://voraprep.com/blog/${brief.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    voraprep.com/blog/{brief.slug}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-xs">
+                  <Newspaper className="w-3.5 h-3.5 text-orange-500" />
+                  <span className="text-gray-600 dark:text-gray-400">RSS:</span>
+                  <span className="text-gray-700 dark:text-gray-300">Included in feed.xml</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs">
+                  <svg className="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                  <span className="text-gray-600 dark:text-gray-400">LinkedIn:</span>
+                  {brief.distribution?.linkedin?.status === 'posted' && brief.distribution?.linkedin?.postUrl ? (
+                    <a 
+                      href={brief.distribution.linkedin.postUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      View Post
+                    </a>
+                  ) : brief.linkedInUrl ? (
+                    <a 
+                      href={brief.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      View Post
+                    </a>
+                  ) : (
+                    <span className={`${
+                      brief.distribution?.linkedin?.status === 'skipped' 
+                        ? 'text-amber-600 dark:text-amber-400' 
+                        : 'text-gray-500 dark:text-gray-400'
+                    }`}>
+                      {brief.distribution?.linkedin?.status === 'skipped' 
+                        ? `Skipped${brief.distribution.linkedin.reason ? `: ${brief.distribution.linkedin.reason}` : ''}`
+                        : 'Not posted'}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {/* Generate Button */}
+          {!isGenerated && onGenerate && (
+            <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+              <Button
+                size="sm"
+                variant="primary"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onGenerate(brief);
+                }}
+                disabled={isGenerating}
+                leftIcon={isGenerating ? RefreshCw : Zap}
+                className={isGenerating ? '[&_svg]:animate-spin' : ''}
+              >
+                {isGenerating ? 'Generating...' : 'Generate Article'}
+              </Button>
+            </div>
+          )}
+          
+          {/* Already Generated Notice */}
+          {isGenerated && (
+            <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+              <Link 
+                to="/admin/articles"
+                className="text-sm text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+              >
+                {brief.status === 'review' ? 'View in Review Queue' : 'View Published Article'}
+                <ArrowUpRight className="w-3 h-3" />
+              </Link>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

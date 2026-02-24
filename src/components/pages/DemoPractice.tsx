@@ -213,7 +213,7 @@ const DemoPractice = () => {
       {/* Header */}
       <header className="p-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo-icon.svg" alt="VoraPrep" className="h-8" />
+          <img src="/logo-icon.svg" alt="VoraPrep" width="32" height="32" className="h-8" />
           <span className="text-white font-bold hidden sm:inline">VoraPrep</span>
         </Link>
         <div className="flex items-center gap-4">

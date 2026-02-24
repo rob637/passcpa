@@ -1599,7 +1599,8 @@ export const BAR_TBS_ALL: TBS[] = [...BAR_TBS, ...BAR_GAP_FILL, ...BAR_APPLICATI
 export const ISC_TBS_ALL: TBS[] = [...ISC_TBS, ...ISC_GAP_FILL, ...ISC_TBS_WORLD_CLASS, ...ISC_TBS_BATCH2, ...ISC_TBS_BATCH3]; // Information Systems & Controls  
 export const TCP_TBS_ALL: TBS[] = [...TCP_TBS, ...TCP_GAP_FILL, ...TCP_APPLICATION, ...ADDITIONAL_TAX_FORM_TBS.filter(t => t.section === 'TCP'), ...TCP_TBS_WORLD_CLASS, ...TCP_TBS_BATCH2, ...TCP_TBS_BATCH3]; // Tax Compliance & Planning
 
-export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BEC_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
+// BEC retired December 2023 — BEC_TBS_ALL kept for reference but excluded from active content
+export const ALL_TBS: TBS[] = [...FAR_TBS_ALL, ...REG_TBS_ALL, ...AUD_TBS_ALL, ...BAR_TBS_ALL, ...ISC_TBS_ALL, ...TCP_TBS_ALL];
 
 // Helper functions
 export const getTBSBySection = (section: ExamSection) => {
@@ -1610,8 +1611,6 @@ export const getTBSBySection = (section: ExamSection) => {
       return REG_TBS_ALL;
     case 'AUD':
       return AUD_TBS_ALL;
-    case 'BEC':
-      return BEC_TBS_ALL;
     case 'BAR':
       return BAR_TBS_ALL;
     case 'ISC':
@@ -1631,9 +1630,11 @@ export const getTBSStats = () => ({
   total: ALL_TBS.length,
   bySection: {
     FAR: FAR_TBS_ALL.length,
-    REG: REG_TBS_ALL.length,
     AUD: AUD_TBS_ALL.length,
-    BEC: BEC_TBS_ALL.length,
+    REG: REG_TBS_ALL.length,
+    BAR: BAR_TBS_ALL.length,
+    ISC: ISC_TBS_ALL.length,
+    TCP: TCP_TBS_ALL.length,
   },
   byType: Object.values(TBS_TYPES).reduce((acc: Record<string, number>, type) => {
     acc[type] = ALL_TBS.filter((tbs) => tbs.type === type).length;

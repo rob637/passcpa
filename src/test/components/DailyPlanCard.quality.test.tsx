@@ -31,6 +31,8 @@ vi.mock('../../hooks/useAuth', () => ({
     userProfile: {
       examSection: 'FAR',
       dailyGoal: 50,
+      // Include exam date so component doesn't show "missing exam date" state
+      examDates: { CPA: new Date('2026-06-15') },
     },
   })),
 }));
@@ -49,7 +51,19 @@ vi.mock('../../hooks/useStudy', () => ({
 vi.mock('../../providers/CourseProvider', () => ({
   useCourse: vi.fn(() => ({
     courseId: 'cpa',
+    course: { id: 'cpa', name: 'CPA' },
   })),
+}));
+
+// Mock profileHelpers to return valid exam date
+vi.mock('../../utils/profileHelpers', () => ({
+  getExamDate: vi.fn(() => new Date('2026-06-15')),
+  getCurrentSection: vi.fn(() => 'FAR'),
+}));
+
+// Mock sectionUtils to return valid section
+vi.mock('../../utils/sectionUtils', () => ({
+  getDefaultSection: vi.fn(() => 'FAR'),
 }));
 
 vi.mock('../../components/navigation', () => ({

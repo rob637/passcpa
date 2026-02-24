@@ -331,4 +331,67 @@ export const useArticleSchema = (article: {
   }, [article]);
 };
 
+/**
+ * Extract FAQ items from markdown content.
+ * Looks for H2/H3 headings that end with "?" followed by content.
+ */
+export function extractFAQsFromMarkdown(content: string): Array<{ question: string; answer: string }> {
+  const faqs: Array<{ question: string; answer: string }> = [];
+  
+  // Split by headings (## or ###)
+  const sections = content.split(/(?=^#{2,3}\s)/m);
+  
+  for (const section of sections) {
+    // Check if heading ends with ?
+    const headingMatch = section.match(/^#{2,3}\s+(.+\?)\s*\n/);
+    if (headingMatch) {
+      const question = headingMatch[1].trim();
+      // Get the content after the heading (first paragraph)
+      const answerContent = section.slice(headingMatch[0].length).trim();
+      // Take first paragraph as answer (up to next heading or double newline)
+      const answer = answerContent.split(/\n\n|^#{2,3}/m)[0]
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove markdown links, keep text
+        .replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold
+        .replace(/\*([^*]+)\*/g, '$1') // Remove italic
+        .trim();
+      
+      if (answer.length > 20 && answer.length < 1000) {
+        faqs.push({ question, answer });
+      }
+    }
+  }
+  
+  // Limit to 10 FAQs (Google typically shows up to 10)
+  return faqs.slice(0, 10);
+}
+
+/**
+ * Inject FAQPage structured data (for blog articles with Q&A content)
+ */
+export const useFAQSchema = (faqs: Array<{ question: string; answer: string }>) => {
+  useEffect(() => {
+    if (!faqs || faqs.length === 0) return;
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, [faqs]);
+};
+
 export default useCourseSchema;

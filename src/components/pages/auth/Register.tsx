@@ -118,7 +118,7 @@ const Register = () => {
       trackEvent('signup_completed', { method: 'google' });
       // Note: Google Ads conversion tracking for new Google users is handled in AuthProvider
       void googleResult;
-      navigate('/onboarding');
+      navigate('/'); // Go directly to dashboard - contextual prompts handle setup
     } catch (err: any) {
       logger.error('Google sign-up error:', err);
       if (err.code === 'auth/popup-closed-by-user') {

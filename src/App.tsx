@@ -91,10 +91,25 @@ const DemoPractice = lazy(() => import('./components/pages/DemoPractice'));
 const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
 const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
 const GrowthDashboard = lazy(() => import('./components/pages/admin/GrowthDashboard'));
+const ArticleReview = lazy(() => import('./components/pages/admin/ArticleReview'));
 const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
 const LessonEditor = lazy(() => import('./components/pages/admin/LessonEditor'));
 const WCEditor = lazy(() => import('./components/pages/admin/WCEditor'));
 const TBSEditor = lazy(() => import('./components/pages/admin/TBSEditor'));
+const UserAnalyticsDashboard = lazy(() => import('./components/pages/admin/UserAnalyticsDashboard'));
+const ReferralSystem = lazy(() => import('./components/pages/admin/ReferralSystem'));
+const DiagnosticLeadMagnet = lazy(() => import('./components/pages/admin/DiagnosticLeadMagnet'));
+const TestimonialHarvester = lazy(() => import('./components/pages/admin/TestimonialHarvester'));
+
+// Blog Pages (public, SEO content)
+const BlogIndex = lazy(() => import('./components/pages/blog/BlogIndex'));
+const DynamicArticle = lazy(() => import('./components/pages/blog/DynamicArticle'));
+const HowToPassFAR = lazy(() => import('./components/pages/blog/HowToPassFAR'));
+const EAvsCPA = lazy(() => import('./components/pages/blog/EAvsCPA'));
+const CPAStudySchedule2026 = lazy(() => import('./components/pages/blog/CPAStudySchedule2026'));
+
+// Public Lead Magnet Pages
+const DiagnosticPage = lazy(() => import('./components/pages/DiagnosticPage'));
 
 // Legal Pages
 const Terms = lazy(() => import('./components/pages/legal/Terms'));
@@ -218,27 +233,13 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
     return <FullPageLoader />;
   }
 
-  // Redirect to onboarding if not complete for the current course
-  // Check per-course onboarding status (with fallback to legacy global flag for existing users)
-  if (!skipOnboarding && userProfile && location.pathname !== '/onboarding') {
-    const activeCourse = courseId; // Use courseId from CourseProvider
-    const courseOnboarded = userProfile.onboardingCompleted?.[activeCourse];
-    const legacyOnboarded = userProfile.onboardingComplete; // Legacy global flag
-    
-    // If course-specific onboarding is not done, redirect
-    // Use legacy flag only if onboardingCompleted map doesn't exist yet (for migration)
-    const isOnboarded = courseOnboarded ?? (legacyOnboarded && !userProfile.onboardingCompleted);
-    
-    if (!isOnboarded) {
-      // Preserve the course context by storing it before redirect
-      // This allows Onboarding to pick up the correct course
-      // Only set if not already present (don't overwrite registration-flow pendingCourse)
-      if (!localStorage.getItem('pendingCourse')) {
-        localStorage.setItem('pendingCourse', activeCourse);
-      }
-      return <Navigate to="/onboarding" replace />;
-    }
-  }
+  // ONBOARDING REMOVED: Users land directly on dashboard
+  // The dashboard now has all the contextual prompts they need:
+  // - Exam date prompt at top of Home
+  // - Section picker in header
+  // - Daily Plan card with "set exam date" message
+  // - Diagnostic quiz prompt can appear in Practice page
+  // This gets users to value in 0 screens after registration.
 
   return children;
 };
@@ -607,6 +608,60 @@ function App() {
                     </SuspensePage>
                   }
                 />
+
+                {/* Blog Routes (public, SEO content) */}
+                <Route
+                  path="/blog"
+                  element={
+                    <SuspensePage>
+                      <BlogIndex />
+                    </SuspensePage>
+                  }
+                />
+                {/* Static blog articles (hand-crafted) */}
+                <Route
+                  path="/blog/how-to-pass-far-first-try"
+                  element={
+                    <SuspensePage>
+                      <HowToPassFAR />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/blog/ea-vs-cpa-which-certification"
+                  element={
+                    <SuspensePage>
+                      <EAvsCPA />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/blog/cpa-exam-study-schedule-2026"
+                  element={
+                    <SuspensePage>
+                      <CPAStudySchedule2026 />
+                    </SuspensePage>
+                  }
+                />
+                {/* Dynamic blog articles (from Firestore/growth_content) */}
+                <Route
+                  path="/blog/:slug"
+                  element={
+                    <SuspensePage>
+                      <DynamicArticle />
+                    </SuspensePage>
+                  }
+                />
+                
+                {/* Public Diagnostic Quiz (lead magnet) */}
+                <Route
+                  path="/diagnostic/:configId"
+                  element={
+                    <SuspensePage>
+                      <DiagnosticPage />
+                    </SuspensePage>
+                  }
+                />
                 
                 {/* Email unsubscribe (public, one-click) */}
                 <Route
@@ -679,11 +734,31 @@ function App() {
 
                 {/* Admin Routes - requires isAdmin: true in user profile */}
                 <Route
+                  path="/admin"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <AdminCMS />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
                   path="/admin/cms"
                   element={
                     <AdminRoute>
                       <SuspensePage>
                         <AdminCMS />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/articles"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <ArticleReview />
                       </SuspensePage>
                     </AdminRoute>
                   }
@@ -744,6 +819,46 @@ function App() {
                     <AdminRoute>
                       <SuspensePage>
                         <GrowthDashboard />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/analytics"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <UserAnalyticsDashboard />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/referrals"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <ReferralSystem />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/diagnostics"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <DiagnosticLeadMagnet />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/testimonials"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <TestimonialHarvester />
                       </SuspensePage>
                     </AdminRoute>
                   }

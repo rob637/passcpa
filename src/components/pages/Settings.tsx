@@ -106,6 +106,7 @@ const Settings: React.FC = () => {
   const [activeTab, setActiveTab] = useState(initialTab);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
   const [updateCheckResult, setUpdateCheckResult] = useState<'none' | 'available' | null>(null);
@@ -302,6 +303,8 @@ const Settings: React.FC = () => {
 
   const handleSave = async () => {
     setIsSaving(true);
+    setSaveError(null);
+    
     try {
       // Create multi-course aware exam date update
       // Pass courseId so single-exam courses (CFP, CISA) use course ID as key
@@ -311,6 +314,14 @@ const Settings: React.FC = () => {
         examDate ? new Date(examDate) : null,
         courseId
       );
+      
+      // Debug: Log what we're saving
+      logger.log('[Settings] Saving exam date:', {
+        courseId,
+        examDate,
+        examDateUpdate,
+        examSection,
+      });
       
       // Save profile settings
       await updateUserProfile({
@@ -324,27 +335,44 @@ const Settings: React.FC = () => {
         timezone,
       });
       
-      // Setup daily reminder using unified notification service
-      if (user?.uid) {
-        await setupDailyReminder(
-          user.uid,
-          notifications.dailyReminder,
-          reminderTime || '09:00'
-        );
-        
-        // Update weekly report preference
-        await setWeeklyReportEnabled(user.uid, notifications.weeklyReport);
-        
-        // Clear daily plan cache to force regeneration with new exam date/daily goal
-        // This ensures the plan recalculates intensity based on the new exam date
-        await clearTodaysPlan(user.uid, examSection);
-        logger.log('Daily plan cache cleared - will regenerate with updated settings');
-      }
+      logger.log('[Settings] Profile updated successfully');
       
+      // Profile saved successfully - show success immediately
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 2000);
+      
+      // Non-critical post-save tasks (don't block success)
+      if (user?.uid) {
+        try {
+          await setupDailyReminder(
+            user.uid,
+            notifications.dailyReminder,
+            reminderTime || '09:00'
+          );
+        } catch (e) {
+          logger.warn('[Settings] Daily reminder setup failed (non-critical):', e);
+        }
+        
+        try {
+          await setWeeklyReportEnabled(user.uid, notifications.weeklyReport);
+        } catch (e) {
+          logger.warn('[Settings] Weekly report pref update failed (non-critical):', e);
+        }
+        
+        // Clear daily plan cache to force regeneration with new exam date/daily goal
+        try {
+          await clearTodaysPlan(user.uid, examSection);
+          logger.log('Daily plan cache cleared - will regenerate with updated settings');
+        } catch (e) {
+          logger.warn('[Settings] Daily plan cache clear failed (non-critical):', e);
+        }
+      }
     } catch (error) {
       logger.error('Error saving settings:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Failed to save settings';
+      setSaveError(errorMessage);
+      // Clear error after 5 seconds
+      setTimeout(() => setSaveError(null), 5000);
     } finally {
       setIsSaving(false);
     }
@@ -1592,20 +1620,26 @@ const Settings: React.FC = () => {
 
             {/* Save Button - only show on tabs with saveable settings */}
             {['profile', 'study', 'notifications'].includes(activeTab) && (
-              <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex justify-end">
-                <Button
-                  onClick={handleSave}
-                  disabled={isSaving}
-                  loading={isSaving}
-                  variant="primary"
-                >
-                  {isSaving ? 'Saving...' : 'Save Changes'}
-                </Button>
-                {saveSuccess && (
-                    <div className="ml-4 flex items-center text-green-600 dark:text-green-400 animate-fade-in">
-                         <span className="mr-2">Saved!</span>
-                         {/* Icon could go here */}
-                    </div>
+              <div className="p-6 border-t border-slate-200 dark:border-slate-700 flex flex-col items-end gap-2">
+                <div className="flex items-center">
+                  <Button
+                    onClick={handleSave}
+                    disabled={isSaving}
+                    loading={isSaving}
+                    variant="primary"
+                  >
+                    {isSaving ? 'Saving...' : 'Save Changes'}
+                  </Button>
+                  {saveSuccess && (
+                      <div className="ml-4 flex items-center text-green-600 dark:text-green-400 animate-fade-in">
+                           <span className="mr-2">Saved!</span>
+                      </div>
+                  )}
+                </div>
+                {saveError && (
+                  <div className="text-sm text-red-600 dark:text-red-400">
+                    {saveError}
+                  </div>
                 )}
               </div>
             )}

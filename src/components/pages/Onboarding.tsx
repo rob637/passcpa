@@ -154,6 +154,8 @@ const WelcomeStep: React.FC<WelcomeStepProps> = ({ courseId, isCourseSwitching }
       <img 
         src="/logo-icon.svg" 
         alt="VoraPrep" 
+        width="80" 
+        height="80" 
         className="w-20 h-20 mx-auto mb-6"
       />
       <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Welcome to VoraPrep! 🎉</h1>

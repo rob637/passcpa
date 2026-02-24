@@ -51,7 +51,8 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import type { DiagnosticAreaScore } from '../types/diagnostic';
 import { 
-  getCourseLessonPath, 
+  getCourseLearnPath,
+  getCourseLessonPath,
   getCoursePracticePath, 
   getCourseTBSPath, 
   getCourseHomePath,
@@ -93,20 +94,37 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const { startDailyPlanSession } = useNavigation();
   
   const [plan, setPlan] = useState<PersistedDailyPlan | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Start with loading=false; we set to true only when actually loading
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [completedActivities, setCompletedActivities] = useState<Set<string>>(new Set());
   const [expanded, setExpanded] = useState(false);
   const [hasCarryover, setHasCarryover] = useState(false);
+  const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
+  const [missingExamDate, setMissingExamDate] = useState(false);
   
   // Track section to detect changes - course-aware
   const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
 
   // Load daily plan from Firestore (with caching and carryover)
   const loadPlan = useCallback(async (forceRegenerate: boolean = false) => {
-    if (!userProfile || !user?.uid) return;
+    // Early return if profile not loaded yet
+    if (!userProfile || !user?.uid) {
+      return;
+    }
     
+    // Check if exam date is set - required for personalized planning
+    const examDate = getExamDate(userProfile, currentSection, courseId);
+    if (!examDate) {
+      setMissingExamDate(true);
+      setHasAttemptedLoad(true);
+      return;
+    }
+    
+    // Exam date exists - clear the flag and proceed
+    setMissingExamDate(false);
     setLoading(true);
+    setHasAttemptedLoad(true);
     setError(null);
     
     try {
@@ -275,13 +293,18 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     } finally {
       setLoading(false);
     }
-  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId, currentSection]);
+  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId, currentSection, course]);
 
   // Track previous section to detect changes
   const prevSectionRef = useRef<string | null>(null);
   
   // Load plan on mount and when section changes
   useEffect(() => {
+    // Skip if auth not ready yet
+    if (!userProfile || !user?.uid) {
+      return;
+    }
+    
     // Determine if this is a section change (not initial load)
     const prevSection = prevSectionRef.current;
     const sectionChanged = prevSection !== null && prevSection !== currentSection;
@@ -298,7 +321,22 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     // Never force regenerate on section change - each section has its own plan
     // Only force regenerate when user explicitly requests it (e.g., refresh button)
     loadPlan(false);
-  }, [loadPlan, currentSection]);
+  }, [loadPlan, currentSection, userProfile, user?.uid]);
+
+  // Timeout: if loading takes more than 15 seconds, show error with retry
+  useEffect(() => {
+    if (!loading) return;
+    
+    const timeout = setTimeout(() => {
+      if (loading) {
+        setLoading(false);
+        setError('Plan generation timed out. Please try again.');
+        logger.warn('DailyPlanCard: Plan generation timed out after 15s');
+      }
+    }, 15000);
+    
+    return () => clearTimeout(timeout);
+  }, [loading]);
 
   // Track whether auto-completion from URL params has been handled
   const autoCompleteHandledRef = useRef(false);
@@ -461,6 +499,87 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     }
   };
 
+  // Fallback "Get Started" card when we can't load a personalized plan
+  const renderFallbackCard = () => (
+    <Card className="p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <Calendar className="w-5 h-5 text-primary-500" />
+        <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
+      </div>
+      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+        Start learning to build your personalized study plan.
+      </p>
+      <div className="space-y-2">
+        <Button
+          variant="primary"
+          size="sm"
+          className="w-full"
+          onClick={() => navigate(getCourseLearnPath(courseId))}
+          leftIcon={BookOpen}
+        >
+          Start a Lesson
+        </Button>
+        <Button
+          variant="secondary"
+          size="sm"
+          className="w-full"
+          onClick={() => navigate(getCoursePracticePath(courseId))}
+          leftIcon={Target}
+        >
+          Practice Questions
+        </Button>
+      </div>
+    </Card>
+  );
+
+  // Waiting for auth/profile to load - show fallback immediately
+  // This avoids indefinite spinners for users without profile
+  if (!userProfile || !user?.uid) {
+    return renderFallbackCard();
+  }
+
+  // No exam date set - show friendly nudge to set one with direct link
+  if (missingExamDate) {
+    return (
+      <Card className="p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Calendar className="w-5 h-5 text-primary-500" />
+          <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
+        </div>
+        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+          <button 
+            onClick={() => navigate('/settings?tab=study')}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
+            Set your exam date
+          </button>
+          {' '}to unlock your personalized daily study plan.
+        </p>
+        <div className="space-y-2">
+          <Button
+            variant="primary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate(getCourseLearnPath(courseId))}
+            leftIcon={BookOpen}
+          >
+            Start a Lesson
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate(getCoursePracticePath(courseId))}
+            leftIcon={Target}
+          >
+            Practice Questions
+          </Button>
+        </div>
+      </Card>
+    );
+  }
+
+  // Actively generating plan
   if (loading) {
     return (
       <Card className="p-6">
@@ -472,12 +591,45 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     );
   }
 
-  if (error || !plan) {
+  // Plan generation failed or hasn't loaded yet
+  if (error || (hasAttemptedLoad && !plan)) {
     return (
       <Card className="p-6">
-        <div className="flex items-center justify-center py-8 text-slate-600">
-          <AlertCircle className="w-5 h-5 mr-2" />
-          {error || 'Unable to load daily plan'}
+        <div className="flex flex-col items-center justify-center py-8 text-slate-600">
+          <div className="flex items-center mb-3">
+            <AlertCircle className="w-5 h-5 mr-2" />
+            {error || 'Unable to load daily plan'}
+          </div>
+          <div className="flex gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => loadPlan(true)}
+              leftIcon={RefreshCw}
+            >
+              Try Again
+            </Button>
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => navigate(getCourseLearnPath(courseId))}
+              leftIcon={BookOpen}
+            >
+              Start Learning
+            </Button>
+          </div>
+        </div>
+      </Card>
+    );
+  }
+
+  // Plan not loaded yet but no error - waiting for first load
+  if (!plan) {
+    return (
+      <Card className="p-6">
+        <div className="flex items-center justify-center py-8">
+          <Loader2 className="w-6 h-6 animate-spin text-primary-500" />
+          <span className="ml-2 text-slate-600">Creating your personalized plan...</span>
         </div>
       </Card>
     );

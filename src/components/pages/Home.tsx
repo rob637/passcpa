@@ -42,6 +42,7 @@ import DailyPlanCard from '../DailyPlanCard';
 import StudyTimeCard from '../StudyTimeCard';
 import { BottomSheet } from '../common/BottomSheet';
 import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
+import { useToast } from '../common/Toast';
 
 // Derive courseId from exam section name
 const getCourseFromSection = (section: string): CourseId => {
@@ -157,10 +158,12 @@ const Home = () => {
   // Sync local state when profile loads/changes
   // Use ref for comparison to avoid stale closure issues
   useEffect(() => {
-    if (userProfile?.examSection) {
+    const storedSection = userProfile?.examSection;
+    if (storedSection) {
       const validSection = getCurrentSection(userProfile, courseId, getDefaultSection);
       // Use ref to get current value (not stale closure)
       if (validSection !== activeSectionRef.current) {
+        logger.info(`[Section] Syncing from profile: ${storedSection} -> ${validSection} (was ${activeSectionRef.current})`);
         setActiveSection(validSection);
       }
     }
@@ -174,6 +177,7 @@ const Home = () => {
     // Use ref to get current value (not stale closure)
     if (validSections.length > 0 && !validSections.includes(activeSectionRef.current)) {
       // Reset to default if current section isn't valid for this course
+      logger.info(`[Section] Resetting invalid section ${activeSectionRef.current} for course ${courseId} to default`);
       setActiveSection(getDefaultSection(courseId));
     }
   }, [courseId, course?.sections]);
@@ -241,11 +245,16 @@ const Home = () => {
   }, [activeSection, stats, courseId, userProfile?.lessonProgress]);
 
   // Handle section change - update local state immediately, then persist
+  const toast = useToast();
+  
   const handleSectionChange = async (newSection: string) => {
     if (newSection === activeSection) {
       setShowSectionPicker(false);
       return;
     }
+    
+    const previousSection = activeSection;
+    logger.info(`[Section] Changing section from ${previousSection} to ${newSection}`);
     
     // Update local state immediately for instant UI update
     setActiveSection(newSection);
@@ -257,7 +266,9 @@ const Home = () => {
       const derivedCourse = getCourseFromSection(newSection);
       
       // Persist examSection AND activeCourse to Firebase together
+      logger.info(`[Section] Persisting examSection=${newSection}, activeCourse=${derivedCourse} to Firebase`);
       await updateUserProfile({ examSection: newSection, activeCourse: derivedCourse } as any);
+      logger.info(`[Section] Firebase update successful`);
       
       // Also update CourseProvider's local state (saves to localStorage)
       if (derivedCourse !== courseId) {
@@ -269,9 +280,10 @@ const Home = () => {
         await refreshStats();
       }
     } catch (error) {
-      logger.error('Error changing section:', error);
+      logger.error('[Section] Error changing section:', error);
       // Revert on error - use course-aware section
-      setActiveSection(getCurrentSection(userProfile, courseId, getDefaultSection));
+      setActiveSection(previousSection);
+      toast.error('Failed to save section change. Please try again.');
     } finally {
       setChangingSection(false);
     }
@@ -480,51 +492,24 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Exam Date Prompt - Show when no exam date set for this course */}
-      {!examDate && (
-        <Link
-          to="/settings?tab=study"
-          className="flex items-center gap-3 p-4 bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 border border-primary-200 dark:border-primary-700 rounded-xl hover:shadow-md transition-all"
-        >
-          <div className="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center flex-shrink-0">
-            <Calendar className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-          </div>
-          <div className="flex-1">
-            <div className="font-semibold text-slate-900 dark:text-slate-100">
-              When is your {course?.shortName || courseId?.toUpperCase() || 'exam'} exam?
-            </div>
-            <div className="text-sm text-slate-600 dark:text-slate-300">
-              Set your exam date for personalized study pacing
-            </div>
-          </div>
-          <Sparkles className="w-5 h-5 text-primary-500" />
-        </Link>
-      )}
+      {/* Today's Personalized Plan - This IS the primary CTA */}
+      <DailyPlanCard compact />
 
-      {/* Diagnostic Quiz Prompt - Show when user hasn't taken the diagnostic yet */}
-      {hasDiagnosticResult === false && (
+      {/* Diagnostic Quiz Prompt - Show ONLY after they have an exam date set */}
+      {examDate && hasDiagnosticResult === false && (
         <Link
           to="/diagnostic"
           state={{ section: userProfile?.examSection || '' }}
-          className="flex items-center gap-3 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border border-indigo-200 dark:border-indigo-700 rounded-xl hover:shadow-md transition-all"
+          className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-sm transition-all"
         >
-          <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
-            <ClipboardCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          <ClipboardCheck className="w-5 h-5 text-indigo-500" />
+          <div className="flex-1 text-sm">
+            <span className="font-medium text-slate-700 dark:text-slate-300">Take Diagnostic Quiz</span>
+            <span className="text-slate-500 dark:text-slate-400"> — identify your weak areas</span>
           </div>
-          <div className="flex-1">
-            <div className="font-semibold text-slate-900 dark:text-slate-100">
-              Take Your Diagnostic Quiz
-            </div>
-            <div className="text-sm text-slate-600 dark:text-slate-300">
-              25 questions to identify your strengths and weak areas
-            </div>
-          </div>
-          <Brain className="w-5 h-5 text-indigo-500" />
+          <ChevronDown className="w-4 h-4 text-slate-400 rotate-[-90deg]" />
         </Link>
       )}
-
-      {/* Today's Personalized Plan - This IS the primary CTA now */}
-      <DailyPlanCard compact />
 
       {/* Quick Access Buttons */}
       <div className="grid grid-cols-3 gap-3">

@@ -35,7 +35,8 @@ interface ExamLandingTemplateProps {
 }
 
 const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  // Hero visible immediately for better LCP - no animation delay
+  const isVisible = true;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showExitModal, setShowExitModal] = useState(false);
   const { user } = useAuth();
@@ -59,10 +60,6 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
     setShowExitModal(false);
     markAsShown();
   };
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -99,8 +96,8 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">
-              <img src="/logo.svg" alt="VoraPrep" className="h-8 sm:h-10 dark:hidden" />
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 sm:h-10 hidden dark:block" />
+              <img src="/logo.svg" alt="VoraPrep" width="120" height="40" fetchPriority="high" className="h-8 sm:h-10 dark:hidden" />
+              <img src="/logo-white.svg" alt="VoraPrep" width="120" height="40" fetchPriority="high" className="h-8 sm:h-10 hidden dark:block" />
             </Link>
             <span className={`hidden sm:inline ${colors.text} font-bold text-lg`}>{config.name}</span>
           </div>
@@ -566,7 +563,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 mb-4" />
+              <img src="/logo-white.svg" alt="VoraPrep" width="120" height="32" className="h-8 mb-4" />
               <p className="text-slate-400 text-sm mb-4 leading-relaxed">
                 Expert-crafted exam prep for accounting and finance professionals. 
                 Built by practitioners, powered by AI.

@@ -291,11 +291,17 @@ const VoraPrep = () => {
             <img 
               src="/logo.svg" 
               alt="VoraPrep" 
+              width="120" 
+              height="40" 
+              fetchPriority="high"
               className="h-10 dark:hidden" 
             />
             <img 
               src="/logo-white.svg" 
               alt="VoraPrep" 
+              width="120" 
+              height="40" 
+              fetchPriority="high"
               className="h-10 hidden dark:block" 
             />
           </div>
@@ -570,7 +576,7 @@ const VoraPrep = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 mb-4" />
+              <img src="/logo-white.svg" alt="VoraPrep" width="120" height="32" className="h-8 mb-4" />
               <p className="text-slate-400 text-sm leading-relaxed">
                 Expert-crafted exam prep for accounting and finance professionals. 
                 Built by practitioners, powered by AI.

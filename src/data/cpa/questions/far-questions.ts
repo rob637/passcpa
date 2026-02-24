@@ -452,6 +452,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'LIFO layer added = ($200,000 - $180,000) × 1.10 = $20,000 × 1.10 = $22,000. The layer is valued at current year prices.',
+        whyWrong: {
+      1: 'This answer calculates the LIFO layer at base-year prices rather than at current-year prices, failing to inflate the layer by the current-year price index as required by dollar-value LIFO (ASC 330-10-30). The LIFO layer must be valued at the current year prices.',
+      2: 'This answer incorrectly deflates the increase in base-year inventory by dividing by the price index (1.10) instead of multiplying, showing a misunderstanding of how to value the LIFO layer at current-year prices (ASC 330-10-30).',
+      3: 'This answer uses the entire ending inventory at base-year prices in the calculation, showing a misunderstanding that only the *increase* in inventory at base-year prices is the LIFO layer (ASC 330-10-30). The LIFO layer is the increase in base year prices multiplied by the price index.',
+    },
+    memoryAid: 'LIFO layers are like cake layers. Each new layer needs to be adjusted for the current \'inflation\' (price index) to reflect its true size. Think: **L**ayers **I**nflate **F**or **O**ld prices.',
+    bottomLine: 'On the exam, remember that under dollar-value LIFO, any increase in inventory at base-year prices (the LIFO layer) must be multiplied by the current-year price index to determine the value of the layer at current-year prices.',
     reference: 'ASC 330-10-30',
   },
 
@@ -479,6 +486,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Costs to bring an asset to its intended use are capitalized, including purchase price, freight, installation, and testing. Maintenance, insurance during operations, and repairs are expensed.',
+        whyWrong: {
+      0: 'Annual maintenance costs are expensed as incurred because they represent costs to keep the asset in good working order after it\'s already in service and generating revenue, not costs to prepare it for its intended use (ASC 360-10-30-1). These are period costs, not capitalizable asset costs.',
+      2: 'Repairs after equipment is in use are expensed as incurred unless they extend the asset\'s useful life or improve its functionality, as they are considered costs of maintaining the asset\'s current operating condition (ASC 360-10-30-1). Ordinary repairs and maintenance don\'t qualify for capitalization.',
+      3: 'Insurance during the first year of use is an operating expense related to the ongoing operation of the asset, not a cost to bring it to its intended use (ASC 360-10-30-1). Insurance protects against risk during operation, not during preparation for use.',
+    },
+    memoryAid: 'Think of the **CAPITAL** costs of PPE as the costs to get it **CAPABLE** of being used. This includes things like installation, freight, and testing BEFORE use. Once it\'s in use, costs are generally expensed.',
+    bottomLine: 'On the exam, remember to only capitalize costs that are necessary to get the asset ready for its intended use; costs incurred after the asset is placed in service are generally expensed.',
     reference: 'ASC 360-10-30-1',
   },
   {
@@ -501,6 +515,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'Interest capitalization is required (not optional) for assets constructed for own use when (1) expenditures are being incurred, (2) construction activities are occurring, and (3) interest is being incurred.',
+        whyWrong: {
+      0: 'Capitalizing interest is not required simply because a company has outstanding debt; it is only required when the debt is specifically related to the construction of a qualifying asset, as per ASC 835-20-15.',
+      1: 'Capitalizing interest is not an accounting policy choice; it\'s a requirement under GAAP (ASC 835-20-15) when specific conditions are met related to the construction of qualifying assets.',
+      3: 'Interest costs are capitalized for assets being constructed for use, not for assets purchased for immediate use; the construction period is the key factor, as per ASC 835-20-15.',
+    },
+    memoryAid: 'Use the acronym \'ICE\' to remember the conditions for interest capitalization: **I**nterest incurred, **C**onstruction activities, and **E**xpenditures being made.',
+    bottomLine: 'On the exam, remember that interest capitalization is required for assets constructed for a company\'s own use (or discrete projects) only when expenditures are being incurred, construction activities are occurring, and interest costs are being incurred; it is not an accounting policy election.',
     reference: 'ASC 835-20-15',
   },
   {
@@ -524,6 +545,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'DDB rate = 2 × (1/5) = 40%. Year 1 depreciation = $100,000 × 40% = $40,000. Note: salvage value is ignored in the calculation but limits total depreciation.',
+        whyWrong: {
+      0: 'Straight-line depreciation would be ($100,000 - $10,000) / 5 = $18,000 per year; this option incorrectly calculates straight-line depreciation instead of double-declining balance depreciation.',
+      1: 'Straight-line depreciation would be ($100,000 - $10,000) / 5 = $18,000 per year; this option incorrectly calculates straight-line depreciation instead of double-declining balance depreciation.',
+      3: 'This answer incorrectly applies a 40% rate to the depreciable base ($100,000 cost - $10,000 salvage) of $90,000, rather than the full cost of $100,000, resulting in $36,000.',
+    },
+    memoryAid: 'DDB: Double the rate, but don\'t double-dip below salvage value! Remember to stop depreciating when book value equals salvage value. The formula is: 2 * (1/Useful Life) * Book Value.',
+    bottomLine: 'On the exam, remember that double-declining balance depreciation uses a rate that is twice the straight-line rate and that salvage value is ignored *initially* in the calculation, but depreciation stops when book value equals salvage value per ASC 360-10-35.',
     reference: 'ASC 360-10-35',
   },
   {
@@ -547,6 +575,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Step 1: Recoverability test - compare carrying value ($500,000) to undiscounted cash flows ($450,000). Since CV > UCF, impairment exists. Step 2: Measure impairment as CV - FV = $500,000 - $400,000 = $100,000 loss.',
+        whyWrong: {
+      0: 'The impairment loss is the difference between the carrying value and the fair value, not a further reduction below fair value; ASC 360-10-35-20 specifies that the loss is measured as the excess of the carrying amount over the fair value.',
+      2: 'The impairment loss is measured using the fair value, not the undiscounted cash flows; undiscounted cash flows are only used in the recoverability test, per ASC 360-10-35-17.',
+      3: 'An impairment exists because the carrying value of $500,000 exceeds the undiscounted future cash flows of $450,000, indicating that the asset\'s carrying amount is not recoverable according to ASC 360-10-35-17.',
+    },
+    memoryAid: 'UCF (Undiscounted Cash Flow) is UNDER the Carrying Value, so we test for impairment. Then FV (Fair Value) is FINAL value after impairment.',
+    bottomLine: 'On the exam, remember to first compare carrying value to undiscounted cash flows to determine if an impairment exists, and then if impairment exists, measure the impairment loss as the difference between carrying value and fair value.',
     reference: 'ASC 360-10-35-17',
   },
 
@@ -574,6 +609,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Under U.S. GAAP, R&D costs are expensed as incurred. Certain software development costs may be capitalized after technological feasibility.',
+        whyWrong: {
+      0: 'Research and development costs are generally expensed, not capitalized; capitalization is reserved for very specific circumstances like certain software development costs after technological feasibility has been established (ASC 730-10-25-1). Capitalizing R&D as incurred would overstate assets and violate the matching principle.',
+      2: 'Capitalizing R&D costs only if successful violates the principle of conservatism and GAAP\'s requirement to expense these costs as incurred (ASC 730-10-25-1); future success is speculative at the time the costs are incurred.',
+      3: 'R&D costs are generally expensed as incurred, not deferred and amortized; deferral is only appropriate in limited situations after technological feasibility has been demonstrated, such as certain software development costs (ASC 730-10-25-1).',
+    },
+    memoryAid: 'Remember **RED** - **R**esearch and **E**arly **D**evelopment costs are generally **E**xpensed.',
+    bottomLine: 'On the exam, remember that U.S. GAAP generally requires you to expense research and development costs as they are incurred, with limited exceptions for software development costs.',
     reference: 'ASC 730-10-25-1',
   },
   {
@@ -596,6 +638,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Under the simplified approach (post-2017), impairment = carrying amount of reporting unit - fair value of reporting unit, limited to the carrying amount of goodwill (cannot go below zero).',
+        whyWrong: {
+      0: 'This represents the traditional goodwill impairment test calculation before the simplification; the simplified test uses the fair value of the *reporting unit*, not the implied fair value of goodwill itself (ASC 350-20-35-8C). This calculation was eliminated for private companies and is now used for all entities that elect to test goodwill impairment at the entity level.',
+      1: 'Book value minus market capitalization might be used in some valuation contexts, but it isn\'t the proper method for determining goodwill impairment under US GAAP (ASC 350).',
+      2: 'This formula is reversed; impairment occurs when the carrying amount (book value) exceeds the fair value, indicating a decline in value that needs to be recognized (ASC 350-20-35-8C).',
+    },
+    memoryAid: 'Think \'RU Fair?\' for Reporting Unit Fair Value. Goodwill impairment is the carrying amount of the Reporting Unit minus the Fair Value of the Reporting Unit, capped at the carrying amount of goodwill.',
+    bottomLine: 'On the exam, remember that the simplified goodwill impairment test focuses on comparing the reporting unit\'s carrying amount to its fair value, with the impairment loss limited to the carrying amount of goodwill.',
     reference: 'ASC 350-20-35-8C',
   },
   {
@@ -618,6 +667,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Software development costs are expensed until technological feasibility is established (e.g., completion of a detailed program design or working model). After that, costs are capitalized.',
+        whyWrong: {
+      0: 'Completing a working model is a significant milestone, but it doesn\'t necessarily indicate that technological feasibility has been established according to ASC 985-20-25-1; technological feasibility requires a more detailed design or model.',
+      2: 'The product\'s release date is too late in the process; costs should be capitalized after technological feasibility is established, which occurs before the product is released for sale per ASC 985-20-25-1.',
+      3: 'Whether revenue exceeds costs is irrelevant to determining when to capitalize software development costs; capitalization begins when technological feasibility is established, regardless of revenue, according to ASC 985-20-25-1.',
+    },
+    memoryAid: 'Think **TECH FEAS**ibility: Costs are expensed until **TECH**nological **FEAS**ibility is established, then you capitalize.',
+    bottomLine: 'On the exam, remember that software development costs are expensed until technological feasibility is established, after which they are capitalized; this is a critical point for distinguishing between research and development costs and costs that can be capitalized.',
     reference: 'ASC 985-20-25-1',
   },
 
@@ -646,6 +702,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'Ownership of 20-50% creates a presumption of significant influence, requiring the equity method. The investor records its share of investee income/loss and adjusts the carrying value.',
+        whyWrong: {
+      1: 'Consolidation is generally required when an investor has a controlling financial interest, typically demonstrated by ownership of more than 50% of the voting stock (ASC 810-10-15-8); 35% ownership doesn\'t meet this threshold.',
+      2: 'The cost method is typically used when the investor has little to no influence over the investee, generally indicated by ownership of less than 20% of the voting stock, or when the investment doesn\'t have a readily determinable fair value (ASC 321-10-15-4).',
+      3: 'The fair value method is generally used for investments in equity securities that do not give the investor significant influence over the investee, and that have a readily determinable fair value (ASC 321-10-30-1); significant influence (20-50% ownership) precludes using the fair value method.',
+    },
+    memoryAid: 'EIC: Think of \'EIC\' - Equity (method) is for Influence and Control (significant influence, but not control). If you have more than 50% control, you CONSOLIDATE.',
+    bottomLine: 'On the exam, remember that ownership between 20% and 50% generally indicates significant influence, requiring the use of the equity method to account for the investment.',
     reference: 'ASC 323-10-15-6',
   },
   {
@@ -668,6 +731,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Under equity method: Investment increased by share of investee income, decreased by dividends received and share of losses. Excess cost amortization also reduces the investment.',
+        whyWrong: {
+      0: 'Amortization of excess purchase price decreases the investment account balance because it represents the portion of the purchase price allocated to identifiable assets that are being expensed over time, per ASC 323-10-35-4.',
+      2: 'Unrealized intercompany profits decrease the investment account balance; these profits must be deferred until realized through sales to outside parties, according to ASC 323-10-30-11.',
+      3: 'Dividends received decrease the investment account balance because they represent a return *of* the investment, not a return *on* the investment; the investee\'s retained earnings (and therefore the investor\'s share) are reduced when dividends are paid, as per ASC 323-10-35-4.',
+    },
+    memoryAid: 'IDEAL: **I**ncome increases, **D**ividends and **E**xcess cost **A**mortization and **L**osses decrease the investment account under the equity method.',
+    bottomLine: 'On the exam, remember that under the equity method, the investor\'s share of the investee\'s net income increases the investment account, while dividends, amortization of excess purchase price, and the investor\'s share of the investee\'s losses decrease the investment account.',
     reference: 'ASC 323-10-35-4',
   },
   {
@@ -690,6 +760,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'AFS debt securities are reported at fair value. Unrealized holding gains/losses are reported in OCI (not net income) until realized.',
+        whyWrong: {
+      0: 'Lower of cost or market is used for inventory (ASC 330-10-30-9), not available-for-sale debt securities; AFS securities are specifically measured at fair value.',
+      1: 'Amortized cost is generally used for held-to-maturity (HTM) debt securities (ASC 320-10-35-8), not available-for-sale securities which are reported at fair value.',
+      2: 'Fair value with unrealized gains/losses in net income is the treatment for trading securities (ASC 320-10-35-1), not available-for-sale securities; AFS securities\' unrealized gains/losses bypass net income and go to OCI.',
+    },
+    memoryAid: 'AFS = At Fair value, Separate (OCI). Think: \'AFS\' securities are \'A Few Steps\' removed from net income, as gains/losses go to OCI first.',
+    bottomLine: 'On the exam, remember that available-for-sale (AFS) debt securities are reported at fair value, with unrealized gains and losses reported in Other Comprehensive Income (OCI) until realized.',
     reference: 'ASC 320-10-35-1',
   },
   {
@@ -712,6 +789,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'HTM securities are reported at amortized cost because the company intends and is able to hold them to maturity, making fair value fluctuations irrelevant.',
+        whyWrong: {
+      0: 'Fair value is used for trading securities and available-for-sale securities, not held-to-maturity securities, which are measured at amortized cost under ASC 320-10-35-14. Using fair value for HTM securities would contradict the intent and ability to hold them until maturity.',
+      2: 'The lower of cost or fair value method is generally used for inventory (ASC 330) and is *not* the appropriate measurement basis for held-to-maturity debt securities, which are governed by ASC 320.',
+      3: 'While original cost is the starting point, it doesn\'t account for amortization of any premium or discount; held-to-maturity securities are reported at amortized cost, per ASC 320, to reflect the effective interest rate over the life of the investment.',
+    },
+    memoryAid: 'HTM = Hold To Maturity = Amortized cost. Think: **H**old **T**ight to **M**aturity, **A**lways **C**ost (Amortized Cost).',
+    bottomLine: 'On the exam, remember that held-to-maturity (HTM) debt securities are reported at amortized cost because the investor intends and has the ability to hold them until maturity, making fair value changes less relevant.',
     reference: 'ASC 320-10-35-1',
   },
 
@@ -739,6 +823,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'The 5 steps are: (1) Identify contract, (2) Identify performance obligations, (3) Determine transaction price, (4) Allocate price to obligations, (5) Recognize revenue when obligations are satisfied.',
+        whyWrong: {
+      0: 'Identifying performance obligations is the second step in the revenue recognition process, following contract identification as per ASC 606-10-25-1.',
+      2: 'Allocating the transaction price is the fourth step in the revenue recognition process, done after the contract, performance obligations, and transaction price are determined, in accordance with ASC 606-10-25-1.',
+      3: 'Determining the transaction price is the third step in the revenue recognition process, occurring after the contract and performance obligations are identified, as outlined in ASC 606-10-25-1.',
+    },
+    memoryAid: 'I-PO-D-A-R: **I**dentify the contract, **P**erformance **O**bligations, **D**etermine transaction price, **A**llocate price, **R**ecognize revenue. Think \'I Paid Over Dollars At Retail\'.',
+    bottomLine: 'On the exam, remember the five-step process for revenue recognition under ASC 606, and specifically that identifying the contract with the customer is the FIRST step.',
     reference: 'ASC 606-10-25-1',
   },
   {
@@ -761,6 +852,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       "A performance obligation is satisfied over time if: (1) customer receives/consumes benefits as performed, (2) entity's performance creates/enhances customer-controlled asset, or (3) no alternative use exists and entity has right to payment.",
+        whyWrong: {
+      1: 'Payment being received in installments does not dictate whether a performance obligation is satisfied over time or at a point in time; it is simply a payment arrangement (ASC 606-10-25-27). The timing of revenue recognition depends on the transfer of control, not the payment schedule.',
+      2: 'The customer having title to the goods is generally associated with a point-in-time transfer of control, not necessarily over time (ASC 606-10-25-30). Title transfer is just one indicator of when control transfers.',
+      3: 'The duration of the contract (more than one year) does not automatically mean that the performance obligation is satisfied over time (ASC 606-10-25-27). The nature of the performance obligation, not the contract length, determines the timing of revenue recognition.',
+    },
+    memoryAid: 'Think of \'C-A-N\' to determine if revenue is recognized over time: Customer benefits as you perform, Asset is created/enhanced under customer control, No alternative use and right to payment.',
+    bottomLine: 'On the exam, remember that revenue is recognized over time only if the customer simultaneously receives and consumes the benefits of the entity\'s performance, the entity\'s performance creates or enhances an asset that the customer controls, or the entity\'s performance does not create an asset with an alternative use and the entity has an enforceable right to payment.',
     reference: 'ASC 606-10-25-27',
   },
   {
@@ -783,6 +881,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Variable consideration is estimated using either the expected value (probability-weighted amounts) or the most likely amount, whichever method better predicts the consideration.',
+        whyWrong: {
+      0: 'Using the minimum possible amount doesn\'t reflect the uncertainty inherent in variable consideration, violating the principle of faithfully representing the transaction price as required by ASC 606.',
+      1: 'Using the maximum possible amount would overstate revenue and could lead to recognizing revenue that is highly unlikely to be realized, which is not in accordance with ASC 606.',
+      2: 'Fair value is generally used for assets and liabilities, not for estimating the transaction price of revenue which uses expected value or most likely amount based on predictive ability per ASC 606-10-32-8.',
+    },
+    memoryAid: 'Think **E**xpected or **M**ost Likely, whichever **E**ffectively **M**easures (EMEM) the variable consideration.',
+    bottomLine: 'On the exam, remember that variable consideration is estimated using either the expected value or the most likely amount, depending on which method better predicts the amount of consideration to which the entity will be entitled.',
     reference: 'ASC 606-10-32-8',
   },
   {
@@ -805,6 +910,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Incremental costs of obtaining a contract are capitalized if the entity expects to recover them. They are amortized consistent with the transfer of goods/services to which they relate.',
+        whyWrong: {
+      0: 'Incremental costs of obtaining a contract are not always expensed immediately; they are capitalized if the entity expects to recover them, as per ASC 340-40-25-1. Expensing immediately would violate the matching principle if these costs benefit future periods.',
+      1: 'Incremental costs of obtaining a contract cannot be deferred indefinitely; they are capitalized if expected to be recovered and then amortized over the period the related goods or services are transferred to the customer, as per ASC 340-40-25-1.',
+      2: 'Incremental costs of obtaining a contract are not included in cost of goods sold (COGS); they are a separate asset that is amortized, as per ASC 340-40-25-1. COGS typically includes direct materials, direct labor, and manufacturing overhead.',
+    },
+    memoryAid: 'Think of **CAP**italizing contract costs: **C**osts **A**re **P**aid to get the contract. If recoverable, these costs are **CAP**italized and amortized, not expensed immediately.',
+    bottomLine: 'On the exam, remember that incremental costs of obtaining a contract are capitalized if expected to be recovered and then amortized, reflecting the matching principle in revenue recognition.',
     reference: 'ASC 340-40-25-1',
   },
 
@@ -832,6 +944,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Finance lease criteria include: ownership transfer, purchase option reasonably certain, lease term is major part of economic life, PV equals substantially all of FV, or specialized nature.',
+        whyWrong: {
+      0: 'A lessee\'s right to cancel the lease at any time would likely indicate an operating lease, as the lessee isn\'t committed for a significant portion of the asset\'s life, contradicting the \'major part of the economic life\' criterion for a finance lease per ASC 842-10-25-2(c). The right to cancel shifts the risks and rewards of ownership back to the lessor.',
+      2: 'While a lease term that is a major part of the asset\'s economic life (generally 75% or more, not 50%) is a finance lease criterion per ASC 842-10-25-2(c), a lease term of only 50% does not automatically trigger finance lease classification.',
+      3: 'Variable lease payments, by themselves, do not determine lease classification; the classification is based on whether the lease transfers substantially all the risks and rewards of ownership, as outlined in ASC 842-10-25-2. The nature of the payments (fixed vs. variable) is a separate consideration from the lease\'s classification as finance or operating.',
+    },
+    memoryAid: 'Use the acronym **OWNS** to remember the finance lease criteria: **O**wnership Transfer, bargain **W**ritten purchase option (reasonably certain to exercise), **N**inety percent (PV of lease payments >= 90% of the asset\'s FV), **S**eventy-five percent (lease term >= 75% of the asset\'s economic life). If ANY of these are met, it\'s a finance lease.',
+    bottomLine: 'On the exam, remember that a lease is a finance lease if it effectively transfers ownership or provides the lessee with substantially all the risks and rewards of ownership, as demonstrated by meeting any of the OWNS criteria.',
     reference: 'ASC 842-10-25-2',
   },
   {
@@ -854,6 +973,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Under ASC 842, operating leases are recorded with a right-of-use asset and lease liability. Total lease expense is recognized on a straight-line basis (unlike finance leases which have front-loaded interest).',
+        whyWrong: {
+      0: 'Under ASC 842, lessees are required to recognize a right-of-use (ROU) asset and a lease liability for operating leases, so no asset or liability is incorrect. Ignoring the lease on the balance sheet would violate the principle of faithful representation.',
+      1: 'While an ROU asset and lease liability are recognized, operating leases result in straight-line lease expense, not front-loaded interest; front-loaded expense (due to interest) is characteristic of finance leases under ASC 842.',
+      2: 'Simply recording rent expense as paid is the treatment under previous GAAP (ASC 840); ASC 842 requires the recognition of an ROU asset and lease liability for operating leases, in addition to rent expense.',
+    },
+    memoryAid: 'ROLLED: ROU asset, Operating Lease, Liability, Level expense (straight-line) - Remember to roll that operating lease onto the balance sheet!',
+    bottomLine: 'On the exam, remember that ASC 842 requires lessees to recognize a right-of-use asset and lease liability for both finance and operating leases, but the expense recognition pattern differs: straight-line for operating leases and front-loaded (interest) for finance leases.',
     reference: 'ASC 842-20-25-6',
   },
   {
@@ -876,6 +1002,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       "Lease liability = PV of lease payments using the rate implicit in the lease. If that rate cannot be determined, use the lessee's incremental borrowing rate.",
+        whyWrong: {
+      0: 'The fair value of the leased asset is used to initially measure the *right-of-use asset*, not the lease liability. The lease liability represents the obligation to make lease payments, not the asset\'s value.',
+      2: 'The lease liability is measured at the *present value* of the lease payments, not the total undiscounted amount. Discounting reflects the time value of money, as required by ASC 842.',
+      3: 'While residual value guarantees can be *included* in lease payments used to calculate the present value of the lease liability, the lease liability is not simply the sum of lease payments plus the residual value; it must be discounted.',
+    },
+    memoryAid: 'L.I.P. - Lease Liability = Implicit Rate (or IBR) to calculate the Present value of the lease payments.',
+    bottomLine: 'On the exam, remember that the lease liability is initially measured at the present value of the lease payments, discounted using the rate implicit in the lease if readily determinable; otherwise, use the lessee\'s incremental borrowing rate.',
     reference: 'ASC 842-20-30-1',
   },
   {
@@ -898,6 +1031,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'For lessors, a sales-type lease requires meeting at least one of the five criteria (same as finance lease criteria) AND collectibility of lease payments must be probable.',
+        whyWrong: {
+      0: 'Variable lease payments do not automatically classify a lease as a sales-type lease; the lease must still meet one of the five finance lease criteria as per ASC 842-10-25-2.',
+      1: 'A lease term being less than one year does not determine lease classification; classification depends on whether one of the five finance lease criteria in ASC 842-10-25-2 is met.',
+      3: 'A residual value guarantee is a component affecting the lease calculation, but the existence of a residual value guarantee itself doesn\'t determine if it\'s a sales-type lease; at least one of the five criteria in ASC 842-10-25-2 must still be met.',
+    },
+    memoryAid: 'Think of **OWNERSHIP** to remember the five criteria for a finance lease (and thus, a sales-type lease from the lessor\'s perspective): **O**wnership transfer, **W**ritten option to purchase, **N**et present value exceeds asset\'s fair value, **E**conomic life is mostly within the lease term, **R**ealized profit or loss is reasonably assured, **S**pecialized asset, **H**ighly probable collectibility, **I**nception of the lease, **P**ossession transfers.',
+    bottomLine: 'On the exam, remember that a lessor classifies a lease as a sales-type lease (or a finance lease for the lessee) only if at least one of the five finance lease criteria is met AND collectibility of lease payments is probable.',
     reference: 'ASC 842-10-25-3',
   },
 
@@ -925,6 +1065,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'A bond is issued at a premium when its stated (coupon) rate exceeds the market rate at issuance. Investors pay more than face value to obtain the higher interest payments.',
+        whyWrong: {
+      0: 'Bonds always have a stated rate (coupon rate), which is the rate used to calculate the periodic interest payments, regardless of whether they are issued at a premium, discount, or face value per ASC 835-30.',
+      2: 'If the stated rate equals the market rate, the bond would be issued at its face value, not at a premium, as investors are indifferent between the bond\'s coupon payments and what they could obtain in the market.',
+      3: 'A bond is issued at a discount when its stated rate is lower than the market rate, not at a premium; investors demand a lower price (discount) to compensate for the bond\'s lower interest payments relative to prevailing market rates.',
+    },
+    memoryAid: 'SPA: Stated rate higher, Premium, Above face value. SDA: Stated rate lower, Discount, Below face value.',
+    bottomLine: 'On the exam, remember that the relationship between a bond\'s stated rate and the market rate determines whether it\'s issued at a premium, discount, or face value.',
     reference: 'ASC 835-30',
   },
   {
@@ -948,6 +1095,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'For bonds issued at a discount, carrying value increases as discount is amortized. Interest expense = Carrying value × Effective rate, so interest expense increases each period.',
+        whyWrong: {
+      0: 'Interest expense does NOT remain constant because the carrying value of the bond increases as the discount is amortized each period, and interest expense is calculated based on this carrying value times the effective rate.',
+      2: 'Cash interest paid remains constant and is calculated as the stated rate multiplied by the face value of the bond; interest expense, however, is calculated using the effective interest rate and the carrying value, which are different when the bond is issued at a discount (ASC 835-30-35-2).',
+      3: 'Interest expense increases, not decreases, over the life of the bond when using the effective interest method for bonds issued at a discount because the carrying value increases.',
+    },
+    memoryAid: 'DEAL: Discounts Expand, Amortization Lowers (net income). Remember that discounts on bonds cause interest expense to increase over time.',
+    bottomLine: 'On the exam, remember that when bonds are issued at a discount, the interest expense calculated using the effective interest method will increase over the life of the bond, while the cash payment remains constant.',
     reference: 'ASC 835-30-35-2',
   },
   {
@@ -970,6 +1124,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Under ASC 450, a loss contingency is accrued when (1) it is probable that a loss has been incurred, and (2) the amount can be reasonably estimated. If only possible, disclose in notes.',
+        whyWrong: {
+      0: 'A loss contingency being merely possible is insufficient for accrual; ASC 450-20-25-2 requires the loss to be probable for accrual, with possible losses only requiring disclosure in the notes to the financial statements.',
+      2: 'The filing of a lawsuit itself does not automatically trigger accrual; ASC 450-20-25-2 requires the loss to be probable and reasonably estimable, which may or may not be the case simply because a lawsuit exists.',
+      3: 'Remote loss contingencies are not accrued or even disclosed according to ASC 450-20-25-2, as the chance of the loss occurring is slight.',
+    },
+    memoryAid: 'Remember the accrual criteria with the mnemonic **PRE** - **P**robable and **RE**asonably **E**stimable.',
+    bottomLine: 'On the exam, be sure to distinguish between probable, reasonably possible, and remote loss contingencies when determining whether to accrue or disclose a loss contingency, as ASC 450 dictates.',
     reference: 'ASC 450-20-25-2',
   },
   {
@@ -992,6 +1153,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'AROs are initially recorded at fair value, which is typically the present value of expected cash flows needed to settle the obligation. An equal amount is capitalized to the related asset.',
+        whyWrong: {
+      1: 'The amount to be paid at retirement is the future value of the obligation, not the initial measurement, which requires discounting to present value per ASC 410-20-25-4.',
+      2: 'The cost to remove the asset currently is irrelevant; AROs are measured based on the *future* obligation discounted to its present value, reflecting the fair value at initial recognition.',
+      3: 'Expected cash flows must be *discounted* to their present value to reflect the time value of money; undiscounted cash flows do not represent fair value as required by ASC 410-20-25-4.',
+    },
+    memoryAid: 'ARO = Asset Retirement Obligation. Think of \'FAR\' (Fair value, Asset, Record). AROs are initially recorded at FAR value, which is fair value (present value), and an equal amount is added to the related Asset.',
+    bottomLine: 'On the exam, remember that an Asset Retirement Obligation (ARO) is initially measured at its fair value, which is the present value of the estimated future cash outflows required to settle the obligation.',
     reference: 'ASC 410-20-25-4',
   },
 
@@ -1019,6 +1187,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'Deferred tax liabilities arise from taxable temporary differences - situations where taxable income will be higher than book income in future periods (e.g., accelerated tax depreciation).',
+        whyWrong: {
+      1: 'Operating loss carryforwards create deferred tax assets, not liabilities, as they represent future tax deductions. These are deductible temporary differences that will reduce taxable income in the future (ASC 740-10-25-30).',
+      2: 'Deductible temporary differences result in deferred tax assets, because they represent future tax deductions and lower taxable income in future periods (ASC 740-10-25-30). A deferred tax liability results when taxable income is expected to be higher than book income in the future.',
+      3: 'Permanent differences, such as tax-exempt interest, do not result in deferred tax assets or liabilities because they affect either book income or taxable income, but not both (ASC 740-10-25-24).',
+    },
+    memoryAid: 'LABLE: Liabilities Arise from Book Lower than Earnings (Taxable) differences.',
+    bottomLine: 'On the exam, remember that deferred tax liabilities arise from taxable temporary differences that will cause taxable income to be higher than book income in future periods.',
     reference: 'ASC 740-10-25-20',
   },
   {
@@ -1042,6 +1217,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'Book basis > Tax basis means more depreciation has been taken for tax purposes. This creates a taxable temporary difference and DTL = ($60,000 - $40,000) × 21% = $4,200.',
+        whyWrong: {
+      0: 'A deferred tax liability is created because the book basis exceeds the tax basis, but the amount is calculated incorrectly; the difference between the book and tax basis ($20,000) is not the deferred tax liability itself, but rather the taxable temporary difference that must be multiplied by the tax rate (21%) to arrive at the DTL.',
+      1: 'A deferred tax asset arises when the tax basis exceeds the book basis, indicating future deductible amounts for tax purposes, which is the opposite of the scenario presented where the book basis ($60,000) exceeds the tax basis ($40,000).',
+      3: 'A deferred tax asset arises when the tax basis exceeds the book basis, indicating future deductible amounts for tax purposes, which is the opposite of the scenario presented; furthermore, even if it were a DTA situation, the amount shown ($20,000) is the difference in basis, not the DTA which is that difference multiplied by the tax rate.',
+    },
+    memoryAid: 'Book High, Tax Low, Liability Go! (If the book value is higher than the tax basis, it\'s a deferred tax liability).',
+    bottomLine: 'On the exam, remember that book basis exceeding tax basis creates a taxable temporary difference leading to a deferred tax liability, calculated by multiplying the temporary difference by the enacted tax rate (ASC 740-10-25).',
     reference: 'ASC 740-10-25',
   },
   {
@@ -1064,6 +1246,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'A valuation allowance reduces DTAs to the amount that is more likely than not (>50% probability) to be realized based on available evidence.',
+        whyWrong: {
+      1: 'Expected changes in tax rates impact the measurement of the deferred tax asset or liability, not the need for a valuation allowance; a valuation allowance is about *realization*, not measurement (ASC 740-10-30-12). Future tax rates are used to measure the DTA/DTL, but don\'t automatically trigger a valuation allowance.',
+      2: 'The standard for needing a valuation allowance is \'more likely than not\' that the DTA will not be realized, not just any uncertainty (ASC 740-10-30-5); \'more likely than not\' represents a higher threshold than simply \'any uncertainty\'.',
+      3: 'The existence of an NOL carryforward, by itself, does not automatically require a valuation allowance; a valuation allowance is only needed if it\'s more likely than not that the NOL will not be utilized (ASC 740-10-30-17).',
+    },
+    memoryAid: 'Imagine a VALIANT knight (Valuation Allowance) guarding a TREASURE (Tax assets) that might be lost. He only steps in if it\'s MORE LIKELY THAN NOT that the treasure will be stolen.',
+    bottomLine: 'On the exam, remember that a valuation allowance is required for deferred tax assets only when it is more likely than not (greater than 50% probability) that some or all of the deferred tax assets will not be realized.',
     reference: 'ASC 740-10-30-5',
   },
   {
@@ -1086,6 +1275,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'A tax position is recognized only if it is more likely than not (>50% probability) to be sustained upon examination by tax authorities based on technical merits.',
+        whyWrong: {
+      1: 'A private letter ruling from the IRS can provide support for a tax position, but it\'s not the sole criterion for recognition under ASC 740-10; the \'more likely than not\' standard must still be met. Receiving a private letter ruling does not automatically guarantee the tax position will be sustained.',
+      2: 'ASC 740-10 does *not* require certainty for recognizing a tax position; the standard is \'more likely than not,\' which is a significantly lower threshold than being certain.',
+      3: 'Recognizing a tax position relies on the likelihood of it being *sustained*, not the probability of it being challenged; a high likelihood of challenge doesn\'t preclude recognition if it is still more likely than not to be upheld.',
+    },
+    memoryAid: 'Think **MLT**: **M**ore **L**ikely than **T**axes avoided (if challenged). The tax position has to be MLT to be recognized.',
+    bottomLine: 'On the exam, remember that ASC 740 requires a \'more likely than not\' probability of success (greater than 50%) for a tax position to be recognized in the financial statements.',
     reference: 'ASC 740-10-25-6',
   },
 
@@ -1113,6 +1309,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       "Under the cost method, treasury stock is recorded at the price paid to reacquire the shares and reported as a reduction of total stockholders' equity.",
+        whyWrong: {
+      0: 'Fair value at year-end is irrelevant for treasury stock under the cost method; treasury stock is initially recorded at cost, not subsequently adjusted to fair value (ASC 505-30-30). Financial assets held as investments, not treasury stock, are generally marked to market.',
+      1: 'Original issue price is not used under the cost method; the cost method focuses on the actual cost to reacquire the shares, not the price they were initially sold for (ASC 505-30-30).',
+      3: 'Par value is primarily relevant when the stock is initially issued, not when it\'s reacquired as treasury stock; treasury stock is recorded at the reacquisition cost, not the par value (ASC 505-30-30).',
+    },
+    memoryAid: 'Think of **COST** for treasury stock: you record it at the **C**ash **O**utlay **S**pent on **T**reasury shares.',
+    bottomLine: 'On the exam, remember that under the cost method, treasury stock is always recorded at the purchase price paid to reacquire the shares, regardless of the original issue price or par value.',
     reference: 'ASC 505-30-30',
   },
   {
@@ -1135,6 +1338,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Small stock dividends are recorded at fair market value. Retained earnings is debited; common stock (par) and APIC are credited. Large dividends (>25%) use par value.',
+        whyWrong: {
+      0: 'Small stock dividends are not recorded at book value; book value is irrelevant in this scenario because the shares are newly issued, and the accounting focuses on the current market value impact on retained earnings and contributed capital. Using book value would understate the economic effect of the dividend on the company\'s financial position.',
+      1: 'While common stock is credited at par value, a small stock dividend also requires a credit to Additional Paid-In Capital (APIC) for the excess of the fair market value over the par value of the shares issued, making par value alone insufficient.',
+      2: 'A small stock dividend represents a distribution of the company\'s earnings and a recapitalization of equity, requiring a journal entry to reflect the transfer from retained earnings to contributed capital; therefore, no entry is not appropriate.',
+    },
+    memoryAid: 'Think **FASB**ulous **F**air **A**nd **S**mall **B**ecause: Small stock dividends use **F**air value, while Large stock dividends use **B**ook (Par) value.',
+    bottomLine: 'On the exam, remember that small stock dividends (less than 20-25%) are accounted for at fair market value, impacting both common stock (at par) and additional paid-in capital.',
     reference: 'ASC 505-20-30-3',
   },
   {
@@ -1157,6 +1367,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Under ASC 718, share-based payments to employees are measured at grant-date fair value, typically using an option pricing model like Black-Scholes.',
+        whyWrong: {
+      0: 'Par value represents the nominal value assigned to a share upon issuance, and is irrelevant for measuring the expense associated with stock options granted to employees under ASC 718.',
+      2: 'The fair value at the exercise date is not used because ASC 718 requires measurement at the grant date to avoid fluctuations in compensation expense after the option is granted.',
+      3: 'Intrinsic value (market price less exercise price) is used to determine compensation costs only for certain non-qualified stock option plans in some situations, and is not the general rule for measuring stock-based compensation expense under ASC 718.',
+    },
+    memoryAid: 'Remember **G-Fair Value** for Stock Options: Grant Date, Fair Value. Options are valued fairly, from the start (grant).',
+    bottomLine: 'On the exam, remember that employee stock options are measured at their fair value on the grant date, per ASC 718, using an option pricing model.',
     reference: 'ASC 718-10-30-2',
   },
   {
@@ -1179,6 +1396,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'Diluted EPS includes securities that are dilutive - those that would decrease EPS if converted/exercised. Antidilutive securities are excluded from the calculation.',
+        whyWrong: {
+      0: 'Diluted EPS only considers securities that *decrease* EPS; securities that would *increase* EPS (antidilutive) are excluded from the calculation per ASC 260-10-45-17.',
+      1: 'Diluted EPS does not include *all* outstanding securities; it only includes those that are potentially dilutive, such as convertible securities and stock options, as outlined in ASC 260-10-45-17.',
+      3: 'While diluted EPS *considers* potentially dilutive securities, it only *includes* those that are actually dilutive; securities that are potentially dilutive but antidilutive in a given period are excluded from the calculation per ASC 260-10-45-17.',
+    },
+    memoryAid: 'Remember **DADS**: **D**iluted EPS considers **A**ctually **D**ilutive **S**ecurities (and excludes antidilutive ones).',
+    bottomLine: 'On the exam, remember that diluted EPS focuses solely on the impact of securities that would decrease earnings per share, and antidilutive securities are ignored in the calculation.',
     reference: 'ASC 260-10-45-17',
   },
 
@@ -1206,6 +1430,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Consolidation is required when a parent has a controlling financial interest, typically through majority voting ownership or variable interest entity (VIE) control.',
+        whyWrong: {
+      0: 'A written agreement alone is insufficient for consolidation; consolidation is dictated by the presence of a controlling financial interest, as defined by ASC 810-10-15-8.',
+      2: 'Significant influence (20-50% ownership) requires equity method accounting, not consolidation; consolidation necessitates control, not just influence as per ASC 323-10.',
+      3: 'Any ownership interest, even a small amount, does not automatically require consolidation; the parent must possess a controlling financial interest as outlined in ASC 810-10-15-8.',
+    },
+    memoryAid: 'C.F.I. = Controlling Financial Interest = Consolidation. Think: \'See, Eff, Eye, See\' a consolidated financial statement!',
+    bottomLine: 'On the exam, remember that consolidation is driven by a controlling financial interest, which is separate from significant influence or simple ownership.',
     reference: 'ASC 810-10-15-8',
   },
   {
@@ -1229,6 +1460,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Downstream intercompany profits are eliminated entirely against the parent (selling entity). Upstream profits are eliminated against NCI and controlling interest proportionally.',
+        whyWrong: {
+      0: 'Subsidiary\'s retained earnings are not directly reduced in a downstream sale; the elimination focuses on the selling entity\'s (parent\'s) profit, per ASC 810-10-45-1.',
+      1: 'Proportional elimination against controlling and noncontrolling interest applies to *upstream* sales, not downstream sales, where the parent is the seller, as defined in ASC 810-10-45-1.',
+      2: 'Eliminating intercompany profit solely against the noncontrolling interest is appropriate for upstream sales when allocating the subsidiary\'s income, but not when the parent makes a downstream sale.',
+    },
+    memoryAid: 'DADS: Downstream, Against the Parent (selling entity), Sub\'s results are the same. U-CAN: Upstream, Controlling and Noncontrolling interest are affected proportionally.',
+    bottomLine: 'On the exam, remember that downstream intercompany profits are eliminated against the *parent\'s* retained earnings, while upstream profits are allocated between controlling and noncontrolling interest.',
     reference: 'ASC 810-10-45-1',
   },
   {
@@ -1251,6 +1489,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       "Under ASC 810, NCI is presented as a separate component of equity in the consolidated balance sheet, distinct from parent's equity but within total equity.",
+        whyWrong: {
+      0: 'Noncontrolling interest represents the equity ownership in a subsidiary that is *not* attributable to the parent; therefore, it cannot be a contra-equity account which would reduce equity (ASC 810-10-45-16). Contra-equity accounts, like treasury stock, represent a reduction in the parent\'s equity.',
+      2: 'While NCI is reported in the equity section, it is *part* of equity, not a separate section *between* liabilities and equity; this placement would misrepresent the ownership structure (ASC 810-10-45-16). A section between liabilities and equity is not a standard presentation under U.S. GAAP.',
+      3: 'Noncontrolling interest reflects an ownership stake, not an obligation to transfer assets or provide services; therefore, it is not a liability (ASC 810-10-45-16). Liabilities represent present obligations arising from past events.',
+    },
+    memoryAid: 'NCI is *NOT* a Liability! Think: **E**quity includes **N**on**C**ontrolling **I**nterest (**ENCI**) to remember it belongs in equity.',
+    bottomLine: 'On the exam, remember that noncontrolling interest (NCI) is a component of equity, representing the portion of a subsidiary\'s equity not attributable to the parent company.',
     reference: 'ASC 810-10-45-16',
   },
 
@@ -1273,6 +1518,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'The General Fund is a governmental fund. Governmental funds include: General, Special Revenue, Capital Projects, Debt Service, and Permanent Funds.',
+        whyWrong: {
+      0: 'Fiduciary funds account for assets held by a government in a trustee capacity for the benefit of others; the General Fund accounts for resources not required to be accounted for in another fund.',
+      1: 'Agency funds are a type of fiduciary fund used when the government is acting as a custodial agent for individuals, organizations, or other governments, not for general governmental operations.',
+      2: 'Proprietary funds (Enterprise and Internal Service) account for a government\'s business-type activities, whereas the General Fund accounts for basic governmental services.',
+    },
+    memoryAid: 'Use the acronym GRaSPP to remember the governmental funds: General, Special Revenue, and debt Service funds, Capital Projects funds, and Permanent funds.',
+    bottomLine: 'On the exam, remember that the General Fund is the primary operating fund of a government and is always a governmental fund.',
     reference: 'GASB Statement No. 34',
   },
   {
@@ -1295,6 +1547,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Governmental funds use current financial resources measurement focus and modified accrual basis. Proprietary funds use economic resources and full accrual basis.',
+        whyWrong: {
+      0: 'Governmental funds do not use the cash basis of accounting; they use the modified accrual basis, which recognizes revenues when measurable and available and expenditures when incurred (with some exceptions). The cash basis is generally used by very small entities or for internal reporting, not for governmental fund financial statements.',
+      1: 'Governmental funds do *not* use the economic resources measurement focus; this measurement focus is used by proprietary and fiduciary funds. The economic resources measurement focus reports all economic resources, while governmental funds focus on current financial resources.',
+      2: 'Governmental funds do *not* use the accrual basis of accounting; this basis is used by proprietary and fiduciary funds. The modified accrual basis used by governmental funds only recognizes revenues when measurable and available, not necessarily when earned.',
+    },
+    memoryAid: 'Think **G**overnmental = **G**urrent Financial Resources and **M**odified Accrual. Then, remember that proprietary funds are the opposite (economic resources/full accrual).',
+    bottomLine: 'On the exam, remember that governmental funds use the current financial resources measurement focus and the modified accrual basis of accounting, while proprietary and fiduciary funds use the economic resources measurement focus and the accrual basis of accounting.',
     reference: 'GASB Statement No. 34',
   },
   {
@@ -1317,6 +1576,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Under modified accrual, revenues are recognized when measurable and available. Available means collectible within the current period or soon enough to pay current liabilities (typically 60 days).',
+        whyWrong: {
+      0: 'While revenues must be earned, this is not the *only* condition for revenue recognition under modified accrual; they must also be measurable and *available*, meaning collectible within the current period or soon enough thereafter to pay current liabilities. Option A is incomplete, as it doesn\'t fully represent the requirements of modified accrual accounting.',
+      2: 'While revenues must be earned, this is true for accrual accounting, not specifically modified accrual accounting. Modified accrual accounting requires revenues to be both earned and measurable and available.',
+      3: 'Recognizing revenues only when cash is received is characteristic of cash basis accounting, not modified accrual accounting, which is used by governmental funds.',
+    },
+    memoryAid: 'Think **MAMA** for Modified Accrual: **M**easurable and **A**vailable, **M**odified **A**ccrual. This helps you remember the two key criteria beyond \'earned\'.',
+    bottomLine: 'On the exam, remember that governmental funds using the modified accrual basis recognize revenues when they are both measurable and available (collectible within the current period or soon enough thereafter to pay current liabilities).',
     reference: 'GASB Statement No. 33',
   },
   {
@@ -1340,6 +1606,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       "Restricted fund balance is limited by external parties (grantors, creditors, laws). Committed is limited by government's highest decision-making authority. Assigned is intended for specific purposes.",
+        whyWrong: {
+      0: 'Nonspendable fund balances represent assets that are not in spendable form or are legally or contractually required to be maintained intact; these are not limited by external parties for specific purposes.',
+      1: 'Committed fund balances are constrained by a formal action of the government\'s highest level of decision-making authority, not by external parties.',
+      2: 'Assigned fund balances are intended to be used for specific purposes, but the government itself, not external parties, designates these purposes.',
+    },
+    memoryAid: 'Think of **R**estricted as **R**equired by an outside source. Only external parties can *restrict* the use of funds.',
+    bottomLine: 'On the exam, remember that *restricted* fund balances in governmental accounting are constrained by external parties, such as grantors or creditors.',
     reference: 'GASB Statement No. 54',
   },
 
@@ -1367,6 +1640,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 3,
     explanation:
       'Under ASU 2016-14, NFPs classify net assets into two categories: (1) with donor restrictions and (2) without donor restrictions.',
+        whyWrong: {
+      0: 'NFPs do not classify net assets into four categories based on liquidity; while liquidity is important, the primary classification focuses on donor restrictions as required by ASC 958-210-45-1.',
+      1: 'While previously NFPs used three categories (unrestricted, temporarily restricted, and permanently restricted), ASU 2016-14 simplified this to two categories: with donor restrictions and without donor restrictions per ASC 958-210-45-1.',
+      2: 'NFPs do not classify net assets into one category; donor restrictions are a key aspect of NFP accounting and must be distinguished according to ASC 958-210-45-1.',
+    },
+    memoryAid: 'Think **D**onor **R**estrictions (DR) - NFPs classify net assets based on whether they have **D**onor **R**estrictions or not. It\'s a DR situation!',
+    bottomLine: 'On the exam, remember that NFPs classify net assets into two categories: with donor restrictions and without donor restrictions as per ASU 2016-14.',
     reference: 'ASC 958-210-45-1',
   },
   {
@@ -1389,6 +1669,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'Unconditional promises to give are recognized as contribution revenue when made. If due in more than one year, they are recorded at present value.',
+        whyWrong: {
+      1: 'Recognizing revenue only when cash is received violates accrual accounting principles, which require recognition when earned and measurable, regardless of cash flow (ASC 958-605-25-2). The unconditional promise establishes the revenue recognition event, not the cash receipt.',
+      2: 'Recognizing revenue only at the fiscal year-end ignores the underlying economic event – the unconditional promise made during the year – and misrepresents the organization\'s financial position during the year (ASC 958-605-25-2). Revenue should be recognized when the promise is made.',
+      3: 'Legal enforceability is a factor in determining if a *conditional* promise exists, not an *unconditional* promise (ASC 958-605-25-1). An unconditional promise is recognized even if not legally enforced.',
+    },
+    memoryAid: 'PUT it in writing! **P**romises to give, **U**nconditional, **T**oday! Recognize unconditional promises today, at present value if due in the future.',
+    bottomLine: 'On the exam, remember that unconditional promises to give are recognized as revenue when the promise is made, discounted to present value if payment extends beyond one year.',
     reference: 'ASC 958-605-25-2',
   },
   {
@@ -1411,6 +1698,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'Donated services are recognized only if they: (1) create or enhance nonfinancial assets, or (2) require specialized skills, are provided by someone with those skills, and would typically be purchased if not donated.',
+        whyWrong: {
+      0: 'The value of donated services is irrelevant; the criteria for recognition depend on the nature of the services provided, not their monetary worth. ASC 958-605-25-16 focuses on the services\' impact or the necessity of purchasing them otherwise.',
+      1: 'While all donations are valuable to an organization, GAAP requires a higher threshold for recognizing donated services as revenue. ASC 958-605-25-16 specifies that the services must either create or enhance nonfinancial assets, or require specialized skills and would typically be purchased if not donated.',
+      3: 'Although services provided by professionals *can* meet the recognition criteria, professional status alone is insufficient; the services must either create or enhance nonfinancial assets, or require specialized skills and would typically be purchased if not donated per ASC 958-605-25-16.',
+    },
+    memoryAid: 'Think **SEA**: Donated services are recognized if they **S**pecialize (require specialized skills and would be purchased if not donated), **E**nhance (create or enhance nonfinancial assets), or both.',
+    bottomLine: 'On the exam, remember that donated services are only recognized as revenue if they either enhance a nonfinancial asset or require specialized skills that would otherwise need to be purchased.',
     reference: 'ASC 958-605-25-16',
   },
   {
@@ -1433,6 +1727,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 0,
     explanation:
       'NFPs must present expenses by both functional classification (program vs. support) and natural classification (salaries, rent, etc.), either on the face of the statements or in the notes.',
+        whyWrong: {
+      1: 'NFPs are required to present expenses by BOTH functional and natural classification; functional classification alone is insufficient to meet the reporting requirements per ASC 958-720-45-1.',
+      2: 'While NFPs must present expenses by natural classification, it\'s not the *only* classification required; ASC 958-720-45-1 mandates presentation by both natural *and* functional classification.',
+      3: 'NFPs do not have discretion to choose between functional or natural classification; ASC 958-720-45-1 requires that they present expenses using *both* classifications.',
+    },
+    memoryAid: 'Think **FUN**ctional and **NATURAL** for NFP expense reporting - it\'s *FUN* to report *NATURALLY* (both are required!).',
+    bottomLine: 'On the exam, remember that NFPs *must* present expenses by both functional (program vs. support) and natural (salaries, rent, etc.) classifications, as mandated by ASC 958-720-45-1.',
     reference: 'ASC 958-720-45-1',
   },
 ];

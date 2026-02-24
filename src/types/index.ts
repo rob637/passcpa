@@ -235,6 +235,18 @@ export interface Question {
   correctAnswer: number;
   explanation: string;
   
+  // UWorld-style enhanced explanations
+  whyWrong?: {
+    [key: number]: string;  // Index maps to option index (0-3), explains why that option is incorrect
+  };
+  memoryAid?: string;       // Mnemonic, acronym, or memory trick
+  bottomLine?: string;      // One-sentence exam takeaway
+  diagram?: {
+    url: string;            // URL to diagram image
+    alt: string;            // Alt text for accessibility
+    caption?: string;       // Optional caption
+  };
+  
   // Blueprint tagging
   blueprintArea?: string;
   blueprintGroup?: string;

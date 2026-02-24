@@ -39,7 +39,7 @@ import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionSer
 import { selectQuestionsFromEngine } from '../../services/adaptiveEngineAdapter';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
-import { getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
+import { getDefaultSection, getCurrentSectionForCourse, getSectionIds } from '../../utils/sectionUtils';
 import { getPracticeSessionsByCourse, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -1115,6 +1115,78 @@ const Practice: React.FC = () => {
     }
   };
 
+  // Start session with topic filter (for when daily plan sends a topic that's not a section)
+  const startSessionWithTopicFilter = async (section: ExamSection, topicFilter: string, count: number) => {
+    setLoading(true);
+    try {
+      // Fetch questions for the section, then filter by topic
+      const examDate = getExamDate(userProfile, section, courseId) || new Date();
+      const blueprintVersion = getBlueprintForExamDate(examDate);
+      const is2026 = blueprintVersion === '2026';
+      const applyHr1Filter = is2026 && courseId === 'cpa' && (section === 'REG' || section === 'TCP');
+      
+      // First try exact topic match
+      let fetchedQuestions = await fetchQuestions({
+        section,
+        subtopic: topicFilter,
+        count,
+        hr1Only: applyHr1Filter,
+        courseId,
+      });
+      
+      // If no questions found with exact topic, try blueprint area
+      if (fetchedQuestions.length === 0) {
+        logger.info(`[Practice] No exact topic match for '${topicFilter}', trying as blueprint area`);
+        fetchedQuestions = await fetchQuestions({
+          section,
+          blueprintArea: topicFilter,
+          count,
+          hr1Only: applyHr1Filter,
+          courseId,
+        });
+      }
+      
+      // If still no questions, fall back to general section questions
+      if (fetchedQuestions.length === 0) {
+        logger.info(`[Practice] No questions for topic '${topicFilter}', falling back to section ${section}`);
+        fetchedQuestions = await fetchQuestions({
+          section,
+          count,
+          hr1Only: applyHr1Filter,
+          courseId,
+        });
+      }
+      
+      setQuestions(fetchedQuestions);
+      setSessionConfig({
+        section,
+        mode: 'study',
+        count,
+        topics: [topicFilter],
+        difficulty: 'all',
+        questionStatus: 'all',
+        blueprintArea: 'all',
+        scoringMode: 'practice',
+      });
+      sessionEndedRef.current = false;
+      sessionCourseRef.current = courseId;
+      setInSession(true);
+      setStartTime(Date.now());
+      setCurrentIndex(0);
+      setAnswers({});
+      setSelectedAnswer(null);
+      setShowExplanation(false);
+      setFlagged(new Set());
+      setLoading(false);
+      scrollToTop();
+      
+      analytics.startPractice(section, fetchedQuestions.length);
+    } catch (error) {
+      logger.error('Error starting session with topic filter:', error);
+      setLoading(false);
+    }
+  };
+
   // Auto-start session if mode=weak OR blueprintArea/topic is specified (coming from lesson or daily plan)
   useEffect(() => {
     const mode = searchParams.get('mode');
@@ -1151,20 +1223,34 @@ const Practice: React.FC = () => {
       });
     }
     
-    // Auto-start section practice when coming from daily plan with topic param (e.g., topic=CIA1)
+    // Auto-start section practice when coming from daily plan with topic param (e.g., topic=CIA1 or topic=Financial Statement Analysis)
     if (topicParam && !subtopicParam && !blueprintAreaParam && userProfile && !inSession && !loading && mode !== 'weak') {
       const questionCount = countParam ? parseInt(countParam, 10) : 15;
+      const validSections = getSectionIds(courseId);
+      const isValidSection = validSections.includes(topicParam);
       
-      startSession({
-        section: topicParam as ExamSection,
-        mode: 'study',
-        count: isNaN(questionCount) ? 15 : questionCount,
-        topics: [],
-        difficulty: 'all',
-        questionStatus: 'all',
-        blueprintArea: 'all',
-        scoringMode: 'practice',
-      });
+      if (isValidSection) {
+        // topicParam is a valid section (e.g., 'CMA1', 'FAR') - use as section filter
+        startSession({
+          section: topicParam as ExamSection,
+          mode: 'study',
+          count: isNaN(questionCount) ? 15 : questionCount,
+          topics: [],
+          difficulty: 'all',
+          questionStatus: 'all',
+          blueprintArea: 'all',
+          scoringMode: 'practice',
+        });
+      } else {
+        // topicParam is a topic name (e.g., 'Financial Statement Analysis') - use as topic filter
+        // Fall back to user's current section and filter by topic
+        const currentSection = (userProfile.examSection || getDefaultSection(courseId)) as ExamSection;
+        logger.info(`[Practice] Topic '${topicParam}' is not a section, using as topic filter for section ${currentSection}`);
+        
+        // Navigate to a session with subtopic filter instead
+        // We need to manually start the fetch with topic filtering
+        startSessionWithTopicFilter(currentSection, topicParam, isNaN(questionCount) ? 15 : questionCount);
+      }
     }
     // Only run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1754,13 +1840,98 @@ const Practice: React.FC = () => {
               <Lightbulb className="w-5 h-5 text-amber-500" />
               <h3 className="font-semibold text-slate-900 dark:text-slate-100">Explanation</h3>
             </div>
-            <div className="card-body">
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                {currentQuestion.explanation}
-              </p>
+            <div className="card-body space-y-4">
+              {/* Correct Answer Explanation */}
+              <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-green-800 dark:text-green-300 mb-1">
+                      Correct: {String.fromCharCode(65 + currentQuestion.correctAnswer)}. {currentQuestion.options[currentQuestion.correctAnswer]}
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {currentQuestion.explanation}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Why Wrong - UWorld-style */}
+              {currentQuestion.whyWrong && Object.keys(currentQuestion.whyWrong).length > 0 && (
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Why other options are wrong:</p>
+                  {currentQuestion.options.map((option, index) => {
+                    if (index === currentQuestion.correctAnswer) return null;
+                    const wrongExplanation = currentQuestion.whyWrong?.[index];
+                    if (!wrongExplanation) return null;
+                    return (
+                      <div key={index} className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-900">
+                        <div className="flex items-start gap-2">
+                          <XCircle className="w-4 h-4 text-red-500 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-red-800 dark:text-red-300 text-sm">
+                              {String.fromCharCode(65 + index)}. {option}
+                            </p>
+                            <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                              {wrongExplanation}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Memory Aid */}
+              {currentQuestion.memoryAid && (
+                <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
+                  <div className="flex items-start gap-2">
+                    <Brain className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-purple-800 dark:text-purple-300 text-sm mb-1">Memory Aid</p>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        {currentQuestion.memoryAid}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Bottom Line Takeaway */}
+              {currentQuestion.bottomLine && (
+                <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="flex items-start gap-2">
+                    <Zap className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-blue-800 dark:text-blue-300 text-sm mb-1">Bottom Line for the Exam</p>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        {currentQuestion.bottomLine}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Diagram */}
+              {currentQuestion.diagram && (
+                <div className="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg border border-slate-200 dark:border-slate-600">
+                  <p className="font-semibold text-slate-700 dark:text-slate-300 text-sm mb-2">📊 Visual Aid</p>
+                  <img 
+                    src={currentQuestion.diagram.url} 
+                    alt={currentQuestion.diagram.alt}
+                    className="max-w-full rounded-lg border border-slate-200 dark:border-slate-600"
+                  />
+                  {currentQuestion.diagram.caption && (
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 italic">
+                      {currentQuestion.diagram.caption}
+                    </p>
+                  )}
+                </div>
+              )}
               
               {currentQuestion.reference && (
-                <div className="mt-3 flex items-start gap-2 text-sm text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700">
+                <div className="flex items-start gap-2 text-sm text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700">
                   <div className="p-1 bg-slate-200 dark:bg-slate-600 rounded">
                     <BookOpen className="w-3 h-3 text-slate-700 dark:text-slate-300" />
                   </div>

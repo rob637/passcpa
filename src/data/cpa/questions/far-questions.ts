@@ -28,7 +28,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 3,
     explanation:
-      'Relevance and faithful representation are the fundamental qualitative characteristics. Comparability, verifiability, timeliness, and understandability are enhancing characteristics.',
+      'Relevance and faithful representation are the two FUNDAMENTAL qualitative characteristics. Information must be both relevant (capable of making a difference in decisions) and faithfully represented (complete, neutral, free from error) to be useful.',
+    whyWrong: {
+      0: 'Comparability is an ENHANCING characteristic, not fundamental. It helps users identify similarities/differences but isn\'t required for basic decision-usefulness.',
+      1: 'Timeliness is an ENHANCING characteristic. Old information can still be decision-useful for trend analysis.',
+      2: 'Verifiability is an ENHANCING characteristic. It means independent parties would reach consensus, but unverifiable information can still be relevant.',
+    },
+    memoryAid: 'FUNDAMENTAL = "RF" = Relevance + Faithful representation. ENHANCING = "CUTE" = Comparability, Understandability, Timeliness, vErifiability.',
+    bottomLine: 'The exam loves testing fundamental vs. enhancing. Remember: Relevance and Faithful Representation are the two FUNDAMENTAL characteristics — everything else enhances them.',
     reference: 'FASB Concepts Statement No. 8',
   },
   {
@@ -46,7 +53,14 @@ export const FAR_QUESTIONS: Question[] = [
     options: ['Revenue', 'Comprehensive income', 'Equity', 'Gains'],
     correctAnswer: 2,
     explanation:
-      'Equity (or net assets for NFPs) is defined as the residual interest in the assets of an entity that remains after deducting its liabilities.',
+      'Equity is defined as the residual interest in the assets of an entity after deducting liabilities. This is the fundamental accounting equation: Assets = Liabilities + Equity, rearranged as Equity = Assets - Liabilities.',
+    whyWrong: {
+      0: 'Revenue is an INFLOW of assets (or decrease in liabilities) from delivering goods/services — it\'s not a residual, it\'s a flow that increases equity.',
+      1: 'Comprehensive income is the CHANGE in equity during a period from non-owner sources. It\'s not the residual itself, but the change in the residual.',
+      3: 'Gains are increases in equity from peripheral transactions. Like revenue, gains contribute TO equity but are not the residual definition.',
+    },
+    memoryAid: 'Think of equity as "what\'s LEFT over" — A - L = E. The residual is what remains after paying all creditors.',
+    bottomLine: 'Equity = Assets minus Liabilities. It\'s the ownership stake remaining after all debts are paid. For NFPs, it\'s called "net assets."',
     reference: 'FASB Concepts Statement No. 6',
   },
   {
@@ -69,7 +83,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation:
-      'Recognition requires meeting the definition of an element AND being measurable with sufficient reliability. Materiality and management approval are not recognition criteria.',
+      'Recognition has TWO requirements: (1) the item meets the definition of an element (asset, liability, etc.), AND (2) it can be measured with sufficient reliability. Both criteria must be met for recognition.',
+    whyWrong: {
+      1: 'Materiality affects DISCLOSURE decisions, not recognition. Even immaterial items are technically recognized if they meet element and measurement criteria — they just may be aggregated.',
+      2: 'This is close but uses old terminology. The current framework uses "measurable with sufficient reliability" rather than just "measured reliably."',
+      3: 'Management approval is an internal control procedure, not a recognition criterion under GAAP. Items must be recognized based on accounting standards, not management preferences.',
+    },
+    memoryAid: 'Recognition = "Definition + Measurement" (D+M). First, does it meet the definition? Second, can we measure it reliably?',
+    bottomLine: 'Two tests for recognition: (1) meets element definition, (2) measurable with sufficient reliability. Both must pass.',
     reference: 'FASB Concepts Statement No. 5',
   },
 
@@ -96,7 +117,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation:
-      'Bonds due in 6 months with no refinancing arrangement must be classified as current. If refinancing occurs before the balance sheet date, it can be classified as non-current.',
+      'Bonds due in 6 months with no refinancing arrangement must be classified as CURRENT because they will be settled within one year using current assets. The key is: due within 12 months + no refinancing = current liability.',
+    whyWrong: {
+      0: 'DTLs are ALWAYS classified as noncurrent under ASC 740, regardless of when they reverse. This is a special rule for deferred taxes — they don\'t follow the normal 12-month rule.',
+      2: 'If refinancing is COMPLETED before the balance sheet date (or a refinancing agreement exists), the debt can remain as noncurrent. The refinancing "saves" it from current classification.',
+      3: '13 months is BEYOND the one-year cutoff. Anything due more than 12 months from the balance sheet date is noncurrent.',
+    },
+    memoryAid: 'Current = "Due in 12, no rescue." If due within 12 months AND no refinancing arranged, it\'s current. DTLs are the exception — always noncurrent.',
+    bottomLine: 'Current liabilities: due within 12 months, will use current assets to settle, no refinancing arranged. Exception: Deferred tax liabilities are always noncurrent.',
     reference: 'ASC 470-10-45',
   },
   {
@@ -118,7 +146,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation:
-      'Disposal of a component that represents a strategic shift (like an entire division) is reported as discontinued operations, separate from continuing operations, net of tax.',
+      'Selling an entire division represents a "strategic shift" under ASC 205-20. Discontinued operations are reported SEPARATELY from continuing operations, NET OF TAX, below the line. This gives users a clear picture of ongoing vs. one-time results.',
+    whyWrong: {
+      0: 'Continuing operations only includes the normal, recurring business. Disposing of an entire division is not "continuing" — it\'s a one-time strategic exit.',
+      2: 'TRICK ANSWER! Extraordinary items were ELIMINATED from U.S. GAAP in 2015 (ASU 2015-01). If you see "extraordinary item" as an answer, it\'s almost certainly wrong.',
+      3: 'An "unusual item" would be for things like restructuring charges or asset impairments that are part of continuing operations. Disposing of an entire division is bigger — it\'s discontinued operations.',
+    },
+    memoryAid: 'Discontinued = "Strategic Shift" — major geographic area, major line of business, or equity method investment that\'s a major part of operations.',
+    bottomLine: 'Two requirements for discontinued operations: (1) component of entity, (2) represents strategic shift. Remember: extraordinary items are DEAD in GAAP.',
     reference: 'ASC 205-20',
   },
   {
@@ -140,7 +175,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation:
-      'OCI includes: unrealized gains/losses on AFS debt securities, foreign currency translation adjustments, pension adjustments, and cash flow hedge gains/losses. Trading securities gains go to net income.',
+      'Foreign currency translation adjustments go to OCI because they\'re unrealized and result from translating foreign subsidiary financials. They stay in AOCI until the subsidiary is sold.',
+    whyWrong: {
+      0: 'REALIZED gains go to NET INCOME, not OCI. OCI is for UNREALIZED items. When you sell an AFS security, the gain/loss moves from OCI to net income (reclassification adjustment).',
+      2: 'Goodwill impairment goes straight to NET INCOME as an expense. It\'s a recognized loss, not an unrealized holding item.',
+      3: 'Trading securities are held for short-term profit. ALL changes (realized and unrealized) go to NET INCOME. Trading = always net income.',
+    },
+    memoryAid: 'OCI = "PUFE" — Pension adjustments, Unrealized gains/losses on AFS debt, Foreign currency translation, Effective portion of cash flow hedges.',
+    bottomLine: 'OCI is for items that bypass net income but affect equity. Key ones: foreign currency translation, pension adjustments, AFS debt unrealized gains, cash flow hedges.',
     reference: 'ASC 220-10-45',
   },
   {
@@ -163,7 +205,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation:
-      'Decreases in current assets (like inventory) are added; increases in current assets are subtracted. Depreciation is added back. Increases in current liabilities are added.',
+      'A DECREASE in inventory means you sold more than you bought — cash was received without a proportional cash outflow. So we ADD it back to net income because net income didn\'t reflect this cash "boost."',
+    whyWrong: {
+      1: 'Depreciation is ADDED, not subtracted. It\'s a non-cash expense that reduced net income, so we add it back to find actual cash from operations.',
+      2: 'Half right, half wrong. Increases in A/P ARE added (you got goods without paying yet). But depreciation is also ADDED, not subtracted.',
+      3: 'Increases in A/R are SUBTRACTED. You recorded revenue but didn\'t collect cash yet — net income overstates cash received.',
+    },
+    memoryAid: 'Indirect method rule: "Assets up = cash down, Liabilities up = cash up." For current assets: increase = subtract, decrease = add. For current liabilities: opposite.',
+    bottomLine: 'Indirect method adjustments: Add back non-cash expenses (depreciation). Current assets: decrease=add, increase=subtract. Current liabilities: increase=add, decrease=subtract.',
     reference: 'ASC 230-10-45',
   },
   {
@@ -185,7 +234,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation:
-      'Under U.S. GAAP, interest paid is classified as an operating activity. Under IFRS, companies may classify it as operating or financing.',
+      'Under U.S. GAAP, interest PAID is ALWAYS operating. The rationale: interest expense affects net income (operating), so the cash payment follows. This is different from IFRS where companies can choose.',
+    whyWrong: {
+      0: 'This describes IFRS treatment, not U.S. GAAP. Under IFRS, companies can classify interest paid as operating OR financing. The CPA exam tests U.S. GAAP — no election.',
+      2: 'Investing activities are for long-term assets (buying/selling equipment, investments). Interest isn\'t related to asset purchases.',
+      3: 'Logic trap! Interest relates to borrowing (financing), so students pick this. But GAAP says interest PAID = operating because it hits the income statement.',
+    },
+    memoryAid: 'U.S. GAAP interest rule: Interest PAID = Operating. Interest RECEIVED = Operating. Dividends PAID = Financing. Dividends RECEIVED = Operating.',
+    bottomLine: 'CPA exam favorite! Under U.S. GAAP, both interest paid AND received are OPERATING. Only dividends paid is financing. Know the GAAP vs. IFRS difference.',
     reference: 'ASC 230-10-45-17',
   },
 
@@ -213,7 +269,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 1,
     explanation:
-      'CECL requires recognition of expected credit losses over the contractual life of the asset from day one, not just incurred losses. It considers historical data, current conditions, and reasonable forecasts.',
+      'CECL is FORWARD-LOOKING. From DAY ONE of holding a receivable, you must estimate ALL expected credit losses over its entire life — not just losses that have already occurred. This was a major shift from the old "incurred loss" model.',
+    whyWrong: {
+      0: 'Historical data is ONE input, but CECL also requires considering current conditions and REASONABLE FORECASTS. History alone is backward-looking.',
+      2: '"Probable and estimable" is the OLD incurred loss standard (pre-CECL). Under CECL, you don\'t wait until a loss is probable — you estimate expected losses immediately.',
+      3: 'Incurred losses = old model. CECL replaced it specifically because waiting for losses to "incur" was too little, too late (see 2008 financial crisis).',
+    },
+    memoryAid: 'CECL = "Crystal ball" approach. On Day 1, estimate ALL future losses over the asset\'s life. Uses: Historical loss data + Current conditions + Reasonable forecasts.',
+    bottomLine: 'CECL records expected lifetime losses at origination. Key difference from old model: no longer waiting for loss to be "probable" — estimate expected losses from Day 1.',
     reference: 'ASC 326-20',
   },
   {
@@ -235,7 +298,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation:
-      'Factoring without recourse transfers risks to the factor. If control is surrendered, the transaction is a sale - receivables are removed and gain/loss recognized.',
+      'WITHOUT recourse = the factor (buyer) assumes ALL credit risk. Since the seller transfers risks and benefits, this is a TRUE SALE. Receivables come off the books; gain/loss is recognized for the difference between carrying value and cash received (minus any holdbacks).',
+    whyWrong: {
+      1: 'Contingent liability applies to WITH recourse factoring, where the seller may have to pay back if customers don\'t pay. Without recourse = no contingency.',
+      2: 'Financing treatment (secured borrowing) happens when control is NOT transferred. Without recourse + control surrendered = sale, not borrowing.',
+      3: 'Retaining receivables is for secured borrowings where the company keeps legal title. Without recourse AND control surrendered = receivables removed.',
+    },
+    memoryAid: 'Without Recourse = "Walk away" — you sell and forget. With Recourse = "Might come back" — you may have to repurchase or pay if customer defaults.',
+    bottomLine: 'Factoring without recourse: derecognize receivables, record cash, recognize gain/loss. Three conditions for sale treatment: (1) transferred beyond reach of transferor, (2) transferee can pledge/exchange, (3) transferor doesn\'t maintain control.',
     reference: 'ASC 860-10',
   },
   {
@@ -258,7 +328,14 @@ export const FAR_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation:
-      "Non-interest-bearing notes are recorded at present value, with the discount amortized as interest income over the note's life.",
+      'A non-interest-bearing note means the "interest" is baked into the face value. You must discount back to present value using the market rate. The difference between face value and PV is the discount, which gets amortized as interest income over the 3 years.',
+    whyWrong: {
+      1: 'Bad debt allowance is a SEPARATE issue from initial measurement. First record at PV, then separately assess credit losses (CECL).',
+      2: '"Face value less a contra" is vague and not the prescribed approach. The note should be recorded at present value directly, OR at face with a discount account — but option A captures the economics better.',
+      3: 'Recording at face value ($100,000) ignores the time value of money. You\'d be overstating the asset and understating interest income over the note\'s life.',
+    },
+    memoryAid: 'Non-interest-bearing note = "Hidden interest." The face value includes future interest, so discount to PV. PV = Face / (1 + r)^n. For $100K at 8% for 3 years: $100,000 / 1.2597 = $79,383.',
+    bottomLine: 'Always record non-interest-bearing notes at present value using market rate. The discount is interest revenue earned over the note\'s life.',
     reference: 'ASC 835-30',
   },
 

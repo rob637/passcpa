@@ -47,6 +47,7 @@ const Settings = lazy(() => import('./components/pages/Settings'));
 const You = lazy(() => import('./components/pages/You'));
 
 // Training Modes
+const DailyChallenge = lazy(() => import('./components/pages/DailyChallenge'));
 const Flashcards = lazy(() => import('./components/pages/Flashcards'));
 const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
 const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
@@ -920,6 +921,16 @@ function App() {
                       <PremiumPage>
                         <CourseKeyed>
                           <Practice />
+                        </CourseKeyed>
+                      </PremiumPage>
+                    }
+                  />
+                  <Route
+                    path="/daily-challenge"
+                    element={
+                      <PremiumPage>
+                        <CourseKeyed>
+                          <DailyChallenge />
                         </CourseKeyed>
                       </PremiumPage>
                     }

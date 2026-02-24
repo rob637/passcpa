@@ -18,9 +18,11 @@ import { trackPWAEngagement } from '../hooks/usePWAInstall';
 // GA4 Measurement ID - Get from Google Analytics 4 Admin → Data Streams → Web
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || '';
 
-// Google Ads Conversion ID - Get from Google Ads → Tools → Conversions → Tag setup
-// Format: AW-XXXXXXXXX/YYYYYYYYYYYYYYY
-const GOOGLE_ADS_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_CONVERSION_ID || '';
+// Google Ads Conversion IDs - Get from Google Ads → Tools → Conversions → Tag setup
+// Format: AW-XXXXXXXXX/YYYYYYYYYYYYYYY (each conversion action has its own ID)
+const GOOGLE_ADS_SIGNUP_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_SIGNUP_CONVERSION_ID || import.meta.env.VITE_GOOGLE_ADS_CONVERSION_ID || '';
+const GOOGLE_ADS_TRIAL_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_TRIAL_CONVERSION_ID || '';
+const GOOGLE_ADS_PURCHASE_CONVERSION_ID = import.meta.env.VITE_GOOGLE_ADS_PURCHASE_CONVERSION_ID || '';
 
 let initialized = false;
 
@@ -73,13 +75,15 @@ export const initAnalytics = (): void => {
   });
 
   // Configure Google Ads for conversion tracking
-  if (GOOGLE_ADS_CONVERSION_ID) {
-    // Extract the AW-XXXXXXXXX part from the full conversion ID
-    const googleAdsId = GOOGLE_ADS_CONVERSION_ID.split('/')[0];
-    if (googleAdsId) {
-      window.gtag('config', googleAdsId);
-      logger.log('Google Ads configured:', googleAdsId);
-    }
+  const googleAdsIds = [GOOGLE_ADS_SIGNUP_CONVERSION_ID, GOOGLE_ADS_TRIAL_CONVERSION_ID, GOOGLE_ADS_PURCHASE_CONVERSION_ID]
+    .map(id => id.split('/')[0])
+    .filter(id => id && id.startsWith('AW-'));
+  
+  // Get unique account IDs
+  const uniqueAdsIds = [...new Set(googleAdsIds)];
+  for (const googleAdsId of uniqueAdsIds) {
+    window.gtag('config', googleAdsId);
+    logger.log('Google Ads configured:', googleAdsId);
   }
 
   // Load gtag script
@@ -250,13 +254,13 @@ export const analytics = {
       user_id: userId,
     });
 
-    // Google Ads conversion
-    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+    // Google Ads conversion (Sign-up)
+    if (GOOGLE_ADS_SIGNUP_CONVERSION_ID && window.gtag) {
       window.gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+        send_to: GOOGLE_ADS_SIGNUP_CONVERSION_ID,
         event_category: 'signup',
       });
-      logger.log('Google Ads signup conversion tracked');
+      logger.log('Google Ads signup conversion tracked:', GOOGLE_ADS_SIGNUP_CONVERSION_ID);
     }
   },
 
@@ -270,15 +274,15 @@ export const analytics = {
       course_id: courseId,
     });
 
-    // Google Ads conversion
-    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+    // Google Ads conversion (Trial Start)
+    if (GOOGLE_ADS_TRIAL_CONVERSION_ID && window.gtag) {
       window.gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+        send_to: GOOGLE_ADS_TRIAL_CONVERSION_ID,
         event_category: 'trial_start',
         value: 0,
         currency: 'USD',
       });
-      logger.log('Google Ads trial start conversion tracked');
+      logger.log('Google Ads trial start conversion tracked:', GOOGLE_ADS_TRIAL_CONVERSION_ID);
     }
   },
 
@@ -295,24 +299,35 @@ export const analytics = {
       plan_type: planType,
     });
 
-    // Google Ads conversion with value
-    if (GOOGLE_ADS_CONVERSION_ID && window.gtag) {
+    // Google Ads conversion with value (Purchase)
+    if (GOOGLE_ADS_PURCHASE_CONVERSION_ID && window.gtag) {
       window.gtag('event', 'conversion', {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+        send_to: GOOGLE_ADS_PURCHASE_CONVERSION_ID,
         event_category: 'purchase',
         value: value,
         currency: 'USD',
         transaction_id: `${userId}_${Date.now()}`,
       });
-      logger.log(`Google Ads purchase conversion tracked: $${value}`);
+      logger.log(`Google Ads purchase conversion tracked: $${value}`, GOOGLE_ADS_PURCHASE_CONVERSION_ID);
     }
   },
 
   /**
-   * Check if Google Ads tracking is configured
+   * Check if Google Ads tracking is configured (at least signup is configured)
    */
   isGoogleAdsConfigured: (): boolean => {
-    return !!GOOGLE_ADS_CONVERSION_ID && !GOOGLE_ADS_CONVERSION_ID.startsWith('AW-XXXX');
+    return !!GOOGLE_ADS_SIGNUP_CONVERSION_ID && !GOOGLE_ADS_SIGNUP_CONVERSION_ID.startsWith('AW-XXXX');
+  },
+
+  /**
+   * Get Google Ads configuration status for each conversion type
+   */
+  getGoogleAdsStatus: (): { signup: boolean; trial: boolean; purchase: boolean } => {
+    return {
+      signup: !!GOOGLE_ADS_SIGNUP_CONVERSION_ID && !GOOGLE_ADS_SIGNUP_CONVERSION_ID.startsWith('AW-XXXX'),
+      trial: !!GOOGLE_ADS_TRIAL_CONVERSION_ID && !GOOGLE_ADS_TRIAL_CONVERSION_ID.startsWith('AW-XXXX'),
+      purchase: !!GOOGLE_ADS_PURCHASE_CONVERSION_ID && !GOOGLE_ADS_PURCHASE_CONVERSION_ID.startsWith('AW-XXXX'),
+    };
   },
 };
 

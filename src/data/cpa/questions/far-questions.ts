@@ -364,6 +364,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'FIFO results in the highest net income during rising prices because older (lower) costs are expensed, leaving higher-valued inventory on the balance sheet.',
+        whyWrong: {
+      0: 'The weighted-average method uses a weighted average of all costs to determine the cost of goods sold and ending inventory, resulting in a cost of goods sold amount that falls between FIFO and LIFO during periods of rising prices, and thus a lower net income than FIFO. It doesn\'t systematically expense the oldest or newest costs, thus providing a \'middle ground\' approach to inventory valuation.',
+      1: 'Specific identification precisely matches costs to units sold, so the impact on net income depends on which specific units are sold; it\'s not guaranteed to produce the lowest or highest net income during rising prices, making it unsuitable as a general rule compared to consistent methods like FIFO or LIFO. ASC 330-10-30 discusses the general principles of inventory valuation, but specific identification is particularly relevant where inventory items are unique or easily identifiable.',
+      3: 'LIFO (Last-In, First-Out) results in the lowest net income during periods of rising prices because the newest (higher) costs are expensed, leading to a higher cost of goods sold and lower net income. LIFO is not permitted under IFRS and is becoming less common under U.S. GAAP due to its impact on tax liabilities during inflationary periods.',
+    },
+    memoryAid: 'Remember **LIFO-Lowest** during rising prices. LIFO results in the *lowest* net income (and highest COGS) during inflation. Therefore, FIFO is the opposite, resulting in the highest net income.',
+    bottomLine: 'On the exam, remember that FIFO (First-In, First-Out) generally results in the highest net income during periods of rising prices because it matches older, lower costs to cost of goods sold.',
     reference: 'ASC 330-10-30',
   },
   {
@@ -386,6 +393,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 1,
     explanation:
       'Under the 2015 FASB simplification (for non-LIFO inventory), inventory is measured at the lower of cost or net realizable value (NRV = selling price less costs to complete and sell).',
+        whyWrong: {
+      0: 'While \'lower of cost or market\' was previously used for non-LIFO inventory, ASC 330 simplified this to \'lower of cost or net realizable value\' (NRV). Market is still relevant for LIFO or retail inventory methods.',
+      2: 'Historical cost is the initial basis for inventory, but ASC 330 requires inventory to be written down if its value declines below cost, which is why we use the lower of cost or NRV.',
+      3: 'Fair value is generally used for financial instruments or in specific industries like broker-dealers, not for the routine measurement of inventory held for sale under ASC 330.',
+    },
+    memoryAid: 'Inventory valuation: Think **C**ost vs. **N**et **R**ealizable **V**alue. **C**ome **N**ear **R**eally **V**aluable inventory by writing down obsolete items.',
+    bottomLine: 'On the exam, remember that ASC 330 requires inventory to be valued at the lower of cost or net realizable value (NRV) for non-LIFO inventory, where NRV is the estimated selling price less costs of completion and disposal.',
     reference: 'ASC 330-10-35-1B',
   },
   {
@@ -408,6 +422,13 @@ export const FAR_QUESTIONS: Question[] = [
     correctAnswer: 2,
     explanation:
       'LIFO liquidation occurs when units sold exceed units purchased. Old, lower costs are matched against current revenues, artificially inflating gross profit.',
+        whyWrong: {
+      0: 'A LIFO liquidation doesn\'t require restatement. Restatements are generally required for errors or changes in accounting principle, neither of which occurs due to a LIFO liquidation.',
+      1: 'A LIFO liquidation results in *higher* gross profit, not lower, because older, cheaper inventory layers are being expensed, reducing COGS. This directly contradicts the option presented.',
+      3: 'A LIFO liquidation *does* have an effect on gross profit. The older, cheaper costs flowing through COGS create a higher gross profit margin.',
+    },
+    memoryAid: 'LIFO Layer Liquidation = Lower Costs Out = Larger Profits (L cubed)',
+    bottomLine: 'On the exam, remember that a LIFO liquidation means old, low-cost inventory layers are being sold, boosting current period gross profit, but potentially creating a higher tax burden.',
     reference: 'ASC 330-10-35-4',
   },
   {

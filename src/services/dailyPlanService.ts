@@ -10,12 +10,19 @@
  * - Learning phase awareness (Foundation → Building → Reinforcement → Final Review → Exam Week)
  * - Curriculum awareness (only quiz on topics from completed lessons)
  * 
- * Philosophy: Activity mix adapts to learning phase.
- * Foundation: 60% lessons, 30% practice, 10% flashcards
- * Building: 35% lessons, 40% practice, 15% flashcards, 10% simulations
- * Reinforcement: 15% lessons, 45% practice, 15% flashcards, 25% simulations
- * Final Review: 10% lessons, 35% practice, 20% flashcards, 35% simulations
- * Exam Week: 0% new lessons, 30% light practice, 30% flashcards, 40% review
+ * Research-backed philosophy:
+ * - Active recall (testing) is 2-3x more effective than passive reading
+ * - Immediate practice after each lesson for better retention
+ * - 1:1 lesson-to-practice ratio in foundation phase
+ * - Cognitive load limit: max 2 new concepts per session
+ * - Interleaving: mix old and new topics
+ * 
+ * Phase activity mix:
+ * Foundation: 2 lessons max, 2 practice blocks (1:1 ratio)
+ * Building: 2 lessons, 3 practice blocks, simulations introduced
+ * Reinforcement: 1 lesson, 4 practice blocks, timed quizzes, mock exams
+ * Final Review: 0 new lessons, 3 practice blocks, mock exams, timed drills
+ * Exam Week: 0 new lessons, light review, confidence building
  */
 
 import { fetchLessonsBySection } from './lessonService';
@@ -280,29 +287,31 @@ interface PhaseBudget {
 }
 
 const PHASE_BUDGETS: Record<LearningPhase, PhaseBudget> = {
+  // Research-backed: 1:1 lesson-to-practice ratio, cognitive load limit of 2 new concepts
+  // Active recall (testing) is 2-3x more effective than passive reading
   foundation: {
-    maxLessons: 3,
-    maxWeakAreaBlocks: 1,
+    maxLessons: 2,              // Cognitive load limit: max 2 new concepts per session
+    maxWeakAreaBlocks: 2,       // Immediate practice after learning (1:1 ratio)
     includeSimulations: false,
     includeTimedQuiz: false,
     includeMockExam: false,
     flashcardPriority: 'medium',
     allowNewLessons: true,
-    description: 'Building your knowledge base — focus on lessons and light practice',
+    description: 'Learn & practice — each lesson followed by immediate MCQ practice',
   },
   building: {
     maxLessons: 2,
-    maxWeakAreaBlocks: 2,
+    maxWeakAreaBlocks: 3,       // More practice as knowledge builds
     includeSimulations: true,
     includeTimedQuiz: false,
     includeMockExam: false,
     flashcardPriority: 'medium',
     allowNewLessons: true,
-    description: 'Balanced study — lessons, practice, and first simulations',
+    description: 'Balanced study — lessons with heavier practice and first simulations',
   },
   reinforcement: {
     maxLessons: 1,
-    maxWeakAreaBlocks: 3,
+    maxWeakAreaBlocks: 4,       // Practice-heavy with interleaving
     includeSimulations: true,
     includeTimedQuiz: true,
     includeMockExam: true,
@@ -312,7 +321,7 @@ const PHASE_BUDGETS: Record<LearningPhase, PhaseBudget> = {
   },
   finalReview: {
     maxLessons: 0,
-    maxWeakAreaBlocks: 2,
+    maxWeakAreaBlocks: 3,       // More practice blocks in final review
     includeSimulations: true,
     includeTimedQuiz: true,
     includeMockExam: true,

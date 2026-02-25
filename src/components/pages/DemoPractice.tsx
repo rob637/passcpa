@@ -171,7 +171,7 @@ const DemoPractice = () => {
                 </div>
                 <div className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
                   <Zap className="w-5 h-5 text-amber-500" />
-                  <span>AI-powered adaptive learning focuses on your weak areas</span>
+                  <span>Adaptive learning focuses on your weak areas</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
                   <Sparkles className="w-5 h-5 text-purple-500" />

@@ -199,6 +199,11 @@ service cloud.firestore {
       allow read, write: if isAdmin();
     }
 
+    // LinkedIn story posts - manual storytelling posts for LinkedIn
+    match /linkedin_story_posts/{docId} {
+      allow read, write: if isAdmin();
+    }
+
     // Growth actions - audit log
     match /growth_actions/{docId} {
       allow read, write: if isAdmin();

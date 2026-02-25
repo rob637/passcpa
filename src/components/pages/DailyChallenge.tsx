@@ -26,6 +26,8 @@ import {
   Sparkles,
   Brain,
   AlertCircle,
+  Lightbulb,
+  GraduationCap,
 } from 'lucide-react';
 import clsx from 'clsx';
 import { Button } from '../common/Button';
@@ -551,26 +553,26 @@ const DailyChallenge = () => {
         
         {/* Explanation */}
         {showExplanation && (
-          <Card className="p-6 mb-6 border-2 border-blue-200 dark:border-blue-800 bg-blue-50/50 dark:bg-blue-900/20">
-            <div className="flex items-start gap-3 mb-4">
-              <Brain className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Explanation</h3>
-                <p className="text-slate-700 dark:text-slate-300">{currentQuestion.explanation}</p>
+          <Card className="p-4 sm:p-6 mb-4 sm:mb-6 border-2 border-blue-200 dark:border-blue-800 bg-blue-50/50 dark:bg-blue-900/20">
+            <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+              <div className="min-w-0 flex-1">
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-1 sm:mb-2 text-sm sm:text-base">Explanation</h3>
+                <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">{currentQuestion.explanation}</p>
               </div>
             </div>
             
             {/* UWorld-style enhanced explanations */}
             {currentQuestion.whyWrong && Object.keys(currentQuestion.whyWrong).length > 0 && (
-              <div className="mt-4 pt-4 border-t border-blue-200 dark:border-blue-700">
-                <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Why other options are wrong:</h4>
+              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-blue-200 dark:border-blue-700">
+                <h4 className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Why other options are wrong:</h4>
                 <div className="space-y-2">
                   {Object.entries(currentQuestion.whyWrong).map(([idx, reason]) => (
-                    <div key={idx} className="flex items-start gap-2 text-sm">
-                      <span className="w-5 h-5 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0 text-xs font-medium text-red-600">
+                    <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm">
+                      <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0 text-xs font-medium text-red-600">
                         {String.fromCharCode(65 + parseInt(idx))}
                       </span>
-                      <span className="text-slate-600 dark:text-slate-400">{reason}</span>
+                      <span className="text-slate-600 dark:text-slate-400 leading-relaxed">{reason}</span>
                     </div>
                   ))}
                 </div>
@@ -578,22 +580,42 @@ const DailyChallenge = () => {
             )}
             
             {currentQuestion.memoryAid && (
-              <div className="mt-4 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+              <div className="mt-3 sm:mt-4 p-2.5 sm:p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
                 <div className="flex items-center gap-2 text-purple-700 dark:text-purple-300">
-                  <Sparkles className="w-4 h-4" />
-                  <span className="text-sm font-medium">Memory Tip:</span>
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">Memory Tip:</span>
                 </div>
-                <p className="text-sm text-purple-600 dark:text-purple-400 mt-1">{currentQuestion.memoryAid}</p>
+                <p className="text-xs sm:text-sm text-purple-600 dark:text-purple-400 mt-1 leading-relaxed">{currentQuestion.memoryAid}</p>
+              </div>
+            )}
+            
+            {currentQuestion.examTip && (
+              <div className="mt-3 sm:mt-4 p-2.5 sm:p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                <div className="flex items-center gap-2 text-blue-700 dark:text-blue-300">
+                  <Lightbulb className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">Exam Tip:</span>
+                </div>
+                <p className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 mt-1 leading-relaxed">{currentQuestion.examTip}</p>
               </div>
             )}
             
             {currentQuestion.bottomLine && (
-              <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+              <div className="mt-3 sm:mt-4 p-2.5 sm:p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
                 <div className="flex items-center gap-2 text-amber-700 dark:text-amber-300">
-                  <Zap className="w-4 h-4" />
-                  <span className="text-sm font-medium">Bottom Line:</span>
+                  <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">Bottom Line:</span>
                 </div>
-                <p className="text-sm text-amber-600 dark:text-amber-400 mt-1">{currentQuestion.bottomLine}</p>
+                <p className="text-xs sm:text-sm text-amber-600 dark:text-amber-400 mt-1 leading-relaxed">{currentQuestion.bottomLine}</p>
+              </div>
+            )}
+            
+            {currentQuestion.educational && (
+              <div className="mt-3 sm:mt-4 p-2.5 sm:p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg">
+                <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-300">
+                  <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm font-medium">Learn More:</span>
+                </div>
+                <p className="text-xs sm:text-sm text-indigo-600 dark:text-indigo-400 mt-1 leading-relaxed">{currentQuestion.educational}</p>
               </div>
             )}
           </Card>

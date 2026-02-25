@@ -240,6 +240,8 @@ export interface Question {
     [key: number]: string;  // Index maps to option index (0-3), explains why that option is incorrect
   };
   memoryAid?: string;       // Mnemonic, acronym, or memory trick
+  examTip?: string;         // Exam strategy advice for this question type
+  educational?: string;     // Deeper learning context
   bottomLine?: string;      // One-sentence exam takeaway
   diagram?: {
     url: string;            // URL to diagram image

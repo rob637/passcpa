@@ -23,6 +23,15 @@ export interface ArticleMeta {
 
 export const ARTICLES: ArticleMeta[] = [
   {
+    slug: 'free-cfp-cfp5-practice-questions-2026',
+    title: 'Free CFP Retirement Savings and Income Planning Practice Questions (2026)',
+    description: 'Free CFP exam practice questions for Retirement Savings and Income Planning. Test your knowledge with realistic questions and detailed explanations.',
+    category: 'CFP',
+    readTime: '12 min read',
+    date: '2026-02-24',
+    featured: true,
+  },
+  {
     slug: 'cpa-exam-study-schedule-2026',
     title: 'CPA Exam Study Schedule 2026: Complete Week-by-Week Plan',
     description: 'A detailed, week-by-week CPA exam study schedule for 2026. How to plan your study time across FAR, AUD, REG, and your discipline section to pass all 4 parts.',

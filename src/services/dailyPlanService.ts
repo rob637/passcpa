@@ -24,6 +24,7 @@ import type { CourseId, ExamSection } from '../types';
 import { TBSHistoryEntry } from './questionHistoryService';
 import { getCourse } from '../courses';
 import logger from '../utils/logger';
+import { FEATURES } from '../config/featureFlags';
 import { 
   getCoveredTopics, 
   getPreviewTopics, 
@@ -819,6 +820,75 @@ export const generateDailyPlan = async (
     remainingMinutes -= getDuration('mcq_15', 'mcq', pd);
   }
   
+  // 1b. LESSON GUARANTEE (dev experiment): Interleave one lesson early
+  // Research shows interleaving (learn → practice → learn) beats blocking.
+  // Insert lesson after critical weak area but before medium weak areas.
+  let earlyLessonAdded = false;
+  if (FEATURES.lessonGuarantee && phase !== 'examWeek' && phase !== 'finalReview') {
+    // Find lesson related to weakest topic, or next unstarted lesson
+    const weakestTopic = criticalWeakAreas[0]?.topic || mediumWeakAreas[0]?.topic;
+    
+    // Try to find a lesson that covers the weak topic
+    let bestLesson = weakestTopic
+      ? lessons.find(l => {
+          const progress = state.lessonProgress[l.id] || 0;
+          if (progress >= 100) return false; // Already completed
+          // Check if lesson title/topics relate to weak area
+          const lessonTopics = (l.topics || []).map((t: string) => t.toLowerCase());
+          const titleMatch = l.title.toLowerCase().includes(weakestTopic.toLowerCase());
+          const topicMatch = lessonTopics.some((t: string) => 
+            t.includes(weakestTopic.toLowerCase()) || weakestTopic.toLowerCase().includes(t)
+          );
+          return titleMatch || topicMatch;
+        })
+      : undefined;
+    
+    // Fallback to incomplete or next unstarted lesson
+    if (!bestLesson) {
+      bestLesson = lessons.find(l => {
+        const progress = state.lessonProgress[l.id] || 0;
+        return progress > 0 && progress < 100; // Incomplete
+      }) || (phaseBudget.allowNewLessons ? lessons.find(l => {
+        const progress = state.lessonProgress[l.id] || 0;
+        return progress === 0; // Unstarted
+      }) : undefined);
+    }
+    
+    if (bestLesson && remainingMinutes >= 15) {
+      const progress = state.lessonProgress[bestLesson.id] || 0;
+      const isIncomplete = progress > 0 && progress < 100;
+      activities.push({
+        id: `lesson-${bestLesson.id}`,
+        type: 'lesson',
+        title: isIncomplete ? `Continue: ${bestLesson.title}` : `Learn: ${bestLesson.title}`,
+        description: isIncomplete 
+          ? `${progress}% complete - pick up where you left off`
+          : weakestTopic 
+            ? `Related to your weak area: ${weakestTopic}`
+            : 'New material to expand your knowledge',
+        estimatedMinutes: isIncomplete 
+          ? Math.round((bestLesson.duration || 30) * (1 - progress / 100))
+          : bestLesson.duration || getDuration('lesson_medium', 'lesson', pd),
+        points: POINT_VALUES.lesson_medium,
+        priority: 'high', // Elevated from medium to ensure it stays in plan
+        reason: weakestTopic 
+          ? `Interleaved learning: lesson on ${weakestTopic} to reinforce practice`
+          : 'Interleaved learning: mixing content with practice improves retention',
+        params: {
+          lessonId: bestLesson.id,
+          section: state.section,
+        },
+      });
+      remainingMinutes -= getDuration('lesson_medium', 'lesson', pd);
+      earlyLessonAdded = true;
+      logger.info('Lesson guarantee: added early lesson', { 
+        lessonId: bestLesson.id, 
+        weakestTopic,
+        phase 
+      });
+    }
+  }
+  
   // 2. HIGH: Medium weak areas (60-70% accuracy)
   // Remaining budget after critical weak areas
   const remainingWeakBudget = Math.max(0, phaseBudget.maxWeakAreaBlocks - criticalWeakAreas.length);
@@ -940,16 +1010,23 @@ export const generateDailyPlan = async (
   
   // 4. MEDIUM: Lessons — phase budget controls how many and whether new ones are added
   // (lessons already fetched above for phase detection)
-  let lessonsAdded = 0;
+  // Account for early lesson if it was added via lesson guarantee
+  let lessonsAdded = earlyLessonAdded ? 1 : 0;
+  
+  // Find lessons that weren't already added in the early guarantee
+  const alreadyAddedLessonIds = new Set(
+    activities.filter(a => a.type === 'lesson').map(a => a.params.lessonId)
+  );
+  
   const incompleteLesson = lessons.find(l => {
     const progress = state.lessonProgress[l.id] || 0;
-    return progress > 0 && progress < 100;
+    return progress > 0 && progress < 100 && !alreadyAddedLessonIds.has(l.id);
   });
   
   const unstartedLesson = phaseBudget.allowNewLessons
     ? lessons.find(l => {
         const progress = state.lessonProgress[l.id] || 0;
-        return progress === 0;
+        return progress === 0 && !alreadyAddedLessonIds.has(l.id);
       })
     : undefined;
   

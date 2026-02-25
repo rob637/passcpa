@@ -10,8 +10,15 @@ import {
   Target,
   Heart
 } from 'lucide-react';
+import { useSEO } from '../../hooks/useSEO';
 
 const CFPInfo = () => {
+  useSEO({
+    title: 'CFP Exam Guide 2026 | Certified Financial Planner',
+    description: 'Complete guide to the CFP exam: 8 principal knowledge areas, exam format, passing requirements, and how to prepare for the CFP certification.',
+    canonicalUrl: 'https://voraprep.com/cfp-exam-info',
+  });
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header */}

@@ -9,6 +9,7 @@
   },
   "hosting": {
     "public": "dist",
+    "trailingSlash": true,
     "predeploy": ["node scripts/verify-deploy-env.cjs"],
     "ignore": [
       "firebase.json",

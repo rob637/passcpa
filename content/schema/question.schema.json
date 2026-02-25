@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://voraprep.com/schemas/question.schema.json",
+  "title": "VoraPrep Question",
+  "description": "Schema for CPA exam MCQ questions with UWorld-style explanations",
+  "type": "object",
+  "required": ["id", "courseId", "section", "blueprintArea", "topic", "difficulty", "skillLevel", "question", "options", "correctAnswer", "explanation"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z]+-[a-z0-9-]+$",
+      "description": "Unique question ID (lowercase, hyphenated)"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Question version number for tracking changes"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "review", "approved", "retired"],
+      "default": "approved",
+      "description": "Question lifecycle status"
+    },
+    "courseId": {
+      "type": "string",
+      "enum": ["cpa", "ea", "cma", "cia", "cisa", "cfp"],
+      "description": "Which exam course this question belongs to"
+    },
+    "section": {
+      "type": "string",
+      "description": "Exam section (FAR, AUD, REG, BAR, ISC, TCP for CPA)"
+    },
+    "blueprintArea": {
+      "type": "string",
+      "description": "Blueprint area code (e.g., FAR-I, FAR-II)"
+    },
+    "blueprintRef": {
+      "type": "string",
+      "description": "AICPA blueprint reference (e.g., A.1.a)"
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Topic category for the question"
+    },
+    "subtopic": {
+      "type": "string",
+      "description": "More specific subtopic"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Searchable tags for categorization"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"],
+      "description": "Question difficulty level"
+    },
+    "skillLevel": {
+      "type": "string",
+      "enum": ["Remembering", "Remembering and Understanding", "Application", "Analysis", "Evaluation"],
+      "description": "Bloom's taxonomy skill level tested"
+    },
+    "question": {
+      "type": "string",
+      "minLength": 10,
+      "description": "The question stem text"
+    },
+    "exhibit": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["table", "image", "document", "code"]
+        },
+        "content": { "type": "string" },
+        "url": { "type": "string" },
+        "alt": { "type": "string" }
+      },
+      "description": "Optional exhibit (table, image, scenario)"
+    },
+    "options": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 4,
+      "maxItems": 4,
+      "description": "Four answer choices"
+    },
+    "correctAnswer": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "Index of correct answer (0-3)"
+    },
+    "explanation": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Explanation of why the correct answer is right"
+    },
+    "whyWrong": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "UWorld-style explanations for each wrong answer (keys: 0,1,2,3)"
+    },
+    "educational": {
+      "type": "string",
+      "description": "Educational note teaching the underlying concept"
+    },
+    "examTip": {
+      "type": "string",
+      "description": "Practical exam-day tip"
+    },
+    "memoryAid": {
+      "type": "string",
+      "description": "Mnemonic, acronym, or memory trick"
+    },
+    "bottomLine": {
+      "type": "string",
+      "description": "One-sentence key takeaway"
+    },
+    "timeEstimate": {
+      "type": "integer",
+      "minimum": 30,
+      "maximum": 300,
+      "description": "Estimated time to answer in seconds"
+    },
+    "reference": {
+      "type": "string",
+      "description": "Authoritative reference (ASC, IRC, etc.)"
+    },
+    "references": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Multiple authoritative references"
+    },
+    "effectiveDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When this content becomes effective (for regulation changes)"
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date",
+      "description": "When this content expires (e.g., old tax law)"
+    },
+    "reviewedBy": {
+      "type": "string",
+      "description": "Who reviewed/approved the question"
+    },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date",
+      "description": "When the question was last reviewed"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date",
+      "description": "When the question was created"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date",
+      "description": "When the question was last updated"
+    },
+    "sourceFile": {
+      "type": "string",
+      "description": "Original TypeScript file (for migration tracking)"
+    }
+  },
+  "additionalProperties": false
+}

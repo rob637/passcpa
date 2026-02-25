@@ -101,6 +101,7 @@ const UserAnalyticsDashboard = lazy(() => import('./components/pages/admin/UserA
 const ReferralSystem = lazy(() => import('./components/pages/admin/ReferralSystem'));
 const DiagnosticLeadMagnet = lazy(() => import('./components/pages/admin/DiagnosticLeadMagnet'));
 const TestimonialHarvester = lazy(() => import('./components/pages/admin/TestimonialHarvester'));
+const LinkedInPosts = lazy(() => import('./components/pages/admin/LinkedInPosts'));
 
 // Blog Pages (public, SEO content)
 const BlogIndex = lazy(() => import('./components/pages/blog/BlogIndex'));
@@ -760,6 +761,16 @@ function App() {
                     <AdminRoute>
                       <SuspensePage>
                         <ArticleReview />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/linkedin"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <LinkedInPosts />
                       </SuspensePage>
                     </AdminRoute>
                   }

@@ -139,7 +139,7 @@ const COURSES: CourseInfo[] = [
 const WHY_VORAPREP = [
   {
     icon: Brain,
-    title: 'AI-Powered Learning',
+    title: 'Adaptive Learning',
     description: 'Our adaptive engine calibrates difficulty on a continuous scale, factors in your response time, and targets your weakest areas.',
   },
   {
@@ -390,7 +390,7 @@ const VoraPrep = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
-              <span className="font-semibold">AI-powered exam prep</span> for accounting and finance professionals.
+              <span className="font-semibold">Pass your exam on the first try</span> for accounting and finance professionals.
               <br className="hidden md:block" />
               CPA, EA, CMA, CIA, CFP, and CISA — all on one platform.
             </p>
@@ -466,7 +466,7 @@ const VoraPrep = () => {
               </h2>
               <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
                 Each exam has its own dedicated prep program with tailored content, 
-                practice exams, and AI-powered study tools.
+                practice exams, and adaptive study tools.
               </p>
             </div>
 

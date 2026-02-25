@@ -264,7 +264,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
               {config.description}
               <br className="hidden md:block" />
-              <span className={`font-semibold ${colors.text}`}>AI-powered prep</span> — start your free trial today.
+              <span className={`font-semibold ${colors.text}`}>Pass on your first try</span> — start your free trial today.
             </p>
 
             {/* CTA Buttons */}
@@ -329,7 +329,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               )}
               <div className="flex items-center gap-2">
                 <Check className={`w-4 h-4 ${colors.text}`} />
-                AI-Powered Learning
+                Adaptive Learning
               </div>
             </div>
           </div>
@@ -431,7 +431,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 Why Study with VoraPrep?
               </h2>
               <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                Modern AI-powered learning designed for {config.name} exam success.
+                Modern adaptive learning designed for {config.name} exam success.
               </p>
             </div>
 
@@ -664,7 +664,7 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
     `${config.questionCount} practice questions`,
     `${config.lessonCount || '100+'} expert lessons`,
     config.flashcardCount ? `${config.flashcardCount} flashcards` : null,
-    'Vory AI tutor - unlimited',
+    'Vory study assistant - unlimited',
     'Adaptive engine + response-time analysis',
     'Forgetting-curve spaced repetition',
     'Task-based simulations',

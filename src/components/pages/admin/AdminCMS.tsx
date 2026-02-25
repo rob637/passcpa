@@ -4903,6 +4903,70 @@ VoraPrep Team`;
             </div>
 
             {/* ============================================================
+                SECTION 3.5: Social Content
+            ============================================================ */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                Social Content
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* LinkedIn Posts */}
+                <Card className="p-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-xl">💼</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">LinkedIn Posts</h4>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                          Story-style posts for engagement (not promotional)
+                        </p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-gray-500 dark:text-gray-400">
+                          <span>Auto-posts Mon/Wed/Fri 9 AM</span>
+                          <span>Requires approval</span>
+                        </div>
+                      </div>
+                    </div>
+                    <Link
+                      to="/admin/linkedin"
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors flex-shrink-0"
+                    >
+                      Manage
+                    </Link>
+                  </div>
+                </Card>
+
+                {/* Blog Articles */}
+                <Card className="p-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-xl">📝</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Blog Articles</h4>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                          SEO content for organic traffic
+                        </p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-gray-500 dark:text-gray-400">
+                          <span>181 articles</span>
+                          <span>AI-generated, human-reviewed</span>
+                        </div>
+                      </div>
+                    </div>
+                    <Link
+                      to="/admin/articles"
+                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors flex-shrink-0"
+                    >
+                      Review
+                    </Link>
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+            {/* ============================================================
                 SECTION 4: Engagement & Social Proof
             ============================================================ */}
             <div>

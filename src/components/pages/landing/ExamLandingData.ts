@@ -124,14 +124,14 @@ export const SHARED_WHY_VORAPREP = [
   },
   {
     icon: Brain,
-    title: 'AI-Powered Learning',
+    title: 'Adaptive Learning',
     description: 'Our adaptive engine continuously calibrates question difficulty, factors in your response time, and focuses 70% of practice on your weakest areas.',
     stat: 'Adaptive',
   },
   {
     icon: Bot,
     title: 'Meet Vory',
-    description: 'Your AI study companion explains concepts until they click. Available 24/7, never judges, infinitely patient.',
+    description: 'Your study companion explains concepts until they click. Available 24/7, never judges, infinitely patient.',
     stat: '24/7',
   },
   {
@@ -211,8 +211,8 @@ export const CPA_CONFIG: ExamLandingConfig = {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
       { feature: 'Price', voraprep: '$249/yr*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
-      { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: '2025 & 2026 Blueprint', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -273,8 +273,8 @@ export const EA_CONFIG: ExamLandingConfig = {
     names: ['Gleim', 'Passkey', 'Surgent'],
     data: [
       { feature: 'Price', voraprep: '$149/yr*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Text-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 SEE Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -336,8 +336,8 @@ export const CMA_CONFIG: ExamLandingConfig = {
     names: ['Gleim', 'Hock', 'Wiley'],
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'Both Parts Included', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -402,8 +402,8 @@ export const CIA_CONFIG: ExamLandingConfig = {
     names: ['Gleim', 'IIA Learning', 'Surgent'],
     data: [
       { feature: 'Price', voraprep: '$149/yr*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -471,8 +471,8 @@ export const CFP_CONFIG: ExamLandingConfig = {
     names: ['Kaplan', 'Dalton', 'Zahn'],
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 8 Domains', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -538,8 +538,8 @@ export const CISA_CONFIG: ExamLandingConfig = {
     names: ['ISACA', 'Hemang Doshi'],
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$795', competitor2: '$299', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Limited', competitor2: false, highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Limited', competitor2: false, highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Text-Based', competitor2: 'Video-Based', highlight: true },
       { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true },

@@ -30,6 +30,7 @@ import {
   Zap,
   History,
   Home,
+  GraduationCap,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -720,6 +721,9 @@ const Practice: React.FC = () => {
   const [reportSubmitting, setReportSubmitting] = useState(false);
   const [reportError, setReportError] = useState<string | null>(null);
   
+  // Explanation UI state
+  const [showWhyWrong, setShowWhyWrong] = useState(false);  // Collapsed by default
+  
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
   
@@ -887,6 +891,7 @@ const Practice: React.FC = () => {
       setShowResults(false);
       setSelectedAnswer(null);
       setShowExplanation(false);
+      setShowWhyWrong(false);
       setFlagged(new Set());
       setShowShortcuts(false);
       logger.info(`Practice session reset: course changed to ${courseId}`);
@@ -1102,6 +1107,7 @@ const Practice: React.FC = () => {
       setAnswers({});
       setSelectedAnswer(null);
       setShowExplanation(false);
+      setShowWhyWrong(false);
       setFlagged(new Set());
       setLoading(false);
       // Scroll to top when entering question view
@@ -1176,6 +1182,7 @@ const Practice: React.FC = () => {
       setAnswers({});
       setSelectedAnswer(null);
       setShowExplanation(false);
+      setShowWhyWrong(false);
       setFlagged(new Set());
       setLoading(false);
       scrollToTop();
@@ -1308,6 +1315,7 @@ const Practice: React.FC = () => {
     setCurrentIndex(index);
     setSelectedAnswer(answers[questions[index]?.id]?.selected ?? null);
     setShowExplanation(answers[questions[index]?.id] !== undefined);
+    setShowWhyWrong(false); // Collapse why-wrong section for new question
     
     // Blur any focused element first - prevents mobile browsers from auto-scrolling to focused buttons
     if (document.activeElement instanceof HTMLElement) {
@@ -1836,62 +1844,139 @@ const Practice: React.FC = () => {
         {/* Explanation */}
         {showExplanation && (
           <div className="card mb-4">
-            <div className="card-header flex items-center gap-2">
-              <Lightbulb className="w-5 h-5 text-amber-500" />
-              <h3 className="font-semibold text-slate-900 dark:text-slate-100">Explanation</h3>
+            <div className="card-header flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <Lightbulb className="w-5 h-5 text-amber-500" />
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Explanation</h3>
+              </div>
+              {/* Question metadata badges */}
+              <div className="flex flex-wrap items-center gap-1.5 text-xs">
+                {currentQuestion.blueprintArea && (
+                  <span className="px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full font-medium">
+                    {currentQuestion.blueprintArea}
+                  </span>
+                )}
+                <span className={`px-2 py-0.5 rounded-full font-medium ${
+                  currentQuestion.difficulty === 'easy' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                  currentQuestion.difficulty === 'hard' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300' :
+                  'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                }`}>
+                  {currentQuestion.difficulty}
+                </span>
+              </div>
             </div>
-            <div className="card-body space-y-4">
+            <div className="card-body space-y-3 sm:space-y-4">
+              {/* Topic indicator */}
+              {currentQuestion.topic && (
+                <p className="text-xs text-slate-500 dark:text-slate-400 -mt-2 mb-2 truncate">
+                  <Target className="w-3 h-3 inline mr-1" />
+                  <span className="hidden sm:inline">{currentQuestion.topic}{currentQuestion.subtopic && ` › ${currentQuestion.subtopic}`}</span>
+                  <span className="sm:hidden">{currentQuestion.subtopic || currentQuestion.topic}</span>
+                </p>
+              )}
+              
               {/* Correct Answer Explanation */}
-              <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+              <div className="p-2.5 sm:p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-green-800 dark:text-green-300 mb-1">
-                      Correct: {String.fromCharCode(65 + currentQuestion.correctAnswer)}. {currentQuestion.options[currentQuestion.correctAnswer]}
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold text-green-800 dark:text-green-300 mb-1 text-sm sm:text-base">
+                      <span className="text-green-600 dark:text-green-400">✓ Correct:</span>{' '}
+                      <span className="font-bold">{String.fromCharCode(65 + (shuffledQuestion?.shuffledCorrectAnswer ?? currentQuestion.correctAnswer))}</span>
                     </p>
-                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-green-700 dark:text-green-300 mb-2 line-clamp-2 sm:line-clamp-none">
+                      {shuffledQuestion?.shuffledOptions?.[shuffledQuestion.shuffledCorrectAnswer] ?? currentQuestion.options[currentQuestion.correctAnswer]}
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                       {currentQuestion.explanation}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Why Wrong - UWorld-style */}
+              {/* Educational Deep Dive */}
+              {currentQuestion.educational && (
+                <div className="p-2.5 sm:p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg border border-indigo-200 dark:border-indigo-800">
+                  <div className="flex items-start gap-2">
+                    <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-indigo-800 dark:text-indigo-300 text-xs sm:text-sm mb-1">Learn More</p>
+                      <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        {currentQuestion.educational}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Why Wrong - UWorld-style (Collapsible) */}
               {currentQuestion.whyWrong && Object.keys(currentQuestion.whyWrong).length > 0 && (
-                <div className="space-y-2">
-                  <p className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Why other options are wrong:</p>
-                  {currentQuestion.options.map((option, index) => {
-                    if (index === currentQuestion.correctAnswer) return null;
-                    const wrongExplanation = currentQuestion.whyWrong?.[index];
-                    if (!wrongExplanation) return null;
-                    return (
-                      <div key={index} className="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-900">
-                        <div className="flex items-start gap-2">
-                          <XCircle className="w-4 h-4 text-red-500 dark:text-red-400 flex-shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-medium text-red-800 dark:text-red-300 text-sm">
-                              {String.fromCharCode(65 + index)}. {option}
-                            </p>
-                            <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                              {wrongExplanation}
-                            </p>
+                <div className="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+                  <button
+                    onClick={() => setShowWhyWrong(!showWhyWrong)}
+                    className="w-full flex items-center justify-between p-2.5 sm:p-3 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors active:bg-slate-200 dark:active:bg-slate-600"
+                  >
+                    <span className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                      <XCircle className="w-4 h-4 text-red-500" />
+                      Why other options are wrong
+                    </span>
+                    <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${showWhyWrong ? 'rotate-180' : ''}`} />
+                  </button>
+                  {showWhyWrong && (
+                    <div className="p-2 sm:p-3 space-y-2 bg-white dark:bg-slate-900">
+                      {(shuffledQuestion?.shuffledOptions || currentQuestion.options).map((option, displayIndex) => {
+                        // Skip the correct answer (use shuffled index if available)
+                        const shuffledCorrectIdx = shuffledQuestion?.shuffledCorrectAnswer ?? currentQuestion.correctAnswer;
+                        if (displayIndex === shuffledCorrectIdx) return null;
+                        // Map display index back to original index for whyWrong lookup
+                        const originalIndex = shuffledQuestion?.shuffleMap?.[displayIndex] ?? displayIndex;
+                        const wrongExplanation = currentQuestion.whyWrong?.[originalIndex];
+                        if (!wrongExplanation) return null;
+                        return (
+                          <div key={displayIndex} className="p-2 sm:p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-900">
+                            <div className="flex items-start gap-2">
+                              <XCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                              <div className="min-w-0 flex-1">
+                                <p className="font-medium text-red-800 dark:text-red-300 text-xs sm:text-sm">
+                                  <span className="font-bold">{String.fromCharCode(65 + displayIndex)}.</span> <span className="line-clamp-1 sm:line-clamp-none">{option}</span>
+                                </p>
+                                <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
+                                  {wrongExplanation}
+                                </p>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               )}
 
               {/* Memory Aid */}
               {currentQuestion.memoryAid && (
-                <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
+                <div className="p-2.5 sm:p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
                   <div className="flex items-start gap-2">
-                    <Brain className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-purple-800 dark:text-purple-300 text-sm mb-1">Memory Aid</p>
-                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                    <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-purple-800 dark:text-purple-300 text-xs sm:text-sm mb-1">Memory Aid</p>
+                      <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
                         {currentQuestion.memoryAid}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Exam Tip */}
+              {currentQuestion.examTip && (
+                <div className="p-2.5 sm:p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+                  <div className="flex items-start gap-2">
+                    <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-amber-800 dark:text-amber-300 text-xs sm:text-sm mb-1">Exam Tip</p>
+                      <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        {currentQuestion.examTip}
                       </p>
                     </div>
                   </div>
@@ -1900,12 +1985,12 @@ const Practice: React.FC = () => {
 
               {/* Bottom Line Takeaway */}
               {currentQuestion.bottomLine && (
-                <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                <div className="p-2.5 sm:p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                   <div className="flex items-start gap-2">
-                    <Zap className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-semibold text-blue-800 dark:text-blue-300 text-sm mb-1">Bottom Line for the Exam</p>
-                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                    <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-blue-800 dark:text-blue-300 text-xs sm:text-sm mb-1">Bottom Line</p>
+                      <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
                         {currentQuestion.bottomLine}
                       </p>
                     </div>
@@ -1931,14 +2016,10 @@ const Practice: React.FC = () => {
               )}
               
               {currentQuestion.reference && (
-                <div className="flex items-start gap-2 text-sm text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700">
-                  <div className="p-1 bg-slate-200 dark:bg-slate-600 rounded">
-                    <BookOpen className="w-3 h-3 text-slate-700 dark:text-slate-300" />
-                  </div>
-                  <div className="flex-1">
-                    <span className="font-semibold text-slate-700 dark:text-slate-300 mr-1">Citation:</span>
-                    <span className="font-mono text-primary-600 dark:text-primary-400">{currentQuestion.reference}</span>
-                  </div>
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-700/50 p-2 sm:p-3 rounded-lg border border-slate-100 dark:border-slate-700">
+                  <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 text-slate-500 dark:text-slate-400 flex-shrink-0" />
+                  <span className="font-medium text-slate-600 dark:text-slate-300">Source:</span>
+                  <span className="font-mono text-primary-600 dark:text-primary-400 truncate">{currentQuestion.reference}</span>
                 </div>
               )}
 

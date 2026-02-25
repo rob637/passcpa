@@ -47,6 +47,7 @@ const ADMIN_SECTIONS: AdminSection[] = [
     links: [
       { label: 'User Analytics', path: '/admin/analytics', badge: 'NEW' },
       { label: 'Referral System', path: '/admin/referrals', badge: 'NEW' },
+      { label: 'LinkedIn Posts', path: '/admin/linkedin', badge: 'NEW' },
       { label: 'Diagnostic Leads', path: '/admin/diagnostics', badge: 'NEW' },
       { label: 'Testimonials', path: '/admin/testimonials', badge: 'NEW' },
     ],

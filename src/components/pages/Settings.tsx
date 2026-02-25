@@ -1511,7 +1511,7 @@ const Settings: React.FC = () => {
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-slate-900 dark:text-white">VoraPrep</h3>
-                          <p className="text-sm text-slate-600 dark:text-slate-400">AI-Powered Exam Prep</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Pass Your Exam First Try</p>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">

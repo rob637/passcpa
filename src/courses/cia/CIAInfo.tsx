@@ -3,9 +3,16 @@ import { CheckCircle, BookOpen, TrendingUp, Users, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/common/Button';
 import { Card } from '../../components/common/Card';
+import { useSEO } from '../../hooks/useSEO';
 
 export default function CIAInfo() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: 'CIA Exam Guide 2026 | Certified Internal Auditor',
+    description: 'Complete guide to the CIA exam: 3 parts covering internal audit basics, practice, and business knowledge. Learn how to become a Certified Internal Auditor.',
+    canonicalUrl: 'https://voraprep.com/cia-exam-info',
+  });
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">

@@ -5320,29 +5320,17 @@ exports.growthAutoPublish = onSchedule({
 
     console.log(`[AutoPublish] ✅ Published from queue: "${articleData.title}" (${docToPublish.id})`);
 
-    // Share to LinkedIn (if configured)
-    const linkedInResult = await shareToLinkedIn(articleData);
-    if (linkedInResult) {
-      // Update distribution tracking with LinkedIn success
-      await db.collection('growth_content').doc(docToPublish.id).update({
-        linkedInUrl: linkedInResult.url || linkedInResult.postId,
-        syndicatedAt: admin.firestore.FieldValue.serverTimestamp(),
-        'distribution.linkedin': {
-          status: 'posted',
-          postedAt: new Date(),
-          postId: linkedInResult.postId,
-          postUrl: linkedInResult.url,
-        },
-      });
-    } else {
-      // Mark LinkedIn as skipped/failed
-      await db.collection('growth_content').doc(docToPublish.id).update({
-        'distribution.linkedin': {
-          status: 'skipped',
-          reason: 'No token configured or posting failed',
-        },
-      });
-    }
+    // DISABLED: LinkedIn auto-share from blog posts
+    // We've shifted to standalone story posts via postScheduledLinkedIn (Mon/Wed/Fri 9 AM)
+    // Blog promotional posts felt spammy — story posts drive better engagement
+    // See: linkedin_story_posts collection + LinkedInPosts admin UI
+    await db.collection('growth_content').doc(docToPublish.id).update({
+      'distribution.linkedin': {
+        status: 'disabled',
+        reason: 'Shifted to standalone story posts for better engagement',
+      },
+    });
+    console.log('[AutoPublish] LinkedIn auto-share disabled — using story posts instead');
 
     // Share to Discord (if configured)
     const discordResult = await shareToDiscord(articleData);
@@ -5623,6 +5611,261 @@ async function shareToDiscord(article) {
     return null;
   }
 }
+
+// ============================================================================
+// LINKEDIN STORY POSTS — Scheduled posting of story-style content
+// Posts 3x/week (Mon, Wed, Fri) from linkedin_story_posts collection
+// ============================================================================
+
+/**
+ * Scheduled function to post story-style content to LinkedIn.
+ * Runs Monday, Wednesday, Friday at 9 AM EST (14:00 UTC).
+ * 
+ * Story posts are fundamentally different from blog teasers:
+ * - They don't promote a link
+ * - They tell a story or share an insight
+ * - They build brand affinity over direct conversion
+ * 
+ * Firestore collection: linkedin_story_posts
+ * Document structure:
+ * {
+ *   content: string;           // The full post text (max 3000 chars)
+ *   type: 'founder-story' | 'dear-candidate' | 'data-insight' | 'user-win' | 'industry';
+ *   status: 'draft' | 'scheduled' | 'posted' | 'failed';
+ *   scheduledFor?: Date;       // Optional: specific date to post
+ *   postedAt?: Date;
+ *   postId?: string;           // LinkedIn post ID after posting
+ *   postUrl?: string;
+ *   createdAt: Date;
+ *   author: string;
+ * }
+ */
+exports.postScheduledLinkedIn = onSchedule({
+  schedule: 'every monday,wednesday,friday 14:00',  // 9 AM EST = 14:00 UTC
+  timeZone: 'America/New_York',
+  timeoutSeconds: 60,
+  memory: '256MiB',
+}, async (context) => {
+  console.log('[LinkedInStory] Starting scheduled story post check...');
+  
+  // Get LinkedIn credentials from Firestore
+  const configDoc = await db.collection('system_config').doc('linkedin').get();
+  if (!configDoc.exists) {
+    console.log('[LinkedInStory] No LinkedIn config found. Skipping.');
+    return;
+  }
+  
+  const config = configDoc.data();
+  const accessToken = config.accessToken;
+  const personId = config.personId;
+  
+  if (!accessToken || !personId) {
+    console.log('[LinkedInStory] No LinkedIn credentials configured. Skipping.');
+    return;
+  }
+  
+  // Check if token has expired
+  if (config.expiresAt && config.expiresAt.toDate() < new Date()) {
+    console.log('[LinkedInStory] LinkedIn token expired. Re-authorize needed.');
+    return;
+  }
+  
+  // Find the next APPROVED post to publish
+  // Posts must be explicitly approved before they can be auto-posted
+  const now = new Date();
+  
+  // First, check for approved posts scheduled for today or earlier
+  let postQuery = db.collection('linkedin_story_posts')
+    .where('status', '==', 'approved')
+    .where('scheduledFor', '<=', now)
+    .orderBy('scheduledFor', 'asc')
+    .limit(1);
+  
+  let snapshot = await postQuery.get();
+  
+  // If no specifically scheduled posts, pick from the general approved queue
+  if (snapshot.empty) {
+    postQuery = db.collection('linkedin_story_posts')
+      .where('status', '==', 'approved')
+      .where('scheduledFor', '==', null)
+      .orderBy('approvedAt', 'asc')
+      .limit(1);
+    
+    snapshot = await postQuery.get();
+  }
+  
+  // Still nothing? Try approved posts without scheduledFor field (backward compat)
+  if (snapshot.empty) {
+    const allApproved = await db.collection('linkedin_story_posts')
+      .where('status', '==', 'approved')
+      .orderBy('createdAt', 'asc')
+      .limit(1)
+      .get();
+    
+    if (allApproved.empty) {
+      console.log('[LinkedInStory] No approved posts available. Approve posts in Admin > LinkedIn Posts.');
+      return;
+    }
+    snapshot = allApproved;
+  }
+  
+  const postDoc = snapshot.docs[0];
+  const postData = postDoc.data();
+  const postId = postDoc.id;
+  
+  console.log(`[LinkedInStory] Found post to publish: ${postId} (type: ${postData.type})`);
+  
+  // Post to LinkedIn
+  try {
+    const response = await fetch('https://api.linkedin.com/v2/ugcPosts', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        'X-Restli-Protocol-Version': '2.0.0',
+      },
+      body: JSON.stringify({
+        author: `urn:li:person:${personId}`,
+        lifecycleState: 'PUBLISHED',
+        specificContent: {
+          'com.linkedin.ugc.ShareContent': {
+            shareCommentary: {
+              text: postData.content,
+            },
+            shareMediaCategory: 'NONE',  // Story posts = no link preview
+          },
+        },
+        visibility: {
+          'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
+        },
+      }),
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('[LinkedInStory] Post failed:', response.status, errorText);
+      
+      // Mark as failed
+      await db.collection('linkedin_story_posts').doc(postId).update({
+        status: 'failed',
+        error: `${response.status}: ${errorText}`,
+        failedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      return;
+    }
+    
+    const result = await response.json();
+    const linkedInPostId = result.id;
+    const linkedInUrl = linkedInPostId ? `https://www.linkedin.com/feed/update/${linkedInPostId}` : null;
+    
+    // Mark as posted
+    await db.collection('linkedin_story_posts').doc(postId).update({
+      status: 'posted',
+      postedAt: admin.firestore.FieldValue.serverTimestamp(),
+      linkedInPostId: linkedInPostId,
+      postUrl: linkedInUrl,
+    });
+    
+    console.log(`[LinkedInStory] Successfully posted: ${linkedInUrl || linkedInPostId}`);
+    
+  } catch (err) {
+    console.error('[LinkedInStory] Error posting:', err.message);
+    
+    await db.collection('linkedin_story_posts').doc(postId).update({
+      status: 'failed',
+      error: err.message,
+      failedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+  }
+});
+
+/**
+ * HTTP callable to manually trigger a LinkedIn story post (for testing).
+ * Only admins can call this.
+ */
+exports.postLinkedInStoryNow = onCall({
+  timeoutSeconds: 30,
+  memory: '256MiB',
+}, async (request) => {
+  // Check admin
+  const uid = request.auth?.uid;
+  if (!uid) {
+    throw new HttpsError('unauthenticated', 'Must be logged in');
+  }
+  
+  const userDoc = await db.collection('users').doc(uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin only');
+  }
+  
+  const { postId } = request.data;
+  if (!postId) {
+    throw new HttpsError('invalid-argument', 'postId required');
+  }
+  
+  // Get the post
+  const postDoc = await db.collection('linkedin_story_posts').doc(postId).get();
+  if (!postDoc.exists) {
+    throw new HttpsError('not-found', 'Post not found');
+  }
+  
+  const postData = postDoc.data();
+  
+  // Get LinkedIn credentials
+  const configDoc = await db.collection('system_config').doc('linkedin').get();
+  if (!configDoc.exists) {
+    throw new HttpsError('failed-precondition', 'LinkedIn not configured');
+  }
+  
+  const config = configDoc.data();
+  if (!config.accessToken || !config.personId) {
+    throw new HttpsError('failed-precondition', 'LinkedIn credentials missing');
+  }
+  
+  // Post it
+  const response = await fetch('https://api.linkedin.com/v2/ugcPosts', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${config.accessToken}`,
+      'Content-Type': 'application/json',
+      'X-Restli-Protocol-Version': '2.0.0',
+    },
+    body: JSON.stringify({
+      author: `urn:li:person:${config.personId}`,
+      lifecycleState: 'PUBLISHED',
+      specificContent: {
+        'com.linkedin.ugc.ShareContent': {
+          shareCommentary: {
+            text: postData.content,
+          },
+          shareMediaCategory: 'NONE',
+        },
+      },
+      visibility: {
+        'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
+      },
+    }),
+  });
+  
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new HttpsError('internal', `LinkedIn error: ${response.status} - ${errorText}`);
+  }
+  
+  const result = await response.json();
+  const linkedInPostId = result.id;
+  const linkedInUrl = linkedInPostId ? `https://www.linkedin.com/feed/update/${linkedInPostId}` : null;
+  
+  // Update post status
+  await db.collection('linkedin_story_posts').doc(postId).update({
+    status: 'posted',
+    postedAt: admin.firestore.FieldValue.serverTimestamp(),
+    linkedInPostId: linkedInPostId,
+    postUrl: linkedInUrl,
+  });
+  
+  return { success: true, postUrl: linkedInUrl };
+});
 
 // ============================================================================
 // LINKEDIN OAUTH CALLBACK — Exchange code for access token
@@ -7125,4 +7368,181 @@ exports.getCommunicationTemplates = onCall({
   }
 
   return { templates };
+});
+
+// ============================================================================
+// ARTICLE PUBLICATION NOTIFICATION
+// Sends email to admin when an article is published via SEO Engine
+// ============================================================================
+
+const BLOG_ADMIN_EMAIL = 'rob@sagecg.com';
+const BLOG_BASE_URL = 'https://voraprep.com/blog';
+
+/**
+ * Firestore trigger: sends email notification when an article is published.
+ * Watches for status changing to 'published' in growth_content collection.
+ */
+exports.onArticlePublished = onDocumentUpdated({
+  document: 'growth_content/{articleId}',
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  const beforeData = event.data.before.data();
+  const afterData = event.data.after.data();
+  const articleId = event.params.articleId;
+
+  // Only trigger when status changes TO 'published'
+  if (beforeData.status === afterData.status || afterData.status !== 'published') {
+    return null;
+  }
+
+  console.log(`[ArticlePublished] Article published: ${articleId}`);
+
+  // Get Resend API key
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  if (!apiKey) {
+    console.warn('[ArticlePublished] RESEND_API_KEY not set, skipping email notification');
+    return null;
+  }
+
+  const resendClient = new Resend(apiKey);
+  
+  // Build article info
+  const title = afterData.title || articleId;
+  const slug = afterData.slug || articleId;
+  const courseId = afterData.courseId || 'unknown';
+  const section = afterData.section || '';
+  const contentType = afterData.contentType || 'article';
+  const primaryKeyword = afterData.primaryKeyword || '';
+  const publishedAt = afterData.publishedAt?.toDate?.() || new Date();
+
+  // Generate URLs for different channels
+  const blogUrl = `${BLOG_BASE_URL}/${slug}/`;
+  const sitemapUrl = 'https://voraprep.com/sitemap.xml';
+  const rssUrl = 'https://voraprep.com/rss.xml';
+
+  // Build email HTML
+  const emailHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
+        📝 New Article Published
+      </h1>
+
+      <!-- Article Details -->
+      <div style="background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0;">
+        <h2 style="color: #0f172a; font-size: 18px; margin: 0 0 15px 0;">${title}</h2>
+        <table style="width: 100%; font-size: 14px; color: #475569;">
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Course:</td>
+            <td style="padding: 8px 0;">${courseId.toUpperCase()}</td>
+          </tr>
+          ${section ? `<tr>
+            <td style="padding: 8px 0; font-weight: 600;">Section:</td>
+            <td style="padding: 8px 0;">${section}</td>
+          </tr>` : ''}
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Type:</td>
+            <td style="padding: 8px 0;">${contentType}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Keyword:</td>
+            <td style="padding: 8px 0;">${primaryKeyword || 'N/A'}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Published:</td>
+            <td style="padding: 8px 0;">${publishedAt.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Channel Status -->
+      <h3 style="color: #0f172a; font-size: 16px; margin: 25px 0 15px 0;">📍 Where It's Published</h3>
+      
+      <div style="font-size: 14px; line-height: 1.8; color: #475569;">
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ Firestore:</strong> Live in <code style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px;">growth_content</code>
+        </p>
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ Blog:</strong> <a href="${blogUrl}" style="color: #3b82f6;">${blogUrl}</a>
+        </p>
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ Sitemap:</strong> <a href="${sitemapUrl}" style="color: #3b82f6;">sitemap.xml</a> (auto-updated)
+        </p>
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ RSS:</strong> <a href="${rssUrl}" style="color: #3b82f6;">rss.xml</a> (auto-updated)
+        </p>
+      </div>
+
+      <!-- Next Steps -->
+      <h3 style="color: #0f172a; font-size: 16px; margin: 25px 0 15px 0;">🚀 Next Steps</h3>
+      
+      <div style="font-size: 14px; line-height: 1.8; color: #475569;">
+        <p style="margin: 0 0 8px 0;">1. <strong>Verify the article:</strong></p>
+        <code style="display: block; background: #1e293b; color: #e2e8f0; padding: 12px; border-radius: 8px; margin: 0 0 15px 0; font-size: 13px; overflow-x: auto;">npm run verify:article ${slug}</code>
+        
+        <p style="margin: 0 0 8px 0;">2. <strong>Share on LinkedIn:</strong> Copy this URL once verified</p>
+        <code style="display: block; background: #f1f5f9; color: #1e293b; padding: 12px; border-radius: 8px; margin: 0 0 15px 0; font-size: 13px; word-break: break-all;">${blogUrl}</code>
+        
+        <p style="margin: 0;">3. <strong>Static blog deploy</strong> will run automatically at 6 AM UTC (or trigger manually in GitHub Actions)</p>
+      </div>
+
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0 10px 0;">
+        <a href="${blogUrl}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 14px 35px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">
+          View Article →
+        </a>
+      </div>
+      
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: 30px; color: #64748b; font-size: 13px;">
+      <p style="margin: 0;">This is an automated notification from VoraPrep SEO Engine.</p>
+      <p style="margin: 5px 0 0 0;">You're receiving this because you're an admin at VoraPrep.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+  `;
+
+  try {
+    const { error } = await resendClient.emails.send({
+      from: FROM_EMAIL,
+      to: BLOG_ADMIN_EMAIL,
+      subject: `📝 Article Published: ${title}`,
+      html: emailHtml,
+    });
+
+    if (error) {
+      console.error('[ArticlePublished] Email send error:', error);
+      return null;
+    }
+
+    console.log(`[ArticlePublished] Notification sent to ${BLOG_ADMIN_EMAIL}`);
+    return { success: true };
+  } catch (err) {
+    console.error('[ArticlePublished] Failed to send notification:', err);
+    return null;
+  }
 });

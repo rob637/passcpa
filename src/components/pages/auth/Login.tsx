@@ -3,6 +3,7 @@ import logger from '../../../utils/logger';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
+import { useSEO } from '../../../hooks/useSEO';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
 import { saveCoursePreference } from '../../../utils/courseDetection';
@@ -35,6 +36,13 @@ const Login = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { signIn, signInWithGoogle, updateUserProfile, loading } = useAuth();
+
+  // SEO - canonical URL strips query params to avoid duplicate content
+  useSEO({
+    title: 'Login',
+    description: 'Sign in to your VoraPrep account to access CPA, EA, CMA, CIA, CFP, and CISA exam prep materials.',
+    canonicalUrl: 'https://voraprep.com/login',
+  });
 
   // Get course from URL params (e.g., /login?course=ea)
   const courseParam = searchParams.get('course')?.toLowerCase();

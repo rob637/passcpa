@@ -46,5 +46,9 @@ Disallow: /learn
 Disallow: /checkout-success
 Disallow: /checkout-cancel
 
+# Redirect pages - tell crawlers not to index
+Disallow: /about
+Disallow: /pricing
+
 # Sitemap location
 Sitemap: https://voraprep.com/sitemap.xml

@@ -599,6 +599,11 @@ function App() {
                   path="/pricing"
                   element={<Navigate to="/" replace />}
                 />
+                {/* About redirect - no dedicated page, redirect to home */}
+                <Route
+                  path="/about"
+                  element={<Navigate to="/" replace />}
+                />
                 
                 {/* Checkout flow pages */}
                 <Route

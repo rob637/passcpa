@@ -3,6 +3,7 @@ import logger from '../../../utils/logger';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, AlertCircle, Check } from 'lucide-react';
 import { useAuth } from '../../../hooks/useAuth';
+import { useSEO } from '../../../hooks/useSEO';
 import { trackEvent } from '../../../services/analytics';
 import { Button } from '../../common/Button';
 import { Card } from '../../common/Card';
@@ -15,6 +16,13 @@ const Register = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { signUp, signInWithGoogle, loading } = useAuth();
+
+  // SEO - canonical URL strips query params to avoid duplicate content
+  useSEO({
+    title: 'Create Account',
+    description: 'Sign up for VoraPrep to access 21,000+ practice questions for CPA, EA, CMA, CIA, CFP, and CISA exams.',
+    canonicalUrl: 'https://voraprep.com/register',
+  });
 
   // Store course from URL param for onboarding pre-selection
   // Also store checkout redirect params if coming from pricing page

@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://voraprep.com/schemas/flashcard.schema.json",
+  "title": "VoraPrep Flashcard",
+  "description": "Schema for flashcard content across all exam courses",
+  "type": "object",
+  "required": ["id", "courseId", "section", "type", "topic", "front", "back", "difficulty"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z]+-[a-z0-9-]+$",
+      "description": "Unique flashcard ID (lowercase, hyphenated)"
+    },
+    "courseId": {
+      "type": "string",
+      "enum": ["cpa", "ea", "cma", "cia", "cisa", "cfp"],
+      "description": "Which exam course this flashcard belongs to"
+    },
+    "section": {
+      "type": "string",
+      "description": "Exam section (FAR, AUD, SEE1, CIA1, CISA1, CFP-GEN, etc.)"
+    },
+    "blueprintArea": {
+      "type": "string",
+      "description": "Blueprint area code (e.g., FAR-I, FAR-II, CISA1)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["definition", "formula", "mnemonic", "comparison", "concept", "rule", "standard", "penalty", "threshold"],
+      "description": "Type of flashcard content"
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Topic category for the flashcard"
+    },
+    "subtopic": {
+      "type": "string",
+      "description": "More specific subtopic"
+    },
+    "front": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Question/term/prompt shown on front of card"
+    },
+    "back": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Answer/definition/explanation shown on back of card"
+    },
+    "example": {
+      "type": "string",
+      "description": "Real-world example to illustrate the concept"
+    },
+    "formula": {
+      "type": "string",
+      "description": "Mathematical formula (for formula cards)"
+    },
+    "mnemonic": {
+      "type": "string",
+      "description": "Memory aid, acronym, or trick"
+    },
+    "comparison": {
+      "type": "object",
+      "properties": {
+        "itemA": { "type": "string" },
+        "itemB": { "type": "string" },
+        "differences": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "description": "For comparison cards - two items and their differences"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"],
+      "description": "Flashcard difficulty level"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Searchable tags for categorization"
+    },
+    "reference": {
+      "type": "string",
+      "description": "Authoritative reference (ASC, IRC, IIA Standard, etc.)"
+    },
+    "skillLevel": {
+      "type": "string",
+      "enum": ["Remembering and Understanding", "Application", "Analysis"],
+      "description": "Bloom's taxonomy skill level"
+    },
+    "sourceFile": {
+      "type": "string",
+      "description": "Original TypeScript file (for migration tracking)"
+    }
+  },
+  "additionalProperties": false
+}

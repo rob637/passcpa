@@ -1626,7 +1626,7 @@
       "options": [
         "The fund has returned 95% of the S&P 500",
         ",\n      ",
-        ",\n      ",
+        "The fund's returns are highly correlated with the S&P 500.",
         ",\n      "
       ],
       "version": 2,
@@ -2851,7 +2851,7 @@
         "The bond is trading below its investment value",
         "The $150 premium reflects the bond\\",
         ",\n      ",
-        ",\n      "
+        "The conversion price is approximately $40 per share."
       ],
       "version": 2,
       "status": "approved",
@@ -3026,7 +3026,7 @@
         "Total debt to equity",
         "A company\\",
         ",\n      ",
-        ",\n      "
+        "Days sales outstanding"
       ],
       "version": 2,
       "status": "approved",
@@ -4182,7 +4182,7 @@
       "options": [
         "It\\",
         ",\n      ",
-        ",\n      ",
+        "It is guaranteed to appreciate at a fixed rate annually, regardless of the company's performance.",
         ",\n      "
       ],
       "version": 2,
@@ -4673,7 +4673,7 @@
       "options": [
         "Revenue bonds can\\",
         ",\n      ",
-        ",\n      ",
+        "Revenue bonds are backed by the full faith and credit of the city of Austin, making them a low-risk investment.",
         ",\n      "
       ],
       "version": 2,
@@ -8907,7 +8907,7 @@
       "options": [
         "The fund\\",
         ",\n      ",
-        ",\n      ",
+        "has generated 60% more return than the benchmark.",
         "s beta-adjusted return exceeds the benchmark by 0.6%"
       ],
       "version": 2,
@@ -9115,7 +9115,7 @@
       "options": [
         "0.67",
         "1.50",
-        "0.67",
+        "2.  50",
         "6.00"
       ],
       "version": 2,
@@ -9361,7 +9361,7 @@
       "options": [
         "The option\\",
         ",\n      ",
-        ",\n      ",
+        "The option with the lowest strike price and the latest expiration date",
         ",\n      "
       ],
       "version": 2,
@@ -11813,7 +11813,7 @@
         "Markets are always efficient",
         "Diversification doesn\\",
         ",\n      ",
-        ",\n      "
+        "Past performance guarantees future returns"
       ],
       "version": 2,
       "status": "approved",

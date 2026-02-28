@@ -1,49 +1,36 @@
-// Comprehensive CPA Exam Lesson Content
-// Structured lessons for all exam sections
+// CPA Exam Lesson Content - JSON-based for easier maintenance
 // BEC was retired December 15, 2023 - content migrated to BAR
+// Migrated to JSON format: 2026-02-28
 
-import { prepLessons } from './prep';
-import { farLessons } from './far';
-import { audLessons } from './aud';
-import { regLessons } from './reg';
-import { barLessons } from './bar';
-import { iscLessons } from './isc';
-import { tcpLessons } from './tcp';
 import { Lesson } from '../../../types';
 
+// Import lesson data from JSON files
+import prepData from './json/prep.json';
+import farData from './json/far.json';
+import audData from './json/aud.json';
+import regData from './json/reg.json';
+import barData from './json/bar.json';
+import iscData from './json/isc.json';
+import tcpData from './json/tcp.json';
+
+// Type assertion - JSON imports are validated at build time
+export const prepLessons: Lesson[] = prepData as Lesson[];
+export const farLessons: Lesson[] = farData as Lesson[];
+export const audLessons: Lesson[] = audData as Lesson[];
+export const regLessons: Lesson[] = regData as Lesson[];
+export const barLessons: Lesson[] = barData as Lesson[];
+export const iscLessons: Lesson[] = iscData as Lesson[];
+export const tcpLessons: Lesson[] = tcpData as Lesson[];
+
+// Combined lessons record for backward compatibility
 export const LESSONS: Record<string, Lesson[]> = {
   prep: prepLessons,
-  // ==========================================
-  // FAR - FINANCIAL ACCOUNTING AND REPORTING
-  // ==========================================
   far: farLessons,
-
-  // ==========================================
-  // AUD - AUDITING AND ATTESTATION
-  // ==========================================
   aud: audLessons,
-
-  // ==========================================
-  // REG - REGULATION
-  // ==========================================
   reg: regLessons,
-
-  // ==========================================
-  // BAR - BUSINESS ANALYSIS AND REPORTING
-  // Includes managerial accounting content (migrated from retired BEC)
-  // ==========================================
   bar: barLessons,
-
-  // ==========================================
-  // ISC - INFORMATION SYSTEMS AND CONTROLS
-  // ==========================================
   isc: iscLessons,
-
-  // ==========================================
-  // TCP - TAX COMPLIANCE AND PLANNING
-  // ==========================================
   tcp: tcpLessons,
-
 };
 
 // Helper function to get all lessons

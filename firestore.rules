@@ -187,6 +187,9 @@ service cloud.firestore {
     // Growth campaigns - SEM campaigns data
     match /growth_campaigns/{docId} {
       allow read, write: if isAdmin();
+      match /{subcollection=**} {
+        allow read, write: if isAdmin();
+      }
     }
 
     // Growth metrics - daily growth metrics

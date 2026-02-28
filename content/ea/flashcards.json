@@ -1,7 +1,4 @@
 {
-  "$schema": "../schema/flashcard.schema.json",
-  "courseId": "ea",
-  "exportedAt": "2026-02-28T20:51:57.417Z",
   "flashcards": [
     {
       "id": "see1-b2-001",
@@ -18,7 +15,8 @@
         "MFS",
         "filing status"
       ],
-      "reference": "IRC §1(d)"
+      "reference": "IRC §1(d)",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-b2-002",
@@ -36,7 +34,8 @@
         "widow",
         "filing status"
       ],
-      "reference": "IRC §2(a)"
+      "reference": "IRC §2(a)",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-b2-003",
@@ -46,14 +45,15 @@
       "type": "definition",
       "topic": "Filing Status",
       "front": "What are the requirements for Head of Household (HOH) status?",
-      "back": "**Requirements:**\\n• Unmarried (or considered unmarried) at year-end\\n• Paid >50% of household costs\\n• Qualifying person lived with taxpayer >6 months (parent exception)\\n\\n**Qualifying Person:**\\n• Qualifying child\\n• Qualifying relative who is close family member\\n• Dependent parent (doesn\\",
+      "back": "**Requirements:**\\n• Unmarried (or considered unmarried) at year-end\\n• Paid >50% of household costs\\n• Qualifying person lived with taxpayer >6 months (parent exception)\\n\\n**Qualifying Person:**\\n• Qualifying child\\n• Qualifying relative who is close family member\\n• Dependent parent (doesn",
       "difficulty": "medium",
       "subtopic": "Head of Household",
       "tags": [
         "HOH",
         "filing status"
       ],
-      "reference": "IRC §2(b)"
+      "reference": "IRC §2(b)",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-004",
@@ -70,7 +70,8 @@
         "fringe benefits",
         "income"
       ],
-      "reference": "IRC §132"
+      "reference": "IRC §132",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-005",
@@ -122,7 +123,8 @@
         "divorce",
         "TCJA"
       ],
-      "reference": "IRC §71, §215"
+      "reference": "IRC §71, §215",
+      "example": "Divorce finalized 2017: $24,000 alimony paid is deductible by payer, includible by recipient. Post-2018 divorces: no deduction/inclusion."
     },
     {
       "id": "see1-b2-008",
@@ -158,7 +160,8 @@
         "basis",
         "adjusted basis"
       ],
-      "reference": "IRC §1016"
+      "reference": "IRC §1016",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see1-b2-010",
@@ -176,7 +179,8 @@
         "like-kind",
         "exchange"
       ],
-      "reference": "IRC §1031"
+      "reference": "IRC §1031",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see1-b2-011",
@@ -194,7 +198,8 @@
         "installment sale",
         "Form 6252"
       ],
-      "reference": "IRC §453"
+      "reference": "IRC §453",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see1-b2-012",
@@ -211,7 +216,8 @@
         "educator expense",
         "adjustment"
       ],
-      "reference": "IRC §62(a)(2)(D)"
+      "reference": "IRC §62(a)(2)(D)",
+      "example": "Teacher spends $400 on classroom supplies. Deduct $300 above-the-line (2024 limit)."
     },
     {
       "id": "see1-b2-013",
@@ -228,7 +234,8 @@
         "HSA",
         "health savings account"
       ],
-      "reference": "IRC §223"
+      "reference": "IRC §223",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-014",
@@ -246,7 +253,8 @@
         "self-employment",
         "SE tax"
       ],
-      "reference": "IRC §1401"
+      "reference": "IRC §1401",
+      "example": "Freelancer earns $80,000. SE tax = $80,000 × 0.9235 × 15.3% = $11,304. Deduct half ($5,652) above-the-line."
     },
     {
       "id": "see1-b2-015",
@@ -263,7 +271,8 @@
         "student loan",
         "interest deduction"
       ],
-      "reference": "IRC §221"
+      "reference": "IRC §221",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-016",
@@ -349,7 +358,8 @@
         "charitable",
         "AGI limits"
       ],
-      "reference": "IRC §170(b)"
+      "reference": "IRC §170(b)",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-b2-021",
@@ -366,7 +376,8 @@
         "CTC",
         "child tax credit"
       ],
-      "reference": "IRC §24"
+      "reference": "IRC §24",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-022",
@@ -383,7 +394,8 @@
         "ODC",
         "dependent credit"
       ],
-      "reference": "IRC §24(h)"
+      "reference": "IRC §24(h)",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-023",
@@ -400,7 +412,8 @@
         "EITC",
         "earned income credit"
       ],
-      "reference": "IRC §32"
+      "reference": "IRC §32",
+      "example": "Teacher salary $55,000 + summer tutoring $8,000 = $63,000 earned income. Investment dividends of $2,000 are NOT earned income."
     },
     {
       "id": "see1-b2-024",
@@ -418,7 +431,8 @@
         "LLC",
         "education credits"
       ],
-      "reference": "IRC §25A"
+      "reference": "IRC §25A",
+      "example": "Graduate student pays $4,000 tuition. LLC = 20% × $4,000 = $800 credit. No limit on years claimed."
     },
     {
       "id": "see1-b2-025",
@@ -435,7 +449,8 @@
         "dependent care",
         "child care credit"
       ],
-      "reference": "IRC §21"
+      "reference": "IRC §21",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-026",
@@ -452,7 +467,8 @@
         "saver\\",
         ", "
       ],
-      "reference": "IRC §25B"
+      "reference": "IRC §25B",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-027",
@@ -469,7 +485,8 @@
         "Traditional IRA",
         "deduction"
       ],
-      "reference": "IRC §219"
+      "reference": "IRC §219",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-b2-028",
@@ -479,14 +496,15 @@
       "type": "definition",
       "topic": "Retirement",
       "front": "What are the Roth IRA contribution limits and phase-outs?",
-      "back": "**2024 Contribution Limit:** $7,000 (+$1,000 catch-up 50+)\\n\\n**Phase-out (MAGI):**\\n• Single: $146,000-$161,000\\n• MFJ: $230,000-$240,000\\n\\n**Key Benefits:**\\n• Tax-free growth\\n• Tax-free qualified distributions\\n• No RMDs during owner\\",
+      "back": "**2024 Contribution Limit:** $7,000 (+$1,000 catch-up 50+)\\n\\n**Phase-out (MAGI):**\\n• Single: $146,000-$161,000\\n• MFJ: $230,000-$240,000\\n\\n**Key Benefits:**\\n• Tax-free growth\\n• Tax-free qualified distributions\\n• No RMDs during owner",
       "difficulty": "medium",
       "subtopic": "Roth IRA",
       "tags": [
         "Roth IRA",
         "contribution limits"
       ],
-      "reference": "IRC §408A"
+      "reference": "IRC §408A",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-b2-029",
@@ -503,7 +521,8 @@
         "early distribution",
         "10% penalty"
       ],
-      "reference": "IRC §72(t)"
+      "reference": "IRC §72(t)",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-b2-030",
@@ -513,14 +532,15 @@
       "type": "definition",
       "topic": "Retirement",
       "front": "What are the RMD rules after SECURE 2.0?",
-      "back": "**RMD Starting Age:**\\n• Born before 1951: 72\\n• Born 1951-1959: 73\\n• Born 1960+: 75\\n\\n**Calculation:**\\nRMD = Account Balance (Dec 31 prior year) ÷ Life Expectancy Factor\\n\\n**Penalty:** 25% of missed amount (10% if corrected timely)\\n\\n**Roth IRA:** No RMDs during owner\\",
+      "back": "**RMD Starting Age:**\\n• Born before 1951: 72\\n• Born 1951-1959: 73\\n• Born 1960+: 75\\n\\n**Calculation:**\\nRMD = Account Balance (Dec 31 prior year) ÷ Life Expectancy Factor\\n\\n**Penalty:** 25% of missed amount (10% if corrected timely)\\n\\n**Roth IRA:** No RMDs during owner",
       "difficulty": "hard",
       "subtopic": "Required Minimum Distributions",
       "tags": [
         "RMD",
         "SECURE 2.0"
       ],
-      "reference": "IRC §401(a)(9)"
+      "reference": "IRC §401(a)(9)",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-b2-031",
@@ -555,7 +575,8 @@
         "adjustments",
         "preferences"
       ],
-      "reference": "IRC §56, §57"
+      "reference": "IRC §56, §57",
+      "example": "Taxpayer has $8,000 mortgage interest, $5,000 state taxes (capped at $10,000 SALT), $3,000 charity = $16,000 itemized. If over standard deduction, itemize."
     },
     {
       "id": "see1-b2-033",
@@ -573,7 +594,8 @@
         "safe harbor",
         "underpayment"
       ],
-      "reference": "IRC §6654"
+      "reference": "IRC §6654",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see1-b2-034",
@@ -608,7 +630,8 @@
         "foreign income",
         "Form 2555"
       ],
-      "reference": "IRC §911"
+      "reference": "IRC §911",
+      "example": "Teacher salary $55,000 + summer tutoring $8,000 = $63,000 earned income. Investment dividends of $2,000 are NOT earned income."
     },
     {
       "id": "see1-b2-036",
@@ -627,7 +650,8 @@
         "foreign tax credit",
         "Form 1116"
       ],
-      "reference": "IRC §901"
+      "reference": "IRC §901",
+      "example": "Taxpayer has $8,000 mortgage interest, $5,000 state taxes (capped at $10,000 SALT), $3,000 charity = $16,000 itemized. If over standard deduction, itemize."
     },
     {
       "id": "see1-b2-037",
@@ -644,7 +668,8 @@
         "Social Security",
         "provisional income"
       ],
-      "reference": "IRC §86"
+      "reference": "IRC §86",
+      "example": "Single retiree: $30,000 SS + $20,000 pension. Provisional income = $20,000 + $15,000 (half SS) = $35,000. Up to 85% of SS taxable."
     },
     {
       "id": "see1-b2-038",
@@ -654,14 +679,15 @@
       "type": "definition",
       "topic": "Kiddie Tax",
       "front": "What are the Kiddie Tax rules?",
-      "back": "**Applies to:**\\n• Children under 19\\n• Students under 24\\n• Who have unearned income > threshold\\n\\n**2024 Threshold:** $2,600\\n\\n**Tax Rate:** Parent\\",
+      "back": "**Applies to:**\\n• Children under 19\\n• Students under 24\\n• Who have unearned income > threshold\\n\\n**2024 Threshold:** $2,600\\n\\n**Tax Rate:** Parent",
       "difficulty": "medium",
       "subtopic": "Unearned Income",
       "tags": [
         "kiddie tax",
         "unearned income"
       ],
-      "reference": "IRC §1(g)"
+      "reference": "IRC §1(g)",
+      "example": "Teacher salary $55,000 + summer tutoring $8,000 = $63,000 earned income. Investment dividends of $2,000 are NOT earned income."
     },
     {
       "id": "see1-b2-039",
@@ -678,7 +704,8 @@
         "529",
         "education savings"
       ],
-      "reference": "IRC §529"
+      "reference": "IRC §529",
+      "example": "Job change: roll $100,000 from old 401(k) to IRA within 60 days. Direct rollover avoids withholding."
     },
     {
       "id": "see1-b2-040",
@@ -695,7 +722,8 @@
         "Coverdell",
         "ESA"
       ],
-      "reference": "IRC §530"
+      "reference": "IRC §530",
+      "example": "S-corp shareholder receives K-1 showing $50,000 ordinary income, $5,000 interest. Report on Schedule E, Form 1040."
     },
     {
       "id": "see1-b2-041",
@@ -712,7 +740,8 @@
         "failure to file",
         "penalty"
       ],
-      "reference": "IRC §6651(a)(1)"
+      "reference": "IRC §6651(a)(1)",
+      "example": "Return due Apr 15, filed Jul 15 (3 months late). Penalty: 5% × 3 months = 15% of tax due, max 25%."
     },
     {
       "id": "see1-b2-042",
@@ -729,7 +758,8 @@
         "failure to pay",
         "penalty"
       ],
-      "reference": "IRC §6651(a)(2)"
+      "reference": "IRC §6651(a)(2)",
+      "example": "Tax due Apr 15, paid Jul 15. Penalty: 0.5% per month × 3 = 1.5% of unpaid tax."
     },
     {
       "id": "see1-b2-043",
@@ -763,7 +793,8 @@
         "fraud",
         "penalty"
       ],
-      "reference": "IRC §6663"
+      "reference": "IRC §6663",
+      "example": "Intentional evasion of $100,000 tax. Civil fraud penalty = 75% of underpayment = $75,000."
     },
     {
       "id": "see1-b2-045",
@@ -797,7 +828,8 @@
         "extension",
         "Form 4868"
       ],
-      "reference": "IRC §6081"
+      "reference": "IRC §6081",
+      "example": "Self-employed expects $15,000 tax liability. Pay $3,750 quarterly (Apr 15, Jun 15, Sep 15, Jan 15) to avoid penalty."
     },
     {
       "id": "see1-b2-047",
@@ -814,7 +846,8 @@
         "gambling",
         "income"
       ],
-      "reference": "IRC §165(d)"
+      "reference": "IRC §165(d)",
+      "example": "Taxpayer has $8,000 mortgage interest, $5,000 state taxes (capped at $10,000 SALT), $3,000 charity = $16,000 itemized. If over standard deduction, itemize."
     },
     {
       "id": "see1-b2-048",
@@ -831,7 +864,8 @@
         "cryptocurrency",
         "virtual currency"
       ],
-      "reference": "Notice 2014-21"
+      "reference": "Notice 2014-21",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-b2-049",
@@ -865,7 +899,8 @@
         "barter",
         "exchange"
       ],
-      "reference": "Reg §1.61-2"
+      "reference": "Reg §1.61-2",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see1-b2-051",
@@ -882,7 +917,8 @@
         "wash sale",
         "loss disallowance"
       ],
-      "reference": "IRC §1091"
+      "reference": "IRC §1091",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see1-b2-052",
@@ -899,7 +935,8 @@
         "collectibles",
         "28% rate"
       ],
-      "reference": "IRC §1(h)"
+      "reference": "IRC §1(h)",
+      "example": "Short-term stock gain (held 8 months) of $5,000 taxed as ordinary income at marginal rate (up to 37%)."
     },
     {
       "id": "see1-b2-053",
@@ -916,7 +953,8 @@
         "Section 1244",
         "small business stock"
       ],
-      "reference": "IRC §1244"
+      "reference": "IRC §1244",
+      "example": "Stock sold at $7,000 loss. Deduct $3,000 against ordinary income, carry forward $4,000 to next year."
     },
     {
       "id": "see1-b2-054",
@@ -933,7 +971,8 @@
         "investment interest",
         "Form 4952"
       ],
-      "reference": "IRC §163(d)"
+      "reference": "IRC §163(d)",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-b2-055",
@@ -950,7 +989,8 @@
         "SE health insurance",
         "adjustment"
       ],
-      "reference": "IRC §162(l)"
+      "reference": "IRC §162(l)",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b2-056",
@@ -984,7 +1024,8 @@
         "hobby loss",
         "IRC 183"
       ],
-      "reference": "IRC §183"
+      "reference": "IRC §183",
+      "example": "Taxpayer sells crafts at loss for 5 years, no profit motive documented. IRS reclassifies as hobby - losses not deductible."
     },
     {
       "id": "see1-b2-058",
@@ -1001,7 +1042,8 @@
         "at-risk",
         "loss limitation"
       ],
-      "reference": "IRC §465"
+      "reference": "IRC §465",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see1-b2-059",
@@ -1018,7 +1060,8 @@
         "passive activity",
         "PAL"
       ],
-      "reference": "IRC §469"
+      "reference": "IRC §469",
+      "example": "Limited partner receives $20,000 loss from partnership but has no passive income to offset. Loss suspended until sale or passive income."
     },
     {
       "id": "see1-b2-060",
@@ -1035,7 +1078,8 @@
         "related party",
         "loss disallowance"
       ],
-      "reference": "IRC §267, §453, §1239"
+      "reference": "IRC §267, §453, §1239",
+      "example": "Short-term stock gain (held 8 months) of $5,000 taxed as ordinary income at marginal rate (up to 37%)."
     },
     {
       "id": "see1-b3-001",
@@ -1052,7 +1096,8 @@
         "filing thresholds",
         "2024"
       ],
-      "reference": "Pub. 501"
+      "reference": "Pub. 501",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-b3-002",
@@ -1071,7 +1116,8 @@
         "like-kind",
         "basis"
       ],
-      "reference": "IRC §1031"
+      "reference": "IRC §1031",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see1-b3-003",
@@ -1090,7 +1136,8 @@
         "AOTC",
         "LLC"
       ],
-      "reference": "IRC §25A"
+      "reference": "IRC §25A",
+      "example": "Graduate student pays $4,000 tuition. LLC = 20% × $4,000 = $800 credit. No limit on years claimed."
     },
     {
       "id": "see1-b3-005",
@@ -1108,7 +1155,8 @@
         "real estate",
         "REP"
       ],
-      "reference": "IRC §469(c)(7)"
+      "reference": "IRC §469(c)(7)",
+      "example": "Limited partner receives $20,000 loss from partnership but has no passive income to offset. Loss suspended until sale or passive income."
     },
     {
       "id": "see1-b3-006",
@@ -1126,7 +1174,8 @@
         "penalty",
         "safe harbor"
       ],
-      "reference": "IRC §6654"
+      "reference": "IRC §6654",
+      "example": "Self-employed expects $15,000 tax liability. Pay $3,750 quarterly (Apr 15, Jun 15, Sep 15, Jan 15) to avoid penalty."
     },
     {
       "id": "see1-b3-007",
@@ -1144,7 +1193,8 @@
         "investment",
         "surtax"
       ],
-      "reference": "IRC §1411"
+      "reference": "IRC §1411",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-def-001",
@@ -1154,7 +1204,7 @@
       "type": "definition",
       "topic": "Filing Status",
       "front": "What are the requirements for Head of Household filing status?",
-      "back": "1) Unmarried (or considered unmarried) on last day of year\\n2) Paid more than half the cost of keeping up a home\\n3) Qualifying person lived with you more than half the year\\n\\nExceptions: Dependent parent doesn\\",
+      "back": "1) Unmarried (or considered unmarried) on last day of year\\n2) Paid more than half the cost of keeping up a home\\n3) Qualifying person lived with you more than half the year\\n\\nExceptions: Dependent parent doesn",
       "difficulty": "medium",
       "subtopic": "Head of Household",
       "example": "Single parent with custody of child qualifies if they pay majority of household costs",
@@ -1172,7 +1222,7 @@
       "type": "definition",
       "topic": "Filing Status",
       "front": "What is Qualifying Surviving Spouse (formerly Qualifying Widow/er)?",
-      "back": "Filing status available for 2 years after spouse\\",
+      "back": "Filing status available for 2 years after spouse",
       "difficulty": "medium",
       "subtopic": "Qualifying Surviving Spouse",
       "example": "Spouse died in 2024. Taxpayer can use QSS for 2025 and 2026 if requirements met.",
@@ -1197,7 +1247,8 @@
         "income",
         "gross income"
       ],
-      "reference": "IRC §61"
+      "reference": "IRC §61",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see1-def-004",
@@ -1214,7 +1265,8 @@
         "income",
         "AGI"
       ],
-      "reference": "IRC §62"
+      "reference": "IRC §62",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see1-def-005",
@@ -1242,7 +1294,7 @@
       "type": "definition",
       "topic": "Income",
       "front": "What is the doctrine of Constructive Receipt?",
-      "back": "Income is taxable when:\\n1) It is credited to your account\\n2) Set apart for you\\n3) Made available for you to draw upon\\n4) You could have received it\\n\\nEven if you don\\",
+      "back": "Income is taxable when:\\n1) It is credited to your account\\n2) Set apart for you\\n3) Made available for you to draw upon\\n4) You could have received it\\n\\nEven if you don",
       "difficulty": "medium",
       "subtopic": "Constructive Receipt",
       "example": "Dividend check arrives Dec 28 but you don\\",
@@ -1260,14 +1312,15 @@
       "type": "definition",
       "topic": "Credits",
       "front": "What is the difference between refundable and non-refundable credits?",
-      "back": "**Refundable Credits:** Can reduce tax below zero = you get a refund\\n• EITC, ACTC, AOTC (40%), Premium Tax Credit\\n\\n**Non-Refundable Credits:** Can only reduce tax to zero\\n• Child Tax Credit (non-refundable portion)\\n• Lifetime Learning Credit\\n• Child/Dependent Care Credit\\n• Saver\\",
+      "back": "**Refundable Credits:** Can reduce tax below zero = you get a refund\\n• EITC, ACTC, AOTC (40%), Premium Tax Credit\\n\\n**Non-Refundable Credits:** Can only reduce tax to zero\\n• Child Tax Credit (non-refundable portion)\\n• Lifetime Learning Credit\\n• Child/Dependent Care Credit\\n• Saver",
       "difficulty": "easy",
       "subtopic": "Refundable vs Non-Refundable",
       "tags": [
         "credits",
         "refundable"
       ],
-      "reference": "Various IRC sections"
+      "reference": "Various IRC sections",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-def-008",
@@ -1284,7 +1337,8 @@
         "deductions",
         "standard deduction"
       ],
-      "reference": "IRC §63(c)"
+      "reference": "IRC §63(c)",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-def-009",
@@ -1301,7 +1355,8 @@
         "retirement",
         "IRA"
       ],
-      "reference": "IRC §219"
+      "reference": "IRC §219",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-def-010",
@@ -1329,7 +1384,7 @@
       "type": "definition",
       "topic": "Capital Gains",
       "front": "What is the Section 121 Home Sale Exclusion?",
-      "back": "**Exclusion Amount:**\\n• Single: $250,000\\n• MFJ: $500,000\\n\\n**Requirements:**\\n• Owned home 2 of last 5 years\\n• Lived in home 2 of last 5 years (as primary residence)\\n• Haven\\",
+      "back": "**Exclusion Amount:**\\n• Single: $250,000\\n• MFJ: $500,000\\n\\n**Requirements:**\\n• Owned home 2 of last 5 years\\n• Lived in home 2 of last 5 years (as primary residence)\\n• Haven",
       "difficulty": "medium",
       "subtopic": "Section 121 Exclusion",
       "tags": [
@@ -1346,14 +1401,15 @@
       "type": "definition",
       "topic": "Income",
       "front": "What is the Kiddie Tax and who does it apply to?",
-      "back": "**Kiddie Tax:** Unearned income of certain children is taxed at parent\\",
+      "back": "**Kiddie Tax:** Unearned income of certain children is taxed at parent",
       "difficulty": "hard",
       "subtopic": "Kiddie Tax",
       "tags": [
         "income",
         "kiddie tax"
       ],
-      "reference": "IRC §1(g)"
+      "reference": "IRC §1(g)",
+      "example": "Teacher salary $55,000 + summer tutoring $8,000 = $63,000 earned income. Investment dividends of $2,000 are NOT earned income."
     },
     {
       "id": "see1-def-013",
@@ -1370,7 +1426,8 @@
         "income",
         "dividends"
       ],
-      "reference": "IRC §1(h)(11)"
+      "reference": "IRC §1(h)(11)",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-def-014",
@@ -1388,7 +1445,8 @@
         "QBI",
         "TCJA"
       ],
-      "reference": "IRC §199A"
+      "reference": "IRC §199A",
+      "example": "S-corp owner has $200,000 QBI. Deduction = 20% × $200,000 = $40,000 (subject to limitations)."
     },
     {
       "id": "see1-def-015",
@@ -1405,7 +1463,8 @@
         "credits",
         "CTC"
       ],
-      "reference": "IRC §24"
+      "reference": "IRC §24",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-def-016",
@@ -1422,7 +1481,8 @@
         "credits",
         "EIC"
       ],
-      "reference": "IRC §32"
+      "reference": "IRC §32",
+      "example": "Daughter age 22, full-time college student, lives at home summers, parents pay tuition/housing. She qualifies as dependent."
     },
     {
       "id": "see1-def-017",
@@ -1439,7 +1499,8 @@
         "credits",
         "education"
       ],
-      "reference": "IRC §25A"
+      "reference": "IRC §25A",
+      "example": "Student in year 2 of college, $5,000 qualifying expenses paid. AOTC = $2,500, up to $1,000 refundable (40%)."
     },
     {
       "id": "see1-def-018",
@@ -1456,7 +1517,8 @@
         "income",
         "social security"
       ],
-      "reference": "IRC §86"
+      "reference": "IRC §86",
+      "example": "Single retiree: $30,000 SS + $20,000 pension. Provisional income = $20,000 + $15,000 (half SS) = $35,000. Up to 85% of SS taxable."
     },
     {
       "id": "see1-def-019",
@@ -1473,7 +1535,8 @@
         "retirement",
         "RMD"
       ],
-      "reference": "IRC §401(a)(9); SECURE 2.0 Act"
+      "reference": "IRC §401(a)(9); SECURE 2.0 Act",
+      "example": "IRA balance $500,000 at age 73, life expectancy factor 26.5. RMD = $500,000 ÷ 26.5 = $18,868."
     },
     {
       "id": "see1-def-020",
@@ -1490,7 +1553,8 @@
         "retirement",
         "Roth"
       ],
-      "reference": "IRC §408A"
+      "reference": "IRC §408A",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-exp-001",
@@ -1501,7 +1565,8 @@
       "topic": "Filing Status",
       "front": "Single Filing Status Requirements",
       "back": "Use if on the last day of the year you are unmarried or legally separated (by divorce or separate maintenance decree) and do not qualify for another filing status.",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Single taxpayer earning $60,000 uses standard deduction of $14,600 (2024). Married couple filing jointly with $100,000 income uses $29,200 standard deduction."
     },
     {
       "id": "see1-exp-002",
@@ -1523,7 +1588,8 @@
       "topic": "Filing Status",
       "front": "Married Filing Separately (MFS) Disadvantages",
       "back": "Generally higher tax rates; cannot take credits like EITC, Child and Dependent Care (in most cases), Education credits; standard deduction must be same for both (if one details, both must)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-exp-004",
@@ -1533,8 +1599,9 @@
       "type": "definition",
       "topic": "Filing Status",
       "front": "Head of Household (HOH) Requirements",
-      "back": "1. Unmarried or \"considered unmarried\" on last day of year\\n2. Paid >50% cost of keeping up a home\\n3. Qualifying person lived with you >50% of year (exception for dependent parents who don\\",
-      "difficulty": "medium"
+      "back": "1. Unmarried or \"considered unmarried\" on last day of year\\n2. Paid >50% cost of keeping up a home\\n3. Qualifying person lived with you >50% of year (exception for dependent parents who don",
+      "difficulty": "medium",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-exp-005",
@@ -1544,7 +1611,7 @@
       "type": "rule",
       "topic": "Filing Status",
       "front": "Qualifying Surviving Spouse (QSS) Requirements",
-      "back": "Can file as QSS for 2 years following spouse\\",
+      "back": "Can file as QSS for 2 years following spouse",
       "difficulty": "medium"
     },
     {
@@ -1556,7 +1623,8 @@
       "topic": "Standard Deduction",
       "front": "Standard Deduction - Single (2024)",
       "back": "$14,600",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-exp-007",
@@ -1567,7 +1635,8 @@
       "topic": "Standard Deduction",
       "front": "Standard Deduction - MFJ (2024)",
       "back": "$29,200",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-exp-008",
@@ -1578,7 +1647,8 @@
       "topic": "Standard Deduction",
       "front": "Standard Deduction - HOH (2024)",
       "back": "$21,900",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-exp-009",
@@ -1589,7 +1659,8 @@
       "topic": "Standard Deduction",
       "front": "Additional Standard Deduction (65+ or Blind)",
       "back": "Unmarried: +$1,950\\nMarried: +$1,550 per qualifying person",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Single filer age 67: $14,600 + $1,950 (age 65+) = $16,550 total standard deduction for 2024."
     },
     {
       "id": "see1-exp-010",
@@ -1600,7 +1671,8 @@
       "topic": "Tax Credits",
       "front": "Child Tax Credit (CTC) Amount (2024)",
       "back": "$2,000 per qualifying child under age 17",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Daughter age 22, full-time college student, lives at home summers, parents pay tuition/housing. She qualifies as dependent."
     },
     {
       "id": "see1-exp-011",
@@ -1622,7 +1694,8 @@
       "topic": "Tax Credits",
       "front": "Other Dependent Credit (ODC)",
       "back": "$500 non-refundable credit for dependents who don\"t qualify for CTC (e.g., child 17+, parents)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-exp-013",
@@ -1633,7 +1706,8 @@
       "topic": "Tax Credits",
       "front": "Earned Income Tax Credit (EITC) Eligibility Basic Rules",
       "back": "1. Valid SSN for self and dependents\n2. US Citizen or Resident Alien\n3. Not filing MFS (exceptions apply)\n4. Investment income < $11,600 (2024)\n5. Earned income",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-exp-014",
@@ -1644,7 +1718,8 @@
       "topic": "Tax Credits",
       "front": "EITC Disqualified Income",
       "back": "Investment income over threshold ($11,600 for 2024) disqualifies you. Includes interest, dividends, cap gains, royalties, rental income.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see1-exp-015",
@@ -1655,7 +1730,8 @@
       "topic": "Tax Credits",
       "front": "American Opportunity Tax Credit (AOTC) Scope",
       "back": "First 4 years of post-secondary education. 100% of first $2,000 + 25% of next $2,000. Max $2,500.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Student in year 2 of college, $5,000 qualifying expenses paid. AOTC = $2,500, up to $1,000 refundable (40%)."
     },
     {
       "id": "see1-exp-016",
@@ -1666,7 +1742,8 @@
       "topic": "Tax Credits",
       "front": "Lifetime Learning Credit (LLC) Scope",
       "back": "Any post-secondary or skill-improvement courses. 20% of first $10,000 expenses. Max $2,000 per return (not per student).",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Graduate student pays $4,000 tuition. LLC = 20% × $4,000 = $800 credit. No limit on years claimed."
     },
     {
       "id": "see1-exp-017",
@@ -1688,7 +1765,8 @@
       "topic": "Capital Gains",
       "front": "Short-Term Capital Gains Rate",
       "back": "Taxed as ordinary income (marginal tax brackets)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-exp-019",
@@ -1699,7 +1777,8 @@
       "topic": "Capital Gains",
       "front": "Long-Term Capital Gains Rates",
       "back": "0%, 15%, or 20% depending on taxable income",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-exp-020",
@@ -1721,7 +1800,8 @@
       "topic": "Capital Gains",
       "front": "Capital Loss Limits",
       "back": "Can offset capital gains. Excess loss deduction limited to $3,000 ($1,500 MFS) against ordinary income. Unused carries forward indefinitely.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-exp-022",
@@ -1754,7 +1834,8 @@
       "topic": "Dependent",
       "front": "Qualifying Child Tests",
       "back": "Relationship, Age, Residence (>50%), Support (child didn\"t provide >50%), Joint Return (none)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Daughter age 22, full-time college student, lives at home summers, parents pay tuition/housing. She qualifies as dependent."
     },
     {
       "id": "see1-exp-025",
@@ -1765,7 +1846,8 @@
       "topic": "Dependent",
       "front": "Qualifying Relative Tests",
       "back": "Not a Qualifying Child, Member of Household OR Relationship, Gross Income (<$5,050 for 2024), Support (taxpayer provided >50%)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Daughter age 22, full-time college student, lives at home summers, parents pay tuition/housing. She qualifies as dependent."
     },
     {
       "id": "see1-exp-026",
@@ -1798,7 +1880,8 @@
       "topic": "Retirement",
       "front": "Early Withdrawal Penalty Exceptions",
       "back": "Death, Disability, Medical expenses (>7.5% AGI), 72(t) payments, Higher Education, First-time homebuyer ($10k)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "401(k) withdrawal at age 45: $20,000. Tax: $4,800 (24%) + penalty: $2,000 (10%) = $6,800 total."
     },
     {
       "id": "see1-exp-029",
@@ -1809,7 +1892,8 @@
       "topic": "Retirement",
       "front": "Roth IRA Contribution Limit (2024)",
       "back": "$7,000 ($8,000 if 50+)",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-exp-030",
@@ -1864,7 +1948,8 @@
       "topic": "Kiddie Tax",
       "front": "Kiddie Tax Applicability",
       "back": "Applies to children under 18 (or student under 24) with unearned income > $2,600 (2024). Taxed at parent\"s rate.",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "example": "Teacher salary $55,000 + summer tutoring $8,000 = $63,000 earned income. Investment dividends of $2,000 are NOT earned income."
     },
     {
       "id": "see1-form-001",
@@ -1882,7 +1967,8 @@
         "income",
         "taxable income"
       ],
-      "reference": "IRC §63"
+      "reference": "IRC §63",
+      "example": "Taxpayer has $8,000 mortgage interest, $5,000 state taxes (capped at $10,000 SALT), $3,000 charity = $16,000 itemized. If over standard deduction, itemize."
     },
     {
       "id": "see1-form-002",
@@ -1911,7 +1997,7 @@
       "type": "formula",
       "topic": "Self-Employment",
       "front": "What is the above-the-line deduction for Self-Employment Tax?",
-      "back": "**Deduction = 50% of Self-Employment Tax**\\n\\nThis is an adjustment to income (above-the-line), reducing AGI.\\n\\nPurpose: Mirrors the employer portion of FICA that employees don\\",
+      "back": "**Deduction = 50% of Self-Employment Tax**\\n\\nThis is an adjustment to income (above-the-line), reducing AGI.\\n\\nPurpose: Mirrors the employer portion of FICA that employees don",
       "difficulty": "easy",
       "subtopic": "SE Tax Deduction",
       "example": "SE Tax of $14,130 → Deduction of $7,065",
@@ -1957,7 +2043,8 @@
         "capital gains",
         "netting"
       ],
-      "reference": "IRC §1222"
+      "reference": "IRC §1222",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see1-form-006",
@@ -2050,7 +2137,8 @@
         "deductions",
         "casualty"
       ],
-      "reference": "IRC §165(c)(3); §165(h)"
+      "reference": "IRC §165(c)(3); §165(h)",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see1-form-011",
@@ -2068,7 +2156,8 @@
         "estimated taxes",
         "safe harbor"
       ],
-      "reference": "IRC §6654"
+      "reference": "IRC §6654",
+      "example": "Self-employed expects $15,000 tax liability. Pay $3,750 quarterly (Apr 15, Jun 15, Sep 15, Jan 15) to avoid penalty."
     },
     {
       "id": "see1-form-012",
@@ -2097,7 +2186,7 @@
       "type": "formula",
       "topic": "Basis",
       "front": "What is the basis of property received as a gift?",
-      "back": "**General Rule:** Carryover basis (donor\\",
+      "back": "**General Rule:** Carryover basis (donor",
       "difficulty": "hard",
       "subtopic": "Gift Basis",
       "example": "Donor basis $10K, FMV at gift $7K, sold for $8K → No gain/loss",
@@ -2135,14 +2224,15 @@
       "type": "formula",
       "topic": "Self-Employment",
       "front": "How do you calculate Net Earnings from Self-Employment?",
-      "back": "**Net SE Income = Gross SE Income − SE Business Expenses**\\n\\nIncludes:\\n• Schedule C net profit\\n• Partner\\",
+      "back": "**Net SE Income = Gross SE Income − SE Business Expenses**\\n\\nIncludes:\\n• Schedule C net profit\\n• Partner",
       "difficulty": "easy",
       "subtopic": "Net SE Income",
       "formula": "Net SE Income = Business Revenue − Business Expenses",
       "tags": [
         "self-employment"
       ],
-      "reference": "IRC §1402"
+      "reference": "IRC §1402",
+      "example": "Freelancer earns $80,000. SE tax = $80,000 × 0.9235 × 15.3% = $11,304. Deduct half ($5,652) above-the-line."
     },
     {
       "id": "see1-mnem-001",
@@ -2159,7 +2249,8 @@
       "tags": [
         "filing requirements"
       ],
-      "reference": "IRC §6012"
+      "reference": "IRC §6012",
+      "example": "Family HSA contribution $8,300 (2024) is above-the-line deduction. Withdrawals for medical expenses are tax-free."
     },
     {
       "id": "see1-mnem-002",
@@ -2176,7 +2267,8 @@
       "tags": [
         "dependents"
       ],
-      "reference": "IRC §152(c)"
+      "reference": "IRC §152(c)",
+      "example": "Daughter age 22, full-time college student, lives at home summers, parents pay tuition/housing. She qualifies as dependent."
     },
     {
       "id": "see1-mnem-003",
@@ -2193,7 +2285,8 @@
       "tags": [
         "dependents"
       ],
-      "reference": "IRC §152(d)"
+      "reference": "IRC §152(d)",
+      "example": "Daughter age 22, full-time college student, lives at home summers, parents pay tuition/housing. She qualifies as dependent."
     },
     {
       "id": "see1-mnem-004",
@@ -2245,7 +2338,8 @@
       "tags": [
         "itemized deductions"
       ],
-      "reference": "Schedule A"
+      "reference": "Schedule A",
+      "example": "Taxpayer has $8,000 mortgage interest, $5,000 state taxes (capped at $10,000 SALT), $3,000 charity = $16,000 itemized. If over standard deduction, itemize."
     },
     {
       "id": "see1-mnem-007",
@@ -2263,7 +2357,8 @@
         "adjustments",
         "above-the-line"
       ],
-      "reference": "IRC §62"
+      "reference": "IRC §62",
+      "example": "Self-employed health insurance $6,000 + student loan interest $2,500 + SE tax deduction $5,000 = $13,500 adjustments to income."
     },
     {
       "id": "see1-mnem-008",
@@ -2299,7 +2394,8 @@
         "retirement",
         "penalties"
       ],
-      "reference": "IRC §72(t)"
+      "reference": "IRC §72(t)",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see1-mnem-010",
@@ -2336,7 +2432,8 @@
         "credits",
         "EIC"
       ],
-      "reference": "IRC §32"
+      "reference": "IRC §32",
+      "example": "Teacher salary $55,000 + summer tutoring $8,000 = $63,000 earned income. Investment dividends of $2,000 are NOT earned income."
     },
     {
       "id": "see1-mnem-012",
@@ -2353,7 +2450,8 @@
       "tags": [
         "basis"
       ],
-      "reference": "IRC §1016"
+      "reference": "IRC §1016",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see1-mnem-013",
@@ -2371,7 +2469,8 @@
         "filing status",
         "MFS"
       ],
-      "reference": "Various IRC sections"
+      "reference": "Various IRC sections",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-mnem-014",
@@ -2389,7 +2488,8 @@
         "employment",
         "independent contractor"
       ],
-      "reference": "IRS Pub 15-A"
+      "reference": "IRS Pub 15-A",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see1-mnem-015",
@@ -2407,7 +2507,8 @@
         "charitable",
         "deductions"
       ],
-      "reference": "IRC §170"
+      "reference": "IRC §170",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b2-001",
@@ -2424,7 +2525,8 @@
         "Section 351",
         "incorporation"
       ],
-      "reference": "IRC §351"
+      "reference": "IRC §351",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-002",
@@ -2441,7 +2543,8 @@
         "Section 721",
         "partnership formation"
       ],
-      "reference": "IRC §721"
+      "reference": "IRC §721",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-003",
@@ -2459,7 +2562,8 @@
         "partner basis",
         "outside basis"
       ],
-      "reference": "IRC §705"
+      "reference": "IRC §705",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-004",
@@ -2476,7 +2580,8 @@
         "corporate tax rate",
         "C corp"
       ],
-      "reference": "IRC §11"
+      "reference": "IRC §11",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b2-005",
@@ -2493,7 +2598,8 @@
         "AET",
         "accumulated earnings"
       ],
-      "reference": "IRC §531"
+      "reference": "IRC §531",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see2-b2-006",
@@ -2510,7 +2616,8 @@
         "PHC",
         "personal holding company"
       ],
-      "reference": "IRC §541"
+      "reference": "IRC §541",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see2-b2-007",
@@ -2527,7 +2634,8 @@
         "DRD",
         "dividends received deduction"
       ],
-      "reference": "IRC §243"
+      "reference": "IRC §243",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see2-b2-008",
@@ -2544,7 +2652,8 @@
         "corporate charitable",
         "contribution limit"
       ],
-      "reference": "IRC §170(b)(2)"
+      "reference": "IRC §170(b)(2)",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-009",
@@ -2561,7 +2670,8 @@
         "S corp eligibility",
         "requirements"
       ],
-      "reference": "IRC §1361"
+      "reference": "IRC §1361",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-b2-010",
@@ -2578,7 +2688,8 @@
         "BIG tax",
         "built-in gains"
       ],
-      "reference": "IRC §1374"
+      "reference": "IRC §1374",
+      "example": "S-corp earns $300,000. Owner takes $100,000 salary (subject to payroll tax) + $200,000 distribution (no SE tax)."
     },
     {
       "id": "see2-b2-011",
@@ -2596,7 +2707,8 @@
         "S corp basis",
         "stock basis"
       ],
-      "reference": "IRC §1367"
+      "reference": "IRC §1367",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-012",
@@ -2613,7 +2725,8 @@
         "S corp losses",
         "loss limitation"
       ],
-      "reference": "IRC §1366(d)"
+      "reference": "IRC §1366(d)",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-013",
@@ -2630,7 +2743,8 @@
         "AAA",
         "accumulated adjustments account"
       ],
-      "reference": "IRC §1368"
+      "reference": "IRC §1368",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-014",
@@ -2647,7 +2761,8 @@
         "separately stated",
         "K-1"
       ],
-      "reference": "IRC §702"
+      "reference": "IRC §702",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b2-015",
@@ -2664,7 +2779,8 @@
         "guaranteed payments",
         "partner"
       ],
-      "reference": "IRC §707(c)"
+      "reference": "IRC §707(c)",
+      "example": "Short-term stock gain (held 8 months) of $5,000 taxed as ordinary income at marginal rate (up to 37%)."
     },
     {
       "id": "see2-b2-016",
@@ -2681,7 +2797,8 @@
         "distribution",
         "partnership"
       ],
-      "reference": "IRC §731, §732"
+      "reference": "IRC §731, §732",
+      "example": "Short-term stock gain (held 8 months) of $5,000 taxed as ordinary income at marginal rate (up to 37%)."
     },
     {
       "id": "see2-b2-017",
@@ -2698,7 +2815,8 @@
         "hot assets",
         "Section 751"
       ],
-      "reference": "IRC §751"
+      "reference": "IRC §751",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b2-018",
@@ -2749,7 +2867,8 @@
         "Section 179",
         "expense election"
       ],
-      "reference": "IRC §179"
+      "reference": "IRC §179",
+      "example": "Business buys $50,000 equipment. Section 179 allows immediate deduction rather than depreciating over 5-7 years."
     },
     {
       "id": "see2-b2-021",
@@ -2766,7 +2885,8 @@
         "bonus depreciation",
         "168(k)"
       ],
-      "reference": "IRC §168(k)"
+      "reference": "IRC §168(k)",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-b2-022",
@@ -2783,7 +2903,8 @@
         "listed property",
         "auto limits"
       ],
-      "reference": "IRC §280F"
+      "reference": "IRC §280F",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-b2-023",
@@ -2834,7 +2955,8 @@
         "163(j)",
         "interest limitation"
       ],
-      "reference": "IRC §163(j)"
+      "reference": "IRC §163(j)",
+      "example": "Savings account pays $500 interest, municipal bond pays $1,000 tax-free interest. Only $500 taxable on federal return."
     },
     {
       "id": "see2-b2-026",
@@ -2868,7 +2990,8 @@
         "bad debt",
         "worthless debt"
       ],
-      "reference": "IRC §166"
+      "reference": "IRC §166",
+      "example": "Stock sold at $7,000 loss. Deduct $3,000 against ordinary income, carry forward $4,000 to next year."
     },
     {
       "id": "see2-b2-028",
@@ -2902,7 +3025,8 @@
         "FICA",
         "employment tax"
       ],
-      "reference": "IRC §3101, §3111"
+      "reference": "IRC §3101, §3111",
+      "example": "Single retiree: $30,000 SS + $20,000 pension. Provisional income = $20,000 + $15,000 (half SS) = $35,000. Up to 85% of SS taxable."
     },
     {
       "id": "see2-b2-030",
@@ -2929,7 +3053,7 @@
       "type": "definition",
       "topic": "Employment Taxes",
       "front": "What is Form 941 and when is it due?",
-      "back": "**Form 941:** Employer\\",
+      "back": "**Form 941:** Employer",
       "difficulty": "easy",
       "subtopic": "Form 941",
       "tags": [
@@ -3021,7 +3145,8 @@
         "rehabilitation credit",
         "historic"
       ],
-      "reference": "IRC §47"
+      "reference": "IRC §47",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b2-037",
@@ -3039,23 +3164,6 @@
         "accrual method"
       ],
       "reference": "IRC §446, §451"
-    },
-    {
-      "id": "see2-b2-038",
-      "courseId": "ea",
-      "section": "SEE2",
-      "blueprintArea": "SEE2-2",
-      "type": "definition",
-      "topic": "Accounting Methods",
-      "front": "What is the doctrine of constructive receipt?",
-      "back": "**Income Received When:**\\n• Credited to account\\n• Set apart\\n• Made available\\n• No substantial limitation\\n\\n**Examples:**\\n• Check mailed in December (received if available)\\n• Matured bond interest\\n• Dividends available for pickup\\n\\n**NOT Constructive:**\\n• Income subject to substantial restriction\\n• Merely earned but not available",
-      "difficulty": "medium",
-      "subtopic": "Constructive Receipt",
-      "tags": [
-        "constructive receipt",
-        "income recognition"
-      ],
-      "reference": "Reg §1.451-2"
     },
     {
       "id": "see2-b2-039",
@@ -3141,7 +3249,8 @@
         "Section 1231",
         "property"
       ],
-      "reference": "IRC §1231"
+      "reference": "IRC §1231",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b2-044",
@@ -3158,7 +3267,8 @@
         "Section 1245",
         "recapture"
       ],
-      "reference": "IRC §1245"
+      "reference": "IRC §1245",
+      "example": "Short-term stock gain (held 8 months) of $5,000 taxed as ordinary income at marginal rate (up to 37%)."
     },
     {
       "id": "see2-b2-045",
@@ -3175,7 +3285,8 @@
         "Section 1250",
         "recapture"
       ],
-      "reference": "IRC §1250"
+      "reference": "IRC §1250",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b2-046",
@@ -3193,7 +3304,8 @@
         "installment sale",
         "Form 6252"
       ],
-      "reference": "IRC §453"
+      "reference": "IRC §453",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-b2-047",
@@ -3210,7 +3322,8 @@
         "dividend",
         "distribution"
       ],
-      "reference": "IRC §301, §316"
+      "reference": "IRC §301, §316",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b2-048",
@@ -3228,7 +3341,8 @@
         "E&P",
         "earnings and profits"
       ],
-      "reference": "IRC §312"
+      "reference": "IRC §312",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-b2-049",
@@ -3245,7 +3359,8 @@
         "redemption",
         "stock buyback"
       ],
-      "reference": "IRC §302"
+      "reference": "IRC §302",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see2-b2-050",
@@ -3262,7 +3377,8 @@
         "estimated tax",
         "corporate"
       ],
-      "reference": "IRC §6655"
+      "reference": "IRC §6655",
+      "example": "Self-employed expects $15,000 tax liability. Pay $3,750 quarterly (Apr 15, Jun 15, Sep 15, Jan 15) to avoid penalty."
     },
     {
       "id": "see2-b2-051",
@@ -3279,25 +3395,8 @@
         "information return",
         "penalty"
       ],
-      "reference": "IRC §6721, §6722"
-    },
-    {
-      "id": "see2-b2-052",
-      "courseId": "ea",
-      "section": "SEE2",
-      "blueprintArea": "SEE2-3",
-      "type": "formula",
-      "topic": "Pass-Through",
-      "front": "What is the Qualified Business Income (QBI) deduction?",
-      "back": "**Deduction:** Lesser of:\\n• 20% of QBI, OR\\n• 20% of taxable income (before QBI)\\n\\n**Limitations (above threshold):**\\n• W-2 wages/capital limit\\n• SSTB phase-out\\n\\n**2024 Thresholds:**\\n• Single: $182,100 - $232,100\\n• MFJ: $364,200 - $464,200\\n\\n**SSTB:** No deduction above threshold",
-      "difficulty": "hard",
-      "subtopic": "QBI Deduction",
-      "formula": "QBI Deduction = Lesser of 20% × QBI or 20% × (TI - Net CG)",
-      "tags": [
-        "QBI",
-        "Section 199A"
-      ],
-      "reference": "IRC §199A"
+      "reference": "IRC §6721, §6722",
+      "example": "S-corp shareholder receives K-1 showing $50,000 ordinary income, $5,000 interest. Report on Schedule E, Form 1040."
     },
     {
       "id": "see2-b2-053",
@@ -3332,7 +3431,8 @@
         "SIMPLE",
         "retirement"
       ],
-      "reference": "IRC §408(k), §408(p)"
+      "reference": "IRC §408(k), §408(p)",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see2-b2-055",
@@ -3349,7 +3449,8 @@
         "401(k)",
         "contribution limits"
       ],
-      "reference": "IRC §402(g), §415"
+      "reference": "IRC §402(g), §415",
+      "example": "Employee contributes $23,000 (2024 limit) to 401(k), reducing W-2 taxable wages. Age 50+ adds $7,500 catch-up."
     },
     {
       "id": "see2-b2-056",
@@ -3359,14 +3460,15 @@
       "type": "definition",
       "topic": "Tax Year",
       "front": "What are the required tax year rules for pass-through entities?",
-      "back": "**Partnerships:**\\n1. Majority interest partners\\",
+      "back": "**Partnerships:**\\n1. Majority interest partners",
       "difficulty": "hard",
       "subtopic": "Required Tax Year",
       "tags": [
         "tax year",
         "required year"
       ],
-      "reference": "IRC §706, §1378"
+      "reference": "IRC §706, §1378",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-b2-057",
@@ -3383,7 +3485,8 @@
         "short period",
         "tax year"
       ],
-      "reference": "IRC §443"
+      "reference": "IRC §443",
+      "example": "Self-employed expects $15,000 tax liability. Pay $3,750 quarterly (Apr 15, Jun 15, Sep 15, Jan 15) to avoid penalty."
     },
     {
       "id": "see2-b2-058",
@@ -3410,7 +3513,7 @@
       "type": "definition",
       "topic": "Related Party",
       "front": "What are the Section 267 related party transaction rules?",
-      "back": "**Loss Disallowance:**\\nNo deduction for loss on sale to related party\\n\\n**Related Parties Include:**\\n• Family members\\n• >50% owned entity\\n• Corporation and 50%+ shareholder\\n\\n**Matching Rule:**\\nDeduction when included in related party\\",
+      "back": "**Loss Disallowance:**\\nNo deduction for loss on sale to related party\\n\\n**Related Parties Include:**\\n• Family members\\n• >50% owned entity\\n• Corporation and 50%+ shareholder\\n\\n**Matching Rule:**\\nDeduction when included in related party",
       "difficulty": "hard",
       "subtopic": "Section 267 Transactions",
       "tags": [
@@ -3453,7 +3556,8 @@
         "basis",
         "outside basis"
       ],
-      "reference": "IRC §705"
+      "reference": "IRC §705",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-b3-003",
@@ -3471,7 +3575,8 @@
         "depreciation",
         "2024"
       ],
-      "reference": "IRC §179"
+      "reference": "IRC §179",
+      "example": "Business buys $50,000 equipment. Section 179 allows immediate deduction rather than depreciating over 5-7 years."
     },
     {
       "id": "see2-b3-004",
@@ -3490,7 +3595,8 @@
         "E&P",
         "dividends"
       ],
-      "reference": "IRC §301, §316"
+      "reference": "IRC §301, §316",
+      "example": "Stock purchased for $10,000, sold for $25,000 after 14 months. Long-term capital gain of $15,000, taxed at 0%/15%/20% based on income."
     },
     {
       "id": "see2-b3-005",
@@ -3526,7 +3632,8 @@
         "AAA",
         "basis"
       ],
-      "reference": "IRC §1368"
+      "reference": "IRC §1368",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see2-b3-007",
@@ -3544,7 +3651,8 @@
         "cash",
         "accrual"
       ],
-      "reference": "IRC §448"
+      "reference": "IRC §448",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-def-001",
@@ -3561,7 +3669,8 @@
         "entities",
         "sole proprietorship"
       ],
-      "reference": "IRC §1402"
+      "reference": "IRC §1402",
+      "example": "Freelancer earns $80,000. SE tax = $80,000 × 0.9235 × 15.3% = $11,304. Deduct half ($5,652) above-the-line."
     },
     {
       "id": "see2-def-002",
@@ -3578,7 +3687,8 @@
         "entities",
         "partnership"
       ],
-      "reference": "IRC §701"
+      "reference": "IRC §701",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-def-003",
@@ -3595,7 +3705,8 @@
         "entities",
         "corporation"
       ],
-      "reference": "IRC §11"
+      "reference": "IRC §11",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see2-def-004",
@@ -3612,7 +3723,8 @@
         "entities",
         "S corp"
       ],
-      "reference": "IRC §1361"
+      "reference": "IRC §1361",
+      "example": "S-corp shareholder receives K-1 showing $50,000 ordinary income, $5,000 interest. Report on Schedule E, Form 1040."
     },
     {
       "id": "see2-def-005",
@@ -3629,7 +3741,8 @@
         "entities",
         "LLC"
       ],
-      "reference": "Treas. Reg. §301.7701-3"
+      "reference": "Treas. Reg. §301.7701-3",
+      "example": "Consultant: $120,000 revenue - $30,000 expenses (home office, supplies, travel) = $90,000 Schedule C profit."
     },
     {
       "id": "see2-def-006",
@@ -3663,7 +3776,8 @@
         "depreciation",
         "Section 179"
       ],
-      "reference": "IRC §179"
+      "reference": "IRC §179",
+      "example": "Business buys $50,000 equipment. Section 179 allows immediate deduction rather than depreciating over 5-7 years."
     },
     {
       "id": "see2-def-008",
@@ -3680,7 +3794,8 @@
         "depreciation",
         "bonus"
       ],
-      "reference": "IRC §168(k)"
+      "reference": "IRC §168(k)",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-def-009",
@@ -3697,7 +3812,8 @@
         "depreciation",
         "listed property"
       ],
-      "reference": "IRC §280F"
+      "reference": "IRC §280F",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-def-010",
@@ -3775,7 +3891,7 @@
       "type": "definition",
       "topic": "Partnership",
       "front": "What is a partner\\",
-      "back": "**Partner\\",
+      "back": "**Partner",
       "difficulty": "medium",
       "subtopic": "Distributive Share",
       "tags": [
@@ -3783,23 +3899,6 @@
         "distributive share"
       ],
       "reference": "IRC §704"
-    },
-    {
-      "id": "see2-def-015",
-      "courseId": "ea",
-      "section": "SEE2",
-      "blueprintArea": "SEE2-2",
-      "type": "definition",
-      "topic": "Partnership",
-      "front": "How is a partner\\",
-      "back": "**Initial Basis:** Cash + adjusted basis of property contributed\\n\\n**Increased by:**\\n• Share of income\\n• Share of tax-exempt income\\n• Additional contributions\\n• Increased share of liabilities\\n\\n**Decreased by:**\\n• Share of losses (not below zero)\\n• Non-deductible expenses\\n• Distributions\\n• Decreased share of liabilities",
-      "difficulty": "hard",
-      "subtopic": "Partner Basis",
-      "tags": [
-        "partnership",
-        "basis"
-      ],
-      "reference": "IRC §705"
     },
     {
       "id": "see2-def-016",
@@ -3816,7 +3915,8 @@
         "S corp",
         "basis"
       ],
-      "reference": "IRC §1367"
+      "reference": "IRC §1367",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-def-017",
@@ -3833,7 +3933,8 @@
         "employment taxes",
         "FICA"
       ],
-      "reference": "IRC §3101; §3111"
+      "reference": "IRC §3101; §3111",
+      "example": "Freelancer earns $80,000. SE tax = $80,000 × 0.9235 × 15.3% = $11,304. Deduct half ($5,652) above-the-line."
     },
     {
       "id": "see2-def-018",
@@ -3853,23 +3954,6 @@
       "reference": "IRC §3301"
     },
     {
-      "id": "see2-def-019",
-      "courseId": "ea",
-      "section": "SEE2",
-      "blueprintArea": "SEE2-2",
-      "type": "definition",
-      "topic": "Corporation",
-      "front": "What is the Accumulated Earnings Tax?",
-      "back": "**Penalty tax on C corps that accumulate earnings to avoid dividends**\\n\\n**Rate:** 20% on accumulated taxable income\\n\\n**Credit:** $250,000 ($150,000 for service corps)\\n• Earnings above this need reasonable business needs\\n\\n**Reasonable needs:**\\n• Business expansion\\n• Working capital\\n• Debt retirement\\n• Acquisitions\\n\\n**Not applicable to:** S corps, tax-exempt entities, PHCs",
-      "difficulty": "hard",
-      "subtopic": "Accumulated Earnings Tax",
-      "tags": [
-        "corporation",
-        "AET"
-      ],
-      "reference": "IRC §531"
-    },
-    {
       "id": "see2-def-020",
       "courseId": "ea",
       "section": "SEE2",
@@ -3884,7 +3968,8 @@
         "corporation",
         "PHC"
       ],
-      "reference": "IRC §541"
+      "reference": "IRC §541",
+      "example": "Qualified dividends of $10,000 from US corporation taxed at 15% ($1,500) vs ordinary rate of 24% ($2,400) - saves $900."
     },
     {
       "id": "see2-exp-001",
@@ -3895,7 +3980,8 @@
       "topic": "Partnership",
       "front": "Partnership Basis Calculation",
       "back": "Initial Basis + Contributions + Income Share + Increase in Liab Share - Distributions - Loss Share - Decrease in Liab Share",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-exp-002",
@@ -3905,8 +3991,9 @@
       "type": "rule",
       "topic": "Partnership",
       "front": "Outside Basis vs Inside Basis",
-      "back": "Outside: Partner\\",
-      "difficulty": "medium"
+      "back": "Outside: Partner",
+      "difficulty": "medium",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-exp-003",
@@ -3917,7 +4004,8 @@
       "topic": "Partnership",
       "front": "Form 1065 Due Date",
       "back": "March 15th (for calendar year partnerships). Extension: 6 months (Sept 15).",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-exp-004",
@@ -3928,7 +4016,8 @@
       "topic": "Partnership",
       "front": "Guaranteed Payments",
       "back": "Payments to partners for services or capital use, made regardless of partnership income. Ordinary income to partner, deductible by partnership.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Short-term stock gain (held 8 months) of $5,000 taxed as ordinary income at marginal rate (up to 37%)."
     },
     {
       "id": "see2-exp-005",
@@ -3950,7 +4039,8 @@
       "topic": "S-Corp",
       "front": "S-Corp Eligibility: Shareholder Type",
       "back": "US Citizens, Residents, certain Trusts/Estates. NO Partnerships, C-Corps, or Non-resident Aliens.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-exp-007",
@@ -3983,7 +4073,8 @@
       "topic": "S-Corp",
       "front": "S-Corp Shareholder Basis Order",
       "back": "1. Increase for income\n2. Decrease for distributions\n3. Decrease for non-deductible expenses\n4. Decrease for deductible losses/expenses",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-exp-010",
@@ -4093,7 +4184,8 @@
       "topic": "Depreciation",
       "front": "Bonus Depreciation (2024)",
       "back": "60% deduction allowed for qualified property (down from 80% in 2023).",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-exp-020",
@@ -4104,7 +4196,8 @@
       "topic": "Depreciation",
       "front": "Section 179 Limit (2024)",
       "back": "Max deduction approx $1.22M, phaseout starts at $3.05M investment.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Business buys $50,000 equipment. Section 179 allows immediate deduction rather than depreciating over 5-7 years."
     },
     {
       "id": "see2-exp-021",
@@ -4115,7 +4208,8 @@
       "topic": "Depreciation",
       "front": "Section 179 Restrictions",
       "back": "Limited to taxable income from trade/business (cannot create loss); tangible personal property only (generally).",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Business buys $50,000 equipment. Section 179 allows immediate deduction rather than depreciating over 5-7 years."
     },
     {
       "id": "see2-exp-022",
@@ -4192,7 +4286,8 @@
       "topic": "Retirement Plans",
       "front": "SEP IRA Deadline",
       "back": "Due date of return + extensions.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see2-exp-029",
@@ -4203,7 +4298,8 @@
       "topic": "Retirement Plans",
       "front": "SIMPLE IRA Employee Contribution",
       "back": "Employees can contribute up to $16,000 (2024).",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see2-exp-030",
@@ -4214,7 +4310,8 @@
       "topic": "Estate & Trust",
       "front": "Form 1041 Filing Requirement",
       "back": "Required if gross income >= $600 or any non-resident alien beneficiary.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see2-exp-031",
@@ -4236,7 +4333,8 @@
       "topic": "Estate & Trust",
       "front": "Estate Tax Filing Threshold (2024)",
       "back": "$13.61 Million gross estate",
-      "difficulty": "easy"
+      "difficulty": "easy",
+      "example": "Estate valued at $15 million. Exemption $13.61M. Taxable: $1.39M × 40% = $556,000 federal estate tax."
     },
     {
       "id": "see2-exp-033",
@@ -4284,7 +4382,8 @@
         "depreciation",
         "MACRS"
       ],
-      "reference": "IRC §168; Pub 946"
+      "reference": "IRC §168; Pub 946",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-form-003",
@@ -4302,7 +4401,8 @@
         "depreciation",
         "auto"
       ],
-      "reference": "IRC §280F; Rev. Proc. 2024-13"
+      "reference": "IRC §280F; Rev. Proc. 2024-13",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-form-004",
@@ -4320,7 +4420,8 @@
         "partnership",
         "basis"
       ],
-      "reference": "IRC §705"
+      "reference": "IRC §705",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-form-005",
@@ -4338,7 +4439,8 @@
         "partnership",
         "liabilities"
       ],
-      "reference": "IRC §752"
+      "reference": "IRC §752",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-form-006",
@@ -4356,7 +4458,8 @@
         "partnership",
         "hot assets"
       ],
-      "reference": "IRC §751"
+      "reference": "IRC §751",
+      "example": "Short-term stock gain (held 8 months) of $5,000 taxed as ordinary income at marginal rate (up to 37%)."
     },
     {
       "id": "see2-form-007",
@@ -4374,25 +4477,8 @@
         "S corp",
         "basis"
       ],
-      "reference": "IRC §1367"
-    },
-    {
-      "id": "see2-form-008",
-      "courseId": "ea",
-      "section": "SEE2",
-      "blueprintArea": "SEE2-3",
-      "type": "formula",
-      "topic": "S Corporation",
-      "front": "What is the Accumulated Adjustments Account (AAA)?",
-      "back": "**AAA tracks S corp earnings that can be distributed tax-free**\\n\\n**Calculation:**\\nPrior AAA Balance\\n+ Ordinary income/Separately stated income\\n− Ordinary loss/Deductions\\n− Distributions (limited to AAA)\\n= Ending AAA\\n\\n**Note:** Tax-exempt income increases stock basis but NOT AAA\\n**AAA can go negative** (from losses, not distributions)",
-      "difficulty": "hard",
-      "subtopic": "AAA",
-      "formula": "AAA = Prior AAA + Income − Losses − Distributions",
-      "tags": [
-        "S corp",
-        "AAA"
-      ],
-      "reference": "IRC §1368"
+      "reference": "IRC §1367",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-form-009",
@@ -4433,43 +4519,6 @@
       "reference": "IRC §243"
     },
     {
-      "id": "see2-form-011",
-      "courseId": "ea",
-      "section": "SEE2",
-      "blueprintArea": "SEE2-2",
-      "type": "formula",
-      "topic": "Corporation",
-      "front": "How is corporate Earnings and Profits (E&P) calculated?",
-      "back": "**Taxable Income**\n+ Tax-exempt income\n+ Life insurance proceeds\n+ Excess percentage depletion\n+ DRD adjustment (add back)\n− Federal income taxes\n− Nondeductible penalties/fines\n− Related party losses denied\n− Excess capital losses\n± Depreciation adjustment (E&P uses S/L, ADS)\n= **Current E&P**",
-      "difficulty": "hard",
-      "subtopic": "E&P Calculation",
-      "formula": "Current E&P = Taxable Income ± Adjustments",
-      "tags": [
-        "corporation",
-        "E&P"
-      ],
-      "reference": "IRC §312"
-    },
-    {
-      "id": "see2-form-012",
-      "courseId": "ea",
-      "section": "SEE2",
-      "blueprintArea": "SEE2-1",
-      "type": "formula",
-      "topic": "Schedule C",
-      "front": "How is Cost of Goods Sold calculated?",
-      "back": "**Beginning Inventory**\n+ Purchases\n+ Labor\n+ Materials/Supplies\n+ Other Costs\n= **Cost of Goods Available**\n− Ending Inventory\n= **Cost of Goods Sold**",
-      "difficulty": "easy",
-      "subtopic": "Cost of Goods Sold",
-      "example": "Beginning $10K + Purchases $50K − Ending $15K = COGS $45K",
-      "formula": "COGS = Beginning Inventory + Purchases − Ending Inventory",
-      "tags": [
-        "inventory",
-        "COGS"
-      ],
-      "reference": "IRC §263A"
-    },
-    {
       "id": "see2-form-013",
       "courseId": "ea",
       "section": "SEE2",
@@ -4484,7 +4533,8 @@
       "tags": [
         "home office"
       ],
-      "reference": "Rev. Proc. 2013-13"
+      "reference": "Rev. Proc. 2013-13",
+      "example": "Home office 200 sq ft, home 2,000 sq ft (10%). Simplified: 200 × $5 = $1,000. Regular: 10% of home expenses."
     },
     {
       "id": "see2-form-014",
@@ -4502,7 +4552,8 @@
         "vehicle",
         "expenses"
       ],
-      "reference": "IRC §274; Notice 2024-8"
+      "reference": "IRC §274; Notice 2024-8",
+      "example": "Computer $2,500 for business. Section 179 expense entire cost in year 1, or depreciate over 5 years."
     },
     {
       "id": "see2-form-015",
@@ -4556,7 +4607,8 @@
         "S corp",
         "eligibility"
       ],
-      "reference": "IRC §1361"
+      "reference": "IRC §1361",
+      "example": "Two partners: 60/40 profit split. Partnership earns $200,000. Partner A reports $120,000, Partner B reports $80,000 on K-1."
     },
     {
       "id": "see2-mnem-003",
@@ -4574,7 +4626,8 @@
         "partnership",
         "formation"
       ],
-      "reference": "IRC §721"
+      "reference": "IRC §721",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-mnem-004",
@@ -4610,7 +4663,8 @@
         "depreciation",
         "Section 179"
       ],
-      "reference": "IRC §179"
+      "reference": "IRC §179",
+      "example": "Business buys $50,000 equipment. Section 179 allows immediate deduction rather than depreciating over 5-7 years."
     },
     {
       "id": "see2-mnem-006",
@@ -4699,7 +4753,8 @@
         "S corp",
         "basis"
       ],
-      "reference": "IRC §1367"
+      "reference": "IRC §1367",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see2-mnem-011",
@@ -4806,7 +4861,8 @@
         "Circular 230",
         "practice before IRS"
       ],
-      "reference": "31 CFR 10.3"
+      "reference": "31 CFR 10.3",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-b2-002",
@@ -4840,7 +4896,8 @@
         "due diligence",
         "Circular 230"
       ],
-      "reference": "31 CFR 10.22"
+      "reference": "31 CFR 10.22",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-b2-004",
@@ -4857,7 +4914,8 @@
         "conflicts",
         "representation"
       ],
-      "reference": "31 CFR 10.29"
+      "reference": "31 CFR 10.29",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-b2-005",
@@ -4874,7 +4932,8 @@
         "fees",
         "contingent fees"
       ],
-      "reference": "31 CFR 10.27"
+      "reference": "31 CFR 10.27",
+      "example": "Discovered missed deduction after filing. File Form 1040-X within 3 years of original due date."
     },
     {
       "id": "see3-b2-006",
@@ -4942,7 +5001,8 @@
         "sanctions",
         "discipline"
       ],
-      "reference": "31 CFR 10.50"
+      "reference": "31 CFR 10.50",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see3-b2-010",
@@ -4959,7 +5019,8 @@
         "disreputable conduct",
         "incompetence"
       ],
-      "reference": "31 CFR 10.51"
+      "reference": "31 CFR 10.51",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-b2-011",
@@ -5010,7 +5071,8 @@
         "6695 penalty",
         "preparer"
       ],
-      "reference": "IRC §6695"
+      "reference": "IRC §6695",
+      "example": "Return due Apr 15, filed Jul 15 (3 months late). Penalty: 5% × 3 months = 15% of tax due, max 25%."
     },
     {
       "id": "see3-b2-014",
@@ -5027,7 +5089,8 @@
         "EITC due diligence",
         "Form 8867"
       ],
-      "reference": "IRC §6695(g)"
+      "reference": "IRC §6695(g)",
+      "example": "Single taxpayer earning $60,000 uses standard deduction of $14,600 (2024). Married couple filing jointly with $100,000 income uses $29,200 standard deduction."
     },
     {
       "id": "see3-b2-015",
@@ -5044,7 +5107,8 @@
         "Form 2848",
         "power of attorney"
       ],
-      "reference": "IRM 21.3.7"
+      "reference": "IRM 21.3.7",
+      "example": "EA represents client before IRS using Form 2848. Can sign agreements, receive confidential information."
     },
     {
       "id": "see3-b2-016",
@@ -5054,14 +5118,15 @@
       "type": "comparison",
       "topic": "Representation",
       "front": "What is the difference between Form 2848 and Form 8821?",
-      "back": "**Form 2848 - Power of Attorney:**\\n• Authorizes representation before IRS\\n• Can receive/inspect confidential information\\n• Can perform acts on taxpayer\\",
+      "back": "**Form 2848 - Power of Attorney:**\\n• Authorizes representation before IRS\\n• Can receive/inspect confidential information\\n• Can perform acts on taxpayer",
       "difficulty": "easy",
       "subtopic": "Form 2848 vs 8821",
       "tags": [
         "2848 vs 8821",
         "authorization"
       ],
-      "reference": "IRM 21.3.7"
+      "reference": "IRM 21.3.7",
+      "example": "EA represents client before IRS using Form 2848. Can sign agreements, receive confidential information."
     },
     {
       "id": "see3-b2-017",
@@ -5112,7 +5177,8 @@
         "federal tax lien",
         "NFTL"
       ],
-      "reference": "IRC §6321-6325"
+      "reference": "IRC §6321-6325",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see3-b2-020",
@@ -5122,7 +5188,7 @@
       "type": "definition",
       "topic": "Collection",
       "front": "What are the rules for IRS levies?",
-      "back": "**Levy Authority:**\\n• Seize and sell property to satisfy tax debt\\n• Bank accounts, wages, receivables\\n• Personal property\\n\\n**Required Notice:**\\n30 days before levy (CDP rights given)\\n\\n**Exempt from Levy:**\\n• Clothing/schoolbooks\\n• Fuel, provisions (25 limit)\\n• Tools of trade ($6,250)\\n• Unemployment benefits\\n• Workers\\",
+      "back": "**Levy Authority:**\\n• Seize and sell property to satisfy tax debt\\n• Bank accounts, wages, receivables\\n• Personal property\\n\\n**Required Notice:**\\n30 days before levy (CDP rights given)\\n\\n**Exempt from Levy:**\\n• Clothing/schoolbooks\\n• Fuel, provisions (25 limit)\\n• Tools of trade ($6,250)\\n• Unemployment benefits\\n• Workers",
       "difficulty": "hard",
       "subtopic": "Levy",
       "tags": [
@@ -5146,7 +5212,8 @@
         "installment agreement",
         "payment plan"
       ],
-      "reference": "IRC §6159"
+      "reference": "IRC §6159",
+      "example": "Owes $25,000, cannot pay in full. Set up payment plan: $500/month for 50 months plus interest."
     },
     {
       "id": "see3-b2-022",
@@ -5163,7 +5230,8 @@
         "OIC",
         "offer in compromise"
       ],
-      "reference": "IRC §7122"
+      "reference": "IRC §7122",
+      "example": "Taxpayer owes $50,000, can only pay $10,000. IRS may accept OIC based on reasonable collection potential."
     },
     {
       "id": "see3-b2-023",
@@ -5181,7 +5249,8 @@
         "RCP",
         "OIC calculation"
       ],
-      "reference": "IRM 5.8"
+      "reference": "IRM 5.8",
+      "example": "Taxpayer owes $50,000, can only pay $10,000. IRS may accept OIC based on reasonable collection potential."
     },
     {
       "id": "see3-b2-024",
@@ -5249,7 +5318,8 @@
         "statute of limitations",
         "assessment"
       ],
-      "reference": "IRC §6501"
+      "reference": "IRC §6501",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see3-b2-028",
@@ -5300,7 +5370,8 @@
         "IRS Appeals",
         "protest"
       ],
-      "reference": "IRM 8.1"
+      "reference": "IRM 8.1",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see3-b2-031",
@@ -5361,7 +5432,7 @@
       "type": "definition",
       "topic": "Judicial Review",
       "front": "What is a Notice of Deficiency (90-day letter)?",
-      "back": "**Statutory Notice:**\\n• IRS\\",
+      "back": "**Statutory Notice:**\\n• IRS",
       "difficulty": "medium",
       "subtopic": "Notice of Deficiency",
       "tags": [
@@ -5402,7 +5473,8 @@
         "FTA",
         "first time abatement"
       ],
-      "reference": "IRM 20.1.1.3.6"
+      "reference": "IRM 20.1.1.3.6",
+      "example": "Return due Apr 15, filed Jul 15 (3 months late). Penalty: 5% × 3 months = 15% of tax due, max 25%."
     },
     {
       "id": "see3-b2-037",
@@ -5437,7 +5509,8 @@
         "refund claim",
         "amended return"
       ],
-      "reference": "IRC §6511"
+      "reference": "IRC §6511",
+      "example": "Filed 2022 return Apr 15, 2023. IRS has until Apr 15, 2026 (3 years) to audit. 6 years if 25% omission."
     },
     {
       "id": "see3-b2-039",
@@ -5455,7 +5528,8 @@
         "refund statute",
         "SOL"
       ],
-      "reference": "IRC §6511"
+      "reference": "IRC §6511",
+      "example": "Filed 2022 return Apr 15, 2023. IRS has until Apr 15, 2026 (3 years) to audit. 6 years if 25% omission."
     },
     {
       "id": "see3-b2-040",
@@ -5472,7 +5546,8 @@
         "7216 consent",
         "disclosure"
       ],
-      "reference": "IRC §7216"
+      "reference": "IRC §7216",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see3-b2-041",
@@ -5506,7 +5581,8 @@
         "position standards",
         "substantial authority"
       ],
-      "reference": "31 CFR 10.34"
+      "reference": "31 CFR 10.34",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see3-b2-043",
@@ -5523,7 +5599,8 @@
         "written advice",
         "Circular 230"
       ],
-      "reference": "31 CFR 10.37"
+      "reference": "31 CFR 10.37",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-b2-044",
@@ -5574,7 +5651,8 @@
         "innocent spouse",
         "relief"
       ],
-      "reference": "IRC §6015"
+      "reference": "IRC §6015",
+      "example": "Ex-spouse understated income without knowledge. Request innocent spouse relief to avoid joint liability."
     },
     {
       "id": "see3-b2-047",
@@ -5591,7 +5669,8 @@
         "Form 8857",
         "innocent spouse"
       ],
-      "reference": "IRC §6015"
+      "reference": "IRC §6015",
+      "example": "Ex-spouse understated income without knowledge. Request innocent spouse relief to avoid joint liability."
     },
     {
       "id": "see3-b2-048",
@@ -5608,7 +5687,8 @@
         "TAS",
         "Taxpayer Advocate"
       ],
-      "reference": "IRC §7803(c)"
+      "reference": "IRC §7803(c)",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see3-b2-049",
@@ -5659,7 +5739,8 @@
         "Form 433-A",
         "collection statement"
       ],
-      "reference": "Form 433-A"
+      "reference": "Form 433-A",
+      "example": "Taxpayer owes $50,000, can only pay $10,000. IRS may accept OIC based on reasonable collection potential."
     },
     {
       "id": "see3-b2-052",
@@ -5676,7 +5757,8 @@
         "Form 656",
         "OIC"
       ],
-      "reference": "Form 656"
+      "reference": "Form 656",
+      "example": "Taxpayer owes $50,000, can only pay $10,000. IRS may accept OIC based on reasonable collection potential."
     },
     {
       "id": "see3-b2-053",
@@ -5693,7 +5775,8 @@
         "Form 9465",
         "installment"
       ],
-      "reference": "Form 9465"
+      "reference": "Form 9465",
+      "example": "Owes $25,000, cannot pay in full. Set up payment plan: $500/month for 50 months plus interest."
     },
     {
       "id": "see3-b2-054",
@@ -5812,7 +5895,8 @@
         "voluntary disclosure",
         "criminal"
       ],
-      "reference": "IRM 9.5.11"
+      "reference": "IRM 9.5.11",
+      "example": "Discovered missed deduction after filing. File Form 1040-X within 3 years of original due date."
     },
     {
       "id": "see3-b3-001",
@@ -5830,7 +5914,8 @@
         "written advice",
         "standards"
       ],
-      "reference": "Circular 230 §10.37"
+      "reference": "Circular 230 §10.37",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-b3-003",
@@ -5867,7 +5952,8 @@
         "limitations",
         "assessment"
       ],
-      "reference": "IRC §6501, §6502"
+      "reference": "IRC §6501, §6502",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see3-b3-005",
@@ -5885,7 +5971,8 @@
         "compliance",
         "eligibility"
       ],
-      "reference": "Form 656 Instructions"
+      "reference": "Form 656 Instructions",
+      "example": "Self-employed expects $15,000 tax liability. Pay $3,750 quarterly (Apr 15, Jun 15, Sep 15, Jan 15) to avoid penalty."
     },
     {
       "id": "see3-b3-006",
@@ -5921,7 +6008,8 @@
         "preparer penalty",
         "credits"
       ],
-      "reference": "IRC §6695(g)"
+      "reference": "IRC §6695(g)",
+      "example": "Single taxpayer earning $60,000 uses standard deduction of $14,600 (2024). Married couple filing jointly with $100,000 income uses $29,200 standard deduction."
     },
     {
       "id": "see3-def-001",
@@ -5989,7 +6077,8 @@
         "ethics",
         "due diligence"
       ],
-      "reference": "31 C.F.R. §10.22"
+      "reference": "31 C.F.R. §10.22",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-def-005",
@@ -6006,7 +6095,8 @@
         "ethics",
         "best practices"
       ],
-      "reference": "31 C.F.R. §10.33"
+      "reference": "31 C.F.R. §10.33",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-def-006",
@@ -6023,7 +6113,8 @@
         "POA",
         "Form 2848"
       ],
-      "reference": "Form 2848"
+      "reference": "Form 2848",
+      "example": "EA represents client before IRS using Form 2848. Can sign agreements, receive confidential information."
     },
     {
       "id": "see3-def-007",
@@ -6091,7 +6182,8 @@
         "statute",
         "assessment"
       ],
-      "reference": "IRC §6501"
+      "reference": "IRC §6501",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see3-def-011",
@@ -6142,7 +6234,8 @@
         "installment",
         "collection"
       ],
-      "reference": "IRC §6159"
+      "reference": "IRC §6159",
+      "example": "Owes $25,000, cannot pay in full. Set up payment plan: $500/month for 50 months plus interest."
     },
     {
       "id": "see3-def-014",
@@ -6159,7 +6252,8 @@
         "OIC",
         "collection"
       ],
-      "reference": "IRC §7122; Form 656"
+      "reference": "IRC §7122; Form 656",
+      "example": "Taxpayer owes $50,000, can only pay $10,000. IRS may accept OIC based on reasonable collection potential."
     },
     {
       "id": "see3-def-015",
@@ -6177,23 +6271,6 @@
         "accuracy"
       ],
       "reference": "IRC §6662"
-    },
-    {
-      "id": "see3-def-016",
-      "courseId": "ea",
-      "section": "SEE3",
-      "blueprintArea": "SEE3-3",
-      "type": "definition",
-      "topic": "Penalties",
-      "front": "What is the civil fraud penalty?",
-      "back": "**Fraud Penalty = 75% of underpayment**\\n\\n**Elements:**\\n• Intentional wrongdoing\\n• Specific intent to evade tax\\n\\n**Burden of proof:** IRS must prove fraud by **clear and convincing evidence**\\n\\n**No statute of limitations** for fraud assessments\\n\\n**Cannot stack** with accuracy-related penalty on same portion",
-      "difficulty": "medium",
-      "subtopic": "Fraud Penalty",
-      "tags": [
-        "penalties",
-        "fraud"
-      ],
-      "reference": "IRC §6663"
     },
     {
       "id": "see3-def-017",
@@ -6227,7 +6304,8 @@
         "appeals",
         "process"
       ],
-      "reference": "IRM 8.1"
+      "reference": "IRM 8.1",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see3-def-019",
@@ -6245,23 +6323,6 @@
         "litigation"
       ],
       "reference": "IRC §7441; §7463"
-    },
-    {
-      "id": "see3-def-020",
-      "courseId": "ea",
-      "section": "SEE3",
-      "blueprintArea": "SEE3-2",
-      "type": "definition",
-      "topic": "Circular 230",
-      "front": "What sanctions can be imposed under Circular 230?",
-      "back": "**Sanctions for Circular 230 Violations:**\\n\\n• **Private reprimand**\\n• **Public censure**\\n• **Suspension** from practice (fixed period)\\n• **Disbarment** from practice\\n• **Monetary penalty** (up to gross income from conduct)\\n\\n**OPR (Office of Professional Responsibility)** handles disciplinary matters\\n\\n**Due process:** Practitioner entitled to hearing before ALJ",
-      "difficulty": "medium",
-      "subtopic": "Sanctions",
-      "tags": [
-        "Circular 230",
-        "sanctions"
-      ],
-      "reference": "31 C.F.R. §10.50-.52"
     },
     {
       "id": "see3-exp-001",
@@ -6492,7 +6553,8 @@
       "topic": "Collections",
       "front": "Collection Statute Expiration Date (CSED)",
       "back": "IRS generally has 10 years to collect assessed tax.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Traditional IRA: $7,000 contribution reduces taxable income by $7,000. At 24% bracket, saves $1,680 in taxes."
     },
     {
       "id": "see3-exp-022",
@@ -6503,7 +6565,8 @@
       "topic": "Collections",
       "front": "Guaranteed Installment Agreement",
       "back": "Owe < $10k, filed last 5 years returns, pay in full in 3 years. IRS must accept.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Owes $25,000, cannot pay in full. Set up payment plan: $500/month for 50 months plus interest."
     },
     {
       "id": "see3-exp-023",
@@ -6514,7 +6577,8 @@
       "topic": "Collections",
       "front": "Streamlined Installment Agreement",
       "back": "Owe < $50k (total balance), pay in full 72 months (6 years). Financial statement not required.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Owes $25,000, cannot pay in full. Set up payment plan: $500/month for 50 months plus interest."
     },
     {
       "id": "see3-exp-024",
@@ -6525,7 +6589,8 @@
       "topic": "Collections",
       "front": "Offer in Compromise (OIC) Grounds",
       "back": "1. Doubt as to Liability\n2. Doubt as to Collectibility\n3. Effective Tax Administration (Hardship)",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Taxpayer owes $50,000, can only pay $10,000. IRS may accept OIC based on reasonable collection potential."
     },
     {
       "id": "see3-exp-025",
@@ -6580,7 +6645,8 @@
       "topic": "Penalties",
       "front": "Failure to File Penalty",
       "back": "5% per month (max 25%). Returns >60 days late: min $510 or 100% tax.",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Return due Apr 15, filed Jul 15 (3 months late). Penalty: 5% × 3 months = 15% of tax due, max 25%."
     },
     {
       "id": "see3-exp-030",
@@ -6591,7 +6657,8 @@
       "topic": "Penalties",
       "front": "Failure to Pay Penalty",
       "back": "0.5% per month (max 25%). Rate reduced if in Installment Agreement (0.25%) or increased after notice (1%).",
-      "difficulty": "medium"
+      "difficulty": "medium",
+      "example": "Tax due Apr 15, paid Jul 15. Penalty: 0.5% per month × 3 = 1.5% of unpaid tax."
     },
     {
       "id": "see3-exp-031",
@@ -6602,7 +6669,8 @@
       "topic": "Penalties",
       "front": "Failure to File vs Failure to Pay",
       "back": "If both apply, Failure to File (5%) is reduced by Failure to Pay (0.5%) = Net 4.5% for File + 0.5% for Pay = 5% total/month.",
-      "difficulty": "hard"
+      "difficulty": "hard",
+      "example": "Return due Apr 15, filed Jul 15 (3 months late). Penalty: 5% × 3 months = 15% of tax due, max 25%."
     },
     {
       "id": "see3-exp-032",
@@ -6717,7 +6785,8 @@
         "penalties",
         "estimated tax"
       ],
-      "reference": "IRC §6654"
+      "reference": "IRC §6654",
+      "example": "Self-employed expects $15,000 tax liability. Pay $3,750 quarterly (Apr 15, Jun 15, Sep 15, Jan 15) to avoid penalty."
     },
     {
       "id": "see3-form-006",
@@ -6771,7 +6840,8 @@
         "statute",
         "assessment"
       ],
-      "reference": "IRC §6501; §6502; §6511"
+      "reference": "IRC §6501; §6502; §6511",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see3-form-009",
@@ -6808,7 +6878,8 @@
         "collection",
         "expenses"
       ],
-      "reference": "IRM 5.15.1"
+      "reference": "IRM 5.15.1",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     },
     {
       "id": "see3-form-011",
@@ -6826,7 +6897,8 @@
         "preparer",
         "penalties"
       ],
-      "reference": "IRC §6694; §6695"
+      "reference": "IRC §6694; §6695",
+      "example": "S-corp shareholder has $50,000 stock basis. Receives $60,000 distribution: $50,000 tax-free return of basis, $10,000 capital gain."
     },
     {
       "id": "see3-form-012",
@@ -6844,7 +6916,8 @@
         "penalties",
         "information returns"
       ],
-      "reference": "IRC §6721; §6722"
+      "reference": "IRC §6721; §6722",
+      "example": "Return due Apr 15, filed Jul 15 (3 months late). Penalty: 5% × 3 months = 15% of tax due, max 25%."
     },
     {
       "id": "see3-form-013",
@@ -6899,7 +6972,8 @@
         "installment",
         "collection"
       ],
-      "reference": "IRC §6159"
+      "reference": "IRC §6159",
+      "example": "Owes $25,000, cannot pay in full. Set up payment plan: $500/month for 50 months plus interest."
     },
     {
       "id": "see3-mnem-001",
@@ -6935,7 +7009,8 @@
         "Circular 230",
         "prohibited"
       ],
-      "reference": "31 C.F.R. §10.51"
+      "reference": "31 C.F.R. §10.51",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-mnem-003",
@@ -6953,7 +7028,8 @@
         "Circular 230",
         "sanctions"
       ],
-      "reference": "31 C.F.R. §10.50"
+      "reference": "31 C.F.R. §10.50",
+      "example": "EA must comply with due diligence, cannot charge contingent fees for original returns, must return client records."
     },
     {
       "id": "see3-mnem-004",
@@ -7061,7 +7137,8 @@
         "CDP",
         "collection"
       ],
-      "reference": "IRC §6330(c)"
+      "reference": "IRC §6330(c)",
+      "example": "Ex-spouse understated income without knowledge. Request innocent spouse relief to avoid joint liability."
     },
     {
       "id": "see3-mnem-010",
@@ -7079,7 +7156,8 @@
         "OIC",
         "collection"
       ],
-      "reference": "IRC §7122"
+      "reference": "IRC §7122",
+      "example": "Taxpayer owes $50,000, can only pay $10,000. IRS may accept OIC based on reasonable collection potential."
     },
     {
       "id": "see3-mnem-011",
@@ -7116,7 +7194,8 @@
         "penalties",
         "accuracy"
       ],
-      "reference": "IRC §6662, §6663"
+      "reference": "IRC §6662, §6663",
+      "example": "Understated income by $50,000 due to negligence. Accuracy penalty = 20% × additional tax."
     },
     {
       "id": "see3-mnem-013",
@@ -7152,7 +7231,8 @@
         "statute",
         "SOL"
       ],
-      "reference": "IRC §6501"
+      "reference": "IRC §6501",
+      "example": "W-2 wages $75,000 + interest $500 + side business $10,000 + rental income $12,000 = $97,500 gross income before adjustments."
     },
     {
       "id": "see3-mnem-015",
@@ -7170,7 +7250,8 @@
         "taxpayer rights",
         "TBOR"
       ],
-      "reference": "IRC §7803(a)(3); Pub 1"
+      "reference": "IRC §7803(a)(3); Pub 1",
+      "example": "Child age 17, lives with parents, parents provide 80% support, child earns $4,000 part-time. Child is qualifying child dependent."
     }
   ]
 }

@@ -835,7 +835,8 @@ export const generateDailyPlan = async (
   let earlyLessonAdded = false;
   if (FEATURES.lessonGuarantee && phase !== 'examWeek' && phase !== 'finalReview') {
     // Find lesson related to weakest topic, or next unstarted lesson
-    const weakestTopic = criticalWeakAreas[0]?.topic || mediumWeakAreas[0]?.topic;
+    // NOTE: mediumWeakAreas not defined yet, so only use criticalWeakAreas here
+    const weakestTopic = criticalWeakAreas[0]?.topic;
     
     // Try to find a lesson that covers the weak topic
     let bestLesson = weakestTopic

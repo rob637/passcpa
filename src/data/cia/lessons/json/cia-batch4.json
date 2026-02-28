@@ -1,0 +1,1571 @@
+[
+  {
+    "id": "CIA1-I-043",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Three Lines Model",
+    "description": "Understand the IIA Three Lines Model for governance and risk management",
+    "order": 43,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Three Lines Model",
+      "Roles",
+      "Governance",
+      "Risk management"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "The Three Lines Model",
+          "type": "text",
+          "content": "**The Three Lines Model (2020) replaced the \"Three Lines of Defense\":**\n\n**First Line:**\nOperating management - owns and manages risks\n\n**Second Line:**\nRisk management and compliance functions - expertise, support, monitoring\n\n**Third Line:**\nInternal Audit - independent assurance\n\n**All report to the governing body and work together.**"
+        },
+        {
+          "title": "Key Principles",
+          "type": "text",
+          "content": "**Six principles:**\n1. Governance requires structures that enable accountability\n2. Governing body ensures appropriate structures exist\n3. Management achieves objectives while managing risk\n4. Second line provides expertise and monitoring\n5. Third line provides independent assurance\n6. All lines must communicate and coordinate"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three Lines replaced Three Lines of Defense",
+            "First line: management owns risk",
+            "Second line: expertise and monitoring",
+            "Third line: independent assurance"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-I-044",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Internal Audit Value Proposition",
+    "description": "Articulate the unique value internal audit brings to organizations",
+    "order": 44,
+    "duration": 30,
+    "difficulty": "beginner",
+    "topics": [
+      "Value",
+      "Stakeholder expectations",
+      "Relevance"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Sources of IA Value",
+          "type": "text",
+          "content": "**Internal audit creates value by:**\n\n\u2022 Providing objective assurance on controls\n\u2022 Identifying risks before they materialize\n\u2022 Recommending improvements\n\u2022 Sharing insights across the organization\n\u2022 Supporting fraud prevention and detection\n\u2022 Enhancing governance and accountability"
+        },
+        {
+          "title": "Demonstrating Value",
+          "type": "text",
+          "content": "**How to demonstrate value:**\n\u2022 Track quantified savings/cost avoidance\n\u2022 Report issues prevented\n\u2022 Measure recommendation implementation\n\u2022 Survey stakeholder satisfaction\n\u2022 Communicate insights proactively"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IA value: assurance, risk identification, improvement",
+            "Value must be demonstrated and communicated",
+            "Stakeholder satisfaction is key indicator"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Check Your Understanding",
+          "knowledgeCheck": {
+            "question": "Which of the following actions BEST demonstrates the internal audit function's value in enhancing governance and accountability?",
+            "options": [
+              "A) Providing assurance on the effectiveness of the organization's risk management framework and compliance with ethical standards.",
+              "B) Identifying and reporting instances of fraud or non-compliance to senior management.",
+              "C) Recommending improvements to operational efficiency and cost reduction initiatives.",
+              "D) Conducting regular audits of financial statements to ensure accuracy and reliability."
+            ],
+            "correctIndex": 0,
+            "explanation": "Option A directly addresses governance and accountability by ensuring the risk management framework is effective and ethical standards are followed. While the other options are valuable, they don't primarily focus on governance and accountability in the same comprehensive way.",
+            "hint": "Think about which option speaks most directly to the board's responsibilities."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself",
+          "reveal": {
+            "question": "List three methods for demonstrating the value of the internal audit function to stakeholders.",
+            "answer": "1. Track quantified savings/cost avoidance. 2. Report issues prevented. 3. Measure recommendation implementation. 4. Survey stakeholder satisfaction. 5. Communicate insights proactively. (Any three of these)"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Check Your Understanding",
+          "knowledgeCheck": {
+            "question": "An internal audit department proactively identified a significant cybersecurity vulnerability before it was exploited by external attackers. Which of the following is the MOST effective way to demonstrate the value provided by this action?",
+            "options": [
+              "A) Reporting the vulnerability to the IT department and tracking its remediation.",
+              "B) Quantifying the potential financial loss that was avoided due to the vulnerability being detected and remediated before exploitation.",
+              "C) Conducting a post-remediation audit to ensure the vulnerability was properly addressed.",
+              "D) Communicating the vulnerability and remediation efforts in the next audit committee meeting."
+            ],
+            "correctIndex": 1,
+            "explanation": "Quantifying the potential financial loss avoided provides a concrete, measurable demonstration of the value added by internal audit. While the other options are important steps, they don't directly quantify the value.",
+            "hint": "Which option provides the most tangible evidence of value?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-II-045",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Conflicts of Interest",
+    "description": "Identify and manage conflicts of interest that threaten objectivity",
+    "order": 45,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Conflicts of interest",
+      "Disclosure",
+      "Mitigation"
+    ],
+    "blueprintArea": "CIA1-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Types of Conflicts",
+          "type": "text",
+          "content": "**Common conflicts of interest:**\n\n\u2022 Auditing area where previously employed\n\u2022 Financial interest in auditee\n\u2022 Personal relationships with auditee\n\u2022 Accepting gifts or entertainment\n\u2022 Outside employment creating conflicts"
+        },
+        {
+          "title": "Managing Conflicts",
+          "type": "text",
+          "content": "**Steps to manage conflicts:**\n1. Recognize potential conflicts\n2. Disclose to appropriate parties\n3. Assess significance of conflict\n4. Implement safeguards\n5. Remove from engagement if needed\n6. Document decisions"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Conflicts must be identified proactively",
+            "Disclosure is essential",
+            "Removal may be required for serious conflicts"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Conflict of Interest Scenario",
+          "knowledgeCheck": {
+            "question": "An internal auditor is assigned to audit the procurement department. The auditor's spouse works as a senior buyer in the same department. Which of the following actions is MOST appropriate for the auditor to take?",
+            "options": [
+              "A) Proceed with the audit, ensuring objectivity by focusing solely on documentation and avoiding personal interaction with their spouse.",
+              "B) Disclose the potential conflict of interest to the appropriate parties and request to be removed from the engagement.",
+              "C) Inform their spouse about the audit scope and request their cooperation in providing accurate information.",
+              "D) Continue with the audit, but recuse themselves from reviewing any transactions directly handled by their spouse."
+            ],
+            "correctIndex": 1,
+            "explanation": "Option B is the MOST appropriate action. Disclosing the conflict allows management to assess the significance and take appropriate action, such as reassigning the audit. Maintaining objectivity is difficult, and the appearance of impropriety is also a concern. Options A and D do not fully address the conflict, and Option C is inappropriate and could compromise the audit.",
+            "hint": "Think about the appearance of objectivity and the importance of full disclosure."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Steps to Manage Conflicts",
+          "reveal": {
+            "question": "List the six steps generally recommended for managing conflicts of interest in internal auditing.",
+            "answer": "1. Recognize potential conflicts.\n2. Disclose to appropriate parties.\n3. Assess significance of the conflict.\n4. Implement safeguards.\n5. Remove from engagement if needed.\n6. Document decisions."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Safeguarding Objectivity",
+          "knowledgeCheck": {
+            "question": "An internal auditor previously worked as a cost accountant for a division they are now assigned to audit. What is the PRIMARY concern related to this situation?",
+            "options": [
+              "A) The auditor may lack the necessary technical skills to perform the audit effectively.",
+              "B) The auditor may be overly familiar with the division's operations, leading to complacency.",
+              "C) The auditor's prior experience may create a conflict of interest, impairing objectivity.",
+              "D) The auditor may be biased against the division due to past disagreements with management."
+            ],
+            "correctIndex": 2,
+            "explanation": "The primary concern is a conflict of interest that may impair the auditor's objectivity. The auditor's past involvement could influence their judgment and create a perception of bias, even if none exists. While other options could be possibilities, the conflict of interest is the most direct and relevant concern.",
+            "hint": "Consider the potential for bias and the appearance of impartiality."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-III-046",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Collective Internal Audit Competence",
+    "description": "Understand how IA functions ensure collective proficiency",
+    "order": 46,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Collective competence",
+      "Staffing",
+      "Specialization",
+      "Outsourcing"
+    ],
+    "blueprintArea": "CIA1-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Collective Proficiency Concept",
+          "type": "text",
+          "content": "**Collective proficiency means:**\n\nThe internal audit function as a whole must possess the knowledge and skills to perform assigned work. No single auditor needs all competencies.\n\n**Achieved through:**\n\u2022 Diverse hiring\n\u2022 Training and development\n\u2022 Specialists (IT, fraud, tax)\n\u2022 Co-sourcing or outsourcing"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Function must have collective competence",
+            "Individual auditors specialize",
+            "Gaps filled through hiring, training, outsourcing"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Collective Competence Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST appropriate action for an internal audit function to take when it lacks expertise in a highly specialized area needed for a specific audit engagement?",
+            "options": [
+              "A) Decline the audit engagement to avoid potential errors.",
+              "B) Proceed with the audit engagement using the existing staff and rely on available resources.",
+              "C) Engage a specialist or co-source the engagement to obtain the necessary expertise.",
+              "D) Postpone the audit engagement until internal staff can be adequately trained."
+            ],
+            "correctIndex": 2,
+            "explanation": "Engaging a specialist or co-sourcing is the most appropriate action. It allows the internal audit function to address the expertise gap without unnecessarily declining the engagement or proceeding without adequate skills. Postponing for training is less efficient in the short term.",
+            "hint": "Think about the concept of collective competence and how it's achieved."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Achieving Collective Competence",
+          "reveal": {
+            "question": "List three methods an internal audit function can use to achieve collective competence.",
+            "answer": "1. Diverse Hiring\n2. Training and Development\n3. Utilizing Specialists (IT, fraud, tax)\n4. Co-sourcing or Outsourcing"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Co-sourcing vs. Outsourcing",
+          "comparison": {
+            "headers": [
+              "Co-sourcing",
+              "Outsourcing"
+            ],
+            "rows": [
+              {
+                "label": "Control",
+                "values": [
+                  "Internal audit function retains more control and involvement in the audit process.",
+                  "External provider has more control over the audit process."
+                ]
+              },
+              {
+                "label": "Integration",
+                "values": [
+                  "External specialists work alongside internal staff, facilitating knowledge transfer.",
+                  "External provider operates more independently."
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "Generally less expensive than full outsourcing.",
+                  "Can be more expensive due to the full delegation of the audit function."
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Used for specific skills gap, not a complete replacement of the IA function",
+                  "Can be used to delegate a portion or all of the IA function"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-IV-047",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Internal Assessments",
+    "description": "Understand ongoing and periodic internal quality assessments",
+    "order": 47,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Internal assessment",
+      "Ongoing monitoring",
+      "Periodic review",
+      "QAIP"
+    ],
+    "blueprintArea": "CIA1-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Two Types of Internal Assessments",
+          "type": "text",
+          "content": "**Ongoing Monitoring:**\n\u2022 Daily supervision and review\n\u2022 Workpaper review\n\u2022 Engagement supervision\n\u2022 Report quality review\n\u2022 Performance metrics tracking\n\n**Periodic Self-Assessments:**\n\u2022 Comprehensive reviews (annually or more)\n\u2022 Conformance with Standards\n\u2022 Benchmarking\n\u2022 Survey of stakeholders"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Ongoing monitoring is continuous",
+            "Periodic assessments are comprehensive",
+            "Both are required components of QAIP"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Ongoing Monitoring Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following activities is LEAST likely to be considered part of ongoing monitoring within an internal audit function?",
+            "options": [
+              "A) Daily supervision and review of audit staff's work.",
+              "B) A comprehensive external quality assessment conducted every five years.",
+              "C) Tracking performance metrics related to audit engagement completion times.",
+              "D) Reviewing the quality of internal audit reports before issuance."
+            ],
+            "correctIndex": 1,
+            "explanation": "Ongoing monitoring is a continuous process. A comprehensive external quality assessment is a periodic review, typically conducted by an independent party, and is not considered ongoing monitoring.",
+            "hint": "Think about the frequency and who is performing the assessment."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Periodic Self-Assessments: Recall Test",
+          "reveal": {
+            "question": "Name three common components of a periodic self-assessment within an internal audit function.",
+            "answer": "1. Comprehensive reviews (annually or more frequently). 2. Conformance with the International Standards for the Professional Practice of Internal Auditing (Standards). 3. Benchmarking against other internal audit functions. 4. Survey of stakeholders."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Ongoing Monitoring vs. Periodic Self-Assessments",
+          "comparison": {
+            "headers": [
+              "Ongoing Monitoring",
+              "Periodic Self-Assessments"
+            ],
+            "rows": [
+              {
+                "label": "Frequency",
+                "values": [
+                  "Continuous/Frequent",
+                  "Less Frequent (e.g., Annually or more)"
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Focused on specific tasks/engagements",
+                  "Comprehensive review of the entire function"
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Workpaper review, engagement supervision",
+                  "Benchmarking, Stakeholder Surveys"
+                ]
+              },
+              {
+                "label": "Goal",
+                "values": [
+                  "Immediate feedback and course correction",
+                  "Identify areas for improvement and strategic planning"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-048",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Risk Response Strategies",
+    "description": "Understand options for responding to identified risks",
+    "order": 48,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Risk response",
+      "Avoidance",
+      "Mitigation",
+      "Transfer",
+      "Acceptance"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Risk Response Options",
+          "type": "text",
+          "content": "**Four primary risk responses:**\n\n**Avoid** - Eliminate the activity creating risk\n**Mitigate/Reduce** - Implement controls to reduce likelihood or impact\n**Transfer/Share** - Insurance, outsourcing, contracts\n**Accept** - Acknowledge risk within appetite"
+        },
+        {
+          "title": "Response Selection",
+          "type": "text",
+          "content": "**Factors in selecting response:**\n\u2022 Risk severity\n\u2022 Cost of response\n\u2022 Risk appetite\n\u2022 Practicality\n\u2022 Residual risk after response\n\n**Management selects; IA assesses appropriateness.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four responses: Avoid, Mitigate, Transfer, Accept",
+            "Response depends on risk and cost-benefit",
+            "Residual risk must be within appetite"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Risk Response Strategies",
+          "knowledgeCheck": {
+            "question": "Which of the following risk responses involves completely eliminating the activity that gives rise to the risk?",
+            "options": [
+              "Mitigation",
+              "Transfer",
+              "Avoidance",
+              "Acceptance"
+            ],
+            "correctIndex": 2,
+            "explanation": "Avoidance involves discontinuing the activity that causes the risk. Mitigation reduces the likelihood or impact, transfer shifts the risk, and acceptance acknowledges the risk.",
+            "hint": "Think about the most direct way to eliminate a risk."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Risk Response Selection",
+          "reveal": {
+            "question": "List five key factors that management considers when selecting a risk response.",
+            "answer": "The five key factors are: Risk severity, cost of the response, risk appetite, practicality of the response, and residual risk after the response is implemented."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Mitigation vs. Transfer",
+          "comparison": {
+            "headers": [
+              "Mitigation/Reduce",
+              "Transfer/Share"
+            ],
+            "rows": [
+              {
+                "label": "Objective",
+                "values": [
+                  "Decrease the likelihood or impact of the risk.",
+                  "Shift the financial burden of the risk to another party."
+                ]
+              },
+              {
+                "label": "Mechanism",
+                "values": [
+                  "Implementing internal controls, improving processes.",
+                  "Purchasing insurance, outsourcing activities, using contractual agreements."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Implementing a data encryption policy to reduce the impact of a data breach.",
+                  "Purchasing cyber liability insurance to cover costs associated with a data breach."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-I-036",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Audit Universe and Coverage",
+    "description": "Develop and maintain an audit universe for comprehensive coverage",
+    "order": 36,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Audit universe",
+      "Coverage",
+      "Risk assessment",
+      "Prioritization"
+    ],
+    "blueprintArea": "CIA2-I",
+    "content": {
+      "sections": [
+        {
+          "title": "What is an Audit Universe?",
+          "type": "text",
+          "content": "**Audit universe** includes all auditable entities:\n\n\u2022 Business units and locations\n\u2022 Functions and processes\n\u2022 Systems and applications\n\u2022 Projects and initiatives\n\u2022 Regulatory requirements\n\n**The universe should be comprehensive but manageable.**"
+        },
+        {
+          "title": "Maintaining the Universe",
+          "type": "text",
+          "content": "**Best practices:**\n\u2022 Update annually or more frequently\n\u2022 Add new entities as created\n\u2022 Remove obsolete entities\n\u2022 Align with organizational changes\n\u2022 Document rationale for inclusions"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Audit universe = all auditable entities",
+            "Basis for risk assessment and planning",
+            "Must be current and comprehensive"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Audit Universe Comprehensiveness",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important characteristic of an audit universe?",
+            "options": [
+              "It is comprehensive, covering all auditable entities within the organization.",
+              "It is limited to areas identified as high-risk in the prior year's risk assessment.",
+              "It is static, remaining unchanged throughout the year to ensure consistency.",
+              "It is primarily focused on financial reporting controls."
+            ],
+            "correctIndex": 0,
+            "explanation": "The audit universe should encompass all auditable entities to provide a complete view of the organization's risk profile and control environment. While risk assessments are crucial, limiting the universe solely to high-risk areas would neglect other potentially significant areas.",
+            "hint": "Think about the purpose of the audit universe: to identify all areas that *could* be audited."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Audit Universe Components",
+          "reveal": {
+            "question": "List four categories of auditable entities that should be included in an audit universe.",
+            "answer": "The audit universe should include: 1) Business units and locations, 2) Functions and processes, 3) Systems and applications, and 4) Projects and initiatives. Regulatory requirements could also be considered a fifth category."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Maintaining the Audit Universe",
+          "knowledgeCheck": {
+            "question": "Internal Audit is updating the audit universe. Which of the following actions is MOST appropriate?",
+            "options": [
+              "Removing all entities that were not audited in the previous year.",
+              "Adding new entities created during the year and documenting the rationale for their inclusion.",
+              "Maintaining the existing universe to ensure consistency with prior audit plans.",
+              "Focusing solely on business units with significant revenue changes."
+            ],
+            "correctIndex": 1,
+            "explanation": "Adding new entities and documenting the rationale ensures the universe remains comprehensive and relevant. Removing entities simply because they weren't audited is incorrect; the audit universe should be independent of audit plans. A static universe or focus on revenue alone is insufficient.",
+            "hint": "Consider the best practices for maintaining the audit universe."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-II-037",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Opening Conference and Client Relationships",
+    "description": "Conduct effective opening conferences and build productive client relationships",
+    "order": 37,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Opening conference",
+      "Client relationships",
+      "Communication"
+    ],
+    "blueprintArea": "CIA2-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Opening Conference Purposes",
+          "type": "text",
+          "content": "**The opening conference should:**\n\n\u2022 Introduce audit team\n\u2022 Explain audit objectives and scope\n\u2022 Discuss timing and logistics\n\u2022 Set expectations for cooperation\n\u2022 Address questions and concerns\n\u2022 Establish key contacts"
+        },
+        {
+          "title": "Building Relationships",
+          "type": "text",
+          "content": "**Relationship best practices:**\n\u2022 Be professional and respectful\n\u2022 Communicate transparently\n\u2022 Listen to management perspective\n\u2022 Minimize disruption to operations\n\u2022 Maintain independence while being approachable"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Opening conference sets tone for engagement",
+            "Clarify objectives, scope, and timing",
+            "Build cooperative relationships"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Opening Conference Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During an opening conference, which of the following actions would BEST contribute to setting appropriate expectations for cooperation from the auditee?",
+            "options": [
+              "Providing a detailed explanation of the audit procedures to be performed.",
+              "Presenting the audit team's credentials and extensive experience in the industry.",
+              "Clearly communicating the audit's objectives, scope, and the need for timely information access.",
+              "Assuring management that the audit will not disrupt normal business operations."
+            ],
+            "correctIndex": 2,
+            "explanation": "Clearly communicating the audit's objectives, scope, and the need for timely information access directly addresses the expected level of cooperation. While the other options are helpful, they don't directly address the auditee's role in the audit process as effectively.",
+            "hint": "Think about which action most directly relates to the auditee's responsibilities during the audit."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Purposes of an Opening Conference",
+          "reveal": {
+            "question": "List at least four key purposes of conducting an opening conference.",
+            "answer": "The purposes include: (1) Introducing the audit team, (2) Explaining the audit objectives and scope, (3) Discussing timing and logistics, (4) Setting expectations for cooperation, (5) Addressing questions and concerns, and (6) Establishing key contacts."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Client Relationship Dilemma",
+          "knowledgeCheck": {
+            "question": "An internal auditor discovers a minor control weakness during an audit. To maintain a positive client relationship, the auditor decides not to include the finding in the audit report, believing it is insignificant. Which ethical principle is MOST clearly violated?",
+            "options": [
+              "Objectivity",
+              "Confidentiality",
+              "Integrity",
+              "Competency"
+            ],
+            "correctIndex": 2,
+            "explanation": "Integrity requires internal auditors to perform their work with honesty, diligence, and responsibility. Omitting a finding, even if considered minor, violates this principle by misrepresenting the true state of internal controls.",
+            "hint": "Consider which principle requires auditors to be honest and impartial."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-038",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Analytical Procedures",
+    "description": "Use analytical procedures as audit evidence",
+    "order": 38,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Analytical procedures",
+      "Trend analysis",
+      "Ratio analysis",
+      "Expectations"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "What Are Analytical Procedures?",
+          "type": "text",
+          "content": "**Analytical procedures** evaluate information by analyzing plausible relationships:\n\n\u2022 Compare to prior periods\n\u2022 Compare to budgets\n\u2022 Compare to industry benchmarks\n\u2022 Analyze ratios and trends\n\u2022 Identify unusual fluctuations"
+        },
+        {
+          "title": "Using Analytics as Evidence",
+          "type": "text",
+          "content": "**Analytical procedures can:**\n\u2022 Identify areas requiring further testing\n\u2022 Provide substantive evidence (when precise)\n\u2022 Support conclusions\n\n**Considerations:**\n\u2022 Precision depends on data quality\n\u2022 Expectations must be developed\n\u2022 Investigate significant variances"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Analytics analyze plausible relationships",
+            "Compare to expectations (prior, budget, industry)",
+            "Investigate significant variances"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Analytical Procedures Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the LEAST reliable source of evidence when using analytical procedures?",
+            "options": [
+              "Data obtained from a well-controlled subsidiary ledger and reconciled to the general ledger.",
+              "Industry averages compiled by a reputable and independent organization.",
+              "Management's projections based on aggressive growth targets without historical support.",
+              "Prior period data that has been audited and found to be fairly stated."
+            ],
+            "correctIndex": 2,
+            "explanation": "Management's projections based on aggressive growth targets are the least reliable because they lack historical support and may be biased.  The other options represent more objective and reliable data sources.",
+            "hint": "Consider the objectivity and verifiability of each option."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Analytical Procedures",
+          "reveal": {
+            "question": "Name three ways analytical procedures can be used by internal auditors.",
+            "answer": "1. Identify areas requiring further testing. 2. Provide substantive evidence (when precise). 3. Support conclusions."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Variance Investigation",
+          "knowledgeCheck": {
+            "question": "An internal auditor performing analytical procedures identifies a significant variance from expectations. Which of the following is the auditor's MOST appropriate next step?",
+            "options": [
+              "Document the variance and move on to the next area of testing.",
+              "Assume the variance is an error and immediately expand the scope of testing.",
+              "Investigate the variance to determine the cause and potential impact.",
+              "Disregard the variance if it is immaterial to the financial statements as a whole."
+            ],
+            "correctIndex": 2,
+            "explanation": "The auditor's most appropriate next step is to investigate the variance.  A significant variance indicates a potential issue that needs to be understood.  Ignoring it (Option A & D) or assuming it's an error without investigation (Option B) is not appropriate.",
+            "hint": "Remember the considerations for analytical procedures: investigate significant variances."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-IV-039",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Report Distribution and Confidentiality",
+    "description": "Appropriately distribute reports while maintaining confidentiality",
+    "order": 39,
+    "duration": 25,
+    "difficulty": "intermediate",
+    "topics": [
+      "Report distribution",
+      "Confidentiality",
+      "Sensitive information"
+    ],
+    "blueprintArea": "CIA2-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Distribution Considerations",
+          "type": "text",
+          "content": "**Who receives the report:**\n\n\u2022 Auditee management (always)\n\u2022 Senior management\n\u2022 Audit committee/Board\n\u2022 External parties (when required)\n\n**CAE determines distribution based on:**\n\u2022 Information sensitivity\n\u2022 Need to know\n\u2022 Regulatory requirements\n\u2022 Charter provisions"
+        },
+        {
+          "title": "Protecting Sensitive Information",
+          "type": "text",
+          "content": "**Protect confidential information by:**\n\u2022 Limiting distribution\n\u2022 Using secure transmission\n\u2022 Redacting sensitive details\n\u2022 Marking confidential documents\n\u2022 Retention according to policy"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CAE determines appropriate distribution",
+            "Protect sensitive and confidential information",
+            "Balance transparency with prudent protection"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Report Distribution Scenario",
+          "knowledgeCheck": {
+            "question": "The CAE of an organization has just completed an audit report identifying significant control weaknesses in the payroll process, including potential fraudulent activities. Besides auditee management, who among the following is MOST likely the NEXT appropriate recipient of the audit report?",
+            "options": [
+              "A. All employees of the payroll department.",
+              "B. Senior management and the audit committee/Board.",
+              "C. The organization's external legal counsel.",
+              "D. All departments that utilize the payroll system."
+            ],
+            "correctIndex": 1,
+            "explanation": "Senior management and the audit committee/Board are the most appropriate next recipients. Senior management needs to be informed of the significant control weaknesses and potential fraud, and the audit committee/Board is responsible for overseeing the organization's financial reporting and internal controls.",
+            "hint": "Consider the severity of the finding and the reporting lines."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Distribution Authority",
+          "reveal": {
+            "question": "Who ultimately determines the distribution of internal audit reports?",
+            "answer": "The Chief Audit Executive (CAE) determines the distribution of internal audit reports. This decision is based on factors such as information sensitivity, the need-to-know principle, regulatory requirements, and charter provisions."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Protecting Confidential Information",
+          "knowledgeCheck": {
+            "question": "Which of the following is the LEAST effective method for protecting confidential information contained within an internal audit report?",
+            "options": [
+              "A. Using secure email with encryption for transmission.",
+              "B. Redacting sensitive details before distribution to certain parties.",
+              "C. Distributing the full report to all management levels to ensure transparency.",
+              "D. Marking the document as 'Confidential' and limiting its distribution."
+            ],
+            "correctIndex": 2,
+            "explanation": "Distributing the full report to all management levels is the LEAST effective method because it violates the principle of limiting distribution based on the 'need to know'. It increases the risk of unauthorized disclosure of sensitive information.",
+            "hint": "Think about the principle of 'need to know'."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-043",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Regulatory Compliance Framework",
+    "description": "Understand regulatory compliance programs and audit considerations",
+    "order": 43,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Regulatory compliance",
+      "Compliance program",
+      "Regulatory risk"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Compliance Program Elements",
+          "type": "text",
+          "content": "**Effective compliance program includes:**\n\n\u2022 Written policies and procedures\n\u2022 Compliance officer/function\n\u2022 Training and awareness\n\u2022 Monitoring and auditing\n\u2022 Reporting mechanisms\n\u2022 Enforcement and discipline\n\u2022 Response and remediation"
+        },
+        {
+          "title": "Audit Considerations",
+          "type": "text",
+          "content": "**Internal audit should:**\n\u2022 Assess compliance program design\n\u2022 Test operating effectiveness\n\u2022 Identify regulatory gaps\n\u2022 Evaluate training adequacy\n\u2022 Review reporting and escalation\n\n**IA is not the compliance function but provides assurance on it.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Compliance programs have standard elements",
+            "IA provides assurance on compliance programs",
+            "IA does not replace compliance function"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Compliance Program Elements: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a core element of an effective regulatory compliance program?",
+            "options": [
+              "Annual employee performance reviews",
+              "Written policies and procedures",
+              "Monitoring and auditing activities",
+              "Enforcement and discipline mechanisms"
+            ],
+            "correctIndex": 0,
+            "explanation": "Annual employee performance reviews, while important for overall performance management, are not a core element specific to a regulatory compliance program. The other options are essential for ensuring adherence to regulations.",
+            "hint": "Think about the primary goal of a compliance program: adherence to regulations."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Audit Considerations: Test Yourself",
+          "reveal": {
+            "question": "List three activities internal audit should perform related to the compliance program.",
+            "answer": "Internal audit should assess compliance program design, test operating effectiveness, and identify regulatory gaps."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Roles: Internal Audit vs. Compliance Function",
+          "comparison": {
+            "headers": [
+              "Internal Audit",
+              "Compliance Function"
+            ],
+            "rows": [
+              {
+                "label": "Primary Responsibility",
+                "values": [
+                  "Provides independent assurance on the compliance program's effectiveness.",
+                  "Establishes and manages the compliance program to ensure regulatory adherence."
+                ]
+              },
+              {
+                "label": "Objective",
+                "values": [
+                  "Objectively assess the design and operation of the compliance program.",
+                  "Ensure the organization complies with applicable laws and regulations."
+                ]
+              },
+              {
+                "label": "Reporting",
+                "values": [
+                  "Reports findings and recommendations to senior management and the audit committee.",
+                  "Reports compliance status and potential risks to senior management and potentially the board."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-044",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Emerging Technology Risks",
+    "description": "Understand risks from emerging technologies",
+    "order": 44,
+    "duration": 40,
+    "difficulty": "advanced",
+    "topics": [
+      "AI",
+      "Blockchain",
+      "IoT",
+      "Emerging tech risks"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Key Emerging Technologies",
+          "type": "text",
+          "content": "**Technologies creating new risks:**\n\n\u2022 **AI/ML** - Bias, explainability, ethics\n\u2022 **Blockchain** - Smart contracts, governance\n\u2022 **IoT** - Device security, data volume\n\u2022 **RPA** - Bot governance, access controls\n\u2022 **Cloud** - Data sovereignty, vendor risk"
+        },
+        {
+          "title": "Audit Approach",
+          "type": "text",
+          "content": "**For emerging technology audits:**\n\u2022 Understand the technology basics\n\u2022 Identify specific risks introduced\n\u2022 Assess governance and oversight\n\u2022 Evaluate security controls\n\u2022 Consider regulatory implications\n\u2022 Use specialists when needed"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Emerging tech introduces new risk types",
+            "Auditors must stay current",
+            "Use specialists for complex technologies"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-045",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Database Management Controls",
+    "description": "Understand database controls and audit considerations",
+    "order": 45,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Database",
+      "Data integrity",
+      "Access controls",
+      "Backup"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Database Control Categories",
+          "type": "text",
+          "content": "**Key database controls:**\n\n**Access Controls:**\n\u2022 User authentication\n\u2022 Role-based access\n\u2022 Privileged access management\n\n**Integrity Controls:**\n\u2022 Referential integrity\n\u2022 Data validation\n\u2022 Audit logging\n\n**Availability Controls:**\n\u2022 Backup and recovery\n\u2022 Replication\n\u2022 Failover"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Database controls: access, integrity, availability",
+            "DBA privileged access is key risk",
+            "Logging essential for accountability"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Access Control Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following access controls is MOST effective in preventing unauthorized access by granting users permissions based on their job function rather than individual needs?",
+            "options": [
+              "User authentication",
+              "Role-based access",
+              "Privileged access management",
+              "Data validation"
+            ],
+            "correctIndex": 1,
+            "explanation": "Role-based access (RBA) assigns permissions based on a user's role within the organization. This simplifies access management and ensures that users only have the necessary permissions for their job, reducing the risk of unauthorized access. User authentication only verifies identity, privileged access management controls elevated rights, and data validation focuses on data integrity, not access control.",
+            "hint": "Think about which control aligns permissions with job duties."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Integrity Control Recall",
+          "reveal": {
+            "question": "What type of data integrity control ensures that relationships between tables in a database remain consistent?",
+            "answer": "Referential integrity. It prevents actions that would break those relationships, such as deleting a record in a parent table when related records exist in a child table, or creating a record in a child table without a corresponding record in the parent table."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Backup vs. Replication",
+          "comparison": {
+            "headers": [
+              "Backup",
+              "Replication"
+            ],
+            "rows": [
+              {
+                "label": "Purpose",
+                "values": [
+                  "Data recovery after loss or corruption",
+                  "High availability and disaster recovery"
+                ]
+              },
+              {
+                "label": "Frequency",
+                "values": [
+                  "Periodic",
+                  "Near real-time"
+                ]
+              },
+              {
+                "label": "Data State",
+                "values": [
+                  "Point-in-time copy",
+                  "Continuous synchronization"
+                ]
+              },
+              {
+                "label": "Primary Use Case",
+                "values": [
+                  "Restoring data to a previous state",
+                  "Ensuring business continuity with minimal downtime"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-046",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Cost Accounting Basics",
+    "description": "Understand cost accounting concepts relevant to auditing",
+    "order": 46,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cost accounting",
+      "Fixed costs",
+      "Variable costs",
+      "Overhead"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Cost Classifications",
+          "type": "text",
+          "content": "**Direct vs. Indirect Costs:**\n\u2022 Direct - Traceable to product/service\n\u2022 Indirect - Allocated (overhead)\n\n**Fixed vs. Variable:**\n\u2022 Fixed - Don't change with volume\n\u2022 Variable - Change with activity level"
+        },
+        {
+          "title": "Common Cost Methods",
+          "type": "text",
+          "content": "**Cost allocation methods:**\n\u2022 Job costing - Specific jobs/projects\n\u2022 Process costing - Continuous production\n\u2022 Activity-based costing (ABC) - Activities drive costs\n\n**Auditors should validate cost allocation reasonableness.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Costs: direct/indirect, fixed/variable",
+            "Allocation methods affect profitability analysis",
+            "Validate allocation reasonableness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cost Classification Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following costs would be classified as an indirect cost in a manufacturing company?",
+            "options": [
+              "Direct materials used in production",
+              "Wages of assembly line workers",
+              "Depreciation on factory equipment",
+              "Cost of shipping finished goods to customers"
+            ],
+            "correctIndex": 2,
+            "explanation": "Depreciation on factory equipment is an overhead cost that cannot be directly traced to a specific product, making it an indirect cost. Direct materials and assembly line wages are directly traceable to the product. Shipping costs are typically classified as selling and administrative expenses, not manufacturing overhead.",
+            "hint": "Think about which costs are easily traceable to a specific product."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Remember the Allocation Methods",
+          "reveal": {
+            "question": "What cost allocation method is most appropriate for a company that produces highly customized products based on individual customer orders?",
+            "answer": "Job Costing. It tracks costs for each specific job or project, allowing for accurate cost allocation to unique products."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Fixed vs. Variable Costs",
+          "comparison": {
+            "headers": [
+              "Fixed Costs",
+              "Variable Costs"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Costs that remain constant in total, regardless of changes in activity level within a relevant range.",
+                  "Costs that change in total in direct proportion to changes in activity level."
+                ]
+              },
+              {
+                "label": "Per Unit",
+                "values": [
+                  "Decrease as production increases (economies of scale).",
+                  "Remain constant per unit, regardless of the production level."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Rent, salaries, insurance.",
+                  "Direct materials, direct labor, sales commissions."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ABC Costing Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An auditor is reviewing a company that uses Activity-Based Costing (ABC). Which of the following would be the MOST important factor for the auditor to validate?",
+            "options": [
+              "The accuracy of the cost driver rates used to allocate costs.",
+              "The total amount of overhead costs incurred by the company.",
+              "The number of products manufactured by the company.",
+              "The amount of direct labor hours used in production."
+            ],
+            "correctIndex": 0,
+            "explanation": "In ABC, costs are assigned based on activities. The accuracy of the cost driver rates is critical, because these rates determine how costs are allocated to products or services. If the rates are incorrect, the cost allocations will be inaccurate, leading to flawed decision-making. The total amount of overhead, number of products and direct labor are all relevant, but the accuracy of the cost driver rates is paramount.",
+            "hint": "Consider what drives the allocation of costs in ABC."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-047",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Mergers and Acquisitions",
+    "description": "Understand M&A risks and internal audit involvement",
+    "order": 47,
+    "duration": 40,
+    "difficulty": "advanced",
+    "topics": [
+      "M&A",
+      "Due diligence",
+      "Integration",
+      "Synergies"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "M&A Lifecycle",
+          "type": "text",
+          "content": "**Phases of M&A:**\n\n1. **Strategy** - Acquisition criteria, targets\n2. **Due Diligence** - Evaluate target\n3. **Negotiation** - Terms, pricing\n4. **Integration** - Combine operations\n5. **Synergy Realization** - Capture benefits"
+        },
+        {
+          "title": "Internal Audit Role",
+          "type": "text",
+          "content": "**IA can contribute by:**\n\u2022 Participating in due diligence\n\u2022 Assessing control environment of target\n\u2022 Identifying integration risks\n\u2022 Auditing synergy realization\n\u2022 Assessing post-merger controls"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "M&A has multiple phases with distinct risks",
+            "Due diligence is critical success factor",
+            "IA adds value throughout M&A lifecycle"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "M&A Due Diligence Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During the due diligence phase of a merger, the internal audit function is BEST positioned to contribute by:",
+            "options": [
+              "Negotiating the final purchase price to ensure maximum cost savings for the acquiring company.",
+              "Evaluating the target company's control environment to identify potential risks and weaknesses.",
+              "Leading the integration planning process to ensure a smooth transition of operations.",
+              "Guaranteeing the realization of projected synergies through aggressive cost-cutting measures."
+            ],
+            "correctIndex": 1,
+            "explanation": "Evaluating the target's control environment is a key contribution of internal audit during due diligence. This helps identify potential risks and control gaps that could impact the acquiring company post-merger. The other options are not primary responsibilities of internal audit during due diligence.",
+            "hint": "Think about what internal audit does best: assessing risk and controls."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "M&A Lifecycle Recall",
+          "reveal": {
+            "question": "List the five phases of the M&A lifecycle in the correct order.",
+            "answer": "1. Strategy, 2. Due Diligence, 3. Negotiation, 4. Integration, 5. Synergy Realization"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Synergy Realization Question",
+          "knowledgeCheck": {
+            "question": "Following a merger, which of the following internal audit activities would BEST contribute to ensuring the realization of projected synergies?",
+            "options": [
+              "Performing a detailed review of the pre-merger strategic plan to validate the initial assumptions.",
+              "Conducting an independent assessment of the post-merger integration process to identify any deviations from the integration plan.",
+              "Auditing the actual cost savings and revenue enhancements achieved against the original synergy targets.",
+              "Developing a comprehensive training program for all employees to promote a unified corporate culture."
+            ],
+            "correctIndex": 2,
+            "explanation": "Auditing the actual cost savings and revenue enhancements against the original synergy targets directly assesses whether the merger is delivering the expected benefits. This provides valuable feedback to management and helps identify areas for improvement. While the other options are beneficial, they do not directly measure synergy realization.",
+            "hint": "Synergy is about achieving specific, measurable improvements."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Due Diligence vs. Post-Merger Audit",
+          "comparison": {
+            "headers": [
+              "Due Diligence",
+              "Post-Merger Audit"
+            ],
+            "rows": [
+              {
+                "label": "Timing",
+                "values": [
+                  "Before the merger is finalized",
+                  "After the merger has been completed"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Assessing risks and opportunities associated with the target company",
+                  "Evaluating the effectiveness of the integration process and the achievement of synergies"
+                ]
+              },
+              {
+                "label": "Objective",
+                "values": [
+                  "Informing the negotiation and integration planning process",
+                  "Identifying areas for improvement and ensuring accountability for results"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-048",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Penetration Testing and Vulnerability Management",
+    "description": "Understand security testing approaches",
+    "order": 48,
+    "duration": 35,
+    "difficulty": "advanced",
+    "topics": [
+      "Penetration testing",
+      "Vulnerability scanning",
+      "Security testing"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Penetration Testing",
+          "type": "text",
+          "content": "**Penetration testing simulates attacks:**\n\n\u2022 External - From internet\n\u2022 Internal - From inside network\n\u2022 Social engineering - Human vulnerabilities\n\u2022 Web application - Application flaws\n\n**Conducted by qualified specialists.**"
+        },
+        {
+          "title": "Vulnerability Management",
+          "type": "text",
+          "content": "**Ongoing vulnerability management:**\n\u2022 Regular scanning\n\u2022 Prioritize by risk\n\u2022 Patch management\n\u2022 Tracking and reporting\n\u2022 Remediation verification"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Pen testing simulates real attacks",
+            "Vulnerability scanning is ongoing process",
+            "Both require remediation and tracking"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Penetration Testing Types",
+          "knowledgeCheck": {
+            "question": "An organization is concerned about employees inadvertently divulging sensitive information to unauthorized parties. Which type of penetration testing would BEST address this concern?",
+            "options": [
+              "External penetration testing",
+              "Internal penetration testing",
+              "Social engineering penetration testing",
+              "Web application penetration testing"
+            ],
+            "correctIndex": 2,
+            "explanation": "Social engineering penetration testing specifically targets human vulnerabilities by simulating attacks that exploit trust and manipulate individuals into revealing confidential data. External and internal testing focus on network and system vulnerabilities, while web application testing targets flaws in web applications.",
+            "hint": "Think about the *human* element..."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Vulnerability Management Steps",
+          "reveal": {
+            "question": "List the five key steps in ongoing vulnerability management.",
+            "answer": "1. Regular scanning, 2. Prioritize by risk, 3. Patch management, 4. Tracking and reporting, 5. Remediation verification"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Penetration Testing vs. Vulnerability Scanning",
+          "comparison": {
+            "headers": [
+              "Penetration Testing",
+              "Vulnerability Scanning"
+            ],
+            "rows": [
+              {
+                "label": "Objective",
+                "values": [
+                  "Exploit vulnerabilities to assess impact",
+                  "Identify potential vulnerabilities"
+                ]
+              },
+              {
+                "label": "Methodology",
+                "values": [
+                  "Active, hands-on exploitation",
+                  "Automated or manual scanning"
+                ]
+              },
+              {
+                "label": "Output",
+                "values": [
+                  "Detailed report on exploitable vulnerabilities and impact",
+                  "List of potential vulnerabilities with severity levels"
+                ]
+              },
+              {
+                "label": "Expertise",
+                "values": [
+                  "Requires highly skilled specialists",
+                  "Can be performed by trained IT staff"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-049",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Outsourcing and Third-Party Risk",
+    "description": "Understand third-party risk management and auditing",
+    "order": 49,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Third-party risk",
+      "Outsourcing",
+      "Vendor due diligence",
+      "SOC reports"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Third-Party Risk Lifecycle",
+          "type": "text",
+          "content": "**Managing third-party risk:**\n\n1. **Selection** - Due diligence before engagement\n2. **Contracting** - Terms, SLAs, audit rights\n3. **Ongoing Monitoring** - Performance, compliance\n4. **Exit** - Transition planning, data return"
+        },
+        {
+          "title": "SOC Reports for Vendors",
+          "type": "text",
+          "content": "**SOC report types:**\n\u2022 **SOC 1** - Controls for financial reporting\n\u2022 **SOC 2** - Security, availability, processing integrity, confidentiality, privacy\n\u2022 **Type I** - Design at point in time\n\u2022 **Type II** - Operating effectiveness over period"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Third-party risk requires lifecycle management",
+            "SOC reports provide vendor control assurance",
+            "Type II provides more assurance than Type I"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Third-Party Risk Lifecycle",
+          "knowledgeCheck": {
+            "question": "During which stage of the third-party risk lifecycle is it MOST critical to establish clear audit rights within the contract?",
+            "options": [
+              "Selection",
+              "Contracting",
+              "Ongoing Monitoring",
+              "Exit"
+            ],
+            "correctIndex": 1,
+            "explanation": "Audit rights are established during the contracting phase to ensure the organization retains the ability to assess the vendor's compliance and performance throughout the engagement. While due diligence in the selection phase might identify the *need* for audit rights, the *establishment* occurs during contracting.",
+            "hint": "Think about when you formally agree on the terms of the relationship."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SOC Report Types: Test Your Knowledge",
+          "reveal": {
+            "question": "What does a SOC 2 Type II report attest to?",
+            "answer": "A SOC 2 Type II report attests to the design of controls at a point in time AND the operating effectiveness of those controls over a specified period. It covers security, availability, processing integrity, confidentiality, and privacy."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SOC 1 vs SOC 2: Key Differences",
+          "comparison": {
+            "headers": [
+              "SOC 1",
+              "SOC 2"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Controls relevant to financial reporting",
+                  "Controls related to security, availability, processing integrity, confidentiality, and privacy"
+                ]
+              },
+              {
+                "label": "User Entities",
+                "values": [
+                  "Users of financial statements",
+                  "Customers of the service organization"
+                ]
+              },
+              {
+                "label": "Common Criteria",
+                "values": [
+                  "AICPA Generally Accepted Auditing Standards (GAAS)",
+                  "AICPA Trust Services Criteria (TSC)"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Transition Planning",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important consideration during the exit phase of the third-party risk lifecycle?",
+            "options": [
+              "Minimizing disruption to ongoing operations.",
+              "Negotiating favorable termination fees.",
+              "Ensuring the return or secure destruction of sensitive data.",
+              "Documenting lessons learned for future engagements."
+            ],
+            "correctIndex": 2,
+            "explanation": "While all options are relevant, ensuring the return or secure destruction of sensitive data is paramount to protect the organization from potential data breaches and compliance violations. This is often a regulatory requirement and a critical aspect of risk management.",
+            "hint": "Which option is most directly related to data security and compliance?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-050",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Performance Measurement and Balanced Scorecard",
+    "description": "Understand organizational performance measurement",
+    "order": 50,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Balanced scorecard",
+      "KPIs",
+      "Performance management"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Balanced Scorecard Framework",
+          "type": "text",
+          "content": "**Four Perspectives:**\n\n\u2022 **Financial** - Revenue, profit, ROI\n\u2022 **Customer** - Satisfaction, retention, share\n\u2022 **Internal Process** - Efficiency, quality, cycle time\n\u2022 **Learning & Growth** - Training, innovation, culture"
+        },
+        {
+          "title": "Audit Considerations",
+          "type": "text",
+          "content": "**Auditing performance measures:**\n\u2022 Validate data accuracy\n\u2022 Assess measure appropriateness\n\u2022 Check for gaming or manipulation\n\u2022 Evaluate link to strategy\n\u2022 Review target-setting process"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Balanced scorecard provides holistic view",
+            "Four perspectives: financial, customer, process, learning",
+            "Audit data accuracy and manipulation risk"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Balanced Scorecard Perspectives: A Test of Knowledge",
+          "knowledgeCheck": {
+            "question": "Which of the following best describes a Key Performance Indicator (KPI) that would fall under the 'Internal Process' perspective of a Balanced Scorecard?",
+            "options": [
+              "Employee satisfaction survey results regarding training opportunities.",
+              "Market share growth compared to key competitors.",
+              "Reduction in the average order fulfillment cycle time.",
+              "Return on assets (ROA) exceeding the industry average."
+            ],
+            "correctIndex": 2,
+            "explanation": "The 'Internal Process' perspective focuses on the efficiency and effectiveness of the organization's internal operations. Reducing order fulfillment cycle time directly relates to improving these processes. Employee satisfaction relates to Learning & Growth, market share to Customer, and ROA to Financial perspectives.",
+            "hint": "Think about what happens *inside* the company to deliver value."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Four Perspectives",
+          "reveal": {
+            "question": "List the four perspectives of the Balanced Scorecard framework.",
+            "answer": "The four perspectives are: Financial, Customer, Internal Process, and Learning & Growth."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Auditing Performance Measures: Identifying Manipulation",
+          "knowledgeCheck": {
+            "question": "During an audit of performance measures, which of the following findings would be the STRONGEST indicator of potential 'gaming' or manipulation of data?",
+            "options": [
+              "A slight increase in customer satisfaction scores following the implementation of a new customer service training program.",
+              "A significant increase in production output at the end of the reporting period, followed by a decrease at the beginning of the next period.",
+              "Regular updates to the performance measurement system to align with evolving strategic objectives.",
+              "The use of readily available software for data analysis and reporting."
+            ],
+            "correctIndex": 1,
+            "explanation": "A spike in production at the end of the period followed by a drop suggests employees are pushing production to meet targets, potentially sacrificing quality or creating inefficiencies in the next period. The other options are normal or positive.",
+            "hint": "Consider what behavior would be irrational unless someone was trying to cheat the system."
+          }
+        }
+      ]
+    }
+  }
+]

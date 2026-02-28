@@ -444,6 +444,93 @@ export async function updateCampaignMetrics(
 }
 
 // ============================================================================
+// Custom Ad Groups (AI Campaign Builder)
+// ============================================================================
+
+/**
+ * Custom ad group stored in Firestore.
+ */
+export interface StoredCustomAdGroup {
+  id: string;
+  courseId: string;
+  name: string;
+  concept: string;            // Original user prompt
+  headlines: string[];
+  descriptions: string[];
+  keywords: { kw: string; match: 'broad' | 'phrase' | 'exact' }[];
+  landingPage: string;
+  maxCpc: number;
+  status: 'draft' | 'active' | 'paused';
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+/**
+ * Save a custom ad group created via AI Campaign Builder.
+ */
+export async function saveCustomAdGroup(adGroup: Omit<StoredCustomAdGroup, 'id' | 'createdAt' | 'updatedAt'>): Promise<string> {
+  const id = `custom-${adGroup.courseId}-${Date.now()}`;
+  const ref = doc(db, COLLECTIONS.campaigns, `custom-adgroups`, 'items', id);
+  
+  await setDoc(ref, {
+    ...adGroup,
+    id,
+    createdAt: Timestamp.now(),
+    updatedAt: Timestamp.now(),
+  });
+  
+  logger.info(`[Growth] Saved custom ad group: ${adGroup.name}`);
+  return id;
+}
+
+/**
+ * Get all custom ad groups.
+ */
+export async function getCustomAdGroups(courseId?: string): Promise<StoredCustomAdGroup[]> {
+  const colRef = collection(db, COLLECTIONS.campaigns, 'custom-adgroups', 'items');
+  
+  let q;
+  if (courseId) {
+    q = query(colRef, where('courseId', '==', courseId), orderBy('createdAt', 'desc'));
+  } else {
+    q = query(colRef, orderBy('createdAt', 'desc'));
+  }
+  
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(doc => {
+    const data = doc.data();
+    return {
+      ...data,
+      createdAt: data.createdAt?.toDate?.() || new Date(),
+      updatedAt: data.updatedAt?.toDate?.() || new Date(),
+    } as StoredCustomAdGroup;
+  });
+}
+
+/**
+ * Delete a custom ad group.
+ */
+export async function deleteCustomAdGroup(id: string): Promise<void> {
+  const ref = doc(db, COLLECTIONS.campaigns, 'custom-adgroups', 'items', id);
+  const { deleteDoc } = await import('firebase/firestore');
+  await deleteDoc(ref);
+  logger.info(`[Growth] Deleted custom ad group: ${id}`);
+}
+
+/**
+ * Update custom ad group status (draft/active/paused).
+ */
+export async function updateCustomAdGroupStatus(id: string, status: 'draft' | 'active' | 'paused'): Promise<void> {
+  const ref = doc(db, COLLECTIONS.campaigns, 'custom-adgroups', 'items', id);
+  const { updateDoc, Timestamp: ts } = await import('firebase/firestore');
+  await updateDoc(ref, {
+    status,
+    updatedAt: ts.now(),
+  });
+  logger.info(`[Growth] Updated ad group ${id} status to ${status}`);
+}
+
+// ============================================================================
 // Growth Metrics (Daily Snapshots)
 // ============================================================================
 

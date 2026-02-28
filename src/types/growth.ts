@@ -229,7 +229,9 @@ export type AdGroupTheme =
   | 'temporal'            // "cpa exam 2026"
   | 'price-sensitive'     // "affordable cpa review"
   | 'career'              // "cpa salary", "become a cpa"
-  | 'long-tail';          // "how to pass aud section cpa"
+  | 'long-tail'           // "how to pass aud section cpa"
+  | 'question-quality'    // "cpa questions with explanations"
+  | 'custom';             // AI-generated custom campaign
 
 /** SEM Campaign structure */
 export interface SEMCampaign {

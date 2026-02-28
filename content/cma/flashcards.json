@@ -1,7 +1,4 @@
 {
-  "$schema": "../schema/flashcard.schema.json",
-  "courseId": "cma",
-  "exportedAt": "2026-02-28T20:51:57.501Z",
   "flashcards": [
     {
       "id": "cma1-adv-001",
@@ -19,7 +16,8 @@
         "absorption costing",
         "variable costing",
         "reconciliation"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-adv-002",
@@ -74,7 +72,8 @@
         "EVA",
         "value creation",
         "NOPAT"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-adv-005",
@@ -92,7 +91,8 @@
         "material variance",
         "price variance",
         "quantity variance"
-      ]
+      ],
+      "example": "Sales variance: (12,000 - 10,000 units) × $50 price = $100,000 favorable volume variance."
     },
     {
       "id": "cma1-adv-006",
@@ -110,7 +110,8 @@
         "Kaplan",
         "Norton",
         "perspectives"
-      ]
+      ],
+      "example": "Financial (ROI 15%), Customer (satisfaction 92%), Process (defect rate 0.5%), Learning (training hours 40)."
     },
     {
       "id": "cma1-adv-007",
@@ -128,7 +129,8 @@
         "process costing",
         "FIFO",
         "equivalent units"
-      ]
+      ],
+      "example": "Department processed 10,000 units, costs $50,000. Cost per equivalent unit = $5.00."
     },
     {
       "id": "cma1-adv-008",
@@ -146,7 +148,8 @@
         "COSO",
         "internal controls",
         "framework"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-adv-009",
@@ -210,7 +213,7 @@
       "type": "formula",
       "topic": "Cost Accounting",
       "front": "Multi-product CVP: How do you find the breakeven point when selling multiple products?",
-      "back": "Step 1: Determine sales mix ratio (units)\\nStep 2: Calculate weighted-avg CM per \"bundle\"\\n  = Σ(CM per unit × mix ratio)\\nStep 3: Breakeven bundles = Fixed Costs ÷ Weighted CM per bundle\\nStep 4: Multiply bundles × each product\\",
+      "back": "Step 1: Determine sales mix ratio (units)\\nStep 2: Calculate weighted-avg CM per \"bundle\"\\n  = Σ(CM per unit × mix ratio)\\nStep 3: Breakeven bundles = Fixed Costs ÷ Weighted CM per bundle\\nStep 4: Multiply bundles × each product",
       "difficulty": "hard",
       "subtopic": "Cost-Volume-Profit",
       "formula": "BE bundles = Fixed Costs ÷ Σ(CMᵢ × Mix Ratioᵢ)",
@@ -219,7 +222,8 @@
         "multi-product",
         "breakeven",
         "sales mix"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma1-adv-013",
@@ -246,7 +250,7 @@
       "type": "formula",
       "topic": "External Financial Reporting",
       "front": "Deferred Tax Assets vs. Deferred Tax Liabilities: When does each arise?",
-      "back": "**DTL (future taxable amounts):** Book income > Tax income NOW → pay MORE tax later.\\n- Accelerated depreciation (tax) vs. straight-line (book)\\n- Installment sale revenue recognized for book but deferred for tax\\n\\n**DTA (future deductible amounts):** Tax income > Book income NOW → pay LESS tax later.\\n- Warranty expense accrued for book but deducted when paid for tax\\n- Bad debt expense (allowance method book vs. direct write-off tax)\\n\\n**Valuation Allowance:** Reduce DTA if more likely than not (>50%) some won\\",
+      "back": "**DTL (future taxable amounts):** Book income > Tax income NOW → pay MORE tax later.\\n- Accelerated depreciation (tax) vs. straight-line (book)\\n- Installment sale revenue recognized for book but deferred for tax\\n\\n**DTA (future deductible amounts):** Tax income > Book income NOW → pay LESS tax later.\\n- Warranty expense accrued for book but deducted when paid for tax\\n- Bad debt expense (allowance method book vs. direct write-off tax)\\n\\n**Valuation Allowance:** Reduce DTA if more likely than not (>50%) some won",
       "difficulty": "hard",
       "subtopic": "Deferred Taxes",
       "formula": "DT = Temporary Difference × Enacted Tax Rate",
@@ -274,7 +278,8 @@
         "cost center",
         "profit center",
         "investment center"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-b2-001",
@@ -378,7 +383,8 @@
         "ABB",
         "activity-based",
         "cost drivers"
-      ]
+      ],
+      "example": "Machine hours drive maintenance: $100,000 ÷ 10,000 hours = $10/hour. Product using 500 hours = $5,000."
     },
     {
       "id": "cma1-b2-010",
@@ -444,7 +450,8 @@
       "tags": [
         "transfer pricing",
         "opportunity cost"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b2-025",
@@ -454,7 +461,7 @@
       "type": "definition",
       "topic": "Cost Management",
       "front": "What is Life Cycle Costing?",
-      "back": "Considers ALL costs over the product\\",
+      "back": "Considers ALL costs over the product",
       "difficulty": "medium",
       "subtopic": "Life Cycle Costing",
       "tags": [
@@ -492,7 +499,8 @@
       "tags": [
         "process costing",
         "job order"
-      ]
+      ],
+      "example": "Department processed 10,000 units, costs $50,000. Cost per equivalent unit = $5.00."
     },
     {
       "id": "cma1-b2-031",
@@ -508,7 +516,8 @@
       "tags": [
         "control environment",
         "COSO"
-      ]
+      ],
+      "example": "CMA maintains 30 CPE hours annually. If asked to perform work outside expertise, seek assistance or decline."
     },
     {
       "id": "cma1-b2-032",
@@ -557,7 +566,8 @@
       "tags": [
         "SOX",
         "Sarbanes-Oxley"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-b2-035",
@@ -656,7 +666,8 @@
       "tags": [
         "variance",
         "sales"
-      ]
+      ],
+      "example": "Product sells for $50, variable costs $30. CM = $20/unit. CM ratio = 40%."
     },
     {
       "id": "cma1-b2-045",
@@ -682,13 +693,14 @@
       "type": "definition",
       "topic": "Cost Concepts",
       "front": "What makes a cost \"relevant\" for decision-making?",
-      "back": "**Relevant Costs:**\\n1. Future costs (not historical)\\n2. Differ between alternatives\\n\\n**Irrelevant Costs:**\\n• Sunk costs (already incurred)\\n• Costs that don\\",
+      "back": "**Relevant Costs:**\\n1. Future costs (not historical)\\n2. Differ between alternatives\\n\\n**Irrelevant Costs:**\\n• Sunk costs (already incurred)\\n• Costs that don",
       "difficulty": "medium",
       "subtopic": "Relevant Costs",
       "tags": [
         "relevant cost",
         "decision making"
-      ]
+      ],
+      "example": "Make vs buy: Relevant costs are avoidable. Fixed overhead allocated is not relevant if continues regardless."
     },
     {
       "id": "cma1-b2-047",
@@ -704,7 +716,8 @@
       "tags": [
         "opportunity cost",
         "relevant cost"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b2-049",
@@ -721,7 +734,8 @@
       "tags": [
         "target profit",
         "CVP"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma1-b2-051",
@@ -781,7 +795,7 @@
       "type": "definition",
       "topic": "External Reporting",
       "front": "What is the difference between Deferred Tax Assets and Liabilities?",
-      "back": "**Deferred Tax Liability (DTL):**\\nBook income > Tax income (pay more later)\\nExamples: Accelerated tax depreciation, installment sales\\n\\n**Deferred Tax Asset (DTA):**\\nBook income < Tax income (paid more now, benefit later)\\nExamples: Warranty reserves, bad debt allowance\\n\\n**Valuation Allowance:** Reduces DTA if >50% won\\",
+      "back": "**Deferred Tax Liability (DTL):**\\nBook income > Tax income (pay more later)\\nExamples: Accelerated tax depreciation, installment sales\\n\\n**Deferred Tax Asset (DTA):**\\nBook income < Tax income (paid more now, benefit later)\\nExamples: Warranty reserves, bad debt allowance\\n\\n**Valuation Allowance:** Reduces DTA if >50% won",
       "difficulty": "hard",
       "subtopic": "Income Taxes",
       "tags": [
@@ -870,7 +884,8 @@
       "tags": [
         "internal audit",
         "IIA"
-      ]
+      ],
+      "example": "Identify: currency exposure. Assess: $2M potential loss. Respond: hedge with forward contracts."
     },
     {
       "id": "cma1-b2-063",
@@ -886,7 +901,8 @@
       "tags": [
         "audit committee",
         "governance"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-b2-064",
@@ -902,7 +918,8 @@
       "tags": [
         "limitations",
         "internal controls"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-b3-001",
@@ -967,7 +984,7 @@
       "type": "definition",
       "topic": "Deferred Taxes",
       "front": "What creates deferred tax assets vs. deferred tax liabilities?",
-      "back": "**Deferred Tax Liability (DTL):**\\n• Temporary difference results in MORE future taxable income\\n• Example: Accelerated depreciation for tax\\n\\n**Deferred Tax Asset (DTA):**\\n• Temporary difference results in LESS future taxable income\\n• Example: Warranty expense accrued\\n\\nDTA requires valuation allowance if \"more likely than not\" won\\",
+      "back": "**Deferred Tax Liability (DTL):**\\n• Temporary difference results in MORE future taxable income\\n• Example: Accelerated depreciation for tax\\n\\n**Deferred Tax Asset (DTA):**\\n• Temporary difference results in LESS future taxable income\\n• Example: Warranty expense accrued\\n\\nDTA requires valuation allowance if \"more likely than not\" won",
       "difficulty": "hard",
       "subtopic": "Temporary Differences",
       "tags": [
@@ -997,25 +1014,6 @@
       "reference": "ASC 260"
     },
     {
-      "id": "cma1-b3-007",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-A",
-      "type": "definition",
-      "topic": "Pensions",
-      "front": "What are the components of net periodic pension cost?",
-      "back": "**S-I-A-P-E-C:**\\n\\n• **S**ervice cost (operating expense)\\n• **I**nterest cost\\n• **A**ctual return less Expected return on plan assets\\n• **P**rior service cost amortization\\n• **E**xpected return on plan assets (reduces cost)\\n• **C**urtailments and settlements\\n\\nOnly Service Cost in operating income; others in OCI.",
-      "difficulty": "hard",
-      "subtopic": "Components",
-      "mnemonic": "S-I-A-P-E-C",
-      "tags": [
-        "pensions",
-        "ASC 715",
-        "SIAPEC"
-      ],
-      "reference": "ASC 715"
-    },
-    {
       "id": "cma1-b3-008",
       "courseId": "cma",
       "section": "CMA1",
@@ -1023,7 +1021,7 @@
       "type": "definition",
       "topic": "Fair Value",
       "front": "What are the three levels of the fair value hierarchy?",
-      "back": "**Level 1:** Quoted prices in active markets for identical assets/liabilities (most reliable)\\n\\n**Level 2:** Observable inputs other than Level 1 (similar assets, interest rates, yield curves)\\n\\n**Level 3:** Unobservable inputs based on entity\\",
+      "back": "**Level 1:** Quoted prices in active markets for identical assets/liabilities (most reliable)\\n\\n**Level 2:** Observable inputs other than Level 1 (similar assets, interest rates, yield curves)\\n\\n**Level 3:** Unobservable inputs based on entity",
       "difficulty": "medium",
       "subtopic": "Level Hierarchy",
       "tags": [
@@ -1047,7 +1045,8 @@
       "tags": [
         "master budget",
         "budgeting sequence"
-      ]
+      ],
+      "example": "Sales $1M → Production 10,000 units → DM purchases $200K → DL $300K → OH $150K → Cash budget → Pro forma statements."
     },
     {
       "id": "cma1-b3-010",
@@ -1057,7 +1056,7 @@
       "type": "formula",
       "topic": "Budgeting",
       "front": "How is required production calculated?",
-      "back": "**Required Production =**\\n\\nBudgeted Sales\\n+ Desired Ending Finished Goods\\n- Beginning Finished Goods\\n\\n**Key insight:** Production must cover sales AND provide for ending inventory, net of what\\",
+      "back": "**Required Production =**\\n\\nBudgeted Sales\\n+ Desired Ending Finished Goods\\n- Beginning Finished Goods\\n\\n**Key insight:** Production must cover sales AND provide for ending inventory, net of what",
       "difficulty": "easy",
       "subtopic": "Production Budget",
       "formula": "Production = Sales + Ending FG - Beginning FG",
@@ -1117,7 +1116,8 @@
         "IRR",
         "PI",
         "capital budgeting"
-      ]
+      ],
+      "example": "PV of inflows $150K, investment $100K. PI = 1.5. Greater than 1.0, accept project."
     },
     {
       "id": "cma1-b3-015",
@@ -1204,7 +1204,8 @@
         "ROI",
         "DuPont",
         "performance"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-b3-020",
@@ -1222,7 +1223,8 @@
         "residual income",
         "ROI",
         "performance"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-b3-021",
@@ -1240,7 +1242,8 @@
         "BSC",
         "balanced scorecard",
         "perspectives"
-      ]
+      ],
+      "example": "Financial (ROI 15%), Customer (satisfaction 92%), Process (defect rate 0.5%), Learning (training hours 40)."
     },
     {
       "id": "cma1-b3-022",
@@ -1258,7 +1261,8 @@
         "EVA",
         "economic value added",
         "performance"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-b3-023",
@@ -1274,7 +1278,8 @@
       "tags": [
         "transfer pricing",
         "decentralization"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b3-024",
@@ -1310,7 +1315,8 @@
         "high-low",
         "cost behavior",
         "mixed costs"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b3-027",
@@ -1327,7 +1333,8 @@
         "ABC",
         "activity-based costing",
         "cost drivers"
-      ]
+      ],
+      "example": "Setup costs $20,000, 100 setups. Product A (60 setups): $12,000. Product B (40 setups): $8,000."
     },
     {
       "id": "cma1-b3-028",
@@ -1362,7 +1369,8 @@
         "joint costs",
         "split-off",
         "allocation"
-      ]
+      ],
+      "example": "$100K joint cost produces A (60% sales value) and B (40%). Allocate: A = $60K, B = $40K."
     },
     {
       "id": "cma1-b3-030",
@@ -1380,7 +1388,8 @@
         "target costing",
         "design",
         "value engineering"
-      ]
+      ],
+      "example": "Want $50,000 profit, fixed costs $100,000, CM $25. Units needed = ($100,000 + $50,000) ÷ $25 = 6,000 units."
     },
     {
       "id": "cma1-b3-031",
@@ -1416,7 +1425,8 @@
         "constraint",
         "bottleneck",
         "throughput"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b3-033",
@@ -1434,7 +1444,8 @@
         "COSO",
         "internal control",
         "components"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-b3-034",
@@ -1469,7 +1480,8 @@
         "fraud",
         "fraud triangle",
         "Cressey"
-      ]
+      ],
+      "example": "CFO diverted funds: Opportunity (access to accounts), Rationalization (underpaid), Pressure (gambling debt)."
     },
     {
       "id": "cma1-b3-037",
@@ -1479,7 +1491,7 @@
       "type": "definition",
       "topic": "SOX",
       "front": "What does SOX Section 404 require?",
-      "back": "**Management Responsibilities:**\\n• Assess effectiveness of internal control over financial reporting (ICFR)\\n• Include assessment in annual report\\n\\n**Auditor Responsibilities:**\\n• Attest to and report on management\\",
+      "back": "**Management Responsibilities:**\\n• Assess effectiveness of internal control over financial reporting (ICFR)\\n• Include assessment in annual report\\n\\n**Auditor Responsibilities:**\\n• Attest to and report on management",
       "difficulty": "hard",
       "subtopic": "Section 404",
       "tags": [
@@ -1487,7 +1499,8 @@
         "Section 404",
         "ICFR"
       ],
-      "reference": "SOX Section 404"
+      "reference": "SOX Section 404",
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-b3-038",
@@ -1521,7 +1534,8 @@
         "ERM",
         "COSO",
         "risk management"
-      ]
+      ],
+      "example": "Identify: currency exposure. Assess: $2M potential loss. Respond: hedge with forward contracts."
     },
     {
       "id": "cma1-b3-040",
@@ -1538,7 +1552,8 @@
         "internal audit",
         "IIA",
         "governance"
-      ]
+      ],
+      "example": "Identify: currency exposure. Assess: $2M potential loss. Respond: hedge with forward contracts."
     },
     {
       "id": "cma1-b3-041",
@@ -1573,23 +1588,6 @@
         "ERP",
         "integration",
         "enterprise systems"
-      ]
-    },
-    {
-      "id": "cma1-b3-043",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-F",
-      "type": "definition",
-      "topic": "RPA",
-      "front": "What is Robotic Process Automation (RPA)?",
-      "back": "**RPA:** Software robots automating repetitive, rule-based tasks.\\n\\n**Best suited for:**\\n• High volume, routine tasks\\n• Stable, rule-based processes\\n• Structured data\\n• Multiple system interactions\\n\\n**Accounting examples:**\\n• Invoice processing\\n• Reconciliations\\n• Report generation\\n• Data entry",
-      "difficulty": "easy",
-      "subtopic": "Applications",
-      "tags": [
-        "RPA",
-        "automation",
-        "robots"
       ]
     },
     {
@@ -1693,7 +1691,8 @@
       "tags": [
         "variances",
         "variable overhead"
-      ]
+      ],
+      "example": "Budget: Variable ($5 × 1,000) + Fixed $10,000 = $15,000. Actual $16,200. Variance = $1,200 U."
     },
     {
       "id": "cma1-b3-050",
@@ -1711,7 +1710,8 @@
         "variances",
         "fixed overhead",
         "volume"
-      ]
+      ],
+      "example": "Budget: Variable ($5 × 1,000) + Fixed $10,000 = $15,000. Actual $16,200. Variance = $1,200 U."
     },
     {
       "id": "cma1-b3-051",
@@ -1729,7 +1729,8 @@
         "contribution margin",
         "break-even",
         "CVP"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b3-052",
@@ -1781,7 +1782,8 @@
         "NPV",
         "capital budgeting",
         "DCF"
-      ]
+      ],
+      "example": "Investment $100K, annual CF $30K for 5 years, 10% discount. NPV = $30K × 3.791 - $100K = $13,730. Accept."
     },
     {
       "id": "cma1-b3-055",
@@ -1831,24 +1833,8 @@
       "tags": [
         "responsibility centers",
         "decentralization"
-      ]
-    },
-    {
-      "id": "cma1-b3-058",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-F",
-      "type": "definition",
-      "topic": "Data Visualization",
-      "front": "What are best practices for data visualization?",
-      "back": "**Chart Selection:**\\n• Bar: Comparisons\\n• Line: Trends over time\\n• Pie: Parts of whole (limit slices)\\n• Scatter: Relationships\\n\\n**Best Practices:**\\n• Clear labels and titles\\n• Appropriate scale\\n• Avoid 3D (distorts)\\n• Highlight key insights\\n• Minimize clutter",
-      "difficulty": "easy",
-      "subtopic": "Best Practices",
-      "tags": [
-        "visualization",
-        "charts",
-        "dashboards"
-      ]
+      ],
+      "example": "Cost center (manufacturing) controls costs only. Profit center (product line) controls revenue and costs."
     },
     {
       "id": "cma1-b3-059",
@@ -1883,7 +1869,8 @@
       "tags": [
         "payback",
         "capital budgeting"
-      ]
+      ],
+      "example": "Investment $120K, annual CF $40K. Payback = 3 years. If target 4 years, accept."
     },
     {
       "id": "cma1-b3-062",
@@ -1936,7 +1923,8 @@
         "margin of safety",
         "CVP",
         "risk"
-      ]
+      ],
+      "example": "Fixed costs $100,000, CM $25/unit. BEP = $100,000 ÷ $25 = 4,000 units."
     },
     {
       "id": "cma1-b3-065",
@@ -1946,7 +1934,7 @@
       "type": "definition",
       "topic": "Big Data",
       "front": "What are the characteristics of Big Data (5 Vs)?",
-      "back": "**V**olume - Massive amounts of data\\n\\n**V**elocity - Speed of data creation\\n\\n**V**ariety - Different types (structured, unstructured)\\n\\n**V**eracity - Data quality/reliability\\n\\n**V**alue - Insights extracted from data\\n\\n**Challenge:** Traditional tools can\\",
+      "back": "**V**olume - Massive amounts of data\\n\\n**V**elocity - Speed of data creation\\n\\n**V**ariety - Different types (structured, unstructured)\\n\\n**V**eracity - Data quality/reliability\\n\\n**V**alue - Insights extracted from data\\n\\n**Challenge:** Traditional tools can",
       "difficulty": "easy",
       "subtopic": "Characteristics",
       "mnemonic": "5 Vs",
@@ -1971,7 +1959,8 @@
       "tags": [
         "IRR",
         "capital budgeting"
-      ]
+      ],
+      "example": "Investment $100K returns $30K annually for 5 years. IRR ≈ 15%. If hurdle rate 12%, accept project."
     },
     {
       "id": "cma1-b3-068",
@@ -1987,7 +1976,8 @@
       "tags": [
         "flexible budget",
         "variance analysis"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b3-069",
@@ -2005,7 +1995,8 @@
         "regression",
         "forecasting",
         "cost estimation"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b3-070",
@@ -2126,7 +2117,8 @@
         "break-even",
         "sales mix",
         "multi-product"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma1-b3-078",
@@ -2136,7 +2128,7 @@
       "type": "definition",
       "topic": "JIT",
       "front": "What are the key principles of Just-in-Time (JIT)?",
-      "back": "**Principles:**\\n• Produce only what\\",
+      "back": "**Principles:**\\n• Produce only what",
       "difficulty": "medium",
       "subtopic": "Principles",
       "tags": [
@@ -2162,7 +2154,8 @@
         "operating leverage",
         "risk",
         "DOL"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma1-b3-080",
@@ -2259,7 +2252,7 @@
       "type": "definition",
       "topic": "Controls",
       "front": "What are compensating controls?",
-      "back": "**Compensating Controls:**\\nAlternative controls that mitigate risk when ideal controls aren\\",
+      "back": "**Compensating Controls:**\\nAlternative controls that mitigate risk when ideal controls aren",
       "difficulty": "medium",
       "subtopic": "Compensating Controls",
       "tags": [
@@ -2283,7 +2276,8 @@
         "profitability index",
         "capital budgeting",
         "rationing"
-      ]
+      ],
+      "example": "PV of inflows $150K, investment $100K. PI = 1.5. Greater than 1.0, accept project."
     },
     {
       "id": "cma1-b3-087",
@@ -2335,7 +2329,8 @@
         "sensitivity",
         "what-if",
         "analysis"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma1-b3-090",
@@ -2406,7 +2401,8 @@
         "inventory turnover",
         "days in inventory",
         "efficiency"
-      ]
+      ],
+      "example": "COGS $600K, average inventory $100K. Turnover = 6 times. Days in inventory = 61 days."
     },
     {
       "id": "cma1-b3-094",
@@ -2457,7 +2453,8 @@
       "tags": [
         "WACC",
         "cost of capital"
-      ]
+      ],
+      "example": "Debt 40% at 6%, equity 60% at 12%. WACC = (0.40 × 6% × 0.75 tax shield) + (0.60 × 12%) = 9%."
     },
     {
       "id": "cma1-b3-097",
@@ -2592,7 +2589,7 @@
       "type": "formula",
       "topic": "External Reporting",
       "front": "How do you account for Treasury Stock under the Cost Method?",
-      "back": "**Purchase Treasury Stock:**\\nDr. Treasury Stock (at cost)\\n    Cr. Cash\\n\\n**Reissue ABOVE cost:**\\nDr. Cash (proceeds)\\n    Cr. Treasury Stock (cost)\\n    Cr. APIC-Treasury Stock (excess)\\n\\n**Reissue BELOW cost:**\\nDr. Cash (proceeds)\\nDr. APIC-Treasury Stock (to extent available)\\nDr. Retained Earnings (remaining difference)\\n    Cr. Treasury Stock (cost)\\n\\n**Note:** Treasury Stock is a contra-equity account\\nNever recognize gain/loss on company\\",
+      "back": "**Purchase Treasury Stock:**\\nDr. Treasury Stock (at cost)\\n    Cr. Cash\\n\\n**Reissue ABOVE cost:**\\nDr. Cash (proceeds)\\n    Cr. Treasury Stock (cost)\\n    Cr. APIC-Treasury Stock (excess)\\n\\n**Reissue BELOW cost:**\\nDr. Cash (proceeds)\\nDr. APIC-Treasury Stock (to extent available)\\nDr. Retained Earnings (remaining difference)\\n    Cr. Treasury Stock (cost)\\n\\n**Note:** Treasury Stock is a contra-equity account\\nNever recognize gain/loss on company",
       "difficulty": "medium",
       "subtopic": "Stockholders Equity",
       "tags": [
@@ -2627,7 +2624,7 @@
       "type": "mnemonic",
       "topic": "External Reporting",
       "front": "What are the four main financial statements required under GAAP?",
-      "back": "**Mnemonic: IS-BS-CF-SE**\\n\\n**1. Income Statement (Statement of Operations):**\\n- Revenues, expenses, gains, losses\\n- Period of time\\n\\n**2. Balance Sheet (Statement of Financial Position):**\\n- Assets, liabilities, equity\\n- Point in time\\n\\n**3. Cash Flow Statement:**\\n- Operating, investing, financing activities\\n- Period of time\\n\\n**4. Statement of Stockholders\\",
+      "back": "**Mnemonic: IS-BS-CF-SE**\\n\\n**1. Income Statement (Statement of Operations):**\\n- Revenues, expenses, gains, losses\\n- Period of time\\n\\n**2. Balance Sheet (Statement of Financial Position):**\\n- Assets, liabilities, equity\\n- Point in time\\n\\n**3. Cash Flow Statement:**\\n- Operating, investing, financing activities\\n- Period of time\\n\\n**4. Statement of Stockholders",
       "difficulty": "easy",
       "subtopic": "Financial Statements",
       "mnemonic": "IS-BS-CF-SE",
@@ -2645,7 +2642,7 @@
       "type": "formula",
       "topic": "Budgeting",
       "front": "How do you calculate units to produce in a Production Budget?",
-      "back": "**Production Budget Formula:**\\n\\nUnits to Produce = \\n  Budgeted Sales (units)\\n+ Desired Ending Finished Goods Inventory\\n- Beginning Finished Goods Inventory\\n\\n**Example:**\\nBudgeted sales: 10,000 units\\nDesired ending FG: 2,000 units\\nBeginning FG: 1,500 units\\n\\nUnits to produce = 10,000 + 2,000 - 1,500 = 10,500 units\\n\\n**Common Policy:** Ending inventory = % of next period\\",
+      "back": "**Production Budget Formula:**\\n\\nUnits to Produce = \\n  Budgeted Sales (units)\\n+ Desired Ending Finished Goods Inventory\\n- Beginning Finished Goods Inventory\\n\\n**Example:**\\nBudgeted sales: 10,000 units\\nDesired ending FG: 2,000 units\\nBeginning FG: 1,500 units\\n\\nUnits to produce = 10,000 + 2,000 - 1,500 = 10,500 units\\n\\n**Common Policy:** Ending inventory = % of next period",
       "difficulty": "easy",
       "subtopic": "Production Budget",
       "formula": "Production = Sales + Ending FG - Beginning FG",
@@ -2670,7 +2667,8 @@
         "payback",
         "capital budgeting",
         "investment"
-      ]
+      ],
+      "example": "Investment $120K, annual CF $40K. Payback = 3 years. If target 4 years, accept."
     },
     {
       "id": "cma1-b4-012",
@@ -2688,7 +2686,8 @@
         "master budget",
         "sequence",
         "planning"
-      ]
+      ],
+      "example": "Sales $1M → Production 10,000 units → DM purchases $200K → DL $300K → OH $150K → Cash budget → Pro forma statements."
     },
     {
       "id": "cma1-b4-013",
@@ -2706,7 +2705,8 @@
         "cash budget",
         "treasury",
         "planning"
-      ]
+      ],
+      "example": "Beginning cash $20K + Collections $150K - Disbursements $140K - Debt payment $15K = Ending cash $15K."
     },
     {
       "id": "cma1-b4-014",
@@ -2716,7 +2716,7 @@
       "type": "definition",
       "topic": "Forecasting",
       "front": "What does the R-squared (Coefficient of Determination) tell you in regression?",
-      "back": "**R² Definition:**\\nThe proportion of variance in the dependent variable explained by the independent variable(s)\\n\\n**Range:** 0 to 1 (or 0% to 100%)\\n\\n**Interpretation:**\\n- R² = 0.85 means 85% of the variation in Y is explained by X\\n- Higher R² = Better fit\\n\\n**Limitations:**\\n- High R² doesn\\",
+      "back": "**R² Definition:**\\nThe proportion of variance in the dependent variable explained by the independent variable(s)\\n\\n**Range:** 0 to 1 (or 0% to 100%)\\n\\n**Interpretation:**\\n- R² = 0.85 means 85% of the variation in Y is explained by X\\n- Higher R² = Better fit\\n\\n**Limitations:**\\n- High R² doesn",
       "difficulty": "medium",
       "subtopic": "Regression",
       "tags": [
@@ -2759,24 +2759,8 @@
         "variance",
         "mix",
         "yield"
-      ]
-    },
-    {
-      "id": "cma1-b4-018",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-C",
-      "type": "definition",
-      "topic": "Performance Management",
-      "front": "What are the four types of Responsibility Centers?",
-      "back": "**1. Cost Center:**\\n- Responsible for costs only\\n- No revenue accountability\\n- Example: Production department, IT support\\n\\n**2. Revenue Center:**\\n- Responsible for revenues only\\n- No cost/profit accountability\\n- Example: Sales region\\n\\n**3. Profit Center:**\\n- Responsible for both revenues AND costs\\n- Has profit (contribution) accountability\\n- Example: Business unit, product line\\n\\n**4. Investment Center:**\\n- Responsible for revenues, costs, AND invested capital\\n- Measured by ROI, RI, EVA\\n- Example: Division, subsidiary\\n\\n**Progression:** More autonomy and accountability as you move from cost to investment center",
-      "difficulty": "easy",
-      "subtopic": "Responsibility Centers",
-      "tags": [
-        "responsibility centers",
-        "decentralization",
-        "control"
-      ]
+      ],
+      "example": "Standard: 2 lbs material @ $5/lb = $10. Actual: 2.2 lbs @ $5.20 = $11.44. Total variance = $1.44 unfavorable."
     },
     {
       "id": "cma1-b4-019",
@@ -2794,7 +2778,8 @@
         "residual income",
         "investment center",
         "ROI"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-b4-020",
@@ -2812,7 +2797,8 @@
         "balanced scorecard",
         "KPI",
         "strategy"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-b4-022",
@@ -2822,7 +2808,7 @@
       "type": "formula",
       "topic": "Cost Management",
       "front": "How do you calculate Equivalent Units under the FIFO method?",
-      "back": "**FIFO Equivalent Units:**\\n\\nEU = Units to complete Beginning WIP\\n   + Units Started AND Completed\\n   + Ending WIP × % Complete\\n\\n**Or alternatively:**\\nEU = Units Completed\\n   - Beginning WIP × % Complete (prior period work)\\n   + Ending WIP × % Complete\\n\\n**FIFO Key Points:**\\n- Only counts THIS PERIOD\\",
+      "back": "**FIFO Equivalent Units:**\\n\\nEU = Units to complete Beginning WIP\\n   + Units Started AND Completed\\n   + Ending WIP × % Complete\\n\\n**Or alternatively:**\\nEU = Units Completed\\n   - Beginning WIP × % Complete (prior period work)\\n   + Ending WIP × % Complete\\n\\n**FIFO Key Points:**\\n- Only counts THIS PERIOD",
       "difficulty": "hard",
       "subtopic": "Process Costing",
       "formula": "EU(FIFO) = Complete BWIP + S&C + EWIP×%",
@@ -2865,7 +2851,8 @@
         "joint costs",
         "NRV",
         "allocation"
-      ]
+      ],
+      "example": "$100K joint cost produces A (60% sales value) and B (40%). Allocate: A = $60K, B = $40K."
     },
     {
       "id": "cma1-b4-026",
@@ -2875,7 +2862,7 @@
       "type": "formula",
       "topic": "Cost Management",
       "front": "What is the Step-Down (Sequential) method for allocating service department costs?",
-      "back": "**Step-Down Method:**\\n\\n**Process:**\\n1. Rank service departments by services provided to other service departments\\n2. Allocate first department costs to ALL users (service + production)\\n3. Allocate second department (now including allocated costs) to remaining departments\\n4. Continue until all service department costs are in production departments\\n\\n**Key Rule:** Once a service department\\",
+      "back": "**Step-Down Method:**\\n\\n**Process:**\\n1. Rank service departments by services provided to other service departments\\n2. Allocate first department costs to ALL users (service + production)\\n3. Allocate second department (now including allocated costs) to remaining departments\\n4. Continue until all service department costs are in production departments\\n\\n**Key Rule:** Once a service department",
       "difficulty": "hard",
       "subtopic": "Service Departments",
       "tags": [
@@ -2979,7 +2966,7 @@
       "type": "formula",
       "topic": "Technology",
       "front": "What is Benford\\",
-      "back": "**Benford\\",
+      "back": "**Benford",
       "difficulty": "medium",
       "subtopic": "Data Analysis",
       "formula": "P(d) = log₁₀(1 + 1/d)",
@@ -3058,7 +3045,8 @@
         "transfer pricing",
         "divisional",
         "methods"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-b4-041",
@@ -3103,14 +3091,15 @@
       "type": "definition",
       "topic": "Internal Controls",
       "front": "What is Inherent Risk vs. Control Risk vs. Detection Risk?",
-      "back": "**Inherent Risk:**\\n- Risk of material misstatement BEFORE considering controls\\n- Susceptibility of account/disclosure to error\\n- Example: Complex estimates, high-volume transactions\\n- Cannot be changed by auditor\\n\\n**Control Risk:**\\n- Risk that controls FAIL to prevent/detect misstatement\\n- Effectiveness of internal controls\\n- Example: Weak segregation of duties\\n- Cannot be changed by auditor (can only assess)\\n\\n**Detection Risk:**\\n- Risk that auditor fails to detect misstatement\\n- Auditor\\",
+      "back": "**Inherent Risk:**\\n- Risk of material misstatement BEFORE considering controls\\n- Susceptibility of account/disclosure to error\\n- Example: Complex estimates, high-volume transactions\\n- Cannot be changed by auditor\\n\\n**Control Risk:**\\n- Risk that controls FAIL to prevent/detect misstatement\\n- Effectiveness of internal controls\\n- Example: Weak segregation of duties\\n- Cannot be changed by auditor (can only assess)\\n\\n**Detection Risk:**\\n- Risk that auditor fails to detect misstatement\\n- Auditor",
       "difficulty": "medium",
       "subtopic": "Risk Assessment",
       "tags": [
         "audit risk",
         "inherent risk",
         "control risk"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-b4-044",
@@ -3145,7 +3134,8 @@
         "strategy map",
         "balanced scorecard",
         "strategy"
-      ]
+      ],
+      "example": "Financial (ROI 15%), Customer (satisfaction 92%), Process (defect rate 0.5%), Learning (training hours 40)."
     },
     {
       "id": "cma1-b4-047",
@@ -3181,7 +3171,8 @@
         "margin of safety",
         "CVP",
         "risk"
-      ]
+      ],
+      "example": "Current sales 8,000 units, BEP 5,000 units. Margin of safety = 3,000 units or 37.5%."
     },
     {
       "id": "cma1-b4-050",
@@ -3217,7 +3208,8 @@
         "spoilage",
         "process costing",
         "cost allocation"
-      ]
+      ],
+      "example": "Department processed 10,000 units, costs $50,000. Cost per equivalent unit = $5.00."
     },
     {
       "id": "cma1-b4-053",
@@ -3234,7 +3226,8 @@
         "standard costs",
         "budgeting",
         "performance"
-      ]
+      ],
+      "example": "Standard: 2 lbs material @ $5/lb = $10. Actual: 2.2 lbs @ $5.20 = $11.44. Total variance = $1.44 unfavorable."
     },
     {
       "id": "cma1-b4-054",
@@ -3299,7 +3292,7 @@
       "type": "definition",
       "topic": "External Reporting",
       "front": "What is the Lower of Cost or Net Realizable Value (LCNRV) rule?",
-      "back": "Inventory must be written down when Net Realizable Value (NRV) falls below cost.\\n\\nNRV = Estimated selling price - Costs to complete and sell\\n\\nPurpose: Conservatism principle - don\\",
+      "back": "Inventory must be written down when Net Realizable Value (NRV) falls below cost.\\n\\nNRV = Estimated selling price - Costs to complete and sell\\n\\nPurpose: Conservatism principle - don",
       "difficulty": "medium",
       "subtopic": "Inventory Valuation",
       "example": "Inventory cost $100, NRV $80 → Write down to $80, recognize $20 loss",
@@ -3357,57 +3350,8 @@
       "tags": [
         "master budget",
         "planning"
-      ]
-    },
-    {
-      "id": "cma1-def-006",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-B",
-      "type": "definition",
-      "topic": "Budgeting",
-      "front": "What is a Flexible Budget?",
-      "back": "A budget that adjusts for changes in activity level.\\n\\nFlexible Budget = (Variable cost per unit × Actual units) + Fixed costs\\n\\n**Purpose:** Provides meaningful variance analysis by comparing actual results to what SHOULD have happened at actual volume, not budgeted volume.",
-      "difficulty": "medium",
-      "subtopic": "Flexible Budgets",
-      "example": "If actual production was 12,000 units vs budget of 10,000, the flexible budget recalculates costs at 12,000 units",
-      "tags": [
-        "flexible budget",
-        "variance"
-      ]
-    },
-    {
-      "id": "cma1-def-009",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-C",
-      "type": "definition",
-      "topic": "Performance Management",
-      "front": "What are the four types of Responsibility Centers?",
-      "back": "1) **Cost Center:** Responsible for costs only\\n   Example: Manufacturing department\\n\\n2) **Revenue Center:** Responsible for revenues only\\n   Example: Sales office\\n\\n3) **Profit Center:** Responsible for revenues AND costs\\n   Example: Product line division\\n\\n4) **Investment Center:** Responsible for revenues, costs, AND invested capital\\n   Example: Subsidiary company",
-      "difficulty": "medium",
-      "subtopic": "Responsibility Centers",
-      "tags": [
-        "responsibility accounting",
-        "decentralization"
-      ]
-    },
-    {
-      "id": "cma1-def-010",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-C",
-      "type": "definition",
-      "topic": "Performance Management",
-      "front": "What are the four perspectives of the Balanced Scorecard?",
-      "back": "1) **Financial:** \"How do we look to shareholders?\"\\n   Measures: ROI, EVA, profit margin\\n\\n2) **Customer:** \"How do customers see us?\"\\n   Measures: Satisfaction, retention, market share\\n\\n3) **Internal Business Process:** \"What must we excel at?\"\\n   Measures: Quality, cycle time, productivity\\n\\n4) **Learning & Growth:** \"Can we continue to improve?\"\\n   Measures: Employee training, innovation, IT capabilities",
-      "difficulty": "medium",
-      "subtopic": "Balanced Scorecard",
-      "tags": [
-        "balanced scorecard",
-        "performance measurement"
       ],
-      "reference": "IMA SMA 4DD"
+      "example": "Sales $1M → Production 10,000 units → DM purchases $200K → DL $300K → OH $150K → Cash budget → Pro forma statements."
     },
     {
       "id": "cma1-def-012",
@@ -3423,7 +3367,8 @@
       "tags": [
         "cost behavior",
         "cost classification"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-def-013",
@@ -3439,7 +3384,8 @@
       "tags": [
         "ABC",
         "cost allocation"
-      ]
+      ],
+      "example": "Setup costs $20,000, 100 setups. Product A (60 setups): $12,000. Product B (40 setups): $8,000."
     },
     {
       "id": "cma1-def-014",
@@ -3455,7 +3401,8 @@
       "tags": [
         "absorption costing",
         "variable costing"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-def-015",
@@ -3473,7 +3420,8 @@
         "COSO",
         "internal control"
       ],
-      "reference": "COSO 2013"
+      "reference": "COSO 2013",
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-def-016",
@@ -3506,7 +3454,8 @@
         "ERM",
         "risk management"
       ],
-      "reference": "COSO ERM 2017"
+      "reference": "COSO ERM 2017",
+      "example": "Identify: currency exposure. Assess: $2M potential loss. Respond: hedge with forward contracts."
     },
     {
       "id": "cma1-def-018",
@@ -3555,7 +3504,8 @@
       "tags": [
         "regression",
         "statistics"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-def-021",
@@ -3572,7 +3522,8 @@
         "throughput",
         "TOC",
         "constraint"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma1-def-022",
@@ -3589,7 +3540,8 @@
         "ZBB",
         "budgeting",
         "cost control"
-      ]
+      ],
+      "example": "Each department justifies entire budget from zero. Marketing must justify $500K vs simply adding 5% to prior year."
     },
     {
       "id": "cma1-def-023",
@@ -3607,7 +3559,8 @@
         "EVA",
         "value creation",
         "performance"
-      ]
+      ],
+      "example": "NOPAT $500K, capital $2M, WACC 10%. EVA = $500K - ($2M × 10%) = $300,000 value created."
     },
     {
       "id": "cma1-def-025",
@@ -3645,22 +3598,6 @@
       "reference": "ASC 842"
     },
     {
-      "id": "cma1-def-027",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-C",
-      "type": "definition",
-      "topic": "Performance Management",
-      "front": "What are the main transfer pricing methods?",
-      "back": "**Transfer Pricing Methods:**\\n\\n1. **Market-Based:** Use external market price\\n   - Best when market exists\\n\\n2. **Cost-Based:**\\n   - Variable cost\\n   - Full cost\\n   - Cost-plus markup\\n\\n3. **Negotiated:** Divisions agree on price\\n\\n4. **Dual Pricing:** Different prices for buyer/seller\\n\\n**Range Formula:**\\nMinimum = Variable cost + Opportunity cost\\nMaximum = Market price",
-      "difficulty": "medium",
-      "subtopic": "Transfer Pricing",
-      "tags": [
-        "transfer pricing",
-        "responsibility accounting"
-      ]
-    },
-    {
       "id": "cma1-def-028",
       "courseId": "cma",
       "section": "CMA1",
@@ -3674,7 +3611,8 @@
       "tags": [
         "rolling budget",
         "continuous budget"
-      ]
+      ],
+      "example": "Q1 ends, drop Q1, add Q5 projections. Always maintain 4-quarter forward view."
     },
     {
       "id": "cma1-def-029",
@@ -3701,14 +3639,15 @@
       "type": "definition",
       "topic": "Internal Controls",
       "front": "What is the Fraud Triangle and what are its three elements?",
-      "back": "**Fraud Triangle Elements:**\\n\\n1. **Pressure/Incentive:**\\n   - Financial difficulties\\n   - Meeting targets/bonuses\\n   - Lifestyle expectations\\n\\n2. **Opportunity:**\\n   - Weak internal controls\\n   - Override authority\\n   - Lack of segregation of duties\\n\\n3. **Rationalization:**\\n   - \"I deserve it\"\\n   - \"I\\",
+      "back": "**Fraud Triangle Elements:**\\n\\n1. **Pressure/Incentive:**\\n   - Financial difficulties\\n   - Meeting targets/bonuses\\n   - Lifestyle expectations\\n\\n2. **Opportunity:**\\n   - Weak internal controls\\n   - Override authority\\n   - Lack of segregation of duties\\n\\n3. **Rationalization:**\\n   - \"I deserve it\"\\n   - \"I",
       "difficulty": "easy",
       "subtopic": "Fraud Triangle",
       "tags": [
         "fraud",
         "fraud triangle",
         "ethics"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-form-001",
@@ -3923,7 +3862,8 @@
       "tags": [
         "variances",
         "labor"
-      ]
+      ],
+      "example": "Rate: ($18 actual - $17 std) × 500 hrs = $500 U. Efficiency: (520 - 500 hrs) × $17 = $340 U."
     },
     {
       "id": "cma1-form-013",
@@ -3940,7 +3880,8 @@
       "tags": [
         "variances",
         "overhead"
-      ]
+      ],
+      "example": "Budget: Variable ($5 × 1,000) + Fixed $10,000 = $15,000. Actual $16,200. Variance = $1,200 U."
     },
     {
       "id": "cma1-form-014",
@@ -3957,7 +3898,8 @@
       "tags": [
         "variances",
         "fixed overhead"
-      ]
+      ],
+      "example": "Budget: Variable ($5 × 1,000) + Fixed $10,000 = $15,000. Actual $16,200. Variance = $1,200 U."
     },
     {
       "id": "cma1-form-015",
@@ -4065,25 +4007,8 @@
       "tags": [
         "flexible budget",
         "variance analysis"
-      ]
-    },
-    {
-      "id": "cma1-form-023",
-      "courseId": "cma",
-      "section": "CMA1",
-      "blueprintArea": "CMA1-D",
-      "type": "formula",
-      "topic": "Cost Management",
-      "front": "What are the methods for allocating joint costs?",
-      "back": "**Joint Cost Allocation Methods:**\\n\\n**1. Physical Measure:**\\nAllocation = (Product units / Total units) × Joint cost\\n\\n**2. Sales Value at Split-off:**\\nAllocation = (Product sales value / Total sales value) × Joint cost\\n\\n**3. Net Realizable Value (NRV):**\\nNRV = Final sales value - Separable costs\\nAllocation = (Product NRV / Total NRV) × Joint cost\\n\\n**Most theoretically sound:** NRV method",
-      "difficulty": "hard",
-      "subtopic": "Joint Costs",
-      "formula": "NRV Allocation = (Product NRV / Total NRV) × Joint Cost",
-      "tags": [
-        "joint costs",
-        "allocation",
-        "NRV"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma1-form-024",
@@ -4120,7 +4045,8 @@
         "cash budget",
         "budgeting",
         "cash flow"
-      ]
+      ],
+      "example": "Beginning cash $20K + Collections $150K - Disbursements $140K - Debt payment $15K = Ending cash $15K."
     },
     {
       "id": "cma1-form-026",
@@ -4241,7 +4167,8 @@
       "tags": [
         "master budget",
         "sequence"
-      ]
+      ],
+      "example": "Sales $1M → Production 10,000 units → DM purchases $200K → DL $300K → OH $150K → Cash budget → Pro forma statements."
     },
     {
       "id": "cma1-mnem-005",
@@ -4273,7 +4200,8 @@
       "mnemonic": "FIZZ-RAP",
       "tags": [
         "budgeting approaches"
-      ]
+      ],
+      "example": "Budgeted OH at 10,000 units: $80,000. At 12,000 actual: Flex budget = $72,000 fixed + ($0.80 × 12,000) = $81,600."
     },
     {
       "id": "cma1-mnem-007",
@@ -4289,7 +4217,8 @@
       "mnemonic": "FCIL - For Companies In Love",
       "tags": [
         "balanced scorecard"
-      ]
+      ],
+      "example": "Financial (ROI 15%), Customer (satisfaction 92%), Process (defect rate 0.5%), Learning (training hours 40)."
     },
     {
       "id": "cma1-mnem-008",
@@ -4305,7 +4234,8 @@
       "mnemonic": "CRIP",
       "tags": [
         "responsibility centers"
-      ]
+      ],
+      "example": "Cost center (manufacturing) controls costs only. Profit center (product line) controls revenue and costs."
     },
     {
       "id": "cma1-mnem-009",
@@ -4322,7 +4252,8 @@
       "tags": [
         "ROI",
         "residual income"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma1-mnem-010",
@@ -4338,7 +4269,8 @@
       "mnemonic": "PURE DADS",
       "tags": [
         "variances"
-      ]
+      ],
+      "example": "Sales variance: (12,000 - 10,000 units) × $50 price = $100,000 favorable volume variance."
     },
     {
       "id": "cma1-mnem-011",
@@ -4390,7 +4322,8 @@
       "tags": [
         "ABC",
         "activity-based costing"
-      ]
+      ],
+      "example": "Machine hours drive maintenance: $100,000 ÷ 10,000 hours = $10/hour. Product using 500 hours = $5,000."
     },
     {
       "id": "cma1-mnem-014",
@@ -4407,7 +4340,8 @@
       "tags": [
         "COSO",
         "internal control"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma1-mnem-015",
@@ -4474,7 +4408,8 @@
       "tags": [
         "regression",
         "statistics"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma1-mnem-021",
@@ -4491,7 +4426,8 @@
       "tags": [
         "overhead variances",
         "variance analysis"
-      ]
+      ],
+      "example": "Budget: Variable ($5 × 1,000) + Fixed $10,000 = $15,000. Actual $16,200. Variance = $1,200 U."
     },
     {
       "id": "cma1-mnem-022",
@@ -4501,7 +4437,7 @@
       "type": "mnemonic",
       "topic": "Cost Management",
       "front": "Mnemonic for the 5 steps in Theory of Constraints?",
-      "back": "**\"IESSS\"** - Identify, Exploit, Subordinate, Elevate, Start again\\n\\n1. **I**dentify the constraint (bottleneck)\\n2. **E**xploit it (maximize usage)\\n3. **S**ubordinate everything else to it\\n4. **E**levate the constraint (add capacity)\\n5. **S**tart again (find new constraint)\\n\\n**Alternative:** \"I Examine Slowly, Spending Eventually\"\\n\\n**Key:** Don\\",
+      "back": "**\"IESSS\"** - Identify, Exploit, Subordinate, Elevate, Start again\\n\\n1. **I**dentify the constraint (bottleneck)\\n2. **E**xploit it (maximize usage)\\n3. **S**ubordinate everything else to it\\n4. **E**levate the constraint (add capacity)\\n5. **S**tart again (find new constraint)\\n\\n**Alternative:** \"I Examine Slowly, Spending Eventually\"\\n\\n**Key:** Don",
       "difficulty": "medium",
       "subtopic": "Theory of Constraints",
       "mnemonic": "IESSS - Identify, Exploit, Subordinate, Elevate, Start again",
@@ -4527,7 +4463,8 @@
         "SOX",
         "internal controls",
         "compliance"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma2-adv-001",
@@ -4563,7 +4500,8 @@
         "DuPont",
         "ROE",
         "decomposition"
-      ]
+      ],
+      "example": "Operating income $150K, revenue $1M. Operating margin = 15%. Indicates operational efficiency."
     },
     {
       "id": "cma2-adv-003",
@@ -4580,7 +4518,8 @@
         "real options",
         "strategic NPV",
         "flexibility"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma2-adv-004",
@@ -4599,7 +4538,8 @@
         "throughput",
         "bottleneck",
         "constraint"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-adv-005",
@@ -4645,7 +4585,7 @@
       "type": "formula",
       "topic": "Decision Analysis",
       "front": "General transfer pricing rule for goal congruence?",
-      "back": "**Minimum TP = Variable cost per unit + Opportunity cost per unit**\\n\\n**If selling division has excess capacity:** TP ≥ Variable cost (opportunity cost = $0)\\n\\n**If selling division is at full capacity:** TP ≥ Variable cost + Lost CM per unit\\n\\n**Maximum TP = Market price** (buying division won\\",
+      "back": "**Minimum TP = Variable cost per unit + Opportunity cost per unit**\\n\\n**If selling division has excess capacity:** TP ≥ Variable cost (opportunity cost = $0)\\n\\n**If selling division is at full capacity:** TP ≥ Variable cost + Lost CM per unit\\n\\n**Maximum TP = Market price** (buying division won",
       "difficulty": "hard",
       "subtopic": "Transfer Pricing Rule",
       "formula": "Min TP = VC/unit + Opportunity Cost/unit",
@@ -4653,7 +4593,8 @@
         "transfer pricing",
         "opportunity cost",
         "goal congruence"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-adv-008",
@@ -4681,7 +4622,7 @@
       "type": "concept",
       "topic": "Ethics",
       "front": "IMA\\",
-      "back": "**Steps (in order):**\\n1. Follow organization\\",
+      "back": "**Steps (in order):**\\n1. Follow organization",
       "difficulty": "medium",
       "subtopic": "IMA Conflict Resolution",
       "tags": [
@@ -4895,7 +4836,8 @@
       "tags": [
         "keep or drop",
         "segment"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma2-b2-024",
@@ -4911,7 +4853,8 @@
       "tags": [
         "sell or process",
         "joint costs"
-      ]
+      ],
+      "example": "Split-off value $10. Process further: additional cost $3, sells for $15. Process: incremental profit $2."
     },
     {
       "id": "cma2-b2-025",
@@ -4945,7 +4888,8 @@
       "tags": [
         "pricing",
         "strategy"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-b2-028",
@@ -4962,7 +4906,8 @@
       "tags": [
         "pricing",
         "cost-plus"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-b2-029",
@@ -5043,7 +4988,8 @@
       "tags": [
         "capital rationing",
         "NPV"
-      ]
+      ],
+      "example": "PV of inflows $150K, investment $100K. PI = 1.5. Greater than 1.0, accept project."
     },
     {
       "id": "cma2-b2-038",
@@ -5130,23 +5076,6 @@
       ]
     },
     {
-      "id": "cma2-b2-056",
-      "courseId": "cma",
-      "section": "CMA2",
-      "blueprintArea": "CMA2-D",
-      "type": "definition",
-      "topic": "Strategy",
-      "front": "What is SWOT Analysis?",
-      "back": "**Internal Factors:**\\n• **S**trengths - Competitive advantages\\n• **W**eaknesses - Areas for improvement\\n\\n**External Factors:**\\n• **O**pportunities - Market potential\\n• **T**hreats - Competitive/market risks\\n\\n**Use:** Strategic planning, competitive analysis\\n\\nMatch strengths to opportunities; address weaknesses/threats",
-      "difficulty": "easy",
-      "subtopic": "SWOT Analysis",
-      "mnemonic": "SWOT",
-      "tags": [
-        "SWOT",
-        "strategic analysis"
-      ]
-    },
-    {
       "id": "cma2-b2-057",
       "courseId": "cma",
       "section": "CMA2",
@@ -5164,23 +5093,6 @@
       ]
     },
     {
-      "id": "cma2-b2-058",
-      "courseId": "cma",
-      "section": "CMA2",
-      "blueprintArea": "CMA2-D",
-      "type": "definition",
-      "topic": "Strategy",
-      "front": "What are Porter\\",
-      "back": "**1. Cost Leadership**\\nLowest cost producer; broad market\\n\\n**2. Differentiation**\\nUnique products/services; premium pricing\\n\\n**3. Focus (Cost or Differentiation)**\\nNarrow market segment\\n\\n**Stuck in the Middle:**\\nNo clear strategy = Below-average returns\\n\\nChoose ONE primary strategy",
-      "difficulty": "medium",
-      "subtopic": "Generic Strategies",
-      "tags": [
-        "strategy",
-        "Porter",
-        "differentiation"
-      ]
-    },
-    {
       "id": "cma2-b2-059",
       "courseId": "cma",
       "section": "CMA2",
@@ -5194,7 +5106,8 @@
       "tags": [
         "scenario planning",
         "risk"
-      ]
+      ],
+      "example": "Identify: currency exposure. Assess: $2M potential loss. Respond: hedge with forward contracts."
     },
     {
       "id": "cma2-b2-060",
@@ -5265,7 +5178,8 @@
         "DuPont",
         "profitability",
         "decomposition"
-      ]
+      ],
+      "example": "Operating income $150K, revenue $1M. Operating margin = 15%. Indicates operational efficiency."
     },
     {
       "id": "cma2-b3-005",
@@ -5381,7 +5295,7 @@
       "type": "definition",
       "topic": "Corporate Finance",
       "front": "What are the three main dividend theories?",
-      "back": "**1. Dividend Irrelevance (M&M):**\\n- Dividends don\\",
+      "back": "**1. Dividend Irrelevance (M&M):**\\n- Dividends don",
       "difficulty": "medium",
       "subtopic": "Dividend Policy",
       "tags": [
@@ -5398,7 +5312,7 @@
       "type": "formula",
       "topic": "Corporate Finance",
       "front": "What is the Gordon Growth Model (Constant Dividend Growth)?",
-      "back": "P0 = D1 / (ke - g)\\n\\nWhere:\\n- P0 = Current stock price\\n- D1 = Next period\\",
+      "back": "P0 = D1 / (ke - g)\\n\\nWhere:\\n- P0 = Current stock price\\n- D1 = Next period",
       "difficulty": "medium",
       "subtopic": "Valuation",
       "formula": "P0 = D1 / (r - g)",
@@ -5441,7 +5355,8 @@
         "credit policy",
         "accounts receivable",
         "working capital"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-b3-017",
@@ -5458,7 +5373,8 @@
         "relevant costs",
         "opportunity cost",
         "decision analysis"
-      ]
+      ],
+      "example": "Use machine for Product A (profit $100K) or B ($120K). Opportunity cost of choosing A = $120K foregone."
     },
     {
       "id": "cma2-b3-019",
@@ -5476,7 +5392,8 @@
         "make or buy",
         "outsourcing",
         "relevant costs"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma2-b3-020",
@@ -5486,7 +5403,7 @@
       "type": "definition",
       "topic": "Decision Analysis",
       "front": "What is the Theory of Constraints (TOC) \"Five Focusing Steps\"?",
-      "back": "**IDENTIFY → EXPLOIT → SUBORDINATE → ELEVATE → REPEAT**\\n\\n1. **IDENTIFY** the system\\",
+      "back": "**IDENTIFY → EXPLOIT → SUBORDINATE → ELEVATE → REPEAT**\\n\\n1. **IDENTIFY** the system",
       "difficulty": "medium",
       "subtopic": "Constraints",
       "mnemonic": "I.E.S.E.R.",
@@ -5512,7 +5429,8 @@
         "product mix",
         "constraints",
         "optimization"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-b3-023",
@@ -5530,7 +5448,8 @@
         "transfer pricing",
         "divisional",
         "goal congruence"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-b3-024",
@@ -5548,7 +5467,8 @@
         "special order",
         "pricing",
         "relevant costs"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-b3-025",
@@ -5576,7 +5496,7 @@
       "type": "formula",
       "topic": "Risk Management",
       "front": "What is Value at Risk (VaR) and how is it interpreted?",
-      "back": "**Definition:** Maximum expected loss over a given time period at a given confidence level\\n\\n**Statement:** \"95% VaR of $1M over 1 day\" means:\\n- 95% confidence we won\\",
+      "back": "**Definition:** Maximum expected loss over a given time period at a given confidence level\\n\\n**Statement:** \"95% VaR of $1M over 1 day\" means:\\n- 95% confidence we won",
       "difficulty": "hard",
       "subtopic": "Financial Risk",
       "formula": "VaR = V × σ × z × √T",
@@ -5612,7 +5532,7 @@
       "type": "formula",
       "topic": "Risk Management",
       "front": "What is the formula for Interest Rate Parity (IRP)?",
-      "back": "Forward Rate = Spot Rate × [(1 + rd) / (1 + rf)]\\n\\nOr:\\nF/S = (1 + rd) / (1 + rf)\\n\\nWhere:\\n- F = Forward exchange rate\\n- S = Spot exchange rate\\n- rd = Domestic interest rate\\n- rf = Foreign interest rate\\n\\n**Interpretation:** The forward rate reflects the interest rate differential between two countries\\n\\n**If IRP doesn\\",
+      "back": "Forward Rate = Spot Rate × [(1 + rd) / (1 + rf)]\\n\\nOr:\\nF/S = (1 + rd) / (1 + rf)\\n\\nWhere:\\n- F = Forward exchange rate\\n- S = Spot exchange rate\\n- rd = Domestic interest rate\\n- rf = Foreign interest rate\\n\\n**Interpretation:** The forward rate reflects the interest rate differential between two countries\\n\\n**If IRP doesn",
       "difficulty": "hard",
       "subtopic": "Currency Risk",
       "formula": "F/S = (1 + rd) / (1 + rf)",
@@ -5655,7 +5575,8 @@
         "capital budgeting",
         "MIRR",
         "IRR"
-      ]
+      ],
+      "example": "Investment $100K returns $30K annually for 5 years. IRR ≈ 15%. If hurdle rate 12%, accept project."
     },
     {
       "id": "cma2-b3-033",
@@ -5690,7 +5611,8 @@
         "real options",
         "flexibility",
         "capital budgeting"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma2-b3-035",
@@ -5707,7 +5629,8 @@
         "sensitivity",
         "risk analysis",
         "capital budgeting"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma2-b3-036",
@@ -5744,7 +5667,8 @@
         "standards",
         "CCIC"
       ],
-      "reference": "IMA Statement of Ethical Professional Practice"
+      "reference": "IMA Statement of Ethical Professional Practice",
+      "example": "CMA maintains 30 CPE hours annually. If asked to perform work outside expertise, seek assistance or decline."
     },
     {
       "id": "cma2-b3-038",
@@ -5762,7 +5686,8 @@
         "conflict resolution",
         "IMA"
       ],
-      "reference": "IMA Ethics Guidelines"
+      "reference": "IMA Ethics Guidelines",
+      "example": "Management accountant discovers fraud. Follow protocol: supervisor → audit committee → legal counsel → resign if unresolved."
     },
     {
       "id": "cma2-b3-040",
@@ -5780,7 +5705,8 @@
         "governance",
         "SOX"
       ],
-      "reference": "SOX Section 301"
+      "reference": "SOX Section 301",
+      "example": "Identify: currency exposure. Assess: $2M potential loss. Respond: hedge with forward contracts."
     },
     {
       "id": "cma2-b3-041",
@@ -5790,7 +5716,7 @@
       "type": "definition",
       "topic": "Professional Ethics",
       "front": "What is the Fraud Triangle?",
-      "back": "**Three elements that must be present for fraud:**\\n\\n**1. PRESSURE (Incentive):**\\n- Financial pressure (debt, lifestyle)\\n- Performance pressure (bonus targets)\\n- Personal problems\\n\\n**2. OPPORTUNITY:**\\n- Weak internal controls\\n- Poor segregation of duties\\n- Lack of oversight\\n\\n**3. RATIONALIZATION:**\\n- \"I\\",
+      "back": "**Three elements that must be present for fraud:**\\n\\n**1. PRESSURE (Incentive):**\\n- Financial pressure (debt, lifestyle)\\n- Performance pressure (bonus targets)\\n- Personal problems\\n\\n**2. OPPORTUNITY:**\\n- Weak internal controls\\n- Poor segregation of duties\\n- Lack of oversight\\n\\n**3. RATIONALIZATION:**\\n- \"I",
       "difficulty": "easy",
       "subtopic": "Fraud",
       "mnemonic": "POR (Pressure, Opportunity, Rationalization)",
@@ -5798,7 +5724,8 @@
         "fraud",
         "fraud triangle",
         "internal controls"
-      ]
+      ],
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma2-b3-042",
@@ -5819,25 +5746,6 @@
       "reference": "ACFE Report to the Nations"
     },
     {
-      "id": "cma2-b3-043",
-      "courseId": "cma",
-      "section": "CMA2",
-      "blueprintArea": "CMA2-F",
-      "type": "definition",
-      "topic": "Professional Ethics",
-      "front": "What are the five components of the COSO Internal Control Framework?",
-      "back": "**CRIME or CE-RIC-MA:**\\n\\n**1. CONTROL ENVIRONMENT:**\\n- Tone at the top\\n- Organizational structure\\n- HR policies\\n\\n**2. RISK ASSESSMENT:**\\n- Identify and analyze risks\\n- Consider fraud risk\\n\\n**3. CONTROL ACTIVITIES:**\\n- Policies and procedures\\n- Segregation of duties\\n- IT controls\\n\\n**4. INFORMATION & COMMUNICATION:**\\n- Quality information\\n- Internal and external communication\\n\\n**5. MONITORING:**\\n- Ongoing evaluations\\n- Separate evaluations\\n- Report deficiencies\\n\\n**17 Principles underlie these 5 components**",
-      "difficulty": "medium",
-      "subtopic": "Internal Control",
-      "mnemonic": "CRIME (Control environment, Risk assessment, Information, Monitoring, control Environment activities)",
-      "tags": [
-        "COSO",
-        "internal control",
-        "framework"
-      ],
-      "reference": "COSO Internal Control Framework 2013"
-    },
-    {
       "id": "cma2-b3-044",
       "courseId": "cma",
       "section": "CMA2",
@@ -5845,7 +5753,7 @@
       "type": "definition",
       "topic": "Professional Ethics",
       "front": "What are the key provisions of SOX Section 404?",
-      "back": "**SOX Section 404: Internal Control Assessment**\\n\\n**404(a) - Management Assessment:**\\n- Management must assess and report on ICFR effectiveness\\n- Include in annual report\\n- Applies to all public companies\\n\\n**404(b) - Auditor Attestation:**\\n- External auditor must attest to management\\",
+      "back": "**SOX Section 404: Internal Control Assessment**\\n\\n**404(a) - Management Assessment:**\\n- Management must assess and report on ICFR effectiveness\\n- Include in annual report\\n- Applies to all public companies\\n\\n**404(b) - Auditor Attestation:**\\n- External auditor must attest to management",
       "difficulty": "hard",
       "subtopic": "SOX",
       "tags": [
@@ -5853,7 +5761,8 @@
         "internal control",
         "ICFR"
       ],
-      "reference": "SOX Section 404"
+      "reference": "SOX Section 404",
+      "example": "Segregation: requester ≠ approver ≠ receiver. Reconciliation: monthly bank recs. Authorization: spending limits."
     },
     {
       "id": "cma2-b3-045",
@@ -5871,7 +5780,8 @@
         "leverage",
         "DOL",
         "DFL"
-      ]
+      ],
+      "example": "Product sells for $50, variable costs $30. CM = $20/unit. CM ratio = 40%."
     },
     {
       "id": "cma2-b3-046",
@@ -5889,7 +5799,8 @@
         "EVA",
         "value creation",
         "performance"
-      ]
+      ],
+      "example": "Division income $200,000, assets $1,000,000. ROI = 20%. Corporate target 15% = division exceeds hurdle."
     },
     {
       "id": "cma2-b3-047",
@@ -5959,7 +5870,8 @@
         "margins",
         "profitability",
         "analysis"
-      ]
+      ],
+      "example": "Revenue $1M, COGS $600K. Gross margin = $400K (40%). Industry average 35% = company outperforms."
     },
     {
       "id": "cma2-b3-052",
@@ -5976,7 +5888,8 @@
         "M&A",
         "synergies",
         "acquisition"
-      ]
+      ],
+      "example": "Debt 40% at 6%, equity 60% at 12%. WACC = (0.40 × 6% × 0.75 tax shield) + (0.60 × 12%) = 9%."
     },
     {
       "id": "cma2-b3-053",
@@ -6021,7 +5934,7 @@
       "type": "definition",
       "topic": "Risk Management",
       "front": "What are the 5 C\\",
-      "back": "**1. CHARACTER:**\\n- Borrower\\",
+      "back": "**1. CHARACTER:**\\n- Borrower",
       "difficulty": "easy",
       "subtopic": "Credit Risk",
       "mnemonic": "5 C\\",
@@ -6047,7 +5960,8 @@
         "breakeven",
         "capital budgeting",
         "project analysis"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma2-b3-057",
@@ -6074,7 +5988,7 @@
       "type": "formula",
       "topic": "Corporate Finance",
       "front": "How do you calculate cost of equity using the Bond Yield Plus Risk Premium approach?",
-      "back": "ke = Yield on Company\\",
+      "back": "ke = Yield on Company",
       "difficulty": "medium",
       "subtopic": "Cost of Equity",
       "formula": "ke = kd + Risk Premium (typically 3-5%)",
@@ -6203,7 +6117,8 @@
       "tags": [
         "liquidity",
         "ratios"
-      ]
+      ],
+      "example": "Current assets $500K, current liabilities $200K. Current ratio = 2.5. Above 2.0 indicates good liquidity."
     },
     {
       "id": "cma2-def-002",
@@ -6253,7 +6168,8 @@
         "DuPont",
         "ROE",
         "financial analysis"
-      ]
+      ],
+      "example": "Operating income $150K, revenue $1M. Operating margin = 15%. Indicates operational efficiency."
     },
     {
       "id": "cma2-def-005",
@@ -6269,7 +6185,8 @@
       "tags": [
         "capital structure",
         "financing"
-      ]
+      ],
+      "example": "Debt 40% at 6%, equity 60% at 12%. WACC = (0.40 × 6% × 0.75 tax shield) + (0.60 × 12%) = 9%."
     },
     {
       "id": "cma2-def-006",
@@ -6285,7 +6202,8 @@
       "tags": [
         "WACC",
         "cost of capital"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma2-def-007",
@@ -6311,7 +6229,7 @@
       "type": "definition",
       "topic": "Corporate Finance",
       "front": "What are the main dividend policy theories?",
-      "back": "**1. Dividend Irrelevance (M&M):**\\nDividends don\\",
+      "back": "**1. Dividend Irrelevance (M&M):**\\nDividends don",
       "difficulty": "hard",
       "subtopic": "Dividend Policy",
       "tags": [
@@ -6333,7 +6251,8 @@
       "tags": [
         "relevant costs",
         "decision making"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma2-def-010",
@@ -6349,7 +6268,8 @@
       "tags": [
         "CVP",
         "break-even"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-def-011",
@@ -6365,7 +6285,8 @@
       "tags": [
         "special order",
         "decision analysis"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-def-012",
@@ -6381,7 +6302,8 @@
       "tags": [
         "make or buy",
         "outsourcing"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma2-def-013",
@@ -6391,7 +6313,7 @@
       "type": "definition",
       "topic": "Decision Analysis",
       "front": "What is the Theory of Constraints (TOC)?",
-      "back": "**Theory of Constraints:** Focus on identifying and managing bottlenecks\\n\\n**5 Steps:**\\n1. IDENTIFY the constraint\\n2. EXPLOIT the constraint (maximize throughput)\\n3. SUBORDINATE other activities to constraint\\n4. ELEVATE the constraint (increase capacity)\\n5. REPEAT (don\\",
+      "back": "**Theory of Constraints:** Focus on identifying and managing bottlenecks\\n\\n**5 Steps:**\\n1. IDENTIFY the constraint\\n2. EXPLOIT the constraint (maximize throughput)\\n3. SUBORDINATE other activities to constraint\\n4. ELEVATE the constraint (increase capacity)\\n5. REPEAT (don",
       "difficulty": "hard",
       "subtopic": "Constraints",
       "tags": [
@@ -6440,7 +6362,7 @@
       "type": "definition",
       "topic": "Risk Management",
       "front": "What is Value at Risk (VaR)?",
-      "back": "**Value at Risk (VaR):** Maximum expected loss over a time period at a given confidence level\\n\\n**Example:** \"1-day 95% VaR of $1 million\"\\n= 95% confident won\\",
+      "back": "**Value at Risk (VaR):** Maximum expected loss over a time period at a given confidence level\\n\\n**Example:** \"1-day 95% VaR of $1 million\"\\n= 95% confident won",
       "difficulty": "hard",
       "subtopic": "VaR",
       "tags": [
@@ -6463,7 +6385,8 @@
         "capital budgeting",
         "NPV",
         "IRR"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma2-def-018",
@@ -6496,7 +6419,8 @@
       "tags": [
         "real options",
         "flexibility"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma2-def-020",
@@ -6506,7 +6430,7 @@
       "type": "definition",
       "topic": "Professional Ethics",
       "front": "What are the four Standards of Ethical Conduct from IMA?",
-      "back": "**1. Competence:**\\n• Maintain professional expertise\\n• Perform duties according to laws and standards\\n• Provide accurate information\\n\\n**2. Confidentiality:**\\n• Keep information confidential\\n• Don\\",
+      "back": "**1. Competence:**\\n• Maintain professional expertise\\n• Perform duties according to laws and standards\\n• Provide accurate information\\n\\n**2. Confidentiality:**\\n• Keep information confidential\\n• Don",
       "difficulty": "easy",
       "subtopic": "IMA Statement",
       "mnemonic": "CCIC - Competence, Confidentiality, Integrity, Credibility",
@@ -6514,7 +6438,8 @@
         "IMA ethics",
         "professional standards"
       ],
-      "reference": "IMA Statement of Ethical Professional Practice"
+      "reference": "IMA Statement of Ethical Professional Practice",
+      "example": "CMA maintains 30 CPE hours annually. If asked to perform work outside expertise, seek assistance or decline."
     },
     {
       "id": "cma2-def-021",
@@ -6524,14 +6449,15 @@
       "type": "definition",
       "topic": "Professional Ethics",
       "front": "What are the steps to resolve an ethical conflict?",
-      "back": "**IMA Resolution Steps:**\\n\\n1. **Discuss** with immediate supervisor (unless involved)\\n\\n2. **Clarify** ethical issues through confidential discussion with IMA Ethics Counselor\\n\\n3. **Consult** your organization\\",
+      "back": "**IMA Resolution Steps:**\\n\\n1. **Discuss** with immediate supervisor (unless involved)\\n\\n2. **Clarify** ethical issues through confidential discussion with IMA Ethics Counselor\\n\\n3. **Consult** your organization",
       "difficulty": "medium",
       "subtopic": "Ethical Conflict Resolution",
       "tags": [
         "ethics",
         "conflict resolution"
       ],
-      "reference": "IMA Statement of Ethical Professional Practice"
+      "reference": "IMA Statement of Ethical Professional Practice",
+      "example": "Management accountant discovers fraud. Follow protocol: supervisor → audit committee → legal counsel → resign if unresolved."
     },
     {
       "id": "cma2-def-022",
@@ -6547,7 +6473,8 @@
       "tags": [
         "governance",
         "board"
-      ]
+      ],
+      "example": "Identify: currency exposure. Assess: $2M potential loss. Respond: hedge with forward contracts."
     },
     {
       "id": "cma2-def-023",
@@ -6565,41 +6492,6 @@
         "M&M",
         "capital structure",
         "leverage"
-      ]
-    },
-    {
-      "id": "cma2-def-028",
-      "courseId": "cma",
-      "section": "CMA2",
-      "blueprintArea": "CMA2-C",
-      "type": "definition",
-      "topic": "Decision Analysis",
-      "front": "What is sensitivity analysis in capital budgeting?",
-      "back": "**Sensitivity Analysis:** Examines how NPV changes when ONE input variable changes while others remain constant.\\n\\n**Process:**\\n1. Identify key variables (price, volume, cost)\\n2. Calculate base case NPV\\n3. Change each variable individually\\n4. Measure impact on NPV\\n\\n**Output:** Tornado diagram showing which variables have most impact\\n\\n**Limitations:**\\n• One variable at a time\\n• Doesn\\",
-      "difficulty": "medium",
-      "subtopic": "Sensitivity Analysis",
-      "tags": [
-        "sensitivity",
-        "capital budgeting",
-        "risk"
-      ]
-    },
-    {
-      "id": "cma2-def-030",
-      "courseId": "cma",
-      "section": "CMA2",
-      "blueprintArea": "CMA2-C",
-      "type": "definition",
-      "topic": "Investment Decisions",
-      "front": "What is the Modified Internal Rate of Return (MIRR)?",
-      "back": "**MIRR:** Addresses IRR problems by assuming reinvestment at cost of capital.\\n\\n**Calculation:**\\n1. Find terminal value of cash inflows (at WACC)\\n2. Find PV of cash outflows\\n3. Solve for rate that equates them\\n\\nMIRR = (Terminal Value / PV of costs)^(1/n) - 1\\n\\n**Advantages over IRR:**\\n• Realistic reinvestment assumption\\n• Single solution (no multiple IRRs)\\n• Better for mutually exclusive projects",
-      "difficulty": "hard",
-      "subtopic": "MIRR",
-      "formula": "MIRR = (FV inflows / PV outflows)^(1/n) - 1",
-      "tags": [
-        "MIRR",
-        "IRR",
-        "capital budgeting"
       ]
     },
     {
@@ -6672,7 +6564,8 @@
         "activity",
         "turnover",
         "ratios"
-      ]
+      ],
+      "example": "COGS $600K, average inventory $100K. Turnover = 6 times. Days in inventory = 61 days."
     },
     {
       "id": "cma2-form-003",
@@ -6836,24 +6729,6 @@
       "tags": [
         "financial leverage",
         "risk"
-      ]
-    },
-    {
-      "id": "cma2-form-012",
-      "courseId": "cma",
-      "section": "CMA2",
-      "blueprintArea": "CMA2-C",
-      "type": "formula",
-      "topic": "Decision Analysis",
-      "front": "How do you calculate the Margin of Safety?",
-      "back": "**Margin of Safety:**\\n\\nMOS (units) = Actual Sales - Break-even Sales\\n\\nMOS (dollars) = Actual Sales$ - Break-even Sales$\\n\\nMOS (percentage) = MOS$ / Actual Sales$\\n\\n**Interpretation:**\\n• How far sales can drop before losses occur\\n• Higher MOS = Lower risk\\n• Measures \"buffer\" against downturns",
-      "difficulty": "easy",
-      "subtopic": "Margin of Safety",
-      "example": "Actual sales: $400K, BE: $250K\\nMOS = $400K - $250K = $150K\\nMOS% = $150K/$400K = 37.5%",
-      "formula": "MOS = Actual - BE; MOS% = MOS/Actual",
-      "tags": [
-        "margin of safety",
-        "CVP"
       ]
     },
     {
@@ -7122,7 +6997,7 @@
       "type": "mnemonic",
       "topic": "Financial Analysis",
       "front": "Mnemonic for the 5 ratio categories?",
-      "back": "**\"LAPSE\"**\\n\\n**L**iquidity - Can we pay short-term debts? (Current, Quick)\\n**A**ctivity - How efficiently do we use assets? (Turnover ratios)\\n**P**rofitability - Are we making money? (Margins, ROA, ROE)\\n**S**olvency - Can we pay long-term debts? (D/E, TIE)\\n**E**arnings - What\\",
+      "back": "**\"LAPSE\"**\\n\\n**L**iquidity - Can we pay short-term debts? (Current, Quick)\\n**A**ctivity - How efficiently do we use assets? (Turnover ratios)\\n**P**rofitability - Are we making money? (Margins, ROA, ROE)\\n**S**olvency - Can we pay long-term debts? (D/E, TIE)\\n**E**arnings - What",
       "difficulty": "easy",
       "subtopic": "Ratio Categories",
       "mnemonic": "LAPSE",
@@ -7207,7 +7082,7 @@
       "type": "mnemonic",
       "topic": "Corporate Finance",
       "front": "Mnemonic for dividend policy theories?",
-      "back": "**\"Birds In The Middle Sing Residuals\"**\\n\\n**B**ird-in-hand - Investors prefer current dividends\\n**I**rrelevance (M&M) - Dividends don\\",
+      "back": "**\"Birds In The Middle Sing Residuals\"**\\n\\n**B**ird-in-hand - Investors prefer current dividends\\n**I**rrelevance (M&M) - Dividends don",
       "difficulty": "medium",
       "subtopic": "Dividend Theories",
       "mnemonic": "Birds In The Middle Sing Residuals (BITSR)",
@@ -7231,7 +7106,8 @@
       "tags": [
         "relevant costs",
         "decision making"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma2-mnem-008",
@@ -7248,7 +7124,8 @@
       "tags": [
         "break-even",
         "CVP"
-      ]
+      ],
+      "example": "Direct materials $5/unit, direct labor $8/unit. Produce 10,000 units: total variable costs = $130,000."
     },
     {
       "id": "cma2-mnem-009",
@@ -7258,7 +7135,7 @@
       "type": "mnemonic",
       "topic": "Decision Analysis",
       "front": "Mnemonic for the 5 Steps of Theory of Constraints?",
-      "back": "**\"IESRE\"** or **\"I SEE Revenue Explode\"**\\n\\n1. **I**dentify the constraint (bottleneck)\\n2. **E**xploit the constraint (maximize it)\\n3. **S**ubordinate everything to the constraint\\n4. **E**levate the constraint (add capacity)\\n5. **R**epeat - don\\",
+      "back": "**\"IESRE\"** or **\"I SEE Revenue Explode\"**\\n\\n1. **I**dentify the constraint (bottleneck)\\n2. **E**xploit the constraint (maximize it)\\n3. **S**ubordinate everything to the constraint\\n4. **E**levate the constraint (add capacity)\\n5. **R**epeat - don",
       "difficulty": "medium",
       "subtopic": "Theory of Constraints",
       "mnemonic": "IESRE - Identify, Exploit, Subordinate, Elevate, Repeat",
@@ -7282,7 +7159,8 @@
       "tags": [
         "make or buy",
         "outsourcing"
-      ]
+      ],
+      "example": "Factory rent $50,000/year regardless of production. At 10,000 units: $5/unit fixed cost. At 20,000 units: $2.50/unit."
     },
     {
       "id": "cma2-mnem-011",
@@ -7292,7 +7170,7 @@
       "type": "mnemonic",
       "topic": "Risk Management",
       "front": "Mnemonic for types of financial risk?",
-      "back": "**\"MCLOS\"** - Market, Credit, Liquidity, Operational, Strategic\\n\\n**M**arket risk - Price changes (equity, interest, FX, commodity)\\n**C**redit risk - Counterparty default\\n**L**iquidity risk - Can\\",
+      "back": "**\"MCLOS\"** - Market, Credit, Liquidity, Operational, Strategic\\n\\n**M**arket risk - Price changes (equity, interest, FX, commodity)\\n**C**redit risk - Counterparty default\\n**L**iquidity risk - Can",
       "difficulty": "medium",
       "subtopic": "Risk Types",
       "mnemonic": "MCLOS",
@@ -7348,7 +7226,8 @@
       "mnemonic": "NIPPP - NPV, IRR, Payback, PI, DP",
       "tags": [
         "capital budgeting"
-      ]
+      ],
+      "example": "Project requires $500K investment, generates $150K annual cash flow for 5 years. Payback = 3.33 years."
     },
     {
       "id": "cma2-mnem-015",
@@ -7393,14 +7272,15 @@
       "type": "mnemonic",
       "topic": "Professional Ethics",
       "front": "Mnemonic for IMA Standards of Ethical Conduct?",
-      "back": "**\"CCIC\"** - Competence, Confidentiality, Integrity, Credibility\\n\\n**C**ompetence - Maintain expertise, perform professionally\\n**C**onfidentiality - Protect information, no personal gain\\n**I**ntegrity - Avoid conflicts, don\\",
+      "back": "**\"CCIC\"** - Competence, Confidentiality, Integrity, Credibility\\n\\n**C**ompetence - Maintain expertise, perform professionally\\n**C**onfidentiality - Protect information, no personal gain\\n**I**ntegrity - Avoid conflicts, don",
       "difficulty": "easy",
       "subtopic": "IMA Standards",
       "mnemonic": "CCIC",
       "tags": [
         "IMA ethics"
       ],
-      "reference": "IMA Statement of Ethical Professional Practice"
+      "reference": "IMA Statement of Ethical Professional Practice",
+      "example": "CMA maintains 30 CPE hours annually. If asked to perform work outside expertise, seek assistance or decline."
     },
     {
       "id": "cma2-mnem-018",
@@ -7410,14 +7290,15 @@
       "type": "mnemonic",
       "topic": "Professional Ethics",
       "front": "Mnemonic for IMA ethical conflict resolution steps?",
-      "back": "**\"DISCUSS, CLARIFY, CONSULT, CONSIDER, (resign if needed)\"**\\n\\n1. **D**iscuss with immediate supervisor (if not involved)\\n2. **C**larify through IMA Ethics Counselor (confidential)\\n3. **C**onsult organization\\",
+      "back": "**\"DISCUSS, CLARIFY, CONSULT, CONSIDER, (resign if needed)\"**\\n\\n1. **D**iscuss with immediate supervisor (if not involved)\\n2. **C**larify through IMA Ethics Counselor (confidential)\\n3. **C**onsult organization",
       "difficulty": "medium",
       "subtopic": "Ethics Resolution",
       "mnemonic": "DCCCR - Discuss, Clarify, Consult, Consider, Resign if needed",
       "tags": [
         "ethics resolution"
       ],
-      "reference": "IMA Statement of Ethical Professional Practice"
+      "reference": "IMA Statement of Ethical Professional Practice",
+      "example": "Management accountant discovers fraud. Follow protocol: supervisor → audit committee → legal counsel → resign if unresolved."
     },
     {
       "id": "cma2-mnem-019",
@@ -7427,14 +7308,15 @@
       "type": "mnemonic",
       "topic": "Professional Ethics",
       "front": "Mnemonic for the Fraud Triangle?",
-      "back": "**\"POR\"** or **\"PIR\"** - Pressure, Opportunity, Rationalization\\n\\n**P**ressure (Incentive/Motivation)\\n• Financial problems, greed, targets\\n\\n**O**pportunity\\n• Weak controls, access, override authority\\n\\n**R**ationalization\\n• \"Everyone does it,\" \"I\\",
+      "back": "**\"POR\"** or **\"PIR\"** - Pressure, Opportunity, Rationalization\\n\\n**P**ressure (Incentive/Motivation)\\n• Financial problems, greed, targets\\n\\n**O**pportunity\\n• Weak controls, access, override authority\\n\\n**R**ationalization\\n• \"Everyone does it,\" \"I",
       "difficulty": "easy",
       "subtopic": "Fraud Triangle",
       "mnemonic": "POR - Pressure, Opportunity, Rationalization",
       "tags": [
         "fraud",
         "ethics"
-      ]
+      ],
+      "example": "CFO diverted funds: Opportunity (access to accounts), Rationalization (underpaid), Pressure (gambling debt)."
     },
     {
       "id": "cma2-mnem-021",
@@ -7451,7 +7333,8 @@
       "tags": [
         "liquidity ratios",
         "financial analysis"
-      ]
+      ],
+      "example": "Current assets $500K, current liabilities $200K. Current ratio = 2.5. Above 2.0 indicates good liquidity."
     },
     {
       "id": "cma2-mnem-022",

@@ -1,0 +1,1635 @@
+[
+  {
+    "id": "CIA2-I-001",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Planning the Internal Audit Activity",
+    "description": "Understand how to develop risk-based audit plans and manage resources",
+    "order": 1,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Audit planning",
+      "Risk-based planning",
+      "Annual audit plan",
+      "Standard 2010"
+    ],
+    "blueprintArea": "CIA2-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The annual audit plan determines WHERE internal audit focuses resources. A risk-based plan ensures limited audit resources address the most significant risks. This is fundamental CAE responsibility!"
+        },
+        {
+          "title": "Risk-Based Audit Planning",
+          "type": "text",
+          "content": "**Standard 2010:**\n\nThe CAE must establish a risk-based plan to determine the priorities of the internal audit activity, consistent with the organization's goals.\n\n**Key elements:**\n\u2022 Aligned with organizational strategy\n\u2022 Based on risk assessment\n\u2022 Considers input from senior management and Board\n\u2022 Reviewed and adjusted as needed"
+        },
+        {
+          "title": "Risk Assessment for Planning",
+          "type": "text",
+          "content": "**Standard 2010.A1:**\n\nThe internal audit activity's plan must be based on a documented risk assessment, undertaken at least annually.\n\n**Risk factors to consider:**\n\u2022 Impact (financial, reputational, operational)\n\u2022 Likelihood of occurrence\n\u2022 Velocity (speed of impact)\n\u2022 Time since last audit\n\u2022 Management concerns\n\u2022 Regulatory requirements\n\u2022 Strategic importance"
+        },
+        {
+          "title": "Developing the Audit Plan",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Activity",
+            "Output"
+          ],
+          "rows": [
+            [
+              "1",
+              "Update the audit universe",
+              "Complete list of auditable entities"
+            ],
+            [
+              "2",
+              "Perform risk assessment",
+              "Risk-ranked audit universe"
+            ],
+            [
+              "3",
+              "Determine available resources",
+              "Resource capacity analysis"
+            ],
+            [
+              "4",
+              "Prioritize and select audits",
+              "Draft audit plan"
+            ],
+            [
+              "5",
+              "Obtain input from management/Board",
+              "Refined plan"
+            ],
+            [
+              "6",
+              "Present to Board for approval",
+              "Approved annual audit plan"
+            ]
+          ]
+        },
+        {
+          "title": "The Audit Universe",
+          "type": "text",
+          "content": "**Definition:**\nAll possible auditable areas within the organization.\n\n**May include:**\n\u2022 Business units and locations\n\u2022 Processes and functions\n\u2022 Systems and applications\n\u2022 Projects and initiatives\n\u2022 Compliance areas\n\u2022 Third-party relationships\n\n**Best practice:**\n\u2022 Update at least annually\n\u2022 Consider organizational changes\n\u2022 Align with business structure"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Risk-Based Planning",
+          "type": "callout",
+          "content": "**\"DIAL\"** for prioritization:\n\n**D**irect risk factors (impact, likelihood)\n**I**nterval since last audit\n**A**udit resources available\n**L**egislative/regulatory requirements\n\n*Dial up the audits that matter most!*"
+        },
+        {
+          "title": "Communicating the Plan",
+          "type": "text",
+          "content": "**Standard 2020:**\n\nThe CAE must communicate the internal audit activity's plans and resource requirements to senior management and the Board for review and approval.\n\n**Also communicate:**\n\u2022 Significant interim changes\n\u2022 Impact of resource limitations\n\u2022 Any scope limitations\n\n**Board approval required:**\n\u2022 Annual audit plan\n\u2022 Significant plan changes\n\u2022 Resource requirements"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Audit plan must be risk-based and documented",
+            "Risk assessment required at least annually",
+            "Board approves the annual audit plan",
+            "Audit universe = all auditable entities",
+            "Consider: impact, likelihood, time since last audit, resources",
+            "Communicate resource limitations and changes to Board"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk-Based Audit Planning Knowledge Check",
+          "knowledgeCheck": {
+            "question": "According to Standard 2010, what is the CAE's primary responsibility when establishing the priorities of the internal audit activity?",
+            "options": [
+              "Ensuring all audit projects are completed within budget.",
+              "Establishing a risk-based plan aligned with the organization's goals.",
+              "Assigning audit staff based on their individual preferences.",
+              "Conducting a comprehensive review of all financial transactions."
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard 2010 explicitly states that the CAE must establish a risk-based plan to determine the priorities of the internal audit activity, consistent with the organization's goals. This ensures that audit resources are focused on areas of greatest risk and opportunity for the organization.",
+            "hint": "Consider which answer choice directly reflects the core purpose of audit planning as defined by the standard."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Risk Factors for Audit Planning",
+          "reveal": {
+            "question": "Name at least three risk factors that should be considered when conducting a risk assessment for audit planning according to Standard 2010.A1.",
+            "answer": "Acceptable answers include: Impact (financial, reputational, operational), Likelihood of occurrence, Velocity (speed of impact), Time since last audit, Management's effectiveness, Complexity, Volatility, and Regulatory requirements.  The standard encourages considering factors relevant to the organization."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Audit Universe vs. Annual Audit Plan",
+          "comparison": {
+            "headers": [
+              "Audit Universe",
+              "Annual Audit Plan"
+            ],
+            "rows": [
+              {
+                "label": "Scope",
+                "values": [
+                  "All possible auditable areas within the organization.",
+                  "Specific audit engagements to be performed within a given year."
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "To identify all potential areas for audit coverage.",
+                  "To allocate audit resources based on risk assessment and organizational objectives."
+                ]
+              },
+              {
+                "label": "Frequency of Update",
+                "values": [
+                  "At least annually, or more frequently as needed.",
+                  "Typically updated annually, but may be adjusted throughout the year."
+                ]
+              },
+              {
+                "label": "Relationship to Risk Assessment",
+                "values": [
+                  "Forms the basis for the risk assessment; provides the 'universe' of risks.",
+                  "Prioritizes audit engagements based on the risk assessment results."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-I-002",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Resource Management",
+    "description": "Understand resource allocation, staffing, and outsourcing considerations",
+    "order": 2,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Resource management",
+      "Staffing",
+      "Co-sourcing",
+      "Outsourcing",
+      "Standard 2030"
+    ],
+    "blueprintArea": "CIA2-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Internal audit must have the RIGHT people with the RIGHT skills to execute the audit plan. Understanding resource options (in-house, co-source, outsource) is critical for CAE success."
+        },
+        {
+          "title": "Resource Management Requirements",
+          "type": "text",
+          "content": "**Standard 2030:**\n\nThe CAE must ensure that internal audit resources are appropriate, sufficient, and effectively deployed to achieve the approved plan.\n\n**Resources include:**\n\u2022 Personnel (staff)\n\u2022 Technology and tools\n\u2022 Financial budget\n\u2022 Time allocation"
+        },
+        {
+          "title": "Staffing Considerations",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Consideration",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Competency",
+              "Knowledge, skills, experience",
+              "IT auditor for systems audit"
+            ],
+            [
+              "Coverage",
+              "Geographic/functional reach",
+              "Staff in international locations"
+            ],
+            [
+              "Capacity",
+              "Sufficient to complete plan",
+              "FTEs needed for hours planned"
+            ],
+            [
+              "Continuity",
+              "Succession and retention",
+              "Career development programs"
+            ]
+          ]
+        },
+        {
+          "title": "Sourcing Options",
+          "type": "text",
+          "content": "**In-House:**\n\u2022 Full-time IA staff\n\u2022 Direct control and oversight\n\u2022 Organizational knowledge\n\n**Co-Sourcing:**\n\u2022 Supplement internal staff with external\n\u2022 Obtain specialized skills\n\u2022 Flexible capacity\n\u2022 CAE retains responsibility\n\n**Outsourcing:**\n\u2022 External provider performs IA\n\u2022 Organization retains oversight through CAE or designated\n\u2022 Less direct control\n\u2022 May be cost-effective for small organizations"
+        },
+        {
+          "title": "When to Co-Source",
+          "type": "text",
+          "content": "**Common reasons:**\n\n\u2022 **Specialized skills** - IT, fraud, forensic, actuarial\n\u2022 **Capacity shortfall** - Too much work, not enough staff\n\u2022 **Independence** - Need external perspective\n\u2022 **Geographic coverage** - Remote locations\n\u2022 **One-time projects** - Special investigations\n\n**CAE responsibilities:**\n\u2022 Define scope of work\n\u2022 Supervise the work\n\u2022 Review deliverables\n\u2022 Ensure quality standards"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: External Service Provider",
+          "type": "warning",
+          "content": "**When using external providers:**\n\n\u2705 Organization RETAINS responsibility for IA\n\u2705 CAE or designee oversees the work\n\u2705 External assessments still required (every 5 years)\n\u2705 Must confirm provider competence and independence\n\n\u274c Cannot \"outsource\" responsibility for IA\n\u274c Provider cannot assess their own work"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CAE ensures resources are appropriate, sufficient, effectively deployed",
+            "Consider: competency, coverage, capacity, continuity",
+            "Sourcing options: In-house, Co-source, Outsource",
+            "Co-sourcing provides specialized skills and flexible capacity",
+            "Organization retains responsibility even when outsourcing"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Standard 2030",
+          "knowledgeCheck": {
+            "question": "According to Standard 2030, which of the following is the CAE *least* responsible for regarding internal audit resources?",
+            "options": [
+              "Ensuring the internal audit activity has sufficient staff to execute the approved plan.",
+              "Ensuring the internal audit activity's budget is adequate to support the approved plan.",
+              "Ensuring each auditor receives a merit-based salary increase exceeding the industry average.",
+              "Ensuring the internal audit activity's resources are effectively deployed to achieve the approved plan."
+            ],
+            "correctIndex": 2,
+            "explanation": "Standard 2030 requires the CAE to ensure resources are appropriate, sufficient, and effectively deployed. While compensation is important, the standard focuses on adequacy and effective deployment to achieve the audit plan, not on exceeding industry average salary increases.",
+            "hint": "Focus on the core requirements stated directly in Standard 2030."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Sourcing Options: Co-Sourcing vs. Outsourcing",
+          "comparison": {
+            "headers": [
+              "Co-Sourcing",
+              "Outsourcing"
+            ],
+            "rows": [
+              {
+                "label": "Control and Oversight",
+                "values": [
+                  "CAE retains primary control and oversight",
+                  "Organization retains some oversight, but provider has significant control"
+                ]
+              },
+              {
+                "label": "Responsibility for IA Function",
+                "values": [
+                  "CAE retains ultimate responsibility",
+                  "External provider assumes responsibility for IA function execution"
+                ]
+              },
+              {
+                "label": "Skill Enhancement",
+                "values": [
+                  "Used to supplement existing skills and capacity",
+                  "May be used to provide a complete IA function"
+                ]
+              },
+              {
+                "label": "Organizational Knowledge",
+                "values": [
+                  "Internal staff maintains organizational knowledge",
+                  "Risk of losing organizational knowledge if not managed carefully"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "When to Co-Source",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios would be the *least* appropriate reason for an organization to utilize co-sourcing for its internal audit function?",
+            "options": [
+              "The organization needs specialized IT audit skills for an upcoming ERP implementation review.",
+              "The internal audit department is understaffed due to unexpected employee turnover and needs temporary support.",
+              "The organization wants to reduce the overall cost of the internal audit function compared to maintaining a fully staffed department.",
+              "The organization requires an independent assessment of a sensitive fraud investigation, free from internal biases."
+            ],
+            "correctIndex": 2,
+            "explanation": "While cost savings can be a *result* of co-sourcing, it is generally *not* the primary driver. Co-sourcing is mainly utilized for specialized skills, capacity shortages, independence, and geographic coverage.",
+            "hint": "Think about the *primary* reasons for choosing co-sourcing outlined in the lesson."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-I-003",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Policies, Procedures, and Coordination",
+    "description": "Understand internal audit policies, procedures, and coordination with other assurance providers",
+    "order": 3,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Policies",
+      "Procedures",
+      "Coordination",
+      "Reliance",
+      "Standard 2040",
+      "Standard 2050"
+    ],
+    "blueprintArea": "CIA2-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Consistent policies and procedures ensure quality and efficiency. Coordinating with other assurance providers (external audit, risk, compliance) maximizes coverage and minimizes duplication!"
+        },
+        {
+          "title": "Policies and Procedures",
+          "type": "text",
+          "content": "**Standard 2040:**\n\nThe CAE must establish policies and procedures to guide the internal audit activity.\n\n**Purpose:**\n\u2022 Ensure consistency\n\u2022 Provide direction to staff\n\u2022 Document methodology\n\u2022 Support quality\n\n**Form and content:**\n\u2022 Should be appropriate for size and structure of IA\n\u2022 May be formal manual or automated tools"
+        },
+        {
+          "title": "Common Policy Areas",
+          "type": "table",
+          "headers": [
+            "Area",
+            "Policy Content"
+          ],
+          "rows": [
+            [
+              "Planning",
+              "Risk assessment, audit selection, timing"
+            ],
+            [
+              "Fieldwork",
+              "Evidence, testing, documentation"
+            ],
+            [
+              "Reporting",
+              "Format, review, distribution"
+            ],
+            [
+              "Follow-up",
+              "Tracking, escalation, closure"
+            ],
+            [
+              "Quality",
+              "Review procedures, QAIP"
+            ],
+            [
+              "Ethics",
+              "Independence, confidentiality"
+            ]
+          ]
+        },
+        {
+          "title": "Coordination with Other Providers",
+          "type": "text",
+          "content": "**Standard 2050:**\n\nThe CAE should share information, coordinate activities, and consider relying upon the work of other internal and external assurance and consulting service providers.\n\n**Benefits of coordination:**\n\u2022 Reduce duplication of effort\n\u2022 Maximize coverage\n\u2022 Share information and insights\n\u2022 Improve efficiency"
+        },
+        {
+          "title": "Coordination with External Audit",
+          "type": "text",
+          "content": "**Key coordination activities:**\n\n\u2022 Share audit plans\n\u2022 Discuss risk assessments\n\u2022 Share workpapers (where appropriate)\n\u2022 Avoid duplicate testing\n\u2022 Coordinate timing\n\n**Reliance considerations:**\n\u2022 External auditor may rely on IA work\n\u2022 IA may rely on external auditor work\n\u2022 Must evaluate competence and objectivity\n\u2022 Must evaluate work performed"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Coordination Partners",
+          "type": "callout",
+          "content": "**\"SCREAM\"** - Who does IA coordinate with?\n\n**S**OX compliance team\n**C**ompliance department\n**R**isk management\n**E**xternal auditors\n**A**ssurance providers (other)\n**M**anagement (line functions)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CAE establishes policies and procedures for IA consistency",
+            "Policies should fit size and structure of organization",
+            "Coordinate with other assurance providers to reduce duplication",
+            "May rely on work of others after evaluating competence",
+            "Share information with external auditors where appropriate"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Policies and Procedures Knowledge Check",
+          "knowledgeCheck": {
+            "question": "According to Standard 2040, which of the following is NOT a primary purpose of establishing policies and procedures for the internal audit activity?",
+            "options": [
+              "Ensuring consistency in audit execution.",
+              "Providing clear direction to internal audit staff.",
+              "Documenting the internal audit methodology.",
+              "Minimizing the cost of internal audit activities."
+            ],
+            "correctIndex": 3,
+            "explanation": "While cost efficiency is important, Standard 2040 focuses on consistency, direction, methodology documentation, and supporting quality. Minimizing cost is not explicitly stated as a primary purpose in the standard.",
+            "hint": "Think about the core functions and goals of internal audit as defined by the IIA standards."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Standard 2050: Key Recall",
+          "reveal": {
+            "question": "Name three benefits of coordinating with other assurance providers, as highlighted by Standard 2050.",
+            "answer": "The three benefits are: Reduce duplication of effort, Maximize coverage, and Share information and insight."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Reliance: Internal Audit vs. External Audit",
+          "comparison": {
+            "headers": [
+              "Internal Audit Relying on External Audit",
+              "External Audit Relying on Internal Audit"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus of Evaluation",
+                "values": [
+                  "External auditor's objectivity, independence, and expertise related to the specific subject matter.",
+                  "Internal audit's objectivity, competence, and application of a systematic and disciplined approach."
+                ]
+              },
+              {
+                "label": "Impact on Audit Scope",
+                "values": [
+                  "May reduce the scope of internal audit's work in certain areas.",
+                  "May reduce the scope of the external audit's work in certain areas."
+                ]
+              },
+              {
+                "label": "Responsibility",
+                "values": [
+                  "Internal audit remains responsible for its own conclusions and opinions.",
+                  "External auditor remains responsible for their own conclusions and opinions."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-II-001",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Engagement Planning Fundamentals",
+    "description": "Understand the planning process for individual audit engagements",
+    "order": 4,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Engagement planning",
+      "Preliminary survey",
+      "Risk assessment",
+      "Standard 2200"
+    ],
+    "blueprintArea": "CIA2-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Engagement planning sets the stage for a successful audit. Poor planning leads to scope creep, missed risks, and wasted effort. Master the planning standards - they're heavily tested!"
+        },
+        {
+          "title": "Engagement Planning Requirements",
+          "type": "text",
+          "content": "**Standard 2200:**\n\nInternal auditors must develop and document a plan for each engagement.\n\n**Planning includes:**\n\u2022 Objectives\n\u2022 Scope\n\u2022 Timing\n\u2022 Resource allocation\n\n**Pre-engagement research:**\n\u2022 Review prior audits\n\u2022 Understand business context\n\u2022 Identify key risks and controls"
+        },
+        {
+          "title": "Preliminary Survey Activities",
+          "type": "table",
+          "headers": [
+            "Activity",
+            "Purpose",
+            "Output"
+          ],
+          "rows": [
+            [
+              "Review prior workpapers",
+              "Understand history, prior issues",
+              "Issue trends, prior findings"
+            ],
+            [
+              "Review policies and procedures",
+              "Understand expected controls",
+              "Control framework understanding"
+            ],
+            [
+              "Interview management",
+              "Gain current perspective",
+              "Risk and concern identification"
+            ],
+            [
+              "Process walkthroughs",
+              "Understand actual operations",
+              "Process flowcharts"
+            ],
+            [
+              "Analyze data",
+              "Identify anomalies, risks",
+              "Analytical insights"
+            ]
+          ]
+        },
+        {
+          "title": "Engagement Objectives",
+          "type": "text",
+          "content": "**Standard 2210:**\n\nObjectives must be established for each engagement.\n\n**Standard 2210.A1:**\n\nInternal auditors must conduct a preliminary assessment of risks relevant to the activity under review. Engagement objectives must reflect results of this assessment.\n\n**Objective types:**\n\u2022 Compliance (with laws, policies)\n\u2022 Operations (efficiency, effectiveness)\n\u2022 Financial (accuracy, reliability)\n\u2022 Strategic (alignment with goals)"
+        },
+        {
+          "title": "Engagement Scope",
+          "type": "text",
+          "content": "**Standard 2220:**\n\nThe established scope must be sufficient to achieve the objectives.\n\n**Scope includes:**\n\u2022 Systems and processes covered\n\u2022 Time period reviewed\n\u2022 Locations included\n\u2022 Types of testing\n\n**Standard 2220.A1:**\nScope must include consideration of relevant systems, records, personnel, and physical properties."
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Planning Framework - \"OSTRAS\"",
+          "type": "callout",
+          "content": "**O**bjectives - What are we trying to achieve?\n**S**cope - What's included/excluded?\n**T**iming - When will work be performed?\n**R**esources - Who will do the work?\n**A**pproach - How will we test?\n**S**upervision - Who will oversee?\n\n*\"OSTRAS\" - the framework for planning success!*"
+        },
+        {
+          "title": "Resource Allocation",
+          "type": "text",
+          "content": "**Standard 2230:**\n\nInternal auditors must determine appropriate and sufficient resources to achieve engagement objectives based on an evaluation of the nature and complexity of each engagement, time constraints, and available resources.\n\n**Consider:**\n\u2022 Auditor competency for this area\n\u2022 Number of staff needed\n\u2022 Estimated hours\n\u2022 Technology and tools required\n\u2022 External expertise needed"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Planning must be documented for each engagement",
+            "Preliminary survey informs objectives and scope",
+            "Objectives reflect preliminary risk assessment",
+            "Scope must be sufficient to achieve objectives",
+            "Resource allocation considers complexity and constraints"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Engagement Planning",
+          "knowledgeCheck": {
+            "question": "According to Standard 2200, which of the following elements is NOT explicitly required to be included in the plan for each internal audit engagement?",
+            "options": [
+              "Objectives",
+              "Scope",
+              "Timing",
+              "Staff performance evaluations"
+            ],
+            "correctIndex": 3,
+            "explanation": "Standard 2200 requires internal auditors to develop and document a plan for each engagement, including objectives, scope, timing, and resource allocation. Staff performance evaluations, while important, are not explicitly required within the engagement plan itself.",
+            "hint": "Think about what is directly related to the planning of the engagement's execution."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Standard 2210.A1",
+          "reveal": {
+            "question": "Complete the sentence: Standard 2210.A1 states that internal auditors must conduct a preliminary assessment of...",
+            "answer": "...risks relevant to the activity under review. Engagement objectives must reflect results of this assessment."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Scope vs. Objectives",
+          "comparison": {
+            "headers": [
+              "Engagement Objectives",
+              "Engagement Scope"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "What the engagement aims to achieve (e.g., assess compliance, improve efficiency).",
+                  "The boundaries of the engagement; what will be covered to achieve the objectives."
+                ]
+              },
+              {
+                "label": "Standard",
+                "values": [
+                  "Standard 2210",
+                  "Standard 2220"
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Determine if the company is complying with GDPR regulations.",
+                  "Review all data processing systems and policies related to EU citizens' data within the marketing department for the period of January 1, 2023 - December 31, 2023."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-II-002",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Engagement Work Programs",
+    "description": "Understand how to develop and document work programs",
+    "order": 5,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Work programs",
+      "Audit procedures",
+      "Standard 2240"
+    ],
+    "blueprintArea": "CIA2-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Work programs are the ROADMAP for fieldwork. They translate objectives into specific procedures. A well-designed program ensures consistent, complete testing."
+        },
+        {
+          "title": "Work Program Requirements",
+          "type": "text",
+          "content": "**Standard 2240:**\n\nInternal auditors must develop and document work programs that achieve the engagement objectives.\n\n**Work program elements:**\n\u2022 Procedures for identifying, analyzing, evaluating, and documenting information\n\u2022 Approved prior to implementation\n\u2022 Any adjustments approved promptly\n\n**Purpose:**\n\u2022 Guide fieldwork\n\u2022 Ensure completeness\n\u2022 Provide basis for supervision"
+        },
+        {
+          "title": "Designing Procedures",
+          "type": "text",
+          "content": "**Each procedure should:**\n\n\u2022 Relate to an engagement objective\n\u2022 Specify the nature of testing\n\u2022 Define the sample or population\n\u2022 Indicate expected evidence\n\u2022 Allow for documentation of results\n\n**Procedure types:**\n\u2022 Inquiry and observation\n\u2022 Inspection and examination\n\u2022 Re-performance and recalculation\n\u2022 Analytical procedures\n\u2022 Confirmation"
+        },
+        {
+          "title": "Work Program Structure",
+          "type": "table",
+          "headers": [
+            "Section",
+            "Content"
+          ],
+          "rows": [
+            [
+              "Header",
+              "Engagement name, preparer, dates"
+            ],
+            [
+              "Objectives",
+              "What the engagement aims to achieve"
+            ],
+            [
+              "Scope",
+              "Boundaries and limitations"
+            ],
+            [
+              "Procedures",
+              "Specific steps to perform"
+            ],
+            [
+              "Sign-off",
+              "Completion and review signatures"
+            ],
+            [
+              "Notes",
+              "Observations, adjustments"
+            ]
+          ]
+        },
+        {
+          "title": "Procedure Design Example",
+          "type": "text",
+          "content": "**Objective:** Verify vendor payments are properly authorized\n\n**Procedure:**\n1. Select sample of 25 payments over $10,000\n2. Obtain supporting documentation\n3. Verify approved purchase order exists\n4. Confirm invoice matches PO terms\n5. Verify appropriate management approval\n6. Document results and exceptions\n\n**Expected evidence:** Approved PO, invoice, approval signature"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Procedure Types - \"CIRCA\"",
+          "type": "callout",
+          "content": "**C**onfirmation - Third-party verification\n**I**nquiry - Ask questions\n**R**e-performance - Redo the process\n**C**omputation - Recalculate\n**A**nalysis - Compare, trend, ratio\n\n*Plus: Inspection, Observation*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Work programs must be documented and approved",
+            "Procedures should link to objectives",
+            "Adjustments require prompt approval",
+            "Programs guide fieldwork and enable supervision",
+            "Procedure types: Inquiry, Inspection, Re-performance, Analysis, Confirmation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Work Program Requirements",
+          "knowledgeCheck": {
+            "question": "According to Standard 2240, which of the following is NOT a mandatory requirement for internal audit work programs?",
+            "options": [
+              "Procedures for identifying, analyzing, evaluating, and documenting information.",
+              "Approval prior to implementation.",
+              "Alignment with the organization's strategic objectives.",
+              "Prompt approval of any adjustments.",
+              "Specify the nature of testing"
+            ],
+            "correctIndex": 2,
+            "explanation": "While aligning with the organization's strategic objectives is important for internal audit in general, Standard 2240 specifically focuses on the elements *within* the work program itself. The other options are explicitly required by the standard.",
+            "hint": "Think about what Standard 2240 directly mandates for the *work program document itself*."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Procedure Design Elements",
+          "reveal": {
+            "question": "List the five key elements that each audit procedure should include.",
+            "answer": "Each procedure should: 1) Relate to an engagement objective, 2) Specify the nature of testing, 3) Define the sample or population, 4) Indicate expected evidence, and 5) Allow for documentation of results."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Procedure Design Application",
+          "knowledgeCheck": {
+            "question": "An internal auditor is designing a procedure to verify the accuracy of inventory counts. Which of the following would BEST exemplify defining the 'sample or population' element of the procedure?",
+            "options": [
+              "Reviewing all inventory count sheets for completeness.",
+              "Selecting a random sample of 50 inventory items from the perpetual inventory records.",
+              "Discussing inventory counting procedures with warehouse personnel.",
+              "Comparing inventory counts to prior year's data.",
+              "Verifying the existence of inventory"
+            ],
+            "correctIndex": 1,
+            "explanation": "Selecting a random sample of 50 inventory items from the perpetual inventory records clearly defines the specific items (the sample) from which the auditor will gather evidence. The other options describe audit activities but do not define a specific sample or population.",
+            "hint": "The correct answer will specify *which* items are being tested."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-001",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Gathering and Evaluating Information",
+    "description": "Understand information gathering techniques and evidence evaluation",
+    "order": 6,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Information gathering",
+      "Evidence",
+      "Audit testing",
+      "Standard 2310"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Evidence is the FOUNDATION of audit conclusions. Weak evidence = weak conclusions. Understanding evidence types, sufficiency, and reliability is core to professional auditing!"
+        },
+        {
+          "title": "Information Requirements",
+          "type": "text",
+          "content": "**Standard 2310:**\n\nInternal auditors must identify sufficient, reliable, relevant, and useful information to achieve the engagement's objectives.\n\n**SRRU criteria:**\n\u2022 **Sufficient** - Enough to support conclusions\n\u2022 **Reliable** - Trustworthy, verifiable\n\u2022 **Relevant** - Relates to objectives\n\u2022 **Useful** - Helps achieve objectives"
+        },
+        {
+          "title": "Types of Audit Evidence",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Reliability"
+          ],
+          "rows": [
+            [
+              "Physical",
+              "Tangible assets, observation",
+              "High - direct verification"
+            ],
+            [
+              "Documentary",
+              "Papers, records, files",
+              "Medium-High - depends on source"
+            ],
+            [
+              "Testimonial",
+              "Interviews, representations",
+              "Lower - subjective"
+            ],
+            [
+              "Analytical",
+              "Comparisons, calculations",
+              "Medium - based on logic"
+            ]
+          ]
+        },
+        {
+          "title": "Evidence Reliability Factors",
+          "type": "text",
+          "content": "**More reliable when:**\n\n\u2022 **External source** > Internal source\n\u2022 **Written** > Oral\n\u2022 **Original** > Copy\n\u2022 **Direct observation** > Indirect report\n\u2022 **Corroborated** > Uncorroborated\n\u2022 **Strong internal control** > Weak control\n\n**Less reliable:**\n\u2022 Hearsay\n\u2022 Self-reported without verification\n\u2022 From parties with vested interest"
+        },
+        {
+          "title": "Information Gathering Techniques",
+          "type": "text",
+          "content": "**Inquiry:**\n\u2022 Ask questions of knowledgeable parties\n\u2022 Obtain understanding of processes\n\u2022 Must corroborate with other evidence\n\n**Observation:**\n\u2022 Watch processes being performed\n\u2022 Point-in-time evidence only\n\u2022 Document what and when observed\n\n**Inspection:**\n\u2022 Examine records and documents\n\u2022 Verify existence and attributes\n\u2022 Select samples appropriately\n\n**Confirmation:**\n\u2022 Obtain direct response from third parties\n\u2022 Highly reliable for verifying external claims"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Evidence Quality - \"SRRU\"",
+          "type": "callout",
+          "content": "**S**ufficient - Enough quantity\n**R**eliable - Can be trusted\n**R**elevant - Relates to objective\n**U**seful - Helps achieve purpose\n\n*\"SRRU\" = \"Sure, Really, Really, Useful!\"*"
+        },
+        {
+          "title": "Evaluating Sufficiency",
+          "type": "text",
+          "content": "**Factors affecting sufficiency:**\n\n\u2022 Materiality of the area\n\u2022 Risk level (higher risk = more evidence)\n\u2022 Quality of available evidence\n\u2022 Professional judgment\n\u2022 Cost-benefit consideration\n\n**Insufficient evidence:**\n\u2022 Note scope limitation\n\u2022 Seek alternative procedures\n\u2022 Consider impact on conclusions"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Evidence must be SRRU: Sufficient, Reliable, Relevant, Useful",
+            "Physical and documentary evidence more reliable than testimonial",
+            "External sources more reliable than internal",
+            "Corroborate testimonial evidence with other sources",
+            "Higher risk areas require more evidence"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Evidence Reliability",
+          "knowledgeCheck": {
+            "question": "Which of the following pieces of evidence would generally be considered the MOST reliable in an internal audit?",
+            "options": [
+              "A verbal statement from a department manager regarding a process.",
+              "A copy of an invoice provided by the auditee.",
+              "Direct observation of a process being performed by the auditor.",
+              "An uncorroborated email from an external vendor."
+            ],
+            "correctIndex": 2,
+            "explanation": "Direct observation is generally the most reliable form of evidence because the auditor personally witnesses the event. While corroboration is important, direct observation provides a firsthand account. A verbal statement is less reliable than written documentation or observation. A copy is less reliable than the original. An uncorroborated email, even from an external vendor, lacks confirmation and could be biased.",
+            "hint": "Consider the factors affecting evidence reliability: source, form, and directness."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: SRRU Criteria",
+          "reveal": {
+            "question": "What does SRRU stand for in the context of information requirements for internal audits, according to Standard 2310?",
+            "answer": "SRRU stands for Sufficient, Reliable, Relevant, and Useful. These are the criteria internal auditors must use to evaluate the information they gather to achieve engagement objectives."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparison: Inquiry vs. Observation",
+          "comparison": {
+            "headers": [
+              "Inquiry",
+              "Observation"
+            ],
+            "rows": [
+              {
+                "label": "Nature of Evidence",
+                "values": [
+                  "Indirect; relies on responses from individuals",
+                  "Direct; relies on auditor's visual assessment"
+                ]
+              },
+              {
+                "label": "Timing",
+                "values": [
+                  "Can provide a broad understanding of processes across time",
+                  "Provides a snapshot in time; may not be representative"
+                ]
+              },
+              {
+                "label": "Corroboration",
+                "values": [
+                  "Requires corroboration with other evidence to be reliable",
+                  "Still benefits from corroboration, but inherently more reliable than inquiry alone"
+                ]
+              },
+              {
+                "label": "Usefulness",
+                "values": [
+                  "Useful for gaining initial understanding and identifying potential issues",
+                  "Useful for verifying processes and identifying deviations from procedures"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-002",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Analysis and Evaluation",
+    "description": "Understand analytical procedures and evaluation of control effectiveness",
+    "order": 7,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Analytical procedures",
+      "Control testing",
+      "Evaluation",
+      "Standard 2320"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Analysis transforms raw data into meaningful conclusions. Knowing how to apply analytical procedures and interpret results is what separates data collection from professional auditing!"
+        },
+        {
+          "title": "Analysis Requirements",
+          "type": "text",
+          "content": "**Standard 2320:**\n\nInternal auditors must base conclusions and engagement results on appropriate analyses and evaluations.\n\n**Analysis process:**\n1. Gather evidence\n2. Organize and classify\n3. Analyze patterns and relationships\n4. Compare to criteria\n5. Draw conclusions\n6. Develop recommendations"
+        },
+        {
+          "title": "Analytical Procedures",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Trend analysis",
+              "Compare data over time",
+              "Inventory levels by month"
+            ],
+            [
+              "Ratio analysis",
+              "Relate data elements",
+              "Receivables turnover"
+            ],
+            [
+              "Reasonableness test",
+              "Estimate expected results",
+              "Payroll estimate vs actual"
+            ],
+            [
+              "Variance analysis",
+              "Compare actual to budget",
+              "Budget vs actual by account"
+            ],
+            [
+              "Benchmark",
+              "Compare to external standards",
+              "Industry ratios"
+            ]
+          ]
+        },
+        {
+          "title": "Control Testing Approaches",
+          "type": "text",
+          "content": "**Testing control design:**\n\u2022 \"Will the control prevent/detect the risk?\"\n\u2022 Review documentation, walkthroughs\n\u2022 Evaluate design effectiveness\n\n**Testing control operation:**\n\u2022 \"Is the control actually working?\"\n\u2022 Examine evidence of performance\n\u2022 Sample-based testing\n\u2022 Re-performance"
+        },
+        {
+          "title": "Evaluating Findings",
+          "type": "text",
+          "content": "**For each finding, assess:**\n\n**Condition** - What exists (the facts)\n**Criteria** - What should exist (the standard)\n**Cause** - Why the difference exists\n**Effect** - Impact of the condition\n\n**Significance factors:**\n\u2022 Frequency of occurrence\n\u2022 Financial impact\n\u2022 Risk to organization\n\u2022 Systemic vs isolated"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Finding Elements - \"4 Cs\"",
+          "type": "callout",
+          "content": "**C**ondition - What IS happening\n**C**riteria - What SHOULD happen\n**C**ause - WHY it happened\n**C**onsequence (Effect) - What's the IMPACT\n\n*Every finding needs all 4 Cs!*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Conclusions must be based on appropriate analysis",
+            "Analytical procedures: Trend, ratio, reasonableness, variance, benchmark",
+            "Test both control design and operating effectiveness",
+            "Findings have 4 elements: Condition, Criteria, Cause, Effect",
+            "Assess significance of findings for reporting"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Standard 2320 and Analysis",
+          "knowledgeCheck": {
+            "question": "According to Standard 2320, which of the following is the MOST important foundation for internal auditors' conclusions and engagement results?",
+            "options": [
+              "Adherence to the annual audit plan.",
+              "Appropriate analyses and evaluations.",
+              "Management's assertions about internal controls.",
+              "Benchmarking against industry best practices."
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard 2320 explicitly states that internal auditors must base conclusions and engagement results on appropriate analyses and evaluations. While the other options may be relevant in certain contexts, they are not the primary foundation as defined by the standard.",
+            "hint": "Think about the core principle of evidence-based auditing."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Control Testing: Design vs. Operation",
+          "reveal": {
+            "question": "What is the primary question addressed when testing the *design* of a control?",
+            "answer": "Will the control, if operating as intended, effectively prevent or detect the risk it is designed to mitigate?"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Evaluating Findings: Condition vs. Criteria",
+          "comparison": {
+            "headers": [
+              "Condition",
+              "Criteria"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "What *actually* exists; the factual situation observed during the audit.",
+                  "What *should* exist; the standard, policy, or expectation against which the condition is compared."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Inventory counts are consistently inaccurate by 10%.",
+                  "Company policy requires inventory counts to be accurate within 2%."
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "To describe the current state.",
+                  "To define the desired or required state."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Evaluating Findings",
+          "knowledgeCheck": {
+            "question": "When evaluating a finding related to a lack of segregation of duties, which element addresses the potential negative outcomes resulting from this deficiency?",
+            "options": [
+              "Condition",
+              "Criteria",
+              "Cause",
+              "Effect"
+            ],
+            "correctIndex": 3,
+            "explanation": "The 'effect' in the context of evaluating findings refers to the impact or consequences of the condition. In this case, it would describe the potential for fraud, errors, or other negative outcomes resulting from the lack of segregation of duties.",
+            "hint": "Think about what happens *because* of the problem."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-003",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Documenting Engagement Results",
+    "description": "Understand workpaper documentation standards and practices",
+    "order": 8,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Workpapers",
+      "Documentation",
+      "Evidence retention",
+      "Standard 2330"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Documentation is the PROOF of your work. Workpapers support conclusions, enable supervision, and provide organizational memory. Poor documentation = indefensible audit!"
+        },
+        {
+          "title": "Documentation Requirements",
+          "type": "text",
+          "content": "**Standard 2330:**\n\nInternal auditors must document sufficient, reliable, relevant, and useful information to support the engagement results and conclusions.\n\n**Purpose of workpapers:**\n\u2022 Support observations and recommendations\n\u2022 Provide evidence of work performed\n\u2022 Enable supervision and review\n\u2022 Facilitate future audits\n\u2022 Defend against challenges"
+        },
+        {
+          "title": "Workpaper Content",
+          "type": "text",
+          "content": "**Essential elements:**\n\n\u2022 **Heading:** Engagement name, preparer, date\n\u2022 **Objective:** What the work addresses\n\u2022 **Procedures:** What was done\n\u2022 **Results:** What was found\n\u2022 **Conclusions:** What it means\n\u2022 **References:** Cross-references to other workpapers\n\u2022 **Review:** Evidence of supervisory review"
+        },
+        {
+          "title": "Documentation Quality Attributes",
+          "type": "table",
+          "headers": [
+            "Attribute",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Complete",
+              "All necessary information included"
+            ],
+            [
+              "Accurate",
+              "Facts correctly recorded"
+            ],
+            [
+              "Clear",
+              "Understandable to reader"
+            ],
+            [
+              "Concise",
+              "No unnecessary information"
+            ],
+            [
+              "Legible",
+              "Easy to read"
+            ],
+            [
+              "Referenced",
+              "Connected to source and other papers"
+            ]
+          ]
+        },
+        {
+          "title": "Record Retention and Control",
+          "type": "text",
+          "content": "**Standard 2330.A1:**\n\nThe CAE must control access to engagement records and obtain approval before releasing externally.\n\n**Standard 2330.A2:**\n\nThe CAE must develop retention requirements for engagement records, consistent with organization guidelines and regulations.\n\n**Best practices:**\n\u2022 Secure storage (physical and electronic)\n\u2022 Access controls\n\u2022 Retention schedules\n\u2022 Disposition procedures"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: External Release",
+          "type": "warning",
+          "content": "**Before releasing workpapers externally:**\n\n\u2705 Obtain CAE and/or senior management approval\n\u2705 Consider legal/regulatory requirements\n\u2705 Consult legal counsel as appropriate\n\u2705 Document the approval and release\n\n**Common external requestors:**\n\u2022 External auditors\n\u2022 Regulators\n\u2022 Legal proceedings\n\n*Always control release and document approval!*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Documentation must support engagement conclusions",
+            "Workpapers should be complete, accurate, clear, concise",
+            "CAE controls access and approves external release",
+            "Retention requirements must comply with regulations",
+            "Documentation enables supervision and future reference"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Workpaper Content Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following elements is NOT considered an essential component of an internal audit workpaper, according to Standard 2330?",
+            "options": [
+              "Heading, including engagement name and preparer.",
+              "Objective of the audit procedure.",
+              "Detailed budget for the audit engagement.",
+              "Results of the audit procedure.",
+              "Conclusions drawn from the audit results."
+            ],
+            "correctIndex": 2,
+            "explanation": "While budgeting is important for managing audit engagements, it is not considered an essential element that must be included within each individual workpaper as defined by Standard 2330. The standard focuses on documenting the work performed, the findings, and the conclusions reached.",
+            "hint": "Think about what elements are directly related to documenting the audit work itself, not the overall management of the audit."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Standard 2330 Requirements",
+          "reveal": {
+            "question": "According to Standard 2330, internal auditors must document information that is (list 4 things)",
+            "answer": "Sufficient, reliable, relevant, and useful to support engagement results and conclusions."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Record Retention and CAE Responsibility",
+          "knowledgeCheck": {
+            "question": "According to Standard 2330.A1 and 2330.A2, which of the following responsibilities primarily falls under the purview of the Chief Audit Executive (CAE) regarding engagement records?",
+            "options": [
+              "Performing detailed testing of internal controls.",
+              "Controlling access to engagement records and developing retention requirements.",
+              "Preparing individual workpapers for each audit procedure.",
+              "Approving all audit recommendations before implementation."
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard 2330.A1 explicitly states the CAE must control access to engagement records and obtain approval before releasing externally. Standard 2330.A2 states the CAE must develop retention requirements for engagement records. The other options are general audit activities but not specifically the CAE's responsibility for record control and retention.",
+            "hint": "Focus on responsibilities related to the overall management and protection of audit documentation."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-004",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Engagement Supervision",
+    "description": "Understand supervision requirements and practices throughout the engagement",
+    "order": 9,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Supervision",
+      "Review",
+      "Quality control",
+      "Standard 2340"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Supervision ensures quality throughout the engagement, not just at the end. It's the front-line quality control that prevents errors and develops staff!"
+        },
+        {
+          "title": "Supervision Requirements",
+          "type": "text",
+          "content": "**Standard 2340:**\n\nEngagements must be properly supervised to ensure objectives are achieved, quality is assured, and staff is developed.\n\n**Supervision occurs throughout:**\n\u2022 Planning\n\u2022 Fieldwork\n\u2022 Reporting\n\u2022 Follow-up"
+        },
+        {
+          "title": "Supervision Activities",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Supervision Activities"
+          ],
+          "rows": [
+            [
+              "Planning",
+              "Review objectives, scope, work program"
+            ],
+            [
+              "Fieldwork",
+              "Monitor progress, review workpapers, guide staff"
+            ],
+            [
+              "Reporting",
+              "Review drafts, ensure conclusions supported"
+            ],
+            [
+              "Throughout",
+              "Coach, train, develop staff"
+            ]
+          ]
+        },
+        {
+          "title": "Factors Affecting Supervision Level",
+          "type": "text",
+          "content": "**More supervision needed when:**\n\n\u2022 Staff is less experienced\n\u2022 Engagement is complex\n\u2022 Area is high risk\n\u2022 New audit area\n\u2022 Sensitive subject matter\n\n**Less supervision needed when:**\n\u2022 Experienced staff\n\u2022 Routine audit\n\u2022 Lower risk area\n\u2022 Established audit program"
+        },
+        {
+          "title": "Documentation of Supervision",
+          "type": "text",
+          "content": "**Evidence of supervision:**\n\n\u2022 Reviewer initials and dates on workpapers\n\u2022 Review notes addressed and cleared\n\u2022 Sign-off on key conclusions\n\u2022 File review checklists\n\u2022 Coaching and development discussions documented"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Supervision required throughout engagement lifecycle",
+            "Level of supervision varies by risk and staff experience",
+            "Supervision ensures quality and develops staff",
+            "Document evidence of supervisory review",
+            "Address review notes before finalizing"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Supervision Level Scenario",
+          "knowledgeCheck": {
+            "question": "An internal audit team is conducting its first audit of a recently implemented supply chain management system. The audit team consists of two experienced auditors and one less experienced auditor. Which of the following factors would MOST likely require a higher level of supervision during this engagement?",
+            "options": [
+              "The experienced auditors have previously audited similar systems in other organizations.",
+              "The audit is considered a routine audit by the audit department.",
+              "The supply chain management system is considered a high-risk area for the organization.",
+              "The audit program for the supply chain management system is well-established."
+            ],
+            "correctIndex": 2,
+            "explanation": "A high-risk area generally requires a higher level of supervision to ensure that potential issues are properly identified and addressed. While experienced auditors are helpful, the high-risk nature of the area necessitates increased oversight. Routine audits and established audit programs generally require less supervision.",
+            "hint": "Consider which factor presents the greatest potential impact on the organization."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Standard 2340 Recall",
+          "reveal": {
+            "question": "State Standard 2340 in its entirety.",
+            "answer": "Engagements must be properly supervised to ensure objectives are achieved, quality is assured, and staff is developed."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Factors Affecting Supervision Level",
+          "comparison": {
+            "headers": [
+              "More Supervision Needed",
+              "Less Supervision Needed"
+            ],
+            "rows": [
+              {
+                "label": "Staff Experience",
+                "values": [
+                  "Less Experienced Staff",
+                  "Experienced Staff"
+                ]
+              },
+              {
+                "label": "Engagement Complexity",
+                "values": [
+                  "Complex Engagement",
+                  "Routine Audit"
+                ]
+              },
+              {
+                "label": "Risk Level",
+                "values": [
+                  "High-Risk Area",
+                  "Lower-Risk Area"
+                ]
+              },
+              {
+                "label": "Audit Area Familiarity",
+                "values": [
+                  "New Audit Area",
+                  "Established Audit Program"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-IV-001",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Communicating Engagement Results",
+    "description": "Understand communication requirements, report elements, and quality criteria",
+    "order": 10,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Audit reporting",
+      "Communication criteria",
+      "Report quality",
+      "Standard 2400"
+    ],
+    "blueprintArea": "CIA2-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The audit report is the PRIMARY deliverable. All the work leads to this communication. A poorly written report undermines the entire engagement. Master the communication standards!"
+        },
+        {
+          "title": "Communication Requirements",
+          "type": "text",
+          "content": "**Standard 2400:**\n\nInternal auditors must communicate the results of engagements.\n\n**Standard 2410:**\n\nCommunications must include:\n\u2022 Engagement objectives\n\u2022 Scope\n\u2022 Applicable conclusions\n\u2022 Recommendations and action plans"
+        },
+        {
+          "title": "Communication Quality Criteria",
+          "type": "text",
+          "content": "**Standard 2420:**\n\nCommunications must be accurate, objective, clear, concise, constructive, complete, and timely.\n\n**AOCCCCT:**\n\u2022 **Accurate** - Free from errors\n\u2022 **Objective** - Fair, unbiased\n\u2022 **Clear** - Easily understood\n\u2022 **Concise** - To the point\n\u2022 **Constructive** - Helpful, improvement-focused\n\u2022 **Complete** - All significant information\n\u2022 **Timely** - Appropriately timed"
+        },
+        {
+          "title": "Report Elements",
+          "type": "table",
+          "headers": [
+            "Element",
+            "Content"
+          ],
+          "rows": [
+            [
+              "Title",
+              "Engagement name and identifier"
+            ],
+            [
+              "Objectives",
+              "What the engagement aimed to achieve"
+            ],
+            [
+              "Scope",
+              "What was covered and time period"
+            ],
+            [
+              "Methodology",
+              "How work was performed"
+            ],
+            [
+              "Observations",
+              "Condition, criteria, cause, effect"
+            ],
+            [
+              "Recommendations",
+              "Actions to address findings"
+            ],
+            [
+              "Management Response",
+              "Agreement and planned actions"
+            ],
+            [
+              "Conclusion",
+              "Overall assessment (if appropriate)"
+            ]
+          ]
+        },
+        {
+          "title": "Opinions and Ratings",
+          "type": "text",
+          "content": "**Standard 2410.A1:**\n\nFinal communication of engagement results must include, where appropriate:\n\u2022 Auditor's opinion and/or conclusion\n\u2022 Recommendations for potential improvements\n\n**Opinion types:**\n\u2022 Overall assessment of control effectiveness\n\u2022 Ratings (satisfactory, needs improvement, unsatisfactory)\n\u2022 Opinion on compliance with requirements\n\n**Basis for opinion:**\n\u2022 Must be supported by sufficient evidence\n\u2022 Explain basis and limitations"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Communication Quality - \"AOCCCCT\"",
+          "type": "callout",
+          "content": "**A**ccurate - No errors\n**O**bjective - Not biased\n**C**lear - Easy to understand\n**C**oncise - Not wordy\n**C**onstructive - Helpful\n**C**omplete - Nothing missing\n**T**imely - Right time\n\n*\"A Outstanding Communicator Creates Crisp Complete Timeliness\"*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Reports must include objectives, scope, conclusions, recommendations",
+            "Quality criteria: Accurate, Objective, Clear, Concise, Constructive, Complete, Timely",
+            "Opinions must be supported by sufficient evidence",
+            "Include management response and action plans",
+            "Disseminate to appropriate parties"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Report Quality",
+          "knowledgeCheck": {
+            "question": "An internal audit report states that a critical control is 'adequate' but lacks specific supporting evidence. Which communication quality criterion from Standard 2420 is MOST clearly violated?",
+            "options": [
+              "A) Accurate",
+              "B) Objective",
+              "C) Complete",
+              "D) Concise"
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is C) Complete. While the report might be accurate in its assessment, the lack of supporting evidence indicates it's not providing all the necessary information for the reader to understand the basis of the conclusion. Accuracy relates to being free from errors, objectivity to being unbiased, and conciseness to being to the point. Completeness addresses whether all relevant information is included.",
+            "hint": "Think about what information a reader needs to fully understand the audit's findings."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall Test: Standard 2410 Requirements",
+          "reveal": {
+            "question": "List the four elements that communications MUST include according to Standard 2410.",
+            "answer": "Engagement objectives, Scope, Applicable conclusions, Recommendations and action plans."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Opinions and Recommendations",
+          "knowledgeCheck": {
+            "question": "According to Standard 2410.A1, which of the following is TRUE regarding the final communication of engagement results?",
+            "options": [
+              "A) An auditor's opinion is always required, regardless of the engagement's scope.",
+              "B) Recommendations are only necessary if the auditor identifies significant deficiencies.",
+              "C) The final communication must include an auditor's opinion and/or conclusion, where appropriate.",
+              "D) Ratings must be included in all final communications, even if they are not relevant to the engagement."
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is C) The final communication must include an auditor's opinion and/or conclusion, where appropriate. Standard 2410.A1 states that opinions and recommendations should be included 'where appropriate,' indicating they are not universally required but dependent on the specific engagement. Option A is incorrect because opinions are not always required. Option B is incorrect because recommendations can be helpful even if deficiencies aren't 'significant'. Option D is incorrect because ratings must be relevant.",
+            "hint": "Pay close attention to the phrase 'where appropriate' in the standard."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-IV-002",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Monitoring Progress and Follow-Up",
+    "description": "Understand requirements for monitoring implementation of corrective actions",
+    "order": 11,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Follow-up",
+      "Monitoring",
+      "Issue resolution",
+      "Standard 2500"
+    ],
+    "blueprintArea": "CIA2-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "An audit isn't complete until findings are addressed! Follow-up closes the loop and ensures value is delivered. Without it, recommendations become a to-do list that never gets done."
+        },
+        {
+          "title": "Follow-Up Requirements",
+          "type": "text",
+          "content": "**Standard 2500:**\n\nThe CAE must establish and maintain a system to monitor the disposition of results communicated to management.\n\n**Standard 2500.A1:**\n\nThe CAE must establish a follow-up process to monitor and ensure that management actions have been effectively implemented or that senior management has accepted the risk of not taking action."
+        },
+        {
+          "title": "Follow-Up Process",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Activity"
+          ],
+          "rows": [
+            [
+              "1",
+              "Track all open recommendations"
+            ],
+            [
+              "2",
+              "Obtain status updates from management"
+            ],
+            [
+              "3",
+              "Verify implementation of actions"
+            ],
+            [
+              "4",
+              "Evaluate adequacy of actions"
+            ],
+            [
+              "5",
+              "Close resolved items or escalate"
+            ],
+            [
+              "6",
+              "Report status to Board"
+            ]
+          ]
+        },
+        {
+          "title": "Tracking and Escalation",
+          "type": "text",
+          "content": "**Tracking system should include:**\n\u2022 Finding/recommendation description\n\u2022 Risk rating\n\u2022 Owner/responsible party\n\u2022 Due date\n\u2022 Current status\n\u2022 Verification notes\n\n**Escalation triggers:**\n\u2022 Past due items\n\u2022 High-risk items unaddressed\n\u2022 Repeated deferrals\n\u2022 Risk acceptance by senior management"
+        },
+        {
+          "title": "Risk Acceptance",
+          "type": "text",
+          "content": "**Standard 2600:**\n\nWhen the CAE concludes that management has accepted a level of risk that may be unacceptable to the organization, the CAE must discuss the matter with senior management. If the CAE determines that the matter has not been resolved, the CAE must communicate the matter to the Board.\n\n**Board communication required when:**\n\u2022 Significant risk remains unaddressed\n\u2022 Management accepts risk exceeding tolerance\n\u2022 Unresolved disagreement with management"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Unresolved Risks",
+          "type": "warning",
+          "content": "**Key escalation points:**\n\n1. First: Discuss with Senior Management\n2. If unresolved: Communicate to Board\n\n**CAE cannot force management to act, but MUST escalate to Board if risk is unacceptable!**\n\n*Board is the final escalation point for unaddressed significant risks.*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CAE must establish follow-up system",
+            "Verify implementation of corrective actions",
+            "Track status of all open recommendations",
+            "Escalate unresolved significant risks to Board",
+            "Report follow-up status to Board regularly"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Test Your Knowledge of Standard 2500",
+          "knowledgeCheck": {
+            "question": "According to Standard 2500.A1, the CAE's follow-up process is primarily designed to:",
+            "options": [
+              "Ensure that all audit findings are completely resolved within the initially proposed timeframe.",
+              "Monitor and ensure that management actions have been effectively implemented or that senior management has accepted the risk of non-implementation.",
+              "Re-evaluate the inherent risk associated with the audited area to determine if further audit procedures are necessary.",
+              "Assign responsibility to specific individuals within the internal audit function for tracking the progress of management's remediation efforts."
+            ],
+            "correctIndex": 1,
+            "explanation": "Standard 2500.A1 focuses on verifying the effectiveness of management's actions or documenting senior management's acceptance of the risk if actions aren't taken. The CAE is not necessarily responsible for ensuring full resolution, but rather for ensuring appropriate action or risk acceptance.",
+            "hint": "Think about what the CAE's responsibility is *after* the initial audit report is issued."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall Key Tracking System Elements",
+          "reveal": {
+            "question": "List the six elements that a tracking system should include for monitoring the disposition of audit findings and recommendations.",
+            "answer": "1. Finding/recommendation description\n2. Risk rating\n3. Owner/responsible party\n4. Due date\n5. Current status\n6. Verification notes"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Escalation Triggers",
+          "knowledgeCheck": {
+            "question": "Which of the following situations would MOST likely trigger escalation of an unresolved audit finding according to the lesson's content?",
+            "options": [
+              "The responsible party requests a one-week extension on the due date for implementing a low-risk recommendation.",
+              "Management provides a detailed action plan for addressing a moderate-risk finding within the agreed-upon timeframe.",
+              "A high-risk finding remains unaddressed six months after the initial audit report, and no alternative mitigation strategies have been implemented.",
+              "The audit committee expresses satisfaction with the progress made on implementing recommendations from the previous audit."
+            ],
+            "correctIndex": 2,
+            "explanation": "High-risk items that remain unaddressed for a prolonged period are a clear trigger for escalation. The CAE has a responsibility to ensure that such issues are brought to the attention of senior management and the board, if necessary.",
+            "hint": "Consider the severity and timeliness of resolution in each scenario."
+          }
+        }
+      ]
+    }
+  }
+]

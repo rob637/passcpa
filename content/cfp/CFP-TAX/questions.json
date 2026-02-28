@@ -474,7 +474,7 @@
         "Entirely at daughter\\",
         ",\n      ",
         "s rate, remainder at parent\\",
-        ",\n      "
+        "Entirely at parent's rate"
       ],
       "version": 2,
       "status": "approved",
@@ -1876,7 +1876,7 @@
         "Loss disallowed entirely",
         "Loss allowed because it",
         ",\n      ",
-        ",\n      "
+        "Loss allowed, but only up to $3,000."
       ],
       "version": 2,
       "status": "approved",
@@ -3310,7 +3310,7 @@
         "Only retirement account distributions",
         "Income the decedent earned but didn\\",
         ",\n      ",
-        ",\n      "
+        "Life insurance proceeds paid to the estate"
       ],
       "version": 2,
       "status": "approved",
@@ -5550,7 +5550,7 @@
       "correctAnswer": 3,
       "options": [
         "$28,000",
-        "$28,000",
+        "$21,000",
         "$8,000",
         "$16,000"
       ],
@@ -5971,7 +5971,7 @@
       "options": [
         "Take no action; timing doesn",
         ",\n      ",
-        ",\n      ",
+        "Increase withholding on their current salary to cover the anticipated tax liability.",
         ",\n      "
       ],
       "version": 2,
@@ -6392,7 +6392,7 @@
       "options": [
         "The child\\",
         ",\n      ",
-        ",\n      ",
+        "the parent's rate up to $2,500, then Emily's rate",
         "s marginal rate"
       ],
       "version": 2,
@@ -6531,7 +6531,7 @@
       "options": [
         "Donor\\",
         ",\n      ",
-        ",\n      ",
+        "ient's basis is always the donor's basis",
         ",\n      "
       ],
       "version": 2,
@@ -7548,7 +7548,7 @@
         "$15,000 cash gift to a friend",
         "$50,000 paid directly to grandchild\\",
         ",\n      ",
-        ",\n      "
+        "$20,000 contribution to a 529 plan for her niece"
       ],
       "version": 2,
       "status": "approved",

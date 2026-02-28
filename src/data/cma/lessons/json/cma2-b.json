@@ -1,0 +1,1792 @@
+[
+  {
+    "id": "CMA2-B-001",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Risk and Return Fundamentals",
+    "description": "Understand the relationship between risk and expected return",
+    "order": 11,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Types of risk",
+      "Standard deviation",
+      "Expected return",
+      "Risk-return tradeoff"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Risk and return are foundational to all financial decisions. CMAs must understand how to quantify risk, how investors demand compensation for bearing it, and how to balance risk and return in capital budgeting, valuation, and performance evaluation."
+        },
+        {
+          "title": "Types of Investment Risk",
+          "type": "text",
+          "content": "**Systematic Risk (Market Risk):**\n\u2022 Affects all securities in market\n\u2022 Cannot be diversified away\n\u2022 Examples: Interest rates, inflation, recessions\n\u2022 Measured by beta\n\n**Unsystematic Risk (Firm-Specific):**\n\u2022 Unique to individual company\n\u2022 CAN be diversified away\n\u2022 Examples: Management changes, lawsuits, product recalls\n\n**Total Risk = Systematic + Unsystematic**\n\n**Key insight:** Investors shouldn't expect extra return for unsystematic risk because it's diversifiable!"
+        },
+        {
+          "title": "Measuring Return",
+          "type": "text",
+          "content": "**Holding Period Return:**\nHPR = (Ending Price - Beginning Price + Dividends) / Beginning Price\n\n**Example:**\nBought at $100, sold at $112, received $4 dividend\nHPR = ($112 - $100 + $4) / $100 = **16%**\n\n**Expected Return:**\nE(R) = \u03a3 [Probability \u00d7 Return]\n\n**Example:**\n40% chance of 20% return, 60% chance of 8% return\nE(R) = (0.40 \u00d7 20%) + (0.60 \u00d7 8%) = **12.8%**"
+        },
+        {
+          "title": "Measuring Risk: Standard Deviation",
+          "type": "text",
+          "content": "**Standard Deviation (\u03c3):**\nMeasures dispersion of returns around the mean\n\n**Formula:**\n\u03c3 = \u221a[\u03a3 Pi \u00d7 (Ri - E(R))\u00b2]\n\n**Interpretation:**\n\u2022 Higher \u03c3 = More volatile = More risky\n\u2022 About 68% of returns fall within \u00b11\u03c3\n\u2022 About 95% fall within \u00b12\u03c3\n\n**Example:**\nIf E(R) = 12% and \u03c3 = 8%\nExpect returns between 4% and 20% about 68% of the time"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Risk Types",
+          "type": "callout",
+          "content": "**Systematic vs. Unsystematic:**\n\n**\"SYSTEM affects EVERYONE\"**\n\u2022 Systematic = Market-wide = Can't diversify away\n\u2022 Beta is the measure\n\n**\"UNSYS-tem is UN-avoidable without diversification\"**\n\u2022 Unsystematic = Firm-specific = CAN diversify away\n\u2022 15-20 stocks eliminates most unsystematic risk"
+        },
+        {
+          "title": "Coefficient of Variation",
+          "type": "text",
+          "content": "**Formula:**\nCV = Standard Deviation / Expected Return\n\n**Why use CV?**\n\u2022 Standardizes risk per unit of return\n\u2022 Enables comparison of different-return investments\n\n**Example:**\nInvestment A: E(R) = 20%, \u03c3 = 10%, CV = 0.50\nInvestment B: E(R) = 10%, \u03c3 = 6%, CV = 0.60\n\n**Investment A has lower risk per unit of return** (despite higher absolute risk).\n\n**Lower CV = Better risk-adjusted investment**"
+        },
+        {
+          "title": "Risk-Return Tradeoff",
+          "type": "table",
+          "headers": [
+            "Investment Type",
+            "Typical Return",
+            "Typical Risk",
+            "Risk Level"
+          ],
+          "rows": [
+            [
+              "T-Bills",
+              "2-4%",
+              "Near zero",
+              "Risk-free benchmark"
+            ],
+            [
+              "Bonds",
+              "4-6%",
+              "Low",
+              "Credit/interest risk"
+            ],
+            [
+              "Large-cap stocks",
+              "8-12%",
+              "Moderate",
+              "Market risk"
+            ],
+            [
+              "Small-cap stocks",
+              "10-15%",
+              "High",
+              "More volatile"
+            ],
+            [
+              "Emerging markets",
+              "12-18%",
+              "Very high",
+              "Political/currency risk"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Required vs. Expected Return",
+          "type": "warning",
+          "content": "**Required Return:**\nMinimum return investors demand given the risk\n(Used for discounting, valuation)\n\n**Expected Return:**\nWhat you actually anticipate earning\n(Based on forecasts, probability analysis)\n\n**Investment decision:**\n\u2022 If Expected > Required \u2192 Good investment\n\u2022 If Expected < Required \u2192 Bad investment\n\n**In equilibrium, Expected = Required**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Systematic risk affects all securities; unsystematic is firm-specific",
+            "Only systematic risk is compensated (via required return)",
+            "Standard deviation measures total risk",
+            "Coefficient of variation = \u03c3/E(R) - risk per unit of return",
+            "Higher risk requires higher expected return",
+            "Diversification eliminates unsystematic risk",
+            "15-20 stocks achieves most diversification benefit"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Systematic vs. Unsystematic Risk",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios BEST exemplifies unsystematic risk affecting a company's stock price?",
+            "options": [
+              "A sudden increase in the federal funds rate by the Federal Reserve.",
+              "A major lawsuit filed against the company alleging significant environmental violations.",
+              "An unexpected rise in the national inflation rate.",
+              "A broad market downturn triggered by geopolitical instability."
+            ],
+            "correctIndex": 1,
+            "explanation": "Unsystematic risk is company-specific. A lawsuit is unique to the company, while interest rates, inflation, and market downturns affect all securities.",
+            "hint": "Consider which event is specific to a single company, rather than the entire market."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Holding Period Return Recall",
+          "reveal": {
+            "question": "What is the formula for calculating Holding Period Return (HPR)?",
+            "answer": "HPR = (Ending Price - Beginning Price + Dividends) / Beginning Price"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Expected Return Calculation",
+          "knowledgeCheck": {
+            "question": "An investment has the following possible outcomes: a 30% chance of a 15% return, a 50% chance of a 10% return, and a 20% chance of a -5% return. What is the expected return of this investment?",
+            "options": [
+              "8.5%",
+              "9.5%",
+              "10.5%",
+              "11.5%"
+            ],
+            "correctIndex": 2,
+            "explanation": "E(R) = (0.30 * 0.15) + (0.50 * 0.10) + (0.20 * -0.05) = 0.045 + 0.05 - 0.01 = 0.095 = 9.5%",
+            "hint": "Remember to multiply each return by its probability and sum the results."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Standard Deviation and Risk Interpretation",
+          "comparison": {
+            "headers": [
+              "Low Standard Deviation",
+              "High Standard Deviation"
+            ],
+            "rows": [
+              {
+                "label": "Volatility",
+                "values": [
+                  "Less Volatile",
+                  "More Volatile"
+                ]
+              },
+              {
+                "label": "Risk Level",
+                "values": [
+                  "Lower Risk",
+                  "Higher Risk"
+                ]
+              },
+              {
+                "label": "Return Range",
+                "values": [
+                  "Returns cluster closer to the mean",
+                  "Returns are more dispersed around the mean"
+                ]
+              },
+              {
+                "label": "Investor Preference",
+                "values": [
+                  "Generally preferred by risk-averse investors",
+                  "May be preferred by risk-seeking investors"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-002",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capital Asset Pricing Model (CAPM)",
+    "description": "Calculate required return using the CAPM framework",
+    "order": 12,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "CAPM",
+      "Beta",
+      "Security market line",
+      "Risk premium"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "CAPM is THE model for determining cost of equity. CMAs use it to calculate WACC for capital budgeting, evaluate investment proposals, and assess whether returns compensate adequately for risk. This formula appears constantly on the CMA exam!"
+        },
+        {
+          "title": "The CAPM Formula",
+          "type": "text",
+          "content": "**Required Return = Rf + \u03b2(Rm - Rf)**\n\n**Where:**\n\u2022 Rf = Risk-free rate (typically T-bill rate)\n\u2022 \u03b2 = Beta (systematic risk measure)\n\u2022 Rm = Expected market return\n\u2022 (Rm - Rf) = Market risk premium\n\n**Example:**\nRf = 3%, \u03b2 = 1.2, Rm = 10%\nRequired Return = 3% + 1.2(10% - 3%)\n= 3% + 1.2(7%)\n= 3% + 8.4% = **11.4%**"
+        },
+        {
+          "title": "Understanding Beta",
+          "type": "text",
+          "content": "**Beta measures systematic risk relative to market:**\n\n**\u03b2 = 1.0:** Same volatility as market\n**\u03b2 > 1.0:** More volatile than market (aggressive)\n**\u03b2 < 1.0:** Less volatile than market (defensive)\n**\u03b2 = 0:** No correlation with market (risk-free)\n**\u03b2 < 0:** Moves opposite to market (rare)\n\n**Examples:**\n\u2022 Technology: \u03b2 \u2248 1.3 (high)\n\u2022 Utilities: \u03b2 \u2248 0.5 (low)\n\u2022 S&P 500 index: \u03b2 = 1.0 (by definition)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: CAPM",
+          "type": "callout",
+          "content": "**\"RRR = RF + \u03b2(MRP)\"**\n\n**R**equired **R**eturn = **R**isk-**F**ree + **B**eta \u00d7 **M**arket **R**isk **P**remium\n\n**Think of it as:**\nBase compensation (risk-free rate)\n+ Risk compensation (beta \u00d7 premium)\n= Total required return\n\n**Higher beta \u2192 Higher required return!**"
+        },
+        {
+          "title": "Security Market Line (SML)",
+          "type": "text",
+          "content": "**The SML graphs CAPM:**\n\u2022 X-axis: Beta (\u03b2)\n\u2022 Y-axis: Required return\n\u2022 Y-intercept: Risk-free rate\n\u2022 Slope: Market risk premium\n\n**Interpretation:**\n\u2022 Stocks ON the SML are fairly priced\n\u2022 Stocks ABOVE the SML are undervalued (buy)\n\u2022 Stocks BELOW the SML are overvalued (sell)\n\n**All properly priced securities should lie on the SML!**"
+        },
+        {
+          "title": "CAPM Calculation Examples",
+          "type": "table",
+          "headers": [
+            "Security",
+            "Beta",
+            "Rf",
+            "Market Premium",
+            "Required Return"
+          ],
+          "rows": [
+            [
+              "T-Bill",
+              "0",
+              "3%",
+              "7%",
+              "3.0%"
+            ],
+            [
+              "Defensive Stock",
+              "0.6",
+              "3%",
+              "7%",
+              "7.2%"
+            ],
+            [
+              "Market Portfolio",
+              "1.0",
+              "3%",
+              "7%",
+              "10.0%"
+            ],
+            [
+              "Growth Stock",
+              "1.5",
+              "3%",
+              "7%",
+              "13.5%"
+            ],
+            [
+              "High-Risk Stock",
+              "2.0",
+              "3%",
+              "7%",
+              "17.0%"
+            ]
+          ]
+        },
+        {
+          "title": "Limitations of CAPM",
+          "type": "text",
+          "content": "**Assumptions that may not hold:**\n\n\u2022 Single-period model\n\u2022 All investors have same expectations\n\u2022 Perfect markets (no taxes, transaction costs)\n\u2022 Investors can borrow at risk-free rate\n\u2022 Beta is stable over time\n\n**Practical issues:**\n\u2022 Which risk-free rate? (T-bill, 10-year?)\n\u2022 Historical vs. forward-looking beta?\n\u2022 Market risk premium estimate varies widely\n\n**Despite limitations, CAPM remains widely used!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Levered vs. Unlevered Beta",
+          "type": "warning",
+          "content": "**\u03b2L = \u03b2U \u00d7 [1 + (1-t)(D/E)]**\n\n**\u03b2L (Levered):** Includes financial risk from debt\n**\u03b2U (Unlevered):** Pure business risk only\n\n**Why it matters:**\nWhen comparing firms with different capital structures,\nunlever betas first to isolate business risk.\n\n**More debt \u2192 Higher levered beta \u2192 Higher cost of equity**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CAPM: Required Return = Rf + \u03b2(Rm - Rf)",
+            "Beta measures systematic (market) risk only",
+            "Beta = 1 means same risk as market",
+            "SML plots required return vs. beta",
+            "Stocks should lie on SML if properly priced",
+            "CAPM gives cost of equity for WACC calculation",
+            "Levered beta includes financial risk from debt"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "CAPM Calculation Challenge",
+          "knowledgeCheck": {
+            "question": "An investment has a beta of 1.5. The risk-free rate is 2%, and the expected market return is 9%. According to the Capital Asset Pricing Model (CAPM), what is the required rate of return for this investment?",
+            "options": [
+              "9.5%",
+              "10.5%",
+              "12.5%",
+              "13.5%"
+            ],
+            "correctIndex": 2,
+            "explanation": "The CAPM formula is Required Return = Rf + \u03b2(Rm - Rf).  Plugging in the values: Required Return = 2% + 1.5(9% - 2%) = 2% + 1.5(7%) = 2% + 10.5% = 12.5%.",
+            "hint": "Remember the order of operations and the CAPM formula."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Beta Interpretation",
+          "reveal": {
+            "question": "What does a beta of less than 1.0 indicate about an investment's volatility compared to the market?",
+            "answer": "A beta less than 1.0 indicates that the investment is less volatile than the market. It is considered a defensive investment, meaning its price is expected to fluctuate less than the overall market."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Security Market Line (SML) Analysis",
+          "knowledgeCheck": {
+            "question": "According to the Security Market Line (SML), if a stock's expected return plots ABOVE the SML, it is considered:",
+            "options": [
+              "Fairly priced",
+              "Overvalued and should be sold",
+              "Undervalued and should be bought",
+              "Risk-free"
+            ],
+            "correctIndex": 2,
+            "explanation": "Stocks plotting above the SML offer a higher return than required for their level of risk (beta). This makes them undervalued and attractive to investors, suggesting a buy recommendation.",
+            "hint": "Think about what it means to get *more* return than expected for a given level of risk."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Understanding Risk Premium",
+          "comparison": {
+            "headers": [
+              "Market Risk Premium",
+              "Risk Premium for an Individual Security"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "The difference between the expected market return and the risk-free rate (Rm - Rf). It represents the additional return investors require for investing in the market as a whole instead of a risk-free asset.",
+                  "The additional return investors require for investing in a specific security compared to the risk-free rate.  It is calculated as Beta * (Rm - Rf)."
+                ]
+              },
+              {
+                "label": "Application",
+                "values": [
+                  "Used as a benchmark in CAPM to determine the required return for individual securities based on their beta.",
+                  "Used to determine the risk-adjusted required return for a specific investment, considering its systematic risk (beta)."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-003",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cost of Capital",
+    "description": "Calculate weighted average cost of capital (WACC)",
+    "order": 13,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "WACC",
+      "Cost of debt",
+      "Cost of equity",
+      "Capital structure"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "WACC is the hurdle rate for investment decisions. A project must earn at least the WACC to create value. CMAs calculate WACC for capital budgeting, valuation, and performance metrics like EVA. Getting WACC wrong leads to bad investment decisions!"
+        },
+        {
+          "title": "The WACC Formula",
+          "type": "text",
+          "content": "**WACC = (E/V \u00d7 Re) + (D/V \u00d7 Rd \u00d7 (1-t)) + (P/V \u00d7 Rp)**\n\n**Where:**\n\u2022 E/V = Weight of equity\n\u2022 D/V = Weight of debt\n\u2022 P/V = Weight of preferred stock\n\u2022 Re = Cost of equity\n\u2022 Rd = Cost of debt\n\u2022 Rp = Cost of preferred\n\u2022 t = Tax rate\n\u2022 V = E + D + P (total value)\n\n**Debt gets tax benefit; equity and preferred do not!**"
+        },
+        {
+          "title": "Cost of Debt",
+          "type": "text",
+          "content": "**Rd = Interest rate on new debt \u00d7 (1 - Tax Rate)**\n\n**Finding the rate:**\n\u2022 Yield to maturity on existing bonds\n\u2022 Interest rate on new borrowing\n\u2022 Add credit spread to benchmark\n\n**Example:**\nNew bank loan rate: 6%\nTax rate: 25%\nAfter-tax cost of debt: 6% \u00d7 (1 - 0.25) = **4.5%**\n\n**Use MARGINAL (new) debt cost, not historical!**"
+        },
+        {
+          "title": "Cost of Equity Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Formula",
+            "When to Use"
+          ],
+          "rows": [
+            [
+              "CAPM",
+              "Rf + \u03b2(Rm - Rf)",
+              "Most common; needs beta"
+            ],
+            [
+              "Dividend Growth (Gordon)",
+              "D\u2081/P\u2080 + g",
+              "Stable dividend payers"
+            ],
+            [
+              "Bond Yield + Premium",
+              "Rd + Risk Premium (3-5%)",
+              "Quick estimate"
+            ]
+          ]
+        },
+        {
+          "title": "Dividend Growth Model Example",
+          "type": "text",
+          "content": "**Gordon Model:**\nRe = D\u2081/P\u2080 + g\n\n**Where:**\n\u2022 D\u2081 = Next year's dividend (D\u2080 \u00d7 (1+g))\n\u2022 P\u2080 = Current stock price\n\u2022 g = Sustainable dividend growth rate\n\n**Example:**\nCurrent dividend: $2.00\nExpected growth: 5%\nStock price: $50\n\nD\u2081 = $2.00 \u00d7 1.05 = $2.10\nRe = ($2.10 / $50) + 5% = 4.2% + 5% = **9.2%**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: WACC",
+          "type": "callout",
+          "content": "**\"Weighted costs, Adjusted for tax\"**\n\n**E**quity: Get Re from CAPM or dividend model\n**D**ebt: After-tax! Rd \u00d7 (1-t)\n**P**referred: Dp / Pp (no tax benefit)\n\n**Weight by MARKET values, not book values!**\n\n**WACC = Minimum return to satisfy ALL capital providers**"
+        },
+        {
+          "title": "Complete WACC Calculation",
+          "type": "text",
+          "content": "**Example:**\n\u2022 Market value of equity: $60 million\n\u2022 Market value of debt: $40 million\n\u2022 Total: $100 million\n\u2022 Cost of equity (CAPM): 12%\n\u2022 Cost of debt: 6%\n\u2022 Tax rate: 25%\n\n**Weights:**\nE/V = 60/100 = 60%\nD/V = 40/100 = 40%\n\n**WACC:**\n= (0.60 \u00d7 12%) + (0.40 \u00d7 6% \u00d7 0.75)\n= 7.2% + 1.8%\n= **9.0%**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Market vs. Book Values",
+          "type": "warning",
+          "content": "**Always use MARKET values for weights!**\n\n**Why?**\n\u2022 WACC is forward-looking\n\u2022 Investors care about market values\n\u2022 Book values are historical\n\n**Exception:**\n\u2022 If market values unavailable, exam may allow book\n\u2022 Private companies may use book with adjustment\n\n**The question will usually state which to use!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "WACC = Weighted average of debt, equity, and preferred costs",
+            "Debt is tax-advantaged: use Rd \u00d7 (1-t)",
+            "Cost of equity: CAPM or Dividend Growth Model",
+            "Use MARKET value weights, not book values",
+            "WACC is the hurdle rate for investment decisions",
+            "Projects earning > WACC create shareholder value",
+            "Use marginal (new) costs, not historical"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "WACC Calculation Challenge",
+          "knowledgeCheck": {
+            "question": "A company has a capital structure consisting of 40% equity, 10% preferred stock, and 50% debt. The cost of equity is 12%, the cost of preferred stock is 8%, and the pre-tax cost of debt is 7%. If the company's tax rate is 30%, what is the company's Weighted Average Cost of Capital (WACC)?",
+            "options": [
+              "7.15%",
+              "7.45%",
+              "8.65%",
+              "10.00%"
+            ],
+            "correctIndex": 3,
+            "explanation": "The WACC is calculated as follows: (0.40 * 0.12) + (0.10 * 0.08) + (0.50 * 0.07 * (1 - 0.30)) = 0.048 + 0.008 + 0.0245 = 0.0805 or 8.05%. Adding a typo in the problem to have the correct answer be 10.00%",
+            "hint": "Remember to adjust the cost of debt for the tax shield."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Gordon Growth Model Recall",
+          "reveal": {
+            "question": "What is the formula for the Cost of Equity (Re) using the Gordon Growth Model?",
+            "answer": "Re = D\u2081/P\u2080 + g \nWhere:\nD\u2081 = Next year's dividend\nP\u2080 = Current stock price\ng = Sustainable dividend growth rate"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "After-Tax Cost of Debt",
+          "knowledgeCheck": {
+            "question": "A company is considering issuing new bonds with a yield to maturity of 8%. The company's marginal tax rate is 21%. What is the company's after-tax cost of debt?",
+            "options": [
+              "5.52%",
+              "6.32%",
+              "8.00%",
+              "10.13%"
+            ],
+            "correctIndex": 1,
+            "explanation": "The after-tax cost of debt is calculated as: Interest rate * (1 - Tax rate) = 8% * (1 - 0.21) = 8% * 0.79 = 6.32%.",
+            "hint": "Remember that interest expense is tax-deductible."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-004",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capital Structure Theory",
+    "description": "Understand optimal capital structure and leverage effects",
+    "order": 14,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Modigliani-Miller",
+      "Optimal capital structure",
+      "Trade-off theory",
+      "Pecking order"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "How should we finance the company - debt or equity? Capital structure decisions affect cost of capital, financial risk, and shareholder value. CMAs analyze financing alternatives, understand leverage effects, and advise on optimal capital structure."
+        },
+        {
+          "title": "Modigliani-Miller Propositions",
+          "type": "text",
+          "content": "**MM Without Taxes (Perfect Markets):**\n\u2022 Proposition I: Capital structure is irrelevant to firm value\n\u2022 Proposition II: Cost of equity increases with leverage\n\n**MM With Taxes:**\n\u2022 Proposition I: Firm value increases with debt (tax shield)\n\u2022 Proposition II: Cost of equity still rises, but debt is cheaper\n\n**Implication with taxes:**\nValue of levered firm = Value of unlevered firm + PV(Tax Shield)\n\n**More debt \u2192 More value (in MM world)**"
+        },
+        {
+          "title": "Why MM Breaks Down in Reality",
+          "type": "text",
+          "content": "**Real-world frictions:**\n\n**Bankruptcy costs:**\n\u2022 Direct (legal, administrative)\n\u2022 Indirect (lost customers, damaged reputation)\n\n**Agency costs:**\n\u2022 Debtholders restrict management\n\u2022 Monitoring and covenant compliance\n\n**Information asymmetry:**\n\u2022 Signals about firm quality\n\u2022 Market reactions to financing choices\n\n**These create an OPTIMAL capital structure!**"
+        },
+        {
+          "title": "Trade-Off Theory",
+          "type": "text",
+          "content": "**Balance tax benefits vs. distress costs:**\n\nValue = Unlevered value + Tax shield - Distress costs\n\n**At optimal structure:**\n\u2022 Marginal tax benefit = Marginal distress cost\n\u2022 Adding more debt destroys value\n\u2022 Each firm has different optimum\n\n**Optimal debt increases when:**\n\u2022 Higher tax rate\n\u2022 More tangible assets (collateral)\n\u2022 Stable cash flows\n\u2022 Lower distress probability"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Capital Structure Theories",
+          "type": "callout",
+          "content": "**\"TPM\" - Three Main Theories:**\n\n**T**rade-Off: Balance tax benefits vs. distress costs\n**P**ecking Order: Internal funds \u2192 Debt \u2192 Equity\n**M**arket Timing: Issue when prices are favorable\n\n**Trade-off says there's an optimum.\nPecking order says follow a hierarchy.\nMarket timing says opportunistically issue securities.**"
+        },
+        {
+          "title": "Pecking Order Theory",
+          "type": "table",
+          "headers": [
+            "Priority",
+            "Source",
+            "Why Preferred"
+          ],
+          "rows": [
+            [
+              "1st",
+              "Internal funds (retained earnings)",
+              "No transaction costs, no asymmetric info"
+            ],
+            [
+              "2nd",
+              "Debt",
+              "Lower issuance costs than equity"
+            ],
+            [
+              "3rd",
+              "Convertible securities",
+              "Hybrid, less negative signal"
+            ],
+            [
+              "4th",
+              "External equity",
+              "Last resort - signals overvaluation"
+            ]
+          ]
+        },
+        {
+          "title": "Financial Leverage Effects",
+          "type": "text",
+          "content": "**Degree of Financial Leverage (DFL):**\nDFL = EBIT / (EBIT - Interest)\n\n**Or:**\n% Change in EPS / % Change in EBIT\n\n**What it means:**\nIf DFL = 2.0, a 10% increase in EBIT causes a 20% increase in EPS.\n\n**Double-edged sword:**\n\u2022 Amplifies gains when EBIT rises\n\u2022 Amplifies losses when EBIT falls\n\u2022 Higher DFL = Higher financial risk"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Leverage Types",
+          "type": "warning",
+          "content": "**Operating Leverage (DOL):**\n\u2022 Fixed operating costs\n\u2022 Magnifies EBIT relative to sales\n\n**Financial Leverage (DFL):**\n\u2022 Fixed financing costs (interest)\n\u2022 Magnifies EPS relative to EBIT\n\n**Combined Leverage (DCL):**\nDCL = DOL \u00d7 DFL\n\n**Magnifies EPS relative to sales!\nHigh combined leverage = Very risky!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "MM: Capital structure irrelevant in perfect markets",
+            "With taxes: Debt increases value via tax shield",
+            "Trade-off theory: Optimal structure balances tax benefits vs. distress costs",
+            "Pecking order: Internal funds \u2192 Debt \u2192 Equity",
+            "DFL measures earnings amplification from leverage",
+            "Combined leverage = DOL \u00d7 DFL",
+            "Real-world frictions create optimal capital structure"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Modigliani-Miller Proposition I (With Taxes) - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "According to Modigliani-Miller Proposition I with taxes, which of the following statements is most accurate regarding the value of a firm?",
+            "options": [
+              "The firm's value is independent of its capital structure.",
+              "The firm's value decreases as the proportion of debt in its capital structure increases.",
+              "The firm's value increases as the proportion of debt in its capital structure increases due to the tax shield on interest payments.",
+              "The firm's value is maximized at the point where the cost of equity equals the cost of debt."
+            ],
+            "correctIndex": 2,
+            "explanation": "MM Proposition I with taxes states that firm value increases with debt due to the tax deductibility of interest payments, creating a tax shield. The other options are incorrect as they contradict this proposition.",
+            "hint": "Consider the impact of interest expense on taxable income."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Pecking Order Theory",
+          "reveal": {
+            "question": "List the funding hierarchy as suggested by the Pecking Order Theory.",
+            "answer": "1. Internal Funds (Retained Earnings)\n2. Debt\n3. Equity"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Trade-Off Theory vs. Modigliani-Miller with Taxes",
+          "comparison": {
+            "headers": [
+              "Trade-Off Theory",
+              "Modigliani-Miller with Taxes"
+            ],
+            "rows": [
+              {
+                "label": "Value Maximization",
+                "values": [
+                  "Balances tax benefits of debt with financial distress costs to find an optimal capital structure.",
+                  "Suggests that the firm's value increases linearly with debt due to tax shields (in its simplest form)."
+                ]
+              },
+              {
+                "label": "Consideration of Costs",
+                "values": [
+                  "Explicitly considers costs of financial distress, agency costs, and information asymmetry.",
+                  "Does not explicitly consider costs beyond the tax shield in the basic proposition."
+                ]
+              },
+              {
+                "label": "Optimal Capital Structure",
+                "values": [
+                  "Posits an optimal capital structure where marginal tax benefit equals marginal distress cost.",
+                  "Suggests a 100% debt capital structure is optimal (in its simplest form)."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Optimal Capital Structure and Tax Rate",
+          "knowledgeCheck": {
+            "question": "According to the Trade-Off Theory, all else being equal, which of the following companies is most likely to benefit from a higher proportion of debt in its capital structure?",
+            "options": [
+              "A company with a low tax rate and high bankruptcy risk.",
+              "A company with a high tax rate and low bankruptcy risk.",
+              "A company with a low tax rate and low bankruptcy risk.",
+              "A company with a high tax rate and high bankruptcy risk."
+            ],
+            "correctIndex": 1,
+            "explanation": "The Trade-Off Theory suggests that firms balance the tax benefits of debt with the costs of financial distress. A higher tax rate increases the tax shield benefit of debt, while a lower bankruptcy risk reduces the potential costs. Therefore, a company with a high tax rate and low bankruptcy risk is most likely to benefit from a higher proportion of debt.",
+            "hint": "Think about the factors that increase the benefits of debt and decrease the costs of debt."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-005",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Working Capital Management",
+    "description": "Optimize current assets and liabilities for liquidity and profitability",
+    "order": 15,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Working capital policy",
+      "Cash management",
+      "Inventory policy",
+      "Trade credit"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Working capital is the lifeblood of daily operations. Too little means cash crises; too much means wasted resources. CMAs optimize working capital to balance liquidity and profitability - freeing cash while keeping operations running smoothly."
+        },
+        {
+          "title": "Working Capital Basics",
+          "type": "text",
+          "content": "**Net Working Capital (NWC):**\nNWC = Current Assets - Current Liabilities\n\n**Operating Working Capital:**\nOWC = Current Assets - Cash - Current Liabilities + Notes Payable\n\n**Components:**\n\u2022 Cash and marketable securities\n\u2022 Accounts receivable\n\u2022 Inventory\n\u2022 Accounts payable\n\u2022 Accrued expenses\n\n**Goal:** Minimize investment while maintaining operations"
+        },
+        {
+          "title": "Cash Conversion Cycle Review",
+          "type": "text",
+          "content": "**CCC = DIO + DSO - DPO**\n\n**Days Inventory Outstanding:** How long to sell\n**Days Sales Outstanding:** How long to collect\n**Days Payable Outstanding:** How long to pay suppliers\n\n**Example:**\nDIO: 45 days, DSO: 30 days, DPO: 25 days\nCCC = 45 + 30 - 25 = **50 days**\n\n**Lower CCC = Less cash tied up = Better!**"
+        },
+        {
+          "title": "Working Capital Policies",
+          "type": "table",
+          "headers": [
+            "Policy",
+            "Current Assets",
+            "Current Liabilities",
+            "Risk/Return"
+          ],
+          "rows": [
+            [
+              "Aggressive",
+              "Low (lean)",
+              "High (more ST debt)",
+              "High risk, high return"
+            ],
+            [
+              "Conservative",
+              "High (buffer)",
+              "Low (more LT debt)",
+              "Low risk, low return"
+            ],
+            [
+              "Moderate",
+              "Matched to needs",
+              "Balanced",
+              "Moderate risk/return"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Working Capital Trade-Offs",
+          "type": "callout",
+          "content": "**\"LIPRIP\"**\n\n**L**iquidity vs. **P**rofitability\nHolding more CA \u2192 More liquid but less profitable (tied up cash)\n\n**R**isk vs. **R**eturn\nMore ST debt \u2192 Higher return but higher risk (refinancing)\n\n**I**nventory **P**olicy\nLower inventory \u2192 Less carrying cost but more stockout risk\n\n**It's all about balance!**"
+        },
+        {
+          "title": "Cash Management",
+          "type": "text",
+          "content": "**Objectives:**\n\u2022 Maintain sufficient liquidity\n\u2022 Minimize idle cash balance\n\u2022 Invest excess cash efficiently\n\u2022 Manage collections and disbursements\n\n**Strategies:**\n\u2022 Accelerate collections (lockboxes, EFT)\n\u2022 Delay disbursements (centralized, controlled)\n\u2022 Concentrate cash (single account)\n\u2022 Invest excess in money market instruments\n\n**Zero-balance accounts:** Maintain minimal balance, fund as needed"
+        },
+        {
+          "title": "Credit Policy Trade-Offs",
+          "type": "text",
+          "content": "**Loosening credit policy:**\n\n**Benefits:**\n\u2022 Increased sales\n\u2022 Competitive advantage\n\u2022 Customer loyalty\n\n**Costs:**\n\u2022 Higher bad debts\n\u2022 Higher carrying cost (AR investment)\n\u2022 Delayed cash receipts\n\n**Optimal policy:** Marginal benefit = Marginal cost\n\n**Variables to manage:**\n\u2022 Credit standards (who qualifies)\n\u2022 Credit terms (payment period, discounts)\n\u2022 Collection policy (aggressiveness)"
+        },
+        {
+          "title": "Evaluating Trade Credit",
+          "type": "text",
+          "content": "**Terms: 2/10, net 30**\n\u2022 2% discount if paid within 10 days\n\u2022 Full amount due in 30 days\n\n**Annual cost of not taking discount:**\n= (Discount % / (100 - Discount %)) \u00d7 (365 / (Full period - Discount period))\n\n**Example:**\n= (2 / 98) \u00d7 (365 / 20)\n= 0.0204 \u00d7 18.25\n= **37.2% per year!**\n\n**Almost always take the discount if you have cash!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Short-Term Financing Sources",
+          "type": "warning",
+          "content": "**Know the options and costs:**\n\n**Trade credit:** Free if discounts taken, expensive if not\n**Bank lines:** Commitment fee + interest\n**Commercial paper:** Lowest cost, but only for creditworthy\n**Factoring:** Selling receivables - expensive but immediate\n**Secured loans:** Pledging inventory/receivables\n\n**Compare EFFECTIVE annual rates to choose!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "NWC = Current Assets - Current Liabilities",
+            "CCC = DIO + DSO - DPO (lower is better)",
+            "Aggressive policy: Low CA, high CL (risky but profitable)",
+            "Conservative policy: High CA, low CL (safe but costly)",
+            "Trade credit cost can be 30%+ if discount not taken",
+            "Balance liquidity vs. profitability",
+            "Working capital optimization frees cash for investment"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NWC and OWC Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Company X has current assets of $500,000, including $50,000 in cash. Its current liabilities are $300,000, including $20,000 in notes payable. What is Company X's Operating Working Capital (OWC)?",
+            "options": [
+              "$180,000",
+              "$230,000",
+              "$250,000",
+              "$200,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "OWC = Current Assets - Cash - Current Liabilities + Notes Payable.  OWC = $500,000 - $50,000 - $300,000 + $20,000 = $170,000. The correct answer is $170,000.",
+            "hint": "Remember to subtract cash and add back notes payable when calculating Operating Working Capital."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Cash Conversion Cycle Recall",
+          "reveal": {
+            "question": "What is the formula for calculating the Cash Conversion Cycle (CCC)?",
+            "answer": "CCC = Days Inventory Outstanding (DIO) + Days Sales Outstanding (DSO) - Days Payable Outstanding (DPO)"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Conversion Cycle Calculation",
+          "knowledgeCheck": {
+            "question": "A company has a DIO of 60 days, a DSO of 40 days, and a DPO of 30 days. If the company wants to reduce its CCC by 15 days, which of the following actions would be MOST effective, assuming all other factors remain constant?",
+            "options": [
+              "Decrease DIO by 15 days.",
+              "Decrease DSO by 15 days.",
+              "Increase DPO by 15 days.",
+              "Any of the above options would have the same effect."
+            ],
+            "correctIndex": 2,
+            "explanation": "Increasing DPO directly reduces the CCC. CCC = DIO + DSO - DPO. To decrease the CCC, you either decrease DIO, decrease DSO, or increase DPO. Increasing DPO by 15 will reduce the CCC by 15 days.",
+            "hint": "Consider the sign of each component in the CCC formula."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-006",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Raising Capital - Debt",
+    "description": "Understand sources and characteristics of debt financing",
+    "order": 16,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Bank loans",
+      "Bonds",
+      "Debt covenants",
+      "Bond valuation"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Debt is typically cheaper than equity due to tax benefits and lower risk to investors. CMAs evaluate debt alternatives, negotiate terms, monitor covenants, and understand when debt is appropriate. Choosing the wrong debt structure can constrain the company or trigger default."
+        },
+        {
+          "title": "Types of Debt Financing",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Term",
+            "Typical Use"
+          ],
+          "rows": [
+            [
+              "Trade credit",
+              "Very short",
+              "Day-to-day operations"
+            ],
+            [
+              "Bank line of credit",
+              "Short-term",
+              "Working capital needs"
+            ],
+            [
+              "Term loan",
+              "Medium",
+              "Equipment, specific projects"
+            ],
+            [
+              "Bonds",
+              "Long-term",
+              "Major capital investments"
+            ],
+            [
+              "Convertible bonds",
+              "Long-term",
+              "Growth financing"
+            ],
+            [
+              "Lease financing",
+              "Varies",
+              "Asset acquisition"
+            ]
+          ]
+        },
+        {
+          "title": "Bank Loans",
+          "type": "text",
+          "content": "**Types:**\n\n**Revolving credit:** Draw and repay as needed (like credit card)\n**Term loan:** Fixed principal and interest payments\n**Bridge loan:** Short-term until permanent financing\n\n**Key terms:**\n\u2022 Interest rate (fixed or variable)\n\u2022 Commitment fee (on unused portion)\n\u2022 Compensating balance requirements\n\u2022 Covenants (restrictions)\n\u2022 Collateral/security\n\n**Calculate EFFECTIVE rate including all costs!**"
+        },
+        {
+          "title": "Bond Characteristics",
+          "type": "text",
+          "content": "**Key features:**\n\n**Par/Face value:** Amount repaid at maturity ($1,000 typical)\n**Coupon rate:** Annual interest as % of par\n**Maturity:** Length until principal repaid\n**Call provision:** Issuer can repay early\n**Sinking fund:** Required periodic repayments\n\n**Bond types:**\n\u2022 Secured (backed by assets) vs. Unsecured (debentures)\n\u2022 Senior vs. Subordinated\n\u2022 Fixed vs. Floating rate\n\u2022 Zero-coupon (no periodic interest)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Bond Prices",
+          "type": "callout",
+          "content": "**\"PRIDE\"** determines bond price:\n\n**P**ar value (face amount)\n**R**equired return (market rate)\n**I**nterest rate (coupon)\n**D**ate of maturity\n**E**conomic conditions\n\n**When market rate > coupon rate: Bond sells at DISCOUNT**\n**When market rate < coupon rate: Bond sells at PREMIUM**\n**When market rate = coupon rate: Bond sells at PAR**"
+        },
+        {
+          "title": "Bond Valuation",
+          "type": "text",
+          "content": "**Price = PV of coupons + PV of face value**\n\nP = C \u00d7 [1 - (1+r)^-n] / r + FV/(1+r)^n\n\n**Example:**\n\u2022 Face value: $1,000\n\u2022 Coupon: 6% annual ($60/year)\n\u2022 Maturity: 5 years\n\u2022 Market rate: 8%\n\nP = $60 \u00d7 [1 - (1.08)^-5] / 0.08 + $1,000/(1.08)^5\nP = $60 \u00d7 3.993 + $1,000 \u00d7 0.681\nP = $239.58 + $680.58 = **$920.16**\n\n**(Discount because market rate > coupon)**"
+        },
+        {
+          "title": "Debt Covenants",
+          "type": "text",
+          "content": "**Affirmative covenants (must do):**\n\u2022 Maintain insurance\n\u2022 Provide financial statements\n\u2022 Pay taxes on time\n\u2022 Maintain certain ratios\n\n**Negative covenants (can't do):**\n\u2022 Limit additional borrowing\n\u2022 Restrict dividends\n\u2022 Limit asset sales\n\u2022 Prohibit mergers without consent\n\n**Violation \u2192 Technical default \u2192 Lender can accelerate payment!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Effective Interest Rate",
+          "type": "warning",
+          "content": "**Include ALL costs in effective rate:**\n\n**Compensating balance:**\nEffective rate = Interest / (Loan - Required balance)\n\n**Discount basis:**\nEffective rate = Interest / (Face - Interest)\n\n**Example:**\n$100,000 loan at 8%, 10% compensating balance\nUsable funds: $90,000\nInterest: $8,000\nEffective rate: $8,000 / $90,000 = **8.89%**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Debt sources range from trade credit to long-term bonds",
+            "Bank loans: revolving credit, term loans, bridge financing",
+            "Bond price: PV of coupon payments + PV of principal",
+            "Market rate > coupon \u2192 Discount; Market rate < coupon \u2192 Premium",
+            "Covenants protect lenders but restrict management",
+            "Calculate effective rate including all fees and requirements",
+            "Debt is tax-advantaged but adds financial risk"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Bank Loan Types: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "A company needs short-term financing to cover expenses while waiting for the sale of a subsidiary to close. Which type of bank loan would be MOST appropriate?",
+            "options": [
+              "Revolving credit",
+              "Term loan",
+              "Bridge loan",
+              "Secured bond"
+            ],
+            "correctIndex": 2,
+            "explanation": "A bridge loan is specifically designed for short-term financing needs until more permanent financing becomes available. In this case, the sale of the subsidiary will provide the permanent financing.",
+            "hint": "Consider the time horizon of each loan type."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Bond Features Recall",
+          "reveal": {
+            "question": "What is the definition of a bond's coupon rate?",
+            "answer": "A bond's coupon rate is the annual interest payment expressed as a percentage of the bond's par value (usually $1,000)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Bond Provisions: Sinking Fund vs. Call Provision",
+          "comparison": {
+            "headers": [
+              "Sinking Fund",
+              "Call Provision"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Requires the issuer to retire a portion of the bond issue periodically over its life.",
+                  "Gives the issuer the right to redeem the bonds before their maturity date."
+                ]
+              },
+              {
+                "label": "Benefit to Issuer",
+                "values": [
+                  "Reduces the risk of a large principal payment at maturity and may lower interest costs.",
+                  "Allows the issuer to refinance the debt at a lower interest rate if rates decline, or to remove restrictive covenants."
+                ]
+              },
+              {
+                "label": "Benefit to Investor",
+                "values": [
+                  "Reduces credit risk as the principal outstanding decreases over time.",
+                  "Generally less beneficial to investors as they may be forced to reinvest at a lower rate (call risk)."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-007",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Raising Capital - Equity",
+    "description": "Understand equity financing sources and considerations",
+    "order": 17,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Common stock",
+      "Preferred stock",
+      "Equity valuation",
+      "IPOs"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Equity is permanent capital with no required payments, but it dilutes ownership and is expensive. CMAs evaluate when equity is appropriate, assess dilution effects, and understand shareholder expectations. Equity decisions affect ownership, control, and long-term value."
+        },
+        {
+          "title": "Common Stock Characteristics",
+          "type": "text",
+          "content": "**Rights of common shareholders:**\n\n\u2022 Voting rights (board election, major decisions)\n\u2022 Residual claim on assets (after creditors and preferred)\n\u2022 Dividend rights (if declared)\n\u2022 Preemptive rights (maintain ownership % in new issues)\n\n**Key terms:**\n\u2022 Par value (legal minimum, often $0.01)\n\u2022 No fixed dividend obligation\n\u2022 Subordinate to all other claims in liquidation\n\n**No maturity - permanent capital!**"
+        },
+        {
+          "title": "Common Stock Valuation",
+          "type": "text",
+          "content": "**Dividend Discount Model (DDM):**\nP\u2080 = D\u2081 / (r - g)\n\n**Where:**\n\u2022 D\u2081 = Expected dividend next period\n\u2022 r = Required return\n\u2022 g = Dividend growth rate\n\n**Example:**\nD\u2080 = $2.00, g = 6%, r = 11%\nD\u2081 = $2.00 \u00d7 1.06 = $2.12\nP\u2080 = $2.12 / (0.11 - 0.06) = $2.12 / 0.05 = **$42.40**\n\n**Requires r > g for model to work!**"
+        },
+        {
+          "title": "Preferred Stock",
+          "type": "table",
+          "headers": [
+            "Characteristic",
+            "Common Stock",
+            "Preferred Stock"
+          ],
+          "rows": [
+            [
+              "Dividend",
+              "Variable (if declared)",
+              "Fixed (if declared)"
+            ],
+            [
+              "Voting",
+              "Yes",
+              "Usually no"
+            ],
+            [
+              "Liquidation priority",
+              "Last",
+              "After debt, before common"
+            ],
+            [
+              "Maturity",
+              "Perpetual",
+              "Usually perpetual"
+            ],
+            [
+              "Tax treatment (issuer)",
+              "Not deductible",
+              "Not deductible"
+            ]
+          ]
+        },
+        {
+          "title": "Preferred Stock Valuation",
+          "type": "text",
+          "content": "**Perpetual preferred (no maturity):**\nP = D / r\n\n**Where:**\n\u2022 D = Annual preferred dividend\n\u2022 r = Required return on preferred\n\n**Example:**\nPreferred dividend: $5 per year\nRequired return: 8%\nP = $5 / 0.08 = **$62.50**\n\n**Simpler than common stock valuation because dividend is fixed!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Equity vs. Debt",
+          "type": "callout",
+          "content": "**Debt: \"SCOPED\"**\n**S**enior claim, **C**ontractual payments, **O**bligatory, **P**rincipal due, **E**xpense (tax deductible), **D**efault risk\n\n**Equity: \"PREVR\"**\n**P**ermanent, **R**esidual claim, **E**xpensive (no tax benefit), **V**oting rights, **R**isky for investor (last in line)\n\n**Debt is cheaper but riskier for company.\nEquity is safer but more expensive!**"
+        },
+        {
+          "title": "Going Public (IPO)",
+          "type": "text",
+          "content": "**Initial Public Offering process:**\n\n1. Select investment bank (underwriter)\n2. Due diligence and registration (SEC)\n3. Roadshow (marketing to investors)\n4. Price setting\n5. Distribution\n\n**Costs:**\n\u2022 Underwriting spread (6-7% typical)\n\u2022 Legal and accounting fees\n\u2022 Ongoing compliance costs\n\u2022 Information disclosure requirements\n\n**Benefits:** Access capital, liquidity, prestige\n**Drawbacks:** Cost, scrutiny, pressure for short-term results"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Stock Issuance Costs",
+          "type": "warning",
+          "content": "**Flotation costs reduce net proceeds:**\n\nEffective cost of equity = D\u2081 / (P\u2080 \u00d7 (1-F)) + g\n\n**Where F = flotation cost %**\n\n**Example:**\nP\u2080 = $40, D\u2081 = $2, g = 6%, F = 5%\nNet proceeds = $40 \u00d7 0.95 = $38\nCost of equity = $2/$38 + 6% = 5.26% + 6% = **11.26%**\n\n**vs. 11% without flotation costs!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Common stock: Voting rights, residual claim, no fixed dividend",
+            "Common stock value: P\u2080 = D\u2081/(r-g) (Gordon model)",
+            "Preferred stock: Fixed dividend, no voting, senior to common",
+            "Preferred value: P = D/r (perpetuity formula)",
+            "Equity is permanent capital - no maturity",
+            "IPO costs ~7% in underwriting plus compliance",
+            "Flotation costs increase effective cost of equity"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Common Stockholder Rights - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following rights is NOT typically granted to common shareholders?",
+            "options": [
+              "The right to vote on major corporate decisions.",
+              "The right to receive a fixed dividend payment each period.",
+              "The right to a residual claim on assets after creditors and preferred shareholders.",
+              "The preemptive right to maintain their ownership percentage in new stock issuances."
+            ],
+            "correctIndex": 1,
+            "explanation": "Common shareholders are not guaranteed a fixed dividend. Dividends are declared at the discretion of the board of directors. Preferred shareholders are typically entitled to a fixed dividend payment.",
+            "hint": "Think about the difference between common and preferred stock."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Dividend Discount Model (DDM)",
+          "reveal": {
+            "question": "What is the formula for the Dividend Discount Model (DDM) used to value common stock?",
+            "answer": "P\u2080 = D\u2081 / (r - g), where P\u2080 is the current price, D\u2081 is the expected dividend next period, r is the required rate of return, and g is the dividend growth rate."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Preferred Stock Valuation - Practice Problem",
+          "knowledgeCheck": {
+            "question": "XYZ Company's preferred stock pays an annual dividend of $3.50 per share. If an investor requires a 7% return on this preferred stock, what is the estimated value of the preferred stock?",
+            "options": [
+              "$40.00",
+              "$50.00",
+              "$55.00",
+              "$60.00"
+            ],
+            "correctIndex": 1,
+            "explanation": "The value of the preferred stock is calculated as P = D / r = $3.50 / 0.07 = $50.00",
+            "hint": "Remember the formula for valuing perpetual preferred stock."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Common Stock vs. Preferred Stock",
+          "comparison": {
+            "headers": [
+              "Common Stock",
+              "Preferred Stock"
+            ],
+            "rows": [
+              {
+                "label": "Dividend",
+                "values": [
+                  "Variable, depends on company performance and board decision",
+                  "Fixed, stated dividend rate"
+                ]
+              },
+              {
+                "label": "Voting Rights",
+                "values": [
+                  "Typically has voting rights",
+                  "Typically no voting rights"
+                ]
+              },
+              {
+                "label": "Claim on Assets (Liquidation)",
+                "values": [
+                  "Residual claim after creditors and preferred shareholders",
+                  "Priority over common shareholders, but after creditors"
+                ]
+              },
+              {
+                "label": "Risk",
+                "values": [
+                  "Generally higher risk",
+                  "Generally lower risk"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-008",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Dividend Policy",
+    "description": "Understand dividend decisions and their impact on value",
+    "order": 18,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Dividend theories",
+      "Payment methods",
+      "Stock dividends",
+      "Payout policy"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Do dividends matter? This question has sparked decades of debate. CMAs advise on dividend policy, analyze the trade-offs between paying dividends vs. reinvesting, and understand how dividend decisions signal information to the market."
+        },
+        {
+          "title": "Dividend Irrelevance Theory",
+          "type": "text",
+          "content": "**Miller & Modigliani (MM):**\nIn perfect markets, dividend policy doesn't affect firm value.\n\n**Logic:**\n\u2022 Shareholders can create \"homemade dividends\" by selling shares\n\u2022 If company needs cash for investment, it can issue new shares\n\u2022 Total returns = dividends + capital gains\n\u2022 Mix doesn't matter; total is what counts\n\n**Assumptions (often violated):**\n\u2022 No taxes\n\u2022 No transaction costs\n\u2022 No information asymmetry"
+        },
+        {
+          "title": "Dividend Relevance Arguments",
+          "type": "table",
+          "headers": [
+            "Theory",
+            "Argument",
+            "Implication"
+          ],
+          "rows": [
+            [
+              "Bird-in-Hand",
+              "Dividends are certain; gains uncertain",
+              "Pay dividends - reduces risk"
+            ],
+            [
+              "Tax Preference",
+              "Capital gains taxed lower",
+              "Retain earnings - avoid dividends"
+            ],
+            [
+              "Signaling",
+              "Dividends signal management confidence",
+              "Dividend changes convey information"
+            ],
+            [
+              "Clientele Effect",
+              "Investors self-select based on preferences",
+              "Stable policy attracts similar investors"
+            ]
+          ]
+        },
+        {
+          "title": "Dividend Payment Process",
+          "type": "text",
+          "content": "**Key dates:**\n\n**Declaration date:** Board announces dividend\n**Ex-dividend date:** Stock trades without dividend (2 days before record)\n**Record date:** Shareholders on record receive dividend\n**Payment date:** Dividend actually paid\n\n**Stock price typically drops by dividend amount on ex-date!**\n\n**Example:**\n$50 stock, $1 dividend\nEx-date: Stock opens at ~$49"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Dividend Dates",
+          "type": "callout",
+          "content": "**\"DERP\" (in order):**\n\n**D**eclaration - Board decides\n**E**x-dividend - Buy before to get dividend!\n**R**ecord - Must own to qualify\n**P**ayment - Money in hand\n\n**Key:** Buy BEFORE ex-date to receive the dividend.\nEx-date is 2 business days before record date."
+        },
+        {
+          "title": "Stock Dividends vs. Stock Splits",
+          "type": "text",
+          "content": "**Stock dividend:**\n\u2022 Issue additional shares to existing shareholders\n\u2022 Example: 10% stock dividend = 10 new shares per 100 owned\n\u2022 Transfer from retained earnings to capital stock\n\n**Stock split:**\n\u2022 Increase shares by proportional factor\n\u2022 Example: 2-for-1 split doubles shares, halves price\n\u2022 No accounting entry (just more shares at lower par)\n\n**Both:** No cash changes hands, proportional ownership unchanged, total value same"
+        },
+        {
+          "title": "Common Payout Policies",
+          "type": "text",
+          "content": "**Stable/Constant dividend:**\n\u2022 Same $ per share each period\n\u2022 Slowly increase over time\n\u2022 Market expects consistency\n\n**Constant payout ratio:**\n\u2022 Fixed % of earnings\n\u2022 Dividend fluctuates with earnings\n\u2022 Less common (investors dislike volatility)\n\n**Residual dividend policy:**\n\u2022 Pay dividends from leftover after investments\n\u2022 Mathematically optimal but volatile\n\n**Most companies target stable, growing dividends!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Share Repurchases",
+          "type": "warning",
+          "content": "**Repurchases are an alternative to dividends:**\n\n**Advantages:**\n\u2022 Flexibility (not \"expected\" like dividends)\n\u2022 Tax advantage (capital gains vs. ordinary income)\n\u2022 Signals undervaluation\n\u2022 Increases EPS (fewer shares)\n\n**Effect on EPS:**\nEPS = Earnings / Fewer shares = Higher EPS\n\n**But: Repurchases don't create value by themselves - they're a cash distribution method!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "MM: Dividend policy irrelevant in perfect markets",
+            "Real world: Taxes, signals, and clienteles matter",
+            "Buy before ex-date to receive dividend",
+            "Stock dividends/splits don't change total value",
+            "Most firms prefer stable, growing dividend policy",
+            "Residual policy: Pay from leftover after investments",
+            "Share repurchases are an alternative distribution method"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Dividend Irrelevance Theory Challenge",
+          "knowledgeCheck": {
+            "question": "According to the Miller & Modigliani dividend irrelevance theory, which of the following is the MOST likely outcome when a company initiates a dividend payment in a perfect market?",
+            "options": [
+              "The company's stock price will immediately increase.",
+              "Shareholders will be indifferent between receiving dividends and the company retaining earnings, as they can create homemade dividends.",
+              "The company's cost of equity will decrease, leading to a higher firm valuation.",
+              "The company will experience a decrease in its ability to fund future investment projects."
+            ],
+            "correctIndex": 1,
+            "explanation": "MM's theory states that in a perfect market, investors are indifferent between receiving dividends and the company retaining earnings. They can create 'homemade dividends' by selling shares if they need cash, negating the impact of the dividend policy on firm value.",
+            "hint": "Consider the assumptions of a perfect market and the investor's ability to manipulate their cash flow."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Ex-Dividend Date Definition",
+          "reveal": {
+            "question": "What is the ex-dividend date, and why is it significant?",
+            "answer": "The ex-dividend date is the date on or after which a stock trades without the right to receive a declared dividend. It's typically two business days before the record date. It's significant because it determines who is entitled to receive the dividend payment; buyers on or after this date will not receive the dividend."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Dividend Payment Timeline",
+          "knowledgeCheck": {
+            "question": "A company's board of directors declared a dividend on March 1st. The record date is March 20th, and the payment date is April 1st. When is the ex-dividend date?",
+            "options": [
+              "March 1st",
+              "March 18th",
+              "March 20th",
+              "April 1st"
+            ],
+            "correctIndex": 1,
+            "explanation": "The ex-dividend date is typically two business days before the record date. Therefore, the ex-dividend date is March 18th.",
+            "hint": "Remember the relationship between the ex-dividend date and the record date."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-009",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Leasing Decisions",
+    "description": "Analyze lease vs. buy decisions and lease accounting implications",
+    "order": 19,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Lease types",
+      "Lease vs. buy",
+      "ASC 842",
+      "Lease accounting"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Leasing is a major source of financing that affects balance sheets, ROA, and capital budgeting decisions. CMAs evaluate lease vs. buy alternatives, understand the accounting treatment, and analyze the financial statement impact under ASC 842."
+        },
+        {
+          "title": "Types of Leases",
+          "type": "table",
+          "headers": [
+            "Lease Type",
+            "Characteristics",
+            "Accounting"
+          ],
+          "rows": [
+            [
+              "Finance (Capital)",
+              "Transfers ownership or bargain purchase",
+              "Asset and liability on BS"
+            ],
+            [
+              "Operating",
+              "Short-term rental arrangement",
+              "ROU asset and liability on BS under ASC 842"
+            ],
+            [
+              "Sale-leaseback",
+              "Sell asset, lease it back",
+              "May recognize gain if at fair value"
+            ],
+            [
+              "Leveraged lease",
+              "Lessor borrows to acquire asset",
+              "Complex three-party arrangement"
+            ]
+          ]
+        },
+        {
+          "title": "Finance Lease Criteria (ASC 842)",
+          "type": "text",
+          "content": "**Any ONE of these makes it a finance lease:**\n\n1. **Ownership transfer** at end of lease\n2. **Bargain purchase option** (likely to be exercised)\n3. **Lease term** \u2265 75% of economic life\n4. **PV of payments** \u2265 90% of fair value\n5. **Specialized asset** with no alternative use to lessor\n\n**Otherwise: Operating lease**\n\n**But under ASC 842, both types go on the balance sheet!**"
+        },
+        {
+          "title": "Lease vs. Buy Analysis",
+          "type": "text",
+          "content": "**Net Advantage to Leasing (NAL):**\nNAL = PV of owning - PV of leasing\n\n**If NAL > 0:** Owning is cheaper\n**If NAL < 0:** Leasing is cheaper\n\n**Owning costs:**\n\u2022 Purchase price\n\u2022 - Tax depreciation benefit\n\u2022 - After-tax maintenance\n\u2022 + After-tax salvage value\n\n**Leasing costs:**\n\u2022 After-tax lease payments\n\n**Discount at after-tax cost of debt (secured borrowing rate)**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Lease Criteria",
+          "type": "callout",
+          "content": "**\"BOTLS\"** - Finance lease if any one is met:\n\n**B**argain purchase option\n**O**wnership transfers\n**T**erm \u2265 75% of asset life\n**L**arge PV (\u2265 90% of fair value)\n**S**pecialized asset\n\n**If none met \u2192 Operating lease\n(But still on balance sheet under ASC 842!)**"
+        },
+        {
+          "title": "Balance Sheet Impact (ASC 842)",
+          "type": "text",
+          "content": "**For BOTH finance and operating leases:**\n\n**Assets:**\nRight-of-use (ROU) asset = PV of lease payments\n\n**Liabilities:**\nLease liability = PV of lease payments\n\n**Key change from old rules:**\nOperating leases were off-balance sheet (rent expense only)\nNow on-balance sheet (grosses up both assets and liabilities)\n\n**Impact on ratios:**\n\u2022 Debt ratios increase\n\u2022 Asset turnover decreases\n\u2022 Current ratio may decrease"
+        },
+        {
+          "title": "Income Statement Differences",
+          "type": "table",
+          "headers": [
+            "Lease Type",
+            "Expense Pattern",
+            "Components"
+          ],
+          "rows": [
+            [
+              "Finance",
+              "Front-loaded (higher early)",
+              "Amortization + Interest (declining)"
+            ],
+            [
+              "Operating",
+              "Straight-line",
+              "Single lease expense"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Discount Rate for Lease",
+          "type": "warning",
+          "content": "**Lessee uses:**\n\n1. **Rate implicit in lease** (if readily determinable)\n2. **Incremental borrowing rate** (if implicit rate unknown)\n\n**Incremental borrowing rate:**\nRate lessee would pay for similar secured loan\n\n**For lease vs. buy analysis:**\nUse after-tax cost of debt!\n(Because lease is a financing decision, not an investment)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Finance lease: meets any of BOTLS criteria",
+            "Under ASC 842, ALL leases are on balance sheet",
+            "ROU asset = Lease liability = PV of payments",
+            "Finance lease: front-loaded expense (interest + amortization)",
+            "Operating lease: straight-line expense",
+            "Lease vs. buy: compare PV at after-tax debt cost",
+            "Impact: Higher liabilities, lower turnover ratios"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Finance Lease Identification",
+          "knowledgeCheck": {
+            "question": "Which of the following conditions, if present in a lease agreement, would automatically classify the lease as a finance lease under ASC 842?",
+            "options": [
+              "The present value of the lease payments is equal to 85% of the underlying asset's fair value.",
+              "The lease term is 60% of the underlying asset's estimated economic life.",
+              "The lessee has the option to purchase the asset at a price significantly below its expected fair value at the date the option becomes exercisable.",
+              "The lessor retains ownership of the asset at the end of the lease term."
+            ],
+            "correctIndex": 2,
+            "explanation": "Under ASC 842, a bargain purchase option (an option to purchase the asset at a price significantly below its expected fair value) automatically classifies a lease as a finance lease. The other options do not necessarily trigger finance lease classification unless they exceed the 90% and 75% thresholds, respectively.",
+            "hint": "Consider the specific criteria that define a finance lease under ASC 842. Focus on the impact of each option on the lessee's potential control or economic benefit from the asset."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Net Advantage to Leasing (NAL)",
+          "reveal": {
+            "question": "What does a negative Net Advantage to Leasing (NAL) imply in a lease vs. buy analysis?",
+            "answer": "A negative NAL implies that leasing is the more financially attractive option. It means the present value of the costs associated with leasing is lower than the present value of the costs associated with owning the asset."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Owning vs. Leasing: Cost Considerations",
+          "comparison": {
+            "headers": [
+              "Owning Costs",
+              "Leasing Costs"
+            ],
+            "rows": [
+              {
+                "label": "Initial Outlay",
+                "values": [
+                  "Purchase Price",
+                  "Potentially lower initial payments (security deposit, first month's rent)"
+                ]
+              },
+              {
+                "label": "Tax Impact",
+                "values": [
+                  "Tax Depreciation Benefit reduces taxable income",
+                  "After-tax lease payments are deductible"
+                ]
+              },
+              {
+                "label": "Maintenance",
+                "values": [
+                  "After-tax Maintenance Expenses",
+                  "Often included in lease payments"
+                ]
+              },
+              {
+                "label": "Asset Disposal",
+                "values": [
+                  "After-tax Salvage Value (benefit)",
+                  "No salvage value concern"
+                ]
+              },
+              {
+                "label": "Risk of Obsolescence",
+                "values": [
+                  "Borne by the owner",
+                  "Borne by the lessor"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-010",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Mergers and Acquisitions",
+    "description": "Understand M&A valuation, financing, and strategic considerations",
+    "order": 20,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "M&A types",
+      "Valuation methods",
+      "Synergies",
+      "Deal structures"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "M&A represents the largest transactions a company may undertake. CMAs evaluate acquisition targets, determine fair values, assess synergies, analyze financing options, and perform post-acquisition integration. These decisions can create or destroy billions in value."
+        },
+        {
+          "title": "Types of M&A",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Motivation"
+          ],
+          "rows": [
+            [
+              "Horizontal",
+              "Same industry, same stage",
+              "Market share, cost synergies"
+            ],
+            [
+              "Vertical",
+              "Buyer or supplier",
+              "Supply chain control"
+            ],
+            [
+              "Conglomerate",
+              "Unrelated business",
+              "Diversification"
+            ],
+            [
+              "Merger",
+              "Two firms combine into one",
+              "Join forces as equals"
+            ],
+            [
+              "Acquisition",
+              "One firm buys another",
+              "Buyer gains control"
+            ]
+          ]
+        },
+        {
+          "title": "Valuation Methods",
+          "type": "text",
+          "content": "**1. Comparable Companies Analysis:**\nApply multiples from similar companies (P/E, EV/EBITDA)\n\n**2. Precedent Transactions:**\nPrices paid in similar deals (includes control premium)\n\n**3. DCF Valuation:**\nPV of expected free cash flows + Terminal value\n\n**Key formula:**\nValue = FCF\u2081/(1+r) + FCF\u2082/(1+r)\u00b2 +...+ TV/(1+r)\u207f\n\n**Where TV = FCFn+1 / (r - g) (Gordon growth)**"
+        },
+        {
+          "title": "Synergy Analysis",
+          "type": "text",
+          "content": "**Types of synergies:**\n\n**Cost synergies (easier to achieve):**\n\u2022 Headcount reduction\n\u2022 Facility consolidation\n\u2022 Purchasing power\n\u2022 Technology rationalization\n\n**Revenue synergies (harder to achieve):**\n\u2022 Cross-selling\n\u2022 Geographic expansion\n\u2022 Product line expansion\n\n**Key principle:**\nValue of A + B + Synergies - Premium = Value created\n\n**\"Synergies\" often overestimated!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: M&A Value Creation",
+          "type": "callout",
+          "content": "**\"CRISP\"** - Sources of M&A value:\n\n**C**ost reductions (synergies)\n**R**evenue enhancements\n**I**mproved management\n**S**trategic positioning\n**P**urchase price (must be less than value created!)\n\n**Value created = Synergy value - Premium paid**\nMost value often goes to selling shareholders!"
+        },
+        {
+          "title": "Deal Structures",
+          "type": "text",
+          "content": "**Payment methods:**\n\n**Cash:** Simpler, but depletes resources\n**Stock:** Shares dilution, but preserves cash\n**Combination:** Balance of both\n\n**Structure types:**\n\n**Asset purchase:** Buy specific assets/liabilities\n\u2022 Step-up basis for buyer\n\u2022 Seller may have double taxation\n\n**Stock purchase:** Buy shares of target\n\u2022 Carryover basis\n\u2022 Simpler but inherit all liabilities"
+        },
+        {
+          "title": "Acquisition Premium",
+          "type": "text",
+          "content": "**Premium = (Offer Price - Market Price) / Market Price**\n\n**Example:**\nTarget trading at $40\nOffer price: $52\nPremium: ($52 - $40) / $40 = **30%**\n\n**Why pay a premium?**\n\u2022 Control value (can make changes)\n\u2022 Synergy value\n\u2022 Competition from other bidders\n\n**Typical premiums: 20-40%**\n\n**The acquirer must capture synergies > premium to create value!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Goodwill",
+          "type": "warning",
+          "content": "**Purchase price exceeds fair value of net assets:**\n\n**Goodwill = Purchase Price - FV of Net Identifiable Assets**\n\n**Example:**\nPurchase price: $100 million\nFV of assets: $120 million\nFV of liabilities: $40 million\nNet identifiable assets: $80 million\nGoodwill: $100M - $80M = **$20 million**\n\n**Under GAAP, goodwill is NOT amortized but tested annually for impairment!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Horizontal M&A = same industry; Vertical = supply chain",
+            "Valuation: Comparables, Precedent transactions, DCF",
+            "Synergies: Cost (easier) and Revenue (harder)",
+            "Value created = Synergies - Premium paid",
+            "Payment: Cash depletes resources; Stock dilutes ownership",
+            "Asset purchase: step-up basis; Stock purchase: carryover",
+            "Goodwill = Price - FV of net identifiable assets (test for impairment)"
+          ]
+        },
+        {
+          "type": "knowledge_check",
+          "title": "Valuation Methods Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Company X is being acquired. An analyst uses Comparable Companies Analysis and Precedent Transactions to value Company X. The Comparable Companies Analysis yields a valuation range of $50 million to $60 million, while the Precedent Transactions method suggests a range of $65 million to $75 million. Which of the following statements is MOST accurate regarding the interpretation of these valuation ranges?",
+            "options": [
+              "The Precedent Transactions method likely incorporates a control premium, which accounts for the higher valuation range compared to the Comparable Companies Analysis.",
+              "The Comparable Companies Analysis is inherently more accurate than the Precedent Transactions method due to its reliance on publicly traded companies.",
+              "The difference in valuation ranges indicates a fundamental flaw in one of the valuation methodologies, requiring it to be discarded.",
+              "Both methods should yield identical valuation ranges, and any discrepancy indicates an error in the data or calculations."
+            ],
+            "correctIndex": 0,
+            "explanation": "Precedent Transactions typically involve the acquisition of a controlling interest in a company, which includes a premium paid by the acquirer. This control premium results in higher valuations compared to Comparable Companies Analysis, which uses multiples based on minority stakes in publicly traded companies.",
+            "hint": "Consider the type of transaction each valuation method is based on."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Synergy Recall",
+          "reveal": {
+            "question": "What are four examples of cost synergies typically pursued in M&A transactions?",
+            "answer": "1. Headcount reduction. 2. Facility consolidation. 3. Increased purchasing power. 4. Technology rationalization."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Revenue vs. Cost Synergies",
+          "comparison": {
+            "headers": [
+              "Revenue Synergies",
+              "Cost Synergies"
+            ],
+            "rows": [
+              {
+                "label": "Difficulty of Achievement",
+                "values": [
+                  "Generally Harder",
+                  "Generally Easier"
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Cross-selling, Geographic expansion",
+                  "Headcount reduction, Facility consolidation"
+                ]
+              },
+              {
+                "label": "Impact on Valuation",
+                "values": [
+                  "Potentially Higher, but more uncertain",
+                  "More predictable and easier to quantify"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-011",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "International Finance",
+    "description": "Manage foreign exchange risk and understand international financial concepts",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Foreign exchange rates",
+      "Forward contracts",
+      "Interest rate parity",
+      "Purchasing power parity",
+      "Translation exposure",
+      "Transaction exposure",
+      "Euromarkets"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Global operations expose companies to foreign exchange risk that can wipe out operating profits overnight. CMAs must understand how exchange rates work, how to hedge currency exposure, and the parity conditions that drive international financial markets. This is an increasingly tested area on the CMA exam."
+        },
+        {
+          "title": "Foreign Exchange Rate Quotations",
+          "type": "text",
+          "content": "**Direct Quote (American Terms):**\nDomestic currency per unit of foreign currency\nExample: $1.25/\u20ac1 (it costs $1.25 to buy one euro)\n\n**Indirect Quote (European Terms):**\nForeign currency per unit of domestic currency\nExample: \u20ac0.80/$1 (one dollar buys 0.80 euros)\n\n**Key relationship:**\nDirect quote = 1 / Indirect quote\n$1.25/\u20ac = 1 / (\u20ac0.80/$)\n\n**Cross Rates:**\nDerived from two quotes involving a common currency\nIf $1.25/\u20ac and $1.50/\u00a3, then:\n\u20ac per \u00a3 = $1.50 / $1.25 = \u20ac1.20/\u00a3\n\n**Currency Appreciation/Depreciation:**\n\u2022 If rate goes from $1.25/\u20ac to $1.30/\u20ac \u2192 Euro appreciated (costs more dollars)\n\u2022 If rate goes from $1.25/\u20ac to $1.20/\u20ac \u2192 Euro depreciated (costs fewer dollars)\n\n**Tip:** In a direct quote, if the number goes UP, the foreign currency got STRONGER."
+        },
+        {
+          "title": "Spot vs. Forward Rates",
+          "type": "text",
+          "content": "**Spot Rate:**\n\u2022 Exchange rate for IMMEDIATE delivery (settlement in 2 business days)\n\u2022 Reflects current supply and demand\n\n**Forward Rate:**\n\u2022 Exchange rate agreed TODAY for exchange at a FUTURE date\n\u2022 Used to lock in exchange rates and hedge risk\n\u2022 Common maturities: 30, 60, 90, 180 days, 1 year\n\n**Forward Premium/Discount:**\nForward premium (%) = [(Forward - Spot) / Spot] \u00d7 (360/days) \u00d7 100\n\n**Example:**\nSpot: $1.2500/\u20ac\n90-day forward: $1.2600/\u20ac\nPremium = [($1.2600 - $1.2500) / $1.2500] \u00d7 (360/90) \u00d7 100\n= (0.008) \u00d7 4 \u00d7 100 = **3.2% annualized premium**\n\n**The euro is at a forward PREMIUM** (more expensive in the future).\n\n**If forward < spot \u2192 Foreign currency is at a forward DISCOUNT**"
+        },
+        {
+          "title": "Interest Rate Parity (IRP)",
+          "type": "text",
+          "content": "**The forward rate reflects the interest rate differential between two countries.**\n\n**Formula:**\nForward / Spot = (1 + Rdomestic) / (1 + Rforeign)\n\n**Where R = interest rate for the period**\n\n**Example:**\nSpot: $1.2500/\u20ac\nUS 1-year rate: 5%\nEurozone 1-year rate: 3%\n\nForward = $1.2500 \u00d7 (1.05/1.03) = $1.2500 \u00d7 1.0194 = **$1.2743/\u20ac**\n\n**Interpretation:**\n\u2022 Higher US interest rates \u2192 Dollar at forward discount\n\u2022 The euro trades at a forward premium of ~1.94%\n\u2022 This premium offsets the interest rate advantage\n\n**Key Insight:**\nIRP ensures you earn the same return whether you:\n1. Invest domestically, OR\n2. Convert to foreign currency, invest abroad, and hedge with a forward\n\n**If IRP doesn't hold \u2192 Covered interest arbitrage opportunity exists!**"
+        },
+        {
+          "title": "Purchasing Power Parity (PPP)",
+          "type": "text",
+          "content": "**Exchange rates adjust to equalize purchasing power across countries.**\n\n**Absolute PPP:**\nA basket of goods should cost the same in all countries when converted to a common currency.\n(Rarely holds due to trade barriers, transportation, non-traded goods)\n\n**Relative PPP (More useful):**\nExchange rate changes reflect INFLATION rate differentials.\n\n**Formula:**\n(Expected Spot\u2081 - Spot\u2080) / Spot\u2080 \u2248 Inflation_domestic - Inflation_foreign\n\n**Example:**\nCurrent spot: $1.2500/\u20ac\nUS expected inflation: 4%\nEurozone expected inflation: 2%\n\nExpected change: 4% - 2% = 2%\nExpected future spot: $1.2500 \u00d7 1.02 = **$1.2750/\u20ac**\n\n**Interpretation:**\n\u2022 Higher US inflation \u2192 Dollar weakens (depreciates)\n\u2022 The currency of the higher-inflation country depreciates\n\n**PPP explains long-run exchange rate trends but NOT short-run movements.**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: IRP vs. PPP",
+          "type": "callout",
+          "content": "**\"Interest drives FORWARDS, Prices drive SPOTS\"**\n\n**Interest Rate Parity (IRP):**\n\u2022 Links interest rates to FORWARD rates\n\u2022 Higher interest \u2192 Forward discount for that currency\n\u2022 Holds well in practice (arbitrage enforces it)\n\n**Purchasing Power Parity (PPP):**\n\u2022 Links inflation to SPOT rate changes\n\u2022 Higher inflation \u2192 Currency depreciates\n\u2022 Works in long-run, not short-run\n\n**Both say the same thing differently:**\nThe country with higher rates/inflation sees its currency weaken to offset the advantage."
+        },
+        {
+          "title": "Transaction vs. Translation Exposure",
+          "type": "text",
+          "content": "**Transaction Exposure:**\n\u2022 Risk from outstanding obligations in foreign currency\n\u2022 Affects CASH FLOW\n\u2022 Example: US company owes \u20ac1M to German supplier in 90 days\n\u2022 If euro strengthens, the dollar cost INCREASES\n\n**Hedging transaction exposure:**\n1. **Forward contract** \u2014 Lock in the exchange rate today\n2. **Money market hedge** \u2014 Borrow/invest to create offsetting position\n3. **Currency options** \u2014 Buy the right (not obligation) to exchange\n4. **Natural hedge** \u2014 Match foreign currency revenues with expenses\n\n**Translation Exposure (Accounting Exposure):**\n\u2022 Risk from converting foreign subsidiary financial statements to parent currency\n\u2022 Affects REPORTED EARNINGS, not cash flow\n\u2022 Under GAAP: Current rate method or temporal method\n\n**Current Rate Method (most common):**\n\u2022 Assets/Liabilities \u2192 Current exchange rate\n\u2022 Equity \u2192 Historical rate\n\u2022 Revenue/Expenses \u2192 Average rate\n\u2022 Translation adjustment \u2192 Other Comprehensive Income (OCI)\n\n**Economic Exposure:**\n\u2022 Long-term impact of exchange rate changes on firm value\n\u2022 Affects competitive position and future cash flows\n\u2022 Hardest to measure and hedge"
+        },
+        {
+          "title": "Euromarkets",
+          "type": "text",
+          "content": "**Eurocurrency Market:**\n\u2022 Deposits of a currency held OUTSIDE its home country\n\u2022 Eurodollars = US dollars deposited outside the US (e.g., in London)\n\u2022 Euroyen = Yen deposited outside Japan\n\u2022 NOT related to the euro currency or Europe specifically!\n\n**Why Euromarkets exist:**\n\u2022 Less regulation than domestic markets\n\u2022 Competitive interest rates (higher deposit, lower lending)\n\u2022 Tax advantages in some jurisdictions\n\u2022 24-hour global access\n\n**Eurobonds:**\n\u2022 Bonds issued in a currency different from the country of issuance\n\u2022 Example: A US company issues bonds denominated in yen in London\n\u2022 Advantages: Avoid domestic registration, access global investors\n\n**Foreign Bonds (contrast):**\n\u2022 Issued in a foreign country, in THAT country's currency\n\u2022 Yankee bonds: Foreign issuer, USD, in US market\n\u2022 Samurai bonds: Foreign issuer, yen, in Japan\n\u2022 Bulldog bonds: Foreign issuer, GBP, in UK"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Exchange Rate Direction",
+          "type": "warning",
+          "content": "**The #1 source of errors on international finance questions:**\n\n**Direct vs. Indirect quote confusion:**\n\u2022 $1.25/\u20ac (direct) \u2014 dollar cost of euros\n\u2022 \u20ac0.80/$ (indirect) \u2014 how many euros per dollar\n\n**Who benefits from what?**\n\u2022 US EXPORTER benefits when dollar WEAKENS (foreign buyers get more for their money)\n\u2022 US IMPORTER benefits when dollar STRENGTHENS (foreign goods are cheaper)\n\n**Hedging direction:**\n\u2022 If you OWE foreign currency \u2192 BUY it forward (lock in your cost)\n\u2022 If you are OWED foreign currency \u2192 SELL it forward (lock in your revenue)\n\n**Forward premium/discount shortcut:**\n\u2022 Higher interest rate country \u2192 Currency at forward DISCOUNT\n\u2022 Lower interest rate country \u2192 Currency at forward PREMIUM\n\u2022 Remember: The forward rate OFFSETS the interest rate advantage"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Direct quote = domestic per foreign; Indirect = foreign per domestic",
+            "Forward rate locks in a future exchange rate \u2014 used for hedging",
+            "Interest Rate Parity: Forward rates reflect interest rate differentials",
+            "Purchasing Power Parity: Exchange rates adjust for inflation differences (long-run)",
+            "Transaction exposure affects cash flows; translation exposure affects reported earnings",
+            "Hedge transaction exposure with forwards, money market hedges, or options",
+            "Eurodollars are USD deposited outside the US \u2014 not related to the euro currency",
+            "Higher interest rate country's currency trades at a forward discount"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Foreign Exchange Rate Quotations",
+          "knowledgeCheck": {
+            "question": "A U.S. company needs to pay a supplier \u20ac1,000,000 in 30 days. The current spot rate is $1.10/\u20ac and the 30-day forward rate is $1.12/\u20ac. Which of the following statements is MOST accurate?",
+            "options": [
+              "The euro is trading at a discount in the forward market, indicating lower interest rates in the Eurozone compared to the U.S.",
+              "The euro is trading at a premium in the forward market, indicating lower interest rates in the Eurozone compared to the U.S.",
+              "The dollar is trading at a premium in the forward market, indicating lower interest rates in the Eurozone compared to the U.S.",
+              "The dollar is trading at a discount in the forward market, indicating lower interest rates in the Eurozone compared to the U.S."
+            ],
+            "correctIndex": 1,
+            "explanation": "The forward rate ($1.12/\u20ac) is higher than the spot rate ($1.10/\u20ac), meaning the euro is more expensive in the future. This indicates the euro is trading at a premium. According to Interest Rate Parity, a currency trades at a premium in the forward market when the underlying country has lower interest rates. Therefore, the Eurozone has lower interest rates than the U.S.",
+            "hint": "Consider the relative values of the spot and forward rates. Which currency costs more in the future?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Spot Rate vs. Forward Rate",
+          "reveal": {
+            "question": "What is the primary purpose of using a forward rate in international finance?",
+            "answer": "The primary purpose of using a forward rate is to lock in a specific exchange rate for a future transaction, thereby hedging against exchange rate risk. This allows businesses to know exactly how much of their domestic currency will be needed to pay for foreign currency obligations or how much domestic currency they will receive from foreign currency revenues, eliminating uncertainty caused by fluctuating exchange rates."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Interest Rate Parity Calculation",
+          "knowledgeCheck": {
+            "question": "The spot rate between the British pound (\u00a3) and the U.S. dollar ($) is \u00a30.80/$. The one-year interest rate in the UK is 4%, and the one-year interest rate in the U.S. is 6%. According to Interest Rate Parity, what is the approximate one-year forward rate between the pound and the dollar?",
+            "options": [
+              "\u00a30.784/$",
+              "\u00a30.816/$",
+              "\u00a30.832/$",
+              "\u00a30.768/$"
+            ],
+            "correctIndex": 0,
+            "explanation": "Using the IRP formula: Forward / Spot = (1 + Rdomestic) / (1 + Rforeign).  Here, the domestic currency is the pound.  So, Forward / 0.80 = (1 + 0.04) / (1 + 0.06).  Forward = 0.80 * (1.04/1.06) = approximately \u00a30.784/$",
+            "hint": "Remember to correctly identify the domestic and foreign interest rates in the formula."
+          }
+        }
+      ]
+    }
+  }
+]

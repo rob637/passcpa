@@ -1,7 +1,4 @@
 {
-  "$schema": "../schema/flashcard.schema.json",
-  "courseId": "cpa",
-  "exportedAt": "2026-02-28T20:51:57.343Z",
   "flashcards": [
     {
       "id": "aud-b2-001",
@@ -900,55 +897,6 @@
       "reference": "AU-C 200.A42"
     },
     {
-      "id": "aud-exp-def-002",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-II",
-      "type": "definition",
-      "topic": "Audit Risk",
-      "front": "What is INHERENT RISK?",
-      "back": "Susceptibility of an assertion to misstatement before considering internal controls. Higher for complex transactions, estimates, related parties, cash.",
-      "difficulty": "easy",
-      "example": "Inventory valuation for a tech company with rapid obsolescence = high inherent risk.",
-      "tags": [
-        "risk",
-        "inherent risk"
-      ],
-      "reference": "AU-C 200.A43"
-    },
-    {
-      "id": "aud-exp-def-003",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-II",
-      "type": "definition",
-      "topic": "Audit Risk",
-      "front": "What is CONTROL RISK?",
-      "back": "Risk that client\"s internal controls will not prevent or detect material misstatement on a timely basis. Assessed by the auditor but cannot be changed by audit procedures.",
-      "difficulty": "easy",
-      "tags": [
-        "risk",
-        "control risk"
-      ],
-      "reference": "AU-C 200.A44"
-    },
-    {
-      "id": "aud-exp-def-004",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-II",
-      "type": "definition",
-      "topic": "Audit Risk",
-      "front": "What is DETECTION RISK?",
-      "back": "Risk that audit procedures will not detect material misstatement. The ONLY component of audit risk the auditor can directly control through nature, timing, and extent of procedures.",
-      "difficulty": "easy",
-      "tags": [
-        "risk",
-        "detection risk"
-      ],
-      "reference": "AU-C 200.A45"
-    },
-    {
       "id": "aud-exp-def-005",
       "courseId": "cpa",
       "section": "AUD",
@@ -1079,22 +1027,6 @@
       "reference": "AU-C 315.A89"
     },
     {
-      "id": "aud-exp-def-013",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-III",
-      "type": "definition",
-      "topic": "Sampling",
-      "front": "What is SAMPLING RISK?",
-      "back": "Risk that sample conclusion differs from conclusion if entire population tested. Two types: (1) Risk of incorrect acceptance, (2) Risk of incorrect rejection.",
-      "difficulty": "medium",
-      "tags": [
-        "sampling",
-        "risk"
-      ],
-      "reference": "AU-C 530.05"
-    },
-    {
       "id": "aud-exp-def-014",
       "courseId": "cpa",
       "section": "AUD",
@@ -1127,70 +1059,6 @@
       "reference": "AU-C 700.35"
     },
     {
-      "id": "aud-exp-def-016",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-IV",
-      "type": "definition",
-      "topic": "Reports",
-      "front": "What is a QUALIFIED OPINION?",
-      "back": "Opinion with exception: (1) Material misstatement but not pervasive, OR (2) Scope limitation preventing sufficient evidence but not pervasive. Uses \"except for\" language.",
-      "difficulty": "medium",
-      "tags": [
-        "reports",
-        "opinions"
-      ],
-      "reference": "AU-C 705.07"
-    },
-    {
-      "id": "aud-exp-def-017",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-IV",
-      "type": "definition",
-      "topic": "Reports",
-      "front": "What is an ADVERSE OPINION?",
-      "back": "Opinion that financial statements are NOT presented fairly due to material AND pervasive misstatement. Worst opinion = financial statements are misleading.",
-      "difficulty": "easy",
-      "tags": [
-        "reports",
-        "opinions"
-      ],
-      "reference": "AU-C 705.08"
-    },
-    {
-      "id": "aud-exp-def-018",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-IV",
-      "type": "definition",
-      "topic": "Reports",
-      "front": "What is a DISCLAIMER OF OPINION?",
-      "back": "Auditor does not express an opinion due to inability to obtain sufficient appropriate evidence (scope limitation that is pervasive). Common for first-year audits without prior auditor cooperation.",
-      "difficulty": "easy",
-      "tags": [
-        "reports",
-        "opinions"
-      ],
-      "reference": "AU-C 705.09"
-    },
-    {
-      "id": "aud-exp-def-019",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-I",
-      "type": "definition",
-      "topic": "Ethics",
-      "front": "What is INDEPENDENCE in auditing?",
-      "back": "Two types: (1) Independence in FACT - actual state of mind/objectivity, (2) Independence in APPEARANCE - no relationships that reasonable observer would question. Both required.",
-      "difficulty": "easy",
-      "tags": [
-        "ethics",
-        "independence"
-      ],
-      "reference": "AICPA Code ET 1.200"
-    },
-    {
       "id": "aud-exp-def-020",
       "courseId": "cpa",
       "section": "AUD",
@@ -1214,7 +1082,7 @@
       "type": "definition",
       "topic": "Fraud",
       "front": "What is the FRAUD TRIANGLE?",
-      "back": "Three conditions present when fraud occurs: (1) Incentive/Pressure - reason to commit fraud, (2) Opportunity - weak controls, (3) Rationalization - justification in fraudster\\",
+      "back": "Three conditions present when fraud occurs: (1) Incentive/Pressure - reason to commit fraud, (2) Opportunity - weak controls, (3) Rationalization - justification in fraudster",
       "difficulty": "easy",
       "tags": [
         "fraud",
@@ -1425,24 +1293,6 @@
         "performance"
       ],
       "reference": "AU-C 320"
-    },
-    {
-      "id": "aud-form-005",
-      "courseId": "cpa",
-      "section": "AUD",
-      "blueprintArea": "AUD-IV",
-      "type": "formula",
-      "topic": "Sampling",
-      "front": "SAMPLE SIZE factors",
-      "back": "Factors affecting sample size in substantive testing.",
-      "difficulty": "medium",
-      "example": "Higher risk → need more evidence → larger sample size",
-      "formula": "Sample Size increases when:\\n• Tolerable misstatement DECREASES\\n• Risk of material misstatement INCREASES\\n• Expected misstatement INCREASES\\n• Population size INCREASES (slightly)",
-      "tags": [
-        "sampling",
-        "audit procedures"
-      ],
-      "reference": "AU-C 530"
     },
     {
       "id": "aud-mnem-001",
@@ -1712,7 +1562,7 @@
       "type": "rule",
       "topic": "Going Concern",
       "front": "GOING CONCERN evaluation period",
-      "back": "Evaluate: 12 months from FS date\\n(Or date of auditor\\",
+      "back": "Evaluate: 12 months from FS date\\n(Or date of auditor",
       "difficulty": "medium",
       "tags": [
         "going concern",
@@ -2191,22 +2041,6 @@
       "reference": "Financial Analysis"
     },
     {
-      "id": "bar-exp-def-006",
-      "courseId": "cpa",
-      "section": "BAR",
-      "blueprintArea": "BAR-I",
-      "type": "definition",
-      "topic": "Budgeting",
-      "front": "What is a FLEXIBLE BUDGET?",
-      "back": "Budget adjusted to actual activity level. Allows comparison of actual results to what budget \"should have been\" at actual volume. Separates volume variance from spending variance.",
-      "difficulty": "medium",
-      "tags": [
-        "budgeting",
-        "variance"
-      ],
-      "reference": "Managerial Accounting"
-    },
-    {
       "id": "bar-exp-def-007",
       "courseId": "cpa",
       "section": "BAR",
@@ -2219,23 +2053,6 @@
       "tags": [
         "budgeting",
         "variance"
-      ],
-      "reference": "Managerial Accounting"
-    },
-    {
-      "id": "bar-exp-def-008",
-      "courseId": "cpa",
-      "section": "BAR",
-      "blueprintArea": "BAR-I",
-      "type": "definition",
-      "topic": "Cost Accounting",
-      "front": "What is CONTRIBUTION MARGIN?",
-      "back": "Sales Revenue - Variable Costs. Amount available to cover fixed costs and generate profit. CM per unit or CM ratio (CM ÷ Sales).",
-      "difficulty": "easy",
-      "example": "Sales $100, VC $60. CM = $40 or 40%.",
-      "tags": [
-        "cost",
-        "contribution margin"
       ],
       "reference": "Managerial Accounting"
     },
@@ -2464,7 +2281,7 @@
       "type": "formula",
       "topic": "Profitability Ratios",
       "front": "RETURN ON EQUITY (ROE)",
-      "back": "Net Income ÷ Average Stockholders\\",
+      "back": "Net Income ÷ Average Stockholders",
       "difficulty": "easy",
       "example": "NI $80K, Avg Equity $400K:\\nROE = 20%",
       "tags": [
@@ -2752,25 +2569,6 @@
       "reference": "Financial Statement Analysis"
     },
     {
-      "id": "bar-fc-004",
-      "courseId": "cpa",
-      "section": "BAR",
-      "blueprintArea": "BAR-I",
-      "type": "formula",
-      "topic": "Ratio Analysis",
-      "front": "What is RETURN ON EQUITY (ROE)?",
-      "back": "**ROE = Net Income ÷ Average Stockholders' Equity**\n\nMeasures: Return generated on shareholder investment\nHigher is better (compare to cost of equity)\n\n**DuPont Analysis (3-factor):**\nROE = Profit Margin × Asset Turnover × Equity Multiplier\nROE = (NI/Sales) × (Sales/Assets) × (Assets/Equity)",
-      "difficulty": "medium",
-      "example": "NI $50K, Avg Equity $250K: ROE = 20%",
-      "formula": "ROE = Net Income / Average Equity",
-      "tags": [
-        "ROE",
-        "profitability",
-        "DuPont"
-      ],
-      "reference": "Financial Statement Analysis"
-    },
-    {
       "id": "bar-fc-005",
       "courseId": "cpa",
       "section": "BAR",
@@ -2921,44 +2719,6 @@
       "reference": "Corporate Finance"
     },
     {
-      "id": "bar-fc-014",
-      "courseId": "cpa",
-      "section": "BAR",
-      "blueprintArea": "BAR-III",
-      "type": "formula",
-      "topic": "Capital Budgeting",
-      "front": "What is NET PRESENT VALUE (NPV)?",
-      "back": "**NPV = Σ [Cash Flow ÷ (1+r)^t] - Initial Investment**\n\n**Decision Rules:**\n• NPV > 0 → Accept (adds value)\n• NPV < 0 → Reject (destroys value)\n• NPV = 0 → Indifferent (meets hurdle rate exactly)\n\nHigher NPV = better project\nCan compare mutually exclusive projects by NPV",
-      "difficulty": "medium",
-      "example": "Invest $100K, CF $30K/year for 5 years at 10%: NPV = $113,724 - $100K = $13,724 (Accept)",
-      "formula": "NPV = Σ PV of Cash Flows - Initial Investment",
-      "tags": [
-        "NPV",
-        "capital budgeting",
-        "investment"
-      ],
-      "reference": "Corporate Finance"
-    },
-    {
-      "id": "bar-fc-015",
-      "courseId": "cpa",
-      "section": "BAR",
-      "blueprintArea": "BAR-III",
-      "type": "formula",
-      "topic": "Capital Budgeting",
-      "front": "What is INTERNAL RATE OF RETURN (IRR)?",
-      "back": "**IRR = Discount rate where NPV = 0**\n\n**Decision Rules:**\n• IRR > Required Return → Accept\n• IRR < Required Return → Reject\n\n**Calculation:** Trial and error or financial calculator\nSet NPV = 0, solve for r\n\n**Limitations:**\n• Multiple IRRs with non-conventional cash flows\n• Reinvestment assumption (reinvest at IRR)\n• Cannot compare mutually exclusive projects of different sizes",
-      "difficulty": "hard",
-      "example": "Invest $100K, returns $150K in 3 years: IRR ≈ 14.5%",
-      "formula": "0 = Σ [CF_t / (1 + IRR)^t] - Initial Investment",
-      "tags": [
-        "IRR",
-        "capital budgeting",
-        "return"
-      ],
-      "reference": "Corporate Finance"
-    },
-    {
       "id": "bar-fc-016",
       "courseId": "cpa",
       "section": "BAR",
@@ -3049,25 +2809,6 @@
         "planning"
       ],
       "reference": "Managerial Accounting"
-    },
-    {
-      "id": "bar-fc-022",
-      "courseId": "cpa",
-      "section": "BAR",
-      "blueprintArea": "BAR-III",
-      "type": "formula",
-      "topic": "Working Capital",
-      "front": "What is the CASH CONVERSION CYCLE?",
-      "back": "**Cash Conversion Cycle = DIO + DSO - DPO**\n\nWhere:\n• DIO = Days Inventory Outstanding (365 / Inv Turnover)\n• DSO = Days Sales Outstanding (365 / AR Turnover)\n• DPO = Days Payables Outstanding (365 / AP Turnover)\n\n**Interpretation:**\n• Days from cash outflow (inventory purchase) to cash inflow (collection)\n• Shorter cycle = less working capital needed\n• Negative = receiving cash before paying suppliers",
-      "difficulty": "hard",
-      "example": "DIO 45, DSO 30, DPO 35: CCC = 40 days",
-      "formula": "CCC = DIO + DSO - DPO",
-      "tags": [
-        "working capital",
-        "cash cycle",
-        "efficiency"
-      ],
-      "reference": "Financial Management"
     },
     {
       "id": "bar-fc-023",
@@ -3228,23 +2969,6 @@
       "tags": [
         "CVP",
         "breakeven"
-      ]
-    },
-    {
-      "id": "bar-form-002",
-      "courseId": "cpa",
-      "section": "BAR",
-      "blueprintArea": "BAR-I",
-      "type": "formula",
-      "topic": "CVP Analysis",
-      "front": "TARGET PROFIT formula",
-      "back": "Calculate units needed to achieve a specific profit target.",
-      "difficulty": "medium",
-      "example": "FC $100K + Target $50K = $150K ÷ $25 CM = 6,000 units needed",
-      "formula": "Units for Target Profit = (Fixed Costs + Target Profit) ÷ CM per Unit",
-      "tags": [
-        "CVP",
-        "target profit"
       ]
     },
     {
@@ -4324,7 +4048,7 @@
       "type": "definition",
       "topic": "Investments",
       "front": "What is the EQUITY METHOD?",
-      "back": "Accounting for investments where the investor has SIGNIFICANT INFLUENCE (typically 20-50% ownership). Investment carried at cost, adjusted for investor\\",
+      "back": "Accounting for investments where the investor has SIGNIFICANT INFLUENCE (typically 20-50% ownership). Investment carried at cost, adjusted for investor",
       "difficulty": "medium",
       "example": "30% ownership, investee earns $100K: DR Investment $30K, CR Equity Income $30K.",
       "formula": "Investment = Cost + Share of Income - Dividends Received",
@@ -4420,23 +4144,6 @@
       "reference": "ASC 330-10-30"
     },
     {
-      "id": "far-exp-def-006",
-      "courseId": "cpa",
-      "section": "FAR",
-      "blueprintArea": "FAR-II",
-      "type": "definition",
-      "topic": "Fixed Assets",
-      "front": "What costs are CAPITALIZED for PP&E?",
-      "back": "All costs necessary to acquire the asset and prepare it for intended use: purchase price, taxes, freight, installation, testing, legal fees. NOT included: training, maintenance, repairs.",
-      "difficulty": "easy",
-      "example": "Machine $10,000 + freight $500 + installation $1,000 = Capitalize $11,500.",
-      "tags": [
-        "PP&E",
-        "capitalization"
-      ],
-      "reference": "ASC 360-10-30"
-    },
-    {
       "id": "far-exp-def-007",
       "courseId": "cpa",
       "section": "FAR",
@@ -4452,40 +4159,6 @@
         "fixed assets"
       ],
       "reference": "ASC 360-10-35"
-    },
-    {
-      "id": "far-exp-def-008",
-      "courseId": "cpa",
-      "section": "FAR",
-      "blueprintArea": "FAR-II",
-      "type": "definition",
-      "topic": "Depreciation",
-      "front": "What is DOUBLE-DECLINING BALANCE depreciation?",
-      "back": "Accelerated method: 2 × straight-line rate applied to BOOK VALUE (not cost minus salvage). Ignores salvage until book value reaches salvage. Higher expense early, lower later.",
-      "difficulty": "medium",
-      "example": "$100K asset, 5-yr life. Rate = 2/5 = 40%. Year 1: $100K × 40% = $40K. Year 2: $60K × 40% = $24K.",
-      "tags": [
-        "depreciation",
-        "accelerated"
-      ],
-      "reference": "ASC 360-10-35"
-    },
-    {
-      "id": "far-exp-def-009",
-      "courseId": "cpa",
-      "section": "FAR",
-      "blueprintArea": "FAR-II",
-      "type": "definition",
-      "topic": "Intangibles",
-      "front": "What is GOODWILL?",
-      "back": "Excess of purchase price over fair value of identifiable net assets acquired in a business combination. Only recognized in acquisitions, never internally generated. Tested for impairment annually, not amortized.",
-      "difficulty": "medium",
-      "example": "Paid $1M for company with net assets FV of $800K. Goodwill = $200K.",
-      "tags": [
-        "intangibles",
-        "business combinations"
-      ],
-      "reference": "ASC 350-20"
     },
     {
       "id": "far-exp-def-010",
@@ -4563,7 +4236,7 @@
       "type": "definition",
       "topic": "Leases",
       "front": "What is a RIGHT-OF-USE (ROU) ASSET?",
-      "back": "Asset representing lessee\\",
+      "back": "Asset representing lessee",
       "difficulty": "medium",
       "tags": [
         "leases",
@@ -4595,7 +4268,7 @@
       "type": "definition",
       "topic": "Equity",
       "front": "What is TREASURY STOCK?",
-      "back": "Corporation\\",
+      "back": "Corporation",
       "difficulty": "easy",
       "example": "Buy back 1,000 shares at $50: Dr Treasury Stock $50,000, Cr Cash $50,000.",
       "tags": [
@@ -4628,7 +4301,7 @@
       "type": "definition",
       "topic": "Investments",
       "front": "What is the EQUITY METHOD of accounting?",
-      "back": "Used when investor has SIGNIFICANT INFLUENCE (typically 20-50% ownership). Record investment at cost, adjust for share of investee\\",
+      "back": "Used when investor has SIGNIFICANT INFLUENCE (typically 20-50% ownership). Record investment at cost, adjust for share of investee",
       "difficulty": "medium",
       "example": "Own 30%, investee earns $100K: Dr Investment $30K, Cr Equity in Earnings $30K.",
       "tags": [
@@ -4669,22 +4342,6 @@
         "fund accounting"
       ],
       "reference": "GASB Concepts Statement 1"
-    },
-    {
-      "id": "far-exp-def-021",
-      "courseId": "cpa",
-      "section": "FAR",
-      "blueprintArea": "FAR-IV",
-      "type": "definition",
-      "topic": "Government",
-      "front": "What is MODIFIED ACCRUAL accounting?",
-      "back": "Basis used for governmental fund statements. Revenues recognized when MEASURABLE and AVAILABLE (collectible within 60 days). Expenditures recognized when fund liability incurred (except debt service, compensated absences, claims).",
-      "difficulty": "medium",
-      "tags": [
-        "government",
-        "basis of accounting"
-      ],
-      "reference": "GASB Statement 34"
     },
     {
       "id": "far-exp-def-022",
@@ -4809,7 +4466,7 @@
       "type": "definition",
       "topic": "Deferred Taxes",
       "front": "What is a DEFERRED TAX ASSET?",
-      "back": "Future tax benefit from deductible temporary differences or carryforwards. Example: warranty expense accrued for books but not deductible until paid. Requires valuation allowance if \"more likely than not\" won\\",
+      "back": "Future tax benefit from deductible temporary differences or carryforwards. Example: warranty expense accrued for books but not deductible until paid. Requires valuation allowance if \"more likely than not\" won",
       "difficulty": "medium",
       "tags": [
         "deferred taxes",
@@ -4995,7 +4652,7 @@
       "type": "formula",
       "topic": "Leases",
       "front": "LEASE LIABILITY calculation (lessee)",
-      "back": "PV of Lease Payments = Payment × PV Annuity Factor\\n\\nUse: Rate implicit in lease (if known) OR\\nLessee\\",
+      "back": "PV of Lease Payments = Payment × PV Annuity Factor\\n\\nUse: Rate implicit in lease (if known) OR\\nLessee",
       "difficulty": "medium",
       "example": "$10,000 annual payments, 5 years, 6% rate:\\nLease Liability = $10,000 × 4.2124 = $42,124",
       "tags": [
@@ -5275,23 +4932,6 @@
       ]
     },
     {
-      "id": "far-form-007",
-      "courseId": "cpa",
-      "section": "FAR",
-      "blueprintArea": "FAR-II",
-      "type": "formula",
-      "topic": "Earnings Per Share",
-      "front": "BASIC EPS formula",
-      "back": "Earnings available to common shareholders divided by weighted-average shares.",
-      "difficulty": "medium",
-      "example": "NI $500K - Pref Div $50K = $450K ÷ 100K shares = $4.50 per share",
-      "formula": "Basic EPS = (Net Income - Preferred Dividends) ÷ Weighted-Average Common Shares Outstanding",
-      "tags": [
-        "EPS",
-        "per share"
-      ]
-    },
-    {
       "id": "far-form-008",
       "courseId": "cpa",
       "section": "FAR",
@@ -5374,23 +5014,6 @@
       "formula": "Lease Liability = Σ (Payment × PV Factor) = Payment × PV Annuity Factor (for equal payments)",
       "tags": [
         "leases",
-        "present value"
-      ]
-    },
-    {
-      "id": "far-form-013",
-      "courseId": "cpa",
-      "section": "FAR",
-      "blueprintArea": "FAR-II",
-      "type": "formula",
-      "topic": "Bonds",
-      "front": "BOND ISSUE PRICE calculation",
-      "back": "PV of principal + PV of interest payments, discounted at market rate.",
-      "difficulty": "hard",
-      "example": "$100K bond, 5% coupon, 6% market, 5 years: PV principal + PV interest = $95,788 (discount)",
-      "formula": "Bond Price = (Face × PVF single sum) + (Interest Payment × PVF annuity)",
-      "tags": [
-        "bonds",
         "present value"
       ]
     },
@@ -5555,26 +5178,6 @@
         "government",
         "modified accrual"
       ]
-    },
-    {
-      "id": "far-wc-fc-001",
-      "courseId": "cpa",
-      "section": "FAR",
-      "blueprintArea": "FAR-III",
-      "type": "concept",
-      "topic": "Revenue Recognition",
-      "front": "What are the 5 steps of ASC 606 Revenue Recognition?",
-      "back": "**The 5-Step Model:**\n\n1. **Identify the contract** with a customer\n2. **Identify performance obligations** in the contract\n3. **Determine the transaction price**\n4. **Allocate the transaction price** to performance obligations\n5. **Recognize revenue** when (or as) each PO is satisfied\n\nMemory aid: \"I-I-D-A-R\" or \"Contract → Obligations → Price → Allocate → Recognize\"",
-      "difficulty": "medium",
-      "subtopic": "ASC 606 5-Step Model",
-      "example": "Software + training bundle: Identify contract, separate POs (software & training), determine $10K price, allocate by standalone selling price, recognize software at transfer, training over time.",
-      "mnemonic": "I-I-D-A-R: Identify, Identify, Determine, Allocate, Recognize",
-      "tags": [
-        "ASC 606",
-        "revenue",
-        "five-step"
-      ],
-      "reference": "ASC 606-10-25"
     },
     {
       "id": "far-wc-fc-002",
@@ -6277,7 +5880,7 @@
       "type": "definition",
       "topic": "Security",
       "front": "What is RANSOMWARE?",
-      "back": "Malware that encrypts victim\\",
+      "back": "Malware that encrypts victim",
       "difficulty": "easy",
       "tags": [
         "security",
@@ -6298,22 +5901,6 @@
       "tags": [
         "controls",
         "GITC"
-      ],
-      "reference": "IT Audit"
-    },
-    {
-      "id": "isc-exp-def-010",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-I",
-      "type": "definition",
-      "topic": "Controls",
-      "front": "What are APPLICATION CONTROLS?",
-      "back": "Controls over specific applications: input controls (validation, authorization), processing controls (calculations, completeness), output controls (distribution, reconciliation).",
-      "difficulty": "medium",
-      "tags": [
-        "controls",
-        "application"
       ],
       "reference": "IT Audit"
     },
@@ -6449,23 +6036,6 @@
       "reference": "COBIT Framework"
     },
     {
-      "id": "isc-fc-002",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-I",
-      "type": "definition",
-      "topic": "IT General Controls",
-      "front": "What are APPLICATION CONTROLS?",
-      "back": "**Application Controls:**\nControls specific to individual applications\n\n**Types:**\n1. **Input Controls:** Validation, edits, authorization\n2. **Processing Controls:** Calculations, completeness checks\n3. **Output Controls:** Report distribution, reconciliation\n\n**Examples:**\n• Field validation (format, range checks)\n• Batch totals and control totals\n• Exception reports\n• Segregation of duties within application",
-      "difficulty": "easy",
-      "tags": [
-        "application controls",
-        "input",
-        "processing"
-      ],
-      "reference": "IT Audit Standards"
-    },
-    {
       "id": "isc-fc-004",
       "courseId": "cpa",
       "section": "ISC",
@@ -6499,40 +6069,6 @@
         "objectives"
       ],
       "reference": "Information Security"
-    },
-    {
-      "id": "isc-fc-006",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-II",
-      "type": "definition",
-      "topic": "Security",
-      "front": "What is ENCRYPTION?",
-      "back": "**Encryption: Converting plaintext to ciphertext**\n\n**Symmetric Encryption:**\n• Same key encrypts and decrypts\n• Fast, used for bulk data\n• Key distribution challenge\n• Examples: AES, DES, 3DES\n\n**Asymmetric Encryption:**\n• Public/private key pair\n• Public encrypts, private decrypts\n• Slower, used for key exchange\n• Examples: RSA, ECC\n\n**In Transit:** TLS/SSL (HTTPS)\n**At Rest:** Full disk encryption, database encryption",
-      "difficulty": "medium",
-      "tags": [
-        "encryption",
-        "symmetric",
-        "asymmetric"
-      ],
-      "reference": "Cryptography"
-    },
-    {
-      "id": "isc-fc-007",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-II",
-      "type": "definition",
-      "topic": "Security",
-      "front": "What is a FIREWALL?",
-      "back": "**Firewall: Network security device that filters traffic**\n\n**Types:**\n• **Packet Filter:** Examines headers only (IP, port)\n• **Stateful Inspection:** Tracks connection state\n• **Application Proxy:** Deep packet inspection\n• **Next-Gen (NGFW):** IPS, application awareness, threat intel\n\n**Rules:**\n• Allow or deny based on source, destination, port, protocol\n• Default deny (block all unless explicitly allowed)\n• Logs for audit trail",
-      "difficulty": "medium",
-      "tags": [
-        "firewall",
-        "network",
-        "security"
-      ],
-      "reference": "Network Security"
     },
     {
       "id": "isc-fc-010",
@@ -6622,40 +6158,6 @@
       "reference": "Cybersecurity"
     },
     {
-      "id": "isc-fc-015",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-II",
-      "type": "definition",
-      "topic": "Cybersecurity",
-      "front": "What is PHISHING?",
-      "back": "**Phishing: Social engineering via deceptive messages**\n\n**Types:**\n• **Phishing:** Mass emails impersonating trusted entities\n• **Spear Phishing:** Targeted at specific individuals\n• **Whaling:** Targeting executives\n• **Vishing:** Voice phishing (phone)\n• **Smishing:** SMS phishing (text)\n\n**Red Flags:**\nUrgency, generic greetings, suspicious links, requests for credentials\n\n**Defense:** Training, email filters, MFA, verification procedures",
-      "difficulty": "easy",
-      "tags": [
-        "phishing",
-        "social engineering",
-        "email"
-      ],
-      "reference": "Cybersecurity"
-    },
-    {
-      "id": "isc-fc-016",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-II",
-      "type": "definition",
-      "topic": "Cybersecurity",
-      "front": "What is DEFENSE IN DEPTH?",
-      "back": "**Defense in Depth: Multiple layers of security controls**\n\n**Layers:**\n1. **Physical:** Locks, badges, cameras\n2. **Network:** Firewalls, IDS/IPS, segmentation\n3. **Host:** Endpoint protection, patching, hardening\n4. **Application:** Input validation, secure coding, WAF\n5. **Data:** Encryption, access controls, DLP\n6. **User:** Training, policies, access management\n\nIf one layer fails, others protect the system",
-      "difficulty": "medium",
-      "tags": [
-        "defense in depth",
-        "layers",
-        "security"
-      ],
-      "reference": "Security Architecture"
-    },
-    {
       "id": "isc-fc-017",
       "courseId": "cpa",
       "section": "ISC",
@@ -6724,23 +6226,6 @@
       "reference": "ITIL Framework"
     },
     {
-      "id": "isc-fc-021",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-III",
-      "type": "definition",
-      "topic": "Database",
-      "front": "What is a RELATIONAL DATABASE?",
-      "back": "**Relational Database:**\nOrganizes data in tables with rows and columns\n\n**Key Terms:**\n• **Table:** Collection of related data\n• **Row (Record):** Single data entry\n• **Column (Field):** Attribute/property\n• **Primary Key:** Unique identifier for each row\n• **Foreign Key:** Links to primary key in another table\n• **SQL:** Structured Query Language for access\n\n**ACID Properties:** Atomicity, Consistency, Isolation, Durability",
-      "difficulty": "easy",
-      "tags": [
-        "database",
-        "relational",
-        "SQL"
-      ],
-      "reference": "Database Management"
-    },
-    {
       "id": "isc-fc-022",
       "courseId": "cpa",
       "section": "ISC",
@@ -6793,23 +6278,6 @@
         "private"
       ],
       "reference": "Cloud Computing"
-    },
-    {
-      "id": "isc-fc-025",
-      "courseId": "cpa",
-      "section": "ISC",
-      "blueprintArea": "ISC-III",
-      "type": "concept",
-      "topic": "IT Governance",
-      "front": "What is COBIT?",
-      "back": "**COBIT (Control Objectives for IT)**\nIT governance and management framework\n\n**Components:**\n• Governance Objectives\n• Management Objectives\n• Design Factors\n• Focus Areas\n\n**5 Principles (COBIT 2019):**\n1. Meeting stakeholder needs\n2. Holistic approach\n3. Dynamic governance\n4. Governance distinct from management\n5. Tailored to enterprise needs\n\nUsed for IT audit, compliance, governance",
-      "difficulty": "medium",
-      "tags": [
-        "COBIT",
-        "governance",
-        "framework"
-      ],
-      "reference": "ISACA COBIT"
     },
     {
       "id": "isc-fc-026",
@@ -7276,7 +6744,7 @@
       "type": "rule",
       "topic": "Kiddie Tax",
       "front": "KIDDIE TAX thresholds (2024)",
-      "back": "Applies to children under 19 (24 if student)\\n\\nFirst $1,300: Tax-free\\nNext $1,300: Child\\",
+      "back": "Applies to children under 19 (24 if student)\\n\\nFirst $1,300: Tax-free\\nNext $1,300: Child",
       "difficulty": "medium",
       "tags": [
         "kiddie tax",
@@ -7779,25 +7247,6 @@
       "reference": "IRC §24"
     },
     {
-      "id": "reg-b3-fc-002",
-      "courseId": "cpa",
-      "section": "REG",
-      "blueprintArea": "REG-V",
-      "type": "formula",
-      "topic": "Entity Tax",
-      "front": "How is S corporation shareholder basis calculated?",
-      "back": "**S Corp Basis Order (IDEA):**\n\n**Increases:**\n+ Income (ordinary and separately stated)\n+ Debt (basis loans to S corp—NOT guarantee)\n\n**Decreases:**\n− Expenses (deductions, losses)\n− Distributions\n− Nondeductible expenses\n\n**Loss Limitation Order:**\n1. Stock basis (reduced to zero)\n2. Debt basis (reduced to zero)\n3. Excess suspended/carried forward\n\n**Key:** Basis CANNOT go negative. Distributions in excess of basis = capital gain.",
-      "difficulty": "hard",
-      "subtopic": "S Corp Basis",
-      "mnemonic": "IDEA: Income, Debt (to corp), Expenses, (Distributions) Adjustments",
-      "tags": [
-        "S corp",
-        "basis",
-        "losses"
-      ],
-      "reference": "IRC §1366, 1367"
-    },
-    {
       "id": "reg-b3-fc-003",
       "courseId": "cpa",
       "section": "REG",
@@ -8049,23 +7498,6 @@
       "reference": "IRC Section 705"
     },
     {
-      "id": "reg-def-007",
-      "courseId": "cpa",
-      "section": "REG",
-      "blueprintArea": "REG-I",
-      "type": "definition",
-      "topic": "Contracts",
-      "front": "What are the elements of a VALID CONTRACT?",
-      "back": "A legally enforceable contract requires: (1) OFFER, (2) ACCEPTANCE, (3) CONSIDERATION, (4) LEGAL CAPACITY, and (5) LEGALITY of subject matter. Missing any element = no enforceable contract.",
-      "difficulty": "easy",
-      "example": "A offers to sell car for $10K, B accepts, both adults, legal transaction = valid contract.",
-      "tags": [
-        "contracts",
-        "business law"
-      ],
-      "reference": "Restatement (Second) of Contracts"
-    },
-    {
       "id": "reg-def-008",
       "courseId": "cpa",
       "section": "REG",
@@ -8116,22 +7548,6 @@
         "employer liability"
       ],
       "reference": "Restatement (Third) of Agency"
-    },
-    {
-      "id": "reg-exp-def-001",
-      "courseId": "cpa",
-      "section": "REG",
-      "blueprintArea": "REG-III",
-      "type": "definition",
-      "topic": "Individual Tax",
-      "front": "What is ADJUSTED GROSS INCOME (AGI)?",
-      "back": "Gross income minus \"above-the-line\" adjustments: educator expenses, HSA, self-employment tax (50%), retirement contributions, student loan interest, alimony (pre-2019). Key threshold for many deductions.",
-      "difficulty": "easy",
-      "tags": [
-        "individual",
-        "AGI"
-      ],
-      "reference": "IRC §62"
     },
     {
       "id": "reg-exp-def-002",
@@ -8305,7 +7721,7 @@
       "type": "definition",
       "topic": "Entity Taxation",
       "front": "What is a partner\\",
-      "back": "Partner\\",
+      "back": "Partner",
       "difficulty": "medium",
       "tags": [
         "partnership",
@@ -8408,22 +7824,6 @@
         "preparer"
       ],
       "reference": "IRC §6694(a)"
-    },
-    {
-      "id": "reg-exp-def-019",
-      "courseId": "cpa",
-      "section": "REG",
-      "blueprintArea": "REG-I",
-      "type": "definition",
-      "topic": "Business Law",
-      "front": "What are the elements of a valid CONTRACT?",
-      "back": "ALOCC: Agreement (offer + acceptance), Legality (legal purpose), Offer (definite terms), Consideration (bargained-for exchange), Capacity (competent parties).",
-      "difficulty": "easy",
-      "tags": [
-        "contracts",
-        "elements"
-      ],
-      "reference": "Common Law"
     },
     {
       "id": "reg-exp-def-020",
@@ -8608,41 +8008,6 @@
       "reference": "IRC §531"
     },
     {
-      "id": "reg-form-001",
-      "courseId": "cpa",
-      "section": "REG",
-      "blueprintArea": "REG-III",
-      "type": "formula",
-      "topic": "Individual Tax",
-      "front": "TAXABLE INCOME formula (Individual)",
-      "back": "Step-by-step calculation from gross income to taxable income.",
-      "difficulty": "medium",
-      "example": "$150K gross - $5K above-line = $145K AGI - $27.7K std ded = $117.3K taxable",
-      "formula": "Taxable Income = Gross Income - Above-the-Line Deductions = AGI - (Standard OR Itemized Deduction) - QBI Deduction",
-      "tags": [
-        "individual tax",
-        "taxable income"
-      ]
-    },
-    {
-      "id": "reg-form-002",
-      "courseId": "cpa",
-      "section": "REG",
-      "blueprintArea": "REG-III",
-      "type": "formula",
-      "topic": "Individual Tax",
-      "front": "SELF-EMPLOYMENT TAX calculation",
-      "back": "Social Security and Medicare tax on self-employment income.",
-      "difficulty": "hard",
-      "example": "$100K SE income × 0.9235 × 0.153 = $14,130 SE tax. Deduction = $7,065",
-      "formula": "SE Tax = Net SE Income × 92.35% × 15.3%\n(Above-the-line deduction = SE Tax × 50%)",
-      "tags": [
-        "self-employment",
-        "payroll tax"
-      ],
-      "reference": "IRC Section 1401"
-    },
-    {
       "id": "reg-form-003",
       "courseId": "cpa",
       "section": "REG",
@@ -8703,7 +8068,7 @@
       "type": "formula",
       "topic": "Business Entities",
       "front": "S CORP SHAREHOLDER BASIS calculation",
-      "back": "Track shareholder\\",
+      "back": "Track shareholder",
       "difficulty": "hard",
       "example": "Key difference from partnership: debt does NOT increase S corp basis",
       "formula": "Beginning Stock Basis\\n+ Share of Income (incl. tax-exempt)\\n+ Additional Contributions\\n- Distributions (up to basis)\\n- Share of Losses\\n- Non-deductible expenses\\n= Ending Stock Basis",
@@ -9048,24 +8413,6 @@
       "reference": "IRC §55-59"
     },
     {
-      "id": "tcp-b3-fc-002",
-      "courseId": "cpa",
-      "section": "TCP",
-      "blueprintArea": "TCP-II",
-      "type": "formula",
-      "topic": "Partnership Tax",
-      "front": "How is a partner\\",
-      "back": "**Partner Outside Basis:**\n\n**Initial Basis:**\nCash contributed + FMV of property contributed − Liabilities assumed by partnership\n\n**Annual Adjustments (increases):**\n+ Share of partnership income\n+ Share of tax-exempt income\n+ Share of liabilities (recourse to extent at risk; nonrecourse by profit %)\n\n**Annual Adjustments (decreases):**\n− Share of losses (limited to basis)\n− Distributions received\n− Share of nondeductible expenses\n− Reduction in share of liabilities\n\n**Key:** Basis cannot go below zero; excess losses suspended",
-      "difficulty": "hard",
-      "subtopic": "Partner Basis",
-      "tags": [
-        "partnership",
-        "basis",
-        "outside basis"
-      ],
-      "reference": "IRC §722, 752"
-    },
-    {
       "id": "tcp-b3-fc-003",
       "courseId": "cpa",
       "section": "TCP",
@@ -9210,41 +8557,6 @@
       "reference": "IRC §41"
     },
     {
-      "id": "tcp-def-001",
-      "courseId": "cpa",
-      "section": "TCP",
-      "blueprintArea": "TCP-I",
-      "type": "definition",
-      "topic": "Entity Selection",
-      "front": "What is an S CORPORATION?",
-      "back": "A corporation that elects S status under IRC Subchapter S. Pass-through taxation (no entity-level tax) with corporate liability protection. Requirements: domestic corp, ≤100 shareholders, one class of stock, eligible shareholders (individuals, estates, certain trusts).",
-      "difficulty": "medium",
-      "example": "Form 2553 election, income passes to shareholders on K-1s, reported on individual 1040.",
-      "tags": [
-        "S corp",
-        "entity selection"
-      ],
-      "reference": "IRC Section 1361"
-    },
-    {
-      "id": "tcp-def-002",
-      "courseId": "cpa",
-      "section": "TCP",
-      "blueprintArea": "TCP-I",
-      "type": "definition",
-      "topic": "Entity Selection",
-      "front": "What is a C CORPORATION?",
-      "back": "A standard corporation taxed under IRC Subchapter C. Subject to DOUBLE TAXATION: corporate income taxed at 21% flat rate, then dividends taxed again to shareholders. Provides liability protection and unlimited growth potential.",
-      "difficulty": "easy",
-      "example": "Corp earns $100K, pays $21K tax. Distributes $79K dividend, shareholders pay up to 23.8% tax.",
-      "tags": [
-        "C corp",
-        "entity selection",
-        "double taxation"
-      ],
-      "reference": "IRC Section 11"
-    },
-    {
       "id": "tcp-def-003",
       "courseId": "cpa",
       "section": "TCP",
@@ -9279,24 +8591,6 @@
       ]
     },
     {
-      "id": "tcp-def-005",
-      "courseId": "cpa",
-      "section": "TCP",
-      "blueprintArea": "TCP-II",
-      "type": "definition",
-      "topic": "Compliance",
-      "front": "What is ACCUMULATED EARNINGS TAX?",
-      "back": "A 20% penalty tax on C corporations that accumulate earnings beyond reasonable business needs to help shareholders avoid dividend taxes. Does not apply to S corps, personal holding companies, or tax-exempt organizations.",
-      "difficulty": "hard",
-      "example": "C Corp hoards $10M cash with no business purpose - IRS may assess 20% AET on excess accumulation.",
-      "tags": [
-        "C corp",
-        "penalty tax",
-        "accumulated earnings"
-      ],
-      "reference": "IRC Section 531"
-    },
-    {
       "id": "tcp-exp-def-001",
       "courseId": "cpa",
       "section": "TCP",
@@ -9311,23 +8605,6 @@
         "strategy"
       ],
       "reference": "Tax Planning"
-    },
-    {
-      "id": "tcp-exp-def-002",
-      "courseId": "cpa",
-      "section": "TCP",
-      "blueprintArea": "TCP-I",
-      "type": "definition",
-      "topic": "Individual Tax Planning",
-      "front": "What is the QUALIFIED BUSINESS INCOME (QBI) deduction?",
-      "back": "20% deduction on qualified business income from pass-through entities. Phase-out for service businesses at higher incomes. W-2 wage and property limitations may apply.",
-      "difficulty": "medium",
-      "tags": [
-        "deductions",
-        "QBI",
-        "199A"
-      ],
-      "reference": "IRC §199A"
     },
     {
       "id": "tcp-exp-def-003",
@@ -9851,24 +9128,6 @@
         "outside basis"
       ],
       "reference": "IRC §705"
-    },
-    {
-      "id": "tcp-fc-017",
-      "courseId": "cpa",
-      "section": "TCP",
-      "blueprintArea": "TCP-III",
-      "type": "definition",
-      "topic": "Entity Taxation",
-      "front": "What is the QUALIFIED BUSINESS INCOME (QBI) deduction?",
-      "back": "**§199A QBI Deduction:**\n• 20% deduction on qualified business income\n• Pass-through entities and sole proprietors\n• Cannot exceed: Lesser of (a) 20% QBI, or (b) 20% taxable income (minus net capital gains)\n\n**Limitations (above thresholds):**\n• W-2 wage limit: 50% of W-2 wages OR 25% W-2 + 2.5% qualified property\n• SSTB phase-out (specified service businesses)\n\n**Thresholds (2024):** $191,950 Single, $383,900 MFJ",
-      "difficulty": "hard",
-      "tags": [
-        "QBI",
-        "199A",
-        "pass-through",
-        "deduction"
-      ],
-      "reference": "IRC §199A"
     },
     {
       "id": "tcp-fc-018",

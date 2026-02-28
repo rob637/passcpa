@@ -1,0 +1,1469 @@
+[
+  {
+    "id": "CIA1-I-049",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Global Internal Audit Standards Overview",
+    "description": "Understand the structure of the Global Internal Audit Standards",
+    "order": 49,
+    "duration": 35,
+    "difficulty": "beginner",
+    "topics": [
+      "Standards",
+      "Structure",
+      "Mandatory guidance"
+    ],
+    "blueprintArea": "CIA1-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Standards Structure",
+          "type": "text",
+          "content": "**Global Internal Audit Standards include:**\n\n\u2022 **Mission** - Purpose of internal auditing\n\u2022 **Core Principles** - Effectiveness requirements\n\u2022 **Standards** - Specific requirements\n  - Attribute Standards (quality characteristics)\n  - Performance Standards (nature of activities)\n\u2022 **Implementation Guidance** - Supplemental advice"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Standards are mandatory",
+            "Principles drive effectiveness",
+            "Implementation guidance supports application"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding the Standards Hierarchy",
+          "knowledgeCheck": {
+            "question": "Which of the following represents the correct hierarchical order of the Global Internal Audit Standards, from broadest to most specific?",
+            "options": [
+              "Mission, Core Principles, Standards",
+              "Standards, Core Principles, Mission",
+              "Core Principles, Standards, Mission",
+              "Mission, Standards, Core Principles"
+            ],
+            "correctIndex": 0,
+            "explanation": "The correct order is Mission, Core Principles, and then Standards. The Mission provides the overall purpose, Core Principles define effectiveness, and Standards outline specific requirements.",
+            "hint": "Think about the level of detail and scope each element covers."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Standards Categories",
+          "reveal": {
+            "question": "What are the two main categories of Standards within the Global Internal Audit Standards?",
+            "answer": "The two main categories are Attribute Standards and Performance Standards."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Attribute vs. Performance Standards",
+          "comparison": {
+            "headers": [
+              "Attribute Standards",
+              "Performance Standards"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Characteristics of the internal audit activity and those performing it",
+                  "Nature of internal audit activities and criteria for performing them"
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Independence and Objectivity",
+                  "Managing the Internal Audit Activity"
+                ]
+              },
+              {
+                "label": "Nature",
+                "values": [
+                  "Deals with the 'who'",
+                  "Deals with the 'how'"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-050",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Control Activities",
+    "description": "Understand types and classifications of control activities",
+    "order": 50,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Control activities",
+      "Preventive",
+      "Detective",
+      "Corrective"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Control Classifications",
+          "type": "text",
+          "content": "**By Timing:**\n\u2022 **Preventive** - Stop errors/fraud before occur\n\u2022 **Detective** - Find errors/fraud after occur\n\u2022 **Corrective** - Fix problems found\n\n**By Nature:**\n\u2022 **Manual** - Performed by people\n\u2022 **Automated** - Performed by systems\n\u2022 **IT-Dependent Manual** - Manual controls relying on IT"
+        },
+        {
+          "title": "Examples",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Preventive",
+              "Approval before payment"
+            ],
+            [
+              "Detective",
+              "Bank reconciliation"
+            ],
+            [
+              "Corrective",
+              "Error correction procedure"
+            ],
+            [
+              "Automated",
+              "System validation edits"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Controls: preventive, detective, corrective",
+            "Also classified as manual, automated, IT-dependent",
+            "Mix of control types provides best protection"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Control Activity Classification: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following control activities is MOST effective in preventing the occurrence of fraud?",
+            "options": [
+              "A. Reconciling bank statements monthly.",
+              "B. Requiring dual signatures for checks exceeding a specified amount.",
+              "C. Performing surprise cash counts.",
+              "D. Implementing a whistleblower hotline.",
+              "E. Investigating anomalies"
+            ],
+            "correctIndex": 1,
+            "explanation": "Requiring dual signatures for checks exceeding a specified amount is a preventive control that aims to stop unauthorized or fraudulent disbursements before they occur. The other options are detective controls, designed to identify errors or fraud after they have occurred.",
+            "hint": "Think about which control is designed to stop something *before* it happens."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Control Activity Definitions",
+          "reveal": {
+            "question": "Define a 'Detective' control activity and provide an example.",
+            "answer": "Detective controls identify errors or fraud that has already occurred. An example is performing a reconciliation of cash balances to identify discrepancies."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Preventive vs. Corrective Controls",
+          "comparison": {
+            "headers": [
+              "Preventive Controls",
+              "Corrective Controls"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Stop errors/fraud *before* they happen.",
+                  "Fix errors/fraud *after* they have been detected."
+                ]
+              },
+              {
+                "label": "Timing",
+                "values": [
+                  "Proactive",
+                  "Reactive"
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Segregation of duties, strong password requirements",
+                  "Data backup and recovery procedures, error resolution processes"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Manual vs. Automated Controls",
+          "knowledgeCheck": {
+            "question": "Which of the following is an example of an IT-dependent manual control?",
+            "options": [
+              "A. A system automatically flags transactions exceeding a certain dollar amount for review.",
+              "B. A supervisor reviews a report generated by the IT system listing all new vendors added to the system that week.",
+              "C. Physical security measures such as locks and security guards.",
+              "D. A system automatically calculates and posts depreciation expense.",
+              "E. A database administrator grants access privileges"
+            ],
+            "correctIndex": 1,
+            "explanation": "The supervisor's review of a system-generated report is a manual control that relies on the IT system to provide the necessary information. The control would not function effectively without the IT system. The other options represent purely automated controls or purely manual controls independent of IT.",
+            "hint": "Consider which option involves a person taking action *based* on IT output."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-051",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Information and Communication (COSO)",
+    "description": "Understand the information and communication component of internal control",
+    "order": 51,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Information",
+      "Communication",
+      "COSO component"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Information and Communication",
+          "type": "text",
+          "content": "**COSO principles for this component:**\n\n\u2022 Organization obtains or generates relevant, quality information\n\u2022 Organization internally communicates control information\n\u2022 Organization communicates externally about matters affecting controls\n\n**Information must be timely, accurate, and accessible.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Quality information supports control decisions",
+            "Internal and external communication needed",
+            "Information flows up, down, and across organization"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COSO Information & Communication: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is MOST important when evaluating the 'Information and Communication' component of internal control under the COSO framework?",
+            "options": [
+              "Whether the organization uses the latest technology for information processing.",
+              "Whether the organization obtains or generates relevant, quality information to support the functioning of other components of internal control.",
+              "Whether the organization has a formal communication policy that is distributed to all employees.",
+              "Whether the organization has a dedicated IT department."
+            ],
+            "correctIndex": 1,
+            "explanation": "The COSO framework emphasizes that the organization must obtain or generate relevant and quality information to support the functioning of the other components of internal control. While technology, formal policies, and dedicated IT departments can be helpful, they are secondary to the quality and relevance of the information itself.",
+            "hint": "Consider what is fundamentally necessary for informed decision-making and effective control activities."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Information Characteristics",
+          "reveal": {
+            "question": "What are the three key characteristics of information as it relates to the COSO framework?",
+            "answer": "Timely, Accurate, and Accessible."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Communication Focus",
+          "knowledgeCheck": {
+            "question": "An organization's internal audit function discovers a significant fraud perpetrated by a senior manager. According to the COSO framework's 'Information and Communication' component, which of the following communication channels is MOST critical?",
+            "options": [
+              "Communicating the fraud details to all employees via the company intranet.",
+              "Communicating the fraud details to the external auditors and the audit committee of the board of directors.",
+              "Communicating the fraud details only to the senior management team to avoid reputational damage.",
+              "Communicating the fraud details to the local law enforcement agency."
+            ],
+            "correctIndex": 1,
+            "explanation": "The COSO framework emphasizes the importance of communicating externally about matters affecting controls. In this scenario, the external auditors and the audit committee are key stakeholders who need to be informed about the fraud to assess the effectiveness of internal controls and ensure appropriate action is taken. While other options might be necessary at some point, communicating with external auditors and the audit committee is paramount.",
+            "hint": "Think about which stakeholders are responsible for oversight and external reporting."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-052",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Monitoring Activities (COSO)",
+    "description": "Understand the monitoring component of internal control",
+    "order": 52,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Monitoring",
+      "Ongoing",
+      "Separate evaluations",
+      "COSO"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Monitoring Activities",
+          "type": "text",
+          "content": "**COSO monitoring principles:**\n\n\u2022 Organization selects and develops ongoing and/or separate evaluations\n\u2022 Organization evaluates and communicates deficiencies\n\n**Ongoing monitoring:**\n\u2022 Supervisory review\n\u2022 Exception reports\n\u2022 Self-assessments\n\n**Separate evaluations:**\n\u2022 Internal audits\n\u2022 External assessments"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Monitoring: ongoing and separate evaluations",
+            "Deficiencies must be communicated timely",
+            "Severity determines communication level"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Ongoing Monitoring vs. Separate Evaluations",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST accurate distinction between ongoing monitoring and separate evaluations, as defined by COSO?",
+            "options": [
+              "Ongoing monitoring is performed continuously and is built into normal operating activities, while separate evaluations are conducted periodically by an objective party.",
+              "Ongoing monitoring is more expensive than separate evaluations due to its continuous nature.",
+              "Ongoing monitoring is less reliable than separate evaluations because it relies on self-assessments.",
+              "Separate evaluations are only performed by external auditors, while ongoing monitoring is always performed internally."
+            ],
+            "correctIndex": 0,
+            "explanation": "Ongoing monitoring is integrated into the organization's routine activities, allowing for real-time detection of issues. Separate evaluations are conducted periodically and provide a more comprehensive assessment by an objective party, like an internal audit team or consultant. The other options present inaccurate generalizations.",
+            "hint": "Think about how frequently each type of monitoring is performed and who typically performs it."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "COSO Monitoring Principles: Name Them!",
+          "reveal": {
+            "question": "What are the two COSO monitoring principles?",
+            "answer": "1. The organization selects and develops ongoing and/or separate evaluations.\n2. The organization evaluates and communicates deficiencies."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Ongoing Monitoring Examples",
+          "comparison": {
+            "headers": [
+              "Type of Ongoing Monitoring",
+              "Description",
+              "Example"
+            ],
+            "rows": [
+              {
+                "label": "Supervisory Review",
+                "values": [
+                  "Management's oversight of employee activities.",
+                  "A supervisor reviews expense reports submitted by their team members to ensure compliance with company policy."
+                ]
+              },
+              {
+                "label": "Exception Reports",
+                "values": [
+                  "Reports highlighting deviations from expected results or standards.",
+                  "A report showing all transactions exceeding a certain monetary threshold requiring additional approval."
+                ]
+              },
+              {
+                "label": "Self-Assessments",
+                "values": [
+                  "Individuals evaluating the effectiveness of controls within their own area of responsibility.",
+                  "A sales team member completes a questionnaire about their understanding of and adherence to sales policies."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-I-040",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Policies and Procedures for IA",
+    "description": "Develop and maintain internal audit policies and procedures",
+    "order": 40,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Audit policies",
+      "Procedures",
+      "Audit manual"
+    ],
+    "blueprintArea": "CIA2-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Audit Policies and Procedures",
+          "type": "text",
+          "content": "**Key areas requiring documented guidance:**\n\n\u2022 Planning methodology\n\u2022 Risk assessment approach\n\u2022 Fieldwork procedures\n\u2022 Evidence documentation\n\u2022 Report writing standards\n\u2022 Follow-up processes\n\u2022 Quality assurance"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Documented policies ensure consistency",
+            "Procedures operationalize policies",
+            "Regular updates keep guidance current"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Planning Methodology Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for having a documented planning methodology within the internal audit function's policies and procedures?",
+            "options": [
+              "To ensure all audits are completed within the allocated budget.",
+              "To provide a consistent and repeatable framework for audit engagements, ensuring objectives are achieved efficiently and effectively.",
+              "To limit the scope of audits to only areas identified as high risk by management.",
+              "To provide a detailed checklist of tasks for junior auditors to follow."
+            ],
+            "correctIndex": 1,
+            "explanation": "A documented planning methodology ensures consistency, efficiency, and effectiveness in achieving audit objectives. While budget adherence and risk focus are important, the overall framework is paramount. Checklists are helpful, but don't encompass the strategic importance of a methodology.",
+            "hint": "Think about the overall goal of having documented procedures. Is it primarily about cost, consistency, risk, or training?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall Test: Evidence Documentation",
+          "reveal": {
+            "question": "Why is proper evidence documentation essential within the internal audit function?",
+            "answer": "Proper evidence documentation is essential because it supports audit findings, conclusions, and recommendations. It provides a basis for review, allows for replication of the audit work, and serves as a defense in case of disputes or legal challenges. It demonstrates due professional care."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Report Writing Standards Knowledge Check",
+          "knowledgeCheck": {
+            "question": "According to best practices in internal auditing, which of the following characteristics is MOST crucial for an audit report?",
+            "options": [
+              "Lengthy and detailed, covering all aspects of the audit.",
+              "Concise, clear, and objective, focusing on significant findings and recommendations.",
+              "Technical and complex, demonstrating the auditor's expertise.",
+              "Written in a way that avoids any potential conflict with management."
+            ],
+            "correctIndex": 1,
+            "explanation": "Concise, clear, and objective reporting is essential for effective communication of audit results. While detail is important, brevity and clarity are paramount. Technical language should be minimized, and avoiding conflict should not compromise objectivity.",
+            "hint": "Consider the primary purpose of an audit report: to communicate effectively to stakeholders."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-041",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Control Testing Techniques",
+    "description": "Apply testing techniques to evaluate control design and operation",
+    "order": 41,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Control testing",
+      "Design",
+      "Operating effectiveness"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Two Aspects of Control Testing",
+          "type": "text",
+          "content": "**Design Effectiveness:**\n\u2022 Is the control designed to address the risk?\n\u2022 Test through inquiry, observation, documentation review\n\n**Operating Effectiveness:**\n\u2022 Is the control working as designed?\n\u2022 Test through sampling, re-performance, inspection"
+        },
+        {
+          "title": "Testing Techniques",
+          "type": "text",
+          "content": "**Common testing techniques:**\n\u2022 **Inquiry** - Ask questions\n\u2022 **Observation** - Watch process\n\u2022 **Inspection** - Examine documents\n\u2022 **Re-performance** - Redo the control\n\u2022 **Confirmation** - Independent verification"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Test design and operating effectiveness separately",
+            "Multiple techniques provide stronger evidence",
+            "re-performance is most conclusive evidence"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Testing Effectiveness - Design vs. Operating",
+          "knowledgeCheck": {
+            "question": "An internal auditor is assessing a company's new IT access control policy. To determine if the policy, as written, adequately prevents unauthorized access to sensitive data, the auditor would MOST likely be performing a test of:",
+            "options": [
+              "Operating effectiveness",
+              "Design effectiveness",
+              "Control efficiency",
+              "Management override"
+            ],
+            "correctIndex": 1,
+            "explanation": "Design effectiveness focuses on whether the control is designed appropriately to address the risk. Evaluating the policy as written assesses its design.",
+            "hint": "Consider what the auditor is evaluating - the policy itself or its actual implementation."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Control Testing Techniques",
+          "reveal": {
+            "question": "Name the five common control testing techniques discussed in this lesson.",
+            "answer": "The five common control testing techniques are: Inquiry, Observation, Inspection, Re-performance, and Confirmation."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Design Effectiveness vs. Operating Effectiveness",
+          "comparison": {
+            "headers": [
+              "Design Effectiveness",
+              "Operating Effectiveness"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Whether the control is appropriately designed to mitigate the risk.",
+                  "Whether the control is functioning as designed over a period of time."
+                ]
+              },
+              {
+                "label": "Testing Methods",
+                "values": [
+                  "Inquiry, observation, documentation review.",
+                  "Sampling, re-performance, inspection."
+                ]
+              },
+              {
+                "label": "Goal",
+                "values": [
+                  "To determine if the control is capable of preventing or detecting errors or fraud.",
+                  "To determine if the control is consistently applied and effective in preventing or detecting errors or fraud."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-IV-042",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Interim and Final Reporting",
+    "description": "Understand when and how to communicate during engagements",
+    "order": 42,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Interim reporting",
+      "Final report",
+      "Communication timing"
+    ],
+    "blueprintArea": "CIA2-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Interim Communications",
+          "type": "text",
+          "content": "**When to communicate before final report:**\n\n\u2022 Significant issues requiring immediate attention\n\u2022 Changes in scope or objectives\n\u2022 Preliminary findings requiring validation\n\u2022 Resource or timing changes\n\n**Purpose: No surprises; timely action on critical items.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Interim reporting addresses urgent matters",
+            "Final report is comprehensive communication",
+            "Keep stakeholders informed throughout"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Interim Reporting Triggers",
+          "knowledgeCheck": {
+            "question": "During an internal audit of the payroll system, the auditor discovers a significant control weakness that could result in material misstatement if unaddressed. According to professional auditing standards, which of the following actions is MOST appropriate regarding interim communication?",
+            "options": [
+              "Delay communication until the final audit report to ensure all findings are presented together.",
+              "Communicate the issue immediately to the appropriate level of management responsible for payroll, regardless of the stage of the audit.",
+              "Document the finding in the working papers and address it only if it persists during the subsequent audit.",
+              "Communicate the issue to the external auditors during their year-end audit."
+            ],
+            "correctIndex": 1,
+            "explanation": "Communicating significant issues immediately is crucial for timely action and preventing potential material misstatements. Delaying communication could exacerbate the problem. Addressing it only in a subsequent audit is insufficient, and while communicating to external auditors is important, it doesn't replace the need to inform internal management promptly.",
+            "hint": "Think about the purpose of interim communications."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: Purpose of Interim Communication",
+          "reveal": {
+            "question": "What is the primary purpose of interim communication in internal auditing?",
+            "answer": "The primary purpose is to ensure 'no surprises' and facilitate timely action on critical items identified during the audit process. This allows management to address issues promptly and effectively."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Impact of Scope Changes",
+          "knowledgeCheck": {
+            "question": "An internal audit engagement was initially scoped to review the effectiveness of IT general controls. Midway through the audit, the audit committee requests an expansion of the scope to include a review of cybersecurity incident response plans. What is the MOST appropriate course of action for the internal auditor?",
+            "options": [
+              "Continue with the original scope and address the audit committee's request in a separate, future audit.",
+              "Immediately expand the scope of the audit without communicating the potential impact on resources and timelines.",
+              "Communicate the changes in scope to relevant stakeholders, including the potential impact on resources, timelines, and objectives, and obtain agreement on the revised scope.",
+              "Expand the scope of the audit but delay communication until the final report to avoid confusing stakeholders."
+            ],
+            "correctIndex": 2,
+            "explanation": "Changes in scope can significantly impact the audit engagement. Communicating these changes, along with their potential impact on resources and timelines, is essential for transparency and proper management of the audit. Ignoring the request or delaying communication can lead to misunderstandings and ineffective audit outcomes.",
+            "hint": "Consider the importance of stakeholder communication when the audit scope changes."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-051",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Industry and Competitive Analysis",
+    "description": "Understand the external environment affecting organizations",
+    "order": 51,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Industry analysis",
+      "Competition",
+      "PESTLE",
+      "Porter forces"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "External Analysis Frameworks",
+          "type": "text",
+          "content": "**PESTLE Analysis:**\n\u2022 Political factors\n\u2022 Economic conditions\n\u2022 Social trends\n\u2022 Technological changes\n\u2022 Legal requirements\n\u2022 Environmental factors\n\n**Porter's Five Forces:**\n\u2022 Competitive rivalry\n\u2022 Supplier power\n\u2022 Buyer power\n\u2022 Threat of substitutes\n\u2022 Threat of new entrants"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "External factors affect organizational risk",
+            "PESTLE analyzes macro environment",
+            "Five Forces analyzes industry structure"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "PESTLE Analysis Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a factor typically considered within the 'Social' component of a PESTLE analysis?",
+            "options": [
+              "Demographic trends",
+              "Cultural attitudes",
+              "Consumer lifestyles",
+              "Government regulations on labor practices"
+            ],
+            "correctIndex": 3,
+            "explanation": "Government regulations on labor practices fall under the 'Legal' component of PESTLE analysis. The 'Social' component focuses on societal trends and values that influence the business environment.",
+            "hint": "Think about what aspects of society directly impact consumer behavior and market trends."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Porter's Five Forces - Recall",
+          "reveal": {
+            "question": "List the five forces in Porter's Five Forces framework.",
+            "answer": "The five forces are: Competitive rivalry, Supplier power, Buyer power, Threat of substitutes, and Threat of new entrants."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Porter's Five Forces Application",
+          "knowledgeCheck": {
+            "question": "A small number of suppliers control the majority of a critical raw material needed for a manufacturing company's product. According to Porter's Five Forces, this situation indicates:",
+            "options": [
+              "High buyer power",
+              "Low threat of new entrants",
+              "High supplier power",
+              "Intense competitive rivalry"
+            ],
+            "correctIndex": 2,
+            "explanation": "High supplier power exists when suppliers have significant control over prices and terms due to limited alternatives for buyers. In this scenario, the manufacturing company is highly dependent on these suppliers.",
+            "hint": "Consider who has the upper hand in the negotiation process."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "PESTLE vs. Porter's Five Forces",
+          "comparison": {
+            "headers": [
+              "PESTLE Analysis",
+              "Porter's Five Forces"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Macro-environmental factors impacting an organization",
+                  "Industry structure and competitive intensity"
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "Identify opportunities and threats from the external environment",
+                  "Assess the attractiveness and profitability of an industry"
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Broad, considering political, economic, social, technological, legal, and environmental factors",
+                  "Specific to an industry, focusing on the power dynamics between players"
+                ]
+              },
+              {
+                "label": "Outcome",
+                "values": [
+                  "Understanding the external context",
+                  "Determining competitive advantage and strategic positioning"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-052",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Mobile and Remote Work Security",
+    "description": "Understand security risks of mobile and remote work",
+    "order": 52,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Mobile security",
+      "Remote work",
+      "BYOD",
+      "VPN"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Mobile/Remote Work Risks",
+          "type": "text",
+          "content": "**Key security risks:**\n\n\u2022 Unsecured networks (public WiFi)\n\u2022 Lost or stolen devices\n\u2022 Data leakage\n\u2022 Authentication challenges\n\u2022 BYOD control limitations\n\u2022 Physical security"
+        },
+        {
+          "title": "Control Considerations",
+          "type": "text",
+          "content": "**Mobile/remote security controls:**\n\u2022 Mobile device management (MDM)\n\u2022 VPN requirements\n\u2022 Multi-factor authentication\n\u2022 Encryption requirements\n\u2022 Remote wipe capability\n\u2022 Acceptable use policies"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Remote work expands attack surface",
+            "MDM and VPN are key controls",
+            "Policy and training essential"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Mobile Device Risks",
+          "knowledgeCheck": {
+            "question": "Which of the following presents the GREATEST risk associated with employees using unsecured public Wi-Fi networks for company business on their personal mobile devices?",
+            "options": [
+              "A. Increased battery drain due to constant network searching.",
+              "B. Potential interception of sensitive data transmitted over the network.",
+              "C. Higher data usage charges incurred by the employee.",
+              "D. Slower application performance due to network congestion."
+            ],
+            "correctIndex": 1,
+            "explanation": "Unsecured public Wi-Fi networks are vulnerable to eavesdropping and man-in-the-middle attacks, allowing attackers to intercept sensitive data transmitted between the device and the intended destination. While the other options might be inconveniences, they do not pose the same level of security risk.",
+            "hint": "Think about the confidentiality of company data."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Mobile Device Management (MDM)",
+          "reveal": {
+            "question": "What are THREE key functionalities typically provided by a Mobile Device Management (MDM) solution that enhance mobile security?",
+            "answer": "1. Remote wipe capability to erase data from lost or stolen devices. 2. Enforcement of security policies such as password complexity and screen lock timeouts. 3. Application management, including whitelisting, blacklisting, and distribution of approved apps."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Remote Work Security Controls",
+          "knowledgeCheck": {
+            "question": "An organization is implementing a Bring Your Own Device (BYOD) program. Which of the following controls is MOST effective in mitigating the risk of data leakage from personal devices?",
+            "options": [
+              "A. Requiring employees to sign an acceptable use policy.",
+              "B. Mandating the use of strong passwords on all employee accounts.",
+              "C. Implementing containerization to separate corporate data from personal data on the device.",
+              "D. Providing employees with stipends to purchase new mobile devices."
+            ],
+            "correctIndex": 2,
+            "explanation": "Containerization creates a secure, isolated environment on the device for corporate data, preventing it from mixing with personal data and reducing the risk of leakage. While other options are important security measures, they don't directly address the core issue of data separation in a BYOD environment.",
+            "hint": "Consider how to isolate company information from personal information."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-053",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "E-Commerce and Digital Business",
+    "description": "Understand e-commerce risks and controls",
+    "order": 53,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "E-commerce",
+      "Online transactions",
+      "Payment security",
+      "PCI DSS"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "E-Commerce Risks",
+          "type": "text",
+          "content": "**Key e-commerce risks:**\n\n\u2022 Payment card fraud\n\u2022 Account takeover\n\u2022 Denial of service attacks\n\u2022 Data breaches\n\u2022 Chargebacks\n\u2022 Regulatory non-compliance"
+        },
+        {
+          "title": "PCI DSS Requirements",
+          "type": "text",
+          "content": "**Payment Card Industry Data Security Standard:**\n\u2022 Build secure network\n\u2022 Protect cardholder data\n\u2022 Maintain vulnerability management\n\u2022 Implement access controls\n\u2022 Monitor and test networks\n\u2022 Maintain security policy"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "E-commerce introduces unique risks",
+            "PCI DSS compliance required for payment cards",
+            "Multiple security layers needed"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "E-Commerce Risk Assessment",
+          "knowledgeCheck": {
+            "question": "An internal auditor is reviewing an e-commerce company's security controls. Which of the following scenarios represents the GREATEST risk related to payment card fraud?",
+            "options": [
+              "A. The company uses a third-party payment processor that is PCI DSS compliant.",
+              "B. The company's website uses SSL encryption to protect customer data during transmission.",
+              "C. The company's database containing cardholder data is not adequately segmented from other business systems and lacks robust access controls.",
+              "D. The company has a documented incident response plan for data breaches."
+            ],
+            "correctIndex": 2,
+            "explanation": "Option C represents the greatest risk because inadequate segmentation and weak access controls directly expose cardholder data to unauthorized access and potential fraud. While the other options represent important security measures, a poorly protected database significantly increases the likelihood and impact of a successful attack.",
+            "hint": "Consider which scenario would give an attacker the easiest access to the most valuable data."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "PCI DSS Memory Check",
+          "reveal": {
+            "question": "Name the six main control objectives outlined in the Payment Card Industry Data Security Standard (PCI DSS).",
+            "answer": "The six PCI DSS control objectives are:\n1. Build and Maintain a Secure Network\n2. Protect Cardholder Data\n3. Maintain a Vulnerability Management Program\n4. Implement Strong Access Control Measures\n5. Regularly Monitor and Test Networks\n6. Maintain an Information Security Policy"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Chargebacks vs. Account Takeover",
+          "comparison": {
+            "headers": [
+              "Chargebacks",
+              "Account Takeover"
+            ],
+            "rows": [
+              {
+                "label": "Primary Impact",
+                "values": [
+                  "Financial loss for the merchant due to refunded transaction and fees.",
+                  "Financial loss for both the customer and the merchant; damage to reputation."
+                ]
+              },
+              {
+                "label": "Prevention",
+                "values": [
+                  "Implement strong fraud detection measures, provide clear product descriptions, and offer excellent customer service.",
+                  "Use multi-factor authentication, monitor login activity, and educate customers on phishing scams."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-054",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Budgeting and Forecasting",
+    "description": "Understand budgeting processes and audit considerations",
+    "order": 54,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Budgeting",
+      "Forecasting",
+      "Variance analysis"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Budgeting Approaches",
+          "type": "text",
+          "content": "**Common budgeting methods:**\n\n\u2022 **Incremental** - Adjust prior year\n\u2022 **Zero-based** - Justify from zero\n\u2022 **Activity-based** - Based on activities\n\u2022 **Rolling/Continuous** - Updated regularly\n\n**Each has advantages and limitations.**"
+        },
+        {
+          "title": "Audit Considerations",
+          "type": "text",
+          "content": "**Auditing the budget process:**\n\u2022 Evaluate budget development process\n\u2022 Assess reasonableness of assumptions\n\u2022 Test variance analysis and monitoring\n\u2022 Review budget approval process\n\u2022 Assess budget gaming/manipulation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Multiple budgeting approaches available",
+            "Variance analysis monitors performance",
+            "Budget manipulation is a risk to assess"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Budgeting Approaches - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which budgeting approach requires each budget item to be fully justified, as if the budget were being created for the first time?",
+            "options": [
+              "Incremental budgeting",
+              "Activity-based budgeting",
+              "Zero-based budgeting",
+              "Rolling budget"
+            ],
+            "correctIndex": 2,
+            "explanation": "Zero-based budgeting requires a complete justification for all budget items, starting from a 'zero base'. This contrasts with incremental budgeting, which builds upon the prior year's budget.",
+            "hint": "Think about which approach starts with a 'clean slate'."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Audit Focus - Key Question",
+          "reveal": {
+            "question": "What is a key audit consideration when reviewing the budget approval process?",
+            "answer": "Whether the budget was approved at the appropriate level of management and whether documented approval exists."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Budgeting Approaches: Incremental vs. Zero-Based",
+          "comparison": {
+            "headers": [
+              "Incremental Budgeting",
+              "Zero-Based Budgeting"
+            ],
+            "rows": [
+              {
+                "label": "Basis",
+                "values": [
+                  "Prior year's budget",
+                  "Justification from zero"
+                ]
+              },
+              {
+                "label": "Effort",
+                "values": [
+                  "Less time-consuming",
+                  "More time-consuming"
+                ]
+              },
+              {
+                "label": "Justification",
+                "values": [
+                  "Limited justification",
+                  "Full justification required"
+                ]
+              },
+              {
+                "label": "Risk",
+                "values": [
+                  "Perpetuates inefficiencies",
+                  "Identifies inefficiencies"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Auditing Variance Analysis",
+          "knowledgeCheck": {
+            "question": "When auditing variance analysis, what is the auditor primarily assessing?",
+            "options": [
+              "The mathematical accuracy of the variance calculations.",
+              "The appropriateness of the individuals responsible for investigating variances.",
+              "The reasonableness of the explanations provided for significant variances.",
+              "All of the above."
+            ],
+            "correctIndex": 3,
+            "explanation": "Auditors need to verify the accuracy of calculations, evaluate the appropriateness of who investigates variances, and assess whether the explanations for significant differences between budgeted and actual results are reasonable and adequately supported.",
+            "hint": "Consider the scope of a thorough audit procedure."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-055",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Human Resources Risk Management",
+    "description": "Understand HR-related risks and controls",
+    "order": 55,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "HR risk",
+      "Employee lifecycle",
+      "Background checks",
+      "Termination"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "HR Risk Areas",
+          "type": "text",
+          "content": "**Key HR risks:**\n\n\u2022 Hiring unqualified/unethical employees\n\u2022 Inadequate training\n\u2022 Compensation/benefits errors\n\u2022 Discrimination/harassment\n\u2022 Improper terminations\n\u2022 Access not terminated promptly"
+        },
+        {
+          "title": "Controls by Lifecycle Stage",
+          "type": "text",
+          "content": "**Hiring:**\n\u2022 Background checks, reference verification\n\n**Onboarding:**\n\u2022 Training, policy acknowledgment\n\n**Employment:**\n\u2022 Performance management, supervision\n\n**Separation:**\n\u2022 Exit interview, timely access removal"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "HR risks exist throughout employee lifecycle",
+            "Background checks mitigate hiring risk",
+            "Prompt access removal is critical at termination"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding HR Risk Management",
+          "knowledgeCheck": {
+            "question": "Which of the following controls is MOST effective in mitigating the risk of hiring unqualified employees, according to the lesson?",
+            "options": [
+              "Providing comprehensive onboarding training after hiring.",
+              "Conducting thorough background checks and reference verification during the hiring process.",
+              "Implementing robust performance management systems during employment.",
+              "Performing exit interviews upon employee separation."
+            ],
+            "correctIndex": 1,
+            "explanation": "Background checks and reference verification directly address the risk of hiring unqualified employees by verifying their credentials and past performance before they are brought on board. The other options are important controls but address different stages of the employee lifecycle and associated risks.",
+            "hint": "Consider which control directly verifies an employee's qualifications *before* they are hired."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Employee Lifecycle Stages",
+          "reveal": {
+            "question": "List the four stages of the employee lifecycle, as presented in the lesson, and provide a key risk associated with each stage.",
+            "answer": "**1. Hiring:** Risk of hiring unqualified/unethical employees.  **2. Onboarding:** Risk of inadequate training or failure to acknowledge company policies. **3. Employment:** Risk of discrimination/harassment or compensation/benefits errors. **4. Separation:** Risk of improper termination or failure to remove access promptly."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Termination Risk Mitigation",
+          "knowledgeCheck": {
+            "question": "An internal audit reveals that terminated employees retain access to sensitive company systems for several weeks after their departure. Which of the following controls would BEST address this deficiency?",
+            "options": [
+              "Implementing a formal exit interview process.",
+              "Conducting background checks on all new hires.",
+              "Establishing a policy requiring immediate termination of system access upon employee separation.",
+              "Providing additional training on data security to all employees."
+            ],
+            "correctIndex": 2,
+            "explanation": "A policy requiring immediate termination of system access directly addresses the identified deficiency. While the other options are valuable controls, they do not specifically address the issue of delayed access removal after termination.",
+            "hint": "Think about the most *direct* solution to the problem described."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-056",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Incident Response Planning",
+    "description": "Understand incident response requirements and audit considerations",
+    "order": 56,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Incident response",
+      "Security incidents",
+      "IR plan"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Incident Response Phases",
+          "type": "text",
+          "content": "**NIST Incident Response Lifecycle:**\n\n1. **Preparation** - Plan, train, equip\n2. **Detection & Analysis** - Identify and assess\n3. **Containment, Eradication, Recovery** - Stop, remove, restore\n4. **Post-Incident Activity** - Lessons learned"
+        },
+        {
+          "title": "IR Plan Elements",
+          "type": "text",
+          "content": "**Effective IR plan includes:**\n\u2022 Incident definitions and classification\n\u2022 Roles and responsibilities\n\u2022 Communication protocols\n\u2022 Escalation procedures\n\u2022 Evidence preservation\n\u2022 External party contacts (legal, law enforcement)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IR has defined phases: prep, detect, contain, learn",
+            "Plan must exist before incident occurs",
+            "Regular testing validates readiness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NIST Incident Response Lifecycle Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During which phase of the NIST Incident Response Lifecycle would an organization focus on developing and documenting procedures for handling specific types of security incidents?",
+            "options": [
+              "Detection & Analysis",
+              "Containment, Eradication, Recovery",
+              "Post-Incident Activity",
+              "Preparation"
+            ],
+            "correctIndex": 3,
+            "explanation": "The Preparation phase involves establishing the foundational elements for incident response, including planning, training, equipping the team, and documenting procedures. The other phases focus on reacting to and learning from incidents.",
+            "hint": "Think about the activities that occur *before* an incident actually takes place."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Incident Response Plan Elements",
+          "reveal": {
+            "question": "List at least four essential elements that should be included in an effective Incident Response (IR) plan.",
+            "answer": "An effective IR plan should include: Incident definitions and classification, Roles and responsibilities, Communication protocols, Escalation procedures, Evidence preservation, and External party contacts (legal, law enforcement)."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Incident Classification Question",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason to classify security incidents within an Incident Response plan?",
+            "options": [
+              "To comply with industry regulations regarding data breach notification.",
+              "To determine the appropriate level of resources and response actions needed.",
+              "To assign blame and hold individuals accountable for security breaches.",
+              "To satisfy auditor requirements for documentation of security events."
+            ],
+            "correctIndex": 1,
+            "explanation": "Classifying incidents allows the organization to prioritize response efforts and allocate resources effectively based on the severity and impact of the incident. While the other options may be secondary benefits, the primary goal is efficient and effective incident management.",
+            "hint": "Think about the immediate practical benefit of knowing the *type* of incident you're dealing with."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA1-V-057",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Segregation of Duties",
+    "description": "Understand segregation of duties as a key control activity",
+    "order": 57,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Segregation of duties",
+      "Incompatible functions",
+      "Control design"
+    ],
+    "blueprintArea": "CIA1-V",
+    "content": {
+      "sections": [
+        {
+          "title": "Segregation of Duties Concept",
+          "type": "text",
+          "content": "**Segregation of duties (SoD):**\n\nNo single person should control all phases of a transaction. Key functions to separate:\n\n\u2022 **Authorization** - Approve transactions\n\u2022 **Custody** - Physical possession of assets\n\u2022 **Recording** - Maintaining records\n\u2022 **Reconciliation** - Verifying accuracy"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "SoD prevents fraud and error",
+            "Separate authorization, custody, recording",
+            "Compensating controls when SoD not possible"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Segregation of Duties Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios represents the MOST significant violation of segregation of duties principles?\n",
+            "options": [
+              "A purchasing agent approves purchase orders and also reconciles the monthly vendor statements.",
+              "A cashier receives cash and prepares the daily deposit, and the treasurer reviews the bank reconciliation.",
+              "An accounts payable clerk enters invoices and prepares the check register, and the controller approves payments.",
+              "An IT administrator can authorize access to a server and also has the ability to modify data on that server."
+            ],
+            "correctIndex": 3,
+            "explanation": "The most significant violation occurs when an IT administrator can both authorize access to a server and modify data. This combines authorization and custody/recording, creating a high risk of unauthorized access and manipulation of data without detection. The other options have some overlap, but the IT administrator scenario has the greatest potential for fraud and error.",
+            "hint": "Think about which scenario gives one person the most control over both the asset and the record of that asset."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "The 4 Key Functions",
+          "reveal": {
+            "question": "List the four primary functions that should be segregated to maintain adequate internal control.",
+            "answer": "The four primary functions are Authorization, Custody, Recording, and Reconciliation."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Authorization vs. Custody",
+          "comparison": {
+            "headers": [
+              "Authorization",
+              "Custody"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "The function of approving transactions and decisions.",
+                  "The function of having physical possession or control of assets."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Approving a purchase order.",
+                  "Holding inventory in a warehouse."
+                ]
+              },
+              {
+                "label": "Risk if Combined",
+                "values": [
+                  "Unapproved transactions, potentially leading to fraud.",
+                  "Theft or misuse of assets without approval."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-043",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Workpaper Documentation Standards",
+    "description": "Document audit work properly in workpapers",
+    "order": 43,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Workpapers",
+      "Documentation",
+      "Evidence"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Workpaper Requirements",
+          "type": "text",
+          "content": "**Workpapers should document:**\n\n\u2022 Planning information\n\u2022 Risk assessment\n\u2022 Work performed\n\u2022 Evidence gathered\n\u2022 Conclusions reached\n\u2022 Review and approval\n\n**Workpapers must support the audit report.**"
+        },
+        {
+          "title": "Quality Attributes",
+          "type": "text",
+          "content": "**Workpapers should be:**\n\u2022 Complete - All necessary information\n\u2022 Clear - Understandable to reviewer\n\u2022 Accurate - Factually correct\n\u2022 Organized - Logical structure\n\u2022 Secure - Protected from loss/access"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Workpapers support conclusions",
+            "Must be complete, clear, accurate",
+            "Retention per policy and regulations"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Workpaper Documentation: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for maintaining well-documented workpapers?",
+            "options": [
+              "To provide evidence supporting the audit report's conclusions.",
+              "To comply with all regulatory requirements.",
+              "To reduce the time required for future audits.",
+              "To ensure the internal audit activity adheres to the IPPF (International Professional Practices Framework)."
+            ],
+            "correctIndex": 0,
+            "explanation": "While all options are potentially valid benefits of good workpapers, the primary purpose, and thus the MOST important reason, is to provide evidence supporting the audit report's conclusions. This ensures the audit findings are justifiable and reliable.",
+            "hint": "Consider the fundamental purpose of an audit and the role of workpapers in achieving that purpose."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Quality Attributes of Workpapers",
+          "reveal": {
+            "question": "List the four key quality attributes that workpapers should possess. (Hint: Think 'CCAS')",
+            "answer": "The four key quality attributes are: Complete, Clear, Accurate, and Organized. (CCAS)"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Scenario-Based Question",
+          "knowledgeCheck": {
+            "question": "An internal auditor is reviewing a workpaper prepared by a junior auditor. The workpaper details the testing of a key control. The workpaper includes a description of the control, the testing methodology, and the sample size. However, the workpaper does NOT clearly state the conclusion reached regarding the effectiveness of the control. According to workpaper documentation standards, what is the MOST significant deficiency in this workpaper?",
+            "options": [
+              "The workpaper lacks sufficient detail regarding the testing methodology.",
+              "The workpaper does not include a cross-reference to the audit program.",
+              "The workpaper fails to document the conclusion reached.",
+              "The workpaper does not specify the individual who performed the testing."
+            ],
+            "correctIndex": 2,
+            "explanation": "The most significant deficiency is the failure to document the conclusion reached. Workpapers must clearly state the conclusions derived from the work performed, as these conclusions directly support the audit report. While other aspects might be missing, the absence of a conclusion invalidates the entire purpose of the workpaper.",
+            "hint": "Think about the ultimate goal of performing audit work and documenting it."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-057",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Project Management Auditing",
+    "description": "Audit project management processes and controls",
+    "order": 57,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Project management",
+      "Project auditing",
+      "PMO"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Project Management Risk Areas",
+          "type": "text",
+          "content": "**Common project risks:**\n\n\u2022 Scope creep\n\u2022 Schedule delays\n\u2022 Budget overruns\n\u2022 Resource constraints\n\u2022 Poor requirements\n\u2022 Inadequate testing\n\u2022 Stakeholder issues"
+        },
+        {
+          "title": "Audit Focus Areas",
+          "type": "text",
+          "content": "**Key areas to audit:**\n\u2022 Project governance and oversight\n\u2022 Planning and approval process\n\u2022 Progress monitoring and reporting\n\u2022 Change control\n\u2022 Risk management\n\u2022 Resource management\n\u2022 Post-implementation review"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Projects have inherent risks requiring oversight",
+            "Audit governance, planning, monitoring, change control",
+            "Post-implementation reviews capture lessons"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Project Risk",
+          "knowledgeCheck": {
+            "question": "Which of the following project risks is BEST mitigated by clearly defining project deliverables and obtaining stakeholder agreement early in the project lifecycle?",
+            "options": [
+              "A) Schedule delays",
+              "B) Scope creep",
+              "C) Budget overruns",
+              "D) Resource constraints"
+            ],
+            "correctIndex": 1,
+            "explanation": "Scope creep refers to uncontrolled changes or continuous growth in a project\u2019s scope. Clear deliverables and stakeholder agreement help to define the project boundaries and minimize unauthorized additions.",
+            "hint": "Consider which risk directly relates to the expansion of the project's work."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Audit Focus Areas: Recall",
+          "reveal": {
+            "question": "Name three key audit focus areas when auditing project management.",
+            "answer": "Possible answers include: Project governance and oversight, Planning and approval process, Progress monitoring and reporting, Change control, Risk management, Resource management, Post-implementation review."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Project Management vs. Project Auditing",
+          "comparison": {
+            "headers": [
+              "Project Management",
+              "Project Auditing"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Achieve project objectives within defined constraints (scope, time, cost).",
+                  "Provide independent assurance on the effectiveness of project management processes and controls."
+                ]
+              },
+              {
+                "label": "Perspective",
+                "values": [
+                  "Proactive; focused on planning, execution, and delivery.",
+                  "Retrospective and concurrent; focused on evaluating processes and identifying areas for improvement."
+                ]
+              },
+              {
+                "label": "Accountability",
+                "values": [
+                  "Accountable for project outcomes.",
+                  "Accountable for providing objective assessments and recommendations."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

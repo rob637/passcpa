@@ -31723,6 +31723,3281 @@
       "timeEstimate": 60,
       "authorityRef": "IRC §2503(b)",
       "commonMistake": "Many candidates confuse the annual gift tax exclusion amount with other figures related to gift and estate taxes. The exam exploits the misconception that the annual exclusion remains constant year after year. Test-takers often incorrectly remember previous years' exclusion amounts or confuse it with the lifetime gift tax exemption."
+    },
+    {
+      "question": "Which of the following is NOT a valid reason for requesting penalty abatement based on reasonable cause?",
+      "options": [
+        "Death or serious illness of the taxpayer or a member of their immediate family",
+        "Unavoidable absence of the taxpayer",
+        "Lack of funds to pay the tax due",
+        "Destruction of records due to fire or other casualty"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Lack of funds, by itself, is generally not considered reasonable cause for penalty abatement. The other options are valid reasons if they prevented the taxpayer from fulfilling their tax obligations.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313372488-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Lack of funds, by itself, is generally not considered reasonable cause for penalty abatement.",
+        "1": "Option B is incorrect. Lack of funds, by itself, is generally not considered reasonable cause for penalty abatement.",
+        "3": "Option D is incorrect. Lack of funds, by itself, is generally not considered reasonable cause for penalty abatement."
+      }
+    },
+    {
+      "question": "A tax preparer must retain a copy of a tax return or a list of returns prepared for how long?",
+      "options": [
+        "One year",
+        "Two years",
+        "Three years",
+        "Four years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "According to regulations, a tax preparer must retain a copy of the tax return or a list of returns prepared for a period of three years from the close of the return period.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313372488-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. According to regulations, a tax preparer must retain a copy of the tax return or a list of returns prepared for a period of three years from the close of the return period.",
+        "1": "Option B is incorrect. According to regulations, a tax preparer must retain a copy of the tax return or a list of returns prepared for a period of three years from the close of the return period.",
+        "3": "Option D is incorrect. According to regulations, a tax preparer must retain a copy of the tax return or a list of returns prepared for a period of three years from the close of the return period."
+      }
+    },
+    {
+      "question": "Which form is used to request an Offer in Compromise (OIC) from the IRS?",
+      "options": [
+        "Form 433-A",
+        "Form 656",
+        "Form 9465",
+        "Form 843"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 656, Offer in Compromise, is the official IRS form used by taxpayers to request an OIC to settle their tax debt for a lower amount than what they owe.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313372488-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 656, Offer in Compromise, is the official IRS form used by taxpayers to request an OIC to settle their tax debt for a lower amount than what they owe.",
+        "2": "Option C is incorrect. Form 656, Offer in Compromise, is the official IRS form used by taxpayers to request an OIC to settle their tax debt for a lower amount than what they owe.",
+        "3": "Option D is incorrect. Form 656, Offer in Compromise, is the official IRS form used by taxpayers to request an OIC to settle their tax debt for a lower amount than what they owe."
+      }
+    },
+    {
+      "question": "What is the primary purpose of Form 2848, Power of Attorney and Declaration of Representative?",
+      "options": [
+        "To file an amended tax return on behalf of a taxpayer",
+        "To authorize someone to represent a taxpayer before the IRS",
+        "To request an extension of time to file a tax return",
+        "To pay a taxpayer's tax liability"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 2848 grants the authority to an individual to represent a taxpayer before the IRS, allowing them to discuss and resolve tax matters on the taxpayer's behalf.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313372488-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848 grants the authority to an individual to represent a taxpayer before the IRS, allowing them to discuss and resolve tax matters on the taxpayer's behalf.",
+        "2": "Option C is incorrect. Form 2848 grants the authority to an individual to represent a taxpayer before the IRS, allowing them to discuss and resolve tax matters on the taxpayer's behalf.",
+        "3": "Option D is incorrect. Form 2848 grants the authority to an individual to represent a taxpayer before the IRS, allowing them to discuss and resolve tax matters on the taxpayer's behalf."
+      }
+    },
+    {
+      "question": "In general, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "Two years from the date the return was filed",
+        "Three years from the date the return was filed",
+        "Five years from the date the return was filed",
+        "Seven years from the date the return was filed"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The general statute of limitations for the IRS to assess additional tax is three years from the date the return was filed, or the due date of the return, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313372488-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The general statute of limitations for the IRS to assess additional tax is three years from the date the return was filed, or the due date of the return, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for the IRS to assess additional tax is three years from the date the return was filed, or the due date of the return, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for the IRS to assess additional tax is three years from the date the return was filed, or the due date of the return, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following collection actions requires the IRS to provide the taxpayer with a notice and the right to a Collection Due Process (CDP) hearing?",
+      "options": [
+        "Filing a Notice of Federal Tax Lien",
+        "Sending a notice of deficiency",
+        "Issuing a refund offset",
+        "Conducting an audit"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The IRS is required to provide notice and CDP hearing rights when filing a Notice of Federal Tax Lien to allow the taxpayer to challenge the lien.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313372488-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The IRS is required to provide notice and CDP hearing rights when filing a Notice of Federal Tax Lien to allow the taxpayer to challenge the lien.",
+        "2": "Option C is incorrect. The IRS is required to provide notice and CDP hearing rights when filing a Notice of Federal Tax Lien to allow the taxpayer to challenge the lien.",
+        "3": "Option D is incorrect. The IRS is required to provide notice and CDP hearing rights when filing a Notice of Federal Tax Lien to allow the taxpayer to challenge the lien."
+      }
+    },
+    {
+      "question": "Which of the following is a requirement for an installment agreement to be approved by the IRS?",
+      "options": [
+        "The taxpayer must be currently unemployed",
+        "The taxpayer must be unable to pay the full amount immediately",
+        "The taxpayer must have filed all required tax returns",
+        "The taxpayer must have a criminal record"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A key requirement for an installment agreement is that the taxpayer must have filed all required tax returns before the agreement can be approved.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313372488-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A key requirement for an installment agreement is that the taxpayer must have filed all required tax returns before the agreement can be approved.",
+        "1": "Option B is incorrect. A key requirement for an installment agreement is that the taxpayer must have filed all required tax returns before the agreement can be approved.",
+        "3": "Option D is incorrect. A key requirement for an installment agreement is that the taxpayer must have filed all required tax returns before the agreement can be approved."
+      }
+    },
+    {
+      "question": "According to Circular 230, what is the standard of conduct for tax practitioners regarding tax return positions?",
+      "options": [
+        "The position must be frivolous.",
+        "The position must have a reasonable basis.",
+        "The position must be more likely than not correct.",
+        "The position must be certain to be upheld."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Circular 230 states that a tax practitioner must have a reasonable basis for a tax return position to avoid penalties.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313372488-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 states that a tax practitioner must have a reasonable basis for a tax return position to avoid penalties.",
+        "2": "Option C is incorrect. Circular 230 states that a tax practitioner must have a reasonable basis for a tax return position to avoid penalties.",
+        "3": "Option D is incorrect. Circular 230 states that a tax practitioner must have a reasonable basis for a tax return position to avoid penalties."
+      }
+    },
+    {
+      "question": "What is the penalty for failure to file an information return with the IRS?",
+      "options": [
+        "A flat amount regardless of when it is filed",
+        "Varies based on when the return is filed and the size of the business",
+        "No penalty if the error is immaterial",
+        "Only a warning letter for the first offense"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The penalty for failure to file an information return with the IRS varies based on when the return is filed and the size of the business, with higher penalties for intentional disregard.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313372488-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The penalty for failure to file an information return with the IRS varies based on when the return is filed and the size of the business, with higher penalties for intentional disregard.",
+        "2": "Option C is incorrect. The penalty for failure to file an information return with the IRS varies based on when the return is filed and the size of the business, with higher penalties for intentional disregard.",
+        "3": "Option D is incorrect. The penalty for failure to file an information return with the IRS varies based on when the return is filed and the size of the business, with higher penalties for intentional disregard."
+      }
+    },
+    {
+      "question": "What is the maximum amount an individual can pay using an IRS Direct Pay from their checking or savings account?",
+      "options": [
+        "$10,000",
+        "$50,000",
+        "There is no limit",
+        "$20,000"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The maximum amount that an individual can pay using IRS Direct Pay in a single transaction from their checking or savings account is $10,000.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313372488-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The maximum amount that an individual can pay using IRS Direct Pay in a single transaction from their checking or savings account is $10,000.",
+        "2": "Option C is incorrect. The maximum amount that an individual can pay using IRS Direct Pay in a single transaction from their checking or savings account is $10,000.",
+        "3": "Option D is incorrect. The maximum amount that an individual can pay using IRS Direct Pay in a single transaction from their checking or savings account is $10,000."
+      }
+    },
+    {
+      "question": "Which of the following is generally required for a taxpayer to be granted penalty abatement based on reasonable cause?",
+      "options": [
+        "Financial hardship",
+        "Ignorance of the law",
+        "Lack of funds",
+        "Events beyond the taxpayer's control"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The IRS typically grants penalty abatement for reasonable cause when the taxpayer demonstrates that the failure was due to circumstances beyond their control, not due to willful neglect.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313385848-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS typically grants penalty abatement for reasonable cause when the taxpayer demonstrates that the failure was due to circumstances beyond their control, not due to willful neglect.",
+        "1": "Option B is incorrect. The IRS typically grants penalty abatement for reasonable cause when the taxpayer demonstrates that the failure was due to circumstances beyond their control, not due to willful neglect.",
+        "2": "Option C is incorrect. The IRS typically grants penalty abatement for reasonable cause when the taxpayer demonstrates that the failure was due to circumstances beyond their control, not due to willful neglect."
+      }
+    },
+    {
+      "question": "A tax preparer who fails to sign a return they prepared may be subject to what?",
+      "options": [
+        "Imprisonment",
+        "A penalty",
+        "Loss of their Enrolled Agent license",
+        "A warning letter"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A tax preparer who fails to sign a return they prepared may be subject to a penalty. The IRS requires preparers to sign returns as a measure of accountability.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313385849-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A tax preparer who fails to sign a return they prepared may be subject to a penalty.",
+        "2": "Option C is incorrect. A tax preparer who fails to sign a return they prepared may be subject to a penalty.",
+        "3": "Option D is incorrect. A tax preparer who fails to sign a return they prepared may be subject to a penalty."
+      }
+    },
+    {
+      "question": "Which of the following forms is used to report payments made to independent contractors?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form 941"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made to independent contractors for services rendered. This form replaced Form 1099-MISC for this purpose.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313385849-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made to independent contractors for services rendered.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made to independent contractors for services rendered.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made to independent contractors for services rendered."
+      }
+    },
+    {
+      "question": "Generally, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "3 years from the date the return was filed or the due date, whichever is later",
+        "7 years from the date the return was filed",
+        "5 years from the date the return was filed",
+        "2 years from the date of payment"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The statute of limitations for the IRS to assess additional tax is generally 3 years from the date the return was filed or the due date, whichever is later. This provides a defined period for the IRS to examine returns.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313385849-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The statute of limitations for the IRS to assess additional tax is generally 3 years from the date the return was filed or the due date, whichever is later.",
+        "2": "Option C is incorrect. The statute of limitations for the IRS to assess additional tax is generally 3 years from the date the return was filed or the due date, whichever is later.",
+        "3": "Option D is incorrect. The statute of limitations for the IRS to assess additional tax is generally 3 years from the date the return was filed or the due date, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following actions can the IRS take to collect unpaid taxes?",
+      "options": [
+        "Seize and sell a taxpayer's property",
+        "Arrest the taxpayer",
+        "Garnish Social Security benefits (excluding SSI)",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The IRS has various collection methods, including seizing and selling property, garnishing wages, and garnishing certain federal payments to collect unpaid taxes.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313385849-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS has various collection methods, including seizing and selling property, garnishing wages, and garnishing certain federal payments to collect unpaid taxes.",
+        "1": "Option B is incorrect. The IRS has various collection methods, including seizing and selling property, garnishing wages, and garnishing certain federal payments to collect unpaid taxes.",
+        "2": "Option C is incorrect. The IRS has various collection methods, including seizing and selling property, garnishing wages, and garnishing certain federal payments to collect unpaid taxes."
+      }
+    },
+    {
+      "question": "What is an Offer in Compromise (OIC)?",
+      "options": [
+        "An agreement to pay taxes over a longer period",
+        "An agreement to settle a tax liability for less than the full amount owed",
+        "An agreement to delay collection activities",
+        "An agreement to waive penalties"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313385849-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+        "3": "Option D is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed."
+      }
+    },
+    {
+      "question": "If a taxpayer disagrees with an IRS collection action, they may be entitled to a hearing under what?",
+      "options": [
+        "Collection Due Process (CDP) rights",
+        "First Amendment rights",
+        "Miranda rights",
+        "Taxpayer Bill of Rights 1"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Taxpayers have the right to request a Collection Due Process (CDP) hearing if they disagree with certain IRS collection actions. This allows them to appeal the decision.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313385849-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. Taxpayers have the right to request a Collection Due Process (CDP) hearing if they disagree with certain IRS collection actions.",
+        "2": "Option C is incorrect. Taxpayers have the right to request a Collection Due Process (CDP) hearing if they disagree with certain IRS collection actions.",
+        "3": "Option D is incorrect. Taxpayers have the right to request a Collection Due Process (CDP) hearing if they disagree with certain IRS collection actions."
+      }
+    },
+    {
+      "question": "An installment agreement allows a taxpayer to do what?",
+      "options": [
+        "Pay their taxes in full immediately",
+        "Pay their taxes over time",
+        "Avoid paying taxes altogether",
+        "Reduce their tax liability"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An installment agreement allows a taxpayer to pay their outstanding tax liability over a period of time, rather than in one lump sum.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313385849-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An installment agreement allows a taxpayer to pay their outstanding tax liability over a period of time, rather than in one lump sum.",
+        "2": "Option C is incorrect. An installment agreement allows a taxpayer to pay their outstanding tax liability over a period of time, rather than in one lump sum.",
+        "3": "Option D is incorrect. An installment agreement allows a taxpayer to pay their outstanding tax liability over a period of time, rather than in one lump sum."
+      }
+    },
+    {
+      "question": "Circular 230 governs the practice of what?",
+      "options": [
+        "Accounting",
+        "Law",
+        "Tax Professionals before the IRS",
+        "Medicine"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Circular 230 provides regulations governing the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing clients before the Internal Revenue Service.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313385849-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 provides regulations governing the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing clients before the Internal Revenue Service.",
+        "1": "Option B is incorrect. Circular 230 provides regulations governing the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing clients before the Internal Revenue Service.",
+        "3": "Option D is incorrect. Circular 230 provides regulations governing the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing clients before the Internal Revenue Service."
+      }
+    },
+    {
+      "question": "What form is used to authorize an individual to represent a taxpayer before the IRS?",
+      "options": [
+        "Form 1040",
+        "Form W-2",
+        "Form 2848",
+        "Form 8822"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313385849-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is generally NOT a valid reason for penalty abatement?",
+      "options": [
+        "Death or serious illness",
+        "Unavoidable absence",
+        "Reliance on incorrect advice from the IRS",
+        "Lack of funds to pay the tax"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Lack of funds is generally not considered a reasonable cause for penalty abatement. The other options can be valid reasons if they prevented the taxpayer from meeting their tax obligations.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313399000-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Lack of funds is generally not considered a reasonable cause for penalty abatement.",
+        "1": "Option B is incorrect. Lack of funds is generally not considered a reasonable cause for penalty abatement.",
+        "2": "Option C is incorrect. Lack of funds is generally not considered a reasonable cause for penalty abatement."
+      }
+    },
+    {
+      "question": "A tax preparer must retain a copy of the tax return they prepared, or a list of clients with their TINs, for a minimum of how many years?",
+      "options": [
+        "1 year",
+        "2 years",
+        "3 years",
+        "5 years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tax preparers are required to retain copies of returns or a client list for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313399000-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax preparers are required to retain copies of returns or a client list for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later.",
+        "1": "Option B is incorrect. Tax preparers are required to retain copies of returns or a client list for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later.",
+        "3": "Option D is incorrect. Tax preparers are required to retain copies of returns or a client list for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made to non-employee service providers?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form 941"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made to non-employee service providers (independent contractors) for services performed.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313399000-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made to non-employee service providers (independent contractors) for services performed.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made to non-employee service providers (independent contractors) for services performed.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made to non-employee service providers (independent contractors) for services performed."
+      }
+    },
+    {
+      "question": "Generally, the IRS has how many years from the date a return was filed to assess additional tax?",
+      "options": [
+        "2 years",
+        "3 years",
+        "6 years",
+        "7 years"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The general statute of limitations for assessing additional tax is 3 years from the date the return was filed (or the due date, if later).",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313399000-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed (or the due date, if later).",
+        "2": "Option C is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed (or the due date, if later).",
+        "3": "Option D is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed (or the due date, if later)."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a method the IRS typically uses to collect unpaid taxes?",
+      "options": [
+        "Wage garnishment",
+        "Levy on bank accounts",
+        "Seizure of personal property",
+        "Sending a strongly worded letter"
+      ],
+      "correctAnswer": 3,
+      "explanation": "While the IRS sends notices, a 'strongly worded letter' is not a formal collection method. Wage garnishment, levies, and property seizures are all methods used to collect unpaid taxes.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313399000-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. While the IRS sends notices, a 'strongly worded letter' is not a formal collection method.",
+        "1": "Option B is incorrect. While the IRS sends notices, a 'strongly worded letter' is not a formal collection method.",
+        "2": "Option C is incorrect. While the IRS sends notices, a 'strongly worded letter' is not a formal collection method."
+      }
+    },
+    {
+      "question": "What is the term for an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed?",
+      "options": [
+        "Installment Agreement",
+        "Offer in Compromise",
+        "Penalty Abatement",
+        "Collection Due Process"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise (OIC) allows taxpayers to resolve their tax debt with the IRS for a lower amount than the total owed.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313399000-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) allows taxpayers to resolve their tax debt with the IRS for a lower amount than the total owed.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) allows taxpayers to resolve their tax debt with the IRS for a lower amount than the total owed.",
+        "3": "Option D is incorrect. An Offer in Compromise (OIC) allows taxpayers to resolve their tax debt with the IRS for a lower amount than the total owed."
+      }
+    },
+    {
+      "question": "A taxpayer has the right to request a Collection Due Process (CDP) hearing when the IRS files a:",
+      "options": [
+        "Notice of Deficiency",
+        "Notice of Intent to Levy",
+        "Notice of Estimated Tax Due",
+        "Notice of Overpayment"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxpayers are generally entitled to a CDP hearing when the IRS intends to levy their property to collect unpaid taxes. This is triggered by a Notice of Intent to Levy.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313399000-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers are generally entitled to a CDP hearing when the IRS intends to levy their property to collect unpaid taxes.",
+        "2": "Option C is incorrect. Taxpayers are generally entitled to a CDP hearing when the IRS intends to levy their property to collect unpaid taxes.",
+        "3": "Option D is incorrect. Taxpayers are generally entitled to a CDP hearing when the IRS intends to levy their property to collect unpaid taxes."
+      }
+    },
+    {
+      "question": "An agreement with the IRS allowing a taxpayer to pay off their tax debt in monthly installments is called a(n):",
+      "options": [
+        "Offer in Compromise",
+        "Installment Agreement",
+        "Penalty Abatement Request",
+        "Tax Lien"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Installment Agreement is a payment plan that allows taxpayers to pay their tax debt in monthly installments over a set period of time.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313399000-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Installment Agreement is a payment plan that allows taxpayers to pay their tax debt in monthly installments over a set period of time.",
+        "2": "Option C is incorrect. An Installment Agreement is a payment plan that allows taxpayers to pay their tax debt in monthly installments over a set period of time.",
+        "3": "Option D is incorrect. An Installment Agreement is a payment plan that allows taxpayers to pay their tax debt in monthly installments over a set period of time."
+      }
+    },
+    {
+      "question": "Circular 230 governs the practice of whom before the IRS?",
+      "options": [
+        "Police Officers",
+        "Enrolled Agents",
+        "Real Estate Agents",
+        "Car Salesman"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Circular 230 regulates the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing taxpayers before the IRS.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313399000-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 regulates the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing taxpayers before the IRS.",
+        "2": "Option C is incorrect. Circular 230 regulates the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing taxpayers before the IRS.",
+        "3": "Option D is incorrect. Circular 230 regulates the practice of attorneys, certified public accountants, enrolled agents, and other individuals representing taxpayers before the IRS."
+      }
+    },
+    {
+      "question": "Which IRS form is used to authorize someone to represent a taxpayer before the IRS?",
+      "options": [
+        "Form W-4",
+        "Form 1040",
+        "Form 2848",
+        "Form 8822"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313399000-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is generally required for a penalty to be abated due to reasonable cause?",
+      "options": [
+        "Taxpayer forgot to file",
+        "Taxpayer lacked funds to pay",
+        "Taxpayer exercised ordinary business care and prudence",
+        "Taxpayer intentionally disregarded the rules"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Penalty abatement due to reasonable cause requires the taxpayer to have exercised ordinary business care and prudence but was still unable to comply with the tax law. The other options do not qualify as reasonable cause.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313412774-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Penalty abatement due to reasonable cause requires the taxpayer to have exercised ordinary business care and prudence but was still unable to comply with the tax law.",
+        "1": "Option B is incorrect. Penalty abatement due to reasonable cause requires the taxpayer to have exercised ordinary business care and prudence but was still unable to comply with the tax law.",
+        "3": "Option D is incorrect. Penalty abatement due to reasonable cause requires the taxpayer to have exercised ordinary business care and prudence but was still unable to comply with the tax law."
+      }
+    },
+    {
+      "question": "A tax preparer must retain a copy of each return prepared, or a list of clients with their TINs for at least how many years?",
+      "options": [
+        "1 year",
+        "2 years",
+        "3 years",
+        "5 years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tax preparers must retain a copy of each return or a list of clients with their TINs for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313412774-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax preparers must retain a copy of each return or a list of clients with their TINs for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later.",
+        "1": "Option B is incorrect. Tax preparers must retain a copy of each return or a list of clients with their TINs for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later.",
+        "3": "Option D is incorrect. Tax preparers must retain a copy of each return or a list of clients with their TINs for at least 3 years from the return due date or the date the return was presented to the taxpayer for signature, whichever is later."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made in a trade or business to a non-employee?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form 941"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made in a trade or business to a non-employee for services. Form W-2 is for employees.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313412774-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made in a trade or business to a non-employee for services.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made in a trade or business to a non-employee for services.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made in a trade or business to a non-employee for services."
+      }
+    },
+    {
+      "question": "Generally, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "2 years from filing",
+        "3 years from filing",
+        "5 years from filing",
+        "7 years from filing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313412774-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a method the IRS uses to collect unpaid taxes?",
+      "options": [
+        "Wage garnishment",
+        "Levy on a bank account",
+        "Seizure of personal property",
+        "Sending a thank you note"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The IRS uses various methods to collect unpaid taxes, including wage garnishment, levies on bank accounts, and seizing personal property. Sending a thank you note is not a collection method.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313412775-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS uses various methods to collect unpaid taxes, including wage garnishment, levies on bank accounts, and seizing personal property.",
+        "1": "Option B is incorrect. The IRS uses various methods to collect unpaid taxes, including wage garnishment, levies on bank accounts, and seizing personal property.",
+        "2": "Option C is incorrect. The IRS uses various methods to collect unpaid taxes, including wage garnishment, levies on bank accounts, and seizing personal property."
+      }
+    },
+    {
+      "question": "An Offer in Compromise (OIC) allows a taxpayer to:",
+      "options": [
+        "Pay the full amount owed over time",
+        "Settle their tax debt for less than the full amount owed",
+        "Extend the statute of limitations",
+        "Avoid penalties completely"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed. The IRS considers factors such as the taxpayer's ability to pay, income, expenses, and asset equity.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313412775-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed.",
+        "3": "Option D is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed."
+      }
+    },
+    {
+      "question": "What does CDP stand for in tax law?",
+      "options": [
+        "Collection Due Process",
+        "Certified Document Procedure",
+        "Corporate Deficiency Payment",
+        "Consolidated Debt Program"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CDP stands for Collection Due Process. It provides taxpayers with certain rights and procedures when the IRS takes collection actions.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313412775-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. CDP stands for Collection Due Process.",
+        "2": "Option C is incorrect. CDP stands for Collection Due Process.",
+        "3": "Option D is incorrect. CDP stands for Collection Due Process."
+      }
+    },
+    {
+      "question": "An agreement with the IRS to pay taxes over time is called a(n):",
+      "options": [
+        "Offer in Compromise",
+        "Installment Agreement",
+        "Audit Reconsideration",
+        "Penalty Abatement"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Installment Agreement allows a taxpayer to pay their tax liability over time, typically with monthly payments, subject to IRS approval.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313412775-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Installment Agreement allows a taxpayer to pay their tax liability over time, typically with monthly payments, subject to IRS approval.",
+        "2": "Option C is incorrect. An Installment Agreement allows a taxpayer to pay their tax liability over time, typically with monthly payments, subject to IRS approval.",
+        "3": "Option D is incorrect. An Installment Agreement allows a taxpayer to pay their tax liability over time, typically with monthly payments, subject to IRS approval."
+      }
+    },
+    {
+      "question": "Circular 230 governs the practice of:",
+      "options": [
+        "Certified Public Accountants only",
+        "Attorneys only",
+        "Enrolled Agents only",
+        "Practitioners before the IRS"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Circular 230 governs the practice of attorneys, Certified Public Accountants, Enrolled Agents, and other individuals representing clients before the IRS.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313412775-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 governs the practice of attorneys, Certified Public Accountants, Enrolled Agents, and other individuals representing clients before the IRS.",
+        "1": "Option B is incorrect. Circular 230 governs the practice of attorneys, Certified Public Accountants, Enrolled Agents, and other individuals representing clients before the IRS.",
+        "2": "Option C is incorrect. Circular 230 governs the practice of attorneys, Certified Public Accountants, Enrolled Agents, and other individuals representing clients before the IRS."
+      }
+    },
+    {
+      "question": "Which IRS form is used to grant Power of Attorney?",
+      "options": [
+        "Form 4868",
+        "Form 2848",
+        "Form W-9",
+        "Form 1040-ES"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313412775-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "2": "Option C is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is generally required for a successful penalty abatement request based on reasonable cause?",
+      "options": [
+        "Lack of funds",
+        "Ignorance of the law",
+        "Events beyond the taxpayer's control",
+        "Taxpayer's first-time offense"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Reasonable cause is generally based on events beyond the taxpayer's control that prevented them from meeting their tax obligations. Lack of funds or ignorance of the law are not considered reasonable cause.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313426077-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Reasonable cause is generally based on events beyond the taxpayer's control that prevented them from meeting their tax obligations.",
+        "1": "Option B is incorrect. Reasonable cause is generally based on events beyond the taxpayer's control that prevented them from meeting their tax obligations.",
+        "3": "Option D is incorrect. Reasonable cause is generally based on events beyond the taxpayer's control that prevented them from meeting their tax obligations."
+      }
+    },
+    {
+      "question": "A tax preparer must meet certain due diligence requirements when preparing a return or claim for refund involving which of the following?",
+      "options": [
+        "Itemized deductions",
+        "Earned Income Credit",
+        "Standard deduction",
+        "Child Tax Credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tax preparers must meet due diligence requirements when preparing returns or claims involving the Earned Income Credit. These requirements ensure the credit is claimed correctly.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313426077-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax preparers must meet due diligence requirements when preparing returns or claims involving the Earned Income Credit.",
+        "2": "Option C is incorrect. Tax preparers must meet due diligence requirements when preparing returns or claims involving the Earned Income Credit.",
+        "3": "Option D is incorrect. Tax preparers must meet due diligence requirements when preparing returns or claims involving the Earned Income Credit."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made in the course of a trade or business to non-employees?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form 941"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services rendered in the course of a trade or business.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313426077-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services rendered in the course of a trade or business.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services rendered in the course of a trade or business.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services rendered in the course of a trade or business."
+      }
+    },
+    {
+      "question": "Generally, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "2 years from filing",
+        "3 years from filing",
+        "5 years from filing",
+        "7 years from filing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313426077-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is a method the IRS uses to collect unpaid taxes?",
+      "options": [
+        "Tax Refund Offset",
+        "Criminal Prosecution",
+        "Community Service",
+        "Public Shaming"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The IRS can use a tax refund offset to apply a taxpayer's refund towards outstanding tax liabilities. The other options are not methods of tax collection.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313426077-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The IRS can use a tax refund offset to apply a taxpayer's refund towards outstanding tax liabilities.",
+        "2": "Option C is incorrect. The IRS can use a tax refund offset to apply a taxpayer's refund towards outstanding tax liabilities.",
+        "3": "Option D is incorrect. The IRS can use a tax refund offset to apply a taxpayer's refund towards outstanding tax liabilities."
+      }
+    },
+    {
+      "question": "What is the primary goal of an Offer in Compromise (OIC)?",
+      "options": [
+        "To eliminate the tax debt completely",
+        "To reduce the tax debt to what the taxpayer can afford",
+        "To postpone the tax debt indefinitely",
+        "To transfer the tax debt to another person"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed, based on their ability to pay.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313426077-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed, based on their ability to pay.",
+        "2": "Option C is incorrect. An Offer in Compromise allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed, based on their ability to pay.",
+        "3": "Option D is incorrect. An Offer in Compromise allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed, based on their ability to pay."
+      }
+    },
+    {
+      "question": "If a taxpayer disagrees with an IRS collection action, they may request a hearing under:",
+      "options": [
+        "Taxpayer Advocate Service",
+        "Collection Due Process (CDP)",
+        "Small Business Administration",
+        "Department of Justice"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Collection Due Process (CDP) provides taxpayers with the right to a hearing to dispute certain IRS collection actions, such as levies and liens.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313426077-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Collection Due Process (CDP) provides taxpayers with the right to a hearing to dispute certain IRS collection actions, such as levies and liens.",
+        "2": "Option C is incorrect. Collection Due Process (CDP) provides taxpayers with the right to a hearing to dispute certain IRS collection actions, such as levies and liens.",
+        "3": "Option D is incorrect. Collection Due Process (CDP) provides taxpayers with the right to a hearing to dispute certain IRS collection actions, such as levies and liens."
+      }
+    },
+    {
+      "question": "An installment agreement allows a taxpayer to:",
+      "options": [
+        "Avoid paying taxes altogether",
+        "Pay their tax liability in monthly installments",
+        "Receive a full refund of taxes paid",
+        "Transfer their tax liability to another person"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An installment agreement allows taxpayers to pay their outstanding tax liability in monthly installments, rather than in one lump sum.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313426077-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An installment agreement allows taxpayers to pay their outstanding tax liability in monthly installments, rather than in one lump sum.",
+        "2": "Option C is incorrect. An installment agreement allows taxpayers to pay their outstanding tax liability in monthly installments, rather than in one lump sum.",
+        "3": "Option D is incorrect. An installment agreement allows taxpayers to pay their outstanding tax liability in monthly installments, rather than in one lump sum."
+      }
+    },
+    {
+      "question": "Circular 230 governs the practice of:",
+      "options": [
+        "Real estate agents",
+        "Enrolled agents, CPAs, and attorneys before the IRS",
+        "Medical doctors",
+        "Construction workers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Circular 230 contains regulations governing the practice of enrolled agents, certified public accountants (CPAs), and attorneys before the Internal Revenue Service.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313426077-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 contains regulations governing the practice of enrolled agents, certified public accountants (CPAs), and attorneys before the Internal Revenue Service.",
+        "2": "Option C is incorrect. Circular 230 contains regulations governing the practice of enrolled agents, certified public accountants (CPAs), and attorneys before the Internal Revenue Service.",
+        "3": "Option D is incorrect. Circular 230 contains regulations governing the practice of enrolled agents, certified public accountants (CPAs), and attorneys before the Internal Revenue Service."
+      }
+    },
+    {
+      "question": "What is the purpose of Form 2848, Power of Attorney and Declaration of Representative?",
+      "options": [
+        "To file a tax return",
+        "To authorize someone to represent a taxpayer before the IRS",
+        "To apply for a Social Security number",
+        "To request an extension to file taxes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313426077-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "2": "Option C is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is generally required for penalty abatement based on reasonable cause?",
+      "options": [
+        "Taxpayer's first-time offense",
+        "Lack of funds",
+        "Events beyond the taxpayer's control",
+        "Taxpayer's ignorance of the law"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Reasonable cause for penalty abatement typically involves events beyond the taxpayer's control that prevented them from meeting their tax obligations. A first-time offense or lack of funds are generally not sufficient.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313439266-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Reasonable cause for penalty abatement typically involves events beyond the taxpayer's control that prevented them from meeting their tax obligations.",
+        "1": "Option B is incorrect. Reasonable cause for penalty abatement typically involves events beyond the taxpayer's control that prevented them from meeting their tax obligations.",
+        "3": "Option D is incorrect. Reasonable cause for penalty abatement typically involves events beyond the taxpayer's control that prevented them from meeting their tax obligations."
+      }
+    },
+    {
+      "question": "Which form is used to grant power of attorney to represent a taxpayer before the IRS?",
+      "options": [
+        "Form 1040",
+        "Form 4868",
+        "Form 2848",
+        "Form W-2"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313439266-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "What is the primary purpose of Circular 230?",
+      "options": [
+        "To provide tax forms",
+        "To regulate tax preparers",
+        "To explain tax law to taxpayers",
+        "To provide guidelines for tax software"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Circular 230 outlines the regulations and ethical standards that govern individuals who practice before the IRS, including attorneys, CPAs, enrolled agents, and others.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313439266-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 outlines the regulations and ethical standards that govern individuals who practice before the IRS, including attorneys, CPAs, enrolled agents, and others.",
+        "2": "Option C is incorrect. Circular 230 outlines the regulations and ethical standards that govern individuals who practice before the IRS, including attorneys, CPAs, enrolled agents, and others.",
+        "3": "Option D is incorrect. Circular 230 outlines the regulations and ethical standards that govern individuals who practice before the IRS, including attorneys, CPAs, enrolled agents, and others."
+      }
+    },
+    {
+      "question": "What is the typical initial term for an installment agreement with the IRS?",
+      "options": [
+        "6 months",
+        "1 year",
+        "2 years",
+        "Indefinite, until paid off"
+      ],
+      "correctAnswer": 3,
+      "explanation": "An installment agreement with the IRS typically lasts until the tax liability, including penalties and interest, is fully paid off. There is no fixed term.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313439266-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An installment agreement with the IRS typically lasts until the tax liability, including penalties and interest, is fully paid off.",
+        "1": "Option B is incorrect. An installment agreement with the IRS typically lasts until the tax liability, including penalties and interest, is fully paid off.",
+        "2": "Option C is incorrect. An installment agreement with the IRS typically lasts until the tax liability, including penalties and interest, is fully paid off."
+      }
+    },
+    {
+      "question": "Which of the following is a condition that must be met to submit an Offer in Compromise (OIC)?",
+      "options": [
+        "Taxpayer is bankrupt",
+        "Taxpayer has significant equity in assets",
+        "Taxpayer can fully pay the tax liability",
+        "Taxpayer is current with all filing and payment requirements"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Generally, to be eligible for an Offer in Compromise (OIC), the taxpayer must be current with all filing and payment requirements.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313439266-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Generally, to be eligible for an Offer in Compromise (OIC), the taxpayer must be current with all filing and payment requirements.",
+        "1": "Option B is incorrect. Generally, to be eligible for an Offer in Compromise (OIC), the taxpayer must be current with all filing and payment requirements.",
+        "2": "Option C is incorrect. Generally, to be eligible for an Offer in Compromise (OIC), the taxpayer must be current with all filing and payment requirements."
+      }
+    },
+    {
+      "question": "How long does the IRS generally have to assess additional tax after a return is filed?",
+      "options": [
+        "1 year",
+        "2 years",
+        "3 years",
+        "7 years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The general statute of limitations for assessing additional tax is three years from the date the return was filed or the due date of the return, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313439266-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The general statute of limitations for assessing additional tax is three years from the date the return was filed or the due date of the return, whichever is later.",
+        "1": "Option B is incorrect. The general statute of limitations for assessing additional tax is three years from the date the return was filed or the due date of the return, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for assessing additional tax is three years from the date the return was filed or the due date of the return, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is a tool the IRS uses to collect unpaid taxes?",
+      "options": [
+        "Grant",
+        "Levy",
+        "Subsidy",
+        "Rebate"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A levy is a legal seizure of a taxpayer's property to satisfy a tax debt. It is one of the tools the IRS uses for collection.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313439266-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A levy is a legal seizure of a taxpayer's property to satisfy a tax debt.",
+        "2": "Option C is incorrect. A levy is a legal seizure of a taxpayer's property to satisfy a tax debt.",
+        "3": "Option D is incorrect. A levy is a legal seizure of a taxpayer's property to satisfy a tax debt."
+      }
+    },
+    {
+      "question": "What is the purpose of Collection Due Process (CDP) rights?",
+      "options": [
+        "To expedite tax refunds",
+        "To provide a hearing before a levy",
+        "To reduce tax rates",
+        "To eliminate penalties"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Collection Due Process (CDP) rights provide taxpayers with an opportunity to request a hearing with the IRS Independent Office of Appeals before certain collection actions, such as a levy, are taken.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313439266-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Collection Due Process (CDP) rights provide taxpayers with an opportunity to request a hearing with the IRS Independent Office of Appeals before certain collection actions, such as a levy, are taken.",
+        "2": "Option C is incorrect. Collection Due Process (CDP) rights provide taxpayers with an opportunity to request a hearing with the IRS Independent Office of Appeals before certain collection actions, such as a levy, are taken.",
+        "3": "Option D is incorrect. Collection Due Process (CDP) rights provide taxpayers with an opportunity to request a hearing with the IRS Independent Office of Appeals before certain collection actions, such as a levy, are taken."
+      }
+    },
+    {
+      "question": "Which of the following forms is used to report payments made to independent contractors?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form W-4"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments to independent contractors for services performed. Form W-2 is for employees.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313439266-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments to independent contractors for services performed.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments to independent contractors for services performed.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments to independent contractors for services performed."
+      }
+    },
+    {
+      "question": "A tax preparer must have reasonable basis for a tax position. What does 'reasonable basis' mean?",
+      "options": [
+        "The position is frivolous",
+        "The position is merely arguable",
+        "The position is more likely than not correct",
+        "There is a 50% chance the position will be upheld"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Reasonable basis is a relatively high standard of tax reporting, that is, significantly higher than not frivolous or not patently improper. The position is merely arguable.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313439266-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Reasonable basis is a relatively high standard of tax reporting, that is, significantly higher than not frivolous or not patently improper.",
+        "2": "Option C is incorrect. Reasonable basis is a relatively high standard of tax reporting, that is, significantly higher than not frivolous or not patently improper.",
+        "3": "Option D is incorrect. Reasonable basis is a relatively high standard of tax reporting, that is, significantly higher than not frivolous or not patently improper."
+      }
+    },
+    {
+      "question": "Which of the following is generally required to grant penalty relief based on reasonable cause?",
+      "options": [
+        "Taxpayer claimed ignorance of the law.",
+        "Taxpayer experienced events beyond their control.",
+        "Taxpayer relied on a friend's advice.",
+        "Taxpayer simply forgot to file."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Penalty relief based on reasonable cause requires demonstrating events beyond the taxpayer's control that prevented them from meeting their tax obligations. Ignorance, reliance on friends, or simply forgetting are typically not sufficient.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313453671-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Penalty relief based on reasonable cause requires demonstrating events beyond the taxpayer's control that prevented them from meeting their tax obligations.",
+        "2": "Option C is incorrect. Penalty relief based on reasonable cause requires demonstrating events beyond the taxpayer's control that prevented them from meeting their tax obligations.",
+        "3": "Option D is incorrect. Penalty relief based on reasonable cause requires demonstrating events beyond the taxpayer's control that prevented them from meeting their tax obligations."
+      }
+    },
+    {
+      "question": "A tax preparer must exercise due diligence in preparing a tax return. Which of the following is an example of due diligence?",
+      "options": [
+        "Accepting all information provided by the taxpayer without question.",
+        "Ignoring inconsistencies in the taxpayer's information.",
+        "Making reasonable inquiries if the information appears incorrect or incomplete.",
+        "Filing the return as quickly as possible to meet the deadline."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Due diligence requires a preparer to make reasonable inquiries if the information provided by the taxpayer seems incorrect, inconsistent, or incomplete. Blindly accepting information or ignoring red flags is not considered due diligence.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313453671-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Due diligence requires a preparer to make reasonable inquiries if the information provided by the taxpayer seems incorrect, inconsistent, or incomplete.",
+        "1": "Option B is incorrect. Due diligence requires a preparer to make reasonable inquiries if the information provided by the taxpayer seems incorrect, inconsistent, or incomplete.",
+        "3": "Option D is incorrect. Due diligence requires a preparer to make reasonable inquiries if the information provided by the taxpayer seems incorrect, inconsistent, or incomplete."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made to non-employees for services?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form 941"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed. Form W-2 is for employees.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313453671-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed."
+      }
+    },
+    {
+      "question": "What is the general statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "3 years from the date the return was filed or the due date, whichever is later.",
+        "5 years from the date the return was filed.",
+        "7 years from the date the return was due.",
+        "6 years from the date the return was filed or the due date, whichever is later."
+      ],
+      "correctAnswer": 0,
+      "explanation": "The general statute of limitations for assessment is 3 years from the date the return was filed or its due date, whichever is later. There are exceptions for fraud or substantial understatements.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313453671-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The general statute of limitations for assessment is 3 years from the date the return was filed or its due date, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for assessment is 3 years from the date the return was filed or its due date, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for assessment is 3 years from the date the return was filed or its due date, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is a method the IRS uses to collect unpaid taxes?",
+      "options": [
+        "Ignoring the debt",
+        "Sending reminder notices",
+        "Filing a Notice of Federal Tax Lien",
+        "Offering unsolicited gifts"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The IRS can file a Notice of Federal Tax Lien to secure its claim against a taxpayer's property for unpaid taxes. This is a formal method of collection.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313453671-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS can file a Notice of Federal Tax Lien to secure its claim against a taxpayer's property for unpaid taxes.",
+        "1": "Option B is incorrect. The IRS can file a Notice of Federal Tax Lien to secure its claim against a taxpayer's property for unpaid taxes.",
+        "3": "Option D is incorrect. The IRS can file a Notice of Federal Tax Lien to secure its claim against a taxpayer's property for unpaid taxes."
+      }
+    },
+    {
+      "question": "An Offer in Compromise (OIC) allows a taxpayer to:",
+      "options": [
+        "Pay the full amount owed over a longer period.",
+        "Settle their tax debt for less than the full amount owed.",
+        "Avoid penalties completely.",
+        "Completely eliminate their tax debt regardless of ability to pay."
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what is originally owed, based on their ability to pay, income, expenses, and asset equity.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313453671-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what is originally owed, based on their ability to pay, income, expenses, and asset equity.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what is originally owed, based on their ability to pay, income, expenses, and asset equity.",
+        "3": "Option D is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what is originally owed, based on their ability to pay, income, expenses, and asset equity."
+      }
+    },
+    {
+      "question": "If a taxpayer disagrees with an IRS collection action, they may request a:",
+      "options": [
+        "Collection Due Process (CDP) hearing.",
+        "Taxpayer Assistance Order (TAO) hearing.",
+        "Criminal investigation.",
+        "Refund of penalties."
+      ],
+      "correctAnswer": 0,
+      "explanation": "A Collection Due Process (CDP) hearing allows a taxpayer to dispute a proposed IRS collection action, such as a levy or lien, and present alternative solutions.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313453671-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. A Collection Due Process (CDP) hearing allows a taxpayer to dispute a proposed IRS collection action, such as a levy or lien, and present alternative solutions.",
+        "2": "Option C is incorrect. A Collection Due Process (CDP) hearing allows a taxpayer to dispute a proposed IRS collection action, such as a levy or lien, and present alternative solutions.",
+        "3": "Option D is incorrect. A Collection Due Process (CDP) hearing allows a taxpayer to dispute a proposed IRS collection action, such as a levy or lien, and present alternative solutions."
+      }
+    },
+    {
+      "question": "What does an Installment Agreement allow a taxpayer to do?",
+      "options": [
+        "Pay their entire tax debt immediately.",
+        "Avoid paying any interest on the debt.",
+        "Pay their tax debt in monthly installments.",
+        "Eliminate the tax debt completely."
+      ],
+      "correctAnswer": 2,
+      "explanation": "An Installment Agreement allows a taxpayer to pay their outstanding tax debt to the IRS in a series of monthly installments, rather than paying the full amount at once.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313453671-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Installment Agreement allows a taxpayer to pay their outstanding tax debt to the IRS in a series of monthly installments, rather than paying the full amount at once.",
+        "1": "Option B is incorrect. An Installment Agreement allows a taxpayer to pay their outstanding tax debt to the IRS in a series of monthly installments, rather than paying the full amount at once.",
+        "3": "Option D is incorrect. An Installment Agreement allows a taxpayer to pay their outstanding tax debt to the IRS in a series of monthly installments, rather than paying the full amount at once."
+      }
+    },
+    {
+      "question": "According to Circular 230, a practitioner must:",
+      "options": [
+        "Guarantee a specific tax outcome.",
+        "Exercise due diligence in preparing tax returns.",
+        "Disclose client confidences to the IRS at all times.",
+        "Always agree with the client's desired tax position."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Circular 230 mandates that practitioners exercise due diligence in preparing tax returns and other documents submitted to the IRS. This includes accuracy and thoroughness.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313453671-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 mandates that practitioners exercise due diligence in preparing tax returns and other documents submitted to the IRS.",
+        "2": "Option C is incorrect. Circular 230 mandates that practitioners exercise due diligence in preparing tax returns and other documents submitted to the IRS.",
+        "3": "Option D is incorrect. Circular 230 mandates that practitioners exercise due diligence in preparing tax returns and other documents submitted to the IRS."
+      }
+    },
+    {
+      "question": "Which form is used to authorize an individual to represent a taxpayer before the IRS?",
+      "options": [
+        "Form W-4",
+        "Form 1040-ES",
+        "Form 2848",
+        "Form 8822"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS. It grants specific powers to the representative.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313453671-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is generally NOT a valid reason for penalty abatement?",
+      "options": [
+        "Death or serious illness",
+        "Natural disaster",
+        "Ignorance of the law",
+        "Inability to obtain records"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Ignorance of the law is generally not considered a valid reason for penalty abatement. The IRS expects taxpayers to be aware of their tax obligations.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313467223-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Ignorance of the law is generally not considered a valid reason for penalty abatement.",
+        "1": "Option B is incorrect. Ignorance of the law is generally not considered a valid reason for penalty abatement.",
+        "3": "Option D is incorrect. Ignorance of the law is generally not considered a valid reason for penalty abatement."
+      }
+    },
+    {
+      "question": "A tax preparer penalty for understatement due to an unreasonable position generally applies if the preparer knew or reasonably should have known of the position, and:",
+      "options": [
+        "The taxpayer requested it.",
+        "There was reasonable basis for the position and it was disclosed.",
+        "The position was disclosed on Form 8275.",
+        "The position was not disclosed and there was not substantial authority for the position."
+      ],
+      "correctAnswer": 3,
+      "explanation": "A tax preparer can be penalized for an unreasonable position if it was not disclosed and there was not substantial authority for it. Disclosure and substantial authority can provide a defense.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313467223-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A tax preparer can be penalized for an unreasonable position if it was not disclosed and there was not substantial authority for it.",
+        "1": "Option B is incorrect. A tax preparer can be penalized for an unreasonable position if it was not disclosed and there was not substantial authority for it.",
+        "2": "Option C is incorrect. A tax preparer can be penalized for an unreasonable position if it was not disclosed and there was not substantial authority for it."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made in the course of a trade or business to a person who is not an employee?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form W-4"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made in the course of a trade or business to a person who is not an employee (non-employee compensation).",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313467223-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made in the course of a trade or business to a person who is not an employee (non-employee compensation).",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made in the course of a trade or business to a person who is not an employee (non-employee compensation).",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made in the course of a trade or business to a person who is not an employee (non-employee compensation)."
+      }
+    },
+    {
+      "question": "Generally, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "3 years from the date the return was filed or due, whichever is later",
+        "5 years from the date the return was filed",
+        "7 years from the date the return was filed",
+        "10 years from the date the return was filed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The statute of limitations for assessing additional tax is generally 3 years from the date the return was filed or the due date, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313467223-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The statute of limitations for assessing additional tax is generally 3 years from the date the return was filed or the due date, whichever is later.",
+        "2": "Option C is incorrect. The statute of limitations for assessing additional tax is generally 3 years from the date the return was filed or the due date, whichever is later.",
+        "3": "Option D is incorrect. The statute of limitations for assessing additional tax is generally 3 years from the date the return was filed or the due date, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a method the IRS typically uses for collecting unpaid taxes?",
+      "options": [
+        "Wage garnishment",
+        "Levy on bank accounts",
+        "Seizure of property",
+        "Sending a strongly worded letter"
+      ],
+      "correctAnswer": 3,
+      "explanation": "While the IRS sends notices, a 'strongly worded letter' is not a formal collection method. Wage garnishment, levies, and seizure of property are all actual collection methods.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313467223-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. While the IRS sends notices, a 'strongly worded letter' is not a formal collection method.",
+        "1": "Option B is incorrect. While the IRS sends notices, a 'strongly worded letter' is not a formal collection method.",
+        "2": "Option C is incorrect. While the IRS sends notices, a 'strongly worded letter' is not a formal collection method."
+      }
+    },
+    {
+      "question": "An Offer in Compromise (OIC) allows a taxpayer to:",
+      "options": [
+        "Pay off their tax debt in monthly installments.",
+        "Settle their tax debt for less than the full amount owed.",
+        "Temporarily postpone collection actions.",
+        "Transfer their tax debt to another person."
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313467223-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed.",
+        "3": "Option D is incorrect. An Offer in Compromise (OIC) allows a taxpayer to settle their tax debt with the IRS for a lower amount than what they originally owed."
+      }
+    },
+    {
+      "question": "A taxpayer has the right to request a Collection Due Process (CDP) hearing when the IRS:",
+      "options": [
+        "Issues a refund.",
+        "Sends a notice of deficiency.",
+        "Levies their wages or bank account.",
+        "Extends the filing deadline."
+      ],
+      "correctAnswer": 2,
+      "explanation": "A taxpayer has the right to a CDP hearing when the IRS levies their wages or bank account to collect unpaid taxes.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313467223-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A taxpayer has the right to a CDP hearing when the IRS levies their wages or bank account to collect unpaid taxes.",
+        "1": "Option B is incorrect. A taxpayer has the right to a CDP hearing when the IRS levies their wages or bank account to collect unpaid taxes.",
+        "3": "Option D is incorrect. A taxpayer has the right to a CDP hearing when the IRS levies their wages or bank account to collect unpaid taxes."
+      }
+    },
+    {
+      "question": "An installment agreement allows a taxpayer to:",
+      "options": [
+        "Pay their taxes in full immediately.",
+        "Pay their tax debt in monthly installments.",
+        "Avoid paying taxes altogether.",
+        "Reduce the amount of tax owed."
+      ],
+      "correctAnswer": 1,
+      "explanation": "An installment agreement allows a taxpayer to pay their tax debt to the IRS over time, typically in monthly installments.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313467223-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An installment agreement allows a taxpayer to pay their tax debt to the IRS over time, typically in monthly installments.",
+        "2": "Option C is incorrect. An installment agreement allows a taxpayer to pay their tax debt to the IRS over time, typically in monthly installments.",
+        "3": "Option D is incorrect. An installment agreement allows a taxpayer to pay their tax debt to the IRS over time, typically in monthly installments."
+      }
+    },
+    {
+      "question": "According to Circular 230, a practitioner must exercise due diligence in:",
+      "options": [
+        "Preparing or assisting in the preparation of tax returns.",
+        "Communicating information to the IRS.",
+        "Determining the correctness of oral or written representations made by the practitioner to clients.",
+        "All of the above."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Circular 230 requires practitioners to exercise due diligence in all of these areas: return preparation, communications with the IRS, and representations made to clients.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313467223-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 requires practitioners to exercise due diligence in all of these areas: return preparation, communications with the IRS, and representations made to clients.",
+        "1": "Option B is incorrect. Circular 230 requires practitioners to exercise due diligence in all of these areas: return preparation, communications with the IRS, and representations made to clients.",
+        "2": "Option C is incorrect. Circular 230 requires practitioners to exercise due diligence in all of these areas: return preparation, communications with the IRS, and representations made to clients."
+      }
+    },
+    {
+      "question": "Which form is used to authorize an individual to represent a taxpayer before the IRS?",
+      "options": [
+        "Form 1040",
+        "Form W-2",
+        "Form 2848",
+        "Form 4868"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313467223-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is generally NOT considered a reasonable cause for penalty abatement?",
+      "options": [
+        "Death or serious illness",
+        "Unavoidable absence",
+        "Reliance on incorrect advice from the IRS",
+        "Lack of funds due to poor financial planning"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Poor financial planning is generally not considered reasonable cause. Reasonable cause typically involves events beyond the taxpayer's control.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313479851-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Poor financial planning is generally not considered reasonable cause.",
+        "1": "Option B is incorrect. Poor financial planning is generally not considered reasonable cause.",
+        "2": "Option C is incorrect. Poor financial planning is generally not considered reasonable cause."
+      }
+    },
+    {
+      "question": "A tax preparer must keep a copy of a tax return or a list of clients for how long?",
+      "options": [
+        "One year",
+        "Two years",
+        "Three years",
+        "Five years"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A tax preparer is required to retain a copy of the tax return or a list of clients for a minimum of three years from the return due date or the date the return was presented to the taxpayer for signature, if later.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313479851-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A tax preparer is required to retain a copy of the tax return or a list of clients for a minimum of three years from the return due date or the date the return was presented to the taxpayer for signature, if later.",
+        "1": "Option B is incorrect. A tax preparer is required to retain a copy of the tax return or a list of clients for a minimum of three years from the return due date or the date the return was presented to the taxpayer for signature, if later.",
+        "3": "Option D is incorrect. A tax preparer is required to retain a copy of the tax return or a list of clients for a minimum of three years from the return due date or the date the return was presented to the taxpayer for signature, if later."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made to independent contractors?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1099-DIV",
+        "Form 1040"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC reports payments to non-employee compensation, formerly reported on Form 1099-MISC.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313479851-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC reports payments to non-employee compensation, formerly reported on Form 1099-MISC.",
+        "2": "Option C is incorrect. Form 1099-NEC reports payments to non-employee compensation, formerly reported on Form 1099-MISC.",
+        "3": "Option D is incorrect. Form 1099-NEC reports payments to non-employee compensation, formerly reported on Form 1099-MISC."
+      }
+    },
+    {
+      "question": "Generally, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "2 years from filing",
+        "3 years from filing",
+        "5 years from filing",
+        "7 years from filing"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The general statute of limitations for assessment is three years from the date the return was filed or the due date of the return, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313479851-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The general statute of limitations for assessment is three years from the date the return was filed or the due date of the return, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for assessment is three years from the date the return was filed or the due date of the return, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for assessment is three years from the date the return was filed or the due date of the return, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is a method the IRS may use to collect unpaid taxes?",
+      "options": [
+        "Sending a thank you note",
+        "Issuing a levy",
+        "Ignoring the debt",
+        "Offering a discount"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A levy is a legal seizure of property to satisfy a tax debt. It is a common collection method employed by the IRS.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313479851-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A levy is a legal seizure of property to satisfy a tax debt.",
+        "2": "Option C is incorrect. A levy is a legal seizure of property to satisfy a tax debt.",
+        "3": "Option D is incorrect. A levy is a legal seizure of property to satisfy a tax debt."
+      }
+    },
+    {
+      "question": "What is the purpose of an Offer in Compromise (OIC)?",
+      "options": [
+        "To pay the full tax liability immediately",
+        "To settle a tax debt for less than the full amount owed",
+        "To extend the statute of limitations",
+        "To avoid penalties entirely"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise allows certain taxpayers to resolve their tax liability with the IRS for a lower amount than what they originally owed.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313479851-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise allows certain taxpayers to resolve their tax liability with the IRS for a lower amount than what they originally owed.",
+        "2": "Option C is incorrect. An Offer in Compromise allows certain taxpayers to resolve their tax liability with the IRS for a lower amount than what they originally owed.",
+        "3": "Option D is incorrect. An Offer in Compromise allows certain taxpayers to resolve their tax liability with the IRS for a lower amount than what they originally owed."
+      }
+    },
+    {
+      "question": "A taxpayer has the right to a Collection Due Process (CDP) hearing when the IRS intends to:",
+      "options": [
+        "Issue a refund",
+        "Assess a penalty",
+        "File a Notice of Federal Tax Lien",
+        "Send a reminder notice"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Taxpayers are generally entitled to a CDP hearing before the IRS levies their property or files a Notice of Federal Tax Lien.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313479851-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers are generally entitled to a CDP hearing before the IRS levies their property or files a Notice of Federal Tax Lien.",
+        "1": "Option B is incorrect. Taxpayers are generally entitled to a CDP hearing before the IRS levies their property or files a Notice of Federal Tax Lien.",
+        "3": "Option D is incorrect. Taxpayers are generally entitled to a CDP hearing before the IRS levies their property or files a Notice of Federal Tax Lien."
+      }
+    },
+    {
+      "question": "An installment agreement allows a taxpayer to:",
+      "options": [
+        "Avoid paying taxes altogether",
+        "Pay their tax liability in monthly installments",
+        "Receive a full refund immediately",
+        "Eliminate all penalties and interest"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An installment agreement allows taxpayers to pay their tax liabilities over time in smaller, more manageable monthly payments.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313479851-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An installment agreement allows taxpayers to pay their tax liabilities over time in smaller, more manageable monthly payments.",
+        "2": "Option C is incorrect. An installment agreement allows taxpayers to pay their tax liabilities over time in smaller, more manageable monthly payments.",
+        "3": "Option D is incorrect. An installment agreement allows taxpayers to pay their tax liabilities over time in smaller, more manageable monthly payments."
+      }
+    },
+    {
+      "question": "According to Circular 230, practitioners must:",
+      "options": [
+        "Guarantee specific tax outcomes",
+        "Exercise due diligence",
+        "Ignore client errors",
+        "Disclose confidential client information freely"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Circular 230 requires practitioners to exercise due diligence in preparing or assisting in the preparation of tax returns and other documents.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313479851-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 requires practitioners to exercise due diligence in preparing or assisting in the preparation of tax returns and other documents.",
+        "2": "Option C is incorrect. Circular 230 requires practitioners to exercise due diligence in preparing or assisting in the preparation of tax returns and other documents.",
+        "3": "Option D is incorrect. Circular 230 requires practitioners to exercise due diligence in preparing or assisting in the preparation of tax returns and other documents."
+      }
+    },
+    {
+      "question": "What form is used to authorize an individual to represent a taxpayer before the IRS?",
+      "options": [
+        "Form W-9",
+        "Form 1040",
+        "Form 2848",
+        "Form W-4"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313479851-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a valid reason for requesting penalty abatement based on reasonable cause?",
+      "options": [
+        "Death or serious illness of the taxpayer or immediate family",
+        "Unavoidable absence of the taxpayer",
+        "Lack of funds due to frivolous spending",
+        "Reliance on incorrect advice from the IRS"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Lack of funds due to frivolous spending is not considered a valid reason for reasonable cause. Death or serious illness, unavoidable absence, and reliance on incorrect IRS advice are all potential grounds for abatement.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313493037-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Lack of funds due to frivolous spending is not considered a valid reason for reasonable cause.",
+        "1": "Option B is incorrect. Lack of funds due to frivolous spending is not considered a valid reason for reasonable cause.",
+        "3": "Option D is incorrect. Lack of funds due to frivolous spending is not considered a valid reason for reasonable cause."
+      }
+    },
+    {
+      "question": "A tax preparer must retain a copy of a tax return or a list of clients with their TINs for how long?",
+      "options": [
+        "3 years",
+        "5 years",
+        "7 years",
+        "10 years"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Tax preparers are required to retain a copy of the tax return or a list of clients with their TINs for a period of 3 years from the return due date or filing date, whichever is later.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313493037-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. Tax preparers are required to retain a copy of the tax return or a list of clients with their TINs for a period of 3 years from the return due date or filing date, whichever is later.",
+        "2": "Option C is incorrect. Tax preparers are required to retain a copy of the tax return or a list of clients with their TINs for a period of 3 years from the return due date or filing date, whichever is later.",
+        "3": "Option D is incorrect. Tax preparers are required to retain a copy of the tax return or a list of clients with their TINs for a period of 3 years from the return due date or filing date, whichever is later."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made in trade or business to non-employees?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form 941"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC (Nonemployee Compensation) is used to report payments made in trade or business to non-employees, such as independent contractors.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313493037-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC (Nonemployee Compensation) is used to report payments made in trade or business to non-employees, such as independent contractors.",
+        "2": "Option C is incorrect. Form 1099-NEC (Nonemployee Compensation) is used to report payments made in trade or business to non-employees, such as independent contractors.",
+        "3": "Option D is incorrect. Form 1099-NEC (Nonemployee Compensation) is used to report payments made in trade or business to non-employees, such as independent contractors."
+      }
+    },
+    {
+      "question": "Generally, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "3 years from the date the return was filed or the due date, whichever is later",
+        "5 years from the date the return was filed",
+        "7 years from the date the tax liability arose",
+        "10 years from the date of assessment"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313493037-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for the IRS to assess additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a method the IRS uses to collect unpaid taxes?",
+      "options": [
+        "Levy",
+        "Garnishment",
+        "Seizure",
+        "Lottery"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The IRS uses levies, garnishments, and seizures to collect unpaid taxes. The IRS does not use a lottery system for tax collection.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313493037-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS uses levies, garnishments, and seizures to collect unpaid taxes.",
+        "1": "Option B is incorrect. The IRS uses levies, garnishments, and seizures to collect unpaid taxes.",
+        "2": "Option C is incorrect. The IRS uses levies, garnishments, and seizures to collect unpaid taxes."
+      }
+    },
+    {
+      "question": "What is an Offer in Compromise (OIC)?",
+      "options": [
+        "An agreement to pay taxes in full over a period of time",
+        "An agreement with the IRS to settle a tax liability for less than the full amount owed",
+        "A request for penalty abatement",
+        "A request for an extension to file a tax return"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313493037-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+        "3": "Option D is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed."
+      }
+    },
+    {
+      "question": "What does CDP stand for in the context of IRS collections?",
+      "options": [
+        "Collection Due Process",
+        "Collection Deficiency Payment",
+        "Compromise Due Process",
+        "Compliance Deficiency Program"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is attempting to collect unpaid taxes.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313493037-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is attempting to collect unpaid taxes.",
+        "2": "Option C is incorrect. CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is attempting to collect unpaid taxes.",
+        "3": "Option D is incorrect. CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is attempting to collect unpaid taxes."
+      }
+    },
+    {
+      "question": "What is the primary purpose of an installment agreement with the IRS?",
+      "options": [
+        "To reduce the amount of tax owed",
+        "To extend the statute of limitations for assessment",
+        "To allow taxpayers to pay their tax liability in monthly installments",
+        "To avoid penalties and interest"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The primary purpose of an installment agreement is to allow taxpayers who cannot afford to pay their tax liability in full to make monthly payments over a period of time.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313493037-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The primary purpose of an installment agreement is to allow taxpayers who cannot afford to pay their tax liability in full to make monthly payments over a period of time.",
+        "1": "Option B is incorrect. The primary purpose of an installment agreement is to allow taxpayers who cannot afford to pay their tax liability in full to make monthly payments over a period of time.",
+        "3": "Option D is incorrect. The primary purpose of an installment agreement is to allow taxpayers who cannot afford to pay their tax liability in full to make monthly payments over a period of time."
+      }
+    },
+    {
+      "question": "According to Circular 230, what is the standard of conduct for tax professionals?",
+      "options": [
+        "To aggressively pursue all possible tax advantages for clients",
+        "To provide competent representation and not engage in disreputable conduct",
+        "To guarantee specific tax outcomes for clients",
+        "To disclose client information to anyone who asks"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Circular 230 outlines the standards of conduct for tax professionals, emphasizing competent representation, honesty, and avoiding disreputable conduct.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313493037-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 outlines the standards of conduct for tax professionals, emphasizing competent representation, honesty, and avoiding disreputable conduct.",
+        "2": "Option C is incorrect. Circular 230 outlines the standards of conduct for tax professionals, emphasizing competent representation, honesty, and avoiding disreputable conduct.",
+        "3": "Option D is incorrect. Circular 230 outlines the standards of conduct for tax professionals, emphasizing competent representation, honesty, and avoiding disreputable conduct."
+      }
+    },
+    {
+      "question": "What form is used to authorize a representative to act on behalf of a taxpayer before the IRS?",
+      "options": [
+        "Form W-9",
+        "Form 1040-ES",
+        "Form 2848",
+        "Form W-4"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313493037-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a valid reason for penalty abatement?",
+      "options": [
+        "Reasonable cause",
+        "Undue hardship",
+        "Taxpayer disagreement with the law",
+        "Reliance on incorrect advice from the IRS"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Taxpayer disagreement with the law is not a valid reason for penalty abatement. Reasonable cause, undue hardship, and reliance on incorrect advice from the IRS are all potential grounds for abatement.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313506782-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayer disagreement with the law is not a valid reason for penalty abatement.",
+        "1": "Option B is incorrect. Taxpayer disagreement with the law is not a valid reason for penalty abatement.",
+        "3": "Option D is incorrect. Taxpayer disagreement with the law is not a valid reason for penalty abatement."
+      }
+    },
+    {
+      "question": "What form is used to grant power of attorney to represent a taxpayer before the IRS?",
+      "options": [
+        "Form 1040",
+        "Form 2848",
+        "Form W-2",
+        "Form 4868"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313506782-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS.",
+        "2": "Option C is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is the form used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "How many years from the date the return was filed does the IRS generally have to assess additional tax?",
+      "options": [
+        "3 years",
+        "5 years",
+        "7 years",
+        "10 years"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The general statute of limitations for assessing additional tax is 3 years from the date the return was filed, or the due date of the return if filed early.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313506782-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed, or the due date of the return if filed early.",
+        "2": "Option C is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed, or the due date of the return if filed early.",
+        "3": "Option D is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed, or the due date of the return if filed early."
+      }
+    },
+    {
+      "question": "Which of the following is a requirement for a tax preparer to avoid penalties related to tax positions?",
+      "options": [
+        "Guarantee the accuracy of the return",
+        "Take a position only if there is substantial authority",
+        "Disclose all uncertain positions regardless of authority",
+        "Prepare the return for free"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Tax preparers must have a reasonable belief that there is substantial authority for a tax position to avoid penalties. They are not required to guarantee accuracy or prepare the return for free.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313506782-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax preparers must have a reasonable belief that there is substantial authority for a tax position to avoid penalties.",
+        "2": "Option C is incorrect. Tax preparers must have a reasonable belief that there is substantial authority for a tax position to avoid penalties.",
+        "3": "Option D is incorrect. Tax preparers must have a reasonable belief that there is substantial authority for a tax position to avoid penalties."
+      }
+    },
+    {
+      "question": "What is the primary purpose of an Offer in Compromise (OIC)?",
+      "options": [
+        "To reduce the amount of tax owed",
+        "To extend the payment deadline",
+        "To avoid penalties",
+        "To discharge tax debt for less than the full amount owed"
+      ],
+      "correctAnswer": 3,
+      "explanation": "An Offer in Compromise (OIC) allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313506782-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed.",
+        "1": "Option B is incorrect. An Offer in Compromise (OIC) allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) allows a taxpayer to resolve their tax liability with the IRS for a lower amount than what they originally owed."
+      }
+    },
+    {
+      "question": "Which of the following actions by a tax preparer would violate Circular 230?",
+      "options": [
+        "Providing competent advice",
+        "Charging an unconscionable fee",
+        "Exercising due diligence",
+        "Representing a client before the IRS"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Charging an unconscionable fee is a violation of Circular 230. Circular 230 sets standards for those who practice before the IRS.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313506782-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Charging an unconscionable fee is a violation of Circular 230.",
+        "2": "Option C is incorrect. Charging an unconscionable fee is a violation of Circular 230.",
+        "3": "Option D is incorrect. Charging an unconscionable fee is a violation of Circular 230."
+      }
+    },
+    {
+      "question": "A taxpayer receives a notice of intent to levy. What is their right to request?",
+      "options": [
+        "A refund",
+        "Collection Due Process (CDP) hearing",
+        "Penalty abatement",
+        "An extension to file"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Upon receiving a notice of intent to levy, a taxpayer has the right to request a Collection Due Process (CDP) hearing to discuss alternatives to the levy.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313506782-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Upon receiving a notice of intent to levy, a taxpayer has the right to request a Collection Due Process (CDP) hearing to discuss alternatives to the levy.",
+        "2": "Option C is incorrect. Upon receiving a notice of intent to levy, a taxpayer has the right to request a Collection Due Process (CDP) hearing to discuss alternatives to the levy.",
+        "3": "Option D is incorrect. Upon receiving a notice of intent to levy, a taxpayer has the right to request a Collection Due Process (CDP) hearing to discuss alternatives to the levy."
+      }
+    },
+    {
+      "question": "Which of the following is a common condition required for an installment agreement?",
+      "options": [
+        "Taxpayer must be unemployed",
+        "Taxpayer must agree to future compliance",
+        "Taxpayer must have no other debts",
+        "Taxpayer must pay double the minimum amount"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A common condition for an installment agreement is that the taxpayer must agree to comply with all tax laws in the future, including timely filing and payment.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313506782-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A common condition for an installment agreement is that the taxpayer must agree to comply with all tax laws in the future, including timely filing and payment.",
+        "2": "Option C is incorrect. A common condition for an installment agreement is that the taxpayer must agree to comply with all tax laws in the future, including timely filing and payment.",
+        "3": "Option D is incorrect. A common condition for an installment agreement is that the taxpayer must agree to comply with all tax laws in the future, including timely filing and payment."
+      }
+    },
+    {
+      "question": "What is the penalty for failure to file an information return?",
+      "options": [
+        "$0",
+        "Varies based on when the correct return is filed",
+        "Fixed amount of $1,000",
+        "Fixed amount of $500"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The penalty for failure to file an information return varies based on when the correct information return is filed. It can range from a small amount to a larger amount if not corrected promptly.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313506782-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The penalty for failure to file an information return varies based on when the correct information return is filed.",
+        "2": "Option C is incorrect. The penalty for failure to file an information return varies based on when the correct information return is filed.",
+        "3": "Option D is incorrect. The penalty for failure to file an information return varies based on when the correct information return is filed."
+      }
+    },
+    {
+      "question": "Which of the following is a collection action the IRS can take?",
+      "options": [
+        "Imprisonment",
+        "Garnishing wages",
+        "Seizing property and selling it",
+        "Both B and C"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The IRS can garnish wages and seize property to satisfy a tax debt. Imprisonment is generally not a collection action for tax debt alone.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313506782-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS can garnish wages and seize property to satisfy a tax debt.",
+        "1": "Option B is incorrect. The IRS can garnish wages and seize property to satisfy a tax debt.",
+        "2": "Option C is incorrect. The IRS can garnish wages and seize property to satisfy a tax debt."
+      }
+    },
+    {
+      "question": "Which of the following is generally required for penalty abatement due to reasonable cause?",
+      "options": [
+        "Lack of funds",
+        "Ordinary business care and prudence",
+        "Reliance on a friend's advice",
+        "Willful neglect"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The IRS generally requires the taxpayer to show that they exercised ordinary business care and prudence but were still unable to comply with the tax law. Lack of funds or relying on a friend are not considered reasonable cause.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313520435-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS generally requires the taxpayer to show that they exercised ordinary business care and prudence but were still unable to comply with the tax law.",
+        "2": "Option C is incorrect. The IRS generally requires the taxpayer to show that they exercised ordinary business care and prudence but were still unable to comply with the tax law.",
+        "3": "Option D is incorrect. The IRS generally requires the taxpayer to show that they exercised ordinary business care and prudence but were still unable to comply with the tax law."
+      }
+    },
+    {
+      "question": "A tax preparer must retain a copy of a tax return or claim for refund for how many years?",
+      "options": [
+        "2 years",
+        "3 years",
+        "5 years",
+        "1 year"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A tax preparer must retain a copy of a tax return or claim for refund (or a list of the returns prepared) for a period of 3 years from the return due date or filing date, whichever is later.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313520435-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A tax preparer must retain a copy of a tax return or claim for refund (or a list of the returns prepared) for a period of 3 years from the return due date or filing date, whichever is later.",
+        "2": "Option C is incorrect. A tax preparer must retain a copy of a tax return or claim for refund (or a list of the returns prepared) for a period of 3 years from the return due date or filing date, whichever is later.",
+        "3": "Option D is incorrect. A tax preparer must retain a copy of a tax return or claim for refund (or a list of the returns prepared) for a period of 3 years from the return due date or filing date, whichever is later."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made to non-employees for services?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form 941"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313520435-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made to non-employees, such as independent contractors, for services performed."
+      }
+    },
+    {
+      "question": "What is the general statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "3 years from the date the return was filed or due, whichever is later",
+        "7 years from the date the return was filed",
+        "5 years from the date the return was filed",
+        "2 years from the date the tax was paid"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The general statute of limitations for assessing additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313520435-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for assessing additional tax is 3 years from the date the return was filed or the due date of the return, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a method the IRS typically uses to collect unpaid taxes?",
+      "options": [
+        "Levy on wages",
+        "Seizure of property",
+        "Direct debit from bank account",
+        "Sending a strongly worded letter"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The IRS uses levies, seizures, and direct debits as methods of collection. While they send notices, a 'strongly worded letter' is not a formal collection method.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313520435-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS uses levies, seizures, and direct debits as methods of collection.",
+        "1": "Option B is incorrect. The IRS uses levies, seizures, and direct debits as methods of collection.",
+        "2": "Option C is incorrect. The IRS uses levies, seizures, and direct debits as methods of collection."
+      }
+    },
+    {
+      "question": "An Offer in Compromise (OIC) allows a taxpayer to:",
+      "options": [
+        "Pay off tax debt in full immediately.",
+        "Settle their tax debt for a lower amount than what they owe.",
+        "Extend the statute of limitations.",
+        "Avoid penalties."
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313520435-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+        "2": "Option C is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed.",
+        "3": "Option D is incorrect. An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for less than the full amount owed."
+      }
+    },
+    {
+      "question": "What does CDP stand for in tax context?",
+      "options": [
+        "Collection Due Process",
+        "Corporate Deduction Procedure",
+        "Certified Document Protocol",
+        "Capital Depreciation Plan"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CDP stands for Collection Due Process. It refers to the taxpayer's right to a hearing with the IRS Independent Office of Appeals before certain collection actions are taken.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313520435-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. CDP stands for Collection Due Process.",
+        "2": "Option C is incorrect. CDP stands for Collection Due Process.",
+        "3": "Option D is incorrect. CDP stands for Collection Due Process."
+      }
+    },
+    {
+      "question": "An installment agreement allows a taxpayer to:",
+      "options": [
+        "Avoid penalties completely.",
+        "Pay their tax debt in monthly installments.",
+        "Reduce the overall amount of tax owed.",
+        "Defer the tax payment indefinitely"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An installment agreement allows a taxpayer to pay their tax debt in monthly installments, rather than paying the full amount at once.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313520435-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An installment agreement allows a taxpayer to pay their tax debt in monthly installments, rather than paying the full amount at once.",
+        "2": "Option C is incorrect. An installment agreement allows a taxpayer to pay their tax debt in monthly installments, rather than paying the full amount at once.",
+        "3": "Option D is incorrect. An installment agreement allows a taxpayer to pay their tax debt in monthly installments, rather than paying the full amount at once."
+      }
+    },
+    {
+      "question": "Circular 230 governs the practice of:",
+      "options": [
+        "CPAs only.",
+        "Attorneys only.",
+        "Enrolled Agents only.",
+        "Practitioners before the IRS."
+      ],
+      "correctAnswer": 3,
+      "explanation": "Circular 230 governs the practice of attorneys, CPAs, enrolled agents, and other individuals representing clients before the IRS.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313520435-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Circular 230 governs the practice of attorneys, CPAs, enrolled agents, and other individuals representing clients before the IRS.",
+        "1": "Option B is incorrect. Circular 230 governs the practice of attorneys, CPAs, enrolled agents, and other individuals representing clients before the IRS.",
+        "2": "Option C is incorrect. Circular 230 governs the practice of attorneys, CPAs, enrolled agents, and other individuals representing clients before the IRS."
+      }
+    },
+    {
+      "question": "What is the name and number of the IRS form used to grant power of attorney?",
+      "options": [
+        "Form 8821",
+        "Form 2848",
+        "Form 1040",
+        "Form W-9"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313520435-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "2": "Option C is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize an individual to represent a taxpayer before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is generally *not* considered a valid reason for penalty abatement?",
+      "options": [
+        "Death or serious illness of the taxpayer or immediate family",
+        "Unavoidable absence of the taxpayer",
+        "Lack of funds",
+        "Reliance on incorrect advice from the IRS"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Lack of funds is generally not considered a valid reason for penalty abatement unless due to circumstances beyond the taxpayer's control. The other options are potential reasonable cause situations.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313533893-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Lack of funds is generally not considered a valid reason for penalty abatement unless due to circumstances beyond the taxpayer's control.",
+        "1": "Option B is incorrect. Lack of funds is generally not considered a valid reason for penalty abatement unless due to circumstances beyond the taxpayer's control.",
+        "3": "Option D is incorrect. Lack of funds is generally not considered a valid reason for penalty abatement unless due to circumstances beyond the taxpayer's control."
+      }
+    },
+    {
+      "question": "What is the penalty for a tax preparer who fails to sign a return they prepared?",
+      "options": [
+        "$50",
+        "$100",
+        "$500",
+        "$1,000"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The penalty for a tax preparer who fails to sign a return they prepared is $50 per failure. This is a basic due diligence requirement.",
+      "topic": "Preparer penalties and due diligence",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313533893-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The penalty for a tax preparer who fails to sign a return they prepared is $50 per failure.",
+        "2": "Option C is incorrect. The penalty for a tax preparer who fails to sign a return they prepared is $50 per failure.",
+        "3": "Option D is incorrect. The penalty for a tax preparer who fails to sign a return they prepared is $50 per failure."
+      }
+    },
+    {
+      "question": "Which form is used to report payments made to non-employee service providers?",
+      "options": [
+        "Form W-2",
+        "Form 1099-NEC",
+        "Form 1040",
+        "Form W-4"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Form 1099-NEC is used to report payments made to non-employee service providers. Form W-2 is for employees.",
+      "topic": "Information return requirements",
+      "blueprintArea": "SEE3-1",
+      "id": "see3-easy-gen-1772313533893-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 1099-NEC is used to report payments made to non-employee service providers.",
+        "2": "Option C is incorrect. Form 1099-NEC is used to report payments made to non-employee service providers.",
+        "3": "Option D is incorrect. Form 1099-NEC is used to report payments made to non-employee service providers."
+      }
+    },
+    {
+      "question": "Generally, what is the statute of limitations for the IRS to assess additional tax?",
+      "options": [
+        "3 years from the date the return was filed or the due date, whichever is later",
+        "5 years from the date the return was filed",
+        "7 years from the date the return was filed",
+        "10 years from the date the return was filed"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The general statute of limitations for assessment is 3 years from the date the return was filed or the due date, whichever is later. There are exceptions.",
+      "topic": "Statutes of limitations",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313533893-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The general statute of limitations for assessment is 3 years from the date the return was filed or the due date, whichever is later.",
+        "2": "Option C is incorrect. The general statute of limitations for assessment is 3 years from the date the return was filed or the due date, whichever is later.",
+        "3": "Option D is incorrect. The general statute of limitations for assessment is 3 years from the date the return was filed or the due date, whichever is later."
+      }
+    },
+    {
+      "question": "Which of the following is *not* a method the IRS commonly uses to collect unpaid taxes?",
+      "options": [
+        "Levy",
+        "Garnishment",
+        "Seizure",
+        "Lottery"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The IRS uses levies, garnishments, and seizures to collect unpaid taxes. The IRS does not use a lottery to collect taxes.",
+      "topic": "Collection procedures",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313533893-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The IRS uses levies, garnishments, and seizures to collect unpaid taxes.",
+        "1": "Option B is incorrect. The IRS uses levies, garnishments, and seizures to collect unpaid taxes.",
+        "2": "Option C is incorrect. The IRS uses levies, garnishments, and seizures to collect unpaid taxes."
+      }
+    },
+    {
+      "question": "An Offer in Compromise (OIC) is an agreement between a taxpayer and the IRS that settles the taxpayer's tax liabilities for:",
+      "options": [
+        "The full amount owed",
+        "A lower amount than the full amount owed",
+        "The amount owed plus penalties but without interest",
+        "The amount owed without penalties or interest"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An Offer in Compromise allows a taxpayer to settle their tax liabilities for a lower amount than the full amount owed. The IRS considers various factors when evaluating an OIC.",
+      "topic": "Offer in compromise",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313533893-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. An Offer in Compromise allows a taxpayer to settle their tax liabilities for a lower amount than the full amount owed.",
+        "2": "Option C is incorrect. An Offer in Compromise allows a taxpayer to settle their tax liabilities for a lower amount than the full amount owed.",
+        "3": "Option D is incorrect. An Offer in Compromise allows a taxpayer to settle their tax liabilities for a lower amount than the full amount owed."
+      }
+    },
+    {
+      "question": "What does CDP stand for in the context of IRS collections?",
+      "options": [
+        "Collection Due Process",
+        "Certified Delinquency Payment",
+        "Compromise and Deferral Program",
+        "Complete Debt Protocol"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is taking collection actions.",
+      "topic": "Collection due process (CDP)",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313533893-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is taking collection actions.",
+        "2": "Option C is incorrect. CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is taking collection actions.",
+        "3": "Option D is incorrect. CDP stands for Collection Due Process, which provides taxpayers with certain rights when the IRS is taking collection actions."
+      }
+    },
+    {
+      "question": "Under an IRS installment agreement, taxpayers agree to pay their tax liability in:",
+      "options": [
+        "One lump sum payment",
+        "Monthly installments",
+        "Quarterly installments",
+        "Annual installments"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Under an IRS installment agreement, taxpayers generally agree to pay their tax liability in monthly installments. Other payment frequencies are less common.",
+      "topic": "Installment agreements",
+      "blueprintArea": "SEE3-2",
+      "id": "see3-easy-gen-1772313533893-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Under an IRS installment agreement, taxpayers generally agree to pay their tax liability in monthly installments.",
+        "2": "Option C is incorrect. Under an IRS installment agreement, taxpayers generally agree to pay their tax liability in monthly installments.",
+        "3": "Option D is incorrect. Under an IRS installment agreement, taxpayers generally agree to pay their tax liability in monthly installments."
+      }
+    },
+    {
+      "question": "Which publication contains the regulations governing the practice of attorneys, certified public accountants, enrolled agents, and other persons representing clients before the IRS?",
+      "options": [
+        "Circular 230",
+        "Publication 17",
+        "Publication 590",
+        "Publication 15"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Circular 230 contains the regulations governing the practice of professionals representing clients before the IRS. It outlines ethical standards and responsibilities.",
+      "topic": "Circular 230 requirements",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313533893-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. Circular 230 contains the regulations governing the practice of professionals representing clients before the IRS.",
+        "2": "Option C is incorrect. Circular 230 contains the regulations governing the practice of professionals representing clients before the IRS.",
+        "3": "Option D is incorrect. Circular 230 contains the regulations governing the practice of professionals representing clients before the IRS."
+      }
+    },
+    {
+      "question": "What is the name of the IRS form used to authorize someone to represent you before the IRS?",
+      "options": [
+        "Form 1040",
+        "Form W-2",
+        "Form 2848",
+        "Form 4868"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Form 2848, Power of Attorney and Declaration of Representative, is used to authorize someone to represent you before the IRS.",
+      "topic": "Power of attorney (Form 2848)",
+      "blueprintArea": "SEE3-4",
+      "id": "see3-easy-gen-1772313533893-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize someone to represent you before the IRS.",
+        "1": "Option B is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize someone to represent you before the IRS.",
+        "3": "Option D is incorrect. Form 2848, Power of Attorney and Declaration of Representative, is used to authorize someone to represent you before the IRS."
+      }
+    },
+    {
+      "question": "Which of the following is NOT a valid reason for requesting penalty abatement due to reasonable cause?",
+      "options": [
+        "Death or serious illness of the taxpayer or an immediate family member.",
+        "Unavoidable absence of the taxpayer.",
+        "Lack of funds, even with prudent business management.",
+        "Destruction of records due to fire or other casualty."
+      ],
+      "correctAnswer": 2,
+      "explanation": "Lack of funds is generally not considered reasonable cause for penalty abatement unless it is due to unforeseen circumstances beyond the taxpayer's control. The other options are generally considered valid reasons.",
+      "topic": "Penalty abatement",
+      "blueprintArea": "SEE3-3",
+      "id": "see3-easy-gen-1772313540362-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE3",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Lack of funds is generally not considered reasonable cause for penalty abatement unless it is due to unforeseen circumstances beyond the taxpayer's control.",
+        "1": "Option B is incorrect. Lack of funds is generally not considered reasonable cause for penalty abatement unless it is due to unforeseen circumstances beyond the taxpayer's control.",
+        "3": "Option D is incorrect. Lack of funds is generally not considered reasonable cause for penalty abatement unless it is due to unforeseen circumstances beyond the taxpayer's control."
+      }
     }
   ],
   "lastEnhanced": "2026-02-27T00:23:20.577Z"

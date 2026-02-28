@@ -1,0 +1,1901 @@
+[
+  {
+    "id": "CIA3-I-001",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Strategic Management and Planning",
+    "description": "Understand strategic planning processes and how to audit strategic initiatives",
+    "order": 1,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategic planning",
+      "SWOT analysis",
+      "Competitive strategy",
+      "Strategic risk"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Internal auditors need business acumen to effectively evaluate risks and add value. Understanding strategy helps you assess whether controls support organizational objectives. Part 3 tests your business knowledge!"
+        },
+        {
+          "title": "Strategic Planning Process",
+          "type": "text",
+          "content": "**Strategic planning is the process of:**\n\n1. **Defining mission and vision**\n\u2022 Mission: Why we exist\n\u2022 Vision: Where we're going\n\n2. **Analyzing environment**\n\u2022 External opportunities and threats\n\u2022 Internal strengths and weaknesses\n\n3. **Setting objectives**\n\u2022 Long-term goals aligned with mission\n\u2022 SMART objectives\n\n4. **Developing strategies**\n\u2022 How to achieve objectives\n\u2022 Competitive positioning\n\n5. **Implementation and monitoring**\n\u2022 Action plans\n\u2022 Performance measurement"
+        },
+        {
+          "title": "SWOT Analysis",
+          "type": "table",
+          "headers": [
+            "Internal",
+            "External"
+          ],
+          "rows": [
+            [
+              "Strengths - Competitive advantages",
+              "Opportunities - External factors to exploit"
+            ],
+            [
+              "Weaknesses - Areas for improvement",
+              "Threats - External risks to manage"
+            ]
+          ]
+        },
+        {
+          "title": "Porter's Competitive Forces",
+          "type": "text",
+          "content": "**Five Forces Model:**\n\n**1. Threat of New Entrants**\n\u2022 Barriers to entry\n\u2022 Capital requirements\n\n**2. Bargaining Power of Suppliers**\n\u2022 Supplier concentration\n\u2022 Switching costs\n\n**3. Bargaining Power of Buyers**\n\u2022 Customer concentration\n\u2022 Price sensitivity\n\n**4. Threat of Substitutes**\n\u2022 Alternative products\n\u2022 Switching costs\n\n**5. Industry Rivalry**\n\u2022 Number of competitors\n\u2022 Growth rate"
+        },
+        {
+          "title": "Generic Competitive Strategies",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Focus",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Cost Leadership",
+              "Lowest cost producer",
+              "Walmart, Southwest Airlines"
+            ],
+            [
+              "Differentiation",
+              "Unique product/service",
+              "Apple, Mercedes-Benz"
+            ],
+            [
+              "Focus (Niche)",
+              "Specific segment",
+              "Rolex, Ferrari"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Porter's Five Forces",
+          "type": "callout",
+          "content": "**\"TRIBES\"**:\n\n**T**hreat of new entrants\n**R**ivalry among competitors\n**I**nfluence (bargaining power) of buyers\n**B**argaining power of suppliers\n**E**xistence of **S**ubstitutes\n\n*The 5 forces that shape industry competition!*"
+        },
+        {
+          "title": "Auditing Strategy",
+          "type": "text",
+          "content": "**Internal audit can assess:**\n\n\u2022 Alignment of strategy with mission/vision\n\u2022 Quality of strategic planning process\n\u2022 Risk identification in strategic initiatives\n\u2022 Validity of assumptions\n\u2022 Monitoring and KPI systems\n\u2022 Resource allocation for strategic priorities\n\n**Strategic risks:**\n\u2022 Failed strategy execution\n\u2022 Disruptive technologies\n\u2022 Competitive shifts\n\u2022 Regulatory changes"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Strategic planning: Mission \u2192 Analysis \u2192 Objectives \u2192 Strategy \u2192 Implementation",
+            "SWOT: Strengths, Weaknesses, Opportunities, Threats",
+            "Porter's Five Forces analyze competitive environment",
+            "Generic strategies: Cost leadership, Differentiation, Focus",
+            "IA can audit strategy process and strategic risk management"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Strategic Planning Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the relationship between a company's mission and vision statements?",
+            "options": [
+              "The mission statement outlines where the organization wants to be in the future, while the vision statement explains why the organization exists.",
+              "The mission statement explains why the organization exists, while the vision statement outlines where the organization wants to be in the future.",
+              "The mission statement and vision statement are interchangeable and represent the same strategic objective.",
+              "The mission statement focuses on short-term goals, while the vision statement focuses on long-term financial performance."
+            ],
+            "correctIndex": 1,
+            "explanation": "The mission statement defines the organization's purpose and reason for existence. The vision statement describes the desired future state or aspirations of the organization.",
+            "hint": "Think about the 'why' versus the 'where'."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Porter's Five Forces",
+          "reveal": {
+            "question": "List Porter's Five Forces that shape industry competition.",
+            "answer": "1. Threat of New Entrants\n2. Bargaining Power of Suppliers\n3. Bargaining Power of Buyers\n4. Threat of Substitutes\n5. Competitive Rivalry (though not explicitly mentioned in this lesson excerpt, it's a crucial part of the model)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SWOT Analysis: Strengths vs. Opportunities",
+          "comparison": {
+            "headers": [
+              "Strengths",
+              "Opportunities"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Internal attributes that give an organization an advantage.",
+                  "External factors that the organization can exploit to its advantage."
+                ]
+              },
+              {
+                "label": "Origin",
+                "values": [
+                  "Internal to the organization (e.g., skilled workforce, strong brand reputation).",
+                  "External to the organization (e.g., emerging markets, technological advancements)."
+                ]
+              },
+              {
+                "label": "Action",
+                "values": [
+                  "Maintain and leverage these advantages.",
+                  "Capitalize on these favorable conditions."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-002",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Organizational Structure and Behavior",
+    "description": "Understand organizational structures, culture, and human behavior concepts",
+    "order": 2,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Organizational structure",
+      "Culture",
+      "Leadership",
+      "Motivation"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Understanding how organizations work helps auditors navigate politics, assess culture, and understand why controls fail. Organizational behavior knowledge is tested directly on Part 3!"
+        },
+        {
+          "title": "Organizational Structures",
+          "type": "table",
+          "headers": [
+            "Structure",
+            "Characteristics",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Functional",
+              "Grouped by function (HR, Finance, Ops)",
+              "Stable, efficient environments"
+            ],
+            [
+              "Divisional",
+              "Separate units by product, geography, customer",
+              "Diverse products/markets"
+            ],
+            [
+              "Matrix",
+              "Dual reporting (function + project)",
+              "Complex, project-based work"
+            ],
+            [
+              "Flat",
+              "Few management layers",
+              "Agile, innovative cultures"
+            ],
+            [
+              "Network",
+              "Outsourced functions, partnerships",
+              "Flexible, specialized needs"
+            ]
+          ]
+        },
+        {
+          "title": "Organizational Culture",
+          "type": "text",
+          "content": "**Definition:**\nShared values, beliefs, and practices that guide behavior.\n\n**Elements:**\n\u2022 Visible artifacts (logos, office layout)\n\u2022 Espoused values (stated beliefs)\n\u2022 Underlying assumptions (unconscious beliefs)\n\n**Strong culture:**\n\u2022 Clear values widely shared\n\u2022 Consistent behavior\n\u2022 Can be positive or negative\n\n**Culture impacts:**\n\u2022 Control effectiveness\n\u2022 Risk appetite\n\u2022 Ethical behavior"
+        },
+        {
+          "title": "Motivation Theories",
+          "type": "text",
+          "content": "**Maslow's Hierarchy:**\n\u2022 Physiological \u2192 Safety \u2192 Social \u2192 Esteem \u2192 Self-actualization\n\n**Herzberg's Two-Factor:**\n\u2022 Hygiene factors (salary, conditions) - prevent dissatisfaction\n\u2022 Motivators (achievement, recognition) - create satisfaction\n\n**Expectancy Theory:**\n\u2022 Effort \u2192 Performance \u2192 Outcome\n\u2022 Motivation = Expectancy \u00d7 Instrumentality \u00d7 Valence"
+        },
+        {
+          "title": "Leadership Styles",
+          "type": "table",
+          "headers": [
+            "Style",
+            "Approach",
+            "When Effective"
+          ],
+          "rows": [
+            [
+              "Autocratic",
+              "Leader makes decisions",
+              "Crisis, unskilled workforce"
+            ],
+            [
+              "Democratic",
+              "Team involvement in decisions",
+              "Skilled, motivated team"
+            ],
+            [
+              "Laissez-faire",
+              "Hands-off delegation",
+              "Highly skilled, self-directed"
+            ],
+            [
+              "Transformational",
+              "Inspire and motivate change",
+              "Organizational transformation"
+            ],
+            [
+              "Servant",
+              "Focus on serving team",
+              "Building trust and development"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Maslow's Hierarchy",
+          "type": "callout",
+          "content": "**Bottom to Top:**\n\n**P**hysiological - Food, water, shelter\n**S**afety - Security, stability\n**S**ocial - Belonging, love\n**E**steem - Recognition, status\n**S**elf-actualization - Reaching potential\n\n*\"Please Stay Safe, Earn Success\"*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Structure types: Functional, Divisional, Matrix, Flat, Network",
+            "Culture = shared values, beliefs, practices",
+            "Motivation theories: Maslow, Herzberg, Expectancy",
+            "Leadership styles vary by situation and team",
+            "Culture significantly impacts control effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Organizational Culture Check",
+          "knowledgeCheck": {
+            "question": "An organization emphasizes innovation, risk-taking, and experimentation. These values are prominently displayed in company communications and are frequently discussed by senior management. However, employees consistently exhibit risk-averse behavior and adhere strictly to established procedures. Which element of organizational culture is MOST misaligned in this scenario?",
+            "options": [
+              "Visible artifacts",
+              "Espoused values",
+              "Underlying assumptions",
+              "All elements are aligned"
+            ],
+            "correctIndex": 2,
+            "explanation": "The underlying assumptions represent the unconscious beliefs and are the deepest level of culture. The stated values (espoused values) do not match the actual behavior of the employees, indicating a misalignment at the level of underlying assumptions that drive behavior.",
+            "hint": "Consider which element is the *least* visible."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Herzberg's Two-Factor Theory",
+          "reveal": {
+            "question": "According to Herzberg, what type of factors prevent job *dissatisfaction*?",
+            "answer": "Hygiene factors, such as salary, working conditions, and company policies, prevent dissatisfaction but do not necessarily lead to satisfaction."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Motivation Theory Comparison",
+          "comparison": {
+            "headers": [
+              "Maslow's Hierarchy of Needs",
+              "Herzberg's Two-Factor Theory",
+              "Expectancy Theory"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Hierarchical progression through needs",
+                  "Factors causing satisfaction vs. dissatisfaction",
+                  "Relationship between effort, performance, and outcomes"
+                ]
+              },
+              {
+                "label": "Key Concepts",
+                "values": [
+                  "Physiological, Safety, Social, Esteem, Self-actualization",
+                  "Hygiene Factors, Motivators",
+                  "Effort, Performance, Outcome, Expectancy, Instrumentality, Valence"
+                ]
+              },
+              {
+                "label": "Practical Application",
+                "values": [
+                  "Addressing basic needs before higher-level needs to motivate employees",
+                  "Providing adequate hygiene factors to prevent dissatisfaction and motivators to create satisfaction",
+                  "Ensuring employees believe their effort will lead to performance, which will lead to desired outcomes"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-003",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Business Processes and Operations",
+    "description": "Understand common business processes and operational management concepts",
+    "order": 3,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Business processes",
+      "Operations management",
+      "Quality management",
+      "Supply chain"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Auditors must understand the processes they audit! Operations knowledge helps you identify what can go wrong and where controls are needed. This is highly practical exam content."
+        },
+        {
+          "title": "Business Process Fundamentals",
+          "type": "text",
+          "content": "**A business process is:**\nA set of activities that transforms inputs into outputs to achieve a goal.\n\n**Process elements:**\n\u2022 Inputs (materials, information)\n\u2022 Activities (steps performed)\n\u2022 Outputs (products, services)\n\u2022 Controls (checkpoints, approvals)\n\n**Process categories:**\n\u2022 Core/operational (value-creating)\n\u2022 Support (enabling)\n\u2022 Management (directing)"
+        },
+        {
+          "title": "Key Business Cycles",
+          "type": "table",
+          "headers": [
+            "Cycle",
+            "Key Activities",
+            "Key Risks"
+          ],
+          "rows": [
+            [
+              "Revenue/Sales",
+              "Order \u2192 Ship \u2192 Bill \u2192 Collect",
+              "Fictitious sales, bad debts"
+            ],
+            [
+              "Procurement",
+              "Requisition \u2192 Order \u2192 Receive \u2192 Pay",
+              "Fraud, unauthorized purchases"
+            ],
+            [
+              "Payroll",
+              "Hire \u2192 Track time \u2192 Pay \u2192 Report",
+              "Ghost employees, time theft"
+            ],
+            [
+              "Inventory",
+              "Purchase \u2192 Store \u2192 Issue \u2192 Count",
+              "Theft, obsolescence"
+            ],
+            [
+              "Fixed Assets",
+              "Acquire \u2192 Track \u2192 Depreciate \u2192 Dispose",
+              "Misappropriation, incorrect records"
+            ]
+          ]
+        },
+        {
+          "title": "Quality Management",
+          "type": "text",
+          "content": "**Total Quality Management (TQM):**\n\u2022 Customer focus\n\u2022 Continuous improvement\n\u2022 Employee involvement\n\u2022 Process-centered approach\n\n**Six Sigma:**\n\u2022 Data-driven quality improvement\n\u2022 DMAIC: Define, Measure, Analyze, Improve, Control\n\u2022 Goal: 3.4 defects per million opportunities\n\n**ISO 9000:**\n\u2022 International quality standards\n\u2022 Focus on QMS (Quality Management System)\n\u2022 Certification demonstrates conformance"
+        },
+        {
+          "title": "Supply Chain Management",
+          "type": "text",
+          "content": "**Supply chain encompasses:**\n\u2022 Suppliers \u2192 Manufacturing \u2192 Distribution \u2192 Customer\n\n**Key considerations:**\n\u2022 Supplier selection and monitoring\n\u2022 Inventory management\n\u2022 Logistics and transportation\n\u2022 Demand forecasting\n\n**Risks:**\n\u2022 Supply disruption\n\u2022 Quality issues\n\u2022 Lead time variability\n\u2022 Third-party dependency"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: DMAIC",
+          "type": "callout",
+          "content": "**D**efine - What's the problem?\n**M**easure - How bad is it?\n**A**nalyze - Why is it happening?\n**I**mprove - What's the solution?\n**C**ontrol - How do we sustain it?\n\n*\"Don't Make Any Improvement Carelessly\"*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Processes transform inputs to outputs",
+            "Key cycles: Revenue, Procurement, Payroll, Inventory, Fixed Assets",
+            "TQM focuses on customer and continuous improvement",
+            "Six Sigma: DMAIC for data-driven improvement",
+            "Supply chain risks include disruption and third-party dependency"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Business Process Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important objective of implementing controls within a business process?",
+            "options": [
+              "Ensuring that the process operates at the lowest possible cost.",
+              "Guaranteeing that the process adheres to established policies and procedures.",
+              "Maximizing the volume of outputs generated by the process.",
+              "Promoting innovation and flexibility within the process."
+            ],
+            "correctIndex": 1,
+            "explanation": "Controls are primarily designed to ensure adherence to policies and procedures, mitigating risks and ensuring compliance. While cost, output, and innovation are important, they are secondary to maintaining process integrity.",
+            "hint": "Think about the fundamental purpose of controls in a business context."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "DMAIC Acronym",
+          "reveal": {
+            "question": "What does DMAIC stand for in the Six Sigma methodology?",
+            "answer": "Define, Measure, Analyze, Improve, Control"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "TQM vs. Six Sigma",
+          "comparison": {
+            "headers": [
+              "Total Quality Management (TQM)",
+              "Six Sigma"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Broad, encompassing culture of continuous improvement",
+                  "Specific, data-driven project-based improvement"
+                ]
+              },
+              {
+                "label": "Methodology",
+                "values": [
+                  "Less structured, relies on employee involvement and customer feedback",
+                  "Highly structured, uses DMAIC and statistical tools"
+                ]
+              },
+              {
+                "label": "Goal",
+                "values": [
+                  "Overall quality enhancement",
+                  "Reducing defects and variability in processes"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Supply Chain Risk Assessment",
+          "knowledgeCheck": {
+            "question": "Which of the following risks is MOST directly mitigated by implementing robust supplier monitoring procedures within a supply chain?",
+            "options": [
+              "Demand forecasting errors leading to excess inventory.",
+              "Logistics and transportation delays impacting delivery times.",
+              "Supplier quality issues resulting in defective products.",
+              "Fluctuations in raw material prices affecting production costs."
+            ],
+            "correctIndex": 2,
+            "explanation": "Supplier monitoring directly addresses the risk of receiving defective products by ensuring that suppliers maintain acceptable quality standards. While the other options are supply chain risks, they are not the MOST directly mitigated by supplier monitoring.",
+            "hint": "Consider the immediate impact of monitoring a supplier's performance."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-004",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Project Management",
+    "description": "Understand project management principles and auditing project controls",
+    "order": 4,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Project management",
+      "Project lifecycle",
+      "Project risks",
+      "PMO"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Projects often fail - over budget, late, or not meeting objectives. Internal audit adds value by assessing project governance and controls. Project management knowledge helps you audit these critical initiatives!"
+        },
+        {
+          "title": "Project Management Basics",
+          "type": "text",
+          "content": "**A project is:**\nA temporary endeavor to create a unique product, service, or result.\n\n**Key characteristics:**\n\u2022 Defined beginning and end\n\u2022 Unique deliverables\n\u2022 Progressive elaboration\n\u2022 Constraints (scope, time, cost)\n\n**Triple Constraint:**\nScope \u2194 Time \u2194 Cost\n(Change one, affects others)"
+        },
+        {
+          "title": "Project Lifecycle Phases",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Key Activities",
+            "Deliverables"
+          ],
+          "rows": [
+            [
+              "Initiation",
+              "Define project, feasibility",
+              "Project charter"
+            ],
+            [
+              "Planning",
+              "Scope, schedule, budget",
+              "Project plan, WBS"
+            ],
+            [
+              "Execution",
+              "Perform work, manage team",
+              "Deliverables"
+            ],
+            [
+              "Monitoring & Control",
+              "Track progress, manage changes",
+              "Status reports"
+            ],
+            [
+              "Closing",
+              "Finalize, lessons learned",
+              "Final report, sign-off"
+            ]
+          ]
+        },
+        {
+          "title": "Project Governance",
+          "type": "text",
+          "content": "**Governance structure:**\n\u2022 Steering Committee (oversight)\n\u2022 Project Sponsor (executive accountability)\n\u2022 Project Manager (daily management)\n\u2022 Project Team (execution)\n\n**PMO (Project Management Office):**\n\u2022 Standardizes processes\n\u2022 Provides tools and training\n\u2022 Portfolio oversight\n\u2022 Resource management"
+        },
+        {
+          "title": "Project Risks",
+          "type": "text",
+          "content": "**Common project risks:**\n\n\u2022 **Scope creep** - Uncontrolled scope expansion\n\u2022 **Resource constraints** - Insufficient people/skills\n\u2022 **Schedule delays** - Missed deadlines\n\u2022 **Budget overruns** - Cost increases\n\u2022 **Technical risks** - Technology failures\n\u2022 **Stakeholder issues** - Lack of engagement\n\n**Risk responses:**\n\u2022 Avoid, Transfer, Mitigate, Accept"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Triple Constraint",
+          "type": "callout",
+          "content": "**\"STC Triangle\"**\n\n**S**cope - What will be delivered\n**T**ime - When it will be done\n**C**ost - What it will cost\n\n*Change one corner, the others are affected!*\n\n**Quality** sits in the middle - constrained by all three."
+        },
+        {
+          "title": "Auditing Projects",
+          "type": "text",
+          "content": "**IA can assess:**\n\n\u2022 Project governance structure\n\u2022 Planning adequacy\n\u2022 Risk management\n\u2022 Change control process\n\u2022 Progress monitoring\n\u2022 Stakeholder management\n\u2022 Budget and resource controls\n\u2022 Post-implementation reviews"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Projects are temporary with unique deliverables",
+            "Triple constraint: Scope, Time, Cost",
+            "Phases: Initiation, Planning, Execution, Monitoring, Closing",
+            "Common risks: Scope creep, resource/schedule/budget issues",
+            "IA audits governance, controls, and risk management"
+          ]
+        },
+        {
+          "type": "knowledge_check",
+          "title": "Scope Creep Scenario",
+          "knowledgeCheck": {
+            "question": "During a project to implement a new inventory management system, the project sponsor requests the addition of a customer relationship management (CRM) module, which was not initially included in the project scope. This addition is approved without adjusting the project's timeline or budget. What type of project risk is most clearly demonstrated in this scenario?",
+            "options": [
+              "Resource constraints",
+              "Scope creep",
+              "Schedule delays",
+              "Budget overruns"
+            ],
+            "correctIndex": 1,
+            "explanation": "Scope creep refers to the uncontrolled expansion of a project's scope without adjustments to time, cost, or resources. Adding the CRM module without addressing these constraints is a classic example of scope creep.",
+            "hint": "Consider what happens when requirements are added mid-project without adjustments."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Triple Constraint Recall",
+          "reveal": {
+            "question": "What are the three elements of the triple constraint in project management?",
+            "answer": "The three elements of the triple constraint are scope, time, and cost. Changes to one element will inevitably impact the others."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Project Sponsor vs. Project Manager",
+          "comparison": {
+            "headers": [
+              "Project Sponsor",
+              "Project Manager"
+            ],
+            "rows": [
+              {
+                "label": "Accountability",
+                "values": [
+                  "Executive accountability for project success",
+                  "Daily management and execution of the project"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Strategic alignment and high-level oversight",
+                  "Tactical planning and task management"
+                ]
+              },
+              {
+                "label": "Authority",
+                "values": [
+                  "Provides resources and removes roadblocks at an executive level",
+                  "Manages the project team and day to day activity within constraints"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-001",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Information Security Fundamentals",
+    "description": "Understand core information security concepts and the CIA triad",
+    "order": 5,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Information security",
+      "CIA triad",
+      "Security threats",
+      "Security controls"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Information security is critical in today's digital world. Internal auditors must understand security concepts to evaluate IT controls and assess cyber risks. This is 25% of Part 3!"
+        },
+        {
+          "title": "The CIA Triad",
+          "type": "text",
+          "content": "**Three pillars of information security:**\n\n**Confidentiality**\n\u2022 Protect information from unauthorized access\n\u2022 Controls: Encryption, access controls, classification\n\n**Integrity**\n\u2022 Ensure information is accurate and complete\n\u2022 Controls: Hashing, checksums, audit trails\n\n**Availability**\n\u2022 Ensure information is accessible when needed\n\u2022 Controls: Redundancy, backups, disaster recovery"
+        },
+        {
+          "title": "Additional Security Principles",
+          "type": "table",
+          "headers": [
+            "Principle",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Authentication",
+              "Verify identity of users/systems"
+            ],
+            [
+              "Authorization",
+              "Grant appropriate access levels"
+            ],
+            [
+              "Non-repudiation",
+              "Prevent denial of actions"
+            ],
+            [
+              "Accountability",
+              "Track user actions"
+            ]
+          ]
+        },
+        {
+          "title": "Common Threats",
+          "type": "text",
+          "content": "**External threats:**\n\u2022 Hackers and cybercriminals\n\u2022 Malware (viruses, ransomware)\n\u2022 Phishing and social engineering\n\u2022 Denial of service attacks\n\u2022 Advanced persistent threats (APT)\n\n**Internal threats:**\n\u2022 Malicious insiders\n\u2022 Accidental disclosure\n\u2022 Policy violations\n\u2022 Privilege misuse\n\n**Environmental threats:**\n\u2022 Natural disasters\n\u2022 Power failures\n\u2022 Hardware failures"
+        },
+        {
+          "title": "Security Control Categories",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Purpose",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Preventive",
+              "Stop threats before they occur",
+              "Firewalls, access controls"
+            ],
+            [
+              "Detective",
+              "Identify threats that occurred",
+              "IDS, logging, monitoring"
+            ],
+            [
+              "Corrective",
+              "Fix issues after detection",
+              "Patches, incident response"
+            ],
+            [
+              "Deterrent",
+              "Discourage threat actors",
+              "Warning banners, policies"
+            ],
+            [
+              "Compensating",
+              "Alternative when primary fails",
+              "Manual review when automated fails"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: CIA Triad",
+          "type": "callout",
+          "content": "**C**onfidentiality - Only authorized see it\n**I**ntegrity - It's accurate and unchanged\n**A**vailability - It's there when needed\n\n*Not to be confused with Certified Internal Auditor!*\n\n**Memory:** \"CIA protects your data from spies (C), lies (I), and downtime (A)\""
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CIA Triad: Confidentiality, Integrity, Availability",
+            "Additional principles: Authentication, Authorization, Non-repudiation",
+            "Threats: External (hackers), Internal (insiders), Environmental",
+            "Control types: Preventive, Detective, Corrective, Deterrent, Compensating",
+            "Defense in depth = multiple layers of security"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "CIA Triad Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following security controls is MOST directly related to ensuring data integrity?",
+            "options": [
+              "Encryption",
+              "Access Controls",
+              "Hashing",
+              "Classification"
+            ],
+            "correctIndex": 2,
+            "explanation": "Hashing algorithms generate a unique 'fingerprint' of data. If the data is altered, the hash value changes, indicating a loss of integrity. Encryption primarily focuses on confidentiality, access controls on confidentiality and availability, and classification on confidentiality.",
+            "hint": "Think about how you would know if data has been changed."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Security Threat Categories",
+          "reveal": {
+            "question": "Name the two primary categories of security threats discussed in this lesson.",
+            "answer": "The two primary categories are External Threats and Internal Threats."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Internal Threat Comparison",
+          "comparison": {
+            "headers": [
+              "Malicious Insider",
+              "Accidental Disclosure"
+            ],
+            "rows": [
+              {
+                "label": "Intent",
+                "values": [
+                  "Intentional harm or gain",
+                  "Unintentional mistake or negligence"
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Stealing sensitive data for personal profit",
+                  "Sending a confidential email to the wrong recipient"
+                ]
+              },
+              {
+                "label": "Mitigation",
+                "values": [
+                  "Background checks, monitoring, data loss prevention (DLP)",
+                  "Training, clear policies, data loss prevention (DLP)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-002",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Access Control and Identity Management",
+    "description": "Understand access control models, authentication, and authorization",
+    "order": 6,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Access control",
+      "Authentication",
+      "Authorization",
+      "Identity management"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Access control is the first line of defense! Understanding authentication methods and access models helps auditors evaluate whether the right people have the right access to the right resources."
+        },
+        {
+          "title": "Authentication Factors",
+          "type": "text",
+          "content": "**Something you KNOW:**\n\u2022 Passwords, PINs, security questions\n\n**Something you HAVE:**\n\u2022 Smart cards, tokens, mobile devices\n\n**Something you ARE:**\n\u2022 Fingerprints, facial recognition, iris scan\n\n**Multi-factor authentication (MFA):**\nCombines two or more different factor types\n(Two passwords = NOT MFA, both are \"know\")"
+        },
+        {
+          "title": "Access Control Models",
+          "type": "table",
+          "headers": [
+            "Model",
+            "Description",
+            "Use Case"
+          ],
+          "rows": [
+            [
+              "DAC (Discretionary)",
+              "Owner controls access to their resources",
+              "File sharing, general use"
+            ],
+            [
+              "MAC (Mandatory)",
+              "System enforces based on labels/clearance",
+              "Military, classified info"
+            ],
+            [
+              "RBAC (Role-Based)",
+              "Access based on job role",
+              "Enterprise environments"
+            ],
+            [
+              "ABAC (Attribute-Based)",
+              "Access based on multiple attributes",
+              "Complex, dynamic access"
+            ]
+          ]
+        },
+        {
+          "title": "Access Control Principles",
+          "type": "text",
+          "content": "**Least Privilege:**\n\u2022 Only access needed to perform job\n\u2022 Minimize attack surface\n\n**Need to Know:**\n\u2022 Access only to information required\n\u2022 Even with clearance, need justification\n\n**Separation of Duties:**\n\u2022 No single person controls entire process\n\u2022 Requires collusion for fraud\n\n**Defense in Depth:**\n\u2022 Multiple layers of security\n\u2022 If one fails, others protect"
+        },
+        {
+          "title": "Identity Management Lifecycle",
+          "type": "text",
+          "content": "**Provisioning:**\n\u2022 Create accounts when hired\n\u2022 Assign appropriate access\n\n**Maintenance:**\n\u2022 Update access as roles change\n\u2022 Periodic access reviews\n\n**De-provisioning:**\n\u2022 Remove access promptly on termination\n\u2022 Disable rather than delete (audit trail)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Access Control Models",
+          "type": "callout",
+          "content": "**DAC** - \"D\" for Discretionary, owner decides\n**MAC** - \"M\" for Military, labels/clearance\n**RBAC** - \"R\" for Role, job-based\n**ABAC** - \"A\" for Attributes, policy-based\n\n*\"Don't Make Rigid Access Barriers\" \u2192 DAC, MAC, RBAC, ABAC*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Authentication factors: Know, Have, Are",
+            "MFA requires different factor types",
+            "Access models: DAC, MAC, RBAC, ABAC",
+            "Principles: Least privilege, Need to know, Separation of duties",
+            "Lifecycle: Provision, Maintain, De-provision"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Authentication Factors - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios BEST exemplifies multi-factor authentication (MFA)?",
+            "options": [
+              "Entering a password followed by answering a security question.",
+              "Using a fingerprint scan to unlock a mobile device.",
+              "Entering a password and then entering a one-time passcode sent to a registered mobile device.",
+              "Using different passwords for various online accounts."
+            ],
+            "correctIndex": 2,
+            "explanation": "MFA requires using two or more DIFFERENT authentication factors. A password and a one-time passcode from a mobile device represent 'something you know' and 'something you have', respectively. Answering a security question is still 'something you know' and therefore not MFA.",
+            "hint": "Consider the categories of authentication factors."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Access Control Principles - Recall",
+          "reveal": {
+            "question": "What is the primary goal of the 'Least Privilege' principle?",
+            "answer": "To grant users only the minimum level of access required to perform their job functions, thereby minimizing the potential attack surface and limiting the damage that can be caused by a compromised account."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Need to Know vs. Least Privilege",
+          "comparison": {
+            "headers": [
+              "Need to Know",
+              "Least Privilege"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Information access",
+                  "System and application access"
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Ensuring users only have access to specific data required for their tasks, even if they have a general clearance.",
+                  "Ensuring users only have the necessary permissions to use specific systems and applications required for their job function."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "An employee with 'Secret' clearance still requires a valid business justification to access specific 'Secret' documents.",
+                  "A data entry clerk should only have access to the data entry application and not the system administration tools."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Identity Management Lifecycle - Scenario",
+          "knowledgeCheck": {
+            "question": "An internal auditor discovers that a former employee's account was deactivated but not de-provisioned from a critical financial system six months after their termination. This violates which aspect of the Identity Management Lifecycle?",
+            "options": [
+              "Provisioning",
+              "Maintenance",
+              "De-provisioning",
+              "Separation of Duties"
+            ],
+            "correctIndex": 2,
+            "explanation": "De-provisioning refers to the timely removal of access rights upon termination or role change. Failing to de-provision the account creates a significant security risk.",
+            "hint": "Think about what happens when an employee leaves the company."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-003",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Network and Data Security",
+    "description": "Understand network security controls and data protection measures",
+    "order": 7,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Network security",
+      "Encryption",
+      "Data protection",
+      "Security architecture"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Networks connect everything - and are prime targets for attack. Data protection including encryption is essential. Auditors must understand these controls to evaluate cyber risk!"
+        },
+        {
+          "title": "Network Security Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Placement"
+          ],
+          "rows": [
+            [
+              "Firewall",
+              "Filter traffic by rules",
+              "Network perimeter"
+            ],
+            [
+              "IDS/IPS",
+              "Detect/prevent intrusions",
+              "Network segments"
+            ],
+            [
+              "VPN",
+              "Encrypted tunnels",
+              "Remote access"
+            ],
+            [
+              "DMZ",
+              "Buffer zone for public services",
+              "Between internal/external"
+            ],
+            [
+              "NAC",
+              "Control device access",
+              "Network entry points"
+            ]
+          ]
+        },
+        {
+          "title": "Encryption Concepts",
+          "type": "text",
+          "content": "**Symmetric encryption:**\n\u2022 Same key encrypts and decrypts\n\u2022 Fast, efficient\n\u2022 Key distribution challenge\n\u2022 Examples: AES, DES, 3DES\n\n**Asymmetric encryption:**\n\u2022 Public key encrypts, Private key decrypts\n\u2022 Slower but solves key distribution\n\u2022 Examples: RSA, ECC\n\n**Hashing:**\n\u2022 One-way function, cannot reverse\n\u2022 Verifies integrity\n\u2022 Examples: SHA-256, MD5"
+        },
+        {
+          "title": "Data Protection",
+          "type": "text",
+          "content": "**Data at Rest:**\n\u2022 Full disk encryption\n\u2022 Database encryption\n\u2022 File-level encryption\n\n**Data in Transit:**\n\u2022 TLS/SSL for web traffic\n\u2022 VPN for network traffic\n\u2022 Encrypted email\n\n**Data in Use:**\n\u2022 Secure enclaves\n\u2022 Memory encryption\n\u2022 Application-level protection"
+        },
+        {
+          "title": "Data Classification",
+          "type": "table",
+          "headers": [
+            "Level",
+            "Description",
+            "Protection"
+          ],
+          "rows": [
+            [
+              "Public",
+              "No impact if disclosed",
+              "Minimal"
+            ],
+            [
+              "Internal",
+              "Not for public, low impact",
+              "Standard access controls"
+            ],
+            [
+              "Confidential",
+              "Significant impact if disclosed",
+              "Encryption, strict access"
+            ],
+            [
+              "Restricted/Secret",
+              "Severe impact if disclosed",
+              "Maximum protection"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Encryption Types",
+          "type": "callout",
+          "content": "**Symmetric** - \"S\" for Same key (one key)\n**Asymmetric** - \"A\" for Actually two keys (public/private)\n**Hashing** - \"H\" for Hash (one-way, can't reverse)\n\n*Symmetric is faster, Asymmetric solves key sharing*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Network controls: Firewalls, IDS/IPS, VPN, DMZ",
+            "Symmetric = one key, Asymmetric = two keys",
+            "Protect data at rest, in transit, and in use",
+            "Data classification drives protection level",
+            "Encryption is essential for confidentiality"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Symmetric vs. Asymmetric Encryption",
+          "knowledgeCheck": {
+            "question": "Which of the following is the PRIMARY reason asymmetric encryption is generally slower than symmetric encryption?",
+            "options": [
+              "Asymmetric encryption uses shorter key lengths.",
+              "Asymmetric encryption involves more complex mathematical computations.",
+              "Asymmetric encryption is typically used for bulk data encryption, unlike symmetric encryption.",
+              "Asymmetric encryption does not require key distribution."
+            ],
+            "correctIndex": 1,
+            "explanation": "Asymmetric encryption relies on complex mathematical operations, such as prime number factorization (RSA) or elliptic curve calculations (ECC), which are computationally intensive compared to the bitwise operations used in symmetric encryption. This greater complexity leads to slower processing speeds.",
+            "hint": "Consider the mathematical complexity of each type of encryption."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Hashing Functions",
+          "reveal": {
+            "question": "What is a key characteristic of a hashing function that makes it suitable for data integrity checks?",
+            "answer": "A hashing function is designed to be a one-way function, meaning that it is computationally infeasible to reverse the process and derive the original input data from the hash value. Additionally, a good hashing algorithm will have a low probability of producing the same hash for two different inputs (collision resistance)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Data Protection Methods",
+          "comparison": {
+            "headers": [
+              "Data at Rest",
+              "Data in Transit",
+              "Data in Use"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Protect data when stored physically or digitally",
+                  "Protect data while being transmitted across a network",
+                  "Protect data while it's being processed or accessed in memory"
+                ]
+              },
+              {
+                "label": "Common Techniques",
+                "values": [
+                  "Full disk encryption, Database encryption, File-level encryption",
+                  "TLS/SSL, VPNs, Encrypted email",
+                  "Secure enclaves, Memory encryption, Application-level protection"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "CIA Exam Style Question",
+          "knowledgeCheck": {
+            "question": "An internal auditor is reviewing an organization's data protection strategy. They observe that sensitive customer data is stored in a database without encryption. However, all network traffic to and from the database server is secured using TLS/SSL. Which of the following BEST describes the MOST significant vulnerability in this scenario?",
+            "options": [
+              "The lack of data encryption at rest creates a significant risk of unauthorized access if the database server is compromised.",
+              "The use of TLS/SSL provides adequate protection, making data-at-rest encryption unnecessary.",
+              "The organization's data protection strategy is adequate, as long as access controls are properly implemented.",
+              "The lack of data encryption in use is the most significant vulnerability."
+            ],
+            "correctIndex": 0,
+            "explanation": "While TLS/SSL protects data in transit, it does not protect data at rest. If an attacker gains unauthorized access to the database server (e.g., through a vulnerability or compromised credentials), the sensitive customer data would be readily accessible because it is not encrypted. Data at rest encryption is crucial to prevent unauthorized access in such scenarios.",
+            "hint": "Consider what happens if someone gains direct access to the storage medium."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-001",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "IT Governance and Operations",
+    "description": "Understand IT governance frameworks and operational management",
+    "order": 8,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "IT governance",
+      "COBIT",
+      "ITIL",
+      "IT operations"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT underpins every business process. Understanding IT governance frameworks and operations helps auditors evaluate whether IT supports organizational objectives and manages risks effectively."
+        },
+        {
+          "title": "IT Governance",
+          "type": "text",
+          "content": "**Definition:**\nThe processes that ensure IT supports and enables achievement of enterprise objectives.\n\n**Key elements:**\n\u2022 Strategic alignment with business\n\u2022 Value delivery from IT investments\n\u2022 Risk management\n\u2022 Resource optimization\n\u2022 Performance measurement"
+        },
+        {
+          "title": "IT Governance Frameworks",
+          "type": "table",
+          "headers": [
+            "Framework",
+            "Focus",
+            "Key Concept"
+          ],
+          "rows": [
+            [
+              "COBIT",
+              "IT governance and management",
+              "Governance vs Management objectives"
+            ],
+            [
+              "ITIL",
+              "IT service management",
+              "Service lifecycle"
+            ],
+            [
+              "ISO 27001",
+              "Information security management",
+              "ISMS certification"
+            ],
+            [
+              "NIST CSF",
+              "Cybersecurity framework",
+              "Identify, Protect, Detect, Respond, Recover"
+            ]
+          ]
+        },
+        {
+          "title": "COBIT Overview",
+          "type": "text",
+          "content": "**COBIT (Control Objectives for Information Technology):**\n\n**Governance objectives:**\n\u2022 Evaluate, Direct, Monitor (EDM)\n\n**Management objectives:**\n\u2022 Align, Plan, Organize (APO)\n\u2022 Build, Acquire, Implement (BAI)\n\u2022 Deliver, Service, Support (DSS)\n\u2022 Monitor, Evaluate, Assess (MEA)\n\n**Design factors** customize implementation to the organization."
+        },
+        {
+          "title": "ITIL Service Management",
+          "type": "text",
+          "content": "**ITIL (Information Technology Infrastructure Library):**\n\n**Service Value System practices:**\n\u2022 Service desk\n\u2022 Incident management\n\u2022 Problem management\n\u2022 Change enablement\n\u2022 Configuration management\n\u2022 Release management\n\n**Key concept:** IT delivers VALUE through SERVICES."
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: COBIT Domains",
+          "type": "callout",
+          "content": "**Governance:** EDM - \"Executives Direct and Monitor\"\n\n**Management:**\n\u2022 **A**PO - Align, Plan, Organize\n\u2022 **B**AI - Build, Acquire, Implement\n\u2022 **D**SS - Deliver, Service, Support\n\u2022 **M**EA - Monitor, Evaluate, Assess\n\n*\"Always Build, Deliver, and Measure\" - ABDM*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IT governance ensures IT supports business objectives",
+            "COBIT: Governance (EDM) and Management (APO, BAI, DSS, MEA)",
+            "ITIL focuses on IT service management",
+            "Common practices: Incident, Problem, Change management",
+            "Frameworks can be customized to organizational needs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COBIT Focus",
+          "knowledgeCheck": {
+            "question": "Which COBIT governance objective focuses primarily on providing direction and leadership for IT-related activities within an organization?",
+            "options": [
+              "Monitor, Evaluate, Assess (MEA)",
+              "Align, Plan, Organize (APO)",
+              "Evaluate, Direct, Monitor (EDM)",
+              "Deliver, Service, Support (DSS)"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Evaluate, Direct, Monitor (EDM) domain in COBIT is specifically concerned with ensuring that IT activities are aligned with business objectives and that IT resources are managed effectively. It provides the governance structure for IT.",
+            "hint": "Consider which objective is most concerned with setting the overall direction."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "ITIL's Core Purpose",
+          "reveal": {
+            "question": "According to ITIL, what is the fundamental way that IT contributes to an organization's success?",
+            "answer": "IT delivers VALUE through SERVICES. ITIL emphasizes that IT is not just about technology, but about providing services that meet business needs and create value for the organization."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "COBIT vs ITIL",
+          "comparison": {
+            "headers": [
+              "COBIT",
+              "ITIL"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "IT Governance and Management",
+                  "IT Service Management"
+                ]
+              },
+              {
+                "label": "Approach",
+                "values": [
+                  "Framework of control objectives",
+                  "Set of best practice guidance"
+                ]
+              },
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Ensure IT aligns with business goals and creates value",
+                  "Deliver high-quality IT services that meet business needs"
+                ]
+              },
+              {
+                "label": "Level",
+                "values": [
+                  "More high-level and strategic",
+                  "More operational and tactical"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Strategic Alignment",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST critical element of effective IT governance?",
+            "options": [
+              "Implementation of the latest technology",
+              "Strategic alignment with business objectives",
+              "Minimizing IT costs",
+              "Compliance with all IT regulations"
+            ],
+            "correctIndex": 1,
+            "explanation": "Strategic alignment with business objectives is paramount in IT governance. While the other options are important, they are secondary to ensuring that IT supports and enables the achievement of the organization's overall strategic goals.",
+            "hint": "Consider the fundamental purpose of IT governance."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-002",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "IT General Controls",
+    "description": "Understand IT general controls and their audit",
+    "order": 9,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "IT general controls",
+      "Change management",
+      "Logical access",
+      "Operations"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT general controls (ITGCs) are the foundation for reliable application controls. Weak ITGCs undermine ALL automated controls. Auditors must understand and test these controls!"
+        },
+        {
+          "title": "ITGC Categories",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Focus",
+            "Key Controls"
+          ],
+          "rows": [
+            [
+              "Logical Access",
+              "Who can access systems",
+              "User provisioning, password policies"
+            ],
+            [
+              "Change Management",
+              "How changes are made",
+              "Testing, approval, segregation"
+            ],
+            [
+              "Computer Operations",
+              "How systems run",
+              "Job scheduling, monitoring, backup"
+            ],
+            [
+              "Program Development",
+              "How systems are built",
+              "SDLC, testing, documentation"
+            ]
+          ]
+        },
+        {
+          "title": "Logical Access Controls",
+          "type": "text",
+          "content": "**Key controls:**\n\n\u2022 User access provisioning and approval\n\u2022 Password complexity requirements\n\u2022 Periodic access reviews\n\u2022 Privileged access management\n\u2022 Terminated user removal\n\u2022 Segregation of duties\n\n**Common issues:**\n\u2022 Excessive access\n\u2022 Shared accounts\n\u2022 Orphan accounts\n\u2022 Privileged access abuse"
+        },
+        {
+          "title": "Change Management Controls",
+          "type": "text",
+          "content": "**Change control process:**\n\n1. Request and document change\n2. Impact and risk assessment\n3. Testing in non-production\n4. Approval before production\n5. Implementation with rollback plan\n6. Post-implementation review\n\n**Key principle:**\nDevelopers should NOT have access to production!\n(Separation of environments)"
+        },
+        {
+          "title": "Computer Operations Controls",
+          "type": "text",
+          "content": "**Operational controls:**\n\n\u2022 Job scheduling and monitoring\n\u2022 Console logs and alerts\n\u2022 Backup and recovery\n\u2022 Problem/incident management\n\u2022 Capacity planning\n\u2022 Environmental controls (power, HVAC)\n\n**Backup types:**\n\u2022 Full - Everything\n\u2022 Incremental - Changed since last backup\n\u2022 Differential - Changed since last full"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: ITGC Categories",
+          "type": "callout",
+          "content": "**\"L-C-C-P\"**\n\n**L**ogical Access - WHO accesses\n**C**hange Management - HOW changes happen\n**C**omputer Operations - HOW systems run\n**P**rogram Development - HOW systems are built\n\n*\"Learn Controls, Control Problems\"*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ITGCs: Logical Access, Change Management, Operations, Development",
+            "Weak ITGCs undermine all automated controls",
+            "Separation: Developers should not access production",
+            "Access reviews should be periodic and documented",
+            "Change requires testing and approval before production"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Logical Access Controls",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios represents the GREATEST risk related to logical access controls?",
+            "options": [
+              "A terminated employee's access to the company's accounting system is revoked two weeks after their departure.",
+              "Several employees in the marketing department share a generic login to access a social media management tool.",
+              "Password complexity requirements are enforced, but users are allowed to reuse previously used passwords after 12 months.",
+              "Periodic access reviews are conducted annually by department managers."
+            ],
+            "correctIndex": 1,
+            "explanation": "Shared accounts hinder accountability and auditing capabilities. It is impossible to determine which individual performed specific actions, increasing the risk of fraud or unintentional errors and impeding investigations. The other options represent weaknesses but are not the GREATEST risk.",
+            "hint": "Think about which scenario makes it the hardest to track who did what."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Change Management",
+          "reveal": {
+            "question": "List the six key steps in a typical change control process.",
+            "answer": "1. Request and document change\n2. Impact and risk assessment\n3. Testing in non-production\n4. Approval before production\n5. Implementation with rollback plan\n6. Post-implementation review"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Backup Types: Incremental vs. Differential",
+          "comparison": {
+            "headers": [
+              "Incremental Backup",
+              "Differential Backup"
+            ],
+            "rows": [
+              {
+                "label": "What it backs up",
+                "values": [
+                  "Changes since the *last* backup (full or incremental)",
+                  "Changes since the *last full* backup"
+                ]
+              },
+              {
+                "label": "Backup Time",
+                "values": [
+                  "Fastest backup time",
+                  "Slower than incremental, faster than full"
+                ]
+              },
+              {
+                "label": "Restore Time",
+                "values": [
+                  "Slowest restore time (requires last full and all incremental backups since)",
+                  "Faster restore time (requires last full and last differential backup)"
+                ]
+              },
+              {
+                "label": "Storage Space",
+                "values": [
+                  "Least storage space",
+                  "More storage space than incremental"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Computer Operations Controls",
+          "knowledgeCheck": {
+            "question": "Which of the following operational controls is MOST critical for ensuring business continuity in the event of a server failure?",
+            "options": [
+              "Regular job scheduling and monitoring.",
+              "Comprehensive backup and recovery procedures.",
+              "Detailed console logs and alerts.",
+              "Accurate capacity planning."
+            ],
+            "correctIndex": 1,
+            "explanation": "Backup and recovery procedures are the MOST critical for business continuity as they allow for the restoration of systems and data after a failure. While the other options are important operational controls, they do not directly address the immediate need to restore operations after a server failure. Job scheduling ensures tasks run as needed, console logs help with troubleshooting, and capacity planning helps prevent future failures, but none can restore the system in the event of failure.",
+            "hint": "Which option focuses on getting back up and running after something goes wrong?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-001",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Financial Accounting Concepts",
+    "description": "Understand financial statements, accounting principles, and key ratios",
+    "order": 10,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Financial statements",
+      "GAAP",
+      "Accrual accounting",
+      "Financial ratios"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Internal auditors must understand financial statements to evaluate controls over financial reporting. Financial analysis skills help identify unusual patterns and assess organizational health!"
+        },
+        {
+          "title": "Primary Financial Statements",
+          "type": "table",
+          "headers": [
+            "Statement",
+            "Purpose",
+            "Key Elements"
+          ],
+          "rows": [
+            [
+              "Balance Sheet",
+              "Financial position at a point in time",
+              "Assets = Liabilities + Equity"
+            ],
+            [
+              "Income Statement",
+              "Performance over a period",
+              "Revenue - Expenses = Net Income"
+            ],
+            [
+              "Cash Flow Statement",
+              "Cash movements over a period",
+              "Operating, Investing, Financing"
+            ],
+            [
+              "Statement of Equity",
+              "Changes in ownership interest",
+              "Beginning + NI - Dividends \u00b1 Other"
+            ]
+          ]
+        },
+        {
+          "title": "Fundamental Accounting Principles",
+          "type": "text",
+          "content": "**Accrual Basis:**\n\u2022 Recognize revenue when earned\n\u2022 Recognize expenses when incurred\n\u2022 Not when cash changes hands\n\n**Key Principles:**\n\u2022 **Going concern** - Assume continued operations\n\u2022 **Matching** - Match expenses to related revenue\n\u2022 **Conservatism** - When uncertain, be cautious\n\u2022 **Materiality** - Focus on significant items\n\u2022 **Consistency** - Same methods over time"
+        },
+        {
+          "title": "Financial Ratios",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Ratio",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Liquidity",
+              "Current Ratio",
+              "Current Assets / Current Liabilities"
+            ],
+            [
+              "Liquidity",
+              "Quick Ratio",
+              "(CA - Inventory) / CL"
+            ],
+            [
+              "Profitability",
+              "Gross Margin",
+              "(Sales - COGS) / Sales"
+            ],
+            [
+              "Profitability",
+              "Net Profit Margin",
+              "Net Income / Sales"
+            ],
+            [
+              "Leverage",
+              "Debt-to-Equity",
+              "Total Debt / Total Equity"
+            ],
+            [
+              "Activity",
+              "Inventory Turnover",
+              "COGS / Average Inventory"
+            ]
+          ]
+        },
+        {
+          "title": "Understanding the Cash Flow Statement",
+          "type": "text",
+          "content": "**Operating Activities:**\n\u2022 Day-to-day business operations\n\u2022 Net income adjusted for non-cash items\n\u2022 Changes in working capital\n\n**Investing Activities:**\n\u2022 Purchase/sale of long-term assets\n\u2022 Investment acquisitions/disposals\n\n**Financing Activities:**\n\u2022 Borrowing/repaying debt\n\u2022 Issuing/repurchasing stock\n\u2022 Dividend payments"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Accounting Equation",
+          "type": "callout",
+          "content": "**A = L + E**\n\n**A**ssets = **L**iabilities + **E**quity\n\n*What we HAVE = What we OWE + What we OWN*\n\nThis ALWAYS balances - that's why it's called a Balance Sheet!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four financial statements: Balance Sheet, Income Statement, Cash Flow, Equity",
+            "Accrual basis: Recognize when earned/incurred, not when cash moves",
+            "A = L + E (Assets = Liabilities + Equity)",
+            "Key ratios: Liquidity, Profitability, Leverage, Activity",
+            "Cash flow has three sections: Operating, Investing, Financing"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Accrual Accounting Application",
+          "knowledgeCheck": {
+            "question": "A company performed services for a client in December, with payment to be received in January. Under accrual accounting, when should the revenue be recognized?",
+            "options": [
+              "When the cash is received in January.",
+              "When the services are performed in December.",
+              "When the invoice is sent to the client.",
+              "When the contract for services is signed."
+            ],
+            "correctIndex": 1,
+            "explanation": "Under accrual accounting, revenue is recognized when earned, regardless of when cash is received. Since the services were performed in December, the revenue should be recognized in December.",
+            "hint": "Think about the core principle of accrual accounting: revenue recognition."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Going Concern Assumption",
+          "reveal": {
+            "question": "What is the fundamental assumption underlying financial statements when the 'going concern' principle is applied?",
+            "answer": "The assumption that the entity will continue to operate for the foreseeable future, typically at least 12 months from the balance sheet date. This assumption justifies valuing assets based on their historical cost less depreciation rather than liquidation value."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Operating vs. Investing Activities",
+          "comparison": {
+            "headers": [
+              "Operating Activities",
+              "Investing Activities"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Day-to-day activities that generate revenue and expenses.",
+                  "Activities related to the purchase and sale of long-term assets and investments."
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Cash receipts from sales, cash payments to suppliers and employees.",
+                  "Purchase of property, plant, and equipment (PP&E), sale of securities."
+                ]
+              },
+              {
+                "label": "Impact on Assets",
+                "values": [
+                  "Primarily affect current assets and liabilities (working capital).",
+                  "Primarily affect long-term assets."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Impact of Conservatism",
+          "knowledgeCheck": {
+            "question": "Which of the following is an example of applying the principle of conservatism in financial accounting?",
+            "options": [
+              "Recognizing revenue when cash is received, regardless of when earned.",
+              "Recognizing a potential loss immediately, even if uncertain, and delaying recognition of a potential gain until it is realized.",
+              "Valuing assets at their replacement cost.",
+              "Ignoring immaterial errors in financial statements."
+            ],
+            "correctIndex": 1,
+            "explanation": "Conservatism dictates recognizing potential losses promptly while delaying recognition of potential gains. This approach aims to avoid overstating assets and income.",
+            "hint": "Consider how the principle affects asset and liability valuation."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-002",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Managerial Accounting",
+    "description": "Understand cost accounting, budgeting, and performance measurement",
+    "order": 11,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cost accounting",
+      "Budgeting",
+      "Variance analysis",
+      "Performance measurement"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Managerial accounting provides information for internal decision-making. Understanding cost behavior, budgets, and variances helps auditors evaluate operational performance and financial controls!"
+        },
+        {
+          "title": "Cost Classifications",
+          "type": "table",
+          "headers": [
+            "Classification",
+            "Types",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "By Behavior",
+              "Fixed, Variable, Mixed",
+              "Rent (F), Materials (V), Utilities (M)"
+            ],
+            [
+              "By Function",
+              "Product, Period",
+              "Manufacturing (Product), Admin (Period)"
+            ],
+            [
+              "By Traceability",
+              "Direct, Indirect",
+              "Direct labor, Overhead"
+            ],
+            [
+              "For Decisions",
+              "Relevant, Sunk",
+              "Future costs (R), Past costs (S)"
+            ]
+          ]
+        },
+        {
+          "title": "Cost-Volume-Profit Analysis",
+          "type": "text",
+          "content": "**Contribution Margin:**\nSales - Variable Costs = CM\n\n**Break-Even Point:**\nFixed Costs / CM per unit = Break-even units\nFixed Costs / CM ratio = Break-even sales $\n\n**Target Profit:**\n(Fixed Costs + Target Profit) / CM per unit = Required units"
+        },
+        {
+          "title": "Budgeting Process",
+          "type": "text",
+          "content": "**Master budget components:**\n\n**Operating budgets:**\n\u2022 Sales budget (starting point)\n\u2022 Production budget\n\u2022 Direct materials, labor, overhead\n\u2022 Operating expense\n\n**Financial budgets:**\n\u2022 Cash budget\n\u2022 Budgeted balance sheet\n\u2022 Budgeted income statement\n\n**Budget types:**\n\u2022 Static - Fixed targets\n\u2022 Flexible - Adjusts for volume\n\u2022 Zero-based - Start from zero each period"
+        },
+        {
+          "title": "Variance Analysis",
+          "type": "table",
+          "headers": [
+            "Variance",
+            "Formula",
+            "Favorable When"
+          ],
+          "rows": [
+            [
+              "Price/Rate",
+              "(Actual - Standard) \u00d7 Actual Qty",
+              "Actual < Standard"
+            ],
+            [
+              "Quantity/Efficiency",
+              "(Actual - Standard) \u00d7 Standard Price",
+              "Actual < Standard"
+            ],
+            [
+              "Volume",
+              "Budgeted - Applied",
+              "Actual > Budget"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Break-Even",
+          "type": "callout",
+          "content": "**Break-Even = Fixed Costs \u00f7 CM**\n\n*Think: How much contribution margin do I need to COVER my fixed costs?*\n\n**CM = Sales - Variable Costs**\n*What's left after variable costs to cover fixed and profit*"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Costs: Fixed, Variable, Mixed; Direct, Indirect; Relevant, Sunk",
+            "Break-even: Fixed Costs / Contribution Margin",
+            "Master budget starts with sales forecast",
+            "Flexible budgets adjust for actual volume",
+            "Variances: Price/Rate and Quantity/Efficiency"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cost-Volume-Profit Analysis: Break-Even Point",
+          "knowledgeCheck": {
+            "question": "A company has fixed costs of $200,000 and a contribution margin ratio of 40%. What is the break-even point in sales dollars?",
+            "options": [
+              "$500,000",
+              "$80,000",
+              "$800,000",
+              "$280,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "The break-even point in sales dollars is calculated as Fixed Costs / Contribution Margin Ratio. In this case, $200,000 / 0.40 = $500,000.",
+            "hint": "Remember the formula: Break-even sales $ = Fixed Costs / CM ratio"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Master Budget Components",
+          "reveal": {
+            "question": "What budget is typically considered the 'starting point' in the master budget process?",
+            "answer": "The Sales Budget. It drives the production budget and subsequent operating budgets."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Static vs. Flexible Budgets",
+          "comparison": {
+            "headers": [
+              "Static Budget",
+              "Flexible Budget"
+            ],
+            "rows": [
+              {
+                "label": "Activity Level",
+                "values": [
+                  "Based on a single, fixed level of activity.",
+                  "Adjusted to the actual level of activity achieved."
+                ]
+              },
+              {
+                "label": "Variance Analysis",
+                "values": [
+                  "Compares actual results to the original budgeted amounts.",
+                  "Compares actual results to the budget adjusted for actual activity, providing a more accurate variance analysis."
+                ]
+              },
+              {
+                "label": "Usefulness for Performance Evaluation",
+                "values": [
+                  "Limited use for performance evaluation when actual activity differs significantly from planned activity.",
+                  "Better suited for performance evaluation as it isolates variances due to efficiency and cost control, not just activity level changes."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Target Profit Calculation",
+          "knowledgeCheck": {
+            "question": "A company wants to achieve a target profit of $100,000. Their fixed costs are $50,000, and their contribution margin per unit is $10. How many units must they sell to achieve their target profit?",
+            "options": [
+              "5,000 units",
+              "10,000 units",
+              "15,000 units",
+              "20,000 units"
+            ],
+            "correctIndex": 2,
+            "explanation": "The formula to calculate required units is (Fixed Costs + Target Profit) / CM per unit.  Therefore, ($50,000 + $100,000) / $10 = 15,000 units.",
+            "hint": "Remember to add the target profit to the fixed costs before dividing by the contribution margin per unit."
+          }
+        }
+      ]
+    }
+  }
+]

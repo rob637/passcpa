@@ -1,0 +1,1379 @@
+[
+  {
+    "id": "CFP-PSY-L006",
+    "courseId": "cfp",
+    "section": "CFP-PSY",
+    "blueprintArea": "PSY-2",
+    "title": "Financial Counseling Skills",
+    "description": "Apply motivational interviewing techniques to financial planning",
+    "order": 6,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Motivational interviewing techniques",
+      "Recognizing readiness for change vs. resistance",
+      "Reframing techniques",
+      "Boundaries between planning and therapy"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "CFP\u00ae professionals need counseling skills to help clients translate goals into action. This lesson covers techniques that bridge the gap between planning and implementation."
+        },
+        {
+          "title": "Motivational Interviewing (MI)",
+          "type": "text",
+          "content": "A collaborative, client-centered approach that helps resolve ambivalence about change."
+        },
+        {
+          "title": "The Spirit of MI",
+          "type": "table",
+          "headers": [
+            "Element",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Partnership",
+              "Work with, not on, the client",
+              "\"Let's explore this together\""
+            ],
+            [
+              "Acceptance",
+              "Respect autonomy and worth",
+              "\"You're the expert on your own life\""
+            ],
+            [
+              "Compassion",
+              "Prioritize client welfare",
+              "Focus on their goals, not yours"
+            ],
+            [
+              "Evocation",
+              "Draw out client's motivation",
+              "\"What reasons do you see for making a change?\""
+            ]
+          ]
+        },
+        {
+          "title": "Core Skills (OARS)",
+          "type": "list",
+          "items": [
+            "Open-ended questions: \"What would be different if you were debt-free?\"",
+            "Affirmations: \"It took courage to share that with me\"",
+            "Reflections: \"It sounds like you're feeling torn between...\"",
+            "Summaries: \"Let me make sure I've captured what you've shared...\""
+          ]
+        },
+        {
+          "title": "Stages of Change Model",
+          "type": "table",
+          "headers": [
+            "Stage",
+            "Client Mindset",
+            "Planner Approach"
+          ],
+          "rows": [
+            [
+              "Precontemplation",
+              "\"I don't have a problem\"",
+              "Raise awareness gently, don't push"
+            ],
+            [
+              "Contemplation",
+              "\"Maybe I should...\"",
+              "Explore pros/cons, tip the balance"
+            ],
+            [
+              "Preparation",
+              "\"I'm going to do this\"",
+              "Plan specific steps, set timeline"
+            ],
+            [
+              "Action",
+              "\"I'm doing it\"",
+              "Support, troubleshoot, celebrate wins"
+            ],
+            [
+              "Maintenance",
+              "\"I've been doing it\"",
+              "Prevent relapse, reinforce identity"
+            ],
+            [
+              "Relapse",
+              "\"I slipped\"",
+              "Normalize, learn, restart"
+            ]
+          ]
+        },
+        {
+          "title": "Key Insight",
+          "type": "callout",
+          "content": "Meeting clients where they are\u2014not where you want them to be\u2014is essential for lasting change."
+        },
+        {
+          "title": "Matching Interventions to Stages",
+          "type": "table",
+          "headers": [
+            "Stage",
+            "Ineffective",
+            "Effective"
+          ],
+          "rows": [
+            [
+              "Precontemplation",
+              "\"You need to start saving now\"",
+              "\"What do you imagine retirement looking like?\""
+            ],
+            [
+              "Contemplation",
+              "\"Here's your savings plan\"",
+              "\"What would need to happen for you to feel ready?\""
+            ],
+            [
+              "Action",
+              "\"You already know this\"",
+              "\"How's the first month going? What's working?\""
+            ]
+          ]
+        },
+        {
+          "title": "Reframing Techniques",
+          "type": "table",
+          "headers": [
+            "Client Statement",
+            "Reframe"
+          ],
+          "rows": [
+            [
+              "\"I can't afford to save\"",
+              "\"What would happen if we paid your future self first?\""
+            ],
+            [
+              "\"I'm terrible with money\"",
+              "\"You've been making choices without a system\u2014let's build one\""
+            ],
+            [
+              "\"The market is too scary\"",
+              "\"Volatility is the price of admission for long-term returns\""
+            ],
+            [
+              "\"I'll never retire\"",
+              "\"Let's see what's possible with some adjustments\""
+            ]
+          ]
+        },
+        {
+          "title": "When to Reframe (and When NOT)",
+          "type": "list",
+          "items": [
+            "When to reframe: Client is stuck in limiting beliefs, perspective is overly negative or catastrophizing, client can't see options or alternatives",
+            "When NOT to reframe: Client is processing a genuine loss, the situation actually is dire and needs addressing, reframe would feel dismissive"
+          ]
+        },
+        {
+          "title": "Boundaries: Planning vs. Therapy",
+          "type": "table",
+          "headers": [
+            "Situation",
+            "Action"
+          ],
+          "rows": [
+            [
+              "Signs of clinical depression/anxiety",
+              "Suggest professional support"
+            ],
+            [
+              "Marital conflict dominates sessions",
+              "Recommend couples counselor"
+            ],
+            [
+              "Grief preventing all decision-making",
+              "Connect with grief counselor"
+            ],
+            [
+              "Addictive behaviors (gambling, spending)",
+              "Refer to specialist"
+            ],
+            [
+              "Past trauma driving financial decisions",
+              "Therapeutic support needed"
+            ]
+          ]
+        },
+        {
+          "title": "How to Refer Gracefully",
+          "type": "example",
+          "content": "\"I've noticed you're dealing with a lot beyond finances right now. I want to make sure you have all the support you need. Would you be open to talking with someone who specializes in [X]?\""
+        },
+        {
+          "title": "What CFPs CAN Do",
+          "type": "list",
+          "items": [
+            "Listen with empathy",
+            "Validate emotions",
+            "Help process financial aspects of life events",
+            "Coach on behavior change",
+            "Provide structure and accountability"
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "content": [
+            "Motivational interviewing is collaborative, not prescriptive",
+            "Stages of change guide intervention\u2014meet clients where they are",
+            "Reframing helps shift limiting beliefs when appropriate",
+            "Know your boundaries\u2014refer when mental health issues exceed planning scope",
+            "OARS skills (Open questions, Affirmations, Reflections, Summaries) are essential"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Motivational Interviewing Techniques",
+          "knowledgeCheck": {
+            "question": "Which of the following is the BEST example of a financial planner using motivational interviewing techniques to address a client's ambivalence about saving for retirement?",
+            "options": [
+              "A. 'You really need to start saving more for retirement. If you don't, you'll be in serious trouble later on.'",
+              "B. 'So, on one hand, you enjoy spending money on travel now. On the other hand, you're concerned about having enough money in retirement. What are your thoughts on this?'",
+              "C. 'I've run the numbers, and you're significantly behind on your retirement savings goals. We need to cut your expenses drastically.'",
+              "D. 'Let's just focus on investing more aggressively. That should solve the problem without having to change your spending habits.'"
+            ],
+            "correctIndex": 1,
+            "explanation": "Option B demonstrates the core of motivational interviewing by acknowledging and exploring the client's ambivalence (the desire for both spending and saving). It encourages the client to self-reflect and voice their own reasons for change. The other options are directive and fail to elicit the client's own motivations.",
+            "hint": "Consider which option focuses on exploring the client's own perspective and motivation, rather than directly telling them what to do."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Readiness for Change vs. Resistance",
+          "reveal": {
+            "question": "Define 'resistance' in the context of financial counseling.",
+            "answer": "In financial counseling, resistance refers to a client's behaviors and statements that indicate reluctance or unwillingness to engage in the financial planning process or to implement recommended changes. This can manifest as arguing, interrupting, ignoring, or minimizing the importance of financial issues. It is often a sign that the client is not yet ready to change."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Planning vs. Therapy Boundaries",
+          "comparison": {
+            "headers": [
+              "Financial Planning",
+              "Therapy"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Financial goals and strategies",
+                  "Emotional and psychological well-being"
+                ]
+              },
+              {
+                "label": "Expertise",
+                "values": [
+                  "Financial knowledge and planning skills",
+                  "Psychological principles and therapeutic techniques"
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Financial matters",
+                  "Broader life issues, including mental health"
+                ]
+              },
+              {
+                "label": "Licensing",
+                "values": [
+                  "Requires financial licenses (e.g., Series 7, CFP\u00ae)",
+                  "Requires therapy licenses (e.g., LPC, LCSW)"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Reframing Techniques",
+          "knowledgeCheck": {
+            "question": "A client states, 'I'm terrible with money. I always overspend.' Which of the following is the BEST example of reframing this statement?",
+            "options": [
+              "A. 'Yes, you do seem to have a problem with overspending.'",
+              "B. 'It sounds like you're frustrated with your current spending habits. Let's explore what's important to you and how we can align your spending with those values.'",
+              "C. 'Everyone struggles with money sometimes. It's not just you.'",
+              "D. 'You just need to be more disciplined.'"
+            ],
+            "correctIndex": 1,
+            "explanation": "Option B reframes the client's negative self-perception ('I'm terrible with money') into an opportunity for growth and alignment with their values. It acknowledges the client's feelings and suggests a collaborative approach to address the underlying issue. The other options are dismissive, judgmental, or fail to offer a constructive alternative perspective.",
+            "hint": "Consider which option transforms the negative statement into something more positive and actionable."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-PSY-L007",
+    "courseId": "cfp",
+    "section": "CFP-PSY",
+    "blueprintArea": "PSY-2",
+    "title": "Working with Couples and Families",
+    "description": "Identify common sources of money conflict between partners",
+    "order": 7,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Money conflict between partners",
+      "Facilitating productive couple discussions",
+      "Family dynamics in financial planning",
+      "Navigating different partner goals"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Money is a leading source of relationship conflict. CFP\u00ae professionals often mediate between partners with different values, goals, and styles."
+        },
+        {
+          "title": "Sources of Money Conflict",
+          "type": "list",
+          "items": [
+            "Different Money Scripts: Money Avoider vs. Money Vigilant (A ignores finances; B obsesses), Money Status vs. Money Worship (both overspend for different reasons)",
+            "Different Risk Tolerances: One partner wants aggressive growth, other wants capital preservation\u2014neither is \"wrong\" but compromise is needed",
+            "Different Life Experiences: One grew up wealthy, one grew up poor; one experienced financial trauma (bankruptcy, foreclosure); different cultural backgrounds",
+            "Power Imbalances: Income disparity, one partner handles all finances, historical control patterns"
+          ]
+        },
+        {
+          "title": "Ground Rules for Couple Discussions",
+          "type": "list",
+          "items": [
+            "No blame or criticism\u2014focus on going forward",
+            "Both partners speak\u2014actively solicit quieter partner's views",
+            "Acknowledge feelings\u2014\"I can see this is frustrating for you\"",
+            "Focus on shared goals\u2014find common ground first",
+            "Use \"I\" statements\u2014\"I worry about...\" not \"You always...\""
+          ]
+        },
+        {
+          "title": "The Planner's Role with Couples",
+          "type": "table",
+          "headers": [
+            "DO",
+            "DON'T"
+          ],
+          "rows": [
+            [
+              "Facilitate balanced dialogue",
+              "Take sides"
+            ],
+            [
+              "Reflect each partner's perspective",
+              "Let one partner dominate"
+            ],
+            [
+              "Find common ground",
+              "Impose your own values"
+            ],
+            [
+              "Ask clarifying questions",
+              "Assume you understand"
+            ],
+            [
+              "Summarize agreements",
+              "Ignore disagreements"
+            ]
+          ]
+        },
+        {
+          "title": "Techniques for Stuck Conversations",
+          "type": "list",
+          "items": [
+            "The Columbo Approach: \"Help me understand\u2014when you say 'comfortable retirement,' what does that look like to you? [To partner] And what about you?\"",
+            "Scaling: \"On a scale of 1-10, how important is leaving an inheritance?\" (Ask both separately)",
+            "Future Pacing: \"Fast forward 10 years. What will you wish you had done?\""
+          ]
+        },
+        {
+          "title": "When Partners Disagree",
+          "type": "text",
+          "content": "Prioritize shared goals first. Often couples agree on ends but disagree on means: Both want kids' education funded\u2014disagree on how much. Both want comfortable retirement\u2014disagree on spending now. Use numbers to clarify trade-offs: \"If we fund 100% of college, retirement happens at 67. At 50% college funding, retirement at 64. What matters more?\""
+        },
+        {
+          "title": "Compromise Frameworks",
+          "type": "table",
+          "headers": [
+            "Approach",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Split the difference",
+              "One wants $50K emergency fund, other wants $20K\u2014agree on $35K"
+            ],
+            [
+              "Alternate decisions",
+              "\"You choose the vacation budget, I'll choose the car budget\""
+            ],
+            [
+              "Pilot periods",
+              "\"Let's try your approach for 6 months and evaluate\""
+            ],
+            [
+              "Separate accounts",
+              "Individual \"no-judgment\" spending accounts within shared framework"
+            ]
+          ]
+        },
+        {
+          "title": "When Compromise Fails",
+          "type": "warning",
+          "content": "If partners fundamentally disagree on major issues (children, work, location), financial planning may need to pause until they resolve underlying conflicts."
+        },
+        {
+          "title": "Multi-Generational Planning",
+          "type": "table",
+          "headers": [
+            "Pattern",
+            "Description",
+            "Planning Impact"
+          ],
+          "rows": [
+            [
+              "Golden Child",
+              "One child favored",
+              "Inheritance conflict"
+            ],
+            [
+              "Black Sheep",
+              "One child excluded/blamed",
+              "Estate disputes"
+            ],
+            [
+              "Enmeshment",
+              "Boundaries blurred",
+              "Adult children expect support"
+            ],
+            [
+              "Cutoff",
+              "Family members estranged",
+              "Beneficiary complications"
+            ]
+          ]
+        },
+        {
+          "title": "Facilitating Family Meetings",
+          "type": "list",
+          "items": [
+            "Clarify purpose and agenda in advance",
+            "Establish ground rules",
+            "Manage dominant personalities",
+            "Ensure all voices are heard",
+            "Document agreements in writing"
+          ]
+        },
+        {
+          "title": "Inheritance Conversations",
+          "type": "list",
+          "items": [
+            "Help parents think through: Equal vs. equitable distribution?",
+            "How to communicate intentions?",
+            "Potential for conflict after death?",
+            "Special situations (disabled child, addiction, blended family)?"
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "content": [
+            "Money conflict often stems from different scripts, experiences, or power dynamics",
+            "Facilitate, don't arbitrate\u2014your job is productive dialogue, not judging",
+            "Find shared goals first, then work on differing means",
+            "Numbers clarify trade-offs when words fail",
+            "Multi-generational planning requires understanding family dynamics"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Money Conflict in Relationships: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "A CFP\u00ae professional is working with a couple, Sarah and Tom. Sarah is a saver and prioritizes long-term financial security, while Tom is a spender who enjoys immediate gratification. During a financial planning meeting, they begin to argue about the allocation of their disposable income. Which of the following is the MOST appropriate initial step for the CFP\u00ae professional to take?",
+            "options": [
+              "Immediately suggest a detailed budget that equally distributes disposable income between saving and spending.",
+              "Actively listen to both Sarah and Tom, acknowledge their differing perspectives, and help them identify the underlying values driving their financial behaviors.",
+              "Side with Sarah, emphasizing the importance of saving for retirement and other long-term goals.",
+              "Refer the couple to a marriage counselor, as their financial conflict indicates a deeper relationship issue."
+            ],
+            "correctIndex": 1,
+            "explanation": "The most appropriate initial step is to facilitate a productive discussion by actively listening and helping them understand the root causes of their differing financial behaviors. This approach allows the CFP\u00ae professional to mediate effectively and guide them towards a mutually agreeable solution. Imposing a budget (A) or taking sides (C) can escalate the conflict. While relationship issues might exist (D), addressing the financial conflict directly is the immediate priority.",
+            "hint": "Consider the CFP\u00ae professional's role as a facilitator and mediator in this situation."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Productive Couple Discussions: Key Elements",
+          "reveal": {
+            "question": "List three key elements that a CFP\u00ae professional should incorporate when facilitating a productive financial discussion between partners with conflicting money styles.",
+            "answer": "1. Active Listening: Ensuring each partner feels heard and understood.\n2. Identifying Underlying Values: Helping partners understand the motivations behind their financial behaviors.\n3. Finding Common Ground: Focusing on shared goals and values to create a foundation for compromise."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Partner Financial Goals: Similarities and Differences",
+          "comparison": {
+            "headers": [
+              "Individual Financial Goals",
+              "Shared Financial Goals"
+            ],
+            "rows": [
+              {
+                "label": "Examples",
+                "values": [
+                  "Pursuing a personal hobby, early retirement for one partner",
+                  "Buying a house together, funding children's education"
+                ]
+              },
+              {
+                "label": "Impact on Planning",
+                "values": [
+                  "Requires personalized strategies and individual accounts.",
+                  "Requires collaborative planning and joint accounts."
+                ]
+              },
+              {
+                "label": "Conflict Potential",
+                "values": [
+                  "Can lead to conflict if individual goals are prioritized over shared goals.",
+                  "Can lead to conflict if one partner feels their needs are not being met within the shared goals."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-PSY-L008",
+    "courseId": "cfp",
+    "section": "CFP-PSY",
+    "blueprintArea": "PSY-1",
+    "title": "Special Populations in Financial Planning",
+    "description": "Adapt planning approaches for elderly clients and cognitive decline",
+    "order": 8,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Elderly clients and cognitive decline",
+      "Financial exploitation signs and responses",
+      "Divorcing clients needs",
+      "Clients with disabilities and special needs"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Different life circumstances require adapted approaches. This lesson covers planning considerations for elderly clients, divorcing individuals, and those with disabilities."
+        },
+        {
+          "title": "Risk Factors for Cognitive Decline",
+          "type": "list",
+          "items": [
+            "Age 65+: risk increases significantly with each decade",
+            "Family history of dementia",
+            "Cardiovascular risk factors",
+            "Social isolation"
+          ]
+        },
+        {
+          "title": "Warning Signs During Meetings",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Signs"
+          ],
+          "rows": [
+            [
+              "Memory",
+              "Repeating questions, forgetting recent discussions"
+            ],
+            [
+              "Judgment",
+              "Unusual decisions, susceptibility to scams"
+            ],
+            [
+              "Confusion",
+              "Getting lost, not recognizing familiar people"
+            ],
+            [
+              "Personality",
+              "Sudden changes, increased anxiety or apathy"
+            ],
+            [
+              "Finances",
+              "Unpaid bills, missing money, disorganized records"
+            ]
+          ]
+        },
+        {
+          "title": "Proactive Planning While Client is Competent",
+          "type": "list",
+          "items": [
+            "Establish durable power of attorney",
+            "Introduce trusted contact person",
+            "Simplify finances (fewer accounts)",
+            "Document current wishes and values",
+            "Discuss \"what if\" scenarios"
+          ]
+        },
+        {
+          "title": "When Decline is Suspected",
+          "type": "list",
+          "items": [
+            "Involve trusted family members (with permission)",
+            "Slow down decisions\u2014no urgency",
+            "Simplify recommendations",
+            "Document conversations thoroughly",
+            "Consider capacity assessment referral"
+          ]
+        },
+        {
+          "title": "Common Financial Exploitation Scenarios",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Warning Signs"
+          ],
+          "rows": [
+            [
+              "Family exploitation",
+              "Relatives taking advantage",
+              "Sudden POA changes, isolation from others"
+            ],
+            [
+              "Caregiver exploitation",
+              "Paid helpers taking money",
+              "Unusual withdrawals, new \"best friend\""
+            ],
+            [
+              "Romance scams",
+              "Online relationship cons",
+              "Secret new partner, wire transfers"
+            ],
+            [
+              "Sweepstakes/lottery scams",
+              "Pay to collect \"winnings\"",
+              "Multiple checks to unknown parties"
+            ],
+            [
+              "Contractor fraud",
+              "Overcharging for services",
+              "Cash payments, unnecessary work"
+            ]
+          ]
+        },
+        {
+          "title": "CFP\u00ae Professional Responsibilities for Exploitation",
+          "type": "list",
+          "items": [
+            "Report suspected exploitation to adult protective services (in many states, mandatory)",
+            "Document concerning behaviors and conversations",
+            "Delay suspicious transactions when possible",
+            "Involve trusted contacts or family",
+            "Know your firm's procedures"
+          ]
+        },
+        {
+          "title": "Sample Difficult Conversation",
+          "type": "example",
+          "content": "\"Mrs. Johnson, I'm concerned about some of the transactions I'm seeing. You've sent $15,000 to someone you met online. Can we talk about this?\""
+        },
+        {
+          "title": "Divorcing Clients: Key Areas",
+          "type": "table",
+          "headers": [
+            "Area",
+            "Considerations"
+          ],
+          "rows": [
+            [
+              "Assets",
+              "Division of retirement accounts (QDRO), real estate, investments"
+            ],
+            [
+              "Liabilities",
+              "Debt responsibility, mortgage, joint accounts"
+            ],
+            [
+              "Support",
+              "Alimony and child support\u2014giver and receiver implications"
+            ],
+            [
+              "Insurance",
+              "Health coverage, life insurance requirements"
+            ],
+            [
+              "Taxes",
+              "Filing status, dependency exemptions, deduction changes"
+            ],
+            [
+              "Estate",
+              "Update beneficiaries, new estate plan needed"
+            ]
+          ]
+        },
+        {
+          "title": "Working with Divorcing Clients",
+          "type": "list",
+          "items": [
+            "DO: Maintain neutrality if working with both spouses, focus on objective financial analysis, help client understand trade-offs, coordinate with attorney",
+            "DON'T: Take sides emotionally, provide legal advice, encourage adversarial behavior, assume you know the emotional state"
+          ]
+        },
+        {
+          "title": "Common Divorce Financial Mistakes",
+          "type": "list",
+          "items": [
+            "Fighting for the house when it's unaffordable",
+            "Ignoring tax implications of asset division",
+            "Underestimating post-divorce expenses",
+            "Not updating beneficiary designations",
+            "Assuming 50/50 is \"fair\" when assets have different characteristics"
+          ]
+        },
+        {
+          "title": "Clients with Disabilities",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Planning Focus"
+          ],
+          "rows": [
+            [
+              "Physical disabilities",
+              "Accessible housing, transportation, equipment costs"
+            ],
+            [
+              "Intellectual disabilities",
+              "Special needs trusts, guardianship, ABLE accounts"
+            ],
+            [
+              "Mental health conditions",
+              "Episodic planning, trusted contacts, benefit preservation"
+            ],
+            [
+              "Acquired disability",
+              "Life insurance, disability insurance, career transition"
+            ]
+          ]
+        },
+        {
+          "title": "Preserving Government Benefits",
+          "type": "text",
+          "content": "SSI and Medicaid have asset limits (~$2,000). Inheritances or gifts can disqualify. Special Needs Trusts allow supplemental support without disqualification. ABLE accounts offer some flexibility (up to $100K protected)."
+        },
+        {
+          "title": "Third-Party vs. First-Party SNTs",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Funded By",
+            "Medicaid Payback?"
+          ],
+          "rows": [
+            [
+              "Third-party SNT",
+              "Family, will, others",
+              "No"
+            ],
+            [
+              "First-party SNT",
+              "Individual's own assets",
+              "Yes\u2014remainder to state"
+            ]
+          ]
+        },
+        {
+          "title": "Communication Adaptations",
+          "type": "list",
+          "items": [
+            "Allow extra time",
+            "Use clear, simple language when appropriate",
+            "Include support persons as requested",
+            "Confirm understanding frequently",
+            "Provide written summaries"
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "content": [
+            "Cognitive decline requires proactive planning and vigilance for changes",
+            "Financial exploitation is common\u2014know the signs and your reporting obligations",
+            "Divorcing clients need objective analysis and coordination with legal professionals",
+            "Special needs planning must preserve benefit eligibility",
+            "Adapt communication to each client's needs and circumstances"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Recognizing Financial Exploitation",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST likely indicator of potential financial exploitation of an elderly client?",
+            "options": [
+              "The client makes regular charitable donations to organizations they support.",
+              "The client expresses confusion about recent financial transactions and cannot recall authorizing them.",
+              "The client updates their estate plan to include new grandchildren.",
+              "The client requests a large withdrawal to purchase a new car."
+            ],
+            "correctIndex": 1,
+            "explanation": "Confusion about recent transactions and inability to recall authorization are strong indicators of potential financial exploitation. While the other options are normal financial activities, sudden confusion or memory lapses regarding finances should raise a red flag.",
+            "hint": "Consider which scenario suggests a loss of control or understanding of financial matters."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Divorce Considerations",
+          "reveal": {
+            "question": "What are three key financial planning areas that require careful consideration when working with a divorcing client?",
+            "answer": "1. Asset division (e.g., retirement accounts, real estate).\n2. Spousal and child support calculations and implications.\n3. Tax implications of the divorce settlement (e.g., alimony, property transfers)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Guardianship vs. Special Needs Trust",
+          "comparison": {
+            "headers": [
+              "Guardianship",
+              "Special Needs Trust"
+            ],
+            "rows": [
+              {
+                "label": "Purpose",
+                "values": [
+                  "Legal authority to make decisions for an incapacitated person.",
+                  "Manage assets for a person with disabilities without jeopardizing government benefits."
+                ]
+              },
+              {
+                "label": "Asset Control",
+                "values": [
+                  "Guardian controls all assets of the ward, subject to court oversight.",
+                  "Trustee manages trust assets according to trust terms, providing supplemental support."
+                ]
+              },
+              {
+                "label": "Government Benefits Impact",
+                "values": [
+                  "Directly owning assets can disqualify the ward from needs-based government benefits.",
+                  "Properly structured, a special needs trust allows beneficiary to maintain eligibility for needs-based government benefits."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Planning for Clients with Special Needs",
+          "knowledgeCheck": {
+            "question": "A financial planner is assisting a family with a child who has significant developmental disabilities. Which of the following is the MOST important initial step to take?",
+            "options": [
+              "Immediately establishing a 529 plan to fund future educational expenses.",
+              "Determining the child's eligibility for government benefits and exploring options for long-term care planning.",
+              "Creating a comprehensive investment portfolio to maximize asset growth.",
+              "Recommending the purchase of a large life insurance policy on the parents to provide for the child's future."
+            ],
+            "correctIndex": 1,
+            "explanation": "Determining eligibility for government benefits and exploring long-term care planning are paramount. Understanding the available resources and potential future needs is crucial before making investment or insurance decisions. A 529 plan might not be appropriate, and while life insurance can be useful, it is not the most immediate concern.",
+            "hint": "Focus on the immediate needs and potential resources available to the family."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-PSY-L009",
+    "courseId": "cfp",
+    "section": "CFP-PSY",
+    "blueprintArea": "PSY-2",
+    "title": "Sources of Client Motivation",
+    "description": "Distinguish between intrinsic and extrinsic motivation",
+    "order": 9,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Intrinsic vs. extrinsic motivation",
+      "SMART goals framework",
+      "How values drive financial behavior",
+      "Accountability structures for change"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Understanding what motivates clients helps CFP\u00ae professionals create plans that clients actually follow."
+        },
+        {
+          "title": "Intrinsic vs. Extrinsic Motivation",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Definition",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Intrinsic",
+              "Doing something for its own satisfaction",
+              "Saving because security feels good"
+            ],
+            [
+              "Extrinsic",
+              "Doing something for external reward/avoidance",
+              "Saving to get employer match"
+            ]
+          ]
+        },
+        {
+          "title": "Application to Financial Planning",
+          "type": "list",
+          "items": [
+            "Intrinsic motivators (more sustainable): Personal values alignment, sense of security and peace, freedom and autonomy, legacy and meaning",
+            "Extrinsic motivators (useful but limited): Tax benefits, employer matches, avoiding penalties, social expectations"
+          ]
+        },
+        {
+          "title": "Research Finding",
+          "type": "callout",
+          "content": "Intrinsic motivation produces more lasting behavior change. Connect recommendations to client values, not just external benefits."
+        },
+        {
+          "title": "Example: Less vs. More Effective",
+          "type": "example",
+          "content": "Less effective: \"You should max your 401(k) for the tax deduction.\" More effective: \"You mentioned wanting to travel in retirement without worrying about money. Maxing your 401(k) gets you closer to that freedom.\""
+        },
+        {
+          "title": "SMART Goal Framework",
+          "type": "table",
+          "headers": [
+            "Element",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Specific",
+              "Clear and precise",
+              "\"Pay off credit card\" not \"reduce debt\""
+            ],
+            [
+              "Measurable",
+              "Quantifiable",
+              "$5,000 balance to $0"
+            ],
+            [
+              "Achievable",
+              "Realistic",
+              "$500/month payment is doable"
+            ],
+            [
+              "Relevant",
+              "Connects to values",
+              "\"So I can feel in control of my money\""
+            ],
+            [
+              "Time-bound",
+              "Has a deadline",
+              "By December 31st"
+            ]
+          ]
+        },
+        {
+          "title": "Converting Client Statements to SMART Goals",
+          "type": "table",
+          "headers": [
+            "Client Says",
+            "SMART Version"
+          ],
+          "rows": [
+            [
+              "\"I want to save more\"",
+              "\"I will save $500/month to my IRA starting March 1\""
+            ],
+            [
+              "\"I should invest\"",
+              "\"I will invest my tax refund of $3,000 by April 15\""
+            ],
+            [
+              "\"We need to budget\"",
+              "\"We will track all spending for 30 days in February\""
+            ]
+          ]
+        },
+        {
+          "title": "Beyond SMART: Emotion + Logic",
+          "type": "text",
+          "content": "SMART provides structure, but emotional connection drives follow-through. Ask: \"What will it feel like to make that final payment?\" \"Imagine telling your kids their college is fully funded.\""
+        },
+        {
+          "title": "Values-Based Planning",
+          "type": "text",
+          "content": "Values are the WHY behind financial goals. Discovery questions: \"What does money mean to you?\" \"What would you do with unlimited resources?\" \"What do you want people to say about you financially?\" \"When have you felt most satisfied with a financial decision?\""
+        },
+        {
+          "title": "Common Core Values and Financial Expression",
+          "type": "table",
+          "headers": [
+            "Value",
+            "Financial Expression"
+          ],
+          "rows": [
+            [
+              "Security",
+              "Emergency funds, insurance, stable investments"
+            ],
+            [
+              "Freedom",
+              "No debt, passive income, flexibility"
+            ],
+            [
+              "Family",
+              "Education funding, inheritance, togetherness"
+            ],
+            [
+              "Status",
+              "Nice home, new cars, visible success"
+            ],
+            [
+              "Generosity",
+              "Charitable giving, helping others"
+            ],
+            [
+              "Experience",
+              "Travel, hobbies, adventures"
+            ]
+          ]
+        },
+        {
+          "title": "Using Values in Recommendations",
+          "type": "example",
+          "content": "\"You've said family is your top priority. This insurance policy ensures they're protected no matter what.\" \"I noticed security keeps coming up. Let's build a larger emergency fund before increasing investment risk.\""
+        },
+        {
+          "title": "Accountability Structures",
+          "type": "list",
+          "items": [
+            "Why accountability matters: Humans better at commitments to others than to themselves, regular check-ins prevent procrastination, celebration of progress reinforces behavior",
+            "Tools: Regular meetings, written agreements, milestones, accountability partners, automation, visual tracking"
+          ]
+        },
+        {
+          "title": "The Power of Implementation Intentions",
+          "type": "text",
+          "content": "Research shows when/where/how plans dramatically increase follow-through. Instead of: \"I'll set up automatic savings\" Use: \"I will log into my bank on Saturday morning after coffee and set up a $300 automatic transfer to my Roth IRA\""
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "content": [
+            "Intrinsic motivation (values-based) is more sustainable than external rewards",
+            "SMART goals turn vague intentions into specific actions",
+            "Connect recommendations to values for better follow-through",
+            "Accountability structures increase success rates",
+            "Implementation intentions (when/where/how) beat general intentions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Intrinsic vs. Extrinsic Motivation",
+          "knowledgeCheck": {
+            "question": "A client expresses excitement about contributing to environmental causes through sustainable investments, even if it means slightly lower returns. This is MOST indicative of:",
+            "options": [
+              "Extrinsic motivation driven by social pressure.",
+              "Intrinsic motivation aligned with personal values.",
+              "Extrinsic motivation focused on maximizing financial gains.",
+              "A lack of understanding of investment risk."
+            ],
+            "correctIndex": 1,
+            "explanation": "Intrinsic motivation comes from within and is driven by personal values and enjoyment. The client's enthusiasm for environmental causes, regardless of financial return, demonstrates this.",
+            "hint": "Consider the source of the client's enthusiasm. Is it coming from within, or from an external factor?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SMART Goals Acronym",
+          "reveal": {
+            "question": "What does the acronym 'SMART' stand for when setting financial goals?",
+            "answer": "Specific, Measurable, Achievable (or Attainable), Relevant, Time-bound"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Accountability Structures",
+          "comparison": {
+            "headers": [
+              "Formal Accountability",
+              "Informal Accountability"
+            ],
+            "rows": [
+              {
+                "label": "Examples",
+                "values": [
+                  "Regular meetings with a CFP\u00ae professional, using financial planning software to track progress, pre-commitment strategies (e.g., automatic savings plans).",
+                  "Sharing goals with a friend or family member, joining a support group, using a budgeting app."
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "May involve fees (e.g., for a financial advisor).",
+                  "Typically free or low-cost."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-PSY-L010",
+    "courseId": "cfp",
+    "section": "CFP-PSY",
+    "blueprintArea": "PSY-2",
+    "title": "Overcoming Decision-Making Challenges",
+    "description": "Recognize analysis paralysis and help clients move forward",
+    "order": 10,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Analysis paralysis recognition and solutions",
+      "Perfectionism preventing financial action",
+      "Simplifying complex decisions",
+      "Recovering from financial mistakes"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Many clients know what they should do but struggle to act. This lesson covers common decision-making barriers and how to overcome them."
+        },
+        {
+          "title": "Analysis Paralysis",
+          "type": "text",
+          "content": "Overthinking options to the point of taking no action. The pursuit of the \"perfect\" choice prevents any choice. Why it happens: Fear of making wrong choice, overestimating consequences of \"imperfect\" choice, cognitive overload from too many options, perfectionism tendencies."
+        },
+        {
+          "title": "Common Manifestations",
+          "type": "table",
+          "headers": [
+            "Situation",
+            "Paralysis Behavior"
+          ],
+          "rows": [
+            [
+              "Investment selection",
+              "Researching endlessly, never investing"
+            ],
+            [
+              "Insurance purchase",
+              "Comparing quotes for months"
+            ],
+            [
+              "Home buying",
+              "Looking at 50+ houses"
+            ],
+            [
+              "Career decisions",
+              "Can't choose between options"
+            ],
+            [
+              "401(k) allocation",
+              "Staying in default because too many choices"
+            ]
+          ]
+        },
+        {
+          "title": "Intervention Strategies for Paralysis",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "How to Apply"
+          ],
+          "rows": [
+            [
+              "Reduce options",
+              "\"Let's compare these 3 funds instead of 50\""
+            ],
+            [
+              "Good enough",
+              "\"A B+ decision today beats an A+ decision never\""
+            ],
+            [
+              "Reversibility",
+              "\"This isn't permanent\u2014we can adjust in 6 months\""
+            ],
+            [
+              "Cost of inaction",
+              "\"Every month not invested is returns you miss\""
+            ],
+            [
+              "Default options",
+              "\"If you can't decide, this is my recommendation\""
+            ],
+            [
+              "Time limits",
+              "\"Let's make this decision by Friday\""
+            ]
+          ]
+        },
+        {
+          "title": "Perfectionism and Financial Inaction",
+          "type": "text",
+          "content": "Perfectionists: Wait for the \"right time\" to invest (timing the market), need to understand everything before acting, abandon strategies at the first setback, beat themselves up for not-optimal decisions."
+        },
+        {
+          "title": "Intervention Approaches for Perfectionism",
+          "type": "list",
+          "items": [
+            "Normalize imperfection: \"Even the best investors get it wrong 40% of the time. Success comes from a portfolio of decisions, not any single choice.\"",
+            "Focus on process, not outcome: \"Let's evaluate whether we followed good principles, not just the result.\"",
+            "Embrace iteration: \"This is version 1.0. We'll improve as we learn more about your needs.\"",
+            "Small wins first: \"Let's start with $5,000 and see how it feels before investing more.\""
+          ]
+        },
+        {
+          "title": "Choice Architecture Approach",
+          "type": "text",
+          "content": "Make the right choice the easy choice. Principles: Default enrollment (automatic 401(k) contribution), automatic escalation (increase savings 1% per year), limit options (offer 3 model portfolios, not 100 funds), pre-commitment (decide future actions now), remove friction (paperless, single-click enrollment)."
+        },
+        {
+          "title": "Breaking Down Big Decisions",
+          "type": "example",
+          "content": "Instead of: \"Choose your entire investment allocation\" Use: (1) \"First, let's decide: stocks vs. bonds ratio\" (2) \"Now, U.S. vs. international split\" (3) \"Finally, active vs. passive approach\""
+        },
+        {
+          "title": "Decision Trees",
+          "type": "list",
+          "items": [
+            "Map out key decision points and consequences",
+            "\"If X happens, we do Y\"",
+            "\"If rates drop below 4%, we refinance\"",
+            "\"If your income increases 10%+, we accelerate 401(k)\""
+          ]
+        },
+        {
+          "title": "Common Client Mistakes",
+          "type": "list",
+          "items": [
+            "Sold investments during a crash",
+            "Took on too much debt",
+            "Failed to save during high-earning years",
+            "Made bad business/real estate decisions",
+            "Trusted the wrong person"
+          ]
+        },
+        {
+          "title": "The Recovery Conversation",
+          "type": "list",
+          "items": [
+            "Acknowledge without judgment: \"That sounds like a difficult situation\"",
+            "Normalize: \"You're not alone\u2014many people face similar challenges\"",
+            "Learn: \"What would you do differently knowing what you know now?\"",
+            "Redirect: \"Now let's focus on what we can control going forward\"",
+            "Act: Create specific next steps"
+          ]
+        },
+        {
+          "title": "Avoid These Responses",
+          "type": "table",
+          "headers": [
+            "Don't Say",
+            "Say Instead"
+          ],
+          "rows": [
+            [
+              "\"That was a mistake\"",
+              "\"That was a learning experience\""
+            ],
+            [
+              "\"You should have...\"",
+              "\"Going forward, we can...\""
+            ],
+            [
+              "\"Why did you do that?\"",
+              "\"Help me understand what you were thinking at the time\""
+            ],
+            [
+              "\"Don't worry about it\"",
+              "\"It's understandable to feel frustrated\""
+            ]
+          ]
+        },
+        {
+          "title": "The Sunk Cost Lesson",
+          "type": "callout",
+          "content": "Help clients let go of past decisions: \"The money spent is gone regardless of what we decide now. Let's make the best decision from this point forward, not based on what we've already invested.\""
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "content": [
+            "Analysis paralysis is overcome by limiting options and setting deadlines",
+            "Perfectionism prevents action\u2014embrace \"good enough\" decisions",
+            "Choice architecture makes right decisions easy and automatic",
+            "Break big decisions into smaller, sequential choices",
+            "Financial mistakes are learning opportunities\u2014focus forward, not backward"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Analysis Paralysis: Test Your Knowledge",
+          "knowledgeCheck": {
+            "question": "A client, Sarah, has diligently researched various investment options for her retirement. She has spent countless hours comparing different mutual funds and ETFs, but she hasn't invested any money yet. She keeps finding reasons to delay, waiting for more information or a 'perfect' opportunity. Which of the following decision-making biases is Sarah MOST likely experiencing?",
+            "options": [
+              "A) Loss Aversion",
+              "B) Anchoring Bias",
+              "C) Analysis Paralysis",
+              "D) Confirmation Bias"
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is C) Analysis Paralysis. Sarah's excessive research and inability to take action despite having information clearly indicates analysis paralysis. Loss aversion involves focusing on potential losses more than gains. Anchoring bias relies too heavily on an initial piece of information. Confirmation bias involves seeking out information that confirms pre-existing beliefs.",
+            "hint": "Think about what prevents someone from making ANY decision, not just a bad one."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Perfectionism Pitfalls: Quick Recall",
+          "reveal": {
+            "question": "Name three common behaviors of perfectionist clients that hinder their financial progress.",
+            "answer": "1. Waiting for the 'right time' to invest (timing the market).\n2. Needing to understand every detail before acting.\n3. Abandoning strategies at the first sign of setback.\n4. Beating themselves up over less than optimal decisions."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Breaking the Cycle of Inaction",
+          "knowledgeCheck": {
+            "question": "A client consistently avoids making decisions about rebalancing their portfolio, stating they need to learn more about all the possible asset allocations before making a change. As their CFP\u00ae professional, what is the MOST appropriate initial step to help them overcome this decision-making challenge?",
+            "options": [
+              "A) Provide them with a comprehensive list of all possible asset allocations and their historical performance.",
+              "B) Encourage them to accept that some losses are inevitable and to focus on long-term gains.",
+              "C) Help them narrow down their options to a manageable number based on their risk tolerance and financial goals.",
+              "D) Reassure them that you will make all the decisions for them, relieving them of the burden."
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is C. This directly addresses analysis paralysis by reducing the overwhelming number of choices. Option A exacerbates the problem. Option B addresses loss aversion, which may be a secondary issue, but not the primary one. Option D undermines the client's autonomy and doesn't address the underlying problem.",
+            "hint": "Think about strategies to simplify complex decisions and reduce information overload."
+          }
+        }
+      ]
+    }
+  }
+]

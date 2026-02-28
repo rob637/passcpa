@@ -1,0 +1,935 @@
+[
+  {
+    "id": "CIA1-II-042",
+    "courseId": "cia",
+    "section": "CIA1",
+    "title": "Direct Access to the Board",
+    "description": "Understand requirements for CAE access to the board",
+    "order": 42,
+    "duration": 25,
+    "difficulty": "intermediate",
+    "topics": [
+      "Board access",
+      "CAE authority",
+      "Private meetings"
+    ],
+    "blueprintArea": "CIA1-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Why Direct Access Matters",
+          "type": "text",
+          "content": "**Direct access to the board ensures:**\n\n\u2022 Independence from management\n\u2022 Ability to report sensitive findings\n\u2022 Unrestricted communication\n\u2022 Protection from retaliation\n\n**The CAE must have the ability to communicate directly and confidentially with the board chair.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Direct access protects independence",
+            "Private meetings with audit committee are best practice",
+            "CAE should attend all audit committee meetings"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Board Access and Independence",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for the CAE to have direct access to the board?",
+            "options": [
+              "To ensure independence from management and the ability to report sensitive findings.",
+              "To streamline the audit report approval process and reduce administrative burden.",
+              "To facilitate better communication between the audit team and the board's administrative staff.",
+              "To allow the CAE to bypass the audit committee when reporting minor irregularities."
+            ],
+            "correctIndex": 0,
+            "explanation": "Direct access to the board safeguards the CAE's independence and ability to report sensitive findings without management influence. This is paramount for objective assurance and advisory services.",
+            "hint": "Think about the primary role of internal audit and who they need to be able to communicate with freely."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: CAE Responsibilities",
+          "reveal": {
+            "question": "What is the CAE's primary responsibility regarding communication with the board chair?",
+            "answer": "The CAE must have the ability to communicate directly and confidentially with the board chair. This ensures crucial issues are addressed without management influence."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Protection from Retaliation",
+          "knowledgeCheck": {
+            "question": "Direct access to the board provides which of the following critical protections for the CAE?",
+            "options": [
+              "Guaranteed promotion within the organization.",
+              "Protection from retaliation by management for reporting unfavorable findings.",
+              "Exemption from certain organizational policies and procedures.",
+              "Priority access to organizational resources and information."
+            ],
+            "correctIndex": 1,
+            "explanation": "Direct access to the board provides a crucial layer of protection for the CAE against potential retaliation from management, especially when reporting sensitive or unfavorable findings that might impact management's performance or reputation.",
+            "hint": "Consider the power dynamic between management and the CAE and how board access can balance this."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-II-033",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Engagement Risk Assessment",
+    "description": "Understand how to assess risk at the engagement level",
+    "order": 33,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Engagement risk",
+      "Preliminary assessment",
+      "Risk factors"
+    ],
+    "blueprintArea": "CIA2-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Engagement-Level Risk Assessment",
+          "type": "text",
+          "content": "**During planning, auditors should identify:**\n\n\u2022 Key risks to the process/area\n\u2022 Existing controls addressing those risks\n\u2022 Potential for fraud\n\u2022 Areas of management concern\n\u2022 Prior audit findings\n\n**This assessment shapes the scope and nature of procedures.**"
+        },
+        {
+          "title": "Risk Factor Categories",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Inherent",
+              "Complexity, volume, judgment required"
+            ],
+            [
+              "Control",
+              "Design deficiencies, override potential"
+            ],
+            [
+              "Detection",
+              "Evidence availability, sampling limitations"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Risk assessment occurs at engagement level",
+            "Shapes scope and procedures",
+            "Consider inherent, control, and detection risks"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Engagement Risk Assessment Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During the planning phase of an internal audit engagement, which of the following is the MOST important reason for the internal auditor to assess engagement risk?",
+            "options": [
+              "To determine the cost-benefit relationship of performing the engagement.",
+              "To evaluate the performance of the auditee's management team.",
+              "To identify the auditee's strategic objectives and operational efficiency.",
+              "To determine the nature, timing, and extent of audit procedures."
+            ],
+            "correctIndex": 3,
+            "explanation": "Assessing engagement risk directly informs the scope and approach of the audit. By understanding the risks, auditors can tailor their procedures to focus on the most critical areas, ensuring efficient and effective use of resources. The other options are important considerations, but not the MOST important reason for assessing engagement risk during planning.",
+            "hint": "Think about how risk assessment directly impacts the audit plan."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Key Engagement Risk Factors",
+          "reveal": {
+            "question": "List five factors that internal auditors should identify during the preliminary engagement risk assessment.",
+            "answer": "1. Key risks to the process/area; 2. Existing controls addressing those risks; 3. Potential for fraud; 4. Areas of management concern; 5. Prior audit findings."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Engagement Risk vs. Inherent Risk",
+          "comparison": {
+            "headers": [
+              "Engagement Risk",
+              "Inherent Risk"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "The risk that the internal auditor will not detect a material misstatement or fraud that exists in the area being audited.",
+                  "The susceptibility of an assertion about a class of transaction, account balance, or disclosure to a misstatement that could be material, either individually or when aggregated with other misstatements, before consideration of any related controls."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Focuses on the specific audit engagement and the auditor's ability to detect material misstatements.",
+                  "Focuses on the inherent characteristics of the activity or account being audited, regardless of controls."
+                ]
+              },
+              {
+                "label": "Impact",
+                "values": [
+                  "Directly influences the scope, nature, and timing of audit procedures.",
+                  "Helps to determine the overall risk level and the need for controls."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-034",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Observation Techniques",
+    "description": "Learn effective observation methods for audit fieldwork",
+    "order": 34,
+    "duration": 25,
+    "difficulty": "beginner",
+    "topics": [
+      "Observation",
+      "Physical inspection",
+      "Audit evidence"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "When to Use Observation",
+          "type": "text",
+          "content": "**Observation is appropriate for:**\n\n\u2022 Verifying physical existence of assets\n\u2022 Confirming actual practices match documented procedures\n\u2022 Assessing security and environmental controls\n\u2022 Evaluating segregation of duties in practice\n\n**Observation provides evidence about a point in time.**"
+        },
+        {
+          "title": "Observation Tips",
+          "type": "callout",
+          "content": "\u2022 Be unobtrusive when possible\n\u2022 Document what you observe immediately\n\u2022 Note any anomalies or red flags\n\u2022 Consider timing of observation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Observation verifies physical existence and practices",
+            "Provides point-in-time evidence",
+            "Document findings immediately"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-IV-035",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Exit Conferences",
+    "description": "Understand the purpose and conduct of exit conferences",
+    "order": 35,
+    "duration": 25,
+    "difficulty": "intermediate",
+    "topics": [
+      "Exit conference",
+      "Communication",
+      "Finding validation"
+    ],
+    "blueprintArea": "CIA2-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Purpose of Exit Conferences",
+          "type": "text",
+          "content": "**Exit conferences (closing meetings) allow:**\n\n\u2022 Discussion of findings with management\n\u2022 Validation of facts and accuracy\n\u2022 Opportunity for clarification\n\u2022 Preview of recommendations\n\u2022 Agreement on action plans\n\n**Reduces surprises in the final report.**"
+        },
+        {
+          "title": "Best Practices",
+          "type": "text",
+          "content": "**For effective exit conferences:**\n\u2022 Share draft findings in advance\n\u2022 Invite appropriate management levels\n\u2022 Listen to management perspective\n\u2022 Clarify any misunderstandings\n\u2022 Document discussions and agreements"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Exit conferences validate findings before reporting",
+            "Reduce surprises and improve buy-in",
+            "Document agreements and disagreements"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Purpose of Exit Conferences",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for holding an exit conference after an internal audit engagement?",
+            "options": [
+              "To formally present the final audit report to senior management.",
+              "To ensure management agrees with all the auditor's findings before the final report is issued.",
+              "To reduce surprises and ensure the accuracy of findings by discussing them with management prior to issuing the final report.",
+              "To obtain management's signature on the audit report, acknowledging their receipt of the findings."
+            ],
+            "correctIndex": 2,
+            "explanation": "The primary purpose of an exit conference is to validate the accuracy of findings and reduce surprises in the final report. While obtaining agreement and presenting the report are related, the key benefit is ensuring accuracy and clarity before the final report is issued. Getting a signature is not a primary purpose.",
+            "hint": "Think about what would cause the least conflict and lead to the most accurate final report."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Best Practices",
+          "reveal": {
+            "question": "List three best practices for conducting effective exit conferences.",
+            "answer": "1. Share draft findings in advance. 2. Invite appropriate management levels. 3. Listen to management's perspective. 4. Clarify any misunderstandings. 5. Document discussions and agreements. (Any three of these are correct)"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Action Plans",
+          "knowledgeCheck": {
+            "question": "During an exit conference, the internal auditor and management agree on action plans to address identified deficiencies. Which of the following is the auditor's NEXT responsibility regarding these action plans?",
+            "options": [
+              "To immediately implement the action plans on behalf of management.",
+              "To monitor and follow up on the implementation of the action plans in subsequent audits.",
+              "To revise the audit report to reflect the agreed-upon action plans.",
+              "To ensure that the action plans are approved by the audit committee before proceeding."
+            ],
+            "correctIndex": 1,
+            "explanation": "The auditor's role is to monitor and follow up on the implementation of action plans in subsequent audits. Implementation is management's responsibility. Revising the report before implementation or requiring audit committee approval for action plans is generally not the auditor's direct responsibility at this stage.",
+            "hint": "Consider the auditor's role in monitoring and follow-up activities."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-037",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Supply Chain Risk Management",
+    "description": "Understand supply chain risks and audit considerations",
+    "order": 37,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Supply chain",
+      "Third-party risk",
+      "Vendor risk"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Supply Chain Risks",
+          "type": "text",
+          "content": "**Key supply chain risks include:**\n\n\u2022 Single-source dependencies\n\u2022 Geopolitical disruptions\n\u2022 Quality and compliance issues\n\u2022 Cybersecurity vulnerabilities\n\u2022 Financial stability of suppliers\n\u2022 Regulatory and reputational risks"
+        },
+        {
+          "title": "Risk Mitigation Strategies",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Diversification",
+              "Multiple suppliers for critical items"
+            ],
+            [
+              "Due diligence",
+              "Vet suppliers before and during relationship"
+            ],
+            [
+              "Monitoring",
+              "Ongoing performance and risk assessment"
+            ],
+            [
+              "Contracts",
+              "Clear terms, SLAs, and exit provisions"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Supply chain disruptions can be significant",
+            "Due diligence and monitoring are essential",
+            "Diversification reduces concentration risk"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Supply Chain Vulnerabilities",
+          "knowledgeCheck": {
+            "question": "Which of the following supply chain risks poses the MOST immediate threat to an organization's operational continuity if left unaddressed?",
+            "options": [
+              "A. Reputational damage resulting from a supplier's non-compliance with ethical labor practices.",
+              "B. A single-source dependency for a critical raw material used in the organization's core product.",
+              "C. Increased cybersecurity vulnerabilities within a third-party vendor's data storage system.",
+              "D. Potential geopolitical disruptions affecting the supplier's ability to export finished goods."
+            ],
+            "correctIndex": 1,
+            "explanation": "A single-source dependency presents the most immediate threat because a disruption to that single source directly halts production. While the other options are significant risks, they don't necessarily cause an immediate cessation of operations.",
+            "hint": "Consider which risk would cause the most immediate and complete stop to the organization's ability to function."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Key Supply Chain Risks",
+          "reveal": {
+            "question": "List at least four key risks associated with supply chains.",
+            "answer": "The key supply chain risks include:\n\n*   Single-source dependencies\n*   Geopolitical disruptions\n*   Quality and compliance issues\n*   Cybersecurity vulnerabilities\n*   Financial stability of suppliers\n*   Regulatory and reputational risks"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Vendor Financial Stability",
+          "knowledgeCheck": {
+            "question": "An internal auditor discovers that a key vendor has recently experienced a significant decline in its credit rating. Which of the following audit procedures would be MOST appropriate to perform FIRST?",
+            "options": [
+              "A. Immediately terminate the contract with the vendor to mitigate potential losses.",
+              "B. Assess the potential impact of the vendor's financial instability on the organization's supply chain.",
+              "C. Publicly disclose the vendor's financial difficulties to alert stakeholders.",
+              "D. Increase the order volume with the vendor to provide financial support."
+            ],
+            "correctIndex": 1,
+            "explanation": "Assessing the potential impact is the most appropriate first step. It allows the organization to understand the scope of the risk and develop a plan. Terminating the contract, disclosing the information, or increasing order volume might be appropriate later, but only after a thorough assessment.",
+            "hint": "Consider the importance of risk assessment before taking action."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-038",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Network and Infrastructure Security",
+    "description": "Understand network security concepts for auditors",
+    "order": 38,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Network security",
+      "Firewalls",
+      "Encryption",
+      "VPN"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "Network Security Layers",
+          "type": "text",
+          "content": "**Defense in Depth:**\n\n\u2022 **Perimeter** - Firewalls, DMZ, IDS/IPS\n\u2022 **Network** - Segmentation, VLANs\n\u2022 **Host** - Endpoint protection, patching\n\u2022 **Application** - WAF, secure coding\n\u2022 **Data** - Encryption, DLP"
+        },
+        {
+          "title": "Key Security Technologies",
+          "type": "table",
+          "headers": [
+            "Technology",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "Firewall",
+              "Controls traffic between networks"
+            ],
+            [
+              "IDS/IPS",
+              "Detects/prevents intrusion attempts"
+            ],
+            [
+              "VPN",
+              "Secure remote access"
+            ],
+            [
+              "Encryption",
+              "Protects data confidentiality"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Defense in depth uses multiple security layers",
+            "Firewalls are foundational but not sufficient alone",
+            "Encryption protects data in transit and at rest"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Defense in Depth Challenge",
+          "knowledgeCheck": {
+            "question": "An internal auditor is reviewing the network security of their organization. They discover that while a robust firewall and intrusion detection system (IDS) are in place at the network perimeter, internal network segmentation is lacking. Which of the following best describes the primary risk associated with this security posture?\n",
+            "options": [
+              "A successful perimeter breach could allow an attacker to move laterally throughout the network, accessing sensitive data in multiple systems.",
+              "The lack of segmentation will prevent the organization from implementing effective endpoint protection on individual hosts.",
+              "The organization will be unable to comply with industry regulations regarding data privacy and security.",
+              "The firewall and IDS will be rendered ineffective due to the increased network traffic resulting from the lack of segmentation."
+            ],
+            "correctIndex": 0,
+            "explanation": "Effective defense in depth requires multiple layers of security. Without network segmentation, a breach at the perimeter allows an attacker to easily access other systems and data within the internal network. The other options are less directly related to the specific issue of lacking network segmentation.",
+            "hint": "Consider the impact of a single point of failure versus multiple layers of protection."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Layers",
+          "reveal": {
+            "question": "List the five layers of network security covered in the Defense in Depth strategy:",
+            "answer": "The five layers are: Perimeter, Network, Host, Application, and Data."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "IDS vs. IPS",
+          "comparison": {
+            "headers": [
+              "Intrusion Detection System (IDS)",
+              "Intrusion Prevention System (IPS)"
+            ],
+            "rows": [
+              {
+                "label": "Primary Function",
+                "values": [
+                  "Detects malicious activity",
+                  "Detects and prevents malicious activity"
+                ]
+              },
+              {
+                "label": "Response",
+                "values": [
+                  "Alerts administrators",
+                  "Automatically blocks or mitigates threats"
+                ]
+              },
+              {
+                "label": "Placement",
+                "values": [
+                  "Can be placed passively to monitor traffic",
+                  "Must be placed inline to actively block traffic"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-III-039",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Systems Development Life Cycle",
+    "description": "Understand SDLC phases and audit considerations",
+    "order": 39,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "SDLC",
+      "System development",
+      "Project phases"
+    ],
+    "blueprintArea": "CIA3-III",
+    "content": {
+      "sections": [
+        {
+          "title": "SDLC Phases",
+          "type": "text",
+          "content": "**Traditional (Waterfall) SDLC:**\n\n1. **Planning** - Feasibility, requirements gathering\n2. **Analysis** - Detailed requirements\n3. **Design** - System architecture\n4. **Development** - Coding and unit testing\n5. **Testing** - Integration and UAT\n6. **Implementation** - Deployment\n7. **Maintenance** - Ongoing support"
+        },
+        {
+          "title": "Audit Considerations by Phase",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Audit Focus"
+          ],
+          "rows": [
+            [
+              "Planning",
+              "Business case, authorization"
+            ],
+            [
+              "Analysis",
+              "Requirements completeness"
+            ],
+            [
+              "Design",
+              "Security requirements, controls"
+            ],
+            [
+              "Development",
+              "Coding standards, code review"
+            ],
+            [
+              "Testing",
+              "Test coverage, defect management"
+            ],
+            [
+              "Implementation",
+              "Change controls, rollback plans"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "SDLC provides structured development approach",
+            "Each phase has specific control requirements",
+            "Early auditor involvement adds most value"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: SDLC Phases",
+          "knowledgeCheck": {
+            "question": "During which phase of the Traditional (Waterfall) SDLC is the system architecture primarily defined?",
+            "options": [
+              "A) Analysis",
+              "B) Design",
+              "C) Development",
+              "D) Implementation"
+            ],
+            "correctIndex": 1,
+            "explanation": "The Design phase focuses on translating the detailed requirements from the Analysis phase into a complete system architecture. This includes defining the system components, their interfaces, and the overall structure of the system.",
+            "hint": "Think about when you move from 'what' the system needs to do to 'how' it will do it."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: SDLC Order",
+          "reveal": {
+            "question": "List the phases of the Traditional (Waterfall) SDLC in order.",
+            "answer": "1. Planning, 2. Analysis, 3. Design, 4. Development, 5. Testing, 6. Implementation, 7. Maintenance"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Testing Phase",
+          "knowledgeCheck": {
+            "question": "Which of the following activities is LEAST likely to occur during the Testing phase of the Traditional (Waterfall) SDLC?",
+            "options": [
+              "A) Integration Testing",
+              "B) User Acceptance Testing (UAT)",
+              "C) Coding new modules",
+              "D) Regression Testing"
+            ],
+            "correctIndex": 2,
+            "explanation": "Coding new modules belongs to the Development phase. The Testing phase focuses on verifying the functionality and performance of the system, including integration and user acceptance.",
+            "hint": "Consider the purpose of the Testing phase. Is it for creating new code or verifying existing code?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-IV-040",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Treasury and Cash Management",
+    "description": "Understand treasury functions and related controls",
+    "order": 40,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Treasury",
+      "Cash management",
+      "Banking",
+      "Liquidity"
+    ],
+    "blueprintArea": "CIA3-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Treasury Functions",
+          "type": "text",
+          "content": "**Key treasury responsibilities:**\n\n\u2022 Cash and liquidity management\n\u2022 Banking relationships\n\u2022 Debt and investment management\n\u2022 Foreign exchange management\n\u2022 Interest rate risk management\n\n**Treasury controls are critical due to cash handling.**"
+        },
+        {
+          "title": "Key Controls",
+          "type": "table",
+          "headers": [
+            "Area",
+            "Control"
+          ],
+          "rows": [
+            [
+              "Bank accounts",
+              "Authorized signers, reconciliation"
+            ],
+            [
+              "Wire transfers",
+              "Dual authorization, callback verification"
+            ],
+            [
+              "Investments",
+              "Policy limits, authorization"
+            ],
+            [
+              "FX transactions",
+              "Hedging policy, exposure limits"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Treasury manages cash and financial risk",
+            "Strong controls needed for fraud prevention",
+            "Bank reconciliations are fundamental controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Management Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for implementing strong treasury controls?",
+            "options": [
+              "To minimize the cost of banking fees.",
+              "To ensure compliance with all applicable accounting standards.",
+              "To safeguard cash and prevent fraud due to the inherent risks of cash handling.",
+              "To optimize investment returns on excess cash balances."
+            ],
+            "correctIndex": 2,
+            "explanation": "While minimizing banking fees, complying with accounting standards, and optimizing investment returns are important, the primary reason for strong treasury controls is the high risk of fraud and errors associated with handling cash. Cash is easily misappropriated, making robust controls essential.",
+            "hint": "Think about the fundamental risks associated with physical money."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Treasury Responsibilities: Can You Recall?",
+          "reveal": {
+            "question": "List the five key responsibilities of the treasury function.",
+            "answer": "The five key responsibilities of the treasury function are: Cash and liquidity management; Banking relationships; Debt and investment management; Foreign exchange management; and Interest rate risk management."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Liquidity Management Scenario",
+          "knowledgeCheck": {
+            "question": "A company is experiencing a significant increase in short-term payables due to unexpected supplier demands. Which treasury function is MOST directly responsible for addressing this situation?",
+            "options": [
+              "Debt and investment management",
+              "Foreign exchange management",
+              "Cash and liquidity management",
+              "Interest rate risk management"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cash and liquidity management involves ensuring the company has sufficient funds to meet its short-term obligations. Managing increased payables falls squarely within this function.",
+            "hint": "Consider which function deals with immediate cash needs."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-I-041",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Economic Indicators and Business Environment",
+    "description": "Understand economic factors affecting organizations",
+    "order": 41,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Economic indicators",
+      "Business environment",
+      "Macro factors"
+    ],
+    "blueprintArea": "CIA3-I",
+    "content": {
+      "sections": [
+        {
+          "title": "Key Economic Indicators",
+          "type": "text",
+          "content": "**Indicators auditors should understand:**\n\n\u2022 **GDP** - Overall economic growth\n\u2022 **Inflation** - Price level changes\n\u2022 **Interest rates** - Cost of borrowing\n\u2022 **Unemployment** - Labor market conditions\n\u2022 **Consumer confidence** - Spending outlook\n\n**These affect business performance and risk profiles.**"
+        },
+        {
+          "title": "Impact on Audit",
+          "type": "callout",
+          "content": "Economic downturns may increase:\n\u2022 Fraud risk\n\u2022 Going concern issues\n\u2022 Credit risk\n\u2022 Inventory obsolescence\n\u2022 Impairment considerations"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Economic conditions affect business risk",
+            "Auditors should understand macro environment",
+            "Downturns increase certain audit risks"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Economic Indicators",
+          "knowledgeCheck": {
+            "question": "Which of the following economic indicators is MOST directly indicative of the overall health and growth of a nation's economy?",
+            "options": [
+              "The Consumer Price Index (CPI)",
+              "The Gross Domestic Product (GDP)",
+              "The Prime Interest Rate",
+              "The Unemployment Rate"
+            ],
+            "correctIndex": 1,
+            "explanation": "GDP is the total value of goods and services produced within a country's borders during a specific period. It is the most comprehensive measure of economic activity and overall economic health. While CPI, interest rates, and unemployment provide insights into specific aspects of the economy, GDP gives the broadest view.",
+            "hint": "Think about the broadest measure of a nation's economic output."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Interest Rates and Business",
+          "reveal": {
+            "question": "How do rising interest rates generally affect business investment and expansion?",
+            "answer": "Rising interest rates increase the cost of borrowing, making it more expensive for businesses to finance new projects, expand operations, or acquire capital. This typically leads to a decrease in business investment and slower economic growth."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "The Impact of Inflation",
+          "knowledgeCheck": {
+            "question": "An internal auditor is reviewing a company's budget assumptions. The company has projected a significant increase in revenue based on anticipated sales volume. Which of the following economic indicators should the auditor PRIMARILY consider when evaluating the reasonableness of this projection, assuming no other significant changes?",
+            "options": [
+              "Unemployment Rate",
+              "Consumer Confidence Index",
+              "Inflation Rate",
+              "Interest Rates"
+            ],
+            "correctIndex": 2,
+            "explanation": "The inflation rate is the most relevant factor. While increased sales volume might seem positive, inflation could be driving up prices and thus revenue without a real increase in the quantity of goods sold. The auditor needs to determine if the revenue increase is due to higher prices or a genuine rise in sales volume.",
+            "hint": "Consider what would cause revenue to go up without a corresponding increase in sales volume."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA3-II-042",
+    "courseId": "cia",
+    "section": "CIA3",
+    "title": "Identity and Access Management",
+    "description": "Understand IAM concepts and controls",
+    "order": 42,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "IAM",
+      "Authentication",
+      "Authorization",
+      "Access review"
+    ],
+    "blueprintArea": "CIA3-II",
+    "content": {
+      "sections": [
+        {
+          "title": "IAM Components",
+          "type": "text",
+          "content": "**Identity and Access Management includes:**\n\n\u2022 **Identification** - Who are you? (username)\n\u2022 **Authentication** - Prove it (password, MFA)\n\u2022 **Authorization** - What can you do? (permissions)\n\u2022 **Accountability** - What did you do? (logging)\n\n**Follows principle of least privilege.**"
+        },
+        {
+          "title": "IAM Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "MFA",
+              "Stronger authentication"
+            ],
+            [
+              "Access reviews",
+              "Validate continued need"
+            ],
+            [
+              "Provisioning",
+              "Grant access properly"
+            ],
+            [
+              "Deprovisioning",
+              "Remove access timely"
+            ],
+            [
+              "Privileged access",
+              "Control admin accounts"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IAM: identification, authentication, authorization",
+            "Least privilege limits access to what is needed",
+            "Regular access reviews detect inappropriate access"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Authentication & Authorization Challenge",
+          "knowledgeCheck": {
+            "question": "An internal auditor discovers that a user account has been granted 'write' access to a sensitive database, even though their job description only requires 'read' access. Which IAM principle has been violated?",
+            "options": [
+              "Accountability",
+              "Least Privilege",
+              "Identification",
+              "Authentication"
+            ],
+            "correctIndex": 1,
+            "explanation": "The principle of least privilege dictates that users should only have the minimum level of access necessary to perform their job duties. Granting 'write' access when only 'read' access is needed violates this principle.",
+            "hint": "Think about what 'minimum necessary access' means."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "IAM Components - Quick Recall",
+          "reveal": {
+            "question": "List the four key components of Identity and Access Management (IAM).",
+            "answer": "The four key components of IAM are: Identification, Authentication, Authorization, and Accountability."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Authentication vs. Authorization",
+          "comparison": {
+            "headers": [
+              "Authentication",
+              "Authorization"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Verifying the user's identity (proving they are who they claim to be).",
+                  "Determining what resources the user is allowed to access and what actions they can perform."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Entering a correct password or using MFA.",
+                  "Granting read-only access to a specific report or allowing a user to approve invoices."
+                ]
+              },
+              {
+                "label": "Question Answered",
+                "values": [
+                  "\"Are you who you say you are?\"",
+                  "\"What are you allowed to do?\""
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

@@ -25554,6 +25554,2231 @@
       "timeEstimate": 60,
       "authorityRef": "IRC §103(b)",
       "commonMistake": "The taxability of municipal bond interest can be tricky. While interest on *most* state and local government bonds is tax-exempt, there are exceptions. Interest on private activity bonds is generally exempt from regular tax but may be subject to the alternative minimum tax (AMT). Many test-takers overlook this exception."
+    },
+    {
+      "question": "Which of the following is a deduction for adjusted gross income (AGI), also known as an above-the-line deduction?",
+      "options": [
+        "Medical expenses",
+        "Student loan interest",
+        "State and local taxes",
+        "Charitable contributions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Student loan interest is an above-the-line deduction, meaning it's deducted before calculating AGI. Medical expenses, state and local taxes, and charitable contributions are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313037402-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is an above-the-line deduction, meaning it's deducted before calculating AGI.",
+        "2": "Option C is incorrect. Student loan interest is an above-the-line deduction, meaning it's deducted before calculating AGI.",
+        "3": "Option D is incorrect. Student loan interest is an above-the-line deduction, meaning it's deducted before calculating AGI."
+      }
+    },
+    {
+      "question": "What is the maximum long-term capital gains tax rate for most taxpayers in 2024?",
+      "options": [
+        "15%",
+        "20%",
+        "25%",
+        "28%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum long-term capital gains tax rate for most taxpayers is 20%. Certain assets, like collectibles, may be taxed at a higher rate.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313037402-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum long-term capital gains tax rate for most taxpayers is 20%.",
+        "2": "Option C is incorrect. The maximum long-term capital gains tax rate for most taxpayers is 20%.",
+        "3": "Option D is incorrect. The maximum long-term capital gains tax rate for most taxpayers is 20%."
+      }
+    },
+    {
+      "question": "Net investment income tax (NIIT) is applied to which type of income?",
+      "options": [
+        "Wages",
+        "Social Security benefits",
+        "Interest and dividends",
+        "Unemployment compensation"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Net investment income tax is applied to investment income such as interest, dividends, capital gains, and rental and royalty income.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313037402-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Net investment income tax is applied to investment income such as interest, dividends, capital gains, and rental and royalty income.",
+        "1": "Option B is incorrect. Net investment income tax is applied to investment income such as interest, dividends, capital gains, and rental and royalty income.",
+        "3": "Option D is incorrect. Net investment income tax is applied to investment income such as interest, dividends, capital gains, and rental and royalty income."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can be deducted above-the-line?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "$5,000"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500. This deduction is subject to income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313037402-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Which of the following IRA contributions is generally deductible?",
+      "options": [
+        "Roth IRA",
+        "Traditional IRA (if eligible)",
+        "Simplified Employee Pension (SEP) IRA",
+        "SIMPLE IRA"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Traditional IRA contributions are deductible if the taxpayer meets certain criteria; for example, not being covered by a retirement plan at work, or having income below certain thresholds if covered by a retirement plan at work. Roth IRA contributions are not deductible.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313037402-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Traditional IRA contributions are deductible if the taxpayer meets certain criteria; for example, not being covered by a retirement plan at work, or having income below certain thresholds if covered by a retirement plan at work.",
+        "2": "Option C is incorrect. Traditional IRA contributions are deductible if the taxpayer meets certain criteria; for example, not being covered by a retirement plan at work, or having income below certain thresholds if covered by a retirement plan at work.",
+        "3": "Option D is incorrect. Traditional IRA contributions are deductible if the taxpayer meets certain criteria; for example, not being covered by a retirement plan at work, or having income below certain thresholds if covered by a retirement plan at work."
+      }
+    },
+    {
+      "question": "Which of the following is a common Schedule A deduction?",
+      "options": [
+        "Self-employment tax",
+        "Alimony paid",
+        "Medical expenses",
+        "Moving expenses"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Medical expenses are commonly deducted on Schedule A, subject to certain limitations. Self-employment tax is an adjustment to income, alimony paid may or may not be deductible depending on divorce agreement date, and moving expenses are generally no longer deductible.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313037402-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Medical expenses are commonly deducted on Schedule A, subject to certain limitations.",
+        "1": "Option B is incorrect. Medical expenses are commonly deducted on Schedule A, subject to certain limitations.",
+        "3": "Option D is incorrect. Medical expenses are commonly deducted on Schedule A, subject to certain limitations."
+      }
+    },
+    {
+      "question": "What is the standard deduction?",
+      "options": [
+        "A fixed amount that reduces taxable income",
+        "The sum of all itemized deductions",
+        "A deduction only for single filers",
+        "A deduction only for married filers"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The standard deduction is a fixed dollar amount that all taxpayers can deduct from their adjusted gross income (AGI) to reduce their taxable income, unless they choose to itemize.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313037402-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The standard deduction is a fixed dollar amount that all taxpayers can deduct from their adjusted gross income (AGI) to reduce their taxable income, unless they choose to itemize.",
+        "2": "Option C is incorrect. The standard deduction is a fixed dollar amount that all taxpayers can deduct from their adjusted gross income (AGI) to reduce their taxable income, unless they choose to itemize.",
+        "3": "Option D is incorrect. The standard deduction is a fixed dollar amount that all taxpayers can deduct from their adjusted gross income (AGI) to reduce their taxable income, unless they choose to itemize."
+      }
+    },
+    {
+      "question": "Taxable income is used to determine a taxpayer's:",
+      "options": [
+        "Adjusted Gross Income (AGI)",
+        "Tax liability",
+        "Gross income",
+        "Self-employment tax"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxable income is the amount on which the income tax liability is calculated. It's found after subtracting deductions from AGI.",
+      "topic": "Tax computation and rates",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313037402-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxable income is the amount on which the income tax liability is calculated.",
+        "2": "Option C is incorrect. Taxable income is the amount on which the income tax liability is calculated.",
+        "3": "Option D is incorrect. Taxable income is the amount on which the income tax liability is calculated."
+      }
+    },
+    {
+      "question": "Which of the following credits is refundable?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Child Tax Credit (portion)",
+        "Education Credits",
+        "Retirement Savings Contributions Credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A portion of the Child Tax Credit is refundable. This means that you can get some of the credit back as a refund, even if you don't owe any taxes.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313037402-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A portion of the Child Tax Credit is refundable.",
+        "2": "Option C is incorrect. A portion of the Child Tax Credit is refundable.",
+        "3": "Option D is incorrect. A portion of the Child Tax Credit is refundable."
+      }
+    },
+    {
+      "question": "Which of the following credits is designed to benefit low- to moderate-income working individuals and families?",
+      "options": [
+        "Foreign Tax Credit",
+        "Earned Income Tax Credit (EITC)",
+        "General Business Credit",
+        "Credit for the Elderly or the Disabled"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Earned Income Tax Credit (EITC) is specifically designed to benefit low- to moderate-income working individuals and families.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313037402-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Earned Income Tax Credit (EITC) is specifically designed to benefit low- to moderate-income working individuals and families.",
+        "2": "Option C is incorrect. The Earned Income Tax Credit (EITC) is specifically designed to benefit low- to moderate-income working individuals and families.",
+        "3": "Option D is incorrect. The Earned Income Tax Credit (EITC) is specifically designed to benefit low- to moderate-income working individuals and families."
+      }
+    },
+    {
+      "question": "Which of the following is used to calculate self-employment tax?",
+      "options": [
+        "Form 1040",
+        "Schedule C",
+        "Schedule SE",
+        "Form W-2"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Schedule SE is used to calculate self-employment tax. It calculates the amount of Social Security and Medicare taxes owed on self-employment income.",
+      "topic": "Self-employment tax",
+      "blueprintArea": "SEE1-4",
+      "id": "see1-easy-gen-1772313049241-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Schedule SE is used to calculate self-employment tax.",
+        "1": "Option B is incorrect. Schedule SE is used to calculate self-employment tax.",
+        "3": "Option D is incorrect. Schedule SE is used to calculate self-employment tax."
+      }
+    },
+    {
+      "question": "An above-the-line deduction directly reduces which of the following?",
+      "options": [
+        "Tax liability",
+        "Adjusted Gross Income (AGI)",
+        "Taxable income",
+        "Self-employment income"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Above-the-line deductions are subtracted from gross income to arrive at Adjusted Gross Income (AGI). This is why they are also known as adjustments to income.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313049241-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Above-the-line deductions are subtracted from gross income to arrive at Adjusted Gross Income (AGI).",
+        "2": "Option C is incorrect. Above-the-line deductions are subtracted from gross income to arrive at Adjusted Gross Income (AGI).",
+        "3": "Option D is incorrect. Above-the-line deductions are subtracted from gross income to arrive at Adjusted Gross Income (AGI)."
+      }
+    },
+    {
+      "question": "A capital asset is sold for more than its adjusted basis. This results in:",
+      "options": [
+        "A capital loss",
+        "A capital gain",
+        "Ordinary income",
+        "No tax consequence"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When a capital asset is sold for more than its adjusted basis, the difference is a capital gain. The gain is subject to capital gains tax rates.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313049241-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. When a capital asset is sold for more than its adjusted basis, the difference is a capital gain.",
+        "2": "Option C is incorrect. When a capital asset is sold for more than its adjusted basis, the difference is a capital gain.",
+        "3": "Option D is incorrect. When a capital asset is sold for more than its adjusted basis, the difference is a capital gain."
+      }
+    },
+    {
+      "question": "Net Investment Income Tax (NIIT) is applied to the smaller of net investment income or:",
+      "options": [
+        "Modified Adjusted Gross Income (MAGI) above a certain threshold",
+        "Gross income",
+        "Taxable income",
+        "Total deductions"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Net Investment Income Tax (NIIT) is 3.8% of the smaller of net investment income or the excess of the taxpayer's modified adjusted gross income (MAGI) over a certain threshold.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313049241-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The Net Investment Income Tax (NIIT) is 3.",
+        "2": "Option C is incorrect. The Net Investment Income Tax (NIIT) is 3.",
+        "3": "Option D is incorrect. The Net Investment Income Tax (NIIT) is 3."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can typically be deducted as an above-the-line deduction?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "$5,000"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500. This deduction is subject to income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313049241-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Which of the following is a type of traditional IRA?",
+      "options": [
+        "Roth IRA",
+        "SIMPLE IRA",
+        "SEP IRA",
+        "Traditional deductible IRA"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A Traditional deductible IRA is a type of traditional IRA. Contributions may be tax deductible depending on income and other factors.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313049241-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A Traditional deductible IRA is a type of traditional IRA.",
+        "1": "Option B is incorrect. A Traditional deductible IRA is a type of traditional IRA.",
+        "2": "Option C is incorrect. A Traditional deductible IRA is a type of traditional IRA."
+      }
+    },
+    {
+      "question": "Which form is used to itemize deductions?",
+      "options": [
+        "Schedule A",
+        "Schedule B",
+        "Schedule C",
+        "Schedule D"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Schedule A is used to itemize deductions such as medical expenses, state and local taxes (SALT), and charitable contributions.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313049241-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. Schedule A is used to itemize deductions such as medical expenses, state and local taxes (SALT), and charitable contributions.",
+        "2": "Option C is incorrect. Schedule A is used to itemize deductions such as medical expenses, state and local taxes (SALT), and charitable contributions.",
+        "3": "Option D is incorrect. Schedule A is used to itemize deductions such as medical expenses, state and local taxes (SALT), and charitable contributions."
+      }
+    },
+    {
+      "question": "If a taxpayer's itemized deductions are less than their standard deduction, they should generally:",
+      "options": [
+        "Itemize deductions",
+        "Take the standard deduction",
+        "Take both",
+        "Split the difference"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxpayers should generally take the standard deduction if it is greater than their itemized deductions, as this will result in a lower tax liability.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313049241-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers should generally take the standard deduction if it is greater than their itemized deductions, as this will result in a lower tax liability.",
+        "2": "Option C is incorrect. Taxpayers should generally take the standard deduction if it is greater than their itemized deductions, as this will result in a lower tax liability.",
+        "3": "Option D is incorrect. Taxpayers should generally take the standard deduction if it is greater than their itemized deductions, as this will result in a lower tax liability."
+      }
+    },
+    {
+      "question": "Tax rates are applied to which of the following?",
+      "options": [
+        "Gross income",
+        "Adjusted Gross Income (AGI)",
+        "Taxable income",
+        "Total income"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tax rates are applied to taxable income. Taxable income is AGI less either the standard deduction or itemized deductions, and any qualified business income (QBI) deduction.",
+      "topic": "Tax computation and rates",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313049241-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax rates are applied to taxable income.",
+        "1": "Option B is incorrect. Tax rates are applied to taxable income.",
+        "3": "Option D is incorrect. Tax rates are applied to taxable income."
+      }
+    },
+    {
+      "question": "Which of the following credits is refundable?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Child Tax Credit (CTC)",
+        "Credit for the Elderly or Disabled",
+        "Lifetime Learning Credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Child Tax Credit (CTC) is partially refundable. This means that even if the credit reduces the taxpayer's tax liability to zero, they may receive a portion of the credit back as a refund.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313049241-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Child Tax Credit (CTC) is partially refundable.",
+        "2": "Option C is incorrect. The Child Tax Credit (CTC) is partially refundable.",
+        "3": "Option D is incorrect. The Child Tax Credit (CTC) is partially refundable."
+      }
+    },
+    {
+      "question": "What is the standard deduction for a single individual in 2024 (assuming no additional standard deduction)?",
+      "options": [
+        "$13,850",
+        "$14,600",
+        "$27,400",
+        "$29,200"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The standard deduction for a single individual in 2024 is $14,600. This amount is set annually by the IRS.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313061111-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The standard deduction for a single individual in 2024 is $14,600.",
+        "2": "Option C is incorrect. The standard deduction for a single individual in 2024 is $14,600.",
+        "3": "Option D is incorrect. The standard deduction for a single individual in 2024 is $14,600."
+      }
+    },
+    {
+      "question": "Which of the following is an above-the-line deduction?",
+      "options": [
+        "Medical expenses",
+        "State and local taxes",
+        "Student loan interest",
+        "Charitable contributions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated. The other options are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313061111-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated.",
+        "1": "Option B is incorrect. Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated.",
+        "3": "Option D is incorrect. Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "Child Tax Credit",
+        "Foreign Tax Credit",
+        "Credit for the Elderly or the Disabled",
+        "Lifetime Learning Credit"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Child Tax Credit is a refundable credit, meaning you can receive a refund even if you owe no taxes. The other credits are non-refundable.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313061111-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The Child Tax Credit is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "2": "Option C is incorrect. The Child Tax Credit is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "3": "Option D is incorrect. The Child Tax Credit is a refundable credit, meaning you can receive a refund even if you owe no taxes."
+      }
+    },
+    {
+      "question": "What is the tax rate for the Net Investment Income Tax (NIIT)?",
+      "options": [
+        "20%",
+        "3.8%",
+        "15%",
+        "28%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Net Investment Income Tax (NIIT) is a 3.8% tax on certain investment income of individuals, estates, and trusts that exceed certain income thresholds.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313061111-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Net Investment Income Tax (NIIT) is a 3.",
+        "2": "Option C is incorrect. The Net Investment Income Tax (NIIT) is a 3.",
+        "3": "Option D is incorrect. The Net Investment Income Tax (NIIT) is a 3."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can be deducted above-the-line?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "The full amount of interest paid"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500. This deduction is subject to income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313061111-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Which of the following is a common Schedule A deduction?",
+      "options": [
+        "Self-employment tax",
+        "IRA contributions",
+        "Medical expenses",
+        "Alimony paid"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Medical expenses are a common Schedule A deduction, subject to certain limitations based on AGI. The other options are adjustments to income or not deductible.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313061111-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Medical expenses are a common Schedule A deduction, subject to certain limitations based on AGI.",
+        "1": "Option B is incorrect. Medical expenses are a common Schedule A deduction, subject to certain limitations based on AGI.",
+        "3": "Option D is incorrect. Medical expenses are a common Schedule A deduction, subject to certain limitations based on AGI."
+      }
+    },
+    {
+      "question": "When is a capital gain considered a long-term capital gain?",
+      "options": [
+        "When the asset is held for more than 6 months",
+        "When the asset is held for more than 1 year",
+        "When the asset is held for more than 2 years",
+        "When the asset is held for more than 5 years"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A capital gain is considered long-term if the asset is held for more than one year before being sold. The holding period determines the applicable tax rate.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313061111-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A capital gain is considered long-term if the asset is held for more than one year before being sold.",
+        "2": "Option C is incorrect. A capital gain is considered long-term if the asset is held for more than one year before being sold.",
+        "3": "Option D is incorrect. A capital gain is considered long-term if the asset is held for more than one year before being sold."
+      }
+    },
+    {
+      "question": "Which schedule is used to report self-employment income?",
+      "options": [
+        "Schedule A",
+        "Schedule B",
+        "Schedule C",
+        "Schedule D"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Schedule C is used to report profit or loss from business (sole proprietorship). This is how self-employment income is reported.",
+      "topic": "Self-employment tax",
+      "blueprintArea": "SEE1-4",
+      "id": "see1-easy-gen-1772313061111-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Schedule C is used to report profit or loss from business (sole proprietorship).",
+        "1": "Option B is incorrect. Schedule C is used to report profit or loss from business (sole proprietorship).",
+        "3": "Option D is incorrect. Schedule C is used to report profit or loss from business (sole proprietorship)."
+      }
+    },
+    {
+      "question": "What is the penalty for overstating the Earned Income Tax Credit (EITC)?",
+      "options": [
+        "No penalty",
+        "A warning letter",
+        "Disallowance of EITC for a certain period",
+        "A monetary fine"
+      ],
+      "correctAnswer": 2,
+      "explanation": "There are penalties for overstating the EITC claim. One possible penalty is the disallowance of EITC for a certain period of time.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313061111-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. There are penalties for overstating the EITC claim.",
+        "1": "Option B is incorrect. There are penalties for overstating the EITC claim.",
+        "3": "Option D is incorrect. There are penalties for overstating the EITC claim."
+      }
+    },
+    {
+      "question": "Which of the following reduces adjusted gross income (AGI)?",
+      "options": [
+        "Itemized deductions",
+        "Standard deduction",
+        "Above-the-line deductions",
+        "Tax credits"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Above-the-line deductions reduce gross income to arrive at AGI. Itemized deductions and the standard deduction reduce AGI to taxable income. Tax credits directly reduce tax liability.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313061111-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Above-the-line deductions reduce gross income to arrive at AGI.",
+        "1": "Option B is incorrect. Above-the-line deductions reduce gross income to arrive at AGI.",
+        "3": "Option D is incorrect. Above-the-line deductions reduce gross income to arrive at AGI."
+      }
+    },
+    {
+      "question": "Which of the following is an above-the-line deduction?",
+      "options": [
+        "Medical expenses",
+        "State income taxes",
+        "Student loan interest",
+        "Charitable contributions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Student loan interest is an above-the-line deduction, meaning it's deducted before adjusted gross income (AGI) is calculated. The other options are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313073105-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is an above-the-line deduction, meaning it's deducted before adjusted gross income (AGI) is calculated.",
+        "1": "Option B is incorrect. Student loan interest is an above-the-line deduction, meaning it's deducted before adjusted gross income (AGI) is calculated.",
+        "3": "Option D is incorrect. Student loan interest is an above-the-line deduction, meaning it's deducted before adjusted gross income (AGI) is calculated."
+      }
+    },
+    {
+      "question": "What is the maximum capital loss that an individual can deduct in a tax year?",
+      "options": [
+        "$1,500",
+        "$3,000",
+        "$5,000",
+        "Unlimited"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Individuals can deduct up to $3,000 of capital losses against ordinary income in a tax year. Any excess loss can be carried forward to future years.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313073105-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Individuals can deduct up to $3,000 of capital losses against ordinary income in a tax year.",
+        "2": "Option C is incorrect. Individuals can deduct up to $3,000 of capital losses against ordinary income in a tax year.",
+        "3": "Option D is incorrect. Individuals can deduct up to $3,000 of capital losses against ordinary income in a tax year."
+      }
+    },
+    {
+      "question": "The net investment income tax (NIIT) is what percentage?",
+      "options": [
+        "2.9%",
+        "3.8%",
+        "15%",
+        "20%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The net investment income tax is 3.8% and applies to individuals, estates, and trusts with net investment income above certain income thresholds.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313073105-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The net investment income tax is 3.",
+        "2": "Option C is incorrect. The net investment income tax is 3.",
+        "3": "Option D is incorrect. The net investment income tax is 3."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can be deducted above-the-line?",
+      "options": [
+        "$1,000",
+        "$2,000",
+        "$2,500",
+        "$3,000"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500. This deduction is subject to income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313073105-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "1": "Option B is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Which of the following IRA contributions is generally deductible?",
+      "options": [
+        "Roth IRA contribution",
+        "Traditional IRA contribution if not covered by a retirement plan at work",
+        "Traditional IRA contribution if covered by a retirement plan at work and income exceeds certain limits",
+        "SIMPLE IRA contribution"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Traditional IRA contributions are generally deductible if the individual is not covered by a retirement plan at work. If covered, deductibility may be limited based on income.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313073105-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Traditional IRA contributions are generally deductible if the individual is not covered by a retirement plan at work.",
+        "2": "Option C is incorrect. Traditional IRA contributions are generally deductible if the individual is not covered by a retirement plan at work.",
+        "3": "Option D is incorrect. Traditional IRA contributions are generally deductible if the individual is not covered by a retirement plan at work."
+      }
+    },
+    {
+      "question": "Which of the following is a common Schedule A deduction?",
+      "options": [
+        "Alimony paid",
+        "Self-employment tax",
+        "Mortgage interest",
+        "Health savings account deduction"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mortgage interest is a common itemized deduction reported on Schedule A. The other options are either above-the-line deductions or not deductible on Schedule A.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313073105-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Mortgage interest is a common itemized deduction reported on Schedule A.",
+        "1": "Option B is incorrect. Mortgage interest is a common itemized deduction reported on Schedule A.",
+        "3": "Option D is incorrect. Mortgage interest is a common itemized deduction reported on Schedule A."
+      }
+    },
+    {
+      "question": "Taxpayers will use itemized deductions instead of the standard deduction when:",
+      "options": [
+        "Their standard deduction is higher than their itemized deductions.",
+        "Their itemized deductions are higher than their standard deduction.",
+        "They are married filing separately.",
+        "They are claimed as a dependent on someone else's return."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxpayers will choose to itemize when their total itemized deductions exceed the standard deduction amount for their filing status, as this results in a lower tax liability.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313073105-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers will choose to itemize when their total itemized deductions exceed the standard deduction amount for their filing status, as this results in a lower tax liability.",
+        "2": "Option C is incorrect. Taxpayers will choose to itemize when their total itemized deductions exceed the standard deduction amount for their filing status, as this results in a lower tax liability.",
+        "3": "Option D is incorrect. Taxpayers will choose to itemize when their total itemized deductions exceed the standard deduction amount for their filing status, as this results in a lower tax liability."
+      }
+    },
+    {
+      "question": "Which of the following filing statuses generally has the highest standard deduction?",
+      "options": [
+        "Single",
+        "Married Filing Separately",
+        "Head of Household",
+        "Married Filing Jointly"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Married Filing Jointly typically has the highest standard deduction amount compared to other filing statuses.",
+      "topic": "Tax computation and rates",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313073105-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Married Filing Jointly typically has the highest standard deduction amount compared to other filing statuses.",
+        "1": "Option B is incorrect. Married Filing Jointly typically has the highest standard deduction amount compared to other filing statuses.",
+        "2": "Option C is incorrect. Married Filing Jointly typically has the highest standard deduction amount compared to other filing statuses."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Foreign Tax Credit",
+        "Earned Income Tax Credit (EITC)",
+        "Credit for the Elderly or the Disabled"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes. The others are non-refundable.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313073105-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "1": "Option B is incorrect. The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "3": "Option D is incorrect. The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes."
+      }
+    },
+    {
+      "question": "Which credit is designed to help low-to-moderate income families with children?",
+      "options": [
+        "Lifetime Learning Credit",
+        "Saver's Credit",
+        "Child Tax Credit",
+        "Adoption Credit"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Child Tax Credit is designed to provide tax relief to families with qualifying children, subject to certain income limitations.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313073105-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Child Tax Credit is designed to provide tax relief to families with qualifying children, subject to certain income limitations.",
+        "1": "Option B is incorrect. The Child Tax Credit is designed to provide tax relief to families with qualifying children, subject to certain income limitations.",
+        "3": "Option D is incorrect. The Child Tax Credit is designed to provide tax relief to families with qualifying children, subject to certain income limitations."
+      }
+    },
+    {
+      "question": "Which of the following is an example of an above-the-line deduction?",
+      "options": [
+        "Medical Expenses",
+        "Mortgage Interest",
+        "Student Loan Interest",
+        "State and Local Taxes"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Student loan interest is deducted above-the-line, meaning it reduces adjusted gross income (AGI). Medical expenses, mortgage interest, and state and local taxes are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313085211-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is deducted above-the-line, meaning it reduces adjusted gross income (AGI).",
+        "1": "Option B is incorrect. Student loan interest is deducted above-the-line, meaning it reduces adjusted gross income (AGI).",
+        "3": "Option D is incorrect. Student loan interest is deducted above-the-line, meaning it reduces adjusted gross income (AGI)."
+      }
+    },
+    {
+      "question": "A capital asset sold for more than its basis results in a:",
+      "options": [
+        "Capital Loss",
+        "Capital Gain",
+        "Ordinary Loss",
+        "Ordinary Income"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When a capital asset is sold for more than its basis, the result is a capital gain. This gain may be taxed at different rates depending on how long the asset was held.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313085211-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. When a capital asset is sold for more than its basis, the result is a capital gain.",
+        "2": "Option C is incorrect. When a capital asset is sold for more than its basis, the result is a capital gain.",
+        "3": "Option D is incorrect. When a capital asset is sold for more than its basis, the result is a capital gain."
+      }
+    },
+    {
+      "question": "Which of the following types of income is subject to Net Investment Income Tax (NIIT)?",
+      "options": [
+        "Wages",
+        "Self-Employment Income",
+        "Interest Income",
+        "Social Security Benefits"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Net Investment Income Tax (NIIT) applies to investment income such as interest, dividends, and capital gains. Wages, self-employment income, and social security benefits are not subject to NIIT.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313085211-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Net Investment Income Tax (NIIT) applies to investment income such as interest, dividends, and capital gains.",
+        "1": "Option B is incorrect. Net Investment Income Tax (NIIT) applies to investment income such as interest, dividends, and capital gains.",
+        "3": "Option D is incorrect. Net Investment Income Tax (NIIT) applies to investment income such as interest, dividends, and capital gains."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can be deducted above-the-line?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "$5,000"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500. This deduction is subject to income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313085211-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Which of the following is a requirement for a contribution to a traditional IRA to be deductible?",
+      "options": [
+        "Must be over age 70 1/2",
+        "Must be under age 50",
+        "May be limited if covered by an employer retirement plan",
+        "Must be a Roth IRA"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The deductibility of traditional IRA contributions may be limited if the individual is covered by an employer retirement plan. There are no age limits for contributions, and Roth IRAs are not deductible.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313085211-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The deductibility of traditional IRA contributions may be limited if the individual is covered by an employer retirement plan.",
+        "1": "Option B is incorrect. The deductibility of traditional IRA contributions may be limited if the individual is covered by an employer retirement plan.",
+        "3": "Option D is incorrect. The deductibility of traditional IRA contributions may be limited if the individual is covered by an employer retirement plan."
+      }
+    },
+    {
+      "question": "Which of the following is a common Schedule A deduction?",
+      "options": [
+        "Self-Employment Tax",
+        "One-Half of Self-Employment Tax",
+        "IRA Contributions",
+        "Medical Expenses"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Medical expenses are commonly deducted on Schedule A, subject to certain limitations (7.5% of AGI threshold). Self-employment tax and IRA contributions are deducted above-the-line.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313085211-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Medical expenses are commonly deducted on Schedule A, subject to certain limitations (7.",
+        "1": "Option B is incorrect. Medical expenses are commonly deducted on Schedule A, subject to certain limitations (7.",
+        "2": "Option C is incorrect. Medical expenses are commonly deducted on Schedule A, subject to certain limitations (7."
+      }
+    },
+    {
+      "question": "If a taxpayer's itemized deductions are less than the standard deduction, which should they use?",
+      "options": [
+        "Itemized Deductions",
+        "Standard Deduction",
+        "The Average of the Two",
+        "One-Half of the Itemized Deductions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxpayers should use the standard deduction if it is greater than their itemized deductions. This results in a lower taxable income.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313085211-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers should use the standard deduction if it is greater than their itemized deductions.",
+        "2": "Option C is incorrect. Taxpayers should use the standard deduction if it is greater than their itemized deductions.",
+        "3": "Option D is incorrect. Taxpayers should use the standard deduction if it is greater than their itemized deductions."
+      }
+    },
+    {
+      "question": "Tax brackets are used to determine the tax rate applied to a taxpayer's:",
+      "options": [
+        "Gross Income",
+        "Adjusted Gross Income (AGI)",
+        "Taxable Income",
+        "Total Income"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tax brackets are applied to a taxpayer's taxable income, which is AGI less deductions. Gross income and AGI are calculated before applying tax brackets.",
+      "topic": "Tax computation and rates",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313085211-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax brackets are applied to a taxpayer's taxable income, which is AGI less deductions.",
+        "1": "Option B is incorrect. Tax brackets are applied to a taxpayer's taxable income, which is AGI less deductions.",
+        "3": "Option D is incorrect. Tax brackets are applied to a taxpayer's taxable income, which is AGI less deductions."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Child Tax Credit (CTC)",
+        "Education Credits",
+        "Foreign Tax Credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Child Tax Credit (CTC) is partially refundable, meaning you can receive some of the credit back as a refund even if you don't owe any taxes. Child and Dependent Care Credit, Education Credits, and Foreign Tax Credit are non-refundable.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313085211-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Child Tax Credit (CTC) is partially refundable, meaning you can receive some of the credit back as a refund even if you don't owe any taxes.",
+        "2": "Option C is incorrect. The Child Tax Credit (CTC) is partially refundable, meaning you can receive some of the credit back as a refund even if you don't owe any taxes.",
+        "3": "Option D is incorrect. The Child Tax Credit (CTC) is partially refundable, meaning you can receive some of the credit back as a refund even if you don't owe any taxes."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "General Business Credit",
+        "Earned Income Tax Credit (EITC)",
+        "Credit for the Elderly or the Disabled",
+        "Adoption Credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Earned Income Tax Credit (EITC) is a refundable tax credit. General Business Credit, Credit for the Elderly or the Disabled, and Adoption Credit are generally non-refundable.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313085211-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Earned Income Tax Credit (EITC) is a refundable tax credit.",
+        "2": "Option C is incorrect. The Earned Income Tax Credit (EITC) is a refundable tax credit.",
+        "3": "Option D is incorrect. The Earned Income Tax Credit (EITC) is a refundable tax credit."
+      }
+    },
+    {
+      "question": "Which of the following is an above-the-line deduction?",
+      "options": [
+        "Medical Expenses",
+        "State and Local Taxes",
+        "Student Loan Interest",
+        "Charitable Contributions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Student loan interest is an above-the-line deduction, meaning it is taken before adjusted gross income (AGI) is calculated. The others are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313096882-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is an above-the-line deduction, meaning it is taken before adjusted gross income (AGI) is calculated.",
+        "1": "Option B is incorrect. Student loan interest is an above-the-line deduction, meaning it is taken before adjusted gross income (AGI) is calculated.",
+        "3": "Option D is incorrect. Student loan interest is an above-the-line deduction, meaning it is taken before adjusted gross income (AGI) is calculated."
+      }
+    },
+    {
+      "question": "A capital asset is sold for more than its basis. This results in a:",
+      "options": [
+        "Capital Loss",
+        "Capital Gain",
+        "Ordinary Income",
+        "Deduction"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Selling a capital asset for more than its basis results in a capital gain. The difference between the selling price and the basis is the gain.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313096882-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Selling a capital asset for more than its basis results in a capital gain.",
+        "2": "Option C is incorrect. Selling a capital asset for more than its basis results in a capital gain.",
+        "3": "Option D is incorrect. Selling a capital asset for more than its basis results in a capital gain."
+      }
+    },
+    {
+      "question": "The net investment income tax (NIIT) is applied to:",
+      "options": [
+        "Wages",
+        "Self-Employment Income",
+        "Investment Income",
+        "Unemployment Compensation"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The net investment income tax (NIIT) is a 3.8% tax on certain net investment income of individuals, estates, and trusts that exceed certain thresholds.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313096882-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The net investment income tax (NIIT) is a 3.",
+        "1": "Option B is incorrect. The net investment income tax (NIIT) is a 3.",
+        "3": "Option D is incorrect. The net investment income tax (NIIT) is a 3."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest an individual can deduct above-the-line in 2024?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "Unlimited"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500. This deduction is subject to income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313096882-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Contributions to a traditional IRA may be deductible:",
+      "options": [
+        "Always",
+        "Never",
+        "Sometimes",
+        "Only if under age 50"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Contributions to a traditional IRA may be deductible, depending on the taxpayer's income and whether they (or their spouse) are covered by a retirement plan at work.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313096882-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Contributions to a traditional IRA may be deductible, depending on the taxpayer's income and whether they (or their spouse) are covered by a retirement plan at work.",
+        "1": "Option B is incorrect. Contributions to a traditional IRA may be deductible, depending on the taxpayer's income and whether they (or their spouse) are covered by a retirement plan at work.",
+        "3": "Option D is incorrect. Contributions to a traditional IRA may be deductible, depending on the taxpayer's income and whether they (or their spouse) are covered by a retirement plan at work."
+      }
+    },
+    {
+      "question": "Which schedule is used to report itemized deductions?",
+      "options": [
+        "Schedule C",
+        "Schedule E",
+        "Schedule A",
+        "Schedule SE"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313096882-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions.",
+        "1": "Option B is incorrect. Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions.",
+        "3": "Option D is incorrect. Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions."
+      }
+    },
+    {
+      "question": "If total itemized deductions are less than the standard deduction, a taxpayer should:",
+      "options": [
+        "Itemize",
+        "Take the standard deduction",
+        "Average the two",
+        "Take zero deductions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxpayers should take the standard deduction if their total itemized deductions are less than the standard deduction amount, as it results in a lower tax liability.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313096882-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers should take the standard deduction if their total itemized deductions are less than the standard deduction amount, as it results in a lower tax liability.",
+        "2": "Option C is incorrect. Taxpayers should take the standard deduction if their total itemized deductions are less than the standard deduction amount, as it results in a lower tax liability.",
+        "3": "Option D is incorrect. Taxpayers should take the standard deduction if their total itemized deductions are less than the standard deduction amount, as it results in a lower tax liability."
+      }
+    },
+    {
+      "question": "Tax rates are applied to:",
+      "options": [
+        "Gross Income",
+        "Adjusted Gross Income",
+        "Taxable Income",
+        "Total Income"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tax rates are applied to taxable income, which is adjusted gross income (AGI) less the standard deduction or itemized deductions, and any qualified business income (QBI) deduction.",
+      "topic": "Tax computation and rates",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313096882-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax rates are applied to taxable income, which is adjusted gross income (AGI) less the standard deduction or itemized deductions, and any qualified business income (QBI) deduction.",
+        "1": "Option B is incorrect. Tax rates are applied to taxable income, which is adjusted gross income (AGI) less the standard deduction or itemized deductions, and any qualified business income (QBI) deduction.",
+        "3": "Option D is incorrect. Tax rates are applied to taxable income, which is adjusted gross income (AGI) less the standard deduction or itemized deductions, and any qualified business income (QBI) deduction."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Child Tax Credit (CTC)",
+        "Education Credits",
+        "Foreign Tax Credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A portion of the Child Tax Credit is refundable, meaning that a taxpayer can receive a refund even if they owe no taxes. The other credits are nonrefundable.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313096882-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A portion of the Child Tax Credit is refundable, meaning that a taxpayer can receive a refund even if they owe no taxes.",
+        "2": "Option C is incorrect. A portion of the Child Tax Credit is refundable, meaning that a taxpayer can receive a refund even if they owe no taxes.",
+        "3": "Option D is incorrect. A portion of the Child Tax Credit is refundable, meaning that a taxpayer can receive a refund even if they owe no taxes."
+      }
+    },
+    {
+      "question": "Which of the following is subject to self-employment tax?",
+      "options": [
+        "Wages",
+        "Interest Income",
+        "Net Earnings from Self-Employment",
+        "Unemployment Compensation"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Net earnings from self-employment are subject to self-employment tax, which consists of Social Security and Medicare taxes. Wages are subject to FICA tax, which is the employee equivalent.",
+      "topic": "Self-employment tax",
+      "blueprintArea": "SEE1-4",
+      "id": "see1-easy-gen-1772313096882-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Net earnings from self-employment are subject to self-employment tax, which consists of Social Security and Medicare taxes.",
+        "1": "Option B is incorrect. Net earnings from self-employment are subject to self-employment tax, which consists of Social Security and Medicare taxes.",
+        "3": "Option D is incorrect. Net earnings from self-employment are subject to self-employment tax, which consists of Social Security and Medicare taxes."
+      }
+    },
+    {
+      "question": "Which of the following taxes is calculated on Schedule SE?",
+      "options": [
+        "Income Tax",
+        "Self-Employment Tax",
+        "Federal Income Tax Withholding",
+        "Estimated Tax"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Self-employment tax, which includes Social Security and Medicare taxes for the self-employed, is calculated on Schedule SE.",
+      "topic": "Self-employment tax",
+      "blueprintArea": "SEE1-4",
+      "id": "see1-easy-gen-1772313107982-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Self-employment tax, which includes Social Security and Medicare taxes for the self-employed, is calculated on Schedule SE.",
+        "2": "Option C is incorrect. Self-employment tax, which includes Social Security and Medicare taxes for the self-employed, is calculated on Schedule SE.",
+        "3": "Option D is incorrect. Self-employment tax, which includes Social Security and Medicare taxes for the self-employed, is calculated on Schedule SE."
+      }
+    },
+    {
+      "question": "Which of the following is an above-the-line deduction?",
+      "options": [
+        "Medical Expenses",
+        "State and Local Taxes",
+        "Student Loan Interest",
+        "Charitable Contributions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Student loan interest is an above-the-line deduction, meaning it reduces gross income to arrive at adjusted gross income (AGI).",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313107982-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is an above-the-line deduction, meaning it reduces gross income to arrive at adjusted gross income (AGI).",
+        "1": "Option B is incorrect. Student loan interest is an above-the-line deduction, meaning it reduces gross income to arrive at adjusted gross income (AGI).",
+        "3": "Option D is incorrect. Student loan interest is an above-the-line deduction, meaning it reduces gross income to arrive at adjusted gross income (AGI)."
+      }
+    },
+    {
+      "question": "Which schedule is used to report capital gains and losses?",
+      "options": [
+        "Schedule A",
+        "Schedule C",
+        "Schedule D",
+        "Schedule E"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Capital gains and losses are reported on Schedule D.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313107982-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Capital gains and losses are reported on Schedule D.",
+        "1": "Option B is incorrect. Capital gains and losses are reported on Schedule D.",
+        "3": "Option D is incorrect. Capital gains and losses are reported on Schedule D."
+      }
+    },
+    {
+      "question": "The net investment income tax (NIIT) is a tax on investment income above a certain income threshold. What is the NIIT rate?",
+      "options": [
+        "2.9%",
+        "3.8%",
+        "15%",
+        "20%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The net investment income tax (NIIT) is 3.8%.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313107982-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The net investment income tax (NIIT) is 3.",
+        "2": "Option C is incorrect. The net investment income tax (NIIT) is 3.",
+        "3": "Option D is incorrect. The net investment income tax (NIIT) is 3."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can be deducted above-the-line?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "$5,000"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313107982-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Contributions to a traditional IRA may be deductible. This deduction is usually taken:",
+      "options": [
+        "As an itemized deduction",
+        "Above-the-line (for AGI)",
+        "On Schedule C",
+        "As a tax credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Deductible traditional IRA contributions are taken as an above-the-line deduction.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313107982-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Deductible traditional IRA contributions are taken as an above-the-line deduction.",
+        "2": "Option C is incorrect. Deductible traditional IRA contributions are taken as an above-the-line deduction.",
+        "3": "Option D is incorrect. Deductible traditional IRA contributions are taken as an above-the-line deduction."
+      }
+    },
+    {
+      "question": "Which of the following is a common itemized deduction reported on Schedule A?",
+      "options": [
+        "Self-Employment Tax",
+        "Standard Deduction",
+        "Mortgage Interest",
+        "IRA Contributions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mortgage interest is a common itemized deduction that is reported on Schedule A.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313107982-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Mortgage interest is a common itemized deduction that is reported on Schedule A.",
+        "1": "Option B is incorrect. Mortgage interest is a common itemized deduction that is reported on Schedule A.",
+        "3": "Option D is incorrect. Mortgage interest is a common itemized deduction that is reported on Schedule A."
+      }
+    },
+    {
+      "question": "If a taxpayer's itemized deductions are less than the standard deduction, which should they use?",
+      "options": [
+        "Itemized Deductions",
+        "Standard Deduction",
+        "Whichever is lower",
+        "An average of the two"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxpayers should use the standard deduction if their itemized deductions are less than the standard deduction, as it results in a lower tax liability.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313107982-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers should use the standard deduction if their itemized deductions are less than the standard deduction, as it results in a lower tax liability.",
+        "2": "Option C is incorrect. Taxpayers should use the standard deduction if their itemized deductions are less than the standard deduction, as it results in a lower tax liability.",
+        "3": "Option D is incorrect. Taxpayers should use the standard deduction if their itemized deductions are less than the standard deduction, as it results in a lower tax liability."
+      }
+    },
+    {
+      "question": "Tax rates are applied to what amount to determine the amount of income tax owed?",
+      "options": [
+        "Gross Income",
+        "Adjusted Gross Income (AGI)",
+        "Taxable Income",
+        "Total Income"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Tax rates are applied to taxable income to determine the amount of income tax owed.",
+      "topic": "Tax computation and rates",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313107982-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Tax rates are applied to taxable income to determine the amount of income tax owed.",
+        "1": "Option B is incorrect. Tax rates are applied to taxable income to determine the amount of income tax owed.",
+        "3": "Option D is incorrect. Tax rates are applied to taxable income to determine the amount of income tax owed."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Education Credits",
+        "Earned Income Tax Credit (EITC)",
+        "Foreign Tax Credit"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Earned Income Tax Credit (EITC) is a refundable tax credit, meaning you can receive a refund even if you owe no taxes.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313107982-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Earned Income Tax Credit (EITC) is a refundable tax credit, meaning you can receive a refund even if you owe no taxes.",
+        "1": "Option B is incorrect. The Earned Income Tax Credit (EITC) is a refundable tax credit, meaning you can receive a refund even if you owe no taxes.",
+        "3": "Option D is incorrect. The Earned Income Tax Credit (EITC) is a refundable tax credit, meaning you can receive a refund even if you owe no taxes."
+      }
+    },
+    {
+      "question": "Which of the following is an above-the-line deduction?",
+      "options": [
+        "Medical expenses",
+        "State and local taxes",
+        "Student loan interest",
+        "Charitable contributions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated. The other options are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313120215-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated.",
+        "1": "Option B is incorrect. Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated.",
+        "3": "Option D is incorrect. Student loan interest is an above-the-line deduction, meaning it is deducted before adjusted gross income (AGI) is calculated."
+      }
+    },
+    {
+      "question": "A capital asset sold for less than its purchase price results in a:",
+      "options": [
+        "Capital gain",
+        "Capital loss",
+        "Ordinary income",
+        "Tax credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When a capital asset is sold for less than its purchase price, it results in a capital loss. A gain would occur if it sold for more.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313120215-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. When a capital asset is sold for less than its purchase price, it results in a capital loss.",
+        "2": "Option C is incorrect. When a capital asset is sold for less than its purchase price, it results in a capital loss.",
+        "3": "Option D is incorrect. When a capital asset is sold for less than its purchase price, it results in a capital loss."
+      }
+    },
+    {
+      "question": "The net investment income tax (NIIT) is what percentage?",
+      "options": [
+        "2.9%",
+        "3.8%",
+        "7.65%",
+        "15.3%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The net investment income tax (NIIT) is a 3.8% tax on certain investment income of high-income individuals, estates, and trusts.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313120215-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The net investment income tax (NIIT) is a 3.",
+        "2": "Option C is incorrect. The net investment income tax (NIIT) is a 3.",
+        "3": "Option D is incorrect. The net investment income tax (NIIT) is a 3."
+      }
+    },
+    {
+      "question": "Which of the following is a deduction for AGI?",
+      "options": [
+        "Alimony paid (divorce finalized before 2019)",
+        "Mortgage interest",
+        "Real estate taxes",
+        "Medical expenses"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Alimony paid (for divorce finalized before 2019) is a deduction for adjusted gross income (AGI). The other options are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313120215-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. Alimony paid (for divorce finalized before 2019) is a deduction for adjusted gross income (AGI).",
+        "2": "Option C is incorrect. Alimony paid (for divorce finalized before 2019) is a deduction for adjusted gross income (AGI).",
+        "3": "Option D is incorrect. Alimony paid (for divorce finalized before 2019) is a deduction for adjusted gross income (AGI)."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can be deducted above-the-line?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "Unlimited"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line is $2,500. This amount is subject to income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313120215-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line is $2,500."
+      }
+    },
+    {
+      "question": "Contributions to a traditional IRA may be deductible, depending on certain factors. Which of the following is a factor?",
+      "options": [
+        "Taxpayer's age",
+        "Taxpayer's state of residence",
+        "Taxpayer's filing status",
+        "Number of dependents"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The deductibility of traditional IRA contributions depends on the taxpayer's filing status and whether they (or their spouse) are covered by a retirement plan at work. Age, residence, and number of dependents are not direct factors.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313120215-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The deductibility of traditional IRA contributions depends on the taxpayer's filing status and whether they (or their spouse) are covered by a retirement plan at work.",
+        "1": "Option B is incorrect. The deductibility of traditional IRA contributions depends on the taxpayer's filing status and whether they (or their spouse) are covered by a retirement plan at work.",
+        "3": "Option D is incorrect. The deductibility of traditional IRA contributions depends on the taxpayer's filing status and whether they (or their spouse) are covered by a retirement plan at work."
+      }
+    },
+    {
+      "question": "Which of the following is a common Schedule A deduction?",
+      "options": [
+        "Self-employment tax",
+        "Health insurance premiums (self-employed)",
+        "State and local taxes",
+        "IRA contributions"
+      ],
+      "correctAnswer": 2,
+      "explanation": "State and local taxes (SALT) are a common itemized deduction reported on Schedule A. The other options are either deductions for AGI or related to self-employment.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313120215-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. State and local taxes (SALT) are a common itemized deduction reported on Schedule A.",
+        "1": "Option B is incorrect. State and local taxes (SALT) are a common itemized deduction reported on Schedule A.",
+        "3": "Option D is incorrect. State and local taxes (SALT) are a common itemized deduction reported on Schedule A."
+      }
+    },
+    {
+      "question": "Taxpayers will typically itemize deductions when:",
+      "options": [
+        "Their standard deduction is higher than their itemized deductions",
+        "Their itemized deductions are higher than their standard deduction",
+        "They are married filing separately",
+        "They are claimed as a dependent"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Taxpayers will itemize deductions only when the total of their itemized deductions exceeds their standard deduction. Otherwise, they will take the standard deduction.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313120215-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Taxpayers will itemize deductions only when the total of their itemized deductions exceeds their standard deduction.",
+        "2": "Option C is incorrect. Taxpayers will itemize deductions only when the total of their itemized deductions exceeds their standard deduction.",
+        "3": "Option D is incorrect. Taxpayers will itemize deductions only when the total of their itemized deductions exceeds their standard deduction."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Foreign Tax Credit",
+        "Earned Income Tax Credit",
+        "Education Credits"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes. The other credits are nonrefundable, meaning they can only reduce your tax liability to $0.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313120215-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "1": "Option B is incorrect. The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "3": "Option D is incorrect. The Earned Income Tax Credit (EITC) is a refundable credit, meaning you can receive a refund even if you owe no taxes."
+      }
+    },
+    {
+      "question": "Self-employment tax consists of Social Security and Medicare taxes. What is the combined rate *before* any deductions?",
+      "options": [
+        "7.65%",
+        "15.3%",
+        "12.4%",
+        "2.9%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The combined rate for Social Security and Medicare taxes for self-employed individuals is 15.3% (12.4% for Social Security and 2.9% for Medicare) *before* any deductions.",
+      "topic": "Self-employment tax",
+      "blueprintArea": "SEE1-4",
+      "id": "see1-easy-gen-1772313120215-9",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The combined rate for Social Security and Medicare taxes for self-employed individuals is 15.",
+        "2": "Option C is incorrect. The combined rate for Social Security and Medicare taxes for self-employed individuals is 15.",
+        "3": "Option D is incorrect. The combined rate for Social Security and Medicare taxes for self-employed individuals is 15."
+      }
+    },
+    {
+      "question": "What is the standard deduction for a single individual in 2024?",
+      "options": [
+        "$14,600",
+        "$13,850",
+        "$29,200",
+        "$27,700"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The standard deduction for a single individual in 2024 is $14,600. This amount is used to reduce taxable income for those who do not itemize.",
+      "topic": "Standard vs itemized deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313132967-0",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "1": "Option B is incorrect. The standard deduction for a single individual in 2024 is $14,600.",
+        "2": "Option C is incorrect. The standard deduction for a single individual in 2024 is $14,600.",
+        "3": "Option D is incorrect. The standard deduction for a single individual in 2024 is $14,600."
+      }
+    },
+    {
+      "question": "Which of the following is an above-the-line deduction?",
+      "options": [
+        "Medical expenses",
+        "Student loan interest",
+        "Mortgage interest",
+        "State and local taxes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Student loan interest is an above-the-line deduction, meaning it can be taken regardless of whether the taxpayer itemizes deductions. The other options are itemized deductions.",
+      "topic": "Above-the-line deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313132967-1",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Student loan interest is an above-the-line deduction, meaning it can be taken regardless of whether the taxpayer itemizes deductions.",
+        "2": "Option C is incorrect. Student loan interest is an above-the-line deduction, meaning it can be taken regardless of whether the taxpayer itemizes deductions.",
+        "3": "Option D is incorrect. Student loan interest is an above-the-line deduction, meaning it can be taken regardless of whether the taxpayer itemizes deductions."
+      }
+    },
+    {
+      "question": "What is the tax rate for net investment income tax (NIIT)?",
+      "options": [
+        "20%",
+        "3.8%",
+        "15%",
+        "25%"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The net investment income tax (NIIT) is 3.8%. This tax applies to certain investment income for taxpayers above a certain income threshold.",
+      "topic": "Net investment income tax",
+      "blueprintArea": "SEE1-5",
+      "id": "see1-easy-gen-1772313132967-2",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The net investment income tax (NIIT) is 3.",
+        "2": "Option C is incorrect. The net investment income tax (NIIT) is 3.",
+        "3": "Option D is incorrect. The net investment income tax (NIIT) is 3."
+      }
+    },
+    {
+      "question": "Which of the following is a refundable tax credit?",
+      "options": [
+        "Child and Dependent Care Credit",
+        "Child Tax Credit (CTC)",
+        "Education Credits",
+        "Retirement Savings Contributions Credit"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Child Tax Credit (CTC) is a refundable credit, meaning you can receive a refund even if you owe no taxes. Some portions of the CTC are refundable, subject to certain limitations.",
+      "topic": "Refundable credits (EITC, CTC)",
+      "blueprintArea": "SEE1-1",
+      "id": "see1-easy-gen-1772313132967-3",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The Child Tax Credit (CTC) is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "2": "Option C is incorrect. The Child Tax Credit (CTC) is a refundable credit, meaning you can receive a refund even if you owe no taxes.",
+        "3": "Option D is incorrect. The Child Tax Credit (CTC) is a refundable credit, meaning you can receive a refund even if you owe no taxes."
+      }
+    },
+    {
+      "question": "What is the maximum amount of student loan interest that can be deducted above-the-line each year?",
+      "options": [
+        "$1,000",
+        "$2,500",
+        "$3,000",
+        "$5,000"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The maximum amount of student loan interest that can be deducted above-the-line each year is $2,500. This deduction is subject to certain income limitations.",
+      "topic": "Student loan interest",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313132967-4",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The maximum amount of student loan interest that can be deducted above-the-line each year is $2,500.",
+        "2": "Option C is incorrect. The maximum amount of student loan interest that can be deducted above-the-line each year is $2,500.",
+        "3": "Option D is incorrect. The maximum amount of student loan interest that can be deducted above-the-line each year is $2,500."
+      }
+    },
+    {
+      "question": "Which schedule is used to report itemized deductions?",
+      "options": [
+        "Schedule C",
+        "Schedule A",
+        "Schedule D",
+        "Schedule E"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions.",
+      "topic": "Schedule A deductions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313132967-5",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions.",
+        "2": "Option C is incorrect. Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions.",
+        "3": "Option D is incorrect. Schedule A is used to report itemized deductions, such as medical expenses, state and local taxes, and charitable contributions."
+      }
+    },
+    {
+      "question": "Which of the following is NOT subject to self-employment tax?",
+      "options": [
+        "Net earnings from a business",
+        "Wages earned as an employee",
+        "Payments for services as an independent contractor",
+        "Commissions earned as a salesperson"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Wages earned as an employee are not subject to self-employment tax. These wages are subject to FICA taxes, which are withheld from the employee's paycheck.",
+      "topic": "Self-employment tax",
+      "blueprintArea": "SEE1-4",
+      "id": "see1-easy-gen-1772313132967-6",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. Wages earned as an employee are not subject to self-employment tax.",
+        "2": "Option C is incorrect. Wages earned as an employee are not subject to self-employment tax.",
+        "3": "Option D is incorrect. Wages earned as an employee are not subject to self-employment tax."
+      }
+    },
+    {
+      "question": "A loss on the sale of personal property is...",
+      "options": [
+        "Fully deductible",
+        "Deductible up to $3,000",
+        "Not deductible",
+        "Deductible with limitations"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A loss on the sale of personal property is not deductible. Only losses on the sale of investment or business property are generally deductible.",
+      "topic": "Capital gains and losses",
+      "blueprintArea": "SEE1-2",
+      "id": "see1-easy-gen-1772313132967-7",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. A loss on the sale of personal property is not deductible.",
+        "1": "Option B is incorrect. A loss on the sale of personal property is not deductible.",
+        "3": "Option D is incorrect. A loss on the sale of personal property is not deductible."
+      }
+    },
+    {
+      "question": "What is the deadline for making IRA contributions for a given tax year?",
+      "options": [
+        "December 31st of the tax year",
+        "January 15th of the following year",
+        "April 15th of the following year",
+        "October 15th of the following year"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The deadline for making IRA contributions for a given tax year is April 15th of the following year (without extensions). This allows taxpayers to contribute until the tax filing deadline.",
+      "topic": "IRA contributions",
+      "blueprintArea": "SEE1-3",
+      "id": "see1-easy-gen-1772313132967-8",
+      "version": 1,
+      "status": "approved",
+      "courseId": "ea",
+      "section": "SEE1",
+      "difficulty": "easy",
+      "skillLevel": "Remembering",
+      "whyWrong": {
+        "0": "Option A is incorrect. The deadline for making IRA contributions for a given tax year is April 15th of the following year (without extensions).",
+        "1": "Option B is incorrect. The deadline for making IRA contributions for a given tax year is April 15th of the following year (without extensions).",
+        "3": "Option D is incorrect. The deadline for making IRA contributions for a given tax year is April 15th of the following year (without extensions)."
+      }
     }
   ],
   "lastEnhanced": "2026-02-27T00:21:20.953Z"

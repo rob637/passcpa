@@ -34,6 +34,7 @@ const isDryRun = args.includes('--dry-run');
 const isVerbose = args.includes('--verbose');
 const doResume = args.includes('--resume');
 const doAll = args.includes('--all');
+const doDeepen = args.includes('--deepen'); // Re-enhance shallow explanations (<80 chars)
 const limitArg = args.find(a => a.startsWith('--limit='));
 const limit = limitArg ? parseInt(limitArg.split('=')[1]) : null;
 const sectionArg = args.find(a => !a.startsWith('-') && SECTIONS.includes(a.toUpperCase()));
@@ -44,7 +45,7 @@ if (doAll) {
 } else if (sectionArg) {
   sectionsToEnhance = [sectionArg.toUpperCase()];
 } else {
-  console.log('Usage: node qbank-enhance.cjs <section> [--all] [--limit=N] [--dry-run] [--resume]');
+  console.log('Usage: node qbank-enhance.cjs <section> [--all] [--limit=N] [--dry-run] [--resume] [--deepen]');
   console.log('Sections: FAR, AUD, REG, BAR, ISC, TCP');
   console.log('\nSet GEMINI_API_KEY environment variable first.');
   process.exit(1);
@@ -214,8 +215,21 @@ async function enhance() {
     const toEnhance = questions.filter(q => {
       // Skip if already enhanced this session
       if (alreadyEnhanced.has(q.id)) return false;
+      
+      // Check if missing educational content
+      const hasEducational = q.educational && String(q.educational).length >= 50;
+      if (!hasEducational) return true; // Always enhance if missing educational
+      
       // Skip if already has full UWorld-style content
-      if (q.whyWrong && Object.keys(q.whyWrong).length >= 3) return false;
+      if (q.whyWrong && Object.keys(q.whyWrong).length >= 3) {
+        // If --deepen flag, check if any explanation is too shallow (<80 chars)
+        if (doDeepen) {
+          const vals = Object.values(q.whyWrong).filter(v => v);
+          const isShallow = vals.length === 0 || vals.some(v => String(v).length < 80);
+          if (isShallow) return true; // Re-enhance shallow ones
+        }
+        return false;
+      }
       return true;
     });
     

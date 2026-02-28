@@ -18,7 +18,7 @@
       "options": [
         ",\n      ",
         "Gift now—grandson receives Helen\\",
-        ",\n      ",
+        "Gift now—Helen recognizes a capital gain of $450,000, but the grandson receives a stepped-up basis.",
         ",\n      "
       ],
       "version": 2,
@@ -2396,7 +2396,7 @@
       "options": [
         "Death benefit excluded from insured\\",
         ",\n      ",
-        ",\n      ",
+        "Trust assets included in the grantor's taxable estate",
         ",\n      "
       ],
       "version": 2,
@@ -2431,7 +2431,7 @@
         "Qualify for the marital deduction",
         "Use the deceased spouse\\",
         ",\n      ",
-        ",\n      "
+        "Shelter assets from creditors"
       ],
       "version": 2,
       "status": "approved",
@@ -3650,7 +3650,7 @@
         "Automatically passes to the surviving tenant(s)",
         "Passes according to the deceased\\",
         ",\n      ",
-        ",\n      "
+        "Is divided equally amongst all living tenants in common"
       ],
       "version": 2,
       "status": "approved",
@@ -3755,7 +3755,7 @@
         "Transferor\\",
         "A trust advisor",
         "Transferor's sibling",
-        "Transferor\\"
+        "Skip person's spouse"
       ],
       "version": 2,
       "status": "approved",
@@ -5721,7 +5721,7 @@
       "options": [
         "Has the company purchase a deceased owner\\",
         ",\n      ",
-        ",\n      ",
+        "Has each partner purchase a pro-rata share of a deceased owner's interest",
         "s interest"
       ],
       "version": 2,
@@ -6946,7 +6946,7 @@
         "Is owned by the key employee",
         "Provides benefits to the key employee\\",
         ",\n      ",
-        ",\n      "
+        "Is designed to primarily benefit the shareholders of ABC Corp"
       ],
       "version": 2,
       "status": "approved",
@@ -7086,7 +7086,7 @@
         "A HIPAA authorization completely replaces the need for a healthcare power of attorney",
         "A HIPAA authorization allows designated individuals to access the client\\",
         ",\n      ",
-        ",\n      "
+        "A HIPAA authorization grants the designated agent the authority to make healthcare decisions on the client's behalf."
       ],
       "version": 2,
       "status": "approved",
@@ -7260,7 +7260,7 @@
       "options": [
         "Must be for the donor\\",
         ",\n      ",
-        ",\n      ",
+        "Is considered a gift to the niece",
         ",\n      "
       ],
       "version": 2,
@@ -7715,7 +7715,7 @@
       "options": [
         "Only apply if there\\",
         ",\n      ",
-        ",\n      ",
+        "; therefore, her assets will",
         ",\n      "
       ],
       "version": 2,
@@ -9012,7 +9012,7 @@
         "Spouse receives everything",
         "A deceased beneficiary\\",
         ",\n      ",
-        ",\n      "
+        "*Per Stirpes*"
       ],
       "version": 2,
       "status": "approved",
@@ -9745,7 +9745,7 @@
       "options": [
         "Go to the disclaimant\\",
         ",\n      ",
-        ",\n      ",
+        "Be delivered to the disclaimant's attorney",
         ",\n      "
       ],
       "version": 2,
@@ -10059,7 +10059,7 @@
       "options": [
         "The trust assets are included in the grantor\\",
         ",\n      ",
-        ",\n      ",
+        "The beneficiary spouse predeceases the grantor spouse.",
         ",\n      "
       ],
       "version": 2,
@@ -10164,7 +10164,7 @@
         "Only bank accounts",
         "Nothing—they\\",
         ",\n      ",
-        ",\n      "
+        "Cryptocurrency wallets and email accounts, but not social media profiles."
       ],
       "version": 2,
       "status": "approved",

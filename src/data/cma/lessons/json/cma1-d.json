@@ -1,0 +1,1644 @@
+[
+  {
+    "id": "CMA1-D-001",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Cost Behavior and Classification",
+    "description": "Understand how costs behave and are classified for management decisions",
+    "order": 36,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Variable costs",
+      "Fixed costs",
+      "Mixed costs",
+      "Relevant range"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Understanding cost behavior is FOUNDATIONAL. Every planning, budgeting, and break-even analysis depends on knowing which costs change with activity and which don't. CMAs must classify costs correctly to provide useful decision information."
+        },
+        {
+          "title": "Cost Behavior Patterns",
+          "type": "text",
+          "content": "**Variable Costs:**\n\u2022 Change in TOTAL as activity changes\n\u2022 Constant PER UNIT\n\u2022 Examples: Direct materials, direct labor, sales commissions\n\n**Fixed Costs:**\n\u2022 Constant in TOTAL within relevant range\n\u2022 Change PER UNIT as activity changes\n\u2022 Examples: Rent, salaries, depreciation (straight-line)\n\n**Mixed (Semi-variable) Costs:**\n\u2022 Contain both fixed and variable components\n\u2022 Examples: Utilities, phone, maintenance"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Fixed vs. Variable",
+          "type": "callout",
+          "content": "**\"Total vs. Per Unit - They're Opposites!\"**\n\n**Variable:**\n\u2022 Total varies (up and down)\n\u2022 Per unit stays constant (fixed rate)\n\n**Fixed:**\n\u2022 Total stays fixed (constant)\n\u2022 Per unit varies (spreads over more units)\n\n**Remember: What's fixed/variable in TOTAL is opposite PER UNIT!**"
+        },
+        {
+          "title": "Relevant Range",
+          "type": "text",
+          "content": "**Definition:**\nThe range of activity over which cost behavior assumptions are valid.\n\n**Outside the relevant range:**\n\u2022 Fixed costs may change (need more space, equipment)\n\u2022 Variable cost per unit may change (quantity discounts, overtime)\n\n**Example:**\n\u2022 Rent is fixed at $10,000/month for 0-10,000 sq ft\n\u2022 At 10,001 sq ft, need additional space \u2192 rent jumps to $18,000\n\n**Always specify the relevant range for cost estimates!**"
+        },
+        {
+          "title": "High-Low Method",
+          "type": "text",
+          "content": "**Simple technique to separate mixed costs:**\n\n**Step 1: Variable Cost per Unit**\n(High Cost - Low Cost) / (High Activity - Low Activity)\n\n**Step 2: Fixed Cost**\nTotal Cost - (Variable Rate \u00d7 Activity Level)\n\n**Example:**\nHigh: 10,000 units, $45,000 cost\nLow: 6,000 units, $33,000 cost\n\nVariable: ($45,000 - $33,000) / (10,000 - 6,000) = $3/unit\nFixed: $45,000 - ($3 \u00d7 10,000) = $15,000\n\n**Cost function:** Y = $15,000 + $3X"
+        },
+        {
+          "title": "Cost Classifications",
+          "type": "table",
+          "headers": [
+            "Classification",
+            "Purpose",
+            "Categories"
+          ],
+          "rows": [
+            [
+              "By behavior",
+              "Planning, CVP analysis",
+              "Fixed, Variable, Mixed"
+            ],
+            [
+              "By function",
+              "Financial reporting",
+              "Product vs. Period"
+            ],
+            [
+              "By traceability",
+              "Product costing",
+              "Direct vs. Indirect"
+            ],
+            [
+              "By controllability",
+              "Performance evaluation",
+              "Controllable vs. Uncontrollable"
+            ],
+            [
+              "By relevance",
+              "Decision-making",
+              "Relevant vs. Sunk"
+            ]
+          ]
+        },
+        {
+          "title": "Product vs. Period Costs",
+          "type": "text",
+          "content": "**Product Costs (Inventoriable):**\n\u2022 Attached to inventory until sold\n\u2022 DM, DL, Manufacturing Overhead\n\u2022 Become COGS when sold\n\n**Period Costs:**\n\u2022 Expensed in period incurred\n\u2022 Selling expenses\n\u2022 Administrative expenses\n\u2022 Not attached to products\n\n**Key difference:** Product costs sit on balance sheet (inventory) until sale; period costs hit income statement immediately."
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Step Costs",
+          "type": "warning",
+          "content": "**Step costs are fixed within ranges, then jump:**\n\n\u2022 Supervisor salaries (1 per 10 workers)\n\u2022 Equipment rental (per machine)\n\u2022 Storage space\n\n**Treatment on exam:**\n\u2022 Often treated as fixed within relevant range\n\u2022 May need to identify the \"step\" when crossing ranges\n\u2022 Watch for questions asking about cost at specific activity levels"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Variable costs change in total but are constant per unit",
+            "Fixed costs are constant in total but change per unit",
+            "Relevant range defines where cost behavior holds true",
+            "High-Low Method: (High - Low Cost) / (High - Low Activity) = Variable rate",
+            "Product costs attach to inventory; Period costs expense immediately",
+            "Different classifications serve different purposes",
+            "Step costs are fixed within ranges, then jump"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Variable vs. Fixed Costs",
+          "knowledgeCheck": {
+            "question": "Which of the following statements is TRUE regarding cost behavior within the relevant range?",
+            "options": [
+              "Total variable costs remain constant as production increases.",
+              "Per-unit fixed costs remain constant as production increases.",
+              "Total fixed costs increase proportionally with production.",
+              "Per-unit variable costs remain constant as production increases."
+            ],
+            "correctIndex": 3,
+            "explanation": "Per-unit variable costs are constant within the relevant range because each unit incurs the same cost for materials, labor, etc. Total variable costs increase with production. Total fixed costs remain constant, while per-unit fixed costs decrease as production increases.",
+            "hint": "Think about what happens on a PER UNIT basis for each type of cost."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Define Relevant Range",
+          "reveal": {
+            "question": "Define 'relevant range' and explain its importance in cost accounting.",
+            "answer": "The relevant range is the range of activity over which cost behavior assumptions (e.g., fixed costs remaining constant in total) are valid. It's important because cost predictions outside this range may be inaccurate, leading to poor decision-making."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "High-Low Method Application",
+          "knowledgeCheck": {
+            "question": "Using the high-low method, what is the estimated fixed cost component if the highest activity level is 12,000 units with a total cost of $52,000, and the lowest activity level is 7,000 units with a total cost of $34,500?",
+            "options": [
+              "$13,750",
+              "$17,500",
+              "$20,750",
+              "$24,250"
+            ],
+            "correctIndex": 1,
+            "explanation": "First, calculate the variable cost per unit: ($52,000 - $34,500) / (12,000 - 7,000) = $3.50 per unit.  Then, calculate the fixed cost using either the high or low activity level. Using the high activity level: $52,000 - ($3.50 * 12,000) = $10,000. Using the low activity level: $34,500 - ($3.50 * 7,000) = $10,000.  Therefore, the fixed cost is $17,500.",
+            "hint": "Remember the two steps of the high-low method: variable cost per unit, then fixed cost."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-002",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Job Order Costing",
+    "description": "Calculate product costs using job order costing systems",
+    "order": 37,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Job cost sheet",
+      "Overhead application",
+      "Over/underapplied overhead"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Job order costing tracks costs to specific jobs, products, or batches. CMAs use it for custom manufacturing, construction, and professional services. Understanding job costing is essential for accurate product costing and pricing."
+        },
+        {
+          "title": "When to Use Job Order Costing",
+          "type": "text",
+          "content": "**Appropriate when:**\n\u2022 Products are distinct/customized\n\u2022 Each job is identifiable\n\u2022 Costs differ significantly between jobs\n\n**Industries:**\n\u2022 Custom furniture manufacturing\n\u2022 Construction\n\u2022 Printing shops\n\u2022 Consulting/professional services\n\u2022 Repair shops\n\u2022 Movie production"
+        },
+        {
+          "title": "Job Cost Sheet",
+          "type": "text",
+          "content": "**The key document that accumulates costs for each job:**\n\n```\nJob Order Cost Sheet\nJob No: 101\nCustomer: ABC Corp\nDate Started: 1/5    Date Completed: 1/20\n\nDirect Materials:\n  Requisition #201    $2,000\n  Requisition #205      $800\n  Total DM           $2,800\n\nDirect Labor:\n  40 hrs @ $25/hr    $1,000\n  20 hrs @ $30/hr      $600\n  Total DL           $1,600\n\nManufacturing Overhead Applied:\n  60 hrs \u00d7 $15/DLH     $900\n\nTotal Job Cost:       $5,300\n```"
+        },
+        {
+          "title": "Overhead Application",
+          "type": "text",
+          "content": "**Predetermined Overhead Rate (POHR):**\n\nPOHR = Estimated OH / Estimated Activity Base\n\n**Common allocation bases:**\n\u2022 Direct labor hours\n\u2022 Direct labor dollars\n\u2022 Machine hours\n\u2022 Direct materials cost\n\n**Overhead Applied:**\nActual Activity \u00d7 POHR\n\n**Example:**\nPOHR = $300,000 / 20,000 DLH = $15/DLH\nJob 101 used 60 DLH\nOH Applied = 60 \u00d7 $15 = $900"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: OH Flow",
+          "type": "callout",
+          "content": "**\"APAR\"** - What happens to overhead:\n\n**A**ctual OH \u2192 Debit OH Control (incurred)\n**P**redetermined rate calculated\n**A**pplied OH \u2192 Credit OH Control, Debit WIP\n**R**econcile at year-end (close difference)\n\n**Actual \u2260 Applied (almost always!)**"
+        },
+        {
+          "title": "Over/Underapplied Overhead",
+          "type": "text",
+          "content": "**At year-end:**\nActual OH incurred vs. OH Applied\n\n**Underapplied (Debit balance):**\nActual OH > Applied OH\n\"We didn't charge enough to products\"\n\n**Overapplied (Credit balance):**\nApplied OH > Actual OH\n\"We charged too much to products\"\n\n**Disposition:**\n\u2022 If immaterial: Close to COGS\n\u2022 If material: Allocate to WIP, FG, and COGS based on overhead in each"
+        },
+        {
+          "title": "Journal Entries",
+          "type": "table",
+          "headers": [
+            "Transaction",
+            "Debit",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Purchase materials",
+              "Raw Materials Inventory",
+              "Accounts Payable"
+            ],
+            [
+              "Issue direct materials",
+              "WIP Inventory",
+              "Raw Materials Inventory"
+            ],
+            [
+              "Record direct labor",
+              "WIP Inventory",
+              "Wages Payable"
+            ],
+            [
+              "Apply overhead",
+              "WIP Inventory",
+              "Manufacturing OH"
+            ],
+            [
+              "Complete job",
+              "Finished Goods",
+              "WIP Inventory"
+            ],
+            [
+              "Sell job",
+              "COGS",
+              "Finished Goods"
+            ],
+            [
+              "Close underapplied OH",
+              "COGS",
+              "Manufacturing OH"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Actual vs. Applied",
+          "type": "warning",
+          "content": "**Never use actual OH for job costing during the period!**\n\n**Why?**\n\u2022 Actual OH not known until period ends\n\u2022 Need cost information for pricing decisions NOW\n\u2022 Some OH is seasonal (e.g., heating costs)\n\n**Use POHR and applied OH for:**\n\u2022 Pricing decisions\n\u2022 Job profitability analysis\n\u2022 Inventory valuation\n\n**Reconcile to actual only at period end!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Job order costing traces costs to specific jobs/batches",
+            "Job cost sheet accumulates DM + DL + Applied OH",
+            "POHR = Estimated OH / Estimated Activity",
+            "Applied OH = Actual Activity \u00d7 POHR",
+            "Underapplied: Actual > Applied (charged too little)",
+            "Overapplied: Applied > Actual (charged too much)",
+            "Immaterial over/under \u2192 close to COGS"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Job Order Costing Application",
+          "knowledgeCheck": {
+            "question": "Which of the following industries would MOST likely use job order costing?",
+            "options": [
+              "A manufacturer of identical plastic storage containers.",
+              "A large-scale producer of breakfast cereal.",
+              "A construction company building custom homes.",
+              "An oil refinery processing crude oil."
+            ],
+            "correctIndex": 2,
+            "explanation": "Construction companies building custom homes produce distinct, customized products. Job order costing is ideal for tracking costs associated with each individual home built. The other options involve mass production of homogeneous goods, where process costing would be more appropriate.",
+            "hint": "Consider the nature of the product or service provided by each industry. Does it involve customized work?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Predetermined Overhead Rate",
+          "reveal": {
+            "question": "What is the formula for calculating the Predetermined Overhead Rate (POHR)?",
+            "answer": "Predetermined Overhead Rate (POHR) = Estimated Total Overhead Costs / Estimated Total Activity Base"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Overhead Application Problem",
+          "knowledgeCheck": {
+            "question": "A company estimates its overhead costs to be $500,000 and expects to use 25,000 direct labor hours. During the year, the company actually incurred $480,000 in overhead costs and used 24,000 direct labor hours. How much overhead should be applied to production during the year?",
+            "options": [
+              "$480,000",
+              "$500,000",
+              "$460,000",
+              "$432,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "First, calculate the POHR: $500,000 / 25,000 DLH = $20/DLH. Then, calculate the overhead applied: 24,000 DLH * $20/DLH = $480,000. Note that the actual overhead costs are irrelevant when determining the *applied* overhead.",
+            "hint": "Remember to calculate the POHR *before* determining the applied overhead. Use the *actual* activity level to apply overhead."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-003",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Process Costing",
+    "description": "Calculate product costs using process costing and equivalent units",
+    "order": 38,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Equivalent units",
+      "FIFO",
+      "Weighted average",
+      "Cost reconciliation"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Process costing averages costs over identical units in continuous production. It's used in chemicals, food processing, oil refining, and semiconductors. CMAs must calculate equivalent units to properly value inventory when units are partially complete."
+        },
+        {
+          "title": "When to Use Process Costing",
+          "type": "text",
+          "content": "**Appropriate when:**\n\u2022 Products are homogeneous (identical)\n\u2022 Continuous production process\n\u2022 Costs cannot be traced to individual units\n\n**Industries:**\n\u2022 Oil refining\n\u2022 Chemical processing\n\u2022 Food and beverage\n\u2022 Pharmaceuticals\n\u2022 Cement\n\u2022 Paper manufacturing"
+        },
+        {
+          "title": "The Problem: Partially Complete Units",
+          "type": "text",
+          "content": "**At any point, production has:**\n\u2022 Beginning WIP (started last period)\n\u2022 Units started and completed\n\u2022 Ending WIP (not yet finished)\n\n**Question:** How do we calculate cost per unit when some units aren't finished?\n\n**Solution: Equivalent Units (EU)**\nConvert partial units to their equivalent in fully completed units.\n\n**Example:**\n1,000 units 40% complete = 400 equivalent units"
+        },
+        {
+          "title": "Equivalent Units Calculation",
+          "type": "text",
+          "content": "**Weighted Average Method:**\nEU = Units Completed + (Ending WIP \u00d7 % Complete)\n\n**FIFO Method:**\nEU = (Beg WIP \u00d7 % to Complete) + Units Started & Completed + (Ending WIP \u00d7 % Complete)\n\n**Key difference:**\n\u2022 Weighted Average: Blends beginning inventory with current period\n\u2022 FIFO: Separates beginning inventory from current period work\n\n**Note:** Materials often added at beginning (100%), conversion at various points."
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: FIFO EU",
+          "type": "callout",
+          "content": "**\"Complete, Start Fresh, End Partial\"**\n\nFIFO Equivalent Units:\n\n1. **Complete** the beginning WIP (what's left to do)\n2. **Start Fresh** - units started AND completed\n3. **End Partial** - ending WIP progress\n\n**Units Started & Completed = Units Started - Ending WIP**\nOR\n**= Units Completed - Beginning WIP**"
+        },
+        {
+          "title": "Process Costing Example",
+          "type": "text",
+          "content": "**Given:**\n\u2022 Beginning WIP: 2,000 units (40% complete for conversion)\n\u2022 Started: 10,000 units\n\u2022 Completed: 9,000 units\n\u2022 Ending WIP: 3,000 units (60% complete for conversion)\n\u2022 Beginning WIP cost: $8,000\n\u2022 Current period conversion costs: $72,000\n\n**Weighted Average EU:**\n9,000 + (3,000 \u00d7 60%) = 9,000 + 1,800 = 10,800 EU\n\n**Cost per EU (WA):**\n($8,000 + $72,000) / 10,800 = $7.41/EU\n\n**FIFO EU:**\n(2,000 \u00d7 60%) + (9,000 - 2,000) + (3,000 \u00d7 60%)\n= 1,200 + 7,000 + 1,800 = 10,000 EU\n\n**Cost per EU (FIFO):**\n$72,000 / 10,000 = $7.20/EU"
+        },
+        {
+          "title": "Cost Reconciliation",
+          "type": "table",
+          "headers": [
+            "Item",
+            "Units",
+            "Equivalent Units",
+            "Cost"
+          ],
+          "rows": [
+            [
+              "Beginning WIP",
+              "2,000",
+              "(Prior period)",
+              "$8,000"
+            ],
+            [
+              "Current costs",
+              "\u2014",
+              "10,000 EU",
+              "$72,000"
+            ],
+            [
+              "Total to account for",
+              "\u2014",
+              "\u2014",
+              "$80,000"
+            ],
+            [
+              "Transferred out",
+              "9,000",
+              "9,000 EU",
+              "$66,667"
+            ],
+            [
+              "Ending WIP",
+              "3,000",
+              "1,800 EU",
+              "$13,333"
+            ],
+            [
+              "Total accounted for",
+              "\u2014",
+              "\u2014",
+              "$80,000 \u2713"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Materials vs. Conversion",
+          "type": "warning",
+          "content": "**Materials and conversion often have DIFFERENT % complete!**\n\n**Common pattern:**\n\u2022 Materials added at START \u2192 100% complete for all WIP\n\u2022 Conversion added evenly \u2192 varies based on stage\n\n**Example:**\nEnding WIP: 1,000 units, 100% materials, 40% conversion\n\nEU for materials: 1,000 \u00d7 100% = 1,000\nEU for conversion: 1,000 \u00d7 40% = 400\n\n**Calculate separately, cost separately, add together!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Process costing for homogeneous products in continuous production",
+            "Equivalent Units convert partial units to completed equivalents",
+            "WA EU = Completed + (Ending WIP \u00d7 %)",
+            "FIFO EU separates beginning WIP from current period work",
+            "Materials often 100% at start; Conversion varies",
+            "Calculate materials and conversion EU separately",
+            "Cost reconciliation: Total in = Total out (check your work!)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Process Costing Application",
+          "knowledgeCheck": {
+            "question": "Which of the following industries would MOST likely use process costing?",
+            "options": [
+              "A custom furniture manufacturer.",
+              "A company producing specialized medical devices.",
+              "A large-scale producer of breakfast cereal.",
+              "A construction company building unique residential homes."
+            ],
+            "correctIndex": 2,
+            "explanation": "Process costing is best suited for industries with continuous production of homogeneous products. A large-scale producer of breakfast cereal fits this description because they produce a standardized product in large quantities.",
+            "hint": "Think about which industry produces identical products on a large scale."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Weighted Average vs. FIFO",
+          "reveal": {
+            "question": "What is the primary difference between the Weighted Average and FIFO methods in process costing regarding the treatment of beginning work-in-process (WIP) inventory?",
+            "answer": "Weighted Average combines the costs and units of beginning WIP with the current period's costs and units, while FIFO separates the beginning WIP inventory and its associated costs from the current period's production activities."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Equivalent Units Calculation",
+          "knowledgeCheck": {
+            "question": "Under the weighted-average method, what is the formula for calculating equivalent units?",
+            "options": [
+              "Units Completed + (Ending WIP \u00d7 % to Complete)",
+              "(Beg WIP \u00d7 % to Complete) + Units Started & Completed + (Ending WIP \u00d7 % to Complete)",
+              "Units Started & Completed + (Ending WIP \u00d7 % Complete)",
+              "Beginning WIP + Units Started - Ending WIP"
+            ],
+            "correctIndex": 0,
+            "explanation": "The weighted-average method calculates equivalent units by adding the number of units completed to the equivalent units in ending work-in-process inventory (Ending WIP \u00d7 % to Complete). It doesn't separate out beginning WIP.",
+            "hint": "Remember that weighted average blends everything together."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Equivalent Units: FIFO vs. Weighted Average",
+          "comparison": {
+            "headers": [
+              "FIFO Method",
+              "Weighted Average Method"
+            ],
+            "rows": [
+              {
+                "label": "Beginning WIP",
+                "values": [
+                  "Considers the work needed to complete beginning WIP.",
+                  "Ignores the stage of completion of beginning WIP. Treats as if started and completed this period."
+                ]
+              },
+              {
+                "label": "Cost Calculation",
+                "values": [
+                  "Keeps beginning WIP costs separate from current period costs.",
+                  "Blends beginning WIP costs with current period costs."
+                ]
+              },
+              {
+                "label": "Complexity",
+                "values": [
+                  "More complex due to the need to track beginning WIP separately.",
+                  "Simpler to calculate as it combines all costs and units."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-004",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Activity-Based Costing (ABC)",
+    "description": "Apply ABC to calculate accurate product costs using cost drivers",
+    "order": 39,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Cost drivers",
+      "Activity cost pools",
+      "ABC advantages",
+      "Implementation"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional costing uses one overhead rate and often subsidizes complex products. ABC assigns overhead based on what actually drives costs. CMAs use ABC to reveal true product profitability and identify cost reduction opportunities."
+        },
+        {
+          "title": "The Problem with Traditional Costing",
+          "type": "text",
+          "content": "**Traditional (plantwide or departmental) overhead:**\n\u2022 Uses volume-based allocations (DLH, machine hours)\n\u2022 Assumes all products consume OH in proportion to volume\n\n**Result:**\n\u2022 High-volume simple products \u2192 Overcosted\n\u2022 Low-volume complex products \u2192 Undercosted\n\n**Why?** Complex products require more:\n\u2022 Setups, inspections, engineering changes\n\u2022 Special handling, smaller batches\n\u2022 These costs don't correlate with volume!"
+        },
+        {
+          "title": "ABC Approach",
+          "type": "text",
+          "content": "**Step 1:** Identify activities that consume resources\n\n**Step 2:** Assign costs to activity cost pools\n\n**Step 3:** Identify cost drivers for each activity\n\n**Step 4:** Calculate activity rate = Pool Cost / Total Driver Units\n\n**Step 5:** Apply costs to products based on actual driver consumption\n\n**Key insight:** Assign costs based on what CAUSES the cost!"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Cost Hierarchy",
+          "type": "callout",
+          "content": "**\"U-B-P-F\"** - From specific to broad:\n\n**U**nit-level: Each unit (machining, direct materials)\n**B**atch-level: Each batch (setups, inspections)\n**P**roduct-level: Each product (engineering, design)\n**F**acility-level: Overall capacity (rent, plant manager)\n\n**Only unit-level varies with production volume!**"
+        },
+        {
+          "title": "ABC Example",
+          "type": "table",
+          "headers": [
+            "Activity",
+            "Cost Pool",
+            "Driver",
+            "Rate"
+          ],
+          "rows": [
+            [
+              "Machine setup",
+              "$50,000",
+              "100 setups",
+              "$500/setup"
+            ],
+            [
+              "Quality inspection",
+              "$30,000",
+              "600 inspections",
+              "$50/inspection"
+            ],
+            [
+              "Material handling",
+              "$20,000",
+              "500 moves",
+              "$40/move"
+            ],
+            [
+              "Engineering",
+              "$40,000",
+              "200 eng. hours",
+              "$200/hour"
+            ]
+          ]
+        },
+        {
+          "title": "Product Cost Comparison",
+          "type": "text",
+          "content": "**Product A (high volume, simple):**\n\u2022 10,000 units, 10 setups, 100 inspections\n\u2022 ABC OH: (10 \u00d7 $500) + (100 \u00d7 $50) = $10,000\n\u2022 Per unit: $1.00\n\n**Product B (low volume, complex):**\n\u2022 1,000 units, 30 setups, 150 inspections\n\u2022 ABC OH: (30 \u00d7 $500) + (150 \u00d7 $50) = $22,500\n\u2022 Per unit: $22.50\n\n**Traditional (based on units):**\nProducts appear equally profitable\n\n**ABC reveals:**\nProduct B is 22\u00d7 more overhead-intensive per unit!"
+        },
+        {
+          "title": "ABC Implementation",
+          "type": "text",
+          "content": "**Benefits:**\n\u2022 More accurate product costs\n\u2022 Better pricing decisions\n\u2022 Identifies process improvement opportunities\n\u2022 Supports product mix decisions\n\n**Challenges:**\n\u2022 Time and cost to implement\n\u2022 Requires activity analysis\n\u2022 Cost driver selection can be subjective\n\u2022 Need to maintain/update system\n\n**Best for:**\n\u2022 Diverse product lines\n\u2022 Significant indirect costs\n\u2022 Non-volume-related activities"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: ABC Doesn't Always Differ",
+          "type": "warning",
+          "content": "**When does ABC produce SIMILAR results to traditional?**\n\n\u2022 All products are similar (single product company)\n\u2022 Most costs are truly volume-driven\n\u2022 Low overhead relative to direct costs\n\u2022 No product diversity\n\n**ABC matters most when:**\n\u2022 Product diversity is high\n\u2022 Overhead is significant\n\u2022 Batch and product-sustaining activities are major cost drivers"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Traditional costing uses volume bases; ABC uses causal drivers",
+            "ABC cost hierarchy: Unit, Batch, Product, Facility",
+            "Only unit-level costs vary with production volume",
+            "Complex/low-volume products are often undercosted traditionally",
+            "Activity Rate = Cost Pool / Driver Quantity",
+            "ABC reveals true product profitability",
+            "Implementation requires activity analysis and driver selection"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Traditional vs. ABC Costing: Which is Which?",
+          "knowledgeCheck": {
+            "question": "Under a traditional costing system that relies solely on direct labor hours, a high-volume, simple product will most likely be:",
+            "options": [
+              "Undercosted, leading to potentially inflated profit margins.",
+              "Overcosted, potentially leading to reduced competitiveness.",
+              "Accurately costed, as direct labor hours are the primary cost driver.",
+              "Impossible to determine without knowing the overhead rate."
+            ],
+            "correctIndex": 1,
+            "explanation": "Traditional costing systems, especially those using volume-based allocations like direct labor hours, tend to overcost high-volume, simple products because they allocate overhead based on volume rather than actual resource consumption. Simple products consume fewer resources than complex products, but get a larger share of OH.",
+            "hint": "Consider how overhead costs are allocated in relation to the product's complexity and resource consumption."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "ABC Step Recall",
+          "reveal": {
+            "question": "What is the correct order of steps in Activity-Based Costing (ABC)?",
+            "answer": "1. Identify activities that consume resources.\n2. Assign costs to activity cost pools.\n3. Identify cost drivers for each activity.\n4. Calculate activity rate = Pool Cost / Total Driver Units.\n5. Apply costs to products based on actual driver consumption."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Traditional vs. ABC: A Side-by-Side Look",
+          "comparison": {
+            "headers": [
+              "Traditional Costing",
+              "Activity-Based Costing (ABC)"
+            ],
+            "rows": [
+              {
+                "label": "Cost Allocation Base",
+                "values": [
+                  "Volume-based (e.g., DLH, machine hours)",
+                  "Activity-based (cost drivers specific to each activity)"
+                ]
+              },
+              {
+                "label": "Overhead Allocation",
+                "values": [
+                  "Allocates overhead based on a single or few plant-wide/departmental rates",
+                  "Allocates overhead based on activities and their related cost drivers"
+                ]
+              },
+              {
+                "label": "Product Cost Accuracy",
+                "values": [
+                  "Less accurate, especially for diverse product lines",
+                  "More accurate, especially for complex, low-volume products"
+                ]
+              },
+              {
+                "label": "Complexity",
+                "values": [
+                  "Simpler to implement",
+                  "More complex and costly to implement"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-005",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Variable and Absorption Costing",
+    "description": "Compare variable and absorption costing methods and their impact on income",
+    "order": 40,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Absorption costing",
+      "Variable costing",
+      "Income differences",
+      "Reconciliation"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Absorption costing (GAAP) and variable costing (internal) produce different income figures when production \u2260 sales. CMAs must understand when and why income differs, reconcile between methods, and know when each is appropriate."
+        },
+        {
+          "title": "The Key Difference",
+          "type": "text",
+          "content": "**Fixed Manufacturing Overhead Treatment:**\n\n**Absorption Costing (Full Costing):**\n\u2022 Fixed MOH is a PRODUCT cost\n\u2022 Included in inventory\n\u2022 Required by GAAP and tax regulations\n\n**Variable Costing (Direct Costing):**\n\u2022 Fixed MOH is a PERIOD cost\n\u2022 Expensed immediately\n\u2022 Used for internal decision-making"
+        },
+        {
+          "title": "Product Cost Components",
+          "type": "table",
+          "headers": [
+            "Cost",
+            "Absorption",
+            "Variable"
+          ],
+          "rows": [
+            [
+              "Direct Materials",
+              "Product",
+              "Product"
+            ],
+            [
+              "Direct Labor",
+              "Product",
+              "Product"
+            ],
+            [
+              "Variable MOH",
+              "Product",
+              "Product"
+            ],
+            [
+              "Fixed MOH",
+              "Product",
+              "PERIOD"
+            ],
+            [
+              "Variable S&A",
+              "Period",
+              "Period"
+            ],
+            [
+              "Fixed S&A",
+              "Period",
+              "Period"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Income Differences",
+          "type": "callout",
+          "content": "**\"PIE\" - Production vs. Income Effect:**\n\n**P**roduction > Sales \u2192 Absorption income **HIGHER**\n(Fixed OH sits in inventory instead of expensing)\n\n**I**nventory increases \u2192 Absorption income > Variable\n\n**E**quals: When Production = Sales \u2192 Same income\n\n**Simple rule:** If inventory goes UP, absorption > variable"
+        },
+        {
+          "title": "Income Comparison Example",
+          "type": "text",
+          "content": "**Given:**\n\u2022 Selling price: $50/unit\n\u2022 Variable costs: $30/unit\n\u2022 Fixed MOH: $100,000\n\u2022 Fixed S&A: $50,000\n\u2022 Production: 10,000 units\n\u2022 Sales: 8,000 units\n\n**Absorption:**\nFixed MOH/unit = $100,000/10,000 = $10\nCOGS = 8,000 \u00d7 ($30 + $10) = $320,000\nGross profit = $400,000 - $320,000 = $80,000\nOperating income = $80,000 - $50,000 = **$30,000**\n\n**Variable:**\nCM = 8,000 \u00d7 ($50 - $30) = $160,000\nOperating income = $160,000 - $100,000 - $50,000 = **$10,000**\n\n**Difference:** $30,000 - $10,000 = **$20,000**"
+        },
+        {
+          "title": "Reconciliation",
+          "type": "text",
+          "content": "**Income Difference Formula:**\n\nAbsorption Income - Variable Income = \nChange in Inventory (units) \u00d7 Fixed MOH per unit\n\n**From example:**\nInventory increase: 10,000 - 8,000 = 2,000 units\nFixed MOH/unit: $10\nDifference: 2,000 \u00d7 $10 = $20,000 \u2713\n\n**Works every time!**\nInventory \u2191 \u2192 Absorption > Variable\nInventory \u2193 \u2192 Variable > Absorption"
+        },
+        {
+          "title": "Advantages and Disadvantages",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Advantages",
+            "Disadvantages"
+          ],
+          "rows": [
+            [
+              "Absorption",
+              "GAAP compliant; matches costs to revenue; includes all product costs",
+              "Income can be manipulated by production levels; fixed costs capitalized"
+            ],
+            [
+              "Variable",
+              "Better for CVP analysis; clear CM reporting; no production manipulation",
+              "Not GAAP; may undervalue inventory; fixed costs expensed immediately"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Manipulation via Production",
+          "type": "warning",
+          "content": "**Under absorption costing, managers can boost income by overproducing!**\n\n**Example:**\nManager needs $100,000 income but is at $80,000\nSolution: Produce extra 2,000 units (Fixed MOH/unit = $10)\nResult: $20,000 more fixed OH absorbed into inventory\n\n**The units just sit in warehouse, but income goes up!**\n\n**Variable costing eliminates this manipulation incentive.**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Absorption: Fixed MOH is product cost (GAAP required)",
+            "Variable: Fixed MOH is period cost (internal use)",
+            "Production > Sales \u2192 Absorption income higher",
+            "Production < Sales \u2192 Variable income higher",
+            "Production = Sales \u2192 Same income",
+            "Difference = Change in inventory \u00d7 Fixed MOH/unit",
+            "Variable costing prevents production manipulation of income"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Absorption vs. Variable Costing: Which Method?",
+          "knowledgeCheck": {
+            "question": "A company produced 12,000 units and sold 9,000 units. Under which costing method would the company report higher net operating income if fixed manufacturing overhead costs are significant?",
+            "options": [
+              "Absorption costing",
+              "Variable costing",
+              "Both methods would report the same income",
+              "Cannot be determined without more information"
+            ],
+            "correctIndex": 0,
+            "explanation": "Absorption costing includes fixed manufacturing overhead in the cost of goods sold. When production exceeds sales, some of the fixed overhead remains in ending inventory, resulting in a lower cost of goods sold and higher net operating income compared to variable costing.",
+            "hint": "Consider how fixed manufacturing overhead is treated under each method and what happens when production exceeds sales."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "GAAP Requirement",
+          "reveal": {
+            "question": "Which costing method is required for external financial reporting under Generally Accepted Accounting Principles (GAAP)?",
+            "answer": "Absorption costing is required for external financial reporting under GAAP. Variable costing is primarily for internal decision-making."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Absorption vs. Variable Costing",
+          "comparison": {
+            "headers": [
+              "Absorption Costing",
+              "Variable Costing"
+            ],
+            "rows": [
+              {
+                "label": "Fixed Manufacturing Overhead",
+                "values": [
+                  "Product Cost (Included in Inventory)",
+                  "Period Cost (Expensed Immediately)"
+                ]
+              },
+              {
+                "label": "Income Statement Format",
+                "values": [
+                  "Traditional (Sales - COGS = Gross Profit)",
+                  "Contribution Margin (Sales - Variable Costs = Contribution Margin)"
+                ]
+              },
+              {
+                "label": "Used For",
+                "values": [
+                  "External Reporting, Pricing Decisions",
+                  "Internal Decision-Making, Cost-Volume-Profit Analysis"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Reconciling Income Differences",
+          "knowledgeCheck": {
+            "question": "Using the information from the example (Selling price: $50/unit, Variable costs: $30/unit, Fixed MOH: $100,000, Fixed S&A: $50,000, Production: 10,000 units, Sales: 8,000 units), what is the dollar amount of fixed manufacturing overhead included in ending inventory under absorption costing?",
+            "options": [
+              "$20,000",
+              "$8,000",
+              "$10,000",
+              "$30,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "Production was 10,000 units and sales were 8,000 units, meaning 2,000 units remain in ending inventory. The fixed manufacturing overhead rate is $10 per unit ($100,000 / 10,000 units). Therefore, the fixed manufacturing overhead in ending inventory is 2,000 units * $10/unit = $20,000.",
+            "hint": "Calculate the number of units in ending inventory and the fixed MOH per unit."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-006",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Joint and By-Product Costing",
+    "description": "Allocate joint costs and account for by-products in manufacturing",
+    "order": 41,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Split-off point",
+      "Joint cost allocation",
+      "Further processing",
+      "By-products"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Many industries produce multiple products from the same input (oil refining, meat processing, chemicals). CMAs must allocate joint costs for inventory valuation AND know that joint costs are irrelevant for sell-or-process-further decisions!"
+        },
+        {
+          "title": "Joint Cost Terminology",
+          "type": "text",
+          "content": "**Joint Costs:**\nCosts incurred before products become separately identifiable.\n\n**Split-off Point:**\nWhere joint products become separately identifiable.\n\n**Joint Products:**\nMain products from a joint process (each has significant value).\n\n**By-Products:**\nMinor products with relatively small value.\n\n**Separable Costs:**\nCosts incurred AFTER split-off (one product only)."
+        },
+        {
+          "title": "Joint Cost Allocation Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Basis",
+            "Best When"
+          ],
+          "rows": [
+            [
+              "Physical measure",
+              "Weight, volume, units",
+              "Products similar in nature"
+            ],
+            [
+              "Sales value at split-off",
+              "Market value at split-off",
+              "All products saleable at split-off"
+            ],
+            [
+              "Net realizable value (NRV)",
+              "Final sales - Separable costs",
+              "Products require further processing"
+            ],
+            [
+              "Constant gross margin %",
+              "Same margin for all products",
+              "Want consistent GM percentage"
+            ]
+          ]
+        },
+        {
+          "title": "NRV Method Example",
+          "type": "text",
+          "content": "**Joint Costs:** $100,000\n\n**Product A:**\n\u2022 Final sales value: $80,000\n\u2022 Separable costs: $20,000\n\u2022 NRV: $80,000 - $20,000 = $60,000\n\n**Product B:**\n\u2022 Final sales value: $60,000\n\u2022 Separable costs: $20,000\n\u2022 NRV: $60,000 - $20,000 = $40,000\n\n**Total NRV:** $100,000\n\n**Allocation:**\nProduct A: $100,000 \u00d7 ($60,000/$100,000) = **$60,000**\nProduct B: $100,000 \u00d7 ($40,000/$100,000) = **$40,000**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Joint Costs and Decisions",
+          "type": "callout",
+          "content": "**\"SUNK at Split-off\"**\n\nJoint costs are SUNK for sell-or-process-further decisions!\n\n**Decision rule:**\nProcess further if:\nIncremental Revenue > Incremental (Separable) Costs\n\n**Joint costs are irrelevant - they're the same either way!**\n\nAllocation of joint costs matters only for:\n\u2022 Inventory valuation\n\u2022 Cost-based pricing\n\u2022 NOT for process-further decisions"
+        },
+        {
+          "title": "Sell vs. Process Further",
+          "type": "text",
+          "content": "**Product A at Split-off:**\n\u2022 Sales value at split-off: $50,000\n\u2022 Sales value after processing: $80,000\n\u2022 Further processing costs: $20,000\n\n**Analysis:**\nIncremental revenue: $80,000 - $50,000 = $30,000\nIncremental cost: $20,000\nIncremental profit: **$10,000**\n\n**Decision:** Process further!\n\n**Note:** Joint costs of $60,000 allocated to Product A are IRRELEVANT - same either way."
+        },
+        {
+          "title": "By-Product Accounting",
+          "type": "text",
+          "content": "**Two methods:**\n\n**Production Method:**\n\u2022 Recognize revenue when produced\n\u2022 Credit Inventory or reduce COGS\n\n**Sales Method:**\n\u2022 Recognize revenue when sold\n\u2022 Credit Other Revenue or reduce COGS\n\n**Common treatments:**\n\u2022 NRV of by-product reduces joint cost to allocate\n\u2022 By-product revenue shown as Other Income\n\u2022 By-product revenue reduces COGS\n\n**By-products receive NO allocation of joint costs!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Joint costs incurred before split-off; separable costs after",
+            "NRV Method: Allocate based on (Final Sales - Separable Costs)",
+            "Joint costs are SUNK for sell-or-process decisions",
+            "Process further if Incremental Revenue > Incremental Cost",
+            "By-products: minor value, no joint cost allocation",
+            "Joint cost allocation for inventory valuation only",
+            "Physical measures appropriate when products are similar"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Joint Costing Terminology Quiz",
+          "knowledgeCheck": {
+            "question": "Which of the following best describes the 'split-off point' in a joint costing process?",
+            "options": [
+              "The point at which joint costs are allocated to individual products.",
+              "The point where production begins for all joint products.",
+              "The point where joint products become separately identifiable.",
+              "The point at which by-products are sold."
+            ],
+            "correctIndex": 2,
+            "explanation": "The split-off point is the stage in the production process where the individual joint products can be distinguished and separated. Before this point, the costs incurred are joint costs.",
+            "hint": "Think about when you can physically tell the products apart."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Net Realizable Value (NRV)",
+          "reveal": {
+            "question": "What is the formula for calculating the Net Realizable Value (NRV) of a joint product?",
+            "answer": "NRV = Final Sales Value - Separable Costs"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NRV Method Application",
+          "knowledgeCheck": {
+            "question": "Using the NRV method, if a joint process results in Product X with a final sales value of $120,000 and separable costs of $30,000, and Product Y with a final sales value of $80,000 and separable costs of $10,000, what percentage of the total joint costs would be allocated to Product X?",
+            "options": [
+              "40%",
+              "60%",
+              "56.25%",
+              "64.29%"
+            ],
+            "correctIndex": 3,
+            "explanation": "First, calculate the NRV for each product: Product X NRV = $120,000 - $30,000 = $90,000; Product Y NRV = $80,000 - $10,000 = $70,000. Total NRV = $90,000 + $70,000 = $160,000. Product X Allocation = ($90,000 / $160,000) = 56.25%.",
+            "hint": "Remember to subtract separable costs from the final sales value before calculating the allocation percentage."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-007",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Standard Costing System",
+    "description": "Establish and use standard costs for planning and control",
+    "order": 42,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Standard costs",
+      "Standard setting",
+      "Variance investigation",
+      "Journal entries"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Standard costs are predetermined costs that serve as benchmarks. CMAs use standards for budgeting, variance analysis, and simplifying accounting. Standards help answer: \"What SHOULD this product cost?\" vs. \"What DID it cost?\""
+        },
+        {
+          "title": "Types of Standards",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Motivation Effect"
+          ],
+          "rows": [
+            [
+              "Ideal (Theoretical)",
+              "Perfect conditions, no waste",
+              "Demotivating - unattainable"
+            ],
+            [
+              "Basic (Historical)",
+              "Unchanged for long periods",
+              "May be outdated"
+            ],
+            [
+              "Currently attainable",
+              "Achievable with reasonable effort",
+              "Best for motivation"
+            ],
+            [
+              "Practical",
+              "Allows for normal inefficiencies",
+              "Realistic expectations"
+            ]
+          ]
+        },
+        {
+          "title": "Setting Standards",
+          "type": "text",
+          "content": "**Materials Standards:**\n\u2022 Quantity: Engineering specs + allowance for normal waste\n\u2022 Price: Expected purchase price including freight, net of discounts\n\n**Labor Standards:**\n\u2022 Time: Time and motion studies + learning curve\n\u2022 Rate: Expected wage rates including benefits, FICA\n\n**Overhead Standards:**\n\u2022 Variable: Based on cost driver relationship\n\u2022 Fixed: Based on budgeted costs and normal capacity\n\n**Involve operations, purchasing, HR in setting standards!**"
+        },
+        {
+          "title": "Standard Cost Card",
+          "type": "text",
+          "content": "**Product: Widget Model A**\n\n```\nDirect Materials:\n  2 lbs @ $5.00/lb                    $10.00\n\nDirect Labor:\n  0.5 hrs @ $20.00/hr                 $10.00\n\nVariable Overhead:\n  0.5 DLH @ $6.00/DLH                  $3.00\n\nFixed Overhead:\n  0.5 DLH @ $10.00/DLH                 $5.00\n\nStandard Cost per Unit:               $28.00\n```\n\n**This becomes the \"should cost\" for planning and control.**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Standard Cost Benefits",
+          "type": "callout",
+          "content": "**\"PISC\"** - Standards help with:\n\n**P**lanning - Budgets based on standards\n**I**nventory valuation - Simplify record-keeping\n**S**implify accounting - Book at standard, track variances\n**C**ontrol - Compare actual to standard, investigate variances"
+        },
+        {
+          "title": "Journal Entries with Standards",
+          "type": "text",
+          "content": "**Record at STANDARD, isolate VARIANCE:**\n\n**Materials Purchase (at standard):**\nDr Raw Materials (AQ \u00d7 SP)    10,500\nDr Materials Price Variance        420 U\n    Cr Accounts Payable (AQ \u00d7 AP)    10,920\n\n**Materials Use (at standard):**\nDr WIP (SQ \u00d7 SP)              10,000\nDr Materials Usage Variance      500 U\n    Cr Raw Materials (AQ \u00d7 SP)      10,500\n\n**Variances are recorded AS THEY OCCUR!**"
+        },
+        {
+          "title": "Variance Investigation",
+          "type": "text",
+          "content": "**When to investigate:**\n\u2022 Dollar threshold exceeded\n\u2022 Percentage threshold exceeded\n\u2022 Recurring pattern\n\u2022 Controllable variance\n\u2022 Statistical significance\n\n**Cost-benefit test:**\nInvestigate if: Expected savings > Investigation cost\n\n**Investigation options:**\n\u2022 Internal review of processes\n\u2022 Discuss with responsible managers\n\u2022 Review source documents\n\u2022 Statistical process control charts"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: When to Update Standards",
+          "type": "warning",
+          "content": "**Don't update standards too frequently!**\n\n**Update when:**\n\u2022 Permanent price changes occur\n\u2022 Technology/process fundamentally changes\n\u2022 Learning curve reaches steady state\n\u2022 Original standard was wrong\n\n**Don't update for:**\n\u2022 Temporary fluctuations\n\u2022 Seasonal variations\n\u2022 One-time events\n\n**Frequent changes make variance analysis meaningless!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Standards are predetermined benchmark costs",
+            "Currently attainable standards best for motivation",
+            "Standard cost card shows expected cost per unit",
+            "Record inventory at standard; isolate variances",
+            "Book variances as they occur, not at period end",
+            "Investigate material and recurring variances",
+            "Update standards for permanent changes only"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Materials Standards: Quantity Allowance",
+          "knowledgeCheck": {
+            "question": "When setting the standard quantity of direct materials, which of the following should be included?",
+            "options": [
+              "Engineering specifications plus an allowance for normal spoilage.",
+              "Engineering specifications only, as spoilage is considered abnormal and should be handled separately.",
+              "Ideal engineering specifications assuming no waste or spoilage.",
+              "Engineering specifications adjusted for the average historical spoilage rate, regardless of whether it is normal or abnormal."
+            ],
+            "correctIndex": 0,
+            "explanation": "The standard quantity of direct materials should include engineering specifications plus an allowance for normal waste or spoilage. Abnormal spoilage should be separately accounted for as it is not expected under normal operating conditions.",
+            "hint": "Think about what is 'expected' under normal conditions."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Direct Labor Time Standard",
+          "reveal": {
+            "question": "What are the primary methods used to determine the *time* component of the direct labor standard?",
+            "answer": "Time and motion studies, considering the learning curve for new processes or employees. Time and motion studies analyze the efficiency of tasks, while the learning curve acknowledges that employees become more efficient over time as they gain experience."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Price vs. Rate Standards",
+          "comparison": {
+            "headers": [
+              "Materials Price Standard",
+              "Labor Rate Standard"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Expected purchase cost, net of discounts",
+                  "Expected wage rates, including benefits & payroll taxes"
+                ]
+              },
+              {
+                "label": "Key Considerations",
+                "values": [
+                  "Freight, purchase discounts, supplier reliability",
+                  "Benefits, FICA, payroll taxes, skill level"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-008",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Lean Manufacturing and JIT",
+    "description": "Apply lean principles and just-in-time inventory management",
+    "order": 43,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Lean principles",
+      "JIT",
+      "Pull systems",
+      "Waste elimination"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Lean manufacturing eliminates waste and reduces inventory. CMAs must understand how JIT changes costing, how to measure lean performance, and the risks/benefits of minimal inventory. This is increasingly tested as more companies adopt lean practices."
+        },
+        {
+          "title": "The Seven Wastes (Muda)",
+          "type": "text",
+          "content": "**Lean identifies seven types of waste:**\n\n1. **Overproduction** - Making more than needed\n2. **Waiting** - Idle time, delays\n3. **Transportation** - Unnecessary movement of materials\n4. **Overprocessing** - More work than customer values\n5. **Inventory** - Excess raw materials, WIP, finished goods\n6. **Motion** - Unnecessary worker movement\n7. **Defects** - Rework, scrap, inspection\n\n**Goal: Eliminate all non-value-adding activities!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: 7 Wastes",
+          "type": "callout",
+          "content": "**\"TIM WOOD\"** - The 7 Wastes:\n\n**T**ransportation\n**I**nventory\n**M**otion\n**W**aiting\n**O**verproduction\n**O**verprocessing\n**D**efects\n\n**TIM WOOD is the enemy of lean!**"
+        },
+        {
+          "title": "Just-in-Time (JIT) Principles",
+          "type": "text",
+          "content": "**Core concepts:**\n\u2022 **Pull system** - Produce only when demanded by next stage\n\u2022 **Zero defects** - Quality at the source\n\u2022 **Minimal inventory** - Material arrives just when needed\n\u2022 **Continuous improvement** (Kaizen)\n\u2022 **Respect for workers** - Empower problem-solving\n\n**JIT requires:**\n\u2022 Reliable suppliers\n\u2022 Short setup times\n\u2022 Flexible workforce\n\u2022 High-quality processes"
+        },
+        {
+          "title": "JIT Effects on Costing",
+          "type": "table",
+          "headers": [
+            "Traditional",
+            "JIT/Lean"
+          ],
+          "rows": [
+            [
+              "Large inventory buffers",
+              "Minimal inventory"
+            ],
+            [
+              "Complex variance analysis",
+              "Simpler costing"
+            ],
+            [
+              "Detailed job/process costing",
+              "Backflush costing"
+            ],
+            [
+              "Multiple cost pools",
+              "Fewer cost pools"
+            ],
+            [
+              "Focus on cost per unit",
+              "Focus on throughput"
+            ],
+            [
+              "Absorption costing emphasis",
+              "Variable/throughput emphasis"
+            ]
+          ]
+        },
+        {
+          "title": "Backflush Costing",
+          "type": "text",
+          "content": "**Definition:**\nCosting system that delays recording until completion or sale.\n\n**How it works:**\n1. No WIP account (or minimal)\n2. Costs \"backflushed\" when units completed or sold\n3. Standard costs applied at that point\n4. Variances recognized at completion\n\n**Appropriate when:**\n\u2022 JIT environment\n\u2022 Minimal WIP at any time\n\u2022 Short production cycles\n\u2022 Stable, predictable processes"
+        },
+        {
+          "title": "Lean Performance Metrics",
+          "type": "text",
+          "content": "**Beyond traditional cost metrics:**\n\n\u2022 **Lead time** - Order to delivery\n\u2022 **Cycle time** - Start to finish for one unit\n\u2022 **Setup time** - Time to change over\n\u2022 **First-pass yield** - % with no rework\n\u2022 **Throughput** - Units per period\n\u2022 **Days of inventory** - Lower is better\n\u2022 **Value-added ratio** - (Value-add time / Total time)\n\n**Focus on TIME and QUALITY, not just cost!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: JIT Risks",
+          "type": "warning",
+          "content": "**JIT isn't always appropriate:**\n\n**Risks of minimal inventory:**\n\u2022 Supply chain disruptions (COVID example!)\n\u2022 Supplier quality problems\n\u2022 Demand spikes can't be met\n\u2022 Single-source supplier dependency\n\n**JIT works best with:**\n\u2022 Reliable suppliers\n\u2022 Stable demand\n\u2022 Short distances\n\u2022 Healthy supplier relationships\n\n**Exam may ask when JIT is NOT appropriate!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Seven wastes (TIM WOOD) are targets for elimination",
+            "JIT is a pull system - produce only when demanded",
+            "JIT requires minimal inventory, reliable suppliers",
+            "Backflush costing simplifies accounting in JIT",
+            "Lean metrics focus on time and quality, not just cost",
+            "JIT risks: supply disruptions, demand variability",
+            "Kaizen = continuous improvement"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Test Your Understanding of the Seven Wastes",
+          "knowledgeCheck": {
+            "question": "Which of the following activities would LEAST likely be categorized as 'Waiting' (one of the seven wastes) in a lean manufacturing environment?",
+            "options": [
+              "A machine operator standing idle while a machine is being repaired.",
+              "Raw materials sitting in a warehouse awaiting use in production.",
+              "A batch of products sitting in a queue waiting to be processed by the next workstation.",
+              "A design engineer spending time refining a product feature that customers do not value."
+            ],
+            "correctIndex": 3,
+            "explanation": "Overprocessing refers to putting more effort into a product than the customer is willing to pay for. While the other options represent 'Waiting' or 'Inventory' waste, over-refining a product is Overprocessing.",
+            "hint": "Consider which activity adds unnecessary cost without adding value to the customer."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Quick Recall: JIT Principles",
+          "reveal": {
+            "question": "What are the five core principles of Just-in-Time (JIT)?",
+            "answer": "The five core principles of Just-in-Time (JIT) are: 1. Pull system, 2. Zero defects, 3. Minimal inventory, 4. Continuous improvement (Kaizen), and 5. Respect for workers."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Push vs. Pull Systems",
+          "comparison": {
+            "headers": [
+              "Push System",
+              "Pull System"
+            ],
+            "rows": [
+              {
+                "label": "Production Trigger",
+                "values": [
+                  "Forecasted Demand",
+                  "Actual Demand (next stage)"
+                ]
+              },
+              {
+                "label": "Inventory Levels",
+                "values": [
+                  "Higher (buffer stock)",
+                  "Lower (minimal WIP)"
+                ]
+              },
+              {
+                "label": "Waste Emphasis",
+                "values": [
+                  "Focuses less on inventory waste",
+                  "Designed to minimize all forms of waste"
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Traditional Manufacturing",
+                  "Lean Manufacturing (JIT)"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying JIT Principles",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST critical requirement for the successful implementation of a Just-in-Time (JIT) inventory system?",
+            "options": [
+              "Negotiating the lowest possible price with suppliers, even if it means longer lead times.",
+              "Maintaining a large safety stock of raw materials to buffer against unexpected demand surges.",
+              "Establishing strong, reliable relationships with suppliers to ensure timely and consistent delivery of materials.",
+              "Investing heavily in automated production equipment to maximize output and minimize labor costs."
+            ],
+            "correctIndex": 2,
+            "explanation": "JIT relies on a consistent and predictable supply chain. Strong supplier relationships are crucial to ensuring that materials arrive just when needed, minimizing inventory and avoiding production delays. The other options are contrary to JIT principles.",
+            "hint": "Think about what is most important for materials arriving just in time."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-009",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Target Costing and Kaizen",
+    "description": "Apply target costing for product development and kaizen for continuous improvement",
+    "order": 44,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Target costing",
+      "Value engineering",
+      "Kaizen costing",
+      "Life-cycle costing"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Target costing starts with the customer and works backward to allowable costs. CMAs drive cross-functional teams to design products that meet cost AND profit targets. This is essential for competitive industries where price is market-driven."
+        },
+        {
+          "title": "Target Costing Formula",
+          "type": "text",
+          "content": "**Traditional approach:**\nPrice = Cost + Profit\n(We ADD profit to cost)\n\n**Target costing approach:**\nTarget Cost = Target Price - Required Profit\n(We SUBTRACT from price)\n\n**The market sets the price!**\n\n**Example:**\n\u2022 Market research shows customers will pay: $100\n\u2022 Required profit margin: 20%\n\u2022 Required profit: $100 \u00d7 20% = $20\n\u2022 **Target Cost: $100 - $20 = $80**\n\nNow design the product to cost $80 or less!"
+        },
+        {
+          "title": "Target Costing Process",
+          "type": "text",
+          "content": "**Step 1:** Conduct market research (what will customers pay?)\n\n**Step 2:** Determine target selling price\n\n**Step 3:** Calculate required profit margin\n\n**Step 4:** Calculate target cost (Price - Profit)\n\n**Step 5:** Design product to meet target cost\n\u2022 Value engineering\n\u2022 Supplier involvement\n\u2022 Design for manufacturability\n\n**Step 6:** If cost can't be achieved, don't launch product!"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Target Costing",
+          "type": "callout",
+          "content": "**\"The Market is the Boss\"**\n\nTraditional: Cost \u2192 Price (cost-plus)\n\u2022 We tell the market our price\n\nTarget: Price \u2192 Cost (market-driven)\n\u2022 Market tells us the price\n\u2022 We work backward to cost\n\n**Formula: Target Cost = Target Price - Target Profit**"
+        },
+        {
+          "title": "Value Engineering",
+          "type": "text",
+          "content": "**Definition:**\nSystematic analysis to achieve required functions at lowest cost.\n\n**Key question:** What does the customer actually VALUE?\n\n**Techniques:**\n\u2022 Eliminate unnecessary features\n\u2022 Simplify design\n\u2022 Use cheaper materials (same quality)\n\u2022 Reduce number of parts\n\u2022 Design for manufacturing\n\u2022 Involve suppliers early\n\n**Value = Function / Cost**\nIncrease value by improving function OR reducing cost!"
+        },
+        {
+          "title": "Kaizen Costing",
+          "type": "text",
+          "content": "**Target costing:** BEFORE production (design phase)\n**Kaizen costing:** DURING production (ongoing)\n\n**Kaizen = Continuous Improvement**\n\n**Approach:**\n\u2022 Set cost reduction targets each period\n\u2022 Small, incremental improvements\n\u2022 Involve all employees\n\u2022 Focus on process improvements\n\n**Example:**\nYear 1 actual cost: $82\nKaizen target: Reduce by 3% per year\nYear 2 target: $82 \u00d7 97% = $79.54"
+        },
+        {
+          "title": "Life-Cycle Costing",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Cost Category",
+            "Consideration"
+          ],
+          "rows": [
+            [
+              "R&D",
+              "Development costs",
+              "80% of costs committed here"
+            ],
+            [
+              "Design",
+              "Engineering, prototyping",
+              "Value engineering opportunities"
+            ],
+            [
+              "Production",
+              "Manufacturing costs",
+              "Kaizen improvements"
+            ],
+            [
+              "Service",
+              "Warranty, support",
+              "Design affects service costs"
+            ],
+            [
+              "Disposal",
+              "Environmental, recycling",
+              "Growing regulatory importance"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Target Costing Prerequisites",
+          "type": "warning",
+          "content": "**Target costing works best when:**\n\n\u2022 Market price is competitive/known\n\u2022 Design flexibility exists\n\u2022 Cross-functional teams available\n\u2022 Supplier collaboration possible\n\u2022 Long product development cycle\n\n**Less effective when:**\n\u2022 You have pricing power (monopoly)\n\u2022 Design is fixed (commodities)\n\u2022 Short development cycles\n\u2022 Limited supplier options"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Target Cost = Target Price - Required Profit",
+            "Market determines price; we design to cost",
+            "Value engineering reduces cost while maintaining function",
+            "Target costing: design phase; Kaizen: production phase",
+            "80% of costs are committed in design phase",
+            "Life-cycle costing considers R&D through disposal",
+            "Kaizen = continuous small improvements"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Target Costing Application",
+          "knowledgeCheck": {
+            "question": "A company is developing a new product. Market research indicates a target selling price of $150 per unit. The company requires a profit margin of 30% of sales. What is the target cost per unit that the company must achieve?",
+            "options": [
+              "$45",
+              "$105",
+              "$195",
+              "$50"
+            ],
+            "correctIndex": 2,
+            "explanation": "The target cost is calculated as Target Selling Price - Required Profit. In this case, $150 - ($150 * 0.30) = $150 - $45 = $105.",
+            "hint": "Remember to calculate the profit amount based on the selling price before subtracting."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Value Engineering Recall",
+          "reveal": {
+            "question": "What is the primary objective of value engineering?",
+            "answer": "To achieve required functions at the lowest possible cost, by systematically analyzing the value of each component and function of a product or service."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Traditional vs. Target Costing",
+          "comparison": {
+            "headers": [
+              "Traditional Costing",
+              "Target Costing"
+            ],
+            "rows": [
+              {
+                "label": "Price Determination",
+                "values": [
+                  "Price = Cost + Profit",
+                  "Target Cost = Target Price - Required Profit"
+                ]
+              },
+              {
+                "label": "Market Influence",
+                "values": [
+                  "Cost determines price, less market influence",
+                  "Market determines price, heavy market influence"
+                ]
+              },
+              {
+                "label": "Starting Point",
+                "values": [
+                  "Starts with cost",
+                  "Starts with price"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-010",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Supply Chain Management",
+    "description": "Understand supply chain concepts and their cost management implications",
+    "order": 45,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Supply chain costs",
+      "Vendor management",
+      "Outsourcing",
+      "Total cost of ownership"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Supply chain costs can exceed direct production costs! CMAs analyze total cost of ownership, evaluate make-vs-buy decisions, and measure supplier performance. Poor supply chain management destroys value; excellent SCM creates competitive advantage."
+        },
+        {
+          "title": "Supply Chain Components",
+          "type": "text",
+          "content": "**Upstream (Inbound):**\n\u2022 Suppliers and their suppliers\n\u2022 Procurement\n\u2022 Inbound logistics\n\n**Operations:**\n\u2022 Manufacturing/conversion\n\u2022 Internal logistics\n\n**Downstream (Outbound):**\n\u2022 Distribution\n\u2022 Wholesalers/retailers\n\u2022 End customers\n\n**Goal: Optimize the ENTIRE chain, not just your piece!**"
+        },
+        {
+          "title": "Total Cost of Ownership (TCO)",
+          "type": "text",
+          "content": "**TCO includes more than purchase price:**\n\n**Acquisition costs:**\n\u2022 Purchase price\n\u2022 Ordering costs\n\u2022 Freight and duties\n\n**Possession costs:**\n\u2022 Carrying costs\n\u2022 Storage and handling\n\u2022 Insurance\n\n**Usage costs:**\n\u2022 Quality issues (inspection, rework)\n\u2022 Downtime from defects\n\u2022 Warranty claims\n\n**Lowest price \u2260 Lowest total cost!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: TCO",
+          "type": "callout",
+          "content": "**\"APU\"** - Three cost categories:\n\n**A**cquisition - Getting it\n**P**ossession - Holding it\n**U**sage - Using it\n\n**Example:**\nSupplier A: $10/unit + $2 shipping + $1 inspection = $13 TCO\nSupplier B: $11/unit + $1 shipping + $0 inspection = $12 TCO\n\n**Higher price, lower TCO wins!**"
+        },
+        {
+          "title": "Make vs. Buy Decision",
+          "type": "text",
+          "content": "**Relevant costs to compare:**\n\n**Make:**\n\u2022 Variable manufacturing costs\n\u2022 Direct fixed costs (avoidable)\n\u2022 Opportunity cost of capacity\n\n**Buy:**\n\u2022 Purchase price\n\u2022 Ordering costs\n\u2022 Receiving and inspection\n\u2022 Quality assurance\n\n**Exclude:** Allocated fixed costs (not avoidable)\n\n**Qualitative factors:**\n\u2022 Control over quality\n\u2022 Confidentiality/IP protection\n\u2022 Supplier reliability\n\u2022 Strategic importance"
+        },
+        {
+          "title": "Make vs. Buy Example",
+          "type": "table",
+          "headers": [
+            "Cost Category",
+            "Make",
+            "Buy"
+          ],
+          "rows": [
+            [
+              "Direct materials",
+              "$6",
+              "\u2014"
+            ],
+            [
+              "Direct labor",
+              "$4",
+              "\u2014"
+            ],
+            [
+              "Variable overhead",
+              "$2",
+              "\u2014"
+            ],
+            [
+              "Avoidable fixed OH",
+              "$3",
+              "\u2014"
+            ],
+            [
+              "Purchase price",
+              "\u2014",
+              "$14"
+            ],
+            [
+              "Inspection costs",
+              "\u2014",
+              "$1"
+            ],
+            [
+              "Total relevant cost",
+              "$15",
+              "$15"
+            ]
+          ]
+        },
+        {
+          "title": "Supplier Selection and Management",
+          "type": "text",
+          "content": "**Vendor evaluation criteria:**\n\u2022 Quality (defect rates, certifications)\n\u2022 Delivery (on-time %, lead time)\n\u2022 Price and payment terms\n\u2022 Capacity and flexibility\n\u2022 Financial stability\n\u2022 Innovation capability\n\u2022 Sustainability/ethical practices\n\n**Supplier relationship spectrum:**\n\u2022 Arms-length (multiple sources, price focus)\n\u2022 Preferred supplier (fewer, longer-term)\n\u2022 Strategic partner (integrated, shared planning)\n\u2022 Vertical integration (ownership)"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Outsourcing Risks",
+          "type": "warning",
+          "content": "**Don't outsource purely for cost savings!**\n\n**Hidden risks:**\n\u2022 Loss of core competency\n\u2022 Quality control challenges\n\u2022 Supply disruption (single source)\n\u2022 Intellectual property exposure\n\u2022 Hidden costs (coordination, travel)\n\u2022 Currency and political risk (offshore)\n\n**Strategic items should usually stay in-house!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Supply chain: upstream (suppliers) \u2192 operations \u2192 downstream (customers)",
+            "TCO = Acquisition + Possession + Usage costs",
+            "Lowest price doesn't mean lowest TCO",
+            "Make vs. Buy: Use only relevant (avoidable) costs",
+            "Exclude allocated fixed costs from make/buy analysis",
+            "Consider qualitative factors in sourcing decisions",
+            "Outsourcing has hidden costs and strategic risks"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Total Cost of Ownership (TCO) Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following costs would NOT be included when calculating the Total Cost of Ownership (TCO) of a purchased component?",
+            "options": [
+              "A) Purchase price of the component.",
+              "B) Costs associated with inspecting the component for defects.",
+              "C) Allocated fixed overhead costs for the purchasing department.",
+              "D) Costs of storing the component before it is used in production."
+            ],
+            "correctIndex": 2,
+            "explanation": "Allocated fixed overhead costs are generally considered irrelevant for decision-making because they will be incurred regardless of whether the component is purchased. TCO focuses on costs directly attributable to the acquisition, possession, and usage of the asset.",
+            "hint": "Think about which costs are avoidable and directly related to owning and using the component."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Supply Chain Stages Recall",
+          "reveal": {
+            "question": "List the three main stages of a supply chain.",
+            "answer": "Upstream (Inbound), Operations, and Downstream (Outbound)."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Make vs. Buy Decision Scenario",
+          "knowledgeCheck": {
+            "question": "A company is deciding whether to make or buy a component. The variable manufacturing cost to make the component is $10 per unit. Direct fixed costs that can be avoided if the component is bought are $5 per unit. The purchase price is $18 per unit. Allocated fixed overhead is $3 per unit. What is the relevant cost to MAKE the component?",
+            "options": [
+              "A) $10",
+              "B) $15",
+              "C) $18",
+              "D) $28"
+            ],
+            "correctIndex": 1,
+            "explanation": "The relevant cost to make the component is the sum of the variable manufacturing cost ($10) and the avoidable direct fixed costs ($5), totaling $15. Allocated fixed overhead is irrelevant.",
+            "hint": "Remember to only include costs that are avoidable and directly related to the 'make' decision."
+          }
+        }
+      ]
+    }
+  }
+]

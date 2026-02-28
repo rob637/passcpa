@@ -1,0 +1,2516 @@
+[
+  {
+    "id": "CISA4-001",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "IT Operations Management",
+    "description": "Understand the fundamentals of managing IT operations and service delivery",
+    "order": 1,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "IT Operations",
+      "Service Delivery",
+      "Operations Controls",
+      "Monitoring"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT operations keep business systems running. Effective operations management ensures systems are available, performant, and secure. Poor operations lead to outages and security breaches."
+        },
+        {
+          "title": "IT Operations Functions",
+          "type": "text",
+          "content": "**Core Operations Activities:**\n\n**Infrastructure Management**\n\u2022 Server administration\n\u2022 Network operations\n\u2022 Storage management\n\u2022 Database administration\n\n**Service Management**\n\u2022 Service desk\n\u2022 Incident management\n\u2022 Problem management\n\u2022 Request fulfillment\n\n**Batch Processing**\n\u2022 Job scheduling\n\u2022 Batch execution\n\u2022 Output management\n\u2022 Error handling\n\n**Security Operations**\n\u2022 Vulnerability management\n\u2022 Security monitoring\n\u2022 Access management\n\u2022 Patch management"
+        },
+        {
+          "title": "Operations Control Objectives",
+          "type": "table",
+          "headers": [
+            "Objective",
+            "Focus",
+            "Key Controls"
+          ],
+          "rows": [
+            [
+              "Availability",
+              "Systems accessible",
+              "Redundancy, monitoring"
+            ],
+            [
+              "Performance",
+              "Acceptable response",
+              "Capacity planning, tuning"
+            ],
+            [
+              "Integrity",
+              "Accurate processing",
+              "Validation, reconciliation"
+            ],
+            [
+              "Security",
+              "Protection from threats",
+              "Access control, monitoring"
+            ],
+            [
+              "Compliance",
+              "Regulatory adherence",
+              "Logging, reporting"
+            ]
+          ]
+        },
+        {
+          "title": "Job Scheduling Controls",
+          "type": "text",
+          "content": "**Batch Processing Controls:**\n\n**Scheduling Controls**\n\u2022 Documented schedules\n\u2022 Dependency management\n\u2022 Resource allocation\n\u2022 Conflict prevention\n\n**Execution Controls**\n\u2022 Operator procedures\n\u2022 Error handling\n\u2022 Restart/recovery\n\u2022 Logging\n\n**Output Controls**\n\u2022 Output verification\n\u2022 Distribution controls\n\u2022 Retention management\n\u2022 Sensitive output handling\n\n**Monitoring**\n\u2022 Job completion verification\n\u2022 SLA tracking\n\u2022 Performance metrics\n\u2022 Exception alerting"
+        },
+        {
+          "title": "System Monitoring",
+          "type": "text",
+          "content": "**Monitoring Elements:**\n\n**Infrastructure Monitoring**\n\u2022 Server health (CPU, memory, disk)\n\u2022 Network traffic and latency\n\u2022 Storage capacity and performance\n\u2022 Environmental (temperature, humidity)\n\n**Application Monitoring**\n\u2022 Application availability\n\u2022 Response times\n\u2022 Error rates\n\u2022 Transaction volumes\n\n**Security Monitoring**\n\u2022 Security events\n\u2022 Access attempts\n\u2022 Policy violations\n\u2022 Threat indicators\n\n**Business Monitoring**\n\u2022 SLA compliance\n\u2022 User satisfaction\n\u2022 Business process metrics"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IT operations manage infrastructure, services, batch processing, and security",
+            "Control objectives: availability, performance, integrity, security, compliance",
+            "Job scheduling requires schedule control, execution control, and monitoring",
+            "Monitoring covers infrastructure, applications, security, and business metrics",
+            "Operations ensure systems support business requirements reliably"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Batch Processing Controls",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important control to implement when scheduling batch processing jobs that have dependencies on each other?",
+            "options": [
+              "Documented schedules",
+              "Resource allocation",
+              "Dependency management",
+              "Output verification"
+            ],
+            "correctIndex": 2,
+            "explanation": "Dependency management ensures that jobs are executed in the correct order, preventing errors and ensuring data integrity. While documented schedules and resource allocation are important, they are secondary to ensuring the proper sequence of dependent jobs. Output verification is a post-execution control.",
+            "hint": "Think about what happens if a job that relies on another job is run first."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Your Knowledge: Monitoring Elements",
+          "reveal": {
+            "question": "List four elements typically monitored under 'Infrastructure Monitoring'.",
+            "answer": "Server health (CPU, memory, disk), Network traffic and latency, Storage capacity and performance, Environmental (temperature, humidity)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Service Desk vs. Incident Management",
+          "comparison": {
+            "headers": [
+              "Service Desk",
+              "Incident Management"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Single point of contact for users; handles requests, incidents, and information.",
+                  "Restoring normal service operation as quickly as possible to minimize impact to business operations."
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Broader scope, including service requests, information, and incident logging.",
+                  "Specific to disruptions of service."
+                ]
+              },
+              {
+                "label": "Goal",
+                "values": [
+                  "Provide a central point of contact and support for all IT-related issues.",
+                  "Minimize the adverse impact of incidents on the business."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-002",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Data Center and Facilities Management",
+    "description": "Learn physical and environmental controls for IT facilities",
+    "order": 2,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Data Center",
+      "Physical Security",
+      "Environmental Controls",
+      "Power"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Physical controls protect against theft, damage, and environmental threats. A sophisticated security architecture is worthless if someone can walk in and steal a server."
+        },
+        {
+          "title": "Physical Security Layers",
+          "type": "text",
+          "content": "**Defense in Depth:**\n\n**Perimeter Security**\n\u2022 Fencing and barriers\n\u2022 Security guards\n\u2022 Surveillance cameras\n\u2022 Lighting\n\n**Building Entry**\n\u2022 Badge access control\n\u2022 Visitor management\n\u2022 Mantrap/airlock\n\u2022 Security desk\n\n**Data Center Entry**\n\u2022 Biometric access\n\u2022 Two-factor authentication\n\u2022 Access logging\n\u2022 Escort requirements\n\n**Rack/Cage Level**\n\u2022 Locked cabinets\n\u2022 Individual access control\n\u2022 Asset tracking\n\u2022 Video monitoring"
+        },
+        {
+          "title": "Environmental Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Key Considerations"
+          ],
+          "rows": [
+            [
+              "HVAC",
+              "Temperature/humidity control",
+              "Redundancy, monitoring, climate"
+            ],
+            [
+              "Fire Suppression",
+              "Fire protection",
+              "Clean agent, early detection, water damage"
+            ],
+            [
+              "Water Detection",
+              "Leak detection",
+              "Under-floor, ceiling, perimeter"
+            ],
+            [
+              "Power Protection",
+              "Clean, reliable power",
+              "UPS, generator, redundant feeds"
+            ]
+          ]
+        },
+        {
+          "title": "Power Management",
+          "type": "text",
+          "content": "**Power Protection Layers:**\n\n**Uninterruptible Power Supply (UPS)**\n\u2022 Battery backup for short outages\n\u2022 Power conditioning\n\u2022 Surge protection\n\u2022 Typically 15-30 minutes runtime\n\n**Generator Backup**\n\u2022 Long-term power alternative\n\u2022 Fuel supply considerations\n\u2022 Automatic transfer switch\n\u2022 Regular testing required\n\n**Power Redundancy**\n\u2022 Dual power feeds\n\u2022 Separate utility substations\n\u2022 N+1 or 2N redundancy\n\u2022 Diverse power paths\n\n**Power Distribution**\n\u2022 PDU monitoring\n\u2022 Load balancing\n\u2022 Circuit protection\n\u2022 Maintenance bypass"
+        },
+        {
+          "title": "Fire Protection",
+          "type": "text",
+          "content": "**Fire Protection Systems:**\n\n**Detection**\n\u2022 Smoke detectors\n\u2022 Heat detectors\n\u2022 Very Early Smoke Detection (VESDA)\n\u2022 Air sampling\n\n**Suppression**\n\u2022 **Clean agents** (FM-200, Novec) - No residue, safe for equipment\n\u2022 **Inert gas** - Oxygen displacement\n\u2022 **Pre-action sprinkler** - Requires two triggers\n\u2022 **Dry pipe** - Water held until needed\n\n**Prevention**\n\u2022 No combustibles in data center\n\u2022 Cable management\n\u2022 Equipment maintenance\n\u2022 Smoking prohibition\n\n**Response**\n\u2022 Emergency procedures\n\u2022 Kill switch\n\u2022 Evacuation plan\n\u2022 Fire department coordination"
+        },
+        {
+          "title": "Data Center Tiers",
+          "type": "text",
+          "content": "**Uptime Institute Tiers:**\n\n**Tier I: Basic**\n\u2022 Single path for power/cooling\n\u2022 No redundancy\n\u2022 99.671% availability\n\n**Tier II: Redundant Components**\n\u2022 Some redundancy\n\u2022 Single distribution path\n\u2022 99.741% availability\n\n**Tier III: Concurrently Maintainable**\n\u2022 Multiple paths\n\u2022 N+1 redundancy\n\u2022 No shutdown for maintenance\n\u2022 99.982% availability\n\n**Tier IV: Fault Tolerant**\n\u2022 2N+1 redundancy\n\u2022 All components redundant\n\u2022 No single point of failure\n\u2022 99.995% availability"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Physical security uses defense in depth with multiple layers",
+            "Environmental controls: HVAC, fire suppression, water detection, power",
+            "Power protection: UPS for short term, generator for long term",
+            "Fire suppression: clean agents preferred for data centers",
+            "Data center tiers range from basic (I) to fault tolerant (IV)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Perimeter Security Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST effective method for deterring unauthorized physical access to a data center's perimeter?",
+            "options": [
+              "Installing surveillance cameras with motion detection.",
+              "Employing security guards who patrol the perimeter at random intervals.",
+              "Constructing a robust fence and barrier system around the data center.",
+              "Implementing bright lighting around the data center's perimeter."
+            ],
+            "correctIndex": 2,
+            "explanation": "A robust fence and barrier system provides a physical impediment, making it the most effective deterrent. While surveillance, guards, and lighting are important, they are less effective on their own.",
+            "hint": "Think about which option creates the greatest physical obstacle."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Clean Agent Fire Suppression",
+          "reveal": {
+            "question": "What are the TWO primary benefits of using clean agent fire suppression systems (like FM-200 or Novec) in a data center?",
+            "answer": "1. They leave no residue after discharge, minimizing damage to equipment. 2. They are generally safe for human exposure (though specific safety protocols must still be followed). They are also electrically non-conductive."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "UPS vs. Generator Backup",
+          "comparison": {
+            "headers": [
+              "Uninterruptible Power Supply (UPS)",
+              "Generator Backup"
+            ],
+            "rows": [
+              {
+                "label": "Duration",
+                "values": [
+                  "Short-term (minutes)",
+                  "Long-term (hours/days)"
+                ]
+              },
+              {
+                "label": "Fuel Source",
+                "values": [
+                  "Battery",
+                  "Fuel (diesel, natural gas)"
+                ]
+              },
+              {
+                "label": "Primary Purpose",
+                "values": [
+                  "Bridge power during short outages and allow for graceful shutdown",
+                  "Provide sustained power during extended outages"
+                ]
+              },
+              {
+                "label": "Activation",
+                "values": [
+                  "Instantaneous",
+                  "Requires start-up time"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-003",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Network Infrastructure Operations",
+    "description": "Understand network operations and infrastructure management",
+    "order": 3,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Network Operations",
+      "Network Security",
+      "Telecommunications",
+      "Cloud Networking"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Networks connect everything. Network security is critical because attackers must traverse the network to reach their targets. A compromised network compromises everything."
+        },
+        {
+          "title": "Network Components",
+          "type": "text",
+          "content": "**Key Network Devices:**\n\n**Routers**\n\u2022 Connect different networks\n\u2022 Route packets based on IP\n\u2022 Enforce routing policies\n\u2022 WAN connectivity\n\n**Switches**\n\u2022 Connect devices on same network\n\u2022 Forward frames based on MAC\n\u2022 Create network segments (VLANs)\n\u2022 Layer 2 connectivity\n\n**Firewalls**\n\u2022 Control traffic between zones\n\u2022 Enforce security policies\n\u2022 Deep packet inspection\n\u2022 Application awareness\n\n**Load Balancers**\n\u2022 Distribute traffic across servers\n\u2022 Improve availability\n\u2022 Health checking\n\u2022 SSL termination"
+        },
+        {
+          "title": "Network Security Zones",
+          "type": "table",
+          "headers": [
+            "Zone",
+            "Purpose",
+            "Trust Level"
+          ],
+          "rows": [
+            [
+              "DMZ",
+              "Public-facing services",
+              "Low trust"
+            ],
+            [
+              "Internal Network",
+              "Business applications",
+              "Medium trust"
+            ],
+            [
+              "Secure Zone",
+              "Sensitive systems",
+              "High trust"
+            ],
+            [
+              "Management Network",
+              "Admin access",
+              "Highest trust"
+            ],
+            [
+              "Guest Network",
+              "Visitor access",
+              "No trust"
+            ]
+          ]
+        },
+        {
+          "title": "Network Security Controls",
+          "type": "text",
+          "content": "**Network Protection Measures:**\n\n**Perimeter Security**\n\u2022 Next-generation firewalls\n\u2022 IDS/IPS systems\n\u2022 Web application firewalls\n\u2022 Email security gateways\n\n**Segmentation**\n\u2022 VLANs\n\u2022 Network access control (NAC)\n\u2022 Microsegmentation\n\u2022 Zero trust architecture\n\n**Encryption**\n\u2022 VPN for remote access\n\u2022 TLS for web traffic\n\u2022 IPsec for site-to-site\n\u2022 Encrypted protocols\n\n**Monitoring**\n\u2022 Network traffic analysis\n\u2022 Flow data collection\n\u2022 Security analytics\n\u2022 Threat detection"
+        },
+        {
+          "title": "Wireless Network Security",
+          "type": "text",
+          "content": "**WiFi Security Considerations:**\n\n**Standards Evolution:**\n\u2022 WEP - Broken, never use\n\u2022 WPA - Improved, but deprecated\n\u2022 WPA2 - Current standard\n\u2022 WPA3 - Latest, enhanced security\n\n**Enterprise Security:**\n\u2022 WPA2/WPA3 Enterprise (802.1X)\n\u2022 RADIUS authentication\n\u2022 Certificate-based authentication\n\u2022 Separate SSIDs for guest/employee\n\n**Additional Controls:**\n\u2022 Rogue AP detection\n\u2022 Client isolation\n\u2022 MAC filtering (limited value)\n\u2022 Physical coverage management"
+        },
+        {
+          "title": "Cloud Networking",
+          "type": "text",
+          "content": "**Cloud Network Considerations:**\n\n**Virtual Networks**\n\u2022 VPCs (Virtual Private Cloud)\n\u2022 Subnets and routing\n\u2022 Security groups\n\u2022 Network ACLs\n\n**Connectivity**\n\u2022 VPN to cloud\n\u2022 Direct connect/ExpressRoute\n\u2022 Internet egress\n\u2022 Hybrid connectivity\n\n**Security Controls**\n\u2022 Cloud firewalls\n\u2022 Web Application Firewall (WAF)\n\u2022 DDoS protection\n\u2022 Traffic flow logs\n\n**Multi-Cloud**\n\u2022 Inter-cloud networking\n\u2022 Consistent security policies\n\u2022 Centralized management"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Network components: routers, switches, firewalls, load balancers",
+            "Security zones separate trust levels (DMZ, internal, secure)",
+            "Network security includes perimeter, segmentation, encryption, monitoring",
+            "Use WPA2/WPA3 Enterprise for wireless security",
+            "Cloud networking requires VPC, security groups, and connectivity controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Network Device Functionality",
+          "knowledgeCheck": {
+            "question": "Which of the following network devices operates at Layer 3 of the OSI model and is primarily responsible for forwarding data packets between different networks based on IP addresses?",
+            "options": [
+              "Switch",
+              "Firewall",
+              "Router",
+              "Hub"
+            ],
+            "correctIndex": 2,
+            "explanation": "A router operates at Layer 3 (Network Layer) and uses IP addresses to determine the best path to forward data packets between different networks. Switches operate at Layer 2, firewalls filter traffic based on predefined rules, and hubs simply broadcast traffic.",
+            "hint": "Think about which device is responsible for connecting different networks together."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: WiFi Security Standards",
+          "reveal": {
+            "question": "What is the current recommended WiFi security standard and what is a key enhancement it offers over its predecessor?",
+            "answer": "The current recommended WiFi security standard is WPA3. A key enhancement is its use of Simultaneous Authentication of Equals (SAE), providing stronger protection against brute-force attacks compared to WPA2's Pre-Shared Key (PSK) method."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Key Differences: IDS vs. IPS",
+          "comparison": {
+            "headers": [
+              "Intrusion Detection System (IDS)",
+              "Intrusion Prevention System (IPS)"
+            ],
+            "rows": [
+              {
+                "label": "Primary Function",
+                "values": [
+                  "Detects malicious activity",
+                  "Detects and prevents malicious activity"
+                ]
+              },
+              {
+                "label": "Response to Threats",
+                "values": [
+                  "Alerts administrators",
+                  "Automatically blocks or mitigates threats"
+                ]
+              },
+              {
+                "label": "Deployment",
+                "values": [
+                  "Passive; monitors traffic",
+                  "Active; inline traffic analysis"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Network Segmentation",
+          "knowledgeCheck": {
+            "question": "Which network security control is MOST effective in limiting the lateral movement of an attacker within a compromised network?",
+            "options": [
+              "Perimeter Firewall",
+              "Network Intrusion Detection System",
+              "Network Segmentation",
+              "Email Security Gateway"
+            ],
+            "correctIndex": 2,
+            "explanation": "Network segmentation, through techniques like VLANs or microsegmentation, divides the network into smaller, isolated segments. This limits an attacker's ability to move freely throughout the network after gaining initial access. While other controls provide protection, they are not as effective at containing lateral movement.",
+            "hint": "Consider the principle of least privilege and how it applies to network access."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-004",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Incident Management Process",
+    "description": "Master the incident management lifecycle from detection to resolution",
+    "order": 4,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Incident Management",
+      "Incident Response",
+      "Escalation",
+      "Communication"
+    ],
+    "blueprintArea": "CISA4-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Effective incident management minimizes business impact when issues occur. Organizations with mature incident processes recover faster and learn from each event."
+        },
+        {
+          "title": "Incident vs. Problem",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Incident",
+            "Problem"
+          ],
+          "rows": [
+            [
+              "Focus",
+              "Restore service quickly",
+              "Find root cause"
+            ],
+            [
+              "Goal",
+              "Minimize business impact",
+              "Prevent future incidents"
+            ],
+            [
+              "Timeframe",
+              "Immediate resolution",
+              "May take longer"
+            ],
+            [
+              "Example",
+              "Server is down, restart it",
+              "Why does server keep crashing?"
+            ]
+          ]
+        },
+        {
+          "title": "Incident Management Process",
+          "type": "text",
+          "content": "**Incident Lifecycle:**\n\n**1. Detection and Logging**\n\u2022 Identify incident\n\u2022 Log in ticketing system\n\u2022 Capture initial details\n\u2022 Timestamp everything\n\n**2. Classification and Prioritization**\n\u2022 Categorize by type\n\u2022 Assess impact and urgency\n\u2022 Assign priority level\n\u2022 Route to appropriate team\n\n**3. Investigation and Diagnosis**\n\u2022 Gather information\n\u2022 Identify potential causes\n\u2022 Test hypotheses\n\u2022 Document findings\n\n**4. Resolution and Recovery**\n\u2022 Implement fix/workaround\n\u2022 Verify service restored\n\u2022 Confirm with user\n\u2022 Document solution\n\n**5. Closure**\n\u2022 User confirmation\n\u2022 Documentation complete\n\u2022 Close ticket\n\u2022 Trigger review if needed"
+        },
+        {
+          "title": "Priority Matrix",
+          "type": "text",
+          "content": "**Impact x Urgency = Priority**\n\n**Impact Levels:**\n\u2022 **High** - Business-critical, many users\n\u2022 **Medium** - Important, limited users\n\u2022 **Low** - Non-critical, workaround exists\n\n**Urgency Levels:**\n\u2022 **High** - No workaround, immediate need\n\u2022 **Medium** - Workaround available, can wait\n\u2022 **Low** - Can be scheduled\n\n**Priority Examples:**\n\u2022 **P1/Critical** - Production system down, all users affected\n\u2022 **P2/High** - Major function unavailable, many users\n\u2022 **P3/Medium** - Service degraded, some users\n\u2022 **P4/Low** - Minor issue, workaround available"
+        },
+        {
+          "title": "Escalation Procedures",
+          "type": "text",
+          "content": "**Escalation Types:**\n\n**Functional Escalation**\n\u2022 Route to specialized team\n\u2022 More expertise needed\n\u2022 Technical escalation\n\n**Hierarchical Escalation**\n\u2022 Escalate to management\n\u2022 Decision authority needed\n\u2022 Resource conflicts\n\u2022 SLA at risk\n\n**Escalation Triggers:**\n\u2022 Time thresholds exceeded\n\u2022 Priority increase\n\u2022 Additional resources needed\n\u2022 Customer request\n\n**Key Actions:**\n\u2022 Document escalation\n\u2022 Notify appropriate parties\n\u2022 Provide status updates\n\u2022 Track to resolution"
+        },
+        {
+          "title": "Incident Communication",
+          "type": "text",
+          "content": "**Communication Requirements:**\n\n**Internal Communication:**\n\u2022 Status updates to stakeholders\n\u2022 Management notifications\n\u2022 Technical team coordination\n\u2022 Post-incident reports\n\n**External Communication:**\n\u2022 Customer notifications\n\u2022 Status page updates\n\u2022 Regulatory reporting\n\u2022 Partner communication\n\n**Communication Templates:**\n\u2022 Initial notification\n\u2022 Progress updates\n\u2022 Resolution notification\n\u2022 Post-incident summary\n\n**Key Principle:** Communicate early, often, and honestly."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Incident management restores service; problem management finds root cause",
+            "Process: detect, classify, investigate, resolve, close",
+            "Priority = Impact \u00d7 Urgency",
+            "Escalation can be functional (expertise) or hierarchical (authority)",
+            "Communication is critical throughout the incident lifecycle"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Incident Prioritization Quiz",
+          "knowledgeCheck": {
+            "question": "An organization experiences a system outage affecting a critical business function utilized by a limited number of users. A workaround is available, but inefficient. According to the Impact x Urgency = Priority matrix described in this lesson, what is the MOST likely initial priority level assigned to this incident?",
+            "options": [
+              "High",
+              "Medium",
+              "Low",
+              "Informational"
+            ],
+            "correctIndex": 1,
+            "explanation": "The impact is 'Medium' (important, limited users) and the urgency is 'Medium' (workaround available, can wait). Medium x Medium typically results in a Medium priority. A 'High' priority would be reserved for business-critical functions with no workaround.",
+            "hint": "Consider both the impact on the business and the availability of a temporary solution."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Incident Management Lifecycle: Recall Check",
+          "reveal": {
+            "question": "List the first three stages of the Incident Management Lifecycle.",
+            "answer": "1. Detection and Logging\n2. Classification and Prioritization\n3. (The lesson stops here)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Escalation Types: Functional vs. Hierarchical",
+          "comparison": {
+            "headers": [
+              "Functional Escalation",
+              "Hierarchical Escalation"
+            ],
+            "rows": [
+              {
+                "label": "Primary Trigger",
+                "values": [
+                  "Lack of specialized expertise",
+                  "Need for decision authority or resource allocation"
+                ]
+              },
+              {
+                "label": "Typical Recipient",
+                "values": [
+                  "Specialized technical team",
+                  "Management or leadership"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Technical resolution",
+                  "Strategic or resource-based resolution"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-005",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Security Incident Response",
+    "description": "Understand the security incident response process and controls",
+    "order": 5,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Security Incidents",
+      "CSIRT",
+      "Forensics",
+      "Lessons Learned"
+    ],
+    "blueprintArea": "CISA4-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Security incidents are inevitable. A well-prepared incident response capability minimizes damage, preserves evidence, and enables faster recovery."
+        },
+        {
+          "title": "Incident Response Framework",
+          "type": "text",
+          "content": "**NIST Incident Response Phases:**\n\n**1. Preparation**\n\u2022 Develop IR plan\n\u2022 Train the team\n\u2022 Acquire tools\n\u2022 Establish communication\n\n**2. Detection and Analysis**\n\u2022 Monitor for indicators\n\u2022 Analyze alerts\n\u2022 Assess scope and impact\n\u2022 Document findings\n\n**3. Containment, Eradication, Remediation**\n\u2022 Stop the spread\n\u2022 Remove threat\n\u2022 Restore systems\n\u2022 Verify clean\n\n**4. Post-Incident Activity**\n\u2022 Lessons learned\n\u2022 Evidence retention\n\u2022 Reporting\n\u2022 Improvement actions"
+        },
+        {
+          "title": "Incident Response Team",
+          "type": "table",
+          "headers": [
+            "Role",
+            "Responsibilities",
+            "Involvement"
+          ],
+          "rows": [
+            [
+              "IR Manager",
+              "Lead response, decisions",
+              "All incidents"
+            ],
+            [
+              "Security Analyst",
+              "Technical analysis, containment",
+              "All incidents"
+            ],
+            [
+              "Forensic Analyst",
+              "Evidence collection, analysis",
+              "Major incidents"
+            ],
+            [
+              "Communications",
+              "Internal/external comms",
+              "Significant incidents"
+            ],
+            [
+              "Legal",
+              "Legal implications, disclosure",
+              "As needed"
+            ],
+            [
+              "HR",
+              "Employee-related incidents",
+              "Insider incidents"
+            ]
+          ]
+        },
+        {
+          "title": "Containment Strategies",
+          "type": "text",
+          "content": "**Containment Options:**\n\n**Short-Term Containment**\n\u2022 Isolate affected systems\n\u2022 Block malicious IPs/domains\n\u2022 Disable compromised accounts\n\u2022 Implement emergency rules\n\n**Long-Term Containment**\n\u2022 Apply patches\n\u2022 Reset credentials\n\u2022 Enhance monitoring\n\u2022 Remove attacker access\n\n**Eradication**\n\u2022 Remove malware\n\u2022 Reimage systems\n\u2022 Close vulnerabilities\n\u2022 Verify complete removal\n\n**Key Decision:** Balance evidence preservation with business recovery needs."
+        },
+        {
+          "title": "Digital Forensics",
+          "type": "text",
+          "content": "**Forensic Principles:**\n\n**Evidence Handling:**\n\u2022 Chain of custody\n\u2022 Write protection\n\u2022 Forensic imaging\n\u2022 Hash verification\n\n**Evidence Sources:**\n\u2022 System logs\n\u2022 Network traffic\n\u2022 Memory (volatile)\n\u2022 Storage (non-volatile)\n\u2022 Cloud logs\n\n**Best Practices:**\n\u2022 Work on copies, not originals\n\u2022 Document everything\n\u2022 Use forensic tools\n\u2022 Maintain timeline\n\n**Legal Considerations:**\n\u2022 Admissibility requirements\n\u2022 Privacy regulations\n\u2022 Disclosure obligations\n\u2022 Law enforcement coordination"
+        },
+        {
+          "title": "Post-Incident Activities",
+          "type": "text",
+          "content": "**After the Incident:**\n\n**Lessons Learned Meeting**\n\u2022 What happened?\n\u2022 What went well?\n\u2022 What could improve?\n\u2022 Action items\n\n**Documentation**\n\u2022 Incident timeline\n\u2022 Actions taken\n\u2022 Evidence preserved\n\u2022 Costs incurred\n\n**Improvement Actions**\n\u2022 Update IR plan\n\u2022 Enhance controls\n\u2022 Additional training\n\u2022 Tool improvements\n\n**Reporting**\n\u2022 Management report\n\u2022 Regulatory notifications\n\u2022 Customer disclosure\n\u2022 Board briefing"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IR phases: preparation, detection, containment/eradication, post-incident",
+            "IR team includes manager, analysts, forensics, legal, communications",
+            "Containment balances stopping the attack with preserving evidence",
+            "Forensics requires chain of custody and working on copies",
+            "Post-incident review drives continuous improvement"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Incident Response Phases",
+          "knowledgeCheck": {
+            "question": "During which NIST Incident Response phase would an organization focus on identifying the scope of the incident and determining the potential business impact?",
+            "options": [
+              "Preparation",
+              "Detection and Analysis",
+              "Containment, Eradication, and Recovery",
+              "Post-Incident Activity"
+            ],
+            "correctIndex": 1,
+            "explanation": "Detection and Analysis involves monitoring for indicators, analyzing alerts, and assessing the scope and impact of the incident to understand its severity and potential consequences.",
+            "hint": "Think about the steps needed to understand what happened *after* you know something is wrong."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: Chain of Custody",
+          "reveal": {
+            "question": "Define 'Chain of Custody' in the context of digital forensics and explain its importance.",
+            "answer": "Chain of Custody is the chronological documentation or paper trail, showing the seizure, custody, control, transfer, analysis, and disposition of evidence, whether physical or electronic. It's crucial for maintaining the integrity of evidence and ensuring its admissibility in legal proceedings. Any break in the chain can render the evidence inadmissible."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparison: Containment Strategies",
+          "comparison": {
+            "headers": [
+              "Short-Term Containment",
+              "Long-Term Containment"
+            ],
+            "rows": [
+              {
+                "label": "Objective",
+                "values": [
+                  "Immediately limit the spread and damage of the incident.",
+                  "Prevent recurrence and strengthen defenses."
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Isolating affected systems, blocking malicious IPs, disabling compromised accounts.",
+                  "Applying patches, resetting credentials, enhancing monitoring, removing attacker access."
+                ]
+              },
+              {
+                "label": "Duration",
+                "values": [
+                  "Temporary, immediate actions.",
+                  "Permanent, ongoing improvements."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Evidence Handling",
+          "knowledgeCheck": {
+            "question": "Which of the following actions is MOST important when handling digital evidence during a forensic investigation?",
+            "options": [
+              "Analyzing the original hard drive to quickly identify the source of the incident.",
+              "Creating a write-protected forensic image of the original evidence.",
+              "Immediately deleting any suspicious files to prevent further damage.",
+              "Sharing the original evidence with external security consultants for analysis."
+            ],
+            "correctIndex": 1,
+            "explanation": "Creating a write-protected forensic image ensures the integrity of the original evidence is maintained, preventing any accidental modification or corruption during the investigation. Working on a copy is a fundamental principle of digital forensics.",
+            "hint": "Think about the potential consequences of altering the original evidence."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-006",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Business Continuity Planning",
+    "description": "Understand business continuity planning principles and components",
+    "order": 6,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "BCP",
+      "Business Impact Analysis",
+      "Recovery Strategies",
+      "BC Testing"
+    ],
+    "blueprintArea": "CISA4-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Business continuity ensures the organization can survive disruptions. Without BCP, even minor incidents can become existential threats. BCP is heavily tested on the CISA exam!"
+        },
+        {
+          "title": "BCP vs. DRP",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Business Continuity (BCP)",
+            "Disaster Recovery (DRP)"
+          ],
+          "rows": [
+            [
+              "Scope",
+              "Entire business",
+              "IT systems"
+            ],
+            [
+              "Focus",
+              "Continuing critical operations",
+              "Restoring IT systems"
+            ],
+            [
+              "Owner",
+              "Executive management",
+              "IT management"
+            ],
+            [
+              "Timeframe",
+              "During and after disruption",
+              "After disruption"
+            ],
+            [
+              "Output",
+              "BC plan, procedures",
+              "DR plan, technical procedures"
+            ]
+          ]
+        },
+        {
+          "title": "BCP Development Process",
+          "type": "text",
+          "content": "**BCP Phases:**\n\n**1. Project Initiation**\n\u2022 Management support\n\u2022 Define scope\n\u2022 Assign resources\n\u2022 Establish governance\n\n**2. Business Impact Analysis**\n\u2022 Identify critical processes\n\u2022 Determine dependencies\n\u2022 Assess impact of disruption\n\u2022 Define recovery requirements\n\n**3. Risk Assessment**\n\u2022 Identify threats\n\u2022 Assess vulnerabilities\n\u2022 Analyze risk scenarios\n\u2022 Prioritize risks\n\n**4. Strategy Development**\n\u2022 Define recovery strategies\n\u2022 Select options\n\u2022 Develop cost-benefit\n\u2022 Obtain approval\n\n**5. Plan Development**\n\u2022 Document procedures\n\u2022 Assign responsibilities\n\u2022 Identify resources\n\u2022 Establish communication\n\n**6. Testing and Maintenance**\n\u2022 Conduct exercises\n\u2022 Update plans\n\u2022 Train staff\n\u2022 Continuous improvement"
+        },
+        {
+          "title": "Critical BIA Outputs",
+          "type": "text",
+          "content": "**Key BIA Results:**\n\n**Recovery Objectives:**\n\u2022 **MTD** - Maximum Tolerable Downtime\n\u2022 **RTO** - Recovery Time Objective\n\u2022 **RPO** - Recovery Point Objective\n\u2022 **WRT** - Work Recovery Time\n\n**Relationship:**\nMTD > RTO + WRT\n\n**Example:**\n\u2022 MTD = 24 hours (business fails after)\n\u2022 RTO = 8 hours (systems up in 8)\n\u2022 WRT = 4 hours (verify, catch up)\n\u2022 Total = 12 hours (within MTD)\n\n**Process Prioritization:**\nBased on impact of unavailability:\n\u2022 Revenue loss\n\u2022 Regulatory penalties\n\u2022 Customer impact\n\u2022 Reputational damage"
+        },
+        {
+          "title": "Recovery Strategies",
+          "type": "text",
+          "content": "**Strategy Options:**\n\n**Do Nothing**\n\u2022 Accept downtime\n\u2022 Cost: Lowest\n\u2022 Risk: Highest\n\n**Manual Procedures**\n\u2022 Paper-based workarounds\n\u2022 Limited functionality\n\u2022 Temporary solution\n\n**Reciprocal Agreements**\n\u2022 Partner shares facilities\n\u2022 Mutual arrangement\n\u2022 Limited capacity\n\n**Cold Site**\n\u2022 Empty facility\n\u2022 Requires equipment\n\u2022 Longest recovery\n\n**Warm Site**\n\u2022 Some equipment\n\u2022 Moderate recovery time\n\u2022 Cost/recovery balance\n\n**Hot Site**\n\u2022 Fully equipped\n\u2022 Fast recovery\n\u2022 Highest cost\n\n**Cloud/Mobile**\n\u2022 Cloud-based recovery\n\u2022 Flexible capacity\n\u2022 Subscription model"
+        },
+        {
+          "title": "BC Plan Components",
+          "type": "text",
+          "content": "**Plan Elements:**\n\n**Activation Procedures**\n\u2022 Triggering criteria\n\u2022 Declaration authority\n\u2022 Initial response steps\n\n**Contact Information**\n\u2022 Key personnel\n\u2022 Vendors and partners\n\u2022 Emergency services\n\u2022 Stakeholders\n\n**Recovery Procedures**\n\u2022 Step-by-step instructions\n\u2022 Resource requirements\n\u2022 Priority sequence\n\u2022 Dependencies\n\n**Communication Plan**\n\u2022 Internal communication\n\u2022 External communication\n\u2022 Media handling\n\u2022 Stakeholder updates\n\n**Return to Normal**\n\u2022 Criteria for return\n\u2022 Transition procedures\n\u2022 Verification steps"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "BCP covers entire business; DRP focuses on IT recovery",
+            "BIA determines MTD, RTO, RPO for critical processes",
+            "Recovery sites: cold (empty), warm (partial), hot (ready)",
+            "BCP includes activation, contacts, recovery, communication, return",
+            "MTD > RTO + WRT (recovery plus verification time)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Recovery Objectives",
+          "knowledgeCheck": {
+            "question": "During a Business Impact Analysis (BIA), an organization determines that a critical business process can only tolerate 4 hours of downtime before causing significant financial and reputational damage. The IT department estimates that it will take 2 hours to recover the system. What is the maximum allowable Work Recovery Time (WRT)?",
+            "options": [
+              "2 hours",
+              "4 hours",
+              "6 hours",
+              "8 hours"
+            ],
+            "correctIndex": 0,
+            "explanation": "The Maximum Tolerable Downtime (MTD) must be greater than the sum of Recovery Time Objective (RTO) and Work Recovery Time (WRT).  Therefore, MTD > RTO + WRT.  In this case, 4 hours > 2 hours + WRT.  Thus, the maximum allowable WRT is 2 hours.",
+            "hint": "Remember the relationship: MTD > RTO + WRT"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall Key Definitions",
+          "reveal": {
+            "question": "Define Recovery Point Objective (RPO).",
+            "answer": "Recovery Point Objective (RPO) is the point in time to which data must be restored after an outage. It defines the maximum acceptable data loss, usually measured in time (e.g., 1 hour, 1 day)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparing Recovery Strategies",
+          "comparison": {
+            "headers": [
+              "Cold Site",
+              "Reciprocal Agreement"
+            ],
+            "rows": [
+              {
+                "label": "Cost",
+                "values": [
+                  "Lower initial cost; higher cost to activate and configure",
+                  "Lower initial cost; potential for hidden costs and legal complexities"
+                ]
+              },
+              {
+                "label": "Availability",
+                "values": [
+                  "Slower recovery time; requires hardware and software installation",
+                  "Dependent on partner's availability and capacity"
+                ]
+              },
+              {
+                "label": "Capacity",
+                "values": [
+                  "Full capacity achievable after setup",
+                  "Often limited capacity; may not fully support all critical functions"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-007",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Disaster Recovery Planning",
+    "description": "Master disaster recovery strategies and technical recovery procedures",
+    "order": 7,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "DRP",
+      "Recovery Sites",
+      "Backup Strategies",
+      "DR Testing"
+    ],
+    "blueprintArea": "CISA4-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Disaster recovery restores IT systems after major disruptions. The difference between hours and days of recovery can mean business survival or failure."
+        },
+        {
+          "title": "Recovery Site Options",
+          "type": "table",
+          "headers": [
+            "Site Type",
+            "Description",
+            "Recovery Time",
+            "Cost"
+          ],
+          "rows": [
+            [
+              "Cold Site",
+              "Facility only, no equipment",
+              "Weeks",
+              "Lowest"
+            ],
+            [
+              "Warm Site",
+              "Facility + some equipment",
+              "Days",
+              "Medium"
+            ],
+            [
+              "Hot Site",
+              "Fully equipped and configured",
+              "Hours",
+              "High"
+            ],
+            [
+              "Mobile Site",
+              "Portable facility",
+              "Days",
+              "Medium"
+            ],
+            [
+              "Cloud DR",
+              "Cloud-based recovery",
+              "Minutes-Hours",
+              "Variable"
+            ]
+          ]
+        },
+        {
+          "title": "Backup Strategies",
+          "type": "text",
+          "content": "**Backup Types:**\n\n**Full Backup**\n\u2022 Complete copy of all data\n\u2022 Longest backup time\n\u2022 Fastest restore\n\u2022 Highest storage use\n\n**Incremental Backup**\n\u2022 Changes since last backup\n\u2022 Fastest backup\n\u2022 Slowest restore (chain needed)\n\u2022 Least storage use\n\n**Differential Backup**\n\u2022 Changes since last full\n\u2022 Moderate backup time\n\u2022 Moderate restore time\n\u2022 Moderate storage\n\n**Common Strategy:**\nWeekly full + daily incremental or differential"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Backup Types",
+          "type": "callout",
+          "content": "**Incremental = Changes since last ANY backup**\nMon backup has Mon changes\nTue backup has Tue changes only\n\n**Differential = Changes since last FULL backup**\nMon backup has Mon changes\nTue backup has Mon + Tue changes\n\n*Incremental is smaller but needs more tapes to restore!*"
+        },
+        {
+          "title": "Data Replication",
+          "type": "text",
+          "content": "**Replication Types:**\n\n**Synchronous Replication**\n\u2022 Data written to both sites simultaneously\n\u2022 Zero data loss (RPO = 0)\n\u2022 Distance limited by latency\n\u2022 Performance impact\n\n**Asynchronous Replication**\n\u2022 Data written to DR after primary\n\u2022 Some data loss possible\n\u2022 No distance limitation\n\u2022 Minimal performance impact\n\n**Database-Specific:**\n\u2022 Log shipping\n\u2022 Database mirroring\n\u2022 Always-On availability groups\n\u2022 Active-passive clusters"
+        },
+        {
+          "title": "DR Testing Types",
+          "type": "text",
+          "content": "**Test Types (Least to Most Rigorous):**\n\n**1. Checklist Review**\n\u2022 Paper review of plans\n\u2022 Verify contact info\n\u2022 Check procedures current\n\u2022 Minimal disruption\n\n**2. Tabletop Exercise**\n\u2022 Walkthrough scenario\n\u2022 Discussion-based\n\u2022 Identify gaps\n\u2022 No actual recovery\n\n**3. Simulation**\n\u2022 Practice procedures\n\u2022 Role-playing\n\u2022 More realistic\n\u2022 Still no actual failover\n\n**4. Parallel Test**\n\u2022 Recover to DR site\n\u2022 Production continues\n\u2022 Validate systems work\n\u2022 No user cutover\n\n**5. Full Interruption**\n\u2022 Actual failover\n\u2022 Production stops\n\u2022 Real recovery\n\u2022 Highest risk, highest value"
+        },
+        {
+          "title": "DR Plan Maintenance",
+          "type": "text",
+          "content": "**Keeping Plans Current:**\n\n**Update Triggers:**\n\u2022 System changes\n\u2022 Personnel changes\n\u2022 Vendor changes\n\u2022 Address/location changes\n\u2022 After incidents\n\u2022 After tests\n\u2022 Regulatory changes\n\n**Review Schedule:**\n\u2022 Annual full review minimum\n\u2022 Quarterly contact verification\n\u2022 Monthly checklist reviews\n\u2022 After significant changes\n\n**Documentation:**\n\u2022 Version control\n\u2022 Change log\n\u2022 Approval records\n\u2022 Distribution list"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Recovery sites: cold (facility only) to hot (fully ready)",
+            "Backup types: full, incremental (since last backup), differential (since last full)",
+            "Synchronous replication = zero data loss; asynchronous = some loss possible",
+            "DR tests: checklist, tabletop, simulation, parallel, full interruption",
+            "Plans require regular updates and testing to remain effective"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Backup Strategy Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During a Disaster Recovery test, the IT department discovers that the recovery time objective (RTO) for a critical application is not being met. Analysis reveals that the restore process is taking significantly longer than expected due to the need to restore a full backup followed by multiple incremental backups. Which of the following backup strategies would BEST address this issue in the future?",
+            "options": [
+              "A. Implementing a more frequent full backup schedule.",
+              "B. Switching to a differential backup strategy.",
+              "C. Implementing a more robust data compression technique.",
+              "D. Utilizing asynchronous data replication."
+            ],
+            "correctIndex": 1,
+            "explanation": "Switching to a differential backup strategy would be the best option. Differential backups only require the last full backup and the most recent differential backup for restoration, thus reducing the restore time compared to incremental backups which require the full backup and all subsequent incremental backups.",
+            "hint": "Consider the impact of each backup type on restore time."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Replication Recall",
+          "reveal": {
+            "question": "What is the main advantage and disadvantage of synchronous replication?",
+            "answer": "Advantage: Zero data loss (RPO = 0). Disadvantage: Performance impact due to latency and distance limitations."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Replication Type Comparison",
+          "comparison": {
+            "headers": [
+              "Synchronous Replication",
+              "Asynchronous Replication"
+            ],
+            "rows": [
+              {
+                "label": "Data Loss Potential",
+                "values": [
+                  "None (RPO = 0)",
+                  "Possible (RPO > 0)"
+                ]
+              },
+              {
+                "label": "Performance Impact",
+                "values": [
+                  "High (Latency Sensitive)",
+                  "Low"
+                ]
+              },
+              {
+                "label": "Distance Limitations",
+                "values": [
+                  "Significant",
+                  "Minimal"
+                ]
+              },
+              {
+                "label": "Write Confirmation",
+                "values": [
+                  "Confirmed at both sites simultaneously",
+                  "Confirmed at primary site only"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-008",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "BC/DR Testing and Exercises",
+    "description": "Learn how to plan, conduct, and evaluate BC/DR tests",
+    "order": 8,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "BC Testing",
+      "Exercise Types",
+      "Test Planning",
+      "Results Analysis"
+    ],
+    "blueprintArea": "CISA4-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Untested plans are untrusted plans. Testing validates that plans work, people know their roles, and recovery objectives can be met. The time to find gaps is during exercises, not actual disasters."
+        },
+        {
+          "title": "Test Planning Process",
+          "type": "text",
+          "content": "**Exercise Planning Steps:**\n\n**1. Define Objectives**\n\u2022 What are we testing?\n\u2022 What do we want to learn?\n\u2022 Success criteria?\n\n**2. Select Scope**\n\u2022 Which systems/processes?\n\u2022 Which teams?\n\u2022 What scenarios?\n\n**3. Choose Type**\n\u2022 Tabletop vs. functional\n\u2022 Announced vs. surprise\n\u2022 Partial vs. full\n\n**4. Develop Scenario**\n\u2022 Realistic conditions\n\u2022 Inject events\n\u2022 Observer assignments\n\n**5. Conduct Exercise**\n\u2022 Brief participants\n\u2022 Execute scenario\n\u2022 Document observations\n\u2022 Debrief immediately\n\n**6. Analyze and Report**\n\u2022 Compile findings\n\u2022 Identify improvements\n\u2022 Track to completion"
+        },
+        {
+          "title": "Exercise Comparison",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Effort",
+            "Realism",
+            "Risk",
+            "Value"
+          ],
+          "rows": [
+            [
+              "Checklist",
+              "Very Low",
+              "None",
+              "None",
+              "Basic validation"
+            ],
+            [
+              "Tabletop",
+              "Low",
+              "Low",
+              "Very Low",
+              "Process/decision gaps"
+            ],
+            [
+              "Simulation",
+              "Medium",
+              "Medium",
+              "Low",
+              "Procedure testing"
+            ],
+            [
+              "Parallel",
+              "High",
+              "High",
+              "Medium",
+              "Technical validation"
+            ],
+            [
+              "Full Interruption",
+              "Very High",
+              "Highest",
+              "High",
+              "Complete validation"
+            ]
+          ]
+        },
+        {
+          "title": "Tabletop Exercise Design",
+          "type": "text",
+          "content": "**Tabletop Best Practices:**\n\n**Preparation:**\n\u2022 Develop scenario narrative\n\u2022 Prepare inject cards\n\u2022 Assign facilitator\n\u2022 Invite right participants\n\n**Facilitation:**\n\u2022 Present scenario\n\u2022 Ask probing questions\n\u2022 Inject complications\n\u2022 Keep discussion focused\n\n**Discussion Points:**\n\u2022 Who makes decisions?\n\u2022 How do we communicate?\n\u2022 What if X happens?\n\u2022 Do we have resources needed?\n\n**Outputs:**\n\u2022 Action items\n\u2022 Gap identification\n\u2022 Plan updates needed\n\u2022 Training needs"
+        },
+        {
+          "title": "Technical Testing",
+          "type": "text",
+          "content": "**Functional Test Components:**\n\n**Recovery Testing:**\n\u2022 System restoration from backup\n\u2022 Application startup\n\u2022 Data integrity verification\n\u2022 Performance validation\n\n**Failover Testing:**\n\u2022 Automatic failover mechanisms\n\u2022 Manual failover procedures\n\u2022 Network cutover\n\u2022 DNS changes\n\n**Integration Testing:**\n\u2022 System dependencies\n\u2022 Third-party connectivity\n\u2022 End-to-end workflow\n\u2022 User acceptance\n\n**Measurement:**\n\u2022 Actual RTO achieved\n\u2022 Actual RPO achieved\n\u2022 Issues encountered\n\u2022 Variance from plan"
+        },
+        {
+          "title": "Post-Exercise Activities",
+          "type": "text",
+          "content": "**After the Exercise:**\n\n**Hot Wash (Immediate)**\n\u2022 Initial reactions\n\u2022 Major issues\n\u2022 Quick wins\n\u2022 Participants' perspectives\n\n**Detailed Analysis**\n\u2022 Compile observations\n\u2022 Analyze gaps\n\u2022 Root cause issues\n\u2022 Categorize findings\n\n**Improvement Plan**\n\u2022 Prioritized actions\n\u2022 Assigned owners\n\u2022 Target dates\n\u2022 Resource requirements\n\n**Reporting**\n\u2022 Executive summary\n\u2022 Detailed findings\n\u2022 Recommendations\n\u2022 Track to closure"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Exercise types range from checklist to full interruption",
+            "Test planning: objectives, scope, type, scenario, execution, analysis",
+            "Tabletops test decisions and processes with minimal risk",
+            "Functional tests validate technical recovery capabilities",
+            "Post-exercise review drives continuous improvement"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Exercise Planning Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During the 'Select Scope' phase of BC/DR exercise planning, which of the following is the MOST critical consideration for an information systems auditor?",
+            "options": [
+              "Ensuring all possible systems and processes are included to achieve maximum coverage.",
+              "Defining the specific systems, processes, and teams involved, aligned with the exercise objectives and risk appetite.",
+              "Choosing the most complex and challenging scenarios to thoroughly test recovery capabilities.",
+              "Prioritizing systems based solely on their criticality rating without considering dependencies."
+            ],
+            "correctIndex": 1,
+            "explanation": "Selecting scope requires a risk-based approach, aligning the exercise to specific objectives and the organization's risk appetite. Including everything (Option A) may be impractical and resource-intensive. While challenging scenarios are important (Option C), they should align with the defined scope. Ignoring dependencies (Option D) would be a critical oversight.",
+            "hint": "Think about what the overall goal of testing is and how that impacts scope decisions."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Tabletop Exercise Best Practices",
+          "reveal": {
+            "question": "List three key preparation steps for a successful tabletop exercise.",
+            "answer": "1. Develop a realistic scenario narrative.\n2. Prepare inject cards to introduce complications.\n3. Assign a facilitator to guide the discussion and manage time."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Functional Testing Comparison",
+          "comparison": {
+            "headers": [
+              "Recovery Testing",
+              "Failover Testing"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Verifying the restoration of systems and data from backups.",
+                  "Validating the automatic or manual switch to a redundant system."
+                ]
+              },
+              {
+                "label": "Key Activities",
+                "values": [
+                  "System restoration, application startup, data integrity verification, performance validation.",
+                  "Testing automatic failover mechanisms, manual failover procedures, network cutover, DNS changes."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Restoring functionality after a disruption.",
+                  "Maintaining business continuity during a disruption."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-009",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Problem Management",
+    "description": "Understand problem management and root cause analysis techniques",
+    "order": 9,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Problem Management",
+      "Root Cause Analysis",
+      "Known Errors",
+      "Proactive PM"
+    ],
+    "blueprintArea": "CISA4-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Problem management prevents recurring incidents. Without it, organizations keep firefighting the same issues. Root cause analysis breaks the cycle."
+        },
+        {
+          "title": "Problem Management Process",
+          "type": "text",
+          "content": "**Problem Lifecycle:**\n\n**1. Problem Detection**\n\u2022 Triggered by recurring incidents\n\u2022 Trend analysis\n\u2022 Proactive identification\n\u2022 Customer complaints\n\n**2. Problem Logging**\n\u2022 Document in problem record\n\u2022 Link to related incidents\n\u2022 Assign ownership\n\n**3. Investigation**\n\u2022 Gather information\n\u2022 Root cause analysis\n\u2022 Known error identification\n\n**4. Resolution**\n\u2022 Develop permanent fix\n\u2022 Implement change\n\u2022 Close known error\n\n**5. Closure**\n\u2022 Verify resolution\n\u2022 Update knowledge base\n\u2022 Close problem record"
+        },
+        {
+          "title": "Root Cause Analysis Techniques",
+          "type": "table",
+          "headers": [
+            "Technique",
+            "Description",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "5 Whys",
+              "Ask why repeatedly",
+              "Simple problems"
+            ],
+            [
+              "Fishbone/Ishikawa",
+              "Cause-effect diagram",
+              "Complex problems"
+            ],
+            [
+              "Fault Tree",
+              "Top-down logic diagram",
+              "Safety/reliability"
+            ],
+            [
+              "Pareto Analysis",
+              "80/20 rule prioritization",
+              "Prioritizing causes"
+            ],
+            [
+              "Timeline Analysis",
+              "Sequence of events",
+              "Incident investigation"
+            ]
+          ]
+        },
+        {
+          "title": "Five Whys Technique",
+          "type": "text",
+          "content": "**Example: Server Crash**\n\n**Problem:** Server crashed causing outage\n\n1. **Why?** Memory exhausted\n2. **Why?** Memory leak in application\n3. **Why?** Bug in recent code release\n4. **Why?** Insufficient code review\n5. **Why?** Time pressure to release quickly\n\n**Root Cause:** Inadequate code review process\n\n**Fix:** Implement mandatory code review with checklist before releases\n\n**Key:** Keep asking until you reach an actionable root cause, typically 5 iterations."
+        },
+        {
+          "title": "Known Error Database",
+          "type": "text",
+          "content": "**Known Error Management:**\n\n**Definition:**\nA known error is a problem with documented root cause and workaround (but not yet permanent fix).\n\n**KEDB Contents:**\n\u2022 Problem description\n\u2022 Root cause\n\u2022 Workaround procedures\n\u2022 Permanent fix status\n\u2022 Affected systems/services\n\n**Benefits:**\n\u2022 Faster incident resolution\n\u2022 Consistent troubleshooting\n\u2022 Knowledge preservation\n\u2022 Fix prioritization\n\n**Maintenance:**\n\u2022 Update when fixes implemented\n\u2022 Remove resolved known errors\n\u2022 Regular review for relevance"
+        },
+        {
+          "title": "Proactive Problem Management",
+          "type": "text",
+          "content": "**Proactive Approach:**\n\n**Trend Analysis**\n\u2022 Analyze incident patterns\n\u2022 Identify recurring issues\n\u2022 Spot emerging problems\n\n**Capacity/Performance**\n\u2022 Monitor thresholds\n\u2022 Predict future issues\n\u2022 Address before failure\n\n**Risk Assessment**\n\u2022 Identify potential problems\n\u2022 Assess likelihood/impact\n\u2022 Prevent issues proactively\n\n**Major Incident Review**\n\u2022 After significant incidents\n\u2022 Even if resolved\n\u2022 Determine if problem exists"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Problem management finds and addresses root causes",
+            "Process: detect, log, investigate, resolve, close",
+            "RCA techniques: 5 Whys, Fishbone, Fault Tree, Pareto",
+            "Known errors document root cause and workaround",
+            "Proactive PM identifies problems before incidents occur"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Problem Management Process: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST effective initial trigger for initiating the problem management process?",
+            "options": [
+              "A single, high-impact incident affecting critical business operations.",
+              "A recurring pattern of related incidents, even if individually low-impact.",
+              "A direct request from the CIO to investigate a potential system vulnerability.",
+              "The completion of a scheduled system maintenance window with no reported issues."
+            ],
+            "correctIndex": 1,
+            "explanation": "Recurring incidents, even if low-impact individually, indicate an underlying problem that needs to be addressed through problem management. Addressing the root cause can prevent future incidents and ultimately reduce overall business disruption. While a high-impact incident may trigger immediate incident response, problem management focuses on preventing recurrence.",
+            "hint": "Think about the primary goal of problem management: preventing future incidents."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Known Error Database: Recall Exercise",
+          "reveal": {
+            "question": "What are the key contents that should be documented within a Known Error Database (KEDB)?",
+            "answer": "The KEDB should contain the problem description, root cause, workaround procedures, permanent fix status, and affected systems/services."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Incident Management vs. Problem Management",
+          "comparison": {
+            "headers": [
+              "Incident Management",
+              "Problem Management"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Restore service quickly",
+                  "Identify and eliminate root causes of incidents"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Short-term solution",
+                  "Long-term prevention"
+                ]
+              },
+              {
+                "label": "Trigger",
+                "values": [
+                  "Service disruption",
+                  "Recurring incidents or potential vulnerabilities"
+                ]
+              },
+              {
+                "label": "Outcome",
+                "values": [
+                  "Service restored",
+                  "Permanent fix or acceptable workaround"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-010",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Backup and Recovery Operations",
+    "description": "Master backup strategies, procedures, and recovery operations",
+    "order": 10,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Backup Operations",
+      "Media Management",
+      "Recovery Procedures",
+      "Data Protection"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Backups are the last line of defense against data loss. But a backup is only valuable if you can restore from it. Many organizations learn this the hard way."
+        },
+        {
+          "title": "Backup Operation Controls",
+          "type": "text",
+          "content": "**Backup Process Controls:**\n\n**Scheduling**\n\u2022 Documented backup schedule\n\u2022 Automated execution\n\u2022 Off-hours where possible\n\u2022 Conflict avoidance\n\n**Monitoring**\n\u2022 Backup job completion\n\u2022 Success/failure alerts\n\u2022 Capacity monitoring\n\u2022 Performance tracking\n\n**Verification**\n\u2022 Backup log review\n\u2022 Sample restore tests\n\u2022 Integrity checks\n\u2022 Media verification\n\n**Documentation**\n\u2022 Backup procedures\n\u2022 Recovery procedures\n\u2022 Media inventory\n\u2022 Retention records"
+        },
+        {
+          "title": "Media Management",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Best Practice"
+          ],
+          "rows": [
+            [
+              "Labeling",
+              "Identification",
+              "Standardized naming, barcodes"
+            ],
+            [
+              "Rotation",
+              "Media life management",
+              "GFS, rotation schedules"
+            ],
+            [
+              "Off-site Storage",
+              "Geographic protection",
+              "Secure facility, transport"
+            ],
+            [
+              "Disposal",
+              "Prevent data leakage",
+              "Degaussing, destruction"
+            ],
+            [
+              "Inventory",
+              "Track all media",
+              "Regular reconciliation"
+            ]
+          ]
+        },
+        {
+          "title": "Grandfather-Father-Son (GFS)",
+          "type": "text",
+          "content": "**GFS Rotation Scheme:**\n\n**Daily (Son)**\n\u2022 Mon-Thu backups\n\u2022 Rotate weekly\n\u2022 4 tapes minimum\n\n**Weekly (Father)**\n\u2022 Friday full backup\n\u2022 4-5 tapes\n\u2022 Rotated monthly\n\n**Monthly (Grandfather)**\n\u2022 End of month backup\n\u2022 12 tapes\n\u2022 Annual rotation\n\n**Benefits:**\n\u2022 Multiple recovery points\n\u2022 Efficient tape usage\n\u2022 Long-term retention\n\u2022 Balanced cost"
+        },
+        {
+          "title": "Off-Site Storage",
+          "type": "text",
+          "content": "**Off-Site Considerations:**\n\n**Location Selection**\n\u2022 Geographic separation\n\u2022 Natural disaster zones\n\u2022 Accessibility\n\u2022 Security\n\n**Transport Security**\n\u2022 Encrypted media\n\u2022 Secure containers\n\u2022 Tracked delivery\n\u2022 Chain of custody\n\n**Storage Facility**\n\u2022 Climate control\n\u2022 Fire protection\n\u2022 Access controls\n\u2022 Insurance\n\n**Cloud Backup**\n\u2022 Encryption in transit/rest\n\u2022 Access management\n\u2022 Data location awareness\n\u2022 Vendor reliability"
+        },
+        {
+          "title": "Recovery Testing",
+          "type": "text",
+          "content": "**Recovery Test Requirements:**\n\n**What to Test:**\n\u2022 Complete system restores\n\u2022 Individual file restores\n\u2022 Database recovery\n\u2022 Application recovery\n\n**Test Frequency:**\n\u2022 Critical systems: Monthly minimum\n\u2022 Other systems: Quarterly\n\u2022 After major changes\n\u2022 Random sampling\n\n**Documentation:**\n\u2022 Test procedures\n\u2022 Test results\n\u2022 Recovery time achieved\n\u2022 Issues encountered\n\n**\u26a0\ufe0f Key Principle:** If you haven't tested a restore, you don't have a backup."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Backup controls include scheduling, monitoring, verification, documentation",
+            "Media management covers labeling, rotation, off-site storage, disposal",
+            "GFS rotation provides daily, weekly, and monthly recovery points",
+            "Off-site storage requires geographic separation and security",
+            "Regular recovery testing validates backup reliability"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Backup Scheduling and Monitoring",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important consideration when scheduling backups to minimize business disruption?",
+            "options": [
+              "Ensuring backups occur during peak system usage to capture all transactions.",
+              "Automating the backup process and executing it during off-peak hours.",
+              "Prioritizing the backup of less critical systems to avoid impacting essential services.",
+              "Implementing a manual backup process to allow for flexibility and immediate adjustments."
+            ],
+            "correctIndex": 1,
+            "explanation": "Automating backups during off-peak hours minimizes disruption to business operations and ensures that critical systems are backed up without impacting performance. While other options might have some merit, minimizing business disruption is paramount.",
+            "hint": "Think about when system usage is at its lowest."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: GFS Rotation",
+          "reveal": {
+            "question": "Describe the primary purpose of the 'Father' backups in a Grandfather-Father-Son (GFS) rotation scheme.",
+            "answer": "The 'Father' backups in a GFS rotation scheme are typically full weekly backups. They provide a more recent recovery point than the monthly 'Grandfather' backups, allowing for recovery from issues that occurred within the past month. They are rotated monthly, meaning each 'Father' tape is reused after a month."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Key Differences: Location Selection for Offsite Storage",
+          "comparison": {
+            "headers": [
+              "Geographic Separation",
+              "Accessibility"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Protect data from localized disasters affecting the primary site.",
+                  "Ensure timely retrieval of backup media when needed for restoration."
+                ]
+              },
+              {
+                "label": "Distance",
+                "values": [
+                  "Far enough to avoid the same disaster, but not excessively remote.",
+                  "Close enough to allow for relatively quick transport of media."
+                ]
+              },
+              {
+                "label": "Potential Conflicts",
+                "values": [
+                  "Greater distance may increase transport time and costs.",
+                  "Closer proximity may reduce protection against widespread disasters."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Off-Site Storage Security",
+          "knowledgeCheck": {
+            "question": "Which of the following controls is MOST critical to ensure the confidentiality of backup data during transportation to an off-site storage facility?",
+            "options": [
+              "Implementing climate control in the transport vehicle.",
+              "Using secure containers with tamper-evident seals.",
+              "Encrypting the backup media before transportation.",
+              "Requiring the transport company to provide liability insurance."
+            ],
+            "correctIndex": 2,
+            "explanation": "Encrypting the backup media provides the strongest protection for the confidentiality of the data. Even if the media is intercepted or stolen during transport, the data remains unreadable without the encryption key. While the other options are beneficial for physical security and risk management, they do not directly address data confidentiality.",
+            "hint": "Think about what protects the data itself if the physical security is compromised."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-011",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "IT Asset Management",
+    "description": "Understand IT asset lifecycle management and inventory controls",
+    "order": 11,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Asset Management",
+      "ITAM",
+      "Software Licensing",
+      "Disposal"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "You can't protect what you don't know you have. IT asset management provides the foundation for security, compliance, and cost optimization."
+        },
+        {
+          "title": "Asset Lifecycle Stages",
+          "type": "text",
+          "content": "**ITAM Lifecycle:**\n\n**1. Planning and Procurement**\n\u2022 Requirements definition\n\u2022 Vendor selection\n\u2022 Purchase/lease decision\n\u2022 Contract negotiation\n\n**2. Deployment**\n\u2022 Receiving and logging\n\u2022 Configuration\n\u2022 Installation\n\u2022 Assignment\n\n**3. Operation**\n\u2022 Usage tracking\n\u2022 Maintenance\n\u2022 Updates and patches\n\u2022 Performance monitoring\n\n**4. Retirement**\n\u2022 Data sanitization\n\u2022 Disposal/recycling\n\u2022 Lease return\n\u2022 Record update"
+        },
+        {
+          "title": "Asset Inventory Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Method"
+          ],
+          "rows": [
+            [
+              "Registration",
+              "Record all assets",
+              "Upon receipt"
+            ],
+            [
+              "Tagging",
+              "Physical identification",
+              "Asset tags, barcodes"
+            ],
+            [
+              "Discovery",
+              "Find network assets",
+              "Automated scanning"
+            ],
+            [
+              "Reconciliation",
+              "Verify accuracy",
+              "Periodic physical counts"
+            ],
+            [
+              "Tracking",
+              "Location/assignment",
+              "CMDB/asset database"
+            ]
+          ]
+        },
+        {
+          "title": "Software Asset Management",
+          "type": "text",
+          "content": "**SAM Objectives:**\n\n**License Compliance**\n\u2022 Track license entitlements\n\u2022 Monitor actual usage\n\u2022 Prevent under/over licensing\n\u2022 Audit preparation\n\n**Cost Optimization**\n\u2022 Eliminate unused licenses\n\u2022 Consolidate vendors\n\u2022 Negotiate volume discounts\n\u2022 Renewal management\n\n**Security**\n\u2022 Identify unauthorized software\n\u2022 Ensure supported versions\n\u2022 Patch compliance\n\u2022 Reduce attack surface\n\n**Key Reports:**\n\u2022 License position (owned vs. deployed)\n\u2022 Usage metrics\n\u2022 Expiring licenses\n\u2022 Compliance gaps"
+        },
+        {
+          "title": "Asset Disposal Controls",
+          "type": "text",
+          "content": "**Disposal Process:**\n\n**Data Sanitization**\n\u2022 Overwriting (multiple passes)\n\u2022 Degaussing (magnetic media)\n\u2022 Physical destruction\n\u2022 Cryptographic erasure\n\n**Documentation**\n\u2022 Disposal authorization\n\u2022 Sanitization certificate\n\u2022 Destruction certificate\n\u2022 Chain of custody\n\n**Environmental Compliance**\n\u2022 E-waste regulations\n\u2022 Certified recyclers\n\u2022 Hazardous materials\n\u2022 Documentation requirements\n\n**Liability:**\n\u2022 Data breach from disposed assets\n\u2022 Environmental violations\n\u2022 Audit trail maintenance"
+        },
+        {
+          "title": "BYOD Considerations",
+          "type": "text",
+          "content": "**Bring Your Own Device:**\n\n**Asset Management Challenges:**\n\u2022 Not organization-owned\n\u2022 Multiple devices per user\n\u2022 Personal/corporate data mix\n\u2022 Varying security posture\n\n**Required Controls:**\n\u2022 Device registration\n\u2022 MDM enrollment\n\u2022 Security requirements\n\u2022 Data protection\n\u2022 Remote wipe capability\n\n**Policy Elements:**\n\u2022 Acceptable use\n\u2022 Supported devices\n\u2022 Security requirements\n\u2022 Support boundaries\n\u2022 Liability"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Asset lifecycle: planning, deployment, operation, retirement",
+            "Inventory controls: registration, tagging, discovery, reconciliation",
+            "SAM ensures license compliance and cost optimization",
+            "Disposal requires data sanitization and documentation",
+            "BYOD requires additional controls for unowned devices"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: IT Asset Lifecycle",
+          "knowledgeCheck": {
+            "question": "Which of the following activities is MOST important to perform during the 'Planning and Procurement' stage of the IT Asset Management (ITAM) lifecycle to ensure effective license compliance?",
+            "options": [
+              "A) Implementing a software distribution system for automated deployment.",
+              "B) Defining clear requirements for software licenses based on business needs.",
+              "C) Establishing a process for tracking software usage across the organization.",
+              "D) Negotiating service level agreements (SLAs) with vendors for software support.",
+              "E) Performing penetration testing on newly acquired software."
+            ],
+            "correctIndex": 1,
+            "explanation": "Defining clear requirements for software licenses is paramount during the planning and procurement stage. This ensures that the organization purchases the correct number and type of licenses to meet its needs, preventing both under-licensing (compliance issues) and over-licensing (unnecessary costs). The other options, while important, are more relevant to later stages of the ITAM lifecycle.",
+            "hint": "Think about the primary goal of the Planning and Procurement stage in relation to license compliance."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: Data Sanitization Methods",
+          "reveal": {
+            "question": "What are the four primary methods of data sanitization?",
+            "answer": "The four primary methods of data sanitization are: 1) Overwriting (multiple passes), 2) Degaussing (magnetic media), 3) Physical destruction, and 4) Cryptographic erasure."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparison: License Compliance vs. Cost Optimization",
+          "comparison": {
+            "headers": [
+              "License Compliance",
+              "Cost Optimization"
+            ],
+            "rows": [
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Ensuring adherence to software licensing agreements.",
+                  "Minimizing software-related expenses."
+                ]
+              },
+              {
+                "label": "Key Activities",
+                "values": [
+                  "Tracking license entitlements, monitoring actual usage, preventing under/over licensing, preparing for audits.",
+                  "Eliminating unused licenses, consolidating vendors, negotiating volume discounts, managing renewals."
+                ]
+              },
+              {
+                "label": "Risk Addressed",
+                "values": [
+                  "Legal penalties, reputational damage, software downtime due to non-compliance.",
+                  "Unnecessary software expenditures, inefficient resource allocation."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-012",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Patch and Vulnerability Management",
+    "description": "Learn how to manage vulnerabilities and apply security patches",
+    "order": 12,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Patch Management",
+      "Vulnerability Management",
+      "Risk Prioritization",
+      "Testing"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Unpatched systems are the entry point for most breaches. Effective patch and vulnerability management closes security gaps before attackers can exploit them."
+        },
+        {
+          "title": "Vulnerability Management Process",
+          "type": "text",
+          "content": "**VM Lifecycle:**\n\n**1. Discovery**\n\u2022 Inventory assets\n\u2022 Identify software\n\u2022 Map network\n\n**2. Scanning**\n\u2022 Vulnerability scans\n\u2022 Configuration assessments\n\u2022 Penetration testing\n\n**3. Analysis**\n\u2022 Validate findings\n\u2022 Prioritize by risk\n\u2022 Determine remediation\n\n**4. Remediation**\n\u2022 Apply patches\n\u2022 Configuration changes\n\u2022 Compensating controls\n\n**5. Verification**\n\u2022 Rescan to confirm\n\u2022 Test functionality\n\u2022 Document results\n\n**6. Reporting**\n\u2022 Metrics and trends\n\u2022 SLA compliance\n\u2022 Risk status"
+        },
+        {
+          "title": "Vulnerability Prioritization",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "High Priority",
+            "Lower Priority"
+          ],
+          "rows": [
+            [
+              "CVSS Score",
+              "9.0+ Critical",
+              "Below 4.0 Low"
+            ],
+            [
+              "Exploitability",
+              "Active exploitation",
+              "Theoretical only"
+            ],
+            [
+              "Asset Criticality",
+              "Production systems",
+              "Test systems"
+            ],
+            [
+              "Exposure",
+              "Internet-facing",
+              "Internal only"
+            ],
+            [
+              "Data Sensitivity",
+              "PII, financial",
+              "Public data"
+            ]
+          ]
+        },
+        {
+          "title": "Patch Management Process",
+          "type": "text",
+          "content": "**Patch Lifecycle:**\n\n**1. Identification**\n\u2022 Monitor vendor releases\n\u2022 Security advisories\n\u2022 Threat intelligence\n\n**2. Assessment**\n\u2022 Applicability\n\u2022 Urgency\n\u2022 Dependencies\n\u2022 Impact analysis\n\n**3. Testing**\n\u2022 Lab environment\n\u2022 Functionality testing\n\u2022 Compatibility testing\n\u2022 Rollback testing\n\n**4. Deployment**\n\u2022 Scheduled windows\n\u2022 Staged rollout\n\u2022 Monitoring\n\u2022 Rollback capability\n\n**5. Verification**\n\u2022 Confirm installation\n\u2022 Test functionality\n\u2022 Scan for closure"
+        },
+        {
+          "title": "Patch Testing Requirements",
+          "type": "text",
+          "content": "**Testing Approach:**\n\n**Why Test First:**\n\u2022 Patches can break functionality\n\u2022 Application compatibility\n\u2022 Integration issues\n\u2022 Performance impact\n\n**Test Environment:**\n\u2022 Representative of production\n\u2022 Isolated network\n\u2022 Subset of applications\n\u2022 Test data (sanitized)\n\n**Test Cases:**\n\u2022 Basic functionality\n\u2022 Critical business processes\n\u2022 Integration points\n\u2022 Performance benchmarks\n\n**Emergency Patches:**\n\u2022 Accelerated testing\n\u2022 Risk-based decision\n\u2022 Enhanced monitoring\n\u2022 Rollback ready"
+        },
+        {
+          "title": "CVSS Overview",
+          "type": "text",
+          "content": "**Common Vulnerability Scoring System:**\n\n**Score Ranges:**\n\u2022 0.0: None\n\u2022 0.1-3.9: Low\n\u2022 4.0-6.9: Medium\n\u2022 7.0-8.9: High\n\u2022 9.0-10.0: Critical\n\n**Scoring Factors:**\n\u2022 Attack vector (network, local, etc.)\n\u2022 Attack complexity\n\u2022 Privileges required\n\u2022 User interaction\n\u2022 Scope\n\u2022 Impact (CIA)\n\n**Limitations:**\n\u2022 Doesn't consider your specific environment\n\u2022 Use with asset criticality for prioritization\n\u2022 Consider exploitability in the wild"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "VM process: discover, scan, analyze, remediate, verify, report",
+            "Prioritize by CVSS, exploitability, asset criticality, exposure",
+            "Patch process: identify, assess, test, deploy, verify",
+            "Always test patches before deploying to production",
+            "CVSS provides baseline severity; combine with context for priority"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Vulnerability Management vs. Patch Management",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the PRIMARY difference between vulnerability management and patch management?",
+            "options": [
+              "Vulnerability management focuses on identifying and mitigating weaknesses, while patch management focuses on applying vendor-supplied fixes.",
+              "Vulnerability management is a reactive process, while patch management is a proactive process.",
+              "Vulnerability management is performed by IT operations, while patch management is performed by security teams.",
+              "Vulnerability management only applies to operating systems, while patch management applies to all software."
+            ],
+            "correctIndex": 0,
+            "explanation": "Vulnerability management is a broader process of identifying, classifying, prioritizing, and remediating vulnerabilities. Patch management is a specific part of remediation that focuses on applying patches released by vendors. Therefore, Option A is the best answer.",
+            "hint": "Think about the scope of each process. Which one is broader and encompasses the other?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Patch Lifecycle",
+          "reveal": {
+            "question": "List the four stages of the Patch Lifecycle.",
+            "answer": "1. Identification, 2. Assessment, 3. Testing, 4. Deployment (as implied from the original text)"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Prioritizing Vulnerability Remediation",
+          "knowledgeCheck": {
+            "question": "An IS auditor is reviewing a vulnerability management program. Which of the following factors is MOST important when prioritizing remediation efforts?",
+            "options": [
+              "The age of the vulnerability.",
+              "The CVSS score combined with potential business impact.",
+              "The vendor's recommended timeline for patching.",
+              "The number of systems affected by the vulnerability."
+            ],
+            "correctIndex": 1,
+            "explanation": "While the age of the vulnerability, the vendor's timeline, and the number of systems affected are important, the CVSS score (indicating severity) combined with the potential business impact provides the most comprehensive view of the risk and should be the primary driver for prioritization.",
+            "hint": "Think about what constitutes 'risk' in this context."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Vulnerability Scanning vs. Penetration Testing",
+          "comparison": {
+            "headers": [
+              "Vulnerability Scanning",
+              "Penetration Testing"
+            ],
+            "rows": [
+              {
+                "label": "Purpose",
+                "values": [
+                  "Automated identification of known vulnerabilities.",
+                  "Simulated attack to exploit vulnerabilities and assess security posture."
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Broader coverage, identifies many potential issues.",
+                  "Narrower focus, exploits specific vulnerabilities to demonstrate impact."
+                ]
+              },
+              {
+                "label": "Expertise Required",
+                "values": [
+                  "Less specialized, automated tools.",
+                  "Highly specialized, requires skilled security professionals."
+                ]
+              },
+              {
+                "label": "Output",
+                "values": [
+                  "List of potential vulnerabilities with severity ratings.",
+                  "Detailed report of successful exploits and recommendations."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-013",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Cloud Operations and SLA Management",
+    "description": "Understand cloud service operations and service level agreement management",
+    "order": 13,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Cloud Operations",
+      "SLA Management",
+      "Cloud Monitoring",
+      "Service Governance"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Cloud services shift operational responsibilities but not accountability. Auditors must verify that cloud operations meet business requirements and SLAs are properly managed."
+        },
+        {
+          "title": "Cloud Service Models",
+          "type": "table",
+          "headers": [
+            "Model",
+            "Provider Manages",
+            "Customer Manages"
+          ],
+          "rows": [
+            [
+              "IaaS",
+              "Infrastructure, virtualization",
+              "OS, middleware, applications, data"
+            ],
+            [
+              "PaaS",
+              "Infrastructure through runtime",
+              "Applications and data"
+            ],
+            [
+              "SaaS",
+              "Everything technical",
+              "Configuration, user access, data"
+            ]
+          ]
+        },
+        {
+          "title": "Cloud Operations Controls",
+          "type": "text",
+          "content": "**Key Control Areas:**\n\n**Identity and Access**\n\u2022 Federated identity\n\u2022 Multi-factor authentication\n\u2022 Privileged access management\n\u2022 Access reviews\n\n**Data Protection**\n\u2022 Encryption at rest\n\u2022 Encryption in transit\n\u2022 Key management\n\u2022 Data loss prevention\n\n**Network Security**\n\u2022 Virtual network segmentation\n\u2022 Firewalls and security groups\n\u2022 Web application firewall (WAF)\n\u2022 DDoS protection\n\n**Monitoring and Logging**\n\u2022 Cloud-native monitoring\n\u2022 Log aggregation\n\u2022 SIEM integration\n\u2022 Alert management"
+        },
+        {
+          "title": "SLA Key Elements",
+          "type": "text",
+          "content": "**Essential SLA Components:**\n\n**Availability Commitments**\n\u2022 Uptime percentage (99.9%, 99.99%)\n\u2022 Measurement method\n\u2022 Exclusions and maintenance windows\n\u2022 Credit/remedy for breach\n\n**Performance Metrics**\n\u2022 Response time\n\u2022 Throughput\n\u2022 Latency\n\u2022 Error rates\n\n**Support Levels**\n\u2022 Severity definitions\n\u2022 Response times by severity\n\u2022 Escalation procedures\n\u2022 Support hours\n\n**Security and Compliance**\n\u2022 Security certifications\n\u2022 Audit rights\n\u2022 Breach notification\n\u2022 Data handling"
+        },
+        {
+          "title": "SLA Monitoring",
+          "type": "text",
+          "content": "**Monitoring Requirements:**\n\n**What to Monitor:**\n\u2022 Actual vs. committed availability\n\u2022 Performance against baselines\n\u2022 Incident response times\n\u2022 Security events\n\n**How to Verify:**\n\u2022 Independent monitoring tools\n\u2022 Provider dashboards\n\u2022 Third-party attestations (SOC reports)\n\u2022 Synthetic transactions\n\n**Governance Activities:**\n\u2022 Regular SLA review meetings\n\u2022 Trend analysis\n\u2022 Credit claims when applicable\n\u2022 Contract renewal planning"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cloud responsibility varies by service model (IaaS, PaaS, SaaS)",
+            "Key controls: identity, data protection, network security, monitoring",
+            "SLAs must define availability, performance, support, and security",
+            "Independent monitoring verifies provider SLA compliance",
+            "Regular governance ensures SLAs continue to meet business needs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cloud Operations Controls - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason to implement multi-factor authentication (MFA) for privileged accounts in a cloud environment?",
+            "options": [
+              "To reduce the cost of cloud storage.",
+              "To comply with all data privacy regulations.",
+              "To mitigate the risk of unauthorized access and lateral movement by attackers.",
+              "To improve the performance of cloud-based applications."
+            ],
+            "correctIndex": 2,
+            "explanation": "MFA significantly reduces the risk of compromised privileged accounts, which could lead to widespread data breaches or system compromise. While compliance and performance are important, MFA directly addresses a critical security vulnerability. Cost reduction is typically not a primary driver for MFA.",
+            "hint": "Think about the principle of least privilege and the potential impact of a compromised privileged account."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SLA Key Element Recall",
+          "reveal": {
+            "question": "What are the three key components of an SLA covered in this lesson?",
+            "answer": "The three key components of an SLA are Availability Commitments, Performance Metrics, and Support Levels."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SLA Monitoring: Provider Dashboard vs. Synthetic Transactions",
+          "comparison": {
+            "headers": [
+              "Provider Dashboard",
+              "Synthetic Transactions"
+            ],
+            "rows": [
+              {
+                "label": "Data Source",
+                "values": [
+                  "Data collected by the cloud provider.",
+                  "Data generated by simulated user actions or transactions."
+                ]
+              },
+              {
+                "label": "Perspective",
+                "values": [
+                  "View from inside the cloud infrastructure.",
+                  "View from an external user perspective."
+                ]
+              },
+              {
+                "label": "Use Case",
+                "values": [
+                  "Monitoring overall system health and identifying provider-side issues.",
+                  "Proactively identifying performance issues impacting user experience and validating SLA compliance."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-014",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "IT Service Continuity Management",
+    "description": "Learn comprehensive IT service continuity planning and management",
+    "order": 14,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "ITSCM",
+      "Business Continuity",
+      "Recovery Strategies",
+      "Continuity Testing"
+    ],
+    "blueprintArea": "CISA4-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT Service Continuity Management (ITSCM) ensures IT can support business operations during and after disruptions. It's a critical component of Business Continuity Management (BCM)."
+        },
+        {
+          "title": "ITSCM Process",
+          "type": "text",
+          "content": "**ITSCM Lifecycle:**\n\n**1. Initiation**\n\u2022 Define scope\n\u2022 Establish governance\n\u2022 Allocate resources\n\u2022 Identify stakeholders\n\n**2. Requirements Analysis**\n\u2022 Business Impact Analysis (BIA)\n\u2022 Risk assessment\n\u2022 Recovery objectives (RTO, RPO)\n\u2022 Critical IT services\n\n**3. Strategy Development**\n\u2022 Recovery options\n\u2022 Cost-benefit analysis\n\u2022 Resource requirements\n\u2022 Vendor strategies\n\n**4. Implementation**\n\u2022 Develop plans\n\u2022 Establish recovery sites\n\u2022 Implement solutions\n\u2022 Train staff\n\n**5. Operation**\n\u2022 Testing and exercises\n\u2022 Maintenance and updates\n\u2022 Continuous improvement\n\u2022 Audit and review"
+        },
+        {
+          "title": "Recovery Options",
+          "type": "table",
+          "headers": [
+            "Site Type",
+            "Description",
+            "Recovery Time",
+            "Cost"
+          ],
+          "rows": [
+            [
+              "Hot Site",
+              "Fully equipped, data synced",
+              "Hours",
+              "High"
+            ],
+            [
+              "Warm Site",
+              "Partial equipment, recent backup",
+              "1-3 days",
+              "Medium"
+            ],
+            [
+              "Cold Site",
+              "Basic facility only",
+              "Days to weeks",
+              "Low"
+            ],
+            [
+              "Mobile Site",
+              "Transportable facility",
+              "1-2 days",
+              "Medium"
+            ],
+            [
+              "Cloud DR",
+              "Virtual infrastructure",
+              "Minutes to hours",
+              "Variable"
+            ]
+          ]
+        },
+        {
+          "title": "Data Replication Strategies",
+          "type": "text",
+          "content": "**Replication Methods:**\n\n**Synchronous Replication**\n\u2022 Zero data loss (RPO = 0)\n\u2022 Transactions committed at both sites\n\u2022 Distance limited (latency impact)\n\u2022 Higher cost\n\n**Asynchronous Replication**\n\u2022 Near-zero data loss\n\u2022 Some transaction lag\n\u2022 Greater distance supported\n\u2022 Lower cost\n\n**Backup Strategies**\n\u2022 Full backup (complete copy)\n\u2022 Incremental (changes since last backup)\n\u2022 Differential (changes since last full)\n\u2022 Continuous Data Protection (CDP)"
+        },
+        {
+          "title": "Continuity Testing Types",
+          "type": "text",
+          "content": "**Testing Approaches:**\n\n**Plan Review**\n\u2022 Desk check of documentation\n\u2022 Identify gaps and outdated info\n\u2022 Low cost/risk\n\u2022 Limited assurance\n\n**Walkthrough/Tabletop**\n\u2022 Team reviews procedures\n\u2022 Discussion-based\n\u2022 Identifies coordination issues\n\u2022 Moderate assurance\n\n**Simulation/Drill**\n\u2022 Scenario-based exercise\n\u2022 Mobilize recovery teams\n\u2022 Practice procedures\n\u2022 Higher assurance\n\n**Full Interruption Test**\n\u2022 Actual failover to recovery site\n\u2022 Real operations at DR site\n\u2022 Highest assurance\n\u2022 Highest risk/cost"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ITSCM aligns IT recovery with business continuity requirements",
+            "BIA drives RTO/RPO requirements for critical IT services",
+            "Site options: hot, warm, cold, mobile, cloud - balance cost with recovery time",
+            "Sync replication for zero data loss; async for cost efficiency",
+            "Regular testing validates plans - progress from walkthroughs to full tests"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ITSCM Lifecycle Knowledge Check",
+          "knowledgeCheck": {
+            "question": "During which phase of the ITSCM lifecycle is the Business Impact Analysis (BIA) performed to identify critical IT services and recovery objectives?",
+            "options": [
+              "Initiation",
+              "Requirements Analysis",
+              "Strategy Development",
+              "Continuity Testing"
+            ],
+            "correctIndex": 1,
+            "explanation": "The Business Impact Analysis (BIA) is a core activity performed during the Requirements Analysis phase. It's where you determine the impact of disruptions and define recovery objectives like RTO and RPO.",
+            "hint": "Think about when you need to understand the impact of downtime."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "RTO vs. RPO Quick Check",
+          "reveal": {
+            "question": "Define RPO (Recovery Point Objective) in the context of IT Service Continuity Management.",
+            "answer": "RPO (Recovery Point Objective) defines the maximum acceptable amount of data loss (measured in time) after an unplanned disruption. It essentially answers the question, 'How much data are we willing to lose?'"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Synchronous vs. Asynchronous Replication",
+          "comparison": {
+            "headers": [
+              "Synchronous Replication",
+              "Asynchronous Replication"
+            ],
+            "rows": [
+              {
+                "label": "Data Loss",
+                "values": [
+                  "Zero",
+                  "Near-zero (some lag)"
+                ]
+              },
+              {
+                "label": "Distance Supported",
+                "values": [
+                  "Limited (latency impact)",
+                  "Greater distance"
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "Higher",
+                  "Lower"
+                ]
+              },
+              {
+                "label": "Transaction Commitment",
+                "values": [
+                  "Committed at both sites simultaneously",
+                  "Transaction lag before commitment at secondary site"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Continuity Testing Question",
+          "knowledgeCheck": {
+            "question": "Which type of continuity testing involves a simulated disruption where team members review procedures and discuss their roles, but without actually executing the recovery processes on live systems?",
+            "options": [
+              "Plan Review",
+              "Walkthrough/Tabletop",
+              "Simulation/Drill",
+              "Full Interruption Test"
+            ],
+            "correctIndex": 1,
+            "explanation": "A Walkthrough or Tabletop exercise is a discussion-based review of the continuity plan. No actual systems are touched, focusing on identifying coordination issues and gaps in the plan.",
+            "hint": "Think about which testing method is the least disruptive."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-015",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "End-User Computing Controls",
+    "description": "Understand controls for spreadsheets, databases, and user-developed applications",
+    "order": 15,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "End-User Computing",
+      "Spreadsheet Controls",
+      "Shadow IT",
+      "Data Governance"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "End-user computing (EUC) applications like spreadsheets often support critical business processes but lack the controls of formal systems. Uncontrolled EUC creates significant operational and financial risk."
+        },
+        {
+          "title": "EUC Risk Areas",
+          "type": "text",
+          "content": "**Key Risks:**\n\n**Data Integrity**\n\u2022 Formula errors\n\u2022 Manual data entry mistakes\n\u2022 Version confusion\n\u2022 Unauthorized changes\n\n**Availability**\n\u2022 Single points of failure\n\u2022 No disaster recovery\n\u2022 Key person dependency\n\u2022 Lack of documentation\n\n**Security**\n\u2022 Inadequate access controls\n\u2022 Sensitive data exposure\n\u2022 Lack of audit trails\n\u2022 Unencrypted storage\n\n**Compliance**\n\u2022 Regulatory requirements\n\u2022 Audit trail gaps\n\u2022 Data retention issues\n\u2022 SOX/regulatory exposure"
+        },
+        {
+          "title": "EUC Control Framework",
+          "type": "table",
+          "headers": [
+            "Control Area",
+            "Key Controls",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "Inventory",
+              "Registration, classification",
+              "Know what exists"
+            ],
+            [
+              "Development",
+              "Testing, review, approval",
+              "Ensure accuracy"
+            ],
+            [
+              "Change Control",
+              "Version control, documentation",
+              "Maintain integrity"
+            ],
+            [
+              "Access",
+              "Protection, permissions",
+              "Prevent unauthorized changes"
+            ],
+            [
+              "Backup",
+              "Regular backup, recovery testing",
+              "Ensure availability"
+            ]
+          ]
+        },
+        {
+          "title": "Spreadsheet Controls",
+          "type": "text",
+          "content": "**Specific Spreadsheet Controls:**\n\n**Design Controls**\n\u2022 Separate inputs from calculations\n\u2022 Clear cell labeling\n\u2022 Formula documentation\n\u2022 Error checking formulas\n\n**Integrity Controls**\n\u2022 Cell protection\n\u2022 Data validation\n\u2022 Input range checks\n\u2022 Formula auditing\n\n**Operational Controls**\n\u2022 Version numbering\n\u2022 Change log\n\u2022 Backup copies\n\u2022 Access restrictions\n\n**Review Controls**\n\u2022 Independent formula review\n\u2022 Periodic accuracy testing\n\u2022 Comparison to source data\n\u2022 Reasonableness checks"
+        },
+        {
+          "title": "Shadow IT Management",
+          "type": "text",
+          "content": "**Addressing Shadow IT:**\n\n**Discovery**\n\u2022 Network monitoring\n\u2022 Cloud access security brokers\n\u2022 User surveys\n\u2022 Expense report analysis\n\n**Risk Assessment**\n\u2022 Data sensitivity\n\u2022 Business criticality\n\u2022 Compliance implications\n\u2022 Security posture\n\n**Governance Options**\n\u2022 Sanctioned vs. unsanctioned\n\u2022 Migration to approved tools\n\u2022 Added to enterprise controls\n\u2022 Accepted with monitoring\n\n**Prevention**\n\u2022 Responsive IT services\n\u2022 Easy provisioning\n\u2022 User education\n\u2022 Clear policies"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "EUC risks: data integrity, availability, security, compliance",
+            "Maintain inventory of critical EUC applications",
+            "Spreadsheet controls: design, integrity, operational, review",
+            "Shadow IT requires discovery, assessment, and governance",
+            "Balance EUC flexibility with appropriate risk controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Spreadsheet Controls",
+          "knowledgeCheck": {
+            "question": "Which of the following spreadsheet controls is MOST effective in preventing unintentional modification of critical formulas?",
+            "options": [
+              "Data validation rules applied to input cells.",
+              "Cell protection with password enforcement.",
+              "Implementing version control with a central repository.",
+              "Regularly backing up the spreadsheet file."
+            ],
+            "correctIndex": 1,
+            "explanation": "Cell protection directly restricts modifications to specified cells, including formulas. While other options offer benefits, they do not directly prevent unintentional formula changes as effectively as cell protection.",
+            "hint": "Think about which control directly prevents someone from typing over a formula."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: EUC Risk Areas",
+          "reveal": {
+            "question": "Name three key risk areas associated with End-User Computing (EUC).",
+            "answer": "The three key risk areas are Data Integrity, Availability, and Security. These encompass a wide range of potential problems, from formula errors to lack of disaster recovery plans."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Sanctioned vs. Unsanctioned Shadow IT",
+          "comparison": {
+            "headers": [
+              "Sanctioned Shadow IT",
+              "Unsanctioned Shadow IT"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "IT solutions used with organizational awareness and approval.",
+                  "IT solutions used without organizational awareness or approval."
+                ]
+              },
+              {
+                "label": "Risk Level",
+                "values": [
+                  "Lower, due to oversight and integration efforts.",
+                  "Higher, due to lack of security controls and potential compliance violations."
+                ]
+              },
+              {
+                "label": "Governance",
+                "values": [
+                  "Subject to some level of IT governance and standards.",
+                  "Typically lacks any formal governance or security oversight."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Department purchases a cloud-based project management tool with IT's knowledge.",
+                  "Employee uses a personal file-sharing service to share sensitive documents."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA4-016",
+    "courseId": "cisa",
+    "section": "CISA4",
+    "title": "Performance and Capacity Management",
+    "description": "Learn to audit IT performance monitoring and capacity planning processes",
+    "order": 16,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Performance Management",
+      "Capacity Planning",
+      "SLA Monitoring",
+      "Trend Analysis"
+    ],
+    "blueprintArea": "CISA4-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Poor performance impacts user productivity and customer satisfaction. Inadequate capacity leads to outages during peak demand. Proactive management prevents costly problems."
+        },
+        {
+          "title": "Performance Management",
+          "type": "text",
+          "content": "**Performance Monitoring:**\n\n**Infrastructure Metrics**\n\u2022 CPU utilization\n\u2022 Memory usage\n\u2022 Disk I/O and latency\n\u2022 Network bandwidth/latency\n\n**Application Metrics**\n\u2022 Response time\n\u2022 Transaction throughput\n\u2022 Error rates\n\u2022 User concurrency\n\n**Business Metrics**\n\u2022 SLA achievement\n\u2022 User satisfaction\n\u2022 Business process completion\n\u2022 Revenue impact\n\n**Monitoring Tools**\n\u2022 Real-time dashboards\n\u2022 Historical trending\n\u2022 Alerting and notification\n\u2022 Root cause analysis"
+        },
+        {
+          "title": "Performance Baselines",
+          "type": "table",
+          "headers": [
+            "Baseline Type",
+            "Purpose",
+            "Refresh Frequency"
+          ],
+          "rows": [
+            [
+              "Normal Operations",
+              "Detect anomalies",
+              "Quarterly"
+            ],
+            [
+              "Peak Periods",
+              "Plan for high demand",
+              "Annually"
+            ],
+            [
+              "Post-Change",
+              "Validate changes",
+              "After major changes"
+            ],
+            [
+              "Degradation Trend",
+              "Predict issues",
+              "Monthly review"
+            ]
+          ]
+        },
+        {
+          "title": "Capacity Planning Process",
+          "type": "text",
+          "content": "**Capacity Management:**\n\n**1. Demand Analysis**\n\u2022 Current utilization\n\u2022 Growth trends\n\u2022 Business forecasts\n\u2022 Planned projects\n\n**2. Resource Analysis**\n\u2022 Current capacity\n\u2022 Component limits\n\u2022 Scalability options\n\u2022 Technology refresh\n\n**3. Gap Analysis**\n\u2022 Demand vs. capacity\n\u2022 Timeline to threshold\n\u2022 Risk assessment\n\u2022 Priority ranking\n\n**4. Planning**\n\u2022 Capacity additions\n\u2022 Budget requirements\n\u2022 Implementation timeline\n\u2022 Alternative strategies\n\n**5. Implementation**\n\u2022 Procurement\n\u2022 Installation\n\u2022 Testing\n\u2022 Cutover"
+        },
+        {
+          "title": "Capacity Strategies",
+          "type": "text",
+          "content": "**Capacity Options:**\n\n**Lead Strategy**\n\u2022 Add capacity before need\n\u2022 Lower risk of shortage\n\u2022 Higher carrying cost\n\u2022 Good for predictable growth\n\n**Lag Strategy**\n\u2022 Add capacity after demand\n\u2022 Lower cost, higher risk\n\u2022 Reactive approach\n\u2022 May cause performance issues\n\n**Match Strategy**\n\u2022 Incremental additions\n\u2022 Balance cost and risk\n\u2022 Requires good forecasting\n\u2022 Most common approach\n\n**Cloud Elasticity**\n\u2022 On-demand scaling\n\u2022 Pay-per-use\n\u2022 Rapid provisioning\n\u2022 Ideal for variable workloads"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Monitor infrastructure, application, and business metrics",
+            "Establish and maintain performance baselines",
+            "Capacity planning: demand analysis, resource analysis, gap analysis, planning",
+            "Strategies: lead (proactive), lag (reactive), match (balanced), elastic (cloud)",
+            "Proactive capacity management prevents performance crises"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Capacity Planning Strategies",
+          "knowledgeCheck": {
+            "question": "An organization is experiencing rapid, unpredictable growth in transaction volume. They are risk-averse and prioritize maintaining high service levels above all else. Which capacity planning strategy is MOST appropriate for this organization?",
+            "options": [
+              "Lead Strategy",
+              "Lag Strategy",
+              "Match Strategy",
+              "Reactive Strategy"
+            ],
+            "correctIndex": 0,
+            "explanation": "The Lead Strategy involves adding capacity before it is needed. This approach is best suited for organizations experiencing rapid or unpredictable growth, especially when maintaining high service levels and avoiding performance degradation is a top priority. The Lag Strategy, on the other hand, is more reactive and may lead to performance issues during periods of high demand. The Match Strategy involves incremental adjustments, which might not be sufficient to handle rapid and unpredictable growth effectively. Reactive Strategy is not a recognized capacity planning strategy.",
+            "hint": "Consider the risk tolerance and the predictability of growth."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SLA Monitoring",
+          "reveal": {
+            "question": "What are the three metric categories that are important to monitor for Service Level Agreement (SLA) achievement?",
+            "answer": "The three categories are: Infrastructure Metrics (e.g., CPU utilization, memory usage), Application Metrics (e.g., response time, transaction throughput), and Business Metrics (e.g., SLA achievement, user satisfaction)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Lead vs. Lag Capacity Strategy",
+          "comparison": {
+            "headers": [
+              "Lead Strategy",
+              "Lag Strategy"
+            ],
+            "rows": [
+              {
+                "label": "Timing of Capacity Addition",
+                "values": [
+                  "Capacity added before demand increases.",
+                  "Capacity added after demand increases."
+                ]
+              },
+              {
+                "label": "Risk of Shortage",
+                "values": [
+                  "Lower risk of capacity shortage.",
+                  "Higher risk of capacity shortage."
+                ]
+              },
+              {
+                "label": "Cost Implications",
+                "values": [
+                  "Higher carrying costs due to unused capacity.",
+                  "Lower costs initially, but potential for higher costs due to lost business or penalties for violating SLAs if demand exceeds capacity."
+                ]
+              },
+              {
+                "label": "Suitability",
+                "values": [
+                  "Suitable for predictable growth and high service level requirements.",
+                  "Suitable for organizations with tight budgets and when performance degradation is acceptable."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

@@ -10,15 +10,27 @@
 
 import type { CourseData } from '../../types/courseData';
 
-// Lesson imports
-import { eaPart1Lessons, getSEE1Lessons, getSEE1LessonById, getSEE1LessonCount } from './lessons/see1';
-import { eaPart2Lessons, getSEE2Lessons, getSEE2LessonById, getSEE2LessonCount } from './lessons/see2';
-import { eaPart3Lessons, getSEE3Lessons, getSEE3LessonById, getSEE3LessonCount } from './lessons/see3';
+// Lesson imports - now from consolidated JSON-based index
+import { 
+  eaPart1Lessons, 
+  eaPart2Lessons, 
+  eaPart3Lessons,
+  getSEE1Lessons, 
+  getSEE2Lessons, 
+  getSEE3Lessons,
+  getSEE1LessonById, 
+  getSEE2LessonById, 
+  getSEE3LessonById,
+  getSEE1LessonCount,
+  getSEE2LessonCount,
+  getSEE3LessonCount,
+  allEALessons as lessonsAllEA,
+} from './lessons';
 
 // Questions
 import { EA_ALL_QUESTIONS } from './questions';
 
-// Flashcards
+// Flashcards (from JSON)
 import { ALL_EA_FLASHCARDS } from './flashcards';
 
 // Cheatsheets
@@ -39,12 +51,8 @@ import {
 // Re-export types
 export type { EALessonMatrixEntry, EABlueprintArea };
 
-// Combined lesson arrays
-export const allEALessons = [
-  ...eaPart1Lessons,
-  ...eaPart2Lessons,
-  ...eaPart3Lessons,
-];
+// Combined lesson arrays - re-export from lessons index
+export const allEALessons = lessonsAllEA;
 
 // Part-specific exports
 export {

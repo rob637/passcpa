@@ -1,19 +1,18 @@
 /**
  * Flashcard Service
  *
- * Multi-course flashcard service. Uses the generic courseDataLoader —
- * no per-course switch/case statements needed. Adding a new course requires
- * only a COURSE_DATA export with a flashcards array.
+ * Multi-course flashcard service that loads flashcards from JSON files.
+ * Flashcards are stored in content/{course}/flashcards.json
  */
 
 import { CourseId } from '../types/course';
 import { DEFAULT_COURSE_ID } from '../types/course';
 import { COURSES } from '../courses';
-import { loadCourseData } from './courseDataLoader';
 
 // Common flashcard interface that all course flashcards must conform to
 export interface Flashcard {
   id: string;
+  courseId?: string;
   section: string;
   type: string;
   topic: string;
@@ -28,36 +27,27 @@ export interface Flashcard {
   comparison?: unknown; // Different exams have different comparison shapes
   tags?: string[];
   reference?: string;
+  skillLevel?: string;
+}
+
+interface FlashcardFile {
+  $schema?: string;
+  courseId: string;
+  exportedAt?: string;
+  flashcards: Flashcard[];
 }
 
 // Cache for loaded flashcards
 const flashcardCache: Record<string, Flashcard[]> = {};
 
-// Helper to normalize flashcards to common interface
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function normalizeFlashcards(flashcards: any[]): Flashcard[] {
-  return flashcards.map(card => ({
-    id: card.id || `card-${Math.random().toString(36).slice(2)}`,
-    section: card.section || card.domain || '',
-    type: card.type || 'concept',
-    topic: card.topic || card.blueprintArea || card.domain || '',
-    subtopic: card.subtopic,
-    blueprintArea: card.blueprintArea || card.domain,
-    front: card.front || card.question || '',
-    back: card.back || card.answer || '',
-    difficulty: card.difficulty || 'medium',
-    example: card.example,
-    formula: card.formula,
-    mnemonic: card.mnemonic,
-    comparison: card.comparison,
-    tags: card.tags,
-    reference: card.reference,
-  }));
-}
+// Dynamic import for JSON files
+const flashcardModules = import.meta.glob<FlashcardFile>(
+  '/content/*/flashcards.json',
+  { eager: false }
+);
 
 /**
- * Load all flashcards for a course (with caching + normalization).
- * Uses COURSE_DATA — no per-course switch/case needed.
+ * Load all flashcards for a course from JSON (with caching).
  */
 export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashcard[]> {
   const cacheKey = `${courseId}-all`;
@@ -67,9 +57,17 @@ export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashca
   }
 
   try {
-    const courseData = await loadCourseData(courseId);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const flashcards = normalizeFlashcards((courseData.flashcards || []) as any[]);
+    const key = `/content/${courseId}/flashcards.json`;
+    const loader = flashcardModules[key];
+    
+    if (!loader) {
+      console.warn(`No flashcard file found for course ${courseId}`);
+      return [];
+    }
+    
+    const data = await loader();
+    const flashcards = data.flashcards || [];
+    
     flashcardCache[cacheKey] = flashcards;
     return flashcards;
   } catch (error) {

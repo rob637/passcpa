@@ -1,0 +1,1332 @@
+[
+  {
+    "id": "CMA1-F-001",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Information Systems in Organizations",
+    "description": "Understand enterprise systems and their role in management accounting",
+    "order": 54,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "ERP systems",
+      "Financial systems",
+      "Integration",
+      "System architecture"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Technology is transforming the CMA role! Understanding ERP systems, data flows, and analytics tools is no longer optional. CMAs who leverage technology effectively deliver faster insights and become strategic partners. This is the future of our profession."
+        },
+        {
+          "title": "Enterprise Resource Planning (ERP)",
+          "type": "text",
+          "content": "**Definition:**\nIntegrated software that manages core business processes across the organization.\n\n**Key characteristics:**\n\u2022 Single database (one source of truth)\n\u2022 Real-time processing\n\u2022 Integrated modules\n\u2022 Standardized processes\n\n**Major vendors:**\n\u2022 SAP\n\u2022 Oracle\n\u2022 Microsoft Dynamics\n\u2022 Workday\n\u2022 NetSuite"
+        },
+        {
+          "title": "ERP Modules",
+          "type": "table",
+          "headers": [
+            "Module",
+            "Functions",
+            "Key Data"
+          ],
+          "rows": [
+            [
+              "Finance/Accounting",
+              "GL, AP, AR, FA",
+              "Journal entries, balances"
+            ],
+            [
+              "Human Resources",
+              "Payroll, benefits, talent",
+              "Employee records, compensation"
+            ],
+            [
+              "Supply Chain",
+              "Procurement, inventory",
+              "POs, receipts, stock levels"
+            ],
+            [
+              "Manufacturing",
+              "Production, quality",
+              "BOMs, work orders, WIP"
+            ],
+            [
+              "Sales/CRM",
+              "Orders, customers",
+              "Quotes, orders, customer data"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: ERP Benefits",
+          "type": "callout",
+          "content": "**\"SIRRI\"** - Why organizations implement ERP:\n\n**S**tandardization of processes\n**I**ntegration across functions\n**R**eal-time information\n**R**educed data redundancy\n**I**mproved decision-making\n\n**But remember: ERP implementations often fail due to poor change management!**"
+        },
+        {
+          "title": "System Integration Approaches",
+          "type": "text",
+          "content": "**Ways systems exchange data:**\n\n**Point-to-point:**\n\u2022 Direct connections between systems\n\u2022 Simple but becomes complex at scale\n\u2022 \"Spaghetti\" architecture problem\n\n**Middleware/ESB:**\n\u2022 Central hub for integrations\n\u2022 Standardized messaging\n\u2022 Easier to maintain\n\n**APIs (Application Programming Interfaces):**\n\u2022 Modern standard approach\n\u2022 Real-time data exchange\n\u2022 Enables cloud integrations\n\n**CMAs must understand data flows between systems!**"
+        },
+        {
+          "title": "Cloud vs. On-Premise",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Cloud (SaaS)",
+            "On-Premise"
+          ],
+          "rows": [
+            [
+              "Cost structure",
+              "Subscription (OpEx)",
+              "Upfront + maintenance (CapEx)"
+            ],
+            [
+              "Implementation",
+              "Faster deployment",
+              "Longer implementation"
+            ],
+            [
+              "Customization",
+              "Limited/configuration",
+              "High customization"
+            ],
+            [
+              "Updates",
+              "Automatic, vendor-managed",
+              "Self-managed updates"
+            ],
+            [
+              "Data location",
+              "Vendor data centers",
+              "On-site control"
+            ],
+            [
+              "Scalability",
+              "Elastic, easy to scale",
+              "Requires hardware"
+            ]
+          ]
+        },
+        {
+          "title": "Master Data Management",
+          "type": "text",
+          "content": "**What is master data?**\nCore business entities that are used across multiple systems:\n\u2022 Customers\n\u2022 Vendors\n\u2022 Products/materials\n\u2022 Chart of accounts\n\u2022 Cost centers\n\u2022 Employees\n\n**Why it matters:**\nInconsistent master data = incorrect reports, duplicate payments, lost sales\n\n**Best practices:**\n\u2022 Single source of truth\n\u2022 Clear ownership\n\u2022 Data quality standards\n\u2022 Change management process"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ERP integrates core processes in a single database",
+            "Real-time processing enables faster decision-making",
+            "Major modules: Finance, HR, Supply Chain, Manufacturing, Sales",
+            "APIs are the modern standard for system integration",
+            "Cloud offers subscription model and faster deployment",
+            "Master data quality is critical for accurate reporting",
+            "ERP implementations often fail due to poor change management"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ERP System Characteristics: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a key characteristic of an Enterprise Resource Planning (ERP) system?",
+            "options": [
+              "Real-time processing",
+              "Decentralized databases for each module",
+              "Integrated modules",
+              "Standardized business processes"
+            ],
+            "correctIndex": 1,
+            "explanation": "ERP systems are characterized by a *single*, centralized database that serves as a 'single source of truth' for the entire organization. Decentralized databases would contradict the purpose of ERP, which is to integrate information across different business functions.",
+            "hint": "Think about the primary purpose of an ERP system: integration."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: System Integration Approaches",
+          "reveal": {
+            "question": "Describe the 'spaghetti' architecture problem and which system integration approach it is associated with.",
+            "answer": "The 'spaghetti' architecture problem refers to a complex and tangled web of direct connections between systems, making it difficult to maintain, troubleshoot, and scale. It is associated with the point-to-point system integration approach."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparing Integration Methods",
+          "comparison": {
+            "headers": [
+              "Point-to-Point Integration",
+              "Middleware/ESB Integration"
+            ],
+            "rows": [
+              {
+                "label": "Complexity",
+                "values": [
+                  "Simple for few systems, complex at scale",
+                  "More complex initial setup, simpler for many systems"
+                ]
+              },
+              {
+                "label": "Maintenance",
+                "values": [
+                  "Difficult to maintain and troubleshoot",
+                  "Easier to maintain due to centralized hub"
+                ]
+              },
+              {
+                "label": "Messaging",
+                "values": [
+                  "No standardized messaging",
+                  "Standardized messaging protocols"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-002",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Data Governance and Quality",
+    "description": "Implement data governance frameworks and ensure data quality",
+    "order": 55,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Data governance",
+      "Data quality",
+      "Metadata",
+      "Data stewardship"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "\"Garbage in, garbage out\" applies to analytics. CMAs rely on data for every analysis and report. Poor data quality leads to bad decisions. Understanding data governance ensures the data you use is trustworthy and reliable."
+        },
+        {
+          "title": "Data Governance Framework",
+          "type": "text",
+          "content": "**Definition:**\nThe overall management of data availability, usability, integrity, and security across the organization.\n\n**Key components:**\n\u2022 **Policies:** Rules for data usage and access\n\u2022 **Standards:** Formats, definitions, quality requirements\n\u2022 **Processes:** How data is created, maintained, retired\n\u2022 **Roles:** Who is responsible for data\n\n**Goal: Treat data as a strategic asset!**"
+        },
+        {
+          "title": "Data Quality Dimensions",
+          "type": "table",
+          "headers": [
+            "Dimension",
+            "Definition",
+            "Example Issue"
+          ],
+          "rows": [
+            [
+              "Accuracy",
+              "Data correctly represents reality",
+              "Wrong address for customer"
+            ],
+            [
+              "Completeness",
+              "All required data is present",
+              "Missing email addresses"
+            ],
+            [
+              "Consistency",
+              "Same value across systems",
+              "Customer name spelled differently"
+            ],
+            [
+              "Timeliness",
+              "Data is current and available",
+              "Yesterday's prices in trading system"
+            ],
+            [
+              "Validity",
+              "Data conforms to business rules",
+              "State code not in valid list"
+            ],
+            [
+              "Uniqueness",
+              "No duplicate records",
+              "Same customer entered twice"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Data Quality",
+          "type": "callout",
+          "content": "**\"ACCTUV\"** - Six quality dimensions:\n\n**A**ccuracy\n**C**ompleteness\n**C**onsistency\n**T**imeliness\n**U**niqueness\n**V**alidity\n\n**Before using data, ask: Does it meet these criteria?**"
+        },
+        {
+          "title": "Data Stewardship",
+          "type": "text",
+          "content": "**Data owners:**\n\u2022 Business executives accountable for data domains\n\u2022 Define policies and access rules\n\u2022 Accountable for data quality\n\n**Data stewards:**\n\u2022 Day-to-day data management\n\u2022 Implement owner policies\n\u2022 Monitor quality metrics\n\u2022 Resolve data issues\n\n**Data custodians (IT):**\n\u2022 Technical implementation\n\u2022 Storage, backup, security\n\u2022 System administration\n\n**Everyone has a role in data quality!**"
+        },
+        {
+          "title": "Metadata Management",
+          "type": "text",
+          "content": "**Metadata = \"Data about data\"**\n\n**Types:**\n\u2022 Business metadata (definitions, ownership)\n\u2022 Technical metadata (format, location, relationships)\n\u2022 Operational metadata (when created, access logs)\n\n**Data dictionary/catalog:**\n\u2022 Central repository of metadata\n\u2022 Helps users find and understand data\n\u2022 Essential for self-service analytics\n\n**Example:** \"Customer_ID\" - Primary key, integer, created by CRM system, owned by Sales department"
+        },
+        {
+          "title": "Data Quality Monitoring",
+          "type": "text",
+          "content": "**Proactive monitoring:**\n\u2022 Data profiling (analyze current state)\n\u2022 Quality rules and thresholds\n\u2022 Automated alerts\n\u2022 Regular quality reports\n\n**Quality metrics:**\n\u2022 % records passing validation\n\u2022 Duplicate rate\n\u2022 Missing value rate\n\u2022 Error rate by source\n\n**Remediation process:**\n\u2022 Identify issues\n\u2022 Root cause analysis\n\u2022 Fix source processes\n\u2022 Correct existing data"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Data governance manages data as a strategic asset",
+            "Six quality dimensions: Accuracy, Completeness, Consistency, Timeliness, Uniqueness, Validity",
+            "Data owners are accountable; stewards handle day-to-day management",
+            "Metadata describes data and enables discovery",
+            "Data dictionary/catalog is essential for self-service analytics",
+            "Proactive monitoring catches issues before they impact decisions",
+            "Poor data quality undermines all analytics efforts"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Data Governance Framework Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a key component of a Data Governance Framework?",
+            "options": [
+              "Policies dictating data usage and access",
+              "Standardized data formats and quality requirements",
+              "Processes for data creation and maintenance",
+              "Technical specifications for data storage hardware"
+            ],
+            "correctIndex": 3,
+            "explanation": "While IT infrastructure is important for data management, the Data Governance Framework primarily focuses on the rules, standards, and processes surrounding the data itself. Technical specifications are an implementation detail, not a core component of the framework's definition.",
+            "hint": "Think about the definition of the Data Governance Framework."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Data Roles: Stewardship vs. Custodianship",
+          "comparison": {
+            "headers": [
+              "Data Steward",
+              "Data Custodian"
+            ],
+            "rows": [
+              {
+                "label": "Primary Responsibility",
+                "values": [
+                  "Implementing data owner policies and monitoring data quality.",
+                  "Technical implementation and maintenance of data storage and access."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Data content, quality, and adherence to policies.",
+                  "Data infrastructure, security, and availability."
+                ]
+              },
+              {
+                "label": "Accountability",
+                "values": [
+                  "Accountable to the Data Owner for data quality.",
+                  "Accountable to the organization for technical aspects of data management."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Data Owner Accountability",
+          "knowledgeCheck": {
+            "question": "A business executive serving as a data owner is PRIMARILY accountable for:",
+            "options": [
+              "Ensuring the physical security of the data servers.",
+              "Defining data policies and access rules for their domain.",
+              "Developing the technical infrastructure for data storage.",
+              "Troubleshooting data access issues for end-users."
+            ],
+            "correctIndex": 1,
+            "explanation": "Data owners are business executives responsible for defining data policies and access rules, and ultimately accountable for data quality within their domain. The other options relate to IT responsibilities or general user support, which are not the primary responsibilities of a data owner.",
+            "hint": "Consider the role of a data owner in the context of overall data governance."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-003",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Business Intelligence and Reporting",
+    "description": "Leverage BI tools for analysis, visualization, and reporting",
+    "order": 56,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "BI platforms",
+      "Dashboards",
+      "Data visualization",
+      "Self-service analytics"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "BI tools transform raw data into actionable insights. CMAs no longer just create reports - we build dashboards, design visualizations, and enable self-service analytics. These skills multiply your impact across the organization."
+        },
+        {
+          "title": "Business Intelligence Stack",
+          "type": "text",
+          "content": "**Data sources:**\n\u2022 ERP, CRM, operational systems\n\u2022 External data feeds\n\u2022 Spreadsheets, flat files\n\n**Data warehouse:**\n\u2022 Centralized repository\n\u2022 Structured for analysis\n\u2022 Historical data retained\n\n**BI/Analytics tools:**\n\u2022 Reporting and dashboards\n\u2022 Ad-hoc analysis\n\u2022 Data visualization\n\n**Common BI tools:** Power BI, Tableau, Qlik, Looker, SAP Analytics"
+        },
+        {
+          "title": "Data Warehouse Concepts",
+          "type": "table",
+          "headers": [
+            "Concept",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Fact table",
+              "Numeric measures",
+              "Sales amount, quantity sold"
+            ],
+            [
+              "Dimension table",
+              "Descriptive attributes",
+              "Product name, customer region"
+            ],
+            [
+              "Star schema",
+              "Fact surrounded by dimensions",
+              "Sales fact with date, product, customer dims"
+            ],
+            [
+              "ETL",
+              "Extract, Transform, Load",
+              "Move data from ERP to warehouse"
+            ],
+            [
+              "OLAP cube",
+              "Multi-dimensional analysis",
+              "Slice/dice by multiple dimensions"
+            ]
+          ]
+        },
+        {
+          "title": "Effective Dashboard Design",
+          "type": "text",
+          "content": "**Design principles:**\n\n**1. Know your audience:**\n\u2022 Executive: High-level KPIs, exceptions\n\u2022 Operational: Detailed, actionable metrics\n\n**2. Focus on key metrics:**\n\u2022 Limit to 5-10 metrics per dashboard\n\u2022 Show what matters, not what's easy\n\n**3. Use appropriate visuals:**\n\u2022 Line charts for trends\n\u2022 Bar charts for comparisons\n\u2022 Tables for precision\n\u2022 Avoid pie charts (hard to compare)\n\n**4. Enable drill-down:**\n\u2022 Summary to detail capability"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Visualization Selection",
+          "type": "callout",
+          "content": "**\"TCDR\"** - Match chart to purpose:\n\n**T**rend over time \u2192 Line chart\n**C**ompare categories \u2192 Bar chart\n**D**istribution \u2192 Histogram\n**R**elationship \u2192 Scatter plot\n\n**Avoid:** 3D charts, gauges (low data-to-ink ratio), pie charts with many slices"
+        },
+        {
+          "title": "Self-Service Analytics",
+          "type": "text",
+          "content": "**Empowering business users:**\n\n**Benefits:**\n\u2022 Faster answers to questions\n\u2022 Reduced IT/finance bottleneck\n\u2022 Increased data literacy\n\u2022 More insights discovered\n\n**Requirements:**\n\u2022 Governed data sets\n\u2022 User-friendly tools\n\u2022 Training and support\n\u2022 Clear boundaries (security/access)\n\n**CMA role:** Enable self-service AND maintain control over key definitions and calculations"
+        },
+        {
+          "title": "Key Performance Indicators (KPIs)",
+          "type": "text",
+          "content": "**Characteristics of good KPIs:**\n\n\u2022 **Specific:** Clearly defined\n\u2022 **Measurable:** Quantifiable\n\u2022 **Actionable:** Drives behavior\n\u2022 **Relevant:** Tied to objectives\n\u2022 **Timely:** Available when needed\n\n**Leading vs. Lagging:**\n\u2022 Leading: Predict future (pipeline, bookings)\n\u2022 Lagging: Confirm results (revenue, profit)\n\n**Balance both types for complete picture!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "BI stack: Sources \u2192 Warehouse \u2192 BI Tools",
+            "Star schema: Fact table surrounded by dimension tables",
+            "ETL moves and transforms data from sources to warehouse",
+            "Dashboard design: Know audience, limit metrics, enable drill-down",
+            "Chart selection depends on purpose (trend, compare, distribution)",
+            "Self-service analytics requires governed data + training",
+            "Balance leading and lagging KPIs for complete view"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Data Warehouse Deep Dive",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important characteristic of a data warehouse that distinguishes it from an operational database in the context of business intelligence?",
+            "options": [
+              "A) Real-time data updates.",
+              "B) Optimized for transactional processing.",
+              "C) Historical data retention and structured for analysis.",
+              "D) Direct integration with external data feeds."
+            ],
+            "correctIndex": 2,
+            "explanation": "A data warehouse is primarily designed for analytical processing using historical data. It is structured to support reporting and analysis, unlike operational databases which are optimized for real-time transactions.",
+            "hint": "Think about the purpose of a data warehouse versus a transactional database."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Dashboard Design Essentials",
+          "reveal": {
+            "question": "What is the general guideline for the maximum number of key metrics to display on a single dashboard?",
+            "answer": "5-10 metrics. This helps to avoid information overload and ensures the dashboard remains focused and effective."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Executive vs. Operational Dashboards",
+          "comparison": {
+            "headers": [
+              "Executive Dashboard",
+              "Operational Dashboard"
+            ],
+            "rows": [
+              {
+                "label": "Data Granularity",
+                "values": [
+                  "High-level, summarized KPIs",
+                  "Detailed, granular metrics"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Strategic insights and exceptions",
+                  "Actionable information for day-to-day tasks"
+                ]
+              },
+              {
+                "label": "Update Frequency",
+                "values": [
+                  "Less frequent updates (e.g., daily or weekly)",
+                  "More frequent updates (e.g., real-time or hourly)"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Visualizing Trends",
+          "knowledgeCheck": {
+            "question": "Which type of visual is MOST suitable for displaying trends in sales revenue over a period of time?",
+            "options": [
+              "A) Pie chart",
+              "B) Bar chart",
+              "C) Line chart",
+              "D) Scatter plot"
+            ],
+            "correctIndex": 2,
+            "explanation": "Line charts are specifically designed to illustrate trends and changes in data over a continuous period, making them ideal for visualizing sales revenue trends over time.",
+            "hint": "Consider which visual best represents change over time."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-004",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Data Analytics Fundamentals",
+    "description": "Apply descriptive, diagnostic, predictive, and prescriptive analytics",
+    "order": 57,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Analytics types",
+      "Statistical analysis",
+      "Data mining",
+      "Machine learning basics"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Analytics is the future of management accounting. CMAs who can move beyond reporting to prediction and prescription become invaluable strategic partners. Understanding these techniques helps you ask the right questions and interpret results."
+        },
+        {
+          "title": "Analytics Maturity Model",
+          "type": "text",
+          "content": "**Four levels of analytics:**\n\n**1. Descriptive:** What happened?\n\u2022 Reports, dashboards, queries\n\u2022 Historical analysis\n\n**2. Diagnostic:** Why did it happen?\n\u2022 Root cause analysis\n\u2022 Drill-down investigation\n\n**3. Predictive:** What will happen?\n\u2022 Forecasting, modeling\n\u2022 Statistical predictions\n\n**4. Prescriptive:** What should we do?\n\u2022 Optimization\n\u2022 Recommended actions\n\n**Value increases as you move up the maturity curve!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Analytics Types",
+          "type": "callout",
+          "content": "**\"3 Ds + P\"** - Remember by questions:\n\n**D**escriptive - \"What happened?\" (look back)\n**D**iagnostic - \"Why?\" (understand)\n**D**ictive (Pre) - \"What will happen?\" (forecast)\n**P**rescriptive - \"What to do?\" (optimize)\n\n**Each level builds on the previous!**"
+        },
+        {
+          "title": "Descriptive Statistics",
+          "type": "table",
+          "headers": [
+            "Measure",
+            "Purpose",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Mean",
+              "Average value",
+              "Average transaction size"
+            ],
+            [
+              "Median",
+              "Middle value",
+              "Median salary (less affected by outliers)"
+            ],
+            [
+              "Mode",
+              "Most frequent",
+              "Most common product ordered"
+            ],
+            [
+              "Standard deviation",
+              "Spread/variability",
+              "Variance in monthly sales"
+            ],
+            [
+              "Correlation",
+              "Relationship strength",
+              "Price vs. quantity relationship"
+            ]
+          ]
+        },
+        {
+          "title": "Common Analytical Techniques",
+          "type": "text",
+          "content": "**Regression analysis:**\n\u2022 Predicts outcome based on inputs\n\u2022 Y = a + bX (simple linear)\n\u2022 Example: Sales based on advertising spend\n\n**Trend analysis:**\n\u2022 Identify patterns over time\n\u2022 Seasonal adjustments\n\u2022 Example: Revenue growth trajectory\n\n**Variance analysis:**\n\u2022 Compare actual to expected\n\u2022 Identify significant differences\n\u2022 Example: Budget vs. actual analysis\n\n**Ratio analysis:**\n\u2022 Compare relationships\n\u2022 Benchmark performance\n\u2022 Example: Profitability, liquidity ratios"
+        },
+        {
+          "title": "Introduction to Machine Learning",
+          "type": "text",
+          "content": "**What is machine learning?**\nAlgorithms that learn patterns from data without explicit programming.\n\n**Types:**\n\u2022 **Supervised:** Learn from labeled examples (predict sales)\n\u2022 **Unsupervised:** Find patterns (customer segmentation)\n\u2022 **Reinforcement:** Learn through feedback (optimization)\n\n**Finance applications:**\n\u2022 Fraud detection\n\u2022 Credit scoring\n\u2022 Demand forecasting\n\u2022 Customer churn prediction\n\n**CMAs don't need to build models but should understand capabilities!**"
+        },
+        {
+          "title": "Data Mining Techniques",
+          "type": "text",
+          "content": "**Clustering:**\n\u2022 Group similar items\n\u2022 Customer segmentation\n\u2022 Product categorization\n\n**Classification:**\n\u2022 Predict categories\n\u2022 Fraud/not fraud\n\u2022 High/medium/low risk\n\n**Association:**\n\u2022 Find related items\n\u2022 Market basket analysis\n\u2022 \"Customers who bought X also bought Y\"\n\n**Anomaly detection:**\n\u2022 Identify unusual items\n\u2022 Fraud transactions\n\u2022 Process exceptions"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four analytics levels: Descriptive \u2192 Diagnostic \u2192 Predictive \u2192 Prescriptive",
+            "Value increases at higher maturity levels",
+            "Regression predicts outcomes from inputs",
+            "Machine learning finds patterns without explicit programming",
+            "Key techniques: Clustering, Classification, Association, Anomaly detection",
+            "CMAs should understand capabilities, not necessarily build models",
+            "Analytics enables insight-driven decisions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Analytics Maturity Model Check",
+          "knowledgeCheck": {
+            "question": "Which level of the analytics maturity model is primarily concerned with identifying the underlying reasons for past performance deviations and uses techniques like root cause analysis?",
+            "options": [
+              "A) Descriptive Analytics",
+              "B) Diagnostic Analytics",
+              "C) Predictive Analytics",
+              "D) Prescriptive Analytics"
+            ],
+            "correctIndex": 1,
+            "explanation": "Diagnostic analytics focuses on understanding *why* something happened. Root cause analysis is a key technique used at this level to uncover the underlying factors contributing to observed outcomes.",
+            "hint": "Think about which type of analysis seeks to find the 'why' behind the 'what'."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Regression Analysis Recall",
+          "reveal": {
+            "question": "What is the general formula for a simple linear regression, and what does each component represent?",
+            "answer": "The formula is Y = a + bX. Y represents the dependent variable (the outcome you're trying to predict), a represents the intercept (the value of Y when X is zero), b represents the slope (the change in Y for each unit change in X), and X represents the independent variable (the predictor)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Trend vs. Variance Analysis",
+          "comparison": {
+            "headers": [
+              "Trend Analysis",
+              "Variance Analysis"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus",
+                "values": [
+                  "Identifying patterns and changes over time.",
+                  "Comparing actual results to expected or budgeted results."
+                ]
+              },
+              {
+                "label": "Data Type",
+                "values": [
+                  "Time-series data (e.g., monthly sales figures for the past 5 years).",
+                  "Actual and budgeted data for a specific period."
+                ]
+              },
+              {
+                "label": "Example Application",
+                "values": [
+                  "Predicting future sales based on historical growth patterns.",
+                  "Analyzing the difference between actual material costs and standard material costs."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-005",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Robotic Process Automation (RPA)",
+    "description": "Understand RPA and its application in finance automation",
+    "order": 58,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "RPA",
+      "Process automation",
+      "Bot deployment",
+      "Use cases"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "RPA automates repetitive tasks that consume CMA time. Instead of manual data entry and reconciliations, bots handle routine work while you focus on analysis and insights. Understanding RPA helps you identify automation opportunities and lead transformation."
+        },
+        {
+          "title": "What is RPA?",
+          "type": "text",
+          "content": "**Definition:**\nSoftware robots that mimic human actions to perform rule-based, repetitive tasks.\n\n**How it works:**\n\u2022 Records human actions (clicks, keystrokes)\n\u2022 Replays actions automatically\n\u2022 Works across multiple applications\n\u2022 Runs 24/7 without fatigue\n\n**Major vendors:** UiPath, Automation Anywhere, Blue Prism, Microsoft Power Automate\n\n**RPA doesn't change underlying systems - it works at the user interface!**"
+        },
+        {
+          "title": "RPA in Finance",
+          "type": "table",
+          "headers": [
+            "Process",
+            "Pre-RPA",
+            "Post-RPA"
+          ],
+          "rows": [
+            [
+              "Invoice processing",
+              "Manual data entry",
+              "Auto-extract and enter"
+            ],
+            [
+              "Bank reconciliation",
+              "Download, compare, investigate",
+              "Auto-match, flag exceptions"
+            ],
+            [
+              "Report generation",
+              "Collect data, format",
+              "Auto-compile and distribute"
+            ],
+            [
+              "Journal entries",
+              "Manual posting",
+              "Auto-create recurring entries"
+            ],
+            [
+              "Data migration",
+              "Copy/paste between systems",
+              "Auto-transfer data"
+            ]
+          ]
+        },
+        {
+          "title": "Ideal RPA Candidates",
+          "type": "text",
+          "content": "**Best processes for RPA:**\n\n**High volume:** Many repetitions justify automation\n**Rule-based:** Clear, consistent logic\n**Standardized:** Low variation in process\n**Stable:** Systems don't change frequently\n**Structured data:** Clear inputs and outputs\n\n**Poor candidates:**\n\u2022 Judgment-heavy decisions\n\u2022 Frequent exceptions\n\u2022 Rapidly changing processes\n\u2022 Unstructured data (may need AI)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: RPA Selection",
+          "type": "callout",
+          "content": "**\"HRSS\"** - Good RPA candidates are:\n\n**H**igh volume (lots of transactions)\n**R**ule-based (clear logic)\n**S**tandardized (consistent process)\n**S**table (doesn't change often)\n\n**If it requires judgment \u2192 Not RPA (needs human or AI)**"
+        },
+        {
+          "title": "RPA Implementation Considerations",
+          "type": "text",
+          "content": "**Success factors:**\n\u2022 Executive sponsorship\n\u2022 Process documentation first\n\u2022 Start with simple pilots\n\u2022 Center of Excellence model\n\u2022 Ongoing monitoring and maintenance\n\n**Risks:**\n\u2022 \"Paving the cowpath\" (automating bad processes)\n\u2022 Bot management complexity\n\u2022 Security vulnerabilities\n\u2022 Change management with employees\n\u2022 Dependency on UI (system changes break bots)\n\n**Best practice:** Optimize process BEFORE automating!"
+        },
+        {
+          "title": "RPA Benefits",
+          "type": "text",
+          "content": "**Quantitative:**\n\u2022 25-80% time savings\n\u2022 Near-zero error rates\n\u2022 24/7 availability\n\u2022 Faster processing\n\u2022 Audit trail automatic\n\n**Qualitative:**\n\u2022 Employees shift to higher-value work\n\u2022 Improved job satisfaction\n\u2022 Scalability (add bots easily)\n\u2022 Compliance consistency\n\n**ROI calculation:** Time saved \u00d7 Hourly cost - License and maintenance costs"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "RPA uses software bots to automate repetitive tasks",
+            "Works at UI level - doesn't require system changes",
+            "Best for high volume, rule-based, standardized processes",
+            "Not suitable for judgment-heavy decisions",
+            "Optimize process before automating",
+            "Typical 25-80% time savings with near-zero errors",
+            "CMAs should identify automation opportunities"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "RPA Candidate Assessment",
+          "knowledgeCheck": {
+            "question": "Which of the following process characteristics would make a process LEAST suitable for Robotic Process Automation (RPA)?",
+            "options": [
+              "A. High transaction volume with consistent data input formats.",
+              "B. A process with clearly defined rules and a standardized workflow.",
+              "C. A process requiring significant subjective judgment and complex decision-making.",
+              "D. A process that relies on stable systems and rarely undergoes changes."
+            ],
+            "correctIndex": 2,
+            "explanation": "RPA excels at rule-based, repetitive tasks. Processes requiring subjective judgment and complex decision-making are not ideal candidates because RPA is designed to mimic human actions based on predefined rules, not to make nuanced decisions.",
+            "hint": "Consider the core strength of RPA \u2013 automating rule-based tasks."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: RPA Definition",
+          "reveal": {
+            "question": "Define Robotic Process Automation (RPA) in your own words.",
+            "answer": "Robotic Process Automation (RPA) refers to the use of software robots (bots) to mimic human actions in order to automate rule-based, repetitive tasks across multiple applications. These bots record and replay human actions, operating 24/7 without fatigue."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "RPA vs. Traditional IT Automation",
+          "comparison": {
+            "headers": [
+              "Robotic Process Automation (RPA)",
+              "Traditional IT Automation"
+            ],
+            "rows": [
+              {
+                "label": "Implementation",
+                "values": [
+                  "Non-invasive; works on the user interface layer.",
+                  "Invasive; requires changes to underlying systems and code."
+                ]
+              },
+              {
+                "label": "Speed of Deployment",
+                "values": [
+                  "Faster deployment; often within weeks.",
+                  "Slower deployment; can take months or years."
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "Lower initial cost due to ease of implementation.",
+                  "Higher initial cost due to system integration and development."
+                ]
+              },
+              {
+                "label": "Use Case",
+                "values": [
+                  "Ideal for automating tasks across multiple applications and systems without requiring code changes.",
+                  "Ideal for automating complex, system-level processes that require deep integration."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-006",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Finance Transformation",
+    "description": "Lead technology-enabled transformation of the finance function",
+    "order": 59,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Finance transformation",
+      "Shared services",
+      "Continuous close",
+      "FP&A evolution"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Finance is transforming from transaction processor to strategic partner. CMAs must lead this evolution - leveraging technology to automate routine work while developing analytical and advisory capabilities. Your career depends on embracing this change!"
+        },
+        {
+          "title": "The Evolving Finance Function",
+          "type": "text",
+          "content": "**Traditional finance:**\n\u2022 Transaction processing\n\u2022 Backward-looking reporting\n\u2022 Period-end focus\n\u2022 Spreadsheet-intensive\n\u2022 Reactive to questions\n\n**Modern finance:**\n\u2022 Strategic business partner\n\u2022 Forward-looking insights\n\u2022 Continuous monitoring\n\u2022 Integrated systems\n\u2022 Proactive recommendations\n\n**The shift: From scorekeeper to coach!**"
+        },
+        {
+          "title": "Finance Operating Models",
+          "type": "table",
+          "headers": [
+            "Model",
+            "Description",
+            "Benefits"
+          ],
+          "rows": [
+            [
+              "Decentralized",
+              "Finance in each business unit",
+              "Close to operations, responsive"
+            ],
+            [
+              "Centralized",
+              "Corporate finance only",
+              "Consistency, efficiency"
+            ],
+            [
+              "Shared Services",
+              "Transactional in centers",
+              "Cost savings, scale"
+            ],
+            [
+              "Global Business Services",
+              "End-to-end processes",
+              "Integration, optimization"
+            ],
+            [
+              "Outsourced",
+              "External providers",
+              "Variable cost, expertise"
+            ]
+          ]
+        },
+        {
+          "title": "Shared Services Centers",
+          "type": "text",
+          "content": "**What moves to shared services:**\n\u2022 Accounts payable processing\n\u2022 Accounts receivable\n\u2022 General ledger maintenance\n\u2022 Travel and expense\n\u2022 Fixed assets\n\u2022 Intercompany accounting\n\n**What stays local:**\n\u2022 Business partnering\n\u2022 Decision support\n\u2022 Planning and forecasting\n\u2022 Local statutory reporting\n\n**Shared services centralizes routine; FP&A stays with the business.**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Finance Transformation",
+          "type": "callout",
+          "content": "**\"RAFT\"** - Four pillars of transformation:\n\n**R**PA and automation (efficiency)\n**A**nalytics and insights (value)\n**F**lexible operating model (structure)\n**T**alent development (people)\n\n**Technology alone isn't enough - people and process must evolve too!**"
+        },
+        {
+          "title": "Continuous Close",
+          "type": "text",
+          "content": "**Traditional close:**\n\u2022 Frantic month-end/quarter-end\n\u2022 Batch processing\n\u2022 Days to close\n\u2022 Errors discovered late\n\n**Continuous close:**\n\u2022 Real-time accounting\n\u2022 Daily/weekly tasks distributed\n\u2022 Close in days, not weeks\n\u2022 Exceptions flagged immediately\n\n**Enablers:**\n\u2022 ERP real-time processing\n\u2022 Automated reconciliations\n\u2022 RPA for routine postings\n\u2022 Exception-based workflows"
+        },
+        {
+          "title": "FP&A Evolution",
+          "type": "text",
+          "content": "**From annual budget to continuous planning:**\n\n**Old model:**\n\u2022 Annual budget (months to create)\n\u2022 Quarterly forecasts\n\u2022 Spreadsheet-based\n\u2022 Finance-driven\n\n**New model:**\n\u2022 Rolling forecasts\n\u2022 Driver-based planning\n\u2022 Integrated planning tools\n\u2022 Business-driven, finance-enabled\n\n**CMAs facilitate planning, not own it exclusively!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Finance evolving from scorekeeper to strategic partner",
+            "Shared services centralizes transactional work",
+            "Business partnering stays close to operations",
+            "Continuous close enabled by real-time systems and automation",
+            "FP&A moving to rolling forecasts and driver-based planning",
+            "Transformation requires technology + process + people changes",
+            "CMAs must develop analytical and advisory capabilities"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Shared Services Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following activities is MOST likely to remain a function of local finance teams rather than being transferred to a shared services center?",
+            "options": [
+              "Accounts payable processing",
+              "General ledger maintenance",
+              "Business partnering with operational departments",
+              "Travel and expense reporting"
+            ],
+            "correctIndex": 2,
+            "explanation": "Business partnering requires close collaboration and understanding of local operational needs, making it less suitable for a centralized shared services environment. The other options are transactional and can be standardized.",
+            "hint": "Consider which function requires the MOST local context and interaction."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Remember This!",
+          "reveal": {
+            "question": "Name three characteristics of a 'modern finance' function.",
+            "answer": "Strategic business partner, forward-looking insights, continuous monitoring, integrated systems, proactive recommendations (any three)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Traditional vs. Modern Finance",
+          "comparison": {
+            "headers": [
+              "Traditional Finance",
+              "Modern Finance"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus",
+                "values": [
+                  "Transaction Processing & Reporting",
+                  "Strategic Decision Support"
+                ]
+              },
+              {
+                "label": "Data Orientation",
+                "values": [
+                  "Backward-Looking",
+                  "Forward-Looking"
+                ]
+              },
+              {
+                "label": "Systems",
+                "values": [
+                  "Spreadsheet-Intensive",
+                  "Integrated Systems"
+                ]
+              },
+              {
+                "label": "Role",
+                "values": [
+                  "Reactive",
+                  "Proactive"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-007",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Cybersecurity for Financial Professionals",
+    "description": "Understand cybersecurity risks and controls relevant to finance",
+    "order": 60,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cyber threats",
+      "Security controls",
+      "Incident response",
+      "Finance-specific risks"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Finance is a prime target for cyberattacks - we control money and sensitive data. CMAs must understand cyber risks, recognize threats like business email compromise, and ensure financial controls address cyber vulnerabilities. This is now core to your role!"
+        },
+        {
+          "title": "Common Cyber Threats",
+          "type": "table",
+          "headers": [
+            "Threat",
+            "Description",
+            "Finance Impact"
+          ],
+          "rows": [
+            [
+              "Phishing",
+              "Fraudulent emails seeking credentials",
+              "Credential theft, unauthorized access"
+            ],
+            [
+              "Business Email Compromise",
+              "Impersonation of executive/vendor",
+              "Fraudulent wire transfers"
+            ],
+            [
+              "Ransomware",
+              "Encrypt data, demand payment",
+              "Operations shutdown, data loss"
+            ],
+            [
+              "Insider threat",
+              "Malicious/negligent employees",
+              "Data theft, fraud"
+            ],
+            [
+              "Third-party breach",
+              "Vendor/partner compromised",
+              "Supply chain attack"
+            ]
+          ]
+        },
+        {
+          "title": "Business Email Compromise (BEC)",
+          "type": "text",
+          "content": "**How it works:**\n1. Attacker researches company and executives\n2. Spoofs or compromises email account\n3. Requests urgent wire transfer\n4. Money sent to attacker's account\n\n**Red flags:**\n\u2022 Unusual urgency\n\u2022 Request to bypass normal approvals\n\u2022 New payment instructions\n\u2022 CEO traveling and \"unreachable\"\n\n**Protection:**\n\u2022 Callback verification (known number, not email)\n\u2022 Dual authorization for large transfers\n\u2022 Training and awareness"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Cyber Defense Layers",
+          "type": "callout",
+          "content": "**\"DDDA\"** - Defense in Depth for Finance:\n\n**D**eter - Security awareness, policies\n**D**etect - Monitoring, alerts, anomaly detection\n**D**elay - Access controls, MFA, encryption\n**A**ct - Incident response, recovery\n\n**Multiple layers because no single control is perfect!**"
+        },
+        {
+          "title": "Financial System Controls",
+          "type": "text",
+          "content": "**Access controls:**\n\u2022 Multi-factor authentication (MFA)\n\u2022 Least privilege access\n\u2022 Segregation of duties (enforced by system)\n\u2022 Privileged access management\n\n**Transaction controls:**\n\u2022 Dual authorization for payments\n\u2022 Velocity limits ($ per day)\n\u2022 Geographic restrictions\n\u2022 Unusual transaction alerts\n\n**Data protection:**\n\u2022 Encryption at rest and in transit\n\u2022 Data loss prevention (DLP)\n\u2022 Backup and recovery\n\u2022 Secure disposal"
+        },
+        {
+          "title": "Incident Response",
+          "type": "text",
+          "content": "**Finance role in cyber incidents:**\n\n**Preparation:**\n\u2022 Understand response plan\n\u2022 Know escalation paths\n\u2022 Identify critical financial systems\n\n**During incident:**\n\u2022 Preserve evidence (don't delete!)\n\u2022 Stop ongoing financial losses\n\u2022 Notify management and legal\n\u2022 Support investigation\n\n**After incident:**\n\u2022 Assess financial impact\n\u2022 Insurance claims\n\u2022 Regulatory notifications\n\u2022 Improve controls"
+        },
+        {
+          "title": "Third-Party Risk",
+          "type": "text",
+          "content": "**Vendors with access to financial data/systems:**\n\u2022 Cloud providers\n\u2022 Payment processors\n\u2022 Payroll providers\n\u2022 Tax/audit firms\n\u2022 IT support\n\n**Due diligence:**\n\u2022 Security questionnaires\n\u2022 SOC 2 reports\n\u2022 Contractual protections\n\u2022 Right to audit\n\n**You're only as secure as your weakest vendor!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Finance is a prime cyber target (money + data)",
+            "BEC is top threat - verify payment changes via callback",
+            "Defense in depth: Deter, Detect, Delay, Act",
+            "MFA and dual authorization are essential financial controls",
+            "CMAs must support incident response and impact assessment",
+            "Third-party vendors extend your attack surface",
+            "Security awareness training is critical for finance staff"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Business Email Compromise (BEC) Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST effective control to prevent a Business Email Compromise (BEC) scheme where an attacker requests an urgent wire transfer?",
+            "options": [
+              "Implementing multi-factor authentication (MFA) on all employee email accounts.",
+              "Requiring dual authorization for all wire transfers, regardless of the amount.",
+              "Restricting employee access to social media websites on company devices.",
+              "Conducting annual security awareness training for all employees."
+            ],
+            "correctIndex": 1,
+            "explanation": "Dual authorization ensures that at least two individuals verify the legitimacy of a wire transfer request. While MFA and security awareness training are important, they don't directly prevent a compromised user from initiating a fraudulent transfer. Social media restrictions are not directly related to BEC prevention.",
+            "hint": "Think about the *process* of a wire transfer and which control directly impacts that."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Financial System Controls: Access Control Recall",
+          "reveal": {
+            "question": "List and describe the FOUR access controls discussed in this lesson.",
+            "answer": "1. Multi-factor authentication (MFA): Requires multiple verification methods for access.\n2. Least privilege access: Grants users only the minimum necessary access rights.\n3. Segregation of duties: Divides responsibilities to prevent fraud and errors.\n4. Privileged access management: Controls and monitors access to sensitive systems."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Transaction Controls: Velocity Limits vs. Geographic Restrictions",
+          "comparison": {
+            "headers": [
+              "Velocity Limits",
+              "Geographic Restrictions"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Limits the total amount of funds that can be transferred within a specific time period (e.g., $ per day).",
+                  "Restricts transactions to specific geographic locations or blocks transactions originating from suspicious countries."
+                ]
+              },
+              {
+                "label": "Primary Risk Mitigated",
+                "values": [
+                  "Limits the potential damage from a compromised account or fraudulent transaction within a given timeframe.",
+                  "Prevents transactions originating from high-risk locations, reducing the likelihood of unauthorized access or money laundering."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "A daily limit of $5,000 on wire transfers from an employee's account.",
+                  "Blocking transactions originating from countries known for cybercrime activity."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-008",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Emerging Technologies in Finance",
+    "description": "Understand blockchain, AI, and other emerging technologies impacting finance",
+    "order": 61,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Blockchain",
+      "Artificial intelligence",
+      "Cloud computing",
+      "Emerging trends"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Technology continues to reshape finance. CMAs need awareness of blockchain, AI, and other emerging technologies - not to become technologists, but to identify opportunities, ask the right questions, and lead adoption where it makes sense."
+        },
+        {
+          "title": "Blockchain Fundamentals",
+          "type": "text",
+          "content": "**What is blockchain?**\n\u2022 Distributed ledger technology\n\u2022 Immutable record of transactions\n\u2022 Consensus-based validation\n\u2022 No central authority needed\n\n**Key characteristics:**\n\u2022 Transparency (all participants see transactions)\n\u2022 Immutability (can't change history)\n\u2022 Decentralization (no single point of control)\n\u2022 Smart contracts (automated execution)\n\n**Finance applications:** Payments, trade finance, audit evidence, supply chain tracking"
+        },
+        {
+          "title": "Blockchain in Accounting",
+          "type": "table",
+          "headers": [
+            "Application",
+            "How It Works",
+            "Benefit"
+          ],
+          "rows": [
+            [
+              "Triple-entry accounting",
+              "Shared ledger of transactions",
+              "Real-time verification"
+            ],
+            [
+              "Audit evidence",
+              "Immutable transaction trail",
+              "Reduced audit effort"
+            ],
+            [
+              "Intercompany",
+              "Shared ledger across entities",
+              "Auto-reconciliation"
+            ],
+            [
+              "Smart contracts",
+              "Automated payment on conditions",
+              "Reduced disputes"
+            ]
+          ]
+        },
+        {
+          "title": "Artificial Intelligence in Finance",
+          "type": "text",
+          "content": "**AI vs. RPA:**\n\u2022 RPA: Rule-based automation (does what you program)\n\u2022 AI: Pattern-based learning (improves from data)\n\n**Finance AI applications:**\n\u2022 Fraud detection (anomaly patterns)\n\u2022 Cash flow forecasting\n\u2022 Invoice processing (unstructured data)\n\u2022 Customer credit scoring\n\u2022 Contract analysis (NLP)\n\u2022 Chatbots for finance queries\n\n**AI augments CMAs, not replaces them!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: AI Types",
+          "type": "callout",
+          "content": "**\"3 NLPs\"** - AI capabilities in finance:\n\n**N**atural Language Processing (read documents/emails)\n**L**earning from patterns (ML predictions)\n**P**rocess automation (intelligent RPA)\n\n**AI handles unstructured data that RPA can't!**"
+        },
+        {
+          "title": "Cloud Computing Models",
+          "type": "text",
+          "content": "**Service models:**\n\n**IaaS (Infrastructure):**\n\u2022 Virtual servers, storage\n\u2022 You manage: OS, apps, data\n\u2022 Example: AWS EC2, Azure VMs\n\n**PaaS (Platform):**\n\u2022 Development environment\n\u2022 You manage: Apps and data\n\u2022 Example: Google App Engine\n\n**SaaS (Software):**\n\u2022 Complete applications\n\u2022 You manage: Configuration, data\n\u2022 Example: Salesforce, Workday, QuickBooks Online\n\n**Most finance apps are SaaS today!**"
+        },
+        {
+          "title": "Evaluating Emerging Technologies",
+          "type": "text",
+          "content": "**CMA framework for evaluation:**\n\n**1. Problem fit:**\n\u2022 What problem does this solve?\n\u2022 Is there a real business need?\n\n**2. Maturity:**\n\u2022 Is the technology proven?\n\u2022 Are there reference customers?\n\n**3. Cost/benefit:**\n\u2022 What's the TCO?\n\u2022 What's the expected benefit?\n\u2022 What's the payback period?\n\n**4. Risk:**\n\u2022 Implementation risk\n\u2022 Vendor viability\n\u2022 Security implications\n\n**Avoid hype - focus on value!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Blockchain provides immutable, distributed ledger capabilities",
+            "Triple-entry accounting could transform audit evidence",
+            "AI learns from patterns; RPA follows rules",
+            "AI augments human decision-making, doesn't replace CMAs",
+            "Cloud models: IaaS (infrastructure), PaaS (platform), SaaS (software)",
+            "Most modern finance applications are SaaS",
+            "Evaluate emerging tech on problem fit, maturity, cost/benefit, risk"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Blockchain Fundamentals Check",
+          "knowledgeCheck": {
+            "question": "Which of the following characteristics is NOT a fundamental attribute of blockchain technology?",
+            "options": [
+              "A. Transparency, allowing all participants to view transaction details.",
+              "B. Immutability, ensuring that recorded transactions cannot be altered.",
+              "C. Centralized control, with a single authority validating transactions.",
+              "D. Decentralization, distributing transaction validation across multiple nodes."
+            ],
+            "correctIndex": 2,
+            "explanation": "Blockchain is characterized by decentralization, meaning it does *not* rely on a central authority. Centralized control is the opposite of a blockchain's fundamental design.",
+            "hint": "Think about who validates the transactions in a blockchain network."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Key Characteristics of Blockchain",
+          "reveal": {
+            "question": "List three key characteristics of blockchain technology.",
+            "answer": "1. Transparency: All participants can see the transactions.\n2. Immutability: Once recorded, transactions cannot be changed.\n3. Decentralization: No single central authority controls the network."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "AI vs. RPA",
+          "comparison": {
+            "headers": [
+              "Artificial Intelligence (AI)",
+              "Robotic Process Automation (RPA)"
+            ],
+            "rows": [
+              {
+                "label": "Learning Approach",
+                "values": [
+                  "Pattern-based learning; improves from data.",
+                  "Rule-based automation; performs pre-programmed tasks."
+                ]
+              },
+              {
+                "label": "Data Handling",
+                "values": [
+                  "Can process unstructured data (e.g., text, images).",
+                  "Typically requires structured data."
+                ]
+              },
+              {
+                "label": "Adaptability",
+                "values": [
+                  "Adapts to new situations and data patterns.",
+                  "Limited adaptability; requires reprogramming for new tasks."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

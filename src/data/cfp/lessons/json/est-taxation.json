@@ -1,0 +1,785 @@
+[
+  {
+    "id": "CFP-EST-L005",
+    "courseId": "cfp",
+    "section": "CFP-EST",
+    "title": "Gift Tax Fundamentals",
+    "description": "Understand the gift tax annual exclusion, calculate taxable gifts, apply gift-splitting rules, and identify gift tax exclusions.",
+    "order": 5,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Gift tax annual exclusion",
+      "Calculating taxable gifts",
+      "Gift-splitting rules",
+      "Gift tax exclusions and deductions"
+    ],
+    "blueprintArea": "EST-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "The gift tax exists to prevent avoidance of estate tax through lifetime transfers. A gift is a transfer of property where full consideration is not received in return. Understanding gift tax rules is essential for effective wealth transfer planning."
+        },
+        {
+          "title": "Annual Exclusion (2026)",
+          "type": "callout",
+          "content": "$19,000 per donee per year. Key features: Unlimited number of donees; must be \"present interest\"; per-donee, not aggregate limit."
+        },
+        {
+          "title": "Gift Splitting Example",
+          "type": "text",
+          "content": "Married couple with 3 children:\n2 donors \u00d7 3 donees \u00d7 $19,000 = $114,000/year can be transferred gift-tax-free.\n\nGift splitting allows married couples to treat each gift as made half by each spouse. Requirements: Both spouses must consent; gift-splitting election on Form 709; applies to all gifts made that year.\n\nExample: Wife gives $38,000 to son. With gift-splitting:\n\u2022 Wife: $19,000 (her half) \u2713 Covered by exclusion\n\u2022 Husband: $19,000 (his half) \u2713 Covered by exclusion\n\u2022 No taxable gift!"
+        },
+        {
+          "title": "Present vs. Future Interest",
+          "type": "text",
+          "content": "Present Interest (Qualifies for Annual Exclusion): Immediate right to use, possess, or enjoy; unrestricted access to gift.\n\nFuture Interest (No Annual Exclusion): Right to use property comes later; most trust gifts are future interests."
+        },
+        {
+          "title": "Crummey Powers",
+          "type": "callout",
+          "content": "Crummey powers convert future interest to present interest for annual exclusion. How it works:\n1. Gift made to trust\n2. Beneficiary notified of withdrawal right (typically 30-60 days)\n3. Beneficiary allows right to lapse\n4. Gift qualifies for annual exclusion"
+        },
+        {
+          "title": "Unlimited Exclusions (Not Subject to Gift Tax)",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Tuition",
+              "Paid directly to educational institution"
+            ],
+            [
+              "Medical",
+              "Paid directly to medical provider"
+            ],
+            [
+              "Spouse",
+              "Unlimited marital deduction (if US citizen)"
+            ],
+            [
+              "Charity",
+              "Unlimited charitable deduction"
+            ],
+            [
+              "Political",
+              "Political organizations"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Warning",
+          "type": "warning",
+          "content": "Direct Payment Requirement: Tuition and medical payments must be made directly to the provider\u2014not to the student/patient. Paying $50,000 tuition directly to Harvard: No gift tax \u2713. Giving grandson $50,000 to pay his tuition: Taxable gift!"
+        },
+        {
+          "title": "Calculating Taxable Gifts Formula",
+          "type": "text",
+          "content": "Taxable Gifts = Total Gifts - Annual Exclusions - Marital Deduction - Charitable Deduction"
+        },
+        {
+          "title": "Example Calculation",
+          "type": "table",
+          "headers": [
+            "Gift",
+            "Amount",
+            "Exclusion/Deduction",
+            "Taxable"
+          ],
+          "rows": [
+            [
+              "Son",
+              "$30,000",
+              "$19,000 annual",
+              "$11,000"
+            ],
+            [
+              "College (direct)",
+              "$50,000",
+              "Unlimited education",
+              "$0"
+            ],
+            [
+              "Wife",
+              "$20,000",
+              "Unlimited marital",
+              "$0"
+            ],
+            [
+              "Charity",
+              "$25,000",
+              "Unlimited charitable",
+              "$0"
+            ],
+            [
+              "TOTAL",
+              "",
+              "",
+              "$11,000"
+            ]
+          ]
+        },
+        {
+          "title": "Lifetime Gift Tax Exemption",
+          "type": "text",
+          "content": "Unified Credit (2026): $7.0 Million (TCJA sunset reduced from ~$13.6M). Same exemption for gifts and estate; lifetime gifts reduce estate exemption; gift tax rate: 40%."
+        },
+        {
+          "title": "Why Give During Life?",
+          "type": "list",
+          "items": [
+            "Remove future appreciation from estate",
+            "Use annual exclusions ($19,000/year/person)",
+            "Leverage valuation discounts",
+            "Pay tax on tax-exclusive basis"
+          ]
+        },
+        {
+          "title": "Tax-Exclusive vs. Tax-Inclusive",
+          "type": "text",
+          "content": "Gift Tax (Tax-Exclusive): Tax paid on amount transferred only; gift tax paid by donor is removed from estate.\n\nEstate Tax (Tax-Inclusive): Tax calculated on assets including tax payment; more expensive than gift tax.\n\nExample: Transfer $1M at 40% rate:\n\u2022 Gift: Pay $400,000 tax, $1M transfers (donor pays tax from other assets)\n\u2022 Estate: $1.4M needed to transfer $1M after 40% tax"
+        },
+        {
+          "title": "Mnemonic: TEMP",
+          "type": "callout",
+          "content": "Unlimited Gift Exclusions: Tuition (direct), Education medical (direct), Marital, Political/charities"
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Annual exclusion is $19,000/donee (2026) for present interest gifts",
+            "Gift splitting doubles the annual exclusion for married couples",
+            "Tuition and medical paid directly to providers are unlimited exclusions",
+            "Crummey powers convert trust gifts to present interests",
+            "Gift tax is \"tax-exclusive\" making it more efficient than estate tax"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Annual Exclusion Application",
+          "knowledgeCheck": {
+            "question": "John and Mary are married and decide to utilize gift splitting. They have two children, Sarah and Tom. They also wish to make a gift to a trust for the benefit of their grandchild, Emily. What is the maximum amount John and Mary can gift tax-free in one year utilizing gift splitting and the annual exclusion?",
+            "options": [
+              "$38,000",
+              "$76,000",
+              "$114,000",
+              "$152,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "With gift splitting, the annual exclusion is doubled. They can gift $38,000 to Sarah and Tom ($19,000 x 2 donors x 2 donees = $76,000). The gift to the trust for Emily is considered a future interest and does not qualify for the annual exclusion. Therefore, the total is $76,000 + $0 = $76,000. The question asks for the *maximum* amount, so the correct answer is $114,000. ($19,000 * 2 donors * 3 donees). Note the trust gift does NOT qualify for the exclusion.",
+            "hint": "Remember to consider gift splitting and how many donees qualify for the annual exclusion. Also, trusts are often future interests."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Gift Splitting Requirements",
+          "reveal": {
+            "question": "List the requirements for utilizing gift splitting.",
+            "answer": "1. Both spouses must consent to split gifts. 2. The spouses must be married at the time of the gift. 3. Both spouses must be U.S. citizens or resident aliens. 4. The spouse who is not the actual donor cannot make any gifts to the recipient of the split gift. 5. The election to gift split must be made on Form 709 (United States Gift (and Generation-Skipping Transfer) Tax Return). 6. Gift splitting applies to all gifts made by either spouse during the calendar year."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Present vs. Future Interest",
+          "comparison": {
+            "headers": [
+              "Present Interest",
+              "Future Interest"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Immediate right to use, possess, or enjoy property.",
+                  "Right to use, possess, or enjoy property at some point in the future."
+                ]
+              },
+              {
+                "label": "Annual Exclusion",
+                "values": [
+                  "Qualifies for the annual gift tax exclusion.",
+                  "Does not qualify for the annual gift tax exclusion."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Unrestricted gift of cash or securities directly to an individual.",
+                  "Gift to a trust where the beneficiary cannot access the funds until a future date."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-EST-L006",
+    "courseId": "cfp",
+    "section": "CFP-EST",
+    "title": "Estate Tax Calculation",
+    "description": "Calculate the gross estate, identify available deductions, apply the unified credit, and understand portability.",
+    "order": 6,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Gross estate calculation",
+      "Estate tax deductions",
+      "Unified credit application",
+      "Portability of unused exemption"
+    ],
+    "blueprintArea": "EST-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Estate tax applies to the value of a decedent's taxable estate above the exemption amount. Understanding what's included in the gross estate, available deductions, and the unified credit system is essential for CFP professionals."
+        },
+        {
+          "title": "Gross Estate Rule",
+          "type": "callout",
+          "content": "General Rule (IRC \u00a72033-2044): Include all property in which decedent had an interest at death."
+        },
+        {
+          "title": "Gross Estate Components",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Examples",
+            "IRC Section"
+          ],
+          "rows": [
+            [
+              "Owned Property",
+              "Real estate, stocks, bank accounts",
+              "\u00a72033"
+            ],
+            [
+              "Life Insurance",
+              "Incidents of ownership or payable to estate",
+              "\u00a72042"
+            ],
+            [
+              "Annuities",
+              "Survivor benefits",
+              "\u00a72039"
+            ],
+            [
+              "Joint Property",
+              "JTWROS (portion included)",
+              "\u00a72040"
+            ],
+            [
+              "Revocable Trusts",
+              "Assets in revocable trust",
+              "\u00a72038"
+            ],
+            [
+              "Powers of Appointment",
+              "General powers",
+              "\u00a72041"
+            ],
+            [
+              "Transfers with Retained Interest",
+              "GRATs, retained life estates",
+              "\u00a72036-2038"
+            ],
+            [
+              "Prior Taxable Gifts",
+              "Gifts in last 3 years (insurance)",
+              "\u00a72035"
+            ]
+          ]
+        },
+        {
+          "title": "Life Insurance Rules (\u00a72042)",
+          "type": "text",
+          "content": "Life insurance is included if decedent:\n\u2022 Had \"incidents of ownership\" (ability to change beneficiary, borrow, etc.)\n\u2022 Policy payable to estate\n\u2022 Transferred policy within 3 years of death"
+        },
+        {
+          "title": "Joint Tenancy (\u00a72040)",
+          "type": "text",
+          "content": "Between spouses: 50% included regardless of contribution.\nBetween non-spouses: Proportionate to contribution (burden on estate to prove)."
+        },
+        {
+          "title": "Estate Tax Deductions",
+          "type": "text",
+          "content": "Marital Deduction (Unlimited): Property passing to surviving US citizen spouse; must be included in gross estate; must pass to spouse (outright or qualifying trust).\n\nQualifying Trusts: QTIP, GPOA trust, Estate trust.\n\nCharitable Deduction (Unlimited): Property passing to qualified charities.\n\nDebts, Expenses, Losses: Mortgages and debts; funeral expenses; administrative costs; casualty/theft losses.\n\nState Death Taxes: Deduction for state estate or inheritance taxes paid."
+        },
+        {
+          "title": "Estate Tax Calculation Formula",
+          "type": "text",
+          "content": "Tentative Tax Base = Gross Estate - Deductions + Adjusted Taxable Gifts\n\nEstate Tax = Tentative Tax - Credits"
+        },
+        {
+          "title": "Unified Credit (2026)",
+          "type": "callout",
+          "content": "Exempts $7.0 million from estate/gift tax (TCJA sunset). Credit amount: ~$2,725,800 (40% of $7.0M). Reduced by gift tax credits used during life."
+        },
+        {
+          "title": "Example Estate Tax Calculation",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "Gross Estate",
+              "$16,000,000"
+            ],
+            [
+              "Less: Marital",
+              "($5,000,000)"
+            ],
+            [
+              "Less: Charitable",
+              "($1,000,000)"
+            ],
+            [
+              "Less: Debts/expenses",
+              "($500,000)"
+            ],
+            [
+              "Taxable Estate",
+              "$9,500,000"
+            ],
+            [
+              "Plus: Adjusted Taxable Gifts",
+              "$1,000,000"
+            ],
+            [
+              "Tentative Tax Base",
+              "$10,500,000"
+            ],
+            [
+              "Tentative Tax (40%)",
+              "$4,200,000"
+            ],
+            [
+              "Less: Unified Credit",
+              "($2,725,800)"
+            ],
+            [
+              "Estate Tax Due",
+              "$1,474,200"
+            ]
+          ]
+        },
+        {
+          "title": "Portability: Deceased Spousal Unused Exclusion (DSUE)",
+          "type": "text",
+          "content": "Concept: Surviving spouse can use deceased spouse's unused exemption.\n\nRequirements:\n\u2022 Must file estate tax return (Form 706)\n\u2022 Election must be timely made\n\u2022 Surviving spouse must be US citizen\n\nExample:\n\u2022 Husband dies with $5M estate, $7.0M exemption\n\u2022 Unused: $7.0M - $5M = $2.0M\n\u2022 Wife's new exemption: $7.0M + $2.0M = $9.0M"
+        },
+        {
+          "title": "Exam Warning",
+          "type": "warning",
+          "content": "Portability Limitations: Only available from last deceased spouse; does NOT apply to GST exemption; must file Form 706 return even if no tax due to preserve portability."
+        },
+        {
+          "title": "State Estate/Inheritance Taxes",
+          "type": "text",
+          "content": "Estate Tax: Tax on the estate (transferor pays).\nInheritance Tax: Tax on beneficiary (recipient pays).\n\nMany states have lower exemptions than federal: Massachusetts ($2M), Oregon ($1M), New York ($6.94M with cliff).\n\nPlanning Consideration: Federal exemption may shelter estate, but state tax can still apply."
+        },
+        {
+          "title": "Mnemonic: MCE",
+          "type": "callout",
+          "content": "Estate Deductions: Marital, Charitable, Expenses/debts"
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Gross estate includes all property with incidents of ownership",
+            "Marital and charitable deductions are unlimited",
+            "Unified credit exempts $7.0M (2026 - TCJA sunset) from estate tax",
+            "Portability allows surviving spouse to use deceased spouse's unused exemption",
+            "State estate taxes may apply even when no federal tax is due"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Life Insurance and the Gross Estate",
+          "knowledgeCheck": {
+            "question": "Harold transferred a life insurance policy on his life to an Irrevocable Life Insurance Trust (ILIT) five years ago, naming his children as beneficiaries. Harold retained no rights to the policy. However, two years ago, Harold's business partner, Fred, transferred a life insurance policy on Harold's life to Harold, and Harold named his estate as the beneficiary. Harold died this year. Which life insurance policy, if any, is included in Harold's gross estate?",
+            "options": [
+              "Only the policy owned by the ILIT.",
+              "Only the policy naming Harold's estate as beneficiary.",
+              "Both policies are included in Harold's gross estate.",
+              "Neither policy is included in Harold's gross estate."
+            ],
+            "correctIndex": 1,
+            "explanation": "The policy owned by the ILIT is not included because Harold transferred it more than three years before his death and retained no incidents of ownership. The policy naming Harold's estate as beneficiary IS included because it is payable to the estate.",
+            "hint": "Consider the 3-year rule and incidents of ownership."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Joint Tenancy Recall",
+          "reveal": {
+            "question": "How is property held in joint tenancy with a non-spouse treated for estate tax purposes?",
+            "answer": "The portion of the property attributable to the decedent's contribution is included in their gross estate. The burden of proof is on the estate to demonstrate the surviving tenant's contribution."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Joint Tenancy Inclusion: Spouse vs. Non-Spouse",
+          "comparison": {
+            "headers": [
+              "Joint Tenancy with Spouse",
+              "Joint Tenancy with Non-Spouse"
+            ],
+            "rows": [
+              {
+                "label": "Inclusion in Gross Estate",
+                "values": [
+                  "50% of the property's value",
+                  "Proportionate to the decedent's contribution (burden of proof on the estate)"
+                ]
+              },
+              {
+                "label": "Contribution Consideration",
+                "values": [
+                  "Irrelevant; 50% inclusion regardless of contribution",
+                  "Relevant; inclusion is based on the decedent's contribution"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-EST-L007",
+    "courseId": "cfp",
+    "section": "CFP-EST",
+    "title": "Generation-Skipping Transfer Tax",
+    "description": "Understand the purpose of GSTT, identify skip persons and taxable transfers, and apply the GST exemption.",
+    "order": 7,
+    "duration": 30,
+    "difficulty": "advanced",
+    "topics": [
+      "Purpose of GSTT",
+      "Skip persons and taxable transfers",
+      "GST exemption application",
+      "GSTT planning opportunities"
+    ],
+    "blueprintArea": "EST-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "The Generation-Skipping Transfer Tax (GSTT) prevents wealth from skipping generations and avoiding estate tax at each level. Without GSTT, a grandparent could transfer to grandchildren and bypass estate tax at the parent's generation."
+        },
+        {
+          "title": "GSTT Rate",
+          "type": "callout",
+          "content": "40% flat rate\u2014applied IN ADDITION to gift or estate tax. This makes GSTT one of the most punitive taxes in the code."
+        },
+        {
+          "title": "Skip Person Definition",
+          "type": "text",
+          "content": "A skip person is:\n1. Two or more generations below transferor, OR\n2. A trust with only skip person beneficiaries\n\nSkip Persons include: Grandchildren (if parent alive or deceased); great-grandchildren; unrelated persons 37.5+ years younger.\n\nNon-Skip Persons: Children; spouse; persons within one generation."
+        },
+        {
+          "title": "Deceased Parent Exception",
+          "type": "callout",
+          "content": "If a grandchild's parent (transferor's child) is deceased, the grandchild \"moves up\" and is NOT a skip person. This is a key exam concept."
+        },
+        {
+          "title": "Types of GST Transfers",
+          "type": "text",
+          "content": "Direct Skip: Transfer directly to skip person (gift to grandchild, bequest to grandchild). Tax paid by: Transferor (or estate).\n\nTaxable Distribution: Distribution from trust to skip person (not direct skip). Trust pays income to grandchild. Tax paid by: Distributee.\n\nTaxable Termination: Trust terminates, assets pass to skip persons. Life estate to child ends; remainder to grandchildren. Tax paid by: Trustee from trust assets."
+        },
+        {
+          "title": "GST Exemption (2026)",
+          "type": "text",
+          "content": "$7.0 Million\u2014same amount as estate/gift exemption (TCJA sunset). Key features:\n\u2022 Separate allocation from estate exemption\n\u2022 NOT portable (unlike estate exemption)\n\u2022 Can be allocated to direct skips or trusts benefiting skip persons"
+        },
+        {
+          "title": "Inclusion Ratio Calculation",
+          "type": "text",
+          "content": "Inclusion Ratio = 1 - (GST Exemption Allocated \u00f7 Value of Transfer)\n\nApplicable Rate = Maximum Rate \u00d7 Inclusion Ratio\n\nExample:\n\u2022 Transfer $5M to dynasty trust\n\u2022 Allocate $5M GST exemption\n\u2022 Inclusion ratio: 1 - ($5M/$5M) = 0\n\u2022 Applicable rate: 40% \u00d7 0 = 0%\n\u2022 Result: Trust is \"GST-exempt\""
+        },
+        {
+          "title": "GSTT Planning Strategies",
+          "type": "list",
+          "items": [
+            "Dynasty Trust: Allocate full GST exemption; trust lasts for generations; no estate tax or GSTT at each generation",
+            "Annual Exclusion: Direct skip gifts qualifying for annual exclusion are also exempt from GSTT",
+            "Reverse QTIP Election: Allows deceased spouse's executor to preserve deceased spouse's GST exemption"
+          ]
+        },
+        {
+          "title": "Exam Warning",
+          "type": "warning",
+          "content": "GSTT Traps:\n\u2022 Inadequate exemption allocation = inclusion ratio of 1 = full 40% tax\n\u2022 Non-portable exemption: GST exemption CANNOT be ported to surviving spouse\n\u2022 Trust modifications may trigger GSTT if beneficiaries change"
+        },
+        {
+          "title": "Mnemonic: DDD",
+          "type": "callout",
+          "content": "GST Transfer Types: Direct skip, Distribution (taxable), Termination (taxable)"
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "GSTT is 40% flat tax on transfers to persons 2+ generations below",
+            "Skip persons include grandchildren and more remote descendants",
+            "GST exemption ($7.0M) is NOT portable between spouses",
+            "Deceased parent exception moves grandchild up a generation",
+            "Dynasty trusts use GST exemption to avoid transfer taxes for generations"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "GSTT Skip Person Identification",
+          "knowledgeCheck": {
+            "question": "Which of the following transfers would be subject to the Generation-Skipping Transfer Tax (GSTT)?",
+            "options": [
+              "A gift of $10,000 to a child.",
+              "A trust distribution to a spouse.",
+              "A direct gift of $20,000 to a grandchild whose parent is still living.",
+              "A bequest of $50,000 to a sibling."
+            ],
+            "correctIndex": 2,
+            "explanation": "A direct gift to a grandchild whose parent is still living is a direct skip and is subject to GSTT. The other options involve transfers to non-skip persons.",
+            "hint": "Consider the definition of a skip person and whether the transfer is direct or indirect."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "GSTT Taxable Transfers",
+          "reveal": {
+            "question": "Name the three types of GST transfers.",
+            "answer": "The three types of GST transfers are: 1) Direct Skip, 2) Taxable Distribution, and 3) Taxable Termination."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Types of GST Transfers",
+          "comparison": {
+            "headers": [
+              "Direct Skip",
+              "Taxable Distribution",
+              "Taxable Termination"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "A transfer directly to a skip person.",
+                  "A distribution from a trust to a skip person.",
+                  "The termination of a trust interest where property passes to a skip person."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Gift or bequest to a grandchild.",
+                  "Trust income paid to a grandchild.",
+                  "Trust assets distributed to grandchildren upon the death of the child-beneficiary."
+                ]
+              },
+              {
+                "label": "Tax Paid By",
+                "values": [
+                  "Transferor (or estate)",
+                  "Distributee",
+                  "Trust"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-EST-L008",
+    "courseId": "cfp",
+    "section": "CFP-EST",
+    "title": "Valuation and Special Techniques",
+    "description": "Understand fair market value determination, apply valuation discounts, and explain special use valuation and alternate valuation.",
+    "order": 8,
+    "duration": 35,
+    "difficulty": "advanced",
+    "topics": [
+      "Fair market value determination",
+      "Valuation discounts",
+      "Special use valuation (2032A)",
+      "Alternate valuation date election"
+    ],
+    "blueprintArea": "EST-2",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Valuation is critical for gift and estate tax purposes. Understanding fair market value, available discounts, and special valuation elections can significantly reduce transfer tax liability."
+        },
+        {
+          "title": "Fair Market Value Definition",
+          "type": "callout",
+          "content": "\"The price at which property would change hands between a willing buyer and a willing seller, neither being under any compulsion to buy or sell and both having reasonable knowledge of relevant facts.\""
+        },
+        {
+          "title": "Valuation Dates",
+          "type": "text",
+          "content": "Estate tax: Date of death (or alternate valuation date)\nGift tax: Date of gift"
+        },
+        {
+          "title": "Lack of Marketability Discount",
+          "type": "text",
+          "content": "Reflects inability to easily sell interest in secondary market.\n\nApplies to: Closely-held business interests; private company stock; limited partnership interests.\n\nTypical Range: 15-35%"
+        },
+        {
+          "title": "Lack of Control (Minority) Discount",
+          "type": "text",
+          "content": "Reflects inability to control business decisions.\n\nMinority interests cannot: Elect board members; declare dividends; sell company assets; hire/fire management.\n\nTypical Range: 15-40%"
+        },
+        {
+          "title": "Combined Discount Example",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Value"
+          ],
+          "rows": [
+            [
+              "Pro-rata share of business",
+              "$1,000,000"
+            ],
+            [
+              "Minority discount (25%)",
+              "($250,000)"
+            ],
+            [
+              "Subtotal",
+              "$750,000"
+            ],
+            [
+              "Lack of marketability (20%)",
+              "($150,000)"
+            ],
+            [
+              "Discounted Value",
+              "$600,000"
+            ]
+          ]
+        },
+        {
+          "title": "Tax Savings from Discounts",
+          "type": "callout",
+          "content": "Tax Savings at 40%: ($1M - $600K) \u00d7 40% = $160,000. Discounts must be supported by qualified appraisal meeting USPAP standards."
+        },
+        {
+          "title": "Special Use Valuation (IRC \u00a72032A)",
+          "type": "text",
+          "content": "Purpose: Allow family farms and businesses to be valued at current use rather than highest/best use.\n\nRequirements:\n1. Property must be real property\n2. Used for farming or closely-held business\n3. Must meet percentage tests: 50% of adjusted gross estate is farm/business property; 25% is qualifying real property\n4. Decedent or family must have materially participated\n5. Property passes to qualified heirs\n6. Qualified heirs must continue qualified use for 10 years\n\nMaximum Reduction (2026): $1,440,000\n\nRecapture: If property is sold or use changes within 10 years, special use valuation recaptured with interest."
+        },
+        {
+          "title": "Alternate Valuation Date (IRC \u00a72032)",
+          "type": "text",
+          "content": "Option: Value estate assets 6 months after death instead of date of death.\n\nRequirements:\n\u2022 Must reduce gross estate value\n\u2022 Must reduce estate tax liability\n\u2022 Election is irrevocable\n\nWhen to Use: When assets have declined in value since death.\n\nExample:\n\u2022 Date of death value: $15,000,000\n\u2022 6-month value: $13,000,000\n\u2022 Election saves: ($15M - $13M) \u00d7 40% = $800,000\n\nNote: If property sold/distributed before 6 months, use date of disposition value."
+        },
+        {
+          "title": "Other Valuation Discounts",
+          "type": "text",
+          "content": "Blockage Discount: Large blocks of stock may depress price if sold at once. Example: 500,000 shares at $50 = $25M market value, but blockage discount of 10% = $22.5M.\n\nKey Person Discount: Value reduction when business depends heavily on a key person who died."
+        },
+        {
+          "title": "Valuation Planning Techniques",
+          "type": "list",
+          "items": [
+            "Freeze Techniques: Lock in current value, shift future appreciation (GRATs, IDGT sales, preferred partnership interests)",
+            "Family Limited Partnerships: Transfer limited partnership interests; apply minority and marketability discounts; maintain control through general partner interest; shift appreciation to younger generations"
+          ]
+        },
+        {
+          "title": "Mnemonic: MMM",
+          "type": "callout",
+          "content": "Valuation Discounts: Minority, Marketability, Must be supported by appraisal"
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Fair market value is the standard for gift and estate tax",
+            "Minority and marketability discounts can significantly reduce taxable value",
+            "Special use valuation can save up to $1.44M for farms/businesses",
+            "Alternate valuation date requires both reduced value AND reduced tax",
+            "Proper appraisals are essential to support claimed discounts"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Valuation Dates",
+          "knowledgeCheck": {
+            "question": "Mrs. Gable passed away on March 15, 2024. Her executor is considering using the alternate valuation date. What is the latest date the alternate valuation can be?",
+            "options": [
+              "March 15, 2025",
+              "September 15, 2024",
+              "June 15, 2024",
+              "December 15, 2024"
+            ],
+            "correctIndex": 1,
+            "explanation": "The alternate valuation date is six months after the date of death. Therefore, the latest date the alternate valuation can be is September 15, 2024.",
+            "hint": "Remember the timeframe for the alternate valuation date."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Lack of Marketability Discount",
+          "reveal": {
+            "question": "Define the Lack of Marketability Discount and provide examples of the types of assets to which it commonly applies.",
+            "answer": "The Lack of Marketability Discount reflects the reduced value of an asset due to its inability to be easily sold in a public market. It commonly applies to closely-held business interests, private company stock, and limited partnership interests."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparison: Date of Death vs. Alternate Valuation Date",
+          "comparison": {
+            "headers": [
+              "Date of Death Valuation",
+              "Alternate Valuation Date"
+            ],
+            "rows": [
+              {
+                "label": "General Rule",
+                "values": [
+                  "Asset valued as of the date of the decedent's death.",
+                  "Asset valued six months after the date of death, or the date of disposition if earlier."
+                ]
+              },
+              {
+                "label": "Requirements for Use",
+                "values": [
+                  "Always available, unless alternate valuation is elected.",
+                  "Can only be elected if it decreases the gross estate AND the estate tax liability."
+                ]
+              },
+              {
+                "label": "Impact on Asset Value",
+                "values": [
+                  "Reflects value at the time of death.",
+                  "Reflects value six months later, potentially capturing market fluctuations."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

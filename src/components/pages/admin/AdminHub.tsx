@@ -16,6 +16,7 @@ import {
   ChevronRight, ExternalLink as ExternalLinkIcon,
 } from 'lucide-react';
 import { Card } from '../../common/Card';
+import { TOTAL_DISPLAY } from '../../../config/contentStats';
 
 interface AdminSection {
   title: string;
@@ -110,8 +111,8 @@ export default function AdminHub() {
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Quick Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <QuickStat icon={FileText} label="Questions" value="6,200+" color="blue" />
-          <QuickStat icon={BookOpen} label="Lessons" value="460+" color="green" />
+          <QuickStat icon={FileText} label="Questions" value={TOTAL_DISPLAY.questions} color="blue" />
+          <QuickStat icon={BookOpen} label="Lessons" value={TOTAL_DISPLAY.lessons} color="green" />
           <QuickStat icon={Newspaper} label="Blog Briefs" value="181" color="purple" />
           <QuickStat icon={TrendingUp} label="Keywords" value="4,988" color="amber" />
         </div>

@@ -1,0 +1,1904 @@
+[
+  {
+    "id": "CMA1-C-001",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Variance Analysis Framework",
+    "description": "Understand the purpose and structure of variance analysis for performance evaluation",
+    "order": 25,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Variance analysis",
+      "Favorable vs unfavorable",
+      "Management by exception"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Variance analysis is THE core CMA skill! It tells you what went wrong (or right) and why. Without it, you're just reporting numbers. With it, you're providing insights that drive improvement. Master this section - it's heavily tested!"
+        },
+        {
+          "title": "What is Variance Analysis?",
+          "type": "text",
+          "content": "**Definition:**\nThe process of comparing actual results to budgeted/standard amounts and analyzing differences.\n\n**Purpose:**\n\u2022 Identify where performance differs from expectations\n\u2022 Understand WHY differences occurred\n\u2022 Take corrective action\n\u2022 Improve future planning\n\n**Management by Exception:**\nFocus attention on significant variances - don't waste time on immaterial differences."
+        },
+        {
+          "title": "Favorable vs. Unfavorable",
+          "type": "text",
+          "content": "**Favorable (F):** Actual results are BETTER than budget\n\u2022 Revenue higher than budgeted\n\u2022 Cost lower than budgeted\n\u2022 Increases profit\n\n**Unfavorable (U):** Actual results are WORSE than budget\n\u2022 Revenue lower than budgeted\n\u2022 Cost higher than budgeted\n\u2022 Decreases profit\n\n**Warning:** \"Favorable\" doesn't always mean \"good\" - it just means positive impact on profit. Skipping quality inspections might reduce costs (favorable) but create future problems!"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: F vs. U",
+          "type": "callout",
+          "content": "**\"PLI\"** - Profit Line Impact:\n\n**Think about impact on the profit line:**\n\u2022 Revenue variance: Actual > Budget = **Favorable**\n\u2022 Cost variance: Actual < Budget = **Favorable**\n\n**Quick test:** Would this variance make profit go UP or DOWN?\n\u2022 UP = Favorable\n\u2022 DOWN = Unfavorable"
+        },
+        {
+          "title": "The Variance Analysis Hierarchy",
+          "type": "text",
+          "content": "**Level 1: Total Variance**\nActual profit vs. Budget profit\n\n**Level 2: Revenue and Cost Variances**\nSales variances + Cost variances = Total variance\n\n**Level 3: Component Variances**\n\u2022 Sales: Price variance + Volume variance\n\u2022 DM: Price variance + Usage variance\n\u2022 DL: Rate variance + Efficiency variance\n\u2022 OH: Spending + Efficiency + Volume variances\n\n**Drill down from total to identify root causes!**"
+        },
+        {
+          "title": "Variance Significance",
+          "type": "table",
+          "headers": [
+            "Approach",
+            "When to Investigate",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Dollar threshold",
+              "Variance > $10,000",
+              "Material cost variance $15,000 - investigate"
+            ],
+            [
+              "Percentage",
+              "Variance > 5% of budget",
+              "8% over budget - investigate"
+            ],
+            [
+              "Statistical",
+              "Outside control limits",
+              "More than 2 standard deviations"
+            ],
+            [
+              "Pattern",
+              "Recurring variances",
+              "Same issue 3 months in a row"
+            ]
+          ]
+        },
+        {
+          "title": "Controllable vs. Non-Controllable",
+          "type": "text",
+          "content": "**Controllable Variances:**\n\u2022 Manager can influence the outcome\n\u2022 Hold manager accountable\n\u2022 Example: Labor efficiency (supervisor controls scheduling)\n\n**Non-Controllable Variances:**\n\u2022 Outside manager's influence\n\u2022 Don't hold manager accountable\n\u2022 Example: Material price change (purchasing decided)\n\n**Key Principle:** Evaluate managers only on factors they control!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Variance = Actual - Budget (or Standard)",
+            "Favorable increases profit; Unfavorable decreases profit",
+            "Cost variances: Lower actual = Favorable",
+            "Use management by exception - investigate significant variances",
+            "Drill down from total to component variances",
+            "Evaluate managers only on controllable variances",
+            "Set investigation thresholds (dollar, percentage, or statistical)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Variance Analysis: Multiple Choice Question",
+          "knowledgeCheck": {
+            "question": "Which of the following statements BEST describes the primary purpose of variance analysis?",
+            "options": [
+              "To assign blame for deviations from the budget.",
+              "To identify areas where performance differs from expectations, understand the reasons for these differences, and take corrective action.",
+              "To solely focus on unfavorable variances and ignore favorable variances.",
+              "To create a more accurate budget for the next accounting period by adjusting for current period actual results."
+            ],
+            "correctIndex": 1,
+            "explanation": "Variance analysis is used to identify performance deviations, understand their causes, and implement corrective actions. It's a proactive tool for improvement, not simply about assigning blame or adjusting future budgets based on current results.",
+            "hint": "Think about the overall goals of management accounting and continuous improvement."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Favorable vs. Unfavorable Variances",
+          "reveal": {
+            "question": "Define an *unfavorable* variance in terms of its impact on profit.",
+            "answer": "An unfavorable variance occurs when actual results are worse than budgeted or standard results, leading to a decrease in profit. This could be due to lower-than-expected revenue or higher-than-expected costs."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Favorable vs. Unfavorable Variances: A Comparison",
+          "comparison": {
+            "headers": [
+              "Favorable Variance",
+              "Unfavorable Variance"
+            ],
+            "rows": [
+              {
+                "label": "Impact on Profit",
+                "values": [
+                  "Increases Profit",
+                  "Decreases Profit"
+                ]
+              },
+              {
+                "label": "Revenue",
+                "values": [
+                  "Actual > Budget",
+                  "Actual < Budget"
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "Actual < Budget",
+                  "Actual > Budget"
+                ]
+              },
+              {
+                "label": "Corrective Action",
+                "values": [
+                  "May require investigation to sustain positive performance",
+                  "Requires investigation and corrective action to improve performance"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Management by Exception",
+          "knowledgeCheck": {
+            "question": "Management by exception is a practice where managers primarily focus on:",
+            "options": [
+              "All variances, regardless of size or significance.",
+              "Only favorable variances to understand best practices.",
+              "Variances that fall outside a predetermined acceptable range.",
+              "Creating detailed budgets."
+            ],
+            "correctIndex": 2,
+            "explanation": "Management by exception focuses on variances that deviate significantly from the budget, allowing managers to efficiently allocate their time and resources to the most critical areas.",
+            "hint": "Think about the purpose of this strategy and how it relates to efficiency."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-002",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Direct Materials Variances",
+    "description": "Calculate and interpret materials price and usage variances",
+    "order": 26,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Materials price variance",
+      "Materials usage variance",
+      "Standard costs"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Materials are often the largest manufacturing cost. Price variances tell you about purchasing effectiveness. Usage variances tell you about production efficiency. CMAs use these to drive cost reduction and hold the right people accountable."
+        },
+        {
+          "title": "The Two Materials Variances",
+          "type": "text",
+          "content": "**Total Materials Variance:**\n(Actual Quantity \u00d7 Actual Price) - (Standard Quantity \u00d7 Standard Price)\n\n**Broken into two components:**\n\n**Materials Price Variance (MPV):**\nActual Quantity \u00d7 (Actual Price - Standard Price)\n\n**Materials Usage Variance (MUV):**\nStandard Price \u00d7 (Actual Quantity - Standard Quantity*)\n\n*Standard Quantity = Standard qty per unit \u00d7 Actual units produced"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Variance Formulas",
+          "type": "callout",
+          "content": "**\"PUQ\"** - Price Uses actual Quantity:\n\n**Price Variance:** AQ \u00d7 (AP - SP)\n\u2022 Calculated at ACTUAL quantity\n\u2022 Isolates the price effect\n\n**Quantity/Usage Variance:** SP \u00d7 (AQ - SQ)\n\u2022 Calculated at STANDARD price\n\u2022 Isolates the usage effect\n\n**This pattern works for DM, DL, and Variable OH!**"
+        },
+        {
+          "title": "Materials Variance Example",
+          "type": "text",
+          "content": "**Given:**\n\u2022 Standard: 2 lbs per unit @ $5/lb\n\u2022 Actual production: 1,000 units\n\u2022 Actual materials: 2,100 lbs @ $4.80/lb\n\n**Standard Quantity Allowed:**\n1,000 units \u00d7 2 lbs = 2,000 lbs\n\n**Materials Price Variance:**\n2,100 lbs \u00d7 ($4.80 - $5.00) = 2,100 \u00d7 (-$0.20) = **$420 Favorable**\n\n**Materials Usage Variance:**\n$5.00 \u00d7 (2,100 - 2,000) = $5.00 \u00d7 100 = **$500 Unfavorable**\n\n**Total:** $420 F + $500 U = **$80 Unfavorable**"
+        },
+        {
+          "title": "Three-Column Diagram",
+          "type": "table",
+          "headers": [
+            "Actual (AQ \u00d7 AP)",
+            "Actual Qty at Std Price (AQ \u00d7 SP)",
+            "Flexible Budget (SQ \u00d7 SP)"
+          ],
+          "rows": [
+            [
+              "2,100 \u00d7 $4.80",
+              "2,100 \u00d7 $5.00",
+              "2,000 \u00d7 $5.00"
+            ],
+            [
+              "= $10,080",
+              "= $10,500",
+              "= $10,000"
+            ],
+            [
+              "\u2190\u2014 MPV $420 F \u2014\u2192",
+              "\u2190\u2014 MUV $500 U \u2014\u2192",
+              ""
+            ]
+          ]
+        },
+        {
+          "title": "Causes of Materials Variances",
+          "type": "table",
+          "headers": [
+            "Variance",
+            "Possible Causes"
+          ],
+          "rows": [
+            [
+              "Price - Favorable",
+              "Quantity discounts, lower market prices, alternate suppliers, lower quality materials"
+            ],
+            [
+              "Price - Unfavorable",
+              "Rush orders, commodity price increases, supplier issues, higher quality materials"
+            ],
+            [
+              "Usage - Favorable",
+              "Better quality materials, skilled workers, improved processes, lower scrap rates"
+            ],
+            [
+              "Usage - Unfavorable",
+              "Poor quality materials, untrained workers, machine problems, excessive waste"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: When to Calculate MPV",
+          "type": "warning",
+          "content": "**Price variance can be calculated at two points:**\n\n**At Purchase:**\nMPV = Quantity Purchased \u00d7 (AP - SP)\n\u2022 Isolates purchasing responsibility immediately\n\u2022 May differ from quantity used\n\n**At Use:**\nMPV = Quantity Used \u00d7 (AP - SP)\n\u2022 Matches with production reporting\n\u2022 More common in exam problems\n\n**Read carefully whether problem says \"purchased\" or \"used\"!**"
+        },
+        {
+          "title": "Responsibility Assignment",
+          "type": "text",
+          "content": "**Materials Price Variance:**\n\u2022 Purchasing department typically responsible\n\u2022 But consider reasons outside their control:\n  - Rush orders requested by production\n  - Market price changes\n  - Specified vendor requirements\n\n**Materials Usage Variance:**\n\u2022 Production department typically responsible\n\u2022 But consider reasons outside their control:\n  - Low-quality materials (purchasing fault)\n  - Machine breakdowns (maintenance fault)\n  - Design flaws (engineering fault)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "MPV = AQ \u00d7 (AP - SP) measures price efficiency",
+            "MUV = SP \u00d7 (AQ - SQ) measures usage efficiency",
+            "Standard Quantity = Std per unit \u00d7 Actual units produced",
+            "Price variance: purchasing accountability",
+            "Usage variance: production accountability",
+            "Favorable price + Unfavorable usage may indicate quality issue",
+            "Watch for purchase vs. use timing in exam problems"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Materials Variance Application",
+          "knowledgeCheck": {
+            "question": "XYZ Company has the following information for the month of July: Standard cost per unit: 3 lbs of material @ $8/lb; Actual production: 5,000 units; Actual materials purchased and used: 16,000 lbs @ $7.50/lb. What is the Materials Usage Variance?",
+            "options": [
+              "$8,000 Unfavorable",
+              "$8,000 Favorable",
+              "$4,000 Unfavorable",
+              "$4,000 Favorable"
+            ],
+            "correctIndex": 1,
+            "explanation": "The Materials Usage Variance (MUV) is calculated as Standard Price \u00d7 (Actual Quantity - Standard Quantity).  First, calculate the standard quantity allowed: 5,000 units * 3 lbs/unit = 15,000 lbs. Then, calculate the variance: $8/lb * (16,000 lbs - 15,000 lbs) = $8/lb * 1,000 lbs = $8,000. Since the actual quantity used exceeded the standard quantity, the variance is Favorable because the actual price was lower than the standard price.",
+            "hint": "Remember to calculate the standard quantity allowed for the actual production level."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Variance Formulas",
+          "reveal": {
+            "question": "What is the formula for the Materials Price Variance (MPV)?",
+            "answer": "Actual Quantity \u00d7 (Actual Price - Standard Price)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "MPV vs. MUV",
+          "comparison": {
+            "headers": [
+              "Materials Price Variance (MPV)",
+              "Materials Usage Variance (MUV)"
+            ],
+            "rows": [
+              {
+                "label": "Formula",
+                "values": [
+                  "Actual Quantity \u00d7 (Actual Price - Standard Price)",
+                  "Standard Price \u00d7 (Actual Quantity - Standard Quantity)"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Difference between actual and standard price of materials",
+                  "Difference between actual and standard quantity of materials used"
+                ]
+              },
+              {
+                "label": "Responsibility",
+                "values": [
+                  "Purchasing Department",
+                  "Production Department"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-003",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Direct Labor Variances",
+    "description": "Calculate and interpret labor rate and efficiency variances",
+    "order": 27,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Labor rate variance",
+      "Labor efficiency variance",
+      "Labor standards"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Labor is often the most controllable manufacturing cost. Rate variances reveal hiring and scheduling decisions. Efficiency variances show production productivity. CMAs use these to identify training needs and improve labor planning."
+        },
+        {
+          "title": "The Two Labor Variances",
+          "type": "text",
+          "content": "**Total Labor Variance:**\n(Actual Hours \u00d7 Actual Rate) - (Standard Hours \u00d7 Standard Rate)\n\n**Labor Rate Variance (LRV):**\nActual Hours \u00d7 (Actual Rate - Standard Rate)\n\n**Labor Efficiency Variance (LEV):**\nStandard Rate \u00d7 (Actual Hours - Standard Hours*)\n\n*Standard Hours = Standard hours per unit \u00d7 Actual units produced\n\n**Same pattern as materials!** Just substitute:\n\u2022 Hours for Quantity\n\u2022 Rate for Price"
+        },
+        {
+          "title": "Labor Variance Example",
+          "type": "text",
+          "content": "**Given:**\n\u2022 Standard: 0.5 hours per unit @ $20/hour\n\u2022 Actual production: 1,000 units\n\u2022 Actual labor: 480 hours @ $21/hour\n\n**Standard Hours Allowed:**\n1,000 units \u00d7 0.5 hours = 500 hours\n\n**Labor Rate Variance:**\n480 hours \u00d7 ($21 - $20) = 480 \u00d7 $1 = **$480 Unfavorable**\n\n**Labor Efficiency Variance:**\n$20 \u00d7 (480 - 500) = $20 \u00d7 (-20) = **$400 Favorable**\n\n**Total:** $480 U + $400 F = **$80 Unfavorable**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Labor = Materials Pattern",
+          "type": "callout",
+          "content": "**Use the SAME formula structure:**\n\n**Rate (Price) Variance:** AH \u00d7 (AR - SR)\n**Efficiency (Usage) Variance:** SR \u00d7 (AH - SH)\n\n**\"RARE\":**\n**R**ate uses **A**ctual hours\n**E**fficiency uses standard **R**at**E**\n\nThis works for EVERY input variance!"
+        },
+        {
+          "title": "Causes of Labor Variances",
+          "type": "table",
+          "headers": [
+            "Variance",
+            "Possible Causes"
+          ],
+          "rows": [
+            [
+              "Rate - Favorable",
+              "Using lower-skilled workers, temporary workers, wage decreases"
+            ],
+            [
+              "Rate - Unfavorable",
+              "Overtime premium, using higher-skilled workers, union wage increases"
+            ],
+            [
+              "Efficiency - Favorable",
+              "Well-trained workers, improved processes, good supervision, good materials"
+            ],
+            [
+              "Efficiency - Unfavorable",
+              "Inexperienced workers, equipment problems, poor materials, inadequate supervision"
+            ]
+          ]
+        },
+        {
+          "title": "Labor Mix and Yield Variances",
+          "type": "text",
+          "content": "**When multiple labor types are used:**\n\n**Labor Mix Variance:**\nDifference due to changing proportions of labor types\n(Actual Mix - Standard Mix) \u00d7 Standard Rate \u00d7 Total Actual Hours\n\n**Labor Yield Variance:**\nDifference due to total productivity\n(Actual Hours - Standard Hours) \u00d7 Weighted Average Standard Rate\n\n**Example:**\nIf you substitute skilled workers ($25/hr) for unskilled ($15/hr), you'll have:\n\u2022 Unfavorable mix variance (more expensive workers)\n\u2022 Possibly favorable yield variance (more productive)"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Idle Time",
+          "type": "warning",
+          "content": "**Idle time creates an UNFAVORABLE efficiency variance!**\n\nIf workers are paid for 500 hours but only work productively for 480 hours:\n\u2022 20 hours of idle time\n\u2022 Still included in \"Actual Hours\" for efficiency variance\n\n**Some companies report idle time separately:**\nIdle Time Variance = Idle Hours \u00d7 Standard Rate\n\nThis helps identify machine breakdowns, material shortages, etc."
+        },
+        {
+          "title": "Responsibility Assignment",
+          "type": "text",
+          "content": "**Labor Rate Variance:**\n\u2022 HR/Hiring managers (base wage decisions)\n\u2022 Production supervisors (overtime decisions)\n\u2022 Union contracts (may be non-controllable)\n\n**Labor Efficiency Variance:**\n\u2022 Production supervisors (scheduling, training)\n\u2022 But consider external factors:\n  - Poor quality materials slow production\n  - Equipment breakdowns\n  - Unrealistic standards\n  - Learning curve on new products"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "LRV = AH \u00d7 (AR - SR) measures wage rate efficiency",
+            "LEV = SR \u00d7 (AH - SH) measures labor productivity",
+            "Standard Hours = Std per unit \u00d7 Actual units produced",
+            "Same formula pattern as materials variances",
+            "Favorable rate + Unfavorable efficiency may indicate skill mismatch",
+            "Idle time is included in efficiency variance (monitor separately)",
+            "Overtime premium creates unfavorable rate variance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Labor Variance Calculation",
+          "knowledgeCheck": {
+            "question": "A company's standard labor cost is $12 per hour, and each unit should take 2 hours to complete. During the month, 1,000 units were produced using 2,100 labor hours at an actual cost of $26,250. What is the labor efficiency variance?",
+            "options": [
+              "$1,200 Favorable",
+              "$1,200 Unfavorable",
+              "$1,250 Favorable",
+              "$1,250 Unfavorable"
+            ],
+            "correctIndex": 1,
+            "explanation": "The standard hours allowed for production are 1,000 units * 2 hours/unit = 2,000 hours. The labor efficiency variance is calculated as Standard Rate * (Actual Hours - Standard Hours) = $12 * (2,100 - 2,000) = $12 * 100 = $1,200. Since actual hours exceeded standard hours, the variance is Unfavorable.",
+            "hint": "Remember to calculate the standard hours allowed first."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Formula Recall",
+          "reveal": {
+            "question": "What is the formula for the Labor Rate Variance (LRV)?",
+            "answer": "Labor Rate Variance (LRV) = Actual Hours \u00d7 (Actual Rate - Standard Rate)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Labor Rate vs. Labor Efficiency Variance",
+          "comparison": {
+            "headers": [
+              "Labor Rate Variance",
+              "Labor Efficiency Variance"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Difference between actual and standard labor rates",
+                  "Difference between actual and standard labor hours"
+                ]
+              },
+              {
+                "label": "Formula",
+                "values": [
+                  "Actual Hours \u00d7 (Actual Rate - Standard Rate)",
+                  "Standard Rate \u00d7 (Actual Hours - Standard Hours)"
+                ]
+              },
+              {
+                "label": "Potential Causes",
+                "values": [
+                  "Use of different skill levels than planned; overtime pay; changes in labor contracts.",
+                  "Poor training; inefficient equipment; poor supervision; material shortages."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-004",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Overhead Variances",
+    "description": "Calculate variable and fixed overhead variances using two, three, and four-way analysis",
+    "order": 28,
+    "duration": 60,
+    "difficulty": "advanced",
+    "topics": [
+      "Variable overhead variances",
+      "Fixed overhead variances",
+      "Volume variance"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Overhead is the most complex area of variance analysis! Variable overhead behaves like DM/DL. Fixed overhead has unique variances including the production volume variance that measures capacity utilization. Master this for exam success!"
+        },
+        {
+          "title": "Variable Overhead Variances",
+          "type": "text",
+          "content": "**Same pattern as DM and DL:**\n\n**Variable OH Spending Variance:**\nActual Hours \u00d7 (Actual VOH Rate - Standard VOH Rate)\nOR: Actual VOH - (AH \u00d7 Standard VOH Rate)\n\n**Variable OH Efficiency Variance:**\nStandard VOH Rate \u00d7 (Actual Hours - Standard Hours)\n\n**Note:** Variable OH efficiency variance is driven by the same efficiency as labor - if workers are slow, they use more hours and more variable overhead!"
+        },
+        {
+          "title": "Fixed Overhead Variances",
+          "type": "text",
+          "content": "**Fixed OH Budget Variance:**\nActual Fixed OH - Budgeted Fixed OH\n\n**Fixed OH Volume Variance:**\nBudgeted Fixed OH - Applied Fixed OH\nOR: (Budgeted Hours - Standard Hours Allowed) \u00d7 Fixed OH Rate\n\n**The Volume Variance is unique:**\n\u2022 Measures capacity utilization\n\u2022 Favorable if actual production > planned\n\u2022 Unfavorable if actual production < planned\n\u2022 NOT a measure of spending control!"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Fixed OH Volume Variance",
+          "type": "callout",
+          "content": "**\"Spreading the Peanut Butter\"**\n\nFixed costs are like peanut butter - you have a fixed amount to spread.\n\n\u2022 More slices (production) = **thinner spread = Favorable** (absorbed more fixed cost per unit)\n\u2022 Fewer slices = **thicker spread = Unfavorable** (absorbed less, leftover unabsorbed)\n\n**Unfavorable volume variance = Wasted capacity**"
+        },
+        {
+          "title": "Overhead Variance Example",
+          "type": "text",
+          "content": "**Given:**\n\u2022 Budgeted production: 10,000 units\n\u2022 Standard: 0.5 DLH per unit\n\u2022 VOH rate: $6/DLH, FOH rate: $10/DLH\n\u2022 Budgeted FOH: $50,000\n\u2022 Actual: 9,500 units, 4,900 DLH\n\u2022 Actual VOH: $30,000, Actual FOH: $51,000\n\n**Standard Hours Allowed:** 9,500 \u00d7 0.5 = 4,750 hours\n\n**VOH Spending:** $30,000 - (4,900 \u00d7 $6) = $30,000 - $29,400 = **$600 U**\n**VOH Efficiency:** $6 \u00d7 (4,900 - 4,750) = $6 \u00d7 150 = **$900 U**\n\n**FOH Budget:** $51,000 - $50,000 = **$1,000 U**\n**FOH Volume:** $50,000 - (4,750 \u00d7 $10) = $50,000 - $47,500 = **$2,500 U**"
+        },
+        {
+          "title": "Two, Three, and Four-Way Analysis",
+          "type": "table",
+          "headers": [
+            "Analysis",
+            "Variances Reported",
+            "Total"
+          ],
+          "rows": [
+            [
+              "Two-way",
+              "Controllable + Volume",
+              "VOH Spending + VOH Efficiency + FOH Budget = Controllable"
+            ],
+            [
+              "Three-way",
+              "Spending + Efficiency + Volume",
+              "Combines all spending into one"
+            ],
+            [
+              "Four-way",
+              "VOH Spending + VOH Efficiency + FOH Budget + FOH Volume",
+              "Most detailed breakdown"
+            ]
+          ]
+        },
+        {
+          "title": "Total Overhead Variance Summary",
+          "type": "text",
+          "content": "**Four-Way Analysis:**\n```\n  Variable OH Spending Variance     $600 U\n+ Variable OH Efficiency Variance   $900 U\n+ Fixed OH Budget Variance        $1,000 U\n+ Fixed OH Volume Variance        $2,500 U\n= Total Overhead Variance         $5,000 U\n```\n\n**Check:** Actual OH - Applied OH = Total Variance\n($30,000 + $51,000) - (4,750 \u00d7 $16) = $81,000 - $76,000 = $5,000 U \u2713"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Capacity vs. Actual",
+          "type": "warning",
+          "content": "**Watch what the \"budgeted hours\" mean:**\n\n\u2022 **Normal (Practical) Capacity:** Long-run average expected\n  - Used for product costing\n  - FOH rate based on this\n\n\u2022 **Budgeted Capacity:** Planned for this period\n  - May differ from normal capacity\n  - Can have different variance calculations\n\n**Most exam problems use normal capacity for the FOH rate!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Variable OH variances follow same pattern as DM and DL",
+            "VOH Efficiency tied to labor efficiency (same driver)",
+            "FOH Budget Variance = Actual FOH - Budgeted FOH (spending control)",
+            "FOH Volume Variance = Budgeted FOH - Applied FOH (capacity utilization)",
+            "Volume variance: Favorable if produced more than budgeted",
+            "Four-way analysis gives maximum detail",
+            "Total OH Variance = Actual OH - Applied OH (check your work!)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Variable Overhead Spending Variance Calculation",
+          "knowledgeCheck": {
+            "question": "Using the information provided in the example, what is the Variable Overhead Spending Variance?",
+            "options": [
+              "$1,600 Favorable",
+              "$1,600 Unfavorable",
+              "$1,400 Favorable",
+              "$1,400 Unfavorable"
+            ],
+            "correctIndex": 3,
+            "explanation": "The Variable Overhead Spending Variance is calculated as Actual VOH - (Actual Hours \u00d7 Standard VOH Rate). In this case, $30,000 - (4,900 \u00d7 $6) = $30,000 - $29,400 = $600 Unfavorable. Because the actual spending was more than what was expected for the actual hours worked, it is unfavorable.  However, the question is tricky, it requires you to first deduce that the actual VOH rate is $30,000/4,900 = $6.1224. Then ($6.1224-$6)*4900 = $600 unfavorable. The question is designed to be difficult, as the CMA exam will test your skills.",
+            "hint": "Remember the formula: Actual VOH - (Actual Hours \u00d7 Standard VOH Rate)"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Volume Variance Meaning",
+          "reveal": {
+            "question": "Explain what the Fixed Overhead Volume Variance measures.",
+            "answer": "The Fixed Overhead Volume Variance measures the under- or over-utilization of capacity. It arises because fixed overhead is applied to production based on a predetermined rate, and if the actual production level differs from the level used to calculate that rate, a variance will occur. A favorable variance means the company produced more than anticipated, and an unfavorable variance means the company produced less."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Fixed Overhead Budget Variance Analysis",
+          "knowledgeCheck": {
+            "question": "A company budgeted for $80,000 in fixed overhead costs. Actual fixed overhead costs were $78,000. The standard hours allowed for actual production were 15,000, and the budgeted hours were 16,000. Which of the following statements is true?",
+            "options": [
+              "The fixed overhead budget variance is $2,000 unfavorable.",
+              "The fixed overhead budget variance is $2,000 favorable.",
+              "The fixed overhead volume variance is $6,250 favorable.",
+              "The fixed overhead volume variance is $6,250 unfavorable."
+            ],
+            "correctIndex": 1,
+            "explanation": "The fixed overhead budget variance is calculated as Actual Fixed OH - Budgeted Fixed OH. In this case, $78,000 - $80,000 = $2,000 favorable. The volume variance is irrelevant to this question and is calculated as (Budgeted Hours - Standard Hours Allowed) * Fixed OH Rate = (16,000 - 15,000) * ($80,000/16,000) = 1,000 * $5 = $5,000",
+            "hint": "Focus on the definitions of the budget and volume variances."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Variable vs. Fixed Overhead Variances",
+          "comparison": {
+            "headers": [
+              "Variable Overhead",
+              "Fixed Overhead"
+            ],
+            "rows": [
+              {
+                "label": "Spending/Budget Variance Focus",
+                "values": [
+                  "Rate of spending on resources",
+                  "Total amount spent on resources"
+                ]
+              },
+              {
+                "label": "Efficiency/Volume Variance Driver",
+                "values": [
+                  "Efficiency of resource usage (e.g., direct labor hours)",
+                  "Capacity utilization (deviation from planned production volume)"
+                ]
+              },
+              {
+                "label": "Controllability",
+                "values": [
+                  "More controllable by production managers",
+                  "Less controllable in the short-term; influenced by strategic decisions"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-005",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Sales Variances",
+    "description": "Analyze sales price, volume, mix, and quantity variances",
+    "order": 29,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Sales price variance",
+      "Sales volume variance",
+      "Sales mix variance",
+      "Sales quantity variance"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Revenue drives everything! Sales variances help you understand why revenue differed from plan. Was it price? Volume? Product mix? CMAs must isolate these effects to advise on pricing strategy, sales compensation, and product portfolio decisions."
+        },
+        {
+          "title": "Basic Sales Variances",
+          "type": "text",
+          "content": "**Sales Price Variance:**\nActual Units Sold \u00d7 (Actual Price - Budgeted Price)\n\n**Sales Volume Variance:**\nBudgeted Price \u00d7 (Actual Units - Budgeted Units)\nOR: Budgeted CM \u00d7 (Actual Units - Budgeted Units)\n\n**Note:** Volume variance can be calculated using:\n\u2022 Revenue basis (price focus)\n\u2022 Contribution margin basis (profit focus) - preferred!"
+        },
+        {
+          "title": "Sales Variance Example",
+          "type": "text",
+          "content": "**Given:**\n\u2022 Budgeted: 10,000 units @ $50 = $500,000\n\u2022 Actual: 11,000 units @ $48 = $528,000\n\u2022 Budgeted CM per unit: $20\n\n**Sales Price Variance:**\n11,000 \u00d7 ($48 - $50) = 11,000 \u00d7 (-$2) = **$22,000 Unfavorable**\n\n**Sales Volume Variance (CM basis):**\n$20 \u00d7 (11,000 - 10,000) = $20 \u00d7 1,000 = **$20,000 Favorable**\n\n**Net Revenue Variance:** $528,000 - $500,000 = $28,000 F\n(But CM impact is -$22,000 + $20,000 = -$2,000 because of price drop!)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Sales Variance Pattern",
+          "type": "callout",
+          "content": "**Same \"PUQ\" pattern as costs - but REVERSED signs!**\n\n**Price Variance:** AQ \u00d7 (AP - BP)\n\u2022 Higher price = FAVORABLE for revenue\n\n**Quantity Variance:** BP (or CM) \u00d7 (AQ - BQ)\n\u2022 More units = FAVORABLE for revenue\n\n**Remember:** Revenue variances are friendly - higher actual = Favorable!"
+        },
+        {
+          "title": "Sales Mix and Quantity Variances",
+          "type": "text",
+          "content": "**When selling multiple products:**\n\n**Sales Mix Variance:**\n(Actual Mix % - Budgeted Mix %) \u00d7 Actual Total Units \u00d7 Budgeted CM per unit\n\n**Sales Quantity Variance:**\nBudgeted Mix % \u00d7 (Actual Total Units - Budgeted Total Units) \u00d7 Budgeted CM per unit\n\n**Volume = Mix + Quantity**\n\nMix variance: Did we sell the RIGHT products?\nQuantity variance: Did we sell ENOUGH products overall?"
+        },
+        {
+          "title": "Multi-Product Example",
+          "type": "table",
+          "headers": [
+            "Product",
+            "Budget Units",
+            "Budget Mix",
+            "Actual Units",
+            "Actual Mix",
+            "CM/unit"
+          ],
+          "rows": [
+            [
+              "Product A",
+              "6,000",
+              "60%",
+              "5,500",
+              "50%",
+              "$30"
+            ],
+            [
+              "Product B",
+              "4,000",
+              "40%",
+              "5,500",
+              "50%",
+              "$15"
+            ],
+            [
+              "Total",
+              "10,000",
+              "100%",
+              "11,000",
+              "100%",
+              ""
+            ]
+          ]
+        },
+        {
+          "title": "Mix Variance Calculation",
+          "type": "text",
+          "content": "**Product A:**\n(50% - 60%) \u00d7 11,000 \u00d7 $30 = -10% \u00d7 11,000 \u00d7 $30 = **($33,000) U**\n\n**Product B:**\n(50% - 40%) \u00d7 11,000 \u00d7 $15 = +10% \u00d7 11,000 \u00d7 $15 = **$16,500 F**\n\n**Total Mix Variance:** ($33,000) + $16,500 = **($16,500) Unfavorable**\n\n*Interpretation:* Shift toward lower-margin Product B hurt profitability."
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Market Share vs. Market Size",
+          "type": "warning",
+          "content": "**Advanced breakdown of Sales Quantity Variance:**\n\n**Market Size Variance:**\nHow much of quantity change due to market growing/shrinking?\n\n**Market Share Variance:**\nHow much due to gaining/losing share?\n\n**Formula:**\n\u2022 Market Size = Budgeted Share \u00d7 (Actual Market - Budget Market) \u00d7 Budget CM\n\u2022 Market Share = Actual Market \u00d7 (Actual Share - Budget Share) \u00d7 Budget CM\n\n**Share variance is controllable; Size variance often isn't!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sales Price Variance = AQ \u00d7 (AP - BP) - higher price is favorable",
+            "Sales Volume Variance = BPrice/CM \u00d7 (AQ - BQ) - more units is favorable",
+            "Use CM for volume variance to measure profit impact",
+            "Mix Variance: Did product mix shift favorably?",
+            "Quantity Variance: Did total volume increase?",
+            "Volume = Mix + Quantity when detailed breakdown needed",
+            "Market Share vs. Size helps separate controllable from external factors"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Sales Price Variance Practice",
+          "knowledgeCheck": {
+            "question": "A company budgeted to sell 5,000 units at $25 per unit. Actual sales were 4,800 units at $26 per unit. What is the sales price variance?",
+            "options": [
+              "$4,800 Favorable",
+              "$5,000 Unfavorable",
+              "$5,000 Favorable",
+              "$4,800 Unfavorable"
+            ],
+            "correctIndex": 0,
+            "explanation": "The sales price variance is calculated as Actual Units Sold \u00d7 (Actual Price - Budgeted Price).  In this case, 4,800 \u00d7 ($26 - $25) = $4,800. Since the actual price is higher than the budgeted price, the variance is favorable.",
+            "hint": "Remember to multiply the difference in price by the *actual* units sold."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Sales Volume Variance Formula Recall",
+          "reveal": {
+            "question": "Write the formula for Sales Volume Variance using the Contribution Margin (CM) basis.",
+            "answer": "Budgeted CM per unit \u00d7 (Actual Units - Budgeted Units)"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Sales Mix vs. Sales Quantity Variance",
+          "comparison": {
+            "headers": [
+              "Sales Mix Variance",
+              "Sales Quantity Variance"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Impact of changes in the proportion of different products sold.",
+                  "Impact of the difference between total actual units sold and total budgeted units, holding the mix constant."
+                ]
+              },
+              {
+                "label": "Formula",
+                "values": [
+                  "(Actual Mix % - Budgeted Mix %) \u00d7 Actual Total Units \u00d7 Budgeted CM per unit",
+                  "Budgeted Mix % \u00d7 (Actual Total Units - Budgeted Total Units) \u00d7 Budgeted CM per unit"
+                ]
+              },
+              {
+                "label": "Impacted By",
+                "values": [
+                  "Changes in customer preference between products.",
+                  "Overall market demand or company-specific factors affecting total unit sales."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-006",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Responsibility Centers",
+    "description": "Understand cost, revenue, profit, and investment centers",
+    "order": 30,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cost centers",
+      "Revenue centers",
+      "Profit centers",
+      "Investment centers"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Responsibility accounting matches authority with accountability. CMAs design reporting systems that hold managers responsible only for what they control. This is fundamental to performance evaluation and motivation."
+        },
+        {
+          "title": "Types of Responsibility Centers",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Manager Controls",
+            "Evaluated On",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Cost Center",
+              "Costs only",
+              "Cost efficiency, variances",
+              "Manufacturing department"
+            ],
+            [
+              "Revenue Center",
+              "Revenue only",
+              "Sales volume, revenue",
+              "Sales region"
+            ],
+            [
+              "Profit Center",
+              "Revenue AND costs",
+              "Profit margin",
+              "Product line, division"
+            ],
+            [
+              "Investment Center",
+              "Revenue, costs, AND assets",
+              "ROI, Residual Income",
+              "Autonomous business unit"
+            ]
+          ]
+        },
+        {
+          "title": "Cost Centers",
+          "type": "text",
+          "content": "**Definition:**\nOrganizational unit where manager controls COSTS but not revenues or investment.\n\n**Evaluation Metrics:**\n\u2022 Cost variances (vs. standard or budget)\n\u2022 Cost per unit\n\u2022 Efficiency ratios\n\n**Example:**\nFactory production department\n\u2022 Evaluated on: materials, labor, and overhead variances\n\u2022 NOT evaluated on: sales revenue or capital investment\n\n**Key:** Provide resources needed; don't starve cost centers then blame them for quality issues!"
+        },
+        {
+          "title": "Revenue Centers",
+          "type": "text",
+          "content": "**Definition:**\nOrganizational unit where manager controls REVENUES but not the costs of products sold.\n\n**Evaluation Metrics:**\n\u2022 Sales volume (units or dollars)\n\u2022 Sales price variance\n\u2022 Market share\n\u2022 Customer acquisition\n\n**Example:**\nRegional sales office\n\u2022 Evaluated on: sales targets, price maintenance\n\u2022 NOT evaluated on: product costs, gross profit\n\n**Limitation:** May ignore profitability - could push unprofitable sales!"
+        },
+        {
+          "title": "Profit Centers",
+          "type": "text",
+          "content": "**Definition:**\nOrganizational unit where manager controls BOTH revenues AND costs.\n\n**Evaluation Metrics:**\n\u2022 Gross profit\n\u2022 Contribution margin\n\u2022 Operating profit\n\u2022 Profit margin percentage\n\n**Example:**\nProduct line manager\n\u2022 Controls pricing and promotional decisions\n\u2022 Controls some operating costs\n\u2022 NOT responsible for allocated corporate overhead\n\n**Key issue:** Which costs are \"controllable\" vs. allocated?"
+        },
+        {
+          "title": "Investment Centers",
+          "type": "text",
+          "content": "**Definition:**\nProfit center where manager ALSO controls the investment in assets.\n\n**Evaluation Metrics:**\n\u2022 Return on Investment (ROI)\n\u2022 Residual Income (RI)\n\u2022 Economic Value Added (EVA)\n\n**Example:**\nDivision of large corporation\n\u2022 Full P&L responsibility\n\u2022 Controls capital expenditure decisions\n\u2022 May control working capital\n\n**Most comprehensive responsibility level - treated like a mini-company!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: CRPI Hierarchy",
+          "type": "callout",
+          "content": "**\"CRPI\"** - Control increases down the list:\n\n**C**ost Center - Costs only\n**R**evenue Center - Revenue only  \n**P**rofit Center - Revenue AND Costs\n**I**nvestment Center - Revenue, Costs, AND Assets\n\n**Think of expanding circles of control!**"
+        },
+        {
+          "title": "Controllability Principle",
+          "type": "text",
+          "content": "**Core Principle:**\nManagers should be evaluated only on items they can control.\n\n**Practical Challenges:**\n\u2022 Pure controllability is rare (interdependencies exist)\n\u2022 Some costs are \"influenced\" rather than controlled\n\u2022 Time horizon matters (short vs. long-term control)\n\n**Solutions:**\n\u2022 Distinguish controllable from non-controllable in reports\n\u2022 Evaluate on \"influence\" when control is shared\n\u2022 Use separate metrics for performance vs. economic evaluation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cost center: controls costs, evaluated on cost efficiency",
+            "Revenue center: controls revenue, evaluated on sales performance",
+            "Profit center: controls revenue AND costs, evaluated on profit",
+            "Investment center: controls revenue, costs, AND assets (full autonomy)",
+            "Match evaluation metrics to level of control",
+            "Controllability principle: evaluate only on what manager controls",
+            "Consider influence where pure control doesn't exist"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Responsibility Center Identification",
+          "knowledgeCheck": {
+            "question": "Which of the following organizational segments would MOST likely be evaluated as a profit center?",
+            "options": [
+              "A factory's maintenance department.",
+              "A regional sales office responsible for generating revenue in a specific geographic area.",
+              "A product line within a diversified company, where the manager has control over both manufacturing costs and pricing decisions.",
+              "The legal department of a large corporation."
+            ],
+            "correctIndex": 2,
+            "explanation": "A profit center is responsible for both revenues and costs. A product line manager who controls both pricing and manufacturing costs fits this definition. The maintenance department is a cost center, the sales office is a revenue center, and the legal department is typically a cost center.",
+            "hint": "Consider which option has control over BOTH revenues and costs."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Evaluation Metrics Recall",
+          "reveal": {
+            "question": "What are the primary evaluation metrics used to assess the performance of a revenue center?",
+            "answer": "The primary evaluation metrics for a revenue center include: Sales volume (units or dollars), Sales price variance, Market share, and Customer acquisition."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Cost Center vs. Profit Center",
+          "comparison": {
+            "headers": [
+              "Cost Center",
+              "Profit Center"
+            ],
+            "rows": [
+              {
+                "label": "Managerial Control",
+                "values": [
+                  "Controls Costs",
+                  "Controls both Revenues and Costs"
+                ]
+              },
+              {
+                "label": "Key Evaluation Metric",
+                "values": [
+                  "Cost Variances (vs. budget or standard)",
+                  "Operating Profit"
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Factory Production Department",
+                  "Product Line Manager"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Performance Evaluation Metric Selection",
+          "knowledgeCheck": {
+            "question": "Which of the following performance measures would be MOST appropriate for evaluating the manager of a cost center?",
+            "options": [
+              "Return on Investment (ROI)",
+              "Sales Revenue",
+              "Cost per unit of output",
+              "Market Share"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cost centers are evaluated based on their ability to control costs. Cost per unit of output is a direct measure of cost efficiency. ROI is used for Investment Centers. Sales Revenue and Market Share are used for Revenue Centers.",
+            "hint": "Consider what a cost center manager *controls*."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-007",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Return on Investment (ROI)",
+    "description": "Calculate and interpret ROI for investment center performance evaluation",
+    "order": 31,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "ROI",
+      "DuPont analysis",
+      "Asset turnover",
+      "Profit margin"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "ROI is THE classic measure for investment centers! It tells you how efficiently a division uses its assets. CMAs must calculate ROI, decompose it using DuPont analysis, and understand its limitations for driving suboptimal behavior."
+        },
+        {
+          "title": "ROI Formula",
+          "type": "text",
+          "content": "**Basic Formula:**\nROI = Operating Income / Average Operating Assets\n\n**Or expressed as percentage:**\nROI = (Operating Income / Average Operating Assets) \u00d7 100\n\n**Operating Assets include:**\n\u2022 Cash (operating portion)\n\u2022 Receivables\n\u2022 Inventory\n\u2022 Fixed assets (net of depreciation)\n\n**Exclude:** Investments in other divisions, idle assets"
+        },
+        {
+          "title": "DuPont Analysis",
+          "type": "text",
+          "content": "**ROI is the product of two components:**\n\nROI = Profit Margin \u00d7 Asset Turnover\n\n**Where:**\n\u2022 Profit Margin = Operating Income / Sales\n\u2022 Asset Turnover = Sales / Average Operating Assets\n\n**The math:**\n(Income/Sales) \u00d7 (Sales/Assets) = Income/Assets \u2713\n\n**This decomposition shows TWO paths to improve ROI:**\n1. Improve profitability (higher margin)\n2. Improve efficiency (more sales per dollar of assets)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: DuPont ROI",
+          "type": "callout",
+          "content": "**\"PM \u00d7 AT = ROI\"**\n\n**P**rofit **M**argin \u00d7 **A**sset **T**urnover = **ROI**\n\n**Two ways to boost ROI:**\n\u2022 Make MORE per sale (increase margin)\n\u2022 Make FASTER sales (increase turnover)\n\n**Example companies:**\n\u2022 High margin, low turnover: Luxury goods (Rolex)\n\u2022 Low margin, high turnover: Discount retail (Walmart)"
+        },
+        {
+          "title": "ROI Calculation Example",
+          "type": "text",
+          "content": "**Division Data:**\n\u2022 Sales: $5,000,000\n\u2022 Operating Income: $600,000\n\u2022 Beginning Assets: $2,800,000\n\u2022 Ending Assets: $3,200,000\n\n**Calculations:**\nAverage Assets = ($2,800,000 + $3,200,000) / 2 = $3,000,000\n\nProfit Margin = $600,000 / $5,000,000 = 12%\n\nAsset Turnover = $5,000,000 / $3,000,000 = 1.67\u00d7\n\n**ROI = 12% \u00d7 1.67 = 20%**\n\nOr directly: $600,000 / $3,000,000 = 20%"
+        },
+        {
+          "title": "Improving ROI",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Effect",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Increase sales (same assets)",
+              "Higher turnover",
+              "Better marketing, longer hours"
+            ],
+            [
+              "Reduce costs",
+              "Higher margin",
+              "Process improvement, automation"
+            ],
+            [
+              "Reduce assets",
+              "Higher turnover",
+              "Better inventory mgmt, collect AR faster"
+            ],
+            [
+              "Increase prices",
+              "Higher margin",
+              "If demand is inelastic"
+            ],
+            [
+              "Invest in higher-return assets",
+              "Higher margin/turnover",
+              "Replace old equipment"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: ROI Suboptimization",
+          "type": "warning",
+          "content": "**The MAJOR flaw of ROI:**\n\nManagers may REJECT profitable investments if they would lower division ROI!\n\n**Example:**\nDivision ROI: 25%\nNew project ROI: 18%\nCompany's cost of capital: 12%\n\n**Manager's view:** \"18% brings down my 25%\" \u2192 Reject\n**Company's view:** \"18% > 12% cost of capital\" \u2192 Accept!\n\n**Solution:** Use Residual Income instead of ROI!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ROI = Operating Income / Average Operating Assets",
+            "DuPont: ROI = Profit Margin \u00d7 Asset Turnover",
+            "Two paths to improve: increase margin OR increase turnover",
+            "Use average assets for the denominator",
+            "ROI can cause suboptimal decisions (reject good projects)",
+            "High ROI divisions may reject investments above cost of capital",
+            "Consider Residual Income as alternative metric"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ROI and Asset Turnover",
+          "knowledgeCheck": {
+            "question": "Division X has an ROI of 15% and a profit margin of 5%. What is Division X's asset turnover?",
+            "options": [
+              "0.33",
+              "3.00",
+              "75.00",
+              "10.00"
+            ],
+            "correctIndex": 1,
+            "explanation": "ROI = Profit Margin \u00d7 Asset Turnover. Therefore, Asset Turnover = ROI / Profit Margin = 15% / 5% = 3.00.",
+            "hint": "Remember the DuPont Analysis formula: ROI = Profit Margin * Asset Turnover"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Formula",
+          "reveal": {
+            "question": "What is the formula for calculating Profit Margin?",
+            "answer": "Profit Margin = Operating Income / Sales"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Operating Assets",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT typically included in the calculation of average operating assets for ROI purposes?",
+            "options": [
+              "Cash (operating portion)",
+              "Accounts Receivable",
+              "Land held for future sale",
+              "Inventory"
+            ],
+            "correctIndex": 2,
+            "explanation": "Land held for future sale is considered an investment, not an operating asset. Operating assets are those used in the day-to-day operations of the business.",
+            "hint": "Think about which assets are directly involved in generating operating income."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Profit Margin vs. Asset Turnover",
+          "comparison": {
+            "headers": [
+              "Profit Margin",
+              "Asset Turnover"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Operating Income generated for each dollar of sales.",
+                  "Sales generated for each dollar of average operating assets."
+                ]
+              },
+              {
+                "label": "Formula",
+                "values": [
+                  "Operating Income / Sales",
+                  "Sales / Average Operating Assets"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Profitability",
+                  "Efficiency"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-008",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Residual Income and EVA",
+    "description": "Calculate residual income and economic value added for performance evaluation",
+    "order": 32,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Residual income",
+      "EVA",
+      "Capital charge",
+      "WACC"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Residual Income and EVA solve the ROI suboptimization problem! They measure value creation above the cost of capital. CMAs use these to align manager incentives with shareholder value creation."
+        },
+        {
+          "title": "Residual Income (RI)",
+          "type": "text",
+          "content": "**Formula:**\nResidual Income = Operating Income - (Required Return \u00d7 Operating Assets)\n\nOR:\nRI = Operating Income - Capital Charge\n\n**Where:**\nCapital Charge = Required Rate of Return \u00d7 Invested Capital\n\n**Interpretation:**\n\u2022 RI > 0: Division creates value above required return\n\u2022 RI = 0: Division earns exactly required return\n\u2022 RI < 0: Division destroys value"
+        },
+        {
+          "title": "RI vs. ROI Example",
+          "type": "text",
+          "content": "**Division A:**\n\u2022 Operating Income: $300,000\n\u2022 Operating Assets: $2,000,000\n\u2022 Required Return: 12%\n\n**ROI:** $300,000 / $2,000,000 = 15%\n**RI:** $300,000 - (12% \u00d7 $2,000,000) = $300,000 - $240,000 = **$60,000**\n\n**New Investment Opportunity:**\n\u2022 Additional investment: $500,000\n\u2022 Additional income: $75,000\n\u2022 Project ROI: $75,000 / $500,000 = 15%\n\n**Manager using ROI:** Accept (maintains 15%)\n**Manager using RI:** Accept (adds $75,000 - $60,000 = $15,000 to RI)\n\n**Both accept this time...but what if project ROI was 13%?**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: ROI vs. RI Decision",
+          "type": "callout",
+          "content": "**The 13% Project Test:**\n\nDivision ROI: 15%, Required Return: 12%, Project ROI: 13%\n\n**ROI Manager:** \"13% < my 15% \u2192 REJECT!\"\n**RI Manager:** \"13% > 12% cost \u2192 ACCEPT!\"\n\n**RI aligns with shareholder interests:**\nAny project above the cost of capital creates value!\n\n**RI eliminates the suboptimization problem.**"
+        },
+        {
+          "title": "Economic Value Added (EVA)",
+          "type": "text",
+          "content": "**EVA = NOPAT - (WACC \u00d7 Invested Capital)**\n\n**Where:**\n\u2022 NOPAT = Net Operating Profit After Tax\n\u2022 WACC = Weighted Average Cost of Capital\n\u2022 Invested Capital = Total assets - Non-interest-bearing current liabilities\n\n**EVA refinements over basic RI:**\n\u2022 Uses after-tax operating income\n\u2022 Uses WACC instead of arbitrary required return\n\u2022 Adjusts for accounting distortions (R&D, goodwill, etc.)\n\n**Trademark of Stern Stewart & Co.**"
+        },
+        {
+          "title": "EVA Calculation Example",
+          "type": "text",
+          "content": "**Given:**\n\u2022 EBIT: $1,500,000\n\u2022 Tax rate: 25%\n\u2022 Total assets: $8,000,000\n\u2022 Current liabilities (non-interest): $1,200,000\n\u2022 WACC: 10%\n\n**NOPAT:** $1,500,000 \u00d7 (1 - 0.25) = $1,125,000\n\n**Invested Capital:** $8,000,000 - $1,200,000 = $6,800,000\n\n**Capital Charge:** $6,800,000 \u00d7 10% = $680,000\n\n**EVA:** $1,125,000 - $680,000 = **$445,000**\n\n*The division created $445,000 of value above the cost of capital!*"
+        },
+        {
+          "title": "Common EVA Adjustments",
+          "type": "table",
+          "headers": [
+            "Item",
+            "Accounting Treatment",
+            "EVA Adjustment"
+          ],
+          "rows": [
+            [
+              "R&D",
+              "Expensed",
+              "Capitalize and amortize"
+            ],
+            [
+              "Operating leases",
+              "Off-balance sheet (old GAAP)",
+              "Capitalize as debt/asset"
+            ],
+            [
+              "Goodwill amortization",
+              "Reduces income",
+              "Add back (or use cash)"
+            ],
+            [
+              "LIFO reserve",
+              "Understates inventory",
+              "Add to invested capital"
+            ],
+            [
+              "Deferred taxes",
+              "Liability",
+              "May exclude from capital"
+            ]
+          ]
+        },
+        {
+          "title": "Advantages and Disadvantages",
+          "type": "text",
+          "content": "**Advantages of RI/EVA:**\n\u2022 Promotes goal congruence\n\u2022 Accepts all projects above cost of capital\n\u2022 Measures value creation in dollars\n\u2022 Links to shareholder value\n\n**Disadvantages of RI/EVA:**\n\u2022 Absolute measure - hard to compare different-sized divisions\n\u2022 Determining cost of capital can be subjective\n\u2022 Many adjustments needed for \"pure\" EVA\n\u2022 Short-term focus can remain"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "RI = Operating Income - (Required Return \u00d7 Assets)",
+            "RI solves ROI suboptimization - accepts any project above hurdle rate",
+            "EVA = NOPAT - (WACC \u00d7 Invested Capital)",
+            "EVA is RI with after-tax income and WACC",
+            "Positive RI/EVA = value creation; Negative = value destruction",
+            "RI is an absolute measure; compare carefully across sizes",
+            "EVA often requires accounting adjustments for accuracy"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Residual Income Calculation",
+          "knowledgeCheck": {
+            "question": "Division X has operating income of $500,000 and operating assets of $3,000,000. If the required rate of return is 10%, what is Division X's Residual Income?",
+            "options": [
+              "$200,000",
+              "$300,000",
+              "$500,000",
+              "$800,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "Residual Income = Operating Income - (Required Return \u00d7 Operating Assets) = $500,000 - (0.10 \u00d7 $3,000,000) = $500,000 - $300,000 = $200,000",
+            "hint": "Remember to calculate the Capital Charge first."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "EVA Calculation Recall",
+          "reveal": {
+            "question": "What is the formula for Economic Value Added (EVA)?",
+            "answer": "EVA = NOPAT - (WACC \u00d7 Invested Capital), where NOPAT = Net Operating Profit After Tax, WACC = Weighted Average Cost of Capital, and Invested Capital = Total assets - Non-interest-bearing current liabilities."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Residual Income vs. ROI",
+          "comparison": {
+            "headers": [
+              "Residual Income (RI)",
+              "Return on Investment (ROI)"
+            ],
+            "rows": [
+              {
+                "label": "Formula",
+                "values": [
+                  "Operating Income - (Required Return \u00d7 Operating Assets)",
+                  "Operating Income / Operating Assets"
+                ]
+              },
+              {
+                "label": "Measurement Type",
+                "values": [
+                  "Absolute dollar amount",
+                  "Percentage"
+                ]
+              },
+              {
+                "label": "Investment Decision Bias",
+                "values": [
+                  "Encourages investment if RI > 0",
+                  "May discourage investment if ROI decreases even if profitable"
+                ]
+              },
+              {
+                "label": "Capital Charge",
+                "values": [
+                  "Explicitly considers a capital charge",
+                  "Does not explicitly consider a capital charge"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "EVA and WACC",
+          "knowledgeCheck": {
+            "question": "A company has NOPAT of $800,000, Invested Capital of $5,000,000, and a WACC of 8%. What is the company's EVA?",
+            "options": [
+              "$300,000",
+              "$400,000",
+              "$800,000",
+              "$1,200,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "EVA = NOPAT - (WACC \u00d7 Invested Capital) = $800,000 - (0.08 \u00d7 $5,000,000) = $800,000 - $400,000 = $400,000",
+            "hint": "Remember the formula for EVA and calculate each component carefully."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-009",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "The Balanced Scorecard",
+    "description": "Design and implement a balanced scorecard for strategic performance management",
+    "order": 33,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Four perspectives",
+      "Strategy map",
+      "Leading and lagging indicators",
+      "Cause and effect"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Financial measures alone can't tell the whole story! The Balanced Scorecard adds customer, process, and learning perspectives to create a comprehensive view of performance. CMAs design and maintain scorecards that link strategy to operations."
+        },
+        {
+          "title": "The Four Perspectives",
+          "type": "text",
+          "content": "**1. Financial Perspective:**\n\u2022 \"How do we look to shareholders?\"\n\u2022 Revenue growth, profitability, ROI, EVA\n\n**2. Customer Perspective:**\n\u2022 \"How do customers see us?\"\n\u2022 Satisfaction, retention, market share, acquisition\n\n**3. Internal Business Process Perspective:**\n\u2022 \"What must we excel at?\"\n\u2022 Quality, cycle time, productivity, innovation\n\n**4. Learning and Growth Perspective:**\n\u2022 \"How can we continue to improve?\"\n\u2022 Employee skills, technology, culture, knowledge"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: BSC Perspectives",
+          "type": "callout",
+          "content": "**\"FCIL\"** - From bottom to top:\n\n**L**earning & Growth (Foundation) \u2192\n**I**nternal Processes (How we operate) \u2192\n**C**ustomer (Who we serve) \u2192\n**F**inancial (Results we achieve)\n\n**The logic:** Skilled employees \u2192 Better processes \u2192 Happy customers \u2192 Financial results"
+        },
+        {
+          "title": "Strategy Maps",
+          "type": "text",
+          "content": "**Visual representation of cause-and-effect relationships:**\n\n**Example chain:**\n```\nEmployee Training (L&G)\n       \u2193\nFaster Order Processing (Internal)\n       \u2193\nHigher Customer Satisfaction (Customer)\n       \u2193\nIncreased Revenue (Financial)\n```\n\n**Strategy maps:**\n\u2022 Show how objectives link across perspectives\n\u2022 Communicate strategy visually\n\u2022 Identify gaps in strategic logic"
+        },
+        {
+          "title": "Objectives, Measures, Targets, Initiatives",
+          "type": "table",
+          "headers": [
+            "Perspective",
+            "Objective",
+            "Measure",
+            "Target",
+            "Initiative"
+          ],
+          "rows": [
+            [
+              "Financial",
+              "Increase profitability",
+              "Operating margin",
+              "15%",
+              "Cost reduction program"
+            ],
+            [
+              "Customer",
+              "Improve satisfaction",
+              "CSAT score",
+              "90%",
+              "Service training"
+            ],
+            [
+              "Internal",
+              "Reduce defects",
+              "Defect rate",
+              "<1%",
+              "Six Sigma project"
+            ],
+            [
+              "Learning",
+              "Develop skills",
+              "Training hours",
+              "40 hrs/employee",
+              "Online learning platform"
+            ]
+          ]
+        },
+        {
+          "title": "Leading vs. Lagging Indicators",
+          "type": "text",
+          "content": "**Lagging Indicators:**\n\u2022 Outcome measures - what happened\n\u2022 Financial results, customer satisfaction scores\n\u2022 Historical - after the fact\n\u2022 Example: Revenue, profit, customer complaints\n\n**Leading Indicators:**\n\u2022 Performance drivers - predict future outcomes\n\u2022 Process measures, activity measures\n\u2022 Forward-looking\n\u2022 Example: Training hours, on-time delivery, employee engagement\n\n**Balanced Scorecard uses BOTH** - leading indicators in L&G and Internal, lagging in Customer and Financial."
+        },
+        {
+          "title": "Implementation Challenges",
+          "type": "text",
+          "content": "**Common pitfalls:**\n\u2022 Too many measures (keep to 15-25 total)\n\u2022 Measures not linked to strategy\n\u2022 No cause-and-effect validation\n\u2022 Lack of management commitment\n\u2022 Static - not updated as strategy evolves\n\u2022 Measures become ends rather than means\n\n**Success factors:**\n\u2022 Executive sponsorship\n\u2022 Clear strategy first\n\u2022 Employee understanding\n\u2022 Regular review and update\n\u2022 Link to compensation (carefully!)"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: BSC is NOT Just Metrics",
+          "type": "warning",
+          "content": "**The BSC is a STRATEGIC MANAGEMENT SYSTEM, not just a measurement system!**\n\n**Four management processes:**\n1. Translating the vision (clarify strategy)\n2. Communicating and linking (align organization)\n3. Business planning (set targets and initiatives)\n4. Feedback and learning (test and adapt strategy)\n\n**Exam questions may ask about BSC as a management tool, not just metrics!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four perspectives: Financial, Customer, Internal Process, Learning & Growth",
+            "Strategy maps show cause-and-effect across perspectives",
+            "Each objective needs: measure, target, and initiative",
+            "Leading indicators predict; lagging indicators confirm",
+            "L&G drives Internal drives Customer drives Financial",
+            "BSC is a strategic management system, not just a scorecard",
+            "Limit to 15-25 measures linked to strategic objectives"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Balanced Scorecard Perspectives Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following metrics would be MOST closely associated with the Customer perspective of a Balanced Scorecard?",
+            "options": [
+              "Return on Investment (ROI)",
+              "Employee Training Hours",
+              "Customer Satisfaction Rating",
+              "Market Share Growth"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Customer perspective focuses on how customers perceive the organization. Customer Satisfaction Rating directly measures this perception. While Market Share Growth is related to customers, satisfaction rating is a direct measure of customer perception.",
+            "hint": "Think about what directly measures how satisfied customers are with the company's products or services."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Strategy Map Recall",
+          "reveal": {
+            "question": "A strategy map is a visual representation of what?",
+            "answer": "A strategy map is a visual representation of cause-and-effect relationships between objectives across the four perspectives of the balanced scorecard."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Leading vs. Lagging Indicators",
+          "comparison": {
+            "headers": [
+              "Leading Indicator",
+              "Lagging Indicator"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Predicts future performance.",
+                  "Reflects past performance."
+                ]
+              },
+              {
+                "label": "Example (from lesson)",
+                "values": [
+                  "Employee Training (in the example chain)",
+                  "Increased Revenue (in the example chain)"
+                ]
+              },
+              {
+                "label": "Use",
+                "values": [
+                  "Used to drive improvements in future results.",
+                  "Used to evaluate past performance."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying the Cause-and-Effect Relationship",
+          "knowledgeCheck": {
+            "question": "According to the example strategy map chain provided, which perspective is 'Faster Order Processing' directly linked to?",
+            "options": [
+              "Financial",
+              "Customer",
+              "Internal Business Process",
+              "Learning and Growth"
+            ],
+            "correctIndex": 1,
+            "explanation": "In the example, 'Faster Order Processing' leads directly to 'Higher Customer Satisfaction', which is part of the Customer perspective. Thus, 'Faster Order Processing' is directly linked to the Customer perspective.",
+            "hint": "Review the example strategy map provided in the lesson content."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-010",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Transfer Pricing",
+    "description": "Understand transfer pricing methods and their effects on performance evaluation",
+    "order": 34,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Market-based",
+      "Cost-based",
+      "Negotiated",
+      "Goal congruence"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "When divisions trade with each other, the transfer price determines each division's profit! Wrong transfer prices cause suboptimal decisions - divisions may buy externally when internal production is cheaper. CMAs must design transfer pricing systems that align divisional and corporate interests."
+        },
+        {
+          "title": "Transfer Pricing Objectives",
+          "type": "text",
+          "content": "**A good transfer price should:**\n\n1. **Goal Congruence:** Encourage decisions that benefit the whole company\n2. **Performance Evaluation:** Fairly measure each division's contribution\n3. **Autonomy:** Allow division managers to make independent decisions\n4. **Motivation:** Provide incentives for efficiency\n\n**The challenge:** These objectives often conflict!"
+        },
+        {
+          "title": "Transfer Pricing Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Price Set At",
+            "Best When"
+          ],
+          "rows": [
+            [
+              "Market-based",
+              "External market price",
+              "Competitive external market exists"
+            ],
+            [
+              "Cost-based (Variable)",
+              "Variable cost of production",
+              "Excess capacity, no market"
+            ],
+            [
+              "Cost-based (Full)",
+              "Full cost (variable + fixed)",
+              "Simplicity desired"
+            ],
+            [
+              "Cost-plus",
+              "Cost + markup",
+              "Selling division needs profit margin"
+            ],
+            [
+              "Negotiated",
+              "Divisions negotiate",
+              "No clear market, divisions equal power"
+            ],
+            [
+              "Dual pricing",
+              "Different prices for each division",
+              "Can't satisfy both divisions otherwise"
+            ]
+          ]
+        },
+        {
+          "title": "Market-Based Transfer Prices",
+          "type": "text",
+          "content": "**When to use:**\n\u2022 Competitive external market exists\n\u2022 Product is widely available\n\u2022 Buying division could purchase externally\n\n**Advantages:**\n\u2022 Most closely reflects arm's-length transaction\n\u2022 Objective and verifiable\n\u2022 Promotes efficiency (have to compete with market)\n\n**Disadvantages:**\n\u2022 Market may not exist for intermediate goods\n\u2022 Market prices fluctuate\n\u2022 May need adjustments for internal savings (no marketing, etc.)"
+        },
+        {
+          "title": "Cost-Based Transfer Prices",
+          "type": "text",
+          "content": "**Variable Cost:**\n\u2022 No profit for selling division\n\u2022 Encourages buying division to use internally (lowest cost)\n\u2022 Poor for performance evaluation\n\n**Full Cost:**\n\u2022 Includes allocated fixed costs\n\u2022 May cause buying division to seek external sources\n\u2022 Creates \"double marginalization\" problem\n\n**Cost Plus:**\n\u2022 Cost + markup for selling division profit\n\u2022 Common: Full cost + 10%\n\u2022 Can approximate market price\n\u2022 Which costs? Actual vs. Standard? (Use standard to encourage efficiency)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: General Transfer Pricing Rule",
+          "type": "callout",
+          "content": "**Minimum Transfer Price:**\n\nTP \u2265 Variable Cost + Opportunity Cost\n\n**Where:**\n\u2022 Variable Cost = What it costs to produce\n\u2022 Opportunity Cost = Lost contribution from external sales\n\n**If excess capacity:** TP \u2265 Variable Cost (no opportunity cost)\n**If full capacity:** TP \u2265 Variable Cost + CM per unit on external sales"
+        },
+        {
+          "title": "Transfer Pricing Example",
+          "type": "text",
+          "content": "**Selling Division (makes components):**\n\u2022 Variable cost: $30/unit\n\u2022 Fixed cost: $10/unit\n\u2022 External selling price: $50/unit\n\u2022 Capacity: 10,000 units\n\u2022 External demand: 8,000 units\n\n**Buying Division needs:** 3,000 units\n\n**Minimum transfer price:**\n\u2022 For first 2,000 (excess capacity): $30 (no opportunity cost)\n\u2022 For next 1,000 (gives up external): $30 + ($50 - $30) = $50\n\n**General solution:** Negotiate between $30 and $50"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: International Transfer Pricing",
+          "type": "warning",
+          "content": "**Tax implications matter internationally!**\n\n\u2022 Higher transfer price \u2192 More profit in selling division's country\n\u2022 Lower transfer price \u2192 More profit in buying division's country\n\n**If selling division is in HIGH tax country:**\nCompany benefits from LOWER transfer price (shift profit to low-tax country)\n\n**IRS and tax authorities require:**\n\u2022 Arm's-length pricing (what unrelated parties would pay)\n\u2022 Documentation of methodology\n\u2022 Severe penalties for manipulation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Transfer prices affect divisional profits and decision-making",
+            "Market price is best when competitive external market exists",
+            "Minimum TP = Variable Cost + Opportunity Cost",
+            "If excess capacity, opportunity cost is zero",
+            "Cost-based methods may distort decisions",
+            "Negotiated prices work when divisions have equal bargaining power",
+            "International transfer pricing has major tax implications"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Transfer Pricing Objectives Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a primary objective of a well-designed transfer pricing system?",
+            "options": [
+              "Encouraging decisions that benefit the whole company (Goal Congruence)",
+              "Fairly measuring each division's contribution (Performance Evaluation)",
+              "Maximizing the overall tax liability of the corporation",
+              "Allowing division managers to make independent decisions (Autonomy)"
+            ],
+            "correctIndex": 2,
+            "explanation": "While tax implications are considered in transfer pricing, the primary objectives focus on internal efficiency, motivation, and accurate performance measurement. Minimizing tax liability is a separate, albeit related, consideration.",
+            "hint": "Think about the internal workings of the company and what transfer pricing is meant to achieve *within* the organization."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Market-Based vs. Cost-Based Transfer Pricing",
+          "comparison": {
+            "headers": [
+              "Market-Based Transfer Price",
+              "Cost-Based Transfer Price"
+            ],
+            "rows": [
+              {
+                "label": "Primary Advantage",
+                "values": [
+                  "Reflects arm's-length transaction; objective",
+                  "Can be simpler to implement; may be necessary when no market exists"
+                ]
+              },
+              {
+                "label": "Potential Disadvantage",
+                "values": [
+                  "Market may not exist or be imperfect; administrative costs of finding the market price",
+                  "May not provide adequate profit to the selling division; potential for inefficiencies to be passed on"
+                ]
+              },
+              {
+                "label": "Goal Congruence Impact",
+                "values": [
+                  "Generally promotes goal congruence if market is competitive",
+                  "Can distort decisions if cost is not reflective of true value or includes allocated fixed costs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cost-Based Transfer Pricing - Full Cost Implications",
+          "knowledgeCheck": {
+            "question": "Using a transfer price based on full cost (including allocated fixed costs) can lead to which of the following problems?",
+            "options": [
+              "It always guarantees a profit for the selling division.",
+              "It eliminates the need for negotiation between divisions.",
+              "It can result in the buying division seeking external sources, even if the internal cost is lower.",
+              "It ensures optimal resource allocation for the company as a whole."
+            ],
+            "correctIndex": 2,
+            "explanation": "Full cost transfer pricing can make the internal price higher than the external market price because it includes fixed costs and potentially a markup. This can cause the buying division to seek external sources, even if the variable cost of internal production is lower, leading to suboptimal decisions for the company.",
+            "hint": "Consider what happens when fixed costs are allocated and how this might impact the buying division's decision-making process."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-C-011",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Quality Management and Continuous Improvement",
+    "description": "Understand TQM, Six Sigma, cost of quality, and quality as a competitive advantage",
+    "order": 35,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "TQM",
+      "Six Sigma",
+      "Cost of Quality",
+      "Kaizen",
+      "Continuous Improvement"
+    ],
+    "blueprintArea": "CMA1-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Quality costs can represent 15-30% of total revenue! CMAs must quantify these costs, build business cases for quality programs, and track ROI on improvement initiatives. The CMA exam tests your ability to classify quality costs and analyze their trade-offs."
+        },
+        {
+          "title": "Total Quality Management (TQM)",
+          "type": "text",
+          "content": "**TQM is a company-wide philosophy** focused on continuous improvement and customer satisfaction.\n\n**Core Principles:**\n1. **Customer Focus:** Quality is defined by the customer\n2. **Continuous Improvement (Kaizen):** Small, incremental improvements every day\n3. **Employee Empowerment:** Workers closest to the process identify improvements\n4. **Process-Oriented:** Focus on improving processes, not blaming people\n5. **Data-Driven Decisions:** Use statistical tools to identify root causes\n6. **Supplier Partnerships:** Work with suppliers to ensure input quality\n\n**Key Tools:**\n\u2022 **Pareto Analysis:** 80/20 rule \u2014 focus on the vital few causes\n\u2022 **Fishbone (Ishikawa) Diagram:** Identify root causes in categories (Man, Machine, Material, Method, Measurement, Environment)\n\u2022 **Control Charts:** Monitor process stability over time\n\u2022 **Statistical Process Control (SPC):** Detect when a process goes out of control"
+        },
+        {
+          "title": "Six Sigma",
+          "type": "text",
+          "content": "**Six Sigma aims for near-perfect quality:** 3.4 defects per million opportunities.\n\n**DMAIC Framework** (for improving existing processes):\n1. **D**efine \u2014 Identify the problem and customer requirements\n2. **M**easure \u2014 Collect data on current performance\n3. **A**nalyze \u2014 Identify root causes using statistical analysis\n4. **I**mprove \u2014 Implement and verify solutions\n5. **C**ontrol \u2014 Sustain gains with monitoring systems\n\n**DMADV Framework** (for new processes/products):\n1. **D**efine \u2014 Define goals aligned with customer demands\n2. **M**easure \u2014 Identify CTQs (Critical to Quality characteristics)\n3. **A**nalyze \u2014 Develop design alternatives\n4. **D**esign \u2014 Design the optimized process\n5. **V**erify \u2014 Verify design performance\n\n**Sigma Levels:**\n\u2022 1\u03c3 = 690,000 defects/million (31% yield)\n\u2022 3\u03c3 = 66,807 defects/million (93.3% yield)\n\u2022 6\u03c3 = 3.4 defects/million (99.99966% yield)"
+        },
+        {
+          "title": "Cost of Quality (COQ)",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Type",
+            "Examples",
+            "When Incurred"
+          ],
+          "rows": [
+            [
+              "Prevention Costs",
+              "Conformance",
+              "Training, quality planning, process design, preventive maintenance",
+              "Before production"
+            ],
+            [
+              "Appraisal Costs",
+              "Conformance",
+              "Inspection, testing, quality audits, supplier evaluation",
+              "During/after production"
+            ],
+            [
+              "Internal Failure",
+              "Non-conformance",
+              "Scrap, rework, retesting, downtime, yield losses",
+              "Before delivery to customer"
+            ],
+            [
+              "External Failure",
+              "Non-conformance",
+              "Warranty repairs, returns, recalls, lawsuits, lost customers",
+              "After delivery to customer"
+            ]
+          ]
+        },
+        {
+          "title": "COQ Trade-off Analysis",
+          "type": "text",
+          "content": "**The Key Insight:** Investing MORE in prevention and appraisal REDUCES failure costs \u2014 often by a much larger amount.\n\n**Traditional View:**\n\u2022 Total COQ is minimized at some \"optimal\" quality level\n\u2022 There's a point where prevention costs exceed failure cost savings\n\n**Modern View (Robust Quality):**\n\u2022 Total COQ is minimized at zero defects\n\u2022 External failure costs (reputation, lawsuits) are vastly underestimated\n\u2022 Prevention is almost always cheaper than failure\n\n**Example COQ Analysis:**\n\u2022 Prevention costs: $50,000 (training + quality planning)\n\u2022 Appraisal costs: $30,000 (inspection + testing)\n\u2022 Internal failure: $80,000 (rework + scrap)\n\u2022 External failure: $200,000 (warranty + returns + lost sales)\n\u2022 **Total COQ: $360,000** (17% of revenue)\n\u2022 **Solution:** Increase prevention by $25,000 \u2192 Expected reduction in failures: $150,000 \u2192 **Net savings: $125,000**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: PAFE for Cost of Quality",
+          "type": "callout",
+          "content": "**P**revention \u2192 **A**ppraisal \u2192 **F**ailure (Internal) \u2192 **F**ailure (External)\n\n**\"PAy First or Fail Later\"**\n\n\u2022 **Conformance costs** = P + A (costs to PREVENT defects)\n\u2022 **Non-conformance costs** = IF + EF (costs CAUSED BY defects)\n\u2022 Spend more on P \u2192 Less A, IF, EF needed\n\u2022 **External failure is ALWAYS the most expensive** (reputation is priceless)"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Conformance vs Non-Conformance",
+          "type": "warning",
+          "content": "**The exam loves to test classification!**\n\n\u2022 **Quality AUDIT** = Appraisal (not prevention \u2014 you're checking, not preventing)\n\u2022 **Employee training** = Prevention (you're preventing future defects)\n\u2022 **Warranty costs** = External failure (defect reached the customer)\n\u2022 **Scrap** = Internal failure (caught before shipping)\n\u2022 **Supplier certification** = Prevention (preventing bad inputs)\n\u2022 **Field testing** = Appraisal (testing product performance)\n\n**Also watch:** If a question asks about \"costs of conformance\" it means prevention + appraisal. \"Costs of non-conformance\" means internal + external failure."
+        },
+        {
+          "title": "Lean and Continuous Improvement",
+          "type": "text",
+          "content": "**Lean Manufacturing** eliminates waste (muda) in 8 categories:\n1. **D**efects\n2. **O**verproduction\n3. **W**aiting\n4. **N**on-utilized talent\n5. **T**ransportation\n6. **I**nventory\n7. **M**otion\n8. **E**xtra processing\n\n**Kaizen** = Continuous small improvements by all employees\n\u2022 Kaizen events (blitzes): Focused 3-5 day improvement workshops\n\u2022 Suggestion systems: Employee-driven improvement ideas\n\u2022 PDCA Cycle: Plan \u2192 Do \u2192 Check \u2192 Act (Deming Wheel)\n\n**Lean Six Sigma** combines:\n\u2022 Lean (speed, waste elimination) + Six Sigma (quality, variation reduction)\n\u2022 Used by world-class manufacturers and service organizations"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "TQM is customer-focused continuous improvement involving all employees",
+            "Six Sigma targets 3.4 defects per million using DMAIC methodology",
+            "COQ has 4 categories: Prevention, Appraisal, Internal Failure, External Failure",
+            "Conformance costs (P+A) are investments; non-conformance costs (IF+EF) are waste",
+            "Increasing prevention spending typically reduces total COQ",
+            "External failure costs are the most expensive and hardest to recover from",
+            "Lean eliminates 8 types of waste; Kaizen means continuous small improvements",
+            "Lean Six Sigma combines speed (Lean) with quality (Six Sigma)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "TQM Principles: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a core principle of Total Quality Management (TQM)?",
+            "options": [
+              "Customer Focus",
+              "Continuous Improvement (Kaizen)",
+              "Employee Empowerment",
+              "Cost Minimization"
+            ],
+            "correctIndex": 3,
+            "explanation": "While cost is a consideration in any business, it is NOT a core principle of TQM. TQM focuses primarily on customer satisfaction, continuous improvement, and employee involvement to achieve quality and, consequently, long-term profitability.",
+            "hint": "Think about the primary goals of TQM."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "DMAIC Framework: Recall",
+          "reveal": {
+            "question": "What does DMAIC stand for in the Six Sigma framework?",
+            "answer": "DMAIC stands for Define, Measure, Analyze, Improve, and Control. It's a structured problem-solving methodology used to improve existing processes."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cost of Quality Trade-off",
+          "knowledgeCheck": {
+            "question": "According to the modern view of Cost of Quality (COQ), what is the expected relationship between prevention costs and failure costs?",
+            "options": [
+              "Increasing prevention costs always leads to an equal increase in appraisal costs.",
+              "Increasing prevention costs leads to a smaller decrease in failure costs.",
+              "Increasing prevention costs leads to a larger decrease in failure costs.",
+              "Prevention costs and failure costs are unrelated."
+            ],
+            "correctIndex": 2,
+            "explanation": "The modern (robust quality) view suggests that investing more in prevention (and appraisal) will result in a *larger* reduction in failure costs. This is because preventing defects is more efficient than fixing them after they occur.",
+            "hint": "Consider the long-term impact of preventing defects."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "TQM vs. Six Sigma",
+          "comparison": {
+            "headers": [
+              "TQM",
+              "Six Sigma"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Company-wide culture of continuous improvement and customer satisfaction.",
+                  "Achieving near-perfect quality and reducing variation in processes."
+                ]
+              },
+              {
+                "label": "Methodology",
+                "values": [
+                  "Broader approach emphasizing employee involvement and customer focus.",
+                  "Structured DMAIC (or DMADV) methodology with specific tools and techniques."
+                ]
+              },
+              {
+                "label": "Defect Rate",
+                "values": [
+                  "No specific defect rate target.",
+                  "Aims for 3.4 defects per million opportunities."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

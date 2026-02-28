@@ -1,0 +1,2760 @@
+[
+  {
+    "id": "CISA5-001",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Information Security Governance",
+    "description": "Understand security governance structures and management responsibilities",
+    "order": 1,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Security Governance",
+      "Security Management",
+      "Roles and Responsibilities",
+      "Policies"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Security governance ensures security aligns with business objectives. Without proper governance, security becomes either an impediment to business or an afterthought that fails to protect."
+        },
+        {
+          "title": "Security Governance Framework",
+          "type": "text",
+          "content": "**Key Governance Elements:**\n\n**Strategic Direction**\n\u2022 Security strategy aligned with business\n\u2022 Risk appetite definition\n\u2022 Resource allocation\n\u2022 Performance measurement\n\n**Organizational Structure**\n\u2022 Clear roles and responsibilities\n\u2022 Reporting relationships\n\u2022 Accountability framework\n\u2022 Segregation of duties\n\n**Policy Framework**\n\u2022 Security policies\n\u2022 Standards and procedures\n\u2022 Guidelines\n\u2022 Enforcement mechanisms\n\n**Oversight**\n\u2022 Board involvement\n\u2022 Management steering\n\u2022 Audit and assurance\n\u2022 Continuous improvement"
+        },
+        {
+          "title": "Key Security Roles",
+          "type": "table",
+          "headers": [
+            "Role",
+            "Responsibilities",
+            "Reports To"
+          ],
+          "rows": [
+            [
+              "CISO",
+              "Security strategy, program oversight",
+              "CEO/Board"
+            ],
+            [
+              "Security Manager",
+              "Day-to-day security operations",
+              "CISO"
+            ],
+            [
+              "Data Owner",
+              "Classification, access decisions",
+              "Business Unit"
+            ],
+            [
+              "Data Custodian",
+              "Implement controls, protect data",
+              "IT"
+            ],
+            [
+              "Security Analyst",
+              "Monitoring, incident response",
+              "Security Mgr"
+            ]
+          ]
+        },
+        {
+          "title": "Security Policy Hierarchy",
+          "type": "text",
+          "content": "**Policy Documentation Levels:**\n\n**Policies**\n\u2022 High-level statements\n\u2022 Management intent\n\u2022 Mandatory\n\u2022 Reviewed annually\n\n**Standards**\n\u2022 Specific requirements\n\u2022 Measurable criteria\n\u2022 Technology-specific\n\u2022 Mandatory\n\n**Procedures**\n\u2022 Step-by-step instructions\n\u2022 How to implement\n\u2022 Role-specific\n\u2022 Updated frequently\n\n**Guidelines**\n\u2022 Recommendations\n\u2022 Best practices\n\u2022 Optional/advisory\n\u2022 Flexible"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Policy Hierarchy",
+          "type": "callout",
+          "content": "**P-S-P-G:**\n\u2022 **P**olicy = High-level what (mandatory)\n\u2022 **S**tandards = Specific how much (mandatory)\n\u2022 **P**rocedures = Detailed how-to (mandatory)\n\u2022 **G**uidelines = Recommended way (optional)\n\n*Policies are strategic; Procedures are tactical*"
+        },
+        {
+          "title": "Security Metrics",
+          "type": "text",
+          "content": "**Measuring Security Effectiveness:**\n\n**Operational Metrics**\n\u2022 Incidents detected/resolved\n\u2022 Patch compliance percentage\n\u2022 Vulnerability remediation time\n\u2022 Access review completion\n\n**Risk Metrics**\n\u2022 Risk exposure trends\n\u2022 Control effectiveness\n\u2022 Audit findings\n\u2022 Compliance status\n\n**Program Metrics**\n\u2022 Awareness training completion\n\u2022 Policy acknowledgment\n\u2022 Budget utilization\n\u2022 Project delivery\n\n**Reporting:**\n\u2022 Dashboard for executives\n\u2022 Detailed for operations\n\u2022 Trend analysis\n\u2022 Benchmarking"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Security governance aligns security with business objectives",
+            "Structure includes CISO, managers, data owners, custodians",
+            "Policy hierarchy: policies, standards, procedures, guidelines",
+            "Policies and standards are mandatory; guidelines are advisory",
+            "Metrics measure operational effectiveness and risk posture"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Strategic Alignment Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An organization's security strategy should PRIMARILY be aligned with:",
+            "options": [
+              "The latest industry security trends and technologies.",
+              "Compliance requirements outlined by regulatory bodies.",
+              "The organization's overall business objectives and risk appetite.",
+              "The security team's preferred security frameworks and tools."
+            ],
+            "correctIndex": 2,
+            "explanation": "A security strategy that is not aligned with business objectives and risk appetite will likely be ineffective and a waste of resources. While industry trends and compliance are important, they should support the business goals, not dictate them.",
+            "hint": "Think about the ultimate goal of information security from a business perspective."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Policy Documentation Levels",
+          "reveal": {
+            "question": "What are the three levels of policy documentation, in order from most general to most specific?",
+            "answer": "Policies, Standards, and Procedures."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Standards vs. Procedures",
+          "comparison": {
+            "headers": [
+              "Standards",
+              "Procedures"
+            ],
+            "rows": [
+              {
+                "label": "Purpose",
+                "values": [
+                  "Define specific requirements and measurable criteria.",
+                  "Provide step-by-step instructions on how to implement a standard or policy."
+                ]
+              },
+              {
+                "label": "Scope",
+                "values": [
+                  "Often technology-specific and mandatory for compliance.",
+                  "Role-specific and detail the exact steps to be taken."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "All servers must be patched with the latest security updates within 72 hours of release.",
+                  "To patch a server, follow these steps: 1. Download the patch... 2. Test the patch in a non-production environment... 3. Apply the patch to the production server..."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-002",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Data Classification and Protection",
+    "description": "Learn data classification schemes and protection requirements",
+    "order": 2,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Data Classification",
+      "Data Protection",
+      "Information Handling",
+      "DLP"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Not all data is equal. Classification enables appropriate protection - too little protection risks breaches, too much wastes resources. Classification is the foundation of data protection."
+        },
+        {
+          "title": "Classification Schemes",
+          "type": "table",
+          "headers": [
+            "Level",
+            "Commercial",
+            "Government",
+            "Impact"
+          ],
+          "rows": [
+            [
+              "Highest",
+              "Confidential",
+              "Top Secret",
+              "Severe/catastrophic"
+            ],
+            [
+              "High",
+              "Restricted",
+              "Secret",
+              "Serious damage"
+            ],
+            [
+              "Medium",
+              "Internal",
+              "Confidential",
+              "Limited damage"
+            ],
+            [
+              "Low",
+              "Public",
+              "Unclassified",
+              "No damage"
+            ]
+          ]
+        },
+        {
+          "title": "Classification Process",
+          "type": "text",
+          "content": "**Classification Steps:**\n\n**1. Inventory**\n\u2022 Identify data assets\n\u2022 Determine data types\n\u2022 Map data locations\n\u2022 Document data flows\n\n**2. Classify**\n\u2022 Apply classification criteria\n\u2022 Data owner assigns level\n\u2022 Consider regulatory requirements\n\u2022 Document decisions\n\n**3. Label**\n\u2022 Mark documents/files\n\u2022 Metadata tagging\n\u2022 Visual indicators\n\u2022 Automated tools\n\n**4. Handle**\n\u2022 Apply appropriate controls\n\u2022 Storage requirements\n\u2022 Transmission security\n\u2022 Disposal procedures"
+        },
+        {
+          "title": "Classification Criteria",
+          "type": "text",
+          "content": "**How to Determine Classification:**\n\n**Sensitivity Factors:**\n\u2022 Competitive value\n\u2022 Personal information\n\u2022 Legal/regulatory requirements\n\u2022 Contractual obligations\n\n**Impact Assessment:**\n\u2022 Financial impact if disclosed\n\u2022 Reputational damage\n\u2022 Regulatory penalties\n\u2022 Operational disruption\n\n**Examples:**\n\u2022 **Confidential**: Trade secrets, customer PII, financial data\n\u2022 **Internal**: Internal memos, project plans, general business\n\u2022 **Public**: Marketing materials, press releases, public filings"
+        },
+        {
+          "title": "Data Protection Controls",
+          "type": "text",
+          "content": "**Protection by Classification:**\n\n**Confidential Data:**\n\u2022 Encryption at rest and in transit\n\u2022 Strict access control\n\u2022 Audit logging\n\u2022 DLP monitoring\n\u2022 Secure disposal\n\n**Internal Data:**\n\u2022 Access control\n\u2022 Employee only access\n\u2022 Standard encryption\n\u2022 Controlled distribution\n\n**Public Data:**\n\u2022 Integrity controls\n\u2022 Version control\n\u2022 Minimal access restrictions\n\u2022 Standard handling"
+        },
+        {
+          "title": "Data Loss Prevention (DLP)",
+          "type": "text",
+          "content": "**DLP Components:**\n\n**Network DLP**\n\u2022 Monitor network traffic\n\u2022 Email scanning\n\u2022 Web uploads\n\u2022 Protocol inspection\n\n**Endpoint DLP**\n\u2022 USB controls\n\u2022 Print monitoring\n\u2022 Clipboard protection\n\u2022 Application control\n\n**Storage DLP**\n\u2022 File share scanning\n\u2022 Database discovery\n\u2022 Cloud storage\n\u2022 Data at rest\n\n**Actions:**\n\u2022 Alert\n\u2022 Block\n\u2022 Quarantine\n\u2022 Encrypt"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Classification levels: public, internal, restricted, confidential",
+            "Data owner is responsible for classification decisions",
+            "Protection controls increase with classification level",
+            "Classification process: inventory, classify, label, handle",
+            "DLP monitors data at network, endpoint, and storage levels"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Data Classification Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST critical step in ensuring the effectiveness of a data classification program?",
+            "options": [
+              "A. Implementing a Data Loss Prevention (DLP) solution.",
+              "B. Establishing clear and well-defined classification criteria.",
+              "C. Providing comprehensive training to all employees on data handling procedures.",
+              "D. Conducting regular penetration testing to identify vulnerabilities."
+            ],
+            "correctIndex": 1,
+            "explanation": "While all options are important, establishing clear and well-defined classification criteria (B) is the foundational step. Without it, DLP solutions lack context, training is ineffective, and penetration testing results are difficult to interpret in terms of data sensitivity.",
+            "hint": "Think about what must be in place *before* you can effectively implement any of the other controls."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Data Classification Steps",
+          "reveal": {
+            "question": "List the three primary steps in the Data Classification Process in the correct order.",
+            "answer": "1. Inventory: Identify, type, locate, and map data. 2. Classify: Apply criteria, assign level, consider regulations, and document. 3. Label: Mark documents/files accordingly."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Confidential vs. Internal Data Protection",
+          "comparison": {
+            "headers": [
+              "Confidential Data",
+              "Internal Data"
+            ],
+            "rows": [
+              {
+                "label": "Encryption",
+                "values": [
+                  "Encryption at rest and in transit",
+                  "Standard encryption"
+                ]
+              },
+              {
+                "label": "Access Control",
+                "values": [
+                  "Strict access control",
+                  "Employee-only access"
+                ]
+              },
+              {
+                "label": "DLP Monitoring",
+                "values": [
+                  "DLP monitoring",
+                  "Controlled distribution"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Scenario-Based Question",
+          "knowledgeCheck": {
+            "question": "An organization is implementing a data classification program. During the impact assessment phase, they identify a dataset containing customer credit card information. If this data were disclosed, it would result in significant financial penalties and reputational damage. According to the data protection principles discussed, which classification level would be MOST appropriate for this data?",
+            "options": [
+              "A. Public",
+              "B. Internal",
+              "C. Confidential",
+              "D. Restricted"
+            ],
+            "correctIndex": 2,
+            "explanation": "Confidential (C) is the most appropriate classification. The scenario highlights significant financial and reputational impact, aligning with the characteristics of confidential data requiring the highest level of protection. While 'Restricted' might seem appropriate, 'Confidential' is the more commonly used term in data classification frameworks for data with this level of sensitivity.",
+            "hint": "Consider the severity of the impact described in the scenario."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-003",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Access Control Fundamentals",
+    "description": "Master the principles and models of access control",
+    "order": 3,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Access Control",
+      "Authentication",
+      "Authorization",
+      "AAA"
+    ],
+    "blueprintArea": "CISA5-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Access control is the gatekeeper of information security. It ensures only authorized users can access resources they need. Weak access control is a leading cause of breaches."
+        },
+        {
+          "title": "AAA Framework",
+          "type": "text",
+          "content": "**Authentication, Authorization, Accounting:**\n\n**Authentication**\n\u2022 Verifies identity\n\u2022 \"Who are you?\"\n\u2022 Credentials validation\n\u2022 Multi-factor options\n\n**Authorization**\n\u2022 Determines access rights\n\u2022 \"What can you do?\"\n\u2022 Based on policies/rules\n\u2022 After authentication\n\n**Accounting (Auditing)**\n\u2022 Records activities\n\u2022 \"What did you do?\"\n\u2022 Audit trails\n\u2022 Non-repudiation"
+        },
+        {
+          "title": "Authentication Factors",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Category",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Something you know",
+              "Knowledge",
+              "Password, PIN, security questions"
+            ],
+            [
+              "Something you have",
+              "Possession",
+              "Token, smart card, phone"
+            ],
+            [
+              "Something you are",
+              "Inherence",
+              "Fingerprint, retina, voice"
+            ],
+            [
+              "Somewhere you are",
+              "Location",
+              "GPS, IP address, network"
+            ],
+            [
+              "Something you do",
+              "Behavior",
+              "Typing pattern, gait"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: MFA",
+          "type": "callout",
+          "content": "**Multi-Factor Authentication:**\n\nMust be from DIFFERENT categories!\n\n\u2705 Valid MFA: Password + SMS code (know + have)\n\u2705 Valid MFA: Fingerprint + smart card (are + have)\n\u274c NOT MFA: Password + security question (both \"know\")\n\u274c NOT MFA: Two fingerprints (both \"are\")\n\n*Two factors from same category = single-factor*"
+        },
+        {
+          "title": "Access Control Models",
+          "type": "text",
+          "content": "**Access Control Approaches:**\n\n**Discretionary (DAC)**\n\u2022 Owner controls access\n\u2022 Resource owner decides\n\u2022 ACLs common\n\u2022 Flexible but risky\n\n**Mandatory (MAC)**\n\u2022 System enforces access\n\u2022 Labels and clearances\n\u2022 Military/government\n\u2022 Very restrictive\n\n**Role-Based (RBAC)**\n\u2022 Access based on job role\n\u2022 Roles assigned permissions\n\u2022 Users assigned roles\n\u2022 Most common in business\n\n**Attribute-Based (ABAC)**\n\u2022 Access based on attributes\n\u2022 User, resource, environment\n\u2022 Dynamic evaluation\n\u2022 Most flexible"
+        },
+        {
+          "title": "Access Control Principles",
+          "type": "text",
+          "content": "**Key Principles:**\n\n**Least Privilege**\n\u2022 Minimum access needed\n\u2022 Only for required tasks\n\u2022 Reduces attack surface\n\n**Need to Know**\n\u2022 Access only if required\n\u2022 Even if cleared for level\n\u2022 Common with MAC\n\n**Separation of Duties**\n\u2022 Divide critical functions\n\u2022 No single person completes critical task\n\u2022 Fraud prevention\n\n**Defense in Depth**\n\u2022 Multiple control layers\n\u2022 Don't rely on single control\n\u2022 Physical + logical + admin"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "AAA = Authentication (who), Authorization (what), Accounting (audit)",
+            "Auth factors: know, have, are, where, do - MFA requires different categories",
+            "Models: DAC (owner), MAC (labels), RBAC (roles), ABAC (attributes)",
+            "Principles: least privilege, need to know, separation of duties",
+            "RBAC is most common in business environments"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "AAA Framework Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the primary purpose of the 'Accounting' component within the AAA framework?",
+            "options": [
+              "Verifying a user's identity through credentials validation.",
+              "Granting access rights to resources based on pre-defined policies.",
+              "Tracking and logging user activities for auditing and accountability purposes.",
+              "Establishing secure communication channels between users and systems."
+            ],
+            "correctIndex": 2,
+            "explanation": "Accounting, or Auditing, focuses on tracking user activity. This includes logging access attempts, resource utilization, and other relevant events to provide an audit trail for security and compliance purposes. While authentication verifies identity and authorization grants access, accounting records what users do.",
+            "hint": "Think about what an auditor needs to be able to do after an event."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Access Control Model Recall",
+          "reveal": {
+            "question": "Describe the primary difference between Discretionary Access Control (DAC) and Mandatory Access Control (MAC).",
+            "answer": "In DAC, the resource owner controls access to the resource. In MAC, the system enforces access control based on pre-defined labels and clearances, overriding individual user preferences."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Access Control Model Comparison",
+          "comparison": {
+            "headers": [
+              "Discretionary Access Control (DAC)",
+              "Role-Based Access Control (RBAC)"
+            ],
+            "rows": [
+              {
+                "label": "Access Determination",
+                "values": [
+                  "Resource owner determines access.",
+                  "Access is determined by the user's assigned role."
+                ]
+              },
+              {
+                "label": "Flexibility",
+                "values": [
+                  "Highly flexible; individual users can grant or deny access.",
+                  "More structured; access is managed centrally through role assignments."
+                ]
+              },
+              {
+                "label": "Scalability",
+                "values": [
+                  "Can become complex to manage in large environments.",
+                  "Scales well in large organizations with well-defined roles."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-004",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Identity and Access Management",
+    "description": "Understand IAM systems and identity lifecycle management",
+    "order": 4,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "IAM",
+      "Identity Lifecycle",
+      "Provisioning",
+      "Access Review"
+    ],
+    "blueprintArea": "CISA5-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IAM is the backbone of access control. It manages who has access to what throughout their employment lifecycle. Poor IAM leads to excessive access and security gaps."
+        },
+        {
+          "title": "Identity Lifecycle",
+          "type": "text",
+          "content": "**Identity Management Phases:**\n\n**1. Provisioning (Joiner)**\n\u2022 Create identity\n\u2022 Assign initial access\n\u2022 Based on role/position\n\u2022 Approval workflow\n\n**2. Maintenance (Mover)**\n\u2022 Role changes\n\u2022 Access modifications\n\u2022 Department transfers\n\u2022 Project assignments\n\n**3. Deprovisioning (Leaver)**\n\u2022 Disable account\n\u2022 Remove access\n\u2022 Timely execution\n\u2022 Data handoff"
+        },
+        {
+          "title": "IAM Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Function",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Directory Services",
+              "Identity store",
+              "Active Directory, LDAP"
+            ],
+            [
+              "SSO",
+              "Single authentication",
+              "SAML, OAuth, OIDC"
+            ],
+            [
+              "MFA",
+              "Strong authentication",
+              "Tokens, biometrics, push"
+            ],
+            [
+              "PAM",
+              "Privileged access",
+              "CyberArk, BeyondTrust"
+            ],
+            [
+              "IGA",
+              "Governance",
+              "Access certification, provisioning"
+            ]
+          ]
+        },
+        {
+          "title": "Provisioning Controls",
+          "type": "text",
+          "content": "**Provisioning Best Practices:**\n\n**Approval Workflow**\n\u2022 Manager approval\n\u2022 Data owner approval\n\u2022 Documented requests\n\u2022 Audit trail\n\n**Role-Based Provisioning**\n\u2022 Standard access by role\n\u2022 Birthright access\n\u2022 Additional access on request\n\u2022 Exceptions documented\n\n**Automated Provisioning**\n\u2022 Integration with HR systems\n\u2022 Reduces delays\n\u2022 Consistent application\n\u2022 Fewer errors\n\n**Separation of Duties**\n\u2022 Requester \u2260 approver\n\u2022 Conflicts checked\n\u2022 Compensating controls"
+        },
+        {
+          "title": "Access Reviews",
+          "type": "text",
+          "content": "**Access Certification:**\n\n**Why Review:**\n\u2022 Privilege creep\n\u2022 Job changes\n\u2022 Compliance requirements\n\u2022 Audit preparation\n\n**Review Types:**\n\u2022 **User access review**: All user's access\n\u2022 **Resource access review**: All users of a resource\n\u2022 **Privileged access review**: Admin accounts\n\u2022 **Role review**: Role definitions\n\n**Frequency:**\n\u2022 Privileged: Quarterly or more\n\u2022 Standard: At least annually\n\u2022 High-risk: More frequent\n\n**Process:**\n\u2022 Manager/owner reviews\n\u2022 Approve or revoke\n\u2022 Document decisions\n\u2022 Track completion"
+        },
+        {
+          "title": "Privileged Access Management",
+          "type": "text",
+          "content": "**PAM Controls:**\n\n**Credential Management**\n\u2022 Vaulting (secure storage)\n\u2022 Automatic rotation\n\u2022 No shared passwords\n\u2022 Just-in-time access\n\n**Session Management**\n\u2022 Session recording\n\u2022 Keystroke logging\n\u2022 Command filtering\n\u2022 Time limits\n\n**Monitoring**\n\u2022 Real-time monitoring\n\u2022 Alerting on anomalies\n\u2022 Usage reporting\n\u2022 Compliance reporting\n\n**Key Principle:** Privileged accounts are the keys to the kingdom and require extra protection."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Identity lifecycle: provisioning, maintenance, deprovisioning",
+            "IAM components: directory, SSO, MFA, PAM, IGA",
+            "Provisioning requires approval workflow and documentation",
+            "Access reviews combat privilege creep - quarterly for privileged",
+            "PAM protects admin accounts with vaulting, monitoring, session control"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-005",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Logical Access Controls",
+    "description": "Learn about system-level access controls and security mechanisms",
+    "order": 5,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Logical Access",
+      "Operating System Security",
+      "Database Security",
+      "Application Security"
+    ],
+    "blueprintArea": "CISA5-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Logical access controls protect digital resources at the system level. They implement the access policies defined by management through technical mechanisms."
+        },
+        {
+          "title": "Operating System Security",
+          "type": "text",
+          "content": "**OS Access Controls:**\n\n**User Account Management**\n\u2022 Unique user IDs\n\u2022 Strong password policies\n\u2022 Account lockout\n\u2022 Session timeout\n\n**Access Control Lists**\n\u2022 File/folder permissions\n\u2022 Read, write, execute\n\u2022 Owner, group, others\n\u2022 Inheritance\n\n**Security Features**\n\u2022 Kernel protection\n\u2022 Memory protection\n\u2022 Process isolation\n\u2022 Audit logging\n\n**Hardening**\n\u2022 Disable unnecessary services\n\u2022 Apply patches\n\u2022 Remove default accounts\n\u2022 Enable logging"
+        },
+        {
+          "title": "Password Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Typical Setting"
+          ],
+          "rows": [
+            [
+              "Minimum Length",
+              "Resist guessing",
+              "12-14+ characters"
+            ],
+            [
+              "Complexity",
+              "Resist dictionary attack",
+              "Mixed case, numbers, symbols"
+            ],
+            [
+              "Expiration",
+              "Limit exposure",
+              "90 days (or longer with MFA)"
+            ],
+            [
+              "History",
+              "Prevent reuse",
+              "Remember 12-24 passwords"
+            ],
+            [
+              "Lockout",
+              "Resist brute force",
+              "3-5 failed attempts"
+            ]
+          ]
+        },
+        {
+          "title": "Database Security",
+          "type": "text",
+          "content": "**Database Access Controls:**\n\n**Authentication**\n\u2022 Database accounts\n\u2022 Integrated authentication\n\u2022 Strong passwords\n\u2022 No shared accounts\n\n**Authorization**\n\u2022 Object-level permissions\n\u2022 Row-level security\n\u2022 Column-level access\n\u2022 Views for data hiding\n\n**Auditing**\n\u2022 Login/logout\n\u2022 Failed access attempts\n\u2022 Schema changes\n\u2022 Data modifications\n\n**Additional Controls**\n\u2022 Encryption (TDE, column)\n\u2022 Input validation\n\u2022 Stored procedure security\n\u2022 Backup encryption"
+        },
+        {
+          "title": "Application Security Controls",
+          "type": "text",
+          "content": "**Application-Level Access:**\n\n**Authentication**\n\u2022 Application login\n\u2022 Session management\n\u2022 Token handling\n\u2022 SSO integration\n\n**Authorization**\n\u2022 Feature-level access\n\u2022 Data-level access\n\u2022 Role-based controls\n\u2022 Workflow enforcement\n\n**Session Controls**\n\u2022 Session timeout\n\u2022 Secure token generation\n\u2022 Cookie protection\n\u2022 Concurrent session limits\n\n**Input Validation**\n\u2022 Prevent injection\n\u2022 Whitelisting\n\u2022 Encoding output\n\u2022 Parameterized queries"
+        },
+        {
+          "title": "Remote Access Security",
+          "type": "text",
+          "content": "**Remote Access Controls:**\n\n**VPN Security**\n\u2022 Strong authentication (MFA)\n\u2022 Encryption (IPSec, SSL/TLS)\n\u2022 Split vs. full tunneling\n\u2022 Network access control\n\n**Remote Desktop**\n\u2022 MFA required\n\u2022 Jump servers/bastion hosts\n\u2022 Session recording\n\u2022 Limited access\n\n**Cloud Access**\n\u2022 Cloud access security broker (CASB)\n\u2022 Conditional access policies\n\u2022 Device compliance\n\u2022 User and entity behavior analytics (UEBA)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "OS security: accounts, ACLs, security features, hardening",
+            "Password controls: length, complexity, expiration, history, lockout",
+            "Database security: authentication, authorization, auditing, encryption",
+            "Application security: session management, input validation, access control",
+            "Remote access requires MFA, encryption, and monitoring"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Operating System Security",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST effective control for preventing unauthorized access to an operating system by a user whose account has been compromised?",
+            "options": [
+              "Implementing a strong password policy with regular password changes.",
+              "Enabling account lockout after a specified number of failed login attempts.",
+              "Implementing session timeout settings to automatically terminate inactive sessions.",
+              "Requiring multi-factor authentication for all user accounts."
+            ],
+            "correctIndex": 3,
+            "explanation": "Multi-factor authentication (MFA) provides an additional layer of security beyond a password. Even if an attacker compromises a password, they would still need the second factor (e.g., a code from a mobile device) to gain access. While the other options are important security measures, they are less effective against a compromised account than MFA.",
+            "hint": "Think about what adds the most layers of protection."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: Database Security - Authorization",
+          "reveal": {
+            "question": "Explain the difference between object-level permissions and row-level security in database access control.",
+            "answer": "Object-level permissions control access to entire database objects such as tables or views (e.g., granting SELECT access to a table). Row-level security restricts access to specific rows within a table based on user attributes or conditions. For instance, a user might only be able to see records related to their department, even if they have SELECT access to the entire table."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparison: Authentication Methods",
+          "comparison": {
+            "headers": [
+              "Database Authentication",
+              "Application Authentication"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Verifying user identity directly against the database system.",
+                  "Verifying user identity through the application layer, potentially delegating to other identity providers."
+                ]
+              },
+              {
+                "label": "Integration",
+                "values": [
+                  "Tightly integrated with the database engine and its security features.",
+                  "More flexible and can integrate with various authentication mechanisms like SSO or token-based systems."
+                ]
+              },
+              {
+                "label": "Examples",
+                "values": [
+                  "Database accounts with usernames and passwords, Integrated Windows Authentication.",
+                  "Application login forms, OAuth, SAML."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-006",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Network Security Architecture",
+    "description": "Understand network security design principles and technologies",
+    "order": 6,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Network Security",
+      "Firewalls",
+      "IDS/IPS",
+      "Network Segmentation"
+    ],
+    "blueprintArea": "CISA5-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Network security controls the flow of traffic between systems and networks. Defense in depth at the network layer creates multiple barriers for attackers."
+        },
+        {
+          "title": "Firewall Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "OSI Layer"
+          ],
+          "rows": [
+            [
+              "Packet Filter",
+              "IP/port-based filtering",
+              "Layer 3-4"
+            ],
+            [
+              "Stateful",
+              "Track connection state",
+              "Layer 3-4"
+            ],
+            [
+              "Application Proxy",
+              "Full traffic inspection",
+              "Layer 7"
+            ],
+            [
+              "Next-Gen (NGFW)",
+              "App awareness, IPS, identity",
+              "Layer 3-7"
+            ],
+            [
+              "Web Application (WAF)",
+              "HTTP/HTTPS protection",
+              "Layer 7"
+            ]
+          ]
+        },
+        {
+          "title": "Firewall Rules",
+          "type": "text",
+          "content": "**Firewall Rule Best Practices:**\n\n**Rule Structure**\n\u2022 Source address\n\u2022 Destination address\n\u2022 Port/protocol\n\u2022 Action (allow/deny)\n\u2022 Logging\n\n**Rule Order**\n\u2022 Most specific first\n\u2022 Most used near top\n\u2022 Deny rules before allows\n\u2022 Default deny at end\n\n**Maintenance**\n\u2022 Regular rule review\n\u2022 Remove unused rules\n\u2022 Document rule purpose\n\u2022 Change control\n\n**Common Mistakes:**\n\u2022 Overly permissive rules\n\u2022 Any-any rules\n\u2022 Orphaned rules\n\u2022 No default deny"
+        },
+        {
+          "title": "IDS vs. IPS",
+          "type": "text",
+          "content": "**Intrusion Detection/Prevention:**\n\n**IDS (Detection)**\n\u2022 Monitors traffic\n\u2022 Generates alerts\n\u2022 Passive (mirror/tap)\n\u2022 No traffic blocking\n\u2022 Requires human response\n\n**IPS (Prevention)**\n\u2022 Monitors and blocks\n\u2022 Active inline\n\u2022 Real-time prevention\n\u2022 Can cause disruption\n\u2022 Automatic response\n\n**Detection Methods:**\n\u2022 **Signature-based**: Known attack patterns\n\u2022 **Anomaly-based**: Deviation from baseline\n\u2022 **Heuristic**: Behavioral analysis\n\n**Placement:**\n\u2022 Network perimeter\n\u2022 Between zones\n\u2022 Critical segments\n\u2022 Host-based (HIDS/HIPS)"
+        },
+        {
+          "title": "Network Segmentation",
+          "type": "text",
+          "content": "**Segmentation Strategies:**\n\n**VLANs**\n\u2022 Logical separation\n\u2022 Layer 2 partitioning\n\u2022 ACLs between VLANs\n\u2022 Reduces broadcast domain\n\n**Zones**\n\u2022 DMZ for public services\n\u2022 Internal zones\n\u2022 Secure zones for sensitive\n\u2022 Management network\n\n**Microsegmentation**\n\u2022 Granular control\n\u2022 Workload isolation\n\u2022 East-west traffic control\n\u2022 Zero trust approach\n\n**Benefits:**\n\u2022 Contain breaches\n\u2022 Reduce attack surface\n\u2022 Compliance isolation\n\u2022 Traffic visibility"
+        },
+        {
+          "title": "Zero Trust Architecture",
+          "type": "text",
+          "content": "**Zero Trust Principles:**\n\n**Core Concepts:**\n\u2022 \"Never trust, always verify\"\n\u2022 Verify explicitly\n\u2022 Least privilege access\n\u2022 Assume breach\n\n**Key Components:**\n\u2022 Identity verification\n\u2022 Device validation\n\u2022 Continuous authentication\n\u2022 Microsegmentation\n\u2022 Encryption everywhere\n\n**Implementation:**\n\u2022 Identity-based access\n\u2022 Device health checks\n\u2022 Application-level access\n\u2022 No implicit trust\n\u2022 Monitor all traffic\n\n**Benefits:**\n\u2022 Reduced attack surface\n\u2022 Contained breaches\n\u2022 Improved visibility\n\u2022 Flexible architecture"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Firewall types: packet filter, stateful, proxy, NGFW, WAF",
+            "Firewall rules: specific first, default deny last",
+            "IDS detects and alerts; IPS detects and blocks",
+            "Segmentation contains breaches and reduces attack surface",
+            "Zero trust: never trust, always verify, assume breach"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-007",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Cryptography Fundamentals",
+    "description": "Master encryption concepts and cryptographic controls",
+    "order": 7,
+    "duration": 60,
+    "difficulty": "advanced",
+    "topics": [
+      "Cryptography",
+      "Encryption",
+      "Digital Signatures",
+      "PKI"
+    ],
+    "blueprintArea": "CISA5-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Cryptography protects data confidentiality, integrity, and authenticity. It's the foundation of secure communications, data protection, and digital trust."
+        },
+        {
+          "title": "Encryption Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Key Usage",
+            "Speed",
+            "Use Cases"
+          ],
+          "rows": [
+            [
+              "Symmetric",
+              "Same key encrypt/decrypt",
+              "Fast",
+              "Bulk data, file encryption"
+            ],
+            [
+              "Asymmetric",
+              "Public/private key pair",
+              "Slow",
+              "Key exchange, signatures"
+            ],
+            [
+              "Hashing",
+              "No key (one-way)",
+              "Fast",
+              "Integrity, passwords"
+            ]
+          ]
+        },
+        {
+          "title": "Common Algorithms",
+          "type": "text",
+          "content": "**Algorithm Categories:**\n\n**Symmetric (Secret Key)**\n\u2022 AES (128, 192, 256-bit) - Current standard\n\u2022 3DES - Legacy, deprecated\n\u2022 DES - Obsolete, never use\n\u2022 RC4 - Broken, deprecated\n\n**Asymmetric (Public Key)**\n\u2022 RSA - Digital signatures, key exchange\n\u2022 ECC - Efficient, smaller keys\n\u2022 Diffie-Hellman - Key exchange\n\u2022 DSA - Digital signatures\n\n**Hashing**\n\u2022 SHA-256, SHA-3 - Current standards\n\u2022 SHA-1 - Deprecated, avoid\n\u2022 MD5 - Broken, never for security\n\n**\u26a0\ufe0f CISA Tip:** Know which are weak/deprecated!"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Symmetric vs Asymmetric",
+          "type": "callout",
+          "content": "**Symmetric = Same key** (one key, both parties)\n\u2022 Fast for bulk data\n\u2022 Key distribution problem\n\u2022 Examples: AES, 3DES\n\n**Asymmetric = A pair of keys** (public + private)\n\u2022 Slower but solves key distribution\n\u2022 Public encrypts, private decrypts\n\u2022 Examples: RSA, ECC\n\n*Use asymmetric to exchange symmetric keys, then symmetric for data!*"
+        },
+        {
+          "title": "Digital Signatures",
+          "type": "text",
+          "content": "**Digital Signature Process:**\n\n**Signing (Sender)**\n1. Hash the message\n2. Encrypt hash with private key\n3. Attach encrypted hash to message\n4. Send message + signature\n\n**Verification (Receiver)**\n1. Decrypt signature with sender's public key\n2. Hash the received message\n3. Compare hashes\n4. Match = authentic and unchanged\n\n**Provides:**\n\u2022 **Integrity** - Message unchanged\n\u2022 **Authentication** - From claimed sender\n\u2022 **Non-repudiation** - Sender can't deny\n\n**Note:** Does NOT provide confidentiality (use encryption for that)"
+        },
+        {
+          "title": "PKI Components",
+          "type": "text",
+          "content": "**Public Key Infrastructure:**\n\n**Certificate Authority (CA)**\n\u2022 Issues certificates\n\u2022 Validates identity\n\u2022 Maintains CRL\n\u2022 Revokes certificates\n\n**Registration Authority (RA)**\n\u2022 Verifies identity\n\u2022 Forwards to CA\n\u2022 Administrative role\n\n**Certificate**\n\u2022 Public key\n\u2022 Owner identity\n\u2022 CA signature\n\u2022 Validity period\n\n**Trust Model:**\n\u2022 Root CA (self-signed)\n\u2022 Subordinate CAs\n\u2022 End-entity certificates\n\u2022 Certificate chain"
+        },
+        {
+          "title": "Key Management",
+          "type": "text",
+          "content": "**Key Lifecycle:**\n\n**Generation**\n\u2022 Sufficient key length\n\u2022 Secure random generation\n\u2022 Secure environment\n\n**Distribution**\n\u2022 Secure key exchange\n\u2022 Out-of-band verification\n\u2022 Key encryption keys\n\n**Storage**\n\u2022 Hardware security modules (HSM)\n\u2022 Key vaults\n\u2022 Encryption of keys\n\u2022 Access control\n\n**Rotation**\n\u2022 Regular replacement\n\u2022 Crypto-period limits\n\u2022 Automated where possible\n\n**Destruction**\n\u2022 Secure deletion\n\u2022 All copies\n\u2022 Audit trail"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Symmetric = same key (fast); Asymmetric = key pair (solves distribution)",
+            "Current standards: AES (symmetric), RSA/ECC (asymmetric), SHA-256 (hash)",
+            "Digital signatures provide integrity, authentication, non-repudiation",
+            "PKI uses CAs to issue and manage certificates",
+            "Key management covers generation, distribution, storage, rotation, destruction"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cryptography Algorithm Selection",
+          "knowledgeCheck": {
+            "question": "Which of the following symmetric encryption algorithms is MOST appropriate for a new system requiring strong security and long-term viability?",
+            "options": [
+              "DES",
+              "3DES",
+              "AES (256-bit)",
+              "RC4"
+            ],
+            "correctIndex": 2,
+            "explanation": "AES with a 256-bit key is the current standard and provides the strongest security among the options. DES and 3DES are legacy algorithms and are vulnerable to attacks. RC4 is broken and should never be used.",
+            "hint": "Consider the current industry standards and the strength of the key length."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Digital Signature Recall",
+          "reveal": {
+            "question": "What is the FIRST step a sender takes when creating a digital signature for a message?",
+            "answer": "The sender first calculates a hash of the message. This hash acts as a unique fingerprint of the message and is then encrypted with the sender's private key."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Symmetric vs. Asymmetric Encryption",
+          "comparison": {
+            "headers": [
+              "Symmetric Encryption",
+              "Asymmetric Encryption"
+            ],
+            "rows": [
+              {
+                "label": "Key Type",
+                "values": [
+                  "Single secret key",
+                  "Public and private key pair"
+                ]
+              },
+              {
+                "label": "Speed",
+                "values": [
+                  "Faster",
+                  "Slower"
+                ]
+              },
+              {
+                "label": "Key Distribution",
+                "values": [
+                  "Requires secure channel",
+                  "Public key can be openly distributed"
+                ]
+              },
+              {
+                "label": "Use Cases",
+                "values": [
+                  "Data encryption, bulk encryption",
+                  "Key exchange, digital signatures"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-008",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Internet and Web Security",
+    "description": "Understand web application security and internet threats",
+    "order": 8,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Web Security",
+      "Email Security",
+      "Internet Threats",
+      "Secure Protocols"
+    ],
+    "blueprintArea": "CISA5-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The internet is the primary attack vector for most organizations. Web applications and email are the most common entry points for attackers."
+        },
+        {
+          "title": "Common Web Vulnerabilities",
+          "type": "table",
+          "headers": [
+            "Vulnerability",
+            "Description",
+            "Mitigation"
+          ],
+          "rows": [
+            [
+              "SQL Injection",
+              "Malicious SQL in input",
+              "Parameterized queries, validation"
+            ],
+            [
+              "XSS",
+              "Malicious scripts injected",
+              "Output encoding, CSP"
+            ],
+            [
+              "CSRF",
+              "Unauthorized actions",
+              "Anti-CSRF tokens, SameSite cookies"
+            ],
+            [
+              "Broken Auth",
+              "Session/credential flaws",
+              "Strong session mgmt, MFA"
+            ],
+            [
+              "Security Misconfig",
+              "Default/insecure settings",
+              "Hardening, secure defaults"
+            ]
+          ]
+        },
+        {
+          "title": "OWASP Top 10 Overview",
+          "type": "text",
+          "content": "**Key Web Vulnerabilities:**\n\n**Injection**\n\u2022 SQL, OS, LDAP injection\n\u2022 Untrusted data as commands\n\u2022 Parameterized queries prevent\n\n**Broken Authentication**\n\u2022 Weak credentials\n\u2022 Session fixation\n\u2022 Credential stuffing\n\n**Sensitive Data Exposure**\n\u2022 Unencrypted data\n\u2022 Weak crypto\n\u2022 Missing TLS\n\n**XML External Entities (XXE)**\n\u2022 XML parser attacks\n\u2022 File disclosure\n\u2022 Disable external entities\n\n**Broken Access Control**\n\u2022 Missing authorization checks\n\u2022 IDOR (Insecure Direct Object Reference)\n\u2022 Enforce access control server-side"
+        },
+        {
+          "title": "Email Security",
+          "type": "text",
+          "content": "**Email Protection:**\n\n**Spam/Phishing Protection**\n\u2022 Spam filters\n\u2022 Phishing detection\n\u2022 Link analysis\n\u2022 Sandboxing attachments\n\n**Email Authentication**\n\u2022 **SPF** - Sender Policy Framework (authorized senders)\n\u2022 **DKIM** - DomainKeys (email signing)\n\u2022 **DMARC** - Domain-based authentication\n\n**Encryption**\n\u2022 TLS for transport\n\u2022 S/MIME for message encryption\n\u2022 PGP for end-to-end\n\n**DLP Integration**\n\u2022 Content inspection\n\u2022 Sensitive data detection\n\u2022 Policy enforcement"
+        },
+        {
+          "title": "Secure Protocols",
+          "type": "text",
+          "content": "**Protocol Security:**\n\n**Secure Alternatives:**\n\u2022 HTTP \u2192 HTTPS (TLS)\n\u2022 FTP \u2192 SFTP or FTPS\n\u2022 Telnet \u2192 SSH\n\u2022 SMTP \u2192 SMTP with TLS\n\u2022 DNS \u2192 DNS over HTTPS (DoH)\n\n**TLS Best Practices:**\n\u2022 TLS 1.2 minimum (1.3 preferred)\n\u2022 Strong cipher suites\n\u2022 Disable weak algorithms\n\u2022 Certificate validation\n\n**VPN Protocols:**\n\u2022 IPSec - Network layer\n\u2022 SSL/TLS VPN - Application layer\n\u2022 WireGuard - Modern, fast\n\u2022 Deprecated: PPTP (never use)"
+        },
+        {
+          "title": "Web Security Controls",
+          "type": "text",
+          "content": "**Web Protection Mechanisms:**\n\n**WAF (Web Application Firewall)**\n\u2022 HTTP/HTTPS inspection\n\u2022 Attack signature blocking\n\u2022 Virtual patching\n\u2022 Rate limiting\n\n**Secure Headers**\n\u2022 Content-Security-Policy (CSP)\n\u2022 HTTP Strict Transport Security (HSTS)\n\u2022 X-Frame-Options\n\u2022 X-Content-Type-Options\n\n**Bot Protection**\n\u2022 CAPTCHA\n\u2022 Rate limiting\n\u2022 Behavioral analysis\n\u2022 IP reputation\n\n**CDN Security**\n\u2022 DDoS protection\n\u2022 Origin hiding\n\u2022 Edge caching\n\u2022 SSL termination"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "OWASP Top 10: injection, broken auth, XSS, sensitive data exposure, etc.",
+            "Email security: SPF, DKIM, DMARC for authentication; TLS/S/MIME for encryption",
+            "Use secure protocol versions: HTTPS, SFTP, SSH, TLS 1.2+",
+            "WAF provides application-layer protection for web apps",
+            "Security headers (CSP, HSTS) provide browser-enforced protection"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "OWASP Top 10: Injection Vulnerabilities",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST effective method for preventing SQL injection vulnerabilities?",
+            "options": [
+              "Implementing strong password policies for database users.",
+              "Regularly patching the operating system of the database server.",
+              "Using parameterized queries (prepared statements) when interacting with the database.",
+              "Enabling verbose error logging on the database server to identify potential attacks."
+            ],
+            "correctIndex": 2,
+            "explanation": "Parameterized queries (prepared statements) treat user input as data, not as executable code, thus preventing SQL injection attacks. Strong passwords and OS patching are important security measures but do not directly address SQL injection. Verbose error logging can help in identifying attacks after they occur, but does not prevent them.",
+            "hint": "Think about how the database interprets user-supplied input."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Email Authentication Protocols",
+          "reveal": {
+            "question": "Explain the purpose of SPF, DKIM, and DMARC in email security.",
+            "answer": "SPF (Sender Policy Framework) verifies that emails are sent from authorized mail servers for a domain. DKIM (DomainKeys Identified Mail) provides a digital signature to emails, verifying the email's authenticity and integrity. DMARC (Domain-based Message Authentication, Reporting & Conformance) builds on SPF and DKIM to define policies for handling emails that fail authentication checks and provides reporting mechanisms to domain owners."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Secure Protocol Alternatives",
+          "comparison": {
+            "headers": [
+              "Insecure Protocol",
+              "Secure Alternative",
+              "Reason for Upgrade"
+            ],
+            "rows": [
+              {
+                "label": "HTTP",
+                "values": [
+                  "HTTP",
+                  "HTTPS (TLS)",
+                  "HTTP transmits data in plaintext, making it vulnerable to eavesdropping and man-in-the-middle attacks. HTTPS encrypts the communication using TLS."
+                ]
+              },
+              {
+                "label": "FTP",
+                "values": [
+                  "FTP",
+                  "SFTP or FTPS",
+                  "FTP transmits data and credentials in plaintext. SFTP uses SSH for secure file transfer, while FTPS adds TLS encryption to FTP."
+                ]
+              },
+              {
+                "label": "Telnet",
+                "values": [
+                  "Telnet",
+                  "SSH",
+                  "Telnet transmits data in plaintext, including usernames and passwords. SSH encrypts the entire session, preventing eavesdropping."
+                ]
+              },
+              {
+                "label": "SMTP",
+                "values": [
+                  "SMTP",
+                  "SMTP with TLS",
+                  "Standard SMTP sends emails without encryption. SMTP with TLS encrypts the email transmission, protecting sensitive information during transit."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-009",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Physical and Environmental Security",
+    "description": "Learn physical security controls for protecting information assets",
+    "order": 9,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Physical Security",
+      "Environmental Controls",
+      "Access Control",
+      "Surveillance"
+    ],
+    "blueprintArea": "CISA5-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Physical security is the first line of defense. The best cybersecurity is worthless if an attacker can physically access your systems."
+        },
+        {
+          "title": "Physical Security Layers",
+          "type": "table",
+          "headers": [
+            "Layer",
+            "Controls",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "Perimeter",
+              "Fencing, lighting, barriers",
+              "Deter and delay"
+            ],
+            [
+              "Building",
+              "Locks, guards, reception",
+              "Access control"
+            ],
+            [
+              "Floor/Zone",
+              "Badge access, cameras",
+              "Restrict movement"
+            ],
+            [
+              "Room",
+              "Special access, mantrap",
+              "Protect critical areas"
+            ],
+            [
+              "Asset",
+              "Locks, cables, cages",
+              "Protect specific items"
+            ]
+          ]
+        },
+        {
+          "title": "Access Control Methods",
+          "type": "text",
+          "content": "**Physical Access Controls:**\n\n**Mechanical**\n\u2022 Locks and keys\n\u2022 Combination locks\n\u2022 Master key systems\n\n**Electronic**\n\u2022 Badge/card access\n\u2022 PIN codes\n\u2022 Biometric (fingerprint, retina, face)\n\u2022 Smart cards\n\n**Procedural**\n\u2022 Visitor logs\n\u2022 Escort requirements\n\u2022 Sign-in/sign-out\n\u2022 Tailgating prevention\n\n**Mantrap/Airlock**\n\u2022 Two-door system\n\u2022 One open at a time\n\u2022 Forces authentication\n\u2022 Prevents tailgating"
+        },
+        {
+          "title": "Surveillance Systems",
+          "type": "text",
+          "content": "**Surveillance Components:**\n\n**CCTV**\n\u2022 Monitor entry/exit\n\u2022 Record for evidence\n\u2022 Deter behaviors\n\u2022 Integration with access control\n\n**Camera Types**\n\u2022 Fixed vs. PTZ (pan-tilt-zoom)\n\u2022 IP vs. analog\n\u2022 Indoor vs. outdoor\n\u2022 Visible vs. covert\n\n**Recording**\n\u2022 Retention period\n\u2022 Storage requirements\n\u2022 Secure access\n\u2022 Chain of custody\n\n**Monitoring**\n\u2022 Real-time viewing\n\u2022 Motion detection\n\u2022 Analytics\n\u2022 Guard station"
+        },
+        {
+          "title": "Environmental Threats",
+          "type": "text",
+          "content": "**Environmental Risks:**\n\n**Fire**\n\u2022 Detection systems\n\u2022 Suppression (clean agent, water)\n\u2022 Prevention (no combustibles)\n\u2022 Evacuation procedures\n\n**Water**\n\u2022 Flood risk assessment\n\u2022 Water detection sensors\n\u2022 Raised floors\n\u2022 Equipment placement\n\n**Climate**\n\u2022 Temperature control (64-75\u00b0F / 18-24\u00b0C)\n\u2022 Humidity control (40-60%)\n\u2022 HVAC redundancy\n\u2022 Hot/cold aisle containment\n\n**Power**\n\u2022 UPS (short-term)\n\u2022 Generator (long-term)\n\u2022 Surge protection\n\u2022 Redundant feeds"
+        },
+        {
+          "title": "Mobile Device Physical Security",
+          "type": "text",
+          "content": "**Protecting Mobile Assets:**\n\n**Laptops**\n\u2022 Cable locks\n\u2022 Encrypted drives\n\u2022 Asset tracking\n\u2022 Remote wipe capability\n\n**Phones/Tablets**\n\u2022 MDM enrollment\n\u2022 Screen lock required\n\u2022 Encryption\n\u2022 Find/remote wipe\n\n**Media**\n\u2022 Secure storage\n\u2022 Encryption\n\u2022 Proper disposal\n\u2022 Chain of custody\n\n**Travel Security**\n\u2022 Never leave unattended\n\u2022 Hotel safe usage\n\u2022 Customs considerations\n\u2022 VPN usage on public WiFi"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Physical security uses defense in depth with multiple layers",
+            "Access controls: mechanical, electronic, procedural",
+            "Surveillance provides deterrence, detection, and evidence",
+            "Environmental controls: fire, water, climate, power",
+            "Mobile devices need encryption, MDM, and remote wipe"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Access Control Systems",
+          "knowledgeCheck": {
+            "question": "Which of the following access control methods is MOST effective in preventing tailgating in a high-security data center environment?",
+            "options": [
+              "A. Installing CCTV cameras focused on the entrance.",
+              "B. Implementing a mandatory sign-in/sign-out sheet for all personnel.",
+              "C. Deploying turnstiles with biometric authentication.",
+              "D. Requiring all visitors to be escorted by authorized employees."
+            ],
+            "correctIndex": 2,
+            "explanation": "Turnstiles with biometric authentication provide the strongest deterrent against tailgating. They physically prevent more than one person from entering at a time and verify identity before granting access. While the other options are helpful, they are less effective at physically preventing tailgating.",
+            "hint": "Consider the physical limitations of each method in preventing multiple individuals from entering on a single authentication."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: Environmental Risks",
+          "reveal": {
+            "question": "What is the generally recommended temperature range (in both Fahrenheit and Celsius) for optimal environmental control in a data center?",
+            "answer": "The recommended temperature range is 64-75\u00b0F (18-24\u00b0C). This range helps prevent equipment overheating and ensures stable operation."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Key Differences: Camera Types",
+          "comparison": {
+            "headers": [
+              "Fixed Camera",
+              "PTZ (Pan-Tilt-Zoom) Camera"
+            ],
+            "rows": [
+              {
+                "label": "Coverage Area",
+                "values": [
+                  "Limited to a fixed view",
+                  "Wide area coverage, remotely adjustable"
+                ]
+              },
+              {
+                "label": "Flexibility",
+                "values": [
+                  "Static, no remote adjustment",
+                  "Dynamic, can be remotely controlled to pan, tilt, and zoom"
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "Generally less expensive",
+                  "Generally more expensive"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Fire Suppression",
+          "knowledgeCheck": {
+            "question": "Which of the following fire suppression systems is MOST suitable for a server room containing sensitive electronic equipment?",
+            "options": [
+              "A. Water sprinkler system",
+              "B. Dry chemical extinguisher",
+              "C. Clean agent suppression system",
+              "D. Carbon dioxide (CO2) flooding system"
+            ],
+            "correctIndex": 2,
+            "explanation": "Clean agent suppression systems are designed to extinguish fires without damaging electronic equipment. They are non-conductive and leave no residue, unlike water or dry chemical extinguishers. While CO2 is also non-damaging, it presents an asphyxiation risk to personnel.",
+            "hint": "Consider the potential damage to electronic equipment when choosing a fire suppression system."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-010",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Security Awareness and Training",
+    "description": "Understand security awareness program design and delivery",
+    "order": 10,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Security Awareness",
+      "Training Programs",
+      "Social Engineering",
+      "Culture"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "People are often the weakest link in security. Awareness training transforms employees from security liabilities into security assets. Technical controls alone cannot stop social engineering."
+        },
+        {
+          "title": "Awareness vs. Training",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Awareness",
+            "Training"
+          ],
+          "rows": [
+            [
+              "Goal",
+              "Understand importance",
+              "Build skills"
+            ],
+            [
+              "Audience",
+              "All employees",
+              "Specific roles"
+            ],
+            [
+              "Depth",
+              "General concepts",
+              "Detailed procedures"
+            ],
+            [
+              "Method",
+              "Posters, emails, videos",
+              "Hands-on, courses"
+            ],
+            [
+              "Outcome",
+              "Behavior change",
+              "Task performance"
+            ]
+          ]
+        },
+        {
+          "title": "Awareness Program Elements",
+          "type": "text",
+          "content": "**Effective Awareness Programs:**\n\n**Content Topics:**\n\u2022 Password security\n\u2022 Phishing recognition\n\u2022 Data handling\n\u2022 Physical security\n\u2022 Reporting procedures\n\u2022 Social media risks\n\n**Delivery Methods:**\n\u2022 Online modules\n\u2022 Live presentations\n\u2022 Newsletters/emails\n\u2022 Posters and screensavers\n\u2022 Gamification\n\u2022 Phishing simulations\n\n**Measurement:**\n\u2022 Completion rates\n\u2022 Assessment scores\n\u2022 Phishing test results\n\u2022 Incident trends\n\u2022 Reported suspicious activity"
+        },
+        {
+          "title": "Social Engineering Threats",
+          "type": "text",
+          "content": "**Social Engineering Techniques:**\n\n**Phishing**\n\u2022 Email-based deception\n\u2022 Fake login pages\n\u2022 Malicious attachments\n\u2022 Urgent calls to action\n\n**Spear Phishing**\n\u2022 Targeted at individuals\n\u2022 Personalized content\n\u2022 Higher success rate\n\u2022 Research-based\n\n**Vishing**\n\u2022 Voice phishing\n\u2022 Phone-based attacks\n\u2022 Impersonation\n\u2022 Urgency tactics\n\n**Pretexting**\n\u2022 Fabricated scenario\n\u2022 Builds trust over time\n\u2022 Information gathering\n\u2022 Authority impersonation\n\n**Baiting**\n\u2022 Enticing offers\n\u2022 Infected USB drives\n\u2022 Malicious downloads"
+        },
+        {
+          "title": "Building Security Culture",
+          "type": "text",
+          "content": "**Culture Components:**\n\n**Leadership**\n\u2022 Executive sponsorship\n\u2022 Visible commitment\n\u2022 Budget allocation\n\u2022 Tone from top\n\n**Communication**\n\u2022 Regular messaging\n\u2022 Clear expectations\n\u2022 Open reporting\n\u2022 No blame culture\n\n**Reinforcement**\n\u2022 Recognition programs\n\u2022 Positive feedback\n\u2022 Consistent enforcement\n\u2022 Continuous improvement\n\n**Integration**\n\u2022 Part of onboarding\n\u2022 Ongoing refresher\n\u2022 Performance objectives\n\u2022 Business alignment"
+        },
+        {
+          "title": "Training for Technical Roles",
+          "type": "text",
+          "content": "**Role-Specific Training:**\n\n**Developers**\n\u2022 Secure coding practices\n\u2022 OWASP Top 10\n\u2022 Security testing\n\u2022 Code review\n\n**System Administrators**\n\u2022 Hardening procedures\n\u2022 Patch management\n\u2022 Incident response\n\u2022 Monitoring\n\n**Help Desk**\n\u2022 Social engineering recognition\n\u2022 Verification procedures\n\u2022 Escalation protocols\n\u2022 Documentation\n\n**Executives**\n\u2022 Risk management\n\u2022 Compliance requirements\n\u2022 Incident handling\n\u2022 Business email compromise"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Awareness builds understanding; training builds skills",
+            "Effective programs use multiple delivery methods",
+            "Social engineering attacks people, not technology",
+            "Security culture requires leadership commitment",
+            "Role-specific training addresses unique risks per job function"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Social Engineering Tactics",
+          "knowledgeCheck": {
+            "question": "Which of the following social engineering techniques is MOST likely to involve personalized content and extensive prior research on the target?",
+            "options": [
+              "Phishing",
+              "Spear Phishing",
+              "Vishing",
+              "Smishing"
+            ],
+            "correctIndex": 1,
+            "explanation": "Spear phishing is a targeted attack that relies on personalized content and research to increase its success rate. Phishing is more generic, while vishing uses voice communication, and smishing uses SMS.",
+            "hint": "Consider which technique requires the attacker to know specific details about the victim."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Phishing vs. Spear Phishing",
+          "comparison": {
+            "headers": [
+              "Phishing",
+              "Spear Phishing"
+            ],
+            "rows": [
+              {
+                "label": "Target",
+                "values": [
+                  "Broad audience",
+                  "Specific individuals"
+                ]
+              },
+              {
+                "label": "Content",
+                "values": [
+                  "Generic and mass-produced",
+                  "Personalized and tailored"
+                ]
+              },
+              {
+                "label": "Research Required",
+                "values": [
+                  "Minimal",
+                  "Extensive"
+                ]
+              },
+              {
+                "label": "Success Rate",
+                "values": [
+                  "Lower",
+                  "Higher"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Building Security Culture",
+          "reveal": {
+            "question": "List three key components of building a strong security culture within an organization.",
+            "answer": "Leadership: Executive sponsorship, visible commitment, budget allocation, tone from the top. Communication: Regular messaging, clear expectations, open reporting, no-blame culture. Reinforcement: Recognition programs, positive feedback, consistent enforcement."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-011",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Malware and Endpoint Security",
+    "description": "Understand malware types and endpoint protection strategies",
+    "order": 11,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Malware",
+      "Antivirus",
+      "Endpoint Protection",
+      "EDR"
+    ],
+    "blueprintArea": "CISA5-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Malware is a primary attack vector. Endpoints are where users work and where data lives. Protecting endpoints is essential for overall security."
+        },
+        {
+          "title": "Malware Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Behavior",
+            "Propagation"
+          ],
+          "rows": [
+            [
+              "Virus",
+              "Infects files, requires host",
+              "User action, files"
+            ],
+            [
+              "Worm",
+              "Self-replicates",
+              "Network, no user action"
+            ],
+            [
+              "Trojan",
+              "Disguised as legitimate",
+              "Social engineering"
+            ],
+            [
+              "Ransomware",
+              "Encrypts data, demands ransom",
+              "Email, exploits"
+            ],
+            [
+              "Spyware",
+              "Collects information",
+              "Bundled software"
+            ],
+            [
+              "Rootkit",
+              "Hides presence, deep access",
+              "Exploits, trojans"
+            ]
+          ]
+        },
+        {
+          "title": "Malware Behavior",
+          "type": "text",
+          "content": "**How Malware Works:**\n\n**Initial Access**\n\u2022 Phishing emails\n\u2022 Malicious downloads\n\u2022 Infected USB drives\n\u2022 Exploit kits\n\n**Execution**\n\u2022 User runs file\n\u2022 Exploit vulnerability\n\u2022 Script execution\n\u2022 Macro activation\n\n**Persistence**\n\u2022 Registry modifications\n\u2022 Scheduled tasks\n\u2022 Startup programs\n\u2022 Boot sector infection\n\n**Actions**\n\u2022 Data theft\n\u2022 Encryption (ransomware)\n\u2022 Botnet enrollment\n\u2022 Lateral movement\n\u2022 Cryptocurrency mining"
+        },
+        {
+          "title": "Antivirus Approaches",
+          "type": "text",
+          "content": "**Detection Methods:**\n\n**Signature-Based**\n\u2022 Known malware patterns\n\u2022 Fast detection\n\u2022 Requires updates\n\u2022 Misses zero-day\n\n**Heuristic**\n\u2022 Detect suspicious behavior\n\u2022 Catches variants\n\u2022 False positives possible\n\u2022 More resource intensive\n\n**Behavioral**\n\u2022 Monitors execution\n\u2022 Detects actual malice\n\u2022 Real-time protection\n\u2022 Can stop unknown threats\n\n**Machine Learning**\n\u2022 Pattern recognition\n\u2022 Adapts over time\n\u2022 Reduces false positives\n\u2022 Cloud-powered"
+        },
+        {
+          "title": "Endpoint Detection and Response (EDR)",
+          "type": "text",
+          "content": "**EDR Capabilities:**\n\n**Detection**\n\u2022 Real-time monitoring\n\u2022 Behavioral analysis\n\u2022 Threat correlation\n\u2022 Indicator matching\n\n**Response**\n\u2022 Isolate endpoint\n\u2022 Terminate processes\n\u2022 Quarantine files\n\u2022 Collect forensic data\n\n**Investigation**\n\u2022 Process trees\n\u2022 Timeline analysis\n\u2022 Network connections\n\u2022 File modifications\n\n**Hunting**\n\u2022 Proactive threat search\n\u2022 IOC queries\n\u2022 Pattern analysis\n\u2022 Historical data search"
+        },
+        {
+          "title": "Endpoint Protection Best Practices",
+          "type": "text",
+          "content": "**Endpoint Security Controls:**\n\n**Prevention**\n\u2022 Updated antivirus/EDR\n\u2022 Application whitelisting\n\u2022 Least privilege\n\u2022 Host-based firewall\n\n**Detection**\n\u2022 Real-time monitoring\n\u2022 Behavioral analytics\n\u2022 Log collection\n\u2022 Alerting\n\n**Response**\n\u2022 Incident response plan\n\u2022 Isolation capability\n\u2022 Remediation procedures\n\u2022 Evidence collection\n\n**Maintenance**\n\u2022 Patch management\n\u2022 Configuration hardening\n\u2022 Regular scanning\n\u2022 Policy updates"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Malware types: virus, worm, trojan, ransomware, spyware, rootkit",
+            "AV methods: signature, heuristic, behavioral, machine learning",
+            "EDR adds detection, response, and investigation capabilities",
+            "Defense in depth: prevention, detection, response, maintenance",
+            "Behavioral detection catches unknown (zero-day) threats"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Malware Initial Access Scenarios",
+          "knowledgeCheck": {
+            "question": "Which of the following initial access methods for malware is MOST likely to bypass traditional signature-based antivirus solutions?",
+            "options": [
+              "A user downloading and executing a file from a well-known, blacklisted domain.",
+              "A phishing email containing a macro-enabled document targeting a zero-day vulnerability.",
+              "An infected USB drive containing a common virus signature already present in the antivirus database.",
+              "A malicious download from a website known to distribute malware, detected by a URL filter."
+            ],
+            "correctIndex": 1,
+            "explanation": "A zero-day vulnerability, by definition, is unknown to security vendors and therefore not covered by signature-based detection. The other options involve known threats that are likely to be detected by traditional methods.",
+            "hint": "Think about what makes a method 'new' or 'unknown' to security systems."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Endpoint Detection and Response (EDR) Capabilities",
+          "reveal": {
+            "question": "List three key capabilities of an EDR system.",
+            "answer": "1. Real-time Monitoring: Continuously observing endpoint activity for suspicious behavior.\n2. Threat Response: Providing tools to isolate endpoints, terminate malicious processes, and quarantine files.\n3. Investigation: Offering features like process trees and timeline analysis to understand the scope and impact of an incident."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Antivirus Detection Methods",
+          "comparison": {
+            "headers": [
+              "Signature-Based",
+              "Heuristic",
+              "Behavioral"
+            ],
+            "rows": [
+              {
+                "label": "Detection Basis",
+                "values": [
+                  "Known malware signatures",
+                  "Suspicious code patterns and structure",
+                  "Actions and impact of running code"
+                ]
+              },
+              {
+                "label": "Zero-Day Detection",
+                "values": [
+                  "Poor",
+                  "Moderate",
+                  "Good"
+                ]
+              },
+              {
+                "label": "Resource Usage",
+                "values": [
+                  "Low",
+                  "Moderate",
+                  "High"
+                ]
+              },
+              {
+                "label": "False Positives",
+                "values": [
+                  "Low",
+                  "Moderate",
+                  "Moderate to High"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-012",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Security Monitoring and Logging",
+    "description": "Master security event management and monitoring practices",
+    "order": 12,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "SIEM",
+      "Log Management",
+      "Security Monitoring",
+      "Threat Detection"
+    ],
+    "blueprintArea": "CISA5-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "You can't protect what you can't see. Security monitoring provides visibility into threats and attacks. Effective logging is essential for detection and forensics."
+        },
+        {
+          "title": "Log Management",
+          "type": "text",
+          "content": "**Log Management Process:**\n\n**Collection**\n\u2022 Identify log sources\n\u2022 Configure logging\n\u2022 Secure transport\n\u2022 Normalize format\n\n**Storage**\n\u2022 Centralized repository\n\u2022 Secure storage\n\u2022 Retention policies\n\u2022 Archive management\n\n**Protection**\n\u2022 Integrity verification\n\u2022 Access controls\n\u2022 Encryption\n\u2022 Tampering prevention\n\n**Analysis**\n\u2022 Search and query\n\u2022 Correlation\n\u2022 Alerting\n\u2022 Reporting"
+        },
+        {
+          "title": "Key Log Sources",
+          "type": "table",
+          "headers": [
+            "Source",
+            "Key Events",
+            "Importance"
+          ],
+          "rows": [
+            [
+              "OS/Server",
+              "Logins, process, changes",
+              "System security"
+            ],
+            [
+              "Network",
+              "Connections, flows, drops",
+              "Traffic analysis"
+            ],
+            [
+              "Application",
+              "Transactions, errors",
+              "Business context"
+            ],
+            [
+              "Security",
+              "AV, IDS, firewall",
+              "Threat detection"
+            ],
+            [
+              "Database",
+              "Access, queries, changes",
+              "Data protection"
+            ]
+          ]
+        },
+        {
+          "title": "SIEM Overview",
+          "type": "text",
+          "content": "**Security Information and Event Management:**\n\n**Core Functions:**\n\u2022 Log aggregation\n\u2022 Event correlation\n\u2022 Alerting\n\u2022 Dashboards\n\u2022 Reporting\n\u2022 Incident workflow\n\n**Correlation Use Cases:**\n\u2022 Brute force detection\n\u2022 Privilege escalation\n\u2022 Lateral movement\n\u2022 Data exfiltration\n\u2022 Compliance monitoring\n\n**Benefits:**\n\u2022 Centralized visibility\n\u2022 Real-time detection\n\u2022 Historical analysis\n\u2022 Compliance reporting\n\u2022 Incident investigation"
+        },
+        {
+          "title": "Monitoring Best Practices",
+          "type": "text",
+          "content": "**Effective Monitoring:**\n\n**What to Monitor:**\n\u2022 Authentication events\n\u2022 Privileged activity\n\u2022 Changes to security settings\n\u2022 Network anomalies\n\u2022 Data access patterns\n\n**Alert Management:**\n\u2022 Tune to reduce false positives\n\u2022 Prioritize by risk\n\u2022 Define response procedures\n\u2022 Escalation paths\n\n**Operations:**\n\u2022 24/7 coverage for critical\n\u2022 Defined SLAs\n\u2022 Trained analysts\n\u2022 Documented runbooks\n\n**Continuous Improvement:**\n\u2022 Regular rule tuning\n\u2022 New threat indicators\n\u2022 Lessons learned\n\u2022 Red team findings"
+        },
+        {
+          "title": "Threat Intelligence",
+          "type": "text",
+          "content": "**Using Threat Intelligence:**\n\n**Types:**\n\u2022 **Strategic**: High-level trends, planning\n\u2022 **Tactical**: TTPs, attack methods\n\u2022 **Operational**: Campaign details\n\u2022 **Technical**: IOCs, signatures\n\n**Sources:**\n\u2022 Commercial feeds\n\u2022 Open source (OSINT)\n\u2022 ISACs (industry sharing)\n\u2022 Government (CISA, FBI)\n\u2022 Internal research\n\n**Integration:**\n\u2022 SIEM correlation\n\u2022 Firewall/IPS rules\n\u2022 Email security\n\u2022 Endpoint detection\n\n**IOC Types:**\n\u2022 IP addresses\n\u2022 Domains/URLs\n\u2022 File hashes\n\u2022 Email addresses\n\u2022 Behavioral patterns"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Log management: collect, store, protect, analyze",
+            "SIEM provides aggregation, correlation, alerting, and reporting",
+            "Monitor authentication, privileged activity, changes, anomalies",
+            "Threat intelligence: strategic, tactical, operational, technical",
+            "Continuous tuning reduces false positives and improves detection"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SIEM and Log Management: Understanding the Difference",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the primary difference between log management and a Security Information and Event Management (SIEM) system?",
+            "options": [
+              "Log management focuses on the collection, storage, and protection of log data, while a SIEM uses that data for correlation, alerting, and incident response.",
+              "SIEM systems are primarily concerned with long-term archival of log data, whereas log management handles real-time analysis.",
+              "Log management is a component of a SIEM system, focusing solely on reporting capabilities.",
+              "SIEM systems handle only network security logs, while log management encompasses all system and application logs."
+            ],
+            "correctIndex": 0,
+            "explanation": "Log management is the foundation for collecting, storing, and protecting log data. A SIEM builds upon this by analyzing the logs, correlating events, generating alerts, and facilitating incident response. The SIEM adds intelligence and context that basic log management lacks.",
+            "hint": "Think about which system *uses* the other's output."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Log Management Process: Key Elements",
+          "reveal": {
+            "question": "What are the four core phases of the Log Management Process?",
+            "answer": "The four core phases of the Log Management Process are: Collection, Storage, Protection, and Operation (as mentioned in the 'Monitoring Best Practices' section, which assumes logs are being actively used). Each phase has sub-elements. Collection includes identifying log sources, configuring logging, securing transport, and normalizing format. Storage includes a centralized repository, secure storage, retention policies, and archive management. Protection includes integrity verification, access controls, and encryption."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Alert Management Strategies",
+          "comparison": {
+            "headers": [
+              "False Positives",
+              "Risk Prioritization"
+            ],
+            "rows": [
+              {
+                "label": "Goal",
+                "values": [
+                  "Minimize unnecessary alerts.",
+                  "Focus on the most critical threats."
+                ]
+              },
+              {
+                "label": "Method",
+                "values": [
+                  "Tune alert thresholds and correlation rules.",
+                  "Assign severity levels based on potential impact and likelihood."
+                ]
+              },
+              {
+                "label": "Importance",
+                "values": [
+                  "Reduces alert fatigue and improves efficiency.",
+                  "Ensures timely response to the most damaging incidents."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-013",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Cloud Security",
+    "description": "Understand cloud security controls and shared responsibility",
+    "order": 13,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Cloud Security",
+      "Shared Responsibility",
+      "Cloud Controls",
+      "Cloud Governance"
+    ],
+    "blueprintArea": "CISA5-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Cloud computing changes security responsibilities. Understanding what the provider secures versus what you secure is critical for avoiding gaps."
+        },
+        {
+          "title": "Shared Responsibility Model",
+          "type": "table",
+          "headers": [
+            "Layer",
+            "IaaS",
+            "PaaS",
+            "SaaS"
+          ],
+          "rows": [
+            [
+              "Data classification",
+              "Customer",
+              "Customer",
+              "Customer"
+            ],
+            [
+              "Identity/access",
+              "Customer",
+              "Customer",
+              "Shared"
+            ],
+            [
+              "Application",
+              "Customer",
+              "Shared",
+              "Provider"
+            ],
+            [
+              "Operating System",
+              "Customer",
+              "Provider",
+              "Provider"
+            ],
+            [
+              "Network controls",
+              "Shared",
+              "Provider",
+              "Provider"
+            ],
+            [
+              "Physical",
+              "Provider",
+              "Provider",
+              "Provider"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Cloud Models",
+          "type": "callout",
+          "content": "**IaaS = Infrastructure** - You manage OS up\nExample: AWS EC2, Azure VMs\n\n**PaaS = Platform** - Provider manages through runtime\nExample: Azure App Service, Heroku\n\n**SaaS = Software** - Provider manages everything\nExample: Salesforce, Office 365\n\n*More \"aaS\" = Less you manage = More provider responsibility*"
+        },
+        {
+          "title": "Cloud Security Controls",
+          "type": "text",
+          "content": "**Key Cloud Controls:**\n\n**Identity and Access**\n\u2022 IAM policies\n\u2022 MFA enforcement\n\u2022 Least privilege\n\u2022 Federated identity\n\n**Network Security**\n\u2022 VPC/virtual networks\n\u2022 Security groups\n\u2022 Network ACLs\n\u2022 Private endpoints\n\n**Data Protection**\n\u2022 Encryption at rest/transit\n\u2022 Key management\n\u2022 Data classification\n\u2022 DLP\n\n**Monitoring**\n\u2022 Cloud-native logging\n\u2022 SIEM integration\n\u2022 Alerts and dashboards\n\u2022 Compliance reporting"
+        },
+        {
+          "title": "Cloud Governance",
+          "type": "text",
+          "content": "**Governing Cloud Use:**\n\n**Policy Framework**\n\u2022 Approved providers\n\u2022 Approved services\n\u2022 Classification requirements\n\u2022 Security standards\n\n**Risk Assessment**\n\u2022 Vendor due diligence\n\u2022 Data location concerns\n\u2022 Compliance requirements\n\u2022 Exit strategy\n\n**Monitoring**\n\u2022 Shadow IT detection\n\u2022 Usage monitoring\n\u2022 Cost management\n\u2022 Compliance verification\n\n**Vendor Management**\n\u2022 Contract terms\n\u2022 SLAs\n\u2022 Right to audit\n\u2022 Subprocessor management"
+        },
+        {
+          "title": "CASB (Cloud Access Security Broker)",
+          "type": "text",
+          "content": "**CASB Functions:**\n\n**Visibility**\n\u2022 Shadow IT discovery\n\u2022 Usage analytics\n\u2022 Risk scoring\n\u2022 User behavior\n\n**Compliance**\n\u2022 DLP enforcement\n\u2022 Encryption\n\u2022 Access controls\n\u2022 Regulatory compliance\n\n**Threat Protection**\n\u2022 Malware detection\n\u2022 Anomaly detection\n\u2022 Data exfiltration prevention\n\u2022 Account compromise\n\n**Deployment:**\n\u2022 API-based (out-of-band)\n\u2022 Proxy-based (inline)\n\u2022 Agent-based (endpoint)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Shared responsibility varies by model (IaaS, PaaS, SaaS)",
+            "Customer always responsible for data classification",
+            "Cloud controls: IAM, network, data protection, monitoring",
+            "Governance includes policy, risk assessment, monitoring",
+            "CASB provides visibility, compliance, and threat protection for cloud"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cloud Security Controls: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An organization is migrating sensitive customer data to a public cloud provider. Which of the following controls is MOST critical to implement to protect the confidentiality of the data both in transit and at rest?",
+            "options": [
+              "Implementing multi-factor authentication (MFA) for all user accounts.",
+              "Implementing encryption for data at rest and in transit using robust key management practices.",
+              "Configuring network security groups to restrict access to the virtual network.",
+              "Establishing a formal incident response plan with the cloud provider."
+            ],
+            "correctIndex": 1,
+            "explanation": "Encryption is paramount for data confidentiality, especially when data resides with a third-party cloud provider. Robust key management is essential to ensure the keys themselves are protected. MFA and network security are important, but encryption directly addresses data confidentiality. Incident response is crucial, but less impactful to data confidentiality than encryption.",
+            "hint": "Think about the core principle of protecting sensitive data: preventing unauthorized access even if other controls fail."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Cloud Governance: Test Yourself",
+          "reveal": {
+            "question": "What are four key elements that should be included in a cloud governance policy framework?",
+            "answer": "The cloud governance policy framework should address: Approved Providers, Approved Services, Classification Requirements, and Security Standards. These elements guide cloud usage and ensure alignment with organizational policies and compliance requirements."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Network Security: Key Differences",
+          "comparison": {
+            "headers": [
+              "Security Groups",
+              "Network ACLs"
+            ],
+            "rows": [
+              {
+                "label": "Scope",
+                "values": [
+                  "Instance-level (VM)",
+                  "Subnet-level"
+                ]
+              },
+              {
+                "label": "Stateful/Stateless",
+                "values": [
+                  "Stateful (remembers previous connections)",
+                  "Stateless (evaluates each packet individually)"
+                ]
+              },
+              {
+                "label": "Rule Processing",
+                "values": [
+                  "All rules are evaluated",
+                  "Rules are processed in order; first matching rule wins"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Assessment in Cloud Governance",
+          "knowledgeCheck": {
+            "question": "When performing vendor due diligence for a cloud provider, which of the following is the MOST important consideration for an IS auditor?",
+            "options": [
+              "The cloud provider's marketing materials and customer testimonials.",
+              "The cloud provider's SOC 2 Type II report and security certifications.",
+              "The cloud provider's pricing structure and service level agreements (SLAs).",
+              "The cloud provider's physical security controls for their data centers."
+            ],
+            "correctIndex": 1,
+            "explanation": "SOC 2 Type II reports and security certifications provide independent assurance of the cloud provider's security controls and compliance with industry standards. Marketing materials are biased, pricing is a business decision, and while physical security is important, it's less critical than understanding the provider's broader security posture.",
+            "hint": "Think about what provides independent verification of a vendor's security practices."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-014",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Privacy and Data Protection",
+    "description": "Understand privacy principles and data protection regulations",
+    "order": 14,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Privacy",
+      "Data Protection",
+      "GDPR",
+      "Privacy by Design"
+    ],
+    "blueprintArea": "CISA5-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Privacy regulations are expanding globally with significant penalties. Organizations must protect personal data not only for compliance but for customer trust."
+        },
+        {
+          "title": "Privacy Principles",
+          "type": "text",
+          "content": "**Core Privacy Principles:**\n\n**Collection Limitation**\n\u2022 Collect only what's needed\n\u2022 Lawful and fair means\n\u2022 With knowledge/consent\n\n**Purpose Specification**\n\u2022 Stated purpose at collection\n\u2022 No use beyond purpose\n\n**Use Limitation**\n\u2022 Use only for stated purpose\n\u2022 Unless consent or law\n\n**Data Quality**\n\u2022 Accurate and complete\n\u2022 Current as needed\n\n**Security Safeguards**\n\u2022 Protect against loss/misuse\n\u2022 Appropriate controls\n\n**Openness**\n\u2022 Transparent practices\n\u2022 Available policies\n\n**Individual Participation**\n\u2022 Access to own data\n\u2022 Ability to correct\n\n**Accountability**\n\u2022 Organization responsible\n\u2022 Demonstrable compliance"
+        },
+        {
+          "title": "Key Regulations",
+          "type": "table",
+          "headers": [
+            "Regulation",
+            "Jurisdiction",
+            "Key Focus"
+          ],
+          "rows": [
+            [
+              "GDPR",
+              "EU/EEA",
+              "Comprehensive data protection"
+            ],
+            [
+              "CCPA/CPRA",
+              "California",
+              "Consumer privacy rights"
+            ],
+            [
+              "HIPAA",
+              "US Healthcare",
+              "Protected health information"
+            ],
+            [
+              "PIPEDA",
+              "Canada",
+              "Commercial privacy"
+            ],
+            [
+              "LGPD",
+              "Brazil",
+              "Personal data protection"
+            ]
+          ]
+        },
+        {
+          "title": "GDPR Key Requirements",
+          "type": "text",
+          "content": "**GDPR Fundamentals:**\n\n**Lawful Basis for Processing**\n\u2022 Consent\n\u2022 Contract\n\u2022 Legal obligation\n\u2022 Vital interests\n\u2022 Public task\n\u2022 Legitimate interests\n\n**Data Subject Rights**\n\u2022 Access\n\u2022 Rectification\n\u2022 Erasure (\"Right to be forgotten\")\n\u2022 Portability\n\u2022 Object to processing\n\n**Organization Requirements**\n\u2022 Data protection officer (if required)\n\u2022 Privacy impact assessments\n\u2022 Breach notification (72 hours)\n\u2022 Records of processing\n\u2022 Privacy by design\n\n**Penalties:**\n\u2022 Up to 4% annual global revenue or \u20ac20M"
+        },
+        {
+          "title": "Privacy by Design",
+          "type": "text",
+          "content": "**PbD Principles:**\n\n**1. Proactive not Reactive**\n\u2022 Prevent privacy issues\n\u2022 Not just respond to them\n\n**2. Default Privacy**\n\u2022 Maximum privacy by default\n\u2022 No action required by user\n\n**3. Embedded in Design**\n\u2022 Built into systems\n\u2022 Not bolted on after\n\n**4. Full Functionality**\n\u2022 Privacy AND functionality\n\u2022 Not zero-sum tradeoff\n\n**5. End-to-End Security**\n\u2022 Cradle to grave protection\n\u2022 Throughout data lifecycle\n\n**6. Visibility and Transparency**\n\u2022 Open practices\n\u2022 Subject to verification\n\n**7. User-Centric**\n\u2022 Respect user privacy\n\u2022 User-friendly options"
+        },
+        {
+          "title": "Privacy Impact Assessment",
+          "type": "text",
+          "content": "**PIA Process:**\n\n**When Required:**\n\u2022 New processing activities\n\u2022 High-risk processing\n\u2022 New technology\n\u2022 Large-scale processing\n\n**Assessment Elements:**\n\u2022 Description of processing\n\u2022 Purpose and necessity\n\u2022 Risks to individuals\n\u2022 Mitigation measures\n\u2022 Stakeholder input\n\n**Outcomes:**\n\u2022 Risk acceptance\n\u2022 Risk mitigation\n\u2022 Process changes\n\u2022 Controls implementation\n\u2022 Consultation with DPA"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Privacy principles: collection/use limitation, security, accountability",
+            "GDPR requires lawful basis, data subject rights, breach notification",
+            "Privacy by Design embeds privacy into systems proactively",
+            "PIA assesses privacy risks of new processing activities",
+            "Penalties for violations can be significant (up to 4% revenue)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "GDPR Compliance Scenario",
+          "knowledgeCheck": {
+            "question": "An organization is processing personal data based on 'legitimate interests.' Under GDPR, which of the following actions is MOST critical to demonstrate compliance?",
+            "options": [
+              "A. Obtaining explicit consent from all data subjects.",
+              "B. Conducting a Legitimate Interests Assessment (LIA) and documenting it thoroughly.",
+              "C. Appointing a Data Protection Officer (DPO).",
+              "D. Implementing Privacy by Design principles."
+            ],
+            "correctIndex": 1,
+            "explanation": "While all options are important aspects of GDPR compliance, when relying on 'legitimate interests' as the lawful basis for processing, a Legitimate Interests Assessment (LIA) is paramount. It demonstrates that the organization has carefully considered the balance between its interests and the data subjects' rights and freedoms. Consent is not required when legitimate interest is the basis. A DPO is only required in specific circumstances. Privacy by Design is a general principle, not specific to legitimate interests.",
+            "hint": "Consider the specific requirements when using 'legitimate interests' as the lawful basis for processing."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Privacy by Design - Recall",
+          "reveal": {
+            "question": "List the seven founding principles of Privacy by Design.",
+            "answer": "1. Proactive not Reactive; Preventative not Remedial.\n2. Privacy as the Default Setting.\n3. Privacy Embedded into Design.\n4. Full Functionality \u2013 Positive-Sum, not Zero-Sum.\n5. End-to-End Security \u2013 Full Lifecycle Protection.\n6. Visibility and Transparency \u2013 Keep it Open.\n7. Respect for User Privacy \u2013 Keep it User-Centric."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Consent vs. Legitimate Interest",
+          "comparison": {
+            "headers": [
+              "Consent",
+              "Legitimate Interest"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Freely given, specific, informed and unambiguous indication of the data subject's wishes.",
+                  "Processing is necessary for the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject."
+                ]
+              },
+              {
+                "label": "Data Subject Control",
+                "values": [
+                  "Data subject has direct and explicit control; can withdraw consent at any time.",
+                  "Data subject has the right to object to processing based on legitimate interests."
+                ]
+              },
+              {
+                "label": "Documentation",
+                "values": [
+                  "Requires clear record of consent obtained.",
+                  "Requires a documented Legitimate Interests Assessment (LIA)."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-017",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "AI and Machine Learning Security",
+    "description": "Security considerations for artificial intelligence and machine learning systems",
+    "order": 17,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "AI Security",
+      "ML Security",
+      "Model Governance",
+      "AI Ethics",
+      "Adversarial Attacks"
+    ],
+    "blueprintArea": "CISA5-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "AI/ML systems are increasingly integrated into business-critical applications. Understanding their unique security risks is essential for auditors as these systems can make decisions affecting customers, operations, and compliance."
+        },
+        {
+          "title": "AI/ML Security Risks",
+          "type": "text",
+          "content": "**Key Risk Categories:**\n\n**Data Risks**\n\u2022 Training data poisoning\n\u2022 Data leakage from models\n\u2022 Bias in training data\n\u2022 Privacy violations\n\u2022 Inadequate data provenance\n\n**Model Risks**\n\u2022 Model theft/extraction\n\u2022 Adversarial attacks\n\u2022 Model drift and degradation\n\u2022 Unexplainable decisions\n\u2022 Overfitting vulnerabilities\n\n**Operational Risks**\n\u2022 Hallucinations/fabrications\n\u2022 Prompt injection attacks\n\u2022 Unauthorized model access\n\u2022 Lack of human oversight\n\u2022 Integration vulnerabilities"
+        },
+        {
+          "title": "AI Security Controls",
+          "type": "table",
+          "headers": [
+            "Control Area",
+            "Key Controls",
+            "Audit Focus"
+          ],
+          "rows": [
+            [
+              "Data Governance",
+              "Data lineage, quality validation, bias testing",
+              "Training data integrity"
+            ],
+            [
+              "Model Development",
+              "Secure SDLC, version control, testing",
+              "Development practices"
+            ],
+            [
+              "Access Control",
+              "API authentication, rate limiting, monitoring",
+              "Unauthorized access prevention"
+            ],
+            [
+              "Monitoring",
+              "Model drift detection, output validation",
+              "Ongoing performance"
+            ],
+            [
+              "Explainability",
+              "Decision logging, interpretable models",
+              "Audit trail adequacy"
+            ]
+          ]
+        },
+        {
+          "title": "Adversarial Attacks on AI",
+          "type": "text",
+          "content": "**Common Attack Types:**\n\n**Evasion Attacks**\n\u2022 Manipulating inputs to cause misclassification\n\u2022 Adding noise imperceptible to humans\n\u2022 Bypassing detection systems\n\n**Poisoning Attacks**\n\u2022 Corrupting training data\n\u2022 Injecting malicious samples\n\u2022 Creating backdoors in models\n\n**Model Extraction**\n\u2022 Querying to reverse-engineer model\n\u2022 Stealing intellectual property\n\u2022 Creating adversarial examples\n\n**Inference Attacks**\n\u2022 Membership inference\n\u2022 Attribute inference\n\u2022 Model inversion to reveal training data"
+        },
+        {
+          "title": "AI Governance Framework",
+          "type": "text",
+          "content": "**Governance Elements:**\n\n**Ethics and Oversight**\n\u2022 AI ethics committee\n\u2022 Use case approval process\n\u2022 Human-in-the-loop requirements\n\u2022 Bias assessment\n\n**Risk Management**\n\u2022 AI-specific risk assessment\n\u2022 Impact classification\n\u2022 Third-party AI evaluation\n\u2022 Incident response for AI failures\n\n**Compliance**\n\u2022 Regulatory requirements (EU AI Act)\n\u2022 Industry standards\n\u2022 Documentation requirements\n\u2022 Audit trail maintenance\n\n**Lifecycle Management**\n\u2022 Model inventory\n\u2022 Version control\n\u2022 Retirement procedures\n\u2022 Continuous monitoring"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: AI Security DAMP",
+          "type": "callout",
+          "content": "**D-A-M-P:**\n\u2022 **D**ata integrity - Protect training data\n\u2022 **A**dversarial defense - Resist attacks\n\u2022 **M**odel governance - Control lifecycle\n\u2022 **P**rivacy protection - Prevent data leakage"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "AI systems face unique risks: data poisoning, adversarial attacks, model theft",
+            "Adversarial attacks include evasion, poisoning, extraction, and inference",
+            "AI governance includes ethics oversight, risk management, and compliance",
+            "Explainability and audit trails are critical for AI accountability",
+            "Auditors should assess training data quality, model controls, and monitoring"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Adversarial Attacks",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the primary goal of a 'poisoning attack' on an AI/ML system?",
+            "options": [
+              "To manipulate input data at inference time to cause misclassification.",
+              "To corrupt the training data used to build the model, introducing vulnerabilities.",
+              "To extract the model's parameters and architecture for malicious purposes.",
+              "To overload the AI system's processing capacity, causing a denial-of-service."
+            ],
+            "correctIndex": 1,
+            "explanation": "Poisoning attacks directly target the training data, injecting malicious samples to create backdoors or degrade the model's overall performance. This contrasts with evasion attacks, which target the model during inference.",
+            "hint": "Consider which attack type impacts the model's training phase."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Yourself: AI Governance Elements",
+          "reveal": {
+            "question": "What are the three core governance elements?",
+            "answer": "The three core governance elements are Ethics and Oversight, Risk Management, and Compliance."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Evasion vs. Poisoning Attacks",
+          "comparison": {
+            "headers": [
+              "Evasion Attacks",
+              "Poisoning Attacks"
+            ],
+            "rows": [
+              {
+                "label": "Target Phase",
+                "values": [
+                  "Inference (Prediction)",
+                  "Training"
+                ]
+              },
+              {
+                "label": "Objective",
+                "values": [
+                  "Cause Misclassification at Runtime",
+                  "Corrupt Model Integrity"
+                ]
+              },
+              {
+                "label": "Data Manipulated",
+                "values": [
+                  "Input Data",
+                  "Training Data"
+                ]
+              },
+              {
+                "label": "Impact",
+                "values": [
+                  "Temporary Misclassification",
+                  "Long-Term Model Degradation/Backdoor"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: AI Ethics Committee",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST appropriate action for an AI Ethics Committee to take when a proposed AI application is found to have a high risk of perpetuating existing societal biases?",
+            "options": [
+              "Approve the application with a disclaimer about potential biases.",
+              "Implement continuous monitoring of the application's outputs for biased results.",
+              "Reject the application and require modifications to address the bias issue.",
+              "Proceed with the application, but allocate additional resources for post-implementation bias mitigation."
+            ],
+            "correctIndex": 2,
+            "explanation": "The primary responsibility of an AI Ethics Committee is to prevent the deployment of AI systems that could cause harm or perpetuate biases. Rejecting the application and requiring modifications is the most proactive and ethical approach.",
+            "hint": "Think about the proactive vs. reactive approach to ethical concerns."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-018",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "Advanced Cloud Security",
+    "description": "Deep dive into cloud security architecture, controls, and audit considerations",
+    "order": 18,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Cloud Security",
+      "CSPM",
+      "Container Security",
+      "Serverless",
+      "Multi-Cloud"
+    ],
+    "blueprintArea": "CISA5-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Cloud adoption continues accelerating. Auditors must understand cloud-native security concepts, shared responsibility nuances, and emerging cloud security challenges like container security and serverless computing."
+        },
+        {
+          "title": "Cloud Security Posture Management (CSPM)",
+          "type": "text",
+          "content": "**CSPM Capabilities:**\n\n**Configuration Monitoring**\n\u2022 Continuous compliance checks\n\u2022 Drift detection\n\u2022 Misconfiguration alerts\n\u2022 CIS benchmark validation\n\n**Risk Assessment**\n\u2022 Asset inventory\n\u2022 Vulnerability prioritization\n\u2022 Attack path analysis\n\u2022 Risk scoring\n\n**Remediation**\n\u2022 Automated fixes\n\u2022 Policy enforcement\n\u2022 Infrastructure as Code scanning\n\u2022 Guardrails implementation\n\n**Key Audit Points:**\n\u2022 CSPM tool coverage\n\u2022 Alert response procedures\n\u2022 Remediation timelines\n\u2022 Policy exception handling"
+        },
+        {
+          "title": "Container Security",
+          "type": "table",
+          "headers": [
+            "Layer",
+            "Security Controls",
+            "Risks"
+          ],
+          "rows": [
+            [
+              "Image",
+              "Vulnerability scanning, signed images, minimal base",
+              "Malicious/vulnerable images"
+            ],
+            [
+              "Registry",
+              "Access control, image verification, scanning",
+              "Unauthorized image push"
+            ],
+            [
+              "Orchestration",
+              "RBAC, network policies, secrets management",
+              "Privilege escalation"
+            ],
+            [
+              "Runtime",
+              "Immutability, monitoring, resource limits",
+              "Container escape"
+            ],
+            [
+              "Host",
+              "Hardening, patching, isolation",
+              "Host compromise"
+            ]
+          ]
+        },
+        {
+          "title": "Kubernetes Security",
+          "type": "text",
+          "content": "**K8s Security Domains:**\n\n**Authentication & Authorization**\n\u2022 Service accounts\n\u2022 RBAC policies\n\u2022 Pod security admission\n\u2022 Network policies\n\n**Secrets Management**\n\u2022 Encrypted secrets\n\u2022 External secrets operators\n\u2022 Vault integration\n\u2022 Rotation policies\n\n**Runtime Security**\n\u2022 Pod security standards\n\u2022 Runtime threat detection\n\u2022 Audit logging\n\u2022 Admission controllers\n\n**Supply Chain**\n\u2022 Image signing (Sigstore)\n\u2022 SBOM generation\n\u2022 Policy enforcement\n\u2022 Provenance verification"
+        },
+        {
+          "title": "Serverless Security",
+          "type": "text",
+          "content": "**Serverless Security Considerations:**\n\n**Function Security**\n\u2022 Minimal permissions (least privilege)\n\u2022 Environment variable protection\n\u2022 Dependency vulnerabilities\n\u2022 Code injection prevention\n\n**Configuration**\n\u2022 Timeout settings\n\u2022 Memory limits\n\u2022 Concurrency controls\n\u2022 VPC integration\n\n**Monitoring**\n\u2022 Invocation logging\n\u2022 Error tracking\n\u2022 Performance monitoring\n\u2022 Security event detection\n\n**Challenges:**\n\u2022 Limited visibility\n\u2022 Ephemeral nature\n\u2022 Complex event triggers\n\u2022 Third-party dependencies"
+        },
+        {
+          "title": "Multi-Cloud Considerations",
+          "type": "text",
+          "content": "**Multi-Cloud Security:**\n\n**Governance**\n\u2022 Consistent security policies\n\u2022 Centralized identity management\n\u2022 Cross-cloud visibility\n\u2022 Unified compliance reporting\n\n**Technical Controls**\n\u2022 Cloud-agnostic security tools\n\u2022 Consistent encryption standards\n\u2022 Unified logging and monitoring\n\u2022 Cross-cloud network security\n\n**Challenges:**\n\u2022 Skill gaps across platforms\n\u2022 Tool sprawl\n\u2022 Inconsistent native controls\n\u2022 Complex incident response"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CSPM provides continuous cloud configuration monitoring and compliance",
+            "Container security spans image, registry, orchestration, runtime, and host layers",
+            "Kubernetes requires RBAC, network policies, secrets management, and pod security",
+            "Serverless security focuses on minimal permissions and dependency management",
+            "Multi-cloud requires unified governance, identity, and monitoring approaches"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cloud Security Posture Management (CSPM) Scenario",
+          "knowledgeCheck": {
+            "question": "An organization is implementing a CSPM solution to enhance its cloud security. Which of the following CSPM capabilities would be MOST effective in identifying deviations from established security standards and policies?",
+            "options": [
+              "Vulnerability Prioritization",
+              "Configuration Monitoring",
+              "Attack Path Analysis",
+              "Asset Inventory"
+            ],
+            "correctIndex": 1,
+            "explanation": "Configuration Monitoring directly addresses deviations from established security standards through continuous compliance checks, drift detection, and misconfiguration alerts. The other options are important but don't directly focus on identifying deviations from existing policies.",
+            "hint": "Think about which capability is focused on the *configuration* of cloud resources."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Kubernetes Security Domains - Recall",
+          "reveal": {
+            "question": "List the three primary security domains within a Kubernetes environment.",
+            "answer": "1. Authentication & Authorization\n2. Secrets Management\n3. Runtime Security"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Comparing CSPM Risk Assessment Capabilities",
+          "comparison": {
+            "headers": [
+              "Asset Inventory",
+              "Attack Path Analysis"
+            ],
+            "rows": [
+              {
+                "label": "Primary Focus",
+                "values": [
+                  "Identifying and categorizing all cloud resources.",
+                  "Determining potential routes attackers could take to compromise critical assets."
+                ]
+              },
+              {
+                "label": "Outcome",
+                "values": [
+                  "Comprehensive list of assets for security management.",
+                  "Prioritized list of vulnerabilities based on their exploitability and impact."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Serverless Function Security",
+          "knowledgeCheck": {
+            "question": "When securing serverless functions, which of the following is the MOST critical consideration regarding permissions?",
+            "options": [
+              "Granting functions broad access to all cloud resources for ease of development.",
+              "Ensuring functions have the minimal permissions necessary to perform their intended tasks.",
+              "Using a single service account for all functions to simplify management.",
+              "Disabling all network access to minimize the attack surface."
+            ],
+            "correctIndex": 1,
+            "explanation": "The principle of least privilege is paramount in serverless security. Granting minimal permissions limits the potential damage if a function is compromised. Broad access, shared service accounts, and complete network isolation are not best practices.",
+            "hint": "Consider the principle of 'least privilege'."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-019",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "IoT and OT Security",
+    "description": "Security for Internet of Things and Operational Technology environments",
+    "order": 19,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "IoT Security",
+      "OT Security",
+      "ICS",
+      "SCADA",
+      "IT/OT Convergence"
+    ],
+    "blueprintArea": "CISA5-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IoT and OT systems control physical processes and critical infrastructure. Security failures can cause physical harm, production disruption, and safety incidents. Auditors must understand the unique challenges of these environments."
+        },
+        {
+          "title": "IoT vs OT vs IT",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "IT",
+            "OT/ICS",
+            "IoT"
+          ],
+          "rows": [
+            [
+              "Primary Goal",
+              "Confidentiality",
+              "Availability/Safety",
+              "Functionality"
+            ],
+            [
+              "Lifecycle",
+              "3-5 years",
+              "15-25 years",
+              "5-10 years"
+            ],
+            [
+              "Patching",
+              "Frequent",
+              "Rare/Scheduled",
+              "Infrequent"
+            ],
+            [
+              "Protocols",
+              "TCP/IP standard",
+              "Modbus, DNP3, OPC",
+              "MQTT, CoAP, Zigbee"
+            ],
+            [
+              "Impact of Failure",
+              "Business disruption",
+              "Physical harm",
+              "Privacy/safety"
+            ]
+          ]
+        },
+        {
+          "title": "IoT Security Challenges",
+          "type": "text",
+          "content": "**Key IoT Challenges:**\n\n**Device Constraints**\n\u2022 Limited processing power\n\u2022 Memory constraints\n\u2022 Battery limitations\n\u2022 Difficult to update\n\n**Security Gaps**\n\u2022 Default credentials\n\u2022 Unencrypted communications\n\u2022 Lack of authentication\n\u2022 No security updates\n\n**Management Challenges**\n\u2022 Device inventory\n\u2022 Patch management\n\u2022 Lifecycle management\n\u2022 Shadow IoT\n\n**Network Risks**\n\u2022 Large attack surface\n\u2022 Lateral movement\n\u2022 Botnets (e.g., Mirai)\n\u2022 DDoS participation"
+        },
+        {
+          "title": "OT/ICS Security Framework",
+          "type": "text",
+          "content": "**ICS Security Layers (Purdue Model):**\n\n**Level 0-1: Field Devices**\n\u2022 Sensors, actuators, PLCs\n\u2022 Physical security critical\n\u2022 Limited cyber controls\n\n**Level 2: Control Systems**\n\u2022 HMI, engineering workstations\n\u2022 Network segmentation\n\u2022 Application whitelisting\n\n**Level 3: Operations**\n\u2022 Historians, OT servers\n\u2022 Jump servers for access\n\u2022 Logging and monitoring\n\n**Level 3.5: DMZ**\n\u2022 Data diodes\n\u2022 Secure file transfer\n\u2022 Patch management\n\n**Level 4-5: Enterprise**\n\u2022 Standard IT controls\n\u2022 Identity management\n\u2022 Security operations"
+        },
+        {
+          "title": "IT/OT Convergence Security",
+          "type": "text",
+          "content": "**Convergence Challenges:**\n\n**Cultural**\n\u2022 Different priorities (CIA vs AIC)\n\u2022 Different skill sets\n\u2022 Different risk tolerances\n\u2022 Communication gaps\n\n**Technical**\n\u2022 Legacy protocol security\n\u2022 Incompatible security tools\n\u2022 Real-time requirements\n\u2022 Vendor dependencies\n\n**Governance**\n\u2022 Unified security policies\n\u2022 Shared incident response\n\u2022 Integrated risk management\n\u2022 Joint security operations\n\n**Best Practices:**\n\u2022 Network segmentation\n\u2022 Zero trust architecture\n\u2022 OT-specific monitoring\n\u2022 Joint training programs"
+        },
+        {
+          "title": "IoT/OT Audit Considerations",
+          "type": "text",
+          "content": "**Audit Focus Areas:**\n\n**Asset Management**\n\u2022 Complete device inventory\n\u2022 Firmware version tracking\n\u2022 End-of-life identification\n\u2022 Vendor relationship\n\n**Network Security**\n\u2022 Segmentation verification\n\u2022 Traffic monitoring\n\u2022 Protocol analysis\n\u2022 Remote access controls\n\n**Incident Response**\n\u2022 OT-specific playbooks\n\u2022 Safety procedures\n\u2022 Recovery priorities\n\u2022 Vendor escalation\n\n**Compliance**\n\u2022 NERC CIP (energy)\n\u2022 IEC 62443 (industrial)\n\u2022 NIST CSF mapping\n\u2022 Sector-specific requirements"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "OT prioritizes availability and safety over confidentiality",
+            "IoT devices have constraints limiting traditional security controls",
+            "Purdue Model provides framework for ICS network segmentation",
+            "IT/OT convergence requires unified governance and specialized skills",
+            "OT audits must consider safety, availability, and long device lifecycles"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IoT Security Challenges - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST significant security concern arising from the use of default credentials on IoT devices?",
+            "options": [
+              "Increased battery consumption due to encryption overhead.",
+              "Unauthorized access and control of the device and potentially the network.",
+              "Difficulty in applying security updates due to vendor restrictions.",
+              "Limited processing power affecting the device's operational performance."
+            ],
+            "correctIndex": 1,
+            "explanation": "Default credentials are a well-known vulnerability that allows attackers to easily gain unauthorized access to the device. This can lead to compromise of the device, data theft, and further exploitation of the network it is connected to.",
+            "hint": "Think about the immediate consequences of using a common, easily guessable password."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Purdue Model Levels - Recall",
+          "reveal": {
+            "question": "What security measures are MOST critical at Level 0-1 of the Purdue Model?",
+            "answer": "Physical security is paramount at Levels 0-1 (Field Devices). While cyber controls are limited, protecting sensors, actuators, and PLCs from physical tampering is crucial. Cyber controls are limited due to device constraints."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "IT/OT Security Priorities",
+          "comparison": {
+            "headers": [
+              "IT Security",
+              "OT Security"
+            ],
+            "rows": [
+              {
+                "label": "Primary Security Goal",
+                "values": [
+                  "Confidentiality, Integrity, Availability (CIA)",
+                  "Availability, Integrity, Confidentiality (AIC)"
+                ]
+              },
+              {
+                "label": "Impact of Security Breach",
+                "values": [
+                  "Data breach, financial loss, reputational damage",
+                  "Physical damage, safety risks, environmental impact"
+                ]
+              },
+              {
+                "label": "Update Frequency",
+                "values": [
+                  "Frequent updates and patching",
+                  "Less frequent updates due to operational constraints"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA5-020",
+    "courseId": "cisa",
+    "section": "CISA5",
+    "title": "API Security",
+    "description": "Security for Application Programming Interfaces and web services",
+    "order": 20,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "API Security",
+      "OAuth",
+      "API Gateway",
+      "OWASP API Top 10",
+      "Rate Limiting"
+    ],
+    "blueprintArea": "CISA5-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "APIs are the backbone of modern applications and integrations. API vulnerabilities have led to major data breaches. Auditors must understand API-specific risks and controls as organizations expose more functionality through APIs."
+        },
+        {
+          "title": "OWASP API Security Top 10 (2023)",
+          "type": "table",
+          "headers": [
+            "Rank",
+            "Vulnerability",
+            "Description"
+          ],
+          "rows": [
+            [
+              "API1",
+              "Broken Object Level Authorization",
+              "Accessing other users resources by manipulating IDs"
+            ],
+            [
+              "API2",
+              "Broken Authentication",
+              "Weak authentication or token management"
+            ],
+            [
+              "API3",
+              "Broken Object Property Level Authorization",
+              "Exposing or modifying sensitive object properties"
+            ],
+            [
+              "API4",
+              "Unrestricted Resource Consumption",
+              "No rate limiting or resource controls"
+            ],
+            [
+              "API5",
+              "Broken Function Level Authorization",
+              "Accessing admin functions without proper checks"
+            ]
+          ]
+        },
+        {
+          "title": "API Authentication Methods",
+          "type": "text",
+          "content": "**Authentication Options:**\n\n**API Keys**\n\u2022 Simple implementation\n\u2022 Limited security\n\u2022 No user context\n\u2022 Best for internal/low-risk\n\n**OAuth 2.0**\n\u2022 Industry standard\n\u2022 Delegated authorization\n\u2022 Scoped access\n\u2022 Token-based\n\n**JWT (JSON Web Tokens)**\n\u2022 Self-contained claims\n\u2022 Stateless validation\n\u2022 Expiration built-in\n\u2022 Signature verification\n\n**mTLS (Mutual TLS)**\n\u2022 Certificate-based\n\u2022 Strong authentication\n\u2022 Service-to-service\n\u2022 Complex management\n\n**Best Practice:**\n\u2022 Use OAuth 2.0 + JWT for user access\n\u2022 Use mTLS for service-to-service\n\u2022 Never expose API keys client-side"
+        },
+        {
+          "title": "API Gateway Security",
+          "type": "text",
+          "content": "**Gateway Security Functions:**\n\n**Traffic Management**\n\u2022 Rate limiting\n\u2022 Throttling\n\u2022 Request/response transformation\n\u2022 Load balancing\n\n**Security**\n\u2022 Authentication/authorization\n\u2022 Input validation\n\u2022 TLS termination\n\u2022 WAF integration\n\n**Monitoring**\n\u2022 Logging all requests\n\u2022 Anomaly detection\n\u2022 Usage analytics\n\u2022 SLA monitoring\n\n**Policy Enforcement**\n\u2022 API versioning\n\u2022 Deprecation management\n\u2022 Consumer quotas\n\u2022 IP whitelisting"
+        },
+        {
+          "title": "API Security Controls",
+          "type": "text",
+          "content": "**Essential Controls:**\n\n**Input Validation**\n\u2022 Schema validation\n\u2022 Size limits\n\u2022 Type checking\n\u2022 Content-type enforcement\n\n**Output Security**\n\u2022 Data filtering\n\u2022 Pagination\n\u2022 Error message sanitization\n\u2022 Response headers\n\n**Rate Limiting**\n\u2022 Per-user limits\n\u2022 Per-endpoint limits\n\u2022 Burst handling\n\u2022 Retry-after headers\n\n**Logging & Monitoring**\n\u2022 Full request logging\n\u2022 Sensitive data masking\n\u2022 Anomaly detection\n\u2022 Alerting thresholds"
+        },
+        {
+          "title": "API Audit Checklist",
+          "type": "text",
+          "content": "**Audit Focus Areas:**\n\n**Authentication & Authorization**\n\u2022 Token validation implementation\n\u2022 Scope enforcement\n\u2022 BOLA/BFLA testing\n\u2022 Session management\n\n**Data Protection**\n\u2022 Encryption in transit (TLS 1.2+)\n\u2022 Sensitive data exposure\n\u2022 Response filtering\n\u2022 Field-level authorization\n\n**Availability**\n\u2022 Rate limiting configuration\n\u2022 DDoS protection\n\u2022 Resource quotas\n\u2022 Graceful degradation\n\n**Documentation & Governance**\n\u2022 OpenAPI specifications\n\u2022 API inventory\n\u2022 Deprecation process\n\u2022 Change management"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: API Security TRAP",
+          "type": "callout",
+          "content": "**T-R-A-P:**\n\u2022 **T**okens - Secure authentication/authorization\n\u2022 **R**ate limiting - Prevent abuse\n\u2022 **A**uthorization - Object/function level checks\n\u2022 **P**rotection - Input validation, output filtering"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "OWASP API Top 10 highlights authorization and authentication as top risks",
+            "OAuth 2.0 + JWT is recommended for user API access; mTLS for services",
+            "API gateways provide centralized security, monitoring, and policy enforcement",
+            "Rate limiting and input validation are essential abuse prevention controls",
+            "API audits should verify authorization at object, property, and function levels"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "API Authentication Methods - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following authentication methods provides delegated authorization, scoped access, and is considered an industry standard for API security?",
+            "options": [
+              "API Keys",
+              "JWT (JSON Web Tokens)",
+              "OAuth 2.0",
+              "Basic Authentication"
+            ],
+            "correctIndex": 2,
+            "explanation": "OAuth 2.0 is the industry standard for delegated authorization, allowing users to grant limited access to their resources without sharing their credentials. API keys are simpler but lack user context and scoped access. JWTs are for stateless validation of claims, not delegated authorization. Basic Authentication is generally discouraged due to its lack of security features.",
+            "hint": "Think about which method is designed for allowing one application to access resources on behalf of a user, without sharing credentials."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "API Gateway Security Functions - Test Yourself",
+          "reveal": {
+            "question": "Name three essential security functions performed by an API Gateway.",
+            "answer": "1. Authentication/Authorization: Verifying the identity and permissions of API requesters.\n2. Input Validation: Ensuring that API requests conform to expected formats and constraints, preventing injection attacks.\n3. TLS Termination: Decrypting HTTPS traffic, improving performance and security by centralizing certificate management.\n4. WAF Integration: Filtering malicious traffic through integration with a Web Application Firewall."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "API Keys vs. OAuth 2.0",
+          "comparison": {
+            "headers": [
+              "API Keys",
+              "OAuth 2.0"
+            ],
+            "rows": [
+              {
+                "label": "Security Level",
+                "values": [
+                  "Limited",
+                  "Robust"
+                ]
+              },
+              {
+                "label": "User Context",
+                "values": [
+                  "No user context",
+                  "Delegated authorization, scoped access"
+                ]
+              },
+              {
+                "label": "Complexity",
+                "values": [
+                  "Simple Implementation",
+                  "More complex implementation"
+                ]
+              },
+              {
+                "label": "Use Case",
+                "values": [
+                  "Internal APIs, low-risk scenarios",
+                  "External APIs, user data access, high-risk scenarios"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "API Security Controls - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "An auditor is reviewing the API security controls for a financial institution. Which of the following controls would be MOST effective in preventing sensitive data leakage in API responses?",
+            "options": [
+              "Schema validation",
+              "Content-type enforcement",
+              "Data filtering",
+              "Rate limiting"
+            ],
+            "correctIndex": 2,
+            "explanation": "Data filtering is the most effective control for preventing sensitive data leakage in API responses. It ensures that only necessary and authorized data is included in the response, preventing unintended exposure of sensitive information. Schema validation focuses on input validation. Content-type enforcement helps prevent content-based attacks. Rate limiting prevents abuse but does not directly address data leakage.",
+            "hint": "Consider which control directly manipulates the data being sent in the API response."
+          }
+        }
+      ]
+    }
+  }
+]

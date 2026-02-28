@@ -15,7 +15,7 @@ import {
   Globe, Layers, Settings, RefreshCw, ArrowUpRight,
   ArrowDownRight, ChevronDown, ChevronRight, ChevronLeft,
   Lightbulb, BookOpen, PenTool, Award,
-  Shield, Pause, Save, Sliders, Newspaper, Trash2, Radio,
+  Shield, Pause, Save, Sliders, Newspaper, Trash2, Radio, Sparkles, Edit3, Plus, Loader2,
 } from 'lucide-react';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
@@ -33,6 +33,9 @@ import {
   generateFullContentMatrix,
   generateStateCPABriefs,
   generateAllCampaigns,
+  createCustomAdGroup,
+  getAICampaignPrompt,
+  type CustomAdGroupInput,
 } from '../../../services/growth';
 import {
   getGrowthConfig,
@@ -41,9 +44,12 @@ import {
   getAllContentBriefs,
   reseedContentBriefs,
   deleteAllPendingBriefs,
+  saveCustomAdGroup,
+  getCustomAdGroups,
   type GrowthEngineConfig,
 } from '../../../services/growth/growthFirestore';
 import { SEOStatusTab } from './SEOStatus';
+import { generateAIResponse } from '../../../services/aiService';
 
 // ============================================================================
 // Types
@@ -1191,6 +1197,7 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
   const [campaigns, setCampaigns] = useState<ReturnType<typeof generateAllCampaigns> | null>(null);
   const [expandedCampaign, setExpandedCampaign] = useState<string | null>(null);
   const [syncing, setSyncing] = useState(false);
+  const [syncingAdGroup, setSyncingAdGroup] = useState<string | null>(null);
   const [syncResult, setSyncResult] = useState<{ success: boolean; message: string } | null>(null);
 
   if (!status) return null;
@@ -1201,6 +1208,60 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
     // Load user's budget config so campaigns respect their settings
     const cfg = await getGrowthConfig();
     const all = generateAllCampaigns(cfg.examBudgets);
+    
+    // Fetch custom ad groups and merge active ones into appropriate campaigns
+    const customAdGroups = await getCustomAdGroups();
+    const activeCustomGroups = customAdGroups.filter(ag => ag.status === 'active');
+    
+    if (activeCustomGroups.length > 0) {
+      for (const custom of activeCustomGroups) {
+        // Find the campaign for this course
+        const campaign = all.find(c => c.courseId === custom.courseId);
+        if (campaign) {
+          // Convert StoredCustomAdGroup to SEMAdGroup format
+          const customSemAdGroup = {
+            id: custom.id,
+            campaignId: campaign.id,
+            name: custom.name,
+            theme: 'custom' as const,
+            status: 'draft' as const,
+            keywords: custom.keywords.map(k => ({
+              keyword: k.kw,
+              matchType: k.match,
+              maxCpc: custom.maxCpc,
+              qualityScore: 0,
+              impressions: 0,
+              clicks: 0,
+              conversions: 0,
+              ctr: 0,
+              avgCpc: 0,
+              avgPosition: 0,
+              status: 'active' as const,
+            })),
+            negativeKeywords: [],
+            ads: [{
+              id: `ad-${custom.id}`,
+              headlines: custom.headlines,
+              descriptions: custom.descriptions,
+              finalUrl: `https://voraprep.com${custom.landingPage}`,
+              displayPath: [custom.courseId.toUpperCase(), 'Questions'],
+              status: 'active' as const,
+            }],
+            landingPage: custom.landingPage,
+            maxCpc: custom.maxCpc,
+            qualityScore: 0,
+            impressions: 0,
+            clicks: 0,
+            conversions: 0,
+            ctr: 0,
+            avgCpc: 0,
+            conversionRate: 0,
+          };
+          campaign.adGroups.push(customSemAdGroup);
+        }
+      }
+    }
+    
     setCampaigns(all);
   };
 
@@ -1236,6 +1297,39 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
     }
   };
 
+  // Sync a single ad group to Google Ads
+  const syncSingleAdGroup = async (campaign: ReturnType<typeof generateAllCampaigns>[0], adGroup: ReturnType<typeof generateAllCampaigns>[0]['adGroups'][0]) => {
+    setSyncingAdGroup(adGroup.id);
+    setSyncResult(null);
+    try {
+      const syncFn = httpsCallable(functions, 'growthSyncCampaigns');
+      // Send only this campaign with only this ad group
+      const result = await syncFn({ campaigns: [{
+        id: campaign.id,
+        courseId: campaign.courseId,
+        name: campaign.name,
+        dailyBudget: campaign.dailyBudget,
+        targetCPA: campaign.targetCPA,
+        adGroups: [{
+          name: adGroup.name,
+          theme: adGroup.theme,
+          keywords: adGroup.keywords,
+          ads: adGroup.ads,
+          negativeKeywords: adGroup.negativeKeywords,
+          landingPage: adGroup.landingPage,
+          maxCpc: adGroup.maxCpc,
+        }],
+      }]});
+      const data = result.data as { success: boolean; message?: string };
+      setSyncResult({ success: data.success, message: data.message || `"${adGroup.name}" synced to Google Ads (PAUSED)` });
+    } catch (error: unknown) {
+      const errMsg = error instanceof Error ? error.message : 'Sync failed';
+      setSyncResult({ success: false, message: errMsg });
+    } finally {
+      setSyncingAdGroup(null);
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* Summary */}
@@ -1257,7 +1351,7 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
               </Button>
             )}
             <Button variant={campaigns ? 'ghost' : 'primary'} size="sm" onClick={loadCampaigns} leftIcon={Megaphone}>
-              {campaigns ? 'Refresh' : 'Generate Campaigns'}
+              {campaigns ? 'Reload Campaigns' : 'Load Campaigns'}
             </Button>
           </div>
         </div>
@@ -1293,7 +1387,20 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
                             <span className="font-medium text-gray-900 dark:text-white text-sm">{ag.name}</span>
                             <span className="ml-2 text-xs text-gray-500 capitalize">({ag.theme})</span>
                           </div>
-                          <span className="text-xs text-gray-500">${ag.maxCpc} max CPC</span>
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => syncSingleAdGroup(campaign, ag)}
+                              disabled={syncingAdGroup === ag.id}
+                              className="text-xs px-2 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                            >
+                              {syncingAdGroup === ag.id ? (
+                                <><Loader2 className="w-3 h-3 animate-spin" /> Syncing...</>
+                              ) : (
+                                <><ArrowUpRight className="w-3 h-3" /> Sync</>
+                              )}
+                            </button>
+                            <span className="text-xs text-gray-500">${ag.maxCpc} max CPC</span>
+                          </div>
                         </div>
                         <div className="flex flex-wrap gap-1 mb-2">
                           {ag.keywords.slice(0, 5).map((kw, idx) => (
@@ -1338,6 +1445,9 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
         )}
       </Card>
 
+      {/* AI Campaign Builder */}
+      <AICampaignBuilder />
+
       {/* Bid Optimization Info */}
       <Card className="p-6 border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-900/20">
         <h3 className="text-sm font-semibold text-purple-800 dark:text-purple-400 mb-2 flex items-center gap-2">
@@ -1354,6 +1464,505 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
         </ol>
       </Card>
     </div>
+  );
+}
+
+// ============================================================================
+// AI Campaign Builder
+// ============================================================================
+
+interface AIGeneratedContent {
+  headlines: string[];
+  descriptions: string[];
+  keywords: { kw: string; match: 'broad' | 'phrase' | 'exact' }[];
+}
+
+import type { StoredCustomAdGroup } from '../../../services/growth/growthFirestore';
+import { deleteCustomAdGroup, updateCustomAdGroupStatus } from '../../../services/growth/growthFirestore';
+
+function AICampaignBuilder() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [courseId, setCourseId] = useState<CourseId>('cpa');
+  const [name, setName] = useState('');
+  const [concept, setConcept] = useState('');
+  const [generating, setGenerating] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [generated, setGenerated] = useState<AIGeneratedContent | null>(null);
+  const [editedHeadlines, setEditedHeadlines] = useState<string[]>([]);
+  const [editedDescriptions, setEditedDescriptions] = useState<string[]>([]);
+  const [editedKeywords, setEditedKeywords] = useState<{ kw: string; match: 'broad' | 'phrase' | 'exact' }[]>([]);
+  const [landingPage, setLandingPage] = useState('/cpa');
+  const [maxCpc, setMaxCpc] = useState(1.5);
+  const [result, setResult] = useState<{ success: boolean; message: string } | null>(null);
+  const [savedAdGroups, setSavedAdGroups] = useState<StoredCustomAdGroup[]>([]);
+  const [loadingSaved, setLoadingSaved] = useState(false);
+
+  // Load saved ad groups when expanded
+  useEffect(() => {
+    if (isExpanded) {
+      loadSavedAdGroups();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded]);
+
+  const loadSavedAdGroups = async () => {
+    setLoadingSaved(true);
+    try {
+      const groups = await getCustomAdGroups();
+      setSavedAdGroups(groups);
+    } catch (error) {
+      logger.error('[AICampaignBuilder] Failed to load saved ad groups:', error);
+    } finally {
+      setLoadingSaved(false);
+    }
+  };
+
+  const handleToggleStatus = async (id: string, currentStatus: 'draft' | 'active' | 'paused') => {
+    const newStatus = currentStatus === 'active' ? 'paused' : 'active';
+    try {
+      await updateCustomAdGroupStatus(id, newStatus);
+      await loadSavedAdGroups();
+    } catch (error) {
+      logger.error('[AICampaignBuilder] Failed to toggle status:', error);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm('Delete this ad group?')) return;
+    try {
+      await deleteCustomAdGroup(id);
+      await loadSavedAdGroups();
+    } catch (error) {
+      logger.error('[AICampaignBuilder] Failed to delete:', error);
+    }
+  };
+
+  const handleGenerate = async () => {
+    if (!concept.trim()) return;
+    
+    setGenerating(true);
+    setResult(null);
+    
+    try {
+      const prompt = getAICampaignPrompt(concept, courseId);
+      // Use generateAIResponse with minimal parameters for ad generation
+      const response = await generateAIResponse(prompt, 'explain', [], 'FAR', [], courseId);
+      
+      // Parse JSON from response
+      const jsonMatch = response.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) {
+        throw new Error('Failed to parse AI response');
+      }
+      
+      const parsed = JSON.parse(jsonMatch[0]) as AIGeneratedContent;
+      
+      // Validate and filter with feedback
+      const allHeadlines = parsed.headlines || [];
+      const allDescriptions = parsed.descriptions || [];
+      const filteredHeadlines = allHeadlines.filter((h: string) => h.length > 30);
+      const filteredDescriptions = allDescriptions.filter((d: string) => d.length > 90);
+      
+      const validHeadlines = allHeadlines.filter((h: string) => h.length <= 30).slice(0, 15);
+      const validDescriptions = allDescriptions.filter((d: string) => d.length <= 90).slice(0, 4);
+      const validKeywords = (parsed.keywords || []).slice(0, 15);
+      
+      setGenerated({ headlines: validHeadlines, descriptions: validDescriptions, keywords: validKeywords });
+      setEditedHeadlines(validHeadlines);
+      setEditedDescriptions(validDescriptions);
+      setEditedKeywords(validKeywords);
+      
+      // Build feedback message
+      let msg = `Generated ${validHeadlines.length} headlines, ${validDescriptions.length} descriptions, ${validKeywords.length} keywords`;
+      if (filteredHeadlines.length > 0 || filteredDescriptions.length > 0) {
+        msg += ` (filtered: ${filteredHeadlines.length} headlines >30 chars, ${filteredDescriptions.length} descriptions >90 chars)`;
+      }
+      setResult({ success: true, message: msg });
+    } catch (error) {
+      logger.error('[AICampaignBuilder] Generation failed:', error);
+      setResult({ success: false, message: error instanceof Error ? error.message : 'Generation failed' });
+    } finally {
+      setGenerating(false);
+    }
+  };
+
+  const handleSave = async (activateImmediately = false) => {
+    if (!name.trim() || editedHeadlines.length === 0) {
+      setResult({ success: false, message: 'Please provide a name and generate content first' });
+      return;
+    }
+    
+    setSaving(true);
+    try {
+      await saveCustomAdGroup({
+        courseId,
+        name: name.trim(),
+        concept: concept.trim(),
+        headlines: editedHeadlines,
+        descriptions: editedDescriptions,
+        keywords: editedKeywords,
+        landingPage,
+        maxCpc,
+        status: activateImmediately ? 'active' : 'draft',
+      });
+      
+      const msg = activateImmediately 
+        ? 'Ad group saved and activated! Scroll up to "Campaign Structure" → click "Load Campaigns" → "Sync to Google Ads".'
+        : 'Custom ad group saved as draft. Activate it to include in campaign sync.';
+      setResult({ success: true, message: msg });
+      
+      // Reset form
+      setName('');
+      setConcept('');
+      setGenerated(null);
+      setEditedHeadlines([]);
+      setEditedDescriptions([]);
+      setEditedKeywords([]);
+    } catch (error) {
+      logger.error('[AICampaignBuilder] Save failed:', error);
+      setResult({ success: false, message: error instanceof Error ? error.message : 'Save failed' });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const updateHeadline = (index: number, value: string) => {
+    const updated = [...editedHeadlines];
+    updated[index] = value;
+    setEditedHeadlines(updated);
+  };
+
+  const updateDescription = (index: number, value: string) => {
+    const updated = [...editedDescriptions];
+    updated[index] = value;
+    setEditedDescriptions(updated);
+  };
+
+  const updateKeyword = (index: number, kw: string, match: 'broad' | 'phrase' | 'exact') => {
+    const updated = [...editedKeywords];
+    updated[index] = { kw, match };
+    setEditedKeywords(updated);
+  };
+
+  const addHeadline = () => setEditedHeadlines([...editedHeadlines, '']);
+  const addDescription = () => setEditedDescriptions([...editedDescriptions, '']);
+  const addKeyword = () => setEditedKeywords([...editedKeywords, { kw: '', match: 'phrase' }]);
+
+  const removeHeadline = (index: number) => setEditedHeadlines(editedHeadlines.filter((_, i) => i !== index));
+  const removeDescription = (index: number) => setEditedDescriptions(editedDescriptions.filter((_, i) => i !== index));
+  const removeKeyword = (index: number) => setEditedKeywords(editedKeywords.filter((_, i) => i !== index));
+
+  return (
+    <Card className="p-6 border-blue-200 dark:border-blue-800">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full flex items-center justify-between"
+      >
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+          <Sparkles className="w-5 h-5 text-blue-500" />
+          AI Campaign Builder
+        </h3>
+        {isExpanded ? <ChevronDown className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
+      </button>
+
+      {isExpanded && (
+        <div className="mt-4 space-y-4">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Describe your campaign concept and let AI generate headlines, descriptions, and keywords. Edit them together, then save.
+          </p>
+
+          {/* Campaign Setup */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Exam</label>
+              <select
+                value={courseId}
+                onChange={(e) => {
+                  setCourseId(e.target.value as CourseId);
+                  setLandingPage(`/${e.target.value === 'ea' ? 'ea-prep' : e.target.value}`);
+                }}
+                className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm"
+              >
+                <option value="cpa">CPA</option>
+                <option value="ea">EA</option>
+                <option value="cma">CMA</option>
+                <option value="cia">CIA</option>
+                <option value="cfp">CFP</option>
+                <option value="cisa">CISA</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Ad Group Name</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="e.g., CPA - Question Quality Focus"
+                className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm"
+              />
+            </div>
+          </div>
+
+          {/* Concept Input */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Campaign Concept <span className="text-gray-400">(describe what you want to focus on)</span>
+            </label>
+            <textarea
+              value={concept}
+              onChange={(e) => setConcept(e.target.value)}
+              placeholder="e.g., Focus on how our questions have deep explanations and 'why wrong' breakdowns for every answer. Emphasize that studying our questions alone can get you to pass because you truly understand the concepts, not just memorize answers."
+              rows={4}
+              className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm"
+            />
+          </div>
+
+          <div className="flex gap-2">
+            <Button
+              variant="primary"
+              onClick={handleGenerate}
+              loading={generating}
+              leftIcon={Sparkles}
+              disabled={!concept.trim()}
+            >
+              Generate with AI
+            </Button>
+          </div>
+
+          {/* Generated/Edited Content */}
+          {editedHeadlines.length > 0 && (
+            <div className="space-y-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              {/* Headlines */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Headlines <span className="text-gray-400">(max 30 chars each)</span>
+                  </label>
+                  <button onClick={addHeadline} className="text-xs text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <Plus className="w-3 h-3" /> Add
+                  </button>
+                </div>
+                <div className="space-y-2">
+                  {editedHeadlines.map((headline, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <input
+                        type="text"
+                        value={headline}
+                        onChange={(e) => updateHeadline(idx, e.target.value)}
+                        maxLength={30}
+                        className={clsx(
+                          'flex-1 px-2 py-1 text-sm rounded border',
+                          headline.length > 30
+                            ? 'border-red-300 bg-red-50 dark:border-red-700 dark:bg-red-900/20'
+                            : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
+                        )}
+                      />
+                      <span className={clsx('text-xs w-8', headline.length > 30 ? 'text-red-500' : 'text-gray-400')}>
+                        {headline.length}
+                      </span>
+                      <button onClick={() => removeHeadline(idx)} className="text-red-400 hover:text-red-600">
+                        <Trash2 className="w-3 h-3" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Descriptions */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Descriptions <span className="text-gray-400">(max 90 chars each)</span>
+                  </label>
+                  <button onClick={addDescription} className="text-xs text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <Plus className="w-3 h-3" /> Add
+                  </button>
+                </div>
+                <div className="space-y-2">
+                  {editedDescriptions.map((desc, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <textarea
+                        value={desc}
+                        onChange={(e) => updateDescription(idx, e.target.value)}
+                        maxLength={90}
+                        rows={2}
+                        className={clsx(
+                          'flex-1 px-2 py-1 text-sm rounded border resize-none',
+                          desc.length > 90
+                            ? 'border-red-300 bg-red-50 dark:border-red-700 dark:bg-red-900/20'
+                            : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
+                        )}
+                      />
+                      <span className={clsx('text-xs w-8', desc.length > 90 ? 'text-red-500' : 'text-gray-400')}>
+                        {desc.length}
+                      </span>
+                      <button onClick={() => removeDescription(idx)} className="text-red-400 hover:text-red-600">
+                        <Trash2 className="w-3 h-3" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Keywords */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Keywords</label>
+                  <button onClick={addKeyword} className="text-xs text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    <Plus className="w-3 h-3" /> Add
+                  </button>
+                </div>
+                <div className="space-y-2">
+                  {editedKeywords.map((keyword, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <input
+                        type="text"
+                        value={keyword.kw}
+                        onChange={(e) => updateKeyword(idx, e.target.value, keyword.match)}
+                        placeholder="keyword phrase"
+                        className="flex-1 px-2 py-1 text-sm rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+                      />
+                      <select
+                        value={keyword.match}
+                        onChange={(e) => updateKeyword(idx, keyword.kw, e.target.value as 'broad' | 'phrase' | 'exact')}
+                        className="px-2 py-1 text-sm rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+                      >
+                        <option value="broad">Broad</option>
+                        <option value="phrase">Phrase</option>
+                        <option value="exact">Exact</option>
+                      </select>
+                      <button onClick={() => removeKeyword(idx)} className="text-red-400 hover:text-red-600">
+                        <Trash2 className="w-3 h-3" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Settings */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Landing Page</label>
+                  <input
+                    type="text"
+                    value={landingPage}
+                    onChange={(e) => setLandingPage(e.target.value)}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Max CPC ($)</label>
+                  <input
+                    type="number"
+                    value={maxCpc}
+                    onChange={(e) => setMaxCpc(parseFloat(e.target.value) || 1.0)}
+                    step={0.1}
+                    min={0.1}
+                    className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Save Buttons */}
+              <div className="flex gap-2 pt-2">
+                <Button
+                  variant="secondary"
+                  onClick={() => handleSave(false)}
+                  loading={saving}
+                  leftIcon={Save}
+                  disabled={!name.trim() || editedHeadlines.length === 0}
+                >
+                  Save as Draft
+                </Button>
+                <Button
+                  variant="primary"
+                  onClick={() => handleSave(true)}
+                  loading={saving}
+                  leftIcon={Zap}
+                  disabled={!name.trim() || editedHeadlines.length === 0}
+                >
+                  Save & Activate
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {/* Result Message */}
+          {result && (
+            <div className={clsx(
+              'p-3 rounded-lg text-sm flex items-center gap-2',
+              result.success
+                ? 'bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-400'
+                : 'bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-400'
+            )}>
+              {result.success ? <CheckCircle className="w-4 h-4" /> : <AlertTriangle className="w-4 h-4" />}
+              {result.message}
+            </div>
+          )}
+
+          {/* Saved Ad Groups Section */}
+          <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+              <Layers className="w-4 h-4" />
+              Saved Custom Ad Groups
+              {loadingSaved && <RefreshCw className="w-3 h-3 animate-spin" />}
+            </h4>
+            
+            {savedAdGroups.length === 0 ? (
+              <p className="text-sm text-gray-500 italic">No custom ad groups saved yet.</p>
+            ) : (
+              <div className="space-y-2">
+                {savedAdGroups.map(ag => (
+                  <div key={ag.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium text-sm text-gray-900 dark:text-white">{ag.name}</span>
+                        <span className={clsx(
+                          'px-2 py-0.5 rounded text-xs font-medium',
+                          ag.status === 'active' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                          ag.status === 'paused' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' :
+                          'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
+                        )}>
+                          {ag.status}
+                        </span>
+                        <span className="text-xs text-gray-500 uppercase">{ag.courseId}</span>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-1">
+                        {ag.keywords.length} keywords · {ag.headlines.length} headlines · ${ag.maxCpc} CPC
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <button
+                        onClick={() => handleToggleStatus(ag.id, ag.status)}
+                        className={clsx(
+                          'p-1.5 rounded text-xs',
+                          ag.status === 'active'
+                            ? 'text-yellow-600 hover:bg-yellow-50 dark:hover:bg-yellow-900/20'
+                            : 'text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20'
+                        )}
+                        title={ag.status === 'active' ? 'Pause' : 'Activate'}
+                      >
+                        {ag.status === 'active' ? <Pause className="w-4 h-4" /> : <Zap className="w-4 h-4" />}
+                      </button>
+                      <button
+                        onClick={() => handleDelete(ag.id)}
+                        className="p-1.5 rounded text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20"
+                        title="Delete"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            <p className="text-xs text-gray-500 mt-3">
+              <strong>Next step:</strong> Scroll up to "Campaign Structure" → click <strong>Load Campaigns</strong> → <strong>Sync to Google Ads</strong>.
+            </p>
+          </div>
+        </div>
+      )}
+    </Card>
   );
 }
 

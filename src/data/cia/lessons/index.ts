@@ -1,58 +1,94 @@
-/**
- * CIA (Certified Internal Auditor) Lessons
- * 
- * Based on IIA CIA Exam Content Specification 2024-2025
- * Three parts matching exam structure
- */
+// CIA Lessons Index - JSON-based
+// Migrated to JSON format: 2026-02-28
 
-// CIA Part 1: Essentials of Internal Auditing
-export { cia1Lessons, getCIA1Lessons } from './cia1-lessons';
-import { cia1LessonsBatch2 } from './cia1-lessons-batch2';
+import { Lesson } from '../../../types';
 
-// CIA Part 2: Practice of Internal Auditing
-export { cia2Lessons, getCIA2Lessons } from './cia2-lessons';
-import { cia2LessonsBatch2 } from './cia2-lessons-batch2';
+// CIA1 imports
+import cia1Data from './json/cia1.json';
+import cia1Batch2Data from './json/cia1-batch2.json';
+import cia1Batch3Data from './json/cia1-batch3.json';
 
-// CIA Part 3: Business Knowledge for Internal Auditing
-export { cia3Lessons, getCIA3Lessons } from './cia3-lessons';
-import { cia3LessonsBatch2 } from './cia3-lessons-batch2';
+// CIA2 imports
+import cia2Data from './json/cia2.json';
+import cia2Batch2Data from './json/cia2-batch2.json';
+import cia2Batch3Data from './json/cia2-batch3.json';
+import cia2DomainIIIData from './json/cia2-domain-iii.json';
 
-// Additional lessons batches
-import { ciaLessonsBatch3 } from './cia-lessons-batch3';
-import { ciaLessonsBatch4 } from './cia-lessons-batch4';
-import { ciaLessonsBatch5 } from './cia-lessons-batch5';
-import { gias2024Lessons } from './gias-2024-lesson';
-import { ciaMissingTopicsLessons } from './cia-missing-topics';
-import { cia2DomainIIILessons } from './cia2-domain-iii-expansion';
-import { cia1LessonsBatch3 } from './cia1-lessons-batch3';
-import { cia2LessonsBatch3 } from './cia2-lessons-batch3';
-import { cia3LessonsBatch3 } from './cia3-lessons-batch3';
+// CIA3 imports
+import cia3Data from './json/cia3.json';
+import cia3Batch2Data from './json/cia3-batch2.json';
+import cia3Batch3Data from './json/cia3-batch3.json';
 
-// Combined exports
-import { cia1Lessons } from './cia1-lessons';
-import { cia2Lessons } from './cia2-lessons';
-import { cia3Lessons } from './cia3-lessons';
+// Mixed batch imports
+import ciaBatch3Data from './json/cia-batch3.json';
+import ciaBatch4Data from './json/cia-batch4.json';
+import ciaBatch5Data from './json/cia-batch5.json';
+import gias2024Data from './json/gias-2024.json';
+import ciaMissingData from './json/cia-missing.json';
 
-export const ALL_CIA_LESSONS = [
-  ...gias2024Lessons,  // GIAS 2024 lessons first (critical update)
+// Type assertions
+export const cia1Lessons: Lesson[] = cia1Data as Lesson[];
+export const cia1LessonsBatch2: Lesson[] = cia1Batch2Data as Lesson[];
+export const cia1LessonsBatch3: Lesson[] = cia1Batch3Data as Lesson[];
+export const cia2Lessons: Lesson[] = cia2Data as Lesson[];
+export const cia2LessonsBatch2: Lesson[] = cia2Batch2Data as Lesson[];
+export const cia2LessonsBatch3: Lesson[] = cia2Batch3Data as Lesson[];
+export const cia2DomainIIILessons: Lesson[] = cia2DomainIIIData as Lesson[];
+export const cia3Lessons: Lesson[] = cia3Data as Lesson[];
+export const cia3LessonsBatch2: Lesson[] = cia3Batch2Data as Lesson[];
+export const cia3LessonsBatch3: Lesson[] = cia3Batch3Data as Lesson[];
+export const ciaLessonsBatch3: Lesson[] = ciaBatch3Data as Lesson[];
+export const ciaLessonsBatch4: Lesson[] = ciaBatch4Data as Lesson[];
+export const ciaLessonsBatch5: Lesson[] = ciaBatch5Data as Lesson[];
+export const gias2024Lessons: Lesson[] = gias2024Data as Lesson[];
+export const ciaMissingTopicsLessons: Lesson[] = ciaMissingData as Lesson[];
+
+// Combined by part
+export const CIA1_LESSONS: Lesson[] = [
   ...cia1Lessons,
   ...cia1LessonsBatch2,
-  ...cia1LessonsBatch3,  // Core Principles, IPPF, Proficiency, Ethics
+  ...cia1LessonsBatch3,
+];
+
+export const CIA2_LESSONS: Lesson[] = [
   ...cia2Lessons,
   ...cia2LessonsBatch2,
-  ...cia2LessonsBatch3,  // Engagement Planning, RCM, CAE Strategy
+  ...cia2LessonsBatch3,
+  ...cia2DomainIIILessons,
+];
+
+export const CIA3_LESSONS: Lesson[] = [
   ...cia3Lessons,
   ...cia3LessonsBatch2,
-  ...cia3LessonsBatch3,  // NIST CSF, ISO 27001, Strategy Frameworks, M&A
+  ...cia3LessonsBatch3,
+];
+
+// All CIA lessons
+export const ALL_CIA_LESSONS: Lesson[] = [
+  ...CIA1_LESSONS,
+  ...CIA2_LESSONS,
+  ...CIA3_LESSONS,
   ...ciaLessonsBatch3,
   ...ciaLessonsBatch4,
   ...ciaLessonsBatch5,
-  ...ciaMissingTopicsLessons,  // Fraud, Sampling, IFRS/GAAP
-  ...cia2DomainIIILessons,     // Part 2 Domain III expansion + ESG
+  ...gias2024Lessons,
+  ...ciaMissingTopicsLessons,
 ];
 
-export const getCIALessons = () => ALL_CIA_LESSONS;
-export const getCIALessonCount = () => ALL_CIA_LESSONS.length;
-export const getCIALessonById = (id: string) => ALL_CIA_LESSONS.find(l => l.id === id);
-export const getCIALessonsBySection = (section: 'CIA1' | 'CIA2' | 'CIA3') => 
-  ALL_CIA_LESSONS.filter(l => l.section === section);
+// Helper functions
+export const getCIALessonById = (id: string): Lesson | undefined => {
+  return ALL_CIA_LESSONS.find(lesson => lesson.id === id);
+};
+
+export const getCIALessonsBySection = (section: string): Lesson[] => {
+  return ALL_CIA_LESSONS.filter(lesson => lesson.section === section);
+};
+
+export const getCIALessonCount = () => ({
+  total: ALL_CIA_LESSONS.length,
+  cia1: CIA1_LESSONS.length,
+  cia2: CIA2_LESSONS.length,
+  cia3: CIA3_LESSONS.length,
+});
+
+export default ALL_CIA_LESSONS;

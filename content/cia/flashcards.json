@@ -1,7 +1,4 @@
 {
-  "$schema": "../schema/flashcard.schema.json",
-  "courseId": "cia",
-  "exportedAt": "2026-02-28T20:51:57.569Z",
   "flashcards": [
     {
       "id": "cia1-fc-001",
@@ -19,7 +16,8 @@
         "IIA",
         "foundations"
       ],
-      "reference": "Definition of Internal Auditing"
+      "reference": "Definition of Internal Auditing",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-002",
@@ -37,7 +35,8 @@
         "CAE",
         "board"
       ],
-      "reference": "Standard 1100"
+      "reference": "Standard 1100",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-003",
@@ -55,7 +54,8 @@
         "independence",
         "ethics"
       ],
-      "reference": "Standard 1120"
+      "reference": "Standard 1120",
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-004",
@@ -73,7 +73,8 @@
         "proficiency",
         "standards"
       ],
-      "reference": "Standard 1220"
+      "reference": "Standard 1220",
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-005",
@@ -91,7 +92,8 @@
         "principles",
         "mnemonic"
       ],
-      "reference": "IIA Code of Ethics"
+      "reference": "IIA Code of Ethics",
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-006",
@@ -109,7 +111,8 @@
         "board",
         "charter"
       ],
-      "reference": "Standard 1110"
+      "reference": "Standard 1110",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-007",
@@ -163,7 +166,8 @@
         "risk-based",
         "CAE"
       ],
-      "reference": "Standard 2010"
+      "reference": "Standard 2010",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-010",
@@ -181,7 +185,8 @@
         "quality",
         "assessment"
       ],
-      "reference": "Standard 1300"
+      "reference": "Standard 1300",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-fc-011",
@@ -199,7 +204,8 @@
         "scope",
         "objectives"
       ],
-      "reference": "Standard 2200"
+      "reference": "Standard 2200",
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia1-fc-012",
@@ -235,7 +241,8 @@
         "preventive",
         "detective",
         "corrective"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-014",
@@ -270,7 +277,8 @@
         "sampling",
         "statistical",
         "judgmental"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia1-fc-016",
@@ -288,7 +296,8 @@
         "findings",
         "reports"
       ],
-      "reference": "Standard 2400"
+      "reference": "Standard 2400",
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia1-fc-017",
@@ -298,7 +307,7 @@
       "type": "mnemonic",
       "topic": "Findings",
       "front": "What are the components of an audit finding? (4 Cs)",
-      "back": "**The 4 Cs of Audit Findings:**\\n\\n• **C**ondition - What is (current state/finding)\\n• **C**riteria - What should be (standard/policy/law)\\n• **C**ause - Why the gap exists (root cause)\\n• **C**onsequence - What\\",
+      "back": "**The 4 Cs of Audit Findings:**\\n\\n• **C**ondition - What is (current state/finding)\\n• **C**riteria - What should be (standard/policy/law)\\n• **C**ause - Why the gap exists (root cause)\\n• **C**onsequence - What",
       "difficulty": "easy",
       "subtopic": "Components",
       "tags": [
@@ -306,7 +315,8 @@
         "4Cs",
         "mnemonic"
       ],
-      "reference": "Standard 2410"
+      "reference": "Standard 2410",
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia1-fc-018",
@@ -342,7 +352,8 @@
         "role",
         "board"
       ],
-      "reference": "Standard 2110"
+      "reference": "Standard 2110",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-020",
@@ -378,7 +389,8 @@
         "impairment",
         "objectivity"
       ],
-      "reference": "Standard 1130"
+      "reference": "Standard 1130",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-b2-004",
@@ -395,7 +407,8 @@
         "risk appetite",
         "risk tolerance",
         "ERM"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia1-fc-b2-009",
@@ -448,7 +461,8 @@
         "testing",
         "documentation"
       ],
-      "reference": "Standard 2310"
+      "reference": "Standard 2310",
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia1-fc-b2-012",
@@ -465,25 +479,8 @@
         "sampling",
         "attribute",
         "variable"
-      ]
-    },
-    {
-      "id": "cia1-fc-b2-013",
-      "courseId": "cia",
-      "section": "CIA1",
-      "blueprintArea": "CIA1",
-      "type": "standard",
-      "topic": "Communication",
-      "front": "What must be included in engagement communications?",
-      "back": "Communications must include: 1) Objectives and scope, 2) Conclusions, 3) Recommendations and action plans, 4) Opinion when appropriate. Must be accurate, objective, clear, concise, constructive, complete, and timely. Significant errors must be corrected and communicated.",
-      "difficulty": "medium",
-      "subtopic": "Engagement Results",
-      "tags": [
-        "communication",
-        "reporting",
-        "findings"
       ],
-      "reference": "Standard 2400"
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia1-fc-b2-014",
@@ -500,7 +497,8 @@
         "findings",
         "condition",
         "criteria"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia1-fc-b2-015",
@@ -517,7 +515,8 @@
         "conformance",
         "standards",
         "IPPF"
-      ]
+      ],
+      "example": "Standard 1100 Independence: Internal audit activity must be independent, and auditors must be objective in performing work."
     },
     {
       "id": "cia1-fc-b2-016",
@@ -534,7 +533,8 @@
         "inherent",
         "residual",
         "risk"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia1-fc-b2-017",
@@ -569,7 +569,8 @@
         "CAE",
         "board",
         "functional reporting"
-      ]
+      ],
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b2-020",
@@ -621,7 +622,8 @@
         "risk response",
         "ARAT",
         "risk management"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia1-fc-b3-003",
@@ -656,7 +658,8 @@
         "evaluation",
         "standards"
       ],
-      "reference": "Standard 2110"
+      "reference": "Standard 2110",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b3-005",
@@ -690,7 +693,8 @@
         "COSO",
         "internal control",
         "framework"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia1-fc-b3-007",
@@ -707,23 +711,6 @@
         "ITGC",
         "application controls",
         "IT"
-      ]
-    },
-    {
-      "id": "cia1-fc-b3-008",
-      "courseId": "cia",
-      "section": "CIA1",
-      "blueprintArea": "CIA1",
-      "type": "definition",
-      "topic": "Compliance",
-      "front": "What is internal audit\\",
-      "back": "Internal audit should: 1) Evaluate compliance with laws, regulations, and policies, 2) Assess adequacy of compliance programs, 3) Report compliance issues to management and board, 4) NOT own compliance (management responsibility), 5) Provide independent assurance on compliance effectiveness.",
-      "difficulty": "medium",
-      "subtopic": "Regulatory Compliance",
-      "tags": [
-        "compliance",
-        "regulatory",
-        "audit role"
       ]
     },
     {
@@ -745,24 +732,6 @@
       "reference": "Standard 1312"
     },
     {
-      "id": "cia1-fc-b3-010",
-      "courseId": "cia",
-      "section": "CIA1",
-      "blueprintArea": "CIA1",
-      "type": "concept",
-      "topic": "Fraud",
-      "front": "What is internal audit\\",
-      "back": "Internal audit should: 1) Understand fraud risks, 2) Evaluate controls designed to prevent/detect fraud, 3) Be alert to fraud indicators during engagements, 4) NOT have primary responsibility (management\\",
-      "difficulty": "medium",
-      "subtopic": "Fraud Prevention",
-      "tags": [
-        "fraud",
-        "prevention",
-        "detection"
-      ],
-      "reference": "Standard 1210.A2"
-    },
-    {
       "id": "cia1-fc-b3-011",
       "courseId": "cia",
       "section": "CIA1",
@@ -777,7 +746,8 @@
         "audit universe",
         "planning",
         "scope"
-      ]
+      ],
+      "example": "Complete inventory: 15 business processes, 8 IT systems, 12 compliance areas, 5 major projects - each scored by risk for annual planning."
     },
     {
       "id": "cia1-fc-b3-012",
@@ -805,7 +775,7 @@
       "type": "standard",
       "topic": "Coordination",
       "front": "How should internal audit coordinate with external auditors?",
-      "back": "Coordination should include: 1) Sharing of work plans and schedules, 2) Access to each other\\",
+      "back": "Coordination should include: 1) Sharing of work plans and schedules, 2) Access to each other",
       "difficulty": "medium",
       "subtopic": "External Auditors",
       "tags": [
@@ -848,7 +818,8 @@
         "board",
         "communication"
       ],
-      "reference": "Standard 2060"
+      "reference": "Standard 2060",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b4-001",
@@ -935,7 +906,8 @@
         "1110",
         "CAE"
       ],
-      "reference": "Standard 1110"
+      "reference": "Standard 1110",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-b4-007",
@@ -953,7 +925,8 @@
         "1120",
         "ethics"
       ],
-      "reference": "Standard 1120"
+      "reference": "Standard 1120",
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-b4-008",
@@ -971,7 +944,8 @@
         "1130",
         "disclosure"
       ],
-      "reference": "Standard 1130"
+      "reference": "Standard 1130",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-b4-009",
@@ -988,7 +962,8 @@
         "safeguards",
         "impairment",
         "independence"
-      ]
+      ],
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-b4-010",
@@ -1041,7 +1016,8 @@
         "knowledge",
         "competence",
         "skills"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b4-013",
@@ -1076,7 +1052,8 @@
         "due care",
         "considerations",
         "judgment"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b4-015",
@@ -1112,7 +1089,8 @@
         "1310",
         "quality"
       ],
-      "reference": "Standard 1310"
+      "reference": "Standard 1310",
+      "example": "Quality program includes: ongoing monitoring (supervision, checklists), periodic self-assessments, and external assessment every 5 years."
     },
     {
       "id": "cia1-fc-b4-017",
@@ -1130,7 +1108,8 @@
         "1311",
         "QAIP"
       ],
-      "reference": "Standard 1311"
+      "reference": "Standard 1311",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-fc-b4-018",
@@ -1165,7 +1144,8 @@
         "external assessor",
         "qualifications",
         "independence"
-      ]
+      ],
+      "example": "Quality program includes: ongoing monitoring (supervision, checklists), periodic self-assessments, and external assessment every 5 years."
     },
     {
       "id": "cia1-fc-b4-020",
@@ -1183,7 +1163,8 @@
         "1320",
         "disclosure"
       ],
-      "reference": "Standard 1320"
+      "reference": "Standard 1320",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-b4-021",
@@ -1201,7 +1182,8 @@
         "1321",
         "statement"
       ],
-      "reference": "Standard 1321"
+      "reference": "Standard 1321",
+      "example": "Quality program includes: ongoing monitoring (supervision, checklists), periodic self-assessments, and external assessment every 5 years."
     },
     {
       "id": "cia1-fc-b4-022",
@@ -1253,7 +1235,8 @@
         "objectivity",
         "rules of conduct",
         "ethics"
-      ]
+      ],
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-b4-026",
@@ -1304,7 +1287,8 @@
         "governance",
         "definition",
         "IPPF"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b4-029",
@@ -1338,7 +1322,8 @@
         "three lines",
         "governance",
         "model"
-      ]
+      ],
+      "example": "At a manufacturing company: 1st line = plant managers owning production risks, 2nd line = corporate risk and compliance, 3rd line = internal audit providing independent assurance."
     },
     {
       "id": "cia1-fc-b4-032",
@@ -1372,7 +1357,8 @@
         "second line",
         "three lines",
         "oversight"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b4-034",
@@ -1389,7 +1375,8 @@
         "third line",
         "three lines",
         "assurance"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b4-035",
@@ -1406,7 +1393,8 @@
         "assurance",
         "engagement",
         "definition"
-      ]
+      ],
+      "example": "Internal audit evaluates IT general controls over financial reporting systems, providing independent assessment to audit committee."
     },
     {
       "id": "cia1-fc-b4-036",
@@ -1423,7 +1411,8 @@
         "consulting",
         "engagement",
         "definition"
-      ]
+      ],
+      "example": "Management asks internal audit to advise on control design for a new ERP implementation before go-live."
     },
     {
       "id": "cia1-fc-b4-039",
@@ -1440,7 +1429,8 @@
         "fraud",
         "red flags",
         "indicators"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b4-040",
@@ -1457,7 +1447,8 @@
         "fraud",
         "responsibility",
         "auditor"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-001",
@@ -1546,7 +1537,8 @@
         "independence",
         "oversight"
       ],
-      "reference": "Standard 1110"
+      "reference": "Standard 1110",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b5-006",
@@ -1564,7 +1556,8 @@
         "consulting",
         "independence"
       ],
-      "reference": "Standard 1130"
+      "reference": "Standard 1130",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-b5-007",
@@ -1582,7 +1575,8 @@
         "proficiency",
         "1220"
       ],
-      "reference": "Standard 1220"
+      "reference": "Standard 1220",
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-008",
@@ -1600,7 +1594,8 @@
         "collective",
         "1210"
       ],
-      "reference": "Standard 1210"
+      "reference": "Standard 1210",
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-009",
@@ -1653,7 +1648,8 @@
         "board",
         "committees",
         "governance"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b5-012",
@@ -1670,7 +1666,8 @@
         "audit committee",
         "oversight",
         "responsibilities"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-013",
@@ -1704,7 +1701,8 @@
         "governance",
         "mnemonic",
         "5Cs"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b5-015",
@@ -1721,7 +1719,8 @@
         "stakeholders",
         "governance",
         "interests"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b5-016",
@@ -1755,7 +1754,8 @@
         "risk assessment",
         "analysis",
         "evaluation"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia1-fc-b5-018",
@@ -1772,7 +1772,8 @@
         "risk response",
         "4Ts",
         "treatment"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia1-fc-b5-019",
@@ -1806,7 +1807,8 @@
         "risk quantification",
         "formula",
         "ALE"
-      ]
+      ],
+      "example": "Cash handling has high inherent risk due to liquidity and theft susceptibility, regardless of controls in place."
     },
     {
       "id": "cia1-fc-b5-021",
@@ -1840,7 +1842,8 @@
         "control activities",
         "preventive",
         "detective"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-023",
@@ -1857,7 +1860,8 @@
         "COSO",
         "monitoring",
         "ongoing"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-fc-b5-024",
@@ -1891,7 +1895,8 @@
         "hard controls",
         "soft controls",
         "comparison"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia1-fc-b5-026",
@@ -1908,7 +1913,8 @@
         "fraud types",
         "ACFE",
         "categories"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-027",
@@ -1925,7 +1931,8 @@
         "fraud detection",
         "methods",
         "hotlines"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-028",
@@ -1942,7 +1949,8 @@
         "red flags",
         "fraud indicators",
         "warning signs"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-029",
@@ -1959,7 +1967,8 @@
         "anti-fraud",
         "controls",
         "prevention"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-030",
@@ -1976,7 +1985,8 @@
         "MICE",
         "motivation",
         "mnemonic"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b5-031",
@@ -1986,7 +1996,7 @@
       "type": "standard",
       "topic": "Coordination",
       "front": "How should internal and external auditors coordinate per Standard 2050?",
-      "back": "Share information, coordinate activities, avoid duplication, ensure adequate coverage. CAE should share audit plan, work papers, reports. Coordination may include: joint planning, reliance on work, access to each other\\",
+      "back": "Share information, coordinate activities, avoid duplication, ensure adequate coverage. CAE should share audit plan, work papers, reports. Coordination may include: joint planning, reliance on work, access to each other",
       "difficulty": "medium",
       "subtopic": "External Auditors",
       "tags": [
@@ -1994,7 +2004,8 @@
         "external audit",
         "2050"
       ],
-      "reference": "Standard 2050"
+      "reference": "Standard 2050",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b5-032",
@@ -2047,7 +2058,8 @@
         "CAE",
         "reporting"
       ],
-      "reference": "Standard 2060"
+      "reference": "Standard 2060",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b5-035",
@@ -2064,7 +2076,8 @@
         "communication",
         "skills",
         "soft skills"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia1-fc-b5-036",
@@ -2133,7 +2146,8 @@
         "CAE",
         "responsibilities",
         "leadership"
-      ]
+      ],
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b5-040",
@@ -2150,7 +2164,8 @@
         "value",
         "adding value",
         "benefits"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia1-fc-b6-001",
@@ -2218,7 +2233,8 @@
         "core principles",
         "risk-based",
         "assurance"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia1-fc-b6-005",
@@ -2235,7 +2251,8 @@
         "core principles",
         "proactive",
         "insights"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia1-fc-b6-006",
@@ -2252,7 +2269,8 @@
         "core principles",
         "improvement",
         "value"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b6-007",
@@ -2298,7 +2316,7 @@
       "type": "standard",
       "topic": "Audit Plan",
       "front": "What makes an audit plan \"risk-based\" (Standard 2010)?",
-      "back": "Audit plan considers organization\\",
+      "back": "Audit plan considers organization",
       "difficulty": "medium",
       "subtopic": "Risk-Based",
       "tags": [
@@ -2306,7 +2324,8 @@
         "risk-based",
         "2010"
       ],
-      "reference": "Standard 2010"
+      "reference": "Standard 2010",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b6-010",
@@ -2323,7 +2342,8 @@
         "coverage",
         "cycle",
         "frequency"
-      ]
+      ],
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-fc-b6-011",
@@ -2340,7 +2360,8 @@
         "objectivity",
         "self-review",
         "threat"
-      ]
+      ],
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-b6-012",
@@ -2357,7 +2378,8 @@
         "objectivity",
         "familiarity",
         "threat"
-      ]
+      ],
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-b6-013",
@@ -2367,14 +2389,15 @@
       "type": "concept",
       "topic": "Objectivity",
       "front": "What is advocacy threat to objectivity?",
-      "back": "Risk when auditor promotes a position or opinion to the point that objectivity is compromised. Examples: Promoting management\\",
+      "back": "Risk when auditor promotes a position or opinion to the point that objectivity is compromised. Examples: Promoting management",
       "difficulty": "medium",
       "subtopic": "Advocacy",
       "tags": [
         "objectivity",
         "advocacy",
         "threat"
-      ]
+      ],
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-b6-014",
@@ -2391,7 +2414,8 @@
         "objectivity",
         "intimidation",
         "threat"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia1-fc-b6-015",
@@ -2408,7 +2432,8 @@
         "skepticism",
         "mindset",
         "critical"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-fc-b6-016",
@@ -2460,7 +2485,8 @@
         "technology",
         "skills",
         "analytics"
-      ]
+      ],
+      "example": "Auditor uses ACL to analyze 500,000 transactions, identifying 127 duplicate payment records totaling $45,000."
     },
     {
       "id": "cia1-fc-b6-019",
@@ -2511,7 +2537,8 @@
         "stakeholders",
         "relationships",
         "communication"
-      ]
+      ],
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-fc-b6-022",
@@ -2562,7 +2589,8 @@
         "value",
         "KPIs",
         "metrics"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b6-025",
@@ -2596,7 +2624,8 @@
         "remote",
         "virtual",
         "trends"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia1-fc-b6-027",
@@ -2664,7 +2693,8 @@
         "ethics",
         "gifts",
         "objectivity"
-      ]
+      ],
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-fc-b6-031",
@@ -2682,7 +2712,8 @@
         "standards",
         "compliance"
       ],
-      "reference": "Standard 1321"
+      "reference": "Standard 1321",
+      "example": "Quality program includes: ongoing monitoring (supervision, checklists), periodic self-assessments, and external assessment every 5 years."
     },
     {
       "id": "cia1-fc-b6-032",
@@ -2699,7 +2730,8 @@
         "documentation",
         "conformance",
         "evidence"
-      ]
+      ],
+      "example": "Auditor documents: (1) objectives, (2) scope, (3) procedures performed, (4) evidence gathered, (5) conclusions reached - all reviewed by supervisor."
     },
     {
       "id": "cia1-fc-b6-033",
@@ -2716,7 +2748,8 @@
         "risk appetite",
         "tolerance",
         "capacity"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia1-fc-b6-034",
@@ -2767,7 +2800,8 @@
         "public sector",
         "government",
         "GAGAS"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-fc-b6-037",
@@ -2835,7 +2869,8 @@
         "metrics",
         "KPIs",
         "effectiveness"
-      ]
+      ],
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-gias-fc-001",
@@ -2889,7 +2924,8 @@
         "structure",
         "standards"
       ],
-      "reference": "GIAS 2024"
+      "reference": "GIAS 2024",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-gias-fc-004",
@@ -2927,7 +2963,8 @@
         "Purpose",
         "Standard 1"
       ],
-      "reference": "GIAS Standard 1"
+      "reference": "GIAS Standard 1",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia1-gias-fc-006",
@@ -2945,7 +2982,8 @@
         "Domain II",
         "Ethics"
       ],
-      "reference": "GIAS Standards 2-5"
+      "reference": "GIAS Standards 2-5",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-gias-fc-007",
@@ -2963,7 +3001,8 @@
         "Code of Ethics",
         "Standard 2"
       ],
-      "reference": "GIAS Standard 2"
+      "reference": "GIAS Standard 2",
+      "example": "Auditor who previously managed IT operations waits one year before auditing that area to maintain objectivity."
     },
     {
       "id": "cia1-gias-fc-008",
@@ -2982,7 +3021,8 @@
         "independence",
         "mapping"
       ],
-      "reference": "GIAS Standard 4"
+      "reference": "GIAS Standard 4",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-gias-fc-009",
@@ -3000,7 +3040,8 @@
         "Domain III",
         "Governance"
       ],
-      "reference": "GIAS Standards 6-7"
+      "reference": "GIAS Standards 6-7",
+      "example": "Quality program includes: ongoing monitoring (supervision, checklists), periodic self-assessments, and external assessment every 5 years."
     },
     {
       "id": "cia1-gias-fc-010",
@@ -3018,7 +3059,8 @@
         "QAIP",
         "Standard 7"
       ],
-      "reference": "GIAS Standard 7"
+      "reference": "GIAS Standard 7",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-gias-fc-011",
@@ -3036,7 +3078,8 @@
         "Domain IV",
         "Management"
       ],
-      "reference": "GIAS Standards 8-10"
+      "reference": "GIAS Standards 8-10",
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia1-gias-fc-012",
@@ -3072,7 +3115,8 @@
         "Domain V",
         "Engagements"
       ],
-      "reference": "GIAS Standards 11-15"
+      "reference": "GIAS Standards 11-15",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-gias-fc-014",
@@ -3091,7 +3135,8 @@
         "mapping",
         "Performance Standards"
       ],
-      "reference": "GIAS Standards 11-15"
+      "reference": "GIAS Standards 11-15",
+      "example": "Auditor reviews prior findings, interviews process owner, maps key controls, assesses risks, and determines sample sizes before fieldwork."
     },
     {
       "id": "cia1-gias-fc-015",
@@ -3110,7 +3155,8 @@
         "Standard 15",
         "board communication"
       ],
-      "reference": "GIAS Standard 15"
+      "reference": "GIAS Standard 15",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-gias-fc-016",
@@ -3146,7 +3192,8 @@
         "Core Principles",
         "integration"
       ],
-      "reference": "GIAS 2024"
+      "reference": "GIAS 2024",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-gias-fc-018",
@@ -3218,7 +3265,8 @@
         "governance",
         "roles"
       ],
-      "reference": "IIA Three Lines Model (2020)"
+      "reference": "IIA Three Lines Model (2020)",
+      "example": "At a manufacturing company: 1st line = plant managers owning production risks, 2nd line = corporate risk and compliance, 3rd line = internal audit providing independent assurance."
     },
     {
       "id": "cia1-mnem-002",
@@ -3236,7 +3284,8 @@
         "attribute standards",
         "IPPF"
       ],
-      "reference": "Standard 1000-1300"
+      "reference": "Standard 1000-1300",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-mnem-003",
@@ -3254,7 +3303,8 @@
         "performance standards",
         "IPPF"
       ],
-      "reference": "Standard 2000-2600"
+      "reference": "Standard 2000-2600",
+      "example": "Auditor reviews prior findings, interviews process owner, maps key controls, assesses risks, and determines sample sizes before fieldwork."
     },
     {
       "id": "cia1-mnem-004",
@@ -3272,7 +3322,8 @@
         "QAIP",
         "quality assurance"
       ],
-      "reference": "Standard 1312"
+      "reference": "Standard 1312",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-mnem-005",
@@ -3291,7 +3342,8 @@
         "CAE",
         "reporting"
       ],
-      "reference": "Standard 1110"
+      "reference": "Standard 1110",
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia1-mnem-006",
@@ -3308,7 +3360,8 @@
       "tags": [
         "fraud",
         "fraud triangle"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia1-mnem-007",
@@ -3326,7 +3379,8 @@
         "COSO",
         "ERM",
         "risk management"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia1-mnem-008",
@@ -3343,7 +3397,8 @@
       "tags": [
         "COSO",
         "internal control"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-001",
@@ -3360,7 +3415,8 @@
         "risk assessment",
         "process",
         "ERM"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-002",
@@ -3377,7 +3433,8 @@
         "risk response",
         "TARA",
         "mnemonic"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia2-fc-003",
@@ -3394,7 +3451,8 @@
         "risk appetite",
         "tolerance",
         "definitions"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia2-fc-004",
@@ -3411,7 +3469,8 @@
         "COSO",
         "ERM",
         "framework"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-005",
@@ -3428,7 +3487,8 @@
         "COSO",
         "internal control",
         "mnemonic"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-006",
@@ -3445,7 +3505,8 @@
         "control environment",
         "COSO",
         "foundation"
-      ]
+      ],
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia2-fc-007",
@@ -3462,7 +3523,8 @@
         "control activities",
         "procedures",
         "types"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia2-fc-008",
@@ -3496,7 +3558,8 @@
         "procedures",
         "techniques",
         "evidence"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia2-fc-010",
@@ -3530,7 +3593,8 @@
         "fraud",
         "triangle",
         "red flags"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-012",
@@ -3547,7 +3611,8 @@
         "fraud",
         "red flags",
         "indicators"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-013",
@@ -3564,7 +3629,8 @@
         "CAATs",
         "data analytics",
         "technology"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia2-fc-014",
@@ -3582,7 +3648,8 @@
         "working papers",
         "evidence"
       ],
-      "reference": "Standard 2330"
+      "reference": "Standard 2330",
+      "example": "Auditor documents: (1) objectives, (2) scope, (3) procedures performed, (4) evidence gathered, (5) conclusions reached - all reviewed by supervisor."
     },
     {
       "id": "cia2-fc-015",
@@ -3600,7 +3667,8 @@
         "quality",
         "review"
       ],
-      "reference": "Standard 2340"
+      "reference": "Standard 2340",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia2-fc-016",
@@ -3668,7 +3736,8 @@
         "IT audit",
         "security",
         "controls"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-020",
@@ -3686,7 +3755,8 @@
         "advisory",
         "services"
       ],
-      "reference": "Standard 2010.C1"
+      "reference": "Standard 2010.C1",
+      "example": "Management asks internal audit to advise on control design for a new ERP implementation before go-live."
     },
     {
       "id": "cia2-fc-b2-001",
@@ -3703,7 +3773,8 @@
         "risk assessment",
         "planning",
         "engagement"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b2-002",
@@ -3720,7 +3791,8 @@
         "analytics",
         "data",
         "planning"
-      ]
+      ],
+      "example": "Auditor reviews prior findings, interviews process owner, maps key controls, assesses risks, and determines sample sizes before fieldwork."
     },
     {
       "id": "cia2-fc-b2-003",
@@ -3738,7 +3810,8 @@
         "working papers",
         "records"
       ],
-      "reference": "Standard 2330"
+      "reference": "Standard 2330",
+      "example": "Auditor documents: (1) objectives, (2) scope, (3) procedures performed, (4) evidence gathered, (5) conclusions reached - all reviewed by supervisor."
     },
     {
       "id": "cia2-fc-b2-004",
@@ -3755,7 +3828,8 @@
         "inquiry",
         "interview",
         "evidence"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b2-005",
@@ -3772,7 +3846,8 @@
         "procedures",
         "testing",
         "evidence"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia2-fc-b2-006",
@@ -3806,7 +3881,8 @@
         "sampling",
         "judgmental",
         "non-statistical"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia2-fc-b2-008",
@@ -3823,7 +3899,8 @@
         "sample size",
         "attribute",
         "factors"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia2-fc-b2-009",
@@ -3850,14 +3927,15 @@
       "type": "definition",
       "topic": "IT Audit",
       "front": "What are Computer Assisted Audit Techniques (CAATTs)?",
-      "back": "CAATTs are software tools used for: 1) Data extraction and analysis, 2) Duplicate detection, 3) Gap analysis (missing sequences), 4) Stratification and aging, 5) Benford\\",
+      "back": "CAATTs are software tools used for: 1) Data extraction and analysis, 2) Duplicate detection, 3) Gap analysis (missing sequences), 4) Stratification and aging, 5) Benford",
       "difficulty": "medium",
       "subtopic": "CAATTs",
       "tags": [
         "CAATTs",
         "data analysis",
         "tools"
-      ]
+      ],
+      "example": "Computer-assisted technique: test data through payroll system verifying calculations, or embedded audit module flagging exceptions."
     },
     {
       "id": "cia2-fc-b2-011",
@@ -3874,7 +3952,8 @@
         "access control",
         "authentication",
         "IT"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia2-fc-b2-012",
@@ -3884,7 +3963,7 @@
       "type": "standard",
       "topic": "Communication",
       "front": "What are the criteria for communicating engagement results?",
-      "back": "Communications must be: 1) Accurate - free from errors, 2) Objective - fair, impartial, 3) Clear - easily understood, 4) Concise - to the point, 5) Constructive - helpful, 6) Complete - includes all relevant information, 7) Timely - issued without delay. Use the 7 C\\",
+      "back": "Communications must be: 1) Accurate - free from errors, 2) Objective - fair, impartial, 3) Clear - easily understood, 4) Concise - to the point, 5) Constructive - helpful, 6) Complete - includes all relevant information, 7) Timely - issued without delay. Use the 7 C",
       "difficulty": "medium",
       "subtopic": "Criteria for Communication",
       "tags": [
@@ -3909,7 +3988,8 @@
         "exit conference",
         "communication",
         "process"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b2-014",
@@ -3926,7 +4006,8 @@
         "root cause",
         "analysis",
         "findings"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia2-fc-b2-015",
@@ -3943,7 +4024,8 @@
         "report",
         "structure",
         "format"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b2-016",
@@ -3961,7 +4043,8 @@
         "overall",
         "conclusion"
       ],
-      "reference": "Standard 2410.A1"
+      "reference": "Standard 2410.A1",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b2-017",
@@ -3995,7 +4078,8 @@
         "walkthrough",
         "controls",
         "testing"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b2-019",
@@ -4013,24 +4097,8 @@
         "review",
         "management"
       ],
-      "reference": "Standard 2340"
-    },
-    {
-      "id": "cia2-fc-b2-020",
-      "courseId": "cia",
-      "section": "CIA2",
-      "blueprintArea": "CIA2",
-      "type": "definition",
-      "topic": "Fraud",
-      "front": "What are common red flags indicating potential fraud?",
-      "back": "Red flags: 1) Missing documents, 2) Photocopies instead of originals, 3) Altered documents, 4) Excessive voids/adjustments, 5) Unexplained variances, 6) Lifestyle changes in employees, 7) Resistance to audit, 8) Overriding controls, 9) Unusual vendor relationships, 10) Inadequate segregation of duties.",
-      "difficulty": "medium",
-      "subtopic": "Fraud Red Flags",
-      "tags": [
-        "fraud",
-        "red flags",
-        "indicators"
-      ]
+      "reference": "Standard 2340",
+      "example": "Auditor documents: (1) objectives, (2) scope, (3) procedures performed, (4) evidence gathered, (5) conclusions reached - all reviewed by supervisor."
     },
     {
       "id": "cia2-fc-b3-001",
@@ -4048,7 +4116,8 @@
         "engagement",
         "planning"
       ],
-      "reference": "Standard 2210"
+      "reference": "Standard 2210",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b3-002",
@@ -4065,7 +4134,8 @@
         "risk assessment",
         "engagement",
         "factors"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-b3-003",
@@ -4082,7 +4152,8 @@
         "controls testing",
         "operating effectiveness",
         "testing"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia2-fc-b3-004",
@@ -4116,7 +4187,8 @@
         "review",
         "working papers",
         "supervision"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b3-006",
@@ -4150,7 +4222,8 @@
         "database",
         "controls",
         "IT audit"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia2-fc-b3-008",
@@ -4160,7 +4233,7 @@
       "type": "definition",
       "topic": "Data Analytics",
       "front": "What is Benford\\",
-      "back": "Benford\\",
+      "back": "Benford",
       "difficulty": "hard",
       "subtopic": "Benford\\",
       "tags": [
@@ -4184,7 +4257,8 @@
         "fraud",
         "investigation",
         "principles"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-b3-010",
@@ -4212,14 +4286,15 @@
       "type": "definition",
       "topic": "Findings",
       "front": "How should auditors assess the significance of a finding?",
-      "back": "Consider: 1) Financial impact (materiality), 2) Frequency of occurrence, 3) Effect on operations, 4) Regulatory/compliance implications, 5) Reputational impact, 6) Control design vs. operating failure, 7) Root cause severity, 8) Management\\",
+      "back": "Consider: 1) Financial impact (materiality), 2) Frequency of occurrence, 3) Effect on operations, 4) Regulatory/compliance implications, 5) Reputational impact, 6) Control design vs. operating failure, 7) Root cause severity, 8) Management",
       "difficulty": "medium",
       "subtopic": "Finding Significance",
       "tags": [
         "significance",
         "findings",
         "materiality"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b3-012",
@@ -4236,7 +4311,8 @@
         "recommendations",
         "effective",
         "actionable"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia2-fc-b3-013",
@@ -4271,7 +4347,8 @@
         "consulting",
         "limitations",
         "independence"
-      ]
+      ],
+      "example": "Management asks internal audit to advise on control design for a new ERP implementation before go-live."
     },
     {
       "id": "cia2-fc-b3-015",
@@ -4341,7 +4418,8 @@
         "planning",
         "risk-based",
         "inputs"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia2-fc-b4-004",
@@ -4433,23 +4511,6 @@
       "reference": "Standard 2050"
     },
     {
-      "id": "cia2-fc-b4-009",
-      "courseId": "cia",
-      "section": "CIA2",
-      "blueprintArea": "CIA2",
-      "type": "concept",
-      "topic": "Coordination",
-      "front": "What is combined assurance?",
-      "back": "Integrating and aligning assurance processes across all assurance providers (internal audit, risk management, compliance, external audit, regulators) to optimize coverage, avoid gaps and overlaps, and provide holistic view of risk and control.",
-      "difficulty": "medium",
-      "subtopic": "Combined Assurance",
-      "tags": [
-        "combined assurance",
-        "coordination",
-        "assurance map"
-      ]
-    },
-    {
       "id": "cia2-fc-b4-010",
       "courseId": "cia",
       "section": "CIA2",
@@ -4465,7 +4526,8 @@
         "2060",
         "board"
       ],
-      "reference": "Standard 2060"
+      "reference": "Standard 2060",
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-b4-011",
@@ -4501,7 +4563,8 @@
         "2100",
         "GRC"
       ],
-      "reference": "Standard 2100"
+      "reference": "Standard 2100",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b4-013",
@@ -4519,7 +4582,8 @@
         "2110",
         "assessment"
       ],
-      "reference": "Standard 2110"
+      "reference": "Standard 2110",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b4-014",
@@ -4536,7 +4600,8 @@
         "governance",
         "objectives",
         "assessment"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b4-015",
@@ -4571,7 +4636,8 @@
         "risk management",
         "assessment",
         "criteria"
-      ]
+      ],
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia2-fc-b4-017",
@@ -4624,7 +4690,8 @@
         "2200",
         "plan"
       ],
-      "reference": "Standard 2200"
+      "reference": "Standard 2200",
+      "example": "Auditor reviews prior findings, interviews process owner, maps key controls, assesses risks, and determines sample sizes before fieldwork."
     },
     {
       "id": "cia2-fc-b4-020",
@@ -4642,7 +4709,8 @@
         "2201",
         "engagement"
       ],
-      "reference": "Standard 2201"
+      "reference": "Standard 2201",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b4-021",
@@ -4660,7 +4728,8 @@
         "2210",
         "engagement"
       ],
-      "reference": "Standard 2210"
+      "reference": "Standard 2210",
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b4-022",
@@ -4767,7 +4836,8 @@
         "information",
         "SRRU",
         "mnemonic"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b4-028",
@@ -4908,7 +4978,8 @@
         "findings",
         "condition",
         "criteria"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b4-036",
@@ -4962,7 +5033,8 @@
         "2500",
         "monitoring"
       ],
-      "reference": "Standard 2500"
+      "reference": "Standard 2500",
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia2-fc-b4-039",
@@ -4979,7 +5051,8 @@
         "follow-up",
         "process",
         "monitoring"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b4-040",
@@ -5014,7 +5087,8 @@
         "preliminary survey",
         "planning",
         "preparation"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b5-002",
@@ -5048,7 +5122,8 @@
         "audit universe",
         "planning",
         "coverage"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-b5-004",
@@ -5065,7 +5140,8 @@
         "risk assessment",
         "engagement",
         "factors"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-b5-005",
@@ -5083,7 +5159,8 @@
         "2240",
         "procedures"
       ],
-      "reference": "Standard 2240"
+      "reference": "Standard 2240",
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-b5-006",
@@ -5100,7 +5177,8 @@
         "Benford",
         "analytics",
         "fraud detection"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-b5-007",
@@ -5117,7 +5195,8 @@
         "analytics types",
         "descriptive",
         "predictive"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia2-fc-b5-008",
@@ -5134,7 +5213,8 @@
         "analytics tests",
         "CAATs",
         "techniques"
-      ]
+      ],
+      "example": "Auditor uses ACL to analyze 500,000 transactions, identifying 127 duplicate payment records totaling $45,000."
     },
     {
       "id": "cia2-fc-b5-009",
@@ -5161,14 +5241,15 @@
       "type": "concept",
       "topic": "Data Analytics",
       "front": "What is continuous auditing and monitoring?",
-      "back": "Continuous Auditing: Automated audit tests run frequently/continuously by internal audit\\nContinuous Monitoring: Management\\",
+      "back": "Continuous Auditing: Automated audit tests run frequently/continuously by internal audit\\nContinuous Monitoring: Management",
       "difficulty": "hard",
       "subtopic": "Continuous Auditing",
       "tags": [
         "continuous auditing",
         "monitoring",
         "automation"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia2-fc-b5-011",
@@ -5185,7 +5266,8 @@
         "evidence types",
         "physical",
         "documentary"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia2-fc-b5-012",
@@ -5220,7 +5302,8 @@
         "documentation",
         "purposes"
       ],
-      "reference": "Standard 2330"
+      "reference": "Standard 2330",
+      "example": "Auditor documents: (1) objectives, (2) scope, (3) procedures performed, (4) evidence gathered, (5) conclusions reached - all reviewed by supervisor."
     },
     {
       "id": "cia2-fc-b5-014",
@@ -5255,7 +5338,8 @@
         "organization",
         "working papers",
         "structure"
-      ]
+      ],
+      "example": "Auditor documents: (1) objectives, (2) scope, (3) procedures performed, (4) evidence gathered, (5) conclusions reached - all reviewed by supervisor."
     },
     {
       "id": "cia2-fc-b5-016",
@@ -5272,7 +5356,8 @@
         "non-statistical",
         "judgmental",
         "sampling"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia2-fc-b5-017",
@@ -5289,7 +5374,8 @@
         "statistical sampling",
         "random",
         "stratified"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia2-fc-b5-018",
@@ -5323,7 +5409,8 @@
         "sampling risk",
         "incorrect acceptance",
         "rejection"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia2-fc-b5-020",
@@ -5340,7 +5427,8 @@
         "attribute",
         "variable",
         "sampling comparison"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia2-fc-b5-021",
@@ -5357,7 +5445,8 @@
         "interview",
         "techniques",
         "communication"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b5-022",
@@ -5374,7 +5463,8 @@
         "question types",
         "interview",
         "open-ended"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b5-023",
@@ -5391,7 +5481,8 @@
         "observation",
         "techniques",
         "testing"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia2-fc-b5-024",
@@ -5425,7 +5516,8 @@
         "flowchart",
         "process mapping",
         "visual"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia2-fc-b5-026",
@@ -5442,7 +5534,8 @@
         "CCEER",
         "findings",
         "attributes"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b5-027",
@@ -5459,7 +5552,8 @@
         "root cause",
         "5 Whys",
         "analysis"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b5-028",
@@ -5476,7 +5570,8 @@
         "rating",
         "prioritization",
         "findings"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b5-029",
@@ -5511,7 +5606,8 @@
         "audience",
         "report tailoring",
         "communication"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b5-031",
@@ -5546,7 +5642,8 @@
         "verification",
         "corrective action",
         "testing"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b5-033",
@@ -5564,7 +5661,8 @@
         "escalation",
         "follow-up"
       ],
-      "reference": "Standard 2600"
+      "reference": "Standard 2600",
+      "example": "Board sets appetite: willing to accept moderate IT risk for innovation, low appetite for compliance risk, zero appetite for fraud risk."
     },
     {
       "id": "cia2-fc-b5-034",
@@ -5581,7 +5679,8 @@
         "consulting",
         "assurance",
         "comparison"
-      ]
+      ],
+      "example": "Management asks internal audit to advise on control design for a new ERP implementation before go-live."
     },
     {
       "id": "cia2-fc-b5-035",
@@ -5598,7 +5697,8 @@
         "consulting types",
         "advisory",
         "facilitation"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-b5-036",
@@ -5616,7 +5716,8 @@
         "2210.C1",
         "governance"
       ],
-      "reference": "Standard 2210.C1"
+      "reference": "Standard 2210.C1",
+      "example": "Management asks internal audit to advise on control design for a new ERP implementation before go-live."
     },
     {
       "id": "cia2-fc-b5-037",
@@ -5633,7 +5734,8 @@
         "IT audit",
         "focus areas",
         "technology"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b5-038",
@@ -5650,7 +5752,8 @@
         "fraud investigation",
         "procedures",
         "forensic"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b5-039",
@@ -5667,7 +5770,8 @@
         "compliance",
         "audit approach",
         "regulations"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b5-040",
@@ -5701,7 +5805,8 @@
         "controls testing",
         "substantive",
         "comparison"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia2-fc-b6-002",
@@ -5718,7 +5823,8 @@
         "dual purpose",
         "testing",
         "efficiency"
-      ]
+      ],
+      "example": "Auditor selects 25 access requests, verifies manager approval exists on each, documents 2 exceptions found."
     },
     {
       "id": "cia2-fc-b6-003",
@@ -5786,7 +5892,8 @@
         "ratios",
         "analytics",
         "trends"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-b6-007",
@@ -5820,7 +5927,8 @@
         "text analytics",
         "unstructured data",
         "NLP"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-b6-009",
@@ -5854,7 +5962,8 @@
         "visualization",
         "dashboards",
         "communication"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b6-011",
@@ -5871,7 +5980,8 @@
         "design",
         "operating",
         "effectiveness"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia2-fc-b6-012",
@@ -5905,7 +6015,8 @@
         "compensating controls",
         "alternative",
         "mitigation"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia2-fc-b6-014",
@@ -5939,7 +6050,8 @@
         "entity-level",
         "organization",
         "environment"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-b6-016",
@@ -5956,7 +6068,8 @@
         "5 Whys",
         "root cause",
         "analysis"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia2-fc-b6-017",
@@ -5973,7 +6086,8 @@
         "fishbone",
         "Ishikawa",
         "diagram"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia2-fc-b6-018",
@@ -6058,7 +6172,8 @@
         "IT audit",
         "technology",
         "areas"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b6-023",
@@ -6092,7 +6207,8 @@
         "fraud investigation",
         "phases",
         "forensic"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b6-025",
@@ -6126,7 +6242,8 @@
         "interview",
         "fraud suspect",
         "techniques"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia2-fc-b6-027",
@@ -6161,7 +6278,8 @@
         "work paper review",
         "supervision",
         "quality"
-      ]
+      ],
+      "example": "Auditor documents: (1) objectives, (2) scope, (3) procedures performed, (4) evidence gathered, (5) conclusions reached - all reviewed by supervisor."
     },
     {
       "id": "cia2-fc-b6-029",
@@ -6212,7 +6330,8 @@
         "permanent file",
         "documentation",
         "reference"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b6-032",
@@ -6229,7 +6348,8 @@
         "culture audit",
         "soft controls",
         "values"
-      ]
+      ],
+      "example": "Auditor observes inventory count at warehouse, noting count procedures, handling of discrepancies, and physical security."
     },
     {
       "id": "cia2-fc-b6-033",
@@ -6246,7 +6366,8 @@
         "cybersecurity",
         "audit",
         "security"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b6-034",
@@ -6263,7 +6384,8 @@
         "ESG",
         "sustainability",
         "audit"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia2-fc-b6-035",
@@ -6280,7 +6402,8 @@
         "AI",
         "algorithm",
         "model audit"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia2-fc-b6-036",
@@ -6314,7 +6437,8 @@
         "exit meeting",
         "closing",
         "communication"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b6-038",
@@ -6331,7 +6455,8 @@
         "disagreement",
         "conflict",
         "resolution"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-fc-b6-039",
@@ -6348,7 +6473,8 @@
         "audit software",
         "management",
         "technology"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia2-fc-b6-040",
@@ -6416,7 +6542,8 @@
       "tags": [
         "evidence",
         "quality"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-mnem-004",
@@ -6433,7 +6560,8 @@
       "tags": [
         "findings",
         "observations"
-      ]
+      ],
+      "example": "Condition: 15% of access requests lacked approval. Criteria: Policy requires manager approval. Cause: New system lacked workflow. Effect: Unauthorized access risk. Recommendation: Implement approval workflow."
     },
     {
       "id": "cia2-mnem-005",
@@ -6467,7 +6595,8 @@
       "tags": [
         "risk assessment",
         "audit planning"
-      ]
+      ],
+      "example": "Annual plan includes 4 IT audits, 6 operational audits, 3 compliance reviews based on risk scores and available audit hours (8,000 hours)."
     },
     {
       "id": "cia2-mnem-007",
@@ -6484,7 +6613,8 @@
       "tags": [
         "sampling",
         "methodology"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia2-mnem-008",
@@ -6655,7 +6785,8 @@
         "COBIT",
         "IT governance",
         "framework"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-fc-010",
@@ -6699,7 +6830,7 @@
       "type": "formula",
       "topic": "Financial Ratios",
       "front": "What are key profitability ratios?",
-      "back": "**Gross Profit Margin:**\\n(Revenue - COGS) / Revenue\\n\\n**Operating Margin:**\\nOperating Income / Revenue\\n\\n**Net Profit Margin:**\\nNet Income / Revenue\\n\\n**ROA (Return on Assets):**\\nNet Income / Total Assets\\n\\n**ROE (Return on Equity):**\\nNet Income / Shareholders\\",
+      "back": "**Gross Profit Margin:**\\n(Revenue - COGS) / Revenue\\n\\n**Operating Margin:**\\nOperating Income / Revenue\\n\\n**Net Profit Margin:**\\nNet Income / Revenue\\n\\n**ROA (Return on Assets):**\\nNet Income / Total Assets\\n\\n**ROE (Return on Equity):**\\nNet Income / Shareholders",
       "difficulty": "medium",
       "subtopic": "Profitability",
       "tags": [
@@ -6769,7 +6900,7 @@
       "type": "concept",
       "topic": "Organizational Behavior",
       "front": "What are key motivation theories?",
-      "back": "**Maslow\\",
+      "back": "**Maslow",
       "difficulty": "medium",
       "subtopic": "Motivation Theories",
       "tags": [
@@ -6793,7 +6924,8 @@
         "Six Sigma",
         "DMAIC",
         "quality"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia3-fc-018",
@@ -6827,7 +6959,8 @@
         "governance",
         "board",
         "audit committee"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-fc-020",
@@ -6854,7 +6987,7 @@
       "type": "formula",
       "topic": "Financial Analysis",
       "front": "What is Return on Equity (ROE) and what does it measure?",
-      "back": "ROE = Net Income / Average Shareholders\\",
+      "back": "ROE = Net Income / Average Shareholders",
       "difficulty": "medium",
       "subtopic": "Profitability Ratios",
       "tags": [
@@ -6878,23 +7011,6 @@
         "leverage",
         "debt",
         "solvency"
-      ]
-    },
-    {
-      "id": "cia3-fc-b2-003",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "concept",
-      "topic": "IT Security",
-      "front": "What is the CIA Triad in information security?",
-      "back": "Confidentiality: Protection from unauthorized disclosure. Integrity: Protection from unauthorized modification, ensuring accuracy and completeness. Availability: Information accessible when needed by authorized users. These three principles are the foundation of information security programs.",
-      "difficulty": "easy",
-      "subtopic": "CIA Triad",
-      "tags": [
-        "CIA triad",
-        "security",
-        "information"
       ]
     },
     {
@@ -7065,7 +7181,8 @@
         "board",
         "committees",
         "governance"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-fc-b2-014",
@@ -7082,7 +7199,8 @@
         "SOX",
         "compliance",
         "governance"
-      ]
+      ],
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia3-fc-b2-015",
@@ -7167,7 +7285,8 @@
         "contracts",
         "legal",
         "elements"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia3-fc-b2-020",
@@ -7235,7 +7354,8 @@
         "procurement",
         "purchasing",
         "controls"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia3-fc-b3-004",
@@ -7330,7 +7450,7 @@
       "type": "mnemonic",
       "topic": "Strategic Planning",
       "front": "What are Porter\\",
-      "back": "TRIBES: Threat of new entrants, Rivalry among competitors, (bargaining power of) Industry suppliers, Buyers\\",
+      "back": "TRIBES: Threat of new entrants, Rivalry among competitors, (bargaining power of) Industry suppliers, Buyers",
       "difficulty": "medium",
       "subtopic": "Porter\\",
       "tags": [
@@ -7433,30 +7553,13 @@
       "type": "definition",
       "topic": "Compliance",
       "front": "What are key GDPR principles for data protection?",
-      "back": "Principles: 1) Lawfulness, fairness, transparency, 2) Purpose limitation, 3) Data minimization, 4) Accuracy, 5) Storage limitation, 6) Integrity and confidentiality, 7) Accountability. Rights: Access, rectification, erasure, portability. Applies to EU residents\\",
+      "back": "Principles: 1) Lawfulness, fairness, transparency, 2) Purpose limitation, 3) Data minimization, 4) Accuracy, 5) Storage limitation, 6) Integrity and confidentiality, 7) Accountability. Rights: Access, rectification, erasure, portability. Applies to EU residents",
       "difficulty": "hard",
       "subtopic": "GDPR Basics",
       "tags": [
         "GDPR",
         "privacy",
         "data protection"
-      ]
-    },
-    {
-      "id": "cia3-fc-b4-001",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "concept",
-      "topic": "Business Processes",
-      "front": "What are the key controls in the Revenue/Sales Cycle?",
-      "back": "Credit approval before sale, prenumbered shipping documents, segregation of shipping/billing/collection, proper authorization of prices/discounts, reconciliation of orders to shipments to invoices, independent AR confirmations, aging analysis, adequate bad debt allowance.",
-      "difficulty": "hard",
-      "subtopic": "Revenue Cycle",
-      "tags": [
-        "revenue",
-        "controls",
-        "sales cycle"
       ]
     },
     {
@@ -7528,23 +7631,6 @@
       ]
     },
     {
-      "id": "cia3-fc-b4-006",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "formula",
-      "topic": "Financial Ratios",
-      "front": "What are the key Liquidity Ratios?",
-      "back": "Current Ratio = Current Assets / Current Liabilities\nQuick (Acid-Test) Ratio = (Current Assets - Inventory) / Current Liabilities\nCash Ratio = Cash + Marketable Securities / Current Liabilities\n\nHigher ratios indicate better short-term solvency.",
-      "difficulty": "medium",
-      "subtopic": "Liquidity",
-      "tags": [
-        "liquidity",
-        "ratios",
-        "formula"
-      ]
-    },
-    {
       "id": "cia3-fc-b4-007",
       "courseId": "cia",
       "section": "CIA3",
@@ -7559,23 +7645,6 @@
         "profitability",
         "ratios",
         "formula"
-      ]
-    },
-    {
-      "id": "cia3-fc-b4-008",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "formula",
-      "topic": "Financial Ratios",
-      "front": "What are the key Leverage/Solvency Ratios?",
-      "back": "Debt Ratio = Total Debt / Total Assets\nDebt-to-Equity = Total Debt / Total Equity\nInterest Coverage = EBIT / Interest Expense\nTimes Interest Earned = EBIT / Interest Expense\n\nHigher debt ratios indicate higher financial risk.",
-      "difficulty": "medium",
-      "subtopic": "Leverage",
-      "tags": [
-        "leverage",
-        "solvency",
-        "ratios"
       ]
     },
     {
@@ -7627,23 +7696,6 @@
         "economics",
         "supply",
         "demand"
-      ]
-    },
-    {
-      "id": "cia3-fc-b4-012",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "concept",
-      "topic": "Economics",
-      "front": "What is price elasticity of demand?",
-      "back": "Measures responsiveness of quantity demanded to price changes.\\n\\nElastic (>1): Quantity changes more than price\\nInelastic (<1): Quantity changes less than price\\nUnit elastic (=1): Equal changes\\n\\nInelastic goods: necessities, few substitutes.",
-      "difficulty": "medium",
-      "subtopic": "Price Elasticity",
-      "tags": [
-        "elasticity",
-        "demand",
-        "price"
       ]
     },
     {
@@ -7712,7 +7764,8 @@
         "IT governance",
         "COBIT",
         "ITIL"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-fc-b4-017",
@@ -7763,7 +7816,8 @@
         "cybersecurity",
         "CIA triad",
         "defense"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia3-fc-b4-020",
@@ -7773,31 +7827,15 @@
       "type": "concept",
       "topic": "IT",
       "front": "How is data analytics used in internal auditing?",
-      "back": "Full population testing instead of sampling, anomaly detection, trend analysis, continuous monitoring, risk identification, pattern recognition, predictive analytics.\\n\\nTechniques: Benford\\",
+      "back": "Full population testing instead of sampling, anomaly detection, trend analysis, continuous monitoring, risk identification, pattern recognition, predictive analytics.\\n\\nTechniques: Benford",
       "difficulty": "medium",
       "subtopic": "Data Analytics",
       "tags": [
         "data analytics",
         "CAATs",
         "testing"
-      ]
-    },
-    {
-      "id": "cia3-fc-b4-021",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "concept",
-      "topic": "Strategy",
-      "front": "What is SWOT Analysis?",
-      "back": "Strategic analysis framework:\\n\\nInternal Factors:\\nStrengths: What we do well\\nWeaknesses: Areas for improvement\\n\\nExternal Factors:\\nOpportunities: External possibilities\\nThreats: External challenges\\n\\nUsed for strategic planning and positioning.",
-      "difficulty": "easy",
-      "subtopic": "SWOT Analysis",
-      "tags": [
-        "SWOT",
-        "strategy",
-        "analysis"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia3-fc-b4-022",
@@ -7834,23 +7872,6 @@
       ]
     },
     {
-      "id": "cia3-fc-b4-024",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "concept",
-      "topic": "Strategy",
-      "front": "What are Porter\\",
-      "back": "Cost Leadership: Lowest cost producer\\nDifferentiation: Unique product/service value\\nFocus: Narrow market segment (cost or differentiation)\\n\\nStuck in the middle: No clear strategy = poor performance.",
-      "difficulty": "medium",
-      "subtopic": "Competitive Strategies",
-      "tags": [
-        "competitive strategy",
-        "Porter",
-        "differentiation"
-      ]
-    },
-    {
       "id": "cia3-fc-b4-025",
       "courseId": "cia",
       "section": "CIA3",
@@ -7882,23 +7903,6 @@
         "leadership",
         "management",
         "styles"
-      ]
-    },
-    {
-      "id": "cia3-fc-b4-027",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "concept",
-      "topic": "Management",
-      "front": "What are key motivation theories?",
-      "back": "Maslow: Hierarchy of needs (physiological to self-actualization)\\nHerzberg: Two-factor (hygiene vs. motivators)\\nMcGregor: Theory X (workers dislike work) vs. Y (intrinsic motivation)\\nExpectancy: Effort → Performance → Reward",
-      "difficulty": "medium",
-      "subtopic": "Motivation Theories",
-      "tags": [
-        "motivation",
-        "Maslow",
-        "Herzberg"
       ]
     },
     {
@@ -8038,23 +8042,6 @@
       ]
     },
     {
-      "id": "cia3-fc-b4-036",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "formula",
-      "topic": "Finance",
-      "front": "What is Weighted Average Cost of Capital (WACC)?",
-      "back": "WACC = (E/V × Re) + (D/V × Rd × (1-T))\n\nE = Market value of equity\nD = Market value of debt\nV = E + D (total value)\nRe = Cost of equity\nRd = Cost of debt\nT = Tax rate\n\nUsed as discount rate for capital budgeting.",
-      "difficulty": "hard",
-      "subtopic": "WACC",
-      "tags": [
-        "WACC",
-        "cost of capital",
-        "formula"
-      ]
-    },
-    {
       "id": "cia3-fc-b4-037",
       "courseId": "cia",
       "section": "CIA3",
@@ -8069,7 +8056,8 @@
         "SOX",
         "compliance",
         "internal controls"
-      ]
+      ],
+      "example": "CAE reports functionally to audit committee (approves charter, plan, evaluates performance) and administratively to CEO (day-to-day operations)."
     },
     {
       "id": "cia3-fc-b4-038",
@@ -8120,7 +8108,8 @@
         "COSO",
         "ERM",
         "risk management"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-fc-b5-001",
@@ -8137,23 +8126,6 @@
         "working capital",
         "liquidity",
         "cash"
-      ]
-    },
-    {
-      "id": "cia3-fc-b5-002",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "formula",
-      "topic": "Finance",
-      "front": "What is the Cash Conversion Cycle?",
-      "back": "CCC = DIO + DSO - DPO\n\nDays Inventory Outstanding + Days Sales Outstanding - Days Payables Outstanding\n\nMeasures days between cash outflow for inventory and cash inflow from sales. Lower is better.",
-      "difficulty": "hard",
-      "subtopic": "Cash Conversion",
-      "tags": [
-        "cash conversion",
-        "CCC",
-        "formula"
       ]
     },
     {
@@ -8358,7 +8330,8 @@
         "project management",
         "phases",
         "PMI"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia3-fc-b5-015",
@@ -8392,7 +8365,8 @@
         "recruitment",
         "hiring",
         "controls"
-      ]
+      ],
+      "example": "Auditor interviews accounts payable manager about invoice approval process, documenting responses and comparing to policy."
     },
     {
       "id": "cia3-fc-b5-017",
@@ -8409,7 +8383,8 @@
         "compensation",
         "benefits",
         "payroll"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia3-fc-b5-018",
@@ -8623,7 +8598,7 @@
       "type": "concept",
       "topic": "Global Business",
       "front": "What is transfer pricing and why is it significant?",
-      "back": "Pricing of transactions between related entities (subsidiaries). Must follow arm\\",
+      "back": "Pricing of transactions between related entities (subsidiaries). Must follow arm",
       "difficulty": "hard",
       "subtopic": "Transfer Pricing",
       "tags": [
@@ -8681,7 +8656,8 @@
         "BCP",
         "continuity",
         "disaster recovery"
-      ]
+      ],
+      "example": "Audit team rates IT security as high inherent risk due to sensitive data, medium control risk due to existing safeguards, resulting in significant audit coverage."
     },
     {
       "id": "cia3-fc-b5-034",
@@ -8800,7 +8776,8 @@
         "ESG",
         "sustainability",
         "governance"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-fc-b6-001",
@@ -8834,7 +8811,8 @@
         "healthcare",
         "HIPAA",
         "industry"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia3-fc-b6-003",
@@ -8868,7 +8846,8 @@
         "retail",
         "shrinkage",
         "industry"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia3-fc-b6-005",
@@ -8885,24 +8864,8 @@
         "insurance",
         "claims",
         "industry"
-      ]
-    },
-    {
-      "id": "cia3-fc-b6-006",
-      "courseId": "cia",
-      "section": "CIA3",
-      "blueprintArea": "CIA3",
-      "type": "concept",
-      "topic": "Legal",
-      "front": "What are the essential elements of a valid contract?",
-      "back": "Offer: Proposal to enter agreement\\nAcceptance: Agreement to terms\\nConsideration: Exchange of value\\nCapacity: Legal ability to contract\\nLegality: Lawful purpose\\n\\nContracts may be written, oral, or implied.",
-      "difficulty": "medium",
-      "subtopic": "Contract Elements",
-      "tags": [
-        "contracts",
-        "legal",
-        "elements"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia3-fc-b6-007",
@@ -8970,7 +8933,8 @@
         "corporate structure",
         "legal entity",
         "liability"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-fc-b6-011",
@@ -9004,7 +8968,8 @@
         "credit risk",
         "assessment",
         "management"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia3-fc-b6-013",
@@ -9276,7 +9241,8 @@
         "Monte Carlo",
         "simulation",
         "probability"
-      ]
+      ],
+      "example": "From 10,000 purchase orders, auditor selects 60 random items to test approval controls, providing 95% confidence level."
     },
     {
       "id": "cia3-fc-b6-029",
@@ -9361,7 +9327,8 @@
         "operational risk",
         "RCSA",
         "management"
-      ]
+      ],
+      "example": "Key Risk Indicators: number of failed login attempts, % of overdue invoices, employee turnover rate in critical roles."
     },
     {
       "id": "cia3-fc-b6-034",
@@ -9395,7 +9362,8 @@
         "e-commerce",
         "digital",
         "controls"
-      ]
+      ],
+      "example": "Red flags: vendor with PO Box address, same person approves and pays invoices, no competitive bidding on large contracts."
     },
     {
       "id": "cia3-fc-b6-036",
@@ -9429,7 +9397,8 @@
         "procurement",
         "purchasing",
         "controls"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia3-fc-b6-038",
@@ -9446,7 +9415,8 @@
         "treasury",
         "cash",
         "controls"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia3-fc-b6-039",
@@ -9463,7 +9433,8 @@
         "financial close",
         "accounting",
         "controls"
-      ]
+      ],
+      "example": "Incompatible duties separated: purchasing agent cannot approve their own purchases, AP clerk cannot add vendors, and treasury cannot record transactions."
     },
     {
       "id": "cia3-fc-b6-040",
@@ -9480,7 +9451,8 @@
         "capital projects",
         "capex",
         "controls"
-      ]
+      ],
+      "example": "Management reviews monthly KPIs: transaction error rates, control exception reports, and employee access certification status."
     },
     {
       "id": "cia3-mnem-001",
@@ -9497,7 +9469,8 @@
       "tags": [
         "COBIT",
         "IT governance"
-      ]
+      ],
+      "example": "Board-level audit committee reviews: internal audit charter, risk assessment results, significant findings, and CAE performance."
     },
     {
       "id": "cia3-mnem-002",
@@ -9600,7 +9573,8 @@
       "tags": [
         "six sigma",
         "quality"
-      ]
+      ],
+      "example": "Repeated inventory variances traced to root cause: inadequate training on barcode scanning procedures for night shift workers."
     },
     {
       "id": "cia3-mnem-008",

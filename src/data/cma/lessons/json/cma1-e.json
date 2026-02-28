@@ -1,0 +1,1199 @@
+[
+  {
+    "id": "CMA1-E-001",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Corporate Governance Fundamentals",
+    "description": "Understand the role of governance in organizational oversight and control",
+    "order": 46,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Corporate governance",
+      "Board of directors",
+      "Stakeholder theory",
+      "Agency problems"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Good governance protects stakeholders and ensures ethical decisions. CMAs serve in governance roles (audit committees, CFO) and provide information for board decisions. Understanding governance is essential for career advancement and ethical practice."
+        },
+        {
+          "title": "Corporate Governance Defined",
+          "type": "text",
+          "content": "**Definition:**\nThe system of rules, practices, and processes by which a company is directed and controlled.\n\n**Purpose:**\n\u2022 Balance interests of stakeholders\n\u2022 Provide structure for setting objectives\n\u2022 Determine means of achieving objectives\n\u2022 Monitor performance\n\n**Key question:** Who monitors management? Who monitors the monitors?"
+        },
+        {
+          "title": "Stakeholder Groups",
+          "type": "table",
+          "headers": [
+            "Stakeholder",
+            "Primary Interest",
+            "Governance Concern"
+          ],
+          "rows": [
+            [
+              "Shareholders",
+              "Return on investment",
+              "Maximize value, oversight"
+            ],
+            [
+              "Board of Directors",
+              "Fiduciary duty",
+              "Strategic direction, monitoring"
+            ],
+            [
+              "Management",
+              "Compensation, career",
+              "Running the company"
+            ],
+            [
+              "Employees",
+              "Job security, fair pay",
+              "Ethical treatment"
+            ],
+            [
+              "Creditors",
+              "Repayment",
+              "Risk management"
+            ],
+            [
+              "Customers",
+              "Quality, fair dealing",
+              "Product safety, ethics"
+            ],
+            [
+              "Society",
+              "Responsibility",
+              "Environmental, social impact"
+            ]
+          ]
+        },
+        {
+          "title": "Agency Theory",
+          "type": "text",
+          "content": "**The Agency Problem:**\nManagers (agents) may act in their own interest rather than shareholders' (principals).\n\n**Conflict examples:**\n\u2022 Empire building (growth over profitability)\n\u2022 Excessive perks\n\u2022 Short-term focus for bonuses\n\u2022 Risk aversion (protect job vs. take value-creating risks)\n\n**Solutions:**\n\u2022 Board oversight\n\u2022 Executive compensation tied to performance\n\u2022 Independent audit\n\u2022 Market for corporate control (takeovers)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Governance Triangle",
+          "type": "callout",
+          "content": "**\"SBM\"** - The three key governance players:\n\n**S**hareholders - Own the company, elect board\n**B**oard - Oversee management, set strategy\n**M**anagement - Run daily operations\n\n**Information flows UP; Authority delegated DOWN**\n\nCMAs provide the financial information that makes this work!"
+        },
+        {
+          "title": "Board of Directors",
+          "type": "text",
+          "content": "**Composition best practices:**\n\u2022 Majority independent directors\n\u2022 Separate CEO and Chairman (or lead independent director)\n\u2022 Diverse skills and backgrounds\n\u2022 Term limits and rotation\n\n**Key responsibilities:**\n\u2022 Hire/fire/compensate CEO\n\u2022 Approve major decisions\n\u2022 Oversee risk management\n\u2022 Ensure adequate controls\n\u2022 Set ethical tone\n\n**Committees:** Audit, Compensation, Nominating/Governance"
+        },
+        {
+          "title": "Audit Committee",
+          "type": "text",
+          "content": "**SOX requirements for public companies:**\n\u2022 All members must be independent\n\u2022 At least one financial expert\n\u2022 Oversee external auditors\n\u2022 Review internal audit function\n\u2022 Handle whistleblower complaints\n\n**Key duties:**\n\u2022 Approve audit plan and fees\n\u2022 Review financial statements\n\u2022 Discuss significant estimates\n\u2022 Monitor internal controls\n\u2022 Meet privately with auditors"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Governance balances stakeholder interests through oversight",
+            "Agency problem: managers may act in self-interest",
+            "Board of Directors provides oversight of management",
+            "Independent directors reduce conflicts of interest",
+            "Audit Committee oversees financial reporting and controls",
+            "CMAs provide information that enables governance",
+            "Ethical tone set at top cascades through organization"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Corporate Governance and Stakeholder Interests",
+          "knowledgeCheck": {
+            "question": "Which of the following best describes the primary objective of corporate governance?",
+            "options": [
+              "To maximize shareholder wealth at all costs.",
+              "To ensure compliance with all legal and regulatory requirements.",
+              "To balance the interests of all stakeholders while providing a framework for achieving organizational objectives.",
+              "To empower management to make decisions without oversight."
+            ],
+            "correctIndex": 2,
+            "explanation": "Corporate governance aims to create a system where the interests of various stakeholders (shareholders, employees, customers, etc.) are considered, and the organization is directed towards its objectives in a responsible and ethical manner. While maximizing shareholder wealth is a goal, it should not be the sole focus at the expense of other stakeholders.",
+            "hint": "Consider the broader impact of corporate decisions beyond just financial gain."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Agency Problem Defined",
+          "reveal": {
+            "question": "Define the 'agency problem' in the context of corporate governance.",
+            "answer": "The agency problem arises when managers (agents), who are hired to act in the best interests of shareholders (principals), instead pursue their own self-interests, which may conflict with the goals of the shareholders. This can lead to suboptimal decision-making and reduced shareholder value."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Stakeholder vs. Shareholder Theory",
+          "comparison": {
+            "headers": [
+              "Stakeholder Theory",
+              "Shareholder Theory"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Considers the interests of all affected parties (employees, customers, community, etc.)",
+                  "Primarily focuses on maximizing shareholder wealth."
+                ]
+              },
+              {
+                "label": "Objective",
+                "values": [
+                  "Long-term sustainability and value creation for all stakeholders.",
+                  "Short-term profit maximization and increased stock price."
+                ]
+              },
+              {
+                "label": "Governance",
+                "values": [
+                  "Corporate governance should consider the needs and expectations of a broader range of stakeholders.",
+                  "Corporate governance should prioritize the interests of shareholders above all others."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-E-002",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "COSO Internal Control Framework",
+    "description": "Apply the COSO framework to design and evaluate internal controls",
+    "order": 47,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "COSO framework",
+      "Control components",
+      "Control objectives",
+      "Principles"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "COSO is THE internal control framework! It's referenced by regulators, auditors, and management worldwide. CMAs must know the five components, seventeen principles, and how to evaluate control effectiveness. This is guaranteed to be tested!"
+        },
+        {
+          "title": "COSO Definition of Internal Control",
+          "type": "text",
+          "content": "**Internal Control is:**\nA process, effected by an entity's board of directors, management, and other personnel, designed to provide reasonable assurance regarding the achievement of objectives relating to:\n\n1. **Operations** - Effectiveness and efficiency\n2. **Reporting** - Reliability (financial and non-financial)\n3. **Compliance** - Adherence to laws and regulations\n\n**Note: Reasonable assurance, NOT absolute assurance!**"
+        },
+        {
+          "title": "The Five Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Description",
+            "Questions to Ask"
+          ],
+          "rows": [
+            [
+              "Control Environment",
+              "Foundation - tone at the top",
+              "Is integrity valued? Clear accountability?"
+            ],
+            [
+              "Risk Assessment",
+              "Identify and analyze risks",
+              "What could go wrong? How likely?"
+            ],
+            [
+              "Control Activities",
+              "Policies and procedures",
+              "What actions prevent/detect risks?"
+            ],
+            [
+              "Information & Communication",
+              "Capture and share info",
+              "Does information flow where needed?"
+            ],
+            [
+              "Monitoring",
+              "Ongoing and periodic review",
+              "Are controls working? Evaluated?"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: COSO Components",
+          "type": "callout",
+          "content": "**\"CRIME\"** - The five components:\n\n**C**ontrol Environment (foundation)\n**R**isk Assessment\n**I**nformation & Communication\n**M**onitoring\n**E**valuations (Control Activities)\n\n**Or think of a house:**\n\u2022 Foundation = Control Environment\n\u2022 Walls = Risk Assessment, Control Activities, I&C\n\u2022 Roof = Monitoring"
+        },
+        {
+          "title": "Control Environment",
+          "type": "text",
+          "content": "**The foundation - sets the tone:**\n\n**Key elements:**\n\u2022 Board independence and oversight\n\u2022 Management philosophy and operating style\n\u2022 Organizational structure\n\u2022 Assignment of authority and responsibility\n\u2022 Human resource policies\n\u2022 Commitment to competence\n\u2022 Integrity and ethical values\n\n**\"Tone at the top\" is critical:**\nIf management ignores controls, employees will too!"
+        },
+        {
+          "title": "Control Activities",
+          "type": "text",
+          "content": "**Types of control activities:**\n\n**Preventive Controls:**\n\u2022 Segregation of duties\n\u2022 Authorization requirements\n\u2022 Physical controls (locks, access cards)\n\u2022 Input validation\n\n**Detective Controls:**\n\u2022 Reconciliations\n\u2022 Reviews and comparisons\n\u2022 Surprise audits\n\u2022 Exception reporting\n\n**Both are needed! Preventive stops errors; Detective catches what slipped through.**"
+        },
+        {
+          "title": "The 17 Principles",
+          "type": "text",
+          "content": "**Control Environment (5 principles):**\n1. Commitment to integrity and ethics\n2. Board independence and oversight\n3. Appropriate structures and reporting lines\n4. Commitment to attract/develop competent personnel\n5. Accountability for internal control responsibilities\n\n**Risk Assessment (4 principles):**\n6. Specify clear objectives\n7. Identify and analyze risks\n8. Assess fraud risk\n9. Identify and assess changes\n\n**Control Activities (3), I&C (3), Monitoring (2)** - totaling 17"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Effective vs. Present",
+          "type": "warning",
+          "content": "**Controls can be PRESENT but NOT EFFECTIVE!**\n\n**For internal control to be effective:**\n\u2022 All five components must be present AND functioning\n\u2022 All 17 principles must be present AND functioning\n\u2022 Components must operate together in an integrated manner\n\n**Common deficiencies:**\n\u2022 Policies exist but not followed\n\u2022 Monitoring is sporadic\n\u2022 Information doesn't reach decision-makers"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "COSO provides reasonable assurance, not absolute",
+            "Three objectives: Operations, Reporting, Compliance",
+            "Five components: Control Environment, Risk Assessment, Control Activities, I&C, Monitoring",
+            "Control Environment (tone at top) is the foundation",
+            "17 principles must be present and functioning",
+            "Preventive controls stop errors; Detective controls catch them",
+            "All components must work together for effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COSO Objectives - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following best describes the primary focus of the 'Reporting' objective within the COSO framework?",
+            "options": [
+              "Ensuring the effectiveness and efficiency of operations.",
+              "Complying with applicable laws and regulations.",
+              "Ensuring the reliability, timeliness, and transparency of internal and external reporting.",
+              "Safeguarding assets against loss or misappropriation."
+            ],
+            "correctIndex": 2,
+            "explanation": "The 'Reporting' objective of the COSO framework is focused on ensuring that an organization's reporting, both internal and external, is reliable, timely, transparent, and in compliance with applicable standards and regulations. This includes financial and non-financial reporting.",
+            "hint": "Consider what information stakeholders need to make informed decisions."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "COSO Definition Recall",
+          "reveal": {
+            "question": "Complete the COSO definition of Internal Control: Internal Control is a __________, effected by an entity's __________, management, and other personnel, designed to provide __________ assurance regarding the achievement of objectives relating to operations, reporting, and compliance.",
+            "answer": "process; board of directors; reasonable"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Control Environment Components",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a key element of the Control Environment component of the COSO framework?",
+            "options": [
+              "Board independence and oversight",
+              "Management's philosophy and operating style",
+              "Information and Communication",
+              "Commitment to competence"
+            ],
+            "correctIndex": 2,
+            "explanation": "Information and Communication is a separate component of the COSO framework, not an element of the Control Environment. The Control Environment establishes the foundation for all other components by providing discipline and structure.",
+            "hint": "Think about what elements set the 'tone at the top'."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-E-003",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Risk Management",
+    "description": "Apply COSO ERM and other frameworks to identify and manage organizational risks",
+    "order": 48,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "COSO ERM",
+      "Risk identification",
+      "Risk assessment",
+      "Risk response"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Every organization faces risks that threaten objectives. CMAs identify, assess, and help manage financial and operational risks. Understanding ERM is critical for strategic planning and protecting organizational value."
+        },
+        {
+          "title": "Enterprise Risk Management (ERM)",
+          "type": "text",
+          "content": "**COSO ERM Definition:**\nA process, effected by an entity's board, management, and other personnel, applied in strategy setting and across the enterprise, designed to identify potential events that may affect the entity, and manage risk to be within its risk appetite, to provide reasonable assurance regarding achievement of objectives.\n\n**Key difference from internal control:**\nERM is broader - includes strategy and opportunity, not just control."
+        },
+        {
+          "title": "Types of Risk",
+          "type": "table",
+          "headers": [
+            "Risk Type",
+            "Description",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Strategic",
+              "Threats to business model",
+              "Competition, technology disruption"
+            ],
+            [
+              "Operational",
+              "Process and people failures",
+              "Equipment failure, fraud, errors"
+            ],
+            [
+              "Financial",
+              "Adverse financial events",
+              "Credit risk, liquidity, market risk"
+            ],
+            [
+              "Compliance",
+              "Regulatory violations",
+              "Legal penalties, sanctions"
+            ],
+            [
+              "Reputational",
+              "Damage to reputation",
+              "Social media crisis, ethical lapses"
+            ]
+          ]
+        },
+        {
+          "title": "Risk Assessment Process",
+          "type": "text",
+          "content": "**Step 1: Identify Risks**\n\u2022 Brainstorming, workshops\n\u2022 Historical analysis\n\u2022 Industry research\n\u2022 Process mapping\n\n**Step 2: Assess Risks**\n\u2022 Likelihood (probability of occurrence)\n\u2022 Impact (severity if it occurs)\n\u2022 Risk = Likelihood \u00d7 Impact\n\n**Step 3: Prioritize**\n\u2022 Heat maps (high/medium/low)\n\u2022 Focus resources on significant risks"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Risk Response",
+          "type": "callout",
+          "content": "**\"AART\"** - Four risk response options:\n\n**A**void - Eliminate the activity that creates risk\n**A**ccept - Tolerate the risk (do nothing)\n**R**educe - Implement controls to lower likelihood/impact\n**T**ransfer - Shift risk to another party (insurance, contracts)\n\n**Choose based on risk appetite and cost/benefit!**"
+        },
+        {
+          "title": "Risk Appetite and Tolerance",
+          "type": "text",
+          "content": "**Risk Appetite:**\nThe amount and type of risk an organization is willing to pursue or accept.\n\u2022 Set by board of directors\n\u2022 Tied to strategy and culture\n\u2022 Expressed generally (e.g., \"conservative\")\n\n**Risk Tolerance:**\nThe acceptable variation in outcomes relative to achievement of objectives.\n\u2022 More specific than appetite\n\u2022 May be quantified (e.g., \"earnings variance \u00b1 5%\")\n\u2022 Applied to specific risks\n\n**Appetite = How much risk to take; Tolerance = How much variance is OK**"
+        },
+        {
+          "title": "Key Risk Indicators (KRIs)",
+          "type": "text",
+          "content": "**KRIs are metrics that provide early warning:**\n\n**Characteristics of good KRIs:**\n\u2022 Leading (not lagging)\n\u2022 Measurable and timely\n\u2022 Linked to specific risks\n\u2022 Thresholds defined\n\n**Examples:**\n\u2022 Employee turnover rate (operational risk)\n\u2022 Days sales outstanding (credit risk)\n\u2022 System downtime (technology risk)\n\u2022 Customer complaints (reputation risk)\n\n**KRIs trigger investigation before problems materialize.**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Inherent vs. Residual Risk",
+          "type": "warning",
+          "content": "**Inherent Risk:**\nRisk level before considering controls\n\"If we did nothing, how much risk?\"\n\n**Residual Risk:**\nRisk remaining after controls are applied\nResidual = Inherent - Control Effectiveness\n\n**Residual risk should be within risk tolerance!**\n\nIf residual risk > tolerance \u2192 Need more controls or accept the variance"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ERM is broader than internal control - includes strategy",
+            "Risk types: Strategic, Operational, Financial, Compliance, Reputational",
+            "Risk = Likelihood \u00d7 Impact",
+            "Four responses: Avoid, Accept, Reduce, Transfer (AART)",
+            "Risk Appetite (board level) vs. Tolerance (specific variance)",
+            "KRIs provide early warning of risk events",
+            "Residual risk = Inherent risk - Control effectiveness"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COSO ERM Framework Comprehension",
+          "knowledgeCheck": {
+            "question": "According to the COSO ERM framework definition, which of the following BEST describes the role of risk appetite in enterprise risk management?",
+            "options": [
+              "It is the maximum amount of risk an entity is willing to take, regardless of potential returns.",
+              "It is the level of risk an entity is willing to accept in pursuit of its objectives.",
+              "It is a metric used to quantify the potential financial losses from specific risks.",
+              "It is the process of transferring risk to a third party through insurance or hedging."
+            ],
+            "correctIndex": 1,
+            "explanation": "The COSO ERM framework defines risk appetite as the level of risk an entity is willing to accept. Managing risk to be within the risk appetite is a key component of the framework.",
+            "hint": "Consider the purpose of setting a risk appetite. Is it about avoiding all risk, or about managing risk in relation to goals?"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Remember the Risk Equation!",
+          "reveal": {
+            "question": "What is the formula for calculating Risk?",
+            "answer": "Risk = Likelihood \u00d7 Impact"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Assessment Techniques",
+          "knowledgeCheck": {
+            "question": "Which of the following risk identification techniques is MOST likely to uncover previously unforeseen risks within an organization?",
+            "options": [
+              "Historical analysis of past incidents.",
+              "Reviewing industry research and benchmarking reports.",
+              "Conducting brainstorming sessions with diverse stakeholders.",
+              "Analyzing existing process maps and control documentation."
+            ],
+            "correctIndex": 2,
+            "explanation": "Brainstorming sessions, especially those involving diverse stakeholders, are most likely to uncover unforeseen risks because they bring together different perspectives and experiences that may not be captured by historical data, industry reports, or existing documentation.",
+            "hint": "Think about which technique is proactive and encourages new ideas, rather than reactive and based on existing information."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-E-004",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Control Activities and Safeguarding",
+    "description": "Implement specific control activities to protect assets and ensure accurate reporting",
+    "order": 49,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Segregation of duties",
+      "Physical controls",
+      "IT controls",
+      "Reconciliations"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Control activities are the specific policies and procedures that mitigate risks. CMAs design, implement, and monitor these controls. Weaknesses in control activities lead to fraud, errors, and misstatements - your job is to prevent that!"
+        },
+        {
+          "title": "Segregation of Duties",
+          "type": "text",
+          "content": "**The most fundamental control!**\n\n**Separate these functions:**\n\u2022 **Authorization** - Approve transactions\n\u2022 **Custody** - Handle assets\n\u2022 **Recording** - Account for transactions\n\n**Why?** If one person controls all three, they can:\n\u2022 Steal assets\n\u2022 Authorize fictitious transactions\n\u2022 Cover it up in the records\n\n**SOD ensures collusion is required to defraud.**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: SOD - ACR",
+          "type": "callout",
+          "content": "**\"ACR\"** - Three functions to separate:\n\n**A**uthorization (approve)\n**C**ustody (handle assets)\n**R**ecording (bookkeeping)\n\n**Examples:**\n\u2022 Purchasing: Different people approve orders vs. receive goods vs. record payables\n\u2022 Payroll: Different people add employees vs. approve timesheets vs. distribute checks"
+        },
+        {
+          "title": "Physical Controls",
+          "type": "table",
+          "headers": [
+            "Control Type",
+            "Purpose",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Locks and keys",
+              "Restrict physical access",
+              "Vaults, cabinets, warehouses"
+            ],
+            [
+              "Access cards/badges",
+              "Control entry",
+              "Building access, restricted areas"
+            ],
+            [
+              "Safes and vaults",
+              "Protect high-value items",
+              "Cash, negotiable instruments"
+            ],
+            [
+              "Cameras (CCTV)",
+              "Deter and detect",
+              "Warehouses, cash handling areas"
+            ],
+            [
+              "Inventory counts",
+              "Verify existence",
+              "Periodic and cycle counts"
+            ]
+          ]
+        },
+        {
+          "title": "IT General Controls",
+          "type": "text",
+          "content": "**Categories of IT general controls:**\n\n**Access controls:**\n\u2022 User authentication (passwords, MFA)\n\u2022 Authorization (role-based access)\n\u2022 Privileged access management\n\n**Change management:**\n\u2022 Approval of system changes\n\u2022 Testing before implementation\n\u2022 Documentation\n\n**Operations:**\n\u2022 Backup and recovery\n\u2022 Job scheduling\n\u2022 Incident management\n\n**IT controls affect ALL applications - they're pervasive!**"
+        },
+        {
+          "title": "Application Controls",
+          "type": "text",
+          "content": "**Controls within specific applications:**\n\n**Input controls:**\n\u2022 Validation edits (format, range, reasonableness)\n\u2022 Control totals\n\u2022 Completeness checks\n\n**Processing controls:**\n\u2022 Proper calculation\n\u2022 Update accuracy\n\u2022 Cutoff controls\n\n**Output controls:**\n\u2022 Review of reports\n\u2022 Distribution controls\n\u2022 Reconciliation to source\n\n**Motto: \"Garbage in, garbage out\" - so control the input!**"
+        },
+        {
+          "title": "Reconciliations",
+          "type": "text",
+          "content": "**Key detective control:**\n\n**Bank reconciliation:**\n\u2022 Compare book balance to bank statement\n\u2022 Identify timing differences\n\u2022 Detect errors and fraud\n\n**Subledger to general ledger:**\n\u2022 AR/AP aging to GL balance\n\u2022 Fixed asset detail to GL\n\u2022 Inventory count to perpetual records\n\n**Third-party confirmations:**\n\u2022 Customer balance confirmations\n\u2022 Vendor statement reconciliation\n\n**Reconciliations should be performed by someone INDEPENDENT of recording!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Compensating Controls",
+          "type": "warning",
+          "content": "**When ideal control isn't possible, use compensating controls!**\n\n**Example:** Small company can't fully segregate duties\n\n**Compensating controls:**\n\u2022 Owner reviews all bank statements\n\u2022 Surprise cash counts\n\u2022 Mandatory vacations (forces someone else to do job)\n\u2022 Review of exception reports\n\n**Compensating controls aren't as strong but are better than nothing!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Segregation of duties: separate Authorization, Custody, Recording",
+            "Physical controls protect tangible assets",
+            "IT General Controls affect all applications (access, change, operations)",
+            "Application Controls: Input, Processing, Output",
+            "Reconciliations are key detective controls",
+            "Independence is critical for review controls",
+            "Compensating controls when ideal control isn't feasible"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Segregation of Duties Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios violates the principle of segregation of duties?",
+            "options": [
+              "A cashier records cash receipts and prepares the bank deposit.",
+              "An employee authorizes purchase orders and receives the goods.",
+              "An accountant reconciles the bank statement and approves journal entries.",
+              "A warehouse employee has physical custody of inventory and performs the periodic inventory count."
+            ],
+            "correctIndex": 1,
+            "explanation": "The correct answer is B. Segregation of duties requires separating authorization, custody, and recording functions. If an employee can both authorize purchase orders and receive the goods, they can authorize fictitious purchases and take the goods for personal use without detection.",
+            "hint": "Think about which combination of duties creates the greatest opportunity for fraud."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: IT General Control Categories",
+          "reveal": {
+            "question": "Name the three main categories of IT General Controls discussed in this lesson.",
+            "answer": "The three main categories of IT General Controls are: Access Controls, Change Management, and Operations."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Authorization vs. Authentication",
+          "comparison": {
+            "headers": [
+              "Authentication",
+              "Authorization"
+            ],
+            "rows": [
+              {
+                "label": "Purpose",
+                "values": [
+                  "Verifies the identity of a user.",
+                  "Determines what a user is allowed to access or do after they have been authenticated."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Entering a correct password.",
+                  "Granting a user 'read-only' access to a specific database table."
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "'Who are you?'",
+                  "'What are you allowed to do?'"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-E-005",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Fraud Prevention and Detection",
+    "description": "Understand the fraud triangle and implement anti-fraud controls",
+    "order": 50,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Fraud triangle",
+      "Occupational fraud",
+      "Red flags",
+      "Whistleblower programs"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Fraud costs organizations billions annually. CMAs are often the first line of defense and detection. Understanding why people commit fraud and how to prevent it is essential for protecting your organization and your career."
+        },
+        {
+          "title": "The Fraud Triangle",
+          "type": "text",
+          "content": "**Three conditions for fraud:**\n\n**1. Pressure (Motivation)**\n\u2022 Financial difficulties\n\u2022 Unrealistic performance targets\n\u2022 Addiction (gambling, substances)\n\n**2. Opportunity**\n\u2022 Weak internal controls\n\u2022 Lack of oversight\n\u2022 Access to assets\n\n**3. Rationalization**\n\u2022 \"I'm just borrowing it\"\n\u2022 \"They owe me\"\n\u2022 \"Everyone does it\"\n\n**All three must be present; Remove one and fraud risk drops!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Fraud Triangle",
+          "type": "callout",
+          "content": "**\"POR\"** - The three sides:\n\n**P**ressure - \"I need to\"\n**O**pportunity - \"I can\"\n**R**ationalization - \"It's okay\"\n\n**Controls primarily address OPPORTUNITY!**\n\nWe can't always reduce pressure or change rationalization, but we CAN remove opportunity through controls."
+        },
+        {
+          "title": "Types of Occupational Fraud",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Asset misappropriation",
+              "Theft of assets",
+              "Cash skimming, inventory theft, expense fraud"
+            ],
+            [
+              "Corruption",
+              "Abuse of position",
+              "Bribery, kickbacks, conflicts of interest"
+            ],
+            [
+              "Financial statement fraud",
+              "Intentional misstatement",
+              "Revenue inflation, expense manipulation"
+            ]
+          ]
+        },
+        {
+          "title": "Fraud Red Flags",
+          "type": "text",
+          "content": "**Behavioral indicators:**\n\u2022 Living beyond means\n\u2022 Financial difficulties\n\u2022 Unusually close vendor relationships\n\u2022 Control freak (won't share duties)\n\u2022 Never takes vacation\n\u2022 Excessive overtime\n\u2022 Defensive when questioned\n\n**Transaction indicators:**\n\u2022 Missing documents\n\u2022 Unusual journal entries\n\u2022 Transactions at odd times\n\u2022 Round dollar amounts\n\u2022 Vendor anomalies (P.O. Box, no phone)\n\n**Red flags don't prove fraud but warrant investigation!**"
+        },
+        {
+          "title": "Fraud Prevention Controls",
+          "type": "text",
+          "content": "**Key prevention measures:**\n\n**Hiring practices:**\n\u2022 Background checks\n\u2022 Reference verification\n\u2022 Credit checks (where legal/appropriate)\n\n**Operational controls:**\n\u2022 Strong segregation of duties\n\u2022 Independent approvals\n\u2022 Surprise audits\n\u2022 Mandatory vacations\n\u2022 Job rotation\n\n**Cultural elements:**\n\u2022 Strong tone at the top\n\u2022 Ethics training\n\u2022 Clear policies and consequences"
+        },
+        {
+          "title": "Whistleblower Programs",
+          "type": "text",
+          "content": "**Most effective fraud detection method!**\n\n**ACFE study findings:**\n\u2022 Tips detect 45% of fraud cases\n\u2022 Internal audit detects only 13%\n\u2022 Management review detects 10%\n\n**Effective hotline characteristics:**\n\u2022 Anonymous reporting option\n\u2022 24/7 availability\n\u2022 Multiple channels (phone, web, email)\n\u2022 Non-retaliation policy\n\u2022 Prompt investigation commitment\n\n**SOX requires audit committee oversight of whistleblower complaints!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Management Override",
+          "type": "warning",
+          "content": "**No control system can prevent MANAGEMENT OVERRIDE!**\n\n**Top executives can:**\n\u2022 Direct employees to record false entries\n\u2022 Instruct subordinates to bypass controls\n\u2022 Collude with external parties\n\n**Defenses:**\n\u2022 Board/Audit Committee vigilance\n\u2022 Independent external audit\n\u2022 Strong ethical culture\n\u2022 Whistleblower protections\n\n**Management override is the reason we need GOVERNANCE, not just controls!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Fraud Triangle: Pressure, Opportunity, Rationalization",
+            "Controls primarily reduce Opportunity",
+            "Three fraud types: Asset misappropriation, Corruption, Financial statement",
+            "Red flags warrant investigation, not accusation",
+            "Tips (whistleblowers) detect most fraud",
+            "Mandatory vacations and job rotation are key controls",
+            "Management override is a limitation of any control system"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Fraud Triangle Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios best exemplifies the 'Rationalization' component of the fraud triangle?",
+            "options": [
+              "A company controller facing mounting personal debt due to gambling losses.",
+              "A lack of segregation of duties in the accounts payable department, allowing one employee to both approve invoices and issue payments.",
+              "An employee who believes they are underpaid and feels entitled to take company assets to compensate for the perceived inequity.",
+              "A company setting unrealistic sales targets that employees feel pressured to meet through unethical means."
+            ],
+            "correctIndex": 2,
+            "explanation": "Rationalization involves justifying fraudulent behavior. The employee feeling underpaid and entitled demonstrates this justification. The other options describe pressure and opportunity.",
+            "hint": "Think about how someone would *justify* their actions, not just what motivates or enables them."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Occupational Fraud Red Flags: Recall",
+          "reveal": {
+            "question": "List at least three behavioral red flags associated with occupational fraud.",
+            "answer": "Possible answers include: Living beyond means, financial difficulties, unusually close vendor relationships, control freak (won't share duties), never takes vacation, excessive overtime, defensive when questioned. Any three of these are acceptable."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Identifying Transactional Red Flags",
+          "knowledgeCheck": {
+            "question": "Which of the following is the LEAST likely transactional red flag for fraud?",
+            "options": [
+              "Missing or altered documentation for expense reports.",
+              "A high volume of journal entries made just before the end of the reporting period.",
+              "Consistent and predictable transaction patterns that align with budgetary expectations.",
+              "Unexplained discrepancies between physical inventory counts and accounting records."
+            ],
+            "correctIndex": 2,
+            "explanation": "Consistent and predictable transaction patterns are generally a sign of healthy accounting processes. Missing documents, last-minute journal entries, and inventory discrepancies are all indicators of potential fraud.",
+            "hint": "Consider which option suggests a normal and healthy accounting process, rather than something suspicious."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-E-006",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Internal Audit Function",
+    "description": "Understand the role, standards, and activities of internal audit",
+    "order": 51,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "IIA standards",
+      "Internal audit charter",
+      "Audit planning",
+      "Reporting"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Internal audit is a key governance function. CMAs work closely with internal auditors and may transition into internal audit roles. Understanding how internal audit operates helps you support their work and use their findings effectively."
+        },
+        {
+          "title": "Internal Audit Definition",
+          "type": "text",
+          "content": "**IIA Definition:**\n\"Internal auditing is an independent, objective assurance and consulting activity designed to add value and improve an organization's operations. It helps an organization accomplish its objectives by bringing a systematic, disciplined approach to evaluate and improve the effectiveness of risk management, control, and governance processes.\"\n\n**Key elements:**\n\u2022 Independent and objective\n\u2022 Assurance AND consulting\n\u2022 Adds value\n\u2022 Systematic approach"
+        },
+        {
+          "title": "Internal vs. External Audit",
+          "type": "table",
+          "headers": [
+            "Attribute",
+            "Internal Audit",
+            "External Audit"
+          ],
+          "rows": [
+            [
+              "Reports to",
+              "Audit committee/management",
+              "Shareholders"
+            ],
+            [
+              "Primary focus",
+              "Operations, controls, risk",
+              "Financial statements"
+            ],
+            [
+              "Scope",
+              "All areas of organization",
+              "Financial reporting primary"
+            ],
+            [
+              "Employment",
+              "Company employees",
+              "External firm"
+            ],
+            [
+              "Standards",
+              "IIA Standards",
+              "PCAOB/AICPA Standards"
+            ],
+            [
+              "Opinion",
+              "Recommendations",
+              "Audit opinion on F/S"
+            ]
+          ]
+        },
+        {
+          "title": "Internal Audit Charter",
+          "type": "text",
+          "content": "**Formal document establishing internal audit:**\n\n**Should include:**\n\u2022 Purpose, authority, and responsibility\n\u2022 Position within organization\n\u2022 Access to records and personnel\n\u2022 Scope of activities\n\u2022 Relationship to audit committee\n\n**Authority to:**\n\u2022 Access all records and assets\n\u2022 Interview any employee\n\u2022 Operate independently of management\n\n**Approved by board/audit committee - shows organizational support!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Internal Audit Value",
+          "type": "callout",
+          "content": "**\"GRACE\"** - What internal audit evaluates:\n\n**G**overnance\n**R**isk management\n**A**ssurance\n**C**ontrol\n**E**fficiency of operations\n\n**Internal audit is the organization's \"eyes and ears\" for the board!**"
+        },
+        {
+          "title": "Risk-Based Audit Planning",
+          "type": "text",
+          "content": "**Modern internal audit is risk-based:**\n\n**Annual audit plan:**\n\u2022 Assess risks across organization\n\u2022 Prioritize audit areas by risk\n\u2022 Allocate resources to highest risks\n\u2022 Flexibility for emerging issues\n\n**Risk factors:**\n\u2022 Financial materiality\n\u2022 Control environment quality\n\u2022 Changes in operations/systems\n\u2022 Time since last audit\n\u2022 Historical problems\n\n**Approved by Audit Committee annually!**"
+        },
+        {
+          "title": "Internal Audit Independence",
+          "type": "text",
+          "content": "**Organizational independence:**\n\u2022 Report functionally to Audit Committee\n\u2022 Report administratively to CEO/CFO\n\u2022 CAE has direct access to Audit Committee\n\u2022 CAE appointment/removal by Audit Committee\n\n**Individual objectivity:**\n\u2022 No operational responsibilities\n\u2022 Cannot audit own work\n\u2022 Disclose threats to objectivity\n\u2022 Rotate audit assignments\n\n**Independence is the foundation of internal audit credibility!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Internal audit provides assurance AND consulting",
+            "Reports functionally to Audit Committee for independence",
+            "Charter documents authority and scope",
+            "Modern internal audit is risk-based",
+            "Evaluates governance, risk, and control",
+            "Different from external audit (broader, operational focus)",
+            "CAE has direct access to Audit Committee"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Testing Your Understanding of the Internal Audit Charter",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a typical element included in an internal audit charter?",
+            "options": [
+              "The purpose, authority, and responsibility of the internal audit function.",
+              "The specific audit procedures to be used in each audit engagement.",
+              "The position of the internal audit function within the organization's structure.",
+              "The internal audit function's access to records, personnel, and physical properties."
+            ],
+            "correctIndex": 1,
+            "explanation": "The internal audit charter defines the broad scope and authority of the internal audit function, but it does not typically detail the specific audit procedures used in each engagement. These procedures are determined during audit planning.",
+            "hint": "Think about the overall purpose of the charter versus the specifics of an individual audit."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the IIA Definition",
+          "reveal": {
+            "question": "Fill in the blanks: Internal auditing is an __________, ___________ assurance and consulting activity designed to __________ __________ and improve an organization's operations.",
+            "answer": "Independent, objective, add value"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Internal Audit vs. External Audit",
+          "comparison": {
+            "headers": [
+              "Internal Audit",
+              "External Audit"
+            ],
+            "rows": [
+              {
+                "label": "Objective",
+                "values": [
+                  "Improve operations, add value, and help the organization achieve its objectives.",
+                  "Provide an independent opinion on the fairness of the financial statements."
+                ]
+              },
+              {
+                "label": "Reporting",
+                "values": [
+                  "Reports primarily to management and the audit committee.",
+                  "Reports primarily to shareholders and other external stakeholders."
+                ]
+              },
+              {
+                "label": "Independence",
+                "values": [
+                  "Independent within the organization.",
+                  "Independent of the organization."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-E-007",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Compliance and Regulatory Environment",
+    "description": "Navigate the regulatory environment and implement compliance programs",
+    "order": 52,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "SOX",
+      "FCPA",
+      "GDPR",
+      "Compliance programs"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Organizations face ever-increasing regulatory requirements. CMAs must understand key regulations (SOX, FCPA, GDPR) and help design compliance programs. Non-compliance can result in fines, reputational damage, and personal liability for executives."
+        },
+        {
+          "title": "Sarbanes-Oxley Act (SOX) Overview",
+          "type": "text",
+          "content": "**Enacted 2002 after Enron, WorldCom scandals**\n\n**Key provisions:**\n\u2022 **Section 302:** CEO/CFO certification of financial reports\n\u2022 **Section 404:** Management assessment of internal controls\n\u2022 **Section 409:** Real-time disclosure of material changes\n\u2022 **Section 802:** Criminal penalties for document destruction\n\n**Applies to:** Public companies registered with SEC\n\n**Created PCAOB to oversee public company audits**"
+        },
+        {
+          "title": "SOX Section 404",
+          "type": "text",
+          "content": "**Internal Control over Financial Reporting (ICFR):**\n\n**Management responsibilities:**\n\u2022 Assess effectiveness of ICFR annually\n\u2022 Use a recognized framework (usually COSO)\n\u2022 Report on effectiveness in annual report\n\u2022 Disclose material weaknesses\n\n**Auditor responsibilities (large companies):**\n\u2022 Attest to management's assessment\n\u2022 Issue opinion on ICFR effectiveness\n\n**Material weakness = Reasonable possibility of material misstatement\""
+        },
+        {
+          "title": "Foreign Corrupt Practices Act (FCPA)",
+          "type": "table",
+          "headers": [
+            "Provision",
+            "Requirement"
+          ],
+          "rows": [
+            [
+              "Anti-bribery",
+              "Prohibits bribing foreign officials to obtain/retain business"
+            ],
+            [
+              "Accounting (Books & Records)",
+              "Maintain accurate books and records"
+            ],
+            [
+              "Internal Controls",
+              "Maintain adequate internal controls"
+            ],
+            [
+              "Jurisdiction",
+              "US companies, US persons, acts on US soil"
+            ],
+            [
+              "Penalties",
+              "Criminal fines, imprisonment, civil penalties"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: FCPA",
+          "type": "callout",
+          "content": "**\"ABC\"** - FCPA has two main provisions:\n\n**A**nti-bribery (don't pay bribes to foreign officials)\n**B**ooks and records + Internal **C**ontrols (keep accurate records)\n\n**Note:** Facilitation payments (small payments to speed up routine actions) are technically allowed but risky and discouraged!"
+        },
+        {
+          "title": "Data Privacy (GDPR and Beyond)",
+          "type": "text",
+          "content": "**GDPR (EU data protection):**\n\u2022 Applies if you have EU customers/data\n\u2022 Requires consent for data collection\n\u2022 Right to access, correct, delete personal data\n\u2022 72-hour breach notification\n\u2022 Fines up to 4% of global revenue\n\n**Other privacy laws:**\n\u2022 CCPA (California)\n\u2022 HIPAA (healthcare)\n\u2022 GLBA (financial services)\n\n**CMAs must consider data privacy in control design!**"
+        },
+        {
+          "title": "Effective Compliance Programs",
+          "type": "text",
+          "content": "**DOJ/SEC guidance elements:**\n\n1. Written policies and procedures\n2. Oversight by senior management and board\n3. Training and communication\n4. Reporting mechanisms (hotlines)\n5. Risk assessment process\n6. Monitoring and auditing\n7. Consistent enforcement and discipline\n8. Response and remediation procedures\n\n**Good compliance programs can reduce penalties!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "SOX: CEO/CFO certification, Section 404 ICFR assessment",
+            "Material weakness must be disclosed in annual report",
+            "FCPA: Anti-bribery + Books/Records/Controls",
+            "GDPR requires consent and data subject rights",
+            "72-hour breach notification for GDPR violations",
+            "Compliance programs have standard elements (DOJ guidance)",
+            "Strong compliance reduces regulatory penalties"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SOX Section 404 Challenge",
+          "knowledgeCheck": {
+            "question": "Under Section 404 of the Sarbanes-Oxley Act (SOX), which of the following is NOT a responsibility of management regarding Internal Control over Financial Reporting (ICFR)?",
+            "options": [
+              "A. Assessing the effectiveness of ICFR annually using a recognized framework.",
+              "B. Reporting on the effectiveness of ICFR in the annual report.",
+              "C. Obtaining an unqualified opinion from an external auditor on the effectiveness of ICFR for all companies, regardless of size.",
+              "D. Disclosing any material weaknesses in ICFR."
+            ],
+            "correctIndex": 2,
+            "explanation": "While external auditors are responsible for attesting to management's assessment of ICFR for large companies, SOX 404 does not require *all* companies to obtain an unqualified opinion. The requirement is phased for smaller companies. Management must assess and report on the ICFR but the auditor's role depends on the company size.",
+            "hint": "Consider the size of the company when thinking about the auditor's responsibility."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SOX 302 Recall",
+          "reveal": {
+            "question": "What is the main requirement of Section 302 of the Sarbanes-Oxley Act (SOX)?",
+            "answer": "Section 302 requires the CEO and CFO to personally certify the accuracy of their company's financial reports. This certification confirms that they have reviewed the report, it doesn't contain untrue statements or omissions, and fairly presents the company's financial condition."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SOX 302 vs. SOX 404",
+          "comparison": {
+            "headers": [
+              "SOX Section 302",
+              "SOX Section 404"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Accuracy and fairness of financial reports",
+                  "Effectiveness of internal controls over financial reporting (ICFR)"
+                ]
+              },
+              {
+                "label": "Key Players",
+                "values": [
+                  "CEO and CFO",
+                  "Management (with auditor attestation for large companies)"
+                ]
+              },
+              {
+                "label": "Requirement",
+                "values": [
+                  "Certification of financial reports",
+                  "Assessment and reporting on ICFR effectiveness"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-E-008",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Ethics and Professional Standards",
+    "description": "Apply IMA ethical standards and navigate ethical dilemmas",
+    "order": 53,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "IMA ethics",
+      "Ethical principles",
+      "Conflict resolution",
+      "Professional conduct"
+    ],
+    "blueprintArea": "CMA1-E",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "CMAs are bound by IMA's Statement of Ethical Professional Practice. Ethical failures can end careers and harm organizations. Understanding ethical principles and how to resolve dilemmas is essential for every CMA."
+        },
+        {
+          "title": "IMA Ethical Principles (Overarching)",
+          "type": "text",
+          "content": "**Guiding principles for CMAs:**\n\n**Honesty:** Be truthful in all professional activities\n\n**Fairness:** Deal with others fairly and equitably\n\n**Objectivity:** Communicate information fairly and accurately\n\n**Responsibility:** Use professional judgment ethically\n\n**These principles underpin the specific standards...**"
+        },
+        {
+          "title": "IMA Standards of Ethical Conduct",
+          "type": "table",
+          "headers": [
+            "Standard",
+            "Key Requirements"
+          ],
+          "rows": [
+            [
+              "Competence",
+              "Maintain expertise, follow laws, provide accurate information"
+            ],
+            [
+              "Confidentiality",
+              "Keep information confidential, don't use for personal gain"
+            ],
+            [
+              "Integrity",
+              "Avoid conflicts of interest, refuse gifts that impair judgment, recognize limitations"
+            ],
+            [
+              "Credibility",
+              "Communicate fairly, report delays/deficiencies, disclose all relevant information"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: IMA Standards",
+          "type": "callout",
+          "content": "**\"CCIC\"** - The four standards:\n\n**C**ompetence - Be capable\n**C**onfidentiality - Keep secrets\n**I**ntegrity - Be honest\n**C**redibility - Be believable\n\n**Or remember:** \"2 Cs, 1 I, 1 C\""
+        },
+        {
+          "title": "Ethical Conflict Resolution",
+          "type": "text",
+          "content": "**IMA guidance for resolving ethical dilemmas:**\n\n**Step 1:** Follow established policies at your organization\n\n**Step 2:** Discuss with immediate supervisor (unless involved)\n\n**Step 3:** If unresolved, discuss with next higher level\n\n**Step 4:** If still unresolved, seek confidential advice:\n\u2022 IMA Ethics Helpline\n\u2022 Legal counsel\n\u2022 Board-level audit committee\n\n**Step 5:** Consult an attorney about rights and obligations\n\n**Document everything!**"
+        },
+        {
+          "title": "Common Ethical Dilemmas",
+          "type": "text",
+          "content": "**Pressure situations CMAs face:**\n\n\u2022 Manager asks you to \"adjust\" numbers to meet targets\n\u2022 Discover fraud but perpetrator is your boss\n\u2022 Confidential information could benefit you personally\n\u2022 Asked to sign off on estimates you believe are wrong\n\u2022 Company policy conflicts with accounting standards\n\n**Key questions:**\n\u2022 Is it legal?\n\u2022 Does it comply with professional standards?\n\u2022 Would I be comfortable if it were public?\n\u2022 Does it align with organizational values?"
+        },
+        {
+          "title": "Maintaining Independence",
+          "type": "text",
+          "content": "**Independence threats:**\n\n**Self-interest:** Financial stake in outcome\n**Self-review:** Reviewing own work\n**Advocacy:** Promoting client's position\n**Familiarity:** Close relationships\n**Intimidation:** Threats to objectivity\n\n**Safeguards:**\n\u2022 Policies and procedures\n\u2022 Rotation of assignments\n\u2022 Disclosure of relationships\n\u2022 Consultation on ethical issues\n\u2022 \"Cooling off\" periods"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IMA principles: Honesty, Fairness, Objectivity, Responsibility",
+            "IMA standards: Competence, Confidentiality, Integrity, Credibility",
+            "Follow resolution process: organization policies \u2192 supervisor \u2192 higher levels \u2192 IMA/legal",
+            "Document ethical concerns and actions taken",
+            "Never participate in fraud, even when pressured",
+            "Independence threats: Self-interest, Self-review, Advocacy, Familiarity, Intimidation",
+            "IMA Ethics Helpline available for confidential consultation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding IMA Ethical Principles",
+          "knowledgeCheck": {
+            "question": "Which of the following actions would MOST likely violate the IMA's principle of Objectivity?",
+            "options": [
+              "Accepting a small gift from a supplier as a token of appreciation for a smooth transaction.",
+              "Disclosing confidential information about a competitor to gain a strategic advantage for your company.",
+              "Presenting financial information fairly and accurately, even when it reflects poorly on management's performance.",
+              "Seeking expert advice on a complex accounting issue to ensure compliance with regulations."
+            ],
+            "correctIndex": 1,
+            "explanation": "Objectivity requires communicating information fairly and accurately. Disclosing confidential competitor information to gain an advantage is a clear violation of this principle, as it involves unfair and potentially inaccurate use of information.",
+            "hint": "Consider which action involves compromising the integrity and fairness of information."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Ethical Conflict Resolution Steps",
+          "reveal": {
+            "question": "List the first three steps the IMA recommends for resolving an ethical conflict.",
+            "answer": "1. Follow established policies at your organization.\n2. Discuss with immediate supervisor (unless involved).\n3. If unresolved, discuss with the next higher level."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying Ethical Conflict Resolution",
+          "knowledgeCheck": {
+            "question": "A CMA discovers that their immediate supervisor is manipulating financial data to inflate company profits. The CMA's first step should be to:",
+            "options": [
+              "Discuss the issue directly with the company's external auditors.",
+              "Immediately report the supervisor to the IMA ethics hotline.",
+              "Consult with the next higher level of management within the organization.",
+              "Follow the established policies within the organization for reporting unethical behavior."
+            ],
+            "correctIndex": 3,
+            "explanation": "The IMA recommends first following established policies within the organization. This ensures that internal channels are utilized before escalating the issue externally. Consulting with the next level of management might be appropriate later, but only if internal policies don't resolve the issue or if the policies are unclear.",
+            "hint": "Think about the recommended sequential approach to resolving ethical dilemmas."
+          }
+        }
+      ]
+    }
+  }
+]

@@ -18,6 +18,17 @@ import {
   List,
   Table,
   FileText,
+  Eye,
+  EyeOff,
+  PlayCircle,
+  RotateCcw,
+  Lightbulb,
+  ArrowRight,
+  Check,
+  X,
+  Columns,
+  Calculator,
+  GitBranch,
 } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
@@ -28,7 +39,7 @@ import { fetchQuestions } from '../../services/questionService';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Button } from '../common/Button';
 import clsx from 'clsx';
-import { LessonContentSection, ExamSection, Lesson } from '../../types';
+import { LessonContentSection, ExamSection, Lesson, KnowledgeCheckData, RevealData, ComparisonData, PracticeLinkData, FlowchartData, CalculationData } from '../../types';
 import { applyAcronymPronunciation } from '../../utils/ttsPronunciation';
 
 // Clean text for speech synthesis - remove markdown and punctuation that sounds weird
@@ -172,6 +183,447 @@ const sanitizeHTML = (html: string): string => {
     ALLOWED_TAGS: ['strong', 'em', 'b', 'i', 'br', 'span', 'p', 'ul', 'ol', 'li'],
     ALLOWED_ATTR: ['class'],
   });
+};
+
+// ============================================================================
+// Interactive Section Components (2026 Enhancement)
+// ============================================================================
+
+/** Knowledge Check - interactive quiz within lesson */
+const KnowledgeCheckSection: React.FC<{ data: KnowledgeCheckData }> = ({ data }) => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [showResult, setShowResult] = useState(false);
+  const [showHint, setShowHint] = useState(false);
+  
+  const isCorrect = selectedIndex === data.correctIndex;
+  
+  const handleSelect = (index: number) => {
+    if (showResult) return; // No changing after submission
+    setSelectedIndex(index);
+  };
+  
+  const handleCheck = () => {
+    if (selectedIndex !== null) {
+      setShowResult(true);
+    }
+  };
+  
+  const handleReset = () => {
+    setSelectedIndex(null);
+    setShowResult(false);
+    setShowHint(false);
+  };
+  
+  return (
+    <div className="bg-gradient-to-br from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 border border-primary-200 dark:border-primary-700 rounded-xl p-5 space-y-4">
+      <div className="flex items-start gap-3">
+        <div className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center flex-shrink-0">
+          <HelpCircle className="w-4 h-4 text-white" />
+        </div>
+        <div className="flex-1">
+          <h4 className="font-semibold text-primary-900 dark:text-primary-100 text-sm uppercase tracking-wide mb-1">
+            Knowledge Check
+          </h4>
+          <p className="text-slate-800 dark:text-slate-200 font-medium">{data.question}</p>
+        </div>
+      </div>
+      
+      <div className="space-y-2 ml-11">
+        {data.options.map((option, index) => {
+          const isSelected = selectedIndex === index;
+          const isThisCorrect = index === data.correctIndex;
+          
+          let optionClasses = 'border rounded-lg p-3 cursor-pointer transition-all flex items-center gap-3 ';
+          
+          if (showResult) {
+            if (isThisCorrect) {
+              optionClasses += 'bg-green-50 dark:bg-green-900/30 border-green-400 dark:border-green-600';
+            } else if (isSelected && !isThisCorrect) {
+              optionClasses += 'bg-red-50 dark:bg-red-900/30 border-red-400 dark:border-red-600';
+            } else {
+              optionClasses += 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 opacity-50';
+            }
+          } else if (isSelected) {
+            optionClasses += 'bg-primary-100 dark:bg-primary-900/40 border-primary-400 dark:border-primary-600';
+          } else {
+            optionClasses += 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600';
+          }
+          
+          return (
+            <button
+              key={index}
+              onClick={() => handleSelect(index)}
+              className={optionClasses}
+              disabled={showResult}
+            >
+              <span className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold flex-shrink-0 ${
+                showResult && isThisCorrect
+                  ? 'bg-green-500 border-green-500 text-white'
+                  : showResult && isSelected && !isThisCorrect
+                  ? 'bg-red-500 border-red-500 text-white'
+                  : isSelected
+                  ? 'bg-primary-500 border-primary-500 text-white'
+                  : 'border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400'
+              }`}>
+                {showResult && isThisCorrect ? <Check className="w-3 h-3" /> :
+                 showResult && isSelected && !isThisCorrect ? <X className="w-3 h-3" /> :
+                 String.fromCharCode(65 + index)}
+              </span>
+              <span className={`text-left ${showResult && isThisCorrect ? 'text-green-800 dark:text-green-200 font-medium' : 'text-slate-700 dark:text-slate-300'}`}>
+                {option}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      
+      {/* Hint button */}
+      {data.hint && !showResult && !showHint && (
+        <button
+          onClick={() => setShowHint(true)}
+          className="ml-11 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 flex items-center gap-1"
+        >
+          <Lightbulb className="w-4 h-4" />
+          Show hint
+        </button>
+      )}
+      
+      {showHint && !showResult && (
+        <div className="ml-11 text-sm text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-lg p-3 flex items-start gap-2">
+          <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" />
+          {data.hint}
+        </div>
+      )}
+      
+      {/* Action buttons */}
+      <div className="ml-11 flex items-center gap-3">
+        {!showResult ? (
+          <button
+            onClick={handleCheck}
+            disabled={selectedIndex === null}
+            className="px-4 py-2 bg-primary-600 hover:bg-primary-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+          >
+            <CheckCircle className="w-4 h-4" />
+            Check Answer
+          </button>
+        ) : (
+          <button
+            onClick={handleReset}
+            className="px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+          >
+            <RotateCcw className="w-4 h-4" />
+            Try Again
+          </button>
+        )}
+      </div>
+      
+      {/* Explanation */}
+      {showResult && (
+        <div className={`ml-11 p-4 rounded-lg ${isCorrect ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700' : 'bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700'}`}>
+          <div className="flex items-start gap-2">
+            {isCorrect ? (
+              <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+            ) : (
+              <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+            )}
+            <div>
+              <p className={`font-medium mb-1 ${isCorrect ? 'text-green-800 dark:text-green-200' : 'text-amber-800 dark:text-amber-200'}`}>
+                {isCorrect ? 'Correct!' : 'Not quite'}
+              </p>
+              <p className="text-sm text-slate-700 dark:text-slate-300">{data.explanation}</p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+/** Reveal Section - click to reveal hidden answer */
+const RevealSection: React.FC<{ data: RevealData }> = ({ data }) => {
+  const [revealed, setRevealed] = useState(false);
+  
+  return (
+    <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+      <button
+        onClick={() => setRevealed(!revealed)}
+        className="w-full p-4 flex items-center justify-between hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+      >
+        <div className="flex items-center gap-3">
+          {revealed ? (
+            <EyeOff className="w-5 h-5 text-primary-500" />
+          ) : (
+            <Eye className="w-5 h-5 text-primary-500" />
+          )}
+          <span className="font-medium text-slate-800 dark:text-slate-200 text-left">
+            {data.question}
+          </span>
+        </div>
+        <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform ${revealed ? 'rotate-90' : ''}`} />
+      </button>
+      
+      {revealed && (
+        <div className="px-4 pb-4 pt-0 ml-8 border-t border-slate-200 dark:border-slate-700">
+          <div className="pt-4 text-slate-700 dark:text-slate-300">
+            {data.answer}
+          </div>
+          {data.hint && (
+            <div className="mt-3 text-sm text-amber-700 dark:text-amber-300 flex items-start gap-2">
+              <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              {data.hint}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+/** Comparison Section - side by side comparison */
+const ComparisonSection: React.FC<{ data: ComparisonData }> = ({ data }) => {
+  const colorClasses: Record<string, { bg: string; border: string; header: string }> = {
+    blue: { bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-700', header: 'bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200' },
+    green: { bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-700', header: 'bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200' },
+    amber: { bg: 'bg-amber-50 dark:bg-amber-900/20', border: 'border-amber-200 dark:border-amber-700', header: 'bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-200' },
+    red: { bg: 'bg-red-50 dark:bg-red-900/20', border: 'border-red-200 dark:border-red-700', header: 'bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-200' },
+    purple: { bg: 'bg-purple-50 dark:bg-purple-900/20', border: 'border-purple-200 dark:border-purple-700', header: 'bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-200' },
+  };
+  const defaultColors = ['blue', 'green', 'amber', 'purple'];
+  
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+        <Columns className="w-5 h-5 text-primary-500" />
+        <span className="font-semibold">{data.title}</span>
+      </div>
+      
+      <div className={`grid gap-4 ${data.items.length === 2 ? 'grid-cols-1 md:grid-cols-2' : data.items.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
+        {data.items.map((item, index) => {
+          const color = item.color || defaultColors[index % defaultColors.length];
+          const classes = colorClasses[color] || colorClasses.blue;
+          
+          return (
+            <div key={index} className={`${classes.bg} ${classes.border} border rounded-xl overflow-hidden`}>
+              <div className={`${classes.header} px-4 py-2 font-semibold text-sm text-center`}>
+                {item.label}
+              </div>
+              <ul className="p-4 space-y-2">
+                {item.points.map((point, pIndex) => (
+                  <li key={pIndex} className="text-sm text-slate-700 dark:text-slate-300 flex items-start gap-2">
+                    <span className="text-primary-500 mt-1">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+/** Practice Link Section - link to related questions */
+const PracticeLinkSection: React.FC<{ data: PracticeLinkData }> = ({ data }) => {
+  const navigate = useNavigate();
+  
+  return (
+    <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-700 rounded-xl p-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+            <PlayCircle className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <p className="font-medium text-green-800 dark:text-green-200">{data.text}</p>
+            <p className="text-sm text-green-600 dark:text-green-400">
+              {data.questionIds.length} questions • {data.difficulty || 'mixed'} difficulty
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={() => {
+            // Navigate to practice with specific question IDs
+            // For now, navigate to practice page - can be enhanced to pass question IDs
+            navigate('/practice');
+          }}
+          className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+        >
+          Practice Now
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+/** Flowchart Section - interactive decision tree */
+const FlowchartSection: React.FC<{ data: FlowchartData }> = ({ data }) => {
+  const [currentNodeId, setCurrentNodeId] = useState(1);
+  const [path, setPath] = useState<number[]>([1]);
+  
+  const currentNode = data.nodes.find(n => n.id === currentNodeId);
+  const isTerminal = currentNode?.terminal;
+  
+  const handleChoice = (nextId: number | undefined) => {
+    if (nextId) {
+      setCurrentNodeId(nextId);
+      setPath([...path, nextId]);
+    }
+  };
+  
+  const handleReset = () => {
+    setCurrentNodeId(1);
+    setPath([1]);
+  };
+  
+  return (
+    <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 space-y-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <GitBranch className="w-5 h-5 text-primary-500" />
+          <span className="font-semibold text-slate-800 dark:text-slate-200">{data.title}</span>
+        </div>
+        {path.length > 1 && (
+          <button
+            onClick={handleReset}
+            className="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 flex items-center gap-1"
+          >
+            <RotateCcw className="w-4 h-4" />
+            Start Over
+          </button>
+        )}
+      </div>
+      
+      {/* Path breadcrumb */}
+      {path.length > 1 && (
+        <div className="flex items-center gap-1 flex-wrap text-sm text-slate-500 dark:text-slate-400">
+          {path.map((nodeId, index) => {
+            const node = data.nodes.find(n => n.id === nodeId);
+            return (
+              <React.Fragment key={nodeId}>
+                {index > 0 && <ChevronRight className="w-4 h-4" />}
+                <span className={index === path.length - 1 ? 'text-primary-600 dark:text-primary-400 font-medium' : ''}>
+                  {node?.text.slice(0, 30)}{(node?.text?.length || 0) > 30 ? '...' : ''}
+                </span>
+              </React.Fragment>
+            );
+          })}
+        </div>
+      )}
+      
+      {/* Current node */}
+      <div className={`p-4 rounded-lg ${isTerminal ? 'bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700' : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700'}`}>
+        <p className={`font-medium ${isTerminal ? 'text-green-800 dark:text-green-200' : 'text-slate-800 dark:text-slate-200'}`}>
+          {currentNode?.text}
+        </p>
+        {currentNode?.result && (
+          <p className="mt-2 text-green-700 dark:text-green-300 text-sm">{currentNode.result}</p>
+        )}
+      </div>
+      
+      {/* Choice buttons */}
+      {!isTerminal && (currentNode?.yes || currentNode?.no || currentNode?.next) && (
+        <div className="flex gap-3">
+          {currentNode?.yes && (
+            <button
+              onClick={() => handleChoice(currentNode.yes)}
+              className="flex-1 px-4 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors"
+            >
+              Yes
+            </button>
+          )}
+          {currentNode?.no && (
+            <button
+              onClick={() => handleChoice(currentNode.no)}
+              className="flex-1 px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg font-medium transition-colors"
+            >
+              No
+            </button>
+          )}
+          {currentNode?.next && (
+            <button
+              onClick={() => handleChoice(currentNode.next)}
+              className="flex-1 px-4 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+            >
+              Continue <ArrowRight className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+/** Calculation Section - interactive fill-in-the-blank calculation */
+const CalculationSection: React.FC<{ data: CalculationData }> = ({ data }) => {
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [showSolution, setShowSolution] = useState(false);
+  
+  const editableSteps = data.steps.filter(s => s.editable);
+  const allCorrect = editableSteps.every((step, index) => 
+    answers[index]?.trim().toLowerCase() === step.answer?.toLowerCase()
+  );
+  
+  return (
+    <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 space-y-4">
+      <div className="flex items-center gap-2">
+        <Calculator className="w-5 h-5 text-primary-500" />
+        <span className="font-semibold text-slate-800 dark:text-slate-200">{data.title}</span>
+      </div>
+      
+      {data.scenario && (
+        <p className="text-slate-700 dark:text-slate-300 text-sm">{data.scenario}</p>
+      )}
+      
+      <div className="space-y-2">
+        {data.steps.map((step, index) => (
+          <div key={index} className="flex items-center gap-4 p-3 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+            <span className="text-slate-600 dark:text-slate-400 min-w-[120px] text-sm">{step.label}:</span>
+            {step.formula && (
+              <span className="text-slate-400 dark:text-slate-500 text-xs font-mono">{step.formula}</span>
+            )}
+            {step.editable ? (
+              <input
+                type="text"
+                value={answers[data.steps.filter(s => s.editable).indexOf(step)] || ''}
+                onChange={(e) => {
+                  const editableIndex = data.steps.filter(s => s.editable).indexOf(step);
+                  setAnswers({ ...answers, [editableIndex]: e.target.value });
+                }}
+                placeholder="Enter answer"
+                className="flex-1 px-3 py-1 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              />
+            ) : (
+              <span className="font-mono text-slate-800 dark:text-slate-200">{step.value}</span>
+            )}
+          </div>
+        ))}
+      </div>
+      
+      <div className="flex items-center gap-3">
+        {editableSteps.length > 0 && Object.keys(answers).length === editableSteps.length && (
+          <span className={`text-sm font-medium ${allCorrect ? 'text-green-600 dark:text-green-400' : 'text-amber-600 dark:text-amber-400'}`}>
+            {allCorrect ? '✓ Correct!' : 'Try again...'}
+          </span>
+        )}
+        {data.solution && (
+          <button
+            onClick={() => setShowSolution(!showSolution)}
+            className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
+          >
+            {showSolution ? 'Hide Solution' : 'Show Solution'}
+          </button>
+        )}
+      </div>
+      
+      {showSolution && data.solution && (
+        <div className="p-4 bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-700 rounded-lg">
+          <pre className="text-sm text-primary-800 dark:text-primary-200 whitespace-pre-wrap font-mono">{data.solution}</pre>
+        </div>
+      )}
+    </div>
+  );
 };
 
 interface ContentSectionProps {
@@ -369,6 +821,32 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
           </div>
         </div>
       );
+
+    // ========== Interactive Section Types (2026 Enhancement) ==========
+    
+    case 'knowledge-check':
+      if (!section.knowledgeCheck) return null;
+      return <KnowledgeCheckSection data={section.knowledgeCheck} />;
+    
+    case 'reveal':
+      if (!section.reveal) return null;
+      return <RevealSection data={section.reveal} />;
+    
+    case 'comparison':
+      if (!section.comparison) return null;
+      return <ComparisonSection data={section.comparison} />;
+    
+    case 'practice-link':
+      if (!section.practiceLink) return null;
+      return <PracticeLinkSection data={section.practiceLink} />;
+    
+    case 'flowchart':
+      if (!section.flowchart) return null;
+      return <FlowchartSection data={section.flowchart} />;
+    
+    case 'calculation':
+      if (!section.calculation) return null;
+      return <CalculationSection data={section.calculation} />;
 
     default:
       return <p className="text-slate-600 dark:text-slate-300">{String(section.content)}</p>;

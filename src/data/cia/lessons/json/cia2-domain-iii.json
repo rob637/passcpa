@@ -1,0 +1,775 @@
+[
+  {
+    "id": "CIA2-III-061",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Revenue Cycle Controls and Risks",
+    "description": "Master controls over the order-to-cash process",
+    "order": 61,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Revenue cycle",
+      "Sales controls",
+      "Credit authorization",
+      "Billing"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The revenue cycle is a high-risk area frequently tested on the CIA exam. It spans from customer order through cash collection and involves significant fraud and error risks. Domain III (40% of Part 2) emphasizes business processes."
+        },
+        {
+          "title": "Revenue Cycle Stages",
+          "type": "text",
+          "content": "**Order-to-Cash Process:**\n\n1. **Sales Order Processing**\n   \u2022 Customer order receipt and validation\n   \u2022 Credit check and approval\n   \u2022 Inventory availability confirmation\n\n2. **Fulfillment/Shipping**\n   \u2022 Order picking and packing\n   \u2022 Shipping documentation\n   \u2022 Transfer of title\n\n3. **Billing**\n   \u2022 Invoice generation\n   \u2022 Revenue recognition\n   \u2022 Customer statement preparation\n\n4. **Collections**\n   \u2022 Accounts receivable management\n   \u2022 Cash receipts processing\n   \u2022 Aging analysis and follow-up"
+        },
+        {
+          "title": "Key Controls by Stage",
+          "type": "table",
+          "headers": [
+            "Stage",
+            "Key Controls",
+            "Risk Addressed"
+          ],
+          "rows": [
+            [
+              "Credit Approval",
+              "Credit limits, credit checks before shipping",
+              "Bad debt, uncollectible accounts"
+            ],
+            [
+              "Shipping",
+              "Shipping documents signed, prenumbered documents",
+              "Theft, unauthorized shipments"
+            ],
+            [
+              "Billing",
+              "Three-way match, prenumbered invoices",
+              "Billing errors, fictitious sales"
+            ],
+            [
+              "Collections",
+              "Lockbox, segregation of duties",
+              "Lapping, misappropriation"
+            ]
+          ]
+        },
+        {
+          "title": "Critical Segregation of Duties",
+          "type": "text",
+          "content": "**Must Be Separated:**\n\n\u2022 **Credit approval** vs. **Sales order entry**\n  (Prevents extending credit to related parties)\n\n\u2022 **Shipping** vs. **Billing** vs. **Accounts receivable**\n  (Prevents unrecorded shipments, fictitious sales)\n\n\u2022 **Cash receipts** vs. **Accounts receivable**\n  (Prevents lapping, misappropriation)\n\n\u2022 **Customer master file maintenance** vs. **Credit limits**\n  (Prevents unauthorized credit extensions)"
+        },
+        {
+          "title": "Revenue Recognition Fraud Indicators",
+          "type": "callout",
+          "content": "**Watch for these red flags:**\n\n\u2022 Channel stuffing (excessive sales to distributors)\n\u2022 Bill and hold transactions\n\u2022 Side agreements modifying terms\n\u2022 Unusual sales near period end\n\u2022 Revenue without proper performance obligation fulfillment\n\u2022 Multiple element arrangements not properly allocated"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Revenue cycle spans order through cash collection",
+            "Credit approval must be segregated from sales processing",
+            "Cash receipts must be segregated from AR recordkeeping",
+            "Period-end revenue transactions require extra scrutiny",
+            "Controls should address both error and fraud risks"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Segregation of Duties",
+          "knowledgeCheck": {
+            "question": "Which of the following segregation of duties is MOST effective in preventing the concealment of fictitious sales?",
+            "options": [
+              "Credit approval vs. Sales order entry",
+              "Shipping vs. Billing vs. Accounts receivable",
+              "Cash receipts vs. Accounts payable",
+              "Inventory management vs. Shipping"
+            ],
+            "correctIndex": 1,
+            "explanation": "Separating shipping, billing, and accounts receivable duties prevents fictitious sales. If one person controls all three functions, they could ship goods without proper authorization, create a billing record, and then manage the accounts receivable to conceal the lack of payment.",
+            "hint": "Think about which combination of duties would allow someone to create and hide a sale that never happened."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Order-to-Cash Process",
+          "reveal": {
+            "question": "List the three main stages of the Order-to-Cash process covered in this lesson.",
+            "answer": "1. Sales Order Processing, 2. Fulfillment/Shipping, 3. Billing"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Credit Authorization Risk",
+          "knowledgeCheck": {
+            "question": "What is the primary risk that the segregation of duties between credit approval and sales order entry aims to mitigate?",
+            "options": [
+              "Unrecorded shipments",
+              "Extending credit to related parties",
+              "Lapping of cash receipts",
+              "Inaccurate inventory records"
+            ],
+            "correctIndex": 1,
+            "explanation": "The separation of credit approval and sales order entry prevents individuals from extending credit to related parties or customers who are not creditworthy. This reduces the risk of bad debt and financial losses.",
+            "hint": "Consider who might benefit from circumventing the credit approval process."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Billing vs. Accounts Receivable: Key Differences",
+          "comparison": {
+            "headers": [
+              "Billing",
+              "Accounts Receivable"
+            ],
+            "rows": [
+              {
+                "label": "Primary Function",
+                "values": [
+                  "Creating and issuing invoices to customers.",
+                  "Tracking customer balances and collecting payments."
+                ]
+              },
+              {
+                "label": "Data Input",
+                "values": [
+                  "Shipping information, sales orders, pricing data.",
+                  "Payment information, adjustments, credit memos."
+                ]
+              },
+              {
+                "label": "Key Risk",
+                "values": [
+                  "Inaccurate invoices, unbilled shipments.",
+                  "Misapplication of payments, uncollectible accounts."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-062",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Procurement Cycle Controls and Risks",
+    "description": "Master controls over the procure-to-pay process",
+    "order": 62,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Procurement",
+      "Purchase controls",
+      "Vendor management",
+      "Disbursements"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The procurement cycle is the most common area for fraud and kickbacks. Understanding procure-to-pay controls is essential for CIA Part 2 and real-world internal audit practice."
+        },
+        {
+          "title": "Procurement Cycle Stages",
+          "type": "text",
+          "content": "**Procure-to-Pay Process:**\n\n1. **Requisition**\n   \u2022 Need identification\n   \u2022 Requisition preparation and approval\n   \u2022 Budget verification\n\n2. **Purchasing**\n   \u2022 Vendor selection\n   \u2022 Purchase order creation\n   \u2022 Contract negotiation (if applicable)\n\n3. **Receiving**\n   \u2022 Goods receipt and inspection\n   \u2022 Receiving report preparation\n   \u2022 Discrepancy handling\n\n4. **Accounts Payable**\n   \u2022 Three-way match\n   \u2022 Invoice approval\n   \u2022 Payment scheduling\n\n5. **Disbursement**\n   \u2022 Check/EFT preparation\n   \u2022 Payment authorization\n   \u2022 Vendor remittance"
+        },
+        {
+          "title": "The Three-Way Match",
+          "type": "text",
+          "content": "**The Three-Way Match** compares:\n\n1. **Purchase Order** - What was ordered (quantity, price, terms)\n2. **Receiving Report** - What was received (quantity, condition)\n3. **Vendor Invoice** - What vendor is billing\n\n**All three documents must agree** before payment is authorized.\n\n**Exceptions Requiring Investigation:**\n\u2022 Quantity differences beyond tolerance\n\u2022 Price discrepancies\n\u2022 Items received but not ordered\n\u2022 Invoices without purchase orders (potential fraud)"
+        },
+        {
+          "title": "Key Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Tests of Control"
+          ],
+          "rows": [
+            [
+              "Approved vendor list",
+              "Prevent unauthorized/fictitious vendors",
+              "Review vendor setup approvals"
+            ],
+            [
+              "Competitive bidding",
+              "Ensure fair pricing, prevent kickbacks",
+              "Sample bids, verify process"
+            ],
+            [
+              "Three-way match",
+              "Prevent payment for goods not received",
+              "Test matching exceptions"
+            ],
+            [
+              "Segregation of duties",
+              "Prevent fraud collusion",
+              "Document who does what"
+            ],
+            [
+              "Check signing limits",
+              "Control disbursement authority",
+              "Test compliance with limits"
+            ]
+          ]
+        },
+        {
+          "title": "Segregation of Duties",
+          "type": "text",
+          "content": "**Must Be Separated:**\n\n\u2022 **Requisitioning** vs. **Purchasing** vs. **Receiving**\n  (Prevents ordering for personal use)\n\n\u2022 **Vendor file maintenance** vs. **Check preparation**\n  (Prevents payments to fictitious vendors)\n\n\u2022 **Receiving** vs. **Accounts Payable**\n  (Prevents paying for goods not received)\n\n\u2022 **Check signing** vs. **Bank reconciliation**\n  (Prevents concealment of unauthorized payments)"
+        },
+        {
+          "title": "Vendor Fraud Red Flags",
+          "type": "callout",
+          "content": "**Red flags for vendor fraud/kickbacks:**\n\n\u2022 Single-source contracts without justification\n\u2022 Vendor addresses match employee addresses\n\u2022 Round dollar invoices\n\u2022 Invoices just under approval thresholds\n\u2022 Unusual volume with one vendor\n\u2022 Missing competitive bids\n\u2022 Frequent change orders inflating contract value"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three-way match is the primary control over disbursements",
+            "Vendor file maintenance is a high-risk function",
+            "Competitive bidding prevents kickbacks and ensures fair pricing",
+            "Check signing must be segregated from bank reconciliation",
+            "Watch for red flags indicating vendor collusion"
+          ]
+        },
+        {
+          "type": "knowledge_check",
+          "title": "Test Your Knowledge: The Three-Way Match",
+          "knowledgeCheck": {
+            "question": "Which of the following discrepancies, discovered during a three-way match, would MOST likely indicate a potential internal control failure related to unauthorized purchases?",
+            "options": [
+              "The vendor invoice lists a higher price per unit than the purchase order, but the receiving report confirms the correct quantity was received.",
+              "The receiving report indicates a quantity received that is less than the quantity ordered on the purchase order, but the vendor invoice matches the receiving report.",
+              "The vendor invoice includes a line item for a service not specified on the purchase order or the receiving report.",
+              "The purchase order specifies a different delivery date than the vendor invoice."
+            ],
+            "correctIndex": 2,
+            "explanation": "The inclusion of a service not on the purchase order or receiving report strongly suggests an unauthorized purchase. The other options could be due to pricing errors, shipping issues, or timing differences, but adding an entirely new service is a red flag.",
+            "hint": "Think about which discrepancy directly implies something was purchased without proper authorization."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Segregation of Duties",
+          "reveal": {
+            "question": "Why is it crucial to segregate the duties of vendor file maintenance and check preparation?",
+            "answer": "To prevent payments to fictitious vendors or the alteration of vendor information for fraudulent purposes. If the same person can add or modify vendor details and then issue payments, they could create a fake vendor account and pay themselves."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Requisitioning vs. Purchasing",
+          "comparison": {
+            "headers": [
+              "Requisitioning",
+              "Purchasing"
+            ],
+            "rows": [
+              {
+                "label": "Primary Responsibility",
+                "values": [
+                  "Identifying and requesting the need for goods or services.",
+                  "Selecting vendors, negotiating terms, and creating purchase orders."
+                ]
+              },
+              {
+                "label": "Key Activities",
+                "values": [
+                  "Determining the required quantity and specifications.",
+                  "Obtaining competitive bids and evaluating vendor performance."
+                ]
+              },
+              {
+                "label": "Control Objective",
+                "values": [
+                  "Ensuring that only legitimate and necessary needs are requested.",
+                  "Ensuring that goods and services are acquired at the best possible value and from reliable sources."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-063",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Payroll Cycle Controls and Risks",
+    "description": "Master controls over payroll processing and employee compensation",
+    "order": 63,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Payroll controls",
+      "Ghost employees",
+      "Time reporting",
+      "Payroll fraud"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Payroll Cycle Overview",
+          "type": "text",
+          "content": "**Key Payroll Functions:**\n\n1. **Human Resources**\n   \u2022 Hiring and termination\n   \u2022 Pay rate authorization\n   \u2022 Employee master file maintenance\n\n2. **Timekeeping**\n   \u2022 Time and attendance recording\n   \u2022 Supervisor approval\n   \u2022 Leave management\n\n3. **Payroll Processing**\n   \u2022 Gross pay calculation\n   \u2022 Deductions and withholdings\n   \u2022 Net pay computation\n\n4. **Disbursement**\n   \u2022 Paycheck/EFT preparation\n   \u2022 Distribution to employees\n   \u2022 Tax remittances"
+        },
+        {
+          "title": "Key Controls",
+          "type": "table",
+          "headers": [
+            "Control",
+            "Purpose",
+            "Tests"
+          ],
+          "rows": [
+            [
+              "HR approval of new hires",
+              "Prevent ghost employees",
+              "Match payroll to HR records"
+            ],
+            [
+              "Supervisor time approval",
+              "Validate hours worked",
+              "Review unapproved time entries"
+            ],
+            [
+              "Independent payroll distribution",
+              "Detect ghost employees",
+              "Observe payroll distribution"
+            ],
+            [
+              "Separate bank account",
+              "Facilitate reconciliation",
+              "Review imprest account"
+            ],
+            [
+              "Payroll register review",
+              "Detect anomalies",
+              "Review management approval"
+            ]
+          ]
+        },
+        {
+          "title": "Segregation of Duties",
+          "type": "text",
+          "content": "**Critical Separations:**\n\n\u2022 **HR (hiring)** vs. **Payroll processing**\n  (Prevents ghost employees)\n\n\u2022 **Timekeeping** vs. **Payroll calculation**\n  (Prevents inflated hours)\n\n\u2022 **Payroll preparation** vs. **Check distribution**\n  (Prevents payroll check theft)\n\n\u2022 **Payroll bank account** vs. **Regular operating account**\n  (Facilitates cash control)"
+        },
+        {
+          "title": "Payroll Fraud Schemes",
+          "type": "text",
+          "content": "**Common Payroll Frauds:**\n\n1. **Ghost Employees**\n   \u2022 Fictitious employees on payroll\n   \u2022 Departed employees not removed\n   \u2022 Detection: Match payroll to HR, observe distribution\n\n2. **Falsified Hours**\n   \u2022 Inflated overtime\n   \u2022 Hours reported not worked\n   \u2022 Detection: Time analysis, supervisor review\n\n3. **Commission Fraud**\n   \u2022 Fictitious sales for commission\n   \u2022 Revenue reversals after commission paid\n   \u2022 Detection: Commission recalculation, reversals analysis\n\n4. **Expense Reimbursement**\n   \u2022 Fictitious expenses\n   \u2022 Inflated amounts\n   \u2022 Detection: Receipt verification, policy compliance"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "HR hiring function must be segregated from payroll processing",
+            "Ghost employee prevention requires matching payroll to HR records",
+            "Physical payroll distribution or direct deposit reduces theft risk",
+            "Supervisor approval of time is essential but not sufficient alone",
+            "Separate payroll bank account facilitates control and reconciliation"
+          ]
+        },
+        {
+          "type": "knowledge_check",
+          "title": "Payroll Cycle Controls: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following segregation of duties is MOST effective in preventing the creation of ghost employees in the payroll cycle?",
+            "options": [
+              "The payroll department should not have access to blank payroll checks.",
+              "The human resources department should be separate from the payroll processing function.",
+              "The timekeeping department should be separate from the payroll calculation function.",
+              "The supervisor should not be responsible for distributing payroll checks."
+            ],
+            "correctIndex": 1,
+            "explanation": "The most effective control for preventing ghost employees is separating the authorization of new hires (Human Resources) from the actual payroll processing. This prevents unauthorized individuals from being added to the payroll system. While the other options are important controls, they address different risks.",
+            "hint": "Consider which department is responsible for adding new employees to the system."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Payroll Fraud Schemes",
+          "reveal": {
+            "question": "Describe two methods for detecting ghost employees on the payroll.",
+            "answer": "1. Matching the active payroll list to the HR employee master file to identify discrepancies. 2. Observing the payroll check distribution process to identify checks that are not claimed or appear suspicious."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Timekeeping vs. Payroll Processing",
+          "comparison": {
+            "headers": [
+              "Timekeeping",
+              "Payroll Processing"
+            ],
+            "rows": [
+              {
+                "label": "Primary Function",
+                "values": [
+                  "Records and approves employee work hours.",
+                  "Calculates gross pay, deductions, and net pay."
+                ]
+              },
+              {
+                "label": "Control Objective",
+                "values": [
+                  "Ensures accurate recording and approval of hours worked.",
+                  "Ensures accurate and timely payment to employees."
+                ]
+              },
+              {
+                "label": "Key Risk",
+                "values": [
+                  "Falsified time reports (inflated hours).",
+                  "Incorrect pay calculations and unauthorized deductions."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-IV-064",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "ESG and Sustainability Auditing",
+    "description": "Emerging topic: Auditing Environmental, Social, and Governance factors",
+    "order": 64,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "ESG",
+      "Sustainability",
+      "Climate risk",
+      "Non-financial reporting"
+    ],
+    "blueprintArea": "CIA2-IV",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "ESG (Environmental, Social, Governance) is a rapidly emerging area for internal audit. Regulators worldwide are mandating climate and sustainability disclosures. The IIA has signaled ESG will be increasingly important on the CIA exam. This is a differentiating topic for world-class preparation."
+        },
+        {
+          "title": "ESG Components",
+          "type": "text",
+          "content": "**Environmental Factors:**\n\u2022 Climate risk and carbon emissions\n\u2022 Energy efficiency and renewable energy\n\u2022 Water usage and waste management\n\u2022 Biodiversity and ecosystem impact\n\u2022 Environmental compliance\n\n**Social Factors:**\n\u2022 Labor practices and human rights\n\u2022 Diversity, equity, and inclusion (DEI)\n\u2022 Employee health and safety\n\u2022 Community relations and impact\n\u2022 Supply chain social responsibility\n\n**Governance Factors:**\n\u2022 Board composition and independence\n\u2022 Executive compensation\n\u2022 Business ethics and anti-corruption\n\u2022 Shareholder rights\n\u2022 Risk oversight and transparency"
+        },
+        {
+          "title": "Key ESG Reporting Frameworks",
+          "type": "table",
+          "headers": [
+            "Framework",
+            "Focus",
+            "Key Points"
+          ],
+          "rows": [
+            [
+              "GRI (Global Reporting Initiative)",
+              "Comprehensive sustainability",
+              "Most widely used, stakeholder focus"
+            ],
+            [
+              "SASB (Sustainability Accounting Standards Board)",
+              "Material industry issues",
+              "Industry-specific, investor focus"
+            ],
+            [
+              "TCFD (Task Force on Climate-Related Financial Disclosures)",
+              "Climate risk",
+              "Governance, strategy, risk, metrics"
+            ],
+            [
+              "ISSB/IFRS S1 & S2",
+              "Global baseline",
+              "New mandatory standards emerging"
+            ],
+            [
+              "CDP (Carbon Disclosure Project)",
+              "Environmental",
+              "Climate, water, forests disclosure"
+            ]
+          ]
+        },
+        {
+          "title": "Internal Audit Role in ESG",
+          "type": "text",
+          "content": "**Internal Audit Can Provide Assurance Over:**\n\n1. **ESG Data Quality**\n   \u2022 Accuracy of emissions calculations\n   \u2022 Completeness of scope 1, 2, 3 data\n   \u2022 Reliability of sustainability metrics\n\n2. **Controls Over ESG Reporting**\n   \u2022 Data collection processes\n   \u2022 Third-party data validation\n   \u2022 Report preparation controls\n\n3. **ESG Risk Management**\n   \u2022 Climate risk assessment processes\n   \u2022 Transition risk planning\n   \u2022 Physical risk mitigation\n\n4. **Governance Structures**\n   \u2022 Board ESG oversight\n   \u2022 ESG-linked compensation\n   \u2022 Stakeholder engagement processes"
+        },
+        {
+          "title": "ESG Audit Challenges",
+          "type": "text",
+          "content": "**Unique Challenges for ESG Auditing:**\n\n\u2022 **Immature data systems** - ESG data often not as robust as financial data\n\u2022 **Multiple frameworks** - No single global mandatory standard (yet)\n\u2022 **Scope 3 complexity** - Supply chain emissions difficult to measure\n\u2022 **Greenwashing risk** - Misleading or exaggerated claims\n\u2022 **Evolving regulations** - Requirements rapidly changing\n\u2022 **Estimation uncertainty** - Many metrics require significant judgment\n\u2022 **Third-party reliance** - External certifications and offsets"
+        },
+        {
+          "title": "TCFD Recommendations",
+          "type": "callout",
+          "content": "**TCFD Four Core Elements:**\n\n**1. Governance** - Board and management oversight of climate risk\n**2. Strategy** - Climate-related risks and opportunities impact\n**3. Risk Management** - How climate risks are identified, assessed, managed\n**4. Metrics & Targets** - Metrics used to assess and manage climate risk\n\nInternal audit should assess maturity across all four pillars."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ESG = Environmental, Social, Governance factors",
+            "Multiple reporting frameworks exist (GRI, SASB, TCFD, ISSB)",
+            "Internal audit provides assurance over ESG data quality and controls",
+            "Greenwashing is a significant risk requiring auditor attention",
+            "ESG audit requires understanding emerging regulations and frameworks"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ESG Data Quality Assurance",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important consideration for an internal auditor when assessing the accuracy of a company's Scope 1 emissions data?",
+            "options": [
+              "Ensuring alignment with the Global Reporting Initiative (GRI) standards.",
+              "Verifying the calibration and maintenance records of emissions monitoring equipment.",
+              "Comparing the company's reported emissions to industry averages.",
+              "Reviewing the company's policies on employee travel."
+            ],
+            "correctIndex": 1,
+            "explanation": "Verifying the calibration and maintenance records directly addresses the reliability of the data source. While GRI alignment and industry comparisons are useful, they don't guarantee accuracy. Employee travel policies are related to Scope 3 emissions, not Scope 1.",
+            "hint": "Think about the direct source of the emissions data."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Memorization Check: ESG Components",
+          "reveal": {
+            "question": "List three key components of 'Environmental' factors considered in ESG auditing.",
+            "answer": "1. Climate risk and carbon emissions\n2. Water usage and waste management\n3. Biodiversity and ecosystem impact"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Scope 1, 2, and 3 Emissions",
+          "comparison": {
+            "headers": [
+              "Scope 1 Emissions",
+              "Scope 2 Emissions",
+              "Scope 3 Emissions"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Direct emissions from owned or controlled sources.",
+                  "Indirect emissions from the generation of purchased electricity, steam, heating, and cooling consumed by the reporting company.",
+                  "All other indirect emissions that occur in a company\u2019s value chain."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Emissions from a company's factory smokestacks.",
+                  "Emissions from the power plant that generates electricity used in a company's office building.",
+                  "Emissions from the manufacturing of goods purchased by the company, business travel, or employee commuting."
+                ]
+              },
+              {
+                "label": "Audit Complexity",
+                "values": [
+                  "Generally easier to audit due to direct control.",
+                  "Moderately complex, requires understanding of energy sourcing.",
+                  "Most complex due to reliance on third-party data and estimations."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Greenwashing Risk",
+          "knowledgeCheck": {
+            "question": "An internal auditor discovers that a company's sustainability report highlights a small reduction in plastic packaging while simultaneously expanding its use of non-recyclable materials in other product lines. This is MOST likely an example of:",
+            "options": [
+              "Material misstatement",
+              "Inadequate segregation of duties",
+              "Greenwashing",
+              "Scope creep"
+            ],
+            "correctIndex": 2,
+            "explanation": "Greenwashing involves selectively highlighting positive environmental aspects while downplaying negative ones to create a misleadingly positive image. While the situation might involve material misstatement depending on the specific impact, greenwashing is the most direct and accurate description of the scenario.",
+            "hint": "Consider the intent behind the selective reporting."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CIA2-III-065",
+    "courseId": "cia",
+    "section": "CIA2",
+    "title": "Third-Party and Vendor Risk Management",
+    "description": "Auditing outsourced functions and vendor relationships",
+    "order": 65,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Third-party risk",
+      "Vendor management",
+      "SOC reports",
+      "Outsourcing"
+    ],
+    "blueprintArea": "CIA2-III",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Organizations increasingly rely on third parties for critical functions. Vendor risks extend to the organization - \"You can outsource a function but not the risk.\" Third-party risk management is frequently tested on CIA Part 2."
+        },
+        {
+          "title": "Third-Party Risk Categories",
+          "type": "text",
+          "content": "**Key Risk Categories:**\n\n\u2022 **Operational Risk** - Service disruption, quality failures\n\u2022 **Compliance Risk** - Regulatory violations by vendor\n\u2022 **Financial Risk** - Vendor financial instability\n\u2022 **Strategic Risk** - Over-dependence, loss of competitive advantage\n\u2022 **Reputational Risk** - Vendor actions affecting brand\n\u2022 **Cybersecurity Risk** - Data breaches, access vulnerabilities\n\u2022 **Concentration Risk** - Reliance on single vendor\n\u2022 **Country/Political Risk** - Geopolitical impacts on service"
+        },
+        {
+          "title": "Third-Party Management Lifecycle",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Key Activities",
+            "Internal Audit Focus"
+          ],
+          "rows": [
+            [
+              "Planning",
+              "Needs assessment, risk classification",
+              "Risk categorization methodology"
+            ],
+            [
+              "Due Diligence",
+              "Financial, operational, security assessment",
+              "Due diligence completeness"
+            ],
+            [
+              "Contracting",
+              "SLAs, audit rights, termination clauses",
+              "Contract terms review"
+            ],
+            [
+              "Ongoing Monitoring",
+              "Performance tracking, periodic reviews",
+              "Monitoring effectiveness"
+            ],
+            [
+              "Termination",
+              "Exit planning, data return, transition",
+              "Data handling controls"
+            ]
+          ]
+        },
+        {
+          "title": "SOC Reports Overview",
+          "type": "text",
+          "content": "**SOC (System and Organization Controls) Reports:**\n\n**SOC 1** - Controls over Financial Reporting\n\u2022 Type I: Design at a point in time\n\u2022 Type II: Design and operating effectiveness over period\n\u2022 For service organizations affecting clients' financial statements\n\n**SOC 2** - Trust Services Criteria\n\u2022 Security, Availability, Processing Integrity, Confidentiality, Privacy\n\u2022 Type I or Type II available\n\u2022 Not as restricted in distribution\n\n**SOC 3** - Public Report\n\u2022 Same criteria as SOC 2\n\u2022 Suitable for general distribution\n\u2022 Less detailed than SOC 2"
+        },
+        {
+          "title": "Using SOC Reports",
+          "type": "callout",
+          "content": "**When reviewing SOC reports:**\n\n1. **Check scope** - Does it cover your services/locations?\n2. **Review period** - Is it current? Bridge letters for gaps?\n3. **Check exceptions** - Any control failures noted?\n4. **Complementary controls** - What controls are YOUR responsibility?\n5. **Subservice providers** - Are they carved out or included?\n6. **Auditor reputation** - Is the CPA firm reputable?"
+        },
+        {
+          "title": "Key Contract Provisions",
+          "type": "text",
+          "content": "**Essential Vendor Contract Terms:**\n\n\u2022 **Right to audit** - Access to vendor facilities and records\n\u2022 **Service levels** - Performance metrics and remedies\n\u2022 **Security requirements** - Specific controls required\n\u2022 **Business continuity** - BCP/DR requirements and testing\n\u2022 **Data protection** - Ownership, confidentiality, breach notification\n\u2022 **Subcontracting** - Approval requirements, controls\n\u2022 **Termination rights** - Exit triggers, data return, transition assistance\n\u2022 **Insurance** - Liability coverage requirements\n\u2022 **Compliance** - Regulatory obligation compliance"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "You can outsource functions but not accountability",
+            "Due diligence should occur before contract signing",
+            "SOC reports provide third-party assurance on controls",
+            "Right to audit clause enables ongoing monitoring",
+            "Exit planning should be considered before engagement"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Third-Party Risk Categories",
+          "knowledgeCheck": {
+            "question": "Which of the following scenarios BEST exemplifies a strategic risk associated with third-party vendor relationships?",
+            "options": [
+              "A vendor experiences a data breach, compromising sensitive customer information.",
+              "A critical vendor's financial instability leads to service disruptions.",
+              "An organization becomes overly reliant on a single vendor for a key service, hindering its ability to innovate and adapt to market changes.",
+              "A vendor's non-compliance with environmental regulations results in fines for the organization."
+            ],
+            "correctIndex": 2,
+            "explanation": "Strategic risk focuses on the long-term impact on the organization's competitive position and ability to achieve its objectives. Over-dependence on a single vendor limits flexibility and innovation, fitting this description.",
+            "hint": "Consider which risk category deals with the long-term competitive advantage of the organization."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SOC Report Recall",
+          "reveal": {
+            "question": "What is the primary focus of a SOC 1 report?",
+            "answer": "Controls at a service organization relevant to user entities' internal control over financial reporting."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SOC 1 Type I vs. SOC 1 Type II",
+          "comparison": {
+            "headers": [
+              "SOC 1 Type I",
+              "SOC 1 Type II"
+            ],
+            "rows": [
+              {
+                "label": "Scope",
+                "values": [
+                  "Design of controls at a specific point in time",
+                  "Design and operating effectiveness of controls over a period of time"
+                ]
+              },
+              {
+                "label": "Assurance Level",
+                "values": [
+                  "Provides assurance on the suitability of the design of controls",
+                  "Provides assurance on both the suitability of design and the operating effectiveness of controls"
+                ]
+              },
+              {
+                "label": "Time Period",
+                "values": [
+                  "Point in time",
+                  "Specified period (e.g., six months, one year)"
+                ]
+              },
+              {
+                "label": "Use Case",
+                "values": [
+                  "Initial assessment of a service organization's controls",
+                  "Ongoing monitoring and assessment of a service organization's controls"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1904 @@
+[
+  {
+    "id": "CMA2-C-001",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cost-Volume-Profit Analysis Fundamentals",
+    "description": "Understand the relationships between cost, volume, and profit",
+    "order": 22,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "CVP basics",
+      "Contribution margin",
+      "Break-even analysis",
+      "Profit planning"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "CVP analysis is the workhorse of managerial accounting. CMAs use it to answer critical questions: How many units must we sell to break even? What price point maximizes profit? How do cost changes affect the bottom line? This is HIGH-WEIGHT EXAM CONTENT!"
+        },
+        {
+          "title": "CVP Fundamentals",
+          "type": "text",
+          "content": "**Basic CVP equation:**\nProfit = (Price \u00d7 Quantity) - (VC per unit \u00d7 Quantity) - Fixed Costs\n\n**Or:**\nProfit = (P - V)Q - F\n\n**Where:**\n\u2022 P = Selling price per unit\n\u2022 V = Variable cost per unit\n\u2022 Q = Quantity sold\n\u2022 F = Total fixed costs\n\n**Key relationship:**\nEach unit sold contributes (P - V) toward fixed costs and profit."
+        },
+        {
+          "title": "Contribution Margin",
+          "type": "text",
+          "content": "**Per-unit CM:** Selling Price - Variable Cost = CM per unit\n\n**CM Ratio:** CM per unit / Selling Price = CM%\n\n**Example:**\nPrice: $100, Variable cost: $60\nCM per unit: $100 - $60 = **$40**\nCM ratio: $40 / $100 = **40%**\n\n**Interpretation:**\nEach unit contributes $40 toward fixed costs.\nEach $1 of revenue contributes $0.40 toward fixed costs."
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: CM Relationships",
+          "type": "callout",
+          "content": "**\"CVP-CM is KEY\"**\n\n**C**ontribution = Price - Variable cost\n**V**olume \u00d7 CM = Total contribution\n**P**rofit = Total CM - Fixed costs\n\n**CM is the CRITICAL number!**\nOnce fixed costs are covered, every unit's CM is pure profit.\n\nHigher CM ratio = More operating leverage = More sensitive to volume changes"
+        },
+        {
+          "title": "Break-Even Analysis",
+          "type": "text",
+          "content": "**Break-even in UNITS:**\nBE Units = Fixed Costs / CM per unit\n\n**Break-even in DOLLARS:**\nBE Dollars = Fixed Costs / CM Ratio\n\n**Example:**\nFixed costs: $200,000\nCM per unit: $40\nCM ratio: 40%\n\nBE Units: $200,000 / $40 = **5,000 units**\nBE Dollars: $200,000 / 0.40 = **$500,000**\n\n**Verify:** 5,000 \u00d7 $100 = $500,000 \u2713"
+        },
+        {
+          "title": "Target Profit Analysis",
+          "type": "text",
+          "content": "**Units for target profit:**\nUnits = (Fixed Costs + Target Profit) / CM per unit\n\n**Dollars for target profit:**\nDollars = (Fixed Costs + Target Profit) / CM Ratio\n\n**Example:**\nTarget profit: $80,000\nUnits = ($200,000 + $80,000) / $40 = **7,000 units**\n\n**For after-tax profit target:**\nPre-tax profit needed = After-tax target / (1 - Tax rate)\n\nIf $60,000 after-tax desired, tax rate 25%:\nPre-tax = $60,000 / 0.75 = $80,000"
+        },
+        {
+          "title": "CVP Key Formulas Summary",
+          "type": "table",
+          "headers": [
+            "What to Find",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "CM per unit",
+              "Price - Variable cost"
+            ],
+            [
+              "CM ratio",
+              "CM per unit / Price"
+            ],
+            [
+              "BE units",
+              "Fixed costs / CM per unit"
+            ],
+            [
+              "BE dollars",
+              "Fixed costs / CM ratio"
+            ],
+            [
+              "Units for target profit",
+              "(FC + Target) / CM per unit"
+            ],
+            [
+              "Dollars for target profit",
+              "(FC + Target) / CM ratio"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Variable vs. Fixed",
+          "type": "warning",
+          "content": "**Everything in CVP depends on proper cost classification!**\n\n**Variable:** Changes proportionally with volume\n(Materials, commissions, piece-rate labor)\n\n**Fixed:** Stays constant within relevant range\n(Rent, salaries, depreciation)\n\n**Mixed costs:** Separate into fixed and variable components!\n\n**Wrong classification \u2192 Wrong analysis \u2192 Wrong decisions**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "CVP: Profit = (P-V)Q - F",
+            "Contribution Margin = Price - Variable Cost",
+            "CM Ratio = CM / Price (% of revenue toward fixed costs)",
+            "Break-even Units = Fixed Costs / CM per unit",
+            "Break-even Dollars = Fixed Costs / CM Ratio",
+            "Target profit: Add desired profit to fixed costs",
+            "For after-tax targets, gross up: Pre-tax = After-tax / (1-t)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "CVP Analysis Knowledge Check",
+          "knowledgeCheck": {
+            "question": "A company sells a product for $50 per unit with variable costs of $30 per unit. Fixed costs are $100,000. If the company wants to achieve a profit of $50,000, how many units must they sell?",
+            "options": [
+              "2,500 units",
+              "5,000 units",
+              "7,500 units",
+              "10,000 units"
+            ],
+            "correctIndex": 2,
+            "explanation": "To calculate the target sales in units, we use the formula: Units = (Fixed Costs + Target Profit) / Contribution Margin per unit.  In this case, Units = ($100,000 + $50,000) / ($50 - $30) = $150,000 / $20 = 7,500 units.",
+            "hint": "Remember to include the desired profit in your calculation of total costs."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Test Your Knowledge of the Break-Even Formula",
+          "reveal": {
+            "question": "What is the formula for calculating the break-even point in dollars?",
+            "answer": "Break-even in Dollars = Fixed Costs / Contribution Margin Ratio"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Contribution Margin Ratio vs. Contribution Margin per Unit",
+          "comparison": {
+            "headers": [
+              "Contribution Margin Ratio",
+              "Contribution Margin per Unit"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "The percentage of each sales dollar that is available to cover fixed costs and contribute to profit.",
+                  "The amount of revenue remaining after deducting variable costs from the selling price of one unit."
+                ]
+              },
+              {
+                "label": "Formula",
+                "values": [
+                  "Contribution Margin per Unit / Selling Price per Unit",
+                  "Selling Price per Unit - Variable Cost per Unit"
+                ]
+              },
+              {
+                "label": "Units",
+                "values": [
+                  "Percentage",
+                  "Currency ($)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-002",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Multi-Product CVP Analysis",
+    "description": "Apply CVP analysis to companies with multiple products",
+    "order": 23,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Sales mix",
+      "Weighted average CM",
+      "Multi-product break-even"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Most companies sell multiple products with different margins. The mix matters! CMAs must understand how product mix affects overall profitability and break-even. Shifting toward higher-margin products can dramatically improve results."
+        },
+        {
+          "title": "Sales Mix Concept",
+          "type": "text",
+          "content": "**Sales mix:** Proportion of each product in total sales\n\n**Example:**\nProduct A: 60% of units sold\nProduct B: 40% of units sold\n\n**Why mix matters:**\nChanging the mix changes overall profitability!\n\n**Shift toward higher-CM products:**\n\u2192 Overall CM increases\n\u2192 Break-even decreases\n\u2192 Profits increase"
+        },
+        {
+          "title": "Multi-Product Example",
+          "type": "table",
+          "headers": [
+            "Product",
+            "Price",
+            "VC",
+            "CM",
+            "Mix %"
+          ],
+          "rows": [
+            [
+              "Standard",
+              "$50",
+              "$30",
+              "$20",
+              "60%"
+            ],
+            [
+              "Premium",
+              "$80",
+              "$40",
+              "$40",
+              "40%"
+            ]
+          ]
+        },
+        {
+          "title": "Weighted Average Contribution Margin",
+          "type": "text",
+          "content": "**WACM = \u03a3(CM per unit \u00d7 Mix %)**\n\n**From the example:**\nWACM = ($20 \u00d7 0.60) + ($40 \u00d7 0.40)\nWACM = $12 + $16 = **$28**\n\n**Break-even in \"bundles\":**\nBE Bundles = Fixed Costs / WACM\n\nIf FC = $280,000:\nBE = $280,000 / $28 = **10,000 bundles**\n\n**Then allocate by mix:**\nStandard: 10,000 \u00d7 60% = 6,000 units\nPremium: 10,000 \u00d7 40% = 4,000 units"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Multi-Product CVP",
+          "type": "callout",
+          "content": "**\"MIX it up with WACM\"**\n\n**Step 1:** Calculate CM for each product\n**Step 2:** Weight by sales MIX\n**Step 3:** Sum to get WACM\n**Step 4:** Divide FC by WACM for break-even bundles\n**Step 5:** Allocate bundles back by mix\n\n**WACM assumes CONSTANT mix - this is critical!**"
+        },
+        {
+          "title": "Changing the Mix",
+          "type": "text",
+          "content": "**What if mix changes to 50/50?**\n\nNew WACM = ($20 \u00d7 0.50) + ($40 \u00d7 0.50)\n= $10 + $20 = **$30**\n\nNew BE = $280,000 / $30 = **9,333 bundles**\n\n**Lower break-even because we shifted toward higher-margin Premium!**\n\n**Key insight:**\nManagement can improve profitability by:\n\u2022 Marketing high-margin products\n\u2022 Commission incentives on premium products\n\u2022 Pricing strategies to shift mix"
+        },
+        {
+          "title": "Contribution Margin per Dollar of Revenue",
+          "type": "text",
+          "content": "**Alternative: Use weighted CM ratio**\n\n**Weighted CM Ratio = \u03a3(CM% \u00d7 Revenue Mix %)**\n\n**Example:**\nStandard: CM ratio = 40%, Revenue mix = 42.9%\nPremium: CM ratio = 50%, Revenue mix = 57.1%\n\nWeighted CM% = (0.40 \u00d7 0.429) + (0.50 \u00d7 0.571)\n= 0.172 + 0.286 = **45.8%**\n\n**BE Dollars = FC / Weighted CM%**\n= $280,000 / 0.458 = **$611,354**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Mix Given in Units vs. Dollars",
+          "type": "warning",
+          "content": "**Pay attention to how mix is stated!**\n\n**Unit mix:** Use CM per unit, calculate WACM\n**Dollar/revenue mix:** Use CM ratio, calculate weighted CM%\n\n**These can give different percentages!**\n\nExample: If Premium costs 2\u00d7 Standard:\n\u2022 Unit mix: 60/40\n\u2022 Dollar mix: Different (more revenue from Premium)\n\n**Read the problem carefully!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sales mix affects overall profitability",
+            "WACM = Weighted Average CM (by unit mix)",
+            "BE Bundles = Fixed Costs / WACM",
+            "Allocate bundles back to products by mix percentage",
+            "Shift toward higher-CM products to improve results",
+            "CVP assumes CONSTANT mix (key assumption)",
+            "Unit mix \u2260 Dollar mix when prices differ"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Sales Mix and Profitability",
+          "knowledgeCheck": {
+            "question": "Company X sells two products: Alpha and Beta. Alpha has a contribution margin of $30 per unit and represents 30% of the sales mix, while Beta has a contribution margin of $50 per unit and represents 70% of the sales mix. If the company shifts its sales mix to 50% Alpha and 50% Beta, and total sales in units remain constant, what will be the impact on the company's overall profitability, assuming fixed costs remain unchanged?",
+            "options": [
+              "Overall profitability will increase.",
+              "Overall profitability will decrease.",
+              "Overall profitability will remain the same.",
+              "The impact on profitability cannot be determined without knowing the fixed costs."
+            ],
+            "correctIndex": 0,
+            "explanation": "The weighted average contribution margin (WACM) initially is (0.30 * $30) + (0.70 * $50) = $44. With the shift, the WACM becomes (0.50 * $30) + (0.50 * $50) = $40. Since the total sales in units remain constant and the WACM decreases, the overall profitability will decrease. A lower WACM with the same unit volume means less contribution margin to cover fixed costs and generate profit. Therefore, the correct answer is B.",
+            "hint": "Calculate the weighted average contribution margin (WACM) before and after the shift in sales mix.  Consider how changes in WACM impact overall profitability."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Break-Even Point in Bundles",
+          "reveal": {
+            "question": "What is the formula for calculating the break-even point in bundles in a multi-product CVP analysis?",
+            "answer": "Break-Even Point in Bundles = Fixed Costs / Weighted Average Contribution Margin (WACM)"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Multi-Product Break-Even Analysis",
+          "knowledgeCheck": {
+            "question": "A company sells three products: X, Y, and Z. Their sales mix is 20%, 30%, and 50% respectively. The contribution margins per unit are $15, $20, and $25 respectively. If the company's total fixed costs are $150,000, what is the break-even point in 'bundles' of X, Y, and Z?",
+            "options": [
+              "5,000 bundles",
+              "6,000 bundles",
+              "7,500 bundles",
+              "10,000 bundles"
+            ],
+            "correctIndex": 1,
+            "explanation": "First, calculate the WACM: (0.20 * $15) + (0.30 * $20) + (0.50 * $25) = $3 + $6 + $12.5 = $21.5. Then, calculate the break-even point in bundles: $150,000 / $21.5 = 6,976.74 bundles. The closest answer is 7,000 bundles.",
+            "hint": "Remember to calculate the Weighted Average Contribution Margin (WACM) before calculating the break-even point."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-003",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Operating Leverage",
+    "description": "Understand how cost structure affects profit sensitivity",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Operating leverage",
+      "Degree of operating leverage",
+      "Risk-return tradeoff"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Operating leverage is a double-edged sword. High fixed costs magnify profits when sales are good but magnify losses when sales decline. CMAs analyze cost structure to understand risk, plan capacity, and evaluate strategic alternatives."
+        },
+        {
+          "title": "Operating Leverage Concept",
+          "type": "text",
+          "content": "**Operating leverage:** The extent to which fixed costs are used in operations\n\n**High operating leverage:**\n\u2022 High fixed costs, low variable costs\n\u2022 Small sales increase \u2192 Large profit increase\n\u2022 Small sales decrease \u2192 Large profit decrease\n\u2022 More risk!\n\n**Low operating leverage:**\n\u2022 Low fixed costs, high variable costs\n\u2022 Profit changes proportionally with sales\n\u2022 Less risky"
+        },
+        {
+          "title": "Degree of Operating Leverage (DOL)",
+          "type": "text",
+          "content": "**DOL = Contribution Margin / Operating Income**\n\n**Or:**\nDOL = % Change in EBIT / % Change in Sales\n\n**Example:**\nSales: $500,000\nVC: $300,000 (60%)\nCM: $200,000 (40%)\nFC: $150,000\nOperating Income: $50,000\n\nDOL = $200,000 / $50,000 = **4.0**\n\n**Interpretation:** 1% increase in sales \u2192 4% increase in EBIT"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: DOL",
+          "type": "callout",
+          "content": "**\"DOL = CM / OI\"**\n\n**D**egree of **O**perating **L**everage = **C**ontribution **M**argin / **O**perating **I**ncome\n\n**Higher DOL = Higher risk!**\n\nDOL is highest near break-even (OI near zero)\nDOL decreases as you move away from break-even\n\n**At break-even, DOL is undefined (divide by zero)!**"
+        },
+        {
+          "title": "DOL Calculation Example",
+          "type": "text",
+          "content": "**Current:** Sales = $500,000, EBIT = $50,000, DOL = 4.0\n\n**If sales increase 10%:**\nNew EBIT change = 10% \u00d7 4.0 = 40%\nNew EBIT = $50,000 \u00d7 1.40 = **$70,000**\n\n**Verify:**\nNew Sales: $550,000\nNew VC: $330,000 (60%)\nNew CM: $220,000\nFC: $150,000 (unchanged)\nNew EBIT: $220,000 - $150,000 = **$70,000** \u2713"
+        },
+        {
+          "title": "Cost Structure Comparison",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Company A (High OL)",
+            "Company B (Low OL)"
+          ],
+          "rows": [
+            [
+              "Fixed Costs",
+              "$400,000",
+              "$100,000"
+            ],
+            [
+              "Variable Cost %",
+              "20%",
+              "60%"
+            ],
+            [
+              "CM Ratio",
+              "80%",
+              "40%"
+            ],
+            [
+              "Break-even",
+              "$500,000",
+              "$250,000"
+            ],
+            [
+              "DOL at $600,000 sales",
+              "6.0",
+              "2.4"
+            ],
+            [
+              "Risk Level",
+              "Higher",
+              "Lower"
+            ]
+          ]
+        },
+        {
+          "title": "Strategic Implications",
+          "type": "text",
+          "content": "**When to choose high operating leverage:**\n\u2022 Confident in sales growth\n\u2022 Stable demand\n\u2022 Want to maximize upside\n\n**When to choose low operating leverage:**\n\u2022 Uncertain demand\n\u2022 New market entry\n\u2022 Risk-averse management\n\n**Trade-off:**\nAutomation \u2192 Higher fixed costs \u2192 Higher OL\nOutsourcing \u2192 Higher variable costs \u2192 Lower OL"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: DOL Changes with Volume",
+          "type": "warning",
+          "content": "**DOL is NOT constant!**\n\n\u2022 DOL is highest near break-even\n\u2022 DOL decreases as volume increases\n\u2022 DOL approaches 1 at very high volumes\n\n**Always calculate DOL at the specific volume given!**\n\nDOL = CM / OI\n\nAs OI grows (farther from break-even), DOL shrinks."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Operating leverage measures fixed cost intensity",
+            "DOL = CM / Operating Income",
+            "High DOL: Small sales change \u2192 Large profit change",
+            "DOL is highest near break-even",
+            "High fixed costs = High OL = High risk",
+            "Automation increases OL; Outsourcing decreases OL",
+            "Choose OL based on demand stability and risk tolerance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Operating Leverage and Risk",
+          "knowledgeCheck": {
+            "question": "Company X is considering two different operational strategies: Strategy A, which relies heavily on automation and has high fixed costs and low variable costs; and Strategy B, which uses more manual labor and has lower fixed costs but higher variable costs. Which of the following statements is MOST accurate regarding the risk and potential reward associated with these strategies?",
+            "options": [
+              "Strategy A has lower risk and lower potential reward compared to Strategy B.",
+              "Strategy A has higher risk and higher potential reward compared to Strategy B.",
+              "Strategy B has higher risk and higher potential reward compared to Strategy A.",
+              "Strategy A and Strategy B have the same risk and potential reward."
+            ],
+            "correctIndex": 1,
+            "explanation": "Strategy A, with its high fixed costs and low variable costs, has high operating leverage. This means a small increase in sales can lead to a large increase in profits (higher potential reward). However, it also means a small decrease in sales can lead to a large decrease in profits (higher risk). Strategy B has lower operating leverage and thus lower risk and reward.",
+            "hint": "Think about how fixed costs affect profitability when sales fluctuate."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Formula",
+          "reveal": {
+            "question": "What is the formula for calculating the Degree of Operating Leverage (DOL)?",
+            "answer": "DOL = Contribution Margin / Operating Income  \nOR \nDOL = % Change in EBIT / % Change in Sales"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Calculating the Impact of Sales Change",
+          "knowledgeCheck": {
+            "question": "A company has a Degree of Operating Leverage (DOL) of 2.5. If the company expects sales to increase by 8%, what is the expected percentage change in EBIT?",
+            "options": [
+              "2.5%",
+              "8%",
+              "10%",
+              "20%"
+            ],
+            "correctIndex": 3,
+            "explanation": "The formula DOL = % Change in EBIT / % Change in Sales can be rearranged to solve for % Change in EBIT: % Change in EBIT = DOL * % Change in Sales. Therefore, % Change in EBIT = 2.5 * 8% = 20%.",
+            "hint": "Remember the relationship between DOL, % change in sales, and % change in EBIT."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-004",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Relevant Cost Analysis",
+    "description": "Identify costs relevant to specific decisions",
+    "order": 25,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Relevant costs",
+      "Sunk costs",
+      "Opportunity costs",
+      "Differential analysis"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Not all costs matter for every decision. CMAs must identify which costs are relevant to a specific choice and ignore sunk costs that shouldn't affect the decision. This skill is fundamental to all short-term decisions covered in this section!"
+        },
+        {
+          "title": "What Makes a Cost Relevant?",
+          "type": "text",
+          "content": "**A cost is relevant if it is:**\n\n1. **Future-oriented:** Will be incurred in the future\n2. **Differential:** Differs between alternatives\n\n**Both conditions must be met!**\n\n**Example:**\nBuy vs. Make decision\n\u2022 Raw materials cost: Relevant (differs between alternatives)\n\u2022 Factory rent: Not relevant if paid either way\n\u2022 Past R&D cost: Not relevant (already spent)"
+        },
+        {
+          "title": "Types of Costs",
+          "type": "table",
+          "headers": [
+            "Cost Type",
+            "Definition",
+            "Relevant?"
+          ],
+          "rows": [
+            [
+              "Sunk cost",
+              "Already incurred, cannot be recovered",
+              "NO - Ignore it!"
+            ],
+            [
+              "Opportunity cost",
+              "Benefit foregone from best alternative",
+              "YES - Include it!"
+            ],
+            [
+              "Differential cost",
+              "Differs between alternatives",
+              "YES"
+            ],
+            [
+              "Incremental cost",
+              "Additional cost of an alternative",
+              "YES"
+            ],
+            [
+              "Avoidable cost",
+              "Can be eliminated with a choice",
+              "YES"
+            ],
+            [
+              "Unavoidable cost",
+              "Incurred regardless of choice",
+              "NO"
+            ]
+          ]
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Relevant Costs",
+          "type": "callout",
+          "content": "**\"FD = Future & Different\"**\n\n**F**uture: Will be incurred after the decision\n**D**ifferent: Changes based on the choice\n\n**Sunk costs are NEVER relevant!**\n(No matter how much you spent or regret it)\n\n**The question is always: \"What changes if we choose differently?\"**"
+        },
+        {
+          "title": "Opportunity Cost",
+          "type": "text",
+          "content": "**Definition:** The benefit foregone by choosing one alternative over another\n\n**Example:**\nMachine can produce Product A or Product B (not both)\nProduct A contribution: $50,000\nProduct B contribution: $60,000\n\nIf you choose A, opportunity cost = **$60,000** (lost B contribution)\n\n**Opportunity costs are:**\n\u2022 Implicit (not in accounting records)\n\u2022 But absolutely relevant to decisions!\n\u2022 The \"next best alternative\" value"
+        },
+        {
+          "title": "Sunk Cost Trap",
+          "type": "text",
+          "content": "**Common mistakes:**\n\n**\"We've invested $1 million, we can't stop now!\"**\n\u2192 The $1M is gone either way. Focus on FUTURE costs/benefits.\n\n**\"The equipment cost $500,000...\"**\n\u2192 For decisions, only future costs matter.\n\n**\"We need to recover our investment.\"**\n\u2192 Past investment is irrelevant to optimal future decisions.\n\n**The relevant question:**\n\"Given where we are NOW, what's the best path FORWARD?\""
+        },
+        {
+          "title": "Differential Analysis Framework",
+          "type": "text",
+          "content": "**Compare alternatives by focusing on differences:**\n\n**Step 1:** Identify all costs/revenues for each alternative\n**Step 2:** Cross out items that are the same\n**Step 3:** Analyze only the differential amounts\n**Step 4:** Include opportunity costs\n**Step 5:** Choose alternative with highest net benefit\n\n**Shortcut:** Only analyze costs/revenues that CHANGE!"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Allocated Costs",
+          "type": "warning",
+          "content": "**Allocated fixed costs are usually NOT relevant!**\n\n**Example:**\nProduct A is allocated $50,000 of corporate overhead\nShould we drop Product A?\n\n**Wrong:** Include the $50,000 (it's assigned to A)\n**Right:** Will the $50,000 disappear if we drop A?\n\nIf overhead continues regardless \u2192 NOT relevant\nIf overhead can be eliminated \u2192 Relevant\n\n**Always ask: \"Does this cost CHANGE?\"**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Relevant costs are Future AND Differential",
+            "Sunk costs are NEVER relevant (already spent)",
+            "Opportunity costs ARE relevant (foregone benefit)",
+            "Focus on what CHANGES between alternatives",
+            "Allocated costs are relevant only if avoidable",
+            "The past is irrelevant - focus on future cash flows",
+            "Ask: \"What changes if we choose differently?\""
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Relevant Cost Identification",
+          "knowledgeCheck": {
+            "question": "Superior Manufacturing is deciding whether to accept a special order for 1,000 units at a special price of $25 per unit. The normal selling price is $35 per unit. The company has excess capacity. Per unit costs are: Direct materials $8, Direct labor $5, Variable overhead $3, Fixed overhead $7, Selling expenses $2 (all variable). A supervisor will need to be on-site for the duration of the special order. The supervisor's salary is $60,000 per year. The special order will take 2 weeks. What is the total relevant cost for Superior to consider when deciding whether to accept the special order?",
+            "options": [
+              "$16,000",
+              "$18,000",
+              "$23,000",
+              "$29,000"
+            ],
+            "correctIndex": 3,
+            "explanation": "The relevant costs are the differential costs that will change if the special order is accepted. These include: Direct materials ($8 * 1,000 = $8,000), Direct labor ($5 * 1,000 = $5,000), Variable overhead ($3 * 1,000 = $3,000), Variable selling expenses ($2 * 1,000 = $2,000), and the additional supervisor cost. The supervisor's annual salary is $60,000, and the special order will take 2 weeks. Assuming 50 working weeks in a year, the supervisor cost is ($60,000 / 50) * 2 = $2,400. Therefore, the total relevant cost is $8,000 + $5,000 + $3,000 + $2,000 + $2,400 = $20,400. The fixed overhead is irrelevant as it is incurred regardless of accepting the special order. Note that the question requires you to calculate the *total* relevant cost to consider, not simply the per-unit relevant cost. Therefore, the per-unit costs must be multiplied by 1,000 to get the *total* relevant cost. $20,400 + ($8 * 1,000) + ($5 * 1,000) + ($3 * 1,000) + ($2 * 1,000) = $20,400",
+            "hint": "Remember to only include costs that will change as a result of accepting the special order. Consider if any currently fixed costs will change."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Opportunity Cost Recall",
+          "reveal": {
+            "question": "Define 'Opportunity Cost' in the context of managerial accounting.",
+            "answer": "Opportunity cost is the potential benefit that is forfeited when one alternative is chosen over another. It represents the value of the next best alternative that is not selected."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Sunk Costs vs. Relevant Costs",
+          "comparison": {
+            "headers": [
+              "Sunk Costs",
+              "Relevant Costs"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Costs that have already been incurred and cannot be recovered.",
+                  "Future costs that differ between alternatives."
+                ]
+              },
+              {
+                "label": "Decision-Making",
+                "values": [
+                  "Irrelevant for future decisions.",
+                  "Relevant for future decisions."
+                ]
+              },
+              {
+                "label": "Characteristics",
+                "values": [
+                  "Historical, unavoidable.",
+                  "Future-oriented, differential."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-005",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Special Order Decisions",
+    "description": "Analyze one-time orders at below-normal prices",
+    "order": 26,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Special orders",
+      "Incremental analysis",
+      "Capacity considerations",
+      "Qualitative factors"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Should we accept a one-time order at a reduced price? This common scenario requires careful analysis of incremental costs and benefits. CMAs must separate relevant from irrelevant costs and consider capacity, opportunity costs, and strategic implications."
+        },
+        {
+          "title": "Special Order Defined",
+          "type": "text",
+          "content": "**A special order is:**\n\u2022 One-time or unusual order\n\u2022 Often at a price below normal\n\u2022 From a customer outside regular channels\n\u2022 Won't affect regular sales\n\n**Key question:**\nDoes the incremental revenue exceed the incremental cost?\n\n**Decision rule:**\nAccept if: Incremental Revenue > Incremental Cost\nReject if: Incremental Revenue < Incremental Cost"
+        },
+        {
+          "title": "Basic Special Order Analysis",
+          "type": "text",
+          "content": "**Example:**\nRegular price: $100\nVariable cost: $60\nFixed cost per unit (allocated): $25\nFull cost: $85\nRegular margin: $15\n\n**Special order offer: $70 for 1,000 units**\n\nWrong thinking: \"$70 < $85 cost, so reject.\"\n\n**Correct analysis:**\nIncremental revenue: $70 \u00d7 1,000 = $70,000\nIncremental cost: $60 \u00d7 1,000 = $60,000\nIncremental profit: **$10,000**\n\n**ACCEPT!** (Fixed costs don't change)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Special Order Rule",
+          "type": "callout",
+          "content": "**\"Above VC = OK\"**\n\nIf special order price > Variable cost per unit:\n\u2192 Accept (with excess capacity)\n\n**Why?**\nFixed costs are paid either way\nAny contribution above variable cost adds profit\n\n**BUT: Consider capacity and opportunity cost!**"
+        },
+        {
+          "title": "Capacity Considerations",
+          "type": "text",
+          "content": "**With excess capacity:**\nNo opportunity cost \u2192 Compare to variable cost only\n\n**At full capacity:**\nMust give up regular sales \u2192 Include opportunity cost!\n\n**Example at full capacity:**\nSpecial order: 1,000 units at $70\nMust sacrifice regular sales: 500 units at $100\n\nIncremental revenue: $70 \u00d7 1,000 = $70,000\nIncremental costs: $60 \u00d7 1,000 = $60,000\nLost contribution: ($100-$60) \u00d7 500 = **$20,000**\nNet effect: $70,000 - $60,000 - $20,000 = **-$10,000**\n\n**REJECT!**"
+        },
+        {
+          "title": "Special Order Decision Framework",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Consider"
+          ],
+          "rows": [
+            [
+              "Incremental revenue",
+              "Special price \u00d7 Quantity"
+            ],
+            [
+              "Incremental variable costs",
+              "VC per unit \u00d7 Quantity"
+            ],
+            [
+              "Incremental fixed costs",
+              "Any additional FC incurred"
+            ],
+            [
+              "Opportunity cost",
+              "Lost contribution from regular sales"
+            ],
+            [
+              "Future impact",
+              "Will it affect regular prices?"
+            ]
+          ]
+        },
+        {
+          "title": "Qualitative Considerations",
+          "type": "text",
+          "content": "**Beyond the numbers, consider:**\n\n**Risks of accepting:**\n\u2022 Regular customers may demand lower prices\n\u2022 May establish precedent for future orders\n\u2022 Could damage brand/reputation\n\u2022 Relationship with the customer\n\n**Potential benefits:**\n\u2022 Opens new market\n\u2022 Builds relationship for future business\n\u2022 Uses otherwise idle capacity\n\u2022 Covers some fixed costs in slow periods\n\n**These factors may override the quantitative analysis!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Which Costs Are Incremental?",
+          "type": "warning",
+          "content": "**Include only costs that CHANGE:**\n\n**Usually incremental:**\n\u2022 Direct materials\n\u2022 Direct labor (if paid per unit)\n\u2022 Variable overhead\n\u2022 Shipping (if company pays)\n\u2022 Special tooling/setup\n\n**Usually NOT incremental:**\n\u2022 Fixed manufacturing overhead\n\u2022 Fixed selling/admin costs\n\u2022 Allocated corporate costs\n\n**Read carefully for special circumstances!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Accept special order if Incremental Revenue > Incremental Cost",
+            "With excess capacity, compare to variable cost only",
+            "At full capacity, include opportunity cost of lost sales",
+            "Fixed costs usually NOT relevant (incurred anyway)",
+            "Consider incremental fixed costs if any (setup, tooling)",
+            "Qualitative factors may override quantitative analysis",
+            "Beware of setting precedent for lower prices"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Special Order Decision: Capacity Considerations",
+          "knowledgeCheck": {
+            "question": "A company is operating at 80% capacity. A special order for 500 units is received at a price of $50 per unit. The normal selling price is $75 per unit, variable costs are $40 per unit, and fixed costs are $20 per unit (based on normal capacity). Accepting the special order will:",
+            "options": [
+              "Increase profit by $5,000",
+              "Decrease profit by $5,000",
+              "Increase profit by $15,000",
+              "Decrease profit by $15,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "Since the company has excess capacity (operating at 80%), there is no opportunity cost. The incremental revenue is $50 * 500 = $25,000. The incremental cost is $40 * 500 = $20,000. Therefore, the increase in profit is $25,000 - $20,000 = $5,000.",
+            "hint": "Focus on the variable costs and the fact that the company has excess capacity."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Special Order Defined",
+          "reveal": {
+            "question": "List four characteristics of a special order.",
+            "answer": "1. One-time or unusual order. 2. Often at a price below normal. 3. From a customer outside regular channels. 4. Won't affect regular sales."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Capacity Considerations: Full vs. Excess",
+          "comparison": {
+            "headers": [
+              "Excess Capacity",
+              "Full Capacity"
+            ],
+            "rows": [
+              {
+                "label": "Opportunity Cost",
+                "values": [
+                  "None",
+                  "Present (Lost Regular Sales)"
+                ]
+              },
+              {
+                "label": "Cost Comparison",
+                "values": [
+                  "Compare to variable cost",
+                  "Compare to variable cost + opportunity cost"
+                ]
+              },
+              {
+                "label": "Decision Rule",
+                "values": [
+                  "Accept if Incremental Revenue > Incremental Variable Cost",
+                  "Accept if Incremental Revenue > Incremental Variable Cost + Opportunity Cost"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-006",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Make or Buy Decisions",
+    "description": "Analyze whether to manufacture internally or purchase from suppliers",
+    "order": 27,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Make or buy",
+      "Outsourcing",
+      "Avoidable costs",
+      "Strategic factors"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Make or buy decisions affect cost structure, quality control, and strategic flexibility. CMAs analyze the relevant costs of manufacturing vs. purchasing, considering both quantitative and qualitative factors. This is a fundamental outsourcing analysis."
+        },
+        {
+          "title": "Make or Buy Framework",
+          "type": "text",
+          "content": "**Compare:**\nRelevant cost to MAKE vs. Purchase cost to BUY\n\n**Relevant costs to make:**\n\u2022 Direct materials\n\u2022 Direct labor\n\u2022 Variable overhead\n\u2022 Avoidable fixed costs\n\u2022 Opportunity cost of capacity\n\n**Costs to buy:**\n\u2022 Purchase price\n\u2022 Transportation/receiving\n\u2022 Inspection\n\u2022 Any unavoidable making costs"
+        },
+        {
+          "title": "Make or Buy Example",
+          "type": "table",
+          "headers": [
+            "Cost per Unit",
+            "Make",
+            "Buy"
+          ],
+          "rows": [
+            [
+              "Direct materials",
+              "$8",
+              "-"
+            ],
+            [
+              "Direct labor",
+              "$12",
+              "-"
+            ],
+            [
+              "Variable overhead",
+              "$5",
+              "-"
+            ],
+            [
+              "Fixed overhead (allocated)",
+              "$10",
+              "-"
+            ],
+            [
+              "Purchase price",
+              "-",
+              "$28"
+            ],
+            [
+              "Total listed",
+              "$35",
+              "$28"
+            ]
+          ]
+        },
+        {
+          "title": "Analyzing the Example",
+          "type": "text",
+          "content": "**Listed cost: Make $35 > Buy $28**\nBut wait - is all $10 of fixed overhead avoidable?\n\n**Scenario 1:** Fixed overhead unavoidable\nRelevant make cost: $8 + $12 + $5 = **$25**\nBuy cost: $28\n**Decision: MAKE** (saves $3/unit)\n\n**Scenario 2:** $4 of fixed overhead avoidable\nRelevant make cost: $25 + $4 = **$29**\nBuy cost: $28\n**Decision: BUY** (saves $1/unit)\n\n**The answer depends on which costs are truly avoidable!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Make or Buy",
+          "type": "callout",
+          "content": "**\"AVO-CAD-O\"** (like avocado!)\n\n**AVO**idable costs to make\n**C**ompare to\n**A**ll costs to buy\n**D**on't include unavoidable fixed costs!\n**O**pportunity cost if capacity has alternative use\n\n**Only AVOIDABLE costs are relevant!**"
+        },
+        {
+          "title": "Opportunity Cost of Freed Capacity",
+          "type": "text",
+          "content": "**If we buy, freed capacity could be used for:**\n\u2022 Producing other profitable products\n\u2022 Renting out the space\n\u2022 Reducing fixed costs\n\n**Example:**\nFreed capacity can produce Product Z\nProduct Z contribution: $15,000/year\n\n**Analysis (annual, 10,000 units):**\nMake cost: $25 \u00d7 10,000 = $250,000\nBuy cost: $28 \u00d7 10,000 = $280,000\nBenefits of buying: Z contribution = $15,000\n\nNet cost to make: $250,000 + $15,000 = $265,000\nNet cost to buy: $280,000\n\n**Still MAKE** (even considering opportunity cost)"
+        },
+        {
+          "title": "Qualitative Factors",
+          "type": "text",
+          "content": "**Arguments for making:**\n\u2022 Quality control\n\u2022 Reliable supply\n\u2022 Protect proprietary technology\n\u2022 Keep skilled workforce\n\n**Arguments for buying:**\n\u2022 Supplier expertise/economies of scale\n\u2022 Flexibility in volume\n\u2022 Focus on core competencies\n\u2022 Reduce capital investment\n\n**Strategic importance may override cost considerations!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Step-Fixed Costs",
+          "type": "warning",
+          "content": "**If buying eliminates a step-fixed cost, it's relevant!**\n\n**Example:**\nMaking requires a supervisor at $60,000/year\nIf we buy, we eliminate this position\n\n**$60,000 is avoidable and RELEVANT!**\n\n**Contrast:**\nFactory manager's salary continues regardless\n\u2192 NOT relevant (unavoidable)\n\n**Ask: \"Does this cost GO AWAY if we buy?\"**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Compare avoidable make costs to total buy costs",
+            "Allocated fixed costs are NOT relevant unless avoided",
+            "Include opportunity cost of freed capacity",
+            "Variable costs are typically relevant",
+            "Fixed costs are relevant only if truly eliminated",
+            "Qualitative factors may override cost analysis",
+            "Consider quality, reliability, strategic importance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Make or Buy Decision: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "A company is currently manufacturing a component with the following costs per unit: Direct Materials $5, Direct Labor $8, Variable Overhead $3, Fixed Overhead $6 ($2 avoidable). An outside supplier has offered to sell the component for $20 per unit. Assuming the company has no alternative use for the facilities currently used to manufacture the component, should the company make or buy the component?",
+            "options": [
+              "Make the component; it is $2 cheaper per unit.",
+              "Buy the component; it is $2 cheaper per unit.",
+              "Make the component; it is $4 cheaper per unit.",
+              "Buy the component; it is $4 cheaper per unit."
+            ],
+            "correctIndex": 0,
+            "explanation": "The relevant costs to make are: Direct Materials ($5) + Direct Labor ($8) + Variable Overhead ($3) + Avoidable Fixed Overhead ($2) = $18. The cost to buy is $20. Therefore, it is $2 cheaper to make the component.",
+            "hint": "Remember to only consider relevant costs when making the make or buy decision."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Relevant Costs to Make",
+          "reveal": {
+            "question": "List the categories of costs that are typically considered relevant when making a 'make' decision.",
+            "answer": "The relevant costs to make include: Direct Materials, Direct Labor, Variable Overhead, Avoidable Fixed Costs, and Opportunity Cost of Capacity."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Make vs. Buy: Key Considerations",
+          "comparison": {
+            "headers": [
+              "Make",
+              "Buy"
+            ],
+            "rows": [
+              {
+                "label": "Cost Focus",
+                "values": [
+                  "Relevant production costs (DM, DL, VOH, Avoidable FOH)",
+                  "Purchase price + incremental receiving/inspection costs"
+                ]
+              },
+              {
+                "label": "Capacity Utilization",
+                "values": [
+                  "Requires production capacity; opportunity cost if capacity can be used for something else",
+                  "Frees up production capacity"
+                ]
+              },
+              {
+                "label": "Control",
+                "values": [
+                  "Maintains control over production process and quality",
+                  "Relies on supplier for quality and timely delivery"
+                ]
+              },
+              {
+                "label": "Strategic Factors",
+                "values": [
+                  "May be crucial for maintaining core competencies",
+                  "Potential for supply chain disruptions"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-007",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Keep or Drop Decisions",
+    "description": "Analyze whether to discontinue a product, segment, or service",
+    "order": 28,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Segment analysis",
+      "Product discontinuation",
+      "Avoidable costs",
+      "Segment margin"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "A product looks unprofitable - should we drop it? CMAs must analyze whether eliminating a segment improves overall profit. The key is separating avoidable from unavoidable costs. Many \"unprofitable\" products actually contribute to covering fixed costs!"
+        },
+        {
+          "title": "Keep or Drop Decision Rule",
+          "type": "text",
+          "content": "**Drop if:**\nRevenue lost < Costs avoided\n\n**Keep if:**\nRevenue lost > Costs avoided\n\n**Or equivalently:**\nKeep if segment's contribution margin > Avoidable fixed costs\n\n**The key question:**\nWhat costs actually DISAPPEAR if we drop this segment?"
+        },
+        {
+          "title": "Segment Income Statement",
+          "type": "table",
+          "headers": [
+            "Item",
+            "Product A",
+            "Product B",
+            "Product C",
+            "Total"
+          ],
+          "rows": [
+            [
+              "Revenue",
+              "$500,000",
+              "$300,000",
+              "$200,000",
+              "$1,000,000"
+            ],
+            [
+              "Variable costs",
+              "(300,000)",
+              "(180,000)",
+              "(150,000)",
+              "(630,000)"
+            ],
+            [
+              "Contribution margin",
+              "$200,000",
+              "$120,000",
+              "$50,000",
+              "$370,000"
+            ],
+            [
+              "Direct fixed costs",
+              "(100,000)",
+              "(80,000)",
+              "(60,000)",
+              "(240,000)"
+            ],
+            [
+              "Segment margin",
+              "$100,000",
+              "$40,000",
+              "$(10,000)",
+              "$130,000"
+            ],
+            [
+              "Allocated common",
+              "(50,000)",
+              "(30,000)",
+              "(20,000)",
+              "(100,000)"
+            ],
+            [
+              "Net income",
+              "$50,000",
+              "$10,000",
+              "$(30,000)",
+              "$30,000"
+            ]
+          ]
+        },
+        {
+          "title": "Analyzing Product C",
+          "type": "text",
+          "content": "**Product C shows $(30,000) loss. Drop it?**\n\n**If we drop C:**\nRevenue lost: $200,000\nVariable costs saved: $150,000\nDirect fixed costs saved (assume avoidable): $60,000\nTotal costs saved: $210,000\n\n**Effect on profit:**\nCosts saved $210,000 > Revenue lost $200,000\n**DROP Product C** - saves $10,000\n\n**BUT WAIT - what if not all fixed costs are avoidable?**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Segment Margin",
+          "type": "callout",
+          "content": "**\"Segment Margin = Drop Decision\"**\n\n**Segment Margin = CM - Direct Fixed Costs**\n\n**If segment margin is POSITIVE:**\n\u2192 Keep! It covers its own costs and contributes to common costs.\n\n**If segment margin is NEGATIVE:**\n\u2192 Consider dropping (but verify fixed costs are truly avoidable!)\n\n**Ignore allocated common costs for drop decision!**"
+        },
+        {
+          "title": "What if Fixed Costs Aren't Fully Avoidable?",
+          "type": "text",
+          "content": "**Reanalysis: Only $40,000 of C's $60,000 fixed costs are avoidable**\n\n**If we drop C:**\nRevenue lost: $200,000\nVariable costs saved: $150,000\nAvoidable fixed costs: $40,000\nTotal costs saved: $190,000\n\n**Effect on profit:**\nCosts saved $190,000 < Revenue lost $200,000\n**KEEP Product C** - dropping costs $10,000!\n\n**The remaining $20,000 will be reallocated to A and B!**"
+        },
+        {
+          "title": "Complementary Products Effect",
+          "type": "text",
+          "content": "**Sometimes products are complementary:**\n\n\u2022 Dropping razors may reduce blade sales\n\u2022 Dropping appetizers may reduce dinner sales\n\u2022 Dropping entry-level product may lose future upgraders\n\n**Include lost contribution from related products!**\n\n**Example:**\nDrop C saves $10,000 (per earlier analysis)\nBut C customers also buy $100,000 of A at 40% CM\nLost A contribution: $40,000\n\nNet effect: ($10,000) - ($40,000) = **$(30,000) loss**\n\n**KEEP Product C!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Common Cost Allocation",
+          "type": "warning",
+          "content": "**IGNORE allocated common costs for drop decisions!**\n\n**Why?**\nCommon costs continue regardless of which segments exist.\nThey just get reallocated to remaining segments.\n\n**Example:**\nTotal common costs: $100,000\nAllocated to C: $20,000\n\nIf C is dropped, the $100,000 doesn't change!\nIt's just split between A and B now.\n\n**Common costs are NOT relevant to the drop decision!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Drop if: Revenue lost < Costs avoided",
+            "Segment Margin = CM - Direct (Traceable) Fixed Costs",
+            "Positive segment margin = Keep the segment",
+            "Only AVOIDABLE costs are relevant",
+            "Ignore allocated common costs (continue either way)",
+            "Consider complementary product effects",
+            "Verify which fixed costs truly disappear"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Keep or Drop Decision: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Division A has a contribution margin of $100,000 and avoidable fixed costs of $80,000. Unavoidable fixed costs are $40,000. If Division A is dropped, what will be the impact on the company's overall profit?",
+            "options": [
+              "Decrease of $100,000",
+              "Decrease of $20,000",
+              "Increase of $20,000",
+              "No change"
+            ],
+            "correctIndex": 1,
+            "explanation": "The company will lose the contribution margin of $100,000 but save $80,000 in avoidable fixed costs. The net effect is a decrease in profit of $20,000 ($100,000 - $80,000). Unavoidable fixed costs are irrelevant to the decision.",
+            "hint": "Focus only on avoidable costs and the contribution margin."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Decision Rule",
+          "reveal": {
+            "question": "State the 'Keep or Drop' decision rule based on revenue lost and costs avoided.",
+            "answer": "Drop if Revenue lost < Costs avoided; Keep if Revenue lost > Costs avoided"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Avoidable vs. Unavoidable Costs",
+          "comparison": {
+            "headers": [
+              "Avoidable Costs",
+              "Unavoidable Costs"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Costs that will disappear if a segment is dropped.",
+                  "Costs that will continue to be incurred even if a segment is dropped."
+                ]
+              },
+              {
+                "label": "Relevance to Keep/Drop Decision",
+                "values": [
+                  "Relevant; used in the analysis.",
+                  "Irrelevant; not used in the analysis."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "Direct fixed costs like a segment manager's salary if they're laid off.",
+                  "Allocated overhead costs like corporate headquarters rent."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-008",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Sell or Process Further",
+    "description": "Determine optimal point to sell joint products",
+    "order": 29,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Joint costs",
+      "Split-off point",
+      "Further processing",
+      "Incremental analysis"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Joint products emerge from a common process. Should we sell at split-off or process further? CMAs analyze the incremental revenue vs. incremental cost of additional processing. Joint costs are sunk for this decision!"
+        },
+        {
+          "title": "Joint Costs and Split-Off Point",
+          "type": "text",
+          "content": "**Joint costs:** Costs incurred before products become separately identifiable\n\n**Split-off point:** Where joint products become separate and identifiable\n\n**Example:**\nOil refinery: Crude oil \u2192 Gasoline, Diesel, Kerosene\n(Split-off is where products separate)\n\n**Key insight:**\nJoint costs are SUNK for sell/process further decisions!\nThey're incurred regardless of what happens after split-off."
+        },
+        {
+          "title": "Decision Rule",
+          "type": "text",
+          "content": "**Process further if:**\nIncremental Revenue > Incremental (Separable) Costs\n\n**Compare:**\n\u2022 Revenue at split-off\n\u2022 Revenue if processed further\n\u2022 Costs of additional processing\n\n**DO NOT include joint costs!**\nThey're the same regardless of the decision.\n\n**Focus only on what happens AFTER split-off!**"
+        },
+        {
+          "title": "Sell or Process Example",
+          "type": "table",
+          "headers": [
+            "Product",
+            "Sales at Split-off",
+            "Sales if Processed",
+            "Further Processing Cost"
+          ],
+          "rows": [
+            [
+              "Product X",
+              "$50,000",
+              "$80,000",
+              "$20,000"
+            ],
+            [
+              "Product Y",
+              "$30,000",
+              "$42,000",
+              "$15,000"
+            ],
+            [
+              "Product Z",
+              "$20,000",
+              "$35,000",
+              "$18,000"
+            ]
+          ]
+        },
+        {
+          "title": "Analyzing Each Product",
+          "type": "text",
+          "content": "**Product X:**\nIncremental revenue: $80,000 - $50,000 = $30,000\nIncremental cost: $20,000\nIncremental profit: **$10,000** \u2192 PROCESS FURTHER\n\n**Product Y:**\nIncremental revenue: $42,000 - $30,000 = $12,000\nIncremental cost: $15,000\nIncremental loss: **$(3,000)** \u2192 SELL AT SPLIT-OFF\n\n**Product Z:**\nIncremental revenue: $35,000 - $20,000 = $15,000\nIncremental cost: $18,000\nIncremental loss: **$(3,000)** \u2192 SELL AT SPLIT-OFF"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Sell or Process",
+          "type": "callout",
+          "content": "**\"JCS\" - Joint Costs are SUNK!**\n\n**J**oint costs = Already incurred\n**C**ompare only what's AFTER split-off\n**S**eparable costs vs. Incremental revenue\n\n**If incremental revenue > separable cost \u2192 Process further**\n**If incremental revenue < separable cost \u2192 Sell at split-off**\n\n**Never include joint costs in this decision!**"
+        },
+        {
+          "title": "By-Products",
+          "type": "text",
+          "content": "**By-product:** Minor product with relatively small sales value\n\n**Accounting treatments:**\n\n**Net realizable value method:**\nNRV of by-product reduces joint cost of main products\n\n**Recognition at sale:**\nRevenue recognized when by-product is sold\n\n**For sell/process decisions:**\nAnalyze by-products the same way:\nProcess further only if incremental revenue > incremental cost"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Don't Allocate Joint Costs for Decisions",
+          "type": "warning",
+          "content": "**Joint cost allocation is for:**\n\u2022 Inventory valuation\n\u2022 External financial reporting\n\n**Joint cost allocation is NOT for:**\n\u2022 Sell/process decisions\n\u2022 Product profitability analysis\n\n**Why?**\nAllocation methods (sales value, physical units, NRV) are arbitrary.\nThey don't reflect true product costs.\n\n**For decisions: Focus ONLY on separable costs!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Joint costs are SUNK - ignore for sell/process decisions",
+            "Compare: Revenue increase vs. Additional processing cost",
+            "Process further if incremental revenue > separable cost",
+            "Each product is analyzed independently",
+            "Different products may have different optimal decisions",
+            "By-products analyzed the same way as main products",
+            "Don't use allocated joint costs for decision-making"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Joint Costs and the Sell or Process Further Decision",
+          "knowledgeCheck": {
+            "question": "Which of the following statements is MOST accurate regarding the decision to sell a joint product at the split-off point or process it further?",
+            "options": [
+              "Joint costs should be allocated to the joint products to determine profitability before making the decision.",
+              "The decision should be based solely on whether the additional revenue from further processing exceeds the total cost of production, including joint costs.",
+              "The decision to process further should be based on whether the incremental revenue from further processing exceeds the incremental processing costs.",
+              "Joint costs are relevant in the decision to sell or process further because they impact the overall profitability of the company."
+            ],
+            "correctIndex": 2,
+            "explanation": "The correct answer is that the decision to process further should be based on whether the incremental revenue from further processing exceeds the incremental processing costs. Joint costs are sunk costs and irrelevant to the sell or process further decision.",
+            "hint": "Remember the key insight about sunk costs!"
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: The Golden Rule of 'Sell or Process Further'",
+          "reveal": {
+            "question": "State the decision rule for determining whether to process a joint product further after the split-off point.",
+            "answer": "Process further if the incremental revenue from further processing is greater than the incremental (separable) costs of further processing."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Split-Off Point vs. Further Processing",
+          "comparison": {
+            "headers": [
+              "Split-Off Point",
+              "Further Processing"
+            ],
+            "rows": [
+              {
+                "label": "Cost Consideration",
+                "values": [
+                  "Joint costs are incurred.",
+                  "Incremental (separable) costs are incurred. Joint costs are irrelevant."
+                ]
+              },
+              {
+                "label": "Revenue Impact",
+                "values": [
+                  "Revenue is generated at the initial sales price.",
+                  "Potential for increased revenue due to product enhancement."
+                ]
+              },
+              {
+                "label": "Decision Focus",
+                "values": [
+                  "Initial decision point for product separation.",
+                  "Decision to increase product value through additional processing."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Applying the Concept",
+          "knowledgeCheck": {
+            "question": "A company produces two joint products, A and B. At the split-off point, Product A can be sold for $20,000 and Product B can be sold for $30,000. If Product A is processed further, it can be sold for $35,000 at an additional cost of $10,000. If Product B is processed further, it can be sold for $40,000 at an additional cost of $12,000. Which product(s) should be processed further?",
+            "options": [
+              "Only Product A.",
+              "Only Product B.",
+              "Both Product A and Product B.",
+              "Neither Product A nor Product B."
+            ],
+            "correctIndex": 0,
+            "explanation": "Product A: Incremental Revenue = $35,000 - $20,000 = $15,000; Incremental Cost = $10,000. Process further since $15,000 > $10,000. Product B: Incremental Revenue = $40,000 - $30,000 = $10,000; Incremental Cost = $12,000. Do not process further since $10,000 < $12,000.",
+            "hint": "Calculate the incremental revenue and incremental cost for each product separately."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-009",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Pricing Strategies",
+    "description": "Understand pricing methods and strategic pricing decisions",
+    "order": 30,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cost-plus pricing",
+      "Target costing",
+      "Market-based pricing",
+      "Price elasticity"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Pricing is one of the most powerful profit levers. CMAs provide cost data for pricing decisions, analyze pricing strategies, and understand how different approaches affect profitability. The right price balances cost recovery, competitive positioning, and customer value."
+        },
+        {
+          "title": "Pricing Approaches",
+          "type": "text",
+          "content": "**Cost-based pricing:**\nStart with costs, add markup for profit\n\n**Market-based pricing:**\nStart with what market will pay, adjust costs accordingly\n\n**Value-based pricing:**\nPrice based on value delivered to customer\n\n**Competition-based pricing:**\nSet prices relative to competitors\n\n**Each has its place depending on market conditions!**"
+        },
+        {
+          "title": "Cost-Plus Pricing",
+          "type": "text",
+          "content": "**Formula:**\nPrice = Cost + (Markup % \u00d7 Cost)\n\n**Which cost base?**\n\u2022 Variable cost (contribution approach)\n\u2022 Absorption cost (full cost)\n\u2022 Total cost including SG&A\n\n**Example (absorption cost):**\nFull manufacturing cost: $80\nDesired markup: 25%\nPrice: $80 \u00d7 1.25 = **$100**\n\n**Advantages:** Simple, ensures cost recovery\n**Disadvantages:** Ignores market, demand, competition"
+        },
+        {
+          "title": "Markup Calculation",
+          "type": "text",
+          "content": "**Finding required markup:**\n\nMarkup % = Desired Profit / Cost Base\n\n**Example:**\nTarget ROI: 15%\nInvested capital: $1,000,000\nExpected units: 10,000\nCost per unit: $75\n\nDesired profit: 15% \u00d7 $1,000,000 = $150,000\nProfit per unit: $150,000 / 10,000 = $15\nMarkup %: $15 / $75 = **20%**\nPrice: $75 \u00d7 1.20 = **$90**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Pricing Methods",
+          "type": "callout",
+          "content": "**\"CMVT\"** - Four Pricing Philosophies:\n\n**C**ost-plus: Add margin to cost (inside-out)\n**M**arket: What will market pay? (outside-in)\n**V**alue: What is it worth to customer?\n**T**arget: Market price - profit = Allowable cost\n\n**Cost-plus is easiest but ignores what customers will pay!\nMarket and value approaches focus on the customer.**"
+        },
+        {
+          "title": "Target Costing",
+          "type": "text",
+          "content": "**Market-driven approach:**\n\n**Steps:**\n1. Determine market price customers will pay\n2. Subtract required profit margin\n3. Result = Maximum allowable cost\n4. Design/engineer to meet cost target\n\n**Formula:**\nTarget Cost = Market Price - Required Profit\n\n**Example:**\nMarket price: $200\nRequired margin: 20%\nRequired profit: $40\nTarget cost: $200 - $40 = **$160**\n\n*If we can't make it for $160, don't make it!*"
+        },
+        {
+          "title": "Price Elasticity of Demand",
+          "type": "text",
+          "content": "**Elasticity = % Change in Quantity / % Change in Price**\n\n**Elastic demand (E > 1):**\n\u2022 Price cut increases revenue\n\u2022 Price hike decreases revenue\n\u2022 Customers are price-sensitive\n\n**Inelastic demand (E < 1):**\n\u2022 Price cut decreases revenue\n\u2022 Price hike increases revenue\n\u2022 Customers less price-sensitive\n\n**Example:** E = 2\n10% price cut \u2192 20% more quantity \u2192 Revenue increases!"
+        },
+        {
+          "title": "Special Pricing Situations",
+          "type": "table",
+          "headers": [
+            "Situation",
+            "Pricing Approach"
+          ],
+          "rows": [
+            [
+              "New product launch",
+              "Skimming (high) or Penetration (low)"
+            ],
+            [
+              "Capacity utilization",
+              "Above variable cost as floor"
+            ],
+            [
+              "Product line pricing",
+              "Consider substitution/complementary effects"
+            ],
+            [
+              "Competitive response",
+              "Match, undercut, or differentiate"
+            ],
+            [
+              "Loss leader",
+              "Below cost to drive traffic"
+            ]
+          ]
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Long-Run vs. Short-Run Pricing",
+          "type": "warning",
+          "content": "**Short-run minimum price:**\nVariable cost per unit (contribution pricing)\n\u2192 Any price above VC contributes to fixed costs\n\n**Long-run minimum price:**\nFull cost (covers all costs including fixed)\n\u2192 Must recover ALL costs to be sustainable\n\n**Special orders may accept short-run pricing\nRegular business needs long-run pricing!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cost-plus: Price = Cost \u00d7 (1 + Markup%)",
+            "Target costing: Target Cost = Market Price - Required Profit",
+            "Market-based pricing starts with customer willingness to pay",
+            "Price elasticity determines revenue impact of price changes",
+            "Short-run floor = Variable cost; Long-run floor = Full cost",
+            "Price skimming (high initial) vs. Penetration (low initial)",
+            "Different situations call for different pricing strategies"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cost-Plus Pricing Knowledge Check",
+          "knowledgeCheck": {
+            "question": "A company uses absorption cost-plus pricing. Its full manufacturing cost per unit is $50, and its selling, general, and administrative (SG&A) expenses are $10 per unit. The company desires a 20% markup on total cost. What is the selling price per unit?",
+            "options": [
+              "$60",
+              "$72",
+              "$70",
+              "$62"
+            ],
+            "correctIndex": 1,
+            "explanation": "First, calculate the total cost per unit: $50 (manufacturing cost) + $10 (SG&A) = $60.  Then, apply the 20% markup: $60 * 1.20 = $72.",
+            "hint": "Remember to include all relevant costs in the cost base before applying the markup."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: Markup Percentage Formula",
+          "reveal": {
+            "question": "What is the formula for calculating the required markup percentage in cost-plus pricing?",
+            "answer": "Markup % = Desired Profit / Cost Base. This formula determines the percentage markup needed to achieve a target profit level based on a chosen cost base."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Cost-Based vs. Market-Based Pricing",
+          "comparison": {
+            "headers": [
+              "Cost-Based Pricing",
+              "Market-Based Pricing"
+            ],
+            "rows": [
+              {
+                "label": "Starting Point",
+                "values": [
+                  "Internal Costs",
+                  "Market Demand/Competitor Prices"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Covering Costs and Achieving Desired Profit",
+                  "Meeting Customer Needs and Competitive Pressures"
+                ]
+              },
+              {
+                "label": "Price Determination",
+                "values": [
+                  "Cost + Markup",
+                  "Market Price - Desired Profit Margin or Cost Adjustments"
+                ]
+              },
+              {
+                "label": "Suitability",
+                "values": [
+                  "Products with less competition, cost control is essential",
+                  "Highly competitive markets, customer value is key"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-010",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Transfer Pricing",
+    "description": "Establish prices for internal transfers between divisions",
+    "order": 31,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Transfer pricing methods",
+      "Goal congruence",
+      "Performance evaluation",
+      "Tax implications"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Divisions within a company often buy from each other. At what price? Transfer pricing affects divisional profits, taxes, and decision-making incentives. CMAs must set transfer prices that motivate goal-congruent behavior while fairly evaluating performance."
+        },
+        {
+          "title": "Transfer Pricing Objectives",
+          "type": "text",
+          "content": "**Good transfer prices should:**\n\n\u2022 **Goal congruence:** Align divisional and corporate interests\n\u2022 **Performance evaluation:** Fairly measure divisional profit\n\u2022 **Autonomy:** Preserve divisional decision-making\n\u2022 **Tax optimization:** Minimize overall tax burden (legally!)\n\n**The challenge:**\nNo single method achieves all objectives perfectly!"
+        },
+        {
+          "title": "Transfer Pricing Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Price Set At",
+            "Best When"
+          ],
+          "rows": [
+            [
+              "Market price",
+              "External market price",
+              "Competitive external market exists"
+            ],
+            [
+              "Variable cost",
+              "Variable cost only",
+              "Excess capacity, internal use"
+            ],
+            [
+              "Full cost",
+              "Variable + fixed",
+              "No external market"
+            ],
+            [
+              "Cost-plus",
+              "Cost + markup",
+              "Simulate profit for seller"
+            ],
+            [
+              "Negotiated",
+              "Divisions agree",
+              "Autonomy important"
+            ]
+          ]
+        },
+        {
+          "title": "General Transfer Pricing Rule",
+          "type": "text",
+          "content": "**Minimum transfer price (seller's floor):**\nVariable cost + Opportunity cost (lost CM on external sales)\n\n**Maximum transfer price (buyer's ceiling):**\nMarket price (or cost of buying externally)\n\n**Transfer price range:**\nMinimum \u2264 TP \u2264 Maximum\n\n**Key insight:**\nTransfer should occur if seller's minimum < buyer's maximum\n(Value is created by internal transfer)"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Transfer Price Range",
+          "type": "callout",
+          "content": "**\"VOC to MARket\"**\n\n**Floor (seller's minimum):**\n**V**ariable cost + **O**pportunity **C**ost\n\n**Ceiling (buyer's maximum):**\n**MAR**ket price (what buyer would pay externally)\n\n**If floor > ceiling:**\nNo transfer should occur!\n\n**If floor < ceiling:**\nTransfer at any price in the range is OK for the company."
+        },
+        {
+          "title": "Transfer Pricing Example",
+          "type": "text",
+          "content": "**Division A (seller) data:**\nVariable cost: $30\nFull cost: $45\nMarket price: $50\nCapacity: 10,000 units\nExternal demand: 8,000 units\n\n**With excess capacity (2,000 units):**\nSeller's minimum: $30 + $0 = **$30** (no opportunity cost)\n\n**At full capacity:**\nSeller's minimum: $30 + ($50-$30) = **$50** (lost CM)\n\n**Division B should buy internally only if their max > seller's min!**"
+        },
+        {
+          "title": "Goal Congruence Issues",
+          "type": "text",
+          "content": "**Problem with variable cost transfer price:**\nSeller shows no profit \u2192 No motivation to sell internally\n\n**Problem with cost-plus:**\nPasses inefficiencies to buyer\nNo incentive for seller to control costs\n\n**Problem with market price:**\nMay not exist for intermediate products\nIgnores synergies of internal transfer\n\n**Solution often requires negotiation or dual pricing!**"
+        },
+        {
+          "title": "International Transfer Pricing",
+          "type": "text",
+          "content": "**Tax authorities are watching!**\n\nCompanies may set transfer prices to:\n\u2022 Shift profit to low-tax jurisdictions\n\u2022 Minimize overall tax burden\n\n**Arms-length principle:**\nTransfer prices should be what unrelated parties would pay.\n\n**Methods accepted by IRS/OECD:**\n\u2022 Comparable uncontrolled price (CUP)\n\u2022 Resale price method\n\u2022 Cost-plus method\n\u2022 Transactional net margin method (TNMM)\n\n**Documentation is critical!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Capacity Matters!",
+          "type": "warning",
+          "content": "**The selling division's situation changes the analysis:**\n\n**Excess capacity:**\n\u2022 Opportunity cost = $0\n\u2022 Minimum TP = Variable cost\n\u2022 Internal transfer almost always makes sense\n\n**At full capacity:**\n\u2022 Opportunity cost = Lost CM from external sales\n\u2022 Minimum TP = VC + Lost CM\n\u2022 May equal market price!\n\n**Always check capacity before calculating!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Minimum TP = Variable cost + Opportunity cost",
+            "Maximum TP = External market price",
+            "Transfer should occur if minimum < maximum",
+            "Excess capacity \u2192 Opportunity cost = $0",
+            "Full capacity \u2192 Opportunity cost = Lost contribution margin",
+            "No single method achieves all objectives",
+            "International transfers must follow arm's-length principle"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Transfer Pricing Objectives - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is NOT a primary objective of establishing a transfer pricing policy within a decentralized organization?",
+            "options": [
+              "A. To minimize the overall tax burden of the corporation.",
+              "B. To maximize the autonomy of divisional managers.",
+              "C. To ensure that all intercompany transfers are recorded at cost.",
+              "D. To fairly evaluate the performance of individual divisions.",
+              "E. To align divisional and corporate interests."
+            ],
+            "correctIndex": 2,
+            "explanation": "While recording transfers might involve costs, the objective isn't simply to record them 'at cost.' Effective transfer pricing aims for goal congruence, performance evaluation, autonomy, and tax optimization. Simply recording at cost could distort divisional profitability and hinder informed decision-making.",
+            "hint": "Think about the broad goals that transfer pricing aims to achieve for the entire organization, not just accounting procedures."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Minimum Transfer Price - Test Yourself",
+          "reveal": {
+            "question": "What components make up the minimum transfer price (seller's floor)?",
+            "answer": "The minimum transfer price is calculated as the sum of the seller's Variable Cost and Opportunity Cost (lost Contribution Margin on external sales)."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Transfer Price Range",
+          "knowledgeCheck": {
+            "question": "Division A can sell a component externally for $75. Its variable cost to produce the component is $40. Division B needs this component and can either buy it externally for $80 or from Division A. What is the transfer price range?",
+            "options": [
+              "A. $40 - $75",
+              "B. $40 - $80",
+              "C. $75 - $80",
+              "D. $40 - $40",
+              "E. $75 - $75"
+            ],
+            "correctIndex": 0,
+            "explanation": "The minimum transfer price (seller's floor) is the variable cost ($40) plus the opportunity cost. Since Division A can sell externally for $75, that's their lost revenue, so the minimum price is $40. The maximum transfer price (buyer's ceiling) is the market price if bought externally, which is $80. Therefore, the transfer price range is $40-$80.",
+            "hint": "Consider the best alternative for both the buying and selling divisions."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-011",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Constrained Resource Decisions",
+    "description": "Optimize product mix when resources are limited",
+    "order": 32,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Scarce resources",
+      "CM per constraint",
+      "Product mix",
+      "Linear programming"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Every company faces constraints - machine hours, labor, materials, or space. CMAs must determine the optimal product mix when resources are limited. The key: maximize contribution margin per unit of the scarce resource, not per unit of product!"
+        },
+        {
+          "title": "The Resource Constraint Problem",
+          "type": "text",
+          "content": "**When you can't make all the products you can sell:**\n\n\u2022 What limits you? (the constraint/bottleneck)\n\u2022 How should you allocate that resource?\n\u2022 Which products should get priority?\n\n**Key insight:**\nMaximize CM per unit of the SCARCE RESOURCE,\nnot CM per unit of product!\n\n**A product with lower CM per unit may be better\nif it uses less of the scarce resource!**"
+        },
+        {
+          "title": "Product Comparison Example",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Product A",
+            "Product B"
+          ],
+          "rows": [
+            [
+              "Selling price",
+              "$100",
+              "$80"
+            ],
+            [
+              "Variable cost",
+              "$60",
+              "$50"
+            ],
+            [
+              "CM per unit",
+              "$40",
+              "$30"
+            ],
+            [
+              "Machine hours required",
+              "4 hours",
+              "2 hours"
+            ],
+            [
+              "CM per machine hour",
+              "$10",
+              "$15"
+            ]
+          ]
+        },
+        {
+          "title": "Analysis of Example",
+          "type": "text",
+          "content": "**Available machine hours: 8,000\nDemand: Unlimited for both products**\n\n**Wrong approach (CM per unit):**\nMake A ($40 CM) before B ($30 CM)\n\n**Right approach (CM per constraint):**\nB: $30 \u00f7 2 hours = **$15/hour**\nA: $40 \u00f7 4 hours = **$10/hour**\n\n**Make B first!**\nWith 8,000 hours: 4,000 units of B \u00d7 $30 = $120,000\nOR: 2,000 units of A \u00d7 $40 = $80,000\n\n**$40,000 more by prioritizing B!**"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Constraint Optimization",
+          "type": "callout",
+          "content": "**\"CM per CB\"**\n\n**C**ontribution **M**argin per **C**onstraint unit = **B**est product!\n\nNOT CM per unit!\nNOT highest selling price!\nNOT lowest cost!\n\n**The scarce resource is your bottleneck - use it wisely!**\n\nRank products by CM / Resource requirement\nMake highest-ranked products first."
+        },
+        {
+          "title": "Multiple Constraints",
+          "type": "text",
+          "content": "**When multiple resources are scarce:**\n\n**Simple approach:**\nIdentify the BINDING constraint (most limiting)\nOptimize for that constraint\n\n**Complex approach:**\nLinear programming (LP) required\n\n**LP model:**\nMaximize: Total CM = CM\u2081X\u2081 + CM\u2082X\u2082 + ...\nSubject to:\nConstraint 1: a\u2081X\u2081 + a\u2082X\u2082 \u2264 Available\u2081\nConstraint 2: b\u2081X\u2081 + b\u2082X\u2082 \u2264 Available\u2082\nX\u2081, X\u2082 \u2265 0"
+        },
+        {
+          "title": "Theory of Constraints (TOC)",
+          "type": "text",
+          "content": "**Goldratt's approach:**\n\n**Five focusing steps:**\n1. **Identify** the constraint\n2. **Exploit** the constraint (maximize its output)\n3. **Subordinate** everything else to the constraint\n4. **Elevate** the constraint (add capacity)\n5. **Repeat** (find the new constraint)\n\n**Key metric:**\nThroughput = Sales - Truly Variable Costs\n\n**Maximize throughput per constraint unit!**"
+        },
+        {
+          "title": "Practical Application",
+          "type": "text",
+          "content": "**Steps for constrained resource problem:**\n\n1. Identify the constraint (what's limiting output?)\n2. Calculate CM per unit of constraint for each product\n3. Rank products by CM per constraint (highest first)\n4. Allocate constraint to highest-ranked product up to demand\n5. Continue to next product until constraint exhausted\n6. Calculate total contribution margin\n\n**Watch for demand limits - you can't sell more than market wants!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Demand Constraints",
+          "type": "warning",
+          "content": "**Don't make more than you can sell!**\n\n**Example:**\nProduct B: CM/hour = $15, Demand = 2,000 units\nProduct A: CM/hour = $10, Demand = 3,000 units\nAvailable hours: 8,000\n\n**Correct approach:**\nMake B first: 2,000 \u00d7 2 hours = 4,000 hours used\nRemaining hours: 4,000 for A\nMake A: 4,000 \u00f7 4 = 1,000 units\n\nTotal CM: (2,000 \u00d7 $30) + (1,000 \u00d7 $40) = **$100,000**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Maximize CM per unit of SCARCE RESOURCE",
+            "Rank products by CM/constraint, not CM/unit",
+            "Allocate scarce resource to highest-ranked products first",
+            "Respect demand constraints - can't sell infinite units",
+            "Multiple constraints may require linear programming",
+            "TOC: Identify, Exploit, Subordinate, Elevate, Repeat",
+            "The constraint determines maximum throughput"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Constrained Resource Allocation: Practice Question",
+          "knowledgeCheck": {
+            "question": "Company X manufactures two products, Alpha and Beta. Alpha has a contribution margin of $50 per unit and requires 5 machine hours. Beta has a contribution margin of $40 per unit and requires 2 machine hours.  Company X has a limited capacity of 1,000 machine hours.  Assuming demand for both products is unlimited, how many units of Beta should Company X produce to maximize its profit?",
+            "options": [
+              "0 units",
+              "200 units",
+              "400 units",
+              "500 units"
+            ],
+            "correctIndex": 4,
+            "explanation": "To maximize profit, we need to focus on the contribution margin per machine hour. Alpha: $50 / 5 hours = $10/hour. Beta: $40 / 2 hours = $20/hour.  Beta is more profitable per machine hour. Therefore, allocate all 1,000 hours to Beta: 1,000 hours / 2 hours per unit = 500 units.",
+            "hint": "Calculate the contribution margin per machine hour for each product."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Constrained Resource Key Concept",
+          "reveal": {
+            "question": "What is the primary decision rule when allocating a constrained resource?",
+            "answer": "Maximize contribution margin per unit of the SCARCE RESOURCE, not contribution margin per unit of product."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "CM per Unit vs. CM per Constrained Resource",
+          "comparison": {
+            "headers": [
+              "Contribution Margin per Unit",
+              "Contribution Margin per Constrained Resource"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Profitability of each individual product",
+                  "Profitability of each unit of the limited resource"
+                ]
+              },
+              {
+                "label": "Application",
+                "values": [
+                  "Useful when resources are NOT constrained",
+                  "Crucial when resources are limited and demand exceeds capacity"
+                ]
+              },
+              {
+                "label": "Calculation",
+                "values": [
+                  "Selling Price - Variable Costs",
+                  "(Selling Price - Variable Costs) / Units of Constrained Resource"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-012",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Decision Analysis Under Uncertainty",
+    "description": "Make decisions when outcomes are uncertain using probability analysis",
+    "order": 33,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Expected value",
+      "Decision trees",
+      "Sensitivity analysis",
+      "Risk preferences"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Business decisions are rarely certain. CMAs must incorporate uncertainty into analysis using expected value, decision trees, and sensitivity analysis. Understanding how to analyze risky decisions leads to better choices under ambiguity."
+        },
+        {
+          "title": "Expected Value",
+          "type": "text",
+          "content": "**EV = \u03a3 (Outcome \u00d7 Probability)**\n\n**Example:**\nNew product investment:\n\u2022 30% probability: $500,000 profit\n\u2022 50% probability: $200,000 profit\n\u2022 20% probability: $(100,000) loss\n\nEV = (0.30 \u00d7 $500,000) + (0.50 \u00d7 $200,000) + (0.20 \u00d7 -$100,000)\nEV = $150,000 + $100,000 - $20,000\nEV = **$230,000**\n\n**Decision:** If EV > 0 or EV > alternative, accept."
+        },
+        {
+          "title": "Decision Tree Structure",
+          "type": "text",
+          "content": "**Components:**\n\n**Decision nodes (squares):** Points where you choose\n**Chance nodes (circles):** Points where uncertainty resolves\n**Branches:** Represent alternatives or outcomes\n**Payoffs:** End values at branch tips\n\n**Analysis (work backwards):**\n1. Calculate EV at each chance node\n2. Choose best alternative at decision nodes\n3. Roll back to starting point"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Decision Trees",
+          "type": "callout",
+          "content": "**\"Squares for STRATEGY, Circles for CHANCE\"**\n\n\u25a1 = You decide (pick one branch)\n\u25cb = Nature decides (weight by probability)\n\n**Analyze from RIGHT to LEFT:**\n1. Start at outcomes (payoffs)\n2. Weight by probability at circles\n3. Choose best option at squares\n4. Work back to root\n\n**The path through best choices = Optimal strategy**"
+        },
+        {
+          "title": "Decision Tree Example",
+          "type": "text",
+          "content": "**Decision:** Launch product A or B?\n\n**Product A:**\n\u2022 60%: Success \u2192 $300,000\n\u2022 40%: Failure \u2192 $(50,000)\nEV(A) = (0.60 \u00d7 300,000) + (0.40 \u00d7 -50,000) = **$160,000**\n\n**Product B:**\n\u2022 80%: Success \u2192 $200,000\n\u2022 20%: Failure \u2192 $0\nEV(B) = (0.80 \u00d7 200,000) + (0.20 \u00d7 0) = **$160,000**\n\n**Same EV! But B has less variance (less risky).**"
+        },
+        {
+          "title": "Sensitivity Analysis",
+          "type": "text",
+          "content": "**What if assumptions change?**\n\n**Steps:**\n1. Identify key variables\n2. Change one variable at a time\n3. Recalculate outcome\n4. Determine \"trigger point\" where decision changes\n\n**Example:**\nIf success probability for A drops below 53.3%,\nEV(A) falls below EV(B).\n\n**Sensitivity analysis answers:**\n\"How wrong can our estimates be before we'd decide differently?\""
+        },
+        {
+          "title": "Value of Information",
+          "type": "text",
+          "content": "**Expected Value of Perfect Information (EVPI):**\nEVPI = EV with perfect info - EV without info\n\n**What would you pay for a crystal ball?**\n\n**Example:**\nWithout info: EV = $160,000 (best we can do)\nWith perfect info:\n\u2022 If knew success (60%): Choose A for $300,000\n\u2022 If knew failure (40%): Choose B for $0\nEV with info = (0.60 \u00d7 $300,000) + (0.40 \u00d7 $0) = $180,000\n\nEVPI = $180,000 - $160,000 = **$20,000**\n\n**Would pay up to $20,000 for perfect prediction!**"
+        },
+        {
+          "title": "\u26a0\ufe0f Exam Trap: Risk Preferences",
+          "type": "warning",
+          "content": "**Expected value assumes risk neutrality!**\n\n**Risk-averse:** Would choose certain outcome over risky one with same EV\n(Most individuals, especially with large amounts)\n\n**Risk-neutral:** Indifferent between certain and risky with same EV\n(Companies often assumed risk-neutral)\n\n**Risk-seeking:** Prefer risky option with same EV\n(Gamblers, some entrepreneurs)\n\n**Real decisions may incorporate risk preferences beyond EV!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Expected Value = \u03a3(Outcome \u00d7 Probability)",
+            "Decision trees: Squares for decisions, Circles for chance",
+            "Analyze decision trees from right to left (backward)",
+            "Choose option with highest expected value",
+            "Sensitivity analysis tests impact of changing assumptions",
+            "EVPI = EV with perfect info - EV without info",
+            "Risk preferences may override pure EV analysis"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Expected Value Calculation",
+          "knowledgeCheck": {
+            "question": "A company is considering launching a new product. Market research suggests a 40% chance of a $800,000 profit, a 35% chance of a $300,000 profit, and a 25% chance of a $200,000 loss. What is the expected value of launching this product?",
+            "options": [
+              "$450,000",
+              "$370,000",
+              "$260,000",
+              "$320,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "The expected value is calculated as (0.40 * $800,000) + (0.35 * $300,000) + (0.25 * -$200,000) = $320,000 + $105,000 - $50,000 = $375,000. The closest answer is $370,000.",
+            "hint": "Remember to multiply each outcome by its probability and sum the results. Account for losses as negative values."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Decision Tree Components",
+          "reveal": {
+            "question": "What are the four key components of a decision tree?",
+            "answer": "The four key components of a decision tree are: 1. Decision nodes (squares), 2. Chance nodes (circles), 3. Branches, and 4. Payoffs."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Decision Tree Analysis",
+          "knowledgeCheck": {
+            "question": "When analyzing a decision tree, in what direction do you typically work?",
+            "options": [
+              "Forward, from the initial decision to the payoffs.",
+              "Backward, from the payoffs to the initial decision.",
+              "Randomly, as the order doesn't matter.",
+              "From the chance nodes to the decision nodes."
+            ],
+            "correctIndex": 1,
+            "explanation": "Decision tree analysis involves working backward from the payoffs to the initial decision. This allows you to calculate the expected value at each chance node and make informed decisions at each decision node.",
+            "hint": "Think about how you would solve a puzzle \u2013 often starting with the end result and working your way back."
+          }
+        }
+      ]
+    }
+  }
+]

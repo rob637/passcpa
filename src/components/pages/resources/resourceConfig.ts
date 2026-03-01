@@ -284,7 +284,12 @@ const CPA_RESOURCES: CourseResourceConfig = {
       colorLight: 'indigo-50',
       colorDark: 'indigo-900/30',
       items: [
-        { id: 'cpa-blueprint', type: 'blueprint', title: 'CPA Exam Blueprint', description: 'FAR domain weights, exam format, and topic breakdown' },
+        { id: 'cpa-far-blueprint', type: 'blueprint', title: 'FAR Blueprint', description: 'Financial Accounting & Reporting: 4 areas, domain weights, topic breakdown', section: 'FAR' },
+        { id: 'cpa-aud-blueprint', type: 'blueprint', title: 'AUD Blueprint', description: 'Auditing & Attestation: 4 areas, domain weights, topic breakdown', section: 'AUD' },
+        { id: 'cpa-reg-blueprint', type: 'blueprint', title: 'REG Blueprint', description: 'Taxation & Regulation: 5 areas, domain weights, topic breakdown', section: 'REG' },
+        { id: 'cpa-bar-blueprint', type: 'blueprint', title: 'BAR Blueprint', description: 'Business Analysis & Reporting: 3 areas, domain weights, topic breakdown', section: 'BAR' },
+        { id: 'cpa-isc-blueprint', type: 'blueprint', title: 'ISC Blueprint', description: 'Information Systems & Controls: 4 areas, domain weights, topic breakdown', section: 'ISC' },
+        { id: 'cpa-tcp-blueprint', type: 'blueprint', title: 'TCP Blueprint', description: 'Tax Compliance & Planning: 4 areas, domain weights, topic breakdown', section: 'TCP' },
       ],
     },
   ],

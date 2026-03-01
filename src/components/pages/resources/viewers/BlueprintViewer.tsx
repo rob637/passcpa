@@ -56,14 +56,15 @@ const BLUEPRINTS: Record<string, {
     questionTypes?: string[];
   };
 }> = {
-  'cpa': {
-    title: 'CPA Exam Blueprint',
-    examCode: 'Uniform CPA Examination',
+  // CPA section-specific blueprints
+  'cpa-far': {
+    title: 'FAR Blueprint',
+    examCode: 'Financial Accounting & Reporting',
     domains: [
       {
         id: 'FAR-I',
         name: 'Financial Reporting',
-        code: 'FAR Area I',
+        code: 'Area I',
         weight: 30,
         color: '#4F46E5',
         subtopics: [
@@ -76,7 +77,7 @@ const BLUEPRINTS: Record<string, {
       {
         id: 'FAR-II',
         name: 'Select Transactions',
-        code: 'FAR Area II',
+        code: 'Area II',
         weight: 35,
         color: '#7C3AED',
         subtopics: [
@@ -89,7 +90,7 @@ const BLUEPRINTS: Record<string, {
       {
         id: 'FAR-III',
         name: 'State & Local Governments',
-        code: 'FAR Area III',
+        code: 'Area III',
         weight: 20,
         color: '#2563EB',
         subtopics: [
@@ -102,7 +103,7 @@ const BLUEPRINTS: Record<string, {
       {
         id: 'FAR-IV',
         name: 'Non-Profit Accounting',
-        code: 'FAR Area IV',
+        code: 'Area IV',
         weight: 15,
         color: '#059669',
         subtopics: [
@@ -111,6 +112,326 @@ const BLUEPRINTS: Record<string, {
           { name: 'NFP-Specific Topics', description: 'Collections, split-interest agreements', skills: ['Endowment accounting', 'In-kind contributions'] },
         ],
         examTips: ['Focus on net asset classifications', 'Know contribution recognition rules'],
+      },
+    ],
+    examFormat: {
+      duration: '4 hours',
+      questions: '50 MCQ + 7 TBS',
+      passingScore: '75',
+      questionTypes: ['Multiple Choice (50%)', 'Task-Based Simulations (50%)'],
+    },
+  },
+  'cpa-aud': {
+    title: 'AUD Blueprint',
+    examCode: 'Auditing & Attestation',
+    domains: [
+      {
+        id: 'AUD-I',
+        name: 'Ethics, Independence & Professional Conduct',
+        code: 'Area I',
+        weight: 15,
+        color: '#4F46E5',
+        subtopics: [
+          { name: 'AICPA Code of Conduct', description: 'Professional ethics framework', skills: ['Independence rules', 'Integrity and objectivity'] },
+          { name: 'SEC/PCAOB Independence', description: 'Public company requirements', skills: ['Prohibited services', 'Partner rotation'] },
+          { name: 'Professional Responsibilities', description: 'Quality control and due care', skills: ['Engagement acceptance', 'Quality management'] },
+        ],
+        examTips: ['Independence rules are heavily tested', 'Know differences between AICPA and SEC requirements'],
+      },
+      {
+        id: 'AUD-II',
+        name: 'Assessing Risk & Developing Response',
+        code: 'Area II',
+        weight: 25,
+        color: '#7C3AED',
+        subtopics: [
+          { name: 'Risk Assessment', description: 'Understanding the entity and environment', skills: ['Inherent risk', 'Control risk', 'Detection risk'] },
+          { name: 'Internal Control', description: 'Evaluating control environment', skills: ['COSO framework', 'Control deficiencies'] },
+          { name: 'Audit Planning', description: 'Materiality and audit strategy', skills: ['Planning materiality', 'Performance materiality'] },
+        ],
+        examTips: ['Understand the audit risk model thoroughly', 'COSO components are frequently tested'],
+      },
+      {
+        id: 'AUD-III',
+        name: 'Performing Procedures & Evaluating Evidence',
+        code: 'Area III',
+        weight: 35,
+        color: '#2563EB',
+        subtopics: [
+          { name: 'Audit Evidence', description: 'Sufficiency and appropriateness', skills: ['Audit procedures', 'Evidence reliability'] },
+          { name: 'Sampling', description: 'Statistical and nonstatistical', skills: ['Attribute sampling', 'Variables sampling'] },
+          { name: 'Account Balances', description: 'Substantive procedures by cycle', skills: ['Revenue cycle', 'Expenditure cycle', 'Inventory'] },
+        ],
+        examTips: ['Know the assertions and related procedures', 'Sampling questions are calculation-heavy'],
+      },
+      {
+        id: 'AUD-IV',
+        name: 'Forming Conclusions & Reporting',
+        code: 'Area IV',
+        weight: 25,
+        color: '#059669',
+        subtopics: [
+          { name: 'Audit Reports', description: 'Opinion types and elements', skills: ['Unmodified', 'Qualified', 'Adverse', 'Disclaimer'] },
+          { name: 'Subsequent Events', description: 'Type I and Type II events', skills: ['Dual dating', 'Subsequent discovery of facts'] },
+          { name: 'Other Engagements', description: 'Reviews, compilations, attestation', skills: ['SSARS', 'SSAE engagements'] },
+        ],
+        examTips: ['Know opinion types and when to use each', 'Understand the differences between GAAS and PCAOB reports'],
+      },
+    ],
+    examFormat: {
+      duration: '4 hours',
+      questions: '50 MCQ + 7 TBS',
+      passingScore: '75',
+      questionTypes: ['Multiple Choice (50%)', 'Task-Based Simulations (50%)'],
+    },
+  },
+  'cpa-reg': {
+    title: 'REG Blueprint',
+    examCode: 'Taxation & Regulation',
+    domains: [
+      {
+        id: 'REG-I',
+        name: 'Ethics & Responsibilities',
+        code: 'Area I',
+        weight: 10,
+        color: '#4F46E5',
+        subtopics: [
+          { name: 'Circular 230', description: 'Practice before the IRS', skills: ['Due diligence', 'Written advice standards'] },
+          { name: 'Tax Preparer Penalties', description: 'IRC penalty provisions', skills: ['Accuracy penalties', 'Fraud penalties'] },
+          { name: 'Privileged Communications', description: 'Attorney-client privilege', skills: ['Tax practitioner privilege', 'Exceptions'] },
+        ],
+        examTips: ['Circular 230 requirements are frequently tested', 'Know penalty amounts and thresholds'],
+      },
+      {
+        id: 'REG-II',
+        name: 'Business Law',
+        code: 'Area II',
+        weight: 15,
+        color: '#7C3AED',
+        subtopics: [
+          { name: 'Contracts', description: 'Formation and enforcement', skills: ['Offer and acceptance', 'Consideration', 'Defenses'] },
+          { name: 'Agency', description: 'Principal-agent relationships', skills: ['Authority types', 'Liability'] },
+          { name: 'Debtor-Creditor', description: 'Rights and remedies', skills: ['Secured transactions', 'Bankruptcy basics'] },
+        ],
+        examTips: ['Contract formation rules are heavily tested', 'Know UCC vs common law differences'],
+      },
+      {
+        id: 'REG-III',
+        name: 'Federal Tax Individual',
+        code: 'Area III',
+        weight: 25,
+        color: '#2563EB',
+        subtopics: [
+          { name: 'Filing Status & Dependents', description: 'Determining correct status', skills: ['Qualifying child/relative', 'Head of household'] },
+          { name: 'Gross Income', description: 'Inclusions and exclusions', skills: ['W-2 income', 'Investment income', 'Exclusions'] },
+          { name: 'Deductions & Credits', description: 'Above/below the line', skills: ['Itemized deductions', 'Tax credits'] },
+        ],
+        examTips: ['Know current year tax limits', 'Filing status determines many other provisions'],
+      },
+      {
+        id: 'REG-IV',
+        name: 'Federal Tax Entities',
+        code: 'Area IV',
+        weight: 30,
+        color: '#059669',
+        subtopics: [
+          { name: 'Partnerships', description: 'Formation, operations, distributions', skills: ['Basis calculations', 'Special allocations'] },
+          { name: 'S Corporations', description: 'Election and taxation', skills: ['Built-in gains', 'Shareholder basis'] },
+          { name: 'C Corporations', description: 'Regular corporate taxation', skills: ['Dividends received deduction', 'NOL rules'] },
+        ],
+        examTips: ['Basis calculations are heavily tested', 'Know the differences between entity types'],
+      },
+      {
+        id: 'REG-V',
+        name: 'Federal Tax Property Transactions',
+        code: 'Area V',
+        weight: 20,
+        color: '#DC2626',
+        subtopics: [
+          { name: 'Basis & Dispositions', description: 'Computing gain or loss', skills: ['Cost basis', 'Adjusted basis', 'Character of gain/loss'] },
+          { name: 'Section 1031', description: 'Like-kind exchanges', skills: ['Boot recognition', 'Basis in new property'] },
+          { name: 'Installment Sales', description: 'Deferred gain recognition', skills: ['Gross profit ratio', 'Related party rules'] },
+        ],
+        examTips: ['Section 1231/1245/1250 rules are complex but testable', 'Practice basis calculations thoroughly'],
+      },
+    ],
+    examFormat: {
+      duration: '4 hours',
+      questions: '50 MCQ + 7 TBS',
+      passingScore: '75',
+      questionTypes: ['Multiple Choice (50%)', 'Task-Based Simulations (50%)'],
+    },
+  },
+  'cpa-bar': {
+    title: 'BAR Blueprint',
+    examCode: 'Business Analysis & Reporting',
+    domains: [
+      {
+        id: 'BAR-I',
+        name: 'Business Analysis',
+        code: 'Area I',
+        weight: 40,
+        color: '#4F46E5',
+        subtopics: [
+          { name: 'Financial Statement Analysis', description: 'Ratio and trend analysis', skills: ['Liquidity ratios', 'Profitability ratios', 'DuPont analysis'] },
+          { name: 'Prospective Financial Information', description: 'Forecasts and projections', skills: ['Pro forma statements', 'Sensitivity analysis'] },
+          { name: 'Valuation', description: 'Business and asset valuation', skills: ['DCF analysis', 'Market multiples', 'Intangible valuation'] },
+        ],
+        examTips: ['Know all the ratio formulas', 'DCF calculations appear in TBS questions'],
+      },
+      {
+        id: 'BAR-II',
+        name: 'Technical Accounting & Reporting',
+        code: 'Area II',
+        weight: 35,
+        color: '#7C3AED',
+        subtopics: [
+          { name: 'Business Combinations', description: 'Acquisition accounting', skills: ['Purchase price allocation', 'Goodwill measurement'] },
+          { name: 'Consolidations', description: 'Consolidated financial statements', skills: ['Elimination entries', 'Noncontrolling interest'] },
+          { name: 'Derivatives & Hedging', description: 'Derivative accounting', skills: ['Fair value hedges', 'Cash flow hedges', 'Foreign currency'] },
+        ],
+        examTips: ['Consolidation entries are heavily tested in TBS', 'Know the difference between hedging types'],
+      },
+      {
+        id: 'BAR-III',
+        name: 'State & Local Government',
+        code: 'Area III',
+        weight: 25,
+        color: '#2563EB',
+        subtopics: [
+          { name: 'Government Accounting', description: 'Advanced governmental topics', skills: ['CAFR preparation', 'Fund conversions'] },
+          { name: 'Internal Service Funds', description: 'Proprietary fund accounting', skills: ['Cost allocation', 'Interfund transactions'] },
+          { name: 'Special Purpose Governments', description: 'School districts, hospitals', skills: ['Component units', 'Joint ventures'] },
+        ],
+        examTips: ['Know journal entries for fund conversions', 'Practice reconciliation from fund to government-wide'],
+      },
+    ],
+    examFormat: {
+      duration: '4 hours',
+      questions: '50 MCQ + 7 TBS',
+      passingScore: '75',
+      questionTypes: ['Multiple Choice (50%)', 'Task-Based Simulations (50%)'],
+    },
+  },
+  'cpa-isc': {
+    title: 'ISC Blueprint',
+    examCode: 'Information Systems & Controls',
+    domains: [
+      {
+        id: 'ISC-I',
+        name: 'Information Systems & Data Management',
+        code: 'Area I',
+        weight: 30,
+        color: '#4F46E5',
+        subtopics: [
+          { name: 'IT Infrastructure', description: 'Hardware, software, networks', skills: ['System architecture', 'Cloud computing'] },
+          { name: 'Data Management', description: 'Databases and data governance', skills: ['Data quality', 'Master data management'] },
+          { name: 'Emerging Technologies', description: 'AI, blockchain, RPA', skills: ['Technology assessment', 'Business impact'] },
+        ],
+        examTips: ['Understand cloud service models (IaaS, PaaS, SaaS)', 'Know emerging technology applications in accounting'],
+      },
+      {
+        id: 'ISC-II',
+        name: 'Security, Confidentiality, Privacy',
+        code: 'Area II',
+        weight: 30,
+        color: '#7C3AED',
+        subtopics: [
+          { name: 'Cybersecurity', description: 'Threats and vulnerabilities', skills: ['Risk assessment', 'Incident response'] },
+          { name: 'Access Controls', description: 'Authentication and authorization', skills: ['Identity management', 'Privileged access'] },
+          { name: 'Privacy', description: 'Data protection regulations', skills: ['GDPR', 'CCPA', 'Privacy frameworks'] },
+        ],
+        examTips: ['Security frameworks (NIST, COBIT) are heavily tested', 'Know types of cyberattacks'],
+      },
+      {
+        id: 'ISC-III',
+        name: 'Consideration of System & Org Controls',
+        code: 'Area III',
+        weight: 25,
+        color: '#2563EB',
+        subtopics: [
+          { name: 'SOC Reports', description: 'Types and uses of SOC reports', skills: ['SOC 1 vs SOC 2', 'Type I vs Type II'] },
+          { name: 'IT General Controls', description: 'ITGCs and application controls', skills: ['Change management', 'Logical access'] },
+          { name: 'Trust Services Criteria', description: 'AICPA TSC framework', skills: ['Security', 'Availability', 'Processing integrity'] },
+        ],
+        examTips: ['Know when to use SOC 1 vs SOC 2 reports', 'Understand the five Trust Services Criteria'],
+      },
+      {
+        id: 'ISC-IV',
+        name: 'System Development & Business Continuity',
+        code: 'Area IV',
+        weight: 15,
+        color: '#059669',
+        subtopics: [
+          { name: 'SDLC', description: 'System development lifecycle', skills: ['Phases', 'Methodologies (Agile, Waterfall)'] },
+          { name: 'Business Continuity', description: 'BCP and disaster recovery', skills: ['BIA', 'RTO/RPO', 'Testing strategies'] },
+          { name: 'Change Management', description: 'IT change processes', skills: ['Change controls', 'Documentation'] },
+        ],
+        examTips: ['Know SDLC phases and controls at each stage', 'BCP/DRP questions are common'],
+      },
+    ],
+    examFormat: {
+      duration: '4 hours',
+      questions: '50 MCQ + 7 TBS',
+      passingScore: '75',
+      questionTypes: ['Multiple Choice (50%)', 'Task-Based Simulations (50%)'],
+    },
+  },
+  'cpa-tcp': {
+    title: 'TCP Blueprint',
+    examCode: 'Tax Compliance & Planning',
+    domains: [
+      {
+        id: 'TCP-I',
+        name: 'Tax Compliance for Individuals',
+        code: 'Area I',
+        weight: 30,
+        color: '#4F46E5',
+        subtopics: [
+          { name: 'Income Taxation', description: 'Complex individual tax issues', skills: ['AMT', 'Net investment income tax', 'Self-employment tax'] },
+          { name: 'Property Transactions', description: 'Advanced disposition topics', skills: ['Section 1202', 'Opportunity zones', 'Qualified small business stock'] },
+          { name: 'Tax Credits', description: 'Individual tax credits', skills: ['Foreign tax credit', 'Education credits', 'Energy credits'] },
+        ],
+        examTips: ['AMT calculations are tested in TBS', 'Know property transaction character rules'],
+      },
+      {
+        id: 'TCP-II',
+        name: 'Tax Compliance for Entities',
+        code: 'Area II',
+        weight: 30,
+        color: '#7C3AED',
+        subtopics: [
+          { name: 'Corporate Taxation', description: 'Advanced C corporation topics', skills: ['Reorganizations', 'Consolidated returns', 'Tax attributes'] },
+          { name: 'Pass-Through Entities', description: 'Advanced partnership and S corp', skills: ['Section 754 elections', 'Built-in gains', 'Distributions'] },
+          { name: 'Exempt Organizations', description: 'Tax-exempt entity compliance', skills: ['UBIT', 'Private foundations', 'Political activities'] },
+        ],
+        examTips: ['Reorganization types (A, B, C, D) are frequently tested', 'Know exempt organization filing requirements'],
+      },
+      {
+        id: 'TCP-III',
+        name: 'Tax Planning',
+        code: 'Area III',
+        weight: 25,
+        color: '#2563EB',
+        subtopics: [
+          { name: 'Entity Selection', description: 'Choosing business structure', skills: ['Tax implications', 'Liability considerations', 'Exit strategies'] },
+          { name: 'Compensation Planning', description: 'Executive compensation', skills: ['Stock options', 'Deferred compensation', 'Retirement plans'] },
+          { name: 'Multi-State Taxation', description: 'State and local tax issues', skills: ['Nexus', 'Apportionment', 'Credits'] },
+        ],
+        examTips: ['Entity selection questions require comparative analysis', 'Know retirement plan types and limits'],
+      },
+      {
+        id: 'TCP-IV',
+        name: 'Wealth Transfer & Estate Tax',
+        code: 'Area IV',
+        weight: 15,
+        color: '#059669',
+        subtopics: [
+          { name: 'Gift Tax', description: 'Lifetime gift taxation', skills: ['Annual exclusion', 'Gift splitting', 'Valuation'] },
+          { name: 'Estate Tax', description: 'Estate and inheritance', skills: ['Unified credit', 'Marital deduction', 'Portability'] },
+          { name: 'Generation-Skipping Tax', description: 'GST rules', skills: ['Skip persons', 'Exemptions', 'Direct skips'] },
+        ],
+        examTips: ['Know current exemption amounts', 'Estate/gift planning questions often involve trusts'],
       },
     ],
     examFormat: {
@@ -478,13 +799,25 @@ const BLUEPRINTS: Record<string, {
   },
 };
 
-export const BlueprintViewer: React.FC<BlueprintViewerProps> = ({ courseId }) => {
+export const BlueprintViewer: React.FC<BlueprintViewerProps> = ({ courseId, item }) => {
   const navigate = useNavigate();
   const [expandedDomain, setExpandedDomain] = useState<string | null>(null);
   
-  // Get course key without version suffix
-  const courseKey = courseId.split('-')[0];
-  const blueprint = BLUEPRINTS[courseKey];
+  // Get blueprint key - use item id for section-specific blueprints, otherwise course
+  // e.g., 'cpa-far-blueprint' -> 'cpa-far', 'cpa-blueprint' -> 'cpa'
+  const getBlueprintKey = () => {
+    if (item?.id) {
+      // Extract section from id like 'cpa-far-blueprint' -> 'cpa-far'
+      const match = item.id.match(/^(\w+)-(\w+)-blueprint$/);
+      if (match) {
+        return `${match[1]}-${match[2]}`;
+      }
+    }
+    return courseId.split('-')[0];
+  };
+  
+  const blueprintKey = getBlueprintKey();
+  const blueprint = BLUEPRINTS[blueprintKey];
   
   if (!blueprint) {
     return (

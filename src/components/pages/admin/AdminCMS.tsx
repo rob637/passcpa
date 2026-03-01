@@ -1892,11 +1892,16 @@ const AdminCMS: React.FC = () => {
   const setSubscriptionTier = async (userId: string, tier: 'free' | 'lifetime') => {
     if (!isAdmin) return;
     const confirmMsg = tier === 'lifetime'
-      ? 'Grant LIFETIME premium access to this user?'
+      ? 'Grant LIFETIME premium access to this user (ALL exams)?'
       : 'Remove premium access from this user?';
     if (!window.confirm(confirmMsg)) return;
     
     try {
+      const { Timestamp, setDoc: firestoreSetDoc } = await import('firebase/firestore');
+      const now = Timestamp.now();
+      const allExams = ['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'];
+      
+      // Update users collection (legacy/display)
       const userRef = doc(db, 'users', userId);
       await updateDoc(userRef, { 
         'subscription.tier': tier,
@@ -1904,6 +1909,45 @@ const AdminCMS: React.FC = () => {
         'subscription.grantedBy': user?.email,
         'subscription.grantedAt': new Date().toISOString(),
       });
+      
+      // Update subscriptions collection (where the app actually checks access)
+      const subRef = doc(db, 'subscriptions', userId);
+      if (tier === 'lifetime') {
+        // Grant lifetime access to ALL exams
+        const paidExams: Record<string, { tier: string; status: string; grantedBy: string; grantedAt: typeof now }> = {};
+        for (const examId of allExams) {
+          paidExams[examId] = {
+            tier: 'lifetime',
+            status: 'active',
+            grantedBy: user?.email || 'admin',
+            grantedAt: now,
+          };
+        }
+        await firestoreSetDoc(subRef, {
+          tier: 'lifetime',
+          status: 'active',
+          paidExams,
+          updatedAt: now,
+          modifiedBy: user?.email,
+        }, { merge: true });
+      } else {
+        // Revoke: set all exams to inactive
+        const paidExams: Record<string, { tier: string; status: string }> = {};
+        for (const examId of allExams) {
+          paidExams[examId] = {
+            tier: 'free',
+            status: 'inactive',
+          };
+        }
+        await firestoreSetDoc(subRef, {
+          tier: 'free',
+          status: 'inactive',
+          paidExams,
+          updatedAt: now,
+          modifiedBy: user?.email,
+        }, { merge: true });
+      }
+      
       addLog(`${tier === 'lifetime' ? 'Granted' : 'Revoked'} premium for user ${userId}`, 'success');
       loadUsers();
     } catch (error) {

@@ -16,6 +16,7 @@ export interface MnemonicFlashcard {
   topic?: string;
   difficulty?: 'easy' | 'medium' | 'hard';
   mnemonic?: string;
+  blueprintArea?: string;
 }
 
 // ==========================================

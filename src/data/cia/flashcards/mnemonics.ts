@@ -4,11 +4,12 @@
  * Based on IIA Standards and best practices
  */
 
-import { CIAFlashcard } from './index';
+import type { Flashcard } from './index';
 
-// Extended CIAFlashcard with optional mnemonic field
-interface CIAMnemonicFlashcard extends CIAFlashcard {
+// Extended Flashcard with optional mnemonic field for CIA mnemonics
+interface CIAMnemonicFlashcard extends Flashcard {
   mnemonic?: string;
+  blueprintArea?: string;
 }
 
 // ==========================================

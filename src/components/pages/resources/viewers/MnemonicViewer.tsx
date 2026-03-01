@@ -92,19 +92,19 @@ export const MnemonicViewer: React.FC<MnemonicViewerProps> = ({ courseId, item }
           // CIA - consolidated (check both topic and subtopic)
           'cia-mn-3lines': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+            return ((m.CIA1_MNEMONICS || []) as MnemonicCard[]).filter((c) => 
               c.topic?.includes('Three Lines') || c.subtopic?.includes('Three Lines')
             );
           },
           'cia-mn-qaip': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+            return ((m.CIA1_MNEMONICS || []) as MnemonicCard[]).filter((c) => 
               c.topic?.includes('QAIP') || c.subtopic?.includes('QAIP')
             );
           },
           'cia-mn-fraud': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+            return ((m.CIA1_MNEMONICS || []) as MnemonicCard[]).filter((c) => 
               c.topic?.includes('Fraud') || c.subtopic?.includes('Fraud')
             );
           },

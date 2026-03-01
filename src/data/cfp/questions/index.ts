@@ -15,22 +15,22 @@ import retData from '../../../../content/cfp/CFP-RET/questions.json';
 import riskData from '../../../../content/cfp/CFP-RISK/questions.json';
 import taxData from '../../../../content/cfp/CFP-TAX/questions.json';
 
-// Type for the JSON structure
+// Type for the JSON structure (loose typing to handle JSON variations)
 interface QuestionFile {
   section: string;
   exportedAt: string;
   questions: Question[];
 }
 
-// Cast and extract questions arrays
-const estQuestions = (estData as QuestionFile).questions;
-const genQuestions = (genData as QuestionFile).questions;
-const invQuestions = (invData as QuestionFile).questions;
-const pcrQuestions = (pcrData as QuestionFile).questions;
-const psyQuestions = (psyData as QuestionFile).questions;
-const retQuestions = (retData as QuestionFile).questions;
-const riskQuestions = (riskData as QuestionFile).questions;
-const taxQuestions = (taxData as QuestionFile).questions;
+// Cast via unknown to handle minor JSON type variations (e.g., whyWrong key formats)
+const estQuestions = (estData as unknown as QuestionFile).questions;
+const genQuestions = (genData as unknown as QuestionFile).questions;
+const invQuestions = (invData as unknown as QuestionFile).questions;
+const pcrQuestions = (pcrData as unknown as QuestionFile).questions;
+const psyQuestions = (psyData as unknown as QuestionFile).questions;
+const retQuestions = (retData as unknown as QuestionFile).questions;
+const riskQuestions = (riskData as unknown as QuestionFile).questions;
+const taxQuestions = (taxData as unknown as QuestionFile).questions;
 
 // Section map for lookups
 const sectionMap: Record<string, Question[]> = {

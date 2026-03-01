@@ -19,45 +19,6 @@ import remarkGfm from 'remark-gfm';
 import { TBS, TBSRequirement, TBS_TYPES } from '../../types';
 import clsx from 'clsx';
 
-// Styled markdown components for tables
-const markdownComponents = {
-  table: ({ children }: { children?: React.ReactNode }) => (
-    <div className="overflow-x-auto my-4">
-      <table className="min-w-full border-collapse border border-slate-300 dark:border-slate-600 text-sm">
-        {children}
-      </table>
-    </div>
-  ),
-  thead: ({ children }: { children?: React.ReactNode }) => (
-    <thead className="bg-slate-100 dark:bg-slate-700">{children}</thead>
-  ),
-  th: ({ children }: { children?: React.ReactNode }) => (
-    <th className="border border-slate-300 dark:border-slate-600 px-4 py-2 text-left font-semibold text-slate-900 dark:text-slate-100">
-      {children}
-    </th>
-  ),
-  td: ({ children }: { children?: React.ReactNode }) => (
-    <td className="border border-slate-300 dark:border-slate-600 px-4 py-2 text-slate-700 dark:text-slate-300">
-      {children}
-    </td>
-  ),
-  tr: ({ children }: { children?: React.ReactNode }) => (
-    <tr className="even:bg-slate-50 dark:even:bg-slate-800/50">{children}</tr>
-  ),
-  p: ({ children }: { children?: React.ReactNode }) => (
-    <p className="mb-3 last:mb-0">{children}</p>
-  ),
-  ul: ({ children }: { children?: React.ReactNode }) => (
-    <ul className="list-disc list-inside mb-3 space-y-1">{children}</ul>
-  ),
-  li: ({ children }: { children?: React.ReactNode }) => (
-    <li className="text-slate-700 dark:text-slate-300">{children}</li>
-  ),
-  strong: ({ children }: { children?: React.ReactNode }) => (
-    <strong className="font-semibold text-slate-900 dark:text-slate-100">{children}</strong>
-  ),
-};
-
 interface TBSRendererProps {
   tbs: TBS;
   answers: Record<string, unknown>;
@@ -399,8 +360,8 @@ const TBSRenderer: React.FC<TBSRendererProps> = ({
             <Info className="w-5 h-5 text-primary-500 mt-0.5 shrink-0" />
             <div className="flex-1 min-w-0">
               <h3 className="font-medium text-slate-800 dark:text-white mb-2">Scenario</h3>
-              <div className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed prose prose-slate dark:prose-invert prose-sm max-w-none">
-                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+              <div className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed prose prose-slate dark:prose-invert prose-sm max-w-none prose-table:border-collapse prose-table:border prose-table:border-slate-300 prose-th:border prose-th:border-slate-300 prose-th:px-4 prose-th:py-2 prose-th:bg-slate-100 prose-td:border prose-td:border-slate-300 prose-td:px-4 prose-td:py-2 dark:prose-table:border-slate-600 dark:prose-th:border-slate-600 dark:prose-th:bg-slate-700 dark:prose-td:border-slate-600">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {tbs.scenario}
                 </ReactMarkdown>
               </div>

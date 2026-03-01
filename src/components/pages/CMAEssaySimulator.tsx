@@ -101,16 +101,16 @@ const CMAEssaySimulator: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const completionPrompt = `
-      Task Scenario: ${currentTask.scenario}
-      
-      Task Requirements: ${currentTask.task || currentTask.prompt}
-      
-      Student Response: ${response}
-      
-      Please evaluate this response based on the CMA Essay Grading Rubric.
-      Include a numerical score out of 100 at the end in the format: "Score: XX/100"
-      `;
+      const completionPrompt = `**TASK SCENARIO:**
+${currentTask.scenario}
+
+**TASK REQUIREMENTS:**
+${currentTask.task || currentTask.prompt}
+
+**STUDENT RESPONSE:**
+${response}
+
+Grade this essay response strictly against the scenario and task requirements above. Use the rubric provided in your instructions. End with "Score: XX/100".`;
 
       const feedback = await aiService.generateAIResponse(
         completionPrompt, 

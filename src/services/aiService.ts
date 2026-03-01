@@ -162,13 +162,42 @@ IMPORTANT CONVERSATION RULES:
 
 Start by asking what they already know, then build from there with questions.`,
 
-    evaluate: `You are an expert ${course.shortName} Essay Grader. Your role is to evaluate a student's written response to an exam scenario.
-- Grade the response on a scale of 0-10 based on technical accuracy, clarity, and completeness.
-- Compare their response to the standard solution concepts.
-- Provide specific feedback on what they missed.
-- Ignore minor grammar/spelling issues unless they affect meaning (this is a test of knowledge, not English).
-- Be strict but constructive. The user needs to pass a rigorous professional exam.
-- Do NOT output your internal reasoning process. Only output the final grading and feedback.
+    evaluate: `You are an expert ${course.shortName} Essay Grader for the ${course.name} exam. Your ONLY task is to grade a student's written essay response against the given scenario and task requirements.
+
+GRADING RUBRIC (evaluate on 0-100 scale):
+1. **Technical Accuracy (0-35 points)**: Are the concepts, calculations, and reasoning correct?
+2. **Completeness (0-25 points)**: Did the response address ALL parts of the task requirement?
+3. **Analysis & Depth (0-20 points)**: Does the response show understanding beyond surface-level?
+4. **Organization & Communication (0-10 points)**: Is it well-structured and professional?
+5. **Practical Application (0-10 points)**: Does it connect theory to the scenario?
+
+OUTPUT FORMAT — You MUST follow this structure:
+## Overall Assessment
+[1-2 sentence summary of performance]
+
+## Score Breakdown
+- Technical Accuracy: X/35
+- Completeness: X/25
+- Analysis & Depth: X/20
+- Organization: X/10
+- Practical Application: X/10
+
+## Strengths
+[Bullet points of what the student did well]
+
+## Areas for Improvement
+[Bullet points of what was missing or incorrect]
+
+## Key Points Missed
+[Specific concepts or calculations the student should have included]
+
+Score: XX/100
+
+IMPORTANT RULES:
+- ONLY evaluate the student response against the given scenario. Do NOT teach, tutor, or explain unrelated topics.
+- Ignore minor grammar/spelling issues unless they affect meaning.
+- Be strict but constructive — the student needs to pass a rigorous professional exam.
+- Do NOT output your internal reasoning process.
 ${examStructureContext}`,
 
     quiz: `You are Vory, a ${course.shortName} exam quiz master for VoraPrep. Your role is to:
@@ -337,6 +366,11 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     }
   }
 
+  // EVALUATE MODE (essay grading fallback)
+  if (mode === 'evaluate') {
+    return `## ⚠️ AI Grading Temporarily Unavailable\n\nThe AI grading service could not process your essay at this time. Your response has been saved.\n\n**Self-Assessment Checklist:**\n\n1. **Completeness**: Did you address ALL parts of the task requirement?\n2. **Technical Accuracy**: Are your calculations and reasoning correct?\n3. **Structure**: Did you organize your response with clear sections?\n4. **Depth**: Did you explain the "why" behind your conclusions?\n5. **Professional Tone**: Would this answer earn credit on the actual ${course.shortName} exam?\n\n**Tip:** Review the Key Points section below to see what should have been covered, then try submitting again.`;
+  }
+
   // SOCRATIC MODE
   if (mode === 'socratic') {
     if (lowerInput.includes('lease')) {
@@ -469,6 +503,8 @@ export const generateAIResponse = async (
       parts: [{ text: userMessage }],
     });
 
+    // Essay grading needs more tokens for detailed rubric feedback
+    const maxTokens = mode === 'evaluate' ? 2048 : 1024;
     let responseText: string;
 
     if (useProxy || !apiKey) {
@@ -485,7 +521,7 @@ export const generateAIResponse = async (
           temperature: 0.7,
           topK: 40,
           topP: 0.95,
-          maxOutputTokens: 1024,
+          maxOutputTokens: maxTokens,
         },
       });
 
@@ -504,7 +540,7 @@ export const generateAIResponse = async (
               temperature: 0.7,
               topK: 40,
               topP: 0.95,
-              maxOutputTokens: 1024,
+              maxOutputTokens: maxTokens,
             },
             safetySettings: [
               { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },

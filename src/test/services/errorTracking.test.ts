@@ -169,7 +169,7 @@ describe('errorTracking', () => {
   describe('captureError', () => {
     it('should capture error with default context', () => {
       const error = new Error('Test error');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result).toMatchObject({
         message: 'Test error',
@@ -181,63 +181,63 @@ describe('errorTracking', () => {
 
     it('should capture error with custom severity', () => {
       const error = new Error('Critical error');
-      const result = captureError(error, { severity: ErrorSeverity.CRITICAL });
+      const result = captureError(error, { severity: ErrorSeverity.CRITICAL })!;
 
       expect(result.severity).toBe(ErrorSeverity.CRITICAL);
     });
 
     it('should capture error with custom category', () => {
       const error = new Error('Auth error');
-      const result = captureError(error, { category: ErrorCategory.AUTH });
+      const result = captureError(error, { category: ErrorCategory.AUTH })!;
 
       expect(result.category).toBe(ErrorCategory.AUTH);
     });
 
     it('should categorize network errors', () => {
       const error = new Error('Network request failed');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.NETWORK);
     });
 
     it('should categorize fetch errors as network', () => {
       const error = new Error('fetch failed');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.NETWORK);
     });
 
     it('should categorize offline errors as network', () => {
       const error = new Error('offline mode');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.NETWORK);
     });
 
     it('should categorize auth errors', () => {
       const error = new Error('Authentication required');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.AUTH);
     });
 
     it('should categorize permission denied as auth', () => {
       const error = new Error('permission denied');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.AUTH);
     });
 
     it('should categorize firebase errors', () => {
       const error = new Error('Firebase error occurred');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.FIREBASE);
     });
 
     it('should categorize firestore errors', () => {
       const error = new Error('firestore read failed');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.FIREBASE);
     });
@@ -245,41 +245,41 @@ describe('errorTracking', () => {
     it('should categorize React errors as UI', () => {
       const error = new Error('React component error');
       error.name = 'ReactError';
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.UI);
     });
 
     it('should categorize react errors by message', () => {
       const error = new Error('react render failed');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.UI);
     });
 
     it('should categorize validation errors', () => {
       const error = new Error('Validation failed');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.VALIDATION);
     });
 
     it('should categorize invalid input errors as validation', () => {
       const error = new Error('invalid input');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.VALIDATION);
     });
 
     it('should categorize unknown errors', () => {
       const error = new Error('Something strange happened');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.category).toBe(ErrorCategory.UNKNOWN);
     });
 
     it('should handle non-Error objects', () => {
-      const result = captureError('String error');
+      const result = captureError('String error')!;
 
       expect(result.message).toBe('String error');
       expect(result.stack).toBeUndefined();
@@ -287,7 +287,7 @@ describe('errorTracking', () => {
 
     it('should capture error stack', () => {
       const error = new Error('Error with stack');
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       expect(result.stack).toBeDefined();
       expect(result.stack).toContain('Error with stack');
@@ -295,7 +295,7 @@ describe('errorTracking', () => {
 
     it('should include context information', () => {
       const error = new Error('Test');
-      const result = captureError(error, { source: 'test.js', lineno: 42 });
+      const result = captureError(error, { source: 'test.js', lineno: 42 })!;
 
       expect(result.context.source).toBe('test.js');
       expect(result.context.lineno).toBe(42);
@@ -306,8 +306,8 @@ describe('errorTracking', () => {
 
     it('should generate consistent session ID', () => {
       const error = new Error('Test');
-      const result1 = captureError(error);
-      const result2 = captureError(error);
+      const result1 = captureError(error)!;
+      const result2 = captureError(error)!;
 
       expect(result1.sessionId).toBe(result2.sessionId);
     });
@@ -321,7 +321,7 @@ describe('errorTracking', () => {
 
     it('should handle errors with null message', () => {
       const error = { message: null };
-      const result = captureError(error);
+      const result = captureError(error)!;
 
       // String(error) will be '[object Object]'
       expect(typeof result.message).toBe('string');

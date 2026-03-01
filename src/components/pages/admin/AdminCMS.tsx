@@ -1063,7 +1063,7 @@ const AdminCMS: React.FC = () => {
   }, [isAdmin]);
 
   // Find stale accounts (incomplete onboarding, 7+ days old)
-  const findStaleAccounts = useCallback(async () => {
+  const _findStaleAccounts = useCallback(async () => {
     if (!isAdmin) return;
     setIsLoadingStale(true);
     setStaleStatus(null);
@@ -1111,7 +1111,7 @@ const AdminCMS: React.FC = () => {
   }, [isAdmin]);
 
   // Delete stale accounts (Firestore only - doesn't delete from Auth)
-  const deleteStaleAccounts = useCallback(async () => {
+  const _deleteStaleAccounts = useCallback(async () => {
     if (!isAdmin || staleAccounts.length === 0) return;
     
     const confirmed = window.confirm(
@@ -1157,7 +1157,7 @@ const AdminCMS: React.FC = () => {
   const BETA_TRIAL_END = new Date('2026-03-01T23:59:59Z');
   const BETA_TRIAL_START = new Date('2026-02-15T00:00:00Z');
 
-  const previewBetaTransition = useCallback(async () => {
+  const _previewBetaTransition = useCallback(async () => {
     setBetaTransitionStatus('preview');
     setBetaTransitionResults(null);
     
@@ -1198,7 +1198,7 @@ const AdminCMS: React.FC = () => {
     }
   }, []);
 
-  const executeBetaTransition = useCallback(async () => {
+  const _executeBetaTransition = useCallback(async () => {
     if (!betaTransitionResults || betaTransitionResults.toUpdate.length === 0) return;
     
     const confirmed = window.confirm(
@@ -1355,11 +1355,11 @@ const AdminCMS: React.FC = () => {
       const q = query(collection(db, 'users'), limit(1000));
       const querySnapshot = await getDocs(q);
       const users: UserDocument[] = [];
-      querySnapshot.forEach((doc) => {
-        const data = doc.data() as UserDocument;
+      querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data() as UserDocument;
         // Skip soft-deleted users (same as Users tab)
         if (data.deletedAt) return;
-        users.push({ id: doc.id, ...data });
+        users.push({ ...data, id: docSnap.id });
       });
       
       // Total users excluding deleted
@@ -2329,7 +2329,7 @@ const AdminCMS: React.FC = () => {
   }, [isAdmin]);
 
   // Update report status
-  const updateReportStatus = useCallback(async (reportId: string, newStatus: 'reviewed' | 'resolved' | 'dismissed') => {
+  const _updateReportStatus = useCallback(async (reportId: string, newStatus: 'reviewed' | 'resolved' | 'dismissed') => {
     if (!isAdmin) return;
     try {
       await updateDoc(doc(db, 'questionReports', reportId), { 
@@ -2348,7 +2348,7 @@ const AdminCMS: React.FC = () => {
   }, [isAdmin, user?.email]);
 
   // Generate AI response for a question report
-  const generateReportResponse = useCallback(async (report: QuestionReport) => {
+  const _generateReportResponse = useCallback(async (report: QuestionReport) => {
     setGeneratingResponse(report.id);
     try {
       // Fetch the actual question data to craft a good response
@@ -2431,7 +2431,7 @@ VoraPrep Team`;
   }, []);
 
   // Copy response to clipboard
-  const copyResponseToClipboard = useCallback((reportId: string) => {
+  const _copyResponseToClipboard = useCallback((reportId: string) => {
     const response = reportResponses[reportId];
     if (response) {
       navigator.clipboard.writeText(response);
@@ -2440,7 +2440,7 @@ VoraPrep Team`;
   }, [reportResponses]);
 
   // Send response email directly
-  const sendReportResponseEmail = useCallback(async (report: QuestionReport) => {
+  const _sendReportResponseEmail = useCallback(async (report: QuestionReport) => {
     const response = reportResponses[report.id];
     const recipientEmail = report.reportedByEmail || report.reportedBy;
     
@@ -5358,9 +5358,9 @@ VoraPrep Team`;
                         {functionStatuses.growthAutoPublish?.lastRun && (
                           <div>📅 <strong>Last run:</strong> {format(functionStatuses.growthAutoPublish.lastRun, 'MMM d, h:mm a')}</div>
                         )}
-                        {functionStatuses.growthAutoPublish?.details?.published && (
+                        {functionStatuses.growthAutoPublish?.details?.published ? (
                           <div>📝 <strong>Last published:</strong> {String(functionStatuses.growthAutoPublish.details.published).substring(0, 40)}...</div>
-                        )}
+                        ) : null}
                       </div>
                     </div>
 

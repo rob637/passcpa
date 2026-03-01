@@ -15,7 +15,7 @@ import {
   Globe, Layers, Settings, RefreshCw, ArrowUpRight,
   ArrowDownRight, ChevronDown, ChevronRight, ChevronLeft,
   Lightbulb, BookOpen, PenTool, Award,
-  Shield, Pause, Save, Sliders, Newspaper, Trash2, Radio, Sparkles, Edit3, Plus, Loader2,
+  Shield, Pause, Save, Sliders, Newspaper, Trash2, Radio, Sparkles, Plus, Loader2,
 } from 'lucide-react';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
@@ -33,9 +33,7 @@ import {
   generateFullContentMatrix,
   generateStateCPABriefs,
   generateAllCampaigns,
-  createCustomAdGroup,
   getAICampaignPrompt,
-  type CustomAdGroupInput,
 } from '../../../services/growth';
 import {
   getGrowthConfig,
@@ -1246,6 +1244,9 @@ function SEMTab({ status }: { status: ReturnType<typeof getGrowthEngineStatus> |
               finalUrl: `https://voraprep.com${custom.landingPage}`,
               displayPath: [custom.courseId.toUpperCase(), 'Questions'],
               status: 'active' as const,
+              impressions: 0,
+              clicks: 0,
+              conversions: 0,
             }],
             landingPage: custom.landingPage,
             maxCpc: custom.maxCpc,
@@ -1487,7 +1488,7 @@ function AICampaignBuilder() {
   const [concept, setConcept] = useState('');
   const [generating, setGenerating] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [generated, setGenerated] = useState<AIGeneratedContent | null>(null);
+  const [_generated, setGenerated] = useState<AIGeneratedContent | null>(null);
   const [editedHeadlines, setEditedHeadlines] = useState<string[]>([]);
   const [editedDescriptions, setEditedDescriptions] = useState<string[]>([]);
   const [editedKeywords, setEditedKeywords] = useState<{ kw: string; match: 'broad' | 'phrase' | 'exact' }[]>([]);

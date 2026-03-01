@@ -17,13 +17,13 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import {
-  collection, query, where, orderBy, getDocs, doc, updateDoc, addDoc, deleteDoc,
+  collection, query, orderBy, getDocs, doc, updateDoc, addDoc, deleteDoc,
   Timestamp, limit,
 } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
 import { db, functions } from '../../../config/firebase';
 import {
-  FileText, Check, X, Eye, ChevronLeft, Edit3, Plus,
+  FileText, Check, X, Eye, Edit3, Plus,
   Calendar, RefreshCw, Send, Trash2, Clock, CheckCircle, AlertCircle,
   Filter, Linkedin, MessageSquare, User, ExternalLink,
 } from 'lucide-react';

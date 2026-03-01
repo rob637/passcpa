@@ -203,9 +203,9 @@ interface RouteProps {
   skipOnboarding?: boolean;
 }
 
-const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
-  const { user, userProfile, loading, profileLoaded } = useAuth();
-  const { courseId } = useCourse();
+const ProtectedRoute = ({ children, skipOnboarding: _skipOnboarding = false }: RouteProps) => {
+  const { user, userProfile: _userProfile, loading, profileLoaded } = useAuth();
+  const { courseId: _courseId } = useCourse();
   const location = useLocation();
 
   if (loading) {

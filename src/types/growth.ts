@@ -103,7 +103,7 @@ export type ContentType =
 export type ContentStatus = 'brief' | 'draft' | 'review' | 'approved' | 'published' | 'archived' | 'updating';
 
 /** Distribution channel status */
-export type DistributionStatus = 'pending' | 'posted' | 'skipped' | 'failed';
+export type DistributionStatus = 'pending' | 'posted' | 'skipped' | 'failed' | 'included';
 
 /** Distribution tracking for a single channel */
 export interface ChannelDistribution {

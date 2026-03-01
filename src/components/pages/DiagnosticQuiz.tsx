@@ -21,6 +21,8 @@ import {
   Clock,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   CheckCircle,
   AlertTriangle,
   ArrowRight,
@@ -31,6 +33,7 @@ import {
   X,
   Sparkles,
   Brain,
+  FileText,
 } from 'lucide-react';
 
 import type { CourseId } from '../../types/course';
@@ -371,6 +374,9 @@ function DiagnosticResults({ result, quiz, answers, onContinue, onRetake }: Diag
           </div>
         )}
 
+        {/* Review Answers Section */}
+        <AnswerReview quiz={quiz} answers={answers} />
+
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button variant="outline" onClick={onRetake} leftIcon={Brain}>
@@ -381,6 +387,168 @@ function DiagnosticResults({ result, quiz, answers, onContinue, onRetake }: Diag
           </Button>
         </div>
       </div>
+    </div>
+  );
+}
+
+// ============================================
+// Answer Review Component
+// ============================================
+interface AnswerReviewProps {
+  quiz: DiagnosticQuizType;
+  answers: (number | null)[];
+}
+
+function AnswerReview({ quiz, answers }: AnswerReviewProps) {
+  const [expanded, setExpanded] = useState(false);
+  const [filter, setFilter] = useState<'all' | 'incorrect'>('incorrect');
+  
+  // Get questions with answers to review
+  const questionsToReview = quiz.questions.map((q, idx) => ({
+    ...q,
+    questionIndex: idx,
+    userAnswer: answers[idx],
+    isCorrect: answers[idx] === q.correctAnswer,
+  }));
+  
+  const incorrectCount = questionsToReview.filter(q => !q.isCorrect && q.userAnswer !== null).length;
+  const filteredQuestions = filter === 'incorrect' 
+    ? questionsToReview.filter(q => !q.isCorrect) 
+    : questionsToReview;
+
+  return (
+    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 mb-6 overflow-hidden">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full p-4 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+      >
+        <div className="flex items-center gap-2">
+          <FileText className="w-5 h-5 text-blue-500" />
+          <span className="font-semibold text-gray-900 dark:text-white">
+            Review Answers
+          </span>
+          {incorrectCount > 0 && (
+            <span className="text-xs px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-full">
+              {incorrectCount} incorrect
+            </span>
+          )}
+        </div>
+        {expanded ? (
+          <ChevronUp className="w-5 h-5 text-gray-400" />
+        ) : (
+          <ChevronDown className="w-5 h-5 text-gray-400" />
+        )}
+      </button>
+      
+      {expanded && (
+        <div className="border-t border-gray-200 dark:border-gray-800">
+          {/* Filter tabs */}
+          <div className="flex gap-2 p-4 border-b border-gray-200 dark:border-gray-800">
+            <button
+              onClick={() => setFilter('incorrect')}
+              className={clsx(
+                'px-3 py-1.5 text-sm rounded-full transition-colors',
+                filter === 'incorrect'
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+              )}
+            >
+              Incorrect ({incorrectCount})
+            </button>
+            <button
+              onClick={() => setFilter('all')}
+              className={clsx(
+                'px-3 py-1.5 text-sm rounded-full transition-colors',
+                filter === 'all'
+                  ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200'
+              )}
+            >
+              All ({quiz.questions.length})
+            </button>
+          </div>
+          
+          {/* Question list */}
+          <div className="max-h-[500px] overflow-y-auto">
+            {filteredQuestions.length === 0 ? (
+              <div className="p-6 text-center text-gray-500 dark:text-gray-400">
+                <CheckCircle className="w-8 h-8 mx-auto mb-2 text-green-500" />
+                <p>Great job! You got all questions correct.</p>
+              </div>
+            ) : (
+              <div className="divide-y divide-gray-200 dark:divide-gray-800">
+                {filteredQuestions.map((q) => (
+                  <div key={q.id} className="p-4">
+                    {/* Question number and text */}
+                    <div className="flex items-start gap-2 mb-3">
+                      <span className={clsx(
+                        'flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold',
+                        q.isCorrect 
+                          ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                          : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                      )}>
+                        {q.questionIndex + 1}
+                      </span>
+                      <p className="text-sm text-gray-900 dark:text-white font-medium">
+                        {q.question}
+                      </p>
+                    </div>
+                    
+                    {/* Options with user answer and correct answer highlighted */}
+                    <div className="space-y-2 mb-3 pl-8">
+                      {q.options.map((option, optIdx) => {
+                        const isUserAnswer = q.userAnswer === optIdx;
+                        const isCorrectAnswer = q.correctAnswer === optIdx;
+                        
+                        return (
+                          <div
+                            key={optIdx}
+                            className={clsx(
+                              'flex items-start gap-2 p-2 rounded-lg text-sm',
+                              isCorrectAnswer && 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800',
+                              isUserAnswer && !isCorrectAnswer && 'bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800',
+                              !isUserAnswer && !isCorrectAnswer && 'text-gray-600 dark:text-gray-400'
+                            )}
+                          >
+                            <span className={clsx(
+                              'flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-medium',
+                              isCorrectAnswer 
+                                ? 'bg-green-500 text-white'
+                                : isUserAnswer 
+                                  ? 'bg-red-500 text-white'
+                                  : 'bg-gray-200 dark:bg-gray-700 text-gray-500'
+                            )}>
+                              {String.fromCharCode(65 + optIdx)}
+                            </span>
+                            <span className={clsx(
+                              isCorrectAnswer && 'text-green-800 dark:text-green-300 font-medium',
+                              isUserAnswer && !isCorrectAnswer && 'text-red-800 dark:text-red-300 line-through'
+                            )}>
+                              {option}
+                              {isCorrectAnswer && <span className="ml-2 text-green-600 dark:text-green-400">✓ Correct</span>}
+                              {isUserAnswer && !isCorrectAnswer && <span className="ml-2 text-red-600 dark:text-red-400">Your answer</span>}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    
+                    {/* Explanation */}
+                    {q.explanation && (
+                      <div className="pl-8">
+                        <div className="text-sm bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-3">
+                          <span className="font-medium text-blue-800 dark:text-blue-300">Explanation: </span>
+                          <span className="text-blue-700 dark:text-blue-400">{q.explanation}</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

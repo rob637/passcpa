@@ -102,6 +102,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const [hasCarryover, setHasCarryover] = useState(false);
   const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
   const [missingExamDate, setMissingExamDate] = useState(false);
+  const [pastExamDate, setPastExamDate] = useState(false);
   
   // Track section to detect changes - course-aware
   const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
@@ -117,12 +118,27 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     const examDate = getExamDate(userProfile, currentSection, courseId);
     if (!examDate) {
       setMissingExamDate(true);
+      setPastExamDate(false);
       setHasAttemptedLoad(true);
       return;
     }
     
-    // Exam date exists - clear the flag and proceed
+    // Check if exam date is in the past
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const examDateNormalized = new Date(examDate);
+    examDateNormalized.setHours(0, 0, 0, 0);
+    
+    if (examDateNormalized < today) {
+      setPastExamDate(true);
+      setMissingExamDate(false);
+      setHasAttemptedLoad(true);
+      return;
+    }
+    
+    // Exam date exists and is in the future - clear flags and proceed
     setMissingExamDate(false);
+    setPastExamDate(false);
     setLoading(true);
     setHasAttemptedLoad(true);
     setError(null);
@@ -564,6 +580,48 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
             leftIcon={BookOpen}
           >
             Start a Lesson
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate(getCoursePracticePath(courseId))}
+            leftIcon={Target}
+          >
+            Practice Questions
+          </Button>
+        </div>
+      </Card>
+    );
+  }
+
+  // Exam date is in the past - prompt to update it
+  if (pastExamDate) {
+    return (
+      <Card className="p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Calendar className="w-5 h-5 text-amber-500" />
+          <h3 className="font-semibold text-slate-900 dark:text-slate-100">Update Your Exam Date</h3>
+        </div>
+        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+          Your exam date has passed.{' '}
+          <button 
+            onClick={() => navigate('/settings?tab=study')}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
+            Update your exam date
+          </button>
+          {' '}to continue with a new personalized study plan.
+        </p>
+        <div className="space-y-2">
+          <Button
+            variant="primary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate('/settings?tab=study')}
+            leftIcon={Calendar}
+          >
+            Update Exam Date
           </Button>
           <Button
             variant="secondary"

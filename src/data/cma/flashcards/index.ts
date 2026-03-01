@@ -20,6 +20,7 @@ interface Flashcard {
   mnemonic?: string;
   tags?: string[];
   reference?: string;
+  imaReference?: string;
 }
 
 interface FlashcardFile {

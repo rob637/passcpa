@@ -3,9 +3,9 @@
  * Memory aids and tricks for CMA Part 1
  */
 
-import { CMAFlashcard } from './types';
+import type { Flashcard } from './index';
 
-export const CMA1_MNEMONICS: CMAFlashcard[] = [
+export const CMA1_MNEMONICS: Flashcard[] = [
   // ============================================
   // A: External Financial Reporting Decisions
   // ============================================

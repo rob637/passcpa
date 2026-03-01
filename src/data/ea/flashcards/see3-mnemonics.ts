@@ -3,9 +3,9 @@
  * Memory aids for ethics, practice, and procedures
  */
 
-import { EAFlashcard } from './types';
+import type { Flashcard } from './index';
 
-export const SEE3_MNEMONICS: EAFlashcard[] = [
+export const SEE3_MNEMONICS: Flashcard[] = [
   // ============================================
   // Circular 230 Ethics
   // ============================================

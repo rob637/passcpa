@@ -3,9 +3,9 @@
  * Memory aids for the Businesses section
  */
 
-import { EAFlashcard } from './types';
+import type { Flashcard } from './index';
 
-export const SEE2_MNEMONICS: EAFlashcard[] = [
+export const SEE2_MNEMONICS: Flashcard[] = [
   // ============================================
   // Entity Selection & Characteristics
   // ============================================

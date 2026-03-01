@@ -1934,7 +1934,7 @@
       "subtopic": "Core-Satellite",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Anderson Family Trust uses a core-satellite approach. The 'core' aims for broad market exposure and stability, while the 'satellites' seek higher returns. This approach typically involves: A) Concentrating holdings in a few high-conviction stocks | B) 100% actively managed funds | C) Equal allocation across all asset classes | D) Index funds for the core with active funds or alternatives for satellites",
+      "question": "The Anderson Family Trust uses a core-satellite approach. The 'core' aims for broad market exposure and stability, while the 'satellites' seek higher returns. This approach typically involves:",
       "explanation": "**Correct Answer: B**\\n\\n**Core-Satellite Strategy:**\\n- **Core (60-80%):** Low-cost index funds for market exposure\\n- **Satellites (20-40%):** Active managers, alternatives, sector bets\\n\\n**Benefits:**\\n- Reduced overall costs\\n- Market-like returns from core\\n- Potential alpha from satellites\\n\\n**Why other answers are wrong:**\\n- **A)** Core should be passive/indexed\\n- **C)** That's concentration, not diversified core\\n- **D)** Equal weight is different strategy",
       "correctAnswer": 3,
       "options": [
@@ -1969,7 +1969,7 @@
       "subtopic": "Bond Ratings",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "Global Energy Partners is considering issuing new debt. One potential bond series is rated Ba1 by Moody's and BB+ by S&P. This bond is classified as: A) Money market eligible | B) Government guaranteed | C) Investment grade | D) High yield (junk)",
+      "question": "Global Energy Partners is considering issuing new debt. One potential bond series is rated Ba1 by Moody's and BB+ by S&P. This bond is classified as:",
       "explanation": "**Correct Answer: B (High yield)**\\n\\n**Rating Scale:**\\n- **Investment Grade:** Moody's Baa3 or higher, S&P BBB- or higher\\n- **High Yield (Junk):** Below investment grade\\n\\n**Ba1/BB+ is one notch below investment grade:**\\n- Still considered speculative\\n- Higher default risk\\n- Higher yield to compensate\\n\\n**Why other answers are wrong:**\\n- **A)** Investment grade starts at Baa3/BBB-\\n- **C)** Government securities are typically AAA\\n- **D)** Money market requires highest ratings",
       "correctAnswer": 3,
       "options": [
@@ -2004,7 +2004,7 @@
       "subtopic": "Duration Matching",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The 'Reliable Retirement Fund' has a large pension liability due in 7 years. To best immunize the portfolio against interest rate risk, they should: A) Buy the highest yielding bonds available | B) Create a bond ladder with maturities every year | C) Buy a 7-year zero-coupon bond | D) Buy bonds with duration shorter than 7 years",
+      "question": "The 'Reliable Retirement Fund' has a large pension liability due in 7 years. To best immunize the portfolio against interest rate risk, they should:",
       "explanation": "**Correct Answer: A (7-year zero)**\\n\\n**Immunization Strategy:**\\n- Match portfolio duration to liability duration\\n- Zero-coupon bond duration = maturity\\n- Perfect match eliminates reinvestment and price risk\\n\\n**Why 7-year zero is optimal:**\\n- Duration exactly 7 years\\n- No reinvestment risk\\n- Value at 7 years = face value\\n\\n**Why other answers are wrong:**\\n- **B)** Duration mismatch creates risk\\n- **C)** Yield doesn't match liability timing\\n- **D)** Ladder provides liquidity, not immunization",
       "correctAnswer": 2,
       "options": [
@@ -2039,7 +2039,7 @@
       "subtopic": "Asset Location",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Maria is implementing a tax-efficient asset location strategy across her taxable, tax-deferred, and tax-free accounts. Which asset is BEST placed in a tax-deferred account? A) Taxable bond funds | B) Tax-managed equity funds | C) Municipal bonds | D) Growth stocks held long-term",
+      "question": "Maria is implementing a tax-efficient asset location strategy across her taxable, tax-deferred, and tax-free accounts. Which asset is BEST placed in a tax-deferred account?",
       "explanation": "**Correct Answer: C (Taxable bond funds)**\\n\\n**Asset Location Principles:**\\n- Tax-deferred: Assets with high ordinary income (taxable bonds, REITs)\\n- Taxable: Tax-efficient assets (muni bonds, growth stocks)\\n- Roth: Highest growth potential assets\\n\\n**Taxable bonds in tax-deferred:**\\n- Interest taxed at ordinary rates if taxable\\n- Defer that taxation in IRA/401k\\n\\n**Why other answers are wrong:**\\n- **A)** Munis are already tax-exempt\\n- **B)** Growth stocks get LTCG rates\\n- **D)** Tax-managed designed for taxable accounts",
       "correctAnswer": 0,
       "options": [
@@ -2144,7 +2144,7 @@
       "subtopic": "Liability-Driven Investing",
       "difficulty": "hard",
       "skillLevel": "Remembering",
-      "question": "The 'United Auto Workers' pension fund has significant defined benefit obligations. Liability-Driven Investing (LDI) is MOST appropriate for: A) Young investors with long time horizons | B) Aggressive growth portfolios | C) Day traders | D) Pension funds with defined benefit obligations",
+      "question": "The 'United Auto Workers' pension fund has significant defined benefit obligations. Liability-Driven Investing (LDI) is MOST appropriate for:",
       "explanation": "**Correct Answer: B (Pension funds)**\\n\\n**LDI Purpose:**\\n- Match assets to future liabilities\\n- Reduce funded status volatility\\n- Hedge interest rate risk of liabilities\\n- Common for DB pensions, insurance companies\\n\\n**Why other answers are wrong:**\\n- **A)** Young investors focus on growth\\n- **C)** Growth strategies ignore liability structure\\n- **D)** Day trading has no defined liabilities",
       "correctAnswer": 3,
       "options": [
@@ -2179,7 +2179,7 @@
       "subtopic": "Annuities",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John invests in a non-qualified variable annuity. What is the primary tax advantage of this investment vehicle? A) Tax-deductible contributions | B) Capital gains treatment on withdrawal | C) Tax-deferred growth | D) Tax-free withdrawals",
+      "question": "John invests in a non-qualified variable annuity. What is the primary tax advantage of this investment vehicle?",
       "explanation": "**Correct Answer: C (Tax-deferred growth)**\\n\\n**Non-Qualified Annuity Taxation:**\\n- Contributions: After-tax (no deduction)\\n- Growth: Tax-deferred\\n- Withdrawals: Earnings taxed as ordinary income (LIFO)\\n- Penalty: 10% on earnings before 59½\\n\\n**Why other answers are wrong:**\\n- **A)** Only qualified annuities may be deductible\\n- **B)** Earnings ARE taxable at withdrawal\\n- **D)** Earnings taxed as ordinary income",
       "correctAnswer": 2,
       "options": [
@@ -2214,7 +2214,7 @@
       "subtopic": "Convexity",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The fixed income portfolio at 'Summit Investments' holds a bond with positive convexity. This bond will: A) Have returns unaffected by interest rate changes | B) Lose more value when rates rise than predicted by duration | C) Always underperform bonds with negative convexity | D) Gain more value when rates fall and lose less when rates rise than predicted by duration",
+      "question": "The fixed income portfolio at 'Summit Investments' holds a bond with positive convexity. This bond will:",
       "explanation": "**Correct Answer: B**\\n\\n**Convexity Benefit:**\\n- Duration predicts LINEAR price change\\n- Convexity captures CURVATURE\\n- Positive convexity = favorable asymmetry\\n\\n**Effect:**\\n- Rates fall: Price rises MORE than duration predicts\\n- Rates rise: Price falls LESS than duration predicts\\n\\n**Why other answers are wrong:**\\n- **A)** Positive convexity means LESS loss when rates rise\\n- **C)** All bonds are affected by rates\\n- **D)** Positive convexity is generally favorable",
       "correctAnswer": 3,
       "options": [
@@ -2249,7 +2249,7 @@
       "subtopic": "Factor Investing",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Chen & Associates is evaluating different factor-based investment strategies. Which of the following is NOT a commonly recognized factor in factor-based investing? A) Industry (sector classification) | B) Value (low price-to-book) | C) Size (small-cap premium) | D) Momentum (recent winners)",
+      "question": "Chen & Associates is evaluating different factor-based investment strategies. Which of the following is NOT a commonly recognized factor in factor-based investing?",
       "explanation": "**Correct Answer: C (Industry is not a factor)**\\n\\n**Common Investment Factors:**\\n- **Value:** Low P/B, P/E stocks outperform\\n- **Size:** Small-cap stocks outperform large-cap\\n- **Momentum:** Recent winners continue short-term\\n- **Quality:** High profitability, low leverage\\n- **Low Volatility:** Risk-adjusted outperformance\\n\\n**Industry/Sector:**\\n- A classification, not a factor\\n- No persistent premium from being in specific sector\\n\\n**Why other answers are wrong:**\\n- **A, B, D)** All are well-documented factors",
       "correctAnswer": 0,
       "options": [
@@ -2284,7 +2284,7 @@
       "subtopic": "Hedge Funds",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Highland Investments manages portfolios for wealthy individuals. They are considering adding hedge funds to client portfolios. Which characteristic is MOST typical of hedge funds?\nA) Daily liquidity like mutual funds | B) 2% management fee and 20% performance fee | C) Available to all retail investors | D) Strict SEC registration requirements",
+      "question": "Highland Investments manages portfolios for wealthy individuals. They are considering adding hedge funds to client portfolios. Which characteristic is MOST typical of hedge funds?",
       "explanation": "**Correct Answer: C (2 and 20 fee structure)**\\n\\n**Hedge Fund Characteristics:**\\n- 2% annual management fee\\n- 20% performance fee (incentive)\\n- High-water mark provisions\\n- Lock-up periods (limited liquidity)\\n- Accredited/qualified investors only\\n\\n**Why other answers are wrong:**\\n- **A)** Lock-ups of 1+ years are common\\n- **B)** Many use exemptions from full SEC registration\\n- **D)** Restricted to accredited/qualified purchasers",
       "correctAnswer": 1,
       "options": [
@@ -2319,7 +2319,7 @@
       "subtopic": "Security Market Line",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah is evaluating potential investments using the Security Market Line (SML). One security plots significantly ABOVE the SML. This indicates the security is:\nA) Fairly valued | B) High risk with low return | C) Overvalued and should be sold | D) Undervalued and should be bought",
+      "question": "Sarah is evaluating potential investments using the Security Market Line (SML). One security plots significantly ABOVE the SML. This indicates the security is:",
       "explanation": "**Correct Answer: B (Undervalued)**\\n\\n**Security Market Line:**\\n- Plots expected return vs. beta\\n- Points ON line = fairly priced\\n- Points ABOVE = positive alpha (undervalued)\\n- Points BELOW = negative alpha (overvalued)\\n\\n**Above the line:**\\n- Higher return than expected for its beta\\n- Buy—will appreciate toward fair value\\n\\n**Why other answers are wrong:**\\n- **A)** Above SML = undervalued\\n- **C)** On the line = fairly valued\\n- **D)** Above means high return for its risk level",
       "correctAnswer": 3,
       "options": [
@@ -2354,7 +2354,7 @@
       "subtopic": "Sector Rotation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During periods of economic contraction, analysts at Macro Research often shift sector allocations. During an economic recession, which sector typically outperforms relative to others?\nA) Industrials | B) Consumer staples | C) Technology | D) Consumer discretionary",
+      "question": "During periods of economic contraction, analysts at Macro Research often shift sector allocations. During an economic recession, which sector typically outperforms relative to others?",
       "explanation": "**Correct Answer: C (Consumer staples)**\\n\\n**Sector Performance by Economic Cycle:**\\n- **Recession:** Defensive sectors (staples, utilities, healthcare)\\n- **Recovery:** Cyclical sectors (financials, industrials)\\n- **Expansion:** Growth sectors (technology, consumer discretionary)\\n\\n**Consumer Staples in Recession:**\\n- Essential goods (food, household products)\\n- Inelastic demand\\n- Stable cash flows\\n\\n**Why other answers are wrong:**\\n- **A)** Tech is growth-sensitive\\n- **B)** Discretionary spending cut in recession\\n- **D)** Industrials tied to economic activity",
       "correctAnswer": 1,
       "options": [
@@ -2389,7 +2389,7 @@
       "subtopic": "Closed-End Funds",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "The Franklin Global Opportunity Fund is a closed-end fund. It is currently trading at $8.10 per share, while its Net Asset Value (NAV) is $9.00. This means:\nA) The fund is leveraged at 10% | B) The fund has lost 10% this year | C) Management fees are 10% | D) The market price is 10% below the value of underlying assets",
+      "question": "The Franklin Global Opportunity Fund is a closed-end fund. It is currently trading at $8.10 per share, while its Net Asset Value (NAV) is $9.00. This means:",
       "explanation": "**Correct Answer: B**\\n\\n**Closed-End Fund Pricing:**\\n- Fixed number of shares\\n- Trades on exchange like a stock\\n- Price determined by supply/demand\\n- Can trade at premium or discount to NAV\\n\\n**10% Discount:**\\n- NAV = $100, Market price = $90\\n- Buy $100 of assets for $90\\n\\n**Why other answers are wrong:**\\n- **A)** Discount isn't about past performance\\n- **C)** Discount isn't about fees\\n- **D)** Leverage is separate from discount",
       "correctAnswer": 3,
       "options": [
@@ -2424,7 +2424,7 @@
       "subtopic": "Risk Measures",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "When evaluating investment managers, the investment committee at Omega Capital wants to focus specifically on downside risk. Which risk measure is MOST appropriate for this purpose?\nA) Standard deviation | B) Sharpe ratio | C) Sortino ratio | D) Beta",
+      "question": "When evaluating investment managers, the investment committee at Omega Capital wants to focus specifically on downside risk. Which risk measure is MOST appropriate for this purpose?",
       "explanation": "**Correct Answer: C (Sortino ratio)**\\n\\n**Sortino Ratio:**\\n- Like Sharpe, but only penalizes DOWNSIDE deviation\\n- Ignores upside volatility (which investors like)\\n- Better for asymmetric return distributions\\n\\n**Formula:**\\nSortino = (Rp - Rf) / Downside Deviation\\n\\n**Why other answers are wrong:**\\n- **A)** Std dev includes upside and downside\\n- **B)** Beta measures market sensitivity\\n- **D)** Sharpe uses total volatility",
       "correctAnswer": 2,
       "options": [
@@ -2459,7 +2459,7 @@
       "subtopic": "Value Averaging",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John uses a systematic investment approach. Value averaging differs from dollar-cost averaging in that:\nA) Value averaging invests a fixed dollar amount each period | B) Value averaging is more suitable for passive investors | C) Value averaging only invests when prices are low | D) Value averaging adjusts investment amount to hit target portfolio value",
+      "question": "John uses a systematic investment approach. Value averaging differs from dollar-cost averaging in that:",
       "explanation": "**Correct Answer: B**\\n\\n**Value Averaging:**\\n- Target specific portfolio value each period\\n- Invest more when portfolio underperforms\\n- Invest less when portfolio exceeds target\\n- Variable contribution amounts\\n\\n**Dollar-Cost Averaging:**\\n- Fixed dollar amount each period\\n- Simpler to implement\\n- No selling required\\n\\n**Why other answers are wrong:**\\n- **A)** That's DCA\\n- **C)** May invest any time, but amount varies\\n- **D)** Value averaging requires more active management",
       "correctAnswer": 3,
       "options": [
@@ -2494,7 +2494,7 @@
       "subtopic": "Unit Investment Trust",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "Melissa is considering different pooled investment vehicles. A Unit Investment Trust (UIT) differs from a mutual fund primarily because:\nA) UITs cannot hold bonds | B) UITs are actively managed | C) UITs trade on exchanges at market prices | D) UITs have a fixed portfolio that is not traded",
+      "question": "Melissa is considering different pooled investment vehicles. A Unit Investment Trust (UIT) differs from a mutual fund primarily because:",
       "explanation": "**Correct Answer: B (Fixed portfolio)**\\n\\n**UIT Characteristics:**\\n- Fixed, unmanaged portfolio\\n- Created for specific term\\n- No ongoing portfolio changes\\n- Pass-through of income/gains\\n- Self-liquidating at termination\\n\\n**vs. Mutual Funds:**\\n- Mutual funds actively trade holdings\\n- No termination date\\n- NAV-priced daily\\n\\n**Why other answers are wrong:**\\n- **A)** UITs are PASSIVELY managed\\n- **C)** UITs often hold bonds\\n- **D)** That describes closed-end funds or ETFs",
       "correctAnswer": 3,
       "options": [
@@ -2529,7 +2529,7 @@
       "subtopic": "Behavioral Finance",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "David is hesitant to sell a stock in his portfolio, even though it has significantly declined in value. He states, 'I just want to get back to even before I sell.' This behavior describes:\nA) Confirmation bias | B) Herding | C) Loss aversion | D) Anchoring",
+      "question": "David is hesitant to sell a stock in his portfolio, even though it has significantly declined in value. He states, 'I just want to get back to even before I sell.' This behavior describes:",
       "explanation": "**Correct Answer: C (Loss aversion)**\\n\\n**Loss Aversion:**\\n- Losses feel ~2x worse than equivalent gains feel good\\n- Leads to holding losers too long\\n- Leads to selling winners too soon\\n- 'Disposition effect'\\n\\n**Why other answers are wrong:**\\n- **A)** Confirmation bias = seeking info that confirms beliefs\\n- **B)** Anchoring = fixating on specific number\\n- **D)** Herding = following the crowd",
       "correctAnswer": 2,
       "options": [
@@ -3511,7 +3511,7 @@
       "subtopic": "DuPont Analysis",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Analysts at Sterling Investments are evaluating Apex Corp's ROE. They want to understand the drivers of Apex's profitability. The DuPont analysis breaks ROE into: A) Profit margin × Asset turnover × Financial leverage, showing how profitability, efficiency, and leverage contribute | B) P/E and P/B ratios | C) Only profit margin | D) Growth and value factors",
+      "question": "Analysts at Sterling Investments are evaluating Apex Corp's ROE. They want to understand the drivers of Apex's profitability. The DuPont analysis breaks ROE into:",
       "explanation": "DuPont ROE decomposition: (Net Income/Sales) × (Sales/Assets) × (Assets/Equity). Shows whether high ROE comes from: operational profitability (margin), asset utilization (turnover), or leverage. Same ROE can result from very different business models. Helps identify sources of return and analyze quality of earnings.",
       "correctAnswer": 0,
       "options": [
@@ -3546,7 +3546,7 @@
       "subtopic": "Glide Path",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Maria is 35 and plans to retire in 2054. She's investing in the Vanguard Target Retirement 2055 Fund (VFFVX). A target-date fund's glide path refers to: A) Daily trading patterns | B) Fee reductions over time | C) The predetermined reduction in equity allocation as the target retirement date approaches | D) Manager changes",
+      "question": "Maria is 35 and plans to retire in 2054. She's investing in the Vanguard Target Retirement 2055 Fund (VFFVX). A target-date fund's glide path refers to:",
       "explanation": "Glide path: how asset allocation shifts over time in target-date funds. Typically reduces equities as retirement approaches (e.g., 90% stocks at 30 years out → 40% at retirement). \"To\" funds stop at target, \"through\" funds continue de-risking past retirement. Glide paths vary significantly between fund families—compare carefully.",
       "correctAnswer": 2,
       "options": [
@@ -3581,7 +3581,7 @@
       "subtopic": "Settlement",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "John placed an order to buy 200 shares of Tesla (TSLA) on Monday. Standard settlement for U.S. equity trades is: A) Same day (T+0) | B) T+3 (three business days) | C) T+1 (one business day after trade date) | D) One week after trade",
+      "question": "John placed an order to buy 200 shares of Tesla (TSLA) on Monday. Standard settlement for U.S. equity trades is:",
       "explanation": "U.S. equity settlement moved to T+1 in May 2024 (formerly T+2). Settlement = when ownership and cash actually transfer. T+1: trade Monday, settle Tuesday. Implications: need funds/securities available quickly, margin requirements, short selling rules. Corporate bonds: T+2. Government securities and some mutual funds: T+1 or same day.",
       "correctAnswer": 2,
       "options": [
@@ -3616,7 +3616,7 @@
       "subtopic": "Information Ratio",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Portfolio manager Sarah is evaluating the performance of her actively managed fund compared to its benchmark. The information ratio measures: A) Active return relative to tracking error, showing how much excess return is generated per unit of active risk | B) Market correlation | C) Absolute risk | D) Total return only",
+      "question": "Portfolio manager Sarah is evaluating the performance of her actively managed fund compared to its benchmark. The information ratio measures:",
       "explanation": "Information ratio = (Portfolio return - Benchmark return) / Tracking error. Higher is better—more excess return per unit of active risk taken. Used for evaluating active managers against their benchmark. Unlike Sharpe (uses total risk), IR isolates active management skill. IR > 0.5 considered good; > 1.0 excellent.",
       "correctAnswer": 0,
       "options": [
@@ -3651,7 +3651,7 @@
       "subtopic": "Holding Period Return",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "An investor bought a stock for $50. After one year, the stock is worth $55, and the investor received a $2 dividend. Holding Period Return (HPR) is calculated as: A) Risk-adjusted return | B) (Ending value - Beginning value + Income) / Beginning value, capturing total return over the period | C) Annualized return only | D) Only price change",
+      "question": "An investor bought a stock for $50. After one year, the stock is worth $55, and the investor received a $2 dividend. Holding Period Return (HPR) is calculated as:",
       "explanation": "HPR = (Ending value - Beginning value + Income) / Beginning value. Total return over any holding period. Includes: price appreciation/depreciation, dividends, interest. Not annualized—if held 6 months, HPR is 6-month return. To compare different periods, must annualize. Simple but fundamental return calculation.",
       "correctAnswer": 1,
       "options": [
@@ -3686,7 +3686,7 @@
       "subtopic": "Geometric vs Arithmetic",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "When reporting historical investment performance to clients, advisors at Willow Creek Wealth Management must decide which return calculation to use. When reporting historical investment performance: A) Neither is meaningful | B) Geometric mean should be used as it accounts for compounding and shows actual growth experience | C) Both are identical | D) Arithmetic mean is always used",
+      "question": "When reporting historical investment performance to clients, advisors at Willow Creek Wealth Management must decide which return calculation to use. When reporting historical investment performance:",
       "explanation": "Geometric mean: compound growth rate. If you had $100, geometric mean shows actual ending value. Arithmetic mean overstates—doesn\\'t account for volatility drag. Example: +50%, -50% → arithmetic mean = 0%, but geometric mean = -13.4% (actual result: $75). Use geometric for historical performance, arithmetic for forecasting expected returns.",
       "correctAnswer": 1,
       "options": [
@@ -3721,7 +3721,7 @@
       "subtopic": "Covered Calls",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David owns 100 shares of Apple (AAPL). To generate income, he writes a covered call option with a strike price of $200. Writing covered calls on owned stock: A) Generates income but limits upside potential because shares may be called away at the strike price | B) Requires margin | C) Increases volatility exposure | D) Eliminates all downside risk",
+      "question": "David owns 100 shares of Apple (AAPL). To generate income, he writes a covered call option with a strike price of $200. Writing covered calls on owned stock:",
       "explanation": "Covered call: own stock, sell call option against it. Receive premium income (lowers cost basis). Trade-off: if stock rises above strike, shares called away—miss upside beyond that. Downside: still exposed to decline minus premium received. Best in: flat or slightly bullish markets, when willing to sell at strike. Income strategy, not growth.",
       "correctAnswer": 0,
       "options": [
@@ -3756,7 +3756,7 @@
       "subtopic": "Protective Put",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Jane is concerned about a potential market downturn impacting her stock portfolio. She buys put options on the S&P 500 to protect her holdings. A protective put strategy: A) Limits downside loss while maintaining upside potential, acting as portfolio insurance | B) Requires selling stock | C) Increases risk substantially | D) Generates income",
+      "question": "Jane is concerned about a potential market downturn impacting her stock portfolio. She buys put options on the S&P 500 to protect her holdings. A protective put strategy:",
       "explanation": "Protective put: own stock, buy put option. Creates floor—maximum loss = stock price - strike + premium paid. Keep all upside above purchase cost + premium. Like insurance: pay premium for protection. Cost is the premium (reduces return if market doesn\\'t decline). Useful for concentrated positions or before uncertain events.",
       "correctAnswer": 0,
       "options": [

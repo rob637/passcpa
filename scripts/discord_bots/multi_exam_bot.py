@@ -569,7 +569,7 @@ class MultiExamDiscordBot:
             embed.add_field(
                 name='Full Exam Prep',
                 value=(
-                    'Want AI tutor, score prediction, and 16,000+ questions?\n'
+                    'Want AI tutor, score prediction, and 20,000+ questions?\n'
                     '🎯 **Try VoraPrep free for 14 days** → https://voraprep.com'
                 ),
                 inline=False,

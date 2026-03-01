@@ -2919,7 +2919,7 @@
       "subtopic": "Privacy Assessment",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of user data privacy at GlobalTech Solutions, the auditor is evaluating compliance with GDPR and CCPA. Which of the following BEST describes the scope of a privacy audit? A) Only data deletion | B) Data collection, use, protection, and compliance with regulations | C) Only technical controls | D) Only user consent",
+      "question": "During an audit of user data privacy at GlobalTech Solutions, the auditor is evaluating compliance with GDPR and CCPA. Which of the following BEST describes the scope of a privacy audit?",
       "options": [
         "Only data deletion and secure wiping of storage media after processing",
         "Data collection, use, protection, and compliance with regulations",
@@ -2954,7 +2954,7 @@
       "subtopic": "CA vs CM",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "First National Bank uses both continuous auditing and continuous monitoring. How do continuous auditing and continuous monitoring differ? A) Continuous monitoring requires more tools | B) There is no difference | C) Continuous monitoring is management's responsibility; continuous auditing is audit's | D) Continuous auditing is more frequent",
+      "question": "First National Bank uses both continuous auditing and continuous monitoring. How do continuous auditing and continuous monitoring differ?",
       "options": [
         "Continuous monitoring requires more automated tools and real-time data feeds to proactively identify potential issues.",
         "There is no difference; both continuous auditing and monitoring are synonymous terms used interchangeably within risk management frameworks.",
@@ -2989,7 +2989,7 @@
       "subtopic": "Recommendations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a recent IT audit at SecureData Systems, several vulnerabilities were identified. Audit recommendations should be: A) Limited to technical solutions | B) As detailed as possible | C) Practical, actionable, and address the root cause | D) Directed to specific individuals",
+      "question": "During a recent IT audit at SecureData Systems, several vulnerabilities were identified. Audit recommendations should be:",
       "options": [
         "Limited to technical solutions and immediate fixes, ignoring underlying process weaknesses.",
         "As detailed as possible, including all observations regardless of their impact or relevance.",
@@ -3024,7 +3024,7 @@
       "subtopic": "Management Response",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "An IT audit at PharmaCorp identified a critical vulnerability in their patient data system. Management's response to these audit findings should include: A) Only acknowledgment | B) Only budget impact | C) Planned corrective actions, responsible parties, and target dates | D) Only disagreement if applicable",
+      "question": "An IT audit at PharmaCorp identified a critical vulnerability in their patient data system. Management's response to these audit findings should include:",
       "options": [
         "Only acknowledgment of the finding and its potential impact on compliance.",
         "Only budget impact analysis for remediation, excluding risk assessment details.",
@@ -3059,7 +3059,7 @@
       "subtopic": "Disagreements",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During an audit of internal controls at Apex Financial, management strongly disagrees with a finding regarding segregation of duties. The auditor should: A) Remove the finding | B) Document management's position and escalate if risk is significant | C) Ignore the disagreement | D) Accept management's view",
+      "question": "During an audit of internal controls at Apex Financial, management strongly disagrees with a finding regarding segregation of duties. The auditor should:",
       "options": [
         "Remove the finding from the audit report to maintain a positive relationship with management and ensure future cooperation.",
         "Document management's position and escalate if risk is significant",
@@ -3094,7 +3094,7 @@
       "subtopic": "Distribution",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After completing an audit of network security at Cloud Solutions Inc., how should the audit report be distributed? A) Need to know and organizational requirements | B) Auditor preference | C) Maximum distribution | D) Auditee request",
+      "question": "After completing an audit of network security at Cloud Solutions Inc., how should the audit report be distributed?",
       "options": [
         "Need to know and organizational requirements",
         "Based on auditor's professional judgment and discretion",
@@ -3129,7 +3129,7 @@
       "subtopic": "Conclusions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "An auditor is performing a review of access controls at a major hospital. An audit conclusion should be based on: A) Sufficient, reliable evidence gathered during the audit | B) Management assertions | C) Auditor assumptions | D) Prior year conclusions",
+      "question": "An auditor is performing a review of access controls at a major hospital. An audit conclusion should be based on:",
       "options": [
         "Sufficient, reliable evidence gathered during the audit",
         "Management assertions regarding control effectiveness without independent verification.",
@@ -3164,7 +3164,7 @@
       "subtopic": "Integrated Auditing",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During an engagement at OmniCorp, the auditor is performing an integrated audit. Integrated audits combine: A) Multiple auditees | B) Financial, operational, and IT audit procedures | C) Only IT procedures | D) Multiple audit firms",
+      "question": "During an engagement at OmniCorp, the auditor is performing an integrated audit. Integrated audits combine:",
       "options": [
         "Audit procedures across multiple auditees within a holding company",
         "Financial, operational, and IT audit procedures",
@@ -5159,7 +5159,7 @@
       "subtopic": "Inquiry Corroboration",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent audit of Sterling Financial, the IS auditor interviewed several loan officers regarding their adherence to new lending policies. The auditor only collected verbal responses. Inquiry alone as audit evidence:\nA) Is sufficient for all conclusions | B) Should be corroborated with other evidence types | C) Replaces observation | D) Is the most reliable",
+      "question": "During a recent audit of Sterling Financial, the IS auditor interviewed several loan officers regarding their adherence to new lending policies. The auditor only collected verbal responses. Inquiry alone as audit evidence:",
       "options": [
         "Is sufficient for all conclusions if the sample size is large enough",
         "Should be corroborated with other evidence types",
@@ -5194,7 +5194,7 @@
       "subtopic": "Skepticism",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During the audit of internal controls at PharmaCorp, the IS auditor is reviewing documentation and interviewing staff. Professional skepticism requires auditors to:\nA) Critically assess evidence and remain alert for misrepresentation | B) Trust all management representations | C) Question only financial data | D) Assume fraud exists",
+      "question": "During the audit of internal controls at PharmaCorp, the IS auditor is reviewing documentation and interviewing staff. Professional skepticism requires auditors to:",
       "options": [
         "Critically assess evidence and remain alert for misrepresentation",
         "Trust all management representations unless contradictory evidence arises during testing.",
@@ -5229,7 +5229,7 @@
       "subtopic": "Program Modifications",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During the annual IT audit at Global Logistics, the IS auditor discovers a need to expand the scope of testing for user access controls due to a recent security breach. Audit work program modifications:\nA) Should be documented with justification | B) Indicate poor planning | C) Are not allowed | D) Do not require approval",
+      "question": "During the annual IT audit at Global Logistics, the IS auditor discovers a need to expand the scope of testing for user access controls due to a recent security breach. Audit work program modifications:",
       "options": [
         "Should be documented with justification",
         "Indicate poor planning and invalidate testing",
@@ -5264,7 +5264,7 @@
       "subtopic": "Control Environment",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Before auditing the new ERP system implementation at Apex Manufacturing, the IS auditor needs to understand the overall IT landscape. When evaluating IT general controls, the IS auditor should FIRST:\nA) Interview developers | B) Understand the control environment and IT organization | C) Test access controls | D) Review change management logs",
+      "question": "Before auditing the new ERP system implementation at Apex Manufacturing, the IS auditor needs to understand the overall IT landscape. When evaluating IT general controls, the IS auditor should FIRST:",
       "options": [
         "Interview developers regarding coding standards and SDLC practices",
         "Understand the control environment and IT organization",
@@ -5299,7 +5299,7 @@
       "subtopic": "Audit Trail Purpose",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During an investigation of a potential data breach at SecureData Solutions, the IS auditor is reviewing system logs. The primary purpose of an audit trail is:\nA) Performance monitoring | B) Capacity planning | C) Providing evidence of transactions and user activities | D) Backup recovery",
+      "question": "During an investigation of a potential data breach at SecureData Solutions, the IS auditor is reviewing system logs. The primary purpose of an audit trail is:",
       "options": [
         "Analyzing system resource utilization for performance monitoring and optimization.",
         "Forecasting future resource needs for effective capacity planning and upgrades.",
@@ -5334,7 +5334,7 @@
       "subtopic": "Negative Assurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates, a CPA firm, is performing an attestation engagement for a client's SOC 2 report. Negative assurance in attestation means:\nA) Testing was not performed | B) Issues were found | C) Nothing came to attention indicating material misstatement | D) Complete accuracy verified",
+      "question": "Chen & Associates, a CPA firm, is performing an attestation engagement for a client's SOC 2 report. Negative assurance in attestation means:",
       "options": [
         "No substantive testing was performed to validate controls' operating effectiveness.",
         "Significant control deficiencies were found during the course of the attestation engagement.",
@@ -5369,7 +5369,7 @@
       "subtopic": "Sufficiency",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "While auditing user access provisioning at Vista Healthcare LLC, the IS auditor is determining how much evidence is needed to support their conclusions. Audit evidence sufficiency refers to:\nA) Source of evidence | B) Quality of evidence | C) Quantity of evidence needed to support conclusions | D) Type of evidence",
+      "question": "While auditing user access provisioning at Vista Healthcare LLC, the IS auditor is determining how much evidence is needed to support their conclusions. Audit evidence sufficiency refers to:",
       "options": [
         "The reliability of the evidence based on its origin and controls",
         "The relevance and reliability of evidence in addressing audit objectives",
@@ -5404,7 +5404,7 @@
       "subtopic": "Using Others Work",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a SOX audit at Meridian Corp, the internal audit team is using the work of an external cybersecurity consultant to assess vulnerability management. When the auditor uses the work of others:\nA) No review is needed | B) The auditor must evaluate competence and objectivity | C) No documentation required | D) The work is automatically accepted",
+      "question": "During a SOX audit at Meridian Corp, the internal audit team is using the work of an external cybersecurity consultant to assess vulnerability management. When the auditor uses the work of others:",
       "options": [
         "No review is needed if the consultant is certified",
         "The auditor must evaluate competence and objectivity",

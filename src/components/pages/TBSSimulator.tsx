@@ -63,7 +63,7 @@ interface CalculationInputProps {
   onChange: (value: string) => void;
   disabled?: boolean;
   showCorrect?: boolean;
-  correctAnswer: number;
+  correctAnswer: number | Record<string, unknown>;
   tolerance?: number;
   explanation?: string;
 }
@@ -90,7 +90,7 @@ interface WrittenCommunicationInputProps {
 // Individual task/requirement within a TBS
 interface TBSTask {
   id: string;
-  type: 'journal' | 'calculation' | 'mcq' | 'wc';
+  type: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation';
   question: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any; // Flexible data depending on type
@@ -259,7 +259,23 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
   tolerance,
   explanation,
 }) => {
-  const isCorrect = showCorrect && Math.abs(Number(value) - correctAnswer) <= (tolerance || 0);
+  // Handle case where correctAnswer is an object (e.g., reconciliation type)
+  const isComplexAnswer = typeof correctAnswer === 'object' && correctAnswer !== null;
+  const numericCorrect = isComplexAnswer ? 0 : Number(correctAnswer);
+  const isCorrect = showCorrect && !isComplexAnswer && Math.abs(Number(value) - numericCorrect) <= (tolerance || 0);
+
+  // Format complex answers for display
+  const formatComplexAnswer = (answer: Record<string, unknown>): string => {
+    if ('adjustedBalance' in answer) {
+      return `Adjusted Balance: $${(answer.adjustedBalance as number).toLocaleString()}`;
+    }
+    if ('bankSection' in answer && 'bookSection' in answer) {
+      const bank = answer.bankSection as { adjustedBalance?: number };
+      const book = answer.bookSection as { adjustedBalance?: number };
+      return `Adjusted Balance: $${(bank.adjustedBalance || book.adjustedBalance || 0).toLocaleString()}`;
+    }
+    return JSON.stringify(answer);
+  };
 
   return (
     <div className="space-y-2">
@@ -290,8 +306,173 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
 
       {showCorrect && !isCorrect && (
         <div className="p-3 bg-error-50 dark:bg-red-900/20 rounded-lg text-sm">
-          <p className="font-medium text-error-800 dark:text-red-200">Correct: ${correctAnswer.toLocaleString()}</p>
+          <p className="font-medium text-error-800 dark:text-red-200">
+            Correct: {isComplexAnswer 
+              ? formatComplexAnswer(correctAnswer as Record<string, unknown>) 
+              : `$${numericCorrect.toLocaleString()}`}
+          </p>
           {explanation && <p className="text-error-700 dark:text-red-300 mt-1">{explanation}</p>}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Reconciliation Section Types
+interface ReconciliationSection {
+  startingBalance: number;
+  additions: { description: string; amount: number }[];
+  deductions: { description: string; amount: number }[];
+  adjustedBalance: number;
+}
+
+interface ReconciliationAnswer {
+  bankSection: ReconciliationSection;
+  bookSection: ReconciliationSection;
+}
+
+interface ReconciliationInputProps {
+  value?: ReconciliationAnswer;
+  onChange: (value: ReconciliationAnswer) => void;
+  disabled?: boolean;
+  showCorrect?: boolean;
+  correctAnswer: ReconciliationAnswer;
+  explanation?: string;
+}
+
+// Reconciliation Input Component for Bank Reconciliation TBS
+const ReconciliationInput: React.FC<ReconciliationInputProps> = ({
+  value: _value, // Currently unused, but preserved for future full reconciliation UI
+  onChange,
+  disabled,
+  showCorrect,
+  correctAnswer,
+  explanation,
+}) => {
+  const [adjustedBalanceInput, setAdjustedBalanceInput] = useState('');
+  
+  const correctAdjustedBalance = correctAnswer?.bankSection?.adjustedBalance || 
+    correctAnswer?.bookSection?.adjustedBalance || 0;
+  
+  const isCorrect = showCorrect && 
+    Math.abs(Number(adjustedBalanceInput) - correctAdjustedBalance) <= 1;
+
+  const handleBalanceChange = (val: string) => {
+    setAdjustedBalanceInput(val);
+    // Create a simplified answer object with the adjusted balance
+    onChange({
+      bankSection: { 
+        startingBalance: 0, 
+        additions: [], 
+        deductions: [], 
+        adjustedBalance: Number(val) || 0 
+      },
+      bookSection: { 
+        startingBalance: 0, 
+        additions: [], 
+        deductions: [], 
+        adjustedBalance: Number(val) || 0 
+      },
+    });
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Simplified input: just ask for adjusted balance */}
+      <div className="space-y-3">
+        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+          Enter the adjusted cash balance:
+        </label>
+        <div className="flex items-center gap-3">
+          <span className="text-slate-600 dark:text-slate-400">$</span>
+          <input
+            type="number"
+            value={adjustedBalanceInput}
+            onChange={(e) => handleBalanceChange(e.target.value)}
+            disabled={disabled}
+            placeholder="Enter adjusted balance"
+            className={clsx(
+              'w-48 px-4 py-2 border rounded-lg text-right font-mono',
+              'bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+              'placeholder:text-slate-400 dark:placeholder:text-slate-500',
+              disabled && 'bg-slate-50 dark:bg-slate-800',
+              showCorrect &&
+                (isCorrect ? 'border-success-500 bg-success-50 dark:bg-green-900/20' : 'border-error-500 bg-error-50 dark:bg-red-900/20')
+            )}
+          />
+          {showCorrect &&
+            (isCorrect ? (
+              <CheckCircle className="w-5 h-5 text-success-500" />
+            ) : (
+              <XCircle className="w-5 h-5 text-error-500" />
+            ))}
+        </div>
+      </div>
+
+      {/* Show detailed correct answer when submitted */}
+      {showCorrect && !isCorrect && correctAnswer && (
+        <div className="p-4 bg-error-50 dark:bg-red-900/20 rounded-lg space-y-4">
+          <p className="font-medium text-error-800 dark:text-red-200">
+            Correct Adjusted Balance: ${correctAdjustedBalance.toLocaleString()}
+          </p>
+          
+          {/* Bank Section Breakdown */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-slate-800 dark:text-slate-200">Bank Side:</h4>
+            <div className="bg-white dark:bg-slate-800 rounded p-3 text-sm font-mono space-y-1">
+              <div className="flex justify-between">
+                <span>Balance per bank statement:</span>
+                <span>${correctAnswer.bankSection.startingBalance?.toLocaleString()}</span>
+              </div>
+              {correctAnswer.bankSection.additions?.map((item, i) => (
+                <div key={`add-${i}`} className="flex justify-between text-success-700 dark:text-success-400">
+                  <span>+ {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              {correctAnswer.bankSection.deductions?.map((item, i) => (
+                <div key={`ded-${i}`} className="flex justify-between text-error-700 dark:text-error-400">
+                  <span>- {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              <div className="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1">
+                <span>Adjusted bank balance:</span>
+                <span>${correctAnswer.bankSection.adjustedBalance?.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Book Section Breakdown */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-slate-800 dark:text-slate-200">Book Side:</h4>
+            <div className="bg-white dark:bg-slate-800 rounded p-3 text-sm font-mono space-y-1">
+              <div className="flex justify-between">
+                <span>Balance per company books:</span>
+                <span>${correctAnswer.bookSection.startingBalance?.toLocaleString()}</span>
+              </div>
+              {correctAnswer.bookSection.additions?.map((item, i) => (
+                <div key={`add-${i}`} className="flex justify-between text-success-700 dark:text-success-400">
+                  <span>+ {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              {correctAnswer.bookSection.deductions?.map((item, i) => (
+                <div key={`ded-${i}`} className="flex justify-between text-error-700 dark:text-error-400">
+                  <span>- {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              <div className="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1">
+                <span>Adjusted book balance:</span>
+                <span>${correctAnswer.bookSection.adjustedBalance?.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
+
+          {explanation && (
+            <p className="text-error-700 dark:text-red-300 mt-2">{explanation}</p>
+          )}
         </div>
       )}
     </div>
@@ -698,11 +879,12 @@ const TBSSimulator: React.FC = () => {
     // Transform each requirement into a task
     const tasks: TBSTask[] = requirements.map((req: any, index: number) => {
       // Map requirement type to component type
-      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
+      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' = 'calculation';
       if (req.type === 'journal_entry' || req.type === 'journal') taskType = 'journal';
       else if (req.type === 'multiple_choice') taskType = 'mcq';
       else if (req.type === 'written_communication') taskType = 'wc';
       else if (req.type === 'calculation') taskType = 'calculation';
+      else if (req.type === 'reconciliation') taskType = 'reconciliation';
       
       return {
         id: req.id || `task-${index + 1}`,
@@ -725,10 +907,11 @@ const TBSSimulator: React.FC = () => {
     
     // If no requirements, create a single task from the TBS itself (legacy format)
     if (tasks.length === 0) {
-      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
+      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' = 'calculation';
       if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') taskType = 'journal';
       else if (rawTbs.type === 'multiple_choice') taskType = 'mcq';
       else if (rawTbs.type === 'written_communication') taskType = 'wc';
+      else if (rawTbs.type === 'reconciliation') taskType = 'reconciliation';
       
       tasks.push({
         id: 'task-1',
@@ -1073,7 +1256,17 @@ const TBSSimulator: React.FC = () => {
       const tolerance = task.data.tolerance || 5;
       return scoreJournalEntry(userEntries, correctEntries, tolerance);
     } else if (task.type === 'calculation') {
-      const isCorrect = Math.abs(Number(answer) - task.data.correctAnswer) <= (task.data.tolerance || 0);
+      const numericCorrect = typeof task.data.correctAnswer === 'number' ? task.data.correctAnswer : 0;
+      const isCorrect = Math.abs(Number(answer) - numericCorrect) <= (task.data.tolerance || 0);
+      return isCorrect ? 100 : 0;
+    } else if (task.type === 'reconciliation') {
+      // For reconciliation, check if the adjusted balance matches
+      const correctAnswer = task.data.correctAnswer as ReconciliationAnswer;
+      const correctAdjustedBalance = correctAnswer?.bankSection?.adjustedBalance || 
+        correctAnswer?.bookSection?.adjustedBalance || 0;
+      const userAdjustedBalance = answer?.bankSection?.adjustedBalance || 
+        answer?.bookSection?.adjustedBalance || 0;
+      const isCorrect = Math.abs(userAdjustedBalance - correctAdjustedBalance) <= 1;
       return isCorrect ? 100 : 0;
     } else if (task.type === 'mcq') {
       // MCQ correct answer is stored in correctAnswer_mcq (index) or correctAnswer
@@ -1541,6 +1734,17 @@ const TBSSimulator: React.FC = () => {
                     />
                   )}
 
+                  {currentTask.type === 'reconciliation' && (
+                    <ReconciliationInput
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                      correctAnswer={currentTask.data.correctAnswer}
+                      explanation={currentTask.explanation}
+                    />
+                  )}
+
                   {currentTask.type === 'mcq' && (
                     <MultipleChoiceInput
                       options={currentTask.data.options}
@@ -1563,7 +1767,8 @@ const TBSSimulator: React.FC = () => {
                   )}
                 </div>
 
-                {submitted && currentTask.explanation && (
+                {/* Show explanation for types that don't render it inline (journal, wc) */}
+                {submitted && currentTask.explanation && !['mcq', 'calculation', 'reconciliation'].includes(currentTask.type) && (
                   <div className="bg-blue-50 p-6 border-t border-blue-100">
                     <h4 className="font-bold text-blue-900 mb-2">Explanation</h4>
                     <p className="text-blue-800">{currentTask.explanation}</p>

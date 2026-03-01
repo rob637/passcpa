@@ -3405,7 +3405,7 @@
       "subtopic": "Early Retirement",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria is considering retiring at age 62. She's concerned about healthcare costs and how her Social Security benefits will be affected. Early retirement planning (before 65) must specifically address which of the following issues? A) Only leisure activities | B) Medicare enrollment | C) Health insurance coverage gap, longer portfolio need, reduced Social Security, and 10% penalty issues | D) Required Minimum Distributions",
+      "question": "Maria is considering retiring at age 62. She's concerned about healthcare costs and how her Social Security benefits will be affected. Early retirement planning (before 65) must specifically address which of the following issues?",
       "explanation": "Early retirement challenges: health insurance until Medicare (expensive—COBRA, ACA, private), longer withdrawal period (maybe 30-40 years), reduced SS if claiming early, 10% penalty on retirement accounts unless exception (Rule of 55, 72(t)), no RMDs yet but may need assets. Must have careful planning—traditional rules assume age 65.",
       "correctAnswer": 2,
       "options": [
@@ -3475,7 +3475,7 @@
       "subtopic": "In-Service Distribution",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John, age 60, works for Apex Industries and participates in their 401(k) plan. He wants to access some of his retirement savings while still employed. In-service distributions from employer plans allow: A) Some employees to withdraw or roll over funds while still employed, often after reaching age 59½ | B) Immediate full withdrawal at any age | C) Distributions only after termination | D) Only hardship amounts",
+      "question": "John, age 60, works for Apex Industries and participates in their 401(k) plan. He wants to access some of his retirement savings while still employed. In-service distributions from employer plans allow:",
       "explanation": "In-service distributions: some plans allow withdrawals while still employed. Age 59½ common trigger (avoid 10% penalty). May allow rollover to IRA for broader investment options or Roth conversion. Not all plans allow—check plan document. Useful for tax planning (Roth conversions), accessing better investments, or estate planning.",
       "correctAnswer": 0,
       "options": [
@@ -3510,7 +3510,7 @@
       "subtopic": "Credits Needed",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah is 63 and wants to know if she qualifies for Social Security retirement benefits. To qualify for Social Security retirement benefits, a worker needs: A) 40 credits (about 10 years of work), with up to 4 credits earned per year based on earnings | B) 60 credits (15 years) | C) 20 credits (5 years of work) | D) No minimum",
+      "question": "Sarah is 63 and wants to know if she qualifies for Social Security retirement benefits. To qualify for Social Security retirement benefits, a worker needs:",
       "explanation": "Social Security eligibility: 40 credits required (fully insured). Earn up to 4 credits/year based on earnings (2026: $1,810 per credit). About 10 years of covered work. Fewer credits for disability (recently insured test) or survivors benefits. 40 credits gets eligibility—benefit amount depends on earnings history. Check Social Security statement for credits.",
       "correctAnswer": 0,
       "options": [
@@ -3545,7 +3545,7 @@
       "subtopic": "Portfolio Rebalancing",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "The Smiths are retired and concerned about maintaining their portfolio's risk level. They have a 60/40 asset allocation target. Portfolio rebalancing in retirement serves to: A) Maximize returns | B) Maintain target risk level by selling appreciated assets and buying underperformers, also managing tax efficiency | C) Increase trading costs | D) Match the market",
+      "question": "The Smiths are retired and concerned about maintaining their portfolio's risk level. They have a 60/40 asset allocation target. Portfolio rebalancing in retirement serves to:",
       "explanation": "Rebalancing in retirement: maintains target allocation as markets shift, prevents drift toward higher/lower risk. Tax considerations: use tax-deferred accounts for taxable rebalancing, harvest losses in taxable, avoid short-term gains. In accumulation, can rebalance with new contributions. In retirement, must sell—plan for tax impact. Threshold-based often better than calendar.",
       "correctAnswer": 1,
       "options": [
@@ -3580,7 +3580,7 @@
       "subtopic": "Retirement Spending Phases",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are planning for retirement. They anticipate active travel and hobbies early on, followed by a more relaxed pace later. The \"go-go, slow-go, no-go\" model of retirement spending describes: A) Declining spending patterns where active early years have higher discretionary spending that decreases with age | B) Investment strategies | C) Social Security claiming | D) Healthcare costs only",
+      "question": "The Millers are planning for retirement. They anticipate active travel and hobbies early on, followed by a more relaxed pace later. The \"go-go, slow-go, no-go\" model of retirement spending describes:",
       "explanation": "Retirement spending phases: Go-go (60s-70s): active, travel, hobbies—higher discretionary. Slow-go (mid-70s-80s): slower pace, less travel—lower discretionary. No-go (80s+): less active but possibly higher healthcare. Implications: may not need level inflation-adjusted spending; front-load experiences; plan for healthcare later. More realistic than straight-line assumptions.",
       "correctAnswer": 0,
       "options": [
@@ -3615,7 +3615,7 @@
       "subtopic": "Funded Ratio",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Joneses are working with a financial planner to determine if they are on track for retirement. They want to know how their current savings compares to their projected needs. A retirement funded ratio measures: A) Savings rate | B) Investment returns only | C) Current retirement assets relative to the present value of projected retirement spending needs | D) Social Security benefits",
+      "question": "The Joneses are working with a financial planner to determine if they are on track for retirement. They want to know how their current savings compares to their projected needs. A retirement funded ratio measures:",
       "explanation": "Funded ratio: Assets / PV(Liabilities). If 100%, fully funded. Under 100%, shortfall exists. Over 100%, surplus. Borrowed from pension accounting. Useful for: tracking progress, setting priorities, determining if can retire. Liabilities include: essential spending, discretionary goals. Can calculate total or category-by-category. More precise than simple net worth comparison.",
       "correctAnswer": 2,
       "options": [
@@ -3650,7 +3650,7 @@
       "subtopic": "Retirement Income Sources",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "When creating a retirement plan for the Bryants, a CFP® professional should consider all income sources. A complete retirement income analysis should identify all sources including: A) Only guaranteed income | B) Only investment accounts | C) Social Security, pensions, investment portfolios, part-time work, rental income, and any other projected income | D) Only taxable accounts",
+      "question": "When creating a retirement plan for the Bryants, a CFP® professional should consider all income sources. A complete retirement income analysis should identify all sources including:",
       "explanation": "Income source inventory: Social Security (estimate via SSA.gov), pensions/annuities (check statements), investment accounts (project sustainable withdrawals), rental income, part-time work (realistic?), inheritance expectations (uncertain), business value. Coordinate: which sources first, tax optimization, guaranteed vs. variable. Complete picture enables comprehensive planning.",
       "correctAnswer": 2,
       "options": [
@@ -3685,7 +3685,7 @@
       "subtopic": "Cash Balance Plans",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Corp offers employees a retirement plan. The plan expresses benefits as an account balance that grows at a specified rate. A cash balance pension plan is: A) A Roth account | B) A defined benefit plan that expresses benefits as an account balance growing at a specified rate, providing more portability | C) A defined contribution plan | D) An IRA variant",
+      "question": "ABC Corp offers employees a retirement plan. The plan expresses benefits as an account balance that grows at a specified rate. A cash balance pension plan is:",
       "explanation": "Cash balance: hybrid DB plan. Technically defined benefit (employer bears investment risk, PBGC covered), but looks like DC (individual account balance). Credits: pay credits (percentage of salary) + interest credits (guaranteed rate). Benefits: more portable than traditional DB, easier to understand. Still must follow DB rules—can be complex to administer. Growing in popularity.",
       "correctAnswer": 1,
       "options": [
@@ -5120,7 +5120,7 @@
       "subtopic": "Fee Impact",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Maria and David are planning their retirement. They are concerned about the impact of fees on their investment accounts. Which statement BEST describes the long-term effect of investment fees in retirement accounts? A) Minimal long-term impact | B) Compound over time and can significantly reduce retirement assets—a 1% difference can mean 20%+ less over 30 years | C) Only matter in large accounts | D) Are always disclosed",
+      "question": "Maria and David are planning their retirement. They are concerned about the impact of fees on their investment accounts. Which statement BEST describes the long-term effect of investment fees in retirement accounts?",
       "explanation": "Fee impact: $100K at 7% for 30 years = $761K. At 6% (1% fee impact) = $574K. Difference: $187K (25% less). Fees to monitor: fund expense ratios, advisory fees, plan fees, trading costs. Low-cost options: increase by percentage points of return. Fiduciary duty: include cost consideration. Compare: total cost of ownership. Small percentages = big dollars over time.",
       "correctAnswer": 1,
       "options": [
@@ -5155,7 +5155,7 @@
       "subtopic": "Retirement Readiness",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John, age 62, is considering retiring from his position at Apex Technologies. To determine his readiness, his advisor should evaluate which of the following factors? A) Only investment accounts | B) Current income only | C) Financial resources, healthcare coverage, emotional readiness, and whether lifestyle expectations are funded | D) Social Security only",
+      "question": "John, age 62, is considering retiring from his position at Apex Technologies. To determine his readiness, his advisor should evaluate which of the following factors?",
       "explanation": "Retirement readiness beyond money: Healthcare (coverage until Medicare, expected costs), lifestyle plan (what will you do with time?), emotional preparation (identity beyond work, purpose), housing decisions, family considerations. Financial: funded ratio for goals, sustainable income, emergency reserves. Many retirees unprepared emotionally even if financially ready. Holistic assessment important.",
       "correctAnswer": 2,
       "options": [
@@ -5190,7 +5190,7 @@
       "subtopic": "Still-Working Exception",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah, age 68, continues to work full-time for a company unrelated to her previous employer. She is also a participant in her previous employer's 401(k) plan. Which statement is TRUE regarding the \"still-working exception\" for RMDs? A) Only for owner-employees | B) Applies to all retirement accounts | C) Allows delaying 401(k) RMDs from current employer | D)",
+      "question": "Sarah, age 68, continues to work full-time for a company unrelated to her previous employer. She is also a participant in her previous employer's 401(k) plan. Which statement is TRUE regarding the \"still-working exception\" for RMDs?",
       "explanation": "Still-working exception: delay RMDs from current employer\\'s 401(k) while still working after RMD age. Requirements: employed by that employer, not a 5%+ owner. Doesn\\'t apply to: IRAs (must take RMDs regardless of employment), prior employer 401(k)s. Strategy: if still working, may leave/consolidate funds in current 401(k) to delay all RMDs. Terminates when employment ends.",
       "correctAnswer": 2,
       "options": [
@@ -5225,7 +5225,7 @@
       "subtopic": "Disability Benefits",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark, age 52, has been diagnosed with a disability that prevents him from working. He has worked and paid Social Security taxes for many years. Which statement is TRUE regarding Social Security disability insurance (SSDI) benefits? A) Don't exist | B) Are available to those who meet specific criteria and have sufficient work history | C) Are only available to those over 65 | D) Are not based on prior earnings",
+      "question": "Mark, age 52, has been diagnosed with a disability that prevents him from working. He has worked and paid Social Security taxes for many years. Which statement is TRUE regarding Social Security disability insurance (SSDI) benefits?",
       "explanation": "SSDI: for workers with qualifying disability. Eligibility: work credits (varies by age), inability to perform substantial gainful activity, condition lasting 12+ months or terminal. Benefit: based on earnings record (like retirement). 5-month waiting period. At FRA: converts to retirement benefit (same amount). Medicare: after 24 months on SSDI. Application: complex process, often denied initially. Can work alongside planning.",
       "correctAnswer": 1,
       "options": [
@@ -5260,7 +5260,7 @@
       "subtopic": "Sustainable Withdrawal",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Millers are seeking a sustainable withdrawal strategy for their $1.5 million retirement portfolio. Besides the 4% rule, which of the following represents MORE sophisticated approaches to managing withdrawals? A) No systematic approach | B) Guardrails (adjust based on portfolio performance), mortality-adjusted, and dynamic percentage approaches | C) Fixed dollar amounts | D) Only annuities",
+      "question": "The Millers are seeking a sustainable withdrawal strategy for their $1.5 million retirement portfolio. Besides the 4% rule, which of the following represents MORE sophisticated approaches to managing withdrawals?",
       "explanation": "Dynamic strategies: Guardrails (Guyton-Klinger: cut if portfolio falls below threshold, raise if exceeds), constant percentage (always 4% of current balance—variable income), mortality-weighted (increase rate as life expectancy decreases), amortization-based (recalculate each year). Benefits: extend portfolio, higher average spending. Trade-off: income variability. Match: client flexibility, income needs, risk tolerance.",
       "correctAnswer": 1,
       "options": [
@@ -5400,7 +5400,7 @@
       "subtopic": "Profit Sharing",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Manufacturing wants to implement a profit-sharing plan. Which allocation formula would MOST likely favor older, higher-paid employees? A) Integrated with Social Security | B) Pro-rata (based on compensation) | C) Age-weighted | D) New comparability (cross-tested)",
+      "question": "Precision Manufacturing wants to implement a profit-sharing plan. Which allocation formula would MOST likely favor older, higher-paid employees?",
       "explanation": "**Correct Answer: C (New comparability/cross-tested)**\n\n**Allocation Formulas:**\n- **Pro-rata:** Proportional to compensation (fairly neutral)\n- **Age-weighted:** Considers age and compensation (favors older)\n- **New comparability:** Groups employees, allows significantly higher allocations to key employees\n- **Integrated:** Favors those earning above Social Security wage base\n\nNew comparability (cross-tested) plans provide the most flexibility to benefit older, higher-paid employees and owner-employees.\n\n**Why other answers are wrong:**\n- Other methods provide some benefit but not as dramatically as cross-tested plans",
       "correctAnswer": 3,
       "options": [
@@ -5820,7 +5820,7 @@
       "subtopic": "Withdrawal Strategies",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The Jacksons are developing a withdrawal strategy for their retirement accounts: $400,000 in traditional IRA, $200,000 in taxable brokerage, and $100,000 in Roth IRA. Which withdrawal sequence is generally MOST tax-efficient in the early years of retirement? A) Traditional IRA first, then taxable, then Roth | B) Equal withdrawals from all accounts | C) Roth IRA first, then taxable, then traditional IRA | D) Taxable accounts first, then traditional IRA, then Roth",
+      "question": "The Jacksons are developing a withdrawal strategy for their retirement accounts: $400,000 in traditional IRA, $200,000 in taxable brokerage, and $100,000 in Roth IRA. Which withdrawal sequence is generally MOST tax-efficient in the early years of retirement?",
       "explanation": "**Correct Answer: C (Taxable first, then traditional, then Roth)**\n\n**Tax-Efficient Withdrawal Sequence:**\n1. **Taxable accounts:** Often have favorable capital gains rates\n2. **Traditional IRA:** Taxed as ordinary income; use to fill lower brackets\n3. **Roth IRA:** Tax-free; preserve for later years and estate\n\nThis allows Roth assets to grow tax-free longest while using lower brackets early.\n\n**Why other answers are wrong:**\n- **A)** Roth should generally be preserved, not spent first\n- **B)** Spending traditional first may push into higher brackets\n- **D)** Does not optimize tax efficiency",
       "correctAnswer": 3,
       "options": [
@@ -5890,7 +5890,7 @@
       "subtopic": "Sequence of Returns Risk",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The Smiths retired with a substantial portfolio. Which scenario poses the GREATEST risk of depleting their retirement savings due to sequence of returns risk? A) Poor returns in early retirement with ongoing withdrawals | B) Poor returns in late retirement with ongoing withdrawals | C) Average returns throughout retirement | D) Poor returns during the accumulation phase",
+      "question": "The Smiths retired with a substantial portfolio. Which scenario poses the GREATEST risk of depleting their retirement savings due to sequence of returns risk?",
       "explanation": "**Correct Answer: A (Poor returns in early retirement with withdrawals)**\n\n**Sequence of Returns Risk:**\n- Most dangerous when negative returns occur early in retirement\n- Withdrawals deplete portfolio faster during down markets\n- Less capital remains to benefit from later recovery\n- Can dramatically shorten portfolio longevity\n\nPoor returns late in retirement or during accumulation have less impact.\n\n**Why other answers are wrong:**\n- **B)** Poor late returns affect smaller remaining balance\n- **C)** Accumulation phase doesn't have withdrawals\n- **D)** Average returns don't create sequence risk",
       "correctAnswer": 0,
       "options": [
@@ -6728,7 +6728,7 @@
       "subtopic": "Hardship Withdrawals",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is considering a hardship withdrawal from her 401(k) at Tech Solutions to cover unexpected expenses. Which expense would typically qualify for a 401(k) hardship withdrawal under IRS guidelines? A) Credit card debt repayment | B) Vacation expenses | C) Medical expenses not covered by insurance | D) Automobile purchase for commuting",
+      "question": "Maria is considering a hardship withdrawal from her 401(k) at Tech Solutions to cover unexpected expenses. Which expense would typically qualify for a 401(k) hardship withdrawal under IRS guidelines?",
       "explanation": "Hardship withdrawals are permitted for immediate heavy financial needs: unreimbursed medical expenses, home purchase, education costs, funeral expenses, preventing eviction, or casualty damage repair.",
       "correctAnswer": 2,
       "options": [
@@ -6763,7 +6763,7 @@
       "subtopic": "Retirement Income Sources",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Financial advisors often describe retirement income sources using a common analogy. The \"three-legged stool\" of retirement income traditionally refers to: A) Stocks, bonds, and real estate | B) Social Security, employer pensions, and personal savings | C) IRA, 401(k), and Roth accounts | D) Part-time work, annuities, and home equity",
+      "question": "Financial advisors often describe retirement income sources using a common analogy. The \"three-legged stool\" of retirement income traditionally refers to:",
       "explanation": "The traditional three-legged stool comprises Social Security, employer-sponsored pensions, and personal savings. Modern planning recognizes pensions have declined, shifting responsibility to personal savings.",
       "correctAnswer": 1,
       "options": [
@@ -6798,7 +6798,7 @@
       "subtopic": "Loan Rules",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John's vested balance in his 401(k) at Apex Industries is $120,000. He needs funds for a down payment. What is the maximum loan John can take from his 401(k) plan? A) 25% of vested balance | B) 50% of vested balance | C) 100% of vested balance | D) The total of employee contributions",
+      "question": "John's vested balance in his 401(k) at Apex Industries is $120,000. He needs funds for a down payment. What is the maximum loan John can take from his 401(k) plan?",
       "explanation": "Plan loans are limited to the lesser of $50,000 (reduced by outstanding loans in the prior 12 months) or 50% of the vested account balance (with a minimum of $10,000 available).",
       "correctAnswer": 1,
       "options": [
@@ -6868,7 +6868,7 @@
       "subtopic": "Direct vs. Indirect",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah received a distribution from her traditional IRA. She intends to redeposit the funds into another IRA to avoid taxes. The 60-day rollover rule applies to which type of retirement account transaction? A) Direct trustee-to-trustee transfer | B) Indirect rollover where funds are paid to the participant | C) Roth conversion | D) In-plan Roth rollover",
+      "question": "Sarah received a distribution from her traditional IRA. She intends to redeposit the funds into another IRA to avoid taxes. The 60-day rollover rule applies to which type of retirement account transaction?",
       "explanation": "When funds are distributed to the participant (indirect rollover), they have 60 days to deposit them in another qualified account. Direct transfers are not subject to the 60-day rule or mandatory withholding.",
       "correctAnswer": 1,
       "options": [
@@ -6903,7 +6903,7 @@
       "subtopic": "Top-Heavy Rules",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Due to high executive compensation at Global Enterprises, the company's 401(k) plan is being tested for top-heaviness. A plan is considered top-heavy when key employees own more than what percentage of plan assets? A) 40% | B) 50% | C) 60% | D) 75%",
+      "question": "Due to high executive compensation at Global Enterprises, the company's 401(k) plan is being tested for top-heaviness. A plan is considered top-heavy when key employees own more than what percentage of plan assets?",
       "explanation": "A plan is top-heavy if key employees (officers, >5% owners, >1% owners earning >$150,000) own more than 60% of plan assets. Top-heavy plans require minimum contributions for non-key employees.",
       "correctAnswer": 2,
       "options": [
@@ -6938,7 +6938,7 @@
       "subtopic": "Sequence of Returns Risk",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Robert retired last year and began taking distributions from his portfolio. He is concerned about market volatility. Sequence of returns risk is most dangerous for retirees: A) During their entire retirement | B) In the early years of retirement | C) In the final years of retirement | D) Only when they hold all stocks",
+      "question": "Robert retired last year and began taking distributions from his portfolio. He is concerned about market volatility. Sequence of returns risk is most dangerous for retirees:",
       "explanation": "Poor returns early in retirement, combined with withdrawals, can permanently impair a portfolio. Early losses deplete principal that would otherwise compound, even if returns improve later.",
       "correctAnswer": 1,
       "options": [
@@ -6973,7 +6973,7 @@
       "subtopic": "Qualified Longevity Annuity",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Susan, age 72, is concerned about outliving her retirement savings. Her advisor suggests a strategy to defer some RMDs. A Qualified Longevity Annuity Contract (QLAC) allows a retiree to: A) Avoid all RMDs permanently | B) Defer income from a portion of retirement funds until age 85 | C) Receive tax-free income in retirement | D) Convert traditional IRA funds to Roth without taxation",
+      "question": "Susan, age 72, is concerned about outliving her retirement savings. Her advisor suggests a strategy to defer some RMDs. A Qualified Longevity Annuity Contract (QLAC) allows a retiree to:",
       "explanation": "A QLAC excludes qualifying assets (up to $200,000) from RMD calculations until payments begin (by age 85). This provides longevity insurance while reducing required distributions.",
       "correctAnswer": 1,
       "options": [
@@ -7113,7 +7113,7 @@
       "subtopic": "SIMPLE IRA",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ABC Company has 75 employees and is exploring retirement plan options. Which retirement plan can the company NOT establish? A) SEP IRA | B) Profit-sharing plan | C) SIMPLE IRA | D) 401(k) plan",
+      "question": "ABC Company has 75 employees and is exploring retirement plan options. Which retirement plan can the company NOT establish?",
       "explanation": "SIMPLE IRA plans are only available to employers with 100 or fewer employees who earned $5,000 or more in the preceding year. However, there is an additional requirement: the employer cannot maintain any other qualified retirement plan. ABC Company can establish any of the other plans; SIMPLE IRA has this unique size restriction but at 75 employees they still qualify - the issue is if they have another plan.",
       "correctAnswer": 2,
       "options": [
@@ -8548,7 +8548,7 @@
       "subtopic": "Annuitization",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is retiring with a $500,000 lump sum. She wants guaranteed lifetime income to cover her basic expenses. Her advisor recommends a single premium immediate annuity (SPIA). A SPIA is used to: A) Provide death benefits to beneficiaries B) Convert a lump sum into guaranteed lifetime income immediately C) Accumulate assets tax-deferred for future retirement D) Access funds flexibly as needed",
+      "question": "Maria is retiring with a $500,000 lump sum. She wants guaranteed lifetime income to cover her basic expenses. Her advisor recommends a single premium immediate annuity (SPIA). A SPIA is used to:",
       "explanation": "SPIAs convert a lump sum into guaranteed income payments that begin immediately (or within a year). They provide longevity protection—income that cannot be outlived. Tradeoffs include loss of liquidity and access to principal, and inflation risk unless an inflation rider is purchased.",
       "correctAnswer": 1,
       "options": [
@@ -8583,7 +8583,7 @@
       "subtopic": "QLAC",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John, age 62, has $200,000 in his IRA. He is concerned about outliving his assets. His advisor suggests a Qualified Longevity Annuity Contract (QLAC). A QLAC allows: A) Deferral of RMDs on funds used to purchase the annuity until age 85 B) Immediate income from qualified retirement accounts C) Tax-free accumulation in non-qualified accounts D) Unlimited transfers from IRAs to annuities",
+      "question": "John, age 62, has $200,000 in his IRA. He is concerned about outliving his assets. His advisor suggests a Qualified Longevity Annuity Contract (QLAC). A QLAC allows:",
       "explanation": "QLACs are deferred income annuities purchased with qualified plan or IRA funds that begin payments no later than age 85. The funds used ($200,000 maximum) are excluded from RMD calculations until annuity payments begin. This provides longevity insurance while deferring taxes and RMDs.",
       "correctAnswer": 0,
       "options": [
@@ -8653,7 +8653,7 @@
       "subtopic": "ESOP",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Tech Solutions Inc. wants to incentivize employees with company stock. They establish an Employee Stock Ownership Plan (ESOP). An ESOP is: A) A bonus plan paying cash based on stock performance B) A qualified plan that invests primarily in employer stock C) An individual retirement arrangement for executives only D) A plan that must diversify its investments",
+      "question": "Tech Solutions Inc. wants to incentivize employees with company stock. They establish an Employee Stock Ownership Plan (ESOP). An ESOP is:",
       "explanation": "ESOPs are qualified defined contribution plans that invest primarily in employer stock, giving employees ownership interests. They provide tax advantages to selling shareholders and the company. Participants can diversify after age 55 with 10 years of participation. NUA treatment may apply to distributions.",
       "correctAnswer": 1,
       "options": [
@@ -8688,7 +8688,7 @@
       "subtopic": "Catch-Up Contributions",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah, age 52, is contributing to her company's 401(k). She wants to maximize her retirement savings. The 401(k) catch-up contribution is available to participants who: A) Have been in the plan for at least 5 years B) Are age 50 or older by year-end C) Earn over $150,000 annually D) Are highly compensated employees",
+      "question": "Sarah, age 52, is contributing to her company's 401(k). She wants to maximize her retirement savings. The 401(k) catch-up contribution is available to participants who:",
       "explanation": "Catch-up contributions are available to participants who turn 50 or older by year-end. For 2026, the catch-up is $7,500 for 401(k), 403(b), and 457 plans ($3,500 for SIMPLE). Under SECURE 2.0, those age 60-63 may have a higher catch-up limit starting in 2025.",
       "correctAnswer": 1,
       "options": [
@@ -8723,7 +8723,7 @@
       "subtopic": "Required Contributions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Greenfield Manufacturing wants to implement a Safe Harbor 401(k) plan. What is the *minimum* employer contribution for a Safe Harbor 401(k)? A) 10% of each employee B) 8% of each employee C) A matching contribution of 100% of the first 3% of employee compensation, and 50% of the next 2% D) 3% to all employees, regardless of whether they contribute",
+      "question": "Greenfield Manufacturing wants to implement a Safe Harbor 401(k) plan. What is the *minimum* employer contribution for a Safe Harbor 401(k)?",
       "explanation": "Safe Harbor 401(k) plans require minimum employer contributions to avoid ADP/ACP testing: either a matching formula (100% on first 3% + 50% on next 2% = 4% effective match) or a 3% nonelective contribution to all eligible employees. These contributions must be immediately 100% vested.",
       "correctAnswer": 2,
       "options": [
@@ -8793,7 +8793,7 @@
       "subtopic": "Sequence Risk",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Robert retired at 65 with a $1 million portfolio. His advisor is concerned about market volatility. Sequence of returns risk is most problematic: A) When using annuities exclusively B) During years immediately before and after retirement when the portfolio is largest C) During the early accumulation phase D) Only when investing in bonds",
+      "question": "Robert retired at 65 with a $1 million portfolio. His advisor is concerned about market volatility. Sequence of returns risk is most problematic:",
       "explanation": "Sequence risk matters most when withdrawals occur during market downturns, especially near retirement when the portfolio is largest. Poor returns early in retirement deplete assets faster, leaving less to benefit from later recovery. Mitigation strategies include bucket approaches, guardrails, and maintaining adequate cash reserves.",
       "correctAnswer": 1,
       "options": [
@@ -8828,7 +8828,7 @@
       "subtopic": "Guardrails Strategy",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Susan is worried about running out of money in retirement. Her advisor suggests a \"guardrails\" withdrawal strategy. A \"guardrails\" withdrawal strategy: A) Adjusts withdrawals based on portfolio performance to avoid depleting assets too quickly B) Only allows withdrawals from bonds C) Fixes the withdrawal amount regardless of portfolio performance D) Requires 100% stock allocation",
+      "question": "Susan is worried about running out of money in retirement. Her advisor suggests a \"guardrails\" withdrawal strategy. A \"guardrails\" withdrawal strategy:",
       "explanation": "Guardrails strategies (like Guyton-Klinger or dynamic spending rules) adjust withdrawals based on portfolio performance. If the portfolio drops significantly, spending decreases; if it grows substantially, spending may increase. This flexibility reduces sequence risk compared to fixed withdrawal approaches.",
       "correctAnswer": 0,
       "options": [
@@ -8863,7 +8863,7 @@
       "subtopic": "Income Floor",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David wants to ensure his essential living expenses are covered in retirement. His advisor recommends an income floor strategy. An income floor strategy in retirement planning: A) Creates guaranteed income from secure sources (Social Security, pensions, annuities) to cover essential expenses B) Maximizes investment risk for higher returns C) Relies solely on portfolio withdrawals D) Invests entirely in equities",
+      "question": "David wants to ensure his essential living expenses are covered in retirement. His advisor recommends an income floor strategy. An income floor strategy in retirement planning:",
       "explanation": "Income floor strategies ensure essential expenses (housing, food, healthcare, insurance) are covered by guaranteed income sources. This provides psychological security and allows the remaining portfolio to be invested more aggressively for discretionary spending. Social Security, pensions, and SPIAs are common floor components.",
       "correctAnswer": 0,
       "options": [
@@ -9178,7 +9178,7 @@
       "subtopic": "Pro-Rata Rule",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria has a traditional IRA with $50,000 in pre-tax funds and $10,000 in after-tax contributions. She takes a $5,000 distribution. The pro-rata rule for IRA distributions means: A) Only the specific IRA distributed affects taxation | B) Distributions from IRAs containing both pre-tax and after-tax amounts are taxed proportionally across all traditional IRAs | C) All distributions are tax-free | D) Roth conversions are always fully taxable",
+      "question": "Maria has a traditional IRA with $50,000 in pre-tax funds and $10,000 in after-tax contributions. She takes a $5,000 distribution. The pro-rata rule for IRA distributions means:",
       "explanation": "The pro-rata rule aggregates all traditional, SEP, and SIMPLE IRAs for determining the taxable portion of distributions. Even if withdrawing from an IRA with only after-tax contributions, the taxable portion is based on the ratio of after-tax to total IRA assets across all accounts. This affects backdoor Roth conversion planning.",
       "correctAnswer": 1,
       "options": [
@@ -9213,7 +9213,7 @@
       "subtopic": "Restricted Application",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John turned 66 in 2024 and is considering claiming Social Security. He wants to file a restricted application to receive spousal benefits only, delaying his own retirement benefit. Under current rules, a restricted application for spousal benefits only is available to: A) Anyone who is married | B) Only those born before January 2, 1954 (grandfathered) | C) Only widows and widowers | D) Anyone who waits until FRA to claim",
+      "question": "John turned 66 in 2024 and is considering claiming Social Security. He wants to file a restricted application to receive spousal benefits only, delaying his own retirement benefit. Under current rules, a restricted application for spousal benefits only is available to:",
       "explanation": "The Bipartisan Budget Act of 2015 eliminated restricted applications for those born after January 1, 1954. Now, filing for any benefit automatically files for all eligible benefits. Those born before January 2, 1954 can still file a restricted application for spousal benefits at FRA while delaying their own benefit to earn delayed credits.",
       "correctAnswer": 1,
       "options": [
@@ -9248,7 +9248,7 @@
       "subtopic": "Widow/Widower Benefits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah's husband passed away last year. She is 55 years old and considering when to start claiming survivor benefits based on her late husband's earnings record. A surviving spouse can claim survivor benefits starting at age: A) 62 | B) 72 | C) FRA only | D) 60 (or 50 if disabled)",
+      "question": "Sarah's husband passed away last year. She is 55 years old and considering when to start claiming survivor benefits based on her late husband's earnings record. A surviving spouse can claim survivor benefits starting at age:",
       "explanation": "Surviving spouses can claim reduced survivor benefits as early as age 60 (50 if disabled). Benefits increase up to survivor FRA. A widow(er) can strategically claim one benefit (own or survivor) early and switch to the larger benefit later. Remarriage before age 60 typically ends eligibility for deceased spouse\\'s benefits.",
       "correctAnswer": 3,
       "options": [
@@ -9283,7 +9283,7 @@
       "subtopic": "Taxation of Benefits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tom and Mary have a combined adjusted gross income of $90,000. They receive $20,000 in Social Security benefits. Social Security benefits can be up to what percentage taxable? A) 0%—Social Security is never taxable | B) 100% | C) 85% | D) 50%",
+      "question": "Tom and Mary have a combined adjusted gross income of $90,000. They receive $20,000 in Social Security benefits. Social Security benefits can be up to what percentage taxable?",
       "explanation": "Up to 85% of Social Security benefits can be taxable depending on \"combined income\" (AGI + nontaxable interest + 50% of SS benefits). Below $25K (single) or $32K (MFJ), benefits are tax-free. Between thresholds, up to 50% is taxable. Above $34K (single) or $44K (MFJ), up to 85% is taxable.",
       "correctAnswer": 2,
       "options": [
@@ -9318,7 +9318,7 @@
       "subtopic": "Replacement Ratio",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ABC Financial is helping a client, Robert, plan for retirement. Robert's current salary is $100,000. The income replacement ratio approach to retirement planning: A) Assumes 100% of pre-retirement income is needed | B) Is only used for early retirees | C) Estimates retirement income needs as a percentage (typically 70-80%) of pre-retirement income | D) Ignores Social Security in calculations",
+      "question": "ABC Financial is helping a client, Robert, plan for retirement. Robert's current salary is $100,000. The income replacement ratio approach to retirement planning:",
       "explanation": "Replacement ratios estimate needed retirement income as a percentage of pre-retirement income, typically 70-80%. The reduction accounts for eliminated work expenses, taxes, and savings. The expense method is more precise but replacement ratios provide a useful quick estimate. Higher earners often need lower ratios.",
       "correctAnswer": 2,
       "options": [
@@ -9353,7 +9353,7 @@
       "subtopic": "Longevity Insurance",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Susan is concerned about outliving her assets in retirement. She is considering purchasing a product that will provide income if she lives to an advanced age. A deferred income annuity (DIA) or longevity insurance product: A) Provides immediate income from purchase | B) Is only available through employer plans | C) Begins payments at a future age (often 80-85) to insure against outliving assets | D) Has no role in retirement planning",
+      "question": "Susan is concerned about outliving her assets in retirement. She is considering purchasing a product that will provide income if she lives to an advanced age. A deferred income annuity (DIA) or longevity insurance product:",
       "explanation": "DIAs (including QLACs in qualified accounts) provide payments starting at a future age, insuring against longevity risk. The delay allows for lower premiums or higher future payments. Knowing income is guaranteed from age 80-85+ allows more aggressive spending from other assets in earlier retirement years.",
       "correctAnswer": 2,
       "options": [
@@ -9388,7 +9388,7 @@
       "subtopic": "Cash Balance Plans",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Acme Corp. sponsors a retirement plan for its employees. The plan provides stated account balances for each employee, growing with annual pay credits and interest credits. A cash balance pension plan: A) Is a defined benefit plan with individual account balances that grow by annual credits and interest credits | B) Cannot be combined with 401(k) plans | C) Is a pure defined contribution plan | D) Has no employer contribution",
+      "question": "Acme Corp. sponsors a retirement plan for its employees. The plan provides stated account balances for each employee, growing with annual pay credits and interest credits. A cash balance pension plan:",
       "explanation": "Cash balance plans are defined benefit plans where participants have hypothetical account balances. Each year they receive pay credits (often percentage of salary) and interest credits. The employer bears investment risk. Benefits are typically portable as lump sums. Often paired with 401(k) for high-employer contribution strategies.",
       "correctAnswer": 0,
       "options": [
@@ -9458,7 +9458,7 @@
       "subtopic": "Profit Sharing",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Delta Industries offers both a profit sharing plan and a money purchase pension plan to its employees. A profit sharing plan differs from a money purchase pension plan in that: A) Money purchase plans are not qualified | B) Profit sharing contributions are discretionary while money purchase requires fixed annual contributions | C) Only profit sharing allows Roth contributions | D) Profit sharing has higher contribution limits",
+      "question": "Delta Industries offers both a profit sharing plan and a money purchase pension plan to its employees. A profit sharing plan differs from a money purchase pension plan in that:",
       "explanation": "Profit sharing allows flexible employer contributions (0-25% of compensation annually based on profits and discretion). Money purchase pension plans require fixed annual contributions as a percentage of pay. Money purchase penalty for under-contribution makes them less flexible. Many employers prefer profit sharing for this flexibility.",
       "correctAnswer": 1,
       "options": [
@@ -9493,7 +9493,7 @@
       "subtopic": "SEP IRA",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Marcus is self-employed and operates \"Marcus Consulting LLC.\" He wants to contribute to a retirement plan. What is the latest date Marcus can make a deductible contribution to his SEP IRA for the 2023 tax year? \nA) Tax filing deadline including extensions (typically October 15) | B) 60 days after year-end | C) December 31 of the tax year | D) April 15 with no extensions",
+      "question": "Marcus is self-employed and operates \"Marcus Consulting LLC.\" He wants to contribute to a retirement plan. What is the latest date Marcus can make a deductible contribution to his SEP IRA for the 2023 tax year?",
       "explanation": "SEP contributions can be made up to the tax filing deadline including extensions. For self-employed individuals, this often means October 15 if extended. This provides flexibility to assess income and profit before determining contributions. Contributions are employer-only, up to 25% of compensation (20% of net SE income).",
       "correctAnswer": 0,
       "options": [
@@ -9528,7 +9528,7 @@
       "subtopic": "SECURE 2.0 Changes",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Harold turned 72 in 2022. Due to recent legislation, at what age will Harold be required to take his first Required Minimum Distribution (RMD) from his IRA?\nA) 72 for everyone | B) 70½ for everyone | C) 65 for early retirees | D) 73 (2023) and eventually 75 (2033)",
+      "question": "Harold turned 72 in 2022. Due to recent legislation, at what age will Harold be required to take his first Required Minimum Distribution (RMD) from his IRA?",
       "explanation": "SECURE 2.0 raised the RMD age to 73 for those reaching age 72 after 2022, and will raise it to 75 for those reaching 74 after 2032. This provides additional years of tax-deferred growth. SECURE 1.0 had raised it from 70½ to 72. The RMD penalty was also reduced from 50% to 25% (10% if corrected quickly).",
       "correctAnswer": 3,
       "options": [
@@ -9563,7 +9563,7 @@
       "subtopic": "Emergency Savings",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC wants to improve employee financial wellness. As part of SECURE 2.0, what feature can Vista Healthcare add to its 401(k) plan to help employees save for unforeseen expenses?\nA) Pension-linked emergency savings accounts with after-tax contributions up to $2,500 | B) Unlimited emergency withdrawals | C) Pre-tax emergency savings | D) Emergency loans up to $50,000",
+      "question": "Vista Healthcare LLC wants to improve employee financial wellness. As part of SECURE 2.0, what feature can Vista Healthcare add to its 401(k) plan to help employees save for unforeseen expenses?",
       "explanation": "SECURE 2.0 permits 401(k), 403(b), and governmental 457(b) plans to offer emergency savings accounts (Sidecar accounts) funded with Roth/after-tax contributions up to $2,500 for non-highly compensated employees. First 4 withdrawals per year are penalty-free. This addresses emergency savings needs while maintaining retirement contributions.",
       "correctAnswer": 0,
       "options": [
@@ -9598,7 +9598,7 @@
       "subtopic": "Family Maximum",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John is the primary insurance amount (PIA) recipient. His spouse and two dependent children also receive benefits on his record. What is a key limitation on the total amount paid to John's family?\nA) Has no limit on total family benefits | B) Limits total benefits payable on one worker",
+      "question": "John is the primary insurance amount (PIA) recipient. His spouse and two dependent children also receive benefits on his record. What is a key limitation on the total amount paid to John's family?",
       "explanation": "The family maximum caps total benefits payable on one worker\\'s record at 150-180% of the worker\\'s PIA. When combined benefits exceed this, dependent and spousal benefits are proportionally reduced (the worker\\'s benefit is not reduced). This affects families with multiple dependents claiming on one record.",
       "correctAnswer": 1,
       "options": [
@@ -9633,7 +9633,7 @@
       "subtopic": "Monte Carlo Analysis",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Maria is creating a retirement plan for her client, David. She wants to assess the likelihood of David's plan succeeding given market volatility. What is the PRIMARY benefit of using Monte Carlo simulation in this scenario?\nA) Only considers inflation | B) Provides a single deterministic outcome | C) Runs thousands of scenarios with varying returns and sequence to estimate probability of success | D) Assumes constant returns each year",
+      "question": "Maria is creating a retirement plan for her client, David. She wants to assess the likelihood of David's plan succeeding given market volatility. What is the PRIMARY benefit of using Monte Carlo simulation in this scenario?",
       "explanation": "Monte Carlo simulation uses randomized return sequences across many trials (often 1,000+) to model various market environments. It provides probability of success (e.g., 85% chance of not running out of money) rather than single-point projections, capturing sequence of returns risk and return variability.",
       "correctAnswer": 2,
       "options": [
@@ -9668,7 +9668,7 @@
       "subtopic": "Healthcare Costs",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan retired at age 58 from Meridian Corp. and needs to plan for income until she is eligible for Medicare at age 65. What is a significant concern for Susan's retirement plan during this period?\nA) Pension calculation | B) Bridging the gap until Medicare eligibility with marketplace or COBRA coverage | C) Collecting Social Security early | D) Accessing 401(k) funds",
+      "question": "Susan retired at age 58 from Meridian Corp. and needs to plan for income until she is eligible for Medicare at age 65. What is a significant concern for Susan's retirement plan during this period?",
       "explanation": "Early retirees face healthcare coverage gaps before Medicare at 65. Options include COBRA (expensive, limited duration), marketplace plans (with possible subsidies), spouse\\'s employer plan, or short-term plans. Healthcare costs are major early retirement expenses and must be planned.",
       "correctAnswer": 1,
       "options": [
@@ -9703,7 +9703,7 @@
       "subtopic": "Retirement Age Sensitivity",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Alice is considering retiring at age 62 versus age 67. All other factors being equal, what is the MOST likely impact of delaying her retirement?\nA) Is not financially beneficial | B) Significantly improves outcomes by adding savings years, reducing distribution years, and increasing Social Security benefits | C) Has minimal impact on retirement security | D) Only affects Social Security",
+      "question": "Alice is considering retiring at age 62 versus age 67. All other factors being equal, what is the MOST likely impact of delaying her retirement?",
       "explanation": "Five more working years dramatically improves retirement: more savings years, fewer spending years, larger Social Security (avoiding early claiming penalty and gaining delayed credits), potentially longer employer healthcare, and pension accrual if applicable. Sensitivity analysis shows retirement timing is among the most powerful variables.",
       "correctAnswer": 1,
       "options": [
@@ -9738,7 +9738,7 @@
       "subtopic": "Safe Harbor 401(k)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates wants to simplify its 401(k) administration and reduce the burden of annual compliance testing. What benefit does implementing a Safe Harbor 401(k) plan provide?\nA) Allows employers to avoid annual non-discrimination testing by making required matching or non-elective contributions | B) Has stricter contribution limits | C) Requires employee approval | D) Only benefits highly compensated employees",
+      "question": "Chen & Associates wants to simplify its 401(k) administration and reduce the burden of annual compliance testing. What benefit does implementing a Safe Harbor 401(k) plan provide?",
       "explanation": "Safe Harbor plans bypass ADP/ACP discrimination testing by providing: (1) 100% match on 3% + 50% match on next 2% of deferrals, OR (2) 3-4% non-elective contribution to all eligible employees. Contributions must be immediately vested. This allows HCEs to maximize contributions without testing failure risk.",
       "correctAnswer": 0,
       "options": [
@@ -10614,7 +10614,7 @@
       "subtopic": "Cash Balance Plan",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah works for TechForward Solutions, which offers a defined benefit plan. The plan expresses future retirement benefits as a hypothetical account balance that grows with guaranteed interest credits. This type of plan is best described as a:\nA) Type of 401(k) | B) A) Defined contribution plan | C) C) Health savings account | D) B) Defined benefit plan that expresses benefits as a hypothetical account balance with guaranteed interest credits",
+      "question": "Sarah works for TechForward Solutions, which offers a defined benefit plan. The plan expresses future retirement benefits as a hypothetical account balance that grows with guaranteed interest credits. This type of plan is best described as a:",
       "explanation": "Cash balance plans are technically DB (employer-funded, promised benefit) but look like DC—each employee has a hypothetical account with annual pay credits (% of salary) and interest credits (guaranteed rate). Benefits are portable as lump sums. They favor younger employees relative to traditional DB.",
       "correctAnswer": 3,
       "options": [
@@ -10649,7 +10649,7 @@
       "subtopic": "PBGC Coverage",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Acme Corp's defined benefit pension plan is underfunded. If Acme terminates the plan with insufficient assets to pay promised benefits, which entity insures a portion of those benefits, up to certain limits?\nA) D) Is funded by employee contributions | B) A) Guarantees all retirement benefits | C) C) Covers 401(k) losses | D) B) Insures defined benefit plans, paying benefits up to limits if plans terminate with insufficient assets",
+      "question": "Acme Corp's defined benefit pension plan is underfunded. If Acme terminates the plan with insufficient assets to pay promised benefits, which entity insures a portion of those benefits, up to certain limits?",
       "explanation": "PBGC is federal insurance for DB plans (funded by employer premiums). If a DB plan terminates underfunded, PBGC pays benefits up to annual limits (around $70K at 65 in 2026). It doesn\\'t cover DC plans, government plans, or church plans. Single-employer and multiemployer programs have different rules.",
       "correctAnswer": 3,
       "options": [
@@ -10719,7 +10719,7 @@
       "subtopic": "Prohibited Transactions",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John uses his IRA to purchase a vacation home for personal use. He also borrows money from the IRA to fund his business. These actions would be considered: \nA) A) Investing in mutual funds | B) C) Contributing too much | C) D) Early withdrawal | D) B) Self-dealing transactions like borrowing from the IRA, selling property to it, or using IRA assets for personal benefit",
+      "question": "John uses his IRA to purchase a vacation home for personal use. He also borrows money from the IRA to fund his business. These actions would be considered:",
       "explanation": "Prohibited transactions (IRC 4975) include: borrowing from IRA, selling property to it, using IRA assets as loan security, or receiving compensation from IRA investments. Disqualified persons (owner, family, fiduciaries) cannot engage in these. Penalty is severe: entire IRA becomes taxable.",
       "correctAnswer": 3,
       "options": [
@@ -10754,7 +10754,7 @@
       "subtopic": "Excess Contributions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Lisa contributed $8,000 to her traditional IRA, exceeding the contribution limit by $1,500. She did not correct this excess contribution by the tax filing deadline. These uncorrected excess contributions:\nA) C) Are refunded automatically | B) A) Are simply forfeited | C) D) Have no consequences | D) B) Are subject to a 6% excise tax each year until corrected",
+      "question": "Lisa contributed $8,000 to her traditional IRA, exceeding the contribution limit by $1,500. She did not correct this excess contribution by the tax filing deadline. These uncorrected excess contributions:",
       "explanation": "Excess contributions incur 6% penalty annually until corrected. Can be corrected by: withdrawing excess plus earnings by tax deadline (including extensions), applying excess to following year (if under limit), or withdrawing in subsequent years when contributions are below limit.",
       "correctAnswer": 3,
       "options": [
@@ -10789,7 +10789,7 @@
       "subtopic": "Qualified Longevity Annuity Contract",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria wants to defer income taxes as long as possible and is considering a Qualified Longevity Annuity Contract (QLAC) within her IRA. A QLAC in a retirement plan:\nA) C) Cannot exceed $50,000 | B) A) Must begin payments immediately | C) D) Is available only in Roth accounts | D) B) Defers income to as late as age 85, providing longevity insurance while being excluded from RMD calculations",
+      "question": "Maria wants to defer income taxes as long as possible and is considering a Qualified Longevity Annuity Contract (QLAC) within her IRA. A QLAC in a retirement plan:",
       "explanation": "QLACs allow up to $200,000 (SECURE 2.0 increased limit) to be used for deferred annuities starting by age 85. The QLAC amount is excluded from RMD calculations, reducing required distributions. This provides pure longevity insurance—if you die before payments start, benefits are limited (often to spouse or return of premium).",
       "correctAnswer": 3,
       "options": [
@@ -10824,7 +10824,7 @@
       "subtopic": "NUA Strategy",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "David, age 60, is retiring from Apex Industries. He holds highly appreciated Apex stock in his 401(k). He's considering the Net Unrealized Appreciation (NUA) strategy. The NUA strategy for employer stock in a 401(k):\nA) A) Applies to all investments | B) C) Is only beneficial for small amounts | C) D) Requires Roth conversion | D) B) Allows distributing employer stock in-kind, paying ordinary tax on cost basis only, with NUA taxed at capital gains rates when sold",
+      "question": "David, age 60, is retiring from Apex Industries. He holds highly appreciated Apex stock in his 401(k). He's considering the Net Unrealized Appreciation (NUA) strategy. The NUA strategy for employer stock in a 401(k):",
       "explanation": "NUA strategy: instead of rolling employer stock to IRA, distribute in-kind to taxable account. Ordinary income tax applies only to cost basis; the appreciation (NUA) is taxed at long-term capital gains rates when sold. This works best with large NUA (low basis, high current value) and lower capital gains rates.",
       "correctAnswer": 3,
       "options": [
@@ -10859,7 +10859,7 @@
       "subtopic": "Stretch Period",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Robert inherited an IRA from his non-spouse sibling after the SECURE Act was enacted. For most non-spouse beneficiaries of IRAs after the SECURE Act:\nA) C) Immediate lump sum is required | B) D) Five-year rule always applies | C) A) Stretch distributions continue based on life expectancy | D) B) The account must be fully distributed within 10 years of the owner",
+      "question": "Robert inherited an IRA from his non-spouse sibling after the SECURE Act was enacted. For most non-spouse beneficiaries of IRAs after the SECURE Act:",
       "explanation": "SECURE Act (2019) eliminated life-expectancy stretch for most non-spouse beneficiaries—10-year rule applies. Exceptions (eligible designated beneficiaries): surviving spouses, minor children (until majority), disabled/chronically ill individuals, and beneficiaries not more than 10 years younger than the deceased.",
       "correctAnswer": 3,
       "options": [
@@ -10894,7 +10894,7 @@
       "subtopic": "Disability Benefits",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After working for 15 years, Jane became disabled and unable to work. She is applying for Social Security Disability Insurance (SSDI). SSDI provides:\nA) D) Needs-based benefits only | B) C) Short-term disability coverage | C) A) The same benefits regardless of work history | D) B) Benefits to disabled workers who have sufficient work credits, based on their earnings record",
+      "question": "After working for 15 years, Jane became disabled and unable to work. She is applying for Social Security Disability Insurance (SSDI). SSDI provides:",
       "explanation": "SSDI is social insurance (not need-based) for workers with enough credits who become disabled. Disability definition is strict: unable to perform substantial gainful activity for 12+ months or terminal. Benefits based on earnings record (like retirement). After 24 months of SSDI, Medicare eligibility begins.",
       "correctAnswer": 3,
       "options": [
@@ -11209,7 +11209,7 @@
       "subtopic": "Age 50 Catch-Up",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria, age 52, is a participant in the Meridian Corp 401(k) plan. She wants to maximize her retirement savings. Catch-up contributions for 401(k) plans allow participants age 50 and older to: A) Convert to Roth automatically | B) Catch up only to employer matches | C) Make only regular contributions | D) Contribute an additional amount above the regular limit ($7,500 in 2026; SECURE 2.0 increases for ages 60-63)",
+      "question": "Maria, age 52, is a participant in the Meridian Corp 401(k) plan. She wants to maximize her retirement savings. Catch-up contributions for 401(k) plans allow participants age 50 and older to:",
       "explanation": "Age-50+ can contribute extra: $7,500 for 401(k)/403(b) in 2026. SECURE 2.0 adds higher catch-up for ages 60-63 starting 2025. IRA catch-up is $1,000. This allows accelerated saving for those behind, those with higher income later in career, or those who simply can save more as kids leave home.",
       "correctAnswer": 3,
       "options": [
@@ -11244,7 +11244,7 @@
       "subtopic": "SIMPLE IRA Limits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David, an employee of Chen & Associates, is considering contributing to the company's SIMPLE IRA in 2026. What are the SIMPLE IRA employee contribution limits in 2026? A) $7,000 like traditional IRAs | B) Unlimited | C) Same as 401(k) limits | D) $17,000 with $3,500 catch-up for age 50+, lower than 401(k) limits",
+      "question": "David, an employee of Chen & Associates, is considering contributing to the company's SIMPLE IRA in 2026. What are the SIMPLE IRA employee contribution limits in 2026?",
       "explanation": "SIMPLE IRAs have lower limits than 401(k)s: $17,000 employee deferral in 2026 (vs $23,500 for 401(k)), $3,500 catch-up (vs $7,500). Employer must match 1-3% or provide 2% non-elective. They\\'re simpler to administer but have lower contribution potential for higher earners.",
       "correctAnswer": 3,
       "options": [
@@ -11279,7 +11279,7 @@
       "subtopic": "RMD Aggregation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John has three traditional IRAs at different brokerage firms. He is now age 75 and subject to RMDs. For RMD purposes, traditional IRAs: A) Must each satisfy their own RMD | B) Follow the same rules as 401(k)s | C) Must be consolidated into one account | D) Can have RMDs calculated separately but taken from any traditional IRA(s)",
+      "question": "John has three traditional IRAs at different brokerage firms. He is now age 75 and subject to RMDs. For RMD purposes, traditional IRAs:",
       "explanation": "Calculate RMD for each IRA separately, but the total can be withdrawn from any one or combination. This allows keeping accounts with better investments/terms while satisfying RMDs from others. 401(k)s differ: each 401(k) must satisfy its own RMD (no aggregation across employer plans).",
       "correctAnswer": 3,
       "options": [
@@ -11314,7 +11314,7 @@
       "subtopic": "Retroactive Benefits",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah is considering applying for Social Security benefits. She is currently 64, but her Full Retirement Age is 67. Social Security retroactive benefits (back-pay for months before application) are: A) Unavailable | B) Available for unlimited past months | C) Only for disabled beneficiaries | D) Limited to 6 months of retroactive benefits and cannot go back before Full Retirement Age",
+      "question": "Sarah is considering applying for Social Security benefits. She is currently 64, but her Full Retirement Age is 67. Social Security retroactive benefits (back-pay for months before application) are:",
       "explanation": "If you file after FRA, you can receive up to 6 months of retroactive benefits—but doing so permanently reduces your benefit (as if you claimed earlier). You can\\'t get retroactive benefits for months before FRA. Consider carefully: lump sum now versus higher lifetime benefit.",
       "correctAnswer": 3,
       "options": [
@@ -11349,7 +11349,7 @@
       "subtopic": "Inflation-Adjusted Spending",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC is helping their employee, Tom, project his retirement spending needs. When projecting retirement spending needs, inflation adjustments should reflect: A) Only housing costs | B) Zero inflation for retirees | C) That different expense categories inflate at different rates, with healthcare often exceeding general inflation | D) A constant CPI rate",
+      "question": "Vista Healthcare LLC is helping their employee, Tom, project his retirement spending needs. When projecting retirement spending needs, inflation adjustments should reflect:",
       "explanation": "Retirement spending inflation varies by category. Healthcare historically rises faster than CPI (5-6% vs 2-3%). Housing costs may stabilize if mortgage is paid. Food and utilities track general inflation. Some expenses decrease (work-related, some travel) while others increase (healthcare, home maintenance). Personalized projections beat single inflation rate.",
       "correctAnswer": 2,
       "options": [
@@ -11384,7 +11384,7 @@
       "subtopic": "Go-Go, Slow-Go, No-Go",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Smiths are planning their retirement. They are using the \"go-go, slow-go, no-go\" retirement spending model, which suggests: A) Only healthcare costs matter | B) Spending always increases | C) Spending often decreases in phases as retirees become less active, with travel and discretionary spending declining before essential costs rise | D) Spending remains constant",
+      "question": "The Smiths are planning their retirement. They are using the \"go-go, slow-go, no-go\" retirement spending model, which suggests:",
       "explanation": "Retirement spending phases: Go-go (65-75): active lifestyle, travel, high discretionary spending. Slow-go (75-85): reduced activity, fewer trips, declining spending. No-go (85+): limited activity, but healthcare costs rise. This U-shaped real spending pattern (declining then rising for healthcare) should inform withdrawal strategies.",
       "correctAnswer": 2,
       "options": [
@@ -11419,7 +11419,7 @@
       "subtopic": "Retirement Timing",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Michael is considering delaying his retirement. How does delaying retirement from age 62 to 67 typically improve retirement security? A) It allows additional savings accumulation, delays benefits increasing Social Security, and shortens the distribution period | B) Investment returns are higher | C) Healthcare costs decrease | D) Expenses increase in retirement",
+      "question": "Michael is considering delaying his retirement. How does delaying retirement from age 62 to 67 typically improve retirement security?",
       "explanation": "Delayed retirement benefits: more years saving (5 additional years potentially +$100K+), assets grow longer, Social Security increases substantially (approximately 30% higher at 67 vs 62, more by 70), fewer years needing withdrawals, continued employer healthcare coverage. The compounding effect of all factors significantly improves retirement security.",
       "correctAnswer": 0,
       "options": [
@@ -11454,7 +11454,7 @@
       "subtopic": "Contribution Deadlines",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Solutions, Inc. sponsors a profit sharing plan for its employees. What is the contribution deadline for employer contributions to a qualified plan? A) The tax filing deadline (including extensions) for the employer | B) , \n       | C) , \n       | D) ,",
+      "question": "Apex Solutions, Inc. sponsors a profit sharing plan for its employees. What is the contribution deadline for employer contributions to a qualified plan?",
       "explanation": "Employer contributions can be made until the tax return due date, including extensions. For calendar-year corporations, this extends to October 15 with extension. The contribution can be deducted in the prior year if deposited by this deadline. Employee deferrals have earlier deposit deadlines (generally as soon as administratively feasible).",
       "correctAnswer": 0,
       "options": [
@@ -12609,7 +12609,7 @@
       "subtopic": "RMD Age Changes",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria, born in 1965, is planning her retirement with her advisor at Oak Financial. SECURE 2.0 changed the RMD age. Under SECURE 2.0's RMD changes, at what age must Maria begin taking RMDs? A) 70½ B) 75 C) 73 D) 72",
+      "question": "Maria, born in 1965, is planning her retirement with her advisor at Oak Financial. SECURE 2.0 changed the RMD age. Under SECURE 2.0's RMD changes, at what age must Maria begin taking RMDs?",
       "explanation": "SECURE 2.0 RMD ages: Born 1951-1959: Age 73. Born 1960+: Age 75 (effective 2033). Individual born 1965 reaches 75 in 2040, so RMDs begin in 2040. Note: SECURE Act 1.0 raised to 72, SECURE 2.0 raised further. Roth 401(k) RMDs eliminated starting 2024. Traditional IRA/401(k) still have RMDs. Planning: longer deferral = more growth, but larger RMDs later.",
       "correctAnswer": 1,
       "options": [
@@ -12644,7 +12644,7 @@
       "subtopic": "Roth 401(k) RMDs",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John, a Vista Healthcare LLC employee, has both a traditional 401(k) and a Roth 401(k). Beginning in 2024, which of the following retirement accounts will have RMDs eliminated under SECURE 2.0? A) All retirement accounts for those under age 75 B) Inherited IRAs from non-spouse beneficiaries C) Designated Roth accounts in employer plans (Roth 401(k), Roth 403(b)) D) Traditional 401(k) accounts",
+      "question": "John, a Vista Healthcare LLC employee, has both a traditional 401(k) and a Roth 401(k). Beginning in 2024, which of the following retirement accounts will have RMDs eliminated under SECURE 2.0?",
       "explanation": "Roth 401(k)/403(b) RMD elimination (effective 2024): Previously, Roth 401(k)s had RMDs (unlike Roth IRAs). SECURE 2.0 aligns them. No RMDs for designated Roth accounts. No need to roll Roth 401(k) to Roth IRA to avoid RMDs. Roth IRAs never had RMDs. Inherited Roths still have rules. Traditional accounts still require RMDs at 73/75.",
       "correctAnswer": 2,
       "options": [
@@ -12679,7 +12679,7 @@
       "subtopic": "RMD Penalties",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah failed to take her full RMD last year. SECURE 2.0 significantly reduced the penalty. SECURE 2.0 reduced the penalty for failure to take a required minimum distribution from: A) 50% to 10% B) RMD penalties were eliminated entirely C) 25% to 0% D) 50% to 25%, with further reduction to 10% if corrected within the IRS correction window",
+      "question": "Sarah failed to take her full RMD last year. SECURE 2.0 significantly reduced the penalty. SECURE 2.0 reduced the penalty for failure to take a required minimum distribution from:",
       "explanation": "RMD penalty reduction (effective 2023): Previous penalty: 50% of shortfall. New: 25% of shortfall. If corrected during IRS correction window (generally within 2 years): reduced to 10%. Example: Miss $20,000 RMD, penalty = $5,000 (25%). Correct timely = $2,000 (10%). Still important to take RMDs, but less draconian penalty for honest mistakes.",
       "correctAnswer": 3,
       "options": [

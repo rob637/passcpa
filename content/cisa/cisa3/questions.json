@@ -1169,7 +1169,7 @@
       "subtopic": "Use Cases",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During requirements gathering for a new CRM system at GlobalTech Solutions, stakeholders are describing how they will interact with the system. Which of the following BEST describes what use cases illustrate?\nA) Database structure | B) Technical architecture | C) How actors interact with the system to achieve goals | D) Network topology",
+      "question": "During requirements gathering for a new CRM system at GlobalTech Solutions, stakeholders are describing how they will interact with the system. Which of the following BEST describes what use cases illustrate?",
       "options": [
         "The detailed schema and relationships within the database structure.",
         "The hardware and software components comprising the technical architecture.",
@@ -1204,7 +1204,7 @@
       "subtopic": "ERD",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates is designing a database for patient records. They need a visual representation of the data and relationships. Which of the following BEST describes what entity-relationship diagrams (ERDs) model?\nA) Network flows | B) Business processes | C) System architecture | D) Data entities and their relationships",
+      "question": "Chen & Associates is designing a database for patient records. They need a visual representation of the data and relationships. Which of the following BEST describes what entity-relationship diagrams (ERDs) model?",
       "options": [
         "The flow of data packets across a network",
         "The sequence of activities in business processes",
@@ -1239,7 +1239,7 @@
       "subtopic": "DFD",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a system audit at Vista Healthcare LLC, the auditor is reviewing documentation to understand how patient data flows through the system. What do data flow diagrams (DFDs) primarily show?\nA) Only physical storage | B) Only network topology | C) Only user interfaces | D) How data moves through a system",
+      "question": "During a system audit at Vista Healthcare LLC, the auditor is reviewing documentation to understand how patient data flows through the system. What do data flow diagrams (DFDs) primarily show?",
       "options": [
         "Only physical storage locations and encryption methods",
         "Only network topology and communication protocols used",
@@ -1274,7 +1274,7 @@
       "subtopic": "Prototyping",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Meridian Corp is developing a new mobile app, but the project team is unsure of the exact user requirements. Under which of the following circumstances is prototyping MOST useful?\nA) No user involvement is possible | B) Time is unlimited | C) Requirements are completely defined | D) Requirements are unclear and need user feedback",
+      "question": "Meridian Corp is developing a new mobile app, but the project team is unsure of the exact user requirements. Under which of the following circumstances is prototyping MOST useful?",
       "options": [
         "User involvement is impossible due to strict security protocols and limited access to the target demographic.",
         "Time is unlimited and a waterfall methodology is being used to ensure comprehensive documentation throughout the project.",
@@ -1309,7 +1309,7 @@
       "subtopic": "Spiral Model",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "TechForward Inc. is managing a complex software project with evolving requirements and significant risks. The project manager decides to use a software development lifecycle (SDLC) that incorporates risk assessment. The spiral model combines elements of:\nA) Only testing | B) Only agile | C) Only waterfall | D) Waterfall and prototyping with risk analysis",
+      "question": "TechForward Inc. is managing a complex software project with evolving requirements and significant risks. The project manager decides to use a software development lifecycle (SDLC) that incorporates risk assessment. The spiral model combines elements of:",
       "options": [
         "Iterative testing and quality assurance processes",
         "Agile methodologies with rapid iteration cycles",
@@ -1344,7 +1344,7 @@
       "subtopic": "Scrum",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "A software development team at Innovate Systems is using the Scrum framework for a new project. How long do sprints typically last in this framework?\nA) One to four weeks | B) One day | C) Six months | D) One year",
+      "question": "A software development team at Innovate Systems is using the Scrum framework for a new project. How long do sprints typically last in this framework?",
       "options": [
         "One to four weeks",
         "One day, for rapid iteration",
@@ -1379,7 +1379,7 @@
       "subtopic": "TDD",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Software is adopting test-driven development (TDD) for its new application. What does test-driven development (TDD) require?\nA) No testing | B) Only manual testing | C) Testing after development is complete | D) Writing tests before writing code",
+      "question": "Apex Software is adopting test-driven development (TDD) for its new application. What does test-driven development (TDD) require?",
       "options": [
         "No testing",
         "Only manual testing",
@@ -1414,7 +1414,7 @@
       "subtopic": "Refactoring",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a code review at SecureData Solutions, developers are focused on improving the code's structure and readability without altering its functionality. Code refactoring involves:\nA) Restructuring code without changing its behavior | B) Removing all comments | C) Adding new features | D) Converting to a new language",
+      "question": "During a code review at SecureData Solutions, developers are focused on improving the code's structure and readability without altering its functionality. Code refactoring involves:",
       "options": [
         "Restructuring code without changing its behavior",
         "Removing all comments to reduce the codebase size",
@@ -2849,7 +2849,7 @@
       "subtopic": "Attack Surface",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent security review at Stellaris Systems, the CISO noted an excessive number of open ports on publicly accessible servers. To improve security, attack surface reduction involves: A) Adding more features | B) Minimizing entry points that could be exploited | C) Increasing interfaces | D) Exposing more services",
+      "question": "During a recent security review at Stellaris Systems, the CISO noted an excessive number of open ports on publicly accessible servers. To improve security, attack surface reduction involves:",
       "options": [
         "Adding more features to enhance user experience and system functionality.",
         "Minimizing entry points that could be exploited",
@@ -2884,7 +2884,7 @@
       "subtopic": "Secure Defaults",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Citadel Bank is implementing a new core banking system. The security team wants to ensure the system is secure from the outset. Secure defaults mean: A) Everything is enabled | B) Systems are configured securely out of the box | C) Users configure security | D) No security is applied",
+      "question": "Citadel Bank is implementing a new core banking system. The security team wants to ensure the system is secure from the outset. Secure defaults mean:",
       "options": [
         "All available features and functionalities are enabled by default, maximizing potential system capabilities.",
         "Systems are configured securely out of the box",
@@ -2919,7 +2919,7 @@
       "subtopic": "Data Masking",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During the development of a new patient portal at Vista Healthcare LLC, developers are using real patient data for testing. To comply with HIPAA and protect patient privacy, sensitive data handling in development should: A) Use masked or synthetic data in non-production environments | B) Ignore data protection | C) Use production data freely | D) Share data with all developers",
+      "question": "During the development of a new patient portal at Vista Healthcare LLC, developers are using real patient data for testing. To comply with HIPAA and protect patient privacy, sensitive data handling in development should:",
       "options": [
         "Use masked or synthetic data in non-production environments",
         "Ignore data protection during initial development phases to accelerate project timelines.",
@@ -2954,7 +2954,7 @@
       "subtopic": "Secrets Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Financial is developing a new API for accessing customer account information. To prevent unauthorized access, secrets management ensures: A) Credentials, keys, and tokens are securely stored and accessed | B) Passwords are in source code | C) All developers know passwords | D) No encryption is needed",
+      "question": "Apex Financial is developing a new API for accessing customer account information. To prevent unauthorized access, secrets management ensures:",
       "options": [
         "Credentials, keys, and tokens are securely stored and accessed",
         "Passwords are stored directly in the application's source code repository, allowing for easy access and modification by authorized personnel.",
@@ -2989,7 +2989,7 @@
       "subtopic": "SBOM",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Following a recent supply chain attack targeting SolarWinds, Meridian Corp. is implementing enhanced software supply chain security. A Software Bill of Materials (SBOM) provides: A) Only licensing | B) Inventory of components and dependencies | C) Only cost information | D) Only documentation",
+      "question": "Following a recent supply chain attack targeting SolarWinds, Meridian Corp. is implementing enhanced software supply chain security. A Software Bill of Materials (SBOM) provides:",
       "options": [
         "Only licensing terms and vendor agreements",
         "Inventory of components and dependencies",
@@ -3024,7 +3024,7 @@
       "subtopic": "GitOps",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Chen & Associates is adopting a cloud-native infrastructure using Kubernetes. To manage infrastructure as code and automate deployments, GitOps methodology: A) Avoids version control | B) Only manages code | C) Uses Git as single source of truth for infrastructure and applications | D) Requires manual deployments",
+      "question": "Chen & Associates is adopting a cloud-native infrastructure using Kubernetes. To manage infrastructure as code and automate deployments, GitOps methodology:",
       "options": [
         "Avoids version control to expedite changes, sacrificing auditability and rollback capabilities.",
         "Only manages application code, neglecting infrastructure configuration and state management.",
@@ -3059,7 +3059,7 @@
       "subtopic": "DevSecOps",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech Solutions is implementing a DevSecOps approach to its software development lifecycle. Pipeline security (DevSecOps) includes: A) Only manual reviews | B) Only deployment controls | C) Security scanning, access controls, and artifact integrity throughout CI/CD | D) Only final testing",
+      "question": "GlobalTech Solutions is implementing a DevSecOps approach to its software development lifecycle. Pipeline security (DevSecOps) includes:",
       "options": [
         "Only manual reviews of code and configurations before each release cycle.",
         "Only deployment controls, such as change management and release approvals.",
@@ -3094,7 +3094,7 @@
       "subtopic": "Rollback",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Before deploying a major update to its e-commerce platform, Retail Dynamics wants to ensure minimal disruption in case of issues. Rollback procedures should be: A) Planned and tested before deployment | B) Developed after problems occur | C) Only for major releases | D) Optional",
+      "question": "Before deploying a major update to its e-commerce platform, Retail Dynamics wants to ensure minimal disruption in case of issues. Rollback procedures should be:",
       "options": [
         "Planned and tested before deployment",
         "Developed after problems occur and impact revenue",
@@ -3129,7 +3129,7 @@
       "subtopic": "Change Freeze",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During the holiday season, Northwind Retail experiences peak online sales. To minimize disruptions, the IT department implements a policy. What best describes the purpose of change freeze periods during high-volume times? \nA) Allow all changes | B) Restrict changes during high-risk periods | C) Are never needed | D) Only affect development",
+      "question": "During the holiday season, Northwind Retail experiences peak online sales. To minimize disruptions, the IT department implements a policy. What best describes the purpose of change freeze periods during high-volume times?",
       "options": [
         "Allow all changes to facilitate rapid response to customer issues and emerging market opportunities.",
         "Restrict changes during high-risk periods",
@@ -3164,7 +3164,7 @@
       "subtopic": "Readiness Review",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Before deploying a new HR system, Vista Healthcare LLC conducts a review. The goal is to ensure a smooth transition and avoid disruptions for 5000+ employees. Production readiness reviews primarily verify:\nA) System is prepared for production operation | B) Only code completion | C) Only testing completion | D) Only documentation",
+      "question": "Before deploying a new HR system, Vista Healthcare LLC conducts a review. The goal is to ensure a smooth transition and avoid disruptions for 5000+ employees. Production readiness reviews primarily verify:",
       "options": [
         "System is prepared for production operation",
         "Code completion and static analysis are finalized",
@@ -3199,7 +3199,7 @@
       "subtopic": "Feature Flags",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "GlobalTech Solutions is rolling out a new feature in their cloud platform. They want a way to enable/disable the feature without redeploying code. Feature flags enable:\nA) Controlled feature rollout and rapid rollback capability | B) Code deletion | C) Only bug fixes | D) Only security patches",
+      "question": "GlobalTech Solutions is rolling out a new feature in their cloud platform. They want a way to enable/disable the feature without redeploying code. Feature flags enable:",
       "options": [
         "Controlled feature rollout and rapid rollback capability",
         "Automated code deletion of unused functions and libraries",
@@ -3234,7 +3234,7 @@
       "subtopic": "Canary Deployment",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates is releasing a new version of their tax software. They want to minimize the risk of widespread issues affecting their user base. Canary deployments:\nA) Are only for testing | B) Release to a small subset before full rollout | C) Deploy to all users | D) Skip testing",
+      "question": "Chen & Associates is releasing a new version of their tax software. They want to minimize the risk of widespread issues affecting their user base. Canary deployments:",
       "options": [
         "Are only for testing and never reach production environments",
         "Release to a small subset before full rollout",
@@ -3269,7 +3269,7 @@
       "subtopic": "Blue-Green",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "To ensure minimal downtime during software updates, Meridian Corp. wants to implement a deployment strategy. This strategy should allow immediate rollback if issues arise. Blue-green deployments maintain:\nA) Only development environment | B) Two identical environments for zero-downtime releases | C) One environment | D) Only staging environment",
+      "question": "To ensure minimal downtime during software updates, Meridian Corp. wants to implement a deployment strategy. This strategy should allow immediate rollback if issues arise. Blue-green deployments maintain:",
       "options": [
         "Only a development environment for pre-release testing",
         "Two identical environments for zero-downtime releases",
@@ -3304,7 +3304,7 @@
       "subtopic": "Migrations",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a database upgrade at SecureBank, several scripts are used to alter the database schema. To ensure data integrity and recoverability, database migration scripts should be:\nA) Applied directly to production | B) Manual only | C) Version controlled with rollback capability | D) Undocumented",
+      "question": "During a database upgrade at SecureBank, several scripts are used to alter the database schema. To ensure data integrity and recoverability, database migration scripts should be:",
       "options": [
         "Applied directly to production after thorough testing in a non-production environment",
         "Manual only, relying on experienced database administrators to execute and validate changes",
@@ -3339,7 +3339,7 @@
       "subtopic": "Schema Changes",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Financial is updating their core banking system. Any changes to the database schema require a formal process. Schema changes in production require:\nA) Immediate implementation | B) No approval | C) Change management approval and impact assessment | D) Only developer approval",
+      "question": "Apex Financial is updating their core banking system. Any changes to the database schema require a formal process. Schema changes in production require:",
       "options": [
         "Immediate implementation after initial testing in QA",
         "No approval needed for minor schema changes and bug fixes",
@@ -3374,7 +3374,7 @@
       "subtopic": "API Versioning",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Third-party applications rely on the APIs exposed by DataStream Inc. When updating these APIs, DataStream needs to avoid breaking existing integrations. API versioning ensures:\nA) Breaking all integrations | B) Single version only | C) Backward compatibility while enabling enhancements | D) No documentation",
+      "question": "Third-party applications rely on the APIs exposed by DataStream Inc. When updating these APIs, DataStream needs to avoid breaking existing integrations. API versioning ensures:",
       "options": [
         "Complete disruption of all existing third-party integrations",
         "Maintaining only a single, immutable API version indefinitely",
@@ -6524,7 +6524,7 @@
       "subtopic": "Scope Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During the implementation of a new ERP system at GlobalTech Solutions, users keep requesting additional features not initially planned. These requests are impacting the project timeline and budget. This situation is an example of:\nA) Completing the project early | B) Reducing project budget | C) Uncontrolled expansion of project scope | D) Adding more team members",
+      "question": "During the implementation of a new ERP system at GlobalTech Solutions, users keep requesting additional features not initially planned. These requests are impacting the project timeline and budget. This situation is an example of:",
       "options": [
         "Completing the project early due to efficient resource allocation.",
         "Reducing project budget by negotiating better vendor contracts.",
@@ -6559,7 +6559,7 @@
       "subtopic": "DAST",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "SecureWeb Applications is performing security testing on its e-commerce platform. They want to identify vulnerabilities in the running application without access to the source code. Dynamic application security testing (DAST) differs from SAST in that DAST:\nA) Analyzes source code directly | B) Is performed during design | C) Tests the running application from the outside | D) Cannot find security vulnerabilities",
+      "question": "SecureWeb Applications is performing security testing on its e-commerce platform. They want to identify vulnerabilities in the running application without access to the source code. Dynamic application security testing (DAST) differs from SAST in that DAST:",
       "options": [
         "Analyzes source code directly to identify coding flaws",
         "Is performed during the design phase to prevent vulnerabilities",
@@ -6594,7 +6594,7 @@
       "subtopic": "Conversion Strategies",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Financial is replacing its legacy accounting system with a new cloud-based solution. To minimize disruption, they plan to run both systems concurrently for a period of one month. This approach is known as:\nA) Immediate cutover to the new system | B) Running old and new systems simultaneously | C) Converting one department at a time | D) Phased implementation by functionality",
+      "question": "Apex Financial is replacing its legacy accounting system with a new cloud-based solution. To minimize disruption, they plan to run both systems concurrently for a period of one month. This approach is known as:",
       "options": [
         "Immediate cutover to the new system",
         "Running old and new systems simultaneously",
@@ -6629,7 +6629,7 @@
       "subtopic": "Systems Integration",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tech Integrators Inc. is contracted to implement a new CRM system for a client, integrating it with existing marketing and sales platforms. A systems integrator is PRIMARILY responsible for:\nA) Ensuring different components work together effectively | B) Providing ongoing maintenance | C) Operating systems after deployment | D) Training end users",
+      "question": "Tech Integrators Inc. is contracted to implement a new CRM system for a client, integrating it with existing marketing and sales platforms. A systems integrator is PRIMARILY responsible for:",
       "options": [
         "Ensuring different components work together effectively",
         "Providing ongoing maintenance and support post-implementation",
@@ -6699,7 +6699,7 @@
       "subtopic": "License Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Cloud Solutions LLC discovers it has been using more licenses of a software product than it has purchased. Software licensing compliance is important to:\nA) Avoid legal and financial penalties | B) Reduce training requirements | C) Improve system performance | D) Simplify deployments",
+      "question": "Cloud Solutions LLC discovers it has been using more licenses of a software product than it has purchased. Software licensing compliance is important to:",
       "options": [
         "Avoid legal and financial penalties",
         "Reduce training requirements for new hires",
@@ -6734,7 +6734,7 @@
       "subtopic": "Infrastructure as Code",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "DevOps Dynamics is implementing Infrastructure as Code (IaC) to automate the deployment of cloud resources for its clients. Infrastructure as Code (IaC) provides benefits including:\nA) Consistent, repeatable, and auditable infrastructure deployment | B) Manual configuration of each server | C) Elimination of security requirements | D) Reduced need for version control",
+      "question": "DevOps Dynamics is implementing Infrastructure as Code (IaC) to automate the deployment of cloud resources for its clients. Infrastructure as Code (IaC) provides benefits including:",
       "options": [
         "Consistent, repeatable, and auditable infrastructure deployment",
         "Manual configuration of each server to ensure unique, snowflake environments tailored to specific application needs.",
@@ -6769,7 +6769,7 @@
       "subtopic": "Release Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Before deploying a new version of its mobile app, Mobile Apps Inc. wants to ensure a smooth and controlled rollout. Release management should ensure:\nA) All releases happen immediately | B) Releases are planned, tested, and coordinated with stakeholders | C) Only emergency changes are released | D) Developers control release timing",
+      "question": "Before deploying a new version of its mobile app, Mobile Apps Inc. wants to ensure a smooth and controlled rollout. Release management should ensure:",
       "options": [
         "All releases happen immediately to satisfy market demands and user expectations.",
         "Releases are planned, tested, and coordinated with stakeholders",
@@ -6804,7 +6804,7 @@
       "subtopic": "Agile Security",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During an agile project at SecureBank, the team is considering how to address security concerns within the development process. Agile development treats security requirements as:\nA) Optional nice-to-haves | B) User stories and acceptance criteria like other requirements | C) Post-development additions | D) External auditor responsibility",
+      "question": "During an agile project at SecureBank, the team is considering how to address security concerns within the development process. Agile development treats security requirements as:",
       "options": [
         "Optional nice-to-haves, addressed only if time and budget allow",
         "User stories and acceptance criteria like other requirements",
@@ -9779,7 +9779,7 @@
       "subtopic": "Documentation",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent audit of StellarTech Solutions, an IS auditor noted inconsistencies in the technical documentation for a critical CRM system implementation. The project team claims documentation is time-consuming and only updated sporadically. Technical documentation should be: A) Optional for small projects | B) Created only at project end | C) Only for developers | D) Maintained throughout the lifecycle and kept current",
+      "question": "During a recent audit of StellarTech Solutions, an IS auditor noted inconsistencies in the technical documentation for a critical CRM system implementation. The project team claims documentation is time-consuming and only updated sporadically. Technical documentation should be:",
       "options": [
         "Optional for small projects with limited user impact and budget constraints.",
         "Created only at project end to reduce overhead during the development phase.",

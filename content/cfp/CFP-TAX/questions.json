@@ -2673,7 +2673,7 @@
       "subtopic": "Tax Home",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah works as a traveling consultant for GlobalTech Solutions. She spends 6 months of the year at client sites across the country. For travel expense deduction purposes, Sarah's \"tax home\" is:\nA) Where she pays the most taxes | B) The area of her regular place of business, regardless of where her personal residence is located | C) Where she lives | D) Her state of residence",
+      "question": "Sarah works as a traveling consultant for GlobalTech Solutions. She spends 6 months of the year at client sites across the country. For travel expense deduction purposes, Sarah's \"tax home\" is:",
       "explanation": "Tax home: your regular place of business (main work location), not necessarily where you live. Travel expenses are deductible when away from tax home overnight for business. If no regular place of business, tax home may be personal residence. Transient workers may have no tax home, making travel expenses non-deductible.",
       "correctAnswer": 1,
       "options": [
@@ -2708,7 +2708,7 @@
       "subtopic": "Dependent Care FSA",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Maria works at Willow Creek Daycare. Her employer offers a Dependent Care FSA. A Dependent Care FSA allows employees to:\nA) Set aside pre-tax dollars for qualifying dependent care expenses enabling work, up to $5,000 annually | B) Fund children | C) , | D) ,",
+      "question": "Maria works at Willow Creek Daycare. Her employer offers a Dependent Care FSA. A Dependent Care FSA allows employees to:",
       "explanation": "Dependent Care FSA: pre-tax contribution for care of qualifying persons (child under 13, disabled spouse/dependent) enabling work. Max: $5,000/year ($2,500 MFS). Use-it-or-lose-it (some employers allow grace period or carryover up to $500). Reduces AGI. Coordinates with child care credit—can\\'t use same expenses for both.",
       "correctAnswer": 0,
       "options": [
@@ -2743,7 +2743,7 @@
       "subtopic": "Above-the-Line Deductions",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "John is exploring ways to lower his tax burden. He's heard about \"above-the-line\" deductions. Above-the-line deductions are valuable because they:\nA) Are refundable | B) Only benefit itemizers | C) Reduce adjusted gross income, which affects eligibility for various credits and deductions regardless of itemizing | D) Are unlimited in amount",
+      "question": "John is exploring ways to lower his tax burden. He's heard about \"above-the-line\" deductions. Above-the-line deductions are valuable because they:",
       "explanation": "Above-the-line (ATL) deductions reduce AGI—beneficial even if you take standard deduction. Lower AGI affects: IRA contribution deductibility, child tax credit, education credits, student loan interest deduction, Social Security taxation, ACA subsidy eligibility. Examples: IRA contributions, student loan interest, self-employed health insurance, HSA contributions.",
       "correctAnswer": 2,
       "options": [
@@ -2778,7 +2778,7 @@
       "subtopic": "Charitable Contributions Limits",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Smiths made several charitable contributions this year, including cash donations to their church and local food bank. Charitable cash contributions to public charities are generally limited to:\nA) 20% of AGI | B) $250 per organization | C) 60% of AGI, with unused amounts carrying forward for up to five years | D) 100% of AGI",
+      "question": "The Smiths made several charitable contributions this year, including cash donations to their church and local food bank. Charitable cash contributions to public charities are generally limited to:",
       "explanation": "Charitable deduction limits depend on charity type and gift type. Public charities—cash: 60% of AGI; appreciated property: 30% (or 50% at basis). Private foundations: lower limits (30% cash, 20% property). Excess carries forward 5 years. Must itemize to deduct. Substantiation requirements increase with gift size ($250+ requires acknowledgment).",
       "correctAnswer": 2,
       "options": [
@@ -2813,7 +2813,7 @@
       "subtopic": "American Opportunity Credit",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Jones family is paying for their daughter's first year of college. They are exploring available tax credits. The American Opportunity Tax Credit:\nA) Has no income limits | B) Requires full-time enrollment | C) Provides up to $2,500 per student for the first four years of college, with 40% refundable | D) Is only for graduate school",
+      "question": "The Jones family is paying for their daughter's first year of college. They are exploring available tax credits. The American Opportunity Tax Credit:",
       "explanation": "AOTC: 100% of first $2,000 + 25% of next $2,000 = max $2,500. First four years of college only. 40% ($1,000) refundable. Half-time enrollment minimum. Income phaseout: $80K-$90K single, $160K-$180K MFJ. Qualified expenses: tuition, fees, books, supplies. Better than Lifetime Learning Credit for most undergraduates.",
       "correctAnswer": 2,
       "options": [
@@ -2883,7 +2883,7 @@
       "subtopic": "Market Discount Bonds",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "David purchased a corporate bond for $900 when its par value was $1,000 (no OID). Upon redemption, what are the tax consequences of the $100 discount?\nA) No tax consequences | B) Ordinary income on the discount portion when sold or redeemed, unless an election to accrue is made | C) Tax-free gains | D) Capital loss at maturity",
+      "question": "David purchased a corporate bond for $900 when its par value was $1,000 (no OID). Upon redemption, what are the tax consequences of the $100 discount?",
       "explanation": "Market discount: buy existing bond below adjusted issue price. At sale/maturity, accrued market discount is ordinary income (not capital gain). Can elect to include discount annually instead. If not elected, interest expense allocable to market discount bonds may be deferred. Differs from OID which accrues to original buyer. Complex rules—track carefully.",
       "correctAnswer": 1,
       "options": [
@@ -2918,7 +2918,7 @@
       "subtopic": "PFIC",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "An investor holds shares in a foreign company classified as a Passive Foreign Investment Company (PFIC). A PFIC creates tax issues because:\nA) It qualifies for lower rates | B) Excess distributions and gains face punitive tax treatment with interest charges unless special elections are made | C) Income is tax-free | D) Only dividends are taxed",
+      "question": "An investor holds shares in a foreign company classified as a Passive Foreign Investment Company (PFIC). A PFIC creates tax issues because:",
       "explanation": "PFIC: foreign corporation with passive income/assets. Default: \"excess distribution\" regime—gains and excess distributions taxed at top ordinary rates plus interest (as if earned ratably over holding period). QEF election: include share of income annually to avoid. Mark-to-market election: include annual gains. Foreign mutual funds often PFICs. Complex reporting (Form 8621).",
       "correctAnswer": 1,
       "options": [
@@ -2953,7 +2953,7 @@
       "subtopic": "LLC Taxation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan starts a small consulting business and forms a single-member LLC. By default, how is this LLC taxed for federal income tax purposes?\nA) A disregarded entity (Schedule C for individual owners), though it can elect corporate treatment | B) A tax-exempt entity | C) A corporation | D) A partnership",
+      "question": "Susan starts a small consulting business and forms a single-member LLC. By default, how is this LLC taxed for federal income tax purposes?",
       "explanation": "LLC tax classification (check-the-box): Single-member: disregarded entity—reported on owner\\'s return (Schedule C if individual). Multi-member: partnership. Either can elect corporate (C or S) treatment. LLC provides liability protection regardless of tax classification. Flexibility to choose tax treatment is an LLC advantage.",
       "correctAnswer": 0,
       "options": [
@@ -4740,7 +4740,7 @@
       "subtopic": "Saver\\'s Credit",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "The Millers have adjusted gross income of $38,000 and contribute $2,000 to their IRAs. They are considering if they qualify for the Retirement Savings Contributions Credit (Saver's Credit). This credit provides:\nA) Only for IRA contributions | B) Nonrefundable credit up to 50% of retirement contributions for low-to-moderate income taxpayers | C) Credit for all savings | D) Refundable credit",
+      "question": "The Millers have adjusted gross income of $38,000 and contribute $2,000 to their IRAs. They are considering if they qualify for the Retirement Savings Contributions Credit (Saver's Credit). This credit provides:",
       "explanation": "Saver\\'s Credit: encourages low/moderate income retirement savings. Credit: 50%, 20%, or 10% of up to $2,000 contributed ($4,000 married). Based on AGI. 2026 limits approx: 50% if AGI <$24K single, <$48K married. Contributions: IRA, 401(k), 403(b), etc. Nonrefundable—only reduces tax to zero. Age 18+, not dependent, not student. Stacks with deduction for traditional contributions.",
       "correctAnswer": 1,
       "options": [
@@ -4775,7 +4775,7 @@
       "subtopic": "Foreign Tax Credit",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GlobalTech Inc., a U.S. corporation, earned $500,000 in foreign-source income and has a U.S. tax liability of $150,000 before any credits. The foreign tax credit is limited by:\nA) The U.S. tax attributable to foreign-source income, preventing credit from offsetting U.S. tax on U.S. income | B) $500 annually | C) No limitations | D) Only dividend income",
+      "question": "GlobalTech Inc., a U.S. corporation, earned $500,000 in foreign-source income and has a U.S. tax liability of $150,000 before any credits. The foreign tax credit is limited by:",
       "explanation": "Foreign tax credit limitation: can\\'t exceed U.S. tax on foreign income. Formula: (Foreign income / Total income) × U.S. tax = limit. Excess credits: carryback 1 year, forward 10 years. Separate baskets for different income types. For small amounts (under $300 single/$600 married): simplified method, no Form 1116 needed. Generally better than deduction—dollar-for-dollar vs. marginal rate reduction.",
       "correctAnswer": 0,
       "options": [
@@ -4810,7 +4810,7 @@
       "subtopic": "Entity Selection",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah is starting a small consulting business. When selecting a business entity for tax purposes, which of the following considerations is MOST relevant?\nA) Self-employment tax, qualified business income deduction, fringe benefits, and state tax treatment | B) Only federal taxes | C) Only liability protection | D) Size of business only",
+      "question": "Sarah is starting a small consulting business. When selecting a business entity for tax purposes, which of the following considerations is MOST relevant?",
       "explanation": "Entity selection factors: self-employment tax (sole prop/partnership pays on all earnings, S-corp on reasonable wages only), QBI deduction (199A—20% for pass-throughs, limitations apply), employment taxes, fringe benefits (C-corp can provide tax-free), state taxes (some tax differently), exit strategies, complexity, cost. No one-size-fits-all—model different structures. Revisit as circumstances change.",
       "correctAnswer": 0,
       "options": [
@@ -4845,7 +4845,7 @@
       "subtopic": "Passive Activity Rules",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John owns a rental property that generates a loss. He does not qualify as a real estate professional. Passive activity losses generally can only offset:\nA) Capital gains | B) Any income | C) Passive activity income, with exceptions for real estate professionals and active participation rental activities | D) Wages only",
+      "question": "John owns a rental property that generates a loss. He does not qualify as a real estate professional. Passive activity losses generally can only offset:",
       "explanation": "Passive activity loss rules: passive losses offset only passive income. Suspended losses carry forward, released at disposition. Exceptions: $25,000 rental real estate allowance (active participation, phase-out above $100K MAGI), real estate professional (750 hours+, material participation). Passive: limited partner, rental (generally), not meeting material participation tests. Complex rules—proper classification important.",
       "correctAnswer": 2,
       "options": [
@@ -4880,7 +4880,7 @@
       "subtopic": "Section 1031 Exchanges",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "ABC Investments is selling a commercial building and plans to acquire another. A Section 1031 like-kind exchange for real estate requires:\nA) Identical property types | B) Only residential for residential | C) Exchange of real property held for business or investment, with strict timing requirements and qualified intermediary | D) IRS pre-approval",
+      "question": "ABC Investments is selling a commercial building and plans to acquire another. A Section 1031 like-kind exchange for real estate requires:",
       "explanation": "1031 exchange: defer gain on like-kind real property exchange. Requirements: real property for real property (held for business/investment, not personal), qualified intermediary (can\\'t touch funds), identify replacement within 45 days, close within 180 days. Boot (cash or debt relief) is taxable. Basis carries over. Post-TCJA: only real property (no personal property). Powerful deferral—can chain forever, step-up at death.",
       "correctAnswer": 2,
       "options": [
@@ -4915,7 +4915,7 @@
       "subtopic": "Claim of Right Doctrine",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "David received a bonus from his employer in Year 1. In Year 2, the company discovered an error and required David to repay a portion of the bonus. Under the claim of right doctrine:\nA) Income is taxed only when earned | B) Expenses are always deductible | C) Income received under a claim of right is taxable when received, even if later required to be repaid | D) Cash basis is required",
+      "question": "David received a bonus from his employer in Year 1. In Year 2, the company discovered an error and required David to repay a portion of the bonus. Under the claim of right doctrine:",
       "explanation": "Claim of right: if receive funds you believe you\\'re entitled to, taxable that year—even if later determined you must return them. If repay: deduction in repayment year, or special Section 1341 treatment (greater of: deduction at current rate or credit for prior year tax). Protects taxpayer from timing mismatch. Example: bonus received, later found to be overpayment and returned.",
       "correctAnswer": 2,
       "options": [
@@ -4950,7 +4950,7 @@
       "subtopic": "Life Insurance Policy Sales",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria sold her life insurance policy to a life settlement company for more than its cash surrender value. When a life insurance policy is sold to a third party (life settlement):\nA) Gain up to cash surrender value is ordinary income, and excess is capital gain | B) All proceeds are tax-free | C) All capital gain | D) No tax consequences",
+      "question": "Maria sold her life insurance policy to a life settlement company for more than its cash surrender value. When a life insurance policy is sold to a third party (life settlement):",
       "explanation": "Life settlement taxation: Amount > basis = gain. Gain is split: ordinary income portion (cash surrender value minus basis), capital gain portion (sale price minus CSV). Basis = premiums paid (reduced by any dividends/withdrawals). Transfer for value rules don\\'t apply to life settlements themselves, but buyer has issues. Report on Form 1099-LS. Complex—consult tax advisor.",
       "correctAnswer": 0,
       "options": [
@@ -4985,7 +4985,7 @@
       "subtopic": "Net Operating Losses",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "After suffering significant business losses in 2023, Michael is evaluating his options for offsetting income in other years. Net operating loss (NOL) rules for individuals currently provide:\nA) Indefinite carryforward limited to 80% of taxable income, with no carryback (post-CARES) | B) Unlimited carryback and carryforward | C) No carryforward | D) Full offset of any income",
+      "question": "After suffering significant business losses in 2023, Michael is evaluating his options for offsetting income in other years. Net operating loss (NOL) rules for individuals currently provide:",
       "explanation": "NOL rules (post-2020): carryforward indefinitely, but limited to 80% of taxable income. No carryback (except farming). CARES Act temporarily allowed 5-year carryback for 2018-2020 losses at 100%. Excess business loss limitation applies first (Section 461(l))—losses in excess treated as NOL. Complex interaction of rules. Planning: timing of income/deductions, utilization strategies.",
       "correctAnswer": 0,
       "options": [
@@ -6315,7 +6315,7 @@
       "subtopic": "Head of Household",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah is unmarried and provides primary support for her mother, who lives with her. Sarah's CPA, Chen & Associates, is preparing her 2023 tax return. To qualify for Head of Household filing status, Sarah must be unmarried and:\nA) Have any dependent claimed on the return | B) Pay more than half the cost of maintaining a home for a qualifying person | C) Have income below $75,000 | D) Be at least 65 years old",
+      "question": "Sarah is unmarried and provides primary support for her mother, who lives with her. Sarah's CPA, Chen & Associates, is preparing her 2023 tax return. To qualify for Head of Household filing status, Sarah must be unmarried and:",
       "explanation": "Head of Household requires: (1) unmarried (or considered unmarried), (2) pay >50% of home costs, and (3) qualifying person (child, parent, or relative) lives with taxpayer for more than half the year.",
       "correctAnswer": 1,
       "options": [
@@ -6386,7 +6386,7 @@
       "subtopic": "Unearned Income",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "In 2026, 16-year-old Emily, a dependent of her parents, has $3,000 in unearned income from investments. Under the \"Kiddie Tax\" rules for 2026, Emily's unearned income above a threshold is taxed at:\nA) The child's parents' marginal rate if it's beneficial | B) The child's rate | C) The parents' marginal rate | D) The child's earned income rate",
+      "question": "In 2026, 16-year-old Emily, a dependent of her parents, has $3,000 in unearned income from investments. Under the \"Kiddie Tax\" rules for 2026, Emily's unearned income above a threshold is taxed at:",
       "explanation": "Kiddie Tax applies the parent\\'s marginal rate to a child\\'s unearned income above the threshold (approximately $2,500 in 2026). This prevents income-shifting to children in lower brackets.",
       "correctAnswer": 2,
       "options": [
@@ -6420,7 +6420,7 @@
       "subtopic": "Calculation",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "John is a self-employed consultant earning $80,000 in net profit in 2023. He needs to understand his tax obligations. Self-employment tax is calculated at what combined rate for Social Security and Medicare?\nA) 7.65% | B) 12.4% | C) 15.3% | D) 2.9%",
+      "question": "John is a self-employed consultant earning $80,000 in net profit in 2023. He needs to understand his tax obligations. Self-employment tax is calculated at what combined rate for Social Security and Medicare?",
       "explanation": "Self-employment tax is 15.3%: 12.4% for Social Security (on earnings up to the wage base) and 2.9% for Medicare. An additional 0.9% Medicare tax applies to earnings over $200,000 (single) or $250,000 (MFJ).",
       "correctAnswer": 2,
       "options": [
@@ -6455,7 +6455,7 @@
       "subtopic": "American Opportunity Credit",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are paying for their daughter's first year of college. They are exploring available tax credits. The American Opportunity Tax Credit provides a maximum annual credit of:\nA) $2,000 per student | B) $2,500 per student | C) $4,000 per student | D) $2,500 per taxpayer",
+      "question": "The Millers are paying for their daughter's first year of college. They are exploring available tax credits. The American Opportunity Tax Credit provides a maximum annual credit of:",
       "explanation": "AOTC provides $2,500 per eligible student (100% of first $2,000 + 25% of next $2,000 in qualified expenses). Available for first 4 years of post-secondary education. 40% ($1,000) is refundable.",
       "correctAnswer": 1,
       "options": [
@@ -6559,7 +6559,7 @@
       "subtopic": "Deduction Limits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smiths donated $50,000 in cash to their church in 2023. Their adjusted gross income (AGI) is $75,000. Cash contributions to public charities are generally deductible up to what percentage of AGI?\nA) 20% | B) 30% | C) 50% | D) 60%",
+      "question": "The Smiths donated $50,000 in cash to their church in 2023. Their adjusted gross income (AGI) is $75,000. Cash contributions to public charities are generally deductible up to what percentage of AGI?",
       "explanation": "Cash contributions to public charities (50% limit organizations) are deductible up to 60% of AGI. Appreciated capital gain property to public charities is limited to 30% of AGI. Private foundations have lower limits.",
       "correctAnswer": 3,
       "options": [
@@ -6629,7 +6629,7 @@
       "subtopic": "Gain Recognition",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Robert sold a rental property on an installment basis, receiving payments over several years. Under the installment method, gain is recognized:\nA) Entirely in the year of sale | B) Proportionally as payments are received | C) Only when the final payment is received | D) Never, if payments span more than 10 years",
+      "question": "Robert sold a rental property on an installment basis, receiving payments over several years. Under the installment method, gain is recognized:",
       "explanation": "The installment method recognizes gross profit proportionally as payments are received. Each payment includes return of basis, gain, and interest. This spreads tax liability over the payment period.",
       "correctAnswer": 1,
       "options": [
@@ -6664,7 +6664,7 @@
       "subtopic": "Property Transfers",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "As part of their divorce agreement, finalized in 2023, Michael transferred his stock portfolio to Susan. Property transferred between spouses incident to divorce is:\nA) Taxable to the transferor at fair market value | B) Treated as a gift subject to gift tax | C) A non-taxable event with carryover basis to the recipient | D) Taxable to the recipient as ordinary income",
+      "question": "As part of their divorce agreement, finalized in 2023, Michael transferred his stock portfolio to Susan. Property transferred between spouses incident to divorce is:",
       "explanation": "Under IRC Section 1041, property transfers between spouses (or former spouses if incident to divorce) are non-taxable. The recipient takes the transferor\\'s basis (carryover basis).",
       "correctAnswer": 2,
       "options": [
@@ -6734,7 +6734,7 @@
       "subtopic": "Constructive Receipt",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David received a bonus check from his employer, Meridian Corp, on December 29th, but he was out of town and unable to deposit it until January 2nd of the following year. Under the constructive receipt doctrine, income is taxable when:\nA) The taxpayer actually receives cash | B) The income is made available without substantial restrictions | C) The taxpayer deposits the check | D) The payer mails the payment",
+      "question": "David received a bonus check from his employer, Meridian Corp, on December 29th, but he was out of town and unable to deposit it until January 2nd of the following year. Under the constructive receipt doctrine, income is taxable when:",
       "explanation": "Constructive receipt occurs when income is credited to the taxpayer\\'s account or made available without substantial limitations, even if not actually received. This prevents artificial deferral of income.",
       "correctAnswer": 1,
       "options": [
@@ -6839,7 +6839,7 @@
       "subtopic": "Bunching Deductions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smiths want to minimize taxes. They plan to itemize deductions but their itemized deductions are usually slightly below the standard deduction. The \"bunching\" strategy involves: A) Claiming the maximum deductions every year | B) Accelerating or deferring deductible expenses to exceed the standard deduction in alternating years | C) Converting all deductions to credits | D) Eliminating deductions to reduce tax complexity",
+      "question": "The Smiths want to minimize taxes. They plan to itemize deductions but their itemized deductions are usually slightly below the standard deduction. The \"bunching\" strategy involves:",
       "explanation": "Bunching involves timing deductible expenses (e.g., charitable contributions, property taxes) to concentrate them in years when they exceed the standard deduction, then taking the standard deduction in other years.",
       "correctAnswer": 1,
       "options": [
@@ -6874,7 +6874,7 @@
       "subtopic": "Guaranteed Payments",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "John is a partner at Chen & Associates. He receives a guaranteed payment of $75,000 per year, regardless of the partnership's profits. This guaranteed payment is: A) Deductible by John | B) Treated as ordinary income to John and deductible by the partnership | C) Tax-free to John | D) Taxable as capital gain to John",
+      "question": "John is a partner at Chen & Associates. He receives a guaranteed payment of $75,000 per year, regardless of the partnership's profits. This guaranteed payment is:",
       "explanation": "Guaranteed payments for services or capital use are ordinary income to the receiving partner (similar to W-2 wages) and deductible by the partnership in calculating ordinary income, but subject to self-employment tax.",
       "correctAnswer": 1,
       "options": [
@@ -6909,7 +6909,7 @@
       "subtopic": "IRS Assessment",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After filing her 2025 tax return, Maria realized she made a mistake and understated her income. Generally, the IRS has how many years from the filing date to assess additional tax? A) 2 years | B) 3 years | C) 5 years | D) 7 years",
+      "question": "After filing her 2025 tax return, Maria realized she made a mistake and understated her income. Generally, the IRS has how many years from the filing date to assess additional tax?",
       "explanation": "The general statute of limitations for IRS assessment is 3 years from filing. This extends to 6 years if gross income is understated by 25%+, and no limit applies for fraud or failure to file.",
       "correctAnswer": 1,
       "options": [
@@ -7014,7 +7014,7 @@
       "subtopic": "Day Counting",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David purchased stock in Tech Solutions, Inc. on March 15, 2026, and sold it on March 16, 2027. For tax purposes, is the gain on the sale long-term or short-term? A) Long-term (held more than 1 year) | B) Treated as ordinary income | C) Short-term (held exactly 1 year) | D) Depends on the type of stock",
+      "question": "David purchased stock in Tech Solutions, Inc. on March 15, 2026, and sold it on March 16, 2027. For tax purposes, is the gain on the sale long-term or short-term?",
       "explanation": "The holding period begins the day after purchase (March 16, 2026). To be long-term, the asset must be held MORE than one year. Sold on March 16, 2027 = held from March 16, 2026 to March 16, 2027 = exactly 1 year and 1 day = long-term capital gain.",
       "correctAnswer": 0,
       "options": [
@@ -7155,7 +7155,7 @@
       "subtopic": "Section 1031",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC wants to exchange a medical office building for another. After the TCJA, which assets qualify for like-kind exchange treatment under Section 1031? A) Real property and vehicles | B) All business or investment property | C) Only real property held for business or investment | D) Real property and artwork",
+      "question": "Vista Healthcare LLC wants to exchange a medical office building for another. After the TCJA, which assets qualify for like-kind exchange treatment under Section 1031?",
       "explanation": "After TCJA (2018+), Section 1031 applies only to real property held for productive use in trade/business or for investment. Personal property (vehicles, equipment, artwork) no longer qualifies. This was a significant limitation from prior law.",
       "correctAnswer": 2,
       "options": [
@@ -7225,7 +7225,7 @@
       "subtopic": "28% Rate",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah sold a valuable antique clock for a significant gain. What is the maximum tax rate on long-term capital gains from collectibles like this? A) 15% | B) 20% | C) 28% | D) 25%",
+      "question": "Sarah sold a valuable antique clock for a significant gain. What is the maximum tax rate on long-term capital gains from collectibles like this?",
       "explanation": "Long-term capital gains on collectibles (art, antiques, coins, stamps, precious metals) are taxed at a maximum rate of 28%, higher than the standard 15%/20% rates. Short-term gains are taxed as ordinary income. Plus, NIIT may apply.",
       "correctAnswer": 2,
       "options": [
@@ -7295,7 +7295,7 @@
       "subtopic": "Annual Deduction",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After selling some stock, Michael incurred a capital loss of $8,000. What is the maximum capital loss deduction against ordinary income he can take this year? A) $3,000 ($1,500 if MFS) | B) $1,500 ($3,000 if MFJ) | C) $10,000 | D) Unlimited",
+      "question": "After selling some stock, Michael incurred a capital loss of $8,000. What is the maximum capital loss deduction against ordinary income he can take this year?",
       "explanation": "Net capital losses can offset up to $3,000 of ordinary income annually ($1,500 for married filing separately). Excess losses carry forward indefinitely. Capital losses first offset capital gains (short against short, then short against long, etc.).",
       "correctAnswer": 0,
       "options": [
@@ -7401,7 +7401,7 @@
       "subtopic": "2026 Limit",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "In 2026, what is the annual gift tax exclusion per donee? A) $20,000 | B) $18,000 | C) $17,000 | D) $19,000",
+      "question": "In 2026, what is the annual gift tax exclusion per donee?",
       "explanation": "The annual gift exclusion for 2026 is $19,000 per donee per year. Gifts within this amount require no gift tax return.",
       "correctAnswer": 3,
       "options": [

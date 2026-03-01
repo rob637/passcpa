@@ -3584,7 +3584,7 @@
       "subtopic": "Zero-Based Budgeting",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Horizon Manufacturing is implementing a new budgeting process. Management wants to ensure all expenses are thoroughly reviewed. Which of the following BEST describes the core principle of zero-based budgeting? A) Managers receive no salary increases | B) No cash balance be maintained | C) The budget must balance to zero profit | D) All budgets start at zero and every expense must be justified each period",
+      "question": "Horizon Manufacturing is implementing a new budgeting process. Management wants to ensure all expenses are thoroughly reviewed. Which of the following BEST describes the core principle of zero-based budgeting?",
       "options": [
         "Managers receive no salary increases unless they can justify their value-added contribution to the company's strategic goals.",
         "No cash balance be maintained, requiring all receipts to be immediately reinvested or distributed to shareholders to maximize returns.",
@@ -3618,7 +3618,7 @@
       "subtopic": "Participative Budgeting",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "At Sterling Products, department managers are allowed to participate in creating their own budgets. What is a potential disadvantage of using this participative (bottom-up) budgeting approach? A) Faster budget preparation | B) Budgetary slack or padding | C) Top management disengagement | D) Lack of employee buy-in",
+      "question": "At Sterling Products, department managers are allowed to participate in creating their own budgets. What is a potential disadvantage of using this participative (bottom-up) budgeting approach?",
       "options": [
         "Faster budget preparation",
         "Lack of employee buy-in",
@@ -3652,7 +3652,7 @@
       "subtopic": "Budget Sequence",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Evergreen Solutions is creating its master budget for the upcoming fiscal year. According to standard budgeting practices, which budget is typically prepared FIRST in the master budget process? A) Direct materials budget | B) Cash budget | C) Sales budget | D) Production budget",
+      "question": "Evergreen Solutions is creating its master budget for the upcoming fiscal year. According to standard budgeting practices, which budget is typically prepared FIRST in the master budget process?",
       "options": [
         "Direct materials budget",
         "Cash budget",
@@ -3754,7 +3754,7 @@
       "subtopic": "Cash Budget",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During the preparation of its cash budget, Harmony Retail is reviewing all expected cash inflows and outflows. Which of the following items is typically NOT included in the cash budget? A) Cash payments to suppliers | B) Dividend payments | C) Depreciation expense | D) Cash collections from customers",
+      "question": "During the preparation of its cash budget, Harmony Retail is reviewing all expected cash inflows and outflows. Which of the following items is typically NOT included in the cash budget?",
       "options": [
         "Cash payments to suppliers",
         "Dividend payments",
@@ -3822,7 +3822,7 @@
       "subtopic": "Definition",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Industries uses budgeting to manage costs. What is the primary characteristic of a flexible budget? A) Has no fixed costs | B) Adjusts for changes in activity levels | C) Is prepared only for cash flows | D) Can be changed by management at any time",
+      "question": "Apex Industries uses budgeting to manage costs. What is the primary characteristic of a flexible budget?",
       "options": [
         "Has no fixed costs",
         "Can be changed by management at any time",
@@ -3890,7 +3890,7 @@
       "subtopic": "Variance Analysis",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Precision Instruments budgeted for 10,000 units but actually produced 12,000. The volume variance (or activity variance) is the difference between: A) Actual sales price and standard sales price | B) Actual costs and standard costs | C) The static budget and the flexible budget | D) Actual results and the flexible budget",
+      "question": "Precision Instruments budgeted for 10,000 units but actually produced 12,000. The volume variance (or activity variance) is the difference between:",
       "options": [
         "Actual sales price and standard sales price",
         "Actual costs and standard costs",
@@ -3924,7 +3924,7 @@
       "subtopic": "Qualitative Methods",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Global Consulting uses various forecasting methods. Which of the following BEST describes the Delphi method of forecasting? A) Calculates seasonal indices | B) Uses only the most recent data point | C) Gathers anonymous expert opinions through multiple rounds | D) Uses historical data and regression analysis",
+      "question": "Global Consulting uses various forecasting methods. Which of the following BEST describes the Delphi method of forecasting?",
       "options": [
         "Calculates seasonal indices using time series decomposition to isolate cyclical patterns.",
         "Uses only the most recent data point, applying exponential smoothing with a high alpha value.",
@@ -3958,7 +3958,7 @@
       "subtopic": "Time Series Analysis",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "To predict sales, Davis Company uses a moving average forecast. This method smooths out fluctuations by: A) Eliminating all seasonal patterns | B) Averaging a set number of the most recent observations | C) Using regression to predict future values | D) Weighting recent observations more heavily",
+      "question": "To predict sales, Davis Company uses a moving average forecast. This method smooths out fluctuations by:",
       "options": [
         "Eliminating all seasonal patterns and cyclical variations to reveal underlying trends.",
         "Weighting recent observations more heavily, reflecting the assumption that the most recent data is most predictive.",
@@ -8106,7 +8106,7 @@
       "subtopic": "Application",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Manufacturing recently implemented lean manufacturing. Production cycles are now very short, and work-in-process inventory is minimal. Which costing system is MOST appropriate for Apex? A) Multiple products with different cost structures are produced | B) Production cycles are short with minimal WIP inventory | C) Standard costs differ significantly from actual costs | D) Production lead times are lengthy and WIP is significant",
+      "question": "Apex Manufacturing recently implemented lean manufacturing. Production cycles are now very short, and work-in-process inventory is minimal. Which costing system is MOST appropriate for Apex?",
       "options": [
         "Multiple products with different cost structures are produced",
         "Production cycles are short with minimal WIP inventory",
@@ -8140,7 +8140,7 @@
       "subtopic": "Best Practices",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions is analyzing website traffic data from the past year to identify trends in user engagement. They want to visualize the number of visits each month. The MOST appropriate chart type is: A) Histogram | B) Line chart | C) Scatter plot | D) Pie chart",
+      "question": "GreenTech Solutions is analyzing website traffic data from the past year to identify trends in user engagement. They want to visualize the number of visits each month. The MOST appropriate chart type is:",
       "options": [
         "Histogram",
         "Line chart",
@@ -8174,7 +8174,7 @@
       "subtopic": "Purpose",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vanguard Investments is considering acquiring a new business unit. They are creating financial statements to show the projected impact of the acquisition. Pro forma financial statements are used to: A) Project future financial position based on assumptions | B) Replace audited financial statements | C) Calculate taxable income | D) Report actual historical performance",
+      "question": "Vanguard Investments is considering acquiring a new business unit. They are creating financial statements to show the projected impact of the acquisition. Pro forma financial statements are used to:",
       "options": [
         "Project future financial position based on assumptions",
         "Replace audited financial statements when significant post-acquisition restructuring occurs",
@@ -8276,7 +8276,7 @@
       "subtopic": "Purpose",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Global Appliances is redesigning its refrigerator line to reduce production costs. They aim to maintain the current level of functionality and quality. Value engineering focuses on: A) Eliminating all non-essential product features | B) Increasing prices to match perceived value | C) Reducing costs while maintaining required functionality and quality | D) Maximizing product features regardless of cost",
+      "question": "Global Appliances is redesigning its refrigerator line to reduce production costs. They aim to maintain the current level of functionality and quality. Value engineering focuses on:",
       "options": [
         "Eliminating all non-essential product features, potentially impacting customer satisfaction and perceived value.",
         "Increasing prices to match perceived value, even if production costs remain unchanged, focusing on revenue maximization.",
@@ -8310,7 +8310,7 @@
       "subtopic": "Physical Controls",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sterling Logistics is reviewing its internal controls over its inventory. Which of the following is an example of a physical control over assets? A) Monthly account reconciliation | B) Background checks on new employees | C) Locked warehouse with restricted access | D) Authorization limits for purchases",
+      "question": "Sterling Logistics is reviewing its internal controls over its inventory. Which of the following is an example of a physical control over assets?",
       "options": [
         "Monthly account reconciliation",
         "Background checks on new employees",
@@ -8344,7 +8344,7 @@
       "subtopic": "Natural Language Processing",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "LegalEase Solutions uses AI to streamline contract review. Extracting key terms from client contracts and summarizing financial documents uses which AI technology? A) Natural Language Processing (NLP) | B) Neural network classification | C) Robotic Process Automation | D) Computer vision",
+      "question": "LegalEase Solutions uses AI to streamline contract review. Extracting key terms from client contracts and summarizing financial documents uses which AI technology?",
       "options": [
         "Natural Language Processing (NLP)",
         "Neural network classification",
@@ -8378,7 +8378,7 @@
       "subtopic": "Monte Carlo",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Bright Future Development is evaluating a new real estate project. They are using a simulation to assess the range of possible outcomes. Monte Carlo simulation in project analysis: A) Only works with normally distributed variables | B) Uses random sampling to generate a probability distribution of possible outcomes | C) Eliminates all project risk | D) Calculates a single \"best estimate\" outcome",
+      "question": "Bright Future Development is evaluating a new real estate project. They are using a simulation to assess the range of possible outcomes. Monte Carlo simulation in project analysis:",
       "options": [
         "Is limited to variables that can be accurately modeled with a normal distribution, hindering its applicability to complex projects.",
         "Uses random sampling to generate a probability distribution of possible outcomes",
@@ -8446,7 +8446,7 @@
       "subtopic": "Debt Securities",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "On January 1, Year 1, Everest Investments purchased bonds with the intention of holding them until maturity in 10 years. Under ASC 320, debt securities must be classified as held-to-maturity when: A) They are expected to be sold within one year | B) They are actively traded in the market | C) They are purchased below face value | D) The company has the intent and ability to hold until maturity",
+      "question": "On January 1, Year 1, Everest Investments purchased bonds with the intention of holding them until maturity in 10 years. Under ASC 320, debt securities must be classified as held-to-maturity when:",
       "options": [
         "They are expected to be sold within one year to manage short-term liquidity needs.",
         "They are actively traded in the market and considered liquid assets for portfolio diversification.",
@@ -8514,7 +8514,7 @@
       "subtopic": "Hierarchy",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Evergreen Investments uses fair value to measure certain assets. Under ASC 820, Level 1 inputs in the fair value hierarchy are: A) Unobservable inputs based on management assumptions | B) Quoted prices in active markets for identical assets | C) Discounted cash flow estimates | D) Observable inputs other than quoted prices",
+      "question": "Evergreen Investments uses fair value to measure certain assets. Under ASC 820, Level 1 inputs in the fair value hierarchy are:",
       "options": [
         "Unobservable inputs based on management assumptions",
         "Quoted prices in active markets for identical assets",
@@ -8548,7 +8548,7 @@
       "subtopic": "Non-Controlling Interest",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Parent Co. owns 80% of Sub Co. In the consolidated financial statements, how is the non-controlling interest presented? A) As a liability on the balance sheet | B) Off the balance sheet entirely | C) As a deduction from total assets | D) As a component of stockholders' equity, separate from parent equity",
+      "question": "Parent Co. owns 80% of Sub Co. In the consolidated financial statements, how is the non-controlling interest presented?",
       "options": [
         "As a liability on the balance sheet, specifically within the deferred credits section.",
         "Off the balance sheet entirely, with disclosure only in the footnotes to the financial statements.",
@@ -8582,7 +8582,7 @@
       "subtopic": "Disclosures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates, a law firm, leases office space from a company owned by a partner's spouse. Related party transactions require disclosure because: A) They automatically require restatement | B) They are always illegal | C) They never involve cash | D) They may not be at arm's length prices",
+      "question": "Chen & Associates, a law firm, leases office space from a company owned by a partner's spouse. Related party transactions require disclosure because:",
       "options": [
         "They automatically require restatement",
         "They are always illegal under securities regulations.",
@@ -8616,7 +8616,7 @@
       "subtopic": "Master Budget",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Manufacturing is creating its master budget for 2025. The starting point for the master budget in a manufacturing company is typically the: A) Direct materials budget | B) Sales forecast/budget | C) Production budget | D) Cash budget",
+      "question": "Apex Manufacturing is creating its master budget for 2025. The starting point for the master budget in a manufacturing company is typically the:",
       "options": [
         "Direct materials budget",
         "Sales forecast/budget",
@@ -8650,7 +8650,7 @@
       "subtopic": "Correlation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC noted a correlation coefficient of -0.85 between advertising spending and patient complaints. This indicates: A) The correlation is statistically insignificant | B) A strong inverse relationship | C) No relationship between the variables | D) A strong positive relationship",
+      "question": "Vista Healthcare LLC noted a correlation coefficient of -0.85 between advertising spending and patient complaints. This indicates:",
       "options": [
         "The correlation is statistically insignificant",
         "A strong inverse relationship",
@@ -8684,7 +8684,7 @@
       "subtopic": "Internal Rate of Return",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Nexus Corp. is evaluating a capital investment with an initial cost of $500,000. The Internal Rate of Return (IRR) is the discount rate at which: A) NPV is maximized | B) Payback period equals project life | C) Cash inflows exceed cash outflows | D) NPV equals zero",
+      "question": "Nexus Corp. is evaluating a capital investment with an initial cost of $500,000. The Internal Rate of Return (IRR) is the discount rate at which:",
       "options": [
         "NPV is maximized",
         "Payback period equals project life",
@@ -8718,7 +8718,7 @@
       "subtopic": "Porter's Five Forces",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a strategic planning session, the board of directors of Meridian Corp. is reviewing Porter's Five Forces. Which of the following is NOT one of the competitive forces? A) Threat of new entrants | B) Employee satisfaction | C) Threat of substitute products | D) Bargaining power of suppliers",
+      "question": "During a strategic planning session, the board of directors of Meridian Corp. is reviewing Porter's Five Forces. Which of the following is NOT one of the competitive forces?",
       "options": [
         "Threat of new entrants",
         "Employee satisfaction",
@@ -8752,7 +8752,7 @@
       "subtopic": "Activity-Based Budgeting",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech is implementing a new budgeting system. Activity-based budgeting differs from traditional budgeting by: A) Using only historical costs | B) Eliminating all variable costs from the budget | C) Using only fixed costs | D) Focusing on activities that drive costs rather than expense categories",
+      "question": "GlobalTech is implementing a new budgeting system. Activity-based budgeting differs from traditional budgeting by:",
       "options": [
         "Relying solely on historical costs adjusted for inflation, ignoring future projections.",
         "Eliminating all variable costs from the budget to simplify cost control and reporting.",
@@ -10656,7 +10656,7 @@
       "subtopic": "FIFO Method",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Manufacturing uses process costing. They are analyzing production costs for July. How does the FIFO method of process costing differ from the weighted-average method in calculating the cost of goods completed during July?\nA) Separating current period work from beginning inventory costs | B) Using total costs for equivalent unit calculations | C) Not calculating equivalent units | D) Ignoring beginning work-in-process inventory",
+      "question": "Apex Manufacturing uses process costing. They are analyzing production costs for July. How does the FIFO method of process costing differ from the weighted-average method in calculating the cost of goods completed during July?",
       "options": [
         "Separating current period work from beginning inventory costs",
         "Using total costs, including beginning inventory, for equivalent unit calculations.",
@@ -10690,7 +10690,7 @@
       "subtopic": "Learning Curve",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Global Aviation assembles aircraft. They've observed a consistent learning curve. If the cumulative average labor time per unit decreases to 80% when production quantity doubles, this indicates what type of learning curve?\nA) Direct labor accounts for 80% of total cost | B) Cumulative average labor time per unit decreases to 80% when quantity doubles | C) Labor efficiency improves by 20% with each unit | D) Total costs are 80% variable",
+      "question": "Global Aviation assembles aircraft. They've observed a consistent learning curve. If the cumulative average labor time per unit decreases to 80% when production quantity doubles, this indicates what type of learning curve?",
       "options": [
         "Direct labor accounts for 80% of total cost, indicating a labor-intensive production process, but not a learning curve.",
         "Cumulative average labor time per unit decreases to 80% when quantity doubles",
@@ -10724,7 +10724,7 @@
       "subtopic": "Upstream Costs",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions is evaluating the life cycle costs of a new solar panel design. Which of the following costs would be considered upstream costs in GreenTech's life cycle costing analysis?\nA) Distribution and marketing costs | B) Research, development, and design costs | C) Warranty and customer service costs | D) Production labor and materials",
+      "question": "GreenTech Solutions is evaluating the life cycle costs of a new solar panel design. Which of the following costs would be considered upstream costs in GreenTech's life cycle costing analysis?",
       "options": [
         "Costs for outbound logistics, sales commissions, and advertising campaigns",
         "Research, development, and design costs",
@@ -10792,7 +10792,7 @@
       "subtopic": "Just-in-Time",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Auto Parts aims to reduce inventory holding costs. They plan to implement a system where raw materials arrive just before production begins. This describes which inventory management system?\nA) Requires large warehouses | B) Minimizes inventory by receiving materials only when needed for production | C) Maximizes inventory levels for safety | D) Increases carrying costs",
+      "question": "Precision Auto Parts aims to reduce inventory holding costs. They plan to implement a system where raw materials arrive just before production begins. This describes which inventory management system?",
       "options": [
         "Requires large warehouses to store safety stock and buffer against supply chain disruptions, ensuring continuous production.",
         "Minimizes inventory by receiving materials only when needed for production",
@@ -10826,7 +10826,7 @@
       "subtopic": "Monitoring",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The audit committee of Sterling Financial is reviewing the company's internal controls. Which activity falls under the Monitoring component of the COSO internal control framework?\nA) Initial design of controls | B) Establishing the organization's ethical tone | C) Ongoing evaluations and separate evaluations to assess control effectiveness | D) Hiring qualified personnel",
+      "question": "The audit committee of Sterling Financial is reviewing the company's internal controls. Which activity falls under the Monitoring component of the COSO internal control framework?",
       "options": [
         "Initial design of controls to mitigate identified risks and implement new systems",
         "Establishing the organization's ethical tone through a comprehensive code of conduct",
@@ -10894,7 +10894,7 @@
       "subtopic": "Input Controls",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a review of internal controls at DataSecure LLC, the IT manager describes several security measures. Which of the following is the BEST example of an input control?\nA) Validating data at the point of entry to ensure accuracy and completeness | B) Encrypting stored data | C) Access log review | D) Backup and recovery procedures",
+      "question": "During a review of internal controls at DataSecure LLC, the IT manager describes several security measures. Which of the following is the BEST example of an input control?",
       "options": [
         "Validating data at the point of entry to ensure accuracy and completeness",
         "Encrypting stored data to protect against unauthorized access after processing",
@@ -10928,7 +10928,7 @@
       "subtopic": "Tone at the Top",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a fraud incident at Regional Bank, the board is reviewing the control environment. What does 'tone at the top' primarily refer to in the context of internal controls?\nA) Employee satisfaction surveys | B) Leadership's commitment to integrity and ethical behavior that sets the organization's culture | C) Marketing communications | D) External audit opinions",
+      "question": "After a fraud incident at Regional Bank, the board is reviewing the control environment. What does 'tone at the top' primarily refer to in the context of internal controls?",
       "options": [
         "Employee satisfaction surveys used to gauge morale and identify potential areas of operational inefficiency and process improvement.",
         "Leadership's commitment to integrity and ethical behavior that sets the organization's culture",
@@ -10962,7 +10962,7 @@
       "subtopic": "Disaster Recovery",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Following a recent hurricane, National Retail is updating its disaster recovery plan. What should a comprehensive disaster recovery plan include?\nA) Only financial statement backup | B) Procedures for restoring critical IT systems and operations after a disaster | C) Vacation schedules | D) Marketing strategies only",
+      "question": "Following a recent hurricane, National Retail is updating its disaster recovery plan. What should a comprehensive disaster recovery plan include?",
       "options": [
         "Only financial statement backup and offsite storage, neglecting operational recovery.",
         "Procedures for restoring critical IT systems and operations after a disaster",
@@ -11676,7 +11676,7 @@
       "subtopic": "Standard Setting",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Manufacturing strives for continuous improvement. Management wants to set performance benchmarks. Ideal standards: A) Represent perfect performance under optimal conditions | B) Include allowances for normal spoilage | C) Reflect expected actual performance levels | D) Are easily achievable by all workers",
+      "question": "Apex Manufacturing strives for continuous improvement. Management wants to set performance benchmarks. Ideal standards:",
       "options": [
         "Represent perfect performance under optimal conditions",
         "Include allowances for normal spoilage and predictable inefficiencies in the production process.",
@@ -11710,7 +11710,7 @@
       "subtopic": "Sampling",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During their annual SOX compliance testing, Chen & Associates is evaluating the effectiveness of Apex Corp's sales order approval process. In control testing, attribute sampling is used to: A) Evaluate qualitative factors only | B) Estimate monetary values | C) Determine the rate of deviation from a prescribed control procedure | D) Measure transaction amounts",
+      "question": "During their annual SOX compliance testing, Chen & Associates is evaluating the effectiveness of Apex Corp's sales order approval process. In control testing, attribute sampling is used to:",
       "options": [
         "Evaluate qualitative factors only, such as employee morale and ethical tone",
         "Estimate monetary values for substantive testing of account balances, not control testing",
@@ -11744,7 +11744,7 @@
       "subtopic": "Descriptive Statistics",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC is analyzing patient wait times in the emergency room. They have collected data for the past month. In descriptive statistics, which of the following best defines the median of a data set? A) The average of all values | B) The difference between highest and lowest values | C) The middle value when data is ordered | D) The most frequently occurring value",
+      "question": "Vista Healthcare LLC is analyzing patient wait times in the emergency room. They have collected data for the past month. In descriptive statistics, which of the following best defines the median of a data set?",
       "options": [
         "The average of all values",
         "The difference between highest and lowest values",
@@ -11812,7 +11812,7 @@
       "subtopic": "Profitability Index",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions is evaluating a new solar panel project. The initial investment is $200,000, and the present value of future cash flows is estimated at $260,000. The Profitability Index is: A) 1.60 | B) 0.77 | C) 1.00 | D) 1.30",
+      "question": "GreenTech Solutions is evaluating a new solar panel project. The initial investment is $200,000, and the present value of future cash flows is estimated at $260,000. The Profitability Index is:",
       "options": [
         "1.60",
         "0.77",
@@ -12152,7 +12152,7 @@
       "subtopic": "Scenario Analysis",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a strategic planning session, Meridian Corp's leadership team is considering different approaches to forecasting future market conditions. What distinguishes scenario planning from sensitivity analysis in strategic planning? A) Scenario planning changes one variable at a time; sensitivity analysis changes multiple variables | B) Scenario planning considers multiple related factors changing together; sensitivity analysis typically isolates single variables | C) Sensitivity analysis is used for strategic decisions; scenario planning is for operational decisions | D) They are the same technique with different names",
+      "question": "During a strategic planning session, Meridian Corp's leadership team is considering different approaches to forecasting future market conditions. What distinguishes scenario planning from sensitivity analysis in strategic planning?",
       "options": [
         "Scenario planning focuses on incremental adjustments to a primary variable; sensitivity analysis comprehensively models the impact of simultaneous shifts in key assumptions.",
         "Scenario planning considers multiple related factors changing together; sensitivity analysis typically isolates single variables",
@@ -12424,7 +12424,7 @@
       "subtopic": "Cost Hierarchy",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Products uses Activity-Based Costing (ABC). Which of the following costs would be classified at the batch-level in an ABC system? A) Machine depreciation | B) Direct materials | C) Setup costs | D) Facility security",
+      "question": "Precision Products uses Activity-Based Costing (ABC). Which of the following costs would be classified at the batch-level in an ABC system?",
       "options": [
         "Machine depreciation",
         "Direct materials",
@@ -12560,7 +12560,7 @@
       "subtopic": "Fraud Triangle",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a training session on ethics, new hires at GlobalTech are learning about the factors that contribute to fraudulent behavior. According to the fraud triangle, which THREE elements must be present for fraud to occur? A) Intent, Action, Concealment | B) Motive, Means, Method | C) Pressure, Opportunity, Rationalization | D) Planning, Execution, Cover-up",
+      "question": "During a training session on ethics, new hires at GlobalTech are learning about the factors that contribute to fraudulent behavior. According to the fraud triangle, which THREE elements must be present for fraud to occur?",
       "options": [
         "Intent, Covert Action, Successful Concealment",
         "Financial Motive, Available Means, Defined Method",
@@ -12594,7 +12594,7 @@
       "subtopic": "Independence",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "To ensure objectivity and credibility, how should the internal audit function report functionally to maintain maximum independence? A) The Audit Committee of the Board | B) The Chief Financial Officer | C) The Chief Executive Officer | D) The Controller",
+      "question": "To ensure objectivity and credibility, how should the internal audit function report functionally to maintain maximum independence?",
       "options": [
         "The Audit Committee of the Board",
         "The Chief Financial Officer, for administrative matters",
@@ -19905,7 +19905,7 @@
       "subtopic": "Operating Leverage",
       "difficulty": "easy",
       "skillLevel": "Analysis",
-      "question": "Apex Industries has significant fixed costs. A small change in sales volume dramatically impacts net income. Apex has high: A) Smaller % changes in profit for given sales changes | B) Larger % changes in profit for given sales changes | C) Higher variable costs relative to fixed costs | D) No change in profit when sales change",
+      "question": "Apex Industries has significant fixed costs. A small change in sales volume dramatically impacts net income. Apex has high:",
       "options": [
         "Smaller percentage changes in profit for given sales changes",
         "Larger percentage changes in profit for given sales changes",
@@ -19939,7 +19939,7 @@
       "subtopic": "Job Order Costing",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Manufacturing builds custom machinery. Each order is unique and tracked separately. Which costing system is most appropriate? A) Companies producing unique or customized products | B) Companies producing identical products in continuous production | C) Retail companies | D) Service companies only",
+      "question": "Precision Manufacturing builds custom machinery. Each order is unique and tracked separately. Which costing system is most appropriate?",
       "options": [
         "Companies producing unique or customized products",
         "Companies producing identical products in continuous production",
@@ -19973,7 +19973,7 @@
       "subtopic": "Process Costing",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Gulf Coast Refining processes crude oil into gasoline, jet fuel, and other products in a continuous flow. Which costing system is most appropriate? A) Legal services | B) Custom furniture manufacturing | C) Specialized equipment manufacturing | D) Oil refining",
+      "question": "Gulf Coast Refining processes crude oil into gasoline, jet fuel, and other products in a continuous flow. Which costing system is most appropriate?",
       "options": [
         "Legal services",
         "Custom furniture manufacturing",
@@ -20007,7 +20007,7 @@
       "subtopic": "Equivalent Units",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Superior Chemical is calculating costs for partially completed goods. What do equivalent units represent? A) The actual number of units started | B) The number of complete units that could have been produced with the work done | C) Units remaining in ending inventory | D) Units sold during the period",
+      "question": "Superior Chemical is calculating costs for partially completed goods. What do equivalent units represent?",
       "options": [
         "The actual number of units started in production, regardless of their completion status or stage in the process.",
         "The number of complete units that could have been produced with the work done",
@@ -20075,7 +20075,7 @@
       "subtopic": "ABC Concepts",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions wants to refine its overhead allocation. ABC assigns overhead costs based on: A) Machine hours only | B) Sales revenue | C) Direct labor hours only | D) Cost drivers that reflect actual consumption of activities",
+      "question": "GreenTech Solutions wants to refine its overhead allocation. ABC assigns overhead costs based on:",
       "options": [
         "Machine hours only, regardless of other resource usage drivers",
         "Sales revenue across all product lines and customer segments",
@@ -20109,7 +20109,7 @@
       "subtopic": "Cost Hierarchy",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Using ABC, Titan Motors wants to classify machine setup costs. Which cost hierarchy level includes these costs? A) Facility-level activities | B) Unit-level activities | C) Batch-level activities | D) Product-level activities",
+      "question": "Using ABC, Titan Motors wants to classify machine setup costs. Which cost hierarchy level includes these costs?",
       "options": [
         "Facility-level activities",
         "Unit-level activities",
@@ -20143,7 +20143,7 @@
       "subtopic": "ABC Benefits",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Compared to traditional costing, ABC typically reveals that: A) All products have the same cost | B) Overhead costs should be ignored | C) High-volume products are undercosted and low-volume products are overcosted | D) Low-volume products are undercosted and high-volume products are overcosted",
+      "question": "Compared to traditional costing, ABC typically reveals that:",
       "options": [
         "All products, regardless of volume or complexity, consume resources equally, leading to uniform cost allocation.",
         "Overhead costs, particularly indirect labor and facility expenses, are immaterial and can be excluded from product costing.",
@@ -20177,7 +20177,7 @@
       "subtopic": "Split-off Point",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "At PetroChem, crude oil is refined into multiple products. The split-off point is best described as: A) The point where joint products become separately identifiable | B) The beginning of the production process | C) The end of the production process | D) The point where products are sold",
+      "question": "At PetroChem, crude oil is refined into multiple products. The split-off point is best described as:",
       "options": [
         "The point where joint products become separately identifiable",
         "The beginning of the production process, specifically when direct materials are first introduced.",
@@ -24597,7 +24597,7 @@
       "subtopic": "Code of Conduct",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Financial, a growing firm, emphasizes ethical conduct. To foster a culture of compliance, how should Apex ensure its code of conduct is MOST effective? A) Communicated and reinforced regularly with leadership modeling compliance | B) Distributed once during onboarding only | C) Applied only to lower-level employees | D) Kept confidential from employees",
+      "question": "Apex Financial, a growing firm, emphasizes ethical conduct. To foster a culture of compliance, how should Apex ensure its code of conduct is MOST effective?",
       "options": [
         "Communicated and reinforced regularly with leadership modeling compliance",
         "Distributed once during onboarding only, assuming employees retain the information indefinitely.",
@@ -24665,7 +24665,7 @@
       "subtopic": "Material Weakness",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During its annual audit, GreenTech Solutions' auditors identified a deficiency in its revenue recognition process. Under the COSO framework, a material weakness in internal control over financial reporting is defined as: A) Any control deficiency identified by auditors | B) A deficiency with a reasonable possibility of not preventing a material misstatement | C) A minor process improvement opportunity | D) A deficiency that has already resulted in material fraud",
+      "question": "During its annual audit, GreenTech Solutions' auditors identified a deficiency in its revenue recognition process. Under the COSO framework, a material weakness in internal control over financial reporting is defined as:",
       "options": [
         "Any control deficiency identified by auditors, regardless of its potential impact on the financial statements.",
         "A deficiency with a reasonable possibility of not preventing a material misstatement",
@@ -24699,7 +24699,7 @@
       "subtopic": "Significant Deficiency",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During the audit of Stellar Industries, the audit team found control deficiencies. What is the key difference between a significant deficiency and a material weakness? A) Material weaknesses have a \"reasonable possibility\" standard; significant deficiencies are \"more than remote\" | B) Significant deficiencies only affect cash accounts | C) Significant deficiencies are reported publicly; material weaknesses are not | D) Material weaknesses require restatement; significant deficiencies do not",
+      "question": "During the audit of Stellar Industries, the audit team found control deficiencies. What is the key difference between a significant deficiency and a material weakness?",
       "options": [
         "Material weaknesses have a \"reasonable possibility\" standard; significant deficiencies are \"more than remote\"",
         "Significant deficiencies are limited to internal controls over cash accounts and do not require evaluation of other financial statement areas.",
@@ -24733,7 +24733,7 @@
       "subtopic": "Accelerated Filers",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Zenith Corporation is preparing for its annual audit. Under SOX Section 404(b), which companies require auditor attestation on internal controls? A) Accelerated filers and large accelerated filers only | B) Only Fortune 500 companies | C) All public companies regardless of size | D) All private companies",
+      "question": "Zenith Corporation is preparing for its annual audit. Under SOX Section 404(b), which companies require auditor attestation on internal controls?",
       "options": [
         "Accelerated filers and large accelerated filers only",
         "Only Fortune 500 companies",
@@ -24767,7 +24767,7 @@
       "subtopic": "Flowcharts",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Brighton Manufacturing is documenting its internal controls. Process flowcharts are MOST useful for: A) Setting budgets for departments | B) Identifying control points and potential segregation of duties issues | C) Calculating financial ratios | D) Determining tax liabilities",
+      "question": "Brighton Manufacturing is documenting its internal controls. Process flowcharts are MOST useful for:",
       "options": [
         "Setting budgets for departments by providing a visual representation of resource allocation needs.",
         "Identifying control points and potential segregation of duties issues",
@@ -24801,7 +24801,7 @@
       "subtopic": "Risk Control Matrix",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Everest Retail is creating a risk and control matrix (RCM) for its inventory management process. An RCM typically includes all of the following EXCEPT: A) Employee salary information | B) Control owner and testing procedures | C) Identified risks and related controls | D) Control frequency and documentation",
+      "question": "Everest Retail is creating a risk and control matrix (RCM) for its inventory management process. An RCM typically includes all of the following EXCEPT:",
       "options": [
         "Employee salary information",
         "Control owner and testing procedures",
@@ -24835,7 +24835,7 @@
       "subtopic": "Narratives",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "As part of documenting internal controls at Omega Systems, control narratives describe: A) Historical stock prices | B) Only automated controls | C) How controls are designed and intended to operate | D) Marketing strategies",
+      "question": "As part of documenting internal controls at Omega Systems, control narratives describe:",
       "options": [
         "Historical stock prices used to assess investment risk",
         "Only automated controls, excluding manual oversight tasks",
@@ -24869,7 +24869,7 @@
       "subtopic": "Walkthrough",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "To assess the design of a new IT system's access controls, the audit team at Delta Dynamics performed a control walkthrough. A control walkthrough involves: A) Reviewing only automated controls | B) Testing a large statistical sample of transactions | C) Tracing a single transaction through the entire process to understand control design | D) Interviewing external customers",
+      "question": "To assess the design of a new IT system's access controls, the audit team at Delta Dynamics performed a control walkthrough. A control walkthrough involves:",
       "options": [
         "Reviewing only automated controls and system configurations to determine if they are properly implemented and functioning as intended.",
         "Testing a large statistical sample of transactions to quantify the operational effectiveness of a control over a specific period of time.",

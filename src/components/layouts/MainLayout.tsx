@@ -256,7 +256,7 @@ const MainLayout = () => {
             </div>
           </div>
           <a
-            href="https://discord.gg/XBjzDrws"
+            href="https://discord.gg/SNZJHr26"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 flex items-center gap-2 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"

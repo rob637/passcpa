@@ -1,7 +1,8 @@
-import React, { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
+import React, { Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation, useSearchParams, useParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
+import { lazyWithRetry } from './utils/lazyWithRetry';
 import { scrollToTop } from './utils/scroll';
 import { saveCoursePreference } from './utils/courseDetection';
 import { isAdminEmail } from './config/adminConfig';
@@ -34,121 +35,121 @@ import { NavigationProvider } from './components/navigation';
 // ============================================
 
 // Auth Pages
-const Login = lazy(() => import('./components/pages/auth/Login'));
-const Register = lazy(() => import('./components/pages/auth/Register'));
-const ForgotPassword = lazy(() => import('./components/pages/auth/ForgotPassword'));
-const VerifyEmail = lazy(() => import('./components/pages/auth/VerifyEmail'));
+const Login = lazyWithRetry(() => import('./components/pages/auth/Login'));
+const Register = lazyWithRetry(() => import('./components/pages/auth/Register'));
+const ForgotPassword = lazyWithRetry(() => import('./components/pages/auth/ForgotPassword'));
+const VerifyEmail = lazyWithRetry(() => import('./components/pages/auth/VerifyEmail'));
 
 // Core Pages (most used)
-const Home = lazy(() => import('./components/pages/Home'));
-const Practice = lazy(() => import('./components/pages/Practice'));
-const Progress = lazy(() => import('./components/pages/Progress'));
-const Settings = lazy(() => import('./components/pages/Settings'));
-const You = lazy(() => import('./components/pages/You'));
+const Home = lazyWithRetry(() => import('./components/pages/Home'));
+const Practice = lazyWithRetry(() => import('./components/pages/Practice'));
+const Progress = lazyWithRetry(() => import('./components/pages/Progress'));
+const Settings = lazyWithRetry(() => import('./components/pages/Settings'));
+const You = lazyWithRetry(() => import('./components/pages/You'));
 
 // Training Modes
-const DailyChallenge = lazy(() => import('./components/pages/DailyChallenge'));
-const Flashcards = lazy(() => import('./components/pages/Flashcards'));
-const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
-const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
-const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
-const CMAEssaySimulator = lazy(() => import('./components/pages/CMAEssaySimulator'));
-const CMACBQSimulator = lazy(() => import('./components/pages/CMACBQSimulator'));
-const EAExamSimulator = lazy(() => import('./components/pages/EAExamSimulator'));
-const EAFormExplorer = lazy(() => import('./components/pages/EAFormExplorer'));
-const EASection = lazy(() => import('./components/pages/EASection'));
-const EAInfo = lazy(() => import('./components/pages/EAInfo'));
-const EAStudyPlanSetup = lazy(() => import('./components/pages/EAStudyPlanSetup'));
-const CMAExamSimulator = lazy(() => import('./components/pages/CMAExamSimulator'));
-const CIAExamSimulator = lazy(() => import('./components/pages/CIAExamSimulator'));
-const CISAExamSimulator = lazy(() => import('./components/pages/CISAExamSimulator'));
-const CMAStudyPlanSetup = lazy(() => import('./components/pages/CMAStudyPlanSetup'));
-const CMASection = lazy(() => import('./components/pages/CMASection'));
-const TBSSimulator = lazy(() => import('./components/pages/TBSSimulator'));
-const WrittenCommunication = lazy(() => import('./components/pages/WrittenCommunication'));
-const CISASection = lazy(() => import('./components/pages/CISASection'));
-const CISAInfo = lazy(() => import('./components/pages/CISAInfo'));
-const CISAStudyPlanSetup = lazy(() => import('./components/pages/CISAStudyPlanSetup'));
+const DailyChallenge = lazyWithRetry(() => import('./components/pages/DailyChallenge'));
+const Flashcards = lazyWithRetry(() => import('./components/pages/Flashcards'));
+const FlashcardSetup = lazyWithRetry(() => import('./components/FlashcardSetup'));
+const TimedQuiz = lazyWithRetry(() => import('./components/pages/TimedQuiz'));
+const ExamSimulator = lazyWithRetry(() => import('./components/pages/ExamSimulator'));
+const CMAEssaySimulator = lazyWithRetry(() => import('./components/pages/CMAEssaySimulator'));
+const CMACBQSimulator = lazyWithRetry(() => import('./components/pages/CMACBQSimulator'));
+const EAExamSimulator = lazyWithRetry(() => import('./components/pages/EAExamSimulator'));
+const EAFormExplorer = lazyWithRetry(() => import('./components/pages/EAFormExplorer'));
+const EASection = lazyWithRetry(() => import('./components/pages/EASection'));
+const EAInfo = lazyWithRetry(() => import('./components/pages/EAInfo'));
+const EAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/EAStudyPlanSetup'));
+const CMAExamSimulator = lazyWithRetry(() => import('./components/pages/CMAExamSimulator'));
+const CIAExamSimulator = lazyWithRetry(() => import('./components/pages/CIAExamSimulator'));
+const CISAExamSimulator = lazyWithRetry(() => import('./components/pages/CISAExamSimulator'));
+const CMAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CMAStudyPlanSetup'));
+const CMASection = lazyWithRetry(() => import('./components/pages/CMASection'));
+const TBSSimulator = lazyWithRetry(() => import('./components/pages/TBSSimulator'));
+const WrittenCommunication = lazyWithRetry(() => import('./components/pages/WrittenCommunication'));
+const CISASection = lazyWithRetry(() => import('./components/pages/CISASection'));
+const CISAInfo = lazyWithRetry(() => import('./components/pages/CISAInfo'));
+const CISAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CISAStudyPlanSetup'));
 
 // Content Pages
-const Lessons = lazy(() => import('./components/pages/Lessons'));
-const LessonMatrix = lazy(() => import('./components/pages/LessonMatrix'));
-const LessonViewer = lazy(() => import('./components/pages/LessonViewer'));
-const StudyJourney = lazy(() => import('./components/pages/StudyJourney'));
-const AITutor = lazy(() => import('./components/pages/AITutor'));
-const Achievements = lazy(() => import('./components/pages/Achievements'));
-const Community = lazy(() => import('./components/pages/Community'));
+const Lessons = lazyWithRetry(() => import('./components/pages/Lessons'));
+const LessonMatrix = lazyWithRetry(() => import('./components/pages/LessonMatrix'));
+const LessonViewer = lazyWithRetry(() => import('./components/pages/LessonViewer'));
+const StudyJourney = lazyWithRetry(() => import('./components/pages/StudyJourney'));
+const AITutor = lazyWithRetry(() => import('./components/pages/AITutor'));
+const Achievements = lazyWithRetry(() => import('./components/pages/Achievements'));
+const Community = lazyWithRetry(() => import('./components/pages/Community'));
 
 // Resources Pages
-const ResourcesHub = lazy(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
-const ResourceList = lazy(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
-const ResourceViewer = lazy(() => import('./components/pages/resources/ResourceViewer').then(m => ({ default: m.default })));
-const StrategyPage = lazy(() => import('./components/pages/resources/StrategyPage').then(m => ({ default: m.default })));
+const ResourcesHub = lazyWithRetry(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
+const ResourceList = lazyWithRetry(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
+const ResourceViewer = lazyWithRetry(() => import('./components/pages/resources/ResourceViewer').then(m => ({ default: m.default })));
+const StrategyPage = lazyWithRetry(() => import('./components/pages/resources/StrategyPage').then(m => ({ default: m.default })));
 
 // Onboarding & Admin
-const Onboarding = lazy(() => import('./components/pages/Onboarding'));
-const DiagnosticQuiz = lazy(() => import('./components/pages/DiagnosticQuiz'));
-const DemoPractice = lazy(() => import('./components/pages/DemoPractice'));
-const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
-const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
-const GrowthDashboard = lazy(() => import('./components/pages/admin/GrowthDashboard'));
-const ArticleReview = lazy(() => import('./components/pages/admin/ArticleReview'));
-const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
-const LessonEditor = lazy(() => import('./components/pages/admin/LessonEditor'));
-const WCEditor = lazy(() => import('./components/pages/admin/WCEditor'));
-const TBSEditor = lazy(() => import('./components/pages/admin/TBSEditor'));
-const UserAnalyticsDashboard = lazy(() => import('./components/pages/admin/UserAnalyticsDashboard'));
-const ReferralSystem = lazy(() => import('./components/pages/admin/ReferralSystem'));
-const DiagnosticLeadMagnet = lazy(() => import('./components/pages/admin/DiagnosticLeadMagnet'));
-const TestimonialHarvester = lazy(() => import('./components/pages/admin/TestimonialHarvester'));
-const LinkedInPosts = lazy(() => import('./components/pages/admin/LinkedInPosts'));
+const Onboarding = lazyWithRetry(() => import('./components/pages/Onboarding'));
+const DiagnosticQuiz = lazyWithRetry(() => import('./components/pages/DiagnosticQuiz'));
+const DemoPractice = lazyWithRetry(() => import('./components/pages/DemoPractice'));
+const AdminSeed = lazyWithRetry(() => import('./components/pages/AdminSeed'));
+const AdminCMS = lazyWithRetry(() => import('./components/pages/admin/AdminCMS'));
+const GrowthDashboard = lazyWithRetry(() => import('./components/pages/admin/GrowthDashboard'));
+const ArticleReview = lazyWithRetry(() => import('./components/pages/admin/ArticleReview'));
+const QuestionEditor = lazyWithRetry(() => import('./components/pages/admin/QuestionEditor'));
+const LessonEditor = lazyWithRetry(() => import('./components/pages/admin/LessonEditor'));
+const WCEditor = lazyWithRetry(() => import('./components/pages/admin/WCEditor'));
+const TBSEditor = lazyWithRetry(() => import('./components/pages/admin/TBSEditor'));
+const UserAnalyticsDashboard = lazyWithRetry(() => import('./components/pages/admin/UserAnalyticsDashboard'));
+const ReferralSystem = lazyWithRetry(() => import('./components/pages/admin/ReferralSystem'));
+const DiagnosticLeadMagnet = lazyWithRetry(() => import('./components/pages/admin/DiagnosticLeadMagnet'));
+const TestimonialHarvester = lazyWithRetry(() => import('./components/pages/admin/TestimonialHarvester'));
+const LinkedInPosts = lazyWithRetry(() => import('./components/pages/admin/LinkedInPosts'));
 
 // Blog Pages (public, SEO content)
-const BlogIndex = lazy(() => import('./components/pages/blog/BlogIndex'));
-const DynamicArticle = lazy(() => import('./components/pages/blog/DynamicArticle'));
-const HowToPassFAR = lazy(() => import('./components/pages/blog/HowToPassFAR'));
-const EAvsCPA = lazy(() => import('./components/pages/blog/EAvsCPA'));
-const CPAStudySchedule2026 = lazy(() => import('./components/pages/blog/CPAStudySchedule2026'));
+const BlogIndex = lazyWithRetry(() => import('./components/pages/blog/BlogIndex'));
+const DynamicArticle = lazyWithRetry(() => import('./components/pages/blog/DynamicArticle'));
+const HowToPassFAR = lazyWithRetry(() => import('./components/pages/blog/HowToPassFAR'));
+const EAvsCPA = lazyWithRetry(() => import('./components/pages/blog/EAvsCPA'));
+const CPAStudySchedule2026 = lazyWithRetry(() => import('./components/pages/blog/CPAStudySchedule2026'));
 
 // Public Lead Magnet Pages
-const DiagnosticPage = lazy(() => import('./components/pages/DiagnosticPage'));
+const DiagnosticPage = lazyWithRetry(() => import('./components/pages/DiagnosticPage'));
 
 // Legal Pages
-const Terms = lazy(() => import('./components/pages/legal/Terms'));
-const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
-const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
-const PassGuarantee = lazy(() => import('./components/pages/legal/PassGuarantee'));
+const Terms = lazyWithRetry(() => import('./components/pages/legal/Terms'));
+const Privacy = lazyWithRetry(() => import('./components/pages/legal/Privacy'));
+const HelpLegal = lazyWithRetry(() => import('./components/pages/legal/HelpLegal'));
+const PassGuarantee = lazyWithRetry(() => import('./components/pages/legal/PassGuarantee'));
 
 // Error Pages
-const NotFound = lazy(() => import('./components/pages/NotFound'));
-const Unsubscribe = lazy(() => import('./components/pages/Unsubscribe'));
+const NotFound = lazyWithRetry(() => import('./components/pages/NotFound'));
+const Unsubscribe = lazyWithRetry(() => import('./components/pages/Unsubscribe'));
 
 // Checkout Pages
-const CheckoutSuccess = lazy(() => import('./components/pages/CheckoutSuccess'));
-const CheckoutCancel = lazy(() => import('./components/pages/CheckoutCancel'));
-const StartCheckout = lazy(() => import('./components/pages/StartCheckout'));
+const CheckoutSuccess = lazyWithRetry(() => import('./components/pages/CheckoutSuccess'));
+const CheckoutCancel = lazyWithRetry(() => import('./components/pages/CheckoutCancel'));
+const StartCheckout = lazyWithRetry(() => import('./components/pages/StartCheckout'));
 
 // Business Pages
-const VoraPrep = lazy(() => import('./components/pages/VoraPrep'));
+const VoraPrep = lazyWithRetry(() => import('./components/pages/VoraPrep'));
 // Unified Landing Pages (new template system)
-const CPALanding = lazy(() => import('./components/pages/landing/CPALandingNew'));
-const EALanding = lazy(() => import('./components/pages/landing/EALandingNew'));
-const CMALanding = lazy(() => import('./components/pages/landing/CMALandingNew'));
-const CIALanding = lazy(() => import('./components/pages/landing/CIALandingNew'));
-const CFPLanding = lazy(() => import('./components/pages/landing/CFPLandingNew'));
-const CISALanding = lazy(() => import('./components/pages/landing/CISALandingNew'));
+const CPALanding = lazyWithRetry(() => import('./components/pages/landing/CPALandingNew'));
+const EALanding = lazyWithRetry(() => import('./components/pages/landing/EALandingNew'));
+const CMALanding = lazyWithRetry(() => import('./components/pages/landing/CMALandingNew'));
+const CIALanding = lazyWithRetry(() => import('./components/pages/landing/CIALandingNew'));
+const CFPLanding = lazyWithRetry(() => import('./components/pages/landing/CFPLandingNew'));
+const CISALanding = lazyWithRetry(() => import('./components/pages/landing/CISALandingNew'));
 // Info pages (keep original)
-const CMAInfo = lazy(() => import('./components/pages/CMAInfo'));
-const CIAInfo = lazy(() => import('./courses/cia/CIAInfo'));
-const CIAStudyPlanSetup = lazy(() => import('./courses/cia/CIAStudyPlanSetup'));
-const CIASection = lazy(() => import('./courses/cia/CIASection'));
-const CFPSection = lazy(() => import('./courses/cfp/CFPSection'));
-const CFPCaseStudy = lazy(() => import('./courses/cfp/CFPCaseStudy'));
-const CFPExamSimulator = lazy(() => import('./components/pages/CFPExamSimulator'));
-const CFPInfo = lazy(() => import('./components/pages/CFPInfo'));
-const CFPStudyPlanSetup = lazy(() => import('./components/pages/CFPStudyPlanSetup'));
-const CPAInfo = lazy(() => import('./components/pages/CPAInfo'));
-const CPAStudyPlanSetup = lazy(() => import('./components/pages/CPAStudyPlanSetup'));
+const CMAInfo = lazyWithRetry(() => import('./components/pages/CMAInfo'));
+const CIAInfo = lazyWithRetry(() => import('./courses/cia/CIAInfo'));
+const CIAStudyPlanSetup = lazyWithRetry(() => import('./courses/cia/CIAStudyPlanSetup'));
+const CIASection = lazyWithRetry(() => import('./courses/cia/CIASection'));
+const CFPSection = lazyWithRetry(() => import('./courses/cfp/CFPSection'));
+const CFPCaseStudy = lazyWithRetry(() => import('./courses/cfp/CFPCaseStudy'));
+const CFPExamSimulator = lazyWithRetry(() => import('./components/pages/CFPExamSimulator'));
+const CFPInfo = lazyWithRetry(() => import('./components/pages/CFPInfo'));
+const CFPStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CFPStudyPlanSetup'));
+const CPAInfo = lazyWithRetry(() => import('./components/pages/CPAInfo'));
+const CPAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CPAStudyPlanSetup'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {

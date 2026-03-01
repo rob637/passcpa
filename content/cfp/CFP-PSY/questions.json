@@ -2387,7 +2387,7 @@
       "subtopic": "Nudges",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Acme Corp automatically enrolls new employees in its 401(k) plan at a 3% contribution rate, with an option to opt-out or change the contribution. This is an example of:\nA) Financial penalty for non-participation | B) Mandatory savings requirements | C) A nudge that leverages status quo bias to improve outcomes | D) A government regulation",
+      "question": "Acme Corp automatically enrolls new employees in its 401(k) plan at a 3% contribution rate, with an option to opt-out or change the contribution. This is an example of:",
       "explanation": "Nudges are choice architecture elements that guide behavior while preserving choice. Auto-enrollment uses status quo bias (inertia) positively—people tend to stay enrolled. Combined with auto-escalation, nudges have dramatically improved retirement savings without mandates. CFP® professionals can apply nudge principles in advice.",
       "correctAnswer": 2,
       "options": [
@@ -2422,7 +2422,7 @@
       "subtopic": "Cultural Competence",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "During initial meetings with diverse clientele, Chen & Associates strives to provide culturally sensitive advice. Cultural competence in financial planning requires:\nA) Avoiding discussions of cultural differences | B) Treating all clients exactly the same regardless of background | C) Understanding how cultural background may influence financial values, family dynamics, and communication preferences | D) Assuming clients from specific cultures have identical money beliefs",
+      "question": "During initial meetings with diverse clientele, Chen & Associates strives to provide culturally sensitive advice. Cultural competence in financial planning requires:",
       "explanation": "Cultural competence means understanding how culture shapes financial attitudes, family roles, risk perceptions, and communication styles—then adapting appropriately without stereotyping. It requires curiosity, humility, and individualized attention to each client\\'s unique background and preferences.",
       "correctAnswer": 2,
       "options": [
@@ -2457,7 +2457,7 @@
       "subtopic": "Non-Verbal Communication",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a review meeting, Mr. Jones crosses his arms and avoids eye contact after you recommend a Roth conversion. This behavior may indicate:\nA) Complete agreement with the proposal | B) That the client is cold | C) Enthusiasm about proceeding | D) Possible discomfort, disagreement, or resistance",
+      "question": "During a review meeting, Mr. Jones crosses his arms and avoids eye contact after you recommend a Roth conversion. This behavior may indicate:",
       "explanation": "Non-verbal cues like crossed arms, avoided eye contact, or leaning away often signal discomfort or disagreement. CFP® professionals should notice these cues and address them: \\\"I notice you seem hesitant—what concerns do you have?\\\" Non-verbal communication often reveals feelings words don\\'t express.",
       "correctAnswer": 3,
       "options": [
@@ -2492,7 +2492,7 @@
       "subtopic": "Establishing Rapport",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "You are meeting with a prospective client, Sarah Miller, for the first time. Building rapport with Sarah is best accomplished by:\nA) Immediately presenting investment recommendations | B) Showing genuine interest in their life, listening actively, and finding common ground | C) Focusing exclusively on their financial data | D) Demonstrating technical expertise extensively",
+      "question": "You are meeting with a prospective client, Sarah Miller, for the first time. Building rapport with Sarah is best accomplished by:",
       "explanation": "Rapport requires genuine connection beyond transactional interactions. Showing interest in the client as a person, listening attentively, finding shared experiences, and demonstrating warmth builds trust. Technical expertise matters but is insufficient for strong client relationships.",
       "correctAnswer": 1,
       "options": [
@@ -2527,7 +2527,7 @@
       "subtopic": "Collaborative Goal-Setting",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "When assisting the Smiths with their retirement plan, you want to ensure their goals align with their values. Effective financial goal-setting should be:\nA) Determined solely by the CFP® professional based on best practices | B) Collaborative, specific, measurable, and tied to client values | C) Focused exclusively on investment returns | D) Vague to allow flexibility",
+      "question": "When assisting the Smiths with their retirement plan, you want to ensure their goals align with their values. Effective financial goal-setting should be:",
       "explanation": "Effective goals are SMART (Specific, Measurable, Achievable, Relevant, Time-bound) and collaboratively developed. Goals tied to client values (\"Why is this important?\") create stronger motivation than generic targets. The CFP® professional guides the process but the client must own the goals.",
       "correctAnswer": 0,
       "options": [
@@ -2562,7 +2562,7 @@
       "subtopic": "Resistance to Advice",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Despite repeated explanations, a client, Mr. Davis, refuses to increase his emergency fund, even though he understands the risks. The CFP® professional should first:\nA) Repeat the advice more forcefully | B) Terminate the relationship | C) Explore the underlying reasons for resistance through open-ended questions | D) Document the refusal and move on",
+      "question": "Despite repeated explanations, a client, Mr. Davis, refuses to increase his emergency fund, even though he understands the risks. The CFP® professional should first:",
       "explanation": "Resistance often signals unexplored concerns, values conflicts, or past experiences. Before escalating or abandoning, explore the \\\"why\\\" with curiosity: \\\"Help me understand what concerns you about this approach.\\\" Understanding resistance often reveals paths forward that honor both sound planning and client concerns.",
       "correctAnswer": 0,
       "options": [
@@ -2597,7 +2597,7 @@
       "subtopic": "Accountability Structures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "To improve client adherence to their financial plan, a CFP® professional can:\nA) Threaten to terminate the relationship | B) Establish regular check-ins, automate actions, and celebrate progress | C) Ignore non-compliance | D) Make decisions for the client without consent",
+      "question": "To improve client adherence to their financial plan, a CFP® professional can:",
       "explanation": "Accountability structures improve follow-through: scheduled reviews, automated savings/investments, progress tracking, and acknowledging achievements. Breaking large goals into smaller milestones creates momentum. The CFP® professional serves as an accountability partner while respecting client autonomy.",
       "correctAnswer": 1,
       "options": [
@@ -2666,7 +2666,7 @@
       "subtopic": "Difficult Conversations",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "After a year of market volatility, you must inform a client, Mrs. Green, that her portfolio underperformed its benchmark. When delivering this news, the financial planner should:\nA) Blame market conditions entirely | B) Avoid the topic until the client asks | C) Lead with context, explain what happened and why, acknowledge emotions, and focus on the forward-looking plan | D) Immediately recommend changes to recover losses",
+      "question": "After a year of market volatility, you must inform a client, Mrs. Green, that her portfolio underperformed its benchmark. When delivering this news, the financial planner should:",
       "explanation": "Difficult conversations require preparation, honesty, and empathy. Provide context (market conditions, original plan rationale), acknowledge the client\\'s likely emotions, and shift focus to what\\'s next. Avoid defensive or blame-shifting language. The relationship may deepen through handling adversity well.",
       "correctAnswer": 2,
       "options": [
@@ -3681,7 +3681,7 @@
       "subtopic": "Availability Heuristic",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah recalls a recent news story about a tech stock surge. Despite a balanced portfolio recommendation, she insists on investing heavily in that specific stock. The availability heuristic affects Sarah's investing when: \nA) Investors overweight information that is easily recalled—often recent, vivid, or frequently covered events | B) Statistical analysis guides decisions | C) Historical data is prioritized | D) All information is equally weighted",
+      "question": "Sarah recalls a recent news story about a tech stock surge. Despite a balanced portfolio recommendation, she insists on investing heavily in that specific stock. The availability heuristic affects Sarah's investing when:",
       "explanation": "Availability bias leads to overestimating probabilities of memorable events. A recent market crash feels more likely to repeat. Dramatic company failures loom larger than statistics suggest. Media coverage amplifies this. Advisers counter with historical data and probability analysis.",
       "correctAnswer": 0,
       "options": [
@@ -3716,7 +3716,7 @@
       "subtopic": "Framing Effects",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a review, Mark is presented with two options: Option A highlights a 90% chance of portfolio preservation, while Option B emphasizes a 10% chance of loss. Framing effects mean: \nA) How information is presented (gains vs. losses, percentages vs. dollars) affects perception and decisions even when facts are identical | B) Using picture frames in offices | C) Only numerical presentation matters | D) The frame around a presentation",
+      "question": "During a review, Mark is presented with two options: Option A highlights a 90% chance of portfolio preservation, while Option B emphasizes a 10% chance of loss. Framing effects mean:",
       "explanation": "Framing profoundly affects decisions. \"10% chance of loss\" feels different than \"90% chance of no loss.\" \"$50,000 saved\" creates different reactions than \"only $50,000.\" Advisers can use framing ethically to present information clearly, but must not manipulate through misleading frames.",
       "correctAnswer": 0,
       "options": [
@@ -3751,7 +3751,7 @@
       "subtopic": "Motivational Interviewing",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "During initial meetings, advisors at 'Horizon Financial' aim to understand client values and goals, rather than immediately presenting solutions. Motivational interviewing techniques help advisers: \nA) Enforce compliance | B) Elicit clients' own reasons for change and explore their ambivalence | C) , | D) ,",
+      "question": "During initial meetings, advisors at 'Horizon Financial' aim to understand client values and goals, rather than immediately presenting solutions. Motivational interviewing techniques help advisers:",
       "explanation": "Motivational interviewing uses OARS: Open questions, Affirmations, Reflective listening, and Summary statements. It helps clients articulate their own reasons for change (more powerful than external pressure). Useful for behavior change like saving more or reducing debt—clients convince themselves rather than being told.",
       "correctAnswer": 1,
       "options": [
@@ -3786,7 +3786,7 @@
       "subtopic": "Resistance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After recommending a debt reduction strategy, a client, John, expresses reluctance, stating, \"I'm not sure I can stick to that.\" When clients show resistance to financial recommendations: \nA) Terminate the relationship | B) Ignore the resistance | C) Explore the underlying concerns through questions and listening, as resistance often signals unaddressed issues | D) Push harder to convince them",
+      "question": "After recommending a debt reduction strategy, a client, John, expresses reluctance, stating, \"I'm not sure I can stick to that.\" When clients show resistance to financial recommendations:",
       "explanation": "Resistance is information. It may indicate misunderstanding, fear, conflicting values, or past experiences. Rather than pushing through, rolling with resistance—exploring concerns, validating feelings, and addressing underlying issues—builds trust and often resolves objections more effectively.",
       "correctAnswer": 2,
       "options": [
@@ -3821,7 +3821,7 @@
       "subtopic": "Money Scripts",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Growing up, Emily's parents always told her \"Money is evil\". Now, as an adult, she struggles to save, fearing wealth accumulation. Money scripts are: \nA) Unconscious beliefs about money often formed in childhood that influence financial behaviors and attitudes | B) Budgeting spreadsheets | C) Investment instructions | D) Written financial plans",
+      "question": "Growing up, Emily's parents always told her \"Money is evil\". Now, as an adult, she struggles to save, fearing wealth accumulation. Money scripts are:",
       "explanation": "Money scripts are deeply held beliefs (e.g., \"Money is evil,\" \"More money will solve all problems,\" \"I don\\'t deserve money\"). Categories include avoidance, worship, status, and vigilance. Understanding clients\\' money scripts helps explain seemingly irrational behaviors and guides productive conversations.",
       "correctAnswer": 0,
       "options": [
@@ -3856,7 +3856,7 @@
       "subtopic": "Hindsight Bias",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a market correction, David claims, \"I knew this was coming!\" even though he didn't act on it beforehand. Hindsight bias leads investors to: \nA) Ignore past performance | B) Make better decisions | C) Believe past events were predictable after they occurred, leading to overconfidence in predicting future events | D) Better predict future events",
+      "question": "After a market correction, David claims, \"I knew this was coming!\" even though he didn't act on it beforehand. Hindsight bias leads investors to:",
       "explanation": "Hindsight bias (\"I knew it all along\") distorts memory—past surprises seem obvious in retrospect. This creates overconfidence in predicting future events. Investors who \"knew\" the 2008 crash was coming believe they can predict the next one. Advisers should document predictions to counter this bias.",
       "correctAnswer": 2,
       "options": [
@@ -3891,7 +3891,7 @@
       "subtopic": "Building Rapport",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Before discussing investment strategies, advisors at 'Summit Wealth' spend time learning about clients' hobbies and families. Building rapport with clients includes: \nA) Maintaining strict formality at all times | B) Only discussing finances | C) Finding common ground, showing genuine interest, using appropriate body language, and establishing trust before diving into technical matters | D) Immediately discussing portfolio returns",
+      "question": "Before discussing investment strategies, advisors at 'Summit Wealth' spend time learning about clients' hobbies and families. Building rapport with clients includes:",
       "explanation": "Rapport creates trust and openness. Techniques include mirroring body language, finding shared interests, remembering personal details, using active listening, and showing genuine care. Strong rapport improves information gathering, enhances receptiveness to advice, and builds lasting relationships.",
       "correctAnswer": 2,
       "options": [
@@ -3926,7 +3926,7 @@
       "subtopic": "Financial Anxiety",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan frequently worries about running out of money, despite having a comfortable retirement plan. When working with financially anxious clients: \nA) Avoid discussing their concerns | B) Overwhelm them with data to prove they're financially secure | C) Acknowledge their feelings, explore the root causes of their anxiety, and provide reassurance and education | D) Tell them their fears are irrational",
+      "question": "Susan frequently worries about running out of money, despite having a comfortable retirement plan. When working with financially anxious clients:",
       "explanation": "Financial anxiety is common and valid. Acknowledge feelings without judgment. Break complex decisions into smaller steps. Provide clear, simple information. Create plans that offer sense of control. Avoid jargon and overwhelming detail. Regular check-ins can prevent anxiety from escalating.",
       "correctAnswer": 2,
       "options": [
@@ -4241,7 +4241,7 @@
       "subtopic": "Fear and Greed",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a market downturn, Sarah calls expressing extreme anxiety about her portfolio at Oakwood Financial. To best manage Sarah's fear, which of the following actions should the planner take FIRST?\nA) Making trades quickly to reduce anxiety | B) Ignoring their emotions | C) Reminding clients of their long-term goals, the role of their plan, and historical perspective while validating their feelings | D) Matching their emotional response",
+      "question": "During a market downturn, Sarah calls expressing extreme anxiety about her portfolio at Oakwood Financial. To best manage Sarah's fear, which of the following actions should the planner take FIRST?",
       "explanation": "Fear (market bottoms) and greed (market tops) drive destructive behavior. Acknowledge emotions—they\\'re natural. Refocus on the plan created during rational times. Use historical context carefully (not dismissively). Sometimes practical steps (rebalancing, stress testing) provide sense of action without abandoning strategy.",
       "correctAnswer": 2,
       "options": [
@@ -4276,7 +4276,7 @@
       "subtopic": "Self-Control",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John struggles to save for retirement at Willow Creek Advisors. Which of the following behavioral interventions would BEST help John improve his self-control and savings habits?\nA) Automation (auto-save), commitment devices (penalties for withdrawal), and pre-commitment strategies | B) Avoiding the topic | C) Punishment for failures | D) Relying solely on willpower",
+      "question": "John struggles to save for retirement at Willow Creek Advisors. Which of the following behavioral interventions would BEST help John improve his self-control and savings habits?",
       "explanation": "Self-control is limited; systems beat willpower. Automation removes decisions (automatic savings). Commitment devices add friction to impulsive actions (early withdrawal penalties, investment policy statements). Mental accounting (separate accounts for goals) can help even if economically irrational.",
       "correctAnswer": 0,
       "options": [
@@ -4311,7 +4311,7 @@
       "subtopic": "Cultural Competence",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria, a new client at Global Wealth Partners, comes from a culture where family financial decisions are made collectively. Cultural competence in financial planning involves:\nA) Only working within your own culture | B) Understanding how cultural backgrounds may influence financial attitudes, family structures, and decision-making styles | C) Avoiding diverse clients | D) Applying one approach to all clients",
+      "question": "Maria, a new client at Global Wealth Partners, comes from a culture where family financial decisions are made collectively. Cultural competence in financial planning involves:",
       "explanation": "Culture affects attitudes toward debt, family financial obligations, risk, gender roles in finances, and comfort with financial discussions. Culturally competent advisers ask about preferences rather than assume, recognize their own cultural biases, and adapt communication and recommendations accordingly.",
       "correctAnswer": 1,
       "options": [
@@ -4381,7 +4381,7 @@
       "subtopic": "Hyperbolic Discounting",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "David understands he needs to save more for retirement at Emerald Coast Planning. However, he prioritizes immediate gratification. Hyperbolic discounting leads David to:\nA) Avoid all spending | B) Save too much | C) Overvalue long-term rewards | D) Disproportionately prefer immediate rewards over larger future rewards, explaining undersaving and debt accumulation",
+      "question": "David understands he needs to save more for retirement at Emerald Coast Planning. However, he prioritizes immediate gratification. Hyperbolic discounting leads David to:",
       "explanation": "Hyperbolic discounting: people heavily discount future rewards compared to immediate ones, but the discount rate decreases for distant time horizons. This leads to present bias (preferring $100 today over $120 next month, but indifference between $100 in 12 months vs $120 in 13 months). Explains procrastination, undersaving, and credit card debt.",
       "correctAnswer": 3,
       "options": [
@@ -4416,7 +4416,7 @@
       "subtopic": "Self-Control Problems",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Lisa wants to increase her retirement savings at Harborview Investments, but struggles with impulse spending. Commitment devices help clients with self-control by:\nA) Removing all choices | B) Requiring spouse approval | C) Limiting investment options | D) Creating structures that make it harder to deviate from plans, like automatic savings or penalty clauses",
+      "question": "Lisa wants to increase her retirement savings at Harborview Investments, but struggles with impulse spending. Commitment devices help clients with self-control by:",
       "explanation": "Commitment devices lock in future behavior when willpower might fail. Examples: automatic 401(k) contributions (saves before spending), Roth conversion in low-income years (committed tax strategy), irrevocable trusts (cannot reclaim assets), penalty for early withdrawal (deters impulsive access). Clients often appreciate these guardrails.",
       "correctAnswer": 3,
       "options": [
@@ -4451,7 +4451,7 @@
       "subtopic": "Narrative Fallacy",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a period of market volatility, Robert at Pinnacle Financial believes he has identified a pattern that predicts future market movements. The narrative fallacy causes investors to:\nA) Ignore all information | B) Only read financial news | C) Prefer bonds over stocks | D) Create coherent stories to explain random market movements, finding patterns where none exist",
+      "question": "After a period of market volatility, Robert at Pinnacle Financial believes he has identified a pattern that predicts future market movements. The narrative fallacy causes investors to:",
       "explanation": "Narrative fallacy: our need to construct stories leads to finding causality in random events. After market drops, we create explanations (\"trade tensions caused the sell-off\") that may be coincidental. This false sense of understanding breeds overconfidence about predicting future movements. Markets are often more random than narratives suggest.",
       "correctAnswer": 3,
       "options": [
@@ -4486,7 +4486,7 @@
       "subtopic": "Active Constructive Responding",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan excitedly shares news of a recent promotion at her job with her planner at Horizon Financial. Active constructive responding involves:\nA) Pointing out potential downsides | B) Quickly changing the topic | C) Briefly acknowledging it | D) Enthusiastically engaging, asking follow-up questions, and helping them savor the positive experience",
+      "question": "Susan excitedly shares news of a recent promotion at her job with her planner at Horizon Financial. Active constructive responding involves:",
       "explanation": "Active constructive responding (from positive psychology): respond to good news with enthusiasm and curiosity—ask questions, express joy, help them relive the experience. This builds relationship and trust. Passive or destructive responses (dismissing, undermining, focusing on negatives) damage rapport. Key to client relationship building.",
       "correctAnswer": 3,
       "options": [
@@ -4521,7 +4521,7 @@
       "subtopic": "Difficult Conversations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After a portfolio review, Mark at Sterling Advisors must inform his client, Tom, that his investments have underperformed expectations. When delivering difficult financial news, a planner should:\nA) Minimize the problem | B) Avoid the topic entirely | C) Deliver information only via email | D) Communicate directly but empathetically, allow space for emotional response, and provide actionable next steps",
+      "question": "After a portfolio review, Mark at Sterling Advisors must inform his client, Tom, that his investments have underperformed expectations. When delivering difficult financial news, a planner should:",
       "explanation": "Difficult conversations (job loss affecting plan, unrealistic goals, portfolio losses): be direct but compassionate, validate emotions, pause for response, then focus on actionable next steps. Avoiding or sugar-coating erodes trust. Written follow-up helps with information retention when stress impairs processing.",
       "correctAnswer": 3,
       "options": [
@@ -4556,7 +4556,7 @@
       "subtopic": "Shared Decision Making",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Dr. Lee wants to create a financial plan. During discussions, you present options for retirement savings. Shared decision-making in financial planning means: A) Planner makes all decisions | B) Following industry benchmarks | C) Clients decide without guidance | D) Collaboratively developing recommendations with clients, incorporating their values, preferences, and informed input",
+      "question": "Dr. Lee wants to create a financial plan. During discussions, you present options for retirement savings. Shared decision-making in financial planning means:",
       "explanation": "Shared decision-making: planner brings expertise, client brings values and preferences, decisions made together. Present options clearly, explain trade-offs, ensure understanding, let client choose. This improves satisfaction and adherence—clients \"own\" their plan rather than following orders. Medical field research shows better outcomes.",
       "correctAnswer": 3,
       "options": [
@@ -4591,7 +4591,7 @@
       "subtopic": "Financial Anxiety",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria expresses high anxiety about market volatility. She states, \"I'm terrified of losing everything!\" A client with high financial anxiety should be approached by: A) Dismissing their concerns as irrational | B) Recommending only cash investments | C) Showing worst-case scenarios | D) Validating feelings, providing clear information, focusing on what is controllable.",
+      "question": "Maria expresses high anxiety about market volatility. She states, \"I'm terrified of losing everything!\" A client with high financial anxiety should be approached by:",
       "explanation": "Financial anxiety: validate their experience (it\\'s real), provide clear information to counter uncertainty, focus on controllable actions, build confidence through small wins. Avoid overwhelming with data or dismissing concerns. Creating sense of control and progress reduces anxiety. Consider if therapy referral is appropriate for severe cases.",
       "correctAnswer": 3,
       "options": [
@@ -4626,7 +4626,7 @@
       "subtopic": "Childhood Financial Experiences",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John grew up in poverty but now earns $500,000/year as a tech executive. Despite his high income, he struggles to feel financially secure. John may: A) Only invest in real estate | B) Never save money | C) Automatically become a confident investor | D) Hold deep-seated fears about money loss, oscillate between extreme saving and spending, or feel undeserving of wealth.",
+      "question": "John grew up in poverty but now earns $500,000/year as a tech executive. Despite his high income, he struggles to feel financially secure. John may:",
       "explanation": "Childhood financial trauma creates lasting patterns: scarcity mindset (hoarding, extreme anxiety about spending), guilt about having more than family of origin, alternating between restriction and splurging, difficulty trusting stability. Understanding their history enables compassionate guidance and realistic expectations for behavior change.",
       "correctAnswer": 3,
       "options": [
@@ -4661,7 +4661,7 @@
       "subtopic": "Financial Enabling",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah's parents consistently bail out her adult son, Mark, perpetuating his dependence. Financial enabling is best addressed by: A) Contacting Mark directly | B) Refusing to manage their accounts | C) Ignoring it | D) Helping clients recognize the pattern, understand its impact, and develop healthier alternatives if they choose.",
+      "question": "Sarah's parents consistently bail out her adult son, Mark, perpetuating his dependence. Financial enabling is best addressed by:",
       "explanation": "Financial enabling: giving money that perpetuates dependency (adult children never becoming independent, rescuing repeatedly from consequences). Approach: raise awareness without judgment, explore motivations (guilt, love, control), discuss long-term impacts, offer alternatives (matching gifts for savings, paying for education not lifestyle). Client must choose any changes.",
       "correctAnswer": 3,
       "options": [
@@ -4696,7 +4696,7 @@
       "subtopic": "Life Transitions Assessment",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Robert recently divorced and is planning his next steps. A comprehensive assessment of clients in life transitions should include: A) Investment preferences only | B) Previous advisor relationships | C) Only financial data | D) Financial situation, emotional readiness, social support systems, and timeline flexibility.",
+      "question": "Robert recently divorced and is planning his next steps. A comprehensive assessment of clients in life transitions should include:",
       "explanation": "Life transitions (divorce, retirement, inheritance, widowhood) require holistic assessment: financial situation (immediate and long-term needs), emotional state (decision-making capacity may be compromised), support systems (who else is helping), timeline (what decisions can wait). Rushing major decisions during stress leads to regrets.",
       "correctAnswer": 3,
       "options": [
@@ -4731,7 +4731,7 @@
       "subtopic": "Questionnaire Limitations",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Investments uses a risk tolerance questionnaire. Standardized risk tolerance questionnaires have limitations including: A) They only work for young clients | B) They are never used | C) They are too accurate | D) Responses may vary with market conditions, not capture emotional reactions, and fail to distinguish risk tolerance from risk capacity.",
+      "question": "Vista Investments uses a risk tolerance questionnaire. Standardized risk tolerance questionnaires have limitations including:",
       "explanation": "Questionnaire limitations: answers change based on recent market performance (recency bias), hypothetical scenarios don\\'t capture actual emotional responses, conflate tolerance (psychological) with capacity (financial ability), and may not probe deeply enough. Use as starting point, not definitive answer—follow up with discussion and observe behavior over time.",
       "correctAnswer": 3,
       "options": [
@@ -4766,7 +4766,7 @@
       "subtopic": "Values Clarification",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During the initial meeting, you conduct a values clarification exercise. Values clarification exercises help planners: A) Sell more products | B) Impose their own values | C) Reduce meeting time | D) Understand what matters most to clients, enabling aligned recommendations and improved plan adherence.",
+      "question": "During the initial meeting, you conduct a values clarification exercise. Values clarification exercises help planners:",
       "explanation": "Values clarification: through exercises, cards, or discussion, help clients articulate what they truly value (security, experiences, legacy, independence). Recommendations aligned with values feel right and get followed. Misaligned recommendations create resistance. Values also help prioritize when trade-offs are necessary.",
       "correctAnswer": 3,
       "options": [
@@ -4801,7 +4801,7 @@
       "subtopic": "Regret Aversion",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After a market downturn, a client refuses to rebalance their portfolio, stating, \"I don't want to sell at a loss.\" Regret aversion affects investment decisions by: A) Improving diversification | B) Encouraging more risk-taking | C) Focusing on fundamentals | D) Making people avoid actions that might lead to regret, often resulting in inaction or conventional choices.",
+      "question": "After a market downturn, a client refuses to rebalance their portfolio, stating, \"I don't want to sell at a loss.\" Regret aversion affects investment decisions by:",
       "explanation": "Regret aversion: fear of making decisions we\\'ll regret leads to inaction (staying in cash) or conventional choices (buying popular investments \"at least I won\\'t be alone\"). Anticipated regret for action is often stronger than for inaction. Counter by framing inaction as a choice and discussing regret of missed opportunities.",
       "correctAnswer": 3,
       "options": [
@@ -5186,7 +5186,7 @@
       "subtopic": "Financial Capability",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria, a new client at Oak Financial Planning, struggles to manage her finances despite having a good income. She lacks confidence in her abilities. Financial capability combines: A) Professional credentials | B) Only mathematical ability | C) Just income levels | D) Financial knowledge/skills AND the ability to act on them, including psychological factors and access to appropriate products",
+      "question": "Maria, a new client at Oak Financial Planning, struggles to manage her finances despite having a good income. She lacks confidence in her abilities. Financial capability combines:",
       "explanation": "Financial capability = knowledge/skills + psychological ability to act + access to resources. Someone may understand investing but be paralyzed by anxiety. Another may be motivated but lack knowledge. A third may have both but lack access to appropriate products. Effective planning addresses all three elements to improve capability.",
       "correctAnswer": 3,
       "options": [
@@ -5221,7 +5221,7 @@
       "subtopic": "Social Proof",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Dr. Lee is considering investing in a new biotech stock after hearing several colleagues rave about it. Social proof affects financial decisions when: A) People ignore others | B) People act independently | C) People conduct thorough research | D) People are influenced by the actions and opinions of others",
+      "question": "Dr. Lee is considering investing in a new biotech stock after hearing several colleagues rave about it. Social proof affects financial decisions when:",
       "explanation": "Social proof: we follow others\\' behavior especially when uncertain. \"Everyone is buying crypto\" or \"my neighbor got a reverse mortgage\" influences decisions. Can be positive (using peer retirement savings benchmarks) or negative (herd behavior causing bubbles). Planners can harness social proof (\"many clients in your situation...\") ethically.",
       "correctAnswer": 3,
       "options": [
@@ -5327,7 +5327,7 @@
       "subtopic": "Status Quo Bias",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "John has been with the same investment firm for 20 years and is hesitant to switch, even though his advisor has underperformed the market. Status quo bias explains why clients: A) Always optimize their portfolios | B) Ignore all advice | C) Prefer current arrangements and resist changing even when alternatives are objectively better | D) Take excessive risks",
+      "question": "John has been with the same investment firm for 20 years and is hesitant to switch, even though his advisor has underperformed the market. Status quo bias explains why clients:",
       "explanation": "Status quo bias: preference for current state over change. \"I\\'ve always done it this way.\" Keeps people in unsuitable investments, with wrong insurance, at the same bank. Change requires effort and feels risky. Use defaults wisely (auto-enrollment exploits this positively). Demonstrate clear benefit to overcome inertia.",
       "correctAnswer": 2,
       "options": [
@@ -5362,7 +5362,7 @@
       "subtopic": "Outcome Bias",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah invested in a tech startup that yielded a 10x return. She now believes it was a brilliant investment decision, despite admitting she knew little about the company at the time. Judging an investment decision as good solely because it made money demonstrates: A) Sound analysis | B) Hindsight effectiveness | C) Outcome bias, which evaluates decisions by results rather than the quality of the decision process | D) Returns-based investing",
+      "question": "Sarah invested in a tech startup that yielded a 10x return. She now believes it was a brilliant investment decision, despite admitting she knew little about the company at the time. Judging an investment decision as good solely because it made money demonstrates:",
       "explanation": "Outcome bias: judging decisions by results rather than process. A risky bet that pays off was still a bad decision if the odds were against it. Good process can have bad outcomes; bad process can luckily succeed. Evaluate: was the decision reasonable given information available at the time? Focus on quality process, not hindsight.",
       "correctAnswer": 2,
       "options": [
@@ -5397,7 +5397,7 @@
       "subtopic": "Motivational Interviewing",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David, a CFP® at Summit Wealth Advisors, is working with a client who wants to retire early but is unsure if it's financially feasible. Motivational interviewing techniques help clients by: A) Providing only facts | B) Telling them what to do | C) Drawing out their own motivations for change through open questions and reflective listening | D) Criticizing current behaviors",
+      "question": "David, a CFP® at Summit Wealth Advisors, is working with a client who wants to retire early but is unsure if it's financially feasible. Motivational interviewing techniques help clients by:",
       "explanation": "Motivational interviewing: client-centered approach. Express empathy, develop discrepancy between goals and behavior, roll with resistance (don\\'t argue), support self-efficacy. Uses open questions, affirmations, reflections, summaries (OARS). People more likely to change when they articulate their own reasons rather than being told.",
       "correctAnswer": 2,
       "options": [
@@ -5432,7 +5432,7 @@
       "subtopic": "Active Listening",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During a client meeting, Emily, a financial advisor, focuses intently on what her client is saying, nods to show understanding, and summarizes key points to ensure she has grasped the client's concerns. Active listening involves: A) Waiting for your turn to speak | B) Fully concentrating on the speaker, understanding their message, responding thoughtfully, and remembering key points | C) Agreeing with everything | D) Taking extensive notes only",
+      "question": "During a client meeting, Emily, a financial advisor, focuses intently on what her client is saying, nods to show understanding, and summarizes key points to ensure she has grasped the client's concerns. Active listening involves:",
       "explanation": "Active listening: full attention, suspend judgment, use nonverbal cues (eye contact, nodding), reflect back what you hear, ask clarifying questions, remember details. Not passive—requires engagement. Clients feel heard and understood. Reveals important information that surface-level listening misses. Foundation of effective advising.",
       "correctAnswer": 0,
       "options": [
@@ -5467,7 +5467,7 @@
       "subtopic": "Empathy Statements",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "A client expresses frustration about market volatility and its impact on their retirement savings. Using empathy statements in client meetings: A) Wastes time | B) Acknowledges client feelings and builds trust, even when you cannot solve their problem | C) Creates liability | D) Shows weakness",
+      "question": "A client expresses frustration about market volatility and its impact on their retirement savings. Using empathy statements in client meetings:",
       "explanation": "Empathy statements: \"I understand this is frustrating,\" \"It makes sense you\\'re worried.\" Validates feelings without necessarily agreeing. Builds rapport and trust. Especially important during market downturns, life changes, or difficult news. Doesn\\'t mean agreeing—clients can be heard without being right. Creates psychological safety.",
       "correctAnswer": 1,
       "options": [
@@ -5502,7 +5502,7 @@
       "subtopic": "Financial Anxiety",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "A client, Robert, feels overwhelmed and stressed when discussing his finances. He avoids opening his account statements. A client with financial anxiety may benefit from: A) More complex strategies | B) Gradual exposure to financial topics, simplified information, and celebration of small progress | C) Criticism of past decisions | D) Ignoring their concerns",
+      "question": "A client, Robert, feels overwhelmed and stressed when discussing his finances. He avoids opening his account statements. A client with financial anxiety may benefit from:",
       "explanation": "Financial anxiety management: acknowledge the anxiety is real, start with small manageable tasks, avoid overwhelming with information, celebrate progress, use simple clear language, provide reassurance about the process. Build confidence gradually. If severe, may need referral to financial therapist. Don\\'t dismiss—anxiety blocks engagement.",
       "correctAnswer": 0,
       "options": [
@@ -5537,7 +5537,7 @@
       "subtopic": "Financial Infidelity",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Mark and Sarah, a married couple, are working with a financial planner. Sarah recently discovered Mark has a secret credit card with a $10,000 balance. This is an example of: A) Hiding money, debts, or spending from a partner, reflecting trust and communication issues | B) Late payments | C) Writing bad checks | D) Poor investment returns",
+      "question": "Mark and Sarah, a married couple, are working with a financial planner. Sarah recently discovered Mark has a secret credit card with a $10,000 balance. This is an example of:",
       "explanation": "Financial infidelity: secret accounts, hidden debts, undisclosed purchases, lying about income. Common and damaging to relationships. Planners may discover discrepancies between partner statements. Not our role to investigate or judge, but facilitate open communication if willing. May suggest couples therapy. Affects ability to plan together.",
       "correctAnswer": 0,
       "options": [
@@ -5572,7 +5572,7 @@
       "subtopic": "Risk Tolerance Assessment",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria is a new client at Oak Financial. To understand Maria’s true feelings about risk, beyond a simple questionnaire, an effective risk tolerance assessment should: A) Be done once and never revisited | B) Combine questionnaires with conversations about past experiences, current feelings, and hypothetical scenarios | C) Use only questionnaires | D) Rely on age alone",
+      "question": "Maria is a new client at Oak Financial. To understand Maria’s true feelings about risk, beyond a simple questionnaire, an effective risk tolerance assessment should:",
       "explanation": "Comprehensive risk assessment: questionnaires (standardized comparison), conversation (past behavior, emotional responses, understanding), hypothetical scenarios (\"how would you feel if the portfolio dropped 30%\"), observe behavior during volatile periods. One method isn\\'t enough. Revisit when circumstances change. Risk tolerance vs. risk capacity differ.",
       "correctAnswer": 1,
       "options": [
@@ -5607,7 +5607,7 @@
       "subtopic": "Life Stage Considerations",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "You're creating a financial plan for a 30-year-old single professional versus a 60-year-old couple nearing retirement. Client assessment should consider life stage because: A) Life stage doesn't affect financial goals | B) Financial priorities, risk tolerance, and time horizons vary significantly across different life stages | C) Everyone wants the same investments | D) Only income matters",
+      "question": "You're creating a financial plan for a 30-year-old single professional versus a 60-year-old couple nearing retirement. Client assessment should consider life stage because:",
       "explanation": "Life stage assessment: young adult (education debt, career building), family formation (housing, children costs, insurance), mid-career (wealth accumulation, sandwich generation), pre-retirement (catch-up, planning transition), retirement (income, healthcare, legacy). Same age doesn\\'t mean same stage—consider actual circumstances not just demographics.",
       "correctAnswer": 1,
       "options": [
@@ -5642,7 +5642,7 @@
       "subtopic": "Financial Personality",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan, a client of Horizon Wealth, is very anxious about market volatility. Understanding Susan's financial personality helps: A) Assess their income | B) Predict stock returns | C) Tailor communication style, set appropriate expectations, and design strategies they're more likely to stick with | D) Determine the best tax bracket",
+      "question": "Susan, a client of Horizon Wealth, is very anxious about market volatility. Understanding Susan's financial personality helps:",
       "explanation": "Financial personality types inform approach: some clients want data and details, others prefer big picture; some need frequent reassurance, others prefer independence; some make quick decisions, others deliberate extensively. Match your style to theirs. Strategy they\\'ll follow beats \"optimal\" strategy they\\'ll abandon.",
       "correctAnswer": 2,
       "options": [
@@ -5712,7 +5712,7 @@
       "subtopic": "Familiarity Bias",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John works for TechCorp and invests heavily in TechCorp stock, even though his advisor recommends diversification. Familiarity bias leads investors to: A) Properly diversify globally | B) Overweight domestic stocks, employer stock, or industries they know, resulting in concentrated portfolios | C) Only invest in index funds | D) Avoid all stocks",
+      "question": "John works for TechCorp and invests heavily in TechCorp stock, even though his advisor recommends diversification. Familiarity bias leads investors to:",
       "explanation": "Familiarity bias: preferring the known over unknown. Home country bias (overweight domestic stocks), employer stock overconcentration, industry concentraction (tech workers in tech stocks). Familiarity feels safer but isn\\'t—it\\'s concentration risk. Help clients understand that knowing a company doesn\\'t mean knowing its stock will outperform.",
       "correctAnswer": 1,
       "options": [
@@ -5747,7 +5747,7 @@
       "subtopic": "Difficult Conversations",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "After a market downturn, you must inform your client, Mr. Davis, that his portfolio has decreased by 20%. When delivering this difficult financial news, planners should: A) Avoid the topic entirely | B) Be direct but compassionate, acknowledge the emotional impact, and focus on constructive next steps | C) Minimize the problem | D) Blame market conditions",
+      "question": "After a market downturn, you must inform your client, Mr. Davis, that his portfolio has decreased by 20%. When delivering this difficult financial news, planners should:",
       "explanation": "Difficult conversations: prepare what you\\'ll say, be honest but compassionate, allow time for reaction, don\\'t defend or make excuses, acknowledge feelings (\"I know this is hard to hear\"), pivot to solutions and next steps when ready. Avoiding bad news erodes trust. Delivering it well builds trust even when news is negative.",
       "correctAnswer": 1,
       "options": [
@@ -5782,7 +5782,7 @@
       "subtopic": "Nonverbal Communication",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During an initial consultation with a prospective client, you notice they avoid eye contact and fidget when discussing their debt. Nonverbal cues in client meetings: A) Provide important information about client comfort, understanding, and agreement that words may not convey | B) Are irrelevant | C) Should be ignored | D) Only matter for salespeople",
+      "question": "During an initial consultation with a prospective client, you notice they avoid eye contact and fidget when discussing their debt. Nonverbal cues in client meetings:",
       "explanation": "Nonverbal communication: body language, facial expressions, tone, posture. May reveal: confusion (furrowed brow), discomfort (crossed arms), disagreement (looking away), engagement (leaning in). Your nonverbal signals matter too—project confidence, openness, attention. Much of communication is nonverbal—observe and respond.",
       "correctAnswer": 0,
       "options": [
@@ -5817,7 +5817,7 @@
       "subtopic": "Financial Shame",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "A client, Emily, consistently avoids discussing her student loan debt and becomes defensive when asked about her spending habits. Clients experiencing financial shame may: A) Hide debts, avoid planning meetings, or resist discussing certain topics | B) Share everything immediately | C) Be fully transparent about finances | D) Make all decisions quickly",
+      "question": "A client, Emily, consistently avoids discussing her student loan debt and becomes defensive when asked about her spending habits. Clients experiencing financial shame may:",
       "explanation": "Financial shame: embarrassment about financial situation, past decisions, or lack of knowledge. Signs: incomplete disclosure, avoiding topics, defensiveness, missed meetings. Create safe environment: normalize struggles, avoid judgment, focus on future rather than past mistakes, celebrate any progress. Shame keeps people from getting help they need.",
       "correctAnswer": 0,
       "options": [
@@ -5852,7 +5852,7 @@
       "subtopic": "Financial Trauma",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "After Meridian Corp.'s bankruptcy, Sarah feels overwhelmed. Despite rebuilding her finances, she still struggles with money. Financial trauma from events like bankruptcy may result in: A) Increased risk tolerance B) Anxiety around finances, avoidance behaviors, or overcautious/risk-averse responses years later C) No lasting effects D) Immediately rational behavior",
+      "question": "After Meridian Corp.'s bankruptcy, Sarah feels overwhelmed. Despite rebuilding her finances, she still struggles with money. Financial trauma from events like bankruptcy may result in:",
       "explanation": "Financial trauma: severe financial events can have lasting psychological effects. May manifest as: excessive fear/anxiety, inability to engage with finances, hoarding or extreme frugality, overcaution preventing reasonable risk-taking. Past experiences shape current behaviors. May need gentle approach, patience, possibly referral to therapist specializing in financial issues.",
       "correctAnswer": 1,
       "options": [
@@ -5887,7 +5887,7 @@
       "subtopic": "Financial Knowledge",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During your initial meeting with the Chen family, you notice they use financial jargon inconsistently. Assessing client financial knowledge helps planners: A) Set fee levels B) Calibrate explanations, identify education needs, and avoid assumptions about understanding C) Judge client intelligence D) Determine investment returns",
+      "question": "During your initial meeting with the Chen family, you notice they use financial jargon inconsistently. Assessing client financial knowledge helps planners:",
       "explanation": "Knowledge assessment: understand baseline to communicate appropriately. Some clients have sophisticated knowledge; others are beginners. Avoid: talking over heads (confusing) or talking down (condescending). Identify gaps for education. Ask questions, observe reactions, invite questions. Different knowledge levels need different approaches.",
       "correctAnswer": 1,
       "options": [
@@ -5922,7 +5922,7 @@
       "subtopic": "Choice Overload",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC offers employees 15 different health insurance plans. Many employees feel overwhelmed by the choices. Choice overload can cause clients to: A) Become paralyzed by too many options, delay decisions, or choose simple defaults B) Feel more satisfied C) Make better decisions D) Always pick the best option",
+      "question": "Vista Healthcare LLC offers employees 15 different health insurance plans. Many employees feel overwhelmed by the choices. Choice overload can cause clients to:",
       "explanation": "Choice overload (paradox of choice): too many options leads to paralysis, worse decisions, or choosing defaults/doing nothing. In 401(k)s, too many funds reduces participation. Planners help by: curating options, providing clear recommendations, simplifying where possible. Guidance through choices adds value beyond just presenting options.",
       "correctAnswer": 0,
       "options": [
@@ -5957,7 +5957,7 @@
       "subtopic": "Storytelling",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "When explaining Roth IRA conversions to the Johnson family, you share a story about a previous client who benefited greatly. Using stories and examples in client education: A) Only works with children B) Is unprofessional C) Makes abstract concepts concrete and memorable, and helps clients relate information to their lives D) Takes too much time",
+      "question": "When explaining Roth IRA conversions to the Johnson family, you share a story about a previous client who benefited greatly. Using stories and examples in client education:",
       "explanation": "Storytelling in planning: abstract concepts become tangible. \"Inflation means what costs $1 today will cost $2.40 in 30 years.\" Anonymized examples: \"I worked with a couple in similar situation who...\" Stories are memorable and relatable. Use appropriately—support, don\\'t replace, data. Powerful teaching and persuasion tool.",
       "correctAnswer": 2,
       "options": [
@@ -5992,7 +5992,7 @@
       "subtopic": "Delayed Gratification",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria wants to save for a down payment but struggles to cut spending. Helping clients with delayed gratification involves: A) Eliminating all current spending B) Criticizing their spending C) Making future rewards more concrete, using automation, and balancing present and future needs D) Only focusing on retirement",
+      "question": "Maria wants to save for a down payment but struggles to cut spending. Helping clients with delayed gratification involves:",
       "explanation": "Delayed gratification challenges: future self feels abstract. Strategies: visualize future goals concretely, use photos of older self, automate savings (pre-commitment), create mental accounting for future, balance—allow some present enjoyment. People vary in natural ability to delay—work with their tendencies, not against them.",
       "correctAnswer": 2,
       "options": [
@@ -6027,7 +6027,7 @@
       "subtopic": "Decision-Making Style",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John always asks for detailed spreadsheets and multiple projections before making any investment decisions. Clients with analytical decision-making styles typically: A) Decide quickly based on gut feeling B) Want detailed data, time to review options, and logical explanations before deciding C) Avoid all analysis D) Decide without consulting a planner",
+      "question": "John always asks for detailed spreadsheets and multiple projections before making any investment decisions. Clients with analytical decision-making styles typically:",
       "explanation": "Decision styles: Analytical: wants data, details, time, logical sequences. Intuitive: trusts feelings, wants big picture, decides quickly. Directive: decisive, efficiency-focused. Conceptual: creative, risk-tolerant. Match your approach—don\\'t give data-lovers bullet points, don\\'t overwhelm quick-deciders with analysis. Flexibility is key.",
       "correctAnswer": 1,
       "options": [
@@ -6062,7 +6062,7 @@
       "subtopic": "Control and Autonomy",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Even though your recommendation is sound, your client, David, resists changing his portfolio allocation. The psychological need for control affects clients by: A) Leading some to resist recommendations they don't feel they understand or control B) Always leading to better outcomes C) Making them more agreeable D) Ensuring they follow all advice",
+      "question": "Even though your recommendation is sound, your client, David, resists changing his portfolio allocation. The psychological need for control affects clients by:",
       "explanation": "Control/autonomy needs: people want agency in their lives. Top-down advice may be resisted—\"not invented here.\" Involve clients in process: explore options together, present choices rather than mandates, explain reasoning, let them make final calls. They\\'ll own decisions they participated in. Recommend, don\\'t dictate.",
       "correctAnswer": 0,
       "options": [
@@ -6097,7 +6097,7 @@
       "subtopic": "Regret Aversion",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After selling a stock at a loss, an investor refuses to sell another underperforming asset, fearing further regret. Regret aversion may cause investors to: A) Avoid decisions or choose conventional options to minimize potential future regret B) Always buy growth stocks C) Take excessive risks D) Never rebalance",
+      "question": "After selling a stock at a loss, an investor refuses to sell another underperforming asset, fearing further regret. Regret aversion may cause investors to:",
       "explanation": "Regret aversion: fear of making wrong decision leads to: inaction (not deciding feels safer), conventional choices (at least \"everyone else did too\"), herding. Can prevent good decisions. Mitigation: document reasoning at decision time, accept uncertainty is inherent, focus on process not just outcomes. Regret from inaction often worse long-term (opportunity cost).",
       "correctAnswer": 0,
       "options": [
@@ -6132,7 +6132,7 @@
       "subtopic": "Clarifying Questions",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During an initial meeting, Sarah is gathering information from the clients. She asks, \"Can you tell me more about your concerns regarding retirement?\" Open-ended clarifying questions like this in client meetings: \nA) Waste time | B) Should be avoided | C) Help uncover underlying goals, values, and concerns that closed questions might miss | D) Are used only in initial meetings",
+      "question": "During an initial meeting, Sarah is gathering information from the clients. She asks, \"Can you tell me more about your concerns regarding retirement?\" Open-ended clarifying questions like this in client meetings:",
       "explanation": "Open-ended questions uncover client values and goals that closed questions miss. This deeper understanding is crucial for tailored financial advice.",
       "correctAnswer": 2,
       "options": [
@@ -6167,7 +6167,7 @@
       "subtopic": "Nonverbal Communication",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During a review meeting with the client, the planner notices the client is fidgeting and avoids eye contact when discussing investment performance. Nonverbal communication in client meetings includes:\nA) Only spoken words | B) Written documents only | C) Eye contact, body language, tone, facial expressions, and physical positioning | D) Phone conversations only",
+      "question": "During a review meeting with the client, the planner notices the client is fidgeting and avoids eye contact when discussing investment performance. Nonverbal communication in client meetings includes:",
       "explanation": "Nonverbal cues: often communicate more than words. Watch for: crossed arms (defensiveness), lack of eye contact (discomfort), leaning in (engagement), tone changes (anxiety). Your nonverbal matters too: attentive posture, appropriate eye contact, matching energy when appropriate. Silence can be powerful—allow processing time. Virtual meetings: still visible—camera on, engaged appearance.",
       "correctAnswer": 2,
       "options": [
@@ -6202,7 +6202,7 @@
       "subtopic": "Delivering Bad News",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After a market downturn, you must inform a client, the Millers, that their portfolio has declined by 15%. When delivering difficult financial news to clients:\nA) Sugarcoat or avoid the topic | B) Be direct but compassionate, allow emotional response, and focus on actionable next steps | C) Blame external factors | D) Delegate to others",
+      "question": "After a market downturn, you must inform a client, the Millers, that their portfolio has declined by 15%. When delivering difficult financial news to clients:",
       "explanation": "Difficult conversations: be direct (don\\'t bury bad news), compassionate (acknowledge difficulty), and constructive (what now?). Allow emotional response—don\\'t rush to \"fix\" feelings. Then guide to actions: what can be done, options, support available. Examples: \"You\\'ll need to work longer,\" \"This loss significantly impacts plans.\" Preparation helps—anticipate reactions, have information ready.",
       "correctAnswer": 1,
       "options": [
@@ -6237,7 +6237,7 @@
       "subtopic": "Financial Denial",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John consistently avoids opening his monthly investment statements and refuses to discuss his mounting credit card debt with his spouse. Financial denial behaviors include:\nA) Avoiding account statements, not opening bills, or refusing to discuss financial problems | B) Checking accounts daily | C) Aggressive saving | D) Detailed budgeting",
+      "question": "John consistently avoids opening his monthly investment statements and refuses to discuss his mounting credit card debt with his spouse. Financial denial behaviors include:",
       "explanation": "Financial denial: avoidance of financial reality. Signs: unopened statements, refusal to discuss money, \"I don\\'t want to know,\" avoiding planning. Defense mechanism against anxiety. Approach: gentle, non-judgmental, understand underlying fear. Small steps—maybe just opening statements together. May need to address anxiety before effective planning possible. Patience required.",
       "correctAnswer": 0,
       "options": [
@@ -6272,7 +6272,7 @@
       "subtopic": "Compulsive Spending",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Lisa often buys expensive items she doesn't need after a stressful day at work, leading to significant credit card debt. Compulsive spending disorder is characterized by:\nA) Uncontrollable urge to spend as emotional relief, often leading to serious financial consequences | B) Careful budgeting | C) Excessive saving | D) Investment addiction",
+      "question": "Lisa often buys expensive items she doesn't need after a stressful day at work, leading to significant credit card debt. Compulsive spending disorder is characterized by:",
       "explanation": "Compulsive spending: shopping/spending as emotional regulation. Temporary relief followed by guilt. Progressive—needs more to achieve same relief. Consequences: debt, relationship problems, inability to meet goals. Related to: anxiety, depression, trauma. Referral to mental health professional appropriate. Financial planning alone won\\'t solve—address root cause. Support and non-judgment important.",
       "correctAnswer": 0,
       "options": [
@@ -6307,7 +6307,7 @@
       "subtopic": "Gender and Money",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a presentation on investment strategies, a client asks about the differences in how men and women approach investing. Research on gender differences in financial behavior generally shows:\nA) Men always take more risk | B) Tendencies toward different risk preferences and confidence levels, though individual variation is large | C) No differences exist | D) Women are always more conservative",
+      "question": "During a presentation on investment strategies, a client asks about the differences in how men and women approach investing. Research on gender differences in financial behavior generally shows:",
       "explanation": "Gender research: studies show average differences (women slightly more risk-averse, men often overconfident) but huge individual variation. Stereotyping harmful—assess each client individually. Cultural conditioning affects attitudes. Couples may have different risk tolerances. Financial planning for women: often longer lifespan, career breaks, pay gaps to consider. Address individual, not generalizations.",
       "correctAnswer": 1,
       "options": [
@@ -6342,7 +6342,7 @@
       "subtopic": "Composite Risk Profile",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "When assessing a client's risk profile, you use a questionnaire and review their investment history. A comprehensive risk assessment should include:\nA) Only a questionnaire score | B) Risk tolerance, risk capacity, risk perception, and risk composure evaluated together | C) Past investment returns | D) Only age-based factors",
+      "question": "When assessing a client's risk profile, you use a questionnaire and review their investment history. A comprehensive risk assessment should include:",
       "explanation": "Multi-dimensional risk: Tolerance (emotional comfort with risk), Capacity (financial ability to take risk), Perception (how client views specific risks), Composure (behavior under stress). May conflict—high tolerance but low capacity requires conservative approach despite preferences. Questionnaires capture some; conversation reveals more. Regular reassessment as circumstances change.",
       "correctAnswer": 1,
       "options": [
@@ -6377,7 +6377,7 @@
       "subtopic": "Financial Knowledge",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During the initial meeting with a new client, you ask about their previous investment experience and understanding of financial concepts. Assessing client financial knowledge helps:\nA) Tailor communication complexity and identify educational needs for informed decision-making | B) Determine fees charged | C) Only with investment selection | D) Avoid detailed explanations",
+      "question": "During the initial meeting with a new client, you ask about their previous investment experience and understanding of financial concepts. Assessing client financial knowledge helps:",
       "explanation": "Financial literacy assessment: understand client\\'s baseline. Determines: explanation detail needed, concepts to clarify, areas for education. Don\\'t assume—wealthy clients may have little knowledge; modest clients may be sophisticated. Adjust communication style. Identify knowledge gaps that could affect decisions. Education may be needed before complex recommendations. Meet client where they are.",
       "correctAnswer": 0,
       "options": [

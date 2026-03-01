@@ -211,6 +211,7 @@ export const CPA_CONFIG: ExamLandingConfig = {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
       { feature: 'Price', voraprep: '$249/yr*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
+      { feature: 'Practice Questions (MCQ)', voraprep: COURSE_DISPLAY_STATS.cpa.questions, competitor1: '6,500+', competitor2: '4,200+', competitor3: '6,800+', highlight: true },
       { feature: 'Study Assistant 24/7', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
       { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },

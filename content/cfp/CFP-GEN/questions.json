@@ -432,7 +432,7 @@
       "subtopic": "529 Plans",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are planning for their daughter's college education. They are considering using a 529 Qualified Tuition Program. Which of the following statements is TRUE regarding 529 plans? A) Distributions for K-12 tuition are limited to $10,000 per year per beneficiary B) Non-qualified distributions are subject to penalty on the entire withdrawal C) Contributions are deductible for federal income tax purposes D) Investment options can be changed daily without restriction",
+      "question": "The Millers are planning for their daughter's college education. They are considering using a 529 Qualified Tuition Program. Which of the following statements is TRUE regarding 529 plans?",
       "explanation": "**Correct Answer: B**\\n\\n**529 K-12 Provision:**\\nUnder TCJA (2017), 529 plans can fund K-12 tuition expenses, limited to $10,000 per year per beneficiary.\\n\\n**Why other answers are wrong:**\\n- **A)** Contributions are NOT federally deductible (some states offer state deductions)\\n- **C)** Investment changes limited to twice per year\\n- **D)** Penalty applies only to EARNINGS portion, not entire withdrawal",
       "correctAnswer": 0,
       "options": [
@@ -536,7 +536,7 @@
       "subtopic": "Interest Rates",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to recent inflationary pressures, the Federal Reserve has decided to adjust monetary policy. If the Federal Reserve raises the federal funds rate, what is the MOST likely immediate impact on the financial markets? A) Stock prices increase as borrowing becomes more attractive B) Bond prices decrease as yields rise C) Consumer spending increases due to higher savings rates D) Real estate prices increase as mortgages become cheaper",
+      "question": "Due to recent inflationary pressures, the Federal Reserve has decided to adjust monetary policy. If the Federal Reserve raises the federal funds rate, what is the MOST likely immediate impact on the financial markets?",
       "explanation": "**Correct Answer: B (Bond prices decrease)**\\n\\n**Interest Rate Transmission:**\\nWhen the Fed raises rates:\\n1. Short-term rates increase immediately\\n2. Bond yields rise across the curve\\n3. **Existing bond prices FALL** (inverse relationship)\\n4. Borrowing costs increase\\n5. Economic activity may slow\\n\\n**Why other answers are wrong:**\\n- **A)** Stocks typically pressure downward on rate hikes\\n- **C)** Mortgages become MORE expensive, pressuring prices down\\n- **D)** Higher rates encourage saving, not spending",
       "correctAnswer": 1,
       "options": [
@@ -711,7 +711,7 @@
       "subtopic": "Economic Indicators",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is monitoring the overall health of the economy to make informed investment decisions. Which of the following economic indicators is generally considered a LEADING indicator of future economic activity? A) GDP growth rate B) Unemployment rate C) Consumer Price Index (CPI) D) Building permits",
+      "question": "Chen & Associates is monitoring the overall health of the economy to make informed investment decisions. Which of the following economic indicators is generally considered a LEADING indicator of future economic activity?",
       "explanation": "**Correct Answer: C (Building permits)**\\n\\n**Economic Indicator Categories:**\\n\\n**Leading Indicators (predict future activity):**\\n- Building permits ✓\\n- Stock market returns\\n- Consumer confidence\\n- Initial unemployment claims\\n- Manufacturing orders\\n\\n**Lagging Indicators (confirm trends):**\\n- Unemployment rate\\n- CPI (inflation)\\n- Corporate profits\\n- Labor cost per unit\\n\\n**Coincident Indicators (current state):**\\n- GDP\\n- Industrial production\\n- Personal income\\n\\n**Building permits signal future construction activity and economic expansion.**",
       "correctAnswer": 3,
       "options": [
@@ -886,7 +886,7 @@
       "subtopic": "FAFSA and Financial Aid",
       "difficulty": "hard",
       "skillLevel": "Evaluation",
-      "question": "The Johnsons are completing the FAFSA to determine their eligibility for financial aid for their son's college education. Which of the following assets are EXCLUDED from consideration in the FAFSA needs analysis calculations? A) Cash value of life insurance and retirement accounts B) 529 plans owned by grandparents C) Parent home equity D) Student savings accounts",
+      "question": "The Johnsons are completing the FAFSA to determine their eligibility for financial aid for their son's college education. Which of the following assets are EXCLUDED from consideration in the FAFSA needs analysis calculations?",
       "explanation": "**Correct Answer: B (Life insurance cash value and retirement accounts)**\\n\\n**FAFSA Asset Treatment:**\\n\\n**EXCLUDED from FAFSA:**\\n- Retirement accounts (401k, IRA, pensions) ✓\\n- Life insurance cash value ✓\\n- Primary residence equity\\n- Small business (< 100 employees)\\n- Personal property\\n\\n**INCLUDED in FAFSA:**\\n- 529 plans (parent-owned counted at 5.64%)\\n- Savings/checking accounts\\n- Investment accounts\\n- Real estate (non-primary)\\n\\n**Planning Strategy:** Maximize contributions to excluded assets (retirement, life insurance) before college years to reduce EFC. Note: Under current FAFSA rules, grandparent 529 distributions are no longer counted as student income, making them advantageous for financial aid.",
       "correctAnswer": 0,
       "options": [
@@ -1131,7 +1131,7 @@
       "subtopic": "529 Plan Strategies",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Grandma Betty wants to contribute to her granddaughter's 529 plan in 2026. She plans to contribute $95,000. This contribution: A) Exceeds the gift tax exclusion by $76,000 B) Is not permitted under 529 rules C) Fully uses five years of annual exclusions ($19,000 × 5) D) Reduces the grandparent's lifetime estate tax exemption.",
+      "question": "Grandma Betty wants to contribute to her granddaughter's 529 plan in 2026. She plans to contribute $95,000. This contribution:",
       "explanation": "**529 Superfunding:**\\n\\nThe 5-year election allows one-time contributions up to 5× the annual exclusion:\\n- 2026 annual exclusion: $19,000\\n- Maximum superfund: $19,000 × 5 = **$95,000**\\n\\nThe $95,000 contribution is reported over 5 gift tax returns, using each year's exclusion. No lifetime exemption is used if the contributor survives 5 years. If the contributor dies during that period, a prorated portion is included in their estate.",
       "correctAnswer": 2,
       "options": [
@@ -1166,7 +1166,7 @@
       "subtopic": "Interest Rate Impact",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "The Federal Reserve recently announced an increase in interest rates. Which of the following client actions is MOST likely to benefit from this change in monetary policy? A) Refinancing an existing mortgage B) Purchasing long-term bonds C) Borrowing on margin to invest D) Holding cash in high-yield savings accounts",
+      "question": "The Federal Reserve recently announced an increase in interest rates. Which of the following client actions is MOST likely to benefit from this change in monetary policy?",
       "explanation": "**Rising Rate Environment:**\\n\\nWhen rates increase:\\n- ✓ Cash/savings yields increase - savings accounts earn more\\n- ✗ Bond prices fall (inverse relationship)\\n- ✗ Mortgage rates increase - refinancing becomes less attractive\\n- ✗ Borrowing costs increase - margin interest rises\\n\\nHigh-yield savings accounts benefit directly from Fed rate increases as banks offer higher yields to depositors. This is why holding more cash can be advantageous in rising rate environments.",
       "correctAnswer": 3,
       "options": [
@@ -1201,7 +1201,7 @@
       "subtopic": "Net Worth Statement",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is creating a personal balance sheet to get a better understanding of her current financial situation. Which of the following items would be classified as a liability on her balance sheet? A) Whole life insurance cash value B) Home equity C) 401(k) account balance D) Student loan balance",
+      "question": "Maria is creating a personal balance sheet to get a better understanding of her current financial situation. Which of the following items would be classified as a liability on her balance sheet?",
       "explanation": "**Balance Sheet Classification:**\\n\\n**Liabilities (Debts Owed):**\\n- Student loans ✓\\n- Mortgages\\n- Credit card balances\\n- Auto loans\\n\\n**Assets (Items of Value):**\\n- Life insurance cash value\\n- Home equity (asset minus mortgage = equity)\\n- Retirement accounts\\n\\nHome equity is calculated as: Home Value (asset) - Mortgage (liability) = Equity. Equity itself is not a line item—the home value and mortgage are listed separately.",
       "correctAnswer": 3,
       "options": [
@@ -1236,7 +1236,7 @@
       "subtopic": "Discretionary vs Non-Discretionary",
       "difficulty": "easy",
       "skillLevel": "Analysis",
-      "question": "The Smiths are working on creating a monthly budget to better manage their finances. Which of the following expenses would be considered a DISCRETIONARY expense? A) Property taxes B) Health insurance premiums C) Minimum credit card payments D) Dining out",
+      "question": "The Smiths are working on creating a monthly budget to better manage their finances. Which of the following expenses would be considered a DISCRETIONARY expense?",
       "explanation": "**Expense Classification:**\\n\\n**Discretionary (Flexible):**\\n- Dining out ✓\\n- Entertainment\\n- Vacations\\n- Non-essential shopping\\n\\n**Non-Discretionary (Fixed/Required):**\\n- Property taxes (legal obligation)\\n- Health insurance (essential protection)\\n- Minimum debt payments (contractual)\\n- Utilities, housing, food essentials\\n\\nDiscretionary expenses are the first place to cut when cash flow is tight. They're also the most variable line items in most budgets.",
       "correctAnswer": 3,
       "options": [
@@ -2041,7 +2041,7 @@
       "subtopic": "Active Listening",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "During an initial consultation, Sarah, a new client of Oak Financial Planning, expresses concerns about retirement. To build rapport and understand her needs, which of the following active listening techniques is MOST appropriate for the advisor to use? A) Focusing primarily on financial data B) Paraphrasing and asking clarifying questions C) Immediately offering solutions to stated problems D) Completing the client's sentences",
+      "question": "During an initial consultation, Sarah, a new client of Oak Financial Planning, expresses concerns about retirement. To build rapport and understand her needs, which of the following active listening techniques is MOST appropriate for the advisor to use?",
       "explanation": "**Active Listening Techniques:**\\n- Paraphrasing to confirm understanding\\n- Asking open-ended clarifying questions\\n- Observing non-verbal cues\\n- Avoiding interruptions\\n- Summarizing key points\\n\\nBuilds trust and ensures accurate understanding of client goals and concerns.",
       "correctAnswer": 1,
       "options": [
@@ -2076,7 +2076,7 @@
       "subtopic": "Liquidity",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions has current assets of $500,000 and current liabilities of $250,000. To assess the company's short-term liquidity, which formula should an analyst use to calculate the current ratio? A) Total assets divided by total liabilities B) Net worth divided by income C) Current assets divided by current liabilities D) Liquid assets divided by monthly expenses",
+      "question": "GreenTech Solutions has current assets of $500,000 and current liabilities of $250,000. To assess the company's short-term liquidity, which formula should an analyst use to calculate the current ratio?",
       "explanation": "**Current Ratio = Current Assets / Current Liabilities**\\n\\nMeasures ability to pay short-term obligations. Ratio > 1 indicates more current assets than current liabilities.\\n\\n**For personal finance:**\\n- Emergency fund ratio = Liquid assets / Monthly expenses\\n- Higher is better for financial security",
       "correctAnswer": 2,
       "options": [
@@ -2111,7 +2111,7 @@
       "subtopic": "Property Ownership",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "John and Mary are married and own their primary residence. They want to ensure that if one spouse dies, the other will automatically inherit the property. Tenancy by the entirety is a form of property ownership available to: A) Married couples only B) Single individuals C) Business partners only D) Any two or more people",
+      "question": "John and Mary are married and own their primary residence. They want to ensure that if one spouse dies, the other will automatically inherit the property. Tenancy by the entirety is a form of property ownership available to:",
       "explanation": "**Property Ownership Forms:**\\n- **Tenancy by Entirety:** Married couples only, survivorship, creditor protection\\n- **Joint Tenancy:** Two or more, equal shares, survivorship\\n- **Tenancy in Common:** Two or more, unequal shares allowed, no survivorship\\n- **Community Property:** Married couples in 9 states",
       "correctAnswer": 0,
       "options": [
@@ -2146,7 +2146,7 @@
       "subtopic": "529 Plans",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David and Lisa established a 529 plan for their daughter, Emily, to save for her future college expenses. A 529 plan offers which primary tax benefit? A) Tax credit for education expenses B) Tax-free growth and qualified withdrawals C) Federal income tax deduction for contributions D) Annual exclusion from estate tax",
+      "question": "David and Lisa established a 529 plan for their daughter, Emily, to save for her future college expenses. A 529 plan offers which primary tax benefit?",
       "explanation": "**529 Plan Tax Benefits:**\\n- Contributions: NOT federally deductible (some states allow)\\n- Growth: Tax-free\\n- Qualified withdrawals: Tax-free\\n- 5-year gift tax averaging available\\n- Stays in donor's estate but eligible for annual exclusion\\n\\n**Qualified expenses:** Tuition, books, room/board, computers, K-12 tuition (up to $10K)",
       "correctAnswer": 1,
       "options": [
@@ -2181,7 +2181,7 @@
       "subtopic": "Interest Rates",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Economists at Macro Insights are analyzing current market conditions. When the yield curve inverts (short-term rates exceed long-term rates), it often signals: A) Economic expansion ahead B) Potential recession C) Strong stock market returns D) Rising inflation",
+      "question": "Economists at Macro Insights are analyzing current market conditions. When the yield curve inverts (short-term rates exceed long-term rates), it often signals:",
       "explanation": "**Inverted Yield Curve:** Short-term rates > long-term rates\\n\\n**Usually signals:**\\n- Economic slowdown expectations\\n- Potential recession (historically predictive)\\n- Flight to long-term safety\\n\\n**Normal curve:** Long-term rates > short-term (reward for time risk)",
       "correctAnswer": 1,
       "options": [
@@ -2216,7 +2216,7 @@
       "subtopic": "Credit Scores",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "Michael is trying to improve his credit score before applying for a mortgage. Which factor has the GREATEST impact on a FICO credit score? A) Payment history B) Length of credit history C) Credit mix D) New credit inquiries",
+      "question": "Michael is trying to improve his credit score before applying for a mortgage. Which factor has the GREATEST impact on a FICO credit score?",
       "explanation": "**FICO Score Components:**\\n- **Payment History: 35%** (most important)\\n- Amounts Owed: 30%\\n- Length of Credit History: 15%\\n- New Credit: 10%\\n- Credit Mix: 10%\\n\\nPaying on time is the single most important factor for credit scores.",
       "correctAnswer": 0,
       "options": [
@@ -2251,7 +2251,7 @@
       "subtopic": "NPV",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Investments is evaluating a new project with an initial investment of $1,000,000. The project is expected to generate cash flows over the next 5 years, and the Net Present Value (NPV) is calculated to be $50,000. An investment with a Net Present Value (NPV) greater than zero indicates: A) The investment will lose money B) The investment should be rejected C) The investment returns more than the required rate D) The investment has no risk",
+      "question": "Apex Investments is evaluating a new project with an initial investment of $1,000,000. The project is expected to generate cash flows over the next 5 years, and the Net Present Value (NPV) is calculated to be $50,000. An investment with a Net Present Value (NPV) greater than zero indicates:",
       "explanation": "**NPV > 0:** Investment returns exceed required return (discount rate). Accept the investment.\\n\\n**NPV = 0:** Investment returns exactly the required return. Indifferent.\\n\\n**NPV < 0:** Investment returns less than required. Reject.\\n\\nNPV and IRR are key capital budgeting tools.",
       "correctAnswer": 2,
       "options": [
@@ -2286,7 +2286,7 @@
       "subtopic": "Fiduciary vs Suitability",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "As a CFP® professional, Emily is bound by a fiduciary duty to her clients at Horizon Wealth Management. A fiduciary standard requires an adviser to: A) Recommend only suitable products B) Charge the lowest fees possible C) Act in the client's best interest D) Guarantee investment returns",
+      "question": "As a CFP® professional, Emily is bound by a fiduciary duty to her clients at Horizon Wealth Management. A fiduciary standard requires an adviser to:",
       "explanation": "**Fiduciary vs. Suitability:**\\n\\n**Fiduciary:** Act in client's BEST interest (RIAs, CFP® professionals)\\n\\n**Suitability/Reg BI:** Recommendation must be suitable/in best interest at time made (broker-dealers)\\n\\nFiduciary is higher standard. Conflicts allowed if disclosed and managed, not eliminated.",
       "correctAnswer": 2,
       "options": [
@@ -2883,7 +2883,7 @@
       "subtopic": "Uneven Cash Flows",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria is analyzing a potential real estate investment for Oak Street Properties. The property is expected to generate uneven cash flows over the next 5 years. Calculating the present value of these uneven cash flows requires:\nA) Using annuity formula | B) Ignoring timing | C) Discounting each individual cash flow separately and summing, or using NPV/cash flow functions | D) Simple averaging",
+      "question": "Maria is analyzing a potential real estate investment for Oak Street Properties. The property is expected to generate uneven cash flows over the next 5 years. Calculating the present value of these uneven cash flows requires:",
       "explanation": "Uneven cash flows: can\\'t use standard annuity formula (which assumes equal payments). Must: discount each cash flow individually using PV = CF/(1+r)^n, then sum. Or use: calculator NPV/CFo function, Excel NPV/XNPV. Common situations: irregular income, business valuations, real estate with varying rents. Understanding this extends basic TVM to real-world applications.",
       "correctAnswer": 2,
       "options": [
@@ -2918,7 +2918,7 @@
       "subtopic": "Nominal vs Real",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers are planning for retirement in 25 years. They want to maintain their current lifestyle. When projecting their retirement needs in real dollars:\nA) Use inflation-adjusted returns to calculate purchasing power, avoiding the need to inflate expenses | B) Double the nominal rate | C) Use nominal returns and nominal expenses | D) Ignore inflation entirely",
+      "question": "The Millers are planning for retirement in 25 years. They want to maintain their current lifestyle. When projecting their retirement needs in real dollars:",
       "explanation": "Real vs. nominal: Real rate ≈ Nominal rate - Inflation. Two approaches: (1) Nominal—inflate expenses, use nominal returns. (2) Real—keep today\\'s dollars, use real returns. Same answer, real often simpler. Fisher equation: (1+r) = (1+i)(1+π). Consistency key—don\\'t mix real expenses with nominal returns. For retirement, real dollars often more intuitive for clients.",
       "correctAnswer": 0,
       "options": [
@@ -2953,7 +2953,7 @@
       "subtopic": "Loan Amortization Analysis",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Jacksons recently obtained a 30-year mortgage for $300,000. Early in the mortgage loan's amortization schedule:\nA) Most of each payment goes to interest, with principal portion increasing over time | B) No interest is charged | C) Most of each payment goes to principal | D) Interest and principal are equal",
+      "question": "The Jacksons recently obtained a 30-year mortgage for $300,000. Early in the mortgage loan's amortization schedule:",
       "explanation": "Amortization: fixed payment, changing split. Early payments: mostly interest (balance high). Over time: interest decreases (as balance drops), principal increases. Same total payment throughout. Implications: early payoff saves most interest, refinancing early in term loses benefits of previous interest payments, building equity slow initially. Understanding helps with debt strategies.",
       "correctAnswer": 0,
       "options": [
@@ -2988,7 +2988,7 @@
       "subtopic": "Business Cycle Phases",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "As part of their strategic planning, Vista Healthcare LLC's executive team is reviewing the current state of the economy. The phases of the business cycle are:\nA) Bull and bear markets | B) Expansion, peak, contraction (recession), and trough, repeating in a pattern over time | C) Growth and decline only | D) Inflation and deflation",
+      "question": "As part of their strategic planning, Vista Healthcare LLC's executive team is reviewing the current state of the economy. The phases of the business cycle are:",
       "explanation": "Business cycle phases: Expansion (growth)—increasing GDP, employment, confidence. Peak—maximum activity before downturn. Contraction/recession—declining GDP, rising unemployment. Trough—lowest point before recovery. NBER officially dates cycles. Investment implications: sectors perform differently at each phase. Planning implications: job security, income expectations, market expectations.",
       "correctAnswer": 1,
       "options": [
@@ -3023,7 +3023,7 @@
       "subtopic": "Yield Curve Shapes",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates' investment committee is concerned about recent economic indicators. An inverted yield curve, where short-term rates exceed long-term rates, often signals:\nA) Normal market conditions | B) Potential recession, as markets expect future rate cuts and economic weakness | C) Economic expansion ahead | D) High inflation expectations",
+      "question": "Chen & Associates' investment committee is concerned about recent economic indicators. An inverted yield curve, where short-term rates exceed long-term rates, often signals:",
       "explanation": "Yield curve shapes: Normal (upward sloping)—longer maturities, higher yields (typical, compensation for time). Flat—similar rates across maturities (transition period). Inverted—short-term higher than long (unusual, historically preceded recessions). Markets pricing in future rate cuts due to expected weakness. Not guaranteed predictor but historically reliable. Watch 2-year vs. 10-year spread.",
       "correctAnswer": 1,
       "options": [
@@ -3058,7 +3058,7 @@
       "subtopic": "Fiscal Policy",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The government is trying to boost the economy after a period of slow growth. Expansionary fiscal policy involves:\nA) Government spending increases and/or tax cuts to stimulate economic activity | B) Balanced budgets always | C) Raising taxes and cutting spending | D) Fed lowering interest rates",
+      "question": "The government is trying to boost the economy after a period of slow growth. Expansionary fiscal policy involves:",
       "explanation": "Fiscal policy: government\\'s tax and spending decisions. Expansionary: increase spending, cut taxes—stimulates demand (Keynesian). Contractionary: reduce spending, raise taxes—slows overheating. Set by Congress/President (political process). Monetary policy is Fed\\'s tool (interest rates, money supply). Both influence economy. Fiscal impact: deficits/surplus, inflation, growth, interest rates.",
       "correctAnswer": 0,
       "options": [
@@ -3093,7 +3093,7 @@
       "subtopic": "SMART Goals",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "During the initial client meeting, Sarah helps the client define their financial goals. SMART goals in financial planning are:\nA) Specific, Measurable, Achievable, Relevant, and Time-bound objectives that guide planning | B) Goals that are intelligent | C) Short-term goals only | D) Simple and minimal goals",
+      "question": "During the initial client meeting, Sarah helps the client define their financial goals. SMART goals in financial planning are:",
       "explanation": "SMART framework: Specific (clear, not vague), Measurable (quantifiable—how much, by when), Achievable (realistic given resources), Relevant (meaningful to client), Time-bound (deadline). Transforms vague wishes into actionable targets. \"Save for retirement\" → \"Accumulate $2M by age 65.\" Better goals = better plans = more motivation and accountability.",
       "correctAnswer": 0,
       "options": [
@@ -3128,7 +3128,7 @@
       "subtopic": "Client Segmentation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John is a new financial advisor at Meridian Corp. He is learning how to best serve his clients. Financial planning considerations differ significantly for:\nA) Only wealthy clients | B) Different life stages, from young accumulators to retirees, each with distinct priorities and strategies | C) Insurance clients only | D) Investment clients only",
+      "question": "John is a new financial advisor at Meridian Corp. He is learning how to best serve his clients. Financial planning considerations differ significantly for:",
       "explanation": "Life stage planning: Young adults—build foundation, manage debt, start saving. Mid-career—maximize accumulation, insurance needs peak. Pre-retirement—transition planning, catch-up contributions. Early retirement—Social Security, healthcare decisions. Later retirement—estate, healthcare, longevity. Priorities shift: growth to income to preservation. Tailor advice to stage.",
       "correctAnswer": 1,
       "options": [
@@ -4283,7 +4283,7 @@
       "subtopic": "Rule of 72",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria wants to estimate how long it will take for her investment in a bond fund to double. She recalls a simple calculation method. The Rule of 72 provides a: A) Exact doubling time | B) Present value shortcut | C) Future value calculation | D) Quick estimate of years to double money by dividing 72 by the interest rate percentage",
+      "question": "Maria wants to estimate how long it will take for her investment in a bond fund to double. She recalls a simple calculation method. The Rule of 72 provides a:",
       "explanation": "Rule of 72: Years to double = 72 / Interest rate(%). Example: at 6%, doubles in 12 years. Quick mental math—not exact but close. Variations: 70 slightly more accurate for simple interest, 72 for compound. Use in client meetings for quick illustrations. Works backward: what rate to double in X years? Rate = 72/Years. Educational tool.",
       "correctAnswer": 3,
       "options": [
@@ -4318,7 +4318,7 @@
       "subtopic": "Economic Cycles",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Economist Dr. Chen is analyzing the current state of the business cycle. Which of the following characteristics typically defines economic expansion phases? A) Rising unemployment | B) Decreasing profits | C) Deflation | D) Growing GDP, declining unemployment, increasing business investment, and often rising asset prices",
+      "question": "Economist Dr. Chen is analyzing the current state of the business cycle. Which of the following characteristics typically defines economic expansion phases?",
       "explanation": "Expansion characteristics: GDP growth, falling unemployment, rising corporate profits, increasing consumer spending, rising asset prices, often accompanied by moderate inflation. Duration: varies widely (recent 2009-2020 was exceptionally long). Implications for planning: good time to build reserves for next contraction, rebalancing opportunities, evaluate risk posture. Doesn\\'t last forever—prepare for cycle.",
       "correctAnswer": 3,
       "options": [
@@ -4353,7 +4353,7 @@
       "subtopic": "Risk Management Basics",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are reviewing their financial plan, specifically focusing on managing potential risks. The four basic risk management techniques are: A) Only transfer methods | B) Only insurance and avoidance | C) Ignore and accept | D) Avoidance, reduction, retention (self-insurance), and transfer (insurance, contracts)",
+      "question": "The Millers are reviewing their financial plan, specifically focusing on managing potential risks. The four basic risk management techniques are:",
       "explanation": "Risk management techniques: Avoidance (don\\'t engage in risky activity), Reduction (minimize probability or impact), Retention (self-insure, accept risk), Transfer (insurance, contracts shift risk to others). Application depends on: risk magnitude, probability, cost of each approach. Combination common: reduce risk + insure residual + retain small exposures. Foundation for all insurance planning.",
       "correctAnswer": 3,
       "options": [
@@ -4773,7 +4773,7 @@
       "subtopic": "Coverdell ESA",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Garcia family wants to save for their child's future education expenses. Which statement about Coverdell Education Savings Accounts (ESAs) is CORRECT? A) Contributions may be made until the beneficiary reaches age 30 | B) Maximum annual contribution is $5,000 per beneficiary | C) Funds can be used for K-12 expenses as well as college | D) There are no income limits for contributors",
+      "question": "The Garcia family wants to save for their child's future education expenses. Which statement about Coverdell Education Savings Accounts (ESAs) is CORRECT?",
       "explanation": "**Correct Answer: C (Funds can be used for K-12 expenses as well as college)**\n\nCoverdell ESAs can fund qualified education expenses including:\n- Elementary and secondary school (K-12) tuition\n- Books, supplies, equipment\n- Room and board if enrolled at least half-time\n\n**Why other answers are wrong:**\n- **A)** Maximum is $2,000, not $5,000\n- **B)** Contributions must stop at age 18 (not 30)\n- **D)** There are income phaseouts ($110K single, $220K MFJ)",
       "correctAnswer": 2,
       "options": [
@@ -4982,7 +4982,7 @@
       "subtopic": "Business Cycles",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Investments is monitoring various economic indicators to predict future market trends. Which economic indicator is considered a LEADING indicator of economic activity? A) Building permits issued | B) GDP growth rate | C) Unemployment rate | D) Consumer spending",
+      "question": "Apex Investments is monitoring various economic indicators to predict future market trends. Which economic indicator is considered a LEADING indicator of economic activity?",
       "explanation": "**Correct Answer: C (Building permits issued)**\n\nBuilding permits are a leading indicator because they signal future construction activity before it occurs.\n\n**Indicator Classifications:**\n- **Leading:** Stock prices, building permits, new orders, money supply\n- **Coincident:** GDP, employment, industrial production\n- **Lagging:** Unemployment rate, CPI, prime rate\n\n**Why other answers are wrong:**\n- **A)** GDP is a coincident indicator\n- **B)** Unemployment is a lagging indicator\n- **D)** Consumer spending is a coincident indicator",
       "correctAnswer": 0,
       "options": [
@@ -5052,7 +5052,7 @@
       "subtopic": "Yield Curve",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Bond trader Sarah is analyzing the yield curve to forecast potential economic shifts. Which yield curve shape and its typical interpretation is CORRECTLY stated? A) Normal (upward sloping) curve signals potential recession | B) Inverted curve signals strong future economic growth | C) Flat curve indicates expectations of stable interest rates | D) Humped curve indicates certainty about Fed policy",
+      "question": "Bond trader Sarah is analyzing the yield curve to forecast potential economic shifts. Which yield curve shape and its typical interpretation is CORRECTLY stated?",
       "explanation": "**Correct Answer: B (Flat curve indicates expectations of stable interest rates)**\n\n**Yield Curve Interpretations:**\n- **Normal (upward):** Healthy economy, expectations of growth\n- **Flat:** Uncertainty, transition period, stable rate expectations\n- **Inverted:** Often precedes recession, expectations of rate cuts\n- **Humped:** Mid-term uncertainty, unusual market conditions\n\n**Why other answers are wrong:**\n- **A)** Inverted curves often predict recessions, not growth\n- **C)** Normal curves signal healthy growth, not recession\n- **D)** Humped curves indicate uncertainty, not certainty",
       "correctAnswer": 2,
       "options": [
@@ -5507,7 +5507,7 @@
       "subtopic": "Discretionary vs. Non-Discretionary",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a budgeting meeting with the Kim family, you need to classify their expenses. Which expense would be classified as NON-DISCRETIONARY for cash flow analysis purposes? A) Annual vacation travel | B) Monthly gym membership | C) Property tax payment | D) Restaurant dining expenses",
+      "question": "During a budgeting meeting with the Kim family, you need to classify their expenses. Which expense would be classified as NON-DISCRETIONARY for cash flow analysis purposes?",
       "explanation": "Property taxes are a non-discretionary fixed expense that must be paid regardless of lifestyle choices. Vacations, gym memberships, and dining out are discretionary expenses that can be reduced or eliminated.",
       "correctAnswer": 2,
       "options": [
@@ -5542,7 +5542,7 @@
       "subtopic": "Fiduciary Standard",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a client meeting, a CFP® professional prioritizes their own interests over the client's. Which action would constitute a breach of the fiduciary standard by a CFP® professional? A) Recommending products where the CFP® receives compensation, with full disclosure | B) Placing the client's interests first | C) Failing to disclose a conflict of interest that could impact the client's financial plan | D) Providing advice that is suitable for the client's risk tolerance and financial goals",
+      "question": "During a client meeting, a CFP® professional prioritizes their own interests over the client's. Which action would constitute a breach of the fiduciary standard by a CFP® professional?",
       "explanation": "Under the fiduciary duty, CFP® professionals must act in the client\\'s best interest. Recommending proprietary products when clearly superior alternatives exist would breach this duty, regardless of disclosure.",
       "correctAnswer": 2,
       "options": [
@@ -6734,7 +6734,7 @@
       "subtopic": "NPV and IRR",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "GreenTech Innovations is considering a new solar panel manufacturing project. After careful analysis, the project's Net Present Value (NPV) is calculated to be $500,000. This NPV indicates that: \nA) The project will definitely be profitable | B) The project has no risk | C) The payback period is less than one year | D) The project will increase shareholder value",
+      "question": "GreenTech Innovations is considering a new solar panel manufacturing project. After careful analysis, the project's Net Present Value (NPV) is calculated to be $500,000. This NPV indicates that:",
       "explanation": "A positive NPV means the project\\'s expected return exceeds the discount rate (required rate of return). The investment adds value beyond the minimum acceptable return. NPV > 0 suggests acceptance; NPV < 0 suggests rejection. This is a key capital budgeting decision rule.",
       "correctAnswer": 3,
       "options": [
@@ -6804,7 +6804,7 @@
       "subtopic": "Serial Payments",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Peterson family is planning for their child's future college expenses. They are considering two payment options: level annuity payments or serial payments that increase annually. Serial payments differ from level annuity payments in that serial payments: \nA) End at a predetermined date | B) Are always smaller than annuity payments | C) Require compound interest calculations | D) Increase each period by a constant percentage (often inflation)",
+      "question": "The Peterson family is planning for their child's future college expenses. They are considering two payment options: level annuity payments or serial payments that increase annually. Serial payments differ from level annuity payments in that serial payments:",
       "explanation": "Serial payments increase each period by a constant percentage, typically the inflation rate. This maintains purchasing power throughout retirement. Level annuity payments remain constant, losing purchasing power over time. Serial payment analysis is used in retirement income planning.",
       "correctAnswer": 3,
       "options": [
@@ -6839,7 +6839,7 @@
       "subtopic": "529 Superfunding",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Mr. and Mrs. Davis want to maximize their contributions to a 529 plan for their granddaughter, Lily. They are interested in utilizing the \"superfunding\" provision. The 529 plan \"superfunding\" provision allows a contributor to: \nA) Contribute up to $1 million in a single year | B) Deduct contributions on federal taxes | C) Avoid all estate taxes on the contribution | D) Front-load 5 years of annual gift exclusion amounts without gift tax",
+      "question": "Mr. and Mrs. Davis want to maximize their contributions to a 529 plan for their granddaughter, Lily. They are interested in utilizing the \"superfunding\" provision. The 529 plan \"superfunding\" provision allows a contributor to:",
       "explanation": "Superfunding allows contributors to make 5 years of gift exclusion contributions ($19,000 × 5 = $95,000 per donor in 2026) in a single year without using lifetime gift exemption, as long as no additional gifts are made to that beneficiary for 5 years. This accelerates tax-advantaged growth.",
       "correctAnswer": 3,
       "options": [
@@ -6874,7 +6874,7 @@
       "subtopic": "Series I Bonds",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John and Mary are exploring ways to save for their daughter's college education. They are considering using Series I bonds. Education savings using Series I or EE bonds may provide tax-free interest if: \nA) The bonds are held for at least one year | B) Any college expenses are paid | C) The bonds are given to the child | D) The proceeds are used for qualified education expenses and income limits are met",
+      "question": "John and Mary are exploring ways to save for their daughter's college education. They are considering using Series I bonds. Education savings using Series I or EE bonds may provide tax-free interest if:",
       "explanation": "The education tax exclusion for savings bonds requires: bonds purchased after 1989 by someone age 24+, proceeds used for qualified higher education expenses, income below phase-out limits, and bonds owned by taxpayer (not child). If conditions are met, interest is tax-free.",
       "correctAnswer": 3,
       "options": [
@@ -6909,7 +6909,7 @@
       "subtopic": "Monitoring",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah has just completed a comprehensive financial plan for the Miller family. She has presented the plan and they have agreed to move forward. The final step in the financial planning process involves: \nA) Collecting fees for services rendered | B) Presenting the financial plan to the client | C) Monitoring the plan and making adjustments | D) Implementing the financial plan recommendations",
+      "question": "Sarah has just completed a comprehensive financial plan for the Miller family. She has presented the plan and they have agreed to move forward. The final step in the financial planning process involves:",
       "explanation": "The 7th step is monitoring progress and updating the plan. Financial planning is an ongoing process, not a one-time event. Planners review progress, note life changes, adjust recommendations, and maintain the client relationship over time. This ensures the plan remains relevant.",
       "correctAnswer": 2,
       "options": [
@@ -6944,7 +6944,7 @@
       "subtopic": "Scope of Engagement",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "David is meeting with a prospective client, Emily, to discuss financial planning services. Before beginning a financial planning engagement, it is MOST important to: \nA) Run a credit check on the client | B) Collect all financial documents | C) Prepare preliminary investment recommendations | D) Establish mutual understanding of services, responsibilities, and compensation",
+      "question": "David is meeting with a prospective client, Emily, to discuss financial planning services. Before beginning a financial planning engagement, it is MOST important to:",
       "explanation": "Establishing the scope of engagement—including services provided, client and planner responsibilities, how compensation works, and disclosure of conflicts—must occur before any planning work begins. This protects both parties and ensures alignment of expectations.",
       "correctAnswer": 3,
       "options": [
@@ -7014,7 +7014,7 @@
       "subtopic": "Housing Ratio",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Johnson family has a gross monthly income of $6,000. Their monthly mortgage payment, including property taxes and insurance, is $1,800. The front-end housing ratio (housing expense ratio) should generally not exceed: \nA) 28% of gross income | B) 50% of gross income | C) 20% of gross income | D) 36% of gross income",
+      "question": "The Johnson family has a gross monthly income of $6,000. Their monthly mortgage payment, including property taxes and insurance, is $1,800. The front-end housing ratio (housing expense ratio) should generally not exceed:",
       "explanation": "The front-end ratio (PITI ÷ gross income) typically should not exceed 28% by conventional lending standards. This measures the portion of income dedicated to housing costs only. The back-end ratio (36% guideline) includes all debt payments. These are guidelines—actual approval depends on creditworthiness and compensating factors.",
       "correctAnswer": 0,
       "options": [
@@ -7049,7 +7049,7 @@
       "subtopic": "Emergency Fund",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Michael is the sole income earner for his family and works in the tech industry, which is currently experiencing significant layoffs. For a single-income household in a volatile industry, the recommended emergency fund is: \nA) No emergency fund is needed with adequate insurance | B) 1-2 months of expenses | C) 3-6 months of expenses | D) 6-12 months of expenses",
+      "question": "Michael is the sole income earner for his family and works in the tech industry, which is currently experiencing significant layoffs. For a single-income household in a volatile industry, the recommended emergency fund is:",
       "explanation": "Single-income households and those in volatile industries (cyclical, commission-based, or unstable employment) need larger emergency reserves—typically 6-12 months of expenses. The 3-6 month guideline applies to dual-income, stable-employment households. Individual circumstances determine the appropriate level.",
       "correctAnswer": 3,
       "options": [
@@ -7959,7 +7959,7 @@
       "subtopic": "Presenting Recommendations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates is presenting a financial plan to the Millers. To ensure effective communication of recommendations, which of the following approaches is MOST appropriate? A) Detailed calculations without explanation | B) Reading the plan page by page | C) Clear communication of priorities, trade-offs, and rationale in client-friendly language, with questions | D) Mailing recommendations.",
+      "question": "Chen & Associates is presenting a financial plan to the Millers. To ensure effective communication of recommendations, which of the following approaches is MOST appropriate?",
       "explanation": "Presentations should be client-focused, using appropriate language, visuals, and examples. Key recommendations should be prioritized, alternatives explained, trade-offs discussed, and the \"why\" behind recommendations clarified. Interactive dialogue ensures understanding and addresses questions before implementation.",
       "correctAnswer": 2,
       "options": [
@@ -8029,7 +8029,7 @@
       "subtopic": "Real vs Nominal Returns",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah's investment portfolio returned 7% nominally last year. The inflation rate during that period was 3%. What was Sarah's approximate real rate of return? A) 10% | B) 4% | C) 3% | D) 7%",
+      "question": "Sarah's investment portfolio returned 7% nominally last year. The inflation rate during that period was 3%. What was Sarah's approximate real rate of return?",
       "explanation": "Real return ≈ Nominal return - Inflation. 7% - 3% = 4%. More precisely: (1.07/1.03) - 1 = 3.88%. Real returns measure purchasing power growth. Financial planning should use consistent assumptions—either nominal returns with nominal spending needs, or real returns with constant-dollar spending.",
       "correctAnswer": 1,
       "options": [
@@ -8064,7 +8064,7 @@
       "subtopic": "Amortization",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Jacksons recently obtained a 30-year mortgage. How are their early mortgage payments structured? A) Primarily principal | B) Primarily interest, with the principal portion increasing over time | C) Equal amounts of principal and interest | D) Fees only",
+      "question": "The Jacksons recently obtained a 30-year mortgage. How are their early mortgage payments structured?",
       "explanation": "Amortizing loans have constant payments but varying principal/interest composition. Early payments are mostly interest because the balance is highest. As the balance decreases, less interest accrues and more of each payment goes to principal. This is why prepayments early in a loan save more interest.",
       "correctAnswer": 1,
       "options": [
@@ -8099,7 +8099,7 @@
       "subtopic": "Cash Flow Statement",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John wants to understand where his money is going. How can a personal cash flow statement help John? A) Income sources, expense categories, and surplus/deficit for savings/debt reduction | B) Net worth only | C) Only total assets owned | D) Investment returns",
+      "question": "John wants to understand where his money is going. How can a personal cash flow statement help John?",
       "explanation": "Cash flow statements track money movement—income sources and amounts, fixed and variable expenses, and resulting surplus or deficit. This identifies where money goes, supports realistic budgeting, reveals savings capacity, and helps prioritize expense reduction or income enhancement.",
       "correctAnswer": 0,
       "options": [
@@ -8134,7 +8134,7 @@
       "subtopic": "Debt Ratios",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smiths are applying for a mortgage. How is their debt-to-income ratio calculated? A) Monthly debt payments divided by gross monthly income | B) Net worth divided by annual income | C) Total assets divided by total liabilities | D) Total debt divided by total assets",
+      "question": "The Smiths are applying for a mortgage. How is their debt-to-income ratio calculated?",
       "explanation": "Debt-to-income (DTI) = Monthly debt payments / Gross monthly income. Lenders use this for mortgage qualification (typically <43% for QM). It measures debt burden relative to income capacity. Front-end ratio focuses on housing costs; back-end includes all debt payments.",
       "correctAnswer": 0,
       "options": [
@@ -8169,7 +8169,7 @@
       "subtopic": "Liquidity Ratio",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "The Joneses want to assess their financial security. What does their liquidity ratio measure? A) Total debt as a percentage of assets | B) The number of months of expenses covered by liquid assets | C) Net worth growth over time | D) Investment returns",
+      "question": "The Joneses want to assess their financial security. What does their liquidity ratio measure?",
       "explanation": "Liquidity ratio = Liquid assets / Monthly expenses. It indicates emergency fund adequacy. A ratio of 3-6 is commonly recommended (3-6 months of expenses in accessible savings). Lower ratios indicate vulnerability to income disruption; higher may indicate excess cash earning low returns.",
       "correctAnswer": 1,
       "options": [
@@ -8239,7 +8239,7 @@
       "subtopic": "Federal Reserve",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "What are the key components of the Federal Reserve's dual mandate? A) Maximum employment and stable prices (targeting 2% inflation) | B) Balancing the federal budget | C) Maximizing tax revenue and minimizing debt | D) Regulating stock markets",
+      "question": "What are the key components of the Federal Reserve's dual mandate?",
       "explanation": "The Fed\\'s dual mandate (from the Federal Reserve Act as amended) targets maximum sustainable employment and stable prices (2% inflation target). It uses tools like the federal funds rate, quantitative easing, and reserve requirements to pursue these goals, often facing trade-offs between them.",
       "correctAnswer": 0,
       "options": [
@@ -8274,7 +8274,7 @@
       "subtopic": "Fiscal vs Monetary Policy",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "How does fiscal policy differ from monetary policy? A) Focuses only on interest rates | B) Is controlled by the Federal Reserve | C) Involves government spending and taxation decisions made by Congress and the President | D) Operates independently of politics",
+      "question": "How does fiscal policy differ from monetary policy?",
       "explanation": "Fiscal policy (taxation and government spending) is set by elected officials. Monetary policy (money supply, interest rates) is managed by the independent Federal Reserve. Both affect economic conditions but through different mechanisms and with different lag times.",
       "correctAnswer": 2,
       "options": [
@@ -8309,7 +8309,7 @@
       "subtopic": "Implementation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After developing a financial plan for the Miller family, Sarah, a CFP® at Oak Financial, is moving to the next phase. Which of the following activities is MOST likely to be included in the implementation phase of the Millers' financial plan? A) Only activities the planner directly controls | B) Developing recommendations | C) Coordinating with other professionals, completing applications, transferring assets, and tracking action items | D) Data gathering",
+      "question": "After developing a financial plan for the Miller family, Sarah, a CFP® at Oak Financial, is moving to the next phase. Which of the following activities is MOST likely to be included in the implementation phase of the Millers' financial plan?",
       "explanation": "Implementation translates recommendations into action. It may involve the planner directly (investment allocation), coordination with others (attorney for documents, CPA for tax strategies), and client action items (updating beneficiaries, insurance applications). Clear timelines and accountability improve follow-through.",
       "correctAnswer": 2,
       "options": [
@@ -8344,7 +8344,7 @@
       "subtopic": "Monitoring",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David, a client of Horizon Wealth Management, wants to ensure his financial plan stays on track. What does monitoring the financial plan involve for David, according to best practices? A) Annual meetings only | B) Regular review of progress, updated analysis when circumstances change, and adjustment of recommendations as needed | C) Checking investment performance exclusively | D) Sending birthday cards",
+      "question": "David, a client of Horizon Wealth Management, wants to ensure his financial plan stays on track. What does monitoring the financial plan involve for David, according to best practices?",
       "explanation": "Monitoring ensures the plan remains appropriate as circumstances, goals, and markets change. It includes scheduled reviews, life event triggers, performance versus projections, and updating assumptions. The appropriate frequency depends on complexity and volatility of client circumstances.",
       "correctAnswer": 1,
       "options": [
@@ -8379,7 +8379,7 @@
       "subtopic": "Annuity Due vs Ordinary",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is comparing two retirement savings options. Option A is an ordinary annuity, and Option B is an annuity due. How does an annuity due differ from an ordinary annuity? A) Occur at the beginning of each period in an annuity due, resulting in higher present and future values | B) Are larger in an annuity due | C) Are tax-deferred in an annuity due | D) Last longer in an ordinary annuity",
+      "question": "Maria is comparing two retirement savings options. Option A is an ordinary annuity, and Option B is an annuity due. How does an annuity due differ from an ordinary annuity?",
       "explanation": "Annuity due pays at period start (rent, lease payments); ordinary annuity pays at period end (most loans). Beginning-of-period payments earn one more period of interest, making annuity due values higher by a factor of (1 + r). Most financial calculators have BEGIN/END mode for this.",
       "correctAnswer": 0,
       "options": [
@@ -8414,7 +8414,7 @@
       "subtopic": "Uneven Cash Flows",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions is evaluating a potential expansion project with uneven cash flows over the next 5 years. To determine if the project is financially viable, which of the following is the correct method to calculate the Net Present Value (NPV) of these uneven cash flows? A) Average the cash flows and use ordinary annuity formula | B) Discount each cash flow individually at the required rate and sum the present values | C) Use only the final cash flow | D) Ignore negative cash flows",
+      "question": "GreenTech Solutions is evaluating a potential expansion project with uneven cash flows over the next 5 years. To determine if the project is financially viable, which of the following is the correct method to calculate the Net Present Value (NPV) of these uneven cash flows?",
       "explanation": "Uneven cash flows require discounting each individually: NPV = Σ [CFt / (1+r)^t] - Initial Investment. This applies to real-world scenarios like varying rental income, business cash flows, or project returns. Financial calculators have cash flow (CF) functions for this.",
       "correctAnswer": 0,
       "options": [
@@ -8484,7 +8484,7 @@
       "subtopic": "Asset Location",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John is working with a planner to optimize his investment portfolio across his taxable brokerage account, 401(k), and Roth IRA. When organizing asset location across these accounts with different tax treatments, which strategy is generally recommended? A) Hold the same allocation in all accounts | B) Generally hold tax-efficient assets in taxable accounts and tax-inefficient assets in tax-advantaged accounts | C) Hold only bonds in all accounts | D) Asset location",
+      "question": "John is working with a planner to optimize his investment portfolio across his taxable brokerage account, 401(k), and Roth IRA. When organizing asset location across these accounts with different tax treatments, which strategy is generally recommended?",
       "explanation": "Asset location optimizes after-tax returns. Tax-efficient assets (index funds, stocks held long-term) suit taxable accounts; tax-inefficient assets (bonds generating ordinary income, REITs, actively traded funds) suit tax-advantaged accounts. Exceptions apply based on individual circumstances.",
       "correctAnswer": 1,
       "options": [
@@ -8519,7 +8519,7 @@
       "subtopic": "Business Cycles",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "As a financial analyst at MacroCorp, you're presenting an economic overview. Which of the following correctly identifies the four phases of a business cycle? A) Growth, stagnation, decline, reset | B) Expansion, peak, contraction (recession), trough | C) Bull, bear, recovery, growth | D) Inflation, deflation, stagflation, growth",
+      "question": "As a financial analyst at MacroCorp, you're presenting an economic overview. Which of the following correctly identifies the four phases of a business cycle?",
       "explanation": "Business cycles move through expansion (growth, rising employment), peak (maximum activity), contraction/recession (declining output, rising unemployment), and trough (minimum activity) before expanding again. Duration and intensity vary. Understanding cycles helps with investment positioning and client expectations.",
       "correctAnswer": 2,
       "options": [
@@ -8554,7 +8554,7 @@
       "subtopic": "Leading Indicators",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "As part of economic forecasting at Global Investments, you're analyzing various economic indicators. Which of the following groups of indicators are considered leading economic indicators that tend to precede economic changes? A) GDP and unemployment rate | B) Stock prices, building permits, consumer expectations, and initial unemployment claims | C) CPI and interest rates | D) Government spending levels",
+      "question": "As part of economic forecasting at Global Investments, you're analyzing various economic indicators. Which of the following groups of indicators are considered leading economic indicators that tend to precede economic changes?",
       "explanation": "Leading indicators change before the economy changes direction: stock prices, building permits, consumer expectations, new orders, money supply, initial unemployment claims. Lagging indicators (unemployment rate, CPI changes) confirm trends. GDP is coincident, moving with the economy.",
       "correctAnswer": 1,
       "options": [
@@ -8589,7 +8589,7 @@
       "subtopic": "Plan Document",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After working with the clients for several weeks, the planner at SecurePath Financial is ready to deliver the final plan document. What elements are typically included in a comprehensive financial plan document? A) Only investment recommendations | B) Executive summary, current situation analysis, goals, recommendations across planning areas, and action plan | C) Just a budget worksheet | D) Only projection charts",
+      "question": "After working with the clients for several weeks, the planner at SecurePath Financial is ready to deliver the final plan document. What elements are typically included in a comprehensive financial plan document?",
       "explanation": "Comprehensive plans document the engagement, current situation summary, stated goals, recommendations across relevant domains (investment, insurance, tax, retirement, estate), rationale, projections/scenarios, and action items. The format should match client preferences and engagement scope.",
       "correctAnswer": 2,
       "options": [
@@ -8624,7 +8624,7 @@
       "subtopic": "Rate of Return",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah is evaluating a potential real estate investment. She projects cash flows of $10,000 per year for 5 years and an initial investment of $40,000. The IRR is the discount rate that:\nA) Equals the risk-free rate | B) Maximizes future value | C) Makes the NPV of all cash flows equal to zero | D) Is always positive",
+      "question": "Sarah is evaluating a potential real estate investment. She projects cash flows of $10,000 per year for 5 years and an initial investment of $40,000. The IRR is the discount rate that:",
       "explanation": "IRR is the discount rate where NPV = 0—the \"break-even\" return rate. It\\'s used to evaluate investments and compare opportunities. Limitations include multiple IRRs with non-conventional cash flows, reinvestment rate assumptions, and scale ignorance (NPV often preferred for mutually exclusive projects).",
       "correctAnswer": 2,
       "options": [
@@ -8659,7 +8659,7 @@
       "subtopic": "Savings Rate",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers want to retire in 15 years. Their financial planner is assessing their progress. Which of the following BEST reflects what should be evaluated when determining the client's savings rate?\nA) Only bank account deposits | B) Only 401(k) contributions | C) All additions to net worth including retirement contributions, debt principal payments, and taxable savings | D) Investment returns",
+      "question": "The Millers want to retire in 15 years. Their financial planner is assessing their progress. Which of the following BEST reflects what should be evaluated when determining the client's savings rate?",
       "explanation": "True savings rate includes all net worth increases from income: retirement contributions (including employer match), after-tax savings, and principal portion of debt payments. Investment returns aren\\'t savings—they\\'re returns on savings. Target rates depend on age, goals, and timeline.",
       "correctAnswer": 2,
       "options": [
@@ -8694,7 +8694,7 @@
       "subtopic": "Dollar Cost Averaging",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "John invests $500 per month in a stock index fund, regardless of market fluctuations. Dollar cost averaging benefits investors by:\nA) Guaranteeing profits | B) Investing consistently regardless of market conditions, potentially lowering average cost and removing emotion from timing decisions | C) Always outperforming lump-sum investing | D) Eliminating market risk",
+      "question": "John invests $500 per month in a stock index fund, regardless of market fluctuations. Dollar cost averaging benefits investors by:",
       "explanation": "DCA invests fixed amounts regularly, buying more shares when prices are low, fewer when high. It averages purchase prices and removes timing decisions. Research shows lump-sum usually outperforms (markets rise more than fall), but DCA reduces regret risk and suits regular income.",
       "correctAnswer": 1,
       "options": [
@@ -8729,7 +8729,7 @@
       "subtopic": "Holistic Approach",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mariah hired a financial planner to help her achieve her goals. The holistic (comprehensive) approach to financial planning:\nA) Focuses on only one planning area at a time | B) Integrates all planning domains, recognizing interconnections between tax, investment, insurance, retirement, and estate decisions | C) Recommends the same strategy for all clients | D) Ignores behavioral factors",
+      "question": "Mariah hired a financial planner to help her achieve her goals. The holistic (comprehensive) approach to financial planning:",
       "explanation": "Holistic planning recognizes that planning areas interact—asset allocation affects taxes, retirement timing affects estate values, insurance needs depend on savings. Optimizing each area independently may produce suboptimal overall results. Integration ensures recommendations work together effectively.",
       "correctAnswer": 1,
       "options": [
@@ -8764,7 +8764,7 @@
       "subtopic": "Monitoring and Updating",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smiths' financial plan was created 6 months ago. During the monitoring phase of financial planning, the planner is responsible for:\nA) Reviewing progress, updating for life changes, adjusting for market conditions, and ensuring the plan remains aligned with goals | B) Terminating the relationship | C) Only checking accounts annually | D) Creating the initial plan only",
+      "question": "The Smiths' financial plan was created 6 months ago. During the monitoring phase of financial planning, the planner is responsible for:",
       "explanation": "Monitoring is ongoing—not one-time. It includes tracking progress toward goals, updating assumptions, responding to life changes (marriage, job change, children), adjusting for market/tax law changes, and rebalancing. The frequency depends on client needs and engagement terms.",
       "correctAnswer": 0,
       "options": [
@@ -8799,7 +8799,7 @@
       "subtopic": "Gathering Information",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During the data gathering process for the Jacksons' financial plan, which of the following is considered quantitative data?\nA) Goals and dreams only | B) Income, expenses, assets, liabilities, insurance coverage, and tax returns—numerical financial facts | C) Family history only | D) Only client attitudes about money",
+      "question": "During the data gathering process for the Jacksons' financial plan, which of the following is considered quantitative data?",
       "explanation": "Quantitative data is numerical: income/expenses, account values, debts, policy details, tax information. Qualitative data includes goals, values, risk tolerance, family dynamics. Both are essential—numbers without context and goals without data don\\'t enable effective planning.",
       "correctAnswer": 1,
       "options": [
@@ -8834,7 +8834,7 @@
       "subtopic": "Interrelationship of Goals",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Bob wants to retire early at age 55, but also wants to fully fund his children's college education. When client goals conflict, the planner should:\nA) Recommend taking more risk | B) Ignore the conflict | C) Help the client understand trade-offs and priorities to make informed decisions about which goals to emphasize | D) Choose the more important goal for the client",
+      "question": "Bob wants to retire early at age 55, but also wants to fully fund his children's college education. When client goals conflict, the planner should:",
       "explanation": "Comprehensive planning addresses goal interactions. Limited resources mean trade-offs. Planners quantify implications of different choices, but clients decide priorities. This may involve adjusting timelines, amounts, or expectations. The planner\\'s role is illuminating trade-offs, not making value judgments.",
       "correctAnswer": 2,
       "options": [
@@ -8869,7 +8869,7 @@
       "subtopic": "Effective Annual Rate",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Susan has a credit card with an 18% APR, with interest compounded monthly. The Effective Annual Rate (EAR) is approximately:\nA) 17.50% | B) 20.00% | C) 19.56% | D) 18.00%",
+      "question": "Susan has a credit card with an 18% APR, with interest compounded monthly. The Effective Annual Rate (EAR) is approximately:",
       "explanation": "EAR = (1 + r/n)^n - 1 = (1 + 0.18/12)^12 - 1 = (1.015)^12 - 1 = 1.1956 - 1 = 19.56%. Monthly compounding increases effective rate above stated APR. Understanding EAR helps compare loans/investments with different compounding frequencies.",
       "correctAnswer": 2,
       "options": [
@@ -9569,7 +9569,7 @@
       "subtopic": "Presenting Recommendations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria and David are meeting with you, a CFP® professional, to discuss their retirement goals. When presenting financial planning recommendations to them, which of the following approaches is MOST appropriate? A) Clearly explain the recommendation, rationale, alternatives considered, and expected outcomes to enable informed decisions B) Make decisions for the client C) Use technical language to demonstrate expertise D) Present as many alternatives as possible",
+      "question": "Maria and David are meeting with you, a CFP® professional, to discuss their retirement goals. When presenting financial planning recommendations to them, which of the following approaches is MOST appropriate?",
       "explanation": "Presentations should be clear and client-focused: what you recommend, why (connected to their goals), what alternatives were considered and rejected, expected outcomes, and risks. Use visuals for complex concepts. Allow time for questions. The client decides—the planner informs that decision.",
       "correctAnswer": 0,
       "options": [
@@ -9604,7 +9604,7 @@
       "subtopic": "Holistic Planning",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Smiths are seeking advice from a financial planner at Oak Financial. They want help with retirement, college savings, and estate planning. Holistic financial planning considers: A) Tax planning exclusively B) Single transactions only C) Only investments D) All aspects of a client",
+      "question": "The Smiths are seeking advice from a financial planner at Oak Financial. They want help with retirement, college savings, and estate planning. Holistic financial planning considers:",
       "explanation": "Holistic planning views financial decisions as interconnected. An investment decision affects taxes, estate planning, and retirement projections. Insurance gaps affect financial security. This comprehensive approach avoids siloed advice that might optimize one area while harming another. It\\'s the CFP® professional\\'s standard approach.",
       "correctAnswer": 3,
       "options": [
@@ -9639,7 +9639,7 @@
       "subtopic": "Net Present Value",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions is considering investing $500,000 in a new project expected to generate $100,000 annually for 7 years. After discounting the cash flows at GreenTech's required rate of return, the NPV is $50,000. A positive net present value (NPV) indicates: A) Only interest is earned B) The investment breaks even C) The investment should be rejected D) The present value of expected cash inflows exceeds the present value of outflows—the investment adds value",
+      "question": "GreenTech Solutions is considering investing $500,000 in a new project expected to generate $100,000 annually for 7 years. After discounting the cash flows at GreenTech's required rate of return, the NPV is $50,000. A positive net present value (NPV) indicates:",
       "explanation": "NPV = PV of inflows - PV of outflows. Positive NPV means expected returns exceed the required rate of return (discount rate)—value is created. Negative NPV: reject. When choosing between mutually exclusive projects, select the highest positive NPV. NPV directly measures wealth creation in current dollars.",
       "correctAnswer": 3,
       "options": [
@@ -9674,7 +9674,7 @@
       "subtopic": "Perpetuity",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The 'Friends of the Library' endowment fund provides $10,000 annually to support library programs. Assuming a 5% discount rate, the present value of this perpetuity is: A) $50,000 B) $100,000 C) Infinity D) $200,000",
+      "question": "The 'Friends of the Library' endowment fund provides $10,000 annually to support library programs. Assuming a 5% discount rate, the present value of this perpetuity is:",
       "explanation": "Perpetuity PV = Payment / Rate = $10,000 / 0.05 = $200,000. A perpetuity is an infinite stream of equal payments. Examples: certain endowments, preferred stock dividends (approximately). Growing perpetuity: PV = Payment / (Rate - Growth Rate). Useful for valuing infinite income streams or approximating very long-term cash flows.",
       "correctAnswer": 3,
       "options": [
@@ -9709,7 +9709,7 @@
       "subtopic": "Real vs Nominal Returns",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John earned a 10% return on his investments this year. Inflation was 4%. Real return differs from nominal return in that: A) They are identical B) Real return is always higher C) Nominal return includes fees D) Real return adjusts for inflation, showing purchasing power change rather than just dollar amounts",
+      "question": "John earned a 10% return on his investments this year. Inflation was 4%. Real return differs from nominal return in that:",
       "explanation": "Nominal return: stated dollar return. Real return: inflation-adjusted, measuring purchasing power change. Approximation: Real ≈ Nominal - Inflation. Precise: (1 + Nominal)/(1 + Inflation) - 1. For retirement planning, real returns are more meaningful—a 7% nominal return with 3% inflation is only 4% real wealth gain.",
       "correctAnswer": 3,
       "options": [
@@ -9744,7 +9744,7 @@
       "subtopic": "Compounding Frequency",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah invests $10,000 in a certificate of deposit (CD). Bank A offers 5% compounded annually, while Bank B offers 5% compounded monthly. More frequent compounding results in: A) Lower nominal rates B) Lower effective annual returns C) No difference in returns D) Higher effective annual returns because interest earns interest more frequently",
+      "question": "Sarah invests $10,000 in a certificate of deposit (CD). Bank A offers 5% compounded annually, while Bank B offers 5% compounded monthly. More frequent compounding results in:",
       "explanation": "More frequent compounding = higher effective rate. 6% compounded monthly = 6.17% effective annual. Daily compounding adds slightly more. Continuous compounding is the theoretical maximum. The difference between annual and monthly matters more at higher rates and longer periods. APY (annual percentage yield) standardizes comparison.",
       "correctAnswer": 3,
       "options": [
@@ -9779,7 +9779,7 @@
       "subtopic": "Yield Curve Shapes",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Economists at Macro Insights are analyzing the current yield curve, which shows short-term Treasury rates higher than long-term rates. An inverted yield curve (short-term rates above long-term) often indicates: A) Normal market conditions B) Economic expansion C) High inflation ahead D) Expectations of economic slowdown or recession, as markets anticipate Fed rate cuts",
+      "question": "Economists at Macro Insights are analyzing the current yield curve, which shows short-term Treasury rates higher than long-term rates. An inverted yield curve (short-term rates above long-term) often indicates:",
       "explanation": "Normal yield curve: upward sloping (longer terms = higher rates for time/uncertainty premium). Inverted: short-term rates exceed long-term—often precedes recessions. The market expects rates to fall (Fed easing due to economic weakness). Flat curves indicate transition. The 2-year/10-year spread is closely watched as a recession indicator.",
       "correctAnswer": 3,
       "options": [
@@ -9814,7 +9814,7 @@
       "subtopic": "Consumer Confidence",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Analysts at MarketWatch are closely monitoring economic indicators to predict future consumer spending. Consumer confidence indices measure: A) Only stock market performance B) Manufacturing output C) Government budget deficits D) Consumer attitudes about current and future economic conditions, which influence spending and saving behavior",
+      "question": "Analysts at MarketWatch are closely monitoring economic indicators to predict future consumer spending. Consumer confidence indices measure:",
       "explanation": "Consumer confidence (Conference Board, Michigan) surveys attitudes about current conditions and expectations. High confidence = more spending, less saving, economic expansion. Low confidence = reduced spending, potential contraction. It\\'s a leading indicator—sentiment changes precede actual spending changes. Planners monitor for economic forecasting.",
       "correctAnswer": 3,
       "options": [

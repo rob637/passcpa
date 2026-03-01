@@ -1,0 +1,1448 @@
+{
+  "$schema": "../schema/practice-simulation.schema.json",
+  "version": "1.0.0",
+  "courseId": "cma",
+  "section": "CMA1",
+  "generatedAt": "2026-03-01T12:27:20.346Z",
+  "simulations": [
+    {
+      "id": "cma1-sim-001",
+      "section": "CMA1",
+      "title": "Manufacturing Variance Analysis",
+      "blueprintArea": "CMA1-C",
+      "topic": "Standard Cost Variance Analysis",
+      "difficulty": "hard",
+      "estimatedTime": 25,
+      "scenario": "You are the cost accountant for Precision Manufacturing Inc., which produces industrial components. The company uses a standard costing system. Management has asked you to analyze the variances for the month of October.\n\nDuring October, the company produced 5,000 units of Product X. The standard cost card for one unit is provided in Exhibit 1.\n\nActual results for October are provided in Exhibit 2.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Standard Cost Card - Product X (per unit)",
+          "type": "table",
+          "data": "| Cost Element | Quantity | Rate/Price | Total |\n|-------------|----------|------------|-------|\n| Direct Materials | 3 lbs | $8.00/lb | $24.00 |\n| Direct Labor | 2 hours | $25.00/hr | $50.00 |\n| Variable Overhead | 2 DLH | $6.00/DLH | $12.00 |\n| Fixed Overhead | 2 DLH | $10.00/DLH | $20.00 |\n| **Total Standard Cost** | | | **$106.00** |\n\nBudgeted production: 6,000 units\nBudgeted fixed overhead: $120,000"
+        },
+        {
+          "id": "ex2",
+          "title": "Actual Results - October",
+          "type": "table",
+          "data": "| Item | Actual Results |\n|------|----------------|\n| Units Produced | 5,000 units |\n| Direct Materials Purchased | 16,000 lbs at $8.25/lb |\n| Direct Materials Used | 15,200 lbs |\n| Direct Labor | 9,800 hours at $25.50/hr |\n| Variable Overhead Incurred | $60,200 |\n| Fixed Overhead Incurred | $122,000 |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the Direct Materials Price Variance and Direct Materials Quantity Variance. Indicate whether each variance is Favorable (F) or Unfavorable (U).",
+          "hints": [
+            "Price variance uses actual quantity purchased",
+            "Quantity variance uses actual quantity used"
+          ],
+          "solution": {
+            "approach": "Use standard formulas: Price = (AP - SP) × AQ purchased; Quantity = (AQ used - SQ) × SP",
+            "calculations": "Standard Quantity Allowed (SQ) = 5,000 units × 3 lbs = 15,000 lbs\n\n**Materials Price Variance:**\n= (Actual Price - Standard Price) × Actual Quantity Purchased\n= ($8.25 - $8.00) × 16,000 lbs\n= $0.25 × 16,000 = $4,000 Unfavorable\n\n**Materials Quantity Variance:**\n= (Actual Quantity Used - Standard Quantity Allowed) × Standard Price\n= (15,200 lbs - 15,000 lbs) × $8.00\n= 200 lbs × $8.00 = $1,600 Unfavorable",
+            "answer": {
+              "priceVariance": -4000,
+              "quantityVariance": -1600
+            },
+            "explanation": "The price variance is unfavorable because actual price exceeded standard. The quantity variance is unfavorable because more materials were used than allowed for actual production."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Direct Materials Price and Quantity Variances:\n\n1. **Given Information:**\n   * Actual Production: 5,000 units\n   * Standard Quantity per Unit: 3 lbs\n   * Standard Price per lb: $8.00\n   * Actual Quantity Purchased: 16,000 lbs\n   * Actual Quantity Used: 15,200 lbs\n   * Actual Price per lb: $8.25\n\n2. **Formula:**\n   * Direct Materials Price Variance = (Actual Price - Standard Price) × Actual Quantity Purchased\n   * Direct Materials Quantity Variance = (Actual Quantity Used - Standard Quantity Allowed) × Standard Price\n\n3. **Calculation:**\n   * **Standard Quantity Allowed (SQ):**\n      * SQ = Actual Production × Standard Quantity per Unit\n      * SQ = 5,000 units × 3 lbs/unit = 15,000 lbs\n   * **Direct Materials Price Variance:**\n      * Price Variance = (Actual Price - Standard Price) × Actual Quantity Purchased\n      * Price Variance = ($8.25 - $8.00) × 16,000 lbs\n      * Price Variance = $0.25 × 16,000 lbs = $4,000\n      * Since the actual price is higher than the standard price, the variance is Unfavorable.\n   * **Direct Materials Quantity Variance:**\n      * Quantity Variance = (Actual Quantity Used - Standard Quantity Allowed) × Standard Price\n      * Quantity Variance = (15,200 lbs - 15,000 lbs) × $8.00\n      * Quantity Variance = 200 lbs × $8.00 = $1,600\n      * Since the actual quantity used is higher than the standard quantity allowed, the variance is Unfavorable.\n\n4. **Answer:**\n   * Direct Materials Price Variance: $4,000 Unfavorable\n   * Direct Materials Quantity Variance: $1,600 Unfavorable",
+          "keyFormula": "Direct Materials Price Variance = (AP - SP) × AQ purchased; Direct Materials Quantity Variance = (AQ used - SQ) × SP",
+          "commonMistakes": [
+            "Using actual quantity *used* instead of actual quantity *purchased* when calculating the price variance. The price variance isolates the impact of price differences on the *purchase* decision.",
+            "Forgetting to calculate the Standard Quantity Allowed (SQ) based on actual production volume. Using budgeted production volume instead will lead to an incorrect quantity variance.",
+            "Incorrectly labeling the variance as favorable or unfavorable. Remember, if actual cost is higher than standard cost, the variance is unfavorable, and vice versa."
+          ],
+          "examTip": "Double-check whether the problem asks for the price variance based on quantity purchased or quantity used. The CMA exam may try to trick you by providing both values. Also, quickly jot down 'AP, SP, AQ used, AQ purchased, SQ' and fill in the values to avoid confusion during the calculation."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the Direct Labor Rate Variance and Direct Labor Efficiency Variance. Indicate whether each variance is Favorable (F) or Unfavorable (U).",
+          "hints": [
+            "Standard hours = Actual units × Standard hours per unit"
+          ],
+          "solution": {
+            "approach": "Use standard formulas: Rate = (AR - SR) × AH; Efficiency = (AH - SH) × SR",
+            "calculations": "Standard Hours Allowed (SH) = 5,000 units × 2 hours = 10,000 hours\n\n**Labor Rate Variance:**\n= (Actual Rate - Standard Rate) × Actual Hours\n= ($25.50 - $25.00) × 9,800 hours\n= $0.50 × 9,800 = $4,900 Unfavorable\n\n**Labor Efficiency Variance:**\n= (Actual Hours - Standard Hours Allowed) × Standard Rate\n= (9,800 hours - 10,000 hours) × $25.00\n= -200 hours × $25.00 = $5,000 Favorable",
+            "answer": {
+              "rateVariance": -4900,
+              "efficiencyVariance": 5000
+            },
+            "explanation": "The rate variance is unfavorable because workers were paid more than standard. The efficiency variance is favorable because fewer hours were worked than allowed."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the direct labor variances:\n\n1. **Given Information:**\n   * Actual Units Produced: 5,000 units\n   * Standard Hours per Unit: 2 hours\n   * Standard Labor Rate: $25.00 per hour\n   * Actual Hours Worked: 9,800 hours\n   * Actual Labor Rate: $25.50 per hour\n\n2. **Formula:**\n   * Direct Labor Rate Variance = (Actual Rate - Standard Rate) × Actual Hours\n   * Direct Labor Efficiency Variance = (Actual Hours - Standard Hours Allowed) × Standard Rate\n\n3. **Calculation:**\n   * **Step 1: Calculate Standard Hours Allowed (SH)**\n      * SH = Actual Units Produced × Standard Hours per Unit\n      * SH = 5,000 units × 2 hours/unit = 10,000 hours\n\n   * **Step 2: Calculate Direct Labor Rate Variance**\n      * Labor Rate Variance = (Actual Rate - Standard Rate) × Actual Hours\n      * Labor Rate Variance = ($25.50/hour - $25.00/hour) × 9,800 hours\n      * Labor Rate Variance = $0.50/hour × 9,800 hours = $4,900\n      * Since the actual rate is higher than the standard rate, the variance is Unfavorable.\n\n   * **Step 3: Calculate Direct Labor Efficiency Variance**\n      * Labor Efficiency Variance = (Actual Hours - Standard Hours Allowed) × Standard Rate\n      * Labor Efficiency Variance = (9,800 hours - 10,000 hours) × $25.00/hour\n      * Labor Efficiency Variance = -200 hours × $25.00/hour = -$5,000\n      * Since the actual hours are less than the standard hours allowed, the variance is Favorable.\n\n4. **Answer:**\n   * Direct Labor Rate Variance: $4,900 Unfavorable\n   * Direct Labor Efficiency Variance: $5,000 Favorable",
+          "keyFormula": "Direct Labor Rate Variance = (Actual Rate - Standard Rate) × Actual Hours\nDirect Labor Efficiency Variance = (Actual Hours - Standard Hours Allowed) × Standard Rate",
+          "commonMistakes": [
+            "Forgetting to calculate the Standard Hours Allowed (SH) before calculating the efficiency variance. Always calculate SH first.",
+            "Incorrectly labeling the variances as favorable or unfavorable. Remember, if actual cost/hours are *higher* than standard, it's *unfavorable*; if actual is *lower* than standard, it's *favorable*.",
+            "Using the actual units produced in the rate variance calculation. The rate variance uses actual hours, not standard hours."
+          ],
+          "examTip": "Double-check whether the problem asks for the total variance amount or the variance per unit. Pay close attention to the units specified in the question."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the Variable Overhead Spending Variance and Variable Overhead Efficiency Variance.",
+          "hints": [
+            "Variable OH efficiency uses same hours as labor efficiency"
+          ],
+          "solution": {
+            "approach": "VOH Spending = Actual - (AH × SR); VOH Efficiency = (AH - SH) × SR",
+            "calculations": "**VOH Spending Variance:**\n= Actual VOH - (Actual Hours × Standard VOH Rate)\n= $60,200 - (9,800 hours × $6.00)\n= $60,200 - $58,800 = $1,400 Unfavorable\n\n**VOH Efficiency Variance:**\n= (Actual Hours - Standard Hours) × Standard VOH Rate\n= (9,800 - 10,000) × $6.00\n= -200 × $6.00 = $1,200 Favorable",
+            "answer": {
+              "spendingVariance": -1400,
+              "efficiencyVariance": 1200
+            },
+            "explanation": "Spending variance is unfavorable due to higher actual VOH costs. Efficiency variance is favorable due to labor efficiency."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Variable Overhead Spending and Efficiency Variances:\n\n1. **Given Information:**\n   *   Actual Variable Overhead Cost: $60,200\n   *   Actual Direct Labor Hours: 9,800 hours\n   *   Standard Variable Overhead Rate: $6.00 per direct labor hour (Calculated as $30/5 DLH from Exhibit 1)\n   *   Standard Direct Labor Hours: 5 DLH per unit\n   *   Actual Production: 5,000 units\n\n2. **Formula:**\n   *   Variable Overhead Spending Variance = Actual Variable Overhead - (Actual Direct Labor Hours × Standard Variable Overhead Rate)\n   *   Variable Overhead Efficiency Variance = (Actual Direct Labor Hours - Standard Direct Labor Hours) × Standard Variable Overhead Rate\n\n3. **Calculation:**\n   *   **VOH Spending Variance:**\n        *   Standard VOH Rate = $30 / 5 DLH = $6.00 per DLH\n        *   (Actual Hours × Standard VOH Rate) = 9,800 hours × $6.00/hour = $58,800\n        *   VOH Spending Variance = $60,200 - $58,800 = $1,400\n        *   Since the actual VOH cost is higher than what was expected for the actual hours worked, the variance is Unfavorable.\n   *   **VOH Efficiency Variance:**\n        *   Standard Hours = 5,000 units × 5 hours/unit = 25,000 DLH / 2.5 = 10,000 DLH\n        *   (Actual Hours - Standard Hours) = (9,800 hours - 10,000 hours) = -200 hours\n        *   VOH Efficiency Variance = -200 hours × $6.00/hour = -$1,200 or $1,200 Favorable\n        *   Since fewer hours were used than standard, the variance is Favorable.\n\n4. **Answer:**\n   *   Variable Overhead Spending Variance: $1,400 Unfavorable\n   *   Variable Overhead Efficiency Variance: $1,200 Favorable",
+          "keyFormula": "VOH Spending Variance = Actual VOH - (Actual Hours × Standard VOH Rate)\nVOH Efficiency Variance = (Actual Hours - Standard Hours) × Standard VOH Rate",
+          "commonMistakes": [
+            "Using the total standard cost instead of isolating the variable overhead rate per direct labor hour. Remember to extract the VOH rate from the standard cost card.",
+            "Incorrectly calculating the standard hours. Standard hours should be based on actual production at the standard rate (5,000 units * 5 hours/unit = 25,000 DLH / 2.5 = 10,000 DLH).",
+            "Forgetting to label the variances as favorable or unfavorable. A higher actual cost than expected results in an unfavorable variance, while a lower actual cost results in a favorable variance. Similarly, using more hours than standard is unfavorable, and using fewer is favorable."
+          ],
+          "examTip": "Always double-check the units of measure (e.g., per unit, per hour) when calculating variances. A mismatch in units can lead to significant errors. Also, clearly label each variance as favorable (F) or unfavorable (U) to avoid confusion."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Calculate the Fixed Overhead Spending Variance and Fixed Overhead Volume Variance.",
+          "hints": [
+            "Volume variance relates to capacity utilization"
+          ],
+          "solution": {
+            "approach": "FOH Spending = Actual - Budgeted; FOH Volume = Budgeted - Applied",
+            "calculations": "Budgeted FOH = $120,000 (given)\nApplied FOH = Standard Hours Allowed × FOH Rate = 10,000 hours × $10 = $100,000\n\n**FOH Spending Variance:**\n= Actual FOH - Budgeted FOH\n= $122,000 - $120,000 = $2,000 Unfavorable\n\n**FOH Volume Variance:**\n= Budgeted FOH - Applied FOH\n= $120,000 - $100,000 = $20,000 Unfavorable",
+            "answer": {
+              "spendingVariance": -2000,
+              "volumeVariance": -20000
+            },
+            "explanation": "Spending variance is unfavorable due to higher actual FOH. Volume variance is unfavorable because production was below budgeted capacity (5,000 vs 6,000 units), meaning fixed costs were under-absorbed."
+          },
+          "points": 20,
+          "enhanced": false
+        },
+        {
+          "id": "t5",
+          "taskNumber": 5,
+          "requirement": "Calculate the total variance from standard cost for October and explain the primary drivers of the variance.",
+          "solution": {
+            "approach": "Sum all variances; identify largest unfavorable variances",
+            "calculations": "**Summary of All Variances:**\nMaterials Price Variance: $4,000 U\nMaterials Quantity Variance: $1,600 U\nLabor Rate Variance: $4,900 U\nLabor Efficiency Variance: $5,000 F\nVOH Spending Variance: $1,400 U\nVOH Efficiency Variance: $1,200 F\nFOH Spending Variance: $2,000 U\nFOH Volume Variance: $20,000 U\n\n**Total Unfavorable Variances:** $32,900\n**Total Favorable Variances:** $6,200\n**Net Variance:** $26,700 Unfavorable",
+            "answer": 26700,
+            "explanation": "The primary driver is the Fixed Overhead Volume Variance ($20,000 U) caused by producing only 5,000 units vs. budgeted 6,000 units. This underutilization of capacity means fixed costs are spread over fewer units. Secondary drivers include material price increases and higher labor rates."
+          },
+          "points": 20,
+          "enhanced": false
+        }
+      ],
+      "skills": [
+        "Variance calculation",
+        "Cost analysis",
+        "Performance evaluation"
+      ],
+      "relatedConcepts": [
+        "Standard costing",
+        "Flexible budgets",
+        "Capacity utilization"
+      ]
+    },
+    {
+      "id": "cma1-sim-002",
+      "section": "CMA1",
+      "title": "Cash Budget Preparation",
+      "blueprintArea": "CMA1-B",
+      "topic": "Cash Budgeting",
+      "difficulty": "hard",
+      "estimatedTime": 20,
+      "scenario": "Coastal Retailers is preparing its cash budget for Q2 (April, May, June). The company's controller has gathered the following information and needs your help completing the cash budget.\n\nSales for March (actual) and Q2 projections are provided in Exhibit 1. Collection patterns and cash payment policies are detailed in Exhibit 2.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Sales Data",
+          "type": "table",
+          "data": "| Month | Projected Sales |\n|-------|-----------------|\n| March (actual) | $200,000 |\n| April | $180,000 |\n| May | $220,000 |\n| June | $250,000 |\n| July | $230,000 |\n\nBeginning Cash Balance (April 1): $25,000\nMinimum Required Cash Balance: $20,000"
+        },
+        {
+          "id": "ex2",
+          "title": "Collection and Payment Policies",
+          "type": "text",
+          "data": "**Collections:**\n- 60% of sales collected in month of sale\n- 35% collected in month after sale\n- 5% uncollectible\n\n**Purchases:**\n- Cost of goods sold is 65% of sales\n- Inventory purchased one month before sale\n- All purchases paid in month after purchase\n\n**Other Monthly Expenses:**\n- Salaries and wages: $30,000 (paid in month incurred)\n- Rent: $10,000 (paid in month incurred)\n- Other expenses: $5,000 (paid in month incurred)\n- Depreciation: $8,000\n- Equipment purchase in May: $50,000 (cash payment)\n- Loan payment in June: $15,000 (principal only)"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate monthly cash collections for April, May, and June.",
+          "hints": [
+            "April collections include March sales (35%)",
+            "Collections = 60% current month + 35% prior month"
+          ],
+          "solution": {
+            "approach": "Apply collection percentages to sales each month",
+            "calculations": "**April Collections:**\nFrom March sales (35%): $200,000 × 35% = $70,000\nFrom April sales (60%): $180,000 × 60% = $108,000\n**Total April Collections: $178,000**\n\n**May Collections:**\nFrom April sales (35%): $180,000 × 35% = $63,000\nFrom May sales (60%): $220,000 × 60% = $132,000\n**Total May Collections: $195,000**\n\n**June Collections:**\nFrom May sales (35%): $220,000 × 35% = $77,000\nFrom June sales (60%): $250,000 × 60% = $150,000\n**Total June Collections: $227,000**",
+            "answer": {
+              "april": 178000,
+              "may": 195000,
+              "june": 227000
+            },
+            "explanation": "Each month collects 60% of current sales plus 35% of prior month sales. 5% is uncollectible."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the monthly cash collections for Coastal Retailers:\n\n1. **Given Information:**\n   *   March Sales: $200,000\n   *   April Sales: $180,000\n   *   May Sales: $220,000\n   *   June Sales: $250,000\n   *   Collection Pattern: 60% of current month's sales, 35% of prior month's sales, 5% uncollectible (not used in this calculation)\n\n2. **Formula:**\n   *   Monthly Cash Collections = (Current Month Sales × 60%) + (Prior Month Sales × 35%)\n\n3. **Calculation:**\n   *   **April Collections:**\n        *   From March Sales: $200,000 × 35% = $70,000\n        *   From April Sales: $180,000 × 60% = $108,000\n        *   Total April Collections: $70,000 + $108,000 = $178,000\n   *   **May Collections:**\n        *   From April Sales: $180,000 × 35% = $63,000\n        *   From May Sales: $220,000 × 60% = $132,000\n        *   Total May Collections: $63,000 + $132,000 = $195,000\n   *   **June Collections:**\n        *   From May Sales: $220,000 × 35% = $77,000\n        *   From June Sales: $250,000 × 60% = $150,000\n        *   Total June Collections: $77,000 + $150,000 = $227,000\n\n4. **Answer:**\n   *   April Collections: $178,000\n   *   May Collections: $195,000\n   *   June Collections: $227,000",
+          "keyFormula": "Monthly Cash Collections = (Current Month Sales × Current Month Collection Percentage) + (Prior Month Sales × Prior Month Collection Percentage)",
+          "commonMistakes": [
+            "Forgetting to include the prior month's sales in the current month's collections.",
+            "Incorrectly applying the percentages to the wrong month's sales figures.",
+            "Including the uncollectible percentage in the calculation when it's not needed for this specific task (it would be used to calculate bad debt expense, not cash collections)."
+          ],
+          "examTip": "Create a simple table with months across the top and collection percentages down the side to organize your calculations and avoid mixing up the sales and collection percentages. Double-check that you are using the correct month's sales for each percentage."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate monthly cash payments for inventory purchases for April, May, and June.",
+          "hints": [
+            "Purchases made one month before sale",
+            "Paid one month after purchase (so 2 months before sale)"
+          ],
+          "solution": {
+            "approach": "COGS = 65% of sales; Purchases in month before sale; Paid month after purchase",
+            "calculations": "**Purchases Schedule:**\nApril purchases (for May sales): $220,000 × 65% = $143,000\nMay purchases (for June sales): $250,000 × 65% = $162,500\nJune purchases (for July sales): $230,000 × 65% = $149,500\n\n**Cash Payments for Purchases (paid month after purchase):**\nApril payment (March purchases for April sales): $180,000 × 65% = $117,000\nMay payment (April purchases): $143,000\nJune payment (May purchases): $162,500\n\n**Note:** March purchases were for April sales at $180,000 × 65%",
+            "answer": {
+              "april": 117000,
+              "may": 143000,
+              "june": 162500
+            },
+            "explanation": "Purchases are made in the month before the sale, but paid in the month after purchase. So April payments = March purchases = April COGS."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   March Sales (Actual): $180,000\n   *   April Sales (Projected): $200,000\n   *   May Sales (Projected): $220,000\n   *   June Sales (Projected): $250,000\n   *   July Sales (Projected): $230,000\n   *   Cost of Goods Sold (COGS): 65% of Sales\n   *   Purchases are made one month before the sale.\n   *   Payments for purchases are made one month after the purchase (two months before the sale).\n\n2. **Formula:**\n   *   COGS = Sales * COGS Percentage\n   *   Purchases = Following Month's Sales * COGS Percentage\n   *   Cash Payment = Previous Month's Purchases\n\n3. **Calculation:**\n   *   **April Payment:**\n        *   March Purchases (for April sales) = March Sales * COGS Percentage = $180,000 * 65% = $117,000\n        *   April Payment = $117,000\n   *   **May Payment:**\n        *   April Purchases (for May sales) = April Sales * COGS Percentage = $220,000 * 65% = $143,000\n        *   May Payment = $143,000\n   *   **June Payment:**\n        *   May Purchases (for June sales) = May Sales * COGS Percentage = $250,000 * 65% = $162,500\n        *   June Payment = $162,500\n\n4. **Answer:**\n   *   April Payment: $117,000\n   *   May Payment: $143,000\n   *   June Payment: $162,500",
+          "keyFormula": "Cash Payment = (Sales of Month + 1) * COGS Percentage, paid in the following month.",
+          "commonMistakes": [
+            "Confusing the timing of purchases and payments. Remember purchases are made one month *before* the sale, and payments are made one month *after* the purchase.",
+            "Using the current month's sales to calculate the current month's purchases. Purchases are based on the *next* month's sales.",
+            "Forgetting to multiply the sales by the COGS percentage to arrive at the purchase amount."
+          ],
+          "examTip": "Draw a timeline to visualize the relationship between sales, purchases, and payments. This will help you avoid timing errors. For example: March Purchases -> April Sales -> May Payment."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Prepare the complete cash budget for April, May, and June, including any required borrowing.",
+          "hints": [
+            "Depreciation is not a cash outflow",
+            "Borrow if cash falls below minimum"
+          ],
+          "solution": {
+            "approach": "Track beginning cash, add collections, subtract all cash payments, check minimum balance",
+            "calculations": "**CASH BUDGET**\n\n                              | April    | May      | June     |\n|----------------------------|----------|----------|----------|\n| Beginning Cash             | $25,000  | $41,000  | $20,000  |\n| Add: Collections           | 178,000  | 195,000  | 227,000  |\n| **Total Cash Available**   | **203,000** | **236,000** | **247,000** |\n|                            |          |          |          |\n| Less: Disbursements        |          |          |          |\n| Inventory Purchases        | 117,000  | 143,000  | 162,500  |\n| Salaries and Wages         | 30,000   | 30,000   | 30,000   |\n| Rent                       | 10,000   | 10,000   | 10,000   |\n| Other Expenses             | 5,000    | 5,000    | 5,000    |\n| Equipment Purchase         | -        | 50,000   | -        |\n| Loan Payment               | -        | -        | 15,000   |\n| **Total Disbursements**    | **162,000** | **238,000** | **222,500** |\n|                            |          |          |          |\n| **Cash Excess/(Deficit)**  | 41,000   | (2,000)  | 24,500   |\n|                            |          |          |          |\n| Borrowing Required         | -        | 22,000   | -        |\n| (to maintain $20,000 min)  |          |          |          |\n|                            |          |          |          |\n| Ending Cash Balance        | $41,000  | $20,000  | $24,500  |\n\n*Note: Depreciation ($8,000/month) is excluded as it's not a cash flow.*",
+            "answer": {
+              "aprilEnding": 41000,
+              "mayBorrowing": 22000,
+              "juneEnding": 24500
+            },
+            "explanation": "April ends with $41,000 excess. May shows a $2,000 deficit after the large equipment purchase, requiring $22,000 borrowing to maintain the $20,000 minimum. June has a comfortable surplus of $24,500 with no borrowing needed."
+          },
+          "points": 50,
+          "enhanced": false
+        }
+      ],
+      "skills": [
+        "Cash budgeting",
+        "Collection patterns",
+        "Payment schedules"
+      ],
+      "relatedConcepts": [
+        "Working capital management",
+        "Liquidity planning",
+        "Short-term financing"
+      ]
+    },
+    {
+      "id": "cma1-sim-003",
+      "section": "CMA1",
+      "title": "Process Costing - Weighted Average",
+      "blueprintArea": "CMA1-D",
+      "topic": "Equivalent Units and Cost Assignment",
+      "difficulty": "hard",
+      "estimatedTime": 25,
+      "scenario": "Chemical Solutions Inc. uses process costing for its mixing department. Materials are added at the beginning of the process, while conversion costs are incurred uniformly throughout. You have been asked to compute equivalent units and assign costs using the weighted average method.\n\nProduction data for November is provided in Exhibit 1.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Production Data - November",
+          "type": "table",
+          "data": "| Item | Units | % Complete |\n|------|-------|------------|\n| Beginning WIP (Nov 1) | 8,000 | 40% conversion |\n| Started during November | 42,000 | |\n| Completed and transferred | 38,000 | 100% |\n| Ending WIP (Nov 30) | 12,000 | 60% conversion |\n\n**Cost Data:**\n| Cost Category | Beginning WIP | Costs Added in Nov |\n|--------------|---------------|-------------------|\n| Materials | $24,000 | $126,000 |\n| Conversion | $15,200 | $110,800 |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Verify the units to account for and the units accounted for (physical unit reconciliation).",
+          "solution": {
+            "approach": "Units to account = Beginning + Started; Units accounted = Completed + Ending",
+            "calculations": "**Units to Account For:**\nBeginning WIP: 8,000\nUnits Started: 42,000\n**Total: 50,000 units**\n\n**Units Accounted For:**\nCompleted and Transferred: 38,000\nEnding WIP: 12,000\n**Total: 50,000 units** ✓",
+            "answer": {
+              "unitsToAccount": 50000,
+              "unitsAccountedFor": 50000
+            },
+            "explanation": "Physical units must balance. Beginning + Started = Completed + Ending."
+          },
+          "points": 10,
+          "enhanced": true,
+          "stepByStep": "Here's how to reconcile the physical units using the weighted-average method in process costing:\n\n1. **Given Information:**\n   * Beginning Work-in-Process (WIP): 8,000 units\n   * Units Started during November: 42,000 units\n   * Units Completed and Transferred Out: 38,000 units\n   * Ending Work-in-Process (WIP): 12,000 units\n\n2. **Formula:**\n   * Units to Account For = Beginning WIP + Units Started\n   * Units Accounted For = Units Completed and Transferred + Ending WIP\n\n3. **Calculation:**\n   * **Units to Account For:**\n      * Beginning WIP: 8,000 units\n      * Units Started: 42,000 units\n      * Total Units to Account For: 8,000 + 42,000 = 50,000 units\n   * **Units Accounted For:**\n      * Units Completed and Transferred: 38,000 units\n      * Ending WIP: 12,000 units\n      * Total Units Accounted For: 38,000 + 12,000 = 50,000 units\n\n4. **Answer:**\n   * Units to Account For: 50,000 units\n   * Units Accounted For: 50,000 units\n   * The physical units are reconciled because Units to Account For equals Units Accounted For.",
+          "keyFormula": "Units to Account For = Beginning WIP + Units Started; Units Accounted For = Units Completed and Transferred + Ending WIP",
+          "commonMistakes": [
+            "Forgetting to include the beginning WIP units in the 'Units to Account For' calculation.",
+            "Incorrectly adding the units completed and transferred to the ending WIP when calculating 'Units Accounted For'.",
+            "Not double-checking that the 'Units to Account For' and 'Units Accounted For' are equal, leading to errors in subsequent calculations."
+          ],
+          "examTip": "Always perform the physical unit reconciliation first. If this step is incorrect, all subsequent calculations will be flawed. A quick check is to ensure the total units to account for equals the total units accounted for before moving on."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate equivalent units for materials and conversion costs using the weighted average method.",
+          "hints": [
+            "Materials added at beginning = 100% complete",
+            "Weighted average ignores beginning WIP completion"
+          ],
+          "solution": {
+            "approach": "EU = Units completed + (Ending WIP × % complete)",
+            "calculations": "**Equivalent Units - Materials:**\nCompleted and transferred: 38,000 × 100% = 38,000\nEnding WIP: 12,000 × 100% = 12,000 (materials added at beginning)\n**Total EU - Materials: 50,000**\n\n**Equivalent Units - Conversion:**\nCompleted and transferred: 38,000 × 100% = 38,000\nEnding WIP: 12,000 × 60% = 7,200\n**Total EU - Conversion: 45,200**",
+            "answer": {
+              "materialsEU": 50000,
+              "conversionEU": 45200
+            },
+            "explanation": "Under weighted average, we include all units in equivalent unit calculation regardless of when work was done."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the equivalent units for materials and conversion costs using the weighted average method:\n\n1. **Given Information:**\n   * Units completed and transferred: 38,000\n   * Ending Work-in-Process (WIP): 12,000 units\n   * Materials are added at the beginning of the process (100% complete for ending WIP).\n   * Conversion costs are incurred uniformly throughout the process (60% complete for ending WIP).\n\n2. **Formula:**\n   * Equivalent Units (Weighted Average) = Units Completed and Transferred + (Ending WIP Units × Percentage Complete)\n\n3. **Calculation:**\n   * **Materials Equivalent Units:**\n      * Completed and transferred: 38,000 units × 100% = 38,000 equivalent units\n      * Ending WIP: 12,000 units × 100% = 12,000 equivalent units\n      * Total Equivalent Units for Materials: 38,000 + 12,000 = 50,000 equivalent units\n\n   * **Conversion Costs Equivalent Units:**\n      * Completed and transferred: 38,000 units × 100% = 38,000 equivalent units\n      * Ending WIP: 12,000 units × 60% = 7,200 equivalent units\n      * Total Equivalent Units for Conversion Costs: 38,000 + 7,200 = 45,200 equivalent units\n\n4. **Answer:**\n   * Equivalent Units for Materials: 50,000\n   * Equivalent Units for Conversion Costs: 45,200",
+          "keyFormula": "Equivalent Units (Weighted Average) = Units Completed and Transferred + (Ending WIP Units × Percentage Complete)",
+          "commonMistakes": [
+            "Forgetting to multiply the ending WIP units by the percentage complete for conversion costs. Candidates often use 100% instead of the given percentage.",
+            "Incorrectly including beginning WIP in the equivalent unit calculation. Weighted average method ignores the degree of completion of beginning WIP.",
+            "Confusing the treatment of materials and conversion costs. Materials added at the beginning are 100% complete, while conversion costs are incurred evenly."
+          ],
+          "examTip": "Always double-check the stage of completion for ending WIP, especially for conversion costs. A quick sketch of the production process can help visualize the flow and completion stages."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the cost per equivalent unit for materials and conversion costs.",
+          "hints": [
+            "Weighted average includes beginning WIP costs"
+          ],
+          "solution": {
+            "approach": "Cost per EU = (Beginning WIP cost + Current period cost) / Total EU",
+            "calculations": "**Materials Cost per EU:**\nTotal Materials Cost = $24,000 + $126,000 = $150,000\nEU - Materials = 50,000\n**Cost per EU = $150,000 / 50,000 = $3.00**\n\n**Conversion Cost per EU:**\nTotal Conversion Cost = $15,200 + $110,800 = $126,000\nEU - Conversion = 45,200\n**Cost per EU = $126,000 / 45,200 = $2.787611... ≈ $2.79**",
+            "answer": {
+              "materialsCostPerEU": 3,
+              "conversionCostPerEU": 2.79
+            },
+            "explanation": "Weighted average combines beginning WIP costs with current costs for the cost per EU calculation."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost per equivalent unit for materials and conversion costs using the weighted average method:\n\n1. **Given Information:**\n   *   Beginning WIP Materials Cost: $24,000\n   *   Current Period Materials Cost: $126,000\n   *   Equivalent Units - Materials: 50,000\n   *   Beginning WIP Conversion Cost: $15,200\n   *   Current Period Conversion Cost: $110,800\n   *   Equivalent Units - Conversion: 45,200\n\n2. **Formula:**\n   *   Cost per Equivalent Unit = (Beginning WIP Cost + Current Period Cost) / Total Equivalent Units\n\n3. **Calculation:**\n   *   **Materials Cost per Equivalent Unit:**\n        *   Total Materials Cost = Beginning WIP Materials Cost + Current Period Materials Cost = $24,000 + $126,000 = $150,000\n        *   Cost per Equivalent Unit (Materials) = Total Materials Cost / Equivalent Units (Materials) = $150,000 / 50,000 = $3.00\n   *   **Conversion Cost per Equivalent Unit:**\n        *   Total Conversion Cost = Beginning WIP Conversion Cost + Current Period Conversion Cost = $15,200 + $110,800 = $126,000\n        *   Cost per Equivalent Unit (Conversion) = Total Conversion Cost / Equivalent Units (Conversion) = $126,000 / 45,200 = $2.787611... ≈ $2.79\n\n4. **Answer:**\n   *   Materials Cost per Equivalent Unit: $3.00\n   *   Conversion Cost per Equivalent Unit: $2.79",
+          "keyFormula": "Cost per Equivalent Unit = (Beginning WIP Cost + Current Period Cost) / Total Equivalent Units",
+          "commonMistakes": [
+            "Forgetting to include the beginning work-in-process (WIP) costs in the numerator. The weighted average method *always* combines beginning WIP costs with current period costs.",
+            "Using the FIFO method formula instead of the weighted average formula, which would exclude beginning WIP costs from the numerator.",
+            "Incorrectly calculating the total equivalent units. Make sure you are using the equivalent units provided in the problem for the weighted average calculation, not just the units completed.",
+            "Rounding errors. Carry calculations to several decimal places and only round the final answer to the required precision."
+          ],
+          "examTip": "Double-check that you're using the correct equivalent unit figures for each cost component (materials and conversion). They are often different, and using the wrong EU figure will lead to an incorrect cost per EU."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Assign costs to: (a) Units completed and transferred, and (b) Ending WIP inventory.",
+          "solution": {
+            "approach": "Multiply EU × Cost per EU for each category",
+            "calculations": "**Cost of Units Completed and Transferred:**\nMaterials: 38,000 × $3.00 = $114,000\nConversion: 38,000 × $2.79 = $106,020\n**Total Cost Transferred: $220,020**\n\n**Cost of Ending WIP:**\nMaterials: 12,000 × $3.00 = $36,000\nConversion: 7,200 × $2.79 = $20,088\n**Total Ending WIP: $56,088**\n\n**Verification:**\nTotal Cost Transferred + Ending WIP = $220,020 + $56,088 = $276,108\n(Should equal total costs of $150,000 + $126,000 = $276,000)\n*Difference of $108 is due to rounding in cost per EU*",
+            "answer": {
+              "transferred": 220020,
+              "endingWIP": 56088
+            },
+            "explanation": "Completed units receive full cost per EU for both materials and conversion. Ending WIP receives partial conversion based on completion."
+          },
+          "points": 40,
+          "enhanced": true,
+          "stepByStep": "Here's how to assign costs to units completed and transferred, and ending work-in-process (WIP) inventory using the weighted-average method:\n\n1. **Given Information:**\n   *   Equivalent Units (EU) - Completed and Transferred: 38,000 units\n   *   Equivalent Units (EU) - Ending WIP Materials: 12,000 units\n   *   Equivalent Units (EU) - Ending WIP Conversion: 7,200 units\n   *   Cost per EU - Materials: $3.00\n   *   Cost per EU - Conversion: $2.79\n\n2. **Formula:**\n   *   Cost of Units Completed and Transferred = Equivalent Units × Cost per Equivalent Unit\n   *   Cost of Ending WIP Inventory = Equivalent Units × Cost per Equivalent Unit\n\n3. **Calculation:**\n   *   **Cost of Units Completed and Transferred:**\n        *   Materials: 38,000 units × $3.00/unit = $114,000\n        *   Conversion: 38,000 units × $2.79/unit = $106,020\n        *   Total Cost Transferred: $114,000 + $106,020 = $220,020\n\n   *   **Cost of Ending WIP Inventory:**\n        *   Materials: 12,000 units × $3.00/unit = $36,000\n        *   Conversion: 7,200 units × $2.79/unit = $20,088\n        *   Total Ending WIP: $36,000 + $20,088 = $56,088\n\n4. **Answer:**\n   *   Cost of Units Completed and Transferred: $220,020\n   *   Cost of Ending WIP Inventory: $56,088",
+          "keyFormula": "Cost Assignment = Equivalent Units × Cost per Equivalent Unit",
+          "commonMistakes": [
+            "Failing to use the correct equivalent units for materials and conversion costs when calculating the cost of ending WIP inventory. Remember materials are often 100% complete, while conversion is only partially complete.",
+            "Using the FIFO method instead of the weighted-average method. The weighted-average method combines beginning inventory costs with current period costs, while FIFO separates them.",
+            "Forgetting to multiply the equivalent units by the *cost per equivalent unit*, instead just using the total costs. This will result in an incorrect cost assignment.",
+            "Not double-checking that the sum of the cost of units transferred and the cost of ending WIP equals the total costs to account for. This is a good way to catch calculation errors."
+          ],
+          "examTip": "On the exam, quickly sketch out a process costing flow diagram (Beginning WIP -> Started -> Completed & Transferred -> Ending WIP) to visualize the flow of units and costs. This can help prevent errors in assigning costs to the correct categories."
+        }
+      ],
+      "skills": [
+        "Process costing",
+        "Equivalent units",
+        "Cost allocation"
+      ],
+      "relatedConcepts": [
+        "Weighted average method",
+        "FIFO method",
+        "Manufacturing cost flows"
+      ]
+    },
+    {
+      "id": "cma1-sim-004",
+      "section": "CMA1",
+      "title": "Transfer Pricing Decision",
+      "blueprintArea": "CMA1-E",
+      "topic": "Internal Transfers and Decision Making",
+      "difficulty": "hard",
+      "estimatedTime": 20,
+      "scenario": "Multi-Div Corp has two divisions: Components Division (CD) and Assembly Division (AD). The Components Division makes a part that can be sold externally or transferred to Assembly Division.\n\nYou have been asked to analyze the optimal transfer pricing and determine whether internal transfers should occur.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Components Division Data",
+          "type": "table",
+          "data": "| Item | Amount |\n|------|--------|\n| Variable manufacturing cost per unit | $45 |\n| Fixed manufacturing cost per unit | $20 |\n| External selling price | $80 |\n| Current external demand | 8,000 units |\n| Maximum production capacity | 10,000 units |\n| Selling expenses (external sales only) | $5 per unit |"
+        },
+        {
+          "id": "ex2",
+          "title": "Assembly Division Data",
+          "type": "table",
+          "data": "| Item | Amount |\n|------|--------|\n| Units needed | 3,000 |\n| Current external supplier price | $75 |\n| Additional processing cost per unit | $30 |\n| Final product selling price | $150 |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the minimum transfer price that the Components Division should accept.",
+          "hints": [
+            "Minimum = Opportunity cost + Variable cost",
+            "Consider capacity utilization"
+          ],
+          "solution": {
+            "approach": "Determine if excess capacity exists, then calculate floor price",
+            "calculations": "**Capacity Analysis:**\nMaximum capacity: 10,000 units\nExternal demand: 8,000 units\nExcess capacity: 2,000 units\nInternal request: 3,000 units\n\nFor first 2,000 units (excess capacity):\nMinimum price = Variable cost = $45\nNo opportunity cost (no lost external sales)\nSavings on selling expense = $5\n\nFor remaining 1,000 units (displaces external sales):\nMinimum price = Variable cost + Opportunity cost\n= $45 + ($80 - $5 - $45) = $45 + $30 = $75\n\n**Weighted Minimum:**\n(2,000 × $45 + 1,000 × $75) / 3,000 = $55 per unit overall",
+            "answer": {
+              "excessCapacity": 45,
+              "fullCapacity": 75,
+              "weighted": 55
+            },
+            "explanation": "The minimum varies based on capacity. For excess capacity, only variable cost matters. When displacing external sales, the contribution margin lost becomes opportunity cost."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   * Components Division (CD) maximum capacity: 10,000 units\n   * External demand for CD's part: 8,000 units\n   * Assembly Division (AD) internal request: 3,000 units\n   * CD's variable cost per unit: $45\n   * CD's external selling price per unit: $80\n   * CD's selling expense per unit: $5\n\n2. **Formula:**\n   * Minimum Transfer Price = Variable Cost + Opportunity Cost\n   * Opportunity Cost = External Selling Price - Variable Cost - Avoidable Costs (e.g., Selling Expenses)\n   * Weighted Average Minimum Transfer Price = (Units with Excess Capacity * Minimum Price with Excess Capacity + Units Displacing External Sales * Minimum Price Displacing External Sales) / Total Units Transferred\n\n3. **Calculation:**\n   * **Capacity Analysis:**\n      * Excess Capacity = Maximum Capacity - External Demand = 10,000 units - 8,000 units = 2,000 units\n      * Internal request exceeds excess capacity, so some external sales will be displaced.\n\n   * **Minimum Transfer Price with Excess Capacity (First 2,000 units):**\n      * Opportunity Cost = $0 (no lost external sales)\n      * Minimum Price = Variable Cost + Opportunity Cost = $45 + $0 = $45\n      * Savings on selling expense = $5 (This is a reduction in cost, not part of the minimum transfer price calculation. It affects the overall profitability of the transfer, but not the floor price for the Components Division.)\n\n   * **Minimum Transfer Price Displacing External Sales (Remaining 1,000 units):**\n      * Opportunity Cost = External Selling Price - Variable Cost - Selling Expense = $80 - $45 - $5 = $30\n      * Minimum Price = Variable Cost + Opportunity Cost = $45 + $30 = $75\n\n   * **Weighted Average Minimum Transfer Price:**\n      * Total Minimum Transfer Price = (2,000 units * $45) + (1,000 units * $75) = $90,000 + $75,000 = $165,000\n      * Weighted Average Minimum Transfer Price = $165,000 / 3,000 units = $55 per unit\n\n4. **Answer:**\n   * Minimum transfer price for excess capacity units: $45\n   * Minimum transfer price for units displacing external sales: $75\n   * Weighted average minimum transfer price: $55",
+          "keyFormula": "Minimum Transfer Price = Variable Cost + Opportunity Cost",
+          "commonMistakes": [
+            "Forgetting to consider opportunity cost when the Components Division is operating at full capacity and internal transfers would displace external sales.",
+            "Incorrectly calculating opportunity cost by not subtracting all avoidable costs (like selling expenses) from the external selling price.",
+            "Failing to perform a weighted average calculation when some of the internal demand can be met with excess capacity and some requires displacing external sales.",
+            "Including the savings on selling expenses in the minimum transfer price calculation. The savings are relevant for overall profitability analysis, but not for determining the floor price for the selling division."
+          ],
+          "examTip": "Quickly assess capacity utilization. If there's ample excess capacity, the minimum transfer price is simply the variable cost. If not, carefully calculate the opportunity cost of lost external sales. Remember to subtract all avoidable costs from the external selling price when calculating opportunity cost."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the maximum transfer price Assembly Division should pay.",
+          "solution": {
+            "approach": "Maximum = Cost of next best alternative",
+            "calculations": "Maximum TP = External supplier price = **$75**\n\nThis is the price AD can obtain the part elsewhere.",
+            "answer": 75,
+            "explanation": "Assembly Division will not pay more than the external market price of $75."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   Assembly Division (AD) can purchase the part from an external supplier for $75.\n\n2. **Formula:**\n   *   Maximum Transfer Price = Cost of next best alternative\n\n3. **Calculation:**\n   *   The Assembly Division's next best alternative is purchasing the part from an external supplier.\n   *   External supplier price = $75\n   *   Therefore, Maximum Transfer Price = $75\n\n4. **Answer:**\n   *   The maximum transfer price Assembly Division should pay is $75.",
+          "keyFormula": "Maximum Transfer Price = Cost of next best alternative",
+          "commonMistakes": [
+            "Confusing the maximum transfer price with the minimum transfer price. The maximum price is what the buying division (Assembly Division) is willing to pay, based on their outside alternatives.",
+            "Assuming the Assembly Division *must* buy internally, even if it's more expensive. Remember, the goal is to optimize the company's overall profit, and forcing an internal transfer at a higher price than the external market price can hurt overall profitability."
+          ],
+          "examTip": "Always consider the buying division's perspective when determining the maximum transfer price. What are their options if they don't buy internally? The price of the next best alternative is the maximum they'll be willing to pay."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Recommend a transfer price range and the optimal quantity to transfer internally.",
+          "solution": {
+            "approach": "Find overlap between min and max; optimize company profit",
+            "calculations": "**Transfer Price Range:**\nMinimum (seller): $45 - $75 depending on capacity\nMaximum (buyer): $75\n\n**Negotiation Range:** $45 to $75 for excess capacity units\n**No Range:** For units displacing external sales, min = max = $75\n\n**Optimal Transfer:**\nTransfer all 3,000 units internally at any price between $55 and $75\n\n**Company Benefit:**\n2,000 units: Save $75 - $45 = $30 per unit = $60,000\n1,000 units: Neutral (CD loses $30 CM, AD saves $0)\n**Net company benefit: $60,000**",
+            "answer": {
+              "minPrice": 45,
+              "maxPrice": 75,
+              "optimalQty": 3000
+            },
+            "explanation": "Internal transfer benefits the company by $60,000 for the excess capacity portion. The 1,000 units from lost sales are neutral."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's how to determine the optimal transfer price range and quantity:\n\n1. **Given Information:**\n   *   Components Division (CD) variable cost: $45 per unit\n   *   Components Division (CD) external sales price: $75 per unit\n   *   Components Division (CD) capacity: 5,000 units\n   *   Components Division (CD) external sales: 2,000 units\n   *   Assembly Division (AD) external purchase price: $75 per unit\n   *   Assembly Division (AD) needs: 3,000 units\n\n2. **Transfer Price Range:**\n   *   The minimum transfer price is the Components Division's variable cost, as they would not want to sell for less than it costs to produce. If the Components Division has excess capacity, the minimum transfer price is their variable cost. If the Components Division does NOT have excess capacity, the minimum transfer price is their external sales price (opportunity cost).\n   *   The maximum transfer price is the Assembly Division's external purchase price, as they would not want to pay more than they could purchase the part for externally.\n\n3. **Calculation:**\n   *   **Components Division Capacity Analysis:** CD has a capacity of 5,000 units and is currently selling 2,000 units externally. This means they have excess capacity of 3,000 units (5,000 - 2,000 = 3,000).\n   *   **Minimum Transfer Price:** For the first 3,000 units, the minimum transfer price is the variable cost of $45 because of excess capacity. For any units beyond 3,000 (which are not needed in this case), the minimum transfer price would be the external sales price of $75, as selling internally would displace external sales.\n   *   **Maximum Transfer Price:** The maximum transfer price is the Assembly Division's external purchase price of $75.\n   *   **Transfer Price Range:** The transfer price range is between the minimum ($45) and the maximum ($75).\n\n4. **Optimal Quantity to Transfer:**\n   *   The Assembly Division needs 3,000 units. The Components Division has the capacity to produce these units. Therefore, the optimal quantity to transfer is 3,000 units.\n\n5. **Company Benefit Calculation:**\n   *   **Excess Capacity Units (2,000):** The Components Division saves $75 (external purchase price) - $45 (variable cost) = $30 per unit by transferring internally. For 2,000 units, the total savings are 2,000 * $30 = $60,000.\n   *   **Units Displacing External Sales (1,000):** For the remaining 1,000 units, the Components Division loses $75 (external sales price) - $45 (variable cost) = $30 in contribution margin per unit. The Assembly Division saves $75 (external purchase price). The net effect on the company is neutral because the $30 loss in CM is offset by the $30 savings to AD. \n   *   **Net Company Benefit:** $60,000 (from excess capacity units) + $0 (from units displacing external sales) = $60,000.\n\n6. **Answer:**\n   *   Minimum Transfer Price: $45\n   *   Maximum Transfer Price: $75\n   *   Optimal Quantity to Transfer: 3,000 units",
+          "keyFormula": "Transfer Price Range: Minimum (Variable Cost or Opportunity Cost) to Maximum (External Purchase Price)",
+          "commonMistakes": [
+            "Failing to consider excess capacity when determining the minimum transfer price. If there is excess capacity, the minimum transfer price is the variable cost. If there is no excess capacity, the minimum transfer price is the opportunity cost (external sales price).",
+            "Incorrectly calculating the company benefit by not considering the impact of lost external sales. If internal transfers displace external sales, the lost contribution margin must be factored into the overall company benefit.",
+            "Assuming the transfer price must be exactly at the minimum or maximum of the range, rather than understanding it can be negotiated within the range."
+          ],
+          "examTip": "Quickly assess whether the selling division has excess capacity. If so, the minimum transfer price is the variable cost. If not, it's the external sales price. This will save you time on the exam."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "If market-based transfer pricing at $75 is used, calculate each division's contribution margin on the internal sales.",
+          "solution": {
+            "approach": "Calculate CM for each division at the $75 transfer price",
+            "calculations": "**Components Division CM (per unit):**\nTransfer price: $75\nVariable cost: $45\nNo selling expense on internal sales\nCM per unit = $75 - $45 = **$30**\nTotal CM (3,000 units) = $90,000\n\n**Assembly Division CM (per unit):**\nFinal selling price: $150\nTransfer price: $75\nAdditional processing: $30\nCM per unit = $150 - $75 - $30 = **$45**\nTotal CM (3,000 units) = $135,000",
+            "answer": {
+              "cdCMperUnit": 30,
+              "adCMperUnit": 45
+            },
+            "explanation": "At market-based transfer price of $75, both divisions are profitable and properly incentivized."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the contribution margin for each division under a market-based transfer pricing system:\n\n1. **Given Information:**\n   *   Market-based transfer price: $75\n   *   Components Division (CD) variable cost per unit: $45\n   *   Assembly Division (AD) final selling price per unit: $150\n   *   Assembly Division (AD) additional processing cost per unit: $30\n   *   Number of units transferred: 3,000\n\n2. **Formula:**\n   *   Contribution Margin per unit = Revenue per unit - Variable Costs per unit\n\n3. **Calculation:**\n   *   **Components Division (CD) Contribution Margin per unit:**\n      *   Revenue per unit (Transfer Price): $75\n      *   Variable Cost per unit: $45\n      *   Contribution Margin per unit = $75 - $45 = $30\n   *   **Components Division (CD) Total Contribution Margin:**\n      *   Contribution Margin per unit: $30\n      *   Number of units transferred: 3,000\n      *   Total Contribution Margin = $30 * 3,000 = $90,000\n   *   **Assembly Division (AD) Contribution Margin per unit:**\n      *   Revenue per unit (Final Selling Price): $150\n      *   Variable Costs per unit (Transfer Price + Additional Processing): $75 + $30 = $105\n      *   Contribution Margin per unit = $150 - $105 = $45\n   *   **Assembly Division (AD) Total Contribution Margin:**\n      *   Contribution Margin per unit: $45\n      *   Number of units transferred: 3,000\n      *   Total Contribution Margin = $45 * 3,000 = $135,000\n\n4. **Answer:**\n   *   Components Division Contribution Margin per unit: $30\n   *   Assembly Division Contribution Margin per unit: $45",
+          "keyFormula": "Contribution Margin per unit = Revenue per unit - Variable Costs per unit",
+          "commonMistakes": [
+            "Forgetting to include the additional processing costs incurred by the Assembly Division when calculating its contribution margin. Candidates may only subtract the transfer price.",
+            "Incorrectly using the final selling price when calculating the Components Division's contribution margin. The Components Division's revenue is the transfer price.",
+            "Failing to recognize that the Components Division does not incur any selling expenses on internal transfers."
+          ],
+          "examTip": "Always clearly identify the revenue and all relevant variable costs for each division involved in the transfer. Draw a simple diagram showing the flow of goods and costs to avoid confusion."
+        }
+      ],
+      "skills": [
+        "Transfer pricing",
+        "Marginal analysis",
+        "Capacity analysis"
+      ],
+      "relatedConcepts": [
+        "Opportunity cost",
+        "Divisional performance",
+        "Goal congruence"
+      ]
+    },
+    {
+      "id": "cma1-sim-005",
+      "section": "CMA1",
+      "title": "Outsourcing Decision Analysis",
+      "blueprintArea": "CMA1-E",
+      "topic": "Make or Buy Decision",
+      "difficulty": "medium",
+      "estimatedTime": 18,
+      "scenario": "AutoParts Inc. manufactures brake assemblies for the automotive industry. The company is considering outsourcing the production of Component BX-7, which is currently made in-house.\n\nA supplier has offered to provide Component BX-7 at $32 per unit with a 3-year contract. Annual demand is 50,000 units.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Current Manufacturing Costs - Component BX-7",
+          "type": "table",
+          "data": "| Cost Element | Per Unit | Annual Total |\n|--------------|----------|--------------|\n| Direct Materials | $12.00 | $600,000 |\n| Direct Labor | $8.00 | $400,000 |\n| Variable Overhead | $4.00 | $200,000 |\n| Fixed Overhead - Avoidable* | $5.00 | $250,000 |\n| Fixed Overhead - Allocated** | $7.00 | $350,000 |\n| **Total Cost** | **$36.00** | **$1,800,000** |\n\n*Supervisor salary, equipment leases that can be terminated\n**Building depreciation, corporate allocations"
+        },
+        {
+          "id": "ex2",
+          "title": "Additional Considerations",
+          "type": "text",
+          "data": "- If outsourced, freed capacity could be rented for $80,000/year\n- 12 factory workers would be laid off (avg tenure: 8 years)\n- Supplier is located 800 miles away\n- Component requires tight quality tolerances\n- Current supplier quality rating: 94% (AutoParts standard: 99.5%)\n- Lead time from supplier: 3 weeks (current: 2 days)"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the relevant cost to make and the relevant cost to buy Component BX-7.",
+          "solution": {
+            "approach": "Include only avoidable/differential costs",
+            "calculations": "**Relevant Cost to MAKE (per unit):**\nDirect Materials: $12.00\nDirect Labor: $8.00\nVariable Overhead: $4.00\nAvoidable Fixed Overhead: $5.00\n**Total: $29.00 per unit**\nAnnual: 50,000 × $29 = $1,450,000\n\n**Relevant Cost to BUY:**\nPurchase price: $32.00 per unit\nLess: Facility rental income: $80,000 / 50,000 = $1.60\n**Net cost: $30.40 per unit**\nAnnual: $1,600,000 - $80,000 = $1,520,000\n\n*Note: Allocated fixed overhead ($7) is NOT relevant - it will continue regardless.*",
+            "answer": {
+              "makeCost": 29,
+              "buyCost": 30.4
+            },
+            "explanation": "Based on quantitative analysis alone, making is $1.40/unit cheaper, saving $70,000 annually."
+          },
+          "points": 35,
+          "enhanced": true,
+          "stepByStep": "Here's how to determine whether AutoParts Inc. should make or buy Component BX-7:\n\n1. **Given Information:**\n   *   Purchase price per unit: $32\n   *   Annual demand: 50,000 units\n   *   Direct Materials cost per unit: $12\n   *   Direct Labor cost per unit: $8\n   *   Variable Overhead cost per unit: $4\n   *   Avoidable Fixed Overhead cost per unit: $5\n   *   Facility rental income if outsourced: $80,000 annually\n\n2. **Formula:**\n   *   Relevant Cost to Make = Direct Materials + Direct Labor + Variable Overhead + Avoidable Fixed Overhead\n   *   Relevant Cost to Buy = Purchase Price - Facility Rental Income per unit\n\n3. **Calculation:**\n   *   **Calculate the Relevant Cost to MAKE per unit:**\n        *   Direct Materials: $12.00\n        *   Direct Labor: $8.00\n        *   Variable Overhead: $4.00\n        *   Avoidable Fixed Overhead: $5.00\n        *   Total Relevant Cost to Make per unit: $12 + $8 + $4 + $5 = $29.00\n   *   **Calculate the Total Relevant Cost to MAKE annually:**\n        *   Total Relevant Cost to Make annually: $29.00/unit * 50,000 units = $1,450,000\n   *   **Calculate the Relevant Cost to BUY per unit:**\n        *   Purchase Price: $32.00\n        *   Facility rental income per unit: $80,000 / 50,000 units = $1.60\n        *   Net Cost to Buy per unit: $32.00 - $1.60 = $30.40\n   *   **Calculate the Total Relevant Cost to BUY annually:**\n        *   Total Relevant Cost to Buy annually: $30.40/unit * 50,000 units = $1,520,000\n\n4. **Answer:**\n   *   Relevant Cost to Make per unit: $29.00\n   *   Relevant Cost to Buy per unit: $30.40",
+          "keyFormula": "Relevant Cost to Make = Direct Materials + Direct Labor + Variable Overhead + Avoidable Fixed Overhead\nRelevant Cost to Buy = Purchase Price - Avoidable Costs/Income",
+          "commonMistakes": [
+            "Including irrelevant costs such as allocated fixed overhead that will continue regardless of the decision. Only avoidable costs are relevant.",
+            "Forgetting to consider the potential income from renting out the freed-up facility space if the component is outsourced. This reduces the net cost of buying.",
+            "Calculating the annual cost incorrectly by multiplying the per-unit cost by the total units, instead of calculating the per-unit cost first and then multiplying."
+          ],
+          "examTip": "Focus on identifying and isolating the differential costs. Create a simple table with 'Make' and 'Buy' columns to organize the relevant costs. Remember to consider any opportunity costs or cost savings associated with each option."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the total cost difference over the 3-year contract period.",
+          "solution": {
+            "approach": "Multiply annual difference by contract term",
+            "calculations": "Annual cost difference:\nMake: $1,450,000\nBuy: $1,520,000\nDifference: $70,000 per year in favor of making\n\n**3-Year Total: $70,000 × 3 = $210,000 savings to continue making**",
+            "answer": 210000,
+            "explanation": "Over three years, making in-house saves $210,000 based purely on quantitative factors."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   Annual demand: 50,000 units\n   *   Outsourcing cost per unit: $32\n   *   Annual cost to make: $1,450,000\n   *   Contract Length: 3 years\n\n2. **Formula:**\n   *   Annual Cost to Buy = Outsourcing Cost per Unit × Annual Demand\n   *   Annual Cost Difference = Annual Cost to Buy - Annual Cost to Make\n   *   Total Cost Difference (3 years) = Annual Cost Difference × Contract Length\n\n3. **Calculation:**\n   *   Annual Cost to Buy = $32 × 50,000 = $1,600,000\n   *   Annual Cost Difference = $1,600,000 - $1,450,000 = $150,000\n   *   Total Cost Difference (3 years) = $150,000 × 3 = $450,000\n\n4. **Answer:**\n   The total cost difference over the 3-year contract period is $450,000. It is $450,000 more expensive to buy than to make.",
+          "keyFormula": "Total Cost Difference = (Cost to Buy - Cost to Make) * Contract Length",
+          "commonMistakes": [
+            "Forgetting to multiply the annual cost difference by the number of years in the contract. Candidates may correctly calculate the annual difference but fail to extrapolate it over the entire contract period.",
+            "Incorrectly calculating the annual cost to buy. Ensure you multiply the per-unit outsourcing cost by the total annual demand.",
+            "Confusing the cost to make with the cost to buy. Double-check which cost is higher to determine if the difference represents a savings or an additional expense."
+          ],
+          "examTip": "When dealing with multi-year outsourcing decisions, always calculate the total cost over the entire contract period to get a complete picture of the financial impact. Pay close attention to whether the difference is a cost savings or an increased expense."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Identify and explain at least 4 qualitative factors that should influence this decision.",
+          "solution": {
+            "approach": "Evaluate strategic and operational risks",
+            "calculations": "**Qualitative Factors:**\n\n1. **Quality Risk (AGAINST buying)**\n   - Supplier quality: 94% vs required 99.5%\n   - Potential for costly defects and customer issues\n   - Could estimated cost: 2,750 defective units × significant rework/warranty\n\n2. **Supply Chain Risk (AGAINST buying)**\n   - 3-week lead time vs 2 days internal\n   - 800-mile distance increases logistics risk\n   - Potential stockouts affecting production\n\n3. **Employee Relations (AGAINST buying)**\n   - 12 long-tenured employees would be laid off\n   - Morale impact on remaining workforce\n   - Community relations and reputation\n\n4. **Strategic Control (AGAINST buying)**\n   - Loss of manufacturing knowledge\n   - Dependency on single supplier\n   - Reduced flexibility for product modifications\n\n5. **Cost Uncertainty (AGAINST buying)**\n   - 3-year fixed price may increase after\n   - Transportation cost fluctuations\n   - Currency risk if international",
+            "answer": "Quality, supply chain, employee, strategic control factors",
+            "explanation": "The qualitative factors heavily favor continued in-house production, reinforcing the quantitative analysis."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's a breakdown of the qualitative factors to consider when deciding whether to outsource Component BX-7:\n\n1. **Given Information:**\n   *   AutoParts Inc. manufactures brake assemblies.\n   *   Considering outsourcing Component BX-7.\n   *   Supplier offers $32/unit with a 3-year contract.\n   *   Annual demand: 50,000 units.\n\n2. **Qualitative Factor Analysis:**\n\n   *   **Quality Risk (AGAINST buying):**\n        *   The supplier's quality level may not meet AutoParts Inc.'s standards. While a specific defect rate isn't provided for the supplier, the scenario implies a potential quality concern. If the supplier's quality is lower than AutoParts Inc.'s current internal quality, this could lead to defective components, increased rework costs, warranty claims, and damage to AutoParts Inc.'s reputation. Even a seemingly small difference in defect rates can translate to a significant number of defective units given the annual demand of 50,000 units. For example, if the supplier produces 1% defective parts (50,000 * 0.01 = 500) and AutoParts Inc. currently produces 0.1% defective parts (50,000 * 0.001 = 50), the increase in defective parts is substantial. This increased defect rate could lead to significant costs related to rework, warranty claims, and potential damage to AutoParts Inc.'s reputation.\n\n   *   **Supply Chain Risk (AGAINST buying):**\n        *   Outsourcing introduces potential disruptions to the supply chain. The scenario mentions a 3-week lead time from the supplier compared to a 2-day internal lead time. This longer lead time increases the risk of stockouts if there are unexpected surges in demand or delays in the supplier's production or delivery. The 800-mile distance between the supplier and AutoParts Inc. further exacerbates this risk, as transportation delays due to weather, traffic, or other unforeseen events can impact the timely delivery of components. These delays can disrupt AutoParts Inc.'s production schedule and potentially lead to lost sales.\n\n   *   **Employee Relations (AGAINST buying):**\n        *   Outsourcing Component BX-7 production could result in layoffs of 12 long-tenured employees. This can have a negative impact on the morale of the remaining workforce, as they may fear future job losses. Furthermore, layoffs can damage AutoParts Inc.'s reputation in the community and make it more difficult to attract and retain talent in the future. The cost of severance packages and potential legal challenges related to the layoffs should also be considered.\n\n   *   **Strategic Control (AGAINST buying):**\n        *   Outsourcing can lead to a loss of control over the production process and a dependency on a single supplier. This dependency can make AutoParts Inc. vulnerable to price increases, supply disruptions, and changes in the supplier's business strategy. Furthermore, outsourcing can result in a loss of manufacturing knowledge and expertise, which can make it more difficult for AutoParts Inc. to innovate and develop new products in the future. The scenario mentions a 3-year contract, but after that period, the supplier could significantly increase prices, leaving AutoParts Inc. with limited options.\n\n3. **Answer:**\n   *   Key qualitative factors include quality risk, supply chain risk, employee relations, and strategic control.",
+          "keyFormula": "N/A - Qualitative factors do not involve formulas.",
+          "commonMistakes": [
+            "Focusing solely on quantitative factors and neglecting the importance of qualitative considerations.",
+            "Failing to consider the long-term implications of outsourcing, such as the loss of manufacturing knowledge and increased dependency on a supplier.",
+            "Underestimating the potential impact of outsourcing on employee morale and community relations.",
+            "Not properly assessing the supplier's capabilities and quality control processes."
+          ],
+          "examTip": "On the exam, quickly identify the qualitative factors that are most relevant to the specific scenario. Focus on factors that could have a significant impact on the company's profitability, reputation, or strategic goals. Consider both the short-term and long-term implications of each factor."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Make a final recommendation with justification.",
+          "solution": {
+            "approach": "Synthesize quantitative and qualitative analysis",
+            "calculations": "**RECOMMENDATION: CONTINUE MAKING IN-HOUSE**\n\n**Quantitative Support:**\n- $70,000 annual savings\n- $210,000 over 3-year period\n\n**Qualitative Support:**\n- Unacceptable supplier quality gap (94% vs 99.5%)\n- Significant supply chain risk with long lead times\n- Employee and community impact\n- Maintains strategic flexibility\n\n**Risk Assessment:**\nThe supplier's 94% quality rate could result in approximately 3,000 defective units per year. At even modest rework/warranty costs of $50-100 per unit, this would erase any potential savings and create substantial customer relationship risk.",
+            "answer": "Make in-house",
+            "explanation": "Both quantitative ($210K savings) and qualitative factors (quality, lead time, employees) support continuing internal production."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's a step-by-step analysis to determine whether AutoParts Inc. should make Component BX-7 in-house or outsource its production:\n\n1. **Given Information:**\n   *   Outsourcing cost per unit: $32\n   *   Annual demand: 50,000 units\n   *   Annual savings from making in-house: $70,000\n   *   Supplier quality rate: 94%\n   *   Current in-house quality rate: 99.5%\n   *   Contract Length: 3 years\n\n2. **Formula:**\n   *   Total Outsourcing Cost = Outsourcing Cost per Unit * Annual Demand * Contract Length\n   *   Total In-House Savings = Annual Savings * Contract Length\n   *   Defect Rate = 1 - Quality Rate\n   *   Number of Defects = Annual Demand * Defect Rate\n\n3. **Calculation:**\n   *   Total Outsourcing Cost = $32 * 50,000 * 3 = $4,800,000\n   *   Total In-House Savings = $70,000 * 3 = $210,000\n   *   Supplier Defect Rate = 1 - 0.94 = 0.06 or 6%\n   *   In-House Defect Rate = 1 - 0.995 = 0.005 or 0.5%\n   *   Number of Supplier Defects = 50,000 * 0.06 = 3,000 units\n   *   Number of In-House Defects = 50,000 * 0.005 = 250 units\n\n4. **Answer:**\nBased on the quantitative and qualitative analysis, AutoParts Inc. should **continue making Component BX-7 in-house**. The $70,000 annual savings ($210,000 over 3 years) is a significant factor. Furthermore, the supplier's lower quality rate (94% vs. 99.5%) would result in a substantial increase in defective units (3,000 vs. 250), potentially leading to increased rework, warranty claims, and damage to customer relationships. The long lead times associated with outsourcing also pose a supply chain risk. Finally, the impact on employees and the community, along with the loss of strategic flexibility, further support the decision to continue in-house production.",
+          "keyFormula": "The key formulas used are: Total Cost Calculation (Outsourcing Cost per Unit * Annual Demand * Contract Length) and Defect Rate Calculation (Annual Demand * (1 - Quality Rate))",
+          "commonMistakes": [
+            "Failing to consider the impact of the lower supplier quality rate and only focusing on the initial cost per unit.",
+            "Ignoring the time value of money if the problem involves different cash flows over multiple periods.",
+            "Overlooking qualitative factors such as supply chain risk, employee morale, and strategic flexibility."
+          ],
+          "examTip": "When evaluating make-or-buy decisions, always quantify all relevant costs and benefits, including hidden costs like quality issues and supply chain disruptions. Also, remember to consider the qualitative factors that can significantly impact the overall decision. A slightly higher cost to make in-house might be justified by better quality control and supply chain reliability."
+        }
+      ],
+      "skills": [
+        "Make/buy analysis",
+        "Relevant costing",
+        "Qualitative assessment"
+      ],
+      "relatedConcepts": [
+        "Avoidable costs",
+        "Opportunity cost",
+        "Strategic sourcing"
+      ]
+    },
+    {
+      "id": "cma1-sim-006",
+      "section": "CMA1",
+      "title": "Comprehensive Master Budget Development",
+      "blueprintArea": "CMA1-B",
+      "topic": "Master Budgeting",
+      "difficulty": "hard",
+      "estimatedTime": 30,
+      "scenario": "You are the budget manager for HomeStyle Furniture Inc. The company manufactures custom office desks. Management has requested you prepare the operating budgets for Q2 of the upcoming year.\n\nThe following information is available for budget preparation (Exhibit 1 and 2). Each desk requires 20 board feet of lumber and 3 hours of direct labor.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Sales Forecast and Pricing",
+          "type": "table",
+          "data": "| Month | Projected Sales (units) | Selling Price |\n|-------|------------------------|---------------|\n| April | 1,200 desks | $450 |\n| May | 1,500 desks | $450 |\n| June | 1,800 desks | $450 |\n| July (for planning) | 1,600 desks | $450 |\n\n**Collections Pattern:**\n- 60% collected in month of sale\n- 35% collected in following month\n- 5% uncollectible\n\n**Beginning A/R (April 1):** $162,000 (all collectible from March sales)"
+        },
+        {
+          "id": "ex2",
+          "title": "Production and Cost Information",
+          "type": "table",
+          "data": "| Item | Details |\n|------|---------|\n| Desired Ending FG Inventory | 20% of next month's sales |\n| Beginning FG Inventory (April 1) | 240 desks |\n| Lumber Cost | $6 per board foot |\n| Desired Ending Materials | 10% of next month's production needs |\n| Beginning Materials (April 1) | 2,500 board feet |\n| Direct Labor Rate | $28 per hour |\n| Variable MOH | $8 per direct labor hour |\n| Fixed MOH | $42,000 per month |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Prepare the Production Budget for Q2 (April, May, June) showing required production units each month.",
+          "hints": [
+            "Production = Sales + Ending FG - Beginning FG"
+          ],
+          "solution": {
+            "approach": "Calculate ending inventory needs, then solve for production",
+            "calculations": "**Production Budget:**\n\n| | April | May | June |\n|--|-------|-----|------|\n| Budgeted Sales | 1,200 | 1,500 | 1,800 |\n| + Desired Ending FG | 300 | 360 | 320 |\n| = Total Needed | 1,500 | 1,860 | 2,120 |\n| - Beginning FG | (240) | (300) | (360) |\n| **= Production Required** | **1,260** | **1,560** | **1,760** |\n\n*Ending FG calculations:*\n- April ending = 20% × 1,500 May sales = 300\n- May ending = 20% × 1,800 June sales = 360  \n- June ending = 20% × 1,600 July sales = 320",
+            "answer": {
+              "april": 1260,
+              "may": 1560,
+              "june": 1760,
+              "total": 4580
+            },
+            "explanation": "Production must satisfy both sales requirements and desired inventory levels."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to prepare the Production Budget for HomeStyle Furniture Inc. for Q2:\n\n1. **Given Information:**\n   *   Budgeted Sales (units):\n        *   April: 1,200\n        *   May: 1,500\n        *   June: 1,800\n        *   July (needed for June ending inventory): 1,600\n   *   Desired Ending Finished Goods (FG) Inventory: 20% of next month's sales\n   *   Beginning Finished Goods Inventory:\n        *   April: 240\n        *   May: 300\n        *   June: 360\n\n2. **Formula:**\n   *   Production Required = Budgeted Sales + Desired Ending FG Inventory - Beginning FG Inventory\n\n3. **Calculation:**\n   *   **April:**\n        *   Desired Ending FG Inventory = 20% * May Sales = 0.20 * 1,500 = 300 units\n        *   Production Required = 1,200 + 300 - 240 = 1,260 units\n   *   **May:**\n        *   Desired Ending FG Inventory = 20% * June Sales = 0.20 * 1,800 = 360 units\n        *   Production Required = 1,500 + 360 - 300 = 1,560 units\n   *   **June:**\n        *   Desired Ending FG Inventory = 20% * July Sales = 0.20 * 1,600 = 320 units\n        *   Production Required = 1,800 + 320 - 360 = 1,760 units\n\n4. **Answer:**\n   *   April Production: 1,260 units\n   *   May Production: 1,560 units\n   *   June Production: 1,760 units\n   *   Total Q2 Production: 1,260 + 1,560 + 1,760 = 4,580 units",
+          "keyFormula": "Production Required = Budgeted Sales + Desired Ending FG Inventory - Beginning FG Inventory",
+          "commonMistakes": [
+            "Failing to use the *next* month's sales to calculate the desired ending inventory.",
+            "Incorrectly calculating the ending inventory percentage. Double-check the problem to confirm if it is based on next month's sales, a percentage of total sales, or another metric.",
+            "Forgetting to subtract the beginning inventory. It's easy to get caught up in adding sales and ending inventory and forget this crucial step."
+          ],
+          "examTip": "Always double-check that you're using the correct period's sales data for calculating ending inventory. A quick visual check of the timeline can prevent errors."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Prepare the Direct Materials (Lumber) Purchases Budget for Q2.",
+          "hints": [
+            "Materials to purchase = Materials needed for production + Ending materials - Beginning materials"
+          ],
+          "solution": {
+            "approach": "Calculate materials needed for production, then desired ending inventory",
+            "calculations": "**Direct Materials Budget (Board Feet):**\n\n| | April | May | June |\n|--|-------|-----|------|\n| Production Units | 1,260 | 1,560 | 1,760 |\n| × 20 BF per unit | | | |\n| = Materials for Production | 25,200 | 31,200 | 35,200 |\n| + Desired Ending Materials | 3,120 | 3,520 | 3,200* |\n| = Total Materials Needed | 28,320 | 34,720 | 38,400 |\n| - Beginning Materials | (2,500) | (3,120) | (3,520) |\n| **= Purchases (BF)** | **25,820** | **31,600** | **34,880** |\n| × $6 per BF | | | |\n| **= Purchase Cost** | **$154,920** | **$189,600** | **$209,280** |\n\n*Ending materials calculations:*\n- April ending = 10% × 31,200 May needs = 3,120 BF\n- May ending = 10% × 35,200 June needs = 3,520 BF\n- June ending = 10% × 32,000 July needs (1,600 × 20) = 3,200 BF",
+            "answer": {
+              "aprilPurchases": 154920,
+              "mayPurchases": 189600,
+              "junePurchases": 209280
+            },
+            "explanation": "Materials purchases must cover production needs plus maintain desired ending inventory."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to prepare the Direct Materials (Lumber) Purchases Budget for Q2:\n\n**1. Given Information:**\n*   Each desk requires 20 board feet (BF) of lumber.\n*   April Production: 1,260 units\n*   May Production: 1,560 units\n*   June Production: 1,760 units\n*   July Production: 1,600 units (needed for June ending inventory calculation)\n*   Desired ending materials inventory is 10% of the next month's production needs.\n*   Beginning materials inventory for April is 2,500 BF.\n*   Cost per board foot of lumber is $6.\n\n**2. Formula:**\n*   Materials needed for production = Production units × Board feet per unit\n*   Desired ending materials = Next month's production needs × Desired ending inventory percentage\n*   Total materials needed = Materials needed for production + Desired ending materials\n*   Purchases (BF) = Total materials needed - Beginning materials\n*   Purchase Cost = Purchases (BF) × Cost per BF\n\n**3. Calculation:**\n\n**April:**\n*   Materials for Production: 1,260 units × 20 BF/unit = 25,200 BF\n*   Desired Ending Materials: 1,560 units (May production) × 20 BF/unit × 10% = 3,120 BF\n*   Total Materials Needed: 25,200 BF + 3,120 BF = 28,320 BF\n*   Purchases (BF): 28,320 BF - 2,500 BF = 25,820 BF\n*   Purchase Cost: 25,820 BF × $6/BF = $154,920\n\n**May:**\n*   Materials for Production: 1,560 units × 20 BF/unit = 31,200 BF\n*   Desired Ending Materials: 1,760 units (June production) × 20 BF/unit × 10% = 3,520 BF\n*   Total Materials Needed: 31,200 BF + 3,520 BF = 34,720 BF\n*   Purchases (BF): 34,720 BF - 3,120 BF = 31,600 BF\n*   Purchase Cost: 31,600 BF × $6/BF = $189,600\n\n**June:**\n*   Materials for Production: 1,760 units × 20 BF/unit = 35,200 BF\n*   Desired Ending Materials: 1,600 units (July production) × 20 BF/unit × 10% = 3,200 BF\n*   Total Materials Needed: 35,200 BF + 3,200 BF = 38,400 BF\n*   Purchases (BF): 38,400 BF - 3,520 BF = 34,880 BF\n*   Purchase Cost: 34,880 BF × $6/BF = $209,280\n\n**4. Answer:**\n*   April Purchases: $154,920\n*   May Purchases: $189,600\n*   June Purchases: $209,280",
+          "keyFormula": "Materials to purchase = Materials needed for production + Desired ending materials - Beginning materials",
+          "commonMistakes": [
+            "Forgetting to multiply the production units by the board feet per unit (20 BF) to get the total materials needed for production.",
+            "Using the current month's production to calculate the desired ending inventory instead of the *next* month's production.",
+            "Failing to multiply the board feet to purchase by the cost per board foot ($6) to arrive at the purchase cost.",
+            "Incorrectly calculating the beginning inventory. The prior month's ending inventory is the current month's beginning inventory."
+          ],
+          "examTip": "Pay close attention to the timing of the ending inventory calculation. It's always based on the *next* period's production needs. Also, double-check that you've included all components in your calculation: production needs, ending inventory, and beginning inventory."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Prepare the Direct Labor Budget for Q2 showing hours and cost by month.",
+          "hints": [
+            "Each desk requires 3 direct labor hours"
+          ],
+          "solution": {
+            "approach": "Multiply production by hours per unit, then by rate",
+            "calculations": "**Direct Labor Budget:**\n\n| | April | May | June | Q2 Total |\n|--|-------|-----|------|----------|\n| Production Units | 1,260 | 1,560 | 1,760 | 4,580 |\n| × 3 DLH per unit | | | | |\n| = Direct Labor Hours | 3,780 | 4,680 | 5,280 | 13,740 |\n| × $28 per hour | | | | |\n| **= DL Cost** | **$105,840** | **$131,040** | **$147,840** | **$384,720** |",
+            "answer": {
+              "aprilHours": 3780,
+              "mayHours": 4680,
+              "juneHours": 5280,
+              "totalCost": 384720
+            },
+            "explanation": "Direct labor budget derives directly from the production budget."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "Here's how to prepare the Direct Labor Budget for Q2:\n\n1. **Given Information:**\n   *   Production Units (from Production Budget - assumed to be previously calculated): April: 1,260 units, May: 1,560 units, June: 1,760 units\n   *   Direct Labor Hours (DLH) per unit: 3 hours\n   *   Direct Labor Rate: $28 per hour\n\n2. **Formula:**\n   *   Direct Labor Hours = Production Units × Direct Labor Hours per Unit\n   *   Direct Labor Cost = Direct Labor Hours × Direct Labor Rate\n\n3. **Calculation:**\n   *   **April:**\n        *   Direct Labor Hours: 1,260 units × 3 DLH/unit = 3,780 hours\n        *   Direct Labor Cost: 3,780 hours × $28/hour = $105,840\n   *   **May:**\n        *   Direct Labor Hours: 1,560 units × 3 DLH/unit = 4,680 hours\n        *   Direct Labor Cost: 4,680 hours × $28/hour = $131,040\n   *   **June:**\n        *   Direct Labor Hours: 1,760 units × 3 DLH/unit = 5,280 hours\n        *   Direct Labor Cost: 5,280 hours × $28/hour = $147,840\n   *   **Q2 Total:**\n        *   Total Direct Labor Hours: 3,780 + 4,680 + 5,280 = 13,740 hours\n        *   Total Direct Labor Cost: $105,840 + $131,040 + $147,840 = $384,720\n\n4. **Answer:**\n   *   April Direct Labor Hours: 3,780\n   *   May Direct Labor Hours: 4,680\n   *   June Direct Labor Hours: 5,280\n   *   Total Q2 Direct Labor Cost: $384,720",
+          "keyFormula": "Direct Labor Cost = Production (units) * DLH per Unit * DL Rate",
+          "commonMistakes": [
+            "Forgetting to multiply the production units by the direct labor hours per unit before calculating the cost.",
+            "Using the incorrect direct labor rate. Always double-check the given information for the correct rate.",
+            "Failing to accurately transfer the production unit numbers from the production budget to the direct labor budget."
+          ],
+          "examTip": "Pay close attention to the units of measure. Ensure you are using consistent units (e.g., hours, dollars) throughout your calculations. Also, double-check that you're using the correct production numbers from the production budget, as errors there will cascade through subsequent budgets."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Prepare the Cash Collections Budget for Q2.",
+          "hints": [
+            "Consider beginning A/R and collection pattern"
+          ],
+          "solution": {
+            "approach": "Apply collection percentages to each month sales",
+            "calculations": "**Cash Collections Budget:**\n\n| Month | April | May | June |\n|-------|-------|-----|------|\n| **April Sales ($540,000):** | | | |\n| - 60% current month | $324,000 | | |\n| - 35% next month | | $189,000 | |\n| **May Sales ($675,000):** | | | |\n| - 60% current month | | $405,000 | |\n| - 35% next month | | | $236,250 |\n| **June Sales ($810,000):** | | | |\n| - 60% current month | | | $486,000 |\n| **From Beginning A/R** | $162,000 | | |\n| **Total Collections** | **$486,000** | **$594,000** | **$722,250** |\n\n*Sales calculations: $450 × units each month*\n- April: $450 × 1,200 = $540,000\n- May: $450 × 1,500 = $675,000\n- June: $450 × 1,800 = $810,000",
+            "answer": {
+              "aprilCollections": 486000,
+              "mayCollections": 594000,
+              "juneCollections": 722250
+            },
+            "explanation": "Collection patterns create timing differences between sales and cash receipts."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to prepare the Cash Collections Budget for Q2:\n\n1. **Given Information:**\n   *   April Sales: $540,000\n   *   May Sales: $675,000\n   *   June Sales: $810,000\n   *   Beginning Accounts Receivable (Collected in April): $162,000\n   *   Collection Pattern:\n        *   60% of sales are collected in the current month.\n        *   35% of sales are collected in the following month.\n\n2. **Formula:**\n   *   Total Cash Collections = Collections from Current Month Sales + Collections from Previous Month Sales + Collections from Beginning A/R\n\n3. **Calculation:**\n   *   **April Collections:**\n        *   From April Sales: $540,000 * 60% = $324,000\n        *   From Beginning A/R: $162,000\n        *   Total April Collections: $324,000 + $162,000 = $486,000\n   *   **May Collections:**\n        *   From April Sales: $540,000 * 35% = $189,000\n        *   From May Sales: $675,000 * 60% = $405,000\n        *   Total May Collections: $189,000 + $405,000 = $594,000\n   *   **June Collections:**\n        *   From May Sales: $675,000 * 35% = $236,250\n        *   From June Sales: $810,000 * 60% = $486,000\n        *   Total June Collections: $236,250 + $486,000 = $722,250\n\n4. **Answer:**\n   *   April Collections: $486,000\n   *   May Collections: $594,000\n   *   June Collections: $722,250",
+          "keyFormula": "Total Cash Collections = Collections from Current Month Sales + Collections from Previous Month Sales + Collections from Beginning A/R",
+          "commonMistakes": [
+            "Forgetting to include the beginning accounts receivable in the April collections.",
+            "Applying the collection percentages to the wrong month's sales. Double-check that you are using the correct sales figure for each month's calculation.",
+            "Incorrectly calculating the percentage of sales collected. Ensure you are multiplying by the correct percentage (e.g., 60% or 35%)."
+          ],
+          "examTip": "Create a simple table to organize your calculations. Label each row and column clearly to avoid mixing up the sales figures and collection percentages. This will help you stay organized and reduce the risk of errors under pressure."
+        },
+        {
+          "id": "t5",
+          "taskNumber": 5,
+          "requirement": "Calculate the total Manufacturing Overhead Budget for Q2.",
+          "hints": [
+            "Variable OH is based on direct labor hours; Fixed OH is per month"
+          ],
+          "solution": {
+            "approach": "Calculate variable OH based on DLH, add fixed OH",
+            "calculations": "**Manufacturing Overhead Budget:**\n\n| | April | May | June | Q2 Total |\n|--|-------|-----|------|----------|\n| Direct Labor Hours | 3,780 | 4,680 | 5,280 | 13,740 |\n| × $8 Variable OH rate | | | | |\n| = Variable MOH | $30,240 | $37,440 | $42,240 | $109,920 |\n| + Fixed MOH | $42,000 | $42,000 | $42,000 | $126,000 |\n| **= Total MOH** | **$72,240** | **$79,440** | **$84,240** | **$235,920** |",
+            "answer": {
+              "totalVariableOH": 109920,
+              "totalFixedOH": 126000,
+              "totalOH": 235920
+            },
+            "explanation": "MOH budget separates variable (activity-based) from fixed (period-based) costs."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the total Manufacturing Overhead (MOH) Budget for Q2:\n\n1. **Given Information:**\n   *   Direct Labor Hours (DLH): April - 3,780; May - 4,680; June - 5,280\n   *   Variable MOH rate: $8 per DLH\n   *   Fixed MOH: $42,000 per month\n\n2. **Formula:**\n   *   Variable MOH = Direct Labor Hours × Variable MOH rate\n   *   Total MOH = Variable MOH + Fixed MOH\n\n3. **Calculation:**\n   *   **April:**\n        *   Variable MOH = 3,780 DLH × $8/DLH = $30,240\n        *   Total MOH = $30,240 + $42,000 = $72,240\n   *   **May:**\n        *   Variable MOH = 4,680 DLH × $8/DLH = $37,440\n        *   Total MOH = $37,440 + $42,000 = $79,440\n   *   **June:**\n        *   Variable MOH = 5,280 DLH × $8/DLH = $42,240\n        *   Total MOH = $42,240 + $42,000 = $84,240\n   *   **Q2 Total:**\n        *   Total DLH = 3,780 + 4,680 + 5,280 = 13,740\n        *   Total Variable MOH = $30,240 + $37,440 + $42,240 = $109,920\n        *   Alternatively, Total Variable MOH = 13,740 DLH * $8/DLH = $109,920\n        *   Total Fixed MOH = $42,000 + $42,000 + $42,000 = $126,000\n        *   Total MOH = $72,240 + $79,440 + $84,240 = $235,920\n        *   Alternatively, Total MOH = $109,920 + $126,000 = $235,920\n\n4. **Answer:**\n   *   Total Variable MOH for Q2: $109,920\n   *   Total Fixed MOH for Q2: $126,000\n   *   Total MOH for Q2: $235,920",
+          "keyFormula": "Total Manufacturing Overhead = (Direct Labor Hours × Variable Overhead Rate) + Fixed Overhead",
+          "commonMistakes": [
+            "Forgetting to multiply the variable overhead rate by the direct labor hours for *each* month before summing to Q2 total.",
+            "Incorrectly calculating total fixed overhead by only including one month's fixed overhead instead of multiplying by 3 (months in Q2).",
+            "Mixing up the variable and fixed overhead costs in the calculation."
+          ],
+          "examTip": "Double-check that you've accounted for all months in the quarter when calculating total fixed costs. A quick way to verify your answer is to calculate total variable overhead using total direct labor hours for the quarter, then add total fixed overhead."
+        }
+      ],
+      "skills": [
+        "Master budgeting",
+        "Cash flow forecasting",
+        "Production planning",
+        "Inventory management"
+      ],
+      "relatedConcepts": [
+        "Sales budget",
+        "Production budget",
+        "Cash budget",
+        "Operating budgets"
+      ]
+    },
+    {
+      "id": "cma1-sim-007",
+      "section": "CMA1",
+      "title": "Multi-Product CVP Analysis",
+      "blueprintArea": "CMA1-C",
+      "topic": "Cost-Volume-Profit Analysis",
+      "difficulty": "hard",
+      "estimatedTime": 25,
+      "scenario": "TechGadget Inc. manufactures three products: Basic, Standard, and Premium smartphones. Management needs CVP analysis for strategic planning. The following data is provided for the upcoming quarter.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Product Information",
+          "type": "table",
+          "data": "| Product | Selling Price | Variable Cost/Unit | Sales Mix % |\n|---------|--------------|-------------------|-------------|\n| Basic | $300 | $180 | 50% |\n| Standard | $500 | $275 | 30% |\n| Premium | $800 | $400 | 20% |\n\n**Total Fixed Costs:** $1,260,000 per quarter"
+        },
+        {
+          "id": "ex2",
+          "title": "Additional Information",
+          "type": "text",
+          "data": "- Current quarterly sales: 12,000 total units\n- Target profit for next quarter: $504,000\n- Tax rate: 25%\n- Management is considering dropping the Basic model and shifting its sales mix to Standard (increasing to 60%) and Premium (40%)"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the contribution margin per unit and CM ratio for each product.",
+          "hints": [
+            "CM = Selling Price - Variable Cost; CM Ratio = CM / Selling Price"
+          ],
+          "solution": {
+            "approach": "Calculate CM per unit, then divide by selling price for ratio",
+            "calculations": "**Contribution Margin Analysis:**\n\n| Product | Selling Price | Variable Cost | CM/Unit | CM Ratio |\n|---------|--------------|---------------|---------|----------|\n| Basic | $300 | $180 | $120 | 40.0% |\n| Standard | $500 | $275 | $225 | 45.0% |\n| Premium | $800 | $400 | $400 | 50.0% |",
+            "answer": {
+              "basicCM": 120,
+              "standardCM": 225,
+              "premiumCM": 400
+            },
+            "explanation": "Higher-priced products have higher CM per unit and CM ratios, indicating better profitability."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the contribution margin per unit and CM ratio for each smartphone:\n\n1. **Given Information:**\n   *   Basic Smartphone: Selling Price = $300, Variable Cost = $180\n   *   Standard Smartphone: Selling Price = $500, Variable Cost = $275\n   *   Premium Smartphone: Selling Price = $800, Variable Cost = $400\n\n2. **Formula:**\n   *   Contribution Margin (CM) per Unit = Selling Price per Unit - Variable Cost per Unit\n   *   Contribution Margin (CM) Ratio = Contribution Margin per Unit / Selling Price per Unit\n\n3. **Calculation:**\n   *   **Basic Smartphone:**\n        *   CM per Unit = $300 - $180 = $120\n        *   CM Ratio = $120 / $300 = 0.40 or 40.0%\n   *   **Standard Smartphone:**\n        *   CM per Unit = $500 - $275 = $225\n        *   CM Ratio = $225 / $500 = 0.45 or 45.0%\n   *   **Premium Smartphone:**\n        *   CM per Unit = $800 - $400 = $400\n        *   CM Ratio = $400 / $800 = 0.50 or 50.0%\n\n4. **Answer:**\n   *   Basic Smartphone: CM per Unit = $120, CM Ratio = 40.0%\n   *   Standard Smartphone: CM per Unit = $225, CM Ratio = 45.0%\n   *   Premium Smartphone: CM per Unit = $400, CM Ratio = 50.0%",
+          "keyFormula": "Contribution Margin per Unit = Selling Price per Unit - Variable Cost per Unit; Contribution Margin Ratio = Contribution Margin per Unit / Selling Price per Unit",
+          "commonMistakes": [
+            "Confusing selling price and variable cost when calculating the contribution margin. Ensure you subtract the variable cost FROM the selling price.",
+            "Calculating the CM ratio using total sales revenue and total variable costs instead of per-unit figures. The CM ratio is most useful on a per-unit basis for product-level analysis.",
+            "Forgetting to convert the CM ratio from a decimal to a percentage. Multiply the result by 100 to express it as a percentage."
+          ],
+          "examTip": "Double-check your calculations, especially the subtraction and division. A small error in the CM per unit will cascade into an incorrect CM ratio. Also, quickly assess if the CM ratio seems reasonable based on the selling price and variable cost relationship. A very low or high CM ratio should trigger a review of your work."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the weighted-average contribution margin per unit and the break-even point in total units.",
+          "hints": [
+            "WACM = Sum of (CM × mix %); BEP units = Fixed Costs / WACM"
+          ],
+          "solution": {
+            "approach": "Weight each CM by sales mix, sum for WACM, then calculate BEP",
+            "calculations": "**Weighted-Average CM:**\nWACM = (CM × Mix %) for each product\n\n= ($120 × 50%) + ($225 × 30%) + ($400 × 20%)\n= $60 + $67.50 + $80\n= **$207.50 per weighted unit**\n\n**Break-Even Point:**\nBEP (units) = Fixed Costs / WACM\n= $1,260,000 / $207.50\n= **6,072 total units** (rounded up)\n\n**By Product (at BEP):**\n- Basic: 6,072 × 50% = 3,036 units\n- Standard: 6,072 × 30% = 1,822 units\n- Premium: 6,072 × 20% = 1,214 units",
+            "answer": {
+              "wacm": 207.5,
+              "bepUnits": 6072
+            },
+            "explanation": "The weighted-average CM reflects the sales mix impact on overall profitability."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the weighted-average contribution margin per unit and the break-even point in total units for TechGadget Inc.:\n\n1. **Given Information:**\n   *   Basic CM per unit: $120\n   *   Standard CM per unit: $225\n   *   Premium CM per unit: $400\n   *   Sales Mix: Basic (50%), Standard (30%), Premium (20%)\n   *   Total Fixed Costs: $1,260,000\n\n2. **Formula:**\n   *   Weighted-Average Contribution Margin (WACM) = (CM per unit of Product A × Sales Mix of Product A) + (CM per unit of Product B × Sales Mix of Product B) + (CM per unit of Product C × Sales Mix of Product C) + ...\n   *   Break-Even Point in Units = Total Fixed Costs / Weighted-Average Contribution Margin\n\n3. **Calculation:**\n   *   **Weighted-Average Contribution Margin (WACM):**\n        *   WACM = ($120 × 50%) + ($225 × 30%) + ($400 × 20%)\n        *   WACM = $60 + $67.50 + $80\n        *   WACM = $207.50 per unit\n   *   **Break-Even Point in Units:**\n        *   Break-Even Point (units) = $1,260,000 / $207.50\n        *   Break-Even Point (units) = 6,072.24 units\n        *   Since we cannot sell a fraction of a unit, we round up to 6,072 units to ensure we cover all fixed costs.\n\n4. **Answer:**\n   *   Weighted-Average Contribution Margin: $207.50 per unit\n   *   Break-Even Point in Total Units: 6,072 units",
+          "keyFormula": "Break-Even Point (units) = Total Fixed Costs / Weighted-Average Contribution Margin",
+          "commonMistakes": [
+            "Forgetting to weight the contribution margin by the sales mix percentage, leading to an inaccurate WACM.",
+            "Using the unweighted average of the contribution margins instead of the weighted average.",
+            "Not rounding the break-even point calculation correctly. Always round UP to the nearest whole unit to ensure all fixed costs are covered.",
+            "Using the contribution margin ratio instead of the contribution margin per unit in the WACM calculation."
+          ],
+          "examTip": "On the exam, carefully read the problem to identify the sales mix and contribution margins for each product. Double-check your calculations, especially when dealing with percentages and rounding. If time permits, verify your answer by calculating total revenue and total costs at the break-even point to ensure they are equal."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the number of total units needed to achieve the target after-tax profit of $504,000.",
+          "hints": [
+            "Convert after-tax to before-tax profit using the tax rate"
+          ],
+          "solution": {
+            "approach": "Calculate before-tax target, then use CVP formula",
+            "calculations": "**Before-Tax Profit Needed:**\nAfter-tax profit = Before-tax × (1 - Tax rate)\n$504,000 = Before-tax × (1 - 0.25)\n$504,000 = Before-tax × 0.75\nBefore-tax profit = $504,000 / 0.75 = **$672,000**\n\n**Units for Target Profit:**\nUnits = (Fixed Costs + Target Before-Tax Profit) / WACM\n= ($1,260,000 + $672,000) / $207.50\n= $1,932,000 / $207.50\n= **9,311 total units**",
+            "answer": {
+              "beforeTaxProfit": 672000,
+              "requiredUnits": 9311
+            },
+            "explanation": "After-tax targets must be converted to before-tax to use in CVP analysis."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the total units needed to achieve the target after-tax profit:\n\n1. **Given Information:**\n   * Fixed Costs: $1,260,000\n   * Target After-Tax Profit: $504,000\n   * Tax Rate: 25% (0.25)\n   * Weighted Average Contribution Margin (WACM): $207.50 (calculated in prior tasks)\n\n2. **Formula:**\n   * Before-Tax Profit = After-Tax Profit / (1 - Tax Rate)\n   * Units to Achieve Target Profit = (Fixed Costs + Target Before-Tax Profit) / Weighted Average Contribution Margin\n\n3. **Calculation:**\n   * **Step 1: Calculate the Before-Tax Profit Needed**\n      * Before-Tax Profit = $504,000 / (1 - 0.25)\n      * Before-Tax Profit = $504,000 / 0.75\n      * Before-Tax Profit = $672,000\n\n   * **Step 2: Calculate the Total Units Needed**\n      * Units = ($1,260,000 + $672,000) / $207.50\n      * Units = $1,932,000 / $207.50\n      * Units = 9,311.33\n      * Since we cannot sell fractional units, round up to 9,311 units.\n\n4. **Answer:**\n   * The number of total units needed to achieve the target after-tax profit is 9,311 units.",
+          "keyFormula": "Units to Achieve Target Profit = (Fixed Costs + Target Before-Tax Profit) / Weighted Average Contribution Margin",
+          "commonMistakes": [
+            "Using the after-tax profit directly in the CVP formula without converting it to before-tax profit first. CVP analysis requires before-tax profit figures.",
+            "Forgetting to divide by (1 - Tax Rate) when converting after-tax profit to before-tax profit. This step is crucial for accurate CVP analysis.",
+            "Not using the weighted average contribution margin. Using individual product contribution margins will lead to an incorrect result in a multi-product CVP analysis.",
+            "Rounding the final answer incorrectly. Since you cannot sell a fraction of a unit, you should round to the nearest whole number. In this case, rounding up is appropriate to ensure the target profit is met or exceeded."
+          ],
+          "examTip": "Always convert after-tax profit to before-tax profit *first* when performing CVP analysis with taxes. Write down the formula: Before-Tax Profit = After-Tax Profit / (1 - Tax Rate) to avoid errors under pressure."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Evaluate the proposed change to drop Basic and shift sales mix. Calculate the new WACM and break-even point.",
+          "hints": [
+            "New mix: Standard 60%, Premium 40%"
+          ],
+          "solution": {
+            "approach": "Recalculate WACM with new mix, then new BEP",
+            "calculations": "**New Weighted-Average CM (without Basic):**\n\n| Product | CM/Unit | New Mix | Weighted CM |\n|---------|---------|---------|-------------|\n| Standard | $225 | 60% | $135.00 |\n| Premium | $400 | 40% | $160.00 |\n| **Total WACM** | | | **$295.00** |\n\n**New Break-Even Point:**\nBEP (units) = $1,260,000 / $295.00 = **4,271 total units**\n\n**Comparison:**\n| Metric | Current Mix | Proposed Mix | Change |\n|--------|-------------|--------------|--------|\n| WACM | $207.50 | $295.00 | +$87.50 (42% higher) |\n| BEP Units | 6,072 | 4,271 | -1,801 (30% lower) |\n\n**Recommendation:** The new product mix is significantly more profitable per unit and has a much lower break-even point. However, management must assess if demand exists for 40% more Standard and 100% more Premium units.",
+            "answer": {
+              "newWACM": 295,
+              "newBEP": 4271,
+              "bepReduction": 1801
+            },
+            "explanation": "Shifting mix toward higher-margin products significantly improves profitability metrics."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to evaluate the proposed change to drop the Basic smartphone and shift the sales mix to 60% Standard and 40% Premium, and calculate the new weighted-average contribution margin (WACM) and break-even point (BEP). \n\n1. **Given Information:**\n   *   Fixed Costs: $1,260,000\n   *   Standard CM/Unit: $225\n   *   Premium CM/Unit: $400\n   *   New Sales Mix: Standard (60%), Premium (40%)\n\n2. **Formula:**\n   *   Weighted-Average Contribution Margin (WACM) = (Product 1 CM/Unit * Product 1 Sales Mix) + (Product 2 CM/Unit * Product 2 Sales Mix) + ...\n   *   Break-Even Point in Units = Fixed Costs / WACM\n\n3. **Calculation:**\n   *   **Calculate the New Weighted-Average Contribution Margin (WACM):**\n      *   Standard Weighted CM = $225 (CM/Unit) * 60% (Sales Mix) = $135.00\n      *   Premium Weighted CM = $400 (CM/Unit) * 40% (Sales Mix) = $160.00\n      *   Total WACM = $135.00 + $160.00 = $295.00\n   *   **Calculate the New Break-Even Point in Units:**\n      *   BEP (Units) = $1,260,000 (Fixed Costs) / $295.00 (WACM) = 4,271.19 units. Round to 4,271 units.\n   *   **Calculate the Reduction in Break-Even Point:**\n      *   Current BEP (from previous calculations): 6,072 units\n      *   Reduction in BEP = 6,072 - 4,271 = 1,801 units\n\n4. **Answer:**\n   *   New Weighted-Average Contribution Margin (WACM): $295\n   *   New Break-Even Point (BEP): 4,271 units\n   *   Break-Even Point Reduction: 1,801 units",
+          "keyFormula": "Break-Even Point in Units = Fixed Costs / Weighted-Average Contribution Margin",
+          "commonMistakes": [
+            "Forgetting to recalculate the sales mix percentages when a product is dropped. Make sure the remaining products' sales mix percentages add up to 100%.",
+            "Using the old WACM to calculate the new break-even point. Always use the *new* WACM that reflects the change in product mix.",
+            "Rounding errors. Carry calculations to at least two decimal places and only round the *final* answer."
+          ],
+          "examTip": "When dealing with multi-product CVP analysis, clearly label each step and double-check your sales mix percentages. A small error in the mix can significantly impact the final break-even point."
+        },
+        {
+          "id": "t5",
+          "taskNumber": 5,
+          "requirement": "If sales remain at 12,000 total units, compare quarterly profit under both scenarios.",
+          "hints": [
+            "Profit = (Units × WACM) - Fixed Costs"
+          ],
+          "solution": {
+            "approach": "Calculate total CM less fixed costs for both scenarios",
+            "calculations": "**Profit Comparison at 12,000 Units:**\n\n**Current Mix:**\nTotal CM = 12,000 × $207.50 = $2,490,000\nProfit = $2,490,000 - $1,260,000 = **$1,230,000**\n\n**Proposed Mix:**\nTotal CM = 12,000 × $295.00 = $3,540,000\nProfit = $3,540,000 - $1,260,000 = **$2,280,000**\n\n**Improvement:**\nAdditional Profit = $2,280,000 - $1,230,000 = **$1,050,000 per quarter**\n= 85.4% improvement in quarterly profit",
+            "answer": {
+              "currentProfit": 1230000,
+              "proposedProfit": 2280000,
+              "improvement": 1050000
+            },
+            "explanation": "At the same volume, shifting to higher-margin products dramatically increases profit."
+          },
+          "points": 10,
+          "enhanced": true,
+          "stepByStep": "Here's how to compare the profitability of the current and proposed sales mixes, assuming a total sales volume of 12,000 units:\n\n1. **Given Information:**\n   *   Current Weighted Average Contribution Margin (WACM): $207.50 per unit\n   *   Proposed Weighted Average Contribution Margin (WACM): $295.00 per unit\n   *   Total Fixed Costs: $1,260,000\n   *   Total Units Sold: 12,000\n\n2. **Formula:**\n   *   Total Contribution Margin = Units Sold × Weighted Average Contribution Margin\n   *   Profit = Total Contribution Margin - Fixed Costs\n\n3. **Calculation:**\n   *   **Current Sales Mix:**\n      *   Total Contribution Margin = 12,000 units × $207.50/unit = $2,490,000\n      *   Profit = $2,490,000 - $1,260,000 = $1,230,000\n   *   **Proposed Sales Mix:**\n      *   Total Contribution Margin = 12,000 units × $295.00/unit = $3,540,000\n      *   Profit = $3,540,000 - $1,260,000 = $2,280,000\n   *   **Profit Improvement:**\n      *   Additional Profit = $2,280,000 - $1,230,000 = $1,050,000\n      *   Percentage Improvement = ($1,050,000 / $1,230,000) * 100% = 85.37% (approximately 85.4%)\n\n4. **Answer:**\n   *   Current Profit: $1,230,000\n   *   Proposed Profit: $2,280,000\n   *   Profit Improvement: $1,050,000",
+          "keyFormula": "Profit = (Units × WACM) - Fixed Costs",
+          "commonMistakes": [
+            "Failing to use the weighted average contribution margin when calculating total contribution margin for the product mix.",
+            "Forgetting to subtract fixed costs from the total contribution margin to arrive at the profit figure.",
+            "Incorrectly calculating the percentage improvement by dividing the profit improvement by the proposed profit instead of the original profit."
+          ],
+          "examTip": "When dealing with multi-product CVP analysis, always calculate the weighted average contribution margin first. This simplifies the profit calculation and reduces the chance of errors. Double-check that you are using the correct WACM for each scenario."
+        }
+      ],
+      "skills": [
+        "CVP analysis",
+        "Multi-product break-even",
+        "Sales mix optimization",
+        "Profit planning"
+      ],
+      "relatedConcepts": [
+        "Contribution margin",
+        "Break-even",
+        "Target profit",
+        "Sales mix"
+      ]
+    },
+    {
+      "id": "cma1-sim-008",
+      "section": "CMA1",
+      "title": "Weighted-Average Process Costing",
+      "blueprintArea": "CMA1-D",
+      "topic": "Process Costing",
+      "difficulty": "hard",
+      "estimatedTime": 30,
+      "scenario": "ChemCorp Inc. manufactures industrial chemicals through a continuous process. The Mixing Department is the first of three production departments. The department uses the weighted-average method for process costing.\n\nProduction data for November is provided below.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Production Data - November",
+          "type": "table",
+          "data": "| Physical Units Data | Gallons |\n|---------------------|---------|\n| Beginning WIP (November 1) | 8,000 |\n| - Materials: 100% complete | |\n| - Conversion: 40% complete | |\n| Units Started in November | 52,000 |\n| Units Completed & Transferred | 50,000 |\n| Ending WIP (November 30) | 10,000 |\n| - Materials: 100% complete | |\n| - Conversion: 60% complete | |"
+        },
+        {
+          "id": "ex2",
+          "title": "Cost Data",
+          "type": "table",
+          "data": "| Cost Element | Beginning WIP | Added in November |\n|--------------|---------------|-------------------|\n| Direct Materials | $28,800 | $187,200 |\n| Conversion Costs | $12,600 | $199,400 |\n| **Total** | **$41,400** | **$386,600** |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Compute the equivalent units of production for materials and conversion costs.",
+          "hints": [
+            "Under weighted-average, treat all units as if started this period"
+          ],
+          "solution": {
+            "approach": "Calculate EUP for completed units (100%) plus ending WIP (at completion %)",
+            "calculations": "**Equivalent Units - Weighted Average Method:**\n\n| | Physical Units | Materials (100%) | Conversion |\n|--|---------------|------------------|------------|\n| Completed & Transferred | 50,000 | 50,000 | 50,000 |\n| Ending WIP | 10,000 | 10,000 (100%) | 6,000 (60%) |\n| **Total Equivalent Units** | | **60,000** | **56,000** |\n\n*Note: Under weighted-average, beginning WIP is not separated - all work is treated as if performed this period.*",
+            "answer": {
+              "materialsEUP": 60000,
+              "conversionEUP": 56000
+            },
+            "explanation": "Weighted-average method combines beginning and current period work into one pool."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the equivalent units of production (EUP) for materials and conversion costs using the weighted-average method:\n\n1. **Given Information:**\n   *   Units Completed & Transferred: 50,000\n   *   Ending Work-in-Process (WIP): 10,000 units\n   *   Ending WIP Materials: 100% complete\n   *   Ending WIP Conversion: 60% complete\n\n2. **Formula:**\n   *   Equivalent Units = Units Completed & Transferred + (Ending WIP Units * Percentage Complete)\n\n3. **Calculation:**\n   *   **Materials EUP:**\n      *   Completed & Transferred: 50,000 units\n      *   Ending WIP: 10,000 units * 100% = 10,000 units\n      *   Total Materials EUP: 50,000 + 10,000 = 60,000 units\n   *   **Conversion EUP:**\n      *   Completed & Transferred: 50,000 units\n      *   Ending WIP: 10,000 units * 60% = 6,000 units\n      *   Total Conversion EUP: 50,000 + 6,000 = 56,000 units\n\n4. **Answer:**\n   *   Materials EUP: 60,000 units\n   *   Conversion EUP: 56,000 units",
+          "keyFormula": "Equivalent Units = Units Completed & Transferred + (Ending WIP Units * Percentage Complete)",
+          "commonMistakes": [
+            "Failing to multiply the ending WIP units by the percentage complete for both materials and conversion costs. For example, using 10,000 for conversion EUP instead of 10,000 * 60% = 6,000.",
+            "Incorrectly including beginning WIP in the EUP calculation. Under the weighted-average method, beginning WIP is *not* separately considered when calculating equivalent units. All work is treated as if started during the current period.",
+            "Forgetting to account for the percentage of completion for ending WIP. All units completed and transferred are 100% complete, but ending WIP must be adjusted by its percentage of completion for both materials and conversion costs."
+          ],
+          "examTip": "Carefully read the problem to determine if weighted-average or FIFO is being used. The weighted-average method is generally simpler because you don't need to separate beginning WIP. Double-check that you've multiplied the ending WIP units by the correct percentage of completion for both materials and conversion costs before calculating the final EUP."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the cost per equivalent unit for materials and conversion costs.",
+          "hints": [
+            "Total costs to account for = Beginning WIP + Added this period"
+          ],
+          "solution": {
+            "approach": "Total costs ÷ equivalent units for each cost element",
+            "calculations": "**Total Costs to Account For:**\nMaterials: $28,800 + $187,200 = $216,000\nConversion: $12,600 + $199,400 = $212,000\nTotal: $428,000\n\n**Cost per Equivalent Unit:**\n\n| Cost Element | Total Costs | ÷ EUP | = Cost/EU |\n|--------------|-------------|-------|-----------|\n| Materials | $216,000 | ÷ 60,000 | = $3.60/EU |\n| Conversion | $212,000 | ÷ 56,000 | = $3.7857/EU |\n| **Total** | | | **$7.3857/EU** |",
+            "answer": {
+              "materialsCostPerEU": 3.6,
+              "conversionCostPerEU": 3.7857,
+              "totalCostPerEU": 7.3857
+            },
+            "explanation": "Cost per EU uses total costs (beginning + added) divided by equivalent units."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost per equivalent unit for materials and conversion costs using the weighted-average method:\n\n1. **Given Information:**\n   *   Beginning Work-in-Process (WIP) Materials Cost: $28,800\n   *   Beginning Work-in-Process (WIP) Conversion Cost: $12,600\n   *   Materials Costs Added During November: $187,200\n   *   Conversion Costs Added During November: $199,400\n   *   Equivalent Units of Production (EUP) - Materials: 60,000\n   *   Equivalent Units of Production (EUP) - Conversion: 56,000\n\n2. **Formula:**\n   *   Cost per Equivalent Unit = (Beginning WIP Costs + Costs Added During the Period) / Equivalent Units of Production\n\n3. **Calculation:**\n   *   **Materials Cost per Equivalent Unit:**\n      *   Total Materials Costs = Beginning WIP Materials Cost + Materials Costs Added During November\n      *   Total Materials Costs = $28,800 + $187,200 = $216,000\n      *   Materials Cost per Equivalent Unit = Total Materials Costs / Equivalent Units of Production (Materials)\n      *   Materials Cost per Equivalent Unit = $216,000 / 60,000 = $3.60\n   *   **Conversion Cost per Equivalent Unit:**\n      *   Total Conversion Costs = Beginning WIP Conversion Cost + Conversion Costs Added During November\n      *   Total Conversion Costs = $12,600 + $199,400 = $212,000\n      *   Conversion Cost per Equivalent Unit = Total Conversion Costs / Equivalent Units of Production (Conversion)\n      *   Conversion Cost per Equivalent Unit = $212,000 / 56,000 = $3.7857 (rounded to four decimal places)\n\n4. **Answer:**\n   *   Materials Cost per Equivalent Unit: $3.60\n   *   Conversion Cost per Equivalent Unit: $3.7857\n   *   Total Cost per Equivalent Unit: $3.60 + $3.7857 = $7.3857\n",
+          "keyFormula": "Cost per Equivalent Unit = (Beginning WIP Costs + Costs Added During the Period) / Equivalent Units of Production",
+          "commonMistakes": [
+            "Failing to include the beginning work-in-process costs in the total costs to account for. The weighted-average method includes these costs, unlike FIFO.",
+            "Using the wrong equivalent units. Make sure to use the equivalent units for *materials* when calculating the materials cost per equivalent unit, and the equivalent units for *conversion* when calculating the conversion cost per equivalent unit.",
+            "Rounding intermediate calculations. Premature rounding can lead to inaccuracies in the final cost per equivalent unit. Carry calculations to at least four decimal places and round only the final answer."
+          ],
+          "examTip": "On the exam, double-check that you've used the correct equivalent units for each cost component (materials and conversion). A quick glance can prevent a simple but costly error."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Determine the cost of units completed and transferred to the next department.",
+          "hints": [
+            "Completed units are 100% complete for all cost elements"
+          ],
+          "solution": {
+            "approach": "Multiply completed units by total cost per EU",
+            "calculations": "**Cost of Completed Units:**\n\n| Cost Element | Completed Units × Cost/EU | = Cost |\n|--------------|--------------------------|--------|\n| Materials | 50,000 × $3.60 | = $180,000 |\n| Conversion | 50,000 × $3.7857 | = $189,285 |\n| **Total Transferred** | | **$369,285** |\n\n*Alternative calculation: 50,000 × $7.3857 = $369,285*",
+            "answer": {
+              "transferredCost": 369285
+            },
+            "explanation": "Completed units receive full cost allocation for both materials and conversion."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of units completed and transferred out of the Mixing Department using the weighted-average method:\n\n1. **Given Information:**\n   *   Completed Units: 50,000\n   *   Cost per Equivalent Unit (Materials): $3.60\n   *   Cost per Equivalent Unit (Conversion): $3.7857\n\n2. **Formula:**\n   *   Cost of Completed Units = (Completed Units × Cost per Equivalent Unit for Materials) + (Completed Units × Cost per Equivalent Unit for Conversion)\n   *   Alternatively, Cost of Completed Units = Completed Units × (Cost per Equivalent Unit for Materials + Cost per Equivalent Unit for Conversion)\n\n3. **Calculation:**\n   *   **Materials Cost in Completed Units:** 50,000 units × $3.60/unit = $180,000\n   *   **Conversion Cost in Completed Units:** 50,000 units × $3.7857/unit = $189,285\n   *   **Total Cost of Completed Units:** $180,000 + $189,285 = $369,285\n\n   *Alternative Calculation:\n   *   **Total Cost per Equivalent Unit:** $3.60 + $3.7857 = $7.3857\n   *   **Total Cost of Completed Units:** 50,000 units × $7.3857/unit = $369,285\n\n4. **Answer:**\nThe cost of units completed and transferred to the next department is $369,285.",
+          "keyFormula": "Cost of Completed Units = (Completed Units × Cost per Equivalent Unit for Materials) + (Completed Units × Cost per Equivalent Unit for Conversion)",
+          "commonMistakes": [
+            "Forgetting to include both materials and conversion costs when calculating the total cost of completed units. Candidates might only calculate the cost for one element.",
+            "Using the wrong number of completed units in the calculation. Double-check the scenario to ensure you are using the correct figure.",
+            "Incorrectly calculating the cost per equivalent unit for materials or conversion. This error will propagate through the entire calculation. Ensure you have correctly calculated the EU costs before proceeding.",
+            "Mixing up the weighted-average method with FIFO. The weighted-average method combines beginning work-in-process inventory with current period costs, while FIFO separates them."
+          ],
+          "examTip": "On exam day, quickly verify that your calculated cost of completed units seems reasonable in relation to the total costs incurred. If the completed units represent a large portion of the total equivalent units, their cost should also represent a large portion of the total costs."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Determine the cost of ending work in process inventory.",
+          "hints": [
+            "Apply appropriate completion percentages to ending WIP"
+          ],
+          "solution": {
+            "approach": "Calculate EU for ending WIP × cost per EU",
+            "calculations": "**Cost of Ending WIP:**\n\n| Cost Element | Ending WIP EU × Cost/EU | = Cost |\n|--------------|------------------------|--------|\n| Materials | 10,000 × $3.60 | = $36,000 |\n| Conversion | 6,000 × $3.7857 | = $22,714 |\n| **Total Ending WIP** | | **$58,714** |\n\n*Verification:*\nTransferred: $369,285\nEnding WIP: $58,714\n**Total: $427,999 ≈ $428,000** ✓ (rounding difference)",
+            "answer": {
+              "endingWIPCost": 58714
+            },
+            "explanation": "Ending WIP receives cost only for work actually completed."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of ending work-in-process (WIP) inventory using the weighted-average method:\n\n1. **Given Information:**\n   *   Ending WIP: 10,000 units\n   *   Ending WIP Materials Completion: 100%\n   *   Ending WIP Conversion Costs Completion: 60%\n   *   Cost per EU Materials: $3.60\n   *   Cost per EU Conversion: $3.7857\n\n2. **Formula:**\n   *   Cost of Ending WIP = (Ending WIP EU for Materials × Cost per EU for Materials) + (Ending WIP EU for Conversion × Cost per EU for Conversion)\n   *   Ending WIP EU = Ending WIP Units × Percentage Complete\n\n3. **Calculation:**\n   *   **Materials:**\n        *   Ending WIP EU for Materials = 10,000 units × 100% = 10,000 EU\n        *   Cost of Materials in Ending WIP = 10,000 EU × $3.60/EU = $36,000\n   *   **Conversion Costs:**\n        *   Ending WIP EU for Conversion = 10,000 units × 60% = 6,000 EU\n        *   Cost of Conversion in Ending WIP = 6,000 EU × $3.7857/EU = $22,714.20 (rounded to $22,714)\n   *   **Total Cost of Ending WIP:**\n        *   Total Cost = $36,000 + $22,714 = $58,714\n\n4. **Answer:**\n   *   The cost of ending work-in-process inventory is $58,714.",
+          "keyFormula": "Cost of Ending WIP = (Ending WIP EU for Materials × Cost per EU for Materials) + (Ending WIP EU for Conversion × Cost per EU for Conversion)",
+          "commonMistakes": [
+            "Forgetting to apply the percentage completion to the ending WIP units when calculating equivalent units (EU). For example, using 10,000 EU for conversion costs instead of 6,000 EU.",
+            "Using the wrong cost per equivalent unit. Make sure to use the cost per EU that was calculated for the weighted-average method for both materials and conversion costs.",
+            "Incorrectly calculating the equivalent units for either materials or conversion costs. Double-check the completion percentages provided in the problem."
+          ],
+          "examTip": "Always double-check that your total costs (cost of goods transferred out + ending WIP) reconcile to the total costs to account for. This helps catch calculation errors. In this case, $369,285 + $58,714 = $427,999 which is approximately the total cost to account for of $428,000."
+        },
+        {
+          "id": "t5",
+          "taskNumber": 5,
+          "requirement": "Prepare the cost reconciliation showing that total costs to account for equals total costs accounted for.",
+          "hints": [
+            "This is a control check for accuracy"
+          ],
+          "solution": {
+            "approach": "Create a formal reconciliation statement",
+            "calculations": "**COST RECONCILIATION:**\n\n**Costs to Account For:**\n| Source | Materials | Conversion | Total |\n|--------|-----------|------------|-------|\n| Beginning WIP | $28,800 | $12,600 | $41,400 |\n| Added in November | $187,200 | $199,400 | $386,600 |\n| **Total to Account For** | **$216,000** | **$212,000** | **$428,000** |\n\n**Costs Accounted For:**\n| Destination | Materials | Conversion | Total |\n|-------------|-----------|------------|-------|\n| Transferred Out | $180,000 | $189,285 | $369,285 |\n| Ending WIP | $36,000 | $22,714 | $58,714 |\n| **Total Accounted For** | **$216,000** | **$211,999** | **$427,999** |\n\n*$1 difference due to rounding in conversion cost per EU*\n**Reconciliation: ✓ Balanced**",
+            "answer": {
+              "toAccountFor": 428000,
+              "accountedFor": 427999,
+              "balanced": 1
+            },
+            "explanation": "Cost reconciliation verifies that all costs have been properly assigned."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "To prepare the cost reconciliation, we need to ensure that the total costs to account for equal the total costs accounted for. This is a fundamental check in process costing to verify the accuracy of our calculations.\n\n1. **Given Information:**\n   *   Beginning Work-in-Process (WIP) Materials: $28,800\n   *   Beginning Work-in-Process (WIP) Conversion: $12,600\n   *   Costs Added in November Materials: $187,200\n   *   Costs Added in November Conversion: $199,400\n   *   Transferred Out Materials: $180,000\n   *   Transferred Out Conversion: $189,285\n   *   Ending Work-in-Process (WIP) Materials: $36,000\n   *   Ending Work-in-Process (WIP) Conversion: $22,714\n\n2. **Formula:**\n   *   Total Costs to Account For = Beginning WIP Costs + Costs Added During the Period\n   *   Total Costs Accounted For = Costs of Goods Transferred Out + Ending WIP Costs\n\n3. **Calculation:**\n   *   **Costs to Account For:**\n      *   Materials: Beginning WIP Materials + Costs Added in November Materials = $28,800 + $187,200 = $216,000\n      *   Conversion: Beginning WIP Conversion + Costs Added in November Conversion = $12,600 + $199,400 = $212,000\n      *   Total Costs to Account For = $216,000 (Materials) + $212,000 (Conversion) = $428,000\n   *   **Costs Accounted For:**\n      *   Materials: Transferred Out Materials + Ending WIP Materials = $180,000 + $36,000 = $216,000\n      *   Conversion: Transferred Out Conversion + Ending WIP Conversion = $189,285 + $22,714 = $211,999\n      *   Total Costs Accounted For = $216,000 (Materials) + $211,999 (Conversion) = $427,999\n\n4. **Answer:**\n   *   Total Costs to Account For: $428,000\n   *   Total Costs Accounted For: $427,999\n   *   Difference: $1 (due to rounding)\n   *   Reconciliation: Balanced (with a minor rounding difference)",
+          "keyFormula": "Total Costs to Account For = Beginning WIP Costs + Costs Added During the Period; Total Costs Accounted For = Costs of Goods Transferred Out + Ending WIP Costs",
+          "commonMistakes": [
+            "Failing to include beginning WIP costs in the 'Costs to Account For' section.",
+            "Incorrectly calculating or allocating costs to Transferred Out and Ending WIP, leading to an imbalance.",
+            "Rounding errors can accumulate and cause a significant difference if not handled carefully. Maintain several decimal places during intermediate calculations."
+          ],
+          "examTip": "Always double-check your calculations, especially the allocation of costs between transferred out and ending WIP. A small error in unit cost calculation can lead to a large discrepancy in the reconciliation. If the reconciliation is off by a significant amount, review your equivalent unit calculations and cost per equivalent unit calculations."
+        }
+      ],
+      "skills": [
+        "Process costing",
+        "Equivalent units calculation",
+        "Cost allocation",
+        "Cost reconciliation"
+      ],
+      "relatedConcepts": [
+        "Weighted-average method",
+        "Work in process",
+        "Cost flows",
+        "Manufacturing"
+      ]
+    },
+    {
+      "id": "cma1-sim-009",
+      "section": "CMA1",
+      "title": "Internal Controls Risk Assessment & Testing",
+      "blueprintArea": "CMA1-E",
+      "topic": "COSO Internal Control Risk Assessment",
+      "difficulty": "hard",
+      "estimatedTime": 25,
+      "scenario": "You are the internal audit manager at NexGen Electronics Corp. The audit committee has asked you to perform a quantitative risk assessment of the company's order-to-cash cycle and evaluate the effectiveness of key controls.\n\nThe company processes approximately 180,000 sales transactions per year with an average value of $850. Historical data about control failures and associated losses is provided in the exhibits.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Order-to-Cash Control Environment",
+          "type": "table",
+          "data": "| Control Point | Control Description | Annual Test Sample | Failures Found | Avg Loss per Failure |\n|--------------|--------------------|--------------------|----------------|---------------------|\n| C1 - Credit Approval | Automated credit check before order | 500 | 8 | $3,200 |\n| C2 - Shipping Verification | 3-way match (PO, receipt, invoice) | 400 | 12 | $1,800 |\n| C3 - Billing Accuracy | Automated price lookup from master | 600 | 3 | $950 |\n| C4 - Collections Follow-up | 30-day aging review triggers | 350 | 18 | $5,400 |\n| C5 - Cash Application | Auto-match payments to invoices | 450 | 6 | $2,100 |\n\n**Total annual transactions:** 180,000\n**Average transaction value:** $850"
+        },
+        {
+          "id": "ex2",
+          "title": "Control Implementation Costs",
+          "type": "table",
+          "data": "| Control Enhancement | Annual Cost | Expected Failure Rate Reduction |\n|--------------------|------------|-------------------------------|\n| Enhanced C1: Real-time credit scoring API | $45,000 | Reduce C1 failures by 75% |\n| Enhanced C2: RFID-based shipping verification | $72,000 | Reduce C2 failures by 60% |\n| Enhanced C4: AI-powered collections prioritization | $58,000 | Reduce C4 failures by 50% |\n\n**Company's risk appetite:** Will invest in controls where annual cost-benefit ratio > 1.5"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the failure rate and expected annual loss (EAL) for each of the 5 controls. Rank them by EAL.",
+          "hints": [
+            "Failure rate = Failures / Sample size. Extrapolate to annual volume."
+          ],
+          "solution": {
+            "approach": "Calculate failure rate from sample, extrapolate to total population, multiply by loss per failure",
+            "calculations": "**Failure Rate = Failures ÷ Sample Size**\n**Expected Annual Failures = Failure Rate × 180,000**\n**EAL = Expected Annual Failures × Avg Loss per Failure**\n\n| Control | Failure Rate | Expected Failures | Avg Loss | EAL |\n|---------|-------------|-------------------|----------|-----|\n| C1 | 8/500 = 1.60% | 2,880 | $3,200 | $9,216,000 |\n| C2 | 12/400 = 3.00% | 5,400 | $1,800 | $9,720,000 |\n| C3 | 3/600 = 0.50% | 900 | $950 | $855,000 |\n| C4 | 18/350 = 5.14% | 9,257 | $5,400 | $49,988,571 |\n| C5 | 6/450 = 1.33% | 2,400 | $2,100 | $5,040,000 |\n\n**Ranking by EAL:**\n1. C4 - Collections: $49,988,571\n2. C2 - Shipping: $9,720,000\n3. C1 - Credit: $9,216,000\n4. C5 - Cash Application: $5,040,000\n5. C3 - Billing: $855,000\n\n**Total EAL: $74,819,571**",
+            "answer": {
+              "c1EAL": 9216000,
+              "c2EAL": 9720000,
+              "c3EAL": 855000,
+              "c4EAL": 49988571,
+              "c5EAL": 5040000
+            },
+            "explanation": "C4 (Collections) has the highest expected annual loss due to both the highest failure rate (5.14%) and the highest per-failure loss ($5,400)."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's a step-by-step breakdown of how to calculate the Expected Annual Loss (EAL) for each control:\n\n1. **Given Information:**\n   *   Annual Sales Transactions: 180,000\n   *   Average Transaction Value: $850\n   *   Control Failure Data (from exhibits):\n        *   C1 (Credit): Failures = 8, Sample Size = 500, Avg Loss = $3,200\n        *   C2 (Shipping): Failures = 12, Sample Size = 400, Avg Loss = $1,800\n        *   C3 (Billing): Failures = 3, Sample Size = 600, Avg Loss = $950\n        *   C4 (Collections): Failures = 18, Sample Size = 350, Avg Loss = $5,400\n        *   C5 (Cash Application): Failures = 6, Sample Size = 450, Avg Loss = $2,100\n\n2. **Formula:**\n   *   Failure Rate = (Number of Failures) / (Sample Size)\n   *   Expected Annual Failures = (Failure Rate) * (Total Annual Transactions)\n   *   Expected Annual Loss (EAL) = (Expected Annual Failures) * (Average Loss per Failure)\n\n3. **Calculation:**\n   *   **Control 1 (Credit):**\n        *   Failure Rate = 8 / 500 = 0.016 (or 1.60%)\n        *   Expected Annual Failures = 0.016 * 180,000 = 2,880\n        *   EAL = 2,880 * $3,200 = $9,216,000\n   *   **Control 2 (Shipping):**\n        *   Failure Rate = 12 / 400 = 0.03 (or 3.00%)\n        *   Expected Annual Failures = 0.03 * 180,000 = 5,400\n        *   EAL = 5,400 * $1,800 = $9,720,000\n   *   **Control 3 (Billing):**\n        *   Failure Rate = 3 / 600 = 0.005 (or 0.50%)\n        *   Expected Annual Failures = 0.005 * 180,000 = 900\n        *   EAL = 900 * $950 = $855,000\n   *   **Control 4 (Collections):**\n        *   Failure Rate = 18 / 350 = 0.05142857 (or 5.14%)\n        *   Expected Annual Failures = 0.05142857 * 180,000 = 9,257.14 (round to 9,257)\n        *   EAL = 9,257 * $5,400 = $49,987,800 (slight difference due to rounding)\n   *   **Control 5 (Cash Application):**\n        *   Failure Rate = 6 / 450 = 0.013333 (or 1.33%)\n        *   Expected Annual Failures = 0.013333 * 180,000 = 2,400\n        *   EAL = 2,400 * $2,100 = $5,040,000\n\n4. **Answer:**\n   *   C1 EAL: $9,216,000\n   *   C2 EAL: $9,720,000\n   *   C3 EAL: $855,000\n   *   C4 EAL: $49,987,800\n   *   C5 EAL: $5,040,000",
+          "keyFormula": "EAL = (Failures / Sample Size) * Annual Transactions * Average Loss per Failure",
+          "commonMistakes": [
+            "Forgetting to extrapolate the failure rate from the sample to the entire population of transactions. The failure rate must be applied to the 180,000 annual transactions to determine the expected number of failures annually.",
+            "Using the average transaction value ($850) instead of the average loss per failure provided for each control. The average loss per failure is the relevant cost driver for EAL calculation.",
+            "Rounding the failure rate prematurely, which can lead to significant differences in the final EAL, especially for controls with high failure rates or high average losses. Carry calculations to at least four decimal places.",
+            "Incorrectly calculating the failure rate by dividing the sample size by the number of failures instead of the other way around."
+          ],
+          "examTip": "On the exam, pay close attention to the units of measurement. Ensure you are using annual figures for annual calculations. If data is provided on a monthly or quarterly basis, annualize it before performing the EAL calculation. Also, double-check that you are using the correct 'loss per failure' for each control, as this is a key input that varies."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "For each proposed control enhancement, calculate the cost-benefit ratio (annual loss reduction ÷ annual cost). Which enhancements meet the company's 1.5 threshold?",
+          "hints": [
+            "Loss reduction = Current EAL × reduction percentage"
+          ],
+          "solution": {
+            "approach": "Calculate expected loss reduction from each enhancement, divide by cost",
+            "calculations": "**Enhanced C1 (Credit Scoring API):**\nLoss Reduction = $9,216,000 × 75% = $6,912,000\nCost-Benefit = $6,912,000 / $45,000 = **153.6** ✓ (> 1.5)\n\n**Enhanced C2 (RFID Shipping):**\nLoss Reduction = $9,720,000 × 60% = $5,832,000\nCost-Benefit = $5,832,000 / $72,000 = **81.0** ✓ (> 1.5)\n\n**Enhanced C4 (AI Collections):**\nLoss Reduction = $49,988,571 × 50% = $24,994,286\nCost-Benefit = $24,994,286 / $58,000 = **430.9** ✓ (> 1.5)\n\n**All three enhancements meet the threshold.**\nPriority order: C4 (430.9) → C1 (153.6) → C2 (81.0)",
+            "answer": {
+              "c1Ratio": 153.6,
+              "c2Ratio": 81,
+              "c4Ratio": 430.9
+            },
+            "explanation": "All three enhancements far exceed the 1.5 threshold. C4 enhancement provides the highest return per dollar invested."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *  Annual sales transactions: 180,000\n   *  Average sales value: $850\n   *  Control Enhancement C1 (Credit Scoring API): Loss Reduction Percentage = 75%, Annual Cost = $45,000, Current EAL = $9,216,000\n   *  Control Enhancement C2 (RFID Shipping): Loss Reduction Percentage = 60%, Annual Cost = $72,000, Current EAL = $9,720,000\n   *  Control Enhancement C4 (AI Collections): Loss Reduction Percentage = 50%, Annual Cost = $58,000, Current EAL = $49,988,571\n   *  Company's Cost-Benefit Threshold: 1.5\n\n2. **Formula:**\n   *  Loss Reduction = Current Expected Annual Loss (EAL) × Reduction Percentage\n   *  Cost-Benefit Ratio = Annual Loss Reduction ÷ Annual Cost\n\n3. **Calculation:**\n   *  **Enhanced C1 (Credit Scoring API):**\n      *  Loss Reduction = $9,216,000 × 75% = $6,912,000\n      *  Cost-Benefit Ratio = $6,912,000 / $45,000 = 153.6\n   *  **Enhanced C2 (RFID Shipping):**\n      *  Loss Reduction = $9,720,000 × 60% = $5,832,000\n      *  Cost-Benefit Ratio = $5,832,000 / $72,000 = 81.0\n   *  **Enhanced C4 (AI Collections):**\n      *  Loss Reduction = $49,988,571 × 50% = $24,994,285.50\n      *  Cost-Benefit Ratio = $24,994,285.50 / $58,000 = 430.936 (Rounded to 430.9)\n\n4. **Answer:**\n   *  C1 Cost-Benefit Ratio: 153.6\n   *  C2 Cost-Benefit Ratio: 81.0\n   *  C4 Cost-Benefit Ratio: 430.9\n   *  All three enhancements meet the company's 1.5 threshold.",
+          "keyFormula": "Cost-Benefit Ratio = (Current EAL * Reduction Percentage) / Annual Cost",
+          "commonMistakes": [
+            "Forgetting to calculate the loss reduction before calculating the cost-benefit ratio. Candidates might directly divide the current EAL by the annual cost, leading to an incorrect ratio.",
+            "Using percentages as whole numbers instead of decimals (e.g., using 75 instead of 0.75 when calculating the loss reduction).",
+            "Rounding errors can significantly impact the final result, especially if intermediate calculations are rounded prematurely. Maintain precision throughout the calculation and round only the final answer.",
+            "Misinterpreting the question and calculating the payback period instead of the cost-benefit ratio."
+          ],
+          "examTip": "Focus on understanding the formulas and the meaning of each variable. Before starting the calculations, write down all the given information and the formulas you need. This will help you stay organized and avoid mistakes. If time is limited, prioritize calculating the loss reduction first, as it's a crucial component of the cost-benefit analysis."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "If all three enhancements are implemented, calculate the new total EAL and the percentage reduction in total risk.",
+          "hints": [
+            "Apply reduction to respective controls, keep C3 and C5 unchanged"
+          ],
+          "solution": {
+            "approach": "Apply failure rate reductions and recalculate total EAL",
+            "calculations": "**New EALs after enhancements:**\nC1: $9,216,000 × (1 - 0.75) = $2,304,000\nC2: $9,720,000 × (1 - 0.60) = $3,888,000\nC3: $855,000 (unchanged)\nC4: $49,988,571 × (1 - 0.50) = $24,994,286\nC5: $5,040,000 (unchanged)\n\n**New Total EAL:** $2,304,000 + $3,888,000 + $855,000 + $24,994,286 + $5,040,000 = **$37,081,286**\n\n**Original Total EAL:** $74,819,571\n**Reduction:** $74,819,571 - $37,081,286 = $37,738,286\n**Percentage Reduction:** $37,738,286 / $74,819,571 = **50.4%**\n\n**Total Enhancement Cost:** $45,000 + $72,000 + $58,000 = $175,000\n**Net Annual Benefit:** $37,738,286 - $175,000 = $37,563,286",
+            "answer": {
+              "newTotalEAL": 37081286,
+              "reductionPercent": 50.4
+            },
+            "explanation": "Implementing all enhancements cuts total risk by 50.4% at a cost of only $175,000 per year."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   Original Total Expected Annual Loss (EAL): $74,819,571 (Sum of EALs for C1, C2, C3, C4, and C5 from previous tasks)\n   *   EAL for Control 1 (C1): $9,216,000\n   *   EAL for Control 2 (C2): $9,720,000\n   *   EAL for Control 3 (C3): $855,000\n   *   EAL for Control 4 (C4): $49,988,571\n   *   EAL for Control 5 (C5): $5,040,000\n   *   Enhancement for C1 reduces failure rate by 75%\n   *   Enhancement for C2 reduces failure rate by 60%\n   *   Enhancement for C4 reduces failure rate by 50%\n   *   C3 and C5 are unchanged.\n   *   Total Enhancement Cost: $45,000 (C1) + $72,000 (C2) + $58,000 (C4) = $175,000\n\n2. **Formula:**\n   *   New EAL = Original EAL × (1 - Reduction in Failure Rate)\n   *   Total New EAL = Sum of New EALs for all controls\n   *   Reduction in Total EAL = Original Total EAL - New Total EAL\n   *   Percentage Reduction = (Reduction in Total EAL / Original Total EAL) × 100\n   *   Net Annual Benefit = Reduction in Total EAL - Total Enhancement Cost\n\n3. **Calculation:**\n   *   **New EALs after enhancements:**\n      *   C1: $9,216,000 × (1 - 0.75) = $9,216,000 × 0.25 = $2,304,000\n      *   C2: $9,720,000 × (1 - 0.60) = $9,720,000 × 0.40 = $3,888,000\n      *   C3: $855,000 (unchanged)\n      *   C4: $49,988,571 × (1 - 0.50) = $49,988,571 × 0.50 = $24,994,286\n      *   C5: $5,040,000 (unchanged)\n   *   **New Total EAL:** $2,304,000 + $3,888,000 + $855,000 + $24,994,286 + $5,040,000 = $37,081,286\n   *   **Reduction in Total EAL:** $74,819,571 - $37,081,286 = $37,738,285\n   *   **Percentage Reduction:** ($37,738,285 / $74,819,571) × 100 = 50.4%\n   *   **Net Annual Benefit:** $37,738,285 - $175,000 = $37,563,285\n\n4. **Answer:**\n   *   New Total EAL: $37,081,286\n   *   Percentage Reduction: 50.4%",
+          "keyFormula": "New EAL = Original EAL * (1 - Reduction in Failure Rate)",
+          "commonMistakes": [
+            "Forgetting to apply the (1 - Reduction Rate) to the original EAL. Many candidates mistakenly calculate the reduction amount (Original EAL * Reduction Rate) but forget to subtract that from the original EAL to get the *new* EAL.",
+            "Not keeping C3 and C5 unchanged. The problem states that the enhancements only affect C1, C2, and C4. Candidates may incorrectly apply a reduction to C3 and C5, leading to an incorrect total EAL.",
+            "Rounding errors can occur if intermediate calculations are rounded prematurely. It's best to keep as many decimal places as possible during calculations and round only the final answer."
+          ],
+          "examTip": "When dealing with percentage reductions, always double-check that you are applying the reduction to the correct base (original EAL in this case) and that you are calculating the *new* value after the reduction, not just the amount of the reduction. Also, pay close attention to which controls are affected by the enhancements."
+        }
+      ],
+      "skills": [
+        "Risk assessment",
+        "Control testing",
+        "Cost-benefit analysis",
+        "COSO framework"
+      ],
+      "relatedConcepts": [
+        "Internal controls",
+        "Expected loss",
+        "Control deficiencies",
+        "Risk appetite"
+      ]
+    },
+    {
+      "id": "cma1-sim-010",
+      "section": "CMA1",
+      "title": "Data Analytics for Fraud Detection",
+      "blueprintArea": "CMA1-F",
+      "topic": "Benford's Law and Statistical Analysis",
+      "difficulty": "hard",
+      "estimatedTime": 20,
+      "scenario": "You are a management accountant using data analytics to audit vendor payments. A whistleblower tip suggests potential fraudulent invoice approvals in the Facilities department. You have extracted 2,000 vendor payment records and applied Benford's Law analysis to the first-digit distribution.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "First-Digit Analysis of Vendor Payments",
+          "type": "table",
+          "data": "| First Digit | Expected (Benford) | Observed Count | Observed % |\n|------------|-------------------|----------------|-----------|\n| 1 | 30.1% | 480 | 24.0% |\n| 2 | 17.6% | 340 | 17.0% |\n| 3 | 12.5% | 250 | 12.5% |\n| 4 | 9.7% | 195 | 9.8% |\n| 5 | 7.9% | 168 | 8.4% |\n| 6 | 6.7% | 132 | 6.6% |\n| 7 | 5.8% | 115 | 5.8% |\n| 8 | 5.1% | 140 | 7.0% |\n| 9 | 4.6% | 180 | 9.0% |\n| **Total** | **100%** | **2,000** | **100%** |\n\n**Critical value for chi-square (df=8, α=0.05): 15.507**"
+        },
+        {
+          "id": "ex2",
+          "title": "Payment Approval Thresholds",
+          "type": "table",
+          "data": "| Amount Range | Approval Required |\n|-------------|------------------|\n| Under $1,000 | Dept manager auto-approve |\n| $1,000 – $4,999 | Dept manager + one signature |\n| $5,000 – $9,999 | Director approval |\n| $10,000+ | VP + Controller approval |\n\n**Key observation:** Payments starting with 8 and 9 are overrepresented. Payments starting with 1 are underrepresented."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the chi-square test statistic for the first-digit distribution. Does it exceed the critical value?",
+          "hints": [
+            "χ² = Σ[(Observed - Expected)² / Expected]. Expected count = Expected % × 2,000."
+          ],
+          "solution": {
+            "approach": "Compute expected counts, then chi-square for each digit",
+            "calculations": "**Expected Counts (Benford % × 2,000):**\n1: 602, 2: 352, 3: 250, 4: 194, 5: 158, 6: 134, 7: 116, 8: 102, 9: 92\n\n**Chi-square calculation:**\nDigit 1: (480-602)² / 602 = 14,884/602 = 24.72\nDigit 2: (340-352)² / 352 = 144/352 = 0.41\nDigit 3: (250-250)² / 250 = 0/250 = 0.00\nDigit 4: (195-194)² / 194 = 1/194 = 0.01\nDigit 5: (168-158)² / 158 = 100/158 = 0.63\nDigit 6: (132-134)² / 134 = 4/134 = 0.03\nDigit 7: (115-116)² / 116 = 1/116 = 0.01\nDigit 8: (140-102)² / 102 = 1,444/102 = 14.16\nDigit 9: (180-92)² / 92 = 7,744/92 = 84.17\n\n**χ² = 24.72 + 0.41 + 0.00 + 0.01 + 0.63 + 0.03 + 0.01 + 14.16 + 84.17 = 124.14**\n\n**124.14 >> 15.507** → Reject null hypothesis. Distribution does NOT conform to Benford's Law.",
+            "answer": {
+              "chiSquare": 124.14
+            },
+            "explanation": "The chi-square statistic of 124.14 far exceeds the critical value of 15.507, providing strong evidence the payment distribution does not follow Benford's Law."
+          },
+          "points": 35,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the chi-square test statistic and interpret the results:\n\n1. **Given Information:**\n   *   Total vendor payment records: 2,000\n   *   Observed first-digit frequencies: 1: 480, 2: 340, 3: 250, 4: 195, 5: 168, 6: 132, 7: 115, 8: 140, 9: 180\n   *   Benford's Law percentages: 1: 30.1%, 2: 17.6%, 3: 12.5%, 4: 9.7%, 5: 7.9%, 6: 6.7%, 7: 5.8%, 8: 5.1%, 9: 4.6%\n   *   Critical value for chi-square (degrees of freedom = 8, alpha = 0.05): 15.507 (This value would typically be provided in an exhibit on the exam).\n\n2. **Formula:**\n   *   Expected Count = Benford's Law Percentage × Total Number of Records\n   *   Chi-Square Statistic (χ²) = Σ [(Observed Count - Expected Count)² / Expected Count]\n\n3. **Calculation:**\n   *   **Step 1: Calculate Expected Counts for each digit:**\n        *   Digit 1: 30.1% × 2,000 = 0.301 * 2000 = 602\n        *   Digit 2: 17.6% × 2,000 = 0.176 * 2000 = 352\n        *   Digit 3: 12.5% × 2,000 = 0.125 * 2000 = 250\n        *   Digit 4: 9.7% × 2,000 = 0.097 * 2000 = 194\n        *   Digit 5: 7.9% × 2,000 = 0.079 * 2000 = 158\n        *   Digit 6: 6.7% × 2,000 = 0.067 * 2000 = 134\n        *   Digit 7: 5.8% × 2,000 = 0.058 * 2000 = 116\n        *   Digit 8: 5.1% × 2,000 = 0.051 * 2000 = 102\n        *   Digit 9: 4.6% × 2,000 = 0.046 * 2000 = 92\n\n   *   **Step 2: Calculate the Chi-Square Statistic for each digit:**\n        *   Digit 1: (480 - 602)² / 602 = (-122)² / 602 = 14,884 / 602 = 24.72\n        *   Digit 2: (340 - 352)² / 352 = (-12)² / 352 = 144 / 352 = 0.41\n        *   Digit 3: (250 - 250)² / 250 = (0)² / 250 = 0 / 250 = 0.00\n        *   Digit 4: (195 - 194)² / 194 = (1)² / 194 = 1 / 194 = 0.01\n        *   Digit 5: (168 - 158)² / 158 = (10)² / 158 = 100 / 158 = 0.63\n        *   Digit 6: (132 - 134)² / 134 = (-2)² / 134 = 4 / 134 = 0.03\n        *   Digit 7: (115 - 116)² / 116 = (-1)² / 116 = 1 / 116 = 0.01\n        *   Digit 8: (140 - 102)² / 102 = (38)² / 102 = 1,444 / 102 = 14.16\n        *   Digit 9: (180 - 92)² / 92 = (88)² / 92 = 7,744 / 92 = 84.17\n\n   *   **Step 3: Sum the Chi-Square values for each digit:**\n        *   χ² = 24.72 + 0.41 + 0.00 + 0.01 + 0.63 + 0.03 + 0.01 + 14.16 + 84.17 = 124.14\n\n   *   **Step 4: Compare the calculated Chi-Square statistic to the critical value:**\n        *   Calculated χ² (124.14) > Critical Value (15.507)\n\n4. **Answer:**\n   *   The chi-square statistic is 124.14. Since 124.14 exceeds 15.507, we reject the null hypothesis that the payment distribution conforms to Benford's Law. This suggests potential fraudulent activity, as the observed distribution of first digits is significantly different from what would be expected under Benford's Law.\n",
+          "keyFormula": "χ² = Σ [(Observed - Expected)² / Expected]",
+          "commonMistakes": [
+            "Forgetting to square the (Observed - Expected) difference, leading to an incorrect chi-square value.",
+            "Using the incorrect critical value. The critical value depends on the degrees of freedom (number of digits - 1) and the significance level (alpha). Make sure to use the correct values provided in the exam exhibits.",
+            "Incorrectly calculating the expected counts by using the wrong percentages or multiplying by the wrong total number of records.",
+            "Not summing all the individual chi-square values for each digit to get the overall chi-square statistic."
+          ],
+          "examTip": "On the exam, focus on setting up the table correctly with observed, expected, and the chi-square calculation for each digit. Double-check your calculations, especially the squaring and division steps. If time is short, prioritize calculating the digits with the largest differences between observed and expected counts, as these will contribute the most to the overall chi-square statistic."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Which digits show the largest deviations? Interpret the pattern in context of the approval thresholds.",
+          "hints": [
+            "Look at the absolute and percentage deviations for digits 1, 8, and 9"
+          ],
+          "solution": {
+            "approach": "Identify digits with largest chi-square contributions and relate to approval thresholds",
+            "calculations": "**Largest deviations by chi-square contribution:**\n1. Digit 9: 84.17 (observed 180 vs expected 92 — **95.7% over-represented**)\n2. Digit 1: 24.72 (observed 480 vs expected 602 — **20.3% under-represented**)\n3. Digit 8: 14.16 (observed 140 vs expected 102 — **37.3% over-represented**)\n\n**Pattern interpretation:**\n- Payments starting with 8 ($800-$899, $8,000-$8,999) and 9 ($900-$999, $9,000-$9,999) are significantly over-represented\n- Payments starting with 1 ($1,000-$1,999, $10,000+) are under-represented\n\n**This pattern suggests invoice manipulation:**\n- Amounts just under $1,000 (needs only auto-approve) — digits 8, 9\n- Amounts just under $10,000 (avoids VP/Controller) — digits 8, 9\n- Invoices that should be $10,000+ are split into amounts below $10,000 threshold\n\n**Red flags:** Invoice splitting and threshold manipulation.",
+            "answer": {
+              "digit9Excess": 95.7,
+              "digit1Deficit": 20.3,
+              "digit8Excess": 37.3
+            },
+            "explanation": "The pattern strongly suggests invoices are being manipulated to stay below approval thresholds — classic signs of invoice splitting fraud."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   - We have 2,000 vendor payment records.\n   - Benford's Law analysis has been applied to the first digit distribution.\n   - Digit 9: Observed frequency = 180, Expected frequency = 92\n   - Digit 1: Observed frequency = 480, Expected frequency = 602\n   - Digit 8: Observed frequency = 140, Expected frequency = 102\n\n2. **Formula:**\n   - Percentage Deviation = ((Observed Frequency - Expected Frequency) / Expected Frequency) * 100\n\n3. **Calculation:**\n   - **Digit 9:**\n     - Percentage Deviation = ((180 - 92) / 92) * 100\n     - Percentage Deviation = (88 / 92) * 100\n     - Percentage Deviation = 0.9565 * 100\n     - Percentage Deviation = 95.65% (Rounded to 95.7%)\n   - **Digit 1:**\n     - Percentage Deviation = ((480 - 602) / 602) * 100\n     - Percentage Deviation = (-122 / 602) * 100\n     - Percentage Deviation = -0.2027 * 100\n     - Percentage Deviation = -20.27% (Rounded to -20.3%)\n   - **Digit 8:**\n     - Percentage Deviation = ((140 - 102) / 102) * 100\n     - Percentage Deviation = (38 / 102) * 100\n     - Percentage Deviation = 0.3725 * 100\n     - Percentage Deviation = 37.25% (Rounded to 37.3%)\n\n4. **Answer:**\n   - Digit 9 is over-represented by 95.7%.\n   - Digit 1 is under-represented by 20.3%.\n   - Digit 8 is over-represented by 37.3%.",
+          "keyFormula": "Percentage Deviation = ((Observed Frequency - Expected Frequency) / Expected Frequency) * 100",
+          "commonMistakes": [
+            "Forgetting to divide by the *expected* frequency when calculating the percentage deviation.",
+            "Calculating the deviation as (Expected - Observed) instead of (Observed - Expected), leading to incorrect sign and misinterpretation.",
+            "Rounding errors affecting the final percentage, especially when the expected frequency is small."
+          ],
+          "examTip": "Focus on the *percentage* deviation rather than just the absolute difference. A small absolute difference might be significant if the expected frequency is very low. Also, remember that Benford's Law is most effective with large datasets (thousands of observations)."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "If 40% of the excess digit-8 and digit-9 payments are confirmed fraudulent with an average fraud amount of $780, estimate the total fraud exposure.",
+          "hints": [
+            "Excess = observed - expected for digits 8 and 9"
+          ],
+          "solution": {
+            "approach": "Calculate excess transactions for digits 8 and 9, apply fraud rate",
+            "calculations": "**Excess transactions:**\nDigit 8: 140 - 102 = 38 excess\nDigit 9: 180 - 92 = 88 excess\nTotal excess: 126 transactions\n\n**Estimated fraudulent transactions:**\n126 × 40% = 50.4 ≈ 50 transactions\n\n**Total estimated fraud exposure:**\n50 × $780 = **$39,000**\n\n**Annualized (if pattern persists):** $39,000 for this sample period\n**Risk assessment:** Moderate dollar amount but indicates control weakness that could escalate",
+            "answer": {
+              "excessTransactions": 126,
+              "fraudAmount": 39312
+            },
+            "explanation": "Estimated fraud of ~$39,312 (126 excess × 40% × $780). While the dollar amount is moderate, the control weakness enabling systematic threshold manipulation requires immediate remediation."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   Observed digit 8 transactions: 140\n   *   Expected digit 8 transactions: 102\n   *   Observed digit 9 transactions: 180\n   *   Expected digit 9 transactions: 92\n   *   Fraudulent transaction rate of excess digit 8 and 9 transactions: 40%\n   *   Average fraud amount per transaction: $780\n\n2. **Formula:**\n   *   Excess Transactions = Observed Transactions - Expected Transactions\n   *   Estimated Fraudulent Transactions = Total Excess Transactions * Fraudulent Transaction Rate\n   *   Total Estimated Fraud Exposure = Estimated Fraudulent Transactions * Average Fraud Amount per Transaction\n\n3. **Calculation:**\n   *   **Excess Transactions for Digit 8:** 140 - 102 = 38 transactions\n   *   **Excess Transactions for Digit 9:** 180 - 92 = 88 transactions\n   *   **Total Excess Transactions (Digits 8 and 9):** 38 + 88 = 126 transactions\n   *   **Estimated Fraudulent Transactions:** 126 * 40% = 50.4 transactions. Round to 50 transactions (since you can't have a fraction of a transaction).\n   *   **Total Estimated Fraud Exposure:** 50 * $780 = $39,000\n\n4. **Answer:**\n   The total estimated fraud exposure is $39,000.",
+          "keyFormula": "Total Estimated Fraud Exposure = (Excess Digit 8 Transactions + Excess Digit 9 Transactions) * Fraudulent Transaction Rate * Average Fraud Amount per Transaction",
+          "commonMistakes": [
+            "Failing to calculate the 'excess' transactions by subtracting the expected from the observed values. Candidates may mistakenly use only the observed values.",
+            "Forgetting to multiply by the fraud rate (40%) to determine the number of fraudulent transactions.",
+            "Not rounding the number of estimated fraudulent transactions to a whole number. While 50.4 is the calculated value, you can't have a fraction of a transaction, so it must be rounded to 50.",
+            "Using the wrong average fraud amount. Always double-check that you are using the correct dollar amount provided in the scenario."
+          ],
+          "examTip": "When dealing with Benford's Law and fraud detection, focus on identifying the 'excess' transactions first. This highlights deviations from the expected distribution and helps pinpoint potential areas of concern. Pay close attention to the units (transactions vs. dollar amounts) to avoid calculation errors."
+        }
+      ],
+      "skills": [
+        "Benford's Law analysis",
+        "Chi-square testing",
+        "Fraud detection",
+        "Data analytics"
+      ],
+      "relatedConcepts": [
+        "Statistical analysis",
+        "Internal audit",
+        "Forensic accounting",
+        "Approval controls"
+      ]
+    }
+  ],
+  "enhancedAt": "2026-03-01T12:41:56.716Z"
+}

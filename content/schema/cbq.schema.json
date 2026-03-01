@@ -1,0 +1,258 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CMA Case-Based Questions (CBQ) Schema",
+  "description": "Schema for CMA exam CBQ scenarios - replacing essays as of September 2026",
+  "type": "object",
+  "required": ["$schema", "version", "courseId", "section", "scenarios"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema file"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Schema version (semver)"
+    },
+    "courseId": {
+      "type": "string",
+      "const": "cma",
+      "description": "Course identifier"
+    },
+    "section": {
+      "type": "string",
+      "enum": ["CMA1", "CMA2"],
+      "description": "CMA exam part"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this file was generated"
+    },
+    "enhancedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When explanations were last enhanced"
+    },
+    "scenarios": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/CBQScenario" },
+      "description": "Array of CBQ scenarios"
+    }
+  },
+  "definitions": {
+    "CBQScenario": {
+      "type": "object",
+      "required": ["id", "section", "title", "scenario", "exhibits", "questions", "totalPoints", "estimatedMinutes", "difficulty", "topics"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^cma[12]-cbq-\\d{3}$",
+          "description": "Unique CBQ scenario ID"
+        },
+        "section": {
+          "type": "string",
+          "enum": ["CMA1", "CMA2"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5,
+          "description": "Descriptive title for the scenario"
+        },
+        "scenario": {
+          "type": "string",
+          "minLength": 100,
+          "description": "Business case description"
+        },
+        "exhibits": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/CBQExhibit" },
+          "description": "Supporting exhibits/data"
+        },
+        "questions": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/CBQQuestion" },
+          "minItems": 3,
+          "maxItems": 5,
+          "description": "3-5 related questions per scenario"
+        },
+        "totalPoints": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Total points for this scenario"
+        },
+        "estimatedMinutes": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 30,
+          "description": "Estimated time to complete (typically 15-20 min)"
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["foundational", "intermediate", "advanced"]
+        },
+        "topics": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Blueprint areas covered"
+        }
+      }
+    },
+    "CBQExhibit": {
+      "type": "object",
+      "required": ["id", "title", "type", "content"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Exhibit identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "Exhibit title"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["table", "text", "chart", "financial_statement"]
+        },
+        "content": {
+          "type": "string",
+          "description": "HTML or markdown content"
+        }
+      }
+    },
+    "CBQQuestion": {
+      "type": "object",
+      "required": ["id", "type", "question", "explanation", "points"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Question identifier"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["numerical_entry", "drag_and_drop", "multiple_select", "dropdown"],
+          "description": "Question format type"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Question text"
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 50,
+          "description": "Explanation of the correct answer"
+        },
+        "points": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Points for this question"
+        },
+        "hint": {
+          "type": "string",
+          "description": "Optional hint"
+        },
+        "correctAnswer": {
+          "description": "Correct answer (for numerical_entry)"
+        },
+        "tolerance": {
+          "type": "number",
+          "description": "Allowed tolerance for numerical answers"
+        },
+        "unit": {
+          "type": "string",
+          "description": "Unit for numerical answers (e.g., '$', '%')"
+        },
+        "decimalPlaces": {
+          "type": "integer",
+          "description": "Expected decimal precision"
+        },
+        "dragItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "text": { "type": "string" }
+            }
+          },
+          "description": "Draggable items (for drag_and_drop)"
+        },
+        "dropZones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" }
+            }
+          },
+          "description": "Drop zones (for drag_and_drop)"
+        },
+        "correctMapping": {
+          "type": "object",
+          "description": "Correct mapping of dropZone -> dragItem"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["order", "match"],
+          "description": "Ordering vs matching mode"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "text": { "type": "string" }
+            }
+          },
+          "description": "Options for multiple_select"
+        },
+        "correctAnswers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Correct option IDs (for multiple_select)"
+        },
+        "blanks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "options": { "type": "array", "items": { "type": "string" } },
+              "correctAnswer": { "type": "string" }
+            }
+          },
+          "description": "Dropdown blanks"
+        },
+        "questionTemplate": {
+          "type": "string",
+          "description": "Template with {{blankId}} placeholders"
+        },
+        "stepByStep": {
+          "type": "string",
+          "description": "UWorld-style step-by-step solution"
+        },
+        "keyFormula": {
+          "type": "string",
+          "description": "Key formula or concept"
+        },
+        "commonMistakes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Common errors to avoid"
+        },
+        "examTip": {
+          "type": "string",
+          "description": "Exam strategy tip"
+        },
+        "enhanced": {
+          "type": "boolean",
+          "description": "Whether this question has enhanced explanations"
+        }
+      }
+    }
+  }
+}

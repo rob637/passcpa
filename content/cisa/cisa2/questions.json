@@ -5089,7 +5089,7 @@
       "subtopic": "Responsibilities",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp is implementing a new data lake to consolidate customer information. To ensure data is reliable and secure, which of the following responsibilities are included in data governance? A) Only IT duties | B) Only backup | C) Data quality, privacy, lifecycle management, and business ownership | D) Only storage management",
+      "question": "Meridian Corp is implementing a new data lake to consolidate customer information. To ensure data is reliable and secure, which of the following responsibilities are included in data governance?",
       "options": [
         "IT duties related to infrastructure maintenance and access control only.",
         "Backup and recovery procedures, focusing solely on data availability.",
@@ -5124,7 +5124,7 @@
       "subtopic": "Data Stewardship",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC has assigned individuals to oversee specific data domains, such as patient records and billing information. These data stewards are primarily responsible for: A) Only technical management | B) Ensuring data quality and appropriate use within their domain | C) Only compliance reporting | D) Only access control",
+      "question": "Vista Healthcare LLC has assigned individuals to oversee specific data domains, such as patient records and billing information. These data stewards are primarily responsible for:",
       "options": [
         "Only technical management of databases and infrastructure related to their assigned data domain.",
         "Ensuring data quality and appropriate use within their domain",
@@ -5159,7 +5159,7 @@
       "subtopic": "Ethics",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is considering implementing AI-powered tools for auditing. When making decisions about this implementation, ethics in IT decision-making should primarily consider: A) Broader impacts on stakeholders, privacy, and society | B) Only legal requirements | C) Only shareholder interests | D) Only cost implications",
+      "question": "Chen & Associates is considering implementing AI-powered tools for auditing. When making decisions about this implementation, ethics in IT decision-making should primarily consider:",
       "options": [
         "Broader impacts on stakeholders, privacy, and society",
         "Only legal requirements and contractual obligations",
@@ -5194,7 +5194,7 @@
       "subtopic": "Digital Transformation",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Quantum Software Inc. is undergoing a digital transformation to modernize its operations. Effective digital transformation governance requires: A) Traditional approaches only | B) Adaptive governance balancing speed with appropriate controls | C) IT-only decision making | D) No governance",
+      "question": "Quantum Software Inc. is undergoing a digital transformation to modernize its operations. Effective digital transformation governance requires:",
       "options": [
         "Traditional approaches only, ensuring full compliance regardless of agility needs.",
         "Adaptive governance balancing speed with appropriate controls",
@@ -5229,7 +5229,7 @@
       "subtopic": "Sustainability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Pacific Holdings is committed to reducing its environmental impact. Sustainability considerations in IT should include: A) Only energy efficiency | B) Energy consumption, e-waste, social responsibility, and supply chain | C) Only regulatory compliance | D) Only cost reduction",
+      "question": "Pacific Holdings is committed to reducing its environmental impact. Sustainability considerations in IT should include:",
       "options": [
         "Only energy efficiency, focusing solely on server virtualization and power management.",
         "Energy consumption, e-waste, social responsibility, and supply chain",
@@ -5264,7 +5264,7 @@
       "subtopic": "Regulatory Awareness",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Coastal Corp needs to ensure it remains compliant with evolving data privacy regulations. Regulatory horizon scanning ensures: A) Early awareness of emerging regulatory requirements | B) Reduced compliance costs | C) Regulatory avoidance | D) Only current compliance",
+      "question": "Coastal Corp needs to ensure it remains compliant with evolving data privacy regulations. Regulatory horizon scanning ensures:",
       "options": [
         "Early awareness of emerging regulatory requirements",
         "Reduced compliance costs through optimized resource allocation.",
@@ -5299,7 +5299,7 @@
       "subtopic": "Digital Ethics",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp is developing AI-driven customer service chatbots. Digital ethics considerations for organizations include: A) AI fairness, data privacy, algorithmic transparency, and societal impact | B) Only efficiency | C) Only legal compliance | D) Only security",
+      "question": "Meridian Corp is developing AI-driven customer service chatbots. Digital ethics considerations for organizations include:",
       "options": [
         "AI fairness, data privacy, algorithmic transparency, and societal impact",
         "Only efficiency gains and cost reduction metrics should drive AI chatbot development.",
@@ -5334,7 +5334,7 @@
       "subtopic": "Technology Debt",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC has a number of legacy systems that are difficult to maintain. Technology debt management requires: A) Ignoring legacy systems | B) No documentation | C) Inventory, prioritization, and remediation planning | D) Only new investments",
+      "question": "Vista Healthcare LLC has a number of legacy systems that are difficult to maintain. Technology debt management requires:",
       "options": [
         "Ignoring legacy systems to focus on emerging technologies.",
         "Avoiding documentation to accelerate development cycles.",
@@ -5649,7 +5649,7 @@
       "subtopic": "ERM Integration",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp is implementing a new ERM system. To ensure alignment, IT risk management must be integrated. This ensures which of the following? A) Reduced reporting | B) Separate risk views | C) Consistent risk appetite and holistic risk perspective | D) IT autonomy",
+      "question": "Meridian Corp is implementing a new ERM system. To ensure alignment, IT risk management must be integrated. This ensures which of the following?",
       "options": [
         "Reduced reporting overhead through automated data aggregation",
         "Separate risk views tailored to individual department needs",
@@ -5684,7 +5684,7 @@
       "subtopic": "Operational Risk",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC experienced a minor data breach costing $500. All operational risk events, regardless of severity, should be: A) Ignored if minor | B) Only reported annually | C) Captured, analyzed, and used to improve processes | D) Hidden from management",
+      "question": "Vista Healthcare LLC experienced a minor data breach costing $500. All operational risk events, regardless of severity, should be:",
       "options": [
         "Ignored if minor and below a pre-defined materiality threshold",
         "Only reported annually to streamline monthly reporting efforts",
@@ -5719,7 +5719,7 @@
       "subtopic": "Control Metrics",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is evaluating its IT controls. Control effectiveness metrics are used to track: A) Only existence | B) Whether controls achieve their intended objectives | C) Only compliance | D) Only cost",
+      "question": "Chen & Associates is evaluating its IT controls. Control effectiveness metrics are used to track:",
       "options": [
         "Only whether the control is documented and implemented",
         "Whether controls achieve their intended objectives",
@@ -5754,7 +5754,7 @@
       "subtopic": "RegTech",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "First National Bank is facing increasing regulatory scrutiny. Regulatory technology (RegTech) solutions help: A) Automate compliance monitoring and reporting | B) Avoid regulations | C) Eliminate audits | D) Reduce security",
+      "question": "First National Bank is facing increasing regulatory scrutiny. Regulatory technology (RegTech) solutions help:",
       "options": [
         "Automate compliance monitoring and reporting",
         "Provide a loophole to circumvent regulatory intent",
@@ -5789,7 +5789,7 @@
       "subtopic": "Board Reporting",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The board of directors at Quantum Software Inc. requires regular updates on IT governance. Governance reporting to the board should be: A) Risk-focused and at appropriate level for board understanding | B) Only positive | C) Highly technical | D) Detailed operational",
+      "question": "The board of directors at Quantum Software Inc. requires regular updates on IT governance. Governance reporting to the board should be:",
       "options": [
         "Risk-focused and at appropriate level for board understanding",
         "Only positive, highlighting successes to maintain board confidence",
@@ -5824,7 +5824,7 @@
       "subtopic": "Exception Analysis",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Pacific Holdings has seen a rise in policy exceptions. Policy exception data analysis can reveal: A) Nothing useful | B) Policy gaps or implementation issues needing attention | C) Only costs | D) Only non-compliance",
+      "question": "Pacific Holdings has seen a rise in policy exceptions. Policy exception data analysis can reveal:",
       "options": [
         "Minimal actionable intelligence, as exceptions are unique events.",
         "Policy gaps or implementation issues needing attention",
@@ -5859,7 +5859,7 @@
       "subtopic": "Portfolio Prioritization",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Coastal Corp has many IT projects competing for limited resources. Project portfolio prioritization should use: A) Multi-criteria analysis considering value, risk, and strategic fit | B) Only executive preference | C) First come first served | D) Only cost",
+      "question": "Coastal Corp has many IT projects competing for limited resources. Project portfolio prioritization should use:",
       "options": [
         "Multi-criteria analysis considering value, risk, and strategic fit",
         "Executive preference based on perceived urgency and potential ROI, ignoring risk.",
@@ -5894,7 +5894,7 @@
       "subtopic": "Business Case",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Meridian Corp is considering a $2 million investment in new cybersecurity tools. IT investment business cases should include: A) Benefits, costs, risks, and alternatives analysis | B) Only technical requirements | C) Only costs | D) Only timeline",
+      "question": "Meridian Corp is considering a $2 million investment in new cybersecurity tools. IT investment business cases should include:",
       "options": [
         "Benefits, costs, risks, and alternatives analysis",
         "Only technical requirements and vendor specifications",
@@ -6279,7 +6279,7 @@
       "subtopic": "Asset Management",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Due to rapid growth, TechForward Solutions is struggling to track its IT assets, including servers, laptops, and software licenses. The PRIMARY reason for maintaining a detailed IT asset inventory is to: A) Determine IT budget | B) Calculate depreciation | C) Enable effective management and security of IT resources | D) Comply with financial reporting",
+      "question": "Due to rapid growth, TechForward Solutions is struggling to track its IT assets, including servers, laptops, and software licenses. The PRIMARY reason for maintaining a detailed IT asset inventory is to:",
       "options": [
         "To determine the overall IT budget based on projected hardware and software expenditures.",
         "To calculate depreciation for accounting purposes and ensure accurate financial statements.",
@@ -6314,7 +6314,7 @@
       "subtopic": "Succession Planning",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Vista Healthcare LLC has experienced several security breaches due to configuration errors. When evaluating IT human resource management, the MOST significant risk is: A) High turnover requiring frequent recruitment | B) Use of performance reviews | C) Lack of succession planning for key IT positions | D) IT staff requesting training",
+      "question": "Vista Healthcare LLC has experienced several security breaches due to configuration errors. When evaluating IT human resource management, the MOST significant risk is:",
       "options": [
         "High turnover requiring frequent recruitment",
         "Use of performance reviews without standardized metrics",
@@ -6349,7 +6349,7 @@
       "subtopic": "Enterprise Architecture",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is undergoing a digital transformation to modernize its client services. An enterprise architecture should PRIMARILY: A) Document all current systems | B) Provide a roadmap from current state to target state | C) List all IT vendors | D) Replace the IT strategy",
+      "question": "Chen & Associates is undergoing a digital transformation to modernize its client services. An enterprise architecture should PRIMARILY:",
       "options": [
         "Document all current systems and their technical specifications",
         "Provide a roadmap from current state to target state",
@@ -6384,7 +6384,7 @@
       "subtopic": "Business Case",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp is considering a $2 million investment in a new ERP system. IT investment decisions should be based PRIMARILY on: A) Business case with expected value and risks | B) Available budget | C) Latest technology trends | D) IT department preferences",
+      "question": "Meridian Corp is considering a $2 million investment in a new ERP system. IT investment decisions should be based PRIMARILY on:",
       "options": [
         "Business case with expected value and risks",
         "Available budget and pre-approved spending limits",
@@ -6419,7 +6419,7 @@
       "subtopic": "SLA Components",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GlobalTech Inc. outsources its help desk to a third-party provider. A service level agreement (SLA) should include all of the following EXCEPT: A) Incident response times | B) Employee job descriptions | C) Service availability targets | D) Penalty clauses",
+      "question": "GlobalTech Inc. outsources its help desk to a third-party provider. A service level agreement (SLA) should include all of the following EXCEPT:",
       "options": [
         "Incident response times",
         "Employee job descriptions",
@@ -6454,7 +6454,7 @@
       "subtopic": "ITIL",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Financial recently adopted ITIL to improve its IT service delivery. The PRIMARY benefit of implementing ITIL is: A) Lower hardware costs | B) Standardized and improved IT service management processes | C) Reduced IT headcount | D) Elimination of all IT incidents",
+      "question": "Apex Financial recently adopted ITIL to improve its IT service delivery. The PRIMARY benefit of implementing ITIL is:",
       "options": [
         "Lower hardware costs through aggressive vendor negotiations and bulk purchasing agreements.",
         "Standardized and improved IT service management processes",
@@ -6489,7 +6489,7 @@
       "subtopic": "Business Case Requirement",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "An IS auditor is reviewing the project management practices at SecureBank. The auditor should be MOST concerned if: A) Projects have formal kickoff meetings | B) Projects use different methodologies based on project type | C) Project managers report to a PMO | D) Business cases are not developed before project approval",
+      "question": "An IS auditor is reviewing the project management practices at SecureBank. The auditor should be MOST concerned if:",
       "options": [
         "Projects have formal kickoff meetings",
         "Projects use different methodologies based on project type",
@@ -6524,7 +6524,7 @@
       "subtopic": "Segregation of Duties",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Due to a recent fraud incident, the CIO of DataStream Services is reviewing IT controls. Segregation of duties in IT is MOST critical between: A) Development and production operations | B) Business analysis and testing | C) Helpdesk and network operations | D) Project management and training",
+      "question": "Due to a recent fraud incident, the CIO of DataStream Services is reviewing IT controls. Segregation of duties in IT is MOST critical between:",
       "options": [
         "Development and production operations",
         "Business analysis and user acceptance testing",
@@ -8344,7 +8344,7 @@
       "subtopic": "Data Governance",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "At OmniCorp, data is considered a critical asset. The CIO is concerned about data breaches and data quality issues. Data ownership responsibilities should include which of the following? A) Only backup scheduling | B) Only storage management | C) IT decisions only | D) Classification, access decisions, and ensuring data quality",
+      "question": "At OmniCorp, data is considered a critical asset. The CIO is concerned about data breaches and data quality issues. Data ownership responsibilities should include which of the following?",
       "options": [
         "Only backup scheduling and verification to ensure recoverability",
         "Only storage management, including capacity planning and provisioning",
@@ -8379,7 +8379,7 @@
       "subtopic": "Investment Management",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC has invested $5 million in a new Electronic Health Records (EHR) system. IT investment management ensures: A) No governance is needed | B) Maximum spending on IT | C) All projects are approved | D) IT spending delivers value aligned with business priorities",
+      "question": "Vista Healthcare LLC has invested $5 million in a new Electronic Health Records (EHR) system. IT investment management ensures:",
       "options": [
         "Elimination of all IT governance, allowing for rapid deployment and innovation.",
         "Maximum spending on IT infrastructure to ensure the highest levels of redundancy and security.",
@@ -8414,7 +8414,7 @@
       "subtopic": "Portfolio Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Chen & Associates has numerous IT projects underway, ranging from cloud migration to cybersecurity enhancements. Portfolio management for IT enables: A) Only cost tracking | B) Only vendor selection | C) Only project tracking | D) Holistic view and optimization of IT investments across programs",
+      "question": "Chen & Associates has numerous IT projects underway, ranging from cloud migration to cybersecurity enhancements. Portfolio management for IT enables:",
       "options": [
         "Cost tracking for individual projects, neglecting strategic alignment",
         "Vendor selection based solely on price, ignoring long-term value",
@@ -8449,7 +8449,7 @@
       "subtopic": "Compliance",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Meridian Corp. is concerned about potential regulatory fines related to data privacy. Regulatory compliance programs should: A) Only address fines after they occur | B) Be delegated entirely to legal | C) Only respond to auditors | D) Proactively identify requirements, implement controls, and monitor compliance",
+      "question": "Meridian Corp. is concerned about potential regulatory fines related to data privacy. Regulatory compliance programs should:",
       "options": [
         "Only address fines after they occur, focusing on damage control and public relations to mitigate impact.",
         "Be delegated entirely to legal counsel, relying solely on their interpretation of regulations and reactive advice.",
@@ -8484,7 +8484,7 @@
       "subtopic": "Change Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Financial is implementing a new trading platform. The Change Advisory Board (CAB) reviews: A) Only emergency changes | B) Only vendor changes | C) Only failed changes | D) Proposed changes to assess risk, prioritize, and authorize",
+      "question": "Apex Financial is implementing a new trading platform. The Change Advisory Board (CAB) reviews:",
       "options": [
         "Only emergency changes to expedite critical business recovery efforts.",
         "Only vendor changes to ensure compliance with service level agreements.",
@@ -8519,7 +8519,7 @@
       "subtopic": "Change Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to a critical server failure at Global Logistics, an emergency change is required to restore operations. Emergency changes require: A) No testing | B) No documentation | C) No authorization | D) Expedited approval and post-implementation documentation/review",
+      "question": "Due to a critical server failure at Global Logistics, an emergency change is required to restore operations. Emergency changes require:",
       "options": [
         "Testing only after implementation to minimize downtime during recovery",
         "Documentation deferred indefinitely to prioritize immediate service restoration",
@@ -8554,7 +8554,7 @@
       "subtopic": "Asset Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "SecureTech Solutions is undergoing a software audit and needs to provide a comprehensive list of all IT assets. IT asset management should maintain: A) Only software licenses | B) Only hardware lists | C) Only financial values | D) Complete inventory of hardware, software, and their relationships",
+      "question": "SecureTech Solutions is undergoing a software audit and needs to provide a comprehensive list of all IT assets. IT asset management should maintain:",
       "options": [
         "Only software licenses, including version numbers and vendor agreements",
         "Only hardware lists, including serial numbers and warranty information",
@@ -8589,7 +8589,7 @@
       "subtopic": "IT Strategy",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Bright Future Investments is developing a 3-year IT strategy to support its growth objectives. IT strategy should include: A) Vision, goals, initiatives, and alignment with business strategy | B) Only budget allocations | C) Only staffing plans | D) Only technology plans",
+      "question": "Bright Future Investments is developing a 3-year IT strategy to support its growth objectives. IT strategy should include:",
       "options": [
         "Vision, goals, initiatives, and alignment with business strategy",
         "Only budget allocations and financial forecasting for IT investments",

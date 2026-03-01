@@ -359,7 +359,7 @@ Stop gambling. Master basis.`,
 
 Content is 10% of the work.
 
-We have 16,000 questions across 6 exams.
+We have 20,000+ questions across 6 exams.
 
 But what actually moves the needle?
 

@@ -4423,7 +4423,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Dr. Patel, a 3% shareholder in Patel & Associates, an S corporation, pays health insurance premiums personally. How are these premiums treated for tax purposes? They are: A) Tax-free fringe benefits | B) Included in the shareholder's W-2 wages but deductible as self-employed health insurance | C) Not deductible by anyone | D) Deductible on Schedule C",
+      "question": "Dr. Patel, a 3% shareholder in Patel & Associates, an S corporation, pays health insurance premiums personally. How are these premiums treated for tax purposes? They are:",
       "options": [
         "Tax-free fringe benefits, provided the S corporation has fewer than ten employees and a specific health plan in place.",
         "Deductible on Schedule C as a business expense, directly reducing the net profit of Patel & Associates before shareholder allocations.",
@@ -4458,7 +4458,7 @@
       "topic": "Business credits",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "BioTech Solutions spent $750,000 in qualifying research activities this year. What is the nature of the Research and Development (R&D) tax credit? It is: A) A credit against tax liability | B) A deduction against income | C) Expired after 2020 | D) Only available to pharmaceutical companies",
+      "question": "BioTech Solutions spent $750,000 in qualifying research activities this year. What is the nature of the Research and Development (R&D) tax credit? It is:",
       "options": [
         "A credit against tax liability",
         "A deduction against income",
@@ -4493,7 +4493,7 @@
       "topic": "Depreciation and amortization",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Industries acquired BrightStar Corp. and recorded $1,000,000 of goodwill. Over how many years is goodwill and other Section 197 intangibles amortized? A) 7 years | B) 39 years | C) 5 years | D) 15 years",
+      "question": "Apex Industries acquired BrightStar Corp. and recorded $1,000,000 of goodwill. Over how many years is goodwill and other Section 197 intangibles amortized?",
       "options": [
         "7 years",
         "39 years",
@@ -4528,7 +4528,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Davis Corp. incurred $6,000 in legal fees and $3,000 in underwriting fees related to its incorporation. What is the maximum amount of organizational costs Davis Corp. can immediately deduct? A) $1,000 | B) $5,000 | C) $50,000 | D) $10,000",
+      "question": "Davis Corp. incurred $6,000 in legal fees and $3,000 in underwriting fees related to its incorporation. What is the maximum amount of organizational costs Davis Corp. can immediately deduct?",
       "options": [
         "$1,000",
         "$10,000",
@@ -4563,7 +4563,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John created an irrevocable trust for his children, but retained certain powers that cause it to be treated as a grantor trust. To whom is the income from this grantor trust taxed? A) No one - it is tax-exempt | B) The beneficiaries | C) The trust itself | D) The grantor (creator) of the trust",
+      "question": "John created an irrevocable trust for his children, but retained certain powers that cause it to be treated as a grantor trust. To whom is the income from this grantor trust taxed?",
       "options": [
         "No one - irrevocable trusts are generally tax-exempt entities unless specifically designated otherwise.",
         "The beneficiaries, as they are the ultimate recipients of the trust's assets and are responsible for taxes.",
@@ -4598,7 +4598,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smith Family Trust distributed $50,000 to its beneficiaries this year. The trust's distributable net income (DNI) was $40,000. What is the trust's deduction for distributions to beneficiaries? A) The lesser of distributions made or distributable net income (DNI) | B) No deduction is allowed | C) The total amount distributed | D) 50% of distributions",
+      "question": "The Smith Family Trust distributed $50,000 to its beneficiaries this year. The trust's distributable net income (DNI) was $40,000. What is the trust's deduction for distributions to beneficiaries?",
       "options": [
         "The lesser of distributions made or distributable net income (DNI)",
         "No deduction is allowed because the trust is a simple trust and all income is required to be distributed currently.",
@@ -4633,7 +4633,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Upon her death, Susan was owed a bonus of $10,000 from her employer and had not yet cashed a $500 dividend check. What is the tax treatment of this income in respect of a decedent (IRD)? It is: A) Only wages owed at death | B) Always tax-free to the recipient | C) Income the decedent earned but had not received by the date of death | D) Capital gain from inherited property",
+      "question": "Upon her death, Susan was owed a bonus of $10,000 from her employer and had not yet cashed a $500 dividend check. What is the tax treatment of this income in respect of a decedent (IRD)? It is:",
       "options": [
         "Only wages owed at death, excluding dividends and other investment income.",
         "Always tax-free to the recipient because it is considered part of the estate and not new income.",
@@ -4668,7 +4668,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Green Foundation is a private foundation. On what activities are private foundations subject to excise taxes? A) All investment income | B) No special taxes apply | C) Self-dealing, failure to distribute income, and other prohibited activities | D) Charitable contributions received",
+      "question": "The Green Foundation is a private foundation. On what activities are private foundations subject to excise taxes?",
       "options": [
         "All gross investment income, less directly connected expenses for generating income.",
         "No special taxes apply unless the foundation is deemed a supporting organization.",
@@ -5473,7 +5473,7 @@
       "topic": "Basis calculations",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Jane contributed land (basis $20,000, held for 3 years) to the JKL Partnership in exchange for a 25% capital interest. Regarding Jane's partnership interest, the holding period: \nA) Begins on the date of contribution | B) Is determined by the partnership agreement | C) Includes the holding period of the contributed property | D) Is always long-term",
+      "question": "Jane contributed land (basis $20,000, held for 3 years) to the JKL Partnership in exchange for a 25% capital interest. Regarding Jane's partnership interest, the holding period:",
       "options": [
         "Begins on the date of contribution, regardless of prior holding period",
         "Is determined by the partnership agreement, allowing for flexibility in allocations",
@@ -5543,7 +5543,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The law firm of Miller & Zois incurred $50,000 in costs related to syndicating the partnership (marketing interests to new partners). These syndication costs are:\nA) Amortizable over 180 months like organizational costs | B) Deductible in the first year of operations | C) Deductible when the partnership terminates | D) Capitalized and never amortizable or deductible",
+      "question": "The law firm of Miller & Zois incurred $50,000 in costs related to syndicating the partnership (marketing interests to new partners). These syndication costs are:",
       "options": [
         "Amortizable over 180 months like organizational costs",
         "Deductible in the first year of operations",
@@ -5613,7 +5613,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The ABC Partnership is preparing its Form 1065. Which of the following items must be separately stated on the partnership return?\nA) Cost of goods sold | B) Depreciation expense on business equipment | C) Utilities expense | D) Net section 1231 gains and losses",
+      "question": "The ABC Partnership is preparing its Form 1065. Which of the following items must be separately stated on the partnership return?",
       "options": [
         "Cost of goods sold",
         "Depreciation expense on business equipment",
@@ -5648,7 +5648,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Partners Able and Baker agree that Able will receive 80% of partnership depreciation. For this special allocation of partnership depreciation to be respected for tax purposes, it must:\nA) Apply equally to all types of income | B) Have substantial economic effect | C) Be approved by all partners unanimously | D) Be reported to the IRS in advance",
+      "question": "Partners Able and Baker agree that Able will receive 80% of partnership depreciation. For this special allocation of partnership depreciation to be respected for tax purposes, it must:",
       "options": [
         "Apply equally to all types of income",
         "Be reported to the IRS in advance",
@@ -5753,7 +5753,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John is a general partner in the Smith & Jones partnership. John's share of partnership ordinary income is generally:\nA) Exempt from self-employment tax | B) Taxed at capital gains rates | C) Subject to self-employment tax | D) Subject to self-employment tax only if the partner works 500+ hours",
+      "question": "John is a general partner in the Smith & Jones partnership. John's share of partnership ordinary income is generally:",
       "options": [
         "Exempt from self-employment tax",
         "Taxed at capital gains rates",
@@ -5823,7 +5823,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Partner Davis contributed $50,000 cash to the RST Partnership. He is also personally liable for a $20,000 recourse debt of the partnership. Which amount is included in Davis's at-risk amount for partnership activities?\nA) Amounts borrowed from persons with an interest in the activity | B) Nonrecourse debt secured only by partnership property | C) All partnership liabilities regardless of recourse status | D) Cash contributions plus recourse debt for which the partner is personally liable",
+      "question": "Partner Davis contributed $50,000 cash to the RST Partnership. He is also personally liable for a $20,000 recourse debt of the partnership. Which amount is included in Davis's at-risk amount for partnership activities?",
       "options": [
         "Amounts borrowed from persons with an interest in the activity, even if the debt is recourse",
         "Nonrecourse debt secured only by partnership property, allocated based on profit sharing ratios",
@@ -5858,7 +5858,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Bob gifts his daughter, Alice, a capital interest in his partnership. Capital is a material income-producing factor for the partnership. Alice:\nA) Must be allocated income only to the extent of reasonable compensation to Bob | B) Cannot be recognized as a partner | C) Receives no allocation until the partnership terminates | D) Is allocated a capital share, but donor must receive reasonable compensation first",
+      "question": "Bob gifts his daughter, Alice, a capital interest in his partnership. Capital is a material income-producing factor for the partnership. Alice:",
       "options": [
         "Must be allocated income only to the extent of reasonable compensation to the donor",
         "Cannot be recognized as a partner",
@@ -5893,7 +5893,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The XYZ Partnership has three partners: Alpha (40% interest, calendar year), Beta (30% interest, June 30 year-end), and Gamma (30% interest, March 31 year-end). The partnership generally must use the same tax year as:\nA) The tax year chosen in the partnership agreement | B) A calendar year | C) The managing partner | D) The majority interest partner(s)",
+      "question": "The XYZ Partnership has three partners: Alpha (40% interest, calendar year), Beta (30% interest, June 30 year-end), and Gamma (30% interest, March 31 year-end). The partnership generally must use the same tax year as:",
       "options": [
         "The tax year chosen in the partnership agreement",
         "A calendar year",
@@ -7573,7 +7573,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Manufacturing Inc. has five shareholders. More than 60% of its adjusted ordinary gross income consists of passive investment income. Which of the following criteria must also be met for Precision Manufacturing to be classified as a personal holding company?\n\nOptions: A) More than 50% PHC income and owned by 10 or fewer individuals owning more than 25% of stock | B) Any amount of passive income with concentrated ownership | C) More than 60% PHC income and owned by 5 or fewer individuals owning more than 50% of stock | D) More than 60% PHC income and owned by more than 100 shareholders",
+      "question": "Precision Manufacturing Inc. has five shareholders. More than 60% of its adjusted ordinary gross income consists of passive investment income. Which of the following criteria must also be met for Precision Manufacturing to be classified as a personal holding company?\n\nOptions:",
       "options": [
         "More than 50% PHC income and owned by 10 or fewer individuals owning more than 25% of stock",
         "Any amount of passive income with concentrated ownership",
@@ -7643,7 +7643,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Corp. incurred a net operating loss (NOL) of $500,000 in 2023. They anticipate taxable income in future years. A C corporation's net operating loss (NOL) arising after 2020 can offset:\n\nOptions: A) 100% of taxable income in any year | B) 50% of taxable income, carried forward 15 years | C) 80% of taxable income, carried forward indefinitely | D) 80% of taxable income, carried back 2 years or forward 20 years",
+      "question": "Apex Corp. incurred a net operating loss (NOL) of $500,000 in 2023. They anticipate taxable income in future years. A C corporation's net operating loss (NOL) arising after 2020 can offset:\n\nOptions:",
       "options": [
         "100% of taxable income in any year",
         "50% of taxable income, carried forward 15 years",
@@ -7678,7 +7678,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech Inc. sold stock resulting in a $50,000 capital loss this year. They had no capital gains. A C corporation's capital losses may:\n\nOptions: A) Only offset capital gains; excess carried forward indefinitely | B) Only offset capital gains; excess carried back 3 years and forward 5 years | C) Offset ordinary income up to $3,000 annually | D) Be deducted without limitation against any income",
+      "question": "GlobalTech Inc. sold stock resulting in a $50,000 capital loss this year. They had no capital gains. A C corporation's capital losses may:\n\nOptions:",
       "options": [
         "Only offset capital gains; excess is carried forward indefinitely, subject to annual limitations based on taxable income.",
         "Be deducted without limitation against any income, provided the corporation meets certain solvency requirements and files a consolidated return.",
@@ -7713,7 +7713,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John owns stock in Beta Corp. Beta distributes $10,000 to John. Beta's current earnings and profits are $5,000, and accumulated earnings and profits are $2,000. A distribution from a C corporation is a taxable dividend to the extent of:\n\nOptions: A) The fair market value of property distributed | B) The amount of cash distributed | C) The corporation's current and accumulated earnings and profits (E&P) | D) The shareholder's stock basis",
+      "question": "John owns stock in Beta Corp. Beta distributes $10,000 to John. Beta's current earnings and profits are $5,000, and accumulated earnings and profits are $2,000. A distribution from a C corporation is a taxable dividend to the extent of:\n\nOptions:",
       "options": [
         "The fair market value of the property distributed, without regard to the corporation's earnings and profits.",
         "The amount of cash distributed to the shareholder, regardless of the corporation's ability to pay a dividend.",
@@ -7748,7 +7748,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Gamma Corp. reported a loss this year, but management wants to increase earnings and profits (E&P) to improve its financial position. Which of the following increases a C corporation's earnings and profits?\n\nOptions: A) Capital losses in excess of capital gains | B) Federal income tax paid | C) Dividends paid to shareholders | D) Tax-exempt interest income",
+      "question": "Gamma Corp. reported a loss this year, but management wants to increase earnings and profits (E&P) to improve its financial position. Which of the following increases a C corporation's earnings and profits?\n\nOptions:",
       "options": [
         "Capital losses in excess of capital gains",
         "Federal income tax paid",
@@ -7853,7 +7853,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "David owns 60% of Omega Corp. After a redemption of some of David's shares, he owns 45%. A stock redemption is treated as a sale or exchange (not a dividend) if it:\n\nOptions: A) Is substantially disproportionate under IRC §302(b)(2) | B) Is pro rata to all shareholders | C) Is funded by borrowed money | D) Reduces the shareholder's ownership by any percentage",
+      "question": "David owns 60% of Omega Corp. After a redemption of some of David's shares, he owns 45%. A stock redemption is treated as a sale or exchange (not a dividend) if it:\n\nOptions:",
       "options": [
         "Is substantially disproportionate under IRC §302(b)(2)",
         "Is pro rata to all shareholders, maintaining their relative ownership percentages after the redemption",
@@ -7923,7 +7923,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah and her husband, Tom, both own stock in Delta Corp. Under stock attribution rules for redemptions, stock owned by a shareholder's spouse is:\n\nOptions: A) Attributed only for complete termination redemptions | B) Attributed only if they file jointly | C) Never attributed to the shareholder | D) Attributed to the shareholder",
+      "question": "Sarah and her husband, Tom, both own stock in Delta Corp. Under stock attribution rules for redemptions, stock owned by a shareholder's spouse is:\n\nOptions:",
       "options": [
         "Attributed only for complete termination redemptions",
         "Attributed only if they file jointly",
@@ -7993,7 +7993,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The estate of Mr. Jones includes stock in Horizon Inc. The executor wants to redeem stock to pay estate taxes. Under IRC §303, a redemption to pay estate taxes and funeral expenses receives sale treatment if:\n\nOptions: A) The redemption occurs within 6 months of death | B) Any amount of the decedent's estate consists of the corporation's stock | C) The corporation's stock exceeds 35% of the adjusted gross estate | D) The estate has at least $5 million in assets",
+      "question": "The estate of Mr. Jones includes stock in Horizon Inc. The executor wants to redeem stock to pay estate taxes. Under IRC §303, a redemption to pay estate taxes and funeral expenses receives sale treatment if:\n\nOptions:",
       "options": [
         "The redemption occurs within 6 months of death",
         "Any amount of the decedent's estate consists of the corporation's stock",
@@ -9183,7 +9183,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions provides consulting services. They completed a project for $50,000 in December, invoiced the client, but haven't received payment. Under the accrual method, when is the $50,000 income generally recognized? A) An invoice is issued | B) Cash is received | C) All events have occurred to fix the right to receive and the amount can be determined with reasonable accuracy | D) Services are substantially complete",
+      "question": "GreenTech Solutions provides consulting services. They completed a project for $50,000 in December, invoiced the client, but haven't received payment. Under the accrual method, when is the $50,000 income generally recognized?",
       "options": [
         "When an invoice is issued to the client, assuming proper documentation and internal controls are in place to support the revenue recognition.",
         "When cash is received from the client, reflecting the actual inflow of funds and providing a clear audit trail for verification purposes.",
@@ -9323,7 +9323,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Davis Corp. currently uses the cash method of accounting. They want to switch to the accrual method to better reflect their financial performance. To change their accounting method, Davis Corp. generally must: A) File an amended return for the prior year | B) Wait until the business is terminated | C) Simply begin using the new method | D) File Form 3115 and obtain IRS consent",
+      "question": "Davis Corp. currently uses the cash method of accounting. They want to switch to the accrual method to better reflect their financial performance. To change their accounting method, Davis Corp. generally must:",
       "options": [
         "File an amended return for the prior year",
         "Wait until the business is terminated",
@@ -9358,7 +9358,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Smith & Jones is a newly formed S corporation. They are trying to determine the appropriate tax year to use. An S corporation is generally required to use: A) A calendar year | B) Any year with IRS approval | C) Any fiscal year elected when formed | D) The same year as its majority shareholder",
+      "question": "Smith & Jones is a newly formed S corporation. They are trying to determine the appropriate tax year to use. An S corporation is generally required to use:",
       "options": [
         "A calendar year",
         "Any year with IRS approval",
@@ -9393,7 +9393,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Partners at Miller & Co. want to use a September 30 fiscal year, but it creates a deferral. To make a Section 444 election to adopt this fiscal year, the partnership must: A) Pay a refundable deposit to the IRS | B) Limit its fiscal year to a 3-month deferral | C) Make required payments to offset the deferral benefit | D) Distribute all income within 3 months of year-end",
+      "question": "Partners at Miller & Co. want to use a September 30 fiscal year, but it creates a deferral. To make a Section 444 election to adopt this fiscal year, the partnership must:",
       "options": [
         "Pay a refundable deposit to the IRS, calculated based on the deferred income and applicable tax rates.",
         "Limit its fiscal year to a 3-month deferral and obtain prior approval from the IRS demonstrating a valid business purpose.",
@@ -9498,7 +9498,7 @@
       "topic": "Cost of goods sold",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Manufacturing uses FIFO to account for its inventory. During the current year, raw material prices have steadily increased. Under FIFO (First-In, First-Out), during a period of rising prices: A) FIFO is not permitted during inflation | B) Cost of goods sold is higher, ending inventory is lower | C) Cost of goods sold is lower, ending inventory is higher | D) Cost of goods sold equals ending inventory",
+      "question": "Apex Manufacturing uses FIFO to account for its inventory. During the current year, raw material prices have steadily increased. Under FIFO (First-In, First-Out), during a period of rising prices:",
       "options": [
         "FIFO is only permitted during periods of deflation, as inflation distorts the true cost of goods.",
         "Cost of goods sold is higher, ending inventory is lower",
@@ -9533,7 +9533,7 @@
       "topic": "Cost of goods sold",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tech Gadgets Inc. uses LIFO for tax purposes. What are the implications for their financial statements? If a taxpayer uses LIFO for tax purposes: A) They may use FIFO for financial statements | B) They must also use LIFO for financial reporting (LIFO conformity) | C) They cannot use the simplified LIFO methods | D) A Section 481(a) adjustment is never required",
+      "question": "Tech Gadgets Inc. uses LIFO for tax purposes. What are the implications for their financial statements? If a taxpayer uses LIFO for tax purposes:",
       "options": [
         "They may use FIFO for financial statements, provided a full disclosure of the change and its impact is included in the footnotes.",
         "A Section 481(a) adjustment is never required unless there is a change in accounting method unrelated to the adoption of LIFO itself.",
@@ -9568,7 +9568,7 @@
       "topic": "Cost of goods sold",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Valley Produce uses the lower of cost or market method to value its inventory of fruits and vegetables. Under the lower of cost or market method for inventory: A) Market value is always fair market value | B) Market is generally replacement cost, bounded by ceiling (NRV) and floor (NRV less normal profit) | C) This method is only available for LIFO taxpayers | D) Inventory can never be written down",
+      "question": "Valley Produce uses the lower of cost or market method to value its inventory of fruits and vegetables. Under the lower of cost or market method for inventory:",
       "options": [
         "Market value is always fair market value, representing the price a willing buyer would pay a willing seller in an open market transaction, without considering obsolescence or damage.",
         "Inventory can never be written down below its original cost, as GAAP generally prohibits recognizing losses before the point of sale to ensure a conservative yet consistent approach to financial reporting.",
@@ -9603,7 +9603,7 @@
       "topic": "Cost of goods sold",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Auto Parts manufactures specialized car components. Under IRC §263A (UNICAP), a manufacturer must capitalize: A) Direct costs plus an allocable portion of indirect costs | B) Only direct materials and direct labor | C) Only costs exceeding $500 per unit | D) All indirect costs regardless of relation to production",
+      "question": "Precision Auto Parts manufactures specialized car components. Under IRC §263A (UNICAP), a manufacturer must capitalize:",
       "options": [
         "Direct costs plus an allocable portion of indirect costs",
         "Only direct materials and direct labor, excluding factory overhead and storage costs.",
@@ -9988,7 +9988,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Manufacturing claimed the domestic production activities deduction (DPAD) on their 2017 return. The CFO is unsure if it still applies. The domestic production activities deduction (DPAD) under former Section 199: A) Only applies to agricultural cooperatives | B) Was repealed by TCJA, replaced in part by Section 199A for pass-throughs | C) Still applies to all domestic manufacturing | D) Was increased to 15% by TCJA",
+      "question": "GreenTech Manufacturing claimed the domestic production activities deduction (DPAD) on their 2017 return. The CFO is unsure if it still applies. The domestic production activities deduction (DPAD) under former Section 199:",
       "options": [
         "Only applies to agricultural cooperatives that market agricultural or horticultural products, and meet specific organizational requirements.",
         "Was increased to 15% by TCJA for qualified film and television production activities, incentivizing domestic entertainment creation.",
@@ -10023,7 +10023,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Precision Products Inc. experienced significant losses in 2024 due to a market downturn, resulting in a net operating loss (NOL). The NOL can be: A) Carried forward indefinitely, offsetting 80% of taxable income | B) Fully refunded in the current year | C) Carried back 2 years or forward 20 years | D) Carried back 5 years, or forward 15 years",
+      "question": "Precision Products Inc. experienced significant losses in 2024 due to a market downturn, resulting in a net operating loss (NOL). The NOL can be:",
       "options": [
         "Carried forward indefinitely, offsetting 80% of taxable income",
         "Fully refunded in the current year, provided a special election is made and the loss is less than $10,000.",
@@ -10093,7 +10093,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Apex Logistics spent $3,000 repairing a delivery truck. Under the repair regulations, this expenditure must be capitalized if it: A) Exceeds $500 | B) Is paid to an independent contractor | C) Betters, restores, or adapts the property to a new or different use | D) Maintains the property in ordinarily efficient operating condition",
+      "question": "Apex Logistics spent $3,000 repairing a delivery truck. Under the repair regulations, this expenditure must be capitalized if it:",
       "options": [
         "Exceeds $500 and is not considered a routine maintenance expense under company policy.",
         "Is paid to an independent contractor and the amount is below the company's capitalization threshold.",
@@ -10163,7 +10163,7 @@
       "topic": "Business credits",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sterling Innovations is calculating its general business credit for the current year. The general business credit is limited to: A) There is no limitation on business credits | B) Net income tax minus the greater of tentative minimum tax or 25% of net regular tax above $25,000 | C) 50% of taxable income | D) The amount of payroll taxes paid",
+      "question": "Sterling Innovations is calculating its general business credit for the current year. The general business credit is limited to:",
       "options": [
         "The total of all business credits claimed, without regard to any limitations or carryover provisions applicable to specific credits.",
         "The amount of payroll taxes paid, specifically the employer's share of social security and Medicare taxes, up to a maximum credit of $10,000.",
@@ -10198,7 +10198,7 @@
       "topic": "Business credits",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "BioSolutions Inc. incurred significant qualified research expenses. The research and development credit under IRC §41 is calculated as: A) 25% of all research expenses | B) 20% of qualified research expenses exceeding a base amount, or alternative simplified method | C) 50% of new research expenses | D) 10% of all research wages",
+      "question": "BioSolutions Inc. incurred significant qualified research expenses. The research and development credit under IRC §41 is calculated as:",
       "options": [
         "25% of all research expenses, regardless of whether they meet the stringent requirements for qualified research under Section 41.",
         "10% of all research wages, including both direct and indirect labor costs, without any limitations or consideration of other qualified expenses.",
@@ -10233,7 +10233,7 @@
       "topic": "Business credits",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "NovaTech, a qualified small business, wants to utilize the research credit. A qualified small business may elect to apply up to $500,000 of research credit against: A) Income tax only | B) Payroll tax liability (FICA employer share) | C) Estimated tax payments only | D) State income taxes",
+      "question": "NovaTech, a qualified small business, wants to utilize the research credit. A qualified small business may elect to apply up to $500,000 of research credit against:",
       "options": [
         "Income tax liability, after all other credits",
         "State income taxes, if the state conforms to IRC 41",
@@ -10268,7 +10268,7 @@
       "topic": "Business credits",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Community Services NFP is expanding their workforce. The Work Opportunity Tax Credit is available for hiring: A) Individuals from targeted groups such as veterans, TANF recipients, and ex-felons | B) Any new employee hired after being unemployed | C) Employees with college degrees | D) Only employees under age 25",
+      "question": "Community Services NFP is expanding their workforce. The Work Opportunity Tax Credit is available for hiring:",
       "options": [
         "Individuals from targeted groups such as veterans, TANF recipients, and ex-felons",
         "Any new employee hired after being unemployed for at least 3 months and actively seeking employment through a state-approved program.",
@@ -10338,7 +10338,7 @@
       "topic": "Business credits",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sunrise Cafe, a small business with 20 employees and average wages of $45,000, provides health insurance. The small employer health insurance credit under IRC §45R requires: A) Coverage through private insurance only | B) Fewer than 25 FTE employees (10 for full credit) and average wages below threshold | C) More than 50 FTE employees | D) Any size employer offering a high-deductible health plan",
+      "question": "Sunrise Cafe, a small business with 20 employees and average wages of $45,000, provides health insurance. The small employer health insurance credit under IRC §45R requires:",
       "options": [
         "Coverage through a qualified health plan offered via the Small Business Health Options Program (SHOP) Marketplace only.",
         "Any size employer offering a high-deductible health plan is eligible, provided they also establish a Health Savings Account (HSA) for each participating employee.",
@@ -11811,7 +11811,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Dr. Emily Carter is considering incorporating her medical practice. She wants to provide group health insurance for herself and her employees. Which entity structure would allow Dr. Carter, as an owner-employee, to receive tax-free group health insurance benefits?\nA) Partnership | B) Sole proprietorship | C) S corporation | D) C corporation",
+      "question": "Dr. Emily Carter is considering incorporating her medical practice. She wants to provide group health insurance for herself and her employees. Which entity structure would allow Dr. Carter, as an owner-employee, to receive tax-free group health insurance benefits?",
       "options": [
         "Partnership",
         "Sole proprietorship",
@@ -11846,7 +11846,7 @@
       "topic": "Basis calculations",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John is a partner in ABC Partnership. He's trying to determine his basis in his partnership interest. How does the partnership's debt affect John's basis in ABC Partnership?\nA) Debt never affects basis in any entity | B) S corporation shareholders include their share of debt in basis | C) C corporation shareholders include debt in stock basis | D) Partners include their share of partnership debt in outside basis",
+      "question": "John is a partner in ABC Partnership. He's trying to determine his basis in his partnership interest. How does the partnership's debt affect John's basis in ABC Partnership?",
       "options": [
         "Debt only affects basis in recourse situations, never in nonrecourse debt scenarios, regardless of entity type.",
         "S corporation shareholders include their share of debt in basis",
@@ -11916,7 +11916,7 @@
       "topic": "Basis calculations",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Lisa is a partner in a real estate partnership. The partnership has nonrecourse liabilities. For purposes of determining Lisa's partnership basis, how are these nonrecourse liabilities allocated among the partners?\nA) A three-tier allocation: minimum gain, §704(c) percentage, then profit share | B) Profit sharing ratio only | C) Capital contribution percentage | D) Equally among all partners",
+      "question": "Lisa is a partner in a real estate partnership. The partnership has nonrecourse liabilities. For purposes of determining Lisa's partnership basis, how are these nonrecourse liabilities allocated among the partners?",
       "options": [
         "A three-tier allocation: minimum gain, §704(c) percentage, then profit share",
         "Profit sharing ratio only, unless the partnership agreement specifies otherwise for liabilities.",
@@ -12021,7 +12021,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Two years ago, Maria contributed land with a basis of $20,000 and a fair market value of $50,000 to the XYZ Partnership. Now, Maria receives a distribution of other partnership property. The \"mixing bowl\" rules under §§704(c)(1)(B) and 737 are designed to prevent:\nA) Partners from contributing depreciated property | B) Use of the cash method by partnerships | C) Tax-free shifting of built-in gain through contributions and distributions within 7 years | D) Partnership losses exceeding partner basis",
+      "question": "Two years ago, Maria contributed land with a basis of $20,000 and a fair market value of $50,000 to the XYZ Partnership. Now, Maria receives a distribution of other partnership property. The \"mixing bowl\" rules under §§704(c)(1)(B) and 737 are designed to prevent:",
       "options": [
         "Partners from contributing depreciated property with the intent to artificially inflate partnership losses allocated to other partners.",
         "Use of the cash method by partnerships with corporate partners or that are considered tax shelters, regardless of the mixing bowl rules.",
@@ -12056,7 +12056,7 @@
       "topic": "Basis calculations",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "David is a partner in a real estate partnership that owns an apartment complex. The partnership has obtained financing to renovate the property. Under what circumstances does qualified nonrecourse financing allow David to include the debt in his at-risk amount?\nA) Partnership debts guaranteed by partners | B) Any business activity | C) Real estate activities, if the debt is from a qualified lender | D) Only oil and gas activities",
+      "question": "David is a partner in a real estate partnership that owns an apartment complex. The partnership has obtained financing to renovate the property. Under what circumstances does qualified nonrecourse financing allow David to include the debt in his at-risk amount?",
       "options": [
         "Partnership debts guaranteed by partners, even if recourse is limited to specific assets.",
         "Any business activity, provided the financing is used for working capital and approved by all partners.",
@@ -12091,7 +12091,7 @@
       "topic": "Basis calculations",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Lakeside Partnership has several recourse liabilities. These liabilities are allocated among the partners for basis purposes. Recourse liabilities of a partnership are allocated to partners based on:\nA) Equally among all partners | B) Their profit-sharing ratio | C) Who bears the economic risk of loss | D) Their capital contribution ratio",
+      "question": "The Lakeside Partnership has several recourse liabilities. These liabilities are allocated among the partners for basis purposes. Recourse liabilities of a partnership are allocated to partners based on:",
       "options": [
         "Equally among all partners, regardless of their loss sharing ratio",
         "Their profit-sharing ratio, adjusted annually for capital account balances",
@@ -12161,7 +12161,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is auditing the books of Smith & Jones Partnership under the BBA rules. Who represents the partnership during the audit process?\nThe partnership representative under the BBA audit rules:\nA) Must be a tax matters partner as defined pre-2018 | B) Has exclusive authority to act on behalf of the partnership in IRS proceedings | C) Can only be a general partner | D) Must be a CPA or attorney",
+      "question": "The IRS is auditing the books of Smith & Jones Partnership under the BBA rules. Who represents the partnership during the audit process?\nThe partnership representative under the BBA audit rules:",
       "options": [
         "Must be a tax matters partner as defined pre-2018, unless the partnership elects out of centralized partnership audit rules.",
         "Must be a CPA or attorney admitted to practice before the IRS, unless the partnership is small and elects out.",
@@ -12196,7 +12196,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The partnership agreement for Green Acres Partnership contains a special allocation of depreciation to Partner Amy. For this special allocation to have \"economic effect,\" the partnership agreement must provide for:\nA) Capital account maintenance, liquidating distributions based on capital accounts, and deficit restoration or QIO | B) Annual revaluation of partnership assets | C) Distributions based on positive capital accounts | D) Equal profit and loss sharing",
+      "question": "The partnership agreement for Green Acres Partnership contains a special allocation of depreciation to Partner Amy. For this special allocation to have \"economic effect,\" the partnership agreement must provide for:",
       "options": [
         "Capital account maintenance, liquidating distributions based on capital accounts, and deficit restoration or QIO",
         "Annual revaluation of partnership assets, coupled with mandatory adjustments to partners' proportionate shares of future profits and losses based on those revaluations.",
@@ -12686,7 +12686,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sterling Corp. is planning a Type C reorganization with Titan Industries. To qualify as tax-free, Sterling must acquire substantially all of Titan's assets. Which of the following types of consideration is permissible for a Type C reorganization? A) Debt securities | B) Solely voting stock, with limited boot allowed | C) Any consideration | D) Cash only",
+      "question": "Sterling Corp. is planning a Type C reorganization with Titan Industries. To qualify as tax-free, Sterling must acquire substantially all of Titan's assets. Which of the following types of consideration is permissible for a Type C reorganization?",
       "options": [
         "Debt securities, provided they are investment grade",
         "Cash only, if the target company consents to liquidation",
@@ -12721,7 +12721,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech is considering restructuring its operations. They are evaluating different types of reorganizations under IRC §368. A Type D reorganization can be structured in which of the following ways? A) Acquisitive or divisive | B) A reverse merger | C) Only acquisitive | D) Only a spin-off",
+      "question": "GlobalTech is considering restructuring its operations. They are evaluating different types of reorganizations under IRC §368. A Type D reorganization can be structured in which of the following ways?",
       "options": [
         "Acquisitive or divisive",
         "A reverse merger under §368(a)(2)(E)",
@@ -12756,7 +12756,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Pharmaceuticals wants to spin off its research division into a separate, publicly traded company. To qualify as a tax-free spin-off under IRC §355, what is the requirement regarding the distribution of subsidiary stock? A) The parent distributes subsidiary stock to shareholders without surrender | B) Only cash can be distributed | C) Shareholders must surrender stock to receive the subsidiary stock | D) The subsidiary must immediately merge with another company",
+      "question": "Apex Pharmaceuticals wants to spin off its research division into a separate, publicly traded company. To qualify as a tax-free spin-off under IRC §355, what is the requirement regarding the distribution of subsidiary stock?",
       "options": [
         "The parent distributes subsidiary stock to shareholders without surrender",
         "Only cash can be distributed to shareholders, with stock options granted later",
@@ -12791,7 +12791,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Two factions of shareholders at Omega Dynamics disagree on the company's future. To resolve the conflict, Omega plans a split-off transaction. In a split-off transaction, which of the following occurs? A) The company splits into multiple entities with all shareholders owning each | B) No stock is surrendered | C) Some shareholders exchange parent stock for subsidiary stock | D) The parent is liquidated",
+      "question": "Two factions of shareholders at Omega Dynamics disagree on the company's future. To resolve the conflict, Omega plans a split-off transaction. In a split-off transaction, which of the following occurs?",
       "options": [
         "The company splits into multiple entities with all shareholders owning each",
         "No stock is surrendered",
@@ -12826,7 +12826,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vanguard Enterprises is acquiring Summit Technologies in a reorganization. To qualify for tax-free treatment, the IRS requires a 'continuity of interest.' The continuity of interest doctrine requires which of the following? A) All consideration must be cash | B) At least 50% cash consideration | C) A substantial portion of consideration must be equity to preserve tax-free treatment | D) Target shareholders must hold stock for 5 years",
+      "question": "Vanguard Enterprises is acquiring Summit Technologies in a reorganization. To qualify for tax-free treatment, the IRS requires a 'continuity of interest.' The continuity of interest doctrine requires which of the following?",
       "options": [
         "All consideration must be cash to avoid triggering taxable capital gains for target shareholders.",
         "At least 50% cash consideration is required to provide liquidity to target shareholders post-acquisition.",
@@ -12861,7 +12861,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Evergreen Solutions is acquiring GreenTech, Inc. in a tax-free reorganization. To meet the 'continuity of business enterprise' requirement, Evergreen must do which of the following? A) Continue the target's historic business or use a significant portion of target's historic assets | B) Immediately sell all target assets | C) Retain all target employees for 3 years | D) Maintain the target's corporate name",
+      "question": "Evergreen Solutions is acquiring GreenTech, Inc. in a tax-free reorganization. To meet the 'continuity of business enterprise' requirement, Evergreen must do which of the following?",
       "options": [
         "Continue the target's historic business or use a significant portion of target's historic assets",
         "Immediately sell all target assets to a third-party buyer to generate cash for Evergreen's unrelated expansion projects, thereby avoiding any potential liabilities.",
@@ -12931,7 +12931,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "United Industries acquired all the assets of Consolidated Manufacturing in a tax-free reorganization. Under IRC §381, what happens to Consolidated Manufacturing's tax attributes? A) Cannot use any target tax attributes | B) Succeeds to certain tax attributes of the target, including NOLs | C) Loses its own tax attributes | D) Must immediately recognize all target losses",
+      "question": "United Industries acquired all the assets of Consolidated Manufacturing in a tax-free reorganization. Under IRC §381, what happens to Consolidated Manufacturing's tax attributes?",
       "options": [
         "Cannot use any target tax attributes due to the change in ownership rules under Section 382.",
         "Must immediately recognize all target losses as income to offset the purchase price paid in the acquisition.",
@@ -12966,7 +12966,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Machining Corp. purchased 100% of the stock of Allied Components. Precision wants to treat the purchase as an asset acquisition. A Section 338 election allows a qualified stock purchase to be treated as which of the following? A) An asset acquisition with stepped-up basis | B) A tax-free reorganization | C) A partnership formation | D) A Section 351 transfer",
+      "question": "Precision Machining Corp. purchased 100% of the stock of Allied Components. Precision wants to treat the purchase as an asset acquisition. A Section 338 election allows a qualified stock purchase to be treated as which of the following?",
       "options": [
         "An asset acquisition with stepped-up basis",
         "A tax-free reorganization under Section 368(a)(1)(A)",
@@ -13001,7 +13001,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Industries is selling its subsidiary, Beta Corp. to Gamma Holdings. Apex and Gamma are considering a Section 338 election. How does a Section 338(h)(10) election differ from a regular Section 338 election? A) Both buyer and seller must jointly elect, and only target recognizes gain | B) It is irrevocable | C) No step-up is available | D) Only buyer makes the election",
+      "question": "Apex Industries is selling its subsidiary, Beta Corp. to Gamma Holdings. Apex and Gamma are considering a Section 338 election. How does a Section 338(h)(10) election differ from a regular Section 338 election?",
       "options": [
         "Both buyer and seller must jointly elect, and only target recognizes gain",
         "It is irrevocable once filed, regardless of subsequent material changes in the target's assets or liabilities discovered during a post-acquisition audit.",
@@ -13036,7 +13036,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Delta Corp. experienced an ownership change in Year 1. Before the change, Delta had significant NOL carryforwards. The value of Delta Corp. was determined to be $10 million, and the long-term tax-exempt rate is 3%. Section 382 limits the use of NOLs after an ownership change to: A) Only NOLs generated in the past 3 years | B) The value of the loss corporation times the long-term tax-exempt rate | C) Zero - NOLs are completely eliminated | D) The greater of $1 million or 10% of NOLs",
+      "question": "Delta Corp. experienced an ownership change in Year 1. Before the change, Delta had significant NOL carryforwards. The value of Delta Corp. was determined to be $10 million, and the long-term tax-exempt rate is 3%. Section 382 limits the use of NOLs after an ownership change to:",
       "options": [
         "Only NOLs generated in the past 3 years can be used, provided they do not exceed 90% of taxable income.",
         "The greater of $1 million or 10% of the pre-change NOLs, adjusted for any disallowed interest expense carryforwards.",
@@ -13071,7 +13071,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "ParentCo owns 85% of SubCo's stock. SubCo is being liquidated, and ParentCo is receiving property as part of the liquidation. Under IRC §332, how does ParentCo treat the receipt of property in liquidation of its 80%-owned subsidiary? A) Must use fair market value for all assets | B) Recognizes no gain or loss | C) Recognizes gain on all property received | D) Recognizes loss only",
+      "question": "ParentCo owns 85% of SubCo's stock. SubCo is being liquidated, and ParentCo is receiving property as part of the liquidation. Under IRC §332, how does ParentCo treat the receipt of property in liquidation of its 80%-owned subsidiary?",
       "options": [
         "Must use fair market value for all assets",
         "Recognizes loss only",
@@ -13106,7 +13106,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ParentCo owns 80% of SubCo. SubCo is liquidating. Minority shareholders own the remaining 20% of SubCo. How do the minority (20%) shareholders treat the liquidation? A) Convert their stock to parent stock tax-free | B) Also receive nonrecognition treatment | C) Recognize gain or loss under regular §331 rules | D) Must defer their gain until the parent sells assets",
+      "question": "ParentCo owns 80% of SubCo. SubCo is liquidating. Minority shareholders own the remaining 20% of SubCo. How do the minority (20%) shareholders treat the liquidation?",
       "options": [
         "Convert their stock to parent stock tax-free",
         "Also receive nonrecognition treatment",
@@ -13141,7 +13141,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Acme Corp. wants to acquire Beta Co. using a forward triangular merger. Acme forms a subsidiary, SubCo. Which of the following describes a forward triangular merger? A) No stock is exchanged | B) The parent merges into target | C) Target merges into parent's subsidiary, with parent stock used as consideration | D) The subsidiary merges into target",
+      "question": "Acme Corp. wants to acquire Beta Co. using a forward triangular merger. Acme forms a subsidiary, SubCo. Which of the following describes a forward triangular merger?",
       "options": [
         "No stock is exchanged; instead, target shareholders receive only cash and debt instruments from the acquiring parent.",
         "The parent, Acme Corp., merges directly into the target, Beta Co., with Beta Co. surviving as the ultimate parent entity.",
@@ -13176,7 +13176,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Omega Inc. wants to acquire Theta Corp. using a reverse triangular merger. Omega forms a subsidiary, SubCo, which merges into Theta. What is the result of a reverse triangular merger? A) Target survives after acquiring subsidiary merges into it | B) Target becomes unrelated to acquiring corporation | C) Target disappears | D) Parent disappears",
+      "question": "Omega Inc. wants to acquire Theta Corp. using a reverse triangular merger. Omega forms a subsidiary, SubCo, which merges into Theta. What is the result of a reverse triangular merger?",
       "options": [
         "Target survives after acquiring subsidiary merges into it",
         "Target becomes unrelated to acquiring corporation due to complete divestiture of all assets",
@@ -13211,7 +13211,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sterling Group engaged in a series of transactions that, when viewed separately, appear to have different tax consequences than when viewed together. The IRS is examining these transactions. The step transaction doctrine may cause related transactions to be: A) Always treated separately | B) Collapsed and tested as a single transaction for tax purposes | C) Accelerated into the current year | D) Ignored for tax purposes",
+      "question": "Sterling Group engaged in a series of transactions that, when viewed separately, appear to have different tax consequences than when viewed together. The IRS is examining these transactions. The step transaction doctrine may cause related transactions to be:",
       "options": [
         "Always treated separately based on their individual legal form, regardless of economic substance",
         "Ignored for tax purposes if each individual step, viewed in isolation, complies with existing regulations",
@@ -13246,7 +13246,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Davis Enterprises is undergoing an internal restructuring. They are exchanging common stock for preferred stock with different rights and preferences. A Type E reorganization (recapitalization) involves: A) An internal restructuring of a corporation's capital structure | B) Merger with another corporation | C) Liquidation of the corporation | D) Acquisition of another company's assets",
+      "question": "Davis Enterprises is undergoing an internal restructuring. They are exchanging common stock for preferred stock with different rights and preferences. A Type E reorganization (recapitalization) involves:",
       "options": [
         "An internal restructuring of a corporation's capital structure",
         "A merger with another corporation resulting in a new, combined entity with shared liabilities.",
@@ -15068,7 +15068,7 @@
       "topic": "Basis calculations",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John invested $50,000 cash in a new business venture and obtained a $100,000 recourse loan. Under the at-risk rules of IRC §465, to what extent can John deduct losses from this venture? A) Annual income from the activity | B) Amount actually at risk (cash plus recourse debt) | C) Total investment regardless of liability | D) Fair market value of assets",
+      "question": "John invested $50,000 cash in a new business venture and obtained a $100,000 recourse loan. Under the at-risk rules of IRC §465, to what extent can John deduct losses from this venture?",
       "options": [
         "Annual income from the activity, without considering capital contributions or debt.",
         "Amount actually at risk (cash plus recourse debt)",
@@ -15103,7 +15103,7 @@
       "topic": "Basis calculations",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah is starting a new business. Which of the following actions would increase the amount she has considered at risk for purposes of deducting losses? A) Non-recourse financing from unrelated parties | B) Stop-loss agreements | C) Recourse debt for which the taxpayer is personally liable | D) Guarantees by related parties",
+      "question": "Sarah is starting a new business. Which of the following actions would increase the amount she has considered at risk for purposes of deducting losses?",
       "options": [
         "Non-recourse financing from unrelated commercial lenders, secured only by business assets",
         "Stop-loss agreements purchased to limit potential losses, even if premiums are paid in cash",
@@ -15138,7 +15138,7 @@
       "topic": "Basis calculations",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Green Acres LLC obtained a $500,000 loan to purchase a rental property. The loan is non-recourse, but is secured by the property itself. How is this qualified non-recourse financing treated under the at-risk rules? A) Only applies to partnerships | B) Is never considered at risk | C) Is treated as an amount at risk if secured by the real property | D) Requires personal guarantee to be at risk",
+      "question": "Green Acres LLC obtained a $500,000 loan to purchase a rental property. The loan is non-recourse, but is secured by the property itself. How is this qualified non-recourse financing treated under the at-risk rules?",
       "options": [
         "Only applies to partnerships and S corporations with more than 100 partners.",
         "Is never considered at risk, unless the lender is a related party to the borrower.",
@@ -15173,7 +15173,7 @@
       "topic": "Basis calculations",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David's share of losses from his S corporation exceeds his at-risk amount by $5,000. What happens to the disallowed loss? A) Carried forward and allowed when at-risk amount increases | B) Permanently disallowed | C) Deductible against passive income only | D) Converted to capital losses",
+      "question": "David's share of losses from his S corporation exceeds his at-risk amount by $5,000. What happens to the disallowed loss?",
       "options": [
         "Carried forward and allowed when at-risk amount increases",
         "Permanently disallowed and not available for carryover or future deduction, even if the at-risk amount increases.",
@@ -15208,7 +15208,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Michelle has passive losses from a rental property. Under the passive activity loss rules, what type of income can these losses generally offset? A) Only passive income | B) Any type of income | C) Only ordinary income | D) Only portfolio income",
+      "question": "Michelle has passive losses from a rental property. Under the passive activity loss rules, what type of income can these losses generally offset?",
       "options": [
         "Only passive income",
         "Any type of income",
@@ -15243,7 +15243,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "To be considered a material participant in a business activity, how many hours must a taxpayer generally participate during the year? A) 100 hours during the year | B) 500 hours during the year | C) 1,000 hours during the year | D) 750 hours during the year",
+      "question": "To be considered a material participant in a business activity, how many hours must a taxpayer generally participate during the year?",
       "options": [
         "100 hours during the year",
         "500 hours during the year",
@@ -15278,7 +15278,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Jane owns a rental property that she actively manages. How are rental real estate activities generally treated under the passive activity loss rules? A) Only passive if owned through a partnership | B) Treated as passive regardless of participation | C) Always treated as active income | D) Exempt from all loss limitations",
+      "question": "Jane owns a rental property that she actively manages. How are rental real estate activities generally treated under the passive activity loss rules?",
       "options": [
         "Only passive if owned through a partnership",
         "Treated as passive regardless of participation",
@@ -15313,7 +15313,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tom and Mary have $120,000 in adjusted gross income (AGI) and a $20,000 loss from their rental property. How does the $25,000 rental real estate loss allowance apply to them? A) Is phased out for AGI between $100,000 and $150,000 | B) Is available for commercial rentals only | C) Applies to all taxpayers regardless of income | D) Only applies to real estate professionals",
+      "question": "Tom and Mary have $120,000 in adjusted gross income (AGI) and a $20,000 loss from their rental property. How does the $25,000 rental real estate loss allowance apply to them?",
       "options": [
         "Is phased out for AGI between $100,000 and $150,000",
         "Is available for commercial rentals only if the taxpayer actively participates in the management and operation of the property.",
@@ -17063,7 +17063,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions sold its entire business to a competitor for $3 million. The assets include equipment, inventory, and customer lists. For tax purposes, the purchase price must be:\nA) Allocated among the assets under the residual method | B) Deferred until all assets are disposed of | C) Reported entirely as capital gain | D) Treated as ordinary income",
+      "question": "GreenTech Solutions sold its entire business to a competitor for $3 million. The assets include equipment, inventory, and customer lists. For tax purposes, the purchase price must be:",
       "options": [
         "Allocated among the assets under the residual method",
         "Deferred and recognized only when each individual asset is specifically disposed of",
@@ -17098,7 +17098,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah Miller started a successful consulting business and is now selling it. A significant portion of the sale price is attributed to the company's goodwill, which she personally developed over many years. Gain on the sale of this self-created goodwill is generally:\nA) Short-term capital gain | B) Ordinary income | C) Long-term capital gain | D) Tax-exempt",
+      "question": "Sarah Miller started a successful consulting business and is now selling it. A significant portion of the sale price is attributed to the company's goodwill, which she personally developed over many years. Gain on the sale of this self-created goodwill is generally:",
       "options": [
         "Short-term capital gain",
         "Ordinary income",
@@ -17133,7 +17133,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Chen sold his dental practice to a larger group practice for $750,000. As part of the agreement, Dr. Chen signed a covenant not to compete within a 50-mile radius for the next 5 years. Payments received for this covenant not to compete are treated as:\nA) Return of capital | B) Ordinary income to the recipient | C) Long-term capital gain | D) Tax-exempt",
+      "question": "Dr. Chen sold his dental practice to a larger group practice for $750,000. As part of the agreement, Dr. Chen signed a covenant not to compete within a 50-mile radius for the next 5 years. Payments received for this covenant not to compete are treated as:",
       "options": [
         "A return of capital, reducing the practice's basis",
         "Ordinary income to the recipient",
@@ -17168,7 +17168,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John enjoys woodworking as a hobby and sells some of his creations online. He consistently loses money on this activity. Under IRC §183, expenses from this activity not engaged in for profit (hobby):\nA) Are capitalized | B) Are fully deductible against all income | C) Cannot offset income from other sources after TCJA | D) Create net operating losses",
+      "question": "John enjoys woodworking as a hobby and sells some of his creations online. He consistently loses money on this activity. Under IRC §183, expenses from this activity not engaged in for profit (hobby):",
       "options": [
         "Are capitalized and recovered through cost of goods sold",
         "Are fully deductible against all income, limited to gross income",
@@ -17203,7 +17203,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria operates a small horse breeding operation. While she enjoys the activity, she also hopes to make a profit. The primary factor in determining if Maria's horse breeding is a business vs hobby is:\nA) Whether a business license exists | B) The amount of revenue generated | C) Whether the taxpayer has a genuine profit motive | D) The type of activity",
+      "question": "Maria operates a small horse breeding operation. While she enjoys the activity, she also hopes to make a profit. The primary factor in determining if Maria's horse breeding is a business vs hobby is:",
       "options": [
         "Whether a business license exists and is properly maintained",
         "The amount of revenue generated exceeding expenses over time",
@@ -17273,7 +17273,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Robert is being audited regarding his pottery business. The IRS is questioning whether it's a business or a hobby. Which of the following is NOT one of the nine factors used to determine profit motive?\nA) Manner in which the activity is carried on | B) Expertise of the taxpayer in the activity | C) Time and effort expended in the activity | D) Location of the taxpayer's primary residence",
+      "question": "Robert is being audited regarding his pottery business. The IRS is questioning whether it's a business or a hobby. Which of the following is NOT one of the nine factors used to determine profit motive?",
       "options": [
         "Manner in which the activity is carried on",
         "Expertise of the taxpayer in the activity",
@@ -17308,7 +17308,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Susan started a small business that has consistently generated losses. She believes it will eventually become profitable. A taxpayer can elect to postpone the hobby loss determination until:\nA) After the fifth year (or seventh for horses) when the presumption period ends | B) After the first year of losses | C) 10 years of operation | D) After audit notice",
+      "question": "Susan started a small business that has consistently generated losses. She believes it will eventually become profitable. A taxpayer can elect to postpone the hobby loss determination until:",
       "options": [
         "After the fifth year (or seventh for horses) when the presumption period ends",
         "After the first year of losses, allowing for immediate reclassification to passive activity, subject to IRS approval.",
@@ -17343,7 +17343,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "David runs a small online retail business. He wants to demonstrate to the IRS that he has a profit motive. Which evidence supports profit motive for an activity?\nA) Complete books and records, business plan, and changes to improve profitability | B) Large personal enjoyment from the activity | C) No business records kept | D) Activity conducted only on weekends",
+      "question": "David runs a small online retail business. He wants to demonstrate to the IRS that he has a profit motive. Which evidence supports profit motive for an activity?",
       "options": [
         "Complete books and records, business plan, and changes to improve profitability",
         "Large personal enjoyment from the activity, even if it consistently generates losses and lacks commercial viability.",
@@ -17658,7 +17658,7 @@
       "topic": "Section 179 and bonus depreciation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Green Valley Farms purchased new harvesting equipment for $150,000. Regarding Section 179 expensing for this farm equipment, what type of property qualifies? A) Land only | B) Tangible personal property and certain farm buildings/structures | C) All real property | D) Livestock only",
+      "question": "Green Valley Farms purchased new harvesting equipment for $150,000. Regarding Section 179 expensing for this farm equipment, what type of property qualifies?",
       "options": [
         "Land only, including associated permanent improvements like drainage tiles.",
         "Tangible personal property and certain farm buildings/structures",
@@ -17693,7 +17693,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Farmer McGregor incurred $10,000 in soil and water conservation expenses on his farm. How may these expenses be treated for tax purposes? A) Deducted only against capital gains | B) Deducted in the year paid if elected by the farmer | C) Only capitalized | D) Never deductible",
+      "question": "Farmer McGregor incurred $10,000 in soil and water conservation expenses on his farm. How may these expenses be treated for tax purposes?",
       "options": [
         "Deducted only against capital gains arising from the sale of farmland held for more than one year.",
         "Deducted in the year paid if elected by the farmer",
@@ -17728,7 +17728,7 @@
       "topic": "Sole proprietorships (Schedule C)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to a severe drought, Farmer Giles experienced a significant loss in his farming operation, resulting in a Net Operating Loss (NOL). Farm NOLs have a special rule allowing what type of carryback option? A) 2-year carryback option | B) 10-year carryback | C) No carryback | D) 5-year carryback",
+      "question": "Due to a severe drought, Farmer Giles experienced a significant loss in his farming operation, resulting in a Net Operating Loss (NOL). Farm NOLs have a special rule allowing what type of carryback option?",
       "options": [
         "2-year carryback option",
         "10-year carryback for disaster losses",
@@ -17763,7 +17763,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sunrise Orchards' apple crop was damaged by hail. They received $75,000 in crop insurance proceeds. Under what circumstance may these proceeds be deferred to the following year? A) The crop was lost to theft | B) The farmer files Form 4797 | C) The farmer normally sells the crop in the following year as a usual business practice | D) The amount exceeds $100,000",
+      "question": "Sunrise Orchards' apple crop was damaged by hail. They received $75,000 in crop insurance proceeds. Under what circumstance may these proceeds be deferred to the following year?",
       "options": [
         "The crop was lost to theft and a police report was filed, substantiating the loss for insurance purposes.",
         "The farmer files Form 4797, Sales of Business Property, to report the involuntary conversion of the damaged crop.",
@@ -17798,7 +17798,7 @@
       "topic": "Payroll taxes and requirements",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Farmer Johnson derives 80% of his gross income from farming. What special provision regarding estimated tax payments applies to him? A) Skip estimated tax payments if they file and pay by March 1 | B) Only pay one quarterly estimate | C) Never pay estimated taxes | D) Use a 5-year averaging",
+      "question": "Farmer Johnson derives 80% of his gross income from farming. What special provision regarding estimated tax payments applies to him?",
       "options": [
         "Skip estimated tax payments if they file and pay by March 1",
         "Only pay one quarterly estimate in January if gross income is below a certain threshold.",
@@ -17833,7 +17833,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Riverbend Ranch sold several of its breeding bulls, held for over 24 months. The sale resulted in a gain. This sale of livestock may qualify for: A) Ordinary income treatment only | B) Installment sale exclusion | C) Section 1231 treatment if held more than the required period (12 or 24 months) | D) Tax exemption",
+      "question": "Riverbend Ranch sold several of its breeding bulls, held for over 24 months. The sale resulted in a gain. This sale of livestock may qualify for:",
       "options": [
         "Ordinary income treatment only, with no possibility of capital gains rates applying due to depreciation recapture rules.",
         "Installment sale exclusion, allowing the ranch to defer all tax liability until the full purchase price is collected, regardless of the holding period.",
@@ -17903,7 +17903,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maple Leaf Landscaping paid a consultant $5,000 for business advice and also paid $1,000 in royalties to a patent holder. Which form is used to report these payments? A) Form 1099-MISC is used to report: Rents, royalties, prizes, and other miscellaneous income of $600 or more | B) All payments to contractors | C) Partnership distributions | D) Employee wages",
+      "question": "Maple Leaf Landscaping paid a consultant $5,000 for business advice and also paid $1,000 in royalties to a patent holder. Which form is used to report these payments?",
       "options": [
         "Rents, royalties, prizes, and other miscellaneous income of $600 or more",
         "All payments to contractors, regardless of the amount, for services performed in the course of your trade or business.",
@@ -17938,7 +17938,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Consulting paid a freelance web designer $2,000 in 2024. By what date must Form 1099-NEC be filed with the IRS and furnished to the recipient? A) February 28 | B) January 31 | C) April 15 | D) March 31",
+      "question": "ABC Consulting paid a freelance web designer $2,000 in 2024. By what date must Form 1099-NEC be filed with the IRS and furnished to the recipient?",
       "options": [
         "February 28",
         "January 31",
@@ -17973,7 +17973,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sunrise Consulting paid a vendor $5,000 but the vendor's W-9 form has an obvious error. Sunrise has attempted to contact the vendor multiple times without success. Under what circumstance is Sunrise Consulting required to apply backup withholding at a rate of 24%? A) The payment exceeds $10,000 | B) The payee has not provided a correct TIN or is subject to backup withholding notice | C) The payment is for rent | D) The payee is an employee",
+      "question": "Sunrise Consulting paid a vendor $5,000 but the vendor's W-9 form has an obvious error. Sunrise has attempted to contact the vendor multiple times without success. Under what circumstance is Sunrise Consulting required to apply backup withholding at a rate of 24%?",
       "options": [
         "The payment exceeds $10,000 and the vendor has failed to provide a certificate of exemption from backup withholding.",
         "The payee has not provided a correct TIN or is subject to backup withholding notice",
@@ -18008,7 +18008,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Green Valley Farms needs to collect information from a new supplier, John Smith, before making payments. Which IRS form is used by John Smith to provide his Taxpayer Identification Number (TIN) and certify his backup withholding status to Green Valley Farms? A) Provide their TIN and certify backup withholding status to payers | B) Register a new business | C) Report income | D) Request a refund",
+      "question": "Green Valley Farms needs to collect information from a new supplier, John Smith, before making payments. Which IRS form is used by John Smith to provide his Taxpayer Identification Number (TIN) and certify his backup withholding status to Green Valley Farms?",
       "options": [
         "Provide their TIN and certify backup withholding status to payers",
         "Register a new business with the IRS and obtain an Employer Identification Number (EIN) for tax purposes.",
@@ -18043,7 +18043,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria sold crafts online through a third-party payment processor, receiving $25,000 in gross payments. Which IRS form will Maria receive to report these transactions? A) Payments from payment card transactions and third-party network transactions | B) Retirement distributions | C) Employee wages | D) Interest income",
+      "question": "Maria sold crafts online through a third-party payment processor, receiving $25,000 in gross payments. Which IRS form will Maria receive to report these transactions?",
       "options": [
         "Payments from payment card transactions and third-party network transactions",
         "Retirement distributions from a qualified retirement plan, such as a 401(k) or IRA",
@@ -18078,7 +18078,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tech Solutions Inc. discovered they failed to file 150 correct 1099-NEC forms by the January 31st deadline. What is the penalty for failing to file correct information returns by the due date? A) A flat $100 per return | B) No penalty if corrected within 1 year | C) $60 to $310 per return depending on how late, with maximum per year | D) 10% of unreported amounts",
+      "question": "Tech Solutions Inc. discovered they failed to file 150 correct 1099-NEC forms by the January 31st deadline. What is the penalty for failing to file correct information returns by the due date?",
       "options": [
         "A flat $100 per return, regardless of when it is eventually filed.",
         "No penalty if corrected within 1 year, provided the IRS doesn't assess first.",
@@ -18113,7 +18113,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Corporation provided incorrect 1099-MISC statements to 50 independent contractors. What is the penalty for failure to furnish correct payee statements? A) $50 flat | B) No penalty exists | C) $60 to $310 per statement depending on lateness | D) 5% of unreported income",
+      "question": "ABC Corporation provided incorrect 1099-MISC statements to 50 independent contractors. What is the penalty for failure to furnish correct payee statements?",
       "options": [
         "$50 flat per incorrect 1099, capped at $25,000 annually",
         "No penalty exists if ABC Corp. corrects the errors within 30 days",
@@ -18148,7 +18148,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "A jewelry store, 'Sparkle & Shine', sold a diamond necklace for $12,000 in cash. When must Sparkle & Shine file Form 8300? A) Credit card payments over $10,000 | B) Any cash payment | C) More than $10,000 in cash in one transaction or related transactions | D) Payments by check over $10,000",
+      "question": "A jewelry store, 'Sparkle & Shine', sold a diamond necklace for $12,000 in cash. When must Sparkle & Shine file Form 8300?",
       "options": [
         "Credit card payments over $10,000, regardless of the number of transactions",
         "Any cash payment exceeding $500, to ensure proper tracking of large transactions",
@@ -18183,7 +18183,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Riverbend Holdings LLC was formed in 2024. Under new regulations, with which agency must Riverbend Holdings file a Beneficial Ownership Information (BOI) report? A) The IRS | B) State Secretary of State | C) FinCEN (Financial Crimes Enforcement Network) | D) The SEC",
+      "question": "Riverbend Holdings LLC was formed in 2024. Under new regulations, with which agency must Riverbend Holdings file a Beneficial Ownership Information (BOI) report?",
       "options": [
         "The IRS, specifically the Small Business/Self-Employed Division",
         "State Secretary of State, primarily for initial registration",
@@ -18218,7 +18218,7 @@
       "topic": "Business credits",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mountain View Manufacturing wants to claim several different business tax credits, including the Work Opportunity Credit and the Research and Development Credit. How are these credits claimed? A) A single tax credit | B) A refundable credit | C) A combination of multiple business credits claimed together | D) Only available to corporations",
+      "question": "Mountain View Manufacturing wants to claim several different business tax credits, including the Work Opportunity Credit and the Research and Development Credit. How are these credits claimed?",
       "options": [
         "Treated as a single general business credit calculated on Form 3800",
         "Considered a refundable credit applied directly to estimated taxes",
@@ -18848,7 +18848,7 @@
       "topic": "Business income recognition",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John loaned his brother $8,000 to start a lawn care business. No interest was stated in the loan agreement. The de minimis exception to imputed interest rules applies to loans:\nA) Of $10,000 or less between individuals (with exceptions) | B) Of any amount between family members | C) Over $100,000 only | D) Only to corporations",
+      "question": "John loaned his brother $8,000 to start a lawn care business. No interest was stated in the loan agreement. The de minimis exception to imputed interest rules applies to loans:",
       "options": [
         "Of $10,000 or less between individuals (with exceptions)",
         "Of any amount between family members, provided the borrower uses the funds exclusively for personal use.",
@@ -18883,7 +18883,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions loaned its CEO $500,000 at a below-market interest rate. To determine the imputed interest, which Applicable Federal Rate (AFR) is used for testing below-market loans?\nA) A fixed 5% rate | B) Set by the taxpayer | C) Published monthly by the IRS based on short-term, mid-term, and long-term rates | D) The prime rate",
+      "question": "GreenTech Solutions loaned its CEO $500,000 at a below-market interest rate. To determine the imputed interest, which Applicable Federal Rate (AFR) is used for testing below-market loans?",
       "options": [
         "A fixed 5% rate, adjusted annually based on the Consumer Price Index (CPI) to account for inflation.",
         "Set by the taxpayer, using a reasonable rate based on their internal cost of funds and credit risk assessment.",
@@ -18918,7 +18918,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Three entrepreneurs are forming a new business, 'Apex Innovations'. They want maximum flexibility in distributing profits and losses, regardless of ownership percentages. Which entity type provides the greatest flexibility in allocating profits and losses among owners?\nA) C corporation | B) S corporation | C) Sole proprietorship | D) Partnership/LLC taxed as partnership",
+      "question": "Three entrepreneurs are forming a new business, 'Apex Innovations'. They want maximum flexibility in distributing profits and losses, regardless of ownership percentages. Which entity type provides the greatest flexibility in allocating profits and losses among owners?",
       "options": [
         "C corporation, due to its ability to issue multiple classes of stock with varying dividend rights.",
         "S corporation, allowing pro-rata profit and loss allocation based strictly on shareholder ownership percentages.",
@@ -18953,7 +18953,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Davis Corp, a successful manufacturing company, has accumulated substantial earnings over the past few years, far exceeding its operational needs. The accumulated earnings tax is designed to:\nA) Penalize C corporations that accumulate earnings beyond reasonable business needs to avoid dividend tax | B) Encourage corporations to retain earnings | C) Apply to S corporations | D) Tax all retained earnings",
+      "question": "Davis Corp, a successful manufacturing company, has accumulated substantial earnings over the past few years, far exceeding its operational needs. The accumulated earnings tax is designed to:",
       "options": [
         "Penalize C corporations that accumulate earnings beyond reasonable business needs to avoid dividend tax",
         "Encourage corporations to retain earnings for future investments, thereby stimulating economic growth through reinvestment and capital expenditure.",
@@ -18988,7 +18988,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sterling Investments derives most of its income from dividends and interest. It has significant undistributed income. A personal holding company (PHC) is subject to a 20% penalty tax on:\nA) Undistributed personal holding company income | B) Capital gains only | C) All corporate income | D) Dividend payments",
+      "question": "Sterling Investments derives most of its income from dividends and interest. It has significant undistributed income. A personal holding company (PHC) is subject to a 20% penalty tax on:",
       "options": [
         "Undistributed personal holding company income",
         "Net capital gains, after reduction for any capital loss carryforwards",
@@ -19058,7 +19058,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Sarah, the sole shareholder and employee of her S corp, 'Sarah's Designs', takes $50,000 in distributions but only pays herself a $10,000 salary. The IRS may:\nA) Require conversion to C corporation status | B) Reclassify distributions as wages subject to employment taxes | C) Automatically revoke the S election | D) Assess a penalty equal to 50% of distributions",
+      "question": "Sarah, the sole shareholder and employee of her S corp, 'Sarah's Designs', takes $50,000 in distributions but only pays herself a $10,000 salary. The IRS may:",
       "options": [
         "Require conversion to C corporation status due to failure to meet reasonable compensation requirements",
         "Reclassify distributions as wages subject to employment taxes",
@@ -19093,7 +19093,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Mark uses a room in his house exclusively and regularly for his consulting business. He wants to use the simplified method for calculating his home office deduction. The simplified home office deduction method allows a deduction of:\nA) Actual expenses only | B) $10 per square foot, max 500 sq ft | C) $5 per square foot, max 300 sq ft | D) $15 per square foot, no limit",
+      "question": "Mark uses a room in his house exclusively and regularly for his consulting business. He wants to use the simplified method for calculating his home office deduction. The simplified home office deduction method allows a deduction of:",
       "options": [
         "Actual expenses only",
         "$10 per square foot, max 500 sq ft",
@@ -19128,7 +19128,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Manufacturing produces specialized equipment. The company incurs direct material, direct labor, and various indirect costs. The uniform capitalization rules (UNICAP) under §263A require:\nA) Deferring direct costs only | B) Expensing all inventory costs immediately | C) Capitalizing certain indirect costs into inventory/property produced | D) Immediate deduction of all production costs",
+      "question": "Precision Manufacturing produces specialized equipment. The company incurs direct material, direct labor, and various indirect costs. The uniform capitalization rules (UNICAP) under §263A require:",
       "options": [
         "Deferring direct costs only until the related inventory is sold, while expensing all indirect costs in the current period.",
         "Expensing all inventory costs immediately, regardless of whether the inventory has been sold or used in production.",
@@ -20633,7 +20633,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After many years, Davis Corp. decided to liquidate completely. Shareholders received cash and property. How do the shareholders treat the liquidation for tax purposes? Shareholders: A) Can defer recognition using like-kind exchange | B) Recognize gain or loss equal to FMV received minus stock basis | C) Receive tax-free distributions up to basis | D) Always pay ordinary income rates on amounts received",
+      "question": "After many years, Davis Corp. decided to liquidate completely. Shareholders received cash and property. How do the shareholders treat the liquidation for tax purposes? Shareholders:",
       "options": [
         "Can defer recognition using like-kind exchange if property received is similar to the stock surrendered.",
         "Recognize gain or loss equal to FMV received minus stock basis",
@@ -20668,7 +20668,7 @@
       "topic": "Sole proprietorships (Schedule C)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria operates a large wheat farm in Kansas. Her income fluctuates significantly year to year. To manage her tax liability, she wants to use income averaging. Farm income averaging under Schedule J allows farmers to: A) Claim an additional deduction equal to 20% of farm income | B) Elect to spread current year farm income over 3 prior years | C) Defer all farm income to the following year | D) Exclude up to $100,000 of farm income",
+      "question": "Maria operates a large wheat farm in Kansas. Her income fluctuates significantly year to year. To manage her tax liability, she wants to use income averaging. Farm income averaging under Schedule J allows farmers to:",
       "options": [
         "Claim an additional deduction equal to 20% of farm income",
         "Elect to spread current year farm income over 3 prior years",
@@ -20703,7 +20703,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "The 'Helping Hands' charity has gross receipts of $300,000 and total assets of $600,000. Which of the following organizations must file Form 990, not 990-EZ or 990-N? A) Gross receipts between $50,000 and $200,000 | B) All Section 501(c)(3) organizations regardless of size | C) Gross receipts less than $50,000 | D) Gross receipts over $200,000 or total assets over $500,000",
+      "question": "The 'Helping Hands' charity has gross receipts of $300,000 and total assets of $600,000. Which of the following organizations must file Form 990, not 990-EZ or 990-N?",
       "options": [
         "Gross receipts between $50,000 and $200,000, regardless of asset size.",
         "All Section 501(c)(3) organizations regardless of size",
@@ -20738,7 +20738,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John wants to exchange a commercial building he owns for another. Under current law, Section 1031 like-kind exchanges are available for: A) Inventory and equipment | B) Any business or investment property | C) Real property held for business or investment only | D) Personal property and real property",
+      "question": "John wants to exchange a commercial building he owns for another. Under current law, Section 1031 like-kind exchanges are available for:",
       "options": [
         "Inventory held for sale to customers and depreciable equipment used in a trade or business",
         "Any tangible or intangible business or investment property, including partnership interests and securities",
@@ -20773,7 +20773,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Sunshine REIT is determining its dividend distribution requirements. A REIT must distribute at least what percentage of taxable income to shareholders? A) 50% | B) 100% | C) 75% | D) 90%",
+      "question": "Sunshine REIT is determining its dividend distribution requirements. A REIT must distribute at least what percentage of taxable income to shareholders?",
       "options": [
         "50%",
         "100%",
@@ -20878,7 +20878,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "GreenTech Inc. is facing a potential accumulated earnings tax assessment. The accumulated earnings tax rate under current law is: A) 20% | B) 15% | C) 37% | D) 21%",
+      "question": "GreenTech Inc. is facing a potential accumulated earnings tax assessment. The accumulated earnings tax rate under current law is:",
       "options": [
         "20%",
         "15%",
@@ -20948,7 +20948,7 @@
       "topic": "Payroll taxes and requirements",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "ABC Company needs to file its quarterly employment tax return. Form 941 (quarterly employment tax return) is due: A) Annually with the income tax return | B) The last day of the month following each quarter | C) The 15th day of the month following each quarter | D) 30 days after each quarter ends",
+      "question": "ABC Company needs to file its quarterly employment tax return. Form 941 (quarterly employment tax return) is due:",
       "options": [
         "Annually with the income tax return",
         "The last day of the month following each quarter",
@@ -20983,7 +20983,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Global Widgets, Inc. has a CFC with significant income. GILTI (Global Intangible Low-Taxed Income) is calculated as CFC income exceeding: A) 10% of qualified business asset investment | B) 5% of tangible depreciable assets | C) 20% of CFC gross income | D) 15% of total CFC assets",
+      "question": "Global Widgets, Inc. has a CFC with significant income. GILTI (Global Intangible Low-Taxed Income) is calculated as CFC income exceeding:",
       "options": [
         "10% of qualified business asset investment",
         "5% of tangible depreciable assets, excluding land",
@@ -21368,7 +21368,7 @@
       "topic": "Qualified retirement plans",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah works for GreenTech Solutions, which offers a 401(k) plan. She wants to maximize her contributions. What is the maximum employee elective deferral Sarah can make to her 401(k) plan in 2024?\nA) $22,500 | B) $20,500 | C) $23,500 | D) $23,000",
+      "question": "Sarah works for GreenTech Solutions, which offers a 401(k) plan. She wants to maximize her contributions. What is the maximum employee elective deferral Sarah can make to her 401(k) plan in 2024?",
       "options": [
         "$22,500",
         "$20,500",
@@ -21403,7 +21403,7 @@
       "topic": "SEP and SIMPLE plans",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "David owns a small business, \"David's Designs\", and wants to set up a retirement plan for himself and his employees using a SIMPLE IRA. What is the maximum employee contribution limit for a SIMPLE IRA in 2024?\nA) $15,500 | B) $23,000 | C) $6,500 | D) $16,000",
+      "question": "David owns a small business, \"David's Designs\", and wants to set up a retirement plan for himself and his employees using a SIMPLE IRA. What is the maximum employee contribution limit for a SIMPLE IRA in 2024?",
       "options": [
         "$15,500",
         "$23,000",
@@ -21438,7 +21438,7 @@
       "topic": "Payroll taxes and requirements",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "ABC Accounting maintains payroll records for its clients. Generally, for how many years should ABC Accounting retain employment tax records?\nA) 7 years | B) 3 years | C) 2 years | D) 4 years",
+      "question": "ABC Accounting maintains payroll records for its clients. Generally, for how many years should ABC Accounting retain employment tax records?",
       "options": [
         "7 years",
         "3 years",
@@ -21473,7 +21473,7 @@
       "topic": "Payroll taxes and requirements",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Precision Manufacturing is being audited. The IRS is questioning the classification of several workers as independent contractors. Under what condition does Section 530 relief protect Precision Manufacturing from employment tax liability for these misclassified workers?\nA) The worker agrees to independent contractor status | B) The IRS approves the classification in advance | C) The employer had a reasonable basis and filed consistent 1099s | D) The worker earned less than $600",
+      "question": "Precision Manufacturing is being audited. The IRS is questioning the classification of several workers as independent contractors. Under what condition does Section 530 relief protect Precision Manufacturing from employment tax liability for these misclassified workers?",
       "options": [
         "The worker signs a written agreement acknowledging independent contractor status and waiving employment benefits.",
         "The IRS provides a preliminary advisory opinion approving the worker classification based on submitted documentation.",
@@ -21508,7 +21508,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Omega Corp. was newly formed on January 1, 2024. Regarding estimated tax payments, which of the following methods MUST Omega Corp. use for its first year?\nA) Pays a flat 25% estimated tax | B) Is exempt from estimated tax payments | C) Must use the current year method (90% of current tax) | D) Can use the prior year method with $0 prior year tax",
+      "question": "Omega Corp. was newly formed on January 1, 2024. Regarding estimated tax payments, which of the following methods MUST Omega Corp. use for its first year?",
       "options": [
         "Pays a flat 25% estimated tax based on projected income.",
         "Is exempt from estimated tax payments due to its new status.",
@@ -21543,7 +21543,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Two partners in the RST Partnership sold their entire interests to a new investor. The total interest sold was 60%. Under current law (TCJA), what is the impact of this sale on the RST Partnership?\nA) Requires revaluation of all partnership assets | B) Occurs when 50% or more interests are sold within 12 months | C) No longer exists - TCJA repealed technical termination rules | D) Triggers recognition of built-in gains",
+      "question": "Two partners in the RST Partnership sold their entire interests to a new investor. The total interest sold was 60%. Under current law (TCJA), what is the impact of this sale on the RST Partnership?",
       "options": [
         "Requires revaluation of all partnership assets under section 743(b) if a valid election is in place",
         "Occurs when 50% or more interests are sold within 12 months",
@@ -21578,7 +21578,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sunrise Industries wants to elect S corporation status for the current tax year. What is the latest date by which Sunrise Industries must file Form 2553 to make the S election effective for the current year?\nA) The tax return due date | B) 2 months and 15 days after start of the tax year | C) Any time during the prior tax year | D) The 15th day of the 3rd month of the tax year",
+      "question": "Sunrise Industries wants to elect S corporation status for the current tax year. What is the latest date by which Sunrise Industries must file Form 2553 to make the S election effective for the current year?",
       "options": [
         "The tax return due date",
         "2 months and 15 days after start of the tax year",
@@ -21613,7 +21613,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Alpha Corp. merged with Beta Corp. in a Type A statutory merger. The Beta Corp. shareholders received a combination of Alpha Corp. stock and cash. Regarding the consideration received by the target shareholders, which of the following is true?\nA) Must receive only voting stock | B) Can receive cash, stock, or other property with some boot recognition | C) Cannot receive any cash | D) Always recognize gain regardless of consideration",
+      "question": "Alpha Corp. merged with Beta Corp. in a Type A statutory merger. The Beta Corp. shareholders received a combination of Alpha Corp. stock and cash. Regarding the consideration received by the target shareholders, which of the following is true?",
       "options": [
         "Must receive only voting stock to qualify as a tax-free reorganization, with no other property allowed.",
         "Can receive cash, stock, or other property with some boot recognition",
@@ -21998,7 +21998,7 @@
       "topic": "Cost of goods sold",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sterling Manufacturing produces custom metal components. To determine the cost of its inventory, Sterling must follow UNICAP rules under Section 263A. UNICAP requires capitalization of:\nA) Selling expenses | B) Direct costs plus allocable indirect costs for inventory or self-constructed assets | C) All business expenses | D) Only labor costs",
+      "question": "Sterling Manufacturing produces custom metal components. To determine the cost of its inventory, Sterling must follow UNICAP rules under Section 263A. UNICAP requires capitalization of:",
       "options": [
         "Selling expenses, including advertising and marketing, are capitalized under UNICAP to match revenue recognition.",
         "Direct costs plus allocable indirect costs for inventory or self-constructed assets",
@@ -22033,7 +22033,7 @@
       "topic": "Business income recognition",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The American Historical Society, a tax-exempt organization, operates a gift shop that sells historical books and replicas. The Society also receives income from various sources. Unrelated Business Income Tax (UBIT) applies to exempt organization income from:\nA) All donations and grants | B) Investment income (dividends, interest, capital gains) | C) Membership dues | D) Trade or business regularly carried on not substantially related to exempt purpose",
+      "question": "The American Historical Society, a tax-exempt organization, operates a gift shop that sells historical books and replicas. The Society also receives income from various sources. Unrelated Business Income Tax (UBIT) applies to exempt organization income from:",
       "options": [
         "All donations and grants received, unless specifically designated for exempt activities and properly documented.",
         "Investment income (dividends, interest, capital gains) exceeding $1,000 annually, requiring detailed allocation reporting.",
@@ -22068,7 +22068,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The partners of ABC Ventures, a general partnership, decide to incorporate their business as an S corporation under Section 351. They transfer all partnership assets and liabilities to the new corporation in exchange for stock. When a partnership incorporates under Section 351:\nA) The partnership recognizes gain on appreciated assets | B) Liabilities transferred always create boot | C) All partners must recognize gain | D) Partners generally receive tax-free treatment with carryover basis in stock",
+      "question": "The partners of ABC Ventures, a general partnership, decide to incorporate their business as an S corporation under Section 351. They transfer all partnership assets and liabilities to the new corporation in exchange for stock. When a partnership incorporates under Section 351:",
       "options": [
         "The partnership recognizes gain on appreciated assets, calculated at fair market value on the transfer date, regardless of partner basis.",
         "Liabilities transferred always create boot, resulting in immediate gain recognition to the extent the liabilities exceed the adjusted basis of assets transferred.",
@@ -22103,7 +22103,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "John Smith is a major shareholder in SmithCo, a C corporation. John also serves as the CEO. Which of the following would likely be treated as a constructive dividend to a shareholder?\nA) Below-market interest loan from corporation to shareholder | B) Dividend declared and paid pro rata | C) Salary at fair market value | D) Reasonable rent paid to shareholder for leased property",
+      "question": "John Smith is a major shareholder in SmithCo, a C corporation. John also serves as the CEO. Which of the following would likely be treated as a constructive dividend to a shareholder?",
       "options": [
         "Below-market interest loan from corporation to shareholder",
         "Dividend declared and paid pro rata to all shareholders of record",
@@ -22173,7 +22173,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The partnership agreement for Black & Blue LLP contains several special allocations of income and deductions among the partners. Special allocations of partnership income must have:\nA) Unanimous partner consent only | B) Equal allocation of all items | C) Substantial economic effect | D) IRS advance approval",
+      "question": "The partnership agreement for Black & Blue LLP contains several special allocations of income and deductions among the partners. Special allocations of partnership income must have:",
       "options": [
         "Unanimous partner consent only",
         "Equal allocation of all items",
@@ -22208,7 +22208,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Corp's book income before taxes was $500,000. When preparing Schedule M-1 of Form 1120, which of the following items would be added to book income to arrive at taxable income?\nA) Life insurance proceeds on key employee | B) Tax-exempt interest | C) Federal income tax expense per books | D) Depreciation in excess of book depreciation",
+      "question": "Apex Corp's book income before taxes was $500,000. When preparing Schedule M-1 of Form 1120, which of the following items would be added to book income to arrive at taxable income?",
       "options": [
         "Life insurance proceeds on key employee",
         "Tax-exempt interest",
@@ -22243,7 +22243,7 @@
       "topic": "Depreciation and amortization",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "GreenTech Properties recently purchased a commercial building for $2 million. To maximize depreciation deductions, GreenTech engaged a firm to conduct a cost segregation study. Cost segregation studies benefit taxpayers by:\nA) Reclassifying building components to shorter recovery periods | B) Converting ordinary income to capital gain | C) Deferring income indefinitely | D) Eliminating depreciation recapture",
+      "question": "GreenTech Properties recently purchased a commercial building for $2 million. To maximize depreciation deductions, GreenTech engaged a firm to conduct a cost segregation study. Cost segregation studies benefit taxpayers by:",
       "options": [
         "Reclassifying building components to shorter recovery periods",
         "Converting ordinary income from accelerated depreciation to capital gain upon the eventual sale of the property",
@@ -22278,7 +22278,7 @@
       "topic": "Depreciation and amortization",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Global Shipping Inc. owns several cargo ships that operate internationally. In addition, they own a warehouse that is leased to a tax-exempt entity. Alternative Depreciation System (ADS) must be used for:\nA) All residential rental property | B) Property used predominantly outside the U.S. and tax-exempt use property | C) Property with a cost over $1 million | D) 7-year property only",
+      "question": "Global Shipping Inc. owns several cargo ships that operate internationally. In addition, they own a warehouse that is leased to a tax-exempt entity. Alternative Depreciation System (ADS) must be used for:",
       "options": [
         "All residential rental property, regardless of its location or placed-in-service date.",
         "Property used predominantly outside the U.S. and tax-exempt use property",
@@ -24273,7 +24273,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The Peterson Family Trust is considering becoming an S corporation shareholder via an Electing Small Business Trust (ESBT). How does an ESBT, as an S corporation shareholder, pay tax on the S corporation income it receives? A) Pays tax on S corp income at the highest individual rate | B) Passes income through to beneficiaries | C) Is limited to holding 5% of S corp stock | D) Pays no tax on S corporation income",
+      "question": "The Peterson Family Trust is considering becoming an S corporation shareholder via an Electing Small Business Trust (ESBT). How does an ESBT, as an S corporation shareholder, pay tax on the S corporation income it receives?",
       "options": [
         "Pays tax on S corp income at the highest individual rate",
         "Passes all S corporation income through to its beneficiaries, retaining none for itself and avoiding taxation at the trust level.",
@@ -24308,7 +24308,7 @@
       "topic": "Basis calculations",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Jane has suspended S corporation losses of $15,000 from her ownership in Willow Creek, Inc. due to insufficient basis. What happens to these suspended losses? A) Are permanently lost | B) Carry forward indefinitely until basis is restored | C) Convert to passive losses | D) Expire after 5 years",
+      "question": "Jane has suspended S corporation losses of $15,000 from her ownership in Willow Creek, Inc. due to insufficient basis. What happens to these suspended losses?",
       "options": [
         "Are permanently lost if not utilized within the tax year",
         "Carry forward indefinitely until basis is restored",
@@ -24343,7 +24343,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Davis Corp., a C corporation using LIFO inventory, is considering converting to S corporation status. The company's accountant is concerned about potential tax implications. The LIFO recapture tax (§1363(d)) applies when: A) A partnership converts to S corporation | B) An S corporation increases LIFO reserves | C) A C corporation using LIFO converts to S status | D) An S corporation uses LIFO inventory",
+      "question": "Davis Corp., a C corporation using LIFO inventory, is considering converting to S corporation status. The company's accountant is concerned about potential tax implications. The LIFO recapture tax (§1363(d)) applies when:",
       "options": [
         "A partnership converts to an S corporation, triggering a deemed liquidation and potential capital gains tax.",
         "An S corporation increases LIFO reserves after a prior election to use FIFO, requiring IRS approval and adjustments.",
@@ -24378,7 +24378,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Green Valley Organics is an S corporation. What is the deadline for furnishing Schedule K-1 (Form 1120-S) to its shareholders? A) 60 days after year end | B) April 15 | C) The due date of Form 1120-S (including extensions) | D) January 31",
+      "question": "Green Valley Organics is an S corporation. What is the deadline for furnishing Schedule K-1 (Form 1120-S) to its shareholders?",
       "options": [
         "60 days after the S corporation's tax year ends, regardless of filing extensions.",
         "April 15th, the traditional deadline for individual income tax returns, irrespective of entity type.",
@@ -24413,7 +24413,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Harmony Tech, an S corporation, filed its Form 1120-S 3 months late. What is the penalty for the late filing? A) 5% of tax due per month | B) No penalty for S corporations | C) $220 per shareholder per month (for 2024) | D) $100 per month",
+      "question": "Harmony Tech, an S corporation, filed its Form 1120-S 3 months late. What is the penalty for the late filing?",
       "options": [
         "5% of the unpaid tax liability per month, capped at 25% of the total tax due.",
         "S corporations are exempt from penalties if all shareholders consent to the late filing.",
@@ -24448,7 +24448,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The shareholders of Oakwood Industries, an S corporation, are discussing their tax obligations. Estimated tax payments for S corporation income are made by: A) The shareholders individually | B) No estimated payments are required | C) Both the corporation and shareholders | D) The S corporation quarterly",
+      "question": "The shareholders of Oakwood Industries, an S corporation, are discussing their tax obligations. Estimated tax payments for S corporation income are made by:",
       "options": [
         "The shareholders individually",
         "No estimated payments are required",
@@ -24483,7 +24483,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "John sold his stock in Redwood Systems, an S corporation, on June 30th. How is the income from the S corporation allocated between John and the new shareholder for the year? A) 50/50 between buyer and seller | B) Based on the percentage of the year each owned stock (per-share, per-day) | C) Entirely to the buyer | D) Entirely to the selling shareholder",
+      "question": "John sold his stock in Redwood Systems, an S corporation, on June 30th. How is the income from the S corporation allocated between John and the new shareholder for the year?",
       "options": [
         "Allocated 50/50, assuming the sale occurred precisely at the midpoint of the S corporation's tax year, regardless of actual ownership days.",
         "Based on the percentage of the year each owned stock (per-share, per-day)",
@@ -24588,7 +24588,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Sarah receives a capital interest in the Blue Ridge Partnership in exchange for her consulting services. How does Sarah recognize this income for tax purposes? A) No income under §721 | B) Capital gain equal to the FMV of the interest received | C) Ordinary income equal to the FMV of the interest received | D) Income only when the interest is sold",
+      "question": "Sarah receives a capital interest in the Blue Ridge Partnership in exchange for her consulting services. How does Sarah recognize this income for tax purposes?",
       "options": [
         "No income under §721 because this section covers contributions of property, not services, to a partnership.",
         "Capital gain equal to the FMV of the interest received",
@@ -25884,7 +25884,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions is considering electing S corporation status. One of their potential investors is a citizen of Canada residing in Toronto. Which of the following would disqualify GreenTech from making the S election?\nA) Having 80 shareholders who are U.S. citizens | B) Having a single class of stock | C) Having a nonresident alien as a shareholder | D) Being a domestic corporation",
+      "question": "GreenTech Solutions is considering electing S corporation status. One of their potential investors is a citizen of Canada residing in Toronto. Which of the following would disqualify GreenTech from making the S election?",
       "options": [
         "Having 80 shareholders who are U.S. citizens",
         "Having a single class of stock",
@@ -25919,7 +25919,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Alice and Bob are starting a dog-walking business. What is the minimum number of members required to form a partnership for federal tax purposes?\nA) One | B) Two | C) Three | D) Five",
+      "question": "Alice and Bob are starting a dog-walking business. What is the minimum number of members required to form a partnership for federal tax purposes?",
       "options": [
         "One",
         "Two",
@@ -26059,7 +26059,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sunrise Bakery is a new business. To hire employees and operate legally, they need an EIN. Which form is used to apply for an Employer Identification Number (EIN)?\nA) Form W-9 | B) Form SS-4 | C) Form W-4 | D) Form 8832",
+      "question": "Sunrise Bakery is a new business. To hire employees and operate legally, they need an EIN. Which form is used to apply for an Employer Identification Number (EIN)?",
       "options": [
         "Form W-9",
         "Form SS-4",
@@ -26199,7 +26199,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Davis Industries is a large manufacturing company taxed as a C corporation. A C corporation files its tax return on which form?\nA) Form 1040 | B) Form 1065 | C) Form 1120 | D) Form 1120-S",
+      "question": "Davis Industries is a large manufacturing company taxed as a C corporation. A C corporation files its tax return on which form?",
       "options": [
         "Form 1040",
         "Form 1065",
@@ -26234,7 +26234,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "OceanView Properties, an S corporation, is evaluating potential shareholders. Which of the following trusts is eligible to be an S corporation shareholder?\nA) A foreign trust | B) A charitable remainder trust | C) An electing small business trust (ESBT) | D) A complex trust with corporate beneficiaries",
+      "question": "OceanView Properties, an S corporation, is evaluating potential shareholders. Which of the following trusts is eligible to be an S corporation shareholder?",
       "options": [
         "A foreign trust",
         "A charitable remainder trust",
@@ -26339,7 +26339,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Smith & Jones is a domestic partnership. A domestic partnership files its information return on which form?\nA) Form 1120 | B) Form 1065 | C) Form 1040 | D) Form 990",
+      "question": "Smith & Jones is a domestic partnership. A domestic partnership files its information return on which form?",
       "options": [
         "Form 1120",
         "Form 1065",
@@ -26374,7 +26374,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Ventures is a calendar-year partnership. For a calendar-year partnership, the due date for filing Form 1065 is:\nA) March 15 | B) April 15 | C) September 15 | D) October 15",
+      "question": "ABC Ventures is a calendar-year partnership. For a calendar-year partnership, the due date for filing Form 1065 is:",
       "options": [
         "March 15",
         "April 15",
@@ -26409,7 +26409,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech Inc. is a C corporation. What is the federal income tax rate for C corporations under current law?\nA) 15% | B) 21% | C) 28% | D) 35%",
+      "question": "GlobalTech Inc. is a C corporation. What is the federal income tax rate for C corporations under current law?",
       "options": [
         "15%",
         "21%",
@@ -32639,7 +32639,7 @@
       "topic": "Business expenses and deductions",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria owns \"Maria's Cafe.\" To deduct expenses on Schedule C, she asks if her new espresso machine qualifies. For a business expense to be deductible under IRC §162, it must be: A) Extraordinary and unusual | B) Ordinary and necessary in carrying on a trade or business | C) Approved by the IRS in advance | D) Documented with receipts over $25",
+      "question": "Maria owns \"Maria's Cafe.\" To deduct expenses on Schedule C, she asks if her new espresso machine qualifies. For a business expense to be deductible under IRC §162, it must be:",
       "options": [
         "Extraordinary and unusual, representing a significant deviation from standard business practices.",
         "Ordinary and necessary in carrying on a trade or business",
@@ -32674,7 +32674,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Chen & Associates, a law firm, is deciding between forming a partnership or an S corporation. A key advantage of a partnership over an S corporation is that partnerships: A) Provide liability protection for all partners | B) Allow flexible allocation of income, gain, loss, and deductions among partners | C) Are not subject to self-employment tax | D) Can have unlimited classes of ownership",
+      "question": "Chen & Associates, a law firm, is deciding between forming a partnership or an S corporation. A key advantage of a partnership over an S corporation is that partnerships:",
       "options": [
         "Provide complete liability protection for all partners from business debts and lawsuits, shielding personal assets.",
         "Allow flexible allocation of income, gain, loss, and deductions among partners",
@@ -32709,7 +32709,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC currently uses a calendar tax year but wants to switch to a fiscal year ending September 30th. A business that wants to change its tax year must file Form 1128 and generally must receive: A) Congressional approval | B) IRS approval, unless an automatic change procedure applies | C) State tax department approval | D) No approval is needed — the change is automatic",
+      "question": "Vista Healthcare LLC currently uses a calendar tax year but wants to switch to a fiscal year ending September 30th. A business that wants to change its tax year must file Form 1128 and generally must receive:",
       "options": [
         "Congressional approval, due to the potential impact on federal revenue projections.",
         "IRS approval, unless an automatic change procedure applies",
@@ -32744,7 +32744,7 @@
       "topic": "S Corporations (Form 1120-S)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John is a shareholder in GreenTech Solutions, an S corporation. How is John's stock basis adjusted annually? A) Distributions first, then income, then losses | B) Income and gain items increase basis first, then distributions reduce basis, then losses and deduction items reduce basis | C) Losses first, then income, then distributions | D) Distributions first, then losses, then income",
+      "question": "John is a shareholder in GreenTech Solutions, an S corporation. How is John's stock basis adjusted annually?",
       "options": [
         "Distributions reduce basis first, even below zero if GreenTech has sufficient earnings and profits, then income increases basis, followed by losses.",
         "Income and gain items increase basis first, then distributions reduce basis, then losses and deduction items reduce basis",
@@ -32849,7 +32849,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ABC Partnership pays partner Sarah $50,000 annually for managing the firm, regardless of partnership profits. Guaranteed payments to a partner under IRC §707(c) are: A) Treated as distributions of partnership profits | B) Payments for services or capital that are determined without regard to partnership income, deductible by the partnership, and ordinary income to the receiving partner | C) Not reported on the partner's individual return | D) Tax-free to the receiving partner",
+      "question": "ABC Partnership pays partner Sarah $50,000 annually for managing the firm, regardless of partnership profits. Guaranteed payments to a partner under IRC §707(c) are:",
       "options": [
         "Treated as distributions of partnership profits, reducing each partner's basis in their partnership interest proportionally to their profit-sharing ratio, and are not deductible by the partnership.",
         "Payments for services or capital that are determined without regard to partnership income, deductible by the partnership, and ordinary income to the receiving partner",
@@ -32884,7 +32884,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Corp. has significant retained earnings but hasn't paid dividends in years, fearing shareholder-level tax. The accumulated earnings tax under IRC §531 is imposed on corporations that: A) Have total assets exceeding $10 million | B) Accumulate earnings and profits beyond the reasonable needs of the business to avoid shareholder-level tax on dividends | C) Pay dividends in excess of earnings | D) Have more than 100 shareholders",
+      "question": "Apex Corp. has significant retained earnings but hasn't paid dividends in years, fearing shareholder-level tax. The accumulated earnings tax under IRC §531 is imposed on corporations that:",
       "options": [
         "Have total assets exceeding $10 million and generate passive investment income exceeding 25% of gross receipts, indicating potential tax avoidance.",
         "Accumulate earnings and profits beyond the reasonable needs of the business to avoid shareholder-level tax on dividends",
@@ -32954,7 +32954,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Smith & Jones Partnership is selling a partner's interest. Under IRC §751, \"hot assets\" in a partnership include: A) Only cash and marketable securities | B) Unrealized receivables and inventory items, which convert capital gain to ordinary income on sale or exchange of a partnership interest | C) Only real property | D) Tax-exempt bonds",
+      "question": "Smith & Jones Partnership is selling a partner's interest. Under IRC §751, \"hot assets\" in a partnership include:",
       "options": [
         "Only cash and marketable securities held by the partnership, which are treated as ordinary income upon distribution to a retiring or deceased partner.",
         "Unrealized receivables and inventory items, which convert capital gain to ordinary income on sale or exchange of a partnership interest",
@@ -32989,7 +32989,7 @@
       "topic": "Entity selection and formation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Bob is deciding between a sole proprietorship and an S corporation for his consulting business. Compared to a sole proprietorship, an S corporation may reduce self-employment taxes because: A) S corporation income is completely exempt from all payroll taxes | B) Only the shareholder-employee's reasonable salary is subject to FICA; the remaining profit distributions are not subject to self-employment or FICA tax | C) S corporations never pay employment taxes | D) The S corporation pays all employment taxes at a lower rate",
+      "question": "Bob is deciding between a sole proprietorship and an S corporation for his consulting business. Compared to a sole proprietorship, an S corporation may reduce self-employment taxes because:",
       "options": [
         "S corporation income, after deducting reasonable business expenses and shareholder-employee salaries, is treated as passive investment income and is therefore exempt from all payroll taxes.",
         "Only the shareholder-employee's reasonable salary is subject to FICA; the remaining profit distributions are not subject to self-employment or FICA tax",
@@ -33376,7 +33376,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John is a partner in ABC Partnership. He receives a $10,000 cash distribution and property with a $5,000 FMV. Before the distribution, his outside basis was $12,000. In this nonliquidating distribution, John generally:\nA) Recognizes gain equal to the amount distributed | B) Recognizes gain only to the extent cash received exceeds the partner's outside basis; noncash property takes a carryover basis limited to the partner's remaining basis | C) Always recognizes gain or loss | D) Defers all gain for 5 years",
+      "question": "John is a partner in ABC Partnership. He receives a $10,000 cash distribution and property with a $5,000 FMV. Before the distribution, his outside basis was $12,000. In this nonliquidating distribution, John generally:",
       "options": [
         "Recognizes gain equal to the amount distributed, calculated as the sum of cash and the fair market value of property received, regardless of the partner's outside basis or the partnership's inside basis.",
         "Recognizes gain only to the extent cash received exceeds the partner's outside basis; noncash property takes a carryover basis limited to the partner's remaining basis",
@@ -33446,7 +33446,7 @@
       "topic": "Accounting methods and periods",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sunrise Industries is an S corporation with several shareholders. They wish to use a fiscal year ending September 30 for business reasons. An S corporation must generally use which tax year?\nA) Any fiscal year chosen by the shareholders | B) A calendar year ending December 31, unless a valid business purpose is established or a Section 444 election is made | C) A fiscal year ending June 30 | D) The same tax year as its largest shareholder",
+      "question": "Sunrise Industries is an S corporation with several shareholders. They wish to use a fiscal year ending September 30 for business reasons. An S corporation must generally use which tax year?",
       "options": [
         "Any fiscal year chosen by the shareholders, provided all shareholders unanimously agree and the IRS approves the selection based on administrative convenience.",
         "A calendar year ending December 31, unless a valid business purpose is established or a Section 444 election is made",
@@ -33481,7 +33481,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "XYZ Corp. distributes $50,000 to its shareholders. XYZ's current E&P is $30,000, and accumulated E&P is $10,000. A distribution from a C corporation to its shareholders is treated as a dividend to the extent of:\nA) The corporation's cash balance | B) The corporation's current and accumulated earnings and profits (E&P) | C) The shareholder's basis in the stock | D) The corporation's gross revenue",
+      "question": "XYZ Corp. distributes $50,000 to its shareholders. XYZ's current E&P is $30,000, and accumulated E&P is $10,000. A distribution from a C corporation to its shareholders is treated as a dividend to the extent of:",
       "options": [
         "The corporation's cash balance at the end of the tax year, without considering liabilities.",
         "The corporation's current and accumulated earnings and profits (E&P)",
@@ -33516,7 +33516,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Smith & Jones Partnership has been operating for 20 years. Due to irreconcilable differences, all partners except Smith decide to leave the partnership and cease conducting any partnership business. Under current law (post-TCJA), a partnership terminates for tax purposes when:\nA) 50% or more of partnership interests are transferred within 12 months | B) No part of any business, financial operation, or venture of the partnership continues to be carried on by any of its partners | C) The managing partner resigns | D) Two or more partners disagree on operations",
+      "question": "Smith & Jones Partnership has been operating for 20 years. Due to irreconcilable differences, all partners except Smith decide to leave the partnership and cease conducting any partnership business. Under current law (post-TCJA), a partnership terminates for tax purposes when:",
       "options": [
         "50% or more of the total interests in partnership capital and profits are transferred within a 12-month period, triggering a technical termination.",
         "No part of any business, financial operation, or venture of the partnership continues to be carried on by any of its partners",
@@ -33586,7 +33586,7 @@
       "topic": "Partnerships (Form 1065)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David gifts his daughter, Emily, a 20% interest in his family partnership, which operates a retail business where capital is a material income-producing factor. Under IRC §704(e), a family member who receives a partnership interest by gift:\nA) Is treated the same as any other partner with no special rules | B) Is recognized as a partner only if capital is a material income-producing factor; the donor must be allocated reasonable compensation for services before income is allocated to the donee | C) Cannot be a partner under any circumstances | D) Must contribute cash equal to the gifted interest's value",
+      "question": "David gifts his daughter, Emily, a 20% interest in his family partnership, which operates a retail business where capital is a material income-producing factor. Under IRC §704(e), a family member who receives a partnership interest by gift:",
       "options": [
         "Is treated the same as any other partner, with no special rules regarding allocation of income or losses, provided the partnership agreement explicitly states that all partners share profits and losses in proportion to their ownership interests, regardless of the source of the capital.",
         "Is recognized as a partner only if capital is a material income-producing factor; the donor must be allocated reasonable compensation for services before income is allocated to the donee",
@@ -33621,7 +33621,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Alpha Corp. merges with Beta Corp., forming a new entity called Gamma Corp. This merger is completed under applicable state law. Under IRC §368(a), which of the following is a Type A reorganization?\nA) A stock redemption | B) A statutory merger or consolidation under state law | C) A transfer of assets for stock in a newly formed corporation | D) A simple purchase of a corporation's assets for cash",
+      "question": "Alpha Corp. merges with Beta Corp., forming a new entity called Gamma Corp. This merger is completed under applicable state law. Under IRC §368(a), which of the following is a Type A reorganization?",
       "options": [
         "A stock redemption",
         "A statutory merger or consolidation under state law",
@@ -33656,7 +33656,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Tech Solutions Inc. is completely liquidating. Sarah, a shareholder, receives $100,000 in the liquidation. Her basis in Tech Solutions stock is $40,000. When a C corporation completely liquidates under IRC §331, shareholders generally:\nA) Report the distribution as ordinary income | B) Treat the liquidating distribution as full payment in exchange for their stock, recognizing capital gain or loss equal to the difference between the distribution amount and their stock basis | C) Do not recognize any gain or loss | D) Report the distribution as a dividend",
+      "question": "Tech Solutions Inc. is completely liquidating. Sarah, a shareholder, receives $100,000 in the liquidation. Her basis in Tech Solutions stock is $40,000. When a C corporation completely liquidates under IRC §331, shareholders generally:",
       "options": [
         "Report the distribution as ordinary income to the extent of the corporation's accumulated earnings and profits, as if it were a dividend, and treat any excess as a return of capital, reducing the shareholder's basis.",
         "Treat the liquidating distribution as full payment in exchange for their stock, recognizing capital gain or loss equal to the difference between the distribution amount and their stock basis",
@@ -33691,7 +33691,7 @@
       "topic": "C Corporations (Form 1120)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Parent Co. owns 85% of Subsidiary Co. Parent Co. decides to liquidate Subsidiary Co., receiving all of its assets. Under IRC §332, a parent corporation that liquidates an 80%-or-more owned subsidiary:\nA) Recognizes gain on the received assets | B) Recognizes no gain or loss; the subsidiary's asset bases carry over to the parent | C) Must pay a special liquidation tax | D) Recognizes loss on the received assets",
+      "question": "Parent Co. owns 85% of Subsidiary Co. Parent Co. decides to liquidate Subsidiary Co., receiving all of its assets. Under IRC §332, a parent corporation that liquidates an 80%-or-more owned subsidiary:",
       "options": [
         "Recognizes gain on the received assets, calculated using fair market value at the time of liquidation, less the parent's basis in the subsidiary's stock.",
         "Recognizes no gain or loss; the subsidiary's asset bases carry over to the parent",

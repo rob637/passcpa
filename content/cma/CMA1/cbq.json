@@ -1,0 +1,1085 @@
+{
+  "$schema": "../schema/cbq.schema.json",
+  "version": "1.0.0",
+  "courseId": "cma",
+  "section": "CMA1",
+  "generatedAt": "2026-03-01T12:27:20.340Z",
+  "scenarios": [
+    {
+      "id": "cma1-cbq-001",
+      "section": "CMA1",
+      "title": "Manufacturing Variance Analysis",
+      "scenario": "\n## Precision Manufacturing Inc. - Production Variance Analysis\n\nPrecision Manufacturing Inc. produces industrial valves. The following data relates to production for the month of November:\n\n### Standard Cost Card (per unit)\n| Item | Standard Qty | Standard Price | Standard Cost |\n|------|--------------|----------------|---------------|\n| Direct Materials (Metal) | 5 lbs | $8.00/lb | $40.00 |\n| Direct Labor | 2.5 hours | $24.00/hr | $60.00 |\n| Variable Overhead | 2.5 hours | $6.00/hr | $15.00 |\n| **Total Standard Cost** | | | **$115.00** |\n\n### November Actual Results\n- Units produced: 4,000 valves\n- Direct materials purchased: 22,000 lbs at $7.80/lb\n- Direct materials used: 21,200 lbs\n- Direct labor: 9,800 hours at $24.50/hr\n- Actual variable overhead: $57,820\n\nThe company uses a standard costing system and investigates all variances exceeding 5% of standard cost.\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-001-q1",
+          "prompt": "Calculate the Direct Materials Price Variance. Enter a positive number for unfavorable, negative for favorable. Round to the nearest dollar.",
+          "type": "numerical_entry",
+          "correctAnswer": -4400,
+          "tolerance": 10,
+          "points": 5,
+          "explanation": "The direct materials price variance measures the difference between the actual price paid for materials and the standard price, multiplied by the actual quantity purchased. A favorable variance occurs when the actual price is less than the standard price, and an unfavorable variance occurs when the actual price is greater than the standard price.\n\n**Step-by-Step Solution:**\n1.  **Identify the Actual Price:** The actual price per pound of direct materials is $7.80.\n2.  **Identify the Standard Price:** The standard price per pound of direct materials is $8.00.\n3.  **Identify the Actual Quantity Purchased:** The actual quantity of direct materials purchased is 22,000 lbs.\n4.  **Calculate the Direct Materials Price Variance:**\n    Direct Materials Price Variance = (Actual Price - Standard Price) × Actual Quantity Purchased\n    Direct Materials Price Variance = ($7.80 - $8.00) × 22,000\n    Direct Materials Price Variance = (-$0.20) × 22,000\n    Direct Materials Price Variance = -$4,400\n\nSince the result is negative, the variance is favorable.\n\n**Key Concept:**\nThis question tests your understanding of variance analysis, specifically the direct materials price variance, which is covered in the IMA Content Specification Outline under Cost Management (Variance Analysis) and Performance Management (Cost Control).\n\n**Common Mistake:**\n*   Failing to use the *quantity purchased* rather than the *quantity used* when calculating the price variance. The price variance is isolated at the time of purchase to provide an early warning signal. The quantity *used* is relevant for the direct materials *quantity* variance.\n*   Incorrectly identifying the standard or actual price from the provided data.\n\n**Exam Tip:**\nAlways double-check whether the variance is favorable or unfavorable. A lower actual price than the standard price results in a favorable variance, while a higher actual price results in an unfavorable variance. Remembering the formula and carefully extracting the correct data from the scenario are crucial for accurate calculations.",
+          "hints": [
+            "Use quantity purchased, not quantity used, for price variance"
+          ],
+          "enhanced": true,
+          "keyFormula": "Direct Materials Price Variance = (Actual Price - Standard Price) × Actual Quantity Purchased",
+          "commonMistakes": [
+            "Using the quantity of materials *used* instead of the quantity *purchased*.",
+            "Misidentifying the actual or standard price."
+          ],
+          "examTip": "Pay close attention to whether the variance is favorable or unfavorable. A lower actual cost than standard is favorable, and vice versa."
+        },
+        {
+          "id": "cma1-cbq-001-q2",
+          "prompt": "Calculate the Direct Materials Quantity (Usage) Variance. Enter a positive number for unfavorable, negative for favorable.",
+          "type": "numerical_entry",
+          "correctAnswer": 9600,
+          "tolerance": 10,
+          "points": 5,
+          "explanation": "The Direct Materials Quantity (Usage) Variance measures the difference between the actual quantity of direct materials used in production and the standard quantity allowed for the actual output, valued at the standard price. A positive variance indicates that more materials were used than expected (unfavorable), while a negative variance indicates that less materials were used than expected (favorable).\n\n**Step-by-Step Solution:**\n1. **Calculate the Standard Quantity Allowed:**\n   *   Standard Quantity per Unit: 5 lbs\n   *   Actual Units Produced: 4,000 valves\n   *   Standard Quantity Allowed = Standard Quantity per Unit * Actual Units Produced\n   *   Standard Quantity Allowed = 5 lbs/valve * 4,000 valves = 20,000 lbs\n\n2. **Determine the Actual Quantity Used:**\n   *   The problem states that the actual quantity of direct materials used is 21,200 lbs.\n\n3. **Calculate the Direct Materials Quantity Variance:**\n   *   Direct Materials Quantity Variance = (Actual Quantity Used - Standard Quantity Allowed) * Standard Price\n   *   Direct Materials Quantity Variance = (21,200 lbs - 20,000 lbs) * $8.00/lb\n   *   Direct Materials Quantity Variance = 1,200 lbs * $8.00/lb = $9,600\n\n4. **Determine if the variance is favorable or unfavorable:**\n   *   Since the actual quantity used (21,200 lbs) is greater than the standard quantity allowed (20,000 lbs), the variance is unfavorable.\n\nTherefore, the Direct Materials Quantity Variance is $9,600 Unfavorable.\n\n**Key Concept:**\nThis question tests your understanding of variance analysis, specifically direct materials variances. This aligns with the IMA Content Specification Outline, Part 1, Section B: Cost Management, specifically area 2.a. Calculate and interpret variances.\n\n**Common Mistake:**\n*   Forgetting to calculate the standard quantity allowed. It's crucial to multiply the standard quantity per unit by the actual units produced to get the correct benchmark.\n*   Using the quantity of materials *purchased* instead of the quantity of materials *used*. The materials quantity variance focuses on the materials actually used in production.\n*   Incorrectly labeling the variance as favorable or unfavorable. Always compare the actual quantity used to the standard quantity allowed. If actual > standard, it's unfavorable; if actual < standard, it's favorable.\n\n**Exam Tip:**\nAlways double-check which quantity (purchased or used) the question is asking about. Under a standard costing system, the materials quantity variance is always based on the quantity *used* in production, not the quantity purchased.",
+          "hints": [
+            "Standard quantity allowed is based on actual production × standard quantity per unit"
+          ],
+          "enhanced": true,
+          "keyFormula": "(Actual Quantity Used - Standard Quantity Allowed) * Standard Price",
+          "commonMistakes": [
+            "Using the quantity of materials purchased instead of the quantity of materials used.",
+            "Forgetting to calculate the standard quantity allowed by multiplying the standard quantity per unit by the actual units produced."
+          ],
+          "examTip": "Pay close attention to whether the problem is asking about materials *purchased* or materials *used*. The materials quantity variance is based on materials *used*."
+        },
+        {
+          "id": "cma1-cbq-001-q3",
+          "prompt": "Which of the following could explain an unfavorable materials quantity variance? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Inexperienced workers causing higher scrap rates",
+            "Purchasing lower quality materials at a discount",
+            "Equipment malfunction causing material waste",
+            "Negotiating better prices with suppliers",
+            "Production of more complex product variations"
+          ],
+          "correctAnswer": [
+            "Inexperienced workers causing higher scrap rates",
+            "Purchasing lower quality materials at a discount",
+            "Equipment malfunction causing material waste",
+            "Production of more complex product variations"
+          ],
+          "points": 5,
+          "explanation": "Unfavorable quantity variance means more materials were used than standard. This could be caused by: inexperienced workers (more waste), lower quality materials (more defects), equipment issues (waste), or more complex products (requires more material). Better supplier prices affect price variance, not quantity variance.",
+          "enhanced": true
+        },
+        {
+          "id": "cma1-cbq-001-q4",
+          "prompt": "Calculate the Direct Labor Efficiency Variance. Enter a positive number for unfavorable, negative for favorable.",
+          "type": "numerical_entry",
+          "correctAnswer": -4800,
+          "tolerance": 10,
+          "points": 5,
+          "explanation": "Labor Efficiency Variance = (Actual Hours - Standard Hours Allowed) × Standard Rate = (9,800 - 10,000) × $24.00 = -$4,800 (Favorable). Standard hours allowed = 4,000 units × 2.5 hours = 10,000 hours. Workers were efficient, using fewer hours than standard.",
+          "hints": [
+            "Standard hours allowed = Actual units × Standard hours per unit"
+          ],
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-001-q5",
+          "prompt": "Arrange the following variances in order from MOST to LEAST control by the production manager:",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Direct Labor Efficiency Variance",
+            "Direct Materials Price Variance",
+            "Direct Materials Quantity Variance",
+            "Direct Labor Rate Variance"
+          ],
+          "correctAnswer": [
+            "Direct Labor Efficiency Variance",
+            "Direct Materials Quantity Variance",
+            "Direct Labor Rate Variance",
+            "Direct Materials Price Variance"
+          ],
+          "points": 5,
+          "explanation": "Labor efficiency and materials quantity are most controllable by production management (they control how resources are used). Labor rate variance is partially controllable (overtime decisions). Materials price variance is typically controlled by purchasing, not production.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 18,
+      "difficulty": "medium",
+      "topics": [
+        "Variance Analysis",
+        "Cost Management",
+        "Performance Measurement"
+      ],
+      "blueprintArea": "CMA1-C"
+    },
+    {
+      "id": "cma1-cbq-002",
+      "section": "CMA1",
+      "title": "Flexible Budgeting and Performance Evaluation",
+      "scenario": "\n## TechServe Solutions - Quarterly Performance Review\n\nTechServe Solutions provides IT consulting services. The company uses flexible budgeting for performance evaluation. Below is the data for Q3:\n\n### Static Budget (Based on 500 billable hours)\n- Revenue: $125,000 ($250/hour)\n- Variable costs: $62,500 ($125/hour)\n- Fixed costs: $40,000\n- Operating Income: $22,500\n\n### Actual Results (600 billable hours achieved)\n- Revenue: $141,000\n- Variable costs: $78,000\n- Fixed costs: $42,500\n- Operating Income: $20,500\n\n### Additional Information\n- Each consultant is expected to work 100 billable hours per month\n- 5 consultants were employed during Q3\n- Actual hours worked by consultants: 1,950 hours\n- Standard efficiency: 3.25 billable hours per consultant hour worked\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-002-q1",
+          "prompt": "What is the Flexible Budget Operating Income for 600 billable hours? Enter your answer as a whole number.",
+          "type": "numerical_entry",
+          "correctAnswer": 35000,
+          "tolerance": 100,
+          "points": 5,
+          "explanation": "To calculate the Flexible Budget Operating Income, we need to adjust the static budget to reflect the actual activity level of 600 billable hours. This involves recalculating revenue and variable costs based on the actual hours, while keeping fixed costs at their budgeted level.\n\n**Step-by-Step Solution:**\n1.  **Calculate Flexible Budget Revenue:**\n    *   The static budget revenue is based on $250 per billable hour.\n    *   Flexible Budget Revenue = Actual Billable Hours × Revenue per Hour\n    *   Flexible Budget Revenue = 600 hours × $250/hour = $150,000\n\n2.  **Calculate Flexible Budget Variable Costs:**\n    *   The static budget variable costs are based on $125 per billable hour.\n    *   Flexible Budget Variable Costs = Actual Billable Hours × Variable Cost per Hour\n    *   Flexible Budget Variable Costs = 600 hours × $125/hour = $75,000\n\n3.  **Determine Flexible Budget Fixed Costs:**\n    *   Fixed costs are expected to remain constant regardless of the activity level within a relevant range.\n    *   Flexible Budget Fixed Costs = Static Budget Fixed Costs = $40,000\n\n4.  **Calculate Flexible Budget Operating Income:**\n    *   Flexible Budget Operating Income = Flexible Budget Revenue - Flexible Budget Variable Costs - Flexible Budget Fixed Costs\n    *   Flexible Budget Operating Income = $150,000 - $75,000 - $40,000 = $35,000\n\nTherefore, the Flexible Budget Operating Income for 600 billable hours is $35,000.\n\n**Key Concept:**\nThis question tests your understanding of flexible budgeting, which is covered in the IMA Content Specification Outline under Performance Management, Cost Accounting, and Variance Analysis. Flexible budgeting adjusts the budget to reflect actual activity levels, providing a more accurate basis for performance evaluation than a static budget. (Part 1, Section B.3.b.1)\n\n**Common Mistake:**\n*   **Using Actual Results Directly:** A common mistake is to use the actual results ($20,500) directly or to try to adjust them without properly recalculating revenue and variable costs based on the flexible budget. The flexible budget is what *should* have happened at 600 hours, not what *did* happen.\n*   **Adjusting Fixed Costs Incorrectly:** Another mistake is to adjust fixed costs based on the change in activity level. Fixed costs, by definition, remain constant within a relevant range.\n\n**Exam Tip:**\nWhen dealing with flexible budgeting questions, always start by identifying the cost behavior patterns (variable vs. fixed). Then, adjust the budget based on the *actual* level of activity, using the *budgeted* per-unit amounts for variable costs and keeping fixed costs constant. Focus on what the operating income *should* have been at the actual activity level.",
+          "enhanced": true,
+          "keyFormula": "Flexible Budget Operating Income = Flexible Budget Revenue - Flexible Budget Variable Costs - Flexible Budget Fixed Costs",
+          "commonMistakes": [
+            "Using Actual Results Directly",
+            "Adjusting Fixed Costs Incorrectly"
+          ],
+          "examTip": "When dealing with flexible budgeting questions, always start by identifying the cost behavior patterns (variable vs. fixed). Then, adjust the budget based on the *actual* level of activity, using the *budgeted* per-unit amounts for variable costs and keeping fixed costs constant. Focus on what the operating income *should* have been at the actual activity level."
+        },
+        {
+          "id": "cma1-cbq-002-q2",
+          "prompt": "Calculate the Sales Volume Variance (Operating Income level). Enter positive for favorable, negative for unfavorable.",
+          "type": "numerical_entry",
+          "correctAnswer": 12500,
+          "tolerance": 100,
+          "points": 5,
+          "explanation": "The sales volume variance measures the impact on operating income due solely to the difference between the actual sales volume and the budgeted sales volume. It isolates the effect of selling more or fewer units (in this case, billable hours) than originally planned.\n\n**Step-by-Step Solution:**\n1. **Calculate the Flexible Budget:**\n   *   The flexible budget adjusts the static budget to reflect the actual level of activity (600 billable hours).\n   *   Flexible Budget Revenue = Actual Billable Hours * Budgeted Revenue per Hour = 600 hours * $250/hour = $150,000\n   *   Flexible Budget Variable Costs = Actual Billable Hours * Budgeted Variable Cost per Hour = 600 hours * $125/hour = $75,000\n   *   Flexible Budget Fixed Costs = Static Budget Fixed Costs = $40,000 (Fixed costs remain constant within the relevant range)\n   *   Flexible Budget Operating Income = Flexible Budget Revenue - Flexible Budget Variable Costs - Flexible Budget Fixed Costs = $150,000 - $75,000 - $40,000 = $35,000\n\n2. **Calculate the Sales Volume Variance (Operating Income level):**\n   *   Sales Volume Variance = Flexible Budget Operating Income - Static Budget Operating Income = $35,000 - $22,500 = $12,500\n\n3. **Determine if the variance is favorable or unfavorable:**\n   *   Since the flexible budget operating income is higher than the static budget operating income, the sales volume variance is favorable. This means that selling more billable hours than budgeted increased operating income.\n\nTherefore, the Sales Volume Variance (Operating Income level) is $12,500 Favorable.\n\n**Key Concept:**\nThis question tests your understanding of flexible budgeting and variance analysis, specifically the sales volume variance. This falls under the IMA Content Specification Outline for Part 1, Section A: Planning, Budgeting, and Forecasting (specifically, variance analysis).\n\n**Common Mistake:**\n*   **Using Actual Results:** A common mistake is to use the actual results instead of the flexible budget when calculating the sales volume variance. The sales volume variance compares the flexible budget (adjusted for actual volume) to the static budget. The actual results are used to calculate other variances, such as the sales price variance or cost variances.\n*   **Incorrectly Calculating the Flexible Budget:** Another mistake is to incorrectly calculate the flexible budget. Remember to adjust only the variable costs and revenue based on the actual volume, while fixed costs remain the same as in the static budget.\n\n**Exam Tip:**\nWhen calculating variances, always clearly define what each variance measures. The sales volume variance isolates the impact of the difference between actual and budgeted sales volume. Make sure to use the flexible budget, which is the static budget adjusted for the actual level of activity, in the calculation.",
+          "enhanced": true,
+          "keyFormula": "Sales Volume Variance = Flexible Budget Operating Income - Static Budget Operating Income",
+          "commonMistakes": [
+            "Using actual results instead of the flexible budget when calculating the sales volume variance.",
+            "Incorrectly calculating the flexible budget by not adjusting variable costs and revenue based on the actual volume."
+          ],
+          "examTip": "Clearly define what each variance measures. The sales volume variance isolates the impact of the difference between actual and budgeted sales volume, using the flexible budget."
+        },
+        {
+          "id": "cma1-cbq-002-q3",
+          "prompt": "Select the correct interpretation of the Revenue Flexible Budget Variance:",
+          "type": "dropdown",
+          "options": [
+            "Favorable $9,000 - charged higher prices than budgeted",
+            "Unfavorable $9,000 - charged lower prices than budgeted",
+            "Favorable $16,000 - sold more hours than budgeted",
+            "Unfavorable $16,000 - incurred higher costs than budgeted"
+          ],
+          "correctAnswer": "Unfavorable $9,000 - charged lower prices than budgeted",
+          "points": 5,
+          "explanation": "Revenue Flex Budget Variance = Actual Revenue - Flexible Budget Revenue = $141,000 - $150,000 = -$9,000 (Unfavorable). The company charged less than the $250/hour standard rate (actual rate = $141,000/600 = $235/hour).",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-002-q4",
+          "prompt": "Which responsibility center type is MOST appropriate for evaluating TechServe's consulting division?",
+          "type": "dropdown",
+          "options": [
+            "Cost Center - they only control costs",
+            "Revenue Center - they only control revenue",
+            "Profit Center - they control both revenue and costs",
+            "Investment Center - they control revenue, costs, and capital investments"
+          ],
+          "correctAnswer": "Profit Center - they control both revenue and costs",
+          "points": 5,
+          "explanation": "A profit center is appropriate because the consulting division controls both pricing decisions (revenue) and resource utilization (costs). There is no indication they control capital investment decisions, so investment center would not apply.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-002-q5",
+          "prompt": "Match each variance to its primary managerial responsibility:",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Sales Volume Variance",
+            "Revenue Price Variance",
+            "Variable Cost Spending Variance",
+            "Fixed Cost Spending Variance"
+          ],
+          "dropZones": [
+            "Sales Manager",
+            "Engagement Partner",
+            "Operations Manager",
+            "Finance Director"
+          ],
+          "correctAnswer": {
+            "Sales Volume Variance": "Sales Manager",
+            "Revenue Price Variance": "Engagement Partner",
+            "Variable Cost Spending Variance": "Operations Manager",
+            "Fixed Cost Spending Variance": "Finance Director"
+          },
+          "points": 5,
+          "explanation": "Sales volume is driven by sales efforts. Revenue pricing is set per engagement. Variable costs (consultant time, etc.) are managed operationally. Fixed costs (rent, salaries) are typically finance/admin decisions.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 20,
+      "difficulty": "hard",
+      "topics": [
+        "Flexible Budgeting",
+        "Performance Management",
+        "Variance Analysis"
+      ],
+      "blueprintArea": "CMA1-B"
+    },
+    {
+      "id": "cma1-cbq-003",
+      "section": "CMA1",
+      "title": "CVP Analysis and Pricing Decision",
+      "scenario": "\n## Sunrise Bakery – New Product Line Evaluation\n\nSunrise Bakery is a regional chain considering a gourmet cupcake line. The CFO has asked you to evaluate the financial viability.\n\n### Proposed Cost Structure (per dozen)\n| Item | Amount |\n|------|--------|\n| Selling price | $36.00 |\n| Ingredients | $8.40 |\n| Packaging | $2.10 |\n| Direct labor | $6.00 |\n| Sales commission (5%) | $1.80 |\n| **Total variable cost** | **$18.30** |\n\n### Monthly Fixed Costs\n| Item | Amount |\n|------|--------|\n| Equipment lease | $3,200 |\n| Insurance | $800 |\n| Marketing | $2,000 |\n| Dedicated staff | $4,000 |\n| **Total** | **$10,000** |\n\n### Market Data\n- Expected demand: 800–1,200 dozen / month\n- Competitor pricing: $32–$42 / dozen\n- Current capacity: 1,000 dozen (1,500 with overtime)\n- Peak season (Nov–Dec): demand increases 40%\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-003-q1",
+          "prompt": "Calculate the contribution margin per dozen cupcakes.",
+          "type": "numerical_entry",
+          "correctAnswer": 17.7,
+          "tolerance": 0.01,
+          "points": 5,
+          "explanation": "The contribution margin (CM) represents the amount of revenue remaining after covering variable costs. It contributes towards covering fixed costs and generating profit. To calculate the contribution margin per dozen cupcakes, subtract the variable cost per dozen from the selling price per dozen.\n\n**Step-by-Step Solution:**\n1.  **Identify the selling price per dozen:** The selling price is given as $36.00 per dozen.\n2.  **Identify the total variable cost per dozen:** The total variable cost is given as $18.30 per dozen.\n3.  **Calculate the contribution margin per dozen:**\n    Contribution Margin = Selling Price - Variable Cost\n    Contribution Margin = $36.00 - $18.30 = $17.70\n\nTherefore, the contribution margin per dozen cupcakes is $17.70.\n\n**Key Concept:**\n*   **Contribution Margin:** (IMA Part 1, Section A.2.a) The contribution margin is the revenue remaining after deducting variable costs. It represents the amount available to cover fixed costs and generate profit.\n\n**Common Mistake:**\n*   **Forgetting Sales Commission:** A common mistake is to overlook the sales commission when calculating total variable costs. Remember that sales commissions are typically a percentage of sales and are therefore variable.\n*   **Including Fixed Costs:** Do not include any fixed costs in the calculation of the contribution margin. Fixed costs are considered separately in CVP analysis.\n\n**Exam Tip:**\n*   Carefully read the scenario to identify all relevant variable costs. Make sure to include any costs that vary directly with the number of units sold, such as direct materials, direct labor, and sales commissions. Double-check your calculations to avoid arithmetic errors.",
+          "enhanced": true,
+          "keyFormula": "Contribution Margin = Selling Price - Variable Cost",
+          "commonMistakes": [
+            "Forgetting Sales Commission",
+            "Including Fixed Costs"
+          ],
+          "examTip": "Carefully read the scenario to identify all relevant variable costs. Make sure to include any costs that vary directly with the number of units sold, such as direct materials, direct labor, and sales commissions. Double-check your calculations to avoid arithmetic errors."
+        },
+        {
+          "id": "cma1-cbq-003-q2",
+          "prompt": "Calculate the monthly break-even point in dozens (round up to the nearest whole dozen).",
+          "type": "numerical_entry",
+          "correctAnswer": 565,
+          "tolerance": 1,
+          "points": 5,
+          "explanation": "To calculate the break-even point in units (dozens in this case), we need to determine the fixed costs and the contribution margin per unit.\n\n**Step-by-Step Solution:**\n1. **Calculate Total Fixed Costs:**\n   *  Equipment lease: $3,200\n   *  Insurance: $800\n   *  Marketing: $2,000\n   *  Dedicated staff: $4,000\n   *  Total Fixed Costs = $3,200 + $800 + $2,000 + $4,000 = $10,000\n\n2. **Calculate Contribution Margin per Dozen:**\n   *  Selling price per dozen: $36.00\n   *  Variable costs per dozen:\n      *  Ingredients: $8.40\n      *  Packaging: $2.10\n      *  Direct labor: $6.00\n      *  Sales commission: $1.80\n      *  Total Variable Costs = $8.40 + $2.10 + $6.00 + $1.80 = $18.30\n   *  Contribution Margin per Dozen = Selling Price - Variable Costs = $36.00 - $18.30 = $17.70\n\n3. **Calculate Break-Even Point in Dozens:**\n   *  Break-Even Point (in dozens) = Total Fixed Costs / Contribution Margin per Dozen\n   *  Break-Even Point (in dozens) = $10,000 / $17.70 = 564.97 dozens\n\n4. **Round Up:**\n   *  Since we can't sell a fraction of a dozen to break even, we round up to the nearest whole dozen.\n   *  Break-Even Point = 565 dozens\n\n**Key Concept:**\nThis question tests your understanding of Cost-Volume-Profit (CVP) analysis, specifically the calculation of the break-even point. The break-even point is the level of sales at which total revenues equal total costs (both fixed and variable). (IMA Content Specification Outline: Part 1, Area: A1.a.1)\n\n**Common Mistake:**\n*   Forgetting to include the sales commission in the variable costs. This is a common oversight as it's presented as a percentage of the selling price, but it's still a variable cost that changes with the number of dozens sold.\n*   Not rounding up to the nearest whole dozen. In break-even analysis, you must round up to ensure you cover all fixed costs.\n\n**Exam Tip:**\nCarefully read the scenario to identify all relevant fixed and variable costs. Pay close attention to costs presented as percentages, as they often represent variable costs. Double-check your calculations before submitting your answer, especially when dealing with rounding.",
+          "enhanced": true,
+          "keyFormula": "Break-Even Point (Units) = Fixed Costs / (Selling Price per Unit - Variable Costs per Unit)",
+          "commonMistakes": [
+            "Forgetting to include sales commission in variable costs.",
+            "Not rounding up to the nearest whole dozen."
+          ],
+          "examTip": "Always double-check that you've included all relevant costs (both fixed and variable) when calculating the break-even point."
+        },
+        {
+          "id": "cma1-cbq-003-q3",
+          "prompt": "How many dozen must be sold to earn a target monthly profit of $5,000? (Round up.)",
+          "type": "numerical_entry",
+          "correctAnswer": 848,
+          "tolerance": 2,
+          "points": 5,
+          "explanation": "To determine the number of dozens that must be sold to achieve a target profit, we need to use the following formula derived from Cost-Volume-Profit (CVP) analysis:\n\nRequired Sales (in units) = (Fixed Costs + Target Profit) / Contribution Margin per Unit\n\n**Step-by-Step Solution:**\n1. **Calculate the Contribution Margin per Dozen:**\n   * Selling Price per Dozen: $36.00\n   * Variable Cost per Dozen: $18.30\n   * Contribution Margin per Dozen = Selling Price - Variable Cost = $36.00 - $18.30 = $17.70\n\n2. **Calculate the Total Fixed Costs:**\n   * Total Fixed Costs = $10,000 (given)\n\n3. **Apply the Formula:**\n   * Required Sales (in dozens) = ($10,000 + $5,000) / $17.70 = $15,000 / $17.70 = 847.4576 ≈ 848 dozens (rounded up)\n\nTherefore, Sunrise Bakery must sell approximately 848 dozens of cupcakes to achieve a target monthly profit of $5,000.\n\n**Key Concept:**\nThis question tests your understanding of Cost-Volume-Profit (CVP) analysis, specifically calculating the sales volume required to achieve a target profit. This falls under the IMA Content Specification Outline for Financial Planning, Performance and Analytics, specifically: Cost Management (A. Costing Systems) and Profitability Analysis (C. Cost-Volume-Profit Analysis).\n\n**Common Mistake:**\n*   **Forgetting to Round Up:** The question specifically asks to round up. Failing to do so will result in an incorrect answer. Even if the calculation results in 847.1, it must be rounded up to 848 because selling 847.1 dozens is not possible.\n*   **Incorrectly Calculating Contribution Margin:** A common mistake is to miscalculate the contribution margin by including fixed costs or excluding variable costs. Ensure you only subtract variable costs from the selling price.\n*   **Using the wrong fixed cost amount:** It is important to use the total fixed costs provided in the scenario, not just a portion of them.\n\n**Exam Tip:**\nAlways double-check your calculations and ensure you are using the correct formula. Pay close attention to the wording of the question, especially regarding rounding instructions. In CVP problems, clearly identify the fixed costs, variable costs, selling price, and target profit before plugging them into the formula. Also, be mindful of units. In this case, the calculation is for *dozens* of cupcakes.",
+          "enhanced": true,
+          "keyFormula": "Required Sales (in units) = (Fixed Costs + Target Profit) / Contribution Margin per Unit",
+          "commonMistakes": [
+            "Forgetting to Round Up",
+            "Incorrectly Calculating Contribution Margin",
+            "Using the wrong fixed cost amount"
+          ],
+          "examTip": "Always double-check your calculations and ensure you are using the correct formula. Pay close attention to the wording of the question, especially regarding rounding instructions. In CVP problems, clearly identify the fixed costs, variable costs, selling price, and target profit before plugging them into the formula. Also, be mindful of units. In this case, the calculation is for *dozens* of cupcakes."
+        },
+        {
+          "id": "cma1-cbq-003-q4",
+          "prompt": "During peak season, demand rises 40% to 1,400 dozen. Overtime adds $3.00/dozen in labor. What is the margin of safety in dozens at peak capacity of 1,500 dozen? (Use the overtime CM.)",
+          "type": "numerical_entry",
+          "correctAnswer": 820,
+          "tolerance": 5,
+          "points": 5,
+          "explanation": "To calculate the margin of safety in dozens during peak season with overtime, we need to determine the break-even point (BEP) in dozens considering the overtime labor cost and then subtract that from the peak capacity.\n\n**Step-by-Step Solution:**\n1. **Calculate the Overtime Contribution Margin (CM):**\n   * Selling price per dozen: $36.00\n   * Variable cost per dozen (excluding overtime): $18.30\n   * Overtime labor cost per dozen: $3.00\n   * Overtime CM = Selling price - (Variable cost + Overtime labor cost)\n   * Overtime CM = $36.00 - ($18.30 + $3.00) = $36.00 - $21.30 = $14.70 per dozen\n\n2. **Calculate the Break-Even Point (BEP) in Dozens with Overtime CM:**\n   * Total fixed costs: $10,000\n   * Overtime CM per dozen: $14.70\n   * BEP (in dozens) = Total fixed costs / Overtime CM per dozen\n   * BEP = $10,000 / $14.70 = 680.27 ≈ 680.27 dozen (round to 680.3 or 681)\n\n3. **Calculate the Margin of Safety in Dozens:**\n   * Peak capacity: 1,500 dozen\n   * Break-even point (BEP): 680.27 dozen\n   * Margin of Safety = Peak capacity - Break-even point\n   * Margin of Safety = 1,500 - 680.27 = 819.73 ≈ 820 dozen\n\n**Key Concept:**\nThis question tests your understanding of Cost-Volume-Profit (CVP) analysis, specifically break-even point calculation and margin of safety. The IMA Content Specification Outline Part 1, Section A.3.a covers CVP analysis, including break-even analysis and target profit analysis.\n\n**Common Mistake:**\n*   Forgetting to include the overtime labor cost in the variable cost calculation when determining the contribution margin for the overtime production. This will lead to an incorrect contribution margin and, consequently, an incorrect break-even point and margin of safety.\n*   Rounding too early in the calculation. Rounding the break-even point to 680 before subtracting from the peak capacity will result in a slightly different answer.\n\n**Exam Tip:**\nAlways double-check that you are using the correct contribution margin when calculating the break-even point, especially when there are different cost structures for different levels of production (e.g., overtime). Pay close attention to whether the question asks for units or dollars.",
+          "enhanced": true,
+          "keyFormula": "Break-Even Point (Units) = Fixed Costs / (Selling Price per Unit - Variable Cost per Unit); Margin of Safety (Units) = Actual Sales (Units) - Break-Even Sales (Units)",
+          "commonMistakes": [
+            "Forgetting to include the overtime labor cost in the variable cost calculation.",
+            "Rounding too early in the calculation, leading to inaccuracies."
+          ],
+          "examTip": "Carefully read the question to determine if the calculation requires consideration of overtime or other special circumstances that affect the contribution margin."
+        },
+        {
+          "id": "cma1-cbq-003-q5",
+          "prompt": "Which pricing strategies are appropriate for this gourmet product? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Target costing to achieve desired profit margin",
+            "Penetration pricing at $20 to undercut competitors",
+            "Premium pricing at $40 for specialty/custom orders",
+            "Cost-plus pricing ensuring coverage of all costs",
+            "Dynamic pricing during peak season"
+          ],
+          "correctAnswer": [
+            "Target costing to achieve desired profit margin",
+            "Premium pricing at $40 for specialty/custom orders",
+            "Cost-plus pricing ensuring coverage of all costs",
+            "Dynamic pricing during peak season"
+          ],
+          "points": 5,
+          "explanation": "Here's an analysis of appropriate pricing strategies for Sunrise Bakery's gourmet cupcake line:\n\n**Step-by-Step Solution:**\n\n*   **Target costing to achieve desired profit margin:** This is a viable strategy. Sunrise Bakery can determine a desired profit margin and then work backward to identify a target cost. For example, if they want a 20% profit margin on a $36 selling price, the target cost would be $28.80 ($36 * 0.80). They can then analyze their current costs and identify areas for reduction.\n\n*   **Penetration pricing at $20 to undercut competitors:** This is NOT a viable strategy. Let's calculate the contribution margin and break-even point:\n    *   Selling price: $20\n    *   Variable cost: $18.30\n    *   Contribution margin per dozen: $20 - $18.30 = $1.70\n    *   Total fixed costs: $10,000\n    *   Break-even point in dozens: $10,000 / $1.70 = 5,882.35 dozens\n\n    To break even at a $20 price, Sunrise Bakery would need to sell approximately 5,883 dozens per month. This is far beyond their current capacity of 1,000 dozens (or 1,500 with overtime), making this strategy impractical and unprofitable.\n\n*   **Premium pricing at $40 for specialty/custom orders:** This is a viable strategy. Given the gourmet nature of the cupcakes and the competitor pricing range ($32-$42), charging a premium for specialty or custom orders is reasonable. This allows Sunrise Bakery to capture additional revenue from customers willing to pay more for unique offerings.\n\n*   **Cost-plus pricing ensuring coverage of all costs:** This is a viable strategy. Sunrise Bakery can calculate the total cost per dozen (variable + fixed) and add a markup to ensure profitability. Let's calculate the cost per dozen at the current capacity of 1,000 dozens:\n    *   Total variable costs for 1,000 dozens: $18.30 * 1,000 = $18,300\n    *   Total fixed costs: $10,000\n    *   Total costs: $18,300 + $10,000 = $28,300\n    *   Cost per dozen: $28,300 / 1,000 = $28.30\n\n    Sunrise Bakery can then add a markup to this cost to determine the selling price. For example, a 20% markup would result in a selling price of $33.96 ($28.30 * 1.20).\n\n*   **Dynamic pricing during peak season:** This is a viable strategy. During peak season (November-December), demand increases by 40%. Sunrise Bakery can increase prices during this period to capitalize on the higher demand. This strategy can help maximize revenue and profitability.\n\n**Key Concept:**\n*   **Pricing Strategies (IMA Content Specification Outline: Part 1, Area B3b):** This question assesses the candidate's understanding of various pricing strategies, including target costing, penetration pricing, premium pricing, cost-plus pricing, and dynamic pricing. It also requires the candidate to analyze the specific context of the scenario to determine the most appropriate strategies.\n\n**Common Mistake:**\n*   **Ignoring Capacity Constraints:** A common mistake is to recommend a pricing strategy without considering the company's capacity. Penetration pricing, while potentially attractive for gaining market share, is not feasible if the company cannot produce enough units to meet the demand at the lower price.\n*   **Not Calculating Break-Even:** Failing to calculate the break-even point for penetration pricing leads to the incorrect conclusion that it is a viable strategy.\n\n**Exam Tip:**\n*   Always consider the company's capacity and cost structure when evaluating pricing strategies. A strategy that looks good on paper may not be feasible in practice if the company cannot produce enough units or if the costs are too high.",
+          "enhanced": true,
+          "keyFormula": "Break-even point (units) = Fixed Costs / (Selling Price per Unit - Variable Cost per Unit)",
+          "commonMistakes": [
+            "Ignoring capacity constraints when evaluating pricing strategies.",
+            "Failing to calculate the break-even point for penetration pricing."
+          ],
+          "examTip": "Always consider the company's capacity and cost structure when evaluating pricing strategies. A strategy that looks good on paper may not be feasible in practice if the company cannot produce enough units or if the costs are too high."
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 16,
+      "difficulty": "medium",
+      "topics": [
+        "Cost-Volume-Profit",
+        "Pricing",
+        "Break-Even Analysis"
+      ],
+      "blueprintArea": "CMA1-D"
+    },
+    {
+      "id": "cma1-cbq-004",
+      "section": "CMA1",
+      "title": "Internal Control Assessment – Retail Inventory",
+      "scenario": "\n## Global Retail Inc. – Inventory Shrinkage Investigation\n\nGlobal Retail operates 50 stores across the Midwest. A year-end physical count revealed significant inventory discrepancies.\n\n### Inventory Discrepancy Summary\n| Category | Book Value | Physical Count | Variance | % |\n|----------|-----------|----------------|----------|------|\n| Electronics | $2,450,000 | $2,180,000 | ($270,000) | −11.0% |\n| Apparel | $1,800,000 | $1,710,000 | ($90,000) | −5.0% |\n| Home Goods | $950,000 | $920,000 | ($30,000) | −3.2% |\n| Accessories | $400,000 | $365,000 | ($35,000) | −8.8% |\n| **Total** | **$5,600,000** | **$5,175,000** | **($425,000)** | **−7.6%** |\n\n### Control Environment Observations\n- **Staffing:** 45% annual turnover; no background checks; managers override POS\n- **Processes:** Single employee receives shipments; returns processed by any cashier; quarterly cycle counts by store staff\n- **Technology:** 8-year-old POS with no inventory integration; manual adjustments\n- **Physical security:** No stockroom cameras; loading dock open during business hours\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-004-q1",
+          "prompt": "Which COSO Internal Control components are MOST directly compromised? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Control Environment",
+            "Risk Assessment",
+            "Control Activities",
+            "Information and Communication",
+            "Monitoring Activities"
+          ],
+          "correctAnswer": [
+            "Control Environment",
+            "Control Activities",
+            "Monitoring Activities"
+          ],
+          "points": 5,
+          "explanation": "Control Environment is compromised by high turnover and lack of background checks. Control Activities by single-person receiving, weak returns process, and no segregation. Monitoring Activities by infrequent cycle counts performed by non-independent staff.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-004-q2",
+          "prompt": "Match each control weakness with the most appropriate corrective action.",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Implement blind receiving counts",
+            "Install security cameras",
+            "Segregate return processing duties",
+            "Deploy real-time POS-inventory integration"
+          ],
+          "dropZones": [
+            "Single employee receives shipments",
+            "No stockroom cameras",
+            "Returns processed by any cashier",
+            "Manual inventory adjustments"
+          ],
+          "correctAnswer": {
+            "Single employee receives shipments": "Implement blind receiving counts",
+            "No stockroom cameras": "Install security cameras",
+            "Returns processed by any cashier": "Segregate return processing duties",
+            "Manual inventory adjustments": "Deploy real-time POS-inventory integration"
+          },
+          "points": 5,
+          "explanation": "This question requires you to identify control weaknesses and match them with appropriate corrective actions to mitigate the risk of inventory shrinkage at Global Retail Inc.\n\n**Step-by-Step Solution:**\n1.  **Single employee receives shipments:** This creates an opportunity for theft or inaccurate recording of inventory received. A single employee could collude with a supplier or simply make errors without detection. The corrective action is to **Implement blind receiving counts**. This means the receiving employee receives the shipment without knowing the expected quantity. They must count the items independently, and this count is then compared to the purchase order. This provides a second, independent verification of the shipment.\n2.  **No stockroom cameras:** The absence of security cameras in the stockroom makes it easier for employees or unauthorized individuals to steal inventory without being detected. The corrective action is to **Install security cameras**. Cameras act as a deterrent and provide evidence in case of theft.\n3.  **Returns processed by any cashier:** Allowing any cashier to process returns increases the risk of fraudulent returns. Cashiers could process fake returns and pocket the cash or return items to inventory without proper verification. The corrective action is to **Segregate return processing duties**. This means assigning specific employees to handle returns and providing them with additional training and oversight. This reduces the opportunity for fraud and errors.\n4.  **Manual inventory adjustments:** Manual inventory adjustments are prone to errors and can be used to conceal theft or other irregularities. The corrective action is to **Deploy real-time POS-inventory integration**. Integrating the point-of-sale (POS) system with the inventory system allows for automatic updates to inventory levels as sales occur. This reduces the need for manual adjustments and provides a more accurate and up-to-date view of inventory.\n\n**Key Concept:**\nThis question tests your understanding of internal controls over inventory, specifically focusing on segregation of duties, physical controls, and information technology controls. These concepts are covered in the IMA's Content Specification Outline under \"Internal Controls\" and \"Asset Protection\".\n\n**Common Mistake:**\nA common mistake is to focus on the symptom (e.g., manual adjustments) rather than the underlying cause (e.g., lack of system integration). It's important to identify the root cause of the weakness and select the corrective action that addresses that cause.\n\n**Exam Tip:**\nWhen answering questions about internal controls, think about the potential risks associated with each weakness and select the corrective action that best mitigates those risks. Consider the cost-benefit of each corrective action and choose the most effective solution within a reasonable budget.",
+          "enhanced": true,
+          "commonMistakes": [
+            "Failing to identify the root cause of the control weakness.",
+            "Selecting a corrective action that only addresses the symptom, not the underlying problem."
+          ],
+          "examTip": "Always consider the cost-benefit of implementing a corrective action. While a more comprehensive solution might be ideal, a less expensive option that provides adequate protection may be more practical."
+        },
+        {
+          "id": "cma1-cbq-004-q3",
+          "prompt": "If Electronics shrinkage is reduced from 11% to the 2% industry average, what is the annual dollar savings?",
+          "type": "numerical_entry",
+          "correctAnswer": 220500,
+          "tolerance": 100,
+          "points": 5,
+          "explanation": "To determine the annual dollar savings from reducing electronics shrinkage, we need to calculate the current shrinkage amount, the target shrinkage amount, and then find the difference.\n\n**Step-by-Step Solution:**\n1. **Calculate Current Electronics Shrinkage:**\n   *   Current shrinkage percentage: 11% (given)\n   *   Book value of electronics: $2,450,000 (given)\n   *   Current shrinkage amount: $2,450,000 * 0.11 = $269,500\n\n2. **Calculate Target Electronics Shrinkage:**\n   *   Target shrinkage percentage: 2% (given)\n   *   Book value of electronics: $2,450,000 (given)\n   *   Target shrinkage amount: $2,450,000 * 0.02 = $49,000\n\n3. **Calculate Annual Dollar Savings:**\n   *   Savings = Current shrinkage amount - Target shrinkage amount\n   *   Savings = $269,500 - $49,000 = $220,500\n\nTherefore, the annual dollar savings from reducing electronics shrinkage to 2% is $220,500.\n\n**Key Concept:**\nThis question tests your understanding of inventory shrinkage and its impact on financial performance. It relates to the IMA Content Specification Outline under Financial Statement Analysis (Cost-Volume-Profit Analysis) and Internal Controls (Inventory Management).\n\n**Common Mistake:**\n*   Forgetting to convert the percentages to decimals before multiplying. For example, using 11 instead of 0.11.\n*   Calculating the savings based on the physical count value instead of the book value. Shrinkage is the difference between book value and physical count, so the book value is the correct base.\n\n**Exam Tip:**\nPay close attention to the base amount when calculating percentages. In this case, the book value of the electronics is the base for calculating both the current and target shrinkage amounts. Always double-check that you're using the correct numbers from the scenario in your calculations.",
+          "enhanced": true,
+          "keyFormula": "Savings = (Book Value * Current Shrinkage %) - (Book Value * Target Shrinkage %)",
+          "commonMistakes": [
+            "Using the physical count value instead of the book value as the base for calculating shrinkage.",
+            "Forgetting to convert percentages to decimals before multiplying."
+          ],
+          "examTip": "Always double-check the units required in the answer. This question asks for a dollar amount, so ensure your final answer is in dollars and not a percentage."
+        },
+        {
+          "id": "cma1-cbq-004-q4",
+          "prompt": "Complete the recommendation: \"To improve the ___ component, implement ___ cycle counts performed by ___ personnel.\"",
+          "type": "dropdown",
+          "options": [
+            "Monitoring Activities / weekly or continuous / independent",
+            "Control Activities / quarterly / store",
+            "Control Environment / annual / management",
+            "Risk Assessment / monthly / external audit"
+          ],
+          "correctAnswer": "Monitoring Activities / weekly or continuous / independent",
+          "points": 5,
+          "explanation": "The question asks for a recommendation to improve a specific component of internal control related to inventory cycle counts. The scenario highlights significant inventory discrepancies and weaknesses in the control environment.\n\n**Step-by-Step Solution:**\n1. **Identify the Weakness:** The current cycle counts are performed quarterly by store staff. This presents a risk of bias and potential for errors not being detected due to familiarity with the inventory and processes. The significant inventory shrinkage (7.6% overall) indicates that the current monitoring activities are insufficient.\n2. **Determine the Appropriate Component:** The act of performing cycle counts and evaluating the results falls under the *Monitoring Activities* component of internal control. Monitoring activities are ongoing evaluations, separate evaluations, or some combination of the two used to ascertain whether each of the five components of internal control is present and functioning. (IMA Content Specification Outline: I.B.2.a. Identify and explain the components of internal control).\n3. **Develop the Recommendation:** To improve monitoring activities, the cycle counts should be performed more frequently and by personnel who are independent of the inventory management process. This ensures objectivity and increases the likelihood of detecting errors or fraud.\n4. **Select the Appropriate Options:** The completed recommendation is: \"To improve the *Monitoring Activities* component, implement *more frequent* cycle counts performed by *independent* personnel.\"\n\n**Key Concept:**\n*   **Monitoring Activities:** This component of internal control involves ongoing evaluations, separate evaluations, or some combination of the two used to ascertain whether each of the five components of internal control is present and functioning. (IMA Content Specification Outline: I.B.2.a. Identify and explain the components of internal control).\n*   **Cycle Counts:** A method of inventory auditing where a small subset of inventory, in a specific location, is counted on a specified day. Cycle counts are less disruptive than a complete physical inventory and can be performed more frequently.\n\n**Common Mistake:**\n*   **Confusing Control Activities with Monitoring Activities:** Control activities are specific actions taken to mitigate risks, whereas monitoring activities are the processes used to assess the effectiveness of those controls. While improving cycle counts involves a change in process (which could be seen as a control activity), the primary impact is on the *monitoring* of inventory accuracy.\n*   **Overlooking the Importance of Independence:** Using store staff to perform cycle counts creates a conflict of interest and reduces the likelihood of detecting errors or fraud. Independent personnel, such as internal auditors or staff from another store, are more likely to identify discrepancies.\n\n**Exam Tip:**\nWhen evaluating internal control weaknesses, consider the five components of internal control (Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring Activities). Focus on how the proposed changes will impact each component and select the option that addresses the most significant weakness.",
+          "enhanced": true,
+          "commonMistakes": [
+            "Confusing Control Activities with Monitoring Activities",
+            "Overlooking the Importance of Independence"
+          ],
+          "examTip": "When evaluating internal control weaknesses, consider the five components of internal control (Control Environment, Risk Assessment, Control Activities, Information and Communication, and Monitoring Activities). Focus on how the proposed changes will impact each component and select the option that addresses the most significant weakness."
+        },
+        {
+          "id": "cma1-cbq-004-q5",
+          "prompt": "Which technology improvements would MOST effectively address the inventory issues? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "RFID tags for high-value electronics",
+            "Integrated ERP replacing legacy POS",
+            "Biometric access for stockrooms",
+            "Blockchain for supply chain tracking",
+            "AI-powered exception reporting"
+          ],
+          "correctAnswer": [
+            "RFID tags for high-value electronics",
+            "Integrated ERP replacing legacy POS",
+            "Biometric access for stockrooms",
+            "AI-powered exception reporting"
+          ],
+          "points": 5,
+          "explanation": "RFID directly addresses high-value electronics shrinkage. Integrated ERP fixes system gaps. Biometric access improves physical security. AI exception reporting identifies suspicious patterns. Blockchain is overkill and does not address internal shrinkage.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 18,
+      "difficulty": "hard",
+      "topics": [
+        "COSO Framework",
+        "Internal Controls",
+        "Inventory Management"
+      ],
+      "blueprintArea": "CMA1-E"
+    },
+    {
+      "id": "cma1-cbq-005",
+      "section": "CMA1",
+      "title": "Revenue Recognition Under ASC 606",
+      "scenario": "\n## CloudTech Solutions – Software Licensing Arrangement\n\nCloudTech Solutions entered a $900,000 contract on January 1 with Acme Corp for:\n\n| Deliverable | Standalone Price | Delivery |\n|-------------|-----------------|----------|\n| Software license | $500,000 | Delivered Jan 1 |\n| Implementation services | $250,000 | Jan 1 – Jun 30 (6 months) |\n| 2-year customer support | $200,000 | Jan 1, Year 1 – Dec 31, Year 2 |\n| **Total standalone prices** | **$950,000** | |\n\n### Additional Facts\n- The software is functional without implementation services\n- Implementation is not significantly customizing the software\n- Customer support is a distinct stand-ready obligation\n- Payment terms: $300,000 on signing; $300,000 on Jul 1; $300,000 on Jan 1 Year 2\n- CloudTech's fiscal year ends December 31\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-005-q1",
+          "prompt": "How many distinct performance obligations exist in this contract?",
+          "type": "dropdown",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctAnswer": "3",
+          "points": 5,
+          "explanation": "The three distinct obligations are: (1) software license, (2) implementation services, and (3) customer support. The software is functional IP and the implementation does not significantly modify it, so they are distinct.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-005-q2",
+          "prompt": "Using relative standalone selling prices, calculate the transaction price allocated to the software license. Round to the nearest dollar.",
+          "type": "numerical_entry",
+          "correctAnswer": 473684,
+          "tolerance": 10,
+          "points": 5,
+          "explanation": "This question tests your understanding of revenue recognition under ASC 606, specifically how to allocate the transaction price to various performance obligations in a contract with multiple deliverables. The core principle is to allocate the transaction price based on the relative standalone selling prices of each distinct good or service promised in the contract.\n\n**Step-by-Step Solution:**\n1. **Calculate the total standalone selling prices:** The problem states the total standalone selling prices are $950,000 ($500,000 + $250,000 + $200,000 = $950,000).\n2. **Calculate the allocation ratio for the software license:** Divide the standalone selling price of the software license by the total standalone selling prices: $500,000 / $950,000 = 0.526315789 (approximately 52.63%).\n3. **Calculate the transaction price allocated to the software license:** Multiply the total transaction price by the allocation ratio calculated in step 2: $900,000 * 0.526315789 = $473,684.21.  Rounding to the nearest dollar, the allocated price is $473,684.\n\n**Key Concept:**\nThis question directly relates to IMA Content Specification Outline area 1.B.2.a.iv: \"Allocating the transaction price to the performance obligations in the contract.\"\n\n**Common Mistake:**\n*   **Forgetting to adjust for the discount:** A common mistake is to simply use the standalone selling price of the software license ($500,000) without considering that the total contract price ($900,000) is less than the sum of the standalone selling prices ($950,000). The discount must be allocated proportionally.\n*   **Incorrectly calculating the allocation ratio:** Ensure you are dividing the standalone selling price of the *specific* performance obligation (software license) by the *total* standalone selling prices.\n\n**Exam Tip:**\nWhen dealing with multiple deliverables, always calculate the total standalone selling prices first. This will help you determine if a discount needs to be allocated and ensure accurate revenue recognition for each performance obligation. Pay close attention to the wording of the question to confirm what they are asking you to calculate.",
+          "enhanced": true,
+          "keyFormula": "Allocation Ratio = Standalone Selling Price of Specific Deliverable / Total Standalone Selling Prices; Allocated Price = Total Transaction Price * Allocation Ratio",
+          "commonMistakes": [
+            "Forgetting to allocate the discount inherent in the contract price being less than the sum of the standalone selling prices.",
+            "Incorrectly calculating the allocation ratio by using the wrong numerator or denominator."
+          ],
+          "examTip": "Always double-check that the sum of the allocated prices for all performance obligations equals the total transaction price. This helps ensure your calculations are accurate."
+        },
+        {
+          "id": "cma1-cbq-005-q3",
+          "prompt": "Calculate the transaction price allocated to implementation services.",
+          "type": "numerical_entry",
+          "correctAnswer": 236842,
+          "tolerance": 10,
+          "points": 5,
+          "explanation": "To determine the transaction price allocated to implementation services, we must follow the revenue recognition principles outlined in ASC 606. Since the sum of the standalone selling prices ($950,000) exceeds the contract price ($900,000), we need to allocate the transaction price proportionally to each performance obligation.\n\n**Step-by-Step Solution:**\n1. **Calculate the allocation ratio for implementation services:**\n   * Standalone price of implementation services: $250,000\n   * Total standalone prices: $950,000\n   * Allocation ratio = Standalone price of implementation services / Total standalone prices\n   * Allocation ratio = $250,000 / $950,000 = 0.26315789 (approximately 26.32%)\n\n2. **Allocate the transaction price to implementation services:**\n   * Total transaction price: $900,000\n   * Allocation ratio for implementation services: 26.32% (0.26315789)\n   * Allocated price = Total transaction price * Allocation ratio\n   * Allocated price = $900,000 * 0.26315789 = $236,842.10\n\n3. **Round to the nearest whole dollar:**\n   * $236,842.10 rounds to $236,842\n\nTherefore, the transaction price allocated to implementation services is $236,842.\n\n**Key Concept:**\nThis question tests the candidate's understanding of revenue recognition under ASC 606, specifically the allocation of transaction price to multiple performance obligations when the sum of the standalone selling prices exceeds the contract price. (IMA Content Specification Outline: Part 1, Section A.1.b. Revenue Recognition)\n\n**Common Mistake:**\n*   **Forgetting to allocate the transaction price:** A common mistake is to simply use the standalone selling price of the implementation services ($250,000) without considering that the total standalone selling prices exceed the contract price, requiring allocation.\n*   **Incorrect calculation of the allocation ratio:** Ensure the allocation ratio is calculated correctly by dividing the standalone selling price of the specific performance obligation by the *total* standalone selling prices of *all* performance obligations in the contract.\n\n**Exam Tip:**\nWhen dealing with multiple performance obligations and a discounted contract price, always remember to allocate the transaction price proportionally based on the relative standalone selling prices. Double-check your calculations, especially the allocation ratio, to avoid errors.",
+          "enhanced": true,
+          "keyFormula": "Allocation Ratio = Standalone Price / Total Standalone Prices; Allocated Price = Total Transaction Price * Allocation Ratio",
+          "commonMistakes": [
+            "Forgetting to allocate the transaction price when the sum of standalone prices exceeds the contract price.",
+            "Incorrectly calculating the allocation ratio."
+          ],
+          "examTip": "Always allocate the transaction price proportionally when the sum of standalone selling prices exceeds the contract price. Pay close attention to the wording of the question to ensure you are allocating to the correct performance obligation."
+        },
+        {
+          "id": "cma1-cbq-005-q4",
+          "prompt": "How much total revenue should CloudTech recognize in Year 1? The license transfers at a point in time (Jan 1). Implementation is recognized over 6 months (complete by Jun 30). Support is recognized ratably over 24 months.",
+          "type": "numerical_entry",
+          "correctAnswer": 805263,
+          "tolerance": 50,
+          "points": 5,
+          "explanation": "License (point in time, Jan 1): $473,684. Implementation (over time, 100% complete by Dec 31): $236,842. Support allocated = $900,000 × ($200,000/$950,000) = $189,474; Year 1 portion = $189,474 × 12/24 = $94,737. Total Year 1 = $473,684 + $236,842 + $94,737 = $805,263.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-005-q5",
+          "prompt": "Arrange the five steps of ASC 606 in the correct order.",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Allocate the transaction price",
+            "Identify the contract",
+            "Determine the transaction price",
+            "Recognize revenue when obligations are satisfied",
+            "Identify performance obligations"
+          ],
+          "correctAnswer": [
+            "Identify the contract",
+            "Identify performance obligations",
+            "Determine the transaction price",
+            "Allocate the transaction price",
+            "Recognize revenue when obligations are satisfied"
+          ],
+          "points": 5,
+          "explanation": "ASC 606 five-step model: (1) Identify the contract, (2) Identify performance obligations, (3) Determine the transaction price, (4) Allocate to obligations, (5) Recognize revenue as obligations are satisfied.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 20,
+      "difficulty": "hard",
+      "topics": [
+        "Revenue Recognition",
+        "ASC 606",
+        "Multi-Element Arrangements"
+      ],
+      "blueprintArea": "CMA1-A"
+    },
+    {
+      "id": "cma1-cbq-006",
+      "section": "CMA1",
+      "title": "Lease Accounting Under ASC 842",
+      "scenario": "\n## Pacific Distribution Corp. – Warehouse Lease Evaluation\n\nPacific Distribution is entering a new warehouse lease effective January 1 with these terms:\n\n| Term | Details |\n|------|---------|\n| Lease term | 5 years, non-cancelable |\n| Annual lease payment | $120,000 (paid at year-end) |\n| Incremental borrowing rate | 6% |\n| Fair value of warehouse | $650,000 |\n| Useful life of warehouse | 30 years |\n| Purchase option at end | $50,000 (not reasonably certain to exercise) |\n| No transfer of ownership at end of lease |\n\n### Present Value Factors at 6%\n| Factor | Value |\n|--------|-------|\n| PV of annuity, 5 years | 4.2124 |\n| PV of $1, 5 years | 0.7473 |\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-006-q1",
+          "prompt": "Should this lease be classified as a finance lease or an operating lease?",
+          "type": "dropdown",
+          "options": [
+            "Finance lease – PV of payments exceeds 90% of fair value",
+            "Finance lease – lease term exceeds 75% of useful life",
+            "Operating lease – none of the finance lease criteria are met",
+            "Operating lease – it transfers ownership at end of term"
+          ],
+          "correctAnswer": "Operating lease – none of the finance lease criteria are met",
+          "points": 5,
+          "explanation": "PV of payments = $120,000 × 4.2124 = $505,488 = 77.8% of FV (< 90%). Lease term = 5/30 = 16.7% of useful life (< 75%). No ownership transfer. Purchase option not reasonably certain. None of the five finance lease criteria are met → operating lease.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-006-q2",
+          "prompt": "Calculate the right-of-use (ROU) asset and lease liability recognized at lease commencement.",
+          "type": "numerical_entry",
+          "correctAnswer": 505488,
+          "tolerance": 50,
+          "points": 5,
+          "explanation": "The right-of-use (ROU) asset and lease liability are initially measured at the present value of the lease payments. In this case, the lease payments are $120,000 per year for 5 years, discounted at Pacific Distribution's incremental borrowing rate of 6%. The purchase option is *not* included in the calculation because it is not reasonably certain that Pacific Distribution will exercise it. There are no initial direct costs or lease incentives to consider in this scenario.\n\n**Step-by-Step Solution:**\n1.  **Calculate the present value of the lease payments:**\n    *   Annual lease payment = $120,000\n    *   Present value factor of an annuity at 6% for 5 years = 4.2124\n    *   Present value of lease payments = $120,000 * 4.2124 = $505,488\n\n2.  **Determine the ROU asset and lease liability:**\n    *   ROU asset = Present value of lease payments = $505,488\n    *   Lease liability = Present value of lease payments = $505,488\n\nTherefore, the right-of-use (ROU) asset and lease liability recognized at lease commencement are both $505,488.\n\n**Key Concept:**\nThis question tests your understanding of ASC 842, *Leases*, specifically the initial measurement of the ROU asset and lease liability for lessees. According to ASC 842, at the commencement date, a lessee shall recognize a lease liability and a right-of-use asset. The lease liability is initially measured at the present value of the lease payments not yet paid. The ROU asset is initially measured at the amount of the lease liability, plus any initial direct costs incurred by the lessee, less any lease incentives received by the lessee. (IMA Part 1, Section B.1.a)\n\n**Common Mistake:**\n*   **Including the purchase option in the present value calculation:** Many candidates incorrectly include the purchase option amount in the present value calculation, even when it is not reasonably certain that the option will be exercised. In this case, the problem states that the purchase option is *not* reasonably certain to be exercised, so it should be excluded from the present value calculation.\n*   **Using the wrong present value factor:** Candidates might mistakenly use the present value of $1 factor instead of the present value of an annuity factor. Remember that the lease payments are a series of equal payments, so the present value of an annuity factor is appropriate.\n\n**Exam Tip:**\nCarefully read the details of the lease agreement, especially regarding purchase options and their likelihood of being exercised. If a purchase option is reasonably certain to be exercised, it *must* be included in the present value calculation. If it is *not* reasonably certain, it should be excluded.",
+          "enhanced": true,
+          "keyFormula": "PV of lease payments = Annual lease payment * PV of annuity factor",
+          "commonMistakes": [
+            "Including the purchase option in the present value calculation when it's not reasonably certain.",
+            "Using the present value of $1 factor instead of the present value of an annuity factor."
+          ],
+          "examTip": "Pay close attention to whether a purchase option is 'reasonably certain' to be exercised, as this significantly impacts the lease liability and ROU asset calculation."
+        },
+        {
+          "id": "cma1-cbq-006-q3",
+          "prompt": "For an operating lease under ASC 842, what is the total lease expense recognized in Year 1?",
+          "type": "numerical_entry",
+          "correctAnswer": 120000,
+          "tolerance": 1,
+          "points": 5,
+          "explanation": "The correct answer is $120,000.\n\n**Step-by-Step Solution:**\nUnder ASC 842, for an operating lease, the lease expense is recognized on a straight-line basis over the lease term. This means the total lease payments are divided by the number of years in the lease term.\n\n1.  **Calculate Total Lease Payments:** The annual lease payment is $120,000, and the lease term is 5 years.  Total lease payments = $120,000/year * 5 years = $600,000\n2.  **Calculate Annual Lease Expense:** Divide the total lease payments by the lease term: $600,000 / 5 years = $120,000 per year.\n\nTherefore, the total lease expense recognized in Year 1 is $120,000.\n\n**Key Concept:**\nThis question tests the candidate's understanding of lease accounting under ASC 842, specifically the treatment of operating leases. According to the IMA Content Specification Outline, this falls under Financial Statement Analysis (FSA), specifically, \"Leases\" and the ability to \"Apply lease accounting standards (ASC 842).\" \n\n**Common Mistake:**\n*   Forgetting that operating leases under ASC 842 recognize a straight-line expense. Some candidates might incorrectly try to calculate interest expense and amortization as they would for a finance lease.\n*   Getting confused by the present value factors provided. These are not needed for calculating the lease expense for an operating lease. They would be used to calculate the right-of-use asset and lease liability at the commencement of the lease, but not the annual expense.\n\n**Exam Tip:**\nCarefully read the question to determine whether it is asking for the initial measurement of the lease liability and right-of-use asset or the lease expense. In this case, it specifically asks for the lease expense for an *operating* lease, which simplifies the calculation to straight-line recognition.",
+          "enhanced": true,
+          "keyFormula": "Total Lease Expense = Total Lease Payments / Lease Term",
+          "commonMistakes": [
+            "Confusing operating and finance lease accounting.",
+            "Incorrectly using present value factors when calculating operating lease expense."
+          ],
+          "examTip": "Always identify whether the lease is operating or finance before attempting to calculate the lease expense. This will determine the appropriate accounting treatment."
+        },
+        {
+          "id": "cma1-cbq-006-q4",
+          "prompt": "What is the lease liability balance at the end of Year 1? (Interest accrues at 6% on the opening balance, then the payment is made.)",
+          "type": "numerical_entry",
+          "correctAnswer": 415817,
+          "tolerance": 50,
+          "points": 5,
+          "explanation": "To determine the lease liability balance at the end of Year 1, we need to calculate the initial lease liability, the interest expense for Year 1, and then subtract the lease payment made at the end of Year 1.\n\n**Step-by-Step Solution:**\n1.  **Calculate the Initial Lease Liability:** The initial lease liability is the present value of the lease payments. Since the annual lease payment is $120,000 and the present value of an annuity factor for 5 years at 6% is 4.2124, the initial lease liability is calculated as follows:\n    $120,000 * 4.2124 = $505,488\n\n2.  **Calculate the Interest Expense for Year 1:** The interest expense is calculated by multiplying the initial lease liability by the incremental borrowing rate. In this case, the incremental borrowing rate is 6%.\n    $505,488 * 0.06 = $30,329.28 (rounded to $30,329)\n\n3.  **Calculate the Lease Liability Balance at the End of Year 1:** The lease liability balance at the end of Year 1 is calculated by adding the interest expense to the initial lease liability and then subtracting the lease payment made at the end of the year.\n    $505,488 + $30,329 - $120,000 = $415,817\n\nTherefore, the lease liability balance at the end of Year 1 is $415,817.\n\n**Key Concept:**\nThis question tests your understanding of lease accounting under ASC 842, specifically the initial measurement and subsequent measurement of the lease liability. (IMA Part 1, Section B.2.a. Lease Accounting)\n\n**Common Mistake:**\n*   Failing to calculate the initial lease liability correctly by not using the present value factor.\n*   Forgetting to accrue interest expense on the lease liability before subtracting the lease payment.\n*   Incorrectly using the fair value or useful life of the warehouse in the lease liability calculation. These are relevant for the right-of-use asset, not the liability.\n\n**Exam Tip:**\nAlways carefully read the lease terms to identify the relevant information for calculating the lease liability. Pay close attention to the discount rate, payment amounts, and payment timing. Create a simple amortization schedule to track the lease liability balance over time, especially for multi-year leases.",
+          "enhanced": true,
+          "keyFormula": "Initial Lease Liability = Annual Lease Payment * PV of Annuity Factor",
+          "commonMistakes": [
+            "Forgetting to accrue interest expense on the lease liability before subtracting the lease payment.",
+            "Incorrectly using the fair value or useful life of the warehouse in the lease liability calculation."
+          ],
+          "examTip": "Create a simple amortization schedule to track the lease liability balance over time, especially for multi-year leases."
+        },
+        {
+          "id": "cma1-cbq-006-q5",
+          "prompt": "Which statements about ASC 842 are correct? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Both operating and finance leases create ROU assets on the balance sheet",
+            "Operating leases have straight-line total expense over the lease term",
+            "Finance leases result in front-loaded expense (higher in early years)",
+            "Short-term leases (≤12 months) must be capitalized",
+            "Sale-leaseback transactions always result in operating lease treatment"
+          ],
+          "correctAnswer": [
+            "Both operating and finance leases create ROU assets on the balance sheet",
+            "Operating leases have straight-line total expense over the lease term",
+            "Finance leases result in front-loaded expense (higher in early years)"
+          ],
+          "points": 5,
+          "explanation": "Under ASC 842 both lease types create ROU assets and liabilities. Operating leases have straight-line expense; finance leases have front-loaded expense (amortization + interest). Short-term leases have an elective exemption from capitalization. Sale-leasebacks can be finance or operating.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 18,
+      "difficulty": "hard",
+      "topics": [
+        "Lease Accounting",
+        "ASC 842",
+        "Right-of-Use Assets"
+      ],
+      "blueprintArea": "CMA1-A"
+    },
+    {
+      "id": "cma1-cbq-007",
+      "section": "CMA1",
+      "title": "Rolling Forecasts vs. Static Budget",
+      "scenario": "\n## NovaTech Industries – Budget Modernization\n\nNovaTech's CFO is considering replacing the traditional annual budget with a rolling forecast. Q1 and Q2 actual results are available:\n\n### Annual Static Budget vs. Actuals ($ thousands)\n| Metric | Annual Budget | Q1 Actual | Q2 Actual | Q3 Budget | Q4 Budget |\n|--------|--------------|-----------|-----------|-----------|-----------|\n| Revenue | $20,000 | $4,200 | $5,800 | $5,000 | $5,000 |\n| COGS (60%) | $12,000 | $2,730 | $3,596 | $3,000 | $3,000 |\n| Gross Profit | $8,000 | $1,470 | $2,204 | $2,000 | $2,000 |\n| OpEx | $5,000 | $1,350 | $1,400 | $1,250 | $1,000 |\n| Operating Income | $3,000 | $120 | $804 | $750 | $1,000 |\n\n### Additional Context\n- Market grew 12% faster than expected in Q2 (competitor exit)\n- Actual COGS % has been 65% in Q1 and 62% in Q2 due to supplier issues then renegotiation\n- Management expects Q3 revenue of $6,200 and Q4 revenue of $6,500 based on latest pipeline\n- COGS is now trending at 61% after new supplier contracts\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-007-q1",
+          "prompt": "What is the full-year revenue in the rolling forecast (H1 actuals + updated Q3 + Q4 estimates)?",
+          "type": "numerical_entry",
+          "correctAnswer": 22700,
+          "tolerance": 10,
+          "points": 5,
+          "explanation": "The question asks for the full-year revenue in the rolling forecast, which is calculated by summing the actual revenue for the first two quarters (Q1 and Q2) with the updated revenue estimates for the remaining two quarters (Q3 and Q4). A rolling forecast updates the remaining periods based on current performance and new information, providing a more accurate projection than a static budget.\n\n**Step-by-Step Solution:**\n1. **Identify Q1 Actual Revenue:** From the table, Q1 Actual Revenue = $4,200 (thousands).\n2. **Identify Q2 Actual Revenue:** From the table, Q2 Actual Revenue = $5,800 (thousands).\n3. **Identify Updated Q3 Revenue Estimate:** From the Additional Context, updated Q3 Revenue Estimate = $6,200 (thousands).\n4. **Identify Updated Q4 Revenue Estimate:** From the Additional Context, updated Q4 Revenue Estimate = $6,500 (thousands).\n5. **Calculate Total Rolling Forecast Revenue:** Add the values from steps 1-4: $4,200 + $5,800 + $6,200 + $6,500 = $22,700 (thousands).\n\nTherefore, the full-year revenue in the rolling forecast is $22,700 (thousands).\n\n**Key Concept:**\nThis question tests your understanding of rolling forecasts and how they differ from static budgets. According to the IMA Content Specification Outline, Part 1, Section A: Planning, Budgeting, and Forecasting, candidates should understand the differences between various budgeting approaches, including rolling budgets (continuous budgets). A rolling budget is continuously updated by adding a new period (e.g., a month or quarter) as the most recent period is completed. This provides a more current and accurate forecast than a static budget, which remains unchanged throughout the year.\n\n**Common Mistake:**\n*   **Using the Static Budget Values:** A common mistake is to use the original budgeted revenue figures for Q3 and Q4 instead of the updated estimates provided in the additional context. The question specifically asks for the *rolling forecast*, which incorporates the latest information.\n*   **Forgetting to Add All Quarters:** Another mistake is to only consider the updated Q3 and Q4 estimates without including the actual results from Q1 and Q2.\n\n**Exam Tip:**\nPay close attention to the details provided in the scenario, especially any updated information or revised estimates. Rolling forecasts are designed to be dynamic, so it's crucial to incorporate the most current data available. Always double-check which values (budgeted vs. actual vs. estimated) the question is asking you to use.",
+          "enhanced": true,
+          "commonMistakes": [
+            "Using the static budget values for Q3 and Q4 instead of the updated estimates.",
+            "Forgetting to include the actual results from Q1 and Q2 in the calculation."
+          ],
+          "examTip": "When dealing with rolling forecasts, always prioritize the most recent information and updated estimates provided in the scenario. Identify if the question is asking for a full-year forecast or a specific quarter's forecast."
+        },
+        {
+          "id": "cma1-cbq-007-q2",
+          "prompt": "Using the revised 61% COGS rate for Q3 and Q4, calculate the full-year COGS in the rolling forecast (in thousands).",
+          "type": "numerical_entry",
+          "correctAnswer": 14073,
+          "tolerance": 10,
+          "points": 5,
+          "explanation": "To calculate the full-year Cost of Goods Sold (COGS) in the rolling forecast, we need to combine the actual COGS from Q1 and Q2 with the forecasted COGS for Q3 and Q4, considering the revised COGS rate of 61%.\n\n**Step-by-Step Solution:**\n1. **Q1 Actual COGS:** $2,730 (given)\n2. **Q2 Actual COGS:** $3,596 (given)\n3. **Q3 Forecasted Revenue:** $6,200 (given)\n4. **Q3 Forecasted COGS:** $6,200 * 61% = $3,782\n5. **Q4 Forecasted Revenue:** $6,500 (given)\n6. **Q4 Forecasted COGS:** $6,500 * 61% = $3,965\n7. **Total Full-Year COGS (Rolling Forecast):** $2,730 + $3,596 + $3,782 + $3,965 = $14,073\n\nTherefore, the full-year COGS in the rolling forecast is $14,073 thousand.\n\n**Key Concept:**\nThis question tests your understanding of rolling forecasts and how they incorporate actual results with updated projections. Rolling forecasts are continuously updated by adding a new period (e.g., a quarter or month) and dropping the oldest period. (IMA Content Specification Outline: Part 1, Section A.2.b.1)\n\n**Common Mistake:**\n*   **Using the original budgeted COGS percentage:** A common mistake is to use the original budgeted COGS percentage (60%) instead of the revised 61% for Q3 and Q4. The rolling forecast should incorporate the most up-to-date information.\n*   **Using the annual budget numbers:** Another mistake is to use the original annual budget numbers for Q3 and Q4 instead of the updated revenue forecasts. The rolling forecast requires using the most current revenue estimates.\n\n**Exam Tip:**\nPay close attention to the time frame and any changes in assumptions provided in the scenario. Rolling forecasts are dynamic, so it's crucial to use the most recent data available when calculating future periods.",
+          "enhanced": true,
+          "keyFormula": "COGS = Revenue * COGS Percentage",
+          "commonMistakes": [
+            "Using the original budgeted COGS percentage (60%) instead of the revised 61% for Q3 and Q4.",
+            "Using the original annual budget numbers for Q3 and Q4 instead of the updated revenue forecasts."
+          ],
+          "examTip": "Always double-check which period the question is asking about and whether to use actual or forecasted data. Rolling forecasts require integrating actual results with updated projections."
+        },
+        {
+          "id": "cma1-cbq-007-q3",
+          "prompt": "What is the revenue variance between the rolling forecast and the static budget?",
+          "type": "dropdown",
+          "options": [
+            "Favorable $2,700K – rolling forecast is $2,700K higher",
+            "Unfavorable $2,700K – rolling forecast is $2,700K lower",
+            "Favorable $1,000K – only Q2 exceeded budget",
+            "No variance – both forecast total revenue of $20,000K"
+          ],
+          "correctAnswer": "Favorable $2,700K – rolling forecast is $2,700K higher",
+          "points": 5,
+          "explanation": "The revenue variance between the rolling forecast and the static budget is calculated by comparing the total revenue projected by the rolling forecast to the total revenue in the static budget. A rolling forecast is continuously updated, adding a new period (e.g., a quarter or month) as the most recent period is completed. In this case, we need to calculate the total revenue expected under the rolling forecast (using actuals for Q1 and Q2, and management's projections for Q3 and Q4) and compare it to the static budget's total revenue.\n\n**Step-by-Step Solution:**\n1. **Calculate Total Revenue under the Rolling Forecast:**\n   *   Q1 Actual Revenue: $4,200 (given)\n   *   Q2 Actual Revenue: $5,800 (given)\n   *   Q3 Forecasted Revenue: $6,200 (given)\n   *   Q4 Forecasted Revenue: $6,500 (given)\n   *   Total Rolling Forecast Revenue = $4,200 + $5,800 + $6,200 + $6,500 = $22,700\n\n2. **Identify Total Revenue under the Static Budget:**\n   *   Total Static Budget Revenue = $20,000 (given)\n\n3. **Calculate the Revenue Variance:**\n   *   Revenue Variance = Rolling Forecast Revenue - Static Budget Revenue\n   *   Revenue Variance = $22,700 - $20,000 = $2,700\n\n4. **Determine if the Variance is Favorable or Unfavorable:**\n   *   Since the rolling forecast revenue is higher than the static budget revenue, the variance is favorable.\n\nTherefore, the revenue variance between the rolling forecast and the static budget is $2,700 thousand favorable.\n\n**Key Concept:**\nThis question tests your understanding of budgeting methods, specifically the difference between static budgets and rolling forecasts. Static budgets are prepared once a year and remain unchanged, while rolling forecasts are continuously updated. This relates to the IMA Content Specification Outline, Part 1, Section B: Budgeting, Planning, and Forecasting, specifically the topic of \"Types of Budgets (e.g., static, flexible, rolling).\"\n\n**Common Mistake:**\n*   **Forgetting to include actual results:** A common mistake is to only consider the revised Q3 and Q4 revenue forecasts and ignore the actual results from Q1 and Q2. The rolling forecast incorporates actual results for periods that have already occurred.\n*   **Misinterpreting favorable/unfavorable:** Confusing a higher revenue with an unfavorable variance. Remember, higher revenue is generally favorable.\n\n**Exam Tip:**\nWhen dealing with rolling forecasts, always remember to use actual results for past periods and forecasted results for future periods. Carefully read the scenario to identify which periods have actual results available and which require forecasting.",
+          "enhanced": true,
+          "keyFormula": "Rolling Forecast Variance = Rolling Forecast Revenue - Static Budget Revenue",
+          "commonMistakes": [
+            "Forgetting to include actual results from Q1 and Q2 in the rolling forecast calculation.",
+            "Misinterpreting whether a higher revenue compared to the budget is a favorable or unfavorable variance."
+          ],
+          "examTip": "Pay close attention to the time frame covered by the rolling forecast and ensure you are using actual data for completed periods and forecasted data for future periods."
+        },
+        {
+          "id": "cma1-cbq-007-q4",
+          "prompt": "Arrange the following benefits of rolling forecasts from MOST to LEAST impactful for NovaTech:",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Incorporates latest market intelligence (competitor exit)",
+            "Reduces budget gaming and sandbagging",
+            "Provides continuous 12–18 month planning horizon",
+            "Eliminates year-end budget rush"
+          ],
+          "correctAnswer": [
+            "Incorporates latest market intelligence (competitor exit)",
+            "Provides continuous 12–18 month planning horizon",
+            "Reduces budget gaming and sandbagging",
+            "Eliminates year-end budget rush"
+          ],
+          "points": 5,
+          "explanation": "For NovaTech, the competitor exit made the static budget obsolete immediately—incorporating market intelligence is the top benefit. A continuous horizon and reduced gaming are also key advantages. Eliminating the budget rush is a process efficiency gain but less impactful strategically.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-007-q5",
+          "prompt": "Which forecasting techniques should NovaTech use for the rolling forecast? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Driver-based modeling tied to pipeline metrics",
+            "Zero-based budgeting for all line items each quarter",
+            "Trend analysis using H1 actual run rates",
+            "Scenario planning (base, optimistic, pessimistic)",
+            "Incremental budgeting adding 5% to prior year"
+          ],
+          "correctAnswer": [
+            "Driver-based modeling tied to pipeline metrics",
+            "Trend analysis using H1 actual run rates",
+            "Scenario planning (base, optimistic, pessimistic)"
+          ],
+          "points": 5,
+          "explanation": "Rolling forecasts benefit from driver-based models (link revenue to pipeline), trend analysis (use actual data), and scenario planning (address uncertainty). Zero-based budgeting is too detailed for reforecasting, and incremental budgeting defeats the purpose of rolling forecasts.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 16,
+      "difficulty": "medium",
+      "topics": [
+        "Rolling Forecasts",
+        "Budgeting",
+        "Forecasting Techniques"
+      ],
+      "blueprintArea": "CMA1-B"
+    },
+    {
+      "id": "cma1-cbq-008",
+      "section": "CMA1",
+      "title": "Balanced Scorecard Implementation",
+      "scenario": "\n## CareFirst Health System – Strategic Performance Framework\n\nCareFirst Health System (3 hospitals, 12 clinics) is implementing a Balanced Scorecard (BSC) to align operations with its strategy: *\"Deliver exceptional patient outcomes while achieving financial sustainability.\"*\n\n### Current Performance Data\n| Metric | Current | Industry Avg | Target |\n|--------|---------|-------------|--------|\n| Operating margin | 2.8% | 4.5% | 5.0% |\n| Revenue per patient day | $2,100 | $2,400 | $2,500 |\n| Patient satisfaction (HCAHPS) | 72% | 78% | 85% |\n| Readmission rate (30-day) | 14% | 12% | 9% |\n| Avg wait time (ED) | 45 min | 30 min | 20 min |\n| Employee turnover (nurses) | 22% | 15% | 12% |\n| Time to adopt new protocols | 6 months | 3 months | 2 months |\n| IT system uptime | 97% | 99.5% | 99.9% |\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-008-q1",
+          "prompt": "Match each metric to the correct BSC perspective.",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Operating margin",
+            "Patient satisfaction (HCAHPS)",
+            "Time to adopt new protocols",
+            "Nurse turnover rate"
+          ],
+          "dropZones": [
+            "Financial",
+            "Customer",
+            "Learning & Growth",
+            "Internal Process"
+          ],
+          "correctAnswer": {
+            "Financial": "Operating margin",
+            "Customer": "Patient satisfaction (HCAHPS)",
+            "Learning & Growth": "Time to adopt new protocols",
+            "Internal Process": "Nurse turnover rate"
+          },
+          "points": 5,
+          "explanation": "Operating margin is a Financial metric. Patient satisfaction is a Customer (patient) metric. Protocol adoption speed reflects Learning & Growth (organizational agility). Nurse turnover is an Internal Process metric affecting care delivery capability.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-008-q2",
+          "prompt": "Which metrics are leading indicators (predictive) rather than lagging indicators (outcome)? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Employee turnover rate",
+            "Operating margin",
+            "Average ED wait time",
+            "30-day readmission rate",
+            "IT system uptime"
+          ],
+          "correctAnswer": [
+            "Employee turnover rate",
+            "Average ED wait time",
+            "IT system uptime"
+          ],
+          "points": 5,
+          "explanation": "Leading indicators predict future outcomes: high turnover predicts future quality issues, wait times indicate process efficiency affecting satisfaction, and IT uptime enables operational performance. Operating margin and readmissions are lagging outcome measures.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-008-q3",
+          "prompt": "If CareFirst reduces the 30-day readmission rate from 14% to 9% across 20,000 annual discharges, and each avoided readmission saves $8,500 in unreimbursed cost, what is the annual financial impact?",
+          "type": "numerical_entry",
+          "correctAnswer": 8500000,
+          "tolerance": 10000,
+          "points": 5,
+          "explanation": "This question assesses your ability to quantify the financial impact of operational improvements, a crucial skill for CMAs. Here's a step-by-step solution:\n\n**Step-by-Step Solution:**\n1. **Calculate the reduction in readmission rate:** 14% (current) - 9% (target) = 5% reduction\n2. **Calculate the number of avoided readmissions:** 20,000 (annual discharges) * 5% (reduction) = 1,000 avoided readmissions\n3. **Calculate the total savings:** 1,000 (avoided readmissions) * $8,500 (savings per readmission) = $8,500,000\n\nTherefore, the annual financial impact of reducing the readmission rate is $8,500,000.\n\n**Key Concept:**\nThis question relates to the **Financial Performance** perspective of the Balanced Scorecard and the ability to translate operational improvements into financial results. (IMA Content Specification Outline: Strategic Planning, Section A.2.a. Identify and apply appropriate performance measures)\n\n**Common Mistake:**\n*   **Forgetting to convert percentages to decimals:** Failing to convert the percentage reduction in readmission rate (5%) to its decimal form (0.05) before multiplying by the number of discharges will lead to an incorrect answer.\n*   **Using the industry average readmission rate:** Some candidates might mistakenly use the industry average readmission rate (12%) in their calculations instead of the target rate (9%).\n\n**Exam Tip:**\nCarefully read the scenario and question to identify the relevant data. Pay close attention to units (percentages, dollar amounts, etc.) and ensure you are using the correct values in your calculations. Double-check your calculations before submitting your answer.",
+          "enhanced": true,
+          "keyFormula": "Avoided Readmissions = Total Discharges * (Current Readmission Rate - Target Readmission Rate)\nTotal Savings = Avoided Readmissions * Savings per Readmission",
+          "commonMistakes": [
+            "Forgetting to convert percentages to decimals.",
+            "Using the industry average readmission rate instead of the target rate."
+          ],
+          "examTip": "Always double-check that you are using the correct numbers from the scenario in your calculations. A simple misread can lead to a wrong answer."
+        },
+        {
+          "id": "cma1-cbq-008-q4",
+          "prompt": "Arrange the BSC cause-and-effect chain in the correct strategic order (from root driver to ultimate outcome):",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Improved operating margin",
+            "Reduced nurse turnover",
+            "Higher patient satisfaction scores",
+            "Invest in nurse training and retention programs"
+          ],
+          "correctAnswer": [
+            "Invest in nurse training and retention programs",
+            "Reduced nurse turnover",
+            "Higher patient satisfaction scores",
+            "Improved operating margin"
+          ],
+          "points": 5,
+          "explanation": "Strategy map logic: Learning & Growth (training investment) → Internal Process (reduced turnover → better staffing) → Customer (higher satisfaction from experienced staff) → Financial (improved margin from better outcomes and reputation).",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-008-q5",
+          "prompt": "What is the primary limitation of the Balanced Scorecard?",
+          "type": "dropdown",
+          "options": [
+            "It focuses only on financial metrics",
+            "It cannot link strategy to operational metrics",
+            "It requires subjective judgment in selecting metrics and setting targets",
+            "It is only applicable to manufacturing organizations"
+          ],
+          "correctAnswer": "It requires subjective judgment in selecting metrics and setting targets",
+          "points": 5,
+          "explanation": "The BSC is powerful because it goes beyond financial metrics & links strategy to operations (eliminating the first two options). It works in any industry. Its primary limitation is the subjectivity in choosing which metrics matter, what weights to assign, and what targets to set.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 16,
+      "difficulty": "medium",
+      "topics": [
+        "Balanced Scorecard",
+        "KPIs",
+        "Strategy Mapping"
+      ],
+      "blueprintArea": "CMA1-C"
+    },
+    {
+      "id": "cma1-cbq-009",
+      "section": "CMA1",
+      "title": "Activity-Based Costing vs. Traditional Costing",
+      "scenario": "\n## Pinnacle Electronics – Product Costing Review\n\nPinnacle manufactures two products: Standard (high-volume) and Premium (low-volume, complex).\n\n### Production Data\n| | Standard | Premium |\n|------|----------|---------|\n| Units produced annually | 50,000 | 5,000 |\n| Direct materials / unit | $25 | $60 |\n| Direct labor hours / unit | 1.0 hr | 3.0 hrs |\n| Direct labor rate | $20/hr | $20/hr |\n| Machine hours / unit | 0.5 hr | 2.0 hrs |\n| Number of setups / year | 20 | 80 |\n| Quality inspections / year | 100 | 400 |\n| Purchase orders / year | 50 | 200 |\n\n### Overhead Cost Pools\n| Activity | Cost | Driver |\n|----------|------|--------|\n| Machine operation | $500,000 | Machine hours |\n| Setups | $300,000 | Number of setups |\n| Quality inspection | $250,000 | Inspections |\n| Purchasing | $200,000 | Purchase orders |\n| **Total overhead** | **$1,250,000** | |\n\n### Traditional System\n- Allocates all overhead on direct labor hours\n- Total DL hours = 50,000 × 1.0 + 5,000 × 3.0 = 65,000 hours\n- OH rate = $1,250,000 ÷ 65,000 = $19.23/DL hour\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-009-q1",
+          "prompt": "Under the traditional system, what is the total overhead allocated to one Premium unit? Round to the nearest cent.",
+          "type": "numerical_entry",
+          "correctAnswer": 57.69,
+          "tolerance": 0.02,
+          "points": 5,
+          "explanation": "Here's how to calculate the overhead allocated to one Premium unit under the traditional costing system:\n\n**Step-by-Step Solution:**\n1. **Calculate Total Direct Labor Hours:**\n   * Standard: 50,000 units * 1.0 DL hours/unit = 50,000 DL hours\n   * Premium: 5,000 units * 3.0 DL hours/unit = 15,000 DL hours\n   * Total DL hours = 50,000 + 15,000 = 65,000 DL hours\n\n2. **Calculate the Overhead Rate:**\n   * Total Overhead = $1,250,000\n   * Overhead Rate = Total Overhead / Total Direct Labor Hours\n   * Overhead Rate = $1,250,000 / 65,000 DL hours = $19.23/DL hour (rounded to the nearest cent)\n\n3. **Calculate Overhead Allocated to Premium Units:**\n   * Direct Labor Hours per Premium Unit = 3.0 hours\n   * Overhead per Premium Unit = Overhead Rate * Direct Labor Hours per Premium Unit\n   * Overhead per Premium Unit = $19.23/DL hour * 3.0 hours = $57.69\n\nTherefore, the total overhead allocated to one Premium unit under the traditional system is $57.69.\n\n**Key Concept:**\nThis question tests your understanding of traditional overhead allocation, which is covered in the IMA Content Specification Outline, Part 1, Section A: Cost Management, Learning Outcome 1.a: \"Explain and apply different costing systems (e.g., job order, process, activity-based, life-cycle).\"\n\n**Common Mistake:**\nA common mistake is to forget to multiply the overhead rate by the direct labor hours *per unit* of the Premium product. Some candidates may incorrectly use the total direct labor hours for Premium production (15,000) instead of the direct labor hours *per unit* (3.0). Another mistake is to use the direct labor hours for the Standard product. Make sure to carefully read the question and use the correct data.\n\n**Exam Tip:**\nWhen dealing with traditional costing, always remember that the allocation base (in this case, direct labor hours) drives the overhead allocation. Identify the correct allocation base and apply it consistently to calculate the overhead allocated to each product or service. Double-check your calculations and units to avoid errors.",
+          "enhanced": true,
+          "keyFormula": "Overhead per unit = (Total Overhead / Total Allocation Base) * Allocation Base per unit",
+          "commonMistakes": [
+            "Forgetting to multiply the overhead rate by the direct labor hours *per unit* of the Premium product.",
+            "Using the total direct labor hours for Premium production instead of the direct labor hours *per unit*."
+          ],
+          "examTip": "When dealing with traditional costing, always remember that the allocation base drives the overhead allocation. Identify the correct allocation base and apply it consistently."
+        },
+        {
+          "id": "cma1-cbq-009-q2",
+          "prompt": "Under ABC, calculate the total overhead allocated to one Premium unit. Round to the nearest cent.",
+          "type": "numerical_entry",
+          "correctAnswer": 148.57,
+          "tolerance": 0.1,
+          "points": 5,
+          "explanation": "ABC rates: Machine = $500,000 ÷ 35,000 MH = $14.286/MH → Premium: 2.0 × $14.286 = $28.57. Setups = $300,000 ÷ 100 = $3,000/setup → Premium: 80/5,000 × $3,000 = $48.00. Inspection = $250,000 ÷ 500 = $500/insp → Premium: 400/5,000 × $500 = $40.00. Purchasing = $200,000 ÷ 250 = $800/PO → Premium: 200/5,000 × $800 = $32.00. Total ABC OH per Premium = $28.57 + $48.00 + $40.00 + $32.00 = $148.57.",
+          "enhanced": true
+        },
+        {
+          "id": "cma1-cbq-009-q3",
+          "prompt": "By how much does the traditional system under-cost the Premium product (ABC overhead minus traditional overhead per unit)?",
+          "type": "numerical_entry",
+          "correctAnswer": 90.88,
+          "tolerance": 0.1,
+          "points": 5,
+          "explanation": "To determine the amount by which the traditional system under-costs the Premium product, we need to calculate the overhead cost per unit for the Premium product under both the activity-based costing (ABC) system and the traditional costing system. Then, we find the difference.\n\n**Step-by-Step Solution:**\n\n**1. Calculate the ABC overhead cost per unit for the Premium product:**\n\n*   **Machine Operation:**\n    *   Total machine hours = (50,000 units * 0.5 hours/unit) + (5,000 units * 2.0 hours/unit) = 25,000 + 10,000 = 35,000 machine hours\n    *   Machine operation rate = $500,000 / 35,000 machine hours = $14.29 per machine hour (rounded)\n    *   Machine operation cost for Premium = 5,000 units * 2.0 hours/unit * $14.29/hour = $142,900\n    *   Machine operation cost per unit for Premium = $142,900 / 5,000 units = $28.58\n\n*   **Setups:**\n    *   Setup rate = $300,000 / (20 + 80) setups = $300,000 / 100 setups = $3,000 per setup\n    *   Setup cost for Premium = 80 setups * $3,000/setup = $240,000\n    *   Setup cost per unit for Premium = $240,000 / 5,000 units = $48.00\n\n*   **Quality Inspection:**\n    *   Inspection rate = $250,000 / (100 + 400) inspections = $250,000 / 500 inspections = $500 per inspection\n    *   Inspection cost for Premium = 400 inspections * $500/inspection = $200,000\n    *   Inspection cost per unit for Premium = $200,000 / 5,000 units = $40.00\n\n*   **Purchasing:**\n    *   Purchasing rate = $200,000 / (50 + 200) purchase orders = $200,000 / 250 purchase orders = $800 per purchase order\n    *   Purchasing cost for Premium = 200 purchase orders * $800/purchase order = $160,000\n    *   Purchasing cost per unit for Premium = $160,000 / 5,000 units = $32.00\n\n*   **Total ABC Overhead Cost per Unit for Premium:**\n    *   $28.58 + $48.00 + $40.00 + $32.00 = $148.58\n\n**2. Calculate the traditional overhead cost per unit for the Premium product:**\n\n*   Traditional overhead rate = $19.23 per direct labor hour (given)\n*   Direct labor hours per unit for Premium = 3 hours\n*   Traditional overhead cost per unit for Premium = 3 hours * $19.23/hour = $57.69\n\n**3. Calculate the under-costing:**\n\n*   Under-costing = ABC overhead per unit - Traditional overhead per unit\n*   Under-costing = $148.58 - $57.69 = $90.89 (rounded)\n\n**Key Concept:**\n*   This question tests the understanding of activity-based costing (ABC) versus traditional costing methods, as outlined in the IMA Content Specification Outline, Part 1, Section A: Cost Management, Learning Outcome 2.b: \"Compare and contrast traditional costing systems with activity-based costing (ABC) systems.\"\n\n**Common Mistake:**\n*   Failing to calculate the correct activity rates for each cost pool under the ABC system.\n*   Using the total direct labor hours for both products when calculating the traditional overhead for only the Premium product.\n*   Forgetting to divide the total overhead cost allocated to the Premium product by the number of Premium units to arrive at a per-unit cost.\n\n**Exam Tip:**\n*   When dealing with ABC costing problems, carefully identify the cost drivers for each activity and calculate the activity rates accurately. Pay attention to whether the question asks for total cost or cost per unit.",
+          "enhanced": true,
+          "commonMistakes": [
+            "Failing to calculate the correct activity rates for each cost pool under the ABC system.",
+            "Using the total direct labor hours for both products when calculating the traditional overhead for only the Premium product."
+          ],
+          "examTip": "When dealing with ABC costing problems, carefully identify the cost drivers for each activity and calculate the activity rates accurately. Pay attention to whether the question asks for total cost or cost per unit."
+        },
+        {
+          "id": "cma1-cbq-009-q4",
+          "prompt": "Which statement best explains WHY the traditional system misprices products?",
+          "type": "dropdown",
+          "options": [
+            "It uses too many cost pools, spreading costs too thinly",
+            "It uses a single volume-based driver that ignores complexity-driven costs",
+            "It allocates more overhead to low-volume products",
+            "It fails to include direct materials in the allocation base"
+          ],
+          "correctAnswer": "It uses a single volume-based driver that ignores complexity-driven costs",
+          "points": 5,
+          "explanation": "Traditional costing uses one volume-based driver (DL hours), which spreads batch-level and product-level costs (setups, inspections, purchasing) evenly across all units. Low-volume, complex products consume disproportionately more of these activities but receive too little overhead under the volume-based allocation.",
+          "enhanced": true
+        },
+        {
+          "id": "cma1-cbq-009-q5",
+          "prompt": "Which decisions could be improved by switching to ABC? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Product pricing – set prices that reflect true cost",
+            "Product mix – emphasize genuinely profitable products",
+            "Process improvement – target high-cost activities for reduction",
+            "Capital budgeting – evaluate equipment purchase NPV",
+            "Customer profitability – identify unprofitable customer segments"
+          ],
+          "correctAnswer": [
+            "Product pricing – set prices that reflect true cost",
+            "Product mix – emphasize genuinely profitable products",
+            "Process improvement – target high-cost activities for reduction",
+            "Customer profitability – identify unprofitable customer segments"
+          ],
+          "points": 5,
+          "explanation": "ABC improves pricing, mix, process improvement, and customer profitability decisions by providing accurate cost information. Capital budgeting relies on incremental cash flows and cost of capital, not product costing methodology.",
+          "enhanced": false
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 18,
+      "difficulty": "medium",
+      "topics": [
+        "Activity-Based Costing",
+        "Cost Allocation",
+        "Product Costing"
+      ],
+      "blueprintArea": "CMA1-D"
+    },
+    {
+      "id": "cma1-cbq-010",
+      "section": "CMA1",
+      "title": "Data Analytics and Finance Transformation",
+      "scenario": "\n## Vertex Financial Services – Analytics Transformation\n\nVertex's CFO is implementing an enterprise analytics platform to modernize the finance function. The project team has identified the following use cases and current state:\n\n### Current State Challenges\n- Monthly close takes 12 business days (industry best: 4 days)\n- 85% of analyst time spent on data gathering vs. 15% on analysis\n- 47 standalone spreadsheets used for management reporting\n- 3 instances of material report errors discovered in past year\n- No standardized data definitions across business units\n\n### Proposed Analytics Capabilities\n| Capability | Investment | Annual Benefit |\n|------------|-----------|----------------|\n| Automated data pipelines | $400,000 | $280,000 (labor savings) |\n| Self-service BI dashboards | $250,000 | $150,000 (faster decisions) |\n| Predictive revenue forecasting | $300,000 | $450,000 (improved accuracy) |\n| Anomaly detection (controls) | $200,000 | $350,000 (fraud/error prevention) |\n| **Total** | **$1,150,000** | **$1,230,000** |\n    ",
+      "exhibits": [],
+      "questions": [
+        {
+          "id": "cma1-cbq-010-q1",
+          "prompt": "What is the simple payback period (in years) for the total analytics investment? Round to two decimal places.",
+          "type": "numerical_entry",
+          "correctAnswer": 0.93,
+          "tolerance": 0.02,
+          "points": 5,
+          "explanation": "The payback period is the amount of time it takes for an investment to generate enough cash flow to cover its initial cost. In this case, we need to calculate how long it will take for the annual benefits of the analytics investment to equal the total investment.\n\n**Step-by-Step Solution:**\n1. **Identify the Total Investment:** From the table, the total investment is $1,150,000.\n2. **Identify the Total Annual Benefit:** From the table, the total annual benefit is $1,230,000.\n3. **Calculate the Payback Period:**  Payback Period = Total Investment / Annual Benefit\n   Payback Period = $1,150,000 / $1,230,000 = 0.934959...\n4. **Round to Two Decimal Places:** The payback period is approximately 0.93 years.\n\n**Key Concept:**\nThis question tests your understanding of capital budgeting techniques, specifically the payback period. (IMA Content Specification Outline: Part 1, Area: A. Planning, Budgeting, and Forecasting, Topic: 3. Capital Budgeting, Subtopic: a. Discounted cash flow analysis (net present value, internal rate of return), b. Payback, c. Accounting rate of return)\n\n**Common Mistake:**\n*   **Forgetting to use the TOTAL investment and benefit:** A common mistake is to calculate the payback period for each individual capability instead of the entire project. Make sure to sum the investments and benefits across all capabilities before calculating the overall payback period.\n*   **Incorrectly dividing:** Ensure you divide the total investment by the annual benefit, not the other way around. Dividing the annual benefit by the total investment would give you the return on investment, not the payback period.\n\n**Exam Tip:**\nPay close attention to the units requested in the answer. In this case, the answer is requested in *years* rounded to two decimal places. Make sure to provide your answer in the correct format to avoid losing points, even if your calculation is correct.",
+          "enhanced": true,
+          "keyFormula": "Payback Period = Total Investment / Annual Benefit",
+          "commonMistakes": [
+            "Calculating payback for individual capabilities instead of the total project.",
+            "Incorrectly dividing annual benefit by total investment."
+          ],
+          "examTip": "Always double-check the required units and rounding instructions before submitting your answer."
+        },
+        {
+          "id": "cma1-cbq-010-q2",
+          "prompt": "Arrange the analytics maturity levels from LEAST to MOST advanced:",
+          "type": "drag_and_drop",
+          "dragItems": [
+            "Prescriptive analytics (What should we do?)",
+            "Descriptive analytics (What happened?)",
+            "Predictive analytics (What will happen?)",
+            "Diagnostic analytics (Why did it happen?)"
+          ],
+          "correctAnswer": [
+            "Descriptive analytics (What happened?)",
+            "Diagnostic analytics (Why did it happen?)",
+            "Predictive analytics (What will happen?)",
+            "Prescriptive analytics (What should we do?)"
+          ],
+          "points": 5,
+          "explanation": "The analytics maturity spectrum progresses: Descriptive (reporting past), Diagnostic (root cause), Predictive (forecasting future), Prescriptive (recommending actions). Each level builds on the previous.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-010-q3",
+          "prompt": "Which data governance practices should Vertex implement FIRST? Select ALL that apply.",
+          "type": "multiple_select",
+          "options": [
+            "Establish a master data dictionary with standardized definitions",
+            "Implement data quality validation rules at point of entry",
+            "Deploy machine learning models for revenue prediction",
+            "Create role-based data access controls",
+            "Build real-time executive dashboards"
+          ],
+          "correctAnswer": [
+            "Establish a master data dictionary with standardized definitions",
+            "Implement data quality validation rules at point of entry",
+            "Create role-based data access controls"
+          ],
+          "points": 5,
+          "explanation": "Governance foundations must come first: standardized definitions address the \"no standardized data definitions\" issue; validation rules prevent the report errors; access controls ensure security. ML models and dashboards are analytics capabilities that depend on clean, governed data.",
+          "enhanced": false
+        },
+        {
+          "id": "cma1-cbq-010-q4",
+          "prompt": "If automated data pipelines reduce the monthly close from 12 to 5 days and each day saved frees 8 FTEs at $350/day, what is the annual labor savings? (12 monthly closes.)",
+          "type": "numerical_entry",
+          "correctAnswer": 235200,
+          "tolerance": 100,
+          "points": 5,
+          "explanation": "The question asks for the annual labor savings resulting from the reduction in monthly close time due to automated data pipelines. We need to calculate the days saved per close, the savings per close, and then annualize the savings.\n\n**Step-by-Step Solution:**\n1. **Calculate days saved per close:** The monthly close is reduced from 12 days to 5 days.  Therefore, the days saved per close are 12 - 5 = 7 days.\n2. **Calculate savings per close:** Each day saved frees up 8 FTEs (Full-Time Equivalents), and each FTE costs $350 per day. So, the savings per close are 7 days * 8 FTEs/day * $350/FTE = $19,600.\n3. **Calculate annual savings:** There are 12 monthly closes in a year. Therefore, the annual labor savings are $19,600/close * 12 closes/year = $235,200.\n\n**Key Concept:**\nThis question tests your ability to analyze cost savings resulting from process improvements, a key aspect of performance management and financial analysis. (IMA Content Specification Outline: Part 1, Section A: Planning, Budgeting, and Forecasting, Area 2: Forecasting Techniques)\n\n**Common Mistake:**\n*   **Forgetting to annualize:** A common mistake is to calculate the savings per close but forget to multiply by the number of closes per year (12). Make sure to read the question carefully and identify the required time period.\n*   **Misinterpreting the FTE cost:** Confusing the daily cost of an FTE with the total cost of the project or some other irrelevant number from the scenario.\n\n**Exam Tip:**\nWhen dealing with cost savings calculations, pay close attention to the units (e.g., per day, per month, per year) and ensure that your final answer is in the correct units as requested by the question. Double-check your calculations before submitting your answer.",
+          "enhanced": true,
+          "keyFormula": "Annual Savings = (Days Saved per Close * FTEs Freed * Cost per FTE) * Number of Closes",
+          "commonMistakes": [
+            "Forgetting to annualize the savings.",
+            "Misinterpreting the FTE cost or using irrelevant information from the scenario."
+          ],
+          "examTip": "Always double-check the units and time period requested in the question to ensure your final answer is in the correct format."
+        },
+        {
+          "id": "cma1-cbq-010-q5",
+          "prompt": "Which risk is MOST critical for the CFO to address when implementing predictive revenue forecasting?",
+          "type": "dropdown",
+          "options": [
+            "Model overfitting to historical data that may not reflect future conditions",
+            "Dashboards taking too long to load for executives",
+            "Employees resisting change from spreadsheets to new tools",
+            "The investment exceeding the IT department budget"
+          ],
+          "correctAnswer": "Model overfitting to historical data that may not reflect future conditions",
+          "points": 5,
+          "explanation": "Model overfitting is the most critical analytics risk—a model that performs well on historical data but fails on new data leads to worse decisions than no model at all. Change management and IT budget are implementation risks, not analytics-specific risks. Dashboard performance is a UX concern, not a strategic risk.",
+          "enhanced": true
+        }
+      ],
+      "totalPoints": 25,
+      "estimatedMinutes": 16,
+      "difficulty": "medium",
+      "topics": [
+        "Data Analytics",
+        "Data Governance",
+        "Technology Transformation"
+      ],
+      "blueprintArea": "CMA1-F"
+    }
+  ],
+  "enhancedAt": "2026-03-01T12:36:59.545Z"
+}

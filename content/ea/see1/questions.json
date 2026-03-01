@@ -7259,7 +7259,7 @@
       "topic": "Business income (Schedule C)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria runs a consulting business as a sole proprietor. Her qualified business income is $200,000. The QBI deduction under Section 199A is limited to:\nA) 50% of qualified business income | B) 20% of qualified business income, subject to limitations | C) 10% of qualified business income | D) 25% of qualified business income",
+      "question": "Maria runs a consulting business as a sole proprietor. Her qualified business income is $200,000. The QBI deduction under Section 199A is limited to:",
       "options": [
         "50% of qualified business income, without considering W-2 wages or capital limitations.",
         "20% of qualified business income, subject to limitations",
@@ -7294,7 +7294,7 @@
       "topic": "Business income (Schedule C)",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "John's taxable income exceeds the QBI threshold. His business generated $300,000 in QBI, paid $80,000 in W-2 wages, and has $100,000 in UBIA. For taxpayers above the QBI income threshold, the deduction is limited to the greater of:\nA) 50% of net income | B) 50% of W-2 wages or 25% of W-2 wages plus 2.5% of UBIA | C) 20% of gross receipts | D) 25% of W-2 wages or 10% of qualified property",
+      "question": "John's taxable income exceeds the QBI threshold. His business generated $300,000 in QBI, paid $80,000 in W-2 wages, and has $100,000 in UBIA. For taxpayers above the QBI income threshold, the deduction is limited to the greater of:",
       "options": [
         "50% of net income from the qualified business activity",
         "50% of W-2 wages or 25% of W-2 wages plus 2.5% of UBIA",
@@ -7329,7 +7329,7 @@
       "topic": "Business income (Schedule C)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Smith & Jones, a small business, purchased new equipment for $1,200,000 in 2024. Section 179 allows immediate expensing of business assets up to:\nA) $1,160,000 for 2024 | B) $2,500,000 for 2024 | C) $500,000 for 2024 | D) $1,000,000 for 2024",
+      "question": "Smith & Jones, a small business, purchased new equipment for $1,200,000 in 2024. Section 179 allows immediate expensing of business assets up to:",
       "options": [
         "$1,160,000 for 2024",
         "$2,500,000 for 2024",
@@ -7364,7 +7364,7 @@
       "topic": "Retirement distributions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David, age 55, needs to withdraw funds from his traditional IRA to cover unexpected medical expenses. Distributions from a traditional IRA before age 59½ are generally subject to:\nA) Capital gains tax only | B) A 10% early distribution penalty plus regular income tax | C) No penalty if used for any purpose | D) A 5% penalty",
+      "question": "David, age 55, needs to withdraw funds from his traditional IRA to cover unexpected medical expenses. Distributions from a traditional IRA before age 59½ are generally subject to:",
       "options": [
         "Capital gains tax only, calculated based on the IRA's growth since inception.",
         "A 10% early distribution penalty plus regular income tax",
@@ -7434,7 +7434,7 @@
       "topic": "Retirement distributions",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah has a traditional IRA. She turned 73 on March 15, 2024. Required minimum distributions from traditional IRAs must begin by:\nA) Age 59½ | B) December 31 of the year the owner turns 70½ | C) April 1 following the year the owner turns 73 | D) Age 65",
+      "question": "Sarah has a traditional IRA. She turned 73 on March 15, 2024. Required minimum distributions from traditional IRAs must begin by:",
       "options": [
         "Age 59½, the earliest age to take distributions without penalty, regardless of RMD rules.",
         "December 31 of the year the owner turns 70½",
@@ -7469,7 +7469,7 @@
       "topic": "Retirement distributions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark wants to move his retirement savings from his current employer's 401(k) plan to a new 401(k) plan at his new job. A direct rollover from one 401(k) to another:\nA) Is limited to once per year | B) Avoids the 20% mandatory withholding requirement | C) Must be completed within 30 days | D) Is taxable",
+      "question": "Mark wants to move his retirement savings from his current employer's 401(k) plan to a new 401(k) plan at his new job. A direct rollover from one 401(k) to another:",
       "options": [
         "Is limited to once per year, mirroring IRA rollover rules",
         "Avoids the 20% mandatory withholding requirement",
@@ -7504,7 +7504,7 @@
       "topic": "Retirement distributions",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Lisa received a distribution from her IRA on July 1, 2024, intending to roll it over into a new IRA. An indirect IRA rollover must be completed within:\nA) 30 days | B) 60 days | C) 90 days | D) 120 days",
+      "question": "Lisa received a distribution from her IRA on July 1, 2024, intending to roll it over into a new IRA. An indirect IRA rollover must be completed within:",
       "options": [
         "30 days",
         "60 days",
@@ -7539,7 +7539,7 @@
       "topic": "Social Security benefits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tom and Mary are married and file jointly. Their combined income is quite high, including Social Security benefits. What is the maximum percentage of Social Security benefits that may be taxable?\nA) 100% | B) 85% | C) 50% | D) 75%",
+      "question": "Tom and Mary are married and file jointly. Their combined income is quite high, including Social Security benefits. What is the maximum percentage of Social Security benefits that may be taxable?",
       "options": [
         "100%",
         "85%",
@@ -13104,7 +13104,7 @@
       "topic": "Business income (Schedule C)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John operates \"John's Custom Guitars\" as a sole proprietorship. His 2024 taxable income is $200,000 before the QBI deduction. However, his income increases to $400,000 in 2025. The QBI deduction wage/capital limitation applies when taxable income exceeds:\nA) $250,000 | B) $100,000 | C) $191,950 single / $383,900 MFJ (2024) | D) All income levels",
+      "question": "John operates \"John's Custom Guitars\" as a sole proprietorship. His 2024 taxable income is $200,000 before the QBI deduction. However, his income increases to $400,000 in 2025. The QBI deduction wage/capital limitation applies when taxable income exceeds:",
       "options": [
         "$250,000 single / $500,000 MFJ, indexed for inflation",
         "$100,000 regardless of filing status or inflation",
@@ -13139,7 +13139,7 @@
       "topic": "Social Security benefits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Robert, a retired individual, receives Social Security benefits. His combined income, including tax-exempt interest and one-half of his Social Security benefits, is relatively high. What is the maximum taxable portion of Robert's Social Security benefits?\nA) 50% | B) 100% | C) 85% | D) 75%",
+      "question": "Robert, a retired individual, receives Social Security benefits. His combined income, including tax-exempt interest and one-half of his Social Security benefits, is relatively high. What is the maximum taxable portion of Robert's Social Security benefits?",
       "options": [
         "50%",
         "100%",
@@ -13174,7 +13174,7 @@
       "topic": "Social Security benefits",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria receives Tier 1 Railroad Retirement benefits. For income tax purposes, how are these Tier 1 benefits treated?\nA) As ordinary income | B) Not taxable | C) Like Social Security benefits | D) As capital gains",
+      "question": "Maria receives Tier 1 Railroad Retirement benefits. For income tax purposes, how are these Tier 1 benefits treated?",
       "options": [
         "As ordinary income, fully taxable without any special deductions.",
         "Not taxable, as they represent a return of contributions.",
@@ -13209,7 +13209,7 @@
       "topic": "Estimated tax payments",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah anticipates owing $10,000 in taxes for the current year. Her prior year tax liability was $8,000, and her AGI was $160,000. To avoid an underpayment penalty, Sarah must pay at least:\nA) 75% of tax due | B) 80% of tax due | C) 90% of current year tax OR 100% of prior year tax (110% if AGI > $150,000) | D) 100% of current year tax",
+      "question": "Sarah anticipates owing $10,000 in taxes for the current year. Her prior year tax liability was $8,000, and her AGI was $160,000. To avoid an underpayment penalty, Sarah must pay at least:",
       "options": [
         "75% of the current year's tax liability, a safe harbor for avoiding penalties only if estimated payments are made quarterly.",
         "80% of the current year's tax liability, a threshold sometimes considered sufficient, but it doesn't account for prior year safe harbors.",
@@ -13244,7 +13244,7 @@
       "topic": "Estimated tax requirements",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David is self-employed and needs to make estimated tax payments. When are these payments due to the IRS?\nA) Annually on April 15 | B) Monthly | C) April 15, June 15, September 15, January 15 | D) Quarterly on last day of each quarter",
+      "question": "David is self-employed and needs to make estimated tax payments. When are these payments due to the IRS?",
       "options": [
         "Annually on April 15, coinciding with the standard individual income tax filing deadline.",
         "Monthly, with payments due on the 15th of each month to ensure even tax distribution.",
@@ -13279,7 +13279,7 @@
       "topic": "Filing requirements and due dates",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Emily filed for an extension on her 2023 Form 1040 on April 15, 2024. She owes taxes. Filing an extension for Form 1040:\nA) Extends time to pay | B) Eliminates penalties | C) Extends time to file but not time to pay | D) Grants refund immediately",
+      "question": "Emily filed for an extension on her 2023 Form 1040 on April 15, 2024. She owes taxes. Filing an extension for Form 1040:",
       "options": [
         "Extends time to pay if reasonable cause exists",
         "Eliminates penalties if 90% paid by original due date",
@@ -13314,7 +13314,7 @@
       "topic": "Filing requirements and due dates",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Corp. failed to file its corporate income tax return by the extended due date. What is the penalty for late filing?\nA) 1% per month | B) 0.5% per month | C) 5% per month, maximum 25% | D) 10% per month",
+      "question": "ABC Corp. failed to file its corporate income tax return by the extended due date. What is the penalty for late filing?",
       "options": [
         "1% per month, up to a maximum of 5%",
         "0.5% per month, up to a maximum of 12%",
@@ -13349,7 +13349,7 @@
       "topic": "Filing requirements and due dates",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "XYZ LLC filed its tax return on time but did not pay the full amount of taxes owed by the due date. What is the penalty for late payment?\nA) 10% per month | B) 1% per month | C) 0.5% per month, maximum 25% | D) 5% per month",
+      "question": "XYZ LLC filed its tax return on time but did not pay the full amount of taxes owed by the due date. What is the penalty for late payment?",
       "options": [
         "10% per month, up to a maximum of 50%",
         "1% per month until the balance is paid",
@@ -13979,7 +13979,7 @@
       "topic": "Capital gains and losses",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Green Acres Realty is considering selling a commercial building and acquiring another. After the TCJA, like-kind (Section 1031) exchanges are available for:\nA) Personal property only | B) Securities and real property | C) Real property only | D) All business property",
+      "question": "Green Acres Realty is considering selling a commercial building and acquiring another. After the TCJA, like-kind (Section 1031) exchanges are available for:",
       "options": [
         "Personal property only",
         "Securities and real property",
@@ -14014,7 +14014,7 @@
       "topic": "Capital gains and losses",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Davis Investments is selling an apartment building and plans to acquire a replacement property through a Section 1031 exchange. To qualify for full deferral, the replacement property must be identified within:\nA) 90 days | B) 60 days | C) 45 days | D) 30 days",
+      "question": "Davis Investments is selling an apartment building and plans to acquire a replacement property through a Section 1031 exchange. To qualify for full deferral, the replacement property must be identified within:",
       "options": [
         "90 days",
         "60 days",
@@ -14049,7 +14049,7 @@
       "topic": "Capital gains and losses",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria exchanged a rental property for another, but also received $20,000 cash and a boat worth $10,000. In a 1031 exchange, \"boot\" refers to:\nA) Deferred gain | B) The relinquished property | C) Non-like-kind property or cash received, taxable to extent of realized gain | D) The replacement property",
+      "question": "Maria exchanged a rental property for another, but also received $20,000 cash and a boat worth $10,000. In a 1031 exchange, \"boot\" refers to:",
       "options": [
         "Gain that is automatically deferred indefinitely, regardless of boot received.",
         "The original property given up in the exchange, whose basis carries over.",
@@ -14084,7 +14084,7 @@
       "topic": "Capital gains and losses",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John sells land to his sister, and she intends to perform a 1031 exchange. A 1031 exchange with a related party requires:\nA) No special rules | B) Immediate gain recognition | C) Both parties hold property for 2 years or gain is recognized | D) IRS approval",
+      "question": "John sells land to his sister, and she intends to perform a 1031 exchange. A 1031 exchange with a related party requires:",
       "options": [
         "Related party exchanges follow standard 1031 guidelines without modification.",
         "The related party transfer triggers immediate gain recognition for the transferor.",
@@ -14154,7 +14154,7 @@
       "topic": "Capital gains and losses",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "A fire destroyed Sarah's warehouse, which had an adjusted basis of $200,000. She received $300,000 in insurance proceeds. If insurance proceeds exceed the basis of destroyed property:\nA) Proceeds are always excluded | B) All proceeds are taxable | C) Gain can be deferred under Section 1033 if replacement property acquired | D) No gain recognized",
+      "question": "A fire destroyed Sarah's warehouse, which had an adjusted basis of $200,000. She received $300,000 in insurance proceeds. If insurance proceeds exceed the basis of destroyed property:",
       "options": [
         "Insurance proceeds are always excluded from gross income, regardless of the basis or replacement plans.",
         "All insurance proceeds received due to involuntary conversion are taxable as ordinary income in the year received.",
@@ -14189,7 +14189,7 @@
       "topic": "Health savings accounts",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark is reviewing health savings options for his clients. Archer MSAs are:\nA) The same as HSAs | B) Still available for new contributions | C) Grandfathered for existing accounts only, no new MSAs since 2007 | D) Replaced by Roth IRAs",
+      "question": "Mark is reviewing health savings options for his clients. Archer MSAs are:",
       "options": [
         "Subject to the same contribution limits and eligibility requirements as HSAs, but with fewer investment options.",
         "Still available for new contributions if the individual meets specific pre-2008 eligibility requirements and has no other health coverage.",
@@ -14224,7 +14224,7 @@
       "topic": "Health savings accounts",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan, age 58, uses funds from her HSA to pay for a vacation. HSA distributions for non-qualified expenses by someone under 65 are:\nA) Tax-free | B) Subject to 50% penalty | C) Included in income plus 20% penalty | D) 10% penalty only",
+      "question": "Susan, age 58, uses funds from her HSA to pay for a vacation. HSA distributions for non-qualified expenses by someone under 65 are:",
       "options": [
         "Tax-free if used within the same calendar year",
         "Subject to 50% penalty, but only on amounts over $10,000",
@@ -14259,7 +14259,7 @@
       "topic": "Health savings accounts",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "David wants to maximize his HSA contributions. He enrolls in a HDHP on December 1st. The HSA last-month rule allows full-year contribution if:\nA) Any day of coverage in the year | B) Only if started January 1 | C) HDHP coverage on December 1, but must maintain 13 months or recapture applies | D) HDHP coverage all 12 months",
+      "question": "David wants to maximize his HSA contributions. He enrolls in a HDHP on December 1st. The HSA last-month rule allows full-year contribution if:",
       "options": [
         "Any day of HDHP coverage in December allows full HSA contribution, regardless of prior coverage.",
         "Only if HDHP coverage began on January 1st, with continuous coverage throughout the entire calendar year.",
@@ -14854,7 +14854,7 @@
       "topic": "Education tax benefits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria and David are planning for their children's future education. They established a 529 plan several years ago. Which of the following expenses are considered qualified expenses for a 529 plan? A) Transportation expenses | B) Room and board only | C) Tuition, fees, books, supplies, equipment, room and board (if enrolled half-time), and K-12 tuition up to $10,000 | D) Tuition only",
+      "question": "Maria and David are planning for their children's future education. They established a 529 plan several years ago. Which of the following expenses are considered qualified expenses for a 529 plan?",
       "options": [
         "Transportation expenses, including commuting costs to and from the educational institution, are qualified 529 expenses.",
         "Room and board expenses are qualified only if the beneficiary is enrolled at least full-time and living in university-owned housing.",
@@ -14889,7 +14889,7 @@
       "topic": "Retirement planning considerations",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John inherited a 529 plan from his grandmother. Under SECURE 2.0, he's considering rolling the 529 into a Roth IRA for himself. This 529 to Roth IRA rollover is permitted if: A) Always permitted without limits | B) Only if 529 earnings exceed basis | C) Account was open 15+ years, lifetime $35,000 limit, subject to annual Roth limits | D) Beneficiary is over 59½",
+      "question": "John inherited a 529 plan from his grandmother. Under SECURE 2.0, he's considering rolling the 529 into a Roth IRA for himself. This 529 to Roth IRA rollover is permitted if:",
       "options": [
         "Always permitted without limits, provided the original beneficiary is maintained and contributions were made at least five years prior.",
         "Only if 529 earnings exceed the original contribution basis, and the rollover is completed within the same calendar year the funds are distributed.",
@@ -14924,7 +14924,7 @@
       "topic": "Interest and dividends",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah redeemed Series EE bonds to pay for her daughter's college tuition. The interest earned was $1,500. Series EE or I bond interest used for qualified education may be: A) Tax-free for anyone | B) Treated as capital gain | C) Excluded if income is below phase-out limits and bonds redeemed for qualified expenses | D) Always taxable",
+      "question": "Sarah redeemed Series EE bonds to pay for her daughter's college tuition. The interest earned was $1,500. Series EE or I bond interest used for qualified education may be:",
       "options": [
         "Tax-free for anyone regardless of income level or the type of educational institution attended by the student.",
         "Treated as a long-term capital gain and taxed at a preferential rate, regardless of the taxpayer's ordinary income tax bracket.",
@@ -14959,7 +14959,7 @@
       "topic": "Education tax benefits",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Michael is a freshman at State University. His parents are exploring education tax credits. The American Opportunity Tax Credit covers: A) Graduate school tuition | B) Any education expense | C) Tuition, fees, and required course materials only | D) Room, board, and transportation",
+      "question": "Michael is a freshman at State University. His parents are exploring education tax credits. The American Opportunity Tax Credit covers:",
       "options": [
         "Graduate school tuition and expenses for advanced degrees",
         "Any education expense, including books, supplies, and room and board",
@@ -14994,7 +14994,7 @@
       "topic": "Education tax benefits",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Jessica is applying for the American Opportunity Tax Credit to help pay for her college expenses. However, she was convicted of a felony drug offense at the end of the tax year. A student with a felony drug conviction: A) May only claim LLC | B) Is always eligible for AOTC | C) Is ineligible for AOTC if conviction is at end of tax year | D) Must repay prior credits",
+      "question": "Jessica is applying for the American Opportunity Tax Credit to help pay for her college expenses. However, she was convicted of a felony drug offense at the end of the tax year. A student with a felony drug conviction:",
       "options": [
         "May only claim the Lifetime Learning Credit if all other AOTC requirements are met.",
         "Is always eligible for the AOTC, regardless of any prior felony drug convictions or other eligibility criteria.",
@@ -15029,7 +15029,7 @@
       "topic": "Education tax benefits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tom is taking courses at the local community college to improve his job skills. He is exploring education tax credits. The Lifetime Learning Credit is: A) 100% of expenses up to $2,500 | B) Available only for first 4 years | C) 20% of up to $10,000 qualified expenses, phased out based on MAGI | D) Unlimited",
+      "question": "Tom is taking courses at the local community college to improve his job skills. He is exploring education tax credits. The Lifetime Learning Credit is:",
       "options": [
         "100% of tuition expenses up to $2,500, but only for degree programs.",
         "Available only for the first four years of post-secondary education, and must be full-time.",
@@ -15064,7 +15064,7 @@
       "topic": "Education tax benefits",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Smiths have two children in college. They are exploring education tax credits. A taxpayer may claim both AOTC and LLC in the same year if: A) Both are for the same student | B) The credits are never allowed in same year | C) They are for different eligible students | D) Combined credit is under $2,500",
+      "question": "The Smiths have two children in college. They are exploring education tax credits. A taxpayer may claim both AOTC and LLC in the same year if:",
       "options": [
         "Both are for the same student",
         "The credits are never allowed in same year",
@@ -15099,7 +15099,7 @@
       "topic": "Above-the-line deductions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David is self-employed and pays $6,000 in health insurance premiums during the year. His net self-employment income is $40,000. Self-employed health insurance premiums are: A) Not deductible | B) An itemized deduction | C) An above-the-line deduction limited to net SE income | D) A tax credit",
+      "question": "David is self-employed and pays $6,000 in health insurance premiums during the year. His net self-employment income is $40,000. Self-employed health insurance premiums are:",
       "options": [
         "Not deductible, as they are considered personal expenses.",
         "An itemized deduction subject to the 7.5% AGI threshold.",
@@ -16534,7 +16534,7 @@
       "topic": "Refundable credits (EITC, CTC)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria Garcia is a 35-year-old single individual with no dependents. She worked part-time in 2024 and wants to claim the Earned Income Tax Credit (EITC). A childless individual can claim EITC if they are: A) Age 25-64 | B) Any age | C) Under age 55 | D) At least age 25 (no upper limit after ARPA made permanent)",
+      "question": "Maria Garcia is a 35-year-old single individual with no dependents. She worked part-time in 2024 and wants to claim the Earned Income Tax Credit (EITC). A childless individual can claim EITC if they are:",
       "options": [
         "Age 25-64, reflecting prior law before recent tax changes",
         "Any age, provided they meet all other EITC eligibility rules",
@@ -16569,7 +16569,7 @@
       "topic": "Refundable credits (EITC, CTC)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John and Mary Smith are filing jointly and want to claim the Earned Income Tax Credit (EITC) for their child, David. A qualifying child for EITC must: A) Have income under $5,000 | B) Only be under age 17 | C) Be a biological child | D) Be under 19 (or 24 if student), or any age if permanently disabled, and live with taxpayer for over half the year",
+      "question": "John and Mary Smith are filing jointly and want to claim the Earned Income Tax Credit (EITC) for their child, David. A qualifying child for EITC must:",
       "options": [
         "Have unearned income under $5,000 and total income less than $11,000, excluding any earned income from work performed while attending school.",
         "Only be under age 17 at the end of the tax year, unless they are enrolled in a qualified educational program leading to a degree or certification.",
@@ -16604,7 +16604,7 @@
       "topic": "Refundable credits (EITC, CTC)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The IRS denied Sarah Miller's Earned Income Tax Credit (EITC) claim for 2022 due to fraudulent misrepresentation of her income. If EITC is denied due to fraud, the taxpayer is disqualified from claiming EITC for: A) Life | B) 2 years | C) 5 years | D) 10 years",
+      "question": "The IRS denied Sarah Miller's Earned Income Tax Credit (EITC) claim for 2022 due to fraudulent misrepresentation of her income. If EITC is denied due to fraud, the taxpayer is disqualified from claiming EITC for:",
       "options": [
         "Life, barring IRS reinstatement",
         "2 years",
@@ -16639,7 +16639,7 @@
       "topic": "Refundable credits (EITC, CTC)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Thompson family is preparing their 2024 tax return and have two qualifying children. What is the maximum *refundable* amount of the Child Tax Credit they can potentially receive? A) Full $2,000 per child | B) Not refundable | C) $1,000 per child | D) Up to $1,700 per child (refundable portion)",
+      "question": "The Thompson family is preparing their 2024 tax return and have two qualifying children. What is the maximum *refundable* amount of the Child Tax Credit they can potentially receive?",
       "options": [
         "The full $2,000 per child, regardless of tax liability.",
         "The Child Tax Credit is entirely non-refundable for 2024.",
@@ -16709,7 +16709,7 @@
       "topic": "Refundable credits (EITC, CTC)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David Lee is preparing his 2024 tax return and wants to claim the Child Tax Credit for his son, Michael. To claim the Child Tax Credit, the child must have: A) A birth certificate only | B) Any tax identification number | C) Either SSN or ITIN | D) A Social Security number valid for employment",
+      "question": "David Lee is preparing his 2024 tax return and wants to claim the Child Tax Credit for his son, Michael. To claim the Child Tax Credit, the child must have:",
       "options": [
         "A birth certificate only, demonstrating US citizenship",
         "Any tax identification number, including an ATIN or EIN",
@@ -16744,7 +16744,7 @@
       "topic": "Taxpayer identification numbers",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria Rodriguez is a non-resident alien who is required to file a U.S. tax return. She does not qualify for a Social Security Number (SSN). An Individual Taxpayer Identification Number (ITIN) is: A) The same as an SSN | B) Valid for employment | C) Only for businesses | D) A 9-digit number for individuals ineligible for SSN who need to file",
+      "question": "Maria Rodriguez is a non-resident alien who is required to file a U.S. tax return. She does not qualify for a Social Security Number (SSN). An Individual Taxpayer Identification Number (ITIN) is:",
       "options": [
         "Considered equivalent to an SSN for all tax purposes, including claiming dependent exemptions and credits.",
         "A temporary work authorization document issued by the Department of Homeland Security for non-resident aliens.",
@@ -16779,7 +16779,7 @@
       "topic": "Taxpayer identification numbers",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Juan Perez obtained an ITIN in 2010 but hasn't filed a U.S. tax return since 2020. ITINs expire if: A) After 5 years regardless of use | B) Only if taxpayer leaves the country | C) Never expire | D) Not used on a federal return for 3 consecutive years or issued before 2013",
+      "question": "Juan Perez obtained an ITIN in 2010 but hasn't filed a U.S. tax return since 2020. ITINs expire if:",
       "options": [
         "After 5 years from the date of issuance, regardless of whether the ITIN was actively used on a federal tax return.",
         "Only if the taxpayer formally relinquishes their U.S. ties and provides documentation confirming permanent emigration from the country.",
@@ -16814,7 +16814,7 @@
       "topic": "Taxpayer identification numbers",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Elena Petrova is a non-resident alien who needs to obtain a U.S. taxpayer identification number to file her income tax return. Form W-7 is used to: A) Claim withholding credit | B) Report wages | C) Request an extension | D) Apply for an ITIN",
+      "question": "Elena Petrova is a non-resident alien who needs to obtain a U.S. taxpayer identification number to file her income tax return. Form W-7 is used to:",
       "options": [
         "Claim withholding credit",
         "Report wages",
@@ -17724,7 +17724,7 @@
       "topic": "Above-the-line deductions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Janice is self-employed, operating \"Janice's Jams.\" During the year, she paid $6,000 in Medicare premiums (Part B, D, and Medigap). For income tax purposes, these Medicare premiums are: A) Only deductible as itemized medical expense | B) Not deductible | C) Deductible as business expense | D) Deductible as self-employed health insurance adjustment",
+      "question": "Janice is self-employed, operating \"Janice's Jams.\" During the year, she paid $6,000 in Medicare premiums (Part B, D, and Medigap). For income tax purposes, these Medicare premiums are:",
       "options": [
         "Only deductible as itemized medical expenses, subject to the 7.5% adjusted gross income (AGI) threshold.",
         "Not deductible because Medicare premiums are considered personal expenses and are not related to business operations.",
@@ -17759,7 +17759,7 @@
       "topic": "Wages, salaries, and tips",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Tech Solutions Inc. has several employees with high salaries. When must Tech Solutions begin withholding Additional Medicare Tax from an employee's wages? A) $125,000 | B) $250,000 | C) Threshold varies by filing status | D) $200,000, regardless of filing status",
+      "question": "Tech Solutions Inc. has several employees with high salaries. When must Tech Solutions begin withholding Additional Medicare Tax from an employee's wages?",
       "options": [
         "$125,000, if the employee is single and under 65",
         "$250,000, but only if the employee is married filing jointly",
@@ -17794,7 +17794,7 @@
       "topic": "Net investment income tax",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Smiths have substantial investment income. What is the Net Investment Income Tax rate that may apply to a portion of their investment income? A) 2.9% | B) 0.9% | C) 5% | D) 3.8%",
+      "question": "The Smiths have substantial investment income. What is the Net Investment Income Tax rate that may apply to a portion of their investment income?",
       "options": [
         "2.9%",
         "0.9%",
@@ -17829,7 +17829,7 @@
       "topic": "Net investment income tax",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John and Mary are married and file jointly. What is the Adjusted Gross Income (AGI) threshold at which their net investment income becomes subject to the Net Investment Income Tax (NIIT)? A) $300,000 | B) $200,000 | C) $125,000 | D) $250,000",
+      "question": "John and Mary are married and file jointly. What is the Adjusted Gross Income (AGI) threshold at which their net investment income becomes subject to the Net Investment Income Tax (NIIT)?",
       "options": [
         "$300,000",
         "$200,000",
@@ -17864,7 +17864,7 @@
       "topic": "Net investment income tax",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Susan is evaluating whether her investment income is subject to Net Investment Income Tax (NIIT). Which of the following items is included in the calculation of net investment income for NIIT purposes? A) Wages and self-employment income | B) Only capital gains | C) Retirement distributions | D) Interest, dividends, capital gains, rental income, passive income",
+      "question": "Susan is evaluating whether her investment income is subject to Net Investment Income Tax (NIIT). Which of the following items is included in the calculation of net investment income for NIIT purposes?",
       "options": [
         "Wages and self-employment income, including bonuses and commissions, after deductions",
         "Only capital gains realized from the sale of stocks and bonds held for more than one year",
@@ -17899,7 +17899,7 @@
       "topic": "Self-employment tax",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark earns income driving for a rideshare company, receiving payments via a payment app. As a gig worker, Mark must: A) Only file annual return | B) Pay taxes only on earnings over $600 | C) Have taxes withheld by platforms | D) Make quarterly estimated tax payments if expecting $1,000+ in tax liability",
+      "question": "Mark earns income driving for a rideshare company, receiving payments via a payment app. As a gig worker, Mark must:",
       "options": [
         "Only file an annual return if total self-employment income is below the standard deduction amount.",
         "Pay taxes only on earnings exceeding $600, after deducting all eligible business expenses and qualified deductions.",
@@ -17934,7 +17934,7 @@
       "topic": "Business income (Schedule C)",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Lisa sells handmade crafts online through a third-party payment processor. When will the payment settlement entity issue Lisa a Form 1099-K? A) $1,000 | B) $600 for all transactions (being phased in) | C) $5,000 | D) $20,000 and 200 transactions (2023)",
+      "question": "Lisa sells handmade crafts online through a third-party payment processor. When will the payment settlement entity issue Lisa a Form 1099-K?",
       "options": [
         "$1,000 if the payment processor is a foreign entity",
         "$600 for all transactions (being phased in)",
@@ -17969,7 +17969,7 @@
       "topic": "Business income (Schedule C)",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Consulting paid David $5,000 for consulting services. Which form is used to report this payment to David and the IRS? A) Rental income | B) Dividend income | C) Interest income | D) Nonemployee compensation of $600 or more",
+      "question": "ABC Consulting paid David $5,000 for consulting services. Which form is used to report this payment to David and the IRS?",
       "options": [
         "Rental income from leasing office space to ABC",
         "Dividend income from ABC Consulting stock holdings",
@@ -21470,7 +21470,7 @@
       "topic": "Health savings accounts",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria is 45 years old and covered by a high-deductible health plan (HDHP) through her employer, GreenTech Solutions. She is not enrolled in Medicare and has no other health coverage. To contribute to an HSA, Maria must meet all of the following requirements EXCEPT:\nA) Not be enrolled in Medicare | B) Be covered by a high-deductible health plan (HDHP) | C) Be age 59½ or older | D) Have no other health coverage (with certain exceptions)",
+      "question": "Maria is 45 years old and covered by a high-deductible health plan (HDHP) through her employer, GreenTech Solutions. She is not enrolled in Medicare and has no other health coverage. To contribute to an HSA, Maria must meet all of the following requirements EXCEPT:",
       "options": [
         "Not be enrolled in Medicare",
         "Be covered by a high-deductible health plan (HDHP)",
@@ -21575,7 +21575,7 @@
       "topic": "Non-resident alien returns",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Jian, a citizen of China, is working temporarily in the U.S. as a research scholar at State University. He is claiming benefits under a tax treaty. What form must Jian file to claim these benefits?\nA) Form 1040 | B) Form 1040-SR | C) Only Form W-8BEN | D) Form 1040-NR with Form 8833",
+      "question": "Jian, a citizen of China, is working temporarily in the U.S. as a research scholar at State University. He is claiming benefits under a tax treaty. What form must Jian file to claim these benefits?",
       "options": [
         "Form 1040, if electing standard deduction",
         "Form 1040-SR, if over 65 with no dependents",
@@ -21680,7 +21680,7 @@
       "topic": "Amended returns (Form 1040-X)",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John incurred a significant net operating loss (NOL) in his business, J&J Consulting, in 2024. He wants to carry back the NOL to recover taxes paid in a prior year. An amended return to carry back a net operating loss (NOL) from 2024 can generally be carried back:\nA) 2 years | B) NOLs cannot be carried back under current law (forward only) | C) 5 years | D) 3 years",
+      "question": "John incurred a significant net operating loss (NOL) in his business, J&J Consulting, in 2024. He wants to carry back the NOL to recover taxes paid in a prior year. An amended return to carry back a net operating loss (NOL) from 2024 can generally be carried back:",
       "options": [
         "2 years, representing the carryback period allowed for NOLs generated before January 1, 2018.",
         "NOLs cannot be carried back under current law (forward only)",
@@ -21750,7 +21750,7 @@
       "topic": "Filing status determination",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah's husband passed away in 2022. She has not remarried and has a dependent child living at home. For which years can Sarah file as a Qualifying Surviving Spouse?\nA) 2023, 2024, and 2025 | B) 2022, 2023, and 2024 | C) 2022 only | D) 2023 and 2024",
+      "question": "Sarah's husband passed away in 2022. She has not remarried and has a dependent child living at home. For which years can Sarah file as a Qualifying Surviving Spouse?",
       "options": [
         "2023, 2024, and 2025",
         "2022, 2023, and 2024",
@@ -21820,7 +21820,7 @@
       "topic": "Compliance",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "David wants to authorize his CPA, Emily Carter, to represent him before the IRS regarding a tax audit. Form 2848 (Power of Attorney) authorizes a representative to:\nA) Sign the taxpayer's return | B) Represent the taxpayer before the IRS and receive confidential information | C) Access the taxpayer's bank accounts | D) Receive tax refund checks",
+      "question": "David wants to authorize his CPA, Emily Carter, to represent him before the IRS regarding a tax audit. Form 2848 (Power of Attorney) authorizes a representative to:",
       "options": [
         "Sign the taxpayer's return, provided a separate declaration is attached stating the taxpayer's absence or incapacity",
         "Represent the taxpayer before the IRS and receive confidential information",
@@ -21855,7 +21855,7 @@
       "topic": "Record Retention",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "The IRS is auditing ABC Corporation's 2021 tax return. The company filed its return on April 15, 2022. The IRS generally has how long to assess additional tax after a return is filed?\nA) 5 years | B) 2 years | C) 7 years | D) 3 years",
+      "question": "The IRS is auditing ABC Corporation's 2021 tax return. The company filed its return on April 15, 2022. The IRS generally has how long to assess additional tax after a return is filed?",
       "options": [
         "5 years",
         "2 years",
@@ -21890,7 +21890,7 @@
       "topic": "Business income (Schedule C)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Michael operates a cryptocurrency mining operation from his home. In 2024, he successfully mined 2 Bitcoins, receiving them as a reward when each coin was worth $65,000. When a taxpayer mines cryptocurrency and receives coins as reward:\nA) Mining income is always tax-exempt | B) No tax is due until the coins are sold | C) It is treated as a gift with zero basis | D) The fair market value on date received is ordinary income",
+      "question": "Michael operates a cryptocurrency mining operation from his home. In 2024, he successfully mined 2 Bitcoins, receiving them as a reward when each coin was worth $65,000. When a taxpayer mines cryptocurrency and receives coins as reward:",
       "options": [
         "Mining income is tax-exempt due to its decentralized nature and lack of direct employer-employee relationship.",
         "No tax is due until the coins are sold, as cryptocurrency is considered a capital asset with tax implications only upon disposition.",
@@ -21925,7 +21925,7 @@
       "topic": "Social Security benefits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Robert and his wife, Susan, receive Social Security benefits. Due to their combined income, a portion of their benefits may be subject to federal income tax. At most, what percentage of Social Security benefits may be taxable?\nA) 50% | B) 100% | C) 85% | D) 75%",
+      "question": "Robert and his wife, Susan, receive Social Security benefits. Due to their combined income, a portion of their benefits may be subject to federal income tax. At most, what percentage of Social Security benefits may be taxable?",
       "options": [
         "50%",
         "100%",

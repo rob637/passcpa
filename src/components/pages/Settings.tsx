@@ -1072,7 +1072,7 @@ const Settings: React.FC = () => {
                         Connect with other exam candidates, share study tips, and practice daily quiz questions in our Discord server.
                       </p>
                       <a
-                        href="https://discord.gg/XBjzDrws"
+                        href="https://discord.gg/SNZJHr26"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm font-medium"

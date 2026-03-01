@@ -73,7 +73,95 @@ const ExamSimulator: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [showCalculator, setShowCalculator] = useState(false);
   const [startTime, setStartTime] = useState<number | null>(null);
+  
+  // Calculator state
+  const [calcDisplay, setCalcDisplay] = useState('0');
+  const [calcPrevValue, setCalcPrevValue] = useState<number | null>(null);
+  const [calcOperator, setCalcOperator] = useState<string | null>(null);
+  const [calcWaitingForOperand, setCalcWaitingForOperand] = useState(false);
   const [blueprintScores, setBlueprintScores] = useState<Record<string, { correct: number; total: number }>>({});
+
+  // Calculator functions
+  const calcInputDigit = useCallback((digit: string) => {
+    if (calcWaitingForOperand) {
+      setCalcDisplay(digit);
+      setCalcWaitingForOperand(false);
+    } else {
+      setCalcDisplay(calcDisplay === '0' ? digit : calcDisplay + digit);
+    }
+  }, [calcDisplay, calcWaitingForOperand]);
+
+  const calcInputDecimal = useCallback(() => {
+    if (calcWaitingForOperand) {
+      setCalcDisplay('0.');
+      setCalcWaitingForOperand(false);
+    } else if (!calcDisplay.includes('.')) {
+      setCalcDisplay(calcDisplay + '.');
+    }
+  }, [calcDisplay, calcWaitingForOperand]);
+
+  const calcClear = useCallback(() => {
+    setCalcDisplay('0');
+    setCalcPrevValue(null);
+    setCalcOperator(null);
+    setCalcWaitingForOperand(false);
+  }, []);
+
+  const calcToggleSign = useCallback(() => {
+    const value = parseFloat(calcDisplay);
+    setCalcDisplay(String(value * -1));
+  }, [calcDisplay]);
+
+  const calcPercent = useCallback(() => {
+    const value = parseFloat(calcDisplay);
+    setCalcDisplay(String(value / 100));
+  }, [calcDisplay]);
+
+  const calcPerformOperation = useCallback((nextOperator: string) => {
+    const inputValue = parseFloat(calcDisplay);
+
+    if (calcPrevValue === null) {
+      setCalcPrevValue(inputValue);
+    } else if (calcOperator) {
+      const currentValue = calcPrevValue || 0;
+      let result: number;
+
+      switch (calcOperator) {
+        case '+': result = currentValue + inputValue; break;
+        case '-': result = currentValue - inputValue; break;
+        case '×': result = currentValue * inputValue; break;
+        case '÷': result = inputValue !== 0 ? currentValue / inputValue : 0; break;
+        default: result = inputValue;
+      }
+
+      setCalcDisplay(String(result));
+      setCalcPrevValue(result);
+    }
+
+    setCalcWaitingForOperand(true);
+    setCalcOperator(nextOperator);
+  }, [calcDisplay, calcPrevValue, calcOperator]);
+
+  const calcEquals = useCallback(() => {
+    const inputValue = parseFloat(calcDisplay);
+
+    if (calcOperator && calcPrevValue !== null) {
+      let result: number;
+
+      switch (calcOperator) {
+        case '+': result = calcPrevValue + inputValue; break;
+        case '-': result = calcPrevValue - inputValue; break;
+        case '×': result = calcPrevValue * inputValue; break;
+        case '÷': result = inputValue !== 0 ? calcPrevValue / inputValue : 0; break;
+        default: result = inputValue;
+      }
+
+      setCalcDisplay(String(result));
+      setCalcPrevValue(null);
+      setCalcOperator(null);
+      setCalcWaitingForOperand(true);
+    }
+  }, [calcDisplay, calcPrevValue, calcOperator]);
 
   // Session ID for deterministic option shuffling
   const [sessionId] = useState(() => `cpa-exam-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
@@ -1280,20 +1368,27 @@ const ExamSimulator: React.FC = () => {
                   <span>Calculator</span>
                   <button className="prometric-calculator-close" onClick={() => setShowCalculator(false)}>×</button>
                 </div>
-                <div className="prometric-calculator-display">0</div>
+                <div className="prometric-calculator-display">{calcDisplay.length > 12 ? parseFloat(calcDisplay).toExponential(6) : calcDisplay}</div>
                 <div className="prometric-calculator-buttons">
-                  {['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+'].map(btn => (
-                    <button 
-                      key={btn} 
-                      className={clsx(
-                        'prometric-calc-btn',
-                        ['+','-','*','/'].includes(btn) && 'operator',
-                        btn === '=' && 'equals'
-                      )}
-                    >
-                      {btn}
-                    </button>
-                  ))}
+                  <button onClick={calcClear} className="prometric-calc-btn">C</button>
+                  <button onClick={calcToggleSign} className="prometric-calc-btn">±</button>
+                  <button onClick={calcPercent} className="prometric-calc-btn">%</button>
+                  <button onClick={() => calcPerformOperation('÷')} className={clsx('prometric-calc-btn operator', calcOperator === '÷' && 'active')}>÷</button>
+                  <button onClick={() => calcInputDigit('7')} className="prometric-calc-btn">7</button>
+                  <button onClick={() => calcInputDigit('8')} className="prometric-calc-btn">8</button>
+                  <button onClick={() => calcInputDigit('9')} className="prometric-calc-btn">9</button>
+                  <button onClick={() => calcPerformOperation('×')} className={clsx('prometric-calc-btn operator', calcOperator === '×' && 'active')}>×</button>
+                  <button onClick={() => calcInputDigit('4')} className="prometric-calc-btn">4</button>
+                  <button onClick={() => calcInputDigit('5')} className="prometric-calc-btn">5</button>
+                  <button onClick={() => calcInputDigit('6')} className="prometric-calc-btn">6</button>
+                  <button onClick={() => calcPerformOperation('-')} className={clsx('prometric-calc-btn operator', calcOperator === '-' && 'active')}>−</button>
+                  <button onClick={() => calcInputDigit('1')} className="prometric-calc-btn">1</button>
+                  <button onClick={() => calcInputDigit('2')} className="prometric-calc-btn">2</button>
+                  <button onClick={() => calcInputDigit('3')} className="prometric-calc-btn">3</button>
+                  <button onClick={() => calcPerformOperation('+')} className={clsx('prometric-calc-btn operator', calcOperator === '+' && 'active')}>+</button>
+                  <button onClick={() => calcInputDigit('0')} className="prometric-calc-btn" style={{gridColumn: 'span 2'}}>0</button>
+                  <button onClick={calcInputDecimal} className="prometric-calc-btn">.</button>
+                  <button onClick={calcEquals} className="prometric-calc-btn equals">=</button>
                 </div>
               </div>
             )}
@@ -1508,31 +1603,58 @@ const ExamSimulator: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden min-h-0">
         {/* Main Content */}
-        <div className="flex-1 flex flex-col relative">
+        <div className="flex-1 flex flex-col relative min-h-0">
           {/* Calculator Overlay */}
           {showCalculator && (
-            <div className="absolute top-4 right-4 w-64 h-80 bg-slate-800 rounded-lg shadow-2xl z-50 border border-slate-700 flex flex-col">
+            <div className="absolute top-4 right-4 w-64 bg-slate-800 rounded-lg shadow-2xl z-50 border border-slate-700 flex flex-col">
               <div className="bg-slate-700 p-2 flex justify-between items-center rounded-t-lg cursor-move">
                 <span className="text-xs text-slate-300 font-bold uppercase">Calculator</span>
                 <button
                   onClick={() => setShowCalculator(false)}
-                  className="text-slate-600 hover:text-white"
+                  className="text-slate-400 hover:text-white"
                 >
                   <XCircle className="w-4 h-4" />
                 </button>
               </div>
-              <div className="flex-1 p-4 flex items-center justify-center text-slate-600 text-sm italic">
-                {/* Real calculator implementation would go here */}
-                Basic Calculator
+              {/* Calculator Display */}
+              <div className="bg-slate-900 p-3 text-right text-white text-2xl font-mono overflow-hidden">
+                {calcDisplay.length > 12 ? parseFloat(calcDisplay).toExponential(6) : calcDisplay}
+              </div>
+              {/* Calculator Buttons */}
+              <div className="grid grid-cols-4 gap-1 p-2">
+                {/* Row 1 */}
+                <button onClick={calcClear} className="bg-slate-600 hover:bg-slate-500 text-white p-3 rounded text-sm font-semibold">C</button>
+                <button onClick={calcToggleSign} className="bg-slate-600 hover:bg-slate-500 text-white p-3 rounded text-sm font-semibold">±</button>
+                <button onClick={calcPercent} className="bg-slate-600 hover:bg-slate-500 text-white p-3 rounded text-sm font-semibold">%</button>
+                <button onClick={() => calcPerformOperation('÷')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '÷' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>÷</button>
+                {/* Row 2 */}
+                <button onClick={() => calcInputDigit('7')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">7</button>
+                <button onClick={() => calcInputDigit('8')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">8</button>
+                <button onClick={() => calcInputDigit('9')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">9</button>
+                <button onClick={() => calcPerformOperation('×')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '×' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>×</button>
+                {/* Row 3 */}
+                <button onClick={() => calcInputDigit('4')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">4</button>
+                <button onClick={() => calcInputDigit('5')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">5</button>
+                <button onClick={() => calcInputDigit('6')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">6</button>
+                <button onClick={() => calcPerformOperation('-')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '-' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>−</button>
+                {/* Row 4 */}
+                <button onClick={() => calcInputDigit('1')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">1</button>
+                <button onClick={() => calcInputDigit('2')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">2</button>
+                <button onClick={() => calcInputDigit('3')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">3</button>
+                <button onClick={() => calcPerformOperation('+')} className={clsx('p-3 rounded text-sm font-semibold', calcOperator === '+' ? 'bg-orange-300 text-orange-800' : 'bg-orange-500 hover:bg-orange-400 text-white')}>+</button>
+                {/* Row 5 */}
+                <button onClick={() => calcInputDigit('0')} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold col-span-2">0</button>
+                <button onClick={calcInputDecimal} className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded text-sm font-semibold">.</button>
+                <button onClick={calcEquals} className="bg-orange-500 hover:bg-orange-400 text-white p-3 rounded text-sm font-semibold">=</button>
               </div>
             </div>
           )}
 
           {/* Question Area */}
-          <div ref={!usePrometricTheme ? questionTopRef : undefined} className="flex-1 overflow-y-auto p-6">
-            <div className="max-w-4xl mx-auto">
+          <div ref={!usePrometricTheme ? questionTopRef : undefined} className="flex-1 overflow-y-auto p-6 min-h-0">
+            <div className="max-w-4xl mx-auto pb-4">
               {currentTestletType === 'tbs' && currentTBS ? (
                 /* TBS Rendering */
                 <TBSRenderer

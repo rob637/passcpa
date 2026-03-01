@@ -641,7 +641,7 @@
       "subtopic": "Scope of Reg BI",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah, a new client of Oakbridge Investments, is considering rolling over her 401(k). As a registered representative, when does SEC Regulation Best Interest (Reg BI) apply to your recommendation regarding the rollover? \n\nA) Broker-dealers make recommendations to retail customers | B) Insurance agents sell life insurance | C) Investment advisers provide ongoing advice | D) CFP® professionals provide financial planning",
+      "question": "Sarah, a new client of Oakbridge Investments, is considering rolling over her 401(k). As a registered representative, when does SEC Regulation Best Interest (Reg BI) apply to your recommendation regarding the rollover?",
       "explanation": "Reg BI applies to broker-dealers and their associated persons when making securities recommendations to retail customers. It requires acting in the customer\\'s best interest, considering costs, and disclosing conflicts. Investment advisers are subject to the Investment Advisers Act fiduciary standard. CFP® professionals have additional CFP Board standards.",
       "correctAnswer": 0,
       "options": [
@@ -676,7 +676,7 @@
       "subtopic": "State vs Federal",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Midwest Mutual is facing increased scrutiny regarding its insurance product offerings. Who primarily regulates the activities and product approvals of Midwest Mutual in the United States?\n\nA) Securities and Exchange Commission | B) Individual state insurance commissioners | C) Federal Insurance Agency | D) FINRA",
+      "question": "Midwest Mutual is facing increased scrutiny regarding its insurance product offerings. Who primarily regulates the activities and product approvals of Midwest Mutual in the United States?",
       "explanation": "Insurance is regulated primarily by states, not the federal government. Each state has an insurance commissioner (or equivalent) who licenses agents, approves products, and enforces regulations. The NAIC coordinates among states but is not a regulatory body. Variable products have dual regulation (state insurance + SEC/FINRA for securities aspects).",
       "correctAnswer": 1,
       "options": [
@@ -711,7 +711,7 @@
       "subtopic": "Variable Annuities",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John, a financial professional at Horizon Financial Group, wants to offer variable annuities to his clients. What licenses does John need to compliantly sell variable annuities?\n\nA) Only a securities license (Series 6 or 7) | B) Both a state insurance license and a securities license | C) Only a state insurance license | D) Only CFP® certification",
+      "question": "John, a financial professional at Horizon Financial Group, wants to offer variable annuities to his clients. What licenses does John need to compliantly sell variable annuities?",
       "explanation": "Variable annuities are both insurance products and securities because their values depend on separate account performance. This dual nature requires dual licensing: a state insurance license for the insurance contract, and a securities license (Series 6 or 7) for the securities component. CFP® certification alone does not authorize sales.",
       "correctAnswer": 1,
       "options": [
@@ -746,7 +746,7 @@
       "subtopic": "Fiduciary Standard",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "GreenTech Solutions sponsors a 401(k) plan for its employees. Under ERISA, what fiduciary standard applies to the retirement plan advisers managing the plan's investments?\n\nA) Prudent expert standard | B) Suitability standard | C) Reasonable person standard | D) Best efforts standard",
+      "question": "GreenTech Solutions sponsors a 401(k) plan for its employees. Under ERISA, what fiduciary standard applies to the retirement plan advisers managing the plan's investments?",
       "explanation": "ERISA imposes the \"prudent expert\" standard—a higher standard than ordinary prudence. Fiduciaries must act with the care, skill, prudence, and diligence of a prudent expert familiar with such matters. This requires professional-level expertise, not just what a reasonable layperson would do.",
       "correctAnswer": 0,
       "options": [
@@ -815,7 +815,7 @@
       "subtopic": "FINRA Rule 2165",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Elderly client, Mrs. Davison, is being pressured to wire funds to an unknown account. You suspect financial exploitation. FINRA Rule 2165 allows your firm, Sterling Brokerage, to:\n\nA) Place temporary holds on disbursements if financial exploitation is suspected | B) Freeze accounts indefinitely without court order | C) Transfer client assets to protective trusts | D) Report clients to credit agencies",
+      "question": "Elderly client, Mrs. Davison, is being pressured to wire funds to an unknown account. You suspect financial exploitation. FINRA Rule 2165 allows your firm, Sterling Brokerage, to:",
       "explanation": "FINRA Rule 2165 allows firms to place a temporary hold on disbursements (up to 25 business days) when there\\'s a reasonable belief of financial exploitation of a senior or vulnerable adult. This provides time to investigate and contact trusted contacts. It does not allow indefinite freezes, asset transfers, or credit reporting.",
       "correctAnswer": 0,
       "options": [
@@ -850,7 +850,7 @@
       "subtopic": "Prohibited Transactions",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "The employee 401(k) plan at TechCorp is being audited. What is the primary purpose of ERISA's prohibited transaction rules regarding this retirement plan?\n\nA) Prevent fiduciaries and parties in interest from self-dealing with plan assets | B) Maximize plan investment returns at all costs | C) Require all plans to use the same investments | D) Limit employee contributions to qualified plans",
+      "question": "The employee 401(k) plan at TechCorp is being audited. What is the primary purpose of ERISA's prohibited transaction rules regarding this retirement plan?",
       "explanation": "Prohibited transaction rules prevent self-dealing between plans and \"parties in interest\" (fiduciaries, employers, service providers). This includes selling property to the plan, lending to or from the plan, and using plan assets for personal benefit. These rules protect participants by preventing conflicts from harming plan assets.",
       "correctAnswer": 0,
       "options": [
@@ -1060,7 +1060,7 @@
       "subtopic": "Form ADV",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "You are an investment adviser with Willow Creek Advisors. When must Form ADV Part 2A (the \"brochure\") be delivered to new advisory clients?\n\nA) Within 30 days of becoming a client | B) Only upon client request | C) Before or at the time of entering an advisory agreement | D) Annually in January",
+      "question": "You are an investment adviser with Willow Creek Advisors. When must Form ADV Part 2A (the \"brochure\") be delivered to new advisory clients?",
       "explanation": "Form ADV Part 2A (Firm Brochure) must be delivered BEFORE or AT THE TIME of entering into an advisory agreement. It discloses: services offered, fees, conflicts of interest, disciplinary history, and business practices. Part 2B (Brochure Supplement) provides information about specific individuals providing advice. Annual updates must be delivered or offered within 120 days of fiscal year-end.",
       "correctAnswer": 3,
       "options": [
@@ -1130,7 +1130,7 @@
       "subtopic": "Suitability vs. Best Interest",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Mark is a registered representative at Titan Securities. How does Regulation Best Interest (Reg BI) strengthen investor protection compared to the traditional suitability standard for broker-dealers?\n\nA) Reg BI eliminates all conflicts of interest | B) Reg BI only applies to retirement accounts | C) Reg BI requires acting in client's best interest | D) Reg BI permits undisclosed conflicts",
+      "question": "Mark is a registered representative at Titan Securities. How does Regulation Best Interest (Reg BI) strengthen investor protection compared to the traditional suitability standard for broker-dealers?",
       "explanation": "Regulation Best Interest (effective June 2020) is an enhanced standard for broker-dealers: (1) Disclosure of material facts about the relationship, (2) Care to act in client\\'s best interest without placing BD\\'s interest ahead, (3) Conflict mitigation, and (4) Compliance policies. It\\'s stronger than suitability but NOT identical to fiduciary duty—it applies at time of recommendation, not as ongoing duty.",
       "correctAnswer": 3,
       "options": [
@@ -2600,7 +2600,7 @@
       "subtopic": "Monitoring",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Sarah Miller, CFP®, is developing a financial plan for the Chen family. After defining goals and analyzing their current situation, Sarah is now creating recommendations. According to the CFP Board's financial planning process, is monitoring the plan's progress: A) Only required for investment accounts | B) An integral part of the planning relationship | C) An optional service for premium clients | D) A one-time annual review",
+      "question": "Sarah Miller, CFP®, is developing a financial plan for the Chen family. After defining goals and analyzing their current situation, Sarah is now creating recommendations. According to the CFP Board's financial planning process, is monitoring the plan's progress:",
       "explanation": "Step 7 of the financial planning process: Monitor progress and update. Monitoring is integral, not optional. Frequency depends on circumstances. Includes reviewing progress toward goals, changes in circumstances, and updating recommendations as needed.",
       "correctAnswer": 1,
       "options": [
@@ -2635,7 +2635,7 @@
       "subtopic": "Best Interest",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "David Lee is considering hiring a CFP® professional. Even before signing an engagement agreement, the CFP® professional discusses potential investment strategies. A CFP® professional's fiduciary duty to act in a client's best interest: A) Applies at all times when providing Financial Advice | B) Only required for fee-based relationships | C) Limited to investment advice only | D) Waivable with client consent",
+      "question": "David Lee is considering hiring a CFP® professional. Even before signing an engagement agreement, the CFP® professional discusses potential investment strategies. A CFP® professional's fiduciary duty to act in a client's best interest:",
       "explanation": "The fiduciary duty at all times extends to all Financial Advice (including financial planning, material elements addressed). It applies regardless of compensation method and cannot be waived. This is a higher standard than many regulatory requirements.",
       "correctAnswer": 0,
       "options": [
@@ -2879,7 +2879,7 @@
       "subtopic": "Grounds for Discipline",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Michael, a CFP® professional, is experiencing personal financial difficulties. His spouse files for Chapter 7 bankruptcy due to overwhelming credit card debt. Is this a reportable matter to CFP Board? A) Yes, all family financial matters must be reported | B) No, unless the CFP® professional was jointly liable on the debts | C) No, only the CFP® professional's bankruptcies are reportable | D) Yes, because it reflects poorly on the profession",
+      "question": "Michael, a CFP® professional, is experiencing personal financial difficulties. His spouse files for Chapter 7 bankruptcy due to overwhelming credit card debt. Is this a reportable matter to CFP Board?",
       "explanation": "CFP Board requires reporting of the professional\\'s own bankruptcy or compromised debts, not a spouse\\'s independent bankruptcy. However, if the CFP® professional was jointly liable on the debts included in the spouse\\'s bankruptcy, those compromised debts become reportable. The focus is on the professional\\'s own financial conduct.",
       "correctAnswer": 1,
       "options": [
@@ -2914,7 +2914,7 @@
       "subtopic": "Professionalism",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Emily Carter, CFP®, recently ended a professional relationship with a client after providing financial planning services for 10 years. How long must Emily retain the client's records after the client relationship ends? A) 3 years | B) 5 years | C) 7 years | D) Permanently",
+      "question": "Emily Carter, CFP®, recently ended a professional relationship with a client after providing financial planning services for 10 years. How long must Emily retain the client's records after the client relationship ends?",
       "explanation": "CFP Board requires record retention for at least 7 years after the client relationship ends. This includes engagement agreements, planning documents, work products, and client communications. Note: SEC/FINRA may have different retention requirements that could also apply to dually registered professionals.",
       "correctAnswer": 1,
       "options": [
@@ -3019,7 +3019,7 @@
       "subtopic": "Termination Procedures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After several years, John, CFP®, decides to terminate his relationship with a client, citing irreconcilable differences in investment philosophy. What obligations remain for John? A) Provide reasonable notice and assist with transition | B) None—termination ends all obligations immediately | C) Continue current recommendations but no new advice | D) Refund all fees ever collected from the client",
+      "question": "After several years, John, CFP®, decides to terminate his relationship with a client, citing irreconcilable differences in investment philosophy. What obligations remain for John?",
       "explanation": "When terminating a client relationship, CFP® professionals must provide reasonable notice and take steps to protect the client\\'s interests during the transition. This may include providing copies of documents, assisting with transfer to a new adviser, and completing any pending work that would leave the client harmed if abandoned.",
       "correctAnswer": 0,
       "options": [
@@ -3054,7 +3054,7 @@
       "subtopic": "Prospective Clients",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Susan meets with a CFP® professional for an initial consultation. During the meeting, the CFP® provides specific advice regarding Susan's 401(k) asset allocation. At what point does fiduciary duty attach to Susan? A) When providing Financial Advice, even before formal engagement | B) Upon signing an engagement agreement | C) After the first fee is paid | D) Only when comprehensive planning begins",
+      "question": "Susan meets with a CFP® professional for an initial consultation. During the meeting, the CFP® provides specific advice regarding Susan's 401(k) asset allocation. At what point does fiduciary duty attach to Susan?",
       "explanation": "CFP Board\\'s fiduciary duty attaches whenever a CFP® professional provides Financial Advice—which can occur before any formal engagement. Even in a discovery meeting, if substantive investment or planning advice is given, fiduciary duty applies. The key trigger is providing Financial Advice, not the formal engagement or fee payment.",
       "correctAnswer": 0,
       "options": [
@@ -3194,7 +3194,7 @@
       "subtopic": "Continuing Education",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark is a CFP® professional. How many continuing education (CE) hours must Mark complete each reporting period to maintain his certification? A) 30 hours biennially (every two years) | B) 20 hours annually | C) 40 hours annually | D) 50 hours biennially (every two years)",
+      "question": "Mark is a CFP® professional. How many continuing education (CE) hours must Mark complete each reporting period to maintain his certification?",
       "explanation": "CFP® professionals must complete 30 CE hours every two-year reporting period. This includes 2 hours of CFP Board-approved ethics CE and 28 hours of other CE. CE helps maintain competence in the evolving financial planning profession.",
       "correctAnswer": 0,
       "options": [
@@ -3229,7 +3229,7 @@
       "subtopic": "Variable Products",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "A financial advisor at Vista Financial Group is recommending a variable annuity to a client. Why might selling variable annuities require both securities and insurance licenses? A) FINRA and state insurance boards share oversight of all insurance | B) All annuities require dual licensing | C) Variable annuities invest in securities (subaccounts) and are insurance contracts | D) It is a broker-dealer compliance preference, not a legal requirement",
+      "question": "A financial advisor at Vista Financial Group is recommending a variable annuity to a client. Why might selling variable annuities require both securities and insurance licenses?",
       "explanation": "Variable annuities have two components: (1) the insurance contract features (death benefit, annuitization options) regulated by state insurance laws, and (2) the securities subaccounts regulated under federal securities laws. Selling them requires: a FINRA license (Series 6 or 7), state insurance license, and typically a state securities registration.",
       "correctAnswer": 2,
       "options": [
@@ -4103,7 +4103,7 @@
       "subtopic": "Sanctions",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a review by the Disciplinary and Ethics Commission (DEC), the CFP Board may take action against a CFP® professional. Which of the following is NOT a disciplinary action the CFP Board is authorized to impose? A) Private censure | B) Permanent revocation | C) Criminal prosecution | D) Suspension of certification",
+      "question": "After a review by the Disciplinary and Ethics Commission (DEC), the CFP Board may take action against a CFP® professional. Which of the following is NOT a disciplinary action the CFP Board is authorized to impose?",
       "explanation": "CFP Board is a private certification organization with authority over the CFP® marks. It can impose private censure, suspension, or revocation. Criminal prosecution is the domain of government authorities, not CFP Board.",
       "correctAnswer": 2,
       "options": [
@@ -4138,7 +4138,7 @@
       "subtopic": "Grounds for Discipline",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah, a CFP® at Oak Financial Planning, receives a commission from a local insurance broker for referring clients. Which action would most likely result in disciplinary action by the CFP Board? A) Disagreement with a client about investment strategy | B) Recommending conservative investments during market volatility | C) Failing to disclose a referral fee received from another professional | D) Charging higher fees than competitors",
+      "question": "Sarah, a CFP® at Oak Financial Planning, receives a commission from a local insurance broker for referring clients. Which action would most likely result in disciplinary action by the CFP Board?",
       "explanation": "Failing to disclose referral fees is a violation of the duty to disclose material conflicts of interest. Subjective investment disagreements, competitive pricing, and conservative recommendations during volatility are not disciplinary matters.",
       "correctAnswer": 2,
       "options": [
@@ -4173,7 +4173,7 @@
       "subtopic": "Clear Disclosure",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John, a CFP® with Vista Wealth Management, is presenting a financial plan to a new client, Maria. When presenting recommendations, John must communicate in a manner that: A) Avoids discussing potential risks | B) Uses technical jargon to demonstrate expertise | C) Minimizes client questions to save time | D) Is reasonably understandable to the client",
+      "question": "John, a CFP® with Vista Wealth Management, is presenting a financial plan to a new client, Maria. When presenting recommendations, John must communicate in a manner that:",
       "explanation": "CFP standards require communications that are clear and understandable to the client. Technical jargon should be explained, risks discussed, and clients should be encouraged to ask questions.",
       "correctAnswer": 3,
       "options": [
@@ -4243,7 +4243,7 @@
       "subtopic": "Continuing Education",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Susan has been a CFP® certificant for 10 years. To maintain her CFP® certification, how many CE hours are required per reporting period? A) 15 hours | B) 60 hours | C) 40 hours | D) 30 hours",
+      "question": "Susan has been a CFP® certificant for 10 years. To maintain her CFP® certification, how many CE hours are required per reporting period?",
       "explanation": "CFP Board requires 30 hours of continuing education every two-year reporting period. This includes 2 hours of CFP Board-approved ethics CE.",
       "correctAnswer": 3,
       "options": [
@@ -4278,7 +4278,7 @@
       "subtopic": "Ethics CE",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark is renewing his CFP® certification. Of the required 30 CE hours, how many must be CFP Board-approved ethics CE? A) 10 hours | B) 6 hours | C) 0 hours - ethics is optional | D) 2 hours",
+      "question": "Mark is renewing his CFP® certification. Of the required 30 CE hours, how many must be CFP Board-approved ethics CE?",
       "explanation": "CFP certificants must complete at least 2 hours of CFP Board-approved ethics CE within each two-year reporting period as part of the 30-hour requirement.",
       "correctAnswer": 3,
       "options": [
@@ -4385,7 +4385,7 @@
       "subtopic": "Goals Identification",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During the initial client meeting, Emily, a CFP® at Harmon Financial Advisors, is gathering information. During the understanding client circumstances step, a CFP® should NOT: A) Ask about the client's goals | B) Guarantee specific investment returns | C) Inquire about risk tolerance | D) Review existing financial documents",
+      "question": "During the initial client meeting, Emily, a CFP® at Harmon Financial Advisors, is gathering information. During the understanding client circumstances step, a CFP® should NOT:",
       "explanation": "The financial planning process requires understanding client circumstances before making recommendations. Recommending specific products before fully understanding the client\\'s situation violates the practice standards and the duty of care.",
       "correctAnswer": 1,
       "options": [
@@ -4420,7 +4420,7 @@
       "subtopic": "Material Element",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Under CFP Board's Code of Ethics, \"Material\" information is referenced frequently. \"Material\" is defined as information that: A) Information important enough to influence a Client's decision | B) Is only relevant to complex financial situations | C) Is solely related to investment performance | D) Is already publicly available",
+      "question": "Under CFP Board's Code of Ethics, \"Material\" information is referenced frequently. \"Material\" is defined as information that:",
       "explanation": "Material information is defined as information important enough to influence a Client\\'s decision. CFP® professionals must disclose all Material information, including conflicts of interest, compensation arrangements, and any information that could affect the Client\\'s financial planning decisions.",
       "correctAnswer": 0,
       "options": [
@@ -4490,7 +4490,7 @@
       "subtopic": "Grounds for Discipline",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David, a CFP®, was recently charged with a misdemeanor for drunk driving and is also under investigation by the SEC for potential insider trading. A CFP® professional must self-report to CFP Board within 30 days if they: A) Change employment | B) Are subject to a bankruptcy filing, felony conviction, or regulatory investigation | C) Fail to meet sales quotas | D) Receive a client complaint",
+      "question": "David, a CFP®, was recently charged with a misdemeanor for drunk driving and is also under investigation by the SEC for potential insider trading. A CFP® professional must self-report to CFP Board within 30 days if they:",
       "explanation": "CFP Board requires self-reporting within 30 calendar days of: personal bankruptcy, civil or criminal court actions, securities or insurance regulatory sanctions, investigations by regulatory bodies, and other specified events. Failure to self-report is an independent grounds for discipline.",
       "correctAnswer": 1,
       "options": [
@@ -4840,7 +4840,7 @@
       "subtopic": "Elder Financial Abuse",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah, a CFP® at Horizon Financial, notices unusual wire transfers from her client, Mr. Thompson's, account to an unfamiliar overseas account. Mr. Thompson, age 88, seems confused about the transactions. If Sarah suspects elder financial abuse, she should: A) Take steps consistent with her firm's policies and procedures. | B) Contact the authorities immediately, regardless of firm policy. | C) Ignore the situation unless Mr. Thompson explicitly states he's being scammed. | D) Conclude it's not her responsibility unless she manages the account directly.",
+      "question": "Sarah, a CFP® at Horizon Financial, notices unusual wire transfers from her client, Mr. Thompson's, account to an unfamiliar overseas account. Mr. Thompson, age 88, seems confused about the transactions. If Sarah suspects elder financial abuse, she should:",
       "explanation": "SEC rules and many states allow temporary holds on suspicious transactions involving seniors. CFP® professionals should follow firm policies, which typically include documenting concerns, potentially delaying disbursements, notifying supervisors, and contacting adult protective services when appropriate. Protection of vulnerable Clients is prioritized.",
       "correctAnswer": 0,
       "options": [
@@ -4877,7 +4877,7 @@
       "subtopic": "Record Retention",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria Lopez ended her financial planning engagement with Stonebridge Wealth Management on December 31, 2023. According to CFP Board's requirements, for how long must her CFP® professional at Stonebridge retain records related to Maria's account and the advice provided? A) Indefinitely | B) 3 years after the relationship ends | C) 1 year | D) 7 years from the date of service.",
+      "question": "Maria Lopez ended her financial planning engagement with Stonebridge Wealth Management on December 31, 2023. According to CFP Board's requirements, for how long must her CFP® professional at Stonebridge retain records related to Maria's account and the advice provided?",
       "explanation": "CFP Board requires retention of records supporting financial planning recommendations for 7 years from the date of service. Note that SEC/FINRA and state regulations may require different periods. Records should include meeting notes, analysis, recommendations, and Client communications.",
       "correctAnswer": 3,
       "options": [
@@ -4912,7 +4912,7 @@
       "subtopic": "Engagement Letters",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Greenleaf Planning is creating an engagement agreement for a new client, the Miller family. Which of the following elements MUST be included in the financial planning engagement agreement to comply with CFP Board requirements? A) Guaranteed investment returns | B) Services to be provided, compensation, identification of parties, duration of the agreement, client responsibilities, and termination procedures | C) Only the fee structure | D) Only a signature line.",
+      "question": "Greenleaf Planning is creating an engagement agreement for a new client, the Miller family. Which of the following elements MUST be included in the financial planning engagement agreement to comply with CFP Board requirements?",
       "explanation": "Comprehensive engagement agreements define: scope of services, compensation method, parties and their responsibilities, duration, termination provisions, and acknowledgment of disclosures. A clear agreement protects both parties and sets expectations. Written agreements are required for Financial Planning services.",
       "correctAnswer": 1,
       "options": [
@@ -4947,7 +4947,7 @@
       "subtopic": "Managing Conflicts",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "David is a CFP® at Apex Financial. His firm receives referral fees from a local insurance agency for referring clients. What is the preferred method for David to address this conflict of interest with his clients? A) Let the Client discover conflicts on their own. | B) Disclose it and proceed. | C) Avoid the conflict entirely when possible; if unavoidable, disclose the conflict and obtain informed consent. | D) Ignore minor conflicts.",
+      "question": "David is a CFP® at Apex Financial. His firm receives referral fees from a local insurance agency for referring clients. What is the preferred method for David to address this conflict of interest with his clients?",
       "explanation": "The hierarchy for managing conflicts: (1) Avoid when possible, (2) If unavoidable, fully disclose and obtain the Client\\'s informed consent, (3) Manage the conflict appropriately. Some conflicts cannot be managed through disclosure alone and should be avoided. Documentation of disclosure is essential.",
       "correctAnswer": 2,
       "options": [
@@ -4982,7 +4982,7 @@
       "subtopic": "Informed Consent",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Emily is presenting a complex estate planning strategy to her client, Mr. Chen. To obtain informed consent, what must Mr. Chen do? A) Waive all future claims related to the plan. | B) Simply sign a disclosure document prepared by Emily. | C) Understand the Material facts, potential risks, and their significance before making a decision. | D) Have an attorney review all documents before proceeding.",
+      "question": "Emily is presenting a complex estate planning strategy to her client, Mr. Chen. To obtain informed consent, what must Mr. Chen do?",
       "explanation": "Informed consent means the Client understands Material information and its significance, not just that they received documentation. CFP® professionals should confirm understanding, answer questions, and provide time for consideration. A signature without understanding is not informed consent.",
       "correctAnswer": 2,
       "options": [
@@ -5017,7 +5017,7 @@
       "subtopic": "Custody Rule",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sunrise Advisors manages investments for several clients. Under what circumstances would Sunrise Advisors be deemed to have custody of client assets, potentially triggering additional regulatory requirements? A) They provide investment advice only. | B) They have authority to withdraw funds or securities from client accounts. | C) Clients send checks to the adviser for forwarding to custodians. | D) All of the above potentially create custody.",
+      "question": "Sunrise Advisors manages investments for several clients. Under what circumstances would Sunrise Advisors be deemed to have custody of client assets, potentially triggering additional regulatory requirements?",
       "explanation": "Custody exists when an adviser holds client funds/securities, can obtain possession (power of attorney, authority to withdraw), or inadvertently receives client funds. Custody triggers significant regulatory requirements: qualified custodians, surprise examinations, and specific reporting. Advisers often structure to avoid custody.",
       "correctAnswer": 2,
       "options": [
@@ -5052,7 +5052,7 @@
       "subtopic": "Books and Records",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Capital Management Group is an investment adviser registered with the SEC. How long must they maintain most of their books and records, and where should they be stored? A) 3 years | B) 5 years, with the first 2 years in the principal office | C) 10 years | D) 7 years",
+      "question": "Capital Management Group is an investment adviser registered with the SEC. How long must they maintain most of their books and records, and where should they be stored?",
       "explanation": "SEC Rule 204-2 requires most adviser records to be retained for 5 years from the end of the fiscal year of creation (some records require 5 years from last entry). Records must be maintained in an easily accessible place for the first 2 years. Partnership/organizational documents must be kept until 3 years after dissolution.",
       "correctAnswer": 1,
       "options": [
@@ -5087,7 +5087,7 @@
       "subtopic": "Privacy Rule",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Under Regulation S-P, what is required of a financial institution like Sterling Investments regarding the privacy of client information? A) Provide initial and annual privacy notices and opt-out rights for nonpublic personal information sharing. | B) Never share client information under any circumstances. | C) Only protect information about large accounts. | D) Share all client information with marketing partners to enhance service offerings.",
+      "question": "Under Regulation S-P, what is required of a financial institution like Sterling Investments regarding the privacy of client information?",
       "explanation": "Reg S-P requires clear initial and annual privacy notices describing information collection, sharing, and protection practices. Clients must have opt-out rights before nonpublic personal information is shared with nonaffiliated third parties (with exceptions for service providers and joint marketers with contracts).",
       "correctAnswer": 0,
       "options": [
@@ -5122,7 +5122,7 @@
       "subtopic": "Social Media",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah, a CFP® at Oak Financial, wants to promote her services on LinkedIn. She plans to share an article about retirement planning. When making this investment-related social media post, Sarah must: A) Comply with firm and regulatory requirements, including pre-approval and record-keeping B) Avoid all social media C) Limit posts to personal opinions without disclaimers D) Only post anonymous content",
+      "question": "Sarah, a CFP® at Oak Financial, wants to promote her services on LinkedIn. She plans to share an article about retirement planning. When making this investment-related social media post, Sarah must:",
       "explanation": "Social media posts about investments are regulated communications. Requirements include firm approval (if required), appropriate disclaimers, fair and balanced content, record retention, and avoiding testimonials without proper disclosure. Static content (firm profiles) and interactive content have different rules.",
       "correctAnswer": 0,
       "options": [
@@ -5157,7 +5157,7 @@
       "subtopic": "Client Capacity",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Mr. Davis, a long-term client of Greenleaf Wealth Management, has started repeating himself and seems confused during meetings. As his CFP®, you observe signs of declining cognitive capacity. Which of the following is the MOST appropriate initial action? A) Contact family members without the Client's consent B) Discuss your observations with Mr. Davis directly and explore potential solutions, respecting his autonomy C) Immediately reduce investment risk without client consent D) Contact Adult Protective Services immediately",
+      "question": "Mr. Davis, a long-term client of Greenleaf Wealth Management, has started repeating himself and seems confused during meetings. As his CFP®, you observe signs of declining cognitive capacity. Which of the following is the MOST appropriate initial action?",
       "explanation": "Addressing diminished capacity requires sensitivity: document observations, follow firm protocols, use trusted contacts if previously designated, potentially delay transactions, and contact adult protective services if abuse is suspected. Simply ignoring or immediately closing accounts would not serve the Client\\'s interests.",
       "correctAnswer": 1,
       "options": [
@@ -5191,7 +5191,7 @@
       "subtopic": "Terminating Relationships",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John, a CFP® with Horizon Financial, is considering terminating his relationship with a client, Mrs. Smith. A CFP® professional may terminate a Client relationship when: A) Never—the CFP® professional has a lifelong obligation B) The Client fails to follow through on agreed actions, the relationship becomes adversarial, or continued service would violate standards C) Only when the Client requests termination D) The Client's account balance falls below a minimum threshold",
+      "question": "John, a CFP® with Horizon Financial, is considering terminating his relationship with a client, Mrs. Smith. A CFP® professional may terminate a Client relationship when:",
       "explanation": "There are appropriate reasons to terminate: Client non-cooperation, irreconcilable differences, inability to serve the Client\\'s best interests, or if continuing would violate ethical standards. Termination should be handled professionally with reasonable notice and assistance in transitioning to another adviser.",
       "correctAnswer": 1,
       "options": [
@@ -5226,7 +5226,7 @@
       "subtopic": "CE Requirements",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "To maintain their certification, CFP® professionals must engage in ongoing professional development. CFP® professionals must complete how many CE hours per reporting period? A) 30 hours biennially, including 2 hours of ethics B) No CE requirements once certified C) 15 hours D) 50 hours annually",
+      "question": "To maintain their certification, CFP® professionals must engage in ongoing professional development. CFP® professionals must complete how many CE hours per reporting period?",
       "explanation": "CFP® professionals must complete 30 hours of CE every 2 years, including 2 hours of CFP Board-approved ethics CE. Other approved topics include financial planning practice, investment, insurance, estate, retirement, and tax. CE providers must be approved or qualify for blanket approval.",
       "correctAnswer": 0,
       "options": [
@@ -5261,7 +5261,7 @@
       "subtopic": "Certification Marks",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is a CFP® professional at Redwood Advisors. She wants to include the CFP® marks on her business cards and website. Use of the CFP® certification marks requires: A) Only board membership B) Payment of a one-time licensing fee C) Current certification status and compliance with trademark guidelines D) Approval from each Client before use",
+      "question": "Maria is a CFP® professional at Redwood Advisors. She wants to include the CFP® marks on her business cards and website. Use of the CFP® certification marks requires:",
       "explanation": "CFP® marks can only be used by those currently certified and in good standing. Usage must comply with trademark guidelines (proper capitalization, registration symbol, not as a noun). Former certificants may not use the marks. Misuse can result in discipline and trademark infringement claims.",
       "correctAnswer": 2,
       "options": [
@@ -5331,7 +5331,7 @@
       "subtopic": "Competence",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The competence requirement of the CFP® Code is crucial for maintaining professional standards. The competence requirement of the CFP® Code means professionals must: A) Attain and maintain the ability to provide professional services competently, seeking additional instruction or declining engagement when lacking knowledge B) Know everything about all financial topics C) Only work with simple client situations D) Pass the CFP® exam every 5 years",
+      "question": "The competence requirement of the CFP® Code is crucial for maintaining professional standards. The competence requirement of the CFP® Code means professionals must:",
       "explanation": "Competence requires attaining and maintaining knowledge and skill needed to provide services competently. When facing unfamiliar areas, professionals should seek additional education, consult experts, or decline/refer the engagement. Continuing education helps maintain competence, but it must go beyond minimum requirements when needed.",
       "correctAnswer": 0,
       "options": [
@@ -5401,7 +5401,7 @@
       "subtopic": "Scope of Engagement",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "A new client, David, approaches Emily, a CFP® at Summit Planning, requesting assistance solely with selecting investments for his employer-sponsored 401(k) plan. The CFP® professional may: A) Insist on doing a full financial plan first B) Provide limited-scope advice after ensuring it is suitable and does not require comprehensive planning C) Not assist because it's unethical to give limited advice D) Only provide advice if the client signs a waiver releasing the CFP® from liability",
+      "question": "A new client, David, approaches Emily, a CFP® at Summit Planning, requesting assistance solely with selecting investments for his employer-sponsored 401(k) plan. The CFP® professional may:",
       "explanation": "CFP® professionals can provide limited-scope (modular) advice when appropriate. The professional must ensure the limited scope is suitable for client needs and doesn\\'t ignore obvious problems requiring attention. This must be clearly communicated and agreed upon in the engagement terms.",
       "correctAnswer": 1,
       "options": [
@@ -5471,7 +5471,7 @@
       "subtopic": "Referrals",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During the financial planning process, a CFP® at Zenith Wealth often refers clients to external professionals for specialized services. When referring clients to other professionals (attorneys, CPAs), the CFP® professional: A) Should refer only to competent professionals, disclose any conflicts or compensation arrangements, and ensure the referral is in the client's best interest B) Can refer to anyone, as long as they are licensed C) Is not responsible for the quality of the referred professional's work D) Should only refer to professionals within their own firm",
+      "question": "During the financial planning process, a CFP® at Zenith Wealth often refers clients to external professionals for specialized services. When referring clients to other professionals (attorneys, CPAs), the CFP® professional:",
       "explanation": "Referrals should be to competent professionals and in the client\\'s best interest. Any conflicts (such as receiving referral fees or having ownership interests) must be disclosed. After referring, the CFP® professional may maintain involvement if appropriate and agreed upon.",
       "correctAnswer": 0,
       "options": [
@@ -5506,7 +5506,7 @@
       "subtopic": "Duty to Inquire",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a review of Mrs. Gable's estate plan, you notice inconsistencies between her stated goals and the beneficiary designations on her accounts. Also, she seems unsure about the details of her current insurance policies. The duty to inquire requires CFP® professionals to: A) Investigate every statement thoroughly | B) Accept client statements at face value | C) Make reasonable inquiry when information appears incomplete, inaccurate, or client understanding seems limited | D) Only ask questions on a standard checklist",
+      "question": "During a review of Mrs. Gable's estate plan, you notice inconsistencies between her stated goals and the beneficiary designations on her accounts. Also, she seems unsure about the details of her current insurance policies. The duty to inquire requires CFP® professionals to:",
       "explanation": "Duty to inquire means following up when something doesn\\'t add up—inconsistent information, unrealistic assumptions, apparent misunderstanding. Professionals can\\'t blindly accept information that appears problematic. The inquiry should be reasonable and proportionate to the concern.",
       "correctAnswer": 2,
       "options": [
@@ -5541,7 +5541,7 @@
       "subtopic": "Best Interest",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah, a new client of Oak Financial Planning, is seeking advice on rolling over her 401(k). Even before signing an engagement letter, you discuss potential investment options and their suitability. The CFP® Fiduciary duty at all times means: A) Fiduciary duty applies only when providing financial planning | B) Fiduciary duty can be waived by client consent | C) Fiduciary duty applies at all times when providing financial advice, not just during engagements | D) Fiduciary duty applies only after the engagement letter is signed.",
+      "question": "Sarah, a new client of Oak Financial Planning, is seeking advice on rolling over her 401(k). Even before signing an engagement letter, you discuss potential investment options and their suitability. The CFP® Fiduciary duty at all times means:",
       "explanation": "Under the 2019 Standards, CFP® professionals owe fiduciary duty at all times when providing Financial Advice, not just when performing comprehensive financial planning. This expanded the duty beyond the traditional scope. It cannot be waived or circumvented through engagement letters.",
       "correctAnswer": 2,
       "options": [
@@ -5578,7 +5578,7 @@
       "subtopic": "Conflicts Disclosure",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Before recommending investments to the Peterson family, you must disclose any potential conflicts of interest. Full and fair disclosure of material conflicts includes: A) General statements about potential conflicts | B) Specific disclosure of how the professional and firm are compensated, any ownership interests, and incentives that could affect objectivity | C) A standard form letter | D) Verbal disclosure only",
+      "question": "Before recommending investments to the Peterson family, you must disclose any potential conflicts of interest. Full and fair disclosure of material conflicts includes:",
       "explanation": "Material conflict disclosure must be specific enough for clients to understand how conflicts might affect advice. This includes all compensation methods (commissions, fees, bonuses), revenue sharing, product incentives, proprietary product requirements, and any relationships that could bias recommendations.",
       "correctAnswer": 1,
       "options": [
@@ -5613,7 +5613,7 @@
       "subtopic": "Broker-Dealer Supervision",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "At Horizon Investments, supervisory procedures are being updated. Under broker-dealer supervision requirements, supervisory procedures must: A) Apply only to new representatives | B) Be the same at every firm | C) Be tailored to the firm | D) Be approved by the SEC.",
+      "question": "At Horizon Investments, supervisory procedures are being updated. Under broker-dealer supervision requirements, supervisory procedures must:",
       "explanation": "Broker-dealers must establish, maintain, and enforce written supervisory procedures (WSPs) tailored to their business. FINRA Rule 3110 requires supervision of registered representatives, review of customer accounts, and procedures to ensure compliance. Supervisors must be qualified and training documented.",
       "correctAnswer": 2,
       "options": [
@@ -5648,7 +5648,7 @@
       "subtopic": "Privacy Notice",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Brighton Wealth Management is updating its client communication policies. Under Regulation S-P, financial institutions must provide privacy notices: A) At account opening and annually thereafter, describing information sharing practices | B) Only when requested | C) Only if they share information with non-affiliates | D) Only to business customers",
+      "question": "Brighton Wealth Management is updating its client communication policies. Under Regulation S-P, financial institutions must provide privacy notices:",
       "explanation": "Regulation S-P requires financial institutions to provide initial privacy notices at relationship establishment and annual notices thereafter. Notices must describe information collection, sharing practices, and consumer rights to opt out of certain sharing. Changes to practices require new notices.",
       "correctAnswer": 0,
       "options": [
@@ -5683,7 +5683,7 @@
       "subtopic": "ADV Part 2",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates is reviewing its compliance procedures for investment advisors. Form ADV Part 2A (the brochure) must be: A) Provided only upon request | B) Delivered to clients initially and offered annually, describing advisory services, fees, conflicts, disciplinary history, and more | C) Filed with FINRA | D) Updated only every 5 years",
+      "question": "Chen & Associates is reviewing its compliance procedures for investment advisors. Form ADV Part 2A (the brochure) must be:",
       "explanation": "Form ADV Part 2A must be delivered to prospective clients before or at advisory agreement signing, and updates or a summary of changes must be offered annually. It\\'s written in plain English and covers services, fees, conflicts, disciplinary information, code of ethics, and business practices.",
       "correctAnswer": 1,
       "options": [
@@ -5753,7 +5753,7 @@
       "subtopic": "Fairness",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "When advising clients at Redwood Financial, the fairness principle in the CFP® Code means: A) Being fair in all professional relationships, which may mean different treatment based on different circumstances while avoiding discrimination | B) Charging all clients the same fees | C) Treating all clients exactly the same regardless of circumstances | D) Providing unlimited services to all clients",
+      "question": "When advising clients at Redwood Financial, the fairness principle in the CFP® Code means:",
       "explanation": "Fairness doesn\\'t mean identical treatment—it means equitable treatment based on circumstances. Different clients may receive different service levels based on engagement terms, but decisions shouldn\\'t be based on discriminatory factors. Fairness applies to clients, colleagues, and other professionals.",
       "correctAnswer": 0,
       "options": [
@@ -5788,7 +5788,7 @@
       "subtopic": "Professionalism",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "As a CFP® professional at Vista Planning, professionalism as a CFP® principle includes: A) Acting with dignity, courtesy, and respect; cooperating with regulators; and upholding the profession | B) Maximizing personal profits above all else | C) Avoiding all contact with regulators | D) Prioritizing client relationships over ethical conduct.",
+      "question": "As a CFP® professional at Vista Planning, professionalism as a CFP® principle includes:",
       "explanation": "Professionalism encompasses conduct that maintains public confidence in the profession. This includes treating colleagues and regulators with respect, cooperating with CFP Board and regulatory investigations, continuing education, and avoiding conduct that reflects adversely on the profession.",
       "correctAnswer": 0,
       "options": [
@@ -6771,7 +6771,7 @@
       "subtopic": "Marketing and Advertising",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Greenleaf Wealth Management uses client testimonials in its marketing materials. Under the SEC's marketing rule for investment advisers, testimonials and endorsements: A) Only apply to social media | B) Need no disclosure | C) Are permitted with required disclosures, including compensation arrangements and conflicts of interest | D) Are completely prohibited",
+      "question": "Greenleaf Wealth Management uses client testimonials in its marketing materials. Under the SEC's marketing rule for investment advisers, testimonials and endorsements:",
       "explanation": "The SEC\\'s amended marketing rule (2022) permits testimonials and endorsements with proper disclosures: whether the promoter is a client, compensation paid, conflicts of interest, and material facts. Materiality is key. Advisers must have reasonable basis to believe testimonials won\\'t be misleading.",
       "correctAnswer": 2,
       "options": [
@@ -6806,7 +6806,7 @@
       "subtopic": "Documenting Recommendations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After meeting with a new client, Sarah, a CFP® at Horizon Financial, develops a comprehensive financial plan. Documentation of her recommendations: A) Should be sufficient to support the basis for recommendations and demonstrate compliance with standards | B) Must follow a specific CFP Board format | C) Is only required for clients over $500,000 | D) Is optional",
+      "question": "After meeting with a new client, Sarah, a CFP® at Horizon Financial, develops a comprehensive financial plan. Documentation of her recommendations:",
       "explanation": "Documentation demonstrates the basis for recommendations, compliance with duties, and the planning process followed. While no specific format is required, records should be sufficient to reconstruct the analysis and show the recommendation was in the client\\'s best interest.",
       "correctAnswer": 0,
       "options": [
@@ -6841,7 +6841,7 @@
       "subtopic": "Proxy Voting",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "David, a CFP® at Pinnacle Investments, manages client portfolios and has proxy voting authority. When an investment adviser has proxy voting authority: A) Only management recommendations can be followed | B) Clients cannot direct voting | C) The adviser must adopt and disclose policies, vote in clients' best interest | D) The adviser can abstain from all voting",
+      "question": "David, a CFP® at Pinnacle Investments, manages client portfolios and has proxy voting authority. When an investment adviser has proxy voting authority:",
       "explanation": "Advisers with proxy voting authority must: adopt written policies (disclosed to clients), vote in clients\\' best interests, describe policies upon request, disclose how clients can obtain voting records, and maintain voting records for 5 years. Conflicts (e.g., voting on affiliated issuers) must be addressed.",
       "correctAnswer": 2,
       "options": [
@@ -6878,7 +6878,7 @@
       "subtopic": "Professional Liability",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria, a CFP® at Redwood Planning, provides financial advice to clients. Errors and omissions (E&O) insurance for financial planners: A) Is only for attorneys | B) Protects against claims of negligence, errors, or omissions in professional services though not specifically required by CFP Board | C) Covers intentional fraud | D) Is required by the CFP Board",
+      "question": "Maria, a CFP® at Redwood Planning, provides financial advice to clients. Errors and omissions (E&O) insurance for financial planners:",
       "explanation": "E&O insurance covers professional liability claims—negligent advice, errors in analysis, omissions in recommendations. While CFP Board doesn\\'t require it, many employers and professional associations do. It doesn\\'t cover intentional misconduct. Coverage limits and exclusions vary by policy.",
       "correctAnswer": 1,
       "options": [
@@ -6913,7 +6913,7 @@
       "subtopic": "Duty to Inform",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John, a CFP® at Emerald Coast Advisors, is working with a new client, Tom. A CFP® professional's duty to inform clients includes: A) Information about all competitors | B) Communicating material information needed for informed decision-making and keeping clients reasonably informed | C) Daily updates on all account holdings | D) Providing information only when requested",
+      "question": "John, a CFP® at Emerald Coast Advisors, is working with a new client, Tom. A CFP® professional's duty to inform clients includes:",
       "explanation": "The duty to inform means providing information relevant to decision-making: scope of engagement, material changes, risks, costs, and progress toward goals. Communication frequency and method should match engagement terms and client preferences. Clients need adequate information to make informed choices.",
       "correctAnswer": 1,
       "options": [
@@ -6948,7 +6948,7 @@
       "subtopic": "Exam and Registration",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Susan is preparing to become an Investment Adviser Representative (IAR) at Capital Growth Partners. The Series 65 exam: A) Is a state qualification exam for Investment Adviser Representatives, covering regulations, ethics, and investment knowledge | B) Is optional for all advisers | C) Only covers insurance | D) Is the CFP® exam",
+      "question": "Susan is preparing to become an Investment Adviser Representative (IAR) at Capital Growth Partners. The Series 65 exam:",
       "explanation": "Series 65 (Uniform Investment Adviser Law Exam) qualifies individuals as IARs. It covers federal/state laws, ethics, economics, investment analysis, and investment strategies. FINRA administered. Passing Series 66 (combined with Series 7) is an alternative. CFP® certificants may have exemptions in some states.",
       "correctAnswer": 0,
       "options": [
@@ -6983,7 +6983,7 @@
       "subtopic": "Reporting Requirements",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Michael, a CFP®, was recently charged with a misdemeanor for a DUI. CFP® professionals must report to CFP Board: A) Criminal and regulatory matters including felonies, financial crimes, and certain civil judicial or regulatory actions | B) Only if found guilty | C) Changes in employment only | D) Only felony convictions",
+      "question": "Michael, a CFP®, was recently charged with a misdemeanor for a DUI. CFP® professionals must report to CFP Board:",
       "explanation": "CFP Board requires disclosure of criminal matters (not just convictions), civil actions, regulatory proceedings, bankruptcy, customer complaints, and other matters bearing on fitness. Requirements include timing obligations (often 30 days). Failure to report is itself a violation.",
       "correctAnswer": 0,
       "options": [
@@ -7018,7 +7018,7 @@
       "subtopic": "Firm Supervision",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Lisa, a CFP® professional, is a senior advisor at Sterling Financial and supervises several junior planners. A CFP® professional with supervisory responsibility: A) Is only responsible for their own conduct | B) Must make reasonable efforts to ensure supervised persons comply with applicable standards and may be sanctioned for supervisory failures | C) Can delegate all compliance responsibilities | D) Has no special obligations",
+      "question": "Lisa, a CFP® professional, is a senior advisor at Sterling Financial and supervises several junior planners. A CFP® professional with supervisory responsibility:",
       "explanation": "Supervisors must establish systems, provide training, and monitor compliance. They can be disciplined for failing to reasonably supervise—even if they didn\\'t participate in misconduct. This creates accountability at the supervisory level and encourages proper compliance infrastructure.",
       "correctAnswer": 1,
       "options": [
@@ -9609,7 +9609,7 @@
       "subtopic": "Referring Clients",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah is a CFP® professional at Oak Financial Planning. She often refers clients to estate planning attorneys and CPAs. Which of the following describes Sarah's responsibilities when referring clients to other professionals? A) Refer to competent professionals, disclose any compensation for referrals, and follow up as appropriate | B) Never refer | C) Refer only to those paying referral fees | D) Guarantee others",
+      "question": "Sarah is a CFP® professional at Oak Financial Planning. She often refers clients to estate planning attorneys and CPAs. Which of the following describes Sarah's responsibilities when referring clients to other professionals?",
       "explanation": "Referral best practices: refer to qualified, competent professionals. Disclose: any referral compensation received, conflicts of interest. Consider: reputation, expertise, cost. Follow up on critical matters. Not responsible for others\\' work but should monitor for client\\'s benefit. Referral relationships should be based on quality, not just compensation. Document referrals made.",
       "correctAnswer": 0,
       "options": [
@@ -9644,7 +9644,7 @@
       "subtopic": "Diligence",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "David, a CFP® at Summit Wealth Advisors, is creating a retirement plan for a new client, Emily. The duty of diligence requires David to: A) Provide services thoroughly, timely, and with appropriate attention to detail | B) Work quickly without checking | C) Delay all decisions | D) Focus only on major matters",
+      "question": "David, a CFP® at Summit Wealth Advisors, is creating a retirement plan for a new client, Emily. The duty of diligence requires David to:",
       "explanation": "Diligence: thorough professional service with appropriate care. Includes: timely responses, complete analysis, attention to detail, follow-through on commitments. Balance speed with accuracy. Prioritize time-sensitive matters. Don\\'t cut corners. Diligence in: data gathering, analysis, recommendations, implementation, monitoring. Builds client confidence and reduces errors.",
       "correctAnswer": 0,
       "options": [

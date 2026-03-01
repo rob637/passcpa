@@ -2394,7 +2394,7 @@
       "subtopic": "Manipulation Detection",
       "difficulty": "easy",
       "skillLevel": "Analysis",
-      "question": "Apex Distribution's CFO is concerned about potential earnings manipulation. Sales have been increasing steadily. Which pattern in Apex's financial statements might indicate potential earnings manipulation? A) Decreasing receivables with increasing sales B) Days sales in receivables growing faster than revenue growth C) Cash receipts matching revenue recognition D) Stable relationship between revenue and receivables",
+      "question": "Apex Distribution's CFO is concerned about potential earnings manipulation. Sales have been increasing steadily. Which pattern in Apex's financial statements might indicate potential earnings manipulation?",
       "options": [
         "Decreasing receivables with increasing sales due to aggressive write-offs",
         "Days sales in receivables growing faster than revenue growth",
@@ -2428,7 +2428,7 @@
       "subtopic": "Beneish M-Score",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Analysts at Sterling Investments use various tools to evaluate companies. The analysts are concerned about aggressive accounting practices. The Beneish M-Score is used to: A) Assess the probability of earnings manipulation B) Determine optimal capital structure C) Forecast economic recessions D) Calculate intrinsic stock value",
+      "question": "Analysts at Sterling Investments use various tools to evaluate companies. The analysts are concerned about aggressive accounting practices. The Beneish M-Score is used to:",
       "options": [
         "Assess the probability of earnings manipulation",
         "Determine optimal capital structure by analyzing debt-to-equity ratios and minimizing the weighted average cost of capital.",
@@ -2632,7 +2632,7 @@
       "subtopic": "Five-Component DuPont",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "GreenTech Energy wants to improve its ROE. The CFO is using the DuPont model to analyze the drivers. The extended (5-component) DuPont model decomposes ROE into which components? A) Revenue growth, cost efficiency, working capital, fixed assets, debt ratio B) Gross margin, SGA ratio, depreciation ratio, asset turnover, leverage C) Tax burden, interest burden, operating margin, asset turnover, equity multiplier D) Profit margin, asset turnover, equity multiplier, growth rate, dividend payout",
+      "question": "GreenTech Energy wants to improve its ROE. The CFO is using the DuPont model to analyze the drivers. The extended (5-component) DuPont model decomposes ROE into which components?",
       "options": [
         "Revenue growth, cost efficiency, working capital, fixed assets, debt ratio",
         "Gross margin, SGA ratio, depreciation ratio, asset turnover, leverage",
@@ -2700,7 +2700,7 @@
       "subtopic": "Debt Ratios",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Horizon Manufacturing is evaluating its capital structure. They want to understand their leverage. Which of the following best describes the debt-to-equity ratio? A) Total debt divided by total stockholders' equity B) Long-term debt divided by total assets C) Total liabilities divided by net income D) Total assets divided by total equity",
+      "question": "Horizon Manufacturing is evaluating its capital structure. They want to understand their leverage. Which of the following best describes the debt-to-equity ratio?",
       "options": [
         "Total debt divided by total stockholders' equity",
         "Long-term debt divided by total assets, reflecting the proportion of assets financed by long-term borrowing.",
@@ -2802,7 +2802,7 @@
       "subtopic": "Accruals Analysis",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Evergreen Solutions reports net income of $200,000 for the year. However, their operating cash flow is only $80,000. This suggests: A) Depreciation expense is very high B) Potential earnings quality concerns due to high accrual component C) The company is collecting cash faster than recognizing revenue D) High-quality earnings supported by cash flows",
+      "question": "Evergreen Solutions reports net income of $200,000 for the year. However, their operating cash flow is only $80,000. This suggests:",
       "options": [
         "Depreciation expense is very high, significantly reducing taxable income.",
         "Potential earnings quality concerns due to high accrual component",
@@ -2836,7 +2836,7 @@
       "subtopic": "Revenue Recognition Red Flags",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The audit committee at Global Tech is reviewing the company's revenue recognition policies. Which of the following is a red flag for potential revenue manipulation? A) Receivables growing significantly faster than revenue B) Consistent operating cash flows relative to net income C) Stable gross margins over multiple periods D) Receivables growing in line with revenue",
+      "question": "The audit committee at Global Tech is reviewing the company's revenue recognition policies. Which of the following is a red flag for potential revenue manipulation?",
       "options": [
         "Receivables growing significantly faster than revenue",
         "Consistent operating cash flows relative to net income",
@@ -2972,7 +2972,7 @@
       "subtopic": "Cash Flow Patterns",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Consider a mature, healthy company, Summit Industries. Which cash flow pattern would Summit most typically show? A) Negative operating, positive investing, positive financing B) Positive operating, negative investing, positive financing C) Positive operating, negative investing, negative financing D) Positive operating, positive investing, negative financing",
+      "question": "Consider a mature, healthy company, Summit Industries. Which cash flow pattern would Summit most typically show?",
       "options": [
         "Negative operating, positive investing, positive financing",
         "Positive operating, negative investing, positive financing",
@@ -3006,7 +3006,7 @@
       "subtopic": "Off-Balance-Sheet Financing",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Vision Real Estate entered into a long-term lease agreement. Under ASC 842, which statement about lease accounting is correct? A) Both finance and operating leases require recognition of a right-of-use asset and liability B) Only finance leases are recognized on the balance sheet C) Lease classification is eliminated under the new standard D) Operating leases remain entirely off the balance sheet",
+      "question": "Vision Real Estate entered into a long-term lease agreement. Under ASC 842, which statement about lease accounting is correct?",
       "options": [
         "Both finance and operating leases require recognition of a right-of-use asset and liability",
         "Only finance leases are recognized on the balance sheet, with operating leases expensed as incurred and disclosed in the footnotes.",
@@ -3346,7 +3346,7 @@
       "subtopic": "Beta",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vanguard Investments is analyzing TechCorp stock, which has a beta of 1.5. This means the stock is expected to: A) Be less volatile than the market | B) Move 50% more than the market in either direction | C) Move in the opposite direction of the market | D) Have no correlation with market movements",
+      "question": "Vanguard Investments is analyzing TechCorp stock, which has a beta of 1.5. This means the stock is expected to:",
       "options": [
         "Experience volatility dampened by diversification, resulting in less sensitivity than the market.",
         "Move 50% more than the market in either direction",
@@ -3414,7 +3414,7 @@
       "subtopic": "Portfolio Diversification",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Greenfield Advisors recommends portfolio diversification to its clients. What is the primary benefit of portfolio diversification? A) Elimination of all investment risk | B) Guaranteed higher returns | C) Reduction of unsystematic (company-specific) risk | D) Lower transaction costs",
+      "question": "Greenfield Advisors recommends portfolio diversification to its clients. What is the primary benefit of portfolio diversification?",
       "options": [
         "Elimination of all investment risk through perfect hedging strategies.",
         "Guaranteed higher returns than any single asset investment.",
@@ -3448,7 +3448,7 @@
       "subtopic": "Cost of Debt",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sterling Industries issues bonds at an 8% interest rate. The company's effective tax rate is 25%. What is Sterling Industries' after-tax cost of debt? A) 2% | B) 8% | C) 6% | D) 10%",
+      "question": "Sterling Industries issues bonds at an 8% interest rate. The company's effective tax rate is 25%. What is Sterling Industries' after-tax cost of debt?",
       "options": [
         "2%",
         "8%",
@@ -3550,7 +3550,7 @@
       "subtopic": "WACC",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Apex Solutions has a capital structure of 40% debt (after-tax cost 5%) and 60% equity (cost 12%). What is Apex Solutions' weighted average cost of capital (WACC)? A) 8.5% | B) 9.2% | C) 7.2% | D) 17%",
+      "question": "Apex Solutions has a capital structure of 40% debt (after-tax cost 5%) and 60% equity (cost 12%). What is Apex Solutions' weighted average cost of capital (WACC)?",
       "options": [
         "8.5%",
         "9.2%",
@@ -3584,7 +3584,7 @@
       "subtopic": "WACC Applications",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Davis & Co. is evaluating a new project with risk similar to its existing operations. Weighted average cost of capital (WACC) is most appropriately used as the discount rate for: A) All investment decisions regardless of risk | B) Projects with similar risk as the company's existing operations | C) Projects with significantly different risk than the company | D) Only debt-financed projects",
+      "question": "Davis & Co. is evaluating a new project with risk similar to its existing operations. Weighted average cost of capital (WACC) is most appropriately used as the discount rate for:",
       "options": [
         "All investment decisions regardless of risk, assuming perfect markets and costless information.",
         "Projects with similar risk as the company's existing operations",
@@ -3618,7 +3618,7 @@
       "subtopic": "Optimal Capital Structure",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech is determining its optimal capital structure. The optimal capital structure is the mix of debt and equity that: A) Uses 100% debt financing | B) Minimizes the weighted average cost of capital | C) Uses 100% equity financing | D) Maximizes interest expense",
+      "question": "GlobalTech is determining its optimal capital structure. The optimal capital structure is the mix of debt and equity that:",
       "options": [
         "Uses 100% debt financing to maximize tax shields",
         "Minimizes the weighted average cost of capital",
@@ -3652,7 +3652,7 @@
       "subtopic": "Financial Leverage",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Everett Corp. is considering increasing its financial leverage by issuing more debt. Increasing financial leverage (using more debt) will: A) Increase variability of earnings per share | B) Decrease the company's risk | C) Always increase shareholder wealth | D) Have no effect on stock price",
+      "question": "Everett Corp. is considering increasing its financial leverage by issuing more debt. Increasing financial leverage (using more debt) will:",
       "options": [
         "Increase variability of earnings per share",
         "Decrease the company's risk, assuming taxes exist",
@@ -3686,7 +3686,7 @@
       "subtopic": "Pecking Order Theory",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "When considering financing options, how do companies typically prioritize funding sources according to pecking order theory? A) Internal funds, debt, equity | B) Equity, debt, internal funds | C) Debt, equity, internal funds | D) Equity, internal funds, debt",
+      "question": "When considering financing options, how do companies typically prioritize funding sources according to pecking order theory?",
       "options": [
         "Internal funds, debt, equity",
         "Equity, debt, internal funds",
@@ -4958,7 +4958,7 @@
       "subtopic": "Short-term Financing",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Apex Solutions, a large tech company, needs short-term financing for operations. Given its strong credit rating, which short-term financing source would typically be the LEAST expensive for Apex? A) Unsecured bank line of credit | B) Trade credit beyond the discount period | C) Commercial paper | D) Factoring of receivables",
+      "question": "Apex Solutions, a large tech company, needs short-term financing for operations. Given its strong credit rating, which short-term financing source would typically be the LEAST expensive for Apex?",
       "options": [
         "Unsecured bank line of credit",
         "Trade credit beyond the discount period",
@@ -4992,7 +4992,7 @@
       "subtopic": "Dividend Irrelevance Theory",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Energy is debating its dividend policy. The CFO believes the Modigliani-Miller dividend irrelevance theory holds true. This theory assumes: A) High transaction costs and taxes | B) Perfect capital markets with no taxes or transaction costs | C) Investors prefer dividends over capital gains | D) Managers have better information than investors",
+      "question": "GreenTech Energy is debating its dividend policy. The CFO believes the Modigliani-Miller dividend irrelevance theory holds true. This theory assumes:",
       "options": [
         "High transaction costs and taxes that impede arbitrage opportunities",
         "Perfect capital markets with no taxes or transaction costs",
@@ -5026,7 +5026,7 @@
       "subtopic": "Signaling Effect",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "After years of consistent dividends, Davis Industries announced a significant increase in its quarterly dividend. Dividend signaling theory suggests this action indicates: A) Management signals confidence in sustainable future cash flows | B) It signals financial distress | C) Management is pessimistic about future earnings | D) The stock price should decrease",
+      "question": "After years of consistent dividends, Davis Industries announced a significant increase in its quarterly dividend. Dividend signaling theory suggests this action indicates:",
       "options": [
         "Management signals confidence in sustainable future cash flows",
         "It signals financial distress, indicating a need to attract investors despite underlying weaknesses.",
@@ -5060,7 +5060,7 @@
       "subtopic": "Residual Dividend Policy",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Sterling Corp. follows a residual dividend policy. This means dividends are paid: A) After funding all positive NPV projects from equity | B) Before capital investments are considered | C) Only from debt financing | D) At a fixed percentage of earnings",
+      "question": "Sterling Corp. follows a residual dividend policy. This means dividends are paid:",
       "options": [
         "After funding all positive NPV projects from equity",
         "Based on management's discretion before considering any capital investments",
@@ -5094,7 +5094,7 @@
       "subtopic": "Methods",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Global Dynamics is considering ways to return capital to shareholders. Which of the following is NOT a common method for Global Dynamics to repurchase its own stock? A) Dutch auction | B) Tender offer at a premium | C) Open market purchases | D) Dividend reinvestment plan",
+      "question": "Global Dynamics is considering ways to return capital to shareholders. Which of the following is NOT a common method for Global Dynamics to repurchase its own stock?",
       "options": [
         "Dutch auction with a sinking fund",
         "Tender offer at a premium",
@@ -5162,7 +5162,7 @@
       "subtopic": "Advantages",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Compared to regular cash dividends, stock repurchases offer which key advantage to both shareholders and the company? A) Providing tax deferral for shareholders and flexibility for the company | B) Being required by law | C) Creating a regular expected cash payment to shareholders | D) Reducing the stock price",
+      "question": "Compared to regular cash dividends, stock repurchases offer which key advantage to both shareholders and the company?",
       "options": [
         "Providing tax deferral for shareholders and flexibility for the company",
         "Being required by law under specific industry regulations for distressed companies.",
@@ -5196,7 +5196,7 @@
       "subtopic": "Synergies",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vanguard Acquisitions is evaluating a merger with NovaTech. Operating synergies in M&A transactions typically arise from: A) Revenue enhancement and cost reduction opportunities | B) Tax loss carryforwards only | C) Changes in capital structure | D) Financial diversification",
+      "question": "Vanguard Acquisitions is evaluating a merger with NovaTech. Operating synergies in M&A transactions typically arise from:",
       "options": [
         "Revenue enhancement and cost reduction opportunities",
         "Tax loss carryforwards only, assuming immediate utilization.",
@@ -5264,7 +5264,7 @@
       "subtopic": "Hostile Takeover Defenses",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Corp is the target of a hostile takeover attempt. A \"poison pill\" takeover defense allows: A) Management to veto any acquisition | B) Existing shareholders to buy additional shares at a discount if triggered | C) The target to acquire the bidder | D) Government to block the acquisition",
+      "question": "Apex Corp is the target of a hostile takeover attempt. A \"poison pill\" takeover defense allows:",
       "options": [
         "Management to veto any acquisition attempt if they deem it not in the best long-term interest of the company",
         "Existing shareholders to buy additional shares at a discount if triggered",
@@ -6046,7 +6046,7 @@
       "subtopic": "Stock Repurchases",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "GreenTech Solutions is considering distributing profits. Compared to cash dividends, stock repurchases offer GreenTech the advantage of: A) Being required by SEC regulations annually | B) Tax flexibility since shareholders choose when to realize capital gains | C) Creating a legally binding commitment to shareholders | D) Always increasing the stock price immediately",
+      "question": "GreenTech Solutions is considering distributing profits. Compared to cash dividends, stock repurchases offer GreenTech the advantage of:",
       "options": [
         "Being required by SEC regulations annually to maintain listing status and investor confidence.",
         "Tax flexibility since shareholders choose when to realize capital gains",
@@ -6114,7 +6114,7 @@
       "subtopic": "Credit Policy",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Apex Manufacturing is trying to improve cash flow. They change credit terms from net 30 to 2/10, net 30. The primary benefit to Apex is: A) Faster cash collection and reduced average receivables | B) Elimination of all bad debts | C) Increased sales revenue from new customers | D) Lower cost of goods sold",
+      "question": "Apex Manufacturing is trying to improve cash flow. They change credit terms from net 30 to 2/10, net 30. The primary benefit to Apex is:",
       "options": [
         "Faster cash collection and reduced average receivables",
         "Elimination of all bad debts due to stricter payment enforcement",
@@ -6148,7 +6148,7 @@
       "subtopic": "Cash Management",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During reconciliation, CFO of Taylor Enterprises notices differences between bank and book balances. Float in cash management refers to: A) The difference between the bank balance and the book balance due to timing of check processing | B) The interest earned on cash balances | C) The amount of overdraft protection available | D) The minimum cash balance required by the bank",
+      "question": "During reconciliation, CFO of Taylor Enterprises notices differences between bank and book balances. Float in cash management refers to:",
       "options": [
         "The difference between the bank balance and the book balance due to timing of check processing",
         "The interest earned on cash balances, representing a return on short-term investments and impacting overall profitability.",
@@ -6216,7 +6216,7 @@
       "subtopic": "Bond Characteristics",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Davis Corp issued bonds 5 years ago. A callable bond benefits Davis Corp because: A) It has a lower coupon rate than non-callable bonds | B) Bondholders must sell when commanded | C) The issuer can refinance at lower interest rates if rates decline | D) It eliminates all interest rate risk",
+      "question": "Davis Corp issued bonds 5 years ago. A callable bond benefits Davis Corp because:",
       "options": [
         "It typically has a slightly lower coupon rate initially, reflecting the embedded call option's value to the issuer, but this difference is not guaranteed.",
         "Bondholders are obligated to sell their bonds back to the issuer at the predetermined call price, which may or may not be advantageous to the bondholder.",
@@ -6250,7 +6250,7 @@
       "subtopic": "Types of Mergers",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "SteelCo is evaluating different merger strategies. A horizontal merger involves the combination of: A) Two unrelated companies in different industries | B) A company with its supplier | C) Two companies in the same industry and at the same stage of production | D) A parent company with its subsidiary",
+      "question": "SteelCo is evaluating different merger strategies. A horizontal merger involves the combination of:",
       "options": [
         "Two unrelated companies in different industries seeking diversification benefits and reduced overall business risk.",
         "A company integrating with its supplier to gain control over raw materials and potentially reduce input costs.",
@@ -6284,7 +6284,7 @@
       "subtopic": "Acquisition Valuation",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Vanguard Investments is analyzing the potential acquisition of Target Corp. The acquisition premium is best described as: A) The difference between the book value and market value of a target | B) The cost of due diligence for the acquisition | C) The amount paid above the target's pre-announcement market value | D) The present value of expected synergies",
+      "question": "Vanguard Investments is analyzing the potential acquisition of Target Corp. The acquisition premium is best described as:",
       "options": [
         "The difference between the book value and market value of a target",
         "The cost of due diligence for the acquisition",
@@ -6318,7 +6318,7 @@
       "subtopic": "Exchange Rate Risk",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "GlobalTech has significant international sales. Transaction exposure refers to the risk that: A) Translated financial statements may change when exchange rates change | B) Future operating cash flows may be affected by exchange rate changes | C) Existing contractual obligations denominated in foreign currency may change in domestic currency value | D) Interest rates in foreign countries may increase",
+      "question": "GlobalTech has significant international sales. Transaction exposure refers to the risk that:",
       "options": [
         "Translated financial statements may change when exchange rates change, impacting reported earnings but not underlying cash flows.",
         "Future operating cash flows may be affected by exchange rate changes, which is better defined as economic exposure, not transaction exposure.",
@@ -6352,7 +6352,7 @@
       "subtopic": "Hedging Techniques",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "ABC Corp., a US company, will receive €1,000,000 in 90 days. To hedge this exposure, the company could: A) Borrow in US dollars to create a natural hedge | B) Buy euros in the forward market | C) Sell euros in the forward market to lock in the dollar amount | D) Buy euro call options",
+      "question": "ABC Corp., a US company, will receive €1,000,000 in 90 days. To hedge this exposure, the company could:",
       "options": [
         "Borrow in US dollars and simultaneously invest in euro-denominated bonds to create a natural hedge",
         "Buy euros in the forward market to speculate on a strengthening euro against the dollar in the next 90 days",
@@ -8256,7 +8256,7 @@
       "subtopic": "Executive Compensation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Energy's board is debating executive compensation. A significant portion will be stock options. These options are designed to: A) Guarantee minimum income | B) Replace salary entirely | C) Align executive interests with shareholder interests | D) Reduce company tax obligations",
+      "question": "Apex Energy's board is debating executive compensation. A significant portion will be stock options. These options are designed to:",
       "options": [
         "Guarantee a minimum income regardless of company performance.",
         "Replace salary entirely, shifting all compensation to equity-based pay.",
@@ -8358,7 +8358,7 @@
       "subtopic": "Free Cash Flow",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Analysts are valuing GreenTech Solutions. They need to calculate the free cash flow to the firm (FCFF). FCFF is calculated as: A) Cash inflows minus all cash outflows | B) Net income minus dividends | C) EBIT(1-T) + Depreciation - Capital Expenditures - Change in Working Capital | D) Operating cash flow minus capital expenditures",
+      "question": "Analysts are valuing GreenTech Solutions. They need to calculate the free cash flow to the firm (FCFF). FCFF is calculated as:",
       "options": [
         "Cash inflows from operations minus all cash outflows, including financing costs and taxes.",
         "Net income minus preferred stock dividends, adjusted for common stock repurchases at market value.",
@@ -8392,7 +8392,7 @@
       "subtopic": "DuPont Analysis",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Titan Industries has a profit margin of 5%, an asset turnover of 2.0, and an equity multiplier of 2.5. What is Titan Industries' Return on Equity (ROE)? A) 10% | B) 25% | C) 20% | D) 15%",
+      "question": "Titan Industries has a profit margin of 5%, an asset turnover of 2.0, and an equity multiplier of 2.5. What is Titan Industries' Return on Equity (ROE)?",
       "options": [
         "10%",
         "25%",
@@ -8460,7 +8460,7 @@
       "subtopic": "Operating Leverage",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "NovaTech Inc. has relatively high fixed costs compared to variable costs. This indicates that NovaTech has: A) High levels of debt financing | B) Low fixed costs relative to variable costs | C) Low risk of business failure | D) High fixed costs relative to variable costs, causing profits to be more sensitive to sales changes",
+      "question": "NovaTech Inc. has relatively high fixed costs compared to variable costs. This indicates that NovaTech has:",
       "options": [
         "High levels of debt financing, leading to increased interest expenses and a lower degree of operating leverage.",
         "Low fixed costs relative to variable costs, resulting in a stable profit margin regardless of fluctuations in sales volume.",
@@ -8494,7 +8494,7 @@
       "subtopic": "Accruals",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a review of Sterling Company's financials, auditors noted a significant difference between accruals and cash flows. This may indicate: A) No impact on earnings quality | B) Higher quality earnings | C) Better cash management | D) Lower quality earnings because accruals reverse",
+      "question": "During a review of Sterling Company's financials, auditors noted a significant difference between accruals and cash flows. This may indicate:",
       "options": [
         "No impact on earnings quality if accruals are immaterial",
         "Higher quality earnings if accruals match cash conversion",
@@ -8528,7 +8528,7 @@
       "subtopic": "Cash Conversion Cycle",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Global Corp. has the following: Inventory Days: 45, Receivables Days: 30, and Payables Days: 40. What is Global Corp's Cash Conversion Cycle? A) 75 days | B) 115 days | C) 25 days | D) 35 days",
+      "question": "Global Corp. has the following: Inventory Days: 45, Receivables Days: 30, and Payables Days: 40. What is Global Corp's Cash Conversion Cycle?",
       "options": [
         "75 days",
         "115 days",
@@ -8596,7 +8596,7 @@
       "subtopic": "Modigliani-Miller",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "According to Modigliani-Miller Proposition I (with taxes), how does debt affect firm value? A) Optimal capital structure is 100% equity | B) Capital structure does not affect firm value | C) All debt is better than any equity | D) Firm value increases with debt due to the interest tax shield",
+      "question": "According to Modigliani-Miller Proposition I (with taxes), how does debt affect firm value?",
       "options": [
         "Optimal capital structure is 100% equity, maximizing WACC and minimizing financial distress costs.",
         "Capital structure does not affect firm value because the cost of capital perfectly offsets any tax advantages.",
@@ -8630,7 +8630,7 @@
       "subtopic": "Bond Yield",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Omega Co.'s bonds yield 8% before tax. The company's tax rate is 25%. What is Omega's after-tax cost of debt? A) 10% | B) 2% | C) 8% | D) 6%",
+      "question": "Omega Co.'s bonds yield 8% before tax. The company's tax rate is 25%. What is Omega's after-tax cost of debt?",
       "options": [
         "10%",
         "2%",
@@ -24134,7 +24134,7 @@
       "subtopic": "ARR Calculation",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions is evaluating a new solar panel project. Management wants to use a simple method to evaluate the project's profitability. Accounting rate of return (ARR) uses:\nA) Cash flows and present values | B) Only initial investment | C) IRR as the benchmark | D) Average accounting income and average investment",
+      "question": "GreenTech Solutions is evaluating a new solar panel project. Management wants to use a simple method to evaluate the project's profitability. Accounting rate of return (ARR) uses:",
       "options": [
         "Discounted cash flows adjusted by their present values using the company's cost of capital.",
         "The project's initial investment and the time value of money, without considering future earnings.",
@@ -24168,7 +24168,7 @@
       "subtopic": "Initial Investment",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Manufacturing is replacing an old machine with a newer, more efficient model. The new machine costs $500,000. The old machine can be sold for $50,000, and the tax rate is 25%. When calculating the initial investment for this replacement project, include:\nA) Only the new equipment cost | B) Book value of old equipment | C) Annual operating costs | D) New equipment cost minus salvage value of old equipment (adjusted for taxes)",
+      "question": "Apex Manufacturing is replacing an old machine with a newer, more efficient model. The new machine costs $500,000. The old machine can be sold for $50,000, and the tax rate is 25%. When calculating the initial investment for this replacement project, include:",
       "options": [
         "Only the new equipment cost, ignoring any proceeds from the disposal of the old asset.",
         "Book value of old equipment, as it reflects the remaining undepreciated cost for accounting purposes.",
@@ -24202,7 +24202,7 @@
       "subtopic": "Depreciation Tax Shield",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Precision Instruments has a new project with annual depreciation of $50,000. The company's tax rate is 30%. What is the depreciation tax shield?\nA) $65,000 | B) $35,000 | C) $50,000 | D) $15,000",
+      "question": "Precision Instruments has a new project with annual depreciation of $50,000. The company's tax rate is 30%. What is the depreciation tax shield?",
       "options": [
         "$65,000",
         "$35,000",
@@ -24236,7 +24236,7 @@
       "subtopic": "Terminal Cash Flow",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Evergreen Landscaping is analyzing a 10-year project. At the end of the project, they expect to sell the equipment for $20,000 after taxes, and release $10,000 in working capital. Terminal cash flows typically include:\nA) Initial investment recovery | B) Only depreciation for the final year | C) First year operating cash flows | D) Salvage value (after tax) and release of working capital",
+      "question": "Evergreen Landscaping is analyzing a 10-year project. At the end of the project, they expect to sell the equipment for $20,000 after taxes, and release $10,000 in working capital. Terminal cash flows typically include:",
       "options": [
         "Initial investment recovery, adjusted for inflation over the project life",
         "Only depreciation for the final year, ignoring any salvage value or tax implications",
@@ -24270,7 +24270,7 @@
       "subtopic": "Scenario Analysis",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "GlobalTech is evaluating a new product line. They want to understand the impact of various economic conditions on the project's NPV. Scenario analysis differs from sensitivity analysis by:\nA) Ignoring risk entirely | B) Never calculating NPV | C) Only using one variable | D) Changing multiple variables simultaneously to create different scenarios",
+      "question": "GlobalTech is evaluating a new product line. They want to understand the impact of various economic conditions on the project's NPV. Scenario analysis differs from sensitivity analysis by:",
       "options": [
         "Assuming a risk-neutral stance and focusing solely on expected values, thereby ignoring potential deviations.",
         "Focusing on qualitative assessments of potential outcomes and strategic fit, rather than quantifying project value with NPV.",
@@ -24304,7 +24304,7 @@
       "subtopic": "Risk-Adjusted Discount Rate",
       "difficulty": "easy",
       "skillLevel": "Analysis",
-      "question": "Venture Capital is considering investing in a startup. This project is considered riskier than their average investment. A project riskier than the company average should be evaluated using:\nA) No discount rate | B) Exactly the WACC | C) A lower discount rate than WACC | D) A higher discount rate than WACC",
+      "question": "Venture Capital is considering investing in a startup. This project is considered riskier than their average investment. A project riskier than the company average should be evaluated using:",
       "options": [
         "A zero discount rate, focusing solely on expected cash flows",
         "Exactly the WACC, regardless of the project's specific risk profile",
@@ -24338,7 +24338,7 @@
       "subtopic": "Option to Expand",
       "difficulty": "easy",
       "skillLevel": "Analysis",
-      "question": "BioPharma Inc. is considering a large capital investment in a new drug manufacturing plant. The project has uncertainty regarding future demand. Real options in capital budgeting add value by:\nA) Reducing initial investment | B) Eliminating all project risk | C) Guaranteeing project success | D) Providing management flexibility to adapt to future conditions",
+      "question": "BioPharma Inc. is considering a large capital investment in a new drug manufacturing plant. The project has uncertainty regarding future demand. Real options in capital budgeting add value by:",
       "options": [
         "Reducing initial investment by utilizing existing infrastructure and delaying certain expenditures.",
         "Eliminating all project risk through comprehensive hedging strategies and insurance policies.",
@@ -24372,7 +24372,7 @@
       "subtopic": "Post-Audit",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After completing a new distribution center project, Logistics Solutions performs a review. A post-audit of a capital project is performed to:\nA) Calculate the initial NPV | B) Terminate the project early | C) Increase the project budget | D) Compare actual results to projections and learn for future decisions",
+      "question": "After completing a new distribution center project, Logistics Solutions performs a review. A post-audit of a capital project is performed to:",
       "options": [
         "Calculate the initial net present value to confirm the original investment decision.",
         "Terminate the project early if it fails to meet predetermined performance benchmarks.",
@@ -32260,7 +32260,7 @@
       "subtopic": "Documentation",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Jane, a CMA at Pinnacle Solutions, suspects a vendor is overbilling. She documents her concerns and actions taken. Proper documentation is important because it: A) Provides evidence of due diligence and protects the professional | B) Eliminates the need for follow-up | C) Is required for tax purposes | D) Creates more work for administrators",
+      "question": "Jane, a CMA at Pinnacle Solutions, suspects a vendor is overbilling. She documents her concerns and actions taken. Proper documentation is important because it:",
       "options": [
         "It provides evidence of due diligence and protects the professional",
         "It eliminates the need for follow-up investigations, assuming the initial documentation is comprehensive and error-free.",
@@ -32294,7 +32294,7 @@
       "subtopic": "Consequentialism",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "During a budget review at GreenTech Energy, the CFO must decide whether to lay off employees to meet targets. A consequentialist approach to ethics focuses primarily on: A) The outcomes or consequences of actions | B) Religious teachings | C) Individual rights and duties | D) Following established rules regardless of outcome",
+      "question": "During a budget review at GreenTech Energy, the CFO must decide whether to lay off employees to meet targets. A consequentialist approach to ethics focuses primarily on:",
       "options": [
         "The outcomes or consequences of actions",
         "Religious teachings",
@@ -32362,7 +32362,7 @@
       "subtopic": "Debt Analysis",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Manufacturing has total assets of $2,000,000 and equity of $800,000. What is Apex's debt ratio? A) 150% | B) 40% | C) 250% | D) 60%",
+      "question": "Apex Manufacturing has total assets of $2,000,000 and equity of $800,000. What is Apex's debt ratio?",
       "options": [
         "150%",
         "40%",
@@ -32430,7 +32430,7 @@
       "subtopic": "Horizontal Analysis",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sunrise Retail's Year 1 revenue was $5,000,000. Year 2 revenue was $5,750,000. What is the percentage change in revenue from Year 1 to Year 2? A) 15% | B) 87% | C) 115% | D) 13%",
+      "question": "Sunrise Retail's Year 1 revenue was $5,000,000. Year 2 revenue was $5,750,000. What is the percentage change in revenue from Year 1 to Year 2?",
       "options": [
         "15%",
         "87%",
@@ -32498,7 +32498,7 @@
       "subtopic": "Rights Offering",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "TechForward Inc. plans to raise capital. A rights offering allows existing shareholders to: A) Receive additional dividends | B) Sell shares back to the company | C) Convert debt to equity | D) Purchase additional shares at a discount before public offering",
+      "question": "TechForward Inc. plans to raise capital. A rights offering allows existing shareholders to:",
       "options": [
         "Receive additional dividends based on the number of rights owned.",
         "Sell shares back to the company at a premium during a limited window.",
@@ -32566,7 +32566,7 @@
       "subtopic": "Financial Analysis",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "Global Transport is deciding whether to buy or lease new delivery trucks. Advantages of leasing compared to buying include: A) Potential off-balance sheet treatment and preserved capital | B) Unrestricted use of the asset | C) Building equity in the asset | D) Lower total cost over the asset life",
+      "question": "Global Transport is deciding whether to buy or lease new delivery trucks. Advantages of leasing compared to buying include:",
       "options": [
         "Potential off-balance sheet treatment and preserved capital",
         "Unrestricted use of the asset and full modification rights",
@@ -32600,7 +32600,7 @@
       "subtopic": "Payout Ratio",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Omega Corp. has earnings per share (EPS) of $4.00 and dividends per share of $1.50. What is Omega's retention ratio? A) 40.0% | B) 26.7% | C) 37.5% | D) 62.5%",
+      "question": "Omega Corp. has earnings per share (EPS) of $4.00 and dividends per share of $1.50. What is Omega's retention ratio?",
       "options": [
         "40.0%",
         "26.7%",
@@ -32736,7 +32736,7 @@
       "subtopic": "Strategic Considerations",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Nova Dynamics is considering outsourcing its IT support. A key strategic risk of outsourcing a core process is: A) Simplified operations | B) Lower costs | C) Reduced complexity | D) Loss of proprietary knowledge and control",
+      "question": "Nova Dynamics is considering outsourcing its IT support. A key strategic risk of outsourcing a core process is:",
       "options": [
         "Simplified operations and improved scalability",
         "Lower costs due to economies of scale and expertise",

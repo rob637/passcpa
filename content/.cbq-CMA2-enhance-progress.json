@@ -1,0 +1,28 @@
+{
+  "enhanced": [
+    "cma2-cbq-001:cma2-cbq-001-q3",
+    "cma2-cbq-002:cma2-cbq-002-q1",
+    "cma2-cbq-002:cma2-cbq-002-q2",
+    "cma2-cbq-003:cma2-cbq-003-q1",
+    "cma2-cbq-003:cma2-cbq-003-q2",
+    "cma2-cbq-004:cma2-cbq-004-q1",
+    "cma2-cbq-004:cma2-cbq-004-q2",
+    "cma2-cbq-005:cma2-cbq-005-q1",
+    "cma2-cbq-005:cma2-cbq-005-q2",
+    "cma2-cbq-005:cma2-cbq-005-q3",
+    "cma2-cbq-006:cma2-cbq-006-q1",
+    "cma2-cbq-006:cma2-cbq-006-q2",
+    "cma2-cbq-007:cma2-cbq-007-q2",
+    "cma2-cbq-008:cma2-cbq-008-q1",
+    "cma2-cbq-008:cma2-cbq-008-q2",
+    "cma2-cbq-009:cma2-cbq-009-q4"
+  ],
+  "errors": [],
+  "stats": {
+    "totalItems": 10,
+    "totalQuestions": 50,
+    "enhanced": 16,
+    "errors": 0
+  },
+  "lastRun": "2026-03-01T12:38:17.568Z"
+}

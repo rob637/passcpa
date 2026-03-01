@@ -14,7 +14,7 @@
       "subtopic": "Cryptography",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent penetration test at OmniBank, a security consultant needs to digitally sign a document to prove they originated the communication. Which of the following creates a digital signature?\nA) Encrypting the message digest with the sender's private key | B) Encrypting the message with a shared secret key | C) Encrypting the message digest with the receiver's public key | D) Encrypting the message digest with the sender's public key",
+      "question": "During a recent penetration test at OmniBank, a security consultant needs to digitally sign a document to prove they originated the communication. Which of the following creates a digital signature?",
       "options": [
         "Encrypting the message digest with the sender's private key",
         "Encrypting the message with a shared secret key",
@@ -49,7 +49,7 @@
       "subtopic": "Access Control Principles",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC is implementing a new electronic health records (EHR) system. To ensure data security, they want to limit user access to only what is necessary. The principle of \"least privilege\" is best described as:\nA) Granting users only the access necessary to perform their job functions | B) Granting users access to all data but logging their actions | C) Rotation of duties to prevent fraud | D) Requiring two people to complete a sensitive task",
+      "question": "Vista Healthcare LLC is implementing a new electronic health records (EHR) system. To ensure data security, they want to limit user access to only what is necessary. The principle of \"least privilege\" is best described as:",
       "options": [
         "Granting users only the access necessary to perform their job functions",
         "Granting users access to all data but logging their actions for auditing purposes and enhanced monitoring.",
@@ -84,7 +84,7 @@
       "subtopic": "Security Goals",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates, a law firm, is reviewing its information security posture. They handle highly sensitive client data and want to ensure its protection. The PRIMARY goal of information security management is to:\nA) Protect information assets in alignment with business objectives | B) Implement the latest security technologies | C) Eliminate all security risks | D) Achieve regulatory compliance",
+      "question": "Chen & Associates, a law firm, is reviewing its information security posture. They handle highly sensitive client data and want to ensure its protection. The PRIMARY goal of information security management is to:",
       "options": [
         "Protect information assets in alignment with business objectives",
         "Implement the latest security technologies to prevent data breaches",
@@ -119,7 +119,7 @@
       "subtopic": "CIA Triad",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Meridian Corp is developing its cybersecurity strategy. Management wants to ensure a holistic approach to protecting their information assets. The three pillars of information security are:\nA) Confidentiality, integrity, availability (CIA) | B) Physical, technical, administrative | C) People, process, technology | D) Prevention, detection, correction",
+      "question": "Meridian Corp is developing its cybersecurity strategy. Management wants to ensure a holistic approach to protecting their information assets. The three pillars of information security are:",
       "options": [
         "Confidentiality, integrity, availability (CIA)",
         "Physical, technical, administrative controls (PTA)",
@@ -154,7 +154,7 @@
       "subtopic": "Data Classification",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "GlobalTech Solutions is implementing a new data governance program. They handle various types of data, including confidential customer information and internal financial records. Data classification is important because it:\nA) Enables appropriate protection based on sensitivity | B) Eliminates the need for encryption | C) Simplifies user access | D) Reduces storage costs",
+      "question": "GlobalTech Solutions is implementing a new data governance program. They handle various types of data, including confidential customer information and internal financial records. Data classification is important because it:",
       "options": [
         "Enables appropriate protection based on sensitivity",
         "Eliminates the need for encryption of all data types",
@@ -224,7 +224,7 @@
       "subtopic": "MAC",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Department of Defense uses a system where access to classified information is strictly controlled by the system itself, based on security clearances and data sensitivity labels. Mandatory access control (MAC) is characterized by:\nA) System-enforced access based on security labels | B) User-controlled permissions | C) No access restrictions | D) Role-based permissions",
+      "question": "The Department of Defense uses a system where access to classified information is strictly controlled by the system itself, based on security clearances and data sensitivity labels. Mandatory access control (MAC) is characterized by:",
       "options": [
         "System-enforced access based on security labels",
         "User-controlled permissions managed through access control lists (ACLs)",
@@ -259,7 +259,7 @@
       "subtopic": "RBAC",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Financial is implementing a new access control system. They want to grant access to systems and data based on an employee's job title and responsibilities. Role-based access control (RBAC) assigns access based on:\nA) Job function or role | B) Time of day | C) Data classification | D) User identity",
+      "question": "Apex Financial is implementing a new access control system. They want to grant access to systems and data based on an employee's job title and responsibilities. Role-based access control (RBAC) assigns access based on:",
       "options": [
         "Job function or role",
         "Scheduled access times",
@@ -294,7 +294,7 @@
       "subtopic": "MFA",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a security audit at SecureCloud Services, auditors are reviewing the authentication mechanisms. They observe that users are required to provide something they know, something they have, and something they are. Multi-factor authentication requires factors from:\nA) Two or more different authentication categories | B) Biometrics only | C) The same authentication category | D) Two passwords",
+      "question": "During a security audit at SecureCloud Services, auditors are reviewing the authentication mechanisms. They observe that users are required to provide something they know, something they have, and something they are. Multi-factor authentication requires factors from:",
       "options": [
         "Two or more different authentication categories",
         "Biometrics only, such as fingerprint and retinal scans",
@@ -329,7 +329,7 @@
       "subtopic": "SSO",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech Solutions is implementing a new suite of cloud-based applications. They want to streamline user access across these applications. Single sign-on (SSO) provides: A) Access to multiple systems with one authentication | B) Stronger authentication | C) Elimination of passwords | D) Reduced security",
+      "question": "GlobalTech Solutions is implementing a new suite of cloud-based applications. They want to streamline user access across these applications. Single sign-on (SSO) provides:",
       "options": [
         "Access to multiple systems with one authentication",
         "Stronger authentication using multi-factor methods",
@@ -364,7 +364,7 @@
       "subtopic": "IAM",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC is concerned about managing user access to patient data. They need a comprehensive system to control who can access what information. Identity and access management (IAM) encompasses: A) Provisioning, authentication, authorization, and review processes | B) Only network access | C) Only user creation | D) Only password management",
+      "question": "Vista Healthcare LLC is concerned about managing user access to patient data. They need a comprehensive system to control who can access what information. Identity and access management (IAM) encompasses:",
       "options": [
         "Provisioning, authentication, authorization, and review processes",
         "Network access control, intrusion detection, firewall management, and VPN configuration.",
@@ -399,7 +399,7 @@
       "subtopic": "Access Review",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Chen & Associates, a law firm, needs to ensure that employees only have access to the files required for their current projects. User access reviews should be performed to: A) Ensure access remains appropriate and remove unnecessary access | B) Satisfy audit requirements only | C) Reduce IT workload | D) Increase user productivity",
+      "question": "Chen & Associates, a law firm, needs to ensure that employees only have access to the files required for their current projects. User access reviews should be performed to:",
       "options": [
         "Ensure access remains appropriate and remove unnecessary access",
         "Satisfy audit requirements only and demonstrate regulatory compliance",
@@ -434,7 +434,7 @@
       "subtopic": "Encryption",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Meridian Corp. needs to protect sensitive customer data stored in its database. Encryption protects data by: A) Converting data into an unreadable format without the key | B) Compressing data | C) Deleting sensitive data | D) Moving data offsite",
+      "question": "Meridian Corp. needs to protect sensitive customer data stored in its database. Encryption protects data by:",
       "options": [
         "Converting data into an unreadable format without the key",
         "Compressing data to save space, but not protecting its confidentiality",
@@ -469,7 +469,7 @@
       "subtopic": "Symmetric Encryption",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "SecureData Inc. uses encryption to protect data at rest. Symmetric encryption uses: A) The same key for encryption and decryption | B) No keys | C) Different keys for encryption and decryption | D) Public keys only",
+      "question": "SecureData Inc. uses encryption to protect data at rest. Symmetric encryption uses:",
       "options": [
         "The same key for encryption and decryption",
         "No keys",
@@ -504,7 +504,7 @@
       "subtopic": "Asymmetric Encryption",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "TrustNet Financial wants to implement a secure method for transmitting sensitive financial data over the internet. Asymmetric encryption uses: A) A public key and a private key | B) Only passwords | C) Hash functions | D) The same key for both operations",
+      "question": "TrustNet Financial wants to implement a secure method for transmitting sensitive financial data over the internet. Asymmetric encryption uses:",
       "options": [
         "A public key and a private key",
         "Only passwords",
@@ -539,7 +539,7 @@
       "subtopic": "Digital Signatures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Manufacturing needs to ensure the authenticity and integrity of purchase orders sent electronically to suppliers. Digital signatures provide: A) Authentication and non-repudiation | B) Data compression | C) Access control | D) Encryption of data",
+      "question": "Apex Manufacturing needs to ensure the authenticity and integrity of purchase orders sent electronically to suppliers. Digital signatures provide:",
       "options": [
         "Authentication and non-repudiation",
         "Data compression and faster transmission",
@@ -574,7 +574,7 @@
       "subtopic": "PKI",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "CyberGuard Systems is implementing a system for issuing and managing digital certificates for its employees and customers. Public key infrastructure (PKI) provides: A) Framework for managing digital certificates | B) Physical security | C) Network segmentation | D) Backup services",
+      "question": "CyberGuard Systems is implementing a system for issuing and managing digital certificates for its employees and customers. Public key infrastructure (PKI) provides:",
       "options": [
         "Framework for managing digital certificates",
         "Physical security for certificate storage devices",
@@ -1169,7 +1169,7 @@
       "subtopic": "Zero Trust",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Following a recent data breach, Vista Healthcare LLC is re-evaluating its security posture. They are considering implementing a zero trust security model. This model assumes: A) No user or system should be trusted by default | B) Internal network is trusted | C) Perimeter security is sufficient | D) Only external threats exist",
+      "question": "Following a recent data breach, Vista Healthcare LLC is re-evaluating its security posture. They are considering implementing a zero trust security model. This model assumes:",
       "options": [
         "No user or system should be trusted by default",
         "Internal network is trusted after initial login",
@@ -1204,7 +1204,7 @@
       "subtopic": "DMZ",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates wants to protect its internal network from direct exposure to the internet. They plan to implement a demilitarized zone (DMZ). A DMZ provides: A) Buffer zone between internal network and internet | B) No security benefit | C) Only email services | D) Maximum access for all users",
+      "question": "Chen & Associates wants to protect its internal network from direct exposure to the internet. They plan to implement a demilitarized zone (DMZ). A DMZ provides:",
       "options": [
         "Buffer zone between internal network and internet",
         "No security benefit, relying solely on perimeter firewalls",
@@ -1239,7 +1239,7 @@
       "subtopic": "NGFW",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp. experienced a sophisticated cyberattack that bypassed its traditional firewall. To enhance security, they are deploying next-generation firewalls (NGFW). NGFW add capabilities including: A) Application awareness, intrusion prevention, and advanced threat detection | B) Only logging | C) Only VPN | D) Only basic packet filtering",
+      "question": "Meridian Corp. experienced a sophisticated cyberattack that bypassed its traditional firewall. To enhance security, they are deploying next-generation firewalls (NGFW). NGFW add capabilities including:",
       "options": [
         "Application awareness, intrusion prevention, and advanced threat detection",
         "Logging all network traffic, providing basic reporting, and historical analysis",
@@ -1274,7 +1274,7 @@
       "subtopic": "Wireless Security",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to increased remote work, Pacific Holdings is updating its wireless security policies. Wireless security best practices include: A) Using WPA3/WPA2-Enterprise with strong authentication | B) Using WEP encryption | C) Broadcasting SSID always | D) No encryption for convenience",
+      "question": "Due to increased remote work, Pacific Holdings is updating its wireless security policies. Wireless security best practices include:",
       "options": [
         "Using WPA3/WPA2-Enterprise with strong authentication",
         "Using WEP encryption with short, easily guessed keys",
@@ -1309,7 +1309,7 @@
       "subtopic": "NAC",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Quantum Software Inc. is concerned about unauthorized devices connecting to its network. They are implementing network access control (NAC). NAC ensures: A) Only authorized, compliant devices connect to the network | B) No devices can connect | C) All devices have full access | D) Only wireless devices are checked",
+      "question": "Quantum Software Inc. is concerned about unauthorized devices connecting to its network. They are implementing network access control (NAC). NAC ensures:",
       "options": [
         "Only authorized, compliant devices connect to the network",
         "No devices can connect unless they are explicitly whitelisted by the security administrator.",
@@ -1344,7 +1344,7 @@
       "subtopic": "EDR",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Coastal Corp. is implementing a new security solution to improve its ability to detect and respond to threats. They are considering endpoint detection and response (EDR). EDR provides: A) Continuous monitoring, threat detection, and response on endpoints | B) Only inventory | C) Only antivirus protection | D) Only patch management",
+      "question": "Coastal Corp. is implementing a new security solution to improve its ability to detect and respond to threats. They are considering endpoint detection and response (EDR). EDR provides:",
       "options": [
         "Continuous monitoring, threat detection, and response on endpoints",
         "Only inventory, providing asset visibility but lacking threat detection capabilities.",
@@ -1379,7 +1379,7 @@
       "subtopic": "MDM",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC is implementing a mobile device management (MDM) solution to secure company-issued smartphones. Mobile device management (MDM) provides: A) Control over mobile device configuration, security, and data | B) Only app installation | C) Only email access | D) Only tracking",
+      "question": "Vista Healthcare LLC is implementing a mobile device management (MDM) solution to secure company-issued smartphones. Mobile device management (MDM) provides:",
       "options": [
         "Control over mobile device configuration, security, and data",
         "Only app installation and blacklisting, without device control.",
@@ -1414,7 +1414,7 @@
       "subtopic": "BYOD",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates allows employees to use their personal devices for work (BYOD). Bring your own device (BYOD) introduces risks including: A) Data leakage, non-compliant devices, and support complexity | B) Only hardware costs | C) No security concerns | D) Only training needs",
+      "question": "Chen & Associates allows employees to use their personal devices for work (BYOD). Bring your own device (BYOD) introduces risks including:",
       "options": [
         "Data leakage, non-compliant devices, and support complexity",
         "Only hardware costs, ignoring software licensing and support fees.",
@@ -1729,7 +1729,7 @@
       "subtopic": "Red Team",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex CyberSec is contracted to evaluate the security posture of GlobalTech Solutions. Apex will perform simulated attacks to identify vulnerabilities. Red team exercises are MOST useful to: A) Simulate real-world attacks to test defensive capabilities | B) Only test awareness | C) Test backup procedures | D) Only test policies",
+      "question": "Apex CyberSec is contracted to evaluate the security posture of GlobalTech Solutions. Apex will perform simulated attacks to identify vulnerabilities. Red team exercises are MOST useful to:",
       "options": [
         "Simulate real-world attacks to test defensive capabilities",
         "Only test awareness of phishing and social engineering attacks.",
@@ -1764,7 +1764,7 @@
       "subtopic": "IR Preparation",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After a ransomware attack, the CIO of OmniCorp wants to improve incident response. To be effective, incident response preparation should include: A) Plans, trained team, tools, and tested procedures | B) Only legal counsel | C) Only technical tools | D) Only insurance",
+      "question": "After a ransomware attack, the CIO of OmniCorp wants to improve incident response. To be effective, incident response preparation should include:",
       "options": [
         "Plans, trained team, tools, and tested procedures",
         "Only legal counsel and cyber insurance consultants",
@@ -1799,7 +1799,7 @@
       "subtopic": "Evidence Handling",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an investigation of a data breach at SecureBank, digital evidence is collected. Maintaining the chain of custody in incident response ensures: A) Evidence integrity is maintained for potential legal proceedings | B) Evidence is destroyed | C) Staff are notified | D) Incidents are closed quickly",
+      "question": "During an investigation of a data breach at SecureBank, digital evidence is collected. Maintaining the chain of custody in incident response ensures:",
       "options": [
         "Evidence integrity is maintained for potential legal proceedings",
         "Evidence is destroyed after careful documentation in the incident log",
@@ -1834,7 +1834,7 @@
       "subtopic": "Forensics",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After a malware infection at PharmaCorp, a forensic investigation is initiated. The forensic investigation in incident response should: A) Work on forensic copies while preserving originals | B) Modify original evidence | C) Immediately restore systems | D) Delete log files",
+      "question": "After a malware infection at PharmaCorp, a forensic investigation is initiated. The forensic investigation in incident response should:",
       "options": [
         "Work on forensic copies while preserving originals",
         "Modify original evidence to expedite analysis and reporting",
@@ -1869,7 +1869,7 @@
       "subtopic": "Privacy by Design",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "CloudFirst Solutions is developing a new customer relationship management (CRM) system. To comply with best practices, privacy by design requires: A) Building privacy into systems from the beginning | B) Ignoring privacy in IT | C) Only legal review | D) Adding privacy controls after development",
+      "question": "CloudFirst Solutions is developing a new customer relationship management (CRM) system. To comply with best practices, privacy by design requires:",
       "options": [
         "Building privacy into systems from the beginning",
         "Ignoring privacy in IT to accelerate deployment",
@@ -1904,7 +1904,7 @@
       "subtopic": "GDPR",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "International Retail Group has customers in the EU. To comply with regulations, GDPR requires organizations to: A) Protect personal data of EU residents with specific rights and requirements | B) Only encrypt data | C) Only report breaches in 30 days | D) Only protect EU citizens",
+      "question": "International Retail Group has customers in the EU. To comply with regulations, GDPR requires organizations to:",
       "options": [
         "Protect personal data of EU residents with specific rights and requirements",
         "Only encrypt data at rest and in transit using AES-256 to fulfill GDPR requirements.",
@@ -1939,7 +1939,7 @@
       "subtopic": "Data Subject Rights",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "A customer of DataStorage Inc., a cloud storage provider, requests access to their personal data stored on the platform. Data subject access requests require organizations to: A) Provide individuals access to their personal data | B) Ignore the request | C) Delete all data immediately | D) Charge unlimited fees",
+      "question": "A customer of DataStorage Inc., a cloud storage provider, requests access to their personal data stored on the platform. Data subject access requests require organizations to:",
       "options": [
         "Provide individuals access to their personal data",
         "Ignore the request unless a court order is presented.",
@@ -1974,7 +1974,7 @@
       "subtopic": "Cross-Border Transfers",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Global Services Inc. transfers customer data from the EU to its US headquarters. Cross-border data transfers require: A) Appropriate safeguards for data protection | B) Only encryption | C) No special consideration | D) Only management approval",
+      "question": "Global Services Inc. transfers customer data from the EU to its US headquarters. Cross-border data transfers require:",
       "options": [
         "Appropriate safeguards for data protection",
         "Only encryption of data at rest and in transit",
@@ -5719,7 +5719,7 @@
       "subtopic": "RASP",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a penetration test at Stellaris Financial, an auditor observes an application successfully blocking a SQL injection attack in real-time. Which of the following security controls is MOST likely providing this protection? A) Only static analysis | B) Only logging | C) Only network protection | D) Real-time attack detection and blocking within applications",
+      "question": "During a penetration test at Stellaris Financial, an auditor observes an application successfully blocking a SQL injection attack in real-time. Which of the following security controls is MOST likely providing this protection?",
       "options": [
         "Only static analysis during the SDLC, prior to deployment.",
         "Only logging of all database queries for later review.",
@@ -5754,7 +5754,7 @@
       "subtopic": "Threat Intelligence Platform",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "CyberSec Group is implementing a system to improve their threat response capabilities. They need a solution that can ingest data from multiple sources, analyze it, and provide actionable intelligence. Threat intelligence platforms (TIP) enable: A) Only threat feeds | B) Only reporting | C) Only IOC storage | D) Aggregation, analysis, and operationalization of threat intelligence",
+      "question": "CyberSec Group is implementing a system to improve their threat response capabilities. They need a solution that can ingest data from multiple sources, analyze it, and provide actionable intelligence. Threat intelligence platforms (TIP) enable:",
       "options": [
         "Only threat feeds, providing basic indicators for firewall rule updates.",
         "Only reporting, generating static PDF reports on identified vulnerabilities.",
@@ -5789,7 +5789,7 @@
       "subtopic": "Continuous Control Monitoring",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Innovations wants to ensure its security controls are consistently operating effectively. They are implementing a system to provide automated, ongoing monitoring of key security controls. Continuous control monitoring (CCM) automates: A) Only reporting | B) Only annual testing | C) Only documentation | D) Real-time assessment of control effectiveness",
+      "question": "Apex Innovations wants to ensure its security controls are consistently operating effectively. They are implementing a system to provide automated, ongoing monitoring of key security controls. Continuous control monitoring (CCM) automates:",
       "options": [
         "Only reporting of control exceptions to management",
         "Only annual testing and validation of design",
@@ -5824,7 +5824,7 @@
       "subtopic": "Social Engineering",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Several employees at GlobalTech Solutions have recently fallen victim to phishing emails, resulting in compromised accounts. Which of the following controls is MOST effective in preventing future social engineering attacks? A) Complex password requirements | B) Intrusion detection systems | C) Strong firewall rules | D) Security awareness training for all employees",
+      "question": "Several employees at GlobalTech Solutions have recently fallen victim to phishing emails, resulting in compromised accounts. Which of the following controls is MOST effective in preventing future social engineering attacks?",
       "options": [
         "Complex password requirements with multifactor authentication",
         "Intrusion detection systems with updated threat intelligence",
@@ -5859,7 +5859,7 @@
       "subtopic": "Multi-Factor Authentication",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Access to sensitive customer data at Veridian Dynamics requires a more robust authentication process. Multi-factor authentication requires: A) Fingerprint and retina scan | B) Username and password | C) Two passwords | D) Something you know and something you have or are",
+      "question": "Access to sensitive customer data at Veridian Dynamics requires a more robust authentication process. Multi-factor authentication requires:",
       "options": [
         "Fingerprint and retina scan, or other two biometrics",
         "Username and password, plus security question response",
@@ -5894,7 +5894,7 @@
       "subtopic": "Key Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a review of encryption practices at OmniCorp, the IS auditor discovers that encryption keys are stored in the same database as the encrypted data. When reviewing encryption key management, the IS auditor should be MOST concerned if: A) Key rotation is performed quarterly | B) Dual control is used for key generation | C) Keys are stored in a hardware security module | D) Encryption keys are stored alongside encrypted data",
+      "question": "During a review of encryption practices at OmniCorp, the IS auditor discovers that encryption keys are stored in the same database as the encrypted data. When reviewing encryption key management, the IS auditor should be MOST concerned if:",
       "options": [
         "Key rotation is performed quarterly without automated key destruction of old keys.",
         "Dual control is used for key generation, but separation of duties is not enforced for key usage.",
@@ -5929,7 +5929,7 @@
       "subtopic": "SIEM",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Data breaches are increasing at Sentinel Security. The company needs a system to proactively identify and respond to security incidents. The purpose of a security information and event management (SIEM) system is to: A) Replace firewalls and IDS | B) Prevent all security incidents | C) Encrypt network traffic | D) Collect, correlate, and analyze security events for detection and response",
+      "question": "Data breaches are increasing at Sentinel Security. The company needs a system to proactively identify and respond to security incidents. The purpose of a security information and event management (SIEM) system is to:",
       "options": [
         "Replace firewalls and intrusion detection systems to reduce operational costs and complexity.",
         "Prevent all security incidents by implementing strict access controls and employee training programs.",
@@ -5964,7 +5964,7 @@
       "subtopic": "Zero Trust",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After a major data breach originating from an internal source, Quantum Leap Technologies is re-evaluating its network security architecture. Zero trust architecture is based on the principle of: A) Trusting users after initial authentication | B) Trusting all internal network traffic | C) Blocking all external connections | D) Never trust, always verify regardless of location",
+      "question": "After a major data breach originating from an internal source, Quantum Leap Technologies is re-evaluating its network security architecture. Zero trust architecture is based on the principle of:",
       "options": [
         "Trusting users after initial authentication only.",
         "Trusting all internal network traffic implicitly.",
@@ -7644,7 +7644,7 @@
       "subtopic": "Threat Hunting",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent security audit at Stellar Dynamics, several anomalies were found in network traffic logs, but existing intrusion detection systems did not flag them. What is the BEST approach to proactively identify similar hidden threats within Stellar Dynamics' environment? A) Reactive incident response | B) Annual penetration testing | C) Automated malware scanning | D) Proactive search for threats that evade existing controls",
+      "question": "During a recent security audit at Stellar Dynamics, several anomalies were found in network traffic logs, but existing intrusion detection systems did not flag them. What is the BEST approach to proactively identify similar hidden threats within Stellar Dynamics' environment?",
       "options": [
         "Reactive incident response after a confirmed breach occurs",
         "Annual penetration testing to identify common vulnerabilities",
@@ -7679,7 +7679,7 @@
       "subtopic": "Exception Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC has a policy requiring all systems to adhere to specific security standards. However, certain departments require deviations due to business needs. Security exception management should include: A) Permanent exceptions by default | B) Automatic approval | C) No documentation | D) Risk assessment, approval authority, expiration, and compensating controls",
+      "question": "Vista Healthcare LLC has a policy requiring all systems to adhere to specific security standards. However, certain departments require deviations due to business needs. Security exception management should include:",
       "options": [
         "Permanent exceptions by default, streamlining workflows and reducing administrative overhead.",
         "Automatic approval based on pre-defined criteria and automated system logs for audit trails.",
@@ -7714,7 +7714,7 @@
       "subtopic": "Third-Party Risk",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp outsources its payroll processing to a third-party vendor. Before renewing the contract, Meridian wants to ensure the vendor meets adequate security standards. Third-party security assessments should be based on: A) Vendor reputation only | B) Contract value alone | C) Geographic location | D) Risk level of the relationship and data involved",
+      "question": "Meridian Corp outsources its payroll processing to a third-party vendor. Before renewing the contract, Meridian wants to ensure the vendor meets adequate security standards. Third-party security assessments should be based on:",
       "options": [
         "Vendor reputation only, based on recent news articles",
         "Contract value alone, as the primary cost consideration",
@@ -7749,7 +7749,7 @@
       "subtopic": "Configuration Management",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates is implementing a new financial system. To ensure the system is secure from the outset, which of the following should be included in secure configuration management? A) Default vendor configurations | B) Ad hoc changes | C) No documentation needed | D) Hardening baselines, change control, and compliance monitoring",
+      "question": "Chen & Associates is implementing a new financial system. To ensure the system is secure from the outset, which of the following should be included in secure configuration management?",
       "options": [
         "Default vendor configurations without modification or review",
         "Ad hoc changes implemented immediately to address urgent needs",
@@ -7784,7 +7784,7 @@
       "subtopic": "Red Team",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Financial wants to test its ability to withstand a sophisticated cyberattack. How do red team exercises differ from standard penetration testing in scope and methodology? A) Red team exercises only test network perimeter defenses | B) Red team exercises simulate realistic advanced adversary behavior across all attack surfaces — including social engineering, physical intrusion, and technical exploitation — to test the organization's detection and response capabilities | C) Red team exercises are automated scans performed monthly | D) Red team exercises are less comprehensive than penetration tests",
+      "question": "Apex Financial wants to test its ability to withstand a sophisticated cyberattack. How do red team exercises differ from standard penetration testing in scope and methodology?",
       "options": [
         "Red team exercises focus solely on evaluating the strength of network perimeter defenses through vulnerability scanning and exploitation, offering a limited view of the organization's overall security posture and incident response readiness, neglecting internal and physical security.",
         "Red team exercises simulate realistic advanced adversary behavior across all attack surfaces — including social engineering, physical intrusion, and technical exploitation — to test the organization's detection and response capabilities",
@@ -7819,7 +7819,7 @@
       "subtopic": "Tokenization",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Global Payments Inc. is exploring methods to protect sensitive credit card data. How does tokenization differ from encryption? A) Tokenization works only for text | B) They are identical | C) Encryption is not secure | D) Tokenization replaces data with non-reversible substitutes maintained in a secure vault",
+      "question": "Global Payments Inc. is exploring methods to protect sensitive credit card data. How does tokenization differ from encryption?",
       "options": [
         "Tokenization works only for text-based data, limiting its usefulness for multimedia or binary file protection within the payment ecosystem.",
         "Tokenization and encryption are identical methods of data protection, both mathematically transforming sensitive data into an unreadable format.",
@@ -7854,7 +7854,7 @@
       "subtopic": "SOC Maturity",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After investing $5 million in its Security Operations Center (SOC), DataCore Systems wants to assess its effectiveness. SOC maturity can be measured by: A) Building size only | B) Staff headcount alone | C) Number of monitors displayed | D) Detection capabilities, mean time to respond, and threat coverage",
+      "question": "After investing $5 million in its Security Operations Center (SOC), DataCore Systems wants to assess its effectiveness. SOC maturity can be measured by:",
       "options": [
         "Building size only, irrespective of technology or team skill sets.",
         "Staff headcount alone, regardless of their skill set or training level.",
@@ -7889,7 +7889,7 @@
       "subtopic": "Security Alignment",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a strategic planning meeting, the board of directors at Quantum Software Inc. is discussing information security. Information security governance ensures: A) Only technical controls | B) Only compliance | C) Security is aligned with business objectives and managed appropriately | D) Only IT security",
+      "question": "During a strategic planning meeting, the board of directors at Quantum Software Inc. is discussing information security. Information security governance ensures:",
       "options": [
         "Only technical controls are implemented, neglecting policy and training.",
         "Only compliance with regulations, without considering business risks.",
@@ -8974,7 +8974,7 @@
       "subtopic": "Access Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "At OmniCorp, employees frequently move between departments. An IS auditor notes that several users retain access rights from previous roles long after changing positions. This situation is known as:\nA) Access is properly revoked | B) Users accumulate unnecessary access as they change roles | C) Privileges are reviewed regularly | D) Users lose access over time",
+      "question": "At OmniCorp, employees frequently move between departments. An IS auditor notes that several users retain access rights from previous roles long after changing positions. This situation is known as:",
       "options": [
         "Access is properly revoked based on HR termination notices.",
         "Users accumulate unnecessary access as they change roles",
@@ -9009,7 +9009,7 @@
       "subtopic": "VPN",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Due to increased remote work at GlobalTech Solutions, employees are accessing sensitive data from home networks. Which of the following BEST describes what a VPN provides for network security in this scenario?\nA) Encrypted tunnels for secure communication over untrusted networks | B) Only access control | C) Only authentication | D) Only faster connections",
+      "question": "Due to increased remote work at GlobalTech Solutions, employees are accessing sensitive data from home networks. Which of the following BEST describes what a VPN provides for network security in this scenario?",
       "options": [
         "Encrypted tunnels for secure communication over untrusted networks",
         "Only access control, ensuring users adhere to defined permissions and roles",
@@ -9044,7 +9044,7 @@
       "subtopic": "NAC",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent security audit, the auditor at SecureData Systems discovered several non-compliant devices attempting to connect to the corporate network. NAC (network access control) provides:\nA) Endpoint compliance verification before granting network access | B) Only network speed | C) Only monitoring | D) Only authentication",
+      "question": "During a recent security audit, the auditor at SecureData Systems discovered several non-compliant devices attempting to connect to the corporate network. NAC (network access control) provides:",
       "options": [
         "Endpoint compliance verification before granting network access",
         "Only network speed optimization based on packet prioritization rules",
@@ -9149,7 +9149,7 @@
       "subtopic": "Hashing",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Financial uses hashing algorithms to protect sensitive customer data. Hashing provides:\nA) Access control | B) Authentication only | C) Integrity verification through fixed-length output | D) Encryption",
+      "question": "Apex Financial uses hashing algorithms to protect sensitive customer data. Hashing provides:",
       "options": [
         "Access control by verifying user roles and permissions",
         "Authentication only, confirming user identity at login",
@@ -9184,7 +9184,7 @@
       "subtopic": "Key Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "CyberSafe Inc. is implementing a new encryption standard for all its data at rest and in transit. Key management includes:\nA) Generation, distribution, storage, rotation, and destruction | B) Only key backup | C) Only key storage | D) Only key creation",
+      "question": "CyberSafe Inc. is implementing a new encryption standard for all its data at rest and in transit. Key management includes:",
       "options": [
         "Generation, distribution, storage, rotation, and destruction",
         "Only key backup at an offsite, geographically diverse location",
@@ -9219,7 +9219,7 @@
       "subtopic": "Log Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a review of security practices at TrustBank, the IS auditor is examining the handling of security event logs. Security event logs should be:\nA) Stored only locally | B) Protected, retained, and regularly reviewed | C) Accessible to all users | D) Deleted immediately",
+      "question": "During a review of security practices at TrustBank, the IS auditor is examining the handling of security event logs. Security event logs should be:",
       "options": [
         "Stored only locally for immediate analysis",
         "Protected, retained, and regularly reviewed",
@@ -9254,7 +9254,7 @@
       "subtopic": "Threat Intelligence",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Due to recent ransomware attacks targeting similar organizations, InfoShield Corp. wants to proactively improve its defenses. Threat intelligence provides:\nA) Only compliance data | B) Actionable information about threats to support defense decisions | C) Only vendor marketing | D) Only historical data",
+      "question": "Due to recent ransomware attacks targeting similar organizations, InfoShield Corp. wants to proactively improve its defenses. Threat intelligence provides:",
       "options": [
         "Only compliance data required for regulatory audits and legal mandates.",
         "Actionable information about threats to support defense decisions",
@@ -9289,7 +9289,7 @@
       "subtopic": "Patch Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a recent vulnerability scan at DataCore Systems, numerous systems were identified with missing security patches. Patch management should prioritize based on:\nA) Vulnerability severity and asset criticality | B) Alphabetical order | C) Patch size | D) Vendor release order",
+      "question": "After a recent vulnerability scan at DataCore Systems, numerous systems were identified with missing security patches. Patch management should prioritize based on:",
       "options": [
         "Vulnerability severity and asset criticality",
         "Alphabetical order of system names for ease of tracking",
@@ -9989,7 +9989,7 @@
       "subtopic": "Network Architecture",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent security review, auditors at GlobalTech Solutions noted that several public-facing web servers lacked proper network segmentation. To improve security posture, where should GlobalTech place a DMZ (demilitarized zone) to isolate which of the following? A) Only development systems | B) Only database servers | C) All internal systems | D) Public-facing services from internal networks",
+      "question": "During a recent security review, auditors at GlobalTech Solutions noted that several public-facing web servers lacked proper network segmentation. To improve security posture, where should GlobalTech place a DMZ (demilitarized zone) to isolate which of the following?",
       "options": [
         "Development systems to isolate code testing.",
         "Only database servers from application tiers.",
@@ -10024,7 +10024,7 @@
       "subtopic": "Micro-segmentation",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Citadel Bank is implementing a zero-trust security model. Unlike traditional network segmentation, which often relies on broad network zones, how does micro-segmentation differ by providing: A) It uses larger segments | B) It only applies to cloud | C) It uses no firewalls | D) It provides granular, workload-level isolation and access control",
+      "question": "Citadel Bank is implementing a zero-trust security model. Unlike traditional network segmentation, which often relies on broad network zones, how does micro-segmentation differ by providing:",
       "options": [
         "It uses larger segments defined by broad regulatory compliance mandates and geographic regions.",
         "It only applies to cloud-native applications, ignoring on-premise systems and legacy infrastructure.",
@@ -10094,7 +10094,7 @@
       "subtopic": "Certificate Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a review of PKI infrastructure at SecureData Corp, the CISO discovered a compromised private key. Under what circumstances does certificate revocation occur, requiring immediate action? A) Certificates are renewed | B) Certificates expire normally | C) PKI is decommissioned | D) Certificates are invalidated before expiration due to compromise or other reasons",
+      "question": "During a review of PKI infrastructure at SecureData Corp, the CISO discovered a compromised private key. Under what circumstances does certificate revocation occur, requiring immediate action?",
       "options": [
         "Certificates are renewed following standard policy and key rotation schedules, without immediate revocation.",
         "Certificates expire normally at the end of their validity period, triggering routine archival processes.",
@@ -10164,7 +10164,7 @@
       "subtopic": "HSM",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Financial requires enhanced security for cryptographic keys used in transaction processing. What primary function do hardware security modules (HSMs) provide to protect these critical assets? A) Only key storage | B) Only performance | C) Only backup | D) Tamper-resistant key generation, storage, and cryptographic operations",
+      "question": "Apex Financial requires enhanced security for cryptographic keys used in transaction processing. What primary function do hardware security modules (HSMs) provide to protect these critical assets?",
       "options": [
         "Secure key storage with role-based access control, but lacking key generation or cryptographic processing.",
         "Enhanced cryptographic performance through hardware acceleration, but lacking secure storage or key management.",
@@ -10199,7 +10199,7 @@
       "subtopic": "Configuration Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "As part of its ISO 27001 certification, Veridian Dynamics is defining mandatory security standards for all systems. What do security baselines primarily define for the organization? A) Optional improvements | B) Future goals only | C) Maximum security | D) Minimum security configurations for systems",
+      "question": "As part of its ISO 27001 certification, Veridian Dynamics is defining mandatory security standards for all systems. What do security baselines primarily define for the organization?",
       "options": [
         "Optional improvements to existing frameworks",
         "Future goals only for advanced threat actors",
@@ -10234,7 +10234,7 @@
       "subtopic": "Hardening",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Following a recent ransomware attack, InnoVision Inc. is implementing security hardening measures. What does security hardening primarily include to reduce the attack surface? A) Only antivirus | B) Adding all features | C) Only firewall rules | D) Removing unnecessary services, applying patches, and restricting access",
+      "question": "Following a recent ransomware attack, InnoVision Inc. is implementing security hardening measures. What does security hardening primarily include to reduce the attack surface?",
       "options": [
         "Only antivirus software, with daily signature updates and real-time scanning enabled.",
         "Adding all features and roles offered by the operating system and installed applications.",
@@ -10269,7 +10269,7 @@
       "subtopic": "Detection Methods",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a penetration test at OmniCorp, the security team is evaluating the effectiveness of their intrusion detection system (IDS). How does anomaly-based detection function in identifying potential threats? A) Has no false positives | B) Only detects known threats | C) Uses predefined signatures | D) Identifies deviations from established normal behavior patterns",
+      "question": "During a penetration test at OmniCorp, the security team is evaluating the effectiveness of their intrusion detection system (IDS). How does anomaly-based detection function in identifying potential threats?",
       "options": [
         "Has no false positives and accurately flags all malicious events",
         "Only detects known threats by comparing network traffic to a database",
@@ -10304,7 +10304,7 @@
       "subtopic": "APT",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "CyberSec Intel reports that Stellaris Industries is being targeted by a sophisticated threat actor. What characterizes an APT (advanced persistent threat) attack? A) Only malware | B) Only denial of service | C) Quick, automated attacks | D) Sophisticated, targeted, patient attacks often by nation-states",
+      "question": "CyberSec Intel reports that Stellaris Industries is being targeted by a sophisticated threat actor. What characterizes an APT (advanced persistent threat) attack?",
       "options": [
         "Only malware delivered via phishing; no lateral movement or C2.",
         "Only denial of service to disrupt operations; no data exfiltration.",

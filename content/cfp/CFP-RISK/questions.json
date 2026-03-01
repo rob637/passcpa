@@ -2497,7 +2497,7 @@
       "blueprintArea": "RISK-1",
       "topic": "Term vs. permanent life insurance",
       "difficulty": "medium",
-      "question": "Maria purchases a $1 million term life insurance policy from SecureLife. When must Maria demonstrate an insurable interest in the insured's life for the policy to be valid? A) At time of death | B) Can be waived by the insured | C) Automatically exists for any relationship | D) Is required at policy inception only",
+      "question": "Maria purchases a $1 million term life insurance policy from SecureLife. When must Maria demonstrate an insurable interest in the insured's life for the policy to be valid?",
       "explanation": "Insurable interest required at policy inception, not at death. Prevents wagering on lives. Examples: self, spouse, children, key employees, creditors to extent of debt. Business partners have insurable interest in each other.",
       "correctAnswer": 3,
       "options": [
@@ -2531,7 +2531,7 @@
       "blueprintArea": "RISK-2",
       "topic": "Medicare Parts A, B, C, D",
       "difficulty": "medium",
-      "question": "John, age 68, is enrolled in Original Medicare. He visits his primary care physician for a routine checkup. Which component of Medicare covers these physician services? A) Hospital inpatient services | B) Long-term nursing home care | C) Prescription drugs | D) Physician services and outpatient care",
+      "question": "John, age 68, is enrolled in Original Medicare. He visits his primary care physician for a routine checkup. Which component of Medicare covers these physician services?",
       "explanation": "Medicare: Part A = Hospital (inpatient, skilled nursing, hospice), Part B = Medical (physicians, outpatient, preventive), Part C = Medicare Advantage (combined), Part D = Prescription drugs. Medigap supplements A/B.",
       "correctAnswer": 3,
       "options": [
@@ -2565,7 +2565,7 @@
       "blueprintArea": "RISK-1",
       "topic": "Needs analysis methods",
       "difficulty": "medium",
-      "question": "The Chen family wants to determine how much life insurance David needs. Using the human life value approach, which calculation best represents their needs? A) Present value of future earnings potential | B) Total assets minus liabilities | C) Multiple of current annual expenses | D) Replacement cost of household services",
+      "question": "The Chen family wants to determine how much life insurance David needs. Using the human life value approach, which calculation best represents their needs?",
       "explanation": "Human life value calculates PV of future earnings (after taxes and self-maintenance) to determine economic value of life to dependents. Complements needs approach. Considers age, income, growth rate, discount rate, work life expectancy.",
       "correctAnswer": 0,
       "options": [
@@ -2636,7 +2636,7 @@
       "subtopic": "Definitions of Disability",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Lee, a surgeon, purchases a disability income policy. The policy defines disability using the \"own occupation\" definition. This means benefits are paid when Dr. Lee: A) Cannot perform any job for which they are reasonably qualified | B) Cannot perform the duties of their specific occupation | C) Is hospitalized for more than 30 days | D) Loses more than 50% of prior income",
+      "question": "Dr. Lee, a surgeon, purchases a disability income policy. The policy defines disability using the \"own occupation\" definition. This means benefits are paid when Dr. Lee:",
       "explanation": "Own occupation is the most favorable definition for the insured. Benefits are paid if they cannot perform their specific job, even if they could work in another field. \"Any occupation\" is more restrictive.",
       "correctAnswer": 1,
       "options": [
@@ -2706,7 +2706,7 @@
       "subtopic": "Benefit Triggers",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah is considering purchasing a long-term care insurance policy. To qualify for favorable tax treatment, the policy must use which of the following benefit triggers? A) Prior hospitalization requirement | B) Inability to perform 2 of 6 ADLs OR cognitive impairment | C) Physician certification only | D) Nursing home confinement for 90 days",
+      "question": "Sarah is considering purchasing a long-term care insurance policy. To qualify for favorable tax treatment, the policy must use which of the following benefit triggers?",
       "explanation": "Tax-qualified LTC policies must use federally defined triggers: inability to perform at least 2 of 6 Activities of Daily Living (ADLs) for at least 90 days, or severe cognitive impairment requiring supervision.",
       "correctAnswer": 1,
       "options": [
@@ -2811,7 +2811,7 @@
       "subtopic": "Umbrella Coverage",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers want to purchase a personal umbrella liability policy to protect their assets. The insurance company typically requires the Millers to maintain: A) No underlying coverage - umbrella is standalone | B) Minimum limits on auto and homeowners policies | C) Life insurance with the same carrier | D) A business liability policy",
+      "question": "The Millers want to purchase a personal umbrella liability policy to protect their assets. The insurance company typically requires the Millers to maintain:",
       "explanation": "Umbrella policies require underlying auto and homeowners coverage at specified minimum limits (commonly $300K/$500K). The umbrella provides excess coverage above these primary policies.",
       "correctAnswer": 1,
       "options": [
@@ -2846,7 +2846,7 @@
       "subtopic": "Settlement Options",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After John's death, his wife, Mary, the beneficiary of his life insurance policy, elects the \"interest only\" settlement option. Under this arrangement: A) The beneficiary receives the death benefit in a lump sum | B) The insurer retains the proceeds and pays interest to the beneficiary | C) Payments continue until principal and interest are exhausted | D) The death benefit is paid in equal installments over 10 years",
+      "question": "After John's death, his wife, Mary, the beneficiary of his life insurance policy, elects the \"interest only\" settlement option. Under this arrangement:",
       "explanation": "Under interest-only settlement, the insurance company retains the death benefit and pays interest periodically. The principal remains intact and can be withdrawn later or paid to a secondary beneficiary.",
       "correctAnswer": 1,
       "options": [
@@ -2881,7 +2881,7 @@
       "subtopic": "COBRA",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After being laid off from Meridian Corp, Lisa elects to continue her health insurance coverage through COBRA. For a qualifying event of employee termination, COBRA continuation coverage lasts for a maximum of: A) 12 months | B) 18 months | C) 24 months | D) 36 months",
+      "question": "After being laid off from Meridian Corp, Lisa elects to continue her health insurance coverage through COBRA. For a qualifying event of employee termination, COBRA continuation coverage lasts for a maximum of:",
       "explanation": "COBRA provides 18 months for termination or reduction of hours. Divorce, death, or employee becoming Medicare-eligible provides 36 months for dependents. Disability can extend coverage to 29 months.",
       "correctAnswer": 1,
       "options": [
@@ -6588,7 +6588,7 @@
       "subtopic": "Professional Liability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah is a CFP® professional at Oakwood Financial Planning. A client is threatening to sue her over a misunderstood Roth conversion strategy. Which type of liability insurance should Sarah have to protect herself? A) Errors and omissions (E&O) / professional liability | B) No insurance is needed with proper disclosures | C) Commercial general liability only | D) Product liability insurance",
+      "question": "Sarah is a CFP® professional at Oakwood Financial Planning. A client is threatening to sue her over a misunderstood Roth conversion strategy. Which type of liability insurance should Sarah have to protect herself?",
       "explanation": "CFP® professionals should carry errors and omissions (E&O) or professional liability insurance to protect against claims arising from professional advice or services. General liability covers premises accidents, not professional malpractice. E&O covers claims of negligence, errors, or omissions in professional duties.",
       "correctAnswer": 0,
       "options": [
@@ -6623,7 +6623,7 @@
       "subtopic": "Indexed Universal Life",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Smiths are considering an Indexed Universal Life (IUL) policy from Northstar Insurance. The agent explains the cash value growth. How is the IUL policy's cash value growth determined? A) Guaranteed at a fixed rate | B) Subject to market losses | C) Directly invested in the stock market | D) Credited based on index performance with caps and floors, without direct market investment",
+      "question": "The Smiths are considering an Indexed Universal Life (IUL) policy from Northstar Insurance. The agent explains the cash value growth. How is the IUL policy's cash value growth determined?",
       "explanation": "IUL credits interest based on index performance (S&P 500, etc.) but doesn\\'t directly invest in the index. Returns are subject to caps (maximum credited) and floors (minimum, often 0%). This provides upside potential with downside protection, but illustrations may use assumptions that are rarely achieved.",
       "correctAnswer": 3,
       "options": [
@@ -6658,7 +6658,7 @@
       "subtopic": "Policy Loans",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John passed away with a $500,000 life insurance policy from Guardian Life. He had an outstanding policy loan of $50,000 plus $2,000 of accrued interest. How are outstanding policy loans treated at death? A) Are forgiven automatically | B) Must be repaid by the estate before death benefit is paid | C) Have no effect on the death benefit | D) Reduce the death benefit by the outstanding loan amount plus accrued interest",
+      "question": "John passed away with a $500,000 life insurance policy from Guardian Life. He had an outstanding policy loan of $50,000 plus $2,000 of accrued interest. How are outstanding policy loans treated at death?",
       "explanation": "Policy loans reduce the death benefit dollar-for-dollar plus accumulated interest. They don\\'t require repayment during life but will reduce proceeds to beneficiaries. If loans plus interest exceed cash value, the policy may lapse, potentially creating taxable income if there\\'s gain in the policy.",
       "correctAnswer": 3,
       "options": [
@@ -6693,7 +6693,7 @@
       "subtopic": "Modified Endowment Contract",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Susan purchased a life insurance policy five years ago. Due to a large bonus, she significantly overfunded the policy this year. What happens when a life insurance policy becomes a Modified Endowment Contract (MEC)? A) The death benefit exceeds $1 million | B) The insured reaches age 65 | C) The policy has been in force for 10 years | D) Premiums paid exceed the 7-pay test limits",
+      "question": "Susan purchased a life insurance policy five years ago. Due to a large bonus, she significantly overfunded the policy this year. What happens when a life insurance policy becomes a Modified Endowment Contract (MEC)?",
       "explanation": "A policy becomes a MEC if cumulative premiums in the first 7 years exceed what would be needed to pay up the policy in 7 level payments. MECs lose favorable loan treatment—loans and withdrawals are taxed on a LIFO basis (earnings first) and may be subject to 10% penalty before age 59½.",
       "correctAnswer": 3,
       "options": [
@@ -6728,7 +6728,7 @@
       "subtopic": "Section 1035 Exchange",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark wants to move cash value from his existing life insurance policy with Lincoln National to a new annuity with MassMutual. What does a 1035 exchange allow him to do? A) Tax-free exchange of any insurance product for any other | B) Conversion of term to whole life without underwriting | C) Exchange of annuities for life insurance tax-free | D) Tax-free exchange of life insurance for another life policy, endowment, or annuity (following specific rules)",
+      "question": "Mark wants to move cash value from his existing life insurance policy with Lincoln National to a new annuity with MassMutual. What does a 1035 exchange allow him to do?",
       "explanation": "Section 1035 permits tax-free exchanges within the same class or to a lower class: life insurance for life/endowment/annuity, endowment for endowment/annuity, annuity for annuity. Annuity to life insurance is NOT tax-free. Long-term care riders add complexity. Surrender charges and new contestability periods apply.",
       "correctAnswer": 3,
       "options": [
@@ -6763,7 +6763,7 @@
       "subtopic": "Continuation Coverage",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After being laid off from her job at Techtron Inc., Lisa is exploring her health insurance options. For how long is COBRA continuation coverage generally available after job loss? A) 12 months after a qualifying event | B) Indefinitely if premiums are paid | C) 6 months as a bridge to Medicare | D) 18 months after job loss or reduced hours; 36 months for other qualifying events",
+      "question": "After being laid off from her job at Techtron Inc., Lisa is exploring her health insurance options. For how long is COBRA continuation coverage generally available after job loss?",
       "explanation": "COBRA provides 18 months for job loss/reduced hours (29 months if disabled), 36 months for divorce, death of employee, Medicare eligibility, or dependent aging out. Premiums are 100% of cost plus 2% admin fee. It provides continuity but is expensive compared to employer-subsidized coverage or marketplace plans.",
       "correctAnswer": 3,
       "options": [
@@ -6798,7 +6798,7 @@
       "subtopic": "HSA Estate Planning",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Robert had an HSA through his employer, Greenleaf Industries. Upon Robert's death, what happens to the funds in his Health Savings Account (HSA)? A) Is forfeited to the government | B) Passes tax-free to any beneficiary | C) Must be used for the deceased's medical expenses | D) Depends on who inherits the account; spouse can treat as their own, others pay income tax",
+      "question": "Robert had an HSA through his employer, Greenleaf Industries. Upon Robert's death, what happens to the funds in his Health Savings Account (HSA)?",
       "explanation": "If a spouse is beneficiary, the HSA becomes theirs (same tax treatment continues). Non-spouse beneficiaries receive the FMV as taxable income in the year of death. Medical expenses of the deceased incurred before death can be paid tax-free. HSA beneficiary designations are important estate planning considerations.",
       "correctAnswer": 3,
       "options": [
@@ -6833,7 +6833,7 @@
       "subtopic": "Medicare Surcharges",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Johnsons are reviewing their Medicare costs. Their financial advisor mentioned the Income-Related Monthly Adjustment Amount (IRMAA). What is the Income-Related Monthly Adjustment Amount (IRMAA) for Medicare? A) Applies only to Part A | B) Is a one-time enrollment fee | C) Reduces premiums for low-income individuals | D) Increases Part B and D premiums for higher-income beneficiaries based on MAGI from two years prior",
+      "question": "The Johnsons are reviewing their Medicare costs. Their financial advisor mentioned the Income-Related Monthly Adjustment Amount (IRMAA). What is the Income-Related Monthly Adjustment Amount (IRMAA) for Medicare?",
       "explanation": "IRMAA adds surcharges to Medicare Part B and D premiums for beneficiaries with MAGI exceeding thresholds (based on tax return from 2 years prior). Surcharges can be significant. Life-changing events (retirement, divorce) may warrant an appeal. Roth conversions and other income planning should consider IRMAA impact.",
       "correctAnswer": 3,
       "options": [
@@ -8340,7 +8340,7 @@
       "subtopic": "Care Coordination",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a stroke, Marie is considering long-term care. Her policy with ElderCare Mutual includes care coordination. These services typically: A) Are only available to wealthy policyholders | B) Replace the need for benefits | C) Help assess needs, develop care plans, locate providers, and coordinate ongoing care | D) Only help find nursing homes",
+      "question": "After a stroke, Marie is considering long-term care. Her policy with ElderCare Mutual includes care coordination. These services typically:",
       "explanation": "Care coordinators (typically nurses or social workers) assess needs, develop care plans, identify local resources, and help navigate the LTC system. This adds value beyond just payment—families often need guidance on care options. Some policies include it; others charge separately.",
       "correctAnswer": 2,
       "options": [
@@ -8375,7 +8375,7 @@
       "subtopic": "Risk Mapping",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During their annual review, Chen & Associates is helping the Millers identify potential risks. Risk mapping in personal financial planning involves: A) Identifying and assessing all significant risks by probability and potential impact, then determining appropriate mitigation strategies | B) Avoiding all risks | C) Only looking at insurance policies | D) Purchasing maximum insurance",
+      "question": "During their annual review, Chen & Associates is helping the Millers identify potential risks. Risk mapping in personal financial planning involves:",
       "explanation": "Risk mapping uses a matrix: probability of occurrence vs. severity of impact. High probability/high impact risks demand immediate attention (transfer or reduce). Low probability/low impact may be retained. This systematic approach ensures resources focus on the most significant risks first.",
       "correctAnswer": 0,
       "options": [
@@ -8410,7 +8410,7 @@
       "subtopic": "Pure vs Speculative Risk",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "While discussing insurance options with a client, you explain different types of risk. Pure risk differs from speculative risk in that pure risk: A) Involves only the possibility of loss or no loss, with no chance of gain | B) Cannot be insured | C) Offers potential for gain | D) Only affects businesses",
+      "question": "While discussing insurance options with a client, you explain different types of risk. Pure risk differs from speculative risk in that pure risk:",
       "explanation": "Pure risk: only loss or no loss possible (fire, death, liability). Speculative risk: potential for gain, loss, or no change (investments, gambling, business ventures). Insurance typically covers pure risks—insurers can price based on loss probability without considering gain.",
       "correctAnswer": 0,
       "options": [
@@ -8445,7 +8445,7 @@
       "subtopic": "Maximum Probable Loss",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC is assessing its property insurance needs after a recent fire. Maximum probable loss (MPL) refers to: A) The most likely loss amount in a worst-case scenario that could realistically occur, used to determine appropriate coverage levels | B) Average claim experience | C) Total value of all assets | D) Deductible amounts",
+      "question": "Vista Healthcare LLC is assessing its property insurance needs after a recent fire. Maximum probable loss (MPL) refers to:",
       "explanation": "MPL is the largest loss that would probably result from a single event—not the absolute maximum (which might be astronomical) but a realistic worst-case. It helps size insurance limits appropriately. For example, MPL for a home might be replacement cost less salvage value, not including the land.",
       "correctAnswer": 0,
       "options": [
@@ -8480,7 +8480,7 @@
       "subtopic": "Survivorship Life Insurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John and Mary Smith are planning for estate taxes and want to provide liquidity for their heirs. Survivorship (second-to-die) life insurance: A) Pays when the first insured dies | B) Pays only after both insureds die, typically used for estate liquidity since estate tax is deferred until the second spouse",
+      "question": "John and Mary Smith are planning for estate taxes and want to provide liquidity for their heirs. Survivorship (second-to-die) life insurance:",
       "explanation": "Second-to-die pays at the survivor\\'s death—when estate taxes (with marital deduction) are due. Premiums are lower than individual policies because two lives are covered. Often used in ILITs for estate liquidity. Also useful when one spouse is uninsurable—joint coverage may be obtainable.",
       "correctAnswer": 1,
       "options": [
@@ -8515,7 +8515,7 @@
       "subtopic": "Life Settlement",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Robert, age 70 and in good health, is considering selling his life insurance policy. A life settlement differs from a viatical settlement in that: A) They are identical | B) Life settlements are for insureds typically over 65 who are not terminally ill; viaticals are for terminally or chronically ill insureds | C) Life settlements have no tax implications | D) Viaticals pay more",
+      "question": "Robert, age 70 and in good health, is considering selling his life insurance policy. A life settlement differs from a viatical settlement in that:",
       "explanation": "Viatical settlements: terminally/chronically ill sell policies, often tax-free under IRC 101(g). Life settlements: seniors (typically 65+) sell unwanted policies for more than cash value but less than death benefit. Life settlement proceeds are taxable—ordinary income to extent of premium recovered, then capital gains.",
       "correctAnswer": 1,
       "options": [
@@ -8550,7 +8550,7 @@
       "subtopic": "Corridor/Guideline Requirements",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is reviewing a client's Universal Life policy. The corridor or guideline premium tests for life insurance exist to: A) Limit premiums | B) Maximize investment returns | C) Ensure policies maintain sufficient death benefit relative to cash value to qualify as life insurance rather than an investment | D) Avoid all taxation",
+      "question": "The IRS is reviewing a client's Universal Life policy. The corridor or guideline premium tests for life insurance exist to:",
       "explanation": "IRC 7702 defines life insurance through cash value accumulation test (CVAT) or guideline premium/corridor test (GPT). Both ensure death benefit remains meaningfully greater than cash value. Without these limits, policies become investment vehicles without insurance taxation benefits. The corridor requires minimum death benefit relative to cash value.",
       "correctAnswer": 2,
       "options": [
@@ -8620,7 +8620,7 @@
       "subtopic": "Social Insurance Offset",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "After being injured, Sarah is applying for disability benefits. Her policy with Guardian includes a Social Insurance Supplement/Offset rider. This rider: A) Eliminates Social Security | B) Is mandatory | C) Reduces policy benefits by Social Security disability received, or provides additional benefit if SSDI is denied | D) Only applies to group plans",
+      "question": "After being injured, Sarah is applying for disability benefits. Her policy with Guardian includes a Social Insurance Supplement/Offset rider. This rider:",
       "explanation": "Social Insurance Supplement (SIS) provides extra benefit if SSDI is denied or delayed. Social Insurance Offset reduces the base benefit by SSDI received. The combination ensures adequate coverage while avoiding over-insurance. SSDI is difficult to obtain (strict definition), so SIS provides needed interim/permanent protection.",
       "correctAnswer": 2,
       "options": [
@@ -9915,7 +9915,7 @@
       "subtopic": "Loss of Use Coverage",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers' home was damaged by a fire, rendering it uninhabitable for 2 months. Their homeowners policy includes Coverage D. What does Coverage D (Loss of Use) in their policy pay for? A) Replacing damaged items | B) Property depreciation | C) Additional living expenses when the home is uninhabitable due to a covered loss, including temporary housing and food costs | D) Lost wages during repairs",
+      "question": "The Millers' home was damaged by a fire, rendering it uninhabitable for 2 months. Their homeowners policy includes Coverage D. What does Coverage D (Loss of Use) in their policy pay for?",
       "explanation": "Loss of use (Coverage D): pays additional living expenses when home is uninhabitable due to covered peril. Includes: hotel/rental costs, restaurant meals above normal food costs, laundry, storage. Pays difference between normal expenses and actual costs incurred. Limit typically 20-30% of dwelling coverage. Critical for maintaining lifestyle during repairs.",
       "correctAnswer": 2,
       "options": [
@@ -9950,7 +9950,7 @@
       "subtopic": "Self-Insurance Calculation",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Chen & Associates is considering self-insuring its employee health benefits. Which of the following factors should Chen & Associates consider when evaluating whether to self-insure this risk? A) Only look at deductible options | B) Compare premium costs against expected losses, ability to absorb worst-case loss, and opportunity cost of held reserves | C) Only consider premium savings | D) Self-insure all risks to save money",
+      "question": "Chen & Associates is considering self-insuring its employee health benefits. Which of the following factors should Chen & Associates consider when evaluating whether to self-insure this risk?",
       "explanation": "Self-insurance analysis: premium saved vs. expected claims (actuarial value), ability to absorb maximum possible loss (capital adequacy), opportunity cost of held reserves (could invest elsewhere), administrative costs, and risk tolerance. Self-insure: high frequency/low severity. Transfer to insurer: low frequency/high severity catastrophes.",
       "correctAnswer": 1,
       "options": [
@@ -9985,7 +9985,7 @@
       "subtopic": "Policy Loan Interest",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John took out a $50,000 policy loan from his whole life insurance policy. Interest accrues at 8% annually. What happens if John does not pay the interest on the policy loan? A) Accrues and adds to the loan balance, and if not paid, can cause policy lapse which may trigger taxable gain | B) Reduces death benefit only | C) Is always tax-deductible | D) Is paid to the beneficiary",
+      "question": "John took out a $50,000 policy loan from his whole life insurance policy. Interest accrues at 8% annually. What happens if John does not pay the interest on the policy loan?",
       "explanation": "Policy loan interest: typically not deductible (personal loan). Interest accrues and adds to loan balance. If total loan exceeds cash value, policy lapses. On lapse: if gains exist (total premiums paid < cash value + loan), gain is taxable income even though no cash received. Must monitor loan balance vs. cash value to prevent unintended lapse.",
       "correctAnswer": 0,
       "options": [
@@ -10020,7 +10020,7 @@
       "subtopic": "Mental Health Parity",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC offers a health plan to its employees that includes mental health benefits. What does the Mental Health Parity and Addiction Equity Act require of Vista Healthcare's plan? A) Plans offering mental health benefits to provide them on terms comparable to medical/surgical benefits—similar cost-sharing and limits | B) All plans to cover mental health | C) Employer-paid mental health care | D) Unlimited mental health coverage",
+      "question": "Vista Healthcare LLC offers a health plan to its employees that includes mental health benefits. What does the Mental Health Parity and Addiction Equity Act require of Vista Healthcare's plan?",
       "explanation": "Mental Health Parity Act: if a plan covers mental health/substance use, it must be comparable to medical benefits—can\\'t have stricter financial requirements (copays, deductibles) or treatment limitations (visit caps). Applies to group plans with 50+ employees and ACA individual plans. Doesn\\'t require coverage but ensures parity if offered.",
       "correctAnswer": 0,
       "options": [
@@ -10089,7 +10089,7 @@
       "subtopic": "Personal Injury Liability",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "While hosting a party, a guest sues the homeowner, Sarah, for defamation of character. Sarah's homeowners policy includes personal injury coverage. What type of liability does personal injury coverage in homeowners policies cover? A) Physical injuries to the insured | B) Non-physical torts like libel, slander, defamation, false arrest, or invasion of privacy | C) Intentional criminal acts | D) Car accidents only",
+      "question": "While hosting a party, a guest sues the homeowner, Sarah, for defamation of character. Sarah's homeowners policy includes personal injury coverage. What type of liability does personal injury coverage in homeowners policies cover?",
       "explanation": "Personal injury liability: covers non-physical harm claims. Typically includes: libel, slander, defamation, false arrest, malicious prosecution, invasion of privacy, wrongful eviction. Not included in basic HO policies—requires endorsement. Important for: bloggers/social media users, landlords, those in public roles. Umbrella policies often include automatically.",
       "correctAnswer": 1,
       "options": [
@@ -10124,7 +10124,7 @@
       "subtopic": "Risk Retention",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ABC Corp. is evaluating its risk management strategy. When is risk retention (self-insurance) most appropriate for ABC Corp.? A) There is no other option | B) The loss would be catastrophic | C) Insurance is always unavailable | D) The potential loss is small relative to financial resources, the risk occurs frequently, or insurance costs exceed expected losses",
+      "question": "ABC Corp. is evaluating its risk management strategy. When is risk retention (self-insurance) most appropriate for ABC Corp.?",
       "explanation": "Risk retention suitable when: loss small and affordable (high deductibles), frequent losses make insurance expensive (claims experience), premium exceeds expected loss value, or loss is uninsurable. Requires adequate reserves. Not appropriate for catastrophic risks. Conscious decision, not just lack of coverage. Many businesses retain smaller risks strategically.",
       "correctAnswer": 3,
       "options": [
@@ -10159,7 +10159,7 @@
       "subtopic": "Risk Control",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Which of the following is an example of a risk control method? A) Transferring to family | B) Only accepting losses | C) Only buying insurance | D) Avoidance, loss prevention, and loss reduction—actions to eliminate or minimize the probability or severity of losses",
+      "question": "Which of the following is an example of a risk control method?",
       "explanation": "Risk control: actions affecting the risk itself (vs. financial consequences). Avoidance: don\\'t engage in risky activity. Loss prevention: reduce probability (smoke detectors, security systems). Loss reduction: minimize severity after event (fire extinguishers, sprinklers, seat belts). Often combined with risk transfer (insurance) for comprehensive protection.",
       "correctAnswer": 3,
       "options": [
@@ -10194,7 +10194,7 @@
       "subtopic": "Exposures Analysis",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Financial advisor, Maria, is creating a risk management plan for her client, the Johnson family. What should a comprehensive exposure analysis for the Johnson family identify? A) Only property risks | B) Only investment risks | C) Only current insurance policies | D) All sources of potential loss including property, liability, disability, death, and health exposures",
+      "question": "Financial advisor, Maria, is creating a risk management plan for her client, the Johnson family. What should a comprehensive exposure analysis for the Johnson family identify?",
       "explanation": "Exposure analysis: identify all potential loss sources before evaluating protection needs. Categories: property (dwelling, vehicles, valuables), liability (auto, premises, professional), personal (death, disability, health, long-term care), economic (unemployment, inflation). Consider client\\'s specific situation—occupation, assets, lifestyle, family. Foundation for insurance recommendations.",
       "correctAnswer": 3,
       "options": [
@@ -10824,7 +10824,7 @@
       "subtopic": "Captive Insurance",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions, a manufacturing firm, wants to manage its operational risks more effectively. They're considering forming an internal insurance entity. A captive insurance company is: A) Illegal in most states | B) Only for non-profits | C) A government insurer | D) An insurance company created by a business to insure its own risks, potentially offering tax and coverage advantages",
+      "question": "GreenTech Solutions, a manufacturing firm, wants to manage its operational risks more effectively. They're considering forming an internal insurance entity. A captive insurance company is:",
       "explanation": "Captive insurance: company-owned insurer covering parent\\'s risks. Types: pure captive (one owner), group captive (multiple companies). Potential benefits: control coverage terms, potential tax advantages, access reinsurance markets, reduce costs. Drawbacks: setup costs, regulation, capital requirements, IRS scrutiny of tax motivation. Used by larger corporations; micro-captives under scrutiny.",
       "correctAnswer": 3,
       "options": [
@@ -10859,7 +10859,7 @@
       "subtopic": "Premium Financing",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Dr. Lee, a high-net-worth individual, seeks to maximize wealth transfer through a large life insurance policy. He is considering financing the premiums. Life insurance premium financing involves: A) Premium discounts | B) Group premium reduction | C) Paying premiums monthly | D) Borrowing to pay premiums on large policies, using policy values as collateral, often for high-net-worth clients",
+      "question": "Dr. Lee, a high-net-worth individual, seeks to maximize wealth transfer through a large life insurance policy. He is considering financing the premiums. Life insurance premium financing involves:",
       "explanation": "Premium financing: borrow from third-party lender to pay premiums on large life insurance policy. Policy cash value and death benefit as collateral. Strategy for wealthy clients who prefer not to liquidate investments. Risks: interest rate changes, policy performance, exit strategy. Complex—need proper planning. IRS watches for abusive arrangements.",
       "correctAnswer": 3,
       "options": [
@@ -10894,7 +10894,7 @@
       "subtopic": "Preventive Care",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is reviewing her health insurance options under the Affordable Care Act (ACA). Under the ACA, preventive care services: A) Are optional benefits | B) Only apply to children | C) Always have copays | D) Must be covered with no cost-sharing when provided by in-network providers",
+      "question": "Maria is reviewing her health insurance options under the Affordable Care Act (ACA). Under the ACA, preventive care services:",
       "explanation": "ACA preventive care: must be covered at no cost (no copay, coinsurance, deductible) when in-network. Includes: recommended immunizations, screenings (cancer, diabetes), wellness visits, contraception, counselings. List from USPSTF recommendations. Out-of-network may have cost. Diagnostic follow-up not covered same way. Know what qualifies as preventive.",
       "correctAnswer": 3,
       "options": [
@@ -10929,7 +10929,7 @@
       "subtopic": "Mental Health Coverage",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John, a software engineer, is evaluating disability insurance. He is concerned about coverage for mental health. Disability insurance coverage for mental health conditions: A) Has no restrictions | B) Is always excluded | C) Pays the same as physical disabilities | D) Often has limited benefit periods (2 years) compared to other disabilities",
+      "question": "John, a software engineer, is evaluating disability insurance. He is concerned about coverage for mental health. Disability insurance coverage for mental health conditions:",
       "explanation": "Mental health DI limitations: many policies limit mental/nervous condition benefits to 2 years (vs. age 65). Self-reported conditions (pain, fatigue) may have similar limits. Read policy carefully—limitations may surprise claimants. Some premium policies offer longer mental health benefits. Important consideration for those in high-stress professions.",
       "correctAnswer": 3,
       "options": [
@@ -10964,7 +10964,7 @@
       "subtopic": "Contractual Liability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Construction signed a contract agreeing to indemnify the property owner for any damages arising from their work. Liability assumed under a contract (contractual liability): A) Only applies to written contracts | B) Is always covered by general liability | C) Is never insurable | D) May not be covered unless specific coverage is included, as policies typically exclude liability assumed by contract",
+      "question": "Apex Construction signed a contract agreeing to indemnify the property owner for any damages arising from their work. Liability assumed under a contract (contractual liability):",
       "explanation": "Contractual liability: liability you agree to assume through a contract (indemnification, hold harmless). Standard liability policies often exclude. May need specific endorsement or contractual liability coverage. Common in: leases, service agreements, construction contracts. Review contracts carefully—may be assuming uninsured liability. Coordinate contracts and insurance.",
       "correctAnswer": 3,
       "options": [
@@ -10999,7 +10999,7 @@
       "subtopic": "Subrogation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a car accident caused by a negligent driver, Sarah's insurance company paid for her medical bills and car repairs. Subrogation in insurance allows the insurer to: A) Increase premiums | B) Cancel policies | C) Step into the insured's shoes to recover damages from the at-fault party | D) Avoid paying claims",
+      "question": "After a car accident caused by a negligent driver, Sarah's insurance company paid for her medical bills and car repairs. Subrogation in insurance allows the insurer to:",
       "explanation": "Subrogation: after paying claim, insurer assumes insured\\'s right to sue responsible party. Purpose: prevents double recovery by insured, recovers costs for insurer. Example: insurer pays auto damage, then pursues at-fault driver. Insured must cooperate, not prejudice subrogation rights. Any recovery beyond claim may go to insured.",
       "correctAnswer": 2,
       "options": [
@@ -11034,7 +11034,7 @@
       "subtopic": "Valued vs Indemnity Policies",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark owns a rare art collection and wants to insure it. He and the insurer agree on a specific value for each piece. A valued policy differs from an indemnity policy in that: A) It's uninsurable | B) The amount payable is agreed upon at policy inception rather than determined by actual loss at time of claim | C) It always covers consequential losses | D) It only covers losses due to theft",
+      "question": "Mark owns a rare art collection and wants to insure it. He and the insurer agree on a specific value for each piece. A valued policy differs from an indemnity policy in that:",
       "explanation": "Valued policy: pre-agreed amount payable regardless of actual loss (common: life insurance, some property). Indemnity: pays actual loss up to limit (most property/casualty). Valued advantage: no dispute at claim time. Challenge: potential moral hazard if value exceeds actual. Used where value hard to determine at loss (art, life).",
       "correctAnswer": 2,
       "options": [
@@ -11068,7 +11068,7 @@
       "subtopic": "Assignment",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "David wants to use his life insurance policy as collateral for a loan. Assignment of a life insurance policy: A) Transfers ownership rights to another party, which may be collateral (loan) or absolute | B) Increases premiums | C) Voids beneficiary designations permanently | D) Is never permitted",
+      "question": "David wants to use his life insurance policy as collateral for a loan. Assignment of a life insurance policy:",
       "explanation": "Assignment: transfer of policy rights. Collateral assignment: temporary for loan security, reverts when repaid. Absolute assignment: permanent ownership transfer. Notice to insurer required. Assignment of death benefit different from ownership. Policy terms may restrict. Uses: estate planning, business arrangements, charitable giving.",
       "correctAnswer": 0,
       "options": [

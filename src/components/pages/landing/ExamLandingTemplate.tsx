@@ -411,9 +411,9 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                       </li>
                     )}
                   </ul>
-                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
                     <span>Start studying {part.part}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               ))}
@@ -591,7 +591,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><Link to="/help" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><a href="https://discord.gg/XBjzDrws" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Community (Discord)</a></li>
+                <li><a href="https://discord.gg/SNZJHr26" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Community (Discord)</a></li>
               </ul>
             </div>
             

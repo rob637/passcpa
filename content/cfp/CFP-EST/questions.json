@@ -2016,7 +2016,7 @@
       "blueprintArea": "EST-1",
       "topic": "Types of wills (simple, pour-over, holographic)",
       "difficulty": "medium",
-      "question": "After meeting with her attorney, Sarah wants to ensure all her assets are handled according to her wishes after her death. She already has a living trust established. What type of will should Sarah use to transfer any inadvertently missed probate assets into her existing trust? A) Will that divides assets equally among children | B) Will that transfers probate assets into a living trust | C) Will that funds a charitable remainder trust | D) Will that names contingent beneficiaries",
+      "question": "After meeting with her attorney, Sarah wants to ensure all her assets are handled according to her wishes after her death. She already has a living trust established. What type of will should Sarah use to transfer any inadvertently missed probate assets into her existing trust?",
       "explanation": "A pourover will captures any assets not already in the living trust at death and \"pours\" them into the trust. These assets still go through probate but are then administered according to trust terms. Serves as safety net for unfunded assets.",
       "correctAnswer": 1,
       "options": [
@@ -2050,7 +2050,7 @@
       "blueprintArea": "EST-1",
       "topic": "Probate process and avoidance",
       "difficulty": "medium",
-      "question": "John recently passed away. He owned several assets, some jointly with his wife, and some in a trust. Which of the following assets owned by John will be subject to the probate process? A) Life insurance with named beneficiary | B) Joint tenancy with right of survivorship | C) Asset titled in individual name only | D) Assets in revocable trust",
+      "question": "John recently passed away. He owned several assets, some jointly with his wife, and some in a trust. Which of the following assets owned by John will be subject to the probate process?",
       "explanation": "Assets titled solely in individual name go through probate. To avoid probate: use beneficiary designations, joint ownership with survivorship rights, TOD/POD accounts, or living trusts. Probate can be costly and time-consuming.",
       "correctAnswer": 2,
       "options": [
@@ -2084,7 +2084,7 @@
       "blueprintArea": "EST-3",
       "topic": "Installment sales to grantor trusts",
       "difficulty": "medium",
-      "question": "The Smiths want to transfer their business to their children while minimizing estate taxes. They are considering an Intentionally Defective Grantor Trust (IDGT). An IDGT provides what primary estate planning benefit? A) Trust income taxed to grantor; assets removed from estate | B) No income tax on trust distributions | C) Unlimited charitable deductions | D) Immediate step-up in basis for beneficiaries",
+      "question": "The Smiths want to transfer their business to their children while minimizing estate taxes. They are considering an Intentionally Defective Grantor Trust (IDGT). An IDGT provides what primary estate planning benefit?",
       "explanation": "IDGT is \"defective\" for income tax (grantor pays tax on trust income) but effective for estate tax (assets out of estate). Benefit: grantor\\'s tax payment is additional tax-free gift, trust grows income-tax-free. Sales to IDGT are not taxable events.",
       "correctAnswer": 0,
       "options": [
@@ -2118,7 +2118,7 @@
       "blueprintArea": "EST-2",
       "topic": "Estate tax calculation and exemption",
       "difficulty": "medium",
-      "question": "David owned a successful construction business that represents a significant portion of his estate. His executor is concerned about paying estate taxes. Section 6166 allows estate tax deferral when: A) Estate includes a closely held business representing >35% of adjusted gross estate | B) Estate consists primarily of illiquid real estate | C) Surviving spouse elects portability | D) Estate makes charitable contributions",
+      "question": "David owned a successful construction business that represents a significant portion of his estate. His executor is concerned about paying estate taxes. Section 6166 allows estate tax deferral when:",
       "explanation": "Section 6166 allows installment payment of estate tax (up to 14 years) when closely held business exceeds 35% of adjusted gross estate. Interest-only payments for first 4 years, then principal + interest. Provides liquidity relief for family businesses.",
       "correctAnswer": 0,
       "options": [
@@ -2152,7 +2152,7 @@
       "blueprintArea": "EST-1",
       "topic": "Probate process and avoidance",
       "difficulty": "medium",
-      "question": "The estate of Mrs. Johnson includes a substantial amount of stock in her closely held family business. The executor needs to raise cash to pay estate taxes and administration expenses. What is the primary benefit of an IRC Section 303 redemption? A) Redemption of estate stock to pay estate taxes treated as sale, not dividend | B) Mandatory redemption of closely held stock at death | C) Tax-free exchange of business interests | D) Charitable redemption of appreciated stock",
+      "question": "The estate of Mrs. Johnson includes a substantial amount of stock in her closely held family business. The executor needs to raise cash to pay estate taxes and administration expenses. What is the primary benefit of an IRC Section 303 redemption?",
       "explanation": "Section 303 allows redemption of closely held stock to pay estate taxes and expenses. Treated as capital gain (stepped-up basis = minimal gain), not dividend. Requires stock > 35% of gross estate. Provides liquidity without dividend treatment.",
       "correctAnswer": 0,
       "options": [
@@ -2186,7 +2186,7 @@
       "blueprintArea": "EST-3",
       "topic": "Family limited partnerships (FLPs)",
       "difficulty": "medium",
-      "question": "The Miller family wants to transfer ownership of their real estate holdings to the next generation while minimizing estate taxes. A Family Limited Partnership (FLP) may provide estate planning benefits through: A) Eliminating all gift and estate taxes | B) Valuation discounts for lack of control and marketability | C) Avoiding income tax on transfers | D) Creating new basis in transferred assets",
+      "question": "The Miller family wants to transfer ownership of their real estate holdings to the next generation while minimizing estate taxes. A Family Limited Partnership (FLP) may provide estate planning benefits through:",
       "explanation": "FLP interests may qualify for discounts (20-40% combined) due to lack of control (minority interests) and lack of marketability (no public market). Must have legitimate business purpose; IRS scrutinizes deathbed FLPs. Chapter 14 rules apply.",
       "correctAnswer": 1,
       "options": [
@@ -2254,7 +2254,7 @@
       "blueprintArea": "EST-2",
       "topic": "Annual gift tax exclusion",
       "difficulty": "medium",
-      "question": "Mr. and Mrs. Thompson want to gift $36,000 to their daughter this year. The \"gift-splitting\" election allows married couples to: A) Split gifts between children equally | B) Treat gifts made by one spouse as made half by each | C) Avoid all gift tax on transfers between spouses | D) Combine their annual exclusions into one gift",
+      "question": "Mr. and Mrs. Thompson want to gift $36,000 to their daughter this year. The \"gift-splitting\" election allows married couples to:",
       "explanation": "Gift-splitting allows spouses to treat gifts by one as made 50% by each. Doubles annual exclusion ($38,000 per donee in 2026) and uses both unified credits. Requires consent of both spouses on gift tax return. Gift must be to third party.",
       "correctAnswer": 1,
       "options": [
@@ -2288,7 +2288,7 @@
       "blueprintArea": "EST-1",
       "topic": "Revocable living trusts",
       "difficulty": "medium",
-      "question": "The Peterson family wants to support their local children's hospital while also providing for their future generations. What is unique about a Charitable Lead Trust (CLT)? A) Charity receives income stream; remainder to family | B) Family receives income; charity gets remainder | C) Only cash donations allowed | D) Trust is irrevocable only at donor",
+      "question": "The Peterson family wants to support their local children's hospital while also providing for their future generations. What is unique about a Charitable Lead Trust (CLT)?",
       "explanation": "CLT is opposite of CRT: charity receives income/annuity for term, remainder passes to family. Gift/estate value of remainder is discounted by charity\\'s lead interest. Effective when 7520 rates are low. Grantor CLT provides upfront income tax deduction.",
       "correctAnswer": 0,
       "options": [
@@ -2322,7 +2322,7 @@
       "blueprintArea": "EST-1",
       "topic": "Irrevocable trusts (ILIT, GRAT, QPRT)",
       "difficulty": "medium",
-      "question": "Dr. Lee establishes an irrevocable trust for his children, funding it with annual gifts. To ensure these gifts qualify for favorable tax treatment, the trust includes a provision allowing beneficiaries a temporary right to withdraw contributions. These provisions are known as Crummey powers, used primarily to: A) Allow trustee discretion over distributions | B) Qualify transfers for the annual gift tax exclusion | C) Protect assets from creditors | D) Provide income tax deductions",
+      "question": "Dr. Lee establishes an irrevocable trust for his children, funding it with annual gifts. To ensure these gifts qualify for favorable tax treatment, the trust includes a provision allowing beneficiaries a temporary right to withdraw contributions. These provisions are known as Crummey powers, used primarily to:",
       "explanation": "Crummey powers give beneficiaries temporary right to withdraw contributions (usually 30-60 days). This \"present interest\" qualifies gifts for annual exclusion. Power typically lapses each year. Named after Crummey v. Commissioner. Common in ILITs.",
       "correctAnswer": 1,
       "options": [
@@ -2356,7 +2356,7 @@
       "blueprintArea": "EST-2",
       "topic": "Annual gift tax exclusion",
       "difficulty": "medium",
-      "question": "The Smiths plan to gift a portion of their real estate to their daughter in 2026. They want to utilize the annual gift tax exclusion to minimize gift tax implications. The annual gift tax exclusion amount for 2026 is: A) $16,000 | B) $17,000 | C) $18,000 | D) $19,000",
+      "question": "The Smiths plan to gift a portion of their real estate to their daughter in 2026. They want to utilize the annual gift tax exclusion to minimize gift tax implications. The annual gift tax exclusion amount for 2026 is:",
       "explanation": "The 2026 annual gift tax exclusion is $19,000 per donee (up from $18,000 in 2024). Unlimited recipients allowed. Married couples can gift-split for $38,000 per donee. No gift tax return required if under annual exclusion.",
       "correctAnswer": 3,
       "options": [
@@ -2390,7 +2390,7 @@
       "blueprintArea": "EST-1",
       "topic": "Irrevocable trusts (ILIT, GRAT, QPRT)",
       "difficulty": "medium",
-      "question": "Sarah wants to establish an Irrevocable Life Insurance Trust (ILIT) to provide liquidity for her estate and protect her family. Which of the following is NOT a typical benefit of using an ILIT? A) Death benefit excluded from insured's gross estate | B) Provides liquidity for estate taxes and expenses | C) Guarantees a specific rate of return on the life insurance policy | D) Can protect assets from creditors in some situations",
+      "question": "Sarah wants to establish an Irrevocable Life Insurance Trust (ILIT) to provide liquidity for her estate and protect her family. Which of the following is NOT a typical benefit of using an ILIT?",
       "explanation": "ILIT requires insured to NOT own the policy (trust is owner). If insured retains incidents of ownership, death benefit is included in estate (IRC 2042). Key: insured cannot be trustee, beneficiary with control, or retain ownership rights.",
       "correctAnswer": 2,
       "options": [
@@ -2424,7 +2424,7 @@
       "blueprintArea": "EST-1",
       "topic": "Revocable living trusts",
       "difficulty": "medium",
-      "question": "John's will establishes a trust to minimize estate taxes for his heirs. The trust is designed to utilize his applicable exclusion amount, ensuring that portion of his estate passes tax-free. A bypass trust (credit shelter trust) is designed to: A) Qualify for the marital deduction | B) Use the deceased spouse's applicable exclusion amount | C) Maximize income distributions to the surviving spouse | D) Avoid probate",
+      "question": "John's will establishes a trust to minimize estate taxes for his heirs. The trust is designed to utilize his applicable exclusion amount, ensuring that portion of his estate passes tax-free. A bypass trust (credit shelter trust) is designed to:",
       "explanation": "Bypass trust uses deceased spouse\\'s exemption ($7.0M in 2026 post-TCJA sunset) to shelter assets from estate tax at both deaths. Does NOT qualify for marital deduction—that\\'s the point. Surviving spouse can receive income and limited principal (HEMS standard). More critical now that portability is limited by lower exemptions.",
       "correctAnswer": 1,
       "options": [
@@ -2458,7 +2458,7 @@
       "blueprintArea": "EST-1",
       "topic": "Probate process and avoidance",
       "difficulty": "medium",
-      "question": "After the unexpected death of Mr. Davis, it was discovered he never created a will. What is the consequence of dying intestate? A) All assets pass to the state | B) Assets distributed according to state intestacy laws | C) Spouse receives everything | D) No estate taxes are owed",
+      "question": "After the unexpected death of Mr. Davis, it was discovered he never created a will. What is the consequence of dying intestate?",
       "explanation": "Dying intestate (without will) means state law determines distribution—typically spouse and children, but varies by state. Escheat to state only if no heirs found. May not reflect decedent\\'s wishes. Guardianship of minors decided by court.",
       "correctAnswer": 1,
       "options": [
@@ -2492,7 +2492,7 @@
       "blueprintArea": "EST-2",
       "topic": "Estate tax calculation and exemption",
       "difficulty": "medium",
-      "question": "Mrs. Peterson passed away on March 15, 2025. Her executor is considering whether to use the alternate valuation date for estate tax purposes. The alternate valuation date for estate tax purposes is: A) 3 months after death | B) 6 months after death | C) 9 months after death | D) 12 months after death",
+      "question": "Mrs. Peterson passed away on March 15, 2025. Her executor is considering whether to use the alternate valuation date for estate tax purposes. The alternate valuation date for estate tax purposes is:",
       "explanation": "Alternate valuation date is 6 months after death. Can only be elected if it reduces both gross estate AND estate tax. Property sold or distributed before 6 months valued at date of distribution. Elected on Form 706.",
       "correctAnswer": 1,
       "options": [
@@ -2526,7 +2526,7 @@
       "blueprintArea": "EST-2",
       "topic": "Estate tax calculation and exemption",
       "difficulty": "medium",
-      "question": "Mr. Chen, a U.S. citizen, recently passed away, leaving a substantial portion of his estate to his wife, who is not a U.S. citizen. A Qualified Domestic Trust (QDOT) is required when: A) Estate exceeds the applicable exclusion amount | B) Assets pass to a non-citizen surviving spouse | C) Beneficiaries are minors | D) Estate includes foreign assets",
+      "question": "Mr. Chen, a U.S. citizen, recently passed away, leaving a substantial portion of his estate to his wife, who is not a U.S. citizen. A Qualified Domestic Trust (QDOT) is required when:",
       "explanation": "QDOT is required for unlimited marital deduction when surviving spouse is not a U.S. citizen. QDOT requirements: U.S. trustee, withholding on principal distributions, other regulatory requirements. Estate tax deferred until principal distributed or surviving spouse dies.",
       "correctAnswer": 1,
       "options": [
@@ -2560,7 +2560,7 @@
       "blueprintArea": "EST-2",
       "topic": "Annual gift tax exclusion",
       "difficulty": "medium",
-      "question": "Susan is named as a beneficiary in her aunt's will, but she doesn't want to receive the inheritance. She executes a qualified disclaimer. What is the result of a qualified disclaimer? A) Disclaimant chooses who receives the property | B) Property passes as if the disclaimant predeceased the decedent | C) Property goes to the state | D) Disclaimant receives a stepped-up basis",
+      "question": "Susan is named as a beneficiary in her aunt's will, but she doesn't want to receive the inheritance. She executes a qualified disclaimer. What is the result of a qualified disclaimer?",
       "explanation": "Qualified disclaimer treats disclaimant as predeceasing decedent—property passes to next in line. Requirements: written, within 9 months of death/transfer, no acceptance of benefits, no direction by disclaimant. Useful for post-mortem estate planning.",
       "correctAnswer": 1,
       "options": [
@@ -5784,7 +5784,7 @@
       "subtopic": "Will Requirements",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Arthur passes away unexpectedly. He had a will drafted 5 years ago but never discussed it with his family. When does Arthur's will become effective and legally binding?\n\nA) When witnessed | B) When filed with the probate court | C) When signed by the testator | D) Upon the testator's death",
+      "question": "Arthur passes away unexpectedly. He had a will drafted 5 years ago but never discussed it with his family. When does Arthur's will become effective and legally binding?",
       "explanation": "A will is ambulatory—it has no effect until death and can be changed anytime before death. It becomes effective upon the testator\\'s death, at which point it is admitted to probate. During life, the testator retains full control over assets and can revoke or amend the will.",
       "correctAnswer": 3,
       "options": [
@@ -5819,7 +5819,7 @@
       "subtopic": "Power of Attorney",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria granted her daughter, Sofia, a power of attorney to manage her finances. Maria was later involved in a car accident and became incapacitated. A durable power of attorney differs from a regular power of attorney in that it:\n\nA) Automatically expires after one year | B) Continues to be effective if the principal becomes incapacitated | C) Only covers financial matters | D) Cannot be revoked",
+      "question": "Maria granted her daughter, Sofia, a power of attorney to manage her finances. Maria was later involved in a car accident and became incapacitated. A durable power of attorney differs from a regular power of attorney in that it:",
       "explanation": "A durable power of attorney includes language that it continues in effect (or becomes effective) if the principal becomes incapacitated. A regular POA becomes void upon incapacity. This is essential for managing affairs if someone becomes unable to handle their own decisions.",
       "correctAnswer": 1,
       "options": [
@@ -5854,7 +5854,7 @@
       "subtopic": "Healthcare Directive",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "John drafted a healthcare power of attorney, appointing his sister, Lisa, as his agent. If John is in a coma and unable to communicate his wishes, a healthcare power of attorney allows Lisa to:\n\nA) Make financial decisions for the principal | B) Make medical decisions if the principal cannot | C) Manage the principal's assets | D) Draft a new will for the principal",
+      "question": "John drafted a healthcare power of attorney, appointing his sister, Lisa, as his agent. If John is in a coma and unable to communicate his wishes, a healthcare power of attorney allows Lisa to:",
       "explanation": "A healthcare power of attorney (healthcare proxy) authorizes an agent to make medical decisions when the principal cannot. This is separate from financial powers of attorney. A living will/advance directive may also specify end-of-life treatment preferences.",
       "correctAnswer": 1,
       "options": [
@@ -5890,7 +5890,7 @@
       "subtopic": "Special Needs Trust",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smiths want to provide for their adult son, David, who has a disability, without jeopardizing his eligibility for Medicaid and SSI. A special needs trust is designed to:\n\nA) Reduce estate taxes for high-net-worth individuals | B) Provide for a beneficiary without disqualifying them from government benefits | C) Hold life insurance policies | D) Fund college education expenses",
+      "question": "The Smiths want to provide for their adult son, David, who has a disability, without jeopardizing his eligibility for Medicaid and SSI. A special needs trust is designed to:",
       "explanation": "Special needs trusts (supplemental needs trusts) provide for a disabled beneficiary\\'s needs beyond what government programs cover without disqualifying them from means-tested benefits like Medicaid and SSI. The trust must be properly structured to avoid being counted as the beneficiary\\'s assets.",
       "correctAnswer": 1,
       "options": [
@@ -5960,7 +5960,7 @@
       "subtopic": "Charitable Remainder Trust",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Johnsons, philanthropically inclined, establish a trust. They want to receive income from the trust assets during their lifetimes, with the remaining assets eventually going to their favorite charity, the American Red Cross. A Charitable Remainder Trust (CRT) provides:\n\nA) Immediate income to charity with remainder to family | B) Income to the donor/family for life with remainder to charity | C) Assets that remain in the donor's control | D) A guaranteed fixed payment to the charity each year",
+      "question": "The Johnsons, philanthropically inclined, establish a trust. They want to receive income from the trust assets during their lifetimes, with the remaining assets eventually going to their favorite charity, the American Red Cross. A Charitable Remainder Trust (CRT) provides:",
       "explanation": "CRTs provide income to the donor or other non-charitable beneficiaries for a term or life, with the remainder passing to charity. The donor receives a current income tax deduction for the present value of the charitable remainder. CRTs work well with highly appreciated assets.",
       "correctAnswer": 1,
       "options": [
@@ -5995,7 +5995,7 @@
       "subtopic": "GSTT",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Grandma Eleanor directly gifted $2 million to her grandson, bypassing her children. The Generation-Skipping Transfer Tax (GSTT) applies to:\n\nA) All transfers to children | B) Only outright gifts, not trusts | C) Transfers to grandchildren or lower generations that skip a generation | D) Transfers between spouses",
+      "question": "Grandma Eleanor directly gifted $2 million to her grandson, bypassing her children. The Generation-Skipping Transfer Tax (GSTT) applies to:",
       "explanation": "GSTT is a separate tax on transfers to skip persons (generally grandchildren or those 37.5+ years younger than the donor). It prevents avoidance of one generation of transfer tax. The GSTT rate is a flat 40%, in addition to any estate or gift tax. Each person has a GSTT exemption equal to the estate exemption.",
       "correctAnswer": 2,
       "options": [
@@ -6065,7 +6065,7 @@
       "subtopic": "Charitable Deduction",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "In calculating the taxable estate, the estate of Mr. Davis deducts $500,000 that was donated to the local YMCA. The estate tax charitable deduction is:\n\nA) Phased out for large estates | B) Limited to 30% of the gross estate | C) Unlimited for qualifying charitable transfers | D) Only available for transfers to private foundations",
+      "question": "In calculating the taxable estate, the estate of Mr. Davis deducts $500,000 that was donated to the local YMCA. The estate tax charitable deduction is:",
       "explanation": "Unlike income tax charitable deductions, the estate tax charitable deduction is unlimited. Assets passing to qualified charities at death are fully deductible, reducing the taxable estate dollar-for-dollar. This makes charitable bequests a powerful estate tax planning tool.",
       "correctAnswer": 2,
       "options": [
@@ -6100,7 +6100,7 @@
       "subtopic": "Gross Estate Inclusions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "When calculating the gross estate for federal estate tax purposes, which asset is NOT typically included in the gross estate?\n\nA) Revocable trust assets | B) Jointly-held property with right of survivorship | C) Life insurance owned by the decedent on their own life | D) Life insurance on the decedent's spouse owned by the decedent",
+      "question": "When calculating the gross estate for federal estate tax purposes, which asset is NOT typically included in the gross estate?",
       "explanation": "Life insurance owned by an ILIT (not by the decedent) is not included in the gross estate because the decedent had no incidents of ownership. Life insurance owned by the decedent, jointly-held property, and revocable trust assets are all included in the gross estate.",
       "correctAnswer": 3,
       "options": [
@@ -7009,7 +7009,7 @@
       "subtopic": "Funding Review",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Dr. Lee created a revocable living trust 5 years ago. He's acquired several new assets since then. Regular review of the trust's funding is important because:\nA) Beneficiary designations override trust terms always | B) Trust funding is a one-time event | C) Trust terms change automatically | D) Newly acquired assets may not be titled in the trust, defeating probate avoidance",
+      "question": "Dr. Lee created a revocable living trust 5 years ago. He's acquired several new assets since then. Regular review of the trust's funding is important because:",
       "explanation": "Trusts only control assets properly funded into them. New purchases (real estate, bank accounts, investments) may default to individual ownership. Regular reviews ensure new assets are titled correctly. Major life events (inheritance, home purchase) particularly warrant funding reviews.",
       "correctAnswer": 3,
       "options": [
@@ -7044,7 +7044,7 @@
       "subtopic": "Living Will",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is diagnosed with a terminal illness. She wants to document her wishes regarding medical treatment if she becomes incapacitated. A living will (advance directive) typically:\nA) States wishes regarding life-sustaining medical treatment if incapacitated and unable to communicate | B) Creates a trust | C) Names a guardian for minor children | D) Distributes assets after death",
+      "question": "Maria is diagnosed with a terminal illness. She wants to document her wishes regarding medical treatment if she becomes incapacitated. A living will (advance directive) typically:",
       "explanation": "A living will addresses end-of-life medical decisions—whether to continue life support, feeding tubes, resuscitation preferences. It speaks when the person cannot. Often combined with healthcare power of attorney (for decisions not addressed) into an advance directive.",
       "correctAnswer": 0,
       "options": [
@@ -7114,7 +7114,7 @@
       "subtopic": "Pour-Over Will",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John creates a revocable living trust to manage his assets. He also executes a will to ensure any inadvertently missed assets are included. A pour-over will is used to:\nA) Distribute assets outside of any trust | B) Transfer assets not already in a revocable trust into the trust at death | C) Create a new trust at death | D) Avoid probate entirely",
+      "question": "John creates a revocable living trust to manage his assets. He also executes a will to ensure any inadvertently missed assets are included. A pour-over will is used to:",
       "explanation": "A pour-over will catches assets not transferred to the revocable trust during life and \"pours\" them into the trust at death. These assets still go through probate, but then follow the trust\\'s distribution terms. It serves as a safety net for unfunded trust assets.",
       "correctAnswer": 1,
       "options": [
@@ -7149,7 +7149,7 @@
       "subtopic": "Beneficiary Designations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah wants to ensure her retirement accounts and life insurance pass directly to her children upon her death. Beneficiary designations on retirement accounts and life insurance:\nA) Have no legal effect | B) Must match the will exactly | C) Generally override the will and pass assets directly to named beneficiaries | D) Can be overridden by a will",
+      "question": "Sarah wants to ensure her retirement accounts and life insurance pass directly to her children upon her death. Beneficiary designations on retirement accounts and life insurance:",
       "explanation": "Beneficiary designations control distribution regardless of what the will states—they\\'re contractual. Many estate plans fail because beneficiary designations weren\\'t updated after divorce, death, or changed intentions. Regular beneficiary review is essential.",
       "correctAnswer": 2,
       "options": [
@@ -7184,7 +7184,7 @@
       "subtopic": "Transfer on Death (TOD)",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "David wants to simplify the transfer of his brokerage account to his daughter upon his death, avoiding probate. Transfer on Death (TOD) registration for securities:\nA) Creates a trust | B) Is only available for bank accounts | C) Allows assets to pass directly to designated beneficiaries at death, avoiding probate | D) Transfers ownership immediately",
+      "question": "David wants to simplify the transfer of his brokerage account to his daughter upon his death, avoiding probate. Transfer on Death (TOD) registration for securities:",
       "explanation": "TOD registration (Payable on Death for bank accounts) names beneficiaries who receive assets at death without probate. The owner maintains full control during life from The beneficiary has no rights until death. Simple, cost-effective probate avoidance for appropriate situations.",
       "correctAnswer": 2,
       "options": [
@@ -7219,7 +7219,7 @@
       "subtopic": "Community Property with Right of Survivorship",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark and Lisa, a married couple in California, own their home as community property with right of survivorship. Community property with right of survivorship (CPWROS):\nA) Passes to survivor automatically at death while providing full step-up in basis for both halves | B) Is available in all states | C) Has no tax advantages | D) Requires probate at first death",
+      "question": "Mark and Lisa, a married couple in California, own their home as community property with right of survivorship. Community property with right of survivorship (CPWROS):",
       "explanation": "CPWROS combines survivorship (avoiding probate) with community property\\'s full basis step-up at first death. Available in some community property states. Both halves get new FMV basis at first death—unlike JTWROS where only the decedent\\'s half gets stepped-up basis.",
       "correctAnswer": 0,
       "options": [
@@ -7254,7 +7254,7 @@
       "subtopic": "Medical and Education Exclusion",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan wants to help her niece pay for college. She makes a payment of $10,000 directly to State University for her niece's tuition. Payments for tuition directly to an educational institution:\nA) Must be for the donor | B) Are not considered taxable gifts | C) Count against the annual gift tax exclusion | D) Are limited to $5,000 per year",
+      "question": "Susan wants to help her niece pay for college. She makes a payment of $10,000 directly to State University for her niece's tuition. Payments for tuition directly to an educational institution:",
       "explanation": "Direct payments to educational institutions for tuition (not room/board/books) and to medical providers for medical care are unlimited exclusions separate from the $19,000 annual exclusion. This allows wealthy individuals to transfer substantial amounts for education and healthcare without gift tax consequences.",
       "correctAnswer": 1,
       "options": [
@@ -7289,7 +7289,7 @@
       "subtopic": "State Death Taxes",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Emily's estate is valued at $12 million. While it's below the federal estate tax exemption, she's concerned about state death taxes. Compared to federal estate tax, state death taxes:\nA) Always match federal thresholds | B) May have lower exemption amounts, affecting estates that owe no federal tax | C) Only apply to real estate | D) Don't exist",
+      "question": "Emily's estate is valued at $12 million. While it's below the federal estate tax exemption, she's concerned about state death taxes. Compared to federal estate tax, state death taxes:",
       "explanation": "About 12 states plus DC have estate taxes with exemptions often lower than federal ($1M-$6M varies). Six states have inheritance taxes on recipients. State taxes can apply even when no federal tax is due. Planning must consider state residence and property location.",
       "correctAnswer": 1,
       "options": [
@@ -8516,7 +8516,7 @@
       "subtopic": "Reverse Gift",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Mrs. Eleanor Vance wants to transfer assets to her grandchildren but is concerned about estate taxes. Her advisor suggests a 'reverse gift' strategy. This involves: A) Gifting low-basis assets to an older relative who will bequeath them back, obtaining a stepped-up basis at their death | B) Taking back previous gifts | C) Charitable giving | D) Generation-skipping transfers",
+      "question": "Mrs. Eleanor Vance wants to transfer assets to her grandchildren but is concerned about estate taxes. Her advisor suggests a 'reverse gift' strategy. This involves:",
       "explanation": "Reverse gift: give low-basis assets to elderly family member; at their death, you inherit with stepped-up basis. However, IRC 1014(e) prevents this if property is acquired within one year of death and passes back to the original donor or spouse. Strategy requires the relative to survive at least one year.",
       "correctAnswer": 0,
       "options": [
@@ -8551,7 +8551,7 @@
       "subtopic": "Digital Estate Planning",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The estate of John Sterling is being planned. John has numerous online accounts, digital photos, and cryptocurrency holdings. Digital estate planning for John should address: A) Only email accounts | B) Digital assets (accounts, files, crypto), passwords/access, social media accounts, and designating a digital executor | C) Only cryptocurrency | D) Nothing—digital assets transfer automatically",
+      "question": "The estate of John Sterling is being planned. John has numerous online accounts, digital photos, and cryptocurrency holdings. Digital estate planning for John should address:",
       "explanation": "Digital assets include: financial accounts, cryptocurrency, email, social media, cloud storage, domain names, loyalty points. Planning includes: inventory, secure password storage, terms of service review, state digital access laws, and naming someone with authority to access. The Revised Uniform Fiduciary Access to Digital Assets Act (RUFADAA) governs in most states.",
       "correctAnswer": 1,
       "options": [
@@ -8586,7 +8586,7 @@
       "subtopic": "Disposition of Remains",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a tragic accident, Mrs. Davies is preparing her estate documents. Instructions for disposition of remains (burial, cremation) should: A) Only be in the will | B) Be provided separately to family because the will may not be reviewed until after the funeral | C) Be handled by the hospital | D) Never be documented",
+      "question": "After a tragic accident, Mrs. Davies is preparing her estate documents. Instructions for disposition of remains (burial, cremation) should:",
       "explanation": "Wills are often not read until after funeral arrangements are made. Burial/cremation wishes should be communicated to family directly, in a separate letter, or designated on a specific form. Some states have designated agent statutes. Pre-planning with funeral homes documents and funds these wishes.",
       "correctAnswer": 1,
       "options": [
@@ -8621,7 +8621,7 @@
       "subtopic": "Totten Trust",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Robert opens an account at First National Bank, naming his daughter, Emily, as beneficiary. This account is a Totten trust (payable-on-death account), which is: A) A complex irrevocable trust | B) A bank account that passes directly to a named beneficiary at death, avoiding probate | C) A testamentary trust | D) Only for retirement accounts",
+      "question": "Robert opens an account at First National Bank, naming his daughter, Emily, as beneficiary. This account is a Totten trust (payable-on-death account), which is:",
       "explanation": "Totten trusts are simple \"in trust for\" or POD bank accounts. The owner maintains full control during life; at death, funds transfer to the beneficiary outside probate. Easy to establish, but provide no ongoing management—the beneficiary receives outright. Named for the case that validated them.",
       "correctAnswer": 0,
       "options": [
@@ -8656,7 +8656,7 @@
       "subtopic": "Graegin Loan",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The estate of Mr. Henderson owes significant estate taxes. His advisor suggests a Graegin loan. This loan is used in estate planning to: A) Fund ILIT premiums | B) Avoid estate tax entirely | C) Generate deductible interest when an estate borrows to pay taxes or expenses from an entity it owns, generating estate/income deductions | D) Pay for funeral expenses",
+      "question": "The estate of Mr. Henderson owes significant estate taxes. His advisor suggests a Graegin loan. This loan is used in estate planning to:",
       "explanation": "Graegin loans (from the case name): estate borrows from family entity to pay estate tax/expenses. The interest is an administrative expense deduction. Loans must have legitimate terms—fixed rate, no prepayment—per the case. Useful when estate is illiquid but has ownership in cash-generating entities.",
       "correctAnswer": 2,
       "options": [
@@ -8691,7 +8691,7 @@
       "subtopic": "Bargain Sale",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Mrs. Patel sells land worth $500,000 to her son for $300,000. This bargain sale to a family member: A) Is entirely tax-free | B) Must be at fair market value | C) Is part sale, part gift—the difference between the sale price and fair market value is a gift | D) Is prohibited",
+      "question": "Mrs. Patel sells land worth $500,000 to her son for $300,000. This bargain sale to a family member:",
       "explanation": "Selling property below FMV to family creates a gift of the difference. For income tax, basis is allocated between sale and gift portions. Example: $100K property (basis $40K) sold for $60K = $40K sale, $60K gift. Sale portion recognizes gain; gift portion transfers with carryover basis. Both gift and income tax consequences apply.",
       "correctAnswer": 2,
       "options": [
@@ -8726,7 +8726,7 @@
       "subtopic": "Planning During Incapacity",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mr. Johnson has Alzheimer's and did not execute a power of attorney or healthcare directive before losing capacity. If a person becomes incapacitated without proper planning documents: A) Family can make all decisions automatically | B) The state takes over all assets | C) A court-supervised guardianship or conservatorship may be required, which is costly, public, and limits family flexibility | D) Healthcare decisions cannot be made",
+      "question": "Mr. Johnson has Alzheimer's and did not execute a power of attorney or healthcare directive before losing capacity. If a person becomes incapacitated without proper planning documents:",
       "explanation": "Without POA and healthcare directives, court intervention may be needed. Guardianship (for person) and conservatorship (for finances) are expensive, public proceedings. The court supervises decisions, requiring reports and approvals. Proper planning with durable POA and healthcare proxy avoids this, maintaining privacy and flexibility.",
       "correctAnswer": 2,
       "options": [
@@ -8761,7 +8761,7 @@
       "subtopic": "Living Will vs Healthcare Proxy",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mrs. Smith is creating her advance directives. A living will differs from a healthcare proxy (healthcare power of attorney) in that: A) A living will states specific end-of-life wishes while a healthcare proxy designates a person to make medical decisions | B) Healthcare proxies express wishes | C) They are the same document | D) Living wills appoint agents",
+      "question": "Mrs. Smith is creating her advance directives. A living will differs from a healthcare proxy (healthcare power of attorney) in that:",
       "explanation": "Living will: written declaration of wishes about life-sustaining treatment in terminal conditions (specific instructions—no ventilator, no artificial nutrition). Healthcare proxy/POA: names an agent to make medical decisions when you cannot. Best practice: have both—proxy backed by living will guidance. Without proxy, living will provides direction but no decision-maker.",
       "correctAnswer": 0,
       "options": [
@@ -8796,7 +8796,7 @@
       "subtopic": "Advance Directive Registry",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria is updating her estate plan. She wants to ensure her healthcare wishes are honored if she becomes incapacitated. Registering her advance directives with the state registry and her healthcare provider helps ensure: A) Federal tax benefits | B) Documents are accessible when needed, even if the physical copy is unavailable in an emergency | C) Legal validity | D) Automatic renewal",
+      "question": "Maria is updating her estate plan. She wants to ensure her healthcare wishes are honored if she becomes incapacitated. Registering her advance directives with the state registry and her healthcare provider helps ensure:",
       "explanation": "Advance directive registries (state or hospital-based): electronic storage accessible to medical providers. Helpful when: away from home, original documents not readily available, emergency situations. Doesn\\'t replace having copies with family/agent. Some states offer official registries; hospitals may flag availability in patient records.",
       "correctAnswer": 1,
       "options": [
@@ -8831,7 +8831,7 @@
       "subtopic": "Asset Protection Trust",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Dr. Lee, residing in Delaware, is concerned about potential malpractice lawsuits. He's considering a trust to protect his assets. A domestic asset protection trust (DAPT) allows: A) Self-settled trusts with some creditor protection in states that permit them, though with limitations and uncertainty | B) Complete protection from all creditors | C) Federal recognition | D) Unlimited funding without transfer tax",
+      "question": "Dr. Lee, residing in Delaware, is concerned about potential malpractice lawsuits. He's considering a trust to protect his assets. A domestic asset protection trust (DAPT) allows:",
       "explanation": "DAPTs: about 20 states allow trusts where the grantor is a beneficiary yet assets have some creditor protection. Requirements typically: independent trustee, irrevocable, discretionary distributions, statutory waiting period. Limitations: not respected in all courts, may not protect against existing creditors or certain claims, transfer may be fraudulent conveyance.",
       "correctAnswer": 0,
       "options": [
@@ -8866,7 +8866,7 @@
       "subtopic": "Incentive Trust",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smiths want to encourage their grandchildren to pursue higher education and responsible careers. They establish an incentive trust. Incentive trusts condition distributions on: A) Age only | B) Trustee discretion only | C) Beneficiaries meeting specified goals such as education completion, employment, sobriety, or matching earned income | D) Investment performance",
+      "question": "The Smiths want to encourage their grandchildren to pursue higher education and responsible careers. They establish an incentive trust. Incentive trusts condition distributions on:",
       "explanation": "Incentive trusts tie distributions to behavior: matching earned income, staying employed, graduating college, maintaining sobriety, performing community service. Concerns: may be too rigid, difficult to administer fairly, can inhibit entrepreneurship or caregiving, conditions deemed unreasonable may be unenforceable. Needs trustee discretion for flexibility.",
       "correctAnswer": 2,
       "options": [
@@ -8901,7 +8901,7 @@
       "subtopic": "Installment Sale to IDGT",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John wants to transfer his business, valued at $2 million, to his children while minimizing estate taxes. He's considering an IDGT. An installment sale to an intentionally defective grantor trust (IDGT): A) Creates immediate capital gains | B) Only works with real estate | C) Freezes asset value for estate tax while transferring growth, with no gain recognized due to grantor trust status | D) Requires court approval",
+      "question": "John wants to transfer his business, valued at $2 million, to his children while minimizing estate taxes. He's considering an IDGT. An installment sale to an intentionally defective grantor trust (IDGT):",
       "explanation": "Installment sale to IDGT: sell appreciated asset to grantor trust for installment note. No gain on sale (grantor trust = you\\'re selling to yourself for income tax). Interest paid comes back to grantor. Asset growth transfers tax-free. Estate frozen at note value. Complex—requires seed gift, reasonable interest rate, and proper structuring.",
       "correctAnswer": 2,
       "options": [
@@ -8936,7 +8936,7 @@
       "subtopic": "Private Annuity",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah is exploring ways to transfer her vacation home to her children while receiving income. Her attorney suggests a private annuity arrangement. A private annuity arrangement: A) Transfers property for unsecured lifetime annuity payments but has fallen out of favor due to tax rule changes and risks | B) Works like commercial annuities | C) Is commonly used for estate planning | D) Provides guaranteed payments",
+      "question": "Sarah is exploring ways to transfer her vacation home to her children while receiving income. Her attorney suggests a private annuity arrangement. A private annuity arrangement:",
       "explanation": "Private annuity: transfer property for unsecured lifetime payments from buyer (often family member). Was used to spread gain and remove appreciation. 2006 IRS regulations eliminated tax deferral benefits. Risks: buyer default (no security), seller outlives expectancy, buyer\\'s other creditors. Largely replaced by SCINs and installment sales to GRATs/IDGTs.",
       "correctAnswer": 0,
       "options": [
@@ -8971,7 +8971,7 @@
       "subtopic": "Self-Canceling Installment Note",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Robert sold his business to his son using an installment note. He's now considering a self-canceling installment note (SCIN). A self-canceling installment note (SCIN) differs from a standard installment note because: A) It cancels at seller's death | B) It requires collateral | C) It's for business use only | D) It cannot be canceled",
+      "question": "Robert sold his business to his son using an installment note. He's now considering a self-canceling installment note (SCIN). A self-canceling installment note (SCIN) differs from a standard installment note because:",
       "explanation": "SCIN: installment note that terminates at seller\\'s death—remaining balance is canceled, not owed. Advantage: if seller dies during note term, nothing enters estate. Cost: must have risk premium (higher interest or payment). If seller outlives note, no estate benefit. Works best when seller has reduced life expectancy (but actuarial tables used).",
       "correctAnswer": 0,
       "options": [
@@ -9005,7 +9005,7 @@
       "subtopic": "Per Stirpes vs Per Capita",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David's will states that his assets should be distributed to his descendants 'per stirpes'. A \"per stirpes\" beneficiary designation means: A) Spouse receives everything | B) A deceased beneficiary's share passes to their descendants | C) Assets are divided equally among all beneficiaries | D) Assets are distributed based on need",
+      "question": "David's will states that his assets should be distributed to his descendants 'per stirpes'. A \"per stirpes\" beneficiary designation means:",
       "explanation": "Per stirpes (\"by roots\"): if beneficiary predeceases, their share goes to their descendants. Example: leave to 3 children per stirpes—if one dies, their children split that 1/3. Per capita: deceased beneficiary\\'s share goes to other living beneficiaries. \"Per capita at each generation\" divides at each level. Specify desired outcome clearly in designations.",
       "correctAnswer": 1,
       "options": [
@@ -9040,7 +9040,7 @@
       "subtopic": "Review Triggers",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "The Chen family experienced several major life events in the past year, including a marriage and the birth of a grandchild. Beneficiary designations should be reviewed after: A) Only with new accounts | B) Marriage, divorce, birth of children, death of beneficiary, or any significant life event affecting intended disposition | C) Only at retirement | D) Never once set",
+      "question": "The Chen family experienced several major life events in the past year, including a marriage and the birth of a grandchild. Beneficiary designations should be reviewed after:",
       "explanation": "Review beneficiary designations after: marriage/divorce (ex may still be named), new child/grandchild, beneficiary death, moving to new state (community property implications), estate plan changes, income/asset changes affecting strategy. Annual reviews are best practice. Outdated designations are common and cause unintended results.",
       "correctAnswer": 1,
       "options": [

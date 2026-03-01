@@ -1,7 +1,7 @@
 {
-  "cpa":  { "questions": 9007, "flashcards": 552, "lessons": 463, "tbs": 312 },
+  "cpa":  { "questions": 9007, "flashcards": 552, "lessons": 463, "tbs": 300 },
   "ea":   { "questions": 2997, "flashcards": 439, "lessons": 152 },
-  "cma":  { "questions": 2528, "flashcards": 415, "lessons": 114, "essays": 2, "cbqs": 126 },
+  "cma":  { "questions": 2528, "flashcards": 415, "lessons": 114, "essays": 42, "cbqs": 160 },
   "cia":  { "questions": 2212, "flashcards": 541, "lessons": 140 },
   "cfp":  { "questions": 2485, "flashcards": 532, "lessons": 119, "caseStudies": 125 },
   "cisa": { "questions": 1520, "flashcards": 521, "lessons": 109 }

@@ -2849,7 +2849,7 @@
       "subtopic": "Capacity Planning",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions is planning a new data center. They anticipate 15% annual growth in data storage needs. Capacity planning for the new data center should consider which of the following? \nA) Current usage, growth projections, and peak demands | B) Only historical data | C) Only cost | D) Only current usage",
+      "question": "GreenTech Solutions is planning a new data center. They anticipate 15% annual growth in data storage needs. Capacity planning for the new data center should consider which of the following?",
       "options": [
         "Current usage, growth projections, and peak demands",
         "Only historical data, assuming consistent trends",
@@ -2884,7 +2884,7 @@
       "subtopic": "Tier Classification",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "First National Bank is evaluating several data center providers. A key consideration is ensuring high availability for critical banking systems. Data center tier classifications primarily indicate:\nA) Location only | B) Availability and redundancy levels | C) Size only | D) Cost only",
+      "question": "First National Bank is evaluating several data center providers. A key consideration is ensuring high availability for critical banking systems. Data center tier classifications primarily indicate:",
       "options": [
         "Geographic location and climate risks",
         "Availability and redundancy levels",
@@ -2919,7 +2919,7 @@
       "subtopic": "Energy Efficiency",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Data Corp is trying to reduce its operational expenses. A key metric they are tracking is data center efficiency. Power Usage Effectiveness (PUE) measures:\nA) Network speed | B) Data center energy efficiency | C) Storage capacity | D) Server performance",
+      "question": "Apex Data Corp is trying to reduce its operational expenses. A key metric they are tracking is data center efficiency. Power Usage Effectiveness (PUE) measures:",
       "options": [
         "Network speed and data throughput",
         "Data center energy efficiency",
@@ -2954,7 +2954,7 @@
       "subtopic": "Preventive Maintenance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Stellar Manufacturing relies heavily on its industrial control systems. The IS auditor recommends implementing a robust maintenance program. Preventive maintenance schedules help:\nA) Reduce unexpected failures through proactive maintenance | B) Delay all maintenance | C) Eliminate all maintenance | D) Increase failures",
+      "question": "Stellar Manufacturing relies heavily on its industrial control systems. The IS auditor recommends implementing a robust maintenance program. Preventive maintenance schedules help:",
       "options": [
         "Reduce unexpected failures through proactive maintenance",
         "Delay all maintenance to reduce short-term operational costs",
@@ -2989,7 +2989,7 @@
       "subtopic": "Test Frequency",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Global Insurance Corp's disaster recovery plan (DRP) is critical for regulatory compliance. To ensure the DRP's effectiveness, the testing frequency should be:\nA) Only after changes | B) Optional | C) At least annually with more frequent component testing | D) Once ever",
+      "question": "Global Insurance Corp's disaster recovery plan (DRP) is critical for regulatory compliance. To ensure the DRP's effectiveness, the testing frequency should be:",
       "options": [
         "Only after significant infrastructure or application changes",
         "Optional, based on management discretion and budget availability",
@@ -3024,7 +3024,7 @@
       "subtopic": "Parallel Testing",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent audit, Secure Logistics was asked to demonstrate its disaster recovery capabilities. They chose to perform a parallel test. Parallel DR tests:\nA) Are destructive | B) Replace production | C) Test recovery without impacting production systems | D) Disrupt production",
+      "question": "During a recent audit, Secure Logistics was asked to demonstrate its disaster recovery capabilities. They chose to perform a parallel test. Parallel DR tests:",
       "options": [
         "Are destructive, potentially corrupting backup data sets",
         "Replace production, immediately switching all users over",
@@ -3059,7 +3059,7 @@
       "subtopic": "Full Interruption",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "As part of its annual audit, MedSys Healthcare is required to validate its disaster recovery plan. A full interruption DR test:\nA) Test only documentation | B) Are always required | C) Provide most realistic validation but carry production risk | D) Have no risk",
+      "question": "As part of its annual audit, MedSys Healthcare is required to validate its disaster recovery plan. A full interruption DR test:",
       "options": [
         "Tests only documentation and fails to validate recovery capabilities.",
         "Are always required to comply with regulatory standards and policies.",
@@ -3094,7 +3094,7 @@
       "subtopic": "Plan Maintenance",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After a recent merger, Consolidated Industries' IT infrastructure has undergone significant changes. When should the BC/DR plan maintenance be triggered?\nA) Annually only | B) Never | C) Significant changes occur to systems, personnel, or business processes | D) Only after disasters",
+      "question": "After a recent merger, Consolidated Industries' IT infrastructure has undergone significant changes. When should the BC/DR plan maintenance be triggered?",
       "options": [
         "Annually only, adhering to the policy schedule regardless of changes.",
         "Never, BC/DR is a one-time project completed during initial implementation.",
@@ -5104,7 +5104,7 @@
       "subtopic": "UPS",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent storm, power was lost at Apex Financial's primary data center. The backup generator takes 90 seconds to activate. What critical function do UPS systems provide during this interval?\nA) Short-term power during outages until generators start | B) Only monitoring | C) Only surge protection | D) Permanent power",
+      "question": "During a recent storm, power was lost at Apex Financial's primary data center. The backup generator takes 90 seconds to activate. What critical function do UPS systems provide during this interval?",
       "options": [
         "Short-term power during outages until generators start",
         "Only monitoring of power fluctuations, with alerts to IT staff",
@@ -5139,7 +5139,7 @@
       "subtopic": "Generator Testing",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Reliable Energy Corp's backup generator is critical for business continuity. To ensure its readiness, which of the following should be included in the generator testing program?\nA) Regular load testing to verify capability | B) Only automatic start | C) Only fuel checks | D) Only visual inspection",
+      "question": "Reliable Energy Corp's backup generator is critical for business continuity. To ensure its readiness, which of the following should be included in the generator testing program?",
       "options": [
         "Regular load testing to verify capability",
         "Only automatic start to confirm operability",
@@ -5174,7 +5174,7 @@
       "subtopic": "Digital Twin",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Global Manufacturing wants to optimize its factory operations using real-time data. How can digital twin technology best be leveraged to achieve this goal?\nA) Only documentation | B) Simulation, prediction, and optimization of physical systems | C) Only monitoring | D) Only visualization",
+      "question": "Global Manufacturing wants to optimize its factory operations using real-time data. How can digital twin technology best be leveraged to achieve this goal?",
       "options": [
         "Documentation of existing processes and historical performance data.",
         "Simulation, prediction, and optimization of physical systems",
@@ -5209,7 +5209,7 @@
       "subtopic": "Edge Computing",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Retail Group is deploying edge computing to its stores for faster transaction processing. What key operational aspects must be considered for these edge deployments?\nA) Only cloud integration | B) Latency requirements, connectivity, and distributed security | C) Only cost | D) Only centralized management",
+      "question": "Vista Retail Group is deploying edge computing to its stores for faster transaction processing. What key operational aspects must be considered for these edge deployments?",
       "options": [
         "Only cloud integration for data aggregation and reporting needs",
         "Latency requirements, connectivity, and distributed security",
@@ -5244,7 +5244,7 @@
       "subtopic": "Sustainability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GreenTech Solutions is committed to reducing its environmental impact. What aspects should their IT operations address to improve sustainability?\nA) Energy efficiency, carbon footprint, and e-waste management | B) Only compliance | C) Only performance | D) Only cost reduction",
+      "question": "GreenTech Solutions is committed to reducing its environmental impact. What aspects should their IT operations address to improve sustainability?",
       "options": [
         "Energy efficiency, carbon footprint, and e-waste management",
         "Compliance with data privacy and security regulations only",
@@ -5279,7 +5279,7 @@
       "subtopic": "AIOps",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Cyberdyne Systems wants to proactively address IT issues before they impact operations. What does predictive operations (AIOps) leverage to achieve this goal?\nA) Only historical data | B) Only alerts | C) Machine learning to predict and prevent operational issues | D) Only manual analysis",
+      "question": "Cyberdyne Systems wants to proactively address IT issues before they impact operations. What does predictive operations (AIOps) leverage to achieve this goal?",
       "options": [
         "Only historical data and trend analysis for reactive responses",
         "Only alerts and notifications for immediate incident response",
@@ -5314,7 +5314,7 @@
       "subtopic": "Logging",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Following a security incident, Chen & Associates needs to ensure the integrity of their log data for forensic analysis. What does immutable logging primarily ensure?\nA) Only retention | B) Only compression | C) Tamper-evident log storage for forensic integrity | D) Log deletion capability",
+      "question": "Following a security incident, Chen & Associates needs to ensure the integrity of their log data for forensic analysis. What does immutable logging primarily ensure?",
       "options": [
         "Long-term log retention for compliance mandates",
         "Efficient log compression for cost-effective storage",
@@ -5349,7 +5349,7 @@
       "subtopic": "Geo-Redundancy",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a major earthquake in California, Meridian Corp. is reviewing its disaster recovery plan. What key factors should be considered when planning for geo-redundancy?\nA) Only compliance | B) Only performance | C) Data residency, latency, and regional failure scenarios | D) Only cost savings",
+      "question": "After a major earthquake in California, Meridian Corp. is reviewing its disaster recovery plan. What key factors should be considered when planning for geo-redundancy?",
       "options": [
         "Compliance with regulatory requirements and audit findings",
         "Performance metrics, bandwidth capacity, and user experience",
@@ -8499,7 +8499,7 @@
       "subtopic": "Data Center Operations",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "DataSafe Solutions operates a large data center hosting critical infrastructure for multiple clients. To protect the data and systems, which of the following environmental controls should be implemented in DataSafe's data centers?\nA) Only HVAC | B) HVAC, fire detection/suppression, water detection, and physical security | C) Only power backup | D) Only fire suppression",
+      "question": "DataSafe Solutions operates a large data center hosting critical infrastructure for multiple clients. To protect the data and systems, which of the following environmental controls should be implemented in DataSafe's data centers?",
       "options": [
         "Only HVAC with redundant chillers and temperature monitoring, but no other controls.",
         "HVAC, fire detection/suppression, water detection, and physical security",
@@ -8569,7 +8569,7 @@
       "subtopic": "BCP Scope",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After a ransomware attack crippled several key systems, Global Manufacturing Inc. is reviewing its recovery plans. Which of the following BEST describes what business continuity planning addresses?\nA) Maintaining critical business functions during and after disruption | B) Only data recovery | C) Only natural disasters | D) Only IT recovery",
+      "question": "After a ransomware attack crippled several key systems, Global Manufacturing Inc. is reviewing its recovery plans. Which of the following BEST describes what business continuity planning addresses?",
       "options": [
         "Maintaining critical business functions during and after disruption",
         "Focusing only on data recovery after systems are compromised or unavailable.",
@@ -8604,7 +8604,7 @@
       "subtopic": "Crisis Communications",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a recent service outage at SecureBank, customer service representatives were overwhelmed with calls and provided inconsistent information. To improve future responses, crisis communication plans should:\nA) Avoid media contact | B) Pre-define communication channels, spokespersons, and message templates | C) Only address internal communications | D) Be developed during the crisis",
+      "question": "During a recent service outage at SecureBank, customer service representatives were overwhelmed with calls and provided inconsistent information. To improve future responses, crisis communication plans should:",
       "options": [
         "Avoid media contact, deferring all inquiries to legal counsel to minimize risk.",
         "Pre-define communication channels, spokespersons, and message templates",
@@ -8639,7 +8639,7 @@
       "subtopic": "SLA Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Financial Services has experienced repeated performance issues with its core trading platform, impacting traders and clients. Service level management ensures:\nA) Only incident response | B) Only cost management | C) IT services meet agreed-upon performance levels defined in SLAs | D) Only vendor management",
+      "question": "Apex Financial Services has experienced repeated performance issues with its core trading platform, impacting traders and clients. Service level management ensures:",
       "options": [
         "Only incident response and timely restoration of trading services",
         "Only cost management and budget adherence for IT infrastructure",
@@ -8674,7 +8674,7 @@
       "subtopic": "Service Desk",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Users at GreenTech Energy are experiencing frequent issues with their laptops and software applications. The IT service desk is primarily responsible for:\nA) Only hardware repair | B) Initial contact, logging, and resolution or escalation of user issues | C) Only software development | D) Only network management",
+      "question": "Users at GreenTech Energy are experiencing frequent issues with their laptops and software applications. The IT service desk is primarily responsible for:",
       "options": [
         "Only hardware repair, including depot maintenance and parts replacement.",
         "Initial contact, logging, and resolution or escalation of user issues",
@@ -8709,7 +8709,7 @@
       "subtopic": "Incident Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "MedCorp Hospital's IT department is dealing with a surge of help desk tickets related to a recent software update. When determining which incidents to address first, priority for incident resolution should be based on:\nA) First-come first-served | B) User seniority | C) Impact and urgency of the incident | D) Incident complexity",
+      "question": "MedCorp Hospital's IT department is dealing with a surge of help desk tickets related to a recent software update. When determining which incidents to address first, priority for incident resolution should be based on:",
       "options": [
         "First-come first-served, to ensure fairness",
         "User seniority within the MedCorp org chart",
@@ -8779,7 +8779,7 @@
       "subtopic": "Configuration Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent audit, auditors at ClearView Investments noted a lack of centralized information about IT assets and their dependencies. A configuration management database (CMDB):\nA) Contains configuration items and their relationships | B) Only tracks incidents | C) Only tracks software | D) Replaces asset management",
+      "question": "During a recent audit, auditors at ClearView Investments noted a lack of centralized information about IT assets and their dependencies. A configuration management database (CMDB):",
       "options": [
         "Contains configuration items and their relationships",
         "Only tracks incidents and service requests for ITIL users",
@@ -8814,7 +8814,7 @@
       "subtopic": "Batch Processing",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Nationwide Retail processes nightly batch updates to its inventory and financial systems. Batch processing controls should ensure:\nA) No logging required | B) Complete and accurate processing with proper authorization | C) Only speed | D) Manual intervention always",
+      "question": "Nationwide Retail processes nightly batch updates to its inventory and financial systems. Batch processing controls should ensure:",
       "options": [
         "No logging required, as reconciliation is performed daily by staff",
         "Complete and accurate processing with proper authorization",
@@ -10459,7 +10459,7 @@
       "subtopic": "Vendor BC",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During its annual BCP review, Vista Healthcare LLC commissions an independent assessment of its critical third-party vendors. The assessment focuses on the vendors' BC/DR capabilities. The primary goal of this third-party BC/DR assessment is to verify which of the following? A) Only SLA compliance | B) Only technical capabilities | C) Vendors can support organization continuity requirements | D) Only financial stability",
+      "question": "During its annual BCP review, Vista Healthcare LLC commissions an independent assessment of its critical third-party vendors. The assessment focuses on the vendors' BC/DR capabilities. The primary goal of this third-party BC/DR assessment is to verify which of the following?",
       "options": [
         "Vendors meet minimum documented SLA compliance requirements.",
         "Vendors maintain fully redundant technical capabilities and capacity.",
@@ -10494,7 +10494,7 @@
       "subtopic": "Data Replication",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is reviewing its data protection strategy. They need to implement a robust method for replicating data between their primary data center and a disaster recovery site. Which of the following data replication methods offers the MOST comprehensive options? A) Only backup tape | B) Only manual copying | C) Synchronous, asynchronous, and semi-synchronous options | D) Only cloud backup",
+      "question": "Chen & Associates is reviewing its data protection strategy. They need to implement a robust method for replicating data between their primary data center and a disaster recovery site. Which of the following data replication methods offers the MOST comprehensive options?",
       "options": [
         "Only backup tape archived weekly and stored offsite daily",
         "Only manual copying of files using secure FTP protocols",
@@ -10529,7 +10529,7 @@
       "subtopic": "Backup Testing",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp. recently implemented a new backup solution. To ensure the solution's effectiveness, they are developing a verification testing process. Backup verification testing should PRIMARILY focus on which of the following? A) Only check storage | B) Only check file existence | C) Perform actual data restores to confirm recoverability | D) Only verify checksums",
+      "question": "Meridian Corp. recently implemented a new backup solution. To ensure the solution's effectiveness, they are developing a verification testing process. Backup verification testing should PRIMARILY focus on which of the following?",
       "options": [
         "Only check storage capacity to ensure sufficient space exists",
         "Only check file existence and basic metadata consistency",
@@ -10564,7 +10564,7 @@
       "subtopic": "Environmental Controls",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Financial's data center houses critical systems supporting its trading platform. To proactively manage potential risks, they implement environmental monitoring. This monitoring should track which of the following? A) Temperature, humidity, water, power, and other conditions | B) Only security | C) Only temperature | D) Only personnel",
+      "question": "Apex Financial's data center houses critical systems supporting its trading platform. To proactively manage potential risks, they implement environmental monitoring. This monitoring should track which of the following?",
       "options": [
         "Temperature, humidity, water, power, and other conditions",
         "Security logs, intrusion detection, and access control only",
@@ -10634,7 +10634,7 @@
       "subtopic": "Patch Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "GlobalTech Solutions is implementing a new patch management process. To effectively prioritize patching efforts, they need to consider various factors. Patch management prioritization should MOST importantly consider which of the following? A) Only ease of deployment | B) Criticality, exploitability, business impact, and exposure | C) Only vendor release date | D) Only system type",
+      "question": "GlobalTech Solutions is implementing a new patch management process. To effectively prioritize patching efforts, they need to consider various factors. Patch management prioritization should MOST importantly consider which of the following?",
       "options": [
         "Ease of deployment, resource availability, and IT skills",
         "Criticality, exploitability, business impact, and exposure",

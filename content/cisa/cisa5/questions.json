@@ -25,8 +25,8 @@
       "explanation": "A digital signature is created by hashing the message to create a digest, and then encrypting that digest with the sender's private key. This ensures authenticity and non-repudiation.",
       "whyWrong": {
         "0": "Why option A is CORRECT - A digital signature is created by hashing the message to create a digest, and then encrypting that digest with the sender's private key. This ensures authenticity and non-repudiation.",
-        "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Encrypting the message digest with the sender's pr...",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Encrypting the message digest with the sender's pr...",
+        "1": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Encrypting the message digest with the sender's pr...",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Encrypting the message digest with the sender's pr...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Encrypting the message digest with the sender's pr..."
       },
       "educational": "This question tests Protection of Information Assets (Domain 5, 25% of exam). Information security requires defense in depth with multiple layers of complementary controls. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -480,8 +480,8 @@
       "explanation": "Symmetric encryption uses the same key for both encryption and decryption, making key distribution a challenge but offering faster performance.",
       "whyWrong": {
         "0": "Why option D is CORRECT - Symmetric encryption uses the same key for both encryption and decryption, making key distribution a challenge but offering faster performance.",
-        "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on The same key for encryption and decryption...",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on The same key for encryption and decryption...",
+        "1": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on The same key for encryption and decryption...",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on The same key for encryption and decryption...",
         "3": "Why option A is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors."
       },
       "educational": "This question tests Protection of Information Assets (Domain 5, 25% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -515,8 +515,8 @@
       "explanation": "Asymmetric encryption uses a key pair: a public key for encryption and a private key for decryption, solving the key distribution problem.",
       "whyWrong": {
         "0": "Why option D is CORRECT - Asymmetric encryption uses a key pair: a public key for encryption and a private key for decryption, solving the key distribution problem.",
-        "1": "Why option B is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors.",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on A public key and a private key...",
+        "1": "Why option C is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors.",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on A public key and a private key...",
         "3": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on A public key and a private key..."
       },
       "educational": "This question tests Protection of Information Assets (Domain 5, 25% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -12346,7 +12346,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Self-certify compliance with DPF principles annual...",
         "1": "Why option B is CORRECT - The EU-U.S. Data Privacy Framework (effective July 2023) requires U.S. organizations to self-certify their compliance with the framework principles annually through the Department of Commerce. It addresses Schrems II concerns regarding U.S. government access.",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Self-certify compliance with DPF principles annual...",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Self-certify compliance with DPF principles annual...",
         "3": "Why option D is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors."
       },
       "educational": "This question tests Protection of Information Assets (Domain 5, 25% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -12381,7 +12381,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Data minimization...",
         "1": "Why option B is CORRECT - Data minimization (GDPR Article 5(1)(c)) requires that personal data be \"adequate, relevant and limited to what is necessary.\" Purpose limitation relates to using data only for stated purposes. Storage limitation addresses retention periods.",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Data minimization...",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Data minimization...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Data minimization..."
       },
       "educational": "This question tests Protection of Information Assets (Domain 5, 25% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",

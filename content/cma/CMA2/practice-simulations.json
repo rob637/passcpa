@@ -1079,7 +1079,16 @@
             "explanation": "WACC increases with leverage because the rising cost of debt and equity from financial risk more than offsets the tax benefit of debt beyond the optimal point."
           },
           "points": 30,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of equity and WACC for each scenario:\n\n**Scenario A:**\n1. **Given Information:**\n   * Debt/Value (D/V) = 20%\n   * Equity/Value (E/V) = 80%\n   * Beta = 1.05\n   * Risk-Free Rate (Rf) = 4%\n   * Market Risk Premium (MRP) = 6%\n   * Cost of Debt (kd) = 5.0%\n   * Tax Rate (T) = 25%\n\n2. **Formula:**\n   * Cost of Equity (ke) = Rf + β × MRP\n   * After-tax Cost of Debt (kd(1-T)) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.05 × 6%) = 4% + 6.3% = 10.30%\n   * kd(1-T) = 5.0% × (1 - 0.25) = 5.0% × 0.75 = 3.75%\n   * WACC = (0.80 × 10.30%) + (0.20 × 3.75%) = 8.24% + 0.75% = 8.99%\n\n4. **Answer:**\n   * WACC for Scenario A = 8.99%\n\n**Scenario B:**\n1. **Given Information:**\n   * D/V = 28.6%\n   * E/V = 71.4%\n   * Beta = 1.20\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 5.5%\n   * T = 25%\n\n2. **Formula:**\n   * ke = Rf + β × MRP\n   * kd(1-T) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.20 × 6%) = 4% + 7.2% = 11.20%\n   * kd(1-T) = 5.5% × (1 - 0.25) = 5.5% × 0.75 = 4.125%\n   * WACC = (0.714 × 11.20%) + (0.286 × 4.125%) = 8.00% + 1.18% = 9.18%\n\n4. **Answer:**\n   * WACC for Scenario B = 9.18%\n\n**Scenario C:**\n1. **Given Information:**\n   * D/V = 40%\n   * E/V = 60%\n   * Beta = 1.45\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 6.5%\n   * T = 25%\n\n2. **Formula:**\n   * ke = Rf + β × MRP\n   * kd(1-T) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.45 × 6%) = 4% + 8.7% = 12.70%\n   * kd(1-T) = 6.5% × (1 - 0.25) = 6.5% × 0.75 = 4.875%\n   * WACC = (0.60 × 12.70%) + (0.40 × 4.875%) = 7.62% + 1.95% = 9.57%\n\n4. **Answer:**\n   * WACC for Scenario C = 9.57%\n\n**Scenario D:**\n1. **Given Information:**\n   * D/V = 55%\n   * E/V = 45%\n   * Beta = 1.90\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 8.5%\n   * T = 25%\n\n2. **Formula:**\n   * ke = Rf + β × MRP\n   * kd(1-T) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.90 × 6%) = 4% + 11.4% = 15.40%\n   * kd(1-T) = 8.5% × (1 - 0.25) = 8.5% × 0.75 = 6.375%\n   * WACC = (0.45 × 15.40%) + (0.55 × 6.375%) = 6.93% + 3.51% = 10.44%\n\n4. **Answer:**\n   * WACC for Scenario D = 10.44%\n\n**Scenario E:**\n1. **Given Information:**\n   * D/V = 70%\n   * E/V = 30%\n   * Beta = 2.80\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 12.0%\n   * T = 25%\n\n2. **Formula:**\n   * Cost of Equity (ke) = Rf + β × MRP\n   * After-tax Cost of Debt (kd(1-T)) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (2.80 × 6%) = 4% + 16.8% = 20.80%\n   * kd(1-T) = 12.0% × (1 - 0.25) = 12.0% × 0.75 = 9.00%\n   * WACC = (0.30 × 20.80%) + (0.70 × 9.00%) = 6.24% + 6.30% = 12.54%\n\n4. **Answer:**\n   * WACC for Scenario E = 12.54%",
+          "keyFormula": "WACC = (we × ke) + (wd × kd × (1-T))",
+          "commonMistakes": [
+            "Forgetting to adjust the cost of debt for the tax shield. The interest expense is tax deductible, so you need to use the after-tax cost of debt.",
+            "Using the book value weights instead of the market value weights for debt and equity. WACC should be calculated using market values because they reflect the current cost of capital.",
+            "Incorrectly calculating the cost of equity using CAPM. Ensure you are using the correct beta, risk-free rate, and market risk premium.",
+            "Not converting percentages to decimals (or vice versa) when performing calculations. This can lead to significant errors in the final WACC calculation."
+          ],
+          "examTip": "On the exam, double-check that you're using market values for weighting debt and equity in the WACC calculation. Also, quickly verify that your WACC result falls within a reasonable range given the individual costs of debt and equity."
         },
         {
           "id": "t2",
@@ -1099,7 +1108,15 @@
             "explanation": "Scenario A (conservative 20% D/V) maximizes firm value because the cost savings from lower-risk borrowing exceed the reduced tax shield from less debt."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to determine the optimal capital structure for TechVenture Corp:\n\n1. **Given Information:**\n   *   EBIT = $105 million\n   *   Tax Rate (T) = 25% or 0.25\n   *   We need the WACC for each scenario (A, B, C, D, and E) from the exhibits.\n   *   Scenario A WACC = 8.99% or 0.0899\n   *   Scenario B WACC = 9.18% or 0.0918\n   *   Scenario C WACC = 9.57% or 0.0957\n   *   Scenario D WACC = 10.44% or 0.1044\n   *   Scenario E WACC = 12.54% or 0.1254\n\n2. **Formula:**\n   *   Net Operating Profit After Tax (NOPAT) = EBIT × (1 - Tax Rate)\n   *   Firm Value (V) = NOPAT / WACC\n\n3. **Calculation:**\n   *   **Calculate NOPAT:**\n        *   NOPAT = $105,000,000 × (1 - 0.25)\n        *   NOPAT = $105,000,000 × 0.75\n        *   NOPAT = $78,750,000\n\n   *   **Calculate Firm Value for each scenario:**\n        *   Scenario A: V = $78,750,000 / 0.0899 = $876,008,900 (rounded to $876.0M)\n        *   Scenario B: V = $78,750,000 / 0.0918 = $857,843,137 (rounded to $857.7M)\n        *   Scenario C: V = $78,750,000 / 0.0957 = $822,884,013 (rounded to $822.9M)\n        *   Scenario D: V = $78,750,000 / 0.1044 = $754,310,345 (rounded to $754.3M)\n        *   Scenario E: V = $78,750,000 / 0.1254 = $627,990,431 (rounded to $628.0M)\n\n4. **Answer:**\n   *   Scenario A maximizes firm value at $876.0 million.",
+          "keyFormula": "V = NOPAT / WACC where NOPAT = EBIT × (1-T)",
+          "commonMistakes": [
+            "Forgetting to calculate NOPAT by multiplying EBIT by (1 - Tax Rate). Using EBIT directly in the Firm Value calculation will lead to an incorrect result.",
+            "Using the debt or equity cost directly instead of the WACC. The WACC represents the overall cost of capital and must be used in the firm valuation formula.",
+            "Incorrectly calculating NOPAT by adding back depreciation or other non-cash charges when they are not relevant to the NOPAT calculation in this specific scenario. NOPAT is simply EBIT adjusted for taxes in this case."
+          ],
+          "examTip": "Remember that, all else being equal, a lower WACC will result in a higher firm value. Therefore, quickly scan the WACCs provided and start your detailed calculations with the lowest WACC scenario."
         },
         {
           "id": "t3",
@@ -1117,7 +1134,15 @@
             "explanation": "The unlevered beta of 0.923 represents purely business risk. The divergence at high leverage levels reflects bankruptcy/distress costs not captured by the basic Hamada equation."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the unlevered beta and verify the levered betas across different capital structure scenarios:\n\n1. **Given Information:**\n   *   Current Debt-to-Equity Ratio (Scenario B): 28.6% / 71.4% = 0.40\n   *   Current Levered Beta (Scenario B): 1.20\n   *   Tax Rate (T): 25% or 0.25\n   *   Hamada Equation: βL = βu × [1 + (1-T)(D/E)]\n\n2. **Formula:**\n   *   Unlevered Beta (βu): βu = βL / [1 + (1-T)(D/E)]\n\n3. **Calculation:**\n   *   **Step 1: Calculate the unlevered beta (βu) using the current capital structure (Scenario B).**\n       *   βu = 1.20 / [1 + (1 - 0.25)(0.40)]\n       *   βu = 1.20 / [1 + (0.75)(0.40)]\n       *   βu = 1.20 / [1 + 0.30]\n       *   βu = 1.20 / 1.30\n       *   βu = 0.923 (rounded to three decimal places)\n\n   *   **Step 2: Verify the levered betas (βL) for each scenario using the calculated unlevered beta (0.923).**\n\n      *   **Scenario A:** D/E = 0.25\n          *   (1-T)(D/E) = (1-0.25)(0.25) = (0.75)(0.25) = 0.1875\n          *   1 + (1-T)(D/E) = 1 + 0.1875 = 1.1875\n          *   βL = 0.923 * 1.1875 = 1.096 ≈ 1.10\n\n      *   **Scenario B:** D/E = 0.40\n          *   (1-T)(D/E) = (1-0.25)(0.40) = (0.75)(0.40) = 0.30\n          *   1 + (1-T)(D/E) = 1 + 0.30 = 1.30\n          *   βL = 0.923 * 1.30 = 1.20\n\n      *   **Scenario C:** D/E = 0.667\n          *   (1-T)(D/E) = (1-0.25)(0.667) = (0.75)(0.667) = 0.50\n          *   1 + (1-T)(D/E) = 1 + 0.50 = 1.50\n          *   βL = 0.923 * 1.50 = 1.38\n\n      *   **Scenario D:** D/E = 1.222\n          *   (1-T)(D/E) = (1-0.25)(1.222) = (0.75)(1.222) = 0.917\n          *   1 + (1-T)(D/E) = 1 + 0.917 = 1.917\n          *   βL = 0.923 * 1.917 = 1.77\n\n      *   **Scenario E:** D/E = 2.333\n          *   (1-T)(D/E) = (1-0.25)(2.333) = (0.75)(2.333) = 1.75\n          *   1 + (1-T)(D/E) = 1 + 1.75 = 2.75\n          *   βL = 0.923 * 2.75 = 2.54\n\n4. **Answer:**\nThe unlevered beta is 0.923.",
+          "keyFormula": "βu = βL / [1 + (1-T)(D/E)]",
+          "commonMistakes": [
+            "Forgetting to adjust the D/E ratio by (1-Tax Rate). This significantly impacts the unlevered beta calculation.",
+            "Using the wrong levered beta or D/E ratio from the incorrect scenario. Always double-check the scenario you are using for the initial unlevering calculation.",
+            "Rounding intermediate calculations too early, which can lead to a significant difference in the final unlevered beta."
+          ],
+          "examTip": "On the exam, if you're short on time, focus on accurately calculating the unlevered beta first. Then, if time permits, verify a couple of the levered betas from the other scenarios. If the calculated levered betas are close to the given ones, you can be reasonably confident in your unlevered beta calculation."
         }
       ],
       "skills": [
@@ -1176,7 +1201,16 @@
             "explanation": "Optimal mix: SB 3,000 + PB 2,000 + CA 285 units. CA is partially constrained because it has the lowest CM per machine hour."
           },
           "points": 30,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   Standard Brackets (SB): CM = $30/unit, Machine Hours = 1.0 hr/unit, Demand = 3,000 units\n   *   Premium Brackets (PB): CM = $55/unit, Machine Hours = 2.0 hr/unit, Demand = 2,000 units\n   *   Custom Assemblies (CA): CM = $75/unit, Machine Hours = 3.5 hr/unit, Demand = 800 units\n   *   Total Available Machine Hours: 8,000\n\n2. **Formula:**\n   *   Contribution Margin (CM) per Machine Hour = Contribution Margin per Unit / Machine Hours per Unit\n   *   Total Contribution Margin = (Units Produced * Contribution Margin per Unit) for each product, summed together.\n\n3. **Calculation:**\n   *   **Calculate CM per Machine Hour for each product:**\n      *   SB: $30 / 1.0 hr = $30/hr\n      *   PB: $55 / 2.0 hr = $27.50/hr\n      *   CA: $75 / 3.5 hr = $21.43/hr (rounded to two decimal places)\n   *   **Rank products based on CM per Machine Hour:** SB ($30) > PB ($27.50) > CA ($21.43)\n   *   **Calculate Machine Hours Required to Meet Full Demand:**\n      *   SB: 3,000 units * 1.0 hr/unit = 3,000 hrs\n      *   PB: 2,000 units * 2.0 hr/unit = 4,000 hrs\n      *   CA: 800 units * 3.5 hr/unit = 2,800 hrs\n      *   Total Machine Hours Required: 3,000 + 4,000 + 2,800 = 9,800 hrs\n   *   **Determine Optimal Product Mix (allocate machine hours based on ranking):**\n      *   Allocate all available machine hours to SB first (highest CM/hr):\n          *   SB: Produce 3,000 units (full demand) * 1.0 hr/unit = 3,000 hrs. Contribution Margin = 3,000 * $30 = $90,000\n      *   Allocate remaining machine hours to PB (second highest CM/hr):\n          *   PB: Produce 2,000 units (full demand) * 2.0 hr/unit = 4,000 hrs. Contribution Margin = 2,000 * $55 = $110,000\n      *   Remaining Machine Hours: 8,000 (total) - 3,000 (SB) - 4,000 (PB) = 1,000 hrs\n      *   Allocate remaining machine hours to CA (lowest CM/hr):\n          *   CA: 1,000 hrs / 3.5 hr/unit = 285.71 units. Since we can't produce partial units, round down to 285 units. Contribution Margin = 285 * $75 = $21,375\n   *   **Calculate Maximum Total Contribution Margin:**\n      *   Total CM = $90,000 (SB) + $110,000 (PB) + $21,375 (CA) = $221,375\n\n4. **Answer:**\n   *   Maximum Total Contribution Margin = $221,375\n",
+          "keyFormula": "Contribution Margin per Machine Hour = Contribution Margin per Unit / Machine Hours per Unit",
+          "commonMistakes": [
+            "Forgetting to rank the products by contribution margin *per constrained resource* (machine hour in this case). Ranking by total contribution margin per product will lead to a suboptimal solution.",
+            "Not considering the demand for each product. You can't produce more units than the market demands, even if it would maximize contribution margin per machine hour.",
+            "Rounding up the number of units produced when allocating the constrained resource. You can only produce whole units, so always round down to the nearest whole number when calculating the number of units that can be produced with the remaining machine hours. Rounding up would exceed the constraint.",
+            "Failing to subtract the machine hours used by previously allocated products when allocating the constrained resource to subsequent products."
+          ],
+          "examTip": "On the exam, quickly calculate the CM per constrained resource for each product. Then, create a table to allocate the constraint, ensuring you don't exceed demand for any product. This structured approach minimizes errors under time pressure. Remember to double-check your calculations!"
         },
         {
           "id": "t2",
@@ -1195,7 +1229,16 @@
             "explanation": "Despite costing $12 more per unit to buy, outsourcing SB frees machine hours to produce 515 more Custom Assemblies, generating $20,625/month net benefit."
           },
           "points": 30,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to evaluate the outsourcing offer for Standard Brackets (SB) and determine the financial impact:\n\n1. **Given Information:**\n   *   Variable cost to make SB: $50/unit\n   *   Purchase price to buy SB: $62/unit\n   *   Fixed costs avoidable by outsourcing SB: $18,000/month\n   *   Machine hours required to produce SB: 1 hour/unit\n   *   Machine hours required to produce CA: 3.5 hours/unit\n   *   Contribution Margin (CM) of CA: $75/unit\n   *   Current production of CA: 285 units\n   *   Total demand for CA: 800 units\n   *   Current production of PB: 2,000 units\n   *   Total demand for PB: 2,000 units\n   *   Current production of SB: 3,000 units\n\n2. **Formula:**\n   *   Differential Cost = Purchase Price - Variable Cost to Make\n   *   Net Outsourcing Cost = (Differential Cost * Number of Units) - Avoidable Fixed Costs\n   *   Additional Units Possible = Freed Machine Hours / Machine Hours per Unit\n   *   Value of Additional Production = Additional Units * Contribution Margin\n   *   Net Benefit of Outsourcing = Value of Additional Production - Net Outsourcing Cost\n\n3. **Calculation:**\n   *   **Make vs. Buy Analysis (per unit):**\n       *   Differential Cost = $62 (Buy) - $50 (Make) = $12/unit\n   *   **Cost to outsource 3,000 SB:**\n       *   Additional cost = 3,000 units * $12/unit = $36,000/month\n   *   **Net outsourcing cost:**\n       *   Net outsourcing cost = $36,000 - $18,000 = $18,000/month\n   *   **Freed machine hours from SB:**\n       *   Freed hours = 3,000 units * 1 hour/unit = 3,000 hours\n   *   **Additional CA units possible:**\n       *   Demand for CA not yet met: 800 units - 285 units = 515 units\n       *   Machine hours needed to meet CA demand: 515 units * 3.5 hours/unit = 1,802.5 hours\n       *   Remaining hours after meeting CA demand: 3,000 hours - 1,802.5 hours = 1,197.5 hours\n       *   Since demand for PB is already met, the remaining hours cannot be used to produce additional PB.\n   *   **Value of additional CA production:**\n       *   Value = 515 units * $75/unit = $38,625\n   *   **Net benefit of outsourcing:**\n       *   Net benefit = $38,625 - $18,000 = $20,625/month\n\n4. **Answer:**\n   *   Outsource cost per unit: $12\n   *   Net benefit of outsourcing: $20,625/month\n   *   Recommendation: Outsource Standard Brackets.\n",
+          "keyFormula": "Net Benefit of Outsourcing = (Additional Units of CA * CA Contribution Margin) - ((Purchase Price - Variable Cost to Make) * Number of SB Units) + Avoidable Fixed Costs",
+          "commonMistakes": [
+            "Forgetting to include the avoidable fixed costs when calculating the net outsourcing cost. This leads to an inaccurate assessment of the true cost of outsourcing.",
+            "Failing to consider the opportunity cost of the freed machine hours. If the freed hours can be used to produce other profitable products, this must be factored into the decision.",
+            "Incorrectly calculating the number of additional units that can be produced with the freed machine hours. Ensure you are using the correct machine hour requirements for each product.",
+            "Not considering demand constraints. Even if you have enough freed capacity, you can only produce and sell up to the demand limit."
+          ],
+          "examTip": "When evaluating outsourcing decisions with constraints, first calculate the incremental cost of outsourcing. Then, determine how the freed capacity can be best utilized to maximize profit. Finally, compare the incremental cost to the incremental profit from the freed capacity."
         },
         {
           "id": "t3",
@@ -1213,7 +1256,16 @@
             "explanation": "The maximum price is $68.88 — the variable cost ($50) plus the savings and opportunity value ($18.88) that outsourcing generates per unit."
           },
           "points": 15,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to determine the maximum price MetalWorks should pay for outsourcing Standard Brackets (SB):\n\n1. **Given Information:**\n   *   Variable cost per SB: $50\n   *   Fixed costs directly attributable to SB: $18,000\n   *   Current production volume of SB: 3,000 units\n   *   Machine hours required per SB: 1.0 hour\n   *   Contribution Margin (CM) per Custom Assembly (CA): $75\n   *   Machine hours required per CA: 3.5 hours\n   *   Available machine hours freed by outsourcing SB: 3,000 hours (3,000 units * 1 hour/unit)\n   *   Maximum demand for CA beyond current production using freed hours: 515 units\n\n2. **Formula:**\n   *   Maximum Purchase Price = Variable Cost per Unit + Avoidable Fixed Cost per Unit + Opportunity Cost per Unit (considering limited demand)\n   *   Avoidable Fixed Cost per Unit = Total Avoidable Fixed Costs / Number of Units\n   *   Opportunity Cost per Unit = (Contribution Margin from Additional Production using Freed Resources) / Number of Outsourced Units\n\n3. **Calculation:**\n   *   **Step 1: Calculate Avoidable Fixed Cost per Unit**\n        *   Avoidable Fixed Cost per Unit = $18,000 / 3,000 units = $6 per unit\n   *   **Step 2: Calculate Contribution Margin from Additional CA Production**\n        *   Additional CA Production = 515 units (limited by demand)\n        *   Total CM from Additional CA = 515 units * $75/unit = $38,625\n   *   **Step 3: Calculate Opportunity Cost per Outsourced SB**\n        *   Opportunity Cost per Outsourced SB = $38,625 / 3,000 units = $12.875\n   *   **Step 4: Calculate Maximum Purchase Price**\n        *   Maximum Purchase Price = $50 (Variable Cost) + $6 (Avoidable Fixed Cost) + $12.875 (Opportunity Cost) = $68.875\n   *   **Step 5: Round to nearest cent**\n        *   Maximum Purchase Price = $68.88\n\n4. **Answer:**\nThe maximum price MetalWorks should pay the external supplier for Standard Brackets is $68.88.",
+          "keyFormula": "Maximum Purchase Price = Variable Cost per Unit + Avoidable Fixed Cost per Unit + Opportunity Cost per Unit (considering limited demand)",
+          "commonMistakes": [
+            "Failing to consider the limited demand for Custom Assemblies (CA) when calculating the opportunity cost. Assuming all 3,000 freed machine hours can be used to produce CA at full capacity leads to an overstated opportunity cost.",
+            "Forgetting to include the avoidable fixed costs in the calculation of the maximum purchase price. Only considering the variable cost and the opportunity cost will result in an incorrect decision.",
+            "Calculating the opportunity cost per machine hour instead of the opportunity cost per unit of Standard Brackets (SB). The opportunity cost needs to be allocated back to each SB that is outsourced.",
+            "Not recognizing that the remaining hours after producing the maximum demand of CA have a $0 opportunity cost."
+          ],
+          "examTip": "When dealing with outsourcing decisions and constrained resources, always remember to consider both the cost savings (avoidable fixed costs) and the potential lost profits (opportunity cost) due to the constraint. Carefully analyze the demand for other products that could utilize the freed resources. If demand is limited, the opportunity cost will be lower than initially calculated."
         }
       ],
       "skills": [
@@ -1272,7 +1324,15 @@
             "explanation": "The exposures are roughly equal in size but opposite in direction, creating a natural hedge. However, timing differs (60 vs 90 days), so specific hedging is still needed."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate GlobalTech's foreign currency exposure:\n\n1. **Given Information:**\n   * EUR Receivable: €5,000,000 in 90 days\n   * JPY Payable: ¥800,000,000 in 60 days\n   * EUR/USD Spot Rate: $1.0850\n   * EUR/USD 90-day Forward Rate: $1.0890\n   * USD/JPY Spot Rate: 148.50\n   * USD/JPY 60-day Forward Rate: 147.80\n\n2. **Formula:**\n   * USD Value of EUR Receivable = EUR Amount × EUR/USD Rate\n   * USD Value of JPY Payable = JPY Amount / USD/JPY Rate\n\n3. **Calculation:**\n   * **Euro Receivable (€5,000,000 in 90 days):**\n      * At spot: €5,000,000 × $1.0850 = $5,425,000\n      * At 90-day forward: €5,000,000 × $1.0890 = $5,445,000\n\n   * **Yen Payable (¥800,000,000 in 60 days):**\n      * At spot: ¥800,000,000 / 148.50 = $5,387,205\n      * At 60-day forward: ¥800,000,000 / 147.80 = $5,412,719\n\n4. **Answer:**\n   * eurSpot: $5,425,000\n   * eurForward: $5,445,000\n   * jpySpot: $5,387,205\n   * jpyForward: $5,412,719",
+          "keyFormula": "USD Value of Foreign Currency = Foreign Currency Amount × Exchange Rate (or / Exchange Rate, depending on the quote)",
+          "commonMistakes": [
+            "Incorrectly multiplying instead of dividing (or vice versa) when converting JPY to USD. Remember to divide the JPY amount by the USD/JPY exchange rate.",
+            "Using the wrong forward rate. Make sure to match the forward rate's term (e.g., 60-day, 90-day) with the timing of the exposure.",
+            "Forgetting to consider the direction of the exposure (receivable vs. payable). A receivable benefits from the foreign currency strengthening, while a payable is hurt by it strengthening."
+          ],
+          "examTip": "Double-check whether you need to multiply or divide by the exchange rate based on the currency pair provided. A quick sketch of the currency relationship (e.g., EUR/USD means 1 EUR = X USD) can help prevent errors."
         },
         {
           "id": "t2",
@@ -1293,7 +1353,15 @@
             "explanation": "The forward provides certainty at $5,445,000. The option costs $60,000 but provides upside. Option outperforms if EUR/USD exceeds $1.1010."
           },
           "points": 35,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to design a hedging strategy using forward contracts and options, and calculate the associated costs and benefits:\n\n**Part (a): Forward Hedge**\n\n1. **Given Information:**\n   *   EUR Receivable: €5,000,000 in 90 days\n   *   90-day forward rate: $1.0890/€\n   *   JPY Payable: ¥800,000,000 in 60 days\n   *   60-day forward rate: 147.80 ¥/$ (or $0.006766/¥)\n\n2. **Formula:**\n   *   USD equivalent of EUR receivable = EUR amount × Forward rate\n   *   USD equivalent of JPY payable = JPY amount / Forward rate\n\n3. **Calculation:**\n   *   EUR Receivable (90-day forward):\n        *   Locked-in receipt: €5,000,000 × $1.0890/€ = $5,445,000\n   *   JPY Payable (60-day forward):\n        *   Locked-in payment: ¥800,000,000 / 147.80 ¥/$ = $5,412,719\n   *   Net locked-in:\n        *   $5,445,000 - $5,412,719 = $32,281 net receipt\n   *   Cost of forwards: $0 (forward contracts typically have no upfront cost)\n\n4. **Answer:**\n   *   Locked-in USD amount for EUR receivable: $5,445,000\n   *   Locked-in USD amount for JPY payable: $5,412,719\n\n**Part (b): Option for EUR Receivable**\n\n1. **Given Information:**\n   *   EUR Put option (right to sell € at $1.0825/€)\n   *   Premium: $0.0120/€\n   *   EUR Receivable: €5,000,000\n\n2. **Formula:**\n   *   Total premium cost = Premium per EUR × EUR amount\n   *   Breakeven exchange rate = Forward rate + Option premium\n\n3. **Calculation:**\n   *   Total premium cost:\n        *   $0.0120/€ × €5,000,000 = $60,000\n   *   Breakeven EUR/USD rate for option vs forward:\n        *   $1.0890 + $0.0120 = $1.1010\n\n4. **Answer:**\n   *   Option Premium: $60,000\n   *   Breakeven EUR/USD rate: $1.1010",
+          "keyFormula": "USD equivalent = Foreign Currency Amount * Exchange Rate (or / Exchange Rate, depending on the quote)",
+          "commonMistakes": [
+            "Incorrectly dividing instead of multiplying (or vice versa) when converting between currencies. Always double-check the currency quotation (e.g., EUR/USD vs. USD/EUR).",
+            "Forgetting to account for the option premium when comparing the option strategy to the forward strategy. The premium reduces the benefit of favorable movements and increases the cost of unfavorable movements.",
+            "Not understanding the breakeven calculation. The breakeven point is where the option strategy equals the forward strategy. It's crucial for deciding which strategy is more beneficial based on expected exchange rate movements."
+          ],
+          "examTip": "On the exam, quickly sketch a simple payoff diagram for the option strategy. This will help you visualize the potential gains and losses compared to the forward contract and avoid calculation errors. Remember that options limit downside risk but also cap potential gains (less the premium)."
         },
         {
           "id": "t3",
@@ -1312,7 +1380,15 @@
             "explanation": "The blended 80/20 strategy provides a floor of $5,426,500 (vs $5,445,000 pure forward) while preserving upside on 20% of the position."
           },
           "points": 15,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the minimum and expected USD receipt from the EUR exposure using the blended hedging strategy:\n\n1. **Given Information:**\n   *   EUR Receivable: €5,000,000 in 90 days\n   *   Forward Hedge: 80% of EUR receivable at $1.0890/€\n   *   Option Hedge: 20% of EUR receivable with a put option at $1.0825/€\n   *   Option Premium: $0.0120 per €\n\n2. **Formula:**\n   *   Forward Hedge Amount (USD) = EUR Amount × Forward Rate\n   *   Option Hedge Amount (USD) = EUR Amount × Strike Price (if exercised) - Premium\n   *   Total Minimum Receipt = Forward Hedge Amount + Minimum Option Hedge Amount\n   *   Total Expected Receipt = Forward Hedge Amount + Expected Option Hedge Amount\n\n3. **Calculation:**\n   *   **Forward Portion:**\n        *   EUR Amount Hedged with Forward: €5,000,000 × 80% = €4,000,000\n        *   USD Receipt from Forward Hedge: €4,000,000 × $1.0890/€ = $4,356,000\n   *   **Option Portion:**\n        *   EUR Amount Hedged with Option: €5,000,000 × 20% = €1,000,000\n        *   Option Premium Paid: €1,000,000 × $0.0120/€ = $12,000\n        *   **Minimum Receipt (Put Option Exercised):**\n            *   USD Receipt from Put Option: €1,000,000 × $1.0825/€ = $1,082,500\n            *   Net USD Receipt from Put Option: $1,082,500 - $12,000 = $1,070,500\n        *   **Expected Receipt (EUR/USD stays at $1.0890):**\n            *   USD Receipt if not exercised: €1,000,000 × $1.0890/€ = $1,089,000\n            *   Net USD Receipt if not exercised: $1,089,000 - $12,000 = $1,077,000\n   *   **Total Minimum Receipt:**\n        *   $4,356,000 (Forward) + $1,070,500 (Option - Put Exercised) = $5,426,500\n   *   **Total Expected Receipt:**\n        *   $4,356,000 (Forward) + $1,077,000 (Option - Not Exercised) = $5,433,000\n\n4. **Answer:**\n   *   Minimum USD Receipt: $5,426,500\n   *   Expected USD Receipt: $5,433,000",
+          "keyFormula": "Forward Hedge Amount = EUR Amount × Forward Rate\nOption Hedge Amount = (EUR Amount × Strike Price) - Premium (if exercised)\nTotal Receipt = Forward Hedge Amount + Option Hedge Amount",
+          "commonMistakes": [
+            "Forgetting to subtract the option premium from the option proceeds. The premium is a cost that must be considered when calculating the net receipt.",
+            "Incorrectly applying the percentages. Make sure to apply the 80% and 20% to the correct EUR amount before calculating the USD amounts.",
+            "Not understanding when the put option would be exercised. The put option is exercised when the spot rate is *below* the strike price. In this case, we are calculating the *minimum* receipt, which assumes the put is exercised."
+          ],
+          "examTip": "Always double-check if the question asks for the *minimum*, *maximum*, or *expected* outcome. This will determine whether you should use the strike price of the option or the expected future spot rate in your calculations. Also, remember to account for the option premium!"
         }
       ],
       "skills": [
@@ -1329,5 +1405,5 @@
       ]
     }
   ],
-  "enhancedAt": "2026-03-01T12:44:38.418Z"
+  "enhancedAt": "2026-03-01T12:47:09.712Z"
 }

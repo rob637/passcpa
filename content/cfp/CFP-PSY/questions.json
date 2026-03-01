@@ -60,8 +60,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - The Conscientiousness (C) DISC style prioritizes accuracy, detail, and thorough analysis. Individuals with this style will often request detailed documentation, scrutinize calculations, and require ample time to make informed decisions, aligning perfectly with the client's behavior described in the question.",
-        "1": "Why option B is WRONG - Influence types are more concerned with relationships and persuasion, not detailed analysis.",
-        "2": "Why option C is WRONG - Steadiness types value harmony and support, not rigorous documentation and independent analysis.",
+        "1": "Why option C is WRONG - Influence types are more concerned with relationships and persuasion, not detailed analysis.",
+        "2": "Why option D is WRONG - Steadiness types value harmony and support, not rigorous documentation and independent analysis.",
         "3": "Why option D is WRONG - Dominance types are focused on results and control, not meticulous detail and careful consideration."
       },
       "educational": "Understanding DISC communication styles is crucial for effective client communication and building rapport. Recognizing a client's preferred style allows you to tailor your communication approach, ensuring they feel understood and valued. This leads to stronger client relationships and improved plan implementation, aligning with the CFP Board's emphasis on client-centered advice.",
@@ -199,7 +199,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Speaking louder will likely escalate the situation and make the client feel unheard, not address the underlying issue.",
         "1": "Why option B is CORRECT - Acknowledging the client's nonverbal cues and directly asking about their concerns demonstrates empathy and builds trust. This approach allows you to identify and address any misunderstandings, objections, or anxieties they may have, fostering a more productive and collaborative relationship, which is crucial for ethical financial planning.",
-        "2": "Why option C is WRONG - Ending the meeting avoids addressing the client's potential concerns and may damage the relationship; it's better to acknowledge and inquire.",
+        "2": "Why option D is WRONG - Ending the meeting avoids addressing the client's potential concerns and may damage the relationship; it's better to acknowledge and inquire.",
         "3": "Why option D is WRONG - Ignoring the client's nonverbal cues demonstrates a lack of empathy and could lead to misunderstandings or a breakdown in communication."
       },
       "educational": "Effective communication in financial planning involves active listening and observation of nonverbal cues. Recognizing and addressing a client's discomfort or disagreement is essential for building trust and ensuring that financial recommendations align with their values and goals. This aligns with the CFP Board's Standards of Conduct, particularly the duty to act with integrity and provide competent advice.",
@@ -234,7 +234,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Leading questions are inherently biased and designed to elicit a specific response, making them unsuitable for understanding a client's genuine priorities among competing goals. They can skew the client's perception and result in inaccurate information.",
         "1": "Why option B is CORRECT - Scaling questions provide a quantifiable way to assess the relative importance of different goals. By assigning a numerical value (e.g., on a scale of 1 to 10), clients can explicitly rank their priorities, making trade-offs visible and facilitating informed decision-making. This directly addresses the need to understand a client's priority among competing goals.",
-        "2": "Why option C is WRONG - Closed-ended questions elicit brief, factual responses (e.g., yes/no). While useful for gathering specific information, they fail to provide the depth of understanding needed to discern a client's priorities among competing goals. They don't allow for nuanced expression of preferences.",
+        "2": "Why option D is WRONG - Closed-ended questions elicit brief, factual responses (e.g., yes/no). While useful for gathering specific information, they fail to provide the depth of understanding needed to discern a client's priorities among competing goals. They don't allow for nuanced expression of preferences.",
         "3": "Why option D is WRONG - Open-ended questions encourage clients to elaborate on their thoughts and feelings, which can be helpful for initial exploration. However, they lack the structure needed to directly compare and prioritize competing goals. While valuable for gathering context, they don't quantify importance."
       },
       "educational": "Understanding a client's values and priorities is paramount in financial planning, as it guides the development of personalized strategies. Scaling questions are a behavioral finance tool that helps overcome cognitive biases like framing and anchoring, allowing for a more objective assessment of priorities. This aligns with the CFP Board's emphasis on understanding the client's financial psychology and building a plan that reflects their true needs and values.",
@@ -339,7 +339,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Herding is the tendency to follow the actions of a larger group, often without independent analysis. The client's behavior is driven by seeking confirming information, not necessarily following the crowd.",
         "1": "Why option B is CORRECT - Confirmation bias is the tendency to favor information that confirms existing beliefs or biases. The client's selective consumption of positive cryptocurrency news and dismissal of critical analysis is a clear example of confirmation bias.",
-        "2": "Why option C is WRONG - Availability heuristic is a mental shortcut that relies on immediate examples that come to a person's mind when evaluating a specific topic, concept, method or decision. The client's behavior is not based on readily available examples, but rather on actively seeking out specific information.",
+        "2": "Why option D is WRONG - Availability heuristic is a mental shortcut that relies on immediate examples that come to a person's mind when evaluating a specific topic, concept, method or decision. The client's behavior is not based on readily available examples, but rather on actively seeking out specific information.",
         "3": "Why option D is WRONG - Overconfidence bias is the tendency to overestimate one's own abilities or knowledge. While the client might be overconfident in their assessment of cryptocurrency, the primary behavior described is the selective seeking of confirming information, which is confirmation bias."
       },
       "educational": "Cognitive biases are systematic patterns of deviation from norm or rationality in judgment. Understanding these biases is crucial for financial planners because they can significantly impact clients' investment decisions and overall financial well-being. Recognizing and mitigating these biases allows planners to provide more objective and effective advice, aligning with the CFP Board's Standards of Conduct regarding objectivity and integrity.",
@@ -373,8 +373,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Prospect Theory, developed by Kahneman and Tversky, posits that individuals experience the pain of a loss more acutely than the pleasure of an equivalent gain. Empirical studies have shown this ratio to be approximately 2:1, meaning a loss is felt about twice as strongly as a gain of the same magnitude.",
-        "1": "Why option B is WRONG - While risk tolerance and time horizon influence investment decisions, Prospect Theory specifically quantifies the *general* tendency to weight losses more heavily than gains, regardless of individual circumstances.",
-        "2": "Why option C is WRONG - Prospect Theory directly contradicts the idea of equal weighting and rational expected value calculations. It highlights the irrationality of loss aversion.",
+        "1": "Why option C is WRONG - While risk tolerance and time horizon influence investment decisions, Prospect Theory specifically quantifies the *general* tendency to weight losses more heavily than gains, regardless of individual circumstances.",
+        "2": "Why option D is WRONG - Prospect Theory directly contradicts the idea of equal weighting and rational expected value calculations. It highlights the irrationality of loss aversion.",
         "3": "Why option D is WRONG - Prospect Theory posits that losses are weighted *more* heavily than gains, not the other way around. The theory is built on the concept of loss aversion."
       },
       "educational": "Prospect Theory explains why people often make seemingly irrational financial decisions, particularly when faced with choices involving potential gains and losses. This is because the emotional impact of a loss is disproportionately greater than that of a gain, leading to risk-averse behavior when facing potential gains and risk-seeking behavior when trying to avoid losses. Understanding Prospect Theory is crucial for CFPs to anticipate and address clients' emotional biases.",
@@ -408,8 +408,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Recency bias is the tendency to overemphasize recent events when making decisions, leading to the belief that recent market performance will continue indefinitely. In this case, the client is likely extrapolating the recent strong market performance and assuming it will continue, prompting them to seek a more aggressive portfolio.",
-        "1": "Why option B is WRONG - Hindsight bias is the inclination to see past events as more predictable than they actually were. While the client might *later* claim they 'knew' the market would do well, the current behavior of wanting to change the portfolio is not driven by looking back, but by reacting to recent performance.",
-        "2": "Why option C is WRONG - Mental accounting involves categorizing and treating different sums of money differently, even if they are objectively the same. This scenario doesn't describe the client segregating funds or treating them differently based on their source or intended use; it's about reacting to overall market performance.",
+        "1": "Why option C is WRONG - Hindsight bias is the inclination to see past events as more predictable than they actually were. While the client might *later* claim they 'knew' the market would do well, the current behavior of wanting to change the portfolio is not driven by looking back, but by reacting to recent performance.",
+        "2": "Why option D is WRONG - Mental accounting involves categorizing and treating different sums of money differently, even if they are objectively the same. This scenario doesn't describe the client segregating funds or treating them differently based on their source or intended use; it's about reacting to overall market performance.",
         "3": "Why option D is WRONG - Improved risk tolerance is a fundamental shift in an individual's willingness to take risks, often due to factors like increased wealth, a longer time horizon, or a change in life circumstances. While possible, it's less likely than recency bias to explain a sudden shift after a single strong year, especially for a client described as 'conservative'. The question implies the change is driven by market performance, not a fundamental change in the client's risk profile."
       },
       "educational": "Cognitive biases are systematic errors in thinking that can significantly impact financial decisions. Understanding these biases, like recency bias, is crucial for financial planners because they can lead clients to make irrational choices that are not aligned with their long-term financial goals. By recognizing and addressing these biases, planners can help clients make more informed and objective decisions, improving the likelihood of achieving their financial objectives.",
@@ -444,7 +444,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Framing effect refers to how the presentation of information influences decision-making. While the way the 'hot stock' is presented might contribute, the primary driver here is the influence of others, not the framing itself.",
         "1": "Why option B is CORRECT - Herding is the tendency for investors to mimic the actions of a larger group, often driven by emotion rather than rational analysis. The scenario explicitly describes clients buying a stock simply because 'everyone is talking about it,' which is a classic example of herding behavior.",
-        "2": "Why option C is WRONG - Overconfidence is an inflated belief in one's own abilities or knowledge. While some clients might be overconfident in their ability to profit from the 'hot stock,' the question emphasizes the social influence ('everyone is talking about it') rather than individual hubris.",
+        "2": "Why option D is WRONG - Overconfidence is an inflated belief in one's own abilities or knowledge. While some clients might be overconfident in their ability to profit from the 'hot stock,' the question emphasizes the social influence ('everyone is talking about it') rather than individual hubris.",
         "3": "Why option D is WRONG - Confirmation bias is the tendency to seek out information that confirms pre-existing beliefs. The scenario doesn't suggest clients are actively seeking information to validate a prior belief about the stock; they are primarily reacting to the widespread discussion."
       },
       "educational": "Emotional biases, like herding, can significantly impact investment decisions and portfolio performance. Understanding these biases is crucial for financial planners to help clients make rational choices aligned with their long-term goals. Recognizing herding behavior allows you to guide clients towards a more disciplined and objective investment approach, mitigating potential losses from market bubbles.",
@@ -479,7 +479,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Anchoring bias involves relying too heavily on an initial piece of information (the \"anchor\") when making decisions. While the client might be anchored to a perceived higher value, the primary driver here is the emotional attachment to the inherited stock, not simply an initial value.",
         "1": "Why option B is CORRECT - The endowment effect describes the tendency for people to place a higher value on something they own than they would be willing to pay to acquire it. In this case, the client overvalues the inherited stock due to ownership and sentimental attachment, believing it's \"worth more than the market thinks\" because they possess it.",
-        "2": "Why option C is WRONG - Mental accounting involves categorizing and treating money differently based on its source or intended use. While the client might mentally earmark the stock as \"inheritance money,\" this doesn't fully explain their unwillingness to diversify, which stems from the emotional attachment and perceived higher value due to ownership.",
+        "2": "Why option D is WRONG - Mental accounting involves categorizing and treating money differently based on its source or intended use. While the client might mentally earmark the stock as \"inheritance money,\" this doesn't fully explain their unwillingness to diversify, which stems from the emotional attachment and perceived higher value due to ownership.",
         "3": "Why option D is WRONG - Status quo bias is a preference for the current state of affairs. While the client is maintaining the status quo by not diversifying, the underlying reason is the emotional attachment and overvaluation of the stock due to the endowment effect, not simply a general resistance to change."
       },
       "educational": "The endowment effect is a cognitive bias where individuals place a higher value on objects they own, often irrationally. This bias can significantly impact financial planning, especially when dealing with inherited assets or sentimental items. Understanding this bias is crucial for CFP® professionals to help clients make rational financial decisions, aligning with the CFP Board's Standards of Conduct regarding objectivity and acting in the client's best interest.",
@@ -513,8 +513,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Mental accounting is the tendency to separate money into different mental accounts, leading to irrational financial decisions. In this case, the client treats the savings account and credit card debt as separate, ignoring the financially optimal strategy of paying down the high-interest debt with the savings.",
-        "1": "Why option B is WRONG - Status quo bias is a preference for the current state of affairs. While the client *is* maintaining the status quo, the primary driver of their behavior is the mental separation of assets and liabilities, not necessarily a resistance to change itself.",
-        "2": "Why option C is WRONG - Availability heuristic involves making decisions based on readily available information or examples that come to mind. There's no indication in the scenario that the client's decision is based on easily recalled examples or information.",
+        "1": "Why option C is WRONG - Status quo bias is a preference for the current state of affairs. While the client *is* maintaining the status quo, the primary driver of their behavior is the mental separation of assets and liabilities, not necessarily a resistance to change itself.",
+        "2": "Why option D is WRONG - Availability heuristic involves making decisions based on readily available information or examples that come to mind. There's no indication in the scenario that the client's decision is based on easily recalled examples or information.",
         "3": "Why option D is WRONG - Loss aversion is the tendency to prefer avoiding losses to acquiring equivalent gains. While the client *might* be loss averse regarding the savings account, the core issue is the mental separation of the debt and savings, not the fear of losing the savings itself."
       },
       "educational": "Mental accounting violates the principle of fungibility, which states that money is interchangeable regardless of its source or intended use. This bias can lead to suboptimal financial decisions, such as holding low-yielding assets while carrying high-interest debt. Understanding mental accounting is crucial for CFP® professionals to help clients make rational financial choices and improve their overall financial well-being.",
@@ -548,8 +548,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Implementing a written Investment Policy Statement (IPS) with automatic rebalancing is the most effective strategy because it proactively addresses multiple behavioral biases by establishing pre-defined rules and processes, removing emotional decision-making. The IPS acts as an anchor, mitigating biases like loss aversion, recency bias, and status quo bias by providing a structured framework for investment management.",
-        "1": "Why option B is WRONG - While helpful, showing market returns doesn't systematically address biases or provide a concrete framework for decisions.",
-        "2": "Why option C is WRONG - More frequent meetings might increase comfort, but it doesn't inherently correct for biases in decision-making; it could even amplify them.",
+        "1": "Why option C is WRONG - While helpful, showing market returns doesn't systematically address biases or provide a concrete framework for decisions.",
+        "2": "Why option D is WRONG - More frequent meetings might increase comfort, but it doesn't inherently correct for biases in decision-making; it could even amplify them.",
         "3": "Why option D is WRONG - Education alone is insufficient; clients often struggle to recognize and overcome their own biases in real-time investment decisions."
       },
       "educational": "Behavioral biases are systematic errors in thinking that can lead to suboptimal financial decisions. The CFP Board emphasizes understanding and mitigating these biases because they directly impact a planner's ability to act in the client's best interest. An IPS with automatic rebalancing is a powerful tool because it creates a rules-based system that overrides emotional impulses and promotes long-term investment discipline, aligning with fiduciary duty.",
@@ -689,7 +689,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Money Status associates self-worth with net worth and material possessions. While those with a Money Status script may accumulate wealth, it's driven by a need for external validation rather than sound financial planning, and is not inherently linked to financial success or anxiety about spending.",
         "1": "Why option B is CORRECT - Money Vigilance is characterized by being careful, frugal, and planning for the future. This script is most often associated with financial success because it promotes saving and avoiding debt. However, the constant concern about finances can lead to anxiety about spending, even when it's necessary or deserved.",
-        "2": "Why option C is WRONG - Money Worship is the belief that money solves all problems and that more money will bring more happiness. This script is associated with compulsive behaviors and often leads to financial instability, not financial success. It also doesn't necessarily cause anxiety about spending, but rather a desire to acquire more money.",
+        "2": "Why option D is WRONG - Money Worship is the belief that money solves all problems and that more money will bring more happiness. This script is associated with compulsive behaviors and often leads to financial instability, not financial success. It also doesn't necessarily cause anxiety about spending, but rather a desire to acquire more money.",
         "3": "Why option D is WRONG - Money Avoidance is characterized by disliking money, believing it's bad, or feeling unworthy of it. This script often leads to poor financial decisions and a lack of financial planning, resulting in financial struggles rather than success. It also avoids spending due to discomfort with money, not anxiety about spending wisely."
       },
       "educational": "Understanding money scripts is crucial because they significantly influence client behavior and financial decisions. These scripts, often formed in childhood, can be powerful drivers of both positive and negative financial habits. Recognizing these scripts allows financial planners to tailor advice and strategies to address underlying beliefs and promote healthier financial behaviors, aligning with the CFP Board's emphasis on understanding the client's financial psychology.",
@@ -724,7 +724,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Acting solely on the client's perceived certainty ignores the emotional vulnerability and potential for poor decision-making after a significant loss. A waiting period is more prudent.",
         "1": "Why option B is CORRECT - Recommending a 6-12 month waiting period aligns with best practices in financial planning for grieving clients. This timeframe allows the client to process their loss, stabilize emotionally, and make more rational decisions regarding significant assets like the family home. This approach acknowledges the potential for impaired judgment during periods of intense grief and loss.",
-        "2": "Why option C is WRONG - While regret is possible, broadly advising against moving is too prescriptive. The client's individual circumstances should dictate the best course of action, after a period of adjustment.",
+        "2": "Why option D is WRONG - While regret is possible, broadly advising against moving is too prescriptive. The client's individual circumstances should dictate the best course of action, after a period of adjustment.",
         "3": "Why option D is WRONG - While reducing stress and upkeep are valid concerns, prioritizing a quick sale without considering long-term financial implications is premature and potentially detrimental."
       },
       "educational": "Grief significantly impairs cognitive function and decision-making abilities. During this period, individuals are more susceptible to making impulsive choices they may later regret. The CFP Board's Standards of Conduct require planners to act with prudence and care, especially when clients are vulnerable due to life events like the death of a spouse. This includes recognizing the impact of emotions on financial decisions and guiding clients towards a more rational approach.",
@@ -759,7 +759,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Postponing all planning indefinitely is inappropriate. While sensitivity is important, neglecting the client's financial well-being entirely could be detrimental, especially if time-sensitive decisions are needed. A referral allows for professional mental health support while still addressing financial needs appropriately.",
         "1": "Why option B is CORRECT - As a CFP® professional, you are not qualified to diagnose or treat mental health conditions. Referring the client to a mental health professional is the most appropriate course of action because it ensures they receive the specialized care they need, aligning with ethical guidelines to operate within your competence.",
-        "2": "Why option C is WRONG - Simplifying the planning process might temporarily reduce stress, but it doesn't address the underlying issue of depression. It's a superficial solution that doesn't provide the client with the necessary mental health support and could lead to inadequate financial planning due to the client's impaired decision-making.",
+        "2": "Why option D is WRONG - Simplifying the planning process might temporarily reduce stress, but it doesn't address the underlying issue of depression. It's a superficial solution that doesn't provide the client with the necessary mental health support and could lead to inadequate financial planning due to the client's impaired decision-making.",
         "3": "Why option D is WRONG - Providing supportive counseling is within the scope of a financial planner's role to a certain extent, but it's insufficient for a client exhibiting persistent symptoms of depression. Attempting to provide mental health treatment exceeds the CFP® professional's expertise and could be harmful."
       },
       "educational": "CFP® professionals must understand the boundaries of their competence. While providing emotional support is part of client communication, recognizing and responding to mental health issues requires referral to qualified professionals. This aligns with the CFP Board's Standards of Conduct, specifically the duty to act with diligence and competence, and to avoid misrepresenting one's qualifications.",
@@ -828,8 +828,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - The Contemplation stage is characterized by acknowledging a problem and considering change within the foreseeable future (usually defined as within the next six months), but without yet committing to concrete action. The client's statement perfectly aligns with this stage: they know they *should* save more, indicating awareness of the problem, but haven't *taken action*, meaning they haven't moved to the next stage.",
-        "1": "Why option B is WRONG - The Preparation stage involves actively planning and taking small steps toward change. This includes setting goals, researching options, and making initial commitments. Since the client hasn't taken any action, they haven't reached the Preparation stage.",
-        "2": "Why option C is WRONG - The Action stage is characterized by actively implementing the desired behavior change. This would involve consistently saving more money. The client's lack of action directly contradicts this stage.",
+        "1": "Why option C is WRONG - The Preparation stage involves actively planning and taking small steps toward change. This includes setting goals, researching options, and making initial commitments. Since the client hasn't taken any action, they haven't reached the Preparation stage.",
+        "2": "Why option D is WRONG - The Action stage is characterized by actively implementing the desired behavior change. This would involve consistently saving more money. The client's lack of action directly contradicts this stage.",
         "3": "Why option D is WRONG - The Precontemplation stage is defined by a lack of awareness or denial of a problem. Individuals in this stage are not considering change in the foreseeable future. The client's acknowledgment that they *should* save more demonstrates awareness, thus excluding them from this stage."
       },
       "educational": "The Transtheoretical Model (Stages of Change) is a valuable tool for financial planners to understand a client's readiness to change their financial behaviors. Recognizing the client's current stage allows the planner to tailor their advice and communication style for optimal effectiveness. For example, pushing someone in precontemplation into action is likely to be ineffective and can damage the client-planner relationship.",
@@ -864,7 +864,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - A beneficiary change form only changes who receives assets upon death, not during a divorce. It does not legally divide retirement assets.",
         "1": "Why option B is CORRECT - A Qualified Domestic Relations Order (QDRO) is a court order that instructs a qualified retirement plan administrator to divide retirement benefits between the plan participant and their former spouse. It's the *only* legally recognized method for dividing assets held in qualified retirement plans (e.g., 401(k), 403(b), pension plans) without triggering immediate taxation or penalties.",
-        "2": "Why option C is WRONG - A property settlement agreement expresses the divorcing parties' intentions, but it's not the legal instrument used by the plan administrator to divide qualified plan assets.",
+        "2": "Why option D is WRONG - A property settlement agreement expresses the divorcing parties' intentions, but it's not the legal instrument used by the plan administrator to divide qualified plan assets.",
         "3": "Why option D is WRONG - A divorce decree indicates the court's decision, but it lacks the specific details and legal authority required by a qualified plan administrator to distribute assets. A QDRO is required to implement the division."
       },
       "educational": "The requirement of a QDRO stems from ERISA (Employee Retirement Income Security Act), which protects retirement plan assets. Without a QDRO, any distribution to a non-participant spouse would be considered a taxable event and potentially subject to early withdrawal penalties. Understanding the legal framework surrounding divorce and retirement assets is crucial for providing sound financial advice and avoiding unintended tax consequences for your clients.",
@@ -934,7 +934,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Status quo bias is the preference for the current state of affairs. The client's statement reflects a resistance to selling at a loss, but it's driven by the initial purchase price, not a general preference for the current situation.",
         "1": "Why option B is CORRECT - Anchoring bias occurs when individuals rely too heavily on an initial piece of information (the \"anchor\") when making decisions. In this case, the original purchase price of $400,000 is the anchor, preventing the client from rationally considering the current market value and making a potentially beneficial selling decision.",
-        "2": "Why option C is WRONG - Mental accounting involves categorizing and treating money differently based on its source or intended use. The client's statement doesn't demonstrate separate mental accounts; it's about being fixated on the initial investment amount.",
+        "2": "Why option D is WRONG - Mental accounting involves categorizing and treating money differently based on its source or intended use. The client's statement doesn't demonstrate separate mental accounts; it's about being fixated on the initial investment amount.",
         "3": "Why option D is WRONG - The endowment effect is the tendency to value something more highly simply because you own it. While the client owns the house, the statement focuses on the original purchase price as the reason for not selling, rather than an increased subjective value due to ownership itself."
       },
       "educational": "Cognitive biases are systematic patterns of deviation from norm or rationality in judgment. Understanding these biases, like anchoring, is crucial for financial planners to help clients make rational decisions. By recognizing these biases, planners can guide clients towards more objective assessments of their financial situations and avoid costly mistakes.",
@@ -1003,8 +1003,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Recency bias is the tendency to overweight recent events or trends when making decisions, leading to an overestimation of their future impact. In this scenario, the client is placing too much emphasis on the recent strong stock market performance and assuming it will continue indefinitely, thus wanting to shift entirely into stocks.",
-        "1": "Why option B is WRONG - Availability bias involves making decisions based on information that is readily available or easily recalled, often due to its vividness or emotional impact. While recent stock market performance might be easily recalled, the client's decision is driven by the perceived trend, not just the ease of remembering it.",
-        "2": "Why option C is WRONG - Hindsight bias is the tendency to believe, after an event has occurred, that one would have predicted it. This scenario is about predicting future market performance based on recent events, not reflecting on past events and claiming to have known the outcome all along.",
+        "1": "Why option C is WRONG - Availability bias involves making decisions based on information that is readily available or easily recalled, often due to its vividness or emotional impact. While recent stock market performance might be easily recalled, the client's decision is driven by the perceived trend, not just the ease of remembering it.",
+        "2": "Why option D is WRONG - Hindsight bias is the tendency to believe, after an event has occurred, that one would have predicted it. This scenario is about predicting future market performance based on recent events, not reflecting on past events and claiming to have known the outcome all along.",
         "3": "Why option D is WRONG - Representativeness bias involves judging the probability of an event based on how similar it is to a stereotype or a mental prototype. The client isn't necessarily categorizing the stock market into a specific stereotype; they are reacting to the recent performance trend."
       },
       "educational": "Cognitive biases are systematic errors in thinking that can lead to suboptimal financial decisions. Understanding these biases is crucial for financial planners because they can help clients recognize and overcome these tendencies, leading to more rational and well-diversified investment strategies. Addressing biases aligns with the CFP Board's Practice Standards, particularly understanding the client's current financial situation and developing recommendations that consider their behavioral tendencies.",
@@ -1074,7 +1074,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Sunk cost fallacy involves continuing to invest in something because of prior investment, even if future prospects are poor. The client isn't continuing to invest in a losing proposition; they are refusing to reallocate existing funds.",
         "1": "Why option B is CORRECT - Mental accounting is the tendency to compartmentalize money and treat it differently based on its origin or intended use. The client is mentally earmarking the 'vacation fund' for vacations only, despite the higher financial benefit of paying off high-interest debt.",
-        "2": "Why option C is WRONG - The endowment effect is the tendency to value something more highly simply because you own it. While the client values the vacation fund, the issue isn't ownership but rather the mental categorization and intended use of the funds.",
+        "2": "Why option D is WRONG - The endowment effect is the tendency to value something more highly simply because you own it. While the client values the vacation fund, the issue isn't ownership but rather the mental categorization and intended use of the funds.",
         "3": "Why option D is WRONG - Framing effect occurs when how information is presented influences decision-making. The question doesn't describe any manipulation of how the information about the debt or vacation fund is presented to the client."
       },
       "educational": "Mental accounting violates the economic principle of fungibility, which states that all money is interchangeable. Understanding mental accounting is crucial for financial planners because it helps explain seemingly irrational client behaviors and allows for tailored communication strategies to overcome these biases. This is directly related to the CFP Board's emphasis on client psychology and behavioral finance.",
@@ -1213,8 +1213,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Facilitating a compromise acknowledges the validity of both perspectives and promotes a collaborative approach to financial planning, leading to a more sustainable and harmonious financial plan for the couple. This aligns with the CFP Board's emphasis on client-centered advice and understanding client values.",
-        "1": "Why option B is WRONG - Siding with the saver disregards the spender's needs and values, potentially creating resentment and undermining the financial plan's long-term success. A CFP professional must remain objective and consider the well-being of all parties involved.",
-        "2": "Why option C is WRONG - While allowing couples to resolve conflicts independently can be beneficial, the planner's role is to facilitate productive communication and provide guidance. Leaving them to resolve it alone may exacerbate the conflict and hinder progress towards a financial plan.",
+        "1": "Why option C is WRONG - Siding with the saver disregards the spender's needs and values, potentially creating resentment and undermining the financial plan's long-term success. A CFP professional must remain objective and consider the well-being of all parties involved.",
+        "2": "Why option D is WRONG - While allowing couples to resolve conflicts independently can be beneficial, the planner's role is to facilitate productive communication and provide guidance. Leaving them to resolve it alone may exacerbate the conflict and hinder progress towards a financial plan.",
         "3": "Why option D is WRONG - Excluding the spender from financial decisions is unethical and counterproductive. It marginalizes one partner, prevents them from understanding the financial plan, and can lead to mistrust and resentment. This violates the CFP Board's Code of Ethics regarding fairness and integrity."
       },
       "educational": "Understanding family dynamics is crucial in financial planning. Differing financial personalities, like spenders and savers, often lead to conflict. Effective financial planning involves facilitating open communication, identifying shared goals, and creating a plan that balances immediate needs with long-term security, fostering a sense of shared ownership and commitment.",
@@ -1353,7 +1353,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Providing detailed savings calculations and deadlines is a directive approach, not motivational interviewing. Motivational interviewing seeks to elicit the client's own reasons for change, not impose external solutions or pressure.",
         "1": "Why option B is CORRECT - Motivational interviewing centers on exploring the client's own motivations, values, and reasons for wanting to change. By understanding the client's perspective, the planner can help them resolve ambivalence and move towards positive change.",
-        "2": "Why option C is WRONG - Option C is incomplete and therefore incorrect. A complete answer would be needed to evaluate its appropriateness in the context of motivational interviewing.",
+        "2": "Why option D is WRONG - Option C is incomplete and therefore incorrect. A complete answer would be needed to evaluate its appropriateness in the context of motivational interviewing.",
         "3": "Why option D is WRONG - Option D is incomplete and therefore incorrect. A complete answer would be needed to evaluate its appropriateness in the context of motivational interviewing."
       },
       "educational": "Motivational interviewing is a client-centered, directive method for enhancing intrinsic motivation to change by exploring and resolving ambivalence. It emphasizes collaboration, evocation (drawing out the client's own reasons for change), autonomy, and compassion. This approach contrasts with more directive methods that may be perceived as confrontational or judgmental, potentially leading to resistance from the client.",
@@ -1387,8 +1387,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Exploring the client's resistance is the best initial approach because it allows the financial planner to understand the underlying reasons for the objection, which may stem from misunderstandings, conflicting values, or unaddressed concerns. This approach fosters trust and facilitates a collaborative problem-solving process, ultimately leading to more effective and client-centered solutions.",
-        "1": "Why option B is WRONG - While reassurance might be needed later, it doesn't address the underlying reason for the client's resistance. Exploring the client's concerns is the necessary first step.",
-        "2": "Why option C is WRONG - Altering the plan without understanding the client's resistance could lead to a suboptimal financial outcome and doesn't fulfill the planner's fiduciary duty to recommend the best course of action.",
+        "1": "Why option C is WRONG - While reassurance might be needed later, it doesn't address the underlying reason for the client's resistance. Exploring the client's concerns is the necessary first step.",
+        "2": "Why option D is WRONG - Altering the plan without understanding the client's resistance could lead to a suboptimal financial outcome and doesn't fulfill the planner's fiduciary duty to recommend the best course of action.",
         "3": "Why option D is WRONG - Ending the engagement immediately is premature. A good planner first attempts to understand and address the client's concerns before considering termination of services."
       },
       "educational": "Resistance in financial planning often arises from cognitive biases, emotional factors, or a lack of understanding. By exploring the client's perspective, the planner can identify these underlying issues and tailor their communication and recommendations accordingly. This approach aligns with the CFP Board's Standards of Conduct, which emphasize placing the client's interests first and acting with prudence and care.",
@@ -1492,8 +1492,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Consistent follow-through on commitments demonstrates reliability and integrity, which are foundational to building trust in a client-planner relationship. This aligns with the CFP Board's Standards of Conduct, which emphasize acting with honesty, integrity, competence, and diligence.",
-        "1": "Why option B is WRONG - While a professional office and visible credentials can contribute to a perception of competence, they are superficial factors and do not guarantee trustworthiness. Clients value substance over appearance, and relying solely on these elements can be misleading.",
-        "2": "Why option C is WRONG - Using complex financial terminology can alienate clients and create a power imbalance, hindering trust. Effective communication involves simplifying complex concepts and ensuring the client understands the information being presented.",
+        "1": "Why option C is WRONG - While a professional office and visible credentials can contribute to a perception of competence, they are superficial factors and do not guarantee trustworthiness. Clients value substance over appearance, and relying solely on these elements can be misleading.",
+        "2": "Why option D is WRONG - Using complex financial terminology can alienate clients and create a power imbalance, hindering trust. Effective communication involves simplifying complex concepts and ensuring the client understands the information being presented.",
         "3": "Why option D is WRONG - Promising high investment returns is unethical and often unrealistic, violating the CFP Board's duty to act in the client's best interest. Such promises can be considered misleading and can erode trust if not fulfilled."
       },
       "educational": "Trust in financial planning is paramount because clients are entrusting their financial well-being to the planner. Building trust requires consistent ethical behavior, transparent communication, and a client-first approach, all of which are core tenets of the CFP Board's Code of Ethics and Standards of Conduct. Failing to establish trust can lead to misunderstandings, dissatisfaction, and ultimately, the termination of the client-planner relationship.",
@@ -1563,7 +1563,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Detailed spreadsheets and calculations appeal to clients with a 'Conscientious' (C) or 'Dominance' (D) communication style, who value accuracy and efficiency, respectively. 'Influence' (I) clients prioritize relationships and may find excessive detail overwhelming and impersonal.",
         "1": "Why option B is CORRECT - An 'Influence' (I) communication style is characterized by a focus on relationships, enthusiasm, and collaboration. These clients are motivated by social recognition and positive interactions. A relationship-focused discussion with enthusiasm aligns with their preference for personal connection and engaging communication.",
-        "2": "Why option C is WRONG - Written documentation with extensive footnotes caters to clients with a 'Conscientious' (C) communication style, who value thoroughness and accuracy. 'Influence' (I) clients may find this approach too formal and impersonal, preferring face-to-face interaction and a focus on the big picture.",
+        "2": "Why option D is WRONG - Written documentation with extensive footnotes caters to clients with a 'Conscientious' (C) communication style, who value thoroughness and accuracy. 'Influence' (I) clients may find this approach too formal and impersonal, preferring face-to-face interaction and a focus on the big picture.",
         "3": "Why option D is WRONG - Quick bullet points and bottom-line results are most effective for clients with a 'Dominance' (D) communication style, who value efficiency and directness. 'Influence' (I) clients appreciate a more personal and engaging approach, and may perceive this style as cold or uncaring."
       },
       "educational": "Understanding different communication styles is crucial for building rapport and trust with clients. The DISC assessment (Dominance, Influence, Steadiness, Conscientiousness) is a common framework used to identify these styles. Tailoring your communication to match a client's preferred style enhances their understanding and acceptance of your recommendations, ultimately leading to better financial outcomes and stronger client relationships, aligning with the CFP Board's Practice Standards regarding establishing and defining the client-planner relationship.",
@@ -1633,7 +1633,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While the bandwagon effect and herding are closely related and often used interchangeably, 'social proof bias' is the more precise term in behavioral finance for this specific scenario. The bandwagon effect is a broader sociological concept, while social proof bias focuses on the psychological influence of others' actions on individual decision-making.",
         "1": "Why option B is CORRECT - Social proof bias (also known as informational herding) describes the tendency to assume that if many people are doing something, it must be correct. The client's desire to invest in a trending stock because \"everyone is buying it\" directly illustrates this bias, as they are relying on the perceived actions of others rather than independent analysis.",
-        "2": "Why option C is WRONG - Representativeness is a heuristic where people judge the probability of an event by how similar it is to a stereotype or past event. The client's reasoning doesn't involve judging similarity to a stereotype, but rather following the crowd, making representativeness incorrect.",
+        "2": "Why option D is WRONG - Representativeness is a heuristic where people judge the probability of an event by how similar it is to a stereotype or past event. The client's reasoning doesn't involve judging similarity to a stereotype, but rather following the crowd, making representativeness incorrect.",
         "3": "Why option D is WRONG - Availability bias is the tendency to overestimate the likelihood of events that are readily available in memory, often due to recent or vivid experiences. The client's decision is based on the perceived actions of others ('everyone is buying it'), not on easily recalled memories or information, making availability bias an incorrect choice."
       },
       "educational": "Social proof bias and other cognitive biases can significantly impact financial decisions, leading to suboptimal outcomes. Understanding these biases is crucial for financial planners to help clients make rational choices aligned with their goals. By recognizing these biases, planners can guide clients towards more informed and objective investment strategies, mitigating the risks associated with emotional decision-making.",
@@ -1702,8 +1702,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - The framing effect describes how the presentation of information influences decision-making, even when the objective facts remain the same. Presenting the surgery with a \"95% survival rate\" frames it positively, while a \"5% mortality rate\" frames it negatively, impacting perception despite conveying identical information.",
-        "1": "Why option B is WRONG - Availability bias refers to the tendency to overestimate the likelihood of events that are readily available in memory, often due to their vividness or recent occurrence. This question doesn't involve recalling easily remembered events, but rather the presentation of information.",
-        "2": "Why option C is WRONG - Anchoring is a cognitive bias where individuals rely too heavily on an initial piece of information (the \"anchor\") when making decisions. The question doesn't present an initial anchor to influence subsequent judgments; it focuses on how the same information is presented.",
+        "1": "Why option C is WRONG - Availability bias refers to the tendency to overestimate the likelihood of events that are readily available in memory, often due to their vividness or recent occurrence. This question doesn't involve recalling easily remembered events, but rather the presentation of information.",
+        "2": "Why option D is WRONG - Anchoring is a cognitive bias where individuals rely too heavily on an initial piece of information (the \"anchor\") when making decisions. The question doesn't present an initial anchor to influence subsequent judgments; it focuses on how the same information is presented.",
         "3": "Why option D is WRONG - Loss aversion is the tendency to feel the pain of a loss more strongly than the pleasure of an equivalent gain. While the \"5% mortality rate\" framing might trigger loss aversion, the question is fundamentally about the presentation of information, not the emotional response to potential losses."
       },
       "educational": "The framing effect highlights the importance of how financial information is communicated to clients. Understanding this bias allows financial planners to present information in a way that promotes rational decision-making and avoids unintended emotional reactions. This is crucial for building trust and ensuring clients make informed choices aligned with their goals, as required by the CFP Board's Standards of Conduct.",
@@ -1772,8 +1772,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Money avoidance scripts are characterized by negative feelings and beliefs about money, often leading to behaviors that sabotage financial well-being. The client's belief that \"money is bad\" or \"rich people are greedy\" directly aligns with this negative association, making money avoidance the most fitting category.",
-        "1": "Why option B is WRONG - Money vigilance is characterized by cautiousness, anxiety, and secrecy around money. While vigilance can sometimes be associated with negative feelings, it primarily focuses on saving, budgeting, and avoiding financial risks, not necessarily a belief that money itself is inherently bad.",
-        "2": "Why option C is WRONG - Money worship is characterized by the belief that money is the solution to all problems and that more money will bring happiness. This is the opposite of believing that money is bad or that rich people are greedy.",
+        "1": "Why option C is WRONG - Money vigilance is characterized by cautiousness, anxiety, and secrecy around money. While vigilance can sometimes be associated with negative feelings, it primarily focuses on saving, budgeting, and avoiding financial risks, not necessarily a belief that money itself is inherently bad.",
+        "2": "Why option D is WRONG - Money worship is characterized by the belief that money is the solution to all problems and that more money will bring happiness. This is the opposite of believing that money is bad or that rich people are greedy.",
         "3": "Why option D is WRONG - Money status is characterized by using money and possessions to measure self-worth and success. While this can lead to negative behaviors, it doesn't inherently involve the belief that money is inherently bad or that rich people are greedy."
       },
       "educational": "Money scripts are unconscious beliefs about money that are developed in childhood and influence adult financial behaviors. Understanding a client's money scripts is crucial for financial planners because these beliefs can drive seemingly irrational financial decisions. Identifying and addressing these scripts is a key component of behavioral finance and client communication, helping planners tailor advice and strategies to overcome self-sabotaging behaviors.",
@@ -1842,8 +1842,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Financial socialization is the process through which individuals acquire financial knowledge, attitudes, and behaviors. This learning primarily occurs through interactions with family, peers, and the broader social environment, shaping one's understanding and approach to money management.",
-        "1": "Why option B is WRONG - While social media can play a role, financial socialization is a broader, lifelong process shaped by family and social influences, not just online investment learning.",
-        "2": "Why option C is WRONG - While financial therapy may involve discussing finances, financial socialization is about the development of financial attitudes and behaviors, not a specific therapeutic technique.",
+        "1": "Why option C is WRONG - While social media can play a role, financial socialization is a broader, lifelong process shaped by family and social influences, not just online investment learning.",
+        "2": "Why option D is WRONG - While financial therapy may involve discussing finances, financial socialization is about the development of financial attitudes and behaviors, not a specific therapeutic technique.",
         "3": "Why option D is WRONG - Networking is important for professional development, but financial socialization focuses on how individuals learn about and develop their own financial habits and beliefs, not professional relationships."
       },
       "educational": "Financial socialization is crucial because early financial experiences significantly impact later financial decisions. Understanding a client's financial background helps a financial planner tailor advice to align with their values and address potential biases or misconceptions. This understanding directly relates to the CFP Board's emphasis on understanding the client's personal and financial circumstances.",
@@ -1877,8 +1877,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Overconfidence bias is the tendency to overestimate one's abilities or knowledge, leading to an inflated sense of control and an underestimation of risks. In this scenario, the client's consistent overestimation of returns and underestimation of risks directly reflects this bias, making it the correct answer.",
-        "1": "Why option B is WRONG - Recency bias is the tendency to overweight recent events or information when making decisions, rather than considering the entire historical record. While a client might be influenced by recent market performance, the question describes a *consistent* pattern of overestimating returns and underestimating risks, not just a reaction to recent events.",
-        "2": "Why option C is WRONG - The availability heuristic is a mental shortcut where people make judgments about the likelihood of an event based on how easily examples come to mind. This bias relies on readily available information, not a consistent pattern of overestimating returns and underestimating risks regardless of available information.",
+        "1": "Why option C is WRONG - Recency bias is the tendency to overweight recent events or information when making decisions, rather than considering the entire historical record. While a client might be influenced by recent market performance, the question describes a *consistent* pattern of overestimating returns and underestimating risks, not just a reaction to recent events.",
+        "2": "Why option D is WRONG - The availability heuristic is a mental shortcut where people make judgments about the likelihood of an event based on how easily examples come to mind. This bias relies on readily available information, not a consistent pattern of overestimating returns and underestimating risks regardless of available information.",
         "3": "Why option D is WRONG - Status quo bias is the preference for the current state of affairs. While clients may be resistant to change, this bias doesn't directly explain the overestimation of returns and underestimation of risks described in the question. It's about maintaining the current position, not misjudging investment prospects."
       },
       "educational": "Behavioral biases significantly impact financial decision-making, often leading to suboptimal outcomes. Understanding these biases, such as overconfidence, is crucial for CFP® professionals to effectively guide clients towards rational financial planning. Recognizing and mitigating these biases aligns with the CFP Board's emphasis on ethical and competent financial advice, ensuring clients make informed decisions that align with their goals and risk tolerance.",
@@ -1948,7 +1948,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Anchoring is the tendency to rely too heavily on one piece of information when making decisions. The client's statement doesn't indicate reliance on a specific initial piece of information; instead, it reflects a belief that they knew the outcome all along.",
         "1": "Why option B is CORRECT - Hindsight bias, also known as the \"knew-it-all-along\" effect, is the inclination to see past events as more predictable than they actually were. The client's statement, \"I knew it was going to happen,\" perfectly exemplifies this bias, as they are claiming to have foreseen the market crash after it has already occurred.",
-        "2": "Why option C is WRONG - Recency bias is the tendency to overemphasize recent events when making decisions. The client's statement focuses on their perceived knowledge of the event before it happened, not on the impact of recent events on their current decisions.",
+        "2": "Why option D is WRONG - Recency bias is the tendency to overemphasize recent events when making decisions. The client's statement focuses on their perceived knowledge of the event before it happened, not on the impact of recent events on their current decisions.",
         "3": "Why option D is WRONG - Confirmation bias is the tendency to search for, interpret, favor, and recall information in a way that confirms one's pre-existing beliefs or hypotheses. The client's statement doesn't necessarily involve seeking out information to support a prior belief; it's more about claiming prior knowledge of the event."
       },
       "educational": "Understanding hindsight bias is crucial because it can lead to overconfidence in investment decisions and an inaccurate assessment of past performance. This can result in taking on excessive risk or failing to learn from mistakes. As a CFP® professional, recognizing and mitigating this bias in both yourself and your clients is essential for sound financial planning and risk management, aligning with the CFP Board's Standards of Conduct regarding objectivity and competence.",
@@ -1982,8 +1982,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Status quo bias is the tendency to prefer the current situation, even if a change would be advantageous. Loss aversion, the tendency to feel the pain of a loss more strongly than the pleasure of an equivalent gain, often reinforces this bias, as the client may fear selling current positions that could potentially increase in value, even if it means deviating from their intended asset allocation.",
-        "1": "Why option B is WRONG - While anchoring *could* play a minor role, the primary driver of inaction is status quo bias. The client is sticking with what they have, not necessarily fixated on the initial values.",
-        "2": "Why option C is WRONG - Loss aversion is a contributing factor, but status quo bias is the dominant reason for *not* rebalancing. The client is avoiding the effort and discomfort of change.",
+        "1": "Why option C is WRONG - While anchoring *could* play a minor role, the primary driver of inaction is status quo bias. The client is sticking with what they have, not necessarily fixated on the initial values.",
+        "2": "Why option D is WRONG - Loss aversion is a contributing factor, but status quo bias is the dominant reason for *not* rebalancing. The client is avoiding the effort and discomfort of change.",
         "3": "Why option D is WRONG - Overconfidence might lead to poor investment choices initially, but refusing to rebalance a drifting portfolio is more indicative of a resistance to change and potential fear of loss, not necessarily continued overconfidence."
       },
       "educational": "Behavioral biases significantly impact financial decision-making. Understanding biases like status quo and loss aversion is crucial for CFP® professionals. These biases can lead clients to make suboptimal choices, hindering their progress towards financial goals. Recognizing these biases allows you to tailor your communication and recommendations to help clients overcome these obstacles and make more rational decisions.",
@@ -2156,8 +2156,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - CFP® professionals have a duty to act in the client's best interest, which includes recognizing when issues are outside their expertise. Suggesting the client seek professional help while continuing financial planning (assuming the client is capable) balances this duty with the need to stay within the scope of practice.",
-        "1": "Why option B is WRONG - CFP® professionals are not qualified to provide psychological counseling. While empathy is important, offering coping mechanisms crosses the line into unauthorized practice.",
-        "2": "Why option C is WRONG - CFP® professionals cannot prescribe any type of intervention for a medical condition like depression. This is outside their scope of practice and could be harmful.",
+        "1": "Why option C is WRONG - CFP® professionals are not qualified to provide psychological counseling. While empathy is important, offering coping mechanisms crosses the line into unauthorized practice.",
+        "2": "Why option D is WRONG - CFP® professionals cannot prescribe any type of intervention for a medical condition like depression. This is outside their scope of practice and could be harmful.",
         "3": "Why option D is WRONG - Terminating the engagement abruptly can be detrimental to the client and is not always necessary. Suggesting professional help and continuing with financial planning, with appropriate adjustments, is a better approach."
       },
       "educational": "The Psychology of Financial Planning emphasizes the importance of understanding a client's emotional and behavioral biases. However, it's crucial to differentiate between addressing behavioral finance issues within the scope of financial planning and providing mental health treatment, which requires specialized expertise. Recognizing the limits of your competence and referring clients to qualified professionals is a key aspect of ethical financial planning.",
@@ -2226,7 +2226,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Aggressive investing isn't enabling; it's a potentially unsuitable investment strategy, but doesn't necessarily perpetuate irresponsible behavior in another person.",
         "1": "Why option B is CORRECT - Financial enabling is characterized by providing excessive financial support that shields someone from the negative consequences of their actions, thereby perpetuating irresponsible behavior. This dynamic often involves family members and can be a significant concern in financial planning.",
-        "2": "Why option C is WRONG - Teaching budgeting is generally positive, even if imperfectly modeled. Enabling requires excessive financial support that perpetuates negative behavior.",
+        "2": "Why option D is WRONG - Teaching budgeting is generally positive, even if imperfectly modeled. Enabling requires excessive financial support that perpetuates negative behavior.",
         "3": "Why option D is WRONG - Contributing to retirement while having debt is suboptimal, but not enabling. It's a personal financial planning issue, not a dynamic between individuals."
       },
       "educational": "Financial enabling undermines the recipient's ability to learn from their mistakes and develop financial responsibility. Recognizing these patterns is crucial for CFP® professionals, especially when dealing with family dynamics in estate planning or advising on intergenerational wealth transfer. Understanding behavioral finance principles helps planners address these sensitive situations and guide clients toward healthier financial relationships.",
@@ -2506,7 +2506,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Rushing into recommendations without building rapport can damage trust and lead to unsuitable advice. A client's values and goals must be understood first.",
         "1": "Why option B is CORRECT - Building rapport involves establishing a connection with the client based on trust, empathy, and mutual understanding. Showing genuine interest, actively listening to their concerns and aspirations, and finding common ground fosters a strong foundation for a successful financial planning relationship. This aligns with the CFP Board's emphasis on client-centered planning.",
-        "2": "Why option C is WRONG - While financial data is important, focusing solely on it neglects the client's personal values, goals, and emotional relationship with money. This approach is impersonal and ineffective.",
+        "2": "Why option D is WRONG - While financial data is important, focusing solely on it neglects the client's personal values, goals, and emotional relationship with money. This approach is impersonal and ineffective.",
         "3": "Why option D is WRONG - Overwhelming a new client with technical jargon can be intimidating and counterproductive. Building trust and understanding their needs should precede demonstrating expertise."
       },
       "educational": "Building rapport is a critical first step in the financial planning process. It establishes trust, which is essential for open communication and a successful client-planner relationship. Understanding the client's values, goals, and emotional biases allows the planner to create a plan that aligns with their needs and increases the likelihood of plan implementation and long-term success. This aligns with the CFP Board's Standards of Conduct, particularly the duty to act in the client's best interest.",
@@ -2540,8 +2540,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Effective financial goal-setting is a collaborative process where the CFP® professional and the client work together to define specific, measurable goals that align with the client's values. This approach ensures the client is motivated and committed to achieving their financial objectives.",
-        "1": "Why option B is WRONG - While CFP® professionals bring expertise, dictating goals disregards the client's unique circumstances, values, and priorities, undermining the client's ownership and motivation, which is crucial for success.",
-        "2": "Why option C is WRONG - Focusing exclusively on investment returns neglects other important aspects of financial planning, such as risk management, tax planning, and estate planning, and fails to address the client's broader financial well-being and life goals.",
+        "1": "Why option C is WRONG - While CFP® professionals bring expertise, dictating goals disregards the client's unique circumstances, values, and priorities, undermining the client's ownership and motivation, which is crucial for success.",
+        "2": "Why option D is WRONG - Focusing exclusively on investment returns neglects other important aspects of financial planning, such as risk management, tax planning, and estate planning, and fails to address the client's broader financial well-being and life goals.",
         "3": "Why option D is WRONG - Vague goals lack direction and make it difficult to track progress or determine success, hindering the client's ability to stay motivated and achieve their financial objectives."
       },
       "educational": "Effective financial goal-setting is a cornerstone of financial planning, influencing all subsequent recommendations. By collaboratively establishing SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound) that are aligned with a client's values, the CFP® professional ensures the client is motivated and engaged in the financial planning process, increasing the likelihood of achieving their desired outcomes. This process directly relates to the CFP Board's Practice Standards, particularly understanding the client's personal and financial circumstances.",
@@ -2575,8 +2575,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Exploring the underlying reasons for resistance is the cornerstone of effective financial counseling. It aligns with the CFP Board's Standards of Conduct, specifically focusing on understanding the client's circumstances and values to provide suitable advice. This approach fosters trust and collaboration, leading to better client outcomes.",
-        "1": "Why option B is WRONG - While documenting is important, terminating the relationship should be a last resort after attempting to understand and address the client's concerns. A CFP® professional has a duty to act in the client's best interest, which includes attempting to understand their perspective.",
-        "2": "Why option C is WRONG - Repeating advice more forcefully is unlikely to be effective and could damage the client relationship. It violates the principle of client-centeredness and respectful communication.",
+        "1": "Why option C is WRONG - While documenting is important, terminating the relationship should be a last resort after attempting to understand and address the client's concerns. A CFP® professional has a duty to act in the client's best interest, which includes attempting to understand their perspective.",
+        "2": "Why option D is WRONG - Repeating advice more forcefully is unlikely to be effective and could damage the client relationship. It violates the principle of client-centeredness and respectful communication.",
         "3": "Why option D is WRONG - While documentation is necessary, simply moving on without understanding the client's resistance is a failure to provide comprehensive financial planning. It neglects the crucial step of addressing underlying behavioral or emotional factors."
       },
       "educational": "Resistance in financial planning often stems from cognitive biases, emotional factors, or conflicting values. Understanding these underlying drivers is crucial for tailoring advice and building a strong client-planner relationship. By employing active listening and open-ended questions, CFP® professionals can uncover these hidden obstacles and develop strategies that align with both the client's goals and sound financial principles. This approach aligns with the Psychology of Financial Planning blueprint area, emphasizing the importance of behavioral finance and effective communication.",
@@ -2611,7 +2611,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - A CFP® professional must always obtain informed consent from the client before making any financial decisions on their behalf. Making decisions without consent violates fiduciary duty.",
         "1": "Why option B is CORRECT - Establishing regular check-ins provides accountability, automating actions removes behavioral barriers to implementation, and celebrating progress reinforces positive behaviors. These strategies align with behavioral finance principles, such as commitment devices and positive reinforcement, to improve client follow-through.",
-        "2": "Why option C is WRONG - Threatening to terminate the relationship is an aggressive and unprofessional approach that damages client trust. A collaborative approach is more effective.",
+        "2": "Why option D is WRONG - Threatening to terminate the relationship is an aggressive and unprofessional approach that damages client trust. A collaborative approach is more effective.",
         "3": "Why option D is WRONG - Ignoring non-compliance allows problems to compound and undermines the purpose of the financial plan. Active engagement and course correction are necessary."
       },
       "educational": "Behavioral finance recognizes that emotions and cognitive biases often prevent individuals from making rational financial decisions. By implementing strategies like regular check-ins, automation, and positive reinforcement, financial planners can help clients overcome these biases and stay committed to their financial plans. These techniques are crucial for effective financial counseling and building long-term client relationships, aligning with the CFP Board's emphasis on client-centered planning.",
@@ -2750,7 +2750,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Holding a losing stock solely to avoid a loss, ignoring fundamentals, is not a sound strategy. It's emotional, not rational.",
         "1": "Why option B is CORRECT - Anchoring is the tendency to fixate on an initial piece of information (the purchase price) when making decisions, even if that information is no longer relevant. Loss aversion is the tendency to feel the pain of a loss more strongly than the pleasure of an equivalent gain. The client is anchored to the $100 purchase price and exhibiting loss aversion by refusing to sell and realize the $50 loss.",
-        "2": "Why option C is WRONG - While overconfidence can be a factor in investing, the primary issue here is the client's attachment to the original purchase price and aversion to realizing the loss, not necessarily past successes.",
+        "2": "Why option D is WRONG - While overconfidence can be a factor in investing, the primary issue here is the client's attachment to the original purchase price and aversion to realizing the loss, not necessarily past successes.",
         "3": "Why option D is WRONG - Herding behavior involves following the crowd. The client's decision is based on their individual purchase price, not on what others are doing."
       },
       "educational": "Anchoring and loss aversion are powerful cognitive biases that can significantly impact investment decisions. Understanding these biases is crucial for financial planners because they can lead clients to make irrational choices, such as holding onto losing investments for too long or selling winners too early. Recognizing these biases allows a planner to help clients make more objective, goal-oriented decisions.",
@@ -2784,8 +2784,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Overconfidence bias leads investors to overestimate their abilities and knowledge, causing them to trade excessively, believe they can pick winning stocks, and underestimate the potential for losses. This results in inadequate diversification as they concentrate their holdings in what they believe are sure bets, and a general underestimation of the risks involved in investing.",
-        "1": "Why option B is WRONG - Overconfidence leads to *worse* performance due to excessive trading and poor decisions, not superior returns.",
-        "2": "Why option C is WRONG - Overconfident investors are *less* likely to be conservative; they believe they can handle more risk.",
+        "1": "Why option C is WRONG - Overconfidence leads to *worse* performance due to excessive trading and poor decisions, not superior returns.",
+        "2": "Why option D is WRONG - Overconfident investors are *less* likely to be conservative; they believe they can handle more risk.",
         "3": "Why option D is WRONG - Overconfidence leads to *poor* risk management because investors underestimate potential losses and fail to diversify."
       },
       "educational": "Behavioral biases significantly impact investment decisions. Understanding these biases, like overconfidence, is crucial for financial planners to help clients make rational choices aligned with their goals and risk tolerance. Recognizing and mitigating these biases is a key component of ethical and effective financial planning, as outlined in the CFP Board's Standards of Conduct.",
@@ -2819,8 +2819,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Regret aversion is a behavioral bias where individuals avoid making decisions that could lead to regret if the outcome is negative. This often results in inaction, even when action is beneficial, to avoid the potential pain of a wrong choice.",
-        "1": "Why option B is WRONG - Regret aversion leads to *inaction*, not necessarily following the crowd. While following the crowd *can* be a manifestation of regret aversion, it's not the core definition.",
-        "2": "Why option C is WRONG - While appropriate risk-taking is generally sound advice, regret aversion specifically causes *deviation* from rational risk assessment due to fear of future regret.",
+        "1": "Why option C is WRONG - Regret aversion leads to *inaction*, not necessarily following the crowd. While following the crowd *can* be a manifestation of regret aversion, it's not the core definition.",
+        "2": "Why option D is WRONG - While appropriate risk-taking is generally sound advice, regret aversion specifically causes *deviation* from rational risk assessment due to fear of future regret.",
         "3": "Why option D is WRONG - Regret aversion typically leads to *avoiding* risk, not seeking it. The investor is trying to avoid repeating the feeling of regret, which high-risk investments could easily trigger."
       },
       "educational": "Regret aversion stems from the emotional pain associated with making a wrong decision. This bias can lead to suboptimal financial outcomes, such as failing to diversify or missing out on potential gains. Understanding regret aversion is crucial for financial planners as it allows them to help clients overcome this bias and make more rational decisions aligned with their goals.",
@@ -2855,7 +2855,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While 'Tracked' might be a component of goal management, 'Strategic,' 'Monetary,' 'Aggressive,' and 'Risky' are not core components of the SMART goal framework. These terms describe characteristics of the goal itself or the approach to achieving it, not the fundamental criteria for defining the goal.",
         "1": "Why option B is CORRECT - SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound. This framework ensures goals are well-defined, progress can be tracked, and the goals are realistic and aligned with the client's values and timeline. This structure enhances the likelihood of goal attainment and provides a clear roadmap for financial planning.",
-        "2": "Why option C is WRONG - While 'Simple,' 'Achievable,' and 'Timely' have some overlap with SMART goals, 'Moderate' and 'Required' are not standard components. 'Moderate' is subjective and doesn't provide a clear benchmark, and 'Required' implies an external obligation rather than a client-driven objective.",
+        "2": "Why option D is WRONG - While 'Simple,' 'Achievable,' and 'Timely' have some overlap with SMART goals, 'Moderate' and 'Required' are not standard components. 'Moderate' is subjective and doesn't provide a clear benchmark, and 'Required' implies an external obligation rather than a client-driven objective.",
         "3": "Why option D is WRONG - 'Standard,' 'Managed,' 'Appropriate,' and 'Tested' are not part of the SMART goal framework. While these terms might be relevant in project management or other contexts, they don't align with the specific criteria used to define effective financial planning goals."
       },
       "educational": "SMART goals are crucial in financial planning because they provide a structured approach to defining and achieving financial objectives. By making goals Specific, Measurable, Achievable, Relevant, and Time-bound, financial planners can help clients translate abstract aspirations into concrete action plans. This process is directly related to the 'Establishing and Defining the Client-Planner Relationship' and 'Gathering Client Data' domains of the CFP Board's Principal Knowledge Topics, as understanding client values and goals is fundamental to developing a suitable financial plan.",
@@ -2890,7 +2890,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Values clarification is crucial for all clients, not something to avoid. It helps tailor the plan to their specific needs and goals, fostering a stronger relationship.",
         "1": "Why option B is CORRECT - Values clarification exercises help clients articulate their fundamental beliefs and priorities. By understanding these values, financial planners can create plans that resonate with clients on a deeper level, increasing the likelihood of long-term commitment and success. This aligns with the CFP Board's emphasis on client-centered planning.",
-        "2": "Why option C is WRONG - While risk tolerance is important, values clarification provides context and meaning to investment choices. It ensures investments align with the client's overall life goals, not just returns.",
+        "2": "Why option D is WRONG - While risk tolerance is important, values clarification provides context and meaning to investment choices. It ensures investments align with the client's overall life goals, not just returns.",
         "3": "Why option D is WRONG - Values clarification is beneficial for clients of all wealth levels. Understanding values is essential for creating a meaningful financial plan, regardless of net worth or complexity."
       },
       "educational": "Values clarification is a cornerstone of ethical and effective financial planning. It's rooted in the principle that financial plans should serve the client's best interests, which requires a deep understanding of their values, goals, and priorities. This process helps avoid creating plans that are technically sound but misaligned with what truly matters to the client, leading to dissatisfaction and potential plan abandonment. This connects directly to the CFP Board's Standards of Conduct, particularly the Duty of Loyalty and Prudence.",
@@ -2995,7 +2995,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This disregards the client's cultural background and preferences, potentially alienating them and hindering the planning process. Cultural competence requires adapting to the client's needs, not imposing individualistic values.",
         "1": "Why option B is CORRECT - Cultural competence involves adapting your approach to align with the client's values and preferences. Involving relevant family members, *when the client prefers it*, acknowledges and respects the cultural emphasis on collective decision-making. This fosters trust and increases the likelihood of successful plan implementation.",
-        "2": "Why option C is WRONG - While client confidentiality is important, avoiding the topic entirely ignores a crucial aspect of the client's decision-making process. A culturally competent advisor would address family involvement sensitively.",
+        "2": "Why option D is WRONG - While client confidentiality is important, avoiding the topic entirely ignores a crucial aspect of the client's decision-making process. A culturally competent advisor would address family involvement sensitively.",
         "3": "Why option D is WRONG - A standardized process doesn't account for cultural differences. Cultural competence requires tailoring the approach to the client's specific needs and background, not applying a one-size-fits-all solution."
       },
       "educational": "Cultural competence is a critical aspect of ethical financial planning, as highlighted in the CFP Board's Standards of Conduct. It requires understanding and respecting clients' diverse backgrounds, including their cultural values, beliefs, and preferences. Failing to adapt your approach can lead to misunderstandings, mistrust, and ultimately, ineffective financial planning.",
@@ -3064,8 +3064,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Framing effects are a cognitive bias where the way information is presented influences decision-making, even if the underlying facts are the same. Presenting information as a gain versus a loss, or using probabilities versus frequencies, can significantly alter a client's perception and subsequent choices.",
-        "1": "Why option B is WRONG - This is incorrect because framing effects demonstrate that even rational investors can be influenced by how information is presented, deviating from pure expected value calculations.",
-        "2": "Why option C is WRONG - This is incorrect because while risk tolerance is a factor, framing effects and cognitive biases like loss aversion can significantly alter investment decisions beyond what a risk assessment predicts.",
+        "1": "Why option C is WRONG - This is incorrect because framing effects demonstrate that even rational investors can be influenced by how information is presented, deviating from pure expected value calculations.",
+        "2": "Why option D is WRONG - This is incorrect because while risk tolerance is a factor, framing effects and cognitive biases like loss aversion can significantly alter investment decisions beyond what a risk assessment predicts.",
         "3": "Why option D is WRONG - This is incorrect because framing effects specifically highlight the inconsistency in decision-making based on presentation, contradicting the idea of unwavering rationality."
       },
       "educational": "Framing effects highlight the importance of understanding cognitive biases in financial planning. Clients are not always rational actors, and the way information is presented can significantly influence their decisions, potentially leading to suboptimal outcomes. Recognizing and mitigating framing effects is crucial for ethical and effective financial planning, aligning with the CFP Board's Standards of Conduct regarding integrity and objectivity.",
@@ -3100,7 +3100,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Rational decision-making focuses on future gains, not past losses. The client is irrationally clinging to a losing investment.",
         "1": "Why option B is CORRECT - The sunk cost fallacy is the tendency to continue investing in a losing proposition because of the resources already invested. The client's statement, \"I've already lost so much,\" perfectly exemplifies this bias, as they are letting past losses influence their current decision.",
-        "2": "Why option C is WRONG - While loss aversion is related, the sunk cost fallacy specifically refers to letting past losses influence future decisions, not just avoiding losses in general.",
+        "2": "Why option D is WRONG - While loss aversion is related, the sunk cost fallacy specifically refers to letting past losses influence future decisions, not just avoiding losses in general.",
         "3": "Why option D is WRONG - Confirmation bias involves seeking information that confirms existing beliefs. The client's behavior isn't necessarily about seeking confirming information."
       },
       "educational": "The sunk cost fallacy highlights how emotions can cloud financial judgment. Understanding behavioral biases like this is crucial for CFPs because clients often struggle to separate past performance from future potential, leading to suboptimal investment decisions. Recognizing and addressing these biases is a key aspect of providing objective and effective financial advice, aligning with the CFP Board's ethical standards of integrity and objectivity.",
@@ -3135,7 +3135,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Choice architecture is about structuring choices, not overwhelming clients with an unmanageable number of options. This can lead to analysis paralysis and poor decision-making.",
         "1": "Why option B is CORRECT - Choice architecture involves structuring the way choices are presented to clients in order to encourage better decisions, such as retirement savings or insurance coverage, while still allowing them the freedom to make their own choices. This aligns with the fiduciary duty of acting in the client's best interest while respecting their autonomy.",
-        "2": "Why option C is WRONG - Choice architecture preserves the client's freedom to choose; it does not involve making decisions on their behalf. This is a paternalistic approach, not a supportive one.",
+        "2": "Why option D is WRONG - Choice architecture preserves the client's freedom to choose; it does not involve making decisions on their behalf. This is a paternalistic approach, not a supportive one.",
         "3": "Why option D is WRONG - Choice architecture involves guiding clients towards better decisions, which often includes making informed recommendations. Avoiding recommendations entirely abdicates the advisor's role."
       },
       "educational": "Choice architecture leverages behavioral insights to improve client outcomes. It recognizes that people are not always rational decision-makers and can be influenced by how choices are presented. By understanding biases like framing and anchoring, financial planners can structure choices in a way that nudges clients towards better financial decisions, such as increasing savings rates or diversifying investments, while still respecting their autonomy.",
@@ -3170,7 +3170,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While regaining control is important, rushing major decisions during emotional distress can lead to costly mistakes. A thoughtful, strategic approach is generally better.",
         "1": "Why option B is CORRECT - Acknowledging the emotional component of major life transitions is crucial for building trust and rapport with clients. Avoiding major irreversible decisions during periods of high stress allows clients time to process their emotions and make more rational choices. Providing stability and guidance helps clients navigate the complexities of their financial situation during a difficult time, aligning with the CFP Board's fiduciary duty.",
-        "2": "Why option C is WRONG - Ignoring long-term planning during job loss can be detrimental. Addressing retirement accounts, insurance, and potential career changes is crucial.",
+        "2": "Why option D is WRONG - Ignoring long-term planning during job loss can be detrimental. Addressing retirement accounts, insurance, and potential career changes is crucial.",
         "3": "Why option D is WRONG - While mental health is important, immediately referring *all* clients to therapy is an overstep. Financial planners can provide initial support and stability before suggesting therapy if needed."
       },
       "educational": "Major life transitions significantly impact a client's emotional state and decision-making abilities. During these times, clients are more vulnerable to cognitive biases such as loss aversion and framing effects. Financial planners must recognize these vulnerabilities and adjust their approach to provide support, guidance, and stability, ensuring that financial decisions align with the client's long-term goals and values.",
@@ -3204,8 +3204,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - This approach aligns with the CFP Board's Standards of Conduct, specifically focusing on acting with integrity and objectivity. Facilitating open communication, identifying shared values, and helping couples compromise allows the planner to serve both clients' best interests without favoring one over the other, promoting a healthy financial relationship.",
-        "1": "Why option B is WRONG - While separate accounts might seem like a solution, it avoids addressing the underlying communication issues and shared financial goals, potentially leading to further problems.",
-        "2": "Why option C is WRONG - Financial planning should be equitable and consider both spouses' needs and risk tolerances, regardless of income contribution; prioritizing one over the other is unethical and detrimental.",
+        "1": "Why option C is WRONG - While separate accounts might seem like a solution, it avoids addressing the underlying communication issues and shared financial goals, potentially leading to further problems.",
+        "2": "Why option D is WRONG - Financial planning should be equitable and consider both spouses' needs and risk tolerances, regardless of income contribution; prioritizing one over the other is unethical and detrimental.",
         "3": "Why option D is WRONG - Financial planning is a collaborative process. Simply dictating a plan without client input disregards their values, preferences, and understanding of the strategy."
       },
       "educational": "Understanding the psychology of financial planning is crucial when working with couples. Disagreements about money are common and can significantly impact a relationship. A CFP® professional must act as a facilitator, helping clients understand each other's perspectives and find common ground to achieve their shared financial goals. This aligns with the 'Establish and Define the Client-Planner Relationship' and 'Gather Client Data' sections of the financial planning process, emphasizing communication and understanding.",
@@ -3380,7 +3380,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Open-ended questions are crucial for understanding a client's values and goals, which are essential for holistic financial planning, not just focusing on numbers.",
         "1": "Why option B is CORRECT - Open-ended questions encourage clients to elaborate, revealing their values, concerns, and motivations. This richer data is essential for developing personalized financial plans that align with the client's unique circumstances and goals, as emphasized in the CFP Board's Standards of Conduct.",
-        "2": "Why option C is WRONG - While some clients may be initially hesitant, open-ended questions, when used skillfully, foster deeper understanding and trust by showing genuine interest in their lives.",
+        "2": "Why option D is WRONG - While some clients may be initially hesitant, open-ended questions, when used skillfully, foster deeper understanding and trust by showing genuine interest in their lives.",
         "3": "Why option D is WRONG - While some overlap exists, open-ended questions in financial planning focus on values and goals related to money, not deep-seated emotional issues requiring therapy."
       },
       "educational": "Effective client communication is paramount in financial planning, as it directly impacts the planner's ability to understand the client's needs and goals. Open-ended questions facilitate this process by encouraging clients to share their perspectives and concerns in their own words. This aligns with the CFP Board's emphasis on understanding the client's financial situation, values, and goals before making any recommendations, a core principle of fiduciary duty.",
@@ -3415,7 +3415,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Financial Life Planning prioritizes values and goals over solely maximizing investment returns. While investment returns are important, they are secondary to living a purposeful life.",
         "1": "Why option B is CORRECT - Financial Life Planning, as championed by George Kinder, prioritizes understanding a client's values, goals, and aspirations before addressing financial strategies. It uses tools like Kinder's Three Questions to uncover these deep-seated desires and then aligns financial resources to facilitate a purposeful life.",
-        "2": "Why option C is WRONG - Financial Life Planning is distinct from traditional financial planning, which typically starts with financial goals rather than life goals and values. It's a different approach, not the same thing.",
+        "2": "Why option D is WRONG - Financial Life Planning is distinct from traditional financial planning, which typically starts with financial goals rather than life goals and values. It's a different approach, not the same thing.",
         "3": "Why option D is WRONG - Financial Life Planning does not ignore practical financial details; it integrates them into the plan after values and goals are established. Ignoring practicalities would lead to an unworkable plan."
       },
       "educational": "Financial Life Planning is a client-centered approach that emphasizes the importance of understanding a client's values, goals, and aspirations before developing a financial plan. This approach aligns with the CFP Board's emphasis on understanding the client's circumstances and developing a plan that is in their best interest. It contrasts with product-centered approaches that prioritize selling financial products.",
@@ -3449,8 +3449,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Confirmation bias is the tendency to favor information that confirms existing beliefs or biases. In this scenario, the client is actively seeking out only positive information about their preferred investment, ignoring any potential downsides or risks, which is a clear example of confirmation bias.",
-        "1": "Why option B is WRONG - While time commitment is part of research, focusing solely on positive articles isn't thorough; it lacks critical evaluation of potential downsides.",
-        "2": "Why option C is WRONG - Due diligence requires an objective and comprehensive investigation, not just seeking out information that confirms pre-existing beliefs.",
+        "1": "Why option C is WRONG - While time commitment is part of research, focusing solely on positive articles isn't thorough; it lacks critical evaluation of potential downsides.",
+        "2": "Why option D is WRONG - Due diligence requires an objective and comprehensive investigation, not just seeking out information that confirms pre-existing beliefs.",
         "3": "Why option D is WRONG - Risk awareness involves understanding all potential risks, not just focusing on perceived limited downside, which can lead to underestimating actual risk."
       },
       "educational": "Confirmation bias is a cognitive bias that significantly impacts financial decision-making. It leads to suboptimal investment choices by limiting exposure to diverse perspectives and potential risks. Understanding and mitigating confirmation bias is crucial for financial planners to help clients make rational and well-informed decisions, aligning with the CFP Board's Practice Standards regarding objectivity and acting in the client's best interest.",
@@ -3484,8 +3484,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Reflective listening, at its core, involves paraphrasing the client's statements. This demonstrates that the financial planner is actively listening and attempting to understand the client's perspective, both in terms of content and emotion.",
-        "1": "Why option B is WRONG - Reflective listening involves understanding and rephrasing, not just mindlessly repeating.",
-        "2": "Why option C is WRONG - Interrupting prevents understanding the full scope of the client's concerns and needs.",
+        "1": "Why option C is WRONG - Reflective listening involves understanding and rephrasing, not just mindlessly repeating.",
+        "2": "Why option D is WRONG - Interrupting prevents understanding the full scope of the client's concerns and needs.",
         "3": "Why option D is WRONG - Reflective listening is about understanding, not necessarily agreeing; agreement can shut down further communication."
       },
       "educational": "Reflective listening is a crucial element of effective client communication and falls under the Psychology of Financial Planning. It helps build trust and rapport, which are essential for gathering accurate information and developing suitable financial plans. By demonstrating empathy and understanding, the planner can encourage the client to be more open and honest about their financial situation and goals, leading to better outcomes.",
@@ -3520,7 +3520,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Emotional intelligence involves understanding and managing emotions, not blindly agreeing with clients. This can lead to poor financial decisions.",
         "1": "Why option B is CORRECT - Emotional intelligence encompasses the ability to perceive, understand, manage, and utilize emotions. In financial planning, this involves recognizing a client's emotional state (e.g., anxiety about market downturns), understanding the source of those emotions, managing one's own emotional reactions to client behavior, and using emotional awareness to guide the client towards rational financial decisions.",
-        "2": "Why option C is WRONG - While quantitative data is important, emotional intelligence requires considering the client's emotional state and personal circumstances. Ignoring these factors can lead to unsuitable advice.",
+        "2": "Why option D is WRONG - While quantitative data is important, emotional intelligence requires considering the client's emotional state and personal circumstances. Ignoring these factors can lead to unsuitable advice.",
         "3": "Why option D is WRONG - While technical expertise is necessary, emotional intelligence emphasizes empathy and understanding client needs, which are crucial for building strong relationships and providing tailored advice."
       },
       "educational": "Emotional intelligence is crucial in financial planning because financial decisions are often driven by emotions like fear, greed, and regret. Understanding these emotions allows a planner to tailor advice and communication strategies to each client's individual needs and biases, leading to better financial outcomes and stronger client relationships. This aligns with the CFP Board's emphasis on client-centered planning and ethical conduct.",
@@ -3625,7 +3625,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Dollar-cost averaging is a specific investment strategy, not a description of herding behavior. It focuses on consistent investment, not following market trends.",
         "1": "Why option B is CORRECT - Herding behavior is the tendency of investors to mimic the actions of a larger group, often without independent analysis. This can lead to irrational market movements as investors follow the crowd, buying high and selling low.",
-        "2": "Why option C is WRONG - Diversification aims to reduce risk through asset allocation, not to explain the psychological phenomenon of investors mimicking each other's actions during market downturns.",
+        "2": "Why option D is WRONG - Diversification aims to reduce risk through asset allocation, not to explain the psychological phenomenon of investors mimicking each other's actions during market downturns.",
         "3": "Why option D is WRONG - Long-term investing is a time horizon strategy, not a description of the behavioral bias where investors follow the actions of a larger group."
       },
       "educational": "Herding behavior stems from cognitive biases like social proof and fear of missing out (FOMO). Understanding these biases is crucial for financial planners as they can lead clients to make impulsive decisions that jeopardize their long-term financial goals. By educating clients about these biases and reinforcing their personalized financial plans, advisors can help them avoid costly mistakes during market volatility.",
@@ -3660,7 +3660,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While over-diversification can be a problem, it's not directly related to the sunk cost fallacy, which is about clinging to losing investments due to past investment.",
         "1": "Why option B is CORRECT - The sunk cost fallacy describes the tendency to continue investing in a losing proposition because of the resources already committed. Investors irrationally consider these past, unrecoverable costs when making future decisions, hoping to recoup their losses, even if selling would be the more financially sound choice. This is a classic example of emotional reasoning overriding rational analysis.",
-        "2": "Why option C is WRONG - Ignoring past performance is a poor investment strategy in general, but the sunk cost fallacy is specifically about the emotional attachment to the initial investment, not a general disregard for historical data.",
+        "2": "Why option D is WRONG - Ignoring past performance is a poor investment strategy in general, but the sunk cost fallacy is specifically about the emotional attachment to the initial investment, not a general disregard for historical data.",
         "3": "Why option D is WRONG - Investing solely in bonds is a risk management choice, not a direct consequence of the sunk cost fallacy, which is about holding onto a specific losing investment."
       },
       "educational": "The sunk cost fallacy highlights how emotions can cloud financial judgment. It's crucial to remember that past investment decisions are irreversible and should not influence future choices. As a CFP®, you must help clients detach from emotional attachments to investments and focus on forward-looking analysis to make rational decisions aligned with their goals and risk tolerance.",
@@ -3694,8 +3694,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - The availability heuristic is a mental shortcut where people make judgments about the probability of an event based on how easily examples come to mind. Recent, vivid, or frequently covered events are more easily recalled, leading investors to overestimate their likelihood and impact investment decisions.",
-        "1": "Why option B is WRONG - The availability heuristic is a cognitive bias, not a rational decision-making process based on statistical analysis. It's about readily available information, not objective data.",
-        "2": "Why option C is WRONG - While historical data is important, the availability heuristic focuses on *easily recalled* information, which may not be representative of long-term trends or accurate historical analysis. It's about recency bias, not comprehensive historical analysis.",
+        "1": "Why option C is WRONG - The availability heuristic is a cognitive bias, not a rational decision-making process based on statistical analysis. It's about readily available information, not objective data.",
+        "2": "Why option D is WRONG - While historical data is important, the availability heuristic focuses on *easily recalled* information, which may not be representative of long-term trends or accurate historical analysis. It's about recency bias, not comprehensive historical analysis.",
         "3": "Why option D is WRONG - The availability heuristic specifically describes a bias where *not* all information is equally weighted; easily recalled information is overemphasized. It's the opposite of unbiased assessment."
       },
       "educational": "The availability heuristic, part of behavioral finance, highlights how cognitive biases can lead to suboptimal investment decisions. Understanding this bias is crucial for financial planners because it helps them identify and address clients' irrational investment behaviors, promoting more rational and goal-oriented financial planning. By recognizing these biases, planners can guide clients towards making informed decisions based on sound financial principles rather than emotional reactions.",
@@ -3729,8 +3729,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Framing effects are a cognitive bias where the way information is presented influences decision-making, even if the underlying facts remain the same. This includes presenting information as gains versus losses, or using different numerical representations (percentages vs. dollars).",
-        "1": "Why option B is WRONG - While rapport is important, framing effects refer to cognitive biases related to how information is presented, not the physical environment. This option confuses environmental factors with cognitive biases.",
-        "2": "Why option C is WRONG - Framing effects demonstrate that qualitative factors and how numbers are presented *do* influence decisions. This option incorrectly asserts that only the numbers themselves matter.",
+        "1": "Why option C is WRONG - While rapport is important, framing effects refer to cognitive biases related to how information is presented, not the physical environment. This option confuses environmental factors with cognitive biases.",
+        "2": "Why option D is WRONG - Framing effects demonstrate that qualitative factors and how numbers are presented *do* influence decisions. This option incorrectly asserts that only the numbers themselves matter.",
         "3": "Why option D is WRONG - While presentation style matters, framing effects specifically relate to how the *information* itself is framed (e.g., gains vs. losses), not the broader presentation context. This option focuses on superficial aspects of the presentation."
       },
       "educational": "Framing effects highlight the importance of understanding cognitive biases in financial planning. Clients are not always rational decision-makers, and their choices can be influenced by how information is presented. As a financial planner, you must be aware of these biases to present information objectively and help clients make informed decisions aligned with their goals, as per the CFP Board's Standards of Conduct.",
@@ -3765,7 +3765,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Motivational interviewing is about collaboration and partnership, not enforcement. It aims to empower clients to make their own decisions, rather than imposing compliance.",
         "1": "Why option B is CORRECT - Motivational interviewing is designed to elicit clients' own motivations for change. By using techniques like open-ended questions and reflective listening, the advisor helps the client explore their ambivalence and identify their reasons for adopting new behaviors.",
-        "2": "Why option C is WRONG - This option is intentionally left blank and therefore incorrect.",
+        "2": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect.",
         "3": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect."
       },
       "educational": "Motivational interviewing is a client-centered, directive method for enhancing intrinsic motivation to change by exploring and resolving ambivalence. It's crucial in financial planning because lasting behavioral changes, like saving more or reducing debt, are more likely when clients feel ownership of the decision. Understanding and applying motivational interviewing techniques aligns with the CFP Board's emphasis on client psychology and effective communication.",
@@ -3834,8 +3834,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Money scripts are indeed unconscious beliefs about money, often developed in childhood, that significantly shape our financial behaviors and attitudes. These scripts can be positive, negative, or neutral, but they exert a powerful influence on how we manage, save, spend, and invest money.",
-        "1": "Why option B is WRONG - While budgeting spreadsheets are a financial tool, money scripts are unconscious beliefs, not tracking mechanisms.",
-        "2": "Why option C is WRONG - Investment instructions are specific actions, whereas money scripts are underlying beliefs that drive those actions.",
+        "1": "Why option C is WRONG - While budgeting spreadsheets are a financial tool, money scripts are unconscious beliefs, not tracking mechanisms.",
+        "2": "Why option D is WRONG - Investment instructions are specific actions, whereas money scripts are underlying beliefs that drive those actions.",
         "3": "Why option D is WRONG - Written financial plans are the result of conscious planning, not the unconscious beliefs that money scripts represent."
       },
       "educational": "Understanding money scripts is crucial for financial planners because these deeply ingrained beliefs can lead clients to make irrational or self-sabotaging financial decisions. By identifying and addressing these scripts, planners can help clients develop healthier relationships with money and achieve their financial goals. This connects directly to the Psychology of Financial Planning domain, specifically understanding client attitudes and behaviors.",
@@ -3974,8 +3974,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - The endowment effect is a cognitive bias where people place a higher value on things they own simply because they own them. This inflated valuation occurs regardless of the item's objective market value or utility, making option A the correct answer.",
-        "1": "Why option B is WRONG - While seeking advice is generally good, the endowment effect specifically relates to overvaluing possessions, not avoiding decisions altogether.",
-        "2": "Why option C is WRONG - The endowment effect is a *deviation* from rational analysis. This option describes rational behavior, the opposite of the endowment effect.",
+        "1": "Why option C is WRONG - While seeking advice is generally good, the endowment effect specifically relates to overvaluing possessions, not avoiding decisions altogether.",
+        "2": "Why option D is WRONG - The endowment effect is a *deviation* from rational analysis. This option describes rational behavior, the opposite of the endowment effect.",
         "3": "Why option D is WRONG - While people *can* fall prey to believing in continued past performance, that's more closely related to recency bias or representativeness heuristic, not the endowment effect."
       },
       "educational": "The endowment effect arises from our inherent aversion to loss. Giving something up feels like a loss, and we demand more in return to compensate for that perceived loss. Understanding this bias is crucial for financial planners as it impacts investment decisions, estate planning, and even charitable giving strategies.",
@@ -4009,8 +4009,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Facilitating open communication, ensuring equal voice, identifying shared goals, and finding compromise solutions are cornerstones of ethical financial planning with couples. This approach acknowledges the importance of both partners' perspectives and aims to create a unified financial strategy.",
-        "1": "Why option B is WRONG - While recognizing conflict is important, refusing to work with couples is unethical. A CFP professional should facilitate communication, not abandon the clients.",
-        "2": "Why option C is WRONG - Meeting with only one partner excludes the other's perspective and goals, leading to an incomplete and potentially biased financial plan. It also violates the principle of serving both clients.",
+        "1": "Why option C is WRONG - While recognizing conflict is important, refusing to work with couples is unethical. A CFP professional should facilitate communication, not abandon the clients.",
+        "2": "Why option D is WRONG - Meeting with only one partner excludes the other's perspective and goals, leading to an incomplete and potentially biased financial plan. It also violates the principle of serving both clients.",
         "3": "Why option D is WRONG - Financial planning should be equitable and consider the needs and goals of both partners, regardless of income. Favoring one partner is unethical and detrimental to the relationship."
       },
       "educational": "Effective communication is paramount in financial planning, especially when working with couples. Disagreements about money are common, and a CFP® professional's role is to facilitate constructive dialogue, identify shared objectives, and help the couple develop a unified financial plan that aligns with their values and goals. This approach fosters trust and strengthens the client-planner relationship, leading to better financial outcomes.",
@@ -4045,7 +4045,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While some delay may be prudent, indefinitely delaying all decisions is impractical and potentially harmful. A CFP professional should guide the client through the process, not halt it entirely.",
         "1": "Why option B is CORRECT - Understanding the stages of grief (denial, anger, bargaining, depression, acceptance) helps advisors recognize how these emotions can impact a client's decision-making abilities. Clients may not progress linearly through these stages, and their emotional state can significantly influence their risk tolerance, investment choices, and overall financial planning goals.",
-        "2": "Why option C is WRONG - CFP professionals are not therapists and should not provide therapy. While understanding grief is important, it doesn't require therapy certification; instead, it requires empathy and knowing when to refer to a specialist.",
+        "2": "Why option D is WRONG - CFP professionals are not therapists and should not provide therapy. While understanding grief is important, it doesn't require therapy certification; instead, it requires empathy and knowing when to refer to a specialist.",
         "3": "Why option D is WRONG - A client's emotional state significantly impacts their financial decision-making. Ignoring grief is detrimental to providing suitable and ethical financial advice."
       },
       "educational": "Behavioral finance recognizes that emotions significantly impact financial decisions. Understanding the psychological aspects of financial planning, including grief, allows CFP® professionals to provide more empathetic and effective advice. This knowledge aligns with the CFP Board's emphasis on client-centered planning and ethical considerations, ensuring recommendations are suitable and in the client's best interest.",
@@ -4080,7 +4080,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Representativeness leads to ignoring diversification, not focusing on it. The investor is overconfident in their assessment.",
         "1": "Why option B is CORRECT - The representativeness heuristic involves judging the probability of an event based on how similar it is to a stereotype or a mental prototype, while ignoring base rates (actual prevalence) and sample sizes. For example, an investor might believe a new tech company is likely to succeed because it 'looks' like Apple, even if the base rate of tech company success is low and the sample size of successful companies is small.",
-        "2": "Why option C is WRONG - Representativeness relies on gut feeling and similarity, not thorough research. It's a shortcut that avoids due diligence.",
+        "2": "Why option D is WRONG - Representativeness relies on gut feeling and similarity, not thorough research. It's a shortcut that avoids due diligence.",
         "3": "Why option D is WRONG - Representativeness causes misjudging probabilities, not properly evaluating them. It leads to biased and inaccurate assessments."
       },
       "educational": "Behavioral biases like representativeness can significantly impact financial planning. Understanding these biases is crucial for CFPs to help clients make rational decisions, avoid common investment pitfalls, and develop realistic financial plans. Recognizing these biases allows for the implementation of strategies to mitigate their effects, such as encouraging diversification and focusing on objective data.",
@@ -4114,8 +4114,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Empathy involves understanding and sharing the client's feelings from their perspective, putting yourself in their shoes. This fosters a stronger connection and builds trust, which is crucial in financial planning.",
-        "1": "Why option B is WRONG - Sympathy involves feeling sorry, while empathy involves understanding. This option confuses the two concepts.",
-        "2": "Why option C is WRONG - Empathy focuses on understanding the client's feelings, not immediately jumping to solutions. This is more aligned with offering advice.",
+        "1": "Why option C is WRONG - Sympathy involves feeling sorry, while empathy involves understanding. This option confuses the two concepts.",
+        "2": "Why option D is WRONG - Empathy focuses on understanding the client's feelings, not immediately jumping to solutions. This is more aligned with offering advice.",
         "3": "Why option D is WRONG - Empathy requires acknowledging and validating the client's feelings, not dismissing them. Minimizing their concerns is the opposite of empathy."
       },
       "educational": "Empathy is paramount in financial planning because it allows you to build rapport and trust with clients. This trust is essential for open communication, which enables you to understand their goals, values, and concerns, ultimately leading to more effective financial planning recommendations. Understanding a client's emotional state also helps you navigate behavioral biases that could hinder their financial success, aligning with the Psychology of Financial Planning blueprint area.",
@@ -4185,7 +4185,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Outcome bias leads to *over*emphasizing the outcome, not ignoring it. It makes people think the decision was good *because* of the outcome.",
         "1": "Why option B is CORRECT - Outcome bias is the tendency to judge a decision based on its ultimate outcome rather than on the quality of the decision-making process at the time the decision was made. Even if a decision was well-reasoned and based on the best available information, a negative outcome can lead to the decision being judged as poor in hindsight.",
-        "2": "Why option C is WRONG - Outcome bias can lead to *worse* decisions by reinforcing risky behavior that happened to pay off once. It doesn't improve decision-making.",
+        "2": "Why option D is WRONG - Outcome bias can lead to *worse* decisions by reinforcing risky behavior that happened to pay off once. It doesn't improve decision-making.",
         "3": "Why option D is WRONG - Outcome bias focuses on the *outcome*, not the process. It makes people think a bad process was good because of the positive result."
       },
       "educational": "Outcome bias is a cognitive bias that significantly impacts financial decision-making. It violates the principle of rational decision-making, which emphasizes evaluating choices based on expected value and probabilities. Understanding outcome bias is crucial for CFP® professionals to help clients avoid making investment decisions based solely on past performance or lucky outcomes, promoting more robust and sustainable financial plans.",
@@ -4289,8 +4289,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Automation, commitment devices, and pre-commitment strategies are all behavioral interventions designed to help clients overcome self-control issues by structuring their environment to support better decisions. These techniques reduce reliance on willpower and promote consistent, goal-oriented behavior, aligning with the principles of behavioral finance.",
-        "1": "Why option B is WRONG - Ignoring the problem is a maladaptive coping mechanism and does not address the underlying behavioral issues hindering John's savings.",
-        "2": "Why option C is WRONG - Punishment can lead to demotivation and a negative association with saving, potentially exacerbating the problem and leading to avoidance.",
+        "1": "Why option C is WRONG - Ignoring the problem is a maladaptive coping mechanism and does not address the underlying behavioral issues hindering John's savings.",
+        "2": "Why option D is WRONG - Punishment can lead to demotivation and a negative association with saving, potentially exacerbating the problem and leading to avoidance.",
         "3": "Why option D is WRONG - Willpower is a finite resource and is not a reliable long-term strategy for overcoming behavioral biases that impede saving."
       },
       "educational": "Behavioral finance recognizes that individuals are not always rational actors and often make decisions based on emotions, biases, and heuristics. Understanding these tendencies allows financial planners to implement strategies that nudge clients towards better financial outcomes. By leveraging concepts like loss aversion and present bias, planners can design interventions that promote saving, investing, and long-term financial well-being.",
@@ -4325,7 +4325,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This is wrong because cultural competence involves understanding and adapting to diverse cultures, not limiting oneself to a single culture. It also limits the potential client base.",
         "1": "Why option B is CORRECT - Cultural competence involves understanding that cultural backgrounds significantly shape individuals' financial perspectives. Recognizing these influences on attitudes toward debt, family obligations, risk tolerance, and communication styles allows for tailored and effective financial advice.",
-        "2": "Why option C is WRONG - This is wrong because avoiding diverse clients is discriminatory and unethical. Financial planning should be accessible to everyone, regardless of their background.",
+        "2": "Why option D is WRONG - This is wrong because avoiding diverse clients is discriminatory and unethical. Financial planning should be accessible to everyone, regardless of their background.",
         "3": "Why option D is WRONG - This is wrong because a one-size-fits-all approach ignores the unique needs and values shaped by cultural backgrounds, leading to ineffective or inappropriate financial plans."
       },
       "educational": "Cultural competence is crucial in financial planning because cultural values deeply influence financial behaviors and attitudes. Understanding these differences allows financial planners to build stronger client relationships, provide more relevant advice, and avoid misunderstandings that could lead to poor financial outcomes. This competence is essential for upholding the CFP Board's ethical standards and providing client-centric advice.",
@@ -4360,7 +4360,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While a sudden shift in risk tolerance *could* be a sign, it's not definitive. Clients can change their minds for valid reasons, and further investigation is needed before assuming cognitive decline.",
         "1": "Why option B is CORRECT - Pattern changes such as repeated questions, unusual transactions, confusion about holdings, or personality changes are all potential red flags for cognitive decline. These behaviors represent a deviation from the client's established baseline and warrant further investigation and potential intervention to protect the client's best interests.",
-        "2": "Why option C is WRONG - Clients are allowed to disagree with recommendations. Cognitive decline is indicated by *inability* to understand or articulate disagreement, not the disagreement itself.",
+        "2": "Why option D is WRONG - Clients are allowed to disagree with recommendations. Cognitive decline is indicated by *inability* to understand or articulate disagreement, not the disagreement itself.",
         "3": "Why option D is WRONG - Everyone forgets appointments occasionally. A single instance is not indicative of cognitive decline without other accompanying symptoms or patterns."
       },
       "educational": "Recognizing signs of cognitive decline is crucial for financial planners to uphold their fiduciary duty and protect vulnerable clients. Cognitive decline can significantly impair a client's ability to make sound financial decisions, making them susceptible to fraud and poor choices. Understanding these warning signs allows planners to take appropriate action, such as involving trusted contacts or seeking professional medical evaluations, while balancing client autonomy with protection.",
@@ -5060,7 +5060,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Cognitive dissonance describes mental discomfort from conflicting beliefs, not necessarily the root of avoiding financial conversations due to childhood experiences. While it *could* be present, financial socialization is a more direct explanation.",
         "1": "Why option B is CORRECT - Financial socialization refers to the process by which individuals learn about money and develop attitudes, values, and behaviors related to it. Money scripts are unconscious beliefs about money that are formed in childhood and influence adult financial behavior. The client's avoidance of financial conversations directly stems from the lack of open discussion in their childhood home, making this the best explanation.",
-        "2": "Why option C is WRONG - Overconfidence bias relates to an inflated sense of one's own abilities, which doesn't directly explain avoidance rooted in childhood experiences. The scenario describes avoidance, not necessarily overconfidence.",
+        "2": "Why option D is WRONG - Overconfidence bias relates to an inflated sense of one's own abilities, which doesn't directly explain avoidance rooted in childhood experiences. The scenario describes avoidance, not necessarily overconfidence.",
         "3": "Why option D is WRONG - The anchoring effect is a cognitive bias related to relying too heavily on an initial piece of information, and is not the primary driver of the described behavior. The scenario is about learned behavior, not a specific numerical bias."
       },
       "educational": "Financial socialization is a key concept in understanding client behavior. Early experiences with money, particularly within the family, shape attitudes and habits that can persist into adulthood. Recognizing these influences allows financial planners to tailor their communication and advice to address potential biases or anxieties related to money.",
@@ -5268,8 +5268,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - The sunk cost fallacy describes the tendency to continue investing in a losing proposition because of the resources already invested, even if future prospects are poor; the client's statement directly reflects this bias.",
-        "1": "Why option B is WRONG - Risk aversion is a general dislike of risk, not specifically clinging to losing investments due to past costs. The sunk cost fallacy is the specific bias at play here.",
-        "2": "Why option C is WRONG - While analysis is important, considering sunk costs in the decision-making process is irrational. A truly rational analysis would ignore unrecoverable costs.",
+        "1": "Why option C is WRONG - Risk aversion is a general dislike of risk, not specifically clinging to losing investments due to past costs. The sunk cost fallacy is the specific bias at play here.",
+        "2": "Why option D is WRONG - While analysis is important, considering sunk costs in the decision-making process is irrational. A truly rational analysis would ignore unrecoverable costs.",
         "3": "Why option D is WRONG - While tax planning is important, letting tax considerations override sound investment decisions is not effective. The sunk cost fallacy is driving the decision, not tax strategy."
       },
       "educational": "The sunk cost fallacy highlights how emotions and past experiences can cloud rational decision-making. Understanding behavioral biases like this is crucial for financial planners because it allows them to identify and address irrational client behaviors, ultimately leading to better financial outcomes. This connects to the broader exam topics of client psychology and communication, emphasizing the importance of understanding how clients think and feel about their money.",
@@ -5302,8 +5302,8 @@
       "version": 2,
       "status": "approved",
       "whyWrong": {
-        "1": "Why option B is WRONG - Mental accounting is related, but the 'house money effect' is a specific type of mental accounting where prior gains are treated differently.",
-        "2": "Why option C is WRONG - While the investor may be reallocating, goal-based investing doesn't explain the sudden shift to aggressive risk-taking after an inheritance. It's about aligning investments with goals, not necessarily taking on more risk.",
+        "1": "Why option C is WRONG - Mental accounting is related, but the 'house money effect' is a specific type of mental accounting where prior gains are treated differently.",
+        "2": "Why option D is WRONG - While the investor may be reallocating, goal-based investing doesn't explain the sudden shift to aggressive risk-taking after an inheritance. It's about aligning investments with goals, not necessarily taking on more risk.",
         "3": "Why option D is WRONG - Improved financial sophistication would likely lead to *more* rational risk assessment, not a sudden, unexplained increase in risk tolerance. It doesn't explain the behavioral bias at play.",
         "B": "Improved financial sophistication is incorrect because suddenly taking aggressive risks after an inheritance, especially for a conservative investor, suggests the opposite. Sophistication implies understanding risk, not ignoring it.",
         "C": "Proper diversification is incorrect because the scenario describes a shift towards aggressive risks, which is generally the opposite of diversification. Diversification aims to reduce risk, not increase it.",
@@ -5445,8 +5445,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Active listening is a crucial communication skill involving focused attention, comprehension, thoughtful responses, and retention of key information. It fosters trust and understanding, which is essential for building strong client relationships and gathering accurate financial data.",
-        "1": "Why option B is WRONG - Active listening requires focusing on the speaker, not preparing your own response. This approach neglects understanding the client's full message and adapting advice accordingly.",
-        "2": "Why option C is WRONG - While building rapport is important, agreeing with everything is unethical and potentially harmful. A financial advisor must provide objective advice, even if it conflicts with the client's initial ideas.",
+        "1": "Why option C is WRONG - Active listening requires focusing on the speaker, not preparing your own response. This approach neglects understanding the client's full message and adapting advice accordingly.",
+        "2": "Why option D is WRONG - While building rapport is important, agreeing with everything is unethical and potentially harmful. A financial advisor must provide objective advice, even if it conflicts with the client's initial ideas.",
         "3": "Why option D is WRONG - While note-taking can be helpful, it's not a substitute for active engagement. Active listening involves both understanding and responding, not just recording information."
       },
       "educational": "Effective client communication, including active listening, is paramount in financial planning. It allows the planner to understand the client's values, goals, and concerns, which are essential for developing a suitable financial plan. This aligns with the CFP Board's Standards of Conduct, particularly the duty to act in the client's best interest.",
@@ -5481,7 +5481,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Empathy is crucial for building rapport and understanding client needs, leading to better long-term planning and retention. Focusing solely on quantitative data neglects the emotional aspect of financial decisions.",
         "1": "Why option B is CORRECT - Empathy statements acknowledge the client's emotional state and demonstrate that you understand their perspective. This fosters trust and strengthens the client-planner relationship, even when a direct solution to their problem isn't immediately available. Building this psychological safety is crucial for open communication and effective planning.",
-        "2": "Why option C is WRONG - Documenting client emotions is a standard practice and does not inherently create liability. Building a strong client relationship through empathy can actually reduce the risk of future disputes.",
+        "2": "Why option D is WRONG - Documenting client emotions is a standard practice and does not inherently create liability. Building a strong client relationship through empathy can actually reduce the risk of future disputes.",
         "3": "Why option D is WRONG - Empathy demonstrates emotional intelligence and strengthens the client-advisor relationship. Clients are more likely to trust and follow advice from someone who understands their concerns."
       },
       "educational": "Empathy is a crucial component of effective client communication and falls under the broader domain of behavioral finance. Understanding a client's emotional biases and responding with empathy allows the planner to tailor advice and build a stronger, more trusting relationship. This leads to better client outcomes and a more successful financial planning engagement, aligning with the CFP Board's emphasis on client-centered advice.",
@@ -5515,8 +5515,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Gradual exposure, simplified information, and celebrating small progress directly address the core issues of financial anxiety. This approach reduces overwhelm, builds confidence, and reinforces positive behaviors, aligning with best practices in behavioral finance.",
-        "1": "Why option B is WRONG - More complex strategies will likely exacerbate financial anxiety, not alleviate it. Clients with anxiety need simplification, not further complication.",
-        "2": "Why option C is WRONG - Ignoring concerns invalidates the client's feelings and prevents building trust. A financial plan should address emotional needs as well as financial ones.",
+        "1": "Why option C is WRONG - More complex strategies will likely exacerbate financial anxiety, not alleviate it. Clients with anxiety need simplification, not further complication.",
+        "2": "Why option D is WRONG - Ignoring concerns invalidates the client's feelings and prevents building trust. A financial plan should address emotional needs as well as financial ones.",
         "3": "Why option D is WRONG - Criticizing past decisions will increase anxiety and damage the client-advisor relationship. A supportive and forward-looking approach is necessary."
       },
       "educational": "Financial anxiety can significantly impair a client's ability to make sound financial decisions. Understanding behavioral biases, such as loss aversion and the availability heuristic, is crucial for addressing these anxieties. By employing techniques like framing information positively and focusing on achievable goals, a CFP® professional can help clients overcome their fears and build a more secure financial future, aligning with the Psychology of Financial Planning section of the CFP® exam.",
@@ -5550,8 +5550,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Financial infidelity encompasses behaviors like hiding accounts, debts, or spending habits from a partner. This secrecy undermines trust and open communication, which are essential for a healthy financial partnership and effective financial planning.",
-        "1": "Why option B is WRONG - While late payments are a financial issue, the core problem is the *secrecy* and lack of transparency, not the late payments themselves.",
-        "2": "Why option C is WRONG - Writing bad checks is a symptom of poor financial management, but the question highlights the *hidden* debt, not the mechanics of payment.",
+        "1": "Why option C is WRONG - While late payments are a financial issue, the core problem is the *secrecy* and lack of transparency, not the late payments themselves.",
+        "2": "Why option D is WRONG - Writing bad checks is a symptom of poor financial management, but the question highlights the *hidden* debt, not the mechanics of payment.",
         "3": "Why option D is WRONG - Poor investment returns are a separate financial risk and do not address the underlying issue of deception and lack of communication."
       },
       "educational": "Financial infidelity erodes the foundation of trust in a relationship, making collaborative financial planning nearly impossible. As a CFP professional, recognizing the signs of financial infidelity is crucial because it directly impacts your ability to develop and implement a comprehensive financial plan that aligns with the couple's shared goals and values. Addressing these underlying issues, often through facilitating open communication or suggesting couples therapy, is essential for successful financial planning.",
@@ -5586,7 +5586,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Risk tolerance is dynamic and can change due to life events or market conditions; it should be revisited periodically.",
         "1": "Why option B is CORRECT - A comprehensive risk tolerance assessment combines quantitative data from questionnaires with qualitative insights gained through conversations. Exploring past experiences, current feelings, and hypothetical scenarios provides a holistic understanding of a client's true risk tolerance, aligning with the CFP Board's emphasis on understanding the client's circumstances.",
-        "2": "Why option C is WRONG - Questionnaires alone are insufficient; conversations are needed to understand the nuances of a client's risk tolerance and past experiences.",
+        "2": "Why option D is WRONG - Questionnaires alone are insufficient; conversations are needed to understand the nuances of a client's risk tolerance and past experiences.",
         "3": "Why option D is WRONG - Age is a factor, but it is not the only determinant of risk tolerance; individual circumstances and preferences must be considered."
       },
       "educational": "Risk tolerance assessment is a cornerstone of the financial planning process. Accurately gauging a client's risk tolerance is essential for constructing suitable investment portfolios and managing expectations during market fluctuations. The CFP Board emphasizes a holistic approach to understanding clients, incorporating both quantitative and qualitative data to ensure recommendations align with their values and goals.",
@@ -5621,7 +5621,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Option A is incomplete and grammatically incorrect. Without the full text of the option, it's impossible to determine the specific reason it's wrong, but the provided fragment suggests it doesn't fully capture the importance of life stage in financial planning.",
         "1": "Why option B is CORRECT - Life stage significantly influences financial priorities, goals, and risk tolerance. A young adult focused on debt repayment and career building has vastly different needs than a retiree focused on income generation and estate planning. Understanding a client's life stage allows for tailored advice and recommendations.",
-        "2": "Why option C is WRONG - Option C is incomplete and grammatically incorrect. Without the full text of the option, it's impossible to determine the specific reason it's wrong, but the provided fragment suggests it doesn't fully capture the importance of life stage in financial planning.",
+        "2": "Why option D is WRONG - Option C is incomplete and grammatically incorrect. Without the full text of the option, it's impossible to determine the specific reason it's wrong, but the provided fragment suggests it doesn't fully capture the importance of life stage in financial planning.",
         "3": "Why option D is WRONG - Option D is incomplete and grammatically incorrect. Without the full text of the option, it's impossible to determine the specific reason it's wrong, but the provided fragment suggests it doesn't fully capture the importance of life stage in financial planning."
       },
       "educational": "Life stage assessment is crucial because financial needs and goals evolve throughout life. Ignoring life stage can lead to inappropriate investment strategies, inadequate insurance coverage, or insufficient retirement planning. This concept is directly related to understanding client values and goals, a core component of the financial planning process as outlined by the CFP Board.",
@@ -5726,7 +5726,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Familiarity bias leads to *under*diversification, not proper diversification. Investors overestimate their knowledge of familiar companies.",
         "1": "Why option B is CORRECT - Familiarity bias is the tendency to invest in what is known and comfortable. This often manifests as overweighting domestic stocks (home country bias), employer stock (due to familiarity with the company), or industries the investor understands, leading to a lack of diversification and increased risk.",
-        "2": "Why option C is WRONG - Familiarity bias doesn't necessarily lead to only investing in index funds; it's about favoring what's known, which could be individual stocks or specific sectors.",
+        "2": "Why option D is WRONG - Familiarity bias doesn't necessarily lead to only investing in index funds; it's about favoring what's known, which could be individual stocks or specific sectors.",
         "3": "Why option D is WRONG - Familiarity bias is about favoring the familiar, not necessarily avoiding all stocks. It's about *overweighting* familiar investments, not avoiding the entire asset class."
       },
       "educational": "Familiarity bias is a cognitive bias where investors favor investments they are familiar with, often leading to suboptimal portfolio construction. This bias stems from the feeling of control and reduced uncertainty associated with the known. Understanding and mitigating familiarity bias is crucial for CFP® professionals to help clients achieve diversified portfolios aligned with their risk tolerance and financial goals, as required by the Practice Standards.",
@@ -5761,7 +5761,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Ignoring a significant loss erodes trust and is a dereliction of fiduciary duty. Clients need to be informed, even about bad news.",
         "1": "Why option B is CORRECT - Delivering difficult financial news with directness, compassion, and empathy is essential for maintaining client trust and fostering a strong planner-client relationship. Acknowledging the emotional impact validates the client's feelings, while focusing on constructive next steps empowers them to take control of the situation and move forward. This approach aligns with the CFP Board's Standards of Conduct, which emphasize acting with integrity and objectivity.",
-        "2": "Why option C is WRONG - Downplaying a client's losses can make them feel unheard and invalidate their concerns. It avoids addressing the real issue and potential adjustments needed.",
+        "2": "Why option D is WRONG - Downplaying a client's losses can make them feel unheard and invalidate their concerns. It avoids addressing the real issue and potential adjustments needed.",
         "3": "Why option D is WRONG - While market conditions are a factor, blaming them entirely avoids accountability and prevents a constructive discussion about portfolio adjustments or risk tolerance."
       },
       "educational": "Effective communication is a cornerstone of financial planning. Delivering difficult news requires a balance of honesty and empathy. By acknowledging the client's emotions and focusing on actionable steps, planners can help clients navigate challenging situations while strengthening the planner-client relationship. This aligns with the CFP Board's emphasis on building trust and acting in the client's best interest.",
@@ -5795,8 +5795,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Nonverbal cues are a crucial part of communication, often revealing underlying emotions and thoughts that clients may not explicitly verbalize. Paying attention to body language, facial expressions, and tone allows a financial planner to better understand a client's true feelings and adjust their approach accordingly, fostering trust and a stronger client-planner relationship.",
-        "1": "Why option B is WRONG - Nonverbal cues provide valuable insight into a client's feelings and comfort level, which can impact the planning process. Ignoring them means missing important information.",
-        "2": "Why option C is WRONG - While objectivity is important, ignoring nonverbal cues can lead to misunderstandings and a failure to build rapport, hindering the planning process.",
+        "1": "Why option C is WRONG - Nonverbal cues provide valuable insight into a client's feelings and comfort level, which can impact the planning process. Ignoring them means missing important information.",
+        "2": "Why option D is WRONG - While objectivity is important, ignoring nonverbal cues can lead to misunderstandings and a failure to build rapport, hindering the planning process.",
         "3": "Why option D is WRONG - While salespeople use nonverbal cues, they are also crucial for financial planners to understand client concerns and build trust, leading to better outcomes."
       },
       "educational": "Effective communication is paramount in financial planning, and nonverbal cues are a significant component. Understanding these cues allows planners to tailor their approach, build stronger relationships, and ultimately provide more suitable advice. This skill is crucial for adhering to the CFP Board's Standards of Conduct, which emphasize acting in the client's best interest and communicating effectively.",
@@ -5830,8 +5830,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Financial shame is characterized by feelings of embarrassment and inadequacy regarding one's financial situation. These feelings often lead to avoidance behaviors like hiding debts, missing meetings, and resisting discussions about sensitive financial topics as a defense mechanism.",
-        "1": "Why option B is WRONG - Clients experiencing financial shame are more likely to hide information than to immediately disclose everything. Shame creates a barrier to open communication.",
-        "2": "Why option C is WRONG - Financial shame often leads to secrecy and avoidance, making full transparency unlikely. The emotional burden prevents open communication.",
+        "1": "Why option C is WRONG - Clients experiencing financial shame are more likely to hide information than to immediately disclose everything. Shame creates a barrier to open communication.",
+        "2": "Why option D is WRONG - Financial shame often leads to secrecy and avoidance, making full transparency unlikely. The emotional burden prevents open communication.",
         "3": "Why option D is WRONG - While some might rush decisions, financial shame more often leads to avoidance and procrastination, not necessarily quick decisions. Shame often causes paralysis, not speed."
       },
       "educational": "Financial psychology recognizes that emotions significantly impact financial decision-making. Shame, a powerful negative emotion, can lead to maladaptive financial behaviors, hindering clients from seeking help and achieving their financial goals. Understanding these psychological barriers is crucial for financial planners to build trust and provide effective guidance, aligning with the CFP Board's emphasis on client-centered advice.",
@@ -5866,7 +5866,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Financial trauma typically leads to decreased, not increased, risk tolerance due to fear of repeating past mistakes. While some might feel they've 'hit rock bottom,' this rarely translates to healthy risk-taking.",
         "1": "Why option B is CORRECT - Financial trauma can create deep-seated anxiety and avoidance behaviors related to money. These responses are often rooted in fear of repeating past negative experiences and can manifest as overcautious or risk-averse behavior, even years later. This aligns with behavioral finance principles regarding how past experiences shape future financial decisions.",
-        "2": "Why option C is WRONG - Financial trauma can have significant and lasting psychological effects, influencing financial decisions and behaviors for years. To suggest no lasting effects is inaccurate and dismissive of the impact of trauma.",
+        "2": "Why option D is WRONG - Financial trauma can have significant and lasting psychological effects, influencing financial decisions and behaviors for years. To suggest no lasting effects is inaccurate and dismissive of the impact of trauma.",
         "3": "Why option D is WRONG - Trauma often impairs rational decision-making, leading to emotional responses rather than objective analysis. Expecting immediate rationality after a bankruptcy is unrealistic and contradicts established behavioral finance principles."
       },
       "educational": "Financial psychology acknowledges that past experiences, especially traumatic ones, significantly influence an individual's financial behavior. Understanding these psychological impacts is crucial for financial planners to effectively address clients' needs and provide tailored advice. Ignoring these factors can lead to inappropriate recommendations and hinder the client's progress toward their financial goals, potentially violating the 'Act in the Client's Best Interest' standard.",
@@ -5901,7 +5901,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Fees should be based on the services provided and the planner's expertise, not solely on the client's perceived financial complexity. While complexity can influence time spent, it's not the primary driver of fee structure.",
         "1": "Why option B is CORRECT - Assessing a client's financial knowledge is crucial for effective communication. It allows the planner to tailor explanations to the client's level of understanding, identify areas where education is needed, and avoid making assumptions that could lead to confusion or mistrust. This aligns with the CFP Board's Standards of Conduct regarding communication and diligence.",
-        "2": "Why option C is WRONG - A planner's role is not to judge a client's intelligence. The focus should be on providing clear and understandable explanations, regardless of perceived intelligence levels. Judging intelligence is unethical and irrelevant.",
+        "2": "Why option D is WRONG - A planner's role is not to judge a client's intelligence. The focus should be on providing clear and understandable explanations, regardless of perceived intelligence levels. Judging intelligence is unethical and irrelevant.",
         "3": "Why option D is WRONG - Investment returns cannot be determined or guaranteed based on risk tolerance and time horizon. These factors help guide investment strategy, but market performance ultimately dictates returns. This option confuses risk assessment with return prediction."
       },
       "educational": "Understanding a client's financial knowledge is a cornerstone of ethical and effective financial planning. It directly impacts the planner's ability to communicate recommendations clearly and build a trusting relationship. This aligns with the CFP Board's Practice Standards, which emphasize understanding the client's current financial situation and developing suitable recommendations. Failing to assess knowledge can lead to misunderstandings, inappropriate advice, and ultimately, a breach of fiduciary duty.",
@@ -5935,8 +5935,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Choice overload, also known as the paradox of choice, describes the cognitive difficulty and anxiety that arises when individuals are presented with too many options. This often leads to decision paralysis, procrastination, or selecting a default option to avoid the effort of evaluating all available choices.",
-        "1": "Why option B is WRONG - While a perception of control might initially exist, choice overload typically leads to decreased satisfaction. The complexity outweighs the perceived benefit.",
-        "2": "Why option C is WRONG - Choice overload often leads to decision fatigue and the use of simplifying heuristics, resulting in suboptimal choices, not better ones.",
+        "1": "Why option C is WRONG - While a perception of control might initially exist, choice overload typically leads to decreased satisfaction. The complexity outweighs the perceived benefit.",
+        "2": "Why option D is WRONG - Choice overload often leads to decision fatigue and the use of simplifying heuristics, resulting in suboptimal choices, not better ones.",
         "3": "Why option D is WRONG - Humans are rarely able to consistently pick the objectively 'best' option when faced with excessive choices and complex information."
       },
       "educational": "Choice overload highlights the importance of understanding behavioral biases in financial planning. Clients often struggle with complex decisions involving numerous options, such as investment choices or insurance policies. As a financial planner, you must simplify the decision-making process by curating options, providing clear recommendations, and focusing on the client's specific goals and risk tolerance. This aligns with the CFP Board's emphasis on client-centered advice and fiduciary duty.",
@@ -6041,7 +6041,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Analytical clients value data and logical reasoning, not gut feelings or speed. This describes an intuitive decision-making style.",
         "1": "Why option B is CORRECT - Analytical decision-makers thrive on information. They need comprehensive data, sufficient time to analyze options, and clear, logical explanations to feel confident in their decisions. This aligns with their preference for a structured and evidence-based approach.",
-        "2": "Why option C is WRONG - Analytical clients thrive on analysis and data. Avoiding analysis is the opposite of their preferred approach.",
+        "2": "Why option D is WRONG - Analytical clients thrive on analysis and data. Avoiding analysis is the opposite of their preferred approach.",
         "3": "Why option D is WRONG - While some clients may make independent decisions, analytical clients still value expert advice and thorough planning, even if they ultimately make the final decision themselves."
       },
       "educational": "Understanding client decision-making styles is crucial for effective financial planning. Recognizing whether a client is analytical, intuitive, directive, or conceptual allows you to tailor your communication and recommendations to their preferences. This builds trust and increases the likelihood of successful plan implementation, aligning with the CFP Board's emphasis on client-centered advice.",
@@ -6075,8 +6075,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - The need for control, or autonomy, is a fundamental psychological driver. When clients feel their control is threatened by prescriptive advice, they are likely to resist it, even if the advice is objectively sound. This resistance stems from a desire to maintain agency over their own financial lives.",
-        "1": "Why option B is WRONG - While active management *can* lead to better outcomes, the need for control doesn't guarantee it and can lead to poor decisions. It's not a reliable outcome.",
-        "2": "Why option C is WRONG - The need for control can make clients *less* agreeable, especially if the advice challenges their existing beliefs. It can lead to confirmation bias and resistance.",
+        "1": "Why option C is WRONG - While active management *can* lead to better outcomes, the need for control doesn't guarantee it and can lead to poor decisions. It's not a reliable outcome.",
+        "2": "Why option D is WRONG - The need for control can make clients *less* agreeable, especially if the advice challenges their existing beliefs. It can lead to confirmation bias and resistance.",
         "3": "Why option D is WRONG - The need for control often leads to clients questioning or modifying advice, not blindly following it. It can create conflict and hinder implementation."
       },
       "educational": "The need for control is a core psychological driver that significantly impacts financial planning. Clients want to feel like they are actively participating in and directing their financial future. Ignoring this need can lead to resistance, distrust, and ultimately, failure to implement the financial plan. Understanding this principle is crucial for effective client communication and building strong, collaborative relationships, aligning with the CFP Board's emphasis on client-centered planning.",
@@ -6110,8 +6110,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Regret aversion is the emotional pain experienced when realizing, in retrospect, that a decision was wrong. To minimize this potential pain, individuals may avoid making decisions altogether (inaction) or choose options that are perceived as 'safe' and widely accepted (conventional choices), as these choices are less likely to be criticized even if they turn out poorly.",
-        "1": "Why option B is WRONG - Regret aversion can lead to chasing performance, but it doesn't always manifest as *only* buying growth stocks. It's a broader behavioral bias.",
-        "2": "Why option C is WRONG - While regret aversion can sometimes lead to risk-averse behavior, it can also cause investors to double down on losing positions in an attempt to avoid admitting they were wrong, leading to excessive risk.",
+        "1": "Why option C is WRONG - Regret aversion can lead to chasing performance, but it doesn't always manifest as *only* buying growth stocks. It's a broader behavioral bias.",
+        "2": "Why option D is WRONG - While regret aversion can sometimes lead to risk-averse behavior, it can also cause investors to double down on losing positions in an attempt to avoid admitting they were wrong, leading to excessive risk.",
         "3": "Why option D is WRONG - Regret aversion might cause investors to avoid selling losing positions, but it doesn't necessarily mean they will *never* rebalance. They might rebalance around the losing position."
       },
       "educational": "Regret aversion is a powerful emotional bias that can significantly impact investment decisions. Understanding this bias is crucial for financial planners because it can lead clients to make suboptimal choices, such as holding onto losing investments too long or missing out on potential gains due to fear of making the wrong decision. Addressing regret aversion involves educating clients about the inherent uncertainty of investing and focusing on a well-defined, long-term financial plan.",
@@ -6216,7 +6216,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Sugarcoating or avoiding the topic erodes trust and prevents clients from making informed decisions based on the complete picture. Transparency is crucial, even when delivering bad news.",
         "1": "Why option B is CORRECT - Delivering difficult financial news effectively involves a balance of directness, compassion, and a focus on solutions. Acknowledging the client's emotional response validates their feelings and fosters trust. Providing actionable steps empowers them to regain control and move forward, aligning with the CFP Board's emphasis on client-centered advice.",
-        "2": "Why option C is WRONG - Blaming external factors avoids accountability and doesn't address the underlying portfolio strategy or potential adjustments needed. Clients need to understand the plan moving forward, not just excuses.",
+        "2": "Why option D is WRONG - Blaming external factors avoids accountability and doesn't address the underlying portfolio strategy or potential adjustments needed. Clients need to understand the plan moving forward, not just excuses.",
         "3": "Why option D is WRONG - Delegating difficult conversations can appear unprofessional and uncaring, damaging the client relationship. The CFP should be directly involved in delivering important news."
       },
       "educational": "Effective communication is a cornerstone of financial planning. Delivering difficult news requires empathy, clarity, and a focus on solutions. Understanding behavioral finance principles, such as loss aversion and emotional biases, helps planners anticipate client reactions and tailor their communication accordingly. This skill is essential for building long-term client relationships and navigating challenging financial situations.",
@@ -6250,8 +6250,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Financial denial is characterized by avoidance behaviors related to one's financial situation. Avoiding account statements, not opening bills, and refusing to discuss financial problems are all classic examples of this avoidance, indicating a reluctance to face financial reality.",
-        "1": "Why option B is WRONG - Checking accounts daily, while potentially indicative of anxiety, is not inherently a denial behavior. It's more aligned with obsessive behavior, not avoidance.",
-        "2": "Why option C is WRONG - Aggressive saving, while potentially unbalanced, is generally a positive financial behavior, not a form of denial. Financial denial involves avoiding financial realities, not excessive saving.",
+        "1": "Why option C is WRONG - Checking accounts daily, while potentially indicative of anxiety, is not inherently a denial behavior. It's more aligned with obsessive behavior, not avoidance.",
+        "2": "Why option D is WRONG - Aggressive saving, while potentially unbalanced, is generally a positive financial behavior, not a form of denial. Financial denial involves avoiding financial realities, not excessive saving.",
         "3": "Why option D is WRONG - Detailed budgeting, while potentially stressful if taken to an extreme, is a proactive financial management technique, not a form of denial. Denial involves avoidance, not engagement."
       },
       "educational": "Financial denial is a defense mechanism often rooted in fear or anxiety about one's financial situation. Understanding these psychological barriers is crucial for financial planners because clients exhibiting denial may resist planning or implementing advice until the underlying emotional issues are addressed. This connects to the Psychology of Financial Planning blueprint area, emphasizing the importance of client communication and behavioral finance.",
@@ -6285,8 +6285,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Compulsive spending disorder is characterized by an uncontrollable urge to spend money as a means of emotional relief. This behavior is often driven by underlying emotional issues and leads to significant financial distress, making it the most accurate description.",
-        "1": "Why option B is WRONG - Careful budgeting is the opposite of compulsive spending, which involves a lack of control and planning.",
-        "2": "Why option C is WRONG - While excessive saving can be a psychological issue, it doesn't directly relate to compulsive *spending* disorder.",
+        "1": "Why option C is WRONG - Careful budgeting is the opposite of compulsive spending, which involves a lack of control and planning.",
+        "2": "Why option D is WRONG - While excessive saving can be a psychological issue, it doesn't directly relate to compulsive *spending* disorder.",
         "3": "Why option D is WRONG - Investment addiction is a separate issue from compulsive spending disorder, focusing on risky investments rather than general overspending."
       },
       "educational": "Understanding the psychology of financial planning is crucial because clients' behaviors are often driven by emotions and biases. Compulsive spending, rooted in emotional needs, highlights the importance of recognizing when a client's financial issues stem from deeper psychological factors. Addressing these underlying issues is often necessary before effective financial planning can take place, aligning with the CFP Board's emphasis on holistic client care.",
@@ -6321,7 +6321,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While some studies suggest men *may* exhibit higher risk tolerance on average, it's not universal, and generalizations are dangerous. Overconfidence is a potential factor, but not the sole driver.",
         "1": "Why option B is CORRECT - Research indicates that there are often observed differences in risk preferences and confidence levels between genders, with women sometimes exhibiting slightly more risk aversion and men sometimes exhibiting overconfidence. However, the key is that these are *tendencies* and that individual variation is far greater than any gender-based average. Financial planning must be tailored to the individual, not stereotypes.",
-        "2": "Why option C is WRONG - Numerous studies have identified differences in risk preferences, confidence levels, and investment approaches between genders, even if individual variation is significant.",
+        "2": "Why option D is WRONG - Numerous studies have identified differences in risk preferences, confidence levels, and investment approaches between genders, even if individual variation is significant.",
         "3": "Why option D is WRONG - While women *may* lean towards more conservative strategies on average, it's not a universal trait. Many women are successful aggressive investors, and generalizations are inaccurate."
       },
       "educational": "Understanding gender differences in financial behavior is crucial for effective client communication and planning. While studies may reveal average differences in risk tolerance or confidence levels, it's vital to avoid stereotyping. Cultural conditioning and societal expectations often influence financial attitudes, but individual circumstances and goals should always be the primary focus of the financial plan. This connects to the broader exam topics of behavioral finance and client psychology.",
@@ -6356,7 +6356,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - A questionnaire score alone is insufficient as it only captures stated preferences, not actual behavior or capacity. A comprehensive assessment requires a more holistic view.",
         "1": "Why option B is CORRECT - A comprehensive risk assessment considers multiple dimensions of risk, including risk tolerance (emotional comfort), risk capacity (financial ability), risk perception (understanding of risks), and risk composure (behavior under stress). Evaluating these factors together provides a holistic understanding of the client's true risk profile, allowing for more suitable financial planning recommendations. Ignoring any of these factors can lead to inappropriate investment strategies.",
-        "2": "Why option C is WRONG - Past returns are backward-looking and don't guarantee future performance or reflect the client's ability to handle potential losses. Risk capacity and goals must also be considered.",
+        "2": "Why option D is WRONG - Past returns are backward-looking and don't guarantee future performance or reflect the client's ability to handle potential losses. Risk capacity and goals must also be considered.",
         "3": "Why option D is WRONG - Age is a factor, but focusing solely on it ignores individual risk tolerance, financial situation, and psychological factors. A complete risk profile needs a broader perspective."
       },
       "educational": "Understanding a client's risk profile is crucial for creating suitable financial plans. Risk tolerance reflects emotional comfort, while risk capacity is the financial ability to take risk. Risk perception is how the client views specific risks, and risk composure is their behavior under stress. These factors interact and can conflict, requiring careful consideration to balance client preferences with financial realities, aligning with the CFP Board's Practice Standards regarding reasonable basis and suitability.",
@@ -6390,8 +6390,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Assessing a client's financial knowledge allows the financial planner to tailor their communication style and complexity to the client's level of understanding. It also helps identify areas where the client needs further education to make informed financial decisions, aligning with the CFP Board's emphasis on client best interest and suitability.",
-        "1": "Why option B is WRONG - Fees should be based on services provided and assets managed, not on a client's perceived sophistication. This would be unethical and potentially illegal.",
-        "2": "Why option C is WRONG - Client knowledge is crucial for all aspects of financial planning, not just investment selection. Ignoring other areas leads to incomplete advice.",
+        "1": "Why option C is WRONG - Fees should be based on services provided and assets managed, not on a client's perceived sophistication. This would be unethical and potentially illegal.",
+        "2": "Why option D is WRONG - Client knowledge is crucial for all aspects of financial planning, not just investment selection. Ignoring other areas leads to incomplete advice.",
         "3": "Why option D is WRONG - Detailed explanations are crucial for informed consent and client understanding. Avoiding them is unethical and potentially harmful, even if it seems more efficient."
       },
       "educational": "Understanding a client's financial literacy is paramount in financial planning. It directly impacts the effectiveness of communication and the suitability of recommendations. The CFP Board emphasizes the importance of acting in the client's best interest, which necessitates ensuring the client understands the advice being given. Tailoring the complexity of information to the client's knowledge level promotes comprehension and empowers them to make informed decisions.",
@@ -6425,8 +6425,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Understanding a client's decision-making style allows the financial planner to tailor their communication and presentation of information to resonate with the client's preferred way of processing information, leading to better understanding and engagement. This personalized approach builds trust and facilitates more effective decision-making.",
-        "1": "Why option B is WRONG - Financial planning should be a collaborative process. Avoiding client involvement undermines their autonomy and understanding of their plan.",
-        "2": "Why option C is WRONG - A CFP professional has a fiduciary duty to act in the client's best interest, which includes respecting their autonomy and involving them in decision-making, not making decisions for them.",
+        "1": "Why option C is WRONG - Financial planning should be a collaborative process. Avoiding client involvement undermines their autonomy and understanding of their plan.",
+        "2": "Why option D is WRONG - A CFP professional has a fiduciary duty to act in the client's best interest, which includes respecting their autonomy and involving them in decision-making, not making decisions for them.",
         "3": "Why option D is WRONG - Rushing decisions can lead to poorly considered choices that do not align with the client's long-term goals and risk tolerance. Financial planning requires careful consideration."
       },
       "educational": "Understanding a client's decision-making style is crucial for effective communication and building a strong planner-client relationship. By adapting your approach to match their preferences, you can increase their understanding of financial concepts and enhance their confidence in the planning process. This aligns with the CFP Board's emphasis on client-centered planning and ethical conduct.",
@@ -6565,8 +6565,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Understanding family systems in financial planning involves recognizing the complex interplay of dynamics, roles, communication patterns, and the meaning of money within the family. This holistic view allows the financial planner to address potential conflicts, facilitate wealth transfer, and involve relevant family members effectively, leading to more successful financial outcomes.",
-        "1": "Why option B is WRONG - Family systems include all individuals who consider themselves part of the family, regardless of legal status. Ignoring non-legal members can lead to incomplete or inaccurate planning.",
-        "2": "Why option C is WRONG - While birth order can be a factor, it's a vastly oversimplified view of family dynamics. It ignores other crucial elements like communication, values, and individual experiences.",
+        "1": "Why option C is WRONG - Family systems include all individuals who consider themselves part of the family, regardless of legal status. Ignoring non-legal members can lead to incomplete or inaccurate planning.",
+        "2": "Why option D is WRONG - While birth order can be a factor, it's a vastly oversimplified view of family dynamics. It ignores other crucial elements like communication, values, and individual experiences.",
         "3": "Why option D is WRONG - While income is important, focusing solely on income levels neglects crucial qualitative factors like values, goals, and family relationships that influence financial decisions."
       },
       "educational": "Family systems theory recognizes that families are interconnected units where each member's actions influence the others. In financial planning, understanding these dynamics is crucial because money often carries emotional and symbolic weight, impacting communication, decision-making, and overall financial well-being. This understanding helps planners tailor advice and strategies that align with the family's values and goals, leading to more effective and sustainable financial plans.",
@@ -6601,7 +6601,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Providing more options exacerbates choice overload, leading to analysis paralysis instead of reducing it. The goal is to simplify, not complicate, the decision-making process.",
         "1": "Why option B is CORRECT - Curating options reduces the cognitive burden on the client by presenting a manageable number of choices. Providing clear recommendations, along with the rationale, and simplifying decision frameworks empowers the client to make informed decisions without feeling overwhelmed. This aligns with the CFP Board's focus on client-centered advice.",
-        "2": "Why option C is WRONG - While client autonomy is important, avoiding all recommendations leaves clients overwhelmed and directionless. Clear guidance and curated options are crucial to reducing choice overload.",
+        "2": "Why option D is WRONG - While client autonomy is important, avoiding all recommendations leaves clients overwhelmed and directionless. Clear guidance and curated options are crucial to reducing choice overload.",
         "3": "Why option D is WRONG - Indefinitely delaying decisions increases anxiety and prevents clients from achieving their goals. Timely action, based on reasonable analysis, is essential for effective financial planning."
       },
       "educational": "Choice overload stems from the cognitive burden of evaluating too many options, leading to decision fatigue and potential inaction. This concept is rooted in behavioral economics and highlights the importance of understanding client psychology in financial planning. By simplifying choices and providing clear guidance, financial planners can help clients make more effective and confident decisions, ultimately improving their financial outcomes and satisfaction.",
@@ -6636,7 +6636,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Guaranteeing results is unethical and impossible due to market volatility and unforeseen circumstances.",
         "1": "Why option B is CORRECT - Discussing realistic outcomes, range of possibilities, and factors outside anyone's control is the cornerstone of effective expectation management. This approach aligns client expectations with the realities of financial planning, fostering trust and a long-term relationship. It also helps clients understand the difference between what can and cannot be controlled.",
-        "2": "Why option C is WRONG - Ignoring potential risks creates unrealistic expectations and can damage the client relationship when negative outcomes occur.",
+        "2": "Why option D is WRONG - Ignoring potential risks creates unrealistic expectations and can damage the client relationship when negative outcomes occur.",
         "3": "Why option D is WRONG - Overly optimistic projections can lead to disappointment and mistrust if the actual results fall short of expectations."
       },
       "educational": "Managing client expectations is crucial for a successful financial planning relationship. Unrealistic expectations can lead to dissatisfaction, distrust, and even legal disputes. By clearly communicating potential outcomes, both positive and negative, and acknowledging the inherent uncertainties of financial markets, planners can build a foundation of trust and transparency, aligning with the CFP Board's Practice Standards.",
@@ -6670,8 +6670,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Major life transitions are inherently emotional events. Financial planners must recognize and address these emotions because they significantly influence financial decision-making, ultimately leading to better client outcomes and a stronger planner-client relationship.",
-        "1": "Why option B is WRONG - Delaying all planning can be detrimental, as timely adjustments are often needed during transitions. A balance between emotional adjustment and financial action is necessary.",
-        "2": "Why option C is WRONG - Ignoring the emotional aspects can lead to poor financial decisions, as emotions significantly influence choices during major life changes. A holistic approach is crucial.",
+        "1": "Why option C is WRONG - Delaying all planning can be detrimental, as timely adjustments are often needed during transitions. A balance between emotional adjustment and financial action is necessary.",
+        "2": "Why option D is WRONG - Ignoring the emotional aspects can lead to poor financial decisions, as emotions significantly influence choices during major life changes. A holistic approach is crucial.",
         "3": "Why option D is WRONG - Financial planners should address both the practical and emotional aspects of financial planning and not simply defer the emotional support to other professionals."
       },
       "educational": "Financial psychology emphasizes the impact of emotions and biases on financial decisions. Understanding these influences is crucial for CFP® professionals because major life events often trigger strong emotional responses that can lead to irrational or impulsive financial choices. By acknowledging and addressing these emotions, planners can guide clients toward more sound and sustainable financial strategies, aligning with the CFP Board's ethical requirements to act in the client's best interest.",
@@ -6706,7 +6706,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While efficiency is important, neglecting values leads to misaligned plans and potential client dissatisfaction. Comprehensive planning requires understanding both quantitative and qualitative aspects.",
         "1": "Why option B is CORRECT - Exploring client values is fundamental to creating a financial plan that resonates with the client's core beliefs and priorities. When recommendations align with these values, clients are more likely to understand the rationale behind the plan, feel motivated to implement it, and adhere to it over time, leading to increased satisfaction. This directly relates to the CFP Board's emphasis on understanding the client's personal and financial circumstances.",
-        "2": "Why option C is WRONG - Exploring values is crucial for all aspects of financial planning, not just investment selection. It informs decisions across various planning areas.",
+        "2": "Why option D is WRONG - Exploring values is crucial for all aspects of financial planning, not just investment selection. It informs decisions across various planning areas.",
         "3": "Why option D is WRONG - Ethical financial planning prioritizes the client's best interests, not product sales. Focusing solely on sales creates a conflict of interest and undermines trust."
       },
       "educational": "Understanding a client's values is crucial because it forms the foundation for their goals and ultimately, their financial plan. This process helps the financial planner tailor recommendations that resonate with the client's deepest motivations, increasing the likelihood of plan implementation and long-term success. This aligns with the CFP Board's emphasis on a client-centered approach and understanding the qualitative aspects of financial planning.",
@@ -6741,7 +6741,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - Hyperbolic discounting is about *preferring* immediate rewards, not avoiding discounts altogether. This option describes a risk-averse, long-term focused investor, which is the opposite of hyperbolic discounting.",
         "1": "Why option B is CORRECT - Hyperbolic discounting describes the tendency to disproportionately prefer immediate rewards, even if they are smaller, over larger rewards that are delayed. The perceived value of a reward decreases more steeply as it gets closer to the present and less steeply as it recedes further into the future.",
-        "2": "Why option C is WRONG - While risk aversion is a valid investment preference, it's not related to hyperbolic discounting. Hyperbolic discounting is about the *timing* of rewards, not the consistency of returns.",
+        "2": "Why option D is WRONG - While risk aversion is a valid investment preference, it's not related to hyperbolic discounting. Hyperbolic discounting is about the *timing* of rewards, not the consistency of returns.",
         "3": "Why option D is WRONG - Hyperbolic discounting is a *bias* that leads to *incorrect* valuation of future rewards. This option describes rational economic behavior, the opposite of the bias."
       },
       "educational": "Hyperbolic discounting is a behavioral bias that significantly impacts financial planning. Understanding this bias is crucial for helping clients overcome procrastination in saving, avoid impulsive spending, and make sound long-term financial decisions. By recognizing this tendency, planners can implement strategies like automated savings and commitment devices to counteract its effects.",
@@ -6775,8 +6775,8 @@
       "status": "approved",
       "whyWrong": {
         "0": "Why option A is CORRECT - Collaborative financial planning is a partnership where the client's values, goals, and resources are integrated with the planner's expertise to create a tailored plan. This approach fosters client buy-in and increases the likelihood of successful plan implementation.",
-        "1": "Why option B is WRONG - Collaborative planning requires active participation from both the client and the planner, not independent action by the client alone. The planner's guidance and expertise are essential throughout the process.",
-        "2": "Why option C is WRONG - Collaborative planning emphasizes shared decision-making and client input, not unilateral control by the planner. Client values and goals should be central to the plan's development.",
+        "1": "Why option C is WRONG - Collaborative planning requires active participation from both the client and the planner, not independent action by the client alone. The planner's guidance and expertise are essential throughout the process.",
+        "2": "Why option D is WRONG - Collaborative planning emphasizes shared decision-making and client input, not unilateral control by the planner. Client values and goals should be central to the plan's development.",
         "3": "Why option D is WRONG - Collaborative planning necessitates client involvement to ensure the plan aligns with their values, goals, and understanding. Avoiding client participation undermines the core principles of the collaborative approach."
       },
       "educational": "Collaborative financial planning is rooted in behavioral finance principles, recognizing that clients are more likely to adhere to plans they helped create. This approach also aligns with the CFP Board's Standards of Conduct, which emphasize placing the client's interests first and providing advice that is suitable based on the client's individual circumstances. By actively involving clients, planners can better understand their values and biases, leading to more effective and personalized financial plans.",
@@ -6881,7 +6881,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - While analysis is important, the narrative fallacy leads to *worse* analysis by oversimplifying events and attributing them to easily digestible stories. It doesn't lead to better analysis.",
         "1": "Why option B is CORRECT - The narrative fallacy describes the human tendency to create stories to make sense of the world, even when events are random or driven by complex factors. In investing, this manifests as constructing compelling narratives to explain market movements or investment outcomes, often after the fact, leading to potential biases and poor decision-making.",
-        "2": "Why option C is WRONG - Avoiding all news might reduce emotional investing, but it's not a *result* of the narrative fallacy. The narrative fallacy is about how we interpret information, not whether we consume it.",
+        "2": "Why option D is WRONG - Avoiding all news might reduce emotional investing, but it's not a *result* of the narrative fallacy. The narrative fallacy is about how we interpret information, not whether we consume it.",
         "3": "Why option D is WRONG - Indexing exclusively is a valid investment strategy for some, but it's not related to the narrative fallacy. The narrative fallacy can affect both active and passive investors."
       },
       "educational": "The narrative fallacy highlights how our brains are wired to seek patterns and explanations, even where none exist. This can lead to biases like hindsight bias and overconfidence, impacting investment decisions. Understanding this bias is crucial for CFP® professionals to help clients make rational choices based on evidence rather than emotionally appealing stories, aligning with the CFP Board's Standards of Conduct regarding objectivity and integrity.",

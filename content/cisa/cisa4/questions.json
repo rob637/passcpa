@@ -59,7 +59,7 @@
       "correctAnswer": 3,
       "explanation": "A structured walkthrough or tabletop test involves key personnel discussing the plan scenarios step-by-step. It is effective for verification without any operational disruption. (Parallel tests minimize risk but require resources; Walkthrough is often \"most effective\" for initial validation or non-disruption constraints depending on specific context, but typically the question implies specific constraints only solved by walkthrough or simulation).",
       "whyWrong": {
-        "0": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Tabletop walkthrough...",
+        "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Tabletop walkthrough...",
         "1": "Why option B is WRONG - Absolute statements are rarely correct in auditing. Auditors work with reasonable assurance, not absolute certainty.",
         "2": "Why option C is WRONG - A checklist review is the least effective DR test method. It provides minimal assurance of plan effectiveness.",
         "3": "Why option A is CORRECT - A structured walkthrough or tabletop test involves key personnel discussing the plan scenarios step-by-step. It is effective for verification without any operational disruption. (Parallel tests minimize risk but require resources; Walkthrough is often \"most effective\" for initial validation or non-disruption constraints depending on specific context, but typically the question implies specific constraints only solved by walkthrough or simulation)."
@@ -164,7 +164,7 @@
       "correctAnswer": 3,
       "explanation": "Operators with unlimited system access can bypass controls and make unauthorized changes. Access should be limited to what is necessary for operations.",
       "whyWrong": {
-        "0": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Operators have unlimited system access...",
+        "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Operators have unlimited system access...",
         "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Operators have unlimited system access...",
         "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Operators have unlimited system access...",
         "3": "Why option A is CORRECT - Operators with unlimited system access can bypass controls and make unauthorized changes. Access should be limited to what is necessary for operations."
@@ -201,7 +201,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Identifies and addresses root causes...",
         "1": "Why option B is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors.",
-        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Identifies and addresses root causes...",
+        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Identifies and addresses root causes...",
         "3": "Why option C is CORRECT - Problem management focuses on identifying root causes and preventing recurrence, while incident management focuses on quick service restoration."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -584,7 +584,7 @@
       "correctAnswer": 3,
       "explanation": "Data center physical access should be restricted to authorized personnel, logged for accountability, and regularly reviewed.",
       "whyWrong": {
-        "0": "Why option D is WRONG - Absolute statements are rarely correct in auditing. Auditors work with reasonable assurance, not absolute certainty.",
+        "0": "Why option A is WRONG - Absolute statements are rarely correct in auditing. Auditors work with reasonable assurance, not absolute certainty.",
         "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Restricted and logged...",
         "2": "Why option C is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors.",
         "3": "Why option A is CORRECT - Data center physical access should be restricted to authorized personnel, logged for accountability, and regularly reviewed."
@@ -6375,8 +6375,8 @@
       "explanation": "Lack of ransomware recovery planning indicates insufficient cyber resilience given the prevalence of ransomware threats.",
       "whyWrong": {
         "0": "Why option A is CORRECT - Lack of ransomware recovery planning indicates insufficient cyber resilience given the prevalence of ransomware threats.",
-        "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
+        "1": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -6726,7 +6726,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Maximum 4 hours of data loss is acceptable...",
         "1": "Why option B is CORRECT - RPO (Recovery Point Objective) defines the maximum acceptable data loss, measured in time.",
-        "2": "Why option C is WRONG - RPO defines acceptable data loss, not backup frequency. Backups might run more or less frequently than the RPO.",
+        "2": "Why option D is WRONG - RPO defines acceptable data loss, not backup frequency. Backups might run more or less frequently than the RPO.",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Maximum 4 hours of data loss is acceptable..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -6935,8 +6935,8 @@
       "explanation": "Parallel testing involves processing actual transactions through backup systems while production continues, verifying true recovery capability.",
       "whyWrong": {
         "0": "Why option A is CORRECT - Parallel testing involves processing actual transactions through backup systems while production continues, verifying true recovery capability.",
-        "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
+        "1": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -10331,7 +10331,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%...",
         "1": "Why option B is CORRECT - System availability = MTBF / (MTBF + MTTR) = 990 / (990 + 10) = 990/1000 = 99.0%. This means the system is expected to be operational 99% of the time. To improve availability, the organization can increase MTBF (better hardware) or decrease MTTR (faster repairs, hot swappable components).",
-        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%...",
+        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",

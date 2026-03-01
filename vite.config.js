@@ -296,6 +296,10 @@ export default defineConfig(({ mode }) => {
           }
           
           // Study materials chunks - split by course
+          // TBS data - separate chunk (CPA only, ~1MB)
+          if (id.includes('/data/cpa/tbs')) {
+            return 'data-cpa-tbs';
+          }
           if (id.includes('/data/cpa/study-materials') || id.includes('/data/cpa/lessons')) {
             return 'data-cpa-content';
           }

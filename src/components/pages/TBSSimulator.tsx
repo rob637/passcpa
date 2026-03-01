@@ -1154,19 +1154,25 @@ const TBSSimulator: React.FC = () => {
     let cancelled = false;
     const loadTBSList = async () => {
       setTbsLoading(true);
-      const sectionTbs = await fetchTBSBySection(selectedSection as ExamSection);
+      
+      // Load TBS data and history in parallel
+      const tbsPromise = fetchTBSBySection(selectedSection as ExamSection);
+      const historyPromise = user?.uid 
+        ? getTBSHistory(user.uid, selectedSection)
+        : Promise.resolve([]);
+      
+      const sectionTbs = await tbsPromise;
       if (cancelled) return;
       setTbsList(sectionTbs || []);
+      setTbsLoading(false); // Show list immediately while history may still load
       
-      // Load TBS history for completion indicators
-      if (user?.uid) {
-        const history = await getTBSHistory(user.uid, selectedSection);
-        if (cancelled) return;
+      // Apply history when it resolves
+      const history = await historyPromise;
+      if (cancelled) return;
+      if (history.length > 0) {
         const historyMap = new Map(history.map(h => [h.tbsId, h]));
         setTbsHistory(historyMap);
       }
-      
-      setTbsLoading(false);
     };
     loadTBSList();
     return () => { cancelled = true; };

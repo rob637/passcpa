@@ -325,6 +325,7 @@ const PremiumPage = ({ children }: { children: ReactNode }) => (
 // Handles URLs like /cpa/practice, /ea/study-plan from email links
 const CourseRedirect = ({ to }: { to: string }) => {
   const { courseId } = useParams<{ courseId: string }>();
+  const location = useLocation();
   const validCourses = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
   
   // Save course preference if valid
@@ -332,7 +333,9 @@ const CourseRedirect = ({ to }: { to: string }) => {
     saveCoursePreference(courseId.toLowerCase() as CourseId);
   }
   
-  return <Navigate to={to} replace />;
+  // Preserve query parameters (e.g. ?section=FAR from campaign links)
+  const destination = location.search ? `${to}${location.search}` : to;
+  return <Navigate to={destination} replace />;
 };
 
 function App() {
@@ -692,17 +695,21 @@ function App() {
                 <Route
                   path="/checkout-success"
                   element={
-                    <SuspensePage>
-                      <CheckoutSuccess />
-                    </SuspensePage>
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <CheckoutSuccess />
+                      </SuspensePage>
+                    </ProtectedRoute>
                   }
                 />
                 <Route
                   path="/checkout-cancel"
                   element={
-                    <SuspensePage>
-                      <CheckoutCancel />
-                    </SuspensePage>
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <CheckoutCancel />
+                      </SuspensePage>
+                    </ProtectedRoute>
                   }
                 />
                 <Route

@@ -33,6 +33,7 @@ const TBS_LABELS: Record<string, string> = {
   journal: 'Journal Entry',
   calculation: 'Calculation',
   mcq: 'Multiple Choice',
+  classification: 'Classification',
   wc: 'Written Communication',
   journal_entry: 'Journal Entry',
   reconciliation: 'Reconciliation',
@@ -90,7 +91,7 @@ interface WrittenCommunicationInputProps {
 // Individual task/requirement within a TBS
 interface TBSTask {
   id: string;
-  type: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation';
+  type: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification';
   question: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any; // Flexible data depending on type
@@ -109,6 +110,85 @@ interface TBSQuestion {
   exhibits?: any[];
   hints?: string[];
 }
+
+// Transform raw TBS data into the format expected by the component (pure function, no deps)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const transformTbs = (rawTbs: any): TBSQuestion | null => {
+  if (!rawTbs) return null;
+  
+  // Get all requirements/tasks
+  const requirements = rawTbs.requirements || [];
+  
+  // Transform each requirement into a task
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const tasks: TBSTask[] = requirements.map((req: any, index: number) => {
+    // Map requirement type to component type
+    let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification' = 'calculation';
+    if (req.type === 'journal_entry' || req.type === 'journal') taskType = 'journal';
+    else if (req.type === 'multiple_choice') taskType = 'mcq';
+    else if (req.type === 'classification' || req.type === 'classification_table') taskType = 'classification';
+    else if (req.type === 'written_communication') taskType = 'wc';
+    else if (req.type === 'calculation') taskType = 'calculation';
+    else if (req.type === 'reconciliation') taskType = 'reconciliation';
+    
+    return {
+      id: req.id || `task-${index + 1}`,
+      type: taskType,
+      question: req.question || '',
+      data: {
+        // For journal entries
+        template: req.template || [{ account: '', debit: '', credit: '' }],
+        correctEntries: req.correctEntries,
+        // For calculations
+        correctAnswer: req.correctAnswer ?? 0,
+        tolerance: req.tolerance ?? 1,
+        // For multiple choice
+        options: req.options || [],
+        correctAnswer_mcq: req.correctAnswer, // Store separately for MCQ
+        // For classification
+        items: req.items || [],
+        correctAnswers: req.correctAnswers || [],
+      },
+      explanation: req.explanation,
+    };
+  });
+  
+  // If no requirements, create a single task from the TBS itself (legacy format)
+  if (tasks.length === 0) {
+    let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification' = 'calculation';
+    if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') taskType = 'journal';
+    else if (rawTbs.type === 'multiple_choice') taskType = 'mcq';
+    else if (rawTbs.type === 'classification' || rawTbs.type === 'classification_table') taskType = 'classification';
+    else if (rawTbs.type === 'written_communication') taskType = 'wc';
+    else if (rawTbs.type === 'reconciliation') taskType = 'reconciliation';
+    
+    tasks.push({
+      id: 'task-1',
+      type: taskType,
+      question: rawTbs.question || '',
+      data: {
+        template: rawTbs.template || [{ account: '', debit: '', credit: '' }],
+        correctEntries: rawTbs.correctEntries,
+        correctAnswer: rawTbs.correctAnswer ?? 0,
+        tolerance: rawTbs.tolerance ?? 1,
+        options: rawTbs.options || [],
+        correctAnswer_mcq: rawTbs.correctAnswer,
+      },
+      explanation: rawTbs.explanation,
+    });
+  }
+  
+  return {
+    id: rawTbs.id,
+    title: rawTbs.title,
+    description: rawTbs.scenario || rawTbs.description || '',
+    tasks,
+    estimatedTime: rawTbs.timeEstimate,
+    difficulty: rawTbs.difficulty,
+    exhibits: rawTbs.exhibits,
+    hints: rawTbs.hints,
+  };
+};
 
 // Journal Entry Component
 const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
@@ -538,6 +618,82 @@ const MultipleChoiceInput: React.FC<MultipleChoiceInputProps> = ({
   );
 };
 
+// Classification / Matching Component
+const ClassificationInput: React.FC<{
+  items: string[];
+  options: string[];
+  value?: Record<string, string>;
+  onChange: (value: Record<string, string>) => void;
+  disabled?: boolean;
+  showCorrect?: boolean;
+  correctAnswers?: Array<{ item: string; answer: string }>;
+  explanation?: string;
+}> = ({ items, options, value = {}, onChange, disabled, showCorrect, correctAnswers, explanation }) => {
+  const handleSelect = (item: string, selectedOption: string) => {
+    if (disabled) return;
+    onChange({ ...value, [item]: selectedOption });
+  };
+
+  const correctMap = new Map((correctAnswers || []).map(ca => [ca.item, ca.answer]));
+
+  return (
+    <div className="space-y-3">
+      {items.map((item) => {
+        const selected = value[item] || '';
+        const correctOption = correctMap.get(item);
+        const isCorrect = showCorrect && selected === correctOption;
+        const isWrong = showCorrect && selected && selected !== correctOption;
+
+        return (
+          <div
+            key={item}
+            className={clsx(
+              'p-3 rounded-lg border-2 transition-all',
+              showCorrect && isCorrect && 'border-success-500 bg-success-50 dark:bg-success-900/30',
+              showCorrect && isWrong && 'border-error-500 bg-error-50 dark:bg-error-900/30',
+              !showCorrect && selected && 'border-primary-300 bg-primary-50/50 dark:border-primary-600 dark:bg-primary-900/20',
+              !showCorrect && !selected && 'border-slate-200 dark:border-slate-600'
+            )}
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <span className="font-medium text-slate-900 dark:text-white sm:min-w-[180px]">{item}</span>
+              <select
+                value={selected}
+                onChange={(e) => handleSelect(item, e.target.value)}
+                disabled={disabled}
+                className={clsx(
+                  'flex-1 px-3 py-2 rounded-lg border text-sm transition-colors',
+                  'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100',
+                  'border-slate-300 dark:border-slate-600',
+                  disabled && 'opacity-60 cursor-not-allowed'
+                )}
+              >
+                <option value="">-- Select --</option>
+                {options.map((opt) => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
+              </select>
+              {showCorrect && isCorrect && <CheckCircle className="w-5 h-5 text-success-500 flex-shrink-0" />}
+              {showCorrect && isWrong && <XCircle className="w-5 h-5 text-error-500 flex-shrink-0" />}
+            </div>
+            {showCorrect && isWrong && correctOption && (
+              <div className="mt-1 text-sm text-success-700 dark:text-success-400">
+                Correct: {correctOption}
+              </div>
+            )}
+          </div>
+        );
+      })}
+
+      {showCorrect && explanation && (
+        <div className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg text-sm text-slate-700 dark:text-slate-200 mt-2">
+          <strong>Explanation:</strong> {explanation}
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Written Communication Component
 const WrittenCommunicationInput: React.FC<WrittenCommunicationInputProps> = ({
   value,
@@ -703,13 +859,23 @@ const SimpleCalculator: React.FC = () => {
 /**
  * Renders TBS scenario text with proper formatting:
  * - Detects tabular data (lines with multiple space-separated columns) and renders in monospace
+ * - Detects markdown pipe tables (| col1 | col2 |) and renders as HTML tables
  * - Converts bullet points (•) to styled list items
  * - Renders section headers (lines ending with :) as bold
  * - Regular paragraphs get normal text styling
  */
 const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
   const lines = text.split('\n');
-  const blocks: { type: 'paragraph' | 'table' | 'bullets' | 'header'; lines: string[] }[] = [];
+  const blocks: { type: 'paragraph' | 'table' | 'pipeTable' | 'bullets' | 'header'; lines: string[] }[] = [];
+  
+  // Detect pipe table line (markdown table format)
+  const isPipeTableLine = (l: string) => {
+    const t = l.trim();
+    return t.startsWith('|') && t.includes('|') && t.split('|').length >= 3;
+  };
+  
+  // Check if line is a separator row (|---|---|)
+  const isSeparatorRow = (l: string) => /^\|[\s\-:|]+\|$/.test(l.trim());
   
   let i = 0;
   while (i < lines.length) {
@@ -719,6 +885,21 @@ const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
     // Skip empty lines
     if (!trimmed) {
       i++;
+      continue;
+    }
+    
+    // Pipe table detection (markdown format: | col1 | col2 | col3 |)
+    if (isPipeTableLine(line)) {
+      const tableLines: string[] = [];
+      while (i < lines.length && (isPipeTableLine(lines[i]) || !lines[i].trim())) {
+        if (lines[i].trim() && !isSeparatorRow(lines[i])) {
+          tableLines.push(lines[i].trim());
+        }
+        i++;
+      }
+      if (tableLines.length > 0) {
+        blocks.push({ type: 'pipeTable', lines: tableLines });
+      }
       continue;
     }
     
@@ -768,7 +949,8 @@ const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
       !lines[i].trim().startsWith('•') &&
       !lines[i].trim().startsWith('- ') &&
       !(lines[i].trim().endsWith(':') && lines[i].trim().length < 80 && !lines[i].trim().includes('$')) &&
-      !isTabularLine(lines[i])
+      !isTabularLine(lines[i]) &&
+      !isPipeTableLine(lines[i])
     ) {
       paraLines.push(lines[i].trim());
       i++;
@@ -811,6 +993,40 @@ const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
                 </div>
               </div>
             );
+          case 'pipeTable': {
+            // Parse markdown pipe table: | col1 | col2 | col3 |
+            const dataRows = block.lines.filter(l => !isSeparatorRow(l));
+            const parseRow = (row: string) => 
+              row.split('|').map(c => c.trim()).filter((c, i, arr) => i > 0 && i < arr.length - 1);
+            const headerCells = dataRows.length > 0 ? parseRow(dataRows[0]) : [];
+            const bodyRows = dataRows.slice(1).map(parseRow);
+            return (
+              <div key={idx} className="overflow-x-auto -mx-2 px-2">
+                <table className="min-w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-slate-100 dark:bg-slate-700">
+                      {headerCells.map((cell, ci) => (
+                        <th key={ci} className="border border-slate-300 dark:border-slate-600 px-3 py-2 text-left font-semibold text-slate-900 dark:text-white">
+                          {cell}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bodyRows.map((row, ri) => (
+                      <tr key={ri} className={ri % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-700/50'}>
+                        {row.map((cell, ci) => (
+                          <td key={ci} className="border border-slate-300 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-200">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
           default:
             return null;
         }
@@ -827,6 +1043,27 @@ const TBSSimulator: React.FC = () => {
   const { userProfile, user } = useAuth();
   const { completeSimulation } = useStudy();
   const { courseId } = useCourse();
+
+  // TBS is CPA-only — redirect other courses to practice
+  if (courseId !== 'cpa') {
+    return (
+      <div className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
+        <div className="text-center max-w-md">
+          <FileSpreadsheet className="w-16 h-16 mx-auto text-slate-300 dark:text-slate-600 mb-4" />
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Not Available</h2>
+          <p className="text-slate-600 dark:text-slate-300 mb-6">
+            Task-Based Simulations are only available for the CPA exam.
+          </p>
+          <button
+            onClick={() => navigate('/practice')}
+            className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+          >
+            Go to Practice
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   // Ref for scrolling to top when entering active view
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -867,79 +1104,6 @@ const TBSSimulator: React.FC = () => {
   // Get current task
   const currentTask = tbs?.tasks[currentTaskIndex] || null;
   const totalTasks = tbs?.tasks.length || 0;
-
-  // Transform raw TBS data into the format expected by the component
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const transformTbs = (rawTbs: any): TBSQuestion | null => {
-    if (!rawTbs) return null;
-    
-    // Get all requirements/tasks
-    const requirements = rawTbs.requirements || [];
-    
-    // Transform each requirement into a task
-    const tasks: TBSTask[] = requirements.map((req: any, index: number) => {
-      // Map requirement type to component type
-      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' = 'calculation';
-      if (req.type === 'journal_entry' || req.type === 'journal') taskType = 'journal';
-      else if (req.type === 'multiple_choice') taskType = 'mcq';
-      else if (req.type === 'written_communication') taskType = 'wc';
-      else if (req.type === 'calculation') taskType = 'calculation';
-      else if (req.type === 'reconciliation') taskType = 'reconciliation';
-      
-      return {
-        id: req.id || `task-${index + 1}`,
-        type: taskType,
-        question: req.question || '',
-        data: {
-          // For journal entries
-          template: req.template || [{ account: '', debit: '', credit: '' }],
-          correctEntries: req.correctEntries,
-          // For calculations
-          correctAnswer: req.correctAnswer ?? 0,
-          tolerance: req.tolerance ?? 1,
-          // For multiple choice
-          options: req.options || [],
-          correctAnswer_mcq: req.correctAnswer, // Store separately for MCQ
-        },
-        explanation: req.explanation,
-      };
-    });
-    
-    // If no requirements, create a single task from the TBS itself (legacy format)
-    if (tasks.length === 0) {
-      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' = 'calculation';
-      if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') taskType = 'journal';
-      else if (rawTbs.type === 'multiple_choice') taskType = 'mcq';
-      else if (rawTbs.type === 'written_communication') taskType = 'wc';
-      else if (rawTbs.type === 'reconciliation') taskType = 'reconciliation';
-      
-      tasks.push({
-        id: 'task-1',
-        type: taskType,
-        question: rawTbs.question || '',
-        data: {
-          template: rawTbs.template || [{ account: '', debit: '', credit: '' }],
-          correctEntries: rawTbs.correctEntries,
-          correctAnswer: rawTbs.correctAnswer ?? 0,
-          tolerance: rawTbs.tolerance ?? 1,
-          options: rawTbs.options || [],
-          correctAnswer_mcq: rawTbs.correctAnswer,
-        },
-        explanation: rawTbs.explanation,
-      });
-    }
-    
-    return {
-      id: rawTbs.id,
-      title: rawTbs.title,
-      description: rawTbs.scenario || rawTbs.description || '',
-      tasks,
-      estimatedTime: rawTbs.timeEstimate,
-      difficulty: rawTbs.difficulty,
-      exhibits: rawTbs.exhibits,
-      hints: rawTbs.hints,
-    };
-  };
 
   // Update answer for current task
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -1031,7 +1195,7 @@ const TBSSimulator: React.FC = () => {
     setViewState('select');
   };
 
-  // Score Written Communication responses based on AICPA criteria
+  // Score Written Communication responses based on AICPA/Professional criteria
   // Evaluates: Organization, Development, Expression
   const scoreWrittenCommunication = (
     response: string,
@@ -1086,13 +1250,15 @@ const TBSSimulator: React.FC = () => {
     if (avgSentencesPerParagraph >= 3) devScore += 10;
     else if (avgSentencesPerParagraph >= 2) devScore += 5;
     
-    // Technical/professional vocabulary usage
+    // Technical/professional vocabulary usage (exam-agnostic terms)
     const technicalTerms = [
       'internal control', 'audit', 'financial statement', 'material', 'reasonable',
-      'compliance', 'gaap', 'gasb', 'fasb', 'aicpa', 'pcaob', 'sox', 'coso',
-      'risk', 'procedure', 'assessment', 'framework', 'disclosure', 'opinion',
+      'compliance', 'standard', 'framework', 'policy', 'procedure',
+      'risk', 'assessment', 'analysis', 'disclosure', 'opinion',
       'deficiency', 'significant', 'management', 'governance', 'objective',
-      'component', 'monitoring', 'environment', 'activities', 'information'
+      'component', 'monitoring', 'environment', 'activities', 'information',
+      // Accounting standards (CPA-specific but acceptable for all)
+      'gaap', 'gasb', 'fasb', 'aicpa', 'pcaob', 'sox', 'coso'
     ];
     const technicalCount = technicalTerms.filter(term => lowerText.includes(term)).length;
     if (technicalCount >= 5) devScore += 15;
@@ -1272,6 +1438,16 @@ const TBSSimulator: React.FC = () => {
       // MCQ correct answer is stored in correctAnswer_mcq (index) or correctAnswer
       const correctIndex = task.data.correctAnswer_mcq ?? task.data.correctAnswer;
       return answer === correctIndex ? 100 : 0;
+    } else if (task.type === 'classification') {
+      // Classification: compare user selections to correct item→answer mapping
+      const correctAnswers: Array<{ item: string; answer: string }> = task.data.correctAnswers || [];
+      if (correctAnswers.length === 0) return 0;
+      const userAnswers = (answer || {}) as Record<string, string>;
+      let correct = 0;
+      for (const ca of correctAnswers) {
+        if (userAnswers[ca.item] === ca.answer) correct++;
+      }
+      return Math.round((correct / correctAnswers.length) * 100);
     } else if (task.type === 'wc') {
       return scoreWrittenCommunication(answer as string || '', task.data);
     }
@@ -1307,12 +1483,16 @@ const TBSSimulator: React.FC = () => {
     
     // If from daily plan, save completion to localStorage
     if (fromDailyPlan && activityId) {
-      const today = new Date().toISOString().split('T')[0];
-      const storageKey = `dailyplan_completed_${today}`;
-      const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
-      if (!existing.includes(activityId)) {
-        existing.push(activityId);
-        localStorage.setItem(storageKey, JSON.stringify(existing));
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const storageKey = `dailyplan_completed_${today}`;
+        const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+        if (!existing.includes(activityId)) {
+          existing.push(activityId);
+          localStorage.setItem(storageKey, JSON.stringify(existing));
+        }
+      } catch {
+        // Ignore corrupted storage
       }
     }
   };
@@ -1757,6 +1937,19 @@ const TBSSimulator: React.FC = () => {
                     />
                   )}
 
+                  {currentTask.type === 'classification' && (
+                    <ClassificationInput
+                      items={currentTask.data.items}
+                      options={currentTask.data.options}
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                      correctAnswers={currentTask.data.correctAnswers}
+                      explanation={currentTask.explanation}
+                    />
+                  )}
+
                   {currentTask.type === 'wc' && (
                     <WrittenCommunicationInput
                       value={currentAnswer}
@@ -1768,7 +1961,7 @@ const TBSSimulator: React.FC = () => {
                 </div>
 
                 {/* Show explanation for types that don't render it inline (journal, wc) */}
-                {submitted && currentTask.explanation && !['mcq', 'calculation', 'reconciliation'].includes(currentTask.type) && (
+                {submitted && currentTask.explanation && !['mcq', 'calculation', 'reconciliation', 'classification'].includes(currentTask.type) && (
                   <div className="bg-blue-50 p-6 border-t border-blue-100">
                     <h4 className="font-bold text-blue-900 mb-2">Explanation</h4>
                     <p className="text-blue-800">{currentTask.explanation}</p>

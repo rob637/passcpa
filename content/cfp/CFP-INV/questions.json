@@ -2,7 +2,7 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-INV",
   "exportedAt": "2026-02-25T22:37:02.960Z",
-  "count": 347,
+  "count": 337,
   "questions": [
     {
       "id": "cfp-cross-004",
@@ -1052,41 +1052,6 @@
       "commonMistake": "Many candidates confuse modified duration with the actual percentage change in price. A common trap is simply stating the interest rate change or the duration as the price change, without performing the multiplication. Test-takers often incorrectly assume that bond prices move linearly with interest rates, failing to account for convexity. They may also forget to multiply the duration by the change in interest rates."
     },
     {
-      "id": "cfp-inv-028",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-3",
-      "topic": "Performance measurement (HPR, TWR, IRR)",
-      "subtopic": "Alpha",
-      "difficulty": "medium",
-      "skillLevel": "Evaluation",
-      "question": "The 'Growth Opportunities Fund' at Horizon Investments has consistently underperformed its benchmark. The fund's alpha is -2%. This negative alpha indicates that:",
-      "explanation": "**Correct Answer: B**\\n\\n**Jensen's Alpha:**\\n$$\\\\alpha = R_p - [R_f + \\\\beta(R_m - R_f)]$$\\n\\n**Interpretation:**\\n- Positive Alpha = outperformed (manager added value)\\n- Negative Alpha = underperformed (manager detracted value)\\n- Alpha of -2% means the fund returned 2% LESS than expected given its risk\\n\\n**Example:**\\n- If CAPM predicted 10% return for the fund's risk level\\n- But fund returned 8%\\n- Alpha = 8% - 10% = -2%\\n\\n**Why other answers are wrong:**\\n- **A)** Alpha and beta are independent measures\\n- **C)** Alpha is relative performance, not absolute return\\n- **D)** Alpha measures return, not risk-taking",
-      "correctAnswer": 3,
-      "options": [
-        "The fund had a 2% return",
-        "The fund took 2% less risk than the market",
-        "The fund",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Alpha represents the excess return relative to what's expected for the level of risk taken, not the actual return of the fund. A fund could have a positive return and still have a negative alpha.",
-        "1": "Why option B is WRONG - Beta measures the fund's systematic risk relative to the market. Alpha measures the manager's ability to generate returns above or below what is expected for that level of risk, so they are independent measures.",
-        "2": "Why option C is WRONG - This option is incomplete and doesn't provide any meaningful information to evaluate. It's a distractor option.",
-        "3": "Why option D is CORRECT - A negative alpha indicates that the fund underperformed its expected return based on its risk (beta). A -2% alpha means the fund returned 2% less than what the Capital Asset Pricing Model (CAPM) predicted, given its beta and the market's performance."
-      },
-      "educational": "Alpha, as part of modern portfolio theory, helps investors evaluate a portfolio manager's skill. It isolates the manager's contribution to performance by removing the impact of market movements and the fund's systematic risk (beta). Understanding alpha is crucial for comparing investment options and assessing manager performance.",
-      "examTip": "On the CFP exam, remember that a negative alpha doesn't necessarily mean the fund lost money; it means it underperformed relative to its risk-adjusted benchmark. Always consider alpha in conjunction with other performance metrics like Sharpe ratio and Treynor ratio.",
-      "memoryAid": "Alpha: 'Above' or 'Below' expected return. Positive alpha = Above; Negative alpha = Below.",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Modern Portfolio Theory (MPT) concepts; Sharpe Ratio calculation",
-      "commonMistake": "Many candidates confuse alpha with total return. Alpha is the excess return above what is expected for the risk taken (beta). Option A is tempting because it uses the number 2%, but misinterprets what alpha represents. Option B is incorrect because alpha is not a direct measure of risk; beta is."
-    },
-    {
       "id": "cfp-inv-029",
       "courseId": "cfp",
       "section": "CFP-INV",
@@ -1610,40 +1575,6 @@
       "timeEstimate": 60,
       "authorityRef": "Investment Policy Statement (IPS) - Rebalancing Section",
       "commonMistake": "Buying more stocks would exacerbate the imbalance, moving further away from the target allocation. The exam exploits the misconception that 'buying low' is always the correct strategy, without considering the overall portfolio allocation goals."
-    },
-    {
-      "id": "cfp-inv-044",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-3",
-      "topic": "Performance measurement (HPR, TWR, IRR)",
-      "subtopic": "R-Squared",
-      "difficulty": "medium",
-      "skillLevel": "Analysis",
-      "question": "The 'Growth Opportunities Fund' has an R-squared of 0.95 relative to the S&P 500 index. This statistic indicates that 95% of the fund's movement is explained by the S&P 500. This means:",
-      "explanation": "**Correct Answer: B**\\n\\n**R-Squared (R²) Definition:**\\nMeasures how much of a fund's movements are explained by its benchmark.\\n\\n**Interpretation:**\\n- R² = 1.00 (100%): Moves perfectly with benchmark\\n- R² = 0.95 (95%): 95% explained by S&P 500\\n- R² = 0.50: Only half explained by benchmark\\n\\n**Implications:**\\n- High R² (>0.85): Index-like, beta is meaningful\\n- Low R² (<0.70): Less benchmark-dependent, alpha matters more\\n\\n**For Fund Selection:**\\nIf R² is high, why pay active management fees? Consider index fund.\\n\\n**Why other answers are wrong:**\\n- **A)** R² isn't about return percentage\\n- **C)** Doesn't predict outperformance\\n- **D)** Doesn't indicate holdings",
-      "correctAnswer": 3,
-      "options": [
-        "The fund has returned 95% of the S&P 500",
-        ",\n      ",
-        "The fund's returns are highly correlated with the S&P 500.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - R-squared measures the *correlation* of a fund's movements with its benchmark, not the percentage of the benchmark's *return* that the fund achieved. A fund could have a high R-squared but significantly different returns than the S&P 500.",
-        "B": "Why option B is WRONG - While a high R-squared suggests the fund's performance is closely tied to the S&P 500, it doesn't guarantee the fund will outperform the index. The fund could underperform even with a high R-squared due to factors like fees or slightly different holdings.",
-        "C": "Why option C is WRONG - R-squared doesn't provide information about the specific holdings within the mutual fund. It only indicates the degree to which the fund's price movements correlate with the S&P 500's movements. The fund could hold a variety of stocks, even with a high R-squared."
-      },
-      "educational": "R-squared is a statistical measure that represents the percentage of a portfolio's or security's movements that can be explained by the movements in a benchmark index. A high R-squared suggests that the portfolio's performance is primarily driven by the benchmark, which is important for understanding the fund's risk and return characteristics and whether active management is truly adding value. This concept is crucial for asset allocation and portfolio construction, as it helps determine the diversification benefits and potential for alpha generation.",
-      "examTip": "On the CFP exam, remember that a high R-squared (above 0.85) suggests that the fund behaves similarly to the index, making it potentially less attractive to pay high active management fees.",
-      "memoryAid": "R-squared: 'Relationship Squared' - how much the fund's movement relates to the benchmark's movement.",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 60,
-      "authorityRef": "AIM Portfolio Performance Reporting Standards (GIPS)",
-      "commonMistake": "R-squared measures the *correlation* between the fund's returns and the index's returns, not the percentage of returns achieved. While a high R-squared suggests the fund closely tracks the index, it doesn't indicate the magnitude of the returns."
     },
     {
       "id": "cfp-inv-045",
@@ -2836,41 +2767,6 @@
       "commonMistake": "Many candidates confuse APT with CAPM, thinking APT simplifies to a single factor. A common trap is to assume that because APT is more complex, it must guarantee higher returns, ignoring the inherent risks. Test-takers often incorrectly believe that APT eliminates the need for historical data, overlooking the fact that factor sensitivities still need to be estimated."
     },
     {
-      "id": "cfp-inv-b10-004",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-2",
-      "topic": "Options strategies (calls, puts, covered calls)",
-      "subtopic": "Convertible Securities",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A convertible bond with a conversion ratio of 25 shares is currently trading at $1,100 while the underlying stock trades at $38 per share. The bond\\'s conversion value is $950. What does the premium over conversion value suggest?",
-      "explanation": "The convertible bond trades at $1,100 vs. its conversion value of $950 (25 × $38). The $150 premium exists because the bond provides current income (coupon payments) exceeding stock dividends plus the option value of conversion if the stock price rises, providing downside protection with upside participation.",
-      "correctAnswer": 1,
-      "options": [
-        "The bond is trading below its investment value",
-        "The $150 premium reflects the bond\\",
-        ",\n      ",
-        "The conversion price is approximately $40 per share."
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While the bond's investment value (based on its credit rating and coupon) could be higher or lower, the premium over conversion value doesn't directly indicate whether it's trading below its investment value. The premium primarily reflects the factors mentioned in the correct answer, not a comparison to its theoretical investment value.",
-        "1": "Why option B is CORRECT - The $150 premium over the conversion value reflects the bond's inherent advantages over simply owning the underlying stock. These advantages include the bond's coupon payments (providing current income), potential for capital appreciation if the stock price rises, and downside protection because the bond's price is supported by its value as a debt instrument.",
-        "2": "Why option D is WRONG - Option C is incomplete. A complete option would be needed to evaluate its correctness.",
-        "3": "Why option D is WRONG - Option D is incomplete. A complete option would be needed to evaluate its correctness."
-      },
-      "educational": "Convertible bonds offer a hybrid investment, blending features of both debt and equity. The premium over conversion value represents the market's assessment of these added benefits. Understanding this premium is crucial for assessing the relative value of a convertible bond compared to its underlying stock and other fixed-income investments, a key aspect of asset allocation and portfolio management.",
-      "examTip": "On the CFP exam, remember that a convertible bond's price is influenced by both its fixed-income characteristics and its equity conversion option; therefore, analyze both aspects when evaluating its value.",
-      "memoryAid": "PIC: Premium = Income + Participation + Cushion (Downside Protection)",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 120,
-      "authorityRef": "Options Clearing Corporation (OCC) educational resources on convertible bonds and their valuation.",
-      "commonMistake": "Many candidates confuse investment value with conversion value. A common trap is to assume the premium only reflects the stock's potential, ignoring other bond-like features. Test-takers often incorrectly believe a premium always indicates overvaluation, failing to consider factors like yield advantage or downside protection."
-    },
-    {
       "id": "cfp-inv-b10-005",
       "courseId": "cfp",
       "section": "CFP-INV",
@@ -3009,41 +2905,6 @@
       "timeEstimate": 90,
       "authorityRef": "Corporate Finance Institute (CFI) resources on discounted cash flow (DCF) valuation.",
       "commonMistake": "Many candidates incorrectly believe a DCF model relies solely on historical data. A common trap is to think comparable company multiples are sufficient for valuation, ignoring the need for intrinsic value assessment. Test-takers often incorrectly believe dividend history alone is sufficient for a DCF, overlooking the importance of free cash flow."
-    },
-    {
-      "id": "cfp-inv-b10-009",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-2",
-      "topic": "Equity valuation (P/E, dividend discount)",
-      "subtopic": "Interest Coverage Ratio",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Analysts are evaluating the financial health of Apex Manufacturing. They want to assess Apex's ability to meet its debt obligations. The interest coverage ratio measures:",
-      "explanation": "Interest coverage = EBIT / Interest expense. Higher ratio = greater ability to meet interest obligations. Below 1.5: concerning. Above 3: generally comfortable. Important for: bond analysis, credit risk assessment, lending decisions. Low coverage increases default risk and may indicate excessive leverage or declining earnings.",
-      "correctAnswer": 1,
-      "options": [
-        "Total debt to equity",
-        "A company\\",
-        ",\n      ",
-        "Days sales outstanding"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Total debt to equity is a leverage ratio, specifically measuring the proportion of a company's financing that comes from debt versus equity. It does not directly assess the ability to cover interest payments.",
-        "1": "Why option B is CORRECT - The interest coverage ratio measures a company's ability to pay its interest expenses with its earnings before interest and taxes (EBIT). A higher ratio indicates a greater ability to meet these obligations, suggesting lower credit risk.",
-        "2": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect.",
-        "3": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect."
-      },
-      "educational": "The interest coverage ratio is a crucial metric in assessing a company's financial health, particularly its solvency. It provides insight into whether a company generates sufficient earnings to comfortably handle its debt obligations. This is important for bond analysis, credit risk assessment, and overall investment decisions, aligning with the Investment Planning blueprint area focusing on securities analysis and portfolio management.",
-      "examTip": "On the CFP exam, remember that a low interest coverage ratio (below 1.5) signals potential financial distress and increased default risk, while a high ratio (above 3) generally indicates a comfortable margin for meeting interest payments.",
-      "memoryAid": "EBIT covers Interest: Think of EBIT as a blanket covering the cold of Interest Expense. A bigger blanket (higher EBIT) means better coverage!",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Financial Accounting Standards Board (FASB) accounting standards and investment analysis textbooks on financial ratio analysis.",
-      "commonMistake": "Many candidates confuse the interest coverage ratio with other debt ratios like debt-to-equity. A common trap is to focus on overall debt levels rather than the ability to service debt. Test-takers often incorrectly believe the interest coverage ratio measures profitability directly, overlooking its focus on debt obligations."
     },
     {
       "id": "cfp-inv-b10-010",
@@ -4168,41 +4029,6 @@
       "commonMistake": "Many candidates confuse convexity with other bond characteristics. Option A (Credit risk only) is incorrect because convexity relates to interest rate risk, not credit risk. Option B (Maturity date changes) is incorrect because while maturity date affects duration, it's not the same as convexity. Option D (Linear price changes) is incorrect because duration assumes a linear relationship, while convexity captures the non-linear aspect."
     },
     {
-      "id": "cfp-inv-b11-017",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-2",
-      "topic": "Equity valuation (P/E, dividend discount)",
-      "subtopic": "Preferred Stock",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Sarah owns preferred stock in Tech Solutions Inc. She is trying to understand why it is classified as a hybrid security. Preferred stock has characteristics of both stocks and bonds because:",
-      "explanation": "Preferred stock: hybrid security. Bond-like: fixed dividend rate, priority over common, prices sensitive to interest rates. Stock-like: equity on balance sheet, no maturity (usually), dividends not guaranteed. Usually no voting rights. Types: cumulative, convertible, callable. Qualified dividend treatment possible. Higher yield than common, less appreciation potential.",
-      "correctAnswer": 2,
-      "options": [
-        "It\\",
-        ",\n      ",
-        "It is guaranteed to appreciate at a fixed rate annually, regardless of the company's performance.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - This option is incomplete and doesn't provide a reason why preferred stock has characteristics of both stocks and bonds.",
-        "1": "Why option B is WRONG - This option is incomplete and doesn't provide a reason why preferred stock has characteristics of both stocks and bonds.",
-        "2": "Why option C is CORRECT - Preferred stock blends features of both stocks and bonds. Like bonds, it typically pays a fixed dividend and has priority over common stock in bankruptcy. Like stocks, it represents equity ownership (though without voting rights in most cases) and its dividends are not guaranteed in the same way bond interest is.",
-        "3": "Why option D is WRONG - This option is incomplete and doesn't provide a reason why preferred stock has characteristics of both stocks and bonds."
-      },
-      "educational": "Preferred stock is often called a hybrid security because it shares characteristics with both debt (bonds) and equity (common stock). Its fixed dividend payments resemble bond coupon payments, offering a predictable income stream. However, unlike bonds, preferred stock dividends are not a contractual obligation, and the stock represents an ownership stake in the company, similar to common stock, though usually without voting rights. Understanding the hybrid nature of preferred stock is crucial for asset allocation decisions and assessing risk-return tradeoffs.",
-      "examTip": "On the CFP exam, remember that preferred stock's price sensitivity to interest rate changes is more akin to bonds than common stock, making it a useful tool for managing interest rate risk in a portfolio.",
-      "memoryAid": "Preferred stock is a 'hybrid' – think of a hybrid car that combines gas and electric; preferred stock combines features of stocks and bonds.",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 60,
-      "authorityRef": "N/A - Preferred stock characteristics are based on general corporate finance principles, not a specific regulation.",
-      "commonMistake": "This question is incomplete and lacks options, making it impossible to assess common mistakes. However, a common mistake would be confusing preferred stock with common stock or bonds. Preferred stock has a fixed dividend payment like bonds, but also represents ownership in the company like common stock. Candidates might incorrectly assume it's purely debt or purely equity."
-    },
-    {
       "id": "cfp-inv-b11-018",
       "courseId": "cfp",
       "section": "CFP-INV",
@@ -4657,40 +4483,6 @@
       "timeEstimate": 60,
       "authorityRef": "N/A - Understanding ADRs",
       "commonMistake": "Many candidates confuse ADRs with direct investments in foreign markets or believe they offer tax advantages or guaranteed returns. The exam exploits the misconception that ADRs eliminate the complexities of international investing, leading test-takers to overlook the fact that they are still subject to market risk and foreign taxes (though simplified)."
-    },
-    {
-      "id": "cfp-inv-b12-006",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-4",
-      "topic": "Municipal bonds vs. taxable bonds",
-      "subtopic": "Municipal Bond Types",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "The city of Austin needs to raise capital for a new toll road. How do revenue bonds differ from general obligation bonds?",
-      "explanation": "General Obligation (GO) bonds: backed by full faith, credit, and taxing power of issuer. Revenue bonds: backed only by specific revenue source (tolls, utility payments, etc.). GO generally safer—can raise taxes. Revenue: assess the project economics. Both typically tax-exempt. Revenue may have higher yields due to narrower backing. Due diligence differs for each type.",
-      "correctAnswer": 3,
-      "options": [
-        "Revenue bonds can\\",
-        ",\n      ",
-        "Revenue bonds are backed by the full faith and credit of the city of Austin, making them a low-risk investment.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - This option is incomplete and doesn't provide a full comparison. Revenue bonds are not inherently better or worse than general obligation bonds; their suitability depends on the investor's risk tolerance and the specifics of the bond issue.",
-        "B": "Why option B is WRONG - This option is incomplete and doesn't provide a full comparison. While revenue bonds are often associated with specific projects, this doesn't fully capture the key difference in backing between the two types of bonds.",
-        "C": "Why option C is WRONG - This option is incomplete and doesn't provide a full comparison. While revenue bonds may have higher yields, this is not the defining characteristic that differentiates them from general obligation bonds. The primary difference lies in the source of repayment."
-      },
-      "educational": "Revenue bonds and general obligation bonds are both municipal bonds, but they differ significantly in their security. General obligation bonds are considered safer because they are backed by the issuer's ability to raise taxes. Revenue bonds, on the other hand, rely on the success of a specific project, making them potentially riskier but often offering higher yields to compensate for that risk. Understanding this distinction is crucial for asset allocation and risk management within a client's portfolio.",
-      "examTip": "On the CFP exam, carefully analyze the bond's description to determine the source of repayment. If it mentions a specific project or revenue stream, it's likely a revenue bond; if it mentions the issuer's taxing power, it's likely a general obligation bond.",
-      "memoryAid": "GO bonds = Government's Overall taxing power; Revenue bonds = Revenue stream backing.",
-      "reference": "Securities Act of 1933; Investment Advisers Act of 1940",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 60,
-      "authorityRef": "N/A - Municipal Bonds: Revenue vs. General Obligation",
-      "commonMistake": "This question requires understanding the backing of different types of municipal bonds. Revenue bonds are backed by the revenue stream of a specific project, while general obligation bonds are backed by the full faith and credit of the issuing municipality. The exam often presents incomplete or misleading descriptions of each bond type to test this understanding."
     },
     {
       "id": "cfp-inv-b12-007",
@@ -8893,40 +8685,6 @@
       "commonMistake": "Many candidates confuse the number of risk factors used in CAPM and APT. The exam exploits the misconception that both models rely on a single risk factor. Test-takers often incorrectly remember that CAPM uses the market risk premium as its sole factor, while APT allows for multiple systematic risk factors."
     },
     {
-      "id": "cfp-inv-b6-003",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-3",
-      "topic": "Performance measurement (HPR, TWR, IRR)",
-      "subtopic": "Information Ratio",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "An actively managed fund has an information ratio of 0.6. What does this metric indicate about the manager\\'s performance?",
-      "explanation": "The information ratio measures active return (excess return over the benchmark) divided by tracking error (standard deviation of active returns). An IR of 0.6 means the manager generates 0.6 units of active return per unit of active risk taken, indicating reasonably skilled active management.",
-      "correctAnswer": 1,
-      "options": [
-        "The fund\\",
-        ",\n      ",
-        "has generated 60% more return than the benchmark.",
-        "s beta-adjusted return exceeds the benchmark by 0.6%"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The information ratio doesn't directly translate to a specific percentage of outperformance. It's a risk-adjusted measure, not a raw return figure.",
-        "C": "Why option C is WRONG - While a higher information ratio *generally* indicates better performance, an IR of 0.6 doesn't automatically qualify as 'exceptional'. Exceptional performance is subjective and depends on the context of the investment strategy and market conditions. Also, the IR doesn't directly measure the consistency of returns.",
-        "D": "Why option D is WRONG - The information ratio is not directly related to beta-adjusted return. Beta measures systematic risk (market risk), while the information ratio focuses on active return and tracking error (active risk). Beta-adjusted return would be more relevant when comparing to a market index or other investments with varying levels of systematic risk."
-      },
-      "educational": "The Information Ratio (IR) is a crucial tool for evaluating active portfolio management. It quantifies the manager's skill in generating excess returns relative to a benchmark, considering the level of active risk (tracking error) undertaken. A higher IR generally indicates better risk-adjusted performance, reflecting the manager's ability to add value beyond what could be achieved through passive benchmark replication. This concept is essential for understanding portfolio performance attribution and manager selection.",
-      "examTip": "On the CFP exam, remember that the Information Ratio is a risk-adjusted measure of active management skill. When comparing multiple managers, prioritize those with higher Information Ratios, all else being equal, as they demonstrate a better ability to generate excess returns for the risk taken.",
-      "memoryAid": "IR = Information Ratio = Return (active) / Risk (active). Think: 'IR is Return over Risk, for active management.'",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Sharpe, W. F. (1994). The Sharpe Ratio. Journal of Portfolio Management, 21(1), 49-58.",
-      "commonMistake": "Many candidates confuse the information ratio with the Sharpe ratio or alpha. The exam exploits the misconception that the information ratio directly translates to a percentage outperformance. Test-takers often incorrectly assume that an information ratio of 0.6 means a 0.6% excess return, forgetting that it represents the manager's skill in generating excess returns relative to the benchmark's tracking error."
-    },
-    {
       "id": "cfp-inv-b6-004",
       "courseId": "cfp",
       "section": "CFP-INV",
@@ -8960,40 +8718,6 @@
       "timeEstimate": 60,
       "authorityRef": "P. Boyle, 'Options: A Monte Carlo Approach,' Journal of Financial Economics, 1977",
       "commonMistake": "Many candidates underestimate the power and scope of Monte Carlo simulations. The exam exploits the misconception that Monte Carlo simulations are limited to simple, single-period analyses or that they guarantee outcomes. Test-takers often incorrectly believe that these simulations provide definitive answers rather than probabilistic assessments."
-    },
-    {
-      "id": "cfp-inv-b6-005",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-2",
-      "topic": "Bond pricing and yield calculations",
-      "subtopic": "Convexity",
-      "difficulty": "hard",
-      "skillLevel": "Remembering and Understanding",
-      "question": "An analyst at Blackrock is evaluating the sensitivity of a bond's price to changes in interest rates. Convexity measures:",
-      "explanation": "Convexity measures the curvature of the price-yield relationship. Duration gives a linear approximation of price change, but actual price changes follow a curve. Positive convexity means prices rise more than duration predicts when yields fall, and fall less when yields rise—a desirable characteristic.",
-      "correctAnswer": 1,
-      "options": [
-        "The issuer\\",
-        ",\n      ",
-        "s estimate",
-        "The linear relationship between price and yield"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Convexity is a characteristic of a bond itself, not something determined by the issuer. The issuer's actions might influence the bond's yield, but convexity is a mathematical property.",
-        "C": "Why option C is WRONG - Convexity is a calculated measure based on the bond's cash flows and yield, not a subjective estimate. While analysts may forecast yields, convexity itself is a precise calculation.",
-        "D": "Why option D is WRONG - Duration measures the *linear* relationship between price and yield. Convexity, on the other hand, measures the *non-linear* (curved) relationship, specifically how much the actual price change deviates from the duration estimate."
-      },
-      "educational": "Convexity is a crucial concept in fixed income because it refines the duration measure. Duration assumes a linear relationship between bond prices and yields, but this is only an approximation. Convexity accounts for the curvature of the actual price-yield relationship, providing a more accurate estimate of price changes, especially when interest rate movements are substantial. Understanding convexity is essential for managing interest rate risk within a portfolio.",
-      "examTip": "On the CFP exam, remember that higher convexity is generally desirable for bond portfolios, as it means the portfolio will benefit more from falling rates and lose less from rising rates, all else being equal.",
-      "memoryAid": "Duration is a line, Convexity is the curve.",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Fabozzi, F. J. (2007). Bond Markets, Analysis, and Strategies (6th ed.). Pearson Prentice Hall.",
-      "commonMistake": "Many candidates confuse convexity with duration or other bond characteristics. The exam exploits the misconception that convexity is a simple, linear measure of price sensitivity. Test-takers often incorrectly associate convexity with the issuer's creditworthiness or a simple estimate of price change, rather than understanding it as a measure of the curvature of the price-yield relationship."
     },
     {
       "id": "cfp-inv-b6-006",
@@ -9345,40 +9069,6 @@
       "timeEstimate": 60,
       "authorityRef": "Options Industry Council (OIC) materials on cash-secured puts",
       "commonMistake": "Many candidates confuse selling a cash-secured put with bearish strategies or hedging existing positions. The exam exploits the misconception that selling a put is inherently a negative outlook, rather than a neutral to bullish strategy where the investor is willing to buy the stock at a specific price."
-    },
-    {
-      "id": "cfp-inv-b6-016",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-2",
-      "topic": "Options strategies (calls, puts, covered calls)",
-      "subtopic": "Time Decay",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Maria is considering purchasing call options on Tesla. She is reviewing various option metrics to understand the potential risks and rewards. Theta measures:",
-      "explanation": "Theta measures time decay—how much option value decreases each day. Options are wasting assets; time value erodes as expiration approaches. At-the-money options have the highest theta. Theta accelerates as expiration nears. Sellers benefit from theta; buyers fight it.",
-      "correctAnswer": 2,
-      "options": [
-        "The option\\",
-        ",\n      ",
-        "The option with the lowest strike price and the latest expiration date",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Theta does not measure the option itself. Theta is a sensitivity measure indicating how much the option's price will change due to the passage of time.",
-        "B": "Why option B is WRONG - This option is incomplete and doesn't represent a valid concept related to options trading or theta.",
-        "D": "Why option D is WRONG - This option is incomplete and doesn't represent a valid concept related to options trading or theta."
-      },
-      "educational": "Theta, along with other 'Greeks' like Delta, Gamma, and Vega, are crucial for managing risk in options trading. Understanding theta is essential for constructing options strategies that profit from or are hedged against time decay. This knowledge is vital for financial planners advising clients on incorporating options into their investment portfolios, ensuring suitability and managing expectations.",
-      "examTip": "On the CFP exam, remember that theta is always expressed as a negative number for option buyers and a positive number for option sellers, reflecting the loss or gain of value per unit of time.",
-      "memoryAid": "Theta = Time Decay (Think: 'T' for Time in Theta and Time Decay)",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Options Industry Council (OIC) materials on option theta",
-      "commonMistake": "Many candidates confuse theta with other option Greeks or general option characteristics. A common trap is to associate theta with the potential profit or loss, rather than its true meaning as a measure of time decay."
     },
     {
       "id": "cfp-inv-b6-017",
@@ -11796,41 +11486,6 @@
       "timeEstimate": 90,
       "authorityRef": "Modern Portfolio Theory",
       "commonMistake": "Many candidates confuse performance attribution with simple return calculations. A common trap is to focus only on the total return without understanding the underlying drivers. Test-takers often incorrectly assume that performance attribution only considers gains and losses, overlooking the impact of asset allocation and security selection."
-    },
-    {
-      "id": "cfp-inv-b9-016",
-      "courseId": "cfp",
-      "section": "CFP-INV",
-      "blueprintArea": "INV-2",
-      "topic": "Technical vs. fundamental analysis",
-      "subtopic": "Mean Reversion",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Analysts at Blackwood Research observe that certain stocks that have significantly underperformed the market tend to rebound over time. This observation is based on the concept that mean reversion in investments suggests that:",
-      "explanation": "Mean reversion: extremes tend to normalize over time. High P/E ratios suggest lower future returns; low valuations suggest higher returns. This underlies contrarian strategies. It doesn\\'t mean timing is easy—deviation from mean can persist for years. Also applies to individual securities, sectors, and even volatility.",
-      "correctAnswer": 3,
-      "options": [
-        "Markets are always efficient",
-        "Diversification doesn\\",
-        ",\n      ",
-        "Past performance guarantees future returns"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - The concept of mean reversion does not imply that markets are always efficient. In fact, it suggests that markets can be inefficient, leading to temporary over- or undervaluation of assets.",
-        "1": "Why option B is WRONG - Diversification is a risk management technique that reduces unsystematic risk. While important, it's unrelated to the core concept of mean reversion, which focuses on the tendency of asset returns to revert to their historical average over time.",
-        "2": "Why option C is WRONG - This option is incomplete and therefore incorrect. It doesn't present a complete statement about mean reversion.",
-        "3": "Why option D is CORRECT - Mean reversion suggests that asset prices and returns tend to revert to their long-term average over time. Periods of above-average performance are often followed by periods of below-average performance, and vice versa. This is a key concept in contrarian investing strategies."
-      },
-      "educational": "Mean reversion is a financial theory that suggests asset prices and historical returns eventually revert to their long-run mean or average level. This theory is based on the idea that market inefficiencies and behavioral biases can cause temporary deviations from fair value, but these deviations are unsustainable in the long run. Understanding mean reversion can help investors make informed decisions about asset allocation and portfolio management, especially when considering contrarian investment strategies.",
-      "examTip": "On the CFP exam, remember that mean reversion is a long-term phenomenon; it's notoriously difficult to time market corrections or identify when an asset will revert to its mean.",
-      "memoryAid": "Think of a rubber band: stretched too far (above the mean), it snaps back; compressed too much (below the mean), it expands back.",
-      "reference": "Securities Act of 1933",
-      "sourceFile": "investments.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Efficient Market Hypothesis",
-      "commonMistake": "Many candidates confuse technical analysis with fundamental analysis. A common trap is to assume mean reversion implies market efficiency. Test-takers often incorrectly believe that mean reversion guarantees future profits, overlooking the risks and uncertainties involved."
     },
     {
       "id": "cfp-inv-b9-017",

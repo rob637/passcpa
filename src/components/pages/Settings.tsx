@@ -15,6 +15,7 @@ import {
   Sun,
   Moon,
   Monitor,
+  Sunrise,
   Palette,
   RefreshCw,
   CheckCircle,
@@ -796,6 +797,42 @@ const Settings: React.FC = () => {
                     </button>
 
                     <button
+                      onClick={() => setThemeMode('auto')}
+                      className={clsx(
+                        'w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all',
+                        themeMode === 'auto'
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                          : 'border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600'
+                      )}
+                    >
+                      <div className={clsx(
+                        'w-12 h-12 rounded-full flex items-center justify-center',
+                        themeMode === 'auto' ? 'bg-primary-100 dark:bg-primary-800' : 'bg-slate-100 dark:bg-slate-800'
+                      )}>
+                        <Sunrise className={clsx(
+                          'w-6 h-6',
+                          themeMode === 'auto' ? 'text-primary-600' : 'text-slate-500 dark:text-slate-400'
+                        )} />
+                      </div>
+                      <div className="flex-1">
+                        <div className={clsx(
+                          'font-semibold',
+                          themeMode === 'auto' ? 'text-primary-700 dark:text-primary-300' : 'text-slate-900 dark:text-white'
+                        )}>Auto</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          Light by day (7 AM – 7 PM), dark by night
+                        </div>
+                      </div>
+                      {themeMode === 'auto' && (
+                        <div className="w-5 h-5 rounded-full bg-primary-500 flex items-center justify-center">
+                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                      )}
+                    </button>
+
+                    <button
                       onClick={() => setThemeMode('system')}
                       className={clsx(
                         'w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all',
@@ -836,6 +873,7 @@ const Settings: React.FC = () => {
                     <div className="text-sm text-slate-600 dark:text-slate-300">
                       <strong>Current:</strong> {darkMode ? 'Dark mode active' : 'Light mode active'}
                       {themeMode === 'system' && ' (following system preference)'}
+                      {themeMode === 'auto' && ' (time-based auto switching)'}
                     </div>
                   </div>
                 </div>

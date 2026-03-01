@@ -113,6 +113,8 @@ export const CourseProvider: React.FC<CourseProviderProps> = ({
            clearQuestionCache();
            setCourseId(detected.courseId);
            setDetectionSource(detected.source);
+           // Persist the URL-detected course so it survives page reloads
+           saveCoursePreference(detected.courseId);
          }
       }
     }

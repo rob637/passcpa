@@ -1164,9 +1164,9 @@
       "type": "formula",
       "topic": "Audit Risk",
       "front": "AUDIT RISK MODEL",
-      "back": "AR = IR × CR × DR\\n\\nAudit Risk = Inherent Risk × Control Risk × Detection Risk\\n\\nSolving for DR:\\nDR = AR ÷ (IR × CR)",
+      "back": "AR = IR × CR × DR\n\nAudit Risk = Inherent Risk × Control Risk × Detection Risk\n\nSolving for DR:\nDR = AR ÷ (IR × CR)",
       "difficulty": "easy",
-      "example": "Target AR 5%, IR 80%, CR 50%:\\nDR = 0.05 ÷ (0.80 × 0.50) = 12.5%",
+      "example": "Target AR 5%, IR 80%, CR 50%:\nDR = 0.05 ÷ (0.80 × 0.50) = 12.5%",
       "tags": [
         "risk",
         "audit risk"
@@ -1181,7 +1181,7 @@
       "type": "formula",
       "topic": "Sampling",
       "front": "SAMPLE SIZE factors",
-      "back": "Sample Size increases when:\\n• Tolerable misstatement ↓\\n• Expected misstatement ↑\\n• Desired confidence ↑\\n• Population size ↑ (minimal effect)\\n• Population variability ↑",
+      "back": "Sample Size increases when:\n• Tolerable misstatement ↓\n• Expected misstatement ↑\n• Desired confidence ↑\n• Population size ↑ (minimal effect)\n• Population variability ↑",
       "difficulty": "medium",
       "tags": [
         "sampling",
@@ -1197,9 +1197,9 @@
       "type": "formula",
       "topic": "Sampling",
       "front": "PROJECTED MISSTATEMENT",
-      "back": "Sample Misstatement ÷ Sample Size × Population Size\\n\\nOr: (Misstatement Rate in Sample) × Population Value\\n\\nCompare to Tolerable Misstatement",
+      "back": "Sample Misstatement ÷ Sample Size × Population Size\n\nOr: (Misstatement Rate in Sample) × Population Value\n\nCompare to Tolerable Misstatement",
       "difficulty": "medium",
-      "example": "Found $5K errors in $100K sample from $1M population:\\nProjected = $5K ÷ $100K × $1M = $50K",
+      "example": "Found $5K errors in $100K sample from $1M population:\nProjected = $5K ÷ $100K × $1M = $50K",
       "tags": [
         "sampling",
         "projection"
@@ -1214,9 +1214,9 @@
       "type": "formula",
       "topic": "Materiality",
       "front": "MATERIALITY benchmarks",
-      "back": "Common starting points:\\n• 5% of Pre-tax Income\\n• 0.5-1% of Revenue\\n• 0.5-1% of Total Assets\\n• 1-2% of Equity\\n\\nPerformance Materiality: 50-75% of Overall",
+      "back": "Common starting points:\n• 5% of Pre-tax Income\n• 0.5-1% of Revenue\n• 0.5-1% of Total Assets\n• 1-2% of Equity\n\nPerformance Materiality: 50-75% of Overall",
       "difficulty": "easy",
-      "example": "Pre-tax Income $2M:\\nMateriality = $2M × 5% = $100K\\nPerformance = $100K × 60% = $60K",
+      "example": "Pre-tax Income $2M:\nMateriality = $2M × 5% = $100K\nPerformance = $100K × 60% = $60K",
       "tags": [
         "materiality",
         "benchmarks"
@@ -1269,7 +1269,7 @@
       "back": "Common benchmarks for planning materiality.",
       "difficulty": "easy",
       "example": "Net Income $2M × 5% = $100,000 overall materiality",
-      "formula": "Materiality = Benchmark × Percentage\\n• Net Income: 3-5%\\n• Revenue: 0.5-1%\\n• Total Assets: 0.5-1%\\n• Equity: 1-2%",
+      "formula": "Materiality = Benchmark × Percentage\n• Net Income: 3-5%\n• Revenue: 0.5-1%\n• Total Assets: 0.5-1%\n• Equity: 1-2%",
       "tags": [
         "materiality",
         "planning"
@@ -1302,7 +1302,7 @@
       "type": "mnemonic",
       "topic": "Audit Evidence",
       "front": "SALY - When to use Same As Last Year",
-      "back": "Same As Last Year\\n\\nNEVER blindly use SALY in audit!\\nAlways evaluate:\\n- Current year changes\\n- New risks\\n- Changed circumstances\\n- Updated professional standards",
+      "back": "Same As Last Year\n\nNEVER blindly use SALY in audit!\nAlways evaluate:\n- Current year changes\n- New risks\n- Changed circumstances\n- Updated professional standards",
       "difficulty": "easy",
       "mnemonic": "SALY",
       "tags": [
@@ -1433,7 +1433,7 @@
       "type": "rule",
       "topic": "Independence",
       "front": "INDEPENDENCE cooling-off periods",
-      "back": "Former partner: 1 year\\nEmployee: 1 year (if significant role)\\n\\nCannot serve as:\\n• Director, officer, or employee\\n• Promoter, underwriter, voting trustee\\n\\nImmediate family: same restrictions",
+      "back": "Former partner: 1 year\nEmployee: 1 year (if significant role)\n\nCannot serve as:\n• Director, officer, or employee\n• Promoter, underwriter, voting trustee\n\nImmediate family: same restrictions",
       "difficulty": "medium",
       "tags": [
         "independence",
@@ -1465,7 +1465,7 @@
       "type": "rule",
       "topic": "Documentation",
       "front": "WORKPAPER retention requirements",
-      "back": "Nonissuers: 5 years from report date\\nIssuers (SEC): 7 years from report date\\n\\nDocument completion: 60 days after report (45 for SEC)\\n\\nNo deletion after completion period",
+      "back": "Nonissuers: 5 years from report date\nIssuers (SEC): 7 years from report date\n\nDocument completion: 60 days after report (45 for SEC)\n\nNo deletion after completion period",
       "difficulty": "medium",
       "tags": [
         "documentation",
@@ -1481,7 +1481,7 @@
       "type": "rule",
       "topic": "Sampling",
       "front": "COMMON sample selection methods",
-      "back": "Random: Every item has equal chance\\nSystematic: Every nth item (random start)\\nHaphazard: Without bias (not random)\\nBlock: Sequential items (rarely used)\\n\\nNonstatistical selection:\\nJudgmental, risk-based",
+      "back": "Random: Every item has equal chance\nSystematic: Every nth item (random start)\nHaphazard: Without bias (not random)\nBlock: Sequential items (rarely used)\n\nNonstatistical selection:\nJudgmental, risk-based",
       "difficulty": "easy",
       "tags": [
         "sampling",
@@ -1514,7 +1514,7 @@
       "type": "rule",
       "topic": "Fraud",
       "front": "FRAUD TRIANGLE components",
-      "back": "Incentive/Pressure: Motivation to commit fraud\\nOpportunity: Ability to commit fraud\\nRationalization: Attitude/ethics allowing fraud\\n\\nAll three typically present\\nAuditors assess risk factors for each",
+      "back": "Incentive/Pressure: Motivation to commit fraud\nOpportunity: Ability to commit fraud\nRationalization: Attitude/ethics allowing fraud\n\nAll three typically present\nAuditors assess risk factors for each",
       "difficulty": "easy",
       "tags": [
         "fraud",
@@ -1530,7 +1530,7 @@
       "type": "rule",
       "topic": "Fraud",
       "front": "PRESUMED FRAUD RISKS",
-      "back": "Always significant risks:\\n1. Revenue recognition (presumed)\\n2. Management override of controls (always)\\n\\nCan rebut revenue presumption with documentation\\n\\nCannot rebut management override",
+      "back": "Always significant risks:\n1. Revenue recognition (presumed)\n2. Management override of controls (always)\n\nCan rebut revenue presumption with documentation\n\nCannot rebut management override",
       "difficulty": "medium",
       "tags": [
         "fraud",
@@ -1546,7 +1546,7 @@
       "type": "rule",
       "topic": "Related Parties",
       "front": "RELATED PARTY disclosures required",
-      "back": "Nature of relationship\\nDescription of transactions\\nDollar amounts\\nAmounts due to/from\\n\\nEven if no transactions: disclose control relationship if could affect FS",
+      "back": "Nature of relationship\nDescription of transactions\nDollar amounts\nAmounts due to/from\n\nEven if no transactions: disclose control relationship if could affect FS",
       "difficulty": "medium",
       "tags": [
         "related parties",
@@ -1562,7 +1562,7 @@
       "type": "rule",
       "topic": "Going Concern",
       "front": "GOING CONCERN evaluation period",
-      "back": "Evaluate: 12 months from FS date\\n(Or date of auditor",
+      "back": "Evaluate: 12 months from FS date\n(Or date of auditor",
       "difficulty": "medium",
       "tags": [
         "going concern",
@@ -1578,7 +1578,7 @@
       "type": "rule",
       "topic": "Reports",
       "front": "OPINION types and causes",
-      "back": "Unmodified: FS fairly presented\\n\\nQualified: Material but not pervasive\\n• Misstatement OR\\n• Scope limitation\\n\\nAdverse: Material AND pervasive misstatement\\n\\nDisclaimer: Material AND pervasive scope limit",
+      "back": "Unmodified: FS fairly presented\n\nQualified: Material but not pervasive\n• Misstatement OR\n• Scope limitation\n\nAdverse: Material AND pervasive misstatement\n\nDisclaimer: Material AND pervasive scope limit",
       "difficulty": "easy",
       "tags": [
         "opinion",
@@ -1594,7 +1594,7 @@
       "type": "rule",
       "topic": "Reports",
       "front": "EMPHASIS OF MATTER vs Other Matter",
-      "back": "Emphasis of Matter:\\n• Already in FS\\n• Fundamental to understanding\\n• Examples: going concern, subsequent events\\n\\nOther Matter:\\n• Not in FS\\n• Relevant to understanding audit\\n• Examples: prior period audit by other",
+      "back": "Emphasis of Matter:\n• Already in FS\n• Fundamental to understanding\n• Examples: going concern, subsequent events\n\nOther Matter:\n• Not in FS\n• Relevant to understanding audit\n• Examples: prior period audit by other",
       "difficulty": "medium",
       "tags": [
         "reports",
@@ -1610,7 +1610,7 @@
       "type": "rule",
       "topic": "Communications",
       "front": "REQUIRED communications with TCWG",
-      "back": "Auditor responsibilities\\nPlanned scope and timing\\nSignificant findings:\\n• Qualitative aspects\\n• Significant difficulties\\n• Uncorrected misstatements\\n• Disagreements with management\\n• Management consultations with others\\n• Written representations requested",
+      "back": "Auditor responsibilities\nPlanned scope and timing\nSignificant findings:\n• Qualitative aspects\n• Significant difficulties\n• Uncorrected misstatements\n• Disagreements with management\n• Management consultations with others\n• Written representations requested",
       "difficulty": "medium",
       "tags": [
         "governance",
@@ -2179,9 +2179,9 @@
       "type": "formula",
       "topic": "Liquidity Ratios",
       "front": "CURRENT RATIO",
-      "back": "Current Assets ÷ Current Liabilities\\n\\nMeasures short-term debt-paying ability\\nHigher = more liquid\\nBenchmark: 1.5-2.0 varies by industry",
+      "back": "Current Assets ÷ Current Liabilities\n\nMeasures short-term debt-paying ability\nHigher = more liquid\nBenchmark: 1.5-2.0 varies by industry",
       "difficulty": "easy",
-      "example": "CA $500K, CL $250K:\\nCurrent Ratio = 2.0",
+      "example": "CA $500K, CL $250K:\nCurrent Ratio = 2.0",
       "tags": [
         "ratios",
         "liquidity"
@@ -2196,9 +2196,9 @@
       "type": "formula",
       "topic": "Liquidity Ratios",
       "front": "QUICK RATIO (Acid Test)",
-      "back": "(Cash + Marketable Securities + A/R) ÷ Current Liabilities\\n\\nOr: (Current Assets - Inventory - Prepaids) ÷ Current Liabilities\\n\\nMore conservative than current ratio",
+      "back": "(Cash + Marketable Securities + A/R) ÷ Current Liabilities\n\nOr: (Current Assets - Inventory - Prepaids) ÷ Current Liabilities\n\nMore conservative than current ratio",
       "difficulty": "easy",
-      "example": "CA $500K - Inv $150K - Prepaids $50K = $300K\\n$300K ÷ $250K CL = 1.2",
+      "example": "CA $500K - Inv $150K - Prepaids $50K = $300K\n$300K ÷ $250K CL = 1.2",
       "tags": [
         "ratios",
         "liquidity"
@@ -2230,9 +2230,9 @@
       "type": "formula",
       "topic": "Profitability Ratios",
       "front": "GROSS PROFIT MARGIN",
-      "back": "(Revenue - COGS) ÷ Revenue × 100\\n\\nOr: Gross Profit ÷ Revenue\\n\\nMeasures production efficiency",
+      "back": "(Revenue - COGS) ÷ Revenue × 100\n\nOr: Gross Profit ÷ Revenue\n\nMeasures production efficiency",
       "difficulty": "easy",
-      "example": "Revenue $1M, COGS $600K:\\nGP Margin = $400K ÷ $1M = 40%",
+      "example": "Revenue $1M, COGS $600K:\nGP Margin = $400K ÷ $1M = 40%",
       "tags": [
         "ratios",
         "profitability"
@@ -2247,9 +2247,9 @@
       "type": "formula",
       "topic": "Profitability Ratios",
       "front": "NET PROFIT MARGIN",
-      "back": "Net Income ÷ Revenue × 100\\n\\nMeasures overall profitability\\n\"Bottom line\" percentage",
+      "back": "Net Income ÷ Revenue × 100\n\nMeasures overall profitability\n\"Bottom line\" percentage",
       "difficulty": "easy",
-      "example": "NI $80K, Revenue $1M:\\nNet Margin = 8%",
+      "example": "NI $80K, Revenue $1M:\nNet Margin = 8%",
       "tags": [
         "ratios",
         "profitability"
@@ -2264,9 +2264,9 @@
       "type": "formula",
       "topic": "Profitability Ratios",
       "front": "RETURN ON ASSETS (ROA)",
-      "back": "Net Income ÷ Average Total Assets\\n\\nMeasures efficiency of asset utilization\\nHow well assets generate profit",
+      "back": "Net Income ÷ Average Total Assets\n\nMeasures efficiency of asset utilization\nHow well assets generate profit",
       "difficulty": "easy",
-      "example": "NI $80K, Avg Assets $800K:\\nROA = 10%",
+      "example": "NI $80K, Avg Assets $800K:\nROA = 10%",
       "tags": [
         "ratios",
         "profitability"
@@ -2283,7 +2283,7 @@
       "front": "RETURN ON EQUITY (ROE)",
       "back": "Net Income ÷ Average Stockholders",
       "difficulty": "easy",
-      "example": "NI $80K, Avg Equity $400K:\\nROE = 20%",
+      "example": "NI $80K, Avg Equity $400K:\nROE = 20%",
       "tags": [
         "ratios",
         "profitability"
@@ -2315,9 +2315,9 @@
       "type": "formula",
       "topic": "Leverage Ratios",
       "front": "DEBT-TO-EQUITY ratio",
-      "back": "Total Debt ÷ Total Equity\\n\\nMeasures financial leverage\\nHigher = more debt-financed = higher risk",
+      "back": "Total Debt ÷ Total Equity\n\nMeasures financial leverage\nHigher = more debt-financed = higher risk",
       "difficulty": "easy",
-      "example": "Debt $300K, Equity $200K:\\nD/E = 1.5 or 150%",
+      "example": "Debt $300K, Equity $200K:\nD/E = 1.5 or 150%",
       "tags": [
         "ratios",
         "leverage"
@@ -2332,9 +2332,9 @@
       "type": "formula",
       "topic": "Leverage Ratios",
       "front": "DEBT-TO-ASSETS ratio",
-      "back": "Total Debt ÷ Total Assets\\n\\nPercentage of assets financed by debt\\nDebt Ratio = 1 - Equity Ratio",
+      "back": "Total Debt ÷ Total Assets\n\nPercentage of assets financed by debt\nDebt Ratio = 1 - Equity Ratio",
       "difficulty": "easy",
-      "example": "Debt $300K, Assets $500K:\\nD/A = 60%",
+      "example": "Debt $300K, Assets $500K:\nD/A = 60%",
       "tags": [
         "ratios",
         "leverage"
@@ -2349,9 +2349,9 @@
       "type": "formula",
       "topic": "Leverage Ratios",
       "front": "TIMES INTEREST EARNED (TIE)",
-      "back": "EBIT ÷ Interest Expense\\n\\nOr: (NI + Interest + Taxes) ÷ Interest\\n\\nAbility to cover interest payments\\nHigher = better coverage",
+      "back": "EBIT ÷ Interest Expense\n\nOr: (NI + Interest + Taxes) ÷ Interest\n\nAbility to cover interest payments\nHigher = better coverage",
       "difficulty": "easy",
-      "example": "EBIT $200K, Interest $40K:\\nTIE = 5.0 times",
+      "example": "EBIT $200K, Interest $40K:\nTIE = 5.0 times",
       "tags": [
         "ratios",
         "coverage"
@@ -2366,9 +2366,9 @@
       "type": "formula",
       "topic": "CVP Analysis",
       "front": "CONTRIBUTION MARGIN",
-      "back": "Sales - Variable Costs = Contribution Margin\\n\\nCM per Unit = Price - Variable Cost per Unit\\nCM Ratio = CM ÷ Sales",
+      "back": "Sales - Variable Costs = Contribution Margin\n\nCM per Unit = Price - Variable Cost per Unit\nCM Ratio = CM ÷ Sales",
       "difficulty": "easy",
-      "example": "Price $100, VC $60:\\nCM per unit = $40\\nCM Ratio = 40%",
+      "example": "Price $100, VC $60:\nCM per unit = $40\nCM Ratio = 40%",
       "tags": [
         "cost",
         "CVP"
@@ -2383,9 +2383,9 @@
       "type": "formula",
       "topic": "CVP Analysis",
       "front": "BREAKEVEN POINT",
-      "back": "BEP (units) = Fixed Costs ÷ CM per Unit\\n\\nBEP (dollars) = Fixed Costs ÷ CM Ratio\\n\\nPoint where Revenue = Total Costs",
+      "back": "BEP (units) = Fixed Costs ÷ CM per Unit\n\nBEP (dollars) = Fixed Costs ÷ CM Ratio\n\nPoint where Revenue = Total Costs",
       "difficulty": "easy",
-      "example": "FC $100K, CM $25/unit:\\nBEP = 4,000 units\\nOr: $100K ÷ 0.40 = $250K sales",
+      "example": "FC $100K, CM $25/unit:\nBEP = 4,000 units\nOr: $100K ÷ 0.40 = $250K sales",
       "tags": [
         "cost",
         "breakeven"
@@ -2400,9 +2400,9 @@
       "type": "formula",
       "topic": "CVP Analysis",
       "front": "TARGET PROFIT formula",
-      "back": "Units for Target Profit = (Fixed Costs + Target Profit) ÷ CM per Unit\\n\\nDollars for Target Profit = (FC + Target) ÷ CM Ratio",
+      "back": "Units for Target Profit = (Fixed Costs + Target Profit) ÷ CM per Unit\n\nDollars for Target Profit = (FC + Target) ÷ CM Ratio",
       "difficulty": "medium",
-      "example": "FC $100K, Target Profit $50K, CM $25:\\nUnits = ($100K + $50K) ÷ $25 = 6,000 units",
+      "example": "FC $100K, Target Profit $50K, CM $25:\nUnits = ($100K + $50K) ÷ $25 = 6,000 units",
       "tags": [
         "cost",
         "target profit"
@@ -2417,9 +2417,9 @@
       "type": "formula",
       "topic": "CVP Analysis",
       "front": "MARGIN OF SAFETY",
-      "back": "Actual Sales - Breakeven Sales = Margin of Safety\\n\\nMOS Ratio = MOS ÷ Actual Sales × 100\\n\\nCushion above breakeven",
+      "back": "Actual Sales - Breakeven Sales = Margin of Safety\n\nMOS Ratio = MOS ÷ Actual Sales × 100\n\nCushion above breakeven",
       "difficulty": "easy",
-      "example": "Sales $400K, BEP $250K:\\nMOS = $150K\\nMOS Ratio = 37.5%",
+      "example": "Sales $400K, BEP $250K:\nMOS = $150K\nMOS Ratio = 37.5%",
       "tags": [
         "cost",
         "margin of safety"
@@ -2434,9 +2434,9 @@
       "type": "formula",
       "topic": "Capital Budgeting",
       "front": "NET PRESENT VALUE (NPV)",
-      "back": "NPV = Σ(Cash Flows ÷ (1+r)^t) - Initial Investment\\n\\nOr: PV of Inflows - PV of Outflows\\n\\nNPV > 0 → Accept project",
+      "back": "NPV = Σ(Cash Flows ÷ (1+r)^t) - Initial Investment\n\nOr: PV of Inflows - PV of Outflows\n\nNPV > 0 → Accept project",
       "difficulty": "medium",
-      "example": "Invest $100K, receive $40K/yr for 4 years, 10%:\\nPV = $40K × 3.1699 = $126,796\\nNPV = $126,796 - $100K = $26,796",
+      "example": "Invest $100K, receive $40K/yr for 4 years, 10%:\nPV = $40K × 3.1699 = $126,796\nNPV = $126,796 - $100K = $26,796",
       "tags": [
         "capital budgeting",
         "NPV"
@@ -2451,9 +2451,9 @@
       "type": "formula",
       "topic": "Capital Budgeting",
       "front": "PAYBACK PERIOD",
-      "back": "Time to recover initial investment from cash flows\\n\\nSimple: Initial Investment ÷ Annual Cash Flow\\n\\nUneven: Cumulate until investment recovered",
+      "back": "Time to recover initial investment from cash flows\n\nSimple: Initial Investment ÷ Annual Cash Flow\n\nUneven: Cumulate until investment recovered",
       "difficulty": "easy",
-      "example": "Invest $100K, annual CF $25K:\\nPayback = $100K ÷ $25K = 4 years",
+      "example": "Invest $100K, annual CF $25K:\nPayback = $100K ÷ $25K = 4 years",
       "tags": [
         "capital budgeting",
         "payback"
@@ -2468,9 +2468,9 @@
       "type": "formula",
       "topic": "Capital Budgeting",
       "front": "PROFITABILITY INDEX (PI)",
-      "back": "PV of Future Cash Flows ÷ Initial Investment\\n\\nOr: (NPV + Initial Investment) ÷ Initial Investment\\n\\nPI > 1 → Accept\\nUseful for capital rationing",
+      "back": "PV of Future Cash Flows ÷ Initial Investment\n\nOr: (NPV + Initial Investment) ÷ Initial Investment\n\nPI > 1 → Accept\nUseful for capital rationing",
       "difficulty": "medium",
-      "example": "PV $126,796, Invest $100K:\\nPI = 1.27",
+      "example": "PV $126,796, Invest $100K:\nPI = 1.27",
       "tags": [
         "capital budgeting",
         "PI"
@@ -2485,9 +2485,9 @@
       "type": "formula",
       "topic": "Variance Analysis",
       "front": "MATERIAL PRICE VARIANCE",
-      "back": "(Actual Price - Standard Price) × Actual Quantity Purchased\\n\\nFavorable: AP < SP\\nUnfavorable: AP > SP",
+      "back": "(Actual Price - Standard Price) × Actual Quantity Purchased\n\nFavorable: AP < SP\nUnfavorable: AP > SP",
       "difficulty": "medium",
-      "example": "AP $5.20, SP $5.00, AQ 10,000:\\nMPV = ($5.20 - $5.00) × 10,000 = $2,000 U",
+      "example": "AP $5.20, SP $5.00, AQ 10,000:\nMPV = ($5.20 - $5.00) × 10,000 = $2,000 U",
       "tags": [
         "variance",
         "materials"
@@ -2502,9 +2502,9 @@
       "type": "formula",
       "topic": "Variance Analysis",
       "front": "MATERIAL QUANTITY VARIANCE",
-      "back": "(Actual Quantity Used - Standard Quantity Allowed) × Standard Price\\n\\nSQ Allowed = Std Qty per unit × Actual Output",
+      "back": "(Actual Quantity Used - Standard Quantity Allowed) × Standard Price\n\nSQ Allowed = Std Qty per unit × Actual Output",
       "difficulty": "medium",
-      "example": "AQ 10,500, SQ 10,000, SP $5.00:\\nMQV = (10,500 - 10,000) × $5 = $2,500 U",
+      "example": "AQ 10,500, SQ 10,000, SP $5.00:\nMQV = (10,500 - 10,000) × $5 = $2,500 U",
       "tags": [
         "variance",
         "materials"
@@ -3115,7 +3115,7 @@
       "type": "mnemonic",
       "topic": "Variance Analysis",
       "front": "Variance Analysis Framework",
-      "back": "Price variance (materials)\\nUsage variance (materials)\\nRate variance (labor)\\nEfficiency variance (labor)\\n---\\nDetermining favorable/unfavorable:\\nActual < Standard = Favorable for cost items\\nDetermining cause: Ask why!\\nSplit into price and quantity components",
+      "back": "Price variance (materials)\nUsage variance (materials)\nRate variance (labor)\nEfficiency variance (labor)\n---\nDetermining favorable/unfavorable:\nActual < Standard = Favorable for cost items\nDetermining cause: Ask why!\nSplit into price and quantity components",
       "difficulty": "medium",
       "mnemonic": "PURE DADS",
       "tags": [
@@ -3131,7 +3131,7 @@
       "type": "mnemonic",
       "topic": "Cost Behavior",
       "front": "Variable vs Fixed Costs",
-      "back": "Total Variable - changes with activity\\nTotal Fixed - stays constant\\n\\nPer Unit:\\nVariable per unit - CONSTANT\\nFixed per unit - CHANGES (decreases as volume increases)",
+      "back": "Total Variable - changes with activity\nTotal Fixed - stays constant\n\nPer Unit:\nVariable per unit - CONSTANT\nFixed per unit - CHANGES (decreases as volume increases)",
       "difficulty": "easy",
       "mnemonic": "TV-TF",
       "tags": [
@@ -3164,7 +3164,7 @@
       "type": "comparison",
       "topic": "Leases",
       "front": "GAAP vs IFRS: Lease classification (lessee)",
-      "back": "GAAP: Finance lease OR Operating lease\\nOperating lease expense = straight-line\\n\\nIFRS: Single model - ALL leases on balance sheet\\n(Low-value and short-term exceptions)\\nNo operating lease classification for lessees",
+      "back": "GAAP: Finance lease OR Operating lease\nOperating lease expense = straight-line\n\nIFRS: Single model - ALL leases on balance sheet\n(Low-value and short-term exceptions)\nNo operating lease classification for lessees",
       "difficulty": "medium",
       "tags": [
         "leases",
@@ -4499,7 +4499,7 @@
       "type": "formula",
       "topic": "Inventory",
       "front": "COST OF GOODS SOLD formula",
-      "back": "Beginning Inventory + Purchases - Ending Inventory = COGS\\n\\nAlternatively:\\nBeginning Inventory + Net Purchases + Freight-In - Purchase Returns - Purchase Discounts - Ending Inventory",
+      "back": "Beginning Inventory + Purchases - Ending Inventory = COGS\n\nAlternatively:\nBeginning Inventory + Net Purchases + Freight-In - Purchase Returns - Purchase Discounts - Ending Inventory",
       "difficulty": "easy",
       "example": "BI $50,000 + Purchases $200,000 - EI $40,000 = COGS $210,000",
       "tags": [
@@ -4550,7 +4550,7 @@
       "type": "formula",
       "topic": "Depreciation",
       "front": "STRAIGHT-LINE DEPRECIATION",
-      "back": "(Cost - Salvage Value) ÷ Useful Life = Annual Depreciation\\n\\nOr: (Cost - Salvage) × (1 ÷ Life) = Annual Amount",
+      "back": "(Cost - Salvage Value) ÷ Useful Life = Annual Depreciation\n\nOr: (Cost - Salvage) × (1 ÷ Life) = Annual Amount",
       "difficulty": "easy",
       "example": "($100,000 - $10,000) ÷ 10 years = $9,000/year",
       "tags": [
@@ -4567,9 +4567,9 @@
       "type": "formula",
       "topic": "Depreciation",
       "front": "DOUBLE-DECLINING BALANCE depreciation",
-      "back": "Book Value × (2 ÷ Useful Life) = Annual Depreciation\\n\\nNote: Ignore salvage value until BV reaches salvage",
+      "back": "Book Value × (2 ÷ Useful Life) = Annual Depreciation\n\nNote: Ignore salvage value until BV reaches salvage",
       "difficulty": "medium",
-      "example": "Year 1: $100,000 × (2/5) = $40,000\\nYear 2: $60,000 × (2/5) = $24,000",
+      "example": "Year 1: $100,000 × (2/5) = $40,000\nYear 2: $60,000 × (2/5) = $24,000",
       "tags": [
         "depreciation",
         "accelerated"
@@ -4584,9 +4584,9 @@
       "type": "formula",
       "topic": "Depreciation",
       "front": "SUM-OF-YEARS-DIGITS depreciation",
-      "back": "(Cost - Salvage) × (Remaining Life ÷ SYD) = Annual Depreciation\\n\\nSYD = n(n+1)/2 where n = useful life",
+      "back": "(Cost - Salvage) × (Remaining Life ÷ SYD) = Annual Depreciation\n\nSYD = n(n+1)/2 where n = useful life",
       "difficulty": "medium",
-      "example": "5-year life: SYD = 5(6)/2 = 15\\nYear 1: ($100K - $10K) × 5/15 = $30,000\\nYear 2: $90K × 4/15 = $24,000",
+      "example": "5-year life: SYD = 5(6)/2 = 15\nYear 1: ($100K - $10K) × 5/15 = $30,000\nYear 2: $90K × 4/15 = $24,000",
       "tags": [
         "depreciation",
         "SYD"
@@ -4618,9 +4618,9 @@
       "type": "formula",
       "topic": "Bonds",
       "front": "BOND ISSUE PRICE calculation",
-      "back": "PV of Principal + PV of Interest Payments\\n\\n= (Face Value × PV factor) + (Interest Payment × PV annuity factor)\\n\\nUse MARKET rate to discount",
+      "back": "PV of Principal + PV of Interest Payments\n\n= (Face Value × PV factor) + (Interest Payment × PV annuity factor)\n\nUse MARKET rate to discount",
       "difficulty": "hard",
-      "example": "$100K bond, 10% stated, 8% market, 5 years:\\nPV Principal: $100K × 0.6806 = $68,060\\nPV Interest: $10K × 3.9927 = $39,927\\nIssue Price = $107,987 (premium)",
+      "example": "$100K bond, 10% stated, 8% market, 5 years:\nPV Principal: $100K × 0.6806 = $68,060\nPV Interest: $10K × 3.9927 = $39,927\nIssue Price = $107,987 (premium)",
       "tags": [
         "bonds",
         "present value"
@@ -4652,9 +4652,9 @@
       "type": "formula",
       "topic": "Leases",
       "front": "LEASE LIABILITY calculation (lessee)",
-      "back": "PV of Lease Payments = Payment × PV Annuity Factor\\n\\nUse: Rate implicit in lease (if known) OR\\nLessee",
+      "back": "PV of Lease Payments = Payment × PV Annuity Factor\n\nUse: Rate implicit in lease (if known) OR\nLessee",
       "difficulty": "medium",
-      "example": "$10,000 annual payments, 5 years, 6% rate:\\nLease Liability = $10,000 × 4.2124 = $42,124",
+      "example": "$10,000 annual payments, 5 years, 6% rate:\nLease Liability = $10,000 × 4.2124 = $42,124",
       "tags": [
         "leases",
         "present value"
@@ -4669,9 +4669,9 @@
       "type": "formula",
       "topic": "EPS",
       "front": "BASIC EPS formula",
-      "back": "(Net Income - Preferred Dividends) ÷ Weighted Average Common Shares Outstanding\\n\\nPreferred dividends: Declared if cumulative, Paid if noncumulative",
+      "back": "(Net Income - Preferred Dividends) ÷ Weighted Average Common Shares Outstanding\n\nPreferred dividends: Declared if cumulative, Paid if noncumulative",
       "difficulty": "easy",
-      "example": "NI $500K, Pref Div $50K, 100K shares:\\nBasic EPS = ($500K - $50K) ÷ 100K = $4.50",
+      "example": "NI $500K, Pref Div $50K, 100K shares:\nBasic EPS = ($500K - $50K) ÷ 100K = $4.50",
       "tags": [
         "EPS",
         "earnings per share"
@@ -4686,9 +4686,9 @@
       "type": "formula",
       "topic": "EPS",
       "front": "TREASURY STOCK METHOD (for diluted EPS)",
-      "back": "Incremental Shares = Options Outstanding - (Options × Exercise Price ÷ Avg Market Price)\\n\\nOnly dilutive if Exercise Price < Market Price",
+      "back": "Incremental Shares = Options Outstanding - (Options × Exercise Price ÷ Avg Market Price)\n\nOnly dilutive if Exercise Price < Market Price",
       "difficulty": "hard",
-      "example": "10,000 options, $20 exercise, $25 market:\\nProceeds: 10,000 × $20 = $200,000\\nShares repurchased: $200,000 ÷ $25 = 8,000\\nIncremental: 10,000 - 8,000 = 2,000 shares",
+      "example": "10,000 options, $20 exercise, $25 market:\nProceeds: 10,000 × $20 = $200,000\nShares repurchased: $200,000 ÷ $25 = 8,000\nIncremental: 10,000 - 8,000 = 2,000 shares",
       "tags": [
         "EPS",
         "dilution"
@@ -4720,9 +4720,9 @@
       "type": "formula",
       "topic": "Cash Flows",
       "front": "CASH COLLECTED FROM CUSTOMERS",
-      "back": "Sales Revenue + Beginning A/R - Ending A/R = Cash Collected\\n\\nOr: Sales - Increase in A/R (+ Decrease)",
+      "back": "Sales Revenue + Beginning A/R - Ending A/R = Cash Collected\n\nOr: Sales - Increase in A/R (+ Decrease)",
       "difficulty": "medium",
-      "example": "Sales $500K, Beg A/R $50K, End A/R $60K:\\nCash = $500K + $50K - $60K = $490K",
+      "example": "Sales $500K, Beg A/R $50K, End A/R $60K:\nCash = $500K + $50K - $60K = $490K",
       "tags": [
         "cash flows",
         "direct method"
@@ -4737,7 +4737,7 @@
       "type": "formula",
       "topic": "Cash Flows",
       "front": "CASH PAID TO SUPPLIERS",
-      "back": "COGS + Ending Inventory - Beginning Inventory + Beginning A/P - Ending A/P = Cash Paid\\n\\nOr: COGS + ↑Inventory - ↑A/P",
+      "back": "COGS + Ending Inventory - Beginning Inventory + Beginning A/P - Ending A/P = Cash Paid\n\nOr: COGS + ↑Inventory - ↑A/P",
       "difficulty": "hard",
       "example": "COGS $300K + ↑Inv $20K - ↑A/P $15K = $305K",
       "tags": [
@@ -4754,9 +4754,9 @@
       "type": "formula",
       "topic": "Deferred Taxes",
       "front": "DEFERRED TAX ASSET/LIABILITY",
-      "back": "Temporary Difference × Tax Rate = DTA or DTL\\n\\nDTA: Deductible temporary difference (book > tax deduction now)\\nDTL: Taxable temporary difference (tax > book income now)",
+      "back": "Temporary Difference × Tax Rate = DTA or DTL\n\nDTA: Deductible temporary difference (book > tax deduction now)\nDTL: Taxable temporary difference (tax > book income now)",
       "difficulty": "medium",
-      "example": "Warranty accrual $100K (book), $0 (tax), 21% rate:\\nDTA = $100K × 21% = $21,000",
+      "example": "Warranty accrual $100K (book), $0 (tax), 21% rate:\nDTA = $100K × 21% = $21,000",
       "tags": [
         "deferred taxes",
         "temporary"
@@ -4787,9 +4787,9 @@
       "type": "formula",
       "topic": "Pension",
       "front": "FUNDED STATUS of pension plan",
-      "back": "Fair Value of Plan Assets - Projected Benefit Obligation (PBO) = Funded Status\\n\\nOverfunded = Asset on balance sheet\\nUnderfunded = Liability on balance sheet",
+      "back": "Fair Value of Plan Assets - Projected Benefit Obligation (PBO) = Funded Status\n\nOverfunded = Asset on balance sheet\nUnderfunded = Liability on balance sheet",
       "difficulty": "medium",
-      "example": "Plan Assets $800K, PBO $900K:\\nFunded Status = -$100K (underfunded liability)",
+      "example": "Plan Assets $800K, PBO $900K:\nFunded Status = -$100K (underfunded liability)",
       "tags": [
         "pension",
         "funded status"
@@ -4820,9 +4820,9 @@
       "type": "formula",
       "topic": "Consolidation",
       "front": "GOODWILL calculation",
-      "back": "Consideration Transferred\\n+ NCI at Fair Value (full goodwill)\\n+ Previously Held Equity Interest at FV\\n- Net Identifiable Assets at Fair Value\\n= Goodwill",
+      "back": "Consideration Transferred\n+ NCI at Fair Value (full goodwill)\n+ Previously Held Equity Interest at FV\n- Net Identifiable Assets at Fair Value\n= Goodwill",
       "difficulty": "hard",
-      "example": "Paid $1,000K for 80%, NCI FV $250K, Net Assets FV $1,100K:\\nGoodwill = $1,000K + $250K - $1,100K = $150K",
+      "example": "Paid $1,000K for 80%, NCI FV $250K, Net Assets FV $1,100K:\nGoodwill = $1,000K + $250K - $1,100K = $150K",
       "tags": [
         "consolidation",
         "goodwill"
@@ -5123,7 +5123,7 @@
       "type": "mnemonic",
       "topic": "Conceptual Framework",
       "front": "Qualitative Characteristics of Useful Information",
-      "back": "FUNDAMENTAL:\\nRelevance (predictive, confirmatory, material)\\nComparability\\n\\nENHANCING:\\nComparability\\nVerifiability\\nTimeliness\\nUnderstandability",
+      "back": "FUNDAMENTAL:\nRelevance (predictive, confirmatory, material)\nComparability\n\nENHANCING:\nComparability\nVerifiability\nTimeliness\nUnderstandability",
       "difficulty": "medium",
       "mnemonic": "RC-CV-TU",
       "tags": [
@@ -5360,7 +5360,7 @@
       "type": "comparison",
       "topic": "Framework",
       "front": "GAAP vs IFRS: Standard-setting body",
-      "back": "GAAP: FASB (Financial Accounting Standards Board)\\nAuthoritative: ASC (Accounting Standards Codification)\\n\\nIFRS: IASB (International Accounting Standards Board)\\nAuthoritative: IAS and IFRS standards",
+      "back": "GAAP: FASB (Financial Accounting Standards Board)\nAuthoritative: ASC (Accounting Standards Codification)\n\nIFRS: IASB (International Accounting Standards Board)\nAuthoritative: IAS and IFRS standards",
       "difficulty": "easy",
       "tags": [
         "framework",
@@ -5376,7 +5376,7 @@
       "type": "comparison",
       "topic": "Inventory",
       "front": "GAAP vs IFRS: Inventory methods",
-      "back": "GAAP: FIFO, LIFO, Weighted Average allowed\\n\\nIFRS: FIFO, Weighted Average only\\nLIFO is PROHIBITED under IFRS\\n\\nBoth: Lower of cost or NRV\\n(GAAP uses lower of cost or market for LIFO/retail)",
+      "back": "GAAP: FIFO, LIFO, Weighted Average allowed\n\nIFRS: FIFO, Weighted Average only\nLIFO is PROHIBITED under IFRS\n\nBoth: Lower of cost or NRV\n(GAAP uses lower of cost or market for LIFO/retail)",
       "difficulty": "medium",
       "tags": [
         "inventory",
@@ -5392,7 +5392,7 @@
       "type": "comparison",
       "topic": "Inventory",
       "front": "GAAP vs IFRS: Inventory write-down reversal",
-      "back": "GAAP: NO reversal allowed\\nOnce written down, stays at lower value\\n\\nIFRS: Reversal REQUIRED if value recovers\\nLimited to original cost",
+      "back": "GAAP: NO reversal allowed\nOnce written down, stays at lower value\n\nIFRS: Reversal REQUIRED if value recovers\nLimited to original cost",
       "difficulty": "medium",
       "tags": [
         "inventory",
@@ -5408,7 +5408,7 @@
       "type": "comparison",
       "topic": "PP&E",
       "front": "GAAP vs IFRS: Asset revaluation",
-      "back": "GAAP: NOT allowed (historical cost only)\\nImpairment only (no reversal)\\n\\nIFRS: Revaluation model allowed (FV)\\n• Can increase above cost\\n• Revaluation surplus → OCI\\n• Must revalue entire class",
+      "back": "GAAP: NOT allowed (historical cost only)\nImpairment only (no reversal)\n\nIFRS: Revaluation model allowed (FV)\n• Can increase above cost\n• Revaluation surplus → OCI\n• Must revalue entire class",
       "difficulty": "medium",
       "tags": [
         "PP&E",
@@ -5424,7 +5424,7 @@
       "type": "comparison",
       "topic": "Impairment",
       "front": "GAAP vs IFRS: Impairment reversal (long-lived assets)",
-      "back": "GAAP: NO reversal allowed\\n\\nIFRS: Reversal REQUIRED if indicators suggest recovery\\nNot to exceed carrying amount without impairment\\n\\nNeither allows reversal of goodwill impairment",
+      "back": "GAAP: NO reversal allowed\n\nIFRS: Reversal REQUIRED if indicators suggest recovery\nNot to exceed carrying amount without impairment\n\nNeither allows reversal of goodwill impairment",
       "difficulty": "medium",
       "tags": [
         "impairment",
@@ -5440,7 +5440,7 @@
       "type": "comparison",
       "topic": "Development Costs",
       "front": "GAAP vs IFRS: R&D and development costs",
-      "back": "GAAP: Expense ALL R&D as incurred\\n(Exception: Software development after technological feasibility)\\n\\nIFRS: Research = expense\\nDevelopment = CAPITALIZE if criteria met:\\n• Technical feasibility\\n• Intent to complete\\n• Ability to use/sell\\n• Future economic benefits\\n• Resources available\\n• Reliably measurable",
+      "back": "GAAP: Expense ALL R&D as incurred\n(Exception: Software development after technological feasibility)\n\nIFRS: Research = expense\nDevelopment = CAPITALIZE if criteria met:\n• Technical feasibility\n• Intent to complete\n• Ability to use/sell\n• Future economic benefits\n• Resources available\n• Reliably measurable",
       "difficulty": "hard",
       "tags": [
         "R&D",
@@ -5456,7 +5456,7 @@
       "type": "comparison",
       "topic": "Investment Property",
       "front": "GAAP vs IFRS: Investment property",
-      "back": "GAAP: No separate category\\nReported as PP&E (historical cost)\\n\\nIFRS: Separate category allowed\\nFair value model OR cost model\\nFV changes → income statement",
+      "back": "GAAP: No separate category\nReported as PP&E (historical cost)\n\nIFRS: Separate category allowed\nFair value model OR cost model\nFV changes → income statement",
       "difficulty": "medium",
       "tags": [
         "investment property",
@@ -5472,7 +5472,7 @@
       "type": "comparison",
       "topic": "Financial Statements",
       "front": "GAAP vs IFRS: Financial statement presentation",
-      "back": "GAAP: Specific requirements, current/noncurrent required\\n\\nIFRS: More flexible\\n• Liquidity presentation allowed\\n• No prescribed format\\n• Minimum line items required\\n\\nBoth require: Balance sheet, Income statement, Statement of changes in equity, Cash flows, Notes",
+      "back": "GAAP: Specific requirements, current/noncurrent required\n\nIFRS: More flexible\n• Liquidity presentation allowed\n• No prescribed format\n• Minimum line items required\n\nBoth require: Balance sheet, Income statement, Statement of changes in equity, Cash flows, Notes",
       "difficulty": "easy",
       "tags": [
         "presentation",
@@ -5488,7 +5488,7 @@
       "type": "comparison",
       "topic": "Contingencies",
       "front": "GAAP vs IFRS: Contingent liability recognition",
-      "back": "GAAP: \"Probable\" = likely to occur (>75%)\\n\\nIFRS: \"Probable\" = more likely than not (>50%)\\n\\nResult: IFRS recognizes more contingent liabilities\\n\\nBoth: Must be estimable to recognize",
+      "back": "GAAP: \"Probable\" = likely to occur (>75%)\n\nIFRS: \"Probable\" = more likely than not (>50%)\n\nResult: IFRS recognizes more contingent liabilities\n\nBoth: Must be estimable to recognize",
       "difficulty": "medium",
       "tags": [
         "contingencies",
@@ -5992,9 +5992,9 @@
       "type": "formula",
       "topic": "IT Metrics",
       "front": "SYSTEM AVAILABILITY calculation",
-      "back": "Availability % = (Total Time - Downtime) ÷ Total Time × 100\\n\\nOr: MTBF ÷ (MTBF + MTTR) × 100\\n\\nMTBF = Mean Time Between Failures\\nMTTR = Mean Time To Repair",
+      "back": "Availability % = (Total Time - Downtime) ÷ Total Time × 100\n\nOr: MTBF ÷ (MTBF + MTTR) × 100\n\nMTBF = Mean Time Between Failures\nMTTR = Mean Time To Repair",
       "difficulty": "medium",
-      "example": "Month: 720 hours, 3.6 hours downtime:\\nAvailability = (720-3.6) ÷ 720 = 99.5%",
+      "example": "Month: 720 hours, 3.6 hours downtime:\nAvailability = (720-3.6) ÷ 720 = 99.5%",
       "tags": [
         "availability",
         "metrics"
@@ -6376,7 +6376,7 @@
       "back": "Expected frequency of leading digits in naturally occurring datasets.",
       "difficulty": "medium",
       "example": "If invoices show 15% starting with 9 (expected 4.6%), investigate for fraud.",
-      "formula": "P(d) = log₁₀(1 + 1/d)\\nDigit 1: 30.1%  Digit 6: 6.7%\\nDigit 2: 17.6%  Digit 7: 5.8%\\nDigit 3: 12.5%  Digit 8: 5.1%\\nDigit 4: 9.7%   Digit 9: 4.6%\\nDigit 5: 7.9%",
+      "formula": "P(d) = log₁₀(1 + 1/d)\nDigit 1: 30.1%  Digit 6: 6.7%\nDigit 2: 17.6%  Digit 7: 5.8%\nDigit 3: 12.5%  Digit 8: 5.1%\nDigit 4: 9.7%   Digit 9: 4.6%\nDigit 5: 7.9%",
       "tags": [
         "data analytics",
         "Benford"
@@ -6393,7 +6393,7 @@
       "back": "Basic risk assessment calculation.",
       "difficulty": "easy",
       "example": "Data breach: Likelihood 3, Impact 5 → Risk Score = 15 (High)",
-      "formula": "Risk = Likelihood × Impact\\nRisk Score = Probability (1-5) × Severity (1-5)",
+      "formula": "Risk = Likelihood × Impact\nRisk Score = Probability (1-5) × Severity (1-5)",
       "tags": [
         "risk assessment",
         "cybersecurity"
@@ -6410,7 +6410,7 @@
       "back": "Key disaster recovery measurements.",
       "difficulty": "medium",
       "example": "RPO 4 hours: backups every 4 hours. RTO 2 hours: systems must restore in 2 hours.",
-      "formula": "RPO (Recovery Point Objective) = Maximum acceptable data loss (time)\\nRTO (Recovery Time Objective) = Maximum acceptable downtime",
+      "formula": "RPO (Recovery Point Objective) = Maximum acceptable data loss (time)\nRTO (Recovery Time Objective) = Maximum acceptable downtime",
       "tags": [
         "disaster recovery",
         "business continuity"
@@ -6472,7 +6472,7 @@
       "type": "rule",
       "topic": "Standard Deduction",
       "front": "STANDARD DEDUCTION amounts (2024)",
-      "back": "Single: $14,600\\nMFJ: $29,200\\nMFS: $14,600\\nHOH: $21,900\\n\\nAdditional for 65+ or blind:\\nSingle: +$1,950\\nMFJ: +$1,550 each",
+      "back": "Single: $14,600\nMFJ: $29,200\nMFS: $14,600\nHOH: $21,900\n\nAdditional for 65+ or blind:\nSingle: +$1,950\nMFJ: +$1,550 each",
       "difficulty": "easy",
       "tags": [
         "standard deduction",
@@ -6488,7 +6488,7 @@
       "type": "rule",
       "topic": "Gift Tax",
       "front": "ANNUAL GIFT EXCLUSION (2024)",
-      "back": "$18,000 per donee per year\\n\\nSplit gifts with spouse: $36,000 per donee\\n\\nUnlimited exclusions for:\\n• Tuition paid directly to school\\n• Medical paid directly to provider",
+      "back": "$18,000 per donee per year\n\nSplit gifts with spouse: $36,000 per donee\n\nUnlimited exclusions for:\n• Tuition paid directly to school\n• Medical paid directly to provider",
       "difficulty": "easy",
       "tags": [
         "gift tax",
@@ -6504,7 +6504,7 @@
       "type": "rule",
       "topic": "Estate Tax",
       "front": "ESTATE TAX EXEMPTION (2024)",
-      "back": "$13.61 million per person\\n$27.22 million for married couples (with portability)\\n\\nScheduled to sunset to ~$7 million in 2026\\nTop rate: 40%",
+      "back": "$13.61 million per person\n$27.22 million for married couples (with portability)\n\nScheduled to sunset to ~$7 million in 2026\nTop rate: 40%",
       "difficulty": "easy",
       "tags": [
         "estate tax",
@@ -6520,7 +6520,7 @@
       "type": "rule",
       "topic": "Social Security",
       "front": "SOCIAL SECURITY WAGE BASE (2024)",
-      "back": "$168,600 wage base for SS tax (6.2%)\\n\\nNo limit on Medicare tax (1.45%)\\n\\nAdditional Medicare: 0.9% on wages > $200K single ($250K MFJ)",
+      "back": "$168,600 wage base for SS tax (6.2%)\n\nNo limit on Medicare tax (1.45%)\n\nAdditional Medicare: 0.9% on wages > $200K single ($250K MFJ)",
       "difficulty": "easy",
       "tags": [
         "FICA",
@@ -6552,7 +6552,7 @@
       "type": "rule",
       "topic": "Depreciation",
       "front": "BONUS DEPRECIATION rates",
-      "back": "2023: 80%\\n2024: 60%\\n2025: 40%\\n2026: 20%\\n2027: 0%\\n\\nApplies to new property with recovery period ≤20 years\\nUsed property now qualifies",
+      "back": "2023: 80%\n2024: 60%\n2025: 40%\n2026: 20%\n2027: 0%\n\nApplies to new property with recovery period ≤20 years\nUsed property now qualifies",
       "difficulty": "medium",
       "tags": [
         "depreciation",
@@ -6568,7 +6568,7 @@
       "type": "rule",
       "topic": "Depreciation",
       "front": "MACRS RECOVERY PERIODS",
-      "back": "3-year: Tractors, racehorses\\n5-year: Autos, computers, equipment\\n7-year: Office furniture, fixtures\\n15-year: Land improvements\\n27.5-year: Residential rental\\n39-year: Nonresidential real property",
+      "back": "3-year: Tractors, racehorses\n5-year: Autos, computers, equipment\n7-year: Office furniture, fixtures\n15-year: Land improvements\n27.5-year: Residential rental\n39-year: Nonresidential real property",
       "difficulty": "medium",
       "tags": [
         "depreciation",
@@ -6600,7 +6600,7 @@
       "type": "rule",
       "topic": "Home Office",
       "front": "SIMPLIFIED HOME OFFICE deduction",
-      "back": "$5 per square foot\\nMaximum 300 sq ft = $1,500\\n\\nAlternative: Actual expense method\\n(% of home × actual expenses)",
+      "back": "$5 per square foot\nMaximum 300 sq ft = $1,500\n\nAlternative: Actual expense method\n(% of home × actual expenses)",
       "difficulty": "easy",
       "tags": [
         "home office",
@@ -6616,7 +6616,7 @@
       "type": "rule",
       "topic": "Vehicle Expenses",
       "front": "STANDARD MILEAGE RATES (2024)",
-      "back": "Business: 67 cents/mile\\nMedical/Moving: 21 cents/mile\\nCharitable: 14 cents/mile (by statute)\\n\\nAlternative: Actual expenses (gas, depreciation, insurance)",
+      "back": "Business: 67 cents/mile\nMedical/Moving: 21 cents/mile\nCharitable: 14 cents/mile (by statute)\n\nAlternative: Actual expenses (gas, depreciation, insurance)",
       "difficulty": "easy",
       "tags": [
         "vehicle",
@@ -6632,7 +6632,7 @@
       "type": "rule",
       "topic": "At-Risk Rules",
       "front": "AT-RISK LIMITATION",
-      "back": "Losses limited to amount \"at-risk\":\\n• Cash invested\\n• Adjusted basis of property contributed\\n• Recourse debt (personally liable)\\n• Qualified nonrecourse debt (real estate only)\\n\\nExcess loss carried forward",
+      "back": "Losses limited to amount \"at-risk\":\n• Cash invested\n• Adjusted basis of property contributed\n• Recourse debt (personally liable)\n• Qualified nonrecourse debt (real estate only)\n\nExcess loss carried forward",
       "difficulty": "medium",
       "tags": [
         "at-risk",
@@ -6648,7 +6648,7 @@
       "type": "rule",
       "topic": "Passive Activity",
       "front": "PASSIVE LOSS ALLOWANCE (Real Estate)",
-      "back": "$25,000 allowance for rental real estate\\n\\nPhases out: $1 for every $2 of AGI > $100,000\\nCompletely phased out at $150,000 AGI\\n\\nRequires active participation",
+      "back": "$25,000 allowance for rental real estate\n\nPhases out: $1 for every $2 of AGI > $100,000\nCompletely phased out at $150,000 AGI\n\nRequires active participation",
       "difficulty": "medium",
       "tags": [
         "passive",
@@ -6664,7 +6664,7 @@
       "type": "rule",
       "topic": "Real Estate Professional",
       "front": "REAL ESTATE PROFESSIONAL status",
-      "back": "Must meet BOTH:\\n1. >750 hours in real property businesses\\n2. >50% of personal services in real property\\n\\nCan group rental activities and treat as non-passive",
+      "back": "Must meet BOTH:\n1. >750 hours in real property businesses\n2. >50% of personal services in real property\n\nCan group rental activities and treat as non-passive",
       "difficulty": "medium",
       "tags": [
         "real estate",
@@ -6680,7 +6680,7 @@
       "type": "rule",
       "topic": "Charitable Contributions",
       "front": "CHARITABLE CONTRIBUTION LIMITS",
-      "back": "Cash to public charities: 60% of AGI\\nAppreciated property: 30% of AGI\\nPrivate foundations: 30% (cash), 20% (property)\\n\\n5-year carryforward for excess",
+      "back": "Cash to public charities: 60% of AGI\nAppreciated property: 30% of AGI\nPrivate foundations: 30% (cash), 20% (property)\n\n5-year carryforward for excess",
       "difficulty": "medium",
       "tags": [
         "charitable",
@@ -6696,7 +6696,7 @@
       "type": "rule",
       "topic": "Net Operating Loss",
       "front": "NET OPERATING LOSS (NOL) rules",
-      "back": "No carryback (generally)\\nIndefinite carryforward\\n\\nLimited to 80% of taxable income\\n\\nException: Farming losses can carry back 2 years",
+      "back": "No carryback (generally)\nIndefinite carryforward\n\nLimited to 80% of taxable income\n\nException: Farming losses can carry back 2 years",
       "difficulty": "medium",
       "tags": [
         "NOL",
@@ -6712,7 +6712,7 @@
       "type": "rule",
       "topic": "Capital Losses",
       "front": "CAPITAL LOSS limitations",
-      "back": "Offset capital gains first\\n\\nExcess: Deduct $3,000/year ($1,500 MFS)\\n\\nCarryforward indefinitely\\nCharacter preserved (ST/LT)",
+      "back": "Offset capital gains first\n\nExcess: Deduct $3,000/year ($1,500 MFS)\n\nCarryforward indefinitely\nCharacter preserved (ST/LT)",
       "difficulty": "easy",
       "tags": [
         "capital",
@@ -6728,7 +6728,7 @@
       "type": "rule",
       "topic": "Home Sale Exclusion",
       "front": "SECTION 121 HOME SALE EXCLUSION",
-      "back": "Single: $250,000\\nMFJ: $500,000\\n\\nRequirements:\\n• Owned 2 of last 5 years\\n• Lived in 2 of last 5 years\\n• No exclusion in prior 2 years\\n\\nPartial exclusion for job, health, unforeseen",
+      "back": "Single: $250,000\nMFJ: $500,000\n\nRequirements:\n• Owned 2 of last 5 years\n• Lived in 2 of last 5 years\n• No exclusion in prior 2 years\n\nPartial exclusion for job, health, unforeseen",
       "difficulty": "easy",
       "tags": [
         "home sale",
@@ -6744,7 +6744,7 @@
       "type": "rule",
       "topic": "Kiddie Tax",
       "front": "KIDDIE TAX thresholds (2024)",
-      "back": "Applies to children under 19 (24 if student)\\n\\nFirst $1,300: Tax-free\\nNext $1,300: Child",
+      "back": "Applies to children under 19 (24 if student)\n\nFirst $1,300: Tax-free\nNext $1,300: Child",
       "difficulty": "medium",
       "tags": [
         "kiddie tax",
@@ -6760,7 +6760,7 @@
       "type": "rule",
       "topic": "AMT",
       "front": "AMT EXEMPTION amounts (2024)",
-      "back": "Single: $85,700 (phases out at $609,350)\\nMFJ: $133,300 (phases out at $1,218,700)\\n\\nAMT Rate: 26% up to $232,600; 28% above",
+      "back": "Single: $85,700 (phases out at $609,350)\nMFJ: $133,300 (phases out at $1,218,700)\n\nAMT Rate: 26% up to $232,600; 28% above",
       "difficulty": "medium",
       "tags": [
         "AMT",
@@ -6776,7 +6776,7 @@
       "type": "rule",
       "topic": "NIIT",
       "front": "NET INVESTMENT INCOME TAX (NIIT)",
-      "back": "3.8% on lesser of:\\n• Net investment income, OR\\n• MAGI over threshold\\n\\nThresholds:\\nSingle: $200,000\\nMFJ: $250,000\\nMFS: $125,000",
+      "back": "3.8% on lesser of:\n• Net investment income, OR\n• MAGI over threshold\n\nThresholds:\nSingle: $200,000\nMFJ: $250,000\nMFS: $125,000",
       "difficulty": "medium",
       "tags": [
         "NIIT",
@@ -7882,9 +7882,9 @@
       "type": "formula",
       "topic": "Self-Employment Tax",
       "front": "SELF-EMPLOYMENT TAX calculation",
-      "back": "SE Income × 92.35% = SE Tax Base\\n\\nSE Tax = Base × 15.3% (up to SS wage base)\\n+ 2.9% on amounts over SS wage base\\n\\n50% of SE Tax is above-the-line deduction",
+      "back": "SE Income × 92.35% = SE Tax Base\n\nSE Tax = Base × 15.3% (up to SS wage base)\n+ 2.9% on amounts over SS wage base\n\n50% of SE Tax is above-the-line deduction",
       "difficulty": "medium",
-      "example": "SE Income $100K:\\nBase = $92,350\\nSE Tax = $92,350 × 15.3% = $14,130\\nDeduction = $7,065",
+      "example": "SE Income $100K:\nBase = $92,350\nSE Tax = $92,350 × 15.3% = $14,130\nDeduction = $7,065",
       "tags": [
         "self-employment",
         "FICA"
@@ -7899,9 +7899,9 @@
       "type": "formula",
       "topic": "Property Transactions",
       "front": "REALIZED GAIN/LOSS",
-      "back": "Amount Realized - Adjusted Basis = Realized Gain/Loss\\n\\nAmount Realized = Cash + FMV of property received + Liabilities assumed by buyer\\n\\nAdjusted Basis = Cost + Improvements - Depreciation",
+      "back": "Amount Realized - Adjusted Basis = Realized Gain/Loss\n\nAmount Realized = Cash + FMV of property received + Liabilities assumed by buyer\n\nAdjusted Basis = Cost + Improvements - Depreciation",
       "difficulty": "easy",
-      "example": "Sell building: Cash $400K + Mortgage assumed $100K = $500K realized\\nAdj Basis $350K\\nGain = $150K",
+      "example": "Sell building: Cash $400K + Mortgage assumed $100K = $500K realized\nAdj Basis $350K\nGain = $150K",
       "tags": [
         "property",
         "gain/loss"
@@ -7916,9 +7916,9 @@
       "type": "formula",
       "topic": "Property Transactions",
       "front": "DEPRECIATION RECAPTURE (§1245)",
-      "back": "Gain recognized as ORDINARY INCOME to lesser of:\\n1) Gain realized, or\\n2) Depreciation taken\\n\\nRemainder is §1231 gain (capital)",
+      "back": "Gain recognized as ORDINARY INCOME to lesser of:\n1) Gain realized, or\n2) Depreciation taken\n\nRemainder is §1231 gain (capital)",
       "difficulty": "medium",
-      "example": "Equipment: Gain $50K, Depreciation $35K\\nOrdinary income = $35K\\n§1231 gain = $15K",
+      "example": "Equipment: Gain $50K, Depreciation $35K\nOrdinary income = $35K\n§1231 gain = $15K",
       "tags": [
         "depreciation",
         "recapture"
@@ -7933,9 +7933,9 @@
       "type": "formula",
       "topic": "Like-Kind Exchange",
       "front": "BOOT in §1031 Exchange",
-      "back": "Boot Received = Cash + FMV non-like-kind property + Net debt relief\\n\\nGain Recognized = Lesser of:\\n1) Realized Gain, or\\n2) Boot Received",
+      "back": "Boot Received = Cash + FMV non-like-kind property + Net debt relief\n\nGain Recognized = Lesser of:\n1) Realized Gain, or\n2) Boot Received",
       "difficulty": "medium",
-      "example": "Realized gain $100K, Boot $30K:\\nRecognized gain = $30K\\nDeferred gain = $70K",
+      "example": "Realized gain $100K, Boot $30K:\nRecognized gain = $30K\nDeferred gain = $70K",
       "tags": [
         "like-kind",
         "boot"
@@ -7950,9 +7950,9 @@
       "type": "formula",
       "topic": "Like-Kind Exchange",
       "front": "BASIS of property received in §1031",
-      "back": "FMV of Property Received\\n- Deferred Gain (+ Deferred Loss)\\n= Basis of New Property\\n\\nOr: Adjusted Basis of Old + Boot Paid + Gain Recognized - Boot Received",
+      "back": "FMV of Property Received\n- Deferred Gain (+ Deferred Loss)\n= Basis of New Property\n\nOr: Adjusted Basis of Old + Boot Paid + Gain Recognized - Boot Received",
       "difficulty": "hard",
-      "example": "New property FMV $500K, Deferred gain $70K:\\nNew Basis = $500K - $70K = $430K",
+      "example": "New property FMV $500K, Deferred gain $70K:\nNew Basis = $500K - $70K = $430K",
       "tags": [
         "like-kind",
         "basis"
@@ -8018,7 +8018,7 @@
       "back": "Determine gain or loss on asset sale.",
       "difficulty": "easy",
       "example": "Sell stock: $15K cash received - $10K basis = $5K capital gain",
-      "formula": "Gain/Loss = Amount Realized - Adjusted Basis\\nAmount Realized = Cash + FMV property received + Liabilities relieved",
+      "formula": "Gain/Loss = Amount Realized - Adjusted Basis\nAmount Realized = Cash + FMV property received + Liabilities relieved",
       "tags": [
         "capital gains",
         "basis"
@@ -8035,7 +8035,7 @@
       "back": "Immediate expensing of business property up to annual limit.",
       "difficulty": "medium",
       "example": "$3.1M purchases → $1.22M - ($3.1M - $3.05M) = $1.17M allowed",
-      "formula": "Section 179 Limit (2025): $1,220,000\\nPhase-out begins at: $3,050,000\\nDollar-for-dollar reduction above threshold",
+      "formula": "Section 179 Limit (2025): $1,220,000\nPhase-out begins at: $3,050,000\nDollar-for-dollar reduction above threshold",
       "tags": [
         "depreciation",
         "section 179"
@@ -8071,7 +8071,7 @@
       "back": "Track shareholder",
       "difficulty": "hard",
       "example": "Key difference from partnership: debt does NOT increase S corp basis",
-      "formula": "Beginning Stock Basis\\n+ Share of Income (incl. tax-exempt)\\n+ Additional Contributions\\n- Distributions (up to basis)\\n- Share of Losses\\n- Non-deductible expenses\\n= Ending Stock Basis",
+      "formula": "Beginning Stock Basis\n+ Share of Income (incl. tax-exempt)\n+ Additional Contributions\n- Distributions (up to basis)\n- Share of Losses\n- Non-deductible expenses\n= Ending Stock Basis",
       "tags": [
         "S corp",
         "basis"
@@ -8322,7 +8322,7 @@
       "type": "rule",
       "topic": "Retirement Plans",
       "front": "401(k) CONTRIBUTION LIMITS (2024)",
-      "back": "Employee elective deferral: $23,000\\nCatch-up (50+): +$7,500 = $30,500\\n\\nTotal annual addition (employee + employer): $69,000\\nCatch-up (50+): $76,500",
+      "back": "Employee elective deferral: $23,000\nCatch-up (50+): +$7,500 = $30,500\n\nTotal annual addition (employee + employer): $69,000\nCatch-up (50+): $76,500",
       "difficulty": "easy",
       "tags": [
         "retirement",
@@ -8338,7 +8338,7 @@
       "type": "rule",
       "topic": "Retirement Plans",
       "front": "IRA CONTRIBUTION LIMITS (2024)",
-      "back": "Traditional/Roth IRA: $7,000\\nCatch-up (50+): +$1,000 = $8,000\\n\\nRoth AGI phase-out:\\nSingle: $146K-$161K\\nMFJ: $230K-$240K",
+      "back": "Traditional/Roth IRA: $7,000\nCatch-up (50+): +$1,000 = $8,000\n\nRoth AGI phase-out:\nSingle: $146K-$161K\nMFJ: $230K-$240K",
       "difficulty": "easy",
       "tags": [
         "retirement",
@@ -8354,7 +8354,7 @@
       "type": "rule",
       "topic": "Retirement Plans",
       "front": "SEP IRA CONTRIBUTION LIMITS (2024)",
-      "back": "Lesser of:\\n• 25% of compensation, OR\\n• $69,000\\n\\nSelf-employed: 20% of net SE income (after SE tax deduction)",
+      "back": "Lesser of:\n• 25% of compensation, OR\n• $69,000\n\nSelf-employed: 20% of net SE income (after SE tax deduction)",
       "difficulty": "medium",
       "tags": [
         "retirement",
@@ -8370,7 +8370,7 @@
       "type": "rule",
       "topic": "Retirement Plans",
       "front": "SIMPLE IRA LIMITS (2024)",
-      "back": "Employee: $16,000\\nCatch-up (50+): +$3,500 = $19,500\\n\\nEmployer match: Dollar-for-dollar up to 3% of compensation",
+      "back": "Employee: $16,000\nCatch-up (50+): +$3,500 = $19,500\n\nEmployer match: Dollar-for-dollar up to 3% of compensation",
       "difficulty": "easy",
       "tags": [
         "retirement",
@@ -8386,7 +8386,7 @@
       "type": "rule",
       "topic": "QBI Deduction",
       "front": "QBI DEDUCTION thresholds (2024)",
-      "back": "Full deduction below:\\nSingle: $191,950\\nMFJ: $383,900\\n\\nPhase-out range: $100,000\\n\\nAbove thresholds:\\nSSTB may lose deduction entirely\\nNon-SSTB limited by W-2/property",
+      "back": "Full deduction below:\nSingle: $191,950\nMFJ: $383,900\n\nPhase-out range: $100,000\n\nAbove thresholds:\nSSTB may lose deduction entirely\nNon-SSTB limited by W-2/property",
       "difficulty": "hard",
       "tags": [
         "QBI",
@@ -8824,9 +8824,9 @@
       "type": "formula",
       "topic": "QBI Deduction",
       "front": "QBI DEDUCTION (§199A)",
-      "back": "Lesser of:\\n1) 20% of QBI from each qualified trade/business, OR\\n2) 20% of (Taxable Income - Net Capital Gains)\\n\\nSubject to W-2 wage and property limitations at higher incomes",
+      "back": "Lesser of:\n1) 20% of QBI from each qualified trade/business, OR\n2) 20% of (Taxable Income - Net Capital Gains)\n\nSubject to W-2 wage and property limitations at higher incomes",
       "difficulty": "hard",
-      "example": "QBI $200K, TI $300K:\\n20% × $200K = $40K QBI deduction\\nCheck against 20% × $300K = $60K limit",
+      "example": "QBI $200K, TI $300K:\n20% × $200K = $40K QBI deduction\nCheck against 20% × $300K = $60K limit",
       "tags": [
         "QBI",
         "199A"
@@ -8873,9 +8873,9 @@
       "type": "formula",
       "topic": "Installment Sale",
       "front": "INSTALLMENT SALE reporting",
-      "back": "Gross Profit % = Gross Profit ÷ Contract Price\\n\\nEach Payment × Gross Profit % = Gain Recognized\\n\\nContract Price = Selling Price - Assumed Mortgage (if > basis)",
+      "back": "Gross Profit % = Gross Profit ÷ Contract Price\n\nEach Payment × Gross Profit % = Gain Recognized\n\nContract Price = Selling Price - Assumed Mortgage (if > basis)",
       "difficulty": "medium",
-      "example": "Sell for $200K, basis $140K, 20% down:\\nGP% = $60K ÷ $200K = 30%\\nYear 1: $40K × 30% = $12K gain",
+      "example": "Sell for $200K, basis $140K, 20% down:\nGP% = $60K ÷ $200K = 30%\nYear 1: $40K × 30% = $12K gain",
       "tags": [
         "installment",
         "property"
@@ -8890,7 +8890,7 @@
       "type": "formula",
       "topic": "Passive Activity",
       "front": "PASSIVE ACTIVITY LOSS limitation",
-      "back": "Passive Income - Passive Losses = Net Passive Income/Loss\\n\\nNet Passive Loss: Suspended (cannot offset active/portfolio income)\\nException: $25K rental real estate allowance (phases out $100K-$150K AGI)",
+      "back": "Passive Income - Passive Losses = Net Passive Income/Loss\n\nNet Passive Loss: Suspended (cannot offset active/portfolio income)\nException: $25K rental real estate allowance (phases out $100K-$150K AGI)",
       "difficulty": "medium",
       "tags": [
         "passive",
@@ -9401,7 +9401,7 @@
       "back": "Section 199A deduction for pass-through income.",
       "difficulty": "hard",
       "example": "$200K QBI × 20% = $40K deduction (if under income threshold)",
-      "formula": "QBI Deduction = Lesser of:\\n(1) 20% × QBI, or\\n(2) 20% × (Taxable Income - Net Capital Gain)\\n\\nSubject to W-2/Property limits above threshold",
+      "formula": "QBI Deduction = Lesser of:\n(1) 20% × QBI, or\n(2) 20% × (Taxable Income - Net Capital Gain)\n\nSubject to W-2/Property limits above threshold",
       "tags": [
         "QBI",
         "199A",

@@ -40,7 +40,7 @@
       "type": "definition",
       "topic": "IS Audit Fundamentals",
       "front": "What are the three lines of defense in the risk management model?",
-      "back": "1st Line: Operational management (risk owners)\\n2nd Line: Risk management and compliance functions\\n3rd Line: Internal audit (independent assurance) Key phases: planning, fieldwork, reporting, follow-up. Independence and objectivity required throughout.",
+      "back": "1st Line: Operational management (risk owners)\n2nd Line: Risk management and compliance functions\n3rd Line: Internal audit (independent assurance) Key phases: planning, fieldwork, reporting, follow-up. Independence and objectivity required throughout.",
       "difficulty": "easy",
       "tags": [
         "three lines",
@@ -123,7 +123,7 @@
       "type": "definition",
       "topic": "Risk-Based Auditing",
       "front": "What are the three components of audit risk?",
-      "back": "Inherent Risk: Risk before controls\\nControl Risk: Risk that controls fail to prevent/detect\\nDetection Risk: Risk that audit procedures miss issues Key phases: planning, fieldwork, reporting, follow-up. Independence and objectivity required throughout.",
+      "back": "Inherent Risk: Risk before controls\nControl Risk: Risk that controls fail to prevent/detect\nDetection Risk: Risk that audit procedures miss issues Key phases: planning, fieldwork, reporting, follow-up. Independence and objectivity required throughout.",
       "difficulty": "easy",
       "tags": [
         "audit risk",
@@ -343,7 +343,7 @@
       "type": "definition",
       "topic": "Audit Findings",
       "front": "What are the five Cs of audit findings?",
-      "back": "Condition: What is wrong\\nCriteria: What should be\\nCause: Why it happened\\nConsequence: Business impact/risk\\nCorrective Action: How to fix it.",
+      "back": "Condition: What is wrong\nCriteria: What should be\nCause: Why it happened\nConsequence: Business impact/risk\nCorrective Action: How to fix it.",
       "difficulty": "easy",
       "tags": [
         "five Cs",
@@ -445,7 +445,7 @@
       "type": "definition",
       "topic": "IT Controls",
       "front": "What are IT General Controls (ITGCs)?",
-      "back": "Controls that apply across multiple systems and support application controls. Include:\\n• Logical access security\\n• Change management\\n• Operations/backup\\n• System development",
+      "back": "Controls that apply across multiple systems and support application controls. Include:\n• Logical access security\n• Change management\n• Operations/backup\n• System development",
       "difficulty": "easy",
       "tags": [
         "ITGCs",
@@ -462,7 +462,7 @@
       "type": "definition",
       "topic": "IT Controls",
       "front": "What is the difference between ITGCs and application controls?",
-      "back": "ITGCs: General controls across IT environment (access, change, operations)\\nApplication Controls: Specific to individual applications (input, processing, output validation)",
+      "back": "ITGCs: General controls across IT environment (access, change, operations)\nApplication Controls: Specific to individual applications (input, processing, output validation)",
       "difficulty": "medium",
       "tags": [
         "ITGCs",
@@ -1725,7 +1725,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Types of Audit Tests",
-      "back": "Compliance tests:\\n- Test if controls are operating\\n- Answer: \"Is the control working?\"\\n\\nSubstantive tests:\\n- Test actual data/transactions\\n- Answer: \"Is the data accurate?\"\\n\\nStart with compliance; if controls weak, do more substantive",
+      "back": "Compliance tests:\n- Test if controls are operating\n- Answer: \"Is the control working?\"\n\nSubstantive tests:\n- Test actual data/transactions\n- Answer: \"Is the data accurate?\"\n\nStart with compliance; if controls weak, do more substantive",
       "difficulty": "medium",
       "mnemonic": "SUBSTANTIVE",
       "tags": [
@@ -1742,7 +1742,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Statistical vs Judgmental Sampling",
-      "back": "STATISTICAL:\\n- Random selection\\n- Quantifiable confidence level\\n- Projectable results\\n- More objective\\n\\nJUDGMENTAL:\\n- Auditor discretion\\n- Cannot project results\\n- Used for targeted testing\\n- Risk of selection bias\\n\\nSample size = Based on confidence, precision, population size",
+      "back": "STATISTICAL:\n- Random selection\n- Quantifiable confidence level\n- Projectable results\n- More objective\n\nJUDGMENTAL:\n- Auditor discretion\n- Cannot project results\n- Used for targeted testing\n- Risk of selection bias\n\nSample size = Based on confidence, precision, population size",
       "difficulty": "medium",
       "mnemonic": "SAMPLING",
       "tags": [
@@ -1857,7 +1857,7 @@
       "type": "definition",
       "topic": "Policies",
       "front": "What is the difference between a policy and a procedure?",
-      "back": "Policy: High-level statement of management intent (WHAT to do)\\nProcedure: Detailed step-by-step instructions (HOW to do it).",
+      "back": "Policy: High-level statement of management intent (WHAT to do)\nProcedure: Detailed step-by-step instructions (HOW to do it).",
       "difficulty": "medium",
       "tags": [
         "policy",
@@ -2007,7 +2007,7 @@
       "type": "definition",
       "topic": "Risk Management",
       "front": "What are the four ways to treat risk?",
-      "back": "Accept: Accept the risk as-is\\nMitigate: Reduce likelihood or impact\\nTransfer: Shift to third party (insurance)\\nAvoid: Eliminate the activity causing risk",
+      "back": "Accept: Accept the risk as-is\nMitigate: Reduce likelihood or impact\nTransfer: Shift to third party (insurance)\nAvoid: Eliminate the activity causing risk",
       "difficulty": "easy",
       "tags": [
         "risk treatment",
@@ -3290,7 +3290,7 @@
       "type": "standard",
       "topic": "mnemonic",
       "front": "COBIT 2019 Domains",
-      "back": "EDM - Evaluate, Direct, Monitor (Governance)\\n\\nManagement objectives:\\nAPO - Align, Plan, Organize\\nBAI - Build, Acquire, Implement\\nDSS - Deliver, Service, Support\\nMEA - Monitor, Evaluate, Assess\\n\\n40 governance and management objectives total",
+      "back": "EDM - Evaluate, Direct, Monitor (Governance)\n\nManagement objectives:\nAPO - Align, Plan, Organize\nBAI - Build, Acquire, Implement\nDSS - Deliver, Service, Support\nMEA - Monitor, Evaluate, Assess\n\n40 governance and management objectives total",
       "difficulty": "medium",
       "mnemonic": "COBIT EDM-APO-BAI-DSS-MEA",
       "tags": [
@@ -3327,7 +3327,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "IT Steering Committee Responsibilities",
-      "back": "I - IT strategy alignment with business\\nT - Technology investments review\\n\\nS - Strategic planning and prioritization\\nC - Cross-functional coordination\\n\\nReports to: Board/Executive\\nMembers: Business + IT leadership\\nFrequency: Usually quarterly",
+      "back": "I - IT strategy alignment with business\nT - Technology investments review\n\nS - Strategic planning and prioritization\nC - Cross-functional coordination\n\nReports to: Board/Executive\nMembers: Business + IT leadership\nFrequency: Usually quarterly",
       "difficulty": "medium",
       "mnemonic": "IT-SC",
       "tags": [
@@ -3361,7 +3361,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "RACI Matrix for Responsibility Assignment",
-      "back": "R - Responsible (does the work)\\nA - Accountable (ultimately answerable - only ONE)\\nC - Consulted (provides input - two-way)\\nI - Informed (kept updated - one-way)\\n\\nRules:\\n- One A per task\\n- Multiple R, C, I allowed\\n- Avoid gaps and overlaps",
+      "back": "R - Responsible (does the work)\nA - Accountable (ultimately answerable - only ONE)\nC - Consulted (provides input - two-way)\nI - Informed (kept updated - one-way)\n\nRules:\n- One A per task\n- Multiple R, C, I allowed\n- Avoid gaps and overlaps",
       "difficulty": "medium",
       "mnemonic": "RACI",
       "tags": [
@@ -3442,7 +3442,7 @@
       "type": "definition",
       "topic": "Methodologies",
       "front": "What are the three pillars of Scrum?",
-      "back": "Transparency: Visible process and outcomes\\nInspection: Regular progress review\\nAdaptation: Adjust based on findings. System acquisition and development requires involvement from planning through implementation with appropriate testing and controls.",
+      "back": "Transparency: Visible process and outcomes\nInspection: Regular progress review\nAdaptation: Adjust based on findings. System acquisition and development requires involvement from planning through implementation with appropriate testing and controls.",
       "difficulty": "hard",
       "tags": [
         "scrum",
@@ -3607,7 +3607,7 @@
       "type": "definition",
       "topic": "Testing",
       "front": "What is the difference between unit testing and integration testing?",
-      "back": "Unit testing: Tests individual components in isolation\\nIntegration testing: Tests how components work together. System acquisition and development requires involvement from planning through implementation with appropriate testing and controls.",
+      "back": "Unit testing: Tests individual components in isolation\nIntegration testing: Tests how components work together. System acquisition and development requires involvement from planning through implementation with appropriate testing and controls.",
       "difficulty": "medium",
       "tags": [
         "unit testing",
@@ -3754,7 +3754,7 @@
       "type": "definition",
       "topic": "Implementation",
       "front": "What are the four implementation approaches?",
-      "back": "Parallel: Run old and new simultaneously\\nPhased: Implement by module or location\\nBig Bang: Complete cutover at once\\nPilot: Test with subset first.",
+      "back": "Parallel: Run old and new simultaneously\nPhased: Implement by module or location\nBig Bang: Complete cutover at once\nPilot: Test with subset first.",
       "difficulty": "easy",
       "tags": [
         "implementation approaches",
@@ -4771,7 +4771,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Traditional SDLC Phases",
-      "back": "R - Requirements/Feasibility\\nA - Analysis and Design\\nD - Development/Coding\\nI - Implementation/Testing\\nM - Maintenance/Support\\n\\nWaterfall: Sequential, each phase completes before next\\nAudit focus: Controls at each phase gate",
+      "back": "R - Requirements/Feasibility\nA - Analysis and Design\nD - Development/Coding\nI - Implementation/Testing\nM - Maintenance/Support\n\nWaterfall: Sequential, each phase completes before next\nAudit focus: Controls at each phase gate",
       "difficulty": "medium",
       "mnemonic": "RADIM",
       "tags": [
@@ -4789,7 +4789,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Agile Development Key Concepts",
-      "back": "Iterative development in SPRINTS (2-4 weeks)\\n\\nKey ceremonies:\\n- Daily standup (15 min)\\n- Sprint planning\\n- Sprint review\\n- Retrospective\\n\\nArtifacts:\\n- Product backlog\\n- Sprint backlog\\n- Burndown chart\\n\\nAudit: Continuous testing, shorter cycles",
+      "back": "Iterative development in SPRINTS (2-4 weeks)\n\nKey ceremonies:\n- Daily standup (15 min)\n- Sprint planning\n- Sprint review\n- Retrospective\n\nArtifacts:\n- Product backlog\n- Sprint backlog\n- Burndown chart\n\nAudit: Continuous testing, shorter cycles",
       "difficulty": "medium",
       "mnemonic": "AGILE-SPRINT",
       "tags": [
@@ -4806,7 +4806,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Testing Phases Hierarchy",
-      "back": "UT - Unit Testing (developer, individual modules)\\nST - System Testing (integrated system)\\nIT - Integration Testing (between systems)\\nUAT - User Acceptance Testing (business users)\\n\\nOrder: UT → ST → IT → UAT → Production\\nAlso: Regression testing after changes",
+      "back": "UT - Unit Testing (developer, individual modules)\nST - System Testing (integrated system)\nIT - Integration Testing (between systems)\nUAT - User Acceptance Testing (business users)\n\nOrder: UT → ST → IT → UAT → Production\nAlso: Regression testing after changes",
       "difficulty": "medium",
       "mnemonic": "UT-ST-IT-UAT",
       "tags": [
@@ -4823,7 +4823,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Separation of Environments",
-      "back": "D - Development (coding, no production data)\\nT - Test/QA (testing with sanitized data)\\nP - Production (live system, real data)\\n\\nSeparation controls:\\n- Access controls between environments\\n- Code promotion requires approval\\n- No developer access to production\\n- Independent testing team",
+      "back": "D - Development (coding, no production data)\nT - Test/QA (testing with sanitized data)\nP - Production (live system, real data)\n\nSeparation controls:\n- Access controls between environments\n- Code promotion requires approval\n- No developer access to production\n- Independent testing team",
       "difficulty": "medium",
       "mnemonic": "SEP-D-T-P",
       "tags": [
@@ -4841,7 +4841,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Change Management - Change Advisory Board",
-      "back": "CAB (Change Advisory Board) functions:\\n\\n- Reviews change requests\\n- Assesses risk and impact\\n- Approves/denies changes\\n- Schedules implementation\\n\\nEmergency CAB (ECAB):\\n- Smaller group\\n- Rapid decisions\\n- Post-implementation review required",
+      "back": "CAB (Change Advisory Board) functions:\n\n- Reviews change requests\n- Assesses risk and impact\n- Approves/denies changes\n- Schedules implementation\n\nEmergency CAB (ECAB):\n- Smaller group\n- Rapid decisions\n- Post-implementation review required",
       "difficulty": "medium",
       "mnemonic": "CAB",
       "tags": [
@@ -4891,7 +4891,7 @@
       "type": "definition",
       "topic": "Data Center",
       "front": "What are the Uptime Institute Data Center Tiers?",
-      "back": "Tier I: Basic (99.671%)\\nTier II: Redundant components (99.741%)\\nTier III: Concurrently maintainable (99.982%)\\nTier IV: Fault tolerant (99.995%).",
+      "back": "Tier I: Basic (99.671%)\nTier II: Redundant components (99.741%)\nTier III: Concurrently maintainable (99.982%)\nTier IV: Fault tolerant (99.995%).",
       "difficulty": "easy",
       "tags": [
         "data center tiers",
@@ -4956,7 +4956,7 @@
       "type": "definition",
       "topic": "Incident Management",
       "front": "What is the difference between incident and problem management?",
-      "back": "Incident: Restore service quickly (reactive)\\nProblem: Find and fix root cause to prevent recurrence (proactive)\n\nPhases: preparation, identification, containment, eradication, recovery, lessons learned. Document everything for forensics.",
+      "back": "Incident: Restore service quickly (reactive)\nProblem: Find and fix root cause to prevent recurrence (proactive)\n\nPhases: preparation, identification, containment, eradication, recovery, lessons learned. Document everything for forensics.",
       "difficulty": "medium",
       "tags": [
         "incident",
@@ -4973,7 +4973,7 @@
       "type": "concept",
       "topic": "Incident Management",
       "front": "How is incident priority determined?",
-      "back": "Priority = Impact × Urgency\\nImpact: How many affected, severity\\nUrgency: How quickly resolution is needed. Operations and maintenance require documented procedures, monitoring, and regular review for continued effectiveness.",
+      "back": "Priority = Impact × Urgency\nImpact: How many affected, severity\nUrgency: How quickly resolution is needed. Operations and maintenance require documented procedures, monitoring, and regular review for continued effectiveness.",
       "difficulty": "medium",
       "tags": [
         "priority",
@@ -4990,7 +4990,7 @@
       "type": "definition",
       "topic": "Incident Management",
       "front": "What are the types of escalation?",
-      "back": "Functional: Route to specialized team for expertise\\nHierarchical: Escalate to management for authority/resources. Operations and maintenance require documented procedures, monitoring, and regular review for continued effectiveness.",
+      "back": "Functional: Route to specialized team for expertise\nHierarchical: Escalate to management for authority/resources. Operations and maintenance require documented procedures, monitoring, and regular review for continued effectiveness.",
       "difficulty": "medium",
       "tags": [
         "escalation",
@@ -5057,7 +5057,7 @@
       "type": "definition",
       "topic": "Business Continuity",
       "front": "What is the difference between BCP and DRP?",
-      "back": "BCP: Keeps entire business running during disruption (broader scope)\\nDRP: Restores IT systems after disaster (technology focused) RTO (max downtime) and RPO (max data loss) drive strategy. Hot/warm/cold sites balance cost vs. recovery speed.",
+      "back": "BCP: Keeps entire business running during disruption (broader scope)\nDRP: Restores IT systems after disaster (technology focused) RTO (max downtime) and RPO (max data loss) drive strategy. Hot/warm/cold sites balance cost vs. recovery speed.",
       "difficulty": "medium",
       "tags": [
         "BCP",
@@ -5075,7 +5075,7 @@
       "type": "definition",
       "topic": "Business Continuity",
       "front": "What are RTO, RPO, and MTD?",
-      "back": "RTO: Maximum time to restore (how fast)\\nRPO: Maximum data loss acceptable (how much)\\nMTD: Maximum downtime before failure (overall limit).",
+      "back": "RTO: Maximum time to restore (how fast)\nRPO: Maximum data loss acceptable (how much)\nMTD: Maximum downtime before failure (overall limit).",
       "difficulty": "medium",
       "tags": [
         "RTO",
@@ -5113,7 +5113,7 @@
       "type": "definition",
       "topic": "Disaster Recovery",
       "front": "What are the recovery site types?",
-      "back": "Cold: Facility only, no equipment (weeks to recover)\\nWarm: Facility + some equipment (days)\\nHot: Fully equipped and configured (hours)\\nCloud: Variable, on-demand (minutes to hours)",
+      "back": "Cold: Facility only, no equipment (weeks to recover)\nWarm: Facility + some equipment (days)\nHot: Fully equipped and configured (hours)\nCloud: Variable, on-demand (minutes to hours)",
       "difficulty": "medium",
       "tags": [
         "recovery sites",
@@ -5147,7 +5147,7 @@
       "type": "definition",
       "topic": "Backup",
       "front": "What are the three backup types?",
-      "back": "Full: Complete copy (longest backup, fastest restore)\\nIncremental: Changes since last backup (fastest backup, slowest restore)\\nDifferential: Changes since last full (moderate both)",
+      "back": "Full: Complete copy (longest backup, fastest restore)\nIncremental: Changes since last backup (fastest backup, slowest restore)\nDifferential: Changes since last full (moderate both)",
       "difficulty": "easy",
       "tags": [
         "backup types",
@@ -5165,7 +5165,7 @@
       "type": "definition",
       "topic": "Backup",
       "front": "What is the difference between incremental and differential backup?",
-      "back": "Incremental: Changes since last ANY backup\\nDifferential: Changes since last FULL backup\\nDifferential grows larger, but needs fewer tapes to restore.",
+      "back": "Incremental: Changes since last ANY backup\nDifferential: Changes since last FULL backup\nDifferential grows larger, but needs fewer tapes to restore.",
       "difficulty": "easy",
       "tags": [
         "incremental",
@@ -5182,7 +5182,7 @@
       "type": "definition",
       "topic": "Backup",
       "front": "What is GFS backup rotation?",
-      "back": "Grandfather-Father-Son rotation:\\nSon = Daily backups\\nFather = Weekly backups\\nGrandfather = Monthly backups\\nBalances retention with media usage.\n\nTypes: Full (complete copy), incremental (changes since last backup), differential (changes since last full). Test restoration regularly.",
+      "back": "Grandfather-Father-Son rotation:\nSon = Daily backups\nFather = Weekly backups\nGrandfather = Monthly backups\nBalances retention with media usage.\n\nTypes: Full (complete copy), incremental (changes since last backup), differential (changes since last full). Test restoration regularly.",
       "difficulty": "easy",
       "tags": [
         "GFS",
@@ -5215,7 +5215,7 @@
       "type": "definition",
       "topic": "Disaster Recovery",
       "front": "What is the difference between synchronous and asynchronous replication?",
-      "back": "Synchronous: Write to both sites simultaneously (zero data loss, distance limited)\\nAsynchronous: Write to DR after primary (some data loss possible, no distance limit)",
+      "back": "Synchronous: Write to both sites simultaneously (zero data loss, distance limited)\nAsynchronous: Write to DR after primary (some data loss possible, no distance limit)",
       "difficulty": "medium",
       "tags": [
         "replication",
@@ -6346,7 +6346,7 @@
       "type": "formula",
       "topic": "mnemonic",
       "front": "Business Continuity Key Metrics",
-      "back": "RTO (Recovery Time Objective):\\n- Maximum acceptable downtime\\n- \"How fast must we recover?\"\\n\\nRPO (Recovery Point Objective):\\n- Maximum acceptable data loss\\n- \"How much data can we lose?\"\\n\\nMTPD (Maximum Tolerable Period of Disruption):\\n- Absolute maximum before permanent damage\\n\\nRTO ≤ MTPD always",
+      "back": "RTO (Recovery Time Objective):\n- Maximum acceptable downtime\n- \"How fast must we recover?\"\n\nRPO (Recovery Point Objective):\n- Maximum acceptable data loss\n- \"How much data can we lose?\"\n\nMTPD (Maximum Tolerable Period of Disruption):\n- Absolute maximum before permanent damage\n\nRTO ≤ MTPD always",
       "difficulty": "medium",
       "mnemonic": "RTO-RPO-MTPD",
       "tags": [
@@ -6365,7 +6365,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Disaster Recovery Site Types",
-      "back": "HOT Site:\\n- Fully operational, minutes to hours\\n- Most expensive\\n- Mirror of production\\n\\nWARM Site:\\n- Partial equipment, hours to days\\n- Balance of cost/recovery\\n\\nCOLD Site:\\n- Shell only, days to weeks\\n- Least expensive\\n- Bring your own equipment\\n\\nMobile sites also an option",
+      "back": "HOT Site:\n- Fully operational, minutes to hours\n- Most expensive\n- Mirror of production\n\nWARM Site:\n- Partial equipment, hours to days\n- Balance of cost/recovery\n\nCOLD Site:\n- Shell only, days to weeks\n- Least expensive\n- Bring your own equipment\n\nMobile sites also an option",
       "difficulty": "medium",
       "mnemonic": "HOT-WARM-COLD",
       "tags": [
@@ -6383,7 +6383,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Backup Types Comparison",
-      "back": "FULL: All data, longest backup, fastest restore\\n\\nDIFFERENTIAL: Changes since LAST FULL\\n- Longer backup each day\\n- Need: Full + latest differential\\n\\nINCREMENTAL: Changes since LAST BACKUP\\n- Shortest backup\\n- Need: Full + all incrementals\\n\\nGrandfather-Father-Son rotation scheme",
+      "back": "FULL: All data, longest backup, fastest restore\n\nDIFFERENTIAL: Changes since LAST FULL\n- Longer backup each day\n- Need: Full + latest differential\n\nINCREMENTAL: Changes since LAST BACKUP\n- Shortest backup\n- Need: Full + all incrementals\n\nGrandfather-Father-Son rotation scheme",
       "difficulty": "easy",
       "mnemonic": "FULL-DIFF-INCR",
       "tags": [
@@ -6400,7 +6400,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "ITIL Service Management Processes",
-      "back": "Key ITIL processes:\\n\\nIncident Management: Restore service ASAP\\nProblem Management: Find root cause\\nChange Management: Control changes\\nConfiguration Management: Track assets (CMDB)\\nRelease Management: Deploy safely\\n\\nService Desk: Single point of contact",
+      "back": "Key ITIL processes:\n\nIncident Management: Restore service ASAP\nProblem Management: Find root cause\nChange Management: Control changes\nConfiguration Management: Track assets (CMDB)\nRelease Management: Deploy safely\n\nService Desk: Single point of contact",
       "difficulty": "medium",
       "mnemonic": "ITIL-SERVICE",
       "tags": [
@@ -6418,7 +6418,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Incident Response Phases",
-      "back": "Incident Response Plan phases:\\n\\n1. Preparation (before incident)\\n2. Identification (detect and confirm)\\n3. Containment (limit damage)\\n4. Eradication (remove threat)\\n5. Recovery (restore operations)\\n6. Lessons Learned (post-mortem)\\n\\nDocument throughout all phases",
+      "back": "Incident Response Plan phases:\n\n1. Preparation (before incident)\n2. Identification (detect and confirm)\n3. Containment (limit damage)\n4. Eradication (remove threat)\n5. Recovery (restore operations)\n6. Lessons Learned (post-mortem)\n\nDocument throughout all phases",
       "difficulty": "medium",
       "mnemonic": "IRP",
       "tags": [
@@ -6452,7 +6452,7 @@
       "type": "definition",
       "topic": "Security Governance",
       "front": "What is the difference between a data owner and data custodian?",
-      "back": "Data Owner: Business person responsible for classification, access decisions\\nData Custodian: IT person responsible for implementing controls, protecting data",
+      "back": "Data Owner: Business person responsible for classification, access decisions\nData Custodian: IT person responsible for implementing controls, protecting data",
       "difficulty": "medium",
       "tags": [
         "data owner",
@@ -6533,7 +6533,7 @@
       "type": "definition",
       "topic": "Access Control",
       "front": "What is AAA in access control?",
-      "back": "Authentication: Verify identity (who are you?)\\nAuthorization: Determine permissions (what can you do?)\\nAccounting: Record activities (what did you do?)",
+      "back": "Authentication: Verify identity (who are you?)\nAuthorization: Determine permissions (what can you do?)\nAccounting: Record activities (what did you do?)",
       "difficulty": "medium",
       "tags": [
         "AAA",
@@ -6583,7 +6583,7 @@
       "type": "definition",
       "topic": "Access Control",
       "front": "What are the main access control models?",
-      "back": "DAC: Owner controls access\\nMAC: System enforces via labels\\nRBAC: Access based on roles\\nABAC: Access based on attributes Types: preventive (stop incidents), detective (identify incidents), corrective (fix after). Automated preferred over manual.",
+      "back": "DAC: Owner controls access\nMAC: System enforces via labels\nRBAC: Access based on roles\nABAC: Access based on attributes Types: preventive (stop incidents), detective (identify incidents), corrective (fix after). Automated preferred over manual.",
       "difficulty": "medium",
       "tags": [
         "access control models",
@@ -6748,7 +6748,7 @@
       "type": "definition",
       "topic": "Cryptography",
       "front": "What is the difference between symmetric and asymmetric encryption?",
-      "back": "Symmetric: Same key encrypts/decrypts (fast, key distribution problem)\\nAsymmetric: Public/private key pair (slower, solves distribution).",
+      "back": "Symmetric: Same key encrypts/decrypts (fast, key distribution problem)\nAsymmetric: Public/private key pair (slower, solves distribution).",
       "difficulty": "hard",
       "tags": [
         "encryption",
@@ -6783,7 +6783,7 @@
       "type": "definition",
       "topic": "Cryptography",
       "front": "What does a digital signature provide?",
-      "back": "Integrity: Message not altered\\nAuthentication: Verified sender\\nNon-repudiation: Sender cannot deny\\n(Does NOT provide confidentiality)\n\nFactors: something you know (password), have (token), are (biometric). MFA combines two or more factors.",
+      "back": "Integrity: Message not altered\nAuthentication: Verified sender\nNon-repudiation: Sender cannot deny\n(Does NOT provide confidentiality)\n\nFactors: something you know (password), have (token), are (biometric). MFA combines two or more factors.",
       "difficulty": "hard",
       "tags": [
         "digital signature",
@@ -6833,7 +6833,7 @@
       "type": "standard",
       "topic": "Email Security",
       "front": "What email authentication standards prevent spoofing?",
-      "back": "SPF: Sender Policy Framework (authorized senders)\\nDKIM: DomainKeys (email signing)\\nDMARC: Domain-based Authentication (policy enforcement)\n\nFactors: something you know (password), have (token), are (biometric). MFA combines two or more factors.",
+      "back": "SPF: Sender Policy Framework (authorized senders)\nDKIM: DomainKeys (email signing)\nDMARC: Domain-based Authentication (policy enforcement)\n\nFactors: something you know (password), have (token), are (biometric). MFA combines two or more factors.",
       "difficulty": "medium",
       "tags": [
         "SPF",
@@ -6851,7 +6851,7 @@
       "type": "definition",
       "topic": "Malware",
       "front": "What are the main malware types?",
-      "back": "Virus: Requires host file\\nWorm: Self-replicating, no host needed\\nTrojan: Disguised as legitimate\\nRansomware: Encrypts for ransom\\nRootkit: Hides deep in system",
+      "back": "Virus: Requires host file\nWorm: Self-replicating, no host needed\nTrojan: Disguised as legitimate\nRansomware: Encrypts for ransom\nRootkit: Hides deep in system",
       "difficulty": "easy",
       "tags": [
         "malware",
@@ -6984,7 +6984,7 @@
       "type": "definition",
       "topic": "Social Engineering",
       "front": "What is the difference between phishing and spear phishing?",
-      "back": "Phishing: Mass emails to many targets, generic\\nSpear phishing: Targeted at specific individuals, personalized, more effective\n\nSocial engineering via email/messages. Controls: email filtering, user awareness training, MFA, reporting mechanism.",
+      "back": "Phishing: Mass emails to many targets, generic\nSpear phishing: Targeted at specific individuals, personalized, more effective\n\nSocial engineering via email/messages. Controls: email filtering, user awareness training, MFA, reporting mechanism.",
       "difficulty": "easy",
       "tags": [
         "phishing",
@@ -8446,7 +8446,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Security Principles - CIA and AAA",
-      "back": "CIA Triad:\\nC - Confidentiality (authorized access only)\\nI - Integrity (accurate, complete)\\nA - Availability (accessible when needed)\\n\\nAAA Model:\\nA - Authentication (verify identity)\\nA - Authorization (permissions)\\nA - Accounting (audit trail)\\n\\nFoundation of information security",
+      "back": "CIA Triad:\nC - Confidentiality (authorized access only)\nI - Integrity (accurate, complete)\nA - Availability (accessible when needed)\n\nAAA Model:\nA - Authentication (verify identity)\nA - Authorization (permissions)\nA - Accounting (audit trail)\n\nFoundation of information security",
       "difficulty": "medium",
       "mnemonic": "CIA-AAA",
       "tags": [
@@ -8464,7 +8464,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Symmetric vs Asymmetric Encryption",
-      "back": "SYMMETRIC (Single key):\\n- Same key encrypts/decrypts\\n- Fast, used for data\\n- AES, DES, 3DES\\n- Key distribution challenge\\n\\nASYMMETRIC (Key pair):\\n- Public/private key pair\\n- Slower, used for key exchange\\n- RSA, ECC\\n- Solves key distribution\\n\\nHybrid: Use asymmetric for key exchange, symmetric for data",
+      "back": "SYMMETRIC (Single key):\n- Same key encrypts/decrypts\n- Fast, used for data\n- AES, DES, 3DES\n- Key distribution challenge\n\nASYMMETRIC (Key pair):\n- Public/private key pair\n- Slower, used for key exchange\n- RSA, ECC\n- Solves key distribution\n\nHybrid: Use asymmetric for key exchange, symmetric for data",
       "difficulty": "hard",
       "mnemonic": "SYM-ASYM",
       "tags": [
@@ -8482,7 +8482,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Hashing - One-Way Function",
-      "back": "Hash = One-Way Function (OWF)\\n\\nProperties:\\n- Fixed output length\\n- Cannot reverse to original\\n- Small change = completely different hash\\n- No collisions (ideally)\\n\\nAlgorithms:\\n- SHA-256, SHA-3 (secure)\\n- MD5, SHA-1 (deprecated)\\n\\nUses: Integrity, passwords, digital signatures",
+      "back": "Hash = One-Way Function (OWF)\n\nProperties:\n- Fixed output length\n- Cannot reverse to original\n- Small change = completely different hash\n- No collisions (ideally)\n\nAlgorithms:\n- SHA-256, SHA-3 (secure)\n- MD5, SHA-1 (deprecated)\n\nUses: Integrity, passwords, digital signatures",
       "difficulty": "hard",
       "mnemonic": "HASH = OWF",
       "tags": [
@@ -8499,7 +8499,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Network Security - DMZ Architecture",
-      "back": "DMZ (Demilitarized Zone):\\n\\n- Buffer between external and internal\\n- Hosts public-facing services\\n- Two firewalls (ideal): External + Internal\\n\\nAllowed traffic:\\nExternal → DMZ: Limited services\\nDMZ → Internal: Minimal, controlled\\nInternal → DMZ: As needed\\nExternal → Internal: NEVER direct",
+      "back": "DMZ (Demilitarized Zone):\n\n- Buffer between external and internal\n- Hosts public-facing services\n- Two firewalls (ideal): External + Internal\n\nAllowed traffic:\nExternal → DMZ: Limited services\nDMZ → Internal: Minimal, controlled\nInternal → DMZ: As needed\nExternal → Internal: NEVER direct",
       "difficulty": "easy",
       "mnemonic": "DMZ",
       "tags": [
@@ -8518,7 +8518,7 @@
       "type": "standard",
       "topic": "mnemonic",
       "front": "GDPR Key Principles",
-      "back": "Seven GDPR principles:\\n\\n1. Lawfulness, fairness, transparency\\n2. Purpose limitation\\n3. Data minimization\\n4. Accuracy\\n5. Storage limitation\\n6. Integrity and confidentiality\\n7. Accountability\\n\\nRights: Access, erasure, portability\\nPenalties: Up to €20M or 4% global revenue",
+      "back": "Seven GDPR principles:\n\n1. Lawfulness, fairness, transparency\n2. Purpose limitation\n3. Data minimization\n4. Accuracy\n5. Storage limitation\n6. Integrity and confidentiality\n7. Accountability\n\nRights: Access, erasure, portability\nPenalties: Up to €20M or 4% global revenue",
       "difficulty": "medium",
       "mnemonic": "GDPR-7",
       "tags": [
@@ -8537,7 +8537,7 @@
       "type": "concept",
       "topic": "mnemonic",
       "front": "Multi-Factor Authentication Factors",
-      "back": "Three authentication factor types:\\n\\nSomething you KNOW:\\n- Password, PIN, security questions\\n\\nSomething you HAVE:\\n- Token, smart card, phone\\n\\nSomething you ARE:\\n- Fingerprint, face, retina\\n\\nMFA = Two or more different factor TYPES\\n(Two passwords ≠ MFA)",
+      "back": "Three authentication factor types:\n\nSomething you KNOW:\n- Password, PIN, security questions\n\nSomething you HAVE:\n- Token, smart card, phone\n\nSomething you ARE:\n- Fingerprint, face, retina\n\nMFA = Two or more different factor TYPES\n(Two passwords ≠ MFA)",
       "difficulty": "easy",
       "mnemonic": "MFA-SWK",
       "tags": [

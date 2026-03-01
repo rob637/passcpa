@@ -411,8 +411,9 @@ const Progress: React.FC = () => {
       setLoading(true);
       try {
         // Get weekly activity from daily logs
+        const daysBack = timeRange === 'month' ? 29 : 6;
         const days = eachDayOfInterval({
-          start: subDays(new Date(), 6),
+          start: subDays(new Date(), daysBack),
           end: new Date(),
         });
 
@@ -633,7 +634,7 @@ const Progress: React.FC = () => {
           lessonsCompleted: lessonsCompletedCount,
           totalLessons: totalLessonsCount,
           tbsCompleted: tbsCompletedCount,
-          totalTbs: 20, // Baseline TBS count per section
+          totalTbs: Math.max(tbsCompletedCount, isSingleExamCourse ? course.sections.length * 10 : 10), // Dynamic: at least 10 per section, scales with completion
         });
 
       } catch (error) {
@@ -644,7 +645,7 @@ const Progress: React.FC = () => {
     };
 
     loadProgressData();
-  }, [user?.uid, userProfile?.dailyGoal, getTopicPerformance, getLessonProgress, currentSection, courseId]);
+  }, [user?.uid, userProfile?.dailyGoal, getTopicPerformance, getLessonProgress, currentSection, courseId, timeRange]);
 
   const readiness = calculateExamReadiness(
     overallStats,
@@ -924,7 +925,7 @@ const Progress: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-primary-600" />
-                  Weekly Activity
+                  {timeRange === 'month' ? 'Monthly' : 'Weekly'} Activity
                 </h2>
                 <select
                   value={timeRange}

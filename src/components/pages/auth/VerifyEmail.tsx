@@ -34,10 +34,16 @@ const VerifyEmail = () => {
 
     // Poll every 3 seconds to check if email is verified
     const interval = setInterval(async () => {
-      await user.reload();
-      if (user.emailVerified) {
-        trackEvent('email_verified', {});
-        navigate('/'); // Go directly to dashboard
+      try {
+        if (!user) return; // Guard against user being null during polling
+        await user.reload();
+        if (user.emailVerified) {
+          trackEvent('email_verified', {});
+          navigate('/'); // Go directly to dashboard
+        }
+      } catch (e) {
+        // User may have signed out
+        logger.warn('Failed to reload user during verification polling', e);
       }
     }, 3000);
 

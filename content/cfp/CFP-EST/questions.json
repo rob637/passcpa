@@ -2,42 +2,8 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-EST",
   "exportedAt": "2026-02-25T22:37:02.921Z",
-  "count": 300,
+  "count": 279,
   "questions": [
-    {
-      "id": "cfp-cross-002",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-2",
-      "topic": "Lifetime gift tax exemption",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "Helen, age 82, owns stock worth $500,000 with a basis of $50,000. Her grandson wants to sell the stock to fund a home purchase. Helen is considering either gifting the stock now or bequeathing it at death. If Helen is expected to live 3+ more years and the grandson is in the 15% LTCG bracket, which approach results in the LOWEST total tax?",
-      "explanation": "**Cross-Domain Analysis (Estate + Tax):**\n\nThis question integrates gift/estate transfer rules with capital gains taxation.\n\n**Tax Comparison:**\n\n**Option A (Gift now):**\n- Grandson receives carryover basis ($50,000)\n- If he sells for $500,000: Gain = $450,000\n- LTCG tax at 15% = $67,500\n\n**Option B (Bequest at death):**\n- Grandson receives stepped-up basis (FMV at death, ~$500,000+)\n- If he sells for ~$500,000: Gain = $0\n- LTCG tax = $0\n\n**Savings from waiting: $67,500**\n\n**Why the bequest wins:**\n- Step-up in basis eliminates ALL built-in gain\n- 3+ year time horizon means gift won't be pulled back into estate\n- No estate tax concern if Helen is below exemption\n\n**Common misconceptions:**\n- C is wrong: Annual exclusion covers gift tax, not capital gains\n- D is wrong: Unified credit relates to transfer taxes, not income taxes\n\n**Key Integration:** Estate planning decisions must account for income tax (basis) consequences, not just transfer taxes.",
-      "correctAnswer": 0,
-      "options": [
-        ",\n      ",
-        "Gift now—grandson receives Helen\\",
-        "Gift now—Helen recognizes a capital gain of $450,000, but the grandson receives a stepped-up basis.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option B is CORRECT - Bequeathing the stock allows the grandson to receive a step-up in basis to the fair market value at Helen's death. If he sells the stock shortly thereafter, his capital gain will be minimal or nonexistent, resulting in the lowest total tax.",
-        "1": "Why option C is WRONG - Gifting the stock now results in a carryover basis for the grandson. When he sells, he will incur a significant capital gains tax, making this option more expensive than a bequest.",
-        "2": "Why option D is WRONG - The annual gift tax exclusion applies to the *gift tax*, not capital gains tax. While the annual exclusion might eliminate gift tax, it doesn't change the capital gains tax consequences for the grandson if the stock is gifted and then sold.",
-        "3": "Why option D is WRONG - The unified credit (applicable exclusion amount) shelters estates from *estate tax*, not capital gains tax. While the unified credit might eliminate estate tax, it doesn't change the capital gains tax consequences for the grandson if the stock is gifted and then sold."
-      },
-      "educational": "The step-up in basis at death is a crucial estate planning consideration. It eliminates capital gains tax on appreciated assets, which can significantly reduce the overall tax burden for heirs. This benefit is a key reason why holding appreciated assets until death is often a tax-efficient strategy, especially when the beneficiary is likely to sell the asset soon after inheritance. Understanding the interplay between estate tax and income tax is essential for effective financial planning.",
-      "examTip": "On the CFP exam, always consider the beneficiary's tax bracket and intentions for inherited assets. If they plan to sell, the step-up in basis is a powerful advantage to consider.",
-      "memoryAid": "BASIS: Bequest Allows Step-up In Savings.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 150,
-      "authorityRef": "IRC §2503(b)",
-      "commonMistake": "Many candidates focus solely on the tax bracket of the grandson and ignore the carryover basis implications of a gift versus the step-up in basis at death. The exam exploits the misconception that minimizing immediate tax is always the best strategy, overlooking long-term capital gains implications."
-    },
     {
       "id": "cfp-cross-006",
       "courseId": "cfp",
@@ -275,39 +241,6 @@
       "timeEstimate": 120,
       "authorityRef": "IRC §2035(a)",
       "commonMistake": "Many candidates focus on the existence of the ILIT but fail to apply the three-year rule for transfers of life insurance. The exam exploits the misconception that simply creating an ILIT guarantees estate tax exclusion, regardless of when the policy was transferred."
-    },
-    {
-      "id": "cfp-est-006",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-2",
-      "topic": "Estate tax calculation and exemption",
-      "difficulty": "medium",
-      "question": "A credit shelter trust is funded with $5 million at the first spouse\\'s death in 2026. The applicable exclusion amount is $7.0 million. At the surviving spouse\\'s death 10 years later, the credit shelter trust assets have appreciated to $8 million. What are the estate tax consequences?",
-      "explanation": "A credit shelter (bypass) trust is specifically designed to remove assets from both estates. Assets placed in the trust used the first spouse\\'s exemption at their death. They are NOT included in the surviving spouse\\'s estate, regardless of appreciation. The $3 million of appreciation transfers to beneficiaries completely estate-tax-free. This is the primary advantage of bypass trusts despite portability.",
-      "correctAnswer": 2,
-      "options": [
-        "$8 million is included in the surviving spouse\\",
-        ",\n      ",
-        "s estate",
-        "Nothing is included in the surviving spouse\\"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Assets held within a properly structured credit shelter trust are not included in the surviving spouse's estate, regardless of appreciation. This option incorrectly assumes full inclusion.",
-        "B": "Why option B is WRONG - This option is incomplete and doesn't provide a full answer. It's missing the subject of the sentence, making it impossible to evaluate its correctness.",
-        "D": "Why option D is WRONG - While the assets are not included in the *surviving spouse's estate*, this option is incorrect because it implies there are no estate tax consequences at all. The first spouse's applicable exclusion amount was used to fund the trust, which is a key estate tax consequence."
-      },
-      "educational": "Credit shelter trusts are irrevocable trusts established to utilize the deceased spouse's estate tax applicable exclusion amount. By using this exclusion, the assets in the trust, including any appreciation, pass to the beneficiaries without being subject to estate tax in the surviving spouse's estate. This is a key estate planning strategy to minimize overall estate taxes, especially with the current high, but temporary, applicable exclusion amount.",
-      "examTip": "Remember that assets in a properly structured credit shelter trust are excluded from the surviving spouse's estate, even if they appreciate significantly. Focus on understanding the 'bypass' concept and how it differs from portability.",
-      "memoryAid": "Bypass the tax! Credit shelter trusts 'bypass' the surviving spouse's estate, avoiding further estate tax.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "skillLevel": "Application",
-      "timeEstimate": 120,
-      "authorityRef": "IRC §2041",
-      "commonMistake": "Many candidates incorrectly assume that assets in a credit shelter trust are automatically included in the surviving spouse's estate. The exam exploits the misconception that all assets available to the surviving spouse are subject to estate tax at their death, overlooking the protection afforded by a properly structured credit shelter trust."
     },
     {
       "id": "cfp-est-007",
@@ -2384,74 +2317,6 @@
       "commonMistake": "Many candidates struggle to keep up with the annual gift tax exclusion amount, which is subject to change. A common trap is relying on outdated information or guessing without knowing the current amount. Test-takers often incorrectly assume the amount remains constant year after year, overlooking the annual adjustments for inflation."
     },
     {
-      "id": "cfp-est-068",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Irrevocable trusts (ILIT, GRAT, QPRT)",
-      "difficulty": "medium",
-      "question": "Sarah wants to establish an Irrevocable Life Insurance Trust (ILIT) to provide liquidity for her estate and protect her family. Which of the following is NOT a typical benefit of using an ILIT?",
-      "explanation": "ILIT requires insured to NOT own the policy (trust is owner). If insured retains incidents of ownership, death benefit is included in estate (IRC 2042). Key: insured cannot be trustee, beneficiary with control, or retain ownership rights.",
-      "correctAnswer": 2,
-      "options": [
-        "Death benefit excluded from insured\\",
-        ",\n      ",
-        "Trust assets included in the grantor's taxable estate",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A primary benefit of an ILIT is to remove the life insurance death benefit from the insured's gross estate, provided the insured avoids incidents of ownership and the 3-year rule of IRC Section 2035 is satisfied. This exclusion can significantly reduce estate taxes.",
-        "1": "Why option B is WRONG - [PLACEHOLDER] - This option is missing. Please provide the option text so I can explain why it is wrong.",
-        "2": "Why option C is CORRECT - [PLACEHOLDER] - This option is missing. Please provide the option text so I can explain why it is the correct answer.",
-        "3": "Why option D is WRONG - [PLACEHOLDER] - This option is missing. Please provide the option text so I can explain why it is wrong."
-      },
-      "educational": "An Irrevocable Life Insurance Trust (ILIT) is designed to own a life insurance policy, thereby removing the policy's death benefit from the insured's taxable estate. This is achieved by ensuring the insured does not retain any incidents of ownership, as defined under IRC Section 2042, and surviving the 3-year rule of IRC Section 2035 if the policy was transferred into the trust. The trust then manages the proceeds for the benefit of the beneficiaries, potentially providing liquidity for estate taxes or other needs.",
-      "examTip": "When evaluating ILIT questions, carefully analyze who owns the policy, who the beneficiaries are, and whether the insured retained any control or ownership rights that could cause inclusion in the estate under IRC Sections 2035 or 2042.",
-      "memoryAid": "ILIT: Insurance Leaving Inheritance Taxed (when done correctly).",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "skillLevel": "Application",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §2042",
-      "commonMistake": "Many candidates incorrectly assume that simply establishing an ILIT automatically excludes the death benefit from the insured's estate. A common trap is failing to consider the 'incidents of ownership' rule. If the insured retains any control over the policy (e.g., the right to change beneficiaries within 3 years of death), the death benefit may still be included in their estate."
-    },
-    {
-      "id": "cfp-est-069",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Revocable living trusts",
-      "difficulty": "medium",
-      "question": "John's will establishes a trust to minimize estate taxes for his heirs. The trust is designed to utilize his applicable exclusion amount, ensuring that portion of his estate passes tax-free. A bypass trust (credit shelter trust) is designed to:",
-      "explanation": "Bypass trust uses deceased spouse\\'s exemption ($7.0M in 2026 post-TCJA sunset) to shelter assets from estate tax at both deaths. Does NOT qualify for marital deduction—that\\'s the point. Surviving spouse can receive income and limited principal (HEMS standard). More critical now that portability is limited by lower exemptions.",
-      "correctAnswer": 1,
-      "options": [
-        "Qualify for the marital deduction",
-        "Use the deceased spouse\\",
-        ",\n      ",
-        "Shelter assets from creditors"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A bypass trust is specifically designed *not* to qualify for the marital deduction. The goal is to have assets taxed in the first spouse's estate (if applicable) and then bypass taxation in the surviving spouse's estate. Using the marital deduction would defer the tax, not avoid it in the second estate.",
-        "1": "Why option B is CORRECT - A bypass trust, also known as a credit shelter trust, is designed to utilize the deceased spouse's applicable exclusion amount (estate tax exemption). This shelters assets from estate tax in the surviving spouse's estate, maximizing the use of both spouses' exemptions and potentially reducing overall estate taxes.",
-        "2": "Why option D is WRONG - [Placeholder: Provide a plausible, incorrect option C here and explain why it's wrong. For example: 'Why option C is WRONG - Provide liquidity to the estate for immediate expenses.' While a trust *can* provide liquidity, that is not the *primary* purpose of a bypass trust. The main goal is estate tax minimization.]",
-        "3": "Why option D is WRONG - [Placeholder: Provide a plausible, incorrect option D here and explain why it's wrong. For example: 'Why option D is WRONG - Avoid probate for all assets.' While trusts *can* avoid probate, the bypass trust's primary function is estate tax planning, not probate avoidance, although it is a beneficial side effect.]"
-      },
-      "educational": "Bypass trusts are crucial for married couples with estates that may exceed the single applicable exclusion amount. They leverage the deceased spouse's exemption, preventing assets from being taxed in both estates. Understanding bypass trusts is essential for minimizing estate taxes and maximizing wealth transfer to future generations, a core competency for CFP® professionals.",
-      "examTip": "On the CFP® exam, carefully analyze the estate size and marital status of the client. If the combined estate is approaching or exceeding twice the single applicable exclusion amount, consider bypass trust strategies as a potential solution.",
-      "memoryAid": "Bypass = 'Bye-Bye' to estate tax in the second estate (for assets up to the applicable exclusion amount).",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "skillLevel": "Application",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §2010",
-      "commonMistake": "A common trap is confusing bypass trusts with marital trusts. Test-takers often incorrectly assume that all trusts created at death are designed to qualify for the marital deduction. Bypass trusts are specifically designed to *avoid* inclusion in the surviving spouse's estate, while marital trusts are designed to defer estate taxes until the surviving spouse's death."
-    },
-    {
       "id": "cfp-est-070",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -3635,76 +3500,6 @@
       "commonMistake": "Test-takers often incorrectly assume that any bequest to a spouse qualifies for the marital deduction. The exam exploits the misconception that the marital deduction is automatic, ignoring the citizenship requirement and the need for a QDOT if the surviving spouse is not a U.S. citizen."
     },
     {
-      "id": "cfp-est-b2-004",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Probate process and avoidance",
-      "subtopic": "Tenancy in Common",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Two sisters, Emily and Jessica, own a vacation home as tenants in common. Upon Emily's death, what happens to her ownership interest in the property?",
-      "explanation": "Tenancy in common has no right of survivorship. The deceased tenant\\'s interest passes through their estate (via will or intestacy), unlike joint tenancy which has automatic survivorship rights.",
-      "correctAnswer": 1,
-      "options": [
-        "Automatically passes to the surviving tenant(s)",
-        "Passes according to the deceased\\",
-        ",\n      ",
-        "Is divided equally amongst all living tenants in common"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Tenancy in common explicitly lacks the right of survivorship. If the property were held as joint tenants with right of survivorship, the surviving tenant(s) would automatically inherit the deceased's share.",
-        "1": "Why option B is CORRECT - With tenancy in common, each owner holds an individual, undivided interest in the property. Upon death, that interest becomes part of the deceased's estate and is distributed according to their will or state intestacy laws.",
-        "2": "Why option D is WRONG - [Placeholder - Provide a plausible, but incorrect, option C here. Then explain why it's wrong. For example: 'Why option C is WRONG - Passes to the state government if no will exists' - While the state *can* eventually claim property through escheatment, this only happens after a lengthy legal process and only if no heirs can be found. The property initially passes through the probate process.]",
-        "3": "Why option D is WRONG - [Placeholder - Provide a plausible, but incorrect, option D here. Then explain why it's wrong. For example: 'Why option D is WRONG - Is held in trust until the youngest tenant in common reaches the age of majority' - This scenario would only be possible if the tenancy in common was specifically structured within a trust document, which is not the default arrangement for this type of property ownership.]"
-      },
-      "educational": "Tenancy in common is a common form of co-ownership, especially among unrelated individuals, because it allows each owner to independently transfer their share. This contrasts with joint tenancy, which simplifies estate administration but restricts individual control. Understanding the nuances of property ownership is crucial for estate planning, as it directly impacts how assets are distributed and potentially taxed upon death, impacting the client's overall financial plan.",
-      "examTip": "When answering questions about property ownership, carefully identify the type of ownership (tenancy in common, joint tenancy, tenancy by the entirety) as the legal implications for estate planning differ significantly. Pay close attention to keywords like 'right of survivorship'.",
-      "memoryAid": "TIC = To Inherit, Children (or heirs). Tenancy In Common goes To Inherit, Children (or heirs), not automatically to the other tenants.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Uniform Partition of Heirs Property Act",
-      "commonMistake": "Many candidates confuse tenancy in common with joint tenancy with right of survivorship. The exam exploits the misconception that ownership automatically transfers to the surviving owner(s), failing to recognize that with tenancy in common, the deceased's share passes according to their estate plan."
-    },
-    {
-      "id": "cfp-est-b2-005",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Powers of attorney (financial, healthcare)",
-      "subtopic": "Types and Powers",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Robert has a durable power of attorney for healthcare naming his daughter, Lisa, as his agent. This document typically includes all of the following powers EXCEPT:",
-      "explanation": "A healthcare power of attorney covers medical decisions only. Modifying a trust requires a separate durable power of attorney for financial matters or property, not a healthcare directive.",
-      "correctAnswer": 2,
-      "options": [
-        "Making medical treatment decisions",
-        "Accessing medical records",
-        "Modifying the principal\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A durable power of attorney for healthcare specifically grants the agent the power to make medical treatment decisions on behalf of the principal when the principal is unable to do so themselves. This is a core function of the document.",
-        "1": "Why option B is WRONG - Accessing medical records is a necessary component of making informed healthcare decisions. HIPAA regulations allow the designated healthcare agent to access the principal's medical information to understand their condition and treatment options.",
-        "2": "Why option C is CORRECT - A durable power of attorney for healthcare is limited to healthcare decisions. Modifying the principal's trust requires a separate legal document, such as a durable power of attorney for financial matters or an amendment to the trust itself, executed by the principal (if competent) or a trustee with the power to amend.",
-        "3": "Why option D is WRONG - This option is incomplete and therefore cannot be evaluated. The question is designed to test your knowledge of the powers granted under a healthcare power of attorney."
-      },
-      "educational": "A durable power of attorney for healthcare (also known as a healthcare proxy) allows an individual to appoint an agent to make healthcare decisions on their behalf if they become incapacitated. This is a crucial part of estate planning, ensuring your wishes are followed when you can't communicate them. It differs from a financial power of attorney, which handles financial matters, and both are distinct from directives like a living will, which outlines specific medical preferences.",
-      "examTip": "On the CFP exam, carefully distinguish between healthcare powers of attorney, financial powers of attorney, and living wills, as they address different aspects of incapacity planning.",
-      "memoryAid": "Healthcare = Health Choices; Financial = Funds Changes",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 75,
-      "authorityRef": "Uniform Power of Attorney Act §114",
-      "commonMistake": "A common trap is confusing the powers granted in a healthcare power of attorney with those in a financial power of attorney. Test-takers often incorrectly assume that a healthcare power of attorney allows the agent to modify the principal's estate plan, overlooking the fact that its primary focus is on medical decisions and access to medical information."
-    },
-    {
       "id": "cfp-est-b2-006",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -3984,40 +3779,6 @@
       "timeEstimate": 120,
       "authorityRef": "Rev. Rul. 59-60",
       "commonMistake": "Many candidates fail to recognize that minority interests in closely held businesses are typically subject to valuation discounts. A common trap is assuming that a pro rata value always applies. Test-takers often incorrectly believe that a 30% interest automatically translates to 30% of the total value, overlooking the lack of control and marketability."
-    },
-    {
-      "id": "cfp-est-b2-014",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Beneficiary designations",
-      "subtopic": "SECURE Act Rules",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "David inherited an IRA from his father in 2024. Under the SECURE Act, David, as a non-spouse beneficiary, must distribute the inherited IRA within:",
-      "explanation": "The SECURE Act eliminated the stretch IRA for most non-spouse beneficiaries, requiring complete distribution within 10 years. Exceptions exist for eligible designated beneficiaries (EDBs) like minor children and disabled individuals.",
-      "correctAnswer": 1,
-      "options": [
-        "5 years of the owner\\",
-        ",\n      ",
-        "s death",
-        "Over their life expectancy"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The 5-year rule applies in specific situations, such as when the beneficiary is not a designated beneficiary or if the account owner died before their required beginning date and the beneficiary is a designated beneficiary who dies before taking distributions. It is not the general rule for non-spouse beneficiaries under the SECURE Act.",
-        "C": "Why option C is WRONG - While the inherited IRA must be distributed after the owner's death, the SECURE Act specifies a 10-year timeframe for most non-spouse beneficiaries, not immediate distribution upon death. The beneficiary has the flexibility to take distributions at any point within that 10-year window.",
-        "D": "Why option D is WRONG - Prior to the SECURE Act, non-spouse beneficiaries could 'stretch' IRA distributions over their life expectancy. The SECURE Act largely eliminated this option, replacing it with the 10-year rule for most non-spouse beneficiaries. Life expectancy is only relevant for Eligible Designated Beneficiaries (EDBs)."
-      },
-      "educational": "The SECURE Act significantly altered post-death distribution rules for retirement accounts, primarily to accelerate tax revenue collection. By eliminating the stretch IRA for most beneficiaries, Congress aimed to increase tax receipts in the near term. Understanding the 10-year rule and its exceptions is crucial for advising clients on estate planning and beneficiary designations, especially in relation to minimizing potential tax liabilities for their heirs.",
-      "examTip": "On the CFP exam, carefully identify whether the beneficiary qualifies as an Eligible Designated Beneficiary (EDB), as this will determine whether the 10-year rule or the life expectancy rule applies. Pay close attention to the age and disability status of the beneficiary.",
-      "memoryAid": "SECURE Act = 10 years (for most non-spouse beneficiaries).",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §401(a)(9)(H)",
-      "commonMistake": "Many candidates are unaware of the SECURE Act's 10-year rule for non-spouse beneficiaries inheriting retirement accounts. A common trap is applying pre-SECURE Act rules or other incorrect distribution periods. Test-takers often incorrectly believe that the life expectancy rule still applies to all non-spouse beneficiaries."
     },
     {
       "id": "cfp-est-b2-015",
@@ -5602,41 +5363,6 @@
       "commonMistake": "Many candidates confuse the individual annual gift tax exclusion with the amount a married couple can gift. Test-takers often incorrectly remember the individual exclusion amount (e.g., $17,000 in 2023, which is then doubled). The exam exploits the misconception that the annual exclusion is a fixed number that doesn't change or that it's not doubled for married couples electing gift splitting."
     },
     {
-      "id": "cfp-est-b4-010",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-2",
-      "topic": "Annual gift tax exclusion",
-      "subtopic": "Education and Medical Exclusions",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Sarah wants to help her grandchild, Emily, with college expenses. Payments for Emily's college tuition are exempt from gift tax if paid:\n\nA) Into a 529 plan for the grandchild\nB) Directly to the grandchild\nC) To the grandchild's parents\nD) Directly to the educational institution",
-      "explanation": "Unlimited payments for tuition or medical expenses are excluded from gift tax if paid directly to the educational institution or medical provider. This is in addition to the annual exclusion. Paying the student or a 529 plan does not qualify for this unlimited exclusion.",
-      "correctAnswer": 3,
-      "options": [
-        "Into a 529 plan for the grandchild",
-        "Directly to the grandchild",
-        "To the grandchild\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Contributions to a 529 plan, while potentially beneficial for education savings, are considered gifts and are subject to gift tax rules. While you can front-load a 529 plan and elect to treat the contribution as if it were made over a five-year period, it doesn't qualify for the unlimited gift tax exclusion for direct tuition payments.",
-        "1": "Why option B is WRONG - Giving money directly to the grandchild, even if intended for tuition, is considered a gift and is subject to gift tax rules. It does not qualify for the unlimited gift tax exclusion for direct tuition payments.",
-        "2": "Why option C is WRONG - Similar to option B, giving money directly to the grandchild, even if earmarked for education, constitutes a gift and is subject to gift tax rules. The unlimited gift tax exclusion only applies when payments are made directly to the educational institution.",
-        "3": "Why option D is CORRECT - Payments made directly to an educational institution for a beneficiary's tuition are excluded from gift tax under IRC Section 2503(e). This is an unlimited exclusion, meaning there is no dollar limit, and it is in addition to the annual gift tax exclusion."
-      },
-      "educational": "The unlimited gift tax exclusion for tuition and medical expenses is designed to encourage individuals to support the education and healthcare of others without incurring gift tax liability. This exclusion bypasses the need to use the annual gift tax exclusion or lifetime applicable exclusion amount, allowing for more efficient wealth transfer. Understanding this exclusion is crucial for estate planning, especially when advising clients on strategies to fund education or healthcare needs for family members.",
-      "examTip": "On the CFP exam, carefully distinguish between direct payments for tuition/medical expenses (unlimited exclusion) and contributions to vehicles like 529 plans (subject to gift tax rules and annual exclusion). Look for keywords like 'directly to the institution' in the question stem.",
-      "memoryAid": "Think 'Directly to the Institution' for unlimited tuition gift tax exclusion.",
-      "reference": "IRC Section 2501-2524",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 45,
-      "authorityRef": "IRC §2503(e)",
-      "commonMistake": "Many candidates are unaware of the direct payment exception for educational expenses. A common trap is thinking that all gifts to a grandchild are subject to gift tax unless made through a specific vehicle like a 529 plan. The exam exploits the misconception that all transfers of value are taxable gifts unless they fall under the annual exclusion."
-    },
-    {
       "id": "cfp-est-b4-011",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -5705,40 +5431,6 @@
       "timeEstimate": 90,
       "authorityRef": "IRC §2702",
       "commonMistake": "Many candidates misunderstand the primary purpose of a GRAT. A common trap is thinking a GRAT allows the grantor to retain full control (Option B). While the grantor receives an annuity, they don't have full control over the assets within the trust. The exam exploits the misconception that the grantor retains significant control over the assets in the trust beyond the annuity payments."
-    },
-    {
-      "id": "cfp-est-b4-013",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-2",
-      "topic": "Valuation discounts",
-      "subtopic": "Buy-Sell Agreements",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Three partners in Vista Healthcare LLC have a buy-sell agreement funded with life insurance. A cross-purchase buy-sell agreement:\n\nA) Has the company purchase a deceased owner's interest\nB) Is always the best option for S corporations\nC) Has each owner purchase life insurance on the other owners\nD) Is only used in community property states",
-      "explanation": "In a cross-purchase agreement, surviving owners (not the company) purchase the deceased owner\\'s business interest. Each owner owns life insurance on the other owners. This provides a step-up in basis for the surviving owners. With many owners, an entity purchase or trusteed arrangement may be simpler.",
-      "correctAnswer": 2,
-      "options": [
-        "Has the company purchase a deceased owner\\",
-        ",\n      ",
-        "Has each partner purchase a pro-rata share of a deceased owner's interest",
-        "s interest"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - In a cross-purchase agreement, the company is not involved in purchasing the deceased owner's shares. This is characteristic of an entity purchase (redemption) agreement, not a cross-purchase agreement.",
-        "B": "Why option B is WRONG - This option is incomplete and doesn't describe any type of buy-sell agreement. It lacks the essential element of who is purchasing the deceased owner's interest.",
-        "D": "Why option D is WRONG - This option is incomplete and doesn't describe any type of buy-sell agreement. It lacks the essential element of who is purchasing the deceased owner's interest."
-      },
-      "educational": "Buy-sell agreements are crucial for business succession planning, providing a predetermined method for transferring ownership upon the death, disability, or retirement of an owner. Cross-purchase agreements are often favored when there are fewer owners because they allow the surviving owners to receive a step-up in basis for the purchased shares, potentially reducing future capital gains taxes. This contrasts with entity purchase agreements where the company buys back the shares, which does not provide a basis increase to the remaining owners.",
-      "examTip": "When analyzing buy-sell agreement questions, immediately identify whether the agreement is cross-purchase or entity purchase, as this dictates who is buying the shares and the tax implications for the owners.",
-      "memoryAid": "Cross-Purchase: Owners CROSS the street to buy each other's shares.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §101(b)(2)(B)",
-      "commonMistake": "Many candidates confuse entity purchase and cross-purchase buy-sell agreements. A common trap is associating all buy-sell agreements with the company purchasing the interest (Option A). The exam exploits the misconception that all buy-sell agreements are structured the same way, failing to distinguish between the different types and their implications."
     },
     {
       "id": "cfp-est-b4-014",
@@ -6862,40 +6554,6 @@
       "commonMistake": "Many candidates are unaware of the nuances of Domestic Asset Protection Trusts (DAPTs). A common trap is assuming DAPTs are available in all 50 states or provide absolute protection from all creditors. Test-takers often incorrectly believe that DAPTs require offshore administration."
     },
     {
-      "id": "cfp-est-b5-021",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Probate process and avoidance",
-      "subtopic": "Basis Rules",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Sarah inherited stock from her grandfather, who passed away on March 15, 2024. She plans to sell the stock immediately. When inherited property is sold, the basis is generally:",
-      "explanation": "Inherited property receives a stepped-up (or down) basis to fair market value at death. This eliminates built-in capital gains, a significant tax benefit. Some strategies involve holding appreciated assets until death rather than gifting (which carries over the donor\\'s basis). Community property may receive double step-up.",
-      "correctAnswer": 3,
-      "options": [
-        "The decedent\\",
-        ",\n      ",
-        "s cost to receive the property",
-        "Zero"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The decedent's cost basis is irrelevant when inherited property is sold. The basis is adjusted to the fair market value at the date of death, not the original cost.",
-        "B": "Why option B is WRONG - This option is incomplete and grammatically incorrect. It doesn't represent a valid basis for inherited property.",
-        "C": "Why option C is WRONG - The decedent's cost to *receive* the property is not the basis. The basis is the fair market value of the property at the date of the decedent's death, not their original acquisition cost."
-      },
-      "educational": "The step-up in basis rule is a significant estate planning consideration. It allows heirs to sell inherited assets shortly after death without incurring capital gains taxes on the appreciation that occurred during the decedent's lifetime. This contrasts with gifting, where the donee receives the donor's original basis, potentially triggering capital gains taxes upon sale.",
-      "examTip": "Remember that the step-up in basis applies to assets included in the decedent's gross estate. Consider the implications of the step-up in basis when comparing gifting strategies to holding assets until death for estate planning purposes.",
-      "memoryAid": "SID: Step-up In Death",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC § 1014(a)",
-      "commonMistake": "Many candidates confuse the basis of inherited property with the decedent's original cost basis. A common trap is overlooking the step-up in basis to fair market value at the date of death. Test-takers often incorrectly believe the basis remains the same as the decedent's or is zero."
-    },
-    {
       "id": "cfp-est-b5-022",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -6929,41 +6587,6 @@
       "timeEstimate": 90,
       "authorityRef": "Lucas v. Earl, 281 U.S. 111 (1930) (Assignment of Income Doctrine)",
       "commonMistake": "Many candidates focus on the gift tax implications and overlook the fundamental principle of the assignment of income doctrine. A common trap is assuming that gifting income is always effective for shifting income tax liability. Test-takers often incorrectly believe that only cash can be gifted or that the IRS prohibits all family gifts."
-    },
-    {
-      "id": "cfp-est-b5-023",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Types of wills (simple, pour-over, holographic)",
-      "subtopic": "Key Person Insurance",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "ABC Corp relies heavily on its CEO, Emily. To ensure business continuity in case of her death, they're implementing key person life insurance. Key person life insurance in business succession planning:",
-      "explanation": "Key person insurance is owned by and payable to the business. It provides liquidity to replace a crucial employee, pay debts, fund buyouts, or maintain operations during transition. Premiums are not deductible but proceeds are generally income-tax-free. Notice and consent requirements apply.",
-      "correctAnswer": 3,
-      "options": [
-        "Is owned by the key employee",
-        "Provides benefits to the key employee\\",
-        ",\n      ",
-        "Is designed to primarily benefit the shareholders of ABC Corp"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Key person life insurance is owned by the business, not the key employee. The business pays the premiums and is the beneficiary, allowing it to manage the financial impact of the key employee's loss.",
-        "1": "Why option B is WRONG - While the key employee's family might indirectly benefit if the business survives and thrives due to the key person insurance proceeds, the direct benefits are payable to the business, not the key employee. The insurance is designed to protect the business's financial stability.",
-        "2": "Why option C is WRONG - Option C is incomplete and lacks the necessary information to be a viable answer. It does not specify who owns the policy or who receives the benefits.",
-        "3": "Why option D is CORRECT - Key person life insurance is a business-owned policy that provides financial protection to the company in the event of the death or disability of a crucial employee. The business pays the premiums and receives the death benefit, which can be used to cover expenses, find a replacement, or maintain operations."
-      },
-      "educational": "Key person life insurance is a risk management tool used in business succession planning to mitigate the financial impact of losing a vital employee. The premiums paid by the business are not tax-deductible under IRC Section 264, but the death benefit is generally received income tax-free under IRC Section 101(a), helping to ensure business continuity. This contrasts with other insurance arrangements, such as split-dollar life insurance, where the tax implications can be more complex.",
-      "examTip": "Remember that key person life insurance premiums are NOT deductible for the business, but the death benefit is generally income tax-free. This is a common point of confusion on the CFP exam.",
-      "memoryAid": "Key Person = Company's Keeper (the company owns and benefits).",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §101(b)",
-      "commonMistake": "Many candidates confuse key person life insurance with group term life insurance benefits for employees. The exam exploits the misconception that life insurance proceeds are always tax-free to the recipient, overlooking the specific rules for key person insurance where the company owns the policy and is the beneficiary."
     },
     {
       "id": "cfp-est-b5-024",
@@ -7069,41 +6692,6 @@
       "timeEstimate": 60,
       "authorityRef": "Uniform Health-Care Decisions Act §2",
       "commonMistake": "Test-takers often incorrectly associate all estate planning documents with asset distribution. The exam exploits the misconception that a living will is primarily concerned with financial matters, overlooking its specific focus on healthcare decisions."
-    },
-    {
-      "id": "cfp-est-b6-002",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Advance healthcare directives",
-      "subtopic": "HIPAA Authorization",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "A client asks about the relationship between HIPAA authorizations and advance healthcare directives. Which statement is MOST accurate?",
-      "explanation": "A HIPAA authorization permits designated individuals to access the client\\'s protected health information under federal privacy rules. It complements healthcare directives (living will, healthcare power of attorney) but serves a different purpose — information access rather than decision-making authority.",
-      "correctAnswer": 1,
-      "options": [
-        "A HIPAA authorization completely replaces the need for a healthcare power of attorney",
-        "A HIPAA authorization allows designated individuals to access the client\\",
-        ",\n      ",
-        "A HIPAA authorization grants the designated agent the authority to make healthcare decisions on the client's behalf."
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A HIPAA authorization and a healthcare power of attorney serve distinct purposes. A HIPAA authorization grants access to medical information, while a healthcare power of attorney grants decision-making authority when the client is unable to make their own decisions. One does not replace the other; both are often necessary.",
-        "1": "Why option B is CORRECT - A HIPAA authorization explicitly allows designated individuals to access a client's protected health information (PHI). This access is crucial for those assisting with healthcare management, especially when the client is incapacitated or needs help coordinating care.",
-        "2": "Why option D is WRONG - [PLACEHOLDER: Replace with a specific incorrect option C]",
-        "3": "Why option D is WRONG - [PLACEHOLDER: Replace with a specific incorrect option D]"
-      },
-      "educational": "HIPAA authorizations are crucial for ensuring that designated individuals can access a client's medical information, facilitating informed decision-making and care coordination. Advance healthcare directives, including living wills and healthcare powers of attorney, address the client's wishes regarding medical treatment and who can make those decisions when the client is unable. Both documents are essential components of a comprehensive estate plan, ensuring the client's healthcare preferences are respected and their designated representatives have the necessary information and authority.",
-      "examTip": "On the CFP exam, remember that HIPAA authorizations are about *access* to information, while healthcare powers of attorney are about *authority* to make decisions. Don't confuse the two!",
-      "memoryAid": "HIPAA = *H*ealth *I*nformation *P*ermission to *A*ccess; Healthcare POA = *P*ower to *O*rder *A*ctions",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 45,
-      "authorityRef": "HIPAA Privacy Rule, 45 CFR § 164.508",
-      "commonMistake": "Many candidates confuse the scope of a HIPAA authorization with a healthcare power of attorney. The exam exploits the misconception that a HIPAA authorization grants broad decision-making authority, overlooking its limited purpose of allowing access to protected health information."
     },
     {
       "id": "cfp-est-b6-003",
@@ -7244,41 +6832,6 @@
       "timeEstimate": 90,
       "authorityRef": "California Probate Code §6600",
       "commonMistake": "Test-takers often incorrectly assume that all forms of joint ownership have the same tax implications. The exam exploits the misconception that community property with right of survivorship is available in all states and provides the same benefits as other forms of joint ownership, overlooking its unique full step-up in basis feature."
-    },
-    {
-      "id": "cfp-est-b6-007",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-2",
-      "topic": "Annual gift tax exclusion",
-      "subtopic": "Medical and Education Exclusion",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Susan wants to help her niece pay for college. She makes a payment of $10,000 directly to State University for her niece's tuition. Payments for tuition directly to an educational institution:",
-      "explanation": "Direct payments to educational institutions for tuition (not room/board/books) and to medical providers for medical care are unlimited exclusions separate from the $19,000 annual exclusion. This allows wealthy individuals to transfer substantial amounts for education and healthcare without gift tax consequences.",
-      "correctAnswer": 1,
-      "options": [
-        "Must be for the donor\\",
-        ",\n      ",
-        "Is considered a gift to the niece",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - The tuition exclusion applies to payments made on behalf of *any* individual, not just the donor. The donor can pay tuition for a grandchild, friend, or even a stranger and still qualify for the exclusion.",
-        "1": "Why option B is CORRECT - Direct payments to educational institutions for tuition (excluding room, board, and books) qualify for an unlimited gift tax exclusion under IRC Section 2503(e). This exclusion is separate from the annual gift tax exclusion and allows for significant wealth transfer without incurring gift tax.",
-        "2": "Why option D is WRONG - This option is incomplete and doesn't provide a coherent statement. The question requires a complete sentence to evaluate its correctness.",
-        "3": "Why option D is WRONG - This option is incomplete and doesn't provide a coherent statement. The question requires a complete sentence to evaluate its correctness."
-      },
-      "educational": "The unlimited gift tax exclusion for tuition and medical expenses is a powerful estate planning tool. It allows individuals to reduce the size of their taxable estate by directly paying for these expenses on behalf of others. This strategy is particularly beneficial for high-net-worth individuals seeking to minimize estate taxes while supporting the education and healthcare needs of their loved ones. Understanding the specifics of IRC Section 2503(e) is crucial for the CFP exam.",
-      "examTip": "On the CFP exam, remember that the unlimited gift tax exclusion for tuition applies only to direct payments to the educational institution, not reimbursements to the beneficiary or payments for room and board.",
-      "memoryAid": "Think 'Tuition and Medical Direct' (TMD) to remember that the unlimited gift tax exclusion applies to direct payments for tuition and medical expenses.",
-      "reference": "IRC Section 2501-2524",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §2503(e)",
-      "commonMistake": "Many candidates confuse direct tuition payments with regular gifts subject to the annual exclusion. The exam exploits the misconception that all gifts are subject to gift tax rules, overlooking the specific exception for direct payments to educational institutions for tuition."
     },
     {
       "id": "cfp-est-b6-008",
@@ -7701,41 +7254,6 @@
       "commonMistake": "A common trap is focusing on the types of animals covered rather than the core purpose of a pet trust. Test-takers often incorrectly assume pet trusts are only for common pets like dogs and cats, overlooking the broader intent of providing for animal care."
     },
     {
-      "id": "cfp-est-b6-020",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Probate process and avoidance",
-      "subtopic": "Small Estate Procedures",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "After Martha passed away, her family discovered she had very little in her name, and the total value of her probate estate was $20,000. Small estate procedures (affidavit or summary administration):\nA) Only apply if there's no will\nB) May allow for a simplified probate process if the estate value is below a certain threshold\nC) Require a full probate regardless of estate size\nD) Are not available in all states",
-      "explanation": "Most states allow simplified procedures for small estates—often using affidavits for very small amounts or summary administration for moderate estates. Thresholds vary widely ($25K to $200K+). This avoids full probate costs and delays for qualifying estates.",
-      "correctAnswer": 1,
-      "options": [
-        "Only apply if there\\",
-        ",\n      ",
-        "; therefore, her assets will",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - The statement is incomplete. Small estate procedures don't just apply if there is something; they apply when the *total value* of the estate falls below a certain threshold defined by state law.",
-        "1": "Why option B is CORRECT - Most states offer simplified probate procedures, like affidavits or summary administration, for estates below a certain value. These procedures are designed to be faster and less expensive than formal probate, making them suitable for smaller estates with straightforward asset distributions.",
-        "2": "Why option D is WRONG - The statement is incomplete. Small estate procedures are not solely based on the number of beneficiaries; the *value* of the estate is the primary determining factor.",
-        "3": "Why option D is WRONG - The statement is incomplete. While the type of assets can influence the complexity of estate administration, small estate procedures are primarily determined by the *total value* of the estate, not just the asset type."
-      },
-      "educational": "Small estate procedures are designed to streamline the transfer of assets in estates that fall below a certain value threshold, as defined by state law. This simplifies the process, reducing costs and time compared to formal probate. Understanding these procedures is crucial for financial planners as it allows them to advise clients on efficient estate planning strategies, especially for those with modest assets, and to navigate the estate administration process effectively.",
-      "examTip": "On the CFP exam, remember that the specific dollar thresholds for small estate procedures vary significantly by state, so focus on understanding the general concept rather than memorizing specific amounts.",
-      "memoryAid": "SAVvy Estate Planning: Small Asset Value = Simplified Administration.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Uniform Probate Code §3-1201",
-      "commonMistake": "Many candidates confuse the requirements for small estate procedures. The exam exploits the misconception that small estate procedures are only available when there is no will. Test-takers often incorrectly believe that the existence of a will automatically necessitates formal probate, regardless of estate size."
-    },
-    {
       "id": "cfp-est-b6-021",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -8086,41 +7604,6 @@
       "timeEstimate": 90,
       "authorityRef": "Restatement (Third) of Trusts §227",
       "commonMistake": "Test-takers often underestimate the impact of trust situs. The exam exploits the misconception that only federal estate tax is relevant. In reality, the trust's jurisdiction significantly affects state income tax, rules against perpetuities (trust duration), asset protection features, and the specific trust law that governs the trust's administration."
-    },
-    {
-      "id": "cfp-est-b7-006",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Revocable living trusts",
-      "subtopic": "Trust Decanting",
-      "difficulty": "hard",
-      "skillLevel": "Remembering and Understanding",
-      "question": "The ABC Trust has become too restrictive for the beneficiary, Sarah. The trustee is exploring options to modify the trust terms without court intervention. Trust decanting refers to:\nA) Terminating a trust\nB) Adding wine to trust assets\nC) A trustee's power to transfer assets from one trust to a new trust with different terms, without court approval, to better suit the beneficiary's needs\nD) A beneficiary's right to withdraw all assets",
-      "explanation": "Decanting allows modification of \"irrevocable\" trusts by pouring assets into a new trust. Available in many states, it can fix drafting problems, adjust distribution standards, add beneficiaries (in some states), or move situs. Typically requires discretionary distribution authority and no material adverse impact on beneficiaries.",
-      "correctAnswer": 2,
-      "options": [
-        "Terminating a trust",
-        "Adding wine to trust assets",
-        "A trustee\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Terminating a trust is a separate action from decanting. Decanting involves creating a *new* trust and transferring assets, not simply ending the existing one.",
-        "1": "Why option B is WRONG - Adding wine to trust assets is not related to the legal concept of trust decanting. Decanting is a legal process, not a literal addition of liquids.",
-        "2": "Why option C is CORRECT - Trust decanting allows a trustee with sufficient discretion over distributions to essentially 'pour' the assets of an existing trust into a new trust with different terms. This is a powerful tool for adapting trusts to changing circumstances or correcting drafting errors.",
-        "3": "Why option D is WRONG - Option D is incomplete and does not represent a valid definition or concept related to trust decanting. It is simply punctuation."
-      },
-      "educational": "Trust decanting is a valuable tool for adapting irrevocable trusts to changing laws, beneficiary needs, or unforeseen circumstances. It's often used to modernize trust provisions, extend the trust term, or improve tax efficiency. Understanding the specific state laws governing decanting is crucial, as these laws vary significantly.",
-      "examTip": "On the CFP exam, pay close attention to the trustee's level of discretion when evaluating decanting scenarios; broad discretionary powers are generally required for decanting to be permissible.",
-      "memoryAid": "Think of 'decanting' wine – pouring it from one container to another, refining it in the process. Similarly, trust decanting pours assets into a new, improved trust.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Uniform Trust Code §417",
-      "commonMistake": "Many candidates confuse trust decanting with simple trust amendments or terminations. The exam exploits the misconception that any change to a trust is a simple amendment. Decanting is a specific power that allows the trustee to distribute assets from an existing trust into a new trust with different terms, offering flexibility without court intervention."
     },
     {
       "id": "cfp-est-b7-007",
@@ -8963,75 +8446,6 @@
       "commonMistake": "The exam exploits the misconception that private annuities are a common and straightforward estate planning tool. Many candidates are unaware of the risks and tax rule changes that have made them less favorable in recent years."
     },
     {
-      "id": "cfp-est-b8-009",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-3",
-      "topic": "Installment sales to grantor trusts",
-      "subtopic": "Self-Canceling Installment Note",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "Robert sold his business to his son using an installment note. He's now considering a self-canceling installment note (SCIN). A self-canceling installment note (SCIN) differs from a standard installment note because:",
-      "explanation": "SCIN: installment note that terminates at seller\\'s death—remaining balance is canceled, not owed. Advantage: if seller dies during note term, nothing enters estate. Cost: must have risk premium (higher interest or payment). If seller outlives note, no estate benefit. Works best when seller has reduced life expectancy (but actuarial tables used).",
-      "correctAnswer": 0,
-      "options": [
-        "It cancels at seller\\",
-        ",\n      ",
-        "s for business use only",
-        "It cannot be canceled"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "B": "Why option B is WRONG - While SCINs can be used in business contexts, their primary distinction lies in the cancellation feature at the seller's death, not solely in their application to business use. The cancellation feature is the key differentiator, regardless of the purpose of the note.",
-        "C": "Why option C is WRONG - This option is incomplete and doesn't form a coherent statement. Even if completed, the core difference between a SCIN and a standard installment note is the cancellation feature upon the seller's death, not the presence or absence of collateral.",
-        "D": "Why option D is WRONG - SCINs are, by definition, designed to be canceled under specific circumstances (the seller's death). This cancellation is the fundamental characteristic that sets them apart from standard installment notes, which continue until fully paid."
-      },
-      "educational": "SCINs are estate planning tools used to transfer assets while potentially removing the asset's value from the seller's estate. The cancellation feature at death means the remaining balance is not included in the estate, but this benefit comes at a cost: a risk premium (higher interest rate or purchase price) to compensate the buyer for the possibility of early cancellation. This premium can impact gift tax implications and the overall effectiveness of the strategy.",
-      "examTip": "When evaluating SCINs on the CFP exam, remember to consider the seller's health, the risk premium's impact on the buyer, and the potential for gift tax implications if the premium is deemed excessive by the IRS.",
-      "memoryAid": "SCIN = Seller Cancels IN death",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §453",
-      "commonMistake": "Many candidates confuse self-canceling installment notes (SCINs) with standard installment notes. The exam tests the understanding that a key feature of a SCIN is its cancellation upon the seller's death, which distinguishes it from a regular installment note."
-    },
-    {
-      "id": "cfp-est-b8-010",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Types of wills (simple, pour-over, holographic)",
-      "subtopic": "Per Stirpes vs Per Capita",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "David's will states that his assets should be distributed to his descendants 'per stirpes'. A \"per stirpes\" beneficiary designation means:",
-      "explanation": "Per stirpes (\"by roots\"): if beneficiary predeceases, their share goes to their descendants. Example: leave to 3 children per stirpes—if one dies, their children split that 1/3. Per capita: deceased beneficiary\\'s share goes to other living beneficiaries. \"Per capita at each generation\" divides at each level. Specify desired outcome clearly in designations.",
-      "correctAnswer": 1,
-      "options": [
-        "Spouse receives everything",
-        "A deceased beneficiary\\",
-        ",\n      ",
-        "*Per Stirpes*"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A \"per stirpes\" designation does not automatically mean the spouse receives everything. It dictates how assets are distributed if a beneficiary predeceases the testator, regardless of the spouse's existence.",
-        "1": "Why option B is CORRECT - A \"per stirpes\" beneficiary designation means that if a beneficiary predeceases the testator (the person making the will or trust), that beneficiary's share of the inheritance will pass to their descendants (children, grandchildren, etc.). This ensures that the deceased beneficiary's family line still benefits.",
-        "2": "Why option D is WRONG - This option is incomplete and therefore cannot be the correct definition of 'per stirpes'.",
-        "3": "Why option D is WRONG - This option is incomplete and therefore cannot be the correct definition of 'per stirpes'."
-      },
-      "educational": "Per stirpes designations are crucial in estate planning because they address the possibility of beneficiaries predeceasing the testator. Without a per stirpes designation, a deceased beneficiary's share might lapse and be distributed according to the residuary clause of the will or state intestacy laws, potentially disinheriting the intended family line. Understanding per stirpes, per capita, and per capita at each generation is essential for crafting comprehensive estate plans that align with client wishes and minimize unintended consequences.",
-      "examTip": "On the CFP exam, carefully distinguish between per stirpes, per capita, and per capita at each generation. Pay close attention to the wording of the question to determine which distribution method is being described or requested.",
-      "memoryAid": "Per Stirpes: Think 'Stir the Roots' – the inheritance flows down the family tree's roots.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Uniform Probate Code §2-708",
-      "commonMistake": "Many candidates confuse the different methods of distributing assets to descendants. The exam tests the understanding that 'per stirpes' means that a deceased beneficiary's share passes to their descendants, ensuring that each branch of the family receives an equal share of the inheritance."
-    },
-    {
       "id": "cfp-est-b8-011",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -9170,40 +8584,6 @@
       "timeEstimate": 120,
       "authorityRef": "IRC §6166",
       "commonMistake": "Many candidates confuse the benefits of IRC Section 6166 with other estate tax relief provisions. A common trap is assuming that the section provides a complete exemption or a significant valuation discount. The exam exploits the misconception that owning a closely held business automatically eliminates or significantly reduces estate tax liability."
-    },
-    {
-      "id": "cfp-est-b8-015",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-2",
-      "topic": "Estate tax calculation and exemption",
-      "subtopic": "State Estate Tax Planning",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "When federal and state estate tax exemptions differ significantly:",
-      "explanation": "With federal exemption at ~$7M but state exemptions often $1-6M, funding a credit shelter trust at federal exemption could trigger unnecessary state tax. Solutions: formula clauses, disclaimer funding, state-only QTIP trusts, portability for federal + trust for state. Must coordinate federal and state planning—what\\'s optimal for one may be poor for another.",
-      "correctAnswer": 2,
-      "options": [
-        "Only federal planning matters",
-        "Ignore state tax",
-        "",
-        " trusts must be carefully structured to avoid inadvertently triggering state tax while sheltering federal exemption"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Ignoring state estate tax planning when exemptions differ significantly is a major error. State estate taxes can substantially reduce the assets available to heirs, so they must be considered.",
-        "B": "Why option B is WRONG - Ignoring state estate tax is almost never a good idea. Even if the federal estate tax isn't a concern, state estate taxes can still apply and significantly impact the estate's value.",
-        "D": "Why option D is WRONG - While trusts are a key tool in estate planning, this option is too broad. It doesn't acknowledge that other planning techniques, such as portability, can also be used in conjunction with trusts or as alternatives to address the difference in federal and state exemptions."
-      },
-      "educational": "Estate tax planning becomes more complex when state and federal exemptions diverge. The federal estate tax exemption is currently much higher than many state estate tax exemptions. This disparity necessitates careful planning to avoid unnecessarily triggering state estate tax while maximizing the use of the federal exemption. Techniques like disclaimer trusts and formula clauses are used to tailor the amount passing to a trust to the state exemption amount, preventing overfunding and unnecessary state tax liability.",
-      "examTip": "On the CFP exam, always consider both federal and state estate tax implications when analyzing estate planning scenarios, especially when exemptions differ significantly. Look for clues in the fact pattern that indicate the client's state of residence and its estate tax laws.",
-      "memoryAid": "FEDS (Federal Exemption Different States): Remember to consider both federal and state exemptions when planning for estates.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Varies by State Law; IRC §2011 (State Death Tax Credit, though phased out, still relevant for understanding state estate tax interaction)",
-      "commonMistake": "Test-takers often focus solely on federal estate tax and neglect the impact of state estate or inheritance taxes. A common trap is assuming that federal estate tax planning is sufficient, overlooking the potential for state-level taxes to significantly alter the overall tax burden. The exam exploits the misconception that federal and state estate tax laws are always aligned."
     },
     {
       "id": "cfp-est-b8-016",
@@ -9731,41 +9111,6 @@
       "commonMistake": "Test-takers often incorrectly believe that gifting a remainder interest in a personal residence requires an immediate move or creates immediate capital gains. The exam exploits the misconception that gifting a remainder interest is a straightforward transaction with no complexities, when in reality, it allows the donor to retain a life estate while transferring future ownership, generating a current gift tax deduction but also potentially triggering the application of IRC §2036 if the donor retains too much control."
     },
     {
-      "id": "cfp-est-b9-006",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Probate process and avoidance",
-      "subtopic": "Disclaimed Assets",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A qualified disclaimer of inherited property must:",
-      "explanation": "Qualified disclaimer IRC 2518: written, within 9 months of transfer (death), no acceptance of benefits or interest, disclaimant cannot direct new recipient (passes as if disclaimant predeceased). Effect: property passes to next in line without being treated as gift from disclaimant. Uses: post-mortem tax planning, when don\\'t need/want assets, family planning.",
-      "correctAnswer": 3,
-      "options": [
-        "Go to the disclaimant\\",
-        ",\n      ",
-        "Be delivered to the disclaimant's attorney",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A qualified disclaimer cannot result in the property passing to the disclaimant. If the disclaimant receives the property, it is not a qualified disclaimer under IRC Section 2518.",
-        "1": "Why option B is WRONG - Option B is incomplete and doesn't provide enough information to be evaluated. A qualified disclaimer requires several conditions to be met, not just a blank statement.",
-        "2": "Why option C is WRONG - Option C is incomplete and doesn't provide enough information to be evaluated. A qualified disclaimer requires several conditions to be met, not just a blank statement.",
-        "3": "Why option D is CORRECT - A qualified disclaimer, as defined by IRC Section 2518, requires that the disclaimant makes an irrevocable and unqualified refusal to accept an interest in property. The disclaimer must be in writing, received by the transferor (or their legal representative) within nine months of the transfer creating the interest, and the disclaimant must not have accepted any interest or benefit from the property. Furthermore, the disclaimed interest must pass to someone other than the disclaimant without any direction from the disclaimant."
-      },
-      "educational": "Qualified disclaimers are a powerful post-mortem estate planning tool. They allow beneficiaries to refuse inherited assets, potentially reducing estate taxes or redirecting assets to other family members. The rules surrounding qualified disclaimers are strict to prevent individuals from manipulating the transfer tax system while still allowing for flexibility in estate administration.",
-      "examTip": "On the CFP exam, remember the '9-month rule' for qualified disclaimers and that the disclaimant cannot direct where the disclaimed assets go; it must pass according to the estate plan or state law.",
-      "memoryAid": "Think '9 Months, No Control, No Benefit' for the qualified disclaimer rules: 9 months to disclaim, the disclaimant has no control over where the assets go, and they cannot have accepted any benefit from the assets.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §2518",
-      "commonMistake": "Many candidates confuse who the disclaimed property can go to. The exam exploits the misconception that the disclaimant can direct where the property goes. A qualified disclaimer requires the property to pass to someone other than the disclaimant without any direction from the disclaimant."
-    },
-    {
       "id": "cfp-est-b9-007",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -10045,40 +9390,6 @@
       "commonMistake": "Many candidates are unaware of the primary tax advantage of dynasty trusts. The exam exploits the misconception that dynasty trusts offer income tax benefits or current income tax deductions, overlooking the key benefit of avoiding estate and GST taxes over multiple generations."
     },
     {
-      "id": "cfp-est-b9-015",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Irrevocable trusts (ILIT, GRAT, QPRT)",
-      "subtopic": "Spousal Lifetime Access Trust",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "What is a primary risk associated with establishing a Spousal Lifetime Access Trust (SLAT) for estate planning purposes?",
-      "explanation": "A major risk of a SLAT is that the grantor\\'s access depends on remaining married to the beneficiary spouse. In the event of divorce, the grantor loses indirect access to the trust assets, which have been irrevocably transferred. This makes divorce risk a critical consideration in SLAT planning.",
-      "correctAnswer": 1,
-      "options": [
-        "The trust assets are included in the grantor\\",
-        ",\n      ",
-        "The beneficiary spouse predeceases the grantor spouse.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "This is incorrect. A properly structured SLAT is designed to be an irrevocable trust, meaning the grantor (the spouse creating the trust) generally relinquishes control and ownership. Therefore, the assets are typically *excluded* from the grantor's estate for estate tax purposes, not included.",
-        "C": "This is incorrect. While gift tax implications are a consideration when funding a SLAT, they are not the *primary* risk. Strategies like using the grantor's lifetime gift tax exemption can mitigate gift tax concerns. The primary risk relates to the beneficiary spouse's potential death or divorce.",
-        "D": "This is incorrect. While the complexity of trust administration is a factor to consider with any trust, it's not the *primary* risk associated specifically with a SLAT. The potential loss of access to the trust assets due to the beneficiary spouse's circumstances is the more significant concern."
-      },
-      "educational": "A Spousal Lifetime Access Trust (SLAT) is an irrevocable trust created by one spouse (the grantor) for the benefit of the other spouse (the beneficiary) and potentially other family members. The primary risk is that the grantor indirectly loses access to the assets if the beneficiary spouse dies, divorces the grantor, or has creditor issues because the grantor cannot directly access the trust assets.",
-      "examTip": "When evaluating SLAT risks, focus on scenarios where the grantor loses indirect access to the assets due to the beneficiary spouse's circumstances.",
-      "memoryAid": "SLAT: Spouse Loses Access Trust - remember the potential loss of access to the assets by the grantor.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §2036",
-      "commonMistake": "Many candidates overlook the potential risks associated with SLATs, particularly the risk of divorce. The exam exploits the misconception that SLATs are foolproof estate planning tools without considering the potential consequences if the grantor and spouse divorce, which could lead to the spouse (beneficiary) benefiting the grantor's assets going to someone the grantor does not want to benefit."
-    },
-    {
       "id": "cfp-est-b9-016",
       "courseId": "cfp",
       "section": "CFP-EST",
@@ -10147,41 +9458,6 @@
       "timeEstimate": 90,
       "authorityRef": "IRC §2522",
       "commonMistake": "A common trap is to assume a zeroed-out CLAT completely eliminates gift tax. While the goal is to minimize gift tax, the calculation is complex and depends on interest rates and annuity payments. Test-takers often incorrectly believe that a CLAT benefits charity exclusively, forgetting that the remainder interest eventually passes to heirs."
-    },
-    {
-      "id": "cfp-est-b9-018",
-      "courseId": "cfp",
-      "section": "CFP-EST",
-      "blueprintArea": "EST-1",
-      "topic": "Probate process and avoidance",
-      "subtopic": "Digital Assets",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "John is updating his estate plan and wants to ensure his digital assets are properly managed and transferred. Estate planning for digital assets should address: \nA) Only bank accounts \nB) Nothing—they're automatically handled \nC) Only social media accounts \nD) Access to and disposition of online accounts, cryptocurrency, and other digital property",
-      "explanation": "Digital estate planning: cryptocurrency (access keys critical—if lost, assets gone), online banking/investment accounts, digital photo/file storage, domains, intellectual property, social media, loyalty points. Provide: inventory, access information (secure location), instructions for each type. RUFADAA (Uniform Fiduciary Access to Digital Assets Act) addresses fiduciary access rights.",
-      "correctAnswer": 3,
-      "options": [
-        "Only bank accounts",
-        "Nothing—they\\",
-        ",\n      ",
-        "Cryptocurrency wallets and email accounts, but not social media profiles."
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Limiting digital assets to only bank accounts is far too narrow. Digital assets encompass a wide range of online accounts and properties, including cryptocurrency, social media, and intellectual property.",
-        "1": "Why option B is WRONG - Ignoring digital assets in estate planning is a significant oversight. These assets often have monetary or sentimental value and require specific instructions for access and management after death or incapacitation.",
-        "2": "Why option C is WRONG - This option is incomplete and grammatically incorrect, making it impossible to assess its meaning. Estate planning for digital assets requires a comprehensive approach.",
-        "3": "Why option D is CORRECT - Estate planning for digital assets requires a comprehensive approach that addresses the inventory, access information (usernames, passwords, security questions), and instructions for managing various types of digital assets, including financial accounts, online storage, social media, and cryptocurrency. This ensures that fiduciaries can properly manage and distribute these assets according to the client's wishes."
-      },
-      "educational": "Digital estate planning is crucial because it addresses assets that exist solely online and require specific access protocols. Without proper planning, these assets could be lost, inaccessible, or subject to unauthorized access. The Uniform Fiduciary Access to Digital Assets Act (UFADAA) provides a legal framework for fiduciaries to manage digital assets, but specific instructions from the client are still essential for effective execution. This ties into the broader estate planning goal of ensuring a smooth and efficient transfer of all assets according to the client's wishes.",
-      "examTip": "On the CFP® exam, remember that digital assets are not just financial accounts; consider the broader range of online accounts and digital properties when assessing a client's estate planning needs. Always look for options that emphasize a comprehensive approach to digital asset planning.",
-      "memoryAid": "Think 'D-I-A': Digital assets require Inventory, Access information, and Instructions.",
-      "reference": "IRC Section 2001",
-      "sourceFile": "estate.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Uniform Fiduciary Access to Digital Assets Act (UFADAA)",
-      "commonMistake": "Many candidates underestimate the importance of digital assets in estate planning. The exam exploits the misconception that digital assets are either insignificant or automatically handled. Test-takers often incorrectly limit their consideration to only bank accounts or social media, overlooking the broader range of online accounts and data."
     },
     {
       "id": "cfp-est-b9-019",

@@ -447,9 +447,10 @@ export const generateAIResponse = async (
   
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
-  // Prefer Cloud Function proxy (keeps API key server-side, secure for production).
-  // Fall back to direct API call only if VITE_GEMINI_API_KEY is explicitly set (local dev/testing).
-  const useProxy = !apiKey;
+  // SECURITY: Never use direct API key in production — it's visible in DevTools Network tab.
+  // Only allow direct API calls in development mode with an explicit key set.
+  const isProduction = import.meta.env.PROD;
+  const useProxy = isProduction || !apiKey;
 
   try {
     const SYSTEM_PROMPTS = getSystemPrompts(courseId);
@@ -506,10 +507,10 @@ export const generateAIResponse = async (
               maxOutputTokens: 1024,
             },
             safetySettings: [
-              { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
-              { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
-              { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
-              { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
+              { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
+              { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
+              { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
+              { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
             ],
           }),
         }

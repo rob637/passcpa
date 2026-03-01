@@ -853,6 +853,9 @@ export const generateDailyPlan = async (
         })
       : undefined;
     
+    // Track if lesson was found via topic match (vs fallback)
+    const lessonMatchedWeakTopic = !!bestLesson;
+    
     // Fallback to incomplete or next unstarted lesson
     if (!bestLesson) {
       bestLesson = lessons.find(l => {
@@ -873,7 +876,7 @@ export const generateDailyPlan = async (
         title: isIncomplete ? `Continue: ${bestLesson.title}` : `Learn: ${bestLesson.title}`,
         description: isIncomplete 
           ? `${progress}% complete - pick up where you left off`
-          : weakestTopic 
+          : lessonMatchedWeakTopic 
             ? `Related to your weak area: ${weakestTopic}`
             : 'New material to expand your knowledge',
         estimatedMinutes: isIncomplete 
@@ -881,7 +884,7 @@ export const generateDailyPlan = async (
           : bestLesson.duration || getDuration('lesson_medium', 'lesson', pd),
         points: POINT_VALUES.lesson_medium,
         priority: 'high', // Elevated from medium to ensure it stays in plan
-        reason: weakestTopic 
+        reason: lessonMatchedWeakTopic 
           ? `Interleaved learning: lesson on ${weakestTopic} to reinforce practice`
           : 'Interleaved learning: mixing content with practice improves retention',
         params: {
@@ -894,6 +897,7 @@ export const generateDailyPlan = async (
       logger.info('Lesson guarantee: added early lesson', { 
         lessonId: bestLesson.id, 
         weakestTopic,
+        lessonMatchedWeakTopic,
         phase 
       });
     }

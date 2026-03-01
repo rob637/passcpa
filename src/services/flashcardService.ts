@@ -6,6 +6,7 @@
  */
 
 import { CourseId } from '../types/course';
+import logger from '../utils/logger';
 import { DEFAULT_COURSE_ID } from '../types/course';
 import { COURSES } from '../courses';
 
@@ -61,7 +62,7 @@ export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashca
     const loader = flashcardModules[key];
     
     if (!loader) {
-      console.warn(`No flashcard file found for course ${courseId}`);
+      logger.warn(`No flashcard file found for course ${courseId}`);
       return [];
     }
     
@@ -71,7 +72,7 @@ export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashca
     flashcardCache[cacheKey] = flashcards;
     return flashcards;
   } catch (error) {
-    console.error(`Failed to load flashcards for course ${courseId}:`, error);
+    logger.error(`Failed to load flashcards for course ${courseId}:`, error);
     return [];
   }
 }
@@ -104,7 +105,7 @@ export async function getFlashcardsBySection(section: string, courseId?: CourseI
     flashcardCache[cacheKey] = flashcards;
     return flashcards;
   } catch (error) {
-    console.error(`Failed to load flashcards for section ${section}:`, error);
+    logger.error(`Failed to load flashcards for section ${section}:`, error);
     return [];
   }
 }

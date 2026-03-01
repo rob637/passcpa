@@ -77,8 +77,7 @@ const TimedQuiz: React.FC = () => {
   const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
   const [reviewIndex, setReviewIndex] = useState(0);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const timerRef = useRef<any>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
   const mode = searchParams.get('mode') || 'quick';

@@ -123,7 +123,7 @@ const DURATION_STORAGE_KEY = 'voraprep_activity_durations';
 const ACTIVITY_START_KEY = 'voraprep_activity_start';
 const FEEDBACK_STORAGE_KEY = 'voraprep_activity_feedback';
 
-const PLAN_VERSION = 1;
+const PLAN_VERSION = 2;
 
 /**
  * Single-exam courses use one unified daily plan across all domains.
@@ -177,6 +177,11 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
               logger.log(`Cached plan section (${parsed.section}) doesn't match requested (${section}), will regenerate`);
               return null;
           }
+          // Check plan version - invalidate stale plans from older code
+          if ((parsed.version || 0) < PLAN_VERSION) {
+              logger.log(`Plan version (${parsed.version}) outdated (current: ${PLAN_VERSION}), regenerating`);
+              return null;
+          }
           // Check if exam date changed - invalidate cache if so
           if (currentExamDate !== undefined && parsed.examDate !== currentExamDate) {
               logger.log(`Exam date changed (was: ${parsed.examDate}, now: ${currentExamDate}), regenerating plan`);
@@ -190,7 +195,7 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
           } as PersistedDailyPlan;
       }
   } catch (e) {
-      // Ignore LC errors
+      logger.warn('Failed to parse daily plan from localStorage cache:', e);
   }
 
   try {
@@ -214,6 +219,12 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
       // plans under 'ALL' but the plan's internal .section may be the domain (e.g. 'CISA1')
       if (section && section !== 'ALL' && plan.section !== section) {
         logger.log(`Firestore plan section (${plan.section}) doesn't match requested (${section}), will regenerate`);
+        return null;
+      }
+      
+      // Check plan version - invalidate stale plans from older code
+      if ((plan.version || 0) < PLAN_VERSION) {
+        logger.log(`Firestore plan version (${plan.version}) outdated (current: ${PLAN_VERSION}), regenerating`);
         return null;
       }
       
@@ -446,11 +457,15 @@ export const getOrCreateTodaysPlan = async (
       adaptiveQuestionsDue = adaptiveData.questionsDue;
     }
     // Inject weak sections as synthetic low-accuracy topic stats so the plan
-    // generator naturally schedules practice for them
+    // generator naturally schedules practice for them.
+    // IMPORTANT: Only inject the section matching state.section so the plan
+    // doesn't show "Strengthen: FAR" when the user is studying ISC/BAR/etc.
     if (adaptiveData.weakSections.length > 0) {
       const existingTopics = new Set((state.topicStats || []).map(t => t.topic));
+      const currentSection = state.section?.toUpperCase();
       const syntheticStats = adaptiveData.weakSections
         .filter(section => !existingTopics.has(section))
+        .filter(section => section.toUpperCase() === currentSection)
         .map(section => ({
           topic: section,
           accuracy: 0.45, // Below the 60% threshold → marked as critical weak area

@@ -2,7 +2,7 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-TAX",
   "exportedAt": "2026-02-25T22:37:02.905Z",
-  "count": 345,
+  "count": 337,
   "questions": [
     {
       "id": "cfp-cross-001",
@@ -457,40 +457,6 @@
       "timeEstimate": 75,
       "authorityRef": "IRC §21-§36D",
       "commonMistake": "Many candidates confuse the impact of tax credits and tax deductions. A common trap is assuming that a larger deduction always provides greater tax savings. Test-takers often incorrectly calculate the tax savings from a deduction by simply multiplying the deduction amount by the tax rate, without recognizing that a credit is a direct reduction of tax liability."
-    },
-    {
-      "id": "cfp-tax-013",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-1",
-      "topic": "Gross income inclusions and exclusions",
-      "subtopic": "Income Shifting",
-      "difficulty": "hard",
-      "skillLevel": "Evaluation",
-      "question": "A high-income executive (35% bracket) wants to shift investment income to her 17-year-old daughter who has no other income. The daughter will receive $8,000 in unearned income. Under kiddie tax rules, how will this income be taxed?",
-      "explanation": "**Correct Answer: C**\n\n**Kiddie Tax Rules (2026):**\nFor children under 19 (or under 24 if full-time student):\n\n**Unearned Income Treatment:**\n- First $1,350: Tax-free (standard deduction for dependents)\n- Next $1,350: Taxed at child's rate (likely 10%)\n- Above $2,700: Taxed at parent's marginal rate (35%)\n\n**Application to $8,000:**\n- $0-$1,350: Tax-free\n- $1,351-$2,700: Child's rate (10%) = $135\n- $2,701-$8,000: Parent's rate (35%) = $1,855\n- **Total tax: ~$1,990**\n\n**Kiddie Tax Purpose:**\nPrevents high-income parents from shifting investment income to children in lower brackets.\n\n**Why other answers are wrong:**\n- **A)** Kiddie tax prevents this\n- **B)** Wrong thresholds ($2,700 threshold applies)\n- **D)** First portions receive favorable treatment",
-      "correctAnswer": 3,
-      "options": [
-        "Entirely at daughter\\",
-        ",\n      ",
-        "s rate, remainder at parent\\",
-        "Entirely at parent's rate"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The kiddie tax rules specifically prevent all of the unearned income from being taxed at the child's rate when it exceeds certain thresholds. The purpose is to prevent high-income parents from shifting income to their children to avoid higher tax rates.",
-        "B": "Why option B is WRONG - The thresholds for the kiddie tax are not $1,000 and the remainder at the parent's rate. The correct thresholds are $1,350 (2026) for the tax-free amount and another $1,350 taxed at the child's rate.",
-        "C": "Why option C is WRONG - While the general principle is correct, this option is not the *most* correct answer. It lacks the crucial detail that the first portion of the unearned income is tax-free due to the standard deduction for dependents. Option D is more precise."
-      },
-      "educational": "The kiddie tax rules, governed by IRC Section 1(g), are designed to prevent parents from shifting investment income to their children to take advantage of the child's lower tax bracket. This rule is important for financial planners to understand when advising high-income clients on strategies for wealth transfer and tax minimization, ensuring compliance and optimizing tax outcomes within legal boundaries.",
-      "examTip": "On the CFP exam, remember to check the year for the kiddie tax thresholds, as they are subject to annual inflation adjustments. Also, be prepared to calculate the tax liability under the kiddie tax rules given different income scenarios.",
-      "memoryAid": "Kiddie Tax: $0-1350 Free, Next $1350 Kid, Rest Parent",
-      "reference": "IRC",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 150,
-      "authorityRef": "IRC §1(g)",
-      "commonMistake": "Many candidates confuse the kiddie tax rules, especially the standard deduction amount and the parent's tax rate application. The kiddie tax rules specifically state that the child's unearned income above a certain threshold is taxed at the parent's rate. The thresholds for the kiddie tax are often memorized incorrectly, leading to errors in calculation."
     },
     {
       "id": "cfp-tax-014",
@@ -1859,40 +1825,6 @@
       "timeEstimate": 60,
       "authorityRef": "IRC §172",
       "commonMistake": "Many candidates confuse the current NOL rules with the pre-2018 rules. The exam exploits the misconception that NOLs can still be carried back. Test-takers often incorrectly remember the percentage limitation on NOL deductions, forgetting that it's 80% of taxable income."
-    },
-    {
-      "id": "cfp-tax-053",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-1",
-      "topic": "Capital gains taxation (short-term vs. long-term)",
-      "subtopic": "Wash Sale Rule",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "On December 15, Lisa sells 100 shares of XYZ stock for a $5,000 loss. On January 5, she buys 100 shares of the same stock. What is the tax consequence?",
-      "explanation": "**Correct Answer: C**\n\n**Wash Sale Rule (Section 1091):**\n- Applies to repurchases within 30 days before OR after sale\n- December 15 to January 5 = 21 days (within window)\n- Loss is DISALLOWED for current deduction\n- BUT added to basis of new shares (not lost forever)\n\n**New basis:** Original cost + $5,000 disallowed loss\n\n**Why other answers are wrong:**\n- **A)** Wash sale rule applies\n- **B)** Loss adds to basis, not entirely lost\n- **D)** Calendar year change irrelevant; 30-day window controls",
-      "correctAnswer": 3,
-      "options": [
-        "Loss disallowed entirely",
-        "Loss allowed because it",
-        ",\n      ",
-        "Loss allowed, but only up to $3,000."
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The loss is not disallowed entirely; it's disallowed as a current deduction but added to the basis of the repurchased shares. The wash sale rule defers the tax benefit, it doesn't eliminate it.",
-        "B": "Why option B is WRONG - While the loss is eventually reflected in the basis of the new shares, it is not allowed as a deduction in the year of the sale due to the wash sale rules. The loss is deferred, not immediately recognized.",
-        "C": "Why option C is WRONG - This option is incorrect because it incorrectly identifies the tax consequence. The loss is disallowed in the current year and added to the basis of the newly purchased shares."
-      },
-      "educational": "The wash sale rule prevents taxpayers from artificially generating tax losses by selling securities and quickly repurchasing them. This rule ensures that the taxpayer's economic position has not materially changed, and the loss is deferred until a true disposition occurs. Understanding wash sale rules is crucial for managing client portfolios and minimizing unintended tax consequences, especially when rebalancing or tax-loss harvesting.",
-      "examTip": "On the CFP exam, carefully check the dates of the sale and repurchase to determine if the wash sale rule applies. Remember the 30-day window both before and after the sale date and that 'substantially identical' securities trigger the rule.",
-      "memoryAid": "WASH: Watch After Sale Happenings (within 30 days).",
-      "reference": "IRC",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §1091",
-      "commonMistake": "Many candidates confuse the wash sale rule with general loss deductibility. The exam exploits the misconception that any loss on the sale of stock is immediately deductible. Test-takers often forget the 30-day window before and after the sale date when determining if a wash sale has occurred."
     },
     {
       "id": "cfp-tax-054",
@@ -3293,41 +3225,6 @@
       "timeEstimate": 60,
       "authorityRef": "IRC §1402",
       "commonMistake": "A common trap is forgetting the specific calculation and limitations of self-employment tax. The exam exploits the misconception that self-employment tax is a simple percentage or has no limit, overlooking the wage base limit for the 12.4% portion and the above-the-line deduction for one-half of the self-employment tax."
-    },
-    {
-      "id": "cfp-tax-b10-020",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-1",
-      "topic": "Gross income inclusions and exclusions",
-      "subtopic": "Income in Respect of Decedent",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "After his death on March 15, 2024, Mr. Johnson's estate received a distribution of $5,000 in unpaid salary and a $10,000 bonus he earned before death. Income in respect of a decedent (IRD) is:",
-      "explanation": "IRD: income decedent earned but didn\\'t receive before death (unpaid salary, retirement accounts, installment sale payments). Double taxation: included in estate value AND taxable as income when received by beneficiary. No stepped-up basis. Partial relief: beneficiary can deduct estate tax attributable to IRD (Section 691(c) deduction). IRA distributions are IRD.",
-      "correctAnswer": 1,
-      "options": [
-        "Only retirement account distributions",
-        "Income the decedent earned but didn\\",
-        ",\n      ",
-        "Life insurance proceeds paid to the estate"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While retirement account distributions *can* be IRD, this option is too narrow. IRD encompasses more than just retirement accounts; it includes any income the decedent had a right to receive but didn't before death, such as unpaid salary or accrued interest.",
-        "1": "Why option B is CORRECT - Income in Respect of a Decedent (IRD) accurately describes income that the decedent was entitled to receive during their lifetime but was not actually received before their death. This income is then taxable to the beneficiary who receives it. Examples include unpaid salary, accrued interest, and deferred compensation.",
-        "2": "Why option D is WRONG - This option is incomplete and grammatically incorrect, making it impossible to evaluate as a potential answer. It doesn't provide a coherent definition or characteristic of IRD.",
-        "3": "Why option D is WRONG - This option is incomplete and grammatically incorrect, making it impossible to evaluate as a potential answer. It doesn't provide a coherent definition or characteristic of IRD."
-      },
-      "educational": "Income in Respect of a Decedent (IRD) represents a tax planning challenge because it is subject to both estate tax and income tax. The purpose of IRD rules is to prevent income earned by the decedent from escaping taxation altogether. Understanding IRD is crucial for estate planning, as it impacts the after-tax value of assets passed to beneficiaries and necessitates careful consideration of tax implications.",
-      "examTip": "On the CFP exam, remember that IRD assets do not receive a step-up in basis, making them potentially less desirable to inherit than other assets that do receive a step-up.",
-      "memoryAid": "IRD = Income Received Delayed (until after death)",
-      "reference": "IRC Section 2501-2524",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §691",
-      "commonMistake": "Test-takers often incorrectly limit IRD to specific types of income, such as retirement accounts. The exam exploits the misconception that IRD is a narrow category, rather than encompassing all income the decedent had a right to receive but did not before death."
     },
     {
       "id": "cfp-tax-b10-021",
@@ -5957,41 +5854,6 @@
       "commonMistake": "Many candidates struggle with the concept of income shifting and the kiddie tax rules. A common trap is to select strategies that violate the assignment of income doctrine or are subject to the kiddie tax. Test-takers often incorrectly assume that any transfer of assets to a child will reduce the family's overall tax burden. The exam exploits the misconception that income shifting is always a legitimate tax planning strategy."
     },
     {
-      "id": "cfp-tax-b2-022",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-2",
-      "topic": "Estimated tax payments",
-      "subtopic": "Timing Strategies",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A client expects significantly higher income next year due to a large bonus. Which strategy would be MOST beneficial for 2026 tax planning?",
-      "explanation": "**Correct Answer: B (Defer deductions to 2027, accelerate income into 2026)**\n\n**Timing Strategy When Future Income Will Be Higher:**\n- Higher income in 2027 means higher marginal rate\n- Deductions are more valuable in higher-bracket years\n- Accelerating income into 2026 (lower bracket) saves taxes\n- Deferring deductions to 2027 (higher bracket) saves taxes\n\n**Why other answers are wrong:**\n- **A)** Opposite of optimal strategy\n- **C)** Timing can create significant savings\n- **D)** Conversion in lower-income year might make sense",
-      "correctAnswer": 2,
-      "options": [
-        "Take no action; timing doesn",
-        ",\n      ",
-        "Increase withholding on their current salary to cover the anticipated tax liability.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Taking no action is incorrect because proactive tax planning can significantly reduce overall tax liability when income is expected to fluctuate. Ignoring the opportunity to shift income and deductions is a missed opportunity to optimize tax efficiency.",
-        "1": "Why option B is WRONG - Accelerating deductions into 2026 and deferring income to 2027 is the opposite of the optimal strategy. The goal is to shift income into the lower-taxed year (2026) and deductions into the higher-taxed year (2027).",
-        "2": "Why option C is CORRECT - Deferring deductions to 2027 and accelerating income into 2026 is the most beneficial strategy. Because the client anticipates a higher income and thus a higher marginal tax bracket in 2027, deductions will be more valuable then, and income should be recognized in the lower-bracket year of 2026.",
-        "3": "Why option D is WRONG - While a Roth conversion might be a valid strategy in some situations, it's not the *most* beneficial in this specific scenario. The primary focus should be on shifting income and deductions between the two years to take advantage of the differing tax brackets. A Roth conversion has other considerations such as the 5-year rule and may not be the most impactful strategy for this short-term planning need."
-      },
-      "educational": "Tax planning involves strategically managing the timing of income and deductions to minimize tax liability. This is particularly important when income is expected to fluctuate significantly between years, as it allows taxpayers to take advantage of lower marginal tax rates in some years and maximize the value of deductions in others. This strategy aligns with the broader goal of tax efficiency, a core component of financial planning.",
-      "examTip": "On the CFP exam, always consider the client's marginal tax bracket when evaluating tax planning strategies involving the timing of income and deductions. Higher brackets mean deductions are more valuable.",
-      "memoryAid": "High Bracket = Defer Deductions (High D)",
-      "reference": "IRC",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §6654",
-      "commonMistake": "Many candidates fail to consider the various safe harbor rules for avoiding underpayment penalties. Test-takers often incorrectly assume that paying 90% of the current year's tax liability is always sufficient, neglecting the prior year's tax liability exception."
-    },
-    {
       "id": "cfp-tax-b2-023",
       "courseId": "cfp",
       "section": "CFP-TAX",
@@ -6378,40 +6240,6 @@
       "commonMistake": "Many candidates forget the 7.5% AGI threshold for deducting medical expenses. Test-takers often incorrectly assume the entire amount of unreimbursed medical expenses is deductible. The exam exploits the misconception that any medical expense is deductible, ignoring the AGI limitation."
     },
     {
-      "id": "cfp-tax-b3-009",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-1",
-      "topic": "Gross income inclusions and exclusions",
-      "subtopic": "Unearned Income",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "In 2026, 16-year-old Emily, a dependent of her parents, has $3,000 in unearned income from investments. Under the \"Kiddie Tax\" rules for 2026, Emily's unearned income above a threshold is taxed at:",
-      "explanation": "Kiddie Tax applies the parent\\'s marginal rate to a child\\'s unearned income above the threshold (approximately $2,500 in 2026). This prevents income-shifting to children in lower brackets.",
-      "correctAnswer": 2,
-      "options": [
-        "The child\\",
-        ",\n      ",
-        "the parent's rate up to $2,500, then Emily's rate",
-        "s marginal rate"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The Kiddie Tax specifically aims to *avoid* taxing a child's unearned income above the threshold at the child's rate. The purpose is to prevent parents from shifting income to their children to take advantage of lower tax brackets.",
-        "B": "Why option B is WRONG - This option is incomplete and doesn't provide a valid tax rate or entity. The Kiddie Tax rules specify whose tax rate applies to the child's unearned income above a certain threshold.",
-        "D": "Why option D is WRONG - While the parent's marginal rate is relevant, the Kiddie Tax rules specifically apply the *parent's* marginal rate, not the child's. The child's rate only applies to earned income and a small amount of unearned income."
-      },
-      "educational": "The Kiddie Tax exists to prevent parents from shifting income-producing assets to their children to avoid higher tax rates. This is a key tax planning consideration when advising clients with children, especially those with substantial investment income. Understanding the Kiddie Tax rules is crucial for minimizing overall family tax liability while remaining compliant with IRS regulations. This falls under the Tax Planning (individual) section of the blueprint.",
-      "examTip": "On the CFP exam, pay close attention to the source of the income (earned vs. unearned) and the child's age when determining if the Kiddie Tax applies. Remember the approximate threshold amount, as it's often tested in scenario-based questions.",
-      "memoryAid": "KID-die Tax: Kids' Investment Dollars taxed at parent's rate.",
-      "reference": "IRC",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §1(g)",
-      "commonMistake": "Many candidates incorrectly believe the Kiddie Tax always uses the child's parents' marginal tax rate. While this is often the case, the *child's* tax rate applies to the first portion of unearned income. The exam exploits the misconception that all unearned income of a child is taxed at the parents' rate."
-    },
-    {
       "id": "cfp-tax-b3-010",
       "courseId": "cfp",
       "section": "CFP-TAX",
@@ -6515,40 +6343,6 @@
       "timeEstimate": 90,
       "authorityRef": "IRC §6654(d)(1)(C)(ii)",
       "commonMistake": "Many candidates forget the higher threshold for taxpayers with AGI over $150,000 (MFJ). The exam exploits the misconception that the 100% rule applies to all taxpayers, regardless of their income level. Test-takers often incorrectly assume that the 100% of prior year's tax liability is sufficient to avoid penalties, even with higher income."
-    },
-    {
-      "id": "cfp-tax-b3-013",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-1",
-      "topic": "Capital gains taxation (short-term vs. long-term)",
-      "subtopic": "Basis Rules",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "When property with a fair market value BELOW donor\\'s basis is gifted, the recipient\\'s basis for calculating a LOSS is:",
-      "explanation": "This is the dual basis rule. For loss property (FMV < basis), the donee uses FMV to calculate loss. For gain, they use carryover basis. If sold between FMV and basis, there is no gain or loss.",
-      "correctAnswer": 1,
-      "options": [
-        "Donor\\",
-        ",\n      ",
-        "ient's basis is always the donor's basis",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The donor's basis is used for calculating a gain if the property is later sold for more than the donor's basis. However, when calculating a loss on gifted property with a fair market value below the donor's basis, the fair market value at the time of the gift is used, not the donor's basis.",
-        "C": "Why option C is WRONG - This option is incomplete and does not represent a valid basis calculation method for gifted property.",
-        "D": "Why option D is WRONG - This option is incomplete and does not represent a valid basis calculation method for gifted property."
-      },
-      "educational": "The dual basis rule for gifted property addresses situations where the fair market value at the time of the gift is different from the donor's basis. This rule prevents tax avoidance by ensuring that neither the appreciation nor the depreciation in value while the donor held the property escapes taxation. Understanding basis calculations is crucial for minimizing capital gains taxes and maximizing potential loss deductions, which are key components of tax planning.",
-      "examTip": "On the CFP exam, carefully identify whether the gifted property has appreciated or depreciated in value relative to the donor's basis at the time of the gift, as this determines which basis rules apply for subsequent sale calculations.",
-      "memoryAid": "Gifted Property: 'Gain uses basis, Loss uses FMV (if FMV is lower than basis).'",
-      "reference": "IRC Section 2501-2524",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §1015(a)",
-      "commonMistake": "Many candidates confuse the basis rules for gains and losses when gifted property has a fair market value below the donor's basis. The exam exploits the misconception that the donor's basis always carries over to the recipient. Test-takers often incorrectly assume that the donor's basis is always used, even when calculating a loss."
     },
     {
       "id": "cfp-tax-b3-014",
@@ -7531,41 +7325,6 @@
       "timeEstimate": 90,
       "authorityRef": "IRC §1015",
       "commonMistake": "A common trap is failing to consider the 'double basis' rule when gifted property has a fair market value lower than the donor's basis at the time of the gift. The exam exploits the tendency to automatically use the donor's basis, overlooking the fact that for loss purposes, the donee's basis is the FMV at the time of the gift. If the property is sold between the donor's basis and the FMV at the time of the gift, there is no gain or loss."
-    },
-    {
-      "id": "cfp-tax-b4-017",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-3",
-      "topic": "Gift and estate taxes",
-      "subtopic": "Filing Requirements",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Sarah makes several gifts this year. Which gift made by Sarah requires her to file Form 709, United States Gift (and Generation-Skipping Transfer) Tax Return?\nA) $15,000 cash gift to a friend\nB) $50,000 paid directly to grandchild's university for tuition\nC) $20,000 gift of stock to a trust where Sarah retains the right to income for 10 years\nD) $17,000 gift to a 529 plan",
-      "explanation": "Form 709 is required for gifts exceeding the annual exclusion ($19,000 in 2026). Direct tuition payments are excluded regardless of amount. Unlimited marital deduction applies to citizen spouses. Only the $25,000 gift to the child exceeds the exclusion and requires a return.",
-      "correctAnswer": 2,
-      "options": [
-        "$15,000 cash gift to a friend",
-        "$50,000 paid directly to grandchild\\",
-        ",\n      ",
-        "$20,000 contribution to a 529 plan for her niece"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A cash gift of $15,000 is below the annual gift tax exclusion amount ($19,000 in 2026). Therefore, Form 709 is not required.",
-        "1": "Why option B is WRONG - Direct payments of tuition or medical expenses to an educational or medical institution on behalf of someone else are excluded from gift tax, regardless of the amount. Therefore, Form 709 is not required for the $50,000 payment.",
-        "2": "Why option C is CORRECT - The annual gift tax exclusion is $19,000 in 2026. A gift of $25,000 to a child exceeds the annual exclusion by $6,000 ($25,000 - $19,000). Therefore, a Form 709 is required to report the excess.",
-        "3": "Why option D is WRONG - [This option is missing from the original question. If it existed, it would need to be evaluated based on the gift's value and nature (e.g., direct payment of tuition, gift to a spouse, etc.) to determine if it exceeds the annual exclusion or qualifies for another exemption.]"
-      },
-      "educational": "The gift tax is a tax on the transfer of property by one individual to another while receiving nothing, or less than full value, in return. The annual gift tax exclusion allows individuals to give a certain amount of money each year to any number of people without having to pay gift tax or even report the gifts on a gift tax return (Form 709). Understanding the gift tax rules is crucial for estate planning, as it allows clients to reduce the size of their taxable estate.",
-      "examTip": "On the CFP exam, pay close attention to the year specified in the question, as the annual gift tax exclusion amount changes. Remember that direct payments for tuition or medical expenses are always excluded from gift tax, regardless of the amount.",
-      "memoryAid": "TEAM: Tuition, Education, and Medical payments are Always Excluded from gift tax.",
-      "reference": "IRC Section 2501-2524",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 45,
-      "authorityRef": "IRC §2503(b), IRC §2503(e)",
-      "commonMistake": "Many candidates confuse gifts that require filing Form 709 with those that don't. The exam exploits the misconception that all gifts exceeding the annual exclusion require a filing, overlooking exceptions like direct payments for tuition or medical expenses. Some test-takers may also forget that gifts to trusts are generally considered gifts of a future interest and therefore do not qualify for the annual exclusion, necessitating a filing."
     },
     {
       "id": "cfp-tax-b4-018",
@@ -8722,40 +8481,6 @@
       "timeEstimate": 90,
       "authorityRef": "IRC §55",
       "commonMistake": "Test-takers often incorrectly assume that all itemized deductions and income items are treated the same for regular tax and AMT purposes. The exam exploits the misconception that the AMT is simply a higher tax rate. Certain deductions, like state and local taxes, and income items, like the ISO bargain element, are treated differently under AMT."
-    },
-    {
-      "id": "cfp-tax-b6-002",
-      "courseId": "cfp",
-      "section": "CFP-TAX",
-      "blueprintArea": "TAX-1",
-      "topic": "Gross income inclusions and exclusions",
-      "subtopic": "Kiddie Tax",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Under the \"kiddie tax\" rules, a 17-year-old dependent child\\'s unearned income above $2,700 (2026) is taxed at:",
-      "explanation": "The kiddie tax applies to children under 19 (or under 24 if full-time students). Unearned income above the threshold is taxed at the parents\\' marginal rate. This prevents shifting investment income to children to take advantage of their lower tax brackets. Applies to interest, dividends, capital gains, etc.",
-      "correctAnswer": 2,
-      "options": [
-        "A flat 15% rate",
-        "Zero—unearned income is not taxable for minors",
-        "The parents\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - A flat 15% rate is not the applicable tax rate under the kiddie tax rules. The unearned income exceeding the threshold is taxed at the parent's marginal tax rate, which could be higher or lower than 15%.",
-        "B": "Why option B is WRONG - Unearned income is indeed taxable for minors, subject to certain thresholds and rules. The kiddie tax specifically addresses how unearned income above a certain amount is taxed.",
-        "D": "Why option D is WRONG - This option is incomplete and therefore incorrect. It doesn't provide a valid answer choice."
-      },
-      "educational": "The kiddie tax aims to prevent income shifting to children in lower tax brackets. It applies to unearned income like dividends, interest, and capital gains. Understanding the kiddie tax is crucial for financial planners as it directly impacts investment and gifting strategies for families with dependent children, especially when considering trusts or custodial accounts.",
-      "examTip": "On the CFP exam, pay close attention to the child's age and dependency status when determining if the kiddie tax applies, and remember to use the correct unearned income threshold for the relevant tax year.",
-      "memoryAid": "KID-die Tax: Kids' Income taxed at Dad/Mom's rate (above the threshold).",
-      "reference": "IRC",
-      "sourceFile": "tax.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §1(g)",
-      "commonMistake": "Many candidates confuse the kiddie tax rules with general rules for taxing minors. The exam exploits the misconception that minors are not subject to tax or that their income is taxed at a flat rate. The kiddie tax applies the parents' tax rate to a dependent child's unearned income above a certain threshold."
     },
     {
       "id": "cfp-tax-b6-003",

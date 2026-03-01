@@ -2473,7 +2473,7 @@ VoraPrep Team`;
       // Collapse the report 
       setExpandedReportId(null);
     } catch (error) {
-      console.error('Error sending email:', error);
+      logger.error('Error sending email:', error);
       addLog(`Failed to send email: ${error instanceof Error ? error.message : 'Unknown error'}`, 'error');
     } finally {
       setSendingResponse(null);
@@ -4381,7 +4381,7 @@ VoraPrep Team`;
                           setDeleteConfirmText('');
                           alert('User deleted successfully');
                         } catch (err) {
-                          console.error('Delete error:', err);
+                          logger.error('Delete error:', err);
                           alert('Failed to delete user');
                         } finally {
                           setIsDeleting(false);
@@ -4470,7 +4470,7 @@ VoraPrep Team`;
                           setSelectedUserIds(new Set());
                           loadEmailHistory(); // Refresh email history
                         } catch (err) {
-                          console.error('Email error:', err);
+                          logger.error('Email error:', err);
                           alert('Failed to send email: ' + (err instanceof Error ? err.message : 'Unknown error'));
                         } finally {
                           setIsSendingEmail(false);

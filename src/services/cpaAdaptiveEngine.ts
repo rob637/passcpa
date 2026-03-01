@@ -98,26 +98,26 @@ export interface SelectedQuestion extends CPAAdaptiveQuestion {
 // ============================================================================
 
 const FAR_BLUEPRINT_WEIGHTS: Record<string, number> = {
-  'FAR-I': 12.5,
-  'FAR-II': 35,
-  'FAR-III': 30,
-  'FAR-IV': 15,
-  'FAR-V': 10,
+  'FAR-I': 10,    // 5-15%
+  'FAR-II': 35,   // 30-40%
+  'FAR-III': 30,  // 25-35%
+  'FAR-IV': 15,   // 10-20%
+  'FAR-V': 10,    // 5-15%  → sum = 100
 };
 
 const AUD_BLUEPRINT_WEIGHTS: Record<string, number> = {
-  'AUD-I': 20,
-  'AUD-II': 30,
-  'AUD-III': 35,
-  'AUD-IV': 20,
+  'AUD-I': 15,    // 15-25%
+  'AUD-II': 30,   // 25-35%
+  'AUD-III': 35,  // 30-40%
+  'AUD-IV': 20,   // 15-25%  → sum = 100
 };
 
 const REG_BLUEPRINT_WEIGHTS: Record<string, number> = {
-  'REG-I': 15,
-  'REG-II': 15,
-  'REG-III': 20,
-  'REG-IV': 27,
-  'REG-V': 17,
+  'REG-I': 15,    // 10-20%
+  'REG-II': 15,   // 10-20%
+  'REG-III': 20,  // 15-25%
+  'REG-IV': 30,   // 22-32%
+  'REG-V': 20,    // 12-22%  → sum = 100
 };
 
 const BAR_BLUEPRINT_WEIGHTS: Record<string, number> = {
@@ -133,10 +133,10 @@ const ISC_BLUEPRINT_WEIGHTS: Record<string, number> = {
 };
 
 const TCP_BLUEPRINT_WEIGHTS: Record<string, number> = {
-  'TCP-I': 35,
-  'TCP-II': 30,
-  'TCP-III': 25,
-  'TCP-IV': 15,
+  'TCP-I': 35,    // 30-40%
+  'TCP-II': 25,   // 25-35%
+  'TCP-III': 25,  // 20-30%
+  'TCP-IV': 15,   // 10-20%  → sum = 100
 };
 
 export const SECTION_BLUEPRINT_WEIGHTS: Record<CPASectionId, Record<string, number>> = {
@@ -189,16 +189,18 @@ function loadCPAState(): CPAAdaptiveState {
 let adaptiveState: CPAAdaptiveState = loadCPAState();
 
 function saveCPAState(state: CPAAdaptiveState): void {
-  saveState(state, ENGINE_CONFIG.storageKey);
-  // Also persist CPA-specific field (saveState already serialized the core)
+  // Manually build the complete state object to avoid TOCTOU race with saveState
   try {
-    const stored = localStorage.getItem(ENGINE_CONFIG.storageKey);
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      parsed.chosenDiscipline = state.chosenDiscipline;
-      localStorage.setItem(ENGINE_CONFIG.storageKey, JSON.stringify(parsed));
-    }
-  } catch { /* ignore */ }
+    const toSave = {
+      userId: state.userId,
+      lastUpdated: state.lastUpdated,
+      sectionStats: state.sectionStats,
+      recentResults: state.recentResults,
+      // CPA-specific field
+      chosenDiscipline: state.chosenDiscipline,
+    };
+    localStorage.setItem(ENGINE_CONFIG.storageKey, JSON.stringify(toSave));
+  } catch { /* ignore localStorage errors */ }
 }
 
 /** Fire-and-forget sync of adaptive state to Firestore for cross-device persistence */
@@ -208,6 +210,14 @@ async function syncStateToCloud(): Promise<void> {
     const user = auth.currentUser;
     if (user) {
       await syncToFirestore(adaptiveState, user.uid, 'cpa');
+      // Also persist chosenDiscipline to the Firestore doc
+      if (adaptiveState.chosenDiscipline) {
+        const { db } = await import('../config/firebase');
+        const { doc, setDoc } = await import('firebase/firestore');
+        await setDoc(doc(db, 'users', user.uid, 'adaptive_state', 'cpa'), {
+          chosenDiscipline: adaptiveState.chosenDiscipline,
+        }, { merge: true });
+      }
     }
   } catch { /* fire-and-forget — don't block UI on sync failures */ }
 }
@@ -219,7 +229,20 @@ export async function loadWithFirestoreFallback(): Promise<CPAAdaptiveState> {
     const user = auth.currentUser;
     if (user) {
       const coreState = await loadStateWithFirestoreFallback(ENGINE_CONFIG, user.uid, 'cpa');
-      adaptiveState = { ...coreState, chosenDiscipline: adaptiveState.chosenDiscipline };
+      // Restore chosenDiscipline: prefer localStorage, then Firestore, then null
+      let discipline = adaptiveState.chosenDiscipline;
+      if (!discipline) {
+        // Try loading from Firestore adaptive state doc
+        try {
+          const { db } = await import('../config/firebase');
+          const { doc, getDoc } = await import('firebase/firestore');
+          const snap = await getDoc(doc(db, 'users', user.uid, 'adaptive_state', 'cpa'));
+          if (snap.exists()) {
+            discipline = snap.data()?.chosenDiscipline || null;
+          }
+        } catch { /* ignore */ }
+      }
+      adaptiveState = { ...coreState, chosenDiscipline: discipline };
       return adaptiveState;
     }
   } catch { /* fall through to local load */ }

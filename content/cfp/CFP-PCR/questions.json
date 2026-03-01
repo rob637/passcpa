@@ -2,42 +2,8 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-PCR",
   "exportedAt": "2026-02-25T22:37:02.986Z",
-  "count": 276,
+  "count": 256,
   "questions": [
-    {
-      "id": "cfp-cross-005",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Duty of Care",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "A CFP® professional's client, age 78, wants to add her son as joint owner on all accounts 'to avoid probate.' The CFP® knows this could expose assets to the son's creditors, affect Medicaid eligibility, and create unequal inheritance among siblings. The son is present and enthusiastic about the plan. What is the CFP®'s BEST course of action?",
-      "explanation": "**Cross-Domain Analysis (Professional Conduct + Estate):**\n\nThis integrates fiduciary standards with estate planning risks.\n\n**Why C is correct:**\n\n**Fiduciary Duty Considerations:**\n- Duty of Care: Must act with competence, which includes identifying risks\n- Duty of Loyalty: Client's interests first (not son's)\n- Client may not fully understand consequences\n- Son's presence may create undue influence concerns\n\n**Estate Planning Risks of Joint Ownership:**\n- Son's creditors can reach the assets\n- Son's divorce could claim portion\n- Loss of step-up in basis at mother's death (only her portion)\n- Unequal treatment of other siblings\n- Medicaid look-back period issues\n\n**Professional Response:**\n- Private meeting removes potential undue influence\n- Allows candid discussion of risks\n- CFP® can present alternatives (TOD/POD accounts, revocable trust)\n- Documents informed consent if client proceeds\n\n**Why other options fail:**\n- A: Capacity isn't the issue—informed consent is\n- B: Abandoning client when she needs guidance most\n- D: Ignores fiduciary duty to identify and discuss risks\n\n**Key Integration:** Professional conduct requires understanding technical estate planning consequences to fulfill fiduciary duty.",
-      "correctAnswer": 3,
-      "options": [
-        "Implement the client\\",
-        ",\n      ",
-        "Proceed with the client's request, but only after obtaining a signed release from all other potential heirs.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Implementing the client's request without further discussion violates the CFP® professional's duty of care. It fails to adequately address the potential negative consequences of joint ownership, such as exposure to the son's creditors and potential Medicaid ineligibility, and does not ensure the client is making a fully informed decision.",
-        "1": "Why option B is WRONG - Abandoning the client is a breach of the CFP® professional's duty of loyalty and duty to provide ongoing service. The client is seeking advice, and the CFP® should address her concerns and provide suitable alternatives, not simply terminate the relationship.",
-        "2": "Why option C is WRONG - While documenting the client's decision is important, it's insufficient without first ensuring the client fully understands the risks and benefits of joint ownership. Simply documenting the decision without a thorough discussion of the implications does not satisfy the CFP® professional's fiduciary duty of care and loyalty.",
-        "3": "Why option C is CORRECT - Meeting with the client privately allows the CFP® professional to fulfill their fiduciary duty by ensuring the client's wishes are truly independent and informed. This private discussion helps identify any undue influence from the son and allows for a candid exploration of the risks and alternative estate planning strategies like TOD/POD accounts or a revocable trust."
-      },
-      "educational": "The CFP Board's Code of Ethics and Standards of Conduct places a high priority on the client's best interests. This includes a duty of care, requiring competence and diligence, and a duty of loyalty, prioritizing the client's needs above all else. In situations where a client's request could have unintended negative consequences, the CFP® professional must thoroughly explore those consequences and offer suitable alternatives to ensure informed consent and protect the client's well-being.",
-      "examTip": "On the CFP® exam, always prioritize options that demonstrate a thorough understanding of the client's situation and a commitment to acting in their best interest, especially when potential conflicts of interest or undue influence are present. Look for options that involve clear communication, documentation, and exploration of alternatives.",
-      "memoryAid": "DILIGENCE before DOCUMENTS: Ensure you've been diligent in understanding the client's needs and explaining the risks before simply documenting their decision.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 120,
-      "authorityRef": "CFP Board Standards of Conduct, Duty of Care",
-      "commonMistake": "Many candidates focus solely on fulfilling the client's immediate request without considering the potential long-term negative consequences. The exam tests whether you understand the CFP® professional's obligation to act in the client's best interest, which may involve educating the client about risks and exploring alternative solutions. Option A is WRONG because implementing the client's request without further discussion and exploring alternatives would violate the Duty of Care. Option B is WRONG because abandoning the client is a breach of duty; the CFP® professional should attempt to educate and find a suitable solution."
-    },
     {
       "id": "cfp-pro-001",
       "courseId": "cfp",
@@ -71,76 +37,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Standards of Conduct, Fiduciary Duty",
       "commonMistake": "Test-takers often incorrectly assume that fiduciary duty only applies during comprehensive financial planning engagements. The exam emphasizes that fiduciary duty applies whenever a CFP® professional provides Financial Advice. Option B is WRONG because while the statement that fiduciary duty applies when providing Financial Advice is true, it is not the MOST correct answer. Option C is WRONG because Fiduciary duty is triggered by providing financial advice, regardless of whether a fee is charged."
-    },
-    {
-      "id": "cfp-pro-002",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "CFP Board Code of Ethics",
-      "subtopic": "Four Code Principles",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Sarah is studying for the CFP® exam. She is reviewing the CFP Board's Code of Ethics and Professional Responsibility. Which of the following is NOT one of the four principles in the CFP Board's Code of Ethics?",
-      "explanation": "The four Code principles are: (1) Act with honesty, integrity, competence, and diligence; (2) Act in the client\\'s best interests; (3) Exercise due care; and (4) Maintain the standards of the profession. \"Maximize investment returns\" is NOT a principle—recommendations must be in the client\\'s best interest considering all factors, not just maximizing returns.",
-      "correctAnswer": 3,
-      "options": [
-        ",\n      ",
-        "Act with honesty, integrity, competence, and diligence",
-        "Act in the client\\",
-        "Maximize investment returns for clients"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - This option is incomplete and does not represent a valid principle from the CFP Board's Code of Ethics. The four principles are well-defined and do not include incomplete or nonsensical statements.",
-        "1": "Why option B is WRONG - Acting with honesty, integrity, competence, and diligence is one of the four fundamental principles outlined in the CFP Board's Code of Ethics. This principle sets the foundation for ethical behavior and professional conduct for all CFP® professionals.",
-        "2": "Why option C is WRONG - Acting in the client's best interests is a core principle of the CFP Board's Code of Ethics and is a cornerstone of the fiduciary duty owed to clients. This principle requires CFP® professionals to place the client's needs above their own.",
-        "3": "Why option A is CORRECT - The CFP Board's Code of Ethics emphasizes acting in the client's best interest, which is a holistic approach considering various factors like risk tolerance, time horizon, and financial goals. Maximizing investment returns alone is not a principle because it can lead to unsuitable recommendations if other crucial factors are ignored, directly contradicting the fiduciary duty."
-      },
-      "educational": "The CFP Board's Code of Ethics and Standards of Conduct are designed to protect the public by establishing clear expectations for CFP® professionals. The principles-based approach emphasizes ethical behavior and requires CFP® professionals to act with integrity, objectivity, and competence. Understanding these principles is crucial for applying the Practice Standards and fulfilling the fiduciary duty.",
-      "examTip": "On the CFP® exam, carefully analyze questions related to the Code of Ethics and Standards of Conduct, focusing on the principles and how they apply to real-world scenarios. Remember that the client's best interest always takes precedence.",
-      "memoryAid": "HICD: Honesty, Integrity, Competence, Diligence. Use this acronym to remember the first principle, which encompasses many aspects of ethical conduct.",
-      "reference": "CFP Board Code of Ethics and Standards of Conduct",
-      "sourceFile": "unknown",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Code of Ethics, Principles",
-      "commonMistake": "Many candidates confuse the principles of the Code of Ethics with aspirational goals or specific rules. The exam tests your knowledge of the four core principles. Option A is CORRECT because the CFP Board's Code of Ethics does not specifically include 'Maximize investment returns for clients' as one of its four principles. Option B is WRONG because Acting with honesty, integrity, competence, and diligence is one of the four principles."
-    },
-    {
-      "id": "cfp-pro-003",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Duty of Loyalty",
-      "subtopic": "Compensation Conflicts",
-      "difficulty": "hard",
-      "skillLevel": "Evaluation",
-      "question": "A CFP® professional discovers they receive 50% higher commissions on Product A versus Product B, though both are suitable for the client. According to the duty of loyalty, what action is required?",
-      "explanation": "The duty of loyalty requires placing the client\\'s interests first. The CFP® must recommend whichever product is actually in the client\\'s best interest—which may be A or B depending on features, costs, and client needs. Higher commissions cannot influence the recommendation. If Product A is truly best for the client, recommend it. If B is better, recommend B. Document the analysis.",
-      "correctAnswer": 3,
-      "options": [
-        "Recommend Product A because both are suitable and either is permissible",
-        "Recommend Product B to avoid any appearance of conflict",
-        ",\n      ",
-        "Recommend whichever product is in the client\\"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Recommending Product A solely because both are suitable and it offers a higher commission violates the duty of loyalty. The CFP® professional must prioritize the client's best interest, not their own financial gain. This is a direct conflict of interest.",
-        "1": "Why option B is WRONG - While avoiding the appearance of a conflict is important, recommending Product B solely to avoid this appearance, without determining if it's truly in the client's best interest, also violates the duty of loyalty. The CFP® professional must conduct a thorough analysis to determine the most suitable product.",
-        "2": "Why option C is WRONG - Option D is incomplete and grammatically incorrect. It does not provide a coherent course of action or address the ethical dilemma presented in the question.",
-        "3": "Why option C is CORRECT - The duty of loyalty mandates that the CFP® professional act in the client's best interest. This requires a thorough analysis of both Product A and Product B, considering factors beyond suitability, such as features, costs, and the client's specific needs and circumstances. The recommendation must be based on which product best serves the client, irrespective of the commission differential."
-      },
-      "educational": "The duty of loyalty, a core principle of the fiduciary standard, requires CFP® professionals to act in the client's best interest, placing the client's needs above their own. This duty is paramount and overrides any potential conflicts of interest, including commission differences. Understanding the fiduciary standard is critical for the CFP® exam, as it underpins many ethical and practice-related questions.",
-      "examTip": "On the CFP® exam, always choose the answer that demonstrates putting the client's best interest first, even if it means forgoing personal gain or additional compensation. Look for keywords like 'client's best interest,' 'fiduciary,' and 'conflict of interest'.",
-      "memoryAid": "Loyalty = Client First (LCF)",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 90,
-      "authorityRef": "CFP Board Standards of Conduct, Duty of Loyalty",
-      "commonMistake": "A common trap is to prioritize suitability over the client's best interest. The exam tests whether you understand that the Duty of Loyalty requires prioritizing the client's interests above all else, including the CFP® professional's own financial gain. Option A is WRONG because Recommending Product A solely based on suitability and higher commission violates the Duty of Loyalty. Option B is WRONG because While avoiding the appearance of a conflict is important, recommending a less suitable product solely to avoid that appearance also violates the Duty of Loyalty."
     },
     {
       "id": "cfp-pro-004",
@@ -423,76 +319,6 @@
       "commonMistake": "Test-takers often incorrectly assume that holding the CFP® certification automatically qualifies them to provide advice in all areas of financial planning. The exam tests whether you understand the importance of competence and the ethical obligation to refer clients to specialists when necessary. Declining the entire engagement might seem like the safest option, but it doesn't serve the client's best interests if a competent referral is possible."
     },
     {
-      "id": "cfp-pro-012",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-2",
-      "topic": "Written client agreement requirements",
-      "subtopic": "Required Elements",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "David is drafting a financial planning engagement agreement for a new client at Peterson Financial Group. What MUST be included in this Financial Planning engagement agreement?",
-      "explanation": "A Financial Planning engagement agreement must include: scope of engagement, client and CFP® responsibilities, compensation and payment terms, conflicts of interest, and duration/termination provisions. It creates a mutual understanding of the relationship. Returns cannot be guaranteed, medical history is generally not required, and sharing other client names would violate confidentiality.",
-      "correctAnswer": 3,
-      "options": [
-        "Guaranteed investment returns",
-        "Client\\",
-        ",\n      ",
-        "Fiduciary responsibility"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Guaranteeing investment returns is unethical and violates the CFP Board's Code of Ethics and Standards of Conduct. Standard A.4 prohibits guaranteeing clients will achieve their goals.",
-        "1": "Why option B is WRONG - While client information is essential, this option is incomplete. A financial planning engagement agreement requires a comprehensive overview of the relationship, not just client details.",
-        "2": "Why option C is WRONG - While client information is essential, this option is incomplete. A financial planning engagement agreement requires a comprehensive overview of the relationship, not just client details.",
-        "3": "Why option C is CORRECT - A financial planning engagement agreement must include the scope of engagement, client and CFP® professional responsibilities, compensation, conflicts of interest, and duration/termination provisions. These elements ensure transparency and a mutual understanding between the client and the CFP® professional, fulfilling the fiduciary duty to act in the client's best interest."
-      },
-      "educational": "Engagement agreements are crucial for establishing a clear understanding between the CFP® professional and the client. They define the scope of services, responsibilities, compensation, and potential conflicts of interest. This transparency helps fulfill the fiduciary duty and ensures the client is making informed decisions, aligning with the CFP Board's focus on ethical and competent financial planning.",
-      "examTip": "On the CFP® exam, remember that engagement agreements are about clarity and disclosure; always choose the option that best reflects a comprehensive and transparent understanding of the client-planner relationship.",
-      "memoryAid": "SCOPE: Scope, Compensation, Obligations, Parties, Expectations (Duration)",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Rule 2.2",
-      "commonMistake": "A common trap is to focus on elements that are generally good practice but not strictly *required* in the engagement agreement. The exam exploits the tendency to overthink the question and select an answer that seems comprehensive but includes non-essential items. While guaranteeing investment returns is obviously unethical and illegal, the other options might seem plausible at first glance."
-    },
-    {
-      "id": "cfp-pro-013",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Standards of Conduct (Duties)",
-      "subtopic": "Ending Client Relationships",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Susan, a CFP® at Chen & Associates, has decided to terminate her relationship with a long-term client, Mr. Jones. What is the proper procedure for Susan to follow?",
-      "explanation": "When terminating a client relationship, the CFP® should provide reasonable notice, return client property/records as appropriate, and offer transition assistance if requested. Ghosting clients or immediate termination without communication fails to meet professional standards. The goal is to minimize harm to the client from the transition.",
-      "correctAnswer": 3,
-      "options": [
-        "Immediately terminate without any communication",
-        "Stop returning the client\\",
-        ",\n      ",
-        "Continue managing the client's portfolio but cease all financial planning services."
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Immediately terminating a client relationship without any communication violates the duty to act in the client's best interest. It abandons the client and fails to provide a reasonable opportunity to find alternative financial planning services, potentially causing significant harm.",
-        "1": "Why option B is WRONG - Ignoring a client ('ghosting') is a blatant breach of fiduciary duty and the CFP Board's Code of Ethics. It demonstrates a lack of professionalism, fails to provide necessary services, and leaves the client in a vulnerable position without guidance or support.",
-        "2": "Why option C is WRONG - Option D is incomplete and does not provide enough information to determine if it is the correct answer. It does not provide the full context of the termination process.",
-        "3": "Why option C is CORRECT - Terminating a client relationship requires providing reasonable notice to the client, delivering all relevant client documents and property, and acting in a manner that minimizes harm to the client. This aligns with the CFP Board's Standards of Conduct, specifically the duty of care and diligence."
-      },
-      "educational": "The CFP Board's Standards of Conduct require CFP® professionals to act with integrity, competence, diligence, and objectivity, placing the client's interests first. Proper termination is crucial because it ensures a smooth transition for the client, minimizing disruption to their financial plan and access to their assets. Failing to adhere to these standards can result in disciplinary action by the CFP Board.",
-      "examTip": "On the CFP® exam, always prioritize options that demonstrate acting in the client's best interest, especially when dealing with sensitive situations like termination. Look for keywords like 'reasonable notice,' 'transition assistance,' and 'minimize harm'.",
-      "memoryAid": "Remember 'N-A-T' for Notice, Assets, Transition when terminating a client relationship.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Rule 2.2(e)",
-      "commonMistake": "Many candidates forget the specific requirements for terminating a client relationship. The exam exploits the misconception that simply ceasing communication is sufficient. While immediate termination might seem like a quick solution, it violates the duty to act in the client's best interest and provide reasonable notice."
-    },
-    {
       "id": "cfp-pro-014",
       "courseId": "cfp",
       "section": "CFP-PCR",
@@ -771,40 +597,6 @@
       "timeEstimate": 60,
       "authorityRef": "ERISA Section 404(a)(1)(B)",
       "commonMistake": "Test-takers often incorrectly assume a 'reasonable person' standard is sufficient for retirement plan management. The exam emphasizes that ERISA requires a higher standard of care, specifically that of a prudent expert."
-    },
-    {
-      "id": "cfp-pro-022",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-2",
-      "topic": "Fiduciary duty at all times",
-      "subtopic": "Rollover Documentation",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "A financial adviser recommends a client roll their 401(k) to an IRA. Under DOL fiduciary rules, what must be documented?",
-      "explanation": "Under DOL fiduciary rules, rollover recommendations are fiduciary advice requiring documentation of: why the rollover (versus keeping funds in the plan) is in the client\\'s best interest, comparison of fees and services, alternatives considered, and rationale. The IRA may have higher fees, so there must be offsetting benefits (better advice, planning integration, etc.).",
-      "correctAnswer": 1,
-      "options": [
-        "Nothing—rollover advice is not regulated",
-        "Why the rollover is in the client\\",
-        ",\n      ",
-        "The client's age and proximity to retirement"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Rollover advice IS regulated under the Department of Labor's (DOL) fiduciary rule. Providing recommendations regarding distributions from a retirement plan, including rollovers, constitutes fiduciary advice when specific conditions are met, triggering certain obligations.",
-        "C": "Why option C is WRONG - This option is incomplete. While considering the client's best interest is crucial, the DOL requires documentation of specific factors that support the rollover recommendation, not just a general statement.",
-        "D": "Why option D is WRONG - This option is incomplete. The DOL requires documentation of specific factors that support the rollover recommendation, not just a general statement."
-      },
-      "educational": "The DOL fiduciary rule aims to protect retirement investors by ensuring that advice they receive is in their best interest. Rollover recommendations are scrutinized because they often involve significant changes to investment options, fees, and protections. Understanding the nuances of the DOL rule is crucial, as it directly impacts the responsibilities and liabilities of financial advisors when providing retirement advice.",
-      "examTip": "On the CFP exam, pay close attention to the specific requirements of the DOL fiduciary rule regarding rollover recommendations, focusing on the need to document the rationale behind the advice and how it benefits the client.",
-      "memoryAid": "DOL Rollover Rule: Document 'Why' it's best for the client.",
-      "reference": "ERISA (Employee Retirement Income Security Act of 1974)",
-      "sourceFile": "unknown",
-      "timeEstimate": 90,
-      "authorityRef": "DOL Fiduciary Rule (29 CFR 2509.95-1)",
-      "commonMistake": "Many candidates underestimate the documentation requirements for rollover recommendations. The exam tests whether you understand that the specific reasons *why* the rollover is in the client's best interest must be documented, not just that a recommendation was made."
     },
     {
       "id": "cfp-pro-023",
@@ -1120,41 +912,6 @@
       "timeEstimate": 90,
       "authorityRef": "CFP Board Code of Ethics, Standard A.1. Duty of Loyalty",
       "commonMistake": "Many candidates are tempted by options that seem to benefit the CFP® professional. A common mistake is prioritizing personal gain (higher commissions) over the client's best interest (lower costs). The Duty of Loyalty explicitly requires placing the client's interests first, even if it means reduced compensation for the CFP®."
-    },
-    {
-      "id": "cfp-pro-032",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-2",
-      "topic": "Suitability vs. fiduciary standards",
-      "subtopic": "Suitability vs. Best Interest",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "Mark is a registered representative at Titan Securities. How does Regulation Best Interest (Reg BI) strengthen investor protection compared to the traditional suitability standard for broker-dealers?",
-      "explanation": "Regulation Best Interest (effective June 2020) is an enhanced standard for broker-dealers: (1) Disclosure of material facts about the relationship, (2) Care to act in client\\'s best interest without placing BD\\'s interest ahead, (3) Conflict mitigation, and (4) Compliance policies. It\\'s stronger than suitability but NOT identical to fiduciary duty—it applies at time of recommendation, not as ongoing duty.",
-      "correctAnswer": 3,
-      "options": [
-        "Reg BI eliminates all conflicts of interest",
-        "Reg BI only applies to retirement accounts",
-        ",\n      ",
-        "Reg BI requires acting in client\\"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Reg BI does NOT eliminate all conflicts of interest. Instead, it requires broker-dealers to disclose and mitigate conflicts of interest, not eliminate them entirely. Complete elimination is often impossible in the financial services industry.",
-        "1": "Why option B is WRONG - Reg BI applies to recommendations made to *any* retail customer, not just those involving retirement accounts. While retirement accounts are a key area of focus, the regulation's scope is broader.",
-        "2": "Why option C is WRONG - Option D is incomplete and ungrammatical, making it an invalid choice. It doesn't present a coherent statement to evaluate against Reg BI.",
-        "3": "Why option C is CORRECT - Reg BI requires broker-dealers to act in the client's best interest without putting the firm's or the broker's interests ahead. This is a key component of the 'Care Obligation' under Reg BI and represents a significant upgrade from the suitability standard, which only required recommendations to be suitable."
-      },
-      "educational": "Regulation Best Interest (Reg BI) was enacted to enhance the standard of conduct for broker-dealers when providing recommendations to retail customers. It aims to bridge the gap between the suitability standard (which only requires recommendations to be suitable) and the fiduciary standard (which requires acting solely in the client's best interest). Reg BI mandates disclosure, care, conflict mitigation, and compliance, strengthening investor protection.",
-      "examTip": "On the CFP® exam, remember that Reg BI applies at the *point of recommendation*, unlike the ongoing fiduciary duty of an RIA. Focus on the four key obligations: Disclosure, Care, Conflict Mitigation, and Compliance.",
-      "memoryAid": "DCCC: Disclosure, Care, Conflict Mitigation, Compliance – the four pillars of Reg BI.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 90,
-      "authorityRef": "SEC Regulation Best Interest (Reg BI)",
-      "commonMistake": "Many candidates overestimate the impact of Reg BI. A common trap is believing that Reg BI eliminates all conflicts of interest; it requires mitigation, not elimination. Another mistake is limiting Reg BI's scope to retirement accounts; it applies to recommendations of securities to retail customers generally."
     },
     {
       "id": "cfp-pro-033",
@@ -1612,75 +1369,6 @@
       "commonMistake": "Many candidates confuse the different types of ERISA fiduciaries. An ERISA 3(38) investment manager (Option B) has full discretionary authority, which isn't necessarily the case when providing regular investment advice. The exam exploits the ambiguity of 'investment advice' and whether it constitutes full discretion."
     },
     {
-      "id": "cfp-pro-046",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Duty of Loyalty",
-      "subtopic": "Client Best Interest",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "David Chen is a CFP® providing advice to a long-term client. The CFP Board's Duty of Loyalty requires David to:",
-      "explanation": "The Duty of Loyalty requires placing client interests first. It doesn\\'t mandate lowest-cost options (prudent cost consideration), fee-only compensation (conflicts must be managed), or avoiding all conflicts (disclosure and management acceptable). Conflicts are allowed if properly disclosed and consented to.",
-      "correctAnswer": 1,
-      "options": [
-        "Accept only fee-only compensation",
-        "Place the client\\",
-        ",\n      ",
-        "Disclose all potential conflicts of interest after implementing the financial plan"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "The Duty of Loyalty does not mandate a specific compensation model. While fee-only compensation can reduce conflicts of interest, it is not a requirement of the Duty of Loyalty. A CFP® professional can fulfill their Duty of Loyalty under various compensation structures as long as they act in the client's best interest.",
-        "C": "This option is incomplete and therefore incorrect. The Duty of Loyalty requires a CFP® professional to act in the client's best interest, which involves more than just a partial statement. It requires putting the client's needs above their own.",
-        "D": "This option is incomplete and therefore incorrect. The Duty of Loyalty requires a CFP® professional to act in the client's best interest, which involves more than just a partial statement. It requires putting the client's needs above their own."
-      },
-      "educational": "The Duty of Loyalty requires a CFP® professional to act in the client's best interest, placing the client's interests above their own and avoiding conflicts of interest. This is a fundamental principle of fiduciary duty and ethical financial planning.",
-      "examTip": "Focus on keywords like 'best interest,' 'client first,' and 'avoid conflicts' when identifying Duty of Loyalty questions.",
-      "memoryAid": "Loyalty = Client First (LCF)",
-      "reference": "CFP Board Code of Ethics and Standards of Conduct",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Standard A.1.b.",
-      "commonMistake": "The Duty of Loyalty is often confused with specific compensation structures (Option A). While fee-only can reduce conflicts, it's not mandated by the Duty of Loyalty. The core principle is prioritizing the client's interests, regardless of compensation model. The exam exploits the association between fee-only and 'client-centric' advice."
-    },
-    {
-      "id": "cfp-pro-047",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Standards of Conduct (Duties)",
-      "subtopic": "Confidentiality",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Emily Carter, CFP®, is contacted by an attorney representing a client's ex-spouse requesting financial records for a divorce proceeding. A CFP® professional may disclose confidential client information without consent when:",
-      "explanation": "Exceptions to confidentiality: legal/regulatory requirements (subpoena, court order), defending against legal claims by client, preventing illegal activity if required by law. Spouse has no automatic right; other professionals need client consent.",
-      "correctAnswer": 2,
-      "options": [
-        "The client\\",
-        ",\n      ",
-        "The client's parents",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While the client can always authorize disclosure of their confidential information, the question asks about situations where disclosure is permissible *without* client consent. This option describes a situation where consent *is* given, making it incorrect.",
-        "1": "Why option B is WRONG - [This option is intentionally left blank as it is not provided in the original question.]",
-        "2": "Why option C is CORRECT - The CFP Board's Code of Ethics and Standards of Conduct permits disclosure of confidential client information without the client's consent when required by law, such as in response to a valid subpoena or court order. This exception recognizes that legal obligations may override the duty of confidentiality.",
-        "3": "Why option D is WRONG - [This option is intentionally left blank as it is not provided in the original question.]"
-      },
-      "educational": "The duty of confidentiality is a cornerstone of the CFP® professional's relationship with their clients. However, this duty is not absolute. Exceptions exist to balance client privacy with other important societal interests, such as legal compliance and preventing harm. Understanding these exceptions is crucial for navigating ethical dilemmas in practice.",
-      "examTip": "On the CFP® exam, carefully distinguish between situations where client consent is required for disclosure and those where it is permissible or required without consent. Pay close attention to keywords like 'without consent' in the question stem.",
-      "memoryAid": "Remember 'LAD' - Legal, Against client (defending), Danger (preventing harm) - these are situations where you might disclose without consent.",
-      "reference": "CFP Board Code of Ethics and Standards of Conduct",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Standard A.4.",
-      "commonMistake": "Many candidates forget the specific circumstances under which confidential information can be disclosed without consent. While client consent is paramount, legal proceedings (like a subpoena) are exceptions. The exam exploits the strong emphasis on client confidentiality, making candidates hesitant to choose an option involving disclosure."
-    },
-    {
       "id": "cfp-pro-048",
       "courseId": "cfp",
       "section": "CFP-PCR",
@@ -1996,40 +1684,6 @@
       "timeEstimate": 45,
       "authorityRef": "CFP Board Financial Planning Practice Standard 100-1",
       "commonMistake": "Many candidates confuse the order of the financial planning process. The exam exploits the misconception that analysis or recommendation comes before understanding the client's current situation."
-    },
-    {
-      "id": "cfp-pro-057",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Standards of Conduct (Duties)",
-      "subtopic": "Professionalism",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A CFP® professional learns that a colleague is engaging in unethical conduct. The CFP® professional should:",
-      "explanation": "CFP® professionals have duty to report certificant misconduct to CFP Board that raises concern about fitness. Obligation protects public and profession. Anonymous reporting available. Does not require reporting non-CFP® professionals to CFP Board (different regulators).",
-      "correctAnswer": 2,
-      "options": [
-        "Ignore it—it\\",
-        ",\n      ",
-        "Report the conduct only if the colleague's actions directly affect the CFP® professional's clients.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Ignoring unethical conduct violates the CFP Board's Code of Ethics and Standards of Conduct. CFP® professionals have a duty to uphold the integrity of the profession, which includes reporting misconduct.",
-        "B": "Why option B is WRONG - While confronting the colleague directly might be a good first step in some situations, it does not fulfill the CFP® professional's *primary* duty to report the misconduct to the CFP Board, especially if the misconduct is serious or ongoing. Direct confrontation alone is insufficient.",
-        "D": "Why option D is WRONG - While reporting to a supervisor *might* be appropriate in some employment contexts, it does not fulfill the CFP® professional's direct obligation to report the misconduct to the CFP Board. The supervisor may not be a CFP® professional and may not take the necessary steps to address the ethical violation according to CFP Board standards."
-      },
-      "educational": "The CFP Board's Code of Ethics and Standards of Conduct places a high value on integrity and ethical behavior. This includes a duty to report misconduct by other CFP® professionals. This requirement is in place to protect the public, maintain the reputation of the CFP® certification, and ensure that CFP® professionals are held accountable for their actions. It's directly tied to the fiduciary duty owed to clients.",
-      "examTip": "On the CFP® exam, always prioritize actions that directly fulfill the CFP Board's ethical requirements. Reporting misconduct to the CFP Board is a key responsibility for CFP® professionals.",
-      "memoryAid": "See Something, Say Something (to the CFP Board).",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Standards of Conduct, Duty to Report Misconduct",
-      "commonMistake": "Test-takers often incorrectly believe that they have no obligation to report unethical conduct by colleagues. The exam exploits the misconception that it's acceptable to ignore or avoid getting involved in others' ethical breaches."
     },
     {
       "id": "cfp-pro-058",
@@ -3081,41 +2735,6 @@
       "commonMistake": "The CFP Board's definition of financial advice is broad and encompasses specific recommendations, even in initial consultations. Test-takers often incorrectly assume that fiduciary duty only attaches upon formal engagement or payment, overlooking the trigger of providing specific financial advice."
     },
     {
-      "id": "cfp-pro-088",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-2",
-      "topic": "Suitability vs. fiduciary standards",
-      "subtopic": "Informed Consent",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A CFP® professional recommends a variable annuity with a 7-year surrender charge. The client indicates they may need the funds in 2 years. What should the professional do?",
-      "explanation": "A product with a 7-year surrender charge conflicts with the client\\'s stated 2-year liquidity need. Even with disclosure, recommending this product would not be in the client\\'s best interest. The CFP® professional should either recommend an alternative product or help the client clarify their actual liquidity needs before proceeding.",
-      "correctAnswer": 2,
-      "options": [
-        "Recommend a product with shorter liquidity terms",
-        "Proceed with the recommendation if it\\",
-        ",\n      ",
-        "Disclose the surrender charge schedule and obtain client acknowledgment"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - This option is incomplete. While recommending a product with shorter liquidity terms is a possible solution, it doesn't address the initial conflict between the client's needs and the proposed product. A CFP® professional must first understand the client's actual needs before making any recommendation.",
-        "1": "Why option B is WRONG - Proceeding with the recommendation despite the client's stated liquidity needs would violate the fiduciary duty to act in the client's best interest. The Practice Standards require a CFP® professional to understand the client's personal and financial circumstances before making recommendations.",
-        "2": "Why option C is CORRECT - This option correctly identifies the CFP® professional's responsibility to either recommend a more suitable product or clarify the client's liquidity needs. This aligns with the Practice Standards, specifically understanding the client's circumstances and selecting suitable recommendations.",
-        "3": "Why option D is WRONG - Without knowing the content of option D, it is impossible to provide a specific reason why it is incorrect. However, based on the context of the question, it would likely involve either proceeding with the unsuitable recommendation or failing to adequately address the client's liquidity needs."
-      },
-      "educational": "The Practice Standards require CFP® professionals to act as fiduciaries, placing the client's best interest first. This includes understanding a client's financial circumstances, including their liquidity needs, and selecting suitable products. Recommending a product with a long surrender charge when a client has a short-term liquidity need violates this duty and the suitability standard.",
-      "examTip": "On the CFP® exam, always prioritize options that demonstrate a thorough understanding of the client's needs and a commitment to acting in their best interest. Be wary of options that suggest proceeding with a recommendation without addressing potential conflicts or suitability concerns.",
-      "memoryAid": "SUITABILITY: Understand the client's Situation, then select Suitable products.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Code of Ethics, Standard A.4.a",
-      "commonMistake": "This option is incomplete. While recommending a product with shorter liquidity terms is a step in the right direction, it doesn't address the fundamental issue of suitability and the client's potential need for the funds. Test-takers often select the 'least wrong' answer without fully considering all aspects of the situation and the client's best interests."
-    },
-    {
       "id": "cfp-pro-089",
       "courseId": "cfp",
       "section": "CFP-PCR",
@@ -3603,40 +3222,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.2.",
       "commonMistake": "Many candidates are tempted to think that providing general advice with a disclaimer (Option B) is sufficient. The exam exploits the misconception that a disclaimer absolves the CFP® professional of responsibility when they lack competence in a specific area. It's crucial to understand the duty to either gain competence or refer the client."
-    },
-    {
-      "id": "cfp-pcr-b3-003",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Duty of Care",
-      "subtopic": "Best Interest",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "A CFP® professional determining \"best interest\" for investment recommendations must consider all EXCEPT:",
-      "explanation": "Best interest analysis focuses on the client\\'s current needs, goals, risk tolerance, costs, and any conflicts (like planner compensation). Past satisfaction with OTHER advisors\\' recommendations is not relevant to determining if a current recommendation is in the client\\'s best interest.",
-      "correctAnswer": 1,
-      "options": [
-        "The cost and complexity of the recommended product",
-        "The client\\",
-        ",\n      ",
-        "s risk tolerance and investment objectives"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The cost and complexity of a recommended product are crucial factors in determining if it's in the client's best interest. A high-cost or overly complex product might not be suitable, even if it aligns with their goals, violating the Duty of Care under the CFP Board's Code of Ethics.",
-        "C": "Why option C is WRONG - The client's financial circumstances are a fundamental component of the best interest standard. Understanding their current financial situation is essential for making suitable recommendations, as required by the CFP Board's Practice Standards.",
-        "D": "Why option D is WRONG - A client's risk tolerance and investment objectives are key inputs when determining the best investment recommendations. Ignoring these factors would violate the Duty of Loyalty and the requirement to act in the client's best interest, as outlined in the CFP Board's Code of Ethics."
-      },
-      "educational": "The 'best interest' standard requires CFP® professionals to act prudently and with undivided loyalty to their clients. This means thoroughly understanding the client's financial situation, goals, and risk tolerance, and then recommending solutions that are suitable and cost-effective. The focus is always on the client's current needs and circumstances, not on past experiences with other advisors.",
-      "examTip": "On the CFP® exam, always prioritize the client's *current* financial situation and needs when evaluating whether a recommendation meets the 'best interest' standard. Disregard any information about past experiences with other advisors, as those are not relevant to the current analysis.",
-      "memoryAid": "Think 'CRICO' - Client's Risk tolerance, Investment objectives, Costs, and Overall financial situation. These are the key elements to consider for 'best interest'.",
-      "reference": "CFP Board Standards of Conduct (2019)",
-      "sourceFile": "unknown",
-      "timeEstimate": 105,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.1.a.",
-      "commonMistake": "Many candidates focus solely on the client's risk tolerance and objectives, overlooking the broader context of the client's financial circumstances. The exam exploits the misconception that investment recommendations can be made in isolation, without considering factors like cost, complexity, and the client's overall financial well-being. Option B is incomplete and does not represent a complete consideration of the client's best interest."
     },
     {
       "id": "cfp-pcr-b3-004",
@@ -4377,41 +3962,6 @@
       "commonMistake": "While lower costs are generally preferred, a fiduciary must consider all relevant factors. The exam exploits the misconception that cost is the only factor in investment recommendations. Some test-takers may automatically choose the lowest-cost option without considering other aspects like risk, tax implications, or specific client needs."
     },
     {
-      "id": "cfp-pcr-b3-025",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Standards of Conduct (Duties)",
-      "subtopic": "Goals Identification",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "During the initial client meeting, Emily, a CFP® at Harmon Financial Advisors, is gathering information. During the understanding client circumstances step, a CFP® should NOT:",
-      "explanation": "The financial planning process requires understanding client circumstances before making recommendations. Recommending specific products before fully understanding the client\\'s situation violates the practice standards and the duty of care.",
-      "correctAnswer": 1,
-      "options": [
-        "Ask about the client\\",
-        ",\n      ",
-        "Discuss Harmon Financial Advisor's fee structure immediately",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Asking about the client is a fundamental part of understanding their circumstances. This is explicitly required by the Practice Standards for the Financial Planning Process.",
-        "1": "Why option B is CORRECT - Recommending specific products before understanding a client's circumstances violates the Practice Standards, specifically Standard A: Defining the Scope of Engagement and Standard B: Understanding the Client’s Personal and Financial Circumstances. Making recommendations prematurely breaches the duty of care and potentially the fiduciary duty.",
-        "2": "Why option D is WRONG - [PLACEHOLDER] Gathering information about the client's goals is essential to understanding their circumstances. This is a key component of the 'Understanding the Client's Personal and Financial Circumstances' step.",
-        "3": "Why option D is WRONG - [PLACEHOLDER] Assessing the client's risk tolerance is a crucial step in understanding their financial situation and is directly relevant to making suitable recommendations later in the financial planning process."
-      },
-      "educational": "The 'Understanding Client Circumstances' step is the foundation of the financial planning process. It ensures that recommendations are tailored to the client's specific needs, goals, and risk tolerance. Skipping this step can lead to unsuitable recommendations, violating the CFP Board's Code of Ethics and Practice Standards, particularly regarding competence and diligence.",
-      "examTip": "On the CFP® exam, always prioritize options that demonstrate a thorough understanding of the client's situation before making any recommendations.",
-      "memoryAid": "GIGO: Garbage In, Garbage Out. If you don't understand the client (garbage in), your financial plan will be garbage out.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Standards of Conduct, Understanding the Client's Personal and Financial Circumstances",
-      "commonMistake": "Many candidates focus on the positive aspects of gathering client information and overlook prohibited actions. The exam exploits the misconception that any information-gathering activity is acceptable during the initial meeting. Some test-takers may not immediately recognize that guaranteeing specific investment returns is unethical and unrealistic."
-    },
-    {
       "id": "cfp-pcr-b4-001",
       "courseId": "cfp",
       "section": "CFP-PCR",
@@ -5149,40 +4699,6 @@
       "commonMistake": "Many candidates believe that social media is unregulated or that personal opinions are exempt from compliance requirements. The exam tests the understanding that all forms of communication, including social media, are subject to regulatory scrutiny and firm policies. Test-takers often overlook the need for pre-approval and record-keeping for investment-related posts."
     },
     {
-      "id": "cfp-pcr-b4-022",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Duty of Care",
-      "subtopic": "Client Capacity",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "Mr. Davis, a long-term client of Greenleaf Wealth Management, has started repeating himself and seems confused during meetings. As his CFP®, you observe signs of declining cognitive capacity. Which of the following is the MOST appropriate initial action?",
-      "explanation": "Addressing diminished capacity requires sensitivity: document observations, follow firm protocols, use trusted contacts if previously designated, potentially delay transactions, and contact adult protective services if abuse is suspected. Simply ignoring or immediately closing accounts would not serve the Client\\'s interests.",
-      "correctAnswer": 1,
-      "options": [
-        "Contact family members without the Client\\",
-        ",\n      ",
-        "Immediately liquidate Mr. Davis's portfolio into cash.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Contacting family members without the client's prior consent or knowledge, especially without a durable power of attorney in place, violates client confidentiality. The CFP Board's Code of Ethics and Standards of Conduct emphasizes maintaining client confidentiality unless legally obligated to disclose.",
-        "C": "Why option C is WRONG - Immediately closing the client's accounts is a drastic measure that could harm the client's financial well-being and is not appropriate as an initial response. Such action could be considered a breach of fiduciary duty, which requires acting in the client's best interest.",
-        "D": "Why option D is WRONG - Ignoring the signs of declining capacity is a violation of the CFP® professional's fiduciary duty to act in the client's best interest. Neglecting to address the issue could lead to financial exploitation or mismanagement of the client's assets."
-      },
-      "educational": "Addressing diminished capacity is a complex ethical and practical challenge. The CFP Board's Code of Ethics and Standards of Conduct require CFP® professionals to act in the client's best interest, which includes protecting vulnerable clients. This often involves balancing client autonomy with the need to safeguard their financial well-being. Understanding durable powers of attorney, trusted contact persons, and reporting obligations to Adult Protective Services are crucial aspects of this responsibility.",
-      "examTip": "On the CFP® exam, when faced with a question about diminished capacity, prioritize actions that protect the client while respecting their autonomy and confidentiality. Look for answers that involve documentation, consultation, and gradual steps before taking drastic actions.",
-      "memoryAid": "D-O-C: Document, Observe, Consult. These are the initial steps when you suspect diminished capacity.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 90,
-      "authorityRef": "CFP Board Standards of Conduct, Rule 4.5",
-      "commonMistake": "Many candidates jump to conclusions about contacting family members or terminating the relationship without considering the appropriate initial steps. The exam tests the understanding of the duty of care and the need to protect vulnerable clients. Test-takers often fail to prioritize obtaining the client's consent or exploring less intrusive options before contacting third parties."
-    },
-    {
       "id": "cfp-pcr-b4-023",
       "courseId": "cfp",
       "section": "CFP-PCR",
@@ -5603,41 +5119,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.6. Conflicts of Interest",
       "commonMistake": "Many candidates are tempted to choose options that offer vague or incomplete disclosures, failing to recognize the need for specific and detailed information. The exam exploits the misconception that general statements are sufficient. Others may think verbal disclosure is adequate, overlooking the importance of written documentation."
-    },
-    {
-      "id": "cfp-pcr-b5-010",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Standards of Conduct (Duties)",
-      "subtopic": "Broker-Dealer Supervision",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "At Horizon Investments, supervisory procedures are being updated. Under broker-dealer supervision requirements, supervisory procedures must:",
-      "explanation": "Broker-dealers must establish, maintain, and enforce written supervisory procedures (WSPs) tailored to their business. FINRA Rule 3110 requires supervision of registered representatives, review of customer accounts, and procedures to ensure compliance. Supervisors must be qualified and training documented.",
-      "correctAnswer": 2,
-      "options": [
-        "Apply only to new representatives",
-        "Be the same at every firm",
-        "Be tailored to the firm\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Supervisory procedures apply to *all* registered representatives, not just new ones. FINRA Rule 3110 mandates ongoing supervision of all associated persons of a member firm.",
-        "1": "Why option B is WRONG - Supervisory procedures cannot be the same at every firm. FINRA Rule 3110 requires firms to tailor their Written Supervisory Procedures (WSPs) to their specific business model, size, and the risks associated with their operations. A one-size-fits-all approach would not adequately address the unique compliance challenges of different firms.",
-        "2": "Why option C is CORRECT - Broker-dealers are required to establish, maintain, and enforce Written Supervisory Procedures (WSPs) that are tailored to their specific business model, size, and the risks associated with their operations. This ensures that supervision is effective and addresses the unique compliance challenges of each firm, as mandated by FINRA Rule 3110.",
-        "3": "Why option D is WRONG - Option D is incomplete and therefore incorrect. It does not provide a valid statement related to broker-dealer supervision requirements."
-      },
-      "educational": "Broker-dealer supervision is crucial for investor protection and maintaining market integrity. FINRA Rule 3110 requires firms to establish and maintain a system to supervise the activities of its registered representatives. This includes establishing WSPs, designating qualified supervisors, and conducting regular reviews of customer accounts and representative activities. Effective supervision helps prevent and detect potential violations of securities laws and regulations, safeguarding client assets and promoting ethical conduct.",
-      "examTip": "On the CFP exam, remember that supervisory responsibilities are a key component of a broker-dealer's compliance obligations. Focus on understanding the requirements for establishing and maintaining WSPs, as well as the responsibilities of supervisors in overseeing registered representatives.",
-      "memoryAid": "WSPs = Written, Specific, Procedures – tailored to the firm.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "FINRA Rule 3110(b)(1)",
-      "commonMistake": "Many candidates incorrectly believe that supervisory procedures are standardized across all firms or only apply to new representatives. The exam exploits the misconception that a one-size-fits-all approach is sufficient, neglecting the importance of tailoring procedures to the specific risks and operations of each firm. Some may also think the SEC pre-approves each firm's procedures."
     },
     {
       "id": "cfp-pcr-b5-011",
@@ -6483,41 +5964,6 @@
       "commonMistake": "Many candidates incorrectly assume that outside business activities are permissible as long as they are disclosed to the CFP Board or are unrelated to financial planning. The exam exploits the misconception that disclosure to the CFP Board is sufficient or that unrelated activities are automatically exempt from disclosure requirements, overlooking the need to manage potential conflicts and disclose when activities could affect duties or create conflicts."
     },
     {
-      "id": "cfp-pcr-b6-010",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Duty of Care",
-      "subtopic": "Selecting Products",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Sarah is a CFP® at Oakwood Financial. When recommending annuity products to her client, John, Sarah must select products:",
-      "explanation": "The Duty of Care requires reasonable basis for recommendations through investigation and analysis. Products must be suitable for the specific client\\'s situation. While cost matters, best interest considers multiple factors including goals, risk tolerance, and preferences.",
-      "correctAnswer": 2,
-      "options": [
-        "Only from pre-approved lists",
-        "With the lowest fees available",
-        "That are in the client\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Relying solely on pre-approved lists violates the Duty of Care. A CFP® professional must conduct independent due diligence to ensure the product is suitable and in the client's best interest, regardless of its pre-approved status. The CFP Board's Code of Ethics and Standards of Conduct emphasizes individualized recommendations.",
-        "1": "Why option B is WRONG - While minimizing fees is important, focusing solely on the lowest fees disregards other crucial factors like risk, potential return, and alignment with the client's overall financial goals. The 'best interest' standard requires a holistic assessment, not just cost minimization.",
-        "2": "Why option C is CORRECT - The Duty of Care mandates that recommendations are suitable for the client's specific circumstances, including their financial situation, risk tolerance, and goals. This requires a thorough understanding of the client and a reasonable basis for believing the recommendation aligns with their best interests. This is a core tenet of fiduciary duty.",
-        "3": "Why option D is WRONG - Option D is incomplete and grammatically incorrect, making it impossible to assess its validity. A complete and coherent statement is necessary for evaluation under the CFP Board's standards."
-      },
-      "educational": "The Duty of Care, a cornerstone of the CFP Board's Standards of Conduct, requires CFP® professionals to act with prudence, diligence, and competence. This means thoroughly understanding a client's financial situation, conducting reasonable due diligence on potential recommendations, and ensuring those recommendations are suitable and in the client's best interest. This duty is paramount in establishing trust and maintaining the integrity of the financial planning profession.",
-      "examTip": "On the CFP® exam, always prioritize the client's best interest and remember that suitability encompasses more than just risk tolerance; it includes their goals, time horizon, and overall financial situation.",
-      "memoryAid": "S-I-G: Suitability, Investigation, Goals. Remember these three elements when evaluating product recommendations.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.2.a.",
-      "commonMistake": "Test-takers often focus on finding the 'cheapest' option, overlooking the broader suitability standard. The exam exploits the misconception that lowest fees are always the primary consideration, neglecting the need to select products that align with the client's needs, objectives, and circumstances."
-    },
-    {
       "id": "cfp-pcr-b6-011",
       "courseId": "cfp",
       "section": "CFP-PCR",
@@ -6586,41 +6032,6 @@
       "timeEstimate": 90,
       "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.3.",
       "commonMistake": "Many candidates incorrectly believe that referral fees are inherently prohibited or that disclosure is not required. The exam exploits the misconception that referral fees are always unethical or that only the referring party needs to be aware of the arrangement, overlooking the need for full disclosure, reasonable fees, and compliance with regulations."
-    },
-    {
-      "id": "cfp-pcr-b6-013",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Practice standards",
-      "subtopic": "Financial Planning Process",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Emily is developing a financial plan for her new client, Tom. According to the CFP Board's Financial Planning Practice Standards, the financial planning process must:",
-      "explanation": "The Practice Standards outline the financial planning process: 1) Understanding circumstances, 2) Identifying goals, 3) Analyzing current course, 4) Developing recommendations, 5) Presenting recommendations, 6) Implementing, 7) Monitoring. Scope determines which steps are applicable.",
-      "correctAnswer": 1,
-      "options": [
-        "Skip implementation if the client prefers",
-        "Include understanding the client\\",
-        ",\n      ",
-        "Guarantee investment performance"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - The Practice Standards require implementation unless the scope of engagement specifically excludes it. Skipping implementation solely based on client preference, without prior agreement, would violate the standard of care.",
-        "1": "Why option B is CORRECT - The first step in the Financial Planning Practice Standards is \"Understanding the Client's Personal and Financial Circumstances.\" This foundational step is crucial for gathering relevant information to properly analyze the client's situation and develop suitable recommendations.",
-        "2": "Why option D is WRONG - This option is incomplete and therefore cannot be a correct answer. The Practice Standards require a comprehensive process, not a fragmented one.",
-        "3": "Why option D is WRONG - This option is incomplete and therefore cannot be a correct answer. The Practice Standards require a comprehensive process, not a fragmented one."
-      },
-      "educational": "The CFP Board's Financial Planning Practice Standards are designed to ensure that financial planning services are delivered ethically and competently. The 'Understanding the Client' step is paramount because it forms the basis for all subsequent steps, ensuring that recommendations are tailored to the client's specific needs, values, and goals. This aligns with the fiduciary duty to act in the client's best interest.",
-      "examTip": "Remember the seven-step financial planning process: Understanding, Identifying, Analyzing, Developing, Presenting, Implementing, and Monitoring (UIADPIM). Know that the scope of engagement determines which steps are required.",
-      "memoryAid": "UIADPIM - Understanding, Identifying, Analyzing, Developing, Presenting, Implementing, Monitoring. Use this acronym to remember the order of the financial planning process steps.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Financial Planning Practice Standard 100-1",
-      "commonMistake": "Many candidates focus on later stages of the financial planning process and overlook the initial steps. The exam exploits the misconception that implementation is the most important aspect, neglecting the foundational importance of understanding the client's personal and financial circumstances."
     },
     {
       "id": "cfp-pcr-b6-014",
@@ -7289,40 +6700,6 @@
       "commonMistake": "Test-takers often misinterpret the Duty of Care as requiring the elimination of all risk or guaranteeing specific outcomes. The exam exploits the misconception that acting in the client's best interest means avoiding any potential losses, failing to recognize that prudent investing involves a balance of risk and return, and that guarantees are generally unethical and unrealistic."
     },
     {
-      "id": "cfp-pcr-b7-008",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-2",
-      "topic": "Material conflicts of interest",
-      "subtopic": "Conflicts of Interest",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "John, a CFP® at Pinnacle Wealth, is related to the CEO of a company he recommends to clients. This relationship creates a material conflict of interest. When a material conflict of interest exists, a CFP® professional must:\n(A) Ignore it if it\n(B)\n(C)\n(D)",
-      "explanation": "Conflict management: 1) Avoid if possible, 2) Disclose the nature of the conflict and how addressed, 3) Obtain informed client consent, 4) Manage to prioritize client interests. Some conflicts may be irreconcilable and require declining the engagement. Documentation is essential. Best interest doesn\\'t mean no conflicts—it means managed conflicts.",
-      "correctAnswer": 3,
-      "options": [
-        "Ignore it if it\\",
-        ",\n      ",
-        "Disclose the relationship to Pinnacle Wealth's compliance department but not necessarily to clients unless specifically asked.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Ignoring a material conflict of interest is a direct violation of the CFP Board's Code of Ethics and Fiduciary Duty. A CFP® professional must always act in the client's best interest, which includes addressing and managing conflicts.",
-        "B": "Why option B is WRONG - While disclosure is a crucial step in managing conflicts of interest, it is not the only requirement. Disclosure alone is insufficient if the conflict is not properly managed and the client's informed consent is not obtained.",
-        "C": "Why option C is WRONG - While prioritizing the CFP® professional's interests is unethical and a breach of fiduciary duty, this option doesn't represent the full scope of what a CFP® professional must do when a material conflict of interest exists. It needs to be avoided, disclosed, and managed."
-      },
-      "educational": "The CFP Board's Code of Ethics and Standards of Conduct places a strong emphasis on managing conflicts of interest. This is because conflicts can compromise the objectivity and integrity of financial advice. By requiring avoidance, disclosure, consent, and management, the standards aim to protect clients and maintain public trust in the financial planning profession. This directly relates to the fiduciary duty owed to clients.",
-      "examTip": "On the CFP® exam, remember that disclosure alone is never enough when dealing with a material conflict of interest; you must also obtain informed consent and actively manage the conflict to prioritize the client's best interests. Look for answers that include all three elements.",
-      "memoryAid": "ADIM: Avoid if possible, Disclose, Informed Consent, Manage the conflict.",
-      "reference": "CFP Board Standards of Conduct (2019)",
-      "sourceFile": "unknown",
-      "timeEstimate": 90,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Disclosure of Conflicts of Interest (Rule 1.4)",
-      "commonMistake": "Many candidates believe that simply disclosing a conflict of interest is sufficient, or that it can be ignored if deemed insignificant. The exam exploits the misconception that disclosure alone absolves the CFP® professional of responsibility, failing to recognize that the conflict must be managed or avoided if it cannot be managed in the client's best interest. The correct answer is missing, but it should state that the CFP® professional must fully disclose the conflict, obtain informed consent, and manage or avoid the conflict if possible."
-    },
-    {
       "id": "cfp-pcr-b7-009",
       "courseId": "cfp",
       "section": "CFP-PCR",
@@ -7916,40 +7293,6 @@
       "timeEstimate": 45,
       "authorityRef": "CFP Board Code of Ethics, Principle of Professionalism",
       "commonMistake": "Many candidates narrowly interpret professionalism as solely related to formal communication or attire. A common trap is equating professionalism with technical competence alone. Test-takers often overlook the broader ethical implications of behavior and its impact on the profession's reputation."
-    },
-    {
-      "id": "cfp-pcr-b8-001",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Duty of Care",
-      "subtopic": "Duty of Care",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "David is a CFP® at Horizon Wealth. He's developing a retirement plan for the Miller family. The fiduciary Duty of Care requires David to do which of the following before making recommendations?",
-      "explanation": "Duty of Care: act with skill, care, prudence, and diligence. Components: have reasonable basis for recommendations, understand client circumstances and goals, conduct thorough analysis, make suitable recommendations, review periodically. Not about guarantees—about process and diligence. Malpractice may occur when this duty is breached.",
-      "correctAnswer": 2,
-      "options": [
-        "Simply follow industry standards",
-        "Only consider the client\\",
-        ",\n      ",
-        "s situation before making recommendations"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Simply following industry standards is insufficient. The Duty of Care requires a higher standard than just meeting the minimum requirements of the industry. CFP professionals must act with skill, care, prudence, and diligence, which may exceed standard practices.",
-        "B": "Why option B is WRONG - While client interests are paramount, the Duty of Care requires more than *only* considering the client. A CFP professional must also have a reasonable basis for recommendations, conduct thorough analysis, and make suitable recommendations, all of which require broader considerations beyond just the client's immediate desires.",
-        "D": "Why option D is WRONG - Option D is incomplete. While considering the client's situation is *part* of the Duty of Care, it doesn't encompass the entire scope. The Duty of Care also includes having a reasonable basis for recommendations, conducting thorough analysis, making suitable recommendations, and reviewing them periodically."
-      },
-      "educational": "The Duty of Care is a cornerstone of the fiduciary duty owed by CFP professionals. It ensures that advice is not only in the client's best interest but also based on sound reasoning and thorough analysis. This duty protects clients from negligent advice and helps maintain the integrity of the financial planning profession, aligning with the CFP Board's Standards of Conduct.",
-      "examTip": "On the CFP exam, always choose the answer that reflects the highest standard of care and the most comprehensive approach to client service, especially when questions involve fiduciary duties.",
-      "memoryAid": "Careful Analysis Results in Excellent Recommendations (CARE).",
-      "reference": "CFP Board Standards of Conduct (2019)",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Standards of Conduct, Standard A.2. Duty of Care",
-      "commonMistake": "Many candidates believe that simply following industry standards is sufficient to meet the Duty of Care. A common trap is focusing solely on the client's situation without considering other relevant factors. Test-takers often fail to recognize that the Duty of Care requires a thorough and diligent approach, going beyond mere compliance."
     },
     {
       "id": "cfp-pcr-b8-002",
@@ -9144,41 +8487,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Standards of Conduct, Principle 4: Integrity; Rule 1.2: Providing Financial Advice",
       "commonMistake": "Many candidates focus on the *form* of consent (signed document) rather than the *substance* (understanding). The exam exploits the misconception that a signed form automatically equals informed consent, overlooking the crucial element of client comprehension and opportunity for questions."
-    },
-    {
-      "id": "cfp-pcr-b9-011",
-      "courseId": "cfp",
-      "section": "CFP-PCR",
-      "blueprintArea": "PCR-1",
-      "topic": "Practice standards",
-      "subtopic": "Implementation",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "After developing a comprehensive financial plan for the Miller family, which statement accurately describes the CFP® professional's role when implementing the plan's recommendations?",
-      "explanation": "Implementation duties: depends on engagement scope. If agreed: select products/services, coordinate with other professionals, submit applications, complete paperwork. Track: what\\'s implemented, what\\'s pending, who\\'s responsible. Document recommendations, implementation status, reasons for changes. Some engagements advice-only—client implements. Clarify expectations upfront.",
-      "correctAnswer": 2,
-      "options": [
-        "All implementation is the client\\",
-        ",\n      ",
-        "The planner monitors progress, but the client handles execution.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Assuming all implementation is the client's responsibility is incorrect. The CFP® professional's implementation duties depend entirely on the scope of the engagement agreed upon with the client. The CFP® professional may be responsible for some, all, or none of the implementation.",
-        "1": "Why option B is WRONG - This option is incomplete and lacks context. The CFP® professional's responsibilities during implementation are not universally defined and depend on the specific agreement with the client.",
-        "2": "Why option C is CORRECT - The CFP® professional's implementation duties are determined by the scope of the engagement. Standard E4 of the Practice Standards outlines the responsibilities during implementation, which can range from selecting products and coordinating with other professionals to simply providing advice and leaving the implementation entirely to the client. The key is clear communication and documentation of the agreed-upon responsibilities.",
-        "3": "Why option D is WRONG - This option is incomplete and lacks context. The CFP® professional's responsibilities during implementation are not universally defined and depend on the specific agreement with the client."
-      },
-      "educational": "The implementation phase of the financial planning process is crucial, and the CFP® professional's role varies based on the engagement. Standard E4 emphasizes the importance of clearly defining and documenting the responsibilities of both the CFP® professional and the client. This clarity helps avoid misunderstandings and ensures that the client's financial plan is effectively executed, aligning with the fiduciary duty to act in the client's best interest.",
-      "examTip": "On the CFP® exam, carefully analyze the fact pattern to determine the scope of the engagement. Pay close attention to keywords that indicate whether the CFP® professional is responsible for implementation or if it's solely the client's responsibility.",
-      "memoryAid": "SCOPE: Scope of engagement dictates implementation responsibilities.",
-      "reference": "CFP Board Code of Ethics",
-      "sourceFile": "unknown",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Practice Standard 600-1: Implementing the Financial Planning Recommendations",
-      "commonMistake": "Many candidates assume that implementation is solely the client's responsibility or that the CFP® professional's role ends after plan delivery. The exam tests the understanding that implementation can be a collaborative process, with the CFP® professional offering assistance based on the agreed-upon scope of engagement."
     },
     {
       "id": "cfp-pcr-b9-012",

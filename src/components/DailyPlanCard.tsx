@@ -437,9 +437,11 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         break;
       case 'mcq':
         if (activity.params.topic) {
-          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&${fromParam}`);
+          const sectionParam = activity.params.section ? `&section=${encodeURIComponent(activity.params.section)}` : '';
+          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}${sectionParam}&${fromParam}`);
         } else {
-          navigate(`${getCoursePracticePath(courseId)}?${fromParam}`);
+          const sectionParam = activity.params.section ? `?section=${encodeURIComponent(activity.params.section)}&${fromParam}` : `?${fromParam}`;
+          navigate(`${getCoursePracticePath(courseId)}${sectionParam}`);
         }
         break;
       case 'tbs':

@@ -2,7 +2,7 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-RET",
   "exportedAt": "2026-02-25T22:37:02.941Z",
-  "count": 363,
+  "count": 349,
   "questions": [
     {
       "id": "cfp-cross-003",
@@ -630,41 +630,6 @@
       "timeEstimate": 150,
       "authorityRef": "IRC §401(a)(26)",
       "commonMistake": "Many candidates struggle to identify the most suitable retirement plan for a business owner, particularly when considering the needs of both the owner and employees. A common trap is focusing solely on contribution limits without considering the plan's administrative complexity and cost. Test-takers often incorrectly assume that a Solo 401(k) or SEP-IRA is always the best option for a small business owner, overlooking the potential benefits of a defined benefit plan for maximizing contributions in the years leading up to retirement."
-    },
-    {
-      "id": "cfp-ret-017",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "Required Minimum Distributions (RMDs)",
-      "subtopic": "SECURE Act Rules",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "Michael, age 45, inherited his father's Traditional IRA in 2023 when his father died at age 78. His father had already begun taking RMDs. Under SECURE Act 2.0 rules, what are Michael's distribution requirements?",
-      "explanation": "**Correct Answer: C (10-year rule WITH annual RMDs)**\n\n**SECURE Act 2.0 Rules for Non-Eligible Designated Beneficiaries:**\nWhen the original owner died AFTER their Required Beginning Date (age 73+), the beneficiary must:\n1. Empty the account by end of year 10\n2. **AND** continue taking annual RMDs based on beneficiary's life expectancy\n\n**Critical Detail:** Michael's father died at 78, AFTER his RBD (age 73). Therefore, annual RMDs continue during the 10-year period.\n\n**If father had died BEFORE RBD:**\n- Only the 10-year rule would apply (no annual RMDs)\n\n**Why other answers are wrong:**\n- **A)** \"Stretch\" only available to Eligible Designated Beneficiaries (spouse, minor child, disabled, chronically ill, not-more-than-10-years-younger)\n- **B)** 5-year rule doesn't apply here; also ignores RMD requirement\n- **D)** Ignores annual RMD requirement when owner died after RBD",
-      "correctAnswer": 2,
-      "options": [
-        "Stretch distributions over Michael\\",
-        ",\n      ",
-        "Take a lump-sum distribution within five years of his father's death",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - The 'stretch' provision, allowing distributions over the beneficiary's life expectancy, is generally no longer available under the SECURE Act and SECURE Act 2.0 for most beneficiaries. It's primarily reserved for 'Eligible Designated Beneficiaries,' which Michael does not appear to be based on the information provided (spouse, minor child, disabled, chronically ill, or not more than 10 years younger than the deceased).",
-        "1": "Why option B is WRONG - The 5-year rule applies when the original IRA owner dies BEFORE their required beginning date (RBD). Since Michael's father died at age 78, which is AFTER his RBD (age 73), the 5-year rule does not apply. Also, this option fails to address the requirement to continue taking annual RMDs.",
-        "2": "Why option C is CORRECT - Because Michael's father died after his Required Beginning Date (RBD), Michael, as a non-eligible designated beneficiary, is subject to the 10-year rule AND must continue taking annual Required Minimum Distributions (RMDs) based on his own life expectancy during those 10 years. The account must be fully distributed by the end of the tenth year following the year of the original owner's death.",
-        "3": "Why option D is WRONG - While the 10-year rule is applicable, this option incorrectly omits the requirement to take annual RMDs. Because Michael's father died after his Required Beginning Date (RBD), annual RMDs must continue to be taken during the 10-year distribution period."
-      },
-      "educational": "The SECURE Act and SECURE Act 2.0 significantly altered post-death distribution rules for retirement accounts. The intent is to accelerate tax revenue collection by limiting the 'stretch' IRA and mandating faster distributions. Understanding the difference between pre- and post-RBD deaths and the concept of 'Eligible Designated Beneficiaries' is crucial for navigating these complex rules and providing accurate advice.",
-      "examTip": "On the CFP exam, carefully identify whether the original account owner died before or after their Required Beginning Date (RBD) and whether the beneficiary qualifies as an 'Eligible Designated Beneficiary' to determine the correct distribution method.",
-      "memoryAid": "RBD = Required Beginning Date. Remember: If death occurs *after* RBD, RMDs continue during the 10-year period for non-eligible beneficiaries.",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 120,
-      "authorityRef": "IRC §401(a)(9)(H)",
-      "commonMistake": "Many candidates are confused by the SECURE Act and SECURE Act 2.0 rules regarding inherited IRAs, especially the elimination of the 'stretch' provision for most beneficiaries. A common trap is applying the old 'stretch' rules or the 5-year rule incorrectly. Test-takers often incorrectly assume that the 'stretch' provision is still available for all beneficiaries, or they misapply the exceptions to the 10-year rule."
     },
     {
       "id": "cfp-ret-018",
@@ -1750,41 +1715,6 @@
       "timeEstimate": 90,
       "authorityRef": "Social Security Handbook §206",
       "commonMistake": "Many candidates confuse the Social Security earnings test rules. A common trap is forgetting the reduction rate for earnings above the limit. Test-takers often incorrectly assume that the earnings test does not apply once someone starts receiving benefits."
-    },
-    {
-      "id": "cfp-ret-049",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "Defined benefit pension plans",
-      "subtopic": "Defined Benefit Calculations",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "A defined benefit plan uses a final average salary formula: 1.5% × years of service × final 3-year average salary. Mark has 28 years of service. His last 3 years' salaries were $95,000, $100,000, and $105,000. What is his annual pension benefit?",
-      "explanation": "**Correct Answer: A ($42,000)**\n\n**Calculation:**\n1. Final 3-year average: ($95,000 + $100,000 + $105,000) ÷ 3 = $100,000\n2. Benefit = 1.5% × 28 years × $100,000\n3. = 0.015 × 28 × $100,000 = $42,000\n\n**Why B would be wrong:** Using highest year only ($105,000) instead of 3-year average.",
-      "correctAnswer": 3,
-      "options": [
-        "$42,000",
-        "$44,100",
-        "$46,200",
-        "$42,000"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While the calculation is correct, the option letter is incorrect. The correct answer is B, not A.",
-        "1": "Why option B is WRONG - This answer is incorrect because it uses an incorrect percentage or number of years of service in the calculation. The correct formula is 1.5% * 28 years * $100,000, which does not equal $44,100. Also, the option letter is incorrect.",
-        "2": "Why option C is WRONG - This answer is incorrect because it uses an incorrect percentage or number of years of service in the calculation. The correct formula is 1.5% * 28 years * $100,000, which does not equal $44,100.",
-        "3": "Why option B is CORRECT - This option correctly calculates the annual pension benefit using the defined benefit formula. The final average salary is calculated as ($95,000 + $100,000 + $105,000) / 3 = $100,000. The annual benefit is then 1.5% * 28 years * $100,000 = $42,000."
-      },
-      "educational": "Defined benefit plans provide a specified retirement benefit based on factors like salary and years of service, shifting investment risk to the employer. Understanding these formulas is crucial for retirement planning as they directly impact the income a client can expect in retirement. These plans are less common now, having largely been replaced by defined contribution plans, but still exist and are important to understand for the CFP exam.",
-      "examTip": "On the CFP exam, carefully read the defined benefit formula provided in the question and ensure you use the correct salary average (e.g., final average salary, career average salary) and years of service. Double-check your calculations to avoid simple arithmetic errors.",
-      "memoryAid": "DB = % * YOS * FAS (Defined Benefit = Percentage * Years of Service * Final Average Salary)",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 150,
-      "authorityRef": "IRC §415(b)(1)(A)",
-      "commonMistake": "Many candidates forget to calculate the final average salary correctly. A common trap is to simply average the three salaries without considering the formula's application to the years of service and the 1.5% factor. Some test-takers may also misinterpret 'final average salary' to mean the highest salary earned, rather than the average of the last three years."
     },
     {
       "id": "cfp-ret-050",
@@ -3922,41 +3852,6 @@
       "commonMistake": "Test-takers often incorrectly assume WEP and GPO affect all Social Security recipients or only high earners. The exam exploits the misconception that these provisions are broad-based rather than targeted at specific situations. Option B is wrong because WEP/GPO only affect those with pensions from non-covered employment. Options C and D are incorrect because the provisions are not based on income or federal employment status."
     },
     {
-      "id": "cfp-ret-b11-011",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-1",
-      "topic": "Spousal and survivor benefits",
-      "subtopic": "Children\\'s Benefits",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Social Security benefits may be available to children when a parent:",
-      "explanation": "Children\\'s benefits: available when parent retires, disabled, or dies. Child must be: unmarried, under 18 (19 if full-time high school student), or disabled (if disability began before 22). Amount: up to 50% of parent\\'s benefit (retirement/disability) or 75% (death). Family maximum applies. Older parents with young children: valuable benefit. Often overlooked in planning.",
-      "correctAnswer": 2,
-      "options": [
-        "Only after parent\\",
-        ",\n      ",
-        "Is receiving unemployment benefits",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - This option is incomplete. Social Security benefits for children are also available when a parent becomes disabled or dies, not just upon retirement.",
-        "1": "Why option B is WRONG - This option is incomplete. Social Security benefits for children are also available when a parent retires or dies, not just upon disability.",
-        "2": "Why option C is CORRECT - Social Security provides dependent benefits to children when a parent retires, becomes disabled, or dies. These benefits are designed to provide financial support to families who have lost a primary income source due to these events. The child must meet specific criteria to be eligible, such as being unmarried and under a certain age or disabled.",
-        "3": "Why option D is WRONG - This option is incomplete. Social Security benefits for children are also available when a parent retires or becomes disabled, not just upon death."
-      },
-      "educational": "Social Security's dependent benefits are a crucial component of retirement and survivor planning. They provide a safety net for families facing reduced income due to retirement, disability, or death of a parent. Understanding the eligibility requirements and benefit amounts is essential for creating comprehensive financial plans, especially for clients with young children or those who may become disabled.",
-      "examTip": "When calculating Social Security benefits for a family, remember to consider the family maximum, which can limit the total amount paid to all beneficiaries based on one worker's earnings record.",
-      "memoryAid": "Remember 'RDD' - Retirement, Disability, Death - the three triggers for children's Social Security benefits.",
-      "reference": "Social Security Act, Title II",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Social Security Act §202(d)",
-      "commonMistake": "Many candidates forget the specific conditions under which children can receive Social Security benefits based on a parent's record. The exam exploits the misconception that benefits are only available after a parent's death or disability. The correct answer includes all qualifying events. Options A and B are incomplete and therefore incorrect."
-    },
-    {
       "id": "cfp-ret-b11-012",
       "courseId": "cfp",
       "section": "CFP-RET",
@@ -4552,41 +4447,6 @@
       "commonMistake": "Many candidates fail to adequately plan for the complexities of early retirement. The exam exploits the misconception that standard withdrawal strategies are sufficient. Test-takers often incorrectly assume that Social Security is the only consideration or that there are no special considerations for accessing retirement funds before age 59½."
     },
     {
-      "id": "cfp-ret-b12-004",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "Vesting schedules",
-      "subtopic": "Controlled Group Rules",
-      "difficulty": "hard",
-      "skillLevel": "Remembering and Understanding",
-      "question": "TechForward Solutions maintains a 401(k) plan covering its employees. To prevent discrimination, the plan must adhere to specific rules regarding eligibility and vesting. Concerning controlled group and affiliated service group rules for retirement plans, which of the following is TRUE?",
-      "explanation": "Controlled/affiliated groups: related businesses (80%+ common ownership or specific relationships) treated as one employer. Impacts: coverage testing, nondiscrimination, contribution limits applied across group. Example: owner of two 100%-owned businesses—both employees count for testing, limits shared. Complex family attribution rules. Affects plan design, compliance. Essential for business owners with multiple entities.",
-      "correctAnswer": 2,
-      "options": [
-        "Don\\",
-        ",\n      ",
-        ", the company matches employee contributions with company stock",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Without the actual options, it's impossible to provide a specific reason why option A is incorrect. However, generally, incorrect options regarding controlled groups often misstate the ownership percentage required for aggregation (e.g., using 50% instead of 80%) or incorrectly apply attribution rules.",
-        "1": "Why option B is WRONG - Without the actual options, it's impossible to provide a specific reason why option B is incorrect. However, common errors in incorrect options include misinterpreting the types of relationships that create an affiliated service group (e.g., not understanding the A-org, B-org, or F-org tests) or misapplying the consequences of being part of a controlled or affiliated service group.",
-        "2": "Why option C is CORRECT - Controlled group and affiliated service group rules treat related businesses as a single employer for qualified retirement plan purposes. This aggregation prevents employers from circumventing ERISA's non-discrimination and coverage requirements by establishing separate entities to benefit highly compensated employees while excluding rank-and-file employees. The rules ensure fair and equitable retirement plan benefits across the entire economic enterprise.",
-        "3": "Why option D is WRONG - Without the actual options, it's impossible to provide a specific reason why option D is incorrect. However, incorrect options often fail to recognize the impact of controlled group/affiliated service group status on contribution limits. For example, the annual compensation limit under IRC Section 401(a)(17) and the annual additions limit under IRC Section 415 apply across the entire controlled or affiliated service group."
-      },
-      "educational": "Controlled group and affiliated service group rules are designed to prevent employers from manipulating retirement plan coverage and benefits by dividing their business into multiple entities. These rules ensure that retirement plans provide benefits in a non-discriminatory manner, complying with ERISA and related tax code provisions. Understanding these rules is crucial for determining eligibility, contribution limits, and overall plan compliance, especially for business owners with multiple entities.",
-      "examTip": "On the CFP exam, carefully analyze ownership percentages and relationships between businesses to determine if controlled group or affiliated service group rules apply, as this affects plan qualification and compliance.",
-      "memoryAid": "Think of 'Control' and 'Affiliate' as 'Combined' – these rules combine related businesses for retirement plan purposes.",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §414(b), (c), (m)",
-      "commonMistake": "Without the options, it's impossible to pinpoint the exact mistake. However, a common trap is failing to recognize that controlled group and affiliated service group rules are designed to prevent employers from circumventing retirement plan requirements by artificially separating businesses. Test-takers often incorrectly assume that each entity can be treated entirely independently for retirement plan purposes."
-    },
-    {
       "id": "cfp-ret-b12-005",
       "courseId": "cfp",
       "section": "CFP-RET",
@@ -4760,41 +4620,6 @@
       "timeEstimate": 60,
       "authorityRef": "ERISA §206(d)(3)",
       "commonMistake": "Many candidates underestimate the power and specificity of a QDRO. A common trap is thinking a QDRO is optional or requires the participant's consent. Test-takers often incorrectly believe that a divorce decree automatically divides retirement assets, overlooking the need for a separate, qualified order."
-    },
-    {
-      "id": "cfp-ret-b12-010",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-1",
-      "topic": "Eligibility and benefit calculation",
-      "subtopic": "Benefit Calculation",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "John is planning for retirement and wants to understand how his Social Security benefits will be calculated. The Social Security PIA (Primary Insurance Amount) is calculated using which of the following?",
-      "explanation": "PIA formula: progressive—replaces higher percentage of lower earnings. Bend points (indexed annually): 90% of first portion of AIME + 32% of middle portion + 15% above upper bend point. Result: lower earners get higher replacement rate. COLA applied to PIA. Bend points adjust with wage growth. Understanding: why higher earners get lower replacement, why spousal benefit may be attractive for lower earner.",
-      "correctAnswer": 1,
-      "options": [
-        "Last 10 years\\",
-        ",\n      ",
-        "Highest 40 quarters",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Social Security's PIA calculation doesn't solely rely on the last 10 years of earnings. It considers a much longer earnings history, specifically the highest 35 years.",
-        "1": "Why option B is CORRECT - The Social Security PIA (Primary Insurance Amount) is calculated using a formula that considers an individual's Average Indexed Monthly Earnings (AIME) from their highest 35 years of earnings. These earnings are indexed to account for changes in average wages over the worker's career, ensuring a fair representation of their lifetime earnings.",
-        "2": "Why option D is WRONG - While the Social Security Administration uses a formula to determine the PIA, it's not based on a fixed percentage of total lifetime earnings. The formula is progressive, meaning it replaces a higher percentage of earnings for lower-income individuals.",
-        "3": "Why option D is WRONG - The Social Security PIA calculation does not use the last 5 years of earnings. It uses the highest 35 years of earnings, indexed for wage inflation, to determine the AIME, which is then used in the PIA formula."
-      },
-      "educational": "The Social Security PIA calculation is designed to provide a baseline retirement benefit that reflects a worker's lifetime earnings. By using the highest 35 years of indexed earnings, the formula aims to provide a more accurate and equitable benefit than simply using the most recent years, which might not be representative of a worker's entire career. The progressive nature of the PIA formula ensures that lower-income workers receive a higher replacement rate of their pre-retirement earnings.",
-      "examTip": "On the CFP exam, remember that understanding the PIA calculation is crucial for advising clients on retirement income planning, especially when integrating Social Security benefits with other retirement savings.",
-      "memoryAid": "35 Alive! (Highest 35 years of earnings keep the PIA alive!)",
-      "reference": "Social Security Act, Title II",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Social Security Act §215",
-      "commonMistake": "Without the options, it's impossible to pinpoint the exact mistake. However, a common trap is confusing the PIA calculation with a simple average of earnings. Test-takers often incorrectly assume that the PIA is based on a shorter or longer period than the 35 highest earning years, or that it's a simple average without the bend points."
     },
     {
       "id": "cfp-ret-b12-011",
@@ -5215,41 +5040,6 @@
       "timeEstimate": 60,
       "authorityRef": "IRC §401(a)(9), Reg. §1.401(a)(9)-2, A-6",
       "commonMistake": "Many candidates confuse the 'still-working exception' with other RMD rules. A common trap is thinking the exception applies to all retirement accounts. Test-takers often incorrectly assume the exception applies to all employers, overlooking that it only applies to the plan of the *current* employer."
-    },
-    {
-      "id": "cfp-ret-b12-024",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-1",
-      "topic": "Eligibility and benefit calculation",
-      "subtopic": "Disability Benefits",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Mark, age 52, has been diagnosed with a disability that prevents him from working. He has worked and paid Social Security taxes for many years. Which statement is TRUE regarding Social Security disability insurance (SSDI) benefits?",
-      "explanation": "SSDI: for workers with qualifying disability. Eligibility: work credits (varies by age), inability to perform substantial gainful activity, condition lasting 12+ months or terminal. Benefit: based on earnings record (like retirement). 5-month waiting period. At FRA: converts to retirement benefit (same amount). Medicare: after 24 months on SSDI. Application: complex process, often denied initially. Can work alongside planning.",
-      "correctAnswer": 1,
-      "options": [
-        "Don\\",
-        ",\n      ",
-        ", his policy's elimination period will begin, and benefits will be paid retroactively once that period is satisfied.",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - This option is missing key information about SSDI eligibility and benefit calculation. It doesn't address the work credit requirements, the definition of disability, or the earnings-based nature of the benefit.",
-        "1": "Why option B is CORRECT - SSDI provides benefits to workers who have accumulated sufficient work credits and are unable to engage in substantial gainful activity due to a medically determinable physical or mental impairment expected to last at least 12 months or result in death. The benefit amount is based on the worker's earnings history.",
-        "2": "Why option D is WRONG - This option likely contains incorrect or incomplete information about the duration of the disability or the criteria for substantial gainful activity. The specific details would need to be provided to offer a more precise explanation.",
-        "3": "Why option D is WRONG - This option likely contains incorrect or incomplete information about the duration of the disability or the criteria for substantial gainful activity. The specific details would need to be provided to offer a more precise explanation."
-      },
-      "educational": "Social Security Disability Insurance (SSDI) is designed to protect workers who become disabled and can no longer work. It's crucial to understand that SSDI eligibility hinges on both a medical determination of disability and a work history demonstrating sufficient contributions to the Social Security system. SSDI benefits can significantly impact retirement planning, especially for clients who become disabled before reaching retirement age, and understanding the interplay between SSDI and retirement benefits is essential.",
-      "examTip": "On the CFP exam, pay close attention to the wording of Social Security questions, especially regarding disability. Distinguish between SSDI and SSI (Supplemental Security Income), as they have different eligibility requirements and funding sources.",
-      "memoryAid": "SSDI: Sick, Sufficient, Salary-based, Safety net.",
-      "reference": "Social Security Act, Title II",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 45,
-      "authorityRef": "Social Security Act, Title II, Social Security Administration guidelines",
-      "commonMistake": "Many candidates are unaware of the specific eligibility requirements for SSDI. A common trap is thinking that anyone with a disability automatically qualifies. Test-takers often incorrectly assume that SSDI benefits are not available to younger individuals, overlooking the fact that eligibility is based on work history and disability criteria, not age."
     },
     {
       "id": "cfp-ret-b12-025",
@@ -6579,40 +6369,6 @@
       "timeEstimate": 60,
       "authorityRef": "IRC §408(p)(2)(C)",
       "commonMistake": "Many candidates confuse the SIMPLE IRA matching contribution with other retirement plan matching formulas. A common trap is applying a percentage other than the dollar-for-dollar match up to 3% of compensation. Test-takers often incorrectly recall the SIMPLE IRA matching rules."
-    },
-    {
-      "id": "cfp-ret-b3-013",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-3",
-      "topic": "Retirement income sustainability (4% rule, guardrails)",
-      "subtopic": "Withdrawal Strategies",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A retiree, age 65, has a $1,000,000 portfolio at the start of retirement. The \"4% rule\" for retirement withdrawals suggests that a retiree should:\nA) Withdraw 4% of the previous year's portfolio balance, adjusted for inflation.\nB) Withdraw 4% of the initial portfolio balance in the first year, then adjust that dollar amount for inflation in subsequent years.\nC) Withdraw 4% of the current year's portfolio balance.\nD) Withdraw 4% of the average portfolio balance over the past five years.",
-      "explanation": "The 4% rule (Bengen rule) involves withdrawing 4% of the initial portfolio value in year one, then adjusting that dollar amount annually for inflation. It aims for a 30-year portfolio survival.",
-      "correctAnswer": 1,
-      "options": [
-        "Withdraw 4% of the previous year\\",
-        ",\n      ",
-        "Withdraw 4% of the initial portfolio balance, adjusted annually for inflation",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Withdrawing 4% of the *previous* year's balance is incorrect. The 4% rule uses the *initial* portfolio balance in the *first* year of retirement to calculate the initial withdrawal amount. Subsequent years adjust for inflation.",
-        "C": "Why C is wrong (if wrong) - detailed educational explanation, minimum 80 characters",
-        "D": "Why D is wrong (if wrong) - detailed educational explanation, minimum 80 characters"
-      },
-      "educational": "The 4% rule is a guideline suggesting retirees withdraw 4% of their initial retirement portfolio in the first year, adjusting subsequent withdrawals for inflation. This aims to provide a sustainable income stream throughout retirement while minimizing the risk of outliving one's savings.",
-      "examTip": "Remember that the 4% rule is a guideline, not a guarantee, and should be adjusted based on individual circumstances and market conditions.",
-      "memoryAid": "Think of '4% Initial' - 4% of the *initial* portfolio value is the starting point for withdrawals.",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 60,
-      "authorityRef": "N/A - This is a guideline, not a legal standard",
-      "commonMistake": "Many candidates confuse the initial withdrawal amount with adjustments for inflation. A common trap is selecting an option that adjusts the withdrawal amount based on the *previous* year's portfolio balance, rather than the initial balance. Test-takers often incorrectly apply inflation adjustments."
     },
     {
       "id": "cfp-ret-b3-014",
@@ -8715,41 +8471,6 @@
       "commonMistake": "Many candidates forget the specific age requirement for 401(k) catch-up contributions. They might incorrectly associate it with years of service or income level. The exam exploits the misconception that catch-up contributions are available to all employees or only highly compensated ones."
     },
     {
-      "id": "cfp-ret-b5-024",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "401(k), 403(b), 457 plans",
-      "subtopic": "Required Contributions",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Greenfield Manufacturing wants to implement a Safe Harbor 401(k) plan. What is the *minimum* employer contribution for a Safe Harbor 401(k)?",
-      "explanation": "Safe Harbor 401(k) plans require minimum employer contributions to avoid ADP/ACP testing: either a matching formula (100% on first 3% + 50% on next 2% = 4% effective match) or a 3% nonelective contribution to all eligible employees. These contributions must be immediately 100% vested.",
-      "correctAnswer": 2,
-      "options": [
-        "10% of each employee\\",
-        ",\n      ",
-        "3% matching contribution on the first 3% deferred plus 2% on the next 2% deferred",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A 10% contribution is not a minimum requirement for a Safe Harbor 401(k). While an employer *could* contribute 10%, the minimum requirements are either a specific matching formula or a 3% nonelective contribution.",
-        "1": "Why option B is WRONG - This option is incomplete and doesn't provide a valid contribution percentage or formula. Safe Harbor 401(k) plans require a defined contribution method to satisfy the ADP/ACP testing exemption.",
-        "2": "Why option C is CORRECT - A Safe Harbor 401(k) plan must provide either a matching contribution (100% on the first 3% of employee compensation deferred and 50% on the next 2%) or a 3% nonelective contribution to all eligible employees, regardless of whether they defer. This allows the plan to bypass annual ADP/ACP nondiscrimination testing.",
-        "3": "Why option D is WRONG - This option is incomplete and doesn't provide a valid contribution percentage or formula. Safe Harbor 401(k) plans require a defined contribution method to satisfy the ADP/ACP testing exemption."
-      },
-      "educational": "Safe Harbor 401(k) plans were created to encourage broader employee participation in retirement savings, particularly among lower-paid employees. By requiring a minimum employer contribution that is immediately vested, these plans incentivize participation and help ensure that the plan doesn't disproportionately benefit highly compensated employees. This helps the plan avoid complex annual ADP/ACP testing, simplifying plan administration.",
-      "examTip": "On the CFP exam, remember that the key benefit of a Safe Harbor 401(k) is avoiding ADP/ACP testing, but this comes at the cost of mandatory employer contributions and immediate vesting.",
-      "memoryAid": "Safe Harbor = Safe from ADP/ACP testing (with minimum contributions).",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §401(k)(12)",
-      "commonMistake": "Test-takers often confuse the different types of Safe Harbor 401(k) plans and their corresponding contribution requirements. They might incorrectly recall the minimum employer contribution percentage or the matching formula. The exam exploits the misconception that any employer contribution qualifies as a Safe Harbor contribution."
-    },
-    {
       "id": "cfp-ret-b5-025",
       "courseId": "cfp",
       "section": "CFP-RET",
@@ -8993,41 +8714,6 @@
       "timeEstimate": 60,
       "authorityRef": "ERISA §203(a)",
       "commonMistake": "Many candidates incorrectly believe that forfeitures are either returned to the employee or donated to charity. The exam exploits the misconception that all contributions are treated the same way. They fail to recognize that unvested employer contributions revert to the plan to be reallocated."
-    },
-    {
-      "id": "cfp-ret-b6-007",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "Traditional and Roth IRAs",
-      "subtopic": "Spousal IRA",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "John is employed and his wife, Mary, does not work outside the home. John wants to save for Mary's retirement. A spousal IRA allows a non-working spouse to:\n\nA) Only receive rollover from the working spouse\nB) Contribute based on the working spouse's income\nC) \nD) ",
-      "explanation": "Spousal IRAs allow a non-working or low-earning spouse to contribute up to the annual limit ($7,500 for 2026, plus $1,000 catch-up if 50+) as long as the couple files jointly and the working spouse has sufficient earned income to cover both contributions. This maintains retirement savings for caregivers and non-working spouses.",
-      "correctAnswer": 1,
-      "options": [
-        "Only receive rollover from the working spouse",
-        "Contribute based on the working spouse\\",
-        ",\n      ",
-        "Contribute the maximum, regardless of income"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While rollovers can be made *into* a spousal IRA, this option suggests it's the *only* way funds can enter, which is incorrect. Contributions are the primary method of funding a spousal IRA, not just rollovers.",
-        "1": "Why option B is CORRECT - A spousal IRA allows a non-working or low-earning spouse to contribute to an IRA based on the working spouse's earned income. The working spouse must have sufficient earned income to cover the contributions to both their own IRA and the spousal IRA, and the couple must file jointly.",
-        "2": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect.",
-        "3": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect."
-      },
-      "educational": "Spousal IRAs are designed to address the disparity in retirement savings that can occur when one spouse is not employed or has significantly lower earnings. This provision recognizes the economic contributions of non-working spouses, such as caregivers, and allows them to build their own retirement nest egg. This is a key component of retirement planning, ensuring both spouses have financial security in retirement, and is often tested in conjunction with other IRA rules and contribution limits.",
-      "examTip": "When calculating IRA contributions for a couple, remember to first determine the working spouse's earned income and then allocate contributions to each spouse's IRA (including the spousal IRA) up to the applicable limits. Be mindful of catch-up contributions for those age 50 or older.",
-      "memoryAid": "Think of 'Spousal Support' for retirement. The working spouse 'supports' the non-working spouse's IRA contributions.",
-      "reference": "IRC Section 408",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §408(d)",
-      "commonMistake": "Many candidates forget that spousal IRAs exist and incorrectly assume that a non-working spouse cannot contribute to an IRA. The exam exploits the misconception that only individuals with earned income can contribute to an IRA. They overlook the special provision for spousal IRAs, which allows contributions based on the working spouse's income."
     },
     {
       "id": "cfp-ret-b6-008",
@@ -9798,40 +9484,6 @@
       "timeEstimate": 90,
       "authorityRef": "IRC §416",
       "commonMistake": "Test-takers often confuse the definition of a top-heavy plan. The exam exploits the misconception that a top-heavy plan is simply one that is overfunded or has too many participants. Many candidates incorrectly focus on contribution limits rather than the concentration of assets among key employees."
-    },
-    {
-      "id": "cfp-ret-b7-006",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "SEP-IRA and SIMPLE IRA",
-      "subtopic": "SIMPLE 401(k)",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Sarah owns a small consulting business, \"Sarah's Solutions\". She wants to establish a retirement plan for herself and her employees. How does a SIMPLE 401(k) differ from a regular 401(k)?",
-      "explanation": "SIMPLE 401(k) is for employers with ≤100 employees. Lower salary deferral limits ($17,000 in 2026) but no ADP/ACP testing. Employers must provide matching (up to 3%) or 2% non-elective contribution. More features than SIMPLE IRA (loans, Roth) but more complex.",
-      "correctAnswer": 1,
-      "options": [
-        "It has higher contribution limits",
-        "It\\",
-        ",\n      ",
-        "s available only to self-employed individuals"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - A SIMPLE 401(k) has lower contribution limits than a regular 401(k). In 2024, the salary deferral limit for a SIMPLE 401(k) is $16,000 (with a $3,500 catch-up for those age 50+), while the regular 401(k) limit is $23,000 (with a $7,500 catch-up for those age 50+).",
-        "C": "Why option C is WRONG - This option is incomplete and therefore cannot be a correct answer.",
-        "D": "Why option D is WRONG - While self-employed individuals *can* utilize retirement plans, a SIMPLE 401(k) is not exclusively for them. It's available to small businesses, which can include businesses owned by self-employed individuals, but also businesses with multiple employees."
-      },
-      "educational": "SIMPLE 401(k) plans are designed to be easier and less expensive for small businesses to administer than traditional 401(k) plans. The trade-off for this simplicity is generally lower contribution limits and mandatory employer contributions (either a matching contribution or a non-elective contribution). Understanding the differences between retirement plan options is crucial for advising small business owners on selecting the plan that best fits their needs and budget.",
-      "examTip": "On the CFP exam, carefully note the employer size when a 401(k) or SIMPLE IRA/401(k) is mentioned. This is a key indicator for identifying the appropriate plan type and its associated rules.",
-      "memoryAid": "SIMPLE = Small, Inexpensive, Matching, Plan for Employees",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §408(p)",
-      "commonMistake": "Many candidates confuse the contribution limits and eligibility requirements of SIMPLE IRAs and SIMPLE 401(k)s with those of traditional 401(k)s. A common trap is assuming that all 401(k) plans have the same rules, when SIMPLE 401(k)s are designed for smaller businesses and have simpler administrative requirements, but also lower contribution limits."
     },
     {
       "id": "cfp-ret-b7-007",
@@ -11621,40 +11273,6 @@
       "commonMistake": "Many candidates focus on the age aspect of 72(t) distributions but fail to fully grasp the 'substantially equal periodic payments' requirement and the penalties for modification. They may also confuse the rules with other early withdrawal exceptions."
     },
     {
-      "id": "cfp-ret-b9-009",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "Required Minimum Distributions (RMDs)",
-      "subtopic": "Designated Beneficiary",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Under SECURE Act rules, a \"designated beneficiary\" who is not an eligible designated beneficiary must:",
-      "explanation": "Post-SECURE Act: designated beneficiaries (individuals) who aren\\'t \"eligible\" (spouse, minor child, disabled, chronically ill, not-more-than-10-years-younger) face 10-year rule—must drain account by December 31 of the year containing the 10th anniversary of death. No annual RMDs required (updated guidance clarified this), but full distribution by year 10.",
-      "correctAnswer": 2,
-      "options": [
-        "Follow the owner\\",
-        ",\n      ",
-        "Must deplete the account within ten years, regardless of the owner's age at death",
-        "s death"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - The SECURE Act's 10-year rule does not require the beneficiary to follow the account owner's life in any way. The beneficiary's life expectancy is irrelevant for non-eligible designated beneficiaries.",
-        "B": "Why option B is WRONG - This option is incomplete and doesn't provide a coherent action for the beneficiary. The 10-year rule is about *when* the account must be emptied, not simply a vague instruction.",
-        "D": "Why option D is WRONG - While the 10-year rule is triggered by the account owner's death, this option is incomplete. It doesn't specify the action the beneficiary must take, which is to fully distribute the assets within the 10-year period."
-      },
-      "educational": "The SECURE Act significantly altered the rules for inherited retirement accounts, particularly for non-eligible designated beneficiaries. The 10-year rule was implemented to accelerate tax revenue collection and limit the stretch IRA strategy, where beneficiaries could take distributions over their lifetime, potentially deferring taxes for decades. Understanding the nuances of eligible vs. non-eligible designated beneficiaries is crucial for advising clients on estate and retirement planning.",
-      "examTip": "On the CFP exam, carefully identify whether a beneficiary is an 'eligible designated beneficiary' as their distribution options differ significantly. Pay close attention to the age of the beneficiary, especially if they are a minor child, as they may transition from eligible to non-eligible upon reaching the age of majority.",
-      "memoryAid": "10-Year Rule: Think 'D-10' – Death triggers the 10-year clock for non-eligible beneficiaries.",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §401(a)(9)(E)",
-      "commonMistake": "The SECURE Act's 10-year rule is a relatively new concept, and many test-takers are still familiar with the old 'stretch IRA' rules. They may also confuse the different types of beneficiaries (eligible vs. non-eligible)."
-    },
-    {
       "id": "cfp-ret-b9-010",
       "courseId": "cfp",
       "section": "CFP-RET",
@@ -12078,40 +11696,6 @@
       "commonMistake": "Many candidates are unaware of the impact of automatic enrollment on 401(k) plan participation. The exam exploits the misconception that employee consent is always required for enrollment. Test-takers often incorrectly believe that automatic enrollment reduces participation or is now prohibited, overlooking its effectiveness in increasing savings rates, especially with the SECURE 2.0 Act provisions."
     },
     {
-      "id": "cfp-ret-b9-023",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "Required Minimum Distributions (RMDs)",
-      "subtopic": "Inherited IRA Trusts",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "Maria is evaluating beneficiary options for her IRA. She's considering naming a trust. Distribution rules for a trust as IRA beneficiary depend on whether it is a(n):\nA) See-through trust\nB) Accumulation trust\nC) Revocable trust\nD) Irrevocable trust",
-      "explanation": "Trust as IRA beneficiary: \"see-through\" (valid, irrevocable at death, identifiable beneficiaries, documentation provided) can use beneficiary rules. Conduit trust: distributes all RMDs to beneficiaries (their life expectancies used). Accumulation trust: can retain distributions (oldest beneficiary\\'s life expectancy). Non-see-through trusts: 5-year rule. Complex—requires careful drafting.",
-      "correctAnswer": 0,
-      "options": [
-        "Whether it\\",
-        "see-through",
-        ",\n      ",
-        "The estate"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "B": "Why option B is WRONG - Option B is incomplete. While the concept of a 'see-through' trust is critical, the question requires a complete statement about the dependency of distribution rules. It doesn't fully capture the nuance of how the trust's structure impacts distribution options.",
-        "C": "Why option C is WRONG - Option C is incomplete and lacks context. It doesn't provide any meaningful information about the factors determining IRA distribution rules when a trust is the beneficiary.",
-        "D": "Why option D is WRONG - Option D is incomplete and lacks context. It doesn't provide any meaningful information about the factors determining IRA distribution rules when a trust is the beneficiary."
-      },
-      "educational": "The 'see-through' trust rules are designed to balance the tax benefits of retirement accounts with the desire to ensure funds are eventually distributed. By allowing distributions based on beneficiary life expectancies, the IRS aims to prevent perpetual tax deferral while still providing flexibility for estate planning. Understanding the nuances of conduit vs. accumulation trusts within the 'see-through' framework is crucial for optimizing retirement income and minimizing tax liabilities for clients.",
-      "examTip": "On the CFP exam, pay close attention to the specific wording of trust provisions when analyzing IRA beneficiary designations. Determine if the trust meets the requirements of a 'see-through' trust (valid under state law, irrevocable, identifiable beneficiaries, and proper documentation) to correctly apply the distribution rules.",
-      "memoryAid": "VITID: Valid, Irrevocable, Timely (documentation), Identifiable, Death. These are the requirements for a trust to be considered a see-through trust.",
-      "reference": "IRC Section 401",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC §401(a)(9)",
-      "commonMistake": "Many candidates are unaware of the specific requirements for trusts named as IRA beneficiaries. The exam exploits the misconception that any trust can be named as a beneficiary without affecting RMD calculations. Test-takers often incorrectly believe that revocable or irrevocable status is the sole determinant, overlooking the crucial 'see-through' trust requirements that allow for life expectancy payouts."
-    },
-    {
       "id": "cfp-ret-b9-024",
       "courseId": "cfp",
       "section": "CFP-RET",
@@ -12215,41 +11799,6 @@
       "timeEstimate": 90,
       "authorityRef": "SECURE 2.0 Act of 2022, Section 126",
       "commonMistake": "Many candidates are unaware of the specific rules and limitations surrounding 529 plan rollovers to Roth IRAs under SECURE 2.0. The exam exploits the misconception that the rollover is unlimited or has no restrictions. Test-takers often incorrectly believe that the rollover is only available for accounts opened before a certain date or that the rolled-over amount is fully taxable, overlooking the 15-year rule, annual contribution limits, and lifetime cap."
-    },
-    {
-      "id": "cfp-ret-sec2-002",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "Traditional and Roth IRAs",
-      "subtopic": "529 to Roth Conversion",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "A client\\'s child received a full scholarship, leaving $50,000 in a 529 plan opened 16 years ago. Under SECURE 2.0, which strategy BEST utilizes these funds?",
-      "explanation": "Best strategy: roll to Roth IRA up to annual limits ($7,000/year) until hitting $35,000 lifetime cap. Start child\\'s Roth early for decades of tax-free growth. Remaining $15,000+ can be used for other qualified expenses (graduate school, sibling education), changed beneficiary, or withdrawn (scholarship exception = no 10% penalty on amount = scholarship).",
-      "correctAnswer": 2,
-      "options": [
-        "Leave the account until the child has grandchildren",
-        "Change beneficiary to a cousin who will never attend college",
-        "Roll $7,000 annually to the child\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While leaving the account for future generations is an option, it doesn't take advantage of the SECURE 2.0 Roth IRA rollover provision, which offers a more immediate and potentially beneficial use of the funds for the original beneficiary.",
-        "1": "Why option B is WRONG - Changing the beneficiary to a cousin who will not attend college would likely result in a non-qualified withdrawal, subject to income tax and a 10% penalty on the earnings portion. This is a less tax-efficient strategy than utilizing the SECURE 2.0 Roth IRA rollover.",
-        "2": "Why option C is CORRECT - The SECURE 2.0 Act allows for a rollover from a 529 plan to a Roth IRA for the beneficiary, subject to certain conditions. This includes a lifetime limit of $35,000, annual limits (currently $7,000, but subject to change), and the 529 plan must have been open for more than 15 years. This strategy allows the child to start building tax-advantaged retirement savings early.",
-        "3": "Why option D is WRONG - Option D is incomplete and doesn't provide a viable strategy. It is therefore incorrect."
-      },
-      "educational": "The SECURE 2.0 Act introduced a provision allowing 529 plan assets to be rolled into a Roth IRA, addressing situations where beneficiaries don't need the funds for education. This provision aims to provide flexibility and encourage retirement savings. Understanding the conditions and limitations of this rollover is crucial for retirement planning and maximizing tax benefits for clients.",
-      "examTip": "When evaluating 529 plan scenarios on the CFP exam, remember to consider the SECURE 2.0 Roth IRA rollover as a potential strategy, especially when scholarships or other circumstances leave excess funds in the account. Pay close attention to the 15-year rule, lifetime limits, and annual contribution limits.",
-      "memoryAid": "529 to Roth: SECURE Act gives a shot! (Remember the 15-year rule and $35k pot).",
-      "reference": "SECURE 2.0 Act of 2022",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 120,
-      "authorityRef": "SECURE 2.0 Act of 2022, Section 126",
-      "commonMistake": "Many candidates fail to recognize the best strategy for utilizing excess 529 plan funds after a beneficiary receives a full scholarship, especially considering the SECURE 2.0 Act's provisions. The exam exploits the misconception that leaving the account untouched or changing the beneficiary to a distant relative are the only viable options. Test-takers often incorrectly overlook the possibility of rolling over funds to a Roth IRA for the original beneficiary, subject to certain limitations."
     },
     {
       "id": "cfp-ret-sec2-003",
@@ -12390,41 +11939,6 @@
       "timeEstimate": 60,
       "authorityRef": "SECURE 2.0 Act of 2022, Section 109",
       "commonMistake": "Many candidates are confused about the age requirements for the enhanced catch-up provisions under SECURE 2.0. The SECURE 2.0 enhanced catch-up applies to those ages 60-63. A common trap is assuming the enhanced catch-up applies to all participants over 50, or that it is based on income level. The exam exploits the misconception that catch-up contributions are uniform across all retirement plans and ages."
-    },
-    {
-      "id": "cfp-ret-sec2-007",
-      "courseId": "cfp",
-      "section": "CFP-RET",
-      "blueprintArea": "RET-2",
-      "topic": "401(k), 403(b), 457 plans",
-      "subtopic": "Roth Employer Match",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "TechForward Inc. is considering allowing employer matching contributions to be made on a Roth basis under SECURE 2.0. This means:\nA) Both employer and employee pay tax on the contribution\nB) Neither employer nor employee pays current tax; it grows tax deferred\nC) The employee pays tax on the contribution, but the employer does not\nD) The employee does not pay tax on the contribution, but the employer does.",
-      "explanation": "Roth employer match (effective 2023): Employee can elect for employer match/nonelective contributions to go to designated Roth account. Employer still deducts; employee includes in current income (W-2). Benefit: growth is tax-free. 100% immediately vested when Roth (employer contribution vesting still applies for forfeiture). Must be fully vested if Roth. Good for those expecting higher future tax rates.",
-      "correctAnswer": 3,
-      "options": [
-        "Both employer and employee pay tax on the contribution",
-        "Neither employer nor employee pays current tax; it\\",
-        ",\n      ",
-        "Only the employee pays tax on the contribution, but the employer does not."
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Only the employee pays tax on the contribution. The employer receives a deduction for the matching contribution, so they do not pay tax on it.",
-        "1": "Why option B is WRONG - The employee pays current income tax on the Roth employer match. The employer receives a deduction, so they do not pay tax on the contribution.",
-        "2": "Why option C is WRONG - The employee pays current income tax on the Roth employer match. The employer receives a deduction, so they do not pay tax on the contribution. The benefit is tax-free growth and distributions.",
-        "3": "Why option D is CORRECT - With a Roth employer match, the employer receives a tax deduction, and the employee includes the matching contribution in their current taxable income. This allows the contributions and subsequent earnings to grow tax-free, and qualified distributions are also tax-free."
-      },
-      "educational": "SECURE 2.0 introduced the option for employer matching contributions to be made on a Roth basis. This means the employee pays income tax on the contribution upfront, but all future growth and qualified distributions are tax-free. This is beneficial for individuals who anticipate being in a higher tax bracket in retirement, as it allows them to pay taxes now at a potentially lower rate and avoid taxes on the accumulated earnings later. This ties into the broader retirement planning goal of minimizing lifetime taxes.",
-      "examTip": "When answering questions about Roth employer contributions, remember that the employee pays taxes upfront, and the employer receives a deduction. Focus on the tax implications for both parties involved.",
-      "memoryAid": "REMEMBER: Roth Employer Match = Employee pays tax NOW, Employer gets deduction NOW, Tax-Free Later.",
-      "reference": "SECURE 2.0 Act of 2022",
-      "sourceFile": "retirement.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC §402(g)",
-      "commonMistake": "Many candidates struggle with the tax implications of Roth contributions, especially when employer matching is involved. Only the employee pays tax on the contribution. A common trap is thinking that both the employer and employee pay tax, or that neither pays tax currently. The exam exploits the misconception that employer matching contributions are always tax-deferred, even in a Roth context."
     },
     {
       "id": "cfp-ret-sec2-008",

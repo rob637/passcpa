@@ -325,7 +325,7 @@ class SubscriptionService {
           for (const key of corruptedKeys) {
             fixUpdate[key] = deleteField();
           }
-          updateDoc(doc(db, 'subscriptions', userId), fixUpdate).catch(() => {});
+          updateDoc(doc(db, 'subscriptions', userId), fixUpdate).catch((e) => { logger.warn('Failed to fix corrupted subscription keys:', e); });
         }
 
         // Deserialize per-exam paid subscriptions map
@@ -570,39 +570,78 @@ class SubscriptionService {
   }
 
   /**
-   * Check if user is in active trial period
+   * Check if user is in active trial period.
+   * Checks per-exam trials map first, then legacy trialEnd field.
    */
-  async isInTrial(userId: string): Promise<boolean> {
+  async isInTrial(userId: string, courseId?: string): Promise<boolean> {
     const subscription = await this.getUserSubscription(userId);
     if (!subscription) return false;
     
+    const now = new Date();
+    
+    // Check per-exam trials map first
+    if (courseId && subscription.trials?.[courseId]) {
+      return now < subscription.trials[courseId].endDate;
+    }
+    
+    // Check any active per-exam trial if no courseId specified
+    if (!courseId && subscription.trials) {
+      for (const trial of Object.values(subscription.trials)) {
+        if (now < trial.endDate) return true;
+      }
+    }
+    
+    // Legacy fallback
     if (subscription.status !== 'trialing') return false;
     if (!subscription.trialEnd) return false;
-    
-    return new Date() < subscription.trialEnd;
+    return now < subscription.trialEnd;
   }
 
   /**
-   * Get days remaining in trial
+   * Get days remaining in trial.
+   * Checks per-exam trials map first, then legacy trialEnd field.
    */
-  async getTrialDaysRemaining(userId: string): Promise<number> {
+  async getTrialDaysRemaining(userId: string, courseId?: string): Promise<number> {
     const subscription = await this.getUserSubscription(userId);
-    if (!subscription?.trialEnd) return 0;
+    if (!subscription) return 0;
     
     const now = new Date();
+    
+    // Check per-exam trials map first
+    if (courseId && subscription.trials?.[courseId]) {
+      const diff = subscription.trials[courseId].endDate.getTime() - now.getTime();
+      return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+    }
+    
+    // Legacy fallback
+    if (!subscription.trialEnd) return 0;
     const diff = subscription.trialEnd.getTime() - now.getTime();
     return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
   }
 
   /**
-   * Get user's current plan limits
+   * Get user's current plan limits for a specific exam.
+   * Checks per-exam paidExams/trials first, then falls back to legacy fields.
    */
-  async getPlanLimits(userId: string): Promise<PlanLimits> {
+  async getPlanLimits(userId: string, courseId?: string): Promise<PlanLimits> {
     const subscription = await this.getUserSubscription(userId);
-    const tier = subscription?.tier || 'free';
-    
-    // Check if subscription is still valid
-    if (subscription?.status !== 'active' && subscription?.status !== 'trialing') {
+    if (!subscription) return SUBSCRIPTION_PLANS.free.limits;
+
+    // Per-exam check: if courseId provided, check paidExams and trials maps
+    if (courseId) {
+      const paidExam = subscription.paidExams?.[courseId];
+      if (paidExam && paidExam.status === 'active') {
+        return SUBSCRIPTION_PLANS[paidExam.tier].limits;
+      }
+      const trial = subscription.trials?.[courseId];
+      if (trial && new Date() < trial.endDate) {
+        return SUBSCRIPTION_PLANS.free.limits; // Trial = free-tier limits (currently unlimited)
+      }
+    }
+
+    // Legacy fallback: check root tier/status
+    const tier = subscription.tier || 'free';
+    if (subscription.status !== 'active' && subscription.status !== 'trialing') {
       return SUBSCRIPTION_PLANS.free.limits;
     }
 

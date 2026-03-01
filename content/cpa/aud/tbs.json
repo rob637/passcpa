@@ -562,6 +562,12 @@
             "Review inventory for obsolescence",
             "Analyze pricing and cost trends",
             "All are appropriate responses"
+          ],
+          "items": ["DSO increased significantly", "Gross margin declined", "Inventory turnover slowed"],
+          "correctAnswers": [
+            { "item": "DSO increased significantly", "answer": "Test AR aging and subsequent collections" },
+            { "item": "Gross margin declined", "answer": "Analyze pricing and cost trends" },
+            { "item": "Inventory turnover slowed", "answer": "Review inventory for obsolescence" }
           ]
         },
         {

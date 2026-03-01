@@ -2,42 +2,8 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-GEN",
   "exportedAt": "2026-02-25T22:37:03.022Z",
-  "count": 321,
+  "count": 305,
   "questions": [
-    {
-      "id": "cfp-cross-009",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "529 plans (qualified tuition programs)",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "The Johnson family has a 16-year-old planning to attend college in 2 years. They have $80,000 available. Grandparents want to contribute $50,000 as well. The family's AGI is $180,000. Which approach MAXIMIZES both tax benefits and financial aid eligibility?",
-      "explanation": "**Cross-Domain Analysis (General Principles + Investment + Tax):**\n\nThis integrates education planning, investment vehicles, and tax/financial aid implications.\n\n**Financial Aid Considerations (FAFSA):**\n\n**Parent-Owned 529:**\n- Counted as parent asset (5.64% expected contribution)\n- Distributions don't count as income\n\n**Grandparent-Owned 529:**\n- NOT counted as asset (good)\n- BUT: Distributions counted as STUDENT INCOME (bad)\n- Student income assessed at 50%!\n- Destroys financial aid for following year\n\n**The \"Grandparent 529 Trap\":**\n- If grandparents own and distribute during junior year\n- Next year's FAFSA shows $25K \"student income\"\n- Aid reduced by ~$12,500\n\n**Why C is optimal:**\n- Parent-owned 529 = minimal asset impact (5.64% × $80K = ~$4,500 EFC impact)\n- Grandparent waits to distribute in child's FINAL college year\n- No more FAFSAs after that = no income reporting issue\n- OR: Use new FAFSA rules that may improve treatment\n\n**Why other options fail:**\n- A: Putting in child's name = still parent ownership; same as C but grandparents excluded\n- B: Distribution during college kills aid\n- D: UTMA is child's asset = 20% EFC rate (worst)\n\n**Key Integration:** Education funding requires understanding account ownership, timing, and financial aid formulas.",
-      "correctAnswer": 2,
-      "options": [
-        "Parents open a 529 in child\\",
-        ",\n      ",
-        "Parents purchase a zero-coupon bond maturing in 2 years",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While opening a 529 account in the child's name allows for tax-advantaged growth and potential state tax benefits (if applicable), it doesn't address the grandparent's contribution and its potential negative impact on financial aid. It's incomplete because it doesn't maximize both tax benefits and financial aid eligibility, especially considering the grandparent's significant contribution.",
-        "1": "Why option B is WRONG - Distributing grandparent-owned 529 funds during the student's college years, particularly before the final year, is detrimental to financial aid eligibility. Distributions from grandparent-owned 529 plans are treated as student income, which is assessed at a high rate (50% under FAFSA), significantly reducing the student's eligibility for need-based aid in the following year.",
-        "2": "Why option C is CORRECT - This strategy maximizes both tax benefits and financial aid eligibility. The parent-owned 529 allows for tax-advantaged growth and distributions for qualified education expenses. Delaying the grandparent's 529 distribution until the child's final year of college avoids the negative impact on financial aid calculations, as there will be no subsequent FAFSA to report the distribution as student income. This is the most strategic approach to leverage all available resources without jeopardizing financial aid.",
-        "3": "Why option D is WRONG - A UTMA (Uniform Transfers to Minors Act) account is considered the child's asset, which is assessed at a much higher rate (20% under FAFSA) than parental assets (5.64%). This significantly reduces financial aid eligibility compared to a parent-owned 529 plan. While UTMAs offer flexibility, they are generally not the most advantageous option for college savings when financial aid is a concern."
-      },
-      "educational": "Understanding the FAFSA's treatment of assets and income is crucial for effective education planning. Parent-owned assets are assessed at a lower rate than student-owned assets, and distributions from grandparent-owned 529 plans are treated as student income, which can severely impact financial aid eligibility. This knowledge allows planners to strategically structure college savings to maximize both tax benefits and financial aid opportunities.",
-      "examTip": "Remember the 'Grandparent 529 Trap' on the CFP exam: distributions from grandparent-owned 529 plans are treated as student income, which can significantly reduce financial aid eligibility. Advise clients to delay these distributions until the student's final year of college or explore alternative strategies.",
-      "memoryAid": "Grandparents' Gift, Last Year Lift: Delay grandparent 529 distributions until the student's final year to avoid the FAFSA income hit.",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 150,
-      "authorityRef": "IRC Section 529",
-      "commonMistake": "Many candidates focus solely on the tax benefits of 529 plans and overlook the impact on financial aid eligibility. A common trap is assuming that any 529 contribution is beneficial, without considering the source of the funds and the timing of the contribution relative to college enrollment. Grandparent-owned 529 plans are often treated less favorably in financial aid calculations."
-    },
     {
       "id": "cfp-gen-001",
       "courseId": "cfp",
@@ -494,40 +460,6 @@
       "commonMistake": "Many candidates confuse the contribution limits and income restrictions of Coverdell ESAs with 529 plans. A common trap is assuming high-income earners are ineligible for all education savings plans. Some test-takers may focus on the perceived 'flexibility' of UGMA accounts without considering the potential negative impact on financial aid eligibility."
     },
     {
-      "id": "cfp-gen-014",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "Financial aid considerations (FAFSA/EFC)",
-      "subtopic": "Financial Aid",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "For FAFSA purposes, which asset has the GREATEST negative impact on a dependent student's Expected Family Contribution (EFC)?",
-      "explanation": "**Correct Answer: B (Student's savings account)**\\n\\n**FAFSA Asset Assessment Rates:**\\n\\n**Student Assets:** 20% per year\\n- Savings, checking, investments in student's name\\n- UGMA/UTMA accounts\\n\\n**Parent Assets:** Up to 5.64%\\n- 529 plans owned by parent\\n- Brokerage accounts\\n\\n**Not Counted:**\\n- Retirement accounts (401k, IRA)\\n- Primary residence equity\\n- Grandparent-owned 529s (until distribution)\\n\\n**Ranking of negative impact:**\\n1. Student savings (20%)\\n2. Parent 529 (5.64%)\\n3. Grandparent 529 (0% until distributed)\\n4. Retirement accounts (0%)",
-      "correctAnswer": 1,
-      "options": [
-        "Parent",
-        ",\n      ",
-        "s savings account in their name",
-        "Parent-owned 529 plan"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Parent assets are assessed at a much lower rate (up to 5.64%) than student assets (20%) under the FAFSA formula, making them less impactful on the EFC.",
-        "C": "Why option C is WRONG - While a student's checking account is considered an asset for FAFSA purposes and assessed at 20%, the question asks for the *greatest* negative impact. A savings account is generally assumed to hold a larger balance than a checking account, thus having a greater impact on the EFC.",
-        "D": "Why option D is WRONG - Parent-owned 529 plans are considered parental assets and are assessed at a maximum rate of 5.64% under the FAFSA formula. This is significantly lower than the assessment rate for student assets."
-      },
-      "educational": "The FAFSA aims to determine a family's ability to contribute to college costs. Student assets are assessed at a higher rate than parent assets because the assumption is that students should contribute a larger portion of their own savings towards their education. Understanding the FAFSA formula and asset assessment rates is crucial for effective education planning and helping clients maximize financial aid eligibility.",
-      "examTip": "Remember that student assets are assessed at a significantly higher rate (20%) than parent assets (up to 5.64%) on the FAFSA. This difference can drastically impact a student's eligibility for need-based financial aid.",
-      "memoryAid": "Students Sacrifice Savings: Student assets have a higher impact on FAFSA.",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 90,
-      "authorityRef": "FAFSA Guidelines",
-      "commonMistake": "A common trap is focusing on parent-owned assets without considering the differential treatment of student assets. Many candidates incorrectly believe that parent-owned 529 plans have the greatest negative impact because they are considered parental assets. The exam exploits the misconception that all assets are treated equally in the EFC calculation."
-    },
-    {
       "id": "cfp-gen-015",
       "courseId": "cfp",
       "section": "CFP-GEN",
@@ -631,41 +563,6 @@
       "timeEstimate": 120,
       "authorityRef": "Mortgage Amortization Principles",
       "commonMistake": "Many candidates underestimate the impact of a shorter loan term on the monthly payment. A common trap is focusing solely on the interest rate difference without considering the significantly faster principal repayment of a 15-year mortgage. The exam exploits the misconception that the interest rate is the only factor affecting monthly mortgage payments."
-    },
-    {
-      "id": "cfp-gen-018",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Personal financial statements",
-      "subtopic": "Implementation",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "During which step of the financial planning process should a CFP® professional discuss the pros and cons of various insurance company products with a client?",
-      "explanation": "**Correct Answer: C (Step 4: Developing Recommendations)**\\n\\n**7-Step Financial Planning Process:**\\n1. Understanding circumstances (engagement)\\n2. Gathering information (data collection)\\n3. Analyzing information (evaluate current situation)\\n4. **Developing recommendations** (present options, pros/cons)\\n5. Implementing recommendations (execute)\\n6. Monitoring progress\\n7. Updating the plan\\n\\n**Step 4 Focus:**\\n- Present alternative strategies\\n- Discuss trade-offs and implications\\n- Make specific recommendations\\n- Ensure client understands options before choosing",
-      "correctAnswer": 3,
-      "options": [
-        "Step 1: Understanding the Client",
-        ",\n      ",
-        "Step 5: Developing the Financial Plan",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Step 1, Understanding the Client, focuses on establishing the client-planner relationship and gathering preliminary information about the client's financial situation, goals, and values. Discussing specific insurance products at this stage would be premature as the client's needs haven't been fully assessed.",
-        "1": "Why option B is WRONG - Step 2, Gathering Information, involves collecting detailed data about the client's current financial situation, including assets, liabilities, income, expenses, and existing insurance coverage. While you might identify the *need* for insurance during this step, you wouldn't yet be comparing specific products.",
-        "2": "Why option C is WRONG - Step 5, Implementing the Recommendations, involves putting the financial plan into action. By this stage, the client should have already decided on the specific insurance product based on the pros and cons discussed earlier. This step focuses on the execution of the chosen strategy.",
-        "3": "Why option D is CORRECT - Step 4, Developing the Recommendations, is when the CFP® professional formulates and presents potential financial planning solutions to the client. This includes discussing the pros and cons of various insurance company products, comparing features, costs, and benefits to help the client make an informed decision aligned with their needs and goals. This step directly addresses the question's scenario."
-      },
-      "educational": "The financial planning process is a systematic approach to helping clients achieve their financial goals. Step 4, Developing the Recommendations, is crucial because it bridges the gap between analysis and action. It's where the planner presents tailored solutions, considering the client's risk tolerance, time horizon, and financial resources. Failing to adequately present and discuss options during this stage can lead to unsuitable recommendations and potential ethical violations under the CFP Board's Standards of Conduct.",
-      "examTip": "Remember that the CFP Board emphasizes a client-centric approach. When answering questions about the financial planning process, always consider what action best serves the client's understanding and decision-making ability at each stage.",
-      "memoryAid": "Think of Step 4 as 'Developing Decisions' – it's where you help the client develop informed decisions by presenting and comparing options.",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Practice Standard 400-2: Developing the Recommendation(s)",
-      "commonMistake": "Test-takers often incorrectly assume that insurance product discussions should occur earlier in the financial planning process. A common trap is thinking that these discussions are part of gathering information or analyzing the client's current situation. The exam exploits the misconception that product recommendations are made before a thorough analysis and development of recommendations."
     },
     {
       "id": "cfp-gen-019",
@@ -2278,41 +2175,6 @@
       "commonMistake": "Many candidates confuse NPV with profitability or risk assessment. The exam exploits the misconception that a positive NPV guarantees a profit in absolute dollar terms, overlooking the fact that it represents a return exceeding the required rate of return, not necessarily a risk-free investment."
     },
     {
-      "id": "cfp-gen-065",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "Professional responsibility",
-      "subtopic": "Fiduciary vs Suitability",
-      "difficulty": "medium",
-      "skillLevel": "Remembering",
-      "question": "As a CFP® professional, Emily is bound by a fiduciary duty to her clients at Horizon Wealth Management. A fiduciary standard requires an adviser to:",
-      "explanation": "**Fiduciary vs. Suitability:**\\n\\n**Fiduciary:** Act in client's BEST interest (RIAs, CFP® professionals)\\n\\n**Suitability/Reg BI:** Recommendation must be suitable/in best interest at time made (broker-dealers)\\n\\nFiduciary is higher standard. Conflicts allowed if disclosed and managed, not eliminated.",
-      "correctAnswer": 2,
-      "options": [
-        "Recommend only suitable products",
-        "Charge the lowest fees possible",
-        "Act in the client",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Recommending only suitable products aligns with the suitability standard, not the fiduciary standard. The suitability standard, often associated with broker-dealers, requires recommendations to be appropriate for the client's circumstances, but not necessarily the *best* option.",
-        "1": "Why option B is WRONG - While minimizing fees is generally a good practice, the fiduciary standard doesn't mandate charging the *lowest* possible fees. It requires that fees be reasonable and transparent, and that any conflicts of interest related to fees are disclosed and managed.",
-        "2": "Why option C is CORRECT - Acting in the client's best interest is the core principle of the fiduciary standard. This means putting the client's needs above the adviser's own, even if it means forgoing a more profitable opportunity for the adviser. This duty is codified in the Investment Advisers Act of 1940.",
-        "3": "Why option D is WRONG - Option D is incomplete and therefore incorrect. It does not provide a meaningful action or standard."
-      },
-      "educational": "The fiduciary standard is the highest ethical and legal duty a financial advisor can have to a client. It requires acting with utmost good faith and loyalty, putting the client's interests first. This contrasts with the suitability standard, which only requires recommendations to be appropriate, not necessarily the best. Understanding the nuances between these standards is crucial for navigating ethical dilemmas and regulatory requirements on the CFP® exam.",
-      "examTip": "On the CFP® exam, always remember that a CFP® professional is held to a fiduciary standard at all times when providing financial advice, requiring them to act in the client's best interest, even if it means less compensation for the advisor.",
-      "memoryAid": "Fiduciary = 'First for client' - Always prioritize the client's best interest.",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board's Code of Ethics and Standards of Conduct, Rule 1.4",
-      "commonMistake": "Many candidates confuse the fiduciary standard with the suitability standard. The exam exploits the misconception that recommending 'suitable' products is sufficient, overlooking the higher duty to act in the client's best interest, even if it means recommending a product that is not the most profitable for the advisor."
-    },
-    {
       "id": "cfp-gen-066",
       "courseId": "cfp",
       "section": "CFP-GEN",
@@ -2346,41 +2208,6 @@
       "timeEstimate": 60,
       "authorityRef": "N/A (Financial Statement Analysis)",
       "commonMistake": "Test-takers often incorrectly associate a positive cash flow statement with overall financial health metrics like net worth or credit score. The exam exploits the misconception that any positive financial indicator implies strength in all areas, overlooking the specific meaning of cash flow from operations."
-    },
-    {
-      "id": "cfp-gen-067",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "Professional responsibility",
-      "subtopic": "Agency",
-      "difficulty": "medium",
-      "skillLevel": "Remembering",
-      "question": "Sarah Chen hired Apex Financial Advisors to manage her retirement savings. This relationship creates a fiduciary duty for Apex. What does a fiduciary relationship require Apex to do?",
-      "explanation": "**Fiduciary Duty:** Legal obligation to act primarily for another's benefit.\\n\\n**Key duties:**\\n- Loyalty (client's interest first)\\n- Care (prudence and diligence)\\n- Good faith (honesty)\\n\\n**Examples:** Trustees, investment advisers, CFP® professionals, attorneys.",
-      "correctAnswer": 0,
-      "options": [
-        "Primarily for the benefit of another",
-        "According to industry standards only",
-        "In one",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is CORRECT - A fiduciary duty requires acting primarily for the benefit of another person or entity. This means putting the client's interests above your own, which is the core principle of fiduciary responsibility.",
-        "1": "Why option C is WRONG - While adhering to industry standards is important, it's not the *primary* duty of a fiduciary. A fiduciary must go beyond simply meeting industry standards and actively prioritize the client's best interests, even if that means exceeding those standards.",
-        "2": "Why option D is WRONG - \"In one\" is grammatically incomplete and doesn't represent any aspect of fiduciary duty. Fiduciary duty is about prioritizing the client's interests, not acting 'in one' unspecified manner.",
-        "3": "Why option D is WRONG - The option is incomplete and nonsensical. It doesn't relate to the definition or responsibilities associated with a fiduciary duty."
-      },
-      "educational": "Fiduciary duty is a cornerstone of financial planning, ensuring clients' interests are paramount. This principle is crucial because clients often lack the expertise to fully understand complex financial matters, making them vulnerable to exploitation. Understanding fiduciary duty is essential for navigating ethical dilemmas and making suitable recommendations, both heavily tested on the CFP exam.",
-      "examTip": "On the CFP exam, always choose the option that best represents putting the client's interests first, even if it means sacrificing potential personal gain or convenience.",
-      "memoryAid": "FILA: Fiduciary, Interest, Loyalty, Always (client's interest first).",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board's Code of Ethics and Standards of Conduct, Rule 1.4",
-      "commonMistake": "Many candidates misunderstand the core principle of a fiduciary duty. The exam exploits the misconception that following industry standards is sufficient, overlooking the requirement to act primarily for the benefit of the client, even if it deviates from common practices."
     },
     {
       "id": "cfp-gen-068",
@@ -2626,41 +2453,6 @@
       "timeEstimate": 60,
       "authorityRef": "N/A - This question tests understanding of basic economic indicators, not a specific regulation or standard.",
       "commonMistake": "Many candidates confuse leading, lagging, and coincident economic indicators. A common trap is to select indicators that reflect the current state of the economy (coincident) or past performance (lagging) rather than those that predict future trends (leading). Test-takers often incorrectly assume that GDP growth or corporate profits are leading indicators, overlooking the predictive power of the stock market."
-    },
-    {
-      "id": "cfp-gen-075",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Financial planning process",
-      "subtopic": "Recommendations",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Sarah Chen has just completed a comprehensive financial plan for the Millers. When presenting these financial planning recommendations to the Millers, Sarah, as a CFP® professional, should:",
-      "explanation": "**Effective Recommendation Presentation:**\\n- Connect to client's stated goals\\n- Use clear, understandable language\\n- Discuss both benefits AND risks\\n- Prioritize recommendations\\n- Allow time for questions\\n- Document client understanding\\n\\nRecommendations should be client-centered, not jargon-heavy.",
-      "correctAnswer": 2,
-      "options": [
-        "Avoid discussing potential risks",
-        "Use complex terminology to demonstrate expertise",
-        "Present recommendations in context of client",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A CFP® professional has a fiduciary duty to act in the client's best interest, which includes fully disclosing all relevant information, including potential risks associated with recommendations. Omitting risks violates the principle of transparency and could lead to unsuitable advice.",
-        "1": "Why option B is WRONG - Using complex terminology is counterproductive to effective communication and understanding. The CFP Board's Standards of Conduct require clear and understandable communication, ensuring the client can make informed decisions. Jargon can obscure the true implications of the recommendations.",
-        "2": "Why option C is CORRECT - Presenting recommendations in the context of the client's goals, values, and circumstances is a cornerstone of the financial planning process. This client-centered approach ensures that the advice is suitable and aligned with the client's best interests, fulfilling the CFP® professional's fiduciary duty.",
-        "3": "Why option D is WRONG - Option D is incomplete and therefore cannot be a correct answer. A complete and meaningful option is required to be considered."
-      },
-      "educational": "The financial planning process emphasizes a client-centered approach. This means understanding the client's goals, values, and financial situation before developing and presenting recommendations. Presenting recommendations in this context ensures suitability and helps the client understand how the advice will help them achieve their objectives, aligning with the CFP Board's ethical standards.",
-      "examTip": "On the CFP® exam, always choose the answer that prioritizes the client's understanding and best interests when it comes to presenting financial planning recommendations.",
-      "memoryAid": "C-C-C: Client-Context-Clarity. Recommendations should be presented with Client context and Clarity.",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Financial Planning Practice Standard 400-1: Developing the Financial Planning Recommendation(s)",
-      "commonMistake": "Many candidates forget the client-centered nature of financial planning. A common trap is to prioritize demonstrating expertise over clear communication and understanding. Test-takers often incorrectly assume that avoiding risk discussion or using complex terminology is acceptable, overlooking the importance of presenting recommendations in the client's context and addressing potential risks."
     },
     {
       "id": "cfp-gen-b10-001",
@@ -3573,41 +3365,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Practice Standard 400-1: Developing the Recommendation(s)",
       "commonMistake": "Many candidates are tempted by options that represent shortcuts or biased advice. The exam exploits the misconception that financial planning is about finding the single 'best' option or applying a one-size-fits-all approach, rather than a client-centered, comprehensive analysis."
-    },
-    {
-      "id": "cfp-gen-b11-002",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Personal financial statements",
-      "subtopic": "Implementation Coordination",
-      "difficulty": "easy",
-      "skillLevel": "Application",
-      "question": "After completing a comprehensive financial plan for the Chen family, the planner begins implementation. What is the role of coordinating with other professionals (e.g., attorneys, CPAs) during this phase?",
-      "explanation": "Team approach: financial planner often coordinates—attorneys (estate docs, business), CPAs (tax compliance, planning), insurance specialists. Benefits: consistent advice, appropriate expertise, efficient process. Planner: may quarterback, ensure communication, follow up. Clear roles, authorized information sharing. Reduces errors, comprehensive service.",
-      "correctAnswer": 3,
-      "options": [
-        "Is not recommended",
-        "Creates liability issues",
-        "Is the client\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Coordinating with other professionals is highly recommended. A collaborative approach ensures that all aspects of the client's financial situation are addressed comprehensively and consistently.",
-        "1": "Why option B is WRONG - While coordinating with other professionals can potentially expose the planner to liability, it doesn't inherently create liability issues. Proper documentation, clear communication, and adherence to ethical standards can mitigate these risks.",
-        "2": "Why option C is WRONG - While the client is central to the financial planning process, the question specifically asks about coordinating with *other* professionals, implying individuals besides the client.",
-        "3": "Why option D is CORRECT - The financial planning process often involves coordinating with other professionals such as attorneys, CPAs, and insurance specialists to provide comprehensive advice. This team approach ensures that all aspects of the client's financial situation are addressed with the appropriate expertise."
-      },
-      "educational": "Coordinating with other professionals is a crucial aspect of the financial planning process. It allows for a holistic approach, ensuring that all facets of the client's financial life, such as legal, tax, and insurance needs, are addressed. This collaboration minimizes the risk of overlooking important details and provides the client with well-rounded advice, aligning with the CFP Board's emphasis on comprehensive financial planning.",
-      "examTip": "On the CFP exam, always consider the 'team approach' when a question involves complex client situations requiring expertise beyond the planner's scope; the best answer often involves collaboration with other professionals.",
-      "memoryAid": "ACT: Attorney, CPA, Teamwork - Remember to consider these professionals when a client's situation calls for specialized expertise.",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Practice Standard 600-1: Implementing the Financial Planning Recommendation(s)",
-      "commonMistake": "Many candidates underestimate the importance of collaboration with other professionals. The exam exploits the misconception that financial planners operate in isolation and that involving other experts is unnecessary or creates problems."
     },
     {
       "id": "cfp-gen-b11-003",
@@ -4800,40 +4557,6 @@
       "commonMistake": "Many candidates confuse Coverdell ESAs with 529 plans. A common trap is assuming the contribution limit is higher than it actually is. Test-takers often incorrectly believe there are no income limits for contributors."
     },
     {
-      "id": "cfp-gen-b2-013",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "Financial aid considerations (FAFSA/EFC)",
-      "subtopic": "Financial Aid Impact",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "When evaluating financial aid impact for a dependent student, which asset ownership would have the LEAST impact on Expected Family Contribution (EFC)?",
-      "explanation": "**Correct Answer: B (529 plan owned by parent)**\n\n**Asset Assessment Rates for FAFSA:**\n- Parent-owned assets (including parent-owned 529): Max 5.64% of asset value\n- Student-owned assets (UTMA, savings): 20% of asset value\n- Grandparent-owned 529: Distributions count as student income (can significantly impact aid)\n\nThe parent-owned 529 has the lowest impact at only up to 5.64% assessment.\n\n**Why other answers are wrong:**\n- **A & D)** Student assets are assessed at 20%\n- **C)** Grandparent distributions count as untaxed income to student",
-      "correctAnswer": 0,
-      "options": [
-        "529 plan owned by parent",
-        "UTMA account in student\\",
-        ",\n      ",
-        "Roth IRA owned by grandparent"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "B": "Why option B is WRONG - Student-owned assets, such as UTMA accounts, are assessed at a much higher rate of 20% under the FAFSA formula. This significantly increases the EFC and reduces the student's eligibility for financial aid.",
-        "C": "Why option C is WRONG - Distributions from grandparent-owned 529 plans are treated as untaxed student income in the subsequent year, which can substantially increase the student's income and negatively impact financial aid eligibility. This is because student income is assessed at a much higher rate than parent assets.",
-        "D": "Why option D is WRONG - Student assets, regardless of the specific type, are assessed at a rate of 20% under the FAFSA formula. This higher assessment rate directly increases the EFC, making student-owned assets less favorable than parent-owned assets for financial aid purposes."
-      },
-      "educational": "The FAFSA formula prioritizes parental responsibility for funding education. By assessing parent-owned assets at a lower rate than student-owned assets, the formula encourages parents to save without drastically reducing aid eligibility. Understanding these asset assessment rates is crucial for financial planners to advise clients on optimal education savings strategies that maximize financial aid opportunities.",
-      "examTip": "On the CFP exam, remember that assets owned by the student are assessed at a much higher rate (20%) than assets owned by the parent (max 5.64%) when calculating the Expected Family Contribution (EFC).",
-      "memoryAid": "Parents are Preferred (for 529 ownership for FAFSA purposes).",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 90,
-      "authorityRef": "FAFSA Guidelines",
-      "commonMistake": "Many candidates struggle with understanding how different asset types are treated in the EFC calculation. A common trap is assuming all assets are treated equally. Test-takers often incorrectly believe that parent-owned assets have a greater impact than student-owned assets."
-    },
-    {
       "id": "cfp-gen-b2-014",
       "courseId": "cfp",
       "section": "CFP-GEN",
@@ -5147,41 +4870,6 @@
       "timeEstimate": 90,
       "authorityRef": "Behavioral Finance: Mental Accounting",
       "commonMistake": "Test-takers often incorrectly assume that any investment strategy is rational. The exam exploits the misconception that all clients make financially sound decisions. Options A, C, and D represent rational financial planning concepts, but they do not explain the client's irrational behavior of separating accounts and carrying high-interest debt while investing in low-yield assets."
-    },
-    {
-      "id": "cfp-gen-b2-023",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Personal financial statements",
-      "subtopic": "Data Gathering",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "During the data gathering phase, which type of information is considered QUALITATIVE rather than quantitative?",
-      "explanation": "**Correct Answer: B (Client's risk tolerance and values)**\n\n**Qualitative data** includes attitudes, goals, values, risk tolerance, family dynamics, and health conditions.\n\n**Quantitative data** includes measurable financial information like account balances, income, assets, liabilities, and insurance coverage amounts.\n\n**Why other answers are wrong:**\n- **A, C, D)** All are numerical/quantitative data sources",
-      "correctAnswer": 1,
-      "options": [
-        "Insurance policy face amounts",
-        "Client\\",
-        ",\n      ",
-        "Investment account balances"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Insurance policy face amounts are expressed as a specific dollar value. This makes them a clear example of quantitative data, not qualitative.",
-        "1": "Why option B is CORRECT - A client's risk tolerance and values represent subjective, non-numerical information. These qualitative factors are crucial for understanding a client's goals and preferences, which are essential for developing a suitable financial plan.",
-        "2": "Why option D is WRONG - [Assume option C is 'Investment account balances'] Investment account balances are expressed as a specific dollar value. This makes them a clear example of quantitative data, not qualitative.",
-        "3": "Why option D is WRONG - [Assume option D is 'Annual salary'] Annual salary is a numerical figure representing income. This is a straightforward example of quantitative data, not qualitative."
-      },
-      "educational": "Qualitative data provides context and meaning to the numbers gathered during the financial planning process. Understanding a client's values, goals, and risk tolerance allows the financial planner to tailor recommendations that align with the client's unique circumstances and preferences, leading to a more personalized and effective financial plan. This is a core element of the CFP Board's Financial Planning Practice Standards.",
-      "examTip": "On the CFP exam, carefully distinguish between data that is numerical (quantitative) and data that describes characteristics or qualities (qualitative); remember that both are essential for creating a comprehensive financial plan.",
-      "memoryAid": "QUANtitative = Numbers; QUALitative = Qualities",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Practice Standard 100-1: Defining the Scope of Engagement",
-      "commonMistake": "Many candidates focus solely on quantitative data and overlook the importance of qualitative information in financial planning. The exam exploits the misconception that only numerical data is relevant. Options A and C are examples of quantitative data that can be measured numerically. Option D is incomplete."
     },
     {
       "id": "cfp-gen-b2-024",
@@ -5532,41 +5220,6 @@
       "timeEstimate": 45,
       "authorityRef": "Cash Flow Statement Preparation",
       "commonMistake": "A common mistake is confusing discretionary and non-discretionary expenses. Discretionary expenses (Options A, B, and D) are non-essential and can be easily reduced or eliminated. Non-discretionary expenses (Option C) are essential and difficult to avoid, such as taxes, housing, and basic food."
-    },
-    {
-      "id": "cfp-gen-b3-009",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "Professional responsibility",
-      "subtopic": "Fiduciary Standard",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "During a client meeting, a CFP® professional prioritizes their own interests over the client's. Which action would constitute a breach of the fiduciary standard by a CFP® professional?",
-      "explanation": "Under the fiduciary duty, CFP® professionals must act in the client\\'s best interest. Recommending proprietary products when clearly superior alternatives exist would breach this duty, regardless of disclosure.",
-      "correctAnswer": 2,
-      "options": [
-        "Recommending products where the CFP® receives compensation, with full disclosure",
-        "Placing the client\\",
-        ",\n      ",
-        "Following the client's instructions even when they are detrimental to the client's long-term financial well-being."
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Disclosing compensation, while important for transparency, does not automatically violate the fiduciary duty. The key is whether the recommendation is in the client's best interest, regardless of compensation.",
-        "1": "Why option B is WRONG - The question is incomplete. Without knowing what action is being taken, it is impossible to determine if it is a breach of fiduciary duty.",
-        "2": "Why option C is CORRECT - Recommending proprietary products when clearly superior alternatives exist breaches the fiduciary duty because it prioritizes the CFP® professional's or their firm's interests over the client's best interest. Even with disclosure, the recommendation violates the duty of loyalty and care.",
-        "3": "Why option D is WRONG - The question is incomplete. Without knowing what action is being taken, it is impossible to determine if it is a breach of fiduciary duty."
-      },
-      "educational": "The fiduciary standard requires a CFP® professional to act in the client's best interest at all times. This includes the duty of loyalty, requiring them to avoid conflicts of interest or to fully disclose and manage them in the client's favor. Recommending a product that benefits the advisor more than the client, when better options exist, violates this core principle and undermines the trust inherent in the client-advisor relationship.",
-      "examTip": "On the CFP® exam, always consider whether a recommendation prioritizes the client's interests above all else; even with disclosure, a conflict of interest can still be a breach of fiduciary duty if the client is not receiving the best possible outcome.",
-      "memoryAid": "Best Interest First: Always put the client's needs before your own (or your firm's) when making recommendations.",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 90,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct - Duty of Loyalty",
-      "commonMistake": "The question is incomplete. The correct answer would involve prioritizing the CFP® professional's interests over the client's without proper disclosure and consent. Option A is acceptable with full disclosure. Option B is also incomplete."
     },
     {
       "id": "cfp-gen-b3-010",
@@ -6586,76 +6239,6 @@
       "commonMistake": "Many candidates focus on the financial aspects of data gathering and overlook the importance of qualitative information. A common trap is to assume that all numerical data is quantitative. Risk tolerance and values are subjective and therefore qualitative, not quantitative."
     },
     {
-      "id": "cfp-gen-b4-014",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Budget development",
-      "subtopic": "CFP Process Steps",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "After establishing a relationship with a new client, the financial planning process begins with:",
-      "explanation": "The 7-step CFP financial planning process starts with establishing and defining the client-planner relationship, including scope of engagement, responsibilities, and compensation. This comes before gathering data, analyzing the situation, or making recommendations.",
-      "correctAnswer": 3,
-      "options": [
-        "Analyzing the client\\",
-        ",\n      ",
-        "Developing financial planning recommendations",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Analyzing the client's financial situation is a crucial step in the financial planning process, but it occurs *after* establishing the client-planner relationship. Gathering and analyzing data is step two, following the initial agreement.",
-        "1": "Why option B is WRONG - This option is intentionally left blank to be filled in with an incorrect answer. The financial planning process doesn't begin with any action related to investment selection or implementation.",
-        "2": "Why option C is WRONG - This option is intentionally left blank to be filled in with an incorrect answer. Developing financial recommendations is a later step in the process, dependent on understanding the client's goals and current situation.",
-        "3": "Why option D is CORRECT - Establishing and defining the client-planner relationship is the foundational first step in the financial planning process, as outlined by the CFP Board. This includes clarifying the scope of the engagement, defining each party's responsibilities, and discussing compensation arrangements, ensuring transparency and mutual understanding from the outset."
-      },
-      "educational": "The financial planning process is a systematic approach designed to help clients achieve their financial goals. Establishing the client-planner relationship is paramount because it sets the stage for trust, open communication, and a clear understanding of expectations. This initial step aligns with the CFP Board's Standards of Conduct, emphasizing integrity, objectivity, and competence in all client interactions.",
-      "examTip": "On the CFP exam, always prioritize answers that reflect the CFP Board's Practice Standards, particularly the emphasis on establishing a clear and ethical client-planner relationship before delving into financial analysis.",
-      "memoryAid": "Remember 'RED FIA': Relationship, Data, Evaluate, Formulate, Implement, Analyze, Review. 'Relationship' always comes first!",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Practice Standard 200-1: Analyzing the Client's Current Course of Action and Potential Alternative Course(s) of Action",
-      "commonMistake": "Test-takers often incorrectly assume that the financial planning process begins with analysis. The exam exploits the misconception that analysis precedes defining goals. Establishing and defining the client-planner relationship is the first step."
-    },
-    {
-      "id": "cfp-gen-b4-015",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Budget development",
-      "subtopic": "Implementation",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "After developing a financial plan for the client, during implementation, the CFP® professional's role typically includes:",
-      "explanation": "During implementation, the CFP® professional coordinates with other professionals (attorneys, CPAs, insurance agents), assists the client in taking action, and may execute recommendations within their authority. The client ultimately makes decisions; the planner facilitates and coordinates.",
-      "correctAnswer": 3,
-      "options": [
-        "Guaranteeing investment results",
-        "Taking over the client\\",
-        ",\n      ",
-        "Avoiding conflicts of interest"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Guaranteeing investment results violates the CFP Board's Standard of Conduct, specifically the duty to act with integrity, competence, diligence, and objectivity. Financial planning involves projections and recommendations, not guarantees, due to market volatility and unforeseen circumstances.",
-        "1": "Why option B is WRONG - Taking over the client's life is inappropriate and violates the client's autonomy. The CFP® professional acts as a guide and facilitator, empowering the client to make informed decisions, not dictating their choices.",
-        "2": "Why option C is WRONG - This option is incomplete and does not provide a meaningful action that a CFP® professional would undertake during the implementation phase.",
-        "3": "Why option D is CORRECT - During implementation, the CFP® professional coordinates with other professionals (attorneys, CPAs, insurance agents), assists the client in taking action, and may execute recommendations within their authority. This coordination ensures that all aspects of the financial plan are addressed and implemented effectively."
-      },
-      "educational": "The implementation phase is a critical step in the financial planning process where the recommendations are put into action. This phase requires coordination with other professionals and ongoing communication with the client to ensure the plan is being implemented according to their goals and objectives. The CFP® professional's role is to facilitate this process and provide guidance, not to make decisions for the client or guarantee outcomes.",
-      "examTip": "Remember that the CFP® professional acts as a fiduciary, prioritizing the client's best interests during implementation. Avoid selecting answers that suggest guarantees, taking control, or providing services outside your area of expertise.",
-      "memoryAid": "CIA: Coordinate, Implement, Assist (during the Implementation phase)",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Practice Standard 600-1: Implementing the Financial Planning Recommendations",
-      "commonMistake": "Many candidates confuse the role of the CFP® professional with that of an investment manager or insurance agent. A common trap is to assume that the CFP® professional guarantees results or takes over the client's life. The CFP® professional's role is to guide and assist the client in implementing the plan, not to control it."
-    },
-    {
       "id": "cfp-gen-b4-016",
       "courseId": "cfp",
       "section": "CFP-GEN",
@@ -7251,41 +6834,6 @@
       "commonMistake": "Many candidates are unfamiliar with the specifics of ABLE accounts. The exam exploits the misconception that ABLE accounts are widely available or have unlimited contributions. Test-takers often incorrectly assume ABLE accounts replace all other benefits or are available to anyone regardless of disability status and age of onset."
     },
     {
-      "id": "cfp-gen-b5-008",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "529 plans (qualified tuition programs)",
-      "subtopic": "Prepaid Tuition Plans",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "The Johnson family is considering different 529 plan options to save for their child's college education. Prepaid tuition 529 plans differ from savings 529 plans in that prepaid plans:",
-      "explanation": "Prepaid plans purchase future tuition at today\\'s prices at specific colleges or state systems, hedging against tuition inflation. Savings plans offer investment options for any qualified education expense at any institution. Prepaid plans have residency and institution restrictions; fewer states offer them now.",
-      "correctAnswer": 1,
-      "options": [
-        "Are available in all states",
-        "Lock in today\\",
-        ",\n      ",
-        "Offer federal tax deductions for contributions"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Prepaid tuition plans are NOT available in all states. They are offered by a limited number of states and sometimes by individual institutions. Many states have discontinued their prepaid plans due to funding challenges and fluctuating tuition costs.",
-        "1": "Why option B is CORRECT - Prepaid tuition plans lock in the cost of tuition at today's prices for future enrollment at participating institutions. This is the primary benefit and distinguishing feature of prepaid plans, protecting against future tuition inflation at those specific schools.",
-        "2": "Why option D is WRONG - This option is incomplete and therefore incorrect. It does not present a complete statement about prepaid tuition plans.",
-        "3": "Why option D is WRONG - This option is incomplete and therefore incorrect. It does not present a complete statement about prepaid tuition plans."
-      },
-      "educational": "529 plans are designed to encourage saving for education expenses. Prepaid tuition plans offer a hedge against tuition inflation by allowing individuals to purchase future tuition credits at today's prices. Savings plans, on the other hand, offer investment options that grow tax-deferred and can be used for qualified education expenses at any eligible institution. The choice between the two depends on risk tolerance, residency, and certainty about the beneficiary's future educational plans.",
-      "examTip": "On the CFP exam, carefully consider the beneficiary's flexibility and potential college choices when evaluating 529 plan options. Prepaid plans offer inflation protection but limit school choice, while savings plans offer more flexibility but expose the investment to market risk.",
-      "memoryAid": "Prepaid = Predictable Price (locks in tuition); Savings = School Selection (more flexible).",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "26 U.S. Code § 529",
-      "commonMistake": "A common trap is confusing prepaid tuition plans with savings plans. Many candidates incorrectly assume prepaid tuition plans are available in all states or offer investment options. Test-takers often fail to understand the key difference: prepaid plans lock in tuition rates at today's prices."
-    },
-    {
       "id": "cfp-gen-b5-009",
       "courseId": "cfp",
       "section": "CFP-GEN",
@@ -7741,41 +7289,6 @@
       "commonMistake": "Many candidates incorrectly assume that the order of assets on a balance sheet is arbitrary. The exam tests your understanding of financial statement presentation, and liquidity is the standard way to present assets. Listing by date of acquisition or size is not a standard practice and would not provide useful information for financial analysis. Alphabetical order is also not a standard financial practice."
     },
     {
-      "id": "cfp-gen-b5-022",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Financial ratios (liquidity, debt, savings)",
-      "subtopic": "Yield to Maturity",
-      "difficulty": "hard",
-      "skillLevel": "Remembering and Understanding",
-      "question": "ABC Bond has a coupon rate of 5%, is currently trading at $950, and matures in 7 years. Yield to Maturity (YTM) represents: ",
-      "explanation": "YTM is the internal rate of return of a bond held to maturity, considering purchase price, coupon payments, and principal return. It assumes coupons are reinvested at the YTM rate. YTM differs from current yield (annual coupon ÷ price) and coupon rate (annual coupon ÷ face value).",
-      "correctAnswer": 2,
-      "options": [
-        "Last year\\",
-        ",\n      ",
-        "Last month",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Option A is incomplete and doesn't provide a meaningful definition related to Yield to Maturity (YTM). YTM is a comprehensive measure, not simply 'Last year'.",
-        "1": "Why option B is WRONG - Option B is incomplete and doesn't provide a meaningful definition related to Yield to Maturity (YTM). It lacks the necessary components for calculating or understanding YTM.",
-        "2": "Why option C is CORRECT - Yield to Maturity (YTM) is the total return anticipated on a bond if it is held until it matures. YTM considers the bond's current market price, par value, coupon interest rate, and time to maturity. It's essentially the bond's internal rate of return (IRR).",
-        "3": "Why option D is WRONG - Option D is incomplete and doesn't provide a meaningful definition related to Yield to Maturity (YTM). It lacks the necessary components for calculating or understanding YTM."
-      },
-      "educational": "Yield to Maturity (YTM) is a crucial concept because it provides a more accurate representation of a bond's potential return than the coupon rate or current yield alone. It accounts for the time value of money and any premium or discount paid for the bond. Understanding YTM is essential for comparing different bonds and making informed investment decisions, aligning with the CFP Board's emphasis on investment planning and analysis.",
-      "examTip": "On the CFP exam, remember that YTM is the IRR of a bond held to maturity, assuming coupon reinvestment at the YTM rate itself; this is a key assumption that can be tested.",
-      "memoryAid": "YTM = Total Return to Maturity",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 90,
-      "authorityRef": "FINRA Rule 2210(d)(1)(B)",
-      "commonMistake": "Test-takers often confuse coupon rate, current yield, and yield to maturity (YTM). The exam exploits the misconception that YTM is simply the coupon rate or the current yield. YTM is a more complex calculation that considers the time value of money and the difference between the purchase price and the par value of the bond. The correct answer must include all of these elements."
-    },
-    {
       "id": "cfp-gen-b5-023",
       "courseId": "cfp",
       "section": "CFP-GEN",
@@ -7914,41 +7427,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Practice Standard 200-1: Understanding the Client's Personal and Financial Circumstances",
       "commonMistake": "Many candidates focus solely on the quantitative aspects of financial planning and overlook the importance of qualitative factors. The exam tests your understanding of the holistic approach to financial planning. Making assumptions based on demographics or focusing solely on investment accounts is insufficient. A comprehensive understanding requires gathering both quantitative data and exploring qualitative factors."
-    },
-    {
-      "id": "cfp-gen-b6-002",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-1",
-      "topic": "Budget development",
-      "subtopic": "Analyzing Information",
-      "difficulty": "medium",
-      "skillLevel": "Analysis",
-      "question": "During the financial planning process, what does the analysis step involve? ",
-      "explanation": "Analysis goes beyond data compilation to evaluate current trajectory, identify shortfalls, test assumptions through scenarios, and determine what changes would help achieve goals. It integrates all planning domains and applies professional judgment beyond software outputs.",
-      "correctAnswer": 2,
-      "options": [
-        "Simply inputting data into software",
-        "Comparing to industry averages only",
-        "Evaluating the client\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Simply inputting data into software is a component of data gathering, but not the analysis itself. Analysis requires critical thinking and professional judgment beyond automated processes.",
-        "1": "Why option B is WRONG - Comparing to industry averages is a useful benchmark, but focusing solely on this neglects the client's unique circumstances, values, and goals. A comprehensive analysis must be client-centric, as required by the CFP Board's Standards of Conduct.",
-        "2": "Why option C is CORRECT - Evaluating the client's current financial situation, goals, and resources is the core of the analysis phase. This involves assessing strengths, weaknesses, opportunities, and threats (SWOT) to develop suitable recommendations.",
-        "3": "Why option D is WRONG - Option D is incomplete and does not represent a valid answer choice."
-      },
-      "educational": "The analysis phase of the financial planning process is crucial for understanding the client's current financial standing and identifying potential gaps in achieving their goals. It goes beyond simply collecting data; it involves interpreting the data in the context of the client's unique circumstances and making informed judgments about their financial future. This step directly informs the development of recommendations in the subsequent planning stages, ensuring the plan is tailored to the client's needs and objectives.",
-      "examTip": "On the CFP exam, remember that the analysis phase requires critical thinking and professional judgment, not just data entry or simple comparisons; always consider the client's unique situation and goals.",
-      "memoryAid": "Analyze = Assess + Act (Assess the client's situation, then Act on that assessment to develop recommendations).",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Practice Standard 500-1: Analyzing the Client's Current Course of Action and Potential Alternative Course(s) of Action",
-      "commonMistake": "A common trap is to view the analysis step as a purely mechanical process. The exam exploits the misconception that simply inputting data into software or comparing to industry averages is sufficient. The analysis step requires a thorough evaluation of the client's current situation, progress toward goals, and potential alternative courses of action."
     },
     {
       "id": "cfp-gen-b6-003",
@@ -10014,41 +9492,6 @@
       "timeEstimate": 60,
       "authorityRef": "Investment Advisers Act of 1940",
       "commonMistake": "Many candidates confuse different types of financial licenses. A common trap is thinking that selling insurance or annuities is sufficient for providing comprehensive financial advice. The exam emphasizes the importance of understanding the regulatory requirements for acting as an investment adviser representative."
-    },
-    {
-      "id": "cfp-gen-b8-015",
-      "courseId": "cfp",
-      "section": "CFP-GEN",
-      "blueprintArea": "GEN-2",
-      "topic": "Professional responsibility",
-      "subtopic": "Disclosure Requirements",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "As a CFP® professional, Emily is preparing a financial plan for her client, Mr. Davis. Which of the following must Emily disclose to Mr. Davis?\nA) Other clients' financial information\nB) The names of her other clients\nC) Her personal investment portfolio\nD) All material conflicts of interest",
-      "explanation": "CFP® professionals must disclose: material conflicts of interest, how compensation is received (fees, commissions, salary), services to be provided, relationships with third parties, and any disciplinary history. Disclosure enables informed client decisions. Written disclosure is best practice; oral disclosure may suffice in some situations.",
-      "correctAnswer": 3,
-      "options": [
-        "Other clients\\",
-        ",\n      ",
-        "His family",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While CFP® professionals must maintain client confidentiality, the question is about required disclosures. Disclosing information about other clients would violate that confidentiality, unless explicit consent is given by those clients.",
-        "1": "Why option B is WRONG - This option is incomplete. While the prompt indicates missing information, without knowing the content of the option, it's impossible to determine if it contains all the required disclosures.",
-        "2": "Why option C is WRONG - This option is incomplete. While the prompt indicates missing information, without knowing the content of the option, it's impossible to determine if it contains all the required disclosures.",
-        "3": "Why option D is CORRECT - CFP® professionals must disclose all material conflicts of interest, how they are compensated (fees, commissions, salary), the scope of services to be provided, relationships with third parties that could affect the client's financial plan, and any disciplinary history. These disclosures are mandated by the CFP Board's Standards of Conduct to ensure transparency and allow clients to make informed decisions."
-      },
-      "educational": "The requirement for disclosure is rooted in the fiduciary duty owed by CFP® professionals to their clients. This duty mandates acting in the client's best interest, which necessitates transparency regarding potential conflicts, compensation structures, and the scope of the engagement. Understanding disclosure requirements is crucial for upholding ethical standards and building trust with clients, which are fundamental aspects of the financial planning process.",
-      "examTip": "On the CFP® exam, remember that disclosure requirements are designed to protect the client's interests and ensure informed consent; always choose the answer that provides the most comprehensive and transparent information to the client.",
-      "memoryAid": "Conflicts, Compensation, Scope, Third Parties, and History = CCSTH (Consider Clients' Safety Through Honesty)",
-      "reference": "CFP Board Financial Planning Practice Standards",
-      "sourceFile": "gen_principles.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Practice Standard 200-1: Disclosing Conflicts of Interest",
-      "commonMistake": "Many candidates focus on client privacy but miss the core requirement of disclosing conflicts. A common trap is thinking that disclosing other clients' information is necessary, which is incorrect. The exam emphasizes the importance of transparency and disclosing any potential conflicts of interest that could affect the advice provided."
     },
     {
       "id": "cfp-gen-b8-016",

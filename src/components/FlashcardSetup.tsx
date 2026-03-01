@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logger from '../utils/logger';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Brain,
@@ -124,7 +125,7 @@ const FlashcardSetup: React.FC = () => {
           notWorked,
         });
       } catch (error) {
-        console.error('Error loading flashcard data:', error);
+        logger.error('Error loading flashcard data:', error);
       } finally {
         setLoading(false);
       }

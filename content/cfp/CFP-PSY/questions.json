@@ -2,42 +2,8 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-PSY",
   "exportedAt": "2026-02-28T22:26:01.603Z",
-  "count": 197,
+  "count": 183,
   "questions": [
-    {
-      "id": "cfp-psy-001",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Active listening techniques",
-      "subtopic": "Reflecting",
-      "difficulty": "easy",
-      "skillLevel": "Application",
-      "question": "A client says, \"I\\'m worried about outliving my money in retirement.\" Which response demonstrates the BEST use of active listening?",
-      "explanation": "Response B reflects the client\\'s concern back to them, demonstrating understanding before moving forward. This builds trust and ensures you understand the client correctly. A dismisses the concern, C jumps to data gathering without acknowledging emotion, and D minimizes the feeling.",
-      "correctAnswer": 2,
-      "options": [
-        "",
-        "Suggest they annuitize a portion of their assets to guarantee lifetime income, regardless of market performance.",
-        "",
-        ""
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - This response is dismissive and fails to acknowledge the client's emotional state. It immediately jumps to a solution without validating their feelings, potentially damaging the client-planner relationship.",
-        "B": "Why option B is WRONG - While gathering data is important, immediately jumping to fact-finding without acknowledging the client's emotional concern misses the opportunity to build rapport and trust. Active listening prioritizes understanding the client's feelings before moving to problem-solving.",
-        "D": "Why option D is WRONG - Minimizing the client's concern, even if unintentional, can invalidate their feelings and make them feel unheard. Saying \"many people worry about that\" dismisses the individual's specific anxieties and can damage the client-planner relationship."
-      },
-      "educational": "Active listening is a crucial component of effective client communication, as emphasized in the CFP Board's Standards of Conduct. It involves paying attention, showing that you're hearing, providing feedback, deferring judgment, and responding appropriately. By actively listening, financial planners can build trust, understand client needs, and develop tailored financial plans that address both their financial goals and emotional concerns.",
-      "examTip": "On the CFP exam, when a question focuses on client communication, prioritize answers that demonstrate empathy, understanding, and validation of the client's feelings before moving to problem-solving or data gathering.",
-      "memoryAid": "ARE: Acknowledge, Reflect, Explore. Active listening involves Acknowledging the client's feelings, Reflecting those feelings back to them, and then Exploring the underlying issues.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Code of Ethics, Principle 2: Integrity",
-      "commonMistake": "Many candidates select responses that offer solutions or advice prematurely. The exam emphasizes the importance of understanding the client's perspective before offering solutions. Jumping to conclusions or offering advice without fully understanding the client's concerns can damage trust and hinder the planning process."
-    },
     {
       "id": "cfp-psy-002",
       "courseId": "cfp",
@@ -74,40 +40,6 @@
       "commonMistake": "Test-takers often misinterpret the DISC styles. A common trap is associating detail-oriented behavior with other DISC styles. While other styles may appreciate details in certain contexts, the Conscientiousness style *requires* it for comfort and decision-making."
     },
     {
-      "id": "cfp-psy-003",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Client interview and data gathering",
-      "subtopic": "Open vs. Closed Questions",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "During an initial consultation with Sarah Chen, a new client of Horizon Financial, you aim to gather comprehensive information. Which of the following represents the BEST example of an open-ended question to initiate discussion?",
-      "explanation": "Open-ended questions cannot be answered with a simple yes/no and encourage clients to elaborate. \"What does financial success mean to you?\" invites exploration of values and goals. The other options are closed-ended questions useful for data gathering but not for exploring feelings or values.",
-      "correctAnswer": 1,
-      "options": [
-        "",
-        "Recommend she immediately consolidate her high-interest credit card debt into a personal loan with a lower interest rate to improve her cash flow.",
-        "",
-        ""
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - This is a closed-ended question that can be answered with a simple \"yes\" or \"no.\" It doesn't encourage the client to elaborate on their thoughts or feelings.",
-        "C": "Why option C is WRONG - This is a closed-ended question that seeks a specific numerical answer. It's useful for gathering data but doesn't promote deeper conversation or exploration of the client's perspective.",
-        "D": "Why option D is WRONG - This question is closed-ended, limiting the client's response to a simple affirmation or denial. It is a fact-gathering question, not one designed to elicit deeper understanding of the client's values or goals."
-      },
-      "educational": "Open-ended questions are a cornerstone of effective client communication in financial planning. They help uncover a client's values, goals, and motivations, which are essential for creating a personalized financial plan. Using open-ended questions aligns with the CFP Board's emphasis on understanding the client's circumstances and providing advice in their best interest.",
-      "examTip": "On the CFP exam, when asked about the best way to gather information about a client's values, look for answers that use open-ended questions to encourage the client to share their perspective.",
-      "memoryAid": "Open Up (Open-ended questions Uncover Personal values).",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 45,
-      "authorityRef": "Client Psychology and Communication Strategies",
-      "commonMistake": "Many candidates select closed-ended questions because they seem efficient. The exam emphasizes the importance of building rapport and gathering comprehensive information. Closed-ended questions limit the client's response and prevent the planner from gaining a deeper understanding of their needs and goals."
-    },
-    {
       "id": "cfp-psy-004",
       "courseId": "cfp",
       "section": "CFP-PSY",
@@ -141,40 +73,6 @@
       "timeEstimate": 60,
       "authorityRef": "Client Psychology and Communication Strategies",
       "commonMistake": "Test-takers often select answers that seem generally helpful without considering the specific communication style. The exam tests the ability to adapt communication to different personality types. Providing extensive background or focusing on relationships can be time-consuming and frustrating for a Dominant personality."
-    },
-    {
-      "id": "cfp-psy-005",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Client interview and data gathering",
-      "subtopic": "Clarifying",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "John, a client of Oakwood Planning, states, \"I want to be comfortable in retirement.\" What is the MOST effective next step for the planner to take in order to understand John's specific goals?",
-      "explanation": "The term \"comfortable\" is subjective and means different things to different clients. Before making any recommendations, clarify what the client means. This exploration builds understanding and ensures recommendations align with the client\\'s actual vision, not your assumptions.",
-      "correctAnswer": 0,
-      "options": [
-        "Ask, ",
-        "",
-        "Recommend a specific retirement savings amount",
-        "Explain typical retirement income needs"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "B": "Why option B is WRONG - Recommending a specific savings amount without understanding the client's definition of 'comfortable' is premature and could be misaligned with their actual needs and goals. It skips the crucial step of gathering sufficient information.",
-        "C": "Why option C is WRONG - Explaining typical retirement income needs, while potentially informative, doesn't address the client's individual circumstances or their subjective understanding of 'comfortable.' It's a generic approach that lacks personalization.",
-        "D": "Why option D is WRONG - While understanding a client's risk tolerance is important, it doesn't directly address the ambiguity of the term 'comfortable' in retirement. Risk tolerance is a separate, albeit related, aspect of financial planning."
-      },
-      "educational": "Active listening and effective questioning are fundamental to building a strong client-planner relationship and creating a financial plan that truly reflects the client's values and goals. The CFP Board's Standards of Conduct emphasize the importance of understanding a client's personal and financial circumstances before making any recommendations. Failing to do so can lead to unsuitable advice and a breach of fiduciary duty.",
-      "examTip": "On the CFP exam, always prioritize options that demonstrate active listening and a client-centered approach, especially when the client's statement is vague or subjective.",
-      "memoryAid": "ACE: Ask, Clarify, Explore. Use this to remember the importance of probing questions.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Client Psychology and Communication Strategies",
-      "commonMistake": "Many candidates select answers that offer immediate solutions or recommendations. The exam emphasizes the importance of understanding the client's specific needs and goals before offering advice. Recommending a specific savings amount or explaining typical income needs without further exploration can be premature and ineffective."
     },
     {
       "id": "cfp-psy-006",
@@ -1297,75 +1195,6 @@
       "commonMistake": "Many candidates fail to recognize the vulnerability of clients experiencing significant life transitions. A common trap is selecting 'Help implement changes quickly to match client energy' because it seems responsive to the client's enthusiasm. However, making major decisions during emotional distress can lead to regret. 'Focus only on required legal changes from the divorce' is too narrow and neglects the client's overall financial well-being. 'Suggest only making changes that feel emotionally satisfying' prioritizes short-term emotional relief over sound financial planning."
     },
     {
-      "id": "cfp-psy-b2-013",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Crisis counseling (divorce, death, job loss)",
-      "subtopic": "Recognizing Limits",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A client displays signs of clinical depression affecting their financial decisions. The CFP® professional should:",
-      "explanation": "CFP® professionals should recognize when issues exceed their expertise. Clinical depression requires mental health professionals. The planner should sensitively suggest professional help while continuing to support the client\\'s financial needs within their scope.",
-      "correctAnswer": 2,
-      "options": [
-        "Postpone all planning until the client ",
-        "",
-        "Provide counseling to address the depression",
-        "Suggest the client speak with a mental health professional"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Postponing all planning is not in the client's best interest. While the client's mental health is paramount, a complete cessation of financial planning could exacerbate their stress and anxiety. The CFP® professional should continue to provide support within their scope of expertise while encouraging the client to seek professional help.",
-        "B": "Why option B is WRONG - Providing counseling to address the depression is outside the scope of a CFP® professional's expertise. Offering mental health counseling without proper training and licensure is unethical and potentially harmful to the client. CFP® professionals must adhere to the Code of Ethics and Standards of Conduct, which emphasizes acting within one's competence.",
-        "D": "Why option D is WRONG - While supporting the client's financial needs is important, it is secondary to addressing the underlying mental health issue. Continuing to support the client's financial needs without addressing the depression could lead to further financial mismanagement or poor decision-making driven by their mental state."
-      },
-      "educational": "CFP® professionals must understand the impact of psychological factors on financial decision-making. Recognizing when a client's mental health is affecting their financial choices is crucial. The CFP Board's Code of Ethics and Standards of Conduct requires planners to act in the client's best interest, which includes referring them to qualified professionals when issues fall outside the planner's area of expertise. This aligns with the principle of competence and diligence.",
-      "examTip": "On the CFP® exam, always prioritize options that involve referring clients to specialists when their needs exceed your scope of expertise. Remember, you are a financial planner, not a therapist or legal expert.",
-      "memoryAid": "R.E.F.E.R.: Recognize the issue, Evaluate your expertise, Find a specialist, Explain the referral, Reassure the client.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Principle of Integrity and Objectivity.",
-      "commonMistake": "Many candidates are unsure of the CFP® professional's role when a client exhibits signs of mental illness. A common trap is selecting 'Provide counseling to address the depression' because it seems helpful. However, CFP® professionals are not qualified to provide mental health counseling and doing so would be outside their scope of practice. 'Postpone all planning until the client...' might be necessary in extreme cases, but suggesting the client speak with a mental health professional is the more appropriate first step."
-    },
-    {
-      "id": "cfp-psy-b2-014",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Motivational interviewing",
-      "subtopic": "Motivational Interviewing",
-      "difficulty": "hard",
-      "skillLevel": "Analysis",
-      "question": "A client knows they should save more for retirement but hasn\\'t changed behavior. Using motivational interviewing, the planner should:",
-      "explanation": "Motivational interviewing focuses on drawing out the client\\'s own motivation rather than imposing external pressure. Exploring their reasons for change is more likely to create lasting behavior change than fear tactics or imposed solutions.",
-      "correctAnswer": 1,
-      "options": [
-        "Provide detailed savings calculations and deadlines",
-        "Explore the client\\",
-        ",\n      ",
-        "Recommend specific investment products known for long-term growth"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Providing detailed savings calculations and deadlines is a directive approach, not motivational interviewing. Motivational interviewing seeks to elicit the client's own reasons for change, not impose external solutions or pressure.",
-        "1": "Why option B is CORRECT - Motivational interviewing centers on exploring the client's own motivations, values, and reasons for wanting to change. By understanding the client's perspective, the planner can help them resolve ambivalence and move towards positive change.",
-        "2": "Why option D is WRONG - Option C is incomplete and therefore incorrect. A complete answer would be needed to evaluate its appropriateness in the context of motivational interviewing.",
-        "3": "Why option D is WRONG - Option D is incomplete and therefore incorrect. A complete answer would be needed to evaluate its appropriateness in the context of motivational interviewing."
-      },
-      "educational": "Motivational interviewing is a client-centered, directive method for enhancing intrinsic motivation to change by exploring and resolving ambivalence. It emphasizes collaboration, evocation (drawing out the client's own reasons for change), autonomy, and compassion. This approach contrasts with more directive methods that may be perceived as confrontational or judgmental, potentially leading to resistance from the client.",
-      "examTip": "On the CFP exam, when a question mentions motivational interviewing, look for answer choices that emphasize client autonomy, exploration of values, and eliciting the client's own reasons for change rather than providing direct advice or solutions.",
-      "memoryAid": "RULE: Resist the righting reflex (telling them what to do), Understand their motivation, Listen with empathy, Empower them.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Miller, W. R., & Rollnick, S. (2013). Motivational interviewing: Helping people change (3rd ed.). Guilford Press.",
-      "commonMistake": "Many candidates default to providing information or directives, rather than exploring the client's own motivations and ambivalence. A common trap is selecting 'Provide detailed savings calculations and deadlines' because it seems like a practical solution. However, this approach can be ineffective if the client isn't internally motivated. Motivational interviewing focuses on eliciting the client's own reasons for change, rather than imposing external pressure."
-    },
-    {
       "id": "cfp-psy-b2-015",
       "courseId": "cfp",
       "section": "CFP-PSY",
@@ -2066,40 +1895,6 @@
       "commonMistake": "The exam exploits the misconception that motivational interviewing is about forceful persuasion. 'Rolling with resistance' is a core principle of motivational interviewing, emphasizing acceptance and exploration of ambivalence rather than direct confrontation. Arguing, referring, or giving up are counterproductive in this approach."
     },
     {
-      "id": "cfp-psy-b3-010",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Client interview and data gathering",
-      "subtopic": "Open-Ended Questions",
-      "difficulty": "easy",
-      "skillLevel": "Application",
-      "question": "During an initial consultation, you need to understand the client's retirement aspirations. Which question is most effective for exploring a client's retirement goals?",
-      "explanation": "Open-ended questions invite elaboration and reveal values, goals, and concerns. \"What does an ideal retirement look like to you?\" prompts detailed responses about lifestyle, activities, and priorities. Closed questions (A, C, D) yield yes/no answers and limit discovery of meaningful information.",
-      "correctAnswer": 2,
-      "options": [
-        "",
-        "risk tolerance, investment time horizon, and current asset allocation.",
-        "",
-        ""
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - This is a closed-ended question that only allows for a 'yes' or 'no' answer. It doesn't encourage the client to elaborate on their retirement goals or values, limiting the financial planner's understanding.",
-        "B": "Why option B is WRONG - While this question touches on a specific aspect of retirement (travel), it's still relatively narrow and doesn't allow the client to express a broader vision of their ideal retirement. It focuses on a single activity rather than the overall lifestyle and priorities.",
-        "D": "Why option D is WRONG - This question is too focused on the financial aspect of retirement and doesn't explore the client's broader goals and aspirations. While important, focusing solely on the financial side neglects the psychological and emotional aspects of retirement planning, which are essential for client satisfaction."
-      },
-      "educational": "Effective communication is crucial in financial planning, especially when exploring retirement goals. Open-ended questions are essential for uncovering a client's values, priorities, and expectations, which directly aligns with the CFP Board's emphasis on understanding the client's personal and financial circumstances. This understanding allows the planner to create a plan that is not only financially sound but also aligned with the client's vision for their future, fostering trust and long-term relationships.",
-      "examTip": "On the CFP exam, always favor questions that use open-ended language when trying to understand a client's goals or values. Look for phrases like 'describe,' 'explain,' or 'tell me about' as indicators of effective communication techniques.",
-      "memoryAid": "O-U-V: Open-ended questions Uncover Values.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Practice Standards, Standard A.1. Establishing and Defining the Relationship with the Client",
-      "commonMistake": "Many candidates select closed-ended questions or questions focused on specific numbers rather than open-ended questions that encourage the client to share their vision. The most effective question elicits a broad description of the client's desired retirement lifestyle and aspirations, providing a foundation for further discussion and planning. The other options are too narrow or focus on specific financial aspects without understanding the client's overall goals."
-    },
-    {
       "id": "cfp-psy-b3-011",
       "courseId": "cfp",
       "section": "CFP-PSY",
@@ -2168,40 +1963,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Principle 2: Integrity; Rule 2.2: Competency",
       "commonMistake": "Test-takers often incorrectly believe that a CFP® professional should directly address a client's mental health issues. While a CFP® professional should be aware of how mental health can impact financial decisions, they are not qualified to provide psychological counseling. Terminating the engagement is too extreme and not necessarily in the client's best interest if the financial planning can continue with appropriate awareness and support."
-    },
-    {
-      "id": "cfp-psy-b3-013",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Active listening techniques",
-      "subtopic": "Empathy",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Maria, a new client, is anxious about market volatility. Cognitive empathy in financial planning involves:",
-      "explanation": "Cognitive empathy (perspective-taking) means understanding how a client thinks and perceives situations. Affective empathy involves sharing feelings. Both are valuable in planning, but cognitive empathy allows maintaining professional objectivity while demonstrating understanding. It enables appropriate responses without emotional overwhelm.",
-      "correctAnswer": 1,
-      "options": [
-        "Feeling the same emotions as the client",
-        "Understanding the client\\",
-        ",\n      ",
-        "Sympathizing with the client's situation"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Feeling the same emotions as the client describes *emotional* empathy, not cognitive empathy. Cognitive empathy focuses on understanding, not necessarily sharing, the client's feelings. Experiencing the same emotions can cloud judgment.",
-        "C": "This option is incomplete and therefore incorrect. A complete option would be needed to assess its validity in relation to cognitive empathy.",
-        "D": "This option is incomplete and therefore incorrect. A complete option would be needed to assess its validity in relation to cognitive empathy."
-      },
-      "educational": "Cognitive empathy is the ability to understand another person's perspective and thought processes without necessarily feeling their emotions. In financial planning, it allows advisors to tailor advice to a client's specific situation and goals by understanding their reasoning.",
-      "examTip": "Focus on the 'understanding' aspect of cognitive empathy; emotional empathy involves 'feeling'.",
-      "memoryAid": "Think of 'Cognitive' as 'Knowing' - it's about knowing *why* the client feels a certain way, not feeling it yourself.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Practice Standards, Standard A2-1: Understanding the Client's Personal and Financial Circumstances",
-      "commonMistake": "Many candidates confuse empathy with sympathy. Feeling the same emotions (sympathy) is different from understanding the client's perspective (cognitive empathy). Cognitive empathy focuses on understanding the client's thoughts and feelings, not necessarily sharing them."
     },
     {
       "id": "cfp-psy-b3-014",
@@ -2622,40 +2383,6 @@
       "timeEstimate": 60,
       "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.6. - Implementing the Financial Planning Recommendation(s)",
       "commonMistake": "Many candidates are tempted to think that a CFP® professional should take drastic measures when a client isn't adhering to the plan. The exam exploits the misconception that the CFP® professional has complete control over the client's actions. Test-takers often incorrectly assume that threats or unilateral decisions are appropriate."
-    },
-    {
-      "id": "cfp-psy-b4-001",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Active listening techniques",
-      "subtopic": "Active Listening",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "When a client says \"I want to be aggressive for growth\" but their financial situation shows low risk capacity, effective active listening involves:",
-      "explanation": "Active listening involves hearing what\\'s said, what\\'s meant, and what\\'s behind it. \"Aggressive\" may mean different things. Skilled advisors explore the underlying goal (perhaps \"not running out of money\"), then help the client understand how risk capacity affects achieving that goal.",
-      "correctAnswer": 2,
-      "options": [
-        "Telling them they\\",
-        ",\n      ",
-        "Recommending they allocate a significant portion of their portfolio to small-cap stocks and emerging market funds.",
-        "aggressive"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Directly contradicting a client's stated goal, especially without understanding the underlying motivation, is likely to damage rapport and shut down communication. Effective financial planning prioritizes understanding the client's perspective before offering potentially unwelcome advice.",
-        "B": "Why option B is WRONG - While explaining risk capacity is important, doing so without first understanding the client's definition of 'aggressive' and their underlying goals is premature. It's crucial to actively listen and explore their motivations before presenting potentially conflicting information.",
-        "D": "Why option D is WRONG - Simply acknowledging the statement without further exploration fails to address the potential mismatch between the client's desired investment approach and their financial situation. Active listening requires probing deeper to understand the client's underlying needs and expectations."
-      },
-      "educational": "Understanding a client's risk tolerance and risk capacity is fundamental to suitable investment recommendations. Risk tolerance is the client's willingness to take risk, while risk capacity is their ability to take risk based on their financial situation. Effective communication involves reconciling these two factors to develop a plan that aligns with both the client's goals and their financial constraints. This is directly related to the CFP Board's Standards of Conduct, specifically the Duty of Care.",
-      "examTip": "On the CFP exam, always prioritize options that demonstrate active listening and understanding the client's perspective before offering advice or solutions. Look for answers that involve asking clarifying questions and exploring the client's underlying motivations.",
-      "memoryAid": "EAR: Explore, Acknowledge, Reconcile. Explore the client's perspective, Acknowledge their feelings, and then Reconcile their goals with their financial situation.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.3.a. - Understanding the Client's Personal and Financial Circumstances",
-      "commonMistake": "Many candidates are tempted to immediately correct the client's statement. The exam exploits the misconception that the CFP® professional's role is to immediately provide solutions. Test-takers often incorrectly assume that clients are always aware of their true risk capacity."
     },
     {
       "id": "cfp-psy-b4-002",
@@ -3288,41 +3015,6 @@
       "commonMistake": "The exam exploits the misconception that people are rational actors who value gains and losses equally. Option A is incorrect because Prospect Theory explicitly states that losses are felt more intensely than equivalent gains. Option B is incorrect because Prospect Theory challenges the assumption that investors always maximize utility. Option D is incorrect because risk preferences are not constant and are influenced by the framing of the decision."
     },
     {
-      "id": "cfp-psy-b4-020",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Building trust and rapport",
-      "subtopic": "Empathy",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "When meeting with a new client, Mark actively listens to their concerns and acknowledges their anxieties about retirement planning. Demonstrating empathy in financial planning involves:",
-      "explanation": "Empathy means understanding others\\' experiences from their perspective. It doesn\\'t require identical feelings or agreeing with decisions. Validation (\"I can understand why that\\'s frustrating\") builds connection. Empathetic responses acknowledge emotions before pivoting to solutions.",
-      "correctAnswer": 2,
-      "options": [
-        "Agreeing with every client decision",
-        "Feeling the same emotions as clients",
-        "Understanding clients\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Agreeing with every client decision, regardless of its potential consequences, is not empathy but rather enabling. A financial planner's duty is to provide objective advice, even if it means disagreeing with a client's choices.",
-        "1": "Why option B is WRONG - Feeling the same emotions as clients (sympathy) is different from empathy. While sympathy involves sharing feelings, empathy focuses on understanding the client's perspective without necessarily experiencing the same emotions. Sympathy can cloud judgment, while empathy facilitates better communication and problem-solving.",
-        "2": "Why option C is CORRECT - Empathy is the ability to understand and share the feelings of another. In financial planning, this means understanding a client's financial situation, goals, and concerns from their point of view, which is crucial for building trust and developing effective financial plans.",
-        "3": "Why option D is WRONG - Option D is incomplete and therefore cannot be the correct answer. It does not provide a valid response related to the definition of empathy."
-      },
-      "educational": "Empathy is a core component of effective client communication and falls under the Psychology of Financial Planning. Understanding a client's perspective, including their biases and emotional responses to financial decisions, allows the planner to tailor advice and build a stronger, more trusting relationship. This aligns with the CFP Board's emphasis on ethical and professional conduct, particularly the principle of integrity.",
-      "examTip": "On the CFP exam, when a question addresses empathy, focus on the answer choices that emphasize understanding the client's perspective and validating their feelings, rather than simply agreeing with them or feeling sorry for them.",
-      "memoryAid": "Empathy = Eyes on the client's perspective.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.1. (Fiduciary Duty)",
-      "commonMistake": "Many candidates confuse empathy with agreement or emotional mirroring. Option A is incorrect because agreeing with every client decision is not demonstrating empathy; it's potentially enabling poor choices. Option B is incorrect because feeling the same emotions as clients is not sustainable or helpful; it's important to maintain professional boundaries. The correct answer emphasizes understanding the client's perspective, which is essential for building trust and providing effective advice."
-    },
-    {
       "id": "cfp-psy-b4-021",
       "courseId": "cfp",
       "section": "CFP-PSY",
@@ -3743,41 +3435,6 @@
       "commonMistake": "A common trap is to overlook the subtle influence of presentation on decision-making. Options B, C, and D focus on the content of the information, not how it's presented. The exam exploits the misconception that people make rational decisions based solely on the underlying facts, regardless of how those facts are framed."
     },
     {
-      "id": "cfp-psy-b5-008",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Motivational interviewing",
-      "subtopic": "Motivational Interviewing",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "During initial meetings, advisors at 'Horizon Financial' aim to understand client values and goals, rather than immediately presenting solutions. Motivational interviewing techniques help advisers:",
-      "explanation": "Motivational interviewing uses OARS: Open questions, Affirmations, Reflective listening, and Summary statements. It helps clients articulate their own reasons for change (more powerful than external pressure). Useful for behavior change like saving more or reducing debt—clients convince themselves rather than being told.",
-      "correctAnswer": 1,
-      "options": [
-        "Enforce compliance",
-        "Elicit clients\\",
-        ",\n      ",
-        "Sell investment products"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Motivational interviewing is about collaboration and partnership, not enforcement. It aims to empower clients to make their own decisions, rather than imposing compliance.",
-        "1": "Why option B is CORRECT - Motivational interviewing is designed to elicit clients' own motivations for change. By using techniques like open-ended questions and reflective listening, the advisor helps the client explore their ambivalence and identify their reasons for adopting new behaviors.",
-        "2": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect.",
-        "3": "Why option D is WRONG - This option is intentionally left blank and therefore incorrect."
-      },
-      "educational": "Motivational interviewing is a client-centered, directive method for enhancing intrinsic motivation to change by exploring and resolving ambivalence. It's crucial in financial planning because lasting behavioral changes, like saving more or reducing debt, are more likely when clients feel ownership of the decision. Understanding and applying motivational interviewing techniques aligns with the CFP Board's emphasis on client psychology and effective communication.",
-      "examTip": "On the CFP exam, when a question involves client behavior change, consider motivational interviewing techniques as a potential solution, especially if the scenario emphasizes client autonomy and collaboration.",
-      "memoryAid": "OARS: Open questions, Affirmations, Reflective listening, Summary statements – the core skills of motivational interviewing.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Motivational Interviewing principles",
-      "commonMistake": "Many candidates may think financial planning is about providing solutions and enforcing compliance. Option A is the opposite of motivational interviewing. The exam tests your understanding of the client-centered approach and the importance of eliciting the client's own motivations for change."
-    },
-    {
       "id": "cfp-psy-b5-009",
       "courseId": "cfp",
       "section": "CFP-PSY",
@@ -3916,41 +3573,6 @@
       "timeEstimate": 45,
       "authorityRef": "CFP Board Code of Ethics - Principle 2: Integrity; Practice Standard 100-1: Defining the Scope of the Engagement",
       "commonMistake": "Test-takers often underestimate the importance of building rapport. While financial expertise is crucial, clients need to feel understood and comfortable before discussing sensitive financial matters. Options A, B, and D focus solely on the technical aspects, neglecting the human element of financial planning."
-    },
-    {
-      "id": "cfp-psy-b5-013",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Money scripts and financial attitudes",
-      "subtopic": "Financial Anxiety",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Susan frequently worries about running out of money, despite having a comfortable retirement plan. When working with financially anxious clients:",
-      "explanation": "Financial anxiety is common and valid. Acknowledge feelings without judgment. Break complex decisions into smaller steps. Provide clear, simple information. Create plans that offer sense of control. Avoid jargon and overwhelming detail. Regular check-ins can prevent anxiety from escalating.",
-      "correctAnswer": 2,
-      "options": [
-        "Avoid discussing their concerns",
-        "Overwhelm them with data to prove they\\",
-        ",\n      ",
-        "Suggest they drastically reduce their spending immediately."
-      ],
-      "version": 3,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Ignoring a client's financial anxiety is detrimental to the planning process. It undermines trust and prevents the planner from addressing the root causes of their concerns, hindering the development of a suitable financial plan.",
-        "1": "Why option B is WRONG - Overwhelming a financially anxious client with excessive data is counterproductive. It exacerbates their anxiety and makes it more difficult for them to understand and engage with the financial plan. Simplicity and clarity are key.",
-        "2": "Why option C is CORRECT - Addressing financial anxiety requires empathy and a structured approach. Acknowledging their feelings validates their experience, while breaking down complex financial decisions into manageable steps empowers them and reduces feelings of being overwhelmed. This fosters trust and collaboration.",
-        "3": "Why option D is WRONG - [This option is incomplete, so I cannot provide a specific reason why it is wrong. A complete option is needed for a proper explanation.]"
-      },
-      "educational": "Financial anxiety is a significant behavioral finance consideration. Understanding a client's emotional state is crucial for effective financial planning. The CFP Board's Standards of Conduct require planners to act with empathy and understanding, tailoring their communication and advice to the client's individual needs and circumstances. Ignoring or exacerbating a client's anxiety can lead to poor decision-making and ultimately harm the client's financial well-being.",
-      "examTip": "On the CFP exam, always prioritize client well-being and emotional needs when addressing financial anxiety. Look for answer choices that emphasize empathy, clear communication, and a collaborative approach.",
-      "memoryAid": "ACE: Acknowledge feelings, Communicate clearly, Empower with control.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Behavioral Finance - Money Scripts; CFP Board Code of Ethics - Principle 1: Integrity",
-      "commonMistake": "A common trap is to dismiss or ignore a client's anxieties. While data can be helpful, it's crucial to first acknowledge and validate their feelings. Option B is tempting because it seems logical to provide evidence of financial security, but it can be counterproductive if the underlying emotional issues are not addressed."
     },
     {
       "id": "cfp-psy-b5-014",
@@ -5213,40 +4835,6 @@
       "commonMistake": "Many candidates focus on only one aspect of financial capability, such as knowledge or skills. A common trap is assuming that mathematical ability or income levels are sufficient for financial success, overlooking the importance of psychological factors and access to appropriate products. Test-takers often incorrectly prioritize knowledge over the ability to act on that knowledge, failing to recognize the holistic nature of financial capability."
     },
     {
-      "id": "cfp-psy-b6-025",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-2",
-      "topic": "Heuristics in decision-making",
-      "subtopic": "Social Proof",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Dr. Lee is considering investing in a new biotech stock after hearing several colleagues rave about it. Social proof affects financial decisions when:",
-      "explanation": "Social proof: we follow others\\' behavior especially when uncertain. \"Everyone is buying crypto\" or \"my neighbor got a reverse mortgage\" influences decisions. Can be positive (using peer retirement savings benchmarks) or negative (herd behavior causing bubbles). Planners can harness social proof (\"many clients in your situation...\") ethically.",
-      "correctAnswer": 3,
-      "options": [
-        "People ignore others\\",
-        ",\n      ",
-        "People always make rational decisions",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Ignoring others is the opposite of social proof. Social proof relies on observing and mimicking the actions of others, not disregarding them. This option demonstrates a lack of understanding of the core concept.",
-        "B": "This option is incomplete and doesn't provide a meaningful statement about social proof or its impact on financial decisions. It lacks the necessary context to be considered a valid answer choice.",
-        "C": "This option is incomplete and doesn't provide a meaningful statement about social proof or its impact on financial decisions. It lacks the necessary context to be considered a valid answer choice."
-      },
-      "educational": "Social proof is a psychological phenomenon where people assume the actions of others reflect correct behavior for a given situation. In finance, this can lead to investment decisions based on popular trends rather than individual analysis, potentially creating bubbles or crashes.",
-      "examTip": "When you see 'social proof,' think 'following the crowd' and how that can impact rational decision-making.",
-      "memoryAid": "Social Proof = See Others, Follow Others (SOFO)",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Cialdini, R. B. (1984). Influence: The psychology of persuasion. New York: William Morrow.",
-      "commonMistake": "Many candidates fail to recognize the power of social influence on financial decisions. A common trap is assuming that people make independent and rational choices, overlooking the tendency to be influenced by the actions and opinions of others. Test-takers often incorrectly believe that thorough research eliminates the impact of social proof, failing to recognize the subconscious influence of social norms and peer behavior."
-    },
-    {
       "id": "cfp-psy-b7-001",
       "courseId": "cfp",
       "section": "CFP-PSY",
@@ -5597,41 +5185,6 @@
       "timeEstimate": 60,
       "authorityRef": "Grable, J. E., & Lytton, R. H. (1999). Financial Risk Tolerance Revisited: The Development of a Risk Assessment Instrument. Financial Counseling and Planning, 10(1), 61-73.",
       "commonMistake": "Many candidates think a simple questionnaire is sufficient for assessing risk tolerance. A comprehensive assessment requires a deeper understanding of the client's experiences and feelings. Be done once and never revisited is incorrect because risk tolerance can change over time. Use only questionnaires is insufficient for a complete understanding. Rely on age alone is an oversimplification and ignores individual differences."
-    },
-    {
-      "id": "cfp-psy-b7-012",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-1",
-      "topic": "Client interview and data gathering",
-      "subtopic": "Life Stage Considerations",
-      "difficulty": "easy",
-      "skillLevel": "Application",
-      "question": "You're creating a financial plan for a 30-year-old single professional versus a 60-year-old couple nearing retirement. Client assessment should consider life stage because:",
-      "explanation": "Life stage assessment: young adult (education debt, career building), family formation (housing, children costs, insurance), mid-career (wealth accumulation, sandwich generation), pre-retirement (catch-up, planning transition), retirement (income, healthcare, legacy). Same age doesn\\'t mean same stage—consider actual circumstances not just demographics.",
-      "correctAnswer": 1,
-      "options": [
-        "Life stage doesn\\",
-        ",\n      ",
-        "Investment risk tolerance",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Option A is incomplete and grammatically incorrect. Without the full text of the option, it's impossible to determine the specific reason it's wrong, but the provided fragment suggests it doesn't fully capture the importance of life stage in financial planning.",
-        "1": "Why option B is CORRECT - Life stage significantly influences financial priorities, goals, and risk tolerance. A young adult focused on debt repayment and career building has vastly different needs than a retiree focused on income generation and estate planning. Understanding a client's life stage allows for tailored advice and recommendations.",
-        "2": "Why option D is WRONG - Option C is incomplete and grammatically incorrect. Without the full text of the option, it's impossible to determine the specific reason it's wrong, but the provided fragment suggests it doesn't fully capture the importance of life stage in financial planning.",
-        "3": "Why option D is WRONG - Option D is incomplete and grammatically incorrect. Without the full text of the option, it's impossible to determine the specific reason it's wrong, but the provided fragment suggests it doesn't fully capture the importance of life stage in financial planning."
-      },
-      "educational": "Life stage assessment is crucial because financial needs and goals evolve throughout life. Ignoring life stage can lead to inappropriate investment strategies, inadequate insurance coverage, or insufficient retirement planning. This concept is directly related to understanding client values and goals, a core component of the financial planning process as outlined by the CFP Board.",
-      "examTip": "On the CFP exam, always consider how a client's life stage impacts their financial decisions and the suitability of your recommendations; don't rely solely on age or income.",
-      "memoryAid": "LAYERS: Life stage Affects Your Earnings, Risk, and Spending.",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 45,
-      "authorityRef": "CFP Board Code of Ethics and Standards of Conduct, Standard A.1.a.",
-      "commonMistake": "Many candidates underestimate the importance of considering a client's life stage. They may focus solely on quantitative data and overlook how life events and priorities significantly influence financial goals and risk tolerance. The exam exploits the misconception that financial planning is a one-size-fits-all approach."
     },
     {
       "id": "cfp-psy-b7-013",
@@ -6437,41 +5990,6 @@
       "timeEstimate": 60,
       "authorityRef": "Prochaska, J. O., & DiClemente, C. C. (1983). Stages and processes of self-change of smoking: Toward an integrative model of change. Journal of Consulting and Clinical Psychology, 51(3), 390.",
       "commonMistake": "Many candidates overlook the importance of aligning with a client's decision-making style. The exam tests whether you understand that effective planning involves adapting to the client's preferences, not imposing a specific approach. Test-takers often incorrectly assume that the planner's role is to dictate decisions."
-    },
-    {
-      "id": "cfp-psy-b8-013",
-      "courseId": "cfp",
-      "section": "CFP-PSY",
-      "blueprintArea": "PSY-2",
-      "topic": "Cognitive biases (anchoring, confirmation, recency)",
-      "subtopic": "Cognitive Dissonance",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Cognitive dissonance in investing occurs when:",
-      "explanation": "Cognitive dissonance: discomfort when beliefs and reality conflict. Financial examples: \"I\\'m a smart investor\" but performance is poor → blame market, ignore contrary info, sell to \"prove\" it was bad. Resolution: change belief, change behavior, or rationalize. Help clients: acknowledge discomfort, provide perspective, avoid \"I told you so.\" Awareness helps clients accept uncomfortable truths.",
-      "correctAnswer": 2,
-      "options": [
-        "Markets are volatile",
-        "Advisors disagree",
-        "Investors\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Market volatility can *trigger* cognitive dissonance, but it is not the definition of it. Cognitive dissonance is the *psychological discomfort* experienced when holding conflicting beliefs, ideas, or values, and market volatility simply provides the conflicting information.",
-        "1": "Why option B is WRONG - Disagreement between advisors may *contribute* to an investor's cognitive dissonance, but it is not the core definition. The dissonance arises from the investor's own conflicting beliefs and the information they are receiving, regardless of the source of that information.",
-        "2": "Why option C is CORRECT - Cognitive dissonance in investing arises when investors experience discomfort from the conflict between their beliefs (e.g., \"I am a skilled investor\") and reality (e.g., poor investment performance). This discomfort motivates them to reduce the dissonance through various means, such as rationalization or selective information gathering.",
-        "3": "Why option D is WRONG - Option D is incomplete and does not form a coherent statement. It does not relate to the concept of cognitive dissonance or investing."
-      },
-      "educational": "Cognitive dissonance is a powerful psychological phenomenon that significantly impacts investment decision-making. Understanding this bias is crucial for financial planners because it can lead clients to make irrational choices to alleviate their discomfort, such as doubling down on losing investments or ignoring contradictory information. Recognizing and addressing cognitive dissonance allows planners to guide clients toward more objective and rational financial decisions, aligning with the CFP Board's ethical standards of acting in the client's best interest.",
-      "examTip": "On the CFP exam, remember that cognitive dissonance often manifests as a client rationalizing poor investment choices or blaming external factors instead of acknowledging their own mistakes. Look for scenarios where clients are avoiding information that contradicts their existing beliefs.",
-      "memoryAid": "CD = Conflicting Data causes Discomfort",
-      "reference": "CFP Board Practice Standards",
-      "sourceFile": "psychology.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Festinger, L. (1957). A theory of cognitive dissonance. Stanford University Press.",
-      "commonMistake": "Many candidates confuse external factors with internal psychological conflict. The exam tests whether you understand that cognitive dissonance is an internal struggle to reconcile conflicting beliefs or actions. Test-takers often incorrectly attribute cognitive dissonance to market events or advisor disagreements."
     },
     {
       "id": "cfp-psy-b8-014",

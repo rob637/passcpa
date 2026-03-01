@@ -127,7 +127,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }, 10000); // 10 second timeout
 
     // Handle redirect result (for Google sign-in on mobile)
-    getRedirectResult(auth).then(async (result) => {
+    // IMPORTANT: We must await this BEFORE onAuthStateChanged processes the user,
+    // otherwise onAuthStateChanged fires before the profile doc is created.
+    let redirectHandled = false;
+    const redirectPromise = getRedirectResult(auth).then(async (result) => {
       if (result?.user) {
         // User signed in via redirect, handle profile creation
         const user = result.user;
@@ -147,7 +150,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             activeCourse: pendingCourse as CourseId,
             examSection: null,
             examDate: null,
-            dailyGoal: 25,
+            dailyGoal: 50,
             studyPlanId: null,
             settings: {
               notifications: true,
@@ -159,6 +162,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         } else {
           await updateDoc(userRef, { lastLogin: serverTimestamp() });
         }
+        redirectHandled = true;
       }
     }).catch((err) => {
       logger.error('Redirect result error:', err);
@@ -168,6 +172,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       authResolved = true;
       clearTimeout(timeout);
       if (firebaseUser) {
+        // Wait for redirect profile creation to finish before fetching profile
+        // This prevents the race where onAuthStateChanged fires before setDoc completes
+        if (!redirectHandled) {
+          await redirectPromise;
+        }
         // If user appears unverified, reload from server to get latest status.
         // Firebase caches auth state locally — if the user verified their email
         // in another tab/session and then closed the app, the cached state is stale.
@@ -208,7 +217,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // Update last login timestamp
       await updateDoc(doc(db, 'users', result.user.uid), {
         lastLogin: serverTimestamp(),
-      }).catch(() => {}); // Silent fail if user doc doesn't exist yet
+      }).catch((e) => { logger.warn('Failed to update lastLogin:', e); });
       return result.user;
     } catch (err) {
       const error = err as FirebaseError;
@@ -438,7 +447,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
               error.code === 'auth/cancelled-popup-request') {
             logger.log('Popup blocked/closed, falling back to redirect');
             await signInWithRedirect(auth, provider);
-            return null as unknown as User;
+            // Redirect will reload the page — getRedirectResult handles profile creation on return.
+            // Throw a special error so callers know auth is in progress, not failed.
+            throw new Error('AUTH_REDIRECT_IN_PROGRESS');
           }
           throw popupErr;
         }
@@ -449,6 +460,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       const userDoc = await getDoc(userRef);
       
       if (!userDoc.exists()) {
+        // Get pending course from registration flow (saved in localStorage by Register.tsx or Login.tsx)
+        const pendingCourse = localStorage.getItem('pendingCourse') || 'cpa';
+        
         // Create new profile for Google user
         const newProfile: Omit<UserProfile, 'id'> = {
           email: user.email || '',
@@ -456,9 +470,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           photoURL: user.photoURL,
           createdAt: serverTimestamp(),
           onboardingComplete: false,
+          activeCourse: pendingCourse as CourseId,
           examSection: null,
           examDate: null,
-          dailyGoal: 25,
+          dailyGoal: 50,
           studyPlanId: null,
           settings: {
             notifications: true,

@@ -95,7 +95,8 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
           case 'SEE3': questions = eaData.SEE3_ALL || []; break;
           default: questions = [];
         }
-      } catch {
+      } catch (e) {
+        logger.error('Failed to load EA data', e);
         questions = [];
       }
     }
@@ -108,7 +109,8 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
           case 'CMA2': questions = cmaData.CMA_PART2_QUESTIONS || []; break;
           default: questions = [];
         }
-      } catch {
+      } catch (e) {
+        logger.error('Failed to load CMA data', e);
         questions = [];
       }
     }
@@ -123,7 +125,7 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
           default: questions = [];
         }
       } catch (e) {
-        console.error('Failed to load CIA data', e);
+        logger.error('Failed to load CIA data', e);
         questions = [];
       }
     }
@@ -140,7 +142,7 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
           default: questions = [];
         }
       } catch (e) {
-        console.error('Failed to load CISA data', e);
+        logger.error('Failed to load CISA data', e);
         questions = [];
       }
     }
@@ -151,7 +153,7 @@ async function loadSectionQuestions(section: string): Promise<Question[]> {
             // CFP uses mixed question formats - cast to Question[] for compatibility
             questions = (cfpData.getCFPQuestions(section) || []) as Question[];
         } catch (err) {
-            console.error('Failed to load CFP questions', err);
+            logger.error('Failed to load CFP questions', err);
             questions = [];
         }
     }

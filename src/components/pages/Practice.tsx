@@ -930,6 +930,15 @@ const Practice: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inSession, questions.length, saveSessionState]);
 
+  // Refs for keyboard handler to avoid stale closures
+  // Initialized with no-ops because the actual callbacks are defined later in the component.
+  // The useEffect hooks below update these refs after every render.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSubmitAnswerRef = useRef<(...args: any[]) => any>(() => {});
+  const nextQuestionRef = useRef<() => void>(() => {});
+  const prevQuestionRef = useRef<() => void>(() => {});
+  const toggleFlagRef = useRef<() => void>(() => {});
+
   // Keyboard shortcuts
   useEffect(() => {
     if (!inSession) return;
@@ -952,22 +961,22 @@ const Practice: React.FC = () => {
       // Submit answer (Enter)
       if (e.key === 'Enter' && selectedAnswer !== null && !isAnswered) {
         e.preventDefault();
-        handleSubmitAnswer();
+        handleSubmitAnswerRef.current();
       }
 
       // Next question (ArrowRight or N)
       if ((e.key === 'ArrowRight' || e.key === 'n') && isAnswered) {
-        nextQuestion();
+        nextQuestionRef.current();
       }
 
       // Previous question (ArrowLeft or P)
       if ((e.key === 'ArrowLeft' || e.key === 'p') && currentIndex > 0) {
-        prevQuestion();
+        prevQuestionRef.current();
       }
 
       // Flag question (F)
       if (e.key === 'f') {
-        toggleFlag();
+        toggleFlagRef.current();
         feedback.haptic('light');
       }
 
@@ -979,10 +988,7 @@ const Practice: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [inSession, isAnswered, selectedAnswer, currentIndex, currentQuestion]); // Removed handleSubmitAnswer, nextQuestion, prevQuestion, toggleFlag to avoid loop, using refs or stable callbacks? They are stable if wrapped in useCallback.
-
-  // But the dependencies are updated in the callbacks.
-  // Actually, standard practice is to include them. The callbacks are wrapped in useCallback.
+  }, [inSession, isAnswered, selectedAnswer, currentIndex, currentQuestion]);
 
   // Timer effect
   useEffect(() => {
@@ -1250,9 +1256,10 @@ const Practice: React.FC = () => {
         });
       } else {
         // topicParam is a topic name (e.g., 'Financial Statement Analysis') - use as topic filter
-        // Fall back to user's current section and filter by topic
-        const currentSection = (userProfile.examSection || getDefaultSection(courseId)) as ExamSection;
-        logger.info(`[Practice] Topic '${topicParam}' is not a section, using as topic filter for section ${currentSection}`);
+        // Use explicit section from URL (daily plan passes it), fall back to profile section
+        const urlSection = searchParams.get('section') as ExamSection | null;
+        const currentSection = urlSection || (userProfile.examSection || getDefaultSection(courseId)) as ExamSection;
+        logger.info(`[Practice] Topic '${topicParam}' is not a section, using as topic filter for section ${currentSection} (urlSection=${urlSection})`);
         
         // Navigate to a session with subtopic filter instead
         // We need to manually start the fetch with topic filtering
@@ -1346,10 +1353,12 @@ const Practice: React.FC = () => {
   }, [currentIndex, questions.length, goToQuestion]);
 
   const prevQuestion = useCallback(() => {
+    // Disable backward navigation in exam mode
+    if (sessionConfig?.scoringMode === 'exam') return;
     if (currentIndex > 0) {
       goToQuestion(currentIndex - 1);
     }
-  }, [currentIndex, goToQuestion]);
+  }, [currentIndex, goToQuestion, sessionConfig?.scoringMode]);
 
   // Swipe gestures for mobile navigation
   const swipeHandlers = useSwipe({
@@ -1359,7 +1368,8 @@ const Practice: React.FC = () => {
       }
     },
     onSwipeRight: () => {
-      if (currentIndex > 0) {
+      // Disable backward swipe in exam mode
+      if (currentIndex > 0 && sessionConfig?.scoringMode !== 'exam') {
         prevQuestion();
       }
     },
@@ -1380,6 +1390,12 @@ const Practice: React.FC = () => {
       return next;
     });
   }, [currentQuestion]);
+
+  // Update keyboard handler refs after callbacks are defined
+  useEffect(() => { handleSubmitAnswerRef.current = handleSubmitAnswer; }, [handleSubmitAnswer]);
+  useEffect(() => { nextQuestionRef.current = nextQuestion; }, [nextQuestion]);
+  useEffect(() => { prevQuestionRef.current = prevQuestion; }, [prevQuestion]);
+  useEffect(() => { toggleFlagRef.current = toggleFlag; }, [toggleFlag]);
 
   // Report issue handler
   const handleReportIssue = useCallback(async () => {
@@ -1932,6 +1948,11 @@ const Practice: React.FC = () => {
                         const originalIndex = shuffledQuestion?.shuffleMap?.[displayIndex] ?? displayIndex;
                         const wrongExplanation = currentQuestion.whyWrong?.[originalIndex];
                         if (!wrongExplanation) return null;
+                        // Strip embedded "Why option X is WRONG" prefixes to avoid letter mismatch issues
+                        const cleanedExplanation = wrongExplanation
+                          .replace(/^Why option [A-Da-d] is (WRONG|wrong)\s*[-–:.\s]*/i, '')
+                          .trim();
+                        
                         return (
                           <div key={displayIndex} className="p-2 sm:p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-900">
                             <div className="flex items-start gap-2">
@@ -1941,7 +1962,7 @@ const Practice: React.FC = () => {
                                   <span className="font-bold">{String.fromCharCode(65 + displayIndex)}.</span> <span className="line-clamp-1 sm:line-clamp-none">{option}</span>
                                 </p>
                                 <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
-                                  {wrongExplanation}
+                                  {cleanedExplanation}
                                 </p>
                               </div>
                             </div>
@@ -2138,7 +2159,7 @@ const Practice: React.FC = () => {
         <div className="flex items-center justify-between gap-4">
           <Button
             onClick={prevQuestion}
-            disabled={currentIndex === 0}
+            disabled={currentIndex === 0 || sessionConfig?.scoringMode === 'exam'}
             variant="secondary"
             leftIcon={ChevronLeft}
           >

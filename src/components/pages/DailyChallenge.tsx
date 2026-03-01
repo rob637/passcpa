@@ -567,14 +567,20 @@ const DailyChallenge = () => {
               <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-blue-200 dark:border-blue-700">
                 <h4 className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Why other options are wrong:</h4>
                 <div className="space-y-2">
-                  {Object.entries(currentQuestion.whyWrong).map(([idx, reason]) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm">
-                      <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0 text-xs font-medium text-red-600">
-                        {String.fromCharCode(65 + parseInt(idx))}
-                      </span>
-                      <span className="text-slate-600 dark:text-slate-400 leading-relaxed">{reason}</span>
-                    </div>
-                  ))}
+                  {Object.entries(currentQuestion.whyWrong).map(([idx, reason]) => {
+                    // Strip embedded "Why option X is WRONG" prefixes to avoid letter mismatch issues
+                    const cleanedReason = (reason as string)
+                      .replace(/^Why option [A-Da-d] is (WRONG|wrong)\s*[-–:.\s]*/i, '')
+                      .trim();
+                    return (
+                      <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm">
+                        <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0 text-xs font-medium text-red-600">
+                          {String.fromCharCode(65 + parseInt(idx))}
+                        </span>
+                        <span className="text-slate-600 dark:text-slate-400 leading-relaxed">{cleanedReason}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}

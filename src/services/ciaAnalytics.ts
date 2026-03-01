@@ -473,7 +473,7 @@ export function getStudyPlanProgress(analytics: CIAAnalytics) {
     const failedParts = (Object.entries(analytics.partMastery) as [CIAPart, PartMastery][])
       .filter(([, p]) => !p.passed)
       .map(([part]) => part);
-    nextMilestone = `Pass ${failedParts[0]} mock exam`;
+    nextMilestone = `Pass ${failedParts[0] || 'CIA1'} mock exam`;
   } else nextMilestone = 'Ready for exam day!';
 
   return { overallProgress, partProgress, milestonesCompleted, nextMilestone };

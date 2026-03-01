@@ -2,7 +2,7 @@
   "$schema": "../schema/question.schema.json",
   "section": "CFP-RISK",
   "exportedAt": "2026-02-25T22:37:03.006Z",
-  "count": 336,
+  "count": 322,
   "questions": [
     {
       "id": "cfp-cross-008",
@@ -3118,41 +3118,6 @@
       "commonMistake": "Many candidates confuse the different parts of Medicare. A common trap is associating all medical services with Part A or Part B, forgetting that Part D specifically addresses prescription drug coverage. Test-takers often incorrectly assume that hospital coverage (Part A) or physician services (Part B) encompass all healthcare needs."
     },
     {
-      "id": "cfp-ins-b2-016",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-3",
-      "topic": "Auto insurance coverage",
-      "subtopic": "Coverage Types",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Sarah was injured in a car accident caused by another driver who had no insurance. Sarah has auto insurance. Uninsured motorist coverage provides protection when:",
-      "explanation": "Uninsured motorist (UM) coverage pays for the insured\\'s injuries when the at-fault driver has no insurance. It protects the insured when they are the victim, not the cause, of an accident.",
-      "correctAnswer": 2,
-      "options": [
-        "The insured\\",
-        ",\n      ",
-        "Her own health insurance",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Uninsured motorist coverage is designed to protect *you* when *another* driver is at fault and lacks insurance. If *you* are at fault, your liability coverage would be the relevant coverage, not uninsured motorist.",
-        "1": "Why option B is WRONG - [Assuming Option B is: \"The insured's car is damaged in a hit-and-run accident but the driver is later identified and has insurance\"] Uninsured Motorist coverage is triggered when the at-fault driver is *uninsured*. If the at-fault driver is identified and has insurance, their insurance would cover the damages, not your Uninsured Motorist coverage.",
-        "2": "Why option C is CORRECT - Uninsured motorist (UM) coverage protects you and your passengers if you're hit by an uninsured driver. It covers bodily injury damages that the at-fault driver would normally be responsible for, such as medical bills, lost wages, and pain and suffering. This ensures you're not left bearing the financial burden of an accident caused by someone without insurance.",
-        "3": "Why option D is WRONG - [Assuming Option D is: \"The insured's car is damaged by a falling tree\"] Uninsured motorist coverage specifically addresses situations involving *uninsured drivers*. Damage caused by a falling tree would typically be covered under the comprehensive portion of your auto insurance policy, not uninsured motorist coverage."
-      },
-      "educational": "Uninsured Motorist (UM) coverage is a crucial component of auto insurance, designed to protect policyholders from the financial consequences of accidents caused by uninsured or underinsured drivers. It complements liability coverage, which protects you when you are at fault, by providing a safety net when the at-fault party lacks adequate resources. Understanding the nuances of UM coverage is essential for comprehensive risk management and ensuring adequate financial protection in unforeseen circumstances, a key aspect of the CFP Board's Risk Management domain.",
-      "examTip": "On the CFP exam, carefully distinguish between Uninsured Motorist (UM) and Underinsured Motorist (UIM) coverage. UM applies when the at-fault driver has no insurance, while UIM applies when they have insurance, but the coverage limits are insufficient to cover your damages.",
-      "memoryAid": "UM = Uninsured Motorist = Uninsured Me protection.",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 45,
-      "authorityRef": "NAIC Uninsured Motorist Insurance Model Act",
-      "commonMistake": "Many candidates confuse uninsured motorist coverage with collision or comprehensive coverage. A common trap is thinking it covers damage to your own car regardless of fault. Test-takers often incorrectly assume that any accident involving an uninsured driver is automatically covered, overlooking the requirement that the uninsured driver must be at fault."
-    },
-    {
       "id": "cfp-ins-b2-017",
       "courseId": "cfp",
       "section": "CFP-RISK",
@@ -3958,40 +3923,6 @@
       "commonMistake": "Many candidates forget to account for Social Security disability benefits when calculating the shortfall. The exam exploits the misconception that the disability policy will fully replace the intended income percentage. Test-takers often incorrectly calculate the shortfall solely based on the policy's stated benefit percentage, without subtracting other disability income sources."
     },
     {
-      "id": "cfp-ins-b3-015",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "Disability income insurance (own-occupation, any-occupation)",
-      "subtopic": "Policy Types",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Dr. Smith owns a dental practice and wants to protect his business if he becomes disabled. A business overhead expense (BOE) disability policy covers which of the following?\n\n",
-      "explanation": "BOE policies reimburse fixed business expenses during the owner\\'s disability, including rent, utilities, employee salaries, and insurance premiums. They do not cover the owner\\'s income or replacement costs.",
-      "correctAnswer": 1,
-      "options": [
-        "The business owner\\",
-        ",\n      ",
-        "Unable to work",
-        "s salary"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - A BOE policy is designed to cover business expenses, not to replace the business owner's personal income. Personal disability insurance is needed for that purpose.",
-        "C": "Why option C is WRONG - This option is incomplete and lacks context. BOE policies cover specific business expenses, and without knowing what expense is being referred to, it cannot be determined if it is covered.",
-        "D": "Why option D is WRONG - While employee salaries are a covered expense under a BOE policy, the owner's salary is not. The owner would need a separate disability income policy to replace their personal income."
-      },
-      "educational": "Business Overhead Expense (BOE) insurance is crucial for business owners because it ensures the business can continue operating during the owner's disability. Unlike disability income insurance, which replaces the owner's personal income, BOE insurance focuses on maintaining the business's financial stability by covering essential operating expenses. This distinction is important for comprehensive financial planning, as both types of disability insurance address different needs.",
-      "examTip": "Remember that BOE policies are for business survival, not personal income replacement; therefore, focus on identifying expenses that keep the business running when answering questions about BOE coverage on the CFP® exam.",
-      "memoryAid": "BOE = Business Overhead Expenses (not owner's income)",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Disability Income Insurance Policy Provisions",
-      "commonMistake": "Many candidates confuse BOE policies with personal disability income policies. The exam exploits the misconception that a BOE policy covers the business owner's salary. Test-takers often incorrectly assume that all disability policies are designed to replace personal income, overlooking the specific purpose of a BOE policy to cover business expenses."
-    },
-    {
       "id": "cfp-ins-b3-016",
       "courseId": "cfp",
       "section": "CFP-RISK",
@@ -4692,40 +4623,6 @@
       "commonMistake": "Test-takers often incorrectly associate emergency funds with long-term goals like retirement or investment returns. The exam exploits the misconception that an emergency fund is a wealth-building tool, rather than a risk management tool."
     },
     {
-      "id": "cfp-ins-b3-036",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-3",
-      "topic": "Risk management techniques",
-      "subtopic": "Business Insurance",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Davis Consulting relies heavily on its lead strategist, Sarah Chen. To mitigate the risk of losing her expertise, they purchased key person life insurance. These benefits are typically used to:",
-      "explanation": "Key person insurance compensates the business for economic loss from the death of a valuable employee. Proceeds help offset lost revenue, cover hire and training of a replacement, and maintain business stability.",
-      "correctAnswer": 1,
-      "options": [
-        "Pay for the key employee\\",
-        ",\n      ",
-        "Offer Sarah an equity stake in the company",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Paying the key employee is not the primary purpose. The key person life insurance is designed to protect the business from the financial loss associated with the unexpected death of a vital employee, not to directly benefit the employee.",
-        "C": "This option is intentionally left blank as it is not provided in the question. Therefore, we cannot assess its correctness or provide an explanation.",
-        "D": "This option is intentionally left blank as it is not provided in the question. Therefore, we cannot assess its correctness or provide an explanation."
-      },
-      "educational": "Key person life insurance protects a business from the financial hardship caused by the death of a crucial employee. The business owns the policy, pays the premiums, and is the beneficiary, using the death benefit to cover costs associated with replacing the key person.",
-      "examTip": "Remember that key person insurance benefits the business, not the individual employee, in the event of the key person's death.",
-      "memoryAid": "Think 'Key' = 'Company' - Key person insurance primarily benefits the company, not the key employee.",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 45,
-      "authorityRef": "Life Insurance - Key Person Life Insurance. No specific NAIC model act applies here, but it's a standard insurance product.",
-      "commonMistake": "Many candidates confuse the purpose of key person life insurance. The exam exploits the misconception that the benefits are for the key employee, rather than the business."
-    },
-    {
       "id": "cfp-ins-b3-037",
       "courseId": "cfp",
       "section": "CFP-RISK",
@@ -4899,40 +4796,6 @@
       "timeEstimate": 45,
       "authorityRef": "Fixed Annuity Contract - Guarantees",
       "commonMistake": "Many candidates incorrectly assume that fixed annuities are subject to market risk. A common trap is confusing fixed annuities with variable annuities, which do have market risk. The exam exploits the misconception that all annuities carry investment risk for the owner."
-    },
-    {
-      "id": "cfp-ris-b2-002",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-1",
-      "topic": "Whole life, universal life, variable life",
-      "subtopic": "Separate Accounts",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Lisa is considering a variable annuity for retirement savings. Where are the premiums paid into a variable annuity typically invested?",
-      "explanation": "Variable annuity premiums go into \"separate accounts\" that are segregated from the insurer\\'s general account. The owner selects from investment options (subaccounts) and bears the investment risk. This is why variable annuities are securities regulated by the SEC.",
-      "correctAnswer": 1,
-      "options": [
-        "The insurer\\",
-        ",\n      ",
-        "The annuity contract holder",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "The insurer manages the general account, which is typically invested in more conservative investments like bonds. Variable annuity premiums are not invested in the insurer's general account. The separate account offers investment choices tied to market performance.",
-        "C": "While the insurance company manages the separate accounts, the premiums are not directly invested *in* the insurance company itself. The separate account holds a variety of investment options, not the insurer's assets.",
-        "D": "While the insurance company manages the separate accounts, the premiums are not directly invested *in* the insurance company itself. The separate account holds a variety of investment options, not the insurer's assets."
-      },
-      "educational": "Variable annuity premiums are invested in separate accounts, which offer a range of investment options, often mutual fund-like subaccounts. The performance of these subaccounts directly impacts the annuity's value and potential payouts.",
-      "examTip": "Remember that 'variable' implies variability in returns, which is achieved through market-linked investments in separate accounts.",
-      "memoryAid": "Think 'Variable = Variety' of investment options in separate accounts.",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Variable Annuity - Separate Account",
-      "commonMistake": "Many candidates confuse the general account with the separate account in variable annuities. The exam exploits the misconception that the insurance company directly manages all annuity investments. Test-takers often incorrectly assume the insurer's general account is used for variable annuities."
     },
     {
       "id": "cfp-ris-b2-003",
@@ -5177,41 +5040,6 @@
       "timeEstimate": 60,
       "authorityRef": "Buy-Sell Agreements - Entity (Stock Redemption) vs. Cross-Purchase",
       "commonMistake": "Many candidates confuse the advantages of entity and cross-purchase buy-sell agreements. A common trap is thinking buyers receive a stepped-up basis in an entity agreement. The exam exploits the misconception that all buy-sell agreements provide a stepped-up basis."
-    },
-    {
-      "id": "cfp-ris-b2-010",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "Disability income insurance (own-occupation, any-occupation)",
-      "subtopic": "Coverage Features",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Sarah owns \"Sarah's Salon,\" and wants to ensure her business can continue operating if she becomes disabled. Business overhead expense (BOE) disability insurance covers which of the following business expenses?",
-      "explanation": "BOE insurance reimburses the business for normal operating expenses (rent, utilities, employee salaries, insurance premiums) while the owner is disabled. It does not replace the owner\\'s income (that requires individual disability insurance) or pay for a replacement.",
-      "correctAnswer": 3,
-      "options": [
-        "The business owner\\",
-        ",\n      ",
-        "The landlord of the business",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - BOE insurance is specifically designed to cover business expenses, not the business owner's personal income. Individual disability insurance is the appropriate coverage for the owner's lost income.",
-        "1": "Why option B is WRONG - [This option is intentionally left blank as the question is incomplete]",
-        "2": "Why option C is WRONG - [This option is intentionally left blank as the question is incomplete]",
-        "3": "Why option D is CORRECT - Business Overhead Expense (BOE) insurance is designed to cover the ongoing operating expenses of a business, such as rent, utilities, employee salaries, and insurance premiums, when the business owner becomes disabled. This allows the business to continue operating during the owner's disability."
-      },
-      "educational": "Business Overhead Expense (BOE) insurance is crucial for business owners as it ensures the business can continue to operate even if the owner is temporarily unable to work due to disability. This contrasts with individual disability insurance, which replaces the owner's income. BOE insurance helps maintain the business's value and prevents forced closure during a difficult time, aligning with the CFP Board's focus on comprehensive risk management for clients.",
-      "examTip": "On the CFP exam, carefully distinguish between BOE insurance and individual disability insurance; BOE covers business expenses, while individual disability covers the owner's personal income replacement.",
-      "memoryAid": "BOE = Business Overhead Expenses. Think: BOE helps keep the lights ON at the business.",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 60,
-      "authorityRef": "NAIC Model Act on Business Overhead Expense Insurance",
-      "commonMistake": "Many candidates incorrectly assume that BOE insurance covers the business owner's salary. The exam exploits the misconception that all business expenses are covered, when in reality, BOE is specifically designed for overhead, not owner compensation."
     },
     {
       "id": "cfp-ris-b2-011",
@@ -5563,41 +5391,6 @@
       "timeEstimate": 60,
       "authorityRef": "IRC Section 72(q)(2)(C)",
       "commonMistake": "Many candidates incorrectly assume that all exceptions to the 10% early withdrawal penalty for qualified plans also apply to nonqualified annuities. While death or disability is a common exception, higher education expenses and first-time home purchases are generally not exceptions for nonqualified annuities. The exam exploits the misconception that rules are uniform across different retirement savings vehicles."
-    },
-    {
-      "id": "cfp-ris-b2-021",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-1",
-      "topic": "Whole life, universal life, variable life",
-      "subtopic": "SPIA Features",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "Maria invests $100,000 in a single premium immediate annuity (SPIA) on July 1st. When will the payments from the SPIA to Maria begin?",
-      "explanation": "Immediate annuities begin payments within one year of purchase, typically within 30-90 days. There is no accumulation phase. SPIAs are purchased with a single lump sum and immediately converted to an income stream.",
-      "correctAnswer": 3,
-      "options": [
-        "After a 5-year deferral period",
-        "After the first anniversary",
-        "At the annuitant\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - A 5-year deferral period is characteristic of deferred annuities, not immediate annuities. Immediate annuities, by definition, do not have a significant accumulation or deferral phase.",
-        "1": "Why option B is WRONG - While payments from an immediate annuity must begin within one year, they typically start much sooner, usually within 30 to 90 days. Waiting a full year would defeat the purpose of an 'immediate' annuity.",
-        "2": "Why option C is WRONG - The option is incomplete and grammatically incorrect. It does not provide a coherent timeframe for when payments begin.",
-        "3": "Why option D is CORRECT - Payments from a Single Premium Immediate Annuity (SPIA) begin almost immediately, typically within 30 to 90 days of the purchase date. The key feature of an immediate annuity is the near-instant conversion of a lump sum into a stream of income."
-      },
-      "educational": "Immediate annuities are designed to provide a stream of income that begins shortly after purchase, making them suitable for individuals seeking immediate income, such as retirees. This contrasts with deferred annuities, which accumulate value over time before income payments begin. Understanding the difference is crucial for determining the appropriate annuity type based on a client's financial goals and time horizon.",
-      "examTip": "On the CFP exam, pay close attention to the wording of annuity questions, especially the terms 'immediate' and 'deferred,' as they indicate the timing of income payments and the presence or absence of an accumulation phase.",
-      "memoryAid": "SPIA = Starts Paying Immediately Always",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 45,
-      "authorityRef": "IRC Section 72",
-      "commonMistake": "Many candidates confuse immediate annuities with deferred annuities. The exam exploits the misconception that all annuities have a deferral period. Immediate annuities are designed for payments to begin shortly after purchase, while deferred annuities accumulate value over time before payments begin."
     },
     {
       "id": "cfp-ris-b2-022",
@@ -5983,41 +5776,6 @@
       "timeEstimate": 45,
       "authorityRef": "IRC Section 223; HSA Tax Advantages",
       "commonMistake": "Many candidates confuse the tax advantages of HSAs with other tax-advantaged accounts. Option A is incorrect because there's no reduced tax rate for HSAs; the advantage is complete tax-freedom for qualified expenses. Option C is tempting because contributions are deductible, but employer matches are not *always* deductible for the employee (they are for the employer). Option D is an exaggeration; HSAs don't eliminate all taxes, just those related to contributions, growth, and qualified withdrawals."
-    },
-    {
-      "id": "cfp-ris-b3-008",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "Medicare Parts A, B, C, D",
-      "subtopic": "Medicare",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "A 67-year-old client enrolled in Medicare Part B is concerned about outpatient costs. Which of the following services requires the client to satisfy the Part B deductible and then pay the standard 20% coinsurance?",
-      "explanation": "Medicare Part B covers outpatient services including physician visits, diagnostic tests, outpatient surgery, durable medical equipment, and preventive services. After meeting the annual deductible, beneficiaries typically pay 20% coinsurance for covered services. Part A covers inpatient hospital care, and Part D covers prescriptions.",
-      "correctAnswer": 1,
-      "options": [
-        "Inpatient hospital stays exceeding 60 days",
-        "Doctor\\",
-        ",\n      ",
-        "Custodial care"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Inpatient hospital stays exceeding 60 days are covered under Medicare Part A, not Part B. While Part A does have cost-sharing requirements, it does not involve the standard 20% coinsurance after meeting a deductible; instead, it involves copayments that increase with longer stays within a benefit period.",
-        "1": "Why option B is CORRECT - Doctor visits are outpatient services covered under Medicare Part B. After the annual Part B deductible is met, the beneficiary typically pays 20% coinsurance for covered services, making this the correct answer.",
-        "2": "Why option D is WRONG - This option is intentionally left blank to allow for future question development. If a real option were present, it would need to be evaluated based on whether the service is covered under Medicare Part B and subject to the 20% coinsurance after the deductible is met.",
-        "3": "Why option D is WRONG - This option is intentionally left blank to allow for future question development. If a real option were present, it would need to be evaluated based on whether the service is covered under Medicare Part B and subject to the 20% coinsurance after the deductible is met."
-      },
-      "educational": "Medicare Part B is designed to cover outpatient medical services, helping to reduce the financial burden of routine care and preventative services. Understanding the cost-sharing structure of Medicare, including deductibles, coinsurance, and copayments, is crucial for financial planners to accurately assess clients' healthcare expenses and plan for potential gaps in coverage, such as through Medigap policies or Medicare Advantage plans.",
-      "examTip": "On the CFP exam, carefully distinguish between Medicare Part A and Part B coverage, focusing on the types of services each covers and the associated cost-sharing requirements (deductibles, coinsurance, and copays).",
-      "memoryAid": "Think 'B' for 'Bills from the doctor' to remember Part B covers outpatient services like doctor visits.",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Medicare Part B; Cost Sharing",
-      "commonMistake": "Many candidates confuse the cost-sharing structures of Medicare Part A and Part B. Part A primarily covers inpatient care and has deductibles and coinsurance for extended stays. The exam exploits the misconception that all Medicare services have similar cost-sharing. Doctor visits are a core Part B service subject to the standard deductible and 20% coinsurance."
     },
     {
       "id": "cfp-ris-b3-009",
@@ -6790,41 +6548,6 @@
       "commonMistake": "Many candidates are unsure about the duration of COBRA coverage. The exam exploits the misconception that COBRA coverage is a fixed duration for all qualifying events. Test-takers often incorrectly remember the standard duration, failing to account for the extended coverage period available for certain qualifying events like disability."
     },
     {
-      "id": "cfp-ris-b4-006",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "HSAs, FSAs, and HRAs",
-      "subtopic": "HSA Estate Planning",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "Robert had an HSA through his employer, Greenleaf Industries. Upon Robert's death, what happens to the funds in his Health Savings Account (HSA)?",
-      "explanation": "If a spouse is beneficiary, the HSA becomes theirs (same tax treatment continues). Non-spouse beneficiaries receive the FMV as taxable income in the year of death. Medical expenses of the deceased incurred before death can be paid tax-free. HSA beneficiary designations are important estate planning considerations.",
-      "correctAnswer": 3,
-      "options": [
-        "Is forfeited to the government",
-        "Passes tax-free to any beneficiary",
-        "Must be used for the deceased\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - HSAs are not forfeited to the government upon the owner's death. Instead, the account passes to a designated beneficiary or the estate, subject to specific tax rules.",
-        "1": "Why option B is WRONG - While a spouse beneficiary can inherit an HSA tax-free and treat it as their own, a non-spouse beneficiary will receive the fair market value of the HSA as taxable income in the year of the HSA owner's death. It does *not* pass tax-free to all beneficiaries.",
-        "2": "Why option C is WRONG - While medical expenses incurred *before* death can be paid tax-free from the HSA, the account is not *required* to be used for the deceased's medical expenses. The beneficiary has options, though non-spouse beneficiaries face income tax consequences.",
-        "3": "Why option D is CORRECT - The account passes to a designated beneficiary or the estate. If the beneficiary is a spouse, the HSA is treated as their own. If the beneficiary is not a spouse, the HSA ceases to be an HSA, and the beneficiary receives the fair market value of the HSA assets as taxable income in the year of the HSA owner's death. Medical expenses of the deceased incurred before death can be paid tax-free from the HSA."
-      },
-      "educational": "Health Savings Accounts (HSAs) are a valuable tool for retirement and healthcare planning. Understanding the beneficiary rules is crucial for estate planning. The different tax treatments for spouse versus non-spouse beneficiaries highlight the importance of coordinating HSA beneficiary designations with overall estate planning goals, aligning with the CFP Board's Estate Planning principles.",
-      "examTip": "On the CFP exam, pay close attention to who the HSA beneficiary is (spouse vs. non-spouse) as this drastically changes the tax implications upon the HSA owner's death.",
-      "memoryAid": "HSA Death: Spouse = Sweet (tax-free), Non-Spouse = Not Sweet (taxable).",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 90,
-      "authorityRef": "IRC Section 223; IRS Publication 969",
-      "commonMistake": "Many candidates are confused about the tax treatment of HSAs upon death. The exam exploits the misconception that HSA funds are always treated the same way, regardless of the beneficiary. Test-takers often incorrectly assume a uniform tax treatment, failing to recognize the different rules for spouses versus other beneficiaries."
-    },
-    {
       "id": "cfp-ris-b4-007",
       "courseId": "cfp",
       "section": "CFP-RISK",
@@ -7105,41 +6828,6 @@
       "timeEstimate": 90,
       "authorityRef": "IRC Section 7702B; NAIC Long-Term Care Insurance Model Act",
       "commonMistake": "Many candidates are unfamiliar with life insurance/long-term care hybrid products. Test-takers often incorrectly assume these products are always cheaper or require no underwriting. The exam exploits the misconception that all long-term care insurance is standalone and that hybrid products offer unlimited benefits."
-    },
-    {
-      "id": "cfp-ris-b4-015",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "Long-term care insurance",
-      "subtopic": "Benefit Triggers",
-      "difficulty": "medium",
-      "skillLevel": "Remembering and Understanding",
-      "question": "To qualify for certain tax advantages, Nancy's long-term care (LTC) policy must meet specific criteria. Tax-qualified LTC policies require benefit triggers of:\n(A) Hospitalization for at least 3 days (B) Any medical condition (C) Doctor's recommendation alone (D) Inability to perform at least two of six activities of daily living (ADLs) or cognitive impairment",
-      "explanation": "Tax-qualified LTC policies trigger benefits when the insured cannot perform at least 2 of 6 Activities of Daily Living (bathing, dressing, eating, toileting, transferring, continence) expected to last 90+ days, or has severe cognitive impairment requiring substantial supervision. A licensed healthcare practitioner must certify.",
-      "correctAnswer": 3,
-      "options": [
-        "Hospitalization for at least 3 days",
-        "Any medical condition",
-        "Doctor\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Hospitalization, regardless of length, is not a qualifying trigger for benefits under a tax-qualified long-term care (LTC) policy. The focus is on the inability to perform Activities of Daily Living (ADLs) or cognitive impairment, not hospitalization itself.",
-        "1": "Why option B is WRONG - While any medical condition *could* lead to the need for long-term care, it's not the trigger for benefits under a tax-qualified LTC policy. The policy requires a specific level of functional impairment or cognitive impairment, not just the presence of a medical condition.",
-        "2": "Why option C is WRONG - While a doctor's certification is *required* to confirm the need for long-term care, the doctor's visit itself is not the trigger. The trigger is the inability to perform ADLs or cognitive impairment, as certified by a licensed healthcare practitioner.",
-        "3": "Why option D is CORRECT - Tax-qualified long-term care (LTC) policies trigger benefits when the insured is unable to perform at least two out of six Activities of Daily Living (ADLs) – bathing, dressing, eating, toileting, transferring, and continence – for a period expected to last at least 90 days, or has a severe cognitive impairment requiring substantial supervision. A licensed health care practitioner must certify this condition."
-      },
-      "educational": "The ADL/cognitive impairment trigger for tax-qualified LTC policies is designed to ensure that benefits are paid only when there is a genuine need for long-term care services. This requirement helps to maintain the tax-qualified status of the policy under IRC Section 7702B, which provides favorable tax treatment for LTC insurance. Understanding these triggers is crucial for determining policy eligibility and planning for long-term care expenses.",
-      "examTip": "On the CFP exam, pay close attention to the wording of LTC questions. Distinguish between the *trigger* for benefits and the *requirements* for receiving benefits. A doctor's certification is required, but the ADL/cognitive impairment is the trigger.",
-      "memoryAid": "ADLs & Cognition: LTC benefits ignition!",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 60,
-      "authorityRef": "IRC Section 7702B(c); NAIC Long-Term Care Insurance Model Act",
-      "commonMistake": "Many candidates are unclear on the specific triggers for tax-qualified long-term care policies. A common trap is assuming hospitalization or a doctor's recommendation alone is sufficient. The exam exploits the misconception that any medical condition qualifies for benefits under a tax-qualified LTC policy."
     },
     {
       "id": "cfp-ris-b4-016",
@@ -7945,41 +7633,6 @@
       "timeEstimate": 60,
       "authorityRef": "Long-Term Care Insurance Model Regulation, Activities of Daily Living (ADLs)",
       "commonMistake": "Many candidates are unfamiliar with the specific definition of ADLs used in LTC policies. The exam exploits the misconception that ADLs include activities like working, exercising, shopping, or driving. Test-takers often incorrectly assume any physical activity qualifies as an ADL."
-    },
-    {
-      "id": "cfp-ris-b5-014",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "Long-term care insurance",
-      "subtopic": "Shared Care",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "The Johnsons are purchasing LTC insurance. They are interested in a rider that allows them to share benefits. A shared care rider on LTC insurance allows:\n\nA) Benefits to be paid to family members\nB) Spouses to access each other'\nC) \nD)",
-      "explanation": "Shared care lets couples pool benefits—if one spouse exhausts their benefit pool, they can draw from the other\\'s. This provides flexibility for couples where one may need more care. Some versions add a shared pool beyond individual benefits. It costs more but provides valuable protection.",
-      "correctAnswer": 1,
-      "options": [
-        "Benefits to be paid to family members",
-        "Spouses to access each other\\",
-        ",\n      ",
-        "Inflation protection is guaranteed"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - While some LTC policies may offer benefits to family members in specific situations (e.g., informal caregiver training), a shared care rider's primary function is not to directly pay benefits to family members. It focuses on benefit sharing between spouses or partners.",
-        "1": "Why option B is CORRECT - A shared care rider on a long-term care (LTC) insurance policy allows spouses or partners to access each other's benefit pools. If one spouse exhausts their individual policy benefits, they can then draw upon the remaining benefits from their partner's policy, providing a larger combined pool of coverage.",
-        "2": "Why option D is WRONG - This option is intentionally left blank as it was not provided in the original question.",
-        "3": "Why option D is WRONG - This option is intentionally left blank as it was not provided in the original question."
-      },
-      "educational": "Long-term care insurance is designed to cover expenses associated with custodial care, such as assistance with activities of daily living (ADLs). Shared care riders address the risk that one spouse may require significantly more LTC services than the other, preventing one spouse from being left without coverage after the other's benefits are depleted. This aligns with the CFP Board's focus on comprehensive risk management and ensuring adequate financial resources for potential future needs.",
-      "examTip": "When evaluating LTC insurance policies on the CFP exam, pay close attention to riders like shared care, inflation protection, and elimination periods, as these features significantly impact the policy's overall value and suitability for a client's specific circumstances.",
-      "memoryAid": "Shared Care = Spousal Sharing",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 90,
-      "authorityRef": "Long-Term Care Insurance Policy Provisions, Shared Care Rider",
-      "commonMistake": "Many candidates misunderstand the purpose of a shared care rider. The exam exploits the misconception that it allows benefits to be paid to any family member. Test-takers often incorrectly assume that shared care riders have broad application beyond spousal access."
     },
     {
       "id": "cfp-ris-b5-015",
@@ -9277,41 +8930,6 @@
       "commonMistake": "Many candidates oversimplify the risk assessment process. The exam exploits the misconception that risk assessment focuses solely on probability or historical data. Test-takers often incorrectly assume that insurance premium costs are the primary factor in evaluating potential losses."
     },
     {
-      "id": "cfp-ris-b7-002",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-3",
-      "topic": "Risk management techniques",
-      "subtopic": "Pure vs Speculative Risk",
-      "difficulty": "easy",
-      "skillLevel": "Remembering and Understanding",
-      "question": "A financial planner explains risk classifications to a client. Which of the following scenarios represents a pure risk rather than a speculative risk?",
-      "explanation": "Pure risk involves only the possibility of loss or no loss — there is no potential gain. Property damage from a hurricane is a pure risk because the only outcomes are loss (damage occurs) or no loss (no damage). Speculative risks like investing or starting a business include the possibility of gain.",
-      "correctAnswer": 2,
-      "options": [
-        "Investing in stocks with the potential for gain or loss",
-        "Starting a new business venture that may succeed or fail",
-        "The possibility of a client\\",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Investing in stocks is a speculative risk because there's a potential for both gain (the stock price increases) and loss (the stock price decreases). Speculative risks are characterized by the possibility of either a profit or a loss.",
-        "1": "Why option B is WRONG - Starting a new business venture is a speculative risk. The outcome could be success (profit and growth) or failure (financial loss). This dual possibility of gain or loss defines speculative risk.",
-        "2": "Why option C is CORRECT - The possibility of a client's accidental injury represents a pure risk because the outcome can only be loss (medical expenses, potential liability) or no loss (no injury occurs). There is no possibility of gain from this scenario, fitting the definition of pure risk.",
-        "3": "Why option D is WRONG - Option D is incomplete and cannot be evaluated as a risk scenario. It lacks the necessary information to determine if it represents a pure or speculative risk."
-      },
-      "educational": "Pure risks involve situations where there is only the possibility of loss or no loss, such as property damage or liability claims. Speculative risks, on the other hand, offer the potential for both gain and loss, like investments or business ventures. Understanding the difference between pure and speculative risks is crucial for effective risk management and insurance planning, allowing financial planners to recommend appropriate coverage and strategies to mitigate potential losses.",
-      "examTip": "On the CFP exam, carefully distinguish between pure and speculative risks when evaluating insurance needs and investment strategies; focus on whether there is a potential for gain to identify speculative risks.",
-      "memoryAid": "Pure Risk = Potential Loss Only (PLO)",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 75,
-      "authorityRef": "CPCU 500 Foundations of Risk Management and Insurance, Chapter 1",
-      "commonMistake": "Many candidates confuse pure risk and speculative risk. The exam exploits the misconception that all risks involve the potential for both gain and loss. Test-takers often incorrectly classify investment opportunities or business ventures as pure risks."
-    },
-    {
       "id": "cfp-ris-b7-003",
       "courseId": "cfp",
       "section": "CFP-RISK",
@@ -10047,40 +9665,6 @@
       "commonMistake": "Many candidates misunderstand the scope of the Mental Health Parity and Addiction Equity Act (MHPAEA). The MHPAEA requires parity in terms of cost-sharing and treatment limitations, but it does not mandate that all plans cover mental health benefits. The exam exploits the misconception that the MHPAEA requires universal mental health coverage."
     },
     {
-      "id": "cfp-ris-b7-024",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "Disability income insurance (own-occupation, any-occupation)",
-      "subtopic": "Overhead Expense Insurance",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "A dentist owns a solo dental practice and purchases business overhead expense (BOE) insurance. Which of the following expenses is typically covered by the BOE policy?",
-      "explanation": "BOE insurance covers fixed monthly business expenses such as rent, utilities, employee salaries, insurance premiums, and equipment leases during the owner\\'s disability. It does not cover the owner\\'s salary, profit distributions, or personal expenses. Benefits are tax-deductible as a business expense.",
-      "correctAnswer": 1,
-      "options": [
-        "The dentist\\",
-        ",\n      ",
-        "The employees of the dental practice",
-        ",\n      "
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - Business Overhead Expense (BOE) insurance is specifically designed to cover business expenses, not the owner's salary or compensation. The dentist's salary is considered personal income, not a business overhead expense.",
-        "C": "Why option C is WRONG - [PLACEHOLDER] BOE insurance is designed to cover expenses that keep the business running during the owner's disability. While the dentist's personal medical bills are important, they are not a business overhead expense.",
-        "D": "Why option D is WRONG - [PLACEHOLDER] BOE insurance is designed to cover expenses that keep the business running during the owner's disability. While the dentist's personal medical bills are important, they are not a business overhead expense."
-      },
-      "educational": "Business Overhead Expense (BOE) insurance is crucial for self-employed professionals and small business owners. It ensures the business can continue operating by covering essential expenses like rent, utilities, and employee salaries if the owner becomes disabled. This type of insurance helps maintain the business's value and prevents it from collapsing during a challenging time, aligning with the CFP Board's focus on business owner planning.",
-      "examTip": "Remember that BOE insurance is designed to cover fixed business expenses, not the owner's income or personal expenses; focus on expenses that keep the business operational when answering BOE questions on the CFP exam.",
-      "memoryAid": "BOE = Business Operating Expenses (covers the costs of operating the business, not the owner's personal expenses)",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 60,
-      "authorityRef": "Disability Income Insurance: The Unique Risk, Joseph M. Belth (discusses BOE policies)",
-      "commonMistake": "Many candidates incorrectly assume that Business Overhead Expense (BOE) insurance covers the insured's salary or personal expenses. BOE insurance is designed to cover the *business* expenses necessary to keep the practice running while the owner is disabled. The exam exploits the misconception that BOE insurance is a form of personal disability income replacement."
-    },
-    {
       "id": "cfp-ris-b7-025",
       "courseId": "cfp",
       "section": "CFP-RISK",
@@ -10429,41 +10013,6 @@
       "timeEstimate": 45,
       "authorityRef": "Medicare.gov",
       "commonMistake": "Many candidates have a limited understanding of the scope of the Medicare Annual Election Period. The exam exploits the misconception that the AEP is only for initial enrollment or Medigap changes. Test-takers often incorrectly assume that the AEP is limited to specific actions, failing to recognize its broader purpose of allowing beneficiaries to make various changes to their Medicare coverage, including switching plans and adding or dropping Part D."
-    },
-    {
-      "id": "cfp-ris-b8-010",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-2",
-      "topic": "Disability income insurance (own-occupation, any-occupation)",
-      "subtopic": "Key Person Disability",
-      "difficulty": "hard",
-      "skillLevel": "Application",
-      "question": "Key person disability insurance for a business:",
-      "explanation": "Key person disability: protects business from financial impact of key employee\\'s disability. Covers: lost revenue, replacement search/training, recovery of business. Business owns policy, pays premiums (not deductible), receives benefits (not taxable). Different from personal DI—protects business, not employee\\'s income. Often overlooked protection for small businesses.",
-      "correctAnswer": 3,
-      "options": [
-        "Covers employee salaries",
-        "Is the same as workers\\",
-        ",\n      ",
-        "Premiums are tax deductible to the business"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "0": "Why option A is WRONG - Key person disability insurance does not directly cover employee salaries in general. It's designed to protect the business from the financial loss resulting from the key employee's inability to work, such as lost revenue or the cost of finding a replacement.",
-        "1": "Why option B is WRONG - Key person disability insurance is entirely different from workers' compensation. Workers' compensation covers employees injured on the job, while key person disability covers the business against the loss of a key employee's contributions due to disability, regardless of the cause.",
-        "2": "Why option C is WRONG - While a key person disability policy can help a business survive the disability of a key employee, its primary purpose is not to ensure the business's long-term survival in all circumstances. It's a risk management tool focused on a specific event: the disability of a key individual.",
-        "3": "Why option D is CORRECT - Key person disability insurance protects the business from the financial impact of a key employee's disability. This includes covering costs like lost revenue, expenses to find and train a replacement, and potentially the cost of recovering the business's operations while the key employee is disabled."
-      },
-      "educational": "Key person disability insurance is a crucial risk management tool for businesses, particularly small businesses where the contributions of a few individuals are critical to success. The business owns the policy, pays the premiums (which are not tax-deductible), and receives the benefits (which are generally not taxable). This coverage helps mitigate the financial strain caused by the unexpected disability of a vital employee, ensuring business continuity.",
-      "examTip": "Remember that premiums paid for key person disability insurance are not tax deductible, but the benefits received are generally not taxable. This is the opposite of individual disability insurance, where premiums are paid with after-tax dollars and benefits are tax-free if certain conditions are met.",
-      "memoryAid": "Key Person DI: Business owns, Business benefits. Think 'B' for Business.",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 90,
-      "authorityRef": "NAIC Model Act 520, Section 6",
-      "commonMistake": "Many candidates confuse key person disability insurance with other types of business insurance, like workers' compensation. A common trap is assuming it covers employee salaries directly, when its primary purpose is to protect the business from the financial impact of losing a key employee due to disability. Test-takers often incorrectly associate it with covering employee injuries on the job."
     },
     {
       "id": "cfp-ris-b8-011",
@@ -11024,40 +10573,6 @@
       "timeEstimate": 60,
       "authorityRef": "General Principles of Insurance Law; Subrogation Clause in Insurance Contract",
       "commonMistake": "Many candidates are unfamiliar with the principle of subrogation. The exam exploits the misconception that the insurer's role ends with paying the insured's claim. Test-takers often incorrectly associate subrogation with actions that directly affect the insured, such as premium increases or policy cancellations, rather than the insurer's right to recover from the at-fault party."
-    },
-    {
-      "id": "cfp-ris-b9-002",
-      "courseId": "cfp",
-      "section": "CFP-RISK",
-      "blueprintArea": "RISK-4",
-      "topic": "Coinsurance and valuation",
-      "subtopic": "Valued vs Indemnity Policies",
-      "difficulty": "medium",
-      "skillLevel": "Application",
-      "question": "Mark owns a rare art collection and wants to insure it. He and the insurer agree on a specific value for each piece. A valued policy differs from an indemnity policy in that:",
-      "explanation": "Valued policy: pre-agreed amount payable regardless of actual loss (common: life insurance, some property). Indemnity: pays actual loss up to limit (most property/casualty). Valued advantage: no dispute at claim time. Challenge: potential moral hazard if value exceeds actual. Used where value hard to determine at loss (art, life).",
-      "correctAnswer": 2,
-      "options": [
-        "It\\",
-        ",\n      ",
-        "s uninsurable",
-        "The amount payable is agreed upon at policy inception rather than determined by actual loss at time of claim"
-      ],
-      "version": 2,
-      "status": "approved",
-      "whyWrong": {
-        "A": "Why option A is WRONG - This option is incomplete and grammatically incorrect, making it nonsensical and therefore not a valid answer.",
-        "B": "Why option B is WRONG - This option is incomplete and grammatically incorrect, making it nonsensical and therefore not a valid answer.",
-        "D": "Why option D is WRONG - While this option correctly describes a key feature of a valued policy, it is incomplete. The core distinction between valued and indemnity policies lies in how the payout amount is determined: pre-agreed versus based on actual loss. This option only focuses on the 'valued' aspect, not the contrast."
-      },
-      "educational": "Valued policies are often used when it's difficult to determine the actual value of an item after a loss, such as with artwork or life insurance. Indemnity policies, on the other hand, are designed to prevent the insured from profiting from a loss, aligning with the principle of restoring them to their pre-loss financial position. Understanding the difference is crucial for selecting appropriate insurance coverage and managing risk effectively, a core competency for financial planners.",
-      "examTip": "On the CFP® exam, remember that life insurance is almost always a valued policy, while property insurance is typically an indemnity policy, unless specifically stated otherwise in the question.",
-      "memoryAid": "VALUED = Value Agreed upon upfront. INDEMNITY = I'm Damaged, let's see what it's worth.",
-      "reference": "IRC Section 101",
-      "sourceFile": "risk_batch2.ts",
-      "timeEstimate": 60,
-      "authorityRef": "General Principles of Insurance Law; Valued Policy Laws (varies by state)",
-      "commonMistake": "Many candidates confuse valued policies with indemnity policies. The exam exploits the misconception that all insurance policies operate on the principle of indemnity (restoring the insured to their pre-loss condition). Test-takers often incorrectly assume that the amount payable is always determined at the time of the loss, overlooking the agreement on value at policy inception in a valued policy."
     },
     {
       "id": "cfp-ris-b9-003",

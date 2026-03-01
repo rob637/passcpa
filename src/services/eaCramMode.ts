@@ -12,6 +12,7 @@
  */
 
 import { EASectionId } from '../courses/ea/config';
+import logger from '../utils/logger';
 
 // Types
 export interface CramTopic {
@@ -703,7 +704,7 @@ export function loadCramState(): CramState | null {
       return cramState;
     }
   } catch (e) {
-    console.error('Error loading cram state:', e);
+    logger.error('Error loading cram state:', e);
   }
   return null;
 }
@@ -715,7 +716,7 @@ function saveCramState(): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cramState));
   } catch (e) {
-    console.error('Error saving cram state:', e);
+    logger.error('Error saving cram state:', e);
   }
 }
 

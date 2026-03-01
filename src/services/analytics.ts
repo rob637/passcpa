@@ -61,12 +61,12 @@ export const initAnalytics = (): void => {
   };
 
   // Google Consent Mode V2 (required since March 2024)
-  // Without this, gtag.js silently drops ALL events
+  // Default to 'denied' for GDPR compliance — update via updateConsent() after user accepts
   window.gtag('consent', 'default', {
-    'analytics_storage': 'granted',
-    'ad_storage': 'granted',
-    'ad_user_data': 'granted',
-    'ad_personalization': 'granted',
+    'analytics_storage': 'granted',     // Required for basic analytics
+    'ad_storage': 'denied',             // Denied until explicit user consent
+    'ad_user_data': 'denied',           // Denied until explicit user consent
+    'ad_personalization': 'denied',     // Denied until explicit user consent
   });
 
   window.gtag('js', new Date());
@@ -97,6 +97,20 @@ export const initAnalytics = (): void => {
 
   // Track session start for PWA install threshold
   trackPWAEngagement('session_start');
+};
+
+/**
+ * Update consent after user accepts cookie/privacy banner.
+ * Call this when user explicitly grants ad/personalization consent.
+ */
+export const updateConsent = (granted: boolean): void => {
+  if (!window.gtag) return;
+  const value = granted ? 'granted' : 'denied';
+  window.gtag('consent', 'update', {
+    'ad_storage': value,
+    'ad_user_data': value,
+    'ad_personalization': value,
+  });
 };
 
 /**

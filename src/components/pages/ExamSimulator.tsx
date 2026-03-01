@@ -10,6 +10,8 @@ import {
   XCircle,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
+  ChevronDown,
   Flag,
   // Pause,
   // Play,
@@ -80,6 +82,11 @@ const ExamSimulator: React.FC = () => {
   const [calcOperator, setCalcOperator] = useState<string | null>(null);
   const [calcWaitingForOperand, setCalcWaitingForOperand] = useState(false);
   const [blueprintScores, setBlueprintScores] = useState<Record<string, { correct: number; total: number }>>({});
+  const [examResults, setExamResults] = useState<ReturnType<typeof calculateResults> | null>(null);
+
+  // Answer review state (for results screen)
+  const [reviewExpanded, setReviewExpanded] = useState(false);
+  const [reviewFilter, setReviewFilter] = useState<'all' | 'incorrect'>('incorrect');
 
   // Calculator functions
   const calcInputDigit = useCallback((digit: string) => {
@@ -109,16 +116,19 @@ const ExamSimulator: React.FC = () => {
 
   const calcToggleSign = useCallback(() => {
     const value = parseFloat(calcDisplay);
+    if (isNaN(value)) return;
     setCalcDisplay(String(value * -1));
   }, [calcDisplay]);
 
   const calcPercent = useCallback(() => {
     const value = parseFloat(calcDisplay);
+    if (isNaN(value)) return;
     setCalcDisplay(String(value / 100));
   }, [calcDisplay]);
 
   const calcPerformOperation = useCallback((nextOperator: string) => {
     const inputValue = parseFloat(calcDisplay);
+    if (isNaN(inputValue)) return;
 
     if (calcPrevValue === null) {
       setCalcPrevValue(inputValue);
@@ -134,8 +144,10 @@ const ExamSimulator: React.FC = () => {
         default: result = inputValue;
       }
 
-      setCalcDisplay(String(result));
-      setCalcPrevValue(result);
+      if (!isNaN(result)) {
+        setCalcDisplay(String(result));
+        setCalcPrevValue(result);
+      }
     }
 
     setCalcWaitingForOperand(true);
@@ -144,6 +156,7 @@ const ExamSimulator: React.FC = () => {
 
   const calcEquals = useCallback(() => {
     const inputValue = parseFloat(calcDisplay);
+    if (isNaN(inputValue)) return;
 
     if (calcOperator && calcPrevValue !== null) {
       let result: number;
@@ -156,18 +169,19 @@ const ExamSimulator: React.FC = () => {
         default: result = inputValue;
       }
 
-      setCalcDisplay(String(result));
-      setCalcPrevValue(null);
-      setCalcOperator(null);
-      setCalcWaitingForOperand(true);
+      if (!isNaN(result)) {
+        setCalcDisplay(String(result));
+        setCalcPrevValue(null);
+        setCalcOperator(null);
+        setCalcWaitingForOperand(true);
+      }
     }
   }, [calcDisplay, calcPrevValue, calcOperator]);
 
   // Session ID for deterministic option shuffling
   const [sessionId] = useState(() => `cpa-exam-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const timerRef = useRef<any>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
   // Use getCurrentSectionForCourse to ensure section is valid for this course
@@ -514,8 +528,9 @@ const ExamSimulator: React.FC = () => {
     setExamState('complete');
     feedback.complete();
 
-    // Calculate score
+    // Calculate score once and store in state
     const results = calculateResults();
+    setExamResults(results);
     const timeSpent = startTime ? Math.round((Date.now() - startTime) / 60000) : 0;
 
     // Record simulation
@@ -1026,7 +1041,7 @@ const ExamSimulator: React.FC = () => {
 
   // Complete Screen
   if (examState === 'complete') {
-    const results = calculateResults();
+    const results = examResults || calculateResults();
     const passed = results.percentage >= examConfig.passingScore;
 
     // Prometric Results Screen

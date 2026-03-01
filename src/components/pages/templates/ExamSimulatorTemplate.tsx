@@ -20,6 +20,8 @@ import {
   CheckCircle,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
+  ChevronDown,
   Flag,
   Trophy,
   ArrowLeft,
@@ -29,6 +31,8 @@ import {
   X,
   Calculator,
   LogOut,
+  FileText,
+  XCircle,
 } from 'lucide-react';
 import clsx from 'clsx';
 import feedback from '../../../services/feedback';
@@ -352,6 +356,10 @@ export function ExamSimulatorTemplate<SectionId extends string>({
   // Results state
   const [examResult, setExamResult] = useState<ExamResult | null>(null);
 
+  // Answer review state (for results screen)
+  const [reviewExpanded, setReviewExpanded] = useState(false);
+  const [reviewFilter, setReviewFilter] = useState<'all' | 'incorrect'>('incorrect');
+
   // Session ID for deterministic shuffling
   const [sessionId] = useState(() => `exam-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`);
 
@@ -394,6 +402,32 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     }
     return getQuestionPool(selectedSection);
   }, [selectedSection, selectedSections, allowMultiSectionSelect, getQuestionPool]);
+
+  // Computed: Questions with correctness info for review
+  const questionsToReview = useMemo(() => {
+    if (!exam) return [];
+    return exam.questions.map((q, idx) => {
+      const userAnswer = exam.answers[q.id];
+      const userAnswerNum = typeof userAnswer === 'string' ? parseInt(userAnswer, 10) : userAnswer;
+      const isCorrect = userAnswerNum === q.correctAnswer;
+      return {
+        ...q,
+        questionIndex: idx,
+        userAnswer: userAnswerNum,
+        isCorrect,
+      };
+    });
+  }, [exam]);
+
+  const incorrectReviewCount = useMemo(() => {
+    return questionsToReview.filter(q => !q.isCorrect).length;
+  }, [questionsToReview]);
+
+  const filteredReviewQuestions = useMemo(() => {
+    return reviewFilter === 'incorrect'
+      ? questionsToReview.filter(q => !q.isCorrect)
+      : questionsToReview;
+  }, [questionsToReview, reviewFilter]);
 
   // ============================================
   // Timer Management
@@ -537,6 +571,8 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     setExam(null);
     setExamResult(null);
     setCurrentIndex(0);
+    setReviewExpanded(false);
+    setReviewFilter('incorrect');
   }, []);
 
   // ============================================
@@ -989,6 +1025,144 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                 })}
             </div>
           </div>
+
+          {/* Answer Review Section */}
+          {exam && (
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm mb-8 overflow-hidden">
+              <button
+                onClick={() => setReviewExpanded(!reviewExpanded)}
+                className="w-full p-4 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
+              >
+                <div className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-indigo-500" />
+                  <span className="font-semibold text-gray-900 dark:text-white">
+                    Review Answers
+                  </span>
+                  {incorrectReviewCount > 0 && (
+                    <span className="text-xs px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-full">
+                      {incorrectReviewCount} incorrect
+                    </span>
+                  )}
+                </div>
+                {reviewExpanded ? (
+                  <ChevronUp className="w-5 h-5 text-gray-400" />
+                ) : (
+                  <ChevronDown className="w-5 h-5 text-gray-400" />
+                )}
+              </button>
+              
+              {reviewExpanded && (
+                <div className="border-t border-gray-200 dark:border-gray-700">
+                  {/* Filter tabs */}
+                  <div className="flex gap-2 p-4 border-b border-gray-200 dark:border-gray-700">
+                    <button
+                      onClick={() => setReviewFilter('incorrect')}
+                      className={clsx(
+                        'px-3 py-1.5 text-sm rounded-full transition-colors',
+                        reviewFilter === 'incorrect'
+                          ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600'
+                      )}
+                    >
+                      Incorrect ({incorrectReviewCount})
+                    </button>
+                    <button
+                      onClick={() => setReviewFilter('all')}
+                      className={clsx(
+                        'px-3 py-1.5 text-sm rounded-full transition-colors',
+                        reviewFilter === 'all'
+                          ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600'
+                      )}
+                    >
+                      All ({exam.questions.length})
+                    </button>
+                  </div>
+                  
+                  {/* Question list */}
+                  <div className="max-h-[500px] overflow-y-auto">
+                    {filteredReviewQuestions.length === 0 ? (
+                      <div className="p-6 text-center text-gray-500 dark:text-gray-400">
+                        <CheckCircle className="w-8 h-8 mx-auto mb-2 text-green-500" />
+                        <p>Great job! You got all questions correct.</p>
+                      </div>
+                    ) : (
+                      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+                        {filteredReviewQuestions.map((q) => (
+                          <div key={q.id} className="p-4">
+                            {/* Question number and status */}
+                            <div className="flex items-start gap-2 mb-3">
+                              <span className={clsx(
+                                'flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold',
+                                q.isCorrect 
+                                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                                  : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                              )}>
+                                {q.questionIndex + 1}
+                              </span>
+                              <p className="text-sm text-gray-900 dark:text-white font-medium">
+                                {q.question}
+                              </p>
+                            </div>
+                            
+                            {/* Options with user answer and correct answer highlighted */}
+                            <div className="space-y-2 mb-3 pl-8">
+                              {q.options.map((option, optIdx) => {
+                                const isUserAnswer = q.userAnswer === optIdx;
+                                const isCorrectAnswer = q.correctAnswer === optIdx;
+                                
+                                return (
+                                  <div
+                                    key={optIdx}
+                                    className={clsx(
+                                      'flex items-start gap-2 p-2 rounded-lg text-sm',
+                                      isCorrectAnswer && 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800',
+                                      isUserAnswer && !isCorrectAnswer && 'bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800',
+                                      !isUserAnswer && !isCorrectAnswer && 'text-gray-600 dark:text-gray-400'
+                                    )}
+                                  >
+                                    <span className={clsx(
+                                      'flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-medium',
+                                      isCorrectAnswer 
+                                        ? 'bg-green-500 text-white'
+                                        : isUserAnswer 
+                                          ? 'bg-red-500 text-white'
+                                          : 'bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-400'
+                                    )}>
+                                      {String.fromCharCode(65 + optIdx)}
+                                    </span>
+                                    <span className={clsx(
+                                      isCorrectAnswer && 'text-green-800 dark:text-green-300 font-medium',
+                                      isUserAnswer && !isCorrectAnswer && 'text-red-800 dark:text-red-300 line-through'
+                                    )}>
+                                      {option}
+                                      {isCorrectAnswer && <span className="ml-2 text-green-600 dark:text-green-400">✓ Correct</span>}
+                                      {isUserAnswer && !isCorrectAnswer && <span className="ml-2 text-red-600 dark:text-red-400">Your answer</span>}
+                                    </span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                            
+                            {/* Explanation */}
+                            {q.explanation && (
+                              <div className="pl-8">
+                                <div className="p-3 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-lg">
+                                  <p className="text-sm text-indigo-800 dark:text-indigo-300">
+                                    <strong>Explanation:</strong> {q.explanation}
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

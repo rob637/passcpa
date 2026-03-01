@@ -110,7 +110,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   const [loading, setLoading] = useState(true);
   const [statsVersion, setStatsVersion] = useState(0); // Trigger re-fetch when incremented
 
-  const today = format(new Date(), 'yyyy-MM-dd');
+  // Always compute today fresh to avoid stale date after midnight
+  const getToday = () => format(new Date(), 'yyyy-MM-dd');
+  const today = getToday();
   
   
   // Course-specific daily log ID to keep progress separate per course
@@ -195,25 +197,27 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     const fetchWeeklyData = async () => {
       try {
         // Get logs for the past 7 days (this week)
-        const thisWeekDates: string[] = [];
+        // Use course-prefixed doc IDs to ensure we only get this course's data
+        const thisWeekIds: string[] = [];
         for (let i = 0; i < 7; i++) {
           const date = new Date();
           date.setDate(date.getDate() - i);
-          thisWeekDates.push(format(date, 'yyyy-MM-dd'));
+          thisWeekIds.push(`${activeCourse}_${format(date, 'yyyy-MM-dd')}`);
         }
 
         // Get logs for the previous 7 days (last week) for comparison
-        const lastWeekDates: string[] = [];
+        const lastWeekIds: string[] = [];
         for (let i = 7; i < 14; i++) {
           const date = new Date();
           date.setDate(date.getDate() - i);
-          lastWeekDates.push(format(date, 'yyyy-MM-dd'));
+          lastWeekIds.push(`${activeCourse}_${format(date, 'yyyy-MM-dd')}`);
         }
 
         const dailyLogCollection = collection(db, 'users', user.uid, 'daily_log');
         
-        // Fetch this week
-        const thisWeekQuery = query(dailyLogCollection, where('date', 'in', thisWeekDates));
+        // Fetch this week — use doc ID query to get only this course's logs
+        // Firestore 'in' queries support up to 10 values, 7 fits perfectly
+        const thisWeekQuery = query(dailyLogCollection, where('__name__', 'in', thisWeekIds.map(id => `users/${user.uid}/daily_log/${id}`)));
         const thisWeekSnapshot = await getDocs(thisWeekQuery);
 
         // Get sections that belong to the current course for filtering
@@ -262,7 +266,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         });
 
         // Fetch last week for trend comparison
-        const lastWeekQuery = query(dailyLogCollection, where('date', 'in', lastWeekDates));
+        const lastWeekQuery = query(dailyLogCollection, where('__name__', 'in', lastWeekIds.map(id => `users/${user.uid}/daily_log/${id}`)));
         const lastWeekSnapshot = await getDocs(lastWeekQuery);
 
         let lastWeekQuestions = 0;
@@ -271,10 +275,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         lastWeekSnapshot.forEach((docSnap) => {
           const data = docSnap.data();
           
-          // Skip if this log is for a different course
-          if (data.courseId && data.courseId !== activeCourse) return;
-          
-          // Filter last week by course sections too for accurate trends
+          // Filter last week by course sections for accurate trends
           if (data.activities && Array.isArray(data.activities)) {
             data.activities.forEach((activity: { type: string; section?: string; isCorrect?: boolean }) => {
               const activitySection = activity.section || 'unknown';
@@ -306,17 +307,37 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         setStats({ totalQuestions: sectionQuestions, accuracy: sectionAccuracy });
 
         // Calculate streak (consecutive days with earnedPoints > 0, course-specific)
+        // Use a single batch query instead of 30 individual reads
         let streak = 0;
-        for (let i = 0; i < 30; i++) { // Check up to 30 days back
+        const streakDates: string[] = [];
+        for (let i = 0; i < 30; i++) {
           const checkDate = new Date();
           checkDate.setDate(checkDate.getDate() - i);
-          const dateStr = format(checkDate, 'yyyy-MM-dd');
-          const courseLogId = `${activeCourse}_${dateStr}`;
-          
-          const logRef = doc(db, 'users', user.uid, 'daily_log', courseLogId);
-          const logSnap = await getDoc(logRef);
-          
-          if (logSnap.exists() && (logSnap.data().earnedPoints || 0) > 0) {
+          streakDates.push(format(checkDate, 'yyyy-MM-dd'));
+        }
+        
+        // Firestore 'in' queries support up to 30 values
+        const streakLogIds = streakDates.map(d => `${activeCourse}_${d}`);
+        
+        // Batch into chunks of 10 (Firestore 'in' limit)
+        const streakDocs = new Map<string, number>();
+        for (let batch = 0; batch < streakLogIds.length; batch += 10) {
+          const batchIds = streakLogIds.slice(batch, batch + 10);
+          const streakQuery = query(
+            collection(db, 'users', user.uid, 'daily_log'),
+            where('__name__', 'in', batchIds)
+          );
+          const streakSnap = await getDocs(streakQuery);
+          streakSnap.forEach(docSnap => {
+            streakDocs.set(docSnap.id, docSnap.data().earnedPoints || 0);
+          });
+        }
+        
+        // Count consecutive days starting from today
+        for (let i = 0; i < streakDates.length; i++) {
+          const logId = `${activeCourse}_${streakDates[i]}`;
+          const points = streakDocs.get(logId) || 0;
+          if (points > 0) {
             streak++;
           } else if (i > 0) {
             // Don't break on today (i=0) if no activity yet
@@ -403,19 +424,38 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       try {
         const earnedPoints = Math.round((score / 100) * 50); // Max 50 points per sim
         const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
-        await updateDoc(logRef, {
+        const activity = {
+          type: 'simulation',
+          id,
+          section: section || 'unknown',
+          score,
+          timeSpent,
+          timestamp: new Date().toISOString()
+        };
+
+        // Check if daily log exists, create if not (updateDoc fails on missing doc)
+        const logSnap = await getDoc(logRef);
+        if (!logSnap.exists()) {
+          await setDoc(logRef, {
+            date: getToday(),
+            goalPoints: userProfile?.dailyGoal || 50,
+            earnedPoints: earnedPoints,
+            questionsAttempted: 0,
+            questionsCorrect: 0,
+            lessonsCompleted: 0,
+            simulationsCompleted: 1,
+            studyTimeMinutes: timeSpent,
+            createdAt: serverTimestamp(),
+            activities: [activity]
+          });
+        } else {
+          await updateDoc(logRef, {
             earnedPoints: increment(earnedPoints),
             simulationsCompleted: increment(1),
             studyTimeMinutes: increment(timeSpent),
-            activities: arrayUnion({
-              type: 'simulation',
-              id,
-              section: section || 'unknown',
-              score,
-              timeSpent,
-              timestamp: new Date().toISOString()
-            })
-        });
+            activities: arrayUnion(activity)
+          });
+        }
         
         // Record in TBS history for mastery tracking
         await recordTBSResult(user.uid, id, score, section || 'unknown', timeSpent * 60);
@@ -549,8 +589,14 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     
     try {
       // Aggregate topic performance from daily log activities
+      // Limit to last 90 days to avoid fetching entire history (performance)
+      const cutoffDate = new Date();
+      cutoffDate.setDate(cutoffDate.getDate() - 90);
+      const cutoffDateStr = format(cutoffDate, 'yyyy-MM-dd');
+      
       const dailyLogCollection = collection(db, 'users', user.uid, 'daily_log');
-      const logsSnapshot = await getDocs(dailyLogCollection);
+      const recentLogsQuery = query(dailyLogCollection, where('date', '>=', cutoffDateStr));
+      const logsSnapshot = await getDocs(recentLogsQuery);
       
       const topicStats: Record<string, { correct: number; total: number }> = {};
       

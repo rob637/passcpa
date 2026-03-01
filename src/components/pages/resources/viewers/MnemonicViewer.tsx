@@ -5,6 +5,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import logger from '../../../../utils/logger';
 import { Loader2, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
 import { ResourceItem } from '../resourceConfig';
 
@@ -184,7 +185,7 @@ export const MnemonicViewer: React.FC<MnemonicViewerProps> = ({ courseId, item }
           setError(`Mnemonics not found: ${item.id}`);
         }
       } catch (err) {
-        console.error('Failed to load mnemonics:', err);
+        logger.error('Failed to load mnemonics:', err);
         setError('Unable to load mnemonic content');
       } finally {
         setLoading(false);

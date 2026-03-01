@@ -90,7 +90,7 @@ export function ShareableScoreCard({
       if (user?.uid) {
         await updateDoc(doc(db, 'users', user.uid), {
           'stats.shareCount': increment(1),
-        }).catch(() => {}); // Silent fail
+        }).catch((e) => { logger.warn('Failed to update share count:', e); });
       }
 
       onShare?.(platform);

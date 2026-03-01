@@ -142,9 +142,14 @@ const GlobalSearch = ({ isOpen, onClose }: GlobalSearchProps) => {
 
   // Load recent searches from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('recentSearches');
-    if (saved) {
-      setRecentSearches(JSON.parse(saved));
+    try {
+      const saved = localStorage.getItem('recentSearches');
+      if (saved) {
+        setRecentSearches(JSON.parse(saved));
+      }
+    } catch {
+      // Corrupted data — clear it
+      localStorage.removeItem('recentSearches');
     }
   }, []);
 

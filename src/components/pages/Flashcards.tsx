@@ -75,6 +75,13 @@ interface SessionStats {
   easy: number;
 }
 
+/** Clean flashcard text: replace literal \n sequences with real newlines */
+function formatCardText(text: string | undefined | null): string {
+  if (!text) return '';
+  // Replace literal \n (two chars) with real newlines — safety net for bad data
+  return text.replace(/\\n/g, '\n');
+}
+
 const Flashcards: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -283,6 +290,13 @@ const Flashcards: React.FC = () => {
     return back;
   };
 
+  // Refs for keyboard handler to avoid stale closures
+  // Initialized with no-ops because the actual callbacks are defined later in the component.
+  const nextCardRef = useRef<() => void>(() => {});
+  const prevCardRef = useRef<() => void>(() => {});
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleRatingRef = useRef<(...args: any[]) => any>(() => {});
+
   // Keyboard shortcuts
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -293,20 +307,20 @@ const Flashcards: React.FC = () => {
         e.preventDefault();
         setIsFlipped((f) => !f);
       } else if (e.key === 'ArrowRight' && currentIndex < cards.length - 1) {
-        nextCard();
+        nextCardRef.current();
       } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-        prevCard();
+        prevCardRef.current();
       } else if (isFlipped) {
         const ratingKey = RATING_BUTTONS.find((r) => r.shortcut === e.key);
         if (ratingKey) {
-          handleRating(ratingKey.rating);
+          handleRatingRef.current(ratingKey.rating);
         }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex, cards.length, isFlipped]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [currentIndex, cards.length, isFlipped]);
 
   const currentCard = cards[currentIndex];
 
@@ -352,6 +366,10 @@ const Flashcards: React.FC = () => {
     feedback.click();
   };
 
+  // Update keyboard handler refs now that callbacks are defined
+  nextCardRef.current = nextCard;
+  prevCardRef.current = prevCard;
+
   const handleRating = async (rating: 'again' | 'hard' | 'good' | 'easy') => {
     if (!currentCard || !user || selectedRating) return; // Prevent double-tap
 
@@ -369,14 +387,18 @@ const Flashcards: React.FC = () => {
     const newSRS = calculateNextReview(currentCard, rating);
 
     // Save to Firestore
-    const srsRef = doc(db, 'users', user.uid, 'srs', 'cards');
-    await setDoc(
-      srsRef,
-      {
-        [currentCard.id]: newSRS,
-      },
-      { merge: true }
-    );
+    try {
+      const srsRef = doc(db, 'users', user.uid, 'srs', 'cards');
+      await setDoc(
+        srsRef,
+        {
+          [currentCard.id]: newSRS,
+        },
+        { merge: true }
+      );
+    } catch (e) {
+      logger.error('Failed to save SRS data', e);
+    }
 
     // Update session stats
     setSessionStats((prev) => ({
@@ -392,7 +414,7 @@ const Flashcards: React.FC = () => {
       cardId: currentCard.id,
       rating,
       section: currentSection,
-    }).catch(() => { /* fire-and-forget */ });
+    }).catch((e) => { logger.warn('Failed to record flashcard activity:', e); });
 
     // Move to next card (or to completion screen if this was the last card)
     setTimeout(() => {
@@ -412,6 +434,9 @@ const Flashcards: React.FC = () => {
       }
     }, 500);
   };
+
+  // Update handleRating ref now that it's defined
+  handleRatingRef.current = handleRating;
 
   if (loading) {
     return (
@@ -638,8 +663,8 @@ const Flashcards: React.FC = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-lg sm:text-xl text-slate-900 dark:text-white leading-relaxed">
-                  {currentCard.front || currentCard.question}
+                <p className="text-lg sm:text-xl text-slate-900 dark:text-white leading-relaxed whitespace-pre-wrap">
+                  {formatCardText(currentCard.front || currentCard.question)}
                 </p>
                 {currentCard.mnemonic && (
                   <div className="mt-3">
@@ -657,10 +682,10 @@ const Flashcards: React.FC = () => {
               <div>
                 <div className="text-xs text-success-600 dark:text-success-400 font-medium mb-3">Answer</div>
                 <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-wrap">
-                  {currentCard.cardType === 'question' 
+                  {formatCardText(currentCard.cardType === 'question' 
                     ? (currentCard.back || currentCard.answer)
                     : currentCard.answer?.split('\n\n📐')[0]?.split('\n\n💡')[0]?.split('\n\n📝')[0] || currentCard.back
-                  }
+                  )}
                 </p>
                 {currentCard.formula && (
                   <div className="mt-4 max-w-md">
@@ -670,7 +695,7 @@ const Flashcards: React.FC = () => {
                         Formula
                       </div>
                       <p className="text-teal-900 dark:text-teal-100 font-mono text-sm whitespace-pre-wrap">
-                        {currentCard.formula}
+                        {formatCardText(currentCard.formula)}
                       </p>
                     </div>
                   </div>
@@ -679,8 +704,8 @@ const Flashcards: React.FC = () => {
                   <div className="mt-3 max-w-md">
                     <div className="bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4">
                       <div className="text-xs text-slate-600 dark:text-slate-300 font-medium mb-2">📝 Example</div>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">
-                        {currentCard.example}
+                      <p className="text-slate-700 dark:text-slate-200 text-sm whitespace-pre-wrap">
+                        {formatCardText(currentCard.example)}
                       </p>
                     </div>
                   </div>
@@ -730,8 +755,8 @@ const Flashcards: React.FC = () => {
                 )}
               </div>
               <div className="flex-1 flex items-center justify-center">
-                <p className="text-lg sm:text-xl text-slate-900 dark:text-white text-center leading-relaxed">
-                  {currentCard.front || currentCard.question}
+                <p className="text-lg sm:text-xl text-slate-900 dark:text-white text-center leading-relaxed whitespace-pre-wrap">
+                  {formatCardText(currentCard.front || currentCard.question)}
                 </p>
               </div>
               {currentCard.mnemonic && (
@@ -762,10 +787,10 @@ const Flashcards: React.FC = () => {
               <div className="flex-1 flex flex-col items-center justify-start overflow-y-auto">
                 {/* Main answer/explanation */}
                 <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed text-center whitespace-pre-wrap">
-                  {currentCard.cardType === 'question' 
+                  {formatCardText(currentCard.cardType === 'question' 
                     ? (currentCard.back || currentCard.answer)
                     : currentCard.answer?.split('\n\n📐')[0]?.split('\n\n💡')[0]?.split('\n\n📝')[0] || currentCard.back
-                  }
+                  )}
                 </p>
                 
                 {/* Formula display (for formula cards) */}
@@ -777,7 +802,7 @@ const Flashcards: React.FC = () => {
                         Formula
                       </div>
                       <p className="text-teal-900 dark:text-teal-100 font-mono text-sm whitespace-pre-wrap">
-                        {currentCard.formula}
+                        {formatCardText(currentCard.formula)}
                       </p>
                     </div>
                   </div>
@@ -788,8 +813,8 @@ const Flashcards: React.FC = () => {
                   <div className="mt-3 w-full max-w-md">
                     <div className="bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4">
                       <div className="text-xs text-slate-600 dark:text-slate-300 font-medium mb-2">📝 Example</div>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">
-                        {currentCard.example}
+                      <p className="text-slate-700 dark:text-slate-200 text-sm whitespace-pre-wrap">
+                        {formatCardText(currentCard.example)}
                       </p>
                     </div>
                   </div>

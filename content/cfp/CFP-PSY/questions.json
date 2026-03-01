@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/question.schema.json",
   "section": "CFP-PSY",
-  "exportedAt": "2026-02-25T22:37:03.036Z",
+  "exportedAt": "2026-02-28T22:26:01.603Z",
   "count": 197,
   "questions": [
     {
@@ -6133,7 +6133,7 @@
       "difficulty": "easy",
       "skillLevel": "Application",
       "question": "During an initial meeting, Sarah is gathering information from the clients. She asks, \"Can you tell me more about your concerns regarding retirement?\" Open-ended clarifying questions like this in client meetings: \nA) Waste time | B) Should be avoided | C) Help uncover underlying goals, values, and concerns that closed questions might miss | D) Are used only in initial meetings",
-      "explanation": "Open-ended questions: \"What\\'s most important about money to you?",
+      "explanation": "Open-ended questions uncover client values and goals that closed questions miss. This deeper understanding is crucial for tailored financial advice.",
       "correctAnswer": 2,
       "options": [
         "Waste time because clients often ramble, providing irrelevant details that hinder efficient data gathering.",

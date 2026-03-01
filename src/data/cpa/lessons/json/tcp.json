@@ -178,6 +178,31 @@
           "content": "Constructive receipt catches many candidates! A taxpayer cannot 'turn their back' on available income. The key is whether there are SUBSTANTIAL LIMITATIONS on access\u2014not just inconvenience. Check is in the mail = constructively received when delivered, not when deposited."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Uncle Sam's Interest-Free Loan (Sort Of)",
+          "content": "Okay, let's be real. Income timing isn't about finding loopholes; it's about playing the game smart. Think of deferring income as getting an interest-free loan from the government. You get to hold onto that cash longer, invest it, or just plain use it! But remember, it's not free money forever. The bill comes due eventually. The trick is figuring out when you'll be in a lower tax bracket. It's like a financial chess game, and you're always thinking a few moves ahead. Don't get greedy, just get strategic."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Constructive Receipt Confusion!",
+          "content": "Students often think that simply not *wanting* income means they haven't constructively received it. This is a HUGE mistake! The key is *availability*. If the money is credited to your account, or a check is ready for you to pick up, you can't just ignore it and say, 'Nah, I'll take it next year.' Constructive receipt means you *could* have had the income. So, delaying cashing a check already in your possession doesn't defer income recognition. It's about control and accessibility, not just preference."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Bonus Dilemma",
+          "content": "Sarah, a high-performing consultant, is offered a $50,000 bonus in December. She knows her income will significantly decrease next year due to starting a family. If she takes the bonus in December, it's taxed at her higher current rate. However, if she can legitimately defer the bonus payment until January (with documentation showing it wasn't available to her in December), she'll pay significantly less in taxes due to the lower bracket next year. Deferral can be a powerful tool, but it must be done properly!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Year-End Planning: Income Timing Everyday",
+          "content": "In practice, you'll use income timing strategies most often during year-end tax planning. Think about clients who are small business owners or independent contractors. They have more control over when they invoice clients or accept payments. You'll need to analyze their current and projected income, estimate tax brackets, and advise on whether to accelerate or defer income. Mastering constructive receipt is crucial here, as it often dictates the limits of what's possible. Document everything carefully!"
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Income timing exploits time value of money and rate differentials\n\u2022 Cash method offers more flexibility; accrual follows all-events test\n\u2022 Constructive receipt limits deferral\u2014can't ignore available income\n\u2022 \u00a7409A governs deferred compensation\u2014severe penalties for violations\n\u2022 Sometimes ACCELERATING income is optimal (expiring losses, rate increases)\n\u2022 Always consider both current and future tax rates in timing decisions"
@@ -444,6 +469,31 @@
           "content": "The kiddie tax applies through age 23 for full-time students who don't provide over half their support! Many candidates think it ends at 18. Also, employment of children under 18 is only FICA-exempt in a sole proprietorship or spousal partnership\u2014NOT in corporations or partnerships with non-parent partners."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Income Shifting: More Than Just a Theory!",
+          "content": "Okay, let's be real. Income shifting sounds fancy, but it's all about legally minimizing taxes for your family. Think of it like this: Uncle Sam wants his cut, but you're the quarterback calling the plays. The fruit-and-tree doctrine? That's the ref making sure you don't throw the ball to your dog. Transferring income-producing property is a legit play, but assigning your salary to your kids? Flag on the play! Understand the rules, and you can legally save a ton."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Kiddie Tax Confusion: Unearned vs. Earned Income",
+          "content": "A common blunder is assuming the kiddie tax applies to ALL of a child's income. Wrong! It only applies to *unearned* income exceeding a certain threshold (around $2,500 in recent years). Earned income, like wages from a summer job, is taxed at the child's rate. Remembering this distinction is crucial. Don't accidentally overpay taxes by applying the parent's rate to income that's actually taxed at the child's lower rate. Read the instructions carefully!"
+        },
+        {
+          "type": "case-study",
+          "title": "The Rental Property Shuffle",
+          "content": "Sarah wants to help her daughter, a college student, with expenses. Sarah owns a rental property generating $10,000 in annual net income. If Sarah gifts the property to her daughter, the $10,000 in income will now be taxed at the daughter's (presumably lower) tax bracket, potentially saving the family significant tax dollars. Remember to consider gift tax implications and the daughter's ability to manage the property."
+        },
+        {
+          "type": "in-practice",
+          "title": "Client Meetings: Income Shifting Opportunities",
+          "content": "In practice, you'll often identify income shifting opportunities during annual tax planning meetings with clients. For example, clients with substantial investment portfolios and minor children are prime candidates. You'll need to analyze their current income, tax brackets, and assets to determine the best strategies, like gifting appreciated stock to a child's custodial account. Document your recommendations and be sure to clearly explain the potential tax benefits and associated risks."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Assignment of income doctrine: Can't assign earned income; CAN gift property\n\u2022 Kiddie tax applies to unearned income of children under 19 (24 if student)\n\u2022 Employing children: Real work, reasonable pay, no FICA if under 18 in sole prop\n\u2022 Family partnerships require capital as material factor, economic substance\n\u2022 Trusts can shift income but grantor trust rules may apply\n\u2022 S corp: Balance salary (FICA) vs distributions (no FICA)\u2014IRS watches!"
@@ -693,6 +743,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Alimony rules depend on DIVORCE DATE, not payment date! A divorce finalized December 15, 2018, uses OLD rules forever (income to recipient, deduction to payor). Divorce finalized January 2, 2019, uses NEW rules (no income, no deduction). The cutoff is when the decree was entered."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "TCJA Sunset Cliff: Don't Get Clipped!",
+          "content": "Alright, future CPAs, let's talk TCJA. This whole 'sunset' thing is basically Congress saying, 'Hey, we'll give you tax breaks...for now!' After 2025, a bunch of stuff reverts back. So, when you're prepping taxes, especially for individuals, keep an eye on those expiration dates. I've seen seasoned pros forget and apply old rules, leading to amended returns and unhappy clients. It's like a tax time bomb waiting to go off if you're not careful. Double-check everything!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Moving Expenses: Still Think It's Deductible?",
+          "content": "A common mistake students make is assuming moving expenses are still deductible for regular employees. TCJA suspended this deduction from 2018-2025. Students often remember the 'moving expenses' keyword but forget the suspension, leading them to incorrectly reduce taxable income. Remember, it's GONE for most folks until further notice! Focus on the active-duty military exception \u2013 that\u2019s the only one remaining in the current tax environment."
+        },
+        {
+          "type": "case-study",
+          "title": "Sergeant Miller's PCS: A Taxing Move",
+          "content": "Sergeant Miller receives Permanent Change of Station (PCS) orders and incurs $8,000 in moving expenses. His employer reimburses him $6,000. The learning point here is that the reimbursement is excluded from Sergeant Miller's income, and he can exclude the full $8,000 worth of expenses, even if the employer only reimbursed $6,000. This is because active-duty military are exempt from the TCJA's moving expense changes. This is a common scenario in military tax practices."
+        },
+        {
+          "type": "in-practice",
+          "title": "Client Intake: Uncover Moving Expense Details",
+          "content": "In practice, during client intake, always ask specifically about moving expenses. Don't just assume they know the rules. Dig deeper to determine if they're active-duty military. If they are, document their orders and reimbursements carefully. This one question can significantly impact their tax liability, and a mistake here can lead to penalties and interest. Being thorough upfront saves time and headaches later in the tax preparation process."
         },
         {
           "title": "Key Takeaways",
@@ -948,6 +1023,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Property tax prepayment is LIMITED! Under TCJA, you cannot deduct prepaid property taxes for a future year if assessment hasn't been made. And even if you can prepay, the $10,000 SALT cap limits the benefit. Don't advise prepaying property taxes without checking both limitations."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Bunching: It's Like Tax Tetris!",
+          "content": "Okay, let's be honest, tax law can feel like a giant game of Tetris. Bunching deductions? That's just strategically fitting those expense blocks to get the highest score (aka, the lowest tax bill!). I've seen clients leave money on the table because they didn't plan ahead. Think about it: if your itemized deductions are usually around $8,000, and the standard deduction is $13,850 (single, 2023), you're basically wasting those deductions. Bunching lets you concentrate expenses to actually *exceed* that threshold in certain years. Don't just let those deductions dribble away! Play smart."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting State & Local Tax (SALT) Cap Impact",
+          "content": "A common mistake is ignoring the SALT deduction limit ($10,000). Students sometimes think 'I'll just bunch ALL my property taxes and state income tax withholding!', but if those *already* exceed $10,000, bunching more doesn't help for federal purposes! You're still capped. The key is to consider the *total* itemized deductions, including SALT, and determine if additional bunching (medical expenses, charitable contributions) will actually push you over the standard deduction *after* accounting for the SALT limitation. Don't spin your wheels bunching something that won't lower your tax liability."
+        },
+        {
+          "type": "case-study",
+          "title": "Dr. Emily's Donation Dilemma",
+          "content": "Dr. Emily consistently donates $5,000 to her alma mater each year. Her other itemized deductions hover around $9,000 annually. By strategically donating $10,000 in alternating years, she can itemize in those years (totaling $19,000, exceeding the standard deduction) and take the standard deduction in the other years. This simple shift maximizes her tax savings over time, compared to consistently itemizing below the standard deduction threshold every year. The key is planning!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Year-End Tax Projections: Bunching's Playground",
+          "content": "In practice, you'll encounter bunching during year-end tax planning meetings with clients. This is where you analyze their income and potential deductions to project their tax liability. Clients often have discretionary expenses, like large charitable donations or elective medical procedures. By discussing the potential tax benefits of accelerating or deferring these expenses, you can help them optimize their tax situation. This proactive approach demonstrates your value as a tax professional and strengthens client relationships. Mastering bunching is a crucial tool for providing effective tax advice."
         },
         {
           "title": "Key Takeaways",
@@ -1236,6 +1336,31 @@
           "content": "The mortgage interest limit depends on ORIGINATION DATE! Pre-12/15/2017 mortgages use $1M limit; later mortgages use $750K. Refinancing grandfathered debt retains old limit ONLY if you don't increase principal. Know both thresholds and the date!"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "SALT Cap: The Taxpayer's Nemesis!",
+          "content": "Okay, let's be real. The $10,000 SALT cap? It's a pain. I've had clients in New Jersey practically weeping over this. Remember, it's combined - property taxes, state income OR sales tax (your choice!). And yeah, $10,000 sounds like a lot until you own a house in the suburbs. When discussing SALT planning, always ask about property taxes FIRST. That usually eats up most of the cap, leaving little room for state income tax strategies. Don't forget that married filing separately only gets $5,000. Brutal!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "SALT vs. Business Expense Deduction Confusion",
+          "content": "Students often forget that the $10,000 SALT cap only applies to itemized deductions on Schedule A. They incorrectly assume that the cap also restricts business expense deductions. For example, if a sole proprietor pays $15,000 in state income tax *through* their business (as a PTE workaround), only $10,000 is limited on Schedule A (if the taxpayer itemizes). The business deduction is separate and not subject to the individual SALT cap. Double-check the context: is the tax being paid personally or through a business entity?"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's S Corp Shuffle",
+          "content": "Sarah owns an S Corp in California and faces a hefty state income tax bill. Her CPA recommends the PTE election. By paying the state income tax at the S Corp level, the $20,000 state tax payment becomes a deductible business expense, completely bypassing her personal SALT cap. Sarah then receives a credit on her personal return for her share of the S Corp's state tax payment, effectively eliminating her individual state income tax liability. The PTE workaround saved Sarah thousands!"
+        },
+        {
+          "type": "in-practice",
+          "title": "SALT Cap: Real-World Client Scenarios",
+          "content": "In practice, you'll constantly be evaluating the SALT cap's impact on clients, especially those in high-tax states. You'll need to analyze whether itemizing deductions is even beneficial, given the cap and the increased standard deduction. Moreover, understanding the PTE election is crucial for S Corp and partnership clients. It is imperative to model different scenarios (standard deduction vs. itemizing, PTE election vs. not) to determine the most tax-efficient strategy for each client. This analysis is a core component of tax planning services."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 SALT capped at $10,000 ($5,000 MFS)\u2014PTE election may bypass\n\u2022 Mortgage interest: $750K limit for post-12/14/2017 loans; $1M grandfathered\n\u2022 Miscellaneous itemized deductions (2% floor) suspended\n\u2022 Personal exemptions suspended (offset by higher standard deduction)\n\u2022 Charitable AGI limit increased from 50% to 60% for cash\n\u2022 Most provisions sunset after 2025\u2014significant planning implications"
@@ -1477,6 +1602,31 @@
           "content": "Wash sale applies across ALL accounts including IRAs! Selling at a loss in a brokerage account and buying the same stock in your IRA within 30 days disallows the loss AND you don't get the basis added to IRA shares. This is worse than a regular wash sale!"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The 0% LTCG Bracket: Your Secret Weapon",
+          "content": "Alright, future CPAs, let's talk turkey. The 0% long-term capital gains bracket? It's basically the tax code giving you free money. Seriously. I've seen folks leave thousands on the table because they didn't understand how to use it. Don't be that person! Think of it like this: you're getting a free basis step-up. Recognize those gains while you're in the 0% bracket, and you're essentially resetting the clock for future appreciation. It's a no-brainer...if you know about it. Now you do. Go forth and conquer!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting State Taxes on Capital Gains",
+          "content": "A common mistake is focusing solely on the federal 0% long-term capital gains bracket and forgetting about state income taxes. While federally you might be in the 0% bracket, your state may still tax those gains. This can significantly impact the overall benefit of harvesting gains. Always consider the combined federal and state tax implications when planning capital gains strategies. A quick look at your client's state tax rates can save you (and them) a nasty surprise come tax season."
+        },
+        {
+          "type": "case-study",
+          "title": "The Case of Mrs. Henderson's Stock Portfolio",
+          "content": "Mrs. Henderson, a recent widow with a taxable income of $45,000, owns stock with a low basis and substantial unrealized gains. Her CPA, noticing she's well within the 0% LTCG bracket, advises her to sell a portion of the stock to recognize gains up to the bracket limit. This allows her to diversify her portfolio without incurring federal tax, providing increased financial flexibility and a stepped-up basis for the remaining shares."
+        },
+        {
+          "type": "in-practice",
+          "title": "Client Meetings: The 'Harvesting' Conversation",
+          "content": "In practice, you'll often encounter clients who are hesitant to sell assets, even if it's tax-advantageous. This is where your communication skills come in. Frame capital gains harvesting as a proactive strategy to minimize future tax liabilities and potentially improve their investment portfolio. Use clear examples and demonstrate the potential tax savings in dollars and cents. Show them how 'filling up' the 0% bracket now can prevent a larger tax bill later. This approach builds trust and reinforces your value as a tax advisor."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 LTCG rates: 0%, 15%, 20% (+3.8% NIIT if applicable)\n\u2022 Harvest gains at 0% to step up basis tax-free\n\u2022 Harvest losses to offset gains ($3,000 vs ordinary income)\n\u2022 Wash sale: 30-day rule for losses, applies across all accounts\n\u2022 Donate appreciated stock: FMV deduction, no gain recognized\n\u2022 Specific identification controls which shares are sold"
@@ -1713,6 +1863,31 @@
           "content": "The 10-year exclusion only applies to APPRECIATION on the QOF investment, not the original deferred gain! The deferred gain must be recognized by December 31, 2026, regardless of holding period. The 10-year benefit is for NEW gains earned while in the QOZ."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "QOZ: The Government's Way of Saying 'Invest, Please'",
+          "content": "Alright, let's be honest, Qualified Opportunity Zones sound like something out of a superhero movie. In reality, it's the government's attempt to incentivize investment in underserved areas. Think of it as a tax break for doing good (and maybe making some money along the way). The key? Nail the 180-day investment window. Miss that, and your capital gains are going straight to Uncle Sam. Don't be that guy. It's like missing the last train home and having to explain it to your spouse. Not fun."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Mixing Up Gain Deferral and Exclusion",
+          "content": "A common mistake is thinking all the capital gain disappears with a QOZ investment. Nope! The *original* gain is only *deferred* until the earlier of the date the QOF investment is sold or December 31, 2026. The *appreciation* of the QOF investment, held for 10+ years, is what gets excluded. So, if you invest $100k gain, and it grows to $500k in 10 years, you still pay tax on the original $100k (eventually), but the $400k gain is tax-free. Don't promise clients complete tax elimination without explaining this nuance!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Missed Opportunity",
+          "content": "Sarah sold her company stock for a $500,000 gain. Excited about QOZs, she immediately started researching properties. She found a great project *200* days later and invested the funds. Ouch! Because she missed the 180-day window, she can't defer the gain. The lesson? Due diligence is important, but speed is your friend. Have potential QOFs researched *before* the capital gain event if possible to avoid timeline issues."
+        },
+        {
+          "type": "in-practice",
+          "title": "QOZs in Real-World Tax Planning",
+          "content": "In practice, you'll often encounter QOZs when working with clients who've had a significant capital gain event \u2013 sale of a business, real estate, or even cryptocurrency. They'll ask about options to minimize taxes. That's when you bring up QOZs. Be prepared to explain the complex rules around eligible gains, qualified funds, and the 90% asset test. Also, be sure to document your advice thoroughly, especially regarding the inherent risks of investing in distressed areas. Clients need to be aware of the potential downsides alongside the tax benefits."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 QOZ allows deferral of capital gains + potential permanent exclusion\n\u2022 Must invest in QOF within 180 days of gain recognition\n\u2022 5-year hold: 10% basis step-up (by 12/31/2026)\n\u2022 10-year hold: NEW appreciation excluded from tax\n\u2022 Deferred gain recognized by December 31, 2026\n\u2022 Any capital gain qualifies; only gain amount (not proceeds) must be invested"
@@ -1931,6 +2106,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Retirement plan distributions are NOT subject to NIIT even though they're investment-related! The 3.8% only applies to Net Investment Income, which specifically excludes qualified plan distributions. Don't confuse NII with all investment-related income."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "NIIT: My Least Favorite Tax (and Yours Soon!)",
+          "content": "Alright, let's be real. The Net Investment Income Tax (NIIT) is nobody's favorite. It's like the IRS decided regular taxes weren't enough fun. Figuring out if it applies and how to minimize it is a constant battle. The thresholds haven't budged in years, which means more and more people are getting caught in its web. So buckle up, because mastering this stuff now will save you (and your clients) a lot of headaches later. Think of it as becoming a NIIT ninja \u2013 stealthily avoiding this extra tax burden!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "NIIT Threshold Amnesia: A Costly Error",
+          "content": "A common mistake is assuming the NIIT thresholds are indexed for inflation like many other tax items. They AREN'T! The $250,000 threshold for married filing jointly, $200,000 for single, and $125,000 for married filing separately have remained stagnant since the NIIT's inception. Students often overestimate the modified AGI limit before NIIT kicks in, leading to incorrect tax projections and potentially missed planning opportunities. Always double-check those thresholds; they're the unchanging gatekeepers of NIIT liability."
+        },
+        {
+          "type": "case-study",
+          "title": "The Case of Bob's Rental Income",
+          "content": "Bob, a retired engineer, actively manages his rental properties, generating $60,000 in rental income. He initially assumed it was all subject to NIIT, but after a deeper dive, it was determined that his rental activity constituted a trade or business. Since it was considered a trade or business, it was NOT subject to NIIT. The lesson? Don't automatically assume all investment-related income is subject to NIIT. The level of activity can make all the difference."
+        },
+        {
+          "type": "in-practice",
+          "title": "Client Meetings & NIIT: A Frequent Flyer",
+          "content": "In practice, you'll frequently encounter NIIT when discussing investment strategies with high-income clients. During annual tax planning meetings, proactively analyze their investment income and modified AGI to project potential NIIT liability. Then, explore strategies like Roth conversions, tax-loss harvesting, or timing the sale of investments to minimize the impact. Being proactive about NIIT shows your clients you're thinking ahead and looking out for their best financial interests, solidifying your value as a tax professional."
         },
         {
           "title": "Key Takeaways",
@@ -2189,6 +2389,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "The pro-rata rule for Roth conversions considers ALL Traditional IRAs (including SEP and SIMPLE after 2 years), not just the one you're converting. You can't isolate non-deductible contributions for tax-free conversion if you have ANY pre-tax IRA funds!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Roth vs Traditional: My Gut Feeling (and the Math)",
+          "content": "Okay, let's be real. Everyone *thinks* they want a Roth, right? Pay the taxes now and be done with it! But I've seen too many folks blindly jump in without running the numbers. Don't be swayed by the hype. The 'tax-free growth' sounds amazing, but if your tax bracket tanks in retirement, you might be kicking yourself for not taking the deduction now. It's all about projecting your future tax situation. Spend the time doing the projections. Trust me, your future self will thank you (or curse you, if you don't!)."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Time Value of Money with Roth vs Trad",
+          "content": "A common mistake is ignoring the immediate tax benefit of a traditional IRA. Students focus solely on the tax-free withdrawals from a Roth, overlooking the potential for investing the tax savings from a traditional IRA contribution. Let's say you're in the 22% bracket. Contributing $6,500 to a traditional IRA saves you $1,430 in taxes *today*. Invest that $1,430! It's not just about the final withdrawal amount; it's about the growth potential of those immediate tax savings. Ignoring this skews the comparison."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Surprise: Higher Taxes in Retirement?",
+          "content": "Sarah, a high-earning consultant, always maxed out her Roth 401(k). She assumed retirement would mean lower taxes. However, she inherited a substantial rental property portfolio shortly before retiring. The rental income, combined with required minimum distributions, pushed her into an even *higher* tax bracket than during her working years. Had she utilized a traditional 401(k), she could have significantly reduced her tax burden during her peak earning years."
+        },
+        {
+          "type": "in-practice",
+          "title": "Client Scenarios: Roth vs Traditional in the Real World",
+          "content": "In practice, you'll use this analysis constantly. Think about a young professional just starting out \u2013 a Roth IRA is often a great choice, as their income (and tax bracket) will likely increase. On the other hand, a late-career professional facing high current taxes might benefit more from the immediate deduction of a traditional contribution. You'll need to gather information about their current income, expected retirement income, other assets, and risk tolerance to make the best recommendation. This is a core skill for any tax advisor."
         },
         {
           "title": "Key Takeaways",
@@ -2473,6 +2698,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Appreciated property held \u22641 year only gets BASIS deduction, not FMV! The FMV deduction requires long-term holding (>1 year). Also, tangible personal property (art, collectibles) only gets FMV deduction if the charity's use is related to its exempt purpose."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Don't Leave Money on the Table!",
+          "content": "Okay, real talk. I've seen clients donate cash when they could have donated stock. It's like using a hammer to swat a fly...it works, but you're missing out on a HUGE tax benefit! Seriously, if your client has appreciated stock they've held for over a year, gently suggest they donate that instead of writing a check. You'll look like a rockstar, and they'll save a ton. Think of it as a win-win-win: charity wins, client wins, you win (because they'll refer you more!)."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Short-Term Property = No FMV Deduction",
+          "content": "A really common mistake is trying to deduct the full fair market value of property held for less than a year. Students often remember the general rule about appreciated property but forget the holding period requirement. If the client held the property for a year or less, the deduction is limited to the taxpayer's basis, not the fair market value. So, double-check that holding period! Trust me, the IRS will catch this, and your client won't be happy with the penalties and interest."
+        },
+        {
+          "type": "case-study",
+          "title": "The Smith Family's Stock Donation",
+          "content": "The Smith family wants to donate $10,000 to their local food bank. They have stock they purchased for $2,000 five years ago, now worth $10,000. If they sell the stock and donate the cash, they'll pay capital gains tax on the $8,000 gain. By donating the stock directly, they avoid the capital gains tax AND get a $10,000 deduction. That's tax planning gold!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Charitable Donation Optimization",
+          "content": "In practice, you'll encounter this scenario most often when working with high-net-worth individuals or business owners. They frequently have appreciated assets (stocks, real estate, artwork) that can be strategically donated to maximize tax benefits. When reviewing their portfolio, proactively identify these opportunities. It's not just about filling out a form; it's about adding significant value through proactive tax planning. Use software to model different scenarios and illustrate the tax savings to your client."
         },
         {
           "title": "Key Takeaways",
@@ -2787,6 +3037,31 @@
           "content": "S corporation distributions above basis create CAPITAL GAIN, not ordinary income. C corporation distributions are dividends (qualified or non-qualified). Know the character difference! Also: S corp losses limited to stock + debt basis; partnerships include share of ALL debt."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "S Corp Salary Shenanigans: A Tax Pro's Take",
+          "content": "Alright, let's be real. The S corp 'reasonable compensation' game is a tightrope walk. I've seen folks try to pay themselves peanuts, like $30,000 when they're clearly working 60 hours a week and generating $200,000 in revenue. The IRS isn't blind! They'll reclassify those distributions as wages, and suddenly you're facing back taxes, penalties, and interest. Don't be greedy. Aim for a salary that reflects your role and contribution. Think, 'What would I pay someone else to do this job?' That's your benchmark."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Double Tax of C Corps",
+          "content": "A common mistake is overlooking the double taxation inherent in C corporations. Students often focus solely on the lower corporate tax rate (21%) without considering that dividends paid to shareholders are taxed again at the individual level. This double taxation can significantly erode profits, especially for small businesses where the owners are also actively involved. Always factor in both corporate and individual tax implications when comparing C corps to pass-through entities like S corps or LLCs. Run the numbers! Don't just assume lower corporate tax is always better."
+        },
+        {
+          "type": "case-study",
+          "title": "Lisa's LLC Liability Lesson",
+          "content": "Lisa started a graphic design business as a sole proprietorship. A disgruntled client sued her for $500,000, alleging copyright infringement. Because Lisa didn't have the liability protection of an LLC or corporation, her personal assets \u2013 her house and savings \u2013 were at risk. Choosing the right entity structure isn't just about taxes; it's about shielding yourself from potential business liabilities. Lisa learned this the hard (and expensive) way."
+        },
+        {
+          "type": "in-practice",
+          "title": "Entity Selection in the Real World",
+          "content": "In practice, entity selection is rarely a straightforward decision. You'll often be working with clients who are already operating under a certain structure, and you'll need to assess whether it's still the optimal choice. This involves projecting future income, considering the client's risk tolerance, and weighing the administrative burdens of different entities. You'll also need to be able to explain the pros and cons in plain English, not just tax jargon. Being able to articulate these differences clearly is what separates a good tax advisor from a great one."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 S corp can reduce SE tax by splitting wages/distributions (reasonable comp required)\n\u2022 C corp: 21% rate but double taxation on distributions\n\u2022 Partnership: Flexible allocations, basis from all debt\n\u2022 \u00a7199A: 20% deduction for pass-throughs (limitations apply)\n\u2022 QSBS (\u00a71202) can exclude 100% of C corp gain\n\u2022 Exit strategy matters: Asset vs equity sale implications differ by entity"
@@ -3053,6 +3328,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "An LLC cannot directly elect S corporation status. It must first be classified as a corporation, then elect S status. However, filing Form 2553 alone is treated as making BOTH elections. Don't confuse Form 8832 (entity classification) with Form 2553 (S election)."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "CTB: It's All About the Choices!",
+          "content": "Alright, let's be real. Check-the-box regulations are like choosing your own adventure, but with taxes. An LLC? It can morph into practically anything! Sole prop, partnership, S-corp, C-corp... it's all on the table. The key is *knowing* you have these options. Too many folks just assume default status and potentially miss out on some serious tax savings. Don't be that person! Form 8832 is your golden ticket. Use it wisely!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Default Classification!",
+          "content": "Students often forget the default classification rules. If you *don't* file Form 8832, the IRS will classify your entity based on the number of owners: single-member LLC becomes a disregarded entity (sole proprietorship for tax purposes), and multi-member LLC becomes a partnership. This is crucial! Imagine accidentally operating as a partnership when you intended to be taxed as an S-corp. That's a mess of K-1s and potential penalties. Always double-check the default rules and compare them to your desired tax outcome."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's S-Corp Surprise",
+          "content": "Sarah and her business partner, Tom, formed an LLC with the intention of electing S-corp status. They diligently operated their business but forgot to file Form 8832. Two years later, during an audit, the IRS classified them as a partnership for those two years, resulting in unexpected self-employment tax for Sarah and Tom. The lesson? Don't leave your entity classification to chance; file that Form 8832!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Client Intake: CTB is Your Opening Move",
+          "content": "In practice, discussing check-the-box regulations is often one of the *first* things you'll do with a new business client. During client intake, you need to determine their business structure and anticipated tax impact. Asking about their desired tax classification (sole prop, partnership, S-corp, C-corp) based on the CTB rules is essential. This early conversation helps you advise them on the best entity structure and avoids headaches down the road. Missing this step can lead to costly restructuring and amended returns."
         },
         {
           "title": "Key Takeaways",
@@ -3326,6 +3626,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "P.L. 86-272 only protects against INCOME tax\u2014not sales tax, franchise tax, or other taxes. And it only covers solicitation of TANGIBLE personal property, not services or intangibles. Many candidates over-apply this protection!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Nexus: It's Like a Taxing Tinder Profile",
+          "content": "Okay, let's be real. Nexus sounds boring, but it's basically a state checking if you're 'compatible' enough to tax you. Before Wayfair, it was all about physical presence \u2013 like, did you even bother showing up? Now, states are swiping right based on economic activity. $100k in sales? 200 transactions? Boom, you're a match! Don't get catfished by state tax laws; know your thresholds or you'll be paying for dinner... for the state."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Confusing Sales Tax & Income Tax Nexus",
+          "content": "Students often think the Wayfair decision and economic nexus apply equally to both sales tax AND income tax. While Wayfair significantly expanded sales tax nexus, income tax nexus still often requires a higher level of connection, including potential physical presence for some states. Don't assume a $100,000 sales threshold automatically subjects you to state income tax. Always research the specific nexus rules for EACH tax type in EACH state. One size does NOT fit all!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Shopify Snafu",
+          "content": "Sarah runs a successful online store through Shopify, selling handmade jewelry. She ships nationwide and hit $120,000 in sales to California last year, but only made 50 transactions. She's always lived in and operated from Oregon. Even though she has no physical presence in California, the $120,000 in sales creates economic nexus. Sarah now needs to register for and collect California sales tax, a nasty surprise she hadn't budgeted for."
+        },
+        {
+          "type": "in-practice",
+          "title": "Nexus: Your Due Diligence Checklist Item",
+          "content": "In practice, you'll encounter nexus issues primarily during entity planning and business expansion. When advising a client considering selling online or expanding into new states, a nexus study is crucial. This involves analyzing their sales volume, transaction counts, and physical presence (if any) in each state. Document your findings and advise on registration requirements. Failing to identify nexus early can result in significant penalties and back taxes, a headache no one wants."
         },
         {
           "title": "Key Takeaways",
@@ -3631,6 +3956,31 @@
           "content": "Don't assume all states use the same formula! Single sales factor is most common, but some states still use three-factor or variations. Also, service sourcing differs: market-based (customer location) vs. cost of performance (where work done). Know both methods."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Apportionment: It's all about the Sales!",
+          "content": "Alright, let's be real. Apportionment formulas? They can seem dry as dust. But here's the thing: states are *hungry* for tax revenue. They're constantly tweaking these formulas to get their piece of the pie. That's why the move to single sales factor apportionment has been so popular. It basically says, 'Hey, if you're selling a ton of stuff into our state, we want a bigger chunk, even if you don't have much property or payroll here.' Pay attention to the sales factor. It's the key to understanding where the money goes."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Mixing Up 'Everywhere' and 'In-State'",
+          "content": "A common mistake is getting 'everywhere' and 'in-state' numbers mixed up in the apportionment formula. For example, students might accidentally use total company payroll for the denominator of the property factor. Remember, each factor compares *in-state* activity to *everywhere* activity. Double-check that you're using the correct denominator, representing the company's total activity, not just some other random number. This simple error can drastically skew the apportionment percentage and lead to significant tax liabilities. Always label your values clearly!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Apportionment Headache",
+          "content": "Sarah, a senior tax associate, is working on a multi-state return for 'Gadgets Galore,' a company selling widgets online. She notices that the state has adopted single sales factor apportionment, but the company has a significant manufacturing facility in that state. The learning point? Even with a large physical presence, the apportionment is based *solely* on sales. This could mean a surprisingly small portion of income being allocated to the state, despite the high payroll and property costs incurred there."
+        },
+        {
+          "type": "in-practice",
+          "title": "Apportionment: Real-World Due Diligence",
+          "content": "In practice, you'll encounter apportionment when preparing or reviewing multi-state corporate tax returns. Knowing the apportionment method each state uses is crucial. For example, when starting with a new client, you need to quickly assess if they're using the correct apportionment method for each state. Performing this initial due diligence can prevent penalties and interest charges and ensure the client is paying the correct amount of tax. Understanding the nuances of single sales factor vs. the three-factor formula is essential to accurately prepare these returns."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Apportionment divides business income among states by formula\n\u2022 Traditional: (Property + Payroll + Sales) \u00f7 3\n\u2022 Most states now use single sales factor (100% sales)\n\u2022 Sales sourcing: Destination for goods; market-based for services (usually)\n\u2022 Throwback rules assign 'nowhere' sales to origination state\n\u2022 Single sales factor benefits companies with in-state operations selling out-of-state"
@@ -3889,6 +4239,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "A $0 salary for an S corp shareholder who provides substantial services is NEVER reasonable! Even minimally active owners should receive some wages. Courts have consistently upheld IRS recharacterization of distributions when shareholders take no salary despite providing services."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Reasonable Comp: The IRS's Favorite Game",
+          "content": "Alright, let's be real. The IRS *loves* going after S corps on reasonable compensation. Think of it like their version of whack-a-mole. You try to minimize wages, they pop up and say 'Nope, that distribution is actually wages, pay up!' I've seen owners try to get away with $40k in wages while pulling out $200k in distributions. Doesn't fly. The rule of thumb? If you're the only revenue-generating employee, your salary should be comparable to what you'd earn if you were working for someone else doing the same thing. Don't be greedy!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting Payroll Tax Impact",
+          "content": "A common mistake is focusing *solely* on minimizing income tax without considering the payroll tax implications. Students often calculate the 'optimal' compensation from an income tax perspective, overlooking the combined 15.3% FICA tax. Yes, distributions avoid this, but that's where the 'reasonable' part comes in. Avoid this by building a comprehensive model that includes both income tax and payroll tax. A few extra dollars in wages might save you thousands in penalties if the IRS comes knocking. Remember, it's not just about net income, it's net *after* all taxes and compliance."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's S Corp Salary Snafu",
+          "content": "Sarah, a software developer, incorporated her side hustle as an S corp. She paid herself $25,000 in wages and took $100,000 in distributions. The IRS flagged her return, arguing that a software developer in her area would command a $90,000 salary. The learning point? Document, document, document! Sarah needed to provide evidence supporting her lower salary, such as part-time work or lower billable rates, to justify the wage difference and avoid reclassification and penalties."
+        },
+        {
+          "type": "in-practice",
+          "title": "Negotiating with Clients on Comp",
+          "content": "In practice, you'll encounter this when advising S corp owners on their annual tax planning. They'll often push for the lowest possible salary to minimize their immediate tax burden. Your job is to educate them on the risks of underreporting wages and the potential for IRS scrutiny. It's a delicate balance: you need to be tax-efficient while also ensuring they're compliant. Showing them real-world examples of IRS penalties and the cost of defending against an audit can be a powerful motivator to set a more reasonable compensation level."
         },
         {
           "title": "Key Takeaways",
@@ -4158,6 +4533,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "SEP contributions for self-employed are based on NET self-employment income AFTER the SE tax deduction. The effective rate is ~20%, not 25%. Solo 401(k) employee deferrals don't have this reduction\u2014that's why Solo 401(k) often beats SEP!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Solo 401(k): The Ultimate Side Hustle Saver",
+          "content": "Alright, listen up! As a CPA, I've seen countless self-employed folks leave money on the table when it comes to retirement. The Solo 401(k) is your secret weapon. Think of it this way: you're both the employee AND the employer. Max out both contributions \u2013 employee deferral and employer match. It's like getting a double discount on your future! Don't just stick to the basic IRA if you're crushing it as a freelancer. This is how you seriously supercharge your retirement savings, especially with those juicy 2024 limits."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Employer Contribution Limit",
+          "content": "Students often focus solely on the employee deferral limit ($23,000 in 2024) for Solo 401(k)s and completely miss the employer contribution piece. They think 'Okay, I'll just max that out.' Wrong! The employer contribution, up to 25% of your compensation, is crucial for maximizing your savings. For example, if you earn $100,000, you can contribute $23,000 as the employee and $25,000 as the employer. Ignoring the employer contribution means leaving a significant portion of your potential savings untouched. Always calculate both limits!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Side Hustle Success Story",
+          "content": "Sarah, a freelance graphic designer, made $80,000 in 2024. Initially, she only contributed the maximum to a traditional IRA. Her CPA pointed out the Solo 401(k) and its potential. By contributing the maximum employee deferral ($23,000) and an employer contribution of $20,000 (25% of her compensation), she significantly boosted her retirement savings and lowered her taxable income for the year. The lesson? Don't settle for less when you can optimize your retirement plan."
+        },
+        {
+          "type": "in-practice",
+          "title": "Solo 401(k)s: A Real-World Lifesaver",
+          "content": "In practice, you'll be recommending Solo 401(k)s to small business owners and independent contractors constantly. Knowing the rules inside and out is vital. When onboarding a new self-employed client, one of the first questions should be about their retirement savings strategy. Are they maximizing their Solo 401(k)? Are they aware of the Roth option? Being able to confidently explain the benefits and limitations of this plan will make you an invaluable asset to your clients and save them potentially thousands of dollars in taxes and future retirement income."
         },
         {
           "title": "Key Takeaways",
@@ -4478,6 +4878,31 @@
           "content": "S corporation >2% shareholders don't get the $50,000 group term life exclusion! The entire benefit is taxable. Same for accident and health insurance\u2014included in W-2. The S corp can still provide it, but it's not tax-free like for C corp owner-employees."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "S Corp Health Insurance: A Tax Pro's Headache?",
+          "content": "Alright, let's be honest. S corps and health insurance for >2% shareholders? It's a recipe for confusion. I've seen so many folks miss the self-employed health insurance deduction because they didn't properly report the health insurance premiums as W-2 income first. Don't be that person! It's like the IRS is daring you to mess it up. So, double-check that W-2, make sure the shareholder gets the deduction, and save yourself (and your client) a headache later. Think of it as a tiny tax victory."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the W-2 Step: A Costly Oversight",
+          "content": "A common mistake is directly deducting the health insurance premiums on Schedule 1 without first including the premium amount as W-2 income. Why is this wrong? Because the IRS requires the health insurance premiums to be included in the shareholder's W-2 income, subjecting it to income tax. Then, the shareholder gets to deduct it on Schedule 1 as self-employed health insurance. Skipping the W-2 step means you are not properly accounting for the income tax impact and the IRS will likely disallow the deduction. Remember: W-2 inclusion FIRST, then Schedule 1 deduction."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's S Corp Snafu: A Learning Moment",
+          "content": "Sarah, the owner of a successful marketing S corp, paid $8,000 in health insurance premiums last year. Her accountant, rushing to meet the deadline, forgot to include that $8,000 as part of her W-2 income. As a result, Sarah missed out on the self-employed health insurance deduction, costing her over $2,000 in taxes. The lesson? Always double-check the W-2 for health insurance premiums paid for >2% S corp shareholders. It's a simple step with a significant impact."
+        },
+        {
+          "type": "in-practice",
+          "title": "Fringe Benefits: Real-World Scenarios",
+          "content": "In practice, you'll encounter this fringe benefit scenario frequently when working with small business clients, particularly those operating as S corporations. When preparing year-end tax returns, always ask about health insurance premiums paid by the S corp on behalf of its >2% shareholders. This inquiry is crucial for accurate W-2 reporting and ensuring the shareholder receives the self-employed health insurance deduction. Document your inquiry and the client's response to protect yourself and demonstrate due diligence. Failing to do so could lead to amended returns and unhappy clients."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 C corps provide best fringe benefit treatment for owner-employees\n\u2022 S corp >2% owners: Health insurance on W-2 + SE deduction\n\u2022 HSAs: Triple tax benefit (deduction, growth, withdrawal)\n\u2022 Educational assistance: $5,250/year excluded (includes loan repayment)\n\u2022 Group term life: $50k excluded (not for S corp >2% or partners)\n\u2022 De minimis: Small perks OK; cash/gift cards always taxable"
@@ -4704,6 +5129,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Engineering and architecture are specifically EXCLUDED from SSTB definition\u2014they can get 199A above threshold (subject to wage limits). Also, 'consulting' as SSTB means consulting in the SSTB fields listed, not all consulting. A management consultant is SSTB; an IT consultant may not be."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "199A: It's All About the Wages (and Stuff)",
+          "content": "Alright, let's be real. Section 199A is like a choose-your-own-adventure novel, but with taxes. Above that taxable income threshold? Buckle up! The limitation based on W-2 wages and qualified property (UBIA) is where the magic (and the frustration) happens. It's not just about QBI anymore; it's about how much you're paying your employees and how much stuff you own. Think of it as the IRS saying, 'We'll give you a break, but you gotta invest in your business!' Don't just focus on maximizing QBI, optimize W-2 wages and qualified property too!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "QBI Deduction: Threshold Amnesia",
+          "content": "A common mistake is forgetting the taxable income thresholds. Students will calculate the 20% QBI deduction without considering if the taxpayer is even *eligible* for the full deduction. Remember, below the threshold, the deduction is generally allowed in full. Above the threshold, the W-2 wage and qualified property limitations kick in. Always start by determining if the taxpayer's income is above or below the threshold because it dictates the entire calculation process. Check your facts!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's S Corp Dilemma",
+          "content": "Sarah owns a successful consulting S corp. Her QBI is $300,000, but her taxable income puts her above the threshold. She only paid herself a small salary, resulting in low W-2 wages. As a result, her 199A deduction is severely limited. The takeaway? Sarah should consider increasing her reasonable compensation to boost her W-2 wages and maximize her 199A deduction. Ignoring the wage component can cost her thousands."
+        },
+        {
+          "type": "in-practice",
+          "title": "Planning for 199A's Impact",
+          "content": "In practice, you'll use Section 199A planning strategies when advising small business owners on entity selection and compensation planning. For example, when a client is choosing between an S corp and a partnership, the potential 199A deduction can heavily influence the decision, especially above the income threshold. Similarly, you'll regularly analyze the impact of increasing W-2 wages or investing in qualified property on a client's overall tax liability. It's not just about filing returns; it's about proactive tax planning."
         },
         {
           "title": "Key Takeaways",
@@ -4944,6 +5394,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "GILTI taxes US shareholders\u2014not the foreign corporation! The CFC doesn't pay GILTI tax; the US shareholder includes GILTI in their US return. Also, individual shareholders do NOT get the \u00a7250 deduction\u2014only C corporations do. This is a major planning consideration."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "GILTI: Not as Guilty as it Sounds (Maybe)",
+          "content": "Alright, let's be honest, GILTI sounds like a crime, right? It's not *that* bad, but it's definitely something you need to understand. Think of it as the IRS saying, 'Hey, you're making a lot of money offshore, and we want a piece of the pie *now*, even if you're reinvesting it.' That 10% tangible asset return is their way of figuring out if you're really investing or just hiding profits. Don't get caught off guard by this one; it\u2019s a big deal for many businesses."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Tangible Assets: Not Just Desks and Chairs!",
+          "content": "Students often underestimate what qualifies as tangible property for the 10% calculation. It's not just your office furniture! Think about the CFC's actual business. If they own a factory, that's a HUGE tangible asset. If they lease it, it doesn't count. The key is to look beyond the balance sheet and understand the operational assets. For example, a manufacturing plant in Ireland is a tangible asset, but the Apple logo it produces isn't (that's intangible!). Getting this wrong significantly impacts your GILTI calculation."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's GILTI Gamble",
+          "content": "Sarah's company, USCo, has a CFC in the Bahamas. The CFC earned $2 million, but USCo only factored in the furniture and equipment at $50,000 for the tangible asset calculation. Big mistake! The CFC actually owns a shipping port valued at $5 million. By including the shipping port, Sarah significantly reduces USCo's GILTI liability and avoids potential penalties. Remember to dig deep and consider all qualifying tangible assets!"
+        },
+        {
+          "type": "in-practice",
+          "title": "GILTI in the Wild: Planning is Key",
+          "content": "In practice, you'll encounter GILTI when working with multinational corporations or high-net-worth individuals with offshore investments. Understanding GILTI allows you to proactively plan for potential tax liabilities. For instance, a client might consider increasing their tangible asset investment in their CFC to reduce GILTI exposure. This could involve purchasing equipment or real estate. The goal is to minimize the tax burden while aligning with the client's overall business strategy. It's not just about compliance; it's about strategic tax planning."
         },
         {
           "title": "Key Takeaways",
@@ -5193,6 +5668,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "FDII is only available to C corporations\u2014NOT pass-throughs or individuals! Also, FDII and GILTI deductions share a combined limitation with taxable income. If losses reduce taxable income, the deductions may be limited. Plan for both provisions together."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "FDII & BEAT: The Global Tax Tango",
+          "content": "Alright, let's be real. FDII and BEAT sound like characters from a bad sci-fi movie, but they're crucial for US companies operating globally. Think of FDII as the government saying, 'Hey, export your goods and services, and we'll give you a tax break!' It's the carrot. BEAT, on the other hand, is the stick, preventing companies from dodging taxes by shifting profits overseas. Mastering these is key to keeping your clients (and yourself) out of hot water with the IRS. Don't sleep on this stuff!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "FDII vs. GILTI: Not Interchangeable!",
+          "content": "Students often confuse FDII with GILTI (Global Intangible Low-Taxed Income) because both deal with international tax and intangible income. However, they operate in opposite directions. FDII incentivizes exports *from* the US, while GILTI taxes income earned *abroad* by controlled foreign corporations. A common mistake is assuming that a company benefiting from GILTI deductions automatically qualifies for FDII. Remember, FDII requires actual export activity and specific documentation. Focus on where the income originates and the nature of the transaction."
+        },
+        {
+          "type": "case-study",
+          "title": "Tech Troubles: BEATing Around the Bush",
+          "content": "Sarah, a tax manager at a software company, noticed a significant increase in related-party payments to their Irish subsidiary for software development. While the payments seemed legitimate, Sarah realized the company might be subject to BEAT if these payments exceeded the base erosion threshold (typically $500 million in gross receipts). She needs to analyze the payments carefully to determine if they are deductible and if BEAT applies, potentially requiring an additional tax liability. This highlights the importance of understanding related-party transactions and their impact on BEAT."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World FDII: Document, Document, Document!",
+          "content": "In practice, you'll likely encounter FDII when working with companies that export goods, provide cross-border services, or license intellectual property to foreign entities. A critical aspect is meticulous documentation. You need to prove that the income is indeed 'foreign-derived.' This means tracking the destination of goods, the location of service recipients, and the end-use of IP. Without proper documentation, the IRS can easily disallow the FDII deduction, leading to significant tax assessments. Build a robust documentation process from the start, and you'll save yourself (and your client) a lot of headaches down the road."
         },
         {
           "title": "Key Takeaways",
@@ -5459,6 +5959,31 @@
           "content": "Transfer pricing adjustments can create DOUBLE TAXATION\u2014IRS increases US income but foreign country already taxed it at the lower price. Competent Authority relief under tax treaties may provide relief but isn't guaranteed. Documentation is key to avoiding adjustments."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Transfer Pricing: It's All About the Arm's Length",
+          "content": "Alright, future CPAs, let's talk turkey. Transfer pricing sounds fancy, but it's really about fairness. Think of it like this: your sibling \"sells\" you their old bike for $1. Totally not arm's length! The IRS (and other tax authorities) get grumpy when related companies artificially shift profits to low-tax jurisdictions. Section 482 is their weapon. So, if you see a transaction between subsidiaries that seems fishy, trust your gut. It probably is. Make sure you can justify the price with solid arm's length evidence. It will save your client (and you!) a massive headache."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Confusing Cost-Plus with Resale Price Methods",
+          "content": "Students often confuse the cost-plus and resale price methods because both involve a markup. The key difference lies in what the markup is applied to. Cost-plus applies a markup to the *seller's* costs to arrive at a transfer price. Resale price method starts with the *buyer's* resale price to an unrelated party and then reduces it by a gross profit margin to determine the arm's length price for the related party transaction. Remember, cost-plus focuses on the seller's perspective, while resale price focuses on the buyer's resale margin. Choosing the wrong one can significantly distort taxable income."
+        },
+        {
+          "type": "case-study",
+          "title": "Acme Corp and the Shifting Software",
+          "content": "Acme Corp's US subsidiary develops cutting-edge accounting software. They license the software to their Irish subsidiary for a pittance, who then sub-licenses it to customers worldwide, booking massive profits in Ireland (a low-tax jurisdiction). The IRS audits Acme and argues that the licensing fee was far below arm's length. The learning point: Intangibles like software are prime targets for transfer pricing scrutiny. Make sure the royalty rate reflects the software's actual value and profit potential, supported by comparable transactions."
+        },
+        {
+          "type": "in-practice",
+          "title": "Transfer Pricing Documentation: Your Best Friend",
+          "content": "In practice, you'll encounter transfer pricing when preparing consolidated tax returns for multinational corporations. You'll need to analyze intercompany transactions and determine if they comply with the arm's length standard. That's why mastering this now saves hours later. Strong documentation is key. A well-prepared transfer pricing study, including benchmarking analyses and economic justification for pricing, can be crucial in defending your client against a potential IRS challenge. Remember, contemporaneous documentation is always best!"
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Transfer pricing governs related party transaction pricing\n\u2022 Arm's length standard: Price as if unrelated parties\n\u2022 Five methods: CUP, Resale Price, Cost Plus, CPM, Profit Split\n\u2022 Best method rule: Choose most reliable method for facts\n\u2022 Documentation critical: Avoids penalties, supports position\n\u2022 APAs provide prospective certainty"
@@ -5703,6 +6228,31 @@
           "content": "Valuation discounts are under constant IRS attack. 'Deathbed' FLPs formed shortly before death with no legitimate non-tax purpose have been disallowed. The FLP must be properly funded, operated, and have legitimate business reasons beyond tax savings."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Succession Planning: It's More Than Just Taxes!",
+          "content": "Alright, future CPAs, let's be real. Succession planning isn't *just* about minimizing estate taxes, although that's definitely important! It's about ensuring the family business doesn't implode when old man Johnson decides to finally retire to Boca. I've seen families torn apart because they didn't have a solid plan in place. We're talking sibling rivalries, lawsuits, the whole shebang. So, while we're crunching numbers, remember the human element. A well-crafted succession plan can save more than just tax dollars; it can save relationships."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting Gift Tax Implications in Succession",
+          "content": "Students often overlook the gift tax implications when transferring business ownership during the owner's lifetime. They focus solely on estate tax avoidance and forget that transferring ownership interests, even at a discount, can trigger gift tax if the value exceeds the annual exclusion. For example, gifting 20% of a business valued at $5 million to a child, even with a valuation discount, could easily exceed the annual exclusion and require filing a gift tax return and potentially paying gift tax. Always remember to consider gift tax alongside estate tax in lifetime transfer strategies."
+        },
+        {
+          "type": "case-study",
+          "title": "The Smith Family Farm Succession Fiasco",
+          "content": "Old Man Smith wants to pass his farm to his three kids: two who actively work the land and one who's a lawyer in the city. He decides to simply divide the farm equally in his will. The problem? The city kid wants to sell his share, potentially forcing the working kids to take out a massive loan or sell off parts of the farm. A better plan would have considered buy-sell agreements or different asset allocations to reflect each child's involvement and goals."
+        },
+        {
+          "type": "in-practice",
+          "title": "Succession Planning: A Constant Conversation",
+          "content": "In practice, business succession planning isn't a one-time event; it's an ongoing dialogue. You'll find yourself revisiting these plans every few years, especially with changes in tax laws or family dynamics. For instance, a client might initially want to leave everything to their children equally, but a divorce or change in business interest could necessitate a complete overhaul of the succession plan. Being proactive and engaging in regular reviews ensures the plan remains aligned with the client's evolving needs and objectives, minimizing potential tax liabilities and family conflicts."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Succession planning: Transfer ownership tax-efficiently over time\n\u2022 Valuation discounts (LOC + LOM) can reduce transfer values 25-40%\n\u2022 GRATs freeze value; excess appreciation passes tax-free\n\u2022 IDGT: Sale to trust avoids gift/estate tax on growth\n\u2022 Buy-sell agreements ensure orderly transition at death/disability\n\u2022 \u00a76166: Defer estate tax on closely held businesses up to 14 years"
@@ -5913,6 +6463,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "The 83(b) election has a STRICT 30-day deadline from grant date\u2014there are NO extensions and NO relief for missing it! Also, ISOs have a $100,000 annual limit on options that can vest. Amounts over the limit are treated as NSOs. Watch both traps!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Stock Options: The Gold Rush (and the Tax Minefield)",
+          "content": "Alright, let's be honest. Equity compensation sounds fancy, right? Stock options, restricted stock... it's like winning the lottery! But before you start picturing that yacht, remember Uncle Sam wants his cut. I've seen too many people get blindsided by the tax implications of incentive stock options (ISOs) triggering AMT. Suddenly that 'bonus' becomes a tax headache. So, pay attention, folks. Understanding the nuances now will save you (and your clients) a major headache later. Think of me as your tax Sherpa, guiding you through this mountain of complexity."
+        },
+        {
+          "type": "common-mistake",
+          "title": "ISO vs. NQSO: A Costly Mix-Up",
+          "content": "A common mistake is assuming all stock options are taxed the same. Students often lump Incentive Stock Options (ISOs) and Non-Qualified Stock Options (NQSOs) together. The key difference is when and how they're taxed. ISOs, if held long enough, get favorable capital gains treatment upon sale, but the bargain element (difference between market price and exercise price) is an AMT preference item. NQSOs, on the other hand, are taxed as ordinary income when exercised. Forgetting this distinction can lead to significant underpayment penalties and upset clients. Remember, ISOs: potential AMT; NQSOs: immediate income."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Restricted Stock Surprise",
+          "content": "Sarah received restricted stock units (RSUs) that vested this year. Her company withheld taxes based on the fair market value at vesting. However, Sarah forgot to consider the additional state income tax she owes. Now, she's facing a surprise tax bill in April. The lesson? Always factor in ALL applicable taxes (federal, state, and local) when planning for equity compensation, and encourage clients to adjust their withholdings accordingly. Don't just rely on the company's withholding calculations."
+        },
+        {
+          "type": "in-practice",
+          "title": "Equity Comp: A Year-Round Planning Game",
+          "content": "In practice, you'll encounter equity compensation issues primarily during tax season, but smart advisors address it year-round. During initial client onboarding, proactively ask about stock options, RSUs, and employee stock purchase plans. Then, use tax planning software to model different exercise scenarios and their potential tax consequences, especially regarding AMT. Proactive planning allows clients to make informed decisions about exercising options, selling stock, and managing their overall tax liability, leading to happier and more financially secure clients."
         },
         {
           "title": "Key Takeaways",
@@ -6190,6 +6765,31 @@
           "content": "Special allocations that lack 'substantial economic effect' are REALLOCATED according to partners' interests in the partnership (PIP). The IRS looks at whether allocations affect actual economic outcomes, not just tax results. Tax-only allocations fail!"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Partnerships: Not Your Grandpa's Tax Return",
+          "content": "Okay, let's be real. Partnership tax can get hairy, fast. It's not like churning out 1040s. You're dealing with special allocations, disguised sales, and basis adjustments that can make your head spin. I've seen seasoned CPAs get tripped up by the 'substantial economic effect' test. Don't just gloss over it! Seriously, understand how allocations MUST affect the partners' bottom line, not just magically reduce taxes. Otherwise, the IRS will be knocking, and nobody wants that."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the 'Economic Effect' Part",
+          "content": "A common mistake is focusing only on the 'substantial' part of 'substantial economic effect' and ignoring the 'economic effect' requirement. Students often think that as long as the allocation changes someone's tax liability, it's good. Nope! The allocation *must* genuinely impact the partner's capital account and ultimate distributions. For example, allocating all depreciation to a partner who isn't bearing the economic risk of loss on the depreciated asset is a red flag. Always trace the allocation through to the partner's capital account and eventual liquidation."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Special Allocation Snafu",
+          "content": "Sarah, a junior tax associate, allocated all of a partnership's research and development expenses to one partner, thinking it would maximize that partner's tax benefits. However, the partnership agreement didn't provide for a corresponding adjustment to the partner's capital account, nor did it affect the partner's share of liquidation proceeds. The IRS flagged this allocation during an audit, arguing it lacked economic effect. Sarah learned the hard way that tax benefits alone don't cut it; the allocation must have real economic consequences."
+        },
+        {
+          "type": "in-practice",
+          "title": "Special Allocations in Real Estate Syndication",
+          "content": "You'll encounter special allocations frequently when working with real estate syndications or private equity funds. For example, in a real estate deal, one partner might contribute capital while another manages the property. The agreement might specially allocate depreciation to the capital-contributing partner and management fees to the managing partner. Understanding the 'substantial economic effect' test is crucial here. Improper allocations can lead to unexpected tax liabilities for the partners and potential legal issues for the firm. Get it right from the start!"
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Special allocations: Must have substantial economic effect\n\u2022 Partners get basis from partnership debt (major advantage)\n\u2022 Recourse debt: To partner bearing economic risk; Nonrecourse: Profit ratio\n\u2022 \u00a7704(c): Prevents shifting built-in gain/loss to other partners\n\u2022 \u00a7751 hot assets: Ordinary income on sale (receivables, inventory)\n\u2022 \u00a7754: Basis adjustment for transfers/distributions"
@@ -6348,6 +6948,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Depreciation recapture is ALWAYS recognized in Year 1 even in an installment sale. Only the gain AFTER recapture qualifies for deferral. Don't forget to recognize the recapture amount when calculating Year 1 gain!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Installment Sales: The Tax Deferral Magic Trick",
+          "content": "Okay, so installment sales. Think of it as the tax code's way of saying, 'Hey, you don't have to pay all at once!' I've seen clients practically jump for joy when we structure a sale this way. Instead of a massive tax bill the year of the sale, they spread the pain (or should I say, gain!) over several years. Remember, it's the default method, which is a huge win. Just make sure you understand the basis recovery rules \u2013 that's where things can get a little hairy if you're not careful."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Interest Component in Installment Sales",
+          "content": "A common mistake is focusing solely on the gain portion of each payment and neglecting the interest. Students often forget that each installment payment has an interest component that's taxable as ordinary income, separate from the capital gain. This oversight leads to an understated tax liability in the year the payments are received. To avoid this, meticulously calculate the interest portion using the stated interest rate (or imputed interest if none is stated) and report it correctly on Form 1040 Schedule B."
+        },
+        {
+          "type": "case-study",
+          "title": "Bob's Land Sale Blunder",
+          "content": "Bob sold land for $500,000 with a basis of $100,000. He received $100,000 in year one and will receive $100,000 annually for the next four years. Bob reported $80,000 of gain in year one ($100,000 payment less $20,000 basis). The correct calculation requires determining the gross profit percentage ($400,000/$500,000 = 80%). Thus, $80,000 of each $100,000 payment is gain, and $20,000 is return of basis. Bob underreported his gain because he incorrectly calculated his basis recovery."
+        },
+        {
+          "type": "in-practice",
+          "title": "Installment Sales: Real-World Applications",
+          "content": "You'll frequently use installment sale planning when advising clients selling real estate or businesses. It's especially crucial for clients who don't need all the cash upfront. By spreading the gain, you can potentially keep them in a lower tax bracket and avoid a large tax burden in a single year. Furthermore, understanding the nuances of \u00a7453 is essential when reviewing purchase agreements to ensure the transaction qualifies for installment sale treatment and avoids inadvertent disqualification, which could trigger immediate recognition of the entire gain."
         },
         {
           "title": "Key Takeaways",
@@ -6550,6 +7175,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "The disallowed loss in a related party sale is NOT added to the buyer's basis! Buyer's basis = purchase price. The disallowed loss can only offset gain when the buyer sells to an unrelated party. If the buyer sells at a loss, the original disallowed loss disappears forever."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Related Parties: Family Feuds (and Tax Implications)",
+          "content": "Alright, let's be honest. Related party transactions? They're ripe for abuse. The IRS knows it, and that's why they scrutinize them like hawks. I've seen partners sell depreciated property to their S corps just to book a loss. Don't be that person! The loss disallowance rules are designed to prevent this. Think of it this way: if it sounds too good to be true when transferring assets within the family, the IRS probably thinks so too. Document, document, document! And when in doubt, ask a senior colleague."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The Basis Boondoggle: Carryover Confusion",
+          "content": "Students often forget that while the *seller's* loss is disallowed, the *buyer* still takes a basis equal to their purchase price. They incorrectly assume the buyer inherits the seller's original basis, leading to incorrect gain/loss calculations when the buyer eventually sells to an unrelated party. Remember: the buyer's basis is what they paid! The disallowed loss *only* affects the amount of gain the buyer might recognize later. It doesn't change their initial basis in the property."
+        },
+        {
+          "type": "case-study",
+          "title": "Bob's Bad Bargain: A Disallowed Loss Disaster",
+          "content": "Bob sold his vacation cabin to his daughter, Alice, for $50,000. Bob's basis was $75,000, resulting in a $25,000 loss. Bob can't deduct this loss. Alice's basis is $50,000. Two years later, Alice sells the cabin to an unrelated party for $90,000. Her realized gain is $40,000 ($90,000 - $50,000), but she can reduce that gain by Bob's previously disallowed loss of $25,000, resulting in a taxable gain of $15,000. If Alice had only sold it for $60,000, her gain would have been $10,000 and she could only reduce it to $0."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Relevance: Small Business Tax Planning",
+          "content": "You'll frequently encounter related party transaction issues when working with small business clients. Owners often transfer assets between themselves and their businesses (or among family members). For example, a sole proprietor might 'sell' a vehicle to their newly formed S-corp. Understanding the loss disallowance rules is crucial for accurately preparing their tax returns and advising them on the tax consequences of these transactions. Failing to properly account for these rules can lead to significant penalties and interest assessments, especially if the IRS flags the transaction as abusive."
         },
         {
           "title": "Key Takeaways",
@@ -6765,6 +7415,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Since 2018 (TCJA), ONLY REAL PROPERTY qualifies for \u00a71031! No more equipment, vehicles, or artwork exchanges. Also, real property must be within the US\u2014foreign real property does not qualify for exchange with US property."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Like-Kind Exchanges: Ain't No Free Lunch",
+          "content": "Alright, let's be real. Like-kind exchanges aren't some magical tax loophole. They're more like a carefully choreographed dance. You gotta know the steps: identify the replacement property within 45 days, close the deal within 180. Forget a step, and BAM! Uncle Sam's hand is out for his share. And don't even think about slipping in some personal property \u2013 since 2018, it's real estate only. So, pay attention to the details, or you'll be singing a different tune come April 15th."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Boot Offset Rule",
+          "content": "Students frequently forget that mortgage boot (debt relief) can be offset by other boot given. They see debt relief and immediately think 'gain recognized!' But, if you give boot in the form of cash or other property *greater* than the debt relief, you might still defer the entire gain. Example: You're relieved of $50k debt, but you give $60k cash to the other party. No gain recognized! Always net boot given against boot received before calculating recognized gain."
+        },
+        {
+          "type": "case-study",
+          "title": "Bob's Reverse Exchange Blunder",
+          "content": "Bob, a real estate developer, wants to build condos on land he owns, but first, he needs to exchange that land for a larger parcel. He buys the larger parcel *before* selling his current land. Big mistake! A true reverse exchange requires a qualified exchange accommodation titleholder (EAT) to hold title to *either* the relinquished or replacement property. Bob's premature purchase disqualifies the exchange, triggering a taxable event. Ouch."
+        },
+        {
+          "type": "in-practice",
+          "title": "Negotiating Exchange Agreements",
+          "content": "In practice, you'll be reviewing like-kind exchange agreements all the time, especially for clients in real estate. Understanding the nuances of boot, particularly mortgage boot, is crucial for negotiating favorable terms. Imagine representing a client selling a property with significant debt. Minimizing their recognized gain through careful structuring of the exchange and potentially contributing cash to offset debt relief is a key value-add. Master this, and you'll be a hero to your clients."
         },
         {
           "title": "Key Takeaways",
@@ -7012,6 +7687,31 @@
           "content": "Don't assume double taxation always makes asset sales worse! If the corporation has NOLs or the assets have low built-in gain, the math can favor asset sales. Always calculate both scenarios. Also, \u00a7338(h)(10) is available only for S corps and subsidiary corps\u2014not stand-alone C corps!"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Been there, stressed that: Stock vs. Asset Sale Drama",
+          "content": "Okay, let's be honest, stock vs. asset sales can feel like navigating a minefield. I've seen deals fall apart because someone didn't fully grasp the tax implications. The client's thinking 'easy peasy, sell the company!' but you're picturing double taxation and basis nightmares. So, pay attention! Understanding the nuances now will save you from some serious 'what if' scenarios later. You don't want to be the reason a deal craters. Trust me."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Double Tax Tango: The Asset Sale Gotcha",
+          "content": "A common error is forgetting the double taxation in asset sales. Students often only consider the corporate-level gain/loss on the asset sale itself, neglecting the subsequent shareholder-level tax when the proceeds are distributed (usually via liquidation). Remember, the corporation pays tax on the asset sale, and then the shareholders pay tax on the distribution of the remaining proceeds. This is a key disadvantage compared to stock sales where only one tax event occurs at the shareholder level."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Acquisition Snafu: NOLs at Stake",
+          "content": "Sarah is advising a client selling their business. The client is leaning towards an asset sale to avoid liabilities, but the company has significant net operating losses (NOLs). Sarah needs to remember that in a stock sale, the NOLs carry over (subject to limitations), while in an asset sale, they generally disappear. Failing to consider this could cost the client a significant tax benefit, making the stock sale a surprisingly better option despite the liability concerns."
+        },
+        {
+          "type": "in-practice",
+          "title": "Due Diligence Deep Dive: Asking the Right Questions",
+          "content": "In practice, you'll encounter this when performing due diligence on potential acquisitions. You'll need to analyze the target company's tax attributes, including basis in assets, NOL carryforwards, and potential liabilities. The structure of the transaction (stock vs. asset) will significantly impact the tax consequences for both the buyer and seller. Understanding this allows you to advise your client on the optimal structure and negotiate favorable terms. You'll be reviewing purchase agreements and tax returns constantly."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Stock sale: Single tax (shareholders); no basis step-up for buyer\n\u2022 Asset sale: Double tax (C corp); stepped-up basis for buyer\n\u2022 Sellers generally prefer stock sales; buyers prefer asset sales\n\u2022 \u00a7338(h)(10): Treats stock sale as asset sale (S corps/subsidiaries)\n\u2022 Purchase price allocation: \u00a71060 residual method\n\u2022 Always model both structures to find optimal solution"
@@ -7255,6 +7955,31 @@
           "content": "\u00a7338(h)(10) is NOT available for stand-alone C corporations\u2014only S corporations and subsidiaries of C corporations. A \u00a7338(g) election on a stand-alone C corp creates TRIPLE taxation: corporate tax on deemed sale, shareholder tax on stock sale, then no seller benefit!"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Section 338: The Tax Double Whammy!",
+          "content": "Alright, let's be real. Section 338(g) elections are like ordering the extra-large pizza when you're already full. You *can* do it, but you're probably going to regret it later. Seriously, it's rare. It triggers tax at the corporate level, AND the shareholders still have to pay tax on their gain. It's the tax equivalent of paying twice for the same meal. So, remember, think long and hard before even considering a regular 338(g) election. There are usually better options!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "80% Ownership: Don't Count the Wrong Stock!",
+          "content": "A common mistake is including stock acquired in a tax-free reorganization or from a related party when calculating the 80% ownership requirement for a qualified stock purchase. Students often assume that *any* stock acquired counts towards the 80%. However, these types of acquisitions are specifically excluded. Remember, the 80% threshold must be met through taxable purchases within a 12-month acquisition period. Failing to account for this could lead to an invalid election and unexpected tax consequences."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Sticky Situation: Related Party Stock",
+          "content": "Sarah is advising a client, BigCo, that acquired 75% of SmallCo's stock in a taxable purchase. BigCo already owned 10% of SmallCo's stock, acquired from SmallCo's CEO (Sarah's client's brother). Even though BigCo now owns 85% of SmallCo, they *cannot* make a Section 338 election because the stock acquired from the related party doesn't count towards the qualified stock purchase. Sarah needs to advise them on alternative strategies."
+        },
+        {
+          "type": "in-practice",
+          "title": "Due Diligence: Spotting Section 338 Potential",
+          "content": "In practice, you'll encounter Section 338 elections primarily during M&A due diligence. Your role will be to analyze the target company's assets and tax attributes to determine if a 338(h)(10) election (which is more common) would be beneficial. Look for situations where the target's asset basis is significantly lower than its fair market value. That's where a 338(h)(10) election might create significant tax savings for the buyer through increased depreciation deductions and reduced gains on future asset sales. Remember to also consider the impact on state taxes."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 \u00a7338(g): Buyer-only election; rarely beneficial (double tax)\n\u2022 \u00a7338(h)(10): Joint election; often beneficial for S corps/subsidiaries\n\u2022 QSP required: 80%+ of vote and value in 12 months\n\u2022 \u00a7338(h)(10) can reduce seller's tax while giving buyer step-up\n\u2022 ADSP/AGUB: Deemed sale/purchase prices allocated per \u00a71060\n\u2022 Watch built-in gains tax for former C corps electing S status"
@@ -7470,6 +8195,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "In a \u00a7332 liquidation, minority shareholders (those who don't own 80%) are taxed under the regular \u00a7331 rules. They recognize gain/loss even though the parent doesn't. Always check ownership percentages before applying \u00a7332!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Liquidation: It's Like a Fire Sale, But With Taxes!",
+          "content": "Okay, let's be real. Corporate liquidations? They sound fancy, but it's often a company saying, 'We're done!' and selling everything off. Think of it as a giant garage sale, but Uncle Sam wants his cut. The double taxation for C corps is the kicker. The corporation gets taxed on selling its assets, then the shareholders get taxed when they receive the proceeds. It's like being taxed on your paycheck and then taxed again when you spend it. Ouch! So, plan carefully and minimize those tax bites!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Corporate-Level Gain/Loss!",
+          "content": "Students often focus solely on the shareholder's gain or loss under Section 331 and completely forget the corporation's responsibility under Section 336! They'll calculate the shareholder's tax implications, pat themselves on the back, and boom \u2013 wrong answer. Remember, the liquidating corporation *also* recognizes gain or loss as if it sold all its assets at fair market value. This is crucial for understanding the full tax burden of a corporate liquidation. Don't just look at one side of the transaction!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Slippery Slope with Section 331",
+          "content": "Sarah, a tax associate, is assisting with the liquidation of Acme Corp. She correctly calculates the shareholder's capital gain under Section 331 but overlooks the fact that Acme Corp. held some land with a significantly appreciated value. The learning point? Always remember the corporate-level tax implications under Section 336 before finalizing the shareholder's tax return. Overlooking the corporate level can lead to significant penalties and interest for Acme."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Liquidations: Due Diligence is Key",
+          "content": "In practice, you'll encounter corporate liquidations when advising businesses that are restructuring, being acquired, or simply shutting down. Performing thorough due diligence on the corporation's assets is critical. You need to determine the fair market value of all assets being distributed to shareholders to properly calculate both the corporate-level gain or loss and the shareholder-level gain or loss. Neglecting this step can lead to incorrect tax filings and potential audits. Always verify, verify, verify!"
         },
         {
           "title": "Key Takeaways",
@@ -7903,6 +8653,31 @@
           "content": "Gift-splitting creates a DEEMED gift from the non-donor spouse. If the non-donor spouse has creditor issues, this deemed gift could be attacked as a fraudulent transfer. Also, the consenting spouse is secondarily liable for gift tax on the split portion."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Gift-Splitting: The 'Two for One' Deal",
+          "content": "Alright, future CPAs, let's talk gift-splitting. Think of it as a 'buy one, get one free' deal for gift tax! Seriously, it's one of the easiest ways for married couples to double their annual exclusion and lifetime exemption. Don't let clients miss out! I've seen too many folks leave tax savings on the table simply because they didn't understand the power of \u00a72513. Get this right, and you'll be a hero. Mess it up, and well\u2026 let\u2019s just say your client might not be sending you a holiday card."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Gift-Splitting: Not Automatic!",
+          "content": "A common mistake is assuming gift-splitting is automatic for married couples. It's NOT! Both spouses MUST consent to split ALL gifts made during the year, even small ones. You can't pick and choose. Students often think if one spouse makes a large gift, they can automatically split it. Incorrect! A timely gift tax return (Form 709) needs to be filed, indicating the election to split gifts, and both spouses must sign consenting to the election. Failing to do so means only one spouse's exclusion and exemption are used."
+        },
+        {
+          "type": "case-study",
+          "title": "The Smiths' Generous Grandchild Gift",
+          "content": "John Smith gifted his grandchild $36,000 for college in 2024. He and his wife, Mary, want to use gift-splitting. If they properly elect gift-splitting, John and Mary each report a $18,000 gift. This is fully covered by their individual $18,000 annual exclusions, resulting in no taxable gift and preserving their lifetime exemptions. Without gift-splitting, John would have to use $18,000 of his lifetime exemption because the gift exceeds his annual exclusion."
+        },
+        {
+          "type": "in-practice",
+          "title": "Gift-Splitting: Estate Planning's Secret Weapon",
+          "content": "In practice, you'll use gift-splitting as a key component of larger estate planning strategies. When working with high-net-worth married couples, proactively suggesting gift-splitting can significantly reduce potential estate tax liabilities down the road. Think about it: consistent use of annual exclusions, doubled via gift-splitting, gradually shrinks the taxable estate over time. It also helps equalize the estates of both spouses, which can be important for minimizing taxes upon the death of the second spouse. It's a long-term game, but the payoffs are huge."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Gift-splitting: Treat one spouse's gift as 50% from each\n\u2022 Doubles annual exclusion: $36k per donee vs $18k\n\u2022 All-or-nothing: Must split ALL gifts for the year\n\u2022 Both spouses must consent and file Form 709\n\u2022 Not needed for community property (already 50/50)\n\u2022 Powerful for large gifts and trust funding"
@@ -8115,6 +8890,31 @@
           "content": "Discounts are applied MULTIPLICATIVELY, not additively. A 20% control discount and 25% marketability discount is NOT 45%. It's: (1 - 20%) \u00d7 (1 - 25%) = 80% \u00d7 75% = 60%, so 40% total discount. The order doesn't matter mathematically."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "FLPs & LLCs: A Tax Pro's Therapy Session",
+          "content": "Alright, let's be honest. FLPs and LLCs sound intimidating, right? Like some Wall Street wizardry. But really, they're just fancy wrappers around assets to minimize estate taxes. Think of it as legally gifting your kids a slightly dented version of your wealth. The 'dent' is the valuation discount! Don't get greedy though; the IRS is watching. Overdoing it is like claiming your cat as a dependent - they'll notice. It's about reasonable restrictions and planning, not outright avoidance."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Discount Confusion: Control vs. Lack of Marketability",
+          "content": "Students often lump control discounts and lack of marketability discounts together, thinking they're interchangeable. Big mistake! Control discounts apply when a minority interest is transferred, reflecting the lack of ability to dictate company decisions. Lack of marketability stems from the difficulty in selling a closely held interest quickly and easily. They overlap, sure, but they are DISTINCT. Don't just blindly apply a 35% discount; justify each component separately!"
+        },
+        {
+          "type": "case-study",
+          "title": "The Case of Grandpa Joe's Farm",
+          "content": "Grandpa Joe wants to pass his farm to his grandkids but is worried about estate taxes. His CPA suggests forming an FLP, transferring the farm assets into it, and gifting limited partnership interests over time. The operating agreement includes restrictions on transferring interests outside the family. By doing this, the value of each gifted interest can be discounted due to lack of control and marketability, significantly reducing the taxable value of Joe's estate upon his passing."
+        },
+        {
+          "type": "in-practice",
+          "title": "FLPs/LLCs: Beyond the Textbook",
+          "content": "In practice, you'll encounter FLPs and LLCs most often when working with high-net-worth individuals planning for retirement or business succession. You'll need to analyze operating agreements for restrictions, engage valuation experts to determine appropriate discount rates, and meticulously document the rationale. A poorly structured FLP or LLC can be easily challenged by the IRS, leading to costly litigation and penalties. Thorough due diligence is key to protecting your client and yourself."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Lack of control + lack of marketability can yield 25-45% discounts\n\u2022 FLPs/LLCs are primary vehicles for discount planning\n\u2022 Must have legitimate non-tax purposes (asset protection, management)\n\u2022 \u00a72036 is main IRS attack\u2014retained control kills discounts\n\u2022 Follow formalities: Meetings, records, proportionate distributions\n\u2022 Qualified appraisal required to support discounts"
@@ -8315,6 +9115,31 @@
           "type": "callout",
           "calloutType": "warning",
           "content": "Alternate valuation date affects BASIS to heirs! If you elect AVD to save estate tax, heirs receive lower stepped-up basis. This may not be optimal if heirs plan to sell assets soon\u2014the income tax on gain could exceed estate tax savings."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Estate Tax: The Grim Reaper's Favorite Loophole?",
+          "content": "Alright, let's be real. Estate tax is morbid, but someone's gotta deal with it. I've seen families leave millions on the table simply because they didn't understand valuation discounts. Think of it like this: the IRS wants full retail price, but you're negotiating with a desperate seller. Lack of marketability, minority interest \u2013 these are your haggling points! Don't just blindly accept the initial valuation; dig deep, find those discounts, and fight for every dollar. Your clients (and their heirs) will thank you for it."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Confusing Date of Death Value with Alternate Valuation",
+          "content": "One of the biggest estate tax blunders? Using the date of death value when the alternate valuation date would result in a lower estate tax liability. Students often forget that the alternate valuation date (six months after death) is an *option*, not a requirement. If the estate's assets have decreased in value, electing the alternate valuation date can significantly reduce the taxable estate. Remember, you only use the alternate valuation if it *lowers* both the gross estate and the estate tax liability. Don't skip this critical step!"
+        },
+        {
+          "type": "case-study",
+          "title": "The Case of Aunt Mildred's Art Collection",
+          "content": "John is preparing the estate tax return for his Aunt Mildred, who passed away leaving a substantial art collection. John initially values the art based on a quick online appraisal. However, a closer look reveals that many pieces are damaged or lack proper authentication. He hires a qualified art appraiser who provides a significantly lower valuation, reflecting the collection's true market value. The lesson? Don't rely on superficial valuations; always seek expert opinions, especially for unique or hard-to-value assets."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Estate Tax Deductions: Beyond the Basics",
+          "content": "In practice, knowing the nuances of estate tax deductions is crucial. Sure, everyone knows about the marital and charitable deductions. But what about deducting unpaid property taxes, mortgages, or even funeral expenses? These seemingly small deductions can add up and significantly reduce the taxable estate. When reviewing an estate, meticulously analyze all potential deductions. Document everything thoroughly, because the IRS *will* scrutinize them. This attention to detail can save your clients thousands of dollars and demonstrate your expertise."
         },
         {
           "title": "Key Takeaways",
@@ -8562,6 +9387,31 @@
           "content": "The GST (Generation-Skipping Transfer) exemption is NOT PORTABLE! Only the estate/gift tax exemption transfers to the surviving spouse. If the first spouse doesn't use their GST exemption, it's lost. This is why trusts are still important for multi-generational planning."
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Portability: It's Free Money (Almost!)",
+          "content": "Let's be honest, estate tax can feel like another language. But portability? That's like finding a forgotten gift card in your wallet. Seriously, it's free exemption! If spouse one doesn't use all $13.61M (in 2024), why let it go to waste? Elect portability and let spouse two use it. I've seen families leave millions on the table because they skip this step. Don't be that family! It's a simple election on Form 706, and it can save a fortune."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Form 706 Election",
+          "content": "A huge mistake is assuming portability happens automatically. It DOESN'T! You must actively elect it by filing Form 706 (United States Estate (and Generation-Skipping Transfer) Tax Return) for the deceased spouse's estate, even if no estate tax is due. Students often think, 'No tax, no filing!' Wrong! Missing this election means the surviving spouse loses that DSUE amount forever. File the 706, even if it's just to elect portability. The filing deadline is generally nine months after the date of death (with a possible extension)."
+        },
+        {
+          "type": "case-study",
+          "title": "The Case of the Overlooked Exemption",
+          "content": "John died in 2024, leaving his entire estate of $5 million to his wife, Mary. His executor, thinking the estate was well below the exemption amount, didn't file Form 706. Years later, Mary's estate is worth $20 million. Because John's estate didn't elect portability, Mary can only use her own exemption amount, resulting in a significant estate tax liability. Had the executor filed Form 706 for John, Mary could have used John's unused exemption, potentially saving millions in taxes."
+        },
+        {
+          "type": "in-practice",
+          "title": "Portability in Your Daily Grind",
+          "content": "As a CPA, you'll encounter portability when advising clients on estate planning. It's crucial when one spouse has significantly less wealth than the other. For instance, when preparing a married couple's tax plan, always ask about their asset distribution and consider the potential benefits of portability. Document your discussions and recommendations clearly. Even if they initially decline, circumstances change. Having that record demonstrates due diligence and protects you from future liability. Remember to emphasize the importance of proper documentation and timely filing of Form 706 to your clients."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 Portability: Surviving spouse inherits unused estate exemption (DSUE)\n\u2022 Must file Form 706 even if no tax due\n\u2022 Only from LAST deceased spouse (remarriage risk)\n\u2022 5-year late election relief available (Rev. Proc. 2022-32)\n\u2022 GST exemption is NOT portable\u2014use trusts\n\u2022 Trusts still valuable for appreciation, protection, state taxes"
@@ -8777,6 +9627,31 @@
           "content": "GST tax applies IN ADDITION to gift or estate tax\u2014not instead of. A direct skip gift to a grandchild can trigger both gift tax (using lifetime exemption) AND GST tax (40% if no GST exemption allocated). Combined rate can exceed 70% without proper planning!"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "GST Tax: The Ultimate Double Whammy!",
+          "content": "Alright, let's be real. GST tax sounds like some obscure corner of the tax code, but trust me, it can pack a serious punch. Think of it as the taxman's way of saying, \"Oh, you thought you were just paying gift or estate tax? Think again!\" It's basically a second layer of tax imposed on transfers to grandkids (or further down the line). I've seen families get blindsided by this, especially when dealing with substantial wealth. So, pay attention now, and save your clients (and yourself) from a major tax headache later. It\u2019s not just about avoiding penalties, it\u2019s about protecting legacies."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Confusing GST Exemption with Gift/Estate Exemption",
+          "content": "Students often mistakenly believe that the gift and estate tax exemption ($13.61 million in 2023) automatically shields them from GST tax. While it *can* be used to offset GST tax, it's a separate calculation and allocation. Just because you're under the gift/estate exemption doesn't mean you're automatically in the clear for GST. Always remember to specifically allocate your GST exemption to the transfer. Not doing so can result in a hefty, unexpected tax bill on future generations. Think of it as two separate buckets - you need to fill both to avoid getting soaked!"
+        },
+        {
+          "type": "case-study",
+          "title": "The Case of Grandpa George's Trust",
+          "content": "Grandpa George set up a trust for his great-grandchildren, funding it with $2 million. He assumed his estate tax planning covered everything. However, he didn't specifically allocate his GST exemption to the trust. Now, years later, when distributions are made to the great-grandchildren, the trust owes significant GST tax because the transfer was a direct skip and the GST exemption wasn't used. The lesson? Always, always, always consider and allocate the GST exemption when planning multi-generational transfers."
+        },
+        {
+          "type": "in-practice",
+          "title": "GST Tax in Estate Planning Engagements",
+          "content": "In practice, you'll encounter GST tax most often during estate planning engagements, particularly when clients have significant assets and multiple generations of heirs. When drafting wills and trusts, you must proactively address GST tax implications. This includes discussing the GST exemption, strategies for allocating it efficiently, and the potential use of trusts designed to avoid GST tax. Failing to address GST tax can be a major oversight and expose your client to significant tax liabilities. Remember, it's your job to protect their wealth for generations to come, not just the next one."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": "\u2022 GST tax: 40% on transfers to skip persons (2+ generations below)\n\u2022 Exemption: $13.61M (2024)\u2014NOT portable between spouses\n\u2022 Three types: Direct skip, taxable termination, taxable distribution\n\u2022 Inclusion ratio: Determines portion subject to GST tax\n\u2022 Dynasty trusts: Allocate exemption once, shelter generations\n\u2022 Predeceased parent: Grandchild moves up if parent deceased"
@@ -8955,6 +9830,31 @@
           ]
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Form 8832: Your Secret Weapon for Tax Planning",
+          "content": "Alright, let's be real. Check-the-box regulations? Sounds boring, right? But trust me, this is one of the coolest tools in the tax planning toolbox. I've seen so many clients save serious money by strategically choosing their entity classification. It's like having a tax loophole, but it's totally legal! Don't underestimate the power of Form 8832. Master this now, and you'll be a tax planning rockstar. Seriously, it's way more exciting than depreciation, I promise. Just remember the per se corporation exception. Mess that up, and you're toast."
+        },
+        {
+          "type": "common-mistake",
+          "title": "LLC Confusion: Partnership vs. Disregarded Entity",
+          "content": "A common mistake is thinking that all LLCs are automatically taxed as partnerships. This is only true if the LLC has two or more members AND doesn't elect otherwise. A single-member LLC is automatically a disregarded entity, unless it actively elects to be taxed as a corporation (C corp). Failing to understand this distinction leads to incorrectly filing Form 1065 (Partnership Return) for a single-member LLC that should be reporting on Schedule C of the owner's Form 1040. Always check the number of members and whether Form 8832 has been filed!"
+        },
+        {
+          "type": "case-study",
+          "title": "Foreign Entity Fiasco: Juan's Unexpected Tax Bill",
+          "content": "Juan, a US resident, invests in a foreign entity that's treated as a 'per se' corporation in its home country. He assumes it's automatically taxed as a corporation in the US too. Big mistake! Even though it's a corporation in its home country, if it meets the definition of an eligible entity under US tax law, Juan can elect to treat it as a partnership or disregarded entity using Form 8832. Otherwise, the default classification rules apply, which might not be advantageous. This highlights the importance of considering US tax rules even when dealing with foreign entities."
+        },
+        {
+          "type": "in-practice",
+          "title": "LLC Scenarios: Where Check-the-Box Saves the Day",
+          "content": "In practice, you'll use check-the-box regulations most often when dealing with new LLCs. For example, a husband and wife starting a real estate investment business might form an LLC. You'll advise them on whether to be taxed as a partnership or, if they want liability protection but simplified taxes, to elect to treat their LLC as a corporation. Also, consider foreign subsidiaries of US companies. Electing partnership treatment or disregarded entity status can simplify the repatriation of profits and avoid double taxation. Mastering Form 8832 lets you tailor the tax treatment to the client's specific needs."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -9107,6 +10007,31 @@
           "title": "\u26a0\ufe0f Exam Trap: When 338(g) Makes Sense",
           "type": "warning",
           "content": "**338(g) is RARELY beneficial because:**\n\n\u2022 Buyer effectively pays target's tax\n\u2022 But might make sense when:\n  - Target has NOL to offset gain\n  - Foreign acquisition (no double tax)\n  - Tax attributes must be purged\n\n**338(h)(10) is almost always preferred when available!**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "338 Elections: The Ultimate Tax Magic Trick",
+          "content": "Alright, future CPAs, let's be real. Section 338 elections can seem like black magic. You're essentially turning a stock purchase into an asset purchase with a snap of your fingers. I've seen deals where skipping this election cost clients millions in future depreciation. Don't be the wizard who forgets the spell! Remember, it's all about that stepped-up basis and those sweet, sweet depreciation deductions. Just make sure you have a corporate acquirer and that 80% ownership locked down. Otherwise, poof! No magic for you."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Confusing 338 with a Real Asset Purchase",
+          "content": "A common mistake is thinking a 338 election is exactly the same as a direct asset purchase. They both lead to a stepped-up basis, but the key difference lies in the target company's fate. With a 338 election, the target is 'deemed' to sell its assets, triggering potential gain/loss recognition on its books. In a true asset purchase, the target actually sells the assets and ceases to exist. So, while the end result for the buyer may be similar, the tax implications for the seller (target) are vastly different! Always consider the seller's perspective."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Section 338 Surprise",
+          "content": "Sarah, a newly promoted tax manager, was reviewing a merger where a private equity firm acquired 90% of TechCorp. The PE firm's lawyers hadn't made a 338 election. Sarah realized TechCorp had significant built-in gains on its assets. By not electing 338, the buyer missed out on huge depreciation benefits and TechCorp avoided immediate gain recognition. The lesson? Always evaluate the potential benefits of a 338 election, even if it means more upfront tax for the target; the long-term depreciation benefits can outweigh the short-term tax hit."
+        },
+        {
+          "type": "in-practice",
+          "title": "338 Elections: Your M&A Bread and Butter",
+          "content": "In practice, you'll encounter Section 338 elections primarily during M&A due diligence. You'll need to quickly assess if the acquisition structure meets the requirements: corporate acquirer, qualified stock purchase, and timely election. You'll be modeling the tax impact of the election, comparing the present value of future depreciation deductions against the immediate tax cost to the target. Mastering this now will make you a valuable asset on any deal team, enabling you to quantify the tax benefits and guide clients toward optimal acquisition strategies. It's not just theory; it's real-world money."
         },
         {
           "title": "Key Takeaways",
@@ -9298,6 +10223,31 @@
           ]
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Worldwide System? More Like 'Worldwide Headache'!",
+          "content": "Okay, let's be real. The US 'worldwide' tax system with its 'territorial' sprinkles can feel like a caffeinated squirrel wrote it. US persons taxed on income EVERYWHERE? Yikes! But that's where deferral through foreign subs and the foreign tax credit come in. Think of it like this: Uncle Sam wants his cut, but he's (somewhat) reasonable. Deferral is like hiding the cookie jar temporarily, and the FTC is like getting credit for cookies you already gave to another kid on the playground (foreign government). Understanding this dance is KEY."
+        },
+        {
+          "type": "common-mistake",
+          "title": "FTC Limit: Don't Let It Limit Your Score!",
+          "content": "Students often forget that the foreign tax credit is LIMITED. You can't just credit ALL the foreign taxes you paid. The FTC limit prevents you from using foreign tax credits to reduce your US tax liability on US-source income. The formula (US Tax \u00d7 (Foreign Source Income / Total Taxable Income)) is crucial. A common mistake is to simply offset all foreign taxes paid against the US tax liability without calculating this limit. Always, always calculate the FTC limitation. Otherwise, you are leaving money on the table and potentially overpaying taxes."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's DRD Dilemma: Participation Exemption",
+          "content": "Sarah, a tax associate, is reviewing a client's Form 1120. The client, a US corporation, received a $500,000 dividend from its foreign subsidiary. Sarah remembers the participation exemption but isn't sure if it applies. Learning point: The participation exemption (100% DRD) only applies if the US corporation owns at least 10% of the foreign sub's stock and meets other requirements. Sarah needs to investigate the ownership percentage and ensure the dividend qualifies to avoid miscalculating taxable income."
+        },
+        {
+          "type": "in-practice",
+          "title": "FTC Carryforwards: Your Future Tax Savings",
+          "content": "In practice, understanding FTC carryforwards is crucial for long-term tax planning. Clients may have excess foreign tax credits in one year due to fluctuations in foreign income or tax rates. Knowing that these credits can be carried back one year and forward ten years allows you to strategically plan for future tax liabilities. For example, if a client anticipates a significant increase in US tax liability in the next few years, you can advise them on ways to maximize the use of their existing FTC carryforwards to minimize their overall tax burden. This makes you a valuable asset to your client."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -9458,6 +10408,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Regular Tax vs CAMT",
           "type": "warning",
           "content": "**Corporation pays the GREATER of:**\n\n\u2022 Regular tax (21% on taxable income)\n\u2022 CAMT (15% on AFSI)\n\n**If CAMT > Regular:**\n\u2022 Excess = AMT credit carryforward\n\u2022 Can offset future regular tax\n\n**Most large corps still pay regular tax > CAMT**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "AMT: Back from the Dead (Again!)",
+          "content": "Okay, folks, the corporate AMT. We thought we\u2019d seen the last of it with TCJA, right? Peace out, 20% tax! But Uncle Sam, in his infinite wisdom (and need for revenue), brought it back with the IRA. This new 15% CAMT is like that zombie movie sequel nobody asked for. But here it is! So, buckle up, because now you have to remember the old AMT rules (sort of), understand why they were repealed, and then wrap your head around this brand new, slightly different beast. It's tax law \u2013 always keeping us on our toes (and employed!)."
+        },
+        {
+          "type": "common-mistake",
+          "title": "AFSI: It's NOT Just Regular Taxable Income!",
+          "content": "A common mistake is thinking that the $1 billion AFSI threshold for the CAMT is based on regular taxable income. It's not! AFSI (Adjusted Financial Statement Income) is derived from the corporation's financial statements prepared using GAAP (or IFRS). This means book income, not tax income, is the starting point. So, adjustments are required to reconcile book income to AFSI, and THEN you determine if the $1 billion threshold is met. Failing to understand this difference can lead to significant errors in determining CAMT applicability and calculation."
+        },
+        {
+          "type": "case-study",
+          "title": "MegaCorp's Billion-Dollar Blunder",
+          "content": "MegaCorp, a multinational conglomerate, had average annual revenue of $1.5 billion. Sarah, the new tax manager, focused solely on taxable income, which was significantly lower due to various tax deductions and credits. She incorrectly concluded MegaCorp was exempt from the CAMT. However, their AFSI, driven by high book profits, averaged $1.2 billion over the past three years. MegaCorp now faces penalties for underpayment because Sarah overlooked the AFSI threshold and the CAMT requirements."
+        },
+        {
+          "type": "in-practice",
+          "title": "CAMT's Impact on Large Corporation Audits",
+          "content": "In practice, you'll encounter the CAMT most often when auditing large corporations with significant book income. You'll need to meticulously review their financial statements and supporting documentation to verify the accuracy of their AFSI calculation. This involves scrutinizing adjustments made to book income and ensuring compliance with the CAMT regulations. Failure to properly assess the CAMT liability can result in significant financial statement misstatements and potential penalties for the client. Prioritizing AFSI verification during audits is essential for large corporations."
         },
         {
           "title": "Key Takeaways",
@@ -9630,6 +10605,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Basis in IRAs",
           "type": "warning",
           "content": "**If you have non-deductible IRA contributions:**\n\n\u2022 Cannot just withdraw basis tax-free\n\u2022 Pro-rata rule applies\n\u2022 Must aggregate ALL traditional IRAs\n\n**Formula:**\nTaxable % = Pre-tax balance / Total IRA balance\n\n**Each distribution: Part taxable, part return of basis**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Roth vs. Traditional: Which Piggy Bank?",
+          "content": "Okay, let's be honest. Retirement planning can feel like deciphering ancient hieroglyphs. But it boils down to this: Do you want to pay taxes now (Roth) or later (Traditional)? Think of it like this: Traditional is like planting a seed and deferring the 'tax fruit' until harvest. Roth is paying the tax seed price upfront so you can enjoy the tax-free harvest later! Which is better? Depends on if you think you'll be in a higher or lower tax bracket when you retire. No crystal ball needed, just careful planning!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "RMD Penalties: The 25% Gotcha!",
+          "content": "A common mistake is forgetting the Required Minimum Distribution (RMD) rules, especially the age trigger and calculation. Students often think the penalty for failing to take an RMD is only 10%, which was the old rule. Under SECURE 2.0, it's now 25%! Imagine forgetting to withdraw $20,000 and getting hit with a $5,000 penalty. Ouch! To avoid this, set up calendar reminders and double-check the RMD amount. Use the IRS worksheets; they're your friend! Also, remember that the age is 73 now, not 72, for many people."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's RMD Headache",
+          "content": "Sarah turned 73 in 2024. She knows she needs to take an RMD from her traditional IRA, but she's overwhelmed. Her account balance on December 31, 2023, was $500,000. Using the IRS life expectancy table, her factor is 27.4. That means her RMD for 2024 is $18,248.18 ($500,000 / 27.4). The lesson? Don't procrastinate! Calculate your RMD early to avoid a last-minute scramble and potential penalties. Advise your clients to do the same!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World RMD Planning",
+          "content": "In practice, you'll encounter these retirement plan distribution rules constantly, especially during tax season. Clients will call, confused about their RMDs, or worse, unaware they even exist! You'll be calculating RMDs, advising on Roth conversions, and explaining the tax implications of different distribution strategies. Mastering this now makes you a trusted advisor. It also helps you spot opportunities for tax planning, like strategically drawing down accounts to minimize overall tax liability. Think beyond just compliance; think about maximizing your client's after-tax retirement income."
         },
         {
           "title": "Key Takeaways",
@@ -9814,6 +10814,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Conflicting Authority",
           "type": "warning",
           "content": "**When authorities conflict:**\n\n**Same level:** Use more recent\n**Different courts:** Use circuit where taxpayer located\n**IRS vs Court:** Courts override IRS positions\n**Supreme Court:** Binding nationwide\n\n**Document why you chose specific authority!**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Tax Research: It's a Rabbit Hole, But a Necessary One!",
+          "content": "Alright, future CPAs, let's be honest. Tax research can feel like falling down a rabbit hole. You start with a simple question about, say, deductible business expenses, and suddenly you're knee-deep in obscure revenue procedures from 1987! But trust me, mastering tax research is what separates the good CPAs from the great ones. It's not about memorizing everything, it's about knowing where to find the answers and how to interpret them. So embrace the rabbit hole, and bring a flashlight!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Mixing Up Revenue Rulings & Revenue Procedures",
+          "content": "A common mistake is thinking Revenue Rulings and Revenue Procedures are interchangeable. They're not! Revenue Rulings apply the law to specific factual situations, providing guidance on how the IRS will treat similar scenarios. Revenue Procedures, on the other hand, detail internal practices and procedures of the IRS itself, like how to apply for a certain type of determination letter. Confusing these can lead to incorrect advice and compliance errors. Always double-check which type of IRS guidance you're using."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Sticky Situation: Home Office Deduction",
+          "content": "Sarah, a newly minted CPA, is helping a client determine if they qualify for the home office deduction. The client uses a room in their house exclusively for business, but also occasionally lets their kids use it for homework. Sarah incorrectly concludes the client doesn't qualify because of the occasional personal use. However, if Sarah had consulted the relevant IRC section and court cases regarding 'exclusive use', she would have found that *de minimis* personal use does not necessarily disqualify the space."
+        },
+        {
+          "type": "in-practice",
+          "title": "Research & Real Life: Defending Your Tax Positions",
+          "content": "In practice, you'll use tax research every time you take a position on a tax return that isn't explicitly spelled out in black and white. Imagine you are taking a novel approach to classifying an asset for depreciation. You'll need to build a strong case based on the IRC, regulations, and relevant court decisions to support your position if the IRS challenges it. The stronger your research, the more confident you can be in defending your client and upholding your professional responsibilities."
         },
         {
           "title": "Key Takeaways",
@@ -10009,6 +11034,31 @@
           "content": "**Reasonable cause defense requires showing:**\n\n\u2022 Ordinary business care and prudence\n\u2022 Unable to comply despite efforts\n\n**Examples:**\n\u2022 Death or serious illness\n\u2022 Reliance on professional advice (must be reasonable)\n\u2022 Natural disaster\n\n**NOT reasonable cause:**\n\u2022 Didn't know the law\n\u2022 Relied on preparer without verifying"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The 20% Club: A Practitioner's Confession",
+          "content": "Okay, let's be real. Nobody *wants* to talk about penalties. But I\u2019ve seen too many otherwise smart folks get hit with that 20% negligence or substantial understatement penalty. Trust me, it's not a good look. The IRS isn't playing around, especially with valuation issues. Think of it this way: did you *really* think that 'antique' lamp was worth $50,000? If it sounds too good to be true, it probably is. Document everything! And if you're unsure, get a professional appraisal. Your client (and your reputation) will thank you."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Substantial vs. Gross: The Valuation Trap",
+          "content": "A common mistake is confusing a substantial valuation misstatement (150% overvaluation) with a gross valuation misstatement (200% overvaluation). Students often only remember 'overvaluation' and forget the crucial percentage thresholds. The difference is HUGE! A substantial misstatement triggers a 20% penalty, while a *gross* misstatement jumps to a *40%* penalty. Remember: 'Gross' is worse, and the penalty is double. Always double-check your calculations and documentation to avoid this costly error. Don't let a simple oversight cost your client a fortune."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Risky Deduction",
+          "content": "Sarah, a sole proprietor, claimed a $12,000 business expense based on a blurry receipt and her 'gut feeling.' Her tax liability was understated by $6,000. While it's more than the $5,000 threshold for a substantial understatement, she argues that her gut feeling is 'reasonable.' The key takeaway: 'Reasonable basis' requires more than a hunch. Without proper documentation and a sound justification, Sarah is likely facing a 20% penalty on the underpayment. Document, document, document."
+        },
+        {
+          "type": "in-practice",
+          "title": "Penalty Prevention in the Real World",
+          "content": "In practice, you'll encounter the 'substantial authority' defense frequently, especially when dealing with complex tax issues. Think about it: if a client takes a position that goes against the IRS's preferred interpretation but there's legitimate legal support (court cases, revenue rulings) you can potentially avoid the penalty. This often comes up with pass-through entities and partnership allocations. That's why staying updated on tax law and thoroughly researching your client's position is critical. It's not enough to just prepare the return; you need to be able to defend it."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -10157,6 +11207,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Public Law 86-272",
           "type": "warning",
           "content": "**P.L. 86-272 Protections:**\n\n\u2022 Solicitation of tangible goods = No income tax nexus\n\u2022 Only protects INCOME tax (not sales tax!)\n\n**Does NOT protect:**\n\u2022 Services\n\u2022 Intangibles\n\u2022 Activities beyond solicitation\n\n**States narrowly interpret this protection**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "SALT: It's More Than Just Shaking Some at Dinner",
+          "content": "Okay, let's be real. SALT can feel like a word salad of acronyms and legalese. But trust me, understanding nexus and apportionment is crucial. You can't just ignore state taxes hoping they'll go away. Think of nexus as the state's way of saying, 'Hey, you're doing business here, pay up!' And Wayfair changed everything; you don't even need a physical office anymore. So, buckle up, and let's demystify this thing before the exam does."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Nexus Confusion: Physical vs. Economic",
+          "content": "Students often confuse physical and economic nexus, thinking you always need a physical presence to trigger state tax obligations. This is wrong! Post-Wayfair, economic nexus means a business can trigger tax obligations simply by exceeding a certain sales threshold in a state, even without any employees or property there. Always check the specific state's rules regarding economic nexus thresholds (sales volume or number of transactions) to avoid a nasty surprise during an audit."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah and the SALT Cap Bypass",
+          "content": "Sarah, a partner in an S-Corp, was frustrated by the $10,000 SALT deduction limit. Her CPA suggested exploring a pass-through entity tax (PTET) election. By having her S-Corp pay the state tax at the entity level, it became a deduction against the business income, effectively bypassing the individual SALT cap for Sarah. She saved thousands! Remember that many states now allow this workaround, so advise your clients accordingly."
+        },
+        {
+          "type": "in-practice",
+          "title": "SALT: Daily Bread for Tax Pros",
+          "content": "In practice, you'll encounter SALT issues constantly, especially if you work with businesses that operate in multiple states. Calculating state income tax apportionment, determining whether a client has nexus in a new state, and navigating the ever-changing landscape of state tax laws are all common tasks. Mastering these concepts will make you a much more valuable asset to your firm and your clients. Plus, you'll be able to sleep better knowing you're keeping them compliant!"
         },
         {
           "title": "Key Takeaways",
@@ -10316,6 +11391,31 @@
           "content": "**For uneven income (seasonal, bonuses):**\n\n\u2022 Annualize income for each period\n\u2022 Calculate tax on annualized amount\n\u2022 Reduces penalty if income earned late\n\n**Must complete Schedule AI (Form 2210)**\n\n**Complex but can save penalty!**"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Estimated Taxes: The Quarterly Cliff Dive",
+          "content": "Okay, let's be real. Estimated taxes are like that surprise bill you forgot about. I\u2019ve seen seasoned pros trip up here. The biggest gotcha? Forgetting that the deadlines aren't perfectly spaced out. You have two months between April and June, then three to September, and then a weird three-and-a-half to January. Set those reminders! And don't think you can just skip a payment because you had a bad quarter. Uncle Sam doesn't care about your feelings, only your money. Pay up, or pay the penalty!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Safe Harbor Confusion: 100% vs. 110%",
+          "content": "A very common mistake is using the 100% of prior year safe harbor when the taxpayer's AGI exceeds $150,000. Students often forget that threshold! Let's say John's AGI was $160,000 last year. He owes $50,000 in taxes this year, but only paid $48,000 last year. He thinks he's in the clear using the prior-year safe harbor, but he's wrong! Because his AGI was over $150,000, he needs to pay in 110% of last year's tax to avoid penalties, which is $52,800 (1.10 * $48,000). Don't let that $150K threshold sneak up on you!"
+        },
+        {
+          "type": "case-study",
+          "title": "Carlos's Corporate Tax Conundrum",
+          "content": "Carlos owns a successful S-corp. His business income fluctuates wildly. Last year, he paid $50,000 in corporate taxes, but he anticipates owing $75,000 this year. He wants to use the prior year safe harbor. However, he forgot one key detail: Large corporations (taxable income of $1M or more in any of the past three years) can only use the prior year safe harbor for their FIRST estimated payment. Carlos must base his subsequent payments on his current-year estimated tax liability to avoid penalties."
+        },
+        {
+          "type": "in-practice",
+          "title": "Estimated Taxes: A Daily Grind",
+          "content": "In practice, you\u2019ll encounter estimated taxes constantly, especially during tax season. You'll be advising clients on strategies to minimize penalties, calculating their estimated tax liability, and preparing vouchers for payment. Knowing the safe harbors inside and out is crucial for accurate planning. Furthermore, understanding the nuances for high-income individuals and large corporations prevents costly errors and keeps you in the good graces of the IRS (and your clients!). It's not glamorous, but it's bread and butter for tax professionals."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -10473,6 +11573,31 @@
           "content": "**Timing matters!**\n\n**Pre-2018 NOLs:**\n\u2022 20-year carryforward\n\u2022 No 80% limit\n\u2022 May have carryback\n\n**Post-2017 NOLs:**\n\u2022 Indefinite carryforward\n\u2022 80% taxable income limit\n\u2022 No carryback (usually)\n\n**Stack pre-2018 NOLs first!**"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "NOLs: The Tax Pro's Crystal Ball?",
+          "content": "Okay, let's be honest, NOLs can feel like staring into a tax crystal ball. Predicting income (or losses!) years out is tough. The TCJA changes made it even more interesting. Remember the '80% of taxable income' limit for those post-2017 NOLs. Don't just blindly apply the full NOL. I\u2019ve seen so many forget that cap. Think of it like a diet \u2013 you can't eat unlimited cake, even if it's 'loss' cake! Keep that 80% in mind, and you'll be golden."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Pre vs. Post-TCJA: The Time Machine Trap",
+          "content": "A very common mistake is mixing up pre- and post-TCJA NOL rules. Students often forget that the 2-year carryback is GONE for NOLs generated after 2017 (generally). They\u2019ll try to apply it to a 2020 NOL and end up with a big fat error. The key difference lies in the year the NOL was generated. Create a timeline! If the NOL arose *before* 2018, the old rules apply. If it's *after*, indefinite carryforward and the 80% limitation are your new best friends."
+        },
+        {
+          "type": "case-study",
+          "title": "Acquisition Angst: ABC Corp's Ownership Shift",
+          "content": "ABC Corp experiences a >50% ownership change within 3 years after a string of losses. Their FMV is $5 million and the long-term tax-exempt rate is 3%. The annual NOL usage is now limited to $150,000 ($5,000,000 * 0.03). This means ABC Corp. can only deduct $150,000 of their NOL each year, even if their taxable income is significantly higher, impacting their overall tax strategy and future profitability. This ownership change limitation is a critical consideration in M&A deals."
+        },
+        {
+          "type": "in-practice",
+          "title": "NOLs: Due Diligence & Dealbreakers",
+          "content": "In practice, you'll encounter NOLs frequently during M&A due diligence. Potential acquirers need to understand the target company's NOL position and any potential limitations due to ownership changes. A large, unusable NOL can significantly reduce the value of a target. Understanding the Section 382 limitations (ownership change) is crucial. Identifying these limitations early can be a deal breaker or, at least, heavily influence the purchase price negotiations. Don't overlook the fine print!"
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -10627,6 +11752,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Eligibility for Automatic",
           "type": "warning",
           "content": "**Cannot use automatic procedures if:**\n\n\u2022 Under IRS examination for issue\n\u2022 Changed same method in past 5 years\n\u2022 Method is contrary to regulations\n\n**Must file correctly:**\n\u2022 Duplicate to national office (sometimes)\n\u2022 Timely with return\n\u2022 Include \u00a7481(a) adjustment"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Catch-Up Adjustments: The Tax Pro's Secret Weapon",
+          "content": "Alright, future CPAs, let's be real. Accounting method changes? They're like the tax code's version of a software update \u2013 necessary, sometimes annoying, but crucial for compliance. That catch-up adjustment? It's the system's way of saying, 'Okay, let's fix things without completely breaking the bank (or the taxpayer)'. Think of it as spreading the pain (or joy!) over four years. I've seen businesses save big by switching from cash to accrual and using that negative adjustment strategically. Don't underestimate its power. It's not just a calculation; it's a tax planning opportunity!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Beginning-of-Year Baseline",
+          "content": "A common mistake is calculating the catch-up adjustment based on the difference between the methods at the *end* of the year, instead of the *beginning*. Remember, the adjustment is designed to correct for past errors or omissions. Using the end-of-year difference includes the current year's activity, which hasn't been subject to the incorrect method. To avoid this, always look at the balance sheet or relevant accounts as of January 1st of the year of change when determining the difference between the old and new methods. This ensures you're only 'catching up' on prior periods."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Depreciation Dilemma",
+          "content": "Sarah, a small business owner, had been using an incorrect depreciation method for her equipment for years. After consulting with a CPA, she decided to switch to the correct method using Revenue Procedure 2023-34. The CPA calculated a significant negative catch-up adjustment. Sarah was initially worried about an audit, but the CPA explained the adjustment was a legitimate correction and would actually result in a tax refund. This demonstrates the importance of identifying and correcting errors, even if they initially seem daunting."
+        },
+        {
+          "type": "in-practice",
+          "title": "Method Changes: A Daily Grind for Tax Pros",
+          "content": "In practice, you'll encounter accounting method changes most frequently when onboarding new clients. Often, smaller businesses haven't had the resources for optimal tax planning and may be using a suboptimal method. For instance, a cash-basis business growing and needing to switch to accrual or a business not taking advantage of accelerated depreciation. Knowing how to navigate Revenue Procedure 2023-34 and calculate the catch-up adjustment accurately is crucial for providing valuable tax planning advice and ensuring compliance. It\u2019s a skill that pays dividends quickly."
         },
         {
           "title": "Key Takeaways",
@@ -10803,6 +11953,31 @@
           "content": "**TCJA exemption expires after 2025:**\n\n**Current (2024):** $13.61 million\n**Post-2025:** ~$7 million (projected)\n\n**\"Use it or lose it\" planning:**\n\u2022 Make large gifts before sunset\n\u2022 Anti-clawback regulations protect gifts\n\n**If client dies after sunset, gifts not added back!**"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The Annual Exclusion: Low-Hanging Fruit",
+          "content": "Okay, let's be real. The $18,000 annual gift tax exclusion (in 2024) is like the free breadsticks at a restaurant \u2013 everyone loves it, but some folks still forget to take advantage! Seriously, I've seen clients leave substantial wealth on the table simply because they didn't maximize this simple strategy. Don't overthink it! Use those annual exclusions. It's a no-brainer way to shrink that future estate tax bill. Think of it as proactive tax planning, not just a nice gesture (though it is that too!)."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Present vs. Future Interest: A Crucial Distinction",
+          "content": "A common mistake students make is overlooking the 'present interest' requirement for the annual gift tax exclusion. You can't just promise someone $18,000 in 10 years and call it a gift! The recipient needs immediate access and enjoyment of the gifted property. For example, contributing to a 529 plan qualifies, but setting up an irrevocable trust with restricted access for the beneficiary might not. Always verify the gift gives the recipient immediate benefit to avoid a costly gift tax surprise later on."
+        },
+        {
+          "type": "case-study",
+          "title": "The Smith Family's Defective Trust",
+          "content": "John and Mary Smith want to pass assets to their children but worry about estate taxes. They establish an intentionally defective grantor trust (IDGT). The trust is structured so John pays the income tax on the trust's earnings, effectively making additional tax-free gifts to the trust. This allows the trust to grow faster, shielded from estate taxes, while John's estate is further reduced by the income tax payments he makes. It's a win-win (if structured correctly!)."
+        },
+        {
+          "type": "in-practice",
+          "title": "Applying Gift Splitting in Real Client Scenarios",
+          "content": "In practice, you'll frequently encounter married couples who want to maximize their annual exclusions. Gift splitting allows them to combine their individual exclusions, effectively doubling the amount they can gift to each donee. For example, if a couple wants to gift $36,000 to each of their three grandchildren, gift splitting is the perfect strategy. Just remember to file Form 709 (United States Gift (and Generation-Skipping Transfer) Tax Return) and ensure both spouses consent to the split."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -10964,6 +12139,31 @@
           "content": "**For restricted stock:**\n\n**Without 83(b):**\n\u2022 Taxed at vesting on FMV\n\u2022 Risk of higher tax if appreciates\n\n**With 83(b):**\n\u2022 Taxed NOW on current value\n\u2022 Future appreciation = Capital gain\n\u2022 Must file within 30 DAYS\n\n**Risk:** If forfeited, no refund of tax paid!"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Deferred Comp: Mess Up and the IRS Comes Knocking",
+          "content": "Alright, let's be real. Nonqualified deferred compensation (NQDC) can be a minefield. Think of it like this: the IRS is *really* skeptical of letting people defer income indefinitely. They want their tax dollars! So, if you screw up the written plan, the election timing, or the distribution events, BAM! 20% penalty plus interest, and the entire deferred amount is taxable *now*. Trust me, that's a conversation no one wants to have with their client. Get those distribution events ironed out!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "NQDC: Forgetting the Strict Election Timing",
+          "content": "A common mistake is blowing the election timing for NQDC. Students often think, 'Oh, I can just elect to defer some bonus whenever I feel like it.' Nope! Generally, the election has to be made *before* the year the compensation is earned, or within 30 days of becoming eligible for the plan. Forgetting this crucial rule means the deferral is treated as taxable income *immediately*. Don't let your clients get tripped up by this timing trap. Document everything!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's NQDC Nightmare: A Costly Oversight",
+          "content": "Sarah, a CFO, implemented an NQDC plan for her executives but forgot to include a 'change in control' distribution event in the written plan. When the company was acquired, executives wanted their deferred compensation, but because it wasn't a specified distribution event, the entire deferred amount became immediately taxable, plus the 20% penalty. Sarah's oversight cost the company and its executives a fortune in unexpected taxes and penalties. The lesson? Read. The. Plan."
+        },
+        {
+          "type": "in-practice",
+          "title": "Tax-Free Employee Benefits: A Daily Win",
+          "content": "In practice, you'll use the tax-free benefits rules constantly. Think about structuring compensation packages. Knowing that employer-paid health insurance premiums, group-term life insurance (up to $50k), dependent care (up to $5k), and educational assistance (up to $5,250) are tax-free to the employee allows you to create more attractive and tax-efficient compensation. For example, instead of a $6,000 raise, offer $5,000 in dependent care assistance and $1,000 cash. It's all about maximizing value while minimizing the tax burden for everyone."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -11109,6 +12309,31 @@
           "content": "**Contributed property:**\n\n**Generally no gain/loss recognized:**\n\u2022 Partner takes carryover basis\n\u2022 Partnership takes carryover basis\n\u2022 Holding period tacks\n\n**Exceptions (gain recognized):**\n\u2022 Investment company\n\u2022 Partnership assumes excess liabilities\n\u2022 Services for interest"
         },
         {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Partnership Tax: It's All About the K-1",
+          "content": "Alright, future CPAs, let's talk partnerships. Trust me, understanding partnership taxation is like learning a new language, but instead of 'Bonjour,' it's 'Schedule K-1.' You'll be drowning in these things! The key takeaway is that the partnership itself doesn't pay taxes. It's all passed through to the partners, whether they actually *see* the cash or not. So, get cozy with those K-1s; they're your new best friends (or maybe frenemies, depending on the complexity!). Remember character preservation - ordinary income stays ordinary, capital gains stay capital gains. Don't mix 'em up!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Loss Deduction Order",
+          "content": "A very common mistake is ignoring the order of loss deduction limitations. Students often jump straight to the passive activity rules without first checking basis and at-risk amounts. Imagine a partner with a $10,000 loss, but only a $5,000 basis. Even if they're 'at-risk' for the full $10,000 and the activity is active, they can only deduct $5,000 due to the basis limitation. The rest is suspended. Remember: Basis, At-Risk, Passive Activity Rules, Excess Business Loss. It's a waterfall, not a free-for-all!"
+        },
+        {
+          "type": "case-study",
+          "title": "Bob's Bogus Basis Blues",
+          "content": "Bob invested $50,000 in cash into the ABC Partnership. During the year, the partnership incurred a $70,000 loss, and Bob's share was $25,000. Bob thinks he can deduct the full $25,000 on his personal return. He's wrong! Bob can only deduct $25,000 to the extent of his basis: $50,000. The remaining $25,000 loss is suspended and carried forward until he has sufficient basis. This highlights the importance of tracking outside basis carefully."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Partnership Tax Planning",
+          "content": "In practice, understanding partnership taxation is essential for tax planning. For example, imagine you're advising a client forming a real estate partnership. You need to project potential losses and ensure the partners have sufficient basis and are 'at-risk' to deduct those losses in the early years. You'll also advise on strategies to increase basis, like contributing property or guaranteeing partnership debt. Proactive planning prevents unpleasant surprises when tax time rolls around. Ignoring these rules can lead to significant tax liabilities and penalties for your clients."
+        },
+        {
           "title": "Key Takeaways",
           "type": "summary",
           "content": [
@@ -11247,6 +12472,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Reasonable Compensation",
           "type": "warning",
           "content": "**Shareholder-employees MUST receive:**\n\n\u2022 Reasonable salary for services\n\u2022 Subject to FICA/payroll taxes\n\n**IRS scrutiny if:**\n\u2022 All income as distributions\n\u2022 No or minimal salary\n\u2022 Services rendered\n\n**Consequences:** Reclassification + penalties"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "S Corp Elections: Don't Miss the Deadline!",
+          "content": "Okay, let's be real. S corp elections seem simple, right? But I've seen so many businesses screw this up. It's usually because they file late! Remember, Form 2553 must be filed by March 15th if you want S status for the current year (for calendar year entities). Miss that deadline and you're stuck as a C corp for another year. Think of it like this: procrastinate, and the IRS will procrastinate on giving you those sweet pass-through benefits. Set a reminder, people!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Basis Calculations: Mixing Stock and Debt!",
+          "content": "Students often mix up stock basis and debt basis when dealing with S corp losses. Remember, losses first reduce stock basis to zero. Only *after* stock basis is exhausted do losses reduce debt basis. Then, when that debt is repaid, there can be taxable income! The key difference is that stock basis is the initial investment plus income items and minus distributions/losses, while debt basis is direct loans made from the shareholder to the S corp. Don't treat them the same!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's S Corp Loss Limitation",
+          "content": "Sarah owns 60% of an S corp and her initial stock basis was $20,000. The S corp had a $50,000 loss this year. Sarah can only deduct $20,000 of the loss on her personal return. The remaining $10,000 (60% of the $50,000 loss = $30,000, limited to her $20,000 basis) is suspended and carried forward until she has sufficient basis again. This highlights the importance of tracking shareholder basis annually."
+        },
+        {
+          "type": "in-practice",
+          "title": "Basis Tracking: A Year-Round Task",
+          "content": "In practice, you'll encounter S corp basis calculations constantly, especially when preparing K-1s. That's why mastering the ordering rules is crucial. You'll need to track income, deductions, and distributions throughout the year to accurately determine each shareholder's basis. Many firms use specialized software to manage these calculations, but understanding the underlying principles is essential for spotting errors and providing sound tax advice. Neglecting this can lead to incorrect loss deductions and potential penalties."
         },
         {
           "title": "Key Takeaways",
@@ -11392,6 +12642,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Accumulated Earnings Tax",
           "type": "warning",
           "content": "**20% penalty on excess accumulation:**\n\n**When:**\n\u2022 Accumulation beyond reasonable business needs\n\u2022 Purpose: Avoid shareholder-level tax\n\n**Credit allowed:**\n\u2022 Greater of $250K or business needs\n\u2022 $150K for PSCs\n\n**Document business purpose for accumulation!**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "21% Flat Rate: It's Not as Simple as It Seems!",
+          "content": "Alright, future CPAs, let's be real. The 21% corporate tax rate sounds simple, right? A welcome break from the old graduated brackets. But don't get complacent! Remember state taxes pile on top of that, and figuring out E&P is where things get hairy. I've seen partnerships try to sneak in as C-corps hoping for the lower rate, but they get crushed when the IRS reclassifies them. So, master these rules; it's the bread and butter of corporate tax work."
+        },
+        {
+          "type": "common-mistake",
+          "title": "E&P Confusion: Current vs. Accumulated",
+          "content": "Students often get tripped up distinguishing between current and accumulated E&P. They might just add them together without considering the distribution rules. Remember, distributions are deemed to come from current E&P first (pro rata by date). Only after current E&P is exhausted do distributions tap into accumulated E&P (in chronological order). Failing to account for this sequencing can lead to incorrect calculations of taxable dividends and return of capital, resulting in penalties."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Dividend Dilemma",
+          "content": "Sarah, CFO of Acme Corp, needs to advise shareholders on the tax implications of a recent $50,000 distribution. Acme has $20,000 in current E&P and $40,000 in accumulated E&P. Sarah needs to explain that the $50,000 distribution is treated first as a $20,000 dividend (from current E&P), then a $30,000 dividend (from accumulated E&P). Understanding the E&P layering is crucial for providing accurate tax advice to Acme's shareholders."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Dividend Analysis",
+          "content": "In practice, you'll encounter these C-corp distribution rules when preparing tax returns for privately held companies. You'll analyze their financial statements to determine current and accumulated E&P. Clients often need help understanding the tax implications of dividends, especially when significant accumulated E&P exists. Being able to clearly explain the dividend rules and their impact on shareholders' tax liabilities is a valuable skill that clients will appreciate and pay for. Mastering this now will save you countless hours of research and potential errors later."
         },
         {
           "title": "Key Takeaways",
@@ -11542,6 +12817,31 @@
           "title": "\u26a0\ufe0f Exam Trap: Phase-outs",
           "type": "warning",
           "content": "**Many credits phase out at higher incomes:**\n\n**Child Tax Credit:** Starts at $200K/$400K\n**EITC:** Varies by filing status\n**Education credits:** ~$80K-90K range\n\n**Always check income limits!**\n\n**Phase-out can make marginal rate very high**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Credits vs. Deductions: The Real Deal",
+          "content": "Alright, let's be honest. Credits and deductions? They sound boring, but they're HUGE. Think of deductions like getting a discount coupon \u2013 it's nice, but the credit? That's like finding a twenty in your old jeans. Dollar for dollar, baby! Don't gloss over this stuff. Knowing the difference between an R&D credit and simply deducting research expenses can save your client (and your career) a ton of money. Seriously, nail this down. Your clients will love you, and your wallet will too."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Phase-Outs!",
+          "content": "A common mistake is assuming a taxpayer is eligible for the full credit amount. Many credits, like the Low-Income Housing Credit, have complex phase-out rules based on income or other factors. Students often calculate the maximum credit without checking if the taxpayer's circumstances allow for it. Always remember to verify eligibility requirements and phase-out thresholds! Failing to do so leads to incorrect tax calculations and potential penalties for your clients. Double-check the fine print!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Small Business Woes",
+          "content": "Sarah owns a bakery and recently renovated her entrance to be wheelchair accessible. She spent $15,000. She's excited about the Disabled Access Credit, but she's confused. The learning point? The Disabled Access Credit is for small businesses (less than $1 million in revenue or fewer than 30 employees) and only covers expenses exceeding $250, capped at $10,250. Sarah can only claim a credit based on $9,750 (15,000 - 250 = 14,750 limited to 10,250, 50% of that is 5,125). It's crucial to understand the credit's limitations."
+        },
+        {
+          "type": "in-practice",
+          "title": "Landing the Big Client with R&D",
+          "content": "In practice, you'll often use the R&D credit as a selling point when pitching to tech startups or manufacturing companies. They often don't realize they qualify for this credit because they think 'research' means lab coats and test tubes. Emphasize that activities like developing new software, improving manufacturing processes, or even designing a new product feature can qualify. Identifying and claiming this credit can result in significant tax savings, making you a hero in your client's eyes and securing long-term business."
         },
         {
           "title": "Key Takeaways",
@@ -11706,6 +13006,31 @@
           "title": "\u26a0\ufe0f Exam Trap: What's NOT QBI",
           "type": "warning",
           "content": "**Excluded from QBI:**\n\n\u2022 Wages/salary (employee income)\n\u2022 Investment income (portfolio)\n\u2022 Guaranteed payments for services\n\u2022 Reasonable compensation (S corp)\n\u2022 Short-term capital gains\n\n**QBI = Business PROFIT, not all income!**"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "199A: The Deduction That Keeps on Giving (Maybe)",
+          "content": "Alright, let's be honest, Section 199A can feel like a tax code version of Inception. Deductions within deductions! As a practitioner, I've seen so many small business owners miss out on this because they get bogged down in the W-2 wage and UBIA limitations. Don't just blindly input numbers into your tax software. Actually understand the calculation. Is your client's income above the threshold? Do they even have W-2 wages? A little planning can make a HUGE difference in their tax liability. Treat it like a puzzle, not a chore!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Threshold Traps: Above, Below, and the Gray Area",
+          "content": "A common mistake is applying the W-2/UBIA limitation even when the taxpayer's income is *below* the threshold. Remember, those limitations only kick in when taxable income exceeds the threshold. Students often memorize the formulas without understanding the context. For example, someone with $100,000 of QBI and taxable income of $150,000 can take the full 20% QBI deduction ($20,000) regardless of W-2 wages or UBIA. Always check the income level first! Ignoring this simple step could cost your clients thousands."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's S Corp Struggle: W-2 Wages to the Rescue!",
+          "content": "Sarah owns a successful marketing agency structured as an S corp. Her QBI is $200,000, but her taxable income is $350,000, putting her above the threshold. Initially, she was disappointed to learn her 199A deduction would be limited. However, after realizing she could significantly increase her W-2 wages paid, she restructured her compensation, boosting her deduction. The takeaway: strategic planning around W-2 wages can unlock significant tax savings for S corp owners in this situation."
+        },
+        {
+          "type": "in-practice",
+          "title": "QBI in the Real World: Planning is Key",
+          "content": "In practice, you'll frequently encounter the QBI deduction when working with small business clients, especially sole proprietors, partners, and S corp owners. You'll need to gather information on their QBI, W-2 wages paid, and UBIA of qualified property. This is where good client communication is essential. Proactive planning, such as adjusting W-2 wages or considering investments in qualified property, can significantly impact the deduction. Understanding the nuances of Section 199A is crucial for providing valuable tax advice and helping clients minimize their tax liabilities."
         },
         {
           "title": "Key Takeaways",

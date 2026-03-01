@@ -34,7 +34,15 @@
             "explanation": "Total initial cash outflow includes equipment, installation, and working capital investment."
           },
           "points": 10,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the total initial investment for the TechCorp project:\n\n1. **Given Information:**\n   * Equipment Cost: $500,000\n   * Installation Costs: $50,000\n   * Working Capital Investment: $30,000\n\n2. **Formula:**\n   Total Initial Investment = Equipment Cost + Installation Costs + Working Capital Investment\n\n3. **Calculation:**\n   Total Initial Investment = $500,000 + $50,000 + $30,000\n   Total Initial Investment = $580,000\n\n4. **Answer:**\n   The total initial investment (Year 0 cash outflow) is $580,000.",
+          "keyFormula": "Total Initial Investment = Equipment Cost + Installation Costs + Working Capital Investment",
+          "commonMistakes": [
+            "Forgetting to include the working capital investment as part of the initial cash outflow. Working capital is a necessary investment to support the project's operations.",
+            "Failing to include installation costs. These are directly attributable to getting the equipment ready for its intended use and are therefore part of the initial investment according to capital budgeting principles.",
+            "Incorrectly treating installation costs as an operating expense rather than a capital expenditure."
+          ],
+          "examTip": "Always double-check that you've included all relevant costs associated with the initial investment, including working capital, installation, and any other directly attributable expenses. A quick scan of the problem details before finalizing your answer can help prevent costly errors."
         },
         {
           "id": "t2",
@@ -50,7 +58,16 @@
             "explanation": "Operating cash flow accounts for the tax benefit of depreciation. Both methods yield the same result."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the annual operating cash flows for TechCorp Industries' new manufacturing equipment investment:\n\n1. **Given Information:**\n   * Revenue: $300,000 per year\n   * Costs (excluding depreciation): $120,000 per year\n   * Initial Investment: $500,000\n   * Installation Costs: $50,000\n   * Project Life: 5 years\n   * Tax Rate: 25%\n   * Depreciation Method: Straight-line\n\n2. **Formula:**\n   We will use the tax shield approach to calculate the operating cash flow (OCF):\n   *OCF = (Revenue - Costs) × (1 - Tax Rate) + (Depreciation × Tax Rate)*\n\n3. **Calculation:**\n   * **Step 1: Calculate Depreciation:**\n      The depreciable base is the initial investment plus installation costs: $500,000 + $50,000 = $550,000\n      Annual Depreciation = Depreciable Base / Useful Life = $550,000 / 5 = $110,000\n\n   * **Step 2: Calculate After-Tax Operating Income (excluding depreciation):**\n      After-tax Operating Income = (Revenue - Costs) × (1 - Tax Rate)\n      = ($300,000 - $120,000) × (1 - 0.25)\n      = $180,000 × 0.75 = $135,000\n\n   * **Step 3: Calculate Depreciation Tax Shield:**\n      Depreciation Tax Shield = Depreciation × Tax Rate\n      = $110,000 × 0.25 = $27,500\n\n   * **Step 4: Calculate Annual Operating Cash Flow:**\n      OCF = After-tax Operating Income + Depreciation Tax Shield\n      = $135,000 + $27,500 = $162,500\n\n4. **Answer:**\nThe annual operating cash flow for Years 1-5 is $162,500.",
+          "keyFormula": "OCF = (Revenue - Costs) × (1 - Tax Rate) + (Depreciation × Tax Rate)",
+          "commonMistakes": [
+            "Forgetting to include installation costs in the depreciable base. The initial investment is $500,000, but the installation costs of $50,000 must be added to arrive at the total depreciable amount of $550,000.",
+            "Using the wrong tax rate. The problem states a 25% tax rate, so ensure you are using 0.25 in your calculations.",
+            "Calculating depreciation incorrectly. Double-check that you are dividing the total depreciable base by the correct useful life (5 years in this case).",
+            "Failing to calculate the depreciation tax shield. Remember that depreciation is a non-cash expense that reduces taxable income, resulting in a tax savings."
+          ],
+          "examTip": "On the exam, quickly calculate depreciation first. Then, use the tax shield approach (After-tax Operating Income + Depreciation Tax Shield) as it's often faster than calculating EBIT, taxes, net income, and then adding back depreciation. Always double-check your work, especially the depreciation calculation, as it impacts the final OCF."
         },
         {
           "id": "t3",
@@ -66,7 +83,16 @@
             "explanation": "Salvage above book value creates taxable gain. Working capital is recovered tax-free."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the terminal cash flow for Year 5:\n\n1. **Given Information:**\n   * Salvage Value in Year 5: $40,000\n   * Book Value at end of Year 5: $0 (fully depreciated)\n   * Tax Rate: 25%\n   * Working Capital Recovery: $30,000\n\n2. **Formula:**\n   * Gain on Sale = Sale Price - Book Value\n   * Tax on Gain = Gain on Sale × Tax Rate\n   * After-tax Salvage Value = Sale Price - Tax on Gain\n   * Total Terminal Cash Flow = After-tax Salvage Value + Working Capital Recovery\n\n3. **Calculation:**\n   * **Salvage Value Calculation:**\n      * Gain on Sale = $40,000 - $0 = $40,000\n      * Tax on Gain = $40,000 × 0.25 = $10,000\n      * After-tax Salvage Value = $40,000 - $10,000 = $30,000\n   * **Total Terminal Cash Flow:**\n      * After-tax Salvage Value: $30,000\n      * Working Capital Recovery: $30,000\n      * Total Terminal Cash Flow: $30,000 + $30,000 = $60,000\n\n4. **Answer:** The total terminal cash flow in Year 5 is $60,000.",
+          "keyFormula": "Total Terminal Cash Flow = After-tax Salvage Value + Working Capital Recovery; After-tax Salvage Value = Sale Price - (Tax Rate * (Sale Price - Book Value))",
+          "commonMistakes": [
+            "Forgetting to calculate the tax implications of the salvage value. If the salvage value differs from the book value, there will be a taxable gain or loss.",
+            "Failing to include the recovery of working capital in the terminal cash flow. Working capital is initially invested and then recovered at the end of the project's life.",
+            "Incorrectly calculating the gain or loss on the sale of the asset. Remember that the gain or loss is the difference between the sale price and the book value at the time of the sale.",
+            "Using the tax rate incorrectly. Make sure to multiply the gain by the tax rate, and then subtract that amount from the salvage value."
+          ],
+          "examTip": "Always remember to consider the tax implications of salvage value. If the asset is fully depreciated, the entire salvage value is taxable. Also, remember that working capital is recovered at the end of the project, so it's added to the terminal cash flow."
         },
         {
           "id": "t4",
@@ -79,7 +105,16 @@
             "explanation": "NPV is positive ($39,824), meaning the project adds value and should be accepted under NPV rule."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Net Present Value (NPV) of the project:\n\n1. **Given Information:**\n   *   Initial Investment (Year 0): -$580,000\n   *   Operating Cash Flows (Years 1-4): $162,500 per year\n   *   Terminal Cash Flow (Year 5): $60,000 (Salvage Value)\n   *   Operating Cash Flow Year 5: $162,500\n   *   Discount Rate (WACC): 12%\n\n2. **Formula:**\n   *   NPV = ∑ [Cash Flow / (1 + Discount Rate)^Year] - Initial Investment\n\n3. **Calculation:**\n   *   **Year 0:** -$580,000\n\n   *   **Year 1:** $162,500 / (1 + 0.12)^1 = $162,500 / 1.12 = $145,089.29\n   *   **Year 2:** $162,500 / (1 + 0.12)^2 = $162,500 / 1.2544 = $129,543.21\n   *   **Year 3:** $162,500 / (1 + 0.12)^3 = $162,500 / 1.4049 = $115,666.96\n   *   **Year 4:** $162,500 / (1 + 0.12)^4 = $162,500 / 1.5735 = $103,272.32\n\n   *   **Year 5:** ($162,500 + $60,000) / (1 + 0.12)^5 = $222,500 / 1.7623 = $126,250.92\n\n   *   **NPV:** -$580,000 + $145,089.29 + $129,543.21 + $115,666.96 + $103,272.32 + $126,250.92 = $39,822.70\n\n   *   **Alternative Calculation using PV Factors:**\n        * PV of Operating CFs (Years 1-4) = $162,500 * 3.0373 = $493,561.25 (using provided PV factors)\n        * PV of Terminal Value (Year 5) = $60,000 * 0.5674 = $34,044\n        * PV of Operating CF Year 5 = $162,500 * 0.5674 = $92,102.50\n        * Total PV of Inflows = $493,561.25 + $34,044 + $92,102.50 = $619,707.75\n        * NPV = $619,707.75 - $580,000 = $39,707.75\n\n4. **Answer:** The Net Present Value (NPV) of the project is approximately $39,823 (rounding the more precise calculation).",
+          "keyFormula": "NPV = ∑ [Cash Flow / (1 + Discount Rate)^Year] - Initial Investment",
+          "commonMistakes": [
+            "Forgetting to include the terminal cash flow (salvage value) in the final year's cash flow.",
+            "Using the wrong discount rate. Always use the company's Weighted Average Cost of Capital (WACC) as the discount rate unless otherwise specified.",
+            "Incorrectly calculating the present value of the cash flows by either using the wrong year or misapplying the discount factor.",
+            "Not subtracting the initial investment, resulting in an inflated NPV."
+          ],
+          "examTip": "On the exam, if you're short on time, focus on accurately calculating the present value of the largest cash flows first, as these will have the most significant impact on the NPV. Double-check your discount factors and ensure you're using the correct year for each cash flow."
         },
         {
           "id": "t5",
@@ -92,7 +127,15 @@
             "explanation": "The project should be ACCEPTED because NPV is positive ($39,824) and PI > 1. The project generates returns exceeding the 12% required return and adds value to shareholders."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to determine whether to accept or reject the project:\n\n1. **Given Information:**\n   * Initial Investment: $580,000\n   * Discount Rate (WACC): 12%\n   * Project NPV: $39,824\n   * Tax Rate: 25%\n\n2. **Decision Criteria:**\n   * Net Present Value (NPV): If NPV > $0, accept the project.\n   * Profitability Index (PI): If PI > 1, accept the project.\n\n3. **Calculation:**\n   * **NPV Rule:** The problem states the NPV is $39,824. Since $39,824 > $0, the project is acceptable based on the NPV rule.\n   * **Profitability Index (PI):** The profitability index is calculated as the present value of future cash flows divided by the initial investment. The present value of future cash flows is the initial investment plus the NPV. Therefore, the PV of inflows is $580,000 + $39,824 = $619,824.\n      * PI = Present Value of Future Cash Flows / Initial Investment\n      * PI = $619,824 / $580,000 = 1.069\n   * **Cost of Capital:** The project returns exceed the 12% cost of capital, as evidenced by the positive NPV.\n\n4. **Answer:**\n   * Accept the project because the NPV is positive ($39,824) and the Profitability Index (PI) is greater than 1 (1.069). The project generates returns exceeding the 12% required return and adds value to the shareholders.",
+          "keyFormula": "NPV > $0: Accept; NPV < $0: Reject. Profitability Index = Present Value of Future Cash Flows / Initial Investment",
+          "commonMistakes": [
+            "Forgetting to add the initial investment back to the NPV to get the present value of future cash flows when calculating the Profitability Index.",
+            "Incorrectly using the discount rate to calculate the PI directly, rather than using the already calculated NPV.",
+            "Rejecting a project with a positive NPV because the IRR is less than the discount rate (if IRR was provided). The NPV rule should always take precedence."
+          ],
+          "examTip": "Focus on the NPV rule as the primary decision criterion. A positive NPV always indicates a value-adding project. The PI provides additional context but should not override the NPV decision."
         }
       ],
       "skills": [
@@ -148,7 +191,16 @@
             "explanation": "Liquidity has declined from prior year. While ratios are still healthy (>1), the trend is concerning."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the current and quick ratios for Growth Industries Inc. for both the current and prior year:\n\n1. **Given Information:**\n   *   **Current Year:**\n        *   Current Assets: $750\n        *   Inventory: $400\n        *   Current Liabilities: $300\n   *   **Prior Year:**\n        *   Current Assets: $520\n        *   Inventory: $240\n        *   Current Liabilities: $200\n\n2. **Formula:**\n   *   Current Ratio = Current Assets / Current Liabilities\n   *   Quick Ratio = (Current Assets - Inventory) / Current Liabilities\n\n3. **Calculation:**\n   *   **Current Year:**\n        *   Current Ratio = $750 / $300 = 2.50\n        *   Quick Ratio = ($750 - $400) / $300 = $350 / $300 = 1.17\n   *   **Prior Year:**\n        *   Current Ratio = $520 / $200 = 2.60\n        *   Quick Ratio = ($520 - $240) / $200 = $280 / $200 = 1.40\n\n4. **Answer:**\n   *   Current Year Current Ratio: 2.50\n   *   Current Year Quick Ratio: 1.17\n   *   Prior Year Current Ratio: 2.60\n   *   Prior Year Quick Ratio: 1.40",
+          "keyFormula": "Current Ratio = Current Assets / Current Liabilities; Quick Ratio = (Current Assets - Inventory) / Current Liabilities",
+          "commonMistakes": [
+            "Forgetting to subtract inventory from current assets when calculating the quick ratio. The quick ratio, also known as the acid-test ratio, excludes inventory because it is often the least liquid current asset.",
+            "Using total assets instead of current assets in the current ratio calculation. Remember that the current ratio specifically focuses on the relationship between current assets and current liabilities.",
+            "Incorrectly identifying current assets or current liabilities from the financial statements. Ensure you are using the correct figures from the balance sheet.",
+            "Rounding errors can occur if intermediate calculations are not carried out to a sufficient number of decimal places. Maintain precision throughout the calculation and round only the final answer."
+          ],
+          "examTip": "Memorize the formulas for both ratios. On exam day, quickly identify the necessary components from the balance sheet (Current Assets, Inventory, and Current Liabilities). Double-check that you're using the correct numbers before performing the calculations to avoid careless errors."
         },
         {
           "id": "t2",
@@ -167,7 +219,15 @@
             "explanation": "ROE declined from 34.29% to 28.13%. Main driver: Profit margin dropped from 12% to 9.38%."
           },
           "points": 30,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the DuPont 3-factor decomposition of ROE for both the current and prior years:\n\n**1. Given Information:**\n   *Current Year:*\n      * Net Income: $225\n      * Sales: $2,400\n      * Total Assets: $1,500\n      * Total Equity: $800\n   *Prior Year:*\n      * Net Income: $240\n      * Sales: $2,000\n      * Total Assets: $1,200\n      * Total Equity: $700\n\n**2. Formula:**\n   The DuPont 3-factor decomposition of ROE is:\n   ROE = Profit Margin × Asset Turnover × Equity Multiplier\n   Where:\n      * Profit Margin = Net Income / Sales\n      * Asset Turnover = Sales / Total Assets\n      * Equity Multiplier = Total Assets / Total Equity\n\n**3. Calculation:**\n   *Current Year:*\n      * Profit Margin = $225 / $2,400 = 0.09375 or 9.38%\n      * Asset Turnover = $2,400 / $1,500 = 1.60\n      * Equity Multiplier = $1,500 / $800 = 1.875\n      * ROE = 9.38% × 1.60 × 1.875 = 0.28125 or 28.13%\n\n   *Prior Year:*\n      * Profit Margin = $240 / $2,000 = 0.12 or 12.00%\n      * Asset Turnover = $2,000 / $1,200 = 1.67\n      * Equity Multiplier = $1,200 / $700 = 1.714\n      * ROE = 12.00% × 1.67 × 1.714 = 0.34286 or 34.29%\n\n**4. Answer:**\n   * Current Year ROE: 28.13%\n   * Prior Year ROE: 34.29%",
+          "keyFormula": "ROE = Profit Margin × Asset Turnover × Equity Multiplier",
+          "commonMistakes": [
+            "Incorrectly calculating profit margin by using revenue instead of sales.",
+            "Using the wrong average balances for assets or equity when calculating turnover or the equity multiplier. The problem did not specify average balances, so beginning or ending balances were used.",
+            "Forgetting to convert the profit margin (which is a decimal) into a percentage before multiplying it with the other ratios."
+          ],
+          "examTip": "Memorize the DuPont formula and its components. Practice breaking down ROE into its drivers to quickly identify areas of strength and weakness in a company's performance. Pay close attention to the numbers provided and ensure you are using the correct figures for each calculation."
         },
         {
           "id": "t3",
@@ -188,7 +248,15 @@
             "explanation": "Collections have slowed (DSO up 9 days) and inventory is turning slower. Working capital efficiency has deteriorated."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate Days Sales Outstanding (DSO) and Inventory Turnover for both the current and prior years:\n\n1. **Given Information:**\n   *   **Current Year:**\n        *   Accounts Receivable: $300\n        *   Sales: $2,400\n        *   Cost of Goods Sold (COGS): $1,680\n        *   Beginning Inventory: $400\n        *   Ending Inventory: $240\n   *   **Prior Year:**\n        *   Accounts Receivable: $200\n        *   Sales: $2,000\n        *   Cost of Goods Sold (COGS): $1,360\n        *   Ending Inventory: $240\n\n2. **Formula:**\n   *   Days Sales Outstanding (DSO) = (Accounts Receivable / Sales) × 365\n   *   Inventory Turnover = Cost of Goods Sold / Average Inventory\n   *   Average Inventory = (Beginning Inventory + Ending Inventory) / 2\n\n3. **Calculation:**\n   *   **Current Year:**\n        *   DSO = ($300 / $2,400) × 365 = 0.125 x 365 = 45.625 days. Rounded to 45.6 days.\n        *   Average Inventory = ($400 + $240) / 2 = $640 / 2 = $320\n        *   Inventory Turnover = $1,680 / $320 = 5.25 times\n        *   Days in Inventory = 365 / 5.25 = 69.52 days. Rounded to 69.5 days\n   *   **Prior Year:**\n        *   DSO = ($200 / $2,000) × 365 = 0.1 x 365 = 36.5 days\n        *   Average Inventory = Since beginning inventory is not provided, we will use ending inventory as a proxy. Average inventory = $240\n        *   Inventory Turnover = $1,360 / $240 = 5.6667 times. Rounded to 5.67 times\n        *   Days in Inventory = 365 / 5.67 = 64.37 days. Rounded to 64.4 days\n\n4. **Answer:**\n   *   Current Year DSO: 45.6 days\n   *   Current Year Inventory Turnover: 5.25 times\n   *   Prior Year DSO: 36.5 days\n   *   Prior Year Inventory Turnover: 5.67 times",
+          "keyFormula": "Days Sales Outstanding (DSO) = (Accounts Receivable / Sales) × 365; Inventory Turnover = Cost of Goods Sold / Average Inventory",
+          "commonMistakes": [
+            "Using ending inventory instead of average inventory for the inventory turnover calculation. Remember to use the average inventory to get a more accurate representation of how efficiently inventory is being managed.",
+            "Forgetting to annualize the DSO calculation by multiplying the (AR/Sales) ratio by 365. This step is crucial to express DSO in terms of days.",
+            "Using Sales instead of Cost of Goods Sold (COGS) in the inventory turnover calculation. Inventory turnover measures how many times a company has sold and replaced inventory during a period, which is directly related to COGS."
+          ],
+          "examTip": "When calculating ratios, double-check that you are using the correct figures from the financial statements. A simple mistake in transcribing a number can lead to a completely wrong answer. Pay close attention to whether the problem requires you to use average balances or year-end balances."
         },
         {
           "id": "t4",
@@ -250,7 +318,15 @@
             "explanation": "Using both methods and averaging provides a more robust estimate. The difference suggests some uncertainty in inputs."
           },
           "points": 30,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of common equity using both the Capital Asset Pricing Model (CAPM) and the Dividend Growth Model, and then average the results:\n\n1. **Given Information:**\n   * Risk-free rate (rf) = 4%\n   * Beta (β) = 1.25\n   * Market risk premium (rm - rf) = 6%\n   * Current dividend per share (D0) = $1.20\n   * Dividend growth rate (g) = 5%\n   * Current stock price (P0) = $15.00\n\n2. **Formula:**\n   * CAPM: re = rf + β(rm - rf)\n   * Dividend Growth Model (Gordon): re = D1/P0 + g, where D1 = D0 * (1 + g)\n\n3. **Calculation:**\n   * **CAPM Method:**\n      * re = 4% + 1.25 × 6%\n      * re = 4% + 7.5%\n      * re = 11.5%\n   * **Dividend Growth Model (Gordon):**\n      * First, calculate the expected dividend for next year (D1):\n         * D1 = $1.20 × (1 + 5%)\n         * D1 = $1.20 × 1.05\n         * D1 = $1.26\n      * Now, calculate the cost of equity using the Gordon Growth Model:\n         * re = $1.26 / $15.00 + 5%\n         * re = 0.084 + 0.05\n         * re = 8.4% + 5%\n         * re = 13.4%\n   * **Average Cost of Equity:**\n      * re = (11.5% + 13.4%) / 2\n      * re = 24.9% / 2\n      * re = 12.45%\n\n4. **Answer:**\nThe average cost of common equity is 12.45%.",
+          "keyFormula": "CAPM: re = rf + β(rm - rf); Gordon: re = D1/P0 + g, where D1 = D0 * (1 + g)",
+          "commonMistakes": [
+            "Forgetting to calculate D1 (the dividend expected next year) before applying the Gordon Growth Model. Using D0 instead of D1 will lead to an incorrect cost of equity.",
+            "Using the market return (rm) instead of the market risk premium (rm - rf) in the CAPM formula. The market risk premium is the *difference* between the market return and the risk-free rate.",
+            "Failing to convert percentages to decimals (or vice versa) consistently throughout the calculation. For example, using 4 instead of 0.04 for the risk-free rate."
+          ],
+          "examTip": "When calculating the cost of equity using multiple methods, pay close attention to the inputs provided. If the dividend growth rate is not explicitly given, you may need to calculate it from historical dividend data. Always double-check your formulas and ensure you are using the correct values for each variable."
         },
         {
           "id": "t2",
@@ -263,7 +339,15 @@
             "explanation": "Preferred stock cost is high because the stock is trading at a discount to its par value ($8 vs implied par of ~$10)."
           },
           "points": 15,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of preferred stock:\n\n1. **Given Information:**\n   *   Annual Preferred Stock Dividend: $2.00 per share\n   *   Current Market Price of Preferred Stock: $8.00 per share\n\n2. **Formula:**\n   The cost of preferred stock (rp) is calculated as:\n   rp = Annual Preferred Stock Dividend / Current Market Price of Preferred Stock\n\n3. **Calculation:**\n   rp = $2.00 / $8.00\n   rp = 0.25\n   rp = 25%\n\n4. **Answer:**\n   The cost of preferred stock is 25%.",
+          "keyFormula": "Cost of Preferred Stock = Annual Preferred Stock Dividend / Current Market Price of Preferred Stock",
+          "commonMistakes": [
+            "Using the par value of the preferred stock instead of the current market price. The cost of capital calculation should always use current market values.",
+            "Forgetting to convert the result to a percentage. The cost of preferred stock is typically expressed as a percentage.",
+            "Incorrectly identifying the annual dividend. Make sure to use the *annual* dividend per share, not any other dividend amount (e.g., quarterly)."
+          ],
+          "examTip": "Quickly identify the dividend and market price. Divide the dividend by the price and convert to a percentage. Don't overthink it!"
         },
         {
           "id": "t3",
@@ -276,7 +360,16 @@
             "explanation": "Debt cost is reduced by the tax shield because interest is tax-deductible."
           },
           "points": 15,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *  Yield to Maturity (YTM) on Debt: 9%\n   *  Tax Rate: 25%\n\n2. **Formula:**\n   *  After-tax cost of debt = Before-tax cost of debt × (1 - Tax rate)\n   *  rd (after-tax) = rd (before-tax) × (1 - T)\n\n3. **Calculation:**\n   *  The before-tax cost of debt is the YTM, which is 9%.\n   *  After-tax cost of debt = 9% × (1 - 25%)\n   *  After-tax cost of debt = 9% × (1 - 0.25)\n   *  After-tax cost of debt = 9% × 0.75\n   *  After-tax cost of debt = 6.75%\n\n4. **Answer:**\n   *  The after-tax cost of debt is 6.75%.",
+          "keyFormula": "After-tax cost of debt = Before-tax cost of debt × (1 - Tax rate)",
+          "commonMistakes": [
+            "Forgetting to adjust the cost of debt for the tax shield. Interest expense is tax-deductible, so the after-tax cost is lower than the before-tax cost.",
+            "Using the coupon rate of the debt instead of the yield to maturity (YTM). The YTM reflects the current market rate for the company's debt, which is the relevant rate for WACC calculations. The coupon rate is a historical rate.",
+            "Incorrectly calculating (1 - Tax rate). Ensure you are subtracting the tax rate from 1 (100%) before multiplying by the YTM.",
+            "Using the effective interest rate instead of the YTM. The YTM is the appropriate rate to use for WACC calculations."
+          ],
+          "examTip": "Always remember that interest expense is tax deductible, so the after-tax cost of debt will always be lower than the before-tax cost. If you calculate an after-tax cost of debt higher than the before-tax cost, you've made a mistake."
         },
         {
           "id": "t4",
@@ -292,7 +385,16 @@
             "explanation": "WACC of 11.83% is the hurdle rate for investment decisions. Projects must earn above this to create value."
           },
           "points": 40,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Weighted Average Cost of Capital (WACC) using market value weights:\n\n1. **Given Information:**\n   *   Market Value of Equity: $30,000,000\n   *   Market Value of Preferred Stock: $4,000,000\n   *   Market Value of Debt: $14,000,000\n   *   Cost of Equity (re): 12.45%\n   *   Cost of Preferred Stock (rp): 25%\n   *   Cost of Debt (rd): 6.75%\n   *   Tax Rate (T): Assume 0% since not provided in the scenario. If a tax rate was provided, it would be used in the after-tax cost of debt calculation.\n\n2. **Formula:**\n   *   WACC = (we × re) + (wp × rp) + (wd × rd × (1-T))\n   *   Where:\n        *   we = weight of equity\n        *   re = cost of equity\n        *   wp = weight of preferred stock\n        *   rp = cost of preferred stock\n        *   wd = weight of debt\n        *   rd = cost of debt\n        *   T = tax rate\n\n3. **Calculation:**\n   *   **Step 1: Calculate Total Market Value**\n        *   Total Market Value = Market Value of Equity + Market Value of Preferred Stock + Market Value of Debt\n        *   Total Market Value = $30,000,000 + $4,000,000 + $14,000,000 = $48,000,000\n\n   *   **Step 2: Calculate Market Value Weights**\n        *   Equity Weight (we) = Market Value of Equity / Total Market Value\n        *   we = $30,000,000 / $48,000,000 = 0.625 or 62.5%\n        *   Preferred Stock Weight (wp) = Market Value of Preferred Stock / Total Market Value\n        *   wp = $4,000,000 / $48,000,000 = 0.0833 or 8.33%\n        *   Debt Weight (wd) = Market Value of Debt / Total Market Value\n        *   wd = $14,000,000 / $48,000,000 = 0.2917 or 29.17%\n\n   *   **Step 3: Calculate WACC**\n        *   WACC = (we × re) + (wp × rp) + (wd × rd × (1-T))\n        *   WACC = (0.625 × 12.45%) + (0.0833 × 25%) + (0.2917 × 6.75% × (1-0))\n        *   WACC = (0.625 × 0.1245) + (0.0833 × 0.25) + (0.2917 × 0.0675)\n        *   WACC = 0.0778 + 0.0208 + 0.0197\n        *   WACC = 0.1183 or 11.83%\n\n4. **Answer:**\n   *   The Weighted Average Cost of Capital (WACC) is 11.83%.",
+          "keyFormula": "WACC = (we × re) + (wp × rp) + (wd × rd × (1-T))",
+          "commonMistakes": [
+            "Using book values instead of market values for calculating the weights. Market values reflect the current cost of capital more accurately.",
+            "Forgetting to adjust the cost of debt for the tax rate. The interest expense on debt is tax-deductible, which reduces the effective cost of debt. In this case, the tax rate was assumed to be 0%.",
+            "Incorrectly calculating the market value weights. Ensure that the weights are calculated by dividing the market value of each component by the TOTAL market value of all components.",
+            "Using the coupon rate of existing debt instead of the current yield to maturity (YTM) of similar debt. The YTM reflects the current market cost of borrowing."
+          ],
+          "examTip": "Always double-check that your weights add up to 100%. This is a quick way to verify that you haven't made a calculation error in determining the capital structure weights. Also, pay close attention to whether the problem provides book values or market values and use the correct values for the calculation."
         }
       ],
       "skills": [
@@ -350,7 +452,15 @@
             "explanation": "Key talent risk ranks highest due to frequency and significant business impact."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   - Risk R1 (Customer data breach): Likelihood = 3, Impact = 5\n   - Risk R2 (Key developer resignation): Likelihood = 4, Impact = 4\n   - Risk R3 (Cloud provider outage): Likelihood = 2, Impact = 5\n   - Risk R4 (Customer concentration): Likelihood = 3, Impact = 4\n   - Risk R5 (Foreign currency): Likelihood = 4, Impact = 2\n   - Risk R6 (Regulatory changes): Likelihood = 2, Impact = 3\n\n2. **Formula:**\n   - Risk Score = Likelihood × Impact\n\n3. **Calculation:**\n   - Risk R1: Risk Score = 3 × 5 = 15\n   - Risk R2: Risk Score = 4 × 4 = 16\n   - Risk R3: Risk Score = 2 × 5 = 10\n   - Risk R4: Risk Score = 3 × 4 = 12\n   - Risk R5: Risk Score = 4 × 2 = 8\n   - Risk R6: Risk Score = 2 × 3 = 6\n\n4. **Answer:**\n   - R1 = 15\n   - R2 = 16\n   - R3 = 10\n   - R4 = 12\n   - R5 = 8\n   - R6 = 6",
+          "keyFormula": "Risk Score = Likelihood × Impact",
+          "commonMistakes": [
+            "Multiplying instead of adding likelihood and impact.",
+            "Incorrectly assigning the likelihood or impact values to the wrong risk.",
+            "Forgetting to calculate the risk score for all identified risks before ranking."
+          ],
+          "examTip": "Quickly scan the exhibit for likelihood and impact values. Write them down next to the risk description to avoid errors. Double-check your multiplication before ranking to ensure accuracy. Focus on the highest scores first, as those will likely determine the correct answer."
         },
         {
           "id": "t2",
@@ -363,7 +473,16 @@
             "explanation": "Risk response strategies should be proportional to risk score and aligned with company resources."
           },
           "points": 35,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   **R2: Key Developer Resignation (Score: 16)** - Impact: High, Probability: Likely\n   *   **R1: Customer Data Breach (Score: 15)** - Impact: High, Probability: Possible\n   *   **R4: Customer Concentration (Score: 12)** - Impact: Medium, Probability: Likely\n   *   Risk Response Strategies: Avoid, Reduce, Share, Accept\n\n2. **Formula:**\n   *   Risk Score = Impact x Probability (This is implied from the scenario, not explicitly stated)\n   *   TARA Framework: Transfer, Avoid, Reduce, Accept. This framework guides the selection of risk response strategies.\n\n3. **Calculation:**\n   *   **R2: Key Developer Resignation (Score: 16)**\n      *   Strategy: REDUCE - Reducing the likelihood or impact of the risk.\n      *   Actions:\n          *   Implement retention bonuses tied to vesting: Estimated cost $200K annually.\n          *   Cross-train team members on critical systems: Included in $200K estimate.\n          *   Document all proprietary code and processes: Included in $200K estimate.\n          *   Establish competitive compensation benchmarking: Included in $200K estimate.\n   *   **R1: Customer Data Breach (Score: 15)**\n      *   Strategy: SHARE + REDUCE - Sharing the risk through insurance and reducing the likelihood and impact through security measures.\n      *   Actions:\n          *   Purchase cyber liability insurance ($2M coverage): Estimated cost $150K annually.\n          *   Implement SOC 2 Type II certification: Estimated cost included in security improvements.\n          *   Deploy advanced threat detection: Estimated cost included in security improvements.\n          *   Regular penetration testing: Estimated cost included in security improvements.\n          *   Total Security Improvements: $100K\n   *   **R4: Customer Concentration (Score: 12)**\n      *   Strategy: REDUCE - Reducing the impact of the risk by diversifying the customer base.\n      *   Actions:\n          *   Accelerate marketing to mid-market segment: Estimated cost $300K.\n          *   Develop partner/reseller channel: Included in $300K estimate.\n          *   Implement customer diversification targets: Included in $300K estimate.\n          *   Limit new contracts with top customers to 5% growth: Included in $300K estimate.\n\n4. **Answer:**\n   *   R2 - Reduce\n   *   R1 - Share/Reduce\n   *   R4 - Reduce",
+          "keyFormula": "Risk Score = Impact x Probability; TARA (Transfer, Avoid, Reduce, Accept) Framework",
+          "commonMistakes": [
+            "Choosing an inappropriate risk response strategy (e.g., Avoid for a risk that can be easily mitigated).",
+            "Failing to consider the cost-benefit of each risk response action.",
+            "Selecting only one risk response strategy when a combination of strategies (e.g., Share and Reduce) is more appropriate.",
+            "Not aligning the risk response strategy with the company's risk appetite."
+          ],
+          "examTip": "Prioritize risks based on their risk score and select risk responses that are both effective and cost-efficient. Consider the long-term implications of each risk response strategy."
         },
         {
           "id": "t3",
@@ -380,7 +499,15 @@
             "explanation": "Data breach has highest potential impact, but key talent has highest combined probability × impact."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the potential financial impact of each of the top 3 risks identified by TechStart Inc.:\n\n1. **Given Information:**\n   *   **R2: Key Developer Departure:** Critical developer supports $8M Annual Recurring Revenue (ARR) products. Replacement time is estimated at 6 months. Productivity loss during the transition is estimated at $500K.\n   *   **R1: Data Breach:** Average data breach cost is $150 per record (based on Ponemon Institute data). TechStart has 500 customers, each with approximately 1,000 users. The number of Personally Identifiable Information (PII) records is estimated at 50,000. Potential customer churn due to reputation damage is estimated at 10%.\n   *   **R4: Customer Concentration:** Top 3 customers account for 40% of the company's $25M total revenue. The loss of the largest customer is estimated to impact $4M in revenue.\n\n2. **Formula:**\n   *   **R2 Impact:** (ARR Supported by Developer / 2) + Productivity Loss\n   *   **R1 Impact (Direct Cost):** Cost per Record * Number of PII Records\n   *   **R1 Impact (Reputation Damage):** Churn Percentage * Total Revenue\n   *   **R4 Impact:** Revenue from Largest Customer\n\n3. **Calculation:**\n   *   **R2: Key Developer Departure Impact**\n        *   ARR Supported by Developer: $8,000,000\n        *   6-Month Revenue at Risk: $8,000,000 / 2 = $4,000,000\n        *   Productivity Loss: $500,000\n        *   Total Potential Impact: $4,000,000 + $500,000 = $4,500,000\n\n   *   **R1: Data Breach Impact**\n        *   Cost per Record: $150\n        *   Number of PII Records: 50,000\n        *   Direct Cost: $150 * 50,000 = $7,500,000\n        *   Churn Percentage: 10%\n        *   Total Revenue: $25,000,000\n        *   Reputation Damage: 10% * $25,000,000 = $2,500,000\n        *   Total Potential Impact: $7,500,000 + $2,500,000 = $10,000,000\n\n   *   **R4: Customer Concentration Impact**\n        *   Revenue from Largest Customer: $4,000,000\n\n4. **Answer:**\n   *   R2 Impact: $4,500,000\n   *   R1 Impact: $10,000,000\n   *   R4 Impact: $4,000,000",
+          "keyFormula": "Impact Calculation = Probability of Occurrence * Estimated Financial Loss",
+          "commonMistakes": [
+            "Failing to correctly identify the number of PII records in the data breach scenario, leading to an inaccurate direct cost calculation. Candidates might use the total number of user accounts instead of the number of records containing sensitive information.",
+            "Forgetting to include the productivity loss when calculating the impact of the key developer departure.",
+            "Using the total revenue from the top 3 customers instead of the revenue associated with the *largest* customer when calculating the impact of customer concentration."
+          ],
+          "examTip": "Focus on identifying the most relevant data provided in the scenario. Not all information is necessary for every calculation. Pay close attention to units (e.g., ARR vs. total revenue) and percentages to avoid calculation errors. Always double-check your work!"
         },
         {
           "id": "t4",
@@ -393,7 +520,16 @@
             "explanation": "KRIs should be leading indicators that provide early warning before the risk materializes."
           },
           "points": 15,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   The scenario identifies the need to recommend Key Risk Indicators (KRIs) for the highest-priority risk, which based on the risk register (not provided, but assumed to be R2 - Key Developer Risk based on the solution approach). We need to identify leading indicators for this risk.\n   *   The solution approach suggests the following KRIs to monitor: Developer turnover rate, Time to fill open positions, Employee engagement score, Comp ratio to market, GitHub commit activity, Training hours per dev, and Cross-training coverage.\n   *   The solution approach also provides target and red flag values for each KRI.\n\n2. **Formula:**\n   *   Developer Turnover Rate = (Number of Developers Who Left During the Period / Average Number of Developers During the Period) * 100\n   *   Time to Fill Open Positions = (Total Days to Fill All Open Positions) / (Number of Open Positions Filled)\n   *   Employee Engagement Score: This is typically derived from employee surveys and is a direct measure.\n   *   Comp Ratio to Market = (Employee's Salary / Market Salary for Similar Role) * 100\n   *   GitHub Commit Activity: Track the trend of code commits over time.\n   *   Training Hours per Dev = (Total Training Hours for Developers) / (Number of Developers)\n   *   Cross-Training Coverage = (Number of Systems with at Least Two Developers Trained) / (Total Number of Systems)\n\n3. **Calculation:**\n   *   Since we are recommending KRIs and not calculating them, we will focus on how these indicators provide early warnings.\n   *   **Developer Turnover Rate:** If the target is <10% and the red flag is >15%, monitoring this rate monthly allows for early intervention if the rate starts trending upwards towards 15%.\n   *   **Time to Fill Open Positions:** If the target is <45 days and the red flag is >90 days, a consistent increase in the time to fill positions suggests potential issues with recruitment or the attractiveness of the company to developers.\n   *   **Employee Engagement Score:** A score consistently below 3.5 (red flag) indicates dissatisfaction and potential attrition risk.\n   *   **Comp Ratio to Market:** A comp ratio below 85% (red flag) suggests that developers are being underpaid compared to the market, which could lead to them seeking employment elsewhere.\n   *   **GitHub Commit Activity:** A -30% trend in commit activity could indicate developers are disengaged or facing challenges.\n   *   **Training Hours per Dev:** If training hours are consistently below 20 hours per year (red flag), developers may not be receiving adequate professional development, leading to dissatisfaction.\n   *   **Cross-Training Coverage:** Having less than 2 developers trained per system (red flag) creates a single point of failure and increases risk if a key developer leaves.\n\n4. **Answer:**\n   The recommended key risk indicators (KRIs) to monitor for the highest-priority risk (Key Developer Risk) are: Developer turnover rate, Employee engagement score, Comp ratio to market, and Cross-training coverage.",
+          "keyFormula": "Key Risk Indicators (KRIs) are not calculated using a single formula but are metrics chosen to provide early warning signals of potential risks. The formulas above are used to calculate the individual KRI values.",
+          "commonMistakes": [
+            "Choosing lagging indicators instead of leading indicators. KRIs should predict potential problems, not just reflect past events.",
+            "Selecting too many KRIs, making it difficult to monitor effectively. Focus on the most critical indicators.",
+            "Failing to set clear targets and red flag thresholds. Without these, it's difficult to interpret the KRI values.",
+            "Not regularly reviewing and updating the KRIs. As the business changes, the relevant KRIs may also change."
+          ],
+          "examTip": "When selecting KRIs, think about the root causes of the risk and what metrics would provide the earliest warning signs. Consider both quantitative (e.g., turnover rate) and qualitative (e.g., engagement score) indicators."
         }
       ],
       "skills": [
@@ -448,7 +584,16 @@
             "explanation": "Company's CCC is 24 days longer than industry, indicating working capital inefficiency."
           },
           "points": 30,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Days Sales Outstanding (DSO), Days Inventory Outstanding (DIO), Days Payable Outstanding (DPO), and Cash Conversion Cycle (CCC) for Industrial Supply Co.:\n\n1. **Given Information:**\n   * Accounts Receivable (AR): $8 million\n   * Sales: $50 million\n   * Inventory: $10 million\n   * Cost of Goods Sold (COGS): $35 million\n   * Accounts Payable (AP): $4 million\n   * Purchases: $30 million\n\n2. **Formula:**\n   * Days Sales Outstanding (DSO) = (Accounts Receivable / Sales) * 365\n   * Days Inventory Outstanding (DIO) = (Inventory / Cost of Goods Sold) * 365\n   * Days Payable Outstanding (DPO) = (Accounts Payable / Purchases) * 365\n   * Cash Conversion Cycle (CCC) = DSO + DIO - DPO\n\n3. **Calculation:**\n   * **DSO Calculation:**\n      * DSO = ($8,000,000 / $50,000,000) * 365\n      * DSO = 0.16 * 365\n      * DSO = 58.4 days\n\n   * **DIO Calculation:**\n      * DIO = ($10,000,000 / $35,000,000) * 365\n      * DIO = 0.2857 * 365\n      * DIO = 104.3 days\n\n   * **DPO Calculation:**\n      * DPO = ($4,000,000 / $30,000,000) * 365\n      * DPO = 0.1333 * 365\n      * DPO = 48.7 days\n\n   * **CCC Calculation:**\n      * CCC = 58.4 + 104.3 - 48.7\n      * CCC = 114 days\n\n4. **Answer:**\n   * DSO = 58.4 days\n   * DIO = 104.3 days\n   * DPO = 48.7 days\n   * CCC = 114 days",
+          "keyFormula": "Cash Conversion Cycle = Days Sales Outstanding + Days Inventory Outstanding - Days Payable Outstanding",
+          "commonMistakes": [
+            "Using Sales instead of COGS in the DIO calculation. Remember DIO measures how long inventory sits before being *sold*, so COGS is the relevant cost.",
+            "Using Sales instead of Purchases in the DPO calculation. DPO measures how long it takes to pay *suppliers*, so Purchases is the relevant figure.",
+            "Incorrectly adding or subtracting the DSO, DIO, and DPO in the CCC calculation. Double-check the formula to ensure you are adding DSO and DIO, and then subtracting DPO.",
+            "Forgetting to annualize the ratios by multiplying by 365. The ratios of AR/Sales, Inventory/COGS, and AP/Purchases must be multiplied by 365 to express the results in days."
+          ],
+          "examTip": "Write down the formulas for DSO, DIO, DPO, and CCC at the beginning of the exam (on your scratch paper). This will help you avoid confusion and save time when you encounter working capital problems. Also, pay close attention to whether the problem provides Sales or COGS, and Purchases or COGS, as using the wrong value will lead to an incorrect answer."
         },
         {
           "id": "t2",
@@ -461,7 +606,15 @@
             "explanation": "The company spends over $1M annually financing its working capital cycle."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the annual cost of capital tied up in the cash conversion cycle:\n\n1. **Given Information:**\n   * Accounts Receivable (AR): $8,000,000\n   * Inventory: $10,000,000\n   * Accounts Payable (AP): $4,000,000\n   * Cost of Capital: 8%\n\n2. **Formula:**\n   * Net Working Capital (NWC) = Accounts Receivable + Inventory - Accounts Payable\n   * Annual Financing Cost = Net Working Capital × Cost of Capital\n\n3. **Calculation:**\n   * **Step 1: Calculate Net Working Capital**\n      NWC = $8,000,000 + $10,000,000 - $4,000,000 = $14,000,000\n   * **Step 2: Calculate Annual Financing Cost**\n      Annual Financing Cost = $14,000,000 × 0.08 = $1,120,000\n\n4. **Answer:**\nThe annual cost of capital tied up in the cash conversion cycle is $1,120,000.",
+          "keyFormula": "Net Working Capital (NWC) = Accounts Receivable + Inventory - Accounts Payable\nAnnual Financing Cost = Net Working Capital × Cost of Capital",
+          "commonMistakes": [
+            "Forgetting to subtract Accounts Payable when calculating Net Working Capital. Accounts Payable reduces the amount of capital tied up in the cash conversion cycle.",
+            "Using the wrong cost of capital. Make sure to use the correct percentage provided in the problem.",
+            "Calculating daily sales and multiplying by the Cash Conversion Cycle (CCC) when a simpler approach is available using the provided AR, Inventory, and AP balances. While the CCC approach is valid, it introduces an extra step and potential for rounding errors if daily sales are not precise."
+          ],
+          "examTip": "Carefully read the problem to identify the most efficient method for calculating the financing cost. In this case, using the provided AR, Inventory, and AP balances directly is faster and less prone to error than calculating daily sales and using the CCC."
         },
         {
           "id": "t3",
@@ -478,7 +631,15 @@
             "explanation": "Option B provides the highest net benefit. Option C is costly because forgoing the discount has a 36.7% annualized cost."
           },
           "points": 35,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to evaluate each working capital improvement option:\n\n**Option A: Factoring Receivables**\n1. **Given Information:**\n   *   Accounts Receivable (AR) to be factored: 50% of $8,000,000\n   *   Factoring cost: 2% of AR factored\n   *   Financing cost: 8%\n   *   Days Sales Outstanding (DSO) reduction: 20 days (from 58.4 to 38.4)\n2. **Formula:**\n   *   AR Factored = Total AR × Percentage Factored\n   *   Factoring Cost = AR Factored × Factoring Rate\n   *   Financing Savings = (AR Factored × (DSO Reduction / Original DSO)) × Financing Cost\n   *   Net Benefit = Financing Savings - Factoring Cost\n3. **Calculation:**\n   *   AR Factored = $8,000,000 × 50% = $4,000,000\n   *   Factoring Cost = $4,000,000 × 2% = $80,000\n   *   Financing Savings = ($4,000,000 × (20 / 58.4)) × 8% = $109,589.04\n   *   Net Benefit = $109,589.04 - $80,000 = $29,589.04\n4. **Answer:** The net annual benefit of factoring receivables is approximately $29,589.\n\n**Option B: Inventory Reduction**\n1. **Given Information:**\n   *   Inventory Reduction: $2,000,000\n   *   Financing cost: 8%\n   *   One-time cost: $150,000\n   *   Amortization period: 3 years\n2. **Formula:**\n   *   Annual Financing Savings = Inventory Reduction × Financing Cost\n   *   Annual Amortization = One-time Cost / Amortization Period\n   *   Net Benefit = Annual Financing Savings - Annual Amortization\n3. **Calculation:**\n   *   Annual Financing Savings = $2,000,000 × 8% = $160,000\n   *   Annual Amortization = $150,000 / 3 = $50,000\n   *   Net Benefit = $160,000 - $50,000 = $110,000\n4. **Answer:** The net annual benefit of inventory reduction is $110,000.\n\n**Option C: Extend Payables**\n1. **Given Information:**\n   *   Total Purchases: $30,000,000\n   *   Percentage of purchases eligible for discount: 60%\n   *   Discount rate: 2%\n   *   Additional Accounts Payable (AP): $4,000,000\n   *   Financing cost: 8%\n2. **Formula:**\n   *   Purchases Eligible for Discount = Total Purchases × Percentage Eligible\n   *   Lost Discounts = Purchases Eligible for Discount × Discount Rate\n   *   Financing Savings = Additional AP × Financing Cost\n   *   Net Cost = Lost Discounts - Financing Savings\n3. **Calculation:**\n   *   Purchases Eligible for Discount = $30,000,000 × 60% = $18,000,000\n   *   Lost Discounts = $18,000,000 × 2% = $360,000\n   *   Financing Savings = $4,000,000 × 8% = $320,000\n   *   Net Cost = $360,000 - $320,000 = $40,000\n4. **Answer:** The net cost of extending payables is $40,000.",
+          "keyFormula": "Net Benefit/Cost = Savings - Costs. This is applied differently to each option, calculating the specific savings and costs associated with each.",
+          "commonMistakes": [
+            "Forgetting to annualize the one-time cost in Option B by dividing by the amortization period.",
+            "Incorrectly calculating the purchases eligible for discount in Option C. Make sure to only apply the discount rate to the portion of purchases that qualify.",
+            "Not recognizing that forgoing the discount in Option C is a cost, not a benefit."
+          ],
+          "examTip": "When evaluating working capital options, carefully identify all relevant costs and benefits. Pay close attention to whether costs are one-time or recurring, and annualize them appropriately. Always compare the net impact (benefits minus costs) to determine the best option."
         },
         {
           "id": "t4",
@@ -495,7 +656,15 @@
             "explanation": "Implementing A+B achieves a 41-day improvement, making CCC better than industry average."
           },
           "points": 15,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   * Current Days Sales Outstanding (DSO): 58.4 days\n   * Current Days Inventory Outstanding (DIO): 114 - 58.4 + 48.7 = 104.9 days\n   * Current Days Payable Outstanding (DPO): 48.7 days\n   * Option A: Reduce DSO by 20 days at a cost of $29,589\n   * Option B: Reduce Inventory to $8 million at a cost of $110,000\n   * Option C: Increase DPO by 10 days at a cost of $150,000\n   * Current Inventory: $10 million\n   * Cost of Goods Sold (COGS): $35 million\n\n2. **Formula:**\n   * Cash Conversion Cycle (CCC) = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days Payable Outstanding (DPO)\n   * Days Inventory Outstanding (DIO) = (Average Inventory / Cost of Goods Sold) * 365\n\n3. **Calculation:**\n   * **Recommended Strategy:** Implement Option A and Option B, reject Option C due to its high cost.\n   * **New DSO:** 58.4 days - 20 days = 38.4 days (Option A)\n   * **New Inventory:** $8 million (Option B)\n   * **New DIO:** ($8,000,000 / $35,000,000) * 365 days = 83.4 days\n   * **DPO:** 48.7 days (unchanged)\n   * **New CCC:** 38.4 days + 83.4 days - 48.7 days = 73.1 days\n   * **Improvement:** 114 days (old CCC) - 73.1 days (new CCC) = 40.9 days\n   * **Percentage Improvement:** (40.9 days / 114 days) * 100% = 35.88% (approximately 36%)\n   * **Total Annual Benefit:** $29,589 (Option A) + $110,000 (Option B) = $139,589\n\n4. **Answer:**\n   * New CCC: 73.1 days\n   * Improvement: 40.9 days\n   * Total Annual Benefit: $139,589",
+          "keyFormula": "Cash Conversion Cycle (CCC) = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days Payable Outstanding (DPO)",
+          "commonMistakes": [
+            "Forgetting to annualize the DIO calculation by multiplying by 365. DIO = (Inventory / COGS) * 365",
+            "Incorrectly calculating the initial DIO. The problem only gives the CCC, DSO, and DPO. DIO must be derived from those numbers",
+            "Not considering the cost of each option when deciding which to implement. A reduction in CCC is only beneficial if the cost is justified."
+          ],
+          "examTip": "On the exam, quickly assess the cost-benefit of each option. Focus on the options that provide the most significant CCC improvement for the lowest cost. Time is of the essence!"
         }
       ],
       "skills": [
@@ -549,7 +718,14 @@
             "explanation": "Initial investment includes all outflows at project inception."
           },
           "points": 10,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   * Equipment Cost: $2,000,000\n   * Working Capital Investment: $150,000\n\n2. **Formula:**\n   Total Initial Investment = Equipment Cost + Working Capital Investment\n\n3. **Calculation:**\n   Total Initial Investment = $2,000,000 + $150,000\n   Total Initial Investment = $2,150,000\n\n4. **Answer:**\n   The total initial investment is $2,150,000.",
+          "keyFormula": "Total Initial Investment = Equipment Cost + Working Capital Investment",
+          "commonMistakes": [
+            "Forgetting to include the working capital investment in the initial outflow. Working capital, although recovered at the end of the project, represents an immediate cash outflow at the beginning.",
+            "Including depreciation on working capital. Working capital is not a depreciable asset."
+          ],
+          "examTip": "Carefully read the problem to identify all cash flows occurring at Year 0. Working capital is a common element that is often overlooked. Remember that working capital is recovered at the end of the project's life."
         },
         {
           "id": "t2",
@@ -568,7 +744,16 @@
             "explanation": "Positive NPV indicates the project exceeds the required return. Decision: ACCEPT."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Net Present Value (NPV) of the automated production equipment project:\n\n1. **Given Information:**\n   * Initial Investment: $2,000,000\n   * Year 1 Cash Flow: $580,000\n   * Year 2 Cash Flow: $620,000\n   * Year 3 Cash Flow: $650,000\n   * Year 4 Cash Flow: $600,000\n   * Year 5 Cash Flow: $550,000\n   * Working Capital Recovery (Year 5): $150,000\n   * Salvage Value (Year 5): $200,000\n   * Required Rate of Return (Cost of Capital): 12%\n\n2. **Formula:**\n   * Present Value (PV) = Future Value / (1 + Discount Rate)^Number of Periods\n   * Net Present Value (NPV) = ∑ Present Values of Cash Inflows - Initial Investment\n\n3. **Calculation:**\n   * **Year 1:** PV = $580,000 / (1 + 0.12)^1 = $580,000 / 1.12 = $517,857.14 (Rounded: $517,882)\n   * **Year 2:** PV = $620,000 / (1 + 0.12)^2 = $620,000 / 1.2544 = $494,259.40 (Rounded: $494,264)\n   * **Year 3:** PV = $650,000 / (1 + 0.12)^3 = $650,000 / 1.404928 = $462,665.77 (Rounded: $462,670)\n   * **Year 4:** PV = $600,000 / (1 + 0.12)^4 = $600,000 / 1.57351936 = $381,300.00 (Rounded: $381,300)\n   * **Year 5:**  First, calculate the total cash flow for Year 5: $550,000 (Operating Cash Flow) + $150,000 (Working Capital Recovery) + $200,000 (Salvage Value) = $900,000\n   * **Year 5:** PV = $900,000 / (1 + 0.12)^5 = $900,000 / 1.7623416832 = $510,623.68 (Rounded: $510,660)\n   * **Total Present Value of Inflows:** $517,882 + $494,264 + $462,670 + $381,300 + $510,660 = $2,366,776\n   * **NPV:** $2,366,776 (Total PV of Inflows) - $2,000,000 (Initial Investment) = $366,776\n\n4. **Answer:**\n   * The Net Present Value (NPV) of the project is $366,776. Since the NPV is positive, the project should be accepted.",
+          "keyFormula": "NPV = ∑ [Cash Flow / (1 + Discount Rate)^Period] - Initial Investment",
+          "commonMistakes": [
+            "Forgetting to include the working capital recovery and salvage value in the terminal year (Year 5) cash flow. These are inflows that increase the project's overall value.",
+            "Using the wrong discount rate. The problem states the company's required rate of return (cost of capital) is 12%, which is the appropriate discount rate for this NPV calculation.",
+            "Incorrectly calculating the present value factors. Ensure you are using the correct exponent for each year when discounting the cash flows.",
+            "Failing to subtract the initial investment from the total present value of inflows. The NPV represents the *net* gain or loss from the project after accounting for the initial cost."
+          ],
+          "examTip": "On the exam, carefully read the problem to identify all relevant cash flows, including working capital changes and salvage values. Create a timeline of cash flows to avoid missing any values. Double-check your present value factor calculations to minimize errors."
         },
         {
           "id": "t3",
@@ -587,7 +772,16 @@
             "explanation": "IRR exceeds the cost of capital, confirming the NPV decision. Decision: ACCEPT."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Internal Rate of Return (IRR) using interpolation for the AutoParts Manufacturing project:\n\n1. **Given Information:**\n   * Initial Investment: $2,000,000\n   * Additional Investment in Year 0: $150,000\n   * Total Initial Investment: $2,150,000\n   * Cash Flows:\n      * Year 1: $580,000\n      * Year 2: $620,000\n      * Year 3: $650,000\n      * Year 4: $600,000\n      * Year 5: $900,000\n   * Required Rate of Return (Cost of Capital): 12%\n\n2. **Formula:**\n   * IRR Interpolation Formula:  IRR = Lower Rate + [NPV at Lower Rate / (NPV at Lower Rate - NPV at Higher Rate)] × (Higher Rate - Lower Rate)\n\n3. **Calculation:**\n   * **Step 1: Calculate the Net Present Value (NPV) at 15%**\n      * Year 1: $580,000 × 0.8696 = $504,368\n      * Year 2: $620,000 × 0.7561 = $468,782\n      * Year 3: $650,000 × 0.6575 = $427,375\n      * Year 4: $600,000 × 0.5718 = $343,080\n      * Year 5: $900,000 × 0.4972 = $447,480\n      * Total PV of Cash Flows: $504,368 + $468,782 + $427,375 + $343,080 + $447,480 = $2,191,085\n      * NPV at 15%: $2,191,085 - $2,150,000 = $41,085\n\n   * **Step 2: Calculate the Net Present Value (NPV) at 18%**\n      * Year 1: $580,000 × 0.8475 = $491,550\n      * Year 2: $620,000 × 0.7182 = $445,284\n      * Year 3: $650,000 × 0.6086 = $395,590\n      * Year 4: $600,000 × 0.5158 = $309,480\n      * Year 5: $900,000 × 0.4371 = $393,390\n      * Total PV of Cash Flows: $491,550 + $445,284 + $395,590 + $309,480 + $393,390 = $2,035,294\n      * NPV at 18%: $2,035,294 - $2,150,000 = -$114,706\n\n   * **Step 3: Interpolate to find the IRR**\n      * IRR = 15% + [$41,085 / ($41,085 - (-$114,706))] × (18% - 15%)\n      * IRR = 15% + [$41,085 / ($41,085 + $114,706)] × (3%)\n      * IRR = 15% + [$41,085 / $155,791] × (3%)\n      * IRR = 15% + [0.2637] × (3%)\n      * IRR = 15% + 0.79% = 15.79%\n\n4. **Answer:**\n   * The Internal Rate of Return (IRR) is approximately 15.79%.\n   * **Decision:** Since the IRR of 15.79% is greater than the required rate of return (cost of capital) of 12%, the project should be accepted.",
+          "keyFormula": "IRR Interpolation Formula: IRR = Lower Rate + [NPV at Lower Rate / (NPV at Lower Rate - NPV at Higher Rate)] × (Higher Rate - Lower Rate)",
+          "commonMistakes": [
+            "Forgetting to include the initial investment (including any additional year 0 investments) when calculating NPV at each rate. This will significantly skew the NPV results and the subsequent IRR calculation.",
+            "Using incorrect PV factors. Ensure you are using the correct discount rate and year when applying the PV factors to the cash flows.",
+            "Making errors in the interpolation formula. Double-check the placement of the NPVs and discount rates to avoid calculation mistakes.",
+            "Not understanding the decision rule. Even if the IRR is calculated correctly, failing to compare it to the cost of capital will lead to an incorrect accept/reject decision."
+          ],
+          "examTip": "On the exam, if you're short on time, estimate the IRR by picking rates that give you NPVs that are reasonably close to zero. This will minimize the interpolation needed. Also, remember that the IRR is the discount rate that makes NPV equal to zero."
         },
         {
           "id": "t4",
@@ -606,7 +800,16 @@
             "explanation": "Discounted payback accounts for time value of money, always longer than simple payback."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Payback Period and Discounted Payback Period for AutoParts Manufacturing's investment:\n\n**Given Information:**\n*   Initial Investment: $2,150,000\n*   Year 1 Cash Flow: $580,000\n*   Year 2 Cash Flow: $620,000\n*   Year 3 Cash Flow: $650,000\n*   Year 4 Cash Flow: $600,000\n*   Year 5 Cash Flow: $900,000\n*   Required Rate of Return (Cost of Capital): 12%\n\n**Part 1: Simple Payback Period**\n\n1.  **Formula:**\n    Payback Period = Years before full recovery + (Unrecovered cost at the beginning of the year / Cash flow during the year)\n\n2.  **Calculation:**\n    *   Year 0: Cumulative Cash Flow = -$2,150,000\n    *   Year 1: Cumulative Cash Flow = -$2,150,000 + $580,000 = -$1,570,000\n    *   Year 2: Cumulative Cash Flow = -$1,570,000 + $620,000 = -$950,000\n    *   Year 3: Cumulative Cash Flow = -$950,000 + $650,000 = -$300,000\n    *   Year 4: Cumulative Cash Flow = -$300,000 + $600,000 = $300,000\n\n    The investment is recovered during Year 4.\n\n    Payback Period = 3 + ($300,000 / $600,000) = 3 + 0.5 = 3.5 years\n\n3.  **Answer:** The simple payback period is 3.5 years.\n\n**Part 2: Discounted Payback Period**\n\n1.  **Formula:**\n    Discounted Payback Period = Years before full recovery + (Unrecovered cost at the beginning of the year / Present value of cash flow during the year)\n\n2.  **Calculation:**\n    First, calculate the present value (PV) of each cash flow using the formula: PV = Cash Flow / (1 + Discount Rate)^Year\n\n    *   Year 0: PV = -$2,150,000 / (1 + 0.12)^0 = -$2,150,000\n    *   Year 1: PV = $580,000 / (1 + 0.12)^1 = $517,857.14 ≈ $517,882\n    *   Year 2: PV = $620,000 / (1 + 0.12)^2 = $494,234.97 ≈ $494,264\n    *   Year 3: PV = $650,000 / (1 + 0.12)^3 = $462,633.90 ≈ $462,670\n    *   Year 4: PV = $600,000 / (1 + 0.12)^4 = $381,266.88 ≈ $381,300\n    *   Year 5: PV = $900,000 / (1 + 0.12)^5 = $510,621.68 ≈ $510,660\n\n    Now, calculate the cumulative present values:\n\n    *   Year 0: Cumulative PV = -$2,150,000\n    *   Year 1: Cumulative PV = -$2,150,000 + $517,882 = -$1,632,118\n    *   Year 2: Cumulative PV = -$1,632,118 + $494,264 = -$1,137,854\n    *   Year 3: Cumulative PV = -$1,137,854 + $462,670 = -$675,184\n    *   Year 4: Cumulative PV = -$675,184 + $381,300 = -$293,884\n    *   Year 5: Cumulative PV = -$293,884 + $510,660 = $216,776\n\n    The investment is recovered during Year 5.\n\n    Discounted Payback Period = 4 + ($293,884 / $510,660) = 4 + 0.5755 ≈ 4.58 years\n\n3.  **Answer:** The discounted payback period is approximately 4.58 years.",
+          "keyFormula": "Payback Period = Years before full recovery + (Unrecovered cost at the beginning of the year / Cash flow during the year)\nPresent Value = Cash Flow / (1 + Discount Rate)^Year",
+          "commonMistakes": [
+            "Forgetting to discount the cash flows when calculating the discounted payback period. This leads to an incorrect and shorter payback period.",
+            "Using the wrong discount rate. Always use the company's required rate of return (cost of capital) for discounting.",
+            "Incorrectly calculating the present value of the cash flows. Double-check the exponent in the present value formula.",
+            "Not tracking the cumulative cash flows carefully, leading to errors in determining the year of recovery and the remaining unrecovered cost."
+          ],
+          "examTip": "On the exam, create a simple table to track the cumulative cash flows (both undiscounted and discounted). This helps prevent errors and allows you to quickly determine the payback period. If time is short, estimate the discounted payback period by inflating the simple payback period, since it will always be longer."
         },
         {
           "id": "t5",
@@ -625,7 +828,15 @@
             "explanation": "PI > 1.0 indicates $1.101 in PV for every $1 invested. Recommendation: ACCEPT."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   * Initial Investment: $2,000,000\n   * Installation Costs: $150,000\n   * Total Initial Investment: $2,000,000 + $150,000 = $2,150,000\n   * Present Value of Future Cash Flows: $2,366,776 (This was calculated in a prior step, but is needed for this calculation)\n\n2. **Formula:**\n   * Profitability Index (PI) = Present Value of Future Cash Flows / Initial Investment\n\n3. **Calculation:**\n   * PI = $2,366,776 / $2,150,000\n   * PI = 1.1008255813953488\n   * PI ≈ 1.101 (Rounded to three decimal places)\n\n4. **Answer:**\n   * The Profitability Index is 1.101. Since the PI is greater than 1, the project should be accepted.",
+          "keyFormula": "Profitability Index (PI) = Present Value of Future Cash Flows / Initial Investment",
+          "commonMistakes": [
+            "Forgetting to include all initial investment costs (e.g., installation costs) in the denominator. The initial investment should include all upfront cash outflows.",
+            "Using undiscounted cash flows in the numerator instead of the present value of the cash flows. The time value of money is critical in capital budgeting decisions.",
+            "Rounding intermediate calculations too early, which can lead to a significant error in the final PI calculation. Keep as many decimal places as possible until the final rounding step."
+          ],
+          "examTip": "Remember that a PI greater than 1 indicates that the project's present value of inflows exceeds the initial investment, making it a potentially acceptable project. Quickly calculate the PI if you've already determined the NPV. If NPV is positive, PI will be > 1."
         }
       ],
       "skills": [
@@ -683,7 +894,15 @@
             "explanation": "Multiple liquidity measures provide different perspectives on short-term solvency."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate RetailCo Inc.'s key liquidity ratios:\n\n1. **Given Information:**\n   *   Current Assets: $640,000\n   *   Cash: $85,000\n   *   Accounts Receivable (A/R): $220,000\n   *   Current Liabilities: $300,000\n\n2. **Formula:**\n   *   Current Ratio = Current Assets / Current Liabilities\n   *   Quick Ratio = (Cash + Accounts Receivable) / Current Liabilities\n   *   Cash Ratio = Cash / Current Liabilities\n\n3. **Calculation:**\n   *   **Current Ratio:**\n      *   Current Ratio = $640,000 / $300,000\n      *   Current Ratio = 2.13\n   *   **Quick Ratio:**\n      *   Quick Ratio = ($85,000 + $220,000) / $300,000\n      *   Quick Ratio = $305,000 / $300,000\n      *   Quick Ratio = 1.02\n   *   **Cash Ratio:**\n      *   Cash Ratio = $85,000 / $300,000\n      *   Cash Ratio = 0.28\n\n4. **Answer:**\n   *   Current Ratio = 2.13:1\n   *   Quick Ratio = 1.02:1\n   *   Cash Ratio = 0.28:1",
+          "keyFormula": "The key formulas used are:\n* Current Ratio = Current Assets / Current Liabilities\n* Quick Ratio = (Cash + Accounts Receivable) / Current Liabilities\n* Cash Ratio = Cash / Current Liabilities",
+          "commonMistakes": [
+            "Forgetting to exclude inventory and prepaid expenses when calculating the Quick Ratio. These assets are not easily converted to cash.",
+            "Using total assets instead of current assets in the Current Ratio calculation.",
+            "Incorrectly identifying current assets and current liabilities from the financial statements. Make sure to only include items expected to be converted to cash or paid within one year (or the operating cycle, if longer)."
+          ],
+          "examTip": "Memorize the formulas for liquidity ratios. Pay close attention to the components of each ratio, especially the Quick Ratio, which excludes inventory and prepaid expenses. Practice identifying current assets and liabilities quickly from a balance sheet."
         },
         {
           "id": "t2",
@@ -703,7 +922,16 @@
             "explanation": "Efficiency ratios measure how effectively assets are used to generate sales."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the efficiency ratios:\n\n**1. Inventory Turnover:**\n   *Efficiency ratios measure how effectively a company utilizes its assets, such as inventory, to generate sales. Inventory turnover indicates how many times a company has sold and replaced its inventory during a period. A higher turnover generally suggests efficient inventory management.\n\n   **Given Information:**\n   *   Cost of Goods Sold (COGS): $1,680,000\n   *   Beginning Inventory: $290,000\n   *   Ending Inventory: $310,000\n\n   **Formula:**\n   *   Average Inventory = (Beginning Inventory + Ending Inventory) / 2\n   *   Inventory Turnover = Cost of Goods Sold / Average Inventory\n   *   Days in Inventory = 365 / Inventory Turnover\n\n   **Calculation:**\n   *   Average Inventory = ($290,000 + $310,000) / 2 = $300,000\n   *   Inventory Turnover = $1,680,000 / $300,000 = 5.6 times\n   *   Days in Inventory = 365 / 5.6 = 65.2 days\n\n   **Answer:**\n   *   Inventory Turnover: 5.6 times\n   *   Days in Inventory: 65.2 days\n\n**2. Days Sales Outstanding (DSO):**\n   *DSO, also known as average collection period, measures the average number of days that a company takes to collect revenue after a sale. A lower DSO indicates that a company is collecting its receivables more quickly.\n\n   **Given Information:**\n   *   Net Sales: $2,400,000\n   *   Beginning Accounts Receivable: $200,000\n   *   Ending Accounts Receivable: $220,000\n\n   **Formula:**\n   *   Average Accounts Receivable = (Beginning Accounts Receivable + Ending Accounts Receivable) / 2\n   *   Accounts Receivable Turnover = Net Sales / Average Accounts Receivable\n   *   Days Sales Outstanding (DSO) = 365 / Accounts Receivable Turnover\n\n   **Calculation:**\n   *   Average Accounts Receivable = ($200,000 + $220,000) / 2 = $210,000\n   *   Accounts Receivable Turnover = $2,400,000 / $210,000 = 11.43 times\n   *   DSO = 365 / 11.43 = 31.9 days\n\n   **Answer:**\n   *   Days Sales Outstanding (DSO): 31.9 days\n\n**3. Total Asset Turnover:**\n   *Asset turnover measures how efficiently a company uses its assets to generate sales revenue. A higher asset turnover ratio indicates that a company is more effective in using its assets to generate revenue.\n\n   **Given Information:**\n   *   Net Sales: $2,400,000\n   *   Beginning Total Assets: $1,400,000\n   *   Ending Total Assets: $1,500,000\n\n   **Formula:**\n   *   Average Total Assets = (Beginning Total Assets + Ending Total Assets) / 2\n   *   Asset Turnover = Net Sales / Average Total Assets\n\n   **Calculation:**\n   *   Average Total Assets = ($1,400,000 + $1,500,000) / 2 = $1,450,000\n   *   Asset Turnover = $2,400,000 / $1,450,000 = 1.66 times\n\n   **Answer:**\n   *   Asset Turnover: 1.66 times",
+          "keyFormula": "Key formulas include: Inventory Turnover = COGS / Avg Inventory; DSO = 365 / (Net Sales / Avg A/R); Asset Turnover = Net Sales / Avg Total Assets",
+          "commonMistakes": [
+            "Using ending inventory instead of average inventory for the inventory turnover calculation. Always use the average balance when available.",
+            "Using cost of goods sold instead of net sales when calculating Days Sales Outstanding (DSO). DSO requires net sales.",
+            "Forgetting to annualize the ratios. If given quarterly data, you must multiply by 4 to get annual sales or COGS before calculating the turnover ratios.",
+            "Using the wrong average balances. Make sure to use the average of beginning and ending balances for the period in question."
+          ],
+          "examTip": "Memorize the formulas for these ratios. Pay close attention to whether the problem provides beginning and ending balances, requiring you to calculate the average. If only one year-end balance is provided, use that balance as the average."
         },
         {
           "id": "t3",
@@ -725,7 +953,15 @@
             "explanation": "Profitability ratios show margins at different income levels and returns on investment."
           },
           "points": 25,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the profitability ratios for RetailCo Inc:\n\n1. **Given Information:**\n   *   Net Sales: $2,400,000\n   *   Gross Profit: $720,000\n   *   Operating Income: $240,000\n   *   Net Income: $150,000\n   *   Beginning Total Assets: $1,400,000\n   *   Ending Total Assets: $1,500,000\n   *   Beginning Equity: $750,000\n   *   Ending Equity: $800,000\n\n2. **Gross Profit Margin:**\n   *   **Formula:** Gross Profit Margin = Gross Profit / Net Sales\n   *   **Calculation:** Gross Profit Margin = $720,000 / $2,400,000 = 0.30\n   *   **Answer:** 30.0%\n\n3. **Operating Margin:**\n   *   **Formula:** Operating Margin = Operating Income / Net Sales\n   *   **Calculation:** Operating Margin = $240,000 / $2,400,000 = 0.10\n   *   **Answer:** 10.0%\n\n4. **Net Profit Margin:**\n   *   **Formula:** Net Profit Margin = Net Income / Net Sales\n   *   **Calculation:** Net Profit Margin = $150,000 / $2,400,000 = 0.0625\n   *   **Answer:** 6.25%\n\n5. **Return on Assets (ROA):**\n   *   **Formula:** ROA = Net Income / Average Total Assets\n   *   **Calculation:** Average Total Assets = ($1,400,000 + $1,500,000) / 2 = $1,450,000\n   *   **Calculation:** ROA = $150,000 / $1,450,000 = 0.1034\n   *   **Answer:** 10.34%\n\n6. **Return on Equity (ROE):**\n   *   **Formula:** ROE = Net Income / Average Equity\n   *   **Calculation:** Average Equity = ($750,000 + $800,000) / 2 = $775,000\n   *   **Calculation:** ROE = $150,000 / $775,000 = 0.1935\n   *   **Answer:** 19.35%",
+          "keyFormula": "Key profitability formulas include: Gross Profit Margin = Gross Profit / Net Sales; Operating Margin = Operating Income / Net Sales; Net Profit Margin = Net Income / Net Sales; ROA = Net Income / Average Total Assets; ROE = Net Income / Average Equity",
+          "commonMistakes": [
+            "Failing to use average assets and equity when calculating ROA and ROE. Using ending balances will skew the results.",
+            "Incorrectly calculating average assets or equity. Remember to add the beginning and ending balances and divide by 2.",
+            "Using the wrong income figure (e.g., operating income instead of net income) in the ROA or ROE calculation."
+          ],
+          "examTip": "Memorize the formulas for profitability ratios. Pay close attention to whether the problem requires you to use average values for assets or equity. If beginning and ending balances are provided, calculate the average!"
         },
         {
           "id": "t4",
@@ -746,7 +982,16 @@
             "explanation": "Leverage ratios assess financial risk and debt service capability."
           },
           "points": 20,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the leverage ratios for RetailCo Inc.:\n\n1. **Given Information:**\n   *   Current Liabilities: $300,000\n   *   Long-Term Debt: $400,000\n   *   Total Assets: $1,500,000\n   *   Total Equity: $800,000\n   *   EBIT (Earnings Before Interest and Taxes): $240,000\n   *   Interest Expense: $40,000\n\n2. **Debt-to-Equity Ratio:**\n   *   **Formula:** Debt-to-Equity Ratio = Total Debt / Total Equity\n   *   **Calculation:**\n        *   First, calculate Total Debt: Total Debt = Current Liabilities + Long-Term Debt = $300,000 + $400,000 = $700,000\n        *   Then, calculate the Debt-to-Equity Ratio: $700,000 / $800,000 = 0.875\n   *   **Answer:** The Debt-to-Equity Ratio is 0.875:1 or 87.5%\n\n3. **Debt-to-Assets Ratio:**\n   *   **Formula:** Debt-to-Assets Ratio = Total Debt / Total Assets\n   *   **Calculation:** $700,000 / $1,500,000 = 0.466666... (rounded to 0.467)\n   *   **Answer:** The Debt-to-Assets Ratio is 46.7%\n\n4. **Times Interest Earned (TIE):**\n   *   **Formula:** Times Interest Earned = EBIT / Interest Expense\n   *   **Calculation:** $240,000 / $40,000 = 6\n   *   **Answer:** The Times Interest Earned is 6.0 times\n\n5. **Equity Multiplier:**\n   *   **Formula:** Equity Multiplier = Total Assets / Total Equity\n   *   **Calculation:** $1,500,000 / $800,000 = 1.875\n   *   **Answer:** The Equity Multiplier is 1.875",
+          "keyFormula": "Key Formulas:\n* Debt-to-Equity Ratio = Total Debt / Total Equity\n* Debt-to-Assets Ratio = Total Debt / Total Assets\n* Times Interest Earned = EBIT / Interest Expense\n* Equity Multiplier = Total Assets / Total Equity",
+          "commonMistakes": [
+            "Forgetting to include both current and long-term debt when calculating total debt. The problem statement specifies that total debt includes both.",
+            "Using net income instead of EBIT in the Times Interest Earned ratio. TIE measures the company's ability to cover interest expense from its operating income (EBIT).",
+            "Incorrectly calculating the Equity Multiplier by dividing total equity by total assets instead of total assets by total equity. Remember that the Equity Multiplier shows how many assets are supported by each dollar of equity.",
+            "Confusing the Debt-to-Assets ratio with the Assets-to-Equity ratio. Make sure you are using the correct numerator and denominator."
+          ],
+          "examTip": "Memorize the formulas for leverage ratios. During the exam, quickly jot them down on your scratch paper to avoid confusion. Pay close attention to whether the problem provides EBIT or net income, as this will affect the Times Interest Earned calculation. Double-check that you are using the correct figures for total debt, which includes both current and long-term portions."
         },
         {
           "id": "t5",
@@ -765,7 +1010,15 @@
             "explanation": "DuPont analysis reveals the drivers of ROE: profitability, efficiency, and leverage. Recommendation: Favorable acquisition candidate."
           },
           "points": 10,
-          "enhanced": false
+          "enhanced": true,
+          "stepByStep": "Here's how to perform a DuPont analysis to decompose RetailCo's Return on Equity (ROE):\n\n1. **Given Information:**\n   *   Net Profit Margin = 6.25%\n   *   Asset Turnover = 1.66 times\n   *   Equity Multiplier = 1.875\n\n2. **Formula:**\n   *   DuPont Analysis: ROE = Net Profit Margin × Asset Turnover × Equity Multiplier\n\n3. **Calculation:**\n   *   ROE = 6.25% × 1.66 × 1.875\n   *   ROE = 0.0625 * 1.66 * 1.875\n   *   ROE = 0.1036 * 1.875\n   *   ROE = 0.194 or 19.4%\n\n4. **Answer:**\n   *   The Return on Equity (ROE) using DuPont analysis is 19.4%. This indicates that for every dollar of equity, RetailCo generates 19.4 cents in profit.",
+          "keyFormula": "ROE = Net Profit Margin × Asset Turnover × Equity Multiplier",
+          "commonMistakes": [
+            "Forgetting to convert the Net Profit Margin from a percentage to a decimal before multiplying. For example, using 6.25 instead of 0.0625.",
+            "Rounding intermediate calculations too early, which can lead to a significant difference in the final ROE calculation. Carry calculations to at least four decimal places.",
+            "Incorrectly calculating or interpreting the Equity Multiplier. Remember that Equity Multiplier = Total Assets / Total Equity."
+          ],
+          "examTip": "Memorize the DuPont formula. On the exam, quickly identify and extract the necessary components (Net Profit Margin, Asset Turnover, and Equity Multiplier) from the financial statements provided. Double-check your calculations, especially when dealing with percentages and decimals, to avoid simple arithmetic errors."
         }
       ],
       "skills": [
@@ -1075,5 +1328,6 @@
         "COSO ERM"
       ]
     }
-  ]
+  ],
+  "enhancedAt": "2026-03-01T12:44:38.418Z"
 }

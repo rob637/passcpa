@@ -380,7 +380,8 @@ const RevealSection: React.FC<{ data: RevealData }> = ({ data }) => {
 };
 
 /** Comparison Section - side by side comparison */
-const ComparisonSection: React.FC<{ data: ComparisonData }> = ({ data }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ComparisonSection: React.FC<{ data: ComparisonData | any }> = ({ data }) => {
   const colorClasses: Record<string, { bg: string; border: string; header: string }> = {
     blue: { bg: 'bg-blue-50 dark:bg-blue-900/20', border: 'border-blue-200 dark:border-blue-700', header: 'bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200' },
     green: { bg: 'bg-green-50 dark:bg-green-900/20', border: 'border-green-200 dark:border-green-700', header: 'bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-200' },
@@ -390,6 +391,47 @@ const ComparisonSection: React.FC<{ data: ComparisonData }> = ({ data }) => {
   };
   const defaultColors = ['blue', 'green', 'amber', 'purple'];
   
+  // Handle headers/rows format (table-style comparison)
+  if (data.headers && data.rows) {
+    return (
+      <div className="space-y-3">
+        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+          <Columns className="w-5 h-5 text-primary-500" />
+          <span className="font-semibold">{data.title}</span>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg">
+            <thead className="bg-slate-50 dark:bg-slate-800">
+              <tr>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-slate-100"></th>
+                {data.headers.map((header: string, i: number) => (
+                  <th key={i} className="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-slate-100">
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
+              {data.rows.map((row: { label: string; values: string[] }, i: number) => (
+                <tr key={i} className={i % 2 === 0 ? 'bg-white dark:bg-slate-900' : 'bg-slate-50 dark:bg-slate-800/50'}>
+                  <td className="px-4 py-3 text-sm font-medium text-slate-900 dark:text-slate-100">{row.label}</td>
+                  {row.values.map((value: string, j: number) => (
+                    <td key={j} className="px-4 py-3 text-sm text-slate-700 dark:text-slate-300">{value}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+  
+  // Handle items format (card-style comparison)
+  if (!data.items || !Array.isArray(data.items) || data.items.length === 0) {
+    return null;
+  }
+  
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
@@ -398,7 +440,7 @@ const ComparisonSection: React.FC<{ data: ComparisonData }> = ({ data }) => {
       </div>
       
       <div className={`grid gap-4 ${data.items.length === 2 ? 'grid-cols-1 md:grid-cols-2' : data.items.length === 3 ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
-        {data.items.map((item, index) => {
+        {data.items.map((item: { label: string; points: string[]; color?: string }, index: number) => {
           const color = item.color || defaultColors[index % defaultColors.length];
           const classes = colorClasses[color] || colorClasses.blue;
           
@@ -408,7 +450,7 @@ const ComparisonSection: React.FC<{ data: ComparisonData }> = ({ data }) => {
                 {item.label}
               </div>
               <ul className="p-4 space-y-2">
-                {item.points.map((point, pIndex) => (
+                {item.points.map((point: string, pIndex: number) => (
                   <li key={pIndex} className="text-sm text-slate-700 dark:text-slate-300 flex items-start gap-2">
                     <span className="text-primary-500 mt-1">•</span>
                     <span>{point}</span>

@@ -252,16 +252,33 @@ export default defineConfig(({ mode }) => {
             }
           }
           
-          // Question data chunks - split CPA by section since it's very large
-          if (id.includes('/data/cpa/questions')) {
-            if (id.includes('far-questions') || id.includes('far_questions')) return 'data-cpa-questions-far';
-            if (id.includes('aud-questions') || id.includes('aud_questions')) return 'data-cpa-questions-aud';
-            if (id.includes('reg-questions') || id.includes('reg_questions')) return 'data-cpa-questions-reg';
-            if (id.includes('bar-questions') || id.includes('bar_questions')) return 'data-cpa-questions-bar';
-            if (id.includes('isc-questions') || id.includes('isc_questions')) return 'data-cpa-questions-isc';
-            if (id.includes('tcp-questions') || id.includes('tcp_questions')) return 'data-cpa-questions-tcp';
-            return 'data-cpa-questions-misc'; // world-class batches, easy-questions, etc.
+          // Question data from content/ JSON files - split CPA by section
+          if (id.includes('/content/cpa/')) {
+            if (id.includes('/far/questions')) return 'data-cpa-questions-far';
+            if (id.includes('/aud/questions')) return 'data-cpa-questions-aud';
+            if (id.includes('/reg/questions')) return 'data-cpa-questions-reg';
+            if (id.includes('/bar/questions')) return 'data-cpa-questions-bar';
+            if (id.includes('/isc/questions')) return 'data-cpa-questions-isc';
+            if (id.includes('/tcp/questions')) return 'data-cpa-questions-tcp';
           }
+          
+          // Question data chunks - legacy TS files in src/data (backwards compat)
+          if (id.includes('/data/cpa/questions')) {
+            if (id.includes('far-questions') || id.includes('far_questions') || id.includes('/far/')) return 'data-cpa-questions-far';
+            if (id.includes('aud-questions') || id.includes('aud_questions') || id.includes('/aud/')) return 'data-cpa-questions-aud';
+            if (id.includes('reg-questions') || id.includes('reg_questions') || id.includes('/reg/')) return 'data-cpa-questions-reg';
+            if (id.includes('bar-questions') || id.includes('bar_questions') || id.includes('/bar/')) return 'data-cpa-questions-bar';
+            if (id.includes('isc-questions') || id.includes('isc_questions') || id.includes('/isc/')) return 'data-cpa-questions-isc';
+            if (id.includes('tcp-questions') || id.includes('tcp_questions') || id.includes('/tcp/')) return 'data-cpa-questions-tcp';
+            return 'data-cpa-questions-misc'; // index file, helpers, etc.
+          }
+          // Other courses from content/ 
+          if (id.includes('/content/ea/')) return 'data-ea-questions';
+          if (id.includes('/content/cma/')) return 'data-cma-questions';
+          if (id.includes('/content/cia/')) return 'data-cia-questions';
+          if (id.includes('/content/cisa/')) return 'data-cisa-questions';
+          if (id.includes('/content/cfp/')) return 'data-cfp-questions';
+          
           if (id.includes('/data/ea/questions')) {
             return 'data-ea-questions';
           }

@@ -202,7 +202,7 @@ const loadCourseLessonData = async (courseId: CourseId): Promise<number> => {
       }
       case 'cia': {
         const m = await import('../../../data/cia/lessons');
-        return m.getCIALessonCount?.() || m.ALL_CIA_LESSONS?.length || 0;
+        return m.getCIALessonCount?.()?.total || m.ALL_CIA_LESSONS?.length || 0;
       }
       case 'cisa': {
         const m = await import('../../../data/cisa/lessons');
@@ -780,11 +780,11 @@ const AdminCMS: React.FC = () => {
   
   // Question Reports state
   const [questionReports, setQuestionReports] = useState<QuestionReport[]>([]);
-  const [isLoadingReports, setIsLoadingReports] = useState(false);
-  const [expandedReportId, setExpandedReportId] = useState<string | null>(null);
+  const [_isLoadingReports, setIsLoadingReports] = useState(false);
+  const [_expandedReportId, setExpandedReportId] = useState<string | null>(null);
   const [reportResponses, setReportResponses] = useState<Record<string, string>>({});
-  const [generatingResponse, setGeneratingResponse] = useState<string | null>(null);
-  const [sendingResponse, setSendingResponse] = useState<string | null>(null);
+  const [_generatingResponse, setGeneratingResponse] = useState<string | null>(null);
+  const [_sendingResponse, setSendingResponse] = useState<string | null>(null);
 
   // User Engagement state
   const [engagementStats, setEngagementStats] = useState<{
@@ -793,7 +793,7 @@ const AdminCMS: React.FC = () => {
     averageQuestionsPerUser: number;
     usersWithActivity: number;
   } | null>(null);
-  const [isLoadingEngagement, setIsLoadingEngagement] = useState(false);
+  const [_isLoadingEngagement, setIsLoadingEngagement] = useState(false);
 
   // Question Quality state
   const [qualityMetrics, setQualityMetrics] = useState<{
@@ -865,11 +865,11 @@ const AdminCMS: React.FC = () => {
   // Analytics state
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [isLoadingAnalytics, setIsLoadingAnalytics] = useState(false);
-  const [analyticsError, setAnalyticsError] = useState<string | null>(null);
+  const [_analyticsError, setAnalyticsError] = useState<string | null>(null);
   const [usersError, setUsersError] = useState<string | null>(null);
 
   // Feature flags state (local copy for UI)
-  const [featureFlags] = useState<FeatureFlagState>({
+  const [_featureFlags] = useState<FeatureFlagState>({
     aiTutor: FEATURES.aiTutor,
     examSimulator: FEATURES.examSimulator,
     flashcards: FEATURES.flashcards,
@@ -880,7 +880,7 @@ const AdminCMS: React.FC = () => {
     gamification: FEATURES.gamification,
     blueprint2026Preview: FEATURES.blueprint2026Preview,
   });
-  const [maintenanceMode, setMaintenanceMode] = useState(false);
+  const [_maintenanceMode, _setMaintenanceMode] = useState(false);
 
   // User lookup state
   const [lookupQuery, setLookupQuery] = useState('');
@@ -894,9 +894,9 @@ const AdminCMS: React.FC = () => {
 
   // Stale accounts cleanup state
   const [staleAccounts, setStaleAccounts] = useState<UserDocument[]>([]);
-  const [isLoadingStale, setIsLoadingStale] = useState(false);
-  const [isDeletingStale, setIsDeletingStale] = useState(false);
-  const [staleStatus, setStaleStatus] = useState<{ message: string; type: 'info' | 'success' | 'error' | 'warning' } | null>(null);
+  const [_isLoadingStale, setIsLoadingStale] = useState(false);
+  const [_isDeletingStale, setIsDeletingStale] = useState(false);
+  const [_staleStatus, setStaleStatus] = useState<{ message: string; type: 'info' | 'success' | 'error' | 'warning' } | null>(null);
 
   // LinkedIn status state (for Operations tab)
   const [linkedInStatus, setLinkedInStatus] = useState<{
@@ -926,7 +926,7 @@ const AdminCMS: React.FC = () => {
   const [isSeedingTemplates, setIsSeedingTemplates] = useState(false);
 
   // Beta user transition state
-  const [betaTransitionStatus, setBetaTransitionStatus] = useState<'idle' | 'preview' | 'executing' | 'done'>('idle');
+  const [_betaTransitionStatus, setBetaTransitionStatus] = useState<'idle' | 'preview' | 'executing' | 'done'>('idle');
   const [betaTransitionResults, setBetaTransitionResults] = useState<{
     toUpdate: { id: string; email?: string; currentTrialEnd?: string }[];
     skipped: { id: string; email?: string; reason: string }[];

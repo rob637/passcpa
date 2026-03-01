@@ -54,6 +54,7 @@ import { ShareNudge, shouldShowHighScoreNudge } from '../common/ShareNudge';
 import { useNavigation } from '../navigation';
 import { markActivityCompleted } from '../../services/dailyPlanPersistence';
 import analytics from '../../services/analytics';
+import FormattedExplanation from '../common/FormattedExplanation';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct';
@@ -1903,9 +1904,9 @@ const Practice: React.FC = () => {
                     <p className="text-xs sm:text-sm text-green-700 dark:text-green-300 mb-2 line-clamp-2 sm:line-clamp-none">
                       {shuffledQuestion?.shuffledOptions?.[shuffledQuestion.shuffledCorrectAnswer] ?? currentQuestion.options[currentQuestion.correctAnswer]}
                     </p>
-                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                      {currentQuestion.explanation}
-                    </p>
+                    <div className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                      <FormattedExplanation text={currentQuestion.explanation} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1917,9 +1918,9 @@ const Practice: React.FC = () => {
                     <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
                     <div className="min-w-0 flex-1">
                       <p className="font-semibold text-indigo-800 dark:text-indigo-300 text-xs sm:text-sm mb-1">Learn More</p>
-                      <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-                        {currentQuestion.educational}
-                      </p>
+                      <div className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        <FormattedExplanation text={currentQuestion.educational} />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1961,9 +1962,9 @@ const Practice: React.FC = () => {
                                 <p className="font-medium text-red-800 dark:text-red-300 text-xs sm:text-sm">
                                   <span className="font-bold">{String.fromCharCode(65 + displayIndex)}.</span> <span className="line-clamp-1 sm:line-clamp-none">{option}</span>
                                 </p>
-                                <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
-                                  {cleanedExplanation}
-                                </p>
+                                <div className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
+                                  <FormattedExplanation text={cleanedExplanation} />
+                                </div>
                               </div>
                             </div>
                           </div>

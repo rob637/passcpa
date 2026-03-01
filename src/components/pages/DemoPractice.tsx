@@ -26,6 +26,7 @@ import { getDemoQuestions } from '../../data/demoQuestions';
 import { COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
 import { trackEvent } from '../../services/analytics';
+import FormattedExplanation from '../common/FormattedExplanation';
 
 const COURSE_COLORS: Record<string, { gradient: string; bg: string; text: string; light: string }> = {
   cpa: { gradient: 'from-blue-600 to-blue-700', bg: 'bg-blue-600', text: 'text-blue-600', light: 'bg-blue-50' },
@@ -342,7 +343,7 @@ const DemoPractice = () => {
                     </span>
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {currentQuestion.explanation}
+                    <FormattedExplanation text={currentQuestion.explanation} className="text-sm text-slate-600 dark:text-slate-400" />
                   </p>
                 </div>
               )}

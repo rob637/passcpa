@@ -138,24 +138,24 @@ const COURSES: CourseInfo[] = [
 // Why VoraPrep section data
 const WHY_VORAPREP = [
   {
-    icon: Brain,
-    title: 'Adaptive Learning',
-    description: 'Our adaptive engine calibrates difficulty on a continuous scale, factors in your response time, and targets your weakest areas.',
+    icon: BookOpen,
+    title: '20,000+ Practice Questions',
+    description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
   },
   {
-    icon: Target,
-    title: 'Adaptive Practice',
-    description: 'Difficulty adjusts smoothly as you improve. 70% of practice focuses on topics where you struggle most.',
+    icon: Sparkles,
+    title: 'Everything in One Place',
+    description: 'Lessons, flashcards, practice exams, daily study plans, and an exam simulator — a complete study system. No more juggling 5 different tools.',
   },
   {
-    icon: Zap,
-    title: 'Smart Spaced Repetition',
-    description: 'Forgetting-curve modeling predicts when you\'ll forget each concept and resurfaces it at the perfect moment.',
+    icon: BarChart3,
+    title: 'Know When You\'re Ready',
+    description: 'Score prediction tracks your performance across every blueprint area and tells you exactly when you\'re ready to sit for the exam.',
   },
   {
     icon: Shield,
-    title: 'Exam-Day Ready',
-    description: 'Prometric-style interface and timed exams so nothing surprises you on test day.',
+    title: 'Exam-Day Confident',
+    description: 'Prometric-style simulator with timed sections and task-based simulations. Walk in knowing exactly what to expect.',
   },
 ];
 
@@ -499,8 +499,8 @@ const VoraPrep = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
                 Why VoraPrep?
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                We built the study platform we wished existed when we were candidates.
+              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                6 certifications. 20,000+ questions. One platform built by people who&apos;ve been in your seat.
               </p>
             </div>
 
@@ -538,12 +538,12 @@ const VoraPrep = () => {
                 <div className="text-sm text-white/80">Founder Rates Available</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
-                <div className="text-2xl font-bold text-white">AI-First</div>
-                <div className="text-sm text-white/80">Adaptive Learning</div>
+                <div className="text-2xl font-bold text-white">Comprehensive</div>
+                <div className="text-sm text-white/80">6 Certifications, One Platform</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
-                <div className="text-2xl font-bold text-white">Modern</div>
-                <div className="text-sm text-white/80">Current Blueprints</div>
+                <div className="text-2xl font-bold text-white">Current</div>
+                <div className="text-sm text-white/80">2025 & 2026 Blueprints</div>
               </div>
             </div>
           </div>

@@ -1044,22 +1044,34 @@ const TBSSimulator: React.FC = () => {
   const { completeSimulation } = useStudy();
   const { courseId } = useCourse();
 
-  // TBS is CPA-only — redirect other courses to practice
+  // TBS is CPA-only — show friendly message for other courses
   if (courseId !== 'cpa') {
     return (
       <div className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
         <div className="text-center max-w-md">
-          <FileSpreadsheet className="w-16 h-16 mx-auto text-slate-300 dark:text-slate-600 mb-4" />
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Not Available</h2>
+          <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <FileSpreadsheet className="w-10 h-10 text-slate-400 dark:text-slate-500" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            Task-Based Simulations
+          </h2>
           <p className="text-slate-600 dark:text-slate-300 mb-6">
-            Task-Based Simulations are only available for the CPA exam.
+            TBS practice is currently available for the CPA exam only. Use Practice Questions to study for your exam.
           </p>
-          <button
-            onClick={() => navigate('/practice')}
-            className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
-          >
-            Go to Practice
-          </button>
+          <div className="flex gap-3 justify-center">
+            <button
+              onClick={() => navigate('/practice')}
+              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Practice Questions
+            </button>
+            <button
+              onClick={() => navigate(courseHome)}
+              className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Back to Home
+            </button>
+          </div>
         </div>
       </div>
     );

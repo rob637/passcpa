@@ -430,8 +430,8 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
                 Why Study with VoraPrep?
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                Modern adaptive learning designed for {config.name} exam success.
+              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                Everything you need to pass your {config.name} exam — in one powerful platform.
               </p>
             </div>
 

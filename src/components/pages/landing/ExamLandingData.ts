@@ -24,6 +24,9 @@ import {
   Users,
   TrendingUp,
   Shield,
+  BookOpen,
+  BarChart3,
+  Sparkles,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -117,40 +120,40 @@ export interface ExamLandingConfig {
 
 export const SHARED_WHY_VORAPREP = [
   {
+    icon: BookOpen,
+    title: '20,000+ Practice Questions',
+    description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
+    stat: '20,000+',
+  },
+  {
     icon: DollarSign,
-    title: 'Affordable Pricing',
-    description: 'Founding member rates save over 40%. Quality prep at a fraction of what others charge.',
+    title: 'A Fraction of the Cost',
+    description: 'Founding member rates save over 40%. Get everything Becker and Wiley offer — without the $3,000+ price tag.',
     stat: 'Save 40%+',
   },
   {
-    icon: Brain,
-    title: 'Adaptive Learning',
-    description: 'Our adaptive engine continuously calibrates question difficulty, factors in your response time, and focuses 70% of practice on your weakest areas.',
-    stat: 'Adaptive',
+    icon: Sparkles,
+    title: 'Everything in One Place',
+    description: 'Lessons, flashcards, practice exams, daily study plans, and a score predictor — a complete study system. No more juggling multiple tools.',
+    stat: 'All-in-One',
   },
   {
-    icon: Bot,
-    title: 'Meet Vory',
-    description: 'Your study companion explains concepts until they click. Available 24/7, never judges, infinitely patient.',
-    stat: '24/7',
+    icon: BarChart3,
+    title: 'Know When You\'re Ready',
+    description: 'Score prediction tracks your mastery across every blueprint area and tells you exactly when you\'re ready to sit for the exam.',
+    stat: 'Score Predictor',
   },
   {
-    icon: RefreshCw,
-    title: 'Smart Spaced Repetition',
-    description: 'Forgetting-curve modeling predicts exactly when you\'ll forget each concept and resurfaces it at the optimal moment. Maximum retention, minimum time.',
-    stat: '2x Retention',
-  },
-  {
-    icon: Target,
-    title: 'Curriculum-Aware',
-    description: 'Only quiz you on topics you\'ve studied. No frustrating questions on material you haven\'t learned yet.',
-    stat: 'Smart Flow',
+    icon: Shield,
+    title: 'Exam-Day Confident',
+    description: 'Prometric-style simulator with timed sections and task-based simulations. Walk in knowing exactly what to expect.',
+    stat: 'Exam Sim',
   },
   {
     icon: Smartphone,
     title: 'Study Anywhere',
-    description: 'Full offline mode with PWA support. Study on the subway, in a coffee shop, anywhere without WiFi.',
-    stat: 'Offline Ready',
+    description: 'Full offline mode with mobile support. Study on the subway, in a coffee shop, or anywhere — your progress syncs automatically.',
+    stat: 'Mobile Ready',
   },
 ];
 

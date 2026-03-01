@@ -41,6 +41,7 @@ import { Button } from '../common/Button';
 import clsx from 'clsx';
 import { LessonContentSection, ExamSection, Lesson, KnowledgeCheckData, RevealData, ComparisonData, PracticeLinkData, FlowchartData, CalculationData } from '../../types';
 import { applyAcronymPronunciation } from '../../utils/ttsPronunciation';
+import FormattedExplanation from '../common/FormattedExplanation';
 
 // Clean text for speech synthesis - remove markdown and punctuation that sounds weird
 const cleanTextForSpeech = (text: string): string => {
@@ -322,7 +323,9 @@ const KnowledgeCheckSection: React.FC<{ data: KnowledgeCheckData }> = ({ data })
               <p className={`font-medium mb-1 ${isCorrect ? 'text-green-800 dark:text-green-200' : 'text-amber-800 dark:text-amber-200'}`}>
                 {isCorrect ? 'Correct!' : 'Not quite'}
               </p>
-              <p className="text-sm text-slate-700 dark:text-slate-300">{data.explanation}</p>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                <FormattedExplanation text={data.explanation} className="text-sm text-slate-700 dark:text-slate-300" />
+              </p>
             </div>
           </div>
         </div>

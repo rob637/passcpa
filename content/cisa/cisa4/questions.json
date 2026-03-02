@@ -4824,7 +4824,7 @@
       "subtopic": "Event Correlation",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "TechSolutions Inc. is experiencing a high volume of security alerts daily. The security team is overwhelmed and struggling to identify genuine threats. Event correlation implementation will primarily reduce which of the following?\nA) Alert noise by identifying related events\nB) Monitoring capability\nC) Only critical events\nD) All events",
+      "question": "TechSolutions Inc. is experiencing a high volume of security alerts daily. The security team is overwhelmed and struggling to identify genuine threats. Event correlation implementation will primarily reduce which of the following?",
       "options": [
         "Alert noise by identifying related events",
         "Monitoring capability of the SIEM solution",
@@ -4859,7 +4859,7 @@
       "subtopic": "Alert Thresholds",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Global Bank Corp. is implementing a new intrusion detection system (IDS). To minimize disruptions and ensure effective threat detection, how should alert thresholds be configured?\nA) Tuned based on baselines and adjusted to reduce false positives\nB) As sensitive as possible\nC) Identical for all systems\nD) Set once and never changed",
+      "question": "Global Bank Corp. is implementing a new intrusion detection system (IDS). To minimize disruptions and ensure effective threat detection, how should alert thresholds be configured?",
       "options": [
         "Tuned based on baselines and adjusted to reduce false positives",
         "As sensitive as possible to capture all potential threats and vulnerabilities, even at the cost of higher false positives.",
@@ -4894,7 +4894,7 @@
       "subtopic": "Log Retention",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC is reviewing its security information and event management (SIEM) system. Which of the following should be the MOST important consideration when determining log retention periods?\nA) Regulatory requirements, investigation needs, and operational use\nB) Only convenience\nC) Only technical limits\nD) Only storage costs",
+      "question": "Vista Healthcare LLC is reviewing its security information and event management (SIEM) system. Which of the following should be the MOST important consideration when determining log retention periods?",
       "options": [
         "Regulatory requirements, investigation needs, and operational use",
         "Convenience for auditors, ease of access, and quick report generation.",
@@ -4929,7 +4929,7 @@
       "subtopic": "Time Synchronization",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent security incident at Chen & Associates, investigators found inconsistent timestamps across different systems, hindering the investigation. Why is time synchronization (NTP) important for information systems?\nA) Only backups\nB) Log correlation, authentication, and forensic investigation\nC) Only performance\nD) Only scheduling",
+      "question": "During a recent security incident at Chen & Associates, investigators found inconsistent timestamps across different systems, hindering the investigation. Why is time synchronization (NTP) important for information systems?",
       "options": [
         "Only backups, ensuring proper restoration sequence of critical data",
         "Log correlation, authentication, and forensic investigation",
@@ -4964,7 +4964,7 @@
       "subtopic": "EOL Management",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp. has several servers running operating systems that are no longer supported by the vendor. These end-of-life (EOL) systems should be handled in which of the following ways?\nA) Only documented\nB) Ignored\nC) Identified, risk-assessed, and migrated or compensated\nD) Continued indefinitely",
+      "question": "Meridian Corp. has several servers running operating systems that are no longer supported by the vendor. These end-of-life (EOL) systems should be handled in which of the following ways?",
       "options": [
         "Only documented within the IT asset management repository",
         "Ignored, if the system is behind a firewall and not internet-facing",
@@ -4999,7 +4999,7 @@
       "subtopic": "Capacity Trending",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "DataStream Services is experiencing intermittent performance issues with its database servers. To proactively address potential capacity problems, what would capacity trending analysis help predict?\nA) Only historical review\nB) Only cost analysis\nC) Predict future capacity needs before they become critical\nD) Only current status",
+      "question": "DataStream Services is experiencing intermittent performance issues with its database servers. To proactively address potential capacity problems, what would capacity trending analysis help predict?",
       "options": [
         "Only historical review of past incidents and server downtime",
         "Only cost analysis for current resource utilization expenses",
@@ -5034,7 +5034,7 @@
       "subtopic": "Print Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "SecurePrint Solutions is implementing new print management controls across the organization. What aspects should these controls primarily address?\nA) Confidential printing, access control, and audit trails\nB) Only capacity\nC) Only costs\nD) Only paper usage",
+      "question": "SecurePrint Solutions is implementing new print management controls across the organization. What aspects should these controls primarily address?",
       "options": [
         "Confidential printing, access control, and audit trails",
         "Capacity planning, printer hardware, and supply levels",
@@ -5069,7 +5069,7 @@
       "subtopic": "Site Selection",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "CloudFirst Inc. is selecting a new site for its primary data center. Which of the following factors should be considered during the site selection process?\nA) Only proximity\nB) Only size\nC) Natural disasters, utilities, connectivity, and accessibility\nD) Only cost",
+      "question": "CloudFirst Inc. is selecting a new site for its primary data center. Which of the following factors should be considered during the site selection process?",
       "options": [
         "Proximity to the corporate headquarters and key personnel only",
         "Size of the facility and allowance for future expansion only",
@@ -8849,7 +8849,7 @@
       "subtopic": "Application Controls",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent audit of Apex Financial's nightly batch processing, concerns arose regarding data integrity. Specifically, there were questions about whether outputs were complete and accurate. Output controls primarily verify which of the following? \nA) Processing speed \nB) Completeness, accuracy, and proper distribution of processing output \nC) Input accuracy \nD) Storage capacity",
+      "question": "During a recent audit of Apex Financial's nightly batch processing, concerns arose regarding data integrity. Specifically, there were questions about whether outputs were complete and accurate. Output controls primarily verify which of the following?",
       "options": [
         "Processing speed and efficient resource utilization during batch runs",
         "Completeness, accuracy, and proper distribution of processing output",
@@ -8884,7 +8884,7 @@
       "subtopic": "Network Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC experienced a series of network outages and security breaches in the past quarter, costing the company $50,000 in fines. To prevent future incidents, the IT department implemented a network monitoring system. Network monitoring should primarily detect which of the following? \nA) Performance issues, security threats, and availability problems \nB) Only configuration errors \nC) Only outages \nD) Only authorized traffic",
+      "question": "Vista Healthcare LLC experienced a series of network outages and security breaches in the past quarter, costing the company $50,000 in fines. To prevent future incidents, the IT department implemented a network monitoring system. Network monitoring should primarily detect which of the following?",
       "options": [
         "Performance issues, security threats, and availability problems",
         "Configuration errors, but not security breaches or intrusions",
@@ -8989,7 +8989,7 @@
       "subtopic": "Recovery Metrics",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During BCP planning at Global Manufacturing, the CIO stated that a critical system can be down for no more than 4 hours. The business stakeholders, however, indicated they could tolerate a maximum of 12 hours of downtime. Maximum tolerable downtime (MTD) differs from recovery time objective (RTO) because: \nA) They are the same \nB) MTD is overall business tolerance; RTO is specific recovery target \nC) MTD is typically shorter \nD) RTO is business driven, MTD is technical",
+      "question": "During BCP planning at Global Manufacturing, the CIO stated that a critical system can be down for no more than 4 hours. The business stakeholders, however, indicated they could tolerate a maximum of 12 hours of downtime. Maximum tolerable downtime (MTD) differs from recovery time objective (RTO) because:",
       "options": [
         "They are the same, representing the point when irrecoverable damage occurs.",
         "MTD is overall business tolerance; RTO is specific recovery target",
@@ -9024,7 +9024,7 @@
       "subtopic": "Recovery Metrics",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a recent system outage at Chen & Associates, the IT team successfully restored the system. However, employees needed an additional 3 hours to fully catch up on the backlog of work. Work recovery time (WRT) addresses: \nA) Hardware replacement \nB) System restoration only \nC) Time needed to catch up on work after system restoration \nD) Staff training",
+      "question": "After a recent system outage at Chen & Associates, the IT team successfully restored the system. However, employees needed an additional 3 hours to fully catch up on the backlog of work. Work recovery time (WRT) addresses:",
       "options": [
         "Hardware replacement and initial operating system reload",
         "System restoration only, focusing solely on technical recovery",
@@ -9059,7 +9059,7 @@
       "subtopic": "Recovery Sites",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a business continuity planning exercise, Meridian Corp. is evaluating options for disaster recovery. Given the potential for regional disasters, they need a flexible solution. Mobile site recovery refers to: \nA) Cloud recovery \nB) Recovery for mobile devices \nC) Transportable recovery facilities that can be deployed to needed locations \nD) Virtual recovery",
+      "question": "During a business continuity planning exercise, Meridian Corp. is evaluating options for disaster recovery. Given the potential for regional disasters, they need a flexible solution. Mobile site recovery refers to:",
       "options": [
         "Leveraging cloud-based services for rapid recovery of critical systems and data.",
         "Ensuring employees have access to data and applications on their mobile devices after a disruption.",
@@ -9094,7 +9094,7 @@
       "subtopic": "Recovery Agreements",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Two local banks, First National and Community Trust, have a reciprocal agreement for disaster recovery. In the event of a disaster at one bank, the other will provide limited processing capacity. Reciprocal agreements for DR: \nA) Are always reliable \nB) Provide guaranteed capacity \nC) Share facilities between organizations but may have limitations \nD) Are the same as hot sites",
+      "question": "Two local banks, First National and Community Trust, have a reciprocal agreement for disaster recovery. In the event of a disaster at one bank, the other will provide limited processing capacity. Reciprocal agreements for DR:",
       "options": [
         "Are always reliable if tested regularly and updated for system changes.",
         "Provide guaranteed capacity based on pre-negotiated service level agreements.",
@@ -9129,7 +9129,7 @@
       "subtopic": "DR Testing",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After a recent disaster recovery test at SecureData Inc., several critical gaps were identified in the recovery procedures. These findings need to be addressed promptly. DR testing lessons learned should: \nA) Only be shared with testers \nB) Drive improvements to plans and procedures \nC) Be documented but ignored \nD) Be kept confidential from management",
+      "question": "After a recent disaster recovery test at SecureData Inc., several critical gaps were identified in the recovery procedures. These findings need to be addressed promptly. DR testing lessons learned should:",
       "options": [
         "Only be shared with testers and the IT department",
         "Drive improvements to plans and procedures",
@@ -9164,7 +9164,7 @@
       "subtopic": "Data Replication",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "As part of its data protection strategy, GlobalTech Solutions is evaluating different data replication methods. They need to balance cost with recovery point objective (RPO). Data replication strategies range from: \nA) Synchronous to asynchronous with different RPO implications \nB) Only tape backup \nC) Only synchronous \nD) Only cloud backup",
+      "question": "As part of its data protection strategy, GlobalTech Solutions is evaluating different data replication methods. They need to balance cost with recovery point objective (RPO). Data replication strategies range from:",
       "options": [
         "Synchronous to asynchronous with different RPO implications",
         "Only tape backup, with offsite rotation and monthly full backups",
@@ -9479,7 +9479,7 @@
       "subtopic": "Root Cause Analysis",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After a recent ransomware attack costing $500,000, SecureTech Solutions wants to improve its incident response. Which of the following techniques would BEST help identify the underlying causes to prevent future incidents? \n\nA) Only brainstorming\nB) Only interviewing\nC) 5 Whys, fishbone diagrams, and fault tree analysis\nD) Only log review",
+      "question": "After a recent ransomware attack costing $500,000, SecureTech Solutions wants to improve its incident response. Which of the following techniques would BEST help identify the underlying causes to prevent future incidents?",
       "options": [
         "Only brainstorming with the incident response team",
         "Only interviewing key personnel about system access",
@@ -9549,7 +9549,7 @@
       "subtopic": "OLA",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Global Services Inc. has outsourced its help desk to an external vendor. To ensure internal IT teams meet the vendor's needs and maintain service quality, what do operational level agreements (OLAs) define?\n\nA) Customer service levels\nB) Vendor commitments\nC) Internal support group commitments supporting external SLAs\nD) Project deliverables",
+      "question": "Global Services Inc. has outsourced its help desk to an external vendor. To ensure internal IT teams meet the vendor's needs and maintain service quality, what do operational level agreements (OLAs) define?",
       "options": [
         "Customer service levels documented in service level agreements (SLAs)",
         "Vendor commitments outlined in the master service agreement (MSA)",
@@ -9584,7 +9584,7 @@
       "subtopic": "Availability Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC is concerned about system downtime impacting patient care. What does availability management primarily ensure within the IT service management (ITSM) framework?\n\nA) Only capacity planning\nB) Services are available to meet agreed service levels\nC) Only uptime tracking\nD) Only performance monitoring",
+      "question": "Vista Healthcare LLC is concerned about system downtime impacting patient care. What does availability management primarily ensure within the IT service management (ITSM) framework?",
       "options": [
         "Capacity planning ensures resources are available as needed.",
         "Services are available to meet agreed service levels",
@@ -9619,7 +9619,7 @@
       "subtopic": "Fault Tolerance",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent power outage, several critical servers at Chen & Associates failed. What aspect of infrastructure operations BEST provides continued operation despite component failures like this?\n\nA) Continued operation despite component failures\nB) Only backup power\nC) Only faster recovery\nD) Only data backup",
+      "question": "During a recent power outage, several critical servers at Chen & Associates failed. What aspect of infrastructure operations BEST provides continued operation despite component failures like this?",
       "options": [
         "Continued operation despite component failures",
         "Only backup power for critical server hardware",
@@ -9654,7 +9654,7 @@
       "subtopic": "High Availability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "To minimize downtime, Meridian Corp. is designing a new architecture for its e-commerce platform. Which of the following is a key feature of high availability architectures?\n\nA) Redundant components and failover capabilities\nB) Single points of failure\nC) Only cloud services\nD) Only manual recovery",
+      "question": "To minimize downtime, Meridian Corp. is designing a new architecture for its e-commerce platform. Which of the following is a key feature of high availability architectures?",
       "options": [
         "Redundant components and failover capabilities",
         "Single points of failure without active monitoring",
@@ -9689,7 +9689,7 @@
       "subtopic": "Clustering",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a disaster recovery planning session, the IT team at Apex Financial is debating the best clustering approach. How does active-active clustering differ from active-passive clustering?\n\nA) Active-active is less reliable\nB) Active-active has all nodes processing; active-passive has standby nodes\nC) Active-passive is more expensive\nD) They are identical",
+      "question": "During a disaster recovery planning session, the IT team at Apex Financial is debating the best clustering approach. How does active-active clustering differ from active-passive clustering?",
       "options": [
         "Active-active is less reliable because node failures cause immediate outages; active-passive allows failover.",
         "Active-active has all nodes processing; active-passive has standby nodes",
@@ -9724,7 +9724,7 @@
       "subtopic": "Database Resilience",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "To protect its customer database, First National Bank is implementing database mirroring. What primary benefit does database mirroring provide?\n\nA) Only data backup\nB) Real-time synchronous or asynchronous copy for failover\nC) Only read performance\nD) Only storage savings",
+      "question": "To protect its customer database, First National Bank is implementing database mirroring. What primary benefit does database mirroring provide?",
       "options": [
         "Only data backup to tape, for offsite disaster recovery",
         "Real-time synchronous or asynchronous copy for failover",
@@ -9759,7 +9759,7 @@
       "subtopic": "Testing Frequency",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Following a near-miss disaster that could have cost $2 million, Delta Manufacturing is reviewing its business continuity plan (BCP). How frequently should the BCP be tested?\n\nA) Only annually\nB) Only after disasters\nC) Regular and based on risk, with updates after significant changes\nD) Never during business hours",
+      "question": "Following a near-miss disaster that could have cost $2 million, Delta Manufacturing is reviewing its business continuity plan (BCP). How frequently should the BCP be tested?",
       "options": [
         "Only annually, as this aligns with the minimum regulatory compliance.",
         "Only after disasters, to avoid unnecessary disruptions and costs.",
@@ -9794,7 +9794,7 @@
       "subtopic": "DR Testing",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During the annual BCP review at Global Insurance, the IT director wants to test the DRP without disrupting live systems. The goal is to evaluate team responses and decision-making under pressure. Simulation testing of disaster recovery plans:\nA) Replaces all other testing\nB) Uses actual failover\nC) Simulates disaster scenarios to test decision-making without actual activation\nD) Is less valuable than tabletop",
+      "question": "During the annual BCP review at Global Insurance, the IT director wants to test the DRP without disrupting live systems. The goal is to evaluate team responses and decision-making under pressure. Simulation testing of disaster recovery plans:",
       "options": [
         "Replaces all other testing methods, providing a comprehensive and cost-effective approach to validation.",
         "Uses actual failover to a secondary site, guaranteeing minimal disruption and immediate recovery capabilities.",
@@ -9829,7 +9829,7 @@
       "subtopic": "Alternate Sites",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After a recent ransomware attack, SecureBank is reviewing its recovery strategies. The CIO emphasizes the need for an alternate processing facility that can quickly take over critical functions. Alternate processing facilities should be:\nA) Lower capacity than needed\nB) Capable of supporting critical operations within RTO\nC) Identical to primary\nD) In the same building",
+      "question": "After a recent ransomware attack, SecureBank is reviewing its recovery strategies. The CIO emphasizes the need for an alternate processing facility that can quickly take over critical functions. Alternate processing facilities should be:",
       "options": [
         "Lower capacity than needed to minimize ongoing costs",
         "Capable of supporting critical operations within RTO",
@@ -9864,7 +9864,7 @@
       "subtopic": "Vital Records",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During business continuity planning at Apex Financial, the CISO emphasizes the importance of protecting essential documents. Vital records management for business continuity ensures:\nA) Records are only electronic\nB) Essential records are protected and available when needed\nC) All records are kept forever\nD) Records are only physical",
+      "question": "During business continuity planning at Apex Financial, the CISO emphasizes the importance of protecting essential documents. Vital records management for business continuity ensures:",
       "options": [
         "Records are only electronic, improving searchability and access during a disaster.",
         "Essential records are protected and available when needed",
@@ -9899,7 +9899,7 @@
       "subtopic": "Supply Chain",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "MedSupply Inc. is updating its BCP. A key concern is the reliance on a single supplier for a critical component, which could halt production. Supply chain resilience in business continuity planning addresses:\nA) Dependencies on suppliers and partners that could affect operations\nB) Only IT vendors\nC) Only internal operations\nD) Only domestic suppliers",
+      "question": "MedSupply Inc. is updating its BCP. A key concern is the reliance on a single supplier for a critical component, which could halt production. Supply chain resilience in business continuity planning addresses:",
       "options": [
         "Dependencies on suppliers and partners that could affect operations",
         "Dependencies on IT vendors and their disaster recovery capabilities",
@@ -9934,7 +9934,7 @@
       "subtopic": "Failover",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "CloudTech Solutions is implementing a new disaster recovery solution. The IT team is debating between automatic and manual failover mechanisms. Automatic failover compared to manual:\nA) Provides faster recovery but may trigger unnecessarily\nB) Is less reliable\nC) is typically preferred\nD) Costs nothing additional",
+      "question": "CloudTech Solutions is implementing a new disaster recovery solution. The IT team is debating between automatic and manual failover mechanisms. Automatic failover compared to manual:",
       "options": [
         "Provides faster recovery but may trigger unnecessarily",
         "Is less reliable due to potential data synchronization issues",
@@ -9969,7 +9969,7 @@
       "subtopic": "Automation",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "To improve efficiency and reduce errors, DataCore Systems is implementing runbook automation for its IT operations. Runbook automation:\nA) Only applies to documentation\nB) Automates operational procedures for consistency and speed\nC) Eliminates all human involvement\nD) Replaces monitoring",
+      "question": "To improve efficiency and reduce errors, DataCore Systems is implementing runbook automation for its IT operations. Runbook automation:",
       "options": [
         "Only applies to documentation of incident response steps.",
         "Automates operational procedures for consistency and speed",
@@ -10004,7 +10004,7 @@
       "subtopic": "Asset Disposition",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "As part of its IT asset management program, Green Solutions is decommissioning several old servers. Decommissioning IT assets should include:\nA) Simple disposal\nB) Data sanitization, license recovery, and proper disposal/recycling\nC) Only physical destruction\nD) Only removal from inventory",
+      "question": "As part of its IT asset management program, Green Solutions is decommissioning several old servers. Decommissioning IT assets should include:",
       "options": [
         "Simple disposal through a certified vendor after physical inventory.",
         "Data sanitization, license recovery, and proper disposal/recycling",
@@ -10039,7 +10039,7 @@
       "subtopic": "Environmental Controls",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a risk assessment of its primary data center, OmniCorp is reviewing its fire suppression systems. Fire suppression systems in data centers should:\nA) Use agents safe for equipment and personnel while effective\nB) Use water only\nC) Only activate manually\nD) Only protect certain areas",
+      "question": "During a risk assessment of its primary data center, OmniCorp is reviewing its fire suppression systems. Fire suppression systems in data centers should:",
       "options": [
         "Use agents safe for equipment and personnel while effective",
         "Use water only, delivered via a traditional sprinkler system.",

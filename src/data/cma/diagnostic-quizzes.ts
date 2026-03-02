@@ -161,7 +161,7 @@ export const CMA1_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cma1-d14',
-      question: 'Sunrise Tech has a deferred tax asset related to net operating loss carryforwards. Management is evaluating the need for a valuation allowance. A valuation allowance for deferred tax assets is required when:\nA) It is more likely than not that all or a portion will not be realized\nB) The company has permanent differences\nC) The deferred tax asset exceeds $1 million\nD) Tax rates are expected to decrease',
+      question: 'Sunrise Tech has a deferred tax asset related to net operating loss carryforwards. Management is evaluating the need for a valuation allowance. A valuation allowance for deferred tax assets is required when:',
       options: ['Tax rates are expected to decrease significantly in future years, impacting future tax liabilities.', 'The company has permanent differences that will indefinitely impact taxable income.', 'The deferred tax asset exceeds $1 million and the company is publicly traded.', 'It is more likely than not that all or a portion will not be realized'],
       correctAnswer: 3,
       blueprintArea: 'CMA1-A',

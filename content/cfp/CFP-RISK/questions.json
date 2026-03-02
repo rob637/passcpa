@@ -2225,7 +2225,7 @@
       "blueprintArea": "RISK-1",
       "topic": "Term vs. permanent life insurance",
       "difficulty": "medium",
-      "question": "Sarah, age 42, is applying for a $500,000 life insurance policy. All else being equal, which factor would INCREASE her life insurance premiums the MOST significantly?\n\nA) Non-smoker status\nB) Annual premium payment mode\nC) Female gender\nD) Hazardous occupation",
+      "question": "Sarah, age 42, is applying for a $500,000 life insurance policy. All else being equal, which factor would INCREASE her life insurance premiums the MOST significantly?",
       "explanation": "Hazardous occupations increase mortality risk and thus premiums. Non-smoking, female gender (longer life expectancy), and annual payment mode (vs. monthly) typically reduce premiums or earn discounts.",
       "correctAnswer": 3,
       "options": [
@@ -2259,7 +2259,7 @@
       "blueprintArea": "RISK-3",
       "topic": "Homeowners insurance basics",
       "difficulty": "medium",
-      "question": "John's house was damaged in a fire. His homeowner's insurance policy is designed to restore him to his financial position before the loss. The principle of indemnity in insurance means:\n\nA) Insured can profit from a loss.\nB) Beneficiaries receive double the face amount.\nC) All losses are covered regardless of policy limits.\nD) Insured is restored to pre-loss financial position only.",
+      "question": "John's house was damaged in a fire. His homeowner's insurance policy is designed to restore him to his financial position before the loss. The principle of indemnity in insurance means:",
       "explanation": "Indemnity principle ensures insurance restores insured to pre-loss position—no better, no worse. Prevents moral hazard of profiting from losses. Life insurance is exception (valued policy, not indemnity). ACV settlements reflect indemnity.",
       "correctAnswer": 3,
       "options": [
@@ -2293,7 +2293,7 @@
       "blueprintArea": "RISK-3",
       "topic": "Auto insurance coverage",
       "difficulty": "medium",
-      "question": "While driving, Mark was hit by another driver who ran a red light. Mark's insurance company paid for the damages to his car. Subrogation allows the insurer to:\n\nA) Cancel the policy at any time.\nB) Reduce coverage amounts.\nC) Increase premiums after a claim.\nD) Pursue recovery from third party responsible for loss.",
+      "question": "While driving, Mark was hit by another driver who ran a red light. Mark's insurance company paid for the damages to his car. Subrogation allows the insurer to:",
       "explanation": "Subrogation transfers insured\\'s right to recover damages to the insurer after paying a claim. Prevents double recovery and reduces insurer costs. Example: auto insurer pays your claim, then sues at-fault driver to recover.",
       "correctAnswer": 3,
       "options": [
@@ -2327,7 +2327,7 @@
       "blueprintArea": "RISK-1",
       "topic": "Whole life, universal life, variable life",
       "difficulty": "medium",
-      "question": "Susan wants life insurance with investment options. A variable universal life (VUL) policy differs from a traditional universal life policy in that a VUL:\n\nA) Has no cash value component.\nB) Is term insurance with savings feature.\nC) Has fixed premiums like whole life.\nD) Invests cash value in subaccounts similar to mutual funds.",
+      "question": "Susan wants life insurance with investment options. A variable universal life (VUL) policy differs from a traditional universal life policy in that a VUL:",
       "explanation": "VUL combines UL flexibility with investment options (subaccounts). Cash value varies with investment performance—no guarantees. Registered as security (requires Series 6/7). Higher risk/reward than fixed UL. Death benefit can vary.",
       "correctAnswer": 3,
       "options": [
@@ -2361,7 +2361,7 @@
       "blueprintArea": "RISK-1",
       "topic": "Term vs. permanent life insurance",
       "difficulty": "medium",
-      "question": "David needs life insurance to cover a 10-year loan. Which is a characteristic of term life insurance?\n\nA) Builds cash value over time.\nB) Pays dividends to policyholders.\nC) Has level premiums for life.\nD) Provides temporary protection for specified period.",
+      "question": "David needs life insurance to cover a 10-year loan. Which is a characteristic of term life insurance?",
       "explanation": "Term provides death benefit only for specific period (10, 20, 30 years). No cash value. Least expensive per dollar of coverage. Options: level term (level premium/benefit), decreasing term (declining benefit), ART (increasing premium).",
       "correctAnswer": 3,
       "options": [
@@ -2395,7 +2395,7 @@
       "blueprintArea": "RISK-3",
       "topic": "Auto insurance coverage",
       "difficulty": "medium",
-      "question": "While driving, Emily caused an accident injuring another driver. Under her Personal Auto Policy (PAP), Part A provides:\n\nA) Collision coverage\nB) Comprehensive coverage\nC) Liability coverage\nD) Medical payments",
+      "question": "While driving, Emily caused an accident injuring another driver. Under her Personal Auto Policy (PAP), Part A provides:",
       "explanation": "PAP Structure: Part A = Liability (BI/PD), Part B = Medical Payments, Part C = Uninsured/Underinsured Motorist, Part D = Physical Damage (Collision/Comprehensive). Liability is Part A—most important coverage.",
       "correctAnswer": 2,
       "options": [
@@ -2429,7 +2429,7 @@
       "blueprintArea": "RISK-2",
       "topic": "Health insurance (individual and group)",
       "difficulty": "medium",
-      "question": "Bob is evaluating health insurance options through his employer, Meridian Corp. Which health insurance cost-sharing arrangement typically has the LOWEST premiums?\n\nA) PPO with low deductible\nB) HMO with no out-of-network coverage\nC) Indemnity plan with 80/20 coinsurance\nD) HDHP eligible for HSA",
+      "question": "Bob is evaluating health insurance options through his employer, Meridian Corp. Which health insurance cost-sharing arrangement typically has the LOWEST premiums?",
       "explanation": "High-deductible health plans (HDHPs) have lowest premiums due to higher cost-sharing. Trade-off: lower premium, higher out-of-pocket. HSA eligibility provides tax advantages to offset deductible. 2026 HDHP minimum: $1,650 individual, $3,300 family.",
       "correctAnswer": 3,
       "options": [
@@ -2463,7 +2463,7 @@
       "blueprintArea": "RISK-1",
       "topic": "Policy provisions and riders",
       "difficulty": "medium",
-      "question": "ABC Corp sold a life insurance policy on its CEO to a private equity firm for $500,000. The CEO then died, and the private equity firm received $2 million. The \"transfer for value\" rule affects life insurance by:\n\nA) Eliminating the death benefit.\nB) Increasing premiums.\nC) Voiding the policy.\nD) Making death benefit taxable income to recipient.",
+      "question": "ABC Corp sold a life insurance policy on its CEO to a private equity firm for $500,000. The CEO then died, and the private equity firm received $2 million. The \"transfer for value\" rule affects life insurance by:",
       "explanation": "If policy is sold for value, death benefit loses income tax exemption—excess over consideration paid is taxable. Exceptions: transfer to insured, partner, partnership, corporation where insured is officer/shareholder. Careful with business transactions.",
       "correctAnswer": 3,
       "options": [
@@ -6031,7 +6031,7 @@
       "subtopic": "Liability Coverage",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Maria was involved in an auto accident. Her policy with StateWide Mutual shows liability coverage of 100/300/50. This coverage means:\n\n(A) 100% coverage up to $300, with $50 deductible\n(B) $100K per person bodily injury, $300K per accident bodily injury, $50K property damage\n(C) $100 deductible, $300 liability, $50 medical\n(D) $100K collision, $300K comprehensive, $50K uninsured motorist",
+      "question": "Maria was involved in an auto accident. Her policy with StateWide Mutual shows liability coverage of 100/300/50. This coverage means:",
       "explanation": "The split limits (100/300/50) represent: $100,000 maximum bodily injury per person, $300,000 maximum bodily injury per accident, and $50,000 property damage liability. Higher limits are generally recommended, and many advisors suggest combined single limit policies.",
       "correctAnswer": 1,
       "options": [
@@ -6066,7 +6066,7 @@
       "subtopic": "LTC Triggers",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Agnes is considering purchasing a long-term care insurance policy from ElderCare Solutions. Most long-term care policies pay benefits when the insured:\n\n(A) Cannot perform 2-3 Activities of Daily Living (ADLs) or has cognitive impairment\n(B) Applies for Social Security disability\n(C) Reaches age 65\n(D) Is hospitalized for more than 30 days",
+      "question": "Agnes is considering purchasing a long-term care insurance policy from ElderCare Solutions. Most long-term care policies pay benefits when the insured:",
       "explanation": "Tax-qualified LTC policies require inability to perform at least 2 of 6 ADLs (bathing, dressing, eating, toileting, transferring, continence) for 90+ days, or cognitive impairment requiring substantial supervision. This is the benefit trigger that starts policy payments.",
       "correctAnswer": 0,
       "options": [
@@ -6136,7 +6136,7 @@
       "subtopic": "Taxation of Proceeds",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John's wife, Mary, is the named beneficiary of his $500,000 life insurance policy with PrimeLife Assurance. Life insurance death benefits paid to Mary are generally:\n\n(A) Taxable as ordinary income\n(B) Income tax-free to the beneficiary\n(C) Taxable if the policy was in force over 10 years\n(D) Subject to capital gains tax",
+      "question": "John's wife, Mary, is the named beneficiary of his $500,000 life insurance policy with PrimeLife Assurance. Life insurance death benefits paid to Mary are generally:",
       "explanation": "Life insurance death benefits are generally income tax-free to beneficiaries under IRC Section 101. However, proceeds may be included in the insured\\'s taxable estate if the insured owned the policy or had \"incidents of ownership.\" Interest earned on proceeds held by the insurer is taxable.",
       "correctAnswer": 1,
       "options": [
@@ -6171,7 +6171,7 @@
       "subtopic": "Settlement Options",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After the death of her husband, Sarah is reviewing the settlement options for his $1,000,000 life insurance policy. The life income settlement option provides Sarah with:\n\n(A) Payments for a fixed period regardless of survival\n(B) A lump sum payment\n(C) Interest-only payments with principal at death\n(D) Income payments for the beneficiary",
+      "question": "After the death of her husband, Sarah is reviewing the settlement options for his $1,000,000 life insurance policy. The life income settlement option provides Sarah with:",
       "explanation": "Life income settlement converts the death benefit into an annuity paying for the beneficiary\\'s lifetime. Variations include life only (no payments after death), life with period certain (guaranteed minimum payment period), and life with refund. This can provide guaranteed income and creditor protection in some states.",
       "correctAnswer": 3,
       "options": [
@@ -6206,7 +6206,7 @@
       "subtopic": "Riders",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "David is concerned about potentially becoming disabled and being unable to pay his life insurance premiums. A waiver of premium rider:\n\n(A) Waives premiums if the insured becomes disabled\n(B) Eliminates the need to pay premiums entirely\n(C) Allows premium payments to be skipped without policy lapse\n(D) Reduces the death benefit to lower premiums",
+      "question": "David is concerned about potentially becoming disabled and being unable to pay his life insurance premiums. A waiver of premium rider:",
       "explanation": "A waiver of premium rider keeps the policy in force without premium payments if the insured becomes totally disabled (typically unable to work in any occupation) before a specified age (usually 60-65). The policy remains in effect with premiums paid by the insurance company during disability.",
       "correctAnswer": 0,
       "options": [
@@ -6241,7 +6241,7 @@
       "subtopic": "Medigap",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Helen is 68 years old and enrolled in Original Medicare. She is considering purchasing a Medicare Supplement (Medigap) insurance policy. This type of insurance is designed to:\n\n(A) Replace Medicare coverage\n(B) Cover costs not paid by Original Medicare, like copayments and deductibles\n(C) Pay for long-term nursing home care\n(D) Provide prescription drug coverage",
+      "question": "Helen is 68 years old and enrolled in Original Medicare. She is considering purchasing a Medicare Supplement (Medigap) insurance policy. This type of insurance is designed to:",
       "explanation": "Medigap policies fill the \"gaps\" in Original Medicare, covering costs like Part A and B deductibles, copayments, and coinsurance. Standardized plans (A through N) have defined benefits. Medigap cannot be used with Medicare Advantage plans and does not cover Part D (prescriptions).",
       "correctAnswer": 1,
       "options": [
@@ -6276,7 +6276,7 @@
       "subtopic": "FSA vs. HSA",
       "difficulty": "easy",
       "skillLevel": "Analysis",
-      "question": "Mark is deciding between contributing to a Health Savings Account (HSA) or a Flexible Spending Account (FSA) offered by his employer, TechForward Inc. A key difference between FSAs and HSAs is that:\n\n(A) FSAs have higher contribution limits\n(B) HSAs require employer sponsorship\n(C) HSA balances rollover indefinitely; FSAs generally do not\n(D) FSAs can only be used for vision and dental",
+      "question": "Mark is deciding between contributing to a Health Savings Account (HSA) or a Flexible Spending Account (FSA) offered by his employer, TechForward Inc. A key difference between FSAs and HSAs is that:",
       "explanation": "HSA funds roll over indefinitely and remain the account holder\\'s property, even after changing jobs. FSAs generally use-it-or-lose-it (with limited carryover or grace period options). HSAs also have higher limits, are portable, and don\\'t require employer sponsorship.",
       "correctAnswer": 2,
       "options": [
@@ -6311,7 +6311,7 @@
       "subtopic": "HO-3 Policy",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers have a standard homeowners insurance policy to protect their home. The most common homeowners policy (HO-3) provides:\n\n(A) Actual cash value only, no replacement cost\n(B) Named perils coverage on both dwelling and contents\n(C) Open perils on dwelling, named perils on personal property\n(D) Open perils coverage on everything including floods and earthquakes",
+      "question": "The Millers have a standard homeowners insurance policy to protect their home. The most common homeowners policy (HO-3) provides:",
       "explanation": "HO-3 (Special Form) provides open perils coverage on the dwelling (covers all risks except exclusions) and named perils coverage on personal property (only covers listed perils). Flood and earthquake require separate policies or endorsements. HO-5 provides open perils on both dwelling and contents.",
       "correctAnswer": 2,
       "options": [
@@ -6591,7 +6591,7 @@
       "subtopic": "Residual Disability",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Ramirez, a surgeon at City General, has a disability policy. He can perform some minor procedures, earning 20% of his pre-disability income. Regarding his disability policy, residual disability benefits: \n(A) Are available only through group policies (B) Only apply after total disability benefits end (C) Pay full benefits regardless of work status (D) Provide partial benefits proportional to income loss when the insured can work at reduced capacity",
+      "question": "Dr. Ramirez, a surgeon at City General, has a disability policy. He can perform some minor procedures, earning 20% of his pre-disability income. Regarding his disability policy, residual disability benefits:",
       "explanation": "Residual disability provisions pay partial benefits when the insured can work but earns less due to disability. Benefits are typically proportional to income loss (e.g., 40% income loss = 40% of benefit). This encourages return to work while providing financial support. It\\'s a valuable rider for professionals.",
       "correctAnswer": 3,
       "options": [
@@ -6626,7 +6626,7 @@
       "subtopic": "Future Insurability",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah, age 35, wants to ensure her disability coverage can increase as her income grows. She's considering a rider on her policy from Guardian Insurance. A future purchase option (FPO) rider on disability insurance:\n(A) Reduces premiums over time (B) Extends the benefit period automatically (C) Allows policy cancellation without penalty (D) Permits increasing coverage at specific times without evidence of insurability",
+      "question": "Sarah, age 35, wants to ensure her disability coverage can increase as her income grows. She's considering a rider on her policy from Guardian Insurance. A future purchase option (FPO) rider on disability insurance:",
       "explanation": "FPO riders allow purchasing additional coverage at predetermined intervals (often birthdays or income milestones) without new underwriting. This protects insurability if health changes. It\\'s valuable for young professionals expecting income growth. Premiums for additional coverage are based on attained age.",
       "correctAnswer": 3,
       "options": [
@@ -6661,7 +6661,7 @@
       "subtopic": "COLA Rider",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark became disabled at age 45 and is receiving benefits. He is concerned about inflation eroding his benefit amount over time. A Cost-of-Living Adjustment (COLA) rider on disability insurance:\n(A) Only applies after 10 years of disability (B) Adjusts premiums annually (C) Reduces benefits during periods of low inflation (D) Increases benefits during a claim to keep pace with inflation",
+      "question": "Mark became disabled at age 45 and is receiving benefits. He is concerned about inflation eroding his benefit amount over time. A Cost-of-Living Adjustment (COLA) rider on disability insurance:",
       "explanation": "COLA riders increase disability benefits during an ongoing claim, typically tied to CPI, protecting purchasing power during long-term disabilities. This is especially important for young professionals who may be disabled for decades. COLAs usually have caps (3-6% annually) and may be simple or compound.",
       "correctAnswer": 3,
       "options": [
@@ -6696,7 +6696,7 @@
       "subtopic": "Agreed Value",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers' home was destroyed by a fire. They have a homeowners policy with an agreed value endorsement of $500,000. An agreed value policy for homeowners insurance:\n(A) Is available only for commercial properties (B) Covers only contents, not the structure (C) Pays actual cash value only (D) Establishes a predetermined value that will be paid in case of total loss without coinsurance penalties",
+      "question": "The Millers' home was destroyed by a fire. They have a homeowners policy with an agreed value endorsement of $500,000. An agreed value policy for homeowners insurance:",
       "explanation": "Agreed value policies set a predetermined value for covered property. In a total loss, this amount is paid without depreciation or coinsurance calculations. It\\'s common for high-value homes, collectibles, and unique properties where replacement cost is difficult to estimate. Regular reappraisals are needed.",
       "correctAnswer": 3,
       "options": [
@@ -6731,7 +6731,7 @@
       "subtopic": "Personal Liability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "While on vacation in Europe, Emily accidentally caused an injury to another tourist. She is being sued for negligence. A homeowner's policy personal liability coverage typically:\n(A) Covers only incidents in the home (B) Has no coverage limits (C) Includes professional liability (D) Provides worldwide coverage for non-auto, non-business personal liability",
+      "question": "While on vacation in Europe, Emily accidentally caused an injury to another tourist. She is being sued for negligence. A homeowner's policy personal liability coverage typically:",
       "explanation": "Homeowner\\'s personal liability (Coverage E) is broad, covering bodily injury and property damage liability anywhere in the world, not just at home. Exclusions include auto accidents, business activities, and intentional acts. Standard limits ($100K-$500K) are often inadequate for affluent clients—umbrella coverage is recommended.",
       "correctAnswer": 3,
       "options": [
@@ -6766,7 +6766,7 @@
       "subtopic": "Uninsured/Underinsured",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David was seriously injured in a car accident caused by another driver who only carried the state minimum liability coverage of $25,000, which is insufficient to cover David's medical bills. Underinsured motorist coverage:\n(A) Pays when you are at fault (B) Only covers property damage (C) Is required in all states (D) Pays when the at-fault driver's insurance is insufficient to cover your damages",
+      "question": "David was seriously injured in a car accident caused by another driver who only carried the state minimum liability coverage of $25,000, which is insufficient to cover David's medical bills. Underinsured motorist coverage:",
       "explanation": "Underinsured motorist (UIM) coverage applies when an at-fault driver\\'s liability limits are less than your damages. It bridges the gap between their coverage and your loss. Stacking provisions, excess vs. offset calculations, and state requirements vary. High limits are important protection against inadequately insured drivers.",
       "correctAnswer": 3,
       "options": [
@@ -6801,7 +6801,7 @@
       "subtopic": "Hybrid Products",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Robert is considering long-term care insurance but is hesitant because he fears he may never need it and the premiums would be wasted. Life insurance/long-term care hybrid products appeal to consumers because:\n(A) They require no underwriting (B) They are always less expensive than standalone LTC (C) They provide unlimited LTC benefits (D) They provide LTC benefits if needed, or death benefits if LTC is never used, addressing the \"use it or lose it\" concern",
+      "question": "Robert is considering long-term care insurance but is hesitant because he fears he may never need it and the premiums would be wasted. Life insurance/long-term care hybrid products appeal to consumers because:",
       "explanation": "Hybrids combine life insurance (or annuities) with LTC riders. If LTC is needed, benefits are accessed (often accelerating the death benefit). If not, beneficiaries receive the death benefit. This addresses concerns about paying premiums for coverage never used. Tradeoffs include complexity and potentially higher cost per dollar of coverage.",
       "correctAnswer": 3,
       "options": [
@@ -7433,7 +7433,7 @@
       "subtopic": "Short-Term Plans",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Sarah is between jobs and needs health insurance for a few months. Her agent suggests a short-term plan. Which of the following is TRUE regarding short-term health insurance plans?\n\nA) Provide temporary coverage with limited benefits and may exclude pre-existing conditions\nB) Are ACA-compliant plans\nC) Have guaranteed renewal\nD) Must cover pre-existing conditions",
+      "question": "Sarah is between jobs and needs health insurance for a few months. Her agent suggests a short-term plan. Which of the following is TRUE regarding short-term health insurance plans?",
       "explanation": "Short-term plans fill gaps between coverage but aren\\'t ACA-compliant. They can exclude pre-existing conditions, have lifetime/annual limits, and limited benefits. Duration varies by state (up to 3 years). They\\'re cheaper but provide less comprehensive protection; appropriate for healthy individuals needing temporary coverage.",
       "correctAnswer": 0,
       "options": [
@@ -7468,7 +7468,7 @@
       "subtopic": "Health Care Sharing Ministries",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are exploring alternatives to traditional health insurance due to rising costs. They are considering joining a health care sharing ministry. Health care sharing ministries:\n\nA) Are religious organizations that share medical costs among members but are not insurance\nB) \nC) \nD)",
+      "question": "The Millers are exploring alternatives to traditional health insurance due to rising costs. They are considering joining a health care sharing ministry. Health care sharing ministries:",
       "explanation": "HCSMs allow members (sharing religious beliefs) to help pay each other\\'s medical bills. They\\'re not insurance—there\\'s no guarantee of payment, pre-existing conditions may be excluded, and they\\'re exempt from ACA requirements. Lower cost but higher risk; monthly \"shares\" aren\\'t legally premiums.",
       "correctAnswer": 0,
       "options": [
@@ -7503,7 +7503,7 @@
       "subtopic": "Cost of Living",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Dr. Lee has a disability income policy. She's considering adding a rider to protect against inflation. A Cost of Living Adjustment (COLA) rider on disability insurance:\n\nA) Adjusts benefits for location\nB) Increases benefits during a claim to keep pace with inflation\nC) Only applies the first year\nD) Increases premiums each year",
+      "question": "Dr. Lee has a disability income policy. She's considering adding a rider to protect against inflation. A Cost of Living Adjustment (COLA) rider on disability insurance:",
       "explanation": "COLA riders increase disability benefits annually (typically tied to CPI or a fixed percentage) during a continuing claim. For long-term disabilities, this is crucial—a 20-year claim without COLA would see purchasing power erode significantly. The rider adds cost but provides inflation protection.",
       "correctAnswer": 1,
       "options": [
@@ -7538,7 +7538,7 @@
       "subtopic": "Integration",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John's disability policy states that benefits will be reduced if he receives payments from other sources. Disability policy integration means:\n\nA) Only one policy can be owned\nB) Benefits may be reduced by amounts received from other sources like Social Security or workers'\nC) \nD)",
+      "question": "John's disability policy states that benefits will be reduced if he receives payments from other sources. Disability policy integration means:",
       "explanation": "Integration provisions reduce policy benefits by amounts from other disability sources to prevent \"profiting\" from disability. Group LTD policies often integrate with Social Security. \"Non-integrated\" or \"pure\" policies pay regardless of other benefits—they cost more but provide predictable coverage.",
       "correctAnswer": 1,
       "options": [
@@ -7573,7 +7573,7 @@
       "subtopic": "Business Overhead",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Dr. Smith wants to protect his medical practice if he becomes disabled. He's considering business overhead expense (BOE) insurance. BOE insurance:\n\nA) Pays for business operating expenses if the owner becomes disabled, helping keep the business running\nB) Only covers employee salaries\nC) Is the same as business interruption insurance\nD) Replaces the owner'",
+      "question": "Dr. Smith wants to protect his medical practice if he becomes disabled. He's considering business overhead expense (BOE) insurance. BOE insurance:",
       "explanation": "BOE covers fixed business expenses (rent, utilities, employee salaries, equipment leases) when the owner is disabled. It\\'s separate from personal disability insurance. Benefits are typically tax-deductible as business expenses but the premiums are not. Usually has shorter benefit periods (1-2 years).",
       "correctAnswer": 0,
       "options": [
@@ -7643,7 +7643,7 @@
       "subtopic": "Rate Increases",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Mrs. Davis is comparing traditional LTC insurance policies. Which statement is MOST accurate regarding traditional LTC insurance premiums?\n\nA) Are always higher than hybrid products\nB) Decrease as the insured ages\nC) Can increase for entire rate classes if approved by regulators, though individual experience doesn'\nD)",
+      "question": "Mrs. Davis is comparing traditional LTC insurance policies. Which statement is MOST accurate regarding traditional LTC insurance premiums?",
       "explanation": "Traditional LTC is not \"guaranteed level\"—premiums can increase for entire rate classes (though not based on individual claims). Many legacy policies had significant increases due to underpricing. Hybrid products often have guaranteed premiums but less LTC leverage. Rate stability is a major LTC planning concern.",
       "correctAnswer": 2,
       "options": [
@@ -7678,7 +7678,7 @@
       "subtopic": "Moral Hazard",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After purchasing flood insurance, Tom starts storing valuable items in his basement, knowing he's covered if it floods. This situation illustrates:\n\nA) Lying on applications\nB) Discrimination in underwriting\nC) The tendency to take more risks or be less careful when protected by insurance\nD) Insurance fraud",
+      "question": "After purchasing flood insurance, Tom starts storing valuable items in his basement, knowing he's covered if it floods. This situation illustrates:",
       "explanation": "Moral hazard is increased risk-taking because someone else bears the cost. With auto insurance, people may drive less carefully; with health insurance, they may overuse services. Insurers counter with deductibles, copays, and coinsurance to maintain \"skin in the game.\"",
       "correctAnswer": 2,
       "options": [
@@ -7713,7 +7713,7 @@
       "subtopic": "Key Person Insurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Dr. Lee wants to protect his practice, Lee Dental Group, from the financial impact of losing a key associate dentist. Which of the following BEST describes key person life insurance in this context?\nA) Insurance owned by a business on a key employee or owner to protect against financial loss from their death\nB) Required by law for all businesses\nC) Only for publicly traded companies\nD) Personal life insurance for executives",
+      "question": "Dr. Lee wants to protect his practice, Lee Dental Group, from the financial impact of losing a key associate dentist. Which of the following BEST describes key person life insurance in this context?",
       "explanation": "Key person insurance compensates businesses for economic loss when essential employees die. The business owns the policy, pays premiums (non-deductible), and receives tax-free proceeds. It helps cover replacement costs, lost revenue, and business stabilization. Common for founders, sales leads, and specialized talent.",
       "correctAnswer": 0,
       "options": [
@@ -7748,7 +7748,7 @@
       "subtopic": "Medicare Advantage",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is enrolling in Medicare. She's considering different options to supplement her coverage. Which of the following statements is MOST accurate regarding Medicare Advantage (Part C) plans?\nA) Are supplemental to Original Medicare\nB) Are private plans that provide Part A and B benefits, often including additional coverage like dental and vision\nC) Are available only to low-income beneficiaries\nD) Only cover hospital stays",
+      "question": "Maria is enrolling in Medicare. She's considering different options to supplement her coverage. Which of the following statements is MOST accurate regarding Medicare Advantage (Part C) plans?",
       "explanation": "Medicare Advantage replaces Original Medicare with private plans that must cover Part A and B benefits. Many include Part D, plus extras like dental, vision, hearing, and fitness. Trade-offs include network restrictions and prior authorization requirements. They can\\'t be combined with Medigap.",
       "correctAnswer": 1,
       "options": [
@@ -7783,7 +7783,7 @@
       "subtopic": "Presumptive Disability",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John's disability policy includes a presumptive disability provision. He lost his sight in an accident. Regarding this provision, which of the following is TRUE?\nA) Applies only to occupational injuries\nB) Automatically considers certain losses (sight, hearing, limbs) as total disability regardless of ability to work\nC) Extends the elimination period\nD) Requires proof of occupational disability",
+      "question": "John's disability policy includes a presumptive disability provision. He lost his sight in an accident. Regarding this provision, which of the following is TRUE?",
       "explanation": "Presumptive disability automatically qualifies claims for total disability upon specific losses (e.g., loss of sight in both eyes, use of both hands/feet, speech, hearing) without requiring proof of occupational disability. Benefits may begin immediately, waiving the elimination period.",
       "correctAnswer": 1,
       "options": [
@@ -7818,7 +7818,7 @@
       "subtopic": "Tax-Qualified Plans",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Susan is researching long-term care (LTC) insurance. She wants to understand the tax implications. Which of the following is TRUE regarding tax-qualified LTC insurance policies?\nA) Allow premium deductions (subject to AGI threshold) and tax-free benefits when claims meet ADL or cognitive impairment requirements\nB) Are only available through employers\nC) Have lower benefits than non-qualified\nD) Have looser benefit triggers than non-qualified policies",
+      "question": "Susan is researching long-term care (LTC) insurance. She wants to understand the tax implications. Which of the following is TRUE regarding tax-qualified LTC insurance policies?",
       "explanation": "Tax-qualified LTC policies meet HIPAA standards. Premiums are deductible as medical expenses (with age-based limits, subject to 7.5% AGI floor). Benefits are tax-free when triggered by ADL/cognitive criteria. Non-TQ policies may have easier triggers but uncertain tax treatment.",
       "correctAnswer": 0,
       "options": [
@@ -7853,7 +7853,7 @@
       "subtopic": "Coinsurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark's health insurance plan has an 80/20 coinsurance provision after he meets his deductible. What does this mean?\nA) 80% of claims are covered\nB) After the deductible, the insurer pays 80% and the insured pays 20% until the out-of-pocket maximum\nC) The premium is split 80/20\nD) The insured pays 80% of costs",
+      "question": "Mark's health insurance plan has an 80/20 coinsurance provision after he meets his deductible. What does this mean?",
       "explanation": "80/20 coinsurance means the insurer pays 80% of covered costs and the insured pays 20%, applied after the deductible. Cost-sharing continues until the annual out-of-pocket maximum is reached, after which the insurer pays 100%. It creates incentives to be cost-conscious about care.",
       "correctAnswer": 1,
       "options": [
@@ -7888,7 +7888,7 @@
       "subtopic": "Charitable Life Insurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smith family wants to incorporate charitable giving into their estate plan and are considering using life insurance. Which of the following is a valid strategy for using life insurance for charitable giving?\nA) Deducting all premiums\nB) Naming charity as beneficiary, transferring policy ownership to charity, or funding a charitable trust with proceeds\nC) Only new policies\nD) Only naming charities as beneficiaries",
+      "question": "The Smith family wants to incorporate charitable giving into their estate plan and are considering using life insurance. Which of the following is a valid strategy for using life insurance for charitable giving?",
       "explanation": "Charitable life insurance strategies include: (1) naming charity as beneficiary (no current deduction, but estate deduction), (2) gifting existing policy to charity (deduct interpolated terminal reserve), (3) charity owns and is beneficiary (deduct premiums as gifts). Charity gets larger gift than direct cash donation of same amount.",
       "correctAnswer": 1,
       "options": [
@@ -7923,7 +7923,7 @@
       "subtopic": "FSA vs HSA",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Emily is deciding between a Flexible Spending Account (FSA) and a Health Savings Account (HSA). Compared to FSAs, Health Savings Accounts (HSAs):\nA) Are owned by the employee, have higher contribution limits, and balances roll over and accumulate indefinitely\nB) Cannot pay for vision or dental\nC) Are available with any health plan\nD) Have use-it-or-lose-it rules",
+      "question": "Emily is deciding between a Flexible Spending Account (FSA) and a Health Savings Account (HSA). Compared to FSAs, Health Savings Accounts (HSAs):",
       "explanation": "HSAs are owned by individuals, roll over indefinitely (no use-it-or-lose-it), have higher limits ($4,450/$8,900 in 2026), and offer triple tax benefits (deductible, grow tax-free, tax-free withdrawals for medical). They require HDHP enrollment. FSAs are employer accounts with limited rollover.",
       "correctAnswer": 0,
       "options": [
@@ -7958,7 +7958,7 @@
       "subtopic": "Future Increase Option",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David has a disability income insurance policy with a future increase option (guaranteed insurability rider). Which of the following BEST describes how this rider functions?\nA) Increases the elimination period\nB) Only applies if income doubles\nC) Allows purchasing additional coverage at specified intervals without new medical underwriting\nD) Automatically increases coverage",
+      "question": "David has a disability income insurance policy with a future increase option (guaranteed insurability rider). Which of the following BEST describes how this rider functions?",
       "explanation": "This rider allows increasing coverage as income grows without new medical exams (proof of income required). Usually exercise at policy anniversaries or life events. It protects insurability if health declines. Premiums for increases reflect age at time of exercise.",
       "correctAnswer": 2,
       "options": [
@@ -8308,7 +8308,7 @@
       "subtopic": "Business Overhead Expense",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Dr. Emily Carter, a dentist at Willow Creek Dental, wants to protect her practice if she becomes disabled. Business overhead expense (BOE) disability insurance covers which of the following expenses while Dr. Carter is disabled?\n\nA) Business start-up costs\nB) Business operating expenses (rent, utilities, employee salaries, loan payments)\nC) The owner\nD) Capital improvements",
+      "question": "Dr. Emily Carter, a dentist at Willow Creek Dental, wants to protect her practice if she becomes disabled. Business overhead expense (BOE) disability insurance covers which of the following expenses while Dr. Carter is disabled?",
       "explanation": "BOE policies reimburse normal operating expenses when a business owner is disabled, keeping the business viable during recovery. They don\\'t cover the owner\\'s income (that\\'s individual disability). Benefits typically last 12-24 months. Premiums are tax-deductible as business expense; benefits are taxable.",
       "correctAnswer": 1,
       "options": [
@@ -8343,7 +8343,7 @@
       "subtopic": "Actual Cash Value vs Replacement Cost",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers' car was totaled in an accident. Their auto policy has actual cash value (ACV) coverage. How does ACV coverage differ from replacement cost coverage?\n\nA) Only applies to vehicles.\nB) Pays more.\nC) Deducts depreciation from replacement cost, resulting in lower claim payments for older items.\nD) Is not available in homeowners policies.",
+      "question": "The Millers' car was totaled in an accident. Their auto policy has actual cash value (ACV) coverage. How does ACV coverage differ from replacement cost coverage?",
       "explanation": "ACV = Replacement Cost - Depreciation. A 10-year-old roof destroyed might only receive 30-40% of replacement cost under ACV. Replacement cost coverage pays to replace/repair with new materials. The premium difference is usually worth it for significant protection against depreciation.",
       "correctAnswer": 2,
       "options": [
@@ -8378,7 +8378,7 @@
       "subtopic": "Inflation Guard",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Jacksons want to ensure their homeowners insurance keeps pace with rising construction costs. What does an inflation guard endorsement on their homeowners insurance do?\n\nA) Reduces premiums.\nB) Automatically increases coverage limits periodically to keep pace with construction cost increases.\nC) Freezes coverage amounts.\nD) Is included in all policies.",
+      "question": "The Jacksons want to ensure their homeowners insurance keeps pace with rising construction costs. What does an inflation guard endorsement on their homeowners insurance do?",
       "explanation": "Inflation guard automatically increases dwelling coverage (typically quarterly) to match rising construction costs. Without it, a home insured at $300K five years ago might be underinsured as replacement costs rose. The premium increases proportionally. Most advisers recommend this endorsement.",
       "correctAnswer": 1,
       "options": [
@@ -8413,7 +8413,7 @@
       "subtopic": "Ordinance or Law Coverage",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After a fire, the Smiths' home needs to be rebuilt. Current building codes require upgrades exceeding the original construction. Ordinance or law coverage in their homeowners insurance pays for:\n\nA) Property taxes.\nB) Increased costs to rebuild to current building codes when they exceed original construction standards.\nC) Legal fees only.\nD) Zoning variances.",
+      "question": "After a fire, the Smiths' home needs to be rebuilt. Current building codes require upgrades exceeding the original construction. Ordinance or law coverage in their homeowners insurance pays for:",
       "explanation": "After a loss, rebuilding must meet current codes, which may exceed original construction. Standard policies may not cover this gap. Ordinance coverage pays: 1) demolition of undamaged portions if required, 2) increased building costs for code compliance, and 3) loss of undamaged portions that must be demolished.",
       "correctAnswer": 1,
       "options": [
@@ -8448,7 +8448,7 @@
       "subtopic": "Personal Liability Umbrella",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Johnsons want additional liability protection beyond their home and auto policies. A personal umbrella liability policy provides:\n\nA) Excess liability protection above home and auto limits, plus broader coverage for some claims not covered by underlying policies.\nB) Coverage for business activities.\nC) Only auto liability.\nD) Property coverage.",
+      "question": "The Johnsons want additional liability protection beyond their home and auto policies. A personal umbrella liability policy provides:",
       "explanation": "Umbrellas provide: 1) excess liability above auto/homeowners limits (e.g., $1M-$10M), 2) broader coverage (some personal injury claims, liability abroad), 3) relatively inexpensive protection for catastrophic claims. They require maintaining specified underlying auto/home limits and typically exclude business/professional liability.",
       "correctAnswer": 0,
       "options": [
@@ -8483,7 +8483,7 @@
       "subtopic": "Professional Liability",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah is a financial advisor at Vista Financial. A client is concerned about potential lawsuits arising from financial advice. Professional liability (E&O) insurance covers:\n\nA) Claims arising from professional negligence, errors, or omissions in providing professional services.\nB) Only bodily injury.\nC) General business liability.\nD) Product defects.",
+      "question": "Sarah is a financial advisor at Vista Financial. A client is concerned about potential lawsuits arising from financial advice. Professional liability (E&O) insurance covers:",
       "explanation": "Professional liability (errors & omissions) covers claims from professional service failures—negligent advice, missed deadlines, errors in work product. It\\'s essential for CFP® professionals. Policies are claims-made (covering claims made during policy period regardless of when error occurred), unlike occurrence-based general liability.",
       "correctAnswer": 0,
       "options": [
@@ -8518,7 +8518,7 @@
       "subtopic": "Workers Compensation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Manufacturing wants to protect its employees in case of workplace injuries. Workers compensation insurance provides:\n\nA) Income replacement for business owners.\nB) Coverage for employee injuries regardless of fault, including medical expenses and wage replacement.\nC) Retirement benefits.\nD) Unemployment compensation.",
+      "question": "ABC Manufacturing wants to protect its employees in case of workplace injuries. Workers compensation insurance provides:",
       "explanation": "Workers comp is no-fault coverage for work-related injuries/illnesses: medical care, wage replacement (typically 2/3 of wages), rehabilitation, and death benefits. Employees generally cannot sue employers for covered injuries. Required in most states for most employers. Rates vary by job classification risk.",
       "correctAnswer": 1,
       "options": [
@@ -8553,7 +8553,7 @@
       "subtopic": "HDHPs and HSAs",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John wants to minimize healthcare costs and maximize tax benefits. A High Deductible Health Plan (HDHP) combined with an HSA offers:\n\nA) Only lower premiums.\nB) Coverage without deductibles.\nC) Lower premiums, tax-deductible HSA contributions, tax-free growth, and tax-free withdrawals for qualified medical expenses.\nD) Employer-only contributions.",
+      "question": "John wants to minimize healthcare costs and maximize tax benefits. A High Deductible Health Plan (HDHP) combined with an HSA offers:",
       "explanation": "HDHP + HSA: triple tax advantage (deduction, tax-free growth, tax-free qualified withdrawals). HDHPs have minimum deductibles ($1,650 individual/$3,300 family in 2026) and maximum out-of-pocket limits. HSA contributions for 2026: $4,450/$8,900 + $1,000 catch-up (55+). HSA funds roll over and can be invested for retirement.",
       "correctAnswer": 2,
       "options": [
@@ -8588,7 +8588,7 @@
       "subtopic": "COBRA Continuation",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After leaving her position at GreenTech Solutions, Sarah is concerned about maintaining health insurance. COBRA allows continuation of employer health coverage for:\nA) Only employees, not family\nB) Unlimited time\nC) Generally 18 months after job loss (36 months for some events) at full premium plus 2% administrative fee\nD) Free coverage",
+      "question": "After leaving her position at GreenTech Solutions, Sarah is concerned about maintaining health insurance. COBRA allows continuation of employer health coverage for:",
       "explanation": "COBRA applies to employers with 20+ employees. Qualifying events: job loss (18 months), hours reduction (18 months), divorce/legal separation (36 months), death (36 months for dependents), Medicare eligibility (36 months for spouse), dependent aging out (36 months). Premium is full cost plus 2% admin fee.",
       "correctAnswer": 2,
       "options": [
@@ -8623,7 +8623,7 @@
       "subtopic": "Medicare Parts",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "John is turning 65 and wants to understand his Medicare options. The four parts of Medicare cover:\nA) A: Hospital, B: Medical/outpatient, C: Medicare Advantage (private plans), D: Prescription drugs\nB) Only prescriptions\nC) Only hospital stays\nD) Long-term care",
+      "question": "John is turning 65 and wants to understand his Medicare options. The four parts of Medicare cover:",
       "explanation": "Medicare: Part A (hospital—generally premium-free), Part B (medical/outpatient—premium required), Part C (Medicare Advantage—private plans combining A, B, usually D), Part D (prescription drugs—separate or with Advantage). Original Medicare (A+B) can add Medigap and standalone Part D. Medicare doesn\\'t cover long-term care.",
       "correctAnswer": 0,
       "options": [
@@ -8658,7 +8658,7 @@
       "subtopic": "Loss Prevention vs Reduction",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Manufacturing is reviewing its safety protocols. Loss prevention differs from loss reduction in that prevention:\nA) Is more expensive\nB) Aims to avoid losses from occurring, while reduction minimizes loss severity once an event happens\nC) Minimizes loss severity\nD) Only applies to health risks",
+      "question": "Apex Manufacturing is reviewing its safety protocols. Loss prevention differs from loss reduction in that prevention:",
       "explanation": "Loss prevention stops losses (smoke alarms, safe driving, exercise). Loss reduction minimizes severity (sprinklers limit fire damage, seatbelts reduce injury severity, first aid). Both are risk control techniques that complement insurance. Prevention is proactive; reduction is reactive planning.",
       "correctAnswer": 1,
       "options": [
@@ -8693,7 +8693,7 @@
       "subtopic": "Guaranteed Insurability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria has a term life insurance policy with a guaranteed insurability rider. This rider allows:\nA) Lower premiums\nB) Purchase of additional coverage at specific future dates or events without evidence of insurability\nC) Coverage on family members\nD) Conversion to term insurance",
+      "question": "Maria has a term life insurance policy with a guaranteed insurability rider. This rider allows:",
       "explanation": "Guaranteed insurability (or purchase option) lets policyholders buy additional coverage at specific dates (policy anniversaries) or life events (marriage, birth) without medical underwriting. Lock in insurability while young/healthy for future needs. Coverage is at attained age rates, but without health requirements.",
       "correctAnswer": 1,
       "options": [
@@ -8728,7 +8728,7 @@
       "subtopic": "Recovery Benefit",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a car accident, David was totally disabled, but has now returned to work at 75% of his pre-disability earnings. His disability policy includes a recovery benefit. A recovery benefit in disability insurance:\nA) Provides benefits after total disability ends even if the insured has returned to full earnings, to help with recovery expenses\nB) Only applies during disability\nC) Is the same as residual disability\nD) Reduces premiums",
+      "question": "After a car accident, David was totally disabled, but has now returned to work at 75% of his pre-disability earnings. His disability policy includes a recovery benefit. A recovery benefit in disability insurance:",
       "explanation": "Recovery benefits continue for a period after total disability ends, even at full earning capacity. They help with transition expenses—new clothing after weight change, work equipment, training, deferred personal expenses. Typically 12-24 months, decreasing monthly. Different from residual (which requires ongoing income loss).",
       "correctAnswer": 0,
       "options": [
@@ -8763,7 +8763,7 @@
       "subtopic": "Named Peril vs Open Peril",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are reviewing their homeowner's insurance policy from StateWide Insurance. Open peril (all-risk) coverage differs from named peril in that open peril:\nA) Covers all losses except those specifically excluded, while named peril only covers losses specifically listed\nB) Lists every possible loss\nC) Is always cheaper\nD) D",
+      "question": "The Millers are reviewing their homeowner's insurance policy from StateWide Insurance. Open peril (all-risk) coverage differs from named peril in that open peril:",
       "explanation": "Named peril: only listed causes of loss covered (fire, lightning, windstorm, etc.). Open peril: covers any cause of loss unless specifically excluded (nuclear, war, intentional, etc.). Open peril is broader—unexpected events not listed as exclusions are covered. Standard homeowners policies vary: dwelling is often open peril; contents may be named peril.",
       "correctAnswer": 0,
       "options": [
@@ -8798,7 +8798,7 @@
       "subtopic": "Occurrence vs Claims-Made",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is evaluating its professional liability insurance options. Claims-made liability policies differ from occurrence policies in that claims-made:\nA) Cover claims whenever they occurred\nB) Cover claims filed during the policy period, regardless of when the incident occurred (subject to retroactive date)\nC) Have no time limits\nD) Are always more expensive",
+      "question": "Chen & Associates is evaluating its professional liability insurance options. Claims-made liability policies differ from occurrence policies in that claims-made:",
       "explanation": "Occurrence: covers incidents during policy period regardless of when claim is made. Claims-made: covers claims made during policy period for incidents after the retroactive date. Claims-made requires tail coverage (extended reporting period) when policies lapse to cover future claims from past acts. Professional liability is typically claims-made.",
       "correctAnswer": 1,
       "options": [
@@ -8868,7 +8868,7 @@
       "subtopic": "Coinsurance Penalty",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "ABC Corp's warehouse is insured for $600,000, but its actual value is $800,000. The policy has an 80% coinsurance clause. A fire causes $50,000 in damage. Property insurance coinsurance clauses penalize underinsurance by:\nA) Increasing premiums automatically\nB) Canceling the policy\nC) Reducing claim payments proportionally if coverage is below the required percentage (typically 80%) of property value\nD) Voiding coverage for major claims",
+      "question": "ABC Corp's warehouse is insured for $600,000, but its actual value is $800,000. The policy has an 80% coinsurance clause. A fire causes $50,000 in damage. Property insurance coinsurance clauses penalize underinsurance by:",
       "explanation": "Coinsurance: if coverage is less than the required % of value (usually 80%), claims are reduced proportionally. Formula: (Coverage carried / Coverage required) × Loss = Payment. Example: $160K coverage on $250K home (64% vs. 80% required), $50K loss: (160/200) × 50K = $40K payment (20% penalty). Ensures adequate coverage for premium calculations.",
       "correctAnswer": 2,
       "options": [
@@ -8903,7 +8903,7 @@
       "subtopic": "Risk Matrix",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Apex Innovations is reviewing its operational risks. They want to categorize potential losses based on likelihood and impact. A risk matrix evaluates potential losses by considering:\nA) Only probability of occurrence\nB) Historical claims data exclusively\nC) Both the probability of occurrence and the severity of potential loss to prioritize risk management responses\nD) Insurance premium costs only",
+      "question": "Apex Innovations is reviewing its operational risks. They want to categorize potential losses based on likelihood and impact. A risk matrix evaluates potential losses by considering:",
       "explanation": "Risk matrix: plots probability (likelihood) vs. severity (impact). High probability/high severity: priority for risk transfer (insurance). Low probability/high severity: catastrophic—insurance essential. High probability/low severity: may self-insure with reserves. Low/low: accept the risk. Helps allocate limited risk management resources effectively.",
       "correctAnswer": 2,
       "options": [
@@ -8938,7 +8938,7 @@
       "subtopic": "Personal Risk Profile",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers are working with a financial planner to create a comprehensive risk management plan. The planner needs to identify all potential exposures. A comprehensive personal risk assessment should identify:\nA) Personal risks (death, disability), property risks (damage, theft), liability risks (lawsuits), and economic risks (inflation, job loss)\nB) Only catastrophic exposures\nC) Only property risks\nD) Insurance discounts available",
+      "question": "The Millers are working with a financial planner to create a comprehensive risk management plan. The planner needs to identify all potential exposures. A comprehensive personal risk assessment should identify:",
       "explanation": "Complete risk assessment categories: Personal (premature death, disability, longevity, health needs), Property (damage, theft, loss of use), Liability (injury to others, professional errors), Economic (unemployment, inflation, market losses). Each category requires different strategies. Comprehensive planning addresses all exposures.",
       "correctAnswer": 0,
       "options": [
@@ -8973,7 +8973,7 @@
       "subtopic": "Term Conversion",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Jane purchased a term life insurance policy 5 years ago. She now wants permanent coverage but is concerned about her health. The term conversion privilege allows:\nA) Converting term insurance to permanent coverage without evidence of insurability, typically before age 65 or 70\nB) Converting whole life to term\nC) Reducing coverage without fees\nD) Changing the insured person",
+      "question": "Jane purchased a term life insurance policy 5 years ago. She now wants permanent coverage but is concerned about her health. The term conversion privilege allows:",
       "explanation": "Conversion privilege: term policyholders can convert to permanent insurance without new medical underwriting. Valuable if health declines. Limitations: must exercise before attainment age (typically 65-70) or within certain years, limited permanent policy choices. Premiums based on attained age at conversion. Key feature when evaluating term policies.",
       "correctAnswer": 0,
       "options": [
@@ -9008,7 +9008,7 @@
       "subtopic": "Accelerated Death Benefit",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark has a life insurance policy with an accelerated death benefit rider. He has recently been diagnosed with a terminal illness. An accelerated death benefit rider allows policyholders to:\nA) Receive higher death benefits\nB) Access a portion of the death benefit while living if diagnosed with terminal illness, chronic illness, or critical illness\nC) Increase coverage without underwriting\nD) Avoid premium payments",
+      "question": "Mark has a life insurance policy with an accelerated death benefit rider. He has recently been diagnosed with a terminal illness. An accelerated death benefit rider allows policyholders to:",
       "explanation": "Accelerated death benefit (ADB): access portion of death benefit early upon qualifying event (terminal illness with 6-24 month life expectancy, chronic illness requiring care, or critical illness like cancer). Amount received reduces death benefit. Often included at no cost. Provides living benefits from life insurance when needed most.",
       "correctAnswer": 1,
       "options": [
@@ -9043,7 +9043,7 @@
       "subtopic": "Key Person Insurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tech Solutions Inc. relies heavily on its Chief Technology Officer, Sarah. They want to protect the business if Sarah were to die or become disabled. Key person (key employee) insurance protects a business by:\nA) Providing employee benefits\nB) Compensating the business for financial loss when an essential employee dies or becomes disabled\nC) Paying employee families\nD) Funding buy-sell agreements",
+      "question": "Tech Solutions Inc. relies heavily on its Chief Technology Officer, Sarah. They want to protect the business if Sarah were to die or become disabled. Key person (key employee) insurance protects a business by:",
       "explanation": "Key person insurance: business owns policy on essential employee, pays premiums, receives death benefit. Covers: revenue loss, replacement costs, loan repayment, business stabilization. Not a buy-sell funding mechanism (different purpose). May be needed for: executives, salespeople, technical experts, or anyone whose loss would financially harm business.",
       "correctAnswer": 1,
       "options": [
@@ -9078,7 +9078,7 @@
       "subtopic": "HSA Eligibility",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David wants to open a Health Savings Account (HSA). Which of the following criteria must David meet to be eligible to contribute to an HSA?\nA) Have employer contribution\nB) Have any health insurance plan\nC) Be covered by an HSA-eligible high-deductible health plan with no other disqualifying coverage, including Medicare\nD) Be under age 55",
+      "question": "David wants to open a Health Savings Account (HSA). Which of the following criteria must David meet to be eligible to contribute to an HSA?",
       "explanation": "HSA eligibility: must have HDHP (2026: individual deductible ≥$1,650, family ≥$3,300), cannot have other health coverage (including Medicare), cannot be claimed as dependent. Common disqualifiers: spouse\\'s FSA, enrollment in Medicare. Once eligible, can contribute (2026: $4,450 individual, $8,900 family, plus $1,000 catch-up at 55+).",
       "correctAnswer": 2,
       "options": [
@@ -9113,7 +9113,7 @@
       "subtopic": "ACA Cost-Sharing Reductions",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria and her family are enrolling in an ACA health insurance plan. She is eligible for both premium tax credits and cost-sharing reductions (CSRs). ACA cost-sharing reductions (CSRs) differ from premium tax credits in that CSRs:\nA) Are received as tax refund\nB) Reduce monthly premiums\nC) Lower deductibles, copayments, and out-of-pocket maximums for Silver plan enrollees with income below 250% FPL\nD) Apply to all metal levels",
+      "question": "Maria and her family are enrolling in an ACA health insurance plan. She is eligible for both premium tax credits and cost-sharing reductions (CSRs). ACA cost-sharing reductions (CSRs) differ from premium tax credits in that CSRs:",
       "explanation": "CSRs reduce out-of-pocket costs (deductibles, copays, coinsurance, max out-of-pocket), not premiums. Only available: on marketplace Silver plans, income 100-250% FPL, Native Americans to 300%. Creates \"enhanced Silver\" with better cost-sharing. Premium tax credits reduce premiums; CSR reduces what you pay when using care. Different benefits, both income-based.",
       "correctAnswer": 2,
       "options": [
@@ -9148,7 +9148,7 @@
       "subtopic": "CHIP",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Garcia family's income is too high to qualify for Medicaid, but they cannot afford private health insurance for their children. The Children's Health Insurance Program (CHIP) provides:\nA) Dental coverage only\nB) Low-cost health coverage to children in families earning too much for Medicaid but unable to afford private insurance\nC) Coverage only for disabled children\nD) Medicare benefits for children",
+      "question": "The Garcia family's income is too high to qualify for Medicaid, but they cannot afford private health insurance for their children. The Children's Health Insurance Program (CHIP) provides:",
       "explanation": "CHIP: state-federal program covering children whose families earn too much for Medicaid but can\\'t afford private coverage. Eligibility varies by state (typically up to 200-300% FPL). Low or no premiums and copays. Some states also cover pregnant women. Separate from marketplace with its own enrollment rules. Important safety net for families.",
       "correctAnswer": 1,
       "options": [
@@ -9813,7 +9813,7 @@
       "subtopic": "Return of Premium",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah is considering a $500,000 term life policy. Agent offers a return of premium (ROP) option. Regarding return of premium (ROP) term life insurance, it:\n(A) Pays dividends annually (B) Provides permanent coverage (C) Is always the best value (D) Refunds premiums if the insured survives the term, but has significantly higher premiums than regular term",
+      "question": "Sarah is considering a $500,000 term life policy. Agent offers a return of premium (ROP) option. Regarding return of premium (ROP) term life insurance, it:",
       "explanation": "ROP term: get premiums back if you outlive the term. Sounds attractive but: premiums much higher (50-200%+), opportunity cost of extra premium, may not be refunded if lapsed early or die. Alternative: buy regular term, invest the difference. May work for those who won\\'t invest otherwise. Analyze: would investing the difference produce better results?",
       "correctAnswer": 3,
       "options": [
@@ -9848,7 +9848,7 @@
       "subtopic": "Survivorship Life Insurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers, a wealthy couple, seek life insurance primarily for estate tax purposes. They want coverage that pays out after both of them are deceased. Survivorship (second-to-die) life insurance is commonly used for:\n(A) Short-term needs (B) Young single individuals (C) Disability coverage (D) Estate planning where estate tax is due after both spouses die, as the policy pays at the second death",
+      "question": "The Millers, a wealthy couple, seek life insurance primarily for estate tax purposes. They want coverage that pays out after both of them are deceased. Survivorship (second-to-die) life insurance is commonly used for:",
       "explanation": "Survivorship life: pays at second death of two insureds (usually spouses). Uses: estate tax liquidity (tax typically deferred until second death via marital deduction), equalizing inheritances, charitable giving. Advantages: lower premium than separate policies (insures two lives), one unhealthy spouse may qualify. Typically placed in ILIT to exclude from estate.",
       "correctAnswer": 3,
       "options": [
@@ -9883,7 +9883,7 @@
       "subtopic": "Policy Review",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "John has a universal life insurance policy he purchased 10 years ago. He wants to understand its current projected performance. An in-force illustration for life insurance shows:\n(A) Competitor products (B) Guaranteed future returns (C) Past performance only (D) How the policy is projected to perform based on current assumptions including values, premiums, and potential lapse date",
+      "question": "John has a universal life insurance policy he purchased 10 years ago. He wants to understand its current projected performance. An in-force illustration for life insurance shows:",
       "explanation": "In-force illustration: projects policy performance from current state. Shows: cash value, death benefit, premium payments at current assumptions vs. guaranteed. Critical for: universal life policies needing monitoring, policies at risk of lapse, planning future premiums. Request regularly (annually for UL). Different from original illustration—based on current reality.",
       "correctAnswer": 3,
       "options": [
@@ -9918,7 +9918,7 @@
       "subtopic": "TRICARE",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark is a retired Navy officer. He is exploring his healthcare options. TRICARE provides health coverage to:\n(A) All U.S. citizens (B) Veterans only through VA (C) Only active duty personnel (D) Military service members, retirees, and their dependents through various plan options",
+      "question": "Mark is a retired Navy officer. He is exploring his healthcare options. TRICARE provides health coverage to:",
       "explanation": "TRICARE: military health program. Active duty get TRICARE Prime (no cost). Retirees and dependents have options: Prime, Select, For Life (Medicare supplement). Different rules for active duty, guard/reserve, retired. Low cost compared to civilian plans. Covers medical, prescription, dental (separate program). Understand when advising military families.",
       "correctAnswer": 3,
       "options": [
@@ -9953,7 +9953,7 @@
       "subtopic": "Health Reimbursement Arrangement",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Acme Corp. wants to help employees cover out-of-pocket medical costs. They are considering different options. A Health Reimbursement Arrangement (HRA) is:\n(A) Employee-funded (B) A type of health insurance policy (C) Available to self-employed only (D) An employer-funded account reimbursing employees for qualified medical expenses, with tax-free benefits",
+      "question": "Acme Corp. wants to help employees cover out-of-pocket medical costs. They are considering different options. A Health Reimbursement Arrangement (HRA) is:",
       "explanation": "HRA: employer-funded account for employee medical expenses. Employer contributes (tax-deductible), employee receives reimbursements tax-free. Employer sets eligible expenses, maximum reimbursement, carryover rules. Different from HSA (employee owns) and FSA (employee contributes). Various types: integrated with group plan, QSEHRA for small employers, ICHRA for individual coverage.",
       "correctAnswer": 3,
       "options": [
@@ -9988,7 +9988,7 @@
       "subtopic": "Medicare Open Enrollment",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Susan is reviewing her Medicare options for the upcoming year. The Medicare Annual Election Period (October 15 - December 7) allows:\n(A) Enrolling in Medigap only (B) Initial Medicare enrollment (C) Canceling Medicare entirely (D) Changing Medicare Advantage plans, adding/dropping Part D, or switching between Original Medicare and Medicare Advantage",
+      "question": "Susan is reviewing her Medicare options for the upcoming year. The Medicare Annual Election Period (October 15 - December 7) allows:",
       "explanation": "Annual Election Period (AEP): Oct 15 - Dec 7. Changes effective January 1. Can: switch between Original Medicare and MA, change MA plans, add/drop Part D, change Part D plans. Cannot: enroll in Medigap (separate rules). Also Open Enrollment Period (Jan 1-Mar 31) allows switching MA plans. Initial enrollment different timing.",
       "correctAnswer": 3,
       "options": [
@@ -10058,7 +10058,7 @@
       "subtopic": "Premium Structure",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Smith wants to protect his income if he becomes disabled and unable to practice medicine. Non-cancelable disability insurance means:\n(A) No medical exam required (B) Coverage is always for life (C) Premiums can increase annually (D) The insurance company cannot cancel or raise premiums as long as premiums are paid on time",
+      "question": "Dr. Smith wants to protect his income if he becomes disabled and unable to practice medicine. Non-cancelable disability insurance means:",
       "explanation": "Non-cancelable (noncancellable): insurer can\\'t cancel and premiums are guaranteed level as long as you pay. Most protective for insured, most expensive. Alternative: guaranteed renewable—can\\'t cancel but premiums can increase by class. Conditionally renewable: can be canceled under certain conditions. Know policy type when evaluating disability coverage.",
       "correctAnswer": 3,
       "options": [
@@ -10898,7 +10898,7 @@
       "subtopic": "Umbrella Deductibles",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria has a personal umbrella policy with a $300,000 retained limit. A recent incident resulted in $500,000 in damages, but her auto policy only covered $200,000. The umbrella policy's retained limit (self-insured retention) applies when:\nA) Claims are covered by umbrella but not by underlying policies, requiring out-of-pocket payment before umbrella pays\nB) Premium payments\nC) Claims under underlying limits\nD) All claims",
+      "question": "Maria has a personal umbrella policy with a $300,000 retained limit. A recent incident resulted in $500,000 in damages, but her auto policy only covered $200,000. The umbrella policy's retained limit (self-insured retention) applies when:",
       "explanation": "Self-insured retention (SIR): umbrella covers some claims not covered by underlying. For those: must pay SIR (often $10K) before umbrella. Example: umbrella covers personal injury (libel/slander) not in auto policy. If sued, pay SIR, then umbrella. Not same as deductible—only applies to claims outside underlying coverage. Good umbrella feature: broader than underlying.",
       "correctAnswer": 0,
       "options": [
@@ -10933,7 +10933,7 @@
       "subtopic": "Policy Period",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is evaluating liability insurance options. They are considering both claims-made and occurrence policies. Claims-made versus occurrence policies differ in:\nA) Deductible amounts\nB) When coverage applies—claims-made requires claim during policy period, occurrence covers events during policy regardless of when claim filed\nC) Types of losses covered\nD) Premium amounts only",
+      "question": "Chen & Associates is evaluating liability insurance options. They are considering both claims-made and occurrence policies. Claims-made versus occurrence policies differ in:",
       "explanation": "Occurrence: coverage if event occurred during policy period—even if claim years later. Claims-made: coverage only if claim made during policy period. Occurrence: simpler, no tail coverage needed. Claims-made: cheaper initially, but need tail coverage when policy ends to cover past events. Professional liability often claims-made. Understand which applies to coverage.",
       "correctAnswer": 1,
       "options": [
@@ -10968,7 +10968,7 @@
       "subtopic": "Policy Loans",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John has a whole life insurance policy and has taken out a policy loan. Life insurance policy loans:\nA) Cancel the policy immediately\nB) Reduce death benefit if unpaid, but don't necessarily terminate the policy\nC) \nD) ",
+      "question": "John has a whole life insurance policy and has taken out a policy loan. Life insurance policy loans:",
       "explanation": "Policy loans: borrow against cash value, not required to repay. If unpaid at death: outstanding balance + interest deducted from death benefit. Interest compounds—can grow significantly. If loan exceeds cash value: policy lapses (potential tax if gain). No credit check—guaranteed access. Tax-free if policy stays in force. Manage carefully—monitor loan balance.",
       "correctAnswer": 1,
       "options": [
@@ -11003,7 +11003,7 @@
       "subtopic": "Policy Provisions",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah has a disability income policy with a non-pro rata recurrent disability provision. She had a back injury in January and returned to work in March. She re-injures her back in May. A non-pro rata recurrent disability provision:\nA) Reduces benefits proportionally\nB) Only covers new conditions\nC) Treats related disabilities within a specified period as one claim, without requiring new elimination period\nD) Starts new elimination period for each disability",
+      "question": "Sarah has a disability income policy with a non-pro rata recurrent disability provision. She had a back injury in January and returned to work in March. She re-injures her back in May. A non-pro rata recurrent disability provision:",
       "explanation": "Recurrent disability: if recover then same/related disability recurs within specified time (often 6 months), no new elimination period—benefits resume. Non-pro rata: doesn\\'t reduce benefit period previously used. Important for conditions with remission/relapse patterns. Pro rata would reduce remaining benefits. Better policies have non-pro rata provision. Review when comparing policies.",
       "correctAnswer": 2,
       "options": [
@@ -11038,7 +11038,7 @@
       "subtopic": "Auto Liability",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "David has split limit auto liability coverage of 100/300/100. This means:\nA) $300K per person\nB) Only property coverage\nC) $100K per person, $300K per accident for bodily injury, $100K for property damage\nD) $100,000 total coverage",
+      "question": "David has split limit auto liability coverage of 100/300/100. This means:",
       "explanation": "Split limits format: bodily injury per person / bodily injury per accident / property damage. 100/300/100: up to $100K for any one injured person, $300K maximum for all injured in accident, $100K for others\\' property. Alternative: combined single limit (CSL)—one limit for all. Higher limits recommended—assets at stake. Umbrella for additional protection.",
       "correctAnswer": 2,
       "options": [
@@ -11073,7 +11073,7 @@
       "subtopic": "Key Person Insurance",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC wants to purchase key person life insurance on their CEO. Key person life insurance is designed to:\nA) Compensate the business for financial loss when an essential employee dies, covering replacement and transition costs\nB) Fund retirement\nC) Provide disability benefits\nD) Benefit the key person",
+      "question": "Vista Healthcare LLC wants to purchase key person life insurance on their CEO. Key person life insurance is designed to:",
       "explanation": "Key person coverage: business owns policy on essential person (owner, executive, salesperson). Death benefit to business covers: lost revenue, finding/training replacement, debt payment, business continuation. Insurable interest: business has stake in person\\'s life. Premiums not deductible, death benefit tax-free. Valuation: often multiple of salary or contribution. Essential for small businesses.",
       "correctAnswer": 0,
       "options": [
@@ -11108,7 +11108,7 @@
       "subtopic": "Healthcare Sharing Ministries",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are exploring healthcare options and considering a healthcare sharing ministry. Healthcare sharing ministries differ from traditional health insurance in that they:\nA) Cover all pre-existing conditions\nB) Are not insurance—members voluntarily share costs, without guarantee of payment, and may have religious requirements\nC) Accept all applicants\nD) Are regulated by state insurance departments",
+      "question": "The Millers are exploring healthcare options and considering a healthcare sharing ministry. Healthcare sharing ministries differ from traditional health insurance in that they:",
       "explanation": "Healthcare sharing: NOT insurance—voluntary cost-sharing among members with shared beliefs. No guarantee of payment, not regulated as insurance. May exclude: pre-existing conditions, certain lifestyle choices, specific procedures. Lower cost than insurance. Risks: no coverage guarantee, limited appeals. Know difference—may be appropriate for some, but understand limitations.",
       "correctAnswer": 1,
       "options": [
@@ -11143,7 +11143,7 @@
       "subtopic": "Mental Health Limitations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark has a disability policy. Many disability policies limit mental health disability benefits to:\nA) 6 months only\nB) 24 months, compared to longer benefit periods for physical conditions\nC) No coverage\nD) Same as physical conditions",
+      "question": "Mark has a disability policy. Many disability policies limit mental health disability benefits to:",
       "explanation": "Mental/nervous limitations: common in disability policies—24 months typical (some less). Physical conditions may have to-65 or longer benefit period. Impact: depression, anxiety, stress-related claims limited. Some exclude entirely. Growing issue—many claims have mental health component. Better policies: longer or no limitation. Review carefully, especially for high-stress professions.",
       "correctAnswer": 1,
       "options": [

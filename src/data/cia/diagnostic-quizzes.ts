@@ -52,7 +52,7 @@ export const CIA1_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cia1-d04',
-      question: 'During an audit of complex derivatives at Alpha Trading, an internal auditor is assigned to the engagement. The competency principle of the Code of Ethics requires internal auditors to:\nA) Apply knowledge, skills, and experience needed for their services\nB) Only work in their area of certification\nC) Defer all technical matters to specialists\nD) Accept any engagement assigned',
+      question: 'During an audit of complex derivatives at Alpha Trading, an internal auditor is assigned to the engagement. The competency principle of the Code of Ethics requires internal auditors to:',
       options: ['Apply knowledge, skills, and experience needed for their services', 'Only undertake engagements within the specific area of their professional certification, regardless of other skills.', 'Defer all technical matters and complex derivative assessments to external specialists, regardless of internal expertise.', 'Accept any engagement assigned by management, regardless of their individual competence or potential conflicts of interest.'],
       correctAnswer: 0,
       blueprintArea: 'CIA1-I',
@@ -624,7 +624,7 @@ export const CIA3_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cia3-d09',
-      question: 'GreenTech Solutions is evaluating a new solar panel project requiring a $500,000 initial investment. Net Present Value (NPV) is calculated by:\nA) Discounting future cash flows to their present value and subtracting the initial investment\nB) Adding all future cash flows without adjustment\nC) Dividing total profit by initial investment\nD) Calculating the time to recover the initial investment',
+      question: 'GreenTech Solutions is evaluating a new solar panel project requiring a $500,000 initial investment. Net Present Value (NPV) is calculated by:',
       options: ['Discounting future cash flows to their present value and subtracting the initial investment', 'Adding all future cash flows without adjustment and comparing that sum directly to the initial investment, ignoring the time value of money.', 'Dividing the project\'s total undiscounted profit by the initial investment, providing a simple return percentage that does not account for risk or timing.', 'Calculating the time to recover the initial investment, also known as the payback period, which ignores cash flows beyond the payback point and the time value of money.'],
       correctAnswer: 0,
       blueprintArea: 'CIA3-IV',
@@ -754,7 +754,7 @@ export const CIA3_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cia3-d22',
-      question: 'Sustainable Investments LLC considers Environmental, Social, and Governance (ESG) factors because:\n\nA) They can affect long-term value creation and stakeholder relations\nB) They focus only on environmental issues\nC) They are purely optional\nD) They only matter to non-profit organizations',
+      question: 'Sustainable Investments LLC considers Environmental, Social, and Governance (ESG) factors because:',
       options: ['They can affect long-term value creation and stakeholder relations', 'They focus only on environmental issues, disregarding social and governance risks that can impact financial performance.', 'They are purely optional and do not influence investment risk assessments or regulatory compliance requirements.', 'They only matter to non-profit organizations with social missions, not to for-profit entities seeking financial returns.'],
       correctAnswer: 0,
       blueprintArea: 'CIA3-I',

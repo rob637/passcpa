@@ -4917,7 +4917,7 @@
       "subtopic": "Energy Credits",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers are considering energy-efficient upgrades to their home. They are reviewing options under the Inflation Reduction Act. Which of the following residential clean energy improvements are eligible for tax credits?\n\nA) Only commercial properties\nB) Solar, wind, geothermal, battery storage, and fuel cells for home use, with credits through 2034\nC) Only solar panels\nD) Credits expired in 2022",
+      "question": "The Millers are considering energy-efficient upgrades to their home. They are reviewing options under the Inflation Reduction Act. Which of the following residential clean energy improvements are eligible for tax credits?",
       "explanation": "Residential clean energy credit (25D): 30% of costs through 2032, then phases down. Covers: solar electric, solar water heating, wind, geothermal heat pumps, fuel cells, battery storage (3+ kWh). No upper limit. Carry forward unused credit. Primary or second home (not rental). Energy efficient home improvement credit (25C) separate: windows, doors, HVAC, heat pumps—more limited amounts.",
       "correctAnswer": 1,
       "options": [
@@ -4952,7 +4952,7 @@
       "subtopic": "Installment Method",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David sold a piece of land for $500,000, receiving $100,000 per year for 5 years. He wants to defer the tax liability. Which of the following describes the installment method of reporting the gain?\n\nA) Spreads gain recognition as payments are received, with each payment containing proportionate gain\nB) Eliminates tax on gains\nC) Only applies to real estate\nD) Requires IRS approval",
+      "question": "David sold a piece of land for $500,000, receiving $100,000 per year for 5 years. He wants to defer the tax liability. Which of the following describes the installment method of reporting the gain?",
       "explanation": "Installment method: report gain as payments received. Gross profit percentage: (Gross profit / Contract price) × Payment = Gain recognized. Spreads tax over payment period. Automatic for qualifying sales. Not available: dealer property, publicly traded securities, inventory, recapture (reported immediately). Interest charged on deferred tax over $5M. Planning: manage cash flow, lower bracket years, estate planning.",
       "correctAnswer": 0,
       "options": [
@@ -4987,7 +4987,7 @@
       "subtopic": "Tax Return Amendments",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Sarah filed her 2022 tax return on April 15, 2023. She later discovered an error that would result in a refund. What is the deadline for Sarah to file an amended tax return (Form 1040-X) to claim this refund?\n\nA) 3 years from original due date or 2 years from tax payment, whichever is later, to claim a refund\nB) 6 months of filing\nC) 1 year of filing\nD) No deadline",
+      "question": "Sarah filed her 2022 tax return on April 15, 2023. She later discovered an error that would result in a refund. What is the deadline for Sarah to file an amended tax return (Form 1040-X) to claim this refund?",
       "explanation": "Amendment deadline for refund: later of 3 years from original due date (including extensions) OR 2 years from date tax paid. No deadline to pay additional tax (but penalties/interest accrue). Wait for original to process before amending. Certain items have special rules. Can now e-file 1040-X. Note: opens return to full IRS review. Document reasons for amendment.",
       "correctAnswer": 0,
       "options": [
@@ -5022,7 +5022,7 @@
       "subtopic": "Restricted Stock Units",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John received 1,000 Restricted Stock Units (RSUs) from his employer, TechForward Solutions. At vesting, the fair market value was $20 per share. How are these RSUs generally taxed?\n\nA) Only at sale\nB) At vesting as ordinary income based on fair market value, with that value becoming the tax basis\nC) At grant\nD) As capital gains",
+      "question": "John received 1,000 Restricted Stock Units (RSUs) from his employer, TechForward Solutions. At vesting, the fair market value was $20 per share. How are these RSUs generally taxed?",
       "explanation": "RSU taxation: at vesting—FMV is ordinary income (W-2), subject to withholding. No Section 83(b) election available (unlike restricted stock—no property received until vesting). Basis: FMV at vesting. Subsequent sale: capital gain/loss from vesting value. Withholding: often net shares (sell shares to cover tax). Can create large taxable income in vesting year. Plan for tax impact.",
       "correctAnswer": 1,
       "options": [
@@ -5057,7 +5057,7 @@
       "subtopic": "Section 179 Expensing",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Manufacturing is purchasing new equipment for its factory. Their CFO is evaluating tax strategies. Section 179 expensing allows businesses to:\n\nA) Only depreciate over asset life\nB) Expense only vehicles\nC) Immediately deduct the cost of qualifying business assets rather than depreciating over time, subject to limits\nD) Expense any purchase",
+      "question": "GreenTech Manufacturing is purchasing new equipment for its factory. Their CFO is evaluating tax strategies. Section 179 expensing allows businesses to:",
       "explanation": "Section 179: elect to expense (deduct immediately) qualifying assets instead of capitalizing and depreciating. 2026 limit: ~$1.25M, phases out when purchases exceed ~$3.13M. Qualifying: tangible personal property, qualified real property improvements. Limits: can\\'t exceed business income. Vehicles: additional limitations. Alternative: bonus depreciation (80% in 2026, then phases down). Powerful planning tool.",
       "correctAnswer": 2,
       "options": [
@@ -5092,7 +5092,7 @@
       "subtopic": "Retirement Timing",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria is planning her retirement and wants to minimize her overall tax burden. What should she consider when planning the timing of her retirement?\n\nA) Current year only\nB) Only Social Security\nC) Years with lower projected income before RMDs, Roth conversions, capital gains harvesting, and ACA subsidy cliffs\nD) Estate taxes only",
+      "question": "Maria is planning her retirement and wants to minimize her overall tax burden. What should she consider when planning the timing of her retirement?",
       "explanation": "Retirement tax timing: early retirement years often lowest income—before Social Security, RMDs. Opportunities: Roth conversions at lower rates, capital gains harvesting (0% bracket), accelerate income to fill lower brackets. Watch: ACA premium cliff around 400% FPL, Medicare IRMAA (income from 2 years prior). Long-term: project taxes, model different scenarios. Window of opportunity—plan proactively.",
       "correctAnswer": 2,
       "options": [
@@ -5372,7 +5372,7 @@
       "subtopic": "Qualified Dividends",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Robert is reviewing his investment portfolio and dividend income. Which of the following dividends would NOT qualify for the lower qualified dividend tax rate?\n\nA) Dividend from an eligible foreign corporation\nB) Dividend from a REIT\nC) Dividend from a stock held for 120 days\nD) Dividend from a domestic corporation held for 65 days",
+      "question": "Robert is reviewing his investment portfolio and dividend income. Which of the following dividends would NOT qualify for the lower qualified dividend tax rate?",
       "explanation": "**Correct Answer: C (Dividend from a REIT)**\n\n**REIT Dividends:**\n- Generally taxed as ordinary income\n- Do not qualify for preferential rates\n- Exception: Capital gains distributions from REIT\n\n**Qualified Dividend Requirements:**\n- Paid by US or eligible foreign corporation\n- Held for 61+ days during 121-day period (common stock)\n- Not from tax-exempt organizations, REITs, or MLP\n\n**Why other answers are wrong:**\n- **A, D)** Meet holding period and corporation requirements\n- **B)** Eligible foreign corporations qualify",
       "correctAnswer": 1,
       "options": [
@@ -5407,7 +5407,7 @@
       "subtopic": "Passive Activity Loss",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Susan has an Adjusted Gross Income (AGI) of $180,000 and incurred a $15,000 loss from her rental property. How much of this rental property loss can Susan deduct on her tax return?\n\nA) $15,000\nB) $7,500\nC) $25,000\nD) $0",
+      "question": "Susan has an Adjusted Gross Income (AGI) of $180,000 and incurred a $15,000 loss from her rental property. How much of this rental property loss can Susan deduct on her tax return?",
       "explanation": "**Correct Answer: A ($0)**\n\n**Passive Activity Loss Rules:**\n- Up to $25,000 rental loss allowance for active participants\n- Phases out between $100,000 - $150,000 MAGI\n- Completely phased out at $150,000\n\nAt $180,000 AGI, the $25,000 allowance is fully phased out. The $15,000 loss is suspended until property sale or offset by passive income.\n\n**Why other answers are wrong:**\n- **B, C, D)** AGI exceeds phaseout threshold",
       "correctAnswer": 3,
       "options": [
@@ -5582,7 +5582,7 @@
       "subtopic": "Business Deductions",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Anya Sharma is a self-employed dentist operating \"Sharma Dental.\" She pays monthly premiums for her family's health insurance. Which of the following is the correct treatment for these premiums on Dr. Sharma's tax return as an \"above-the-line\" deduction?\n(A) Charitable contributions (B) State income taxes (C) Self-employed health insurance premiums (D) Home mortgage interest",
+      "question": "Dr. Anya Sharma is a self-employed dentist operating \"Sharma Dental.\" She pays monthly premiums for her family's health insurance. Which of the following is the correct treatment for these premiums on Dr. Sharma's tax return as an \"above-the-line\" deduction?",
       "explanation": "**Correct Answer: B (Self-employed health insurance premiums)**\n\n**Above-the-Line Deductions (Adjustments to Income):**\n- Self-employed health insurance premiums\n- Self-employment tax (50%)\n- Student loan interest\n- IRA contributions\n- HSA contributions\n- Educator expenses\n\nThese reduce AGI, not just taxable income.\n\n**Why other answers are wrong:**\n- **A, C, D)** These are itemized deductions (below-the-line)",
       "correctAnswer": 2,
       "options": [
@@ -5617,7 +5617,7 @@
       "subtopic": "Casualty Loss",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to severe flooding from Hurricane Zeta, the Miller family suffered significant damage to their primary residence in 2024. Under current tax law, the personal casualty loss is deductible only if:\n(A) They exceed 10% of AGI (B) They relate to business property (C) They result from a federally declared disaster (D) They exceed $100 per event",
+      "question": "Due to severe flooding from Hurricane Zeta, the Miller family suffered significant damage to their primary residence in 2024. Under current tax law, the personal casualty loss is deductible only if:",
       "explanation": "**Correct Answer: C (Federally declared disaster)**\n\n**Post-TCJA Casualty Loss Rules:**\n- Personal casualty losses are deductible ONLY if from a federally declared disaster\n- Still subject to $100 per event and 10% of AGI floors\n- Business casualty losses remain deductible\n\nThis was a significant change from pre-2018 law.\n\n**Why other answers are wrong:**\n- **A, B)** These are limitations, but disaster requirement is new threshold\n- **D)** Business property is different category",
       "correctAnswer": 2,
       "options": [
@@ -5687,7 +5687,7 @@
       "subtopic": "Earned Income Credit",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Garcia family is reviewing their eligibility for various tax credits. Which statement about the Earned Income Tax Credit (EITC) is CORRECT?\n(A) Maximum credit increases with each qualifying child up to three (B) The credit is non-refundable (C) It is available only to married filers (D) Investment income cannot exceed $11,000 to qualify",
+      "question": "The Garcia family is reviewing their eligibility for various tax credits. Which statement about the Earned Income Tax Credit (EITC) is CORRECT?",
       "explanation": "**Correct Answer: C (Maximum credit increases with each qualifying child up to three)**\n\n**EITC Features:**\n- Refundable credit\n- Investment income limit: ~$11,600 (indexed)\n- Maximum credit amounts increase with 1, 2, then 3+ children\n- No additional credit beyond 3 children\n- Available to all filing statuses with earned income\n\n**Why other answers are wrong:**\n- **A)** Limit is approximately $11,600, not exact\n- **B)** EITC is refundable\n- **D)** Available to single, HoH, and MFJ filers",
       "correctAnswer": 0,
       "options": [
@@ -5757,7 +5757,7 @@
       "subtopic": "Retirement Savings Credit",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah, a single taxpayer with an AGI of $21,000, contributed $2,000 to a Roth IRA this year. Assuming she meets all other requirements, what is the amount of the Saver's Credit she can claim?\n(A) $400 (B) $1,000 (C) $2,000 (D) $200",
+      "question": "Sarah, a single taxpayer with an AGI of $21,000, contributed $2,000 to a Roth IRA this year. Assuming she meets all other requirements, what is the amount of the Saver's Credit she can claim?",
       "explanation": "**Correct Answer: C ($1,000)**\n\n**Saver's Credit (2026 Single):**\n- 50% credit: AGI ≤ $23,000\n- 20% credit: AGI $23,001 - $25,000\n- 10% credit: AGI $25,001 - $38,250\n- No credit: AGI > $38,250\n\nAt $21,000 AGI:\n- Credit rate: 50%\n- Maximum contribution for credit: $2,000\n- Credit: $2,000 × 50% = $1,000\n\n**Why other answers are wrong:**\n- **A) $200:** Uses 10% rate\n- **B) $400:** Uses 20% rate\n- **D) $2,000:** Would be 100% rate (doesn't exist)",
       "correctAnswer": 1,
       "options": [
@@ -5792,7 +5792,7 @@
       "subtopic": "Clean Vehicle Credit",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John is considering purchasing a new electric vehicle (EV). Which requirement applies to the clean vehicle (EV) tax credit under current law?\n(A) Final assembly must occur in North America (B) The vehicle must be used exclusively for business (C) Only used vehicles qualify (D) There is no income limit to claim the credit",
+      "question": "John is considering purchasing a new electric vehicle (EV). Which requirement applies to the clean vehicle (EV) tax credit under current law?",
       "explanation": "**Correct Answer: C (Final assembly must occur in North America)**\n\n**Clean Vehicle Credit Requirements:**\n- Final assembly in North America\n- Battery component sourcing requirements\n- Critical mineral sourcing requirements\n- MSRP limits ($55,000 cars, $80,000 SUV/trucks)\n- Income limits ($150,000 single, $300,000 MFJ)\n- Both new and used vehicles can qualify\n\n**Why other answers are wrong:**\n- **A)** Income limits do apply\n- **B)** Personal use vehicles qualify\n- **D)** New vehicles qualify (separate used vehicle credit exists)",
       "correctAnswer": 0,
       "options": [
@@ -6037,7 +6037,7 @@
       "subtopic": "Common Adjustments",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "When calculating his Alternative Minimum Tax (AMT), David needs to determine which items require adjustments to his regular taxable income. Which of the following is an ADD-BACK (positive adjustment) when calculating Alternative Minimum Tax?\n(A) Charitable contributions (B) State and local income tax deduction (C) Home mortgage interest on acquisition debt (D) Capital gains",
+      "question": "When calculating his Alternative Minimum Tax (AMT), David needs to determine which items require adjustments to his regular taxable income. Which of the following is an ADD-BACK (positive adjustment) when calculating Alternative Minimum Tax?",
       "explanation": "State and local taxes (SALT), including income and property taxes, are not deductible for AMT purposes and must be added back. Charitable contributions and mortgage interest on acquisition debt are generally allowed for AMT.",
       "correctAnswer": 1,
       "options": [
@@ -6072,7 +6072,7 @@
       "subtopic": "Child Tax Credit",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Johnson family is reviewing the requirements for claiming the Child Tax Credit for their dependent children in 2026. The Child Tax Credit for 2026 is available for qualifying children under what age?\n(A) Under age 16 (B) Under age 17 (C) Under age 18 (D) Under age 19",
+      "question": "The Johnson family is reviewing the requirements for claiming the Child Tax Credit for their dependent children in 2026. The Child Tax Credit for 2026 is available for qualifying children under what age?",
       "explanation": "The Child Tax Credit applies to qualifying children under age 17 at the end of the tax year. The child must also meet relationship, residency, support, and citizenship tests.",
       "correctAnswer": 1,
       "options": [
@@ -6142,7 +6142,7 @@
       "subtopic": "Material Participation",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Lisa is trying to determine if she materially participated in her rental real estate activity this year. Which test does NOT establish material participation in an activity?\n(A) More than 500 hours of participation during the year (B) Substantially all participation in the activity (C) Ownership of more than 50% of the activity (D) More than 100 hours and not less than any other individual",
+      "question": "Lisa is trying to determine if she materially participated in her rental real estate activity this year. Which test does NOT establish material participation in an activity?",
       "explanation": "Ownership percentage alone does not establish material participation. The 7 tests focus on hours and nature of participation (500+ hours, substantially all participation, 100+ hours greater than others, etc.).",
       "correctAnswer": 2,
       "options": [
@@ -7335,7 +7335,7 @@
       "subtopic": "Post-TCJA Sunset",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Tax Cuts and Jobs Act (TCJA) significantly increased the federal gift and estate tax exemption. What happens to the federal gift and estate tax exemption when the TCJA provisions sunset after December 31, 2025?\nA) It remains at approximately $13 million (adjusted for inflation).\nB) It drops to approximately $7 million (adjusted for inflation).\nC) It increases to $15 million.\nD) It is eliminated entirely.",
+      "question": "The Tax Cuts and Jobs Act (TCJA) significantly increased the federal gift and estate tax exemption. What happens to the federal gift and estate tax exemption when the TCJA provisions sunset after December 31, 2025?",
       "explanation": "The TCJA doubled the exemption through 2025. After sunset, it reverts to the pre-TCJA amount (approximately $5.49 million in 2017) adjusted for inflation, estimated at approximately $7 million for 2026. This creates urgency for large estate planning before 2026.",
       "correctAnswer": 0,
       "options": [
@@ -7370,7 +7370,7 @@
       "subtopic": "Crummey Powers",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The Smiths established an irrevocable life insurance trust (ILIT) to provide liquidity for estate taxes. Why are Crummey withdrawal powers typically included in irrevocable life insurance trusts?\nA) To allow the trustee to pay premiums.\nB) To qualify premium contributions for the annual gift exclusion.\nC) To avoid estate tax inclusion.\nD) To provide beneficiary income.",
+      "question": "The Smiths established an irrevocable life insurance trust (ILIT) to provide liquidity for estate taxes. Why are Crummey withdrawal powers typically included in irrevocable life insurance trusts?",
       "explanation": "Annual gift exclusion requires a present interest (immediate right to use/possess). Trust contributions are future interests (no exclusion). Crummey powers give beneficiaries a temporary right to withdraw contributions, creating a present interest and qualifying for the annual exclusion.",
       "correctAnswer": 0,
       "options": [
@@ -7405,7 +7405,7 @@
       "subtopic": "Qualified Appraisal",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John donated a painting to the local art museum. A qualified appraisal is required for charitable donations of property exceeding what value?\nA) $500\nB) $2,500\nC) $5,000\nD) $10,000",
+      "question": "John donated a painting to the local art museum. A qualified appraisal is required for charitable donations of property exceeding what value?",
       "explanation": "Donations of property (other than cash and publicly traded securities) worth more than $5,000 require a qualified appraisal by a qualified appraiser. Publicly traded securities never require an appraisal regardless of value. Property over $500 requires Form 8283.",
       "correctAnswer": 3,
       "options": [
@@ -7475,7 +7475,7 @@
       "subtopic": "GST Exemption",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Grandma Betty wants to leave assets to her grandchildren, but is concerned about the generation-skipping transfer (GST) tax. What is the GST tax rate, and what exemption applies to it?\nA) 40% flat rate; exemption equals gift/estate exemption.\nB) Progressive rates up to 40%; no exemption.\nC) 35% flat rate; separate $5 million exemption.\nD) 40% flat rate; no exemption available.",
+      "question": "Grandma Betty wants to leave assets to her grandchildren, but is concerned about the generation-skipping transfer (GST) tax. What is the GST tax rate, and what exemption applies to it?",
       "explanation": "GST tax is a flat 40% on transfers to skip persons (grandchildren or below). The GST exemption mirrors the gift/estate exemption (approximately $7 million in 2026 post-TCJA sunset). Exempt transfers multiply through generations without additional transfer tax.",
       "correctAnswer": 2,
       "options": [
@@ -7510,7 +7510,7 @@
       "subtopic": "Income Tax Treatment",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Dr. Lee establishes a grantor charitable lead trust (CLT) that pays income to St. Jude's Children's Hospital for 15 years, with the remainder passing to his children. In a grantor charitable lead trust, who reports the trust income during the 15-year trust term?\nA) The trust files its own return.\nB) The charitable beneficiary.\nC) The grantor.\nD) The remainder beneficiary.",
+      "question": "Dr. Lee establishes a grantor charitable lead trust (CLT) that pays income to St. Jude's Children's Hospital for 15 years, with the remainder passing to his children. In a grantor charitable lead trust, who reports the trust income during the 15-year trust term?",
       "explanation": "In a grantor CLT, the grantor gets an upfront income tax deduction for the present value of the charitable interest. In exchange, the grantor reports all trust income during the term (even amounts paid to charity). A non-grantor CLT provides no upfront deduction but trust income is taxed to the trust.",
       "correctAnswer": 3,
       "options": [
@@ -7615,7 +7615,7 @@
       "subtopic": "Gross vs. Taxable Income",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "To calculate the amount of tax owed, how is taxable income calculated on a federal income tax return?\nA) Gross income minus deductions minus exemptions.\nB) Adjusted gross income minus the greater of standard or itemized deductions.\nC) Gross income minus all expenses.\nD) Total income with no adjustments.",
+      "question": "To calculate the amount of tax owed, how is taxable income calculated on a federal income tax return?",
       "explanation": "Taxable income = AGI minus deductions (greater of standard or itemized). Since 2018, personal exemptions are suspended under TCJA. AGI is calculated by subtracting above-the-line deductions from gross income.",
       "correctAnswer": 1,
       "options": [
@@ -7720,7 +7720,7 @@
       "subtopic": "Ordinary vs. Capital",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Robert sold stock he held for 3 months, realizing a $5,000 gain. Which of the following types of income is taxed at ordinary income rates?\nA) Long-term capital gains from stock sales\nB) Short-term capital gains\nC) Qualified dividends\nD) Gains on collectibles held over one year",
+      "question": "Robert sold stock he held for 3 months, realizing a $5,000 gain. Which of the following types of income is taxed at ordinary income rates?",
       "explanation": "Short-term capital gains (assets held one year or less) are taxed at ordinary income rates. Long-term capital gains and qualified dividends receive preferential rates (0%, 15%, or 20%). Collectibles held over one year are capped at 28% but not at ordinary rates.",
       "correctAnswer": 1,
       "options": [
@@ -9157,7 +9157,7 @@
       "subtopic": "Home Office",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Janice runs a small consulting business from her home. She uses a dedicated room solely for work. Using the simplified method, what home office deduction can Janice claim? \n\nA) A flat $500 regardless of office size \nB) $5 per square foot, up to 300 square feet ($1,500 maximum) \nC) Only if they work from home full-time \nD) All home expenses proportionally",
+      "question": "Janice runs a small consulting business from her home. She uses a dedicated room solely for work. Using the simplified method, what home office deduction can Janice claim?",
       "explanation": "The simplified method allows $5/sq ft up to 300 sq ft = $1,500 maximum deduction. Regular method tracks actual expenses (mortgage interest, utilities, depreciation) allocated by office percentage. Both require exclusive and regular use. Employees cannot deduct home office under TCJA (through 2025).",
       "correctAnswer": 1,
       "options": [
@@ -9192,7 +9192,7 @@
       "subtopic": "Reasonable Compensation",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Dr. Lee is the sole owner and employee of Lee Medical, an S corporation. He takes a small salary and large distributions. Why must Dr. Lee pay himself \"reasonable compensation\"?\n\nA) The IRS requires equal salary and distributions\nB) Salary is subject to employment taxes while distributions are not\nC) S corps cannot pay distributions\nD) It maximizes tax savings",
+      "question": "Dr. Lee is the sole owner and employee of Lee Medical, an S corporation. He takes a small salary and large distributions. Why must Dr. Lee pay himself \"reasonable compensation\"?",
       "explanation": "S corp owners can receive both salary (subject to payroll taxes) and distributions (not subject to payroll tax). The IRS requires reasonable compensation before taking distributions to prevent avoiding FICA taxes. What\\'s \"reasonable\" depends on industry, role, company performance, and comparable wages.",
       "correctAnswer": 1,
       "options": [
@@ -9227,7 +9227,7 @@
       "subtopic": "Hobby Loss",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark started a woodworking business 4 years ago. He had losses in the first 3 years but a profit in the current year. An activity is presumed to be a for-profit business if it shows profit in:\n\nA) 3 of the past 5 years (2 of 7 for horse activities)\nB) Every year since inception\nC) Any single year of operation\nD) 1 of the past 3 years",
+      "question": "Mark started a woodworking business 4 years ago. He had losses in the first 3 years but a profit in the current year. An activity is presumed to be a for-profit business if it shows profit in:",
       "explanation": "The safe harbor presumes profit motive if the activity is profitable 3 of 5 years (2 of 7 for horses). Without profit motive, hobby expenses are not deductible. Nine factors determine profit intent: manner of operation, expertise, time invested, income/assets, success record, history, and personal pleasure element.",
       "correctAnswer": 0,
       "options": [
@@ -9262,7 +9262,7 @@
       "subtopic": "Passive Activity",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The Smiths have passive losses from a rental property. Under what condition can they deduct up to $25,000 of these losses?\n\nA) They materially participate for 500+ hours\nB) The property is their primary residence\nC) They actively participate in rental activities and have AGI under $100,000 (phaseout to $150,000)\nD) They are real estate professionals",
+      "question": "The Smiths have passive losses from a rental property. Under what condition can they deduct up to $25,000 of these losses?",
       "explanation": "Active participation (lower standard than material participation) in rental real estate allows up to $25,000 of losses against non-passive income. This phases out between $100K-$150K AGI. Real estate professionals meeting 750-hour rules can treat rentals as non-passive. Otherwise, passive losses offset only passive income.",
       "correctAnswer": 2,
       "options": [
@@ -9297,7 +9297,7 @@
       "subtopic": "Constructive Receipt",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John received a bonus from his employer on Dec 28th, Year 1, but chose not to deposit the check until Jan 2nd, Year 2. According to the doctrine of constructive receipt:\n\nA) Income is taxed only when physically received\nB) Only cash income is taxable\nC) Income can be deferred indefinitely\nD) Income is taxable when available to the taxpayer without substantial restrictions, even if not yet received",
+      "question": "John received a bonus from his employer on Dec 28th, Year 1, but chose not to deposit the check until Jan 2nd, Year 2. According to the doctrine of constructive receipt:",
       "explanation": "Constructive receipt taxes income when the taxpayer has an unrestricted right to receive it, regardless of actual receipt. Deferral elections (like 401(k) contributions) must occur before the income is earned. A year-end bonus available but not cashed until January is still taxable in the prior year.",
       "correctAnswer": 3,
       "options": [
@@ -9332,7 +9332,7 @@
       "subtopic": "Original Issue Discount",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah purchased a bond at a discount when it was originally issued. The difference between the purchase price and the face value is OID. How is OID taxed?\n\nA) Is taxed only at maturity\nB) Creates a capital gain\nC) Is tax-exempt\nD) Is accrued and taxed annually as interest income, even though not received until maturity",
+      "question": "Sarah purchased a bond at a discount when it was originally issued. The difference between the purchase price and the face value is OID. How is OID taxed?",
       "explanation": "OID is the difference between a bond\\'s issue price and face value when issued below par. For taxable bonds, OID is treated as interest income accruing over the bond\\'s life (phantom income). This creates tax on unreceived income. The basis increases by accrued OID. Tax-exempt OID on municipal bonds is not currently taxable.",
       "correctAnswer": 3,
       "options": [
@@ -9367,7 +9367,7 @@
       "subtopic": "Section 121 Exclusion",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers sold their primary residence for a substantial profit. What are the requirements to qualify for the Section 121 home sale exclusion?\n\nA) Sale to a non-related party only\nB) Living in the home for 5 continuous years\nC) Never having claimed the exclusion before\nD) Ownership and use as primary residence for 2 of the prior 5 years (not necessarily continuous)",
+      "question": "The Millers sold their primary residence for a substantial profit. What are the requirements to qualify for the Section 121 home sale exclusion?",
       "explanation": "Section 121 excludes up to $250,000 ($500,000 MFJ) of gain on home sale when the ownership and use tests are met: owned and lived in as primary residence for 2 of the 5 years preceding sale. The 2 years need not be continuous. Generally can\\'t have used the exclusion in the prior 2 years.",
       "correctAnswer": 3,
       "options": [
@@ -9402,7 +9402,7 @@
       "subtopic": "Medical Expenses",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Johnsons have significant medical expenses this year. To what extent are medical expenses deductible on Schedule A?\n\nA) 2% of AGI\nB) 10% of AGI\nC) $1,000\nD) 7.5% of AGI",
+      "question": "The Johnsons have significant medical expenses this year. To what extent are medical expenses deductible on Schedule A?",
       "explanation": "Unreimbursed medical expenses exceeding 7.5% of AGI are deductible as an itemized deduction. Qualifying expenses include doctors, hospitals, prescriptions, dental, vision, insurance premiums (not pre-tax), long-term care (limited), travel for medical care (at standard mileage rate), and medically necessary equipment.",
       "correctAnswer": 3,
       "options": [
@@ -10909,7 +10909,7 @@
       "subtopic": "General Business Credit",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions, a growing manufacturing firm, utilizes several tax credits to offset its tax liability. The company's CFO is reviewing available credits. The General Business Credit:\n(A) Is only for corporations\n(B) Has no limitation\n(C) Is a single credit with one calculation\n(D) Combines multiple business credits into one limitation, with carryback and carryforward provisions",
+      "question": "GreenTech Solutions, a growing manufacturing firm, utilizes several tax credits to offset its tax liability. The company's CFO is reviewing available credits. The General Business Credit:",
       "explanation": "The GBC combines work opportunity, research, disabled access, low-income housing, and other credits. It\\'s limited to net income tax minus 25% of tax exceeding $25,000. Unused credits generally carry back 1 year and forward 20 years (varies by component). Different ordering rules apply to components.",
       "correctAnswer": 3,
       "options": [
@@ -10944,7 +10944,7 @@
       "subtopic": "Innocent Spouse Relief",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark and Susan filed jointly for several years. Susan handled the finances and failed to report substantial income. Mark was unaware. They are now divorced. Innocent spouse relief may be available when:\n(A) Less than $10,000 is owed\n(B) The couple is still married\n(C) Both spouses knew about unreported income\n(D) A spouse didn't know, and it would be unfair to hold them liable",
+      "question": "Mark and Susan filed jointly for several years. Susan handled the finances and failed to report substantial income. Mark was unaware. They are now divorced. Innocent spouse relief may be available when:",
       "explanation": "Innocent spouse relief (IRC 6015) separates one spouse from liability when the other created the tax problem unknowingly. Requirements include: joint return filed, understatement due to erroneous items of the other spouse, didn\\'t know and had no reason to know, and it\\'s inequitable to hold liable. Separation of liability is an alternative.",
       "correctAnswer": 3,
       "options": [
@@ -10979,7 +10979,7 @@
       "subtopic": "Assignment of Income",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Dr. Anya Sharma, a successful surgeon, gifted her stock portfolio to her daughter, but continues to receive the dividends. The assignment of income doctrine means that:\n(A) Income can be freely shifted to any taxpayer\n(B) Employers assign income amounts\n(C) Income is taxed to the person who earns it or owns the income-producing property, regardless of who receives payment\n(D) Family income is always split equally",
+      "question": "Dr. Anya Sharma, a successful surgeon, gifted her stock portfolio to her daughter, but continues to receive the dividends. The assignment of income doctrine means that:",
       "explanation": "Assignment of income prevents tax avoidance through income shifting. You can\\'t assign earned income to a lower-bracket family member—it\\'s taxed to the earner. Property income is taxed to the owner. To shift income, you must transfer the underlying property. Lucas v. Earl and Helvering v. Horst are landmark cases.",
       "correctAnswer": 2,
       "options": [
@@ -11014,7 +11014,7 @@
       "subtopic": "Community Property",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John and Maria reside in Texas, a community property state. John earns $150,000 per year, while Maria is a homemaker. In community property states, income earned during marriage:\n(A) Is always taxed separately\n(B) Belongs entirely to the earner\n(C) Is generally owned equally by both spouses regardless of who earned it\n(D) Goes to the higher earner",
+      "question": "John and Maria reside in Texas, a community property state. John earns $150,000 per year, while Maria is a homemaker. In community property states, income earned during marriage:",
       "explanation": "Community property states (CA, TX, WA, etc.): earnings and property acquired during marriage are owned 50/50. This affects taxation (especially on MFS returns), estate planning (automatic 50% ownership), and divorce (equal division). Separate property (pre-marriage, inheritance, gifts) remains individually owned.",
       "correctAnswer": 2,
       "options": [
@@ -11049,7 +11049,7 @@
       "subtopic": "Constructive Receipt",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah received a bonus from her employer on December 28th, but the check was not mailed to her until January 2nd. Constructive receipt means income is taxable when:\n(A) The taxpayer has an unrestricted right to receive it, even if not actually received\n(B) Payment is in hand\n(C) The employer reports it\n(D) The tax return is filed",
+      "question": "Sarah received a bonus from her employer on December 28th, but the check was not mailed to her until January 2nd. Constructive receipt means income is taxable when:",
       "explanation": "Constructive receipt: income is taxable when available without substantial limitations, not when actually received. A year-end bonus available December 31 but not picked up until January is December income. \"Substantial limitations\" (risk of forfeiture, not yet earned) can defer recognition.",
       "correctAnswer": 0,
       "options": [
@@ -11084,7 +11084,7 @@
       "subtopic": "Home Office Deduction",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David is an employee of Apex Marketing. He uses a portion of his home exclusively and regularly for work. The home office deduction for employees after TCJA:\n(A) Remains fully deductible\n(B) Is eliminated for employees (2018-2025); self-employed can still deduct based on exclusive, regular business use\n(C) Only applies to renters\n(D) Increased significantly",
+      "question": "David is an employee of Apex Marketing. He uses a portion of his home exclusively and regularly for work. The home office deduction for employees after TCJA:",
       "explanation": "TCJA eliminated the employee home office deduction through 2025 (unreimbursed employee expenses formerly under miscellaneous itemized deductions). Self-employed can still deduct using simplified method ($5/sq ft, max 300 sq ft) or actual expense proration. Space must be exclusively and regularly used for business.",
       "correctAnswer": 1,
       "options": [
@@ -11119,7 +11119,7 @@
       "subtopic": "Business Meals",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Lisa, a consultant, took a client to lunch to discuss a potential project. The bill was $75, and she kept detailed records. The general deductibility of business meals is:\n(A) Only deductible for entertainment\n(B) 50% deductible when directly related to or associated with business, with documentation required\n(C) 100% deductible\n(D) Not deductible at all",
+      "question": "Lisa, a consultant, took a client to lunch to discuss a potential project. The bill was $75, and she kept detailed records. The general deductibility of business meals is:",
       "explanation": "Business meals: 50% deductible (temporary 100% for restaurant meals 2021-2022 has expired). Requirements: ordinary and necessary expense, not lavish, taxpayer or employee present, substantiation (amount, date, place, business purpose, relationship). Entertainment expenses are generally not deductible post-TCJA.",
       "correctAnswer": 1,
       "options": [
@@ -11154,7 +11154,7 @@
       "subtopic": "Child and Dependent Care Credit",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers pay for daycare for their two young children so they can both work. Their AGI is $60,000. The child and dependent care credit:\n(A) Covers care expenses enabling work, with credit rate phasing from 35% to 20% based on income, on limited expenses ($3K one/$6K two+)\n(B) Only applies to children under 5\n(C) Is refundable for all taxpayers\n(D) Has no income limits",
+      "question": "The Millers pay for daycare for their two young children so they can both work. Their AGI is $60,000. The child and dependent care credit:",
       "explanation": "Credit for care enabling work: qualifying child under 13 or disabled dependent/spouse. Expenses limited to $3K (one) or $6K (two+). Credit rate: 35% for AGI ≤$15K, phasing to 20% at $43K+. Must have earned income (lower-earning spouse\\'s income if married). Generally non-refundable. Coordinate with FSA to maximize benefit.",
       "correctAnswer": 0,
       "options": [

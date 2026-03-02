@@ -1168,7 +1168,7 @@
       "subtopic": "IRR Interpretation",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Sarah is considering investing in a new project at her company, TechForward Solutions. The project has an IRR of 12%. Sarah's required rate of return is 10%. The investment:\n(A) Has a negative NPV\n(B) Should be rejected since IRR exceeds the requirement\n(C) Should be accepted since IRR exceeds the required return\n(D) Cannot be evaluated without more information",
+      "question": "Sarah is considering investing in a new project at her company, TechForward Solutions. The project has an IRR of 12%. Sarah's required rate of return is 10%. The investment:",
       "explanation": "**IRR Decision Rule:**\\n\\nIf IRR > Required Return: **Accept**\\nIf IRR < Required Return: **Reject**\\n\\nHere: 12% IRR > 10% Required = **Accept**\\n\\nThe IRR is the discount rate that makes NPV = 0. Since the project returns 12% and only 10% is required, the project adds value. At a 10% discount rate, this investment would have a positive NPV.",
       "correctAnswer": 2,
       "options": [
@@ -1203,7 +1203,7 @@
       "subtopic": "Credit Scores",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is trying to improve her credit score before applying for a mortgage. Which factor has the GREATEST weight in FICO credit score calculation?\n(A) New credit inquiries\n(B) Credit utilization ratio\n(C) Payment history\n(D) Length of credit history",
+      "question": "Maria is trying to improve her credit score before applying for a mortgage. Which factor has the GREATEST weight in FICO credit score calculation?",
       "explanation": "**FICO Score Weights:**\\n\\n| Factor | Weight |\\n|--------|--------|\\n| Payment History | **35%** |\\n| Credit Utilization | 30% |\\n| Length of Credit History | 15% |\\n| Credit Mix | 10% |\\n| New Credit | 10% |\\n\\nPayment history is most important—paying on time consistently is the single best thing clients can do for their scores. A single late payment can drop scores significantly, especially if credit history is otherwise thin.",
       "correctAnswer": 2,
       "options": [
@@ -1238,7 +1238,7 @@
       "subtopic": "Coverdell ESA",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Jacksons want to save for their child's education. A Coverdell Education Savings Account (ESA) differs from a 529 plan in that it:\n(A) Has no income limits for contributors\n(B) Can pay for K-12 private school expenses\n(C) Has a higher annual contribution limit\n(D) Provides a state tax deduction",
+      "question": "The Jacksons want to save for their child's education. A Coverdell Education Savings Account (ESA) differs from a 529 plan in that it:",
       "explanation": "**Coverdell ESA Features:**\\n\\n- **K-12 Expenses**: Can pay for elementary and secondary school costs (529s now can too, up to $10K/year)\\n- **Contribution Limit**: Only $2,000/year (much lower than 529)\\n- **Income Limits**: Contributions phase out at higher incomes\\n- **Investment Control**: More investment flexibility than most 529s\\n\\nThe key distinction is Coverdell's broader definition of qualified expenses including computers, tutoring, and uniforms for K-12.",
       "correctAnswer": 1,
       "options": [
@@ -1273,7 +1273,7 @@
       "subtopic": "Leading Indicators",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is monitoring the overall health of the economy to advise their clients. Which of the following is a LEADING economic indicator?\n(A) GDP\n(B) Consumer Price Index (CPI)\n(C) Unemployment rate\n(D) Building permits",
+      "question": "Chen & Associates is monitoring the overall health of the economy to advise their clients. Which of the following is a LEADING economic indicator?",
       "explanation": "**Economic Indicator Classification:**\\n\\n**Leading (Predict Future):**\\n- Building permits ✓\\n- Stock market\\n- Initial jobless claims\\n- Consumer expectations\\n\\n**Lagging (Confirm Trends):**\\n- Unemployment rate\\n- CPI/Inflation\\n- Corporate profits\\n\\n**Coincident (Current State):**\\n- GDP\\n- Industrial production\\n\\nBuilding permits signal future construction activity and economic growth. They rise before economic expansions and fall before contractions.",
       "correctAnswer": 3,
       "options": [
@@ -1413,7 +1413,7 @@
       "subtopic": "Bankruptcy",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John filed for Chapter 7 bankruptcy after a business failure. Under Chapter 7 bankruptcy, which asset is typically PROTECTED from creditors?\n(A) Qualified retirement plan assets\n(B) Vacation home\n(C) Investment real estate\n(D) Non-exempt cash above state limits",
+      "question": "John filed for Chapter 7 bankruptcy after a business failure. Under Chapter 7 bankruptcy, which asset is typically PROTECTED from creditors?",
       "explanation": "**Bankruptcy Asset Protection:**\\n\\n**Protected (Exempt):**\\n- ERISA-qualified retirement plans ✓ (unlimited federal protection)\\n- IRAs (up to ~$1.5M under federal law)\\n- Primary residence (varies by state homestead exemption)\\n- Basic personal property\\n\\n**Not Protected:**\\n- Vacation/investment real estate\\n- Non-exempt cash/investments\\n- Luxury items\\n\\nERISA provides federal protection for 401(k)s, pensions, and similar plans. This is why retirement accounts should generally not be invaded to pay debts.",
       "correctAnswer": 0,
       "options": [
@@ -1483,7 +1483,7 @@
       "subtopic": "Regulatory Environment",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The CFPB is investigating complaints against several financial institutions. The Consumer Financial Protection Bureau (CFPB) has regulatory authority over:\n(A) Investment advisers and broker-dealers\n(B) Retirement plan administration\n(C) Consumer financial products including mortgages and credit cards\n(D) Insurance products and annuities",
+      "question": "The CFPB is investigating complaints against several financial institutions. The Consumer Financial Protection Bureau (CFPB) has regulatory authority over:",
       "explanation": "**CFPB Jurisdiction:**\\n\\n**Regulated by CFPB:**\\n- Mortgages ✓\\n- Credit cards ✓\\n- Student loans\\n- Payday loans\\n- Consumer banking\\n\\n**NOT Regulated by CFPB:**\\n- Investment advisers (SEC/State)\\n- Broker-dealers (SEC/FINRA)\\n- Insurance (State regulators)\\n- Retirement plans (DOL for ERISA)\\n\\nThe CFPB, created by Dodd-Frank in 2010, focuses on protecting consumers in the financial marketplace for credit and payment products.",
       "correctAnswer": 2,
       "options": [
@@ -1518,7 +1518,7 @@
       "subtopic": "Client Goals",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "During a financial planning session, Susan is helping her client set financial goals. SMART goal criteria include all EXCEPT:\n(A) Specific\n(B) Time-bound\n(C) Measurable\n(D) Arbitrary",
+      "question": "During a financial planning session, Susan is helping her client set financial goals. SMART goal criteria include all EXCEPT:",
       "explanation": "**SMART Goals:**\\n- **S**pecific\\n- **M**easurable\\n- **A**chievable (not Arbitrary)\\n- **R**ealistic/Relevant\\n- **T**ime-bound\\n\\nArbitrary is the opposite of what SMART goals should be. Goals should be carefully defined, not random.",
       "correctAnswer": 3,
       "options": [
@@ -1553,7 +1553,7 @@
       "subtopic": "Present Value",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "What is the present value of $10,000 to be received in 5 years at 8% annual interest?\n(A) $14,693\n(B) $6,209\n(C) $6,806\n(D) $8,000",
+      "question": "What is the present value of $10,000 to be received in 5 years at 8% annual interest?",
       "explanation": "**Present Value Calculation:**\\n\\nPV = FV / (1 + r)^n\\nPV = $10,000 / (1.08)^5\\nPV = $10,000 / 1.4693\\nPV = $6,806\\n\\nThe $10,000 future value discounted at 8% for 5 years equals $6,806 today.",
       "correctAnswer": 2,
       "options": [
@@ -3480,7 +3480,7 @@
       "subtopic": "Housing Ratios",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Millers are applying for a mortgage. Their gross monthly income is $8,000. Their proposed monthly mortgage payment is $2,000, including principal, interest, taxes, and insurance (PITI). The front-end housing ratio (housing debt ratio) used in mortgage qualification:\n(A) Uses net income\n(B) Includes all debt payments\n(C) Measures 50% of income\n(D) Is principal, interest, taxes, and insurance (PITI) divided by gross monthly income, typically limited to 28%",
+      "question": "The Millers are applying for a mortgage. Their gross monthly income is $8,000. Their proposed monthly mortgage payment is $2,000, including principal, interest, taxes, and insurance (PITI). The front-end housing ratio (housing debt ratio) used in mortgage qualification:",
       "explanation": "Front-end ratio: PITI / Gross monthly income. Standard limit: 28% (some programs higher). Components: mortgage principal + interest, property taxes, homeowners insurance, HOA fees, PMI if applicable. Back-end ratio: adds all debt payments (front-end + car, student loans, credit cards). Typical limit: 36-43% depending on loan type. Guidelines—exceptions exist.",
       "correctAnswer": 3,
       "options": [
@@ -3515,7 +3515,7 @@
       "subtopic": "Internal Rate of Return",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "GreenTech Ventures is evaluating a potential investment in a solar energy project. The project requires an initial investment of $500,000 and is projected to generate cash flows over the next 10 years. The internal rate of return (IRR) represents:\n(A) Return on initial investment\n(B) Average annual return\n(C) Simple interest rate\n(D) The discount rate that makes net present value of all cash flows equal to zero",
+      "question": "GreenTech Ventures is evaluating a potential investment in a solar energy project. The project requires an initial investment of $500,000 and is projected to generate cash flows over the next 10 years. The internal rate of return (IRR) represents:",
       "explanation": "IRR: rate where NPV = 0. Measures: return on invested capital considering all cash flows and timing. Calculation: iterative (calculators/software). Uses: compare investments with different cash flow patterns. Limitations: assumes reinvestment at IRR (may be unrealistic), multiple solutions possible with unconventional cash flows. Compare to opportunity cost or required return.",
       "correctAnswer": 3,
       "options": [
@@ -3550,7 +3550,7 @@
       "subtopic": "Effective Annual Rate",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah is comparing two different savings accounts. Account A offers an annual interest rate of 5% compounded monthly, while Account B offers 5.1% compounded annually. The effective annual rate (EAR) accounts for:\n(A) Simple interest only\n(B) Inflation adjustments\n(C) Tax effects\n(D) The impact of compounding frequency on the true annual return, making rates with different compounding comparable",
+      "question": "Sarah is comparing two different savings accounts. Account A offers an annual interest rate of 5% compounded monthly, while Account B offers 5.1% compounded annually. The effective annual rate (EAR) accounts for:",
       "explanation": "EAR: true annual rate accounting for compounding. Formula: EAR = (1 + i/n)^n - 1, where i = nominal rate, n = compounding periods. Example: 12% compounded monthly = (1 + 0.12/12)^12 - 1 = 12.68% EAR. Use: comparing accounts/loans with different compounding. APR vs. APY: APY is essentially EAR. More compounding = higher effective rate.",
       "correctAnswer": 3,
       "options": [
@@ -3585,7 +3585,7 @@
       "subtopic": "Annuity Due",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John is deciding between two retirement savings plans. Plan A is an ordinary annuity, while Plan B is an annuity due. Both plans offer the same interest rate and payment amount. An annuity due differs from an ordinary annuity in that:\n(A) It has variable payments\n(B) It lasts longer\n(C) It pays less total\n(D) Payments occur at the beginning of each period rather than the end, resulting in higher present and future values",
+      "question": "John is deciding between two retirement savings plans. Plan A is an ordinary annuity, while Plan B is an annuity due. Both plans offer the same interest rate and payment amount. An annuity due differs from an ordinary annuity in that:",
       "explanation": "Annuity due: payments at period beginning. Ordinary: payments at period end. Annuity due values: multiply ordinary annuity value by (1 + r). Higher PV and FV because each payment has more time to earn/less time discounted. Examples: rent, insurance premiums (typically annuity due). Most investments assume ordinary annuity. Calculator setting: BGN vs. END mode.",
       "correctAnswer": 3,
       "options": [
@@ -3620,7 +3620,7 @@
       "subtopic": "Leading Economic Indicators",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Investments uses economic indicators to forecast market trends. They are currently analyzing various data points to predict the direction of the economy. Leading economic indicators include:\n(A) Only unemployment rate\n(B) GDP and employment\n(C) Consumer spending only\n(D) Building permits, stock prices, and manufacturing new orders, which tend to change before the overall economy",
+      "question": "Apex Investments uses economic indicators to forecast market trends. They are currently analyzing various data points to predict the direction of the economy. Leading economic indicators include:",
       "explanation": "Leading indicators: change before economy. Examples: building permits, stock market, manufacturing new orders, consumer expectations, jobless claims, credit conditions. Coincident: change with economy (employment, production). Lagging: change after (unemployment rate, loan delinquencies). Conference Board publishes composite index. Use: anticipate economic turns, not perfect prediction.",
       "correctAnswer": 3,
       "options": [
@@ -3655,7 +3655,7 @@
       "subtopic": "Interest Rate Structure",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "An investor is considering purchasing a 10-year Treasury bond. They are aware that the yield curve is currently upward sloping. The term structure of interest rates (yield curve) typically slopes upward because:\n(A) Short-term rates are controlled\n(B) Inflation is always expected\n(C) Longer-term bonds are always safer\n(D) Investors demand higher yields for longer maturities due to greater interest rate risk and liquidity preference",
+      "question": "An investor is considering purchasing a 10-year Treasury bond. They are aware that the yield curve is currently upward sloping. The term structure of interest rates (yield curve) typically slopes upward because:",
       "explanation": "Normal yield curve: longer maturities = higher yields. Reasons: interest rate risk (longer duration = more price sensitivity), liquidity preference (investors prefer shorter, demand premium for longer), inflation uncertainty. Inverted curve: short > long (often signals recession). Flat: similar across maturities. Shape: has predictive value for economy and rate expectations.",
       "correctAnswer": 3,
       "options": [
@@ -3690,7 +3690,7 @@
       "subtopic": "Federal Reserve Tools",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Federal Reserve is concerned about rising inflation and wants to slow down economic growth. The Federal Reserve influences monetary conditions primarily through:\n(A) Fiscal policy\n(B) Tax policy\n(C) Direct interest rate setting\n(D) Open market operations, federal funds rate target, and reserve requirements",
+      "question": "The Federal Reserve is concerned about rising inflation and wants to slow down economic growth. The Federal Reserve influences monetary conditions primarily through:",
       "explanation": "Fed tools: Open market operations (buy/sell Treasuries—most used), fed funds rate target (sets short-term rate expectations), reserve requirements (rarely changed), discount rate, quantitative easing/tightening. Expansionary: lower rates, buy securities. Contractionary: raise rates, sell securities. Goals: price stability, maximum employment. Monetary policy—different from fiscal (government spending/taxes).",
       "correctAnswer": 3,
       "options": [
@@ -3725,7 +3725,7 @@
       "subtopic": "Emergency Fund Location",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "The Garcia family wants to establish an emergency fund to cover unexpected expenses. They want to ensure the funds are readily available when needed. Emergency funds should ideally be held in accounts that are:\n(A) Invested for maximum growth\n(B) In retirement accounts\n(C) Locked up for one year\n(D) Liquid, stable in value, and accessible without penalty, such as high-yield savings or money market",
+      "question": "The Garcia family wants to establish an emergency fund to cover unexpected expenses. They want to ensure the funds are readily available when needed. Emergency funds should ideally be held in accounts that are:",
       "explanation": "Emergency fund characteristics: liquid (access within days), stable (no market risk), accessible (no penalty). Options: high-yield savings, money market accounts, short-term CDs with no-penalty option, I-Bonds (after 1-year holding). Not stocks (volatile), not retirement accounts (penalties/taxes). Balance: enough return to maintain purchasing power, primary goal is availability.",
       "correctAnswer": 3,
       "options": [
@@ -3760,7 +3760,7 @@
       "subtopic": "Goal Prioritization",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers have several financial goals, including retirement, college savings for their children, and a down payment on a vacation home. However, their current income may not fully fund all goals. When prioritizing, the Millers should consider which of the following?\nA) Only short-term goals\nB) Highest return goals first\nC) Ignore some goals entirely\nD) Time sensitivity, flexibility, consequences of not meeting goal, and which goals provide foundation for others",
+      "question": "The Millers have several financial goals, including retirement, college savings for their children, and a down payment on a vacation home. However, their current income may not fully fund all goals. When prioritizing, the Millers should consider which of the following?",
       "explanation": "Prioritization factors: time sensitivity (can\\'t defer some), flexibility (can adjust some goals), impact of not meeting (essential vs. nice-to-have), foundational nature (emergency fund enables other goals). Framework: needs (essentials) → wants (lifestyle) → wishes (nice if possible). Client values matter—not just planner preference. Iterative—revisit as circumstances change.",
       "correctAnswer": 3,
       "options": [
@@ -3795,7 +3795,7 @@
       "subtopic": "Client Feedback",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Sarah hired Chen & Associates for financial planning. After the initial plan presentation, Sarah expressed concerns about the proposed asset allocation. Incorporating Sarah's feedback into the planning process:\nA) Is optional\nB) Slows down planning\nC) Is only for complaints\nD) Ensures recommendations align with client preferences and increases likelihood of implementation",
+      "question": "Sarah hired Chen & Associates for financial planning. After the initial plan presentation, Sarah expressed concerns about the proposed asset allocation. Incorporating Sarah's feedback into the planning process:",
       "explanation": "Client feedback value: confirms understanding, surfaces concerns, improves recommendations, builds buy-in. When to seek: after presenting options, during implementation planning, in ongoing monitoring. Methods: direct questions, satisfaction surveys, review meetings. Act on feedback—clients want to be heard. Iterative process leads to better outcomes. Builds relationship.",
       "correctAnswer": 3,
       "options": [
@@ -3830,7 +3830,7 @@
       "subtopic": "Net Worth Trends",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "John has been diligently tracking his net worth for the past 5 years. He reviews it quarterly. Tracking net worth over time reveals:\nA) Only current position\nB) Tax obligations\nC) Income changes only\nD) Progress toward goals, impact of savings habits, and overall financial trajectory",
+      "question": "John has been diligently tracking his net worth for the past 5 years. He reviews it quarterly. Tracking net worth over time reveals:",
       "explanation": "Net worth tracking: snapshot → trend. Reveals: accumulation rate, debt reduction progress, investment growth, spending pattern impact. Calculate: at least annually, ideally quarterly. Components: what\\'s growing/declining? Benchmarks: age-based targets, goal-based requirements. More meaningful than income alone. Motivating when heading right direction.",
       "correctAnswer": 3,
       "options": [
@@ -3865,7 +3865,7 @@
       "subtopic": "Serial Payments",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria receives annual payments that increase by 3% each year. Her initial payment was $10,000. These payments will continue for the next 10 years. Serial payments (payments growing at a constant rate each period):\nA) Only increase with inflation\nB) Are same as level payments\nC) Cannot be calculated\nD) Require growing annuity formulas that account for both time value and growth rate",
+      "question": "Maria receives annual payments that increase by 3% each year. Her initial payment was $10,000. These payments will continue for the next 10 years. Serial payments (payments growing at a constant rate each period):",
       "explanation": "Growing (serial) payments: increase each period at fixed rate. Example: retirement income increasing 3% for inflation. Formula: involves relationship between growth rate (g) and discount rate (r). PV = PMT / (r - g) for simple growing perpetuity. Finite: more complex. Financial calculators: may not have built-in; use spreadsheets. Common in retirement planning with inflation adjustments.",
       "correctAnswer": 3,
       "options": [
@@ -3900,7 +3900,7 @@
       "subtopic": "Consumer Confidence",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC is closely monitoring the economic outlook. They are particularly interested in understanding how consumers feel about the economy. Consumer confidence indicators measure:\nA) Government policy impact\nB) Only business outlook\nC) Actual spending amounts\nD) Consumer sentiment about current and future economic conditions, which often predicts spending behavior",
+      "question": "Vista Healthcare LLC is closely monitoring the economic outlook. They are particularly interested in understanding how consumers feel about the economy. Consumer confidence indicators measure:",
       "explanation": "Consumer confidence: survey-based measure of household sentiment. Key surveys: Conference Board (Consumer Confidence Index), University of Michigan (Consumer Sentiment). Components: current conditions, expectations. Why it matters: consumer spending ~70% of GDP. High confidence → more spending, lower saving. Useful for: economic forecasting, retail sector analysis. Monthly data with market impact.",
       "correctAnswer": 3,
       "options": [
@@ -3935,7 +3935,7 @@
       "subtopic": "Debt Management Strategies",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Jacksons have multiple credit card debts with varying interest rates. They want to develop a strategy to pay off their debts as quickly as possible while minimizing the total interest paid. The avalanche method of debt repayment:\nA) Makes minimum payments only\nB) Uses balance transfers exclusively\nC) Pays smallest balances first\nD) Prioritizes debts by interest rate, paying highest-rate debt first to minimize total interest paid",
+      "question": "The Jacksons have multiple credit card debts with varying interest rates. They want to develop a strategy to pay off their debts as quickly as possible while minimizing the total interest paid. The avalanche method of debt repayment:",
       "explanation": "Avalanche method: order by interest rate (highest first). Mathematically optimal—minimizes total interest. Compare to snowball: order by balance (smallest first)—psychological wins motivate. Avalanche: better for disciplined, motivated. Snowball: better if need quick wins for motivation. Hybrid approaches exist. Both: make minimums on all, extra to target debt.",
       "correctAnswer": 3,
       "options": [
@@ -3970,7 +3970,7 @@
       "subtopic": "Review Frequency",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After creating a financial plan for the Smiths, you agree to provide ongoing monitoring and updates. The frequency of financial plan reviews should be:\nA) Only every 5 years\nB) Exactly annual\nC) Only when client requests\nD) Based on engagement terms, with additional reviews triggered by major life changes or market events",
+      "question": "After creating a financial plan for the Smiths, you agree to provide ongoing monitoring and updates. The frequency of financial plan reviews should be:",
       "explanation": "Review cadence: varies by client complexity and engagement. Common: annual comprehensive review. Triggers for interim: major life events (marriage, divorce, job change, inheritance), significant market moves, tax law changes, approaching milestones. Investment-focused: may be quarterly. Comprehensive planning: often annual sufficient unless triggers. Define in engagement. Some clients need more touch points.",
       "correctAnswer": 3,
       "options": [
@@ -4005,7 +4005,7 @@
       "subtopic": "Asset Allocation Review",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During your annual review with the Chans, you are reviewing their personal balance sheet. A personal balance sheet review should examine:\nA) Debt only\nB) Only retirement accounts\nC) Only totals\nD) Asset composition, liquidity, diversification, tax characteristics, and alignment with goals and risk tolerance",
+      "question": "During your annual review with the Chans, you are reviewing their personal balance sheet. A personal balance sheet review should examine:",
       "explanation": "Balance sheet analysis: beyond totals. Asset mix: liquid vs. illiquid, investment vs. personal use. Tax: taxable, tax-deferred, tax-free. Diversification: asset class, sector, geography. Concentration: single stock, real estate heavy? Alignment: matches goals timeline and risk capacity? Debt: interest rates, tax-deductible? Regular review catches drift, maintains appropriate positioning.",
       "correctAnswer": 3,
       "options": [
@@ -8732,7 +8732,7 @@
       "subtopic": "Serial Payment Calculation",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Millers are planning for retirement in 25 years. They anticipate their initial annual income need will be $80,000, growing annually to account for inflation and lifestyle changes. Serial payments are used in retirement planning to:\nA) Model income needs that increase with inflation or lifestyle expectations over time\nB) Avoid time value calculations\nC) Decrease retirement needs\nD) Simplify calculations only",
+      "question": "The Millers are planning for retirement in 25 years. They anticipate their initial annual income need will be $80,000, growing annually to account for inflation and lifestyle changes. Serial payments are used in retirement planning to:",
       "explanation": "Serial payments recognize that retirement expenses typically grow with inflation. A $50,000 need today might be $100,000 in 20 years. Serial payment calculations account for this growth, creating more accurate projections than assuming constant (nominal) payments.",
       "correctAnswer": 0,
       "options": [
@@ -8767,7 +8767,7 @@
       "subtopic": "Interest Rate Effects",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Due to rising inflation, the Federal Reserve is considering adjustments to monetary policy. If the Federal Reserve raises interest rates, which of the following is MOST likely to occur?\nA) Bond prices fall, borrowing costs increase, savings yields improve, and economic growth may slow\nB) Inflation accelerates\nC) Stock prices always increase\nD) Bond prices increase",
+      "question": "Due to rising inflation, the Federal Reserve is considering adjustments to monetary policy. If the Federal Reserve raises interest rates, which of the following is MOST likely to occur?",
       "explanation": "Higher rates: existing bond prices fall (new bonds offer better yields), mortgages and loans cost more (reducing spending/housing), savings accounts pay more (encouraging saving over spending). Intent is often cooling inflation or overheating economy. Effects ripple through all asset classes.",
       "correctAnswer": 0,
       "options": [
@@ -8802,7 +8802,7 @@
       "subtopic": "Emergency Fund",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Sarah is a freelance graphic designer with fluctuating monthly income. She's establishing an emergency fund to cover unexpected expenses. A common guideline for emergency fund sizing is:\nA) Equal to total debt\nB) 3-6 months of essential expenses, with more for variable income or less job security\nC) 10% of annual income\nD) 1 month of expenses",
+      "question": "Sarah is a freelance graphic designer with fluctuating monthly income. She's establishing an emergency fund to cover unexpected expenses. A common guideline for emergency fund sizing is:",
       "explanation": "3-6 months of essential expenses is standard guidance. More stable income, good insurance, and high job security may justify lower amounts. Variable income, single earner, narrow job markets, or higher expenses suggest more. The fund should be liquid (savings, money market) and separate from investment accounts.",
       "correctAnswer": 1,
       "options": [
@@ -8837,7 +8837,7 @@
       "subtopic": "Risk Education",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a financial planning review, you're discussing investment options with your client, John. Educating clients about investment risk should include:\nA) Guaranteeing no losses\nB) Historical volatility, potential for loss, relationship between risk and return, and how time horizon affects risk\nC) Avoiding the topic to prevent anxiety\nD) Only past returns",
+      "question": "During a financial planning review, you're discussing investment options with your client, John. Educating clients about investment risk should include:",
       "explanation": "Risk education prevents unrealistic expectations. Show historical ranges, not just averages. Explain that short-term volatility typically decreases over long periods. Discuss different risks (market, inflation, longevity). Connect risk tolerance to capacity and required return. Educated clients handle volatility better.",
       "correctAnswer": 1,
       "options": [
@@ -8872,7 +8872,7 @@
       "subtopic": "Scope of Engagement",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mariah and David are meeting with a financial planner for the first time. Defining the scope of a financial planning engagement:\nA) Clarifies what services will be provided, responsibilities of each party, and limitations of the engagement\nB) Should always be comprehensive\nC) Only benefits the planner\nD) Is unnecessary for comprehensive planning",
+      "question": "Mariah and David are meeting with a financial planner for the first time. Defining the scope of a financial planning engagement:",
       "explanation": "Scope defines boundaries: comprehensive or focused (retirement only, etc.), planner and client responsibilities, what\\'s included/excluded, fees, and update frequency. This manages expectations, prevents misunderstandings, and ensures appropriate service. Scope can be expanded over time.",
       "correctAnswer": 0,
       "options": [
@@ -8942,7 +8942,7 @@
       "subtopic": "Leading Indicators",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "A client, Robert, will receive the following cash flows: $1,000 in Year 1, $2,000 in Year 2, and $3,000 in Year 3. To value this series of uneven cash flows, you would:\nA) Calculate the present value of each cash flow individually and sum them\nB) Average the cash flows\nC) Use only the largest cash flow\nD) Use the ordinary annuity formula",
+      "question": "A client, Robert, will receive the following cash flows: $1,000 in Year 1, $2,000 in Year 2, and $3,000 in Year 3. To value this series of uneven cash flows, you would:",
       "explanation": "Leading indicators predict future economic activity: stock prices (expectations), building permits (future construction), manufacturing orders, consumer confidence, yield curve. Coincident indicators move with the economy (GDP, employment). Lagging indicators follow (unemployment, inflation). Planners monitor these for economic outlook.",
       "correctAnswer": 2,
       "options": [
@@ -9012,7 +9012,7 @@
       "subtopic": "Ongoing Education",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "When reviewing the current economic environment with a client, examples of economic leading indicators include:\nA) CPI (lagging)\nB) GDP (coincident)\nC) Stock market, building permits, average weekly hours worked, and consumer confidence\nD) Unemployment rate (lagging)",
+      "question": "When reviewing the current economic environment with a client, examples of economic leading indicators include:",
       "explanation": "Education is continuous: new planning topics as life changes, market events requiring context, tax law updates, product explanations. Regular touchpoints educate while demonstrating value. Newsletters, webinars, and review meetings all provide education. Engaged, educated clients are more likely to follow plans.",
       "correctAnswer": 0,
       "options": [
@@ -9327,7 +9327,7 @@
       "subtopic": "Stagflation",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Economist Dr. Anya Sharma is presenting her market outlook to the board of directors at GlobalTech Solutions. She describes a scenario where economic growth is slowing, yet inflation remains stubbornly high. This condition is best described as:\nA) Low unemployment and low prices\nB) Normal conditions\nC) High growth and low inflation\nD) Slow growth/recession combined with high inflation—a challenging combination for policy and investing",
+      "question": "Economist Dr. Anya Sharma is presenting her market outlook to the board of directors at GlobalTech Solutions. She describes a scenario where economic growth is slowing, yet inflation remains stubbornly high. This condition is best described as:",
       "explanation": "Stagflation: stagnant economy + inflation (1970s is classic example). It\\'s problematic because traditional remedies conflict: fighting inflation (raise rates) hurts growth further; stimulating growth (lower rates) worsens inflation. Investments must balance inflation protection with recession resilience—challenging for traditional portfolios.",
       "correctAnswer": 3,
       "options": [
@@ -9362,7 +9362,7 @@
       "subtopic": "Financial Independence Ratio",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria and David Chen are reviewing their personal financial statements with their advisor. They want to understand how close they are to achieving financial independence. Which ratio BEST measures their ability to live without working?\nA) Credit score\nB) Net worth growth rate\nC) Debt payments to income\nD) Investment income (passive) as a percentage of expenses—100% indicates ability to live without working",
+      "question": "Maria and David Chen are reviewing their personal financial statements with their advisor. They want to understand how close they are to achieving financial independence. Which ratio BEST measures their ability to live without working?",
       "explanation": "Financial independence ratio = Investment Income / Expenses. At 100%, passive income covers all expenses—work becomes optional. At 50%, half of expenses are covered by investments. This ratio tracks progress toward financial independence/early retirement. It focuses on income-generating assets and sustainable withdrawal rates.",
       "correctAnswer": 3,
       "options": [
@@ -9397,7 +9397,7 @@
       "subtopic": "Debt-to-Income Ratio",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "The Millers are applying for a mortgage to purchase a new home. The lender is evaluating their ability to repay the loan based on their income and existing debt obligations. The lender will MOST likely use which ratio to assess this?\nA) Net worth to income\nB) Savings to debt\nC) Total assets to total debt\nD) Monthly debt payments (including housing) as a percentage of gross monthly income",
+      "question": "The Millers are applying for a mortgage to purchase a new home. The lender is evaluating their ability to repay the loan based on their income and existing debt obligations. The lender will MOST likely use which ratio to assess this?",
       "explanation": "DTI = Monthly Debt Payments / Gross Monthly Income. Lenders use it for qualification (typically max 36-43% for mortgages). Higher DTI indicates potential cash flow stress. It differs from debt-to-asset ratio (balance sheet measure). Lower DTI provides more financial flexibility and borrowing capacity.",
       "correctAnswer": 3,
       "options": [
@@ -9432,7 +9432,7 @@
       "subtopic": "Fiduciary Standard",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah is a CFP® professional providing financial advice to her client, Mr. Johnson. What standard requires Sarah to act in Mr. Johnson's best interest, even if it means foregoing a higher commission for herself?\nA) Only suitable recommendations\nB) Maximizing advisor compensation\nC) Following employer policies only\nD) Acting in the client's best interest",
+      "question": "Sarah is a CFP® professional providing financial advice to her client, Mr. Johnson. What standard requires Sarah to act in Mr. Johnson's best interest, even if it means foregoing a higher commission for herself?",
       "explanation": "CFP® fiduciary duty means acting in the client\\'s best interest when providing financial advice. This differs from suitability (which only requires recommendations be appropriate, not necessarily best). Fiduciary duty includes: duty of loyalty (client\\'s interests first), duty of care (competent advice), and duty to follow client instructions.",
       "correctAnswer": 3,
       "options": [
@@ -9467,7 +9467,7 @@
       "subtopic": "Securities Licensing",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John wants to provide comprehensive financial advice, including investment recommendations, to clients for a fee. Which license is TYPICALLY required for John to act as an investment adviser representative?\nA) Selling insurance only\nB) Selling variable annuities\nC) Bank employees exclusively\nD) Acting as an investment adviser representative providing advice for compensation",
+      "question": "John wants to provide comprehensive financial advice, including investment recommendations, to clients for a fee. Which license is TYPICALLY required for John to act as an investment adviser representative?",
       "explanation": "Series 65 (Uniform Investment Adviser Law Exam) qualifies individuals as investment adviser representatives (IARs). Required for providing investment advice for compensation. Differs from Series 7 (selling securities) and Series 66 (combines 63 + 65 for those with Series 7). CFP® certification can substitute for Series 65 in some states.",
       "correctAnswer": 3,
       "options": [
@@ -9502,7 +9502,7 @@
       "subtopic": "Goals-Based Planning",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Financial planner, Michael, is working with the Smith family. He starts by understanding their aspirations, such as funding their children's education and retiring comfortably. Michael then tailors his advice and strategies to align with these specific aims. This approach exemplifies:\nA) Ignoring client objectives\nB) Using only generic benchmarks\nC) Only focuses on investment returns\nD) Organizes planning around specific client goals, assigning assets and strategies to each goal based on priority and timeline",
+      "question": "Financial planner, Michael, is working with the Smith family. He starts by understanding their aspirations, such as funding their children's education and retiring comfortably. Michael then tailors his advice and strategies to align with these specific aims. This approach exemplifies:",
       "explanation": "Goals-based planning prioritizes client objectives over abstract metrics. Each goal (retirement, education, travel) has its own time horizon, priority, and funding strategy. This approach is more intuitive for clients than traditional portfolio focus. Mental accounting, while technically \"irrational,\" can help clients stay committed to plans.",
       "correctAnswer": 3,
       "options": [
@@ -9537,7 +9537,7 @@
       "subtopic": "Deferred Annuity",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Lisa is considering purchasing a deferred annuity that will begin making payments in 10 years. To determine the present value of these future payments, she should use which calculation method?\nA) Simple annuity formula\nB) Ignoring the deferral period\nC) Adding deferral period to payment\nD) Finding the present value of the ordinary annuity, then discounting that amount back to today",
+      "question": "Lisa is considering purchasing a deferred annuity that will begin making payments in 10 years. To determine the present value of these future payments, she should use which calculation method?",
       "explanation": "Deferred annuity: payments begin in the future. Step 1: Calculate PV of annuity at start of payments. Step 2: Discount that value back to today. Example: annuity starting in 5 years—find PV as of year 5, then discount 5 more years. Time diagram helps visualize the two-step process.",
       "correctAnswer": 3,
       "options": [
@@ -10204,7 +10204,7 @@
       "subtopic": "Purchasing Power",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Sarah is 60 and plans to retire in 5 years. She's concerned about inflation eroding her savings. Purchasing power risk is MOST important for which of the following investment and planning scenarios?\n\nA) Fixed-income investments and long retirement horizons where inflation erodes real value\nB) Variable rate instruments\nC) Short-term savings only\nD) Equity investments",
+      "question": "Sarah is 60 and plans to retire in 5 years. She's concerned about inflation eroding her savings. Purchasing power risk is MOST important for which of the following investment and planning scenarios?",
       "explanation": "Purchasing power risk (inflation risk): money loses value over time. Fixed payments (bonds, pensions, annuities) particularly vulnerable—same dollars buy less. Long time horizons amplify: 3% inflation over 30 years means a dollar buys only 41 cents of today\\'s goods. Planning must grow assets faster than inflation.",
       "correctAnswer": 0,
       "options": [
@@ -10239,7 +10239,7 @@
       "subtopic": "Goal Prioritization",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Millers have goals to buy a house, save for retirement, and fund their children's education, but their income is insufficient. As their planner, you should:\n\nA) Suggest they earn more income\nB) Help clients prioritize based on goal timing, importance, and trade-offs, adjusting other variables as needed\nC) Focus only on retirement\nD) Recommend borrowing for all goals",
+      "question": "The Millers have goals to buy a house, save for retirement, and fund their children's education, but their income is insufficient. As their planner, you should:",
       "explanation": "Goal prioritization process: identify all goals, quantify costs and timing, determine which are needs vs. wants, analyze trade-offs (delay retirement vs. full college funding), adjust variables (goal cost, timeline, risk level). Transparent discussion helps clients understand constraints and make informed choices.",
       "correctAnswer": 1,
       "options": [
@@ -10274,7 +10274,7 @@
       "subtopic": "Life Cycle Planning",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During client onboarding, you explain the importance of planning at different life stages. Life cycle financial planning recognizes that:\n\nA) All clients have identical needs\nB) Planning is only for older clients\nC) Financial needs, risk tolerance, and planning priorities change systematically through different life stages\nD) Only retirement matters",
+      "question": "During client onboarding, you explain the importance of planning at different life stages. Life cycle financial planning recognizes that:",
       "explanation": "Life cycle approach: planning changes with life stage. Early career: build emergency fund, start retirement savings, manage student debt. Mid-career: maximize savings, education funding, insurance. Pre-retirement: catch-up contributions, assess readiness. Retirement: income planning, healthcare, estate. Priorities shift systematically.",
       "correctAnswer": 2,
       "options": [
@@ -10309,7 +10309,7 @@
       "subtopic": "Emergency Fund",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "John works as a freelance photographer, while his spouse is a teacher. They are establishing an emergency fund. The appropriate size of their emergency fund depends MOST on:\n\nA) Debt levels alone\nB) Only 3 months expenses for everyone\nC) Job security, income stability, number of earners, insurance coverage, and access to other resources\nD) Investment returns only",
+      "question": "John works as a freelance photographer, while his spouse is a teacher. They are establishing an emergency fund. The appropriate size of their emergency fund depends MOST on:",
       "explanation": "Emergency fund factors: single earner (need larger), variable income (need larger), job stability, insurance deductibles, fixed expenses, access to credit/other funds. Typical: 3-6 months expenses. Self-employed or single income: 6-12 months. Consider: what emergencies are likely, how quickly could you find income, what other resources exist.",
       "correctAnswer": 2,
       "options": [
@@ -10344,7 +10344,7 @@
       "subtopic": "Client Interview",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During the initial meeting with the Chans, you're gathering information for their financial plan. Effective client discovery involves:\n\nA) Open-ended questions to understand values, goals, and concerns beyond the numbers\nB) Only reviewing financial documents\nC) Focusing only on investment preferences\nD) Immediately presenting solutions",
+      "question": "During the initial meeting with the Chans, you're gathering information for their financial plan. Effective client discovery involves:",
       "explanation": "Discovery goes beyond data collection. Essential: understand why (values driving goals), family dynamics, risk attitudes, past experiences with money, fears and concerns, what success looks like. Use open-ended questions. Listen actively. Quantitative data shows what; qualitative reveals why—both essential for comprehensive planning.",
       "correctAnswer": 0,
       "options": [
@@ -10379,7 +10379,7 @@
       "subtopic": "Debt-to-Income Ratio",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Smiths are applying for a mortgage to purchase their first home. Mortgage lenders typically want a back-end debt-to-income ratio of:\n\nA) 50% or less\nB) 43% or less, though some programs allow higher with compensating factors\nC) No limit\nD) 20% or less",
+      "question": "The Smiths are applying for a mortgage to purchase their first home. Mortgage lenders typically want a back-end debt-to-income ratio of:",
       "explanation": "Back-end DTI: all monthly debt payments ÷ gross monthly income. QM loans typically require ≤43%. FHA may allow up to 50% with compensating factors. Front-end (housing only): typically ≤28%. Lower DTI = more financial cushion. High DTI signals difficulty handling additional debt or expenses. Planning should aim to keep ratios manageable.",
       "correctAnswer": 1,
       "options": [
@@ -10414,7 +10414,7 @@
       "subtopic": "Unequal Cash Flows",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "When evaluating a real estate investment with fluctuating rental income and expenses over a 10-year period, NPV is superior to IRR because:\n\nA) NPV is always positive\nB) IRR may have multiple solutions or assume reinvestment at unrealistic rates, while NPV uses consistent discount rate\nC) NPV ignores time value\nD) IRR is harder to calculate",
+      "question": "When evaluating a real estate investment with fluctuating rental income and expenses over a 10-year period, NPV is superior to IRR because:",
       "explanation": "IRR limitations: assumes reinvestment at IRR (may be unrealistic), unconventional cash flows can produce multiple IRRs, can\\'t compare projects of different sizes. NPV advantages: uses consistent required rate, additive (can compare different projects), no reinvestment rate assumptions. Use both—IRR for rate comparison, NPV for absolute value.",
       "correctAnswer": 1,
       "options": [
@@ -10449,7 +10449,7 @@
       "subtopic": "Monetary Policy Tools",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "To manage inflation and promote economic stability, the Federal Reserve's primary tools for implementing monetary policy include:\n\nA) Open market operations, discount rate, and reserve requirements\nB) Trade tariffs\nC) Tax rates and government spending\nD) Wage controls only",
+      "question": "To manage inflation and promote economic stability, the Federal Reserve's primary tools for implementing monetary policy include:",
       "explanation": "Fed monetary policy tools: Open market operations (buying/selling Treasuries—most used), discount rate (rate Fed charges banks), reserve requirements (how much banks must hold), interest on reserves, quantitative easing. Fiscal policy (taxes, spending) is Congress. Fed tools affect interest rates which flows through to planning decisions.",
       "correctAnswer": 0,
       "options": [

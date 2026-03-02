@@ -3199,7 +3199,7 @@
       "subtopic": "Knowledge Transfer",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a recent audit of Sterling Financial's loan origination system, the lead auditor is preparing to finalize the report. Knowledge transfer to the audit team at the conclusion of the audit is MOST important for which of the following reasons?\n\nA) Report approval\nB) Continuity and efficiency of future audits\nC) Billing purposes\nD) Staff evaluation",
+      "question": "During a recent audit of Sterling Financial's loan origination system, the lead auditor is preparing to finalize the report. Knowledge transfer to the audit team at the conclusion of the audit is MOST important for which of the following reasons?",
       "options": [
         "Ensuring the audit report receives timely approval from senior management.",
         "Continuity and efficiency of future audits",
@@ -3234,7 +3234,7 @@
       "subtopic": "Evidence Reliability",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During an audit of Apex Data Solutions' network security, the IS auditor directly observed unauthorized personnel accessing sensitive data. Audit evidence obtained directly by the auditor is considered:\n\nA) More reliable than evidence provided by auditee\nB) Only useful for compliance\nC) Less reliable than inquiry\nD) Unreliable",
+      "question": "During an audit of Apex Data Solutions' network security, the IS auditor directly observed unauthorized personnel accessing sensitive data. Audit evidence obtained directly by the auditor is considered:",
       "options": [
         "More reliable than evidence provided by auditee",
         "Only useful for compliance reporting and does not provide insight into operational effectiveness.",
@@ -3269,7 +3269,7 @@
       "subtopic": "Documentary Evidence",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "While auditing vendor payments at Global Manufacturing, the IS auditor received bank statements directly from the bank confirming payments made to a specific vendor. Documentary evidence obtained from these third parties is:\n\nA) More reliable than internal documents\nB) Only for financial audits\nC) Less reliable than internal documents\nD) Never acceptable",
+      "question": "While auditing vendor payments at Global Manufacturing, the IS auditor received bank statements directly from the bank confirming payments made to a specific vendor. Documentary evidence obtained from these third parties is:",
       "options": [
         "More reliable than internal documents",
         "Only for financial audits",
@@ -3304,7 +3304,7 @@
       "subtopic": "Fraud Indicators",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a review of internal controls at Beta Technologies, the auditor discovers several indicators of potential fraudulent activity involving expense reports. When the auditor discovers these fraud indicators, the auditor should:\n\nA) Ignore if immaterial\nB) Stop the audit immediately\nC) Evaluate impact and report appropriately regardless of materiality\nD) Only report if material",
+      "question": "During a review of internal controls at Beta Technologies, the auditor discovers several indicators of potential fraudulent activity involving expense reports. When the auditor discovers these fraud indicators, the auditor should:",
       "options": [
         "Ignore the indicators if the aggregate amount is deemed immaterial to the financial statements and unlikely to escalate.",
         "Stop the audit immediately and engage law enforcement to conduct a full investigation, regardless of internal policies.",
@@ -3339,7 +3339,7 @@
       "subtopic": "Scope Limitations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "An IS auditor is performing a review of the change management process at Delta Corp. Due to time constraints, the auditor was unable to test a representative sample of changes implemented during the period. Such audit scope limitations should be:\n\nA) Clearly disclosed in the audit report\nB) Hidden in the report\nC) Only reported verbally\nD) Ignored",
+      "question": "An IS auditor is performing a review of the change management process at Delta Corp. Due to time constraints, the auditor was unable to test a representative sample of changes implemented during the period. Such audit scope limitations should be:",
       "options": [
         "Clearly disclosed in the audit report",
         "Hidden in the report to avoid management concerns.",
@@ -3374,7 +3374,7 @@
       "subtopic": "Finding Components",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "An IS auditor, reviewing the access controls for a critical database at Gamma Services, identifies that several employees have excessive privileges. An audit finding should consist of:\n\nA) Criteria, condition, cause, and effect\nB) Only the condition\nC) Only risk rating\nD) Only recommendation",
+      "question": "An IS auditor, reviewing the access controls for a critical database at Gamma Services, identifies that several employees have excessive privileges. An audit finding should consist of:",
       "options": [
         "Criteria, condition, cause, and effect",
         "The condition observed, highlighting the deviation from policy",
@@ -3409,7 +3409,7 @@
       "subtopic": "Root Cause Analysis",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During an audit of security incident response at Lambda Systems, the auditor identifies a recurring pattern of phishing attacks. Root cause analysis in audit findings:\n\nA) Is optional\nB) Helps develop effective recommendations that address underlying issues\nC) Is not the auditor's responsibility\nD) Only identifies symptoms",
+      "question": "During an audit of security incident response at Lambda Systems, the auditor identifies a recurring pattern of phishing attacks. Root cause analysis in audit findings:",
       "options": [
         "Is optional, as the auditor's primary focus is on compliance verification.",
         "Helps develop effective recommendations that address underlying issues",
@@ -3444,7 +3444,7 @@
       "subtopic": "Management Response",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After presenting the draft audit report to the CIO of Omega Solutions, management strongly disagrees with the auditor's finding regarding inadequate password complexity. In this situation, the auditor should:\n\nA) Escalate immediately\nB) Remove the finding\nC) Document both the finding and management response\nD) Change the finding",
+      "question": "After presenting the draft audit report to the CIO of Omega Solutions, management strongly disagrees with the auditor's finding regarding inadequate password complexity. In this situation, the auditor should:",
       "options": [
         "Escalate immediately to the audit committee, bypassing established communication channels.",
         "Remove the finding from the final report to maintain a positive relationship with management.",
@@ -4039,7 +4039,7 @@
       "subtopic": "Co-sourcing",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent risk assessment at Stellar Financial, the internal audit department determined they lack specialized expertise in cybersecurity. To address this gap, they plan to leverage external consultants. Co-sourcing of audit activities:\nA) Is not allowed\nB) Replaces internal audit\nC) Supplements internal audit with external expertise\nD) Reduces independence",
+      "question": "During a recent risk assessment at Stellar Financial, the internal audit department determined they lack specialized expertise in cybersecurity. To address this gap, they plan to leverage external consultants. Co-sourcing of audit activities:",
       "options": [
         "Is not allowed due to regulatory restrictions on outsourcing",
         "Replaces internal audit, transferring all responsibilities externally",
@@ -4074,7 +4074,7 @@
       "subtopic": "Client Relations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Chen & Associates is conducting an audit of a major client, GlobalTech Solutions. Maintaining open communication and addressing concerns promptly are key to a successful audit. Audit client relationship management:\nA) Compromises independence\nB) Reduces audit quality\nC) Facilitates cooperation while maintaining independence\nD) Is inappropriate",
+      "question": "Chen & Associates is conducting an audit of a major client, GlobalTech Solutions. Maintaining open communication and addressing concerns promptly are key to a successful audit. Audit client relationship management:",
       "options": [
         "Compromises independence due to potential undue influence",
         "Reduces audit quality by creating bias toward client interests",
@@ -4109,7 +4109,7 @@
       "subtopic": "Expectation Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During the planning phase of an audit at Vista Healthcare LLC, several stakeholders have expressed different expectations regarding the audit's scope and deliverables. Stakeholder expectations management requires:\nA) Promising all deliverables\nB) Clear communication of scope, timeline, and limitations\nC) Over-committing\nD) Avoiding difficult conversations",
+      "question": "During the planning phase of an audit at Vista Healthcare LLC, several stakeholders have expressed different expectations regarding the audit's scope and deliverables. Stakeholder expectations management requires:",
       "options": [
         "Promising all deliverables to ensure stakeholder satisfaction, regardless of resource constraints.",
         "Clear communication of scope, timeline, and limitations",
@@ -4144,7 +4144,7 @@
       "subtopic": "Strategic Alignment",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Meridian Corp's board wants assurance that IT audit activities are aligned with the company's strategic goal of expanding into new markets. Audit strategy alignment with organizational strategy:\nA) Reduces coverage\nB) Is optional\nC) Ensures audit adds value by focusing on strategic priorities\nD) Compromises independence",
+      "question": "Meridian Corp's board wants assurance that IT audit activities are aligned with the company's strategic goal of expanding into new markets. Audit strategy alignment with organizational strategy:",
       "options": [
         "Reduces coverage of operational audits, shifting focus to strategic ones.",
         "Is optional, as long as minimum regulatory compliance requirements are met.",
@@ -4179,7 +4179,7 @@
       "subtopic": "Charter Review",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The audit committee of Quantum Software Inc. is reviewing the internal audit function's charter. The audit charter should be reviewed:\nA) Never\nB) Periodically to ensure it remains appropriate\nC) Only by external auditors\nD) Only when issues arise",
+      "question": "The audit committee of Quantum Software Inc. is reviewing the internal audit function's charter. The audit charter should be reviewed:",
       "options": [
         "Never, as long as the original mandate is followed.",
         "Periodically to ensure it remains appropriate",
@@ -4214,7 +4214,7 @@
       "subtopic": "Knowledge Management",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During a series of audits at Pacific Holdings, the internal audit team has accumulated significant knowledge about the company's systems and processes. Knowledge management in audit supports:\nA) Only documentation\nB) Retention and sharing of audit expertise and lessons learned\nC) Only succession planning\nD) Only training",
+      "question": "During a series of audits at Pacific Holdings, the internal audit team has accumulated significant knowledge about the company's systems and processes. Knowledge management in audit supports:",
       "options": [
         "Only documentation of audit findings and regulatory compliance",
         "Retention and sharing of audit expertise and lessons learned",
@@ -4249,7 +4249,7 @@
       "subtopic": "Context Understanding",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Coastal Corp. has a highly complex IT environment with numerous interconnected systems and applications. When auditing a complex IT environment, the MOST important first step is:\nA) Interviewing IT management\nB) Understanding the business context and IT strategy\nC) Reviewing previous audit reports\nD) Testing system controls",
+      "question": "Coastal Corp. has a highly complex IT environment with numerous interconnected systems and applications. When auditing a complex IT environment, the MOST important first step is:",
       "options": [
         "Interviewing IT management to gather initial impressions of risks.",
         "Understanding the business context and IT strategy",
@@ -4284,7 +4284,7 @@
       "subtopic": "Compensating Controls",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "GlobalTech Solutions identified a vulnerability in their access control system but cannot immediately implement the ideal solution due to budget constraints. Compensating controls are appropriate when:\nA) Primary controls cannot be fully implemented and alternative controls reduce risk\nB) No other options exist\nC) Primary controls are too expensive\nD) Auditors require them",
+      "question": "GlobalTech Solutions identified a vulnerability in their access control system but cannot immediately implement the ideal solution due to budget constraints. Compensating controls are appropriate when:",
       "options": [
         "Primary controls cannot be fully implemented and alternative controls reduce risk",
         "No other options exist to mitigate the vulnerability, and any control is better than none, regardless of residual risk.",
@@ -8519,7 +8519,7 @@
       "subtopic": "Audit Techniques",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a review of Apex Bank's loan origination process, an IS auditor observes employees manually verifying borrower information against source documents. Regarding observation as an audit technique, it:\nA) Provides evidence only at the time of observation\nB) Is not reliable\nC) Is typically sufficient evidence\nD) Replaces all other techniques",
+      "question": "During a review of Apex Bank's loan origination process, an IS auditor observes employees manually verifying borrower information against source documents. Regarding observation as an audit technique, it:",
       "options": [
         "Provides evidence only at the time of observation",
         "Is not reliable due to potential for human error and bias",
@@ -8554,7 +8554,7 @@
       "subtopic": "Audit Techniques",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is auditing a new client, GlobalTech Solutions. The audit team is interviewing the IT Director about change management procedures. Inquiry as an audit procedure should be:\nA) Avoided entirely\nB) Corroborated with other evidence\nC) Used alone for conclusions\nD) Limited to management only",
+      "question": "Chen & Associates is auditing a new client, GlobalTech Solutions. The audit team is interviewing the IT Director about change management procedures. Inquiry as an audit procedure should be:",
       "options": [
         "Avoided entirely due to inherent biases",
         "Corroborated with other evidence",
@@ -8589,7 +8589,7 @@
       "subtopic": "Audit Techniques",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "An IS auditor for Vista Healthcare LLC is testing the effectiveness of a new data encryption process. The auditor independently performs the encryption steps and verifies the output. Reperformance testing involves:\nA) Reviewing documentation\nB) Interviewing stakeholders\nC) Independently executing procedures to verify they produce expected results\nD) Observing staff activities",
+      "question": "An IS auditor for Vista Healthcare LLC is testing the effectiveness of a new data encryption process. The auditor independently performs the encryption steps and verifies the output. Reperformance testing involves:",
       "options": [
         "Reviewing documentation related to the encryption process to understand its design and intended functionality.",
         "Interviewing stakeholders, such as data owners and system administrators, to gather information about their perceptions of the encryption process.",
@@ -8624,7 +8624,7 @@
       "subtopic": "Sampling",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of payment processing at Meridian Corp, the auditor uses statistical sampling to test for duplicate payments. The tolerable error rate in sampling defines:\nA) Confidence level only\nB) Maximum errors expected\nC) Maximum deviation rate the auditor will accept\nD) Minimum sample size",
+      "question": "During an audit of payment processing at Meridian Corp, the auditor uses statistical sampling to test for duplicate payments. The tolerable error rate in sampling defines:",
       "options": [
         "The confidence level required for the entire audit",
         "The maximum number of duplicate payments the auditor anticipates finding",
@@ -8659,7 +8659,7 @@
       "subtopic": "Sampling Methods",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "An IS auditor is performing a compliance test of user access controls at Quantum Software Inc. The auditor is using statistical sampling. Stopping rules in sampling determine:\nA) When sampling can stop based on results observed\nB) When to start testing\nC) Population characteristics\nD) Sample selection method",
+      "question": "An IS auditor is performing a compliance test of user access controls at Quantum Software Inc. The auditor is using statistical sampling. Stopping rules in sampling determine:",
       "options": [
         "When sampling can stop based on results observed",
         "When to start testing based on the defined audit scope",
@@ -8694,7 +8694,7 @@
       "subtopic": "Sampling Methods",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "During an audit of Coastal Corp's inventory, the IS auditor uses their knowledge of the industry and past audit findings to select specific high-value items for testing. Judgmental sampling is based on:\nA) Statistical probability\nB) Auditor knowledge and experience selecting items\nC) Computer-generated selections\nD) Random number tables",
+      "question": "During an audit of Coastal Corp's inventory, the IS auditor uses their knowledge of the industry and past audit findings to select specific high-value items for testing. Judgmental sampling is based on:",
       "options": [
         "The application of statistical probability to ensure a representative sample size and minimize sampling risk.",
         "Auditor knowledge and experience selecting items",
@@ -8729,7 +8729,7 @@
       "subtopic": "Sampling Methods",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "An IS auditor at Pacific Holdings is reviewing system logs for unauthorized access attempts, which are rare. Discovery sampling is used when:\nA) Looking for rare but critical items like fraud\nB) Errors are common\nC) Calculating dollar values\nD) Testing all items",
+      "question": "An IS auditor at Pacific Holdings is reviewing system logs for unauthorized access attempts, which are rare. Discovery sampling is used when:",
       "options": [
         "Looking for rare but critical items like fraud",
         "Errors are common and a high degree of confidence is needed in the error rate.",
@@ -8764,7 +8764,7 @@
       "subtopic": "Data Validation",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Before using a CAAT to analyze a large dataset of transactions at GlobalTech Solutions, the IS auditor performs data validation. Data validation for CAATs should ensure:\nA) Data completeness and accuracy before analysis\nB) Speed of processing\nC) Fastest query execution\nD) Minimum file sizes",
+      "question": "Before using a CAAT to analyze a large dataset of transactions at GlobalTech Solutions, the IS auditor performs data validation. Data validation for CAATs should ensure:",
       "options": [
         "Data completeness and accuracy before analysis",
         "Speed of processing to meet project deadlines, even with potential data integrity trade-offs.",

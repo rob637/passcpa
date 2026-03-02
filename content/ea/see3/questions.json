@@ -783,7 +783,7 @@
       "topic": "Preparer penalties and due diligence",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria Rodriguez, an EA at Tax Pros LLC, endorsed a refund check issued to her client, Sarah Miller, to cover outstanding fees. What is the penalty for a preparer who negotiates or endorses a client's refund check?\nA) $500\nB) $250\nC) $1,000\nD) $560",
+      "question": "Maria Rodriguez, an EA at Tax Pros LLC, endorsed a refund check issued to her client, Sarah Miller, to cover outstanding fees. What is the penalty for a preparer who negotiates or endorses a client's refund check?",
       "options": [
         "$500",
         "$250",
@@ -888,7 +888,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS suspects that Chen & Associates made an error on their 2022 corporate tax return but has not yet initiated an audit. What is the general statute of limitations for the IRS to assess additional tax?\nA) 6 years\nB) 10 years\nC) 2 years\nD) 3 years",
+      "question": "The IRS suspects that Chen & Associates made an error on their 2022 corporate tax return but has not yet initiated an audit. What is the general statute of limitations for the IRS to assess additional tax?",
       "options": [
         "6 years",
         "10 years",
@@ -958,7 +958,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "John Smith failed to file his 2018 individual income tax return. The IRS is now considering whether to pursue the unfiled return. What is the statute of limitations if a taxpayer never files a return?\nA) 6 years\nB) 3 years\nC) 10 years\nD) No statute - assessment can occur at any time",
+      "question": "John Smith failed to file his 2018 individual income tax return. The IRS is now considering whether to pursue the unfiled return. What is the statute of limitations if a taxpayer never files a return?",
       "options": [
         "6 years - the standard assessment period, extended due to non-filing",
         "3 years - the standard assessment period from when the return was due",
@@ -993,7 +993,7 @@
       "topic": "Collection procedures",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS assessed a $5,000 tax liability against Robert Jones on April 15, 2014. As of today, the liability remains unpaid. After assessment, how long does the IRS have to collect a tax liability?\nA) 3 years\nB) 15 years\nC) 10 years\nD) 6 years",
+      "question": "The IRS assessed a $5,000 tax liability against Robert Jones on April 15, 2014. As of today, the liability remains unpaid. After assessment, how long does the IRS have to collect a tax liability?",
       "options": [
         "3 years",
         "15 years",
@@ -1028,7 +1028,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ABC Corporation filed its 2021 corporate income tax return on March 1, 2022. The company later discovered an overpayment and wants to file an amended return to claim a refund. What is the deadline to file a refund claim?\nA) March 1, 2024\nB) April 15, 2025\nC) April 15, 2024\nD) March 1, 2025",
+      "question": "ABC Corporation filed its 2021 corporate income tax return on March 1, 2022. The company later discovered an overpayment and wants to file an amended return to claim a refund. What is the deadline to file a refund claim?",
       "options": [
         "March 1, 2024",
         "April 15, 2025",
@@ -1063,7 +1063,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David Lee filed his 2023 individual income tax return on February 15, 2024. Assuming no extensions were filed, when does the 3-year assessment period expire for the IRS to examine this return?\nA) February 15, 2026\nB) February 15, 2027\nC) April 17, 2027\nD) April 15, 2027",
+      "question": "David Lee filed his 2023 individual income tax return on February 15, 2024. Assuming no extensions were filed, when does the 3-year assessment period expire for the IRS to examine this return?",
       "options": [
         "February 15, 2026",
         "February 15, 2027",
@@ -1098,7 +1098,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is auditing GreenTech Solutions' 2020 tax return. Both GreenTech and the IRS agree to extend the period for assessing additional tax. What form is used to extend the assessment statute of limitations by mutual agreement?\nA) Form 870\nB) Form 9465\nC) Form 656\nD) Form 872",
+      "question": "The IRS is auditing GreenTech Solutions' 2020 tax return. Both GreenTech and the IRS agree to extend the period for assessing additional tax. What form is used to extend the assessment statute of limitations by mutual agreement?",
       "options": [
         "Form 870",
         "Form 9465",
@@ -1238,7 +1238,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC underpaid their 2023 estimated taxes. How is the IRS underpayment interest rate calculated for the amount owed?\nA) Federal long-term rate plus 2%\nB) Fixed at 5%\nC) Federal short-term rate plus 3%\nD) Prime rate",
+      "question": "Vista Healthcare LLC underpaid their 2023 estimated taxes. How is the IRS underpayment interest rate calculated for the amount owed?",
       "options": [
         "Federal long-term rate plus 2%",
         "Fixed at 5% for all underpayments, regardless of the federal funds rate.",
@@ -4003,7 +4003,7 @@
       "topic": "Offer in compromise",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria owes the IRS $50,000 in back taxes and is unable to pay. She believes she qualifies for an Offer in Compromise (OIC). To submit an OIC, Maria generally must:\nA) Hire an attorney\nB) Simply write a letter to the IRS\nC) File Form 656 with the required payment and be current on filing requirements\nD) Appear in person at an IRS office",
+      "question": "Maria owes the IRS $50,000 in back taxes and is unable to pay. She believes she qualifies for an Offer in Compromise (OIC). To submit an OIC, Maria generally must:",
       "options": [
         "Hire an attorney specializing in tax resolution to negotiate with the IRS on her behalf.",
         "Simply write a letter to the IRS explaining her financial hardship and requesting a payment plan.",
@@ -4038,7 +4038,7 @@
       "topic": "Offer in compromise",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John wants to submit a lump sum cash Offer in Compromise to the IRS to settle his $30,000 tax debt. Under a lump sum cash offer in compromise:\nA) The full amount must be paid within 30 days of filing\nB) No payment is required until accepted\nC) 20% must be submitted with the application\nD) 50% must be submitted upfront",
+      "question": "John wants to submit a lump sum cash Offer in Compromise to the IRS to settle his $30,000 tax debt. Under a lump sum cash offer in compromise:",
       "options": [
         "The full amount must be paid within 30 days of filing",
         "No payment is required until accepted",
@@ -4073,7 +4073,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions owes $75,000 in payroll taxes. The IRS is pursuing collection efforts. A Notice of Federal Tax Lien (NFTL):\nA) Is only filed for balances over $100,000\nB) Is automatically filed when any balance is owed\nC) Is a public document filed to alert creditors of the government's claim\nD) Seizes the taxpayer's property",
+      "question": "GreenTech Solutions owes $75,000 in payroll taxes. The IRS is pursuing collection efforts. A Notice of Federal Tax Lien (NFTL):",
       "options": [
         "Is only filed for balances over $100,000 and after a formal review by IRS management.",
         "Is automatically filed when any balance is owed, regardless of payment arrangements.",
@@ -4108,7 +4108,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is attempting to collect unpaid income taxes from Robert. Under IRC §6331, which of the following best describes a levy as a tax collection tool?\nA) Is the same as a lien\nB) Is only used for debts over $50,000\nC) Requires court approval first\nD) Is the legal seizure of property to satisfy a tax debt",
+      "question": "The IRS is attempting to collect unpaid income taxes from Robert. Under IRC §6331, which of the following best describes a levy as a tax collection tool?",
       "options": [
         "Is the same as a lien, representing the government's legal claim",
         "Is only used for debts over $50,000, after all other options fail",
@@ -4143,7 +4143,7 @@
       "topic": "Collection procedures",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah is unemployed and receiving benefits. The IRS is trying to levy her assets to satisfy a prior year tax debt. Which of the following is exempt from IRS levy?\nA) Bank accounts\nB) Investment accounts\nC) Business equipment\nD) Unemployment benefits",
+      "question": "Sarah is unemployed and receiving benefits. The IRS is trying to levy her assets to satisfy a prior year tax debt. Which of the following is exempt from IRS levy?",
       "options": [
         "Bank accounts exceeding the minimum exemption amount",
         "Investment accounts",
@@ -4178,7 +4178,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS assessed additional taxes against David on April 15, 2014. The IRS generally has how long to collect the tax from the date of assessment?\nA) 6 years\nB) 3 years\nC) 20 years\nD) 10 years",
+      "question": "The IRS assessed additional taxes against David on April 15, 2014. The IRS generally has how long to collect the tax from the date of assessment?",
       "options": [
         "6 years",
         "3 years",
@@ -4213,7 +4213,7 @@
       "topic": "Circular 230 requirements",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Maria is a CPA preparing tax returns for clients. Under Circular 230, a practitioner's fee:\nA) May not be charged based on contingency for preparing an original return\nB) Must be approved by the IRS in advance\nC) Cannot exceed $500 per hour\nD) Must be a flat fee for all services",
+      "question": "Maria is a CPA preparing tax returns for clients. Under Circular 230, a practitioner's fee:",
       "options": [
         "May not be charged based on contingency for preparing an original return",
         "Must be approved by the IRS in advance if the client is under audit and the fee exceeds $10,000",
@@ -4248,7 +4248,7 @@
       "topic": "PTIN requirements",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Tom is a paid tax return preparer. A paid tax return preparer must obtain a:\nA) Social Security Number only\nB) Employer Identification Number (EIN)\nC) Centralized Authorization File (CAF) number\nD) Preparer Tax Identification Number (PTIN)",
+      "question": "Tom is a paid tax return preparer. A paid tax return preparer must obtain a:",
       "options": [
         "Social Security Number only",
         "Employer Identification Number (EIN)",
@@ -9288,7 +9288,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John Smith, a tax preparer, intentionally failed to file his personal income tax return for 2022, despite earning over $200,000. Under IRC §7203, this willful failure is:\nA) A misdemeanor punishable by up to $25,000 fine and 1 year imprisonment\nB) Not a crime\nC) A felony with 5 years imprisonment\nD) Only a civil penalty",
+      "question": "John Smith, a tax preparer, intentionally failed to file his personal income tax return for 2022, despite earning over $200,000. Under IRC §7203, this willful failure is:",
       "options": [
         "A misdemeanor punishable by up to $25,000 fine and 1 year imprisonment",
         "Not a crime, but rather an oversight subject to interest and late filing penalties.",
@@ -9323,7 +9323,7 @@
       "topic": "Examination procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of ABC Corp, the IRS agent notices discrepancies. Which of the following would be considered a \"badge of fraud\" indicating potential tax evasion?\nA) Maintaining a double set of books\nB) Taking standard deductions\nC) Filing for an extension\nD) Using tax preparation software",
+      "question": "During an audit of ABC Corp, the IRS agent notices discrepancies. Which of the following would be considered a \"badge of fraud\" indicating potential tax evasion?",
       "options": [
         "Maintaining a double set of books",
         "Taking standard deductions despite clearly qualifying for significantly larger itemized deductions.",
@@ -9358,7 +9358,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS suspects that Davis LLC may be involved in criminal tax fraud. How does the IRS Criminal Investigation (CI) division's role differ from that of a civil audit in this situation?\nA) Cannot recommend prosecution\nB) Only handles collection matters\nC) Only reviews return accuracy\nD) Investigates potential criminal violations with focus on prosecution",
+      "question": "The IRS suspects that Davis LLC may be involved in criminal tax fraud. How does the IRS Criminal Investigation (CI) division's role differ from that of a civil audit in this situation?",
       "options": [
         "Can only refer cases to the Department of Justice; cannot directly recommend prosecution.",
         "Primarily handles collection matters and related civil penalties after a criminal investigation.",
@@ -9393,7 +9393,7 @@
       "topic": "Examination procedures",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The IRS is examining the tax returns of GreenTech Solutions. What options does the IRS have regarding pursuing civil and criminal actions?\nA) Criminal proceedings only after civil are complete\nB) Civil proceedings only after acquittal\nC) Only civil or criminal proceedings, not both\nD) Civil and criminal proceedings simultaneously or consecutively",
+      "question": "The IRS is examining the tax returns of GreenTech Solutions. What options does the IRS have regarding pursuing civil and criminal actions?",
       "options": [
         "Criminal proceedings can only commence after civil proceedings have been fully adjudicated and all appeals exhausted.",
         "Civil proceedings can only be initiated after a full criminal trial results in an acquittal, protecting due process rights.",
@@ -9428,7 +9428,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of Miller Family Trust, the IRS examiner needs additional documentation to verify certain deductions. What is the name of the written request the examiner will send to the trustee requesting these documents?\nA) An Information Document Request (IDR)\nB) A taxpayer request for records\nC) A court order\nD) A summons",
+      "question": "During an audit of Miller Family Trust, the IRS examiner needs additional documentation to verify certain deductions. What is the name of the written request the examiner will send to the trustee requesting these documents?",
       "options": [
         "A written request from the IRS examiner for documents and information during an audit",
         "A formal request initiated by the trustee to obtain copies of previously filed tax returns and related schedules.",
@@ -9463,7 +9463,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates received an Information Document Request (IDR) from the IRS regarding their client's 2022 tax return. When should Chen & Associates generally respond to the IDR?\nA) Wait until the audit closing conference\nB) Ignore it until a summons is issued\nC) Respond within the timeframe specified, typically 10-30 days\nD) Respond only in person",
+      "question": "Chen & Associates received an Information Document Request (IDR) from the IRS regarding their client's 2022 tax return. When should Chen & Associates generally respond to the IDR?",
       "options": [
         "Wait until the audit closing conference to address all issues at once.",
         "Ignore the IDR initially, as the IRS may drop the request if resources are limited.",
@@ -9498,7 +9498,7 @@
       "topic": "Examination procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC failed to provide requested documentation in response to an IRS Information Document Request (IDR). What potential consequences might Vista Healthcare face?\nA) The audit is automatically closed\nB) No consequences occur\nC) The IRS may issue a summons or disallow deductions due to lack of substantiation\nD) The taxpayer receives a refund",
+      "question": "Vista Healthcare LLC failed to provide requested documentation in response to an IRS Information Document Request (IDR). What potential consequences might Vista Healthcare face?",
       "options": [
         "The audit is automatically closed, and Vista Healthcare is absolved of any further scrutiny regarding the tax year in question.",
         "No immediate consequences occur, as the IRS typically allows multiple requests and extensions before pursuing enforcement actions.",
@@ -9533,7 +9533,7 @@
       "topic": "Examination procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is auditing the books of Meridian Corp and needs to obtain testimony from the CFO and review specific financial records. What does the IRS summons authority under IRC §7602 allow in this situation?\nA) Only examination of taxpayer records\nB) Search and seizure without warrant\nC) Examination of books, testimony under oath, and production of documents\nD) Arrest of taxpayers",
+      "question": "The IRS is auditing the books of Meridian Corp and needs to obtain testimony from the CFO and review specific financial records. What does the IRS summons authority under IRC §7602 allow in this situation?",
       "options": [
         "Only examination of taxpayer records directly related to the specific tax year under audit, excluding privileged communications.",
         "Search and seizure of corporate assets without a warrant if the IRS suspects criminal tax fraud and believes evidence is at risk of destruction.",
@@ -13278,7 +13278,7 @@
       "topic": "Audit selection and types",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is reviewing tax returns filed for the 2023 tax year. Some returns are selected for further scrutiny. Based on IRS procedures, returns may be selected for audit based on which of the following criteria?\n\nA) Random selection only\nB) Every 5th return filed\nC) Only if a tip is received\nD) Computer scoring (DIF), document matching, related returns, or other criteria",
+      "question": "The IRS is reviewing tax returns filed for the 2023 tax year. Some returns are selected for further scrutiny. Based on IRS procedures, returns may be selected for audit based on which of the following criteria?",
       "options": [
         "Random selection only, ensuring a representative sample across income levels and filing statuses.",
         "Every 5th return filed, as part of a systematic review to identify potential errors and inconsistencies.",
@@ -13313,7 +13313,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria Garcia received a letter from the IRS requesting documentation to support a deduction claimed on her 2022 tax return. This type of audit requires her to respond by mail. This type of IRS audit is best described as which of the following?\n\nA) In-person meetings at IRS offices\nB) Telephone calls only\nC) Field visits to the taxpayer's home\nD) Written communication via mail to verify specific items",
+      "question": "Maria Garcia received a letter from the IRS requesting documentation to support a deduction claimed on her 2022 tax return. This type of audit requires her to respond by mail. This type of IRS audit is best described as which of the following?",
       "options": [
         "Mandatory in-person meetings scheduled at local IRS offices to review original documents.",
         "Initial contact via telephone calls only, followed by requests for documentation via fax.",
@@ -13348,7 +13348,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John Smith received a notice from the IRS requesting him to appear at the local IRS office to discuss his 2022 tax return. The notice specified certain deductions that are being questioned. This type of examination is best described as which of the following?\n\nA) Is conducted at an IRS office, typically for individual returns with limited issues\nB) Only involves correspondence\nC) Is conducted at the taxpayer's place of business\nD) Is for businesses only",
+      "question": "John Smith received a notice from the IRS requesting him to appear at the local IRS office to discuss his 2022 tax return. The notice specified certain deductions that are being questioned. This type of examination is best described as which of the following?",
       "options": [
         "Is conducted at an IRS office, typically for individual returns with limited issues",
         "Only involves correspondence, such as requesting additional documentation by mail, and does not require a face-to-face meeting.",
@@ -13383,7 +13383,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is auditing Vista Healthcare LLC's 2021 tax return. The auditor has scheduled a meeting with Vista's CFO at their corporate headquarters to review supporting documentation. This type of examination is best described as which of the following?\n\nA) Is conducted at the taxpayer's home, business, or representative's office\nB) Only uses mail\nC) Is always at the IRS office\nD) Is for correspondence issues",
+      "question": "The IRS is auditing Vista Healthcare LLC's 2021 tax return. The auditor has scheduled a meeting with Vista's CFO at their corporate headquarters to review supporting documentation. This type of examination is best described as which of the following?",
       "options": [
         "Is conducted at the taxpayer's home, business, or representative's office",
         "Is limited to document requests and written communication via postal mail or secure online portal.",
@@ -13418,7 +13418,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of Chen & Associates, the managing partner, David Chen, wishes to have his CPA present during all meetings with the IRS. Under IRS guidelines, which of the following rights does David Chen have?\n\nA) Never have representation\nB) Only bring family members\nC) Only appear in person without representation\nD) Be represented by an authorized representative and have them appear without the taxpayer",
+      "question": "During an audit of Chen & Associates, the managing partner, David Chen, wishes to have his CPA present during all meetings with the IRS. Under IRS guidelines, which of the following rights does David Chen have?",
       "options": [
         "Never have representation during an IRS audit, as the taxpayer must always speak for themselves to ensure accuracy and transparency.",
         "Only bring family members who are also CPAs and have a valid Power of Attorney (Form 2848) on file with the IRS to act as representatives.",
@@ -13453,7 +13453,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of Meridian Corp's 2023 tax return, the CFO, Sarah Lee, wants to record the interview with the IRS agent. What is Sarah's right to record the audit interview?\n\nA) Does not exist\nB) Requires IRS permission\nC) Exists with 10 days advance notice to the IRS\nD) Is limited to video only",
+      "question": "During an audit of Meridian Corp's 2023 tax return, the CFO, Sarah Lee, wants to record the interview with the IRS agent. What is Sarah's right to record the audit interview?",
       "options": [
         "Does not exist under any circumstance or condition",
         "Requires IRS permission granted by the audit manager",
@@ -13488,7 +13488,7 @@
       "topic": "Examination procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS audited ABC Partnership in 2021 and 2022 regarding the deductibility of certain travel expenses. In both years, the IRS made no changes to the partnership's return related to this issue. Regarding a potential audit of the same travel expense issue for 2023, which of the following is true?\n\nA) There are no limits\nB) The IRS may audit any issue every year\nC) If the same issue resulted in no change or minimal change in prior 2 years, audit may be discontinued\nD) Only Tax Court can stop repeat audits",
+      "question": "The IRS audited ABC Partnership in 2021 and 2022 regarding the deductibility of certain travel expenses. In both years, the IRS made no changes to the partnership's return related to this issue. Regarding a potential audit of the same travel expense issue for 2023, which of the following is true?",
       "options": [
         "There are no limits to the IRS's authority to audit a partnership, regardless of prior audit outcomes, as the IRS has broad discretion in tax enforcement.",
         "The IRS may audit any issue every year, provided they have reasonable suspicion of noncompliance and follow proper notification procedures, even if the issue was previously examined.",
@@ -13523,7 +13523,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After completing an audit of Robert Miller's 2022 tax return, the IRS determined that Mr. Miller owes additional taxes. Which of the following documents will the IRS issue to Mr. Miller?\n\nA) A refund automatically\nB) Only a verbal decision\nC) An examination report (Form 4549 for individuals) showing proposed changes\nD) A court summons",
+      "question": "After completing an audit of Robert Miller's 2022 tax return, the IRS determined that Mr. Miller owes additional taxes. Which of the following documents will the IRS issue to Mr. Miller?",
       "options": [
         "A refund automatically, assuming the audit resulted in a net overpayment after adjustments.",
         "Only a verbal decision outlining the auditor's findings, with no written documentation provided.",
@@ -14678,7 +14678,7 @@
       "topic": "Circular 230 requirements",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria Sanchez is considering representing a client before the IRS. According to Circular 230, what activities constitute 'practicing before the IRS'? Which of the following is included?\n\nA) Only court appearances\nB) Only signing checks\nC) Only filing tax returns\nD) Preparing and filing documents, corresponding with IRS, and representing taxpayers",
+      "question": "Maria Sanchez is considering representing a client before the IRS. According to Circular 230, what activities constitute 'practicing before the IRS'? Which of the following is included?",
       "options": [
         "Only making court appearances as an attorney of record in docketed tax cases before a court of law.",
         "Only signing checks on behalf of a client to pay their tax liabilities or estimated tax payments.",
@@ -14713,7 +14713,7 @@
       "topic": "Limited practice rights",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates is a firm with Attorneys, CPAs, and Enrolled Agents. A client, John Smith, needs representation at the Appeals level. Which of the following individuals is authorized to represent taxpayers before all levels of the IRS?\n\nA) Attorneys, CPAs, and Enrolled Agents in good standing\nB) Only attorneys\nC) Any adult\nD) Anyone with a PTIN",
+      "question": "Chen & Associates is a firm with Attorneys, CPAs, and Enrolled Agents. A client, John Smith, needs representation at the Appeals level. Which of the following individuals is authorized to represent taxpayers before all levels of the IRS?",
       "options": [
         "Attorneys, CPAs, and Enrolled Agents in good standing",
         "Only attorneys admitted to the bar in the state where the taxpayer resides are authorized.",
@@ -14748,7 +14748,7 @@
       "topic": "Limited practice rights",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah completed the Annual Filing Season Program (AFSP). A client asks if she can represent them if the IRS audits their return. AFSP participants:\n\nA) Have limited representation rights before revenue agents, customer service, and the Taxpayer Advocate\nB) Cannot represent anyone\nC) Have unlimited practice rights\nD) May represent in Appeals and Collections",
+      "question": "Sarah completed the Annual Filing Season Program (AFSP). A client asks if she can represent them if the IRS audits their return. AFSP participants:",
       "options": [
         "Have limited representation rights before revenue agents, customer service, and the Taxpayer Advocate",
         "Cannot represent anyone before the IRS, as the AFSP only provides a limited understanding of tax law and procedures, not full representation rights.",
@@ -14783,7 +14783,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "David, an Enrolled Agent, discovers a significant error on a client's tax return that was filed last year. The client refuses to amend the return. If a practitioner learns of an error on a client's submitted return:\n\nA) They must file an amended return immediately\nB) They must report the client to the IRS\nC) They must promptly advise the client of the error and its consequences\nD) They have no obligation",
+      "question": "David, an Enrolled Agent, discovers a significant error on a client's tax return that was filed last year. The client refuses to amend the return. If a practitioner learns of an error on a client's submitted return:",
       "options": [
         "They must file an amended return immediately to rectify the error and avoid potential penalties.",
         "They must report the client to the IRS, disclosing the error and the client's refusal to correct it.",
@@ -14818,7 +14818,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Healthcare LLC is considering hiring a tax advisor to prepare their corporate return and potentially handle a refund claim. Contingent fees are:\n\nA) Allowed for all tax work\nB) Never allowed\nC) Generally prohibited for preparing tax returns but allowed for certain matters like refund claims\nD) Required by law",
+      "question": "Vista Healthcare LLC is considering hiring a tax advisor to prepare their corporate return and potentially handle a refund claim. Contingent fees are:",
       "options": [
         "Allowed for all tax work, as long as the arrangement is disclosed to the IRS and deemed reasonable by Vista Healthcare's management.",
         "Never allowed under any circumstances, as the IRS strictly prohibits contingent fees to ensure objectivity and prevent conflicts of interest.",
@@ -14853,7 +14853,7 @@
       "topic": "Circular 230 requirements",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Green Solutions Inc. is seeking a new tax advisor. Under Circular 230, practitioners should:\n\nA) Charge reasonable fees and communicate the basis for fees clearly to clients\nB) Hide their fees\nC) Only charge flat fees\nD) Never discuss fees",
+      "question": "Green Solutions Inc. is seeking a new tax advisor. Under Circular 230, practitioners should:",
       "options": [
         "Charge reasonable fees and communicate the basis for fees clearly to clients",
         "Maintain strict confidentiality regarding fee arrangements, disclosing them only when legally compelled by a court order.",
@@ -14888,7 +14888,7 @@
       "topic": "Circular 230 requirements",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark is providing tax advice to a new client regarding a complex partnership allocation. Circular 230 'best practices' for tax advisors include:\n\nA) Communicating clearly, establishing relevant facts, and advising clients of legal conclusions\nB) Only written advice\nC) Providing oral advice only\nD) Avoiding documentation",
+      "question": "Mark is providing tax advice to a new client regarding a complex partnership allocation. Circular 230 'best practices' for tax advisors include:",
       "options": [
         "Communicating clearly, establishing relevant facts, and advising clients of legal conclusions",
         "Providing only written advice to ensure a complete record, but neglecting proactive verbal communication and client interaction.",
@@ -14923,7 +14923,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "An accountant at Meridian Corp. suspects the CFO is intentionally underreporting income to evade taxes. A practitioner may not:\n\nA) Represent a taxpayer\nB) File an extension request\nC) Disagree with an examiner\nD) Knowingly assist a person in violating tax laws or misleading the IRS",
+      "question": "An accountant at Meridian Corp. suspects the CFO is intentionally underreporting income to evade taxes. A practitioner may not:",
       "options": [
         "Represent a taxpayer, even if they have made errors, provided the practitioner advises them to correct the errors.",
         "File an extension request for a client, even if the practitioner suspects potential inaccuracies in the initial filing.",
@@ -16393,7 +16393,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Chen & Associates, a tax firm, is preparing to represent a new client, Vista Healthcare LLC. To ensure clarity and avoid future disputes, which of the following BEST describes the necessary components of engagement letters for tax representation?\n\nA) Are prohibited\nB) Should define scope of services, fees, responsibilities of both parties, and limitations\nC) Are only required for court appearances\nD) Cannot limit liability",
+      "question": "Chen & Associates, a tax firm, is preparing to represent a new client, Vista Healthcare LLC. To ensure clarity and avoid future disputes, which of the following BEST describes the necessary components of engagement letters for tax representation?",
       "options": [
         "Are prohibited due to potential conflicts of interest and perceived limitations on client rights, except in very specific circumstances.",
         "Should define scope of services, fees, responsibilities of both parties, and limitations",
@@ -16429,7 +16429,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "After an audit, the IRS believes that John Doe, an Enrolled Agent, has violated Circular 230. Which of the following sanctions can the Office of Professional Responsibility (OPR) impose on John?\n\nA) Only disbarment\nB) Censure, suspension, disbarment, and monetary penalties\nC) Only monetary fines\nD) Criminal imprisonment",
+      "question": "After an audit, the IRS believes that John Doe, an Enrolled Agent, has violated Circular 230. Which of the following sanctions can the Office of Professional Responsibility (OPR) impose on John?",
       "options": [
         "Only disbarment from practice before the Internal Revenue Service",
         "Censure, suspension, disbarment, and monetary penalties",
@@ -16464,7 +16464,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah Miller, an Enrolled Agent, has received a letter from the Office of Professional Responsibility (OPR) stating she has been censured. What does a censure by the OPR signify for Sarah?\n\nA) A public reprimand but the practitioner may continue practicing\nB) Criminal conviction\nC) Loss of license\nD) Suspension for 1 year",
+      "question": "Sarah Miller, an Enrolled Agent, has received a letter from the Office of Professional Responsibility (OPR) stating she has been censured. What does a censure by the OPR signify for Sarah?",
       "options": [
         "A public reprimand but the practitioner may continue practicing",
         "A criminal conviction resulting in imprisonment and significant fines levied by a federal court.",
@@ -16499,7 +16499,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Mark Thompson, an attorney, has been suspended from practice before the Treasury Department for a period of two years due to professional misconduct. What are Mark's obligations during this suspension?\n\nA) Cannot practice before the IRS for the suspension period and must notify clients\nB) Only loses signing authority\nC) Can still practice but under supervision\nD) Can appeal and continue practicing pending appeal",
+      "question": "Mark Thompson, an attorney, has been suspended from practice before the Treasury Department for a period of two years due to professional misconduct. What are Mark's obligations during this suspension?",
       "options": [
         "Cannot practice before the IRS for the suspension period and must notify clients",
         "Only loses signing authority on tax returns and other documents submitted to the IRS.",
@@ -16534,7 +16534,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Following a series of violations of Circular 230, Emily Carter, an Enrolled Agent, has been disbarred from practice before the Treasury Department. What are the implications of this disbarment?\n\nA) Is temporary\nB) Only lasts 1 year\nC) Is permanent unless the practitioner petitions for reinstatement after 5 years\nD) Is automatic after any suspension",
+      "question": "Following a series of violations of Circular 230, Emily Carter, an Enrolled Agent, has been disbarred from practice before the Treasury Department. What are the implications of this disbarment?",
       "options": [
         "Is temporary, lasting only for the duration of the specific violation, after which practice is automatically reinstated.",
         "Only lasts 1 year, after which the Enrolled Agent is automatically reinstated to practice before the IRS without further review.",
@@ -16569,7 +16569,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "David Lee, a CPA, has been accused of gross misconduct related to his tax practice. Under what circumstances can David face expedited suspension from practice before the IRS, without a full hearing?\n\nA) Never\nB) Only for attorneys\nC) When a practitioner has lost their license to practice, been convicted of certain crimes, or poses an ongoing threat\nD) Only after a full trial",
+      "question": "David Lee, a CPA, has been accused of gross misconduct related to his tax practice. Under what circumstances can David face expedited suspension from practice before the IRS, without a full hearing?",
       "options": [
         "Never, as the IRS always requires a comprehensive investigation and hearing before suspending a CPA's practice privileges, regardless of the severity of the alleged misconduct.",
         "Only for attorneys admitted to practice before the IRS, as CPAs are subject to a different disciplinary process that does not allow for expedited suspensions under any circumstances.",
@@ -16604,7 +16604,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS is pursuing disciplinary action against Michael Smith, an Enrolled Agent, before an Administrative Law Judge (ALJ). What standard of evidence must the government meet to prove the alleged violations?\n\nA) By clear and convincing evidence\nB) Beyond a reasonable doubt\nC) By a preponderance of the evidence\nD) By any evidence available",
+      "question": "The IRS is pursuing disciplinary action against Michael Smith, an Enrolled Agent, before an Administrative Law Judge (ALJ). What standard of evidence must the government meet to prove the alleged violations?",
       "options": [
         "By clear and convincing evidence",
         "Beyond a reasonable doubt",
@@ -16639,7 +16639,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a disciplinary proceeding before an Administrative Law Judge (ALJ), Robert Jones, a tax preparer, received a sanction for violating Circular 230. To whom may Robert appeal this decision?\n\nA) To the Secretary of Treasury or their delegate (Appeals Officer), and then to federal district court\nB) Only to state court\nC) To the Supreme Court directly\nD) No appeals are permitted",
+      "question": "After a disciplinary proceeding before an Administrative Law Judge (ALJ), Robert Jones, a tax preparer, received a sanction for violating Circular 230. To whom may Robert appeal this decision?",
       "options": [
         "To the Secretary of Treasury or their delegate (Appeals Officer), and then to federal district court",
         "Only to state court, because tax preparer regulation is primarily a state matter under concurrent jurisdiction principles.",
@@ -17584,7 +17584,7 @@
       "topic": "Penalty abatement",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria failed to accurately estimate her 2023 income tax liability, resulting in an underpayment. Regarding the penalty for underpayment of estimated tax, which of the following statements is correct?\nA) Is computed at the IRS interest rate for the period of underpayment\nB) Is a flat percentage\nC) Only applies to corporations\nD) Is 25% of underpayment",
+      "question": "Maria failed to accurately estimate her 2023 income tax liability, resulting in an underpayment. Regarding the penalty for underpayment of estimated tax, which of the following statements is correct?",
       "options": [
         "Is computed at the IRS interest rate for the period of underpayment",
         "Is a flat percentage of the underpayment, determined annually by the Treasury Department based on prevailing interest rates.",
@@ -17619,7 +17619,7 @@
       "topic": "Penalty abatement",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent audit of Apex Marketing, the IRS suspects a significant understatement of income due to intentional disregard of regulations. Under IRC §6663, what is the applicable civil fraud penalty?\nA) Is 20% of underpayment\nB) Is 75% of the portion of underpayment due to fraud\nC) Only applies criminally\nD) Is 50% maximum",
+      "question": "During a recent audit of Apex Marketing, the IRS suspects a significant understatement of income due to intentional disregard of regulations. Under IRC §6663, what is the applicable civil fraud penalty?",
       "options": [
         "Is 20% of the entire underpayment, regardless of fraud",
         "Is 75% of the portion of underpayment due to fraud",
@@ -17654,7 +17654,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions filed its 2022 corporate tax return on March 15, 2023, but did not pay the $50,000 balance due until June 15, 2023. How is interest calculated on this underpayment?\nA) Never accrues\nB) Runs from the due date of the return until paid, compounded daily\nC) Is a flat 10% per year\nD) Stops after 3 years",
+      "question": "GreenTech Solutions filed its 2022 corporate tax return on March 15, 2023, but did not pay the $50,000 balance due until June 15, 2023. How is interest calculated on this underpayment?",
       "options": [
         "Never accrues if the underpayment is less than $100 and paid within 30 days.",
         "Runs from the due date of the return until paid, compounded daily",
@@ -17689,7 +17689,7 @@
       "topic": "Penalty abatement",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of Smith Family Trust's 2020 return, the IRS took an extended period to resolve a complex valuation issue, leading to a substantial interest accrual. Under what circumstances may the IRS abate the accrued interest?\nA) The interest is attributable to IRS errors or delays in performing ministerial or managerial acts\nB) The amount is large\nC) The taxpayer asks\nD) Never - interest is never abated",
+      "question": "During an audit of Smith Family Trust's 2020 return, the IRS took an extended period to resolve a complex valuation issue, leading to a substantial interest accrual. Under what circumstances may the IRS abate the accrued interest?",
       "options": [
         "The interest is attributable to IRS errors or delays in performing ministerial or managerial acts",
         "The amount of interest is considered large relative to the taxpayer's overall tax liability and demonstrates significant financial hardship.",
@@ -17724,7 +17724,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After filing its 2022 tax return, Davis Industries discovered an overpayment of $15,000. The IRS processed the refund. How is interest calculated on this overpayment?\nA) Is paid at the federal short-term rate plus 3% (2% for corporations over $10,000)\nB) Is always 10%\nC) Is never paid\nD) Only runs after 90 days",
+      "question": "After filing its 2022 tax return, Davis Industries discovered an overpayment of $15,000. The IRS processed the refund. How is interest calculated on this overpayment?",
       "options": [
         "Is paid at the federal short-term rate plus 3% (2% for corporations over $10,000)",
         "Is always 10%, calculated annually from the due date of the return, regardless of the federal short-term rate.",
@@ -17759,7 +17759,7 @@
       "topic": "Collection procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Manufacturing had both underpayments and overpayments of tax for different periods between 2020 and 2023. What does interest netting (global interest netting) mean in this context?\nA) Interest is never charged\nB) All taxpayers get zero interest\nC) Overlapping periods of underpayment and overpayment are netted to compute interest at 0% on the overlap\nD) Only corporations benefit",
+      "question": "Precision Manufacturing had both underpayments and overpayments of tax for different periods between 2020 and 2023. What does interest netting (global interest netting) mean in this context?",
       "options": [
         "Interest is never charged on underpayments if the taxpayer can demonstrate reasonable cause and good faith, regardless of the amount owed or the duration of the underpayment.",
         "All taxpayers, regardless of entity type or income level, effectively get zero interest on both overpayments and underpayments due to administrative offsets and processing delays within the IRS.",
@@ -17794,7 +17794,7 @@
       "topic": "Collection procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John filed his 2019 individual income tax return on April 15, 2020. The IRS initiated an audit in 2021 but did not send the required notice of deficiency until January 2024. Under IRC §6404(g), what potential relief is available to John regarding interest?\nA) The IRS fails to send required notice of deficiency within 36 months of filing (for individuals)\nB) The taxpayer requests it\nC) The taxpayer files for bankruptcy\nD) The amount is under $1,000",
+      "question": "John filed his 2019 individual income tax return on April 15, 2020. The IRS initiated an audit in 2021 but did not send the required notice of deficiency until January 2024. Under IRC §6404(g), what potential relief is available to John regarding interest?",
       "options": [
         "The IRS fails to send required notice of deficiency within 36 months of filing (for individuals)",
         "The taxpayer requests abatement of interest due to reasonable cause, and the IRS approves the request based on hardship.",
@@ -17829,7 +17829,7 @@
       "topic": "Installment agreements",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to significant financial hardship, Robert cannot afford to pay his entire outstanding tax liability of $50,000 immediately. He is exploring options with the IRS. What is a Partial Payment Installment Agreement (PPIA)?\nA) Is the same as an OIC\nB) Pays the full liability\nC) Allows payment of less than the full liability over time, with periodic financial reviews\nD) Has no financial review",
+      "question": "Due to significant financial hardship, Robert cannot afford to pay his entire outstanding tax liability of $50,000 immediately. He is exploring options with the IRS. What is a Partial Payment Installment Agreement (PPIA)?",
       "options": [
         "Is essentially the same as an Offer in Compromise (OIC), providing similar terms and acceptance criteria for taxpayers.",
         "Requires the taxpayer to pay the full outstanding tax liability, including penalties and interest, within a defined installment schedule.",
@@ -18144,7 +18144,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "After receiving an adverse determination from the IRS regarding a deduction claimed on their 2022 tax return, the partners of Willow Creek Partnership are considering their options. Which of the following accurately describes the rights available to them to appeal the IRS's decision?\n\nA) Only state court remedies\nB) Administrative appeals through IRS Appeals and judicial review in various courts depending on the issue\nC) Only Tax Court options\nD) No formal process",
+      "question": "After receiving an adverse determination from the IRS regarding a deduction claimed on their 2022 tax return, the partners of Willow Creek Partnership are considering their options. Which of the following accurately describes the rights available to them to appeal the IRS's decision?",
       "options": [
         "Exclusive jurisdiction lies solely with state courts, as federal tax matters are determined by state partnership law and contract interpretation.",
         "Administrative appeals through IRS Appeals and judicial review in various courts depending on the issue",
@@ -18179,7 +18179,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS suspects discrepancies between income reported by employers and amounts reported on individual tax returns. Which of the following describes the function of the Automated Underreporter (AUR) program in addressing this issue?\n\nA) Conducts in-person audits\nB) Only handles criminal cases\nC) Matches information returns (W-2, 1099) to filed tax returns and proposes adjustments\nD) Reviews all returns manually",
+      "question": "The IRS suspects discrepancies between income reported by employers and amounts reported on individual tax returns. Which of the following describes the function of the Automated Underreporter (AUR) program in addressing this issue?",
       "options": [
         "Prioritizes cases for in-person audits based on a risk assessment scoring system, focusing on high-income taxpayers and complex business structures.",
         "Focuses exclusively on cases involving intentional tax evasion and fraud, referring all other discrepancies to different IRS departments for civil penalties.",
@@ -18214,7 +18214,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John received a CP2000 notice from the IRS indicating a discrepancy between the income he reported and the information reported by his employer. What action should John take in response to the CP2000 notice?\n\nA) The notice should be ignored\nB) Payment is required immediately\nC) The taxpayer should agree or disagree with documentation within 30 days of the notice date\nD) Only attorneys can respond",
+      "question": "John received a CP2000 notice from the IRS indicating a discrepancy between the income he reported and the information reported by his employer. What action should John take in response to the CP2000 notice?",
       "options": [
         "The notice should be ignored unless it escalates to a lien or levy, as many CP2000 notices are sent in error and self-correct.",
         "Payment is required immediately to avoid penalties and interest, even if the taxpayer intends to dispute the assessment later through formal channels.",
@@ -18249,7 +18249,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of ABC Corp's 2023 tax return, the IRS examiner needs to verify the accuracy of reported income. Which of the following methods are IRS examiners permitted to use during the audit?\n\nA) Bank deposit analysis, indirect income methods, interview third parties, and net worth analysis\nB) Only review of records\nC) Only computerized matching\nD) Criminal interrogation techniques",
+      "question": "During an audit of ABC Corp's 2023 tax return, the IRS examiner needs to verify the accuracy of reported income. Which of the following methods are IRS examiners permitted to use during the audit?",
       "options": [
         "Bank deposit analysis, indirect income methods, interview third parties, and net worth analysis",
         "Review of taxpayer-provided records and documentation, without independent verification or external data sources.",
@@ -18284,7 +18284,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent tax planning meeting, a client, Mr. Davis, expressed concern about the IRS re-examining issues from prior years. Which of the following statements accurately reflects the IRS's general policy regarding re-examining prior year tax returns?\n\nA) All audits\nB) Examining the same items for 2+ prior years if those years were examined and no change resulted\nC) Following up on audits\nD) Using prior year information",
+      "question": "During a recent tax planning meeting, a client, Mr. Davis, expressed concern about the IRS re-examining issues from prior years. Which of the following statements accurately reflects the IRS's general policy regarding re-examining prior year tax returns?",
       "options": [
         "All audits are subject to re-examination indefinitely, regardless of the initial findings or the passage of time, to ensure complete accuracy.",
         "Examining the same items for 2+ prior years if those years were examined and no change resulted",
@@ -18319,7 +18319,7 @@
       "topic": "Examination procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of GreenTech Solutions, a question arose regarding the authority of the IRS agent to compromise on penalties. Which of the following best describes the purpose of IRS Delegation Orders?\n\nA) Don't exist\nB) Specify which IRS officials have authority to take various actions (approve settlements, issue summons, etc.)\nC) Only apply to the Commissioner\nD) Are secret",
+      "question": "During an audit of GreenTech Solutions, a question arose regarding the authority of the IRS agent to compromise on penalties. Which of the following best describes the purpose of IRS Delegation Orders?",
       "options": [
         "Are a myth perpetuated by tax protestors and lack any basis in law or established IRS procedure, as all authority is inherent in the tax code itself.",
         "Specify which IRS officials have authority to take various actions (approve settlements, issue summons, etc.)",
@@ -18354,7 +18354,7 @@
       "topic": "Collection procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS suspects that a taxpayer, Mr. Smith, is planning to leave the country with a large sum of money to avoid paying his outstanding tax liabilities. Under what circumstances may the IRS make a jeopardy assessment?\n\nA) When delay would jeopardize collection due to flight risk, asset dissipation, or financial insolvency\nB) Only for estimated taxes\nC) On all taxpayers\nD) Only after Tax Court petition",
+      "question": "The IRS suspects that a taxpayer, Mr. Smith, is planning to leave the country with a large sum of money to avoid paying his outstanding tax liabilities. Under what circumstances may the IRS make a jeopardy assessment?",
       "options": [
         "When delay would jeopardize collection due to flight risk, asset dissipation, or financial insolvency",
         "Only for estimated taxes when the taxpayer has significantly underpaid in previous years and has not responded to IRS notices.",
@@ -18389,7 +18389,7 @@
       "topic": "Collection procedures",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The IRS believes that Ms. Johnson is about to transfer all of her assets out of the country to avoid paying taxes on income earned this year, but her tax return isn't due yet. What is the purpose of a termination assessment under IRC §6851?\n\nA) Immediately assesses tax for a short period when taxpayer intends to leave U.S. or conceal assets\nB) Ends an audit\nC) Closes inactive files\nD) Is used for deceased taxpayers only",
+      "question": "The IRS believes that Ms. Johnson is about to transfer all of her assets out of the country to avoid paying taxes on income earned this year, but her tax return isn't due yet. What is the purpose of a termination assessment under IRC §6851?",
       "options": [
         "Immediately assesses tax for a short period when taxpayer intends to leave U.S. or conceal assets",
         "Ends an audit prematurely due to taxpayer non-compliance, resulting in penalties and a notice of deficiency.",
@@ -19894,7 +19894,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John filed his 2022 tax return on March 15, 2023. He did not request an extension. In general, what is the statute of limitations for the IRS to assess additional tax on John's 2022 return?\n\n(A) 3 years from filing or due date, whichever is later\n(B) 2 years from filing\n(C) 5 years from filing\n(D) 6 years from filing",
+      "question": "John filed his 2022 tax return on March 15, 2023. He did not request an extension. In general, what is the statute of limitations for the IRS to assess additional tax on John's 2022 return?",
       "options": [
         "3 years from filing or due date, whichever is later",
         "2 years from the date the return was filed, unless fraud is suspected.",
@@ -19930,7 +19930,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After an audit, the IRS sent Maria a 30-day letter proposing additional tax of $15,000. Maria disagrees with the IRS's findings. Which of the following actions can Maria take after receiving the 30-day letter?\n\n(A) Only file a petition in Tax Court\n(B) Request an Appeals conference by filing a written protest\n(C) File an immediate lawsuit in District Court\n(D) Request a refund from the IRS",
+      "question": "After an audit, the IRS sent Maria a 30-day letter proposing additional tax of $15,000. Maria disagrees with the IRS's findings. Which of the following actions can Maria take after receiving the 30-day letter?",
       "options": [
         "Only file a petition in Tax Court, foregoing an Appeals conference",
         "Request an Appeals conference by filing a written protest",
@@ -19965,7 +19965,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Vista Construction owes $50,000 in back taxes. The IRS is considering collection actions. Filing a Notice of Federal Tax Lien:\n\n(A) Allows the IRS to seize property immediately\n(B) Puts the public on notice of the government's claim against the taxpayer's property\n(C) Cancels the underlying tax debt\n(D) Freezes all taxpayer bank accounts",
+      "question": "Vista Construction owes $50,000 in back taxes. The IRS is considering collection actions. Filing a Notice of Federal Tax Lien:",
       "options": [
         "Allows the IRS to immediately seize and liquidate Vista Construction's assets without further due process, provided the tax assessment is deemed valid.",
         "Puts the public on notice of the government's claim against the taxpayer's property",
@@ -20035,7 +20035,7 @@
       "topic": "Offer in compromise",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Robert owes $75,000 in back taxes and is exploring options to resolve the debt. An Offer in Compromise (OIC) can be based on all of the following EXCEPT:\n\n(A) Doubt as to collectibility\n(B) Taxpayer hardship\n(C) Doubt as to liability\n(D) Effective tax administration",
+      "question": "Robert owes $75,000 in back taxes and is exploring options to resolve the debt. An Offer in Compromise (OIC) can be based on all of the following EXCEPT:",
       "options": [
         "Doubt as to collectibility",
         "Taxpayer hardship",
@@ -20070,7 +20070,7 @@
       "topic": "Offer in compromise",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah wants to submit an Offer in Compromise (OIC) with a lump sum cash payment option to settle her $30,000 tax debt. What is required to be submitted with Form 656?\n\n(A) Full payment amount\n(B) 10% of the total offer amount\n(C) 20% of the total offer amount\n(D) First installment payment",
+      "question": "Sarah wants to submit an Offer in Compromise (OIC) with a lump sum cash payment option to settle her $30,000 tax debt. What is required to be submitted with Form 656?",
       "options": [
         "Full payment amount",
         "10% of the total offer amount",
@@ -20105,7 +20105,7 @@
       "topic": "Installment agreements",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ABC Company owes $8,000 in payroll taxes and wants to enter into an installment agreement with the IRS. The IRS must accept an installment agreement (guaranteed IA) when the tax liability is:\n\n(A) Under $10,000 and can be paid within 3 years\n(B) Under $50,000 only\n(C) Under $25,000 and can be paid within 60 months\n(D) Any amount if the taxpayer is in hardship",
+      "question": "ABC Company owes $8,000 in payroll taxes and wants to enter into an installment agreement with the IRS. The IRS must accept an installment agreement (guaranteed IA) when the tax liability is:",
       "options": [
         "Under $10,000 and can be paid within 3 years",
         "Under $50,000 only",
@@ -20175,7 +20175,7 @@
       "topic": "Statutes of limitations",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Davis & Sons, a law firm, believes pending legislation could impact the tax treatment of a significant deduction they took on their prior-year return. A protective claim for refund is appropriate when:\n\n(A) Pending legislation or litigation may affect tax liability\n(B) The taxpayer wants to protect assets from levy\n(C) The taxpayer plans to file bankruptcy\n(D) The IRS has denied a previous refund claim",
+      "question": "Davis & Sons, a law firm, believes pending legislation could impact the tax treatment of a significant deduction they took on their prior-year return. A protective claim for refund is appropriate when:",
       "options": [
         "Pending legislation or litigation may affect tax liability",
         "The taxpayer anticipates an IRS levy due to a separate, unrelated tax assessment and seeks to protect assets.",
@@ -20245,7 +20245,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "GreenTech Solutions filed their 2020 corporate tax return on April 15, 2021. How long should GreenTech generally keep their tax records related to the 2020 return?\n\n(A) 3 years from filing date or 2 years from payment, whichever is later\n(B) 1 year after filing\n(C) Until the taxpayer reaches age 65\n(D) Permanently",
+      "question": "GreenTech Solutions filed their 2020 corporate tax return on April 15, 2021. How long should GreenTech generally keep their tax records related to the 2020 return?",
       "options": [
         "3 years from filing date or 2 years from payment, whichever is later",
         "1 year after filing, as long as there are no pending audits or amended returns.",
@@ -20946,7 +20946,7 @@
       "topic": "Examination procedures",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "Maria is concerned about an upcoming audit. She's heard about taxpayer rights but isn't sure what they include. The Taxpayer Bill of Rights includes all of the following EXCEPT:\nA) The right to quality service\nB) The right to be informed\nC) The right to pay no taxes\nD) The right to appeal IRS decisions",
+      "question": "Maria is concerned about an upcoming audit. She's heard about taxpayer rights but isn't sure what they include. The Taxpayer Bill of Rights includes all of the following EXCEPT:",
       "options": [
         "The right to quality service",
         "The right to be informed",
@@ -21016,7 +21016,7 @@
       "topic": "Collection procedures",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The IRS is attempting to collect unpaid taxes from David. He is worried about what assets they can seize. Which of the following is exempt from levy?\nA) Business inventory\nB) Wages above a specified exempt amount\nC) Bank accounts\nD) Investment accounts",
+      "question": "The IRS is attempting to collect unpaid taxes from David. He is worried about what assets they can seize. Which of the following is exempt from levy?",
       "options": [
         "Business inventory essential for daily sales",
         "Wages above a specified exempt amount",
@@ -21051,7 +21051,7 @@
       "topic": "Practitioner duties and penalties",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "John, a CPA, has been accused of violating Circular 230. What sanction can the Office of Professional Responsibility impose for Circular 230 violations?\nA) Criminal prosecution\nB) State license revocation\nC) Censure, suspension, or disbarment from practice\nD) Civil tax penalties",
+      "question": "John, a CPA, has been accused of violating Circular 230. What sanction can the Office of Professional Responsibility impose for Circular 230 violations?",
       "options": [
         "Referral for criminal prosecution by the Department of Justice",
         "Referral to the state board for license revocation proceedings",
@@ -21086,7 +21086,7 @@
       "topic": "Circular 230 requirements",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Green & Associates recently terminated its engagement with a client, ABC Corp. ABC Corp. is requesting their records. Under Circular 230, a practitioner must return a client's records:\nA) Within 90 days of termination\nB) Only after all fees are paid\nC) Promptly upon request, regardless of fee disputes\nD) Only if the client signs a release",
+      "question": "Green & Associates recently terminated its engagement with a client, ABC Corp. ABC Corp. is requesting their records. Under Circular 230, a practitioner must return a client's records:",
       "options": [
         "Within 90 days of termination or when reasonably possible",
         "Only after all undisputed fees are paid and resolved fully",
@@ -21121,7 +21121,7 @@
       "topic": "Appeals procedures",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The IRS believes Sarah owes additional income tax. Before the IRS can assess the deficiency, Sarah must receive a statutory notice of deficiency (90-day letter) before the IRS can:\nA) Issue a notice of levy\nB) Conduct an audit\nC) Assess income tax deficiencies\nD) File a federal tax lien",
+      "question": "The IRS believes Sarah owes additional income tax. Before the IRS can assess the deficiency, Sarah must receive a statutory notice of deficiency (90-day letter) before the IRS can:",
       "options": [
         "Issue a notice of levy on Sarah's wages",
         "Conduct an audit of Sarah's prior tax returns",
@@ -21156,7 +21156,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Robert wants to dispute a $45,000 tax deficiency in court but wants to avoid the complexities of a regular Tax Court case. The Tax Court small tax case procedure is available when the disputed amount is:\nA) $25,000 or less per year\nB) $50,000 or less per year\nC) $75,000 or less per year\nD) $100,000 or less per year",
+      "question": "Robert wants to dispute a $45,000 tax deficiency in court but wants to avoid the complexities of a regular Tax Court case. The Tax Court small tax case procedure is available when the disputed amount is:",
       "options": [
         "$25,000 or less per year",
         "$50,000 or less per year",
@@ -21191,7 +21191,7 @@
       "topic": "Appeals procedures",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After an audit, Lisa disagrees with the IRS's assessment and wants to sue for a refund. To sue for refund in federal district court or Court of Federal Claims, a taxpayer must first:\nA) Petition the Tax Court\nB) Pay the full tax and file an administrative claim for refund\nC) Request a CDP hearing\nD) Obtain approval from the IRS Commissioner",
+      "question": "After an audit, Lisa disagrees with the IRS's assessment and wants to sue for a refund. To sue for refund in federal district court or Court of Federal Claims, a taxpayer must first:",
       "options": [
         "Petition the Tax Court for a redetermination of the tax deficiency before pursuing a refund claim.",
         "Pay the full tax and file an administrative claim for refund",
@@ -21226,7 +21226,7 @@
       "topic": "Preparer penalties and due diligence",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Emily, a tax preparer at Valley Tax Services, prepared a return taking a position that lacked substantial authority and wasn't properly disclosed. A preparer penalty under IRC §6694(a) applies when:\nA) A position is taken without substantial authority (or reasonable basis with disclosure)\nB) The preparer disagrees with the IRS\nC) Any error is made on a return\nD) The refund is less than expected",
+      "question": "Emily, a tax preparer at Valley Tax Services, prepared a return taking a position that lacked substantial authority and wasn't properly disclosed. A preparer penalty under IRC §6694(a) applies when:",
       "options": [
         "A position is taken without substantial authority (or reasonable basis with disclosure)",
         "The preparer disagrees with the IRS interpretation of a specific code section, even after thorough research and due diligence.",
@@ -24166,7 +24166,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After an audit, Chen & Associates received a notice of proposed adjustment. They disagree with the IRS findings and want to pursue an appeal. To formally request an Appeals conference for this audit dispute, Chen & Associates must file:\nA) A written protest or Form 12203\nB) Form 843\nC) Form 911\nD) Form 9423",
+      "question": "After an audit, Chen & Associates received a notice of proposed adjustment. They disagree with the IRS findings and want to pursue an appeal. To formally request an Appeals conference for this audit dispute, Chen & Associates must file:",
       "options": [
         "A written protest or Form 12203",
         "Form 843, Claim for Refund and Request for Abatement",
@@ -24236,7 +24236,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "During an Appeals conference regarding Vista Healthcare LLC's tax liability, the Appeals officer considers the strengths and weaknesses of both the IRS's and Vista's arguments. \"Hazards of litigation\" in the context of Appeals means:\nA) The cost of going to court\nB) The likelihood either party would win if the case went to court\nC) The danger of criminal prosecution\nD) The risk of additional penalties",
+      "question": "During an Appeals conference regarding Vista Healthcare LLC's tax liability, the Appeals officer considers the strengths and weaknesses of both the IRS's and Vista's arguments. \"Hazards of litigation\" in the context of Appeals means:",
       "options": [
         "The projected legal fees, expert witness costs, and administrative expenses Vista Healthcare LLC would incur if the case proceeds to trial.",
         "The likelihood either party would win if the case went to court",
@@ -24271,7 +24271,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Meridian Corp. is currently undergoing an IRS examination. To expedite the resolution of a disagreement regarding a $75,000 deduction, they are considering Fast Track Settlement (FTS). FTS allows disputes to be resolved:\nA) While still at the examination stage with Appeals mediating\nB) Before the audit is complete\nC) Only in Tax Court\nD) Only for amounts under $10,000",
+      "question": "Meridian Corp. is currently undergoing an IRS examination. To expedite the resolution of a disagreement regarding a $75,000 deduction, they are considering Fast Track Settlement (FTS). FTS allows disputes to be resolved:",
       "options": [
         "While still at the examination stage with Appeals mediating",
         "Before the audit is complete, but only after a 30-day letter is issued.",
@@ -24306,7 +24306,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After receiving a notice of deficiency for $50,000, John Smith wants to challenge the IRS's determination in court. To petition the U.S. Tax Court, John Smith must:\nA) Receive a notice of deficiency and file within 90 days\nB) Have income over $100,000\nC) First pay the tax in dispute\nD) Have a case assigned to Appeals first",
+      "question": "After receiving a notice of deficiency for $50,000, John Smith wants to challenge the IRS's determination in court. To petition the U.S. Tax Court, John Smith must:",
       "options": [
         "Receive a notice of deficiency and file within 90 days",
         "Have a gross income exceeding $100,000 for the tax year under examination and demonstrate significant assets.",
@@ -24341,7 +24341,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Sarah Miller disputes a $40,000 tax assessment from the IRS. She wants to represent herself in court and minimize legal expenses. The Small Tax Case (S case) procedure in Tax Court is available for disputes of:\nA) $50,000 or less per year\nB) $25,000 or less per year\nC) $10,000 or less per year\nD) $75,000 or less per year",
+      "question": "Sarah Miller disputes a $40,000 tax assessment from the IRS. She wants to represent herself in court and minimize legal expenses. The Small Tax Case (S case) procedure in Tax Court is available for disputes of:",
       "options": [
         "$50,000 or less per year",
         "$25,000 or less per year",
@@ -24376,7 +24376,7 @@
       "topic": "Appeals procedures",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "ABC Company disagrees with a $200,000 tax assessment. They want to sue the IRS for a refund. To sue for a refund in District Court or Court of Federal Claims, ABC Company must first:\nA) File a petition with Tax Court\nB) Go through Appeals\nC) Pay the full amount of the disputed tax\nD) Get approval from the IRS Commissioner",
+      "question": "ABC Company disagrees with a $200,000 tax assessment. They want to sue the IRS for a refund. To sue for a refund in District Court or Court of Federal Claims, ABC Company must first:",
       "options": [
         "File a petition with Tax Court to get a ruling",
         "Go through Appeals to attempt an early settlement",
@@ -24446,7 +24446,7 @@
       "topic": "Collection due process (CDP)",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "The IRS has issued a notice of intent to levy on Robert's bank account due to unpaid taxes. A Collection Due Process (CDP) hearing is available:\nA) Only after levy has been made\nB) Before any collection action\nC) Before or after filing of a federal tax lien or levy\nD) Only for amounts over $50,000",
+      "question": "The IRS has issued a notice of intent to levy on Robert's bank account due to unpaid taxes. A Collection Due Process (CDP) hearing is available:",
       "options": [
         "Only after the levy has been executed and funds seized, and a claim for refund has been denied.",
         "Before any collection action, but only if Robert agrees to a payment plan within 30 days of the notice.",
@@ -24481,7 +24481,7 @@
       "topic": "Collection due process (CDP)",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The IRS sent Lisa a notice of intent to levy on July 1st. She wants to request a Collection Due Process (CDP) hearing to discuss alternative payment options. A Request for a Collection Due Process hearing must be filed within:\nA) 10 days of the notice\nB) 45 days of the notice\nC) 30 days of the notice\nD) 90 days of the notice",
+      "question": "The IRS sent Lisa a notice of intent to levy on July 1st. She wants to request a Collection Due Process (CDP) hearing to discuss alternative payment options. A Request for a Collection Due Process hearing must be filed within:",
       "options": [
         "10 days of the notice",
         "45 days of the notice",
@@ -27281,7 +27281,7 @@
       "topic": "Penalty abatement",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "During the 2023 tax year, GreenTech Solutions substantially understated their income tax liability. Upon audit, the IRS determined an accuracy-related penalty applies under IRC §6662. What percentage of the underpayment is the accuracy-related penalty for a substantial understatement of income tax?\n(A) 75% of the underpayment\n(B) 10% of the underpayment\n(C) 20% of the underpayment\n(D) 50% of the underpayment",
+      "question": "During the 2023 tax year, GreenTech Solutions substantially understated their income tax liability. Upon audit, the IRS determined an accuracy-related penalty applies under IRC §6662. What percentage of the underpayment is the accuracy-related penalty for a substantial understatement of income tax?",
       "options": [
         "75% of the underpayment",
         "10% of the underpayment",
@@ -27316,7 +27316,7 @@
       "topic": "Preparer penalties and due diligence",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a recent audit of Apex Marketing, the IRS discovered a significant underpayment of tax due to fraudulent activity. The IRS is considering applying the civil fraud penalty under IRC §6663. What is the applicable penalty?\n(A) 20% of the underpayment due to fraud\n(B) 50% of the underpayment due to fraud\n(C) 75% of the underpayment due to fraud\n(D) 100% of the underpayment due to fraud",
+      "question": "During a recent audit of Apex Marketing, the IRS discovered a significant underpayment of tax due to fraudulent activity. The IRS is considering applying the civil fraud penalty under IRC §6663. What is the applicable penalty?",
       "options": [
         "20% of the underpayment due to fraud",
         "50% of the underpayment due to fraud",
@@ -27351,7 +27351,7 @@
       "topic": "Appeals procedures",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria Garcia is experiencing significant delays in receiving her tax refund and has been unable to resolve the issue with the IRS directly. She wants to seek assistance from an independent organization within the IRS. Maria may request assistance from the Taxpayer Advocate Service (TAS) by filing:\n(A) Form 656\n(B) Form 911 (Request for Taxpayer Advocate Service Assistance)\n(C) Form 2848\n(D) Form 8821",
+      "question": "Maria Garcia is experiencing significant delays in receiving her tax refund and has been unable to resolve the issue with the IRS directly. She wants to seek assistance from an independent organization within the IRS. Maria may request assistance from the Taxpayer Advocate Service (TAS) by filing:",
       "options": [
         "Form 656 (Offer in Compromise), used to request a payment agreement with the IRS for a lower amount than owed.",
         "Form 911 (Request for Taxpayer Advocate Service Assistance)",
@@ -27386,7 +27386,7 @@
       "topic": "Appeals procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During an audit of Johnson Family Trust, several issues arose regarding the valuation of assets. The trustee, Robert Johnson, wants to explore options for resolving the issues quickly without a formal appeals process. The IRS Fast Track Settlement (FTS) program allows:\n(A) Automatic acceptance of all proposed adjustments\n(B) An expedited resolution of examination issues through Appeals while the case remains in the examination function\n(C) Waiver of all penalties\n(D) An automatic extension of the statute of limitations",
+      "question": "During an audit of Johnson Family Trust, several issues arose regarding the valuation of assets. The trustee, Robert Johnson, wants to explore options for resolving the issues quickly without a formal appeals process. The IRS Fast Track Settlement (FTS) program allows:",
       "options": [
         "Automatic acceptance of all proposed adjustments by the IRS examiner, provided the adjustments fall within pre-approved ranges established by the National Office.",
         "An expedited resolution of examination issues through Appeals while the case remains in the examination function",
@@ -27421,7 +27421,7 @@
       "topic": "Penalty abatement",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John and Mary Smith are preparing their 2023 tax return. They anticipate a large tax liability. To avoid an estimated tax penalty, what minimum amount must they pay in estimated taxes, considering their 2022 AGI was $120,000 and their 2023 AGI is projected to be $140,000?\n(A) 80% of the current year's tax\n(B) 90% of the current year's tax or 100% of the prior year's tax (110% if prior year AGI > $150,000), whichever is less\n(C) 100% of the current year's tax only\n(D) 50% of the prior year's tax",
+      "question": "John and Mary Smith are preparing their 2023 tax return. They anticipate a large tax liability. To avoid an estimated tax penalty, what minimum amount must they pay in estimated taxes, considering their 2022 AGI was $120,000 and their 2023 AGI is projected to be $140,000?",
       "options": [
         "80% of the current year's tax liability, calculated without considering any deductions or credits, providing a safe harbor based on gross income.",
         "90% of the current year's tax or 100% of the prior year's tax (110% if prior year AGI > $150,000), whichever is less",
@@ -27456,7 +27456,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah Miller received a notice from the IRS indicating an underpayment of her 2022 taxes. She is trying to determine the interest rate the IRS will charge on the underpayment. What is the IRS underpayment interest rate for individual taxpayers?\n(A) The prime rate\n(B) The federal short-term rate plus 3 percentage points\n(C) A flat 5% per year\n(D) The federal long-term rate plus 2 percentage points",
+      "question": "Sarah Miller received a notice from the IRS indicating an underpayment of her 2022 taxes. She is trying to determine the interest rate the IRS will charge on the underpayment. What is the IRS underpayment interest rate for individual taxpayers?",
       "options": [
         "The prime rate as published in the Wall Street Journal",
         "The federal short-term rate plus 3 percentage points",
@@ -27491,7 +27491,7 @@
       "topic": "Penalty abatement",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "David filed his 2021 tax return on time, but the IRS made a calculation error resulting in a significant delay in processing his refund. This delay caused interest to accrue on an underpayment from a prior year. Under what circumstances may David request abatement of interest under IRC §6404(e)?\n(A) The taxpayer files a return on time\n(B) The interest was caused by an unreasonable error or delay by an IRS employee performing a ministerial or managerial act\n(C) The taxpayer's income decreased during the tax year\n(D) The taxpayer pays the full amount within 60 days",
+      "question": "David filed his 2021 tax return on time, but the IRS made a calculation error resulting in a significant delay in processing his refund. This delay caused interest to accrue on an underpayment from a prior year. Under what circumstances may David request abatement of interest under IRC §6404(e)?",
       "options": [
         "The taxpayer files a return on time and demonstrates a history of compliance with tax laws, suggesting good faith effort, but this alone does not warrant interest abatement.",
         "The interest was caused by an unreasonable error or delay by an IRS employee performing a ministerial or managerial act",
@@ -27561,7 +27561,7 @@
       "topic": "Innocent spouse relief",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Emily and her ex-husband, Mark, filed jointly for the 2020 tax year. After their divorce, the IRS assessed a deficiency related to unreported income solely attributable to Mark's business. Emily was unaware of the unreported income. Under IRC §6015(b), under what conditions might Emily be granted innocent spouse relief?\n(A) The couple was married for less than 5 years\n(B) There was an understatement of tax attributable to erroneous items of the other spouse, the requesting spouse did not know and had no reason to know of the understatement, and it would be inequitable to hold the requesting spouse liable\n(C) The requesting spouse earned less income than the other spouse\n(D) The couple filed separately in the year in question",
+      "question": "Emily and her ex-husband, Mark, filed jointly for the 2020 tax year. After their divorce, the IRS assessed a deficiency related to unreported income solely attributable to Mark's business. Emily was unaware of the unreported income. Under IRC §6015(b), under what conditions might Emily be granted innocent spouse relief?",
       "options": [
         "The couple was married for less than 5 years at the time the tax return was filed, and the understatement of tax exceeds 25% of the adjusted gross income reported on the return, thereby automatically qualifying the requesting spouse for innocent spouse relief regardless of their knowledge.",
         "There was an understatement of tax attributable to erroneous items of the other spouse, the requesting spouse did not know and had no reason to know of the understatement, and it would be inequitable to hold the requesting spouse liable",
@@ -29175,7 +29175,7 @@
       "topic": "Penalty abatement",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Garcia & Sons failed to deposit $10,000 in employment taxes for Q1. They deposited the funds 8 days late. Under IRC §6656, what is the penalty for failure to deposit employment taxes?\n\nA) A flat $100 per missed deposit\nB) 2% if 1-5 days late, 5% if 6-15 days late, 10% if more than 15 days late, and 15% if not deposited within 10 days of the first IRS notice\nC) 25% of the undeposited amount\nD) 0.5% per month, up to 25%",
+      "question": "Garcia & Sons failed to deposit $10,000 in employment taxes for Q1. They deposited the funds 8 days late. Under IRC §6656, what is the penalty for failure to deposit employment taxes?",
       "options": [
         "A flat $100 penalty is applied per missed deposit, unless the IRS determines reasonable cause exists for the failure, in which case the penalty may be waived.",
         "2% if 1-5 days late, 5% if 6-15 days late, 10% if more than 15 days late, and 15% if not deposited within 10 days of the first IRS notice",
@@ -29210,7 +29210,7 @@
       "topic": "Examination procedures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The IRS audited Vista Healthcare LLC and issued a 30-day letter proposing adjustments to their deductions. What options does Vista Healthcare LLC have upon receiving this preliminary notice?\n\nA) Only pay the amount due immediately\nB) Agree with the findings, request a conference with the IRS Office of Appeals, or do nothing (which will result in a 90-day letter)\nC) File a petition in Tax Court\nD) Request a new Social Security number",
+      "question": "The IRS audited Vista Healthcare LLC and issued a 30-day letter proposing adjustments to their deductions. What options does Vista Healthcare LLC have upon receiving this preliminary notice?",
       "options": [
         "Only pay the amount due immediately, thereby accepting the proposed adjustments and waiving any rights to further dispute the IRS findings.",
         "Agree with the findings, request a conference with the IRS Office of Appeals, or do nothing (which will result in a 90-day letter)",
@@ -29245,7 +29245,7 @@
       "topic": "Collection procedures",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The IRS is seeking to collect past-due taxes from Mr. Chen. Which of the following obligations can the IRS offset against his income tax refund?\n\nA) Past-due federal tax debts\nB) Past-due child support\nC) Outstanding student loan debt owed to a federal agency\nD) Personal credit card debt",
+      "question": "The IRS is seeking to collect past-due taxes from Mr. Chen. Which of the following obligations can the IRS offset against his income tax refund?",
       "options": [
         "Past-due federal tax debts",
         "Past-due child support",
@@ -29350,7 +29350,7 @@
       "topic": "Offer in compromise",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Ms. Johnson owes the IRS $50,000 in back taxes. She is considering submitting an Offer in Compromise (OIC). In which of the following situations would the IRS NOT accept her OIC?\n\nA) An installment agreement\nB) An open bankruptcy proceeding\nC) Currently Not Collectible status\nD) An active IRS examination",
+      "question": "Ms. Johnson owes the IRS $50,000 in back taxes. She is considering submitting an Offer in Compromise (OIC). In which of the following situations would the IRS NOT accept her OIC?",
       "options": [
         "An installment agreement",
         "An open bankruptcy proceeding",
@@ -29420,7 +29420,7 @@
       "topic": "Examination procedures",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Mr. Miller received a correspondence audit notice from the IRS requesting documentation to support deductions claimed on Schedule C. What should Mr. Miller do?\n\nA) Ignore the notice and wait for a phone call\nB) Respond by the date shown on the notice with the requested documents and any supporting information\nC) Call the IRS to verbally explain the items\nD) File an amended return immediately",
+      "question": "Mr. Miller received a correspondence audit notice from the IRS requesting documentation to support deductions claimed on Schedule C. What should Mr. Miller do?",
       "options": [
         "Ignore the notice, assuming the IRS will follow up with a phone call if further clarification is needed, thus saving time and potential confusion.",
         "Respond by the date shown on the notice with the requested documents and any supporting information",
@@ -29455,7 +29455,7 @@
       "topic": "Innocent spouse relief",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John and Mary filed a joint return. However, John has outstanding student loan debt from before the marriage. Mary wants to protect her portion of the refund. When is an injured spouse claim (Form 8379) appropriate?\n\nA) A spouse suspects the other spouse committed tax fraud\nB) A joint refund was or will be offset to pay the other spouse's past-due obligations (taxes, child support, student loans)\nC) A spouse wants to separate their filing status\nD) A spouse wants to amend a joint return",
+      "question": "John and Mary filed a joint return. However, John has outstanding student loan debt from before the marriage. Mary wants to protect her portion of the refund. When is an injured spouse claim (Form 8379) appropriate?",
       "options": [
         "A spouse suspects the other spouse committed tax fraud and wishes to file a separate return to avoid being held liable for the fraudulent activity, even though a joint return was initially filed.",
         "A joint refund was or will be offset to pay the other spouse's past-due obligations (taxes, child support, student loans)",
@@ -29490,7 +29490,7 @@
       "topic": "Circular 230 requirements",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Under Circular 230 §10.27, regarding fees, which of the following fee arrangements is a practitioner prohibited from charging?\n\nA) Hourly fees\nB) An unconscionable fee for services rendered\nC) A flat fee for tax return preparation\nD) A fee based on the complexity of the return",
+      "question": "Under Circular 230 §10.27, regarding fees, which of the following fee arrangements is a practitioner prohibited from charging?",
       "options": [
         "Hourly fees",
         "An unconscionable fee for services rendered",
@@ -29525,7 +29525,7 @@
       "topic": "Collection procedures",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "The IRS is attempting to collect $100,000 in unpaid taxes from Mr. Davis. Mr. Davis's primary asset is his personal residence. What must the IRS do to levy on Mr. Davis's principal residence?\n\nA) Simply issue a Notice of Intent to Levy\nB) Obtain prior written approval from a federal judge or magistrate\nC) Wait until the taxpayer sells the property\nD) Only file a Notice of Federal Tax Lien",
+      "question": "The IRS is attempting to collect $100,000 in unpaid taxes from Mr. Davis. Mr. Davis's primary asset is his personal residence. What must the IRS do to levy on Mr. Davis's principal residence?",
       "options": [
         "Simply issue a Notice of Intent to Levy, followed by a Final Demand for Payment, and then proceed with the levy.",
         "Obtain prior written approval from a federal judge or magistrate",

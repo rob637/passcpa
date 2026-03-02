@@ -1657,7 +1657,7 @@
       "subtopic": "Financial Planning Process",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "Maria is a new client at Oak Financial Planning. Before making any recommendations, what is the FIRST step that Sarah, a CFP® professional, should take in the CFP Board's financial planning process? \nA) Understanding the client's current situation\nB) , \nC) , \nD) s current situation",
+      "question": "Maria is a new client at Oak Financial Planning. Before making any recommendations, what is the FIRST step that Sarah, a CFP® professional, should take in the CFP Board's financial planning process?",
       "explanation": "The 7-step process: 1) Understanding client circumstances, 2) Identifying/selecting goals, 3) Analyzing current course, 4) Developing recommendations, 5) Presenting recommendations, 6) Implementing, 7) Monitoring. Understanding circumstances must come first.",
       "correctAnswer": 0,
       "options": [
@@ -1694,7 +1694,7 @@
       "subtopic": "Supervision",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David is a CFP® at Horizon Wealth Management and supervises three junior associates. According to the CFP Board's Standards of Conduct, David is responsible for:\nA) Only their own conduct\nB) C) Guaranteeing no misconduct ever occurs\nC) Establishing supervision systems for those under their authority\nD) D) Reporting all supervisees'",
+      "question": "David is a CFP® at Horizon Wealth Management and supervises three junior associates. According to the CFP Board's Standards of Conduct, David is responsible for:",
       "explanation": "CFP® professionals with supervisory responsibility must have adequate supervision systems in place. Not guaranteeing perfect outcomes, but establishing reasonable procedures and oversight. Responsible for reasonably supervising, not for every supervisee action.",
       "correctAnswer": 2,
       "options": [
@@ -1729,7 +1729,7 @@
       "subtopic": "Conflicts of Interest",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Emily, a CFP® at Greenleaf Advisors, realizes her firm receives higher commissions for selling certain annuities that may not be the best fit for her client, Mr. Jones. When a CFP® professional identifies a material conflict of interest, they must:\nA) Disclose the conflict and obtain informed consent to proceed\nB) A) Immediately terminate the client relationship\nC) C) Ignore it if it benefits the client\nD) D) File a report with the SEC",
+      "question": "Emily, a CFP® at Greenleaf Advisors, realizes her firm receives higher commissions for selling certain annuities that may not be the best fit for her client, Mr. Jones. When a CFP® professional identifies a material conflict of interest, they must:",
       "explanation": "Material conflicts require: 1) Full and fair disclosure, 2) Informed consent from client, 3) Proper management of conflict. Termination not required if properly managed. Ignoring conflicts violates fiduciary duty. SEC reporting not required unless securities violation.",
       "correctAnswer": 0,
       "options": [
@@ -1764,7 +1764,7 @@
       "subtopic": "Broker-Dealer",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "John works as a registered representative at Sterling Investments. FINRA's suitability rule (and Reg BI) primarily applies to:\nA) C) Insurance agents exclusively\nB) A) Fee-only investment advisers\nC) Broker-dealers and their representatives\nD) D) CFP® professionals regardless of registration",
+      "question": "John works as a registered representative at Sterling Investments. FINRA's suitability rule (and Reg BI) primarily applies to:",
       "explanation": "FINRA (and SEC Reg BI) regulates broker-dealers. Reg BI requires \"best interest\" standard for broker-dealer recommendations. SEC regulates investment advisers (fiduciary). Insurance agents regulated by states. CFP® Board applies additional standards regardless of registration.",
       "correctAnswer": 2,
       "options": [
@@ -1799,7 +1799,7 @@
       "subtopic": "Integrity",
       "difficulty": "easy",
       "skillLevel": "Remembering",
-      "question": "According to the CFP Board Code of Ethics, the Principle of Integrity requires CFP® professionals to:\nA) A) Guarantee profitable outcomes\nB) Be honest and not mislead clients\nC) C) Accept all prospective clients\nD) D) Provide free services to those in need",
+      "question": "According to the CFP Board Code of Ethics, the Principle of Integrity requires CFP® professionals to:",
       "explanation": "Integrity means being honest, not deceiving or misleading, and keeping commitments. Foundation of client trust. Doesn\\'t guarantee outcomes, require accepting all clients, or mandate pro bono work (though encouraged).",
       "correctAnswer": 1,
       "options": [
@@ -1834,7 +1834,7 @@
       "subtopic": "Financial Planning Defined",
       "difficulty": "medium",
       "skillLevel": "Remembering",
-      "question": "Under CFP Board rules, what constitutes \"financial planning\" when providing services to a client at Peterson & Sons Wealth Management?\nA) A) A written comprehensive plan document\nB) B) Addressing at least two financial planning elements\nC) Integrating multiple financial planning elements\nD) D) Investment management services",
+      "question": "Under CFP Board rules, what constitutes \"financial planning\" when providing services to a client at Peterson & Sons Wealth Management?",
       "explanation": "Financial planning involves integrating relevant financial planning elements (financial management, risk, investment, tax, retirement, estate, education, special needs). The integration and holistic perspective distinguishes financial planning from specific product/service advice.",
       "correctAnswer": 2,
       "options": [
@@ -1869,7 +1869,7 @@
       "subtopic": "Fairness",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "The Principle of Fairness requires CFP® professionals to:\nA) Treat clients fairly without unjust harm\nB) A) Charge all clients identical fees\nC) C) Allocate equal time to all clients\nD) D) Never earn more than clients do",
+      "question": "The Principle of Fairness requires CFP® professionals to:",
       "explanation": "Fairness means treating others fairly, not taking unfair advantage, and being fair in rendering services. Different fees may be appropriate based on complexity. Time allocation varies with client needs. Fairness is about equity, not exact equality.",
       "correctAnswer": 0,
       "options": [
@@ -1904,7 +1904,7 @@
       "subtopic": "Disclosure Requirements",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "ABC Wealth Management is a Registered Investment Adviser (RIA). Which form is required to disclose information about the firm to clients and prospective clients?\nA) Registered investment advisers\nB) C) Mortgage brokers\nC) A) Insurance agents\nD) D) Certified public accountants",
+      "question": "ABC Wealth Management is a Registered Investment Adviser (RIA). Which form is required to disclose information about the firm to clients and prospective clients?",
       "explanation": "Form ADV Part 2A (the \"brochure\") is the disclosure document for SEC and state-registered investment advisers. Contains: services, fees, conflicts, disciplinary history. Must be provided to clients at engagement and annual offer to deliver updates.",
       "correctAnswer": 0,
       "options": [
@@ -6464,7 +6464,7 @@
       "subtopic": "Code of Ethics",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sarah is a CFP® professional at Oakwood Financial Planning. She is committed to providing excellent service to her clients. According to the CFP Board's Code of Ethics, Sarah is required to:\n(A) Maximize firm revenue\n(B) Only follow state laws\n(C) Avoid all risks\n(D) Act with honesty, integrity, competence, and diligence in her professional activities",
+      "question": "Sarah is a CFP® professional at Oakwood Financial Planning. She is committed to providing excellent service to her clients. According to the CFP Board's Code of Ethics, Sarah is required to:",
       "explanation": "The Code of Ethics establishes eight principles: Client-First (act in client\\'s best interest), Integrity, Objectivity, Fairness, Professionalism, Competence, Confidentiality, and Diligence. These aren\\'t just goals—they\\'re enforceable standards. Violations can result in discipline including certification revocation.",
       "correctAnswer": 3,
       "options": [
@@ -6499,7 +6499,7 @@
       "subtopic": "Duties When Providing Financial Advice",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "David is a CFP® at Horizon Wealth. He is considering recommending a new investment product that benefits his firm more than his clients. The \"Duty of Loyalty\" under CFP Board Standards requires that David:\n(A) Clients must be loyal to advisors\n(B) Loyalty to employer comes first\n(C) Loyalty is optional based on circumstances\n(D) Client's interests must take precedence over the CFP® professional's or firm's interests",
+      "question": "David is a CFP® at Horizon Wealth. He is considering recommending a new investment product that benefits his firm more than his clients. The \"Duty of Loyalty\" under CFP Board Standards requires that David:",
       "explanation": "Duty of Loyalty: place client interests above your own and your firm\\'s. This includes: avoiding conflicts (or disclosing and obtaining informed consent), not recommending products for higher commission, and not steering clients to benefit affiliated entities. It\\'s part of the fiduciary duty applying when providing financial advice.",
       "correctAnswer": 3,
       "options": [
@@ -6533,7 +6533,7 @@
       "subtopic": "Financial Planning Process Steps",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is developing a financial plan for the Johnsons at Emerald Financial. The CFP Board's Practice Standards require financial planning to include:\n(A) Only investment recommendations\n(B) Written plans exclusively\n(C) Annual reviews only\n(D) Understanding circumstances, identifying goals, analyzing, developing recommendations, implementing, and monitoring",
+      "question": "Maria is developing a financial plan for the Johnsons at Emerald Financial. The CFP Board's Practice Standards require financial planning to include:",
       "explanation": "The Practice Standards outline the financial planning process: 1) Understanding the client\\'s circumstances, 2) Identifying and selecting goals, 3) Analyzing the situation and courses of action, 4) Developing recommendations, 5) Presenting recommendations, 6) Implementing recommendations, and 7) Monitoring progress and updating.",
       "correctAnswer": 3,
       "options": [
@@ -6568,7 +6568,7 @@
       "subtopic": "Investment Company Act",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Green Valley Investments pools money from various investors to purchase a diversified portfolio of stocks and bonds. Which of the following regulates Green Valley Investments?\n(A) Individual investment advisers\n(B) Broker-dealer sales practices\n(C) Private placements only\n(D) Mutual funds, closed-end funds, UITs, and other pooled investment vehicles that invest in securities",
+      "question": "Green Valley Investments pools money from various investors to purchase a diversified portfolio of stocks and bonds. Which of the following regulates Green Valley Investments?",
       "explanation": "The \\'40 Act regulates investment companies—entities that invest in securities on behalf of shareholders. It requires registration, imposes governance requirements (independent directors), limits leverage and affiliated transactions, and mandates disclosure. Mutual funds, closed-end funds, and ETFs are registered investment companies.",
       "correctAnswer": 3,
       "options": [
@@ -6603,7 +6603,7 @@
       "subtopic": "FINRA Rules",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Tom, a FINRA-registered representative at Sterling Brokerage, is recommending a high-risk bond fund to a client. Tom must ensure:\n(A) Minimum documentation\n(B) Maximum commission\n(C) Only proprietary products are sold\n(D) Suitability at the time of recommendation, considering customer profile and product characteristics",
+      "question": "Tom, a FINRA-registered representative at Sterling Brokerage, is recommending a high-risk bond fund to a client. Tom must ensure:",
       "explanation": "FINRA suitability (Rule 2111) has three components: reasonable-basis (product understanding), customer-specific (appropriate for this customer), and quantitative (not excessive trading). Reg BI enhanced this to \"best interest\" standard. Representatives must know-your-customer and have reasonable basis for recommendations.",
       "correctAnswer": 3,
       "options": [
@@ -6638,7 +6638,7 @@
       "subtopic": "State Insurance Regulation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "ABC Insurance Agency operates in multiple states, selling life and health insurance products. Insurance regulation in the United States is primarily handled by:\n(A) FINRA\n(B) The SEC\n(C) Federal agencies exclusively\n(D) State insurance departments, with each state having its own commissioner and licensing requirements",
+      "question": "ABC Insurance Agency operates in multiple states, selling life and health insurance products. Insurance regulation in the United States is primarily handled by:",
       "explanation": "Insurance is regulated primarily at the state level. Each state has an insurance commissioner/department that licenses agents, approves products and rates, enforces regulations, and handles consumer complaints. The National Association of Insurance Commissioners (NAIC) promotes some uniformity but states remain primary regulators.",
       "correctAnswer": 3,
       "options": [
@@ -6673,7 +6673,7 @@
       "subtopic": "Duty of Care",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Susan is a CFP® professional advising a client on retirement planning at Redwood Advisors. The fiduciary Duty of Care requires Susan to:\n(A) Avoid all risky investments\n(B) Only recommend proprietary products\n(C) Guarantee investment returns\n(D) Act with the care, skill, prudence, and diligence that a prudent professional would use",
+      "question": "Susan is a CFP® professional advising a client on retirement planning at Redwood Advisors. The fiduciary Duty of Care requires Susan to:",
       "explanation": "Duty of Care (part of fiduciary standard): act as a competent, prudent professional would. This includes: understanding products before recommending, conducting appropriate analysis, maintaining current knowledge, developing recommendations carefully, and not being negligent. It\\'s about professional competence and diligence.",
       "correctAnswer": 3,
       "options": [
@@ -6988,7 +6988,7 @@
       "subtopic": "Confidentiality Exceptions",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah, a CFP® at Oak Financial Planning, is working with a new client. Under what circumstances is Sarah permitted to disclose confidential client information without violating the CFP Board's Standards of Conduct?\n\nWhich of the following represents permissible exceptions to CFP® confidentiality requirements?\n\nA) Social media sharing\nB) Competitive intelligence\nC) Sharing with any interested party\nD) Client consent, legal requirements (subpoenas, reporting laws), and defending against charges of wrongdoing",
+      "question": "Sarah, a CFP® at Oak Financial Planning, is working with a new client. Under what circumstances is Sarah permitted to disclose confidential client information without violating the CFP Board's Standards of Conduct?\n\nWhich of the following represents permissible exceptions to CFP® confidentiality requirements?",
       "explanation": "Confidentiality protects client information, with exceptions: 1) Client consent, 2) Legal requirements (court orders, regulatory examinations, mandatory reporting), 3) Defending against allegations (but disclose only what\\'s necessary). Even within exceptions, minimize disclosure. Confidentiality continues after the relationship ends.",
       "correctAnswer": 3,
       "options": [
@@ -7023,7 +7023,7 @@
       "subtopic": "Anti-Money Laundering",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to increased regulatory scrutiny, Stonebridge Wealth Management is reviewing its compliance procedures. Which of the following actions are financial firms required to take under anti-money laundering (AML) regulations?\n\nAML regulations require financial firms to:\n\nA) Avoid foreign clients\nB) Only report large cash deposits\nC) Guarantee customer identity\nD) Implement customer identification programs, monitor for suspicious activity, and file required reports",
+      "question": "Due to increased regulatory scrutiny, Stonebridge Wealth Management is reviewing its compliance procedures. Which of the following actions are financial firms required to take under anti-money laundering (AML) regulations?\n\nAML regulations require financial firms to:",
       "explanation": "AML programs include: Customer Identification Program (CIP) verifying identity, Customer Due Diligence (CDD) understanding the customer, monitoring for suspicious activity, Suspicious Activity Reports (SAR) when warranted, Currency Transaction Reports (CTR) for cash over $10,000, and training. Bank Secrecy Act and USA PATRIOT Act govern requirements.",
       "correctAnswer": 3,
       "options": [
@@ -7058,7 +7058,7 @@
       "subtopic": "Best Execution",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Greenleaf Investments is evaluating different brokerage options for its clients. What does the duty of best execution mean for Greenleaf Investments as a registered investment adviser?\n\nThe best execution duty for investment advisers means:\n\nA) Lowest commission always\nB) Only using one broker\nC) Fastest execution always\nD) Seeking the most favorable execution terms reasonably available under the circumstances, considering various factors",
+      "question": "Greenleaf Investments is evaluating different brokerage options for its clients. What does the duty of best execution mean for Greenleaf Investments as a registered investment adviser?\n\nThe best execution duty for investment advisers means:",
       "explanation": "Best execution considers: price, speed, likelihood of execution, research and services, confidentiality, and commission costs together—not just lowest commission. Soft dollar arrangements (receiving research for directing trades) must be disclosed and provide genuine benefit. Advisers should periodically review and compare execution quality.",
       "correctAnswer": 3,
       "options": [
@@ -7093,7 +7093,7 @@
       "subtopic": "Privacy and Data Security",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Following a recent data security breach affecting several financial institutions, the compliance department at Horizon Financial Group is reviewing its privacy policies. What are the privacy requirements under Regulation S-P?\n\nPrivacy requirements under Regulation S-P require financial institutions to:\n\nA) Never share any information\nB) Share information freely\nC) Only notify after data breaches\nD) Provide privacy notices explaining information sharing practices and allow opt-out of certain sharing",
+      "question": "Following a recent data security breach affecting several financial institutions, the compliance department at Horizon Financial Group is reviewing its privacy policies. What are the privacy requirements under Regulation S-P?\n\nPrivacy requirements under Regulation S-P require financial institutions to:",
       "explanation": "Regulation S-P (privacy of consumer financial information): initial and annual privacy notices, opt-out rights for sharing with non-affiliates, and safeguards for customer information. Many states have additional requirements. Data security includes physical, administrative, and technical safeguards. Increasingly, cybersecurity is a regulatory focus.",
       "correctAnswer": 3,
       "options": [
@@ -7128,7 +7128,7 @@
       "subtopic": "Grounds for Discipline",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The CFP Board is investigating a complaint filed against Michael, a CFP® practitioner. What actions could lead to disciplinary action by the CFP Board against Michael?\n\nGrounds for CFP Board discipline include:\n\nA) Client complaints only\nB) Only criminal convictions\nC) Changing employers\nD) Standards violations, criminal conduct, professional misconduct, false statements, and failure to respond to Board inquiries",
+      "question": "The CFP Board is investigating a complaint filed against Michael, a CFP® practitioner. What actions could lead to disciplinary action by the CFP Board against Michael?\n\nGrounds for CFP Board discipline include:",
       "explanation": "Discipline grounds: Standards of Conduct violations, crimes (felonies, financial crimes, crimes of moral turpitude), professional discipline by other regulators, bankruptcy/civil judgments in certain cases, false statements to Board, failure to respond to inquiries, and unauthorized use of CFP marks. Sanctions range from private censure to permanent revocation.",
       "correctAnswer": 3,
       "options": [
@@ -7163,7 +7163,7 @@
       "subtopic": "Accredited Investor",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Venture Capital Partners is marketing a new private equity fund. Under Regulation D, which of the following individuals qualifies as an accredited investor?\n\nAn accredited investor under Regulation D includes individuals with:\n\nA) Any income level\nB) Securities licenses only\nC) Only institutional investors\nD) $200,000 income ($300,000 joint) for past two years with expectation of same, or $1 million net worth excluding primary residence",
+      "question": "Venture Capital Partners is marketing a new private equity fund. Under Regulation D, which of the following individuals qualifies as an accredited investor?\n\nAn accredited investor under Regulation D includes individuals with:",
       "explanation": "Accredited investors can access private placements. Individual standards: income ($200K/$300K joint for two years, expected to continue) or net worth ($1M excluding primary residence). Entities have their own standards. Recent additions: knowledgeable employees, professionals with certain licenses (Series 7, 65, 82). Accredited status reduces investor protections.",
       "correctAnswer": 3,
       "options": [
@@ -7198,7 +7198,7 @@
       "subtopic": "Informed Consent",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Before recommending a complex estate planning strategy, Emily, a CFP® at Trustworthy Advisors, wants to ensure her client fully understands the plan. What does informed consent from clients require?\n\nInformed consent from clients requires:\n\nA) Simply obtaining a signature\nB) Email confirmation only\nC) Reading a disclosure aloud\nD) Ensuring clients understand the information disclosed, its implications, and can ask questions before agreeing",
+      "question": "Before recommending a complex estate planning strategy, Emily, a CFP® at Trustworthy Advisors, wants to ensure her client fully understands the plan. What does informed consent from clients require?\n\nInformed consent from clients requires:",
       "explanation": "Informed consent means the client truly understands what they\\'re consenting to. This requires: clear disclosure in understandable terms, opportunity for questions, verification of understanding, and documentation. A client signing a disclosure they don\\'t understand hasn\\'t given \"informed\" consent. Complexity requires extra care.",
       "correctAnswer": 3,
       "options": [
@@ -7233,7 +7233,7 @@
       "subtopic": "Business Continuity",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "After a hurricane devastated the region, the partners at SecurePath Financial are reviewing their plan. What should a business continuity plan for a financial planning practice address?\n\nA business continuity plan for a financial planning practice should address:\n\nA) Insurance coverage exclusively\nB) Only IT backup\nC) Only natural disasters\nD) How the firm will maintain operations and protect client interests during disruptions including disasters, death, or incapacity",
+      "question": "After a hurricane devastated the region, the partners at SecurePath Financial are reviewing their plan. What should a business continuity plan for a financial planning practice address?\n\nA business continuity plan for a financial planning practice should address:",
       "explanation": "Business continuity planning: data backup and recovery, alternative communication methods, key person succession, client notification procedures, regulatory requirements, and testing. For solo practitioners, having an agreement with another planner to serve clients if incapacitated is essential for client protection.",
       "correctAnswer": 3,
       "options": [
@@ -8637,7 +8637,7 @@
       "subtopic": "Presenting Recommendations",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Maria is meeting with a new client, John Smith, to discuss retirement planning. When presenting her recommendations to John, which of the following presentation styles is MOST appropriate?\n(A) In clear, understandable language appropriate to client\n(B) Using technical jargon to demonstrate expertise\n(C) Only in writing to avoid misunderstandings\n(D) Only verbally to build rapport",
+      "question": "Maria is meeting with a new client, John Smith, to discuss retirement planning. When presenting her recommendations to John, which of the following presentation styles is MOST appropriate?",
       "explanation": "Presentation best practices: adapt to client\\'s communication style, avoid jargon (or explain it), use visuals if helpful, allow questions, confirm understanding. Present rationale—why recommendation fits goals. Written summary often useful. Alternative approaches may be discussed. Client should have time to consider. Goal: informed decision-making, not just acceptance.",
       "correctAnswer": 0,
       "options": [
@@ -8672,7 +8672,7 @@
       "subtopic": "Competence",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David, a CFP® at Horizon Financial, is approached by a client seeking advice on complex estate planning strategies, an area outside David's expertise. David should:\n(A) Gain competence, refer appropriately, or associate with qualified specialists to serve the client\n(B) Proceed anyway, relying on general financial knowledge\n(C) Decline all such engagements to avoid liability\n(D) Only provide general advice on basic estate planning",
+      "question": "David, a CFP® at Horizon Financial, is approached by a client seeking advice on complex estate planning strategies, an area outside David's expertise. David should:",
       "explanation": "Competence gaps: options include gaining expertise (education, research), referring to specialists, collaborative approach with other professionals. Don\\'t practice beyond competence without support. Continuing education addresses many gaps over time. Complex areas (estate law, tax): work with attorneys, CPAs. Maintain competence through ongoing education. Know limitations.",
       "correctAnswer": 0,
       "options": [
@@ -8707,7 +8707,7 @@
       "subtopic": "Investment Selection",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Sarah is selecting investments for her client's portfolio. Her fiduciary duty requires her to:\n(A) Choosing best-performing funds, regardless of risk\n(B) Prudent selection considering cost, risk, fit with client objectives, and tax efficiency among other factors\n(C) Proprietary products only, to maximize firm revenue\n(D) Avoiding all risk, even if it means lower returns",
+      "question": "Sarah is selecting investments for her client's portfolio. Her fiduciary duty requires her to:",
       "explanation": "Investment fiduciary standards: prudent process more important than specific outcome. Consider: client\\'s goals, risk tolerance, time horizon, overall portfolio, costs (expense ratios, loads), tax efficiency, diversification. No requirement to pick \"best\" performer—that\\'s not knowable. Reasonable selection with documented rationale. Monitor ongoing. Compare similar products fairly.",
       "correctAnswer": 1,
       "options": [
@@ -8742,7 +8742,7 @@
       "subtopic": "Advertising Rules",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Greenleaf Investments advertises its services online. Investment adviser advertising regulations require:\n(A) No restrictions on advertising content\n(B) Only SEC approval for all advertisements\n(C) No false or misleading statements, specific rules on testimonials/endorsements, and performance presentation standards\n(D) Competitor comparisons highlighting Greenleaf's superior performance",
+      "question": "Greenleaf Investments advertises its services online. Investment adviser advertising regulations require:",
       "explanation": "IA advertising rules (Marketing Rule): no untrue statements or omissions, testimonials allowed with disclosures, performance must not be misleading, specific requirements for hypothetical and composite performance. CFP Board also regulates—no misleading claims about CFP certification. Social media is advertising. Substantiate claims. Pre-approval often required at firms.",
       "correctAnswer": 2,
       "options": [
@@ -8777,7 +8777,7 @@
       "subtopic": "Documentation",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "ABC Financial maintains records of all client engagements. Proper documentation of client engagements protects:\n(A) Only the planner from potential lawsuits\n(B) Both client and planner by creating a record of agreements, recommendations, disclosures, and decisions\n(C) Only if litigation occurs involving the client\n(D) No one—it's simply an administrative burden",
+      "question": "ABC Financial maintains records of all client engagements. Proper documentation of client engagements protects:",
       "explanation": "Documentation benefits: client reference (what was agreed, why), planner protection (demonstrate compliance), regulatory evidence. Document: engagement terms, client information, analysis, recommendations, disclosures, client decisions, implementation, updates. Retention per requirements (typically 5+ years). Contemporaneous notes most credible. \"If it\\'s not documented, it didn\\'t happen.\"",
       "correctAnswer": 0,
       "options": [
@@ -8812,7 +8812,7 @@
       "subtopic": "Fairness",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "As a CFP® professional, treating clients fairly means:\n(A) Identical service to all clients, regardless of their needs\n(B) Reasonable and not taking advantage of client\n(C) Equal investment outcomes for all clients\n(D) Guaranteeing specific returns on investments",
+      "question": "As a CFP® professional, treating clients fairly means:",
       "explanation": "Fairness duty: don\\'t exploit client vulnerabilities (limited knowledge, age-related concerns, emotional state). Act reasonably in all aspects of relationship. Doesn\\'t mean identical service—may charge/serve differently based on client needs. But disclosures must be fair, advice appropriate, fees reasonable. Enhanced care for vulnerable clients. Fair dealing with colleagues too.",
       "correctAnswer": 2,
       "options": [
@@ -8847,7 +8847,7 @@
       "subtopic": "Cost Transparency",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "When discussing investment options with a client, fiduciary duty regarding costs requires disclosure of:\n(A) Only advisory fees charged by the planner\n(B) Only costs exceeding $1,000 per year\n(C) All material costs including advisory fees, product costs, commissions, platform fees, and transaction costs\n(D) Costs are never disclosed to maintain client confidentiality",
+      "question": "When discussing investment options with a client, fiduciary duty regarding costs requires disclosure of:",
       "explanation": "Cost disclosure: client must understand total cost. Includes: advisory fees (how calculated), fund expense ratios, commissions, loads, platform/custody fees, transaction costs, any revenue sharing. Aggregate impact on returns. Comparison of cost differences between alternatives. Written disclosure, confirmed understanding. Hiding costs = breach of fiduciary duty.",
       "correctAnswer": 2,
       "options": [
@@ -8882,7 +8882,7 @@
       "subtopic": "Privacy Regulation",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "First National Bank collects nonpublic personal information about its customers. Regulation S-P requires First National to:\n(A) Share information freely with affiliated companies\n(B) Provide privacy notices explaining information practices and give customers opt-out rights for certain sharing\n(C) Sell customer data to third-party marketing firms\n(D) Delete all customer records after one year",
+      "question": "First National Bank collects nonpublic personal information about its customers. Regulation S-P requires First National to:",
       "explanation": "Reg S-P (Privacy of Consumer Financial Information): initial and annual privacy notices required. Must describe: what information collected, how used, how protected. Customer opt-out rights for sharing with non-affiliated third parties. Safeguards rule: protect customer records. Applies to SEC-registered advisers, BDs. GLBA is underlying statute. State laws may be stricter.",
       "correctAnswer": 1,
       "options": [

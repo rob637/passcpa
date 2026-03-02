@@ -1816,7 +1816,7 @@
       "subtopic": "Right-of-Use Asset",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Evergreen Solutions just leased office space. The lease agreement requires monthly payments and includes initial direct costs. The right-of-use (ROU) asset recognized by Evergreen includes all EXCEPT:\nA) Lease payments made at or before commencement\nB) Initial measurement of lease liability\nC) Initial direct costs incurred by lessee\nD) Variable lease payments based on an index",
+      "question": "Evergreen Solutions just leased office space. The lease agreement requires monthly payments and includes initial direct costs. The right-of-use (ROU) asset recognized by Evergreen includes all EXCEPT:",
       "options": [
         "Lease payments made at or before commencement",
         "Initial measurement of lease liability",
@@ -1850,7 +1850,7 @@
       "subtopic": "Temporary Differences",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Superior Manufacturing uses accelerated depreciation for tax purposes and straight-line for financial reporting. This difference is expected to reverse in future years. Which of the following creates a deferred tax LIABILITY for Superior?\nA) Warranty expenses recognized before paid\nB) Accelerated depreciation for tax, straight-line for book\nC) Unearned revenue taxed when received\nD) Allowance for doubtful accounts",
+      "question": "Superior Manufacturing uses accelerated depreciation for tax purposes and straight-line for financial reporting. This difference is expected to reverse in future years. Which of the following creates a deferred tax LIABILITY for Superior?",
       "options": [
         "Warranty expenses recognized before paid, creating a future deductible amount",
         "Allowance for doubtful accounts, creating a future deductible temporary difference",
@@ -1918,7 +1918,7 @@
       "subtopic": "Valuation Allowance",
       "difficulty": "easy",
       "skillLevel": "Analysis",
-      "question": "Sunrise Tech has a deferred tax asset related to net operating loss carryforwards. Management is evaluating the need for a valuation allowance. A valuation allowance for deferred tax assets is required when:\nA) It is more likely than not that all or a portion will not be realized\nB) The company has permanent differences\nC) The deferred tax asset exceeds $1 million\nD) Tax rates are expected to decrease",
+      "question": "Sunrise Tech has a deferred tax asset related to net operating loss carryforwards. Management is evaluating the need for a valuation allowance. A valuation allowance for deferred tax assets is required when:",
       "options": [
         "Tax rates are expected to decrease significantly in future years, impacting future tax liabilities.",
         "The company has permanent differences that will indefinitely impact taxable income.",
@@ -1986,7 +1986,7 @@
       "subtopic": "Defined Benefit vs Defined Contribution",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Global Dynamics offers a defined contribution pension plan to its employees. The plan specifies the amount the company contributes each period. In a defined contribution pension plan, the employer's obligation is to:\nA) Guarantee a specific retirement benefit amount\nB) Manage investment risk for employees\nC) Make specified contributions to the plan\nD) Maintain a minimum funding level",
+      "question": "Global Dynamics offers a defined contribution pension plan to its employees. The plan specifies the amount the company contributes each period. In a defined contribution pension plan, the employer's obligation is to:",
       "options": [
         "Guarantee a specific retirement benefit amount",
         "Manage investment risk for employees",
@@ -2054,7 +2054,7 @@
       "subtopic": "Pension Cost Components",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Harmony Healthcare sponsors a defined benefit pension plan. The CFO is reviewing the components of net periodic pension cost. Which component of net periodic pension cost typically REDUCES pension expense?\nA) Expected return on plan assets\nB) Service cost\nC) Interest cost\nD) Amortization of prior service cost",
+      "question": "Harmony Healthcare sponsors a defined benefit pension plan. The CFO is reviewing the components of net periodic pension cost. Which component of net periodic pension cost typically REDUCES pension expense?",
       "options": [
         "Amortization of prior service cost",
         "Service cost",
@@ -2190,7 +2190,7 @@
       "subtopic": "Antidilution",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "Apex Corp. has outstanding stock options. The CFO is calculating diluted EPS. Stock options are antidilutive and excluded from diluted EPS when:\nA) The exercise price exceeds the market price\nB) The company has a net loss\nC) The options are fully vested\nD) Both A and B",
+      "question": "Apex Corp. has outstanding stock options. The CFO is calculating diluted EPS. Stock options are antidilutive and excluded from diluted EPS when:",
       "options": [
         "The exercise price exceeds the market price",
         "The company has a net loss",
@@ -2258,7 +2258,7 @@
       "subtopic": "Form 10-K",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Greenfield Industries' fiscal year ends December 31. The company must file various reports with the SEC. Form 10-K is filed:\nA) Only when material events occur\nB) Annually within 60-90 days after fiscal year end\nC) Monthly with quarterly updates\nD) Semi-annually",
+      "question": "Greenfield Industries' fiscal year ends December 31. The company must file various reports with the SEC. Form 10-K is filed:",
       "options": [
         "Only when material events occur that significantly impact financial position.",
         "Semi-annually, 60 days after the end of the second and fourth fiscal quarters.",
@@ -2292,7 +2292,7 @@
       "subtopic": "Form 8-K",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Titan Enterprises experienced a significant event that requires disclosure to the SEC. Which event would require a Form 8-K filing?\nA) Annual stockholder meeting\nB) Routine quarterly earnings announcement\nC) Entry into a material definitive agreement\nD) Changes in accounting estimates",
+      "question": "Titan Enterprises experienced a significant event that requires disclosure to the SEC. Which event would require a Form 8-K filing?",
       "options": [
         "Scheduling the annual stockholder meeting date",
         "Routine quarterly earnings announcement",
@@ -6236,7 +6236,7 @@
       "subtopic": "Regression Analysis",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Apex Analytics uses regression to forecast sales. Their model is Y = a + bX, where Y is sales and X is marketing spend. If the coefficient of determination (R²) is 0.85, this indicates that:\nA) 85% of the variation in Y is explained by X\nB) The correlation between X and Y is 0.85\nC) The regression model has an 85% margin of error\nD) The slope of the regression line is 0.85",
+      "question": "Apex Analytics uses regression to forecast sales. Their model is Y = a + bX, where Y is sales and X is marketing spend. If the coefficient of determination (R²) is 0.85, this indicates that:",
       "options": [
         "85% of the variation in Y is explained by X",
         "The correlation between X and Y is 0.85",
@@ -6270,7 +6270,7 @@
       "subtopic": "Time Series Methods",
       "difficulty": "medium",
       "skillLevel": "Analysis",
-      "question": "GlobalTech Solutions uses exponential smoothing for inventory forecasting. Which of the following statements accurately describes how exponential smoothing assigns weight to data?\nA) The oldest observation\nB) The most recent observation, with exponentially declining weights for older data\nC) The median observation in the dataset\nD) All observations equally",
+      "question": "GlobalTech Solutions uses exponential smoothing for inventory forecasting. Which of the following statements accurately describes how exponential smoothing assigns weight to data?",
       "options": [
         "The oldest observation, weighted most heavily to reflect long-term trends and stability.",
         "The most recent observation, with exponentially declining weights for older data",
@@ -6338,7 +6338,7 @@
       "subtopic": "Center Types",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The manager of the Consumer Products Division at National Conglomerate is responsible for significant capital investments. On what basis is this investment center manager evaluated?\nA) Profit (revenue minus costs) AND return on invested capital\nB) Customer satisfaction scores only\nC) Revenues only\nD) Costs only",
+      "question": "The manager of the Consumer Products Division at National Conglomerate is responsible for significant capital investments. On what basis is this investment center manager evaluated?",
       "options": [
         "Profit (revenue minus costs) AND return on invested capital",
         "Customer satisfaction scores only, reflecting brand perception and loyalty.",
@@ -6406,7 +6406,7 @@
       "subtopic": "Zero-Based Budgeting",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "During the annual budgeting process, the CFO of GreenTech Energy wants to implement zero-based budgeting (ZBB). What does ZBB require managers to do?\nA) Set all budgets to zero and wait for approval\nB) Eliminate all discretionary spending\nC) Justify all expenditures from zero each budget period, not just incremental changes\nD) Start with last year's budget and add an inflation adjustment",
+      "question": "During the annual budgeting process, the CFO of GreenTech Energy wants to implement zero-based budgeting (ZBB). What does ZBB require managers to do?",
       "options": [
         "Set all budget line items to zero and only request funds for projects with documented ROI approval.",
         "Eliminate all discretionary spending to maximize short-term profitability and shareholder value, regardless of long-term impact.",
@@ -6440,7 +6440,7 @@
       "subtopic": "Rolling Budgets",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Precision Manufacturing uses a budgeting approach that always includes the next 12 months. As one month ends, another month is added. This is an example of:\nA) Is the same as a static budget\nB) Adds a new period as each current period expires, maintaining a constant planning horizon\nC) Only covers one month at a time\nD) Is prepared once a year and never updated",
+      "question": "Precision Manufacturing uses a budgeting approach that always includes the next 12 months. As one month ends, another month is added. This is an example of:",
       "options": [
         "Is the same as a static budget, which is prepared for one level of activity and not adjusted.",
         "Adds a new period as each current period expires, maintaining a constant planning horizon",
@@ -6576,7 +6576,7 @@
       "subtopic": "Balanced Scorecard",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The CEO of InnovaTech wants to implement a Balanced Scorecard. The Balanced Scorecard integrates performance measures across which four perspectives?\nA) Short-term, Medium-term, Long-term, and Strategic\nB) Financial, Customer, Internal Business Process, and Learning & Growth\nC) Sales, Marketing, Operations, and Finance\nD) Revenue, Cost, Profit, and Risk",
+      "question": "The CEO of InnovaTech wants to implement a Balanced Scorecard. The Balanced Scorecard integrates performance measures across which four perspectives?",
       "options": [
         "Short-term Operational, Medium-term Tactical, Long-term Strategic, and Ongoing Compliance",
         "Financial, Customer, Internal Business Process, and Learning & Growth",
@@ -6610,7 +6610,7 @@
       "subtopic": "Kaizen Budgeting",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Sunrise Solar is implementing a new budgeting process that focuses on continuous improvement. This new process is called:\nA) Fixed budgets that never change\nB) Only revenue growth targets\nC) Continuous, incremental improvement assumptions into the budget\nD) Large, one-time cost reduction targets",
+      "question": "Sunrise Solar is implementing a new budgeting process that focuses on continuous improvement. This new process is called:",
       "options": [
         "Fixed budgets that remain static throughout the year, ignoring variances",
         "Budgets focused solely on revenue growth targets, neglecting cost control",
@@ -6644,7 +6644,7 @@
       "subtopic": "Mix and Yield Variances",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Superior Steel uses multiple alloys in their production process. A material mix variance measures the cost impact of:\nA) Changing the proportion of different materials used from the standard mix\nB) The difference between actual and standard output\nC) Using more total material than standard\nD) Paying more for materials than standard",
+      "question": "Superior Steel uses multiple alloys in their production process. A material mix variance measures the cost impact of:",
       "options": [
         "Changing the proportion of different materials used from the standard mix",
         "The difference between actual output and standard output, valued at standard cost, reflecting overall production efficiency.",

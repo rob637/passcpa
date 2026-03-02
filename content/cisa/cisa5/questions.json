@@ -4039,7 +4039,7 @@
       "subtopic": "Visitor Management",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a recent security audit at GlobalTech Solutions, it was noted that visitor access to the server room was not consistently managed. Which of the following describes the MOST appropriate visitor management controls that should be implemented?\n\nA) Only log entry\nB) Allow unrestricted access\nC) Verify identity, log visits, and require escorts where appropriate\nD) Only check for weapons",
+      "question": "During a recent security audit at GlobalTech Solutions, it was noted that visitor access to the server room was not consistently managed. Which of the following describes the MOST appropriate visitor management controls that should be implemented?",
       "options": [
         "Only log entry with timestamp; retain logs for a rolling 30-day period.",
         "Allow unrestricted access after a verbal confirmation of scheduled meeting.",
@@ -4074,7 +4074,7 @@
       "subtopic": "Media Sanitization",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "After decommissioning several servers at OmniCorp, the IT department needs to dispose of the hard drives. The data on these drives is classified as 'Confidential'. Media sanitization methods should primarily match which of the following?\n\nA) Cost only\nB) Speed requirements\nC) Data classification and intended media disposition\nD) Convenience",
+      "question": "After decommissioning several servers at OmniCorp, the IT department needs to dispose of the hard drives. The data on these drives is classified as 'Confidential'. Media sanitization methods should primarily match which of the following?",
       "options": [
         "Cost only, balancing initial expense and disposal fees",
         "Speed requirements and immediate operational needs",
@@ -4109,7 +4109,7 @@
       "subtopic": "Environmental",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Apex Financial is building a new data center to support its growing transaction volume. Which of the following BEST describes the environmental controls that should be implemented for the data center?\n\nA) Only cooling\nB) Only fire suppression\nC) Temperature, humidity, fire suppression, and water detection\nD) Only power",
+      "question": "Apex Financial is building a new data center to support its growing transaction volume. Which of the following BEST describes the environmental controls that should be implemented for the data center?",
       "options": [
         "Only cooling via HVAC, with redundant chiller units and airflow panels",
         "Only fire suppression using FM-200 and manual pull station alarms",
@@ -4144,7 +4144,7 @@
       "subtopic": "IAM Lifecycle",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a review of user access at Stellaris Corp, the CISO is evaluating the effectiveness of the Identity and Access Management (IAM) program. Which of the following BEST describes the key components of an effective IAM lifecycle?\n\nA) Only password management\nB) Only account creation\nC) Provisioning, review, modification, and de-provisioning\nD) Only authentication",
+      "question": "During a review of user access at Stellaris Corp, the CISO is evaluating the effectiveness of the Identity and Access Management (IAM) program. Which of the following BEST describes the key components of an effective IAM lifecycle?",
       "options": [
         "Only password management and periodic password resets.",
         "Only account creation and initial role assignment.",
@@ -4179,7 +4179,7 @@
       "subtopic": "Certification",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "United Healthcare Group is concerned about unauthorized access to patient data. Which of the following describes who should perform access certification reviews to ensure appropriate access levels are maintained?\n\nA) Be IT-owned\nB) Be annual only\nC) Be performed by business managers who understand access needs\nD) Only review privileged access",
+      "question": "United Healthcare Group is concerned about unauthorized access to patient data. Which of the following describes who should perform access certification reviews to ensure appropriate access levels are maintained?",
       "options": [
         "Be IT-owned and performed by the IT security administrator team.",
         "Be annual only, focusing on compliance audit requirements.",
@@ -4214,7 +4214,7 @@
       "subtopic": "Birthright Access",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "New employees at DataStream Analytics are automatically granted access to certain systems upon joining the company. This type of access is BEST described as:\n\nA) Inherited permissions\nB) Emergency access\nC) Base access automatically granted based on role or position\nD) Temporary access",
+      "question": "New employees at DataStream Analytics are automatically granted access to certain systems upon joining the company. This type of access is BEST described as:",
       "options": [
         "Inherited permissions passed down from a supervisor's access rights",
         "Emergency access granted to resolve a critical system outage quickly",
@@ -4249,7 +4249,7 @@
       "subtopic": "Approval Workflow",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "A user at Quantum Manufacturing requires access to sensitive financial data to perform a new job function. Which of the following should the access request approval workflow require?\n\nA) Self-approval\nB) Automatic approval\nC) Data owner and manager approval with documented justification\nD) IT approval only",
+      "question": "A user at Quantum Manufacturing requires access to sensitive financial data to perform a new job function. Which of the following should the access request approval workflow require?",
       "options": [
         "Self-approval with a follow-up review by an internal auditor.",
         "Automatic approval based on role and least privilege standards.",
@@ -4284,7 +4284,7 @@
       "subtopic": "Emergency Access",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Due to a critical system failure at SecureBank, a database administrator needs elevated privileges to restore services. Which of the following should be included in the emergency access procedures?\n\nA) No documentation\nB) Permanent elevation\nC) Time-limited access with monitoring and post-review\nD) Unlimited access",
+      "question": "Due to a critical system failure at SecureBank, a database administrator needs elevated privileges to restore services. Which of the following should be included in the emergency access procedures?",
       "options": [
         "No documentation, expedite restoration and review later",
         "Permanent elevation to expedite immediate service recovery",
@@ -11389,7 +11389,7 @@
       "subtopic": "AI Ethics",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Veridian Financial uses an AI-powered loan application system. The system denied 15% of applications in Q3, raising concerns. When auditing these AI systems, explainability is MOST important for:\nA) Data warehouse analytics\nB) Internal batch processing systems\nC) Internal reporting dashboards\nD) Systems making decisions affecting individuals",
+      "question": "Veridian Financial uses an AI-powered loan application system. The system denied 15% of applications in Q3, raising concerns. When auditing these AI systems, explainability is MOST important for:",
       "options": [
         "Data warehouse analytics used for trend analysis",
         "Internal batch processing systems for KYC updates",
@@ -11424,7 +11424,7 @@
       "subtopic": "CSPM",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "TechSolutions Inc. is migrating its infrastructure to AWS. They need a solution to proactively identify and remediate security risks. Cloud Security Posture Management (CSPM) tools primarily help organizations:\nA) Manage user passwords\nB) Encrypt all cloud data\nC) Replace cloud-native security tools\nD) Continuously monitor for misconfigurations and compliance violations",
+      "question": "TechSolutions Inc. is migrating its infrastructure to AWS. They need a solution to proactively identify and remediate security risks. Cloud Security Posture Management (CSPM) tools primarily help organizations:",
       "options": [
         "Manage user passwords and enforce multi-factor authentication policies across all applications.",
         "Encrypt all cloud data at rest and in transit using customer-managed encryption keys for enhanced privacy.",
@@ -11459,7 +11459,7 @@
       "subtopic": "Container Security",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Cloudify Solutions uses Docker containers extensively. A recent vulnerability scan revealed several outdated images. In container security, the MOST critical layer to secure is:\nA) End user devices\nB) The container registry\nC) The network only\nD) The container image before deployment",
+      "question": "Cloudify Solutions uses Docker containers extensively. A recent vulnerability scan revealed several outdated images. In container security, the MOST critical layer to secure is:",
       "options": [
         "End user devices accessing container apps",
         "The container registry storing images",
@@ -11494,7 +11494,7 @@
       "subtopic": "Kubernetes Security",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "DevOps at Zeta Corp. is implementing Kubernetes. They need to restrict communication between different microservices. Kubernetes Network Policies are used to:\nA) Encrypt data at rest\nB) Schedule container deployments\nC) Manage user authentication\nD) Control pod-to-pod communication",
+      "question": "DevOps at Zeta Corp. is implementing Kubernetes. They need to restrict communication between different microservices. Kubernetes Network Policies are used to:",
       "options": [
         "Implement AES-256 encryption for persistent volumes",
         "Schedule container deployments",
@@ -11529,7 +11529,7 @@
       "subtopic": "Serverless Security",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "FinServ Innovations is adopting serverless functions for its new trading platform. The security team is concerned about monitoring and securing these functions. The PRIMARY security challenge with serverless computing is:\nA) High infrastructure costs\nB) Lack of programming language support\nC) Managing server patches\nD) Limited visibility and ephemeral nature of functions",
+      "question": "FinServ Innovations is adopting serverless functions for its new trading platform. The security team is concerned about monitoring and securing these functions. The PRIMARY security challenge with serverless computing is:",
       "options": [
         "High infrastructure costs due to function execution spikes",
         "Lack of programming language support across all providers",
@@ -11564,7 +11564,7 @@
       "subtopic": "Multi-Cloud Security",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Global Retail Group uses both AWS and Azure. They are struggling to enforce consistent security standards. In multi-cloud environments, the GREATEST security challenge is:\nA) Better vendor relationships\nB) Increased performance\nC) Lower costs\nD) Maintaining consistent security policies across platforms",
+      "question": "Global Retail Group uses both AWS and Azure. They are struggling to enforce consistent security standards. In multi-cloud environments, the GREATEST security challenge is:",
       "options": [
         "Better vendor relationships to streamline incident response",
         "Increased performance through optimized resource allocation",
@@ -11599,7 +11599,7 @@
       "subtopic": "IT/OT Differences",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "ManufacturingCo's OT/ICS environment controls critical production lines. A system failure could halt production and create safety risks. In OT/ICS environments, the PRIMARY security priority differs from IT because:\nA) OT systems are always air-gapped\nB) OT does not process sensitive data\nC) OT has lower budgets\nD) Availability and safety take precedence over confidentiality",
+      "question": "ManufacturingCo's OT/ICS environment controls critical production lines. A system failure could halt production and create safety risks. In OT/ICS environments, the PRIMARY security priority differs from IT because:",
       "options": [
         "OT systems are always air-gapped from IT networks, reducing risk",
         "OT does not process sensitive data requiring encryption at rest or in transit",
@@ -11634,7 +11634,7 @@
       "subtopic": "ICS Architecture",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "EnergyCorp's industrial control systems are segmented into different security zones. The security architect uses a model to define these zones. The Purdue Model is used in industrial environments to:\nA) Manage user identities\nB) Encrypt industrial protocols\nC) Classify data sensitivity levels\nD) Define network segmentation between OT levels",
+      "question": "EnergyCorp's industrial control systems are segmented into different security zones. The security architect uses a model to define these zones. The Purdue Model is used in industrial environments to:",
       "options": [
         "Manage user identities within the enterprise network",
         "Encrypt industrial protocols using AES-256 encryption",

@@ -79,7 +79,7 @@ export const SEE1_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'see1-d06',
-      question: 'Maria filed her 2023 tax return on March 1, 2024. Later, on April 10, 2024, she realized she made a mistake and filed another return. What is the key difference between a superseding return and an amended return?\n\nA) A superseding return is filed before the original due date (including extensions)\nB) A superseding return uses Form 1040-X\nC) There is no difference; the terms are interchangeable\nD) An amended return can be e-filed, but a superseding return cannot',
+      question: 'Maria filed her 2023 tax return on March 1, 2024. Later, on April 10, 2024, she realized she made a mistake and filed another return. What is the key difference between a superseding return and an amended return?',
       options: ['A superseding return is filed before the original due date (including extensions)', 'A superseding return, unlike an amended return, always requires the use of Form 1040-X and must include detailed explanations for each change, even minor ones.', 'While the terms are sometimes used loosely, there is no practical difference between a superseding return and an amended return, as both serve to correct errors on a previously filed tax return.', 'An amended return can be e-filed if the original return was e-filed, but a superseding return, due to its nature as a replacement, must always be submitted via mail with original signatures.'],
       correctAnswer: 0,
       blueprintArea: 'SEE1-6',
@@ -219,7 +219,7 @@ export const SEE1_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'see1-d20',
-      question: 'Michael contributed $2,000 to a Roth IRA in 2024. He is eligible for the Saver\'s Credit. The Saver\'s Credit (Retirement Savings Contribution Credit) is available for contributions to:\n\nA) Traditional IRA, Roth IRA, or employer plans\nB) Only traditional IRAs\nC) Only ABLE accounts\nD) Only employer retirement plans',
+      question: 'Michael contributed $2,000 to a Roth IRA in 2024. He is eligible for the Saver\'s Credit. The Saver\'s Credit (Retirement Savings Contribution Credit) is available for contributions to:',
       options: ['Traditional IRA, Roth IRA, or employer plans', 'Only traditional IRAs, if the taxpayer is under 50', 'Only ABLE accounts, if the beneficiary is disabled', 'Only employer retirement plans, such as a 401(k)'],
       correctAnswer: 0,
       blueprintArea: 'SEE1-3',
@@ -340,7 +340,7 @@ export const SEE2_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'see2-d06',
-      question: 'Gamma Corp wants to acquire all the outstanding stock of Delta Corp in a Type B reorganization. In a Type B reorganization, the acquiring corporation must use:\nA) Cash or property\nB) Solely voting stock\nC) Any combination of consideration\nD) At least 80% stock',
+      question: 'Gamma Corp wants to acquire all the outstanding stock of Delta Corp in a Type B reorganization. In a Type B reorganization, the acquiring corporation must use:',
       options: ['Cash or property', 'At least 80% stock', 'Any combination of consideration', 'Solely voting stock'],
       correctAnswer: 3,
       blueprintArea: 'SEE2-1',
@@ -520,7 +520,7 @@ export const SEE2_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'see2-d24',
-      question: 'Davis & Associates purchased new office furniture for $25,000 this year. Under MACRS, office furniture and fixtures are classified as what recovery period property?\nA) 3-year property\nB) 5-year property\nC) 7-year property\nD) 10-year property',
+      question: 'Davis & Associates purchased new office furniture for $25,000 this year. Under MACRS, office furniture and fixtures are classified as what recovery period property?',
       options: ['3-year property', '5-year property', '7-year property', '10-year property'],
       correctAnswer: 2,
       blueprintArea: 'SEE2-2',

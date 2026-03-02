@@ -3018,7 +3018,7 @@
       "subtopic": "Estate Tax Returns",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After her death on March 15, 2024, the gross estate of Sarah Miller, a widow, is estimated at $12 million, including $1 million in adjusted taxable gifts made during her lifetime. When is Sarah's estate required to file Form 706, United States Estate (and Generation-Skipping Transfer) Tax Return?\n\nA) Only if tax is owed\nB) Gross estate plus adjusted taxable gifts exceed filing threshold, or to elect portability\nC) Only for married decedents\nD) Anyone dies with any assets",
+      "question": "After her death on March 15, 2024, the gross estate of Sarah Miller, a widow, is estimated at $12 million, including $1 million in adjusted taxable gifts made during her lifetime. When is Sarah's estate required to file Form 706, United States Estate (and Generation-Skipping Transfer) Tax Return?",
       "explanation": "Form 706 filing: required when gross estate + adjusted taxable gifts > exemption (~$7M in 2026). Also: elect to port unused exclusion to surviving spouse (regardless of value). Due: 9 months from death (6-month extension available). Portability election: even if no tax owed, file to preserve DSUE for surviving spouse. Many file solely for portability.",
       "correctAnswer": 1,
       "options": [
@@ -3053,7 +3053,7 @@
       "subtopic": "Pay on Death Accounts",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "John Smith wants to simplify his estate plan and avoid probate. He's considering adding designations to his investment accounts. How do Payable on Death (POD) and Transfer on Death (TOD) account designations function?\n\nA) Require trust\nB) Allow assets to pass directly to named beneficiaries at death, avoiding probate while owner retains full control\nC) Are irrevocable\nD) Give beneficiary immediate access",
+      "question": "John Smith wants to simplify his estate plan and avoid probate. He's considering adding designations to his investment accounts. How do Payable on Death (POD) and Transfer on Death (TOD) account designations function?",
       "explanation": "POD/TOD designations: simple probate avoidance. Bank accounts: POD. Investment accounts: TOD. Owner: full control during life, can change beneficiary anytime, no beneficiary rights until death. At death: beneficiary claims with death certificate. Simple, free, effective for straightforward situations. Limitations: no contingent planning, may not override will.",
       "correctAnswer": 1,
       "options": [
@@ -3088,7 +3088,7 @@
       "subtopic": "Document Safekeeping",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Emily Carter recently updated her will and other estate planning documents with Chen & Associates. To ensure her wishes are followed, where should these original documents be stored?\n\nA) Kept in safety deposit box always\nB) Destroyed after signing\nC) Stored safely with locations known to successors, with signed originals for wills typically required for probate\nD) Kept only by attorney",
+      "question": "Emily Carter recently updated her will and other estate planning documents with Chen & Associates. To ensure her wishes are followed, where should these original documents be stored?",
       "explanation": "Document storage: originals important—many courts require original will. Options: fireproof safe at home, with attorney, some court filing (few states). Safety deposit box: may be sealed at death, require court order. Copies: agents should have, keep with important papers. Inform: successor trustees, agents, executor of locations. Review accessibility periodically.",
       "correctAnswer": 2,
       "options": [
@@ -3123,7 +3123,7 @@
       "subtopic": "Testamentary Trusts",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Robert intends to establish a trust for his grandchildren. What distinguishes a testamentary trust from a living trust?\n\nA) Takes effect immediately\nB) Cannot be amended\nC) Is created by will and funded at death through probate, providing no probate avoidance\nD) Avoids probate",
+      "question": "Robert intends to establish a trust for his grandchildren. What distinguishes a testamentary trust from a living trust?",
       "explanation": "Testamentary trust: created by will, comes into existence at death. Assets pass through probate, then into trust. Living trust: created during life, funded now, avoids probate. Both: can have ongoing management, beneficiary protections. Testamentary: simpler to create, court oversight, no probate avoidance. Living: more administration now, probate avoidance. Choose based on goals.",
       "correctAnswer": 2,
       "options": [
@@ -3158,7 +3158,7 @@
       "subtopic": "Gift Tax Annual Exclusion",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Lisa made a gift of $20,000 to her niece in 2024. Given the annual gift tax exclusion, what are the implications of this gift?\n\nA) Have no reporting requirement\nB) Cannot be made\nC) Require gift tax return filing and reduce lifetime exemption, but usually don't result in immediate gift tax\nD) No gift tax will be due",
+      "question": "Lisa made a gift of $20,000 to her niece in 2024. Given the annual gift tax exclusion, what are the implications of this gift?",
       "explanation": "Over-exclusion gifts: File Form 709 (gift tax return) by April 15. Gift reduces lifetime exemption (currently ~$7M). Rarely results in current tax payment due to exemption. Cumulative: all taxable gifts accumulate over lifetime. If exceed exemption: 40% gift tax. Strategy: some plan to use exemption during life. Track lifetime gifts—estate uses remaining exemption.",
       "correctAnswer": 2,
       "options": [
@@ -3193,7 +3193,7 @@
       "subtopic": "Minor Beneficiaries",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Mark Brown wants to leave assets directly to his minor children. What potential complications arise when minors are named as direct beneficiaries of life insurance or retirement accounts?\n\nA) Parents automatically control funds\nB) No issues arise\nC) A court-appointed guardian or custodian may be required to manage funds until majority, with costs and complications\nD) They receive funds immediately",
+      "question": "Mark Brown wants to leave assets directly to his minor children. What potential complications arise when minors are named as direct beneficiaries of life insurance or retirement accounts?",
       "explanation": "Minor as beneficiary: can\\'t legally manage funds. Results: court-appointed guardian (costly, cumbersome), UGMA/UTMA custodianship. Better alternatives: name trust as beneficiary, use UTMA provision in beneficiary designation (\"to John as custodian for Minor under [State] UTMA\"). Trust allows: continued management past 18, controlled distributions. Plan for minors specifically.",
       "correctAnswer": 2,
       "options": [
@@ -3228,7 +3228,7 @@
       "subtopic": "Codicils",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After reviewing her will, Susan decides she wants to change one clause regarding a specific bequest. What legal document should Susan use to accomplish this?\n\nA) Revoke all prior wills\nB) Create a trust\nC) Make minor amendments to an existing will while keeping the original will valid\nD) Create a new will",
+      "question": "After reviewing her will, Susan decides she wants to change one clause regarding a specific bequest. What legal document should Susan use to accomplish this?",
       "explanation": "Codicil: formal amendment to will. Must be executed with same formalities as will. Use: minor changes (specific bequest, executor change). For major changes: new will often better (clearer, less confusion). Multiple codicils: becomes confusing. Modern practice: complete new will common even for minor changes (computers make easy). Original will + all codicils needed for probate.",
       "correctAnswer": 2,
       "options": [
@@ -3263,7 +3263,7 @@
       "subtopic": "Declaration vs. Agreement",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "David wants to create a trust. What is the key difference between a declaration of trust and a trust agreement?\n\nA) Declaration: grantor is also trustee; Agreement: separate trustee, requiring two parties to the document\nB) Agreement requires attorney\nC) Declaration is always irrevocable\nD) Are identical",
+      "question": "David wants to create a trust. What is the key difference between a declaration of trust and a trust agreement?",
       "explanation": "Declaration of trust: grantor declares they hold property as trustee—one person, one document. Trust agreement: grantor and trustee are different parties, agreement between them. Revocable living trusts: often declarations (grantor is own trustee). Irrevocable trusts often agreements (independent trustee). Functional differences minimal—form follows structure.",
       "correctAnswer": 0,
       "options": [
@@ -5124,7 +5124,7 @@
       "subtopic": "Portability",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Harold passed away in 2023, survived by his wife, Wendy. Harold's estate was valued at $3 million. To utilize portability of Harold's deceased spousal unused exclusion (DSUE) for Wendy's future estate planning, which action is REQUIRED?\n\nA) All assets must pass to the surviving spouse\nB) An estate tax return must be filed timely, even if not otherwise required\nC) The estate must exceed the exemption amount\nD) The surviving spouse must remarry within two years",
+      "question": "Harold passed away in 2023, survived by his wife, Wendy. Harold's estate was valued at $3 million. To utilize portability of Harold's deceased spousal unused exclusion (DSUE) for Wendy's future estate planning, which action is REQUIRED?",
       "explanation": "To preserve portability of the deceased spouse\\'s unused exemption, the executor must timely file Form 706, even if no estate tax is due. This election allows the surviving spouse to add the deceased spouse\\'s unused exemption to their own, potentially doubling exemption protection.",
       "correctAnswer": 1,
       "options": [
@@ -5194,7 +5194,7 @@
       "subtopic": "Revocable Living Trust",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Chen family is creating an estate plan. They want to avoid probate and maintain privacy regarding asset distribution after their deaths. A revocable living trust provides all of the following benefits EXCEPT:\n\nA) Providing for incapacity management\nB) Maintaining privacy of asset distribution\nC) Avoiding probate\nD) Reducing estate taxes",
+      "question": "The Chen family is creating an estate plan. They want to avoid probate and maintain privacy regarding asset distribution after their deaths. A revocable living trust provides all of the following benefits EXCEPT:",
       "explanation": "Revocable living trusts avoid probate, maintain privacy (unlike wills which become public), and allow continued asset management during incapacity. However, because the grantor retains control, assets remain in the taxable estate. Revocable trusts provide NO estate tax reduction.",
       "correctAnswer": 3,
       "options": [
@@ -5266,7 +5266,7 @@
       "subtopic": "Bypass Trust",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "John and Mary want to minimize estate taxes. Their advisor recommends a credit shelter trust (bypass trust) in their wills. A credit shelter trust is used to:\n\nA) Defer all estate taxes until both spouses die\nB) Provide income to the surviving spouse while sheltering assets from their estate\nC) Provide immediate distributions to grandchildren\nD) Eliminate the need for an estate tax return",
+      "question": "John and Mary want to minimize estate taxes. Their advisor recommends a credit shelter trust (bypass trust) in their wills. A credit shelter trust is used to:",
       "explanation": "A credit shelter (bypass) trust is funded with assets up to the deceased spouse\\'s remaining exemption. The surviving spouse can receive income and even principal for health, education, maintenance, and support, but the assets bypass their estate entirely—passing tax-free to children or other beneficiaries.",
       "correctAnswer": 1,
       "options": [
@@ -5371,7 +5371,7 @@
       "subtopic": "Present Interest",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "David wants to gift $17,000 to his niece. To qualify for the annual gift tax exclusion, the gift must be:\n\nA) A present interest gift (Crummey power)\nB) Made to a family member\nC) Made to someone over age 18\nD) Less than $10,000",
+      "question": "David wants to gift $17,000 to his niece. To qualify for the annual gift tax exclusion, the gift must be:",
       "explanation": "Only present interest gifts qualify for the annual exclusion. Future interests (like remainder interests in trusts) do not qualify. Crummey powers give beneficiaries a limited time to withdraw contributions, converting gifts to trusts into present interests eligible for the annual exclusion.",
       "correctAnswer": 0,
       "options": [
@@ -5406,7 +5406,7 @@
       "subtopic": "GRATs",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Lee wants to transfer assets to his children while minimizing gift tax. He's considering a GRAT. A Grantor Retained Annuity Trust (GRAT) is designed to:\n\nA) Transfer appreciation above the Section 7520 rate to beneficiaries gift-tax-free\nB) Allow the grantor to retain full control of assets\nC) Provide income to charities during the grantor's lifetime\nD) Avoid all estate taxes",
+      "question": "Dr. Lee wants to transfer assets to his children while minimizing gift tax. He's considering a GRAT. A Grantor Retained Annuity Trust (GRAT) is designed to:",
       "explanation": "GRATs transfer appreciation above the IRS Section 7520 interest rate to beneficiaries with minimal or no gift tax. The grantor receives annuity payments for a term of years; any remaining value passes to beneficiaries. If assets outperform the 7520 rate, the excess passes gift-tax-free.",
       "correctAnswer": 0,
       "options": [
@@ -7157,7 +7157,7 @@
       "subtopic": "Tenancy by the Entirety",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John and Mary Smith, a married couple, are purchasing a home together in Florida. Which of the following BEST describes tenancy by the entirety, a form of ownership available to them? \nA) Available only to married couples, providing creditor protection from individual creditors in many states\nB) That requires probate\nC) That divides ownership 50/50 with no survivorship\nD) Available to any two people",
+      "question": "John and Mary Smith, a married couple, are purchasing a home together in Florida. Which of the following BEST describes tenancy by the entirety, a form of ownership available to them?",
       "explanation": "Tenancy by the entirety is only for married couples, treating them as one unit. It includes survivorship and, in many states, protects assets from individual (not joint) creditors. Divorce converts it to tenancy in common. Available in about half of U.S. states, primarily for real estate.",
       "correctAnswer": 0,
       "options": [
@@ -7192,7 +7192,7 @@
       "subtopic": "Gift Tax Return",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Sarah made several gifts in 2024: $18,000 to her son, $20,000 to a non-citizen spouse, and split a $30,000 gift with her husband to a friend. Form 709 (gift tax return) must generally be filed when:\nA) Gifts to any one person exceed the annual exclusion, gifts to a non-citizen spouse exceed the special limit, or gifts require reporting like gift-splitting\nB) Only for gifts of real estate\nC) Only if gift tax is owed\nD) Any gift is made",
+      "question": "Sarah made several gifts in 2024: $18,000 to her son, $20,000 to a non-citizen spouse, and split a $30,000 gift with her husband to a friend. Form 709 (gift tax return) must generally be filed when:",
       "explanation": "Form 709 is required when annual exclusion is exceeded, gifts to non-citizen spouses exceed the enhanced exclusion ($190K in 2026), couples elect gift-splitting, gifts of future interests are made, or GST tax may apply. Filing tracks lifetime exemption usage even when no tax is due.",
       "correctAnswer": 0,
       "options": [
@@ -7227,7 +7227,7 @@
       "subtopic": "Pet Trust",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "After a long life, Bob is creating his estate plan and wants to ensure his beloved dog, Lucky, is well cared for after his death. Which of the following BEST describes a pet trust in estate planning?\nA) Is limited to dogs and cats\nB) Provides for the care of animals after the owner's death\nC) \nD)",
+      "question": "After a long life, Bob is creating his estate plan and wants to ensure his beloved dog, Lucky, is well cared for after his death. Which of the following BEST describes a pet trust in estate planning?",
       "explanation": "Pet trusts (recognized in all states) designate a caretaker and funds for pet care. They name a trustee to manage funds and can specify care standards. Without a trust, pets are property with no guaranteed care. Funding should consider animal\\'s lifespan and care costs.",
       "correctAnswer": 1,
       "options": [
@@ -7262,7 +7262,7 @@
       "subtopic": "Trust Protector",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Johnson Family Trust was established several years ago. Due to unforeseen circumstances, the beneficiaries and trustee are considering making changes to the trust terms. A trust protector is a:\nA) Third party given specific powers to modify trust terms, change trustees, or adapt to changing circumstances\nB) Always the same person as the trustee\nC) Government official\nD) Type of insurance for trusts",
+      "question": "The Johnson Family Trust was established several years ago. Due to unforeseen circumstances, the beneficiaries and trustee are considering making changes to the trust terms. A trust protector is a:",
       "explanation": "Trust protectors provide flexibility for irrevocable trusts. They may have powers to modify distribution terms, change trustees, move trust situs, or respond to tax law changes. Common in dynasty trusts and asset protection trusts. Powers should be carefully defined to avoid grantor trust issues.",
       "correctAnswer": 0,
       "options": [
@@ -7297,7 +7297,7 @@
       "subtopic": "QDOT",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria, a U.S. citizen, is married to Javier, who is not a U.S. citizen. Maria wants to leave her assets to Javier upon her death, but is concerned about estate taxes. A Qualified Domestic Trust (QDOT) is used when:\nA) The surviving spouse is not a U.S. citizen, allowing estate tax deferral until distributions or death\nB) Only for charitable transfers\nC) The estate is less than the exemption\nD) Both spouses are U.S. citizens",
+      "question": "Maria, a U.S. citizen, is married to Javier, who is not a U.S. citizen. Maria wants to leave her assets to Javier upon her death, but is concerned about estate taxes. A Qualified Domestic Trust (QDOT) is used when:",
       "explanation": "The unlimited marital deduction doesn\\'t apply to non-citizen surviving spouses (concern they\\'ll leave the U.S. with assets). QDOT allows deferral: a U.S. trustee controls distributions, and estate tax applies to distributions (except hardship) and remaining assets at surviving spouse\\'s death.",
       "correctAnswer": 0,
       "options": [
@@ -7332,7 +7332,7 @@
       "subtopic": "Ascertainable Standard",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Anderson Family Trust directs the trustee to make distributions to the beneficiary, Sarah, for specific purposes. An ascertainable standard in trust distribution (HEMS) refers to:\nA) Distributions only for emergencies\nB) Fixed annual distributions\nC) Distributions for health, education, maintenance, and support—limiting trustee discretion to avoid estate inclusion\nD) Unlimited discretion for distributions",
+      "question": "The Anderson Family Trust directs the trustee to make distributions to the beneficiary, Sarah, for specific purposes. An ascertainable standard in trust distribution (HEMS) refers to:",
       "explanation": "HEMS (Health, Education, Maintenance, Support) is a recognized ascertainable standard limiting distributions to specific purposes. It allows beneficiaries to serve as trustees without the trust being included in their estates. Without HEMS, a beneficiary-trustee\\'s unlimited discretion causes estate inclusion.",
       "correctAnswer": 2,
       "options": [
@@ -7367,7 +7367,7 @@
       "subtopic": "Right of Survivorship",
       "difficulty": "easy",
       "skillLevel": "Application",
-      "question": "Tom and Lisa own a lake cabin as joint tenants with right of survivorship (JTWROS). Tom recently passed away. When property is held in joint tenancy with right of survivorship (JTWROS):\nA) A court must approve the transfer\nB) Each owner can will their share to anyone\nC) The surviving owner automatically receives the deceased owner's share\nD) The property must be sold and the proceeds divided equally",
+      "question": "Tom and Lisa own a lake cabin as joint tenants with right of survivorship (JTWROS). Tom recently passed away. When property is held in joint tenancy with right of survivorship (JTWROS):",
       "explanation": "JTWROS provides automatic transfer to the survivor(s) at death, bypassing probate. Ownership is equal among joint tenants. Severing the joint tenancy (by sale or transfer) converts it to tenancy in common. For non-spouses, only the decedent\\'s portion receives a step-up in basis.",
       "correctAnswer": 2,
       "options": [
@@ -7404,7 +7404,7 @@
       "subtopic": "Ancillary Probate",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Emily Carter, a resident of Florida, recently passed away. She owned a vacation condo in North Carolina. Her primary estate will be probated in Florida. Ancillary probate is required when:\nA) The decedent owned real property in a state different from their state of residence\nB) The estate is large\nC) A trust is involved\nD) There are multiple beneficiaries",
+      "question": "Dr. Emily Carter, a resident of Florida, recently passed away. She owned a vacation condo in North Carolina. Her primary estate will be probated in Florida. Ancillary probate is required when:",
       "explanation": "Real property is governed by the state where it\\'s located. If a decedent owns real estate in multiple states, probate must occur in each state (ancillary probate) in addition to domiciliary probate. This adds cost and complexity. Revocable trusts or LLCs can avoid ancillary probate.",
       "correctAnswer": 0,
       "options": [
@@ -7439,7 +7439,7 @@
       "subtopic": "Certificate of Trust",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "John and Mary Smith created the \"Smith Family Trust.\" They need to provide proof of the trust's existence to open a bank account for the trust. A certificate of trust (certification of trust) is used to:\nA) Register the trust with the state\nB) Provide third parties with key trust information without disclosing the full trust document\nC) Replace the trust document entirely\nD) Avoid all estate taxes",
+      "question": "John and Mary Smith created the \"Smith Family Trust.\" They need to provide proof of the trust's existence to open a bank account for the trust. A certificate of trust (certification of trust) is used to:",
       "explanation": "A certificate of trust (or trust certification/abstract) summarizes key information (existence, trustees, powers) allowing third parties like banks to deal with the trust without seeing private details like beneficiaries or asset distributions. It protects privacy while facilitating transactions.",
       "correctAnswer": 1,
       "options": [
@@ -7474,7 +7474,7 @@
       "subtopic": "Trust Amendment vs Restatement",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Johnson Family Trust was created in 2010. Due to changes in family circumstances and tax laws, the grantors wish to make significant changes. A trust restatement differs from a trust amendment in that:\nA) They are identical\nB) A restatement replaces the entire trust document while maintaining the original trust, whereas amendments add to or modify specific provisions\nC) Restatements terminate the trust\nD) Amendments require court approval",
+      "question": "The Johnson Family Trust was created in 2010. Due to changes in family circumstances and tax laws, the grantors wish to make significant changes. A trust restatement differs from a trust amendment in that:",
       "explanation": "Amendments change specific provisions while keeping the original document. After multiple amendments, the trust becomes hard to read. A restatement replaces the entire document with a current, consolidated version while the original trust continues—no re-funding needed. Both require the settlor\\'s capacity.",
       "correctAnswer": 1,
       "options": [
@@ -7509,7 +7509,7 @@
       "subtopic": "Last Will and Testament Requirements",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Robert is creating his will. He wants to ensure it's legally sound and reflects his wishes for his assets. Common requirements for a valid will include:\nA) Testamentary capacity, intent, proper execution (signature), and typically two witnesses\nB) Notarization in all states\nC) Attorney preparation required\nD) Court approval before death",
+      "question": "Robert is creating his will. He wants to ensure it's legally sound and reflects his wishes for his assets. Common requirements for a valid will include:",
       "explanation": "Valid wills generally require: testamentary capacity (understanding nature of assets, beneficiaries, and the act), testamentary intent, written form, signature, and witnesses (typically two). Requirements vary by state—some recognize holographic (handwritten) wills with fewer formalities.",
       "correctAnswer": 0,
       "options": [
@@ -7544,7 +7544,7 @@
       "subtopic": "Directed Trust",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "The Evergreen Trust Company offers specialized trust services. The Peterson Family Trust wants an investment advisor to manage the portfolio and a separate committee to decide on distributions. A directed trust allows:\nA) Beneficiaries to direct all decisions\nB) Only court-directed distributions\nC) Separation of trustee responsibilities, with an investment advisor directing investments and a distribution committee making distribution decisions\nD) Automatic distributions",
+      "question": "The Evergreen Trust Company offers specialized trust services. The Peterson Family Trust wants an investment advisor to manage the portfolio and a separate committee to decide on distributions. A directed trust allows:",
       "explanation": "Directed trusts bifurcate traditional trustee duties. An investment director handles investments; a distribution committee (or advisor) decides discretionary distributions; an administrative trustee handles custody and tax filings. This allows expertise in each area and may provide liability protection in states with directed trust statutes.",
       "correctAnswer": 2,
       "options": [
@@ -7579,7 +7579,7 @@
       "subtopic": "Trust Situs",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Miller Family Trust is considering moving its primary administration from California to Nevada. Trust situs (jurisdiction) affects:\nA) Only trust name\nB) Federal estate tax only\nC) State income tax, trust duration rules, asset protection features, and applicable trust law\nD) Investment options",
+      "question": "The Miller Family Trust is considering moving its primary administration from California to Nevada. Trust situs (jurisdiction) affects:",
       "explanation": "Trust situs determines governing law. Some states have favorable trust features: no state income tax (Nevada, South Dakota, Delaware), abolished perpetuities rules (allowing dynasty trusts), strong asset protection (spendthrift provisions), and modern trust statutes. Trusts can be moved to more favorable jurisdictions.",
       "correctAnswer": 2,
       "options": [
@@ -7649,7 +7649,7 @@
       "subtopic": "Installment Payment of Estate Tax",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "John Smith's adjusted gross estate is valued at $10 million. His closely held business, SmithCo, is valued at $4 million. IRC Section 6166 allows:\nA) Installment payment of estate tax over up to 14 years when a closely held business comprises more than 35% of the adjusted gross estate\nB) Avoiding estate tax entirely\nC) Tax-free estate transfers\nD) Paying tax with business stock",
+      "question": "John Smith's adjusted gross estate is valued at $10 million. His closely held business, SmithCo, is valued at $4 million. IRC Section 6166 allows:",
       "explanation": "Section 6166 helps estates with illiquid business interests. If the business exceeds 35% of adjusted gross estate, estate tax attributable to it can be paid in installments: interest-only for 4 years, then principal plus interest over 10 years. Provides liquidity relief for family businesses.",
       "correctAnswer": 0,
       "options": [
@@ -9293,7 +9293,7 @@
       "subtopic": "Generation-Skipping Transfer Tax",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Evelyn, age 70, wants to transfer assets to her great-grandchildren. She's concerned about future estate taxes. To determine if a transfer is subject to the Generation-Skipping Transfer (GST) tax, the GST tax applies to transfers to: \nA) Only direct descendants \nB) Spouses \nC) Only grandchildren \nD) Skip persons, generally those two or more generations below the transferor, to prevent avoiding estate tax at each generation",
+      "question": "Evelyn, age 70, wants to transfer assets to her great-grandchildren. She's concerned about future estate taxes. To determine if a transfer is subject to the Generation-Skipping Transfer (GST) tax, the GST tax applies to transfers to:",
       "explanation": "GST tax: imposed on transfers to skip persons (generally 2+ generations below—grandchildren, or unrelated persons 37.5+ years younger). Prevents avoiding estate tax at children\\'s generation. Flat rate equal to highest estate tax rate (40%). Separate GST exemption (same as estate). Applies to: direct skips, taxable terminations, taxable distributions. Complex planning area.",
       "correctAnswer": 3,
       "options": [
@@ -9328,7 +9328,7 @@
       "subtopic": "Valuation Discounts",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The Smith Family LLC owns commercial real estate. As part of Mr. Smith's estate plan, a valuation is needed. A minority interest discount for estate/gift tax purposes: \nA) Is always 50% \nB) Only applies to stock \nC) Is prohibited by IRS \nD) Reduces value because a minority owner cannot control the entity, typically 15-40% depending on circumstances",
+      "question": "The Smith Family LLC owns commercial real estate. As part of Mr. Smith's estate plan, a valuation is needed. A minority interest discount for estate/gift tax purposes:",
       "explanation": "Minority discount: minority ownership stake worth less than proportional share because can\\'t control distributions, management, or sale. Combined with lack of marketability discount (no ready market for private interests). Combined discounts often 25-45%. IRS scrutinizes—need qualified appraisal, legitimate business purpose. Commonly used with FLPs, LLCs for estate planning.",
       "correctAnswer": 3,
       "options": [
@@ -9398,7 +9398,7 @@
       "subtopic": "Letter of Intent",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Maria is creating a plan for her adult son, David, who has special needs. She wants to provide guidance for his future care. A letter of intent for a special needs individual: \nA) Is legally binding \nB) Replaces a will \nC) Determines trust distributions \nD) Provides guidance to future caregivers about the person",
+      "question": "Maria is creating a plan for her adult son, David, who has special needs. She wants to provide guidance for his future care. A letter of intent for a special needs individual:",
       "explanation": "Letter of intent: non-binding document sharing information about special needs person. Contents: medical history, daily routines, likes/dislikes, therapy information, behavior management, relationships, future objectives. Extremely helpful for future caregivers/trustees who don\\'t know the individual intimately. Should be updated regularly. Complements legal documents.",
       "correctAnswer": 3,
       "options": [
@@ -9433,7 +9433,7 @@
       "subtopic": "Charitable Lead Annuity Trust",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Dr. Lee wants to transfer assets to his children while minimizing gift tax. He's considering a Charitable Lead Annuity Trust (CLAT). A Charitable Lead Annuity Trust (CLAT) with a zeroed-out design: \nA) Has no gift tax value \nB) Benefits charity exclusively \nC) Is always grantor-trusted \nD) Calculates remainder value to be approximately zero, so transfer to heirs may have minimal or no gift tax",
+      "question": "Dr. Lee wants to transfer assets to his children while minimizing gift tax. He's considering a Charitable Lead Annuity Trust (CLAT). A Charitable Lead Annuity Trust (CLAT) with a zeroed-out design:",
       "explanation": "Zeroed-out CLAT: set annuity payments so PV of remainder (going to heirs) equals approximately zero for gift tax. Charity receives payments for term, remainder to family. If trust growth exceeds IRS assumed rate, excess passes to heirs gift-tax-free. Leverage strategy. Works best: low interest rate environment, high-growth assets. Complex but powerful technique.",
       "correctAnswer": 3,
       "options": [
@@ -9468,7 +9468,7 @@
       "subtopic": "Basis Consistency",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "After Mr. Davis passed away, his daughter, Lisa, inherited several assets. The estate is being settled. Basis consistency rules require: \nA) Only fair market value \nB) Identical values for all assets \nC) Using purchase price always \nD) That beneficiary use the same valuation for inherited assets as reported on the estate tax return",
+      "question": "After Mr. Davis passed away, his daughter, Lisa, inherited several assets. The estate is being settled. Basis consistency rules require:",
       "explanation": "Basis consistency (IRC 1014(f)): if property reported on estate return, beneficiary\\'s basis can\\'t exceed estate value reported. Prevents: reporting low value for estate tax but high basis for beneficiary\\'s income tax. Form 8971 reports values to beneficiaries. Applies to taxable estates. Statute of limitations: can\\'t adjust if return statute expires.",
       "correctAnswer": 3,
       "options": [
@@ -9503,7 +9503,7 @@
       "subtopic": "Private Placement Life Insurance",
       "difficulty": "hard",
       "skillLevel": "Remembering and Understanding",
-      "question": "Highworth Investments is advising a client with significant wealth seeking tax-efficient investment growth and estate planning benefits. Private Placement Life Insurance (PPLI) offers wealthy clients: \nA) Guaranteed returns \nB) Simplified administration \nC) The same benefits as regular life insurance \nD) Tax-advantaged investment growth, customized investment options, and potential estate tax benefits with ILIT ownership",
+      "question": "Highworth Investments is advising a client with significant wealth seeking tax-efficient investment growth and estate planning benefits. Private Placement Life Insurance (PPLI) offers wealthy clients:",
       "explanation": "PPLI: life insurance with customized investment options (hedge funds, private equity), tax-deferred growth, income-tax-free death benefit, estate tax-free if in ILIT. For high-net-worth clients with large amounts to invest. Investment diversification requirements apply. Lower insurance costs than retail products. Minimum premiums typically $1M+. Complex but powerful for right clients.",
       "correctAnswer": 3,
       "options": [
@@ -9538,7 +9538,7 @@
       "subtopic": "Blind Trust",
       "difficulty": "medium",
       "skillLevel": "Remembering and Understanding",
-      "question": "Senator Thompson wants to avoid any appearance of conflicts of interest while in office. He's considering placing his investments in a trust. A blind trust is used primarily to: \nA) Benefit charities \nB) Reduce estate taxes \nC) Hide assets from creditors \nD) Eliminate knowledge of specific holdings to avoid conflicts of interest, often for public officials",
+      "question": "Senator Thompson wants to avoid any appearance of conflicts of interest while in office. He's considering placing his investments in a trust. A blind trust is used primarily to:",
       "explanation": "Blind trust: beneficiary has no knowledge of or control over investments. Trustee makes all investment decisions independently. Purpose: avoid conflicts of interest (elected officials, executives). Beneficiary knows total value but not specific holdings. Prevents: insider trading issues, policy decisions influenced by investments. Not for tax benefits—for ethical compliance.",
       "correctAnswer": 3,
       "options": [
@@ -9573,7 +9573,7 @@
       "subtopic": "Bargain Sale",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "Maria donates land worth $500,000 to the American Red Cross, selling it for $300,000. She intends the $200,000 difference as a charitable contribution. This transaction involves which of the following?\nA) Receiving a premium price\nB) A full market price sale\nC) Donating property entirely\nD) Selling property to charity for less than fair market value, with the difference being a deductible gift",
+      "question": "Maria donates land worth $500,000 to the American Red Cross, selling it for $300,000. She intends the $200,000 difference as a charitable contribution. This transaction involves which of the following?",
       "explanation": "Bargain sale: sell to charity for less than FMV. Part sale, part gift. Basis must be allocated proportionally between sale and gift portions. If appreciated property: recognize gain on sale portion, get deduction for gift portion. Example: $100K property, $60K sale = $40K gift. Complex calculations required. Alternative to outright gift when cash needed.",
       "correctAnswer": 3,
       "options": [
@@ -9608,7 +9608,7 @@
       "subtopic": "Spendthrift Provision",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Dr. Lee establishes a revocable living trust for his children. He is concerned about their ability to manage funds responsibly. Which of the following provisions in the trust would prevent his children from assigning their interest in the trust and protect the assets from creditors?\nA) Forces beneficiary to spend all funds\nB) Only applies to minors\nC) Eliminates all distributions\nD) Prevents beneficiaries from assigning their interest and protects trust assets from beneficiaries",
+      "question": "Dr. Lee establishes a revocable living trust for his children. He is concerned about their ability to manage funds responsibly. Which of the following provisions in the trust would prevent his children from assigning their interest in the trust and protect the assets from creditors?",
       "explanation": "Spendthrift provision: beneficiary cannot voluntarily transfer (assign) trust interest, and creditors cannot reach trust principal before distribution. Once distributed, no protection. Exceptions: child support, alimony, IRS, sometimes tort claims. Standard in most trusts. Protects beneficiaries from themselves and others. Enforceability varies by state.",
       "correctAnswer": 3,
       "options": [
@@ -9643,7 +9643,7 @@
       "subtopic": "Life Estate",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "John transferred his home to an irrevocable trust but retained the right to live there for the rest of his life. At the time of his death, the home was worth $800,000. For estate tax purposes, a retained life estate in property:\nA) Removes property from estate entirely\nB) Only includes the life estate value\nC) Creates no tax consequences\nD) Causes the full property value to be included in the estate because the decedent retained enjoyment",
+      "question": "John transferred his home to an irrevocable trust but retained the right to live there for the rest of his life. At the time of his death, the home was worth $800,000. For estate tax purposes, a retained life estate in property:",
       "explanation": "Retained life estate (IRC 2036): if you transfer property but keep right to income or use for life, FULL FMV included in gross estate. Not just life estate value—full property. Exception: adequate consideration. Affects: life estate deeds, some trusts. Intentional QRT planning uses this. Unintentional inclusion can be surprise. Step-up basis benefit.",
       "correctAnswer": 3,
       "options": [
@@ -9678,7 +9678,7 @@
       "subtopic": "Formula Clauses",
       "difficulty": "hard",
       "skillLevel": "Application",
-      "question": "The estate planning attorneys at Chen & Associates are drafting documents for a wealthy client. To maximize tax efficiency, they want to ensure that transfers adjust automatically based on changes in tax laws. Formula clauses in estate planning documents:\nA) Are only in wills\nB) Are prohibited by IRS\nC) Create estate tax problems\nD) Automatically adjust transfers based on tax laws",
+      "question": "The estate planning attorneys at Chen & Associates are drafting documents for a wealthy client. To maximize tax efficiency, they want to ensure that transfers adjust automatically based on changes in tax laws. Formula clauses in estate planning documents:",
       "explanation": "Formula clauses: amounts defined by formula tied to tax law, not fixed dollars. Examples: \"amount to use remaining exemption,\" \"maximum marital deduction needed,\" \"optimal GST allocation.\" Adjusts automatically if exemptions change. Preventive planning for uncertain law. Must be drafted carefully to achieve goals. Common: funding bypass/credit shelter trust with exemption amount.",
       "correctAnswer": 3,
       "options": [

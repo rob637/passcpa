@@ -177,7 +177,7 @@ export const CFP_GEN_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-gen-d16',
-      question: 'During the initial meeting with the Chans, you\'re gathering information for their financial plan. Effective client discovery involves:\n\nA) Open-ended questions to understand values, goals, and concerns beyond the numbers\nB) Only reviewing financial documents\nC) Focusing only on investment preferences\nD) Immediately presenting solutions',
+      question: 'During the initial meeting with the Chans, you\'re gathering information for their financial plan. Effective client discovery involves:',
       options: ['Open-ended questions to understand values, goals, and concerns beyond the numbers', 'Only reviewing financial documents to assess net worth and cash flow, neglecting qualitative data.', 'Focusing only on investment preferences and risk tolerance to expedite portfolio construction.', 'Immediately presenting solutions based on perceived needs to demonstrate expertise and efficiency.'],
       correctAnswer: 0,
       blueprintArea: 'GEN-2',
@@ -197,7 +197,7 @@ export const CFP_GEN_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-gen-d18',
-      question: 'Sarah is 60 and plans to retire in 5 years. She\'s concerned about inflation eroding her savings. Purchasing power risk is MOST important for which of the following investment and planning scenarios?\n\nA) Fixed-income investments and long retirement horizons where inflation erodes real value\nB) Variable rate instruments\nC) Short-term savings only\nD) Equity investments',
+      question: 'Sarah is 60 and plans to retire in 5 years. She\'s concerned about inflation eroding her savings. Purchasing power risk is MOST important for which of the following investment and planning scenarios?',
       options: ['Fixed-income investments and long retirement horizons where inflation erodes real value', 'Variable rate instruments, as their rates adjust, inherently mitigating long-term purchasing power risk.', 'Short-term savings only, because the impact of inflation is negligible over brief periods, minimizing purchasing power risk.', 'Equity investments, as their growth potential typically outpaces inflation, serving as a hedge against purchasing power risk.'],
       correctAnswer: 0,
       blueprintArea: 'GEN-1',
@@ -358,7 +358,7 @@ export const CFP_RISK_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-risk-d08',
-      question: 'The Millers\' car was totaled in an accident. Their auto policy has actual cash value (ACV) coverage. How does ACV coverage differ from replacement cost coverage?\n\nA) Only applies to vehicles.\nB) Pays more.\nC) Deducts depreciation from replacement cost, resulting in lower claim payments for older items.\nD) Is not available in homeowners policies.',
+      question: 'The Millers\' car was totaled in an accident. Their auto policy has actual cash value (ACV) coverage. How does ACV coverage differ from replacement cost coverage?',
       options: ['Primarily applies to vehicles and other depreciating assets, offering limited coverage for personal property within homeowners policies.', 'Pays more upfront but requires higher premiums and may not fully cover the cost of replacing damaged items with comparable new items.', 'Deducts depreciation from replacement cost, resulting in lower claim payments for older items', 'Is generally not available in homeowners policies due to the inherent appreciation of real estate, focusing instead on replacement cost coverage.'],
       correctAnswer: 2,
       blueprintArea: 'RISK-4',
@@ -398,7 +398,7 @@ export const CFP_RISK_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-risk-d12',
-      question: 'Sarah has a disability income policy with a non-pro rata recurrent disability provision. She had a back injury in January and returned to work in March. She re-injures her back in May. A non-pro rata recurrent disability provision:\nA) Reduces benefits proportionally\nB) Only covers new conditions\nC) Treats related disabilities within a specified period as one claim, without requiring new elimination period\nD) Starts new elimination period for each disability',
+      question: 'Sarah has a disability income policy with a non-pro rata recurrent disability provision. She had a back injury in January and returned to work in March. She re-injures her back in May. A non-pro rata recurrent disability provision:',
       options: ['Reduces benefits proportionally based on the time elapsed between the initial disability and the recurrence, impacting long-term coverage.', 'Only covers new and unrelated conditions arising after the policy\'s effective date, excluding any pre-existing or recurring disabilities.', 'Treats related disabilities within a specified period as one claim, without requiring new elimination period', 'Starts a new elimination period for each disability, regardless of its relation to a prior disability or the time between occurrences.'],
       correctAnswer: 2,
       blueprintArea: 'RISK-2',
@@ -599,7 +599,7 @@ export const CFP_INV_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-inv-d06',
-      question: 'John is evaluating different bond investments for his portfolio. He is trying to understand the tax implications of each. Which investment generates \'phantom income\' that is taxable but provides no current cash flow?\n\nA) Municipal bonds\nB) Zero-coupon bonds\nC) Dividend-paying stocks\nD) Index funds',
+      question: 'John is evaluating different bond investments for his portfolio. He is trying to understand the tax implications of each. Which investment generates \'phantom income\' that is taxable but provides no current cash flow?',
       options: ['Dividend-paying stocks', 'Index funds', 'Municipal bonds', 'Zero-coupon bonds'],
       correctAnswer: 3,
       blueprintArea: 'INV-4',
@@ -679,7 +679,7 @@ export const CFP_INV_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-inv-d14',
-      question: 'David is concerned about inflation eroding his fixed income investments. He\'s considering Treasury Inflation-Protected Securities (TIPS). TIPS adjust for inflation by:\n\nA) Paying a variable floating rate\nB) Increasing the coupon rate when inflation rises\nC) Reducing duration when inflation increases\nD) Adjusting the principal value based on CPI',
+      question: 'David is concerned about inflation eroding his fixed income investments. He\'s considering Treasury Inflation-Protected Securities (TIPS). TIPS adjust for inflation by:',
       options: ['Paying a variable floating rate', 'Increasing the coupon rate when inflation rises', 'Reducing duration when inflation increases', 'Adjusting the principal value based on CPI'],
       correctAnswer: 3,
       blueprintArea: 'INV-2',
@@ -739,7 +739,7 @@ export const CFP_INV_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-inv-d20',
-      question: 'Sarah hired Greenleaf Investments to manage her $500,000 portfolio. Over the past 5 years, Sarah made several additional contributions. When evaluating Greenleaf\'s performance, time-weighted return is preferred over dollar-weighted because it: \nA) Always produces higher returns \nB) Is simpler to calculate \nC) Includes all client contributions \nD) Eliminates the impact of client cash flows, which are outside the manager\'s control',
+      question: 'Sarah hired Greenleaf Investments to manage her $500,000 portfolio. Over the past 5 years, Sarah made several additional contributions. When evaluating Greenleaf\'s performance, time-weighted return is preferred over dollar-weighted because it:',
       options: ['Always produces higher returns, leading to a more favorable manager evaluation and increased compensation.', 'Is simpler to calculate, especially when dealing with portfolios that have frequent contributions and withdrawals.', 'Includes all client contributions, providing a comprehensive view of the total portfolio value over the evaluation period.', 'Eliminates the impact of client cash flows, which are outside the manager\\'],
       correctAnswer: 3,
       blueprintArea: 'INV-3',
@@ -840,7 +840,7 @@ export const CFP_TAX_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-tax-d04',
-      question: 'GreenTech Manufacturing is purchasing new equipment for its factory. Their CFO is evaluating tax strategies. Section 179 expensing allows businesses to:\n\nA) Only depreciate over asset life\nB) Expense only vehicles\nC) Immediately deduct the cost of qualifying business assets rather than depreciating over time, subject to limits\nD) Expense any purchase',
+      question: 'GreenTech Manufacturing is purchasing new equipment for its factory. Their CFO is evaluating tax strategies. Section 179 expensing allows businesses to:',
       options: ['Only depreciate the asset over its useful life using the applicable depreciation method, without any option for immediate expensing under Section 179.', 'Expense only passenger vehicles and trucks used in the business, up to a maximum dollar amount and subject to specific limitations based on vehicle weight and usage.', 'Immediately deduct the cost of qualifying business assets rather than depreciating over time, subject to limits', 'Expense any purchase made by the business, regardless of whether it is a capital asset or an ordinary business expense, without any limitations or qualifications.'],
       correctAnswer: 2,
       blueprintArea: 'TAX-1',
@@ -970,7 +970,7 @@ export const CFP_TAX_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-tax-d17',
-      question: 'Grandma Betty wants to leave assets to her grandchildren, but is concerned about the generation-skipping transfer (GST) tax. What is the GST tax rate, and what exemption applies to it?\nA) 40% flat rate; exemption equals gift/estate exemption.\nB) Progressive rates up to 40%; no exemption.\nC) 35% flat rate; separate $5 million exemption.\nD) 40% flat rate; no exemption available.',
+      question: 'Grandma Betty wants to leave assets to her grandchildren, but is concerned about the generation-skipping transfer (GST) tax. What is the GST tax rate, and what exemption applies to it?',
       options: ['Progressive rates up to 40%; exemption only for direct skips to educational institutions.', '40% flat rate; no exemption available unless a qualified disclaimer is executed.', '40% flat rate; exemption equals gift/estate exemption', '35% flat rate; separate $5 million exemption, indexed annually for inflation since 2011.'],
       correctAnswer: 2,
       blueprintArea: 'TAX-3',
@@ -990,7 +990,7 @@ export const CFP_TAX_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-tax-d19',
-      question: 'The Tax Cuts and Jobs Act (TCJA) significantly increased the federal gift and estate tax exemption. What happens to the federal gift and estate tax exemption when the TCJA provisions sunset after December 31, 2025?\nA) It remains at approximately $13 million (adjusted for inflation).\nB) It drops to approximately $7 million (adjusted for inflation).\nC) It increases to $15 million.\nD) It is eliminated entirely.',
+      question: 'The Tax Cuts and Jobs Act (TCJA) significantly increased the federal gift and estate tax exemption. What happens to the federal gift and estate tax exemption when the TCJA provisions sunset after December 31, 2025?',
       options: ['It drops to approximately $7 million (adjusted for inflation)', 'It remains at approximately $13 million (adjusted for inflation), as the sunset provision only impacts individual income tax rates.', 'It increases to $15 million, reflecting a scheduled adjustment designed to offset inflationary pressures on estate values.', 'It is eliminated entirely, reverting to pre-TCJA rules where only lifetime gifts are subject to federal tax.'],
       correctAnswer: 0,
       blueprintArea: 'TAX-3',
@@ -1101,7 +1101,7 @@ export const CFP_RET_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-ret-d04',
-      question: 'Sarah worked as a teacher for 15 years and contributed to a pension plan that wasn\'t covered by Social Security. How might the Windfall Elimination Provision (WEP) affect her Social Security benefits?\n\nA) Have high lifetime earnings\nB) Delay benefits past age 70\nC) Receive a pension from non-Social Security-covered employment\nD) Have foreign work credits',
+      question: 'Sarah worked as a teacher for 15 years and contributed to a pension plan that wasn\'t covered by Social Security. How might the Windfall Elimination Provision (WEP) affect her Social Security benefits?',
       options: ['Have high lifetime earnings in Social Security-covered employment, resulting in a higher PIA.', 'Delay benefits past age 70, thereby maximizing the delayed retirement credits and overall benefit amount.', 'Receive a pension from non-Social Security-covered employment', 'Have foreign work credits from a country with a totalization agreement with the U.S. Social Security Administration.'],
       correctAnswer: 2,
       blueprintArea: 'RET-1',
@@ -1211,7 +1211,7 @@ export const CFP_RET_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-ret-d15',
-      question: 'ABC Company offers its employees a SIMPLE IRA plan. What is the standard employer matching contribution formula for a SIMPLE IRA?\nA) 25% of employee contributions up to 6% of compensation\nB) Dollar-for-dollar match of the first 3% of compensation\nC) 50% match of the first 6% of compensation\nD) No employer matching required',
+      question: 'ABC Company offers its employees a SIMPLE IRA plan. What is the standard employer matching contribution formula for a SIMPLE IRA?',
       options: ['25% of employee contributions up to 6% of compensation', 'Dollar-for-dollar match of the first 3% of compensation', 'A 50% match of the first 6% of compensation, provided the employee has at least one year of service.', 'No employer matching is required, but the employer must make a mandatory contribution of 2% of compensation for all eligible employees.'],
       correctAnswer: 1,
       blueprintArea: 'RET-2',
@@ -1241,7 +1241,7 @@ export const CFP_RET_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-ret-d18',
-      question: 'Maria is planning her retirement and wants to understand how Social Security benefits are calculated. Which of the following BEST describes how the Social Security Administration determines retirement benefits?\n\nA) A flat amount for all retirees\nB) The highest 35 years of indexed earnings, averaged and applied to a benefit formula\nC) All lifetime earnings\nD) Only the last 10 years of earnings',
+      question: 'Maria is planning her retirement and wants to understand how Social Security benefits are calculated. Which of the following BEST describes how the Social Security Administration determines retirement benefits?',
       options: ['A flat amount for all retirees, adjusted annually for cost-of-living increases and marital status.', 'The highest 35 years of indexed earnings, averaged and applied to a benefit formula', 'All lifetime earnings, with a small percentage applied to each year\'s earnings, resulting in a total benefit.', 'Only the last 10 years of earnings, with a bonus applied for continuous employment during that period.'],
       correctAnswer: 1,
       blueprintArea: 'RET-1',
@@ -1291,7 +1291,7 @@ export const CFP_RET_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-ret-d23',
-      question: 'Each year, Social Security benefits are adjusted to account for inflation. Which of the following BEST describes how Social Security Cost of Living Adjustments (COLAs) are determined?\n\nA) Are based on the Consumer Price Index for Urban Wage Earners (CPI-W) and can be zero if inflation is flat\nB) Are set by Congress each year\nC) Are guaranteed at 3% annually\nD) Only apply to retirees over 70',
+      question: 'Each year, Social Security benefits are adjusted to account for inflation. Which of the following BEST describes how Social Security Cost of Living Adjustments (COLAs) are determined?',
       options: ['Are based on the Consumer Price Index for Urban Wage Earners (CPI-W) and can be zero if inflation is flat', 'Are determined by a Congressional vote each year, influenced by lobbying and political considerations, leading to inconsistent adjustments.', 'Are calculated as a fixed 3% of the prior year\'s benefit, ensuring a steady increase regardless of actual inflation or deflation in the economy.', 'Are calculated differently for those over 70, using a higher inflation measure to account for increased healthcare costs, while younger retirees use CPI-W.'],
       correctAnswer: 0,
       blueprintArea: 'RET-1',
@@ -1301,7 +1301,7 @@ export const CFP_RET_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-ret-d24',
-      question: 'John, a retired worker, has a 16-year-old son, Michael, who is still in high school. John also has a 25-year-old daughter, Emily, who was diagnosed with a disability at age 20. Under what circumstances can John\'s children receive Social Security benefits based on his record?\n\nA) Under 18 (or 19 if full-time high school student), or disabled before age 22\nB) Under age 25\nC) Living with the parent\nD) Unemployed',
+      question: 'John, a retired worker, has a 16-year-old son, Michael, who is still in high school. John also has a 25-year-old daughter, Emily, who was diagnosed with a disability at age 20. Under what circumstances can John\'s children receive Social Security benefits based on his record?',
       options: ['Under 18 (or 19 if full-time high school student), or disabled before age 22', 'Under age 25, provided they are enrolled in a qualified higher education program.', 'Living with the parent and primarily dependent on them for over half of their support.', 'Unemployed and actively seeking work, demonstrating a verifiable job search history.'],
       correctAnswer: 0,
       blueprintArea: 'RET-1',
@@ -1542,7 +1542,7 @@ export const CFP_EST_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-est-d22',
-      question: 'John and Mary want to minimize estate taxes. Their advisor recommends a credit shelter trust (bypass trust) in their wills. A credit shelter trust is used to:\n\nA) Defer all estate taxes until both spouses die\nB) Provide income to the surviving spouse while sheltering assets from their estate\nC) Provide immediate distributions to grandchildren\nD) Eliminate the need for an estate tax return',
+      question: 'John and Mary want to minimize estate taxes. Their advisor recommends a credit shelter trust (bypass trust) in their wills. A credit shelter trust is used to:',
       options: ['Defer all estate taxes until both spouses die, regardless of asset appreciation.', 'Provide income to the surviving spouse while sheltering assets from their estate', 'Provide immediate distributions to grandchildren, bypassing the surviving spouse\'s needs.', 'Eliminate the need for an estate tax return, simplifying estate administration entirely.'],
       correctAnswer: 1,
       blueprintArea: 'EST-1',
@@ -1633,7 +1633,7 @@ export const CFP_PCR_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-pcr-d05',
-      question: 'Due to increased regulatory scrutiny, Stonebridge Wealth Management is reviewing its compliance procedures. Which of the following actions are financial firms required to take under anti-money laundering (AML) regulations?\n\nAML regulations require financial firms to:\n\nA) Avoid foreign clients\nB) Only report large cash deposits\nC) Guarantee customer identity\nD) Implement customer identification programs, monitor for suspicious activity, and file required reports',
+      question: 'Due to increased regulatory scrutiny, Stonebridge Wealth Management is reviewing its compliance procedures. Which of the following actions are financial firms required to take under anti-money laundering (AML) regulations?\n\nAML regulations require financial firms to:',
       options: ['Avoid establishing relationships with foreign clients residing in high-risk jurisdictions to minimize AML compliance burdens.', 'Only report large cash deposits exceeding $10,000, as these are the primary trigger for mandatory reporting to FinCEN.', 'Guarantee customer identity through advanced biometric verification and continuous monitoring of personal information databases.', 'Implement customer identification programs, monitor for suspicious activity, and file required reports'],
       correctAnswer: 3,
       blueprintArea: 'PCR-1',
@@ -1763,7 +1763,7 @@ export const CFP_PCR_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-pcr-d18',
-      question: 'Maria is a new client at Oak Financial Planning. Before making any recommendations, what is the FIRST step that Sarah, a CFP® professional, should take in the CFP Board\'s financial planning process? \nA) Understanding the client\'s current situation\nB) , \nC) , \nD) s current situation',
+      question: 'Maria is a new client at Oak Financial Planning. Before making any recommendations, what is the FIRST step that Sarah, a CFP® professional, should take in the CFP Board\'s financial planning process?',
       options: ['Understanding the client\\', 'Establishing the scope of engagement', 'Developing the financial plan recommendations', 'Presenting the financial planning recommendations'],
       correctAnswer: 0,
       blueprintArea: 'PCR-1',
@@ -1803,7 +1803,7 @@ export const CFP_PCR_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-pcr-d22',
-      question: 'According to the CFP Board Code of Ethics, the Principle of Integrity requires CFP® professionals to:\nA) A) Guarantee profitable outcomes\nB) Be honest and not mislead clients\nC) C) Accept all prospective clients\nD) D) Provide free services to those in need',
+      question: 'According to the CFP Board Code of Ethics, the Principle of Integrity requires CFP® professionals to:',
       options: ['Guarantee profitable outcomes', 'Be honest and not mislead clients', 'Accept all prospective clients', 'Provide free services to those in need'],
       correctAnswer: 1,
       blueprintArea: 'PCR-1',
@@ -1864,7 +1864,7 @@ export const CFP_PSY_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-psy-d02',
-      question: 'A client, overwhelmed by the sheer volume of investment options, struggles to make a decision about their 401(k) allocation. Information overload leads to:\nA) Better decisions\nB) More diversification\nC) Higher returns\nD) Decision paralysis, reliance on shortcuts, and potentially worse choices despite more information',
+      question: 'A client, overwhelmed by the sheer volume of investment options, struggles to make a decision about their 401(k) allocation. Information overload leads to:',
       options: ['Better decisions due to comprehensive analysis and enhanced understanding of risk-adjusted returns.', 'More diversification as investors explore a wider range of asset classes and investment strategies.', 'Higher returns as investors are able to identify undervalued assets and capitalize on market inefficiencies.', 'Decision paralysis, reliance on shortcuts, and potentially worse choices despite more information'],
       correctAnswer: 3,
       blueprintArea: 'PSY-2',
@@ -1974,7 +1974,7 @@ export const CFP_PSY_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-psy-d13',
-      question: 'When presenting Monte Carlo simulation results showing a 70% probability of success for a client\'s retirement plan, you notice they seem confused. When explaining probabilistic outcomes (e.g., Monte Carlo results) to clients:\nA) Only show point estimates\nB) Avoid all numbers\nC) Focus only on worst case\nD) Use multiple formats (percentages, frequencies, visual displays) and check understanding, as probability concepts are often misunderstood',
+      question: 'When presenting Monte Carlo simulation results showing a 70% probability of success for a client\'s retirement plan, you notice they seem confused. When explaining probabilistic outcomes (e.g., Monte Carlo results) to clients:',
       options: ['Only show point estimates, such as the median retirement age or portfolio balance, as these are easily understood and avoid the complexities of probability distributions.', 'Avoid all numbers and instead use qualitative descriptions like \'high likelihood\' or \'moderate risk\' to simplify the information and reduce client anxiety about precise figures.', 'Focus only on the worst-case scenario, presenting the lowest possible retirement income or portfolio value, to conservatively manage expectations and prevent disappointment later.', 'Use multiple formats (percentages, frequencies, visual displays) and check understanding, as probability concepts are often misunderstood'],
       correctAnswer: 3,
       blueprintArea: 'PSY-2',

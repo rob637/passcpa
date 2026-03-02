@@ -11,7 +11,6 @@ import { captureReferralFromUrl } from '../../../services/referral';
 import { saveCoursePreference } from '../../../utils/courseDetection';
 import { isValidCourseId } from '../../../types/course';
 import type { CourseId } from '../../../types/course';
-import { getCourseHomePath } from '../../../utils/courseNavigation';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -127,13 +126,7 @@ const Register = () => {
       trackEvent('signup_completed', { method: 'google' });
       // Note: Google Ads conversion tracking for new Google users is handled in AuthProvider
       void googleResult;
-      // Navigate to the course-specific dashboard if course param is present
-      const pendingCourse = localStorage.getItem('pendingCourse');
-      if (pendingCourse && isValidCourseId(pendingCourse)) {
-        navigate(getCourseHomePath(pendingCourse as CourseId));
-      } else {
-        navigate('/home');
-      }
+      navigate('/'); // Go directly to dashboard - contextual prompts handle setup
     } catch (err: any) {
       logger.error('Google sign-up error:', err);
       if (err.code === 'auth/popup-closed-by-user') {

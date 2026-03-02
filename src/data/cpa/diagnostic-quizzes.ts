@@ -93,7 +93,7 @@ export const FAR_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'far-d06',
-      question: 'The City of Bayview manages a retirement plan for its employees. The assets are held in a trust. A pension trust fund is classified as which type of fund?\nA) Governmental fund\nB) Special revenue fund\nC) Proprietary fund\nD) Fiduciary fund',
+      question: 'The City of Bayview manages a retirement plan for its employees. The assets are held in a trust. A pension trust fund is classified as which type of fund?',
       options: ['Governmental fund', 'Special revenue fund', 'Proprietary fund', 'Fiduciary fund'],
       correctAnswer: 3,
       blueprintArea: 'FAR-IV',
@@ -233,7 +233,7 @@ export const FAR_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'far-d20',
-      question: 'Apex Manufacturing is analyzing its capital structure. They want to understand the proportion of debt financing relative to equity. The debt-to-equity ratio measures:\nA) The proportion of financing from creditors versus owners\nB) Operating efficiency\nC) Profitability\nD) Short-term liquidity',
+      question: 'Apex Manufacturing is analyzing its capital structure. They want to understand the proportion of debt financing relative to equity. The debt-to-equity ratio measures:',
       options: ['The proportion of financing from creditors versus owners', 'How effectively a company utilizes its assets to generate revenue.', 'The company\'s ability to generate earnings relative to its revenue.', 'The company\'s ability to meet its current liabilities with its current assets.'],
       correctAnswer: 0,
       blueprintArea: 'FAR-V',
@@ -605,7 +605,7 @@ export const REG_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'reg-d05',
-      question: 'David prepared several 1099 forms for his business but missed the filing deadline. The penalty for failure to file correct information returns (e.g., Form 1099) by the due date is:\n\nA) A flat $10,000 per return\nB) Graduated penalties: $60 if corrected within 30 days, $120 if corrected by August 1, $310 if later or not corrected (2024 amounts)\nC) Criminal prosecution\nD) No penalty for information returns',
+      question: 'David prepared several 1099 forms for his business but missed the filing deadline. The penalty for failure to file correct information returns (e.g., Form 1099) by the due date is:',
       options: ['A flat $10,000 per return, assessed if the failure to file is deemed intentional disregard of filing requirements, without consideration for reasonable cause.', 'No penalty for information returns if the filer can demonstrate reasonable cause and not willful neglect, and the IRS grants a waiver based on supporting documentation.', 'Criminal prosecution, but only in cases of egregious and willful violations involving a pattern of fraudulent activity and substantial tax evasion, not mere late filing.', 'Graduated penalties: $60 if corrected within 30 days, $120 if corrected by August 1, $310 if later or not corrected (2024 amounts)'],
       correctAnswer: 3,
       blueprintArea: 'REG-I',
@@ -725,7 +725,7 @@ export const REG_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'reg-d17',
-      question: 'John, a single filer, sold stock in 2024 that he held for 3 years, resulting in a long-term capital gain. The 0% long-term capital gains rate applies to taxpayers with taxable income up to:\nA) All taxpayers regardless of income\nB) $89,250 for single filers\nC) $100,000 for single filers\nD) $44,625 for single filers',
+      question: 'John, a single filer, sold stock in 2024 that he held for 3 years, resulting in a long-term capital gain. The 0% long-term capital gains rate applies to taxpayers with taxable income up to:',
       options: ['All taxpayers regardless of income', '$89,250 for single filers', '$100,000 for single filers', '$44,625 for single filers'],
       correctAnswer: 3,
       blueprintArea: 'REG-III',
@@ -735,7 +735,7 @@ export const REG_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'reg-d18',
-      question: 'Sarah Miller, CPA, prepared several tax returns for clients at Green & Associates during the current tax season. Under Circular 230, a tax practitioner who prepares a tax return must:\nA) Never sign a return\nB) Sign as the paid preparer if compensation is received\nC) Sign only electronic returns\nD) Sign as the preparer only if the client requests',
+      question: 'Sarah Miller, CPA, prepared several tax returns for clients at Green & Associates during the current tax season. Under Circular 230, a tax practitioner who prepares a tax return must:',
       options: ['Never sign a return, even if you prepared it for a client.', 'Sign only electronic returns prepared using approved software.', 'Sign as the paid preparer if compensation is received', 'Sign as the preparer only if the client requests'],
       correctAnswer: 2,
       blueprintArea: 'REG-I',
@@ -936,7 +936,7 @@ export const BAR_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'bar-d12',
-      question: 'Evergreen Solar is evaluating a new solar panel production line. Management wants to understand the impact of changes in key variables like material costs and selling price on the project\'s NPV. Sensitivity analysis in capital budgeting involves:\n\nA) Using only the best-case estimates for all variables.\nB) Changing one variable at a time while holding others constant to determine which variables have the greatest impact on NPV.\nC) Calculating only the IRR.\nD) Ignoring risk and assuming all cash flows are certain.',
+      question: 'Evergreen Solar is evaluating a new solar panel production line. Management wants to understand the impact of changes in key variables like material costs and selling price on the project\'s NPV. Sensitivity analysis in capital budgeting involves:',
       options: ['Using only the best-case estimates for all variables to arrive at an optimistic NPV, which is then used as the primary basis for investment decisions.', 'Ignoring risk and assuming all cash flows are certain, simplifying the analysis to focus solely on expected values without considering probability distributions or potential deviations.', 'Calculating only the Internal Rate of Return (IRR) and comparing it to the hurdle rate, disregarding the project\'s scale and the potential for multiple IRR values.', 'Changing one variable at a time while holding others constant to determine which variables have the greatest impact on NPV'],
       correctAnswer: 3,
       blueprintArea: 'BAR-IV',
@@ -1117,7 +1117,7 @@ export const ISC_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'isc-d04',
-      question: 'Apex Financials is implementing a new data warehouse. Management is concerned about data integrity. Data quality dimensions include all of the following EXCEPT:\nA) Completeness\nB) Encryption\nC) Timeliness\nD) Accuracy',
+      question: 'Apex Financials is implementing a new data warehouse. Management is concerned about data integrity. Data quality dimensions include all of the following EXCEPT:',
       options: ['Completeness', 'Encryption', 'Timeliness', 'Accuracy'],
       correctAnswer: 1,
       blueprintArea: 'ISC-I',
@@ -1237,7 +1237,7 @@ export const ISC_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'isc-d16',
-      question: 'E-commerce retailer, ShopSmart.com, processes thousands of online transactions daily. What specific security controls are required for their e-commerce systems?\n\nA) No security controls since transactions are automated\nB) TLS encryption for data in transit, PCI DSS compliance for payment processing, authentication controls, session management, input validation, and real-time fraud detection mechanisms\nC) Only physical security controls\nD) Only antivirus software',
+      question: 'E-commerce retailer, ShopSmart.com, processes thousands of online transactions daily. What specific security controls are required for their e-commerce systems?',
       options: ['No specific security controls are required beyond basic server maintenance, as the automated nature of e-commerce transactions inherently protects against external threats and data breaches, minimizing the need for active intervention.', 'Only antivirus software is required, diligently updated and scheduled for regular scans, as it provides comprehensive protection against all forms of malware and cyber threats, ensuring the security and integrity of the e-commerce platform.', 'Only physical security controls, such as server room access restrictions and surveillance systems, are necessary to protect the e-commerce systems, as these measures sufficiently address the primary risks of unauthorized access and data compromise.', 'TLS encryption for data in transit, PCI DSS compliance for payment processing, authentication controls, session management, input validation, and real-time fraud detection mechanisms'],
       correctAnswer: 3,
       blueprintArea: 'ISC-II',
@@ -1438,7 +1438,7 @@ export const TCP_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'tcp-d10',
-      question: 'Sarah, a CPA, is preparing a client\'s tax return. Under Circular 230, Sarah is prohibited from signing the return if a tax position:\n\nA) Has any degree of uncertainty\nB) Has not been previously litigated\nC) Is frivolous or lacks reasonable basis\nD) Involves complex calculations',
+      question: 'Sarah, a CPA, is preparing a client\'s tax return. Under Circular 230, Sarah is prohibited from signing the return if a tax position:',
       options: ['Has any degree of uncertainty without adequate disclosure', 'Has not been previously litigated with similar facts', 'Is frivolous or lacks reasonable basis', 'Involves complex calculations requiring specialized software'],
       correctAnswer: 2,
       blueprintArea: 'TCP-IV',
@@ -1528,7 +1528,7 @@ export const TCP_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'tcp-d19',
-      question: 'Sarah is considering forming a business. She\'s weighing the pros and cons of S corporation versus C corporation status. A key tax advantage of S corporation status over C corporation status is:\n\nA) S corporations are not subject to payroll taxes\nB) S corporations can deduct dividends paid\nC) S corporations can have unlimited shareholders\nD) S corporation income avoids double taxation by passing through to shareholders',
+      question: 'Sarah is considering forming a business. She\'s weighing the pros and cons of S corporation versus C corporation status. A key tax advantage of S corporation status over C corporation status is:',
       options: ['S corporations, while passing through income, are exempt from all federal payroll taxes, thus lowering employment costs.', 'S corporations can deduct dividends paid to shareholders as a business expense, reducing taxable income at the corporate level.', 'S corporations can have unlimited shareholders, attracting more capital and facilitating easier business expansion and growth.', 'S corporation income avoids double taxation by passing through to shareholders'],
       correctAnswer: 3,
       blueprintArea: 'TCP-II',

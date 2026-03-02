@@ -1449,7 +1449,7 @@
       "subtopic": "SAST",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a code review at Stellaris Systems, an IS auditor is evaluating the security of a newly developed web application before its deployment. Which of the following analysis methods assesses the source code for vulnerabilities without executing the code?\n\nOptions: A) Network traffic | B) Running applications | C) Source code or binaries without executing them | D) User behavior\nCorrect: C",
+      "question": "During a code review at Stellaris Systems, an IS auditor is evaluating the security of a newly developed web application before its deployment. Which of the following analysis methods assesses the source code for vulnerabilities without executing the code?",
       "options": [
         "Analyzing network traffic for anomalous communication patterns",
         "Observing running applications for unexpected resource consumption",
@@ -1484,7 +1484,7 @@
       "subtopic": "DAST",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Vista Healthcare LLC is conducting security assessments on its patient portal application. The security team needs to evaluate the application's behavior in a runtime environment. Which testing approach should they use?\n\nOptions: A) Source code only | B) Database schemas | C) Running applications from an external perspective | D) Network configurations\nCorrect: C",
+      "question": "Vista Healthcare LLC is conducting security assessments on its patient portal application. The security team needs to evaluate the application's behavior in a runtime environment. Which testing approach should they use?",
       "options": [
         "Analyzing source code only without runtime execution",
         "Examining database schemas for potential vulnerabilities",
@@ -1519,7 +1519,7 @@
       "subtopic": "Penetration Testing",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "Meridian Corp is preparing to launch a new e-commerce platform. To ensure its security, the CIO wants to proactively identify vulnerabilities before the launch and on an ongoing basis. When should penetration testing be performed?\n\nOptions: A) Only during development | B) Never | C) Only after a breach | D) Before deployment and periodically thereafter\nCorrect: D",
+      "question": "Meridian Corp is preparing to launch a new e-commerce platform. To ensure its security, the CIO wants to proactively identify vulnerabilities before the launch and on an ongoing basis. When should penetration testing be performed?",
       "options": [
         "Only during development to validate initial code",
         "Never, as it introduces unacceptable business risk",
@@ -1554,7 +1554,7 @@
       "subtopic": "Secure Coding",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "Chen & Associates is developing a financial reporting system. To minimize vulnerabilities, the development team needs to implement practices that address common coding flaws. Which of the following encompasses key secure coding practices?\n\nOptions: A) Input validation, output encoding, and proper error handling | B) Only encryption | C) Only authentication | D) Only logging\nCorrect: A",
+      "question": "Chen & Associates is developing a financial reporting system. To minimize vulnerabilities, the development team needs to implement practices that address common coding flaws. Which of the following encompasses key secure coding practices?",
       "options": [
         "Input validation, output encoding, and proper error handling",
         "Only encryption of sensitive data at rest and in transit",
@@ -1589,7 +1589,7 @@
       "subtopic": "XSS Prevention",
       "difficulty": "easy",
       "skillLevel": "Remembering and Understanding",
-      "question": "During a security audit of GlobalTech Solutions' website, the auditor identifies a potential vulnerability to cross-site scripting (XSS) attacks. What is the MOST effective way to prevent such attacks?\n\nOptions: A) Validating input and encoding output | B) Using firewalls only | C) Encrypting databases | D) Using strong passwords\nCorrect: A",
+      "question": "During a security audit of GlobalTech Solutions' website, the auditor identifies a potential vulnerability to cross-site scripting (XSS) attacks. What is the MOST effective way to prevent such attacks?",
       "options": [
         "Validating input and encoding output",
         "Using firewalls only for perimeter defense",
@@ -1624,7 +1624,7 @@
       "subtopic": "CSRF",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "An auditor at Quantum Software Inc. discovers that the company's web application is vulnerable to cross-site request forgery (CSRF) attacks. What aspect of web application security does CSRF primarily exploit?\n\nOptions: A) Trust a website has in a user's browser | B) Network vulnerabilities | C) Weak passwords | D) Physical access\nCorrect: A",
+      "question": "An auditor at Quantum Software Inc. discovers that the company's web application is vulnerable to cross-site request forgery (CSRF) attacks. What aspect of web application security does CSRF primarily exploit?",
       "options": [
         "Trust a website has in a user's browser",
         "Network vulnerabilities in the server infrastructure",
@@ -1659,7 +1659,7 @@
       "subtopic": "OWASP",
       "difficulty": "hard",
       "skillLevel": "Analysis",
-      "question": "During a security awareness training session at Pacific Holdings, the IT security manager mentions the 'OWASP Top 10'. What does the OWASP Top 10 represent in the context of web application security?\n\nOptions: A) A development methodology | B) A compliance standard | C) A testing tool | D) A list of critical web application security risks\nCorrect: D",
+      "question": "During a security awareness training session at Pacific Holdings, the IT security manager mentions the 'OWASP Top 10'. What does the OWASP Top 10 represent in the context of web application security?",
       "options": [
         "A structured development methodology for secure coding practices.",
         "A mandated compliance standard for all publicly facing web applications.",
@@ -1694,7 +1694,7 @@
       "subtopic": "SCA",
       "difficulty": "medium",
       "skillLevel": "Application",
-      "question": "Coastal Corp is performing a security assessment of its new software application. The security team wants to identify potential vulnerabilities arising from the use of open-source libraries. What does software composition analysis primarily identify?\n\nOptions: A) Code quality issues | B) Performance problems | C) Vulnerabilities in third-party components | D) User interface issues\nCorrect: C",
+      "question": "Coastal Corp is performing a security assessment of its new software application. The security team wants to identify potential vulnerabilities arising from the use of open-source libraries. What does software composition analysis primarily identify?",
       "options": [
         "Inefficiencies causing maintainability difficulties",
         "Bottlenecks impacting the application's responsiveness",

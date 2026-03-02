@@ -678,16 +678,8 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
   // Users can subscribe from the dashboard/banner after trying the product
   const handleStartTrial = () => {
     if (user) {
-      // Already logged in — go to their course dashboard
-      const dashboardPaths: Record<string, string> = {
-        cpa: '/home',
-        ea: '/ea',
-        cma: '/cma/dashboard',
-        cia: '/cia/dashboard',
-        cfp: '/cfp/dashboard',
-        cisa: '/cisa/dashboard',
-      };
-      window.location.href = dashboardPaths[config.id] || '/home';
+      // Already logged in — go to their dashboard
+      window.location.href = `/${config.id === 'cpa' ? 'home' : config.id}`;
     } else {
       window.location.href = `/register?course=${config.id}`;
     }

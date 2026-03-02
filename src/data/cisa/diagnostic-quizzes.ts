@@ -897,7 +897,7 @@ export const CISA4_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cisa4-d10',
-      question: 'Meridian Corp. has several servers running operating systems that are no longer supported by the vendor. These end-of-life (EOL) systems should be handled in which of the following ways?\nA) Only documented\nB) Ignored\nC) Identified, risk-assessed, and migrated or compensated\nD) Continued indefinitely',
+      question: 'Meridian Corp. has several servers running operating systems that are no longer supported by the vendor. These end-of-life (EOL) systems should be handled in which of the following ways?',
       options: ['Only documented within the IT asset management repository', 'Ignored, if the system is behind a firewall and not internet-facing', 'Identified, risk-assessed, and migrated or compensated', 'Continued indefinitely with compensating controls applied'],
       correctAnswer: 2,
       blueprintArea: 'CISA4-A',
@@ -957,7 +957,7 @@ export const CISA4_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cisa4-d16',
-      question: 'After a recent disaster recovery test at SecureData Inc., several critical gaps were identified in the recovery procedures. These findings need to be addressed promptly. DR testing lessons learned should: \nA) Only be shared with testers \nB) Drive improvements to plans and procedures \nC) Be documented but ignored \nD) Be kept confidential from management',
+      question: 'After a recent disaster recovery test at SecureData Inc., several critical gaps were identified in the recovery procedures. These findings need to be addressed promptly. DR testing lessons learned should:',
       options: ['Only be shared with testers and the IT department', 'Drive improvements to plans and procedures', 'Be documented but ignored unless a real disaster occurs', 'Be kept confidential from management to avoid scrutiny'],
       correctAnswer: 1,
       blueprintArea: 'CISA4-C',
@@ -1248,7 +1248,7 @@ export const CISA5_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cisa5-d19',
-      question: 'Apex Financial is building a new data center to support its growing transaction volume. Which of the following BEST describes the environmental controls that should be implemented for the data center?\n\nA) Only cooling\nB) Only fire suppression\nC) Temperature, humidity, fire suppression, and water detection\nD) Only power',
+      question: 'Apex Financial is building a new data center to support its growing transaction volume. Which of the following BEST describes the environmental controls that should be implemented for the data center?',
       options: ['Only cooling via HVAC, with redundant chiller units and airflow panels', 'Only fire suppression using FM-200 and manual pull station alarms', 'Temperature, humidity, fire suppression, and water detection', 'Only power, including UPS and generator backup with weekly testing'],
       correctAnswer: 2,
       blueprintArea: 'CISA5-D',

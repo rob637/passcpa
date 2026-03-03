@@ -39,7 +39,6 @@ import {
 } from '../../utils/courseNavigation';
 import { CourseId } from '../../types/course';
 import DailyPlanCard from '../DailyPlanCard';
-import StudyTimeCard from '../StudyTimeCard';
 import { BottomSheet } from '../common/BottomSheet';
 import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
 import { useToast } from '../common/Toast';
@@ -492,27 +491,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Today's Personalized Plan - This IS the primary CTA */}
-      <DailyPlanCard compact />
-
-      {/* Diagnostic Quiz Prompt - Show ONLY after they have an exam date set */}
-      {examDate && hasDiagnosticResult === false && (
-        <Link
-          to="/diagnostic"
-          state={{ section: userProfile?.examSection || '' }}
-          className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-sm transition-all"
-        >
-          <ClipboardCheck className="w-5 h-5 text-indigo-500" />
-          <div className="flex-1 text-sm">
-            <span className="font-medium text-slate-700 dark:text-slate-300">Take Diagnostic Quiz</span>
-            <span className="text-slate-500 dark:text-slate-400"> — identify your weak areas</span>
-          </div>
-          <ChevronDown className="w-4 h-4 text-slate-400 rotate-[-90deg]" />
-        </Link>
-      )}
-
       {/* Quick Access Buttons */}
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <Link
           to={activeSection ? `/learn?section=${activeSection}` : '/learn'}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
@@ -533,7 +513,17 @@ const Home = () => {
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Questions</span>
         </Link>
         
-        {course?.hasTBS && (
+        <Link
+          to={getCourseFlashcardPath(courseId)}
+          className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors hover:shadow-md"
+        >
+          <div className="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+            <Brain className="w-5 h-5 text-amber-500" />
+          </div>
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Flashcards</span>
+        </Link>
+
+        {course?.hasTBS ? (
         <Link
           to={getCourseTBSPath(courseId)}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
@@ -543,12 +533,7 @@ const Home = () => {
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">TBS</span>
         </Link>
-        )}
-        
-        {/* CMA Essay/CBQ button - Essays are 25% of CMA exam */}
-        {/* Note: Essays available until Aug 2026, CBQs mandatory from Sept 2026 */}
-        {courseId === 'cma' && (
-        <>
+        ) : courseId === 'cma' ? (
         <Link
           to={getCourseEssayPath(courseId)}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
@@ -558,21 +543,7 @@ const Home = () => {
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Essays</span>
         </Link>
-        <Link
-          to={getCourseCBQPath(courseId)}
-          className="flex flex-col items-center gap-2 p-4 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl border border-emerald-200 dark:border-emerald-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all hover:shadow-md relative"
-        >
-          <span className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full">NEW</span>
-          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
-            <FileSpreadsheet className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-          </div>
-          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">CBQ</span>
-        </Link>
-        </>
-        )}
-        
-        {/* CFP Case Study button - CFP exam includes case-based item sets */}
-        {courseId === 'cfp' && (
+        ) : courseId === 'cfp' ? (
         <Link
           to={getCourseCaseStudyPath(courseId)}
           className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
@@ -582,46 +553,39 @@ const Home = () => {
           </div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Case Studies</span>
         </Link>
+        ) : (
+          <Link
+            to={getCourseExamPath(courseId)}
+            className="flex flex-col items-center gap-2 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all hover:shadow-md"
+          >
+            <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+              <Target className="w-5 h-5 text-red-500" />
+            </div>
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Mock Exam</span>
+          </Link>
         )}
       </div>
 
-      {/* More Ways to Study - Action buttons above stats */}
-      <div className="space-y-2">
-        <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider px-1">More Ways to Study</p>
-        <div className="grid grid-cols-2 gap-2">
-          <Link
-            to={getCourseFlashcardPath(courseId)}
-            className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors"
-          >
-            <Brain className="w-5 h-5 text-amber-500" />
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Flashcards</span>
-          </Link>
-          
-          <Link
-            to={getCourseQuizPath(courseId)}
-            className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors"
-          >
-            <TrendingUp className="w-5 h-5 text-blue-500" />
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Timed Quiz</span>
-          </Link>
+      {/* Today's Personalized Plan - Below the tools */}
+      <DailyPlanCard compact />
 
-          <Link
-            to={getCourseExamPath(courseId)}
-            className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors"
-          >
-            <Target className="w-5 h-5 text-red-500" />
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Mock Exam</span>
-          </Link>
+      {/* Diagnostic Quiz Prompt - Show ONLY after they have an exam date set */}
+      {examDate && hasDiagnosticResult === false && (
+        <Link
+          to="/diagnostic"
+          state={{ section: userProfile?.examSection || '' }}
+          className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-sm transition-all"
+        >
+          <ClipboardCheck className="w-5 h-5 text-indigo-500" />
+          <div className="flex-1 text-sm">
+            <span className="font-medium text-slate-700 dark:text-slate-300">Take Diagnostic Quiz</span>
+            <span className="text-slate-500 dark:text-slate-400"> — identify your weak areas</span>
+          </div>
+          <ChevronDown className="w-4 h-4 text-slate-400 rotate-[-90deg]" />
+        </Link>
+      )}
 
-          <Link
-            to="/ai-tutor"
-            className="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-slate-300 transition-colors"
-          >
-            <Sparkles className="w-5 h-5 text-blue-600" />
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Ask Vory</span>
-          </Link>
-        </div>
-      </div>
+
 
       {/* Share Nudge - contextual, non-intrusive */}
       {showStreakNudge && (
@@ -634,8 +598,7 @@ const Home = () => {
         <ShareNudge trigger="dashboard_periodic" />
       )}
 
-      {/* Study Time Card - At bottom since less actionable */}
-      <StudyTimeCard />
+
       </div>
     </div>
   );

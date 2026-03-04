@@ -326,7 +326,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           const batchIds = streakLogIds.slice(batch, batch + 10);
           const streakQuery = query(
             collection(db, 'users', user.uid, 'daily_log'),
-            where('__name__', 'in', batchIds.map(id => `users/${user.uid}/daily_log/${id}`))
+            where('__name__', 'in', batchIds)
           );
           const streakSnap = await getDocs(streakQuery);
           streakSnap.forEach(docSnap => {

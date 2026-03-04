@@ -474,10 +474,10 @@ const Home = () => {
             <ChevronDown className="w-4 h-4 text-slate-600 dark:text-slate-400" />
           </button>
 
-          {/* Right side stats */}
+          {/* Right side stats - streak hidden on mobile (shown in header), days until exam */}
           <div className="flex items-center gap-3">
             <div 
-              className="flex items-center gap-1.5 px-2.5 py-1.5 bg-orange-50 dark:bg-orange-900/30 rounded-lg"
+              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 bg-orange-50 dark:bg-orange-900/30 rounded-lg"
               title={`${currentStreak} day streak`}
             >
               <Flame className="w-4 h-4 text-orange-500" />

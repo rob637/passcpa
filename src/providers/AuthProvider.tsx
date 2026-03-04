@@ -80,32 +80,72 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       const userDoc = await getDoc(doc(db, 'users', uid));
       if (userDoc.exists()) {
-        const profile = { id: uid, ...userDoc.data() } as UserProfile;
+        const data = userDoc.data();
         
-        // Auto-sync isAdmin flag: if the user's email is in the admin whitelist
-        // but their Firestore doc doesn't have isAdmin: true, set it now.
-        // This ensures Firestore security rules (which check isAdmin on the doc)
-        // stay in sync with the client-side ADMIN_EMAILS list.
-        if (isAdminEmail(email) && !profile.isAdmin) {
-          try {
-            await updateDoc(doc(db, 'users', uid), { isAdmin: true });
-            profile.isAdmin = true;
-            logger.info(`[Auth] Auto-synced isAdmin flag for ${email}`);
-          } catch (syncErr) {
-            logger.warn('[Auth] Could not auto-sync isAdmin flag:', syncErr);
+        // Check for "ghost" documents - subcollections exist but no actual fields
+        // This happens when Firestore write failed but user created activity
+        const hasActualFields = data && (data.email || data.displayName || data.createdAt);
+        
+        if (hasActualFields) {
+          const profile = { id: uid, ...data } as UserProfile;
+          
+          // Auto-sync isAdmin flag: if the user's email is in the admin whitelist
+          // but their Firestore doc doesn't have isAdmin: true, set it now.
+          // This ensures Firestore security rules (which check isAdmin on the doc)
+          // stay in sync with the client-side ADMIN_EMAILS list.
+          if (isAdminEmail(email) && !profile.isAdmin) {
+            try {
+              await updateDoc(doc(db, 'users', uid), { isAdmin: true });
+              profile.isAdmin = true;
+              logger.info(`[Auth] Auto-synced isAdmin flag for ${email}`);
+            } catch (syncErr) {
+              logger.warn('[Auth] Could not auto-sync isAdmin flag:', syncErr);
+            }
           }
+          
+          setUserProfile(profile);
+          
+          // Sync Firestore activeCourse to localStorage so CourseProvider detects it correctly.
+          // This is critical for cross-device login — without it, user lands on CPA instead of their course.
+          if (profile.activeCourse) {
+            saveCoursePreference(profile.activeCourse);
+          }
+          return;
         }
-        
-        setUserProfile(profile);
-        
-        // Sync Firestore activeCourse to localStorage so CourseProvider detects it correctly.
-        // This is critical for cross-device login — without it, user lands on CPA instead of their course.
-        if (profile.activeCourse) {
-          saveCoursePreference(profile.activeCourse);
-        }
-      } else {
-        setUserProfile(null);
       }
+      
+      // Document doesn't exist or is a ghost doc - this is an orphaned user
+      // Auto-repair by creating their profile from Firebase Auth data
+      if (email) {
+        logger.warn(`[Auth] Repairing orphaned user: ${uid} (${email})`);
+        const currentUser = auth.currentUser;
+        const repairProfile: Omit<UserProfile, 'id'> = {
+          email: email,
+          displayName: currentUser?.displayName || email.split('@')[0] || 'User',
+          createdAt: serverTimestamp(),
+          activeCourse: (localStorage.getItem('voraprep_active_course') as CourseId) || 'cpa',
+          onboardingComplete: false,
+          dailyGoal: 50,
+          settings: {
+            notifications: true,
+            darkMode: false,
+            soundEffects: true,
+          },
+          _repairedAt: serverTimestamp(),
+          _repairReason: 'orphaned_auth_user_auto_fix',
+        };
+        
+        try {
+          await setDoc(doc(db, 'users', uid), repairProfile, { merge: true });
+          setUserProfile({ id: uid, ...repairProfile } as UserProfile);
+          logger.info(`[Auth] Successfully repaired orphaned user: ${email}`);
+          return;
+        } catch (repairErr) {
+          logger.error('[Auth] Failed to repair orphaned user:', repairErr);
+        }
+      }
+      
+      setUserProfile(null);
     } catch (err) {
       logger.error('Error fetching user profile:', err);
       setUserProfile(null);
@@ -299,7 +339,26 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         },
       };
 
-      await setDoc(doc(db, 'users', result.user.uid), newUserProfile);
+      // Create user document with retry logic to prevent orphaned auth users
+      let firestoreSuccess = false;
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          await setDoc(doc(db, 'users', result.user.uid), newUserProfile);
+          firestoreSuccess = true;
+          break;
+        } catch (firestoreErr) {
+          logger.warn(`Firestore setDoc attempt ${attempt}/3 failed:`, firestoreErr);
+          if (attempt < 3) {
+            await new Promise(resolve => setTimeout(resolve, 1000 * attempt)); // Exponential backoff
+          }
+        }
+      }
+      
+      if (!firestoreSuccess) {
+        // Log error but don't block signup - user can still use the app
+        // The repair mechanism in fetchUserProfile will fix this on next login
+        logger.error('Failed to create Firestore user doc after 3 attempts. User may have orphaned auth account:', result.user.uid);
+      }
 
       // Re-fetch the profile so it's immediately available in React state.
       // Without this, onAuthStateChanged already fired (before setDoc) and found no doc,

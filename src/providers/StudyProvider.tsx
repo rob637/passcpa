@@ -25,6 +25,7 @@ import { getDefaultSection } from '../utils/sectionUtils';
 import { COURSES } from '../courses';
 import { CourseId } from '../types/course';
 import { useCourse } from './CourseProvider';
+import { incrementStudyPlanProgress } from '../services/studyPlanService';
 
 export interface StudyPlan {
   id?: string;
@@ -320,7 +321,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         const streakLogIds = streakDates.map(d => `${activeCourse}_${d}`);
         
         // Batch into chunks of 10 (Firestore 'in' limit)
-        const streakDocs = new Map<string, number>();
+        const streakDocs = new Map<string, { earnedPoints: number; questionsAttempted: number }>();
         for (let batch = 0; batch < streakLogIds.length; batch += 10) {
           const batchIds = streakLogIds.slice(batch, batch + 10);
           const streakQuery = query(
@@ -329,18 +330,27 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           );
           const streakSnap = await getDocs(streakQuery);
           streakSnap.forEach(docSnap => {
-            streakDocs.set(docSnap.id, docSnap.data().earnedPoints || 0);
+            const data = docSnap.data();
+            streakDocs.set(docSnap.id, {
+              earnedPoints: data.earnedPoints || 0,
+              questionsAttempted: data.questionsAttempted || 0
+            });
           });
         }
         
         // Count consecutive days starting from today
+        // A day counts toward the streak ONLY if there was actual activity
         for (let i = 0; i < streakDates.length; i++) {
           const logId = `${activeCourse}_${streakDates[i]}`;
-          const points = streakDocs.get(logId) || 0;
-          if (points > 0) {
+          const dayData = streakDocs.get(logId);
+          
+          // Day counts as active only if they earned points OR attempted questions
+          const hadActivity = dayData && (dayData.earnedPoints > 0 || dayData.questionsAttempted > 0);
+          
+          if (hadActivity) {
             streak++;
           } else if (i > 0) {
-            // Don't break on today (i=0) if no activity yet
+            // Don't break on today (i=0) if no activity yet - they might study today
             break;
           }
         }
@@ -522,6 +532,11 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           courseId: activeCourse,
           timeSpent,
         }, { merge: true });
+        
+        // Update study plan progress (non-blocking)
+        incrementStudyPlanProgress(user.uid, activeCourse, section, {
+          lessonsCompleted: 1,
+        }).catch(err => logger.warn('Failed to update study plan progress:', err));
         
         // GA4 analytics — track lesson completion
         trackEvent('lesson_complete', {

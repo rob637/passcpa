@@ -135,6 +135,32 @@ export interface UserStudyState {
   studyDayPreferences?: number[];
   // Aggregated micro-feedback from past activities (injected by persistence)
   activityFeedback?: ActivityFeedbackStats;
+  // Study plan integration: current week's assignments
+  studyPlanContext?: StudyPlanContext;
+}
+
+/**
+ * Context from the user's study plan for the current week.
+ * Used to align daily activities with the overall study roadmap.
+ */
+export interface StudyPlanContext {
+  /** Current week number (1-based) */
+  currentWeek: number;
+  /** Learning phase for this week */
+  phase: 'foundation' | 'building' | 'reinforcement' | 'final-review' | 'exam-week';
+  /** Lesson IDs assigned to this week (in order) */
+  weekLessonIds: string[];
+  /** Lesson IDs already completed */
+  completedLessonIds: string[];
+  /** Focus topics for this week */
+  focusTopics: string[];
+  /** Goals for this week */
+  weekGoals: {
+    lessons: number;
+    questions: number;
+    flashcards: number;
+    simulations: number;
+  };
 }
 
 // ============================================================================
@@ -832,15 +858,42 @@ export const generateDailyPlan = async (
   // 1b. LESSON GUARANTEE (dev experiment): Interleave one lesson early
   // Research shows interleaving (learn → practice → learn) beats blocking.
   // Insert lesson after critical weak area but before medium weak areas.
+  // 
+  // STUDY PLAN INTEGRATION: If a study plan context is provided, prioritize
+  // lessons from the current week's assignment to keep daily plan aligned
+  // with the overall roadmap.
   let earlyLessonAdded = false;
   if (FEATURES.lessonGuarantee && phase !== 'examWeek' && phase !== 'finalReview') {
     // Find lesson related to weakest topic, or next unstarted lesson
     // NOTE: mediumWeakAreas not defined yet, so only use criticalWeakAreas here
     const weakestTopic = criticalWeakAreas[0]?.topic;
     
-    // Try to find a lesson that covers the weak topic
-    let bestLesson = weakestTopic
-      ? lessons.find(l => {
+    // STUDY PLAN PRIORITY: If we have study plan context, get next unfinished lesson from this week
+    let bestLesson: Lesson | undefined;
+    
+    if (state.studyPlanContext && state.studyPlanContext.weekLessonIds.length > 0) {
+      // Find next lesson from study plan that's not completed
+      const completedSet = new Set(state.studyPlanContext.completedLessonIds || []);
+      for (const lessonId of state.studyPlanContext.weekLessonIds) {
+        if (!completedSet.has(lessonId)) {
+          const progress = state.lessonProgress[lessonId] || 0;
+          if (progress < 100) {
+            bestLesson = lessons.find(l => l.id === lessonId);
+            if (bestLesson) {
+              logger.info('Study plan integration: using lesson from week plan', { 
+                lessonId, 
+                week: state.studyPlanContext.currentWeek 
+              });
+              break;
+            }
+          }
+        }
+      }
+    }
+    
+    // Fallback: Try to find a lesson that covers the weak topic
+    if (!bestLesson && weakestTopic) {
+      bestLesson = lessons.find(l => {
           const progress = state.lessonProgress[l.id] || 0;
           if (progress >= 100) return false; // Already completed
           // Check if lesson title/topics relate to weak area
@@ -850,11 +903,13 @@ export const generateDailyPlan = async (
             t.includes(weakestTopic.toLowerCase()) || weakestTopic.toLowerCase().includes(t)
           );
           return titleMatch || topicMatch;
-        })
-      : undefined;
+        });
+    }
     
-    // Track if lesson was found via topic match (vs fallback)
-    const lessonMatchedWeakTopic = !!bestLesson;
+    // Track if lesson was found via study plan or topic match
+    const lessonFromStudyPlan = state.studyPlanContext && 
+      state.studyPlanContext.weekLessonIds.includes(bestLesson?.id || '');
+    const lessonMatchedWeakTopic = !lessonFromStudyPlan && !!bestLesson;
     
     // Fallback to incomplete or next unstarted lesson
     if (!bestLesson) {
@@ -876,17 +931,21 @@ export const generateDailyPlan = async (
         title: isIncomplete ? `Continue: ${bestLesson.title}` : `Learn: ${bestLesson.title}`,
         description: isIncomplete 
           ? `${progress}% complete - pick up where you left off`
-          : lessonMatchedWeakTopic 
-            ? `Related to your weak area: ${weakestTopic}`
-            : 'New material to expand your knowledge',
+          : lessonFromStudyPlan
+            ? `Week ${state.studyPlanContext?.currentWeek} lesson from your study plan`
+            : lessonMatchedWeakTopic 
+              ? `Related to your weak area: ${weakestTopic}`
+              : 'New material to expand your knowledge',
         estimatedMinutes: isIncomplete 
           ? Math.round((bestLesson.duration || 30) * (1 - progress / 100))
           : bestLesson.duration || getDuration('lesson_medium', 'lesson', pd),
         points: POINT_VALUES.lesson_medium,
-        priority: 'high', // Elevated from medium to ensure it stays in plan
-        reason: lessonMatchedWeakTopic 
-          ? `Interleaved learning: lesson on ${weakestTopic} to reinforce practice`
-          : 'Interleaved learning: mixing content with practice improves retention',
+        priority: lessonFromStudyPlan ? 'critical' : 'high', // Study plan lessons are critical
+        reason: lessonFromStudyPlan
+          ? `Study plan: Week ${state.studyPlanContext?.currentWeek} assignment`
+          : lessonMatchedWeakTopic 
+            ? `Interleaved learning: lesson on ${weakestTopic} to reinforce practice`
+            : 'Interleaved learning: mixing content with practice improves retention',
         params: {
           lessonId: bestLesson.id,
           section: state.section,
@@ -898,6 +957,7 @@ export const generateDailyPlan = async (
         lessonId: bestLesson.id, 
         weakestTopic,
         lessonMatchedWeakTopic,
+        lessonFromStudyPlan,
         phase 
       });
     }

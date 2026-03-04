@@ -701,13 +701,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
 
   // Compact view for dashboard — shows full plan inline
   if (compact && !expanded) {
-    const nextActivity = plan.activities.find((a: DailyActivity) => !completedActivities.has(a.id));
-    const remainingActivities = plan.activities.filter(
-      (a: DailyActivity) => !completedActivities.has(a.id) && a.id !== nextActivity?.id
-    );
-    const completedList = plan.activities.filter(
-      (a: DailyActivity) => completedActivities.has(a.id)
-    );
+    // Show all activities (completed stay visible but marked as done)
+    // Sort: incomplete first, then completed
+    const allActivities = [...plan.activities].sort((a, b) => {
+      const aComplete = completedActivities.has(a.id);
+      const bComplete = completedActivities.has(b.id);
+      if (aComplete === bComplete) return 0;
+      return aComplete ? 1 : -1;
+    });
     
     return (
       <Card noPadding className="overflow-hidden">
@@ -742,111 +743,94 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
           </div>
         </div>
         
-        {/* Next Activity - highlighted as primary CTA */}
-        {nextActivity ? (
-          <div 
-            className="p-3 sm:p-4 bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
-            onClick={() => handleActivityClick(nextActivity)}
-          >
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="w-12 h-12 rounded-xl bg-white/20 flex shrink-0 items-center justify-center">
-                {React.createElement(getActivityIcon(nextActivity.type), { className: 'w-6 h-6 text-white' })}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-bold text-white text-lg leading-tight">
-                    {nextActivity.title}
-                  </span>
-                  {nextActivity.priority === 'critical' && (
-                    <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-white/20 text-white shrink-0">Critical</span>
-                  )}
-                </div>
-                <p className="text-sm text-white/80 mt-0.5 line-clamp-1">{nextActivity.reason}</p>
-              </div>
-              <div className="flex shrink-0 items-center gap-1 bg-white/20 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-white font-semibold text-sm sm:text-base">
-                Start <ChevronRight className="w-4 h-4" />
-              </div>
-            </div>
-          </div>
-        ) : dailyProgress < 100 ? (
-          <div 
-            className="p-4 text-center bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
-            onClick={() => navigate(getCourseHomePath(courseId))}
-          >
-            <Target className="w-8 h-8 text-white mx-auto mb-2" />
-            <p className="text-white font-medium">Daily plan complete! 🎯</p>
-            <p className="text-white/80 text-sm">Continue studying to hit your daily goal</p>
-          </div>
-        ) : (
-          <div 
-            className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600 cursor-pointer hover:from-success-600 hover:to-success-700 transition-all"
-            onClick={() => navigate(getCoursePracticePath(courseId))}
-          >
-            <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />
-            <p className="text-white font-medium">All done for today! 🎉</p>
-            <p className="text-white/80 text-sm">Want to keep going? Tap for extra practice →</p>
-          </div>
-        )}
-        
-        {/* Remaining activities - show full list */}
-        {remainingActivities.length > 0 && (
+        {/* All activities - consistent styling */}
+        {allActivities.length > 0 ? (
           <div className="divide-y divide-slate-200 dark:divide-slate-700">
-            {remainingActivities.map((activity: DailyActivity) => {
+            {allActivities.map((activity: DailyActivity, index: number) => {
               const Icon = getActivityIcon(activity.type);
+              const isComplete = completedActivities.has(activity.id);
+              // "Start" button only on first incomplete activity
+              const firstIncompleteIndex = allActivities.findIndex(a => !completedActivities.has(a.id));
+              const isNext = index === firstIncompleteIndex && !isComplete;
               return (
                 <div
                   key={activity.id}
-                  className="p-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors flex items-center gap-3"
-                  onClick={() => handleActivityClick(activity)}
+                  className={clsx(
+                    "p-3 transition-colors flex items-center gap-3",
+                    isComplete 
+                      ? "bg-slate-50 dark:bg-slate-800/50 opacity-70" 
+                      : "hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer"
+                  )}
+                  onClick={() => !isComplete && handleActivityClick(activity)}
                 >
                   <div className={clsx(
                     'w-8 h-8 rounded-lg flex items-center justify-center shrink-0',
-                    getActivityColor(activity.type)
+                    isComplete ? 'bg-success-100 dark:bg-success-900/30' : getActivityColor(activity.type)
                   )}>
-                    <Icon className="w-4 h-4" />
+                    {isComplete ? (
+                      <CheckCircle className="w-4 h-4 text-success-500" />
+                    ) : (
+                      <Icon className="w-4 h-4" />
+                    )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-sm text-slate-900 dark:text-slate-100 truncate">
+                      <span className={clsx(
+                        "font-medium text-sm truncate",
+                        isComplete 
+                          ? "text-slate-500 dark:text-slate-400 line-through" 
+                          : "text-slate-900 dark:text-slate-100"
+                      )}>
                         {activity.title}
                       </span>
-                      {getPriorityBadge(activity.priority)}
+                      {!isComplete && getPriorityBadge(activity.priority)}
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">{activity.reason}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
+                      {isComplete ? 'Completed' : activity.reason}
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0 text-xs text-slate-500 dark:text-slate-400">
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {activity.estimatedMinutes}m
-                    </span>
-                    <ChevronRight className="w-4 h-4" />
+                  <div className="flex items-center gap-2 shrink-0">
+                    {isComplete ? (
+                      <span className="text-xs text-success-500 font-medium">Done</span>
+                    ) : isNext ? (
+                      <span className="flex items-center gap-1 px-3 py-1 rounded-lg bg-primary-500 text-white text-sm font-medium">
+                        Start <ChevronRight className="w-4 h-4" />
+                      </span>
+                    ) : (
+                      <>
+                        <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+                          <Clock className="w-3 h-3" />
+                          {activity.estimatedMinutes}m
+                        </span>
+                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                      </>
+                    )}
                   </div>
                 </div>
               );
             })}
           </div>
+        ) : (
+          <div 
+            className="p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+            onClick={() => navigate(getCoursePracticePath(courseId))}
+          >
+            <Target className="w-8 h-8 text-primary-500 mx-auto mb-2" />
+            <p className="text-slate-900 dark:text-white font-medium">No activities planned</p>
+            <p className="text-slate-500 dark:text-slate-400 text-sm">Tap to start practicing</p>
+          </div>
         )}
-
-        {/* Completed activities (collapsed) */}
-        {completedList.length > 0 && (
-          <div className="p-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-              <CheckCircle className="w-4 h-4 text-success-500" />
-              <span>{completedList.length} completed</span>
-              <div className="flex gap-1 ml-1">
-                {completedList.map((activity: DailyActivity) => (
-                  <div 
-                    key={activity.id}
-                    className={clsx(
-                      'w-5 h-5 rounded flex items-center justify-center opacity-60',
-                      getActivityColor(activity.type)
-                    )}
-                    title={`✓ ${activity.title}`}
-                  >
-                    {React.createElement(getActivityIcon(activity.type), { className: 'w-3 h-3' })}
-                  </div>
-                ))}
-              </div>
+        
+        {/* All complete celebration */}
+        {completedCount === totalActivities && totalActivities > 0 && (
+          <div 
+            className="p-3 bg-success-50 dark:bg-success-900/20 border-t border-success-200 dark:border-success-800 cursor-pointer hover:bg-success-100 dark:hover:bg-success-900/30 transition-colors"
+            onClick={() => navigate(getCoursePracticePath(courseId))}
+          >
+            <div className="flex items-center justify-center gap-2 text-sm text-success-700 dark:text-success-300">
+              <CheckCircle className="w-4 h-4" />
+              <span className="font-medium">All done for today! 🎉</span>
+              <span className="text-success-600 dark:text-success-400">Keep going →</span>
             </div>
           </div>
         )}

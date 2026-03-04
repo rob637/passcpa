@@ -1581,10 +1581,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is NOT a primary objective of establishing a transfer pricing policy within a decentralized organization?",
             "options": [
-              "A. To minimize the overall tax burden of the corporation.",
-              "B. To maximize the autonomy of divisional managers.",
-              "C. To ensure that all intercompany transfers are recorded at cost.",
-              "D. To fairly evaluate the performance of individual divisions.",
+              "To minimize the overall tax burden of the corporation.",
+              "To maximize the autonomy of divisional managers.",
+              "To ensure that all intercompany transfers are recorded at cost.",
+              "To fairly evaluate the performance of individual divisions.",
               "E. To align divisional and corporate interests."
             ],
             "correctIndex": 2,
@@ -1606,10 +1606,10 @@
           "knowledgeCheck": {
             "question": "Division A can sell a component externally for $75. Its variable cost to produce the component is $40. Division B needs this component and can either buy it externally for $80 or from Division A. What is the transfer price range?",
             "options": [
-              "A. $40 - $75",
-              "B. $40 - $80",
-              "C. $75 - $80",
-              "D. $40 - $40",
+              "$40 - $75",
+              "$40 - $80",
+              "$75 - $80",
+              "$40 - $40",
               "E. $75 - $75"
             ],
             "correctIndex": 0,

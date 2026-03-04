@@ -542,7 +542,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Premium Calculation Knowledge Check",
           "knowledgeCheck": {
             "question": "An insurance company calculates the pure premium for a life insurance policy to be $5 per $1,000 of coverage. If the company's expense loading is 20% of the total premium, what is the total premium for a $100,000 policy?",

@@ -246,7 +246,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Test Your Knowledge: The Three-Way Match",
           "knowledgeCheck": {
             "question": "Which of the following discrepancies, discovered during a three-way match, would MOST likely indicate a potential internal control failure related to unauthorized purchases?",
@@ -386,7 +386,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Payroll Cycle Controls: Knowledge Check",
           "knowledgeCheck": {
             "question": "Which of the following segregation of duties is MOST effective in preventing the creation of ghost employees in the payroll cycle?",

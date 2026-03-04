@@ -60,6 +60,15 @@
               "term": "Enhancing: Understandability",
               "definition": "Classified, characterized, and presented clearly. Assumes users have reasonable business/economic knowledge."
             }
+          ],
+          "items": [
+            "Fundamental: Relevance (Predictive Value, Confirmatory Value, Materiality)",
+            "Fundamental: Faithful Representation (Complete, Neutral, Free from Error)",
+            "Enhancing: Comparability (Consistency)",
+            "Enhancing: Verifiability",
+            "Enhancing: Timeliness",
+            "Enhancing: Understandability",
+            "Constraint: Cost Benefit"
           ]
         },
         {
@@ -796,6 +805,20 @@
               "term": "Changes in Fiscal Year",
               "definition": "Must explain the change and transition period"
             }
+          ],
+          "items": [
+            "Entry into or termination of a material definitive agreement",
+            "Bankruptcy or receivership",
+            "Completion of acquisition or disposition of assets",
+            "Results of operations and financial condition (Earnings Release)",
+            "Creation of a direct financial obligation",
+            "Material impairments",
+            "Notice of delisting or failure to satisfy listing standards",
+            "Unregistered sales of equity securities",
+            "Material modification to rights of security holders",
+            "Changes in registrant's certifying accountant",
+            "Changes in control of registrant",
+            "Departure of directors or certain officers"
           ]
         },
         {
@@ -1024,6 +1047,13 @@
               "term": "Impairment Reversal (IFRS)",
               "definition": "Required if circumstances change. Reverse up to what carrying amount would have been."
             }
+          ],
+          "items": [
+            "GAAP: Cost Model Only (Cost - Accum Depr - Impairment)",
+            "IFRS: Choice of Cost Model or Revaluation Model",
+            "IFRS Revaluation Model: Carried at Fair Value",
+            "IFRS Revaluation Surplus: Generally OCI (unless reversing a loss)",
+            "IFRS Revaluation Loss: Generally Net Income (unless reversing a surplus)"
           ]
         },
         {
@@ -1854,6 +1884,11 @@
               "term": "Bank Errors",
               "definition": "Mistakes made by the bank. Adjust bank balance as appropriate. Notify bank\u2014no journal entry by company."
             }
+          ],
+          "items": [
+            "Add: Deposits in Transit",
+            "Less: Outstanding Checks",
+            "Add/Less: Bank Errors"
           ]
         },
         {
@@ -1880,6 +1915,13 @@
               "term": "Book Errors",
               "definition": "Company's recording mistakes. Correct as needed with journal entry."
             }
+          ],
+          "items": [
+            "Add: Collections made by bank (Notes Receivable)",
+            "Add: Interest Income",
+            "Less: NSF Checks (Bounced Checks)",
+            "Less: Service Charges",
+            "Add/Less: Book Errors"
           ]
         },
         {
@@ -2068,6 +2110,11 @@
               "term": "Aging of Receivables",
               "definition": "Group receivables by age, apply different %s to each bucket. Most accurate balance sheet approach."
             }
+          ],
+          "items": [
+            "Percentage of Sales (Income Statement Approach)",
+            "Percentage of Receivables (Balance Sheet Approach)",
+            "Aging of Receivables (Balance Sheet Approach - Most Accurate)"
           ]
         },
         {
@@ -2312,6 +2359,13 @@
               "term": "Discounted Cash Flow",
               "definition": "Compare contractual cash flows to expected cash flows. Used for individually evaluated assets."
             }
+          ],
+          "items": [
+            "Discounted Cash Flow (DCF) Method",
+            "Loss-Rate Method",
+            "Roll-Rate Method",
+            "Probability-of-Default Method",
+            "Aging Schedule Method"
           ]
         },
         {
@@ -2392,10 +2446,10 @@
           "knowledgeCheck": {
             "question": "Which of the following financial instruments is NOT subject to the CECL standard?",
             "options": [
-              "A) Trade receivables",
-              "B) Held-to-maturity debt securities",
-              "C) Trading securities",
-              "D) Loans and notes receivable"
+              "Trade receivables",
+              "Held-to-maturity debt securities",
+              "Trading securities",
+              "Loans and notes receivable"
             ],
             "correctIndex": 2,
             "explanation": "Trading securities are measured at fair value, with changes in fair value recognized in profit or loss. CECL applies to financial assets measured at amortized cost.",
@@ -2710,6 +2764,11 @@
               "term": "Factoring",
               "definition": "Selling receivables to a third party (factor). May qualify as sale or secured borrowing depending on terms."
             }
+          ],
+          "items": [
+            "Pledging (Assignment): AR used as collateral for loan (Disclosure only)",
+            "Factoring without Recourse: Sale of AR (Risk transfers to factor)",
+            "Factoring with Recourse: Sale or Loan depending on surrender of control"
           ]
         },
         {
@@ -3216,6 +3275,12 @@
               "term": "GAAP vs IFRS",
               "definition": "GAAP: No reversal. IFRS: Reversal allowed up to original cost."
             }
+          ],
+          "items": [
+            "Inventory write-downs are required when Market/NRV < Cost",
+            "Write-downs are permanent (unless IFRS)",
+            "Reversals of write-downs are prohibited under US GAAP",
+            "Apply LCNRV item-by-item for most conservative valuation"
           ]
         },
         {
@@ -3372,6 +3437,12 @@
               "term": "Ending Inventory at Base",
               "definition": "Current inventory converted to base-year dollars using the price index"
             }
+          ],
+          "items": [
+            "Base Year Cost: Price level at the time the LIFO layer was created",
+            "Current Year Cost: Price level at the end of the current period",
+            "Price Index: Current Year Cost / Base Year Cost",
+            "LIFO Layer: Incremental inventory added in a year at base-year costs adjusted by index"
           ]
         },
         {
@@ -3806,6 +3877,16 @@
               "term": "Testing Costs",
               "definition": "Costs of trial runs before asset is ready for intended use (net of any revenue from test output)."
             }
+          ],
+          "items": [
+            "Purchase price (less discounts)",
+            "Freight-in / Transport",
+            "Sales taxes",
+            "Installation and assembly",
+            "Testing and preparation for use (less proceeds from samples)",
+            "Legal fees and title search (for land/buildings)",
+            "Demolition of old building (charged to Land)",
+            "Repairs/Renovations BEFORE placed in service"
           ]
         },
         {
@@ -3832,6 +3913,13 @@
               "term": "Overhead Allocation",
               "definition": "General overhead not directly attributable to acquisition."
             }
+          ],
+          "items": [
+            "Staff training for new asset",
+            "Repairs/Maintenance AFTER placed in service",
+            "Insurance premiums (annual)",
+            "Demolition costs to prepare site for NEW building (Add to Land)",
+            "Interest expense (unless qualifying asset during construction)"
           ]
         },
         {
@@ -5263,7 +5351,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Equity Method Application - Knowledge Check",
           "knowledgeCheck": {
             "question": "Parker Corp. owns 30% of the voting stock of Stockton Co. Parker also has a seat on Stockton's board of directors and actively participates in Stockton's policy-making processes. During the year, Parker sold goods to Stockton at a significant profit. Which of the following best describes the accounting treatment for Parker's investment in Stockton?",
@@ -5287,7 +5375,7 @@
           }
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Equity Method - Income Recognition",
           "knowledgeCheck": {
             "question": "Salinger Inc. owns 40% of the outstanding common stock of Caulfield Co. During the year, Caulfield Co. reported net income of $500,000. Salinger's share of Caulfield's net income will result in which of the following?",
@@ -5370,6 +5458,11 @@
               "term": "Adjustment rule",
               "definition": "Generally no adjustments (would move to Level 2)"
             }
+          ],
+          "items": [
+            "Quoted prices in active markets for IDENTICAL assets/liabilities",
+            "Example: NYSE stock price for Apple Inc.",
+            "Most reliable evidence of fair value"
           ]
         },
         {
@@ -5400,6 +5493,12 @@
               "term": "Example - Option",
               "definition": "Option priced using observable volatility inputs"
             }
+          ],
+          "items": [
+            "Quoted prices for SIMILAR assets in active markets",
+            "Quoted prices for IDENTICAL assets in inactive markets",
+            "Observable inputs other than quoted prices (e.g., yield curves, interest rates)",
+            "Example: Price per square foot of comparable real estate"
           ]
         },
         {
@@ -5430,6 +5529,12 @@
               "term": "Disclosure",
               "definition": "Enhanced disclosure requirements for Level 3 measurements"
             }
+          ],
+          "items": [
+            "Unobservable inputs reflecting entity's assumptions",
+            "Used when Level 1 or 2 are not available",
+            "Example: Cash flow forecast for a private equity investment",
+            "Least reliable evidence of fair value"
           ]
         },
         {
@@ -5644,6 +5749,12 @@
               "term": "Modification of existing products",
               "definition": "For significantly improved version - EXPENSE"
             }
+          ],
+          "items": [
+            "Laboratory research aimed at discovery of new knowledge",
+            "Testing in search of product or process alternatives",
+            "Design, construction, and testing of pre-production prototypes",
+            "Design of tools, jigs, molds involving new technology"
           ]
         },
         {
@@ -5674,6 +5785,12 @@
               "term": "Seasonal design changes",
               "definition": "Fashion, style changes - NOT R&D"
             }
+          ],
+          "items": [
+            "Routine periodic design changes to existing products",
+            "Marketing research or market testing",
+            "Quality control testing during commercial production",
+            "Reformulation of a chemical compound"
           ]
         },
         {
@@ -6509,6 +6626,13 @@
               "term": "Telecommunication towers",
               "definition": "Contract requires dismantling"
             }
+          ],
+          "items": [
+            "Decommissioning a nuclear power plant",
+            "Dismantling an oil rig or platform",
+            "Restoring land after mining operations",
+            "Removing underground storage tanks",
+            "Closing a landfill"
           ]
         },
         {
@@ -7321,6 +7445,13 @@
               "term": "Redeemable",
               "definition": "Holder can require repurchase (may be liability!)"
             }
+          ],
+          "items": [
+            "Cumulative: Unpaid dividends accumulate (Dividends in Arrears)",
+            "Participating: Shares in excess dividends with Common Stock",
+            "Convertible: Can be exchanged for Common Stock",
+            "Callable: Issuer can buy back at a set price",
+            "Redeemable: Shareholder can demand repayment (Liability-like)"
           ]
         },
         {
@@ -7890,6 +8021,12 @@
               "term": "ESPP",
               "definition": "Employee Stock Purchase Plan\u2014buy stock at discount"
             }
+          ],
+          "items": [
+            "Stock Options: Right to buy shares at strike price",
+            "Restricted Stock Units (RSUs): Grant of shares subject to vesting",
+            "Stock Appreciation Rights (SARs): Cash payment based on stock price increase",
+            "Employee Stock Purchase Plans (ESPPs): Discounted stock purchase program"
           ]
         },
         {
@@ -8885,6 +9022,13 @@
             "**Asset balances:** Contract assets vs receivables vs cost assets",
             "**Impairment losses:** Amount and circumstances",
             "**Closing balance by category:** Costs to obtain vs costs to fulfill"
+          ],
+          "items": [
+            "Disaggregation of revenue (by region, product, timing)",
+            "Contract balances (Receivables, Contract Assets, Contract Liabilities)",
+            "Performance obligations (satisfied vs remaining)",
+            "Significant judgments (transaction price alloc, timing of satisfaction)",
+            "Assets recognized from costs to obtain or fulfill contracts"
           ]
         },
         {
@@ -9709,6 +9853,12 @@
             "**Maturity analysis** of lease receivables (5-year table)",
             "**Residual assets** and significant assumptions",
             "**Operating lease assets** by class and depreciation"
+          ],
+          "items": [
+            "Sales-Type: Profit/Loss at commencement",
+            "Operating: Rental income distinct from other revenue",
+            "Maturity analysis of lease receivables (5 years + remaining)",
+            "Risk management strategy for residual assets"
           ]
         },
         {
@@ -10315,6 +10465,13 @@
             "**Pension expense:** Book (accrued) vs Tax (funded amounts)",
             "**Prepaid expenses:** Book (asset) vs Tax (deducted when paid)",
             "**Accrued liabilities:** Book (accrued) vs Tax (deducted when paid)"
+          ],
+          "items": [
+            "Depreciation (MACRS vs Straight Line) -> DTL",
+            "Installment Sales (Cash basis tax vs Accrual book) -> DTL",
+            "Warranty Expense (Cash basis tax vs Accrual book) -> DTA",
+            "Bad Debt Expense (Direct write-off tax vs Allowance book) -> DTA",
+            "Prepaid Rent/Royalty/Interest (Cash basis tax vs Accrual book) -> DTA"
           ]
         },
         {
@@ -10328,6 +10485,13 @@
             "**50% meals limitation:** Meals expense limited for tax (partial)",
             "**Dividends received deduction:** DRD reduces taxable income",
             "**Stock-based compensation excess:** Permanent if forfeited (ASU update)"
+          ],
+          "items": [
+            "Municipal Bond Interest (Tax Exempt) -> No Tax Effect",
+            "Life Insurance Proceeds (Key Person) -> No Tax Effect",
+            "Fines and Penalties (Not Deductible) -> No Tax Effect",
+            "Meals (50% Deductible) -> No Tax Effect",
+            "Dividends Received Deduction (DRD) -> No Tax Effect"
           ]
         },
         {
@@ -10602,6 +10766,13 @@
             "**NOL and credit carryforwards:** Amounts and expiration dates",
             "**Tax attributes by jurisdiction** if material",
             "**Uncertainties** about realization of DTAs"
+          ],
+          "items": [
+            "Components of Income Tax Expense (Current vs Deferred)",
+            "Effective Tax Rate Reconciliation (Statutory vs Effective)",
+            "Types of Temporary Differences causing DTA/DTL",
+            "NOL Carryforwards and expirations",
+            "Valuation Allowance changes"
           ]
         },
         {
@@ -10811,6 +10982,12 @@
             "**Description** of years that remain subject to examination",
             "**Interest and penalties** policy and amounts recognized",
             "**Change in unrecognized benefits** reasonably possible in next 12 months"
+          ],
+          "items": [
+            "Tabular reconciliation of unrecognized tax benefits",
+            "Interest and penalties recognized",
+            "Tax years that remain subject to examination",
+            "Reasonably possible changes in next 12 months"
           ]
         },
         {
@@ -11260,6 +11437,13 @@
             "**Sensitivity analysis:** Effect of 1% change in health care trend rate",
             "**Expected future benefit payments:** Next 5 years + 5-year aggregate",
             "**Expected contributions** in upcoming year"
+          ],
+          "items": [
+            "Reconciliation of APBO and Plan Assets",
+            "Funded status",
+            "Net Periodic Postretirement Benefit Cost components",
+            "Rates used (Discount rate, Health care cost trend rate)",
+            "Effect of 1% change in health care cost trend rate"
           ]
         },
         {
@@ -11481,6 +11665,14 @@
             "**Self-insurance** \u2013 Uninsured portions of claims",
             "**Collectibility** \u2013 Uncollectible receivables",
             "**Expropriation** \u2013 Asset seizure by government"
+          ],
+          "items": [
+            "Litigation, claims, and assessments",
+            "Warranty obligations",
+            "Premiums and coupons",
+            "Environmental remediation costs",
+            "Expropriation threats",
+            "Guarantees of indebtedness of others"
           ]
         },
         {
@@ -12677,7 +12869,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Budgetary Accounting Knowledge Check",
           "knowledgeCheck": {
             "question": "A government entity anticipates revenues of $5,000,000 and has legally authorized appropriations of $4,800,000. What is the journal entry to record the budget?",
@@ -14246,7 +14438,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Knowledge Check: Revenue Classification",
           "knowledgeCheck": {
             "question": "A not-for-profit organization received a $100,000 donation restricted to funding a specific research project. The donor explicitly stated that the funds should be used within the next two years. How should this donation be classified on the Statement of Activities?",
@@ -16185,6 +16377,12 @@
             "**Future taxable income** (exclusive of reversing differences)",
             "**Tax planning strategies** that would create taxable income",
             "**Carryback to prior years** (if available)"
+          ],
+          "items": [
+            "Future reversals of existing taxable temporary differences",
+            "Future taxable income exclusive of reversing temporary differences",
+            "Taxable income in prior carryback year(s) if carryback is permitted",
+            "Tax planning strategies (e.g., sale of appreciated assets)"
           ]
         },
         {

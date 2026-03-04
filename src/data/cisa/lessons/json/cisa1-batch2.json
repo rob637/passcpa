@@ -146,10 +146,10 @@
           "knowledgeCheck": {
             "question": "During the planning phase of a CAATs implementation, which of the following is the MOST important step for an IS auditor to perform?",
             "options": [
-              "A. Procuring the latest version of a Generalized Audit Software (GAS) package.",
-              "B. Defining the audit objectives clearly and aligning them with the CAATs application.",
-              "C. Training the audit team on advanced data extraction techniques.",
-              "D. Implementing strict access controls for the CAATs environment."
+              "Procuring the latest version of a Generalized Audit Software (GAS) package.",
+              "Defining the audit objectives clearly and aligning them with the CAATs application.",
+              "Training the audit team on advanced data extraction techniques.",
+              "Implementing strict access controls for the CAATs environment."
             ],
             "correctIndex": 1,
             "explanation": "Defining the audit objectives clearly is paramount. It ensures that the CAATs application is focused and provides relevant results to address the audit objectives. While other options are important, they are secondary to defining the objectives.",
@@ -170,10 +170,10 @@
           "knowledgeCheck": {
             "question": "After extracting data using CAATs, what is the PRIMARY reason for an IS auditor to validate the extracted data?",
             "options": [
-              "A. To ensure compliance with data retention policies.",
-              "B. To verify the integrity and completeness of the extracted data.",
-              "C. To optimize the performance of the audit software.",
-              "D. To encrypt the data for security purposes."
+              "To ensure compliance with data retention policies.",
+              "To verify the integrity and completeness of the extracted data.",
+              "To optimize the performance of the audit software.",
+              "To encrypt the data for security purposes."
             ],
             "correctIndex": 1,
             "explanation": "Validating the extracted data is crucial to ensure that the data used in the audit is accurate and complete. Without validation, the audit findings may be unreliable.",
@@ -284,10 +284,10 @@
           "knowledgeCheck": {
             "question": "During an audit of user access controls, the auditor interviews the system administrator regarding the process for granting and revoking access. Which type of audit evidence is being collected?",
             "options": [
-              "A) Documentary Evidence",
-              "B) Testimonial Evidence",
-              "C) Physical Evidence",
-              "D) Analytical Evidence"
+              "Documentary Evidence",
+              "Testimonial Evidence",
+              "Physical Evidence",
+              "Analytical Evidence"
             ],
             "correctIndex": 1,
             "explanation": "Testimonial evidence is gathered through interviews, inquiries, and other forms of verbal or written statements from individuals. In this scenario, the interview with the system administrator falls under testimonial evidence.",
@@ -444,10 +444,10 @@
           "knowledgeCheck": {
             "question": "An IS auditor is performing a test to determine if all change management requests require a formal approval signature. Which of the following sampling methods is MOST appropriate for this test?",
             "options": [
-              "A) Variable Sampling",
-              "B) Discovery Sampling",
-              "C) Attribute Sampling",
-              "D) Stratified Sampling"
+              "Variable Sampling",
+              "Discovery Sampling",
+              "Attribute Sampling",
+              "Stratified Sampling"
             ],
             "correctIndex": 2,
             "explanation": "Attribute sampling is used to test for the presence or absence of a specific attribute or characteristic, making it suitable for testing if all change management requests have a required signature. Variable sampling tests quantitative values. Discovery sampling is used to find at least one instance of a critical error. Stratified sampling is a sample selection technique, not a sampling method itself.",
@@ -501,10 +501,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST significant advantage of using random selection as a sample selection technique?",
             "options": [
-              "A) It guarantees that all errors within the population will be detected.",
-              "B) It is the most efficient selection method for large populations.",
-              "C) It ensures each item in the population has an equal chance of being selected.",
-              "D) It eliminates the need for professional judgment in sample selection."
+              "It guarantees that all errors within the population will be detected.",
+              "It is the most efficient selection method for large populations.",
+              "It ensures each item in the population has an equal chance of being selected.",
+              "It eliminates the need for professional judgment in sample selection."
             ],
             "correctIndex": 2,
             "explanation": "Random selection ensures that each item has an equal chance of being selected, making it the most objective selection method. It doesn't guarantee error detection, may not be the most efficient for all populations, and still requires professional judgment in determining sample size and evaluating results.",
@@ -963,10 +963,10 @@
           "knowledgeCheck": {
             "question": "During the issue tracking process, which of the following is the MOST important initial step to ensure effective remediation and follow-up?",
             "options": [
-              "A) Assigning a unique tracking ID to the finding.",
-              "B) Immediately escalating the finding to senior management.",
-              "C) Determining the root cause of the issue.",
-              "D) Implementing a temporary workaround to mitigate the risk.",
+              "Assigning a unique tracking ID to the finding.",
+              "Immediately escalating the finding to senior management.",
+              "Determining the root cause of the issue.",
+              "Implementing a temporary workaround to mitigate the risk.",
               "E) Contacting the vendor for immediate support."
             ],
             "correctIndex": 0,

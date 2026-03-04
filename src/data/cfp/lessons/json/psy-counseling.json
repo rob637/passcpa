@@ -237,10 +237,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the BEST example of a financial planner using motivational interviewing techniques to address a client's ambivalence about saving for retirement?",
             "options": [
-              "A. 'You really need to start saving more for retirement. If you don't, you'll be in serious trouble later on.'",
-              "B. 'So, on one hand, you enjoy spending money on travel now. On the other hand, you're concerned about having enough money in retirement. What are your thoughts on this?'",
-              "C. 'I've run the numbers, and you're significantly behind on your retirement savings goals. We need to cut your expenses drastically.'",
-              "D. 'Let's just focus on investing more aggressively. That should solve the problem without having to change your spending habits.'"
+              "'You really need to start saving more for retirement. If you don't, you'll be in serious trouble later on.'",
+              "'So, on one hand, you enjoy spending money on travel now. On the other hand, you're concerned about having enough money in retirement. What are your thoughts on this?'",
+              "'I've run the numbers, and you're significantly behind on your retirement savings goals. We need to cut your expenses drastically.'",
+              "'Let's just focus on investing more aggressively. That should solve the problem without having to change your spending habits.'"
             ],
             "correctIndex": 1,
             "explanation": "Option B demonstrates the core of motivational interviewing by acknowledging and exploring the client's ambivalence (the desire for both spending and saving). It encourages the client to self-reflect and voice their own reasons for change. The other options are directive and fail to elicit the client's own motivations.",
@@ -301,10 +301,10 @@
           "knowledgeCheck": {
             "question": "A client states, 'I'm terrible with money. I always overspend.' Which of the following is the BEST example of reframing this statement?",
             "options": [
-              "A. 'Yes, you do seem to have a problem with overspending.'",
-              "B. 'It sounds like you're frustrated with your current spending habits. Let's explore what's important to you and how we can align your spending with those values.'",
-              "C. 'Everyone struggles with money sometimes. It's not just you.'",
-              "D. 'You just need to be more disciplined.'"
+              "'Yes, you do seem to have a problem with overspending.'",
+              "'It sounds like you're frustrated with your current spending habits. Let's explore what's important to you and how we can align your spending with those values.'",
+              "'Everyone struggles with money sometimes. It's not just you.'",
+              "'You just need to be more disciplined.'"
             ],
             "correctIndex": 1,
             "explanation": "Option B reframes the client's negative self-perception ('I'm terrible with money') into an opportunity for growth and alignment with their values. It acknowledges the client's feelings and suggests a collaborative approach to address the underlying issue. The other options are dismissive, judgmental, or fail to offer a constructive alternative perspective.",
@@ -1339,10 +1339,10 @@
           "knowledgeCheck": {
             "question": "A client, Sarah, has diligently researched various investment options for her retirement. She has spent countless hours comparing different mutual funds and ETFs, but she hasn't invested any money yet. She keeps finding reasons to delay, waiting for more information or a 'perfect' opportunity. Which of the following decision-making biases is Sarah MOST likely experiencing?",
             "options": [
-              "A) Loss Aversion",
-              "B) Anchoring Bias",
-              "C) Analysis Paralysis",
-              "D) Confirmation Bias"
+              "Loss Aversion",
+              "Anchoring Bias",
+              "Analysis Paralysis",
+              "Confirmation Bias"
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C) Analysis Paralysis. Sarah's excessive research and inability to take action despite having information clearly indicates analysis paralysis. Loss aversion involves focusing on potential losses more than gains. Anchoring bias relies too heavily on an initial piece of information. Confirmation bias involves seeking out information that confirms pre-existing beliefs.",
@@ -1363,10 +1363,10 @@
           "knowledgeCheck": {
             "question": "A client consistently avoids making decisions about rebalancing their portfolio, stating they need to learn more about all the possible asset allocations before making a change. As their CFP\u00ae professional, what is the MOST appropriate initial step to help them overcome this decision-making challenge?",
             "options": [
-              "A) Provide them with a comprehensive list of all possible asset allocations and their historical performance.",
-              "B) Encourage them to accept that some losses are inevitable and to focus on long-term gains.",
-              "C) Help them narrow down their options to a manageable number based on their risk tolerance and financial goals.",
-              "D) Reassure them that you will make all the decisions for them, relieving them of the burden."
+              "Provide them with a comprehensive list of all possible asset allocations and their historical performance.",
+              "Encourage them to accept that some losses are inevitable and to focus on long-term gains.",
+              "Help them narrow down their options to a manageable number based on their risk tolerance and financial goals.",
+              "Reassure them that you will make all the decisions for them, relieving them of the burden."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C. This directly addresses analysis paralysis by reducing the overwhelming number of choices. Option A exacerbates the problem. Option B addresses loss aversion, which may be a secondary issue, but not the primary one. Option D undermines the client's autonomy and doesn't address the underlying problem.",

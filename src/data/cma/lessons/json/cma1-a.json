@@ -97,6 +97,12 @@
             "Dividends declared \u2192 Reduces Retained Earnings",
             "PP&E purchases (Investing CF) \u2192 Increases PP&E on Balance Sheet",
             "Debt issuance (Financing CF) \u2192 Increases Liabilities on Balance Sheet"
+          ],
+          "items": [
+            "**Net Income acts as the bridge**: Bottom of Income Statement flows to Statement of Retained Earnings.",
+            "**Retained Earnings link**: Ending Retained Earnings flows to Equity section of Balance Sheet.",
+            "**Cash link**: Ending Cash on Statement of Cash Flows matches Cash on Balance Sheet.",
+            "**Non-Cash items**: Depreciation on IS adds back to Operating Cash Flows; accumulated depreciation reduces Asset book value on BS."
           ]
         },
         {

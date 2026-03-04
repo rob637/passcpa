@@ -43,11 +43,11 @@ They THINK it's leases. Or consolidations.
 
 But government accounting? "I'll figure it out during the exam."
 
-Spoiler: You won't.
+The reality: You won't.
 
 If you're taking FAR, spend an extra 5 hours on GASB. Just GASB.
 
-That's probably worth 5-7 points on your score.`,
+That's probably worth 5-7 points on your score.\n\nP.S. Test yourself against our 9,000+ question bank at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -61,7 +61,7 @@ That's probably worth 5-7 points on your score.`,
 
 It's a coping mechanism.
 
-I know because I said it 47 times before my FAR exam.
+We all do it.
 
 Tomorrow becomes next week.
 Next week becomes "after this busy season."
@@ -69,7 +69,7 @@ After busy season becomes "I'll take it next window."
 
 Next window becomes a decade.
 
-Here's what I wish someone told me:
+Here's my advice:
 
 You don't need 4 hours.
 You need 20 minutes.
@@ -82,66 +82,62 @@ They just started.
 
 Stop negotiating with yourself.
 
-– Rob`,
+– Rob\n\nP.S. Learn why the wrong answers are wrong with our detailed explanations at voraprep.com.`,
     author: 'Rob',
   },
 
   // 3. EA - Tax Season
-  {
-    type: 'industry',
-    content: `Tax season just ended.
+//   {
+//     type: 'industry',
+//     content: `Tax season just ended.
 
-You're exhausted. You have no energy to study for the EA exam.
+// You're exhausted. You have no energy to study for the EA exam.
 
-But here's what I've learned:
+// But here's what I've learned:
 
-The candidates who pass the EA exam aren't the ones who study during tax season.
+// The candidates who pass the EA exam aren't the ones who study during tax season.
 
-They're the ones who start the week AFTER it ends.
+// They're the ones who start the week AFTER it ends.
 
-While everyone else is on vacation, recovering, "taking a break"…
+// While everyone else is on vacation, recovering, "taking a break"…
 
-The people who pass are doing 20 questions a day.
+// The people who pass are doing 20 questions a day.
 
-Just 20.
+// Just 20.
 
-By June, that's 1,500 questions. Enough to pass SEE Part 1.
+// By June, that's 1,500 questions. Enough to pass SEE Part 1.
 
-The gap between you and passing isn't talent.
+// The gap between you and passing isn't talent.
 
-It's timing.
+// It's timing.
 
-Start this week.`,
-    author: 'Rob',
-    exam: 'EA',
-  },
+// Start this week.`,
+//     author: 'Rob',
+//     exam: 'EA',
+//   },
 
   // 4. Founder Story
   {
     type: 'founder-story',
-    content: `I failed my CPA exam.
+    content: `Why I built VoraPrep.
 
-Not once. Twice.
+I passed the CPA exam, but the process was miserable.
 
-The second time, I missed by 2 points. I sat in my car for 20 minutes before driving home.
-
-The worst part? I'd spent $2,000 on a review course that wasn't working for me. I was doing questions, but I wasn't learning. I was memorizing patterns, not concepts.
+I spent $3,000 on a review course that felt like it was built in 2005. I was memorizing patterns, not learning concepts.
 
 That's when I started wondering:
 
 → What if questions explained WHY each wrong answer was wrong?
 → What if the system knew my weak spots better than I did?
-→ What if I could ask "wait, I don't get this" and get an answer at 11pm?
+→ What if high-quality prep didn't cost a fortune?
 
-I passed on my third attempt.
+So I built VoraPrep.
 
-Then I built VoraPrep.
+Now candidates are using it to study smarter, not harder.
 
-Now 10,000+ candidates use it to study smarter.
+If you're struggling with the CPA exam, you're not alone. The traditional systems weren't built for how you learn.
 
-If you're struggling with the CPA exam, you're not alone. The system wasn't built for how you learn.
-
-We're trying to change that.`,
+We're trying to change that.\n\nP.S. Master every blueprint area with our comprehensive lesson plans at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -173,40 +169,40 @@ My advice for AUD candidates:
 
 AUD is a skills exam, not a knowledge exam.
 
-Train accordingly.`,
+Train accordingly.\n\nP.S. Conquer the simulations that trap most candidates at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
 
   // 6. CMA - Essay to CBQ Transition
-  {
-    type: 'industry',
-    content: `The CMA exam is changing.
+//   {
+//     type: 'industry',
+//     content: `The CMA exam is changing.
 
-Starting September 2026, essays are gone. Computer-based questions (CBQs) are in.
+// Starting September 2026, essays are gone. Computer-based questions (CBQs) are in.
 
-If you're planning to take the CMA, here's what this means:
+// If you're planning to take the CMA, here's what this means:
 
-Old format:
-→ Write 2 essays per section
-→ Partial credit for your reasoning
-→ Time management was crucial
+// Old format:
+// → Write 2 essays per section
+// → Partial credit for your reasoning
+// → Time management was crucial
 
-New format:
-→ CBQs test the same skills
-→ But in a structured, guided format
-→ Less ambiguity in grading
+// New format:
+// → CBQs test the same skills
+// → But in a structured, guided format
+// → Less ambiguity in grading
 
-My advice?
+// My advice?
 
-If you struggle with essay writing, wait until September 2026.
+// If you struggle with essay writing, wait until September 2026.
 
-If you're a strong writer, consider taking it BEFORE the change.
+// If you're a strong writer, consider taking it BEFORE the change.
 
-Either way, the content is the same. Don't let the format distract you from learning the material.`,
-    author: 'Rob',
-    exam: 'CMA',
-  },
+// Either way, the content is the same. Don't let the format distract you from learning the material.`,
+//     author: 'Rob',
+//     exam: 'CMA',
+//   },
 
   // 7. General - Spaced Repetition
   {
@@ -230,7 +226,7 @@ Cramming twice a week = less encoding, more forgetting.
 If you're burned out from marathon study sessions:
 
 Permission granted to study less.
-Just study more often.`,
+Just study more often.\n\nP.S. Stop forgetting what you study. Use our active retention system at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -239,15 +235,13 @@ Just study more often.`,
     type: 'user-win',
     content: `"I thought I was stupid."
 
-That's what a user told me after passing REG.
+That's what a user told me after feeling stuck on REG.
 
-She'd failed 3 times with another prep course. Scores of 68, 71, 73.
+She'd struggled with another prep course. Scores of 68, 71.
 
 So close. Every time.
 
-Her firm was running out of patience.
-
-When she switched to VoraPrep, we found the problem in 10 minutes:
+When she started using VoraPrep, our analytics flagged the problem in 10 minutes:
 
 She understood the concepts.
 She was misreading signals in the questions.
@@ -259,39 +253,39 @@ Once she learned to spot the subtle differences, everything clicked.
 
 Score: 79.
 
-She's not stupid.
-She was just using the wrong map.`,
+She wasn't stupid.
+She was just using the wrong map.\n\nP.S. Turn any spare moment into a high-quality study session at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
 
   // 9. CISA - Domain Weights
-  {
-    type: 'data-insight',
-    content: `CISA candidates: Do you know how the exam is weighted?
+//   {
+//     type: 'data-insight',
+//     content: `CISA candidates: Do you know how the exam is weighted?
 
-Domain 1 (Audit Process): 21%
-Domain 2 (Governance): 16%
-Domain 3 (IS Acquisition): 18%
-Domain 4 (IS Operations): 20%
-Domain 5 (Protection): 25%
+// Domain 1 (Audit Process): 21%
+// Domain 2 (Governance): 16%
+// Domain 3 (IS Acquisition): 18%
+// Domain 4 (IS Operations): 20%
+// Domain 5 (Protection): 25%
 
-Most candidates study all domains equally.
+// Most candidates study all domains equally.
 
-That's a mistake.
+// That's a mistake.
 
-Domain 5 alone is 25% of your score. That's the difference between pass and fail.
+// Domain 5 alone is 25% of your score. That's the difference between pass and fail.
 
-My advice:
+// My advice:
 
-→ Master Domain 5 first
-→ Don't neglect Domain 2 (lowest weight, but tricky)
-→ Spend proportional time based on weights
+// → Master Domain 5 first
+// → Don't neglect Domain 2 (lowest weight, but tricky)
+// → Spend proportional time based on weights
 
-The exam tells you what matters. Listen to it.`,
-    author: 'Rob',
-    exam: 'CISA',
-  },
+// The exam tells you what matters. Listen to it.`,
+//     author: 'Rob',
+//     exam: 'CISA',
+//   },
 
   // 10. General - Test Taking Skills
   {
@@ -318,14 +312,14 @@ The exam is beatable.
 
 You just need the right training.
 
-– Rob`,
+– Rob\n\nP.S. Don't just memorize patterns. Understand the concepts deeply at voraprep.com.`,
     author: 'Rob',
   },
 
   // 11. CPA - REG Basis
   {
     type: 'data-insight',
-    content: `If you're studying for REG, here's a secret:
+    content: `If you're studying for REG, here's the reality:
 
 Basis is 30-40% of the exam.
 
@@ -347,7 +341,7 @@ If you can answer any basis question in 60 seconds, you're going to pass REG.
 
 If you can't, you're gambling.
 
-Stop gambling. Master basis.`,
+Stop gambling. Master basis.\n\nP.S. Practice with questions that mirror real exam difficulty at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -371,39 +365,39 @@ Features don't matter.
 
 Feeling understood matters.
 
-That's what I'm building.`,
+That's what I'm building.\n\nP.S. Automatically identify and fix your weak spots before exam day at voraprep.com.`,
     author: 'Rob',
   },
 
   // 13. CIA - Internal Audit
-  {
-    type: 'industry',
-    content: `The CIA exam tests something most people overlook:
+//   {
+//     type: 'industry',
+//     content: `The CIA exam tests something most people overlook:
 
-Professional skepticism.
+// Professional skepticism.
 
-It's not enough to know the IIA standards.
+// It's not enough to know the IIA standards.
 
-You need to think like an internal auditor.
+// You need to think like an internal auditor.
 
-That means:
+// That means:
 
-→ Question everything (even management's assertions)
-→ Understand business context before testing
-→ Know when to escalate vs. investigate
+// → Question everything (even management's assertions)
+// → Understand business context before testing
+// → Know when to escalate vs. investigate
 
-Most CIA candidates memorize standards.
+// Most CIA candidates memorize standards.
 
-The ones who pass internalize the mindset.
+// The ones who pass internalize the mindset.
 
-When you read a question, ask yourself:
+// When you read a question, ask yourself:
 
-"What would a skeptical internal auditor do here?"
+// "What would a skeptical internal auditor do here?"
 
-That reframe alone is worth 5 points.`,
-    author: 'Rob',
-    exam: 'CIA',
-  },
+// That reframe alone is worth 5 points.`,
+//     author: 'Rob',
+//     exam: 'CIA',
+//   },
 
   // 14. General - Mental Stamina
   {
@@ -431,7 +425,7 @@ Not by running marathons every day.
 
 By building up gradually, with rest days.
 
-– Rob`,
+– Rob\n\nP.S. Join the candidates passing their 'impossible' sections at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -456,7 +450,7 @@ The exam loves to test:
 
 Stop overcomplicating leases.
 
-Learn these 4 rules. Do 30 questions. Move on.`,
+Learn these 4 rules. Do 30 questions. Move on.\n\nP.S. Test yourself against our 9,000+ question bank at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -482,37 +476,37 @@ She needed to know WHY she was getting them wrong.
 
 That's the part most review courses skip.
 
-To everyone still in the fight: You're closer than you think.`,
+To everyone still in the fight: You're closer than you think.\n\nP.S. Learn why the wrong answers are wrong with our detailed explanations at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
 
   // 17. EA - IRS Representation
-  {
-    type: 'industry',
-    content: `Want to know the most underrated benefit of becoming an EA?
+//   {
+//     type: 'industry',
+//     content: `Want to know the most underrated benefit of becoming an EA?
 
-Unlimited representation rights before the IRS.
+// Unlimited representation rights before the IRS.
 
-CPAs have it too. But CPAs cost $150-400/hour.
+// CPAs have it too. But CPAs cost $150-400/hour.
 
-EAs? Often $75-150/hour.
+// EAs? Often $75-150/hour.
 
-For small business owners with IRS issues, EAs are the sweet spot:
-→ Full representation rights
-→ Tax expertise
-→ More affordable than CPAs
+// For small business owners with IRS issues, EAs are the sweet spot:
+// → Full representation rights
+// → Tax expertise
+// → More affordable than CPAs
 
-If you're studying for the EA exam, you're not just getting letters after your name.
+// If you're studying for the EA exam, you're not just getting letters after your name.
 
-You're building a practice moat.
+// You're building a practice moat.
 
-Tax resolution is a $5B industry.
+// Tax resolution is a $5B industry.
 
-And most CPAs don't want to do it.`,
-    author: 'Rob',
-    exam: 'EA',
-  },
+// And most CPAs don't want to do it.`,
+//     author: 'Rob',
+//     exam: 'EA',
+//   },
 
   // 18. General - Error Log
   {
@@ -535,7 +529,7 @@ Writing down WHY you got it wrong is what matters.
 
 If you're not keeping an error log, start today.
 
-That habit alone is worth 2-3 points.`,
+That habit alone is worth 2-3 points.\n\nP.S. Master every blueprint area with our comprehensive lesson plans at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -563,7 +557,7 @@ TCP (Tax Compliance & Planning):
 
 My advice? Pick the one aligned with your career.
 
-The "easy" section doesn't exist.`,
+The "easy" section doesn't exist.\n\nP.S. Conquer the simulations that trap most candidates at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -587,36 +581,36 @@ We almost didn't build the AI tutor. It was expensive. Complex.
 
 Now it's the reason people pass.
 
-Lesson: Build what users need at 11pm.`,
+Lesson: Build what users need at 11pm.\n\nP.S. Stop forgetting what you study. Use our active retention system at voraprep.com.`,
     author: 'Rob',
   },
 
   // 21. CFP - Comprehensive Planning
-  {
-    type: 'industry',
-    content: `CFP candidates: The exam isn't testing your knowledge.
+//   {
+//     type: 'industry',
+//     content: `CFP candidates: The exam isn't testing your knowledge.
 
-It's testing your judgment.
+// It's testing your judgment.
 
-You'll know the rules for Roth conversions.
-You'll know the estate tax exemptions.
-You'll know the insurance underwriting process.
+// You'll know the rules for Roth conversions.
+// You'll know the estate tax exemptions.
+// You'll know the insurance underwriting process.
 
-But the exam asks:
+// But the exam asks:
 
-"Given THIS client's situation, what should you recommend FIRST?"
+// "Given THIS client's situation, what should you recommend FIRST?"
 
-That word — first — is where candidates fail.
+// That word — first — is where candidates fail.
 
-They pick a correct answer.
-But not the MOST correct answer.
+// They pick a correct answer.
+// But not the MOST correct answer.
 
-Train yourself to think in priorities, not options.
+// Train yourself to think in priorities, not options.
 
-That's the CFP mindset.`,
-    author: 'Rob',
-    exam: 'CFP',
-  },
+// That's the CFP mindset.`,
+//     author: 'Rob',
+//     exam: 'CFP',
+//   },
 
   // 22. General - Working While Studying
   {
@@ -651,7 +645,7 @@ You don't need to quit your job.
 
 You need a system.
 
-– Rob`,
+– Rob\n\nP.S. Turn any spare moment into a high-quality study session at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -679,39 +673,39 @@ My study plan for ethics:
 3. Review what you missed
 4. Done.
 
-Don't overcomplicate it. Just don't skip it.`,
+Don't overcomplicate it. Just don't skip it.\n\nP.S. Don't just memorize patterns. Understand the concepts deeply at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
 
   // 24. EA - Representation
-  {
-    type: 'user-win',
-    content: `An EA candidate messaged me last week:
+//   {
+//     type: 'user-win',
+//     content: `An EA candidate messaged me last week:
 
-"I passed all 3 parts in 5 months. While working full-time at a tax firm. During busy season."
+// "I passed all 3 parts in 5 months. While working full-time at a tax firm. During busy season."
 
-I had to ask: How?
+// I had to ask: How?
 
-Her answer:
+// Her answer:
 
-"I studied on my phone during lunch. 15 minutes. Every day. The app made it possible."
+// "I studied on my phone during lunch. 15 minutes. Every day. The app made it possible."
 
-She didn't have 4-hour blocks.
-She had fragments.
+// She didn't have 4-hour blocks.
+// She had fragments.
 
-But she used every fragment.
+// But she used every fragment.
 
-15 minutes × 5 days × 20 weeks = 25 hours per part.
+// 15 minutes × 5 days × 20 weeks = 25 hours per part.
 
-That's enough to pass SEE if you're strategic.
+// That's enough to pass SEE if you're strategic.
 
-Stop waiting for perfect conditions.
+// Stop waiting for perfect conditions.
 
-Start with 15 minutes.`,
-    author: 'Rob',
-    exam: 'EA',
-  },
+// Start with 15 minutes.`,
+//     author: 'Rob',
+//     exam: 'EA',
+//   },
 
   // 25. CPA - FAR NFP
   {
@@ -738,7 +732,7 @@ That's 80% of NFP questions.
 
 Most candidates skip NFP because it's "weird."
 
-That's why it's high-yield — your competitors aren't studying it.`,
+That's why it's high-yield — your competitors aren't studying it.\n\nP.S. Practice with questions that mirror real exam difficulty at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -768,43 +762,43 @@ If yes, you're on track.
 
 If no, adjust.
 
-That's it. That's the whole game.`,
+Focus on your daily progress. That's the only metric that counts.\n\nP.S. Automatically identify and fix your weak spots before exam day at voraprep.com.`,
     author: 'Rob',
   },
 
   // 27. CMA - Part 1 Topics
-  {
-    type: 'data-insight',
-    content: `CMA Part 1 candidates: Here's where people fail.
+//   {
+//     type: 'data-insight',
+//     content: `CMA Part 1 candidates: Here's where people fail.
 
-The exam is 50% financial planning, performance, and analytics.
+// The exam is 50% financial planning, performance, and analytics.
 
-Most candidates studying Part 1 focus on:
-→ External financial reporting (comfortable)
-→ Cost management (familiar)
+// Most candidates studying Part 1 focus on:
+// → External financial reporting (comfortable)
+// → Cost management (familiar)
 
-They underestimate:
-→ Planning, budgeting, forecasting
-→ Performance management
-→ Cost behavior analysis
+// They underestimate:
+// → Planning, budgeting, forecasting
+// → Performance management
+// → Cost behavior analysis
 
-The hardest questions aren't about debits and credits.
+// The hardest questions aren't about debits and credits.
 
-They're about variance analysis for a manufacturing company you've never seen.
+// They're about variance analysis for a manufacturing company you've never seen.
 
-If you're a CPA studying for CMA, be careful.
+// If you're a CPA studying for CMA, be careful.
 
-CMA Part 1 tests different muscles.`,
-    author: 'Rob',
-    exam: 'CMA',
-  },
+// CMA Part 1 tests different muscles.`,
+//     author: 'Rob',
+//     exam: 'CMA',
+//   },
 
   // 28. CPA - AUD Sampling
   {
     type: 'data-insight',
     content: `AUD candidates: Sampling is easier than you think.
 
-Here's the cheat sheet:
+Here's the framework:
 
 Attribute sampling:
 → Testing controls
@@ -821,9 +815,9 @@ Risk of incorrect rejection = Alpha risk = Inefficient but safe
 
 Upper deviation rate > Tolerable rate = Controls are NOT effective
 
-That's it. That's sampling.
+These principles anchor your understanding.
 
-Do 20 questions on this. You'll get them all right.`,
+Do 20 questions on this. You'll get them all right.\n\nP.S. Join the candidates passing their 'impossible' sections at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -857,7 +851,7 @@ Same study time. Better retention. Less burnout.
 
 Consistency beats intensity.
 
-– Rob`,
+– Rob\n\nP.S. Test yourself against our 9,000+ question bank at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -885,43 +879,43 @@ Here's the framework:
 
 5. Goodwill = Purchase price - Fair value of net assets
 
-That's consolidations. Five steps.
+Master these core concepts.
 
-The exam doesn't test complex consolidations.
+The exam simulates standard consolidations, not obscure edge cases.
 
-It tests whether you know the basics cold.`,
+It tests whether you know the basics cold.\n\nP.S. Learn why the wrong answers are wrong with our detailed explanations at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
 
   // 31. CIA - Part 2 Focus
-  {
-    type: 'industry',
-    content: `CIA Part 2 is where most candidates get stuck.
+//   {
+//     type: 'industry',
+//     content: `CIA Part 2 is where most candidates get stuck.
 
-Parts 1 and 3 are more straightforward:
-→ Part 1: Internal audit standards
-→ Part 3: Business knowledge
+// Parts 1 and 3 are more straightforward:
+// → Part 1: Internal audit standards
+// → Part 3: Business knowledge
 
-Part 2? Managing the internal audit function.
+// Part 2? Managing the internal audit function.
 
-This tests:
+// This tests:
 
-→ Strategic audit planning
-→ Resource allocation
-→ Quality assurance and improvement
-→ Communication with the board
+// → Strategic audit planning
+// → Resource allocation
+// → Quality assurance and improvement
+// → Communication with the board
 
-The trap: Candidates study Part 2 like it's an accounting exam.
+// The trap: Candidates study Part 2 like it's an accounting exam.
 
-It's not. It's a management exam.
+// It's not. It's a management exam.
 
-Think like a Chief Audit Executive, not a staff auditor.
+// Think like a Chief Audit Executive, not a staff auditor.
 
-That mindset shift is worth 10 points.`,
-    author: 'Rob',
-    exam: 'CIA',
-  },
+// That mindset shift is worth 10 points.`,
+//     author: 'Rob',
+//     exam: 'CIA',
+//   },
 
   // 32. Founder - Feedback Loop
   {
@@ -942,7 +936,7 @@ We rewrote every explanation to lead with the key point. Details second.
 
 Pass rates went up.
 
-Lesson: Your users aren't wrong. You just haven't understood them yet.`,
+Lesson: Your users aren't wrong. You just haven't understood them yet.\n\nP.S. Master every blueprint area with our comprehensive lesson plans at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -970,7 +964,7 @@ ISC sims test:
 
 These aren't MCQ skills. They're application skills.
 
-Do extra SOC sims. That's where points are lost.`,
+Do extra SOC sims. That's where points are lost.\n\nP.S. Conquer the simulations that trap most candidates at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -1002,7 +996,7 @@ It's testing execution under pressure.
 
 Prepare for both.
 
-– Rob`,
+– Rob\n\nP.S. Stop forgetting what you study. Use our active retention system at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -1013,7 +1007,7 @@ Prepare for both.
 
 They look scary. Long fact patterns. Numbers everywhere.
 
-But here's the secret:
+But here's the framework:
 
 99% of property questions come down to:
 
@@ -1030,41 +1024,41 @@ That's it. Five questions, every time.
 → Like-kind exchange 1031 = Deferred (mostly)
 → Section 1231 = Best of both worlds
 
-Master this framework. Property questions become easy points.`,
+Master this framework. Property questions become easy points.\n\nP.S. Turn any spare moment into a high-quality study session at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
 
   // 36. EA - SEE Part 3
-  {
-    type: 'data-insight',
-    content: `EA candidates: SEE Part 3 is different.
+//   {
+//     type: 'data-insight',
+//     content: `EA candidates: SEE Part 3 is different.
 
-Parts 1 and 2 test tax knowledge.
-Part 3 tests representation procedures.
+// Parts 1 and 2 test tax knowledge.
+// Part 3 tests representation procedures.
 
-What that means:
+// What that means:
 
-→ IRS audit procedures
-→ Appeals process
-→ Collection alternatives (OIC, installment, CNC)
-→ Circular 230 ethics
-→ Power of attorney rules
+// → IRS audit procedures
+// → Appeals process
+// → Collection alternatives (OIC, installment, CNC)
+// → Circular 230 ethics
+// → Power of attorney rules
 
-Most tax professionals know the tax code.
+// Most tax professionals know the tax code.
 
-Fewer know how to actually represent clients.
+// Fewer know how to actually represent clients.
 
-That's Part 3.
+// That's Part 3.
 
-Study tip: Don't just memorize procedures.
+// Study tip: Don't just memorize procedures.
 
-Imagine you're the practitioner. What would you file? When? In what order?
+// Imagine you're the practitioner. What would you file? When? In what order?
 
-That's how the questions are written.`,
-    author: 'Rob',
-    exam: 'EA',
-  },
+// That's how the questions are written.`,
+//     author: 'Rob',
+//     exam: 'EA',
+//   },
 
   // 37. Founder - Why I Built This
   {
@@ -1088,35 +1082,35 @@ I optimize for the edges.
 
 Because that's where I was.
 
-And that's who I understand.`,
+And that's who I understand.\n\nP.S. Don't just memorize patterns. Understand the concepts deeply at voraprep.com.`,
     author: 'Rob',
   },
 
   // 38. CISA - Practical Experience
-  {
-    type: 'industry',
-    content: `CISA candidates without IT audit experience: Listen up.
+//   {
+//     type: 'industry',
+//     content: `CISA candidates without IT audit experience: Listen up.
 
-The exam assumes you've DONE the work.
+// The exam assumes you've DONE the work.
 
-Questions aren't: "What is a control?"
+// Questions aren't: "What is a control?"
 
-Questions are: "Given this scenario, what control would you test FIRST?"
+// Questions are: "Given this scenario, what control would you test FIRST?"
 
-If you don't have practical experience:
+// If you don't have practical experience:
 
-→ Read ISACA case studies
-→ Watch IT audit walkthroughs on YouTube
-→ Ask someone in the field to explain their day-to-day
+// → Read ISACA case studies
+// → Watch IT audit walkthroughs on YouTube
+// → Ask someone in the field to explain their day-to-day
 
-The concepts are learnable.
+// The concepts are learnable.
 
-But the judgment takes exposure.
+// But the judgment takes exposure.
 
-Find ways to simulate experience before the exam.`,
-    author: 'Rob',
-    exam: 'CISA',
-  },
+// Find ways to simulate experience before the exam.`,
+//     author: 'Rob',
+//     exam: 'CISA',
+//   },
 
   // 39. CPA - FAR Revenue Recognition
   {
@@ -1140,7 +1134,7 @@ Step 5: Over time or at a point in time?
 
 Learn the transfer indicators. That's where points are won.
 
-Stop re-reading ASC 606. Start doing questions.`,
+Stop re-reading ASC 606. Start doing questions.\n\nP.S. Practice with questions that mirror real exam difficulty at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -1169,38 +1163,38 @@ Not the whole exam. Your exam.
 
 You're closer than you think.
 
-– Rob`,
+– Rob\n\nP.S. Automatically identify and fix your weak spots before exam day at voraprep.com.`,
     author: 'Rob',
   },
 
   // 41. CMA - Part 2 Financial Decision Making
-  {
-    type: 'data-insight',
-    content: `CMA Part 2: Financial Decision Making.
+//   {
+//     type: 'data-insight',
+//     content: `CMA Part 2: Financial Decision Making.
 
-Here's what trips people up:
+// Here's what trips people up:
 
-→ Corporate finance: NPV, IRR, payback (you know this)
-→ Risk management: Hedging, derivatives (less familiar)
-→ Investment decisions: Capital budgeting, leasing (straightforward)
-→ Professional ethics: IMA standards (easy points, don't skip)
+// → Corporate finance: NPV, IRR, payback (you know this)
+// → Risk management: Hedging, derivatives (less familiar)
+// → Investment decisions: Capital budgeting, leasing (straightforward)
+// → Professional ethics: IMA standards (easy points, don't skip)
 
-The gap:
+// The gap:
 
-CPAs studying for CMA think Part 2 is "just finance."
+// CPAs studying for CMA think Part 2 is "just finance."
 
-It's not. It's decision-focused.
+// It's not. It's decision-focused.
 
-Questions ask: "Given X scenario, what should management do?"
+// Questions ask: "Given X scenario, what should management do?"
 
-The answer isn't always the highest NPV.
+// The answer isn't always the highest NPV.
 
-Sometimes it's the lowest risk.
+// Sometimes it's the lowest risk.
 
-Read carefully. Think like a CFO.`,
-    author: 'Rob',
-    exam: 'CMA',
-  },
+// Read carefully. Think like a CFO.`,
+//     author: 'Rob',
+//     exam: 'CMA',
+//   },
 
   // 42. CPA - TCP Discipline
   {
@@ -1226,7 +1220,7 @@ TCP candidates need to think strategically.
 
 Not just calculate — advise.
 
-Practice writing tax memos. The sims require it.`,
+Practice writing tax memos. The sims require it.\n\nP.S. Join the candidates passing their 'impossible' sections at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -1250,7 +1244,7 @@ Only for finishing.
 
 If you're in month 12, month 18, month 24 — keep going.
 
-The only people who fail are the ones who stop.`,
+The only people who fail are the ones who stop.\n\nP.S. Test yourself against our 9,000+ question bank at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -1280,35 +1274,35 @@ Maybe it's just not wasting the $2,000 you already spent.
 
 Whatever it is, write it down.
 
-Look at it when motivation fails.`,
+Look at it when motivation fails.\n\nP.S. Learn why the wrong answers are wrong with our detailed explanations at voraprep.com.`,
     author: 'Rob',
   },
 
   // 45. CFP - Psychology of Advice
-  {
-    type: 'industry',
-    content: `The CFP exam's hardest questions aren't about numbers.
+//   {
+//     type: 'industry',
+//     content: `The CFP exam's hardest questions aren't about numbers.
 
-They're about behavior.
+// They're about behavior.
 
-"Client wants to pay off mortgage early but has credit card debt at 22% APR. What do you recommend?"
+// "Client wants to pay off mortgage early but has credit card debt at 22% APR. What do you recommend?"
 
-Mathematically: Pay off the credit card.
+// Mathematically: Pay off the credit card.
 
-But the exam also tests:
+// But the exam also tests:
 
-→ Client psychology (they feel safer with no mortgage)
-→ Behavioral coaching (how do you guide them?)
-→ Fiduciary duty (what's truly in their interest?)
+// → Client psychology (they feel safer with no mortgage)
+// → Behavioral coaching (how do you guide them?)
+// → Fiduciary duty (what's truly in their interest?)
 
-Sometimes the "correct" answer includes counseling, not math.
+// Sometimes the "correct" answer includes counseling, not math.
 
-CFP tests advisors, not calculators.
+// CFP tests advisors, not calculators.
 
-Remember that.`,
-    author: 'Rob',
-    exam: 'CFP',
-  },
+// Remember that.`,
+//     author: 'Rob',
+//     exam: 'CFP',
+//   },
 
   // 46. CPA - Score Release Anxiety
   {
@@ -1338,36 +1332,36 @@ If you don't, adjust and retry.
 
 Either way, you'll be okay.
 
-– Rob`,
+– Rob\n\nP.S. Master every blueprint area with our comprehensive lesson plans at voraprep.com.`,
     author: 'Rob',
   },
 
   // 47. CISA - Audit Evidence
-  {
-    type: 'data-insight',
-    content: `CISA candidates: Know the hierarchy of audit evidence.
+//   {
+//     type: 'data-insight',
+//     content: `CISA candidates: Know the hierarchy of audit evidence.
 
-From strongest to weakest:
+// From strongest to weakest:
 
-1. Evidence obtained directly by the IS auditor
-2. Evidence from independent third parties
-3. Evidence from the auditee's internal systems
-4. Oral representations from management
+// 1. Evidence obtained directly by the IS auditor
+// 2. Evidence from independent third parties
+// 3. Evidence from the auditee's internal systems
+// 4. Oral representations from management
 
-The exam loves to test this.
+// The exam loves to test this.
 
-"Which is the MOST reliable evidence?"
+// "Which is the MOST reliable evidence?"
 
-It's always the one closest to direct observation.
+// It's always the one closest to direct observation.
 
-Screenshots > Reports > Verbal confirmations
+// Screenshots > Reports > Verbal confirmations
 
-This concept appears in 10-15% of questions.
+// This concept appears in 10-15% of questions.
 
-Nail it.`,
-    author: 'Rob',
-    exam: 'CISA',
-  },
+// Nail it.`,
+//     author: 'Rob',
+//     exam: 'CISA',
+//   },
 
   // 48. General - Sleep
   {
@@ -1397,7 +1391,7 @@ The best candidates study less and sleep more.
 
 Not because they're lazy.
 
-Because they understand how memory works.`,
+Because they understand how memory works.\n\nP.S. Conquer the simulations that trap most candidates at voraprep.com.`,
     author: 'Rob',
   },
 
@@ -1422,7 +1416,7 @@ Fifth attempt: 81.
 
 Volume isn't the answer.
 
-Understanding is.`,
+Understanding is.\n\nP.S. Stop forgetting what you study. Use our active retention system at voraprep.com.`,
     author: 'Rob',
     exam: 'CPA',
   },
@@ -1447,7 +1441,7 @@ Because that's where the transformation happens.
 
 When someone who "shouldn't" pass actually passes.
 
-That's why I built this.`,
+That's why I built this.\n\nP.S. Turn any spare moment into a high-quality study session at voraprep.com.`,
     author: 'Rob',
   },
 ];

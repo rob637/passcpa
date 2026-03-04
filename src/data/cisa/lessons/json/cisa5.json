@@ -245,10 +245,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST critical step in ensuring the effectiveness of a data classification program?",
             "options": [
-              "A. Implementing a Data Loss Prevention (DLP) solution.",
-              "B. Establishing clear and well-defined classification criteria.",
-              "C. Providing comprehensive training to all employees on data handling procedures.",
-              "D. Conducting regular penetration testing to identify vulnerabilities."
+              "Implementing a Data Loss Prevention (DLP) solution.",
+              "Establishing clear and well-defined classification criteria.",
+              "Providing comprehensive training to all employees on data handling procedures.",
+              "Conducting regular penetration testing to identify vulnerabilities."
             ],
             "correctIndex": 1,
             "explanation": "While all options are important, establishing clear and well-defined classification criteria (B) is the foundational step. Without it, DLP solutions lack context, training is ineffective, and penetration testing results are difficult to interpret in terms of data sensitivity.",
@@ -302,10 +302,10 @@
           "knowledgeCheck": {
             "question": "An organization is implementing a data classification program. During the impact assessment phase, they identify a dataset containing customer credit card information. If this data were disclosed, it would result in significant financial penalties and reputational damage. According to the data protection principles discussed, which classification level would be MOST appropriate for this data?",
             "options": [
-              "A. Public",
-              "B. Internal",
-              "C. Confidential",
-              "D. Restricted"
+              "Public",
+              "Internal",
+              "Confidential",
+              "Restricted"
             ],
             "correctIndex": 2,
             "explanation": "Confidential (C) is the most appropriate classification. The scenario highlights significant financial and reputational impact, aligning with the characteristics of confidential data requiring the highest level of protection. While 'Restricted' might seem appropriate, 'Confidential' is the more commonly used term in data classification frameworks for data with this level of sensitivity.",
@@ -1215,10 +1215,10 @@
           "knowledgeCheck": {
             "question": "Which of the following access control methods is MOST effective in preventing tailgating in a high-security data center environment?",
             "options": [
-              "A. Installing CCTV cameras focused on the entrance.",
-              "B. Implementing a mandatory sign-in/sign-out sheet for all personnel.",
-              "C. Deploying turnstiles with biometric authentication.",
-              "D. Requiring all visitors to be escorted by authorized employees."
+              "Installing CCTV cameras focused on the entrance.",
+              "Implementing a mandatory sign-in/sign-out sheet for all personnel.",
+              "Deploying turnstiles with biometric authentication.",
+              "Requiring all visitors to be escorted by authorized employees."
             ],
             "correctIndex": 2,
             "explanation": "Turnstiles with biometric authentication provide the strongest deterrent against tailgating. They physically prevent more than one person from entering at a time and verify identity before granting access. While the other options are helpful, they are less effective at physically preventing tailgating.",
@@ -1272,10 +1272,10 @@
           "knowledgeCheck": {
             "question": "Which of the following fire suppression systems is MOST suitable for a server room containing sensitive electronic equipment?",
             "options": [
-              "A. Water sprinkler system",
-              "B. Dry chemical extinguisher",
-              "C. Clean agent suppression system",
-              "D. Carbon dioxide (CO2) flooding system"
+              "Water sprinkler system",
+              "Dry chemical extinguisher",
+              "Clean agent suppression system",
+              "Carbon dioxide (CO2) flooding system"
             ],
             "correctIndex": 2,
             "explanation": "Clean agent suppression systems are designed to extinguish fires without damaging electronic equipment. They are non-conductive and leave no residue, unlike water or dry chemical extinguishers. While CO2 is also non-damaging, it presents an asphyxiation risk to personnel.",
@@ -2033,10 +2033,10 @@
           "knowledgeCheck": {
             "question": "An organization is processing personal data based on 'legitimate interests.' Under GDPR, which of the following actions is MOST critical to demonstrate compliance?",
             "options": [
-              "A. Obtaining explicit consent from all data subjects.",
-              "B. Conducting a Legitimate Interests Assessment (LIA) and documenting it thoroughly.",
-              "C. Appointing a Data Protection Officer (DPO).",
-              "D. Implementing Privacy by Design principles."
+              "Obtaining explicit consent from all data subjects.",
+              "Conducting a Legitimate Interests Assessment (LIA) and documenting it thoroughly.",
+              "Appointing a Data Protection Officer (DPO).",
+              "Implementing Privacy by Design principles."
             ],
             "correctIndex": 1,
             "explanation": "While all options are important aspects of GDPR compliance, when relying on 'legitimate interests' as the lawful basis for processing, a Legitimate Interests Assessment (LIA) is paramount. It demonstrates that the organization has carefully considered the balance between its interests and the data subjects' rights and freedoms. Consent is not required when legitimate interest is the basis. A DPO is only required in specific circumstances. Privacy by Design is a general principle, not specific to legitimate interests.",

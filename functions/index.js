@@ -1693,7 +1693,7 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
       </div>
       
       <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
-        Questions? Just reply to this email!
+        Questions? Email us at <a href="mailto:support@voraprep.com" style="color: #3b82f6;">support@voraprep.com</a>
       </p>
       
     </div>
@@ -2047,7 +2047,7 @@ function generateTrialReminderEmail(displayName, courseConfig, template, dayNum,
       </div>
       
       <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
-        Questions? Reply to this email — we're here to help!
+        Questions? Email us at <a href="mailto:support@voraprep.com" style="color: #3b82f6;">support@voraprep.com</a> — we're here to help!
       </p>
       
     </div>
@@ -2841,7 +2841,7 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
   
   <!-- Footer -->
   <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
-    <p>Questions? Reply to this email or visit our <a href="${APP_BASE_URL}" style="color: #64748b;">website</a></p>
+    <p>Questions? Email us at <a href="mailto:support@voraprep.com" style="color: #64748b;">support@voraprep.com</a> or visit our <a href="${APP_BASE_URL}" style="color: #64748b;">website</a></p>
     <p style="margin-top: 15px;">
       VoraPrep - ${courseConfig.tagline}
     </p>
@@ -3733,7 +3733,7 @@ function getPaymentFailedEmailHTML(name) {
       </div>
       
       <p style="color: #64748b; font-size: 14px;">
-        If you have any questions, reply to this email and we'll help you out.
+        If you have any questions, email us at <a href="mailto:support@voraprep.com" style="color: #3b82f6;">support@voraprep.com</a> and we'll help you out.
       </p>
     </div>
     
@@ -5645,6 +5645,7 @@ exports.postScheduledLinkedIn = onSchedule({
   timeZone: 'America/New_York',
   timeoutSeconds: 60,
   memory: '256MiB',
+  secrets: ['RESEND_API_KEY'],
 }, async (context) => {
   console.log('[LinkedInStory] Starting scheduled story post check...');
   
@@ -5767,6 +5768,35 @@ exports.postScheduledLinkedIn = onSchedule({
     });
     
     console.log(`[LinkedInStory] Successfully posted: ${linkedInUrl || linkedInPostId}`);
+
+    // Send notification email to Rob
+    try {
+      const resendApiKey = process.env.RESEND_API_KEY?.trim();
+      if (resendApiKey) {
+        const resendClient = new Resend(resendApiKey);
+        await resendClient.emails.send({
+          from: 'VoraPrep <hello@voraprep.com>',
+          to: 'rob@sagecg.com',
+          subject: 'LinkedIn Post Published: ' + (postData.type || 'General'),
+          html: `
+            <h2>Your LinkedIn post is live!</h2>
+            <p><strong>Post Type:</strong> ${postData.type}</p>
+            <p><strong>View Post:</strong> <a href="${linkedInUrl}">${linkedInUrl}</a></p>
+            <hr />
+            <h3>Content:</h3>
+            <pre style="white-space: pre-wrap;">${postData.content}</pre>
+            <hr />
+            <p>Use <a href="https://voraprep.com/admin/linkedin">Admin Dashboard</a> to manage future posts.</p>
+          `,
+        });
+        console.log('[LinkedInStory] Notification email sent to rob@sagecg.com');
+      } else {
+        console.warn('[LinkedInStory] Skipping email notification: RESEND_API_KEY missing');
+      }
+    } catch (emailErr) {
+      console.error('[LinkedInStory] Failed to send notification email:', emailErr);
+      // Don't fail the function if email fails
+    }
     
   } catch (err) {
     console.error('[LinkedInStory] Error posting:', err.message);
@@ -7545,4 +7575,132 @@ exports.onArticlePublished = onDocumentUpdated({
     console.error('[ArticlePublished] Failed to send notification:', err);
     return null;
   }
+});
+
+// ============================================================================
+// ORPHANED USER DETECTION AND REPAIR
+// Find users in Firebase Auth who don't have Firestore documents
+// ============================================================================
+
+/**
+ * Find orphaned users: Auth users without proper Firestore documents.
+ * Admin-only callable function.
+ * 
+ * @param {Object} data.fix - If true, create missing Firestore documents
+ * @returns {Object} { total, orphaned, fixed, users[] }
+ */
+exports.findOrphanedUsers = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  timeoutSeconds: 300,
+  memory: '512MiB',
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const shouldFix = request.data?.fix === true;
+  console.log(`[OrphanedUsers] Starting scan. Fix mode: ${shouldFix}`);
+
+  // Get all Firebase Auth users
+  let authUsers = [];
+  let nextPageToken;
+  
+  do {
+    const listResult = await admin.auth().listUsers(1000, nextPageToken);
+    authUsers = authUsers.concat(listResult.users);
+    nextPageToken = listResult.pageToken;
+  } while (nextPageToken);
+
+  console.log(`[OrphanedUsers] Found ${authUsers.length} auth users`);
+
+  // Check each for Firestore document
+  const orphaned = [];
+  
+  for (const user of authUsers) {
+    const docSnap = await db.collection('users').doc(user.uid).get();
+    const data = docSnap.data() || {};
+    
+    // Check if document has actual user fields (not just subcollections)
+    const hasActualFields = data.email || data.displayName || data.createdAt;
+    
+    if (!docSnap.exists || !hasActualFields) {
+      orphaned.push({
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        emailVerified: user.emailVerified,
+        createdAt: user.metadata?.creationTime,
+        hasGhostDoc: docSnap.exists && !hasActualFields,
+      });
+    }
+  }
+
+  console.log(`[OrphanedUsers] Found ${orphaned.length} orphaned users`);
+
+  // Fix if requested
+  let fixed = 0;
+  if (shouldFix && orphaned.length > 0) {
+    for (const user of orphaned) {
+      const profile = {
+        email: user.email || '',
+        displayName: user.displayName || user.email?.split('@')[0] || 'User',
+        createdAt: user.createdAt 
+          ? admin.firestore.Timestamp.fromDate(new Date(user.createdAt))
+          : admin.firestore.FieldValue.serverTimestamp(),
+        activeCourse: 'cpa', // Default
+        onboardingComplete: false,
+        dailyGoal: 50,
+        settings: {
+          notifications: true,
+          darkMode: false,
+          soundEffects: true,
+        },
+        _repairedAt: admin.firestore.FieldValue.serverTimestamp(),
+        _repairReason: 'orphaned_auth_user_admin_fix',
+      };
+
+      try {
+        await db.collection('users').doc(user.uid).set(profile, { merge: true });
+        fixed++;
+        console.log(`[OrphanedUsers] Fixed: ${user.email || user.uid}`);
+      } catch (err) {
+        console.error(`[OrphanedUsers] Failed to fix ${user.uid}:`, err.message);
+      }
+    }
+  }
+
+  console.log(`[OrphanedUsers] Complete. Orphaned: ${orphaned.length}, Fixed: ${fixed}`);
+
+  // Also count soft-deleted and total Firestore users for debugging
+  let softDeleted = 0;
+  let firestoreTotal = 0;
+  const allUsersSnap = await db.collection('users').get();
+  firestoreTotal = allUsersSnap.size;
+  allUsersSnap.forEach(doc => {
+    if (doc.data().deletedAt) softDeleted++;
+  });
+
+  console.log(`[OrphanedUsers] Firestore docs: ${firestoreTotal}, Soft-deleted: ${softDeleted}`);
+
+  return {
+    total: authUsers.length,
+    orphaned: orphaned.length,
+    fixed,
+    firestoreTotal,
+    softDeleted,
+    activeUsers: firestoreTotal - softDeleted,
+    users: orphaned.map(u => ({
+      uid: u.uid,
+      email: u.email,
+      displayName: u.displayName,
+      hasGhostDoc: u.hasGhostDoc,
+    })),
+  };
 });

@@ -233,10 +233,10 @@
           "knowledgeCheck": {
             "question": "Which of the following factors would MOST likely contribute to a HIGH inherent risk associated with a newly implemented online banking system?",
             "options": [
-              "A. Strong encryption protocols are implemented to protect customer data.",
-              "B. The system processes a high volume of financial transactions daily and handles sensitive customer information.",
-              "C. The system is subject to regular vulnerability assessments and penetration testing.",
-              "D. Access to the system is restricted based on the principle of least privilege."
+              "Strong encryption protocols are implemented to protect customer data.",
+              "The system processes a high volume of financial transactions daily and handles sensitive customer information.",
+              "The system is subject to regular vulnerability assessments and penetration testing.",
+              "Access to the system is restricted based on the principle of least privilege."
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B. High transaction volume and handling sensitive data directly increase the inherent risk because, before controls, the potential impact of a failure or breach is significantly higher. Options A, C, and D describe control activities, which reduce control risk, not inherent risk.",
@@ -862,10 +862,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST significant benefit of using Computer-Assisted Audit Techniques (CAATs) in an audit?",
             "options": [
-              "A. Increased sample sizes can be examined, leading to greater audit assurance.",
-              "B. Audit costs are always reduced due to automation.",
-              "C. The need for skilled auditors is eliminated.",
-              "D. Audit reports are generated faster, regardless of data integrity."
+              "Increased sample sizes can be examined, leading to greater audit assurance.",
+              "Audit costs are always reduced due to automation.",
+              "The need for skilled auditors is eliminated.",
+              "Audit reports are generated faster, regardless of data integrity."
             ],
             "correctIndex": 0,
             "explanation": "CAATs allow auditors to examine a larger volume of data than manual techniques, leading to increased confidence in the audit results. While costs can be reduced, it's not guaranteed, skilled auditors are still needed, and report speed is irrelevant if data integrity is poor.",
@@ -1592,10 +1592,10 @@
           "knowledgeCheck": {
             "question": "Which of the following COSO components directly addresses the establishment of performance measures, incentives, and rewards to encourage appropriate behavior within an organization?",
             "options": [
-              "A) Control Environment",
-              "B) Risk Assessment",
-              "C) Control Activities",
-              "D) Monitoring Activities"
+              "Control Environment",
+              "Risk Assessment",
+              "Control Activities",
+              "Monitoring Activities"
             ],
             "correctIndex": 0,
             "explanation": "The Control Environment, specifically the element of 'tone at the top' and 'personnel competence', includes establishing expectations, structures, and accountability to support the achievement of objectives. This includes performance measures, incentives, and rewards that align with the organization's values and goals. The other options are incorrect because they focus on different aspects of internal control.",

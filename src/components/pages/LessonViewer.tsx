@@ -1537,13 +1537,15 @@ const LessonViewer: React.FC = () => {
           <div className="space-y-8 mb-12">
             {lesson.content.sections.map((section, index) => (
               <div key={index}>
-                <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-                  {section.type === 'list' && <List className="w-5 h-5 text-primary-500" />}
-                  {section.type === 'table' && <Table className="w-5 h-5 text-primary-500" />}
-                  {section.type === 'text' && <FileText className="w-5 h-5 text-primary-500" />}
-                  {section.type === 'summary' && <CheckCircle className="w-5 h-5 text-primary-500" />}
-                  {section.title}
-                </h2>
+                {section.title && (
+                  <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+                    {section.type === 'list' && <List className="w-5 h-5 text-primary-500" />}
+                    {section.type === 'table' && <Table className="w-5 h-5 text-primary-500" />}
+                    {section.type === 'text' && <FileText className="w-5 h-5 text-primary-500" />}
+                    {section.type === 'summary' && <CheckCircle className="w-5 h-5 text-primary-500" />}
+                    {section.title}
+                  </h2>
+                )}
                 <ContentSection section={section as LessonContentSection} />
               </div>
             ))}

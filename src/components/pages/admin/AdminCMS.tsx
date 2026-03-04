@@ -743,6 +743,8 @@ const AdminCMS: React.FC = () => {
   const [userCourseFilter, setUserCourseFilter] = useState<CourseId | 'all'>('all');
   const [userSortColumn, setUserSortColumn] = useState<'email' | 'course' | 'section' | 'subscription' | 'trials' | 'role' | 'joined'>('joined');
   const [userSortDirection, setUserSortDirection] = useState<'asc' | 'desc'>('desc');
+  const [usersPage, setUsersPage] = useState(1);
+  const usersPerPage = 50;
   
   // Delete user state
   const [deleteConfirmUserId, setDeleteConfirmUserId] = useState<string | null>(null);
@@ -757,6 +759,19 @@ const AdminCMS: React.FC = () => {
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const [isSyncingEmails, setIsSyncingEmails] = useState(false);
   const [emailSyncResult, setEmailSyncResult] = useState<{ updated: number; total: number } | null>(null);
+  
+  // Orphaned users state
+  const [orphanedUsersResult, setOrphanedUsersResult] = useState<{
+    total: number;
+    orphaned: number;
+    fixed: number;
+    firestoreTotal?: number;
+    softDeleted?: number;
+    activeUsers?: number;
+    users: Array<{ uid: string; email: string; displayName: string; hasGhostDoc: boolean }>;
+  } | null>(null);
+  const [isScanningOrphaned, setIsScanningOrphaned] = useState(false);
+  const [isFixingOrphaned, setIsFixingOrphaned] = useState(false);
   
   // Email history state
   const [emailHistory, setEmailHistory] = useState<EmailHistoryItem[]>([]);
@@ -949,7 +964,8 @@ const AdminCMS: React.FC = () => {
     setIsLoadingUsers(true);
     setUsersError(null);
     try {
-      const q = query(collection(db, 'users'), limit(200));
+      // Load all users (no limit - we need to search through all of them)
+      const q = query(collection(db, 'users'));
       const querySnapshot = await getDocs(q);
       const users: UserDocument[] = [];
       
@@ -1342,6 +1358,7 @@ const AdminCMS: React.FC = () => {
     });
     
     setFilteredUsers(result);
+    setUsersPage(1); // Reset to first page when filters change
   }, [usersList, userSearch, userFilter, userCourseFilter, userSortColumn, userSortDirection]);
 
   // Load Analytics
@@ -4003,6 +4020,57 @@ VoraPrep Team`;
                       ✓ {emailSyncResult.updated} emails synced
                     </span>
                   )}
+                  <button
+                    onClick={async () => {
+                      setIsScanningOrphaned(true);
+                      setOrphanedUsersResult(null);
+                      try {
+                        const findOrphaned = httpsCallable(functions, 'findOrphanedUsers');
+                        const result = await findOrphaned({ fix: false });
+                        setOrphanedUsersResult(result.data as typeof orphanedUsersResult);
+                        addLog(`Found ${(result.data as { orphaned: number }).orphaned} orphaned users`, 'info');
+                      } catch (err) {
+                        addLog(`Scan failed: ${(err as Error).message}`, 'error');
+                      } finally {
+                        setIsScanningOrphaned(false);
+                      }
+                    }}
+                    disabled={isScanningOrphaned || isFixingOrphaned}
+                    className="text-sm px-3 py-1 bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded hover:bg-orange-100 transition-colors disabled:opacity-50"
+                    title="Find users with Auth but no Firestore document"
+                  >
+                    {isScanningOrphaned ? '⏳ Scanning...' : '🔍 Find Orphaned'}
+                  </button>
+                  {orphanedUsersResult && orphanedUsersResult.orphaned > 0 && (
+                    <button
+                      onClick={async () => {
+                        if (!confirm(`Fix ${orphanedUsersResult.orphaned} orphaned users by creating their Firestore documents?`)) return;
+                        setIsFixingOrphaned(true);
+                        try {
+                          const findOrphaned = httpsCallable(functions, 'findOrphanedUsers');
+                          const result = await findOrphaned({ fix: true });
+                          setOrphanedUsersResult(result.data as typeof orphanedUsersResult);
+                          addLog(`Fixed ${(result.data as { fixed: number }).fixed} orphaned users`, 'success');
+                          loadUsers();
+                        } catch (err) {
+                          addLog(`Fix failed: ${(err as Error).message}`, 'error');
+                        } finally {
+                          setIsFixingOrphaned(false);
+                        }
+                      }}
+                      disabled={isFixingOrphaned}
+                      className="text-sm px-3 py-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded hover:bg-green-100 transition-colors disabled:opacity-50"
+                    >
+                      {isFixingOrphaned ? '⏳ Fixing...' : `🔧 Fix ${orphanedUsersResult.orphaned}`}
+                    </button>
+                  )}
+                  {orphanedUsersResult && (
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                      {orphanedUsersResult.orphaned === 0 
+                        ? `✅ No orphaned | Auth: ${orphanedUsersResult.total} | Firestore: ${orphanedUsersResult.firestoreTotal || '?'} | Deleted: ${orphanedUsersResult.softDeleted || 0}` 
+                        : `⚠️ ${orphanedUsersResult.orphaned} orphaned (${orphanedUsersResult.fixed} fixed) | Deleted: ${orphanedUsersResult.softDeleted || 0}`}
+                    </span>
+                  )}
                   {selectedUserIds.size > 0 && (
                     <button
                       onClick={() => setShowEmailModal(true)}
@@ -4027,16 +4095,16 @@ VoraPrep Team`;
                         <th className="p-3 w-10">
                           <input
                             type="checkbox"
-                            checked={filteredUsers.length > 0 && filteredUsers.slice(0, 100).every(u => selectedUserIds.has(u.id))}
+                            checked={filteredUsers.length > 0 && filteredUsers.slice((usersPage - 1) * usersPerPage, usersPage * usersPerPage).every(u => selectedUserIds.has(u.id))}
                             onChange={(e) => {
                               if (e.target.checked) {
-                                setSelectedUserIds(new Set(filteredUsers.slice(0, 100).map(u => u.id)));
+                                setSelectedUserIds(new Set(filteredUsers.slice((usersPage - 1) * usersPerPage, usersPage * usersPerPage).map(u => u.id)));
                               } else {
                                 setSelectedUserIds(new Set());
                               }
                             }}
                             className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                            title="Select all visible"
+                            title="Select all on this page"
                           />
                         </th>
                         {[
@@ -4087,7 +4155,7 @@ VoraPrep Team`;
                           </td>
                         </tr>
                       ) : (
-                        filteredUsers.slice(0, 100).map((u) => (
+                        filteredUsers.slice((usersPage - 1) * usersPerPage, usersPage * usersPerPage).map((u) => (
                           <tr key={u.id} className="hover:bg-gray-50 dark:hover:bg-slate-700 dark:bg-slate-900">
                             <td className="p-3">
                               <input
@@ -4326,10 +4394,26 @@ VoraPrep Team`;
                       )}
                     </tbody>
                   </table>
-                  {filteredUsers.length > 100 && (
-                    <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-4">
-                      Showing first 100 of {filteredUsers.length} users. Use search to find specific users.
-                    </p>
+                  {filteredUsers.length > usersPerPage && (
+                    <div className="flex items-center justify-center gap-4 mt-4 py-2">
+                      <button
+                        onClick={() => setUsersPage(p => Math.max(1, p - 1))}
+                        disabled={usersPage === 1}
+                        className="px-3 py-1 text-sm bg-gray-100 dark:bg-slate-700 rounded disabled:opacity-40"
+                      >
+                        ← Previous
+                      </button>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        Page {usersPage} of {Math.ceil(filteredUsers.length / usersPerPage)} ({filteredUsers.length} users)
+                      </span>
+                      <button
+                        onClick={() => setUsersPage(p => Math.min(Math.ceil(filteredUsers.length / usersPerPage), p + 1))}
+                        disabled={usersPage >= Math.ceil(filteredUsers.length / usersPerPage)}
+                        className="px-3 py-1 text-sm bg-gray-100 dark:bg-slate-700 rounded disabled:opacity-40"
+                      >
+                        Next →
+                      </button>
+                    </div>
                   )}
                 </div>
               )}
@@ -4706,7 +4790,10 @@ VoraPrep Team`;
                           const totalActivity = user.mcqsAnswered + user.lessonsCompleted + user.flashcardsUsed;
                           let status: string;
                           let statusColor: string;
-                          if (totalActivity > 0 && user.lastActiveAt && (Date.now() - user.lastActiveAt.getTime()) < 7 * 86400000) {
+                          // Use lastActiveAt OR signedUpAt to catch users who just signed up but have no lastLogin set yet
+                          const lastActivity = user.lastActiveAt || user.signedUpAt;
+                          
+                          if (totalActivity > 0 && lastActivity && (Date.now() - lastActivity.getTime()) < 7 * 86400000) {
                             status = '✅ Active';
                             statusColor = 'text-green-600';
                           } else if (totalActivity > 0) {

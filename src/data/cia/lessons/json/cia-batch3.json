@@ -367,10 +367,10 @@
           "knowledgeCheck": {
             "question": "Which of the following supply chain risks poses the MOST immediate threat to an organization's operational continuity if left unaddressed?",
             "options": [
-              "A. Reputational damage resulting from a supplier's non-compliance with ethical labor practices.",
-              "B. A single-source dependency for a critical raw material used in the organization's core product.",
-              "C. Increased cybersecurity vulnerabilities within a third-party vendor's data storage system.",
-              "D. Potential geopolitical disruptions affecting the supplier's ability to export finished goods."
+              "Reputational damage resulting from a supplier's non-compliance with ethical labor practices.",
+              "A single-source dependency for a critical raw material used in the organization's core product.",
+              "Increased cybersecurity vulnerabilities within a third-party vendor's data storage system.",
+              "Potential geopolitical disruptions affecting the supplier's ability to export finished goods."
             ],
             "correctIndex": 1,
             "explanation": "A single-source dependency presents the most immediate threat because a disruption to that single source directly halts production. While the other options are significant risks, they don't necessarily cause an immediate cessation of operations.",
@@ -391,10 +391,10 @@
           "knowledgeCheck": {
             "question": "An internal auditor discovers that a key vendor has recently experienced a significant decline in its credit rating. Which of the following audit procedures would be MOST appropriate to perform FIRST?",
             "options": [
-              "A. Immediately terminate the contract with the vendor to mitigate potential losses.",
-              "B. Assess the potential impact of the vendor's financial instability on the organization's supply chain.",
-              "C. Publicly disclose the vendor's financial difficulties to alert stakeholders.",
-              "D. Increase the order volume with the vendor to provide financial support."
+              "Immediately terminate the contract with the vendor to mitigate potential losses.",
+              "Assess the potential impact of the vendor's financial instability on the organization's supply chain.",
+              "Publicly disclose the vendor's financial difficulties to alert stakeholders.",
+              "Increase the order volume with the vendor to provide financial support."
             ],
             "correctIndex": 1,
             "explanation": "Assessing the potential impact is the most appropriate first step. It allows the organization to understand the scope of the risk and develop a plan. Terminating the contract, disclosing the information, or increasing order volume might be appropriate later, but only after a thorough assessment.",
@@ -593,10 +593,10 @@
           "knowledgeCheck": {
             "question": "During which phase of the Traditional (Waterfall) SDLC is the system architecture primarily defined?",
             "options": [
-              "A) Analysis",
-              "B) Design",
-              "C) Development",
-              "D) Implementation"
+              "Analysis",
+              "Design",
+              "Development",
+              "Implementation"
             ],
             "correctIndex": 1,
             "explanation": "The Design phase focuses on translating the detailed requirements from the Analysis phase into a complete system architecture. This includes defining the system components, their interfaces, and the overall structure of the system.",
@@ -617,10 +617,10 @@
           "knowledgeCheck": {
             "question": "Which of the following activities is LEAST likely to occur during the Testing phase of the Traditional (Waterfall) SDLC?",
             "options": [
-              "A) Integration Testing",
-              "B) User Acceptance Testing (UAT)",
-              "C) Coding new modules",
-              "D) Regression Testing"
+              "Integration Testing",
+              "User Acceptance Testing (UAT)",
+              "Coding new modules",
+              "Regression Testing"
             ],
             "correctIndex": 2,
             "explanation": "Coding new modules belongs to the Development phase. The Testing phase focuses on verifying the functionality and performance of the system, including integration and user acceptance.",

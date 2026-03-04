@@ -247,6 +247,13 @@
             "Step 3: If married but filing separately may benefit, compare MFJ vs MFS",
             "Step 4: If unmarried, do you meet HOH requirements? \u2192 If yes, file HOH",
             "Step 5: Did your spouse die in the past 2 years with a dependent child? \u2192 QSS"
+          ],
+          "items": [
+            "**Married?**: If yes on 12/31, must file MJ or MFS (or HOH if abandoned).",
+            "**Spouse Deceased?**: Assume married for year of death.",
+            "**Dependents?**: If unmarried with dependents, check Head of Household.",
+            "**Spouse Died Last 2 Years?**: Check Qualifying Surviving Spouse (QSS).",
+            "**Default**: If unmarried and no dependents -> Single."
           ]
         },
         {
@@ -1987,6 +1994,14 @@
             "Day care records",
             "Documents showing relationship (birth certificates)",
             "Keep records for 3 years from due date or date filed"
+          ],
+          "items": [
+            "**Identification**: Driver's license or state ID for taxpayer and spouse.",
+            "**SSN Cards**: Social Security cards for all individuals on return.",
+            "**Income Statements**: W-2s, 1099s (INT, DIV, NEC, MISC, R, etc.), K-1s.",
+            "**Expense Proof**: Receipts needed for itemized deductions or credits (child care, education).",
+            "**Health/Marketplace**: Form 1095-A if Marketplace insurance used.",
+            "**Prior Returns**: Copy of last year's tax return."
           ]
         },
         {
@@ -3631,6 +3646,14 @@
             "Charitable contributions (various AGI limits)",
             "Casualty losses (federally declared disasters only)",
             "Other itemized deductions (limited under TCJA)"
+          ],
+          "items": [
+            "**Medical**: Expenses > 7.5% of AGI.",
+            "**Taxes (SALT)**: State/Local Income or Sales Tax + Property Tax (Capped at $10k).",
+            "**Interest**: Mortgage interest (on up to $750k debt) & Investment interest.",
+            "**Charity**: Contributions to qualified organizations (Cash: 60% AGI limit).",
+            "**Casualty**: Federally declared disaster losses only.",
+            "**Other**: Gambling losses to extent of winnings."
           ]
         },
         {
@@ -6484,6 +6507,14 @@
             "Pension/annuity distributions",
             "Income from trusts",
             "Taxable scholarships (non-tuition portion)"
+          ],
+          "items": [
+            "**Interest**: Taxable interest from banks, bonds, loans.",
+            "**Dividends**: Ordinary and qualified dividends from stock.",
+            "**Capital Gains**: Net gain from sale of assets.",
+            "**Rents**: Passive income from property.",
+            "**Trust Distributions**: Unearned income distributed from trusts.",
+            "**Unemployment**: Unemployment compensation."
           ]
         },
         {
@@ -6871,6 +6902,13 @@
             "Cannot be claimed as dependent",
             "Cannot file MFS (unless certain abuse/abandonment exceptions)",
             "Not eligible for other minimum essential coverage (employer, Medicare, Medicaid)"
+          ],
+          "items": [
+            "**Relationship**: Must be child, stepchild, foster child, sibling, or descendant.",
+            "**Age**: Under 19, or under 24 if full-time student (or any age if disabled).",
+            "**Residency**: Lived with taxpayer > 1/2 of the year.",
+            "**Support**: Child did not provide > 1/2 of their own support.",
+            "**Joint Return**: Child cannot file a joint return (unless only for refund claim)."
           ]
         },
         {

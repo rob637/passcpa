@@ -16,9 +16,10 @@ import { format, subDays, startOfDay, startOfWeek, subWeeks } from 'date-fns';
 import {
   ChevronLeft, Users, TrendingUp, Activity,
   RefreshCw, Download, ArrowUpRight, ArrowDownRight,
-  Clock, CheckCircle, BookOpen, Zap,
+  Clock, CheckCircle, BookOpen, Zap, Search,
+  ChevronRight,
 } from 'lucide-react';
-import { collection, query, getDocs, orderBy, limit } from 'firebase/firestore';
+import { collection, query, getDocs, limit, getCountFromServer } from 'firebase/firestore';
 import { db } from '../../../config/firebase';
 import { useAuth } from '../../../hooks/useAuth';
 import { isAdminEmail } from '../../../config/adminConfig';
@@ -54,6 +55,10 @@ interface AnalyticsState {
   isLoading: boolean;
   error: string | null;
   dateRange: '7d' | '30d' | '90d' | 'all';
+  totalUserCount: number;
+  searchQuery: string;
+  currentPage: number;
+  pageSize: number;
 }
 
 // Chart colors
@@ -84,6 +89,10 @@ export default function UserAnalyticsDashboard() {
     isLoading: true,
     error: null,
     dateRange: '30d',
+    totalUserCount: 0,
+    searchQuery: '',
+    currentPage: 1,
+    pageSize: 25,
   });
 
   const [activityData, setActivityData] = useState<{
@@ -104,14 +113,15 @@ export default function UserAnalyticsDashboard() {
     setState(s => ({ ...s, isLoading: true, error: null }));
 
     try {
-      // Get user count (for future pagination)
-      // const totalUserCount = (await getCountFromServer(collection(db, 'users'))).data().count;
+      // Get total user count from Firestore (accurate count, not limited)
+      const totalUserCount = (await getCountFromServer(collection(db, 'users'))).data().count;
 
-      // Load users (up to 500 for analysis)
+      // Load users (up to 2000 for analysis - increased from 500)
+      // Note: We don't use orderBy('createdAt') because some legacy users lack this field
+      // and Firestore excludes docs that don't have the orderBy field
       const usersQuery = query(
         collection(db, 'users'),
-        orderBy('createdAt', 'desc'),
-        limit(500)
+        limit(2000)
       );
       const usersSnap = await getDocs(usersQuery);
       const users: UserDocument[] = [];
@@ -121,8 +131,14 @@ export default function UserAnalyticsDashboard() {
           users.push({ id: doc.id, ...data } as UserDocument);
         }
       });
+      // Sort client-side (newest first, users without createdAt go to end)
+      users.sort((a, b) => {
+        const aTime = a.createdAt?.seconds ?? 0;
+        const bTime = b.createdAt?.seconds ?? 0;
+        return bTime - aTime;
+      });
 
-      setState(s => ({ ...s, users, isLoading: false }));
+      setState(s => ({ ...s, users, isLoading: false, totalUserCount }));
 
       // Calculate activity metrics
       const now = Date.now();
@@ -400,9 +416,9 @@ export default function UserAnalyticsDashboard() {
               <MetricCard
                 icon={Users}
                 label="Total Users"
-                value={metrics.totalUsers.toLocaleString()}
+                value={state.totalUserCount.toLocaleString()}
                 trend={metrics.weekOverWeekChange}
-                trendLabel="vs last week"
+                trendLabel={`${metrics.totalUsers.toLocaleString()} loaded`}
                 color="blue"
               />
               <MetricCard
@@ -610,16 +626,29 @@ export default function UserAnalyticsDashboard() {
               </Card>
             </div>
 
-            {/* Recent Signups Table */}
+            {/* User Search & Recent Signups Table */}
             <Card className="p-6">
-              <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                Recent Signups
-              </h3>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  Users ({state.totalUserCount.toLocaleString()} total)
+                </h3>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search by name or email..."
+                    value={state.searchQuery}
+                    onChange={(e) => setState(s => ({ ...s, searchQuery: e.target.value, currentPage: 1 }))}
+                    className="pl-9 pr-4 py-2 w-full sm:w-64 text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-gray-200 dark:border-gray-700">
                       <th className="text-left py-2 px-3 text-gray-500 dark:text-gray-400 font-medium">Email</th>
+                      <th className="text-left py-2 px-3 text-gray-500 dark:text-gray-400 font-medium">Name</th>
                       <th className="text-left py-2 px-3 text-gray-500 dark:text-gray-400 font-medium">Course</th>
                       <th className="text-left py-2 px-3 text-gray-500 dark:text-gray-400 font-medium">Status</th>
                       <th className="text-left py-2 px-3 text-gray-500 dark:text-gray-400 font-medium">Source</th>
@@ -627,9 +656,26 @@ export default function UserAnalyticsDashboard() {
                     </tr>
                   </thead>
                   <tbody>
-                    {state.users.slice(0, 10).map(user => (
+                    {(() => {
+                      // Filter users by search query
+                      const filteredUsers = state.searchQuery.trim()
+                        ? state.users.filter(u => {
+                            const query = state.searchQuery.toLowerCase();
+                            return (
+                              (u.email?.toLowerCase().includes(query)) ||
+                              (u.displayName?.toLowerCase().includes(query))
+                            );
+                          })
+                        : state.users;
+                      
+                      // Paginate
+                      const startIdx = (state.currentPage - 1) * state.pageSize;
+                      const paginatedUsers = filteredUsers.slice(startIdx, startIdx + state.pageSize);
+                      
+                      return paginatedUsers.map(user => (
                       <tr key={user.id} className="border-b border-gray-100 dark:border-gray-800">
                         <td className="py-2 px-3 text-gray-900 dark:text-white">{user.email || '—'}</td>
+                        <td className="py-2 px-3 text-gray-900 dark:text-white">{user.displayName || '—'}</td>
                         <td className="py-2 px-3">
                           <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
                             {(user.activeCourse || 'none').toUpperCase()}
@@ -656,10 +702,55 @@ export default function UserAnalyticsDashboard() {
                             : '—'}
                         </td>
                       </tr>
-                    ))}
+                    ));
+                    })()}
                   </tbody>
                 </table>
               </div>
+              
+              {/* Pagination */}
+              {(() => {
+                const filteredUsers = state.searchQuery.trim()
+                  ? state.users.filter(u => {
+                      const query = state.searchQuery.toLowerCase();
+                      return (
+                        (u.email?.toLowerCase().includes(query)) ||
+                        (u.displayName?.toLowerCase().includes(query))
+                      );
+                    })
+                  : state.users;
+                const totalPages = Math.ceil(filteredUsers.length / state.pageSize);
+                
+                if (totalPages <= 1) return null;
+                
+                return (
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      Showing {((state.currentPage - 1) * state.pageSize) + 1}-{Math.min(state.currentPage * state.pageSize, filteredUsers.length)} of {filteredUsers.length}
+                      {state.searchQuery && ` (filtered)`}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setState(s => ({ ...s, currentPage: Math.max(1, s.currentPage - 1) }))}
+                        disabled={state.currentPage === 1}
+                        className="p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                      </button>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">
+                        Page {state.currentPage} of {totalPages}
+                      </span>
+                      <button
+                        onClick={() => setState(s => ({ ...s, currentPage: Math.min(totalPages, s.currentPage + 1) }))}
+                        disabled={state.currentPage === totalPages}
+                        className="p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                );
+              })()}
             </Card>
           </>
         )}

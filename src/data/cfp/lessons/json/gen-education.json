@@ -227,6 +227,13 @@
               "term": "Student loan repayment",
               "definition": "Up to $10,000 lifetime (SECURE Act)"
             }
+          ],
+          "items": [
+            "**Tuition & Fees**: Enrollment or attendance costs.",
+            "**Books & Supplies**: Required course materials.",
+            "**Equipment**: Computers and peripherals (if req or for 529).",
+            "**Room & Board**: Only if student is enrolled at least half-time.",
+            "**Special Needs**: Services for special needs beneficiaries."
           ]
         },
         {
@@ -585,6 +592,10 @@
               "term": "Extended day programs",
               "definition": "Before/after school care"
             }
+          ],
+          "items": [
+            "**529 Plans**: Up to $10,000 per year per beneficiary for K-12 tuition.",
+            "**Coverdell ESA**: Tuition, fees, books, supplies, equipment, tutoring, and special needs services for K-12."
           ]
         },
         {
@@ -696,12 +707,12 @@
           "type": "knowledge-check",
           "title": "Coverdell ESA Eligibility and Contributions",
           "knowledgeCheck": {
-            "question": "Which of the following statements regarding Coverdell ESAs is CORRECT?\n\nA) Contributions are tax-deductible.\nB) The maximum annual contribution is $4,000 per beneficiary.\nC) Contributions can be made regardless of the contributor's income.\nD) The beneficiary must use the funds by age 30, unless they have special needs.",
+            "question": "Which of the following statements regarding Coverdell ESAs is CORRECT?",
             "options": [
-              "A) Contributions are tax-deductible.",
-              "B) The maximum annual contribution is $4,000 per beneficiary.",
-              "C) Contributions can be made regardless of the contributor's income.",
-              "D) The beneficiary must use the funds by age 30, unless they have special needs."
+              "Contributions are tax-deductible.",
+              "The maximum annual contribution is $4,000 per beneficiary.",
+              "Contributions can be made regardless of the contributor's income.",
+              "The beneficiary must use the funds by age 30, unless they have special needs."
             ],
             "correctIndex": 3,
             "explanation": "The correct answer is D. Coverdell ESAs require funds to be used by age 30 (unless the beneficiary is a special needs beneficiary). Contributions are NOT tax-deductible. The maximum annual contribution is $2,000 per beneficiary. Contributions are limited based on the contributor's income.",
@@ -831,6 +842,12 @@
               "term": "NOT included",
               "definition": "Room and board, transportation, insurance"
             }
+          ],
+          "items": [
+            "**Tuition**: Cost of instruction.",
+            "**Fees**: Required enrollment fees.",
+            "**Course Materials**: Books/supplies needed for course (even if not bought from institution).",
+            "**Excluded**: Room and board, transportation, insurance, medical expenses are NOT qualified for AOTC."
           ]
         },
         {

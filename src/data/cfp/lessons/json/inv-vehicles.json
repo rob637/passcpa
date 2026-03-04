@@ -1245,7 +1245,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Mutual Fund Share Classes",
           "knowledgeCheck": {
             "question": "Which of the following statements BEST describes the primary difference between Class A and Class B shares of a mutual fund?",
@@ -1306,7 +1306,7 @@
           }
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Tax Efficiency",
           "knowledgeCheck": {
             "question": "Which of the following investment vehicles is generally considered to be the MOST tax-efficient?",

@@ -716,6 +716,8 @@ export default function DiagnosticQuizPage() {
   // Use section from router state (passed directly from onboarding) as primary source,
   // fall back to userProfile.examSection (for "take diagnostic later" from Home page)
   const routerSection = (location.state as { section?: string })?.section || '';
+  const returnTo = (location.state as { returnTo?: string })?.returnTo;
+  const assessmentMode = (location.state as { assessmentMode?: boolean })?.assessmentMode;
   const onboardingSection = routerSection || userProfile?.examSection || '';
   const hasValidOnboardingSection = !!onboardingSection && availableSections.includes(onboardingSection);
 
@@ -788,9 +790,20 @@ export default function DiagnosticQuizPage() {
 
   // Navigation
   const goToDashboard = useCallback(() => {
+    // If we came from Study Plan setup in assessment mode, return there
+    if (returnTo && assessmentMode) {
+      navigate(returnTo, { 
+        replace: true, 
+        state: { 
+          fromAssessment: true, 
+          assessmentComplete: true 
+        } 
+      });
+      return;
+    }
     const path = getCourseHomePath(courseId);
     navigate(path, { replace: true });
-  }, [courseId, navigate]);
+  }, [courseId, navigate, returnTo, assessmentMode]);
 
   // Quiz handlers
   const handleSelectAnswer = useCallback((answerIdx: number) => {

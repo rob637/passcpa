@@ -82,6 +82,14 @@
             "Negotiating refund checks (preparers only)",
             "Soliciting in prohibited ways",
             "Practicing while suspended or disbarred"
+          ],
+          "items": [
+            "Negotiating a taxpayer's refund check",
+            "Charging an unconscionable fee",
+            "Charging a contingent fee (except for IRS challenge/claim for refund)",
+            "Delaying matters before the IRS",
+            "Accepting assistance from a disbarred/suspended practitioner",
+            "Notarizing documents where the practitioner has an interest"
           ]
         },
         {
@@ -1772,6 +1780,13 @@
             "**Duty to Account** - Maintain records, turn over money/property",
             "**Duty to Notify** - Inform principal of relevant information",
             "**Duty of Confidentiality** - Protect principal's confidential information"
+          ],
+          "items": [
+            "LORA: Loyalty (No self-dealing, no competition)",
+            "Obedience (Follow lawful instructions)",
+            "Reasonable Care (Don't be negligent)",
+            "Accounting (Keep money separate, account for funds)",
+            "Notification (Inform principal of material facts)"
           ]
         },
         {
@@ -1969,6 +1984,14 @@
             "**Death/incapacity** - Of either party before acceptance",
             "**Destruction** - Of subject matter",
             "**Illegality** - Subject matter becomes illegal"
+          ],
+          "items": [
+            "Revocation by Offeror (Before acceptance)",
+            "Rejection by Offeree (Counteroffer = Rejection)",
+            "Lapse of Time (Stated time or reasonable time expires)",
+            "Death or Incompetency of either party",
+            "Destruction of Subject Matter",
+            "Illegality of Subject Matter"
           ]
         },
         {
@@ -2079,10 +2102,10 @@
           "knowledgeCheck": {
             "question": "Which of the following elements is NOT required for the formation of a valid and enforceable contract?",
             "options": [
-              "A) Offer",
-              "B) Acceptance",
-              "C) Written Documentation",
-              "D) Consideration"
+              "Offer",
+              "Acceptance",
+              "Written Documentation",
+              "Consideration"
             ],
             "correctIndex": 2,
             "explanation": "A valid contract requires offer, acceptance, consideration, capacity, and legality. While written documentation can be helpful for proving the existence and terms of a contract, it is not always a required element for contract formation. Some contracts can be oral and still be enforceable, depending on the jurisdiction and subject matter (e.g., the Statute of Frauds requires certain contracts to be in writing).",
@@ -2103,10 +2126,10 @@
           "knowledgeCheck": {
             "question": "Ace Advertising publishes a weekly flyer advertising various products at discounted prices. One item listed is a high-definition television for $200, regularly priced at $800. Bob sees the advertisement and goes to Ace Advertising to purchase the television. Ace Advertising refuses to sell Bob the television at the advertised price, stating that they only had a limited quantity and those have already been sold. Is Ace Advertising obligated to sell Bob the television at the advertised price?",
             "options": [
-              "A) Yes, because the advertisement constitutes a valid offer which Bob accepted.",
-              "B) Yes, because Ace Advertising is obligated to honor its advertised prices.",
-              "C) No, because advertisements are generally considered invitations to deal, not offers.",
-              "D) No, unless Bob can prove that Ace Advertising intentionally misled him."
+              "Yes, because the advertisement constitutes a valid offer which Bob accepted.",
+              "Yes, because Ace Advertising is obligated to honor its advertised prices.",
+              "No, because advertisements are generally considered invitations to deal, not offers.",
+              "No, unless Bob can prove that Ace Advertising intentionally misled him."
             ],
             "correctIndex": 2,
             "explanation": "Advertisements are generally considered invitations to deal or invitations to negotiate, rather than offers. Therefore, Ace Advertising is not obligated to sell Bob the television at the advertised price. An offer requires a manifestation of intent to be bound, definite terms, and communication to the offeree. Advertisements typically lack the requisite intent to be bound to anyone who 'accepts' the 'offer'.",
@@ -2272,6 +2295,13 @@
             "**Frustration of Purpose** - Purpose destroyed by unforeseen event",
             "**Mutual Rescission** - Both parties agree to cancel",
             "**Accord and Satisfaction** - New agreement to settle existing dispute"
+          ],
+          "items": [
+            "Impossibility (Objective: 'No one could do it')",
+            "Commercial Impracticability (Unforeseen extreme hardship - UCC)",
+            "Frustration of Purpose (Principal purpose is substantially frustrated)",
+            "Initial or Subsequent Illegality",
+            "Waiver or Release"
           ]
         },
         {
@@ -2414,6 +2444,12 @@
             "Some wage assignments (limited by law)",
             "Future rights not yet earned",
             "Rights coupled with personal trust (attorney-client)"
+          ],
+          "items": [
+            "Assignment that significantly changes obligor's risk/duty (e.g., insurance)",
+            "Assignment of highly personal services (e.g., paint a portrait)",
+            "Assignment prohibited by contract (except right to money/damages)",
+            "Assignment prohibited by law"
           ]
         },
         {
@@ -2840,6 +2876,13 @@
             "**Accounting** - Right to formal accounting",
             "**Partnership property** - Use for partnership purposes",
             "**Indemnification** - Reimbursement for proper expenses"
+          ],
+          "items": [
+            "Right to Management (Equal say unless agreed otherwise)",
+            "Right to Share in Profits/Losses (Equal share unless agreed otherwise)",
+            "Right to Information/Inspection of Books",
+            "Right to Indemnification for partnership expenses",
+            "Property Rights: Interest in partnership (can be assigned)"
           ]
         },
         {
@@ -3425,6 +3468,20 @@
             "**7. Consumer deposits** (up to ~$3,350)",
             "**8. Tax claims** (certain taxes)",
             "**9. General unsecured creditors** (pro rata)"
+          ],
+          "items": [
+            "1. Secured Creditors (up to collateral value)",
+            "2. Priority Claims (STOP-IT-Drunk-Driver)",
+            "   - Support (Alimony/Child Support)",
+            "   - Trustee/Admin Fees",
+            "   - Owed after Petition (Gap creditors)",
+            "   - Payroll (Wages up to limit, 180 days)",
+            "   - Employee Benefits (up to limit, 180 days)",
+            "   - Consumer Deposits (up to limit)",
+            "   - Tax Claims",
+            "   - DUI Injury Claims",
+            "3. General Unsecured Creditors",
+            "4. Equity Holders (Bottom of the barrel)"
           ]
         },
         {
@@ -3820,6 +3877,12 @@
             "**No double taxation** - Income flows to personal return",
             "**Easy to dissolve** - Just stop doing business",
             "**Minimal compliance** - No annual reports or meetings"
+          ],
+          "items": [
+            "Easiest and cheapest to form (No filing required)",
+            "Complete control by owner",
+            "Single taxation (Pass-through on Schedule C)",
+            "Easy to dissolve"
           ]
         },
         {
@@ -3831,6 +3894,12 @@
             "**Limited capital raising** - Cannot sell ownership interests",
             "**Limited life** - Ends when owner dies/stops",
             "**No employee benefits** - Cannot be own employee"
+          ],
+          "items": [
+            "Unlimited personal liability for business debts",
+            "Limited access to capital (loans hard to get)",
+            "Business ends upon death of owner",
+            "Self-employment tax on all net earnings"
           ]
         },
         {
@@ -4207,6 +4276,11 @@
             "**Access to books** and records",
             "**Compensation** only for winding up (default)",
             "**New partners** require unanimous consent"
+          ],
+          "items": [
+            "See REG-II-007 (Same as standard Partnership rights)",
+            "Right to participate in management (General Partners only)",
+            "Right to bind the partnership (Agency authority)"
           ]
         },
         {
@@ -4402,6 +4476,13 @@
             "**Sue derivatively** on behalf of corporation",
             "**Preemptive rights** to maintain ownership % (if granted)",
             "**Share in liquidation** proceeds (after creditors)"
+          ],
+          "items": [
+            "Vote for Board of Directors",
+            "Receive Dividends (when declared)",
+            "Inspect Books and Records (for proper purpose)",
+            "Preemptive Rights (maintain % ownership, if in Articles)",
+            "Sue for Wrongful Acts (Derivative Suit or Direct Suit)"
           ]
         },
         {
@@ -4778,6 +4859,15 @@
             "**Workers' compensation** (Section 104)",
             "**Certain fringe benefits** (Section 132)",
             "**Foreign earned income** (Section 911)"
+          ],
+          "items": [
+            "Life Insurance Proceeds (paid due to death)",
+            "Gifts and Inheritances",
+            "Municipal Bond Interest",
+            "Worker's Compensation Benefits",
+            "Personal Injury Damages (Physical injury only)",
+            "Scholarships (Tuition & Books only, degree seeking)",
+            "Employer-Paid Health Insurance Premiums"
           ]
         },
         {
@@ -4900,7 +4990,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Gifts vs. Compensation: Test Your Knowledge",
           "knowledgeCheck": {
             "question": "Sarah worked as a home health aide for Mrs. Gable for 5 years. Upon Mrs. Gable's death, Sarah received $50,000 from Mrs. Gable's will. In addition, Sarah's employer, ABC Home Healthcare, gave her a bonus of $1,000 in recognition of her years of service to Mrs. Gable. How much of these payments should Sarah include in her gross income?",
@@ -6560,12 +6650,12 @@
           "type": "knowledge-check",
           "title": "EIC Eligibility Quiz",
           "knowledgeCheck": {
-            "question": "Which of the following individuals is MOST likely eligible for the Earned Income Credit (EIC) in 2024?\n\nA. A single individual with $5,000 in dividend income and no earned income.\nB. A married couple filing separately with $15,000 in wages and one qualifying child.\nC. A single individual with $20,000 in wages and two qualifying children, all with valid SSNs.\nD. A retired individual receiving $30,000 in Social Security benefits and no other income.",
+            "question": "Which of the following individuals is MOST likely eligible for the Earned Income Credit (EIC) in 2024?",
             "options": [
-              "A. A single individual with $5,000 in dividend income and no earned income.",
-              "B. A married couple filing separately with $15,000 in wages and one qualifying child.",
-              "C. A single individual with $20,000 in wages and two qualifying children, all with valid SSNs.",
-              "D. A retired individual receiving $30,000 in Social Security benefits and no other income."
+              "A single individual with $5,000 in dividend income and no earned income.",
+              "A married couple filing separately with $15,000 in wages and one qualifying child.",
+              "A single individual with $20,000 in wages and two qualifying children, all with valid SSNs.",
+              "A retired individual receiving $30,000 in Social Security benefits and no other income."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C. The EIC requires earned income (wages in this case) and is increased with the number of qualifying children. The individual, spouse (if applicable), and children must have valid SSNs. Option A has no earned income. Option B is ineligible because married couples must file jointly to claim the EIC. Option D's income is from Social Security, which is not considered earned income.",
@@ -7308,12 +7398,12 @@
           "type": "knowledge-check",
           "title": "Capital Asset Identification",
           "knowledgeCheck": {
-            "question": "Which of the following assets would be classified as a capital asset for tax purposes?\n\nA) Inventory held for sale to customers.\nB) Depreciable machinery used in a business.\nC) A copyright held by the artist who created the work.\nD) Stock held as an investment.",
+            "question": "Which of the following assets would be classified as a capital asset for tax purposes?",
             "options": [
-              "A) Inventory held for sale to customers.",
-              "B) Depreciable machinery used in a business.",
-              "C) A copyright held by the artist who created the work.",
-              "D) Stock held as an investment."
+              "Inventory held for sale to customers.",
+              "Depreciable machinery used in a business.",
+              "A copyright held by the artist who created the work.",
+              "Stock held as an investment."
             ],
             "correctIndex": 3,
             "explanation": "Stock held as an investment is generally considered a capital asset. Inventory, depreciable property, and certain copyrights held by the creator are specifically excluded from the definition of a capital asset.",
@@ -7334,10 +7424,10 @@
           "knowledgeCheck": {
             "question": "An individual taxpayer has the following capital gains and losses:\n\n*   Short-term capital gain: $5,000\n*   Short-term capital loss: $2,000\n*   Long-term capital gain: $8,000\n*   Long-term capital loss: $10,000\n\nWhat is the net capital loss that can be deducted against ordinary income?\n",
             "options": [
-              "A) $0",
-              "B) $2,000",
-              "C) $3,000",
-              "D) $5,000"
+              "$0",
+              "$2,000",
+              "$3,000",
+              "$5,000"
             ],
             "correctIndex": 1,
             "explanation": "Step 1: Net ST gains and losses: $5,000 - $2,000 = $3,000 ST gain\nStep 2: Net LT gains and losses: $8,000 - $10,000 = $2,000 LT loss\nStep 3: Net the nets: $3,000 ST gain - $2,000 LT loss = $1,000 Net ST gain. Since there is a net gain, no capital loss can be deducted.",
@@ -10225,7 +10315,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "AAA Adjustment Quiz",
           "knowledgeCheck": {
             "question": "During the current year, an S corporation has the following items: Tax-exempt interest income of $10,000, nonseparately stated income of $50,000, and non-deductible expenses (not related to tax-exempt income) of $5,000. Assuming the S corporation has sufficient AAA, what is the net effect of these items on the Accumulated Adjustments Account (AAA)?",

@@ -265,10 +265,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important initial step in the IT strategic planning process?",
             "options": [
-              "A) Evaluating the current IT infrastructure's performance metrics.",
-              "B) Reviewing and understanding the organization's business mission, vision, and strategic objectives.",
-              "C) Conducting a SWOT analysis of the IT department.",
-              "D) Benchmarking IT spending against industry averages."
+              "Evaluating the current IT infrastructure's performance metrics.",
+              "Reviewing and understanding the organization's business mission, vision, and strategic objectives.",
+              "Conducting a SWOT analysis of the IT department.",
+              "Benchmarking IT spending against industry averages."
             ],
             "correctIndex": 1,
             "explanation": "Understanding the business strategy (mission, vision, objectives) is paramount. IT strategy must be derived from and support the business strategy. Options A, C, and D are important subsequent steps, but they depend on a clear understanding of the business direction.",
@@ -434,10 +434,10 @@
           "knowledgeCheck": {
             "question": "Which of the following BEST describes the purpose of an IT standard?",
             "options": [
-              "A. To provide a high-level statement of management's intent regarding IT security.",
-              "B. To provide specific, measurable requirements for implementing a policy.",
-              "C. To provide step-by-step instructions for performing a specific task.",
-              "D. To offer suggestions and best practices for achieving a desired outcome."
+              "To provide a high-level statement of management's intent regarding IT security.",
+              "To provide specific, measurable requirements for implementing a policy.",
+              "To provide step-by-step instructions for performing a specific task.",
+              "To offer suggestions and best practices for achieving a desired outcome."
             ],
             "correctIndex": 1,
             "explanation": "Standards define the 'how' by setting specific measurable requirements to ensure policies are implemented effectively. Policies are the 'what', procedures are the 'how-to', and guidelines are suggestions.",
@@ -734,7 +734,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Knowledge Check: Workforce Planning",
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important initial step when conducting workforce planning for the IT department?",

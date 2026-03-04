@@ -439,10 +439,10 @@
           "knowledgeCheck": {
             "question": "A business owner wants to transfer their business to their children while minimizing gift tax implications and retaining some control. Which of the following internal succession options would be MOST suitable?",
             "options": [
-              "A. Outright gift of the business using the annual exclusion only.",
-              "B. Sale of the business to the children using an Intentionally Defective Grantor Trust (IDGT).",
-              "C. Bequest of the business through the owner's will.",
-              "D. Management Buyout"
+              "Outright gift of the business using the annual exclusion only.",
+              "Sale of the business to the children using an Intentionally Defective Grantor Trust (IDGT).",
+              "Bequest of the business through the owner's will.",
+              "Management Buyout"
             ],
             "correctIndex": 1,
             "explanation": "An IDGT allows the owner to sell the business to a trust for the benefit of their children. The sale is not subject to gift tax, and the owner can structure the trust to retain some control. Using just the annual exclusion would take too long and not transfer the full business value efficiently. A bequest would trigger estate taxes, and the owner loses control immediately. A Management Buyout is not an internal family succession option.",
@@ -503,10 +503,10 @@
           "knowledgeCheck": {
             "question": "Which of the following external succession options would MOST likely result in the highest sale price for the business, but also the greatest loss of the business's legacy?",
             "options": [
-              "A. Merger with a complementary business.",
-              "B. Sale to a strategic buyer (e.g., a competitor).",
-              "C. Sale to a financial buyer (e.g., private equity firm).",
-              "D. Liquidation of the business's assets."
+              "Merger with a complementary business.",
+              "Sale to a strategic buyer (e.g., a competitor).",
+              "Sale to a financial buyer (e.g., private equity firm).",
+              "Liquidation of the business's assets."
             ],
             "correctIndex": 1,
             "explanation": "A strategic buyer is often willing to pay a premium to acquire a competitor or a business that complements its existing operations. However, strategic buyers are often focused on maximizing profits and may be less concerned with preserving the business's legacy. Mergers can preserve some legacy, sale to a financial buyer may or may not, and liquidation almost certainly destroys legacy.",

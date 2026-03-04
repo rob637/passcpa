@@ -21,11 +21,12 @@ import { PageHeader } from '../navigation';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
+import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { getSectionDisplayInfo, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { getExamDate } from '../../utils/profileHelpers';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
-import { format, subDays, eachDayOfInterval, differenceInDays } from 'date-fns';
+import { format, subDays, eachDayOfInterval, differenceInDays, isWithinInterval } from 'date-fns';
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
 import { generateStudyPlan, calculatePaceStatus, type PaceStatus } from '../../utils/studyPlanner';
@@ -365,6 +366,8 @@ const Progress: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { currentStreak, getTopicPerformance, getLessonProgress } = useStudy() as any;
   const { courseId, course } = useCourse();
+  // Get the actual saved study plan
+  const { plan: savedStudyPlan, hasPlan: hasSavedPlan } = useStudyPlan();
   // CISA and CFP are single-exam courses where all sections are tested on the same day
   const SINGLE_EXAM_COURSES = ['cisa', 'cfp'];
   const isSingleExamCourse = SINGLE_EXAM_COURSES.includes(courseId);
@@ -388,8 +391,10 @@ const Progress: React.FC = () => {
   const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   
-  // Study Plan - use getExamDate helper for multi-course support
-  const examDate = getExamDate(userProfile, currentSection, courseId);
+  // Study Plan - use saved plan if available, otherwise fall back to legacy generated plan
+  const examDate = savedStudyPlan?.examDate 
+    ? (savedStudyPlan.examDate instanceof Date ? savedStudyPlan.examDate : new Date(savedStudyPlan.examDate))
+    : getExamDate(userProfile, currentSection, courseId);
   // Derive study plan start date from user's account creation
   const userStartDate = userProfile?.createdAt 
     ? (userProfile.createdAt instanceof Date 
@@ -398,10 +403,23 @@ const Progress: React.FC = () => {
           ? new Date((userProfile.createdAt as any).seconds * 1000) 
           : undefined)
     : undefined;
-  // Compute study plan with real lesson count (re-computed when totalLessons loads)
-  const studyPlan = examDate 
-    ? generateStudyPlan(currentSection, examDate, userStartDate, overallStats.totalLessons || undefined) 
-    : null;
+  // Use saved study plan if available, otherwise fall back to generated one
+  const studyPlan = hasSavedPlan && savedStudyPlan
+    ? savedStudyPlan
+    : (examDate 
+        ? generateStudyPlan(currentSection, examDate, userStartDate, overallStats.totalLessons || undefined) 
+        : null);
+  
+  // Find current week from saved study plan
+  const currentWeekFromPlan = useMemo(() => {
+    if (!savedStudyPlan?.weeks) return null;
+    const today = new Date();
+    return savedStudyPlan.weeks.find((w: { startDate: Date | string; endDate: Date | string }) => {
+      const start = new Date(w.startDate);
+      const end = new Date(w.endDate);
+      return isWithinInterval(today, { start, end });
+    });
+  }, [savedStudyPlan]);
 
   // Load real data from Firestore
   useEffect(() => {
@@ -647,14 +665,42 @@ const Progress: React.FC = () => {
     loadProgressData();
   }, [user?.uid, userProfile?.dailyGoal, getTopicPerformance, getLessonProgress, currentSection, courseId, timeRange]);
 
-  const readiness = calculateExamReadiness(
-    overallStats,
-    topicPerformance,
-    overallStats.lessonsCompleted,
-    overallStats.totalLessons,
-    overallStats.tbsCompleted,
-    overallStats.totalTbs
-  );
+  // Calculate exam readiness - incorporate study plan progress if available
+  const readiness = useMemo(() => {
+    // If we have study plan progress with accuracy, use a blended stat
+    const blendedStats = { ...overallStats };
+    if (hasSavedPlan && savedStudyPlan?.progress?.accuracy && savedStudyPlan.progress.accuracy > 0) {
+      // Blend study plan's rolling accuracy with current session stats
+      // Study plan accuracy is more stable (rolling average), so weight it higher
+      blendedStats.accuracy = Math.round(
+        (savedStudyPlan.progress.accuracy * 0.6) + (overallStats.accuracy * 0.4)
+      );
+      // Also use study plan's questions count if higher
+      if (savedStudyPlan.progress.questionsAnswered > overallStats.totalQuestions) {
+        blendedStats.totalQuestions = savedStudyPlan.progress.questionsAnswered;
+      }
+      // Use study plan's lesson progress if available
+      if (savedStudyPlan.progress.lessonsCompleted > 0) {
+        blendedStats.lessonsCompleted = savedStudyPlan.progress.lessonsCompleted;
+      }
+      if (savedStudyPlan.progress.lessonsTotal > 0) {
+        blendedStats.totalLessons = savedStudyPlan.progress.lessonsTotal;
+      }
+    }
+    
+    // Determine if exam has TBS based on course
+    const hasTBS = !['ea'].includes(courseId); // EA doesn't have TBS
+    
+    return calculateExamReadiness(
+      blendedStats,
+      topicPerformance,
+      blendedStats.lessonsCompleted,
+      blendedStats.totalLessons,
+      blendedStats.tbsCompleted,
+      blendedStats.totalTbs,
+      { hasTBS }
+    );
+  }, [overallStats, topicPerformance, hasSavedPlan, savedStudyPlan, courseId]);
 
   // Calculate blueprint analytics for advanced heat map and recommendations
   const blueprintAnalytics = useMemo<BlueprintAnalytics>(() => {
@@ -771,83 +817,177 @@ const Progress: React.FC = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-      {/* Study Plan Overview (New Feature) */}
+      {/* Study Plan Overview - Clean Google-style */}
       {studyPlan && (() => {
-        const paceInfo = calculatePaceStatus(
-          studyPlan, 
-          overallStats.lessonsCompleted, 
-          overallStats.totalLessons
-        );
+        // Use saved plan's health when available, otherwise calculate
+        const healthStatus = hasSavedPlan && savedStudyPlan?.health 
+          ? savedStudyPlan.health 
+          : calculatePaceStatus(studyPlan, overallStats.lessonsCompleted, overallStats.totalLessons).status;
         
-        const paceStyles: Record<PaceStatus, { bg: string; text: string; icon: string }> = {
-          'ahead': { bg: 'bg-emerald-500/20', text: 'text-emerald-400', icon: '🎯' },
-          'on-track': { bg: 'bg-primary-500/20', text: 'text-primary-400', icon: '✓' },
-          'slightly-behind': { bg: 'bg-amber-500/20', text: 'text-amber-400', icon: '📚' },
-          'behind': { bg: 'bg-amber-500/20', text: 'text-amber-400', icon: '⚡' }
+        // Use saved plan's progress when available
+        const progress = hasSavedPlan && savedStudyPlan?.progress
+          ? savedStudyPlan.progress
+          : { lessonsCompleted: overallStats.lessonsCompleted, lessonsTotal: overallStats.totalLessons };
+        
+        const healthStyles: Record<string, { bg: string; text: string; label: string }> = {
+          'on-track': { bg: 'bg-emerald-500/20', text: 'text-emerald-400', label: 'On Track' },
+          'slightly-behind': { bg: 'bg-amber-500/20', text: 'text-amber-400', label: 'Slightly Behind' },
+          'behind': { bg: 'bg-orange-500/20', text: 'text-orange-400', label: 'Behind Schedule' },
+          'at-risk': { bg: 'bg-red-500/20', text: 'text-red-400', label: 'At Risk' },
+          'critical': { bg: 'bg-red-600/20', text: 'text-red-500', label: 'Critical' },
+          'ahead': { bg: 'bg-emerald-500/20', text: 'text-emerald-400', label: 'Ahead of Schedule' },
         };
         
-        const style = paceStyles[paceInfo.status];
+        const style = healthStyles[healthStatus] || healthStyles['on-track'];
+        const completionPercent = Math.round((progress.lessonsCompleted / Math.max(1, progress.lessonsTotal)) * 100);
+        const examDateObj = studyPlan.examDate instanceof Date ? studyPlan.examDate : new Date(studyPlan.examDate);
+        const daysUntilExam = Math.max(0, Math.ceil((examDateObj.getTime() - Date.now()) / (1000 * 60 * 60 * 24)));
         
         return (
-        <div className="card p-6 bg-gradient-to-r from-slate-900 to-slate-800 text-white mb-6">
-          <div className="flex items-center justify-between mb-6">
+        <div className="card p-6 mb-6">
+          {/* Header */}
+          <div className="flex items-start justify-between mb-4">
             <div>
-              <h2 className="text-xl font-bold flex items-center gap-2">
-                <Target className="w-6 h-6 text-primary-400" />
-                Study Plan: {isSingleExamCourse ? course.shortName : (sectionInfo?.name ?? currentSection)}
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                <Target className="w-5 h-5 text-primary-500" />
+                {isSingleExamCourse ? course.shortName : (sectionInfo?.name ?? currentSection)} Study Plan
               </h2>
-              <p className="text-slate-400 text-sm mt-1">
-                Target Date: {format(studyPlan.examDate, 'MMMM d, yyyy')} • {studyPlan.totalDays} days remaining
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                Exam: {format(examDateObj, 'MMM d, yyyy')} ({daysUntilExam} days)
               </p>
             </div>
-            <div className="text-right hidden sm:block">
-              <div className="text-3xl font-bold text-primary-400">{studyPlan.modulesPerDay}</div>
-              <div className="text-xs text-slate-400">Lessons / Day</div>
-            </div>
+            <span className={`px-3 py-1 rounded-full text-xs font-medium ${style.bg} ${style.text}`}>
+              {style.label}
+            </span>
           </div>
           
-          {/* Pace Status Indicator */}
-          <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${style.bg} mb-4`}>
-            <span>{style.icon}</span>
-            <span className={`text-sm font-medium ${style.text}`}>{paceInfo.message}</span>
-            {paceInfo.status !== 'on-track' && paceInfo.status !== 'ahead' && (
-              <span className="text-xs text-slate-400 ml-1">
-                ({paceInfo.adjustedPace}/day needed)
-              </span>
+          {/* Progress Stats Grid */}
+          <div className="grid grid-cols-3 gap-4 mb-4">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-slate-900 dark:text-white">{completionPercent}%</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">Complete</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-slate-900 dark:text-white">{progress.lessonsCompleted}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">of {progress.lessonsTotal} lessons</div>
+            </div>
+            {currentWeekFromPlan ? (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">Week {currentWeekFromPlan.weekNumber}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">{currentWeekFromPlan.phase}</div>
+              </div>
+            ) : (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">{daysUntilExam}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">days left</div>
+              </div>
             )}
           </div>
           
-          {/* Milestones Progress Bar - positioned proportionally based on actual dates */}
-          <div className="relative pt-6 pb-2">
-            {/* Progress bar background */}
-            <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-primary-500 rounded-full transition-all duration-1000"
-                style={{ width: `${Math.min(100, Math.max(2, (overallStats.lessonsCompleted / Math.max(1, overallStats.totalLessons)) * 100))}%` }} 
-              />
-            </div>
-            
-            {/* Milestone markers - positioned proportionally */}
-            <div className="relative mt-4 h-16">
-              {studyPlan.milestones.map((m, i) => (
-                <div 
-                  key={i} 
-                  className="absolute flex flex-col items-center text-xs text-slate-400"
-                  style={{ 
-                    left: `${m.position}%`,
-                    transform: i === 0 ? 'translateX(0)' : i === studyPlan.milestones.length - 1 ? 'translateX(-100%)' : 'translateX(-50%)'
-                  }}
-                >
-                  <div className="w-2 h-2 rounded-full bg-slate-600 mb-2 ring-4 ring-slate-900" />
-                  <span className="font-medium text-slate-300 whitespace-nowrap">{m.label}</span>
-                  <span className="text-slate-400">{m.date}</span>
-                </div>
-              ))}
-            </div>
+          {/* Progress Bar */}
+          <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-primary-500 rounded-full transition-all duration-500"
+              style={{ width: `${Math.max(2, completionPercent)}%` }} 
+            />
           </div>
         </div>
         );
       })()}
+
+      {/* Exam Readiness Score - Hero Card */}
+      {readiness && (
+        <div className={clsx(
+          'card p-6 mb-6 border-2',
+          readiness.status === 'ready' && 'border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-900/20',
+          readiness.status === 'almost' && 'border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-900/20',
+          readiness.status === 'more-study' && 'border-slate-200 dark:border-slate-700'
+        )}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              {/* Circular score gauge */}
+              <div className="relative w-20 h-20">
+                <svg className="w-20 h-20 transform -rotate-90">
+                  <circle
+                    cx="40"
+                    cy="40"
+                    r="32"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    className="text-slate-200 dark:text-slate-700"
+                  />
+                  <circle
+                    cx="40"
+                    cy="40"
+                    r="32"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    className={clsx(
+                      readiness.status === 'ready' && 'text-emerald-500',
+                      readiness.status === 'almost' && 'text-amber-500',
+                      readiness.status === 'more-study' && 'text-slate-400'
+                    )}
+                    strokeDasharray={`${readiness.overall * 2.01} 201`}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className={clsx(
+                    'text-2xl font-bold',
+                    readiness.status === 'ready' && 'text-emerald-600 dark:text-emerald-400',
+                    readiness.status === 'almost' && 'text-amber-600 dark:text-amber-400',
+                    readiness.status === 'more-study' && 'text-slate-600 dark:text-slate-400'
+                  )}>
+                    {readiness.overall}
+                  </span>
+                </div>
+              </div>
+              
+              <div>
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-primary-500" />
+                  Exam Readiness
+                </h2>
+                <p className={clsx(
+                  'text-sm font-medium mt-0.5',
+                  readiness.status === 'ready' && 'text-emerald-600 dark:text-emerald-400',
+                  readiness.status === 'almost' && 'text-amber-600 dark:text-amber-400',
+                  readiness.status === 'more-study' && 'text-slate-500 dark:text-slate-400'
+                )}>
+                  {getStatusText(readiness.status)}
+                </p>
+                {readiness.overall >= 60 && (
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    AI Estimate: {Math.max(50, readiness.overall - 10)}-{Math.min(99, readiness.overall + 10)} projected score
+                  </p>
+                )}
+              </div>
+            </div>
+            
+            {/* Mini breakdown */}
+            <div className="hidden sm:grid grid-cols-4 gap-3 text-center">
+              <div>
+                <div className="text-lg font-bold text-slate-900 dark:text-white">{readiness.breakdown.accuracy}%</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Accuracy</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-slate-900 dark:text-white">{readiness.breakdown.coverage}%</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Coverage</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-slate-900 dark:text-white">{readiness.breakdown.volume}%</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Volume</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-slate-900 dark:text-white">{readiness.breakdown.lessons}%</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Lessons</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       
         {/* Units Report - Becker-style detailed breakdown */}
         <UnitsReport unitStats={unitStats} section={isSingleExamCourse ? courseId.toUpperCase() : currentSection} />

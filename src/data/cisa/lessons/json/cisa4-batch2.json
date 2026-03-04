@@ -319,10 +319,10 @@
           "knowledgeCheck": {
             "question": "During a Business Impact Analysis (BIA), which of the following BEST determines the resources and activities needed to restore critical business functions?",
             "options": [
-              "A. Recovery Time Objective (RTO).",
-              "B. Recovery Point Objective (RPO).",
-              "C. Maximum Tolerable Downtime (MTD).",
-              "D. Business Process Reengineering (BPR)."
+              "Recovery Time Objective (RTO).",
+              "Recovery Point Objective (RPO).",
+              "Maximum Tolerable Downtime (MTD).",
+              "Business Process Reengineering (BPR)."
             ],
             "correctIndex": 0,
             "explanation": "The RTO defines the maximum acceptable time a function can be unavailable, thus driving the resource and activity planning for restoration. RPO defines the acceptable data loss. MTD is the total time a business function can be disrupted before causing irreversible harm. BPR is not directly related to resource restoration during BIA.",
@@ -804,10 +804,10 @@
           "knowledgeCheck": {
             "question": "An organization is experiencing rapid growth and needs to plan for future IT infrastructure capacity. Which of the following is the MOST critical first step in the capacity management process to ensure alignment with business needs?",
             "options": [
-              "A) Implementing auto-scaling in the cloud environment.",
-              "B) Conducting a trend analysis of historical resource utilization.",
-              "C) Forecasting future requirements based on business growth plans.",
-              "D) Optimizing existing database server configurations.",
+              "Implementing auto-scaling in the cloud environment.",
+              "Conducting a trend analysis of historical resource utilization.",
+              "Forecasting future requirements based on business growth plans.",
+              "Optimizing existing database server configurations.",
               "E) Negotiating reserved instances with the cloud provider."
             ],
             "correctIndex": 2,

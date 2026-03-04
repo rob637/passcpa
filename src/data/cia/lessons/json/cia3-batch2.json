@@ -215,10 +215,10 @@
           "knowledgeCheck": {
             "question": "Which of the following process documentation methods is MOST suitable for visualizing a complex, multi-step process with several decision points?",
             "options": [
-              "A. Narrative Description",
-              "B. Flowchart",
-              "C. SIPOC Diagram",
-              "D. Procedure Manual"
+              "Narrative Description",
+              "Flowchart",
+              "SIPOC Diagram",
+              "Procedure Manual"
             ],
             "correctIndex": 1,
             "explanation": "Flowcharts excel at visually representing complex processes, showing the sequence of activities, decision points, inputs, and outputs. Narrative descriptions can become unwieldy for complex processes, and SIPOC diagrams provide a high-level overview rather than detailed process flow.",
@@ -272,10 +272,10 @@
           "knowledgeCheck": {
             "question": "Which of the following activities is considered a PRIMARY activity in Porter's Value Chain?",
             "options": [
-              "A. Human Resources",
-              "B. Technology Development",
-              "C. Inbound Logistics",
-              "D. Procurement"
+              "Human Resources",
+              "Technology Development",
+              "Inbound Logistics",
+              "Procurement"
             ],
             "correctIndex": 2,
             "explanation": "Inbound logistics is a primary activity, directly related to creating and delivering the product or service. Human resources, technology development, and procurement are support activities that enable the primary activities.",
@@ -695,10 +695,10 @@
           "knowledgeCheck": {
             "question": "An organization wants to quickly deploy and manage custom-developed applications without managing the underlying server infrastructure. Which cloud service model is MOST suitable for this requirement?",
             "options": [
-              "A) Infrastructure as a Service (IaaS)",
-              "B) Platform as a Service (PaaS)",
-              "C) Software as a Service (SaaS)",
-              "D) Business Process as a Service (BPaaS)"
+              "Infrastructure as a Service (IaaS)",
+              "Platform as a Service (PaaS)",
+              "Software as a Service (SaaS)",
+              "Business Process as a Service (BPaaS)"
             ],
             "correctIndex": 1,
             "explanation": "PaaS provides the necessary platform (hardware, operating system, and software framework) for application development and deployment, allowing the organization to focus on the application itself rather than managing the underlying infrastructure. IaaS requires the customer to manage the OS, while SaaS delivers software over the internet.",
@@ -759,10 +759,10 @@
           "knowledgeCheck": {
             "question": "Which of the following controls is MOST effective in mitigating the risk of unauthorized data access in a cloud environment?",
             "options": [
-              "A) Implementing a firewall at the perimeter of the cloud provider's network.",
-              "B) Enforcing multi-factor authentication for all user accounts accessing cloud resources.",
-              "C) Relying solely on the cloud provider's security certifications.",
-              "D) Conducting annual penetration testing of the cloud provider's infrastructure."
+              "Implementing a firewall at the perimeter of the cloud provider's network.",
+              "Enforcing multi-factor authentication for all user accounts accessing cloud resources.",
+              "Relying solely on the cloud provider's security certifications.",
+              "Conducting annual penetration testing of the cloud provider's infrastructure."
             ],
             "correctIndex": 1,
             "explanation": "Multi-factor authentication significantly reduces the risk of unauthorized access by requiring users to provide multiple forms of verification. While firewalls, certifications, and penetration testing are important, MFA provides a direct and effective layer of protection for user accounts.",
@@ -894,10 +894,10 @@
           "knowledgeCheck": {
             "question": "Which of the following BEST describes the primary focus of a Business Continuity Plan (BCP)?",
             "options": [
-              "A. Restoring IT systems and data after a cyberattack.",
-              "B. Maintaining critical business operations during a disruption.",
-              "C. Implementing security controls to prevent data breaches.",
-              "D. Ensuring compliance with regulatory requirements related to IT security."
+              "Restoring IT systems and data after a cyberattack.",
+              "Maintaining critical business operations during a disruption.",
+              "Implementing security controls to prevent data breaches.",
+              "Ensuring compliance with regulatory requirements related to IT security."
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B. A BCP focuses on the holistic approach to maintaining essential business functions during a crisis, addressing people, processes, and technology. Options A, C, and D are related to IT security and disaster recovery, but are not the primary focus of a BCP.",
@@ -951,10 +951,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST comprehensive method for testing a Disaster Recovery Plan (DRP)?",
             "options": [
-              "A. A tabletop exercise with key stakeholders.",
-              "B. A documentation review to ensure procedures are up-to-date.",
-              "C. A full interruption test involving a complete shutdown and recovery of systems.",
-              "D. A simulation test using a virtual environment.",
+              "A tabletop exercise with key stakeholders.",
+              "A documentation review to ensure procedures are up-to-date.",
+              "A full interruption test involving a complete shutdown and recovery of systems.",
+              "A simulation test using a virtual environment.",
               "E. A parallel test running the recovery systems alongside production."
             ],
             "correctIndex": 2,
@@ -1517,10 +1517,10 @@
           "knowledgeCheck": {
             "question": "During a contract and procurement audit, an internal auditor discovers that several contracts were awarded to vendors without a formal RFP/RFQ process. Which of the following risks is MOST directly associated with this finding?",
             "options": [
-              "A) Increased administrative costs due to poorly defined contract terms.",
-              "B) Potential for conflicts of interest and lack of competitive pricing.",
-              "C) Inadequate vendor performance monitoring and control.",
-              "D) Non-compliance with industry-specific regulations."
+              "Increased administrative costs due to poorly defined contract terms.",
+              "Potential for conflicts of interest and lack of competitive pricing.",
+              "Inadequate vendor performance monitoring and control.",
+              "Non-compliance with industry-specific regulations."
             ],
             "correctIndex": 1,
             "explanation": "The absence of a formal RFP/RFQ process significantly increases the risk of conflicts of interest and the potential for paying non-competitive prices. Without a structured bidding process, it's difficult to ensure fairness and transparency in vendor selection. While other options might be indirect consequences, the lack of competition is the most direct risk.",

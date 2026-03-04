@@ -1464,10 +1464,10 @@
           "knowledgeCheck": {
             "question": "An internal audit report states that a critical control is 'adequate' but lacks specific supporting evidence. Which communication quality criterion from Standard 2420 is MOST clearly violated?",
             "options": [
-              "A) Accurate",
-              "B) Objective",
-              "C) Complete",
-              "D) Concise"
+              "Accurate",
+              "Objective",
+              "Complete",
+              "Concise"
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C) Complete. While the report might be accurate in its assessment, the lack of supporting evidence indicates it's not providing all the necessary information for the reader to understand the basis of the conclusion. Accuracy relates to being free from errors, objectivity to being unbiased, and conciseness to being to the point. Completeness addresses whether all relevant information is included.",
@@ -1488,10 +1488,10 @@
           "knowledgeCheck": {
             "question": "According to Standard 2410.A1, which of the following is TRUE regarding the final communication of engagement results?",
             "options": [
-              "A) An auditor's opinion is always required, regardless of the engagement's scope.",
-              "B) Recommendations are only necessary if the auditor identifies significant deficiencies.",
-              "C) The final communication must include an auditor's opinion and/or conclusion, where appropriate.",
-              "D) Ratings must be included in all final communications, even if they are not relevant to the engagement."
+              "An auditor's opinion is always required, regardless of the engagement's scope.",
+              "Recommendations are only necessary if the auditor identifies significant deficiencies.",
+              "The final communication must include an auditor's opinion and/or conclusion, where appropriate.",
+              "Ratings must be included in all final communications, even if they are not relevant to the engagement."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C) The final communication must include an auditor's opinion and/or conclusion, where appropriate. Standard 2410.A1 states that opinions and recommendations should be included 'where appropriate,' indicating they are not universally required but dependent on the specific engagement. Option A is incorrect because opinions are not always required. Option B is incorrect because recommendations can be helpful even if deficiencies aren't 'significant'. Option D is incorrect because ratings must be relevant.",

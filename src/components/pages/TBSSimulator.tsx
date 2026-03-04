@@ -14,6 +14,7 @@ import {
   Send,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   X,
   Clock,
   FileSpreadsheet,
@@ -1099,6 +1100,7 @@ const TBSSimulator: React.FC = () => {
   const [tbsList, setTbsList] = useState<TBS[]>([]);
   const [tbsLoading, setTbsLoading] = useState(false);
   const [tbsHistory, setTbsHistory] = useState<Map<string, TBSHistoryEntry>>(new Map());
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
 
   // Use getCurrentSectionForCourse to ensure section is valid for this course
   const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
@@ -1529,41 +1531,25 @@ const TBSSimulator: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
         {/* Header */}
-        <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-6 pb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Link to={courseHome}>
-              <Button variant="ghost" size="icon" className="hover:bg-white/10 text-white">
-                <ArrowLeft className="w-5 h-5" />
-              </Button>
-            </Link>
-            <h1 className="text-2xl font-bold">Task-Based Simulations</h1>
-          </div>
-          <p className="text-teal-100">Practice realistic CPA exam simulations</p>
-
-          {/* Section Filter */}
-          <div className="mt-4 flex gap-2 flex-wrap">
-            {availableSections.map((sectionId) => {
-              const info = getSectionDisplayInfo(sectionId, courseId);
-              return (
-                <button
-                  key={sectionId}
-                  onClick={() => setSelectedSection(sectionId)}
-                  className={clsx(
-                    'px-4 py-2 rounded-lg font-medium transition-colors text-sm',
-                    selectedSection === sectionId
-                      ? 'bg-white text-teal-700'
-                      : 'bg-white/20 text-white hover:bg-white/30'
-                  )}
-                >
-                  {info?.name || sectionId}
-                </button>
-              );
-            })}
+        <div className="max-w-4xl mx-auto px-4 pt-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
+              style={{ backgroundColor: sectionInfo?.color || '#0d9488' }}
+            >
+              {sectionInfo?.shortName || currentSection}
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Task-Based Simulations</h1>
+              <p className="text-slate-600 dark:text-slate-400">
+                {sectionInfo?.name || 'All Sections'}
+              </p>
+            </div>
           </div>
         </div>
 
         {/* TBS Info Card */}
-        <div className="px-4 mt-4 mb-6">
+        <div className="max-w-4xl mx-auto px-4 mt-4 mb-6">
           <div className="bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-xl p-4">
             <div className="flex items-start gap-3">
               <FileSpreadsheet className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />
@@ -1580,8 +1566,8 @@ const TBSSimulator: React.FC = () => {
           </div>
         </div>
 
-        {/* TBS List */}
-        <div className="px-4 space-y-3">
+        {/* TBS List - Grouped by Blueprint Area */}
+        <div className="max-w-4xl mx-auto px-4 space-y-3">
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
             {getSectionDisplayInfo(selectedSection, courseId)?.name || selectedSection} Simulations
             {!tbsLoading && <span className="text-sm font-normal text-slate-500 dark:text-slate-400 ml-2">({tbsList.length})</span>}
@@ -1596,84 +1582,141 @@ const TBSSimulator: React.FC = () => {
               <AlertCircle className="w-12 h-12 mx-auto text-slate-400 mb-3" />
               <p className="text-slate-600 dark:text-slate-400">No simulations available for this section yet.</p>
             </div>
-          ) : (
-            tbsList.map((tbsItem) => {
-              const history = tbsHistory.get(tbsItem.id);
-              const isCompleted = history?.mastered;
-              const hasAttempted = history && history.attempts > 0;
+          ) : (() => {
+            // Group TBS by blueprintArea
+            const grouped = tbsList.reduce((acc, tbs) => {
+              const area = tbs.blueprintArea || 'Other';
+              if (!acc[area]) acc[area] = [];
+              acc[area].push(tbs);
+              return acc;
+            }, {} as Record<string, TBS[]>);
+            
+            const sortedAreas = Object.keys(grouped).sort((a, b) => {
+              if (a === 'Other') return 1;
+              if (b === 'Other') return -1;
+              return a.localeCompare(b);
+            });
+            
+            const toggleGroup = (area: string) => {
+              setExpandedGroups(prev => {
+                const next = new Set(prev);
+                if (next.has(area)) {
+                  next.delete(area);
+                } else {
+                  next.add(area);
+                }
+                return next;
+              });
+            };
+            
+            return sortedAreas.map((area) => {
+              const items = grouped[area];
+              const isExpanded = expandedGroups.has(area);
+              const completedCount = items.filter(t => tbsHistory.get(t.id)?.mastered).length;
               
               return (
-              <div key={tbsItem.id} className={clsx(
-                'bg-white dark:bg-slate-800 rounded-xl border overflow-hidden',
-                isCompleted 
-                  ? 'border-success-300 dark:border-success-700' 
-                  : 'border-slate-200 dark:border-slate-700'
-              )}>
-                <button
-                  onClick={() => handleSelectTBS(tbsItem)}
-                  className="w-full text-left p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-slate-900 dark:text-white truncate">
-                          {tbsItem.title || 'Untitled Simulation'}
-                        </h3>
-                        {isCompleted && (
-                          <CheckCircle className="w-4 h-4 text-success-500 flex-shrink-0" />
-                        )}
-                        {hasAttempted && !isCompleted && (
-                          <span className="px-1.5 py-0.5 bg-warning-100 dark:bg-warning-900/30 rounded text-xs font-medium text-warning-700 dark:text-warning-300">
-                            {history.bestScore}%
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        {(tbsItem.estimatedTime || tbsItem.timeEstimate) && (
-                          <span className="flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5" />
-                            {tbsItem.estimatedTime || tbsItem.timeEstimate} min
-                          </span>
-                        )}
-                        {tbsItem.requirements && tbsItem.requirements.length > 0 && (
-                          <span className="flex items-center gap-1">
-                            <FileText className="w-3.5 h-3.5" />
-                            {tbsItem.requirements.length} {tbsItem.requirements.length === 1 ? 'task' : 'tasks'}
-                          </span>
-                        )}
-                        <span className={clsx(
-                          'px-2 py-0.5 rounded-full text-xs font-medium',
-                          tbsItem.difficulty === 'easy' && 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300',
-                          tbsItem.difficulty === 'medium' && 'bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-300',
-                          tbsItem.difficulty === 'hard' && 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-300',
-                        )}>
-                          {tbsItem.difficulty}
-                        </span>
-                      </div>
-                      {/* Type badge + topic */}
-                      <div className="mt-2 flex flex-wrap gap-1.5">
-                        <span className="px-2 py-0.5 bg-teal-100 dark:bg-teal-900/30 rounded text-xs font-medium text-teal-700 dark:text-teal-300">
-                          {TBS_LABELS[tbsItem.type] || tbsItem.type}
-                        </span>
-                        {tbsItem.topic && (
-                          <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
-                            {tbsItem.topic}
-                          </span>
-                        )}
-                        {tbsItem.blueprintArea && (
-                          <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
-                            {tbsItem.blueprintArea}
-                          </span>
-                        )}
+                <div key={area} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+                  {/* Group Header - Clickable */}
+                  <button
+                    onClick={() => toggleGroup(area)}
+                    className="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <ChevronDown className={clsx(
+                        'w-5 h-5 text-slate-500 transition-transform',
+                        !isExpanded && '-rotate-90'
+                      )} />
+                      <div>
+                        <h3 className="font-semibold text-slate-900 dark:text-white text-left">{area}</h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                          {items.length} simulation{items.length !== 1 ? 's' : ''}
+                          {completedCount > 0 && (
+                            <span className="text-success-600 dark:text-success-400 ml-2">
+                              • {completedCount} completed
+                            </span>
+                          )}
+                        </p>
                       </div>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2 mt-1" />
-                  </div>
-                </button>
-              </div>
+                  </button>
+                  
+                  {/* Group Items - Collapsible */}
+                  {isExpanded && (
+                    <div className="border-t border-slate-200 dark:border-slate-700 divide-y divide-slate-100 dark:divide-slate-700">
+                      {items.map((tbsItem) => {
+                        const history = tbsHistory.get(tbsItem.id);
+                        const isCompleted = history?.mastered;
+                        const hasAttempted = history && history.attempts > 0;
+                        
+                        return (
+                          <button
+                            key={tbsItem.id}
+                            onClick={() => handleSelectTBS(tbsItem)}
+                            className={clsx(
+                              'w-full text-left p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors',
+                              isCompleted && 'bg-success-50/50 dark:bg-success-900/10'
+                            )}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1">
+                                  <h4 className="font-medium text-slate-900 dark:text-white truncate">
+                                    {tbsItem.title || 'Untitled Simulation'}
+                                  </h4>
+                                  {isCompleted && (
+                                    <CheckCircle className="w-4 h-4 text-success-500 flex-shrink-0" />
+                                  )}
+                                  {hasAttempted && !isCompleted && (
+                                    <span className="px-1.5 py-0.5 bg-warning-100 dark:bg-warning-900/30 rounded text-xs font-medium text-warning-700 dark:text-warning-300">
+                                      {history.bestScore}%
+                                    </span>
+                                  )}
+                                </div>
+                                <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                  {(tbsItem.estimatedTime || tbsItem.timeEstimate) && (
+                                    <span className="flex items-center gap-1">
+                                      <Clock className="w-3.5 h-3.5" />
+                                      {tbsItem.estimatedTime || tbsItem.timeEstimate} min
+                                    </span>
+                                  )}
+                                  {tbsItem.requirements && tbsItem.requirements.length > 0 && (
+                                    <span className="flex items-center gap-1">
+                                      <FileText className="w-3.5 h-3.5" />
+                                      {tbsItem.requirements.length} task{tbsItem.requirements.length !== 1 ? 's' : ''}
+                                    </span>
+                                  )}
+                                  <span className={clsx(
+                                    'px-2 py-0.5 rounded-full text-xs font-medium',
+                                    tbsItem.difficulty === 'easy' && 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300',
+                                    tbsItem.difficulty === 'medium' && 'bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-300',
+                                    tbsItem.difficulty === 'hard' && 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-300',
+                                  )}>
+                                    {tbsItem.difficulty}
+                                  </span>
+                                </div>
+                                {/* Type badge + topic */}
+                                <div className="mt-2 flex flex-wrap gap-1.5">
+                                  <span className="px-2 py-0.5 bg-teal-100 dark:bg-teal-900/30 rounded text-xs font-medium text-teal-700 dark:text-teal-300">
+                                    {TBS_LABELS[tbsItem.type] || tbsItem.type}
+                                  </span>
+                                  {tbsItem.topic && (
+                                    <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
+                                      {tbsItem.topic}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                              <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2 mt-1" />
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               );
-            })
-          )}
+            });
+          })()}
         </div>
       </div>
     );

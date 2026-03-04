@@ -271,10 +271,10 @@
           "knowledgeCheck": {
             "question": "Which risk identification technique is MOST reliant on the diverse perspectives of individuals from various departments within an organization?",
             "options": [
-              "A) Checklist",
-              "B) Brainstorming",
-              "C) Process Analysis",
-              "D) Scenario Analysis"
+              "Checklist",
+              "Brainstorming",
+              "Process Analysis",
+              "Scenario Analysis"
             ],
             "correctIndex": 1,
             "explanation": "Brainstorming sessions are specifically designed to gather a wide range of ideas and perspectives from individuals across different departments. This allows for a more comprehensive identification of potential risks. Checklists are predefined, process analysis focuses on specific processes, and scenario analysis explores hypothetical situations, but brainstorming directly leverages diverse viewpoints.",
@@ -295,10 +295,10 @@
           "knowledgeCheck": {
             "question": "A company identifies a risk with a 'Likely' probability and a 'Moderate' impact. According to typical risk assessment principles, how should this risk be generally categorized?",
             "options": [
-              "A) Low Priority",
-              "B) Medium Priority",
-              "C) High Priority",
-              "D) Insignificant"
+              "Low Priority",
+              "Medium Priority",
+              "High Priority",
+              "Insignificant"
             ],
             "correctIndex": 2,
             "explanation": "A 'Likely' probability and a 'Moderate' impact typically result in a 'High' priority. While the exact categorization might vary based on the specific company's risk matrix, this combination generally warrants significant attention and mitigation efforts. The higher both the likelihood and impact, the greater the priority.",

@@ -235,10 +235,10 @@
           "knowledgeCheck": {
             "question": "An organization at Level 2 (Committed) of strategic alignment maturity would MOST likely exhibit which of the following characteristics?",
             "options": [
-              "A. IT investments are primarily driven by the business strategy and provide a competitive advantage.",
-              "B. There is a documented IT strategy that is fully integrated with the business strategy.",
-              "C. The organization recognizes the need for alignment between IT and business, with some processes in place but limited communication.",
-              "D. IT decisions are made reactively, with little consideration for the overall business strategy."
+              "IT investments are primarily driven by the business strategy and provide a competitive advantage.",
+              "There is a documented IT strategy that is fully integrated with the business strategy.",
+              "The organization recognizes the need for alignment between IT and business, with some processes in place but limited communication.",
+              "IT decisions are made reactively, with little consideration for the overall business strategy."
             ],
             "correctIndex": 2,
             "explanation": "Level 2 (Committed) organizations recognize the need for alignment and have started putting some processes in place. However, communication and integration are still limited at this stage. Option D describes Level 1, and options A and B describe more mature levels of alignment.",
@@ -566,10 +566,10 @@
           "knowledgeCheck": {
             "question": "An organization is implementing a new financial system. Due to a small IT staff, the same individual is responsible for both developing and deploying the system. Which of the following is the MOST appropriate compensating control?",
             "options": [
-              "A. Implementing a robust audit trail to monitor all changes made to the system and regular review by an independent party.",
-              "B. Requiring the individual to obtain approval from the CEO for all system changes.",
-              "C. Providing the individual with additional training on secure coding practices.",
-              "D. Allowing the individual to test the system in a production environment before deployment."
+              "Implementing a robust audit trail to monitor all changes made to the system and regular review by an independent party.",
+              "Requiring the individual to obtain approval from the CEO for all system changes.",
+              "Providing the individual with additional training on secure coding practices.",
+              "Allowing the individual to test the system in a production environment before deployment."
             ],
             "correctIndex": 0,
             "explanation": "The correct answer is A. A robust audit trail and independent review provide a detective control to identify any potential fraud or errors resulting from the lack of segregation of duties. B is less effective as the CEO may lack the technical expertise to adequately review changes. C, while beneficial, doesn't directly address the SoD issue. D is a poor practice and increases risk.",
@@ -637,10 +637,10 @@
           "knowledgeCheck": {
             "question": "In a small organization with limited IT staff, which of the following roles should ideally be segregated to maintain effective segregation of duties?",
             "options": [
-              "A. Network Administrator and Help Desk Technician.",
-              "B. Database Administrator and Security Administrator.",
-              "C. System Developer and System Administrator (with Production Access).",
-              "D. Project Manager and Business Analyst."
+              "Network Administrator and Help Desk Technician.",
+              "Database Administrator and Security Administrator.",
+              "System Developer and System Administrator (with Production Access).",
+              "Project Manager and Business Analyst."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C. A System Developer should not have system administrator access to production systems. This prevents the developer from making unauthorized changes or introducing malicious code directly into the production environment. The other options present less critical SoD concerns.",
@@ -1517,10 +1517,10 @@
           "knowledgeCheck": {
             "question": "During a Business Impact Analysis (BIA), which of the following is the MOST important initial step?",
             "options": [
-              "A) Determining the Recovery Time Objective (RTO) for critical systems.",
-              "B) Identifying and documenting key business processes.",
-              "C) Assessing the financial impact of potential disruptions.",
-              "D) Establishing service level agreements (SLAs) with third-party vendors."
+              "Determining the Recovery Time Objective (RTO) for critical systems.",
+              "Identifying and documenting key business processes.",
+              "Assessing the financial impact of potential disruptions.",
+              "Establishing service level agreements (SLAs) with third-party vendors."
             ],
             "correctIndex": 1,
             "explanation": "Identifying and documenting key business processes is the foundation of a BIA. Without knowing the key processes, it is impossible to accurately assess their impact or determine appropriate recovery objectives. The other options are important but follow the initial identification of processes.",
@@ -1834,10 +1834,10 @@
           "knowledgeCheck": {
             "question": "Which of the following BEST describes the primary focus of 'Run the Business' (RTB) IT portfolio investments?",
             "options": [
-              "A. Implementing new strategic initiatives to gain a competitive advantage.",
-              "B. Maintaining existing systems and ensuring operational stability.",
-              "C. Investing in digital transformation projects to modernize the IT infrastructure.",
-              "D. Developing innovative solutions to disrupt the market."
+              "Implementing new strategic initiatives to gain a competitive advantage.",
+              "Maintaining existing systems and ensuring operational stability.",
+              "Investing in digital transformation projects to modernize the IT infrastructure.",
+              "Developing innovative solutions to disrupt the market."
             ],
             "correctIndex": 1,
             "explanation": "RTB investments are primarily focused on maintaining existing systems and ensuring operational stability. This involves activities like infrastructure refresh and keeping the lights on. Options A, C, and D are more aligned with 'Grow the Business' or 'Transform the Business' investments.",
@@ -1891,10 +1891,10 @@
           "knowledgeCheck": {
             "question": "An organization is evaluating a project that requires a significant upfront investment in new hardware and software (CapEx) but promises to reduce ongoing maintenance costs (OpEx) significantly. Which financial metric would be MOST helpful in determining the long-term value and justification for this investment?",
             "options": [
-              "A. Immediate cost savings in the first year.",
-              "B. Total Cost of Ownership (TCO) over the project's lifecycle.",
-              "C. The initial purchase price of the hardware and software.",
-              "D. The impact on the current year's operating budget."
+              "Immediate cost savings in the first year.",
+              "Total Cost of Ownership (TCO) over the project's lifecycle.",
+              "The initial purchase price of the hardware and software.",
+              "The impact on the current year's operating budget."
             ],
             "correctIndex": 1,
             "explanation": "TCO provides a comprehensive view of all costs associated with the project over its entire lifecycle, including acquisition, operating, hidden, and end-of-life costs. This allows for a more accurate assessment of the long-term value compared to focusing solely on initial costs or short-term savings.  The other options provide only a partial picture of the financial impact.",

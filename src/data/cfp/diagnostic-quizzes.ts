@@ -1522,7 +1522,7 @@ export const CFP_EST_DIAGNOSTIC: DiagnosticQuiz = {
     },
     {
       id: 'cfp-est-d20',
-      question: 'The Thompson family is considering various trust structures for estate planning. A key characteristic of an irrevocable trust is that:\n\nA) Assets transferred are generally removed from the grantor\'s estate\nB) The grantor can change beneficiaries at any time',
+      question: 'The Thompson family is considering various trust structures for estate planning. A key characteristic of an irrevocable trust is that:',
       options: ['Assets transferred are generally removed from the grantor\\', 'The grantor retains significant control over trust assets.', 'Assets are included in the grantor\'s estate at death.', 'The grantor can change beneficiaries at any time, provided they retain a power of appointment.'],
       correctAnswer: 0,
       blueprintArea: 'EST-1',

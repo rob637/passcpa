@@ -169,10 +169,10 @@
           "knowledgeCheck": {
             "question": "An internal audit engagement is initiated to assess the efficiency and effectiveness of the company's new supply chain management system. The primary objective is to identify areas for improvement in the process to optimize costs and reduce lead times. Which type of audit engagement is MOST likely being performed?",
             "options": [
-              "A) Compliance Audit",
-              "B) Financial Audit",
-              "C) Operational Audit",
-              "D) IT Audit"
+              "Compliance Audit",
+              "Financial Audit",
+              "Operational Audit",
+              "IT Audit"
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C) Operational Audit. Operational audits focus on evaluating the efficiency and effectiveness of operations, processes, and outcomes, and often include recommendations for improvement. The scenario describes an assessment of the supply chain management system's efficiency and effectiveness, fitting the definition of an operational audit.",
@@ -193,10 +193,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is LEAST likely to be a primary driver for selecting an internal audit engagement?",
             "options": [
-              "A) A significant increase in customer complaints related to order fulfillment.",
-              "B) A recent change in key personnel within the accounting department.",
-              "C) The internal audit department's budget surplus at the end of the fiscal year.",
-              "D) A new regulation impacting the company's environmental compliance obligations."
+              "A significant increase in customer complaints related to order fulfillment.",
+              "A recent change in key personnel within the accounting department.",
+              "The internal audit department's budget surplus at the end of the fiscal year.",
+              "A new regulation impacting the company's environmental compliance obligations."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C) The internal audit department's budget surplus at the end of the fiscal year. Engagement selection should be driven by risk, regulations, management requests, audit committee priorities, or other factors relevant to the organization's objectives. A budget surplus is not a valid reason to initiate an audit engagement.",
@@ -575,10 +575,10 @@
           "knowledgeCheck": {
             "question": "An internal auditor discovers a minor discrepancy during a routine audit of travel expenses. Applying due professional care, what is the auditor's MOST appropriate next step?",
             "options": [
-              "A) Immediately escalate the issue to senior management, assuming potential fraud.",
-              "B) Ignore the discrepancy as immaterial and continue with the audit.",
-              "C) Investigate the discrepancy further to determine its nature, cause, and potential impact.",
-              "D) Report the discrepancy in the final audit report without further investigation."
+              "Immediately escalate the issue to senior management, assuming potential fraud.",
+              "Ignore the discrepancy as immaterial and continue with the audit.",
+              "Investigate the discrepancy further to determine its nature, cause, and potential impact.",
+              "Report the discrepancy in the final audit report without further investigation."
             ],
             "correctIndex": 2,
             "explanation": "Due professional care requires the auditor to investigate discrepancies to understand their nature and potential impact, rather than jumping to conclusions or ignoring them. Escalating or reporting without investigation would be premature.",

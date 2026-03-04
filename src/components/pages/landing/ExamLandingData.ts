@@ -57,6 +57,14 @@ export interface CompetitorRow {
   highlight?: boolean;
 }
 
+export interface Testimonial {
+  name: string;
+  role: string;
+  avatar?: string;
+  quote: string;
+  examType?: string; // e.g. 'CPA', 'EA'
+}
+
 export interface ExamLandingConfig {
   // Basic info
   id: string;
@@ -89,6 +97,9 @@ export interface ExamLandingConfig {
     names: string[];  // 2 or 3 competitors
     data: CompetitorRow[];
   };
+
+  // Testimonials (optional - overrides shared ones if provided)
+  testimonials?: Testimonial[];
   
   // Special banners/notices (optional)
   notices?: Array<{
@@ -155,6 +166,20 @@ export const SHARED_WHY_VORAPREP = [
     description: 'Full offline mode with mobile support. Study on the subway, in a coffee shop, or anywhere — your progress syncs automatically.',
     stat: 'Mobile Ready',
   },
+];
+
+export const SHARED_TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Evan",
+    role: "Candidate",
+    quote: "I love Vora and the content on the app. I enjoy how the question types directly ask what the topic is looking for. Other platforms make their questions based around long complex scenarios... The shorter questions used in Vora help me better understand the concept."
+  },
+  {
+    name: "Emily",
+    role: "CPA Audit Candidate",
+    quote: "VoraPrep has been working pretty well for me. I originally was using UWorld and I'm studying for Audit currently. It seems to work nicely on my phone... as I've still been using UWorld while at my desk but VoraPrep while out and about. All in all seems like a great study tool!",
+    examType: "CPA"
+  }
 ];
 
 // ============================================================================

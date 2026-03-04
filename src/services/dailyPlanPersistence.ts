@@ -31,9 +31,12 @@ import {
   getDocs,
 } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { DailyPlan, DailyActivity, UserStudyState, RecentDaySnapshot, ActivityFeedbackRecord, ActivityFeedbackStats, generateDailyPlan } from './dailyPlanService';
+import { DailyPlan, DailyActivity, UserStudyState, RecentDaySnapshot, ActivityFeedbackRecord, ActivityFeedbackStats, generateDailyPlan, StudyPlanContext } from './dailyPlanService';
+import { fetchLessonsBySection } from './lessonService';
 import logger from '../utils/logger';
 import type { CourseId } from '../types';
+import type { StudyPlan } from '../types/studyPlan';
+import { isWithinInterval } from 'date-fns';
 
 /**
  * Fetch adaptive engine data (review-due questions, weak areas) for a given course.
@@ -93,6 +96,110 @@ async function getAdaptiveEngineData(courseId: CourseId): Promise<{ questionsDue
   } catch (err) {
     logger.warn(`Could not fetch adaptive engine data for ${courseId}:`, err);
     return empty;
+  }
+}
+
+/**
+ * Fetch the user's study plan and calculate context for the current week.
+ * Returns lessons scheduled for this week so the daily plan can prioritize them.
+ */
+async function getStudyPlanContext(
+  userId: string,
+  courseId: CourseId,
+  section: string
+): Promise<StudyPlanContext | null> {
+  try {
+    // Fetch the study plan from Firestore
+    const planKey = `${courseId}_${section}`;
+    const planDoc = await getDoc(doc(db, 'users', userId, 'studyPlans', planKey));
+    
+    if (!planDoc.exists()) {
+      logger.info(`No study plan found for ${planKey}`);
+      return null;
+    }
+    
+    const plan = planDoc.data() as StudyPlan;
+    
+    // Find current week
+    const today = new Date();
+    const currentWeek = plan.weeks.find(w => {
+      const start = new Date(w.startDate);
+      const end = new Date(w.endDate);
+      return isWithinInterval(today, { start, end });
+    });
+    
+    if (!currentWeek) {
+      logger.info(`No current week found in study plan for ${planKey}`);
+      return null;
+    }
+    
+    // Fetch lessons for this section
+    const lessons = await fetchLessonsBySection(section, courseId);
+    if (lessons.length === 0) {
+      return null;
+    }
+    
+    // Calculate which lessons belong to current week (same logic as StudyPlan.tsx)
+    const totalLessons = lessons.length;
+    const learningWeeks = plan.weeks.filter(w => 
+      ['foundation', 'building', 'reinforcement'].includes(w.phase)
+    ).length;
+    
+    if (learningWeeks === 0 || currentWeek.goals.lessons === 0) {
+      return {
+        currentWeek: currentWeek.weekNumber,
+        phase: currentWeek.phase,
+        weekLessonIds: [],
+        completedLessonIds: [],
+        focusTopics: [],
+        weekGoals: currentWeek.goals,
+      };
+    }
+    
+    // Calculate cumulative lessons up to this week
+    let lessonsBeforeThisWeek = 0;
+    for (const w of plan.weeks) {
+      if (w.weekNumber >= currentWeek.weekNumber) break;
+      lessonsBeforeThisWeek += w.goals.lessons;
+    }
+    
+    const startIndex = Math.min(lessonsBeforeThisWeek, totalLessons);
+    const endIndex = Math.min(startIndex + currentWeek.goals.lessons, totalLessons);
+    const weekLessons = lessons.slice(startIndex, endIndex);
+    const weekLessonIds = weekLessons.map(l => l.id);
+    
+    // Fetch completed lessons from user's lesson progress collection
+    let completedLessonIds: string[] = [];
+    try {
+      const lessonsCollection = collection(db, 'users', userId, 'lessons');
+      const lessonsSnapshot = await getDocs(lessonsCollection);
+      completedLessonIds = lessonsSnapshot.docs
+        .filter(docSnap => {
+          const data = docSnap.data();
+          return data.status === 'completed' || data.completedAt || data.progress >= 100;
+        })
+        .map(docSnap => docSnap.id);
+      logger.info(`Found ${completedLessonIds.length} completed lessons for user`);
+    } catch (err) {
+      logger.warn('Could not fetch lesson progress, assuming none completed:', err);
+    }
+    
+    // Extract focus topics from this week's lessons
+    const focusTopics = [...new Set(weekLessons.flatMap(l => l.topics || []))];
+    
+    logger.info(`Study plan context for ${planKey}: Week ${currentWeek.weekNumber}, ${weekLessonIds.length} lessons`);
+    
+    return {
+      currentWeek: currentWeek.weekNumber,
+      phase: currentWeek.phase,
+      weekLessonIds,
+      completedLessonIds,
+      focusTopics,
+      weekGoals: currentWeek.goals,
+    };
+  } catch (err) {
+    logger.warn(`Could not fetch study plan context for ${userId}/${courseId}/${section}:`, err);
+    return null;
   }
 }
 
@@ -481,12 +588,27 @@ export const getOrCreateTodaysPlan = async (
     // Graceful degradation — plan generates without adaptive engine data
   }
 
+  // Fetch study plan context for the current week's lessons
+  let studyPlanContext: StudyPlanContext | undefined;
+  try {
+    // Use the original section (not cacheSection) for study plan lookup
+    const sectionForPlan = state.section || cacheSection;
+    const context = await getStudyPlanContext(userId, courseId, sectionForPlan);
+    if (context) {
+      studyPlanContext = context;
+      logger.info(`Loaded study plan context: Week ${context.currentWeek}, ${context.weekLessonIds.length} lessons`);
+    }
+  } catch {
+    // Graceful degradation — plan generates without study plan integration
+  }
+
   const enrichedState: UserStudyState = {
     ...state,
     recentHistory,
     personalizedDurations,
     activityFeedback,
     ...(adaptiveQuestionsDue ? { questionsDue: adaptiveQuestionsDue } : {}),
+    ...(studyPlanContext ? { studyPlanContext } : {}),
   };
   const newPlan = await generateDailyPlan(enrichedState, courseId);
 

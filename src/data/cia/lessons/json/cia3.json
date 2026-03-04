@@ -604,7 +604,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Scope Creep Scenario",
           "knowledgeCheck": {
             "question": "During a project to implement a new inventory management system, the project sponsor requests the addition of a customer relationship management (CRM) module, which was not initially included in the project scope. This addition is approved without adjusting the project's timeline or budget. What type of project risk is most clearly demonstrated in this scenario?",

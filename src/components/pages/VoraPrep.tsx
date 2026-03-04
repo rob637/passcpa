@@ -574,8 +574,8 @@ const VoraPrep = () => {
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-slate-950 py-12 px-6 border-t border-slate-800">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
+          <div className="grid md:grid-cols-5 gap-8 mb-8">
+            <div className="md:col-span-1">
               <img src="/logo-white.svg" alt="VoraPrep" width="120" height="32" className="h-8 mb-4" />
               <p className="text-slate-400 text-sm leading-relaxed">
                 Expert-crafted exam prep for accounting and finance professionals. 
@@ -591,6 +591,15 @@ const VoraPrep = () => {
                 <li><Link to="/cia" className="hover:text-white transition-colors">CIA Exam Prep</Link></li>
                 <li><Link to="/cfp" className="hover:text-white transition-colors">CFP Exam Prep</Link></li>
                 <li><Link to="/cisa" className="hover:text-white transition-colors">CISA Exam Prep</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-4">Resources</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><Link to="/blog" className="hover:text-white transition-colors">Study Blog</Link></li>
+                <li><Link to="/diagnostic/cpa-far-mini" className="hover:text-white transition-colors text-emerald-400 font-medium">Free CPA Quiz</Link></li>
+                <li><Link to="/diagnostic/ea-see1-mini" className="hover:text-white transition-colors text-emerald-400 font-medium">Free EA Quiz</Link></li>
+                <li><Link to="/blog/cpa-exam-study-schedule-2026" className="hover:text-white transition-colors">Study Schedules</Link></li>
               </ul>
             </div>
             <div>

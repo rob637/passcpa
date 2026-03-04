@@ -4284,10 +4284,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is NOT a required component of the financial section of a state or local government's Annual Comprehensive Financial Report (ACFR)?",
             "options": [
-              "A) Independent auditor's report",
-              "B) Management's Discussion and Analysis (MD&A)",
-              "C) A forecast of future revenues and expenditures",
-              "D) Notes to financial statements"
+              "Independent auditor's report",
+              "Management's Discussion and Analysis (MD&A)",
+              "A forecast of future revenues and expenditures",
+              "Notes to financial statements"
             ],
             "correctIndex": 2,
             "explanation": "The financial section of the ACFR includes the independent auditor's report, MD&A, basic financial statements, notes to the financial statements, required supplementary information (RSI), and combining and individual fund statements. A forecast of future revenues and expenditures is not a required component.",
@@ -5353,10 +5353,10 @@
           "knowledgeCheck": {
             "question": "Which of the following statements BEST describes a financial projection?",
             "options": [
-              "A. It presents an entity's expected financial results based on management's best estimate of future conditions.",
-              "B. It presents an entity's hypothetical financial results given one or more hypothetical assumptions.",
-              "C. It is required to be audited by an independent CPA.",
-              "D. It is synonymous with a financial forecast and the terms can be used interchangeably."
+              "It presents an entity's expected financial results based on management's best estimate of future conditions.",
+              "It presents an entity's hypothetical financial results given one or more hypothetical assumptions.",
+              "It is required to be audited by an independent CPA.",
+              "It is synonymous with a financial forecast and the terms can be used interchangeably."
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B. A financial projection presents hypothetical results and is based on 'what if' assumptions. Option A describes a forecast. Option C is incorrect as projections are generally not audited. Option D is incorrect because forecasts and projections have distinct meanings.",
@@ -7431,10 +7431,10 @@
           "knowledgeCheck": {
             "question": "A company is implementing a balanced scorecard. They have identified a need to improve employee skills and knowledge to better serve customers. According to the balanced scorecard framework, which perspective does this initiative primarily address?",
             "options": [
-              "A) Financial",
-              "B) Customer",
-              "C) Internal Processes",
-              "D) Learning & Growth"
+              "Financial",
+              "Customer",
+              "Internal Processes",
+              "Learning & Growth"
             ],
             "correctIndex": 3,
             "explanation": "The Learning & Growth perspective focuses on developing the skills and capabilities of employees, which directly supports the other perspectives. Improving employee skills enables better internal processes, leading to improved customer satisfaction and ultimately, better financial performance.",
@@ -7495,10 +7495,10 @@
           "knowledgeCheck": {
             "question": "Which of the following characteristics of a good KPI is MOST directly related to ensuring that the KPI contributes to the overall strategic goals of the organization?",
             "options": [
-              "A) Specific",
-              "B) Measurable",
-              "C) Achievable",
-              "D) Relevant"
+              "Specific",
+              "Measurable",
+              "Achievable",
+              "Relevant"
             ],
             "correctIndex": 3,
             "explanation": "Relevance is the key characteristic that ensures a KPI is aligned with the organization's strategic objectives. A relevant KPI directly reflects progress towards achieving those goals. While the other characteristics are important, they don't guarantee strategic alignment.",
@@ -7792,10 +7792,10 @@
           "knowledgeCheck": {
             "question": "A manufacturing company produces a product that requires multiple inspections throughout the production process. These inspections, while necessary to ensure quality, do not directly add value to the product. According to Lean principles, which type of waste does this represent?",
             "options": [
-              "A) Transportation",
-              "B) Overprocessing",
-              "C) Defects",
-              "D) Waiting"
+              "Transportation",
+              "Overprocessing",
+              "Defects",
+              "Waiting"
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B) Overprocessing. Overprocessing refers to activities that do not add value from the customer's perspective, such as unnecessary inspections or features.",
@@ -7816,10 +7816,10 @@
           "knowledgeCheck": {
             "question": "A company identifies a machine as the primary constraint in its production process. After maximizing the throughput of this machine, the next step in applying the Theory of Constraints is to:",
             "options": [
-              "A) Eliminate all other non-value-added activities.",
-              "B) Subordinate all other activities to support the constraint.",
-              "C) Elevate the constraint by adding additional capacity.",
-              "D) Identify a new constraint in a different part of the process."
+              "Eliminate all other non-value-added activities.",
+              "Subordinate all other activities to support the constraint.",
+              "Elevate the constraint by adding additional capacity.",
+              "Identify a new constraint in a different part of the process."
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B) Subordinate all other activities to support the constraint. Subordination involves aligning all other processes and resources to ensure the constraint can operate at its maximum capacity.",
@@ -8007,10 +8007,10 @@
           "knowledgeCheck": {
             "question": "Which component of the COSO ERM Framework directly addresses the organization's commitment to ethical values and establishes accountability for risk management responsibilities?",
             "options": [
-              "A) Strategy & Objective-Setting",
-              "B) Governance & Culture",
-              "C) Performance",
-              "D) Information & Communication"
+              "Strategy & Objective-Setting",
+              "Governance & Culture",
+              "Performance",
+              "Information & Communication"
             ],
             "correctIndex": 1,
             "explanation": "Governance & Culture encompasses the organization's tone at the top, ethical values, and commitment to oversight. This component establishes the foundation for all other components of ERM.",
@@ -8031,10 +8031,10 @@
           "knowledgeCheck": {
             "question": "Under the COSO ERM Framework, within which component does the identification and assessment of risks primarily occur?",
             "options": [
-              "A) Governance & Culture",
-              "B) Strategy & Objective-Setting",
-              "C) Performance",
-              "D) Review & Revision"
+              "Governance & Culture",
+              "Strategy & Objective-Setting",
+              "Performance",
+              "Review & Revision"
             ],
             "correctIndex": 2,
             "explanation": "The Performance component focuses on identifying and assessing risks that may affect the organization's ability to achieve its objectives. This includes risk prioritization and response.",
@@ -9269,7 +9269,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Fair Value Definition Quiz",
           "knowledgeCheck": {
             "question": "ABC Corp. is determining the fair value of a specialized piece of equipment. They have identified two potential markets: Market A, where similar equipment is frequently traded, and Market B, where only distressed sales occur. In Market A, the equipment would sell for $100,000. In Market B, the equipment would sell for $75,000. Transportation costs to Market A are $5,000 and to Market B are negligible. Assuming ABC Corp. has access to both markets, what amount represents the fair value of the equipment?",
@@ -9832,7 +9832,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Acquisition Date Knowledge Check",
           "knowledgeCheck": {
             "question": "Parent Co. acquired all of Subsidiary Co.'s outstanding common stock on December 27, Year 1. However, due to regulatory delays, Parent Co. did not gain operational control of Subsidiary Co. until January 15, Year 2. Under U.S. GAAP, what is the acquisition date for the business combination?",
@@ -9856,7 +9856,7 @@
           }
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Intangible Asset Identification",
           "knowledgeCheck": {
             "question": "Acme Corp. acquires Baker Co. Baker Co. has a highly skilled and dedicated workforce. Under ASC 805, how should Acme Corp. account for Baker Co.'s workforce?",
@@ -11161,10 +11161,10 @@
           "knowledgeCheck": {
             "question": "Management is preparing prospective financial statements to be included in a loan application. They believe the most likely scenario is a 10% increase in sales. Which type of prospective financial statement is most appropriate?",
             "options": [
-              "A) Forecast",
-              "B) Projection",
-              "C) Pro Forma",
-              "D) Partial Presentation"
+              "Forecast",
+              "Projection",
+              "Pro Forma",
+              "Partial Presentation"
             ],
             "correctIndex": 0,
             "explanation": "A Forecast is based on expected future conditions and results. A Projection is based on hypothetical assumptions ('what if' scenarios). Since management believes the 10% increase is the 'most likely scenario', a forecast is appropriate.",
@@ -11218,10 +11218,10 @@
           "knowledgeCheck": {
             "question": "According to SEC Regulation S-X Article 11, what type of adjustments are required when filing pro forma financial statements related to a significant acquisition?",
             "options": [
-              "A) Only transaction adjustments are required.",
-              "B) Only historical period adjustments are required.",
-              "C) Both historical period adjustments and transaction adjustments are required.",
-              "D) No adjustments are required if the acquisition is immaterial."
+              "Only transaction adjustments are required.",
+              "Only historical period adjustments are required.",
+              "Both historical period adjustments and transaction adjustments are required.",
+              "No adjustments are required if the acquisition is immaterial."
             ],
             "correctIndex": 2,
             "explanation": "SEC Regulation S-X Article 11 requires both historical period adjustments (to reflect the acquired entity's historical performance) and transaction adjustments (to reflect the impact of the acquisition itself) when filing pro forma financial statements.",

@@ -634,27 +634,18 @@ const ExamSimulator: React.FC = () => {
 
   if (examState === 'intro') {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-        <div className="max-w-3xl w-full">
-          <button
-            onClick={() => navigate(courseHome)}
-            className="mb-6 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
-          </button>
+      <div className="max-w-3xl mx-auto py-6 px-4">
+          {/* Header - outside the card */}
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+              Exams
+            </h1>
+            <p className="text-slate-600 dark:text-slate-400">
+              Practice exams and simulations for {sectionInfo?.name || currentSection}
+            </p>
+          </div>
 
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-primary-600 p-8 text-white">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
-                <FileText className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-3xl font-bold mb-2">Exam Simulation</h1>
-              <p className="text-primary-100 text-lg">
-                Full {sectionInfo?.name} ({currentSection}) Exam Experience
-              </p>
-            </div>
-
             <div className="p-8">
               {/* Exam Mode Selection */}
               <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-4">Select Exam Type</h3>
@@ -823,15 +814,13 @@ const ExamSimulator: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 
   // Mock Exam Selection Screen
   if (examState === 'mock-selection') {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-        <div className="max-w-4xl w-full">
+      <div className="max-w-4xl mx-auto py-6 px-4">
           <button
             onClick={() => {
               setExamState('intro');
@@ -844,21 +833,20 @@ const ExamSimulator: React.FC = () => {
           </button>
 
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-8 text-white">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <Target className="w-7 h-7 text-white" />
+            <div className="p-8 border-b border-slate-100 dark:border-slate-700">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center text-white font-bold">
+                  <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold">Curated Mock Exams</h1>
-                  <p className="text-primary-100">
+                  <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                    Curated Mock Exams
+                  </h1>
+                  <p className="text-slate-600 dark:text-slate-400">
                     Blueprint-balanced exams for {currentSection}
                   </p>
                 </div>
               </div>
-              <p className="text-primary-100 text-sm">
-                Each mock exam is carefully designed to match the {course?.metadata?.examProvider || 'official'} Blueprint weights and question distribution.
-              </p>
             </div>
 
             <div className="p-6">
@@ -954,7 +942,6 @@ const ExamSimulator: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 
@@ -1145,6 +1132,88 @@ const ExamSimulator: React.FC = () => {
                 </>
               )}
 
+              {/* Review Questions Button */}
+              <div className="prometric-results-divider" />
+              <div className="prometric-results-section">
+                <button
+                  onClick={() => setReviewExpanded(!reviewExpanded)}
+                  className="prometric-btn w-full flex items-center justify-between"
+                >
+                  <span>Review Questions ({results.incorrect} incorrect)</span>
+                  <span>{reviewExpanded ? '▲' : '▼'}</span>
+                </button>
+                
+                {reviewExpanded && (
+                  <div className="mt-4 max-h-[40vh] overflow-y-auto">
+                    <div className="flex gap-2 mb-3">
+                      <button
+                        onClick={() => setReviewFilter('incorrect')}
+                        className={clsx(
+                          'prometric-btn text-sm',
+                          reviewFilter === 'incorrect' && 'prometric-btn-primary'
+                        )}
+                      >
+                        Incorrect Only
+                      </button>
+                      <button
+                        onClick={() => setReviewFilter('all')}
+                        className={clsx(
+                          'prometric-btn text-sm',
+                          reviewFilter === 'all' && 'prometric-btn-primary'
+                        )}
+                      >
+                        All Questions
+                      </button>
+                    </div>
+                    
+                    {questions
+                      .map((q, idx) => ({ question: q, index: idx }))
+                      .filter(({ question }) => {
+                        const userAnswer = answers[question.id];
+                        const isCorrect = userAnswer === question.correctAnswer;
+                        return reviewFilter === 'all' || !isCorrect;
+                      })
+                      .map(({ question, index }) => {
+                        const userAnswer = answers[question.id];
+                        const isCorrect = userAnswer === question.correctAnswer;
+                        const userAnswerText = userAnswer !== undefined && question.options 
+                          ? question.options[userAnswer] 
+                          : 'Not answered';
+                        const correctAnswerText = question.options 
+                          ? question.options[question.correctAnswer] 
+                          : '';
+                        
+                        return (
+                          <div 
+                            key={question.id} 
+                            className="mb-4 p-3 border border-gray-400"
+                            style={{ backgroundColor: isCorrect ? '#e6f5e6' : '#ffe6e6' }}
+                          >
+                            <div className="flex items-start gap-2 mb-2">
+                              <span className="font-bold">Q{index + 1}.</span>
+                              <span className={isCorrect ? 'text-green-700' : 'text-red-700'}>
+                                {isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                              </span>
+                            </div>
+                            <p className="mb-2 text-sm">{question.question}</p>
+                            <div className="text-sm space-y-1">
+                              <p><strong>Your answer:</strong> {userAnswerText}</p>
+                              {!isCorrect && (
+                                <p className="text-green-700"><strong>Correct answer:</strong> {correctAnswerText}</p>
+                              )}
+                              {question.explanation && (
+                                <div className="mt-2 p-2 bg-white border border-gray-300 text-sm">
+                                  <strong>Explanation:</strong> {question.explanation}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                )}
+              </div>
+
               <div className="prometric-results-divider" />
 
               <div className="prometric-results-actions">
@@ -1308,6 +1377,130 @@ const ExamSimulator: React.FC = () => {
               </div>
             </div>
           )}
+
+          {/* Review Questions Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden mb-6">
+            <button
+              onClick={() => setReviewExpanded(!reviewExpanded)}
+              className="w-full flex items-center justify-between p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+            >
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                  Review Questions
+                </h3>
+                <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-1 rounded-full">
+                  {results.incorrect} incorrect
+                </span>
+              </div>
+              <ChevronDown className={clsx(
+                'w-5 h-5 text-slate-400 transition-transform',
+                reviewExpanded && 'rotate-180'
+              )} />
+            </button>
+            
+            {reviewExpanded && (
+              <div className="border-t border-slate-200 dark:border-slate-700">
+                {/* Filter tabs */}
+                <div className="flex gap-2 p-4 border-b border-slate-200 dark:border-slate-700">
+                  <button
+                    onClick={() => setReviewFilter('incorrect')}
+                    className={clsx(
+                      'px-3 py-1.5 text-sm font-medium rounded-lg transition-colors',
+                      reviewFilter === 'incorrect'
+                        ? 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
+                    )}
+                  >
+                    Incorrect ({results.incorrect})
+                  </button>
+                  <button
+                    onClick={() => setReviewFilter('all')}
+                    className={clsx(
+                      'px-3 py-1.5 text-sm font-medium rounded-lg transition-colors',
+                      reviewFilter === 'all'
+                        ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
+                    )}
+                  >
+                    All Questions ({questions.length})
+                  </button>
+                </div>
+                
+                {/* Question list */}
+                <div className="divide-y divide-slate-200 dark:divide-slate-700 max-h-[60vh] overflow-y-auto">
+                  {questions
+                    .map((q, idx) => ({ question: q, index: idx }))
+                    .filter(({ question }) => {
+                      const userAnswer = answers[question.id];
+                      const isCorrect = userAnswer === question.correctAnswer;
+                      return reviewFilter === 'all' || !isCorrect;
+                    })
+                    .map(({ question, index }) => {
+                      const userAnswer = answers[question.id];
+                      const isCorrect = userAnswer === question.correctAnswer;
+                      const userAnswerText = userAnswer !== undefined && question.options 
+                        ? question.options[userAnswer] 
+                        : 'Not answered';
+                      const correctAnswerText = question.options 
+                        ? question.options[question.correctAnswer] 
+                        : '';
+                      
+                      return (
+                        <div key={question.id} className="p-4">
+                          <div className="flex items-start gap-3 mb-3">
+                            <div className={clsx(
+                              'w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold',
+                              isCorrect 
+                                ? 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-400' 
+                                : 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400'
+                            )}>
+                              {isCorrect ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                                Question {index + 1} • {question.topic || question.blueprintArea || 'General'}
+                              </p>
+                              <p className="text-sm text-slate-900 dark:text-white font-medium">
+                                {question.question}
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div className="ml-11 space-y-2">
+                            <div className={clsx(
+                              'p-3 rounded-lg text-sm',
+                              isCorrect 
+                                ? 'bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800'
+                                : 'bg-error-50 dark:bg-error-900/20 border border-error-200 dark:border-error-800'
+                            )}>
+                              <span className="font-medium text-slate-700 dark:text-slate-300">Your answer: </span>
+                              <span className={isCorrect ? 'text-success-700 dark:text-success-400' : 'text-error-700 dark:text-error-400'}>
+                                {userAnswerText}
+                              </span>
+                            </div>
+                            
+                            {!isCorrect && (
+                              <div className="p-3 rounded-lg text-sm bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800">
+                                <span className="font-medium text-slate-700 dark:text-slate-300">Correct answer: </span>
+                                <span className="text-success-700 dark:text-success-400">{correctAnswerText}</span>
+                              </div>
+                            )}
+                            
+                            {question.explanation && (
+                              <div className="p-3 rounded-lg text-sm bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
+                                <p className="font-medium text-slate-700 dark:text-slate-300 mb-1">Explanation:</p>
+                                <p className="text-slate-600 dark:text-slate-400">{question.explanation}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Action Buttons */}
           <div className="flex gap-4">

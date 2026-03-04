@@ -254,10 +254,10 @@
           "knowledgeCheck": {
             "question": "An organization is developing a new accounting system. The system requirements are well-defined and unlikely to change significantly throughout the project lifecycle. The organization also prioritizes comprehensive documentation for audit purposes. Which project management methodology would be MOST suitable?",
             "options": [
-              "A) Agile",
-              "B) Scrum",
-              "C) Waterfall",
-              "D) Kanban"
+              "Agile",
+              "Scrum",
+              "Waterfall",
+              "Kanban"
             ],
             "correctIndex": 2,
             "explanation": "The Waterfall methodology is best suited for projects with well-defined, stable requirements and a need for comprehensive documentation. Agile and Scrum are better suited for projects with evolving requirements and a need for flexibility. Kanban is a workflow management method, not a full project management methodology.",
@@ -311,10 +311,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the PRIMARY responsibility of the Scrum Master?",
             "options": [
-              "A) Defining the project scope and budget.",
-              "B) Prioritizing the product backlog and managing stakeholder expectations.",
-              "C) Facilitating the Scrum process and removing impediments for the development team.",
-              "D) Assigning tasks to the development team members and tracking their progress."
+              "Defining the project scope and budget.",
+              "Prioritizing the product backlog and managing stakeholder expectations.",
+              "Facilitating the Scrum process and removing impediments for the development team.",
+              "Assigning tasks to the development team members and tracking their progress."
             ],
             "correctIndex": 2,
             "explanation": "The Scrum Master's primary responsibility is to facilitate the Scrum process, ensuring the team follows the Scrum framework and removing any obstacles that hinder their progress. While they may contribute to other areas, their core focus is on facilitating the process.",
@@ -1286,10 +1286,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important objective of a post-implementation review (PIR)?",
             "options": [
-              "A) To determine if the project team followed the project plan exactly.",
-              "B) To identify all possible future projects that could leverage the current system.",
-              "C) To assess the extent to which the project achieved its intended benefits and identify lessons learned for future projects.",
-              "D) To reprimand project team members for any deviations from the original budget or timeline."
+              "To determine if the project team followed the project plan exactly.",
+              "To identify all possible future projects that could leverage the current system.",
+              "To assess the extent to which the project achieved its intended benefits and identify lessons learned for future projects.",
+              "To reprimand project team members for any deviations from the original budget or timeline."
             ],
             "correctIndex": 2,
             "explanation": "The primary objective of a PIR is to evaluate the project's success in achieving its intended benefits and to gather lessons learned. Options A and D focus on process adherence and blame, which are less important than benefits realization and learning. Option B is too forward-looking and not a core PIR objective.",
@@ -1426,10 +1426,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important benefit of implementing Infrastructure as Code (IaC) within an organization from an auditing perspective?",
             "options": [
-              "A. Reduced infrastructure costs through automation.",
-              "B. Improved collaboration between development and operations teams.",
-              "C. Enhanced auditability and traceability of infrastructure changes.",
-              "D. Faster deployment of applications and services.",
+              "Reduced infrastructure costs through automation.",
+              "Improved collaboration between development and operations teams.",
+              "Enhanced auditability and traceability of infrastructure changes.",
+              "Faster deployment of applications and services.",
               "E. Increased developer productivity"
             ],
             "correctIndex": 2,
@@ -1572,10 +1572,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the PRIMARY benefit of implementing a well-maintained Configuration Management Database (CMDB) in an organization?",
             "options": [
-              "A. Enhanced user satisfaction through faster application deployment.",
-              "B. Improved IT asset tracking and streamlined change management processes.",
-              "C. Reduced hardware costs by identifying underutilized resources.",
-              "D. Increased security compliance by automating vulnerability scanning."
+              "Enhanced user satisfaction through faster application deployment.",
+              "Improved IT asset tracking and streamlined change management processes.",
+              "Reduced hardware costs by identifying underutilized resources.",
+              "Increased security compliance by automating vulnerability scanning."
             ],
             "correctIndex": 1,
             "explanation": "The primary benefit of a CMDB is to provide a centralized repository of configuration items, enabling better IT asset tracking and facilitating more effective change management processes by providing impact analysis and root cause analysis capabilities. While the other options may be secondary benefits, they are not the primary purpose of a CMDB.",
@@ -1629,10 +1629,10 @@
           "knowledgeCheck": {
             "question": "During which phase of the Release Management process is version control MOST critical?",
             "options": [
-              "A. Release Planning",
-              "B. Release Build",
-              "C. Release Testing",
-              "D. Release Deployment"
+              "Release Planning",
+              "Release Build",
+              "Release Testing",
+              "Release Deployment"
             ],
             "correctIndex": 1,
             "explanation": "Version control is most critical during the Release Build phase. This is when the release components are compiled, installation packages are created, and release notes are documented. Proper versioning ensures that the correct versions of each component are included in the release and can be easily tracked and managed.",
@@ -1723,10 +1723,10 @@
           "knowledgeCheck": {
             "question": "Which of the following input controls is MOST effective in preventing the accidental entry of duplicate records into a system?",
             "options": [
-              "A. Batch totals",
-              "B. Pre-numbered forms",
-              "C. Input validation routines",
-              "D. Dual entry"
+              "Batch totals",
+              "Pre-numbered forms",
+              "Input validation routines",
+              "Dual entry"
             ],
             "correctIndex": 2,
             "explanation": "Input validation routines, specifically a uniqueness check, are most effective in preventing duplicate records. Batch totals ensure completeness but don't identify duplicates. Pre-numbered forms aid in tracking but not preventing duplicates. Dual entry reduces data entry errors but doesn't guarantee uniqueness if the same error is made both times.",
@@ -1773,10 +1773,10 @@
           "knowledgeCheck": {
             "question": "An IS auditor reviewing output controls discovers that sensitive reports are being emailed without encryption. Which of the following recommendations is MOST appropriate?",
             "options": [
-              "A. Implement end-of-report markers to ensure completeness.",
-              "B. Revise the distribution list to include only authorized personnel.",
-              "C. Implement encryption for email transmission of sensitive reports.",
-              "D. Implement page numbering to facilitate tracking of the report."
+              "Implement end-of-report markers to ensure completeness.",
+              "Revise the distribution list to include only authorized personnel.",
+              "Implement encryption for email transmission of sensitive reports.",
+              "Implement page numbering to facilitate tracking of the report."
             ],
             "correctIndex": 2,
             "explanation": "Implementing encryption directly addresses the security risk associated with unencrypted transmission of sensitive data. While options B and D are good practices, they don't mitigate the primary risk. Option A is related to completeness, not security.",
@@ -2015,10 +2015,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important area of focus during the immediate (1-3 months post go-live) post-implementation review (PIR)?",
             "options": [
-              "A) Validating long-term benefits realization and strategic alignment.",
-              "B) Assessing user proficiency and identifying training gaps.",
-              "C) Identifying and resolving critical defects and stabilization issues.",
-              "D) Evaluating process improvements and operational metrics."
+              "Validating long-term benefits realization and strategic alignment.",
+              "Assessing user proficiency and identifying training gaps.",
+              "Identifying and resolving critical defects and stabilization issues.",
+              "Evaluating process improvements and operational metrics."
             ],
             "correctIndex": 2,
             "explanation": "The immediate PIR focuses on ensuring the system is stable and functioning correctly. Critical defects and stabilization issues must be addressed quickly to minimize disruption. Options A, B, and D are more relevant to intermediate or long-term PIRs.",

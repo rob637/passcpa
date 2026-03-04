@@ -1607,7 +1607,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Valuation Methods Knowledge Check",
           "knowledgeCheck": {
             "question": "Company X is being acquired. An analyst uses Comparable Companies Analysis and Precedent Transactions to value Company X. The Comparable Companies Analysis yields a valuation range of $50 million to $60 million, while the Precedent Transactions method suggests a range of $65 million to $75 million. Which of the following statements is MOST accurate regarding the interpretation of these valuation ranges?",

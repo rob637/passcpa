@@ -28,7 +28,6 @@ import {
   FileSpreadsheet,
   Brain,
   Zap,
-  History,
   Home,
   GraduationCap,
 } from 'lucide-react';
@@ -40,21 +39,22 @@ import { fetchQuestions, getWeakAreaQuestions } from '../../services/questionSer
 import { selectQuestionsFromEngine } from '../../services/adaptiveEngineAdapter';
 import { getBlueprintForExamDate } from '../../config/blueprintConfig';
 import { getExamDate } from '../../utils/profileHelpers';
-import { getDefaultSection, getCurrentSectionForCourse, getSectionIds } from '../../utils/sectionUtils';
-import { getPracticeSessionsByCourse, savePracticeSession, PracticeSession } from '../../services/practiceHistoryService';
+import { getDefaultSection, getCurrentSectionForCourse, getSectionIds, getSectionDisplayInfo } from '../../utils/sectionUtils';
+import { savePracticeSession } from '../../services/practiceHistoryService';
 import { db } from '../../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import feedback from '../../services/feedback';
 import clsx from 'clsx';
 import { BookmarkButton, NotesButton } from '../common/Bookmarks';
 import { Question, ExamSection, Difficulty } from '../../types';
-import { formatDistanceToNow } from 'date-fns';
 import { shuffleQuestionOptions, ShuffledQuestion } from '../../utils/questionShuffle';
 import { ShareNudge, shouldShowHighScoreNudge } from '../common/ShareNudge';
 import { useNavigation } from '../navigation';
 import { markActivityCompleted } from '../../services/dailyPlanPersistence';
+import { incrementStudyPlanProgress } from '../../services/studyPlanService';
 import analytics from '../../services/analytics';
 import FormattedExplanation from '../common/FormattedExplanation';
+import { useToast } from '../common/Toast';
 
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct';
@@ -91,8 +91,6 @@ interface SessionSetupProps {
 const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSavedSession, userProfile, loading, userId }) => {
   const { course, courseId } = useCourse();
   const [showAdvanced, setShowAdvanced] = useState(false);
-  const [practiceHistory, setPracticeHistory] = useState<PracticeSession[]>([]);
-  const [, setHistoryLoading] = useState(true);
   const [config, setConfig] = useState<SessionConfig>({
     section: getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection,
     mode: 'study', // study, timed, exam, weak
@@ -104,29 +102,20 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
     scoringMode: 'practice',
   });
 
+  // Reset section when course changes (prevents stale section from previous course)
+  useEffect(() => {
+    const validSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
+    setConfig(prev => ({
+      ...prev,
+      section: validSection,
+      blueprintArea: 'all', // Reset filter too
+    }));
+  }, [courseId, userProfile?.examSection]);
+
   // Blueprint areas for current section (from active course context)
   const sectionConfig = course.sections.find(s => s.id === config.section);
+  const sectionInfo = getSectionDisplayInfo(config.section, courseId);
   const blueprintAreas = sectionConfig?.blueprintAreas?.map(bp => ({ id: bp.id, name: bp.name })) || [];
-
-  // Load practice history
-  useEffect(() => {
-    const loadHistory = async () => {
-      if (!userId) {
-        setHistoryLoading(false);
-        return;
-      }
-      try {
-        // Filter by courseId to only show sessions for the current course
-        const sessions = await getPracticeSessionsByCourse(userId, courseId, 5);
-        setPracticeHistory(sessions);
-      } catch (error) {
-        logger.error('Error loading practice history:', error);
-      } finally {
-        setHistoryLoading(false);
-      }
-    };
-    loadHistory();
-  }, [userId, courseId]);
 
   // Derive mode from toggles for backwards compatibility
   const derivedMode = config.mode === 'weak' ? 'weak' : (config.mode === 'timed' ? 'timed' : 'study');
@@ -145,35 +134,25 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
   return (
     <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-6">
       <div className="max-w-md mx-auto">
-      <div className="text-center mb-6">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-          Practice
-        </h1>
+      <div className="mb-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div
+            className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
+            style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
+          >
+            {sectionInfo?.shortName || config.section}
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Questions</h1>
+            <p className="text-slate-600 dark:text-slate-400">
+              {sectionInfo?.name || 'All Sections'}
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="card">
         <div className="card-body space-y-5">
-          {/* Section Select - Compact */}
-          <div>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-              Section
-            </label>
-            <select
-              value={config.section}
-              onChange={(e) => setConfig((prev) => ({ ...prev, section: e.target.value as ExamSection, blueprintArea: 'all' }))}
-              data-testid="section-select"
-              className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-            >
-              {course?.sections
-                .filter((s: { id: string }) => s.id !== 'PREP')
-                .map((s: { id: string; shortName: string; name: string }) => (
-                <option key={s.id} value={s.id}>
-                  {s.shortName} - {s.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
           {/* Question Count - Simplified to 3 options */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
@@ -341,63 +320,6 @@ const SessionSetup: React.FC<SessionSetupProps> = ({ onStart, onResume, hasSaved
         </div>
       </div>
 
-      {/* Attempts List - Like Becker */}
-      {practiceHistory.length > 0 && (
-        <div className="card mt-6">
-          <div className="card-body">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <History className="w-5 h-5 text-slate-600 dark:text-slate-400" />
-                <h2 className="font-semibold text-slate-900 dark:text-slate-100">Attempts List</h2>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              {practiceHistory.map((session, index) => (
-                <div
-                  key={session.id}
-                  className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-sm font-bold text-primary-600">
-                      #{index + 1}
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className={clsx(
-                          'text-xs px-2 py-0.5 rounded-full font-medium',
-                          session.mode === 'study' && 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
-                          session.mode === 'timed' && 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
-                          session.mode === 'exam' && 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
-                          session.mode === 'weak' && 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
-                        )}>
-                          {session.mode === 'study' ? 'Practice' : session.mode.charAt(0).toUpperCase() + session.mode.slice(1)}
-                        </span>
-                        <span className="text-sm text-slate-600 dark:text-slate-300">
-                          {session.questionCount} questions
-                        </span>
-                      </div>
-                      <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                        {formatDistanceToNow(session.completedAt, { addSuffix: true })}
-                      </div>
-                    </div>
-                  </div>
-                  <div className={clsx(
-                    'text-lg font-bold',
-                    session.accuracy >= 75 ? 'text-success-600' : session.accuracy >= 50 ? 'text-warning-600' : 'text-error-600'
-                  )}>
-                    {session.accuracy}%
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-xs text-slate-600 dark:text-slate-400 mt-4 text-center">
-              The Practice Test score is the percentage of questions you answered correctly.
-            </p>
-          </div>
-        </div>
-      )}
       </div>
     </div>
   );
@@ -683,6 +605,7 @@ const Practice: React.FC = () => {
   const { recordMCQAnswer, logActivity } = useStudy();
   const { courseId, course } = useCourse();
   const { session: navSession, endSession: endNavSession } = useNavigation();
+  const toast = useToast();
   
   // Check if coming from daily plan (URL params OR navigation session)
   const fromDailyPlanUrl = searchParams.get('from') === 'dailyplan';
@@ -724,6 +647,7 @@ const Practice: React.FC = () => {
   
   // Explanation UI state
   const [showWhyWrong, setShowWhyWrong] = useState(false);  // Collapsed by default
+  const [explanationExpanded, setExplanationExpanded] = useState(false); // Collapsed for fast drilling
   
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
@@ -806,6 +730,13 @@ const Practice: React.FC = () => {
       const MAX_AGE = 30 * 60 * 1000; // 30 minutes
       if (Date.now() - sessionState.savedAt > MAX_AGE) {
         sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        return false;
+      }
+      
+      // Don't restore sessions with no questions (corrupted state)
+      if (!sessionState.questions || sessionState.questions.length === 0) {
+        sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        logger.warn('Skipping restore of session with no questions');
         return false;
       }
       
@@ -893,6 +824,7 @@ const Practice: React.FC = () => {
       setSelectedAnswer(null);
       setShowExplanation(false);
       setShowWhyWrong(false);
+      setExplanationExpanded(false);
       setFlagged(new Set());
       setShowShortcuts(false);
       logger.info(`Practice session reset: course changed to ${courseId}`);
@@ -1034,8 +966,10 @@ const Practice: React.FC = () => {
         const urlSection = searchParams.get('section') as ExamSection;
         const section = config.section || urlSection || (userProfile?.examSection as ExamSection) || getDefaultSection(courseId);
         
-        // HR1 filter only applies to CPA REG/TCP sections (tax law updates)
-        const applyHr1Filter = is2026 && courseId === 'cpa' && (section === 'REG' || section === 'TCP');
+        // HR1 filter disabled for now - most questions don't have hr1 flag set yet
+        // TODO: Re-enable when questions are properly tagged with hr1 field
+        // const applyHr1Filter = is2026 && courseId === 'cpa' && (section === 'REG' || section === 'TCP');
+        const applyHr1Filter = false;
 
         // Determine if we should use the adaptive engine for question selection.
         // Use adaptive engine when:
@@ -1104,6 +1038,14 @@ const Practice: React.FC = () => {
         }
       }
 
+      // Don't start session if no questions were found
+      if (fetchedQuestions.length === 0) {
+        logger.warn(`No questions found for ${courseId}/${config.section} with filters`, config);
+        toast.warning('No questions found matching your filters. Try a different section or clear filters.');
+        setLoading(false);
+        return; // Stay in setup mode
+      }
+
       setQuestions(fetchedQuestions);
       setSessionConfig(config);
       sessionEndedRef.current = false; // Allow saving for this new session
@@ -1115,6 +1057,7 @@ const Practice: React.FC = () => {
       setSelectedAnswer(null);
       setShowExplanation(false);
       setShowWhyWrong(false);
+      setExplanationExpanded(false);
       setFlagged(new Set());
       setLoading(false);
       // Scroll to top when entering question view
@@ -1190,6 +1133,7 @@ const Practice: React.FC = () => {
       setSelectedAnswer(null);
       setShowExplanation(false);
       setShowWhyWrong(false);
+      setExplanationExpanded(false);
       setFlagged(new Set());
       setLoading(false);
       scrollToTop();
@@ -1324,6 +1268,7 @@ const Practice: React.FC = () => {
     setSelectedAnswer(answers[questions[index]?.id]?.selected ?? null);
     setShowExplanation(answers[questions[index]?.id] !== undefined);
     setShowWhyWrong(false); // Collapse why-wrong section for new question
+    setExplanationExpanded(false); // Collapse explanation for fast drilling
     
     // Blur any focused element first - prevents mobile browsers from auto-scrolling to focused buttons
     if (document.activeElement instanceof HTMLElement) {
@@ -1448,7 +1393,7 @@ const Practice: React.FC = () => {
     }
   }, [currentQuestion, reportType, reportDetails, sessionConfig, logActivity, user?.uid, user?.email]);
 
-  // End session - show results instead of going back to setup
+  // End session - navigate directly to home
   const endSession = () => {
     const totalQuestions = questions.length;
     const answeredCount = Object.keys(answers).length;
@@ -1483,22 +1428,45 @@ const Practice: React.FC = () => {
         ...(sessionConfig.blueprintArea !== 'all' && { blueprintArea: sessionConfig.blueprintArea }),
         ...(sessionConfig.difficulty !== 'all' && { difficulty: sessionConfig.difficulty }),
       }).catch(err => logger.error('Failed to save practice session:', err));
+      
+      // Update study plan progress with questions answered
+      incrementStudyPlanProgress(user.uid, courseId, sessionConfig.section, {
+        questionsAnswered: answeredCount,
+        accuracy,
+      }).catch(err => logger.warn('Failed to update study plan with practice session:', err));
     }
-
-    // Identify weak topics from wrong answers
-    const wrongQuestions = questions.filter(q => answers[q.id] && !answers[q.id].correct);
-    const weakTopics = [...new Set(wrongQuestions.map(q => q.topic || q.topicId || 'Unknown'))];
-    setWeakTopicsFromSession(weakTopics);
 
     // Mark session as intentionally ended (prevents cleanup from re-saving)
     sessionEndedRef.current = true;
     
-    // Show results screen
-    setInSession(false);
-    setShowResults(true);
+    // Mark daily plan activity complete if applicable
+    if (fromDailyPlan && activityId && user?.uid) {
+      markActivityCompleted(
+        user.uid,
+        activityId,
+        userProfile?.examSection || getDefaultSection(courseId),
+        undefined,
+        undefined,
+        courseId
+      ).catch(err => logger.error('Failed to auto-complete daily plan activity:', err));
+      
+      // Also save to legacy localStorage for DailyPlanCard to pick up
+      const storageKey = `dailyplan_completed_${new Date().toISOString().split('T')[0]}`;
+      try {
+        const existing = localStorage.getItem(storageKey);
+        const completed = existing ? JSON.parse(existing) : [];
+        if (!completed.includes(activityId)) {
+          completed.push(activityId);
+          localStorage.setItem(storageKey, JSON.stringify(completed));
+        }
+      } catch { /* ignore */ }
+    }
     
     // Clear any saved session — this one is complete
     try { sessionStorage.removeItem(SESSION_STORAGE_KEY); } catch { /* ignore */ }
+    
+    // Navigate directly to home
+    navigate('/home');
   };
   
   // Reset and start new session
@@ -1858,16 +1826,43 @@ const Practice: React.FC = () => {
           </div>
         </div>
 
-        {/* Explanation */}
+        {/* Explanation - Collapsible for Fast Drilling */}
         {showExplanation && (
           <div className="card mb-4">
-            <div className="card-header flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <Lightbulb className="w-5 h-5 text-amber-500" />
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100">Explanation</h3>
+            {/* Compact Result Banner - Always Visible */}
+            <button
+              onClick={() => setExplanationExpanded(!explanationExpanded)}
+              className="w-full card-header flex items-center justify-between gap-3 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                {currentAnswer?.correct ? (
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                    <span className="font-semibold text-green-700 dark:text-green-300">Correct!</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <XCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0" />
+                    <span className="font-semibold text-red-700 dark:text-red-300">Incorrect</span>
+                  </div>
+                )}
+                <span className="text-slate-500 dark:text-slate-400 text-sm">
+                  Answer: <span className="font-bold text-slate-700 dark:text-slate-200">{String.fromCharCode(65 + (shuffledQuestion?.shuffledCorrectAnswer ?? currentQuestion.correctAnswer))}</span>
+                </span>
               </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">
+                  {explanationExpanded ? 'Hide' : 'Show'} Explanation
+                </span>
+                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${explanationExpanded ? 'rotate-180' : ''}`} />
+              </div>
+            </button>
+
+            {/* Expanded Explanation Details */}
+            {explanationExpanded && (
+            <div className="card-body space-y-3 sm:space-y-4 border-t border-slate-200 dark:border-slate-700">
               {/* Question metadata badges */}
-              <div className="flex flex-wrap items-center gap-1.5 text-xs">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs -mt-1">
                 {currentQuestion.blueprintArea && (
                   <span className="px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full font-medium">
                     {currentQuestion.blueprintArea}
@@ -1881,8 +1876,6 @@ const Practice: React.FC = () => {
                   {currentQuestion.difficulty}
                 </span>
               </div>
-            </div>
-            <div className="card-body space-y-3 sm:space-y-4">
               {/* Topic indicator */}
               {currentQuestion.topic && (
                 <p className="text-xs text-slate-500 dark:text-slate-400 -mt-2 mb-2 truncate">
@@ -2092,6 +2085,7 @@ const Practice: React.FC = () => {
                 </Button>
               </div>
             </div>
+            )}
           </div>
         )}
 

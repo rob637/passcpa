@@ -635,10 +635,10 @@
           "knowledgeCheck": {
             "question": "An IS auditor previously implemented a key component of the system they are now assigned to audit. According to the ISACA Code of Professional Ethics, what is the MOST appropriate course of action?",
             "options": [
-              "A) Proceed with the audit without disclosing the prior involvement, as long as the auditor believes they can remain objective.",
-              "B) Disclose the prior involvement to management and request reassignment to a different audit.",
-              "C) Disclose the prior involvement in the audit report, but continue with the audit.",
-              "D) Request a second opinion from another auditor and proceed based on their recommendation."
+              "Proceed with the audit without disclosing the prior involvement, as long as the auditor believes they can remain objective.",
+              "Disclose the prior involvement to management and request reassignment to a different audit.",
+              "Disclose the prior involvement in the audit report, but continue with the audit.",
+              "Request a second opinion from another auditor and proceed based on their recommendation."
             ],
             "correctIndex": 1,
             "explanation": "The ISACA Code of Professional Ethics emphasizes the importance of independence and objectivity. Prior involvement in the system being audited creates a potential conflict of interest and impairs independence. Disclosing the prior involvement and requesting reassignment is the most appropriate action to maintain ethical standards and ensure an unbiased audit.",
@@ -659,10 +659,10 @@
           "knowledgeCheck": {
             "question": "During an IS audit, a senior executive pressures the auditor to soften a critical finding that could negatively impact the company's reputation. What is the auditor's MOST ethical course of action?",
             "options": [
-              "A) Comply with the executive's request to maintain a positive working relationship.",
-              "B) Modify the finding slightly to make it less severe, while still conveying the key concerns.",
-              "C) Maintain professional judgment, refuse to alter the finding, and escalate the issue to a higher authority within the organization or the audit committee.",
-              "D) Ignore the executive's request and proceed with the original finding, but avoid direct confrontation."
+              "Comply with the executive's request to maintain a positive working relationship.",
+              "Modify the finding slightly to make it less severe, while still conveying the key concerns.",
+              "Maintain professional judgment, refuse to alter the finding, and escalate the issue to a higher authority within the organization or the audit committee.",
+              "Ignore the executive's request and proceed with the original finding, but avoid direct confrontation."
             ],
             "correctIndex": 2,
             "explanation": "Maintaining professional judgment and objectivity is paramount. Succumbing to management pressure compromises the integrity of the audit. Escalating the issue ensures that ethical considerations are addressed and the audit findings accurately reflect the situation.",

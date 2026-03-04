@@ -39,6 +39,8 @@ import {
 } from '../../utils/courseNavigation';
 import { CourseId } from '../../types/course';
 import DailyPlanCard from '../DailyPlanCard';
+import { StudyPlanCTA } from '../StudyPlanCTA';
+import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { BottomSheet } from '../common/BottomSheet';
 import { ShareNudge, useDashboardShareNudge, shouldShowStreakNudge, shouldShowQuestionsMilestone } from '../common/ShareNudge';
 import { useToast } from '../common/Toast';
@@ -94,6 +96,7 @@ const Home = () => {
   const { user, userProfile, updateUserProfile } = useAuth();
   const { currentStreak, stats, refreshStats } = useStudy();
   const { courseId, course, setCourse } = useCourse();
+  const { hasPlan, loading: planLoading } = useStudyPlan();
   
   const [readinessData, setReadinessData] = useState<ReadinessData | null>(null);
   const [_loading, setLoading] = useState(true);
@@ -443,10 +446,10 @@ const Home = () => {
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
               {getGreeting()}, {firstName}
             </h1>
-            <p className="text-slate-600 dark:text-slate-300 text-sm italic">
+            <p className="text-slate-600 dark:text-slate-400 text-sm italic">
               "{tutorMessage}"
             </p>
           </div>
@@ -566,26 +569,8 @@ const Home = () => {
         )}
       </div>
 
-      {/* Today's Personalized Plan - Below the tools */}
-      <DailyPlanCard compact />
-
-      {/* Diagnostic Quiz Prompt - Show ONLY after they have an exam date set */}
-      {examDate && hasDiagnosticResult === false && (
-        <Link
-          to="/diagnostic"
-          state={{ section: userProfile?.examSection || '' }}
-          className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl hover:shadow-sm transition-all"
-        >
-          <ClipboardCheck className="w-5 h-5 text-indigo-500" />
-          <div className="flex-1 text-sm">
-            <span className="font-medium text-slate-700 dark:text-slate-300">Take Diagnostic Quiz</span>
-            <span className="text-slate-500 dark:text-slate-400"> — identify your weak areas</span>
-          </div>
-          <ChevronDown className="w-4 h-4 text-slate-400 rotate-[-90deg]" />
-        </Link>
-      )}
-
-
+      {/* Today's Plan or Study Plan CTA */}
+      {!planLoading && (hasPlan ? <DailyPlanCard compact /> : <StudyPlanCTA compact />)}
 
       {/* Share Nudge - contextual, non-intrusive */}
       {showStreakNudge && (

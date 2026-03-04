@@ -211,7 +211,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Traditional IRA Contribution Eligibility and Deduction Rules",
           "knowledgeCheck": {
             "question": "Sarah, who is single and covered by her employer's 401(k) plan, has a Modified Adjusted Gross Income (MAGI) of $78,000. Her husband, Tom, does not work and has no earned income. Assuming the annual IRA contribution limit is $7,000 and the single, active participant IRA deduction phase-out range is $73,000 - $83,000, what is the maximum deductible Traditional IRA contribution Sarah can make?",
@@ -937,7 +937,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "One-Rollover-Per-Year Rule",
           "knowledgeCheck": {
             "question": "Sarah received a distribution from her Traditional IRA on March 1st and rolled it over into another Traditional IRA on April 15th. Later that year, on November 1st, she took another distribution from a different Traditional IRA with the intention of rolling it over. What are the tax implications of this second distribution and intended rollover?",

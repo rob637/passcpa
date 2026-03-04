@@ -177,10 +177,10 @@
           "knowledgeCheck": {
             "question": "The Chief Audit Executive (CAE) is developing the annual audit plan. Which of the following is the MOST important initial step in determining the adequacy of internal audit resources?",
             "options": [
-              "A) Comparing the current budget to the prior year's budget and adjusting for inflation.",
-              "B) Evaluating the skill sets of the internal audit staff against the requirements of the audit plan.",
-              "C) Benchmarking the size of the internal audit staff against similar organizations.",
-              "D) Determining the amount of available funding for external consulting services.",
+              "Comparing the current budget to the prior year's budget and adjusting for inflation.",
+              "Evaluating the skill sets of the internal audit staff against the requirements of the audit plan.",
+              "Benchmarking the size of the internal audit staff against similar organizations.",
+              "Determining the amount of available funding for external consulting services.",
               "E) Discussing the risk appetite of the organization with senior management."
             ],
             "correctIndex": 1,
@@ -397,12 +397,12 @@
           "type": "knowledge-check",
           "title": "SMART Objectives Quiz",
           "knowledgeCheck": {
-            "question": "Which of the following engagement objectives BEST exemplifies the 'Measurable' characteristic of the SMART criteria?\n\nA) To improve the efficiency of the accounts payable process.\nB) To review the effectiveness of internal controls over financial reporting.\nC) To reduce the number of duplicate payments in the accounts payable system by 15% within the next quarter.\nD) To assess compliance with relevant regulations.",
+            "question": "Which of the following engagement objectives BEST exemplifies the 'Measurable' characteristic of the SMART criteria?",
             "options": [
-              "A) To improve the efficiency of the accounts payable process.",
-              "B) To review the effectiveness of internal controls over financial reporting.",
-              "C) To reduce the number of duplicate payments in the accounts payable system by 15% within the next quarter.",
-              "D) To assess compliance with relevant regulations."
+              "To improve the efficiency of the accounts payable process.",
+              "To review the effectiveness of internal controls over financial reporting.",
+              "To reduce the number of duplicate payments in the accounts payable system by 15% within the next quarter.",
+              "To assess compliance with relevant regulations."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C. A measurable objective includes a quantifiable target or indicator that allows for the assessment of results. Reducing duplicate payments by 15% provides a clear benchmark for success. The other options lack specific measurable criteria.",
@@ -421,12 +421,12 @@
           "type": "knowledge-check",
           "title": "Scope Definition Scenario",
           "knowledgeCheck": {
-            "question": "An internal auditor is planning an engagement to review the organization's procurement process. Which of the following scope definitions is the MOST comprehensive?\n\nA) Review all purchase orders issued in the last fiscal year.\nB) Review the procurement process for compliance with company policy.\nC) Review the procurement process, including activities from purchase requisition to vendor payment, across all departments and locations, for the period January 1, 2023 to December 31, 2023, focusing on compliance with company policy and efficiency of operations.\nD) Review the procurement process for high-value purchases.",
+            "question": "An internal auditor is planning an engagement to review the organization's procurement process. Which of the following scope definitions is the MOST comprehensive?",
             "options": [
-              "A) Review all purchase orders issued in the last fiscal year.",
-              "B) Review the procurement process for compliance with company policy.",
-              "C) Review the procurement process, including activities from purchase requisition to vendor payment, across all departments and locations, for the period January 1, 2023 to December 31, 2023, focusing on compliance with company policy and efficiency of operations.",
-              "D) Review the procurement process for high-value purchases."
+              "Review all purchase orders issued in the last fiscal year.",
+              "Review the procurement process for compliance with company policy.",
+              "Review the procurement process, including activities from purchase requisition to vendor payment, across all departments and locations, for the period January 1, 2023 to December 31, 2023, focusing on compliance with company policy and efficiency of operations.",
+              "Review the procurement process for high-value purchases."
             ],
             "correctIndex": 2,
             "explanation": "The most comprehensive scope definition (C) clearly specifies the activities, locations, time period, and key areas of focus (compliance and efficiency). It provides a clear boundary for the audit engagement.",
@@ -840,10 +840,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important initial step when using Audit Data Analytics (ADA) in an internal audit engagement?",
             "options": [
-              "A) Selecting the appropriate data visualization software.",
-              "B) Defining the specific objective and scope of the analysis.",
-              "C) Extracting all available data from the relevant systems.",
-              "D) Identifying potential fraud indicators within the organization.",
+              "Selecting the appropriate data visualization software.",
+              "Defining the specific objective and scope of the analysis.",
+              "Extracting all available data from the relevant systems.",
+              "Identifying potential fraud indicators within the organization.",
               "E) Applying Benford's Law to the dataset"
             ],
             "correctIndex": 1,
@@ -956,10 +956,10 @@
           "knowledgeCheck": {
             "question": "Which of the following actions is MOST crucial to complete BEFORE conducting an interview as part of an internal audit engagement?",
             "options": [
-              "A) Determining the specific interview questions without considering the interviewee's role to avoid bias.",
-              "B) Scheduling the interview at the interviewee's preferred time, regardless of its impact on the audit timeline.",
-              "C) Thoroughly researching the interviewee's role and reviewing relevant documentation to formulate targeted questions.",
-              "D) Deciding on the final audit report conclusions to guide the interview process."
+              "Determining the specific interview questions without considering the interviewee's role to avoid bias.",
+              "Scheduling the interview at the interviewee's preferred time, regardless of its impact on the audit timeline.",
+              "Thoroughly researching the interviewee's role and reviewing relevant documentation to formulate targeted questions.",
+              "Deciding on the final audit report conclusions to guide the interview process."
             ],
             "correctIndex": 2,
             "explanation": "Option C is correct. Researching the interviewee and reviewing documentation allows the auditor to formulate targeted and relevant questions, maximizing the efficiency and effectiveness of the interview. Options A, B, and D are incorrect because they represent poor interview preparation practices and could negatively impact the audit's objectivity and outcome.",
@@ -1066,10 +1066,10 @@
           "knowledgeCheck": {
             "question": "Which of the following report quality attributes is MOST directly compromised when an audit report includes unsubstantiated opinions and speculation without supporting evidence?",
             "options": [
-              "A) Clarity",
-              "B) Objectivity",
-              "C) Completeness",
-              "D) Conciseness"
+              "Clarity",
+              "Objectivity",
+              "Completeness",
+              "Conciseness"
             ],
             "correctIndex": 1,
             "explanation": "Objectivity requires unbiased presentation. Unsubstantiated opinions and speculation directly violate this principle by introducing bias and lack of factual basis. Clarity, completeness, and conciseness relate to how the information is presented and structured, not whether it's factually sound.",
@@ -1090,10 +1090,10 @@
           "knowledgeCheck": {
             "question": "An internal auditor is drafting the executive summary of an audit report. Which of the following should be included in the executive summary?",
             "options": [
-              "A) A detailed explanation of the audit methodology used.",
-              "B) A comprehensive list of all audit procedures performed.",
-              "C) A summary of the audit scope, including specific departments audited.",
-              "D) An overall conclusion and key findings highlighting significant recommendations."
+              "A detailed explanation of the audit methodology used.",
+              "A comprehensive list of all audit procedures performed.",
+              "A summary of the audit scope, including specific departments audited.",
+              "An overall conclusion and key findings highlighting significant recommendations."
             ],
             "correctIndex": 3,
             "explanation": "The executive summary should provide a high-level overview, including the overall conclusion, key findings, and significant recommendations. Detailed methodology and procedures are better suited for the Background/Scope section. The scope is mentioned but not at the level of detail described in option C.",
@@ -1271,10 +1271,10 @@
           "knowledgeCheck": {
             "question": "During the management response process, an internal auditor discovers a significant disagreement with management regarding a finding that could potentially expose the organization to material financial risk. Which of the following is the MOST appropriate course of action for the internal auditor?",
             "options": [
-              "A) Accept management's position and remove the finding from the final report to maintain a positive working relationship.",
-              "B) Document management's disagreement in the final report and escalate the unresolved issue to the board or audit committee.",
-              "C) Delay the release of the final report until management agrees with the finding.",
-              "D) Modify the finding to align with management's perspective, even if it means downplaying the severity of the risk.",
+              "Accept management's position and remove the finding from the final report to maintain a positive working relationship.",
+              "Document management's disagreement in the final report and escalate the unresolved issue to the board or audit committee.",
+              "Delay the release of the final report until management agrees with the finding.",
+              "Modify the finding to align with management's perspective, even if it means downplaying the severity of the risk.",
               "E) Discuss the disagreement constructively and document the response in the final report."
             ],
             "correctIndex": 1,

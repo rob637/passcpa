@@ -80,6 +80,10 @@ const AITutor = lazyWithRetry(() => import('./components/pages/AITutor'));
 const Achievements = lazyWithRetry(() => import('./components/pages/Achievements'));
 const Community = lazyWithRetry(() => import('./components/pages/Community'));
 
+// Study Plan (unified across all courses)
+const StudyPlan = lazyWithRetry(() => import('./components/pages/StudyPlan'));
+const StudyPlanSetup = lazyWithRetry(() => import('./components/pages/StudyPlanSetup'));
+
 // Resources Pages
 const ResourcesHub = lazyWithRetry(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
 const ResourceList = lazyWithRetry(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
@@ -923,6 +927,24 @@ function App() {
                     }
                   />
                   
+                  {/* Study Plan routes */}
+                  <Route
+                    path="/study-plan"
+                    element={
+                      <SuspensePage>
+                        <StudyPlan />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/study-plan/setup"
+                    element={
+                      <SuspensePage>
+                        <StudyPlanSetup />
+                      </SuspensePage>
+                    }
+                  />
+                  
                   {/* Legacy route redirects for backwards compatibility */}
                   <Route
                     path="/dashboard"
@@ -935,7 +957,7 @@ function App() {
                   
                   {/* Course-prefixed redirects for email links */}
                   <Route path="/:courseId/practice" element={<CourseRedirect to="/practice" />} />
-                  <Route path="/:courseId/study-plan" element={<CourseRedirect to="/you/study-plan" />} />
+                  <Route path="/:courseId/study-plan" element={<CourseRedirect to="/study-plan" />} />
                   <Route path="/:courseId/ai-tutor" element={<CourseRedirect to="/ai-tutor" />} />
                   
                   {/* Keep these routes accessible */}

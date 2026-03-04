@@ -60,12 +60,12 @@
           "type": "knowledge-check",
           "title": "Knowledge Check: Character Principles",
           "knowledgeCheck": {
-            "question": "Which of the following scenarios BEST demonstrates a violation of the 'Objectivity' principle, one of the three character principles? \n\nA) An internal auditor reports a minor control deficiency to management, even though it may reflect poorly on their department's performance.\nB) An internal auditor accepts a small gift (e.g., a pen) from a department they are auditing.\nC) An internal auditor, whose spouse works in the finance department, is assigned to audit that department.\nD) An internal auditor recommends improvements to a process that they previously helped design.",
+            "question": "Which of the following scenarios BEST demonstrates a violation of the 'Objectivity' principle, one of the three character principles?",
             "options": [
-              "A) An internal auditor reports a minor control deficiency to management, even though it may reflect poorly on their department's performance.",
-              "B) An internal auditor accepts a small gift (e.g., a pen) from a department they are auditing.",
-              "C) An internal auditor, whose spouse works in the finance department, is assigned to audit that department.",
-              "D) An internal auditor recommends improvements to a process that they previously helped design."
+              "An internal auditor reports a minor control deficiency to management, even though it may reflect poorly on their department's performance.",
+              "An internal auditor accepts a small gift (e.g., a pen) from a department they are auditing.",
+              "An internal auditor, whose spouse works in the finance department, is assigned to audit that department.",
+              "An internal auditor recommends improvements to a process that they previously helped design."
             ],
             "correctIndex": 2,
             "explanation": "The BEST answer is C. Objectivity is compromised when personal relationships or other factors could unduly influence the auditor's judgment. Having a spouse in the department being audited creates a potential conflict of interest. While accepting gifts (B) is generally discouraged, it is not as direct a violation of objectivity as the spousal relationship. A (Integrity) and D (Independence) relate to other principles. A, while potentially affecting the auditor's career, demonstrates integrity, not a lack of objectivity. D, while potentially affecting independence, is not as direct a violation of objectivity as the spousal relationship.",
@@ -86,10 +86,10 @@
           "knowledgeCheck": {
             "question": "According to the lesson, what is the consequence if one or more of the 10 Core Principles of Internal Auditing are NOT present and operating effectively?",
             "options": [
-              "A) The internal audit activity may still be considered effective, but with some limitations.",
-              "B) The internal audit activity is considered partially effective, requiring remediation.",
-              "C) The internal audit activity cannot be considered effective.",
-              "D) The internal audit activity will be considered effective with an explanation of the limitation."
+              "The internal audit activity may still be considered effective, but with some limitations.",
+              "The internal audit activity is considered partially effective, requiring remediation.",
+              "The internal audit activity cannot be considered effective.",
+              "The internal audit activity will be considered effective with an explanation of the limitation."
             ],
             "correctIndex": 2,
             "explanation": "The lesson states that ALL 10 principles must be present and operating effectively for the internal audit activity to be considered effective. Therefore, the correct answer is C.",

@@ -1604,10 +1604,10 @@
           "knowledgeCheck": {
             "question": "Which of the following costs would NOT be included when calculating the Total Cost of Ownership (TCO) of a purchased component?",
             "options": [
-              "A) Purchase price of the component.",
-              "B) Costs associated with inspecting the component for defects.",
-              "C) Allocated fixed overhead costs for the purchasing department.",
-              "D) Costs of storing the component before it is used in production."
+              "Purchase price of the component.",
+              "Costs associated with inspecting the component for defects.",
+              "Allocated fixed overhead costs for the purchasing department.",
+              "Costs of storing the component before it is used in production."
             ],
             "correctIndex": 2,
             "explanation": "Allocated fixed overhead costs are generally considered irrelevant for decision-making because they will be incurred regardless of whether the component is purchased. TCO focuses on costs directly attributable to the acquisition, possession, and usage of the asset.",
@@ -1628,10 +1628,10 @@
           "knowledgeCheck": {
             "question": "A company is deciding whether to make or buy a component. The variable manufacturing cost to make the component is $10 per unit. Direct fixed costs that can be avoided if the component is bought are $5 per unit. The purchase price is $18 per unit. Allocated fixed overhead is $3 per unit. What is the relevant cost to MAKE the component?",
             "options": [
-              "A) $10",
-              "B) $15",
-              "C) $18",
-              "D) $28"
+              "$10",
+              "$15",
+              "$18",
+              "$28"
             ],
             "correctIndex": 1,
             "explanation": "The relevant cost to make the component is the sum of the variable manufacturing cost ($10) and the avoidable direct fixed costs ($5), totaling $15. Allocated fixed overhead is irrelevant.",

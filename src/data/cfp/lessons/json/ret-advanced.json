@@ -914,7 +914,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Social Security Earnings Test",
           "knowledgeCheck": {
             "question": "Sarah, age 63, is considering taking Social Security benefits while continuing to work. In 2024, she expects to earn $60,000. Assuming the annual earnings limit for those under FRA is $22,320, what is the approximate reduction in her Social Security benefits for the year?",

@@ -4276,7 +4276,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Reasonable Compensation Knowledge Check",
           "knowledgeCheck": {
             "question": "An S corporation shareholder-employee receives a distribution of $100,000 and wages of $40,000. The IRS determines that reasonable compensation for the shareholder's services should have been $80,000. What is the potential impact of the IRS's recharacterization?",
@@ -4570,7 +4570,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Solo 401(k) Contribution Calculation",
           "knowledgeCheck": {
             "question": "Sarah is self-employed and operates as a sole proprietor. In 2024, she has self-employment income of $100,000. She wants to maximize her contributions to a Solo 401(k). What is the MAXIMUM total amount she can contribute to her Solo 401(k) for the year, assuming she is under age 50?",
@@ -4602,7 +4602,7 @@
           }
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Eligibility for a Solo 401(k)",
           "knowledgeCheck": {
             "question": "Which of the following individuals is MOST suitable for a Solo 401(k)?",
@@ -8232,7 +8232,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "\u00a7331 Liquidation Knowledge Check",
           "knowledgeCheck": {
             "question": "ABC Corporation is undergoing a complete liquidation. Shareholder John received property with a fair market value of $200,000. John's basis in his ABC stock is $50,000 and he held the shares for 3 years. What is the amount and character of John's gain or loss?",
@@ -8256,7 +8256,7 @@
           }
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Corporate Level Loss Limitations in Liquidation",
           "knowledgeCheck": {
             "question": "XYZ Corporation is liquidating. It distributes property with a FMV of $50,000 and a basis of $100,000 to its controlling shareholder, who is also a related party. What is the amount of loss XYZ Corporation can recognize on this distribution?",
@@ -9827,6 +9827,12 @@
             "**Exit strategy** - C corps face double tax; pass-throughs don't",
             "**State taxes** - Some states don't recognize S corps",
             "**Investor types** - S corps have shareholder restrictions"
+          ],
+          "items": [
+            "Single-member LLC defaults to Disregarded Entity (Sole Prop/Branch)",
+            "Multi-member LLC defaults to Partnership",
+            "Both can elect C Corp status via Form 8832",
+            "Once C Corp, can elect S Corp status via Form 2553 (if eligible)"
           ]
         },
         {
@@ -10220,6 +10226,12 @@
             "**Check-the-box** - Can create/eliminate CFCs",
             "**Foreign tax credits** - Manage high/low-tax baskets",
             "**FDII benefits** - Keep intangibles in US, sell abroad"
+          ],
+          "items": [
+            "Foreign Tax Credit vs Deduction",
+            "Transfer Pricing risks between related parties",
+            "Sourcing rules for Income (US vs Foreign source)",
+            "Treaty benefits (Reduced withholding rates)"
           ]
         },
         {
@@ -10452,7 +10464,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "CAMT Applicability Check",
           "knowledgeCheck": {
             "question": "XYZ Corp. is a US-based corporation. Over the past three years, its average annual adjusted financial statement income (AFSI) was $1.2 billion. However, XYZ Corp. is part of a larger group of companies controlled by a foreign parent. The worldwide AFSI of the entire group averages $800 million, and the US AFSI averages $110 million. Is XYZ Corp. subject to the Corporate Alternative Minimum Tax (CAMT)?",
@@ -11616,7 +11628,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "NOL Carryforward Limitation - Post TCJA",
           "knowledgeCheck": {
             "question": "ABC Corp. had taxable income of $500,000 before considering a $600,000 NOL carryforward from 2020. What is the maximum NOL deduction ABC Corp. can take in the current year?",
@@ -12520,12 +12532,12 @@
           "type": "knowledge-check",
           "title": "S Corporation Eligibility Check",
           "knowledgeCheck": {
-            "question": "Which of the following would disqualify a corporation from electing S corporation status?\n\nA) Having 95 individual shareholders who are all US citizens.\nB) Having one class of stock with differing voting rights.\nC) Having an irrevocable trust as a shareholder.\nD) Having a partnership as a shareholder.",
+            "question": "Which of the following would disqualify a corporation from electing S corporation status?",
             "options": [
-              "A) Having 95 individual shareholders who are all US citizens.",
-              "B) Having one class of stock with differing voting rights.",
-              "C) Having an irrevocable trust as a shareholder.",
-              "D) Having a partnership as a shareholder."
+              "Having 95 individual shareholders who are all US citizens.",
+              "Having one class of stock with differing voting rights.",
+              "Having an irrevocable trust as a shareholder.",
+              "Having a partnership as a shareholder."
             ],
             "correctIndex": 3,
             "explanation": "A partnership is an ineligible shareholder for S corporation status. S corporations can only have individuals, estates, and certain trusts as shareholders. Differing voting rights within a single class of stock are permitted. 95 shareholders is under the 100 shareholder limit.",
@@ -12546,10 +12558,10 @@
           "knowledgeCheck": {
             "question": "An S corporation shareholder has a stock basis of $10,000 and a debt basis of $5,000 at the beginning of the year. The S corporation incurs a loss of $20,000. What amount of loss can the shareholder deduct in the current year?",
             "options": [
-              "A) $10,000",
-              "B) $15,000",
-              "C) $20,000",
-              "D) $0"
+              "$10,000",
+              "$15,000",
+              "$20,000",
+              "$0"
             ],
             "correctIndex": 1,
             "explanation": "The shareholder can deduct losses up to their stock and debt basis. In this case, the shareholder can deduct $10,000 (stock basis) + $5,000 (debt basis) = $15,000. The remaining $5,000 loss is carried forward.",

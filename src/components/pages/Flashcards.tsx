@@ -556,70 +556,6 @@ const Flashcards: React.FC = () => {
           </div>
         </div>
 
-        {/* Card Type Filter */}
-        <div className="max-w-2xl mx-auto mt-3 flex gap-2 overflow-x-auto pb-2">
-          <button
-            onClick={() => setCardType('all')}
-            className={clsx(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
-              cardType === 'all'
-                ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 border border-primary-200 dark:border-primary-700'
-                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
-            )}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            All Cards
-          </button>
-          <button
-            onClick={() => setCardType('questions')}
-            className={clsx(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
-              cardType === 'questions'
-                ? 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 border border-primary-200 dark:border-primary-700'
-                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
-            )}
-          >
-            <Brain className="w-3.5 h-3.5" />
-            Questions
-          </button>
-          <button
-            onClick={() => setCardType('definitions')}
-            className={clsx(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
-              cardType === 'definitions'
-                ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 border border-blue-200 dark:border-blue-700'
-                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
-            )}
-          >
-            <BookOpen className="w-3.5 h-3.5" />
-            Definitions
-          </button>
-          <button
-            onClick={() => setCardType('formulas')}
-            className={clsx(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
-              cardType === 'formulas'
-                ? 'bg-teal-100 dark:bg-teal-900/40 text-teal-700 border border-teal-200 dark:border-teal-700'
-                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
-            )}
-          >
-            <Calculator className="w-3.5 h-3.5" />
-            Formulas
-          </button>
-          <button
-            onClick={() => setCardType('mnemonics')}
-            className={clsx(
-              'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors',
-              cardType === 'mnemonics'
-                ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-700'
-                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
-            )}
-          >
-            <Lightbulb className="w-3.5 h-3.5" />
-            Mnemonics
-          </button>
-        </div>
-
         {/* Progress bar */}
         <div className="max-w-2xl mx-auto mt-3">
           <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
@@ -885,19 +821,7 @@ const Flashcards: React.FC = () => {
       {/* Bottom Stats */}
       <div className="bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between text-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300">
-              <Target className="w-4 h-4" />
-              <span>{sessionStats.reviewed} reviewed</span>
-            </div>
-            {studyStats && (
-              <div className="flex items-center gap-1.5 text-primary-600 dark:text-primary-400">
-                <Clock className="w-4 h-4" />
-                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                <span>{(studyStats as any).dueToday} due</span>
-              </div>
-            )}
-          </div>
+          <div className="flex-1"></div>
 
           <div className="flex items-center gap-2">
             <Button

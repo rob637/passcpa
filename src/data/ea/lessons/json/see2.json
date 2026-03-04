@@ -541,6 +541,14 @@
             "Personal living expenses",
             "Capital expenditures (unless depreciated/amortized)",
             "Expenses not related to business"
+          ],
+          "items": [
+            "**Fines and Penalties**: Paid to a government for violation of law.",
+            "**Political Contributions**: Contributions to political parties or candidates.",
+            "**Lobbying Expenses**: Generally non-deductible (some local exceptions).",
+            "**Club Dues**: Dues for business, social, athletic, or sporting clubs.",
+            "**Commuting Costs**: Transportation between home and regular place of business.",
+            "**Federal Income Tax**: Federal income taxes paid are not deductible on the federal return."
           ]
         },
         {
@@ -820,6 +828,13 @@
             "Certain real property (qualified retail, restaurant, leasehold improvements)",
             "Property used predominantly (>50%) for business",
             "Property purchased (not inherited or gifted)"
+          ],
+          "items": [
+            "**Tangible Personal Property**: Machinery, equipment, furniture used in business.",
+            "**Off-the-Shelf Software**: Computer software available to the general public.",
+            "**Qualified Improvement Property**: Improvements to interior of nonresidential real property.",
+            "**Certain Real Property**: Roofs, HVAC, fire protection, and alarm systems for nonresidential real property.",
+            "**Business Use**: Must be used more than 50% for business."
           ]
         },
         {
@@ -1168,6 +1183,12 @@
             "Certain utilities",
             "Small businesses (< $29 million gross receipts)",
             "Note: Electing out requires using ADS depreciation for real property!"
+          ],
+          "items": [
+            "**Financial Services**: Banking, insurance, financing, leasing.",
+            "**Farming/Agriculture**: Generally excluded from specific small business simplified methods.",
+            "**Utility Services**: Providing electricity, water, sewage disposal, gas.",
+            "**Tax Shelters**: Never qualify as a small business taxpayer for accounting method exceptions."
           ]
         },
         {
@@ -1760,6 +1781,17 @@
             "Financial services (investment advice, etc.)",
             "Brokerage services",
             "Any business where principal asset is reputation/skill of owners"
+          ],
+          "items": [
+            "**Health**: Doctors, nurses, dentists.",
+            "**Law**: Lawyers, paralegals.",
+            "**Accounting**: CPAs, EAs, accountants.",
+            "**Actuarial Science**: Actuaries.",
+            "**Performing Arts**: Actors, musicians, entertainers.",
+            "**Consulting**: Providing professional advice and counsel.",
+            "**Athletics**: Athletes, coaches, sports teams.",
+            "**Financial Services**: Investment advisors, wealth managers (except banking/making loans).",
+            "**Reputation/Skill**: Any trade where the principal asset is the reputation or skill of employees."
           ]
         },
         {
@@ -2576,6 +2608,12 @@
             "Rights to payment for services or goods not yet recognized",
             "Mining property recapture",
             "Other ordinary income property"
+          ],
+          "items": [
+            "**Rights to Payment**: Payment for goods delivered or services rendered not yet included in income.",
+            "**Recapture Items**: Section 1245 or 1250 depreciation recapture potential.",
+            "**Market Discount Bonds**: Accrued market discount.",
+            "**Franchises/Trademarks**: Short-term value associated with these intangibles."
           ]
         },
         {
@@ -2843,6 +2881,12 @@
             "More than 100 shareholders",
             "Creation of second class of stock",
             "Becoming ineligible corporation type"
+          ],
+          "items": [
+            "**No Business Activity**: No part of any business, financial operation, or venture constitutes to be carried on by any of its partners in a partnership.",
+            "**Sale/Exchange (Old Rule)**: Previously, sale of 50% or more interest terminated partnership (repealed for tax years beginning after 2017).",
+            "**Elective Termination**: Partners agree to dissolve and liquidate.",
+            "**Compliance**: Final return (Form 1065) is due by the 15th day of the 3rd month following termination."
           ]
         },
         {
@@ -3891,6 +3935,12 @@
             "Interest (not from trade or business)",
             "Annuities",
             "Gains from stocks and securities sales"
+          ],
+          "items": [
+            "**Gross Receipts**: Royalties, rents, dividends, interest, and annuities.",
+            "**Gains on Stocks**: Gains from sales or exchanges of stock or securities.",
+            "**Sting Tax Risk**: If S Corp has E&P from C Corp years and passive income > 25% of gross receipts.",
+            "**Termination Risk**: Election terminates if passive income > 25% for 3 consecutive years and E&P exists."
           ]
         },
         {
@@ -4167,6 +4217,13 @@
             "Foreign shareholders",
             "More than 100 shareholders",
             "Multiple classes of stock needed"
+          ],
+          "items": [
+            "**Venture Capital**: Plan to raise capital from VCs or institutional investors who prefer C Corps.",
+            "**Exclusion**: Want to qualify for Section 1202 (QSBS) exclusion.",
+            "**Fringe Benefits**: Owners want tax-free fringe benefits (e.g., health insurance).",
+            "**No Shareholder Limits**: Plan to have more than 100 shareholders or foreign owners.",
+            "**Fiscal Year**: Need a fiscal year not tied to calendar year."
           ]
         },
         {
@@ -4179,6 +4236,12 @@
             "Fewer than 100 shareholders",
             "All shareholders are U.S. individuals or certain trusts",
             "Single class of stock acceptable"
+          ],
+          "items": [
+            "**Avoid Double Tax**: Pass-through taxation avoids corporate level tax.",
+            "**Self-Employment Tax**: S Corp distributions not subject to SE tax (unlike partnership/sole prop).",
+            "**Loss Deduction**: Owners want to deduct start-up losses on personal returns (basis permitting).",
+            "**Cash Method**: Easier to use cash method of accounting than some C Corps."
           ]
         },
         {
@@ -4192,6 +4255,13 @@
             "Foreign owners",
             "Corporate owners",
             "Multiple classes of interests needed"
+          ],
+          "items": [
+            "**Flexibility**: Special allocations of income/loss allowed (unlike S Corp pro-rata).",
+            "**Basis Step-Up**: Inside basis step-up (Sec 754) on transfer of interest.",
+            "**Debt Basis**: Partners get basis for entity-level debt (unlike S Corp).",
+            "**Less Formalities**: Generally fewer corporate formalities (minutes, meetings) required.",
+            "**Distribution Flexibility**: Can distribute property in-kind usually tax-free."
           ]
         },
         {
@@ -4863,6 +4933,13 @@
             "Realistic contingency needs",
             "Investment in subsidiaries",
             "Product liability reserves"
+          ],
+          "items": [
+            "**Business Expansion**: Specific, definite, and feasible plans to expand.",
+            "**Asset Replacement**: Replacing plant and equipment.",
+            "**Debt Retirement**: Sinking fund to retire bona fide debt.",
+            "**Working Capital**: Necessary working capital for one operating cycle (Bardahl formula).",
+            "**Investments/Loans**: Investments or loans to suppliers or customers maintained to protect business."
           ]
         },
         {
@@ -4875,6 +4952,12 @@
             "Already adequate working capital",
             "Accumulations for purposes already funded",
             "Investments in property not used in business"
+          ],
+          "items": [
+            "**Shareholder Loans**: Loans to shareholders or expenditures for their personal benefit.",
+            "**Unrelated Investments**: Investments in assets having no relation to the business.",
+            "**Future Losses**: Retention against unrealistic hazards.",
+            "**Redemption**: Accumulation to redeem stock of a deceased shareholder (beyond Sec 303 limits)."
           ]
         },
         {
@@ -4974,6 +5057,13 @@
             "Copyright royalties (with exceptions)",
             "Personal service contracts (named person)",
             "Amounts from estates/trusts"
+          ],
+          "items": [
+            "**Dividends/Interest**: Ordinary portfolio income.",
+            "**Royalties**: Mineral, oil, gas, and copyright royalties (subject to tests).",
+            "**Annuities**: Payments from annuity contracts.",
+            "**Rents**: Unless rents constitute >50% of adjusted ordinary gross income.",
+            "**Personal Service Contracts**: Income from contracts where 25%+ shareholder is designated to perform services."
           ]
         },
         {
@@ -5074,6 +5164,13 @@
             "Fiduciaries of two trusts with same grantor",
             "Corporation and partnership with > 50% common ownership",
             "Two partnerships with > 50% common ownership"
+          ],
+          "items": [
+            "**Family Members**: Spouses, siblings, ancestors (parents/grandparents), and lineal descendants (children/grandchildren).",
+            "**Entities**: Corporation and >50% shareholder.",
+            "**Partnerships**: Partnership and >50% partner.",
+            "**Trusts**: Grantor and fiduciary, or fiduciary and beneficiary.",
+            "**Controlled Groups**: Two corporations in the same controlled group."
           ]
         },
         {
@@ -5725,6 +5822,13 @@
             "Dividends from real estate investment trusts",
             "Dividends considered 'extraordinary'",
             "Stock held less than 46 days"
+          ],
+          "items": [
+            "**REITs**: Capital gain distributions or dividends from Real Estate Investment Trusts.",
+            "**Certain Foreign Corps**: Dividends from foreign corps not on treaty list or US exchange.",
+            "**Exempt Org**: Dividends from tax-exempt organizations.",
+            "**Short Holding Period**: Stock held less than 61 days during 121-day period.",
+            "**Employee Stock Options**: Dividends on unvested stock."
           ]
         },
         {
@@ -6509,6 +6613,15 @@
             "Business provides benefits",
             "Long-term, continuing relationship",
             "Cannot subcontract the work"
+          ],
+          "items": [
+            "**Instruction**: Employer gives instructions on when, where, and how to work.",
+            "**Training**: Worker receives training from the employer.",
+            "**Integration**: Services are integrated into business operations.",
+            "**Services Rendered Personally**: Must be done by that specific individual.",
+            "**Hours**: Set hours of work.",
+            "**Continuous Relationship**: Ongoing work relationship.",
+            "**Payment**: Paid by hour, week, or month (not by job)."
           ]
         },
         {
@@ -6523,6 +6636,14 @@
             "Can make profit or suffer loss",
             "Invoices for services",
             "Can hire assistants/subcontractors"
+          ],
+          "items": [
+            "**Profit or Loss**: Can make a profit or suffer a loss.",
+            "**Investment**: Significant investment in equipment/tools.",
+            "**Services to Public**: Makes services available to the general public.",
+            "**Control**: Controls the method and result of work.",
+            "**Payment**: Paid a flat fee for the job.",
+            "**Termination**: Cannot be fired at will if contract specs are met."
           ]
         },
         {
@@ -7520,6 +7641,12 @@
             "Corporation derived 50%+ of gross receipts from active business",
             "Stock held by individual or partnership",
             "Original owner (not purchased in secondary market)"
+          ],
+          "items": [
+            "**Gross Receipts**: Average annual gross receipts test met.",
+            "**Ownership**: Domestic professional service corporation.",
+            "**Function**: 95% of activities involve services in health, law, engineering, etc.",
+            "**Ownership Test**: 95% of stock owned by employees, retired employees, or estates of employees."
           ]
         },
         {
@@ -7695,6 +7822,13 @@
             "Held more than 5 years",
             "80%+ of assets used in active business",
             "Not in excluded business (services, banking, hotels, etc.)"
+          ],
+          "items": [
+            "**Original Issue**: Acquired at original issuance for money, property, or services.",
+            "**C Corp**: Must be a domestic C Corporation.",
+            "**Assets Test**: Gross assets <= $50 million at time of issuance.",
+            "**Active Business**: At least 80% of assets used in active conduct of qualified trade/business.",
+            "**Holding Period**: Must be held for more than 5 years."
           ]
         },
         {
@@ -7812,6 +7946,17 @@
             "Amount of occasional profits",
             "Financial status of taxpayer",
             "Elements of personal pleasure or recreation"
+          ],
+          "items": [
+            "**Manner**: Manner in which taxpayer carries on the activity (business-like?).",
+            "**Expertise**: Expertise of taxpayer or advisors.",
+            "**Time/Effort**: Time and effort expended.",
+            "**Appreciation**: Expectation that assets may appreciate.",
+            "**Success History**: Success in carrying on other similar/dissimilar activities.",
+            "**Income History**: History of income or losses with respect to the activity.",
+            "**Profits**: Amount of occasional profits, if any.",
+            "**Financial Status**: Financial status of the taxpayer.",
+            "**Personal Pleasure**: Elements of personal pleasure or recreation."
           ]
         },
         {
@@ -7936,6 +8081,13 @@
             "Must close within 180 days (or tax return due date if earlier)",
             "Qualified intermediary holds proceeds",
             "Cannot receive cash or other property before exchange"
+          ],
+          "items": [
+            "**Written Plan**: Must have a written plan document.",
+            "**Exclusive Benefit**: For the exclusive benefit of employees.",
+            "**Nondiscrimination**: Cannot discriminate in favor of HCEs.",
+            "**Participation**: Minimum age/service requirements met.",
+            "**Vesting**: Benefits must vest according to schedule."
           ]
         },
         {
@@ -8043,6 +8195,13 @@
             "Publicly traded stocks and securities",
             "Dealer dispositions (ordinary course of business)",
             "Depreciation recapture (all recognized in year 1)"
+          ],
+          "items": [
+            "**Inventory**: Stock in trade or property held primarily for sale.",
+            "**Securities**: Stocks, bonds, notes.",
+            "**Partnership Interests**: Interests in a partnership.",
+            "**Certificates of Trust**: Used in beneficial interest.",
+            "**Choses in Action**: Right to sue."
           ]
         },
         {
@@ -8543,12 +8702,12 @@
           "type": "knowledge-check",
           "title": "1099-NEC Filing Requirements",
           "knowledgeCheck": {
-            "question": "Which of the following scenarios requires filing a Form 1099-NEC?\n\nA) Paying a corporation $1,000 for consulting services.\nB) Paying an attorney $300 for legal services related to a business dispute.\nC) Paying a self-employed graphic designer $500 for creating a company logo.\nD) Paying a partnership $400 for office supplies.",
+            "question": "Which of the following scenarios requires filing a Form 1099-NEC?",
             "options": [
-              "A) Paying a corporation $1,000 for consulting services.",
-              "B) Paying an attorney $300 for legal services related to a business dispute.",
-              "C) Paying a self-employed graphic designer $500 for creating a company logo.",
-              "D) Paying a partnership $400 for office supplies."
+              "Paying a corporation $1,000 for consulting services.",
+              "Paying an attorney $300 for legal services related to a business dispute.",
+              "Paying a self-employed graphic designer $500 for creating a company logo.",
+              "Paying a partnership $400 for office supplies."
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B. A 1099-NEC must be filed for any amount paid to an attorney for legal services. A 1099-NEC is generally not required for payments to corporations (option A) or for amounts under $600 to non-employees for services (options C and D).",

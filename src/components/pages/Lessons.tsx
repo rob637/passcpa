@@ -5,6 +5,7 @@ import {
   BookOpen,
   CheckCircle,
   ChevronRight,
+  ChevronDown,
   Clock,
   Search,
   GraduationCap,
@@ -19,8 +20,6 @@ import { useStudy } from '../../hooks/useStudy';
 import { useCourse } from '../../providers/CourseProvider';
 import { getSectionDisplayInfo, getDefaultSection, isValidSection } from '../../utils/sectionUtils';
 import { fetchLessonsBySection } from '../../services/lessonService';
-import { getQuestionStats } from '../../services/questionService';
-import { getTBSCount } from '../../services/tbsService';
 import { useBookmarks } from '../common/Bookmarks';
 import clsx from 'clsx';
 import { Lesson, Difficulty, ExamSection } from '../../types';
@@ -42,8 +41,6 @@ interface DisplayLesson {
 
 interface GroupedArea extends AreaDefinition {
   lessons: DisplayLesson[];
-  mcqCount?: number;
-  tbsCount?: number;
 }
 
 /**
@@ -117,7 +114,10 @@ const Lessons: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [rawLessons, setRawLessons] = useState<Lesson[]>([]);
-  const [contentCounts, setContentCounts] = useState<{ mcq: number; tbs: number }>({ mcq: 0, tbs: 0 });
+
+  // Accordion state
+  const [expandedArea, setExpandedArea] = useState<string | null>(null);
+  // Default to collapsed for all sections
 
   // Get bookmarked lesson IDs (all bookmarks, for matching)
   const allBookmarkedLessonIds = new Set(
@@ -134,28 +134,18 @@ const Lessons: React.FC = () => {
   const currentSection = (sectionFromUrl || validProfileSection || getDefaultSection(courseId)) as ExamSection;
   const sectionInfo = getSectionDisplayInfo(currentSection, courseId);
   
-  // Fetch lessons and content counts
+  // Fetch lessons
   useEffect(() => {
-    const fetchLessonsAndCounts = async () => {
+    const fetchLessons = async () => {
       try {
         // Fetch lessons
         const lessons = await fetchLessonsBySection(currentSection, courseId);
         setRawLessons(lessons);
-        
-        // Fetch content counts for section
-        const [questionStats, tbsCount] = await Promise.all([
-          getQuestionStats(),
-          getTBSCount(currentSection as ExamSection),
-          ]);
-          setContentCounts({
-            mcq: questionStats.bySection[currentSection] || 0,
-            tbs: tbsCount,
-          });
       } catch (error) {
         logger.error('Error fetching lessons:', error);
       }
     };
-    fetchLessonsAndCounts();
+    fetchLessons();
   }, [currentSection, courseId]);
   
   // Fetch completed lessons from Firestore
@@ -216,6 +206,11 @@ const Lessons: React.FC = () => {
     (acc, area) => acc + area.lessons.filter((l) => l.completed).length,
     0
   );
+  
+  // Initialize accordion state - default to collapsed
+  // Removed auto-expansion logic per user request
+
+
   const totalDuration = lessonAreas.reduce(
     (acc, area) => acc + area.lessons.reduce((a, l) => a + (l.duration || 30), 0),
     0
@@ -259,41 +254,7 @@ const Lessons: React.FC = () => {
           </div>
         </div>
 
-        {/* Stats - Course-aware content counts */}
-        <div className={`grid ${course.hasTBS ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'} gap-3 mb-6`}>
-          <div className="card p-3 text-center">
-            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
-              <BookOpen className="w-5 h-5 text-primary-500" />
-              {totalLessons}
-            </div>
-            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Lessons</div>
-          </div>
-          <div className="card p-3 text-center">
-            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-blue-600">
-              <FileText className="w-5 h-5" />
-              {contentCounts.mcq}
-            </div>
-            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">MCQs</div>
-          </div>
-          {/* TBS - Only for CPA */}
-          {course.hasTBS && (
-            <div className="card p-3 text-center">
-              <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-primary-600">
-                <ClipboardCheck className="w-5 h-5" />
-                {contentCounts.tbs}
-              </div>
-              <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">TBS</div>
-            </div>
-          )}
-          <div className="card p-3 text-center">
-            <div className="flex items-center justify-center gap-1 text-xl sm:text-2xl font-bold text-success-600">
-              <Trophy className="w-5 h-5" />
-              {progressPercent}%
-            </div>
-            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Complete</div>
-          </div>
-        </div>
-        
+
         {/* Progress bar */}
         <div className="mb-6">
           <div className="flex justify-between text-sm text-slate-600 dark:text-slate-300 mb-2">
@@ -366,29 +327,41 @@ const Lessons: React.FC = () => {
             ? Math.round((areaCompleted / area.lessons.length) * 100) 
             : 0;
 
+          // Auto-expand if searching, otherwise use state
+          const isExpanded = searchQuery ? true : expandedArea === area.id;
+
           return (
-            <div key={area.id} className="card">
+            <div key={area.id} className="card overflow-hidden">
               {/* Area Header - Study Journey Style */}
-              <div className="card-header">
+              <div 
+                className="card-header cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                onClick={() => !searchQuery && setExpandedArea(isExpanded ? null : area.id)}
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-bold">
+                       <span 
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-sm font-bold transition-colors"
+                        style={{ 
+                          backgroundColor: sectionInfo?.bgColor, 
+                          color: sectionInfo?.color 
+                        }}
+                      >
                         {`F${areaIndex + 1}`}
                       </span>
                       <div>
-                        <h2 className="font-semibold text-slate-900 dark:text-slate-100">{area.title}</h2>
+                        {/* Title & Chevron */}
+                        <div className="flex items-center gap-2">
+                          <h2 className="font-semibold text-slate-900 dark:text-slate-100">{area.title}</h2>
+                          {isExpanded ? (
+                            <ChevronDown className="w-4 h-4 text-slate-400" />
+                          ) : (
+                            <ChevronRight className="w-4 h-4 text-slate-400" />
+                          )}
+                        </div>
                         {/* Content counts per area */}
                         <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-300 mt-0.5">
                           <span>{area.lessons.length} Lessons</span>
-                          <span className="text-slate-300 dark:text-slate-500">·</span>
-                          <span>{Math.round(contentCounts.mcq / lessonAreas.length)} MCQs</span>
-                          {course.hasTBS && (
-                            <>
-                              <span className="text-slate-300 dark:text-slate-500">·</span>
-                              <span>{Math.round(contentCounts.tbs / lessonAreas.length)} TBS</span>
-                            </>
-                          )}
                         </div>
                       </div>
                     </div>
@@ -416,16 +389,20 @@ const Lessons: React.FC = () => {
                       'h-full rounded-full transition-all duration-500',
                       areaProgress === 100 
                         ? 'bg-success-500' 
-                        : 'bg-primary-500'
+                        : ''
                     )}
-                    style={{ width: `${areaProgress}%` }} 
+                    style={{ 
+                      width: `${areaProgress}%`,
+                      backgroundColor: areaProgress < 100 ? sectionInfo?.color : undefined
+                    }} 
                   />
                 </div>
               </div>
 
               {/* Lessons List */}
+              {isExpanded && (
               <div 
-                className="divide-y divide-slate-100 dark:divide-slate-700"
+                className="divide-y divide-slate-100 dark:divide-slate-700 border-t border-slate-100 dark:border-slate-700"
                 role="list"
                 aria-label={`Lessons in ${area.title}`}
               >
@@ -444,9 +421,9 @@ const Lessons: React.FC = () => {
                       aria-disabled={isLocked}
                       className={clsx(
                         'flex items-center gap-3 p-3 md:p-4 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500',
-                        isLocked ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50',
-                        isNext && 'bg-primary-50 dark:bg-primary-900/20'
+                        isLocked ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-50 dark:hover:bg-slate-700/50'
                       )}
+                      style={isNext ? { backgroundColor: sectionInfo?.bgColor } : undefined}
                     >
                       {/* Lesson Info */}
                       <div className="flex-1 min-w-0">
@@ -476,7 +453,14 @@ const Lessons: React.FC = () => {
                               {lesson.difficulty}
                             </span>
                           )}
-                          {isNext && <span className="text-primary-600 dark:text-primary-400 font-medium">Up Next</span>}
+                          {isNext && (
+                            <span 
+                              className="font-medium"
+                              style={{ color: sectionInfo?.color }}
+                            >
+                              Up Next
+                            </span>
+                          )}
                           {/* Bookmark/Notes indicators */}
                           {isBookmarked(lesson.id) && (
                             <Bookmark className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
@@ -500,6 +484,7 @@ const Lessons: React.FC = () => {
                   );
                 })}
               </div>
+              )}
             </div>
           );
         })}

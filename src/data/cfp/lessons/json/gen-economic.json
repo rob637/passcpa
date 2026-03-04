@@ -76,6 +76,12 @@
               "term": "Recovery",
               "definition": "Period from trough to previous peak"
             }
+          ],
+          "items": [
+            "**Expansion**: GDP rising, unemployment falling, consumer confidence high.",
+            "**Peak**: The height of economic activity; capacity constraints appear; inflation risk.",
+            "**Contraction (Recession)**: GDP falling (2 quarters), unemployment rising.",
+            "**Trough**: The bottom of the cycle; point where contraction ends and expansion begins."
           ]
         },
         {
@@ -175,6 +181,11 @@
               "term": "Debt",
               "definition": "Accumulated deficits over time"
             }
+          ],
+          "items": [
+            "**Expansionary**: Lower taxes / Increase gov spending (Fight recession).",
+            "**Contractionary**: Raise taxes / Decrease gov spending (Fight inflation).",
+            "**Neutral**: Policy tries to maintain steady growth."
           ]
         },
         {
@@ -876,6 +887,11 @@
               "term": "Business loans",
               "definition": "For income-producing assets"
             }
+          ],
+          "items": [
+            "**Mortgage**: Interest is deductible (usually), asset (home) generally appreciates.",
+            "**Student Loans**: Investment in human capital; potentially deductible interest.",
+            "**Business Debt**: Leverage to generate income; interest deductible."
           ]
         },
         {
@@ -894,6 +910,11 @@
               "term": "Auto loans on depreciating vehicles",
               "definition": "Lose value immediately"
             }
+          ],
+          "items": [
+            "**Credit Cards**: High interest, non-deductible, consumption-based.",
+            "**Auto Loans**: Asset depreciates rapidly (unless business use).",
+            "**Payday Loans**: Predatory interest rates."
           ]
         },
         {
@@ -1134,6 +1155,11 @@
               "term": "Tier 3: Extended Reserve (4+ months)",
               "definition": "Short-term Treasury funds, Roth IRA contributions (as last resort)"
             }
+          ],
+          "items": [
+            "**District Courts**: Trial courts; only forum requiring payment of tax first (refund suit).",
+            "**Court of Appeals**: Circuit courts; hear appeals from District and Tax Courts.",
+            "**Supreme Court**: Highest court; rarely hears tax cases (writ of certiorari)."
           ]
         },
         {
@@ -1325,6 +1351,11 @@
               "term": "Display Precision",
               "definition": "For 4 decimal places: [Orange] [DISP] 4"
             }
+          ],
+          "items": [
+            "**P/YR**: Set Payments Per Year (usually 1 or 12). Press [Blue] [1] [P/YR].",
+            "**BGN/END**: Set timing of cash flows. [Blue] [BEG/END].",
+            "**Decimals**: Set display decimals. [Disp] [4] (recommended)."
           ]
         },
         {
@@ -1352,6 +1383,11 @@
               "term": "Display Precision",
               "definition": "[2nd] [FORMAT] \u2192 enter desired decimals \u2192 [ENTER]"
             }
+          ],
+          "items": [
+            "**P/Y**: [2nd] [P/Y] [1] [Enter] (Set to 1 usually).",
+            "**BGN/END**: [2nd] [BGN] [2nd] [SET].",
+            "**Format**: [2nd] [Format] set DEC = 4."
           ]
         },
         {

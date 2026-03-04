@@ -324,7 +324,7 @@ export default function LinkedInPosts() {
               ) : (
                 <>
                   <FileText className="w-4 h-4 mr-1" />
-                  Seed 50 Posts
+                  Seed Posts
                 </>
               )}
             </Button>

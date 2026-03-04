@@ -82,10 +82,10 @@
           "knowledgeCheck": {
             "question": "Which of the following actions BEST demonstrates the internal audit function's value in enhancing governance and accountability?",
             "options": [
-              "A) Providing assurance on the effectiveness of the organization's risk management framework and compliance with ethical standards.",
-              "B) Identifying and reporting instances of fraud or non-compliance to senior management.",
-              "C) Recommending improvements to operational efficiency and cost reduction initiatives.",
-              "D) Conducting regular audits of financial statements to ensure accuracy and reliability."
+              "Providing assurance on the effectiveness of the organization's risk management framework and compliance with ethical standards.",
+              "Identifying and reporting instances of fraud or non-compliance to senior management.",
+              "Recommending improvements to operational efficiency and cost reduction initiatives.",
+              "Conducting regular audits of financial statements to ensure accuracy and reliability."
             ],
             "correctIndex": 0,
             "explanation": "Option A directly addresses governance and accountability by ensuring the risk management framework is effective and ethical standards are followed. While the other options are valuable, they don't primarily focus on governance and accountability in the same comprehensive way.",
@@ -106,10 +106,10 @@
           "knowledgeCheck": {
             "question": "An internal audit department proactively identified a significant cybersecurity vulnerability before it was exploited by external attackers. Which of the following is the MOST effective way to demonstrate the value provided by this action?",
             "options": [
-              "A) Reporting the vulnerability to the IT department and tracking its remediation.",
-              "B) Quantifying the potential financial loss that was avoided due to the vulnerability being detected and remediated before exploitation.",
-              "C) Conducting a post-remediation audit to ensure the vulnerability was properly addressed.",
-              "D) Communicating the vulnerability and remediation efforts in the next audit committee meeting."
+              "Reporting the vulnerability to the IT department and tracking its remediation.",
+              "Quantifying the potential financial loss that was avoided due to the vulnerability being detected and remediated before exploitation.",
+              "Conducting a post-remediation audit to ensure the vulnerability was properly addressed.",
+              "Communicating the vulnerability and remediation efforts in the next audit committee meeting."
             ],
             "correctIndex": 1,
             "explanation": "Quantifying the potential financial loss avoided provides a concrete, measurable demonstration of the value added by internal audit. While the other options are important steps, they don't directly quantify the value.",
@@ -161,10 +161,10 @@
           "knowledgeCheck": {
             "question": "An internal auditor is assigned to audit the procurement department. The auditor's spouse works as a senior buyer in the same department. Which of the following actions is MOST appropriate for the auditor to take?",
             "options": [
-              "A) Proceed with the audit, ensuring objectivity by focusing solely on documentation and avoiding personal interaction with their spouse.",
-              "B) Disclose the potential conflict of interest to the appropriate parties and request to be removed from the engagement.",
-              "C) Inform their spouse about the audit scope and request their cooperation in providing accurate information.",
-              "D) Continue with the audit, but recuse themselves from reviewing any transactions directly handled by their spouse."
+              "Proceed with the audit, ensuring objectivity by focusing solely on documentation and avoiding personal interaction with their spouse.",
+              "Disclose the potential conflict of interest to the appropriate parties and request to be removed from the engagement.",
+              "Inform their spouse about the audit scope and request their cooperation in providing accurate information.",
+              "Continue with the audit, but recuse themselves from reviewing any transactions directly handled by their spouse."
             ],
             "correctIndex": 1,
             "explanation": "Option B is the MOST appropriate action. Disclosing the conflict allows management to assess the significance and take appropriate action, such as reassigning the audit. Maintaining objectivity is difficult, and the appearance of impropriety is also a concern. Options A and D do not fully address the conflict, and Option C is inappropriate and could compromise the audit.",
@@ -185,10 +185,10 @@
           "knowledgeCheck": {
             "question": "An internal auditor previously worked as a cost accountant for a division they are now assigned to audit. What is the PRIMARY concern related to this situation?",
             "options": [
-              "A) The auditor may lack the necessary technical skills to perform the audit effectively.",
-              "B) The auditor may be overly familiar with the division's operations, leading to complacency.",
-              "C) The auditor's prior experience may create a conflict of interest, impairing objectivity.",
-              "D) The auditor may be biased against the division due to past disagreements with management."
+              "The auditor may lack the necessary technical skills to perform the audit effectively.",
+              "The auditor may be overly familiar with the division's operations, leading to complacency.",
+              "The auditor's prior experience may create a conflict of interest, impairing objectivity.",
+              "The auditor may be biased against the division due to past disagreements with management."
             ],
             "correctIndex": 2,
             "explanation": "The primary concern is a conflict of interest that may impair the auditor's objectivity. The auditor's past involvement could influence their judgment and create a perception of bias, even if none exists. While other options could be possibilities, the conflict of interest is the most direct and relevant concern.",
@@ -236,10 +236,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST appropriate action for an internal audit function to take when it lacks expertise in a highly specialized area needed for a specific audit engagement?",
             "options": [
-              "A) Decline the audit engagement to avoid potential errors.",
-              "B) Proceed with the audit engagement using the existing staff and rely on available resources.",
-              "C) Engage a specialist or co-source the engagement to obtain the necessary expertise.",
-              "D) Postpone the audit engagement until internal staff can be adequately trained."
+              "Decline the audit engagement to avoid potential errors.",
+              "Proceed with the audit engagement using the existing staff and rely on available resources.",
+              "Engage a specialist or co-source the engagement to obtain the necessary expertise.",
+              "Postpone the audit engagement until internal staff can be adequately trained."
             ],
             "correctIndex": 2,
             "explanation": "Engaging a specialist or co-sourcing is the most appropriate action. It allows the internal audit function to address the expertise gap without unnecessarily declining the engagement or proceeding without adequate skills. Postponing for training is less efficient in the short term.",
@@ -335,10 +335,10 @@
           "knowledgeCheck": {
             "question": "Which of the following activities is LEAST likely to be considered part of ongoing monitoring within an internal audit function?",
             "options": [
-              "A) Daily supervision and review of audit staff's work.",
-              "B) A comprehensive external quality assessment conducted every five years.",
-              "C) Tracking performance metrics related to audit engagement completion times.",
-              "D) Reviewing the quality of internal audit reports before issuance."
+              "Daily supervision and review of audit staff's work.",
+              "A comprehensive external quality assessment conducted every five years.",
+              "Tracking performance metrics related to audit engagement completion times.",
+              "Reviewing the quality of internal audit reports before issuance."
             ],
             "correctIndex": 1,
             "explanation": "Ongoing monitoring is a continuous process. A comprehensive external quality assessment is a periodic review, typically conducted by an independent party, and is not considered ongoing monitoring.",
@@ -775,10 +775,10 @@
           "knowledgeCheck": {
             "question": "The CAE of an organization has just completed an audit report identifying significant control weaknesses in the payroll process, including potential fraudulent activities. Besides auditee management, who among the following is MOST likely the NEXT appropriate recipient of the audit report?",
             "options": [
-              "A. All employees of the payroll department.",
-              "B. Senior management and the audit committee/Board.",
-              "C. The organization's external legal counsel.",
-              "D. All departments that utilize the payroll system."
+              "All employees of the payroll department.",
+              "Senior management and the audit committee/Board.",
+              "The organization's external legal counsel.",
+              "All departments that utilize the payroll system."
             ],
             "correctIndex": 1,
             "explanation": "Senior management and the audit committee/Board are the most appropriate next recipients. Senior management needs to be informed of the significant control weaknesses and potential fraud, and the audit committee/Board is responsible for overseeing the organization's financial reporting and internal controls.",
@@ -799,10 +799,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the LEAST effective method for protecting confidential information contained within an internal audit report?",
             "options": [
-              "A. Using secure email with encryption for transmission.",
-              "B. Redacting sensitive details before distribution to certain parties.",
-              "C. Distributing the full report to all management levels to ensure transparency.",
-              "D. Marking the document as 'Confidential' and limiting its distribution."
+              "Using secure email with encryption for transmission.",
+              "Redacting sensitive details before distribution to certain parties.",
+              "Distributing the full report to all management levels to ensure transparency.",
+              "Marking the document as 'Confidential' and limiting its distribution."
             ],
             "correctIndex": 2,
             "explanation": "Distributing the full report to all management levels is the LEAST effective method because it violates the principle of limiting distribution based on the 'need to know'. It increases the risk of unauthorized disclosure of sensitive information.",

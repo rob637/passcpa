@@ -552,10 +552,15 @@ class SubscriptionService {
 
   /**
    * Check if user has paid access to a specific exam.
-   * Checks paidExams map first, then legacy single-course fields.
+   * Checks lifetime tier first, then paidExams map, then legacy single-course fields.
    */
   hasExamPaidAccess(subscription: UserSubscription | null, courseId: string): boolean {
     if (!subscription) return false;
+    
+    // Lifetime tier grants access to ALL exams
+    if (subscription.tier === 'lifetime' && subscription.status === 'active') {
+      return true;
+    }
     
     // Check per-exam paid subs map
     const paidExam = subscription.paidExams?.[courseId];

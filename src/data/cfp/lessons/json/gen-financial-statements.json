@@ -553,6 +553,13 @@
               "term": "Subscriptions",
               "definition": "Gym, streaming (if committed)"
             }
+          ],
+          "items": [
+            "**Mortgage/Rent**: Regular housing payments.",
+            "**Auto Loan**: Monthly car payments.",
+            "**Insurance Premiums**: Life, auto, home (if installment).",
+            "**Property Taxes**: Regular assessments (if not escrowed).",
+            "**Student Loans**: Required monthly debt service."
           ]
         },
         {
@@ -583,6 +590,13 @@
               "term": "Clothing",
               "definition": "Personal, children"
             }
+          ],
+          "items": [
+            "**Utilities**: Electric, water, gas (seasonal fluctuation).",
+            "**Food**: Groceries (necessary but variable amount).",
+            "**Transportation**: Gas, tolls, parking.",
+            "**Clothing**: Necessary work/school clothes.",
+            "**Medical**: Copays and prescriptions."
           ]
         },
         {
@@ -613,6 +627,13 @@
               "term": "Personal care",
               "definition": "Spa, salon, non-essential"
             }
+          ],
+          "items": [
+            "**Entertainment**: Dining out, movies, concerts.",
+            "**Vacations**: Travel and lodging for leisure.",
+            "**Hobbies**: Golf, gym memberships, streaming services.",
+            "**Gifts**: Charitable donations or family gifts.",
+            "**Luxury Goods**: Designer clothing, electronics upgrades."
           ]
         },
         {
@@ -1299,10 +1320,10 @@
           "knowledgeCheck": {
             "question": "A client comes to you stating they are struggling to save for retirement and want more control over their finances. They are willing to spend time tracking every expense and want to know exactly where their money goes. Which budgeting approach would be MOST suitable for this client?",
             "options": [
-              "A) Traditional (Line-Item) Budgeting",
-              "B) Pay Yourself First (Reverse Budgeting)",
-              "C) A combination of both methods",
-              "D) None of the above; budgeting is not appropriate for this client"
+              "Traditional (Line-Item) Budgeting",
+              "Pay Yourself First (Reverse Budgeting)",
+              "A combination of both methods",
+              "None of the above; budgeting is not appropriate for this client"
             ],
             "correctIndex": 0,
             "explanation": "Traditional budgeting provides detailed control and allows the client to track every expense, making it ideal for someone wanting to know exactly where their money goes and identify problem areas. Pay Yourself First prioritizes savings and doesn't require as much granular tracking.",

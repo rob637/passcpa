@@ -5,6 +5,7 @@ import { PageTransition } from '../common/PageTransition';
 import { TrialBanner } from '../common/SubscriptionGate';
 import { PWAInstallPrompt, PWAInstallBanner } from '../common/PWAInstallPrompt';
 import { useStudy } from '../../hooks/useStudy';
+import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { useRouteTitle } from '../../hooks/useDocumentTitle';
 import * as feedback from '../../services/feedback';
 import { usePageTracking } from '../../hooks/usePageTracking';
@@ -15,6 +16,15 @@ import { COURSES } from '../../courses';
 import { detectCourseFromPath } from '../../utils/courseNavigation';
 import { getNavItems, isNavActive } from '../../config/navigation';
 import clsx from 'clsx';
+
+// Health indicator colors for study plan
+const HEALTH_DOT_COLORS: Record<string, string> = {
+  'on-track': 'bg-green-500',
+  'slightly-behind': 'bg-amber-500',
+  'behind': 'bg-orange-500',
+  'at-risk': 'bg-red-500',
+  'critical': 'bg-red-700',
+};
 
 interface ProgressRingProps {
   progress?: number;
@@ -61,6 +71,7 @@ const MainLayout = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const { currentStreak, dailyProgress } = useStudy();
+  const { plan: studyPlan, hasPlan } = useStudyPlan();
   const { courseId: providerCourseId } = useCourse();
   
   // For course-specific URLs (e.g., /cfp/home), use path detection.
@@ -230,31 +241,23 @@ const MainLayout = () => {
                 }
               >
                 <item.icon className="w-5 h-5" />
-                {item.label}
+                <span className="flex-1">{item.label}</span>
+                {/* Health indicator for Study Plan */}
+                {item.showHealthBadge && hasPlan && studyPlan && (
+                  <span 
+                    className={clsx(
+                      'w-2 h-2 rounded-full',
+                      HEALTH_DOT_COLORS[studyPlan.health] || 'bg-slate-400'
+                    )}
+                    title={`Plan status: ${studyPlan.health.replace('-', ' ')}`}
+                  />
+                )}
               </NavLink>
             ))}
           </div>
         </div>
 
         <div className="mt-auto p-6 border-t border-slate-100 dark:border-slate-700">
-          <div className="bg-slate-50 dark:bg-slate-800 rounded-2xl p-4 border border-slate-100 dark:border-slate-700">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400">
-                Daily Goal
-              </span>
-              <span className="text-xs font-bold text-primary-600 dark:text-primary-400">{dailyProgress}%</span>
-            </div>
-            <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-primary-500 rounded-full transition-all duration-500"
-                style={{ width: `${dailyProgress}%` }}
-              />
-            </div>
-            <div className="mt-3 flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
-              <Flame className="w-3.5 h-3.5 text-orange-500" />
-              <span>{currentStreak} day streak!</span>
-            </div>
-          </div>
           <a
             href="https://discord.gg/SNZJHr26"
             target="_blank"
@@ -341,14 +344,25 @@ const MainLayout = () => {
               onClick={() => feedback.tap()}
               className={() =>
                 clsx(
-                  'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5 transition-transform active:scale-95',
+                  'nav-link flex flex-col items-center justify-center w-full h-full gap-0.5 transition-transform active:scale-95 relative',
                   isNavActive(item.navType, location.pathname, searchParams, currentCourseId)
                     ? 'text-primary-600 dark:text-primary-400' 
                     : 'text-slate-500 dark:text-slate-400'
                 )
               }
             >
-              <item.icon className="w-5 h-5" aria-hidden="true" />
+              <div className="relative">
+                <item.icon className="w-5 h-5" aria-hidden="true" />
+                {/* Health indicator dot for Study Plan */}
+                {item.showHealthBadge && hasPlan && studyPlan && (
+                  <span 
+                    className={clsx(
+                      'absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full ring-2 ring-white dark:ring-slate-800',
+                      HEALTH_DOT_COLORS[studyPlan.health] || 'bg-slate-400'
+                    )}
+                  />
+                )}
+              </div>
               <span className="text-[10px] font-medium">{item.label}</span>
             </NavLink>
           ))}

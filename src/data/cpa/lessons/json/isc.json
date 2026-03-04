@@ -2269,10 +2269,10 @@
           "knowledgeCheck": {
             "question": "Which phase of the System Development Life Cycle (SDLC) primarily focuses on defining the 'what' of the system, including functionalities, features, and constraints?",
             "options": [
-              "A) Implementation",
-              "B) Design",
-              "C) Requirements Gathering and Analysis",
-              "D) Maintenance"
+              "Implementation",
+              "Design",
+              "Requirements Gathering and Analysis",
+              "Maintenance"
             ],
             "correctIndex": 2,
             "explanation": "The Requirements Gathering and Analysis phase is where the business needs are translated into specific system requirements. This defines exactly what the system needs to do. The other phases focus on how to build, deploy, and maintain the system based on these initial requirements.",
@@ -2572,10 +2572,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the PRIMARY goal of implementing robust change management controls within an IT environment?",
             "options": [
-              "A) To accelerate the deployment of new IT systems and applications, regardless of potential risks.",
-              "B) To ensure all IT changes are thoroughly documented, tested, and authorized, minimizing the risk of disruptions and unintended consequences.",
-              "C) To eliminate the need for user acceptance testing, thereby reducing the time required for IT implementations.",
-              "D) To allow IT personnel to implement changes based on their individual judgment and expertise, without formal approvals."
+              "To accelerate the deployment of new IT systems and applications, regardless of potential risks.",
+              "To ensure all IT changes are thoroughly documented, tested, and authorized, minimizing the risk of disruptions and unintended consequences.",
+              "To eliminate the need for user acceptance testing, thereby reducing the time required for IT implementations.",
+              "To allow IT personnel to implement changes based on their individual judgment and expertise, without formal approvals."
             ],
             "correctIndex": 1,
             "explanation": "The primary goal of change management is to minimize risk by ensuring changes are properly controlled. Options A, C, and D all represent deviations from sound change management principles and increase the likelihood of errors and disruptions.",
@@ -2596,10 +2596,10 @@
           "knowledgeCheck": {
             "question": "What is the MOST important reason for requiring formal authorization before implementing any changes to IT systems?",
             "options": [
-              "A) To ensure that the IT department has sufficient resources to handle the change.",
-              "B) To comply with industry regulations and audit requirements.",
-              "C) To assess the potential impact of the change on the business and ensure it aligns with organizational objectives and risk tolerance.",
-              "D) To provide a record of who implemented the change in case of future problems."
+              "To ensure that the IT department has sufficient resources to handle the change.",
+              "To comply with industry regulations and audit requirements.",
+              "To assess the potential impact of the change on the business and ensure it aligns with organizational objectives and risk tolerance.",
+              "To provide a record of who implemented the change in case of future problems."
             ],
             "correctIndex": 2,
             "explanation": "While all the options have some relevance, the primary reason for authorization is to evaluate the business impact and alignment with objectives. This ensures that changes are not made without considering the broader organizational context and potential risks.",
@@ -4382,10 +4382,10 @@
           "knowledgeCheck": {
             "question": "Which of the following security goals is BEST achieved through the use of cryptography?",
             "options": [
-              "A. Ensuring that data is available to authorized users when needed.",
-              "B. Verifying the identity of the sender of a message and preventing them from denying they sent it.",
-              "C. Protecting a system against denial-of-service attacks.",
-              "D. Preventing unauthorized physical access to a data center."
+              "Ensuring that data is available to authorized users when needed.",
+              "Verifying the identity of the sender of a message and preventing them from denying they sent it.",
+              "Protecting a system against denial-of-service attacks.",
+              "Preventing unauthorized physical access to a data center."
             ],
             "correctIndex": 1,
             "explanation": "Cryptography is primarily used to achieve confidentiality, integrity, authentication, and non-repudiation. Verifying the sender's identity and preventing denial (non-repudiation) is a direct application of cryptographic techniques like digital signatures. Availability (A) is related to business continuity and disaster recovery. Preventing DoS (C) is related to network security. Physical access (D) is related to physical security.",
@@ -4406,10 +4406,10 @@
           "knowledgeCheck": {
             "question": "In cryptography, what is the term used to describe the original, readable data before it is transformed into an unreadable format?",
             "options": [
-              "A. Ciphertext",
-              "B. Hash",
-              "C. Plaintext",
-              "D. Key"
+              "Ciphertext",
+              "Hash",
+              "Plaintext",
+              "Key"
             ],
             "correctIndex": 2,
             "explanation": "The original, readable data before encryption is called plaintext. Ciphertext is the encrypted data. A hash is a one-way function output. A key is used in the encryption/decryption process.",
@@ -10357,10 +10357,10 @@
           "knowledgeCheck": {
             "question": "Following a successful ransomware attack, which of the following steps should be performed FIRST in accordance with a typical incident response plan?",
             "options": [
-              "A) Eradication: Remove the malware and restore systems to their pre-incident state.",
-              "B) Containment: Isolate affected systems to prevent further spread of the ransomware.",
-              "C) Recovery: Implement business continuity procedures to restore critical business functions.",
-              "D) Identification: Determine the scope and nature of the ransomware attack."
+              "Eradication: Remove the malware and restore systems to their pre-incident state.",
+              "Containment: Isolate affected systems to prevent further spread of the ransomware.",
+              "Recovery: Implement business continuity procedures to restore critical business functions.",
+              "Identification: Determine the scope and nature of the ransomware attack."
             ],
             "correctIndex": 3,
             "explanation": "The correct answer is D) Identification. The first step in incident response is to identify the incident. This involves determining the scope, nature, and impact of the attack before any other actions are taken. Containment, eradication, and recovery follow identification.",
@@ -10876,10 +10876,10 @@
           "knowledgeCheck": {
             "question": "Under GDPR, which of the following principles requires organizations to ensure that personal data is relevant and not excessive in relation to the purposes for which it is processed?",
             "options": [
-              "A) Purpose limitation",
-              "B) Data minimization",
-              "C) Storage limitation",
-              "D) Accuracy"
+              "Purpose limitation",
+              "Data minimization",
+              "Storage limitation",
+              "Accuracy"
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B) Data minimization. This principle dictates that organizations should only collect and process the personal data that is strictly necessary for the specified purpose. Options A, C and D represent other GDPR principles but do not directly address the idea of collecting only what is needed.",
@@ -11050,10 +11050,10 @@
           "knowledgeCheck": {
             "question": "During which phase of the Third-Party Risk Management (TPRM) lifecycle should an organization define its security requirements and expectations for a potential vendor?",
             "options": [
-              "A) Onboarding",
-              "B) Due Diligence",
-              "C) Contracting",
-              "D) Monitoring"
+              "Onboarding",
+              "Due Diligence",
+              "Contracting",
+              "Monitoring"
             ],
             "correctIndex": 2,
             "explanation": "The Contracting phase is where specific risk provisions and security requirements are formally documented in the agreement with the third-party vendor. This ensures both parties are aligned on expectations and responsibilities.",
@@ -11074,10 +11074,10 @@
           "knowledgeCheck": {
             "question": "An organization is outsourcing its data storage to a third-party provider. Which type of SOC report would be MOST beneficial for the organization to review during the Due Diligence phase to assess the third-party's internal controls related to security and availability?",
             "options": [
-              "A) SOC 1 Type I",
-              "B) SOC 2 Type II",
-              "C) SOC 3",
-              "D) SOC for Cybersecurity"
+              "SOC 1 Type I",
+              "SOC 2 Type II",
+              "SOC 3",
+              "SOC for Cybersecurity"
             ],
             "correctIndex": 1,
             "explanation": "A SOC 2 Type II report provides an opinion on the fairness of the presentation of management's description of the service organization's system and the suitability of the design and operating effectiveness of the controls to achieve the related control objectives included in the description throughout a specified period. This offers a comprehensive view of the vendor's controls over time, which is crucial for assessing ongoing risk.",
@@ -11461,10 +11461,10 @@
           "knowledgeCheck": {
             "question": "Which of the following BEST describes the primary focus of COBIT 2019?",
             "options": [
-              "A. Implementing best practices for IT service delivery and support.",
-              "B. Providing a comprehensive framework for the governance and management of enterprise IT.",
-              "C. Optimizing the IT infrastructure to reduce operational costs.",
-              "D. Ensuring compliance with data privacy regulations."
+              "Implementing best practices for IT service delivery and support.",
+              "Providing a comprehensive framework for the governance and management of enterprise IT.",
+              "Optimizing the IT infrastructure to reduce operational costs.",
+              "Ensuring compliance with data privacy regulations."
             ],
             "correctIndex": 1,
             "explanation": "COBIT 2019's core purpose is the governance and management of enterprise IT. While ITIL focuses on service management, COBIT takes a broader view encompassing all aspects of IT governance.",
@@ -11855,10 +11855,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST significant challenge associated with symmetric key encryption that necessitates careful key management practices?",
             "options": [
-              "A. The computational overhead required for encryption and decryption, making it unsuitable for large datasets.",
-              "B. The inherent vulnerability to brute-force attacks due to the shorter key lengths used.",
-              "C. The difficulty in securely distributing the secret key to all authorized parties, creating a potential security risk.",
-              "D. The lack of support for non-repudiation, making it impossible to prove the sender of a message."
+              "The computational overhead required for encryption and decryption, making it unsuitable for large datasets.",
+              "The inherent vulnerability to brute-force attacks due to the shorter key lengths used.",
+              "The difficulty in securely distributing the secret key to all authorized parties, creating a potential security risk.",
+              "The lack of support for non-repudiation, making it impossible to prove the sender of a message."
             ],
             "correctIndex": 2,
             "explanation": "The primary challenge with symmetric encryption is the secure distribution of the key. Both parties need the same key, and if that key is compromised during distribution, the entire system is compromised. The other options are less significant or not directly related to the core key management challenge.",
@@ -13030,10 +13030,10 @@
           "knowledgeCheck": {
             "question": "Which of the following NIST Cybersecurity Framework core functions involves activities related to identifying and analyzing potential security incidents?",
             "options": [
-              "A) Identify",
-              "B) Protect",
-              "C) Detect",
-              "D) Respond"
+              "Identify",
+              "Protect",
+              "Detect",
+              "Respond"
             ],
             "correctIndex": 2,
             "explanation": "The 'Detect' function focuses on discovering cybersecurity events. This includes monitoring systems, detecting anomalies, and establishing processes to identify potential security breaches. The 'Respond' function takes action AFTER detection.",
@@ -13217,10 +13217,10 @@
           "knowledgeCheck": {
             "question": "During which phase of the NIST SP 800-61 incident response process would a security team implement short-term countermeasures to limit the spread of malware within the network?",
             "options": [
-              "A) Preparation",
-              "B) Detection and Analysis",
-              "C) Containment, Eradication, and Recovery",
-              "D) Post-Incident Activity"
+              "Preparation",
+              "Detection and Analysis",
+              "Containment, Eradication, and Recovery",
+              "Post-Incident Activity"
             ],
             "correctIndex": 2,
             "explanation": "Containment, Eradication, and Recovery is the phase where active steps are taken to stop the incident from spreading (containment), remove the cause (eradication), and restore systems to normal operation (recovery). Implementing short-term countermeasures falls directly under containment.",
@@ -13399,10 +13399,10 @@
           "knowledgeCheck": {
             "question": "During the planning phase of an IT audit, which of the following considerations is MOST crucial in determining the scope and nature of audit procedures?",
             "options": [
-              "A) The number of IT staff employed by the organization.",
-              "B) The assessed level of IT-related risks and their potential impact on the financial statements.",
-              "C) The auditor's prior experience with IT audits in similar industries.",
-              "D) The availability of generalized audit software (GAS) for data extraction and analysis."
+              "The number of IT staff employed by the organization.",
+              "The assessed level of IT-related risks and their potential impact on the financial statements.",
+              "The auditor's prior experience with IT audits in similar industries.",
+              "The availability of generalized audit software (GAS) for data extraction and analysis."
             ],
             "correctIndex": 1,
             "explanation": "The assessed level of IT-related risks and their potential impact on the financial statements directly influence the scope and nature of audit procedures. Materiality guides the extent of testing required to obtain sufficient appropriate audit evidence.",
@@ -13747,7 +13747,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "AI Bias and Fairness: Knowledge Check",
           "knowledgeCheck": {
             "question": "Which of the following is the MOST significant risk associated with biased training data in AI/ML models?",
@@ -13961,7 +13961,7 @@
           "content": "<!-- AUTO-GENERATED INTERACTIVE SECTIONS (2026-02-28) -->"
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "AI Learning Models - Knowledge Check",
           "knowledgeCheck": {
             "question": "Which type of machine learning algorithm would be MOST appropriate for identifying fraudulent transactions from a dataset where each transaction is already labeled as either 'fraudulent' or 'not fraudulent'?",

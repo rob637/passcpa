@@ -63,10 +63,10 @@
           "knowledgeCheck": {
             "question": "An internal auditor is planning an engagement to assess the effectiveness of the organization's procurement process. Which of the following is the MOST appropriate FIRST step in the engagement planning process, according to the IIA Standards?",
             "options": [
-              "A) Developing a detailed work program outlining specific audit procedures.",
-              "B) Establishing engagement objectives based on the organization's strategic goals.",
-              "C) Performing a preliminary survey to understand the procurement process and identify key risks.",
-              "D) Determining the scope of the engagement, including the systems and records to be reviewed."
+              "Developing a detailed work program outlining specific audit procedures.",
+              "Establishing engagement objectives based on the organization's strategic goals.",
+              "Performing a preliminary survey to understand the procurement process and identify key risks.",
+              "Determining the scope of the engagement, including the systems and records to be reviewed."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C. Standard 2200 emphasizes the importance of a preliminary survey as the initial step in engagement planning. This allows the auditor to gain an understanding of the area under review, identify potential risks, and plan the engagement effectively. Options A, B, and D are all important steps in the planning process, but they occur after the preliminary survey.",

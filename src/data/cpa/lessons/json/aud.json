@@ -164,10 +164,10 @@
           "knowledgeCheck": {
             "question": "Which of the following engagements provides the highest level of assurance?",
             "options": [
-              "A. Agreed-Upon Procedures",
-              "B. Review",
-              "C. Audit",
-              "D. Compilation"
+              "Agreed-Upon Procedures",
+              "Review",
+              "Audit",
+              "Compilation"
             ],
             "correctIndex": 2,
             "explanation": "An audit (examination) provides reasonable assurance, which is the highest level of assurance among the options. A review provides limited assurance, while agreed-upon procedures and compilations provide no assurance.",
@@ -957,10 +957,10 @@
           "knowledgeCheck": {
             "question": "Which of the following situations most clearly represents a conflict of interest for a CPA performing audit services for a client?",
             "options": [
-              "A. The CPA previously prepared the client's tax returns.",
-              "B. The CPA owns a small number of shares in a mutual fund that holds stock in the client.",
-              "C. The CPA's spouse is the Chief Financial Officer of a major competitor of the client.",
-              "D. The client is a privately held company and the CPA provides only audit services.",
+              "The CPA previously prepared the client's tax returns.",
+              "The CPA owns a small number of shares in a mutual fund that holds stock in the client.",
+              "The CPA's spouse is the Chief Financial Officer of a major competitor of the client.",
+              "The client is a privately held company and the CPA provides only audit services.",
               "E. The CPA provides tax services to the client."
             ],
             "correctIndex": 2,
@@ -1777,10 +1777,10 @@
           "knowledgeCheck": {
             "question": "During an audit of a privately held company, the CFO provides explanations for unusual revenue spikes at the end of each quarter. While the explanations seem plausible on the surface, the auditor notes a pattern of similar spikes over several years. Applying professional skepticism, the auditor should primarily:",
             "options": [
-              "A) Accept the CFO's explanations and document them in the workpapers, as management is presumed to be honest.",
-              "B) Automatically assume the revenue is fraudulently recorded and immediately contact the company's legal counsel.",
-              "C) Critically assess the CFO's explanations and gather additional corroborating evidence to support or refute the explanations.",
-              "D) Disregard the CFO's explanations and independently recalculate the revenue figures for the year."
+              "Accept the CFO's explanations and document them in the workpapers, as management is presumed to be honest.",
+              "Automatically assume the revenue is fraudulently recorded and immediately contact the company's legal counsel.",
+              "Critically assess the CFO's explanations and gather additional corroborating evidence to support or refute the explanations.",
+              "Disregard the CFO's explanations and independently recalculate the revenue figures for the year."
             ],
             "correctIndex": 2,
             "explanation": "Professional skepticism requires a critical assessment of explanations and corroborating evidence. While the explanations might be plausible, the auditor should not simply accept them without further investigation. Assuming fraud or disregarding the explanations entirely is also inappropriate.",
@@ -2149,10 +2149,10 @@
           "knowledgeCheck": {
             "question": "Which of the following procedures is LEAST likely to be performed during the acceptance or continuance phase of an audit engagement?",
             "options": [
-              "A) Communicating with the predecessor auditor regarding management's integrity.",
-              "B) Evaluating the firm's independence with respect to the prospective or continuing client.",
-              "C) Obtaining a thorough understanding of the client's internal control over financial reporting.",
-              "D) Assessing the firm's competence to perform the audit engagement."
+              "Communicating with the predecessor auditor regarding management's integrity.",
+              "Evaluating the firm's independence with respect to the prospective or continuing client.",
+              "Obtaining a thorough understanding of the client's internal control over financial reporting.",
+              "Assessing the firm's competence to perform the audit engagement."
             ],
             "correctIndex": 2,
             "explanation": "While understanding internal control is crucial for the audit, a *thorough* understanding is typically obtained later, during risk assessment and planning *after* acceptance/continuance. The other options are specifically acceptance/continuance activities.",
@@ -2755,10 +2755,10 @@
           "knowledgeCheck": {
             "question": "An auditor is performing a risk assessment for a new client in the airline industry. Which of the following factors would MOST likely indicate a heightened risk of material misstatement?",
             "options": [
-              "A. The airline industry is experiencing a period of rapid growth and increased profitability.",
-              "B. The airline industry is heavily regulated with strict safety and reporting requirements.",
-              "C. The airline industry is characterized by high fixed costs and sensitivity to fluctuations in fuel prices and passenger demand.",
-              "D. The airline industry has a limited number of major competitors with established market share."
+              "The airline industry is experiencing a period of rapid growth and increased profitability.",
+              "The airline industry is heavily regulated with strict safety and reporting requirements.",
+              "The airline industry is characterized by high fixed costs and sensitivity to fluctuations in fuel prices and passenger demand.",
+              "The airline industry has a limited number of major competitors with established market share."
             ],
             "correctIndex": 2,
             "explanation": "Correct Answer: C. High fixed costs and sensitivity to fuel prices and passenger demand create inherent risks because they can significantly impact profitability and asset valuation. This volatility could lead to management manipulating financial statements to meet targets. A, B, and D suggest a more stable environment or robust oversight, reducing inherent risk.",
@@ -3436,10 +3436,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is NOT a component of internal control according to the COSO Internal Control - Integrated Framework?",
             "options": [
-              "A) Control Environment",
-              "B) Risk Assessment",
-              "C) Production Efficiency",
-              "D) Monitoring Activities"
+              "Control Environment",
+              "Risk Assessment",
+              "Production Efficiency",
+              "Monitoring Activities"
             ],
             "correctIndex": 2,
             "explanation": "Production Efficiency is not a component of the COSO framework. The five components are Control Environment, Risk Assessment, Control Activities, Information & Communication, and Monitoring Activities.",
@@ -3460,10 +3460,10 @@
           "knowledgeCheck": {
             "question": "A company's management overrides established internal controls to meet aggressive earnings targets. Which component of the COSO framework is MOST directly impacted?",
             "options": [
-              "A) Risk Assessment",
-              "B) Control Environment",
-              "C) Information & Communication",
-              "D) Monitoring Activities"
+              "Risk Assessment",
+              "Control Environment",
+              "Information & Communication",
+              "Monitoring Activities"
             ],
             "correctIndex": 1,
             "explanation": "The Control Environment, specifically the 'Commitment to integrity and ethical values' principle, is most directly impacted. Management override signals a breakdown in the 'tone at the top'.",
@@ -4479,10 +4479,10 @@
           "knowledgeCheck": {
             "question": "An auditor is performing tests of controls over accounts payable. Which of the following procedures would provide the MOST appropriate evidence regarding the operating effectiveness of a control designed to ensure that all purchases are properly authorized?",
             "options": [
-              "A. Reviewing a sample of receiving reports to verify that they are properly matched with vendor invoices.",
-              "B. Observing the accounts payable clerk's daily activities to determine if they are following established procedures.",
-              "C. Examining a sample of purchase orders for proper approval signatures.",
-              "D. Tracing a sample of cash disbursements to supporting documentation to verify that the payments were for legitimate purchases.",
+              "Reviewing a sample of receiving reports to verify that they are properly matched with vendor invoices.",
+              "Observing the accounts payable clerk's daily activities to determine if they are following established procedures.",
+              "Examining a sample of purchase orders for proper approval signatures.",
+              "Tracing a sample of cash disbursements to supporting documentation to verify that the payments were for legitimate purchases.",
               "E. Inquiring of management whether they believe the control is effective."
             ],
             "correctIndex": 2,
@@ -5619,10 +5619,10 @@
           "knowledgeCheck": {
             "question": "Which of the following would LEAST likely be considered an accounting estimate requiring audit focus?\n",
             "options": [
-              "A. The annual depreciation expense for a building using the straight-line method.",
-              "B. The warranty liability for products sold during the year.",
-              "C. The allowance for doubtful accounts based on an aging of accounts receivable.",
-              "D. The fair value of a complex derivative financial instrument traded on an active exchange."
+              "The annual depreciation expense for a building using the straight-line method.",
+              "The warranty liability for products sold during the year.",
+              "The allowance for doubtful accounts based on an aging of accounts receivable.",
+              "The fair value of a complex derivative financial instrument traded on an active exchange."
             ],
             "correctIndex": 3,
             "explanation": "While fair value measurements can be accounting estimates, a derivative traded on an active exchange has a readily available market price, making it less subjective and inherently uncertain than the other options. The other options require significant judgment and assumptions.",
@@ -5643,10 +5643,10 @@
           "knowledgeCheck": {
             "question": "When auditing an accounting estimate, an auditor's understanding of management's process should include all of the following EXCEPT:",
             "options": [
-              "A. The method used to develop the estimate.",
-              "B. The key assumptions underlying the estimate.",
-              "C. The data inputs used in developing the estimate.",
-              "D. Management's compensation structure related to the estimate."
+              "The method used to develop the estimate.",
+              "The key assumptions underlying the estimate.",
+              "The data inputs used in developing the estimate.",
+              "Management's compensation structure related to the estimate."
             ],
             "correctIndex": 3,
             "explanation": "While understanding management's incentives is important for assessing bias, the auditor's understanding of management's process focuses on the methodology, assumptions, and data used to create the estimate itself, not management's compensation.",
@@ -5770,12 +5770,12 @@
           "type": "knowledge-check",
           "title": "Knowledge Check: Identifying Related Parties",
           "knowledgeCheck": {
-            "question": "Which of the following situations would most likely indicate the existence of previously undisclosed related party transactions?\n\nA. Sales to a new customer at prices significantly above market rates.\nB. A loan from the company to the CEO's brother-in-law, which is not disclosed in the financial statements.\nC. Frequent purchases from a supplier located in a tax haven.\nD. An unusually high volume of sales transactions occurring just before year-end.",
+            "question": "Which of the following situations would most likely indicate the existence of previously undisclosed related party transactions?",
             "options": [
-              "A. Sales to a new customer at prices significantly above market rates.",
-              "B. A loan from the company to the CEO's brother-in-law, which is not disclosed in the financial statements.",
-              "C. Frequent purchases from a supplier located in a tax haven.",
-              "D. An unusually high volume of sales transactions occurring just before year-end."
+              "Sales to a new customer at prices significantly above market rates.",
+              "A loan from the company to the CEO's brother-in-law, which is not disclosed in the financial statements.",
+              "Frequent purchases from a supplier located in a tax haven.",
+              "An unusually high volume of sales transactions occurring just before year-end."
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B. A loan to the CEO's brother-in-law, which is not disclosed, directly indicates a related party transaction that management is attempting to conceal. The other options could be indicators of other issues, but not necessarily related party transactions.",
@@ -7420,10 +7420,10 @@
           "knowledgeCheck": {
             "question": "During the audit of XYZ Company, the auditor discovers that management has not properly disclosed a significant related party transaction. This omission is deemed material, but not pervasive, to the financial statements. Which of the following best describes the situation?",
             "options": [
-              "A. Scope limitation leading to a disclaimer of opinion.",
-              "B. Material misstatement leading to a qualified opinion.",
-              "C. Scope limitation leading to a qualified opinion.",
-              "D. Material misstatement leading to an adverse opinion."
+              "Scope limitation leading to a disclaimer of opinion.",
+              "Material misstatement leading to a qualified opinion.",
+              "Scope limitation leading to a qualified opinion.",
+              "Material misstatement leading to an adverse opinion."
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B. A material, but not pervasive, misstatement due to a GAAP departure (inadequate disclosure) results in a qualified opinion. A scope limitation would arise from an inability to obtain sufficient appropriate audit evidence. An adverse opinion is appropriate when the misstatement is material AND pervasive.",
@@ -8083,10 +8083,10 @@
           "knowledgeCheck": {
             "question": "Which of the following attestation engagements provides the highest level of assurance?",
             "options": [
-              "A. Agreed-Upon Procedures Engagement",
-              "B. Review Engagement",
-              "C. Examination Engagement",
-              "D. Compilation Engagement"
+              "Agreed-Upon Procedures Engagement",
+              "Review Engagement",
+              "Examination Engagement",
+              "Compilation Engagement"
             ],
             "correctIndex": 2,
             "explanation": "An Examination Engagement provides reasonable assurance, which is the highest level of assurance offered in attestation engagements. Agreed-Upon Procedures provide no assurance, and Review Engagements provide limited assurance. Compilation engagements are not attestation engagements.",
@@ -9631,6 +9631,12 @@
             "**Program Change Management** - How are changes controlled?",
             "**Program Development** - How are new systems built?",
             "**Computer Operations** - How are systems run day-to-day?"
+          ],
+          "items": [
+            "Access to programs and data (Security Layers)",
+            "Program changes and development (Change Management)",
+            "Computer operations (Backups & Recovery)",
+            "System software acquisition and maintenance"
           ]
         },
         {
@@ -9742,10 +9748,10 @@
           "knowledgeCheck": {
             "question": "Which of the following IT general controls is MOST effective in mitigating the risk of unauthorized modification of financial data within an accounting system?",
             "options": [
-              "A) Implementing a disaster recovery plan with offsite data backups.",
-              "B) Requiring mandatory vacation for all IT personnel.",
-              "C) Implementing role-based access controls and strong password policies.",
-              "D) Conducting penetration testing to identify system vulnerabilities."
+              "Implementing a disaster recovery plan with offsite data backups.",
+              "Requiring mandatory vacation for all IT personnel.",
+              "Implementing role-based access controls and strong password policies.",
+              "Conducting penetration testing to identify system vulnerabilities."
             ],
             "correctIndex": 2,
             "explanation": "Role-based access controls and strong password policies directly address the risk of unauthorized modification by limiting system access to authorized personnel based on their job responsibilities. The other options address different risks but are not the MOST effective for preventing unauthorized modification.",
@@ -9766,10 +9772,10 @@
           "knowledgeCheck": {
             "question": "In an IT environment, which of the following segregation of duties is MOST critical to prevent fraud related to the payroll system?",
             "options": [
-              "A) The ability to initiate payroll transactions and reconcile the bank statement.",
-              "B) The ability to create new employee records and approve timecards.",
-              "C) The ability to update vendor master data and process payments.",
-              "D) The ability to perform system backups and restore data."
+              "The ability to initiate payroll transactions and reconcile the bank statement.",
+              "The ability to create new employee records and approve timecards.",
+              "The ability to update vendor master data and process payments.",
+              "The ability to perform system backups and restore data."
             ],
             "correctIndex": 1,
             "explanation": "Separating the creation of new employee records from the approval of timecards prevents fictitious employees from being added to the payroll system and paid. The other options relate to different business processes or IT operations.",
@@ -10030,6 +10036,14 @@
             "**Analytical procedures** to identify unusual relationships",
             "**Consider fraud risk factors** in risk assessment",
             "**Presumed risks:** Revenue recognition, management override"
+          ],
+          "items": [
+            "Discuss fraud risk with engagement team (brainstorming session)",
+            "Obtain information to identify risks (inquiries, analytical procedures)",
+            "Identify and assess fraud risks at financial statement and assertion levels",
+            "Respond to assessed risks (change nature, timing, extent of procedures)",
+            "Evaluate audit evidence for signs of fraud",
+            "Communicate findings to management and governance"
           ]
         },
         {
@@ -11267,12 +11281,12 @@
           "type": "knowledge-check",
           "title": "Related Party Identification",
           "knowledgeCheck": {
-            "question": "Which of the following situations most likely indicates the existence of related party transactions?\n\nA) Borrowing money at a rate significantly lower than the market rate.\nB) Selling land at a price that reflects fair market value, as determined by an independent appraisal.\nC) Purchasing raw materials from a supplier that is publicly traded.\nD) Leasing office space from a company where the CFO's spouse owns 5% of the outstanding shares.",
+            "question": "Which of the following situations most likely indicates the existence of related party transactions?",
             "options": [
-              "A) Borrowing money at a rate significantly lower than the market rate.",
-              "B) Selling land at a price that reflects fair market value, as determined by an independent appraisal.",
-              "C) Purchasing raw materials from a supplier that is publicly traded.",
-              "D) Leasing office space from a company where the CFO's spouse owns 5% of the outstanding shares."
+              "Borrowing money at a rate significantly lower than the market rate.",
+              "Selling land at a price that reflects fair market value, as determined by an independent appraisal.",
+              "Purchasing raw materials from a supplier that is publicly traded.",
+              "Leasing office space from a company where the CFO's spouse owns 5% of the outstanding shares."
             ],
             "correctIndex": 0,
             "explanation": "A) Borrowing money at a rate significantly lower than the market rate suggests that the transaction may not be at arm's length, which is a key indicator of a related party transaction. Options B and C are less likely to indicate related party transactions. Option D is possible, but the ownership percentage is low. Option A is more likely.",
@@ -11291,12 +11305,12 @@
           "type": "knowledge-check",
           "title": "Audit Procedures for Related Party Transactions",
           "knowledgeCheck": {
-            "question": "During an audit, an auditor discovers a significant transaction with a company controlled by a member of management's family. Which of the following procedures would be LEAST appropriate?\n\nA) Obtain written representations from management regarding the completeness of related party disclosures.\nB) Discuss the transaction with those charged with governance.\nC) Assume the transaction is properly valued and disclosed, based on management's assurance.\nD) Review minutes of board meetings for approval of the transaction.",
+            "question": "During an audit, an auditor discovers a significant transaction with a company controlled by a member of management's family. Which of the following procedures would be LEAST appropriate?",
             "options": [
-              "A) Obtain written representations from management regarding the completeness of related party disclosures.",
-              "B) Discuss the transaction with those charged with governance.",
-              "C) Assume the transaction is properly valued and disclosed, based on management's assurance.",
-              "D) Review minutes of board meetings for approval of the transaction."
+              "Obtain written representations from management regarding the completeness of related party disclosures.",
+              "Discuss the transaction with those charged with governance.",
+              "Assume the transaction is properly valued and disclosed, based on management's assurance.",
+              "Review minutes of board meetings for approval of the transaction."
             ],
             "correctIndex": 2,
             "explanation": "C) Assuming the transaction is properly valued and disclosed based solely on management's assurance is inappropriate. Due to the increased risk associated with related party transactions, auditors should exercise heightened professional skepticism and perform procedures to verify the valuation and disclosure. Options A, B, and D are all appropriate audit procedures.",

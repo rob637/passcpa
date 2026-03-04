@@ -1263,6 +1263,13 @@
               "term": "Pension Buyout Decision",
               "definition": "NPV of pension payments vs. lump sum offer"
             }
+          ],
+          "items": [
+            "**Retirement Needs**: Calculating lump sum needed at retirement to fund annuity stream.",
+            "**Education Funding**: Calculating annual savings needed for future tuition costs.",
+            "**Loan Amortization**: determining principal vs interest in payments.",
+            "**Uneven Cash Flows**: Computing NPV and IRR for investment analysis.",
+            "**Bond Pricing**: Price/Yield relationship calculations."
           ]
         },
         {

@@ -1012,10 +1012,10 @@
           "knowledgeCheck": {
             "question": "Under Section 404 of the Sarbanes-Oxley Act (SOX), which of the following is NOT a responsibility of management regarding Internal Control over Financial Reporting (ICFR)?",
             "options": [
-              "A. Assessing the effectiveness of ICFR annually using a recognized framework.",
-              "B. Reporting on the effectiveness of ICFR in the annual report.",
-              "C. Obtaining an unqualified opinion from an external auditor on the effectiveness of ICFR for all companies, regardless of size.",
-              "D. Disclosing any material weaknesses in ICFR."
+              "Assessing the effectiveness of ICFR annually using a recognized framework.",
+              "Reporting on the effectiveness of ICFR in the annual report.",
+              "Obtaining an unqualified opinion from an external auditor on the effectiveness of ICFR for all companies, regardless of size.",
+              "Disclosing any material weaknesses in ICFR."
             ],
             "correctIndex": 2,
             "explanation": "While external auditors are responsible for attesting to management's assessment of ICFR for large companies, SOX 404 does not require *all* companies to obtain an unqualified opinion. The requirement is phased for smaller companies. Management must assess and report on the ICFR but the auditor's role depends on the company size.",

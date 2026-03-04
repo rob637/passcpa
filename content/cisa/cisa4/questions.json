@@ -1,7 +1,6 @@
 {
-  "$schema": "../schema/question.schema.json",
   "section": "CISA4",
-  "exportedAt": "2026-02-25T22:37:19.281Z",
+  "exportedAt": "2026-03-02T14:22:08.753Z",
   "questions": [
     {
       "id": "cisa4-001",
@@ -27,7 +26,7 @@
         "0": "Why option A is WRONG - While hardware and software configurations are important, the SLA focuses on the *level* of service, not the underlying technical details. These details are usually found in other documents.",
         "1": "Why option B is WRONG - Knowing who is responsible for support is helpful, but the SLA's primary purpose is to define the *agreed-upon service levels*, not the support personnel. Contact information is typically in a separate contact directory or support agreement.",
         "2": "Why option C is WRONG - Penalty clauses are a component of an SLA, but the primary purpose is to agree on and monitor the service levels themselves. Penalties are a consequence of not meeting the agreed-upon service, not the main objective.",
-        "3": "Why option A is CORRECT - An SLA is an agreement between the service provider and the customer that defines the services to be delivered and the performance standards (levels) expected."
+        "3": "Why option D is CORRECT - An SLA is an agreement between the service provider and the customer that defines the services to be delivered and the performance standards (levels) expected."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -62,7 +61,7 @@
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Tabletop walkthrough...",
         "1": "Why option B is WRONG - Absolute statements are rarely correct in auditing. Auditors work with reasonable assurance, not absolute certainty.",
         "2": "Why option C is WRONG - A checklist review is the least effective DR test method. It provides minimal assurance of plan effectiveness.",
-        "3": "Why option A is CORRECT - A structured walkthrough or tabletop test involves key personnel discussing the plan scenarios step-by-step. It is effective for verification without any operational disruption. (Parallel tests minimize risk but require resources; Walkthrough is often \"most effective\" for initial validation or non-disruption constraints depending on specific context, but typically the question implies specific constraints only solved by walkthrough or simulation)."
+        "3": "Why option D is CORRECT - A structured walkthrough or tabletop test involves key personnel discussing the plan scenarios step-by-step. It is effective for verification without any operational disruption. (Parallel tests minimize risk but require resources; Walkthrough is often \"most effective\" for initial validation or non-disruption constraints depending on specific context, but typically the question implies specific constraints only solved by walkthrough or simulation)."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -97,7 +96,7 @@
         "0": "Why option A is WRONG - While cost reduction is a consideration, the primary purpose of IT operations management is service delivery, not staff reduction. Focusing solely on cost-cutting can negatively impact service reliability.",
         "1": "Why option B is WRONG - Developing new applications is important, but it falls under IT development, not IT operations. IT operations focuses on maintaining and delivering existing services, not creating new ones.",
         "2": "Why option C is WRONG - Approving IT projects is a governance function, not an operational one. IT operations management focuses on the day-to-day running and maintenance of IT services, not project approval.",
-        "3": "Why option B is CORRECT - IT operations management ensures reliable, consistent delivery of IT services that meet business requirements and service level agreements."
+        "3": "Why option D is CORRECT - IT operations management ensures reliable, consistent delivery of IT services that meet business requirements and service level agreements."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -132,7 +131,7 @@
         "0": "Why option A is WRONG - While training is important, job scheduling controls primarily focus on the automated execution of batch processes, not user training.",
         "1": "Why option B is WRONG - Keeping hardware updated is good practice, but job scheduling focuses on the logical sequence of processes, not hardware maintenance.",
         "2": "Why option C is WRONG - User access controls are important for security, but job scheduling ensures the correct order of batch processes, not user permissions.",
-        "3": "Why option A is CORRECT - Job scheduling controls ensure batch processes run in the correct sequence, at appropriate times, with proper dependencies maintained."
+        "3": "Why option D is CORRECT - Job scheduling controls ensure batch processes run in the correct sequence, at appropriate times, with proper dependencies maintained."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -167,7 +166,7 @@
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Operators have unlimited system access...",
         "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Operators have unlimited system access...",
         "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Operators have unlimited system access...",
-        "3": "Why option A is CORRECT - Operators with unlimited system access can bypass controls and make unauthorized changes. Access should be limited to what is necessary for operations."
+        "3": "Why option D is CORRECT - Operators with unlimited system access can bypass controls and make unauthorized changes. Access should be limited to what is necessary for operations."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -202,7 +201,7 @@
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Identifies and addresses root causes...",
         "1": "Why option B is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors.",
         "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Identifies and addresses root causes...",
-        "3": "Why option C is CORRECT - Problem management focuses on identifying root causes and preventing recurrence, while incident management focuses on quick service restoration."
+        "3": "Why option D is CORRECT - Problem management focuses on identifying root causes and preventing recurrence, while incident management focuses on quick service restoration."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -237,7 +236,7 @@
         "0": "Why option A is WRONG - While permanent solutions are important, incident management prioritizes rapid restoration over immediate permanent fixes. Permanent fixes are handled by problem management.",
         "1": "Why option B is WRONG - Root cause analysis is crucial, but it's a function of problem management, not the immediate goal of incident management which is service restoration.",
         "2": "Why option C is WRONG - Preventing *all* future incidents is unrealistic and potentially cost-prohibitive. Incident management focuses on restoring service, not eliminating all risk.",
-        "3": "Why option B is CORRECT - Incident management aims to restore normal service operation as quickly as possible, minimizing impact on business operations."
+        "3": "Why option D is CORRECT - Incident management aims to restore normal service operation as quickly as possible, minimizing impact on business operations."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -272,7 +271,7 @@
         "0": "Why option A is WRONG - While capacity management can indirectly influence costs, its primary focus is not solely on cost reduction. Cost reduction is a potential benefit, not the driving purpose.",
         "1": "Why option B is WRONG - Documentation is important, but it is a function of configuration management, not capacity management. Capacity management focuses on resource optimization, not documentation.",
         "2": "Why option C is WRONG - Limiting user access is a security control, and while it might alleviate some performance issues, it's not the core goal of capacity management. Capacity management is about ensuring adequate resources, not restricting access.",
-        "3": "Why option A is CORRECT - Capacity management ensures IT infrastructure has adequate capacity to meet current demands and planned future growth."
+        "3": "Why option D is CORRECT - Capacity management ensures IT infrastructure has adequate capacity to meet current demands and planned future growth."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -307,7 +306,7 @@
         "0": "Why option A is WRONG - Monitoring complements backups, it doesn't replace them. Backups are still needed for data restoration in case of failures or corruption.",
         "1": "Why option B is WRONG - Monitoring data informs disaster recovery planning, but it doesn't reduce the need for comprehensive documentation of processes and configurations.",
         "2": "Why option C is WRONG - Monitoring can help detect threats, but it cannot eliminate them entirely. Security threats are ever-evolving and require a layered approach.",
-        "3": "Why option A is CORRECT - Resource monitoring enables proactive identification of potential issues before they impact service, allowing preventive action."
+        "3": "Why option D is CORRECT - Resource monitoring enables proactive identification of potential issues before they impact service, allowing preventive action."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -342,7 +341,7 @@
         "0": "Why option A is WRONG - While security audits are important, they are not the primary function of a help desk, which focuses on user support.",
         "1": "Why option B is WRONG - Application development is typically handled by a development team, not a help desk, which focuses on user support and issue resolution.",
         "2": "Why option C is WRONG - Project management is a separate function from providing user support, which is the main purpose of a help desk.",
-        "3": "Why option B is CORRECT - The help desk provides a single point of contact for users to report issues, request services, and receive support."
+        "3": "Why option D is CORRECT - The help desk provides a single point of contact for users to report issues, request services, and receive support."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -377,7 +376,7 @@
         "0": "Why option A is WRONG - Mirror backups create an exact replica, not just changes since the last full backup. They are for redundancy, not efficient restoration from a specific point in time.",
         "1": "Why option B is WRONG - Full backups copy all data, regardless of changes since the last backup. The question specifies backups that *only* copy changed data.",
         "2": "Why option C is WRONG - Archive backups are for long-term storage and may or may not be incremental/differential. The question is specifically asking about backup *types* that copy changes since the last *full* backup.",
-        "3": "Why option B is CORRECT - Incremental and differential backups only copy data changed since the last full backup (differential) or last backup of any type (incremental), reducing backup time."
+        "3": "Why option D is CORRECT - Incremental and differential backups only copy data changed since the last full backup (differential) or last backup of any type (incremental), reducing backup time."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -412,7 +411,7 @@
         "0": "Why option A is WRONG - While cost is a factor, it's secondary to ensuring the backups are protected and accessible when needed. A cheap, inaccessible, or damaged backup is useless.",
         "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Environmental protection and accessibility...",
         "2": "Why option C is WRONG - The size of the storage area is important, but environmental controls and accessibility are more critical to data recovery. A large, but environmentally uncontrolled, storage area can lead to media degradation.",
-        "3": "Why option A is CORRECT - Offsite storage must provide environmental protection (temperature, humidity, fire protection) and timely accessibility to meet recovery objectives."
+        "3": "Why option D is CORRECT - Offsite storage must provide environmental protection (temperature, humidity, fire protection) and timely accessibility to meet recovery objectives."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "MOST/GREATEST questions want the highest-priority answer. Rank options by impact and alignment with core principles.",
@@ -447,7 +446,7 @@
         "0": "Why option A is WRONG - While important, a scheduled backup that completes successfully doesn't guarantee the data can be restored. Restoration is the ultimate test.",
         "1": "Why option B is WRONG - The cost and availability of backup media are secondary considerations. The primary concern is the ability to restore data in a timely manner.",
         "2": "Why option C is WRONG - Automation is a good practice, but it doesn't guarantee data integrity or the ability to recover from a data loss event. Restoration testing is key.",
-        "3": "Why option A is CORRECT - Backup testing must verify that data can be successfully restored. A backup that cannot be restored is useless for recovery purposes."
+        "3": "Why option D is CORRECT - Backup testing must verify that data can be successfully restored. A backup that cannot be restored is useless for recovery purposes."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -482,7 +481,7 @@
         "0": "Why option A is WRONG - While backup software capabilities are a factor in *how* data is retained, the *decision* of *what* data to retain and for how long must be driven by legal, regulatory, and business needs, not the limitations or features of the backup system.",
         "1": "Why option B is WRONG - IT preferences should not dictate data retention policies. Data retention must be driven by legal, regulatory, and business requirements, not by what is easiest or most convenient for the IT department.",
         "2": "Why option C is WRONG - Storage capacity and cost are important considerations for *how* data is retained, but the *decision* to retain data should be based on legal, regulatory, and business requirements, not solely on storage limitations or budget constraints.",
-        "3": "Why option C is CORRECT - Data retention policies must consider legal, regulatory, and business requirements to ensure data is kept long enough but not longer than necessary."
+        "3": "Why option D is CORRECT - Data retention policies must consider legal, regulatory, and business requirements to ensure data is kept long enough but not longer than necessary."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -517,7 +516,7 @@
         "0": "While backup power is important, it's only one aspect of environmental controls. HVAC, humidity, and other factors are also critical for data center stability.",
         "1": "Access controls are crucial for security, but they don't address the physical environmental conditions that can impact hardware performance and longevity.",
         "2": "Fire suppression is vital, but neglecting other environmental factors like temperature and humidity can still lead to equipment failure and data loss.",
-        "3": "Why option C is CORRECT - Data center environmental controls include HVAC for cooling, fire suppression systems, humidity control, and water detection to protect equipment."
+        "3": "Why option D is CORRECT - Data center environmental controls include HVAC for cooling, fire suppression systems, humidity control, and water detection to protect equipment."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -552,7 +551,7 @@
         "0": "A UPS is designed for a short-term power bridge, not to power an entire building, especially HVAC, which consumes significant power. Generators are used for that purpose.",
         "1": "A UPS is not typically used for cooling during maintenance. Maintenance usually involves shutting down or utilizing redundant systems; a UPS's short duration wouldn't be practical.",
         "2": "A UPS provides temporary, not long-term, backup power. Generators or other sustained power sources are required for long-term power outages.",
-        "3": "Why option C is CORRECT - A UPS provides short-term battery backup power to bridge the gap until a generator can start and take over during a power outage."
+        "3": "Why option D is CORRECT - A UPS provides short-term battery backup power to bridge the gap until a generator can start and take over during a power outage."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -587,7 +586,7 @@
         "0": "Why option A is WRONG - Absolute statements are rarely correct in auditing. Auditors work with reasonable assurance, not absolute certainty.",
         "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Restricted and logged...",
         "2": "Why option C is WRONG - This option is too restrictive. Effective IT management and auditing requires considering multiple factors.",
-        "3": "Why option A is CORRECT - Data center physical access should be restricted to authorized personnel, logged for accountability, and regularly reviewed."
+        "3": "Why option D is CORRECT - Data center physical access should be restricted to authorized personnel, logged for accountability, and regularly reviewed."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -622,7 +621,7 @@
         "0": "Network monitoring tools primarily focus on network performance and security events, not storing user data, though monitoring may indirectly capture some data. Audit logs are typically stored by dedicated logging systems.",
         "1": "Network monitoring tools are for observing network activity, not application development. User access is related to authentication and authorization, separate from network monitoring functionality.",
         "2": "Network monitoring tools complement firewalls and intrusion detection/prevention systems; they don't replace them. They provide visibility into network traffic, while firewalls control access and intrusion tools respond to threats.",
-        "3": "Why option B is CORRECT - Network monitoring tools detect network issues, measure performance, and help diagnose problems to maintain network availability and performance."
+        "3": "Why option D is CORRECT - Network monitoring tools detect network issues, measure performance, and help diagnose problems to maintain network availability and performance."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -657,7 +656,7 @@
         "0": "Why option A is WRONG - Following depreciation schedules alone doesn't ensure proper IT asset management; it's primarily for accounting and tax purposes. A complete inventory is still needed.",
         "1": "Why option B is WRONG - Tagging assets only after purchase doesn't account for assets already in use or those acquired through other means. A complete inventory is still needed.",
         "2": "Why option C is WRONG - Relying solely on user requests for disposal can lead to inconsistent and delayed asset removal, increasing security risks and costs. A complete inventory is still needed.",
-        "3": "Why option B is CORRECT - Without a complete inventory, the organization cannot properly manage, secure, or account for all IT assets, increasing risk of loss and security gaps."
+        "3": "Why option D is CORRECT - Without a complete inventory, the organization cannot properly manage, secure, or account for all IT assets, increasing risk of loss and security gaps."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -692,7 +691,7 @@
         "0": "Immediate disposal without sanitization poses a significant data breach risk. Sanitization is a crucial step that cannot be skipped.",
         "1": "Giving end-of-life servers to employees, even after formatting, introduces potential security vulnerabilities and licensing compliance issues. Complete data sanitization is required, which formatting alone does not guarantee.",
         "2": "Indefinite storage of end-of-life hardware is not a best practice. It consumes resources and poses a potential security risk if the storage area is compromised. A defined disposal or reuse plan is necessary.",
-        "3": "Why option A is CORRECT - End-of-life hardware must be properly sanitized to remove all data before disposal or reuse to prevent unauthorized data disclosure."
+        "3": "Why option D is CORRECT - End-of-life hardware must be properly sanitized to remove all data before disposal or reuse to prevent unauthorized data disclosure."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -727,7 +726,7 @@
         "0": "A BCP should involve all business units, not just IT. Limiting the scope to IT systems ignores critical business processes and dependencies outside of IT's direct control. A BCP must be organization-wide.",
         "1": "A BCP must address all critical business functions and processes, not just IT recovery. Focusing solely on IT neglects other essential aspects of business continuity, such as supply chain, facilities, and personnel. A comprehensive approach includes proactive and reactive measures.",
         "2": "Employees need to be aware of and trained on the BCP to effectively respond during a disruption. Keeping the plan confidential hinders their ability to execute their roles and responsibilities in a crisis. Transparency and training are essential for BCP effectiveness.",
-        "3": "Why option A is CORRECT - Business continuity planning is an organization-wide effort driven by business requirements, not just IT. It addresses all critical business functions."
+        "3": "Why option D is CORRECT - Business continuity planning is an organization-wide effort driven by business requirements, not just IT. It addresses all critical business functions."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -762,7 +761,7 @@
         "0": "Purchasing recovery infrastructure is premature before understanding the business impact and recovery requirements. It's a later step in the process.",
         "1": "Developing recovery procedures before a business impact analysis will likely result in procedures that are not aligned with critical business needs and resource allocation.",
         "2": "Training staff, particularly on incident response, is important but it cannot be effectively done before a BIA identifies critical roles and recovery needs.",
-        "3": "Why option B is CORRECT - BIA is the first step as it identifies critical functions and acceptable downtime, which drives all subsequent planning and investment decisions."
+        "3": "Why option D is CORRECT - BIA is the first step as it identifies critical functions and acceptable downtime, which drives all subsequent planning and investment decisions."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "When a CISA question asks what to do FIRST, look for the option that involves assessment, validation, or analysis before action.",
@@ -797,7 +796,7 @@
         "0": "While IT vendor contacts are important, a comprehensive communication plan requires more than just IT contacts. It must also include internal stakeholders, media contacts, and other relevant parties. Limiting the plan to escalation procedures is also insufficient. A crisis communication plan should address how to communicate the impact of the issue to internal and external stakeholders.",
         "1": "Knowing the backup location is important, but this answer focuses solely on physical infrastructure. A communication plan needs to address who will communicate, what will be communicated, and how it will be communicated, in addition to where backups are located. Hardware specifications are irrelevant for crisis communication.",
         "2": "Technical recovery procedures are critical for restoring systems, but they don't address the communication aspects of a crisis. Knowing software versions is also irrelevant for crisis communication. A comprehensive plan details communication channels, designated spokespersons, and pre-approved messaging.",
-        "3": "Why option C is CORRECT - Crisis communication plans should designate spokespersons, provide message templates, and establish procedures for communicating with stakeholders during a crisis."
+        "3": "Why option D is CORRECT - Crisis communication plans should designate spokespersons, provide message templates, and establish procedures for communicating with stakeholders during a crisis."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -832,7 +831,7 @@
         "0": "Tabletop exercises should involve key personnel from various departments, not just IT. Excluding business units limits the scope of the exercise and its effectiveness.",
         "1": "Tabletop exercises are valuable but do not replace the need for full disaster recovery tests. They are designed for discussion and planning, not for validating actual system recovery.",
         "2": "Tabletop exercises do *not* fully test recovery capabilities. They are theoretical walkthroughs and do not involve actually restoring data or systems. Testing data restoration requires a more comprehensive test.",
-        "3": "Why option C is CORRECT - Tabletop exercises walk through disaster scenarios in a discussion format without actually recovering systems, testing plan completeness and team coordination."
+        "3": "Why option D is CORRECT - Tabletop exercises walk through disaster scenarios in a discussion format without actually recovering systems, testing plan completeness and team coordination."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -867,7 +866,7 @@
         "0": "While proactive threat detection is valuable, backups are still crucial for data recovery in unforeseen circumstances, making complete elimination unrealistic and unwise.",
         "1": "While cloud-based strategies can potentially lower costs, the primary focus of DRP is business continuity, not cost reduction. Cost savings are a secondary benefit, not the main objective.",
         "2": "Completely preventing all disasters is impossible. DRP focuses on mitigating the impact and ensuring recovery, acknowledging that some disruptions are unavoidable despite preventative measures.",
-        "3": "Why option C is CORRECT - Disaster recovery planning aims to minimize business impact when disasters occur and enable timely recovery of critical IT systems."
+        "3": "Why option D is CORRECT - Disaster recovery planning aims to minimize business impact when disasters occur and enable timely recovery of critical IT systems."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -902,7 +901,7 @@
         "0": "A cold site does not offer immediate switchover capabilities. This describes a hot site.",
         "1": "A cold site does not have fully operational systems. That is a characteristic of a hot site.",
         "2": "Real-time data replication is not a feature of a cold site. It is associated with hot or warm sites.",
-        "3": "Why option B is CORRECT - A cold site provides basic infrastructure (space, power, connectivity) but requires significant time to install equipment and restore systems."
+        "3": "Why option D is CORRECT - A cold site provides basic infrastructure (space, power, connectivity) but requires significant time to install equipment and restore systems."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -937,7 +936,7 @@
         "0": "A warm site includes more than just backup storage; it involves some pre-configured hardware and connectivity, even if not fully operational.",
         "1": "A warm site has some infrastructure in place, unlike a cold site which relies on building everything from scratch. Relying only on cloud agreements would be more akin to a cold site strategy.",
         "2": "Immediate failover describes a hot site, not a warm site. A warm site requires some setup time before it can become fully operational.",
-        "3": "Why option B is CORRECT - A warm site has partial equipment and connectivity already in place, requiring moderate time to become fully operational."
+        "3": "Why option D is CORRECT - A warm site has partial equipment and connectivity already in place, requiring moderate time to become fully operational."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -972,7 +971,7 @@
         "0": "While encryption protects data confidentiality, it doesn't provide data replication for disaster recovery. Data can still be lost even if encrypted.",
         "1": "Data compression reduces storage space but doesn't offer protection against data loss in the event of a disaster. It's a storage optimization technique, not a disaster recovery one.",
         "2": "Automated backups are a component of a disaster recovery plan, but backing up data doesn't provide continuous data replication or minimal data loss, especially if backups are infrequent.",
-        "3": "Why option A is CORRECT - Data replication maintains copies of data at alternate locations, providing protection against data loss at the primary site and enabling faster recovery."
+        "3": "Why option D is CORRECT - Data replication maintains copies of data at alternate locations, providing protection against data loss at the primary site and enabling faster recovery."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -1007,7 +1006,7 @@
         "0": "Virtualization doesn't eliminate hardware, it abstracts it. Hardware is still required to run the virtual machines. The wording implies a total removal of dependence, which is incorrect.",
         "1": "While virtualization can simplify testing, it doesn't reduce the *need* for testing. Thorough testing is still crucial to ensure the virtualized environment functions correctly and disaster recovery plans are effective. Standardized images still require testing to validate their integrity and functionality.",
         "2": "Continuous replication improves data availability and reduces data loss, but it doesn't guarantee permanent data protection. Data can still be corrupted or lost due to various factors, such as logical errors, ransomware, or insider threats. \"Permanent\" implies an unrealistic level of protection.",
-        "3": "Why option A is CORRECT - Virtualization enables faster recovery by abstracting systems from specific hardware, allowing recovery on different physical equipment."
+        "3": "Why option D is CORRECT - Virtualization enables faster recovery by abstracting systems from specific hardware, allowing recovery on different physical equipment."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -1042,7 +1041,7 @@
         "0": "Disaster recovery requires planning regardless of vendor responsibility; the organization is still responsible for business continuity.",
         "1": "Cloud computing introduces some cost savings, but does not eliminate all costs. There are still costs associated with data transfer, service level agreements and potential downtime.",
         "2": "Cloud providers may offer services that help with compliance, but the organization remains responsible for ensuring compliance with all relevant regulations. Compliance is never automatic.",
-        "3": "Why option B is CORRECT - Cloud DR offers scalable resources, geographic distribution, and pay-as-you-use pricing, reducing the cost of maintaining standby infrastructure."
+        "3": "Why option D is CORRECT - Cloud DR offers scalable resources, geographic distribution, and pay-as-you-use pricing, reducing the cost of maintaining standby infrastructure."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -1077,7 +1076,7 @@
         "0": "While annual testing is good, failure to analyze the results renders the testing ineffective. The primary concern is whether critical business functions are addressed, not just if testing occurs without proper follow-up.",
         "1": "Electronic documentation is efficient, but without version control, there's a risk of using outdated or incorrect plans during a disaster. The absence of critical business function coverage is a more significant and fundamental flaw.",
         "2": "IT involvement is important, but excluding business units means the plan may not accurately reflect the needs and dependencies of core business processes. The main concern remains the potential oversight of critical business functions by neglecting to include all stakeholders.",
-        "3": "Why option A is CORRECT - BCP that does not address all critical business functions leaves the organization vulnerable. All critical functions must have continuity provisions."
+        "3": "Why option D is CORRECT - BCP that does not address all critical business functions leaves the organization vulnerable. All critical functions must have continuity provisions."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -1112,7 +1111,7 @@
         "0": "Lessons learned should never be kept confidential, as this prevents improvement of the DR plan. Protecting trade secrets is not a valid reason to avoid improving disaster recovery.",
         "1": "Sharing lessons learned only with management is insufficient. They should be shared with all relevant personnel involved in disaster recovery to ensure comprehensive understanding and improvement, regardless of cost.",
         "2": "Lessons learned should always be analyzed and used to improve the DR plan and procedures. Discarding them wastes valuable information and prevents future improvements, even if confusion may arise.",
-        "3": "Why option A is CORRECT - Lessons learned from DR tests should be documented and used to improve plans, procedures, and address gaps identified during testing."
+        "3": "Why option D is CORRECT - Lessons learned from DR tests should be documented and used to improve plans, procedures, and address gaps identified during testing."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -1147,7 +1146,7 @@
         "0": "The testing schedule is determined by factors such as resource availability and criticality of systems, not the MTD.",
         "1": "The recovery site type is primarily determined by cost, RTO, and RPO requirements, not the MTD directly.",
         "2": "Backup frequency is driven by the Recovery Point Objective (RPO), which defines acceptable data loss, not the MTD.",
-        "3": "Why option C is CORRECT - MTD is the maximum time a business function can be disrupted before the impact becomes unacceptable, driving RTO requirements."
+        "3": "Why option D is CORRECT - MTD is the maximum time a business function can be disrupted before the impact becomes unacceptable, driving RTO requirements."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -1182,7 +1181,7 @@
         "0": "Backup duration is the time it takes to complete a backup, not the time to resume business operations after a system outage. It's related to data protection, but not directly to work recovery.",
         "1": "Total downtime refers to the period the system was unavailable before restoration began. WRT focuses on the post-restoration period needed to validate data and restart business processes.",
         "2": "Time to restore systems is the recovery time objective (RTO). WRT is the subsequent phase of verifying the restored data and resuming business processes, thus application testing would be included in WRT.",
-        "3": "Why option C is CORRECT - WRT is the time needed to verify systems are working correctly and resume business processes after technical systems are restored."
+        "3": "Why option D is CORRECT - WRT is the time needed to verify systems are working correctly and resume business processes after technical systems are restored."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -1206,7 +1205,7 @@
       "skillLevel": "Application",
       "question": "Due to increasing cyberattacks, Vista Healthcare LLC is implementing IT service continuity management. The goal is to ensure that even in the event of a major disruption, critical patient care systems remain available. IT service continuity management ensures:",
       "options": [
-        "Zero downtime always, regardless of cost or technical feasibility.",
+        "near-zero downtime typically, regardless of cost or technical feasibility.",
         "Lowest cost operations are maintained during any service recovery.",
         "No disasters occur because all risks are mitigated proactively.",
         "IT services can be recovered within business requirements"
@@ -1217,7 +1216,7 @@
         "0": "Striving for zero downtime always is unrealistic and cost-prohibitive. IT service continuity focuses on *recovery* within defined business requirements, acknowledging that some downtime is inevitable. It's about balancing cost and risk.",
         "1": "While cost is a consideration, the primary goal of IT service continuity management is to restore critical services within acceptable timeframes. Focusing solely on the lowest cost can compromise recovery time objectives (RTOs) and business continuity.",
         "2": "IT service continuity management does not prevent disasters from occurring. The goal is to provide contingency planning and recovery procedures to minimize their impact. Risk mitigation reduces the *likelihood* of disasters, but can't eliminate them entirely.",
-        "3": "Why option A is CORRECT - IT service continuity management ensures IT services can be recovered within agreed timeframes to support business continuity requirements."
+        "3": "Why option D is CORRECT - IT service continuity management ensures IT services can be recovered within agreed timeframes to support business continuity requirements."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -1252,7 +1251,7 @@
         "0": "While there are costs associated with any DR plan, a reciprocal agreement is generally *less* costly than other options like hot sites. The primary weakness isn't cost, but the shared risk.",
         "1": "The firms are in the *same* city, so geographic distance is not relevant here. A reciprocal agreement is specifically designed for close proximity.",
         "2": "While any agreement has legal aspects, the core problem isn't legal complexity, but the shared single point of failure. The agreement itself is relatively straightforward.",
-        "3": "Why option A is CORRECT - Reciprocal agreements assume one organization can host another during disaster, but both may be affected simultaneously or capacity may not exist."
+        "3": "Why option D is CORRECT - Reciprocal agreements assume one organization can host another during disaster, but both may be affected simultaneously or capacity may not exist."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -1287,7 +1286,7 @@
         "0": "Cloud-based DR does not guarantee automatic compliance. The organization is still responsible for ensuring compliance with applicable laws and regulations, even when using a cloud provider. Compliance is a shared responsibility.",
         "1": "Guaranteed uptime is highly unlikely and usually comes with caveats and limitations. Resource availability, network outages, or unforeseen circumstances can all impact uptime, even with robust cloud solutions. SLAs rarely guarantee 100% uptime.",
         "2": "Cloud-based DR requires significant planning. While some automation is involved, organizations must still define recovery objectives (RTO/RPO), configure the environment, test failover procedures, and maintain documentation. Assuming no planning is needed is a critical mistake.",
-        "3": "Why option B is CORRECT - Cloud DR offers cost-effective, scalable recovery infrastructure without maintaining dedicated standby hardware, though planning is still required."
+        "3": "Why option D is CORRECT - Cloud DR offers cost-effective, scalable recovery infrastructure without maintaining dedicated standby hardware, though planning is still required."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -1322,7 +1321,7 @@
         "0": "Data compression, while beneficial for storage, doesn't directly support point-in-time recovery. It focuses on reducing storage space and improving I/O performance, not on recording changes for restoration.",
         "1": "Data encryption protects data confidentiality but does not, by itself, enable point-in-time recovery. While encryption is crucial for security, it doesn't provide the mechanism to revert the database to a previous state.",
         "2": "Archiving old data removes it from the active database, freeing up space. While important for data retention and performance, it does not directly facilitate restoring the database to a specific point in time; in fact, it could hinder it.",
-        "3": "Why option B is CORRECT - Database journaling records all changes (before and after images), enabling recovery to any point in time by replaying or reversing transactions."
+        "3": "Why option D is CORRECT - Database journaling records all changes (before and after images), enabling recovery to any point in time by replaying or reversing transactions."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -1427,7 +1426,7 @@
         "0": "RAID provides redundancy and performance benefits in addition to any encryption that might be implemented. Encryption alone does not protect against disk failure.",
         "1": "RAID is a real-time data protection mechanism, while backups are periodic. RAID provides immediate recovery from disk failures, unlike backups which require restoration.",
         "2": "While RAID *can* include compression, its primary function is data protection and performance improvement through redundancy, not just space savings.",
-        "3": "Why option B is CORRECT - RAID (Redundant Array of Independent Disks) provides data protection through disk redundancy and/or improved I/O performance depending on level."
+        "3": "Why option D is CORRECT - RAID (Redundant Array of Independent Disks) provides data protection through disk redundancy and/or improved I/O performance depending on level."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -1462,7 +1461,7 @@
         "0": "While consolidation *may* reduce costs, high availability clustering's primary goal is uptime, not cost reduction. Cost savings are a potential side effect, not the defining characteristic.",
         "1": "High availability clustering primarily focuses on application availability and redundancy, not network speed or traffic prioritization. While network performance is important, it's not the *direct* benefit of clustering.",
         "2": "While data encryption is a security best practice, high availability clustering does not *inherently* provide it. Encryption can be implemented separately, but is not the core function of clustering.",
-        "3": "Why option C is CORRECT - High availability clustering uses multiple servers with automatic failover, minimizing downtime if a server fails."
+        "3": "Why option D is CORRECT - High availability clustering uses multiple servers with automatic failover, minimizing downtime if a server fails."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -1497,7 +1496,7 @@
         "0": "Distributing only administrative functions during off-peak hours would not address the performance issues experienced by patients during peak hours. The problem specifically mentions patient access, which is not an administrative function.",
         "1": "While distributing security functions might improve security posture, it does not directly address the website's performance issues during peak hours. The problem statement focuses on the need to improve patient access and overall website performance, which is not primarily a security concern.",
         "2": "Distributing only backup traffic would not improve the website's performance during peak hours. Backups are typically scheduled for off-peak times and do not contribute to the real-time performance of the website for users.",
-        "3": "Why option C is CORRECT - Load balancing distributes network traffic across multiple servers to improve performance, availability, and prevent any single server from being overwhelmed."
+        "3": "Why option D is CORRECT - Load balancing distributes network traffic across multiple servers to improve performance, availability, and prevent any single server from being overwhelmed."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -1532,7 +1531,7 @@
         "0": "Focusing solely on security events overlooks other crucial events that can indicate system problems or potential vulnerabilities, such as unauthorized access attempts (even if unsuccessful) or unusual system behavior.",
         "1": "Limiting logging to performance data neglects important security-related events. While performance data is valuable, it doesn't provide insights into unauthorized access, data breaches, or other security incidents.",
         "2": "Restricting logging to errors misses significant events that, while not technically errors, may indicate suspicious activity or precursors to system failures. Access events and configuration changes are critical for comprehensive monitoring.",
-        "3": "Why option C is CORRECT - Logging should capture significant events including user access, configuration changes, errors, and security events for troubleshooting and accountability."
+        "3": "Why option D is CORRECT - Logging should capture significant events including user access, configuration changes, errors, and security events for troubleshooting and accountability."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -1567,7 +1566,7 @@
         "0": "SIEM systems offer far more than just backup and restoration. Their primary function is real-time analysis and threat detection, not just data recovery.",
         "1": "While log storage is a component of a SIEM, it's not the sole function. SIEMs actively analyze logs to identify anomalies and potential threats, going beyond simple storage.",
         "2": "SIEM systems provide data that *can* be used for compliance reporting, but their main purpose is not solely compliance. They focus on active threat detection and incident response, which goes well beyond just producing reports.",
-        "3": "Why option B is CORRECT - SIEM aggregates logs from multiple sources, correlates events to detect threats, provides real-time alerting, and supports investigation."
+        "3": "Why option D is CORRECT - SIEM aggregates logs from multiple sources, correlates events to detect threats, provides real-time alerting, and supports investigation."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Information security requires defense in depth with multiple layers of complementary controls. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -1602,7 +1601,7 @@
         "0": "The NOC's responsibilities extend beyond just development and application deployment. They are responsible for the entire network's health, including monitoring, maintenance, and incident response.",
         "1": "While help desk functions might be supported by the NOC, its primary focus is on the network infrastructure itself, not solely on user support and ticket resolution.",
         "2": "While security is a component of the NOC's function, its scope is far broader than just security features. It includes overall network availability, performance, and capacity management.",
-        "3": "Why option B is CORRECT - The NOC monitors and manages network infrastructure, identifying and resolving issues to maintain network availability and performance."
+        "3": "Why option D is CORRECT - The NOC monitors and manages network infrastructure, identifying and resolving issues to maintain network availability and performance."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -1707,7 +1706,7 @@
         "0": "Antivirus is a single layer of defense and does not address other aspects of OS hardening like removing unnecessary services or secure configuration. Relying solely on antivirus leaves the system vulnerable to other threats.",
         "1": "Patching is crucial, but applying patches without testing can cause instability. Also, patching alone doesn't address other hardening aspects such as removing unnecessary services or implementing secure configurations. Proper change management procedures are essential.",
         "2": "Strong password policies are important for authentication security, but are insufficient as the *only* hardening measure. They do not address vulnerabilities related to services, configurations, or unpatched software.",
-        "3": "Why option B is CORRECT - OS hardening includes removing unnecessary services, applying patches, disabling default accounts, and applying secure configuration settings."
+        "3": "Why option D is CORRECT - OS hardening includes removing unnecessary services, applying patches, disabling default accounts, and applying secure configuration settings."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Information security requires defense in depth with multiple layers of complementary controls. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -1742,7 +1741,7 @@
         "0": "Baseline configurations must include security. Allowing full administrative access to each department creates a significant security risk.",
         "1": "While flexibility is important, baseline configurations should prioritize security over agility. Unfettered flexibility will lead to inconsistent and potentially vulnerable systems.",
         "2": "Baseline configurations must include security settings, not just performance. Ignoring security hardening leaves systems vulnerable to attack.",
-        "3": "Why option B is CORRECT - Baseline configurations define standard secure settings for systems, ensuring consistent, compliant deployment across the environment."
+        "3": "Why option D is CORRECT - Baseline configurations define standard secure settings for systems, ensuring consistent, compliant deployment across the environment."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Information security requires defense in depth with multiple layers of complementary controls. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -1812,7 +1811,7 @@
         "0": "Focusing solely on printer maintenance and supplies ignores the critical aspect of data security. While important for operational efficiency, it doesn't address unauthorized access to sensitive data.",
         "1": "Monitoring ink levels and toner cartridge compatibility is a component of printer management, but it completely neglects the security risks associated with printing sensitive engineering documents.",
         "2": "Tracking paper usage and cost allocation are relevant for budget management, but they fail to address the core issue of preventing unauthorized access and data leaks related to sensitive documents.",
-        "3": "Why option C is CORRECT - Print controls should prevent unauthorized access to sensitive documents through features like secure print release and logging."
+        "3": "Why option D is CORRECT - Print controls should prevent unauthorized access to sensitive documents through features like secure print release and logging."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -1847,7 +1846,7 @@
         "0": "Labeling media is important for tracking and compliance, but it does not sanitize the data. It only helps with inventory and process control during disposal.",
         "1": "A single overwrite pass is often insufficient for secure data sanitization, especially with older or more advanced recovery techniques. Modern standards often require multiple passes or degaussing.",
         "2": "Cleaning external contaminants is a physical security concern, but it does not address the data residing on the media. Sanitization focuses on rendering the data unrecoverable.",
-        "3": "Why option C is CORRECT - Media sanitization removes data so it cannot be recovered, using methods appropriate to data sensitivity (clearing, purging, or destroying)."
+        "3": "Why option D is CORRECT - Media sanitization removes data so it cannot be recovered, using methods appropriate to data sensitivity (clearing, purging, or destroying)."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -1882,7 +1881,7 @@
         "0": "Backup and replication are important for data protection, but cryptographic key management involves more than just backups. It omits critical aspects like key generation, rotation, distribution, and destruction. Focusing solely on disaster recovery leaves the database vulnerable to compromise if keys are not properly managed.",
         "1": "While using a FIPS 140-2 compliant hardware module is a good practice for key creation, it addresses only one aspect of key management. Key management encompasses the entire lifecycle of a cryptographic key, including storage, distribution, rotation, and destruction, which are not addressed in this option. Key creation alone does not constitute complete key management.",
         "2": "Password management and strong access controls for database administrators are important security measures, but they are not sufficient for cryptographic key management. Key management specifically deals with the encryption keys themselves, while password management focuses on user authentication. This option neglects the essential procedures for key generation, storage, distribution, rotation, and destruction.",
-        "3": "Why option B is CORRECT - Key management covers the entire key lifecycle: generation, secure storage, distribution, rotation, archival, and secure destruction."
+        "3": "Why option D is CORRECT - Key management covers the entire key lifecycle: generation, secure storage, distribution, rotation, archival, and secure destruction."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Information security requires defense in depth with multiple layers of complementary controls. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -1987,7 +1986,7 @@
         "0": "While cost is a consideration, focusing solely on it neglects critical aspects like geographic risks, accessibility, security, and infrastructure requirements for effective disaster recovery. A low-cost site might be unusable in a real disaster.",
         "1": "Distance from the primary site is important, especially related to geographic risk, but focusing only on distance ignores other vital factors. Accessibility, security, and infrastructure are equally important to ensure a functional secondary site.",
         "2": "Vendor availability and SLAs are important for support, but focusing only on them neglects the fundamental suitability of the site itself. Geographic risks, accessibility, security, and infrastructure must be assessed independently of vendor capabilities.",
-        "3": "Why option B is CORRECT - DR site assessments should consider geographic risks, accessibility during disasters, physical security, infrastructure capacity, and regional threats."
+        "3": "Why option D is CORRECT - DR site assessments should consider geographic risks, accessibility during disasters, physical security, infrastructure capacity, and regional threats."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -2022,7 +2021,7 @@
         "0": "Crisis management requires cross-functional coordination and communication, involving stakeholders beyond IT. It's not solely a technical recovery effort.",
         "1": "Crisis management deals with extraordinary events that exceed the scope of standard incident management procedures and thresholds. Routine incidents are handled separately.",
         "2": "Effective crisis management necessitates comprehensive planning, including risk assessments, communication strategies, and clearly defined roles and responsibilities. Ad-hoc responses are insufficient and often lead to chaos.",
-        "3": "Why option B is CORRECT - Crisis management handles major events that threaten the organization's survival, requiring executive leadership and strategic decision-making."
+        "3": "Why option D is CORRECT - Crisis management handles major events that threaten the organization's survival, requiring executive leadership and strategic decision-making."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Point Objective (RPO) = how much data loss is acceptable.",
@@ -2057,7 +2056,7 @@
         "0": "Emergency procedures should be widely known and understood by all employees, not restricted to management and legal counsel. This creates a single point of failure and increases risk.",
         "1": "Emergency procedures should be proactively reviewed and updated on a regular schedule, not solely reactively after incidents or audit findings. Waiting for problems is a flawed strategy.",
         "2": "Emergency procedures should be simple and easily understood during a crisis. Overly complex and detailed procedures can cause confusion and delays, hindering effective response.",
-        "3": "Why option C is CORRECT - Emergency procedures should be clear, simple to follow under stress, and regularly tested to ensure effectiveness."
+        "3": "Why option D is CORRECT - Emergency procedures should be clear, simple to follow under stress, and regularly tested to ensure effectiveness."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -2092,7 +2091,7 @@
         "0": "While training *may* occur during a BCP test, it is not the primary goal. The main objective is to validate the plan's effectiveness, not staff training.",
         "1": "Satisfying auditors is a secondary benefit. The primary goal is to validate the plan's effectiveness in maintaining business operations during an outage, not solely to meet audit requirements.",
         "2": "Updating documentation might be a *result* of the test, but it's not the primary objective. The test's main purpose is to discover whether the plan actually works, which then informs documentation updates.",
-        "3": "Why option B is CORRECT - BC testing primarily verifies that plans work as expected, identifies gaps and weaknesses, and validates that objectives can be met."
+        "3": "Why option D is CORRECT - BC testing primarily verifies that plans work as expected, identifies gaps and weaknesses, and validates that objectives can be met."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -2127,7 +2126,7 @@
         "0": "Focusing solely on availability ignores other crucial aspects of SLAs, such as performance, response times, and data integrity. A comprehensive approach is needed.",
         "1": "Annual performance monitoring is insufficient for real-time SLA management. SLAs require ongoing monitoring to ensure continuous compliance and timely issue resolution. SOC 2 audit focuses on controls, not necessarily SLA adherence.",
         "2": "Waiting for problems to occur before monitoring is a reactive, rather than proactive, approach. Continuous monitoring is required to prevent SLA breaches and maintain service quality.",
-        "3": "Why option C is CORRECT - Service level monitoring should be continuous, measuring actual performance against SLA targets and reporting on compliance."
+        "3": "Why option D is CORRECT - Service level monitoring should be continuous, measuring actual performance against SLA targets and reporting on compliance."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -2162,7 +2161,7 @@
         "0": "While detecting failures is important, MTBF focuses on the average uptime *between* failures, not the detection time of a single failure. This answer focuses on incident response, not system reliability measurement.",
         "1": "Maintenance frequency is a preventative measure that *influences* MTBF but does not directly *measure* it. MTBF is a reactive metric, analyzing past performance, whereas maintenance frequency is proactive.",
         "2": "Time to repair (Mean Time To Repair - MTTR) is a related but distinct metric that measures the time required to restore a system to operation after a failure. MTBF measures uptime, not repair time.",
-        "3": "Why option C is CORRECT - MTBF measures the average time a system or component operates before experiencing a failure, indicating reliability."
+        "3": "Why option D is CORRECT - MTBF measures the average time a system or component operates before experiencing a failure, indicating reliability."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -2188,7 +2187,7 @@
       "options": [
         "Immediate shutdown to prevent data corruption during peak load",
         "Complete failure with automated rollback to a prior stable state",
-        "Full functionality always by dynamically provisioning new resources",
+        "full functionality typically by dynamically provisioning new resources",
         "Reduced functionality to maintain core services under stress"
       ],
       "correctAnswer": 3,
@@ -2197,7 +2196,7 @@
         "0": "Immediate shutdown, while preventing corruption, halts all transactions and customer access, which is an unacceptable degradation strategy. Service degradation aims to maintain some level of functionality, not complete cessation.",
         "1": "Complete failure is the antithesis of service degradation. Rollback is a recovery strategy, not a planned method for managing peak demand. Degradation aims to manage load, not react to failure.",
         "2": "While dynamically provisioning new resources *could* maintain full functionality, this is a capacity management strategy, not a service degradation strategy. Degradation implies a planned reduction in service, even if temporary.",
-        "3": "Why option B is CORRECT - Graceful degradation maintains core services with reduced functionality when systems are under stress rather than failing completely."
+        "3": "Why option D is CORRECT - Graceful degradation maintains core services with reduced functionality when systems are under stress rather than failing completely."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Service Level Agreements define expected performance metrics.",
@@ -2232,7 +2231,7 @@
         "0": "While load balancing is beneficial, it doesn't inherently prevent cascading failures. It distributes traffic but doesn't stop sending requests to a failing service, which is the key function of a circuit breaker.",
         "1": "A circuit breaker does *not* block all requests indiscriminately. It specifically targets requests to failing services to prevent further strain and cascading failures. Blocking all requests would halt the entire system unnecessarily.",
         "2": "A circuit breaker does not stop successful requests. Its purpose is to prevent *unsuccessful* requests from overwhelming a failing service and causing further problems. Attempting to stop successful requests would be counterproductive and degrade overall system functionality.",
-        "3": "Why option B is CORRECT - Circuit breakers prevent cascading failures by stopping requests to failing services, allowing them to recover."
+        "3": "Why option D is CORRECT - Circuit breakers prevent cascading failures by stopping requests to failing services, allowing them to recover."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -2337,7 +2336,7 @@
         "0": "Active-active configurations involve multiple active sites, not just a backup. While a cold site *could* be used in conjunction with other recovery options, it's irrelevant to the definition of active-active.",
         "1": "Active-active configurations, by definition, utilize multiple sites simultaneously handling traffic. Having one active site with a standby is an active-standby, or active-passive setup.",
         "2": "Active-active configurations are designed for automatic failover to minimize downtime. Manual failover negates the primary benefit of an active-active setup. While manual failover *could* be used in edge cases, it is not a defining characteristic.",
-        "3": "Why option B is CORRECT - Active-active configurations use multiple sites simultaneously, with all sites handling traffic and providing immediate failover."
+        "3": "Why option D is CORRECT - Active-active configurations use multiple sites simultaneously, with all sites handling traffic and providing immediate failover."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Business continuity planning ensures critical operations can continue during and after a disruption. Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Recovery Time Objective (RTO) = how long can you be down.",
@@ -2372,7 +2371,7 @@
         "0": "Successful backups do not cause split-brain scenarios. Backups are a preventative or recovery measure, not a cause of data inconsistency during network partitioning.",
         "1": "Improved performance is unrelated to split-brain scenarios. Split-brain is a data integrity issue, not a performance issue. Optimized queries do not trigger node isolation.",
         "2": "Agreement on the quorum disk actually *prevents* split-brain. Split-brain occurs when nodes *cannot* agree and incorrectly assume they are the sole primary node. A healthy quorum ensures consensus.",
-        "3": "Why option C is CORRECT - Split-brain occurs when cluster nodes lose connectivity and operate independently, potentially causing data inconsistency."
+        "3": "Why option D is CORRECT - Split-brain occurs when cluster nodes lose connectivity and operate independently, potentially causing data inconsistency."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Hot sites provide fastest recovery; cold sites are cheapest.",
@@ -2512,7 +2511,7 @@
         "0": "While hardware expenses are a consideration, error budgets are directly related to service uptime and reliability targets, not just hardware budgets. This option focuses on cost, not the allowed margin of error.",
         "1": "Development costs might be *affected* by error budgets (e.g., more patches if the error budget is exceeded), but the error budget itself *defines* the acceptable level of unreliability and is not fundamentally a cost calculation.",
         "2": "Staffing levels are important for incident response, but error budgets are a measure of service reliability and the allowable 'errors'. While staffing *influences* reliability, it's not what the error budget *defines*.",
-        "3": "Why option B is CORRECT - Error budgets define acceptable unreliability (e.g., 0.1% downtime), balancing innovation speed with reliability requirements."
+        "3": "Why option D is CORRECT - Error budgets define acceptable unreliability (e.g., 0.1% downtime), balancing innovation speed with reliability requirements."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -2617,7 +2616,7 @@
         "0": "MTBF (Mean Time Between Failures) relates to the reliability of systems, not incident response. It measures the average time a system operates before a failure occurs.",
         "1": "This describes part of the remediation phase of incident response, and not the detection phase that MTTD measures. It's the time spent fixing problems *after* the incident is detected and escalated.",
         "2": "Recovery time is a separate metric related to how long it takes to restore systems to normal operation *after* an incident has been contained and eradicated, not incident detection.",
-        "3": "Why option B is CORRECT - MTTD measures the time between when an incident occurs and when it is detected, indicating monitoring effectiveness."
+        "3": "Why option D is CORRECT - MTTD measures the time between when an incident occurs and when it is detected, indicating monitoring effectiveness."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
       "examTip": "Incident response follows: Identify, Contain, Eradicate, Recover.",
@@ -2720,7 +2719,7 @@
       "explanation": "Configuration drift occurs when system configurations deviate from the intended baseline over time through informal changes.",
       "whyWrong": {
         "0": "Applying baselines is a preventative measure against configuration drift, not the cause of it. The lack of monitoring exacerbates the problem, but the statement describes a condition where drift is *more likely*, not the definition of drift itself.",
-        "1": "Documenting changes is good practice, but documenting after the fact doesn't prevent drift from happening. This option describes poor change management, not the definition of configuration drift.",
+        "1": "Documenting changes is good practice, but documenting after the fact doesn't prevent drift from happening. This option Bescribes poor change management, not the definition of configuration drift.",
         "2": "Why option C is CORRECT - Configuration drift occurs when system configurations deviate from the intended baseline over time through informal changes.",
         "3": "Standardized configurations are intended to prevent drift. The lack of automated enforcement could contribute to drift, but the statement doesn't define configuration drift itself. It describes a situation where drift is *more likely*."
       },
@@ -3062,7 +3061,7 @@
       "question": "As part of its annual audit, MedSys Healthcare is required to validate its disaster recovery plan. A full interruption DR test:",
       "options": [
         "Tests only documentation and fails to validate recovery capabilities.",
-        "Are always required to comply with regulatory standards and policies.",
+        "Are typically required to comply with regulatory standards and policies.",
         "Provide most realistic validation but carry production risk",
         "Have no risk because they are performed in isolated test environments."
       ],
@@ -3097,7 +3096,7 @@
       "question": "After a recent merger, Consolidated Industries' IT infrastructure has undergone significant changes. When should the BC/DR plan maintenance be triggered?",
       "options": [
         "Annually only, adhering to the policy schedule regardless of changes.",
-        "Never, BC/DR is a one-time project completed during initial implementation.",
+        "Rarely, BC/DR is a one-time project completed during initial implementation.",
         "Significant changes occur to systems, personnel, or business processes",
         "Only after disasters expose vulnerabilities requiring plan updates."
       ],
@@ -3236,7 +3235,7 @@
       "skillLevel": "Application",
       "question": "Meridian Corp.'s incident response team is reviewing its escalation procedures. Command center activation occurs when:",
       "options": [
-        "Command center activation is never required for any reason.",
+        "Command center activation is rarely required for any reason.",
         "Incidents exceed normal escalation thresholds",
         "Only for natural disasters impacting critical infrastructure.",
         "Command center activation occurs for all reported incidents."
@@ -3344,7 +3343,7 @@
         "Automatically detect and recover from failures",
         "Replace all maintenance with automated remediation",
         "Require no monitoring after initial configuration",
-        "Never fail after rigorous testing and implementation"
+        "rarely fail after rigorous testing and implementation"
       ],
       "correctAnswer": 0,
       "explanation": "Self-healing systems automatically detect failures and take corrective action without human intervention.",
@@ -5634,7 +5633,7 @@
         "Bypass all approvals to accelerate the testing timeline",
         "Cause maximum disruption to reveal all system vulnerabilities",
         "Be carefully controlled with rollback capabilities",
-        "Never be done in production due to inherent data risks"
+        "rarely be done in production due to inherent data risks"
       ],
       "correctAnswer": 2,
       "explanation": "The correct answer is C) Be carefully controlled with rollback capabilities. Chaos testing, also known as chaos engineering, involves deliberately injecting failures into a system to test its resilience and identify weaknesses. When performed in a production environment, it's crucial to exercise extreme caution. The experiments must be carefully planned, controlled, and monitored. A rollback plan is essential to quickly revert any adverse effects caused by the injected failures.\n\nOption A is incorrect because bypassing all approvals would be reckless and could lead to significant disruptions. Option B is incorrect because the goal is not to cause maximum disruption, but rather to identify vulnerabilities in a controlled manner. Option D is incorrect because chaos testing, when done responsibly, can be a valuable tool for improving system resilience.\n\nChaos engineering principles are relevant to ISACA's guidance on DevOps and Agile methodologies. These methodologies emphasize continuous testing and improvement. Chaos testing aligns with this philosophy by proactively identifying weaknesses and improving system resilience. Furthermore, the careful planning and control required for chaos testing are consistent with ISACA's guidance on change management and risk management. Any changes to the production environment, including those introduced through chaos testing, should be subject to appropriate change control procedures and risk assessments.",
@@ -6375,8 +6374,8 @@
       "explanation": "Lack of ransomware recovery planning indicates insufficient cyber resilience given the prevalence of ransomware threats.",
       "whyWrong": {
         "0": "Why option A is CORRECT - Lack of ransomware recovery planning indicates insufficient cyber resilience given the prevalence of ransomware threats.",
-        "1": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
-        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
+        "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
+        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Insufficient cyber resilience planning..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -6726,7 +6725,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Maximum 4 hours of data loss is acceptable...",
         "1": "Why option B is CORRECT - RPO (Recovery Point Objective) defines the maximum acceptable data loss, measured in time.",
-        "2": "Why option D is WRONG - RPO defines acceptable data loss, not backup frequency. Backups might run more or less frequently than the RPO.",
+        "2": "Why option C is WRONG - RPO defines acceptable data loss, not backup frequency. Backups might run more or less frequently than the RPO.",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Maximum 4 hours of data loss is acceptable..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -6935,8 +6934,8 @@
       "explanation": "Parallel testing involves processing actual transactions through backup systems while production continues, verifying true recovery capability.",
       "whyWrong": {
         "0": "Why option A is CORRECT - Parallel testing involves processing actual transactions through backup systems while production continues, verifying true recovery capability.",
-        "1": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
-        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
+        "1": "Why option B is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
+        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on Parallel test..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -7704,7 +7703,7 @@
       "correctAnswer": 1,
       "explanation": "Untested crisis communication creates risk because roles, contact lists, escalation procedures, and communication templates may be outdated or unclear. During an actual incident, communication delays, inconsistent messaging, and inability to reach key stakeholders can worsen the crisis impact.",
       "whyWrong": {
-        "0": "While overly positive communications are undesirable, the primary risk of an untested plan is the lack of clarity and coordination, which this option does not address. It focuses on the *content* of the communication rather than the *process*.",
+        "0": "While overly positive communications are undesirable, the primary risk of an untested plan is the lack of clarity and coordination, which this option Aoes not address. It focuses on the *content* of the communication rather than the *process*.",
         "1": "Why option B is CORRECT - Untested crisis communication creates risk because roles, contact lists, escalation procedures, and communication templates may be outdated or unclear. During an actual incident, communication delays, inconsistent messaging, and inability to reach key stakeholders can worsen the crisis impact.",
         "2": "While premature press releases can be detrimental, the lack of a tested communication plan has broader implications than just the marketing team's actions. Incident response and internal communication are more critical.",
         "3": "While using excessive jargon is a communication issue, it's a secondary concern compared to the fundamental need for a functioning and tested crisis communication plan. The lack of testing leads to more severe problems than just confusing employees."
@@ -8291,7 +8290,7 @@
       "skillLevel": "Analysis",
       "question": "Chen & Associates is evaluating different disaster recovery site options. They are comparing cold sites to hot sites to determine the best fit for their budget and recovery needs. Cold sites compared to hot sites:",
       "options": [
-        "Are always preferable for organizations with limited budgets",
+        "Are typically preferable for organizations with limited budgets",
         "Have the same RTO capability, assuming identical configurations",
         "Require more time to activate but have lower ongoing costs",
         "Have the same cost when considering only initial investment"
@@ -8861,7 +8860,7 @@
       "whyWrong": {
         "0": "While processing speed is important, output controls are not directly focused on it. Output controls validate the results, not the speed of processing. Focus on resource utilization is also outside of the scope.",
         "1": "Why option B is CORRECT - Output controls ensure output is complete, accurate, distributed only to authorized recipients, and properly handled.",
-        "2": "Input controls, not output controls, are responsible for ensuring input accuracy and the application of validation rules. This option describes preventative controls, not detective controls on outputs.",
+        "2": "Input controls, not output controls, are responsible for ensuring input accuracy and the application of validation rules. This option Cescribes preventative controls, not detective controls on outputs.",
         "3": "Storage capacity is a concern for system administration, but output controls are not designed to verify disk space. They are designed to ensure the integrity and correctness of the processed information."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",
@@ -9096,7 +9095,7 @@
       "skillLevel": "Application",
       "question": "Two local banks, First National and Community Trust, have a reciprocal agreement for disaster recovery. In the event of a disaster at one bank, the other will provide limited processing capacity. Reciprocal agreements for DR:",
       "options": [
-        "Are always reliable if tested regularly and updated for system changes.",
+        "Are typically reliable if tested regularly and updated for system changes.",
         "Provide guaranteed capacity based on pre-negotiated service level agreements.",
         "Share facilities between organizations but may have limitations",
         "Are the same as hot sites, offering immediate failover and minimal data loss."
@@ -9764,7 +9763,7 @@
         "Only annually, as this aligns with the minimum regulatory compliance.",
         "Only after disasters, to avoid unnecessary disruptions and costs.",
         "Regular and based on risk, with updates after significant changes",
-        "Never during business hours, to prevent impacting production schedules."
+        "Rarely during business hours, to prevent impacting production schedules."
       ],
       "correctAnswer": 2,
       "explanation": "The correct answer is C) Regular and based on risk, with updates after significant changes. A Business Continuity Plan (BCP) is a documented set of procedures that outlines how an organization will continue to operate during and after a disruption. Testing the BCP is essential to ensure that it is effective and that the organization can recover its critical business functions in a timely manner. The frequency of testing should be determined based on the risk assessment, the criticality of the business functions, and the complexity of the recovery procedures. Additionally, the BCP should be updated and retested whenever there are significant changes to the organization's IT infrastructure, business processes, or regulatory requirements.\n\nThe underlying concept is *business continuity planning and testing*. BCP testing involves simulating a disruption scenario and executing the documented recovery procedures to verify their effectiveness. Different types of testing can be performed, ranging from simple tabletop exercises to full-scale simulations. The results of the testing should be documented and used to improve the BCP.\n\nFrom an ISACA perspective, COBIT emphasizes the importance of *Ensuring Business Continuity* (DSS03). This includes developing, testing, and maintaining a comprehensive BCP. The IS auditor's role is to assess the adequacy of the BCP and the effectiveness of the testing program and to identify any weaknesses that could compromise the organization's ability to recover from a disruption.",
@@ -10331,7 +10330,7 @@
       "whyWrong": {
         "0": "Why option A is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%...",
         "1": "Why option B is CORRECT - System availability = MTBF / (MTBF + MTTR) = 990 / (990 + 10) = 990/1000 = 99.0%. This means the system is expected to be operational 99% of the time. To improve availability, the organization can increase MTBF (better hardware) or decrease MTTR (faster repairs, hot swappable components).",
-        "2": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%...",
+        "2": "Why option C is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%...",
         "3": "Why option D is WRONG - This option does not align with ISACA best practices and standards. The correct approach focuses on 99.0%..."
       },
       "educational": "This question tests Information Systems Operations and Business Resilience (Domain 4, 20% of exam). Understanding this concept is essential for the CISA exam and real-world IS auditing.",

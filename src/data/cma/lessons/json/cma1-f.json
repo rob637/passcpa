@@ -465,10 +465,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important characteristic of a data warehouse that distinguishes it from an operational database in the context of business intelligence?",
             "options": [
-              "A) Real-time data updates.",
-              "B) Optimized for transactional processing.",
-              "C) Historical data retention and structured for analysis.",
-              "D) Direct integration with external data feeds."
+              "Real-time data updates.",
+              "Optimized for transactional processing.",
+              "Historical data retention and structured for analysis.",
+              "Direct integration with external data feeds."
             ],
             "correctIndex": 2,
             "explanation": "A data warehouse is primarily designed for analytical processing using historical data. It is structured to support reporting and analysis, unlike operational databases which are optimized for real-time transactions.",
@@ -522,10 +522,10 @@
           "knowledgeCheck": {
             "question": "Which type of visual is MOST suitable for displaying trends in sales revenue over a period of time?",
             "options": [
-              "A) Pie chart",
-              "B) Bar chart",
-              "C) Line chart",
-              "D) Scatter plot"
+              "Pie chart",
+              "Bar chart",
+              "Line chart",
+              "Scatter plot"
             ],
             "correctIndex": 2,
             "explanation": "Line charts are specifically designed to illustrate trends and changes in data over a continuous period, making them ideal for visualizing sales revenue trends over time.",
@@ -638,10 +638,10 @@
           "knowledgeCheck": {
             "question": "Which level of the analytics maturity model is primarily concerned with identifying the underlying reasons for past performance deviations and uses techniques like root cause analysis?",
             "options": [
-              "A) Descriptive Analytics",
-              "B) Diagnostic Analytics",
-              "C) Predictive Analytics",
-              "D) Prescriptive Analytics"
+              "Descriptive Analytics",
+              "Diagnostic Analytics",
+              "Predictive Analytics",
+              "Prescriptive Analytics"
             ],
             "correctIndex": 1,
             "explanation": "Diagnostic analytics focuses on understanding *why* something happened. Root cause analysis is a key technique used at this level to uncover the underlying factors contributing to observed outcomes.",
@@ -795,10 +795,10 @@
           "knowledgeCheck": {
             "question": "Which of the following process characteristics would make a process LEAST suitable for Robotic Process Automation (RPA)?",
             "options": [
-              "A. High transaction volume with consistent data input formats.",
-              "B. A process with clearly defined rules and a standardized workflow.",
-              "C. A process requiring significant subjective judgment and complex decision-making.",
-              "D. A process that relies on stable systems and rarely undergoes changes."
+              "High transaction volume with consistent data input formats.",
+              "A process with clearly defined rules and a standardized workflow.",
+              "A process requiring significant subjective judgment and complex decision-making.",
+              "A process that relies on stable systems and rarely undergoes changes."
             ],
             "correctIndex": 2,
             "explanation": "RPA excels at rule-based, repetitive tasks. Processes requiring subjective judgment and complex decision-making are not ideal candidates because RPA is designed to mimic human actions based on predefined rules, not to make nuanced decisions.",
@@ -1275,10 +1275,10 @@
           "knowledgeCheck": {
             "question": "Which of the following characteristics is NOT a fundamental attribute of blockchain technology?",
             "options": [
-              "A. Transparency, allowing all participants to view transaction details.",
-              "B. Immutability, ensuring that recorded transactions cannot be altered.",
-              "C. Centralized control, with a single authority validating transactions.",
-              "D. Decentralization, distributing transaction validation across multiple nodes."
+              "Transparency, allowing all participants to view transaction details.",
+              "Immutability, ensuring that recorded transactions cannot be altered.",
+              "Centralized control, with a single authority validating transactions.",
+              "Decentralization, distributing transaction validation across multiple nodes."
             ],
             "correctIndex": 2,
             "explanation": "Blockchain is characterized by decentralization, meaning it does *not* rely on a central authority. Centralized control is the opposite of a blockchain's fundamental design.",

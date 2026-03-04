@@ -224,10 +224,10 @@
           "knowledgeCheck": {
             "question": "Sarah, a CMA, is asked to prepare a complex financial forecast for a new product line. She has limited experience in forecasting and the deadline is tight. According to the IMA Statement of Ethical Professional Practice, what is Sarah's MOST appropriate course of action?",
             "options": [
-              "A) Accept the assignment and rely on her general accounting knowledge to complete the forecast to the best of her ability.",
-              "B) Decline the assignment, citing her lack of experience in forecasting and the tight deadline.",
-              "C) Accept the assignment, but immediately seek training or assistance from a qualified colleague or external expert to ensure the forecast is accurate and reliable.",
-              "D) Accept the assignment and delegate portions of the forecast to junior staff members, without providing adequate oversight."
+              "Accept the assignment and rely on her general accounting knowledge to complete the forecast to the best of her ability.",
+              "Decline the assignment, citing her lack of experience in forecasting and the tight deadline.",
+              "Accept the assignment, but immediately seek training or assistance from a qualified colleague or external expert to ensure the forecast is accurate and reliable.",
+              "Accept the assignment and delegate portions of the forecast to junior staff members, without providing adequate oversight."
             ],
             "correctIndex": 2,
             "explanation": "The correct answer is C. Standard 1: Competence requires members to maintain an appropriate level of professional expertise through ongoing development. Seeking training or assistance demonstrates a commitment to providing accurate and reliable information. A is incorrect because relying solely on general knowledge is insufficient for complex tasks. B might be considered, but actively seeking to improve competence is a better response. D is incorrect as it violates competence and could lead to inaccurate information.",
@@ -381,10 +381,10 @@
           "knowledgeCheck": {
             "question": "Sarah, a CMA, discovers that her supervisor is manipulating inventory records to inflate the company's reported earnings. Following the IMA's resolution process, what should Sarah do FIRST?",
             "options": [
-              "A) Immediately report the manipulation to the Securities and Exchange Commission (SEC).",
-              "B) Consult with an attorney to determine the legal implications of whistleblowing.",
-              "C) Follow the organization's established policies for reporting ethical concerns, such as checking the employee handbook.",
-              "D) Discuss the issue with a trusted colleague to get a second opinion."
+              "Immediately report the manipulation to the Securities and Exchange Commission (SEC).",
+              "Consult with an attorney to determine the legal implications of whistleblowing.",
+              "Follow the organization's established policies for reporting ethical concerns, such as checking the employee handbook.",
+              "Discuss the issue with a trusted colleague to get a second opinion."
             ],
             "correctIndex": 2,
             "explanation": "The IMA's first step in resolving ethical conflicts is to follow the organization's established policies and reporting channels. This ensures internal resolution attempts are made before escalating externally.",

@@ -528,6 +528,14 @@
             "Provide copy of return to client at signing",
             "Retain copies of returns for 3 years",
             "Never negotiate or endorse client refund checks"
+          ],
+          "items": [
+            "**Due Diligence**: Exercise due diligence in preparing returns and relying on client information.",
+            "**Sign Returns**: Must sign all returns prepared for compensation.",
+            "**Provide Copy**: Furnish a copy of the return to the taxpayer.",
+            "**Record Retention**: Keep records of returns prepared and list of employees for at least 3 years.",
+            "**No Unreasonable Positions**: Do not take positions that lack substantial authority or are frivolous.",
+            "**Disclosure**: Disclose positions that have a reasonable basis but not substantial authority to avoid penalties."
           ]
         },
         {
@@ -648,6 +656,14 @@
             "Knowingly counseling clients to violate tax laws",
             "Contemptuous conduct before the IRS",
             "Being disbarred or suspended from practice by a state authority"
+          ],
+          "items": [
+            "**Misappropriation**: Misappropriating funds received from a client for payment of taxes.",
+            "**Bribing IRS**: Attempting to influence IRS employees through threats, false accusations, or gifts.",
+            "**Disbarment/Suspension**: Being disbarred or suspended from practice as a CPA or attorney.",
+            "**Criminal Conviction**: Conviction of any criminal offense under revenue laws or involving dishonesty/breach of trust.",
+            "**False Information**: Knowingly giving false or misleading information to the Treasury Department.",
+            "**Failure to File**: Willfully failing to file a personal tax return."
           ]
         },
         {
@@ -789,6 +805,12 @@
             "Representing employer and employee in same matter",
             "Representing multiple taxpayers on same return position",
             "Personal financial interest in client's matter"
+          ],
+          "items": [
+            "**Divorcing Spouses**: Representing both spouses in a divorce where they have opposing tax interests.",
+            "**Business Partners**: Representing a partnership and individual partners when allocation of items is disputed.",
+            "**Corporate Officer vs. Corp**: Representing the corporation and a corporate officer in an investigation of corporate diversion of funds.",
+            "**Preparer Error**: Representing a client in an audit involving a return containing a significant error made by the representative."
           ]
         },
         {
@@ -1384,6 +1406,18 @@
             "Right to Confidentiality",
             "Right to Retain Representation",
             "Right to a Fair and Just Tax System"
+          ],
+          "items": [
+            "**The Right to Be Informed**: Clear explanations of laws and IRS procedures.",
+            "**The Right to Quality Service**: Prompt, courteous, and professional assistance.",
+            "**The Right to Pay No More than the Correct Amount of Tax**: Only pay what is legally due.",
+            "**The Right to Challenge the IRS's Position and Be Heard**: Raise objections and provide documentation.",
+            "**The Right to Appeal an IRS Decision in an Independent Forum**: Appeal to Office of Appeals or courts.",
+            "**The Right to Finality**: Know when an audit is over and maximum time for assessment.",
+            "**The Right to Privacy**: Invasive inquiries should be limited.",
+            "**The Right to Confidentiality**: Info won't be disclosed without authorization.",
+            "**The Right to Retain Representation**: Can hire an EA, CPA, or Attorney.",
+            "**The Right to a Fair and Just Tax System**: Consideration of facts and circumstances."
           ]
         },
         {
@@ -1683,6 +1717,13 @@
             "Right to disagree and request supervisor conference",
             "Right to appeal within IRS",
             "Right to fair and impartial examination"
+          ],
+          "items": [
+            "**Representation**: Right to be represented by an authorized practitioner.",
+            "**Explanation**: Right to an explanation of the audit process and rights.",
+            "**Scheduling**: Right to have the audit scheduled at a reasonable time and place.",
+            "**Recordings**: Right to make an audio recording of the interview (with advance notice).",
+            "**Stop Interview**: Right to stop an interview to consult with a representative."
           ]
         },
         {
@@ -1819,6 +1860,15 @@
             "Statement of facts supporting your position",
             "Statement of law supporting your position",
             "Penalties of perjury statement (signed under penalties of perjury)"
+          ],
+          "items": [
+            "**Taxpayer Info**: Name, address, and daytime telephone number.",
+            "**IRS Letter**: A statement that you want to appeal the IRS findings to the Office of Appeals (include copy of letter).",
+            "**Tax Periods**: Tax years or periods involved.",
+            "**Changes Disputed**: An itemized list of the changes with which you disagree.",
+            "**Reason for Disagreement**: The reason for disagreement with each disputed item.",
+            "**Facts and Law**: The facts and law that support your position on each item.",
+            "**Perjury Statement**: Declaration under penalties of perjury that facts are true."
           ]
         },
         {
@@ -2375,6 +2425,14 @@
             "Keep copies of everything sent",
             "Use certified mail for deadlines",
             "Request additional time if needed (usually granted once)"
+          ],
+          "items": [
+            "**Timeliness**: Respond by the date specified in the notice.",
+            "**Completeness**: Address every issue raised in the inquiry.",
+            "**Clarity**: Write clearly and concisely; reference specific line items.",
+            "**Documentation**: Attach copies (never originals) of documents supporting the position.",
+            "**Reference Number**: Include the notice number and taxpayer ID on all correspondence.",
+            "**Certified Mail**: Send response via certified mail with return receipt for proof of delivery."
           ]
         },
         {
@@ -2679,6 +2737,12 @@
             "Underlying tax liability (if no prior opportunity)",
             "Procedural errors by IRS",
             "Whether lien/levy meets legal requirements"
+          ],
+          "items": [
+            "**Appropriateness of Collection**: Challenge if the levy or lien is appropriate under the circumstances.",
+            "**Spousal Defenses**: Innocent spouse relief claims.",
+            "**Collection Alternatives**: Offer in Compromise (OIC) or Installment Agreement (IA).",
+            "**Underlying Liability**: Can only dispute the tax liability itself if the taxpayer did not receive a statutory notice of deficiency or otherwise have an opportunity to dispute it generally."
           ]
         },
         {

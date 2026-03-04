@@ -1035,10 +1035,10 @@
           "knowledgeCheck": {
             "question": "During a Disaster Recovery test, the IT department discovers that the recovery time objective (RTO) for a critical application is not being met. Analysis reveals that the restore process is taking significantly longer than expected due to the need to restore a full backup followed by multiple incremental backups. Which of the following backup strategies would BEST address this issue in the future?",
             "options": [
-              "A. Implementing a more frequent full backup schedule.",
-              "B. Switching to a differential backup strategy.",
-              "C. Implementing a more robust data compression technique.",
-              "D. Utilizing asynchronous data replication."
+              "Implementing a more frequent full backup schedule.",
+              "Switching to a differential backup strategy.",
+              "Implementing a more robust data compression technique.",
+              "Utilizing asynchronous data replication."
             ],
             "correctIndex": 1,
             "explanation": "Switching to a differential backup strategy would be the best option. Differential backups only require the last full backup and the most recent differential backup for restoration, thus reducing the restore time compared to incremental backups which require the full backup and all subsequent incremental backups.",
@@ -1677,10 +1677,10 @@
           "knowledgeCheck": {
             "question": "Which of the following activities is MOST important to perform during the 'Planning and Procurement' stage of the IT Asset Management (ITAM) lifecycle to ensure effective license compliance?",
             "options": [
-              "A) Implementing a software distribution system for automated deployment.",
-              "B) Defining clear requirements for software licenses based on business needs.",
-              "C) Establishing a process for tracking software usage across the organization.",
-              "D) Negotiating service level agreements (SLAs) with vendors for software support.",
+              "Implementing a software distribution system for automated deployment.",
+              "Defining clear requirements for software licenses based on business needs.",
+              "Establishing a process for tracking software usage across the organization.",
+              "Negotiating service level agreements (SLAs) with vendors for software support.",
               "E) Performing penetration testing on newly acquired software."
             ],
             "correctIndex": 1,

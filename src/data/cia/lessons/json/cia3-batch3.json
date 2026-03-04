@@ -53,10 +53,10 @@
           "knowledgeCheck": {
             "question": "Which of the following NIST Cybersecurity Framework Core Functions focuses primarily on understanding the organizational context, including assets, business environment, governance, and risk assessment?",
             "options": [
-              "A) Protect",
-              "B) Detect",
-              "C) Identify",
-              "D) Respond"
+              "Protect",
+              "Detect",
+              "Identify",
+              "Respond"
             ],
             "correctIndex": 2,
             "explanation": "The 'Identify' function is centered on developing an organizational understanding to manage cybersecurity risk to systems, assets, data, and capabilities.",
@@ -103,10 +103,10 @@
           "knowledgeCheck": {
             "question": "An internal auditor is reviewing a company's implementation of the NIST Cybersecurity Framework. Which of the following is the MOST important aspect for the auditor to evaluate?",
             "options": [
-              "A) The company's adherence to all subcategories within the framework.",
-              "B) The alignment of the company's cybersecurity activities with its business requirements, risk tolerance, and resources.",
-              "C) The technical specifications of the company's firewall configurations.",
-              "D) The number of cybersecurity certifications held by the IT staff."
+              "The company's adherence to all subcategories within the framework.",
+              "The alignment of the company's cybersecurity activities with its business requirements, risk tolerance, and resources.",
+              "The technical specifications of the company's firewall configurations.",
+              "The number of cybersecurity certifications held by the IT staff."
             ],
             "correctIndex": 1,
             "explanation": "The auditor's primary role is to evaluate whether the framework is appropriately tailored to the organization's specific needs and risk appetite, not just a checklist approach. Options A, C, and D are more granular and less focused on the overall strategic alignment.",
@@ -392,10 +392,10 @@
           "knowledgeCheck": {
             "question": "During the pre-deal phase of a merger and acquisition (M&A), which of the following activities would be MOST beneficial for an internal auditor to perform?",
             "options": [
-              "A) Developing a detailed post-integration audit plan.",
-              "B) Assessing the target company's internal controls and financial statement quality.",
-              "C) Implementing standardized operating procedures across the newly merged entity.",
-              "D) Negotiating the terms of the acquisition agreement with the target company."
+              "Developing a detailed post-integration audit plan.",
+              "Assessing the target company's internal controls and financial statement quality.",
+              "Implementing standardized operating procedures across the newly merged entity.",
+              "Negotiating the terms of the acquisition agreement with the target company."
             ],
             "correctIndex": 1,
             "explanation": "Assessing the target company's internal controls and financial statement quality is crucial during the pre-deal (due diligence) phase. This helps identify potential risks and liabilities before the acquisition is finalized. The other options are more relevant for the post-deal phase.",
@@ -449,10 +449,10 @@
           "knowledgeCheck": {
             "question": "A company undergoing a significant IT system implementation following a merger is experiencing resistance from employees. According to Kotter's 8-Step Change Model, which of the following actions would be MOST effective in addressing this resistance?",
             "options": [
-              "A) Mandating employee training on the new system without explaining the reasons for the change.",
-              "B) Ignoring the resistance and focusing on completing the implementation as quickly as possible.",
-              "C) Communicating the vision for the new IT system and how it will improve efficiency and employee workflows.",
-              "D) Punishing employees who voice concerns about the new system."
+              "Mandating employee training on the new system without explaining the reasons for the change.",
+              "Ignoring the resistance and focusing on completing the implementation as quickly as possible.",
+              "Communicating the vision for the new IT system and how it will improve efficiency and employee workflows.",
+              "Punishing employees who voice concerns about the new system."
             ],
             "correctIndex": 2,
             "explanation": "Communicating the vision is crucial for gaining buy-in and reducing resistance. Explaining how the change will benefit employees and the organization helps them understand the need for the new system. The other options are counterproductive and will likely increase resistance.",

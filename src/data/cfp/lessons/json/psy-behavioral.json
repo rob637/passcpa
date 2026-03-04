@@ -525,10 +525,10 @@
           "knowledgeCheck": {
             "question": "Sarah is a CFP\u00ae professional advising a client who consistently holds onto losing stocks far longer than recommended, hoping they will eventually rebound to their original purchase price. This behavior is MOST likely an example of which emotional bias?",
             "options": [
-              "A) Status Quo Bias",
-              "B) Loss Aversion",
-              "C) Anchoring Bias",
-              "D) Confirmation Bias"
+              "Status Quo Bias",
+              "Loss Aversion",
+              "Anchoring Bias",
+              "Confirmation Bias"
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B) Loss Aversion. Loss aversion is the tendency to feel the pain of a loss more strongly than the pleasure of an equivalent gain. Holding onto losing stocks to avoid 'realizing' the loss is a classic manifestation of this bias.",
@@ -582,10 +582,10 @@
           "knowledgeCheck": {
             "question": "John inherited a portfolio from his grandfather consisting primarily of large-cap value stocks. Despite his CFP\u00ae professional recommending a more diversified and age-appropriate portfolio allocation, John insists on maintaining the existing investments. This is MOST likely an example of which emotional bias?",
             "options": [
-              "A) Overconfidence Bias",
-              "B) Status Quo Bias",
-              "C) Anchoring Bias",
-              "D) Regret Aversion"
+              "Overconfidence Bias",
+              "Status Quo Bias",
+              "Anchoring Bias",
+              "Regret Aversion"
             ],
             "correctIndex": 1,
             "explanation": "The correct answer is B) Status Quo Bias. Status quo bias is the preference for the current state of affairs. John's reluctance to change the inherited portfolio reflects this bias.",

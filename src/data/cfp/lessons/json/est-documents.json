@@ -347,7 +347,7 @@
           ]
         },
         {
-          "type": "knowledge_check",
+          "type": "knowledge-check",
           "title": "Durable Power of Attorney Knowledge Check",
           "knowledgeCheck": {
             "question": "Which of the following statements is CORRECT regarding a Durable Power of Attorney?",

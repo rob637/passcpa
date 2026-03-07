@@ -309,9 +309,25 @@ const StudyPlan: React.FC = () => {
       </div>
       
       {/* Alerts */}
-      {plan.alerts && plan.alerts.filter(a => !a.dismissed).length > 0 && (
+      {/* Filter out stale health alerts if user is now on-track or only slightly behind */}
+      {plan.alerts && plan.alerts.filter(a => {
+        if (a.dismissed) return false;
+        // Don't show "behind schedule" alerts if health is actually fine
+        const isHealthAlert = a.id?.startsWith('health-');
+        if (isHealthAlert && ['on-track', 'slightly-behind'].includes(plan.health)) {
+          return false;
+        }
+        return true;
+      }).length > 0 && (
         <div className="space-y-2">
-          {plan.alerts.filter(a => !a.dismissed).map((alert) => (
+          {plan.alerts.filter(a => {
+            if (a.dismissed) return false;
+            const isHealthAlert = a.id?.startsWith('health-');
+            if (isHealthAlert && ['on-track', 'slightly-behind'].includes(plan.health)) {
+              return false;
+            }
+            return true;
+          }).map((alert) => (
             <div 
               key={alert.id}
               className={clsx(
@@ -444,13 +460,12 @@ const StudyPlan: React.FC = () => {
               <div key={week.weekNumber}>
                 {/* Week header - clickable */}
                 <button
-                  onClick={() => hasLessons ? setExpandedWeek(isExpanded ? null : week.weekNumber) : null}
+                  onClick={() => setExpandedWeek(isExpanded ? null : week.weekNumber)}
                   className={clsx(
                     'w-full p-4 flex items-center gap-4 text-left transition-colors',
                     isCurrentWeek && 'bg-primary-50 dark:bg-primary-900/10',
                     isPast && 'opacity-60',
-                    hasLessons && 'hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer',
-                    !hasLessons && 'cursor-default'
+                    'hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer'
                   )}
                 >
                   {/* Week number */}
@@ -514,49 +529,85 @@ const StudyPlan: React.FC = () => {
                     ) : (
                       <div className="w-5 h-5 rounded-full border-2 border-slate-300 dark:border-slate-600" />
                     )}
-                    {hasLessons && (
-                      isExpanded ? (
-                        <ChevronDown className="w-5 h-5 text-slate-400" />
-                      ) : (
-                        <ChevronRight className="w-5 h-5 text-slate-400" />
-                      )
+                    {isExpanded ? (
+                      <ChevronDown className="w-5 h-5 text-slate-400" />
+                    ) : (
+                      <ChevronRight className="w-5 h-5 text-slate-400" />
                     )}
                   </div>
                 </button>
                 
-                {/* Expanded lessons */}
-                {isExpanded && hasLessons && (
+                {/* Expanded content */}
+                {isExpanded && (
                   <div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700">
-                    {loadingLessons ? (
-                      <div className="p-4 text-center text-slate-500">
-                        Loading lessons...
-                      </div>
-                    ) : weekLessons.length > 0 ? (
-                      <div className="divide-y divide-slate-100 dark:divide-slate-800">
-                        {weekLessons.map((lesson, idx) => (
-                          <div 
-                            key={lesson.id}
-                            className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
-                            onClick={() => navigate(`/lessons/${lesson.id}`)}
-                          >
-                            <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400">
-                              {idx + 1}
+                    {hasLessons ? (
+                      // Show lessons for learning weeks
+                      loadingLessons ? (
+                        <div className="p-4 text-center text-slate-500">
+                          Loading lessons...
+                        </div>
+                      ) : weekLessons.length > 0 ? (
+                        <div className="divide-y divide-slate-100 dark:divide-slate-800">
+                          {weekLessons.map((lesson, idx) => (
+                            <div 
+                              key={lesson.id}
+                              className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
+                              onClick={() => navigate(`/lessons/${lesson.id}`)}
+                            >
+                              <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400">
+                                {idx + 1}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
+                                  {lesson.title}
+                                </p>
+                                <p className="text-xs text-slate-500 dark:text-slate-400">
+                                  {lesson.duration || 30} min
+                                </p>
+                              </div>
+                              <BookOpen className="w-4 h-4 text-slate-400" />
                             </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
-                                {lesson.title}
-                              </p>
-                              <p className="text-xs text-slate-500 dark:text-slate-400">
-                                {lesson.duration || 30} min
-                              </p>
-                            </div>
-                            <BookOpen className="w-4 h-4 text-slate-400" />
-                          </div>
-                        ))}
-                      </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="p-4 text-center text-slate-500 text-sm">
+                          No lessons assigned for this week
+                        </div>
+                      )
                     ) : (
-                      <div className="p-4 text-center text-slate-500 text-sm">
-                        No lessons assigned for this week
+                      // Show focus areas for review/exam weeks
+                      <div className="p-4 pl-20 space-y-3">
+                        <div className="text-sm text-slate-700 dark:text-slate-300">
+                          <p className="font-medium mb-2">
+                            {week.phase === 'exam-week' ? '🎯 Exam Week Focus' : '📚 Review Focus'}
+                          </p>
+                          <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+                            {week.goals.questions > 0 && (
+                              <li className="flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
+                                Practice {week.goals.questions} questions across all topics
+                              </li>
+                            )}
+                            {week.goals.simulations > 0 && (
+                              <li className="flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                                Complete {week.goals.simulations} task-based simulations
+                              </li>
+                            )}
+                            {week.goals.mockExams > 0 && (
+                              <li className="flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                                Take {week.goals.mockExams} full mock exam{week.goals.mockExams > 1 ? 's' : ''}
+                              </li>
+                            )}
+                            {week.phase === 'exam-week' && (
+                              <li className="flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                                Light review only — trust your preparation!
+                              </li>
+                            )}
+                          </ul>
+                        </div>
                       </div>
                     )}
                   </div>

@@ -20,8 +20,10 @@ import type {
 import {
   generateStudyPlan,
   generateTodaysPlan,
+  calculatePlanHealth,
 } from '../services/studyPlanService';
 import { clearTodaysPlan } from '../services/dailyPlanPersistence';
+import { isWithinInterval } from 'date-fns';
 import logger from '../utils/logger';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { toLocalDate } from '../utils/dateHelpers';
@@ -177,6 +179,48 @@ export function useStudyPlan(): UseStudyPlanReturn {
               daysStudied: Math.max(data.progress?.daysStudied || 0, realProgress.daysStudied),
             };
             
+            // Recalculate health based on synced progress
+            // This ensures health reflects actual user activity, not stale stored value
+            const today = new Date();
+            const weeks = data.weeks?.map(w => ({
+              ...w,
+              startDate: toLocalDate(w.startDate),
+              endDate: toLocalDate(w.endDate),
+            })) || [];
+            
+            const currentWeek = weeks.find(w => 
+              isWithinInterval(today, { start: w.startDate, end: w.endDate })
+            );
+            
+            // Calculate expected progress
+            let lessonsExpected = 0;
+            let questionsExpected = 0;
+            for (const w of weeks) {
+              if (w.weekNumber < (currentWeek?.weekNumber || 1)) {
+                lessonsExpected += w.goals?.lessons || 0;
+                questionsExpected += w.goals?.questions || 0;
+              }
+            }
+            // Add partial week progress
+            if (currentWeek) {
+              const weekStart = currentWeek.startDate;
+              const dayOfWeek = Math.floor((today.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+              const weekProgress = Math.min(1, dayOfWeek / 7);
+              lessonsExpected += Math.floor((currentWeek.goals?.lessons || 0) * weekProgress);
+              questionsExpected += Math.floor((currentWeek.goals?.questions || 0) * weekProgress);
+            }
+            
+            const recalculatedHealth = calculatePlanHealth(
+              currentWeek?.weekNumber || 1,
+              data.totalWeeks || 1,
+              mergedProgress.lessonsCompleted,
+              lessonsExpected,
+              mergedProgress.questionsAnswered,
+              questionsExpected,
+              mergedProgress.daysStudied,
+              mergedProgress.daysMissed || 0
+            );
+            
             // Convert Firestore timestamps to Dates
             setPlan({
               ...data,
@@ -184,16 +228,13 @@ export function useStudyPlan(): UseStudyPlanReturn {
               examDate: toLocalDate(data.examDate),
               createdAt: toLocalDate(data.createdAt),
               updatedAt: toLocalDate(data.updatedAt),
-              weeks: data.weeks?.map(w => ({
-                ...w,
-                startDate: toLocalDate(w.startDate),
-                endDate: toLocalDate(w.endDate),
-              })) || [],
+              weeks,
               milestones: data.milestones?.map(m => ({
                 ...m,
                 date: toLocalDate(m.date),
               })) || [],
               progress: mergedProgress,
+              health: recalculatedHealth, // Use recalculated health, not stored value
             });
           } else {
             setPlan(null);

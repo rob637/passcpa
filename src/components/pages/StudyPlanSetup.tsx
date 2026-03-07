@@ -97,8 +97,9 @@ const StudyPlanSetup: React.FC = () => {
       }
       setInitialized(true);
     } else if (isSingleExamCourse) {
-      // Single-exam courses use 'ALL' to cover all domains
+      // Single-exam courses use 'ALL' to cover all domains and skip section selection
       setSection('ALL');
+      setCurrentStep('exam-date');
       setInitialized(true);
     } else if (userProfile?.examSection) {
       setSection(userProfile.examSection);

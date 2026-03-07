@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import logger from '../../utils/logger';
 import { Link } from 'react-router-dom';
 import { FEATURES } from '../../config/featureFlags';
+import { toLocalDate } from '../../utils/dateHelpers';
 import {
   TrendingUp,
   Target,

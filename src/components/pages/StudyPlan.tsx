@@ -23,7 +23,6 @@ import {
   FileText,
   Zap,
   Map,
-  Play,
   ChevronDown,
   ChevronRight,
   RefreshCw,
@@ -40,6 +39,8 @@ import type { Lesson } from '../../types';
 import { format, isWithinInterval } from 'date-fns';
 import type { StudyPhase, PlanHealth } from '../../types/studyPlan';
 import clsx from 'clsx';
+
+import { toLocalDate } from '../../utils/dateHelpers';
 
 // Phase colors and icons
 const PHASE_CONFIG: Record<StudyPhase, { color: string; bgColor: string; icon: React.ElementType; label: string }> = {
@@ -220,8 +221,8 @@ const StudyPlan: React.FC = () => {
   
   // Find current week
   const currentWeek = plan.weeks.find(w => {
-    const start = new Date(w.startDate);
-    const end = new Date(w.endDate);
+    const start = toLocalDate(w.startDate);
+    const end = toLocalDate(w.endDate);
     return isWithinInterval(today, { start, end });
   });
   
@@ -299,7 +300,7 @@ const StudyPlan: React.FC = () => {
             Daily Goal
           </div>
           <p className="text-2xl font-bold text-slate-900 dark:text-white">
-            {plan.hoursPerDay}h
+            {Math.round(plan.hoursPerDay * 10) / 10}h
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             {plan.studyDaysPerWeek} days/week
@@ -420,35 +421,6 @@ const StudyPlan: React.FC = () => {
         </div>
       )}
       
-      {/* Today's Focus (if available) */}
-      {todaysPlan && !todaysPlan.isRestDay && (
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h3 className="font-bold text-lg text-slate-900 dark:text-white">Today's Focus</h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm">{todaysPlan.message}</p>
-            </div>
-            <Button
-              onClick={() => navigate('/home')}
-              variant="primary"
-            >
-              <Play className="w-4 h-4 mr-2" />
-              Start
-            </Button>
-          </div>
-          
-          <div className="flex flex-wrap gap-2">
-            {todaysPlan.activities.slice(0, 3).map((activity) => (
-              <div 
-                key={activity.id}
-                className="bg-slate-100 dark:bg-slate-700 rounded-lg px-3 py-2 text-sm text-slate-700 dark:text-slate-300"
-              >
-                {activity.title} • {activity.estimatedMinutes}min
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
       
       {/* Week-by-Week Roadmap */}
       <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
@@ -463,7 +435,7 @@ const StudyPlan: React.FC = () => {
             const phaseConfig = PHASE_CONFIG[week.phase];
             const PhaseIcon = phaseConfig.icon;
             const isCurrentWeek = week.weekNumber === currentWeek?.weekNumber;
-            const isPast = new Date(week.endDate) < today;
+            const isPast = toLocalDate(week.endDate) < today;
             const isExpanded = expandedWeek === week.weekNumber;
             const weekLessons = getLessonsForWeek(week.weekNumber);
             const hasLessons = week.goals.lessons > 0;
@@ -511,7 +483,7 @@ const StudyPlan: React.FC = () => {
                       )}
                     </div>
                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                      {format(new Date(week.startDate), 'MMM d')} - {format(new Date(week.endDate), 'MMM d')}
+                      {format(toLocalDate(week.startDate), 'MMM d')} - {format(toLocalDate(week.endDate), 'MMM d')}
                     </p>
                   </div>
                   
@@ -522,6 +494,9 @@ const StudyPlan: React.FC = () => {
                     )}
                     {week.goals.questions > 0 && (
                       <span>{week.goals.questions} Qs</span>
+                    )}
+                    {week.goals.simulations > 0 && (
+                      <span>{week.goals.simulations} TBS</span>
                     )}
                     {week.goals.mockExams > 0 && (
                       <span>{week.goals.mockExams} mock</span>
@@ -562,7 +537,7 @@ const StudyPlan: React.FC = () => {
                           <div 
                             key={lesson.id}
                             className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
-                            onClick={() => navigate(`/learn/${lesson.id}`)}
+                            onClick={() => navigate(`/lessons/${lesson.id}`)}
                           >
                             <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400">
                               {idx + 1}
@@ -604,8 +579,8 @@ const StudyPlan: React.FC = () => {
           
           <div className="space-y-4">
             {plan.milestones.map((milestone, index) => {
-              const isPast = new Date(milestone.date) < today;
-              const isNext = !isPast && (index === 0 || new Date(plan.milestones[index - 1].date) < today);
+              const isPast = toLocalDate(milestone.date) < today;
+              const isNext = !isPast && (index === 0 || toLocalDate(plan.milestones[index - 1].date) < today);
               
               return (
                 <div 
@@ -632,7 +607,7 @@ const StudyPlan: React.FC = () => {
                       {milestone.label}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      {format(new Date(milestone.date), 'MMMM d, yyyy')}
+                      {format(toLocalDate(milestone.date), 'MMMM d, yyyy')}
                       {milestone.description && ` • ${milestone.description}`}
                     </p>
                   </div>

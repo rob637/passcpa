@@ -290,7 +290,7 @@ const UnitsReport: React.FC<{ unitStats: UnitStats[], section: string }> = ({ un
 
 // Exam Readiness Gauge
 const ReadinessGauge: React.FC<{ readiness: ReadinessData, examDate: string | Date | undefined }> = ({ readiness, examDate }) => {
-  const daysUntilExam = examDate ? differenceInDays(new Date(examDate), new Date()) : null;
+  const daysUntilExam = examDate ? differenceInDays(toLocalDate(examDate), new Date()) : null;
 
   return (
     <div className="text-center">
@@ -393,7 +393,7 @@ const Progress: React.FC = () => {
   
   // Study Plan - use saved plan if available, otherwise fall back to legacy generated plan
   const examDate = savedStudyPlan?.examDate 
-    ? (savedStudyPlan.examDate instanceof Date ? savedStudyPlan.examDate : new Date(savedStudyPlan.examDate))
+    ? toLocalDate(savedStudyPlan.examDate)
     : getExamDate(userProfile, currentSection, courseId);
   // Derive study plan start date from user's account creation
   const userStartDate = userProfile?.createdAt 
@@ -840,7 +840,7 @@ const Progress: React.FC = () => {
         
         const style = healthStyles[healthStatus] || healthStyles['on-track'];
         const completionPercent = Math.round((progress.lessonsCompleted / Math.max(1, progress.lessonsTotal)) * 100);
-        const examDateObj = studyPlan.examDate instanceof Date ? studyPlan.examDate : new Date(studyPlan.examDate);
+        const examDateObj = toLocalDate(studyPlan.examDate);
         const daysUntilExam = Math.max(0, Math.ceil((examDateObj.getTime() - Date.now()) / (1000 * 60 * 60 * 24)));
         
         return (

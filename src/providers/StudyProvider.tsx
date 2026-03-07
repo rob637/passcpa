@@ -115,10 +115,14 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   const getToday = () => format(new Date(), 'yyyy-MM-dd');
   const today = getToday();
   
+  // Single-exam courses (one exam sitting) use unified tracking
+  const SINGLE_EXAM_COURSES: CourseId[] = ['cisa', 'cfp'];
   
-  // Course-specific daily log ID to keep progress separate per course
-  const dailyLogId = `${activeCourse}_${today}`;
+  // Get the current section for this course
   const currentSection = getCurrentSection(userProfile, activeCourse, getDefaultSection);
+  
+  // Course-level daily log ID (keeps all data together for aggregates)
+  const dailyLogId = `${activeCourse}_${today}`;
 
   // Fetch study plan when user changes
   // Uses getStudyPlanId for multi-course support
@@ -188,6 +192,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
   // Fetch weekly stats and calculate streak - now section-aware
   useEffect(() => {
+    logger.debug('[STREAK] useEffect triggered, user:', !!user, 'activeCourse:', activeCourse, 'currentSection:', currentSection);
     if (!user) {
       setWeeklyStats({ totalQuestions: 0, accuracy: 0, totalMinutes: 0, questionsTrend: 0, accuracyTrend: 0 });
       setStats(null);
@@ -196,6 +201,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     }
 
     const fetchWeeklyData = async () => {
+      logger.debug('[STREAK] fetchWeeklyData starting...');
       try {
         // Get logs for the past 7 days (this week)
         // Use course-prefixed doc IDs to ensure we only get this course's data
@@ -218,7 +224,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         
         // Fetch this week — use doc ID query to get only this course's logs
         // Firestore 'in' queries support up to 10 values, 7 fits perfectly
-        const thisWeekQuery = query(dailyLogCollection, where('__name__', 'in', thisWeekIds.map(id => `users/${user.uid}/daily_log/${id}`)));
+        const thisWeekQuery = query(dailyLogCollection, where('__name__', 'in', thisWeekIds));
         const thisWeekSnapshot = await getDocs(thisWeekQuery);
 
         // Get sections that belong to the current course for filtering
@@ -267,7 +273,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         });
 
         // Fetch last week for trend comparison
-        const lastWeekQuery = query(dailyLogCollection, where('__name__', 'in', lastWeekIds.map(id => `users/${user.uid}/daily_log/${id}`)));
+        const lastWeekQuery = query(dailyLogCollection, where('__name__', 'in', lastWeekIds));
         const lastWeekSnapshot = await getDocs(lastWeekQuery);
 
         let lastWeekQuestions = 0;
@@ -307,8 +313,9 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         // Set section-filtered stats
         setStats({ totalQuestions: sectionQuestions, accuracy: sectionAccuracy });
 
-        // Calculate streak (consecutive days with earnedPoints > 0, course-specific)
-        // Use a single batch query instead of 30 individual reads
+        // Calculate streak (consecutive days with activity, per-section for multi-section exams)
+        // For CPA/EA/CMA/CIA: streak is per-section (e.g., studying FAR daily)
+        // For CISA/CFP: streak is per-exam (any activity counts)
         let streak = 0;
         const streakDates: string[] = [];
         for (let i = 0; i < 30; i++) {
@@ -317,11 +324,26 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           streakDates.push(format(checkDate, 'yyyy-MM-dd'));
         }
         
-        // Firestore 'in' queries support up to 30 values
+        // Determine if this is a single-exam course
+        const SINGLE_EXAM_COURSES_LOCAL: CourseId[] = ['cisa', 'cfp'];
+        const isSingleExamCourse = SINGLE_EXAM_COURSES_LOCAL.includes(activeCourse as CourseId);
+        
+        logger.debug('[STREAK] === Starting streak calculation ===');
+        logger.debug('[STREAK] activeCourse:', activeCourse, 'currentSection:', currentSection, 'isSingleExam:', isSingleExamCourse);
+        logger.debug('[STREAK] User UID:', user.uid);
+        logger.debug('[STREAK] Checking dates:', streakDates.slice(0, 5).join(', '), '...');
+        
+        // Use course-level log IDs (data is stored at course level with activities having section field)
         const streakLogIds = streakDates.map(d => `${activeCourse}_${d}`);
+        logger.debug('[STREAK] Looking for log IDs:', streakLogIds.slice(0, 3).join(', '), '...');
         
         // Batch into chunks of 10 (Firestore 'in' limit)
-        const streakDocs = new Map<string, { earnedPoints: number; questionsAttempted: number }>();
+        // Store full doc data so we can filter activities by section
+        const streakDocs = new Map<string, { 
+          earnedPoints: number; 
+          questionsAttempted: number; 
+          activities?: Array<{ section?: string; type?: string }>;
+        }>();
         for (let batch = 0; batch < streakLogIds.length; batch += 10) {
           const batchIds = streakLogIds.slice(batch, batch + 10);
           const streakQuery = query(
@@ -329,42 +351,67 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             where('__name__', 'in', batchIds)
           );
           const streakSnap = await getDocs(streakQuery);
+          // DEBUG: Log what we found
+          logger.debug('[STREAK] Query batch', batch/10, 'returned', streakSnap.size, 'docs');
           streakSnap.forEach(docSnap => {
             const data = docSnap.data();
+            logger.debug('[STREAK] Doc:', docSnap.id, 'earnedPoints:', data.earnedPoints, 'questionsAttempted:', data.questionsAttempted, 'activities:', JSON.stringify(data.activities?.slice(0, 2)));
             streakDocs.set(docSnap.id, {
               earnedPoints: data.earnedPoints || 0,
-              questionsAttempted: data.questionsAttempted || 0
+              questionsAttempted: data.questionsAttempted || 0,
+              activities: data.activities || []
             });
           });
         }
         
         // Count consecutive days starting from today
-        // A day counts toward the streak ONLY if there was actual activity
+        // For multi-section courses: only count days with activity in the CURRENT section
+        // For single-exam courses: count any activity
+        logger.debug('[STREAK] Total docs found:', streakDocs.size, 'Map keys:', Array.from(streakDocs.keys()).join(', '));
         for (let i = 0; i < streakDates.length; i++) {
           const logId = `${activeCourse}_${streakDates[i]}`;
           const dayData = streakDocs.get(logId);
           
-          // Day counts as active only if they earned points OR attempted questions
-          const hadActivity = dayData && (dayData.earnedPoints > 0 || dayData.questionsAttempted > 0);
+          // Determine if there was activity
+          let hadActivity = false;
+          if (dayData) {
+            if (isSingleExamCourse) {
+              // For single-exam courses: any activity counts
+              hadActivity = dayData.earnedPoints > 0 || dayData.questionsAttempted > 0;
+            } else {
+              // For multi-section courses: filter activities by current section
+              const sectionActivities = dayData.activities?.filter(
+                a => a.section?.toUpperCase() === currentSection?.toUpperCase()
+              ) || [];
+              hadActivity = sectionActivities.length > 0;
+              logger.debug('[STREAK] Day', i, 'section activities:', sectionActivities.length, 'for section:', currentSection);
+            }
+          }
           
           if (hadActivity) {
             streak++;
+            logger.debug('[STREAK] Day', i, streakDates[i], 'HAD activity, streak now:', streak);
           } else if (i > 0) {
             // Don't break on today (i=0) if no activity yet - they might study today
+            logger.debug('[STREAK] Day', i, streakDates[i], 'NO activity, breaking');
             break;
+          } else {
+            logger.debug('[STREAK] Day 0 (today) no activity yet, continuing');
           }
         }
+        logger.debug('[STREAK] Final streak:', streak);
         // GA4 analytics — track streaks
         if (streak >= 2) {
           analytics.maintainStreak(streak);
         }
         setCurrentStreak(streak);
       } catch (error) {
+        logger.error('[STREAK] Error in fetchWeeklyData:', error);
         logger.error('Error fetching weekly data:', error);
       }
     };
 
-    fetchWeeklyData();
+    fetchWeeklyData().catch(err => logger.error('[STREAK] fetchWeeklyData promise rejected:', err));
   }, [user, todayLog, currentSection, activeCourse, statsVersion]); // Re-run when course/section changes or stats forced refresh
   
   // Function to force refresh stats (called when section changes)

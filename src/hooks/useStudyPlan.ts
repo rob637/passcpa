@@ -25,6 +25,7 @@ import {
 } from '../services/studyPlanService';
 import logger from '../utils/logger';
 import { getDefaultSection } from '../utils/sectionUtils';
+import { toLocalDate } from '../utils/dateHelpers';
 import { getCurrentSection } from '../utils/profileHelpers';
 
 interface UseStudyPlanReturn {
@@ -91,18 +92,18 @@ export function useStudyPlan(): UseStudyPlanReturn {
             // Convert Firestore timestamps to Dates
             setPlan({
               ...data,
-              startDate: data.startDate instanceof Date ? data.startDate : new Date((data.startDate as any)?.seconds * 1000 || data.startDate),
-              examDate: data.examDate instanceof Date ? data.examDate : new Date((data.examDate as any)?.seconds * 1000 || data.examDate),
-              createdAt: data.createdAt instanceof Date ? data.createdAt : new Date((data.createdAt as any)?.seconds * 1000 || data.createdAt),
-              updatedAt: data.updatedAt instanceof Date ? data.updatedAt : new Date((data.updatedAt as any)?.seconds * 1000 || data.updatedAt),
+              startDate: toLocalDate(data.startDate),
+              examDate: toLocalDate(data.examDate),
+              createdAt: toLocalDate(data.createdAt),
+              updatedAt: toLocalDate(data.updatedAt),
               weeks: data.weeks?.map(w => ({
                 ...w,
-                startDate: w.startDate instanceof Date ? w.startDate : new Date((w.startDate as any)?.seconds * 1000 || w.startDate),
-                endDate: w.endDate instanceof Date ? w.endDate : new Date((w.endDate as any)?.seconds * 1000 || w.endDate),
+                startDate: toLocalDate(w.startDate),
+                endDate: toLocalDate(w.endDate),
               })) || [],
               milestones: data.milestones?.map(m => ({
                 ...m,
-                date: m.date instanceof Date ? m.date : new Date((m.date as any)?.seconds * 1000 || m.date),
+                date: toLocalDate(m.date),
               })) || [],
             });
           } else {
@@ -146,7 +147,7 @@ export function useStudyPlan(): UseStudyPlanReturn {
     }
     
     const now = new Date();
-    const examDate = plan.examDate instanceof Date ? plan.examDate : new Date(plan.examDate);
+    const examDate = toLocalDate(plan.examDate);
     const daysUntilExam = Math.ceil(
       (examDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
     );
@@ -176,10 +177,15 @@ export function useStudyPlan(): UseStudyPlanReturn {
       // Save to Firestore under user's studyPlans subcollection
       // Key is courseId_section for section-independent plans
       const savePlanKey = `${input.courseId}_${input.section}`;
+      
+      // Firestore doesn't accept undefined values - use JSON serialization to strip them
+      // This converts Date objects to ISO strings, which Firestore handles fine
+      const planForFirestore = JSON.parse(JSON.stringify(newPlan));
+      
       await setDoc(
         doc(db, 'users', user.uid, 'studyPlans', savePlanKey),
         {
-          ...newPlan,
+          ...planForFirestore,
           updatedAt: serverTimestamp(),
         }
       );
@@ -190,6 +196,8 @@ export function useStudyPlan(): UseStudyPlanReturn {
       logger.info('Study plan created:', newPlan.id);
       return newPlan;
     } catch (err) {
+      // Always log to console for debugging, even in production
+      console.error('Error creating study plan in useStudyPlan:', err);
       logger.error('Error creating study plan:', err);
       setError('Failed to create study plan');
       throw err;
@@ -232,7 +240,7 @@ export function useStudyPlan(): UseStudyPlanReturn {
   const daysUntilExam = useMemo(() => {
     if (!plan) return null;
     const now = new Date();
-    const examDate = plan.examDate instanceof Date ? plan.examDate : new Date(plan.examDate);
+    const examDate = toLocalDate(plan.examDate);
     return Math.ceil(
       (examDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
     );

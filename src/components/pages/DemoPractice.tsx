@@ -26,6 +26,7 @@ import { getDemoQuestions } from '../../data/demoQuestions';
 import { COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
 import { trackEvent } from '../../services/analytics';
+import { useSEO } from '../../hooks/useSEO';
 import FormattedExplanation from '../common/FormattedExplanation';
 
 const COURSE_COLORS: Record<string, { gradient: string; bg: string; text: string; light: string }> = {
@@ -46,6 +47,13 @@ const DemoPractice = () => {
   const course = COURSES[courseId];
   const colors = COURSE_COLORS[courseId] || COURSE_COLORS.cpa;
   const questions = getDemoQuestions(courseId);
+  
+  // SEO - canonical URL strips query params for consistent indexing
+  useSEO({
+    title: `Free ${course?.name || 'CPA'} Practice Questions | VoraPrep Demo`,
+    description: `Try 5 free ${course?.name || 'CPA'} exam practice questions. No signup required. Get instant feedback and detailed explanations. Experience VoraPrep's adaptive learning.`,
+    canonicalUrl: 'https://voraprep.com/demo-practice',
+  });
   
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);

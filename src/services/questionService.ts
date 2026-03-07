@@ -59,6 +59,9 @@ const MAX_CACHED_SECTIONS = 8; // Limit cache to ~8 sections (~3-4MB max)
 /**
  * Load questions for a section (with LRU caching)
  * Evicts oldest sections when cache exceeds MAX_CACHED_SECTIONS
+ * 
+ * Note: 'ALL' section (single-exam courses) is handled by fetchQuestions,
+ * which loads all sections for the courseId instead of calling this function.
  */
 async function loadSectionQuestions(section: string): Promise<Question[]> {
   if (questionCache[section]) {
@@ -209,7 +212,8 @@ export async function fetchQuestions(options: FetchQuestionsOptions = {}): Promi
   try {
     let candidates: Question[] = [];
 
-    if (section) {
+    // For 'ALL' section (single-exam courses like CISA/CFP), load all sections for the course
+    if (section && section !== 'ALL') {
       candidates = await loadSectionQuestions(section);
     } else {
       // Load all sections for the requested course, or all courses if no courseId

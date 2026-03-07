@@ -49,7 +49,6 @@ import { getCurrentSection, getExamDate } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import type { DiagnosticAreaScore } from '../types/diagnostic';
 import { 
   getCourseLearnPath,
   getCourseLessonPath,
@@ -229,44 +228,11 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         lastPracticed: t.lastPracticed,
       }));
 
-      // Seed topicStats from diagnostic results if no practice history exists
-      // This ensures the daily plan knows about weak areas from the diagnostic quiz
-      let diagnosticWeakAreas: DiagnosticAreaScore[] = [];
-      if (mappedTopicStats.length === 0 || mappedTopicStats.every((t: any) => t.totalQuestions === 0)) {
-        try {
-          const diagDocId = `${courseId}-${effectiveSection}`;
-          const diagRef = doc(db, 'users', user.uid, 'diagnosticResults', diagDocId);
-          const diagSnap = await getDoc(diagRef);
-          if (diagSnap.exists()) {
-            const diagData = diagSnap.data();
-            const areaScores: DiagnosticAreaScore[] = diagData.areaScores || [];
-            diagnosticWeakAreas = diagData.weakAreas || [];
-            
-            // Convert diagnostic area scores to topicStats format
-            // This gives the plan generator weak-area data to work with
-            const diagnosticTopicStats = areaScores.map((area: DiagnosticAreaScore) => ({
-              topic: area.areaName,
-              topicId: area.area,
-              accuracy: area.percentage,
-              totalQuestions: area.total,
-              correct: area.score,
-              lastPracticed: diagData.completedAt ? new Date(diagData.completedAt.seconds ? diagData.completedAt.seconds * 1000 : diagData.completedAt).toISOString() : undefined,
-            }));
-            
-            // Use diagnostic stats as seed data
-            if (diagnosticTopicStats.length > 0) {
-              mappedTopicStats.push(...diagnosticTopicStats);
-              logger.info('Seeded topicStats from diagnostic results', {
-                areas: diagnosticTopicStats.length,
-                weakAreas: diagnosticWeakAreas.length,
-              });
-            }
-          }
-        } catch (err) {
-          logger.warn('Could not load diagnostic results for plan seeding:', err);
-          // Graceful degradation — plan generates without diagnostic data
-        }
-      }
+      // NOTE: Diagnostic quiz results are intentionally NOT seeded into topicStats.
+      // Diagnostic scores are rough assessments — they should not generate
+      // "Strengthen" activities for topics the user hasn't actually studied.
+      // The daily plan focuses on lessons first; "Strengthen" activities only
+      // appear for topics with real practice history.
 
       const studyState: UserStudyState = {
         section: effectiveSection,
@@ -505,13 +471,20 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     }
   };
 
-  // Get priority badge
-  const getPriorityBadge = (priority: string) => {
+  // Get priority badge — only show when it adds information
+  // (skip if all activities share the same priority)
+  const getPriorityBadge = (priority: string, allActivities?: DailyActivity[]) => {
+    const items = allActivities || plan?.activities;
+    if (!items || items.length === 0) return null;
+    // Don't render badges when every activity has the same priority
+    const uniquePriorities = new Set(items.map(a => a.priority));
+    if (uniquePriorities.size <= 1) return null;
+
     switch (priority) {
       case 'critical':
-        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400">Critical</span>;
+        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400">Weak area</span>;
       case 'high':
-        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-400">High</span>;
+        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-400">Priority</span>;
       default:
         return null;
     }
@@ -742,6 +715,21 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
             />
           </div>
         </div>
+
+        {/* What's Next insight strip */}
+        {plan.whatsNext && (
+          <div className="px-4 py-2 bg-primary-50 dark:bg-primary-900/20 border-b border-primary-100 dark:border-primary-800/40 flex items-start gap-2">
+            <Sparkles className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+            <div className="min-w-0">
+              <span className="text-sm font-medium text-primary-900 dark:text-primary-100">
+                {plan.whatsNext.headline}
+              </span>
+              <p className="text-xs text-primary-700 dark:text-primary-300 line-clamp-1">
+                {plan.whatsNext.detail}
+              </p>
+            </div>
+          </div>
+        )}
         
         {/* All activities - consistent styling */}
         {allActivities.length > 0 ? (
@@ -792,10 +780,6 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
                   <div className="flex items-center gap-2 shrink-0">
                     {isComplete ? (
                       <span className="text-xs text-success-500 font-medium">Done</span>
-                    ) : isNext ? (
-                      <span className="flex items-center gap-1 px-3 py-1 rounded-lg bg-primary-500 text-white text-sm font-medium">
-                        Start <ChevronRight className="w-4 h-4" />
-                      </span>
                     ) : (
                       <>
                         <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
@@ -856,9 +840,11 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               )}
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-              {plan.summary?.weakAreaFocus?.length > 0 
-                ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
-                : 'Personalized for your progress'}
+              {plan.whatsNext
+                ? plan.whatsNext.headline
+                : plan.summary?.weakAreaFocus?.length > 0 
+                  ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
+                  : 'Personalized for your progress'}
             </p>
           </div>
           <div className="flex items-center gap-2">

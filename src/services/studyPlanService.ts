@@ -30,22 +30,104 @@ import { SECTION_STUDY_HOURS, EXPERIENCE_MULTIPLIERS } from '../types/studyPlan'
 import { db, auth } from '../config/firebase';
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp, arrayUnion } from 'firebase/firestore';
 import logger from '../utils/logger';
+import { getSectionContent, calculateSectionStudyHours, resolveStudySection } from './contentRegistry';
 
 // Re-export types for convenience
 export type { StudyPlan, StudyPlanSummary, TodaysPlan };
 
 /**
+ * Validation result for study plan inputs
+ */
+export interface PlanValidation {
+  isValid: boolean;              // No blocking errors
+  canProceedWithAck: boolean;    // Can proceed if user acknowledges warnings
+  errors: string[];              // Blocking errors (cannot create plan)
+  warnings: string[];            // Non-blocking warnings (require acknowledgment)
+}
+
+/**
+ * Validate study plan inputs before creation
+ * Returns errors that block creation and warnings that require acknowledgment
+ */
+export function validatePlanInput(input: StudyPlanSetupInput): PlanValidation {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const startDate = input.startDate || new Date();
+  const daysUntilExam = differenceInDays(input.examDate, startDate);
+  
+  // ERRORS - Block plan creation
+  if (daysUntilExam < 1) {
+    errors.push('Exam date must be in the future.');
+  } else if (daysUntilExam < 3) {
+    errors.push('Exam must be at least 3 days away to create a study plan.');
+  }
+  
+  if (input.hoursPerDay > 10) {
+    errors.push('Daily study time cannot exceed 10 hours.');
+  }
+  
+  if (input.hoursPerDay < 0.5) {
+    errors.push('Daily study time must be at least 30 minutes.');
+  }
+  
+  if (input.studyDaysPerWeek < 1 || input.studyDaysPerWeek > 7) {
+    errors.push('Study days per week must be between 1 and 7.');
+  }
+  
+  // WARNINGS - Require acknowledgment
+  const hoursNeeded = calculateHoursNeeded(input.section, input.priorExperience);
+  const hoursAvailable = calculateHoursAvailable(startDate, input.examDate, input.hoursPerDay, input.studyDaysPerWeek);
+  const deficitPercentage = (hoursNeeded - hoursAvailable) / hoursNeeded;
+  
+  if (deficitPercentage > 0.5) {
+    warnings.push(`You have ${hoursAvailable} hours available but typically need ${hoursNeeded}+ hours. This is an aggressive timeline.`);
+  }
+  
+  if (daysUntilExam < 14 && daysUntilExam >= 3) {
+    warnings.push(`Only ${daysUntilExam} days until your exam. Consider if this is enough time.`);
+  }
+  
+  if (input.hoursPerDay > 6) {
+    warnings.push(`${input.hoursPerDay} hours/day is intense. Burnout risk increases above 6 hours.`);
+  }
+  
+  if (input.hoursPerDay < 1) {
+    warnings.push('Less than 1 hour/day may not be enough for consistent progress.');
+  }
+
+  return {
+    isValid: errors.length === 0,
+    canProceedWithAck: errors.length === 0,
+    errors,
+    warnings,
+  };
+}
+
+/**
  * Calculate the total study hours needed for a section
+ * Uses contentRegistry as the source of truth for content counts
  */
 export function calculateHoursNeeded(
   section: string,
   priorExperience: 'none' | 'some' | 'retake',
   diagnosticScore?: number
 ): number {
-  // Base hours for the section
-  const baseHours = (SECTION_STUDY_HOURS as Record<string, number>)[section] || 100;
+  // Try contentRegistry first (preferred - uses real content data)
+  const registryHours = calculateSectionStudyHours(section, priorExperience);
+  if (registryHours.total > 0) {
+    let hours = registryHours.total;
+    
+    // If they took a diagnostic, adjust based on score
+    if (diagnosticScore !== undefined) {
+      const scoreAdjustment = 1 - ((diagnosticScore - 50) / 100);
+      hours = hours * Math.max(0.5, Math.min(1.5, scoreAdjustment));
+    }
+    
+    return Math.round(hours);
+  }
   
-  // Adjust for experience
+  // Fallback to static SECTION_STUDY_HOURS
+  const baseHours = (SECTION_STUDY_HOURS as Record<string, number>)[section] || 100;
   const experienceMultiplier = (EXPERIENCE_MULTIPLIERS as Record<string, number>)[priorExperience] || 1.0;
   let hours = baseHours * experienceMultiplier;
   
@@ -62,35 +144,86 @@ export function calculateHoursNeeded(
 }
 
 /**
- * Calculate hours available based on schedule
+ * Calculate hours available based on schedule.
+ * Supports split weekday/weekend hours for more accurate planning.
  */
 export function calculateHoursAvailable(
   startDate: Date,
   examDate: Date,
   hoursPerDay: number,
-  studyDaysPerWeek: number
+  studyDaysPerWeek: number,
+  weekdayHours?: number,
+  weekendHours?: number,
 ): number {
   const totalDays = differenceInDays(examDate, startDate);
   const totalWeeks = totalDays / 7;
+
+  if (weekdayHours != null && weekendHours != null) {
+    // Split model: derive weekday/weekend study-day counts from studyDaysPerWeek.
+    // Assume weekends are Sat+Sun (2 days) and weekdays Mon-Fri (5 days).
+    const weekendStudyDays = Math.min(studyDaysPerWeek, 2);
+    const weekdayStudyDays = Math.max(0, studyDaysPerWeek - weekendStudyDays);
+    const weeklyHours = weekdayStudyDays * weekdayHours + weekendStudyDays * weekendHours;
+    return Math.round(totalWeeks * weeklyHours);
+  }
+
   const totalStudyDays = totalWeeks * studyDaysPerWeek;
   return Math.round(totalStudyDays * hoursPerDay);
 }
 
 /**
  * Generate a reality check assessment
+ * 
+ * Uses contentRegistry as the source of truth for content counts. 
+ * Falls back to user-provided data or section-based estimates if needed.
  */
 export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
   const startDate = input.startDate || new Date();
-  const hoursNeeded = calculateHoursNeeded(
-    input.section,
-    input.priorExperience,
-    input.diagnosticScore
-  );
+  
+  // Calculate hours needed - prefer contentRegistry, fallback to user-provided
+  let hoursNeeded: number;
+  
+  // Try contentRegistry first (always accurate)
+  const sectionKey = resolveStudySection(input.courseId, input.section);
+  const contentInfo = sectionKey ? getSectionContent(sectionKey) : null;
+  
+  if (contentInfo && contentInfo.counts.lessons > 0) {
+    // Use contentRegistry data
+    hoursNeeded = calculateHoursNeeded(sectionKey!, input.priorExperience, input.diagnosticScore);
+  } else if (input.totalLessonMinutes && input.totalLessons) {
+    // Use actual lesson time + estimated practice time
+    const lessonHours = input.totalLessonMinutes / 60;
+    
+    // Estimate practice time: 
+    // - ~3 MCQs per lesson topic for mastery (~1500 MCQs for 77 lessons)
+    // - 2 min per MCQ = ~50 hours of MCQs
+    // - Add flashcard/simulation time (~20% overhead)
+    const estimatedMCQCount = input.totalLessons * 20; // ~20 MCQs per lesson topic
+    const mcqHours = (estimatedMCQCount * MINUTES_PER_MCQ) / 60;
+    const flashcardHours = (input.totalLessons * 30 * MINUTES_PER_FLASHCARD) / 60; // 30 cards per lesson
+    const simulationHours = (input.totalLessons / 4 * MINUTES_PER_SIMULATION) / 60; // 1 sim per 4 lessons
+    
+    hoursNeeded = lessonHours + mcqHours + flashcardHours + simulationHours;
+    
+    // Adjust for experience
+    const experienceMultiplier = (EXPERIENCE_MULTIPLIERS as Record<string, number>)[input.priorExperience] || 1.0;
+    hoursNeeded = Math.round(hoursNeeded * experienceMultiplier);
+  } else {
+    // Fall back to section-based estimate
+    hoursNeeded = calculateHoursNeeded(
+      input.section,
+      input.priorExperience,
+      input.diagnosticScore
+    );
+  }
+  
   const hoursAvailable = calculateHoursAvailable(
     startDate,
     input.examDate,
     input.hoursPerDay,
-    input.studyDaysPerWeek
+    input.studyDaysPerWeek,
+    input.weekdayHours,
+    input.weekendHours,
   );
   const hourDeficit = hoursNeeded - hoursAvailable;
   
@@ -158,9 +291,26 @@ export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
   
   const deficitPercentage = hourDeficit / hoursNeeded;
   
-  if (hourDeficit <= 0) {
+  // Calculate surplus (when user has more time than needed)
+  const hourSurplus = Math.max(0, -hourDeficit);
+  const surplusPercentage = hourSurplus / hoursNeeded;
+  
+  // Calculate relaxed hours/day if user has significant surplus (>20%)
+  let relaxedHoursPerDay: number | undefined;
+  if (surplusPercentage > 0.2 && input.hoursPerDay > 1) {
+    // They could study less per day and still finish on time
+    const minHoursPerDay = (hoursNeeded / hoursAvailable) * input.hoursPerDay;
+    relaxedHoursPerDay = Math.round(minHoursPerDay * 10) / 10; // Round to 1 decimal
+  }
+  
+  // Allow 5% tolerance for "on track" - small variances shouldn't alarm users
+  if (hourDeficit <= 0 || deficitPercentage < 0.05) {
     severity = 'good';
-    message = `You have enough time! With ${hoursAvailable} hours available and ~${hoursNeeded} hours needed, you're set up for success.`;
+    if (hourSurplus >= 20) {
+      message = `You're in great shape! You have ${hourSurplus} extra hours built in for review and practice.`;
+    } else {
+      message = `Your timeline looks solid. You have enough time to cover all the material.`;
+    }
   } else if (deficitPercentage < 0.2) {
     severity = 'warning';
     message = `You're slightly short on time. You have ${hoursAvailable} hours but need ~${hoursNeeded} hours. Consider a small adjustment.`;
@@ -174,9 +324,12 @@ export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
     hoursNeeded,
     hoursAvailable,
     hourDeficit: Math.max(0, hourDeficit),
+    hourSurplus,
     suggestedActions,
     message,
     severity,
+    // Use null instead of undefined for Firestore compatibility
+    relaxedHoursPerDay: relaxedHoursPerDay ?? null,
   };
 }
 
@@ -211,25 +364,50 @@ export function determinePhase(
   return 'foundation';
 }
 
+// Time constants for realistic planning
+const MINUTES_PER_MCQ = 2;              // Average time per MCQ
+const MINUTES_PER_FLASHCARD = 0.5;      // Average time per flashcard review
+const MINUTES_PER_SIMULATION = 30;      // Average TBS/simulation time
+const _MINUTES_PER_MOCK_EXAM = 240;      // 4-hour mock exam
+
 /**
- * Generate weekly breakdown for the study plan
+ * Generate weekly breakdown for the study plan - CONTENT-FIRST
  * 
- * Distributes lessons across weeks proportionally based on phase:
- * - Foundation (first ~25%): 50% of lessons
- * - Building (25%-60%): 35% of lessons
- * - Reinforcement (60%-85%): 15% of lessons
- * - Final review / exam week: 0 lessons (review only)
+ * This ensures ALL lessons are covered, then distributes practice activities.
+ * Key principle: We MUST cover all content - time constraints affect intensity, not coverage.
+ * 
+ * Algorithm:
+ * 1. Calculate total lesson time required for ALL lessons
+ * 2. Determine which weeks can include lessons (foundation through final-review if needed)
+ * 3. Distribute ALL lessons evenly across available weeks
+ * 4. Allocate remaining time to practice activities
  */
 export function generateWeeks(
   startDate: Date,
   examDate: Date,
   hoursPerDay: number,
   studyDaysPerWeek: number,
-  totalLessons: number = 0
+  totalLessons: number = 0,
+  totalLessonMinutes: number = 0,
+  lessonDurations: number[] = []
 ): StudyPlanWeek[] {
   const weeks: StudyPlanWeek[] = [];
   const totalDays = differenceInDays(examDate, startDate);
-  const totalWeeks = Math.ceil(totalDays / 7);
+  const totalWeeks = Math.max(1, Math.ceil(totalDays / 7));
+  
+  // Weekly time budget in minutes
+  // When weekday/weekend split is provided (via extra params on generateWeeks),
+  // the caller has already folded them into an effective hoursPerDay, so we
+  // always compute the same way here.
+  const weeklyMinutes = hoursPerDay * studyDaysPerWeek * 60;
+  
+  // If no lesson durations provided, create array with average duration
+  const avgLessonMinutes = totalLessons > 0 && totalLessonMinutes > 0
+    ? totalLessonMinutes / totalLessons
+    : 30;
+  const durations = lessonDurations.length > 0 
+    ? lessonDurations 
+    : Array(totalLessons).fill(avgLessonMinutes);
   
   let currentDate = startDate;
   
@@ -255,87 +433,153 @@ export function generateWeeks(
     weekPhases.push(phase);
   }
   
-  // Count weeks by phase that get lessons
-  const foundationWeeks = weekPhases.filter(p => p === 'foundation').length;
-  const buildingWeeks = weekPhases.filter(p => p === 'building').length;
-  const reinforcementWeeks = weekPhases.filter(p => p === 'reinforcement').length;
+  // ==========================================================================
+  // CONTENT-FIRST DISTRIBUTION: Ensure ALL lessons are covered
+  // ==========================================================================
   
-  // Distribute lessons: Foundation 50%, Building 35%, Reinforcement 15%
-  const foundationLessons = Math.round(totalLessons * 0.50);
-  const buildingLessons = Math.round(totalLessons * 0.35);
-  const reinforcementLessons = totalLessons - foundationLessons - buildingLessons;
+  // Determine which weeks can include lessons
+  // Start with foundation/building/reinforcement, extend to final-review if needed
+  const primaryLearningWeeks = weekPhases
+    .map((p, i) => ({ phase: p, index: i }))
+    .filter(w => ['foundation', 'building', 'reinforcement'].includes(w.phase));
   
-  // Per-week lesson counts
-  const lessonsPerFoundationWeek = foundationWeeks > 0 ? Math.ceil(foundationLessons / foundationWeeks) : 0;
-  const lessonsPerBuildingWeek = buildingWeeks > 0 ? Math.ceil(buildingLessons / buildingWeeks) : 0;
-  const lessonsPerReinforcementWeek = reinforcementWeeks > 0 ? Math.ceil(reinforcementLessons / reinforcementWeeks) : 0;
+  const finalReviewWeeks = weekPhases
+    .map((p, i) => ({ phase: p, index: i }))
+    .filter(w => w.phase === 'final-review');
   
-  for (let i = 1; i <= totalWeeks; i++) {
+  // Calculate time available for lessons in primary learning weeks
+  // Use 50% of time as average lesson allocation
+  const avgLessonTimePercent = 0.40;
+  const primaryLessonCapacityMinutes = primaryLearningWeeks.length * weeklyMinutes * avgLessonTimePercent;
+  
+  // Check if we need to extend lessons into final-review phase
+  const needsExtension = totalLessonMinutes > primaryLessonCapacityMinutes;
+  const learningWeekIndices = needsExtension
+    ? [...primaryLearningWeeks, ...finalReviewWeeks].map(w => w.index)
+    : primaryLearningWeeks.map(w => w.index);
+  
+  // Calculate lessons per learning week (distribute evenly by count)
+  const learningWeekCount = learningWeekIndices.length || 1;
+  const baseLessonsPerWeek = Math.floor(totalLessons / learningWeekCount);
+  const extraLessons = totalLessons % learningWeekCount;
+  
+  // Create lesson distribution map: weekIndex -> lessonCount
+  const lessonDistribution: Map<number, number> = new Map();
+  let lessonAssignIndex = 0;
+  
+  for (let i = 0; i < learningWeekIndices.length; i++) {
+    const weekIndex = learningWeekIndices[i];
+    // Front-load extra lessons to earlier weeks
+    const lessonsThisWeek = baseLessonsPerWeek + (i < extraLessons ? 1 : 0);
+    lessonDistribution.set(weekIndex, lessonsThisWeek);
+    lessonAssignIndex += lessonsThisWeek;
+  }
+  
+  // Calculate lesson minutes per week based on actual lesson durations
+  let durationIndex = 0;
+  const lessonMinutesDistribution: Map<number, number> = new Map();
+  
+  for (const weekIndex of learningWeekIndices) {
+    const lessonCount = lessonDistribution.get(weekIndex) || 0;
+    let weekLessonMinutes = 0;
+    
+    for (let j = 0; j < lessonCount && durationIndex < durations.length; j++) {
+      weekLessonMinutes += durations[durationIndex];
+      durationIndex++;
+    }
+    
+    lessonMinutesDistribution.set(weekIndex, weekLessonMinutes);
+  }
+  
+  // Log distribution for debugging
+  logger.info(`Study plan: Distributing ${totalLessons} lessons across ${learningWeekCount} learning weeks`);
+  if (needsExtension) {
+    logger.info(`Study plan: Extended lessons into final-review phase due to tight timeline`);
+  }
+  
+  // ==========================================================================
+  // Build weeks with lesson distribution + practice activities
+  // ==========================================================================
+  
+  for (let i = 0; i < totalWeeks; i++) {
+    const weekNumber = i + 1;
     const weekStart = currentDate;
     const weekEnd = addDays(currentDate, 6);
-    const phase = weekPhases[i - 1];
+    const phase = weekPhases[i];
     
-    // Calculate goals based on phase
-    const weeklyHours = hoursPerDay * studyDaysPerWeek;
+    // Get lessons assigned to this week
+    const weekLessonCount = lessonDistribution.get(i) || 0;
+    const weekLessonMinutes = lessonMinutesDistribution.get(i) || 0;
     
-    let goals = {
-      lessons: 0,
-      questions: 0,
-      flashcards: 0,
-      simulations: 0,
-      mockExams: 0,
-    };
+    // Calculate remaining time for practice activities
+    const remainingMinutes = Math.max(0, weeklyMinutes - weekLessonMinutes);
+    
+    // Allocate practice time based on phase
+    let mcqPercent: number;
+    let flashcardPercent: number;
+    let simulationPercent: number;
+    let mockExamPercent: number;
     
     switch (phase) {
       case 'foundation':
-        goals = {
-          lessons: lessonsPerFoundationWeek,
-          questions: Math.round(weeklyHours * 15),
-          flashcards: 50,
-          simulations: 0,
-          mockExams: 0,
-        };
+        mcqPercent = 0.50;
+        flashcardPercent = 0.35;
+        simulationPercent = 0.15;
+        mockExamPercent = 0;
         break;
       case 'building':
-        goals = {
-          lessons: lessonsPerBuildingWeek,
-          questions: Math.round(weeklyHours * 20),
-          flashcards: 75,
-          simulations: 2,
-          mockExams: 0,
-        };
+        mcqPercent = 0.50;
+        flashcardPercent = 0.25;
+        simulationPercent = 0.25;
+        mockExamPercent = 0;
         break;
       case 'reinforcement':
-        goals = {
-          lessons: lessonsPerReinforcementWeek,
-          questions: Math.round(weeklyHours * 25),
-          flashcards: 100,
-          simulations: 4,
-          mockExams: 0,
-        };
+        mcqPercent = 0.50;
+        flashcardPercent = 0.20;
+        simulationPercent = 0.30;
+        mockExamPercent = 0;
         break;
       case 'final-review':
-        goals = {
-          lessons: 0,
-          questions: Math.round(weeklyHours * 20),
-          flashcards: 50,
-          simulations: 3,
-          mockExams: 1,
-        };
+        mcqPercent = 0.35;
+        flashcardPercent = 0.15;
+        simulationPercent = 0.20;
+        mockExamPercent = 0.30;
         break;
       case 'exam-week':
-        goals = {
-          lessons: 0,
-          questions: Math.round(weeklyHours * 10),
-          flashcards: 30,
-          simulations: 0,
-          mockExams: 1,
-        };
+        mcqPercent = 0.50;
+        flashcardPercent = 0.30;
+        simulationPercent = 0;
+        mockExamPercent = 0.20;
         break;
+      default:
+        mcqPercent = 0.50;
+        flashcardPercent = 0.25;
+        simulationPercent = 0.25;
+        mockExamPercent = 0;
     }
     
+    // Calculate activity counts from remaining time
+    const mcqTimeBudget = remainingMinutes * mcqPercent;
+    const flashcardTimeBudget = remainingMinutes * flashcardPercent;
+    const simulationTimeBudget = remainingMinutes * simulationPercent;
+    
+    const questionCount = Math.round(mcqTimeBudget / MINUTES_PER_MCQ);
+    const flashcardCount = Math.round(flashcardTimeBudget / MINUTES_PER_FLASHCARD);
+    const simulationCount = Math.round(simulationTimeBudget / MINUTES_PER_SIMULATION);
+    const mockExamCount = mockExamPercent > 0 ? 1 : 0;
+    
+    const goals = {
+      lessons: weekLessonCount,
+      lessonMinutes: Math.round(weekLessonMinutes),
+      questions: questionCount,
+      questionMinutes: Math.round(mcqTimeBudget),
+      flashcards: flashcardCount,
+      simulations: simulationCount,
+      mockExams: mockExamCount,
+    };
+    
     weeks.push({
-      weekNumber: i,
+      weekNumber,
       startDate: weekStart,
       endDate: weekEnd,
       phase,
@@ -345,6 +589,26 @@ export function generateWeeks(
     
     currentDate = addDays(weekEnd, 1);
   }
+  
+  // Final verification: ensure all lessons are assigned
+  const assignedLessons = weeks.reduce((sum, w) => sum + w.goals.lessons, 0);
+  if (assignedLessons !== totalLessons) {
+    logger.warn(`Study plan: Lesson mismatch - expected ${totalLessons}, assigned ${assignedLessons}`);
+    
+    // Fill any gaps by adding to earlier weeks
+    let remaining = totalLessons - assignedLessons;
+    for (let i = 0; i < weeks.length && remaining > 0; i++) {
+      const w = weeks[i];
+      if (w.phase !== 'exam-week') {
+        const toAdd = Math.min(remaining, 5); // Add up to 5 lessons per week
+        w.goals.lessons += toAdd;
+        w.goals.lessonMinutes += Math.round(toAdd * avgLessonMinutes);
+        remaining -= toAdd;
+      }
+    }
+  }
+  
+  logger.info(`Study plan: Final distribution - ${weeks.reduce((sum, w) => sum + w.goals.lessons, 0)} lessons across ${totalWeeks} weeks`);
   
   return weeks;
 }
@@ -438,32 +702,55 @@ function getPhaseDescription(phase: StudyPhase): string {
 
 /**
  * Determine plan health based on progress vs. expected
+ * 
+ * Health is calculated from 3 factors:
+ * - Lesson progress (40%): Are they completing lessons on schedule?
+ * - MCQ progress (35%): Are they practicing enough questions?
+ * - Attendance (25%): Are they showing up consistently?
+ * 
+ * This balanced approach ensures that heavy MCQ practice counts even
+ * if lessons are slightly behind, and vice versa.
  */
 export function calculatePlanHealth(
   _currentWeek: number,
   _totalWeeks: number,
   lessonsCompleted: number,
   lessonsExpected: number,
+  questionsAnswered: number,
+  questionsExpected: number,
   daysStudied: number,
   daysMissed: number
 ): PlanHealth {
-  const progressRatio = lessonsExpected > 0 ? lessonsCompleted / lessonsExpected : 1;
+  // Lesson progress ratio (cap at 1.0 for early finishers)
+  const lessonRatio = lessonsExpected > 0 
+    ? Math.min(1, lessonsCompleted / lessonsExpected) 
+    : 1;
+  
+  // MCQ progress ratio (cap at 1.0)
+  const questionRatio = questionsExpected > 0 
+    ? Math.min(1, questionsAnswered / questionsExpected) 
+    : 1;
+  
+  // Attendance ratio
   const attendanceRatio = (daysStudied + daysMissed) > 0 
     ? daysStudied / (daysStudied + daysMissed) 
     : 1;
   
-  // Weight attendance (40%) and content progress (60%)
-  const overallScore = (attendanceRatio * 0.4) + (progressRatio * 0.6);
+  // Weighted score: lessons 40%, questions 35%, attendance 25%
+  const overallScore = (lessonRatio * 0.4) + (questionRatio * 0.35) + (attendanceRatio * 0.25);
   
-  if (overallScore >= 0.9) return 'on-track';
-  if (overallScore >= 0.75) return 'slightly-behind';
-  if (overallScore >= 0.5) return 'behind';
-  if (overallScore >= 0.25) return 'at-risk';
+  if (overallScore >= 0.85) return 'on-track';
+  if (overallScore >= 0.70) return 'slightly-behind';
+  if (overallScore >= 0.50) return 'behind';
+  if (overallScore >= 0.30) return 'at-risk';
   return 'critical';
 }
 
 /**
  * Generate a complete study plan
+ * 
+ * Auto-fills lesson counts and durations from contentRegistry when not provided.
+ * This means callers no longer need to fetch lesson data manually.
  */
 export function generateStudyPlan(
   input: StudyPlanSetupInput,
@@ -472,17 +759,61 @@ export function generateStudyPlan(
   const startDate = input.startDate || new Date();
   const totalDays = differenceInDays(input.examDate, startDate);
   
-  // Generate reality check
-  const realityCheck = generateRealityCheck(input);
+  // Auto-fill content data from contentRegistry if not provided
+  const sectionKey = resolveStudySection(input.courseId, input.section);
+  const contentInfo = sectionKey ? getSectionContent(sectionKey) : null;
   
-  // Generate weeks with lesson distribution
-  const totalLessons = input.totalLessons || 0;
+  let totalLessons = input.totalLessons || 0;
+  let totalLessonMinutes = input.totalLessonMinutes || 0;
+  const lessonDurations = input.lessonDurations || [];
+  
+  if (contentInfo && contentInfo.counts.lessons > 0) {
+    // Use contentRegistry as source of truth (unless caller provided data)
+    if (!input.totalLessons || input.totalLessons === 0) {
+      totalLessons = contentInfo.counts.lessons;
+    }
+    if (!input.totalLessonMinutes || input.totalLessonMinutes === 0) {
+      totalLessonMinutes = contentInfo.counts.lessonMinutes;
+    }
+  }
+  
+  // If still no lesson minutes, use default 30 min/lesson
+  if (totalLessonMinutes === 0 && totalLessons > 0) {
+    totalLessonMinutes = totalLessons * 30;
+  }
+
+  // Snapshot the input with the auto-filled values for recalculation
+  const enrichedInput: StudyPlanSetupInput = {
+    ...input,
+    totalLessons,
+    totalLessonMinutes,
+    lessonDurations,
+  };
+  
+  // Generate reality check
+  const realityCheck = generateRealityCheck(enrichedInput);
+
+  // Compute effective hoursPerDay when weekday/weekend split is provided.
+  // generateWeeks uses a flat hoursPerDay × studyDaysPerWeek for weekly budget,
+  // so we fold the split into a weighted average.
+  let effectiveHoursPerDay = input.hoursPerDay;
+  if (input.weekdayHours != null && input.weekendHours != null) {
+    const weekendStudyDays = Math.min(input.studyDaysPerWeek, 2);
+    const weekdayStudyDays = Math.max(0, input.studyDaysPerWeek - weekendStudyDays);
+    const totalDaysPerWeek = weekdayStudyDays + weekendStudyDays;
+    effectiveHoursPerDay = totalDaysPerWeek > 0
+      ? (weekdayStudyDays * input.weekdayHours + weekendStudyDays * input.weekendHours) / totalDaysPerWeek
+      : input.hoursPerDay;
+  }
+
   const weeks = generateWeeks(
     startDate,
     input.examDate,
-    input.hoursPerDay,
+    effectiveHoursPerDay,
     input.studyDaysPerWeek,
-    totalLessons
+    totalLessons,
+    totalLessonMinutes,
+    lessonDurations
   );
   
   // Generate milestones
@@ -514,12 +845,12 @@ export function generateStudyPlan(
     courseId: input.courseId,
     section: input.section,
     userId,
-    setup: input,
+    setup: enrichedInput,
     startDate,
     examDate: input.examDate,
     totalDays,
     totalWeeks: weeks.length,
-    hoursPerDay: input.hoursPerDay,
+    hoursPerDay: Math.round(effectiveHoursPerDay * 10) / 10,
     studyDaysPerWeek: input.studyDaysPerWeek,
     weeks,
     milestones,
@@ -527,7 +858,10 @@ export function generateStudyPlan(
     realityCheck,
     currentPhase,
     currentWeek,
-    health: 'on-track', // Initial state
+    // Initial health based on timeline reality check
+    health: realityCheck.severity === 'good' ? 'on-track' 
+          : realityCheck.severity === 'warning' ? 'slightly-behind' 
+          : 'at-risk',
     progress: {
       lessonsCompleted: 0,
       lessonsTotal: totalLessons,
@@ -957,10 +1291,12 @@ export async function incrementStudyPlanProgress(
     });
     
     let lessonsExpected = 0;
+    let questionsExpected = 0;
     if (plan.weeks) {
       for (const w of plan.weeks) {
         if (w.weekNumber < (currentWeek?.weekNumber || 1)) {
           lessonsExpected += w.goals?.lessons || 0;
+          questionsExpected += w.goals?.questions || 0;
         }
       }
       // Add partial week progress
@@ -969,6 +1305,7 @@ export async function incrementStudyPlanProgress(
         const dayOfWeek = Math.floor((today.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
         const weekProgress = Math.min(1, dayOfWeek / 7);
         lessonsExpected += Math.floor((currentWeek.goals?.lessons || 0) * weekProgress);
+        questionsExpected += Math.floor((currentWeek.goals?.questions || 0) * weekProgress);
       }
     }
     
@@ -1009,12 +1346,14 @@ export async function incrementStudyPlanProgress(
       }
     }
     
-    // Recalculate health
+    // Recalculate health (now includes MCQ progress)
     const newHealth = calculatePlanHealth(
       currentWeek?.weekNumber || 1,
       plan.totalWeeks || 1,
       newLessonsCompleted,
       lessonsExpected,
+      newQuestionsAnswered,
+      questionsExpected,
       newDaysStudied,
       currentProgress.daysMissed || 0
     );
@@ -1134,13 +1473,20 @@ export async function rebalanceStudyPlan(
       : 0;
     const newPace = Math.round((lessonsRemaining / Math.max(1, studyDaysRemaining)) * 10) / 10;
     
+    // Estimate lesson minutes for remaining lessons (use setup value or default 30 min)
+    const avgLessonMinutes = plan.setup?.totalLessons && plan.setup?.totalLessonMinutes
+      ? plan.setup.totalLessonMinutes / plan.setup.totalLessons
+      : 30;
+    const remainingLessonMinutes = Math.round(lessonsRemaining * avgLessonMinutes);
+    
     // Regenerate remaining weeks
     const newWeeks = generateWeeks(
       today,
       examDate,
       options.newHoursPerDay || plan.hoursPerDay,
       studyDaysPerWeek,
-      lessonsRemaining
+      lessonsRemaining,
+      remainingLessonMinutes
     );
     
     // Merge: keep completed weeks, replace future weeks

@@ -135,6 +135,9 @@ const StartCheckout = lazyWithRetry(() => import('./components/pages/StartChecko
 
 // Business Pages
 const VoraPrep = lazyWithRetry(() => import('./components/pages/VoraPrep'));
+const About = lazyWithRetry(() => import('./components/pages/About'));
+const Compare = lazyWithRetry(() => import('./components/pages/Compare'));
+const Pricing = lazyWithRetry(() => import('./components/pages/PricingOverview'));
 // Unified Landing Pages (new template system)
 const CPALanding = lazyWithRetry(() => import('./components/pages/landing/CPALandingNew'));
 const EALanding = lazyWithRetry(() => import('./components/pages/landing/EALandingNew'));
@@ -468,11 +471,7 @@ function App() {
                     />
                     <Route
                       path="/cpa/study-plan"
-                      element={
-                        <SuspensePage>
-                          <CPAStudyPlanSetup />
-                        </SuspensePage>
-                      }
+                      element={<Navigate to="/study-plan/setup" replace />}
                     />
                   </>
                 )}
@@ -684,15 +683,32 @@ function App() {
                 />
                 
                 {/* Business Pages (public) */}
-                {/* Pricing is now per-exam - redirect to home */}
+                {/* Pricing comparison page */}
                 <Route
                   path="/pricing"
-                  element={<Navigate to="/" replace />}
+                  element={
+                    <SuspensePage>
+                      <Pricing />
+                    </SuspensePage>
+                  }
                 />
-                {/* About redirect - no dedicated page, redirect to home */}
+                {/* Compare with competitors page */}
+                <Route
+                  path="/compare"
+                  element={
+                    <SuspensePage>
+                      <Compare />
+                    </SuspensePage>
+                  }
+                />
+                {/* About VoraPrep page */}
                 <Route
                   path="/about"
-                  element={<Navigate to="/" replace />}
+                  element={
+                    <SuspensePage>
+                      <About />
+                    </SuspensePage>
+                  }
                 />
                 
                 {/* Checkout flow pages */}
@@ -1049,11 +1065,7 @@ function App() {
                       />
                       <Route
                         path="/ea/study-plan"
-                        element={
-                          <SuspensePage>
-                            <EAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/ea/forms"
@@ -1089,11 +1101,7 @@ function App() {
                       />
                       <Route
                         path="/cma/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CMAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cma/essay"
@@ -1149,11 +1157,7 @@ function App() {
                       />
                       <Route
                         path="/cia/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CIAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cia/section/:sectionId"
@@ -1199,11 +1203,7 @@ function App() {
                       />
                       <Route
                         path="/cfp/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CFPStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cfp/domain/:sectionId"
@@ -1249,11 +1249,7 @@ function App() {
                       />
                       <Route
                         path="/cisa/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CISAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cisa/section/:id"

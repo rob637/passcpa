@@ -120,6 +120,37 @@ async function getStudyPlanContext(
     
     const plan = planDoc.data() as StudyPlan;
     
+    // Compute hoursPerDay robustly — older plans may not have this field,
+    // or it may have been lost during JSON serialization.
+    let hoursPerDay = plan.hoursPerDay;
+    if (!hoursPerDay || hoursPerDay <= 0) {
+      // Fallback 1: Compute from setup.weekdayHours / weekendHours
+      const setup = (plan as any).setup;
+      if (setup?.weekdayHours != null && setup?.weekendHours != null && plan.studyDaysPerWeek) {
+        const weekendDays = Math.min(plan.studyDaysPerWeek, 2);
+        const weekdayDays = Math.max(0, plan.studyDaysPerWeek - weekendDays);
+        const totalDays = weekdayDays + weekendDays;
+        hoursPerDay = totalDays > 0
+          ? (weekdayDays * setup.weekdayHours + weekendDays * setup.weekendHours) / totalDays
+          : setup.hoursPerDay || 0;
+      } else if (setup?.hoursPerDay) {
+        hoursPerDay = setup.hoursPerDay;
+      }
+      // Fallback 2: Derive from week goals (totalMinutes / studyDaysPerWeek / 60)
+      // Week goals have questions × 1.5min + lessons × 30min + simulations × 30min
+      if ((!hoursPerDay || hoursPerDay <= 0) && plan.weeks?.length > 0) {
+        const firstWeek = plan.weeks[0];
+        const weekMinutes = (firstWeek.goals.questions * 1.5) + (firstWeek.goals.lessons * 30) + (firstWeek.goals.simulations * 30);
+        const daysPerWeek = plan.studyDaysPerWeek || 5;
+        hoursPerDay = weekMinutes / daysPerWeek / 60;
+      }
+      if (hoursPerDay && hoursPerDay > 0) {
+        hoursPerDay = Math.round(hoursPerDay * 10) / 10;
+        logger.info(`Computed hoursPerDay from fallback: ${hoursPerDay}`);
+      }
+    }
+    const studyDaysPerWeek = plan.studyDaysPerWeek || 5;
+    
     // Find current week
     const today = new Date();
     const currentWeek = plan.weeks.find(w => {
@@ -153,6 +184,8 @@ async function getStudyPlanContext(
         completedLessonIds: [],
         focusTopics: [],
         weekGoals: currentWeek.goals,
+        hoursPerDay,
+        studyDaysPerWeek,
       };
     }
     
@@ -196,6 +229,8 @@ async function getStudyPlanContext(
       completedLessonIds,
       focusTopics,
       weekGoals: currentWeek.goals,
+      hoursPerDay,
+      studyDaysPerWeek,
     };
   } catch (err) {
     logger.warn(`Could not fetch study plan context for ${userId}/${courseId}/${section}:`, err);
@@ -230,7 +265,7 @@ const DURATION_STORAGE_KEY = 'voraprep_activity_durations';
 const ACTIVITY_START_KEY = 'voraprep_activity_start';
 const FEEDBACK_STORAGE_KEY = 'voraprep_activity_feedback';
 
-const PLAN_VERSION = 2;
+const PLAN_VERSION = 6;
 
 /**
  * Single-exam courses use one unified daily plan across all domains.

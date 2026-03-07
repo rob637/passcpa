@@ -6612,7 +6612,8 @@ exports.dynamicSitemap = onRequest({
     { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },
     { loc: '/help', priority: '0.4', changefreq: 'monthly' },
     { loc: '/login', priority: '0.5', changefreq: 'monthly' },
-    { loc: '/signup', priority: '0.6', changefreq: 'monthly' },
+    { loc: '/register', priority: '0.6', changefreq: 'monthly' },
+    { loc: '/demo-practice', priority: '0.7', changefreq: 'monthly' },
   ];
 
   // Fetch published blog articles from Firestore

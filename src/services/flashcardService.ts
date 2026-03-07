@@ -80,6 +80,7 @@ export async function getFlashcardsByCourse(courseId: CourseId): Promise<Flashca
 /**
  * Load flashcards for a specific section.
  * Loads all course flashcards then filters by section.
+ * Use 'ALL' to get all flashcards for the course (single-exam courses like CISA, CFP).
  */
 export async function getFlashcardsBySection(section: string, courseId?: CourseId): Promise<Flashcard[]> {
   const effectiveCourse = courseId || getCourseFromSection(section);
@@ -91,6 +92,12 @@ export async function getFlashcardsBySection(section: string, courseId?: CourseI
 
   try {
     const all = await getFlashcardsByCourse(effectiveCourse);
+
+    // 'ALL' returns all flashcards for the course (used by single-exam courses)
+    if (section.toUpperCase() === 'ALL') {
+      flashcardCache[cacheKey] = all;
+      return all;
+    }
 
     // Normalize section matching: CFP-GEN → GEN, etc.
     const domain = section.replace(/^CFP-/, '');

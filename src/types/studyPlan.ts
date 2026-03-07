@@ -34,13 +34,17 @@ export interface StudyPlanSetupInput {
   courseId: CourseId;
   section: string;                    // e.g., 'FAR', 'SEE1', 'CISA'
   examDate: Date;
-  hoursPerDay: number;                // Average hours available per day
+  hoursPerDay: number;                // Average hours available per day (backward-compatible flat value)
   studyDaysPerWeek: number;           // Days per week (1-7)
+  weekdayHours?: number;              // Hours per weekday (Mon-Fri). If set, overrides hoursPerDay.
+  weekendHours?: number;              // Hours per weekend day (Sat-Sun). If set, overrides hoursPerDay.
   priorExperience: 'none' | 'some' | 'retake';  // Background knowledge
   diagnosticScore?: number;           // 0-100, from diagnostic quiz
   diagnosticWeakAreas?: string[];     // Topics that need extra focus
   startDate?: Date;                   // Default: today
   totalLessons?: number;              // Total lessons available for section
+  totalLessonMinutes?: number;        // Sum of all lesson durations (minutes)
+  lessonDurations?: number[];         // Individual lesson durations in order (minutes)
 }
 
 /**
@@ -54,7 +58,9 @@ export interface StudyPlanWeek {
   focusTopics: string[];              // Primary topics for this week
   goals: {
     lessons: number;                  // Target lessons to complete
+    lessonMinutes: number;            // Target lesson time (minutes)
     questions: number;                // Target MCQs to answer
+    questionMinutes: number;          // Target MCQ time (minutes) 
     flashcards: number;               // Target flashcard reviews
     simulations: number;              // Target TBS/simulations
     mockExams: number;                // Target mock exams (usually 0 or 1)
@@ -99,10 +105,12 @@ export interface RealityCheck {
   isRealistic: boolean;
   hoursNeeded: number;                // Total hours estimated to prepare
   hoursAvailable: number;             // Total hours based on user's schedule
-  hourDeficit: number;                // hoursNeeded - hoursAvailable
+  hourDeficit: number;                // hoursNeeded - hoursAvailable (0 if deficit)
+  hourSurplus: number;                // hoursAvailable - hoursNeeded (0 if deficit)
   suggestedActions: RealityCheckAction[];
   message: string;                    // Human-readable assessment
   severity: 'good' | 'warning' | 'critical';
+  relaxedHoursPerDay?: number | null; // Optional: reduced hours/day if surplus exists
 }
 
 export interface RealityCheckAction {
@@ -229,39 +237,42 @@ export interface StudyPlanSummary {
   alertCount?: number;
 }
 
-/**
- * Estimate hours needed based on exam and section
- */
+/**\n * Estimate hours needed based on exam and section\n * \n * These values are based on industry research and pass rates:\n * - AICPA surveys: 300-400 hours total for all CPA sections\n * - Gleim/Becker: FAR 140-150h, AUD 80-120h, REG 100-120h\n * - NASBA: Average candidate attempts 3-4 sections over 18-24 months\n * - IMA for CMA: 150-170 hours per part\n * - ISACA for CISA: 150-200 hours recommended\n * - CFP Board: 250-300 hours of study\n */
 export const SECTION_STUDY_HOURS: Record<string, number> = {
-  // CPA sections
-  FAR: 140,
-  AUD: 100,
-  REG: 110,
-  BAR: 90,
-  ISC: 90,
-  TCP: 90,
-  // EA sections
-  SEE1: 60,
-  SEE2: 70,
-  SEE3: 50,
-  // CMA sections
-  CMA1: 100,
-  CMA2: 100,
-  // CIA sections
-  CIA1: 80,
-  CIA2: 80,
-  CIA3: 80,
-  // CISA (single exam)
-  CISA: 120,
-  // CFP (single exam)
-  CFP: 250,
+  // CPA sections (based on AICPA blueprint complexity + pass rates)
+  FAR: 150,    // Hardest section, lowest pass rate (~45%)
+  AUD: 110,    // Moderate difficulty, ~50% pass rate
+  REG: 120,    // Moderate-hard, tax code memorization
+  BAR: 100,    // Discipline - Business Analysis & Reporting
+  ISC: 100,    // Discipline - Information Systems & Controls
+  TCP: 100,    // Discipline - Tax Compliance & Planning
+  // EA sections (IRS SEE exams)
+  SEE1: 70,    // Individuals - most content
+  SEE2: 80,    // Businesses - most complex
+  SEE3: 50,    // Representation - shortest
+  // CMA sections (IMA recommendation: 150-170h per part)
+  CMA1: 160,   // Financial Planning, Performance, Analytics
+  CMA2: 160,   // Strategic Financial Management
+  // CIA sections (IIA standards)
+  CIA1: 100,   // Essentials of Internal Auditing
+  CIA2: 100,   // Practice of Internal Auditing
+  CIA3: 100,   // Business Knowledge
+  // CISA (ISACA recommendation: 150-200h)
+  CISA: 160,   // Single exam, 5 domains
+  // CFP (CFP Board recommendation: 250-300h)
+  CFP: 275,    // Single exam, 8 domains
 };
 
 /**
  * Experience modifier for study hours
+ * 
+ * Based on how much content a user needs to learn vs review:
+ * - No experience: Full curriculum coverage needed
+ * - Some experience: Already know fundamentals, focus on gaps
+ * - Retake: Seen all material, focused review on weak areas
  */
 export const EXPERIENCE_MULTIPLIERS: Record<string, number> = {
-  'none': 1.0,      // Full study time
-  'some': 0.75,     // 25% reduction
-  'retake': 0.6,    // 40% reduction - they've seen the material before
+  'none': 1.0,      // 100% - Full study time needed
+  'some': 0.80,     // 80% - 20% reduction for existing knowledge
+  'retake': 0.60,   // 60% - 40% reduction, focused remediation
 };

@@ -8,7 +8,9 @@
  * Strategy: For sections with bias, identify questions that can have their
  * options reordered safely (where whyWrong keys match option indices).
  * 
- * Run: node scripts/qbank-balance-answers.cjs [--dry-run] [--verbose]
+ * Run: node scripts/qbank-balance-answers.cjs [--dry-run] [-
+ * 
+ * -verbose]
  */
 
 const fs = require('fs');

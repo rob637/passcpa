@@ -9,7 +9,7 @@
   },
   "hosting": {
     "public": "dist",
-    "trailingSlash": true,
+    "trailingSlash": false,
     "predeploy": ["node scripts/verify-deploy-env.cjs"],
     "ignore": [
       "firebase.json",
@@ -33,6 +33,18 @@
         "source": "/index.html",
         "headers": [
           { "key": "Cache-Control", "value": "no-cache" }
+        ]
+      },
+      {
+        "source": "{/home,/dashboard,/study,/practice,/flashcards,/quiz,/exam,/tbs,/lessons,/progress,/achievements,/tutor,/ai-tutor,/settings,/onboarding,/admin,/journey,/resources,/community,/you,/learn,/checkout-success,/checkout-cancel,/about,/pricing}/**",
+        "headers": [
+          { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        ]
+      },
+      {
+        "source": "{/home,/dashboard,/study,/practice,/flashcards,/quiz,/exam,/tbs,/lessons,/progress,/achievements,/tutor,/ai-tutor,/settings,/onboarding,/admin,/journey,/resources,/community,/you,/learn,/checkout-success,/checkout-cancel,/about,/pricing}",
+        "headers": [
+          { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
         ]
       },
       {

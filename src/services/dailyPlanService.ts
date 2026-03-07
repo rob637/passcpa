@@ -27,7 +27,7 @@
 
 import { fetchLessonsBySection } from './lessonService';
 import { POINT_VALUES } from '../config/examConfig';
-import type { CourseId, ExamSection } from '../types';
+import type { CourseId, ExamSection, Lesson } from '../types';
 import { TBSHistoryEntry } from './questionHistoryService';
 import { getCourse } from '../courses';
 import logger from '../utils/logger';
@@ -83,6 +83,12 @@ export interface DailyPlan {
   restDay?: {
     isRestDay: boolean;
     reason: string;
+  };
+  /** One-line insight about what to focus on and why */
+  whatsNext?: {
+    headline: string;   // e.g. "Focus on Revenue Recognition"
+    detail: string;     // e.g. "52% accuracy — your weakest area"
+    studyPlanWeek?: number; // current week from study plan
   };
   summary: {
     totalActivities: number;
@@ -161,6 +167,10 @@ export interface StudyPlanContext {
     flashcards: number;
     simulations: number;
   };
+  /** Study plan's committed hours per day (weighted avg of weekday/weekend) */
+  hoursPerDay?: number;
+  /** Study plan's committed study days per week */
+  studyDaysPerWeek?: number;
 }
 
 // ============================================================================
@@ -623,8 +633,36 @@ export const generateDailyPlan = async (
   
   // Calculate intensity based on exam proximity
   const intensity = calculateIntensity(state.examDate);
-  const fullTargetMinutes = getTargetMinutes(state.dailyGoal, intensity);
-  
+  let fullTargetMinutes = getTargetMinutes(state.dailyGoal, intensity);
+
+  // ── Study Plan Time Budget Override ─────────────────────────────────
+  // When a study plan exists, use its committed hours instead of the
+  // points-derived estimate.  This is the user's actual time commitment.
+  const spHoursPerDay = state.studyPlanContext?.hoursPerDay;
+  if (spHoursPerDay && spHoursPerDay > 0) {
+    fullTargetMinutes = Math.round(spHoursPerDay * 60);
+    logger.info('Time budget from study plan hoursPerDay', {
+      hoursPerDay: spHoursPerDay,
+      fullTargetMinutes,
+    });
+  } else if (state.studyPlanContext?.weekGoals) {
+    // Fallback: derive time budget from week goals if hoursPerDay is missing
+    // This covers older plans that may not have hoursPerDay stored
+    const wg = state.studyPlanContext.weekGoals;
+    const daysPerWeek = state.studyPlanContext.studyDaysPerWeek || 5;
+    // Estimate weekly minutes from goals: questions × 1.5min + lessons × 30min + sims × 30min + flashcards × 0.5min
+    const weeklyMinutes = (wg.questions * 1.5) + (wg.lessons * 30) + (wg.simulations * 30) + (wg.flashcards * 0.5);
+    const dailyMinutesFromGoals = Math.round(weeklyMinutes / daysPerWeek);
+    if (dailyMinutesFromGoals > fullTargetMinutes) {
+      fullTargetMinutes = dailyMinutesFromGoals;
+      logger.info('Time budget from study plan weekGoals (hoursPerDay missing)', {
+        weekGoals: wg,
+        daysPerWeek,
+        dailyMinutesFromGoals,
+      });
+    }
+  }
+
   // ── Study Day Preferences ──────────────────────────────────────────
   // If user has set preferred study days and today is NOT one of them,
   // generate a minimal "off-day" plan (just flashcard review + spaced rep).
@@ -676,7 +714,11 @@ export const generateDailyPlan = async (
   }
   
   // Adjust for work already done today — don't rebuild a full plan if user is halfway through
-  const goalCompletion = state.dailyGoal > 0 ? Math.min(1, state.todayPoints / state.dailyGoal) : 0;
+  // When study plan provides the time budget, skip points-based scaling — the user
+  // committed to specific hours, and the points system doesn't reflect hours accurately.
+  const goalCompletion = (!state.studyPlanContext && state.dailyGoal > 0)
+    ? Math.min(1, state.todayPoints / state.dailyGoal)
+    : 0;
   const remainingFraction = Math.max(0.3, 1 - goalCompletion); // Always plan at least 30%
   const scaledMinutes = Math.round(fullTargetMinutes * remainingFraction);
   // Enforce a floor of 45 minutes so the plan always has room for 2-3 activities
@@ -687,10 +729,18 @@ export const generateDailyPlan = async (
   // Shorthand for personalized duration lookups
   const pd = state.personalizedDurations;
   
-  // Calculate max activities based on intensity and daily goal, scaled by remaining work
-  const baseMaxActivities = Math.ceil(state.dailyGoal / 15); // ~3-4 for 50 goal, ~10 for 150
-  const scaledMaxActivities = Math.round(baseMaxActivities * intensity * remainingFraction);
-  const maxActivities = Math.max(3, Math.min(10, scaledMaxActivities)); // Minimum 3 activities
+  // Calculate max activities based on time budget
+  // When a study plan exists (context loaded), ALWAYS derive from time budget
+  // so the plan fills the user's committed hours instead of being capped by points.
+  let maxActivities: number;
+  if (state.studyPlanContext) {
+    // Study plan exists — derive from actual time budget, not points
+    maxActivities = Math.max(3, Math.min(12, Math.ceil(targetMinutes / 20)));
+  } else {
+    const baseMaxActivities = Math.ceil(state.dailyGoal / 15);
+    const scaledMaxActivities = Math.round(baseMaxActivities * intensity * remainingFraction);
+    maxActivities = Math.max(3, Math.min(10, scaledMaxActivities));
+  }
   
   logger.info('Daily plan generation params', {
     dailyGoal: state.dailyGoal,
@@ -715,9 +765,90 @@ export const generateDailyPlan = async (
     state.examDate,
     state.topicStats,
   );
-  const phase = phaseInfo.phase;
-  const phaseBudget = PHASE_BUDGETS[phase];
-  
+
+  // ── Study Plan Phase Override ───────────────────────────────────────
+  // When a study plan exists, its week-level phase is authoritative because
+  // it reflects the user's chosen timeline and exam date.  Fall back to the
+  // heuristic-based phase only when no study plan is present.
+  const STUDY_PLAN_PHASE_MAP: Record<string, LearningPhase> = {
+    'foundation':   'foundation',
+    'building':     'building',
+    'reinforcement':'reinforcement',
+    'final-review': 'finalReview',
+    'exam-week':    'examWeek',
+    // Handle camelCase variants (defensive)
+    'finalReview':  'finalReview',
+    'examWeek':     'examWeek',
+  };
+
+  let phase: LearningPhase;
+  let phaseReason: string;
+  if (state.studyPlanContext?.phase) {
+    const mapped = STUDY_PLAN_PHASE_MAP[state.studyPlanContext.phase];
+    if (mapped) {
+      phase = mapped;
+      phaseReason = `Study plan Week ${state.studyPlanContext.currentWeek}: ${phase} phase`;
+    } else {
+      phase = phaseInfo.phase;
+      phaseReason = phaseInfo.reason;
+    }
+  } else {
+    phase = phaseInfo.phase;
+    phaseReason = phaseInfo.reason;
+  }
+
+  const rawPhaseBudget = PHASE_BUDGETS[phase];
+
+  // ── Study-Plan-Aware Budget Override ────────────────────────────────
+  // When a study plan exists, derive activity caps from the plan's weekly
+  // goals divided by study days — the user committed to specific hours and
+  // the plan knows exactly how many lessons / Qs / TBS are needed this week.
+  // The hardcoded phase budgets are sensible defaults but must yield to the
+  // study plan when one exists.
+  let phaseBudget: PhaseBudget;
+  if (state.studyPlanContext?.weekGoals) {
+    const wg = state.studyPlanContext.weekGoals;
+    const spDays = state.studyPlanContext.studyDaysPerWeek || 5;
+
+    // Lessons: weekGoals.lessons / studyDays, at least what the phase allows
+    const dailyLessons = Math.max(
+      rawPhaseBudget.maxLessons,
+      Math.ceil(wg.lessons / spDays),
+    );
+
+    // MCQ blocks: weekGoals.questions / studyDays, 15 Qs per block
+    const dailyQuestions = Math.ceil(wg.questions / spDays);
+    const dailyMCQBlocks = Math.max(
+      rawPhaseBudget.maxWeakAreaBlocks,
+      Math.ceil(dailyQuestions / 15),
+    );
+
+    // Simulations: if the study plan assigns any this week, allow them
+    const planWantsSimulations = (wg.simulations ?? 0) > 0;
+
+    phaseBudget = {
+      ...rawPhaseBudget,
+      maxLessons: dailyLessons,
+      maxWeakAreaBlocks: dailyMCQBlocks,
+      includeSimulations: rawPhaseBudget.includeSimulations || planWantsSimulations,
+      allowNewLessons: true, // study plan always has new lessons to assign
+    };
+
+    logger.info('Phase budget overridden by study plan', {
+      phase,
+      rawMaxLessons: rawPhaseBudget.maxLessons,
+      effectiveMaxLessons: phaseBudget.maxLessons,
+      rawMaxWeakAreaBlocks: rawPhaseBudget.maxWeakAreaBlocks,
+      effectiveMaxWeakAreaBlocks: phaseBudget.maxWeakAreaBlocks,
+      rawIncludeSimulations: rawPhaseBudget.includeSimulations,
+      effectiveIncludeSimulations: phaseBudget.includeSimulations,
+      weekGoals: wg,
+      spDays,
+    });
+  } else {
+    phaseBudget = rawPhaseBudget;
+  }
+
   // ── Weekly Intelligence ─────────────────────────────────────────────
   // Analyze recent study history to balance across the week and detect rest needs
   const weeklyGaps = state.recentHistory && state.recentHistory.length > 0
@@ -738,7 +869,9 @@ export const generateDailyPlan = async (
   // If the user consistently finishes <50% of their plan, the plan is too
   // ambitious. Scale it down so they experience success and stay motivated.
   // Conversely, if they crush >90% consistently, we can be slightly bolder.
-  if (weeklyGaps && weeklyGaps.recentCompletionRates.length >= 3) {
+  // Skip when study plan exists — the user committed to specific hours; don't
+  // second-guess their commitment based on past plans that may have been buggy.
+  if (!state.studyPlanContext && weeklyGaps && weeklyGaps.recentCompletionRates.length >= 3) {
     const avg = weeklyGaps.avgCompletionRate;
     if (avg < 0.35) {
       // Severely under-completing — cut plan by 35%
@@ -757,7 +890,8 @@ export const generateDailyPlan = async (
   
   logger.info('Daily plan phase & budget', {
     phase,
-    phaseReason: phaseInfo.reason,
+    phaseReason,
+    phaseSource: state.studyPlanContext?.phase ? 'studyPlan' : 'heuristic',
     lessonsAvailable: lessons.length,
     isRestDay: restDay.isRestDay,
     remainingMinutesAfterAdjustments: remainingMinutes,
@@ -792,10 +926,31 @@ export const generateDailyPlan = async (
   }
   
   // Filter topic stats to only covered topics (if curriculum filter enabled)
+  // STUDY PLAN INTEGRATION: When a study plan exists, also filter to this week's focus topics
+  // so the daily plan stays aligned with the roadmap
+  const studyPlanTopics = state.studyPlanContext?.focusTopics || [];
+  const hasStudyPlan = state.studyPlanContext && studyPlanTopics.length > 0;
+  
   const filteredTopicStats = state.enableCurriculumFilter && coveredTopics.size > 0
     ? state.topicStats.filter(t => {
         const normalizedTopic = t.topic.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
-        // Check if topic is covered or in preview
+        
+        // If study plan exists, prioritize this week's focus topics
+        if (hasStudyPlan) {
+          for (const planTopic of studyPlanTopics) {
+            const normalizedPlanTopic = planTopic.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+            if (normalizedTopic === normalizedPlanTopic ||
+                normalizedTopic.includes(normalizedPlanTopic) ||
+                normalizedPlanTopic.includes(normalizedTopic)) {
+              return true;
+            }
+          }
+          // If topic doesn't match study plan focus, exclude it from weak areas
+          // This keeps the daily plan focused on the current week's content
+          return false;
+        }
+        
+        // No study plan - use normal curriculum filter
         for (const covered of coveredTopics) {
           const normalizedCovered = covered.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
           if (normalizedTopic === normalizedCovered ||
@@ -940,7 +1095,7 @@ export const generateDailyPlan = async (
           ? Math.round((bestLesson.duration || 30) * (1 - progress / 100))
           : bestLesson.duration || getDuration('lesson_medium', 'lesson', pd),
         points: POINT_VALUES.lesson_medium,
-        priority: lessonFromStudyPlan ? 'critical' : 'high', // Study plan lessons are critical
+        priority: lessonFromStudyPlan ? 'high' : 'medium',
         reason: lessonFromStudyPlan
           ? `Study plan: Week ${state.studyPlanContext?.currentWeek} assignment`
           : lessonMatchedWeakTopic 
@@ -1091,22 +1246,59 @@ export const generateDailyPlan = async (
   const alreadyAddedLessonIds = new Set(
     activities.filter(a => a.type === 'lesson').map(a => a.params.lessonId)
   );
-  
-  const incompleteLesson = lessons.find(l => {
-    const progress = state.lessonProgress[l.id] || 0;
-    return progress > 0 && progress < 100 && !alreadyAddedLessonIds.has(l.id);
-  });
-  
-  const unstartedLesson = phaseBudget.allowNewLessons
-    ? lessons.find(l => {
-        const progress = state.lessonProgress[l.id] || 0;
-        return progress === 0 && !alreadyAddedLessonIds.has(l.id);
-      })
-    : undefined;
+
+  // ── Study Plan Lesson Targeting ─────────────────────────────────────
+  // When a study plan exists, derive the daily lesson cap from the week's
+  // goals and prefer lessons from weekLessonIds so the daily plan stays on
+  // the study-plan roadmap.
+  const spCtx = state.studyPlanContext;
+  const studyDaysPerWeek = spCtx?.studyDaysPerWeek
+    ? spCtx.studyDaysPerWeek
+    : (state.studyDayPreferences && state.studyDayPreferences.length > 0)
+      ? state.studyDayPreferences.length
+      : 5; // default assumption: 5 study days per week
+
+  // If the study plan says "complete N lessons this week", aim for N / studyDays per day
+  const dailyLessonCap = spCtx?.weekGoals?.lessons
+    ? Math.max(phaseBudget.maxLessons, Math.ceil(spCtx.weekGoals.lessons / studyDaysPerWeek))
+    : phaseBudget.maxLessons;
+
+  // Build a prioritised list of candidate lessons from the study plan
+  const spCompletedSet = new Set(spCtx?.completedLessonIds || []);
+  const planCandidateLessons: typeof lessons = [];
+  if (spCtx && spCtx.weekLessonIds.length > 0) {
+    for (const lid of spCtx.weekLessonIds) {
+      if (alreadyAddedLessonIds.has(lid)) continue;
+      if (spCompletedSet.has(lid)) continue;
+      const progress = state.lessonProgress[lid] || 0;
+      if (progress >= 100) continue;
+      const l = lessons.find(x => x.id === lid);
+      if (l) planCandidateLessons.push(l);
+    }
+  }
+
+  // Helper: pick next lesson — study-plan candidates first, then global fallback
+  const pickNextLesson = (filter: 'incomplete' | 'unstarted' | 'any'): (typeof lessons)[number] | undefined => {
+    const matchesFilter = (l: (typeof lessons)[number]) => {
+      const p = state.lessonProgress[l.id] || 0;
+      if (filter === 'incomplete') return p > 0 && p < 100;
+      if (filter === 'unstarted') return p === 0;
+      return p < 100; // 'any'
+    };
+    // Try study plan candidates first
+    const fromPlan = planCandidateLessons.find(l => matchesFilter(l) && !alreadyAddedLessonIds.has(l.id));
+    if (fromPlan) return fromPlan;
+    // Fallback to global lesson list
+    return lessons.find(l => matchesFilter(l) && !alreadyAddedLessonIds.has(l.id));
+  };
+
+  const incompleteLesson = pickNextLesson('incomplete');
+  const unstartedLesson = phaseBudget.allowNewLessons ? pickNextLesson('unstarted') : undefined;
   
   // Always allow continuing incomplete lessons (even in exam week)
-  if (incompleteLesson && remainingMinutes >= 15 && lessonsAdded < phaseBudget.maxLessons) {
+  if (incompleteLesson && remainingMinutes >= 15 && lessonsAdded < dailyLessonCap) {
     const progress = state.lessonProgress[incompleteLesson.id] || 0;
+    const fromPlan = spCtx?.weekLessonIds.includes(incompleteLesson.id);
     activities.push({
       id: `lesson-${incompleteLesson.id}`,
       type: 'lesson',
@@ -1114,8 +1306,10 @@ export const generateDailyPlan = async (
       description: `${progress}% complete - pick up where you left off`,
       estimatedMinutes: Math.round((incompleteLesson.duration || 30) * (1 - progress / 100)),
       points: POINT_VALUES.lesson_medium,
-      priority: 'medium',
-      reason: 'Finish what you started for better retention',
+      priority: fromPlan ? 'high' : 'medium',
+      reason: fromPlan
+        ? `Study plan: Week ${spCtx?.currentWeek} — finish what you started`
+        : 'Finish what you started for better retention',
       params: {
         lessonId: incompleteLesson.id,
         section: state.section,
@@ -1123,16 +1317,22 @@ export const generateDailyPlan = async (
     });
     remainingMinutes -= getDuration('lesson_medium', 'lesson', pd);
     lessonsAdded++;
-  } else if (unstartedLesson && remainingMinutes >= 15 && lessonsAdded < phaseBudget.maxLessons) {
+    alreadyAddedLessonIds.add(incompleteLesson.id);
+  } else if (unstartedLesson && remainingMinutes >= 15 && lessonsAdded < dailyLessonCap) {
+    const fromPlan = spCtx?.weekLessonIds.includes(unstartedLesson.id);
     activities.push({
       id: `lesson-${unstartedLesson.id}`,
       type: 'lesson',
       title: `Learn: ${unstartedLesson.title}`,
-      description: 'New material to expand your knowledge',
+      description: fromPlan
+        ? `Week ${spCtx?.currentWeek} lesson from your study plan`
+        : 'New material to expand your knowledge',
       estimatedMinutes: unstartedLesson.duration || getDuration('lesson_medium', 'lesson', pd),
       points: POINT_VALUES.lesson_medium,
-      priority: 'medium',
-      reason: 'New content - keep progressing through the material',
+      priority: fromPlan ? 'high' : 'medium',
+      reason: fromPlan
+        ? `Study plan: Week ${spCtx?.currentWeek} assignment`
+        : 'New content - keep progressing through the material',
       params: {
         lessonId: unstartedLesson.id,
         section: state.section,
@@ -1140,32 +1340,41 @@ export const generateDailyPlan = async (
     });
     remainingMinutes -= getDuration('lesson_medium', 'lesson', pd);
     lessonsAdded++;
+    alreadyAddedLessonIds.add(unstartedLesson.id);
   }
   
-  // In foundation phase, add a second lesson if time permits
-  if (phase === 'foundation' && lessonsAdded < phaseBudget.maxLessons && remainingMinutes >= 20) {
-    const nextLesson = lessons.find(l => {
-      const progress = state.lessonProgress[l.id] || 0;
-      return progress === 0 && !activities.some(a => a.id === `lesson-${l.id}`);
+  // Add more lessons if daily cap permits (foundation phase or study plan demands)
+  while (lessonsAdded < dailyLessonCap && remainingMinutes >= 20) {
+    const nextLesson = pickNextLesson(phaseBudget.allowNewLessons ? 'any' : 'incomplete');
+    if (!nextLesson) break;
+    const progress = state.lessonProgress[nextLesson.id] || 0;
+    const isIncomplete = progress > 0 && progress < 100;
+    const fromPlan = spCtx?.weekLessonIds.includes(nextLesson.id);
+    activities.push({
+      id: `lesson-${nextLesson.id}`,
+      type: 'lesson',
+      title: isIncomplete ? `Continue: ${nextLesson.title}` : `Learn: ${nextLesson.title}`,
+      description: isIncomplete
+        ? `${progress}% complete - pick up where you left off`
+        : fromPlan
+          ? `Week ${spCtx?.currentWeek} lesson`
+          : 'Build your knowledge base',
+      estimatedMinutes: isIncomplete
+        ? Math.round((nextLesson.duration || 30) * (1 - progress / 100))
+        : nextLesson.duration || getDuration('lesson_medium', 'lesson', pd),
+      points: POINT_VALUES.lesson_medium,
+      priority: fromPlan ? 'high' : 'medium',
+      reason: fromPlan
+        ? `Study plan: Week ${spCtx?.currentWeek} assignment`
+        : `${phase} phase: keep progressing (${phaseReason})`,
+      params: {
+        lessonId: nextLesson.id,
+        section: state.section,
+      },
     });
-    if (nextLesson) {
-      activities.push({
-        id: `lesson-${nextLesson.id}`,
-        type: 'lesson',
-        title: `Learn: ${nextLesson.title}`,
-        description: 'Build your knowledge base',
-        estimatedMinutes: nextLesson.duration || getDuration('lesson_medium', 'lesson', pd),
-        points: POINT_VALUES.lesson_medium,
-        priority: 'medium',
-        reason: `Foundation phase: prioritizing content coverage (${phaseInfo.reason})`,
-        params: {
-          lessonId: nextLesson.id,
-          section: state.section,
-        },
-      });
-      remainingMinutes -= getDuration('lesson_medium', 'lesson', pd);
-      lessonsAdded++;
-    }
+    remainingMinutes -= getDuration('lesson_medium', 'lesson', pd);
+    lessonsAdded++;
+    alreadyAddedLessonIds.add(nextLesson.id);
   }
   
   // 5. MEDIUM: TBS practice (critical - 50% of CPA exam!)\n  // Phase gate: simulations only in building/reinforcement/finalReview phases\n  // Skip TBS entirely for courses that don't have it (EA, CMA, etc.)
@@ -1538,8 +1747,8 @@ export const generateDailyPlan = async (
   // Respect phase lesson limits
   let fillRound = 1;
   while (remainingMinutes >= 25 && activities.length < maxActivities) {
-    // Add additional lesson if available and phase allows
-    const nextLesson = (phaseBudget.allowNewLessons && lessonsAdded < phaseBudget.maxLessons)
+    // Add additional lesson if available and under the daily lesson cap
+    const nextLesson = (phaseBudget.allowNewLessons && lessonsAdded < dailyLessonCap)
       ? lessons.find(l => {
           const progress = state.lessonProgress[l.id] || 0;
           return progress === 0 && !activities.some(a => a.id === `lesson-${l.id}`);
@@ -1747,6 +1956,17 @@ export const generateDailyPlan = async (
     weakAreaFocus: [...new Set(weakAreaFocus)],
   };
   
+  // ── What's Next Intelligence ──────────────────────────────────────
+  // Generate a one-line insight the user sees at the top of DailyPlanCard.
+  const whatsNext = computeWhatsNext(
+    phase,
+    filteredTopicStats,
+    state.lessonProgress,
+    lessons.length,
+    state.studyPlanContext,
+    summary,
+  );
+
   return {
     date: today,
     section: state.section,
@@ -1755,14 +1975,94 @@ export const generateDailyPlan = async (
     activities: cappedActivities,
     learningPhase: {
       phase,
-      reason: phaseInfo.reason,
+      reason: phaseReason,
       description: phaseBudget.description,
     },
     ...(restDay.isRestDay ? { restDay: { isRestDay: true, reason: restDay.reason } } : {}),
+    whatsNext,
     summary,
     generatedAt: new Date().toISOString(),
   };
 };
+
+/**
+ * Compute the "What's Next" insight for the daily plan header.
+ * Prioritises study-plan-aware messaging, then falls back to performance-based insights.
+ */
+function computeWhatsNext(
+  phase: LearningPhase,
+  topicStats: TopicStats[],
+  lessonProgress: Record<string, number>,
+  totalLessons: number,
+  studyPlanContext: StudyPlanContext | undefined,
+  summary: DailyPlan['summary'],
+): DailyPlan['whatsNext'] {
+  const completedLessons = Object.values(lessonProgress).filter(p => p >= 100).length;
+  const lessonPct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+
+  const weakAreas = topicStats
+    .filter(t => t.accuracy < 60 && t.totalQuestions >= 3)
+    .sort((a, b) => a.accuracy - b.accuracy);
+
+  const spWeek = studyPlanContext?.currentWeek;
+
+  // Phase-specific headlines
+  if (phase === 'examWeek') {
+    return {
+      headline: 'Exam week — light review only',
+      detail: 'Trust your preparation. No new material today.',
+      studyPlanWeek: spWeek,
+    };
+  }
+
+  if (phase === 'finalReview') {
+    return {
+      headline: 'Final stretch — drill weak spots',
+      detail: weakAreas.length > 0
+        ? `${weakAreas[0].topic} at ${weakAreas[0].accuracy}% needs attention`
+        : 'All topics solid — maintain momentum',
+      studyPlanWeek: spWeek,
+    };
+  }
+
+  // Study-plan-aware messaging — describe today's actual plan, not abstract counts
+  if (studyPlanContext) {
+    const parts: string[] = [];
+    if (summary.lessonCount > 0) parts.push(`${summary.lessonCount} lesson${summary.lessonCount > 1 ? 's' : ''}`);
+    if (summary.mcqCount > 0) parts.push(`${summary.mcqCount} MCQs`);
+    if (summary.tbsCount > 0) parts.push(`${summary.tbsCount} TBS`);
+    if (summary.flashcardCount > 0) parts.push('flashcards');
+    const todaySummary = parts.length > 0 ? parts.join(', ') : 'practice';
+
+    return {
+      headline: `Week ${spWeek} · ${studyPlanContext.phase} phase`,
+      detail: `Today: ${todaySummary}`,
+      studyPlanWeek: spWeek,
+    };
+  }
+
+  // No study plan — performance-based fallback
+  if (weakAreas.length > 0) {
+    return {
+      headline: `Focus on ${weakAreas[0].topic}`,
+      detail: `${weakAreas[0].accuracy}% accuracy — your most impactful area to improve`,
+    };
+  }
+
+  if (lessonPct < 50) {
+    return {
+      headline: `${lessonPct}% content covered — keep learning`,
+      detail: summary.lessonCount > 0
+        ? `${summary.lessonCount} lesson${summary.lessonCount > 1 ? 's' : ''} in today's plan`
+        : 'Work through lessons to unlock more practice',
+    };
+  }
+
+  return {
+    headline: 'Looking strong — practice makes perfect',
+    detail: `${lessonPct}% content covered, no critical weak areas`,
+  };
+}
 
 /**
  * Calculate study intensity based on exam date proximity

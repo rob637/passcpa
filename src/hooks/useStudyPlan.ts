@@ -6,7 +6,7 @@
  */
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, serverTimestamp, collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { useCourse } from '../providers/CourseProvider';
 import { useAuth } from './useAuth';
@@ -50,6 +50,81 @@ interface UseStudyPlanReturn {
 }
 
 /**
+ * Fetch real progress from user's actual activity data (lessons, questions, daily logs)
+ * This syncs the plan's progress with what the user has actually done,
+ * including activity that happened before the plan was created.
+ */
+async function fetchRealProgress(
+  userId: string,
+  courseId: CourseId,
+  section: string
+): Promise<{
+  lessonsCompleted: number;
+  questionsAnswered: number;
+  accuracy: number;
+  daysStudied: number;
+}> {
+  let lessonsCompleted = 0;
+  let questionsAnswered = 0;
+  let questionsCorrect = 0;
+  let daysStudied = 0;
+
+  try {
+    // 1. Count completed lessons for this course/section
+    const lessonsRef = collection(db, 'users', userId, 'lessons');
+    const lessonsSnap = await getDocs(lessonsRef);
+    lessonsCompleted = lessonsSnap.docs.filter(docSnap => {
+      const data = docSnap.data();
+      // Count if completed AND matches course/section
+      const isCompleted = data.status === 'completed' || data.completedAt || data.progress >= 100;
+      const matchesCourse = !data.courseId || data.courseId === courseId;
+      const matchesSection = !data.section || data.section === section || section === 'ALL';
+      return isCompleted && matchesCourse && matchesSection;
+    }).length;
+  } catch (err) {
+    logger.warn('Could not fetch lessons progress:', err);
+  }
+
+  try {
+    // 2. Count questions answered for this course/section
+    const questionsRef = collection(db, 'users', userId, 'questionHistory');
+    const questionsSnap = await getDocs(questionsRef);
+    questionsSnap.docs.forEach(docSnap => {
+      const data = docSnap.data();
+      const matchesCourse = !data.courseId || data.courseId === courseId;
+      const matchesSection = !data.section || data.section === section || section === 'ALL';
+      if (matchesCourse && matchesSection) {
+        questionsAnswered++;
+        if (data.correct || data.isCorrect) {
+          questionsCorrect++;
+        }
+      }
+    });
+  } catch (err) {
+    logger.warn('Could not fetch question history:', err);
+  }
+
+  try {
+    // 3. Count distinct days studied from dailyLogs
+    const logsRef = collection(db, 'users', userId, 'dailyLogs');
+    const logsSnap = await getDocs(logsRef);
+    daysStudied = logsSnap.docs.filter(docSnap => {
+      const data = docSnap.data();
+      // Count if any meaningful activity on that day
+      return (data.questionsAnswered > 0 || data.lessonsCompleted > 0 || data.minutesStudied > 0);
+    }).length;
+  } catch (err) {
+    logger.warn('Could not fetch daily logs:', err);
+  }
+
+  const accuracy = questionsAnswered > 0 
+    ? Math.round((questionsCorrect / questionsAnswered) * 100) 
+    : 0;
+
+  return { lessonsCompleted, questionsAnswered, accuracy, daysStudied };
+}
+
+/**
  * Hook to access and manage the user's study plan
  */
 export function useStudyPlan(): UseStudyPlanReturn {
@@ -89,6 +164,20 @@ export function useStudyPlan(): UseStudyPlanReturn {
         if (mounted) {
           if (planDoc.exists()) {
             const data = planDoc.data() as StudyPlan;
+            
+            // Fetch real progress from user's actual activity data
+            // This syncs the plan with all activities, including those done before plan creation
+            const realProgress = await fetchRealProgress(user.uid, courseId, currentSection);
+            
+            // Merge stored progress with real progress (use max values to avoid losing data)
+            const mergedProgress = {
+              ...data.progress,
+              lessonsCompleted: Math.max(data.progress?.lessonsCompleted || 0, realProgress.lessonsCompleted),
+              questionsAnswered: Math.max(data.progress?.questionsAnswered || 0, realProgress.questionsAnswered),
+              accuracy: realProgress.questionsAnswered > 0 ? realProgress.accuracy : (data.progress?.accuracy || 0),
+              daysStudied: Math.max(data.progress?.daysStudied || 0, realProgress.daysStudied),
+            };
+            
             // Convert Firestore timestamps to Dates
             setPlan({
               ...data,
@@ -105,6 +194,7 @@ export function useStudyPlan(): UseStudyPlanReturn {
                 ...m,
                 date: toLocalDate(m.date),
               })) || [],
+              progress: mergedProgress,
             });
           } else {
             setPlan(null);

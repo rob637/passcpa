@@ -6,23 +6,22 @@
  */
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { doc, getDoc, setDoc, serverTimestamp, collection, getDocs, query, where } from 'firebase/firestore';
+import { doc, getDoc, setDoc, serverTimestamp, collection, getDocs } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { useCourse } from '../providers/CourseProvider';
 import { useAuth } from './useAuth';
-import { differenceInDays } from 'date-fns';
 import type { CourseId } from '../types/course';
 import type { 
   StudyPlan, 
   StudyPlanSummary, 
   TodaysPlan,
   StudyPlanSetupInput,
-  PlanHealth,
 } from '../types/studyPlan';
 import {
   generateStudyPlan,
   generateTodaysPlan,
 } from '../services/studyPlanService';
+import { clearTodaysPlan } from '../services/dailyPlanPersistence';
 import logger from '../utils/logger';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { toLocalDate } from '../utils/dateHelpers';
@@ -283,7 +282,10 @@ export function useStudyPlan(): UseStudyPlanReturn {
       // Update local state
       setPlan(newPlan);
       
-      logger.info('Study plan created:', newPlan.id);
+      // Clear daily plan cache so it regenerates with the new study plan context
+      await clearTodaysPlan(user.uid, input.section);
+      
+      logger.info('Study plan created, daily plan cache cleared:', newPlan.id);
       return newPlan;
     } catch (err) {
       // Always log to console for debugging, even in production

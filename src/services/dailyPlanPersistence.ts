@@ -21,6 +21,7 @@ import {
   getDoc,
   setDoc,
   updateDoc,
+  deleteDoc,
   arrayUnion,
   Timestamp,
   collection,
@@ -186,6 +187,12 @@ async function getStudyPlanContext(
         weekGoals: currentWeek.goals,
         hoursPerDay,
         studyDaysPerWeek,
+        weekStartDate: typeof currentWeek.startDate === 'string' 
+          ? currentWeek.startDate 
+          : currentWeek.startDate.toISOString(),
+        weekEndDate: typeof currentWeek.endDate === 'string' 
+          ? currentWeek.endDate 
+          : currentWeek.endDate.toISOString(),
       };
     }
     
@@ -231,6 +238,12 @@ async function getStudyPlanContext(
       weekGoals: currentWeek.goals,
       hoursPerDay,
       studyDaysPerWeek,
+      weekStartDate: typeof currentWeek.startDate === 'string' 
+        ? currentWeek.startDate 
+        : currentWeek.startDate.toISOString(),
+      weekEndDate: typeof currentWeek.endDate === 'string' 
+        ? currentWeek.endDate 
+        : currentWeek.endDate.toISOString(),
     };
   } catch (err) {
     logger.warn(`Could not fetch study plan context for ${userId}/${courseId}/${section}:`, err);
@@ -424,6 +437,23 @@ export const clearTodaysPlan = async (userId: string, section?: string): Promise
     }
   } catch (e) {
     logger.error('Error clearing localStorage cache:', e);
+  }
+  
+  // Also clear Firestore cache so the plan regenerates on next load
+  try {
+    if (section) {
+      const docPath = `${today}_${section}`;
+      await deleteDoc(doc(db, 'users', userId, 'daily_plans', docPath));
+      logger.log(`Cleared Firestore daily plan for section ${section}`);
+    } else {
+      // Clear all sections - delete the main daily plan doc for today
+      // Note: This clears only the date-keyed doc; section-specific docs require section param
+      await deleteDoc(doc(db, 'users', userId, 'daily_plans', today));
+      logger.log(`Cleared Firestore daily plan for today`);
+    }
+  } catch (e) {
+    // Firestore deletion may fail (doc doesn't exist, offline, etc.) - that's OK
+    logger.log('Could not clear Firestore daily plan (may not exist):', e);
   }
 };
 

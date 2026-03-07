@@ -33,6 +33,8 @@ import { useAuth } from '../../hooks/useAuth';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { generateRealityCheck, validatePlanInput, PlanValidation } from '../../services/studyPlanService';
 import { COURSES } from '../../courses';
+import { CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
+import { getSectionDisplayInfo } from '../../utils/sectionUtils';
 import type { ExamSectionConfig } from '../../types/course';
 import type { StudyPlanSetupInput, RealityCheck } from '../../types/studyPlan';
 import { SECTION_STUDY_HOURS as INDUSTRY_HOURS } from '../../types/studyPlan';
@@ -56,16 +58,15 @@ const StudyPlanSetup: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<Step>('section');
   const [section, setSection] = useState<string>('');
   const [examDate, setExamDate] = useState<string>('');
-  const [weekdayHours, setWeekdayHours] = useState<number>(2);
-  const [weekendHours, setWeekendHours] = useState<number>(3);
+  const [hoursPerDay, setHoursPerDay] = useState<number>(3);
   const [daysPerWeek, setDaysPerWeek] = useState<number>(6);
-  const [priorExperience, setPriorExperience] = useState<'none' | 'some' | 'retake'>('none');
+  const [priorExperience, setPriorExperience] = useState<'none' | 'some' | 'retake'>('some');
   const [realityCheck, setRealityCheck] = useState<RealityCheck | null>(null);
   const [validation, setValidation] = useState<PlanValidation | null>(null);
   const [warningsAcknowledged, setWarningsAcknowledged] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [initialized, setInitialized] = useState(false);
-  const [assessmentChoice, setAssessmentChoice] = useState<'skip' | 'take' | null>(null);
+  const [assessmentChoice, setAssessmentChoice] = useState<'skip' | 'take' | null>('skip');
   const [savingPlan, setSavingPlan] = useState(false);
   
   // Get course sections
@@ -89,8 +90,7 @@ const StudyPlanSetup: React.FC = () => {
           : new Date(existingPlan.examDate);
         setExamDate(date.toISOString().split('T')[0]);
       }
-      setWeekdayHours(existingPlan.setup?.weekdayHours ?? existingPlan.hoursPerDay ?? 2);
-      setWeekendHours(existingPlan.setup?.weekendHours ?? (existingPlan.hoursPerDay ? existingPlan.hoursPerDay + 1 : 3));
+      setHoursPerDay(existingPlan.hoursPerDay ?? existingPlan.setup?.weekdayHours ?? 2);
       setDaysPerWeek(existingPlan.studyDaysPerWeek || 6);
       if (existingPlan.setup?.priorExperience) {
         setPriorExperience(existingPlan.setup.priorExperience);
@@ -99,10 +99,24 @@ const StudyPlanSetup: React.FC = () => {
     } else if (isSingleExamCourse) {
       // Single-exam courses use 'ALL' to cover all domains and skip section selection
       setSection('ALL');
+      // Default to 8 weeks from today
+      const defaultDate = new Date();
+      defaultDate.setDate(defaultDate.getDate() + 8 * 7);
+      setExamDate(defaultDate.toISOString().split('T')[0]);
       setCurrentStep('exam-date');
       setInitialized(true);
     } else if (userProfile?.examSection) {
       setSection(userProfile.examSection);
+      // Default to 8 weeks from today
+      const defaultDate = new Date();
+      defaultDate.setDate(defaultDate.getDate() + 8 * 7);
+      setExamDate(defaultDate.toISOString().split('T')[0]);
+      setInitialized(true);
+    } else {
+      // No existing plan - default to 8 weeks from today
+      const defaultDate = new Date();
+      defaultDate.setDate(defaultDate.getDate() + 8 * 7);
+      setExamDate(defaultDate.toISOString().split('T')[0]);
       setInitialized(true);
     }
   }, [planLoading, existingPlan, isSingleExamCourse, sections, userProfile, initialized]);
@@ -124,20 +138,11 @@ const StudyPlanSetup: React.FC = () => {
     if (currentStep === 'reality-check' && section && examDate) {
       // Reality check now uses contentRegistry internally — no need to fetch lessons
       try {
-        // Compute effective hoursPerDay for reality check
-        const wkndDays = Math.min(daysPerWeek, 2);
-        const wkdyDays = Math.max(0, daysPerWeek - wkndDays);
-        const effHpd = daysPerWeek > 0
-          ? (wkdyDays * weekdayHours + wkndDays * weekendHours) / daysPerWeek
-          : weekdayHours;
-
         const input: StudyPlanSetupInput = {
           courseId,
           section,
           examDate: parseLocalDate(examDate),
-          hoursPerDay: effHpd,
-          weekdayHours,
-          weekendHours,
+          hoursPerDay,
           studyDaysPerWeek: daysPerWeek,
           priorExperience,
         };
@@ -153,7 +158,7 @@ const StudyPlanSetup: React.FC = () => {
         logger.error('Error calculating reality check:', err);
       }
     }
-  }, [currentStep, section, examDate, weekdayHours, weekendHours, daysPerWeek, priorExperience, courseId]);
+  }, [currentStep, section, examDate, hoursPerDay, daysPerWeek, priorExperience, courseId]);
   
   const stepIndex = STEPS.indexOf(currentStep);
   
@@ -164,7 +169,7 @@ const StudyPlanSetup: React.FC = () => {
       case 'exam-date':
         return !!examDate;
       case 'availability':
-        return weekdayHours >= 0.5 && daysPerWeek >= 1;
+        return hoursPerDay >= 0.5 && daysPerWeek >= 1;
       case 'experience':
         return !!priorExperience;
       case 'assessment':
@@ -224,21 +229,11 @@ const StudyPlanSetup: React.FC = () => {
       setSavingPlan(true);
       
       // Content counts are now auto-filled from contentRegistry inside generateStudyPlan
-      // No need to fetch lessons manually
-      // Compute effective hoursPerDay as weighted average for backward compat
-      const weekendStudyDays = Math.min(daysPerWeek, 2);
-      const weekdayStudyDays = Math.max(0, daysPerWeek - weekendStudyDays);
-      const effectiveHoursPerDay = daysPerWeek > 0
-        ? (weekdayStudyDays * weekdayHours + weekendStudyDays * weekendHours) / daysPerWeek
-        : weekdayHours;
-
       const input: StudyPlanSetupInput = {
         courseId,
         section,
         examDate: parseLocalDate(examDate),
-        hoursPerDay: effectiveHoursPerDay,
-        weekdayHours,
-        weekendHours,
+        hoursPerDay,
         studyDaysPerWeek: daysPerWeek,
         priorExperience,
         startDate: new Date(),
@@ -246,11 +241,23 @@ const StudyPlanSetup: React.FC = () => {
       
       await createPlan(input);
       
-      // Update the user's active section to match the plan they just created
+      // Update the user's active section AND exam date to match the plan
       // This ensures Home, Daily Plan, and Study Plan all show the same section
+      // CRITICAL: Updating examDates triggers daily plan regeneration
+      const updates: Record<string, unknown> = {};
       if (section !== userProfile?.examSection) {
-        await updateUserProfile({ examSection: section });
-        logger.info(`Updated user's active section to ${section}`);
+        updates.examSection = section;
+      }
+      // Always sync exam date to user profile - this triggers daily plan invalidation
+      const currentExamDates = userProfile?.examDates || {};
+      updates.examDates = {
+        ...currentExamDates,
+        [section]: examDate, // ISO date string
+      };
+      
+      if (Object.keys(updates).length > 0) {
+        await updateUserProfile(updates);
+        logger.info(`Updated user profile: section=${section}, examDate=${examDate}`);
       }
       
       // Navigate directly to the study plan (no confirmation screen needed)
@@ -284,42 +291,111 @@ const StudyPlanSetup: React.FC = () => {
             </div>
             
             <div className="space-y-3 max-w-md mx-auto">
-              {sections.map((s: ExamSectionConfig) => (
-                <button
-                  key={s.id}
-                  onClick={() => setSection(s.id)}
-                  className={clsx(
-                    'w-full p-4 rounded-xl border-2 text-left transition-all',
-                    section === s.id
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                      : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
-                  )}
-                >
-                  <div className="flex items-center gap-3">
-                    <div 
+              {courseId === 'cpa' ? (
+                // CPA-specific section picker with Core/Discipline grouping (matches Home page)
+                <>
+                  {/* Core Sections */}
+                  <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mb-1">Core Sections (Required)</div>
+                  {CORE_SECTIONS.map((sectionKey) => {
+                    const sectionInfo = getSectionDisplayInfo(sectionKey, courseId);
+                    const isSelected = sectionKey === section;
+                    return (
+                      <button
+                        key={sectionKey}
+                        onClick={() => setSection(sectionKey)}
+                        className={clsx(
+                          'w-full p-3 rounded-xl border-2 text-left transition-all',
+                          isSelected
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                            : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
+                        )}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div 
+                            className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white text-sm"
+                            style={{ backgroundColor: sectionInfo?.color || '#6366f1' }}
+                          >
+                            {sectionInfo?.shortName || sectionKey}
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-slate-900 dark:text-white">{sectionInfo?.name || sectionKey}</p>
+                          </div>
+                          {isSelected && (
+                            <CheckCircle className="w-5 h-5 text-primary-600" />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                  
+                  {/* Discipline Sections */}
+                  <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide mt-3 mb-1">Discipline (Choose One)</div>
+                  {DISCIPLINE_SECTIONS_2026.map((sectionKey) => {
+                    const sectionInfo = getSectionDisplayInfo(sectionKey, courseId);
+                    const isSelected = sectionKey === section;
+                    return (
+                      <button
+                        key={sectionKey}
+                        onClick={() => setSection(sectionKey)}
+                        className={clsx(
+                          'w-full p-3 rounded-xl border-2 text-left transition-all',
+                          isSelected
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                            : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
+                        )}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div 
+                            className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white text-sm"
+                            style={{ backgroundColor: sectionInfo?.color || '#6366f1' }}
+                          >
+                            {sectionInfo?.shortName || sectionKey}
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-slate-900 dark:text-white">{sectionInfo?.name || sectionKey}</p>
+                          </div>
+                          {isSelected && (
+                            <CheckCircle className="w-5 h-5 text-primary-600" />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </>
+              ) : (
+                // Generic section picker for non-CPA courses
+                sections.map((s: ExamSectionConfig) => {
+                  const sectionInfo = getSectionDisplayInfo(s.id, courseId);
+                  const isSelected = s.id === section;
+                  return (
+                    <button
+                      key={s.id}
+                      onClick={() => setSection(s.id)}
                       className={clsx(
-                        'w-12 h-12 rounded-lg flex items-center justify-center font-bold',
-                        section === s.id 
-                          ? 'bg-primary-600 text-white' 
-                          : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200'
+                        'w-full p-4 rounded-xl border-2 text-left transition-all',
+                        isSelected
+                          ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                          : 'border-slate-200 dark:border-slate-600 hover:border-primary-300'
                       )}
                     >
-                      {s.shortName}
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-slate-900 dark:text-white">{s.name}</p>
-                      {s.weight && (
-                        <p className="text-sm text-slate-500 dark:text-slate-400">
-                          Weight: {s.weight}
-                        </p>
-                      )}
-                    </div>
-                    {section === s.id && (
-                      <CheckCircle className="w-6 h-6 text-primary-600" />
-                    )}
-                  </div>
-                </button>
-              ))}
+                      <div className="flex items-center gap-3">
+                        <div 
+                          className="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white"
+                          style={{ backgroundColor: sectionInfo?.color || '#6366f1' }}
+                        >
+                          {s.shortName}
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-slate-900 dark:text-white">{s.name}</p>
+                        </div>
+                        {isSelected && (
+                          <CheckCircle className="w-6 h-6 text-primary-600" />
+                        )}
+                      </div>
+                    </button>
+                  );
+                })
+              )}
             </div>
           </div>
         );
@@ -390,10 +466,8 @@ const StudyPlanSetup: React.FC = () => {
         );
         
       case 'availability':
-        // Compute the effective weekly total for the summary
-        const weekendDays = Math.min(daysPerWeek, 2);
-        const weekdayDays = Math.max(0, daysPerWeek - weekendDays);
-        const weeklyTotal = weekdayDays * weekdayHours + weekendDays * weekendHours;
+        // Compute the weekly total for the summary
+        const weeklyTotal = hoursPerDay * daysPerWeek;
 
         return (
           <div className="space-y-6">
@@ -410,47 +484,24 @@ const StudyPlanSetup: React.FC = () => {
             </div>
             
             <div className="max-w-md mx-auto space-y-8">
-              {/* Weekday hours */}
+              {/* Hours per day */}
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                  Weekday hours <span className="text-slate-400 font-normal">(Mon–Fri)</span>
+                  Hours per day
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {[0.5, 1, 1.5, 2, 2.5, 3, 4, 5].map((hours) => (
                     <button
                       key={hours}
-                      onClick={() => setWeekdayHours(hours)}
+                      onClick={() => setHoursPerDay(hours)}
                       className={clsx(
                         'px-4 py-3 rounded-xl font-medium transition-all',
-                        weekdayHours === hours
+                        hoursPerDay === hours
                           ? 'bg-primary-600 text-white'
                           : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200'
                       )}
                     >
                       {hours}h
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Weekend hours */}
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
-                  Weekend hours <span className="text-slate-400 font-normal">(Sat–Sun)</span>
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {[0, 1, 1.5, 2, 3, 4, 5, 6].map((hours) => (
-                    <button
-                      key={hours}
-                      onClick={() => setWeekendHours(hours)}
-                      className={clsx(
-                        'px-4 py-3 rounded-xl font-medium transition-all',
-                        weekendHours === hours
-                          ? 'bg-primary-600 text-white'
-                          : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200'
-                      )}
-                    >
-                      {hours === 0 ? 'Off' : `${hours}h`}
                     </button>
                   ))}
                 </div>
@@ -462,7 +513,7 @@ const StudyPlanSetup: React.FC = () => {
                   Days per week
                 </label>
                 <div className="flex flex-wrap gap-2">
-                  {[4, 5, 6, 7].map((days) => (
+                  {[3, 4, 5, 6, 7].map((days) => (
                     <button
                       key={days}
                       onClick={() => setDaysPerWeek(days)}
@@ -485,11 +536,6 @@ const StudyPlanSetup: React.FC = () => {
                   That's <span className="font-bold text-primary-600">
                     {weeklyTotal.toFixed(1)} hours
                   </span> per week
-                  {weekdayHours !== weekendHours && (
-                    <span className="text-slate-500 text-sm block mt-1">
-                      {weekdayHours}h × {weekdayDays} weekdays + {weekendHours}h × {weekendDays} weekend days
-                    </span>
-                  )}
                 </p>
               </div>
             </div>
@@ -662,10 +708,10 @@ const StudyPlanSetup: React.FC = () => {
                   <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-blue-900 dark:text-blue-100">
-                      Industry Average: {INDUSTRY_HOURS[section] || 100} hours
+                      Industry Benchmark: {INDUSTRY_HOURS[section] || 100} hours
                     </p>
                     <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
-                      Based on exam board recommendations
+                      VoraPrep's adaptive learning optimizes your study time
                     </p>
                   </div>
                 </div>
@@ -673,7 +719,7 @@ const StudyPlanSetup: React.FC = () => {
                 {/* Time breakdown */}
                 <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-5 space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-600 dark:text-slate-400">Your study time needed</span>
+                    <span className="text-slate-600 dark:text-slate-400">Your VoraPrep plan</span>
                     <span className="font-bold text-slate-900 dark:text-white">
                       ~{realityCheck.hoursNeeded} hours
                     </span>
@@ -722,80 +768,82 @@ const StudyPlanSetup: React.FC = () => {
                   <p>{realityCheck.message}</p>
                 </div>
                 
-                {/* Option to reduce pace when surplus exists */}
-                {realityCheck.isRealistic && realityCheck.relaxedHoursPerDay && realityCheck.relaxedHoursPerDay < (weekdayHours * 0.8 + weekendHours * 0.2) - 0.5 && (
-                  <div className="space-y-3">
-                    <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      Want a more relaxed schedule?
-                    </p>
-                    <button 
-                      type="button"
-                      onClick={() => {
-                        // Scale both weekday/weekend proportionally
-                        const currentAvg = (weekdayHours + weekendHours) / 2;
-                        const ratio = currentAvg > 0 ? realityCheck.relaxedHoursPerDay! / currentAvg : 1;
-                        setWeekdayHours(Math.round(weekdayHours * ratio * 2) / 2); // Round to 0.5
-                        setWeekendHours(Math.round(weekendHours * ratio * 2) / 2);
-                      }}
-                      className="w-full p-3 rounded-lg border-2 border-slate-200 dark:border-slate-600 text-left transition-all cursor-pointer hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-md"
-                    >
-                      <p className="font-medium text-slate-900 dark:text-white">
-                        Study ~{realityCheck.relaxedHoursPerDay}h/day instead
-                      </p>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        You'll still finish with time to spare
-                      </p>
-                    </button>
+                {/* Interactive adjustments - always shown */}
+                <div className="space-y-5 pt-4 border-t border-slate-200 dark:border-slate-700">
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                    Adjust your plan:
+                  </p>
+                  
+                  {/* Exam Date Slider */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="text-sm text-slate-600 dark:text-slate-400">Exam Date</label>
+                      <span className="text-sm font-medium text-slate-900 dark:text-white">
+                        {examDate ? new Date(examDate + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—'}
+                      </span>
+                    </div>
+                    <input
+                      type="date"
+                      value={examDate}
+                      onChange={(e) => setExamDate(e.target.value)}
+                      min={new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
+                      max={new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    />
                   </div>
-                )}
-                
-                {/* Suggested actions (if not realistic) */}
-                {!realityCheck.isRealistic && realityCheck.suggestedActions.length > 0 && (
-                  <div className="space-y-3">
-                    <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      Options to consider:
-                    </p>
-                    {realityCheck.suggestedActions.slice(0, 3).map((action, index) => (
-                      <button 
-                        key={index}
-                        type="button"
-                        onClick={() => {
-                          // Apply the action's value to update the plan
-                          if (action.type === 'extend-date' && action.newValue instanceof Date) {
-                            setExamDate(action.newValue.toISOString().split('T')[0]);
-                          } else if (action.type === 'increase-hours' && typeof action.newValue === 'number') {
-                            // Scale both weekday/weekend proportionally
-                            const currentAvg = (weekdayHours + weekendHours) / 2;
-                            const ratio = currentAvg > 0 ? action.newValue / currentAvg : 1;
-                            setWeekdayHours(Math.round(weekdayHours * ratio * 2) / 2);
-                            setWeekendHours(Math.round(weekendHours * ratio * 2) / 2);
-                          } else if (action.type === 'more-days' && typeof action.newValue === 'number') {
-                            setDaysPerWeek(action.newValue);
-                          }
-                          // accept-risk and cram-mode don't need to change values
-                        }}
-                        className={clsx(
-                          'w-full p-3 rounded-lg border-2 text-left transition-all cursor-pointer hover:shadow-md',
-                          action.recommended
-                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                            : 'border-slate-200 dark:border-slate-600 hover:border-primary-300 dark:hover:border-primary-700'
-                        )}
-                      >
-                        <p className="font-medium text-slate-900 dark:text-white">
-                          {action.label}
-                          {action.recommended && (
-                            <span className="ml-2 text-xs bg-primary-600 text-white px-2 py-0.5 rounded-full">
-                              Recommended
-                            </span>
-                          )}
-                        </p>
-                        <p className="text-sm text-slate-500 dark:text-slate-400">
-                          {action.description}
-                        </p>
-                      </button>
-                    ))}
+                  
+                  {/* Hours per Day Slider */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="text-sm text-slate-600 dark:text-slate-400">Hours per day</label>
+                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">
+                        {hoursPerDay.toFixed(1)}h
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0.5"
+                      max="5"
+                      step="0.1"
+                      value={hoursPerDay}
+                      onChange={(e) => setHoursPerDay(parseFloat(e.target.value))}
+                      className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                    />
+                    <div className="flex justify-between text-xs text-slate-400 mt-1">
+                      <span>0.5h</span>
+                      <span>5h</span>
+                    </div>
                   </div>
-                )}
+                  
+                  {/* Days per Week Slider */}
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="text-sm text-slate-600 dark:text-slate-400">Study days per week</label>
+                      <span className="text-sm font-medium text-slate-900 dark:text-white">{daysPerWeek} days</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="3"
+                      max="7"
+                      step="1"
+                      value={daysPerWeek}
+                      onChange={(e) => setDaysPerWeek(parseInt(e.target.value))}
+                      className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                    />
+                    <div className="flex justify-between text-xs text-slate-400 mt-1">
+                      <span>3 days</span>
+                      <span>7 days</span>
+                    </div>
+                  </div>
+                  
+                  {/* Weekly total summary */}
+                  <div className="bg-slate-100 dark:bg-slate-700/50 rounded-lg p-3 flex justify-between items-center">
+                    <span className="text-sm text-slate-600 dark:text-slate-400">Weekly study time</span>
+                    <span className="font-bold text-lg text-primary-600 dark:text-primary-400">
+                      {(hoursPerDay * daysPerWeek).toFixed(1)}h/week
+                    </span>
+                  </div>
+                </div>
                 
                 {/* Validation Errors - Block creation */}
                 {validation && validation.errors.length > 0 && (

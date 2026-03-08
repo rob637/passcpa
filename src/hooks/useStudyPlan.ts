@@ -106,8 +106,8 @@ async function fetchRealProgress(
   }
 
   try {
-    // 3. Count distinct days studied from dailyLogs
-    const logsRef = collection(db, 'users', userId, 'dailyLogs');
+    // 3. Count distinct days studied from daily_log
+    const logsRef = collection(db, 'users', userId, 'daily_log');
     const logsSnap = await getDocs(logsRef);
     daysStudied = logsSnap.docs.filter(docSnap => {
       const data = docSnap.data();

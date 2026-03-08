@@ -106,30 +106,29 @@ export function validatePlanInput(input: StudyPlanSetupInput): PlanValidation {
 /**
  * Calculate the total study hours needed for a section
  * Uses contentRegistry as the source of truth for content counts
+ * 
+ * VoraPrep's adaptive learning should result in LESS time than industry averages
+ * for users with some experience. We cap estimates accordingly.
  */
 export function calculateHoursNeeded(
   section: string,
   priorExperience: 'none' | 'some' | 'retake',
   diagnosticScore?: number
 ): number {
+  // Get industry baseline for this section
+  const industryBaseline = (SECTION_STUDY_HOURS as Record<string, number>)[section] || 100;
+  
   // Try contentRegistry first (preferred - uses real content data)
   const registryHours = calculateSectionStudyHours(section, priorExperience);
-  if (registryHours.total > 0) {
-    let hours = registryHours.total;
-    
-    // If they took a diagnostic, adjust based on score
-    if (diagnosticScore !== undefined) {
-      const scoreAdjustment = 1 - ((diagnosticScore - 50) / 100);
-      hours = hours * Math.max(0.5, Math.min(1.5, scoreAdjustment));
-    }
-    
-    return Math.round(hours);
-  }
+  let hours: number;
   
-  // Fallback to static SECTION_STUDY_HOURS
-  const baseHours = (SECTION_STUDY_HOURS as Record<string, number>)[section] || 100;
-  const experienceMultiplier = (EXPERIENCE_MULTIPLIERS as Record<string, number>)[priorExperience] || 1.0;
-  let hours = baseHours * experienceMultiplier;
+  if (registryHours.total > 0) {
+    hours = registryHours.total;
+  } else {
+    // Fallback to static SECTION_STUDY_HOURS
+    const experienceMultiplier = (EXPERIENCE_MULTIPLIERS as Record<string, number>)[priorExperience] || 1.0;
+    hours = industryBaseline * experienceMultiplier;
+  }
   
   // If they took a diagnostic, adjust based on score
   if (diagnosticScore !== undefined) {
@@ -139,6 +138,19 @@ export function calculateHoursNeeded(
     const scoreAdjustment = 1 - ((diagnosticScore - 50) / 100);
     hours = hours * Math.max(0.5, Math.min(1.5, scoreAdjustment));
   }
+  
+  // VoraPrep efficiency cap: We should NOT recommend MORE time than industry average
+  // for users with experience. Our adaptive learning should save time.
+  // - 'none': Allow up to 15% more than industry (beginners need more time)
+  // - 'some': Cap at industry average (VoraPrep is efficient)
+  // - 'retake': Cap at 80% of industry (focused review)
+  const efficiencyCap: Record<string, number> = {
+    'none': industryBaseline * 1.15,
+    'some': industryBaseline * 1.0,
+    'retake': industryBaseline * 0.80,
+  };
+  const maxHours = efficiencyCap[priorExperience] ?? industryBaseline;
+  hours = Math.min(hours, maxHours);
   
   return Math.round(hours);
 }
@@ -201,7 +213,7 @@ export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
     const estimatedMCQCount = input.totalLessons * 20; // ~20 MCQs per lesson topic
     const mcqHours = (estimatedMCQCount * MINUTES_PER_MCQ) / 60;
     const flashcardHours = (input.totalLessons * 30 * MINUTES_PER_FLASHCARD) / 60; // 30 cards per lesson
-    const simulationHours = (input.totalLessons / 4 * MINUTES_PER_SIMULATION) / 60; // 1 sim per 4 lessons
+    const simulationHours = (input.totalLessons / 3 * MINUTES_PER_SIMULATION) / 60; // 1 TBS per 3 lessons (TBS = 50% of exam)
     
     hoursNeeded = lessonHours + mcqHours + flashcardHours + simulationHours;
     
@@ -511,8 +523,14 @@ export function generateWeeks(
     const weekLessonCount = lessonDistribution.get(i) || 0;
     const weekLessonMinutes = lessonMinutesDistribution.get(i) || 0;
     
+    // Cap lesson time at 70% of weekly budget so there's always meaningful
+    // practice time. TBS is 50% of the CPA exam — if lessons consume 90%+
+    // of the week's time, students get almost no TBS practice.
+    const maxLessonMinutes = weeklyMinutes * 0.70;
+    const effectiveLessonMinutes = Math.min(weekLessonMinutes, maxLessonMinutes);
+    
     // Calculate remaining time for practice activities
-    const remainingMinutes = Math.max(0, weeklyMinutes - weekLessonMinutes);
+    const remainingMinutes = Math.max(0, weeklyMinutes - effectiveLessonMinutes);
     
     // Allocate practice time based on phase
     let mcqPercent: number;
@@ -565,12 +583,24 @@ export function generateWeeks(
     
     const questionCount = Math.round(mcqTimeBudget / MINUTES_PER_MCQ);
     const flashcardCount = Math.round(flashcardTimeBudget / MINUTES_PER_FLASHCARD);
-    const simulationCount = Math.round(simulationTimeBudget / MINUTES_PER_SIMULATION);
+    
+    // TBS is 50% of CPA exam - ensure minimum practice per phase
+    // This prevents lessons from consuming all time and leaving no TBS practice
+    const minSimulationsPerPhase: Record<string, number> = {
+      'foundation': 2,      // Start building TBS skills early
+      'building': 3,        // Ramp up TBS
+      'reinforcement': 4,   // Heavy TBS practice
+      'final-review': 3,    // Maintain TBS skills
+      'exam-week': 1,       // Light TBS review
+    };
+    const minSimulations = minSimulationsPerPhase[phase] || 1;
+    const calculatedSimulations = Math.round(simulationTimeBudget / MINUTES_PER_SIMULATION);
+    const simulationCount = Math.max(calculatedSimulations, minSimulations);
     const mockExamCount = mockExamPercent > 0 ? 1 : 0;
     
     const goals = {
       lessons: weekLessonCount,
-      lessonMinutes: Math.round(weekLessonMinutes),
+      lessonMinutes: Math.round(effectiveLessonMinutes),
       questions: questionCount,
       questionMinutes: Math.round(mcqTimeBudget),
       flashcards: flashcardCount,

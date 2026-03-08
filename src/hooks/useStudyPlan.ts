@@ -192,34 +192,47 @@ export function useStudyPlan(): UseStudyPlanReturn {
               isWithinInterval(today, { start: w.startDate, end: w.endDate })
             );
             
-            // Calculate expected progress
-            let lessonsExpected = 0;
-            let questionsExpected = 0;
-            for (const w of weeks) {
-              if (w.weekNumber < (currentWeek?.weekNumber || 1)) {
-                lessonsExpected += w.goals?.lessons || 0;
-                questionsExpected += w.goals?.questions || 0;
-              }
-            }
-            // Add partial week progress
-            if (currentWeek) {
-              const weekStart = currentWeek.startDate;
-              const dayOfWeek = Math.floor((today.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
-              const weekProgress = Math.min(1, dayOfWeek / 7);
-              lessonsExpected += Math.floor((currentWeek.goals?.lessons || 0) * weekProgress);
-              questionsExpected += Math.floor((currentWeek.goals?.questions || 0) * weekProgress);
-            }
-            
-            const recalculatedHealth = calculatePlanHealth(
-              currentWeek?.weekNumber || 1,
-              data.totalWeeks || 1,
-              mergedProgress.lessonsCompleted,
-              lessonsExpected,
-              mergedProgress.questionsAnswered,
-              questionsExpected,
-              mergedProgress.daysStudied,
-              mergedProgress.daysMissed || 0
+            // Grace period: don't penalize users in the first 2 days of a new plan.
+            // A plan created today shouldn't immediately show "Behind Schedule" —
+            // the user hasn't had a chance to execute it yet.
+            const planCreatedAt = toLocalDate(data.createdAt);
+            const daysSincePlanCreation = Math.floor(
+              (today.getTime() - planCreatedAt.getTime()) / (1000 * 60 * 60 * 24)
             );
+            const isNewPlan = daysSincePlanCreation <= 1;
+            
+            let recalculatedHealth = data.health || 'on-track';
+            
+            if (!isNewPlan) {
+              // Calculate expected progress only after grace period
+              let lessonsExpected = 0;
+              let questionsExpected = 0;
+              for (const w of weeks) {
+                if (w.weekNumber < (currentWeek?.weekNumber || 1)) {
+                  lessonsExpected += w.goals?.lessons || 0;
+                  questionsExpected += w.goals?.questions || 0;
+                }
+              }
+              // Add partial week progress
+              if (currentWeek) {
+                const weekStart = currentWeek.startDate;
+                const dayOfWeek = Math.floor((today.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+                const weekProgress = Math.min(1, dayOfWeek / 7);
+                lessonsExpected += Math.floor((currentWeek.goals?.lessons || 0) * weekProgress);
+                questionsExpected += Math.floor((currentWeek.goals?.questions || 0) * weekProgress);
+              }
+              
+              recalculatedHealth = calculatePlanHealth(
+                currentWeek?.weekNumber || 1,
+                data.totalWeeks || 1,
+                mergedProgress.lessonsCompleted,
+                lessonsExpected,
+                mergedProgress.questionsAnswered,
+                questionsExpected,
+                mergedProgress.daysStudied,
+                mergedProgress.daysMissed || 0
+              );
+            }
             
             // Convert Firestore timestamps to Dates
             setPlan({

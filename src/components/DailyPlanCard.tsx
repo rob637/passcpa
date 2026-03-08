@@ -103,6 +103,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const [missingExamDate, setMissingExamDate] = useState(false);
   const [pastExamDate, setPastExamDate] = useState(false);
   
+  // Use refs for volatile values that shouldn't trigger plan regeneration
+  // Stats and dailyProgress change frequently (after every activity), but the
+  // daily plan should only be generated once per day or when explicitly refreshed.
+  const statsRef = useRef(stats);
+  const dailyProgressRef = useRef(dailyProgress);
+  useEffect(() => { statsRef.current = stats; }, [stats]);
+  useEffect(() => { dailyProgressRef.current = dailyProgress; }, [dailyProgress]);
+  
   // Track section to detect changes - course-aware
   const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
 
@@ -242,9 +250,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         tbsStats, 
         questionsDue,
         lessonProgress,
-        flashcardsDue: (stats as any)?.flashcardsDue || 0,
-        currentStreak: (stats as any)?.currentStreak || 0,
-        todayPoints: Math.round((dailyProgress / 100) * (userProfile.dailyGoal || 50)),
+        flashcardsDue: (statsRef.current as any)?.flashcardsDue || 0,
+        currentStreak: (statsRef.current as any)?.currentStreak || 0,
+        todayPoints: Math.round((dailyProgressRef.current / 100) * (userProfile.dailyGoal || 50)),
         // NEW: Enable curriculum-aware learning - only quiz on covered topics
         enableCurriculumFilter: userProfile.enableCurriculumFilter ?? true, // Default to enabled
         enablePreviewMode: userProfile.enablePreviewMode ?? false, // Optional 10% lookahead
@@ -275,7 +283,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     } finally {
       setLoading(false);
     }
-  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId, currentSection, course]);
+  }, [userProfile, user?.uid, getTopicPerformance, getLessonProgress, courseId, currentSection, course]);
 
   // Track previous section to detect changes
   const prevSectionRef = useRef<string | null>(null);

@@ -1376,17 +1376,26 @@ export async function incrementStudyPlanProgress(
       }
     }
     
-    // Recalculate health (now includes MCQ progress)
-    const newHealth = calculatePlanHealth(
-      currentWeek?.weekNumber || 1,
-      plan.totalWeeks || 1,
-      newLessonsCompleted,
-      lessonsExpected,
-      newQuestionsAnswered,
-      questionsExpected,
-      newDaysStudied,
-      currentProgress.daysMissed || 0
+    // Grace period: don't penalize in the first 2 days of a new plan
+    const planCreatedAt = plan.createdAt ? new Date(plan.createdAt) : today;
+    const daysSincePlanCreation = Math.floor(
+      (today.getTime() - planCreatedAt.getTime()) / (1000 * 60 * 60 * 24)
     );
+    const isNewPlan = daysSincePlanCreation <= 1;
+
+    // Recalculate health (now includes MCQ progress)
+    const newHealth = isNewPlan
+      ? (plan.health || 'on-track')
+      : calculatePlanHealth(
+          currentWeek?.weekNumber || 1,
+          plan.totalWeeks || 1,
+          newLessonsCompleted,
+          lessonsExpected,
+          newQuestionsAnswered,
+          questionsExpected,
+          newDaysStudied,
+          currentProgress.daysMissed || 0
+        );
     
     // Generate alert if health degraded
     const healthOrder = ['on-track', 'slightly-behind', 'behind', 'at-risk', 'critical'];

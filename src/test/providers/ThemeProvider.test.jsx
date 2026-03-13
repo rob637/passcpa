@@ -62,8 +62,12 @@ describe('ThemeProvider', () => {
       expect(result.current.darkMode).toBe(true);
     });
 
-    it('should respect system preference when no localStorage value', () => {
-      window.localStorage.getItem.mockReturnValue(null);
+    it('should respect system preference when theme mode is system', () => {
+      // When no old key exists, mock returns 'system' for the theme-mode key
+      window.localStorage.getItem.mockImplementation((key) => {
+        if (key === 'voraprep-theme-mode') return 'system';
+        return null;
+      });
       window.matchMedia = vi.fn().mockImplementation(() => createMatchMediaMock(true)); // prefers dark
 
       const { result } = renderHook(() => useTheme(), { wrapper });

@@ -22,6 +22,7 @@ import {
   Timestamp,
 } from 'firebase/firestore';
 import logger from '../utils/logger';
+import { getSectionContent } from './contentRegistry';
 
 // CPA section IDs
 export type CPASectionId = 'FAR' | 'AUD' | 'REG' | 'BAR' | 'ISC' | 'TCP';
@@ -102,7 +103,7 @@ function defaultSectionProgress(sectionId: CPASectionId): CPASectionProgress {
     tbsCorrect: 0,
     tbsAccuracy: 0,
     lessonsCompleted: 0,
-    totalLessons: 15, // Approximate per section
+    totalLessons: getSectionContent(sectionId)?.counts.lessons ?? 15,
     flashcardsReviewed: 0,
     examsTaken: 0,
     lastStudied: null,
@@ -261,9 +262,10 @@ export async function getCPAProgress(userId: string): Promise<CPAOverallProgress
         ? Math.round((section.tbsCorrect / section.tbsAttempted) * 100)
         : 0;
 
-      // Calculate progress percent (questions attempted as % of target ~600 MCQ + 100 TBS per section)
-      const targetMCQ = 600;
-      const targetTBS = 100;
+      // Calculate progress percent (questions attempted as % of available content)
+      const sectionContent = getSectionContent(sectionId);
+      const targetMCQ = sectionContent?.counts.mcqs ?? 600;
+      const targetTBS = sectionContent?.counts.tbs ?? 50;
       const mcqProgress = Math.min(100, (section.questionsAttempted / targetMCQ) * 100);
       const tbsProgress = Math.min(100, (section.tbsAttempted / targetTBS) * 100);
       section.progressPercent = Math.round((mcqProgress * 0.7) + (tbsProgress * 0.3)); // Weight MCQ more

@@ -139,7 +139,7 @@ const COURSES: CourseInfo[] = [
 const WHY_VORAPREP = [
   {
     icon: BookOpen,
-    title: '20,000+ Practice Questions',
+    title: '25,000+ Practice Questions',
     description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
   },
   {
@@ -500,7 +500,7 @@ const VoraPrep = () => {
                 Why VoraPrep?
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                6 certifications. 20,000+ questions. One platform built by people who&apos;ve been in your seat.
+                6 certifications. 25,000+ questions. One platform built by people who&apos;ve been in your seat.
               </p>
             </div>
 

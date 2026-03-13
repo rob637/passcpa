@@ -29,6 +29,7 @@ import {
   Columns,
   Calculator,
   GitBranch,
+  Target,
 } from 'lucide-react';
 import { useStudy } from '../../hooks/useStudy';
 import { useAuth } from '../../hooks/useAuth';
@@ -191,7 +192,7 @@ const sanitizeHTML = (html: string): string => {
 // ============================================================================
 
 /** Knowledge Check - interactive quiz within lesson */
-const KnowledgeCheckSection: React.FC<{ data: KnowledgeCheckData }> = ({ data }) => {
+const KnowledgeCheckSection: React.FC<{ data: KnowledgeCheckData; onResult?: (correct: boolean) => void }> = ({ data, onResult }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [showHint, setShowHint] = useState(false);
@@ -206,6 +207,7 @@ const KnowledgeCheckSection: React.FC<{ data: KnowledgeCheckData }> = ({ data })
   const handleCheck = () => {
     if (selectedIndex !== null) {
       setShowResult(true);
+      onResult?.(selectedIndex === data.correctIndex);
     }
   };
   
@@ -319,13 +321,22 @@ const KnowledgeCheckSection: React.FC<{ data: KnowledgeCheckData }> = ({ data })
             ) : (
               <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
             )}
-            <div>
+            <div className="flex-1">
               <p className={`font-medium mb-1 ${isCorrect ? 'text-green-800 dark:text-green-200' : 'text-amber-800 dark:text-amber-200'}`}>
                 {isCorrect ? 'Correct!' : 'Not quite'}
               </p>
               <p className="text-sm text-slate-700 dark:text-slate-300">
                 <FormattedExplanation text={data.explanation} className="text-sm text-slate-700 dark:text-slate-300" />
               </p>
+              {!isCorrect && (
+                <button
+                  onClick={handleReset}
+                  className="mt-2 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium flex items-center gap-1"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  Try Again
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -665,10 +676,11 @@ const CalculationSection: React.FC<{ data: CalculationData }> = ({ data }) => {
 
 interface ContentSectionProps {
   section: LessonContentSection;
+  onKnowledgeCheckResult?: (correct: boolean) => void;
 }
 
 // Render different content section types
-const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
+const ContentSection: React.FC<ContentSectionProps> = ({ section, onKnowledgeCheckResult }) => {
   switch (section.type) {
     case 'text':
       if (typeof section.content !== 'string') return null;
@@ -863,7 +875,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section }) => {
     
     case 'knowledge-check':
       if (!section.knowledgeCheck) return null;
-      return <KnowledgeCheckSection data={section.knowledgeCheck} />;
+      return <KnowledgeCheckSection data={section.knowledgeCheck} onResult={onKnowledgeCheckResult} />;
     
     case 'reveal':
       if (!section.reveal) return null;
@@ -1128,6 +1140,22 @@ const LessonViewer: React.FC = () => {
   const [sectionLessons, setSectionLessons] = useState<Lesson[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasPracticeQuestions, setHasPracticeQuestions] = useState<boolean>(false);
+  
+  // Knowledge check score tracking
+  const [kcResults, setKcResults] = useState<Map<number, boolean>>(new Map());
+  const kcTotal = lesson?.content?.sections?.filter(s => s.type === 'knowledge-check').length || 0;
+  const kcAnswered = kcResults.size;
+  const kcCorrect = Array.from(kcResults.values()).filter(Boolean).length;
+  
+  const handleKcResult = React.useCallback((sectionIndex: number, correct: boolean) => {
+    setKcResults(prev => {
+      // Only record first attempt per question
+      if (prev.has(sectionIndex)) return prev;
+      const next = new Map(prev);
+      next.set(sectionIndex, correct);
+      return next;
+    });
+  }, []);
 
   // Chrome TTS keep-alive: prevent silent cancel on long speech
   const ttsKeepAliveRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
@@ -1275,6 +1303,7 @@ const LessonViewer: React.FC = () => {
     window.scrollTo(0, 0);
     setProgress(0);
     setIsComplete(false);
+    setKcResults(new Map());
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lessonId, logActivity]);
@@ -1546,9 +1575,56 @@ const LessonViewer: React.FC = () => {
                     {section.title}
                   </h2>
                 )}
-                <ContentSection section={section as LessonContentSection} />
+                <ContentSection
+                  section={section as LessonContentSection}
+                  onKnowledgeCheckResult={(correct) => handleKcResult(index, correct)}
+                />
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Knowledge Check Score Summary */}
+        {kcTotal > 0 && kcAnswered === kcTotal && (
+          <div className={clsx(
+            'rounded-xl p-5 mb-8 border',
+            kcCorrect === kcTotal
+              ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-700'
+              : kcCorrect >= kcTotal / 2
+              ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700'
+              : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-700'
+          )}>
+            <div className="flex items-center gap-3">
+              <div className={clsx(
+                'w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold',
+                kcCorrect === kcTotal
+                  ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-800 dark:text-emerald-300'
+                  : kcCorrect >= kcTotal / 2
+                  ? 'bg-amber-100 text-amber-700 dark:bg-amber-800 dark:text-amber-300'
+                  : 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-300'
+              )}>
+                {kcCorrect}/{kcTotal}
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900 dark:text-white">
+                  {kcCorrect === kcTotal ? 'Perfect Score!' : kcCorrect >= kcTotal / 2 ? 'Good Effort!' : 'Keep Practicing'}
+                </p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  {kcCorrect === kcTotal
+                    ? 'You nailed every knowledge check in this lesson.'
+                    : `You got ${kcCorrect} of ${kcTotal} knowledge checks correct.`}
+                </p>
+              </div>
+            </div>
+            {kcCorrect < kcTotal && hasPracticeQuestions && lesson.section !== 'PREP' && (
+              <Link
+                to={`/practice?section=${lesson.section}${lesson.topics?.[lesson.topics.length - 1] ? `&subtopic=${encodeURIComponent(lesson.topics[lesson.topics.length - 1])}` : ''}`}
+                className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium rounded-lg transition-colors"
+              >
+                <Target className="w-4 h-4" />
+                Practice this topic
+              </Link>
+            )}
           </div>
         )}
 

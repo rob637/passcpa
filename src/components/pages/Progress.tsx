@@ -31,6 +31,7 @@ import { format, subDays, eachDayOfInterval, differenceInDays, isWithinInterval 
 import clsx from 'clsx';
 import { ExamSection } from '../../types';
 import { fetchAllLessons } from '../../services/lessonService';
+import { getSectionContent } from '../../services/contentRegistry';
 import { getTBSHistory } from '../../services/questionHistoryService';
 import { getTopicToBlueprintAreaMap } from '../../services/questionService';
 import { calculateExamReadiness, ReadinessData, TopicStat, getStatusColor, getStatusText } from '../../utils/examReadiness';
@@ -42,6 +43,8 @@ interface WeeklyActivity {
   questions: number;
   correct: number;
   minutes: number;
+  lessons: number;
+  tbs: number;
 }
 
 interface UnitStats {
@@ -65,6 +68,7 @@ const Progress: React.FC = () => {
   // State
   const [weeklyActivity, setWeeklyActivity] = useState<WeeklyActivity[]>([]);
   const [topicPerformance, setTopicPerformance] = useState<TopicStat[]>([]);
+  const [topicBlueprintMap, setTopicBlueprintMap] = useState<Map<string, string>>(new Map());
   const [unitStats, setUnitStats] = useState<UnitStats[]>([]);
   const [overallStats, setOverallStats] = useState({
     totalQuestions: 0,
@@ -80,6 +84,8 @@ const Progress: React.FC = () => {
   const [showDetails, setShowDetails] = useState(false);
   
   // Derived state
+  // Note: CISA and CFP are single-exam courses (one comprehensive test)
+  // CIA has 3 separate exams (CIA1, CIA2, CIA3) so it's NOT included here
   const SINGLE_EXAM_COURSES = ['cisa', 'cfp'];
   const isSingleExamCourse = SINGLE_EXAM_COURSES.includes(courseId);
   const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
@@ -130,20 +136,42 @@ const Progress: React.FC = () => {
 
             if (logSnap.exists()) {
               const log = logSnap.data();
-              const sectionData = log.sections?.[currentSection] || {};
-              sectionQuestions += sectionData.questionsAnswered || 0;
-              sectionCorrect += sectionData.questionsCorrect || 0;
-              sectionMinutes += sectionData.studyMinutes || log.studyMinutes || 0;
+              // Count section-specific activity from the activities array
+              const activities = (log.activities || []) as Array<{ type?: string; section?: string; isCorrect?: boolean }>;
+              const sectionActivities = isSingleExamCourse
+                ? activities.filter((a) => a.type === 'mcq')
+                : activities.filter((a) => a.type === 'mcq' && a.section?.toUpperCase() === currentSection?.toUpperCase());
+              const dayQuestions = sectionActivities.length;
+              const dayCorrect = sectionActivities.filter((a) => a.isCorrect).length;
+              const dayMinutes = log.studyTimeMinutes || log.studyMinutes || 0;
+
+              // Count lessons completed (strict section filter to match streak logic)
+              const lessonActivities = isSingleExamCourse
+                ? activities.filter((a) => a.type === 'lesson')
+                : activities.filter((a) => a.type === 'lesson' && a.section?.toUpperCase() === currentSection?.toUpperCase());
+              const dayLessons = lessonActivities.length;
+
+              // Count TBS completed (strict section filter to match streak logic)
+              const tbsActivities = isSingleExamCourse
+                ? activities.filter((a) => a.type === 'tbs')
+                : activities.filter((a) => a.type === 'tbs' && a.section?.toUpperCase() === currentSection?.toUpperCase());
+              const dayTBS = tbsActivities.length;
+              
+              sectionQuestions += dayQuestions;
+              sectionCorrect += dayCorrect;
+              sectionMinutes += dayMinutes;
               
               return {
                 date,
-                questions: sectionData.questionsAnswered || log.questionsAnswered || 0,
-                correct: sectionData.questionsCorrect || log.questionsCorrect || 0,
-                minutes: sectionData.studyMinutes || log.studyMinutes || 0,
+                questions: dayQuestions,
+                correct: dayCorrect,
+                minutes: dayMinutes,
+                lessons: dayLessons,
+                tbs: dayTBS,
               };
             }
 
-            return { date, questions: 0, correct: 0, minutes: 0 };
+            return { date, questions: 0, correct: 0, minutes: 0, lessons: 0, tbs: 0 };
           })
         );
 
@@ -157,7 +185,7 @@ const Progress: React.FC = () => {
           !l.section || l.section === currentSection || isSingleExamCourse
         );
         const completedLessons = Object.values(lessonProgress || {})
-          .filter((l: any) => l.status === 'completed').length;
+          .filter((l: any) => l.status === 'completed' && (isSingleExamCourse || l.section === currentSection)).length;
 
         // Get TBS history for this course (EA doesn't have TBS)
         let tbsCompleted = 0;
@@ -192,6 +220,7 @@ const Progress: React.FC = () => {
 
         // Build unit stats for details view
         const topicToBlueprintMap = await getTopicToBlueprintAreaMap(courseId, currentSection);
+        setTopicBlueprintMap(topicToBlueprintMap);
         const unitMap = new Map<string, UnitStats>();
         
         lessons.forEach((lesson: any) => {
@@ -255,7 +284,8 @@ const Progress: React.FC = () => {
     };
     
     // EA doesn't have TBS
-    const courseHasTBS = !['ea'].includes(courseId);
+    const sectionContent = getSectionContent(currentSection);
+    const courseHasTBS = (sectionContent?.counts.tbs ?? 0) > 0;
 
     return calculateExamReadiness(
       blendedStats,
@@ -264,20 +294,26 @@ const Progress: React.FC = () => {
       blendedStats.totalLessons,
       blendedStats.tbsCompleted,
       blendedStats.totalTbs,
-      { hasTBS: courseHasTBS }
+      { 
+        hasTBS: courseHasTBS,
+        volumeTarget: sectionContent?.counts.mcqs ?? 500,
+        totalTbsOverride: sectionContent?.counts.tbs ?? 20,
+      }
     );
-  }, [overallStats, topicPerformance, hasSavedPlan, savedStudyPlan, courseId]);
+  }, [overallStats, topicPerformance, hasSavedPlan, savedStudyPlan, courseId, currentSection]);
 
   // Blueprint analytics for details view
   const blueprintAnalytics = useMemo<BlueprintAnalytics>(() => {
     const questionHistory: QuestionAttempt[] = topicPerformance.flatMap(topic => {
       const attempts: QuestionAttempt[] = [];
       if (topic.questions > 0) {
+        // Map topic name to blueprint area ID using the lookup table
+        const blueprintArea = topicBlueprintMap.get(topic.topic) || topicBlueprintMap.get(topic.id) || topic.id;
         const correctCount = Math.round(topic.accuracy * topic.questions / 100);
         for (let i = 0; i < topic.questions; i++) {
           attempts.push({
             questionId: `${topic.id}-${i}`,
-            blueprintArea: topic.id?.split('-').slice(0, 2).join('-') || topic.topic,
+            blueprintArea,
             topicId: topic.id,
             correct: i < correctCount,
           });
@@ -287,7 +323,7 @@ const Progress: React.FC = () => {
     });
     
     return calculateBlueprintAnalytics(currentSection, questionHistory);
-  }, [currentSection, topicPerformance]);
+  }, [currentSection, topicPerformance, topicBlueprintMap]);
 
   // Loading skeleton
   if (loading) {
@@ -467,36 +503,66 @@ const Progress: React.FC = () => {
 
         {/* Weekly Activity Chart */}
         <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl">
-          <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-1 flex items-center gap-2">
             <TrendingUp className="w-4 h-4 text-blue-600" />
-            This Week
+            {currentSection} This Week
           </h3>
+          {/* Legend */}
+          <div className="flex items-center gap-3 mb-3 text-[10px] text-slate-500 dark:text-slate-400">
+            <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-blue-400 inline-block" /> MCQs</span>
+            <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-emerald-500 inline-block" /> Lessons</span>
+            <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-amber-500 inline-block" /> TBS</span>
+          </div>
           
-          <div className="h-32 flex items-end justify-between gap-2">
+          <div className="flex items-end justify-between gap-2">
             {weeklyActivity.map((day, i) => {
-              const maxQ = Math.max(...weeklyActivity.map(d => d.questions), 1);
-              const height = Math.max(8, (day.questions / maxQ) * 100);
+              const dayTotal = day.questions + day.lessons + day.tbs;
+              const maxTotal = Math.max(...weeklyActivity.map(d => d.questions + d.lessons + d.tbs), 1);
+              const maxBarHeight = 96; // px
+              const barHeight = dayTotal > 0 ? Math.max(14, Math.round((dayTotal / maxTotal) * maxBarHeight)) : 0;
               const isToday = format(day.date, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd');
-              const accuracy = day.questions > 0 ? Math.round((day.correct / day.questions) * 100) : 0;
+
+              // Calculate proportional flex within the bar
+              const mcqFlex = dayTotal > 0 ? day.questions / dayTotal : 0;
+              const lessonFlex = dayTotal > 0 ? day.lessons / dayTotal : 0;
+              const tbsFlex = dayTotal > 0 ? day.tbs / dayTotal : 0;
 
               return (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  {day.questions > 0 && (
+                <div 
+                  key={i} 
+                  className="flex-1 flex flex-col items-center gap-1"
+                  title={dayTotal > 0 ? `${day.questions} MCQs, ${day.lessons} Lessons, ${day.tbs} TBS` : 'No activity'}
+                >
+                  {dayTotal > 0 && (
                     <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
-                      {day.questions}
+                      {dayTotal}
                     </span>
                   )}
-                  <div className="w-full flex-1 flex items-end">
-                    <div
-                      className={clsx(
-                        'w-full rounded-t-md transition-all',
-                        day.questions === 0 ? 'bg-slate-200 dark:bg-slate-700' :
-                        accuracy >= 75 ? 'bg-emerald-500' :
-                        accuracy >= 50 ? 'bg-amber-500' :
-                        'bg-blue-400'
-                      )}
-                      style={{ height: `${height}%`, minHeight: day.questions > 0 ? '16px' : '4px' }}
-                    />
+                  <div className="w-full flex items-end" style={{ height: `${maxBarHeight}px` }}>
+                    {dayTotal === 0 ? (
+                      <div
+                        className="w-full rounded-t-md bg-slate-200 dark:bg-slate-700"
+                        style={{ height: '4px' }}
+                      />
+                    ) : (
+                      <div
+                        className="w-full flex flex-col rounded-t-md overflow-hidden"
+                        style={{ height: `${barHeight}px` }}
+                      >
+                        {/* TBS (top) */}
+                        {day.tbs > 0 && (
+                          <div className="bg-amber-500 w-full" style={{ flex: tbsFlex }} />
+                        )}
+                        {/* Lessons (middle) */}
+                        {day.lessons > 0 && (
+                          <div className="bg-emerald-500 w-full" style={{ flex: lessonFlex }} />
+                        )}
+                        {/* MCQs (bottom) */}
+                        {day.questions > 0 && (
+                          <div className="bg-blue-400 w-full" style={{ flex: mcqFlex }} />
+                        )}
+                      </div>
+                    )}
                   </div>
                   <span className={clsx(
                     "text-xs",

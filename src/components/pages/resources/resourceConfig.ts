@@ -591,6 +591,8 @@ const CMA_RESOURCES: CourseResourceConfig = {
       colorLight: 'cyan-50',
       colorDark: 'cyan-900/30',
       items: [
+        { id: 'cma-ref-cso-p1', type: 'reference', title: 'Part 1 Official CSO (IMA)', description: 'IMA Content Specification Outline - Financial Planning, Performance & Analytics', section: 'CMA1' },
+        { id: 'cma-ref-cso-p2', type: 'reference', title: 'Part 2 Official CSO (IMA)', description: 'IMA Content Specification Outline - Strategic Financial Management', section: 'CMA2' },
         { id: 'cma-ref-testing', type: 'reference', title: 'CMA Testing Windows', description: 'Jan-Feb, May-Jun, Sep-Oct testing periods' },
         { id: 'cma-ref-essay', type: 'reference', title: 'Essay Writing Guide', description: 'Structured approach to CMA essay questions' },
         { id: 'cma-ref-calculator', type: 'reference', title: 'Calculator Policy', description: 'Approved calculators and functionality' },
@@ -598,14 +600,15 @@ const CMA_RESOURCES: CourseResourceConfig = {
     },
     {
       type: 'blueprint',
-      title: 'Exam Blueprint',
-      description: 'Interactive exam structure and domain weight breakdown',
+      title: 'Exam Blueprints',
+      description: 'Content Specification Outlines for each part',
       icon: Target,
       color: 'indigo-600',
       colorLight: 'indigo-50',
       colorDark: 'indigo-900/30',
       items: [
-        { id: 'cma-blueprint', type: 'blueprint', title: 'CMA Exam Blueprint', description: 'Part 1 & 2 domain weights, exam format, and topic breakdown' },
+        { id: 'cma-blueprint-p1', type: 'blueprint', title: 'Part 1 Content Specification Outline', description: 'Financial Planning, Performance & Analytics: 6 domains, weights, and topics', section: 'CMA1' },
+        { id: 'cma-blueprint-p2', type: 'blueprint', title: 'Part 2 Content Specification Outline', description: 'Strategic Financial Management: 6 domains, weights, and topics', section: 'CMA2' },
       ],
     },
   ],

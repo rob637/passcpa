@@ -127,14 +127,15 @@ function generateExam(
 // Component
 // ============================================
 
-const config: ExamSimulatorConfig<EASection> = {
+import { useAuth } from '../../hooks/useAuth';
+
+const baseConfig: Omit<ExamSimulatorConfig<EASection>, 'defaultSection'> = {
   courseId: 'ea',
   courseName: 'EA',
   courseDescription: 'Practice with realistic exam conditions for the IRS Special Enrollment Examination',
   backPath: '/ea/dashboard',
   testingProvider: 'prometric',
   sections: EA_SECTIONS,
-  defaultSection: 'SEE1',
   modes: EA_EXAM_MODES,
   defaultModeIndex: 1, // Half Exam
   getQuestionPool,
@@ -143,5 +144,19 @@ const config: ExamSimulatorConfig<EASection> = {
 };
 
 export default function EAExamSimulatorNew() {
+  const { userProfile } = useAuth();
+  
+  // Use user's selected section, default to SEE1 if not set or invalid
+  const userSection = userProfile?.examSection;
+  const isValidSection = userSection === 'SEE1' || userSection === 'SEE2' || userSection === 'SEE3';
+  const defaultSection: EASection = isValidSection ? userSection : 'SEE1';
+  
+  const config: ExamSimulatorConfig<EASection> = {
+    ...baseConfig,
+    defaultSection,
+    // Hide section selector if user already selected their part
+    hideSectionSelector: isValidSection,
+  };
+  
   return <ExamSimulatorTemplate<EASection> config={config} />;
 }

@@ -3,9 +3,51 @@
 
 User-agent: *
 
-# Allow everything by default.
-# The internal app routes (like /home, /dashboard, etc.) will redirect cleanly
-# to /login when crawled or are protected by X-Robots-Tag: noindex headers.
+# Allow public pages
+Allow: /
+Allow: /blog/
+Allow: /cpa
+Allow: /ea
+Allow: /cma
+Allow: /cia
+Allow: /cfp
+Allow: /cisa
+Allow: /pricing
+Allow: /about
+Allow: /compare
+Allow: /faq
+Allow: /help
+Allow: /pass-guarantee
+Allow: /demo-practice
+Allow: /login
+Allow: /register
+Allow: /terms
+Allow: /privacy
+
+# Disallow internal app routes (authenticated users only)
+Disallow: /home
+Disallow: /dashboard
+Disallow: /study
+Disallow: /practice
+Disallow: /flashcards
+Disallow: /quiz
+Disallow: /exam
+Disallow: /tbs
+Disallow: /lessons
+Disallow: /progress
+Disallow: /achievements
+Disallow: /tutor
+Disallow: /ai-tutor
+Disallow: /settings
+Disallow: /onboarding
+Disallow: /admin
+Disallow: /journey
+Disallow: /resources
+Disallow: /community
+Disallow: /you
+Disallow: /learn
+Disallow: /checkout-success
+Disallow: /checkout-cancel
 
 # Sitemap location
 Sitemap: https://voraprep.com/sitemap.xml

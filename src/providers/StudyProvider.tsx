@@ -41,6 +41,7 @@ export interface DailyLog {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   activities: any[];
   questionsAttempted: number;
+  questionsAnswered?: number;  // Alias for questionsAttempted (for consistency with studyPlans)
   questionsCorrect: number;
   lessonsCompleted: number;
   simulationsCompleted: number;
@@ -115,9 +116,6 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
   const getToday = () => format(new Date(), 'yyyy-MM-dd');
   const today = getToday();
   
-  // Single-exam courses (one exam sitting) use unified tracking
-  const SINGLE_EXAM_COURSES: CourseId[] = ['cisa', 'cfp'];
-  
   // Get the current section for this course
   const currentSection = getCurrentSection(userProfile, activeCourse, getDefaultSection);
   
@@ -174,6 +172,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           earnedPoints: 0,
           activities: [],
           questionsAttempted: 0,
+          questionsAnswered: 0,
           questionsCorrect: 0,
           lessonsCompleted: 0,
           simulationsCompleted: 0,
@@ -387,6 +386,19 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               logger.debug('[STREAK] Day', i, 'section activities:', sectionActivities.length, 'for section:', currentSection);
             }
           }
+          // For today (i=0): also check live todayLog state which may have activity
+          // recorded after the Firestore streak query ran
+          if (!hadActivity && i === 0 && todayLog) {
+            if (isSingleExamCourse) {
+              hadActivity = (todayLog.earnedPoints || 0) > 0 || (todayLog.questionsAttempted || 0) > 0;
+            } else {
+              const liveSectionActivities = (todayLog.activities || []).filter(
+                (a: { section?: string }) => a.section?.toUpperCase() === currentSection?.toUpperCase()
+              );
+              hadActivity = liveSectionActivities.length > 0;
+            }
+            if (hadActivity) logger.debug('[STREAK] Day 0 activity found via live todayLog');
+          }
           
           if (hadActivity) {
             streak++;
@@ -411,8 +423,17 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
       }
     };
 
-    fetchWeeklyData().catch(err => logger.error('[STREAK] fetchWeeklyData promise rejected:', err));
-  }, [user, todayLog, currentSection, activeCourse, statsVersion]); // Re-run when course/section changes or stats forced refresh
+    // Defer initial fetch to avoid competing with critical data on boot
+    // (auth, daily log, subscription). Subsequent fetches (section change, refresh) run immediately.
+    const isInitialFetch = !weeklyStats.totalQuestions && !stats;
+    const delay = isInitialFetch ? 1500 : 0;
+    const timer = setTimeout(() => {
+      fetchWeeklyData().catch(err => logger.error('[STREAK] fetchWeeklyData promise rejected:', err));
+    }, delay);
+    return () => clearTimeout(timer);
+    // NOTE: todayLog intentionally excluded — it changes on every MCQ answer,
+    // which would trigger 5 Firestore queries per answer. Use refreshStats() instead.
+  }, [user, currentSection, activeCourse, statsVersion]); // Re-run when course/section changes or stats forced refresh
   
   // Function to force refresh stats (called when section changes)
   const refreshStats = async () => {
@@ -430,9 +451,12 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         const logRef = doc(db, 'users', user.uid, 'daily_log', dailyLogId);
         
         // Use setDoc with merge to handle case where doc doesn't exist yet
+        // Note: questionsAttempted is legacy name, questionsAnswered is preferred
+        // Both written for backwards compatibility with existing data reads
         await setDoc(logRef, {
             earnedPoints: increment(points),
             questionsAttempted: increment(1),
+            questionsAnswered: increment(1),  // Alias for consistency with studyPlans
             questionsCorrect: increment(isCorrect ? 1 : 0),
             studyTimeMinutes: increment(timeSpentMinutes),
             activities: arrayUnion({
@@ -441,6 +465,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               topic,
               section: section || 'unknown',
               isCorrect,
+              points,
               timeSpentSeconds,
               timestamp: new Date().toISOString()
             })
@@ -471,6 +496,17 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
         // GA4 analytics — track every question answered
         analytics.answerQuestion(isCorrect, section, topic || 'General');
+
+        // If streak is 0 but we just recorded activity, bump to 1
+        if (currentStreak === 0) {
+          setCurrentStreak(1);
+        }
+
+        // Update study plan progress (non-blocking)
+        incrementStudyPlanProgress(user.uid, activeCourse, section || currentSection, {
+          questionsAnswered: 1,
+          accuracy: isCorrect ? 100 : 0,
+        }).catch(err => logger.warn('Failed to update study plan progress from MCQ:', err));
     } catch (e) {
         logger.error("Error recording answer", e);
     }
@@ -486,6 +522,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
           id,
           section: section || 'unknown',
           score,
+          points: earnedPoints,
           timeSpent,
           timestamp: new Date().toISOString()
         };
@@ -498,6 +535,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             goalPoints: userProfile?.dailyGoal || 50,
             earnedPoints: earnedPoints,
             questionsAttempted: 0,
+            questionsAnswered: 0,
             questionsCorrect: 0,
             lessonsCompleted: 0,
             simulationsCompleted: 1,
@@ -519,6 +557,11 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
 
         // GA4 analytics — track simulation/exam completion
         analytics.completeExam(section || 'unknown', score, score >= 75);
+
+        // Update study plan progress (non-blocking)
+        incrementStudyPlanProgress(user.uid, activeCourse, section || currentSection, {
+          questionsAnswered: 1,
+        }).catch(err => logger.warn('Failed to update study plan progress from simulation:', err));
       } catch (e) {
           logger.error("Error completing simulation", e);
       }
@@ -540,6 +583,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
             goalPoints: userProfile?.dailyGoal || 50,
             earnedPoints: earnedPoints,
             questionsAttempted: 0,
+            questionsAnswered: 0,
             questionsCorrect: 0,
             lessonsCompleted: 1,
             simulationsCompleted: 0,
@@ -550,6 +594,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
               lessonId,
               section,
               courseId: activeCourse,
+              points: earnedPoints,
               timeSpent,
               timestamp: new Date().toISOString()
             }]
@@ -565,6 +610,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
                 lessonId,
                 section,
                 courseId: activeCourse,
+                points: earnedPoints,
                 timeSpent,
                 timestamp: new Date().toISOString()
               })
@@ -670,11 +716,19 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
         // Also check doc ID prefix for course-specific logs (format: {course}_{date})
         if (doc.id.includes('_') && !doc.id.startsWith(`${activeCourse}_`)) return;
         
+        // Determine if this is a single-exam course (no section filtering needed)
+        const SINGLE_EXAM_COURSES_TOPIC: CourseId[] = ['cisa', 'cfp'];
+        const isSingleExamCourse = SINGLE_EXAM_COURSES_TOPIC.includes(activeCourse as CourseId);
+        
         if (data.activities && Array.isArray(data.activities)) {
           data.activities.forEach((activity: { type: string; topic?: string; isCorrect?: boolean; section?: string }) => {
-            // Filter by section if provided
-            if (section && activity.section && activity.section !== section) {
-              return;
+            // For multi-section courses: strict section filter (activity MUST have matching section)
+            // For single-exam courses: include all activities
+            if (!isSingleExamCourse && section) {
+              // Strict filter: activity must have section field AND it must match
+              if (!activity.section || activity.section.toUpperCase() !== section.toUpperCase()) {
+                return;
+              }
             }
             if (activity.type === 'mcq' && activity.topic) {
               if (!topicStats[activity.topic]) {
@@ -702,9 +756,32 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     }
   }
 
-  // Calculate daily progress percentage
+  // Compute section-filtered earned points from activities
+  // For multi-section courses (CPA, EA, CMA, CIA): show only current section's points
+  // For single-exam courses (CISA, CFP): show course-wide total
+  const SINGLE_EXAM_COURSES_DAILY: CourseId[] = ['cisa', 'cfp'];
+  const isSingleExamForGoal = SINGLE_EXAM_COURSES_DAILY.includes(activeCourse as CourseId);
+
+  const sectionEarnedPoints = (() => {
+    if (!todayLog) return 0;
+    if (isSingleExamForGoal) return todayLog.earnedPoints;
+    if (!todayLog.activities || !Array.isArray(todayLog.activities)) return 0;
+
+    return todayLog.activities.reduce((sum: number, activity: { section?: string; points?: number; type?: string; isCorrect?: boolean; score?: number }) => {
+      if (activity.section?.toUpperCase() !== currentSection?.toUpperCase()) return sum;
+      // Use stored points if available (new format)
+      if (typeof activity.points === 'number') return sum + activity.points;
+      // Estimate points for legacy activities without points field
+      if (activity.type === 'mcq') return sum + (activity.isCorrect ? 2 : 0); // ~medium difficulty
+      if (activity.type === 'lesson') return sum + 10;
+      if (activity.type === 'simulation') return sum + Math.round(((activity.score || 0) / 100) * 50);
+      return sum;
+    }, 0);
+  })();
+
+  // Calculate daily progress percentage (section-filtered for multi-section courses)
   const dailyProgress = todayLog 
-    ? Math.min(100, Math.round((todayLog.earnedPoints / todayLog.goalPoints) * 100)) 
+    ? Math.min(100, Math.round((sectionEarnedPoints / todayLog.goalPoints) * 100)) 
     : 0;
 
   const dailyGoalMet = dailyProgress >= 100;
@@ -716,6 +793,7 @@ export const StudyProvider = ({ children }: StudyProviderProps) => {
     loading,
     dailyProgress,
     dailyGoalMet,
+    sectionEarnedPoints,
     weeklyStats,
     stats, // NEW: Section-filtered stats
     setCurrentStreak,

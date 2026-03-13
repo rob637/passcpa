@@ -63,16 +63,19 @@ describe('Exam Readiness Calculation', () => {
       });
 
       it('calculates coverage component based on topics practiced (25% weight)', () => {
-        // 15 topics is the baseline for 100% coverage
+        // With totalTopics=40, 8 practiced topics = 20% coverage
         const result = calculateExamReadiness(
           baseStats,
-          createTopics(8), // About half
+          createTopics(8), // 8 of 40 topics practiced
           10,
-          20
+          20,
+          0,
+          20,
+          { totalTopics: 40 }
         );
         
-        // 8/15 * 100 ≈ 53%
-        expect(result.breakdown.coverage).toBeCloseTo(53, 0);
+        // 8/40 * 100 = 20%
+        expect(result.breakdown.coverage).toBe(20);
       });
 
       it('calculates volume component correctly (20% weight)', () => {
@@ -107,7 +110,10 @@ describe('Exam Readiness Calculation', () => {
           { ...baseStats, accuracy: 85, totalQuestions: 450 },
           createTopics(14),
           18, // 90% lessons
-          20
+          20,
+          0,
+          20,
+          { totalTopics: 14 }
         );
         
         expect(result.status).toBe('ready');
@@ -193,7 +199,10 @@ describe('Exam Readiness Calculation', () => {
           { ...baseStats, accuracy: 100, totalQuestions: 1000 },
           createTopics(20),
           20,
-          20
+          20,
+          0,
+          20,
+          { totalTopics: 20 }
         );
         
         // Should cap at 100
@@ -211,7 +220,8 @@ describe('Exam Readiness Calculation', () => {
           20, // 100% lessons
           20,
           20, // 100% TBS
-          20
+          20,
+          { totalTopics: 15 }
         );
         
         // All components at 100% should give 100% overall

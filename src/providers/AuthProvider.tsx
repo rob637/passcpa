@@ -131,12 +131,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             darkMode: false,
             soundEffects: true,
           },
+        };
+        
+        // Add repair metadata (not in UserProfile type, stored for debugging)
+        const repairMetadata = {
+          ...repairProfile,
           _repairedAt: serverTimestamp(),
           _repairReason: 'orphaned_auth_user_auto_fix',
         };
         
         try {
-          await setDoc(doc(db, 'users', uid), repairProfile, { merge: true });
+          await setDoc(doc(db, 'users', uid), repairMetadata, { merge: true });
           setUserProfile({ id: uid, ...repairProfile } as UserProfile);
           logger.info(`[Auth] Successfully repaired orphaned user: ${email}`);
           return;
@@ -164,7 +169,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         logger.warn('Auth timeout - Firebase may be unreachable');
         setLoading(false);
       }
-    }, 10000); // 10 second timeout
+    }, 5000); // 5 second timeout
 
     // Handle redirect result (for Google sign-in on mobile)
     // IMPORTANT: We must await this BEFORE onAuthStateChanged processes the user,
@@ -396,9 +401,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       // Clear user-specific cached data to prevent data leakage between accounts
       const keysToRemove = Object.keys(localStorage).filter(key => 
         key.startsWith('daily_plan_') || 
-        key.startsWith('dailyplan_completed_')
+        key.startsWith('dailyplan_completed_') ||
+        key.startsWith('voraprep_')  // Includes voraprep_active_course, voraprep_welcome_dismissed, etc.
       );
       keysToRemove.forEach(key => localStorage.removeItem(key));
+      
+      // Also clear specific checkout/session keys
+      localStorage.removeItem('pendingCheckout');
+      localStorage.removeItem('voraprep-practice-session');
+      sessionStorage.clear(); // Clear all session storage on logout
     } catch (err) {
       const error = err as FirebaseError;
       setError(error.message);

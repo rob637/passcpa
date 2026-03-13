@@ -13,6 +13,7 @@ import {
   Users,
   Star,
 } from 'lucide-react';
+import { COURSE_DISPLAY_STATS, COURSE_STATS } from '../../config/contentStats';
 
 // ============================================================================
 // Pricing Data for All Exams
@@ -44,9 +45,9 @@ const EXAM_PRICING: ExamPricing[] = [
     monthlyPrice: 29,
     yearlyPrice: 249,
     founderPrice: 249,
-    questionCount: '8,000+',
-    lessonCount: 120,
-    flashcardCount: 2400,
+    questionCount: COURSE_DISPLAY_STATS.cpa.questions,
+    lessonCount: COURSE_STATS.cpa.lessons,
+    flashcardCount: COURSE_STATS.cpa.flashcards,
   },
   {
     id: 'ea',
@@ -58,9 +59,9 @@ const EXAM_PRICING: ExamPricing[] = [
     monthlyPrice: 29,
     yearlyPrice: 149,
     founderPrice: 149,
-    questionCount: '3,500+',
-    lessonCount: 60,
-    flashcardCount: 1200,
+    questionCount: COURSE_DISPLAY_STATS.ea.questions,
+    lessonCount: COURSE_STATS.ea.lessons,
+    flashcardCount: COURSE_STATS.ea.flashcards,
   },
   {
     id: 'cma',
@@ -72,9 +73,9 @@ const EXAM_PRICING: ExamPricing[] = [
     monthlyPrice: 29,
     yearlyPrice: 199,
     founderPrice: 199,
-    questionCount: '2,500+',
-    lessonCount: 48,
-    flashcardCount: 960,
+    questionCount: COURSE_DISPLAY_STATS.cma.questions,
+    lessonCount: COURSE_STATS.cma.lessons,
+    flashcardCount: COURSE_STATS.cma.flashcards,
   },
   {
     id: 'cia',
@@ -86,9 +87,9 @@ const EXAM_PRICING: ExamPricing[] = [
     monthlyPrice: 29,
     yearlyPrice: 199,
     founderPrice: 199,
-    questionCount: '2,000+',
-    lessonCount: 45,
-    flashcardCount: 900,
+    questionCount: COURSE_DISPLAY_STATS.cia.questions,
+    lessonCount: COURSE_STATS.cia.lessons,
+    flashcardCount: COURSE_STATS.cia.flashcards,
   },
   {
     id: 'cfp',
@@ -100,9 +101,9 @@ const EXAM_PRICING: ExamPricing[] = [
     monthlyPrice: 29,
     yearlyPrice: 199,
     founderPrice: 199,
-    questionCount: '2,000+',
-    lessonCount: 64,
-    flashcardCount: 1280,
+    questionCount: COURSE_DISPLAY_STATS.cfp.questions,
+    lessonCount: COURSE_STATS.cfp.lessons,
+    flashcardCount: COURSE_STATS.cfp.flashcards,
   },
   {
     id: 'cisa',
@@ -114,9 +115,9 @@ const EXAM_PRICING: ExamPricing[] = [
     monthlyPrice: 29,
     yearlyPrice: 199,
     founderPrice: 199,
-    questionCount: '2,500+',
-    lessonCount: 50,
-    flashcardCount: 1000,
+    questionCount: COURSE_DISPLAY_STATS.cisa.questions,
+    lessonCount: COURSE_STATS.cisa.lessons,
+    flashcardCount: COURSE_STATS.cisa.flashcards,
   },
 ];
 

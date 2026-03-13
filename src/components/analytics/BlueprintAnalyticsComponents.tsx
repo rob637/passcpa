@@ -98,9 +98,9 @@ export const BlueprintHeatMap: React.FC<BlueprintHeatMapProps> = ({
             })}
           </div>
 
-          {/* Heat Map Grid */}
+          {/* Heat Map Grid — sorted by area ID (e.g., AUD-I, AUD-II, AUD-III) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {analytics.areas.map(area => {
+            {[...analytics.areas].sort((a, b) => a.areaId.localeCompare(b.areaId, undefined, { numeric: true })).map(area => {
               const colors = getMasteryColorClasses(area.status);
               const isSelected = selectedArea === area.areaId;
               

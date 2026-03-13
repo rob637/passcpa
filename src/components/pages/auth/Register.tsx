@@ -20,7 +20,7 @@ const Register = () => {
   // SEO - canonical URL strips query params to avoid duplicate content
   useSEO({
     title: 'Create Account',
-    description: 'Sign up for VoraPrep to access 21,000+ practice questions for CPA, EA, CMA, CIA, CFP, and CISA exams.',
+    description: 'Sign up for VoraPrep to access 25,000+ practice questions for CPA, EA, CMA, CIA, CFP, and CISA exams.',
     canonicalUrl: 'https://voraprep.com/register',
   });
 

@@ -28,7 +28,7 @@ const SUPPORTED_EXAMS = [
 const About = () => {
   useSEO({
     title: 'About VoraPrep',
-    description: 'VoraPrep helps thousands of candidates pass CPA, EA, CMA, CIA, CFP, and CISA exams on the first try. 21,000+ questions with detailed explanations. 97% more affordable than traditional prep.',
+    description: 'VoraPrep helps thousands of candidates pass CPA, EA, CMA, CIA, CFP, and CISA exams on the first try. 25,000+ questions with detailed explanations. 97% more affordable than traditional prep.',
     canonicalUrl: 'https://voraprep.com/about',
   });
   useOrganizationSchema();

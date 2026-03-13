@@ -12,7 +12,8 @@ import logger from './logger';
  * 
  * The forced reload ensures users get the new chunks after a PWA update.
  */
-export function lazyWithRetry<T extends ComponentType<unknown>>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function lazyWithRetry<T extends ComponentType<any>>(
   importFn: () => Promise<{ default: T }>
 ): React.LazyExoticComponent<T> {
   return lazy(async () => {

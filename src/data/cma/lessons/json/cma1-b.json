@@ -2150,5 +2150,1816 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA1-B-012",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Budgetary Control and Performance Reporting",
+    "description": "Master the process of comparing actual results to budgets, investigating variances, and taking corrective action",
+    "order": 25,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Budgetary control",
+      "Variance investigation",
+      "Management by exception",
+      "Performance reporting"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Creating a budget is only half the job! As a CMA, you'll spend significant time MONITORING performance against budget. Budgetary control is your early warning system - it surfaces problems before they become crises and identifies successes worth replicating."
+        },
+        {
+          "title": "The Budgetary Control Process",
+          "type": "text",
+          "content": "**The Control Cycle:**\n\n**1. Establish Standards**\n• Set budget targets and performance benchmarks\n• Define acceptable variance thresholds\n\n**2. Measure Actual Performance**\n• Capture actual costs, revenues, and activity levels\n• Ensure timely and accurate data collection\n\n**3. Compare Actual to Budget**\n• Calculate variances (Actual - Budget)\n• Identify significant deviations\n\n**4. Investigate Variances**\n• Determine root causes\n• Distinguish controllable vs. uncontrollable factors\n\n**5. Take Corrective Action**\n• Address unfavorable variances\n• Revise plans if conditions have permanently changed"
+        },
+        {
+          "title": "🧠 Memory Aid: The Control Cycle",
+          "type": "callout",
+          "content": "**\"SMCIT\"** - The budgetary control process:\n\n**S**tandards - Set the budget targets\n**M**easure - Collect actual results\n**C**ompare - Calculate variances\n**I**nvestigate - Find root causes\n**T**ake action - Fix problems or update plans\n\nRemember: Control is a CYCLE, not a one-time event!"
+        },
+        {
+          "title": "Management by Exception",
+          "type": "text",
+          "content": "**Principle:** Focus attention on SIGNIFICANT variances only\n\n**Why It Works:**\n• Managers have limited time and attention\n• Not all variances warrant investigation\n• Small random variations are expected\n\n**Exception Thresholds:**\n• Percentage: Investigate if variance > 5% of budget\n• Dollar amount: Investigate if variance > $10,000\n• Combination: Investigate if > 5% AND > $5,000\n\n**Example:**\n• Budget: $100,000 | Actual: $103,000 | Variance: $3,000 (3%)\n• If threshold is 5%, do NOT investigate\n• If threshold is $2,500, DO investigate"
+        },
+        {
+          "title": "Types of Performance Reports",
+          "type": "table",
+          "headers": [
+            "Report Type",
+            "Purpose",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "Budget vs. Actual",
+              "Compare planned to achieved results",
+              "Monthly"
+            ],
+            [
+              "Variance Report",
+              "Highlight and explain significant deviations",
+              "Monthly"
+            ],
+            [
+              "Flexible Budget Report",
+              "Adjust budget to actual volume for fair comparison",
+              "Monthly"
+            ],
+            [
+              "Rolling Forecast",
+              "Update future expectations based on current trends",
+              "Quarterly"
+            ],
+            [
+              "Flash Report",
+              "Quick preliminary results before close",
+              "Weekly/Daily"
+            ]
+          ]
+        },
+        {
+          "title": "Static vs. Flexible Budgets for Control",
+          "type": "text",
+          "content": "**Static Budget Problem:**\n• Compares actual results at ACTUAL volume to budget at PLANNED volume\n• Unfair comparison when volume differs\n\n**Example:**\nPlanned: 10,000 units, $50,000 variable cost\nActual: 12,000 units, $58,000 variable cost\nStatic variance: $8,000 Unfavorable (misleading!)\n\n**Flexible Budget Solution:**\n• Adjust budget to actual activity level\n• Isolates spending efficiency from volume effects\n\nFlexible budget: 12,000 × $5 = $60,000\nFlexible variance: $58,000 - $60,000 = $2,000 FAVORABLE\n\n**Truth:** At 12,000 units, spending was EFFICIENT!"
+        },
+        {
+          "title": "⚠️ Exam Trap: Controllability",
+          "type": "warning",
+          "content": "**Not all variances are controllable by the responsible manager!**\n\n**Controllable Factors:**\n• Labor efficiency\n• Material usage\n• Discretionary spending decisions\n\n**Uncontrollable Factors:**\n• Market price changes\n• Allocated corporate costs\n• Volume changes driven by sales\n\n**Best Practice:** Hold managers accountable only for variances they can influence. Separate price variances (often uncontrollable) from efficiency variances (controllable)."
+        },
+        {
+          "title": "Variance Investigation Decision",
+          "type": "text",
+          "content": "**When to Investigate a Variance:**\n\n**Quantitative Guidelines:**\n• Exceeds threshold (% or $)\n• Shows unfavorable trend over multiple periods\n• Impacts critical performance measures\n\n**Cost-Benefit Analysis:**\nInvestigate if: Expected Benefits > Investigation Costs\n\nBenefit = (Probability of finding cause) × (Cost savings from correction)\n\n**Example:**\n• $5,000 variance\n• 60% chance investigation finds correctable cause\n• If found, saves $10,000/year\n• Investigation cost: $2,000\n\nExpected benefit: 0.60 × $10,000 = $6,000\nNet value: $6,000 - $2,000 = $4,000 → Investigate!"
+        },
+        {
+          "title": "Effective Variance Reports",
+          "type": "list",
+          "items": [
+            "**Timeliness:** Reports lose value if they arrive too late for action",
+            "**Materiality:** Focus on significant variances, filter out noise",
+            "**Responsibility:** Show only items the manager controls",
+            "**Trend analysis:** Compare to prior periods to spot patterns",
+            "**Explanation:** Include narrative for major variances",
+            "**Action items:** Identify corrective measures being taken"
+          ]
+        },
+        {
+          "title": "Corrective Action Types",
+          "type": "table",
+          "headers": [
+            "Action Type",
+            "When to Use",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Operational fix",
+              "Process or execution problem",
+              "Retrain workers, repair equipment"
+            ],
+            [
+              "Budget revision",
+              "Conditions permanently changed",
+              "Update material prices after supplier change"
+            ],
+            [
+              "Standard revision",
+              "Original standard was unrealistic",
+              "Adjust labor hours for new product complexity"
+            ],
+            [
+              "No action",
+              "Random variation, self-correcting",
+              "One-time weather delay"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Budgetary control is the ongoing cycle of comparing actual to budget and taking action",
+            "Management by exception focuses attention on significant variances only",
+            "Set investigation thresholds based on percentage, dollar amount, or both",
+            "Flexible budgets adjust for volume, giving fairer performance evaluation",
+            "Hold managers accountable only for controllable variances",
+            "Cost-benefit analysis helps decide whether to investigate a variance",
+            "Effective variance reports are timely, relevant, and action-oriented"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Management by Exception",
+          "knowledgeCheck": {
+            "question": "A company's policy is to investigate any variance that exceeds 5% of the budgeted amount OR $8,000, whichever is lower. A department has a budgeted expense of $200,000 and actual expense of $215,000. Should this variance be investigated?",
+            "options": [
+              "No, because the dollar variance is below $8,000",
+              "No, because the percentage variance is below 5%",
+              "Yes, because the dollar variance exceeds $8,000",
+              "Yes, because the percentage variance exceeds 5%"
+            ],
+            "correctIndex": 3,
+            "explanation": "The variance is $15,000 (7.5% of budget). Since 7.5% exceeds the 5% threshold, and the policy uses 'OR' (whichever is lower), this variance should be investigated even though you could also justify it on the dollar amount exceeding $8,000.",
+            "hint": "Calculate both the percentage and dollar variance, then apply the policy."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Controllability Principle",
+          "knowledgeCheck": {
+            "question": "A production manager shows an unfavorable direct materials price variance of $25,000. The purchasing department negotiates all material contracts. Which of the following is the MOST appropriate treatment of this variance?",
+            "options": [
+              "Include it in the production manager's performance evaluation since materials are used in production",
+              "Exclude it from performance evaluation entirely since prices are market-driven",
+              "Attribute it to the purchasing department since they control vendor selection and negotiation",
+              "Split the variance equally between production and purchasing departments"
+            ],
+            "correctIndex": 2,
+            "explanation": "The controllability principle holds managers accountable only for costs they can influence. Since the purchasing department negotiates material contracts and controls vendor selection, the price variance should be attributed to purchasing, not production.",
+            "hint": "Think about which department has the authority to influence material prices."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Flexible Budget Advantage",
+          "reveal": {
+            "question": "Why is a flexible budget more useful than a static budget for performance evaluation?",
+            "answer": "A flexible budget adjusts to the actual activity level, allowing a fair apples-to-apples comparison. It separates volume variances (due to producing more or fewer units than planned) from spending variances (due to efficiency in using resources). This prevents managers from being penalized or rewarded for volume changes they may not control."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-013",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Zero-Based Budgeting and Rolling Forecasts",
+    "description": "Understand alternative budgeting approaches that challenge traditional incremental budgeting",
+    "order": 26,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Zero-based budgeting",
+      "Rolling forecasts",
+      "Activity-based budgeting",
+      "Beyond Budgeting"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional budgeting has critics! Modern CMAs must understand alternative approaches like ZBB and rolling forecasts. Companies like Unilever and Kraft Heinz have adopted ZBB for cost transformation. Rolling forecasts provide agility in uncertain markets."
+        },
+        {
+          "title": "The Problem with Incremental Budgeting",
+          "type": "text",
+          "content": "**Traditional Approach:**\nStart with last year's budget → Add % increase → Done\n\n**Problems:**\n• **Perpetuates inefficiencies:** \"We spent it last year, so we need it again\"\n• **Budget padding:** Managers inflate to protect resources\n• **Use-it-or-lose-it:** Wasteful year-end spending\n• **Lack of strategic alignment:** Past ≠ future priorities\n• **Annual ritual:** Static, not adaptive\n\n**Result:** Budgets become entitlements, not strategic tools"
+        },
+        {
+          "title": "Zero-Based Budgeting (ZBB)",
+          "type": "text",
+          "content": "**Core Principle:** Start from ZERO each period\n\nEvery expense must be justified from scratch, as if creating the department from nothing.\n\n**ZBB Process:**\n1. **Identify decision units** (departments, programs, activities)\n2. **Create decision packages** for each activity\n3. **Evaluate and rank** all packages\n4. **Allocate resources** based on ranking until budget is exhausted\n\n**Decision Package Contains:**\n• Description of activity\n• Purpose and benefits\n• Consequences of not funding\n• Cost levels (minimum, current, enhanced)\n• Alternative ways to achieve the purpose"
+        },
+        {
+          "title": "🧠 Memory Aid: ZBB Decision Packages",
+          "type": "callout",
+          "content": "**\"PACES\"** - What every decision package answers:\n\n**P**urpose - Why does this activity exist?\n**A**lternatives - Are there other ways to do it?\n**C**ost levels - What are minimum, current, enhanced options?\n**E**ffects - What happens if we don't fund it?\n**S**trategy link - How does it support company goals?\n\nEvery dollar must JUSTIFY itself!"
+        },
+        {
+          "title": "ZBB: Advantages vs. Disadvantages",
+          "type": "table",
+          "headers": [
+            "Advantages",
+            "Disadvantages"
+          ],
+          "rows": [
+            [
+              "Forces critical evaluation of all activities",
+              "Extremely time-consuming"
+            ],
+            [
+              "Eliminates budget padding and waste",
+              "Requires extensive management involvement"
+            ],
+            [
+              "Aligns spending with current priorities",
+              "Annual justification is exhausting"
+            ],
+            [
+              "Identifies obsolete activities",
+              "May create short-term focus"
+            ],
+            [
+              "Useful for cost transformation",
+              "Gaming possible (low-ball minimum levels)"
+            ]
+          ]
+        },
+        {
+          "title": "Rolling Forecasts",
+          "type": "text",
+          "content": "**Definition:** Continuously updated forecast that maintains a constant horizon\n\n**Example - 12-Month Rolling Forecast:**\n• January: Forecast Jan-Dec\n• February: Forecast Feb-Jan (next year)\n• March: Forecast Mar-Feb (next year)\n• Always looking 12 months ahead!\n\n**Compared to Traditional Budget:**\n• Traditional: Fixed December year-end, gets stale\n• Rolling: Always current, always forward-looking\n\n**Update Frequency:**\n• Monthly or quarterly\n• Often 4-6 quarter horizon (12-18 months)"
+        },
+        {
+          "title": "Rolling Forecast Benefits",
+          "type": "list",
+          "items": [
+            "**Always current:** Incorporates latest information",
+            "**Reduces gaming:** No fixed year-end to manipulate",
+            "**Improves agility:** Faster response to market changes",
+            "**Forward focus:** Always planning ahead, not backward-looking",
+            "**Less effort:** Updates are incremental, not annual overhauls",
+            "**Better decision-making:** Decisions based on current reality"
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Rolling Forecast ≠ No Budget",
+          "type": "warning",
+          "content": "**Common Misconception:** Rolling forecasts replace budgets entirely.\n\n**Reality:** Most companies use rolling forecasts ALONGSIDE annual budgets:\n• Annual budget for targets, bonuses, and accountability\n• Rolling forecast for planning and operational decisions\n\n**Key Difference:**\n• Budget = commitment/target (fixed)\n• Forecast = best estimate (updated regularly)\n\nDon't confuse the two on the exam!"
+        },
+        {
+          "title": "Activity-Based Budgeting (ABB)",
+          "type": "text",
+          "content": "**Approach:** Budget based on ACTIVITIES, not line items\n\n**Traditional:** Budget $500,000 for customer service department\n**ABB:** Budget $50 per customer inquiry × 10,000 inquiries = $500,000\n\n**ABB Process:**\n1. Forecast activity demand (customer orders, invoices, shipments)\n2. Estimate resources required per activity\n3. Calculate total resource requirements\n4. Translate to costs\n\n**Advantage:** Links costs to value-creating activities\n**Challenge:** Requires activity cost information (often from ABC system)"
+        },
+        {
+          "title": "Beyond Budgeting",
+          "type": "text",
+          "content": "**Philosophy:** Eliminate traditional budgets entirely\n\n**Beyond Budgeting Principles:**\n• Use relative targets (vs. competition, prior period) instead of fixed budgets\n• Empower front-line managers to make resource decisions\n• Decentralize control and accountability\n• Use rolling forecasts for planning\n\n**Where It Works:**\n• Dynamic, fast-moving industries\n• Decentralized organizations\n• Cultures emphasizing trust and empowerment\n\n**Examples:** Handelsbanken (Swedish bank), some tech companies\n\n**Criticism:** Difficult to implement, requires major culture change"
+        },
+        {
+          "title": "Choosing the Right Approach",
+          "type": "table",
+          "headers": [
+            "Approach",
+            "Best For",
+            "Avoid When"
+          ],
+          "rows": [
+            [
+              "Incremental",
+              "Stable operations, limited resources",
+              "Need cost transformation"
+            ],
+            [
+              "Zero-Based",
+              "Cost cutting, government/nonprofit",
+              "Time and resources are constrained"
+            ],
+            [
+              "Rolling Forecast",
+              "Dynamic markets, agile orgs",
+              "Strong need for fixed annual targets"
+            ],
+            [
+              "Activity-Based",
+              "Complex operations, ABC exists",
+              "Activity data unavailable"
+            ],
+            [
+              "Beyond Budgeting",
+              "Decentralized, trust-based culture",
+              "Command-and-control cultures"
+            ]
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Incremental budgeting perpetuates inefficiency by assuming past = future",
+            "ZBB requires justifying every expense from zero each period",
+            "Decision packages describe activities with multiple funding levels",
+            "ZBB is powerful but time-consuming - often used selectively",
+            "Rolling forecasts maintain a constant horizon (e.g., always 12 months out)",
+            "Forecasts update frequently; budgets are typically fixed for the year",
+            "Activity-based budgeting links resources to specific activities",
+            "Beyond Budgeting eliminates traditional budgets in favor of adaptive management"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Zero-Based Budgeting Fundamentals",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the fundamental principle of zero-based budgeting?",
+            "options": [
+              "The budget starts at zero and increases based on inflation adjustments",
+              "Every activity must be justified from scratch each budget period",
+              "The company aims to achieve zero budget variance",
+              "Only new initiatives require budget justification"
+            ],
+            "correctIndex": 1,
+            "explanation": "Zero-based budgeting requires that all activities and expenditures be justified as if starting from a 'zero base' each period. Unlike incremental budgeting, prior year spending does not automatically carry forward.",
+            "hint": "The name 'zero-based' refers to the starting point for justification."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Rolling Forecast Application",
+          "knowledgeCheck": {
+            "question": "A company uses a 12-month rolling forecast updated quarterly. It is currently July 2025. What period will the NEXT forecast update cover?",
+            "options": [
+              "July 2025 through June 2026",
+              "October 2025 through September 2026",
+              "January 2026 through December 2026",
+              "July 2025 through December 2025"
+            ],
+            "correctIndex": 1,
+            "explanation": "A rolling forecast maintains a constant horizon. If updated quarterly and it's currently July, the next update would be in October 2025 and would cover October 2025 through September 2026 (12 months forward).",
+            "hint": "Rolling forecasts always look a fixed period into the future from the update date."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "ZBB Decision Packages",
+          "reveal": {
+            "question": "What information should a zero-based budgeting decision package contain?",
+            "answer": "A decision package should include: (1) Description of the activity, (2) Purpose and benefits, (3) Consequences of not funding, (4) Different funding levels (minimum, current, enhanced), and (5) Alternative ways to achieve the same purpose. This enables ranking and prioritization across all activities."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-014",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Activity-Based Budgeting (ABB)",
+    "description": "Link budgets to activities and drivers for more accurate cost planning",
+    "order": 14,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Activity-based budgeting",
+      "Cost drivers",
+      "Activity analysis",
+      "Resource consumption"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional budgets often allocate overhead based on volume measures that don't reflect actual resource consumption. Activity-Based Budgeting reverses the ABC costing logic - starting with outputs and working backward to required resources. This creates more realistic and accurate budgets."
+        },
+        {
+          "title": "Traditional vs Activity-Based Budgeting",
+          "type": "table",
+          "headers": [
+            "Traditional Budgeting",
+            "Activity-Based Budgeting"
+          ],
+          "rows": [
+            [
+              "Starts with resources/costs",
+              "Starts with activities/outputs"
+            ],
+            [
+              "Allocates overhead to products",
+              "Links costs to activities that cause them"
+            ],
+            [
+              "Uses volume-based drivers",
+              "Uses multiple cost drivers"
+            ],
+            [
+              "Increment from prior year",
+              "Build up from activity requirements"
+            ],
+            [
+              "Focus on cost control",
+              "Focus on activity efficiency"
+            ]
+          ]
+        },
+        {
+          "title": "ABB Process",
+          "type": "text",
+          "content": "**Step 1: Forecast Production/Sales**\n• Units to be produced\n• Services to be delivered\n\n**Step 2: Identify Required Activities**\n• What activities support production?\n• Machine setups, inspections, order processing\n\n**Step 3: Determine Activity Driver Quantity**\n• How many setups per product?\n• How many inspections per batch?\n\n**Step 4: Calculate Activity Cost**\n• Driver quantity × Cost per driver\n\n**Step 5: Determine Resource Requirements**\n• People, equipment, facilities needed\n• Convert to budget dollars"
+        },
+        {
+          "title": "🧠 Memory Aid: ABB vs ABC Direction",
+          "type": "callout",
+          "content": "**ABC (Costing):**\nResources → Activities → Products\n\"Where did cost come from?\"\n\n**ABB (Budgeting):**\nProducts → Activities → Resources\n\"What resources do we need?\"\n\n**Same logic, opposite direction!**\nABC = Backward cost allocation\nABB = Forward resource planning"
+        },
+        {
+          "title": "ABB Example",
+          "type": "text",
+          "content": "**Scenario:** Budget purchasing department costs\n\n**Traditional Approach:**\nLast year: $500,000\nInflation + growth: +5%\nBudget: $525,000\n\n**ABB Approach:**\n\n**Activity: Process Purchase Orders**\n• Forecasted POs: 10,000\n• Cost per PO: $30\n• Activity cost: $300,000\n\n**Activity: Evaluate New Vendors**\n• New vendors: 50\n• Cost per evaluation: $2,000\n• Activity cost: $100,000\n\n**Activity: Handle Rush Orders**\n• Rush orders: 500\n• Cost per rush: $150\n• Activity cost: $75,000\n\n**Total ABB Budget: $475,000**\n(Saved $50,000 vs traditional!)"
+        },
+        {
+          "title": "⚠️ Exam Trap: ABB Benefits & Limitations",
+          "type": "warning",
+          "content": "**Benefits:**\n• More accurate resource planning\n• Identifies non-value-added activities\n• Better cost behavior understanding\n• Links budget to operational drivers\n\n**Limitations:**\n• Time-consuming to implement\n• Requires detailed activity analysis\n• Cost drivers may be hard to identify\n• May face resistance to change\n\n**Exam Tip:** ABB works best when:\n• Overhead is significant\n• Products/services are diverse\n• ABC system already exists"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ABB works backward from outputs to required resources",
+            "Uses the same logic as ABC but in reverse direction",
+            "Starts with planned activities, not prior-year costs",
+            "Links costs to the activities that cause them",
+            "More accurate than incremental/traditional budgeting",
+            "Helps identify non-value-added activities",
+            "Best suited for organizations with significant overhead"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ABB Process",
+          "knowledgeCheck": {
+            "question": "Which of the following best describes the sequence of Activity-Based Budgeting?",
+            "options": [
+              "Resources → Activities → Products",
+              "Products/Outputs → Activities → Resources",
+              "Prior year budget → Inflation adjustment → New budget",
+              "Fixed costs → Variable costs → Total costs"
+            ],
+            "correctIndex": 1,
+            "explanation": "ABB starts with planned outputs (products/services), identifies the activities needed to produce those outputs, and then determines the resources required to perform those activities. This is the reverse of ABC costing.",
+            "hint": "Think about planning forward vs allocating backward."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-015",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "The Master Budget and Its Components",
+    "description": "Understand how operating and financial budgets integrate into the master budget",
+    "order": 15,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Master budget",
+      "Operating budgets",
+      "Financial budgets",
+      "Budget integration"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "The master budget is the financial blueprint for the entire organization! CMAs who understand how all budget components link together can ensure consistency, identify planning errors, and communicate the financial impact of strategic decisions."
+        },
+        {
+          "title": "Master Budget Overview",
+          "type": "text",
+          "content": "**Definition:** A comprehensive set of interrelated budgets for a specific planning period\n\n**Two Major Components:**\n\n**1. Operating Budgets**\n• Sales budget\n• Production budget\n• Selling and admin budget\n• Lead to: Pro forma income statement\n\n**2. Financial Budgets**\n• Capital expenditures budget\n• Cash budget\n• Lead to: Pro forma balance sheet"
+        },
+        {
+          "title": "Budget Sequence",
+          "type": "text",
+          "content": "**The Chain Starts with Sales:**\n\n**1. Sales Budget**\nFoundation for everything\n↓\n**2. Production Budget**\nUnits to produce\n↓\n**3. Direct Materials Budget**\nMaterials to purchase\n↓\n**4. Direct Labor Budget**\nLabor hours needed\n↓\n**5. Manufacturing Overhead Budget**\nOverhead costs\n↓\n**6. Ending Inventory Budget**\nCost of finished goods\n↓\n**7. COGS Budget**\nCost of sales\n↓\n**8. Selling & Admin Budget**\nPeriod costs\n↓\n**9. Pro Forma Income Statement**"
+        },
+        {
+          "title": "🧠 Memory Aid: Budget Sequence",
+          "type": "callout",
+          "content": "**\"Sales Drives Everything\"**\n\n**S**ales is ALWAYS first\n• Can't produce without knowing demand\n\n**P**roduction follows sales\n• Adjust for desired inventory changes\n\n**D**irect costs follow production\n• Materials, labor, overhead\n\n**C**ash comes from all the above\n• Timing of receipts and payments"
+        },
+        {
+          "title": "Production Budget",
+          "type": "text",
+          "content": "**Purpose:** Determine units to produce\n\n**Formula:**\n\nUnits to Produce = \n  Budgeted Sales Units\n+ Desired Ending Inventory\n- Beginning Inventory\n\n**Example:**\nSales forecast: 10,000 units\nDesired ending FG: 2,000 units\nBeginning FG: 1,500 units\n\nProduction = 10,000 + 2,000 - 1,500 = 10,500 units\n\n**Key:** Production adjusts for inventory policy"
+        },
+        {
+          "title": "Cash Budget",
+          "type": "text",
+          "content": "**The Most Critical Budget:**\nShows whether cash will be sufficient\n\n**Format:**\n\n**Beginning Cash Balance**\n+ Cash Receipts\n  • Collections from sales\n  • Other income\n= Cash Available\n\n- Cash Disbursements\n  • Raw materials\n  • Labor\n  • Overhead\n  • Selling & admin\n  • Capital expenditures\n  • Taxes, dividends, debt payments\n= Ending Cash Balance (before financing)\n\n+/- Financing\n  • Borrowing or repayment\n= Ending Cash Balance"
+        },
+        {
+          "title": "⚠️ Exam Trap: Collection Patterns",
+          "type": "warning",
+          "content": "**Cash receipts ≠ Sales!**\n\n**Typical Collection Pattern:**\n• 30% collected in month of sale\n• 60% collected in following month\n• 10% collected two months after\n\n**Example: January Sales = $100,000**\nJanuary collections: $30,000\nFebruary collections: $60,000\nMarch collections: $10,000\n\n**Exam Tip:** Read the collection pattern carefully!\nMay also include cash discounts or bad debts"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Master budget = operating budgets + financial budgets",
+            "Sales budget is the foundation - all others depend on it",
+            "Production = Sales + Ending inventory - Beginning inventory",
+            "Direct costs (materials, labor, overhead) follow production budget",
+            "Cash budget is critical for liquidity planning",
+            "Cash receipts depend on collection patterns, not sales timing",
+            "Pro forma statements summarize budget results"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Production Budget",
+          "knowledgeCheck": {
+            "question": "A company forecasts sales of 15,000 units for the quarter. Beginning finished goods inventory is 3,000 units and the company wants ending inventory of 4,000 units. How many units should be produced?",
+            "options": [
+              "14,000",
+              "15,000",
+              "16,000",
+              "22,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "Production = Sales + Ending inventory - Beginning inventory = 15,000 + 4,000 - 3,000 = 16,000 units. The company must produce enough to sell AND increase inventory by 1,000 units.",
+            "hint": "Production must cover both sales and the change in inventory levels."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-016",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Rolling Forecasts and Beyond Budgeting",
+    "description": "Modern approaches that replace or supplement traditional annual budgets",
+    "order": 16,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Rolling forecasts",
+      "Beyond budgeting",
+      "Adaptive planning",
+      "Budget alternatives"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional annual budgets become stale quickly! Rolling forecasts and beyond budgeting approaches give organizations agility to respond to changing conditions. CMAs must understand these modern alternatives for effective performance management."
+        },
+        {
+          "title": "Problems with Traditional Budgeting",
+          "type": "list",
+          "items": [
+            "**Outdated quickly:** Annual budgets often obsolete within months",
+            "**Time-consuming:** Takes 4-6 months to prepare",
+            "**Gaming behavior:** Managers pad budgets, lowball targets",
+            "**Annual focus:** Ignores beyond year-end",
+            "**Fixed mindset:** Treated as contracts, not guidelines",
+            "**Encourages spending:** Use it or lose it mentality"
+          ]
+        },
+        {
+          "title": "Rolling Forecasts",
+          "type": "text",
+          "content": "**Definition:** Continuous planning that always looks a set period ahead\n\n**How It Works:**\n• Typically 12-18 month horizon\n• Add a new period as one expires\n• Updated monthly or quarterly\n• Always looking forward same distance\n\n**Example: 12-Month Rolling Forecast**\n• January: Forecast Jan-Dec\n• February: Drop Jan, add next Jan (Feb Y1 - Jan Y2)\n• March: Drop Feb, add next Feb (Mar Y1 - Feb Y2)\n• ...always 12 months ahead\n\n**Benefits:**\n• Never using stale assumptions\n• Continuous strategic conversation\n• Better visibility into future"
+        },
+        {
+          "title": "🧠 Memory Aid: Rolling vs Static",
+          "type": "callout",
+          "content": "**\"ROLL\" - Rolling Forecast Advantages:**\n\n**R**eal-time updates (not annual)\n**O**ngoing horizon (always same distance ahead)\n**L**ess detailed (focus on key drivers)\n**L**imits gaming (too frequent to manipulate)\n\n**Think of it as a car's headlights - always illuminating the same distance ahead as you move forward!**"
+        },
+        {
+          "title": "Beyond Budgeting Principles",
+          "type": "text",
+          "content": "**A management model that eliminates traditional budgets:**\n\n**12 Principles in Two Categories:**\n\n**Leadership Principles:**\n1. Customers - Focus on customer outcomes\n2. Organization - Self-governing teams\n3. Responsibility - Front-line autonomy\n4. Autonomy - Freedom to act\n5. Values - Shared values guide behavior\n6. Transparency - Open information\n\n**Process Principles:**\n7. Goals - Relative, not fixed targets\n8. Rewards - Team-based, hindsight\n9. Planning - Continuous, inclusive\n10. Coordination - Dynamic, not annual\n11. Resources - Available when needed\n12. Controls - Relative KPIs"
+        },
+        {
+          "title": "Relative Performance Measures",
+          "type": "text",
+          "content": "**Beyond budgeting uses relative targets:**\n\n**Traditional:** Beat budget of 5% growth\n**Beyond Budgeting:** Beat competitors\n\n**Examples:**\n• Top quartile in industry for ROI\n• Better customer satisfaction than last year\n• Higher market share than competitors\n• Cost improvement vs. prior period\n\n**Advantages:**\n• No sandbagging\n• Adjusts automatically to conditions\n• External focus\n• Continuous improvement mindset"
+        },
+        {
+          "title": "⚠️ Exam Trap: Beyond Budgeting Misconception",
+          "type": "warning",
+          "content": "**Beyond budgeting does NOT mean:**\n• No planning (there is planning)\n• No targets (there are targets - just relative ones)\n• No accountability (stronger, based on outcomes)\n• No forecasting (rolling forecasts central)\n\n**It DOES mean:**\n• No fixed annual budget contract\n• Decentralized decision-making\n• Adaptive resource allocation\n• Relative performance evaluation\n\n**Key companies:** Handelsbanken, Google (partial), Unilever (partial)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Traditional budgets become outdated and encourage gaming",
+            "Rolling forecasts maintain constant planning horizon",
+            "Add a new period each time one expires",
+            "Beyond budgeting replaces fixed budgets with adaptive management",
+            "Uses relative targets (vs competitors, vs prior periods)",
+            "Decentralizes authority and resource allocation",
+            "Still requires planning, forecasting, and accountability"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Rolling Forecasts",
+          "knowledgeCheck": {
+            "question": "A company uses an 18-month rolling forecast updated quarterly. At the end of Q1, what would they do?",
+            "options": [
+              "Create an entirely new 18-month forecast from scratch",
+              "Update the existing forecast and add a new quarter at the end",
+              "Compare actual results to the original forecast",
+              "Lock in the next 6 months and leave the rest unchanged"
+            ],
+            "correctIndex": 1,
+            "explanation": "With a rolling forecast, as one quarter is completed, a new quarter is added at the end to maintain the 18-month horizon. The forecast is also updated for any changes in assumptions. This is different from a static budget which would just compare to original.",
+            "hint": "Rolling means always maintaining the same horizon length by adding as time passes."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-017",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Integrating Capital Budget with Operating Budget",
+    "description": "Connect long-term capital decisions with annual operating plans and cash budgets",
+    "order": 17,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Capital budgeting",
+      "Operating budget",
+      "Cash budget",
+      "Budget integration"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Capital investments drive operating performance! New equipment affects depreciation, maintenance costs, labor needs, and capacity. CMAs ensure the operational and financial impacts of capital decisions flow through all related budgets."
+        },
+        {
+          "title": "Budget Hierarchy",
+          "type": "text",
+          "content": "**Strategic Plan (3-5+ years)**\n• Long-term direction\n• Major capital initiatives\n↓\n**Capital Budget (1-5 years)**\n• Specific investments approved\n• Timing and amounts\n↓\n**Operating Budget (1 year)**\n• Annual revenue and expenses\n• Reflects capital impacts\n↓\n**Cash Budget (monthly/quarterly)**\n• Cash timing effects\n• Financing needs"
+        },
+        {
+          "title": "Capital Budget Impacts on Operating Budget",
+          "type": "table",
+          "headers": [
+            "Capital Decision",
+            "Operating Budget Impact"
+          ],
+          "rows": [
+            [
+              "New equipment purchase",
+              "Depreciation expense, maintenance costs"
+            ],
+            [
+              "Automation investment",
+              "Reduced labor costs"
+            ],
+            [
+              "Capacity expansion",
+              "Increased production, revenue"
+            ],
+            [
+              "New facility",
+              "Rent/depreciation, utilities, staffing"
+            ],
+            [
+              "Technology upgrade",
+              "Efficiency gains, training costs"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Capital to Cash",
+          "type": "callout",
+          "content": "**\"DORIC\" - How Capital Flows to Cash Budget:**\n\n**D**epreciation - Non-cash, so add back\n**O**perating costs - New maintenance, utilities\n**R**evenue changes - Capacity impacts\n**I**nterest expense - Debt-financed purchases\n**C**apital expenditure - Cash outflow when purchased\n\n**Capital budget triggers multiple downstream changes!**"
+        },
+        {
+          "title": "Cash Budget Integration",
+          "type": "text",
+          "content": "**Capital Expenditures in Cash Budget:**\n\n**Cash Outflows:**\n• Equipment purchases (when paid, not when depreciated)\n• Installation costs\n• Working capital increases\n• Financing payments if debt-funded\n\n**Cash Inflows (if asset sold):**\n• Proceeds from asset sales\n• Tax effects from gains/losses\n\n**Timing Considerations:**\n• Often large lump-sum payments\n• May require temporary financing\n• Plan for installation timing\n• Consider deposits/progress payments"
+        },
+        {
+          "title": "Example: New Equipment",
+          "type": "text",
+          "content": "**Capital Decision:**\nPurchase $600,000 machine\nUseful life: 10 years (straight-line)\nExpected labor savings: $100,000/year\nAdditional maintenance: $15,000/year\n\n**Operating Budget Changes:**\n• Depreciation: +$60,000/year\n• Labor cost: -$100,000/year\n• Maintenance: +$15,000/year\n• Net operating income impact: +$25,000\n\n**Cash Budget Changes:**\n• Year 1 cash outflow: $600,000\n• Annual cash savings: $85,000 ($100K - $15K)\n• (Depreciation is non-cash!)\n\n**Note the difference between profit and cash impact!"
+        },
+        {
+          "title": "⚠️ Exam Trap: Depreciation",
+          "type": "warning",
+          "content": "**Depreciation affects budgets differently:**\n\n**Operating Budget (Income Statement):**\n• Depreciation IS an expense\n• Reduces operating income\n\n**Cash Budget:**\n• Depreciation is NOT a cash outflow\n• Cash outflow happened when asset was purchased\n• Must ADD BACK to net income for cash flow\n\n**Common Error:**\nStudents double-count depreciation by:\n1. Including purchase in cash budget\n2. Also deducting depreciation in cash budget\n\n**Rule:** Purchase = cash outflow; Depreciation = non-cash"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital decisions flow through to operating and cash budgets",
+            "New equipment affects depreciation, maintenance, labor",
+            "Cash budget shows actual payment timing, not depreciation",
+            "Depreciation is expense for operating budget but not cash outflow",
+            "Capital expenditures often lump-sum cash impacts",
+            "Operating savings from capital may differ from cash savings",
+            "Working capital needs may accompany capital investments"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Budget Integration",
+          "knowledgeCheck": {
+            "question": "A company purchases equipment for $120,000 with a 4-year life. Annual labor savings will be $40,000. How much should appear in the Year 1 CASH budget as the net effect?",
+            "options": [
+              "$(80,000) cash outflow",
+              "$(90,000) cash outflow",
+              "$10,000 cash inflow",
+              "$40,000 cash inflow"
+            ],
+            "correctIndex": 0,
+            "explanation": "Year 1 cash: Equipment purchase $(120,000) + Labor savings $40,000 = $(80,000) net cash outflow. Depreciation ($30,000/year) is not a cash flow. Cash budget reflects actual cash movements, not accounting expenses.",
+            "hint": "Ignore depreciation in cash calculations - it's non-cash. Focus on the purchase and operating cost savings."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-018",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Performance-Based and Activity-Based Budgeting",
+    "description": "Compare advanced budgeting methods beyond traditional approaches",
+    "order": 18,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Performance-based budgeting",
+      "Activity-based budgeting",
+      "Zero-based budgeting",
+      "Beyond budgeting"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional budgeting has critics! Modern approaches like ABB, ZBB, and Beyond Budgeting address limitations of incremental budgeting. CMAs must know when each approach fits and how to implement them effectively."
+        },
+        {
+          "title": "Traditional Budgeting Limitations",
+          "type": "text",
+          "content": "**Problems with Incremental Budgeting:**\n\n• **Historical anchor:** Last year + X%\n• **Bloated costs:** Inefficiencies carry forward\n• **Gaming:** Spend it or lose it\n• **Slow:** Annual cycle too long\n• **Promotes silos:** Department focus vs. enterprise\n\n**Result:**\nBudgets that don't drive performance improvement\nManagers focus on \"hitting budget\" vs. value creation\n\n**Alternative approaches attempt to fix these issues"
+        },
+        {
+          "title": "Budgeting Method Comparison",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Starting Point",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Traditional (Incremental)",
+              "Last year + adjustments",
+              "Stable operations"
+            ],
+            [
+              "Zero-Based (ZBB)",
+              "Zero - justify everything",
+              "Cost cutting, G&A"
+            ],
+            [
+              "Activity-Based (ABB)",
+              "Activities and drivers",
+              "Complex operations"
+            ],
+            [
+              "Performance-Based",
+              "Outcomes and objectives",
+              "Government/nonprofit"
+            ],
+            [
+              "Beyond Budgeting",
+              "Rolling forecasts + KPIs",
+              "Dynamic environments"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Zero-Based Budgeting",
+          "type": "callout",
+          "content": "**ZBB Process - Start from ZERO!**\n\n**Step 1:** Define decision units\n(Departments, programs, activities)\n\n**Step 2:** Create decision packages\n(Different service levels with costs)\n\n**Step 3:** Rank all packages\n(Prioritize across the organization)\n\n**Step 4:** Allocate resources\n(Fund from top of ranking down)\n\n**Key Benefit:** Forces justification of EVERY expense\n**Key Drawback:** Time-consuming and politically difficult"
+        },
+        {
+          "title": "Activity-Based Budgeting (ABB)",
+          "type": "text",
+          "content": "**Reverse of ABC - Budget by Activities:**\n\n**Traditional:** Start with resources, allocate to activities\n**ABB:** Start with activities, determine resources needed\n\n**ABB Process:**\n1. Forecast sales/production volume\n2. Determine activities required\n3. Estimate activity quantities\n4. Calculate resources needed\n5. Budget resource costs\n\n**Example:**\n• Forecast: 10,000 orders\n• Activity: Process orders (0.5 hrs each)\n• Hours needed: 5,000\n• Resources: 3 FTEs at $50,000 = $150,000\n\n**Benefit:** Links budget to workload directly"
+        },
+        {
+          "title": "Beyond Budgeting Principles",
+          "type": "text",
+          "content": "**Philosophy:** Abandon annual budget entirely\n\n**Replace With:**\n• **Rolling Forecasts:** Updated quarterly, 12-18 month horizon\n• **Relative Targets:** Beat competition, not arbitrary budget\n• **KPIs:** Focus on key performance indicators\n• **Dynamic Resource Allocation:** Fund as needed\n\n**12 Principles (grouped):**\n\n**Leadership:**\n• Purpose over targets\n• Values over rules\n• Transparency over control\n\n**Process:**\n• Goals: relative, adaptive\n• Rewards: team-based\n• Planning: continuous\n• Resources: on demand\n• Coordination: market-like"
+        },
+        {
+          "title": "⚠️ Exam Trap: Method Selection",
+          "type": "warning",
+          "content": "**Match method to situation:**\n\n**Use ZBB when:**\n• Costs have crept up\n• Significant restructuring needed\n• G&A and discretionary costs\n• Leadership willing to challenge status quo\n\n**Use ABB when:**\n• Complex, activity-intensive operations\n• Need to link resources to workload\n• Shared services environment\n\n**Avoid ZBB when:**\n• Annual cycle already time-consuming\n• Operations are stable and efficient\n• Organization lacks analysis capacity\n\n**Beyond Budgeting challenges:**\n• Requires cultural change\n• Less common, harder to implement"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Traditional budgeting carries forward inefficiencies",
+            "ZBB starts from zero - justify every expense",
+            "ABB budgets based on activities and cost drivers",
+            "Performance-based links budget to outcomes/objectives",
+            "Beyond Budgeting replaces annual budget with rolling forecasts + KPIs",
+            "Each method fits different situations",
+            "ZBB is time-consuming but forces cost justification"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Budget Method Selection",
+          "knowledgeCheck": {
+            "question": "A company's SG&A costs have increased 40% over 5 years despite flat revenues. Management wants to fundamentally review all support costs. Which budgeting approach is most appropriate?",
+            "options": [
+              "Continue traditional incremental budgeting",
+              "Implement zero-based budgeting (ZBB)",
+              "Switch to activity-based budgeting (ABB)",
+              "Adopt Beyond Budgeting principles"
+            ],
+            "correctIndex": 1,
+            "explanation": "ZBB is ideal when costs have crept up and need fundamental review. It forces every expense to be justified from zero, eliminating accumulated inefficiencies in G&A costs.",
+            "hint": "When costs have bloated over time, which method requires justifying everything from scratch?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-019",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Cash Flow Forecasting",
+    "description": "Project future cash flows using direct and indirect methods",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cash flow forecasting",
+      "Direct method",
+      "Indirect method",
+      "Working capital"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Profit doesn't pay bills - cash does! CMAs forecast cash flows to ensure the company can meet obligations, plan financing, and identify investment opportunities. Cash flow forecasting shares methods with the Statement of Cash Flows."
+        },
+        {
+          "title": "Cash Flow Categories",
+          "type": "text",
+          "content": "**Operating Cash Flows:**\n• Day-to-day business activities\n• Cash from sales, payments to suppliers\n• Most predictable component\n\n**Investing Cash Flows:**\n• Capital expenditures\n• Asset acquisitions/disposals\n• More discretionary\n\n**Financing Cash Flows:**\n• Debt borrowing/repayment\n• Equity issuances/buybacks\n• Dividends\n\n**Forecasting Focus:**\nOperating → Highly detailed\nInvesting → Known plans\nFinancing → Balancing item"
+        },
+        {
+          "title": "Direct vs Indirect Method",
+          "type": "table",
+          "headers": [
+            "Direct Method",
+            "Indirect Method"
+          ],
+          "rows": [
+            [
+              "Shows actual cash receipts/payments",
+              "Starts with net income"
+            ],
+            [
+              "Cash collected from customers",
+              "Add back non-cash expenses"
+            ],
+            [
+              "Cash paid to suppliers",
+              "Adjust for working capital changes"
+            ],
+            [
+              "More intuitive",
+              "More common in practice"
+            ],
+            [
+              "Harder to prepare",
+              "Easier to prepare"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Indirect Method Adjustments",
+          "type": "callout",
+          "content": "**Start with Net Income, then adjust:**\n\n**Add back non-cash expenses:**\n+ Depreciation\n+ Amortization\n+ Loss on sale of assets\n\n**Subtract non-cash income:**\n- Gain on sale of assets\n\n**Working capital changes (opposite of B/S change):**\n• ↑ Asset = Cash outflow (subtract)\n• ↓ Asset = Cash inflow (add)\n• ↑ Liability = Cash inflow (add)\n• ↓ Liability = Cash outflow (subtract)\n\n**Memory trick:** Increase in A/R = Sold on credit = Cash NOT received = SUBTRACT"
+        },
+        {
+          "title": "Direct Method Calculations",
+          "type": "text",
+          "content": "**Cash Collected from Customers:**\n= Sales + ↓A/R (or - ↑A/R)\n= Beginning A/R + Sales - Ending A/R\n\n**Cash Paid to Suppliers:**\n= COGS + ↑Inventory + ↓A/P\n= COGS + (Inventory change) - (A/P change)\n\n**Cash Paid for Operating Expenses:**\n= Operating expenses\n+ Prepaid expense increase\n- Accrued expense increase\n- Depreciation (non-cash)\n\n**Cash Paid for Taxes:**\n= Tax expense + ↓Tax payable\n\n**Assemble all to get Operating Cash Flow**"
+        },
+        {
+          "title": "Forecasting Best Practices",
+          "type": "text",
+          "content": "**Short-Term (< 1 year):**\n• Weekly or monthly detail\n• Bottom-up from operational plans\n• Track individual customer/supplier patterns\n\n**Medium-Term (1-3 years):**\n• Quarterly or annual\n• Linked to strategic plan\n• Key assumptions documented\n\n**Key Inputs:**\n• Sales forecast (driver of collections)\n• Collection patterns (DSO)\n• Payment patterns (DPO)\n• Capital expenditure plans\n• Debt maturity schedule\n\n**Scenario Analysis:**\n• Best case / Base case / Worst case\n• Identify cash stress points"
+        },
+        {
+          "title": "⚠️ Exam Trap: Working Capital Impact",
+          "type": "warning",
+          "content": "**Growing companies consume cash!**\n\n**As sales grow:**\n• A/R increases (not collected yet)\n• Inventory increases (more stock needed)\n• These USE cash\n• Even while reporting profits!\n\n**Example:**\nNet Income: $100,000\nA/R increase: $50,000\nInventory increase: $30,000\nA/P increase: $20,000\n\n**Operating Cash Flow:**\n$100,000 - $50,000 - $30,000 + $20,000\n= $40,000 (much less than profit!)\n\n**Profitability ≠ Liquidity**\nCompanies can go bankrupt while profitable!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three categories: Operating, Investing, Financing",
+            "Direct method: Shows actual cash receipts and payments",
+            "Indirect method: Starts with net income, adjusts for non-cash and WC",
+            "Add depreciation (non-cash); Subtract increases in current assets",
+            "Growing companies consume cash through working capital",
+            "Cash collected = Sales - Increase in A/R",
+            "Always distinguish between profitability and cash generation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Flow Calculation",
+          "knowledgeCheck": {
+            "question": "Net income is $200,000. Depreciation is $40,000. Accounts receivable increased by $25,000 and accounts payable increased by $15,000. What is operating cash flow (indirect method)?",
+            "options": [
+              "$200,000",
+              "$230,000",
+              "$240,000",
+              "$280,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "Start with NI $200,000 + Depreciation $40,000 - A/R increase $25,000 + A/P increase $15,000 = $230,000. Depreciation is added back (non-cash). A/R increase is cash NOT collected. A/P increase is cash NOT paid (good).",
+            "hint": "Add non-cash expenses, subtract asset increases, add liability increases."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-020",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Zero-Based Budgeting",
+    "description": "Build budgets from zero rather than incremental adjustments",
+    "order": 20,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Zero-based budgeting",
+      "Decision packages",
+      "Budget prioritization",
+      "Cost justification"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional budgets assume last year's spending was justified! ZBB challenges this by requiring every expense to be justified from zero. CMAs use ZBB to cut waste, reallocate resources, and drive organizational discipline."
+        },
+        {
+          "title": "Traditional vs Zero-Based Budgeting",
+          "type": "text",
+          "content": "**Traditional/Incremental Budgeting:**\n• Start with last year's budget\n• Add % increase\n• Quick and easy\n• Assumes prior spending was appropriate\n• 'Budget creep' over time\n\n**Zero-Based Budgeting:**\n• Start from zero each period\n• Justify every expense\n• Prioritize all activities\n• Eliminates waste\n• Labor-intensive\n\n**When ZBB Works Best:**\n• Discretionary spending\n• Administrative functions\n• Cost reduction initiatives\n• Resource reallocation"
+        },
+        {
+          "title": "ZBB Process Steps",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Action",
+            "Output"
+          ],
+          "rows": [
+            [
+              "1",
+              "Identify decision units",
+              "Cost centers/activities"
+            ],
+            [
+              "2",
+              "Create decision packages",
+              "Activity descriptions & costs"
+            ],
+            [
+              "3",
+              "Evaluate packages",
+              "Cost-benefit analysis"
+            ],
+            [
+              "4",
+              "Rank packages",
+              "Priority order"
+            ],
+            [
+              "5",
+              "Allocate resources",
+              "Funded activities"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Decision Packages",
+          "type": "callout",
+          "content": "**Each decision package contains:**\n\n**Activity Description:**\n• What does it do?\n• Why is it necessary?\n\n**Resource Requirements:**\n• People\n• Costs\n• Equipment\n\n**Alternatives:**\n• Different ways to achieve goal\n• Different service levels\n\n**Consequences:**\n• What if not funded?\n• Impact on organization\n\n**Three Service Levels:**\n• Minimum (survival)\n• Current (status quo)\n• Enhanced (improvement)\n\nManagement funds from minimum up until budget exhausted"
+        },
+        {
+          "title": "ZBB Benefits",
+          "type": "text",
+          "content": "**Cost Reduction:**\n• Eliminates 'fat' in budgets\n• Identifies redundancies\n• Stops budget padding\n\n**Strategic Alignment:**\n• Links spending to priorities\n• Forces strategic discussion\n• Resource reallocation\n\n**Engagement:**\n• Managers justify activities\n• Better understanding of costs\n• Ownership of budgets\n\n**Transparency:**\n• Clear cost drivers\n• Documented decisions\n• Audit trail"
+        },
+        {
+          "title": "ZBB Challenges",
+          "type": "text",
+          "content": "**Time Intensive:**\n• Much more work than incremental\n• Thousands of decision packages\n• Manager time burden\n\n**Resistance:**\n• Threatens existing budgets\n• Political conflicts\n• Gaming the system\n\n**Not Always Practical:**\n• Some costs are fixed\n• Commitments already made\n• Regulatory requirements\n\n**Implementation:**\n• May do every 3-5 years\n• Focus on discretionary areas\n• Use technology to automate"
+        },
+        {
+          "title": "⚠️ Exam Trap: ZBB vs Activity-Based Budgeting",
+          "type": "warning",
+          "content": "**Don't confuse these!**\n\n**Zero-Based Budgeting (ZBB):**\n• Start from zero each period\n• Justify every expense\n• Prioritization focus\n• Decision packages\n• Any costing approach\n\n**Activity-Based Budgeting (ABB):**\n• Budget based on activities\n• Uses ABC cost drivers\n• Activity → Resource requirements\n• Links to ABC costing\n\n**They can work together:**\n• ZBB determines WHAT to fund\n• ABB determines HOW MUCH to budget\n• Both improve budget accuracy"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ZBB: Start from zero, justify every expense",
+            "Traditional: Start with last year + adjustment",
+            "Decision packages: Describe activities at different service levels",
+            "Process: Identify units, create packages, rank, allocate",
+            "Benefits: Cuts waste, aligns spending with strategy",
+            "Challenges: Time-intensive, resistance, political issues",
+            "Best for: Discretionary spending, periodic deep reviews"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ZBB Application",
+          "knowledgeCheck": {
+            "question": "In zero-based budgeting, decision packages are evaluated and ranked. Funding is typically allocated starting with which service level?",
+            "options": [
+              "Enhanced level first, then work down",
+              "Current level to maintain status quo",
+              "Minimum level first, then higher levels if funds remain",
+              "Equal funding across all levels"
+            ],
+            "correctIndex": 2,
+            "explanation": "ZBB starts by funding minimum service levels for the highest priority activities, then adds enhanced levels if budget remains. This ensures essential functions are covered before discretionary improvements. The ranking process determines which activities get funded beyond minimum.",
+            "hint": "ZBB builds up from the most essential services."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-021",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Flexible Budgets",
+    "description": "Create budgets that adjust for actual activity levels",
+    "order": 21,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Flexible budgets",
+      "Cost behavior",
+      "Budget variance",
+      "Activity levels"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Static budgets are misleading when activity levels change! Flexible budgets adjust expected costs for actual volume, providing meaningful variance analysis. CMAs use flex budgets to fairly evaluate performance - managers shouldn't be penalized for volume changes outside their control."
+        },
+        {
+          "title": "Static vs Flexible Budget",
+          "type": "text",
+          "content": "**Static Budget:**\n• One budgeted activity level\n• Doesn't adjust for volume\n• Compare actual to original budget\n• Volume impacts distort evaluation\n\n**Flexible Budget:**\n• Adjusts for actual activity\n• 'What SHOULD costs be at actual volume?'\n• Separates volume and efficiency\n• Fair performance evaluation\n\n**Key Insight:**\nFlexible budget = Variable cost per unit × Actual units + Fixed costs\n\nThis is what costs SHOULD have been"
+        },
+        {
+          "title": "Variance Analysis Framework",
+          "type": "table",
+          "headers": [
+            "Comparison",
+            "Variance Type",
+            "What It Shows"
+          ],
+          "rows": [
+            [
+              "Actual vs Flex Budget",
+              "Flexible Budget Variance",
+              "Spending/efficiency"
+            ],
+            [
+              "Flex Budget vs Static",
+              "Sales Volume Variance",
+              "Volume impact"
+            ],
+            [
+              "Actual vs Static",
+              "Total Variance",
+              "Overall difference"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Flex Budget Formula",
+          "type": "callout",
+          "content": "**Flexible Budget = (Variable × Actual Units) + Fixed**\n\n**Example:**\n• Variable cost: $5/unit\n• Fixed costs: $10,000\n• Static budget: 2,000 units\n• Actual production: 2,400 units\n\n**Static Budget:**\n($5 × 2,000) + $10,000 = $20,000\n\n**Flexible Budget:**\n($5 × 2,400) + $10,000 = $22,000\n\n**Actual costs:** $23,500\n\n**Variances:**\n• Flex budget: $23,500 - $22,000 = $1,500 U (efficiency)\n• Volume: $22,000 - $20,000 = $2,000 U (more production)\n• Total: $23,500 - $20,000 = $3,500 U"
+        },
+        {
+          "title": "Creating Flexible Budgets",
+          "type": "text",
+          "content": "**Step 1: Identify Cost Behavior**\n• Variable costs (change with volume)\n• Fixed costs (stay constant)\n• Mixed costs (separate using high-low, regression)\n\n**Step 2: Determine Variable Rate**\n• Per unit, per labor hour, per machine hour\n• Depends on cost driver\n\n**Step 3: Determine Fixed Amount**\n• Total fixed costs in relevant range\n\n**Step 4: Apply to Actual Activity**\n• Calculate what budget SHOULD be\n• Compare to actual\n\n**Multiple Drivers:**\n• Some costs vary with different drivers\n• Build activity-based flex budget"
+        },
+        {
+          "title": "Benefits of Flexible Budgets",
+          "type": "text",
+          "content": "**Fair Performance Evaluation:**\n• Remove volume impacts from manager control\n• Focus on controllable items\n• Better motivation\n\n**Better Variance Analysis:**\n• Separate volume from efficiency\n• More actionable insights\n• Drill into root causes\n\n**Planning Support:**\n• Quick 'what-if' analysis\n• Scenario planning\n• Range of activity levels\n\n**Communication:**\n• Clear cost expectations\n• Better resource planning\n• Responsive to changes"
+        },
+        {
+          "title": "⚠️ Exam Trap: Favorable vs Unfavorable",
+          "type": "warning",
+          "content": "**Know the terminology!**\n\n**Favorable (F):**\n• Actual revenue > Budget = F\n• Actual cost < Budget = F\n• Good for profitability\n\n**Unfavorable (U):**\n• Actual revenue < Budget = U\n• Actual cost > Budget = U\n• Bad for profitability\n\n**Volume Variance:**\n• More units than expected = F for revenue\n• More units than expected = U for variable costs (expected!)\n\n**Don't confuse direction:**\nHigher costs are UNFAVORABLE\nLower costs are FAVORABLE\n(regardless of volume change)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Static budget: One activity level; distorts evaluation when volume changes",
+            "Flexible budget: Adjusts for actual activity level",
+            "Formula: (Variable rate × Actual units) + Fixed costs",
+            "Flexible budget variance: Spending/efficiency issues",
+            "Volume variance: Impact of activity level change",
+            "Requires understanding cost behavior (fixed vs variable)",
+            "Favorable: Revenue > budget or Cost < budget"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Flexible Budget",
+          "knowledgeCheck": {
+            "question": "Static budget: 10,000 units, $50,000 variable cost, $20,000 fixed. Actual: 12,000 units, $62,000 variable cost, $21,000 fixed. What is the flexible budget variance for variable costs?",
+            "options": [
+              "$2,000 favorable",
+              "$2,000 unfavorable",
+              "$12,000 unfavorable",
+              "$10,000 unfavorable"
+            ],
+            "correctIndex": 1,
+            "explanation": "Variable rate = $50,000 / 10,000 = $5/unit. Flex budget for 12,000 units = $5 × 12,000 = $60,000. Actual = $62,000. Variance = $62,000 - $60,000 = $2,000 unfavorable. This isolates the efficiency problem from the volume change.",
+            "hint": "Calculate: Flexible budget = Variable rate × Actual units. Then compare to actual."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-022",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Rolling Forecasts",
+    "description": "Implement continuous planning through rolling forecasts",
+    "order": 22,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Rolling forecasts",
+      "Continuous planning",
+      "Beyond budgeting",
+      "Agile planning"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Static annual budgets are obsolete by month 3! Rolling forecasts provide up-to-date projections that adapt to changing conditions. CMAs lead the shift from annual budget cycles to continuous, agile planning that keeps organizations responsive."
+        },
+        {
+          "title": "Rolling Forecasts Defined",
+          "type": "text",
+          "content": "**What is a Rolling Forecast?**\nContinuously updated projection that extends a fixed period into the future\n\n**Key Characteristics:**\n• Constant planning horizon (e.g., always 12-18 months ahead)\n• Updated monthly or quarterly\n• Drops oldest period, adds new period\n• Focus on key drivers, not detailed line items\n\n**Example:**\n• Q1: Forecast covers Q2-Q1 next year (4 quarters)\n• Q2: Drop Q2, add Q2 next year (still 4 quarters)\n• Always looking 12 months ahead!"
+        },
+        {
+          "title": "Rolling Forecast vs Annual Budget",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Annual Budget",
+            "Rolling Forecast"
+          ],
+          "rows": [
+            [
+              "Horizon",
+              "Fixed 12 months",
+              "Rolling 12-18 months"
+            ],
+            [
+              "Updates",
+              "Annual (maybe quarterly)",
+              "Monthly/Quarterly"
+            ],
+            [
+              "Detail",
+              "Line item detail",
+              "Key drivers focus"
+            ],
+            [
+              "Purpose",
+              "Control, accountability",
+              "Planning, visibility"
+            ],
+            [
+              "Effort",
+              "Intensive annual cycle",
+              "Lighter, continuous"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Rolling Forecast Design",
+          "type": "callout",
+          "content": "**Design Decisions:**\n\n**1. Horizon:**\n• 12 months (most common)\n• 18-24 months (capital intensive)\n• 6 months (very dynamic industries)\n\n**2. Update Frequency:**\n• Monthly - Most responsive\n• Quarterly - Balance effort/value\n\n**3. Detail Level:**\n• Driver-based - Revenue drivers, cost drivers\n• Not every GL account\n• Focus on material items\n\n**4. Granularity:**\n• Near-term: Monthly detail\n• Far-term: Quarterly or annual\n\n**Rule of Thumb:**\nLess detail = easier updates = more likely to happen"
+        },
+        {
+          "title": "Implementation Best Practices",
+          "type": "text",
+          "content": "**Success Factors:**\n\n**1. Driver-Based:**\n• Identify 5-10 key drivers\n• Link assumptions to outputs\n• Easy to update assumptions\n\n**2. System Support:**\n• Planning software\n• Not just spreadsheets\n• Integration with ERP\n\n**3. Process Discipline:**\n• Regular cadence\n• Clear ownership\n• Time-boxed meetings\n\n**4. Management Engagement:**\n• Use forecasts in decisions\n• Not just for finance\n• Action-oriented discussions\n\n**5. Continuous Improvement:**\n• Track forecast accuracy\n• Improve driver models\n• Learn from variances"
+        },
+        {
+          "title": "Beyond Budgeting Movement",
+          "type": "text",
+          "content": "**Beyond Budgeting Principles:**\n• Adaptive processes, not fixed plans\n• Relative targets, not fixed targets\n• Decentralized decision-making\n• Continuous planning\n\n**Why Challenge Traditional Budgets?**\n• Gaming behavior to hit targets\n• Spend-it-or-lose-it mentality\n• Outdated by mid-year\n• Excessive time investment\n\n**Hybrid Approach:**\nMany companies keep some budget elements (accountability) while adding rolling forecasts (planning visibility)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Forecasts vs Budgets",
+          "type": "warning",
+          "content": "**Know the distinction!**\n\n**Budgets:**\n• Commitment/target\n• Used for accountability\n• Often linked to compensation\n• 'What we're committing to achieve'\n\n**Forecasts:**\n• Best estimate\n• Used for planning\n• Should be unbiased\n• 'What we think will happen'\n\n**Rolling Forecasts:**\n• Are FORECASTS, not budgets\n• Don't link to compensation\n• Want honest predictions\n• Avoid sandbagging incentives"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Rolling forecast: Always looks fixed period ahead (12-18 months)",
+            "Updates monthly/quarterly; drops old, adds new period",
+            "Driver-based: Focus on key assumptions, not line items",
+            "Purpose: Planning visibility, not accountability",
+            "Beyond budgeting: Movement toward adaptive, continuous planning",
+            "Keep forecasts unbiased - don't link to compensation",
+            "Hybrid common: Budget for accountability + rolling forecast for planning"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Rolling Forecast Concepts",
+          "knowledgeCheck": {
+            "question": "A company maintains a 12-month rolling forecast updated quarterly. At the end of Q2, what periods should the updated forecast cover?",
+            "options": [
+              "Q3 current year through Q2 next year",
+              "Q1 current year through Q4 current year",
+              "Q3 current year through Q4 next year",
+              "Q2 current year through Q1 next year"
+            ],
+            "correctIndex": 0,
+            "explanation": "A 12-month rolling forecast always looks 12 months ahead. At end of Q2, it should cover Q3-Q4 current year plus Q1-Q2 next year (four quarters = 12 months). Q2 just completed drops off, and Q2 next year is added.",
+            "hint": "Rolling forecast always looks the same number of months ahead - 12 months in this case."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-023",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Operating Budget Components",
+    "description": "Understand the interrelated operating budgets in the master budget",
+    "order": 23,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Operating budget",
+      "Master budget",
+      "Production budget",
+      "Budget relationships"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "The master budget is the financial plan for the organization! CMAs orchestrate the budget process, ensuring all pieces fit together. Understanding how budgets interrelate is essential for creating cohesive plans and identifying problems."
+        },
+        {
+          "title": "Master Budget Overview",
+          "type": "text",
+          "content": "**Master Budget:**\nComprehensive plan for all activities\n\n**Two Main Parts:**\n\n**Operating Budget:**\n• Revenue and expenses\n• Ends with budgeted income statement\n\n**Financial Budget:**\n• Cash budget\n• Capital expenditure budget\n• Budgeted balance sheet\n• Budgeted cash flow statement\n\n**Starting Point:**\nSales budget - everything flows from sales!\n\n**Duration:**\nTypically annual, broken into quarters/months"
+        },
+        {
+          "title": "Operating Budget Sequence",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Budget",
+            "Key Input"
+          ],
+          "rows": [
+            [
+              "1",
+              "Sales Budget",
+              "Market forecast"
+            ],
+            [
+              "2",
+              "Production Budget",
+              "Sales + Inventory goals"
+            ],
+            [
+              "3",
+              "Direct Materials",
+              "Production needs"
+            ],
+            [
+              "4",
+              "Direct Labor",
+              "Production needs"
+            ],
+            [
+              "5",
+              "Overhead",
+              "Production activity"
+            ],
+            [
+              "6",
+              "Selling & Admin",
+              "Sales volume/support"
+            ],
+            [
+              "7",
+              "Budgeted Income Stmt",
+              "All operating budgets"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Production Budget",
+          "type": "callout",
+          "content": "**Production Budget Formula:**\n\n**Required Production =**\nBudgeted Sales\n+ Desired Ending Inventory\n- Beginning Inventory\n\n**Think:** What you need to have, minus what you start with\n\n**Example:**\n• Q1 Sales: 10,000 units\n• Desired ending inventory: 2,000\n• Beginning inventory: 1,500\n\n**Production needed:**\n10,000 + 2,000 - 1,500 = **10,500 units**\n\n**Common Policy:**\nEnding inventory = 20% of next period's sales"
+        },
+        {
+          "title": "Materials and Labor Budgets",
+          "type": "text",
+          "content": "**Direct Materials Purchase Budget:**\n\nMaterials needed for production\n+ Desired ending materials inventory\n- Beginning materials inventory\n= Materials to purchase\n\n**Direct Labor Budget:**\n\nProduction units\n× Labor hours per unit\n= Total labor hours needed\n× Hourly labor rate\n= Total labor cost\n\n**Key Inputs:**\n• Standard quantities from engineering\n• Standard rates from HR\n• Any planned rate increases"
+        },
+        {
+          "title": "Overhead and S&A Budgets",
+          "type": "text",
+          "content": "**Manufacturing Overhead Budget:**\n• Variable OH: Based on activity level\n• Fixed OH: Stays constant\n• Cash vs non-cash (depreciation)\n\n**Key for Cash Budget:**\nTotal OH - Depreciation = Cash for OH\n\n**Selling & Administrative Budget:**\n• Variable S&A: Commissions, shipping\n• Fixed S&A: Salaries, rent, marketing\n\n**Types of Expenses:**\n• Marketing/advertising\n• Sales salaries and commissions\n• Administrative salaries\n• Office expenses"
+        },
+        {
+          "title": "⚠️ Exam Trap: Budget Timing",
+          "type": "warning",
+          "content": "**Watch the timing differences!**\n\n**Production ≠ Sales:**\n• Produce ahead for inventory\n• Seasonal preparation\n\n**Purchases ≠ Production:**\n• Buy materials ahead\n• Lead time for suppliers\n\n**Purchases ≠ Cash Paid:**\n• Credit terms (pay next month)\n• A/P tracking\n\n**Sales ≠ Cash Received:**\n• Credit sales\n• Collection patterns\n\n**Key Budget Question:**\n'WHEN does cash actually move?'"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Master budget: Operating + Financial budgets",
+            "Sales budget: Starting point - everything flows from sales",
+            "Production = Sales + Ending inv - Beginning inv",
+            "Materials: Similar formula for purchases",
+            "Labor: Production units × hours/unit × rate",
+            "Overhead: Variable (activity-based) + Fixed",
+            "Cash budget: Timing differs from accrual budgets"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Budget Calculations",
+          "knowledgeCheck": {
+            "question": "Budgeted sales are 50,000 units. Beginning inventory is 8,000 units. Desired ending inventory is 10,000 units. How many units should be produced?",
+            "options": [
+              "48,000 units",
+              "50,000 units",
+              "52,000 units",
+              "68,000 units"
+            ],
+            "correctIndex": 2,
+            "explanation": "Production = Sales + Desired Ending Inventory - Beginning Inventory = 50,000 + 10,000 - 8,000 = 52,000 units. The company needs to produce 2,000 more units than it will sell to build inventory.",
+            "hint": "Production = Sales + Ending - Beginning inventory."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-024",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Capital Budgeting Fundamentals",
+    "description": "Understand capital investment decision framework",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Capital budgeting",
+      "Investment decisions",
+      "Project evaluation",
+      "Payback period"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Capital investments determine a company's future! CMAs analyze and recommend major expenditures. Understanding capital budgeting techniques is essential for supporting strategic investment decisions. This topic bridges planning (CMA1) and investment decisions (CMA2)."
+        },
+        {
+          "title": "Capital Budgeting Overview",
+          "type": "text",
+          "content": "**What is Capital Budgeting?**\n• Multi-year investment decisions\n• Large expenditures\n• Long-term commitments\n• Strategic impact\n\n**Types of Projects:**\n• **Expansion:** New capacity, markets\n• **Replacement:** Upgrade existing assets\n• **Compliance:** Meet regulations\n• **R&D:** Innovation and development\n• **Other:** IT systems, acquisitions\n\n**Decision Process:**\n1. Identify projects\n2. Estimate cash flows\n3. Evaluate using techniques\n4. Select projects\n5. Monitor and audit"
+        },
+        {
+          "title": "Capital Budgeting Techniques",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Formula",
+            "Decision Rule"
+          ],
+          "rows": [
+            [
+              "Payback Period",
+              "Initial investment / Annual cash flow",
+              "Accept if ≤ target"
+            ],
+            [
+              "Accounting Rate of Return",
+              "Average income / Average investment",
+              "Accept if ≥ target"
+            ],
+            [
+              "Net Present Value",
+              "PV of inflows - PV of outflows",
+              "Accept if ≥ 0"
+            ],
+            [
+              "Internal Rate of Return",
+              "Rate where NPV = 0",
+              "Accept if ≥ hurdle rate"
+            ],
+            [
+              "Profitability Index",
+              "PV of inflows / PV of outflows",
+              "Accept if ≥ 1.0"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Non-Discounted Methods",
+          "type": "callout",
+          "content": "**Payback Period:**\n\n**Simple Payback = Investment / Annual Cash Flow**\n\n**Example:**\n• Investment: $100,000\n• Annual cash flow: $25,000\n• Payback = $100,000 / $25,000 = 4 years\n\n**Strengths:**\n• Simple, easy to understand\n• Measures liquidity risk\n\n**Weaknesses:**\n• Ignores time value of money\n• Ignores cash flows after payback\n• No link to wealth creation\n\n**Accounting Rate of Return:**\nARR = Average net income / Average investment\nAverage investment = (Initial + Salvage) / 2\n• Uses accounting income (not cash)\n• Simple but misleading"
+        },
+        {
+          "title": "Cash Flow Estimation",
+          "type": "text",
+          "content": "**Relevant Cash Flows:**\n• **Initial:** Purchase, installation, WC increase\n• **Operating:** Revenue - Costs (after-tax)\n• **Terminal:** Salvage, WC recovery, cleanup\n\n**Key Principles:**\n• Use INCREMENTAL cash flows\n• After-tax amounts\n• Ignore sunk costs\n• Include opportunity costs\n• Consider cannibalization\n\n**Depreciation:**\n• Not a cash flow itself\n• But provides tax shield\n• Tax shield = Depreciation × Tax rate"
+        },
+        {
+          "title": "Operating Cash Flow",
+          "type": "text",
+          "content": "**Three Equivalent Methods:**\n\n**Method 1:**\nOCF = (Revenue - Cash costs) × (1-T) + Depreciation × T\n\n**Method 2:**\nOCF = Net income + Depreciation\n\n**Method 3:**\nOCF = (Revenue - Cash costs - Depreciation) × (1-T) + Depreciation\n\n**Example:**\n• Revenue increase: $80,000\n• Cash costs increase: $50,000\n• Depreciation: $10,000\n• Tax rate: 30%\n\n**Method 1:**\nOCF = ($80,000 - $50,000)(0.70) + $10,000(0.30)\n     = $21,000 + $3,000 = $24,000"
+        },
+        {
+          "title": "⚠️ Exam Trap: Sunk Costs and Opportunity Costs",
+          "type": "warning",
+          "content": "**Sunk Costs - IGNORE!**\n• Already spent, can't recover\n• Not relevant to decision\n• Example: Prior R&D costs\n\n**Opportunity Costs - INCLUDE!**\n• Foregone alternatives\n• Relevant to decision\n• Example: Rent on unused space\n\n**Working Capital:**\n• Initial outflow at start\n• Recovery at end of project\n• Often overlooked!\n\n**Cannibalization:**\n• New product taking sales from existing\n• Include as cost\n• Use incremental revenue only"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital budgeting: Long-term investment decisions",
+            "Non-discounted: Payback (liquidity), ARR (simple)",
+            "Discounted: NPV, IRR, PI (preferred methods)",
+            "Use incremental, after-tax cash flows",
+            "Ignore sunk costs, include opportunity costs",
+            "Depreciation provides tax shield = Dep × T",
+            "Working capital: Invest at start, recover at end"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Capital Budgeting",
+          "knowledgeCheck": {
+            "question": "A project costs $200,000 and generates $80,000 annual operating cash flow. What is the payback period?",
+            "options": [
+              "0.4 years",
+              "2.0 years",
+              "2.5 years",
+              "4.0 years"
+            ],
+            "correctIndex": 2,
+            "explanation": "Payback period = Initial investment / Annual cash flow = $200,000 / $80,000 = 2.5 years. This simple method measures how quickly the investment is recovered, but ignores time value of money.",
+            "hint": "Divide initial investment by annual cash flow."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-025",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Zero-Based and Activity-Based Budgeting",
+    "description": "Apply alternative budgeting approaches",
+    "order": 25,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Zero-based budgeting",
+      "Activity-based budgeting",
+      "Budget methodologies",
+      "Cost justification"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional budgeting perpetuates inefficiency! CMAs must know alternative approaches that challenge the status quo and allocate resources more effectively. Zero-based and activity-based budgeting are powerful tools for cost optimization."
+        },
+        {
+          "title": "Traditional vs Zero-Based",
+          "type": "text",
+          "content": "**Traditional (Incremental) Budgeting:**\n• Start with last year's budget\n• Adjust for expected changes\n• 'Last year + X%'\n• Fast but perpetuates waste\n\n**Zero-Based Budgeting (ZBB):**\n• Start from zero each period\n• Justify ALL expenditures\n• No assumption of continuation\n• Thorough but time-consuming\n\n**Key Difference:**\nIncremental asks: 'How much more?'\nZBB asks: 'Why spend anything?'"
+        },
+        {
+          "title": "Budget Approaches",
+          "type": "table",
+          "headers": [
+            "Approach",
+            "Starting Point",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Incremental",
+              "Last period budget",
+              "Stable operations"
+            ],
+            [
+              "Zero-Based",
+              "Zero - justify all",
+              "Cost cutting, new operations"
+            ],
+            [
+              "Activity-Based",
+              "Activities and drivers",
+              "Complex overhead allocation"
+            ],
+            [
+              "Kaizen",
+              "Continuous improvement",
+              "Manufacturing, process focus"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Zero-Based Budgeting",
+          "type": "callout",
+          "content": "**ZBB Process:**\n\n**1. Define Decision Units:**\n• Identify budget centers\n• Usually departments or functions\n\n**2. Create Decision Packages:**\n• Describe activity\n• State purpose and costs\n• Define alternatives\n• Identify different funding levels:\n  - Minimum (bare essential)\n  - Current (maintain)\n  - Incremental (improvements)\n\n**3. Evaluate and Rank:**\n• Prioritize all packages\n• Rank by benefit/importance\n\n**4. Allocate Resources:**\n• Fund from top down\n• Until budget exhausted\n• Low-ranked items cut"
+        },
+        {
+          "title": "Activity-Based Budgeting (ABB)",
+          "type": "text",
+          "content": "**Based on ABC Costing:**\n• Identify activities\n• Determine cost drivers\n• Budget based on expected activity\n\n**Process:**\n1. Forecast production/sales\n2. Determine activities required\n3. Estimate activity levels\n4. Apply cost per activity\n5. Calculate budget\n\n**Example:**\n• Activity: Machine setups\n• Driver: Number of setups\n• Cost per setup: $500\n• Expected setups: 200\n• Budget: 200 × $500 = $100,000\n\n**Benefit:**\nBudget reflects actual workload, not history"
+        },
+        {
+          "title": "ZBB Advantages and Disadvantages",
+          "type": "text",
+          "content": "**Advantages:**\n• Eliminates waste and inefficiency\n• Forces justification\n• Identifies alternatives\n• Better resource allocation\n• Increases accountability\n• Aligns spending with strategy\n\n**Disadvantages:**\n• Very time-consuming\n• Resource-intensive\n• May be confrontational\n• Can discourage long-term thinking\n• Skilled staff needed\n• May not be practical annually\n\n**Practical Application:**\nOften done on rotating basis\nDifferent departments each year"
+        },
+        {
+          "title": "⚠️ Exam Trap: Budget Method Selection",
+          "type": "warning",
+          "content": "**When to Use Each Method:**\n\n**Incremental:**\n• Stable environment\n• Limited resources for budgeting\n• Mature operations\n\n**Zero-Based:**\n• Cost cutting initiatives\n• New organization/restructuring\n• Support functions (admin, IT)\n• When incremental is hiding waste\n\n**Activity-Based:**\n• Complex operations\n• Significant overhead costs\n• Multiple products/services\n• When traditional costing distorts\n\n**Common Exam Questions:**\n• Identify appropriate method for scenario\n• Describe ZBB process\n• Compare advantages/disadvantages\n• Calculate ABB budget"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Incremental: Last year + adjustments (fast but wasteful)",
+            "Zero-based: Start from zero, justify everything",
+            "ZBB creates decision packages ranked by priority",
+            "Activity-based: Budget based on activities and drivers",
+            "ZBB is thorough but time-consuming",
+            "ABB aligns budget with actual work performed",
+            "Choose method based on situation and objectives"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Budgeting Methods",
+          "knowledgeCheck": {
+            "question": "Which budgeting approach requires managers to justify ALL expenditures from zero each period?",
+            "options": [
+              "Incremental budgeting",
+              "Zero-based budgeting",
+              "Activity-based budgeting",
+              "Rolling budgeting"
+            ],
+            "correctIndex": 1,
+            "explanation": "Zero-based budgeting (ZBB) requires starting from a base of zero and justifying every expenditure for each new period. Unlike incremental budgeting that starts with last year's budget, ZBB does not assume any prior spending should continue.",
+            "hint": "Which method starts from 'zero'?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-B-026",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Rolling Forecasts and Continuous Planning",
+    "description": "Implement dynamic forecasting beyond static budgets",
+    "order": 26,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Rolling forecasts",
+      "Continuous planning",
+      "Beyond budgeting",
+      "Driver-based planning"
+    ],
+    "blueprintArea": "CMA1-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Static annual budgets become outdated quickly! Rolling forecasts provide continuous visibility into the future, enabling faster responses to change. Modern CMAs champion agile planning techniques that keep organizations ahead."
+        },
+        {
+          "title": "Limitations of Annual Budgets",
+          "type": "text",
+          "content": "**Traditional Budget Problems:**\n• Outdated within months\n• Gaming behavior (spend it or lose it)\n• Time-consuming to prepare\n• Backward-looking\n• Creates fixed targets that may be irrelevant\n• Discourages risk-taking\n\n**Business Reality:**\n• Markets change rapidly\n• Competition is dynamic\n• Annual cycles are arbitrary\n• Need continuous adaptation"
+        },
+        {
+          "title": "Rolling Forecasts Overview",
+          "type": "text",
+          "content": "**What is a Rolling Forecast?**\n• Continuous projection of future periods\n• Updated regularly (monthly/quarterly)\n• Maintains constant future horizon\n• Always looking 12-18 months ahead\n\n**How It Works:**\n1. Start with base forecast\n2. Each period, drop completed month\n3. Add new month at end\n4. Update assumptions\n5. Always same horizon (e.g., 18 months)\n\n**Example:**\nJanuary: Forecast Feb-Jan (12 months)\nFebruary: Drop Jan, add new Feb (12 months)\nAlways 12 months ahead"
+        },
+        {
+          "title": "Rolling vs Static Budgets",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Static Budget",
+            "Rolling Forecast"
+          ],
+          "rows": [
+            [
+              "Horizon",
+              "Fixed (fiscal year)",
+              "Constant (e.g., 18 months)"
+            ],
+            [
+              "Updates",
+              "Annual",
+              "Monthly/quarterly"
+            ],
+            [
+              "Focus",
+              "Detailed line items",
+              "Key drivers"
+            ],
+            [
+              "Effort",
+              "Intensive once/year",
+              "Lighter, continuous"
+            ],
+            [
+              "Relevance",
+              "Decreases over time",
+              "Stays current"
+            ],
+            [
+              "Mindset",
+              "Fixed target",
+              "Best current estimate"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Driver-Based Planning",
+          "type": "callout",
+          "content": "**Key Concept:**\nFocus on key business drivers, not hundreds of line items\n\n**Examples of Drivers:**\n• Units sold\n• Customers acquired\n• Headcount\n• Price per unit\n• Capacity utilization\n\n**Benefits:**\n• Faster to update\n• Easier to understand\n• Better for scenarios\n• Links strategy to operations\n\n**Memory:**\n'5%' rule - Focus on the 5% of items that drive 95% of results\n\nChange the driver, model cascades through forecast"
+        },
+        {
+          "title": "Implementation Best Practices",
+          "type": "text",
+          "content": "**Success Factors:**\n• Start simple (5-10 key drivers)\n• Technology support (planning tools)\n• Clear ownership and process\n• Regular cadence (monthly or quarterly)\n• Executive sponsorship\n\n**Common Pitfalls:**\n• Too much detail (defeats purpose)\n• Lack of accountability\n• Using forecast for performance evaluation\n• Not updating assumptions\n\n**Beyond Budgeting:**\n• Movement to eliminate traditional budgets entirely\n• Replace with rolling forecasts\n• More adaptive management model"
+        },
+        {
+          "title": "⚠️ Exam Trap: Forecast vs Budget",
+          "type": "warning",
+          "content": "**Important Distinction:**\n\n**Budget:**\n• A TARGET to achieve\n• Used for performance evaluation\n• Often fixed\n• May build in stretch goals\n\n**Forecast:**\n• A PREDICTION of outcomes\n• Best current estimate\n• Updated as conditions change\n• Should be realistic, not aspirational\n\n**Why It Matters:**\nIf forecasts are used for evaluation, managers will game them (sandbag)\n\n**Best Practice:**\nSeparate target-setting from forecasting\nForecast should be 'most likely' not 'what I want'"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Rolling forecasts maintain constant future horizon",
+            "Updated continuously (monthly/quarterly)",
+            "Focus on key drivers, not detailed line items",
+            "More responsive than static annual budgets",
+            "Forecasts predict; budgets target",
+            "Driver-based planning simplifies updates",
+            "Technology and executive support are critical"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Rolling Forecasts",
+          "knowledgeCheck": {
+            "question": "A company maintains an 18-month rolling forecast updated monthly. After completing February, what happens to the forecast?",
+            "options": [
+              "Nothing until fiscal year end",
+              "February drops off, and a new month is added at the end",
+              "The entire forecast is rebuilt from scratch",
+              "February data replaces the original budget"
+            ],
+            "correctIndex": 1,
+            "explanation": "In a rolling forecast, after each period ends, it drops off the forecast and a new period is added to maintain the constant horizon. If it's 18 months, after February actuals are recorded, February drops off and August of the following year is added to maintain 18 months visibility.",
+            "hint": "Rolling forecasts maintain a constant forward-looking horizon."
+          }
+        }
+      ]
+    }
   }
 ]

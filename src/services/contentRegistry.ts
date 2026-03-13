@@ -85,7 +85,7 @@ export const TIME_CONSTANTS = {
   // Flashcard timing (minutes per card)
   flashcard: {
     perCard: 0.3,             // 18 seconds per card
-    reviewSessions: 4,        // Average sessions for retention
+    reviewSessions: 3,        // Spaced repetition is efficient
   },
   
   // Case Study timing (CFP)
@@ -108,16 +108,20 @@ export const TIME_CONSTANTS = {
   },
   
   // Adaptive learning factors
+  // VoraPrep's adaptive engine is efficient - students master faster with:
+  // - Targeted practice (skip what you know)
+  // - Clear explanations (understand on first try)
+  // - Spaced repetition (retain without grinding)
   adaptive: {
     // What percentage of MCQs does a typical student need to see?
-    mcqCoverageNone: 0.85,    // New students: see 85%
-    mcqCoverageSome: 0.70,    // Some experience: see 70%
-    mcqCoverageRetake: 0.50,  // Retakers: focus on weak areas, see 50%
+    mcqCoverageNone: 0.75,    // New students: see 75% (adaptive skips easy ones)
+    mcqCoverageSome: 0.55,    // Some experience: see 55% (focus on gaps)
+    mcqCoverageRetake: 0.40,  // Retakers: focus on weak areas, see 40%
     
     // Average passes through content (weighted)
-    passesNone: 1.8,          // Almost 2 full passes
-    passesSome: 1.5,          // 1.5 passes
-    passesRetake: 1.2,        // Quick review pass
+    passesNone: 1.5,          // 1.5 passes with good explanations
+    passesSome: 1.25,         // Efficient review
+    passesRetake: 1.1,        // Quick targeted review
   },
 };
 
@@ -134,12 +138,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'FAR',
     sectionName: 'Financial Accounting and Reporting',
     counts: {
-      lessons: 92,
-      lessonMinutes: 4750,
-      mcqs: 1506,
+      lessons: 110,
+      lessonMinutes: 5660,
+      mcqs: 1658,
       tbs: 48,
       simulations: 0,
-      flashcards: 135,
+      flashcards: 199,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'tbs', 'flashcard', 'mockExam'],
@@ -304,8 +308,8 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CMA1',
     sectionName: 'Financial Planning, Performance, and Analytics',
     counts: {
-      lessons: 61,
-      lessonMinutes: 2995,
+      lessons: 157,
+      lessonMinutes: 7470,
       mcqs: 1280,
       tbs: 0,
       simulations: 0,
@@ -322,8 +326,8 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CMA2',
     sectionName: 'Strategic Financial Management',
     counts: {
-      lessons: 53,
-      lessonMinutes: 2625,
+      lessons: 162,
+      lessonMinutes: 7570,
       mcqs: 1248,
       tbs: 0,
       simulations: 0,
@@ -344,12 +348,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CIA1',
     sectionName: 'Essentials of Internal Auditing',
     counts: {
-      lessons: 45,
-      lessonMinutes: 1695,
-      mcqs: 735,
+      lessons: 100,
+      lessonMinutes: 3969,
+      mcqs: 1779,
       tbs: 0,
       simulations: 0,
-      flashcards: 188,
+      flashcards: 594,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -362,12 +366,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CIA2',
     sectionName: 'Practice of Internal Auditing',
     counts: {
-      lessons: 45,
-      lessonMinutes: 1740,
-      mcqs: 713,
+      lessons: 93,
+      lessonMinutes: 3729,
+      mcqs: 1606,
       tbs: 0,
       simulations: 0,
-      flashcards: 181,
+      flashcards: 555,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -380,12 +384,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CIA3',
     sectionName: 'Business Knowledge for Internal Auditing',
     counts: {
-      lessons: 50,
-      lessonMinutes: 1980,
-      mcqs: 764,
+      lessons: 80,
+      lessonMinutes: 3183,
+      mcqs: 1637,
       tbs: 0,
       simulations: 0,
-      flashcards: 172,
+      flashcards: 523,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -402,12 +406,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA1',
     sectionName: 'Information Systems Auditing Process',
     counts: {
-      lessons: 25,
-      lessonMinutes: 1190,
-      mcqs: 291,
+      lessons: 33,
+      lessonMinutes: 1530,
+      mcqs: 450,
       tbs: 0,
       simulations: 0,
-      flashcards: 107,
+      flashcards: 173,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -420,12 +424,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA2',
     sectionName: 'Governance and Management of IT',
     counts: {
-      lessons: 18,
-      lessonMinutes: 825,
-      mcqs: 286,
+      lessons: 24,
+      lessonMinutes: 1075,
+      mcqs: 408,
       tbs: 0,
       simulations: 0,
-      flashcards: 99,
+      flashcards: 149,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -438,12 +442,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA3',
     sectionName: 'Information Systems Acquisition, Development, and Implementation',
     counts: {
-      lessons: 20,
-      lessonMinutes: 935,
-      mcqs: 280,
+      lessons: 27,
+      lessonMinutes: 1215,
+      mcqs: 417,
       tbs: 0,
       simulations: 0,
-      flashcards: 91,
+      flashcards: 151,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -456,12 +460,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA4',
     sectionName: 'Information Systems Operations and Business Resilience',
     counts: {
-      lessons: 22,
-      lessonMinutes: 1075,
-      mcqs: 305,
+      lessons: 31,
+      lessonMinutes: 1425,
+      mcqs: 457,
       tbs: 0,
       simulations: 0,
-      flashcards: 96,
+      flashcards: 156,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -474,12 +478,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA5',
     sectionName: 'Protection of Information Assets',
     counts: {
-      lessons: 24,
-      lessonMinutes: 1195,
-      mcqs: 358,
+      lessons: 34,
+      lessonMinutes: 1555,
+      mcqs: 546,
       tbs: 0,
       simulations: 0,
-      flashcards: 128,
+      flashcards: 206,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -496,12 +500,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-GEN',
     sectionName: 'General Financial Planning Principles',
     counts: {
-      lessons: 18,  // From gen-* files
-      lessonMinutes: 805,
-      mcqs: 305,
+      lessons: 32,
+      lessonMinutes: 1340,
+      mcqs: 549,
       tbs: 0,
       simulations: 0,
-      flashcards: 100,
+      flashcards: 204,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -514,12 +518,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-PSY',
     sectionName: 'Psychology of Financial Planning',
     counts: {
-      lessons: 10,
-      lessonMinutes: 435,
-      mcqs: 183,
+      lessons: 17,
+      lessonMinutes: 715,
+      mcqs: 297,
       tbs: 0,
       simulations: 0,
-      flashcards: 50,
+      flashcards: 98,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -532,12 +536,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-INV',
     sectionName: 'Investment Planning',
     counts: {
-      lessons: 12,
-      lessonMinutes: 605,
-      mcqs: 337,
+      lessons: 27,
+      lessonMinutes: 1140,
+      mcqs: 613,
       tbs: 0,
       simulations: 0,
-      flashcards: 100,
+      flashcards: 220,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -550,12 +554,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-RISK',
     sectionName: 'Risk Management and Insurance Planning',
     counts: {
-      lessons: 14,
-      lessonMinutes: 420,
-      mcqs: 322,
+      lessons: 24,
+      lessonMinutes: 790,
+      mcqs: 500,
       tbs: 0,
       simulations: 0,
-      flashcards: 90,
+      flashcards: 168,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -568,12 +572,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-TAX',
     sectionName: 'Tax Planning',
     counts: {
-      lessons: 12,
-      lessonMinutes: 535,
-      mcqs: 337,
+      lessons: 25,
+      lessonMinutes: 1025,
+      mcqs: 564,
       tbs: 0,
       simulations: 0,
-      flashcards: 100,
+      flashcards: 199,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -586,12 +590,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-RET',
     sectionName: 'Retirement Savings and Income Planning',
     counts: {
-      lessons: 25,
-      lessonMinutes: 1240,
-      mcqs: 349,
+      lessons: 41,
+      lessonMinutes: 1810,
+      mcqs: 641,
       tbs: 0,
       simulations: 0,
-      flashcards: 120,
+      flashcards: 248,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -604,12 +608,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-EST',
     sectionName: 'Estate Planning',
     counts: {
-      lessons: 16,
-      lessonMinutes: 620,
-      mcqs: 279,
+      lessons: 25,
+      lessonMinutes: 945,
+      mcqs: 441,
       tbs: 0,
       simulations: 0,
-      flashcards: 90,
+      flashcards: 162,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -622,12 +626,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CFP-PCR',
     sectionName: 'Professional Conduct and Regulation',
     counts: {
-      lessons: 12,
-      lessonMinutes: 360,
-      mcqs: 256,
+      lessons: 19,
+      lessonMinutes: 630,
+      mcqs: 386,
       tbs: 0,
       simulations: 0,
-      flashcards: 67,
+      flashcards: 122,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -646,12 +650,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     sectionName: 'CISA Full Exam (All 5 Domains)',
     counts: {
       // Aggregated from CISA1-5
-      lessons: 25 + 18 + 20 + 22 + 24,               // 109 total
-      lessonMinutes: 1190 + 825 + 935 + 1075 + 1195,  // 5220 total
-      mcqs: 291 + 286 + 280 + 305 + 358,             // 1520 total
+      lessons: 33 + 24 + 27 + 31 + 34,               // 149 total
+      lessonMinutes: 1530 + 1075 + 1215 + 1425 + 1555,  // 6800 total
+      mcqs: 450 + 408 + 417 + 457 + 546,             // 2278 total
       tbs: 0,
       simulations: 0,
-      flashcards: 107 + 99 + 91 + 96 + 128,           // 521 total
+      flashcards: 173 + 149 + 151 + 156 + 206,           // 835 total
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -667,12 +671,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     sectionName: 'CFP Full Exam (All 8 Domains)',
     counts: {
       // Aggregated from all CFP sections
-      lessons: 18 + 10 + 12 + 14 + 12 + 25 + 16 + 12,   // 119 total
-      lessonMinutes: 805 + 435 + 605 + 420 + 535 + 1240 + 620 + 360, // 5020 total
-      mcqs: 305 + 183 + 337 + 322 + 337 + 349 + 279 + 256, // 2368 total
+      lessons: 32 + 17 + 27 + 24 + 25 + 41 + 25 + 19,   // 210 total
+      lessonMinutes: 1340 + 715 + 1140 + 790 + 1025 + 1810 + 945 + 630, // 8395 total
+      mcqs: 549 + 297 + 613 + 500 + 564 + 641 + 441 + 386, // 3991 total
       tbs: 0,
       simulations: 0,
-      flashcards: 100 + 50 + 100 + 90 + 100 + 120 + 90 + 67,  // 717 total
+      flashcards: 204 + 98 + 220 + 168 + 199 + 248 + 162 + 122,  // 1421 total
       caseStudies: 6 + 6 + 7 + 7 + 6 + 7 + 6 + 7,            // 52 total
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -707,7 +711,7 @@ const EXAM_CONFIGS: Record<CourseId, ExamContentInfo> = {
     courseId: 'cma',
     examName: 'Certified Management Accountant',
     sections: ['CMA1', 'CMA2'],
-    totalContentTime: 5620,  // 2995 + 2625
+    totalContentTime: 15040,  // 7470 + 7570
     industryTotalHours: { min: 280, max: 340 },
     studyPlanMode: 'per-section',  // Each part is a separate exam
   },
@@ -715,7 +719,7 @@ const EXAM_CONFIGS: Record<CourseId, ExamContentInfo> = {
     courseId: 'cia',
     examName: 'Certified Internal Auditor',
     sections: ['CIA1', 'CIA2', 'CIA3'],
-    totalContentTime: 5415,  // 1695 + 1740 + 1980
+    totalContentTime: 12646,  // 4514 + 4164 + 3968
     industryTotalHours: { min: 240, max: 360 },
     studyPlanMode: 'per-section',  // Each part is a separate exam
   },
@@ -723,7 +727,7 @@ const EXAM_CONFIGS: Record<CourseId, ExamContentInfo> = {
     courseId: 'cisa',
     examName: 'Certified Information Systems Auditor',
     sections: ['CISA1', 'CISA2', 'CISA3', 'CISA4', 'CISA5'],
-    totalContentTime: 5220,
+    totalContentTime: 6800,
     industryTotalHours: { min: 150, max: 200 },
     studyPlanMode: 'full-exam',    // ONE exam covering all 5 domains
   },
@@ -731,7 +735,7 @@ const EXAM_CONFIGS: Record<CourseId, ExamContentInfo> = {
     courseId: 'cfp',
     examName: 'Certified Financial Planner',
     sections: ['CFP-GEN', 'CFP-PSY', 'CFP-INV', 'CFP-RISK', 'CFP-TAX', 'CFP-RET', 'CFP-EST', 'CFP-PCR'],
-    totalContentTime: 5020,
+    totalContentTime: 8395,
     industryTotalHours: { min: 250, max: 300 },
     studyPlanMode: 'full-exam',    // ONE exam covering all 8 domains
   },
@@ -778,7 +782,17 @@ export function getExamSections(courseId: CourseId): string[] {
 }
 
 /**
- * Calculate estimated study hours for a section based on actual content
+ * Calculate estimated study hours for a section based on ACTUAL content.
+ * 
+ * This is an HONEST bottom-up calculation:
+ * - Lessons: actual lesson minutes × experience multiplier
+ * - MCQs: target coverage × passes × time per question
+ * - TBS: actual count × time per simulation
+ * - Flashcards: actual count × time × review sessions
+ * - Mock exams: 2 × (exam + review time)
+ * 
+ * If this number differs significantly from industry benchmarks, we need to
+ * discuss adding or removing content - NOT fudge the numbers.
  */
 export function calculateSectionStudyHours(
   section: string,
@@ -809,29 +823,29 @@ export function calculateSectionStudyHours(
   const adaptiveCoverage = tc.adaptive[`mcqCoverage${experience.charAt(0).toUpperCase() + experience.slice(1)}` as keyof typeof tc.adaptive] as number;
   const passes = tc.adaptive[`passes${experience.charAt(0).toUpperCase() + experience.slice(1)}` as keyof typeof tc.adaptive] as number;
   
-  // Calculate time for each content type
+  // LESSONS: actual lesson minutes × experience multiplier
   const lessonMinutes = content.counts.lessonMinutes * expMult;
   const lessonHours = lessonMinutes / 60;
   
-  // MCQ time: coverage% of questions × passes × weighted time per question
+  // MCQs: coverage% of questions × passes × weighted time per question
   const avgMcqTime = (tc.mcq.firstAttempt + tc.mcq.reviewAttempt * (passes - 1)) / passes;
   const mcqMinutes = content.counts.mcqs * adaptiveCoverage * avgMcqTime * passes;
   const mcqHours = mcqMinutes / 60;
   
-  // TBS time
+  // TBS: actual count × average time × passes (capped at 2)
   const avgTbsTime = (tc.tbs.firstAttempt + tc.tbs.reviewAttempt) / 2;
   const tbsMinutes = content.counts.tbs * avgTbsTime * Math.min(passes, 2);
   const tbsHours = tbsMinutes / 60;
   
-  // Flashcard time
+  // FLASHCARDS: actual count × time per card × review sessions
   const flashcardMinutes = content.counts.flashcards * tc.flashcard.perCard * tc.flashcard.reviewSessions;
   const flashcardHours = flashcardMinutes / 60;
   
-  // Case study time (CFP)
+  // CASE STUDIES (CFP): actual count × average time
   const caseStudyMinutes = content.counts.caseStudies * (tc.caseStudy.firstAttempt + tc.caseStudy.reviewAttempt) / 2;
   const caseStudyHours = caseStudyMinutes / 60;
   
-  // Mock exams (2 recommended)
+  // MOCK EXAMS: 2 full exams with review
   const mockExamMinutes = 2 * (tc.mockExam.duration + tc.mockExam.reviewTime);
   const mockExamHours = mockExamMinutes / 60;
   
@@ -849,8 +863,8 @@ export function calculateSectionStudyHours(
     },
     assumptions: [
       `Experience: ${experience} (${Math.round(expMult * 100)}% lesson time, ${Math.round(adaptiveCoverage * 100)}% MCQ coverage)`,
-      `Lessons: ${content.counts.lessons} @ ${(content.counts.lessonMinutes / content.counts.lessons).toFixed(0)} min avg`,
-      `MCQs: ${content.counts.mcqs} × ${adaptiveCoverage} coverage × ${passes} passes`,
+      `Lessons: ${content.counts.lessons} @ ${Math.round(content.counts.lessonMinutes / content.counts.lessons)} min avg`,
+      `MCQs: ${content.counts.mcqs} × ${Math.round(adaptiveCoverage * 100)}% coverage × ${passes} passes`,
       `TBS: ${content.counts.tbs} simulations`,
       `Flashcards: ${content.counts.flashcards} cards × ${tc.flashcard.reviewSessions} sessions`,
       `Mock exams: 2 × ${tc.mockExam.duration + tc.mockExam.reviewTime} min`,

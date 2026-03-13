@@ -1642,5 +1642,2302 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA2-A-011",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Industry and Competitive Analysis",
+    "description": "Apply financial statement analysis techniques to assess competitive position and industry trends",
+    "order": 11,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Industry analysis",
+      "Competitive benchmarking",
+      "Peer comparison",
+      "Trend analysis"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Numbers in isolation are meaningless! CMAs must compare financial performance to industry peers and competitors to assess relative strength. Industry analysis reveals whether performance is company-specific or driven by broader market forces."
+        },
+        {
+          "title": "Context Is Everything",
+          "type": "text",
+          "content": "**The Same Ratio Tells Different Stories:**\n\nNet Profit Margin = 5%\n• Grocery retail: Excellent (industry avg 2-3%)\n• Software company: Poor (industry avg 20%+)\n• Pharmaceutical: Below average (industry avg 15%)\n\n**Always Compare To:**\n• Industry averages\n• Direct competitors\n• Company's own history (trends)\n• Management targets/guidance"
+        },
+        {
+          "title": "Sources of Industry Data",
+          "type": "table",
+          "headers": [
+            "Source",
+            "What It Provides",
+            "Considerations"
+          ],
+          "rows": [
+            [
+              "Risk Management Association (RMA)",
+              "Industry ratios by NAICS code",
+              "Annual Statement Studies"
+            ],
+            [
+              "Dun & Bradstreet",
+              "Industry norms and key business ratios",
+              "Segmented by company size"
+            ],
+            [
+              "SEC Filings",
+              "Peer company financials (public companies)",
+              "10-K, 10-Q, proxy statements"
+            ],
+            [
+              "Industry Associations",
+              "Specialized metrics for specific industries",
+              "Varies by industry"
+            ],
+            [
+              "Bloomberg/Reuters",
+              "Real-time comparable company analysis",
+              "Subscription required"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Analysis Framework",
+          "type": "callout",
+          "content": "**\"ITCH\" - Four dimensions of comparison:**\n\n**I**ndustry - How does the industry perform overall?\n**T**rend - How has performance changed over time?\n**C**ompetitors - How do we compare to direct rivals?\n**H**istory - How do we compare to our own past?\n\nAlways analyze all four dimensions!"
+        },
+        {
+          "title": "Cross-Sectional Analysis",
+          "type": "text",
+          "content": "**Definition:** Comparing ratios across companies at the same point in time\n\n**Steps:**\n1. Identify peer group (same industry, similar size)\n2. Calculate key ratios for all peers\n3. Rank performance and identify outliers\n4. Investigate drivers of differences\n\n**Peer Selection Criteria:**\n• Same industry (NAICS/SIC code)\n• Similar size (revenue, assets, market cap)\n• Similar business model\n• Same geographic markets\n\n**Caution:** Different accounting policies can distort comparisons"
+        },
+        {
+          "title": "Time-Series (Trend) Analysis",
+          "type": "text",
+          "content": "**Definition:** Tracking ratios over multiple periods to identify patterns\n\n**What Trends Reveal:**\n• Improving or deteriorating performance\n• Cyclical patterns\n• Impact of strategic initiatives\n• Effects of external events\n\n**Trend Calculation:**\nPercentage Change = (Current - Prior) / Prior × 100\n\n**Example:**\nROE: 12% → 14% → 15% → 18%\nPositive trend indicates improving profitability\n\n**Caution:** Past trends don't guarantee future performance"
+        },
+        {
+          "title": "⚠️ Exam Trap: Comparability Issues",
+          "type": "warning",
+          "content": "**Factors that distort peer comparisons:**\n\n**Accounting Differences:**\n• LIFO vs. FIFO inventory\n• Operating vs. finance lease treatment\n• Revenue recognition timing\n• Depreciation methods\n\n**Business Differences:**\n• Product mix variations\n• Vertical integration levels\n• Geographic diversification\n• Fiscal year-end timing\n\n**Solution:** Adjust for material differences before comparing"
+        },
+        {
+          "title": "Industry Life Cycle Analysis",
+          "type": "table",
+          "headers": [
+            "Stage",
+            "Growth Rate",
+            "Financial Characteristics"
+          ],
+          "rows": [
+            [
+              "Introduction",
+              "Low but rising",
+              "Negative profits, high investment, negative FCF"
+            ],
+            [
+              "Growth",
+              "High",
+              "Rising profits, reinvestment, low dividends"
+            ],
+            [
+              "Maturity",
+              "Stable/Slowing",
+              "Peak profits, strong FCF, higher dividends"
+            ],
+            [
+              "Decline",
+              "Negative",
+              "Declining revenue, cost cutting, harvesting assets"
+            ]
+          ]
+        },
+        {
+          "title": "Common-Size Analysis for Comparison",
+          "type": "text",
+          "content": "**Common-Size Income Statement:**\nEvery line item as % of Revenue\n\n**Example Comparison:**\n                    CompanyA    CompanyB    Industry\nGross Margin         45%         38%         40%\nOperating Margin     20%         12%         15%\nNet Margin           12%         6%          9%\n\n**Analysis:** Company A outperforms on all margins\nCompany B lags industry — investigate cost structure\n\n**Common-Size Balance Sheet:**\nEvery line item as % of Total Assets\n\nReveals asset intensity, leverage, liquidity differences"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Financial ratios require context - compare to industry, competitors, and trends",
+            "Same ratio value can be good or bad depending on industry",
+            "Cross-sectional analysis compares peers at same point in time",
+            "Time-series analysis tracks trends over multiple periods",
+            "Watch for comparability issues from accounting and business differences",
+            "Industry life cycle affects expected financial characteristics",
+            "Common-size statements facilitate comparison across different-sized companies"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Industry Context",
+          "knowledgeCheck": {
+            "question": "A retail company has an inventory turnover of 8 times, while a software company has inventory turnover of 2 times. Which statement is MOST accurate?",
+            "options": [
+              "The retail company is more efficient because it has higher turnover",
+              "The software company should improve its inventory management",
+              "Direct comparison is inappropriate due to different business models",
+              "Both companies are performing at industry-average levels"
+            ],
+            "correctIndex": 2,
+            "explanation": "Retail companies typically have high inventory turnover due to the nature of their business (selling physical goods). Software companies may have minimal inventory (if any). Comparing inventory turnover across different industries is not meaningful.",
+            "hint": "Consider the business model differences between retail and software."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Trend Analysis",
+          "knowledgeCheck": {
+            "question": "A company's ROE has declined from 18% to 15% to 12% over three years, while the industry average ROE has remained stable at 14%. What is the BEST interpretation?",
+            "options": [
+              "The company is still outperforming the industry",
+              "The deteriorating trend is concerning despite currently matching industry average",
+              "The decline is not significant since ROE is still positive",
+              "Industry factors are causing the decline"
+            ],
+            "correctIndex": 1,
+            "explanation": "While the current 12% ROE is close to the 14% industry average, the clear downward TREND is concerning. The company went from outperforming to underperforming. Management should investigate the cause before the situation worsens.",
+            "hint": "Focus on the direction and speed of change, not just the current level."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Comparability Adjustments",
+          "reveal": {
+            "question": "What adjustments might an analyst make before comparing two companies in the same industry?",
+            "answer": "Common adjustments include: (1) Converting LIFO to FIFO for inventory, (2) Capitalizing operating leases for leverage comparisons, (3) Adjusting for one-time or non-recurring items, (4) Standardizing pension assumptions, (5) Adjusting for different fiscal year-ends, and (6) Removing the effects of stock-based compensation."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-012",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "SWOT Analysis for Strategic Planning",
+    "description": "Master the SWOT framework for assessing strategic position and formulating strategy",
+    "order": 12,
+    "duration": 40,
+    "difficulty": "foundational",
+    "topics": [
+      "SWOT analysis",
+      "Strategic assessment",
+      "Internal analysis",
+      "External analysis"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Strategic analysis isn't just for strategists! CMAs provide the data and financial perspective that makes SWOT analysis meaningful. Understanding strengths, weaknesses, opportunities, and threats helps CMAs align financial planning with strategic realities."
+        },
+        {
+          "title": "The SWOT Framework",
+          "type": "table",
+          "headers": [
+            "",
+            "Helpful",
+            "Harmful"
+          ],
+          "rows": [
+            [
+              "Internal",
+              "STRENGTHS - What we do well",
+              "WEAKNESSES - Where we fall short"
+            ],
+            [
+              "External",
+              "OPPORTUNITIES - Favorable trends",
+              "THREATS - External dangers"
+            ]
+          ]
+        },
+        {
+          "title": "Internal Factors (S & W)",
+          "type": "text",
+          "content": "**Strengths - Internal Positives:**\n• Strong brand recognition\n• Low-cost production\n• Skilled workforce\n• Strong balance sheet\n• Proprietary technology\n• Customer loyalty\n\n**Weaknesses - Internal Negatives:**\n• High employee turnover\n• Outdated technology\n• Limited distribution\n• Weak cash position\n• Lack of scale\n• Poor product quality\n\n**Key:** These are things you can CONTROL"
+        },
+        {
+          "title": "External Factors (O & T)",
+          "type": "text",
+          "content": "**Opportunities - External Positives:**\n• Growing market demand\n• Competitor weakness\n• Favorable regulations\n• New technology\n• Market expansion\n• Partnership possibilities\n\n**Threats - External Negatives:**\n• New competitors\n• Economic downturn\n• Regulatory changes\n• Changing customer preferences\n• Supply chain disruption\n• Technology disruption\n\n**Key:** These are things you CANNOT control"
+        },
+        {
+          "title": "🧠 Memory Aid: SWOT Categories",
+          "type": "callout",
+          "content": "**S/W = Self (Internal)**\nWhat are WE good or bad at?\nCan be changed with effort\n\n**O/T = Outside (External)**\nWhat's happening around us?\nMust respond and adapt\n\n**Simple test:**\n\"Can we directly change this?\"\nYes → Internal (S or W)\nNo → External (O or T)"
+        },
+        {
+          "title": "Using SWOT for Strategy",
+          "type": "table",
+          "headers": [
+            "Combination",
+            "Strategy Type",
+            "Example"
+          ],
+          "rows": [
+            [
+              "S + O",
+              "AGGRESSIVE - Use strengths to capture opportunities",
+              "Use brand strength to enter new market"
+            ],
+            [
+              "W + O",
+              "TURNAROUND - Fix weaknesses to capture opportunities",
+              "Upgrade technology to meet new demand"
+            ],
+            [
+              "S + T",
+              "DIVERSIFICATION - Use strengths to counter threats",
+              "Use cash to acquire competitor"
+            ],
+            [
+              "W + T",
+              "DEFENSIVE - Minimize weaknesses and avoid threats",
+              "Divest weak division before downturn"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: SWOT Pitfalls",
+          "type": "warning",
+          "content": "**Common SWOT Mistakes:**\n\n**1. Too Vague**\n✘ \"Good people\"\n✔ \"Industry-low employee turnover of 5%\"\n\n**2. Wrong Category**\n✘ \"Strong economy\" as Strength\n✔ \"Strong economy\" is Opportunity (external)\n\n**3. Opinion vs Fact**\nBase on data and evidence, not assumptions\n\n**4. Ignoring Connections**\nUse SWOT combinations to generate strategies\n\n**5. Static Analysis**\nSWOT should be updated regularly"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "SWOT divides factors into Internal (S/W) and External (O/T)",
+            "Helpful factors are Strengths and Opportunities",
+            "Harmful factors are Weaknesses and Threats",
+            "Internal factors can be controlled; external factors require adaptation",
+            "Combine SWOT quadrants to generate strategies",
+            "Be specific and evidence-based, not vague",
+            "Update SWOT regularly as conditions change"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SWOT Classification",
+          "knowledgeCheck": {
+            "question": "A company identifies that a major competitor is facing financial difficulties and may exit the market. How should this be classified in a SWOT analysis?",
+            "options": [
+              "Strength - Company is outperforming competitor",
+              "Weakness - Company may lose benchmark for comparison",
+              "Opportunity - Potential to gain competitor's market share",
+              "Threat - Market instability from competitor exit"
+            ],
+            "correctIndex": 2,
+            "explanation": "A competitor's potential exit is an external factor (can't control it) that could benefit the company (potential to gain market share), making it an Opportunity. While competitor exit could also be a Threat in some contexts, gaining market share is the positive opportunity.",
+            "hint": "Is this internal or external? Is it helpful or harmful to the company?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-013",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Value Chain Analysis",
+    "description": "Identify competitive advantage through systematic analysis of business activities",
+    "order": 13,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Value chain",
+      "Primary activities",
+      "Support activities",
+      "Competitive advantage"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Michael Porter's Value Chain framework helps CMAs understand where and how the company creates value. By analyzing each activity's costs and contributions, CMAs can identify opportunities for cost reduction, differentiation, and competitive advantage."
+        },
+        {
+          "title": "Value Chain Concept",
+          "type": "text",
+          "content": "**Definition:** A company is a collection of activities that create value for customers\n\n**Key Insight:**\n• Value = What customers are willing to pay\n• Margin = Value - Cost of activities\n\n**Two Types of Activities:**\n\n**Primary Activities:**\nDirectly involved in creating/delivering product\n\n**Support Activities:**\nEnable primary activities to function\n\n**Goal:** Perform activities better or differently than competitors"
+        },
+        {
+          "title": "Primary Activities",
+          "type": "table",
+          "headers": [
+            "Activity",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Inbound Logistics",
+              "Receiving, storing, distributing inputs",
+              "Warehouse management, inventory control"
+            ],
+            [
+              "Operations",
+              "Transforming inputs into final product",
+              "Manufacturing, assembly, packaging"
+            ],
+            [
+              "Outbound Logistics",
+              "Collecting, storing, distributing to buyers",
+              "Order fulfillment, shipping"
+            ],
+            [
+              "Marketing & Sales",
+              "Inducing buyers to purchase",
+              "Advertising, pricing, channel management"
+            ],
+            [
+              "Service",
+              "Enhancing or maintaining product value",
+              "Installation, repair, customer support"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Primary Activities",
+          "type": "callout",
+          "content": "**\"IOOMS\" - The flow of product:**\n\n**I**nbound logistics (materials come in)\n**O**perations (transform into product)\n**O**utbound logistics (product goes out)\n**M**arketing & Sales (get customers)\n**S**ervice (support after sale)\n\nThink: IN → MAKE → OUT → SELL → SUPPORT"
+        },
+        {
+          "title": "Support Activities",
+          "type": "text",
+          "content": "**Firm Infrastructure:**\n• General management, planning, finance\n• Legal, government affairs\n• Supports entire chain\n\n**Human Resource Management:**\n• Recruiting, training, compensation\n• Affects all primary activities\n\n**Technology Development:**\n• R&D, process improvement\n• Product and process technology\n\n**Procurement:**\n• Purchasing inputs for all activities\n• Not just materials - also equipment, services"
+        },
+        {
+          "title": "Using Value Chain for Cost Advantage",
+          "type": "text",
+          "content": "**Steps:**\n\n**1. Identify Value Activities**\n• Map all activities\n• Separate discrete activities\n\n**2. Assign Costs**\n• Activity-based costing approach\n• Identify cost drivers\n\n**3. Analyze Cost Behavior**\n• What drives cost in each activity?\n• Economies of scale? Learning curve?\n\n**4. Identify Linkages**\n• How do activities affect each other?\n• Trade-offs between activities\n\n**5. Find Improvement Opportunities**\n• Reduce costs without reducing value\n• Or add value worth more than cost"
+        },
+        {
+          "title": "⚠️ Exam Trap: Linkages Between Activities",
+          "type": "warning",
+          "content": "**Activities are interconnected!**\n\n**Example: Quality at Operations**\n• Higher quality increases operations cost\n• BUT reduces service costs (fewer repairs)\n• AND improves marketing (better reputation)\n\n**Trade-off Analysis:**\n• Can’t optimize each activity in isolation\n• Must consider system-wide effects\n\n**Upstream/Downstream Linkages:**\n• Supplier quality affects your operations\n• Your product design affects customer's costs\n\n**Key Point:** Competitive advantage often comes from managing linkages better than competitors."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Value chain shows all activities that create customer value",
+            "Primary activities: Inbound → Operations → Outbound → Marketing → Service",
+            "Support activities: Infrastructure, HR, Technology, Procurement",
+            "Margin = Value created - Cost of activities",
+            "Analyze costs and value contribution of each activity",
+            "Linkages between activities can be source of competitive advantage",
+            "Use with ABC to understand true activity costs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Value Chain Classification",
+          "knowledgeCheck": {
+            "question": "In Porter's Value Chain framework, which of the following would be classified as a support activity rather than a primary activity?",
+            "options": [
+              "Shipping products to customers",
+              "Manufacturing and assembly",
+              "Employee training and development",
+              "Advertising and promotion"
+            ],
+            "correctIndex": 2,
+            "explanation": "Employee training and development is part of Human Resource Management, which is a support activity that enables all primary activities. Shipping is Outbound Logistics, Manufacturing is Operations, and Advertising is Marketing & Sales - all primary activities.",
+            "hint": "Support activities enable primary activities; they don't directly produce or deliver the product."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-014",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Competitive Intelligence and Market Analysis",
+    "description": "Gather and analyze competitive information to support strategic decisions",
+    "order": 14,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Competitive intelligence",
+      "Market analysis",
+      "Benchmarking",
+      "Strategic planning"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "You can't make good strategic decisions in a vacuum! CMAs need to understand competitors' cost structures, pricing strategies, and market positions. Competitive intelligence turns external data into actionable insights for budgeting, pricing, and strategic planning."
+        },
+        {
+          "title": "Competitive Intelligence Framework",
+          "type": "text",
+          "content": "**Definition:** Systematic gathering and analysis of information about competitors and the competitive environment\n\n**Key Questions to Answer:**\n• Who are our competitors?\n• What are their strategies?\n• What are their strengths/weaknesses?\n• How do their costs compare to ours?\n• What are they likely to do next?\n\n**Ethical Boundaries:**\n• Use publicly available information\n• Never misrepresent identity\n• Respect confidential information\n• Follow legal guidelines"
+        },
+        {
+          "title": "Sources of Competitive Intelligence",
+          "type": "table",
+          "headers": [
+            "Source",
+            "Information Available"
+          ],
+          "rows": [
+            [
+              "Annual reports/10-Ks",
+              "Revenue, costs, segments, risk factors"
+            ],
+            [
+              "Earnings calls/transcripts",
+              "Strategy, guidance, management views"
+            ],
+            [
+              "Industry reports",
+              "Market size, growth rates, trends"
+            ],
+            [
+              "Patent filings",
+              "R&D direction, innovation focus"
+            ],
+            [
+              "Job postings",
+              "New initiatives, capability building"
+            ],
+            [
+              "Trade publications",
+              "New products, market moves"
+            ],
+            [
+              "Customer feedback",
+              "Competitive strengths/weaknesses"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Porter's Five Forces",
+          "type": "callout",
+          "content": "**\"BREST\" - Five Forces in Industry:**\n\n**B**uyers (bargaining power)\n**R**ivalry (competitive intensity)\n**E**ntry (threat of new entrants)\n**S**ubstitutes (threat of alternatives)\n**T**rade suppliers (bargaining power)\n\n**Strong forces = Lower industry profitability**\n**Weak forces = Higher industry profitability**"
+        },
+        {
+          "title": "Competitive Benchmarking",
+          "type": "text",
+          "content": "**Process of comparing performance metrics:**\n\n**Types of Benchmarking:**\n\n**1. Competitive Benchmarking**\n• Compare to direct competitors\n• Same industry, similar products\n\n**2. Functional Benchmarking**\n• Compare specific functions\n• Best practices from any industry\n\n**3. Internal Benchmarking**\n• Compare departments/divisions\n• Share best practices within company\n\n**Key Metrics to Benchmark:**\n• Cost per unit\n• Gross margin\n• Inventory turns\n• Employee productivity\n• Customer acquisition cost"
+        },
+        {
+          "title": "Strategic Group Analysis",
+          "type": "text",
+          "content": "**Definition:** Cluster competitors with similar strategies\n\n**Strategic Dimensions:**\n• Price/quality positioning\n• Geographic scope\n• Product breadth\n• Distribution channels\n• Vertical integration\n\n**Example: Retail Industry**\n• Group 1: Discount retailers (Walmart, Target)\n• Group 2: Premium retailers (Nordstrom)\n• Group 3: Specialty (Best Buy, Home Depot)\n• Group 4: Online pure-play (Amazon)\n\n**Insight:** Competition is most intense WITHIN strategic groups"
+        },
+        {
+          "title": "⚠️ Exam Trap: Analysis vs Espionage",
+          "type": "warning",
+          "content": "**Competitive Intelligence is LEGAL and ETHICAL:**\n\n**Legal Sources:**\n• SEC filings, public financial statements\n• Trade show observations\n• Reverse engineering of products\n• Published interviews/speeches\n\n**Illegal/Unethical:**\n• Theft of trade secrets\n• Bribery of employees\n• Electronic surveillance\n• Misrepresentation to get info\n\n**The Line:** Would you be embarrassed if your methods were public?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Competitive intelligence uses public information ethically",
+            "Porter's Five Forces assesses industry profitability",
+            "Benchmarking compares your performance to competitors or best practices",
+            "Strategic groups cluster competitors with similar strategies",
+            "Competition is strongest within strategic groups",
+            "CMAs use competitive data for pricing, budgeting, and strategy",
+            "Always stay within ethical and legal boundaries"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Porter's Five Forces",
+          "knowledgeCheck": {
+            "question": "According to Porter's Five Forces model, which situation would indicate HIGH industry profitability?",
+            "options": [
+              "Many substitute products available",
+              "High barriers to entry",
+              "Powerful buyers who can demand price cuts",
+              "Many competitors with similar products"
+            ],
+            "correctIndex": 1,
+            "explanation": "High barriers to entry protect existing firms from new competitors, allowing higher profits. The other options (many substitutes, powerful buyers, intense rivalry) all REDUCE industry profitability.",
+            "hint": "Strong forces reduce profitability; weak forces allow companies to earn higher returns."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-015",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Enterprise Risk Assessment Frameworks",
+    "description": "Implement structured approaches to identify, assess, and prioritize organizational risks",
+    "order": 15,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Risk assessment",
+      "COSO ERM",
+      "Risk frameworks",
+      "Risk prioritization"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Organizations face countless risks - they can't address them all equally! Risk assessment frameworks help prioritize where to focus attention and resources. CMAs must understand these frameworks to participate in strategic risk discussions."
+        },
+        {
+          "title": "COSO Enterprise Risk Management",
+          "type": "text",
+          "content": "**The dominant ERM framework:**\n\n**COSO ERM 2017 Components:**\n\n**1. Governance & Culture**\n• Board oversight\n• Risk culture\n\n**2. Strategy & Objective-Setting**\n• Integrate with strategy\n• Risk appetite\n\n**3. Performance**\n• Risk identification\n• Risk assessment\n• Risk prioritization\n• Risk response\n\n**4. Review & Revision**\n• Assessment of change\n• Review of risk\n\n**5. Information, Communication & Reporting**\n• Leverage information systems\n• Report on risk"
+        },
+        {
+          "title": "Risk Assessment Matrix",
+          "type": "text",
+          "content": "**Classic Tool: Impact vs Likelihood**\n\n**Risk Score = Impact × Likelihood**\n\n**Scale (example):**\n• Impact: 1 (minimal) to 5 (catastrophic)\n• Likelihood: 1 (rare) to 5 (almost certain)\n\n**Priority Zones:**\n• Score 15-25: Critical - Immediate attention\n• Score 8-14: High - Active management\n• Score 4-7: Medium - Monitor\n• Score 1-3: Low - Accept\n\n**Example:**\nCyber breach: Impact 5, Likelihood 3 = 15 (Critical)\nMinor supplier delay: Impact 2, Likelihood 4 = 8 (High)"
+        },
+        {
+          "title": "🧠 Memory Aid: Risk Response Strategies",
+          "type": "callout",
+          "content": "**\"TARA\" - The Four Rs of Risk Response:**\n\n**T**olerate (Accept) - Accept the risk and its consequences\n**A**void - Eliminate the risk by not doing the activity\n**R**educe (Mitigate) - Implement controls to reduce likelihood/impact\n**A**ssign (Transfer) - Transfer to third party (insurance, contracts)\n\n**Match strategy to risk priority!**"
+        },
+        {
+          "title": "Heat Map Visualization",
+          "type": "text",
+          "content": "**Visual representation of risk matrix:**\n\n**Color Coding:**\n• 🟢 Green: Low risk (accept/monitor)\n• 🟡 Yellow: Medium risk (controls needed)\n• 🟠 Orange: High risk (active management)\n• 🔴 Red: Critical risk (immediate action)\n\n**Layout:**\n• Y-axis: Impact (low to high, bottom to top)\n• X-axis: Likelihood (low to high, left to right)\n• Risks plotted based on assessment\n\n**Benefits:**\n• Easy to communicate to executives/board\n• Visual prioritization\n• Shows risk portfolio at a glance"
+        },
+        {
+          "title": "Risk Appetite and Tolerance",
+          "type": "text",
+          "content": "**Risk Appetite:**\n• Broad statement of risk-taking willingness\n• Set by board/senior management\n• Aligned with strategy\n• Example: \"We accept moderate risk to achieve growth\"\n\n**Risk Tolerance:**\n• Specific acceptable deviation from objectives\n• Measurable boundaries\n• Example: \"Maximum 5% revenue loss from single customer\"\n\n**Relationship:**\nRisk Appetite > Risk Tolerance\n(Appetite is the philosophy, tolerance is the specific limit)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Terms to Know",
+          "type": "warning",
+          "content": "**Don't confuse these:**\n\n**Inherent Risk:**\n• Risk BEFORE controls or responses\n• Raw exposure\n\n**Residual Risk:**\n• Risk AFTER controls implemented\n• What remains\n\n**Risk Appetite:**\n• How much risk willing to accept\n• Strategic level\n\n**Risk Tolerance:**\n• Specific acceptable variation\n• Operational level\n\n**Exam loves testing the inherent vs residual distinction!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "COSO ERM provides comprehensive risk management framework",
+            "Risk score = Impact × Likelihood for prioritization",
+            "Heat maps visualize risk portfolio for communication",
+            "TARA responses: Tolerate, Avoid, Reduce, Assign",
+            "Risk appetite is strategic willingness; tolerance is specific limits",
+            "Inherent risk is before controls; residual is after",
+            "Match risk response strategy to priority level"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Assessment",
+          "knowledgeCheck": {
+            "question": "A company assesses a risk with an impact score of 4 and a likelihood score of 3. After implementing controls, the likelihood drops to 2. What is the residual risk score?",
+            "options": [
+              "4",
+              "8",
+              "10",
+              "12"
+            ],
+            "correctIndex": 1,
+            "explanation": "Residual risk is calculated AFTER controls are implemented. Impact (4) × New Likelihood (2) = 8. The inherent risk was 4 × 3 = 12, but controls reduced it to 8.",
+            "hint": "Use the post-control likelihood to calculate residual risk."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-016",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Scenario Planning and Strategic Forecasting",
+    "description": "Develop and use scenarios to prepare for alternative futures",
+    "order": 16,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Scenario planning",
+      "Strategic forecasting",
+      "Uncertainty management",
+      "Contingency planning"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "The future is uncertain - planning for only one outcome is risky! Scenario planning develops multiple plausible futures so organizations can prepare for various outcomes. CMAs quantify financial implications of different scenarios to support strategic decisions."
+        },
+        {
+          "title": "What Is Scenario Planning?",
+          "type": "text",
+          "content": "**Definition:** A disciplined method for imagining possible futures\n\n**Not forecasting - it's different:**\n• Forecasting: What WILL happen (single prediction)\n• Scenario planning: What COULD happen (multiple possibilities)\n\n**Purpose:**\n• Challenge assumptions\n• Test strategy robustness\n• Identify early warning signs\n• Prepare contingency plans\n\n**Famous Example:**\nShell Oil pioneered scenario planning in 1970s\nPrepared for oil price shocks before they happened"
+        },
+        {
+          "title": "Building Scenarios",
+          "type": "text",
+          "content": "**Step-by-Step Process:**\n\n**1. Identify the Focal Question**\n• What decision are we informing?\n• What time horizon?\n\n**2. Identify Key Drivers**\n• What forces will shape the future?\n• Economic, technological, regulatory, social\n\n**3. Rank by Impact and Uncertainty**\n• Focus on high-impact, high-uncertainty drivers\n• Certainties don't need scenarios\n\n**4. Develop Scenario Logics**\n• Usually 2-4 distinct scenarios\n• Each internally consistent\n• Cover range of possibilities\n\n**5. Flesh Out Narratives**\n• Rich stories, not just bullet points\n• Helps people engage with scenarios"
+        },
+        {
+          "title": "🧠 Memory Aid: 2×2 Matrix",
+          "type": "callout",
+          "content": "**Common technique: Two drivers, four scenarios**\n\n**Pick two critical uncertainties:**\n• Driver 1: Could go high or low\n• Driver 2: Could go high or low\n\n**Create matrix:**\n```\n              Driver 2 High    Driver 2 Low\n            +---------------+---------------+\nDriver 1    |   Scenario A  |   Scenario B  |\n  High      |  (Both high)  |  (Mixed)      |\n            +---------------+---------------+\nDriver 1    |   Scenario C  |   Scenario D  |\n  Low       |   (Mixed)     |  (Both low)   |\n            +---------------+---------------+\n```\n\n**Each quadrant = distinct scenario to analyze**"
+        },
+        {
+          "title": "Financial Modeling for Scenarios",
+          "type": "text",
+          "content": "**CMA's Role: Quantify Each Scenario**\n\n**For each scenario, model:**\n• Revenue implications\n• Cost changes\n• Capital requirements\n• Cash flow impact\n• Key financial ratios\n\n**Analysis Questions:**\n• Does our strategy work in all scenarios?\n• What triggers would indicate each scenario?\n• What hedges or options could we build in?\n• Where are we most vulnerable?\n\n**Output:**\n• Range of financial outcomes\n• Contingency triggers and plans\n• Strategic options to preserve"
+        },
+        {
+          "title": "Scenarios vs Other Tools",
+          "type": "comparison",
+          "items": [
+            {
+              "name": "Forecasting",
+              "points": [
+                "Predicts single most likely outcome",
+                "Based on historical trends",
+                "Quantitative focus",
+                "Short to medium term"
+              ]
+            },
+            {
+              "name": "Scenario Planning",
+              "points": [
+                "Multiple plausible futures",
+                "Challenges assumptions",
+                "Qualitative + quantitative",
+                "Long-term strategic focus"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Scenario Characteristics",
+          "type": "warning",
+          "content": "**Good scenarios are:**\n\n✓ Plausible (could actually happen)\n✓ Internally consistent (logic holds together)\n✓ Distinct (not just variations of same theme)\n✓ Relevant (matter for the decision)\n✓ Challenging (force new thinking)\n\n**Bad scenarios:**\n✗ Assign probabilities (that's forecasting)\n✗ Predict the future (that's impossible)\n✗ Pick a \"most likely\" (defeats purpose)\n✗ Too many (3-4 is optimal)\n\n**Exam Tip:** Scenarios are planning tools, not predictions!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Scenario planning imagines multiple plausible futures",
+            "Different from forecasting (which predicts one outcome)",
+            "Focus on high-impact, high-uncertainty drivers",
+            "2×2 matrix commonly used to create four scenarios",
+            "Each scenario should be plausible, consistent, distinct",
+            "CMAs model financial implications of each scenario",
+            "Good for testing strategy robustness and preparing contingencies"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Scenario Planning",
+          "knowledgeCheck": {
+            "question": "A company is using scenario planning and has developed four scenarios for the next decade. Management asks: 'Which scenario should we plan for?' What is the best response?",
+            "options": [
+              "The most likely scenario based on current trends",
+              "The worst-case scenario to be safe",
+              "All scenarios - develop a strategy robust across all four",
+              "Average the scenarios to create a single forecast"
+            ],
+            "correctIndex": 2,
+            "explanation": "Scenario planning doesn't predict which future will occur. The goal is to develop strategies that work reasonably well across multiple scenarios, identify early warning signals for each, and prepare contingency actions. Picking one scenario defeats the purpose.",
+            "hint": "Scenario planning is about preparation, not prediction."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-017",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Mission, Vision, and Corporate Strategy",
+    "description": "Understand foundational strategic elements that guide organizational direction",
+    "order": 17,
+    "duration": 40,
+    "difficulty": "foundational",
+    "topics": [
+      "Mission statement",
+      "Vision statement",
+      "Corporate values",
+      "Strategic foundations"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Strategy doesn't start with numbers - it starts with PURPOSE! CMAs must understand how mission, vision, and values translate into strategic objectives and financial targets. Budgets and metrics should align with organizational purpose."
+        },
+        {
+          "title": "Strategic Hierarchy",
+          "type": "text",
+          "content": "**From Purpose to Action:**\n\n**Mission (Why We Exist)**\n• Core purpose\n• What value we create\n• Who we serve\n↓\n**Vision (Where We're Going)**\n• Aspirational future state\n• Long-term ambition\n↓\n**Values (How We Operate)**\n• Guiding principles\n• Behavioral standards\n↓\n**Strategy (How We Win)**\n• Competitive approach\n• Key choices\n↓\n**Objectives & Metrics (What We Track)**\n• Specific targets\n• KPIs and measures"
+        },
+        {
+          "title": "Mission vs Vision",
+          "type": "table",
+          "headers": [
+            "Mission",
+            "Vision"
+          ],
+          "rows": [
+            [
+              "Present-focused",
+              "Future-focused"
+            ],
+            [
+              "What we do",
+              "What we aspire to become"
+            ],
+            [
+              "Action-oriented",
+              "Aspirational"
+            ],
+            [
+              "Relatively stable",
+              "May evolve as achieved"
+            ],
+            [
+              "Answers: Why do we exist?",
+              "Answers: Where are we going?"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Good Statements",
+          "type": "callout",
+          "content": "**\"CRISP\" - Effective Mission/Vision:**\n\n**C**lear - Easy to understand\n**R**elevant - Meaningful to stakeholders\n**I**nspiring - Motivates action\n**S**pecific - Defines a focus area\n**P**ractical - Can guide decisions\n\n**Test:** Could anyone in the organization use this to make a decision?"
+        },
+        {
+          "title": "Corporate Values",
+          "type": "text",
+          "content": "**Definition:** Core beliefs that guide behavior\n\n**Purpose:**\n• Shape organizational culture\n• Guide difficult decisions\n• Attract like-minded employees\n• Build stakeholder trust\n\n**Examples:**\n• Integrity - Do the right thing\n• Innovation - Challenge status quo\n• Customer Focus - Put customer first\n• Excellence - Strive for quality\n• Teamwork - Collaborate to win\n\n**Key:** Values must be LIVED, not just displayed\nWhat happens when values conflict with short-term profit?"
+        },
+        {
+          "title": "Connecting to Financial Planning",
+          "type": "text",
+          "content": "**CMA's Role - Translate Purpose to Numbers:**\n\n**From Mission to Budget:**\nMission emphasizes customer service\n→ Strategic objective: Improve satisfaction\n→ KPI: Customer satisfaction score\n→ Target: 90% by year-end\n→ Initiative: Service training program\n→ Budget: $500,000 for training\n\n**Red Flag Questions:**\n• Does our budget support our mission?\n• Do our metrics align with our values?\n• Would our vision be achievable with current plans?"
+        },
+        {
+          "title": "⚠️ Exam Trap: Strategy Levels",
+          "type": "warning",
+          "content": "**Know the three levels:**\n\n**Corporate Strategy:**\n• What businesses should we be in?\n• Portfolio decisions\n• Diversification, acquisitions\n\n**Business (Competitive) Strategy:**\n• How do we compete in this market?\n• Cost leadership, differentiation, focus\n\n**Functional Strategy:**\n• How does each function support business strategy?\n• Marketing strategy, operations strategy, etc.\n\n**CMAs work at all levels but especially business and functional"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Mission defines current purpose; Vision defines future aspiration",
+            "Values guide behavior and shape culture",
+            "Strategic hierarchy flows from purpose to metrics",
+            "Good statements are Clear, Relevant, Inspiring, Specific, Practical",
+            "Corporate strategy: what businesses; Business strategy: how to compete",
+            "CMAs translate strategic intent into budgets and targets",
+            "All financial plans should align with organizational purpose"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Mission vs Vision",
+          "knowledgeCheck": {
+            "question": "Which statement is a VISION statement? \"We provide affordable, reliable transportation to urban communities\" OR \"To be the world's most trusted transportation company by 2030\"",
+            "options": [
+              "The first is vision, second is mission",
+              "The second is vision, first is mission",
+              "Both are vision statements",
+              "Both are mission statements"
+            ],
+            "correctIndex": 1,
+            "explanation": "The second statement is a vision - it's future-focused and aspirational ('To be the world's most trusted... by 2030'). The first statement is a mission - it describes what the company currently does and for whom.",
+            "hint": "Mission describes WHAT you do now; Vision describes WHERE you want to be."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-018",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "SWOT Analysis and Strategic Assessment",
+    "description": "Apply SWOT framework to evaluate organizational strategic position",
+    "order": 18,
+    "duration": 40,
+    "difficulty": "foundational",
+    "topics": [
+      "SWOT analysis",
+      "Strategic assessment",
+      "Internal analysis",
+      "External analysis"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "SWOT is simple but powerful! CMAs use SWOT to translate qualitative strategic insights into quantitative plans. Understanding competitive position helps prioritize investments and anticipate risks in financial forecasts."
+        },
+        {
+          "title": "SWOT Overview",
+          "type": "text",
+          "content": "**Four Categories:**\n\n**Internal Factors (Controllable)**\n• **S**trengths - What we do well\n• **W**eaknesses - What we need to improve\n\n**External Factors (Uncontrollable)**\n• **O**pportunities - Favorable external conditions\n• **T**hreats - Unfavorable external conditions\n\n**Strategic Logic:**\n• Leverage strengths to capture opportunities\n• Address weaknesses before threats exploit them\n• Use strengths to defend against threats\n• Avoid opportunities that expose weaknesses"
+        },
+        {
+          "title": "Internal vs External Factors",
+          "type": "table",
+          "headers": [
+            "Internal (S/W)",
+            "External (O/T)"
+          ],
+          "rows": [
+            [
+              "Resources and capabilities",
+              "Industry and market trends"
+            ],
+            [
+              "Brand and reputation",
+              "Competitor actions"
+            ],
+            [
+              "Processes and efficiency",
+              "Regulatory changes"
+            ],
+            [
+              "Employee skills",
+              "Economic conditions"
+            ],
+            [
+              "Financial position",
+              "Technology shifts"
+            ],
+            [
+              "Can change directly",
+              "Must adapt to"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: SWOT Strategies",
+          "type": "callout",
+          "content": "**Match factors into strategies:**\n\n**S-O (Strength-Opportunity):**\nAggressive - Use strengths to capture opportunities\n\"We're good at X, market wants X - GROW!\"\n\n**W-O (Weakness-Opportunity):**\nDevelopmental - Fix weaknesses to capture opportunities\n\"Market wants X, we need to build capability\"\n\n**S-T (Strength-Threat):**\nDefensive - Use strengths to block threats\n\"Competitor entering, leverage our brand loyalty\"\n\n**W-T (Weakness-Threat):**\nSurvival - Minimize damage\n\"We're exposed, need to divest or partner\""
+        },
+        {
+          "title": "SWOT Analysis Example",
+          "type": "text",
+          "content": "**Regional Bank Analysis:**\n\n**Strengths:**\n• Strong local brand recognition\n• Personal customer relationships\n• Low cost deposit base\n• Deep community ties\n\n**Weaknesses:**\n• Limited digital capabilities\n• Small IT budget vs nationals\n• No investment services\n\n**Opportunities:**\n• Growing local economy\n• Small business lending demand\n• Fintech partnership options\n\n**Threats:**\n• National bank expansion\n• Digital-only competitors\n• Interest rate pressure\n\n**Strategy implication:**\nPartner with fintech (W-O) to compete digitally\nwhile leveraging relationships (S-T)"
+        },
+        {
+          "title": "SWOT Best Practices",
+          "type": "text",
+          "content": "**Do:**\n• Be specific - \"30% faster delivery\" not \"good logistics\"\n• Prioritize - Top 3-5 items per category\n• Validate - Get data to support claims\n• Compare to competitors - Relative, not absolute\n• Update regularly - Environment changes\n\n**Don't:**\n• List everything - Focus on strategic factors\n• Confuse internal/external - Customers aren't strengths\n• Ignore connections - Look for patterns across quadrants\n• Stop at listing - Turn into actions\n\n**CMA Role:**\n• Quantify strengths (market share %, cost advantage)\n• Estimate opportunity value\n• Model threat scenarios in forecasts"
+        },
+        {
+          "title": "⚠️ Exam Trap: SWOT Limitations",
+          "type": "warning",
+          "content": "**Know SWOT weaknesses:**\n\n**Static snapshot:**\n• Markets change rapidly\n• Needs regular updating\n\n**Subjective:**\n• What's a strength vs weakness?\n• Different perspectives disagree\n\n**No prioritization:**\n• Equal weight to all factors\n• Doesn't show which matter most\n\n**No implementation guidance:**\n• Lists factors, not solutions\n• Requires additional frameworks\n\n**Complement SWOT with:**\n• Porter's Five Forces (industry)\n• PESTEL (macro environment)\n• Value chain (internal processes)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "SWOT: Strengths, Weaknesses (internal) + Opportunities, Threats (external)",
+            "Internal factors are controllable; External factors must be adapted to",
+            "Four strategies: S-O (grow), W-O (develop), S-T (defend), W-T (survive)",
+            "Be specific and prioritize top factors",
+            "CMAs quantify and model SWOT factors financially",
+            "Limitations: Static, subjective, no prioritization",
+            "Complement with Porter's Five Forces, PESTEL, Value Chain"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SWOT Application",
+          "knowledgeCheck": {
+            "question": "A company has strong R&D capabilities (strength) and sees growing demand for sustainable products (opportunity). Which strategic approach should they use?",
+            "options": [
+              "W-T: Minimize exposure to changing market",
+              "S-O: Leverage R&D to develop sustainable product line",
+              "W-O: Acquire a company with sustainability expertise",
+              "S-T: Use R&D to defend current product portfolio"
+            ],
+            "correctIndex": 1,
+            "explanation": "With a Strength (R&D) matching an Opportunity (sustainability demand), the S-O approach applies: aggressively use the existing strength to capture the market opportunity. This is the 'grow' strategy.",
+            "hint": "S-O strategy combines internal strengths with external opportunities."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-019",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Value Chain Analysis",
+    "description": "Identify competitive advantage through value chain mapping and optimization",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Value chain",
+      "Primary activities",
+      "Support activities",
+      "Competitive advantage"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Where does your company CREATE value? CMAs use value chain analysis to identify cost advantages, differentiation opportunities, and outsourcing candidates. This connects strategy to cost accounting and process improvement."
+        },
+        {
+          "title": "Porter's Value Chain Model",
+          "type": "text",
+          "content": "**Primary Activities (direct value creation):**\n\n**Inbound Logistics:**\n• Receiving, storing, distributing inputs\n• Material handling, warehousing\n\n**Operations:**\n• Transforming inputs to outputs\n• Manufacturing, assembly\n\n**Outbound Logistics:**\n• Delivering products to customers\n• Distribution, delivery\n\n**Marketing & Sales:**\n• Persuading customers to buy\n• Advertising, pricing, channels\n\n**Service:**\n• Post-sale support\n• Installation, repair, training"
+        },
+        {
+          "title": "Support Activities",
+          "type": "text",
+          "content": "**Firm Infrastructure:**\n• General management\n• Finance, accounting, legal\n• Strategic planning\n\n**Human Resource Management:**\n• Recruiting, training, development\n• Compensation systems\n\n**Technology Development:**\n• R&D, product design\n• Process innovation\n• IT systems\n\n**Procurement:**\n• Purchasing inputs\n• Supplier relationships\n• Supports all primary activities\n\n**Key Insight:**\nSupport activities enable and enhance primary activities"
+        },
+        {
+          "title": "🧠 Memory Aid: Value Chain Analysis Steps",
+          "type": "callout",
+          "content": "**\"MCLCB\" - Map, Cost, Link, Compare, Build:**\n\n**M**ap activities - Identify all value-creating activities\n\n**C**ost activities - Assign costs to each activity\n\n**L**ink activities - Find connections and dependencies\n\n**C**ompare - Benchmark against competitors\n\n**B**uild advantage - Strengthen or outsource\n\n**Goal:** Find where you can:\n• Perform activity at LOWER COST\n• Perform activity DIFFERENTLY (differentiate)"
+        },
+        {
+          "title": "Strategic Applications",
+          "type": "table",
+          "headers": [
+            "Question",
+            "Value Chain Insight"
+          ],
+          "rows": [
+            [
+              "Make or buy?",
+              "Compare internal cost to supplier's"
+            ],
+            [
+              "Where to invest?",
+              "Which activities drive most value?"
+            ],
+            [
+              "What to outsource?",
+              "Non-core activities with capable suppliers"
+            ],
+            [
+              "Where's the cost?",
+              "Activity-based cost breakdown"
+            ],
+            [
+              "What differentiates us?",
+              "Activities we do uniquely well"
+            ]
+          ]
+        },
+        {
+          "title": "Value Chain Analysis Example",
+          "type": "text",
+          "content": "**Online Retailer Analysis:**\n\n**Competitive Advantage in:**\n• Inbound Logistics - Efficient distribution centers\n• Technology - Recommendation algorithms\n• Outbound - Last-mile delivery network\n\n**Neutral:**\n• Marketing - Comparable to competitors\n• HR - Standard practices\n\n**Weakness:**\n• Service - Customer complaints about returns\n\n**Strategic Implication:**\n• Invest more in logistics (strength)\n• Fix returns process (weakness)\n• Don't over-invest in marketing (neutral)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Value Chain vs Supply Chain",
+          "type": "warning",
+          "content": "**Different Concepts:**\n\n**Value Chain:**\n• Internal analysis of ONE company\n• Where do WE add value?\n• Competitive advantage focus\n• Porter's framework\n\n**Supply Chain:**\n• External view across MULTIPLE companies\n• Flow of materials and information\n• Coordination and efficiency focus\n• From raw material to end customer\n\n**Sometimes combined:**\n\"Value Network\" or \"Industry Value Chain\"\nAnalyzes value creation across all players\n• Supplier's margin + Your margin + Buyer's margin"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Value chain: Primary activities + Support activities",
+            "Primary: Inbound, Operations, Outbound, Marketing, Service",
+            "Support: Infrastructure, HR, Technology, Procurement",
+            "Use to identify sources of cost advantage or differentiation",
+            "Compare activities to competitors (benchmarking)",
+            "Outsource activities where others have advantage",
+            "Value chain is internal; Supply chain spans organizations"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Value Chain Classification",
+          "knowledgeCheck": {
+            "question": "A pharmaceutical company's clinical trial management and drug formulation belong to which value chain activity?",
+            "options": [
+              "Inbound Logistics",
+              "Operations",
+              "Technology Development (R&D)",
+              "Service"
+            ],
+            "correctIndex": 2,
+            "explanation": "Clinical trials and drug formulation are R&D activities, which fall under Technology Development - a support activity. Operations would be the actual manufacturing of approved drugs.",
+            "hint": "R&D activities that create new products are support activities under Technology Development."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-020",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Competitive Dynamics and Game Theory Basics",
+    "description": "Apply game theory concepts to strategic decision-making and competitor analysis",
+    "order": 20,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Game theory",
+      "Competitive dynamics",
+      "Prisoner's dilemma",
+      "Strategic interaction"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Business isn't played in isolation! Your competitors respond to your moves, and you must anticipate their reactions. Game theory provides frameworks for strategic thinking when outcomes depend on others' choices."
+        },
+        {
+          "title": "Game Theory Basics",
+          "type": "text",
+          "content": "**What is Game Theory?**\n• Study of strategic interaction\n• When your payoff depends on others' choices\n• Applicable to competitors, suppliers, regulators\n\n**Key Concepts:**\n\n**Players:** Decision-makers in the game\n\n**Strategies:** Choices available to each player\n\n**Payoffs:** Outcomes for each strategy combination\n\n**Nash Equilibrium:**\nNo player can improve by unilaterally changing strategy\nStable outcome - nobody wants to deviate"
+        },
+        {
+          "title": "The Prisoner's Dilemma",
+          "type": "text",
+          "content": "**Classic Example:**\nTwo suspects, separate interrogation\n\n| | B Cooperates | B Defects |\n|---|-------------|-----------|\n| A Cooperates | Both: 1 year | A: 10 yrs, B: 0 |\n| A Defects | A: 0, B: 10 yrs | Both: 5 years |\n\n**Dominant Strategy:** Defect (for each player)\n**Nash Equilibrium:** Both defect (5 years each)\n**Paradox:** Mutual cooperation (1 year each) is better!\n\n**Business Application:**\nPrice wars, advertising battles\nBoth companies would benefit from restraint\nBut individually each has incentive to compete"
+        },
+        {
+          "title": "🧠 Memory Aid: Strategic Scenarios",
+          "type": "callout",
+          "content": "**When to apply game theory thinking:**\n\n**\"PRICE\" situations:**\n\n**P**rice wars - Will competitor match my cut?\n\n**R**esponsive reactions - How will they counter?\n\n**I**ndustry consolidation - Merger implications?\n\n**C**apacity decisions - If we expand, will they?\n\n**E**ntry/exit - Will they fight our entry?\n\n**Key Question:**\nWhat will competitors do, and how does that change my best choice?"
+        },
+        {
+          "title": "Types of Games",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Characteristics",
+            "Business Example"
+          ],
+          "rows": [
+            [
+              "Zero-Sum",
+              "One player's gain = Other's loss",
+              "Market share in static market"
+            ],
+            [
+              "Positive-Sum",
+              "Both players can gain",
+              "Industry standards, partnerships"
+            ],
+            [
+              "Simultaneous",
+              "Decisions made at same time",
+              "Competitive pricing"
+            ],
+            [
+              "Sequential",
+              "One moves, other responds",
+              "First-mover advantage"
+            ],
+            [
+              "Repeated",
+              "Multiple rounds",
+              "Long-term supplier relationships"
+            ]
+          ]
+        },
+        {
+          "title": "Strategic Implications",
+          "type": "text",
+          "content": "**Commitment:**\n• Credible commitment changes game\n• Example: Building extra capacity\n• Signals you'll fight entry\n\n**Reputation:**\n• Past behavior shapes expectations\n• Price wars may deter future competition\n• Cost vs. benefit of \"toughness\"\n\n**Communication:**\n• Signals and announcements matter\n• Public price increases\n• Investment announcements\n• (Careful: Antitrust concerns)\n\n**Timing:**\n• First-mover advantages and disadvantages\n• Sometimes waiting is strategic\n• Learn from others' mistakes"
+        },
+        {
+          "title": "⚠️ Exam Trap: Dominant Strategy vs Equilibrium",
+          "type": "warning",
+          "content": "**Different Concepts:**\n\n**Dominant Strategy:**\n• Best regardless of what others do\n• Not all games have one\n• If exists, rational player always chooses it\n\n**Nash Equilibrium:**\n• Stable outcome - no one wants to unilaterally change\n• Every game has at least one (may be mixed)\n• Doesn't require dominant strategies\n\n**Prisoner's Dilemma:**\n• Defect IS dominant strategy for each\n• (Both defect) IS Nash equilibrium\n• But it's not OPTIMAL for the group!\n\n**Not all Nash equilibria are efficient!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Game theory analyzes strategic interaction where outcomes depend on others",
+            "Nash equilibrium: No one benefits from unilateral change",
+            "Prisoner's dilemma: Individual rationality leads to collective irrationality",
+            "Zero-sum: One's gain is other's loss; Positive-sum: Both can win",
+            "Commitment, reputation, communication, and timing are strategic tools",
+            "Dominant strategy: Best regardless of others' choices",
+            "Apply to pricing, capacity, entry decisions with competitor response"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Game Theory Application",
+          "knowledgeCheck": {
+            "question": "Two airlines have been tacitly maintaining high fares on a route. One airline is considering a price cut. This scenario most resembles:",
+            "options": [
+              "Zero-sum game with first-mover advantage",
+              "Prisoner's dilemma - temptation to defect",
+              "Positive-sum game with mutual gains",
+              "Sequential game with perfect information"
+            ],
+            "correctIndex": 1,
+            "explanation": "This is a classic prisoner's dilemma. Both benefit from cooperation (high fares = high margins), but each has individual incentive to defect (cut price to steal share). If both cut prices, they're both worse off than maintaining high fares.",
+            "hint": "When both parties benefit from cooperation but each has temptation to 'cheat,' what game is this?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-021",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Corporate Governance",
+    "description": "Understand governance structures, board responsibilities, and accountability mechanisms",
+    "order": 21,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Corporate governance",
+      "Board of directors",
+      "Internal controls",
+      "Accountability"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Governance failures destroy companies (Enron, WorldCom, Wirecard)! CMAs work within governance structures and support boards with accurate financial information. Understanding governance is essential for ethics, controls, and career advancement."
+        },
+        {
+          "title": "What is Corporate Governance?",
+          "type": "text",
+          "content": "**Definition:**\nSystem of rules, practices, and processes by which a company is directed and controlled\n\n**Key Players:**\n• Shareholders (owners)\n• Board of Directors (oversight)\n• Management (operations)\n• External auditors (independent assurance)\n• Regulators (legal compliance)\n\n**Purpose:**\n• Protect shareholder interests\n• Ensure accountability\n• Promote transparency\n• Reduce agency costs\n• Build stakeholder trust"
+        },
+        {
+          "title": "Board of Directors",
+          "type": "table",
+          "headers": [
+            "Role",
+            "Responsibility"
+          ],
+          "rows": [
+            [
+              "Strategic Oversight",
+              "Approve strategy, major decisions"
+            ],
+            [
+              "CEO Selection",
+              "Hire, evaluate, compensate CEO"
+            ],
+            [
+              "Risk Oversight",
+              "Ensure effective risk management"
+            ],
+            [
+              "Financial Integrity",
+              "Review financials, oversee audit"
+            ],
+            [
+              "Compliance",
+              "Ensure legal and ethical conduct"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Key Board Committees",
+          "type": "callout",
+          "content": "**\"ACN\" - Three critical committees:**\n\n**A**udit Committee\n• Oversees financial reporting\n• Hires external auditors\n• Reviews internal controls\n• Must be independent directors\n• Financial expert required\n\n**C**ompensation Committee\n• Sets executive pay\n• Aligns incentives with performance\n• Approves equity grants\n• Should be independent\n\n**N**ominating/Governance Committee\n• Selects board candidates\n• Succession planning\n• Governance policies\n• Board evaluation"
+        },
+        {
+          "title": "Director Independence",
+          "type": "text",
+          "content": "**Why Independence Matters:**\n• Objective oversight of management\n• Protect minority shareholders\n• Challenge management decisions\n\n**Independence Criteria:**\n• Not current/recent employee\n• No material business relationship\n• Not a relative of executives\n• No cross-board relationships\n\n**NYSE/NASDAQ Requirements:**\n• Majority of board must be independent\n• Audit committee: 100% independent\n• Compensation committee: 100% independent\n\n**Lead Independent Director:**\n• Chairs independent sessions\n• Counterbalance if CEO is Chair"
+        },
+        {
+          "title": "Governance Best Practices",
+          "type": "text",
+          "content": "**Board Structure:**\n• Separate CEO and Chair roles\n• Regular executive sessions (no management)\n• Director term limits\n• Board diversity\n\n**Transparency:**\n• Clear disclosure policies\n• Investor communication\n• Proxy statement clarity\n\n**Accountability:**\n• Director elections\n• Say-on-pay votes\n• Clawback policies\n\n**Risk Management:**\n• Enterprise risk oversight\n• Cybersecurity attention\n• Crisis preparedness"
+        },
+        {
+          "title": "⚠️ Exam Trap: Agency Problem",
+          "type": "warning",
+          "content": "**Managers may act in THEIR interest, not shareholders'!**\n\n**Agency Costs:**\n• Excessive perks\n• Empire building\n• Short-term focus\n• Risk aversion\n• Entrenchment\n\n**Governance Solutions:**\n• Independent board oversight\n• Performance-based compensation\n• Stock ownership requirements\n• External audit\n• Threat of takeover\n\n**Sarbanes-Oxley (SOX):**\n• CEO/CFO certification\n• Internal control attestation\n• Audit committee independence\n• Whistleblower protection\n• Criminal penalties for fraud"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Governance: System directing and controlling companies",
+            "Board oversees strategy, CEO, risk, and compliance",
+            "Key committees: Audit, Compensation, Nominating",
+            "Independence prevents management conflicts",
+            "Agency problem: Managers may pursue own interests",
+            "SOX: CEO/CFO certification, internal control attestation",
+            "Good governance builds trust and reduces cost of capital"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Board Committees",
+          "knowledgeCheck": {
+            "question": "Which board committee must be composed entirely of independent directors and include at least one financial expert?",
+            "options": [
+              "Compensation Committee",
+              "Executive Committee",
+              "Audit Committee",
+              "Nominating Committee"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Audit Committee must be 100% independent directors under SEC/NYSE rules, and SOX requires at least one 'audit committee financial expert.' This ensures objective oversight of financial reporting and the external audit.",
+            "hint": "Which committee oversees financial reporting and works with external auditors?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-022",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Ethics in Management Accounting",
+    "description": "Apply ethical principles and IMA ethical standards in professional practice",
+    "order": 22,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Professional ethics",
+      "IMA ethical standards",
+      "Ethical dilemmas",
+      "Whistleblowing"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Ethics isn't just about passing the exam - it's about protecting your career and your organization! CMAs face pressure to manipulate numbers, cut corners, and look the other way. The IMA ethical standards provide a framework for navigating these pressures."
+        },
+        {
+          "title": "IMA Statement of Ethical Professional Practice",
+          "type": "text",
+          "content": "**Four Ethical Principles:**\n\n**1. Honesty**\n• Be truthful in all communications\n\n**2. Fairness**\n• Treat all parties fairly\n\n**3. Objectivity**\n• Disclose relevant information\n\n**4. Responsibility**\n• Act in legitimate interest of organization\n\n**Committed to ethical professional practice**\n\nThese principles underlie the four standards that CMAs must follow."
+        },
+        {
+          "title": "The Four Ethical Standards",
+          "type": "table",
+          "headers": [
+            "Standard",
+            "Key Requirements"
+          ],
+          "rows": [
+            [
+              "Competence",
+              "Maintain expertise, provide accurate info, recognize limitations"
+            ],
+            [
+              "Confidentiality",
+              "Keep info confidential, don't use for personal gain"
+            ],
+            [
+              "Integrity",
+              "Avoid conflicts, refuse gifts that impair judgment, abstain when conflicted"
+            ],
+            [
+              "Credibility",
+              "Communicate fairly, disclose all relevant info, disclose limitations"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: CCIC Standards",
+          "type": "callout",
+          "content": "**Remember: \"CCIC\" - The Four Standards:**\n\n**C**ompetence\n• Know your stuff\n• Stay current (CPE)\n• Don't exceed your expertise\n\n**C**onfidentiality\n• Protect sensitive information\n• No insider trading\n• Don't use for personal benefit\n\n**I**ntegrity\n• Be ethical in actions\n• Avoid conflicts of interest\n• Refuse inappropriate gifts\n\n**C**redibility\n• Be accurate and complete\n• Disclose all relevant info\n• Acknowledge limitations\n\n**Exam Tip:** Know specific requirements under each!"
+        },
+        {
+          "title": "Resolution of Ethical Conflicts",
+          "type": "text",
+          "content": "**IMA's Recommended Process:**\n\n**1. Discuss with immediate superior**\n• Unless they're involved\n• Document the discussion\n\n**2. If unresolved, go up the chain**\n• Next level of management\n• Audit committee if needed\n\n**3. Clarify issues with objective advisor**\n• IMA ethics hotline\n• Legal counsel\n• Don't go it alone\n\n**4. Consult your own attorney**\n• Understand your rights\n• Document everything\n\n**5. As a last resort...**\n• Resignation may be necessary\n• External reporting (whistleblowing)"
+        },
+        {
+          "title": "Common Ethical Dilemmas",
+          "type": "text",
+          "content": "**Earnings Management:**\n• Pressure to meet targets\n• \"Just this quarter\"\n• Channel stuffing, cookie jars\n\n**Conflicts of Interest:**\n• Personal relationships with vendors\n• Outside business interests\n• Gift acceptance\n\n**Confidentiality:**\n• Information sharing\n• Job interviews\n• Social situations\n\n**Pressure from Above:**\n• \"Make the numbers work\"\n• Suppress bad news\n• Retaliation fears\n\n**Key Insight:**\nMost ethical failures start small and escalate"
+        },
+        {
+          "title": "⚠️ Exam Trap: Confidentiality Exceptions",
+          "type": "warning",
+          "content": "**When CAN you disclose confidential information?**\n\n**Legal Obligation:**\n• Subpoenas\n• Legal proceedings\n• Regulatory requirements\n\n**Professional Obligation:**\n• Quality review by professional body\n• Successor accountant inquiry\n\n**Never OK:**\n• Personal financial gain\n• Casual disclosure\n• Competitive intelligence\n• Without authorization\n\n**Gray Areas:**\n• Whistleblowing on fraud\n• Get legal advice first\n• Understand protections\n\n**Default: Keep it confidential unless required by law"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four principles: Honesty, Fairness, Objectivity, Responsibility",
+            "Four standards: Competence, Confidentiality, Integrity, Credibility (CCIC)",
+            "Conflicts: Start with supervisor, escalate if needed",
+            "Use IMA ethics hotline for guidance",
+            "Document ethical concerns and discussions",
+            "Confidentiality: Hold unless legally required to disclose",
+            "Resignation may be necessary as last resort"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Ethical Standards",
+          "knowledgeCheck": {
+            "question": "A CMA discovers their company is manipulating revenue recognition to meet analyst expectations. They should first:",
+            "options": [
+              "Immediately report to the SEC",
+              "Resign from the company",
+              "Discuss with their immediate supervisor",
+              "Contact the external auditors directly"
+            ],
+            "correctIndex": 2,
+            "explanation": "IMA guidelines recommend starting by discussing ethical concerns with your immediate supervisor (unless they're involved in the issue). This gives the organization a chance to address the problem internally. Escalation, external reporting, or resignation are later steps if the issue isn't resolved.",
+            "hint": "The IMA conflict resolution process starts internally."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-023",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Industry Analysis",
+    "description": "Analyze industry structure and competitive dynamics using strategic frameworks",
+    "order": 23,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Industry analysis",
+      "Porter's Five Forces",
+      "Industry life cycle",
+      "Competitive dynamics"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Industry structure determines profitability potential! CMAs support strategic planning with industry analysis - understanding competitive forces, industry trends, and structural changes. This context is essential for budgeting, forecasting, and strategic decisions."
+        },
+        {
+          "title": "Porter's Five Forces",
+          "type": "text",
+          "content": "**Industry Attractiveness Depends On:**\n\n**1. Rivalry Among Existing Competitors**\n• Number and size of competitors\n• Industry growth rate\n• Fixed costs and exit barriers\n\n**2. Threat of New Entrants**\n• Barriers to entry\n• Capital requirements\n• Expected retaliation\n\n**3. Threat of Substitutes**\n• Alternative solutions\n• Price-performance trade-off\n\n**4. Bargaining Power of Buyers**\n• Buyer concentration\n• Switching costs\n\n**5. Bargaining Power of Suppliers**\n• Supplier concentration\n• Input differentiation"
+        },
+        {
+          "title": "Five Forces Analysis",
+          "type": "table",
+          "headers": [
+            "Force",
+            "High When",
+            "Industry Impact"
+          ],
+          "rows": [
+            [
+              "Rivalry",
+              "Many competitors, slow growth",
+              "Price pressure"
+            ],
+            [
+              "New Entrants",
+              "Low barriers, profitable",
+              "Capacity expansion"
+            ],
+            [
+              "Substitutes",
+              "Close alternatives exist",
+              "Price ceiling"
+            ],
+            [
+              "Buyer Power",
+              "Few large buyers",
+              "Margin pressure"
+            ],
+            [
+              "Supplier Power",
+              "Few key suppliers",
+              "Input cost pressure"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Entry Barriers",
+          "type": "callout",
+          "content": "**\"SCALE\" - Barriers to New Entrants:**\n\n**S**cale economies\n• Minimum efficient scale\n• Cost disadvantage for small entrants\n\n**C**apital requirements\n• Investment needed\n• Sunk costs\n\n**A**ccess barriers\n• Distribution channels\n• Supplier relationships\n• Customer access\n\n**L**egal/regulatory\n• Patents, licenses\n• Government policy\n\n**E**xperience advantages\n• Learning curve\n• Know-how\n• Brand recognition\n\n**High barriers = Protected industry**"
+        },
+        {
+          "title": "Industry Life Cycle",
+          "type": "text",
+          "content": "**Introduction:**\n• New product/service\n• High uncertainty\n• Few competitors\n• Losses common\n\n**Growth:**\n• Rapid market expansion\n• New entrants attracted\n• Focus on market share\n• Profits improve\n\n**Maturity:**\n• Growth slows\n• Intense competition\n• Focus on efficiency\n• Consolidation\n\n**Decline:**\n• Falling demand\n• Exit by weaker players\n• Harvest or divest\n• Cost control critical"
+        },
+        {
+          "title": "Strategic Implications",
+          "type": "text",
+          "content": "**For CMAs:**\n\n**Growth Industry:**\n• Invest in capacity\n• Flexible budgets for expansion\n• Focus on market share metrics\n\n**Mature Industry:**\n• Tight cost control\n• Efficiency metrics\n• Working capital optimization\n• Cash cow management\n\n**Declining Industry:**\n• Asset write-downs\n• Exit cost analysis\n• Cash flow focus\n• Harvest strategy\n\n**Industry Analysis Informs:**\n• Revenue forecasts\n• Capital budgets\n• Competitive benchmarks\n• Strategic assumptions"
+        },
+        {
+          "title": "⚠️ Exam Trap: Static vs Dynamic",
+          "type": "warning",
+          "content": "**Five Forces is a snapshot - industries change!**\n\n**Disruption Factors:**\n• Technology changes\n• Regulation shifts\n• Globalization\n• Customer preferences\n\n**Examples:**\n• Streaming disrupted video rental\n• Mobile disrupted cameras\n• eCommerce disrupted retail\n\n**Update analysis regularly:**\n• Annual strategic planning\n• When major changes occur\n• Monitor weak signals\n\n**Don't assume current structure is permanent!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Five Forces: Rivalry, Entrants, Substitutes, Buyers, Suppliers",
+            "High forces = Less attractive industry, lower profits",
+            "Entry barriers: Scale, Capital, Access, Legal, Experience",
+            "Life Cycle: Introduction, Growth, Maturity, Decline",
+            "Stage determines strategic and financial focus",
+            "Industry analysis informs budgets and forecasts",
+            "Update analysis regularly - industries change"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Five Forces",
+          "knowledgeCheck": {
+            "question": "An industry has four large customers who purchase 80% of output. This represents high power for which Five Forces element?",
+            "options": [
+              "Rivalry among competitors",
+              "Threat of new entrants",
+              "Bargaining power of suppliers",
+              "Bargaining power of buyers"
+            ],
+            "correctIndex": 3,
+            "explanation": "Concentrated buyers (few large customers) means high bargaining power of buyers. They can demand lower prices, better terms, and higher quality. This puts pressure on industry profitability as suppliers must compete for their business.",
+            "hint": "Who controls the purchasing decisions in this scenario?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-024",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Business Ethics Frameworks",
+    "description": "Apply ethical frameworks to business decision-making",
+    "order": 24,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Business ethics",
+      "Ethical frameworks",
+      "Ethical decision-making",
+      "IMA ethics"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Ethics isn't just about compliance - it's core to the profession! CMAs face ethical dilemmas involving financial reporting, resource allocation, and confidentiality. Understanding ethical frameworks helps make and defend difficult decisions. Ethics is a significant portion of the CMA exam."
+        },
+        {
+          "title": "IMA Statement of Ethical Professional Practice",
+          "type": "text",
+          "content": "**Four Principles:**\n\n**1. Honesty:**\n• Truthfulness and integrity\n• No deception\n\n**2. Fairness:**\n• Impartial treatment\n• Consider all stakeholders\n\n**3. Objectivity:**\n• Unbiased analysis\n• Disclose conflicts of interest\n\n**4. Responsibility:**\n• Accountability for actions\n• Serve public interest\n\n**Four Standards:**\n• Competence\n• Confidentiality\n• Integrity\n• Credibility"
+        },
+        {
+          "title": "IMA Standards Detail",
+          "type": "table",
+          "headers": [
+            "Standard",
+            "Key Requirements",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Competence",
+              "Maintain skills, comply with laws",
+              "CPE, follow GAAP"
+            ],
+            [
+              "Confidentiality",
+              "Protect information, no unauthorized use",
+              "Guard company data"
+            ],
+            [
+              "Integrity",
+              "Avoid conflicts, refuse gifts that influence",
+              "Disclose relationships"
+            ],
+            [
+              "Credibility",
+              "Communicate fairly, disclose delays",
+              "Full disclosure"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Ethical Frameworks",
+          "type": "callout",
+          "content": "**Major Ethical Theories:**\n\n**Utilitarianism (Consequences):**\n• Greatest good for greatest number\n• Weigh costs and benefits\n• Outcome focused\n\n**Deontology (Duty/Rules):**\n• Follow moral rules regardless of outcome\n• Kant: Act as if making universal law\n• Rights-based thinking\n\n**Virtue Ethics (Character):**\n• What would a virtuous person do?\n• Develop good character traits\n• Courage, honesty, fairness\n\n**Justice/Fairness:**\n• Distributional fairness\n• Procedural fairness\n• Equal treatment"
+        },
+        {
+          "title": "Ethical Decision-Making Process",
+          "type": "text",
+          "content": "**Step 1: Identify the Issue**\n• What is the ethical dilemma?\n• Who are affected stakeholders?\n\n**Step 2: Analyze Facts**\n• Gather relevant information\n• Identify applicable standards\n\n**Step 3: Consider Alternatives**\n• Generate options\n• Apply ethical frameworks\n\n**Step 4: Evaluate Options**\n• Consider consequences\n• Apply rules/duties\n• What would stakeholders think?\n\n**Step 5: Decide and Act**\n• Choose best course\n• Be prepared to defend\n\n**Step 6: Reflect**\n• Review outcome\n• Learn for future"
+        },
+        {
+          "title": "Resolving Ethical Conflicts (IMA)",
+          "type": "text",
+          "content": "**When Facing Ethical Conflict:**\n\n**1. Follow Organization Policies**\n• Check if policy addresses situation\n• Use internal reporting channels\n\n**2. Discuss with Supervisor**\n• Unless supervisor is involved\n• Seek clarification\n\n**3. Escalate as Needed**\n• Next level of management\n• Board or audit committee if necessary\n\n**4. Seek Outside Advice**\n• IMA ethics helpline\n• Attorney (if needed)\n• Keep confidential information protected\n\n**Last Resort:**\n• Consider resignation if unresolvable\n• Document everything"
+        },
+        {
+          "title": "⚠️ Exam Trap: Ethics Questions",
+          "type": "warning",
+          "content": "**Common Ethics Exam Scenarios:**\n\n**Pressure Situations:**\n• Boss asks to misstate financials\n• Pressure to make budget targets\n• 'Just this once' rationalization\n\n**Conflicts of Interest:**\n• Personal gain from decisions\n• Family/friend relationships\n• Outside employment\n\n**Confidentiality:**\n• Appropriate vs inappropriate sharing\n• Leaving for competitor\n\n**Key Answer Patterns:**\n• DO: Escalate, document, follow policies\n• DON'T: Go to media, ignore, participate\n• Consult IMA ethics helpline\n• Consider resignation as LAST resort"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "IMA Principles: Honesty, Fairness, Objectivity, Responsibility",
+            "IMA Standards: Competence, Confidentiality, Integrity, Credibility",
+            "Utilitarianism: Greatest good for greatest number",
+            "Deontology: Follow rules/duties regardless of outcome",
+            "Virtue ethics: What would a person of good character do?",
+            "Resolution: Internal policies → Supervisor → Escalate → IMA helpline",
+            "Resignation is last resort, not first response"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Ethics Application",
+          "knowledgeCheck": {
+            "question": "A CMA discovers their supervisor is manipulating expense reports. Per IMA guidance, what should be the CMA's first step?",
+            "options": [
+              "Report to external auditors immediately",
+              "Resign to avoid being implicated",
+              "Follow the organization's established policies for reporting",
+              "Contact the media to expose wrongdoing"
+            ],
+            "correctIndex": 2,
+            "explanation": "Per IMA guidance, the first step is to follow established organizational policies for handling such situations. This typically means using internal channels. External reporting or resignation comes only after internal options are exhausted, and going to media is never recommended.",
+            "hint": "Start with internal processes per IMA guidance."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-025",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Internal Controls Framework",
+    "description": "Design and evaluate internal controls using COSO framework",
+    "order": 25,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Internal controls",
+      "COSO framework",
+      "Control activities",
+      "Control environment"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Controls protect the organization and enable reliable reporting! CMAs design, implement, and monitor internal controls over financial processes. COSO framework is THE standard for internal control - understand it thoroughly for the exam and practice."
+        },
+        {
+          "title": "What are Internal Controls?",
+          "type": "text",
+          "content": "**Definition:**\nProcesses to provide reasonable assurance regarding:\n• Effectiveness and efficiency of operations\n• Reliability of financial reporting\n• Compliance with laws and regulations\n\n**Who's Responsible:**\n• Board of Directors - Oversight\n• Management - Implementation\n• Internal Audit - Evaluation\n• Everyone - Adherence\n\n**Limitations:**\n• Collusion\n• Management override\n• Cost-benefit\n• Human error"
+        },
+        {
+          "title": "COSO Framework Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Control Environment",
+              "Tone at the top",
+              "Ethics policy, HR practices"
+            ],
+            [
+              "Risk Assessment",
+              "Identify and analyze risks",
+              "Risk identification process"
+            ],
+            [
+              "Control Activities",
+              "Policies and procedures",
+              "Approvals, segregation"
+            ],
+            [
+              "Information & Comm",
+              "Relevant, timely info",
+              "Reports, IT systems"
+            ],
+            [
+              "Monitoring",
+              "Ongoing evaluation",
+              "Internal audit, management review"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Control Activities",
+          "type": "callout",
+          "content": "**Types of Control Activities:**\n\n**Preventive Controls:**\n• Stop errors before they occur\n• Approval requirements\n• Segregation of duties\n• Access restrictions\n\n**Detective Controls:**\n• Find errors that occurred\n• Reconciliations\n• Variance analysis\n• Physical counts\n\n**CRAVE-IT Mnemonic:**\n• **C**omparisons/Reconciliations\n• **R**estripted access\n• **A**pprovals/Authorizations\n• **V**erifications\n• **E**xception reports\n• **I**T controls\n• **T**ask segregation"
+        },
+        {
+          "title": "Segregation of Duties",
+          "type": "text",
+          "content": "**Fundamental Control Principle:**\nNo one person should control all phases of a transaction\n\n**Separate These Functions:**\n• **Authorization:** Approve transactions\n• **Custody:** Handle assets\n• **Recording:** Enter in records\n• **Reconciliation:** Verify accuracy\n\n**Example - Purchasing:**\n• Person A: Requests purchase\n• Person B: Approves purchase\n• Person C: Receives goods\n• Person D: Records payable\n• Person E: Pays invoice\n\n**Small Company Challenge:**\n• Compensating controls needed\n• Management oversight\n• Independent review"
+        },
+        {
+          "title": "IT Controls",
+          "type": "text",
+          "content": "**General IT Controls:**\n• Access security\n• Change management\n• Computer operations\n• Backup and recovery\n\n**Application Controls:**\n• Input controls (validation)\n• Processing controls (accuracy)\n• Output controls (distribution)\n\n**Key Concepts:**\n• Passwords and authentication\n• User access reviews\n• Audit trails\n• Data encryption\n\n**IT Risks:**\n• System downtime\n• Data breach\n• Unauthorized changes\n• Loss of data"
+        },
+        {
+          "title": "⚠️ Exam Trap: Control Limitations",
+          "type": "warning",
+          "content": "**Controls Provide REASONABLE Assurance, Not Absolute!**\n\n**Inherent Limitations:**\n\n**1. Collusion:**\n• Multiple people conspiring\n• Defeats segregation of duties\n\n**2. Management Override:**\n• Those in charge can bypass controls\n• Major fraud risk\n\n**3. Cost-Benefit:**\n• Controls must be worth their cost\n• Perfect control is too expensive\n\n**4. Human Error:**\n• Mistakes happen\n• Judgment failures\n\n**Key Point:**\nControls REDUCE risk, don't eliminate it\nFocus on material risks"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "COSO: Control Environment, Risk Assessment, Control Activities, Info/Comm, Monitoring",
+            "Control Environment: Foundation - tone at the top",
+            "Preventive controls: Stop errors; Detective: Find errors",
+            "Segregation: Authorization, Custody, Recording, Reconciliation",
+            "IT Controls: General (access, changes) and Application (input, process, output)",
+            "Reasonable assurance: Not absolute; cost-benefit considered",
+            "Limitations: Collusion, management override, cost, human error"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COSO Components",
+          "knowledgeCheck": {
+            "question": "Which COSO component includes the organization's commitment to integrity, ethical values, and competence of its people?",
+            "options": [
+              "Risk Assessment",
+              "Control Environment",
+              "Control Activities",
+              "Monitoring"
+            ],
+            "correctIndex": 1,
+            "explanation": "The Control Environment is the foundation of internal control and includes integrity, ethical values, management philosophy, organizational structure, HR policies, and assignment of authority. It sets the 'tone at the top' that influences control consciousness.",
+            "hint": "Which component represents the foundation and 'tone at the top'?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-026",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Corporate Governance Principles",
+    "description": "Understand governance structures and board responsibilities",
+    "order": 26,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Corporate governance",
+      "Board of directors",
+      "Audit committee",
+      "Shareholder rights"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Good governance protects shareholders and ensures accountability! CMAs interact with boards, audit committees, and senior leadership. Understanding governance structures helps CMAs navigate reporting responsibilities and support proper controls. This topic appears frequently on CMA Part 2."
+        },
+        {
+          "title": "Corporate Governance Defined",
+          "type": "text",
+          "content": "**What is Corporate Governance?**\n• System of rules, practices, processes\n• Directs and controls organization\n• Balances stakeholder interests\n• Ensures accountability\n\n**Key Stakeholders:**\n• **Shareholders:** Owners, voting rights\n• **Board:** Oversight, strategic direction\n• **Management:** Day-to-day operations\n• **Employees, Customers, Community**\n\n**Agency Problem:**\nManagers (agents) may not act in owners' (principals') best interest\nGovernance mechanisms address this"
+        },
+        {
+          "title": "Governance Structure",
+          "type": "table",
+          "headers": [
+            "Level",
+            "Role",
+            "Responsibility"
+          ],
+          "rows": [
+            [
+              "Shareholders",
+              "Owners",
+              "Elect board, major votes"
+            ],
+            [
+              "Board of Directors",
+              "Oversight",
+              "Strategy, hire CEO, monitor"
+            ],
+            [
+              "CEO/Management",
+              "Execution",
+              "Run business, implement"
+            ],
+            [
+              "Internal Audit",
+              "Assurance",
+              "Independent evaluation"
+            ],
+            [
+              "External Audit",
+              "Attestation",
+              "Opinion on financials"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Board Committees",
+          "type": "callout",
+          "content": "**Three Key Board Committees:**\n\n**Audit Committee:**\n• Oversee financial reporting\n• Select external auditors\n• Review internal controls\n• Approve internal audit plan\n• Must be independent\n\n**Compensation Committee:**\n• Set executive pay\n• Approve incentive plans\n• Review performance\n• Address pay vs performance\n\n**Nominating/Governance Committee:**\n• Identify board candidates\n• Board composition\n• Governance policies\n• Board evaluations\n\n**Key Rule:**\nAll three should be INDEPENDENT directors"
+        },
+        {
+          "title": "Board Independence",
+          "type": "text",
+          "content": "**Inside Directors:**\n• Company executives\n• CEO typically on board\n• Day-to-day knowledge\n• Potential conflicts\n\n**Outside/Independent Directors:**\n• No material relationship with company\n• Not employees or executives\n• Objective oversight\n• Required for key committees\n\n**Best Practice:**\n• Majority of board = independent\n• Separate Chair and CEO roles\n• Lead independent director\n• Executive sessions without management"
+        },
+        {
+          "title": "Sarbanes-Oxley Requirements",
+          "type": "text",
+          "content": "**SOX Key Provisions:**\n• **Section 302:** CEO/CFO certify financials\n• **Section 404:** Internal control assessment\n• **Section 906:** Criminal penalties for false certification\n\n**Audit Committee Requirements:**\n• All members independent\n• At least one financial expert\n• Direct responsibility for external auditors\n• Procedures for complaints/whistleblowers\n\n**Prohibitions:**\n• Loans to executives\n• Insider trading during blackout periods\n• Auditor conflicts of interest"
+        },
+        {
+          "title": "⚠️ Exam Trap: Governance Concepts",
+          "type": "warning",
+          "content": "**Common Confusions:**\n\n**Board vs Management:**\n• Board: OVERSIGHT (strategy, monitoring)\n• Management: EXECUTION (operations)\n• Board should NOT manage!\n\n**Audit Committee Responsibilities:**\n• Oversee external auditors (select, evaluate)\n• Review internal controls\n• NOT manage internal audit\n• Internal audit reports TO audit committee\n\n**Independence:**\n• Former employee: May need 'cooling off' period\n• Family relationships: May impair independence\n• Business relationships: Material = not independent\n\n**Fiduciary Duty:**\n• Duty of care: Informed decisions\n• Duty of loyalty: Act in company's interest"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Governance: System to direct and control organization",
+            "Agency problem: Managers may not act for shareholders",
+            "Board: Oversight and strategic direction",
+            "Key committees: Audit, Compensation, Nominating",
+            "All key committees should be independent",
+            "SOX: CEO/CFO certification, Section 404 controls",
+            "Audit committee: Oversee auditors, financial reporting, controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Corporate Governance",
+          "knowledgeCheck": {
+            "question": "Which board committee is primarily responsible for overseeing the external audit process?",
+            "options": [
+              "Compensation Committee",
+              "Nominating Committee",
+              "Audit Committee",
+              "Executive Committee"
+            ],
+            "correctIndex": 2,
+            "explanation": "The Audit Committee is responsible for overseeing the external audit process, including selecting auditors, reviewing audit scope, and approving audit fees. This committee must be comprised entirely of independent directors.",
+            "hint": "Which committee deals with financial reporting and auditors?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-027",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Fraud Risk and Prevention",
+    "description": "Identify and prevent occupational fraud",
+    "order": 27,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Fraud risk",
+      "Fraud triangle",
+      "Fraud prevention",
+      "Red flags"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Fraud costs organizations 5% of revenue annually! CMAs are on the front line of fraud prevention through controls, analysis, and ethical leadership. Understanding fraud schemes and prevention techniques is essential for protecting organizational assets and reputation."
+        },
+        {
+          "title": "Fraud Classification",
+          "type": "text",
+          "content": "**Occupational Fraud Categories:**\n\n**Asset Misappropriation:**\n• Theft of cash or assets\n• Most common (85%+ of cases)\n• Smallest median loss\n• Examples: Skimming, theft, fraudulent disbursements\n\n**Corruption:**\n• Employee misuses influence\n• Bribery, kickbacks\n• Conflicts of interest\n• Moderate frequency and loss\n\n**Financial Statement Fraud:**\n• Intentional misstatement\n• Least common (<10%)\n• Largest median loss\n• Examples: Fictitious revenue, hidden liabilities"
+        },
+        {
+          "title": "Fraud Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Frequency",
+            "Median Loss"
+          ],
+          "rows": [
+            [
+              "Asset Misappropriation",
+              "~86%",
+              "~$100K"
+            ],
+            [
+              "Corruption",
+              "~50%",
+              "~$200K"
+            ],
+            [
+              "Financial Statement",
+              "~9%",
+              "~$593K"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Fraud Triangle",
+          "type": "callout",
+          "content": "**Three Elements (ALL required):**\n\n**1. Pressure (Incentive):**\n• Financial problems\n• Lifestyle beyond means\n• Addiction, gambling\n• Performance pressure\n\n**2. Opportunity:**\n• Weak internal controls\n• Lack of oversight\n• Management override\n• Access to assets\n\n**3. Rationalization:**\n• 'I deserve it'\n• 'I'll pay it back'\n• 'Everyone does it'\n• 'Company can afford it'\n\n**Prevention Focus:**\nReduce OPPORTUNITY (controls)\nHarder to change pressure/rationalization"
+        },
+        {
+          "title": "Fraud Red Flags",
+          "type": "text",
+          "content": "**Behavioral:**\n• Living beyond means\n• Financial difficulties\n• Unusually close vendor relationships\n• Refusal to take vacation\n• Excessive control issues\n\n**Organizational:**\n• Override of controls by management\n• Domineering management style\n• High turnover in key positions\n• Inadequate segregation of duties\n• Lack of independent checks\n\n**Transactional:**\n• Missing documents\n• Unusual journal entries\n• Round number transactions\n• Transactions just below authorization limits\n• Unusually high expense reports"
+        },
+        {
+          "title": "Fraud Prevention",
+          "type": "text",
+          "content": "**Control Environment:**\n• Tone at the top\n• Code of ethics\n• Clear policies\n• Ethical culture\n\n**Internal Controls:**\n• Segregation of duties\n• Authorization limits\n• Physical safeguards\n• Independent reconciliation\n\n**Detection Activities:**\n• Surprise audits\n• Hotline/whistleblower program\n• Data analytics\n• Continuous monitoring\n\n**Key Statistic:**\nTips are the #1 detection method (~40% of cases)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Fraud Diamond",
+          "type": "warning",
+          "content": "**Fraud Diamond (Extension):**\n\nAdds 4th element: **Capability**\n\n• Position in organization\n• Intelligence and creativity\n• Ego and confidence\n• Ability to handle stress\n• Coercion skills\n\n**Why It Matters:**\nNot everyone with pressure, opportunity, and rationalization commits fraud\nThey must also have the CAPABILITY\n\n**CMA Role:**\n• Design preventive controls\n• Support hotline programs\n• Conduct data analytics\n• Maintain ethical standards\n• Report suspicious activity\n\n**Remember:**\nCMAs have obligation under IMA ethics to report fraud"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three fraud types: Asset misappropriation, corruption, financial statement",
+            "Asset misappropriation most common, F/S fraud largest loss",
+            "Fraud triangle: Pressure, Opportunity, Rationalization",
+            "Fraud diamond adds: Capability",
+            "Focus prevention on reducing opportunity (controls)",
+            "Tips are #1 detection method - support hotlines",
+            "Behavioral red flags often precede fraud detection"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Fraud",
+          "knowledgeCheck": {
+            "question": "The fraud triangle includes pressure, opportunity, and:",
+            "options": [
+              "Capability",
+              "Rationalization",
+              "Corruption",
+              "Detection"
+            ],
+            "correctIndex": 1,
+            "explanation": "The fraud triangle consists of Pressure (incentive to commit fraud), Opportunity (weak controls allow fraud), and Rationalization (justification for the behavior). Capability is the fourth element in the fraud diamond, an extension of the triangle.",
+            "hint": "The triangle has three elements - which one is about justifying the behavior?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-028",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "IMA Statement of Ethical Professional Practice",
+    "description": "Apply IMA ethical standards in practice",
+    "order": 28,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "IMA ethics",
+      "Professional ethics",
+      "Ethical standards",
+      "Ethical conflicts"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Ethics is the foundation of the CMA profession! The IMA Statement of Ethical Professional Practice is THE guiding document for CMAs worldwide. Understanding and applying these standards is essential for maintaining professional integrity. This is heavily tested on the CMA exam."
+        },
+        {
+          "title": "IMA Ethical Principles",
+          "type": "text",
+          "content": "**Overarching Principles:**\n• **Honesty:** Tell the truth\n• **Fairness:** Be impartial\n• **Objectivity:** Free from bias\n• **Responsibility:** Act responsibly\n\n**These Principles Guide:**\n• Decision-making\n• Professional conduct\n• Relationships\n• Communications\n\n**Four Standards:**\n• Competence\n• Confidentiality\n• Integrity\n• Credibility"
+        },
+        {
+          "title": "IMA Ethical Standards",
+          "type": "table",
+          "headers": [
+            "Standard",
+            "Key Requirements"
+          ],
+          "rows": [
+            [
+              "Competence",
+              "Maintain expertise, perform duties competently, provide decision-support information"
+            ],
+            [
+              "Confidentiality",
+              "Keep information confidential, don't use for personal advantage"
+            ],
+            [
+              "Integrity",
+              "Avoid conflicts, refuse gifts that influence, recognize limitations"
+            ],
+            [
+              "Credibility",
+              "Communicate fairly and objectively, disclose all relevant information"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: The Four C's (Actually CCIC)",
+          "type": "callout",
+          "content": "**Competence:**\n• Maintain professional competence\n• Comply with laws and regulations\n• Provide accurate information\n\n**Confidentiality:**\n• Keep information confidential\n• Don't use for personal advantage\n• Ensure subordinates maintain\n\n**Integrity:**\n• Mitigate conflicts of interest\n• Refrain from activities that prejudice duties\n• Refuse gifts that could influence\n\n**Credibility:**\n• Communicate information fairly\n• Disclose delays/deficiencies\n• Disclose ALL relevant information\n\n**Memory:**\n'CMAs are CCIC - Competent, Confidential, Integral, Credible'"
+        },
+        {
+          "title": "Resolving Ethical Conflicts",
+          "type": "text",
+          "content": "**IMA Recommended Process:**\n\n**1. Follow Established Policies:**\n• Review company's ethics policy\n• Use internal reporting channels\n\n**2. Discuss with Supervisor:**\n• Unless supervisor is involved\n• Present facts objectively\n\n**3. Escalate if Needed:**\n• Go to next level of management\n• Use audit committee if available\n• Contact ethics hotline\n\n**4. If Unresolved:**\n• Consult IMA Ethics Counselor\n• Consult attorney\n• Consider resignation as last resort\n\n**Note:** Resignation doesn't relieve confidentiality obligations"
+        },
+        {
+          "title": "Common Ethical Scenarios",
+          "type": "text",
+          "content": "**Pressure to Misstate:**\n• Refuse to comply\n• Document the request\n• Escalate through proper channels\n\n**Confidential Information:**\n• Don't share with unauthorized parties\n• Don't use for personal benefit\n• Maintain after leaving company\n\n**Conflict of Interest:**\n• Disclose the conflict\n• Recuse from decision-making\n• Document resolution\n\n**Gifts and Entertainment:**\n• Decline if could influence judgment\n• Follow company policy\n• Consider appearance"
+        },
+        {
+          "title": "⚠️ Exam Trap: Ethics Application",
+          "type": "warning",
+          "content": "**Common Exam Scenarios:**\n\n**What Standard Applies?**\n• Failing to disclose all relevant info: Credibility\n• Using insider info for trading: Confidentiality + Integrity\n• Presenting biased analysis: Credibility\n• Not maintaining skills: Competence\n• Accepting inappropriate gift: Integrity\n\n**Escalation Order:**\n1. Internal policies\n2. Immediate supervisor\n3. Higher management\n4. Board/Audit committee\n5. IMA Ethics Counselor\n6. Attorney\n7. Resignation (last resort)\n\n**Remember:**\nConfidentiality continues AFTER employment ends\nCan't share secrets even after resignation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four principles: Honesty, Fairness, Objectivity, Responsibility",
+            "Four standards: Competence, Confidentiality, Integrity, Credibility",
+            "Competence: Maintain professional skills",
+            "Confidentiality: Protect information, don't use for personal gain",
+            "Integrity: Avoid/disclose conflicts, refuse inappropriate gifts",
+            "Credibility: Communicate fairly, disclose ALL relevant info",
+            "Resolve conflicts by escalating through proper channels"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IMA Ethics",
+          "knowledgeCheck": {
+            "question": "A CMA discovers their manager is overstating revenue. According to IMA guidelines, the CMA's first step should be to:",
+            "options": [
+              "Resign immediately",
+              "Report to the SEC",
+              "Follow established internal policies and discuss with the manager",
+              "Contact IMA Ethics Counselor"
+            ],
+            "correctIndex": 2,
+            "explanation": "The IMA's recommended resolution process starts with following established organizational policies and discussing with the supervisor (unless they're involved in the issue). External reporting and resignation are later steps if internal resolution fails.",
+            "hint": "What's the first step in the IMA's conflict resolution process?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-029",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Sarbanes-Oxley and Internal Controls",
+    "description": "Understand SOX requirements and compliance",
+    "order": 29,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Sarbanes-Oxley",
+      "SOX 404",
+      "Internal controls",
+      "Financial reporting"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "SOX changed corporate governance forever! CMAs at public companies work within SOX requirements daily, documenting controls, testing effectiveness, and ensuring compliance. Understanding SOX is essential for financial reporting roles."
+        },
+        {
+          "title": "Sarbanes-Oxley Background",
+          "type": "text",
+          "content": "**Why SOX Was Enacted (2002):**\n• Response to Enron, WorldCom scandals\n• Restore investor confidence\n• Improve corporate governance\n• Strengthen financial reporting\n\n**Applies to:**\n• U.S. public companies (SEC registrants)\n• Foreign companies listed on U.S. exchanges\n• Some provisions affect private companies\n\n**Key Oversight:**\n• PCAOB (Public Company Accounting Oversight Board)\n• Oversees auditors of public companies\n• Sets auditing standards"
+        },
+        {
+          "title": "Key SOX Sections",
+          "type": "table",
+          "headers": [
+            "Section",
+            "Title",
+            "Requirement"
+          ],
+          "rows": [
+            [
+              "302",
+              "CEO/CFO Certifications",
+              "Sign off on financial reports and controls"
+            ],
+            [
+              "404",
+              "Management Assessment",
+              "Evaluate and report on internal controls"
+            ],
+            [
+              "906",
+              "Criminal Certifications",
+              "Criminal penalties for false certifications"
+            ],
+            [
+              "409",
+              "Real-Time Disclosure",
+              "Disclose material changes rapidly"
+            ],
+            [
+              "802",
+              "Document Retention",
+              "Maintain audit workpapers for 7 years"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: SOX Section 404",
+          "type": "callout",
+          "content": "**The Most Significant Section:**\n\n**Management Responsibilities:**\n• Design internal controls over financial reporting (ICFR)\n• Document controls\n• Test control effectiveness\n• Identify deficiencies\n• Include assessment in annual report\n\n**Auditor Responsibilities:**\n• Audit internal controls (integrated audit)\n• Issue opinion on ICFR effectiveness\n• Report material weaknesses\n\n**Control Deficiency Levels:**\n• **Deficiency:** Small issue\n• **Significant Deficiency:** Important, not material\n• **Material Weakness:** Could result in material misstatement\n\n**Memory:** '404 = Four Oh Four = Control Error Page'"
+        },
+        {
+          "title": "COSO Internal Control Framework",
+          "type": "text",
+          "content": "**COSO: Framework for SOX Compliance**\n\n**5 Components:**\n• **Control Environment:** Tone at the top\n• **Risk Assessment:** Identify and analyze risks\n• **Control Activities:** Policies and procedures\n• **Information & Communication:** Quality information flow\n• **Monitoring:** Ongoing evaluation\n\n**17 Principles:**\nEach component has underlying principles\n\n**Documentation Required:**\n• Flowcharts of processes\n• Control matrices\n• Risk and control mapping\n• Testing documentation\n• Evidence of management review"
+        },
+        {
+          "title": "SOX Compliance Process",
+          "type": "text",
+          "content": "**Annual SOX Compliance Cycle:**\n\n**1. Scoping:**\n• Identify significant accounts\n• Identify relevant assertions\n• Determine key controls\n\n**2. Documentation:**\n• Update process narratives/flowcharts\n• Confirm control descriptions\n• Document risks and responses\n\n**3. Testing:**\n• Design tests of controls\n• Execute testing (walkthroughs, samples)\n• Document results\n\n**4. Evaluation:**\n• Identify deficiencies\n• Assess severity\n• Determine remediation\n\n**5. Reporting:**\n• Management report on ICFR\n• Auditor attestation"
+        },
+        {
+          "title": "⚠️ Exam Trap: Control Deficiencies",
+          "type": "warning",
+          "content": "**Severity Levels:**\n\n**Material Weakness:**\n• Reasonable possibility of material misstatement\n• NOT prevented or detected timely\n• MUST be disclosed in annual report\n• Adverse opinion on ICFR\n\n**Significant Deficiency:**\n• Less severe than material weakness\n• Still important enough to report\n• Reported to audit committee\n• Not necessarily public\n\n**Control Deficiency:**\n• Control doesn't operate as designed\n• May not rise to significant level\n\n**Key Point:**\nOne material weakness = ICFR is NOT effective\nEven if all other controls are perfect"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "SOX: Response to early 2000s accounting scandals",
+            "Section 302: CEO/CFO certifications",
+            "Section 404: Management assessment and auditor attestation",
+            "COSO framework: 5 components for internal control",
+            "Material weakness must be publicly disclosed",
+            "PCAOB oversees auditors of public companies",
+            "CMAs heavily involved in SOX compliance documentation and testing"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SOX",
+          "knowledgeCheck": {
+            "question": "Under SOX Section 404, if a company's auditor identifies a material weakness in internal control over financial reporting, the auditor must:",
+            "options": [
+              "Issue an unqualified opinion with emphasis of matter",
+              "Issue an adverse opinion on internal control",
+              "Withdraw from the engagement",
+              "Issue a disclaimer of opinion"
+            ],
+            "correctIndex": 1,
+            "explanation": "A material weakness in ICFR means internal control is NOT effective, requiring an adverse opinion on internal controls. The auditor may still issue an unqualified opinion on the financial statements themselves if they are fairly stated despite the control weakness.",
+            "hint": "Material weakness = control is not effective = what type of opinion?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-A-030",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Data Privacy and GDPR Compliance",
+    "description": "Understand privacy regulations and compliance requirements",
+    "order": 30,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Data privacy",
+      "GDPR",
+      "CCPA",
+      "Privacy compliance"
+    ],
+    "blueprintArea": "CMA2-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Data privacy is a business imperative! With GDPR fines reaching billions of dollars, CMAs must understand privacy requirements. Finance handles sensitive personal data, making compliance a direct responsibility."
+        },
+        {
+          "title": "Privacy Landscape",
+          "type": "text",
+          "content": "**Major Regulations:**\n• **GDPR:** EU General Data Protection Regulation\n• **CCPA/CPRA:** California Consumer Privacy Act\n• **HIPAA:** US healthcare data\n• **GLBA:** US financial data\n• **PIPEDA:** Canada privacy law\n\n**Why It Matters:**\n• Heavy fines for non-compliance\n• Customer trust and reputation\n• Competitive advantage\n• Legal liability\n\n**Trend:**\nPrivacy regulations spreading globally\nCompanies often apply strictest standard everywhere"
+        },
+        {
+          "title": "GDPR Key Requirements",
+          "type": "table",
+          "headers": [
+            "Requirement",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Lawful Basis",
+              "Must have legal reason to process data"
+            ],
+            [
+              "Consent",
+              "Clear, affirmative opt-in required"
+            ],
+            [
+              "Data Minimization",
+              "Collect only what's necessary"
+            ],
+            [
+              "Purpose Limitation",
+              "Use only for stated purposes"
+            ],
+            [
+              "Right to Access",
+              "Individuals can request their data"
+            ],
+            [
+              "Right to Erasure",
+              "'Right to be forgotten'"
+            ],
+            [
+              "Breach Notification",
+              "72-hour disclosure requirement"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: GDPR Principles",
+          "type": "callout",
+          "content": "**Seven GDPR Principles:**\n\n**1. Lawfulness, Fairness, Transparency:**\nProcess legally and openly\n\n**2. Purpose Limitation:**\nCollect for specific, stated purposes\n\n**3. Data Minimization:**\nOnly what's needed, nothing more\n\n**4. Accuracy:**\nKeep data up to date\n\n**5. Storage Limitation:**\nDon't keep longer than necessary\n\n**6. Integrity & Confidentiality:**\nSecure the data\n\n**7. Accountability:**\nBe able to demonstrate compliance\n\n**Memory:** 'LPDASIA'\nLawful, Purpose, Data-min, Accuracy, Storage, Integrity, Accountable"
+        },
+        {
+          "title": "GDPR Penalties",
+          "type": "text",
+          "content": "**Two Tiers of Fines:**\n\n**Tier 1 (Lower):**\n• Up to €10 million or 2% global revenue\n• Technical/organizational violations\n• Record-keeping, security failures\n\n**Tier 2 (Higher):**\n• Up to €20 million or 4% global revenue\n• Fundamental violations\n• Consent, rights violations\n\n**Notable Fines:**\n• Meta (Facebook): €1.2 billion (2023)\n• Amazon: €746 million\n• Google: €90 million\n\n**Beyond Fines:**\n• Reputational damage\n• Customer loss\n• Class action lawsuits"
+        },
+        {
+          "title": "Finance Department Implications",
+          "type": "text",
+          "content": "**Data Handled by Finance:**\n• Employee personal data (payroll)\n• Customer payment information\n• Vendor contact details\n• Tax identification numbers\n\n**CMA Responsibilities:**\n• Data inventory and mapping\n• Retention policy compliance\n• Vendor due diligence\n• Privacy impact assessments\n• Breach cost estimation\n\n**Best Practices:**\n• Minimize data collection\n• Encrypt sensitive data\n• Control access\n• Document processing activities\n• Train staff regularly"
+        },
+        {
+          "title": "⚠️ Exam Trap: GDPR vs CCPA",
+          "type": "warning",
+          "content": "**Key Differences:**\n\n**GDPR (EU):**\n• Applies to EU residents' data\n• Opt-in consent required\n• No revenue threshold\n• Broader scope\n\n**CCPA (California):**\n• California residents only\n• Opt-out model (can sell, must allow opt-out)\n• Applies to businesses with $25M+ revenue\n• Right to know what's sold\n\n**Common Ground:**\n• Right to access data\n• Right to deletion\n• Transparency requirements\n• Penalties for violations\n\n**Exam Tip:**\nGDPR = Opt-IN (stricter)\nCCPA = Opt-OUT"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "GDPR: EU privacy regulation with global impact",
+            "Fines up to €20M or 4% global revenue",
+            "Key rights: Access, erasure, portability, objection",
+            "Consent must be clear and affirmative",
+            "72-hour breach notification required",
+            "Finance handles significant personal data",
+            "GDPR = Opt-in; CCPA = Opt-out model"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Data Privacy",
+          "knowledgeCheck": {
+            "question": "Under GDPR, how quickly must an organization report a personal data breach to the supervisory authority?",
+            "options": [
+              "24 hours",
+              "72 hours",
+              "7 days",
+              "30 days"
+            ],
+            "correctIndex": 1,
+            "explanation": "GDPR requires notification to the supervisory authority within 72 hours of becoming aware of a personal data breach, unless the breach is unlikely to result in risk to individuals. Affected individuals must also be notified without undue delay if high risk.",
+            "hint": "GDPR has a specific short timeframe for breach reporting."
+          }
+        }
+      ]
+    }
   }
 ]

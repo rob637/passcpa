@@ -134,23 +134,8 @@ const DynamicArticle = () => {
     );
   }
 
-  // ---- Not Found: Redirect to static blog page (served by Astro) ----
+  // ---- Not Found: Show 404 page ----
   if (notFound || !article) {
-    // The article might exist as a static page served by Astro.
-    // Redirect to force a full page load of the static version.
-    // Use sessionStorage to prevent infinite redirect loops.
-    if (typeof window !== 'undefined' && slug) {
-      const redirectKey = `blog_redirect_${slug}`;
-      const alreadyRedirected = sessionStorage.getItem(redirectKey);
-      
-      if (!alreadyRedirected) {
-        sessionStorage.setItem(redirectKey, 'true');
-        // Clear after 5 seconds to allow retry
-        setTimeout(() => sessionStorage.removeItem(redirectKey), 5000);
-        window.location.href = `/blog/${slug}/`;
-        return null;
-      }
-    }
     return (
       <div className="min-h-screen bg-white dark:bg-slate-950 flex items-center justify-center px-4">
         <div className="text-center max-w-md">

@@ -14,12 +14,10 @@ import type { CourseId } from '../types/course';
 import type { 
   StudyPlan, 
   StudyPlanSummary, 
-  TodaysPlan,
   StudyPlanSetupInput,
 } from '../types/studyPlan';
 import {
   generateStudyPlan,
-  generateTodaysPlan,
   calculatePlanHealth,
 } from '../services/studyPlanService';
 import { clearTodaysPlan } from '../services/dailyPlanPersistence';
@@ -28,11 +26,19 @@ import logger from '../utils/logger';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { toLocalDate } from '../utils/dateHelpers';
 import { getCurrentSection } from '../utils/profileHelpers';
+import { resolveStudySection } from '../services/contentRegistry';
+
+// Cross-instance refresh: when one hook instance updates the plan (e.g. createPlan),
+// all other instances (e.g. MainLayout nav dot) re-fetch to stay in sync.
+const PLAN_UPDATED_EVENT = 'studyPlanUpdated';
+
+function notifyPlanUpdated() {
+  window.dispatchEvent(new Event(PLAN_UPDATED_EVENT));
+}
 
 interface UseStudyPlanReturn {
   // Plan state
   plan: StudyPlan | null;
-  todaysPlan: TodaysPlan | null;
   summary: StudyPlanSummary;
   
   // Loading states
@@ -106,10 +112,13 @@ async function fetchRealProgress(
   }
 
   try {
-    // 3. Count distinct days studied from daily_log
+    // 3. Count distinct days studied from daily_log for this course
     const logsRef = collection(db, 'users', userId, 'daily_log');
     const logsSnap = await getDocs(logsRef);
+    const coursePrefix = `${courseId}_`;
     daysStudied = logsSnap.docs.filter(docSnap => {
+      // Only count logs for this specific course
+      if (!docSnap.id.startsWith(coursePrefix)) return false;
       const data = docSnap.data();
       // Count if any meaningful activity on that day
       return (data.questionsAnswered > 0 || data.lessonsCompleted > 0 || data.minutesStudied > 0);
@@ -136,11 +145,24 @@ export function useStudyPlan(): UseStudyPlanReturn {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
+  // Refresh key: incremented by cross-instance events to trigger re-fetch
+  const [refreshKey, setRefreshKey] = useState(0);
+  
+  useEffect(() => {
+    const handler = () => setRefreshKey(k => k + 1);
+    window.addEventListener(PLAN_UPDATED_EVENT, handler);
+    return () => window.removeEventListener(PLAN_UPDATED_EVENT, handler);
+  }, []);
+  
   // Get the current section from profile (e.g., 'FAR', 'AUD', 'SEE1')
   const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   
-  // Plans are stored per-section: e.g., 'cpa_FAR', 'cpa_AUD', 'ea_SEE1'
-  const planKey = currentSection ? `${courseId}_${currentSection}` : courseId;
+  // For single-exam courses (CFP, CISA), resolve 'ALL' to the actual section ('CFP', 'CISA')
+  // This ensures planKey matches how plans are stored
+  const resolvedSection = resolveStudySection(courseId, currentSection) || currentSection;
+  
+  // Plans are stored per-section: e.g., 'cpa_FAR', 'cpa_AUD', 'cfp_CFP', 'cisa_CISA'
+  const planKey = resolvedSection ? `${courseId}_${resolvedSection}` : courseId;
   
   // Load the study plan on mount and when course/section changes
   useEffect(() => {
@@ -166,75 +188,13 @@ export function useStudyPlan(): UseStudyPlanReturn {
           if (planDoc.exists()) {
             const data = planDoc.data() as StudyPlan;
             
-            // Fetch real progress from user's actual activity data
-            // This syncs the plan with all activities, including those done before plan creation
-            const realProgress = await fetchRealProgress(user.uid, courseId, currentSection);
-            
-            // Merge stored progress with real progress (use max values to avoid losing data)
-            const mergedProgress = {
-              ...data.progress,
-              lessonsCompleted: Math.max(data.progress?.lessonsCompleted || 0, realProgress.lessonsCompleted),
-              questionsAnswered: Math.max(data.progress?.questionsAnswered || 0, realProgress.questionsAnswered),
-              accuracy: realProgress.questionsAnswered > 0 ? realProgress.accuracy : (data.progress?.accuracy || 0),
-              daysStudied: Math.max(data.progress?.daysStudied || 0, realProgress.daysStudied),
-            };
-            
-            // Recalculate health based on synced progress
-            // This ensures health reflects actual user activity, not stale stored value
-            const today = new Date();
+            // Phase 1: Set plan immediately with stored progress (fast — no extra reads)
             const weeks = data.weeks?.map(w => ({
               ...w,
               startDate: toLocalDate(w.startDate),
               endDate: toLocalDate(w.endDate),
             })) || [];
             
-            const currentWeek = weeks.find(w => 
-              isWithinInterval(today, { start: w.startDate, end: w.endDate })
-            );
-            
-            // Grace period: don't penalize users in the first 2 days of a new plan.
-            // A plan created today shouldn't immediately show "Behind Schedule" —
-            // the user hasn't had a chance to execute it yet.
-            const planCreatedAt = toLocalDate(data.createdAt);
-            const daysSincePlanCreation = Math.floor(
-              (today.getTime() - planCreatedAt.getTime()) / (1000 * 60 * 60 * 24)
-            );
-            const isNewPlan = daysSincePlanCreation <= 1;
-            
-            let recalculatedHealth = data.health || 'on-track';
-            
-            if (!isNewPlan) {
-              // Calculate expected progress only after grace period
-              let lessonsExpected = 0;
-              let questionsExpected = 0;
-              for (const w of weeks) {
-                if (w.weekNumber < (currentWeek?.weekNumber || 1)) {
-                  lessonsExpected += w.goals?.lessons || 0;
-                  questionsExpected += w.goals?.questions || 0;
-                }
-              }
-              // Add partial week progress
-              if (currentWeek) {
-                const weekStart = currentWeek.startDate;
-                const dayOfWeek = Math.floor((today.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
-                const weekProgress = Math.min(1, dayOfWeek / 7);
-                lessonsExpected += Math.floor((currentWeek.goals?.lessons || 0) * weekProgress);
-                questionsExpected += Math.floor((currentWeek.goals?.questions || 0) * weekProgress);
-              }
-              
-              recalculatedHealth = calculatePlanHealth(
-                currentWeek?.weekNumber || 1,
-                data.totalWeeks || 1,
-                mergedProgress.lessonsCompleted,
-                lessonsExpected,
-                mergedProgress.questionsAnswered,
-                questionsExpected,
-                mergedProgress.daysStudied,
-                mergedProgress.daysMissed || 0
-              );
-            }
-            
-            // Convert Firestore timestamps to Dates
             setPlan({
               ...data,
               startDate: toLocalDate(data.startDate),
@@ -246,9 +206,89 @@ export function useStudyPlan(): UseStudyPlanReturn {
                 ...m,
                 date: toLocalDate(m.date),
               })) || [],
-              progress: mergedProgress,
-              health: recalculatedHealth, // Use recalculated health, not stored value
+              progress: data.progress || {},
+              health: data.health || 'on-track',
             });
+            // Mark loading done immediately so dashboard sees hasPlan
+            setLoading(false);
+            
+            // Phase 2: Deferred — sync real progress in the background (3 collection reads)
+            // This avoids blocking the initial render with heavy Firestore queries
+            const syncProgress = async () => {
+              if (!mounted) return;
+              try {
+                const realProgress = await fetchRealProgress(user.uid, courseId, currentSection);
+                if (!mounted) return;
+                
+                const mergedProgress = {
+                  ...data.progress,
+                  lessonsCompleted: Math.max(data.progress?.lessonsCompleted || 0, realProgress.lessonsCompleted),
+                  questionsAnswered: Math.max(data.progress?.questionsAnswered || 0, realProgress.questionsAnswered),
+                  accuracy: realProgress.questionsAnswered > 0 ? realProgress.accuracy : (data.progress?.accuracy || 0),
+                  daysStudied: Math.max(data.progress?.daysStudied || 0, realProgress.daysStudied),
+                };
+                
+                // Recalculate health based on synced progress
+                const today = new Date();
+                const currentWeek = weeks.find(w => 
+                  isWithinInterval(today, { start: w.startDate, end: w.endDate })
+                );
+                
+                const planCreatedAt = toLocalDate(data.createdAt);
+                const daysSincePlanCreation = Math.floor(
+                  (today.getTime() - planCreatedAt.getTime()) / (1000 * 60 * 60 * 24)
+                );
+                const isNewPlan = daysSincePlanCreation <= 1;
+                
+                let recalculatedHealth = data.health || 'on-track';
+                
+                if (!isNewPlan) {
+                  let lessonsExpected = 0;
+                  let questionsExpected = 0;
+                  for (const w of weeks) {
+                    if (w.weekNumber < (currentWeek?.weekNumber || 1)) {
+                      lessonsExpected += w.goals?.lessons || 0;
+                      questionsExpected += w.goals?.questions || 0;
+                    }
+                  }
+                  if (currentWeek) {
+                    const weekStart = currentWeek.startDate;
+                    const dayOfWeek = Math.floor((today.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+                    const weekProgress = Math.min(1, dayOfWeek / 7);
+                    lessonsExpected += Math.floor((currentWeek.goals?.lessons || 0) * weekProgress);
+                    questionsExpected += Math.floor((currentWeek.goals?.questions || 0) * weekProgress);
+                  }
+                  
+                  recalculatedHealth = calculatePlanHealth(
+                    currentWeek?.weekNumber || 1,
+                    data.totalWeeks || 1,
+                    mergedProgress.lessonsCompleted,
+                    lessonsExpected,
+                    mergedProgress.questionsAnswered,
+                    questionsExpected,
+                    mergedProgress.daysStudied,
+                    mergedProgress.daysMissed || 0
+                  );
+                }
+                
+                if (mounted) {
+                  setPlan(prev => prev ? {
+                    ...prev,
+                    progress: mergedProgress,
+                    health: recalculatedHealth,
+                  } : null);
+                }
+              } catch (err) {
+                logger.warn('Deferred progress sync failed:', err);
+              }
+            };
+            
+            // Use requestIdleCallback if available, otherwise setTimeout
+            if (typeof requestIdleCallback === 'function') {
+              requestIdleCallback(() => syncProgress());
+            } else {
+              setTimeout(syncProgress, 2000);
+            }
           } else {
             setPlan(null);
           }
@@ -270,18 +310,7 @@ export function useStudyPlan(): UseStudyPlanReturn {
     return () => {
       mounted = false;
     };
-  }, [user, courseId, currentSection, planKey]);
-  
-  // Generate today's plan whenever the plan changes
-  const todaysPlan = useMemo(() => {
-    if (!plan) return null;
-    try {
-      return generateTodaysPlan(plan);
-    } catch (err) {
-      logger.error('Error generating today\'s plan:', err);
-      return null;
-    }
-  }, [plan]);
+  }, [user, courseId, currentSection, planKey, refreshKey]);
   
   // Summary for nav indicator
   const summary = useMemo((): StudyPlanSummary => {
@@ -317,9 +346,25 @@ export function useStudyPlan(): UseStudyPlanReturn {
       // Generate the plan
       const newPlan = generateStudyPlan(input, user.uid);
       
+      // IMPORTANT: Preserve existing progress when editing/rebalancing a plan
+      // Fetch real progress from Firestore (lessons, questions, daily logs)
+      // This ensures users don't lose their metrics when they modify their plan
+      const realProgress = await fetchRealProgress(user.uid, input.courseId, input.section);
+      
+      // Merge real progress into the new plan
+      newPlan.progress = {
+        ...newPlan.progress,
+        lessonsCompleted: realProgress.lessonsCompleted,
+        questionsAnswered: realProgress.questionsAnswered,
+        accuracy: realProgress.accuracy,
+        daysStudied: realProgress.daysStudied,
+      };
+      
       // Save to Firestore under user's studyPlans subcollection
-      // Key is courseId_section for section-independent plans
-      const savePlanKey = `${input.courseId}_${input.section}`;
+      // Key is courseId_section, with section normalized for single-exam courses
+      // IMPORTANT: Use resolveStudySection to normalize 'ALL' -> 'CISA'/'CFP' for consistency
+      const normalizedSection = resolveStudySection(input.courseId, input.section) || input.section;
+      const savePlanKey = `${input.courseId}_${normalizedSection}`;
       
       // Firestore doesn't accept undefined values - use JSON serialization to strip them
       // This converts Date objects to ISO strings, which Firestore handles fine
@@ -339,6 +384,9 @@ export function useStudyPlan(): UseStudyPlanReturn {
       // Clear daily plan cache so it regenerates with the new study plan context
       await clearTodaysPlan(user.uid, input.section);
       
+      // Notify other hook instances (e.g. MainLayout nav dot) to re-fetch
+      notifyPlanUpdated();
+      
       logger.info('Study plan created, daily plan cache cleared:', newPlan.id);
       return newPlan;
     } catch (err) {
@@ -352,25 +400,11 @@ export function useStudyPlan(): UseStudyPlanReturn {
     }
   }, [user]);
   
-  // Refresh the plan from server
+  // Refresh the plan from server (triggers re-fetch in all hook instances)
   const refreshPlan = useCallback(async () => {
     if (!user || !courseId || !currentSection) return;
-    
-    try {
-      setLoading(true);
-      const planDoc = await getDoc(
-        doc(db, 'users', user.uid, 'studyPlans', planKey)
-      );
-      
-      if (planDoc.exists()) {
-        setPlan(planDoc.data() as StudyPlan);
-      }
-    } catch (err) {
-      logger.error('Error refreshing study plan:', err);
-    } finally {
-      setLoading(false);
-    }
-  }, [user, courseId, currentSection, planKey]);
+    notifyPlanUpdated();
+  }, [user, courseId, currentSection]);
   
   // Mark an activity as complete (local state only for now)
   const markActivityComplete = useCallback((activityId: string) => {
@@ -396,7 +430,6 @@ export function useStudyPlan(): UseStudyPlanReturn {
   
   return {
     plan,
-    todaysPlan,
     summary,
     loading,
     error,

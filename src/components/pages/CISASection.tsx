@@ -27,6 +27,10 @@ export default function CISASection() {
     [sectionId]
   );
   
+  // Calculate domain-level stats (must be before blueprintAreas memo)
+  const domainProgress = progress?.domainProgress?.[sectionId] || 0;
+  const domainAccuracy = progress?.domainAccuracy?.[sectionId] || 0;
+  
   // Transform blueprint areas from course config
   const blueprintAreas: BlueprintArea[] = useMemo(() => {
     if (!courseSection?.blueprintAreas) {
@@ -37,8 +41,8 @@ export default function CISASection() {
           name: 'Key Topics',
           weight: legacyConfig.weight + '%',
           topics: legacyConfig.topics,
-          progress: 0,
-          accuracy: 0,
+          progress: domainProgress,
+          accuracy: domainAccuracy,
         }];
       }
       return [];
@@ -49,14 +53,13 @@ export default function CISASection() {
       name: area.name,
       weight: area.weight,
       topics: area.topics || [],
-      progress: 0, // TODO: Get from progress service per area
-      accuracy: 0,
+      // Use domain progress as proxy for area progress until per-area tracking is added
+      progress: domainProgress,
+      accuracy: domainAccuracy,
     }));
-  }, [courseSection, legacyConfig, sectionId]);
+  }, [courseSection, legacyConfig, sectionId, domainProgress, domainAccuracy]);
   
   // Calculate stats
-  const domainProgress = progress?.domainProgress?.[sectionId] || 0;
-  const domainAccuracy = progress?.domainAccuracy?.[sectionId] || 0;
   const stats: SectionStats = useMemo(() => ({
     examLength: courseSection?.timeAllowed ? Math.round(courseSection.timeAllowed / 60) : undefined,
     questionCount: legacyConfig?.questionCount || courseSection?.questionCount,

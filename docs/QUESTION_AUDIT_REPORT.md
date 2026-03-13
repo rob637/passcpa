@@ -1,17 +1,17 @@
 # Question Bank Audit Report
 
-Generated: 2026-03-02T13:28:03.291Z
+Generated: 2026-03-13T16:29:22.340Z
 
 ## Summary
 
-- **Total Questions Audited:** 20627
+- **Total Questions Audited:** 20779
 - **Total Issues Found:** 4081
 
 ## Issues by Exam
 
 | Exam | Questions | Issues |
 |------|-----------|--------|
-| CPA | 9002 | 2445 |
+| CPA | 9154 | 2445 |
 | EA | 2997 | 388 |
 | CMA | 2528 | 504 |
 | CIA | 2212 | 690 |

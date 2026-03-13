@@ -89,6 +89,23 @@ vi.mock('../../../services/questionService', () => ({
 }));
 
 // Mock CourseProvider
+vi.mock('../../../hooks/useStudyPlan', () => ({
+  useStudyPlan: vi.fn(() => ({
+    studyPlan: null,
+    isLoading: false,
+    error: null,
+    updateStudyPlan: vi.fn(),
+    refreshPlan: vi.fn(),
+  })),
+  default: vi.fn(() => ({
+    studyPlan: null,
+    isLoading: false,
+    error: null,
+    updateStudyPlan: vi.fn(),
+    refreshPlan: vi.fn(),
+  })),
+}));
+
 vi.mock('../../../providers/CourseProvider', () => ({
   useCourse: () => ({
     courseId: 'cpa',

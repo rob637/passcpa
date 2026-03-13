@@ -249,8 +249,8 @@ export function getCurrentSection(
     ea: /^SEE[123]$/,
     cma: /^CMA[12]$/,
     cia: /^(part[123]|CIA[123])$/,
-    cisa: /^(domain[1-5]|CISA[1-5]|CISA)$/,   // Accept 'CISA' for single-exam course
-    cfp: /^(CFP-.+|CFP)$/,  // CFP-PCR, CFP-GEN, etc. or 'CFP' for single-exam course
+    cisa: /^(domain[1-5]|CISA[1-5]|CISA|ALL)$/,   // Accept 'CISA' or 'ALL' for single-exam course
+    cfp: /^(CFP-.+|CFP|ALL)$/,  // CFP-PCR, CFP-GEN, etc. or 'CFP' or 'ALL' for single-exam course
   };
   
   const coursePattern = sectionCourseMapping[courseId];

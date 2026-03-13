@@ -99,15 +99,32 @@ export async function getFlashcardsBySection(section: string, courseId?: CourseI
       return all;
     }
 
-    // Normalize section matching: CFP-GEN → GEN, etc.
-    const domain = section.replace(/^CFP-/, '');
+    // Single-exam courses: if section matches the course name (e.g., 'CISA' for cisa course),
+    // return all flashcards since the individual flashcards use domain sections like 'CISA1', 'CISA2'
+    const sectionUpper = section.toUpperCase();
+    const courseUpper = effectiveCourse.toUpperCase();
+    if (sectionUpper === courseUpper) {
+      flashcardCache[cacheKey] = all;
+      return all;
+    }
 
-    const flashcards = all.filter(f =>
-      f.section === section ||
-      f.section === domain ||
-      f.blueprintArea === section ||
-      f.blueprintArea === domain
-    );
+    // Normalize section matching: CFP-GEN → GEN, CISA-1 → 1, etc.
+    const domain = section.replace(/^(CFP|CISA|CMA|CIA|EA)-?/i, '');
+
+    const flashcards = all.filter(f => {
+      const fSection = f.section?.toUpperCase();
+      const fBlueprint = f.blueprintArea?.toUpperCase();
+      const sectionCheck = section.toUpperCase();
+      const domainUpper = domain.toUpperCase();
+      
+      return fSection === sectionCheck ||
+        fSection === domainUpper ||
+        fBlueprint === sectionCheck ||
+        fBlueprint === domainUpper ||
+        // Also match if section starts with the domain (e.g., 'CISA1' starts with 'CISA1')
+        fSection?.startsWith(sectionCheck) ||
+        sectionCheck.startsWith(fSection || '');
+    });
 
     flashcardCache[cacheKey] = flashcards;
     return flashcards;

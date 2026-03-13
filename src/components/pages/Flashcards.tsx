@@ -13,12 +13,8 @@ import {
   CheckCircle,
   Brain,
   Sparkles,
-  Clock,
-  Target,
   ArrowLeft,
-  BookOpen,
   Calculator,
-  Lightbulb,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';

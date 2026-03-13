@@ -132,9 +132,9 @@ export interface ExamLandingConfig {
 export const SHARED_WHY_VORAPREP = [
   {
     icon: BookOpen,
-    title: '20,000+ Practice Questions',
+    title: '25,000+ Practice Questions',
     description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
-    stat: '20,000+',
+    stat: '25,000+',
   },
   {
     icon: DollarSign,

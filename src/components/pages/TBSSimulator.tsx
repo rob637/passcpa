@@ -42,6 +42,14 @@ const TBS_LABELS: Record<string, string> = {
   research: 'Research',
   form_completion: 'Form Completion',
   written_communication: 'Written Communication',
+  amortization_table: 'Amortization Schedule',
+  calculation_table: 'Calculation Table',
+  basis_schedule: 'Basis Schedule',
+  true_false: 'True/False',
+  short_answer: 'Short Answer',
+  multiple_select: 'Multiple Select',
+  matching: 'Matching',
+  form_field: 'Form Field',
 };
 
 // Types and Interfaces
@@ -124,13 +132,23 @@ const transformTbs = (rawTbs: any): TBSQuestion | null => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const tasks: TBSTask[] = requirements.map((req: any, index: number) => {
     // Map requirement type to component type
+    // Many data types exist but we map to the 6 supported render types
     let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification' = 'calculation';
-    if (req.type === 'journal_entry' || req.type === 'journal') taskType = 'journal';
-    else if (req.type === 'multiple_choice') taskType = 'mcq';
-    else if (req.type === 'classification' || req.type === 'classification_table') taskType = 'classification';
-    else if (req.type === 'written_communication') taskType = 'wc';
-    else if (req.type === 'calculation') taskType = 'calculation';
-    else if (req.type === 'reconciliation') taskType = 'reconciliation';
+    const rawType = req.type?.toLowerCase() || '';
+    
+    if (rawType === 'journal_entry' || rawType === 'journal') {
+      taskType = 'journal';
+    } else if (rawType === 'multiple_choice' || rawType === 'true_false' || rawType === 'multiple_select' || rawType === 'document_review') {
+      taskType = 'mcq';
+    } else if (rawType === 'classification' || rawType === 'classification_table' || rawType === 'matching') {
+      taskType = 'classification';
+    } else if (rawType === 'written_communication' || rawType === 'short_answer') {
+      taskType = 'wc';
+    } else if (rawType === 'reconciliation') {
+      taskType = 'reconciliation';
+    }
+    // All other types (calculation, amortization_table, calculation_table, basis_schedule, 
+    // form_completion, form_field) default to 'calculation'
     
     return {
       id: req.id || `task-${index + 1}`,
@@ -157,11 +175,20 @@ const transformTbs = (rawTbs: any): TBSQuestion | null => {
   // If no requirements, create a single task from the TBS itself (legacy format)
   if (tasks.length === 0) {
     let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification' = 'calculation';
-    if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') taskType = 'journal';
-    else if (rawTbs.type === 'multiple_choice') taskType = 'mcq';
-    else if (rawTbs.type === 'classification' || rawTbs.type === 'classification_table') taskType = 'classification';
-    else if (rawTbs.type === 'written_communication') taskType = 'wc';
-    else if (rawTbs.type === 'reconciliation') taskType = 'reconciliation';
+    const rawType = rawTbs.type?.toLowerCase() || '';
+    
+    if (rawType === 'journal_entry' || rawType === 'journal') {
+      taskType = 'journal';
+    } else if (rawType === 'multiple_choice' || rawType === 'true_false' || rawType === 'multiple_select' || rawType === 'document_review') {
+      taskType = 'mcq';
+    } else if (rawType === 'classification' || rawType === 'classification_table' || rawType === 'matching') {
+      taskType = 'classification';
+    } else if (rawType === 'written_communication' || rawType === 'short_answer') {
+      taskType = 'wc';
+    } else if (rawType === 'reconciliation') {
+      taskType = 'reconciliation';
+    }
+    // All other types default to 'calculation'
     
     tasks.push({
       id: 'task-1',
@@ -346,16 +373,45 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
   const isCorrect = showCorrect && !isComplexAnswer && Math.abs(Number(value) - numericCorrect) <= (tolerance || 0);
 
   // Format complex answers for display
-  const formatComplexAnswer = (answer: Record<string, unknown>): string => {
-    if ('adjustedBalance' in answer) {
-      return `Adjusted Balance: $${(answer.adjustedBalance as number).toLocaleString()}`;
+  const formatComplexAnswer = (answer: unknown): string => {
+    // Handle array answers (amortization schedules, multi-period calculations)
+    if (Array.isArray(answer)) {
+      // Check if it's an amortization-style array
+      const firstItem = answer[0];
+      if (firstItem && typeof firstItem === 'object' && 'period' in firstItem) {
+        // Format as amortization schedule summary
+        return answer.map((row: Record<string, number>) => {
+          const period = row.period ?? 0;
+          const carryingValue = row.carryingValue ?? row.endingBalance ?? 0;
+          const interestExpense = row.interestExpense ?? 0;
+          return `Period ${period}: Interest $${interestExpense.toLocaleString()}, CV $${carryingValue.toLocaleString()}`;
+        }).join(' | ');
+      }
+      // Generic array - show count and first value
+      return `${answer.length} entries required`;
     }
-    if ('bankSection' in answer && 'bookSection' in answer) {
-      const bank = answer.bankSection as { adjustedBalance?: number };
-      const book = answer.bookSection as { adjustedBalance?: number };
-      return `Adjusted Balance: $${(bank.adjustedBalance || book.adjustedBalance || 0).toLocaleString()}`;
+    
+    // Handle object answers
+    if (typeof answer === 'object' && answer !== null) {
+      const obj = answer as Record<string, unknown>;
+      if ('adjustedBalance' in obj) {
+        return `Adjusted Balance: $${(obj.adjustedBalance as number).toLocaleString()}`;
+      }
+      if ('bankSection' in obj && 'bookSection' in obj) {
+        const bank = obj.bankSection as { adjustedBalance?: number };
+        const book = obj.bookSection as { adjustedBalance?: number };
+        return `Adjusted Balance: $${(bank.adjustedBalance || book.adjustedBalance || 0).toLocaleString()}`;
+      }
+      // Try to extract a meaningful value
+      const keys = Object.keys(obj);
+      if (keys.length === 1) {
+        const val = obj[keys[0]];
+        if (typeof val === 'number') return `$${val.toLocaleString()}`;
+      }
     }
-    return JSON.stringify(answer);
+    
+    // Fallback: try to show a readable version
+    return String(answer);
   };
 
   return (

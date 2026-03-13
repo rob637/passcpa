@@ -2101,5 +2101,1843 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA1-A-014",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Business Combinations and Consolidations",
+    "description": "Master the accounting for mergers, acquisitions, and consolidated financial statements",
+    "order": 14,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Business combinations",
+      "Acquisition method",
+      "Goodwill",
+      "Consolidation procedures"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "M&A activity creates massive accounting complexity! CMAs must understand how to account for acquisitions, recognize goodwill, and prepare consolidated statements. These skills are critical for financial analysis and strategic planning."
+        },
+        {
+          "title": "What Is a Business Combination?",
+          "type": "text",
+          "content": "**Definition:** A transaction where an acquirer obtains control of one or more businesses\n\n**Forms of Business Combinations:**\n• Merger - Target absorbed into acquirer\n• Acquisition - Target becomes subsidiary\n• Asset purchase - Specific assets acquired\n\n**Control Defined:**\n• Generally >50% voting ownership\n• Power to govern financial and operating policies\n\n**Why It Matters:**\nConsolidation requires presenting combined entities as if they were one economic entity"
+        },
+        {
+          "title": "Acquisition Method (ASC 805)",
+          "type": "text",
+          "content": "**Step 1: Identify the Acquirer**\n• Entity obtaining control\n• Usually (not always) the larger company\n\n**Step 2: Determine Acquisition Date**\n• Date when acquirer obtains control\n• Usually closing date\n\n**Step 3: Recognize and Measure Assets/Liabilities**\n• Fair value at acquisition date\n• Includes identifiable intangibles\n\n**Step 4: Recognize Goodwill (or Bargain Purchase)**\n\nGoodwill = Purchase Price - Fair Value of Net Assets Acquired\n\n**If negative:** Bargain purchase gain (rare) - recognize immediately in income"
+        },
+        {
+          "title": "🧠 Memory Aid: Goodwill Calculation",
+          "type": "callout",
+          "content": "**\"PIGS GAIN\" Formula:**\n\n**P**urchase price paid\n**I**dentifiable net assets at fair value\n**G**oodwill = P - I\n**S**ubsequent impairment testing required\n\n**GAIN** if I > P (negative goodwill = bargain purchase gain)\n\nRemember: Goodwill is NOT amortized - it's tested for impairment!"
+        },
+        {
+          "title": "Identifiable Intangible Assets",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Examples",
+            "Recognition Criteria"
+          ],
+          "rows": [
+            [
+              "Marketing-Related",
+              "Trademarks, trade names, domain names",
+              "Separable or contractual right"
+            ],
+            [
+              "Customer-Related",
+              "Customer lists, customer relationships",
+              "Expected future economic benefit"
+            ],
+            [
+              "Technology-Based",
+              "Patents, software, trade secrets",
+              "Acquired (not internally developed)"
+            ],
+            [
+              "Contract-Based",
+              "Licenses, franchises, employment agreements",
+              "Contractual legal rights"
+            ]
+          ]
+        },
+        {
+          "title": "Consolidation Procedures",
+          "type": "text",
+          "content": "**Basic Principle:** Present parent and subsidiaries as single entity\n\n**Steps for Consolidation:**\n\n**1. Combine Financial Statements**\n• Add all assets, liabilities, revenues, expenses\n\n**2. Eliminate Intercompany Transactions**\n• Intercompany receivables/payables\n• Intercompany sales/purchases\n• Intercompany profit in inventory\n• Dividends from subsidiary to parent\n\n**3. Eliminate Investment Account**\n• Parent's investment = Sub's equity\n• Recognize goodwill or bargain purchase\n\n**4. Calculate Non-controlling Interest (NCI)**\n• If parent owns <100%, minority shareholders exist\n• NCI = Fair value of subsidiary × (100% - Parent ownership %)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Intercompany Eliminations",
+          "type": "warning",
+          "content": "**Most Tested Topic: Intercompany Inventory Profit**\n\nParent sells inventory to Sub for $120,000 (cost: $100,000)\nSub still holds 25% of inventory at year-end\n\n**Unrealized Profit:** $20,000 × 25% = $5,000\n\n**Elimination Entry:**\nDR Cost of Goods Sold $5,000\nCR Inventory $5,000\n\n**Key Point:** Only eliminate profit in ending inventory\n**Direction matters:** Downstream (parent→sub) vs Upstream (sub→parent)"
+        },
+        {
+          "title": "Non-Controlling Interest",
+          "type": "text",
+          "content": "**Definition:** Equity in subsidiary not attributable to parent\n\n**Balance Sheet Presentation:**\n• Separate component of equity\n• Labeled \"NCI\" or \"Minority Interest\"\n\n**Income Statement:**\n• Net income split between:\n  - Income attributable to parent\n  - Income attributable to NCI\n\n**Example:**\nParent owns 80% of Subsidiary\nSubsidiary net income: $500,000\n\nParent's share: $400,000 (80%)\nNCI share: $100,000 (20%)"
+        },
+        {
+          "title": "Goodwill Impairment",
+          "type": "text",
+          "content": "**Under ASC 350 (Simplified):**\n\n**Step 1:** Compare fair value of reporting unit to carrying amount\n\n**If FV < Carrying Amount:**\n• Recognize impairment loss\n• Loss = Carrying amount - Fair value\n• But not exceeding goodwill balance\n\n**When to Test:**\n• At least annually\n• More frequently if triggering events occur\n\n**Triggering Events:**\n• Significant decline in stock price\n• Operating losses\n• Industry downturn\n• Loss of key personnel"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Business combinations use the acquisition method exclusively",
+            "Goodwill = Purchase price - Fair value of net identifiable assets",
+            "Identifiable intangibles must be separable or arise from contractual rights",
+            "Consolidation eliminates intercompany transactions and balances",
+            "Non-controlling interest represents minority shareholders' equity",
+            "Goodwill is not amortized but tested annually for impairment",
+            "Impairment loss = Carrying amount - Fair value (limited to goodwill balance)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Goodwill Calculation",
+          "knowledgeCheck": {
+            "question": "Alpha Corp acquires 100% of Beta Inc for $5,000,000. Beta's identifiable assets have a fair value of $4,200,000 and its liabilities have a fair value of $800,000. What amount of goodwill should Alpha recognize?",
+            "options": [
+              "$800,000",
+              "$1,600,000",
+              "$3,400,000",
+              "$4,200,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "Goodwill = Purchase price - Fair value of net assets = $5,000,000 - ($4,200,000 - $800,000) = $5,000,000 - $3,400,000 = $1,600,000.",
+            "hint": "Net assets = Assets - Liabilities. Goodwill is the excess of purchase price over net asset fair value."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Intercompany Elimination Purpose",
+          "reveal": {
+            "question": "Why must intercompany transactions be eliminated in consolidation?",
+            "answer": "Intercompany transactions are eliminated because consolidated statements present the group as a single economic entity. You cannot sell to yourself, owe yourself money, or earn profit from yourself. Without elimination, assets, revenues, and profits would be double-counted or artificially inflated."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-015",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Fair Value Measurement (ASC 820)",
+    "description": "Master the framework for measuring and disclosing fair value in financial statements",
+    "order": 15,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Fair value",
+      "ASC 820",
+      "Valuation hierarchy",
+      "Market participants"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Fair value measurements affect everything from investment portfolios to pension obligations to impairment testing. CMAs must understand the fair value framework to ensure compliance, make proper estimates, and explain valuations to stakeholders."
+        },
+        {
+          "title": "What Is Fair Value?",
+          "type": "text",
+          "content": "**ASC 820 Definition:**\nThe price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date.\n\n**Key Concepts:**\n\n**Exit Price (not Entry Price)**\n• What you'd GET when selling\n• Not what you'd PAY to buy\n\n**Orderly Transaction**\n• Not a forced or distressed sale\n• Normal market conditions\n\n**Market Participants**\n• Buyers/sellers in principal market\n• Independent, knowledgeable, willing\n\n**Measurement Date**\n• Balance sheet date typically"
+        },
+        {
+          "title": "Fair Value Hierarchy",
+          "type": "table",
+          "headers": [
+            "Level",
+            "Inputs",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Level 1",
+              "Quoted prices in active markets for identical items",
+              "NYSE stock prices, Treasury prices"
+            ],
+            [
+              "Level 2",
+              "Observable inputs other than Level 1",
+              "Interest rates, yield curves, similar asset prices"
+            ],
+            [
+              "Level 3",
+              "Unobservable inputs (entity's own estimates)",
+              "DCF models, internally developed data"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Fair Value Levels",
+          "type": "callout",
+          "content": "**\"1-2-3\" = Easy to Hard:**\n\n**Level 1** = \"Look it up\" (quoted price for same thing)\n**Level 2** = \"Figure it out\" (adjust from observable data)\n**Level 3** = \"Make it up\" (internal models, judgment)\n\n**Think of reliability:**\n1 = Most reliable (market prices)\n2 = Moderately reliable (observable inputs)\n3 = Least reliable (estimates)\n\n**Must use highest level available!**"
+        },
+        {
+          "title": "Level 2 Inputs",
+          "type": "text",
+          "content": "**Observable but not Level 1:**\n\n**Quoted Prices for Similar Assets**\n• Comparable bonds\n• Similar real estate\n\n**Observable Market Data**\n• Interest rates\n• Credit spreads\n• Yield curves\n• Foreign exchange rates\n\n**Derived/Corroborated Data**\n• Dealer quotes\n• Pricing services\n• Broker quotes\n\n**Key:** Must be observable - based on actual market data, not internal estimates"
+        },
+        {
+          "title": "Level 3 Measurements",
+          "type": "text",
+          "content": "**When No Market Data Exists:**\n\n**Common Valuation Techniques:**\n• Discounted cash flow (DCF)\n• Option pricing models\n• Multi-period excess earnings\n• Relief from royalty\n\n**Unobservable Inputs:**\n• Company's own assumptions\n• Risk-adjusted discount rates\n• Growth projections\n• Probability weightings\n\n**Requirements:**\n• Use best information available\n• Consider market participant perspective\n• Document methodology\n• Extensive disclosures required"
+        },
+        {
+          "title": "⚠️ Exam Trap: Principal vs Most Advantageous Market",
+          "type": "warning",
+          "content": "**Which Market to Use?**\n\n**Principal Market:**\n• Greatest volume and activity for the asset\n• USE THIS FIRST if it exists\n• Even if price is less favorable\n\n**Most Advantageous Market:**\n• Use ONLY if no principal market exists\n• Maximizes amount received (assets)\n• Minimizes amount paid (liabilities)\n\n**Transaction Costs:**\n• NOT part of fair value\n• But used to determine most advantageous market\n\n**Exam Tip:** If they mention both markets, focus on principal market."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Fair value = exit price in orderly transaction between market participants",
+            "Level 1: Quoted prices for identical items (most reliable)",
+            "Level 2: Observable inputs like similar assets or market rates",
+            "Level 3: Unobservable/internal inputs (least reliable, most judgment)",
+            "Use highest level inputs available",
+            "Principal market price prevails over most advantageous market",
+            "Transaction costs excluded from fair value measurement"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Fair Value Hierarchy",
+          "knowledgeCheck": {
+            "question": "A company holds an investment in corporate bonds that are not actively traded but have similar bonds with observable market prices. The fair value measurement would most likely be classified as:",
+            "options": [
+              "Level 1 - Quoted prices in active markets",
+              "Level 2 - Observable inputs other than quoted prices",
+              "Level 3 - Unobservable inputs",
+              "Not subject to fair value measurement"
+            ],
+            "correctIndex": 1,
+            "explanation": "Level 2 applies when you can use observable inputs from similar assets or other market data (like yield curves or credit spreads) to estimate fair value. Since similar bonds have observable prices, this provides Level 2 inputs for the illiquid bonds.",
+            "hint": "The bonds aren't actively traded (not Level 1), but similar assets provide observable data."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-016",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Segment Reporting and Decentralization",
+    "description": "Report performance by business segments and evaluate decentralized operations",
+    "order": 16,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Segment reporting",
+      "ASC 280",
+      "Responsibility centers",
+      "Decentralization"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Large organizations need to understand performance at the segment level! Segment reporting provides visibility into which parts of the business create value and which destroy it. CMAs design segment reports and advise on responsibility center structures."
+        },
+        {
+          "title": "ASC 280 Operating Segments",
+          "type": "text",
+          "content": "**GAAP Definition (for external reporting):**\n\nAn operating segment is a component that:\n• Engages in revenue-generating activities\n• Has discrete financial information\n• Is regularly reviewed by chief operating decision maker (CODM)\n\n**Quantitative Thresholds (10% tests):**\nSegment is reportable if it meets ANY of:\n• Revenue ≥ 10% of combined revenue\n• Profit/loss ≥ 10% of combined profit (or loss)\n• Assets ≥ 10% of combined assets\n\n**75% Rule:**\nReported segments must cover at least 75% of external revenue"
+        },
+        {
+          "title": "Responsibility Centers",
+          "type": "table",
+          "headers": [
+            "Center Type",
+            "Manager Controls",
+            "Evaluated On"
+          ],
+          "rows": [
+            [
+              "Cost Center",
+              "Costs only",
+              "Variance from budget"
+            ],
+            [
+              "Revenue Center",
+              "Revenue only",
+              "Sales vs. target"
+            ],
+            [
+              "Profit Center",
+              "Revenue and costs",
+              "Profit margin"
+            ],
+            [
+              "Investment Center",
+              "Revenue, costs, and assets",
+              "ROI, RI, EVA"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Responsibility Centers",
+          "type": "callout",
+          "content": "**\"CRPI\" - From least to most autonomy:**\n\n**C**ost Center - Control costs (Production, IT)\n**R**evenue Center - Control revenue (Sales team)\n**P**rofit Center - Control both (Business unit)\n**I**nvestment Center - Control everything including capital (Division)\n\n**Key Principle:** Only evaluate managers on what they control!"
+        },
+        {
+          "title": "Segment Margin Analysis",
+          "type": "text",
+          "content": "**Internal reporting format:**\n\n**Revenue**\n- Variable costs\n= Contribution Margin\n- Direct fixed costs (traceable)\n= **Segment Margin**\n- Common fixed costs (allocated)\n= Net Operating Income\n\n**Key Insight:**\n• Segment margin = best measure of segment profitability\n• Includes only costs traceable TO that segment\n• Common costs wouldn't disappear if segment closed\n• Don't hold managers responsible for allocated costs!"
+        },
+        {
+          "title": "Traceable vs Common Costs",
+          "type": "text",
+          "content": "**Traceable (Direct) Fixed Costs:**\n• Exist BECAUSE of segment\n• Would disappear if segment closed\n• Examples: Segment manager salary, segment advertising\n\n**Common Fixed Costs:**\n• Support multiple segments\n• Would NOT disappear if one segment closed\n• Examples: Corporate HQ, CEO salary\n\n**Why it matters:**\nTraceable costs are relevant for segment decisions\nCommon costs are allocated = artificial\n\n**Segment could have:**\n• Positive segment margin (keep open)\n• But negative net income (due to allocations)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Fixed Cost Behavior",
+          "type": "warning",
+          "content": "**A cost can be:**\n• Fixed overall but DIRECT to segment\n• Example: Segment manager's salary is fixed but traceable\n\n**Don't confuse:**\n• Variable/Fixed (cost behavior)\n• Direct/Indirect (traceability)\n\n**Example:**\nManager salary: Fixed AND Direct (traceable)\nFactory rent: Fixed but may be Common (shared)\nDirect materials: Variable AND Direct\n\n**Segment margin includes ALL traceable costs - both variable AND fixed!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ASC 280 requires segment reporting if 10% thresholds met",
+            "Responsibility centers: Cost, Revenue, Profit, Investment",
+            "Evaluate managers only on what they control",
+            "Segment margin = Revenue - Variable costs - Traceable fixed costs",
+            "Traceable costs disappear if segment closes",
+            "Common costs are allocated and don't affect segment decisions",
+            "Positive segment margin = keep segment open (usually)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Segment Decisions",
+          "knowledgeCheck": {
+            "question": "A segment has: Revenue $500,000; Variable costs $300,000; Traceable fixed costs $150,000; Allocated common costs $80,000. Should this segment be kept open or closed?",
+            "options": [
+              "Close - it loses $30,000",
+              "Keep open - segment margin is positive $50,000",
+              "Close - segment margin is negative",
+              "Need more information about variable costs"
+            ],
+            "correctIndex": 1,
+            "explanation": "Segment margin = $500,000 - $300,000 - $150,000 = $50,000 (positive). The $80,000 allocated costs would continue even if segment closed, so they're irrelevant. With positive segment margin, the segment covers its traceable costs and contributes to common costs.",
+            "hint": "Calculate segment margin (ignore allocated common costs) to make the decision."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-017",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Revenue Recognition Under ASC 606",
+    "description": "Apply the five-step model for recognizing revenue from contracts with customers",
+    "order": 17,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Revenue recognition",
+      "ASC 606",
+      "Performance obligations",
+      "Contract accounting"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Revenue is the top line - and the most scrutinized! ASC 606 provides a comprehensive framework for when and how to recognize revenue. CMAs must understand this to ensure compliant reporting and to structure contracts that achieve business objectives."
+        },
+        {
+          "title": "The Five-Step Model",
+          "type": "text",
+          "content": "**ASC 606 Revenue Recognition Process:**\n\n**Step 1: Identify the Contract**\n• Agreement with enforceable rights/obligations\n• Both parties approve and commit\n\n**Step 2: Identify Performance Obligations**\n• Distinct goods or services promised\n• Each promise = potential separate obligation\n\n**Step 3: Determine Transaction Price**\n• Amount expected to receive\n• Consider variable consideration\n\n**Step 4: Allocate Price to Obligations**\n• Based on standalone selling prices\n• Proportional allocation\n\n**Step 5: Recognize Revenue**\n• When performance obligation is satisfied\n• Over time or at a point in time"
+        },
+        {
+          "title": "When Is a Good or Service Distinct?",
+          "type": "text",
+          "content": "**Two Criteria:**\n\n**1. Capable of Being Distinct**\n• Customer can benefit from it alone\n• OR together with other available resources\n\n**2. Distinct Within the Contract**\n• Not highly dependent on other items\n• Not significantly modifying other items\n• Not highly interrelated with other items\n\n**Example - Separately Distinct:**\n• Cell phone + service plan = 2 obligations\n• Phone can be used with any carrier\n\n**Example - NOT Separately Distinct:**\n• Custom software + implementation = 1 obligation\n• Implementation significantly customizes software"
+        },
+        {
+          "title": "🧠 Memory Aid: Over Time Recognition",
+          "type": "callout",
+          "content": "**Recognize OVER TIME if ANY of these is true:**\n\n**1. Simultaneous Benefit**\nCustomer receives and consumes benefit as you perform\n(e.g., recurring cleaning services)\n\n**2. Customer Controls Asset**\nYou're building something customer controls\n(e.g., construction on customer's land)\n\n**3. No Alternative Use**\nAsset has no alternative use to you AND\nYou have enforceable right to payment for work done\n(e.g., custom manufacturing)\n\n**Otherwise:** Recognize at a POINT IN TIME (when control transfers)"
+        },
+        {
+          "title": "Variable Consideration",
+          "type": "text",
+          "content": "**When price isn't fixed:**\n\n**Types:**\n• Discounts, rebates\n• Price concessions\n• Incentives, bonuses\n• Penalties\n• Returns\n\n**Estimation Methods:**\n• Expected value (probability-weighted)\n• Most likely amount\n\n**Constraint:**\nOnly include variable consideration to extent\nit's \"highly probable\" of NOT being reversed\n\n**Example:**\n$100,000 contract with $10,000 bonus if done early\n70% chance of bonus\n\nInclude bonus? Only if highly probable won't reverse"
+        },
+        {
+          "title": "Allocating Transaction Price",
+          "type": "text",
+          "content": "**Based on Standalone Selling Prices (SSP):**\n\n**Method 1: Observable Prices**\n• What you actually sell items for separately\n• Best evidence\n\n**Method 2: Adjusted Market Assessment**\n• What competitors charge\n• What market would pay\n\n**Method 3: Expected Cost Plus Margin**\n• Your cost + reasonable margin\n\n**Example:**\nBundle: $90 (software $60 SSP + support $40 SSP)\nRatio: 60:40\nAllocate $90: Software $54, Support $36"
+        },
+        {
+          "title": "⚠️ Exam Trap: Contract Modifications",
+          "type": "warning",
+          "content": "**When contract terms change:**\n\n**Treat as SEPARATE contract if:**\n• Scope increases due to distinct goods/services\n• Price increases by standalone value\n\n**Otherwise:**\n• Treat as modification of existing contract\n• Update transaction price\n• Adjust remaining revenue recognition\n\n**Common Exam Questions:**\n• Change order on construction project\n• Adding services to existing agreement\n• Price reduction for remaining deliverables"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Five steps: Contract → Obligations → Price → Allocate → Recognize",
+            "Identify DISTINCT performance obligations",
+            "Recognize over time if criteria met; otherwise at point in time",
+            "Variable consideration: include only if highly probable won't reverse",
+            "Allocate bundle price based on standalone selling prices",
+            "Contract modifications may be separate or part of original",
+            "Focus on when CONTROL transfers, not payment or delivery"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ASC 606 Application",
+          "knowledgeCheck": {
+            "question": "A software company sells a license ($800 SSP), one year of support ($300 SSP), and installation ($100 SSP) for a bundled price of $960. How much revenue is allocated to the support?",
+            "options": [
+              "$240",
+              "$300",
+              "$320",
+              "$360"
+            ],
+            "correctIndex": 0,
+            "explanation": "Total SSP = $800 + $300 + $100 = $1,200. Support ratio = $300 / $1,200 = 25%. Revenue allocated to support = $960 × 25% = $240.",
+            "hint": "Calculate each item as a percentage of total standalone prices, then apply to bundle price."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-018",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Lease Accounting Under ASC 842",
+    "description": "Apply the new lease accounting standards for both lessees and lessors",
+    "order": 18,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Lease accounting",
+      "ASC 842",
+      "Operating leases",
+      "Finance leases"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "ASC 842 brought most leases onto the balance sheet! CMAs must understand how lease classification affects financial statements, debt covenants, and key ratios. This is a significant exam topic with complex implications."
+        },
+        {
+          "title": "ASC 842 Overview",
+          "type": "text",
+          "content": "**Big Change:**\nUnder old rules (ASC 840), operating leases were off-balance sheet\nUnder ASC 842, almost ALL leases go on balance sheet\n\n**Lessee Accounting:**\n• Recognize Right-of-Use (ROU) Asset\n• Recognize Lease Liability\n• Both equal to PV of lease payments\n\n**Two Lease Classifications for Lessees:**\n• Finance Lease (like old capital lease)\n• Operating Lease (new treatment)\n\n**Key Difference:**\nHow expense is recognized on income statement"
+        },
+        {
+          "title": "Finance vs Operating Lease (Lessee)",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Finance Lease",
+            "Operating Lease"
+          ],
+          "rows": [
+            [
+              "Balance Sheet",
+              "ROU Asset + Liability",
+              "ROU Asset + Liability (same)"
+            ],
+            [
+              "Expense Pattern",
+              "Front-loaded (interest + depreciation)",
+              "Straight-line (single lease expense)"
+            ],
+            [
+              "Cash Flow",
+              "Interest: Operating; Principal: Financing",
+              "All: Operating"
+            ],
+            [
+              "Income Statement",
+              "Separate interest + amortization",
+              "Single lease expense"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Finance Lease Criteria",
+          "type": "callout",
+          "content": "**\"OWNS\" - Any ONE of these makes it a Finance Lease:**\n\n**O**wnership transfers at end\n\n**W**ritten purchase option (bargain)\n• Purchase option reasonably certain to exercise\n\n**N**ear entire life (75% of useful life)\n• Lease term ≥ 75% of asset's useful life\n\n**S**ubstantially all value (90% of FMV)\n• PV of payments ≥ 90% of asset's fair value\n\n**PLUS:** Specialized asset with no alternative use\n\n**If NONE apply:** Operating Lease"
+        },
+        {
+          "title": "Operating Lease Accounting Example",
+          "type": "text",
+          "content": "**Given:**\n• 5-year lease, $10,000 annual payment (year-end)\n• Discount rate: 6%\n• PV of payments: $42,124\n\n**Inception Entry:**\nDr: ROU Asset          $42,124\nCr: Lease Liability    $42,124\n\n**Year 1: Operating Lease Approach**\nLease Expense = $42,124 / 5 = $8,425 (straight-line)\nInterest = $42,124 × 6% = $2,527\nPrincipal = $10,000 - $2,527 = $7,473\nROU Amort = $8,425 - $2,527 = $5,898\n\n**Entry:**\nDr: Lease Expense       $8,425\nDr: Lease Liability     $7,473\nCr: ROU Asset           $5,898\nCr: Cash               $10,000"
+        },
+        {
+          "title": "Balance Sheet Impact",
+          "type": "text",
+          "content": "**Before ASC 842:**\n• Operating leases: Off balance sheet\n• Only rent expense on income statement\n• Better leverage ratios\n\n**After ASC 842:**\n• Operating leases: ON balance sheet\n• Both asset and liability recorded\n• May impact debt covenants!\n\n**Ratio Impacts:**\n• Debt-to-Equity: INCREASES\n• Asset Turnover: DECREASES\n• Current Ratio: May decrease\n• EBITDA: May increase (lease expense reclassified)\n\n**CMA Role:**\n• Analyze covenant impacts\n• Renegotiate if necessary\n• Communicate to stakeholders"
+        },
+        {
+          "title": "⚠️ Exam Trap: Short-Term Lease Exception",
+          "type": "warning",
+          "content": "**ASC 842 allows practical expedients:**\n\n**Short-Term Lease (≤12 months):**\n• Can elect to NOT capitalize\n• Expense as incurred\n• No ROU asset or liability\n\n**Low-Value Asset (IFRS 16 only):**\n• Value ≤ $5,000 (approximately)\n• Not in US GAAP!\n\n**What counts in lease term?**\n• Non-cancellable period\n• Renewal options reasonably certain\n• Termination options NOT reasonably certain\n\n**Include in PV calculation:**\n• Fixed payments\n• Variable payments based on index\n• Purchase option if reasonably certain"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ASC 842: Most leases now on balance sheet (ROU Asset + Liability)",
+            "Finance vs Operating affects expense pattern, not balance sheet treatment",
+            "OWNS test: Ownership, Written option, Near entire life, Substantially all value",
+            "Operating lease: Straight-line expense; Finance lease: Front-loaded",
+            "Short-term leases (≤12 months) can be expensed directly",
+            "Impacts debt covenants, leverage ratios, asset turnover",
+            "Discount rate: Implicit rate or incremental borrowing rate"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Lease Classification",
+          "knowledgeCheck": {
+            "question": "A company enters a 4-year lease for equipment with a 10-year useful life. The PV of lease payments is $80,000 and the equipment's fair value is $100,000. No purchase option or ownership transfer. How should this be classified?",
+            "options": [
+              "Finance lease - PV exceeds 90% threshold",
+              "Finance lease - term is 40% of useful life",
+              "Operating lease - no OWNS criteria met",
+              "Short-term lease - expense directly"
+            ],
+            "correctIndex": 2,
+            "explanation": "PV is 80% of FMV (below 90% threshold). Lease term is 4/10 = 40% of useful life (below 75% threshold). No ownership transfer or purchase option mentioned. None of the OWNS criteria are met, so this is an Operating Lease.",
+            "hint": "Check each OWNS criterion: Ownership transfer? Written option? Near entire life (75%)? Substantially all value (90%)?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-019",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Inventory Valuation Methods",
+    "description": "Compare FIFO, LIFO, weighted average, and their financial statement impacts",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Inventory valuation",
+      "FIFO",
+      "LIFO",
+      "Weighted average"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Inventory valuation directly affects both the balance sheet AND income statement! CMAs must understand how different methods impact cost of goods sold, profits, taxes, and working capital. This is a foundational topic across multiple CMA exam areas."
+        },
+        {
+          "title": "Inventory Cost Flow Assumptions",
+          "type": "text",
+          "content": "**FIFO (First-In, First-Out):**\n• Oldest costs go to COGS first\n• Ending inventory at recent costs\n• Matches physical flow for many businesses\n\n**LIFO (Last-In, First-Out):**\n• Most recent costs go to COGS first\n• Ending inventory at oldest costs\n• US GAAP only (not IFRS)\n\n**Weighted Average:**\n• Average cost per unit\n• Applied to both COGS and ending inventory\n• Periodic: One calculation per period\n• Perpetual: Recalculate after each purchase\n\n**Specific Identification:**\n• Track actual cost of each item\n• Used for unique, high-value items"
+        },
+        {
+          "title": "FIFO vs LIFO in Rising Prices",
+          "type": "table",
+          "headers": [
+            "Impact",
+            "FIFO",
+            "LIFO"
+          ],
+          "rows": [
+            [
+              "COGS",
+              "Lower (older, cheaper costs)",
+              "Higher (recent, higher costs)"
+            ],
+            [
+              "Gross Profit",
+              "Higher",
+              "Lower"
+            ],
+            [
+              "Net Income",
+              "Higher",
+              "Lower"
+            ],
+            [
+              "Taxes",
+              "Higher (more profit)",
+              "Lower (tax advantage)"
+            ],
+            [
+              "Ending Inventory",
+              "Higher (recent costs)",
+              "Lower (old costs)"
+            ],
+            [
+              "Cash Flow",
+              "Lower (higher taxes)",
+              "Higher (tax savings)"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: FIFO vs LIFO Effects",
+          "type": "callout",
+          "content": "**In RISING prices, remember \"FIFO = Higher Everything\":**\n\n• Higher ending inventory\n• Higher gross profit\n• Higher net income\n• Higher taxes (bad for cash!)\n\n**LIFO = Lower Everything:**\n• Lower ending inventory\n• Lower gross profit\n• Lower net income\n• Lower taxes (good for cash!)\n\n**In FALLING prices:** Reverse all effects!\n\n**LIFO Conformity Rule:**\nIf you use LIFO for taxes, must use for GAAP reporting"
+        },
+        {
+          "title": "LIFO Reserve and Liquidation",
+          "type": "text",
+          "content": "**LIFO Reserve:**\n• Difference between LIFO and FIFO inventory values\n• Disclosed in notes\n• Allows conversion between methods\n\n**Converting LIFO to FIFO:**\nFIFO Inventory = LIFO Inventory + LIFO Reserve\nFIFO COGS = LIFO COGS - Increase in LIFO Reserve\n\n**LIFO Liquidation:**\n• Occurs when inventory quantities decrease\n• Old, low-cost layers flow to COGS\n• Results in artificially high profits\n• Tax hit from liquidation\n• Sometimes intentional, sometimes forced"
+        },
+        {
+          "title": "Weighted Average Method",
+          "type": "text",
+          "content": "**Periodic Weighted Average:**\n\nWeighted Avg Cost = Total Cost of Goods Available / Total Units Available\n\n**Example:**\n| Purchase | Units | Cost | Total |\n|----------|-------|------|-------|\n| Beginning | 100 | $10 | $1,000 |\n| June | 200 | $12 | $2,400 |\n| October | 100 | $15 | $1,500 |\n| Total | 400 | | $4,900 |\n\n**Weighted Avg = $4,900 / 400 = $12.25/unit**\n\nIf 150 units sold:\nCOGS = 150 × $12.25 = $1,837.50\nEnding Inv = 250 × $12.25 = $3,062.50"
+        },
+        {
+          "title": "⚠️ Exam Trap: Lower of Cost or NRV",
+          "type": "warning",
+          "content": "**Inventory must be written down if impaired:**\n\n**Under US GAAP:**\n• Lower of Cost or Market (LCM)\n• Market = Replacement cost\n• Ceiling: NRV\n• Floor: NRV - Normal profit margin\n\n**Under IFRS:**\n• Lower of Cost or NRV (simplified)\n• NRV = Selling price - Costs to complete and sell\n\n**Write-down:**\n• Recognized as loss in current period\n• Under IFRS: Can reverse if conditions improve\n• Under US GAAP: No reversal allowed\n\n**Exception:** LIFO companies use LCM, but reversal issues differ."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "FIFO: Oldest costs to COGS; Ending inventory at recent costs",
+            "LIFO: Recent costs to COGS; Tax benefit in rising prices (US GAAP only)",
+            "Rising prices: FIFO = Higher income, Higher taxes; LIFO = opposite",
+            "Weighted average: Smooths out price fluctuations",
+            "LIFO Reserve = FIFO Inventory - LIFO Inventory",
+            "LIFO liquidation creates artificial profit from old layers",
+            "Lower of Cost or NRV/Market: Write down impaired inventory"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Inventory Method Selection",
+          "knowledgeCheck": {
+            "question": "In a period of rising prices, which inventory method results in the highest cash flow from operations?",
+            "options": [
+              "FIFO",
+              "LIFO",
+              "Weighted Average",
+              "Specific Identification"
+            ],
+            "correctIndex": 1,
+            "explanation": "LIFO produces lower taxable income in rising prices (recent higher costs go to COGS), which means lower income tax payments and therefore higher cash flow from operations. FIFO produces higher reported income but higher cash out for taxes.",
+            "hint": "Cash flow is affected by actual tax payments. Which method minimizes taxable income when prices rise?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-020",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Financial Statement Analysis Ratios",
+    "description": "Master key ratios for liquidity, profitability, efficiency, and solvency analysis",
+    "order": 20,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Ratio analysis",
+      "Liquidity ratios",
+      "Profitability ratios",
+      "Leverage ratios"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Ratio analysis is fundamental to CMA work! You'll use ratios to evaluate performance, benchmark against competitors, assess creditworthiness, and identify improvement opportunities. This is heavily tested - know the formulas AND interpretations."
+        },
+        {
+          "title": "Ratio Categories",
+          "type": "text",
+          "content": "**Liquidity Ratios:**\n• Can we pay short-term obligations?\n• Focus on current assets vs current liabilities\n\n**Activity/Efficiency Ratios:**\n• How well do we use assets?\n• Turnover and conversion cycles\n\n**Profitability Ratios:**\n• How much profit do we generate?\n• Margin and return metrics\n\n**Solvency/Leverage Ratios:**\n• Can we meet long-term obligations?\n• Debt vs equity structure\n\n**Market Ratios:**\n• What does the market think?\n• P/E, book value, dividend yield"
+        },
+        {
+          "title": "Key Liquidity Ratios",
+          "type": "table",
+          "headers": [
+            "Ratio",
+            "Formula",
+            "Good Benchmark"
+          ],
+          "rows": [
+            [
+              "Current Ratio",
+              "Current Assets / Current Liabilities",
+              "1.5 - 2.0"
+            ],
+            [
+              "Quick (Acid Test)",
+              "(Cash + Securities + A/R) / CL",
+              "1.0 or higher"
+            ],
+            [
+              "Cash Ratio",
+              "Cash + Securities / CL",
+              "0.2 - 0.5"
+            ],
+            [
+              "Working Capital",
+              "Current Assets - Current Liabilities",
+              "Positive"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: DuPont Analysis",
+          "type": "callout",
+          "content": "**ROE = Profit Margin × Asset Turnover × Financial Leverage**\n\n**Breakdown:**\n• Net Income / Sales (Margin - Operating efficiency)\n• Sales / Total Assets (Turnover - Asset efficiency)\n• Total Assets / Equity (Leverage - Financial risk)\n\n**Extended 5-Factor DuPont:**\n• Tax Burden: NI / EBT\n• Interest Burden: EBT / EBIT\n• Operating Margin: EBIT / Sales\n• Asset Turnover: Sales / Assets\n• Financial Leverage: Assets / Equity\n\n**Why it matters:** Identifies WHERE returns come from!"
+        },
+        {
+          "title": "Key Profitability Ratios",
+          "type": "table",
+          "headers": [
+            "Ratio",
+            "Formula",
+            "Measures"
+          ],
+          "rows": [
+            [
+              "Gross Margin",
+              "(Sales - COGS) / Sales",
+              "Production efficiency"
+            ],
+            [
+              "Operating Margin",
+              "Operating Income / Sales",
+              "Core operations"
+            ],
+            [
+              "Net Profit Margin",
+              "Net Income / Sales",
+              "Bottom line"
+            ],
+            [
+              "ROA",
+              "Net Income / Total Assets",
+              "Asset productivity"
+            ],
+            [
+              "ROE",
+              "Net Income / Shareholders Equity",
+              "Shareholder return"
+            ],
+            [
+              "ROIC",
+              "NOPAT / Invested Capital",
+              "Overall capital efficiency"
+            ]
+          ]
+        },
+        {
+          "title": "Activity & Solvency Ratios",
+          "type": "text",
+          "content": "**Activity/Efficiency:**\n• A/R Turnover = Credit Sales / Avg A/R\n• Inventory Turnover = COGS / Avg Inventory\n• Fixed Asset Turnover = Sales / Fixed Assets\n• Total Asset Turnover = Sales / Total Assets\n\n**Days Conversions:**\n• DSO = 365 / A/R Turnover\n• DIO = 365 / Inventory Turnover\n• DPO = 365 / A/P Turnover\n• Cash Conversion Cycle = DSO + DIO - DPO\n\n**Solvency/Leverage:**\n• Debt-to-Equity = Total Debt / Equity\n• Debt Ratio = Total Debt / Total Assets\n• Interest Coverage = EBIT / Interest Expense"
+        },
+        {
+          "title": "⚠️ Exam Trap: Ratio Interpretation",
+          "type": "warning",
+          "content": "**Context matters more than absolute values!**\n\n**Industry Differences:**\n• Retail: Low margins, high turnover\n• Luxury: High margins, low turnover\n• Banks: Different ratios entirely\n\n**Trend Analysis:**\n• Is ratio improving or declining?\n• What's causing the change?\n\n**Manipulation Risks:**\n• Window dressing at year-end\n• Off-balance-sheet items\n• Accounting policy choices\n\n**Remember:**\n• Compare to industry peers\n• Compare to company history\n• No single ratio tells full story"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four ratio categories: Liquidity, Activity, Profitability, Solvency",
+            "Current Ratio = CA/CL; Quick Ratio excludes inventory",
+            "DuPont: ROE = Margin × Turnover × Leverage",
+            "ROA measures asset efficiency; ROE measures equity returns",
+            "Cash Conversion Cycle = DSO + DIO - DPO",
+            "Interest Coverage = EBIT / Interest (minimum ~2.0x)",
+            "Always compare to industry and historical trends"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "DuPont Analysis",
+          "knowledgeCheck": {
+            "question": "Company A has Net Margin of 8%, Asset Turnover of 1.5x, and Equity Multiplier of 2.0x. What is ROE?",
+            "options": [
+              "12%",
+              "17%",
+              "24%",
+              "48%"
+            ],
+            "correctIndex": 2,
+            "explanation": "ROE = Net Margin × Asset Turnover × Equity Multiplier = 8% × 1.5 × 2.0 = 24%. DuPont analysis shows ROE comes from operating efficiency (margin), asset efficiency (turnover), and financial leverage (multiplier).",
+            "hint": "Simply multiply the three factors together."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-021",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Consolidation Accounting Basics",
+    "description": "Understand when and how to consolidate subsidiary financial statements",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Consolidation",
+      "Intercompany eliminations",
+      "Subsidiary accounting",
+      "Goodwill"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Most large companies have multiple legal entities! CMAs must understand consolidation to prepare group financial statements and analyze multi-entity performance. This affects everything from reporting to planning to performance measurement."
+        },
+        {
+          "title": "When to Consolidate",
+          "type": "text",
+          "content": "**Consolidation Required:**\n• Parent owns > 50% of subsidiary (control)\n• Variable interest entities (VIEs)\n• Effective control without majority ownership\n\n**Equity Method (not consolidated):**\n• 20-50% ownership (significant influence)\n• Report investment + share of income\n\n**Fair Value/Cost Method:**\n• < 20% ownership\n• Report investment at FV or cost\n\n**Key Concept:**\nConsolidation = Combine as if ONE entity\nEquity Method = One line on balance sheet"
+        },
+        {
+          "title": "Consolidation Process",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Action",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "1",
+              "Combine all assets and liabilities",
+              "Show total resources"
+            ],
+            [
+              "2",
+              "Eliminate investment in subsidiary",
+              "Avoid double counting"
+            ],
+            [
+              "3",
+              "Eliminate intercompany transactions",
+              "Remove internal activity"
+            ],
+            [
+              "4",
+              "Recognize goodwill or bargain purchase",
+              "Account for premium paid"
+            ],
+            [
+              "5",
+              "Calculate non-controlling interest",
+              "Show minority share"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Intercompany Eliminations",
+          "type": "callout",
+          "content": "**What must be eliminated:**\n\n**Balance Sheet:**\n• Investment in subsidiary vs Equity of subsidiary\n• Intercompany receivables/payables\n• Intercompany loans\n\n**Income Statement:**\n• Intercompany sales/COGS\n• Intercompany interest\n• Intercompany dividends\n• Intercompany service fees\n\n**Why eliminate?**\nYou can't sell to yourself!\n• Consolidated sales = Sales to EXTERNAL parties\n• A/R = Amounts owed by EXTERNAL parties\n• Profit = Earned from OUTSIDE the group"
+        },
+        {
+          "title": "Goodwill Calculation",
+          "type": "text",
+          "content": "**Goodwill = Purchase Price - Fair Value of Net Assets**\n\n**Example:**\n• Parent pays: $1,000,000\n• Subsidiary's book value: $600,000\n• Fair value adjustments: +$150,000\n• Fair value of net assets: $750,000\n• Goodwill: $1,000,000 - $750,000 = $250,000\n\n**Fair Value Adjustments:**\n• Inventory stepped up\n• Fixed assets revalued\n• Intangibles identified\n• Contingencies recognized\n\n**Goodwill Treatment:**\n• Not amortized\n• Tested annually for impairment\n• Impairment = Write down (no reversal)"
+        },
+        {
+          "title": "Non-Controlling Interest (NCI)",
+          "type": "text",
+          "content": "**What is NCI?**\n• Outside ownership in consolidated subsidiary\n• Parent owns 80% → NCI owns 20%\n\n**Presentation:**\n• Balance Sheet: NCI shown in equity section\n• Income Statement: NCI share of net income shown\n\n**Example:**\nSubsidiary net income: $100,000\nParent ownership: 80%\nNCI ownership: 20%\n\nIncome to parent: $80,000\nIncome to NCI: $20,000\nConsolidated NI: $100,000 (but $20,000 goes to NCI)\n\n**CMAs:** Track which profits belong to the group"
+        },
+        {
+          "title": "⚠️ Exam Trap: 100% Elimination",
+          "type": "warning",
+          "content": "**Eliminate 100% of intercompany transactions!**\n\nEven if parent only owns 80%:\n• Eliminate ALL intercompany sales\n• Eliminate ALL intercompany profits\n• Eliminate ALL intercompany balances\n\n**Why 100%?**\nConsolidation shows group AS ONE entity\n• A company can't have receivables from itself\n• A company can't sell to itself\n\n**Common Error:**\nTrying to eliminate only parent's share\n→ WRONG! Eliminate everything\n→ NCI gets their share of what remains"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Consolidate when > 50% ownership (control)",
+            "Equity method for 20-50% ownership (significant influence)",
+            "Eliminate ALL intercompany transactions (100%)",
+            "Goodwill = Price paid - FV of net assets acquired",
+            "Test goodwill for impairment annually",
+            "NCI = Outside ownership shown in equity",
+            "Allocate subsidiary income between parent and NCI"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Goodwill Calculation",
+          "knowledgeCheck": {
+            "question": "Parent Co. acquires 100% of Sub Co. for $500,000. Sub's book value is $350,000, but fair value of identifiable net assets is $420,000. What is the goodwill?",
+            "options": [
+              "$80,000",
+              "$150,000",
+              "$70,000",
+              "$0 (negative goodwill)"
+            ],
+            "correctIndex": 0,
+            "explanation": "Goodwill = Purchase price - Fair value of net assets = $500,000 - $420,000 = $80,000. Note that book value ($350,000) is not used; we use fair value of identifiable net assets. The $70,000 difference between FV and book value represents fair value adjustments.",
+            "hint": "Use fair value of net assets, not book value."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-022",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Pension and Post-Retirement Benefits",
+    "description": "Understand accounting for defined benefit and defined contribution plans",
+    "order": 22,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Pension accounting",
+      "Defined benefit plans",
+      "Defined contribution",
+      "Post-retirement benefits"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Pension obligations can be massive - sometimes larger than market cap! CMAs must understand how pension accounting works for financial reporting, analysis, and M&A due diligence. Funded status and assumptions significantly impact financial statements."
+        },
+        {
+          "title": "Plan Types",
+          "type": "text",
+          "content": "**Defined Contribution (DC):**\n• Employer contributes specified amount\n• Employee bears investment risk\n• 401(k) is most common\n• Accounting: Easy - expense = contribution\n\n**Defined Benefit (DB):**\n• Employer promises specified benefit\n• Employer bears investment risk\n• Traditional pension plans\n• Accounting: Complex - actuarial calculations\n\n**Trend:**\nDB plans declining (risk to employer)\nDC plans increasing (risk to employee)"
+        },
+        {
+          "title": "Defined Benefit Key Terms",
+          "type": "table",
+          "headers": [
+            "Term",
+            "Definition"
+          ],
+          "rows": [
+            [
+              "PBO",
+              "Projected Benefit Obligation - PV of all earned benefits"
+            ],
+            [
+              "Plan Assets",
+              "Fair value of assets set aside"
+            ],
+            [
+              "Funded Status",
+              "Plan Assets - PBO (on balance sheet)"
+            ],
+            [
+              "Service Cost",
+              "Benefits earned in current year"
+            ],
+            [
+              "Interest Cost",
+              "Interest on PBO"
+            ],
+            [
+              "Expected Return",
+              "Expected earnings on plan assets"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Pension Expense Components",
+          "type": "callout",
+          "content": "**\"SERAP\" - Net Periodic Pension Cost:**\n\n**S**ervice Cost\n• Benefits earned this year\n• Always expense\n\n**E**xpected Return (credit)\n• Return on plan assets\n• Reduces expense\n\n**R**ecognized gains/losses\n• Amortization of deferred amounts\n\n**A**mortization of prior service\n• From plan amendments\n\n**P**ressure from interest cost\n• Interest on PBO\n• Increases expense\n\n**Net Pension Cost appears in Income Statement**\n(Service cost in operating; others in non-operating)"
+        },
+        {
+          "title": "Balance Sheet Presentation",
+          "type": "text",
+          "content": "**Funded Status on Balance Sheet:**\n\nIf Plan Assets > PBO:\n• Net Asset (prepaid pension)\n• Overfunded status\n\nIf PBO > Plan Assets:\n• Net Liability\n• Underfunded status\n\n**Accumulated Other Comprehensive Income (AOCI):**\n• Unrecognized gains/losses\n• Unrecognized prior service cost\n• Deferred in equity\n• Amortized to income over time\n\n**Example:**\nPBO: $100 million\nPlan Assets: $85 million\nFunded Status: ($15 million) liability"
+        },
+        {
+          "title": "Key Assumptions",
+          "type": "text",
+          "content": "**Discount Rate:**\n• Used to calculate PBO\n• Based on high-quality bonds\n• Higher rate = lower PBO\n\n**Expected Return on Assets:**\n• Affects pension expense\n• Management judgment\n• Higher rate = lower expense\n\n**Salary Growth Rate:**\n• Future compensation projections\n• Affects PBO\n• Higher rate = higher PBO\n\n**Watch for:**\n• Aggressive assumptions\n• Changes year-to-year\n• Comparison to peers"
+        },
+        {
+          "title": "⚠️ Exam Trap: Assumption Manipulation",
+          "type": "warning",
+          "content": "**Assumptions significantly impact results!**\n\n**To REDUCE liability/expense:**\n• ↑ Discount rate\n• ↑ Expected return on assets\n• ↓ Salary growth rate\n\n**To INCREASE liability/expense:**\n• ↓ Discount rate\n• ↓ Expected return on assets\n• ↑ Salary growth rate\n\n**Analysis Red Flags:**\n• Assumptions differ significantly from peers\n• Expected return much higher than actual\n• Frequent assumption changes\n\n**CMA Role:**\nUnderstand assumption impacts\nChallenge unrealistic assumptions"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "DC plans: Easy; expense = contribution",
+            "DB plans: Complex; actuarial calculations required",
+            "Funded Status = Plan Assets - PBO (on balance sheet)",
+            "Pension expense components: Service, Interest, Return, Amortization",
+            "Key assumptions: Discount rate, expected return, salary growth",
+            "Higher discount rate = Lower PBO and expense",
+            "Watch for aggressive assumptions vs. peers"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Pension Assumptions",
+          "knowledgeCheck": {
+            "question": "A company wants to reduce its reported pension liability. Which assumption change would accomplish this?",
+            "options": [
+              "Decrease the discount rate",
+              "Increase the discount rate",
+              "Increase the salary growth rate",
+              "Decrease the expected return on assets"
+            ],
+            "correctIndex": 1,
+            "explanation": "Increasing the discount rate reduces the present value of the Projected Benefit Obligation (PBO), thereby reducing the liability. Think of it like bonds - higher discount rate means lower present value. Decreasing discount rate would increase the liability.",
+            "hint": "Higher discount rate means future obligations are worth less today."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-023",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Revenue Recognition Principles",
+    "description": "Apply ASC 606 revenue recognition to common scenarios",
+    "order": 23,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Revenue recognition",
+      "ASC 606",
+      "Performance obligations",
+      "Transaction price"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Revenue is the top line that drives everything! CMAs must understand when and how to recognize revenue correctly. ASC 606 brought major changes in 2018 and remains frequently tested. Incorrect revenue recognition is a leading cause of restatements."
+        },
+        {
+          "title": "ASC 606 Five-Step Model",
+          "type": "text",
+          "content": "**Step 1: Identify the Contract**\n• Agreement creating enforceable rights\n• Approved by parties\n• Commercial substance\n\n**Step 2: Identify Performance Obligations**\n• Distinct goods or services\n• Each promise is a performance obligation\n\n**Step 3: Determine Transaction Price**\n• Amount expected to receive\n• Include variable consideration\n\n**Step 4: Allocate Price to Performance Obligations**\n• Relative standalone selling prices\n\n**Step 5: Recognize Revenue**\n• When (point in time) or As (over time) performance obligation satisfied"
+        },
+        {
+          "title": "Performance Obligations",
+          "type": "table",
+          "headers": [
+            "Recognition",
+            "Criteria",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Point in Time",
+              "Control transfers at moment",
+              "Product sale"
+            ],
+            [
+              "Over Time",
+              "Customer consumes benefits",
+              "Service contract"
+            ],
+            [
+              "Over Time",
+              "No alternative use + right to payment",
+              "Custom manufacturing"
+            ],
+            [
+              "Over Time",
+              "Customer controls asset as created",
+              "Construction on land"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Control Indicators",
+          "type": "callout",
+          "content": "**Point in Time - Control Has Transferred When:**\n\n**RIGHT TO PAYMENT:**\n• Customer owes for asset\n\n**LEGAL TITLE:**\n• Ownership transferred\n\n**PHYSICAL POSSESSION:**\n• Customer has asset\n\n**RISKS AND REWARDS:**\n• Customer bears loss/obsolescence risk\n• Customer gets upside benefits\n\n**ACCEPTANCE:**\n• Customer has accepted asset\n\nNo single indicator controls - use judgment!"
+        },
+        {
+          "title": "Variable Consideration",
+          "type": "text",
+          "content": "**Types:**\n• Discounts\n• Rebates\n• Performance bonuses\n• Rights of return\n• Penalties\n\n**Estimation Methods:**\n• Expected value - probability-weighted\n• Most likely amount - binary outcomes\n\n**Constraint:**\nOnly include variable consideration if highly probable won't reverse\n• Experience with similar contracts\n• Uncertainty resolves quickly\n• Limited factors outside control\n\n**Update each period based on new information**"
+        },
+        {
+          "title": "Common Scenarios",
+          "type": "text",
+          "content": "**Bundled Goods/Services:**\n• Separate performance obligations\n• Allocate based on relative SSP\n• Software + implementation + support\n\n**Bill-and-Hold:**\n• May recognize before delivery\n• Substantive reason for arrangement\n• Product separately identified\n• Ready for transfer\n\n**Consignment:**\n• Don't recognize until customer sells\n• Still control until sold\n\n**Principal vs Agent:**\n• Principal: Gross revenue\n• Agent: Net (commission only)\n• Who controls before transfer?"
+        },
+        {
+          "title": "⚠️ Exam Trap: Contract Modifications",
+          "type": "warning",
+          "content": "**Contract changes affect revenue!**\n\n**Treated as Separate Contract When:**\n• Addition of distinct goods/services\n• Price reflects standalone selling prices\n• Account for separately, going forward\n\n**Otherwise:**\n• Cumulative catch-up adjustment OR\n• Prospective treatment\n• Depends on remaining goods/services\n\n**Remember:**\nModifications require reassessment\nMay change remaining performance obligations"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ASC 606: Five-step model for revenue recognition",
+            "Performance obligation: Distinct promise to transfer good/service",
+            "Over time: Customer consumes benefits, or no alternative use + payment right",
+            "Variable consideration: Constrain to amount highly probable won't reverse",
+            "Allocation: Relative standalone selling prices",
+            "Principal recognizes gross; Agent recognizes net",
+            "Modifications: Separate contract or adjustment"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Revenue Recognition",
+          "knowledgeCheck": {
+            "question": "A company sells equipment for $100,000 and a 2-year service contract. Standalone prices: equipment $90,000, service $30,000 per year. How much revenue is recognized at equipment delivery?",
+            "options": [
+              "$60,000",
+              "$66,667",
+              "$90,000",
+              "$100,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "Total standalone prices: $90,000 + $60,000 ($30K × 2) = $150,000. Equipment allocation: $100,000 × ($90,000 / $150,000) = $60,000. The remaining $40,000 is recognized over the 2-year service period.",
+            "hint": "Allocate based on relative standalone selling prices."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-024",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Shareholders' Equity Transactions",
+    "description": "Account for stock issuances, treasury stock, and equity transactions",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Shareholders' equity",
+      "Stock issuance",
+      "Treasury stock",
+      "Stock-based compensation"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Equity transactions affect financial statements and EPS! CMAs must understand how stock issuances, buybacks, and stock compensation flow through the financials. These transactions directly impact key metrics and stakeholder analysis."
+        },
+        {
+          "title": "Shareholders' Equity Components",
+          "type": "text",
+          "content": "**Contributed Capital:**\n• Common stock (par value)\n• Additional paid-in capital (APIC)\n• Preferred stock\n\n**Retained Earnings:**\n• Accumulated profits\n• Less dividends paid\n\n**Accumulated Other Comprehensive Income:**\n• Unrealized gains/losses\n• Foreign currency translation\n• Pension adjustments\n\n**Treasury Stock:**\n• Company's own repurchased shares\n• Contra-equity account\n• Reduces total equity"
+        },
+        {
+          "title": "Stock Issuance",
+          "type": "table",
+          "headers": [
+            "Transaction",
+            "Debit",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Issue at Par",
+              "Cash",
+              "Common Stock"
+            ],
+            [
+              "Issue above Par",
+              "Cash",
+              "C/S (par) + APIC (excess)"
+            ],
+            [
+              "Issue for Property",
+              "Property (FMV)",
+              "C/S + APIC"
+            ],
+            [
+              "Stock Subscription",
+              "Subscription Receivable",
+              "Stock Subscribed"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Treasury Stock Methods",
+          "type": "callout",
+          "content": "**Cost Method (Most Common):**\n\n**Purchase:**\nDr Treasury Stock (cost)\n    Cr Cash\n\n**Reissue Above Cost:**\nDr Cash\n    Cr Treasury Stock (cost)\n    Cr APIC-Treasury Stock (excess)\n\n**Reissue Below Cost:**\nDr Cash\nDr APIC-Treasury Stock (or R/E)\n    Cr Treasury Stock (cost)\n\n**Key Points:**\n• Contra-equity (reduces equity)\n• No gain/loss on treasury transactions\n• Excess goes to APIC or R/E\n• Outstanding shares decrease"
+        },
+        {
+          "title": "Stock-Based Compensation",
+          "type": "text",
+          "content": "**Stock Options:**\n• Measure at grant-date fair value\n• Recognize expense over vesting period\n• No adjustment for subsequent changes\n\n**Journal Entry (each period):**\nDr Compensation Expense\n    Cr APIC - Stock Options\n\n**At Exercise:**\nDr Cash\nDr APIC - Stock Options\n    Cr Common Stock\n    Cr APIC\n\n**Restricted Stock:**\n• Similar - expense over vesting\n• Unvested = unearned compensation\n\n**Forfeitures:**\n• Reverse previously recognized expense"
+        },
+        {
+          "title": "Stock Dividends vs Stock Splits",
+          "type": "text",
+          "content": "**Stock Dividend:**\n• Transfer from R/E to C/S\n• Small (<20-25%): Market value\n• Large (≥20-25%): Par value\n• Shares increase, no cash moves\n\n**Small Stock Dividend Entry:**\nDr Retained Earnings (market)\n    Cr Common Stock (par)\n    Cr APIC (excess)\n\n**Stock Split:**\n• No journal entry\n• Just memo entry\n• Par value decreases proportionately\n• Shares increase\n\n**Both:**\n• No change in total equity\n• More shares, lower price per share"
+        },
+        {
+          "title": "⚠️ Exam Trap: Par Value",
+          "type": "warning",
+          "content": "**Par Value Quirks:**\n\n**Par Value:**\n• Stated value per share\n• Usually nominal (e.g., $1, $0.01)\n• Legal capital\n\n**No-Par Stock:**\n• No par value\n• All proceeds to Common Stock (or stated value + APIC)\n\n**Issuance at Discount:**\n• Illegal in many states\n• Contingent liability to creditors\n\n**Key Calculation:**\nAPIC = Cash received - (Shares × Par value)\n\n**Remember:**\nPar value rarely equals market value!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Equity: Contributed capital + Retained earnings + AOCI - Treasury stock",
+            "Stock issued above par: Excess to APIC",
+            "Treasury stock (cost method): Contra-equity, no gain/loss recognized",
+            "Stock compensation: Expense over vesting at grant-date FV",
+            "Small stock dividend: Use market value; Large: par value",
+            "Stock split: Memo entry only, par value decreases",
+            "No gain/loss on company's own stock transactions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Treasury Stock",
+          "knowledgeCheck": {
+            "question": "A company reissues treasury stock (originally purchased at $40/share) for $50/share. Under the cost method, the $10 excess is credited to:",
+            "options": [
+              "Gain on Sale of Treasury Stock",
+              "Retained Earnings",
+              "Additional Paid-in Capital",
+              "Revenue from Treasury Stock"
+            ],
+            "correctIndex": 2,
+            "explanation": "When treasury stock is reissued above cost, the excess is credited to Additional Paid-in Capital from Treasury Stock. Companies cannot recognize gains or losses on transactions in their own stock - it's a capital transaction, not income.",
+            "hint": "Treasury stock transactions are capital transactions - no income statement impact."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-025",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Depreciation Methods and Asset Impairment",
+    "description": "Calculate depreciation and test for impairment",
+    "order": 25,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Depreciation",
+      "Impairment",
+      "Useful life",
+      "Salvage value"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Depreciation affects profitability, taxes, and investment decisions! CMAs must understand how different methods impact financial statements and cash flows. Depreciation method choice can significantly affect performance metrics and tax planning. This topic is heavily tested on the CMA exam."
+        },
+        {
+          "title": "Depreciation Basics",
+          "type": "text",
+          "content": "**Purpose:**\n• Allocate cost over useful life\n• Match expense to revenue\n• NOT a valuation technique\n\n**Key Components:**\n• **Cost:** Purchase + Installation + Testing\n• **Useful life:** Expected service period\n• **Salvage value:** Expected residual value\n• **Depreciable base:** Cost - Salvage\n\n**Methods:**\n• Straight-line\n• Declining balance\n• Units of production\n• Sum-of-years-digits"
+        },
+        {
+          "title": "Depreciation Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Formula",
+            "Pattern"
+          ],
+          "rows": [
+            [
+              "Straight-Line",
+              "(Cost - Salvage) / Life",
+              "Equal each year"
+            ],
+            [
+              "Double-Declining",
+              "2 × SL rate × Book value",
+              "Higher early, lower late"
+            ],
+            [
+              "Units of Production",
+              "(Cost - Salvage) / Total units × Annual units",
+              "Varies with usage"
+            ],
+            [
+              "Sum-of-Years",
+              "(Cost - Salvage) × Remaining life / SYD",
+              "Higher early, lower late"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Double-Declining Balance",
+          "type": "callout",
+          "content": "**DDB Calculation:**\n\n**Rate = 2 / Useful Life**\n\n**Annual Depreciation = Rate × Beginning Book Value**\n\n**Example:** $100,000 asset, 5-year life\n• Rate = 2/5 = 40%\n• Year 1: 40% × $100,000 = $40,000\n• Year 2: 40% × $60,000 = $24,000\n• Year 3: 40% × $36,000 = $14,400\n\n**Key Rules:**\n• Don't subtract salvage initially\n• BUT don't depreciate below salvage\n• Often switch to SL in later years\n\n**Why DDB:**\nMatches expense to benefit for assets that decline rapidly"
+        },
+        {
+          "title": "Asset Impairment",
+          "type": "text",
+          "content": "**When to Test:**\n• Significant decrease in market value\n• Major physical damage\n• Significant adverse change in use\n• Operating/cash flow losses\n\n**Two-Step Test (US GAAP):**\n\n**Step 1 - Recoverability:**\nIF Undiscounted future cash flows < Carrying amount\nTHEN impaired\n\n**Step 2 - Measurement:**\nImpairment loss = Carrying amount - Fair value\n\n**Note:** Under IFRS, use recoverable amount (higher of fair value less costs to sell OR value in use)"
+        },
+        {
+          "title": "Tax vs Book Depreciation",
+          "type": "text",
+          "content": "**Book Purpose:**\n• Match expense to revenue\n• GAAP compliance\n• Any systematic method\n\n**Tax Purpose:**\n• Minimize taxes\n• IRS rules (MACRS)\n• Accelerated methods preferred\n\n**MACRS:**\n• Modified Accelerated Cost Recovery System\n• Specific recovery periods by asset class\n• Half-year convention typical\n• No salvage value\n\n**Result:**\nDeferred tax liability when book income > tax income"
+        },
+        {
+          "title": "⚠️ Exam Trap: SYD Calculation",
+          "type": "warning",
+          "content": "**Sum-of-Years-Digits:**\n\n**SYD = n(n+1)/2**\n\nFor 5-year life: 5(6)/2 = 15\n\n**Annual Rate:**\nYear 1: 5/15\nYear 2: 4/15\nYear 3: 3/15\nYear 4: 2/15\nYear 5: 1/15\n\n**Depreciation = (Cost - Salvage) × Fraction**\n\n**Example:** $55,000 cost, $5,000 salvage, 5 years\n• Depreciable base: $50,000\n• Year 1: $50,000 × 5/15 = $16,667\n• Year 2: $50,000 × 4/15 = $13,333\n\n**Common Mistake:**\nUsing wrong numerator (remaining life, NOT year number)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Depreciable base = Cost - Salvage value",
+            "Straight-line: Equal expense each period",
+            "DDB: 2/Life × Book value, don't go below salvage",
+            "SYD: (Cost - Salvage) × Remaining/SYD",
+            "Impairment if undiscounted CFs < Carrying amount",
+            "Impairment loss = Carrying - Fair value",
+            "Tax depreciation (MACRS) differs from book"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Depreciation",
+          "knowledgeCheck": {
+            "question": "Equipment costs $200,000, has 5-year life and $20,000 salvage. Using DDB, what is Year 1 depreciation?",
+            "options": [
+              "$36,000",
+              "$72,000",
+              "$80,000",
+              "$40,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "DDB rate = 2/5 = 40%. Year 1 depreciation = 40% × $200,000 = $80,000. Note: With DDB, we do NOT subtract salvage for the annual calculation (but we never depreciate below salvage).",
+            "hint": "DDB uses beginning book value, not depreciable base."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-026",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Lease Accounting Essentials",
+    "description": "Account for operating and finance leases",
+    "order": 26,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Lease accounting",
+      "Finance lease",
+      "Operating lease",
+      "Right-of-use asset"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Lease accounting changed drastically with ASC 842! Nearly all leases now go on the balance sheet. CMAs must understand lease classification, measurement, and the financial statement impact. This affects key metrics like debt ratios and EBITDA."
+        },
+        {
+          "title": "Lease Classification (Lessee)",
+          "type": "text",
+          "content": "**Under ASC 842:**\nALL leases > 12 months go on balance sheet\n\n**Finance Lease (any ONE met):**\n• Ownership transfers at end\n• Purchase option likely exercised\n• Lease term = major part of economic life\n• PV of payments = substantially all of fair value\n• Specialized asset with no alternate use\n\n**Operating Lease:**\n• All other leases\n• Still goes on balance sheet\n• Different expense recognition\n\n**Short-term Exception:**\n• ≤12 months: Can expense straight-line"
+        },
+        {
+          "title": "Lease Accounting - Initial",
+          "type": "table",
+          "headers": [
+            "Element",
+            "Treatment"
+          ],
+          "rows": [
+            [
+              "Right-of-Use Asset",
+              "Record at PV of lease payments + initial costs"
+            ],
+            [
+              "Lease Liability",
+              "Record at PV of lease payments"
+            ],
+            [
+              "Discount Rate",
+              "Rate implicit in lease OR incremental borrowing rate"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Finance vs Operating",
+          "type": "callout",
+          "content": "**BOTH Types:**\n• ROU Asset on balance sheet\n• Lease Liability on balance sheet\n\n**Finance Lease - Like Ownership:**\n• Amortize ROU asset (declining)\n• Interest expense on liability (declining)\n• Total expense HIGHER early, LOWER late\n• Front-loaded expense\n\n**Operating Lease - Like Rental:**\n• Single lease expense (straight-line)\n• Total expense SAME each period\n• Still amortize ROU and record interest\n• But combine into one expense line\n\n**Key Difference:**\nFinance = Front-loaded expense pattern\nOperating = Straight-line expense pattern"
+        },
+        {
+          "title": "Journal Entries Example",
+          "type": "text",
+          "content": "**At Inception (Both Types):**\nDr. Right-of-Use Asset\nCr. Lease Liability\n\n**Finance Lease (Each Period):**\nDr. Interest Expense\nCr. Lease Liability\n\nDr. Amortization Expense\nCr. Accumulated Amortization - ROU\n\nDr. Lease Liability\nCr. Cash (payment)\n\n**Operating Lease (Each Period):**\nDr. Lease Expense (straight-line)\nCr. Lease Liability (effective interest)\nCr. ROU Asset (plug)\nCr. Cash\n\n(Simplified: One lease expense, but both asset and liability still adjust)"
+        },
+        {
+          "title": "Financial Statement Impact",
+          "type": "text",
+          "content": "**Balance Sheet:**\n• Assets increase (ROU)\n• Liabilities increase (lease liability)\n• Debt ratios worsen\n\n**Income Statement:**\n• Finance: Amortization + Interest (lower net income early)\n• Operating: Single lease expense (level)\n\n**Cash Flow Statement:**\n• Finance: Principal = Financing, Interest = Operating\n• Operating: All payments = Operating\n\n**EBITDA:**\n• Finance lease: Unaffected (below EBITDA line)\n• Operating lease: Add back lease expense for adjusted EBITDA\n\n**Ratios:**\nBe aware of impact on debt/equity, current ratio"
+        },
+        {
+          "title": "⚠️ Exam Trap: Old vs New Standards",
+          "type": "warning",
+          "content": "**ASC 842 vs Old ASC 840:**\n\n**Old (ASC 840):**\n• Operating leases OFF balance sheet\n• Only capital (finance) leases recorded\n• Rent expense was straight-line\n\n**New (ASC 842):**\n• ALL leases ON balance sheet\n• Except short-term (<12 months)\n• Classification still matters for expense pattern\n\n**CMA Exam Focus:**\n• Current standard (ASC 842)\n• Classification criteria (5 tests)\n• Expense pattern differences\n• Impact on ratios\n\n**Remember:**\nClassification affects INCOME STATEMENT\nBoth types affect BALANCE SHEET"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ASC 842: Nearly all leases on balance sheet",
+            "Finance lease: 5 criteria (any one = finance)",
+            "Finance lease: Front-loaded expense (amort + interest)",
+            "Operating lease: Straight-line expense",
+            "Both create ROU Asset and Lease Liability",
+            "Discount at implicit rate or incremental borrowing rate",
+            "Short-term exception: <12 months can expense as incurred"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Lease Accounting",
+          "knowledgeCheck": {
+            "question": "Under ASC 842, an operating lease for a lessee results in:",
+            "options": [
+              "No balance sheet impact",
+              "Asset only on balance sheet",
+              "Both ROU asset and lease liability on balance sheet",
+              "Liability only on balance sheet"
+            ],
+            "correctIndex": 2,
+            "explanation": "Under ASC 842, BOTH finance and operating leases result in a right-of-use asset and lease liability on the balance sheet. The difference is in the expense pattern: operating leases have straight-line expense while finance leases have front-loaded expense.",
+            "hint": "What changed with ASC 842 vs the old standard?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-027",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Inventory Valuation Methods",
+    "description": "Apply FIFO, LIFO, and weighted average methods",
+    "order": 27,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Inventory valuation",
+      "FIFO",
+      "LIFO",
+      "Weighted average"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Inventory method choice affects reported profits and taxes! CMAs must understand how different methods impact financial statements and make recommendations. This fundamental topic appears on both CMA Parts and is essential for cost analysis."
+        },
+        {
+          "title": "Inventory Cost Flow Methods",
+          "type": "text",
+          "content": "**FIFO (First-In, First-Out):**\n• Oldest costs to COGS first\n• Newest costs remain in inventory\n• Inventory = recent prices\n• Allowed under GAAP and IFRS\n\n**LIFO (Last-In, First-Out):**\n• Newest costs to COGS first\n• Oldest costs remain in inventory\n• Better matching current costs to revenue\n• US GAAP only (NOT IFRS)\n\n**Weighted Average:**\n• Average all costs\n• Same cost for COGS and inventory\n• Smooths price fluctuations\n• Allowed under GAAP and IFRS"
+        },
+        {
+          "title": "Method Comparison - Rising Prices",
+          "type": "table",
+          "headers": [
+            "Item",
+            "FIFO",
+            "LIFO"
+          ],
+          "rows": [
+            [
+              "COGS",
+              "Lower (old costs)",
+              "Higher (new costs)"
+            ],
+            [
+              "Gross Profit",
+              "Higher",
+              "Lower"
+            ],
+            [
+              "Net Income",
+              "Higher",
+              "Lower"
+            ],
+            [
+              "Ending Inventory",
+              "Higher (new costs)",
+              "Lower (old costs)"
+            ],
+            [
+              "Taxes",
+              "Higher",
+              "Lower"
+            ],
+            [
+              "Cash Flow",
+              "Lower (more taxes)",
+              "Higher (less taxes)"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: FIFO vs LIFO",
+          "type": "callout",
+          "content": "**In RISING prices (inflation):**\n\n**FIFO:**\n• 'First prices' (low) go to COGS\n• 'Last prices' (high) stay in inventory\n• HIGHER profits, HIGHER taxes\n• Inventory reflects current values\n\n**LIFO:**\n• 'Last prices' (high) go to COGS\n• 'First prices' (low) stay in inventory\n• LOWER profits, LOWER taxes\n• Inventory understated\n\n**Memory:**\n'FIFO = Fat Income, Fat Inventory'\n'LIFO = Lower Income, Lower taxes'\n\n**In FALLING prices:**\nEffects are REVERSED!"
+        },
+        {
+          "title": "Calculation Example",
+          "type": "text",
+          "content": "**Purchases:**\n• Jan 1: 100 units @ $10\n• Mar 15: 150 units @ $12\n• Jul 20: 200 units @ $14\n• Total: 450 units, $5,600\n• Sold: 300 units\n\n**FIFO COGS:**\n100 @ $10 + 150 @ $12 + 50 @ $14\n= $1,000 + $1,800 + $700 = $3,500\nEnding inventory: 150 @ $14 = $2,100\n\n**LIFO COGS:**\n200 @ $14 + 100 @ $12\n= $2,800 + $1,200 = $4,000\nEnding inventory: 100 @ $10 + 50 @ $12 = $1,600\n\n**Weighted Average:**\nAvg cost: $5,600 / 450 = $12.44\nCOGS: 300 × $12.44 = $3,733"
+        },
+        {
+          "title": "LIFO Reserve and Conformity",
+          "type": "text",
+          "content": "**LIFO Reserve:**\n= FIFO inventory - LIFO inventory\n= Cumulative difference\n\n**Use:**\n• Convert LIFO to FIFO for comparison\n• Estimate tax savings from LIFO\n• Assess inventory understatement\n\n**LIFO Conformity Rule:**\n• If use LIFO for taxes, must use for financial statements\n• IRS requirement\n• Can disclose FIFO in notes\n\n**LIFO Liquidation:**\n• Selling into old LIFO layers\n• Old, low costs flow to COGS\n• Artificially high profits\n• Increased taxes"
+        },
+        {
+          "title": "⚠️ Exam Trap: LIFO and IFRS",
+          "type": "warning",
+          "content": "**Critical Difference:**\n\n**US GAAP:**\n• FIFO, LIFO, weighted average all allowed\n• Lower of cost or market (LCM)\n\n**IFRS:**\n• FIFO and weighted average ONLY\n• LIFO NOT permitted\n• Lower of cost or NRV\n• Write-down reversal allowed\n\n**Exam Questions:**\n• May ask which method is prohibited under IFRS\n• May ask to convert between methods\n• May ask about LIFO liquidation effects\n\n**Lower of Cost or Market (LCM):**\nMarket = Replacement cost\nBUT: Not > NRV (ceiling)\nNot < NRV minus normal profit (floor)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "FIFO: Old costs to COGS, new costs in inventory",
+            "LIFO: New costs to COGS, old costs in inventory",
+            "Rising prices + FIFO = Higher income, higher taxes",
+            "Rising prices + LIFO = Lower income, lower taxes",
+            "LIFO not allowed under IFRS",
+            "LIFO reserve = FIFO inventory - LIFO inventory",
+            "LIFO liquidation causes artificial profit increase"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Inventory Valuation",
+          "knowledgeCheck": {
+            "question": "During a period of rising prices, which inventory method results in the LOWEST net income?",
+            "options": [
+              "FIFO",
+              "LIFO",
+              "Weighted Average",
+              "All methods produce the same net income"
+            ],
+            "correctIndex": 1,
+            "explanation": "LIFO (Last-In, First-Out) assigns the newest, highest costs to COGS, resulting in the highest COGS and lowest net income during rising prices. This also results in the lowest tax expense and best cash flow.",
+            "hint": "Which method sends the highest costs to expenses?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-028",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Financial Statement Analysis Ratios",
+    "description": "Calculate and interpret key financial ratios",
+    "order": 28,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Financial ratios",
+      "Liquidity ratios",
+      "Profitability ratios",
+      "Leverage ratios"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Ratios transform raw financial data into meaningful insights! CMAs use ratio analysis to evaluate performance, identify trends, and benchmark against competitors. Mastering financial ratios is essential for both CMA exam success and professional practice."
+        },
+        {
+          "title": "Ratio Categories",
+          "type": "text",
+          "content": "**Liquidity Ratios:**\n• Can the company pay short-term debts?\n• Current ratio, quick ratio, cash ratio\n\n**Activity (Efficiency) Ratios:**\n• How well are assets utilized?\n• Turnover ratios, days ratios\n\n**Leverage (Solvency) Ratios:**\n• How much debt vs equity?\n• Debt-to-equity, times interest earned\n\n**Profitability Ratios:**\n• How profitable is the company?\n• Margin ratios, return ratios"
+        },
+        {
+          "title": "Key Ratios",
+          "type": "table",
+          "headers": [
+            "Ratio",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Current Ratio",
+              "Current Assets / Current Liabilities"
+            ],
+            [
+              "Quick Ratio",
+              "(CA - Inventory) / Current Liabilities"
+            ],
+            [
+              "A/R Turnover",
+              "Credit Sales / Avg A/R"
+            ],
+            [
+              "Inventory Turnover",
+              "COGS / Avg Inventory"
+            ],
+            [
+              "Debt-to-Equity",
+              "Total Debt / Total Equity"
+            ],
+            [
+              "Times Interest Earned",
+              "EBIT / Interest Expense"
+            ],
+            [
+              "Gross Margin",
+              "Gross Profit / Sales"
+            ],
+            [
+              "ROA",
+              "Net Income / Avg Total Assets"
+            ],
+            [
+              "ROE",
+              "Net Income / Avg Shareholders' Equity"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Liquidity Ratios",
+          "type": "callout",
+          "content": "**Current Ratio:**\nCurrent Assets / Current Liabilities\n• Includes inventory\n• General liquidity measure\n• Target often > 2.0\n\n**Quick (Acid-Test) Ratio:**\n(Current Assets - Inventory) / Current Liabilities\n• Excludes inventory (hard to liquidate)\n• Stricter test\n• Target often > 1.0\n\n**Cash Ratio:**\n(Cash + Marketable Securities) / Current Liabilities\n• Most conservative\n• Only most liquid assets\n\n**Memory:**\nLiquidity increases as we get more restrictive\nCurrent > Quick > Cash ratio (in terms of coverage)"
+        },
+        {
+          "title": "Activity and Turnover Ratios",
+          "type": "text",
+          "content": "**A/R Turnover:**\nCredit Sales / Avg A/R\n• How many times A/R collected per year\n• Higher = faster collection\n\n**Days Sales Outstanding (DSO):**\n365 / A/R Turnover\n• Average collection period\n• Lower = faster collection\n\n**Inventory Turnover:**\nCOGS / Avg Inventory\n• How many times inventory sold\n• Higher usually better\n\n**Days in Inventory:**\n365 / Inventory Turnover\n• How long inventory is held\n\n**A/P Turnover:**\nPurchases / Avg A/P\n• How quickly paying suppliers"
+        },
+        {
+          "title": "DuPont Analysis",
+          "type": "text",
+          "content": "**DuPont Formula:**\n\nROE = Net Profit Margin × Asset Turnover × Equity Multiplier\n\nROE = (NI/Sales) × (Sales/Assets) × (Assets/Equity)\n\n**Components:**\n• Profit margin = Profitability\n• Asset turnover = Efficiency\n• Equity multiplier = Leverage\n\n**Insight:**\nShows HOW ROE is achieved:\n• High margins?\n• Efficient asset use?\n• High leverage?\n\n**Use:**\n• Compare companies\n• Identify improvement areas"
+        },
+        {
+          "title": "⚠️ Exam Trap: Ratio Calculations",
+          "type": "warning",
+          "content": "**Common Exam Mistakes:**\n\n**Numerator/Denominator:**\n• Turnover = Flow / Stock\n• Flow from income statement (sales, COGS)\n• Stock from balance sheet (averages!)\n\n**Use Averages:**\n• For balance sheet items used with IS\n• (Beginning + Ending) / 2\n• Matches timing of IS and BS\n\n**COGS vs Sales:**\n• Inventory turnover uses COGS (matches cost)\n• A/R turnover uses Sales\n• A/P uses Purchases (not COGS)\n\n**Credit vs Total Sales:**\n• A/R turnover ideally uses credit sales\n• If not given, use total sales"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Ratios: Liquidity, Activity, Leverage, Profitability",
+            "Current ratio includes inventory; Quick ratio excludes it",
+            "Turnover = Flow item / Average stock item",
+            "Days = 365 / Turnover",
+            "DuPont: ROE = Margin × Turnover × Leverage",
+            "Always use average for B/S items with I/S items",
+            "Compare to industry benchmarks for context"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Financial Ratios",
+          "knowledgeCheck": {
+            "question": "A company has $600K current assets, $200K inventory, and $300K current liabilities. What is the quick ratio?",
+            "options": [
+              "1.33",
+              "2.00",
+              "0.67",
+              "1.67"
+            ],
+            "correctIndex": 0,
+            "explanation": "Quick ratio = (Current Assets - Inventory) / Current Liabilities = ($600K - $200K) / $300K = $400K / $300K = 1.33. This excludes inventory to give a stricter liquidity measure.",
+            "hint": "Quick ratio excludes inventory from current assets."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-A-029",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Revenue Recognition under ASC 606",
+    "description": "Apply the five-step revenue recognition model",
+    "order": 29,
+    "duration": 55,
+    "difficulty": "hard",
+    "topics": [
+      "Revenue recognition",
+      "ASC 606",
+      "Performance obligations",
+      "Contract accounting"
+    ],
+    "blueprintArea": "CMA1-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Revenue is the top line - and often the most scrutinized! ASC 606 revolutionized revenue recognition with a principles-based approach. CMAs must understand these rules for accurate financial reporting and performance measurement."
+        },
+        {
+          "title": "ASC 606 Overview",
+          "type": "text",
+          "content": "**Background:**\n• Effective 2018 (public companies)\n• Replaces industry-specific guidance\n• Converged with IFRS 15\n• Single principles-based model\n\n**Core Principle:**\nRecognize revenue to depict transfer of goods/services to customers in an amount reflecting expected consideration\n\n**Five-Step Model:**\n1. Identify the contract\n2. Identify performance obligations\n3. Determine transaction price\n4. Allocate price to obligations\n5. Recognize revenue when satisfied"
+        },
+        {
+          "title": "Five-Step Model",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Question",
+            "Key Considerations"
+          ],
+          "rows": [
+            [
+              "1. Contract",
+              "Is there a valid contract?",
+              "Approval, rights, payment terms, collectibility"
+            ],
+            [
+              "2. Obligations",
+              "What promises are made?",
+              "Distinct goods/services to customer"
+            ],
+            [
+              "3. Price",
+              "How much consideration?",
+              "Fixed + variable amounts"
+            ],
+            [
+              "4. Allocation",
+              "How to split price?",
+              "Standalone selling prices"
+            ],
+            [
+              "5. Recognition",
+              "When satisfied?",
+              "Point in time or over time"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: The Five Steps",
+          "type": "callout",
+          "content": "**Memory:** 'Contracts Obligate Prices Allocated to Revenue'\n\n**Step 1 - Contract:**\n• Both parties approved\n• Rights identified\n• Payment terms exist\n• Commercial substance\n• Collection probable\n\n**Step 2 - Performance Obligations:**\n• Promise to transfer distinct good/service\n• Distinct = Standalone value + separately identifiable\n• Each bundle treated separately\n\n**Step 3 - Transaction Price:**\n• Amount expected to receive\n• Excludes amounts collected for others (sales tax)\n• Include variable consideration (estimates)"
+        },
+        {
+          "title": "Variable Consideration",
+          "type": "text",
+          "content": "**Types of Variable Consideration:**\n• Discounts\n• Rebates\n• Returns\n• Performance bonuses\n• Penalties\n\n**Estimation Methods:**\n• **Expected value:** Probability-weighted amounts\n  - Best when many possible outcomes\n• **Most likely amount:** Single most likely outcome\n  - Best when binary outcomes\n\n**Constraint:**\nOnly include variable consideration to extent it's highly probable NO significant revenue reversal will occur\n\n**Example:**\n$100K contract + up to $20K bonus\nIf 60% probability of full bonus:\nExpected value: $100K + ($20K × 60%) = $112K\nBut apply constraint - may recognize less"
+        },
+        {
+          "title": "Point in Time vs Over Time",
+          "type": "text",
+          "content": "**Over Time Recognition (if any criteria met):**\n• Customer receives/consumes benefits simultaneously\n• Asset has no alternative use + right to payment\n• Company creates/enhances customer-controlled asset\n\n**Point in Time (default):**\nRecognize when control transfers\n\n**Indicators of Control Transfer:**\n• Right to payment\n• Legal title passed\n• Physical possession\n• Risks and rewards transferred\n• Customer accepted\n\n**Examples:**\n• Over time: Construction contract, SaaS subscription\n• Point in time: Product sale delivered to customer"
+        },
+        {
+          "title": "⚠️ Exam Trap: Common Issues",
+          "type": "warning",
+          "content": "**Watch for These:**\n\n**Bill-and-Hold Arrangements:**\n• Revenue only if customer requests\n• Goods identified as belonging to customer\n• Ready for transfer\n\n**Consignment Sales:**\n• No revenue until sold by consignee\n• Seller retains risks\n\n**Principal vs Agent:**\n• Principal: Gross revenue\n• Agent: Net revenue (commission only)\n• Who controls goods before transfer?\n\n**Multiple Performance Obligations:**\n• Allocate based on standalone prices\n• Recognize each separately\n\n**Warranties:**\n• Assurance-type: Part of product (accrue)\n• Service-type: Separate obligation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ASC 606: Principles-based, five-step model for all industries",
+            "Step 1: Identify valid contract with customer",
+            "Step 2: Identify distinct performance obligations",
+            "Step 3: Determine transaction price (including variable)",
+            "Step 4: Allocate price to obligations (standalone prices)",
+            "Step 5: Recognize when obligation satisfied (over time or point)",
+            "Variable consideration subject to constraint"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Revenue Recognition",
+          "knowledgeCheck": {
+            "question": "A software company sells a license ($40K standalone price) bundled with one year of support ($20K standalone price) for $54K total. How much revenue is allocated to the license?",
+            "options": [
+              "$40,000",
+              "$36,000",
+              "$54,000",
+              "$27,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "Allocate based on relative standalone prices. License = $40K / ($40K + $20K) = 67%. Revenue for license = $54K × 67% = $36,000. Support gets remaining $18,000.",
+            "hint": "Allocate the bundle price based on relative standalone selling prices."
+          }
+        }
+      ]
+    }
   }
 ]

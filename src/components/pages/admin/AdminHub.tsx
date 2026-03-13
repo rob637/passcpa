@@ -84,6 +84,7 @@ const ADMIN_SECTIONS: AdminSection[] = [
     links: [
       { label: 'User Management', path: '/admin/cms' },
       { label: 'Content Stats', path: '/admin/cms' },
+      { label: 'Course Factory', path: '/admin/course-factory', badge: 'NEW' },
       { label: 'Data Seeding', path: '/admin/seed' },
     ],
   },

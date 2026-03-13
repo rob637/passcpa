@@ -366,10 +366,8 @@ const generateFallbackResponse = (input: string, mode: string, _section: string,
     }
   }
 
-  // EVALUATE MODE (essay grading fallback)
-  if (mode === 'evaluate') {
-    return `## ⚠️ AI Grading Temporarily Unavailable\n\nThe AI grading service could not process your essay at this time. Your response has been saved.\n\n**Self-Assessment Checklist:**\n\n1. **Completeness**: Did you address ALL parts of the task requirement?\n2. **Technical Accuracy**: Are your calculations and reasoning correct?\n3. **Structure**: Did you organize your response with clear sections?\n4. **Depth**: Did you explain the "why" behind your conclusions?\n5. **Professional Tone**: Would this answer earn credit on the actual ${course.shortName} exam?\n\n**Tip:** Review the Key Points section below to see what should have been covered, then try submitting again.`;
-  }
+  // NOTE: Evaluate mode (essay grading) flows through to the API call below - no special handling needed here.
+  // The getSystemPrompts() function has an 'evaluate' prompt that provides detailed grading instructions.
 
   // SOCRATIC MODE
   if (mode === 'socratic') {

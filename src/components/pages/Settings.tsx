@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import logger from '../../utils/logger';
 import {
   User as UserIcon,
   Bell,
-  Target,
   Shield,
   MessageSquare,
   Wifi,
@@ -21,15 +20,15 @@ import {
   CheckCircle,
   Smartphone,
   Users,
-  Award,
-  CreditCard,
-  ExternalLink,
   ChevronDown,
   Download,
   Share,
   PlusSquare,
   CheckCircle2,
   Zap,
+  ExternalLink,
+  Trash2,
+  AlertTriangle,
 } from 'lucide-react';
 import { usePWAInstall } from '../../hooks/usePWAInstall';
 import { triggerUpdateBanner } from '../common/UpdateBanner';
@@ -39,11 +38,10 @@ import { useAuth } from '../../hooks/useAuth';
 import { useCourse } from '../../providers/CourseProvider';
 import { useTabKeyboard } from '../../hooks/useKeyboardNavigation';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage, auth, functions } from '../../config/firebase';
+import { storage, auth } from '../../config/firebase';
 import { linkWithPopup, unlink, GoogleAuthProvider } from 'firebase/auth';
 import { useTheme } from '../../providers/ThemeProvider';
 // import { useTour } from '../OnboardingTour'; // Not migrated yet
-import { DAILY_GOAL_PRESETS, CORE_SECTIONS, DISCIPLINE_SECTIONS_2026, isBefore2026Blueprint } from '../../config/examConfig';
 import { getSectionDisplayInfo, getDefaultSection, getCurrentSectionForCourse } from '../../utils/sectionUtils';
 import { createExamDateUpdate, getExamDate } from '../../utils/profileHelpers';
 import {
@@ -53,10 +51,7 @@ import {
 } from '../../services/pushNotifications';
 import { getCacheStatus, clearCache, cacheQuestions } from '../../services/offlineCache';
 import { fetchQuestions } from '../../services/questionService';
-import { useSubscription, EXAM_PRICING, isFounderPricingActive } from '../../services/subscription';
-import { isCourseActive } from '../../courses';
-import type { CourseId } from '../../types/course';
-import { httpsCallable } from 'firebase/functions';
+import { resetUserProgress } from '../../services/progressResetService';
 import { InviteFriends } from '../common/InviteFriends';
 import { PassedCelebration } from '../common/PassedCelebration';
 import { Timestamp } from 'firebase/firestore';
@@ -99,8 +94,6 @@ const Settings: React.FC = () => {
   const { user, userProfile, updateUserProfile, resetPassword, signOut } = useAuth();
   const { courseId, course } = useCourse();
   const { darkMode, themeMode, setThemeMode } = useTheme();
-  const { subscription, getExamAccess } = useSubscription();
-  const navigate = useNavigate();
   // const { startTour, resetTour } = useTour();
   const [searchParams] = useSearchParams();
   const initialTab = searchParams.get('tab') || 'profile';
@@ -111,7 +104,7 @@ const Settings: React.FC = () => {
   const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
   const [updateCheckResult, setUpdateCheckResult] = useState<'none' | 'available' | null>(null);
-  const [isManagingSubscription, setIsManagingSubscription] = useState(false);
+  const [isResettingProgress, setIsResettingProgress] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Profile from auth
@@ -376,25 +369,6 @@ const Settings: React.FC = () => {
       setTimeout(() => setSaveError(null), 5000);
     } finally {
       setIsSaving(false);
-    }
-  };
-
-  const handleManageSubscription = async () => {
-    if (!user) return;
-    setIsManagingSubscription(true);
-    try {
-      const createPortalSession = httpsCallable<{ returnUrl: string }, { url: string }>(
-        functions,
-        'createCustomerPortalSession'
-      );
-      const result = await createPortalSession({
-        returnUrl: window.location.href
-      });
-      window.location.href = result.data.url;
-    } catch (error) {
-      logger.error('Error opening subscription portal:', error);
-      alert('Unable to open subscription management. Please try again.');
-      setIsManagingSubscription(false);
     }
   };
 
@@ -1056,128 +1030,6 @@ const Settings: React.FC = () => {
 
                     <div className="border-t border-slate-200 pt-6"></div>
 
-                    {/* Subscription Management — Per-Exam */}
-                    <h3 className="font-medium text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                      <CreditCard className="w-5 h-5" />
-                      Subscriptions & Trials
-                    </h3>
-                    <div className="space-y-3 mb-6">
-                      {(['cpa', 'ea', 'cma', 'cia', 'cisa', 'cfp'] as CourseId[]).filter(isCourseActive).map(examId => {
-                        const access = getExamAccess(examId);
-                        const examName = examId.toUpperCase();
-                        const pricing = EXAM_PRICING[examId];
-                        const isActive = examId === courseId;
-                        // Show: current exam always, other exams if user has interacted
-                        const hasInteraction = access.isPaid || access.isTrialing || access.trialExpired;
-                        if (!isActive && !hasInteraction) return null;
-
-                        return (
-                          <div key={examId} className={clsx(
-                            'rounded-xl border p-4 transition-colors',
-                            isActive
-                              ? 'bg-primary-50 dark:bg-primary-900/10 border-primary-200 dark:border-primary-800'
-                              : 'bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700'
-                          )}>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-3">
-                                <div className={clsx(
-                                  'w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm',
-                                  access.isPaid
-                                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
-                                    : access.isTrialing
-                                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
-                                      : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
-                                )}>
-                                  {examName}
-                                </div>
-                                <div>
-                                  <div className="font-medium text-slate-900 dark:text-white flex items-center gap-2">
-                                    {examName} Exam
-                                    {isActive && (
-                                      <span className="text-xs bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 px-1.5 py-0.5 rounded">Current</span>
-                                    )}
-                                  </div>
-                                  <div className="text-sm text-slate-600 dark:text-slate-400">
-                                    {access.isPaid ? (
-                                      <span className={`${access.cancelAtPeriodEnd ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400'} flex items-center gap-1`}>
-                                        <CheckCircle className="w-3.5 h-3.5" />
-                                        {access.cancelAtPeriodEnd ? 'Cancels' : 'Subscribed'}
-                                        {access.currentPeriodEnd && (
-                                          <span className="text-slate-500">
-                                            {access.cancelAtPeriodEnd
-                                              ? ` on ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
-                                              : ` · Renews ${new Date(access.currentPeriodEnd).toLocaleDateString()}`
-                                            }
-                                          </span>
-                                        )}
-                                      </span>
-                                    ) : access.isTrialing ? (
-                                      <span className="text-blue-600 dark:text-blue-400">
-                                        Trial · {access.trialDaysRemaining}d remaining
-                                        {access.trialEndDate && (
-                                          <span className="text-slate-500"> · Ends {new Date(access.trialEndDate).toLocaleDateString()}</span>
-                                        )}
-                                      </span>
-                                    ) : access.trialExpired ? (
-                                      <span className="text-amber-600 dark:text-amber-400">Trial expired</span>
-                                    ) : (
-                                      <span>Free trial available</span>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                {/* Upgrade buttons for non-paid exams */}
-                                {!access.isPaid && (access.trialExpired || access.isTrialing) && (
-                                  <div className="flex items-center gap-2">
-                                    <button
-                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=monthly`)}
-                                      className="flex items-center gap-1.5 text-sm bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium px-3 py-1.5 rounded-lg transition-colors"
-                                    >
-                                      <span className="text-xs">
-                                        ${isFounderPricingActive() ? pricing.founderMonthly : pricing.monthly}/mo
-                                      </span>
-                                    </button>
-                                    <button
-                                      onClick={() => navigate(`/start-checkout?course=${examId}&interval=annual`)}
-                                      className="flex items-center gap-1.5 text-sm bg-primary-600 hover:bg-primary-700 text-white font-medium px-3 py-1.5 rounded-lg transition-colors"
-                                    >
-                                      <span className="text-xs">
-                                        ${isFounderPricingActive() ? pricing.founderAnnual : pricing.annual}/yr
-                                      </span>
-                                      <span className="text-xs bg-green-500/20 text-green-100 px-1.5 py-0.5 rounded font-normal">Save 40%+</span>
-                                    </button>
-                                  </div>
-                                )}
-                                {/* Manage button for paid subscribers */}
-                                {access.isPaid && subscription?.stripeCustomerId && (
-                                  <button
-                                    onClick={handleManageSubscription}
-                                    disabled={isManagingSubscription}
-                                    className="flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium px-3 py-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors disabled:opacity-50"
-                                  >
-                                    {isManagingSubscription ? (
-                                      <>
-                                        <Loader2 className="w-4 h-4 animate-spin" />
-                                        Opening...
-                                      </>
-                                    ) : (
-                                      <>
-                                        Manage
-                                        <ExternalLink className="w-4 h-4" />
-                                      </>
-                                    )}
-                                  </button>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div className="border-t border-slate-200 pt-6"></div>
-
                     {/* Actions */}
                     <h3 className="font-medium text-slate-900 dark:text-white mb-3">Security & Session</h3>
                     <div className="space-y-3">
@@ -1204,6 +1056,79 @@ const Settings: React.FC = () => {
                         Sign Out
                       </Button>
                     </div>
+
+                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6 mt-6"></div>
+
+                    {/* Data Management */}
+                    <h3 className="font-medium text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                      <Trash2 className="w-4 h-4" />
+                      Data Management
+                    </h3>
+                    <div className="rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20 p-4 mb-4">
+                      <div className="flex gap-3">
+                        <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-medium text-amber-800 dark:text-amber-300">
+                            Reset All Progress
+                          </p>
+                          <p className="text-sm text-amber-700 dark:text-amber-400 mt-1">
+                            This will permanently delete all your study progress including question history,
+                            lesson completions, daily activity logs, and study plan metrics. This cannot be undone.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <Button
+                      onClick={async () => {
+                        if (!user?.uid) return;
+                        const confirmed = window.confirm(
+                          'Are you sure you want to reset ALL progress data? This will delete:\n\n' +
+                          '• All question history\n' +
+                          '• All lesson progress\n' +
+                          '• All daily activity logs\n' +
+                          '• All TBS/CBQ history\n' +
+                          '• Study plan metrics\n\n' +
+                          'This action CANNOT be undone.'
+                        );
+                        if (!confirmed) return;
+
+                        // Double confirm for safety
+                        const doubleConfirm = window.confirm(
+                          'FINAL CONFIRMATION\n\n' +
+                          'Type "RESET" in the next prompt to confirm deletion of all progress data.'
+                        );
+                        if (!doubleConfirm) return;
+
+                        const typed = window.prompt('Type RESET to confirm:');
+                        if (typed !== 'RESET') {
+                          alert('Reset cancelled. You must type RESET exactly.');
+                          return;
+                        }
+
+                        setIsResettingProgress(true);
+                        try {
+                          const result = await resetUserProgress(user.uid);
+                          if (result.success) {
+                            const total = Object.values(result.deleted).reduce((a, b) => a + b, 0);
+                            alert(`Progress reset complete!\n\nDeleted ${total} records.\n\nRefresh the page to see changes.`);
+                            window.location.reload();
+                          } else {
+                            alert(`Reset completed with some errors:\n${result.errors.join('\n')}`);
+                          }
+                        } catch (err) {
+                          logger.error('Error resetting progress:', err);
+                          alert('Failed to reset progress. Please try again.');
+                        } finally {
+                          setIsResettingProgress(false);
+                        }
+                      }}
+                      variant="secondary"
+                      leftIcon={isResettingProgress ? Loader2 : Trash2}
+                      disabled={isResettingProgress}
+                      className="w-full sm:w-auto text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 border-red-200 dark:border-red-800"
+                    >
+                      {isResettingProgress ? 'Resetting...' : 'Reset All Progress'}
+                    </Button>
                   </div>
                 </div>
               </div>

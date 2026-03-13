@@ -1328,5 +1328,1952 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA1-F-009",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Cloud Computing for Finance",
+    "description": "Understand cloud computing models, benefits, risks, and implications for financial management",
+    "order": 62,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cloud computing models",
+      "SaaS, PaaS, IaaS",
+      "Cloud benefits and risks",
+      "Financial implications"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cloud computing has transformed how businesses operate! CMAs must understand cloud economics - from CapEx to OpEx shifts, subscription pricing models, and the financial implications of cloud migration. Many ERP systems and financial applications now run in the cloud."
+        },
+        {
+          "title": "What Is Cloud Computing?",
+          "type": "text",
+          "content": "**Definition:** Delivery of computing services (servers, storage, databases, software) over the internet on a pay-as-you-go basis.\n\n**Key Characteristics:**\n• **On-demand self-service:** Resources available when needed\n• **Broad network access:** Accessible from any device\n• **Resource pooling:** Shared infrastructure serving multiple users\n• **Rapid elasticity:** Scale up/down instantly\n• **Measured service:** Pay only for what you use\n\n**Cloud vs. On-Premise:**\nOn-premise: You buy and maintain hardware\nCloud: Provider owns hardware; you rent capacity"
+        },
+        {
+          "title": "Cloud Service Models",
+          "type": "table",
+          "headers": [
+            "Model",
+            "What Provider Manages",
+            "What You Manage",
+            "Example"
+          ],
+          "rows": [
+            [
+              "SaaS (Software as a Service)",
+              "Everything - hardware, OS, and application",
+              "Your data and user access",
+              "Salesforce, Microsoft 365, Workday"
+            ],
+            [
+              "PaaS (Platform as a Service)",
+              "Hardware and operating system",
+              "Applications and data",
+              "Google App Engine, Heroku"
+            ],
+            [
+              "IaaS (Infrastructure as a Service)",
+              "Physical hardware only",
+              "OS, applications, and data",
+              "AWS EC2, Azure VMs, Google Compute"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Cloud Models",
+          "type": "callout",
+          "content": "**\"SPI\" = Pizza Analogy**\n\n**S**aaS = Eating at a restaurant (someone else makes and serves)\n**P**aaS = Take-and-bake pizza (you just cook it)\n**I**aaS = Buy ingredients at store (you make everything)\n\n**Control increases as you go down, but so does your responsibility!**"
+        },
+        {
+          "title": "Cloud Deployment Models",
+          "type": "text",
+          "content": "**Public Cloud:**\n• Shared infrastructure, operated by third party\n• Most cost-effective for standard workloads\n• Examples: AWS, Azure, Google Cloud\n\n**Private Cloud:**\n• Dedicated infrastructure for one organization\n• Higher security and control\n• Higher cost, but meets compliance needs\n\n**Hybrid Cloud:**\n• Combination of public and private\n• Sensitive data on private; scalable workloads on public\n• Common for regulated industries\n\n**Multi-Cloud:**\n• Using multiple cloud providers\n• Avoids vendor lock-in\n• More complex to manage"
+        },
+        {
+          "title": "Financial Impact: CapEx to OpEx",
+          "type": "text",
+          "content": "**Traditional IT (On-Premise):**\n• Large upfront capital expenditure (CapEx)\n• Depreciation over useful life\n• Risk of over/under-provisioning\n\n**Cloud Computing:**\n• Operating expense (OpEx) - subscription/usage fees\n• No large upfront investment\n• Pay-as-you-go aligns cost with usage\n\n**Financial Statement Impact:**\n• Balance sheet: Fewer fixed assets, less depreciation\n• Income statement: Higher SaaS/subscription expenses\n• Cash flow: More consistent outflows vs. lumpy CapEx\n\n**CFO Consideration:** Cloud may improve ROA (fewer assets) but reduce operating margin"
+        },
+        {
+          "title": "⚠️ Exam Trap: TCO Analysis",
+          "type": "warning",
+          "content": "**Total Cost of Ownership (TCO) must include ALL costs:**\n\n**On-Premise Hidden Costs:**\n• Hardware refresh cycles\n• IT staff for maintenance\n• Facilities (power, cooling, space)\n• Security and backup systems\n• Downtime and disaster recovery\n\n**Cloud Hidden Costs:**\n• Data egress fees (moving data out)\n• Premium support tiers\n• Integration and migration costs\n• Training and change management\n\n**Don't just compare subscription vs. hardware cost!**"
+        },
+        {
+          "title": "Cloud Risks and Controls",
+          "type": "table",
+          "headers": [
+            "Risk",
+            "Description",
+            "Mitigation"
+          ],
+          "rows": [
+            [
+              "Data Security",
+              "Data stored off-site, shared infrastructure",
+              "Encryption, access controls, SOC reports"
+            ],
+            [
+              "Vendor Lock-in",
+              "Difficult to switch providers",
+              "Multi-cloud strategy, portable formats"
+            ],
+            [
+              "Compliance",
+              "Data residency and regulatory requirements",
+              "Regional deployments, compliance certifications"
+            ],
+            [
+              "Availability",
+              "Dependence on internet and provider uptime",
+              "SLAs, redundancy, failover planning"
+            ]
+          ]
+        },
+        {
+          "title": "SOC Reports for Cloud Assurance",
+          "type": "text",
+          "content": "**SOC Reports validate cloud provider controls:**\n\n**SOC 1 (Type I and II):**\n• Focus: Controls relevant to financial reporting\n• Audience: External auditors\n\n**SOC 2 (Type I and II):**\n• Focus: Security, availability, confidentiality, privacy, processing integrity\n• Audience: Management, regulators, customers\n\n**Type I:** Controls at a point in time\n**Type II:** Controls tested over a period (more valuable)\n\n**CMA Tip:** Always request SOC 2 Type II reports from cloud providers"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cloud delivers computing resources on-demand over the internet",
+            "Three service models: SaaS (full app), PaaS (platform), IaaS (infrastructure)",
+            "Deployment: Public (shared), Private (dedicated), Hybrid (mixed)",
+            "Cloud shifts spending from CapEx to OpEx (subscription model)",
+            "TCO analysis must include hidden costs for both options",
+            "Key risks: security, vendor lock-in, compliance, availability",
+            "SOC 2 Type II reports provide assurance over cloud provider controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cloud Service Models",
+          "knowledgeCheck": {
+            "question": "A company wants to deploy a custom-built financial application without managing servers or operating systems. Which cloud service model is MOST appropriate?",
+            "options": [
+              "SaaS - Software as a Service",
+              "PaaS - Platform as a Service",
+              "IaaS - Infrastructure as a Service",
+              "Private cloud"
+            ],
+            "correctIndex": 1,
+            "explanation": "PaaS provides a platform (servers, OS, development tools) for deploying custom applications. The company manages its application code and data, while the provider manages infrastructure. SaaS provides pre-built applications, and IaaS requires managing the OS.",
+            "hint": "Think about what the company wants to manage vs. what they want the provider to handle."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Financial Impact of Cloud",
+          "knowledgeCheck": {
+            "question": "When a company migrates from on-premise IT infrastructure to cloud computing, which financial statement change is MOST likely?",
+            "options": [
+              "Decrease in operating expenses",
+              "Increase in fixed assets and depreciation",
+              "Decrease in fixed assets and increase in subscription expenses",
+              "Improvement in gross profit margin"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cloud migration shifts spending from capital expenditure (fixed assets) to operating expenses (subscriptions). The balance sheet shows fewer fixed assets and less depreciation, while the income statement shows higher subscription/SaaS expenses.",
+            "hint": "Think about CapEx vs. OpEx."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SOC Reports",
+          "reveal": {
+            "question": "What is the difference between SOC 1 and SOC 2 reports?",
+            "answer": "SOC 1 reports focus on controls relevant to financial reporting (for auditors). SOC 2 reports cover security, availability, confidentiality, privacy, and processing integrity (broader audience). Type I reports assess controls at a point in time; Type II reports test controls over a period and are more valuable."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-010",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Data Visualization and Dashboards",
+    "description": "Create effective visualizations that communicate financial insights clearly",
+    "order": 56,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Data visualization",
+      "Dashboard design",
+      "Chart selection",
+      "Storytelling with data"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Numbers alone don't drive decisions - insights do! CMAs who can visualize financial data effectively become invaluable business partners. A well-designed dashboard can communicate in seconds what a spreadsheet takes hours to explain."
+        },
+        {
+          "title": "Choosing the Right Chart",
+          "type": "table",
+          "headers": [
+            "Purpose",
+            "Best Chart Type",
+            "Example Use Case"
+          ],
+          "rows": [
+            [
+              "Trends over time",
+              "Line chart",
+              "Monthly revenue, stock price history"
+            ],
+            [
+              "Part-to-whole relationship",
+              "Pie chart (few items) or stacked bar",
+              "Expense allocation, market share"
+            ],
+            [
+              "Comparing categories",
+              "Bar chart (horizontal or vertical)",
+              "Department spending, product sales"
+            ],
+            [
+              "Distribution",
+              "Histogram or box plot",
+              "Invoice amounts, employee tenure"
+            ],
+            [
+              "Correlation",
+              "Scatter plot",
+              "Sales vs marketing spend"
+            ],
+            [
+              "Multiple metrics",
+              "Combo chart (bar + line)",
+              "Revenue (bars) and margin % (line)"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Chart Selection",
+          "type": "callout",
+          "content": "**\"COMPARE\" - What are you showing?**\n\n**C**omposition? → Pie/stacked bar\n**O**ver time? → Line chart\n**M**ultiple variables? → Scatter/combo\n**P**art of whole? → Pie chart (max 5 slices!)\n**A**mounts by category? → Bar chart\n**R**elationship? → Scatter plot\n**E**xact values matter? → Table, not chart"
+        },
+        {
+          "title": "Dashboard Design Principles",
+          "type": "text",
+          "content": "**1. Know Your Audience**\n• Executives want high-level KPIs\n• Analysts want drill-down capability\n• Operations needs real-time data\n\n**2. Follow the 5-Second Rule**\n• Key message visible in 5 seconds\n• Critical metrics in top-left\n• Logical visual flow\n\n**3. Limit Cognitive Load**\n• Maximum 5-7 visualizations per screen\n• Consistent color scheme\n• Remove clutter (\"chart junk\")\n\n**4. Use Hierarchy**\n• Size indicates importance\n• Position guides attention\n• Color highlights exceptions"
+        },
+        {
+          "title": "Common Visualization Mistakes",
+          "type": "list",
+          "items": [
+            "**Truncated Y-axis** - Exaggerates small changes, misleading",
+            "**3D charts** - Distorts perception, harder to read accurately",
+            "**Too many pie slices** - More than 5-6 becomes confusing",
+            "**Rainbow colors** - Use sequential or diverging palettes",
+            "**Dual Y-axes** - Can mislead about relationships",
+            "**Missing context** - Always include comparison (prior year, budget, target)",
+            "**Overloading** - Too much data obscures the message"
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Misleading Visualizations",
+          "type": "warning",
+          "content": "**The CMA exam tests ethical visualization!**\n\n**Manipulative Techniques to Recognize:**\n\n**1. Truncated Y-Axis**\nStart Y at 95 instead of 0 to make 5% change look huge\n\n**2. Inconsistent Intervals**\nTime axis: Jan, Feb, Mar, then June (skipping months)\n\n**3. Cherry-Picked Time Periods**\nShow only favorable months\n\n**4. Misleading Scales**\nCompare $ millions to $ thousands on same chart\n\n**CMA Ethical Standard:** Present data fairly and objectively!"
+        },
+        {
+          "title": "Storytelling with Data",
+          "type": "text",
+          "content": "**Beyond Charts: Creating Narrative**\n\n**1. Start with the \"So What?\"**\n• What action should this drive?\n• What decision does this support?\n\n**2. Provide Context**\n• Compare to benchmark/target/prior\n• Explain what's \"normal\"\n\n**3. Highlight Exceptions**\n• Use color to draw attention\n• Annotate significant events\n\n**4. Guide the Eye**\n• Visual flow from problem to insight to action\n• Clear titles that state the conclusion\n\n**Example Title:**\n✘ \"Q3 Sales by Region\"\n✔ \"West Region Underperforming Budget by 15%\""
+        },
+        {
+          "title": "KPI Dashboard Best Practices",
+          "type": "text",
+          "content": "**Financial KPI Dashboard Elements:**\n\n**1. Big Number Cards**\n• Revenue, profit, cash balance\n• With vs prior period/budget indicator\n\n**2. Sparklines**\n• Mini trends without axis clutter\n• Quick directional insight\n\n**3. Gauge/Bullet Charts**\n• Show actual vs target\n• Color zones (green/yellow/red)\n\n**4. Traffic Light Indicators**\n• Quick status at a glance\n• Red = needs attention\n\n**5. Interactive Filters**\n• Time period selector\n• Drill-down by dimension"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Match chart type to the message: trends use lines, comparison uses bars",
+            "Limit pie charts to 5-6 slices maximum",
+            "Dashboards should communicate key insights in 5 seconds",
+            "Avoid 3D charts, truncated axes, and rainbow colors",
+            "Always provide context: budget, prior year, or benchmark",
+            "Use titles that state conclusions, not just descriptions",
+            "Ethical visualization requires honest presentation without manipulation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Chart Selection",
+          "knowledgeCheck": {
+            "question": "A management accountant wants to show how actual monthly expenses compare to budgeted amounts over a 12-month period. Which visualization would be most effective?",
+            "options": [
+              "Two pie charts (one for actual, one for budget)",
+              "A line chart with two lines (actual and budget)",
+              "A stacked bar chart",
+              "A scatter plot"
+            ],
+            "correctIndex": 1,
+            "explanation": "A line chart with two lines effectively shows trends over time and enables easy comparison between actual and budgeted amounts at each point. Pie charts show composition, not trends; scatter plots show correlation; stacked bars would obscure the comparison.",
+            "hint": "Think about what best shows change over time with comparison."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Ethical Visualization",
+          "reveal": {
+            "question": "How can a management accountant ensure their data visualizations are ethically presented?",
+            "answer": "Ethical visualization practices include: (1) Starting Y-axes at zero or clearly labeling truncated scales, (2) Using consistent time intervals, (3) Including all relevant data rather than cherry-picking, (4) Using appropriate chart types that don't distort relationships, (5) Providing sufficient context and comparisons, (6) Avoiding 3D effects that distort perception, and (7) Clearly labeling data sources and any limitations."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-011",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Robotic Process Automation in Finance",
+    "description": "Understand how RPA transforms finance operations and the CMA's role in automation",
+    "order": 57,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "RPA",
+      "Process automation",
+      "Bots",
+      "Finance transformation"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "RPA is reshaping finance! Routine tasks like journal entries, reconciliations, and report generation are being automated. CMAs who understand RPA can identify automation opportunities, oversee implementations, and focus on higher-value analysis."
+        },
+        {
+          "title": "What Is RPA?",
+          "type": "text",
+          "content": "**Definition:** Software robots (\"bots\") that mimic human actions to perform repetitive, rule-based tasks\n\n**How It Works:**\n• Bot follows programmed rules\n• Interacts with existing systems (like a user)\n• No changes to underlying systems needed\n• Works 24/7 without breaks\n\n**What Bots Can Do:**\n• Copy data between systems\n• Fill in forms\n• Generate reports\n• Send emails\n• Perform calculations"
+        },
+        {
+          "title": "Finance Processes Suited for RPA",
+          "type": "table",
+          "headers": [
+            "Process",
+            "Tasks Automated",
+            "Benefit"
+          ],
+          "rows": [
+            [
+              "Accounts Payable",
+              "Invoice processing, matching, payment",
+              "Faster processing, fewer errors"
+            ],
+            [
+              "Accounts Receivable",
+              "Cash application, dunning letters",
+              "Improved cash collection"
+            ],
+            [
+              "General Ledger",
+              "Journal entries, intercompany",
+              "Faster close, better accuracy"
+            ],
+            [
+              "Reconciliations",
+              "Bank recs, subledger matching",
+              "Real-time reconciliation"
+            ],
+            [
+              "Reporting",
+              "Data gathering, report distribution",
+              "Faster, more frequent reports"
+            ],
+            [
+              "Compliance",
+              "Control testing, evidence gathering",
+              "Continuous monitoring"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Good RPA Candidates",
+          "type": "callout",
+          "content": "**\"SHRED\" - Processes that work well with RPA:**\n\n**S**tandardized rules (clear logic)\n**H**igh volume (many transactions)\n**R**epetitive (same steps each time)\n**E**lectronic inputs (digital data)\n**D**efined process (documented steps)\n\n**Not Good for RPA:**\n• Requires judgment\n• Unstructured data\n• Constantly changing rules\n• Exceptions are common"
+        },
+        {
+          "title": "RPA Implementation Considerations",
+          "type": "text",
+          "content": "**Success Factors:**\n• Process documentation\n• Stable underlying systems\n• Clear exception handling\n• Governance and controls\n\n**Common Pitfalls:**\n• Automating a bad process\n• Underestimating maintenance\n• Insufficient testing\n• No plan for exceptions\n\n**CMA's Role:**\n• Identify automation candidates\n• Calculate ROI of automation\n• Design controls for bots\n• Monitor bot performance\n• Manage change to workforce"
+        },
+        {
+          "title": "RPA vs Artificial Intelligence",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "RPA",
+            "AI"
+          ],
+          "rows": [
+            [
+              "Task Type",
+              "Rule-based, repetitive",
+              "Cognitive, learning"
+            ],
+            [
+              "Data Type",
+              "Structured",
+              "Unstructured and structured"
+            ],
+            [
+              "Judgment",
+              "None - follows rules",
+              "Can make decisions"
+            ],
+            [
+              "Complexity",
+              "Lower",
+              "Higher"
+            ],
+            [
+              "Implementation",
+              "Weeks to months",
+              "Months to years"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: RPA Controls",
+          "type": "warning",
+          "content": "**Bots need controls too!**\n\n**Key RPA Control Areas:**\n\n**Access Controls:**\n• Who can create/modify bots?\n• What systems can bots access?\n• Segregation of bot duties\n\n**Change Management:**\n• Testing before deployment\n• Version control\n• Approval process\n\n**Monitoring:**\n• Bot activity logging\n• Exception reporting\n• Performance metrics\n\n**Exam Point:** RPA doesn't eliminate control needs - it shifts them!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "RPA uses software bots to automate repetitive, rule-based tasks",
+            "Best for high-volume, standardized processes with digital inputs",
+            "Common finance applications: AP, AR, reconciliations, reporting",
+            "Not suitable for judgment-based or constantly changing processes",
+            "RPA \u2260 AI: RPA follows rules, AI can learn and make decisions",
+            "Requires proper governance, controls, and exception handling",
+            "CMAs identify opportunities, calculate ROI, and design controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "RPA Suitability",
+          "knowledgeCheck": {
+            "question": "Which of the following finance processes would be LEAST suitable for RPA automation?",
+            "options": [
+              "Three-way match for invoice processing",
+              "Bank reconciliation for a high-volume account",
+              "Evaluating customer creditworthiness for new applications",
+              "Generating and distributing monthly financial reports"
+            ],
+            "correctIndex": 2,
+            "explanation": "Evaluating customer creditworthiness requires judgment, analysis of unstructured information, and varies case-by-case - making it unsuitable for basic RPA. The other options are rule-based, repetitive tasks with structured data that are well-suited for automation.",
+            "hint": "Which process requires the most human judgment and analysis?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-012",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Predictive Analytics for Management Accounting",
+    "description": "Leverage data science techniques to forecast outcomes and support decisions",
+    "order": 62,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Predictive analytics",
+      "Machine learning basics",
+      "Forecasting",
+      "Data science"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Analytics is transforming management accounting! Predictive models can forecast demand, identify risks, detect fraud, and optimize decisions with unprecedented accuracy. CMAs who understand these tools become strategic partners, not just reporters of history."
+        },
+        {
+          "title": "The Analytics Spectrum",
+          "type": "text",
+          "content": "**Four Levels of Analytics:**\n\n**1. Descriptive Analytics**\n• What happened?\n• Dashboards, reports\n• Example: Monthly sales report\n\n**2. Diagnostic Analytics**\n• Why did it happen?\n• Drill-down, variance analysis\n• Example: Why did Region A underperform?\n\n**3. Predictive Analytics**\n• What will happen?\n• Forecasting, modeling\n• Example: Q4 demand forecast\n\n**4. Prescriptive Analytics**\n• What should we do?\n• Optimization, simulation\n• Example: Optimal pricing strategy"
+        },
+        {
+          "title": "Common Predictive Techniques",
+          "type": "table",
+          "headers": [
+            "Technique",
+            "Use Case",
+            "Example in Accounting"
+          ],
+          "rows": [
+            [
+              "Regression",
+              "Predict continuous values",
+              "Forecast costs, revenue"
+            ],
+            [
+              "Classification",
+              "Categorize outcomes",
+              "Credit risk (approve/deny)"
+            ],
+            [
+              "Time Series",
+              "Forecast sequential data",
+              "Sales forecasting"
+            ],
+            [
+              "Clustering",
+              "Find natural groups",
+              "Customer segmentation"
+            ],
+            [
+              "Anomaly Detection",
+              "Find unusual patterns",
+              "Fraud detection"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Predictive vs Prescriptive",
+          "type": "callout",
+          "content": "**Easy distinction:**\n\n**Predictive:** \"Here's what we think will happen\"\n• Probability of customer churn: 73%\n• Forecasted demand: 15,000 units\n\n**Prescriptive:** \"Here's what you should DO about it\"\n• Offer discount to prevent churn\n• Order 16,500 units to maintain safety stock\n\n**Predictive INFORMS; Prescriptive RECOMMENDS action**"
+        },
+        {
+          "title": "Time Series Forecasting",
+          "type": "text",
+          "content": "**Components of Time Series:**\n\n**1. Trend**\n• Long-term increase or decrease\n• Example: Sales growing 5% annually\n\n**2. Seasonality**\n• Regular patterns within periods\n• Example: Retail peaks in December\n\n**3. Cyclical**\n• Long economic cycles\n• Example: Recession impacts\n\n**4. Random/Irregular**\n• Unpredictable variation\n• Example: Unexpected events\n\n**Common Methods:**\n• Moving average\n• Exponential smoothing\n• ARIMA models\n• Prophet (Facebook)"
+        },
+        {
+          "title": "Machine Learning Concepts",
+          "type": "text",
+          "content": "**Key terms for CMAs:**\n\n**Training Data:**\n• Historical data used to build model\n• Model learns patterns from this data\n\n**Testing Data:**\n• Separate data to validate model\n• Check if model works on new data\n\n**Overfitting:**\n• Model too specific to training data\n• Poor performance on new data\n• Problem: memorized rather than learned\n\n**Feature:**\n• Input variable used for prediction\n• Example: Customer age, purchase history\n\n**Target:**\n• What we're trying to predict\n• Example: Will customer churn? (yes/no)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Analytics Limitations",
+          "type": "warning",
+          "content": "**Models are only as good as their data!**\n\n**Common Issues:**\n• **Garbage in, garbage out** (bad data = bad predictions)\n• **Bias** (historical patterns perpetuate unfair outcomes)\n• **Correlation ≠ causation** (patterns don't prove cause)\n• **Black box** (some models can't be explained)\n\n**CMA Role:**\n• Question data quality\n• Validate reasonableness\n• Interpret with business context\n• Don't blindly trust the algorithm!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four levels: Descriptive, Diagnostic, Predictive, Prescriptive",
+            "Predictive analytics forecasts what will happen",
+            "Common techniques: regression, classification, time series",
+            "Time series has trend, seasonality, cyclical, random components",
+            "Training data builds models; testing data validates them",
+            "Watch for overfitting, bias, and data quality issues",
+            "CMAs add value through business context and judgment"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Analytics Levels",
+          "knowledgeCheck": {
+            "question": "A company's analytics system analyzes historical sales data and recommends the optimal sale price to maximize profits for each product. This is an example of:",
+            "options": [
+              "Descriptive analytics",
+              "Diagnostic analytics",
+              "Predictive analytics",
+              "Prescriptive analytics"
+            ],
+            "correctIndex": 3,
+            "explanation": "This is prescriptive analytics because it recommends a specific action (optimal price). Predictive would forecast the outcome; prescriptive goes further to recommend what to do. Descriptive reports what happened; diagnostic explains why.",
+            "hint": "Recommending specific actions is the highest level of analytics."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-013",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Data Visualization Best Practices",
+    "description": "Create clear, effective, and honest visualizations for financial and management reporting",
+    "order": 63,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Data visualization",
+      "Chart design",
+      "Dashboard design",
+      "Communication"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "A chart is worth a thousand spreadsheet cells! CMAs increasingly need to communicate insights visually, not just numerically. Good visualization reveals patterns and drives action; poor visualization misleads or confuses decision-makers."
+        },
+        {
+          "title": "Choosing the Right Chart",
+          "type": "table",
+          "headers": [
+            "Purpose",
+            "Best Chart Type"
+          ],
+          "rows": [
+            [
+              "Trend over time",
+              "Line chart"
+            ],
+            [
+              "Comparison across categories",
+              "Bar chart (horizontal or vertical)"
+            ],
+            [
+              "Part-to-whole relationship",
+              "Pie chart (few slices) or stacked bar"
+            ],
+            [
+              "Relationship between variables",
+              "Scatter plot"
+            ],
+            [
+              "Distribution of values",
+              "Histogram or box plot"
+            ],
+            [
+              "Geographical data",
+              "Map/choropleth"
+            ],
+            [
+              "Single KPI status",
+              "Gauge or bullet chart"
+            ]
+          ]
+        },
+        {
+          "title": "Design Principles",
+          "type": "text",
+          "content": "**The \"Less is More\" Approach:**\n\n**1. Maximize Data-Ink Ratio**\n• Remove unnecessary elements\n• No 3D effects\n• Minimize gridlines\n\n**2. Use Color Purposefully**\n• Highlight what matters\n• Consistent color meaning\n• Consider colorblind viewers\n\n**3. Label Directly**\n• Labels on data points\n• Reduce legend lookups\n\n**4. Start Axes Appropriately**\n• Y-axis at zero for bar charts\n• Line charts can start elsewhere (with care)\n\n**5. Tell a Story**\n• Clear title stating insight\n• Annotations highlighting key points"
+        },
+        {
+          "title": "🧠 Memory Aid: CLEAR Visualization",
+          "type": "callout",
+          "content": "**\"CLEAR\" Framework for Good Charts:**\n\n**C**lear purpose (What question does this answer?)\n**L**abeled properly (Titles, axes, units)\n**E**fficient design (No chartjunk)\n**A**ccurate representation (Don't mislead)\n**R**ight chart type (Match to data/purpose)\n\n**If it fails any of these, redesign!**"
+        },
+        {
+          "title": "Common Visualization Mistakes",
+          "type": "text",
+          "content": "**Avoid These Errors:**\n\n**1. Truncated Y-Axis**\n• Makes small differences look huge\n• Especially misleading for bar charts\n\n**2. Too Many Categories**\n• Pie chart with 15 slices is unreadable\n• Group small categories as \"Other\"\n\n**3. Dual Y-Axes**\n• Can mislead about relationships\n• Scale selection is arbitrary\n\n**4. 3D Charts**\n• Distort perception of values\n• Add no information\n\n**5. No Context**\n• Numbers mean nothing without comparison\n• Add targets, prior periods, or benchmarks"
+        },
+        {
+          "title": "Dashboard Design",
+          "type": "text",
+          "content": "**Best Practices for Dashboards:**\n\n**Layout:**\n• Most important metrics at top-left\n• Group related KPIs together\n• Consistent design across panels\n\n**Content:**\n• Limit to 5-7 KPIs per dashboard\n• Include targets and status indicators\n• Enable drill-down for details\n\n**Interactivity:**\n• Filters work across all charts\n• Click to explore details\n• Real-time or clearly dated\n\n**Executive Rule:**\nExecs should understand status in 5 seconds"
+        },
+        {
+          "title": "⚠️ Exam Trap: Ethical Visualization",
+          "type": "warning",
+          "content": "**Visualization can mislead intentionally or accidentally:**\n\n**Manipulative Techniques:**\n• Cherry-picking time periods\n• Truncating axes to exaggerate\n• Using area/volume incorrectly (3D)\n• Omitting unfavorable data\n\n**CMA Ethics Apply:**\n• Present fairly and honestly\n• Disclose relevant information\n• Don't select visuals to deceive\n\n**Test yourself:** Would I be comfortable explaining my choices to an auditor?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Match chart type to purpose and data",
+            "Line for trends, bar for comparison, pie for parts of whole",
+            "Maximize data-ink ratio - remove chartjunk",
+            "Start bar chart axes at zero",
+            "Use color purposefully to highlight insights",
+            "Limit dashboards to 5-7 KPIs with clear status",
+            "Ethical visualization means no misleading design choices"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Chart Selection",
+          "knowledgeCheck": {
+            "question": "A CFO wants to show how the company's quarterly revenue has changed over the past 3 years. Which chart type is most appropriate?",
+            "options": [
+              "Pie chart",
+              "Line chart",
+              "Scatter plot",
+              "Histogram"
+            ],
+            "correctIndex": 1,
+            "explanation": "Line charts are ideal for showing trends over time. With 12 quarters of data, a line chart shows the trajectory clearly. Pie charts show parts of a whole, scatter plots show relationships between two variables, and histograms show distribution.",
+            "hint": "What chart type best shows change over a sequence of time periods?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-014",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Variance Analysis: Multi-Level Deep Dive",
+    "description": "Master detailed variance decomposition for manufacturing and service operations",
+    "order": 14,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Variance analysis",
+      "Multi-level variances",
+      "Sales variances",
+      "Mix and yield"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Basic variances tell you WHAT happened - advanced variances tell you WHY! Multi-level decomposition separates price from volume, mix from quantity. This is essential for holding the right managers accountable."
+        },
+        {
+          "title": "Variance Analysis Framework",
+          "type": "text",
+          "content": "**Total Variance Components:**\n\n**Level 1: Total Variance**\nActual - Budget\n↓\n**Level 2: Price/Spending + Volume**\nSeparate cost increases from quantity changes\n↓\n**Level 3: Mix + Quantity (Yield)**\nSeparate what we sold/used from how much total\n\n**Purpose:**\nEach level assigns responsibility differently:\n• Price variance → Purchasing/Sales\n• Efficiency variance → Production\n• Mix variance → Sales/Production decisions\n• Yield variance → Production efficiency"
+        },
+        {
+          "title": "Sales Variance Decomposition",
+          "type": "text",
+          "content": "**Sales Volume Variance:**\n= (Actual Q - Budget Q) × Budget Price\n\n**Further decomposed into:**\n\n**Sales Mix Variance:**\nChanges due to DIFFERENT product proportions\n= (Actual Mix% - Budget Mix%) × Actual Total Q × Budget CM\n\n**Sales Quantity Variance:**\nChanges due to TOTAL quantity change\n= (Actual Total Q - Budget Total Q) × Budget Mix% × Budget CM\n\n**Why it matters:**\nMix variance → Product marketing decisions\nQuantity variance → Overall market conditions"
+        },
+        {
+          "title": "Sales Variance Example",
+          "type": "text",
+          "content": "**Budget:** 1,000 units (Product A 60%, B 40%)\nA: $50 CM, B: $30 CM\n\n**Actual:** 1,200 units (Product A 50%, B 50%)\n\n**Sales Mix Variance:**\nProduct A: (50% - 60%) × 1,200 × $50 = -$6,000 U\nProduct B: (50% - 40%) × 1,200 × $30 = +$3,600 F\nTotal Mix: -$2,400 U\n(Shifted to lower-margin product)\n\n**Sales Quantity Variance:**\nProduct A: (1,200 - 1,000) × 60% × $50 = $6,000 F\nProduct B: (1,200 - 1,000) × 40% × $30 = $2,400 F\nTotal Quantity: $8,400 F\n(More units sold overall)"
+        },
+        {
+          "title": "🧠 Memory Aid: Material Mix & Yield",
+          "type": "callout",
+          "content": "**For multi-input manufacturing:**\n\n**Mix Variance:**\nDid we use the RIGHT PROPORTIONS of inputs?\n= (Actual Mix - Std Mix) × Actual Qty × Std Price\n\n**Yield Variance:**\nDid we get expected OUTPUT from inputs used?\n= (Actual Output - Expected Output) × Std Cost per Unit\n\n**Example:**\nRecipe calls for 60% Material A, 40% Material B\nIf we used 70% A, 30% B → Mix Variance\nIf we used correct mix but got less output → Yield Variance\n\n**Think COOKING:** Wrong ingredients vs wrong results"
+        },
+        {
+          "title": "Variance Responsibilities",
+          "type": "table",
+          "headers": [
+            "Variance",
+            "Responsible Party",
+            "Typical Causes"
+          ],
+          "rows": [
+            [
+              "Material Price",
+              "Purchasing",
+              "Market prices, suppliers, quality"
+            ],
+            [
+              "Material Quantity",
+              "Production",
+              "Waste, efficiency, training"
+            ],
+            [
+              "Material Mix",
+              "Production",
+              "Substitutions, availability"
+            ],
+            [
+              "Material Yield",
+              "Production",
+              "Process control, equipment"
+            ],
+            [
+              "Sales Mix",
+              "Sales/Marketing",
+              "Product focus, promotions"
+            ],
+            [
+              "Sales Quantity",
+              "Market/Strategy",
+              "Market conditions, competition"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Favorable vs Good",
+          "type": "warning",
+          "content": "**\"Favorable\" doesn't always mean \"good\":**\n\n**Favorable Material Variance:**\n• Could mean: bought cheaper but lower quality\n• Result: More spoilage, customer complaints\n\n**Favorable Labor Efficiency:**\n• Could mean: Rushed workers\n• Result: Quality problems, safety issues\n\n**Unfavorable Sales Mix:**\n• Could mean: Strategic entry into new market\n• Result: Long-term market share gains\n\n**Always analyze WHY before judging performance!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Multi-level variance analysis reveals WHY variances occurred",
+            "Sales volume splits into Mix (product proportions) + Quantity (total units)",
+            "Material quantity splits into Mix (input proportions) + Yield (output efficiency)",
+            "Each variance type has different responsible party",
+            "Mix variance: What proportions we used/sold",
+            "Quantity/Yield variance: How much total we used/produced",
+            "Favorable doesn't always mean good - analyze root causes"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Variance Classification",
+          "knowledgeCheck": {
+            "question": "A bakery's recipe requires 60% flour, 40% sugar. This month they used 65% flour and 35% sugar but achieved expected output quantities. What type of variance occurred?",
+            "options": [
+              "Material yield variance",
+              "Material mix variance",
+              "Material quantity variance",
+              "No variance occurred"
+            ],
+            "correctIndex": 1,
+            "explanation": "The bakery changed the PROPORTION of inputs (65/35 vs 60/40) while achieving expected output. This is a material MIX variance. A yield variance would occur if they got more or less output than expected.",
+            "hint": "Mix variance is about the proportions of inputs used, not the total amount or output."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-015",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Responsibility Accounting and Centers",
+    "description": "Design responsibility centers to align accountability with performance measurement",
+    "order": 15,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Responsibility accounting",
+      "Cost centers",
+      "Profit centers",
+      "Investment centers"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Who's accountable for what? Responsibility accounting matches authority with accountability. CMAs design systems that evaluate managers only on what they can control - ensuring fair performance assessment and proper incentives."
+        },
+        {
+          "title": "Responsibility Accounting Principles",
+          "type": "text",
+          "content": "**Core Concept:**\n• Measure performance by responsibility\n• Match accountability with authority\n• Evaluate controllable items only\n\n**Benefits:**\n• Motivation - Clear ownership\n• Goal alignment - Links to strategy\n• Better decisions - Local knowledge used\n• Performance evaluation - Fair comparison\n\n**Key Principle:**\nManagers should be held accountable\nonly for what they can influence"
+        },
+        {
+          "title": "Types of Responsibility Centers",
+          "type": "table",
+          "headers": [
+            "Center Type",
+            "Controls",
+            "Evaluated By"
+          ],
+          "rows": [
+            [
+              "Cost Center",
+              "Costs only",
+              "Cost variances, efficiency"
+            ],
+            [
+              "Revenue Center",
+              "Revenue/sales only",
+              "Sales vs. quota"
+            ],
+            [
+              "Profit Center",
+              "Both revenues and costs",
+              "Contribution margin, profit"
+            ],
+            [
+              "Investment Center",
+              "Revenues, costs, AND assets",
+              "ROI, Residual Income, EVA"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Center Hierarchy",
+          "type": "callout",
+          "content": "**Increasing Authority/Accountability:**\n\n**Cost Center** (least authority)\n• Manufacturing department\n• IT support\n• Measured on: Cost control\n\n**Revenue Center**\n• Sales team\n• Measured on: Sales volume\n\n**Profit Center**\n• Product line manager\n• Division with P&L responsibility\n• Measured on: Contribution or profit\n\n**Investment Center** (most authority)\n• Division head\n• Subsidiary\n• Measured on: ROI, RI, EVA\n\n**Remember:** More authority = More comprehensive metrics"
+        },
+        {
+          "title": "Investment Center Metrics",
+          "type": "text",
+          "content": "**Return on Investment (ROI):**\nROI = Operating Income / Invested Capital\n• Ratio measure\n• Good for comparison\n• Can lead to underinvestment\n\n**Residual Income (RI):**\nRI = Operating Income - (Capital × Required Rate)\n• Dollar measure\n• Better investment incentives\n• Can't compare divisions of different sizes\n\n**Economic Value Added (EVA):**\nEVA = NOPAT - (Capital × WACC)\n• Similar to RI but uses WACC\n• Adjustments for accounting distortions\n\n**Best Practice:** Use both ROI and RI/EVA together"
+        },
+        {
+          "title": "Common Performance Issues",
+          "type": "text",
+          "content": "**Controllability Problem:**\n• Manager affected by uncontrollable factors\n• Example: Economic downturn hurts sales\n• Solution: Adjust targets ex-post or benchmark\n\n**Suboptimization:**\n• Division optimizes at company's expense\n• Example: Refuse to share capacity\n• Solution: Align incentives with corporate goals\n\n**Gaming:**\n• Managers manipulate controllable items\n• Example: Defer maintenance to cut costs\n• Solution: Multiple metrics, long-term incentives\n\n**Allocated Costs:**\n• Should allocated costs be included?\n• For performance: Often exclude\n• For motivation: May include to show full cost"
+        },
+        {
+          "title": "⚠️ Exam Trap: ROI vs Residual Income",
+          "type": "warning",
+          "content": "**ROI Causes Underinvestment:**\n\n**Division A:**\n• Current ROI: 20%\n• New project: 15% return\n• Required return: 10%\n\n**Manager rejects profitable project!**\nWhy? 15% would lower 20% average\n\n**With Residual Income:**\n• New project: RI positive (15% > 10%)\n• Manager accepts - increases total RI\n\n**Key Insight:**\nROI: Managers reject projects above cost of capital but below current ROI\nRI/EVA: Managers accept all projects above cost of capital"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four center types: Cost, Revenue, Profit, Investment",
+            "Match evaluation metrics to what manager controls",
+            "Cost centers: Efficiency, cost variances",
+            "Profit centers: Contribution margin, controllable profit",
+            "Investment centers: ROI, RI, EVA",
+            "ROI can lead to underinvestment; RI/EVA are better for decisions",
+            "Address controllability, suboptimization, and gaming"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ROI vs RI Decision",
+          "knowledgeCheck": {
+            "question": "Division X has ROI of 22% and required return of 12%. A project offers 18% return. If the manager is evaluated only on ROI, what will they likely do?",
+            "options": [
+              "Accept - project exceeds required return",
+              "Reject - project would lower division ROI",
+              "Accept - project exceeds current ROI",
+              "Indifferent - no impact on evaluation"
+            ],
+            "correctIndex": 1,
+            "explanation": "Under ROI evaluation, the manager will reject the 18% project because accepting it would lower the division's 22% average ROI, even though 18% exceeds the 12% required return. This is the underinvestment problem with ROI.",
+            "hint": "ROI managers care about their average return. Will this project raise or lower it?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-016",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Benchmarking and Best Practices",
+    "description": "Use comparative analysis to identify improvement opportunities",
+    "order": 16,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Benchmarking",
+      "Best practices",
+      "Performance gaps",
+      "Continuous improvement"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Benchmarking answers 'How good is good enough?' CMAs use benchmarking to set targets, identify gaps, and drive improvement. Without external comparisons, companies may think they're performing well when competitors are far ahead!"
+        },
+        {
+          "title": "Types of Benchmarking",
+          "type": "text",
+          "content": "**Internal Benchmarking:**\n• Compare units within same company\n• Easy data access\n• Limited improvement potential\n\n**Competitive Benchmarking:**\n• Compare to direct competitors\n• Highly relevant\n• Data hard to obtain\n\n**Functional Benchmarking:**\n• Compare specific functions across industries\n• Example: Compare warehouse operations\n• Best ideas from anywhere\n\n**Generic/Process Benchmarking:**\n• Compare similar processes\n• Different industries entirely\n• Example: Billing process at utility vs. telecom"
+        },
+        {
+          "title": "Benchmarking Process",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Activities",
+            "Output"
+          ],
+          "rows": [
+            [
+              "1. Plan",
+              "Select process, form team, identify partners",
+              "Project scope"
+            ],
+            [
+              "2. Collect",
+              "Gather internal and external data",
+              "Performance metrics"
+            ],
+            [
+              "3. Analyze",
+              "Identify gaps, understand root causes",
+              "Gap analysis"
+            ],
+            [
+              "4. Adapt",
+              "Adopt best practices, set targets",
+              "Improvement plans"
+            ],
+            [
+              "5. Improve",
+              "Implement changes, monitor results",
+              "Performance gains"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Benchmarking Sources",
+          "type": "callout",
+          "content": "**Where to find benchmark data:**\n\n**Public Sources:**\n• Annual reports (competitors)\n• Industry associations\n• Government statistics\n• Research firms (Gartner, etc.)\n\n**Consortiums:**\n• Shared benchmarking groups\n• Members exchange data\n• More detailed, confidential\n\n**Consulting Firms:**\n• Proprietary databases\n• Cross-industry comparisons\n• Process expertise\n\n**Best practice:** Start internal, then competitive, then functional"
+        },
+        {
+          "title": "Key Performance Indicators",
+          "type": "text",
+          "content": "**Financial KPIs:**\n• Revenue per employee\n• Cost ratios\n• Working capital metrics\n• Profitability ratios\n\n**Operational KPIs:**\n• Cycle times\n• Quality rates\n• Productivity measures\n• Capacity utilization\n\n**Customer KPIs:**\n• Customer satisfaction\n• Net Promoter Score\n• Customer retention\n• Market share\n\n**Process KPIs:**\n• Error rates\n• Throughput\n• Cost per transaction\n• Automation rate"
+        },
+        {
+          "title": "Benchmarking Pitfalls",
+          "type": "text",
+          "content": "**Common Mistakes:**\n\n**Wrong metrics:**\n• Measuring what's easy, not what matters\n• Too many metrics\n\n**Apples to oranges:**\n• Not normalizing for size\n• Different accounting policies\n• Geographic differences\n\n**Copy without understanding:**\n• Adopting practices that don't fit\n• Missing underlying enablers\n\n**Static approach:**\n• Benchmarking once, not continuously\n• Targets become obsolete\n\n**Ignoring context:**\n• Strategy differences\n• Resource constraints\n• Organizational culture"
+        },
+        {
+          "title": "⚠️ Exam Trap: Best Practice Adoption",
+          "type": "warning",
+          "content": "**Best practice ≠ Best for you!**\n\n**Adaptation required:**\n• Practices must fit YOUR strategy\n• Consider culture and capabilities\n• Resource requirements may differ\n\n**Implementation challenges:**\n• Change management\n• Training and skill development\n• Technology requirements\n• Resistance to change\n\n**Sustaining improvement:**\n• Document new processes\n• Train all employees\n• Update metrics\n• Continuous monitoring\n\n**Key:** Adapt best practices, don't just adopt them!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Types: Internal, Competitive, Functional, Generic",
+            "Process: Plan, Collect, Analyze, Adapt, Improve",
+            "KPIs should align with strategy and be comparable",
+            "Normalize data for size and accounting differences",
+            "Adapt best practices to your context, don't just copy",
+            "Benchmarking is continuous, not one-time",
+            "Implementation is harder than identification"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Benchmarking Types",
+          "knowledgeCheck": {
+            "question": "A hospital wants to improve its patient billing process. It studies how Amazon processes customer payments to find innovative ideas. What type of benchmarking is this?",
+            "options": [
+              "Competitive benchmarking",
+              "Internal benchmarking",
+              "Functional/Process benchmarking",
+              "Industry benchmarking"
+            ],
+            "correctIndex": 2,
+            "explanation": "This is functional/process benchmarking - comparing similar processes (billing/payment processing) across different industries (healthcare vs. retail). This approach can yield innovative ideas because it looks beyond competitors to best-in-class performers of specific functions.",
+            "hint": "What type of benchmarking crosses industry boundaries while focusing on a specific function?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-017",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Internal Audit and Assurance",
+    "description": "Understand the role of internal audit in governance and control",
+    "order": 17,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Internal audit",
+      "Control testing",
+      "Risk assessment",
+      "Audit reporting"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Internal audit is the third line of defense! CMAs work with internal auditors to ensure controls work effectively. Understanding internal audit helps you prepare for audits, respond to findings, and improve control environments."
+        },
+        {
+          "title": "What is Internal Audit?",
+          "type": "text",
+          "content": "**IIA Definition:**\nIndependent, objective assurance and consulting activity designed to add value and improve operations\n\n**Three Lines Model:**\n• 1st Line: Operations/Management\n• 2nd Line: Risk/Compliance functions\n• 3rd Line: Internal Audit\n\n**Key Characteristics:**\n• Independent of operations\n• Reports to audit committee\n• Objective perspective\n• Risk-based approach\n\n**Dual Role:**\n• Assurance: Evaluate and report\n• Consulting: Advise and recommend"
+        },
+        {
+          "title": "Internal vs External Audit",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Internal Audit",
+            "External Audit"
+          ],
+          "rows": [
+            [
+              "Reports to",
+              "Audit committee/Board",
+              "Shareholders"
+            ],
+            [
+              "Focus",
+              "Controls, operations, risk",
+              "Financial statements"
+            ],
+            [
+              "Scope",
+              "All operations, any area",
+              "Financial reporting"
+            ],
+            [
+              "Standards",
+              "IIA Standards",
+              "GAAS, PCAOB"
+            ],
+            [
+              "Mandatory?",
+              "Best practice",
+              "Required for public cos"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Audit Process",
+          "type": "callout",
+          "content": "**\"PPERA\" - Internal Audit Process:**\n\n**P**lan\n• Risk assessment\n• Audit universe\n• Annual plan\n\n**P**repare\n• Understand process\n• Identify controls\n• Develop audit program\n\n**E**xecute\n• Test controls\n• Gather evidence\n• Document findings\n\n**R**eport\n• Communicate results\n• Management response\n• Recommendations\n\n**A**ct (Follow-up)\n• Verify remediation\n• Close findings\n• Escalate if needed"
+        },
+        {
+          "title": "Types of Internal Audits",
+          "type": "text",
+          "content": "**Financial Audits:**\n• Accounting controls\n• Financial reporting\n• Asset safeguarding\n\n**Operational Audits:**\n• Efficiency and effectiveness\n• Process improvement\n• Performance metrics\n\n**Compliance Audits:**\n• Regulatory requirements\n• Policy adherence\n• Contractual obligations\n\n**IT Audits:**\n• System controls\n• Data security\n• Access management\n\n**Special Projects:**\n• Fraud investigations\n• M&A due diligence\n• Consulting engagements"
+        },
+        {
+          "title": "Control Testing",
+          "type": "text",
+          "content": "**Test Objectives:**\n• Does control exist?\n• Is it designed effectively?\n• Is it operating effectively?\n\n**Testing Methods:**\n• Inquiry: Ask about process\n• Observation: Watch activity\n• Inspection: Examine documents\n• Reperformance: Redo the control\n\n**Sampling:**\n• Statistical vs judgmental\n• Sample size based on risk\n• Document selection method\n\n**Finding Classification:**\n• High: Significant control gap\n• Medium: Moderate weakness\n• Low: Minor improvement"
+        },
+        {
+          "title": "⚠️ Exam Trap: Independence",
+          "type": "warning",
+          "content": "**Internal audit must be INDEPENDENT!**\n\n**Reporting Line:**\n• Functionally: Audit Committee\n• Administratively: CEO\n• Not to CFO (conflicts)\n\n**Independence Threats:**\n• Auditing own prior work\n• Auditing friends' areas\n• Career pressure\n• Budget constraints\n\n**Safeguards:**\n• Board approval of audit plan\n• Private sessions with committee\n• Rotation of assignments\n• Quality assurance review\n\n**Outsourcing:**\n• Co-sourced or fully outsourced\n• Can enhance independence\n• Management retains responsibility"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Internal audit: Third line of defense",
+            "Reports to audit committee for independence",
+            "Assurance (evaluate) and Consulting (advise) roles",
+            "Process: Plan, Prepare, Execute, Report, Act",
+            "Types: Financial, Operational, Compliance, IT",
+            "Testing: Inquiry, Observation, Inspection, Reperformance",
+            "Independence is essential - avoid self-review threats"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Internal Audit Independence",
+          "knowledgeCheck": {
+            "question": "To maintain appropriate independence, the Chief Audit Executive should report functionally to:",
+            "options": [
+              "The Chief Financial Officer",
+              "The Chief Executive Officer",
+              "The Audit Committee of the Board",
+              "The Controller"
+            ],
+            "correctIndex": 2,
+            "explanation": "For independence, the CAE should report functionally (for audit matters) to the Audit Committee. Administrative reporting (budget, HR) may be to the CEO. Reporting to the CFO would impair independence since internal audit often audits financial areas reporting to the CFO.",
+            "hint": "Independence requires reporting outside the functions being audited."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-018",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Strategic Planning Process",
+    "description": "Understand the strategic planning framework and CMA role",
+    "order": 18,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategic planning",
+      "Mission and vision",
+      "SWOT analysis",
+      "Strategy formulation"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "CMAs are strategic partners, not just number crunchers! Strategic planning sets direction for the organization. CMAs provide financial analysis, market insights, and scenario modeling to support strategy. Understanding strategy helps align performance measures and resource allocation."
+        },
+        {
+          "title": "Strategic Planning Overview",
+          "type": "text",
+          "content": "**What is Strategy?**\nHow an organization achieves sustainable competitive advantage\n\n**Planning Horizon:**\n• Strategic: 3-5+ years\n• Tactical: 1-3 years\n• Operational: <1 year\n\n**Strategic Planning Process:**\n1. Define mission/vision\n2. Analyze internal/external environment\n3. Set objectives\n4. Formulate strategy\n5. Implement\n6. Evaluate and control\n\n**CMA Role:**\nProvide financial analysis and insights at each stage"
+        },
+        {
+          "title": "Mission, Vision, Values",
+          "type": "table",
+          "headers": [
+            "Element",
+            "Question Answered",
+            "Time Focus"
+          ],
+          "rows": [
+            [
+              "Mission",
+              "Why do we exist?",
+              "Present"
+            ],
+            [
+              "Vision",
+              "Where are we going?",
+              "Future"
+            ],
+            [
+              "Values",
+              "What do we believe?",
+              "Always"
+            ],
+            [
+              "Objectives",
+              "What will we achieve?",
+              "Specific time"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: SWOT Analysis",
+          "type": "callout",
+          "content": "**SWOT Framework:**\n\n**Internal Analysis:**\n• **S**trengths - What we do well\n• **W**eaknesses - What we need to improve\n\n**External Analysis:**\n• **O**pportunities - External chances for growth\n• **T**hreats - External risks\n\n**Strategic Options:**\n• S+O: Use strengths to capture opportunities\n• S+T: Use strengths to mitigate threats\n• W+O: Improve weaknesses to capture opportunities\n• W+T: Defensive - minimize weaknesses and threats\n\n**Remember:**\nStrengths/Weaknesses = Internal (can control)\nOpportunities/Threats = External (must respond)"
+        },
+        {
+          "title": "External Analysis Tools",
+          "type": "text",
+          "content": "**PESTEL Analysis:**\n• **P**olitical - Government policies\n• **E**conomic - Economic conditions\n• **S**ocial - Demographics, trends\n• **T**echnological - Innovation\n• **E**nvironmental - Sustainability\n• **L**egal - Regulations\n\n**Porter's Five Forces:**\n• Rivalry among competitors\n• Threat of new entrants\n• Threat of substitutes\n• Bargaining power of suppliers\n• Bargaining power of buyers\n\n**Industry Analysis:**\n• Industry life cycle\n• Key success factors\n• Competitive positioning"
+        },
+        {
+          "title": "Competitive Strategies",
+          "type": "text",
+          "content": "**Porter's Generic Strategies:**\n\n**1. Cost Leadership:**\n• Lowest cost producer\n• Broad market\n• Efficiency focus\n\n**2. Differentiation:**\n• Unique product/service\n• Premium pricing\n• Brand, quality, innovation\n\n**3. Focus/Niche:**\n• Narrow market segment\n• Cost focus OR differentiation focus\n\n**Stuck in the Middle:**\nDanger of no clear strategy\n\n**CMA Support:**\n• Cost analysis for cost leadership\n• Value analysis for differentiation\n• Segment profitability for focus"
+        },
+        {
+          "title": "⚠️ Exam Trap: Strategy vs Tactics",
+          "type": "warning",
+          "content": "**Know the difference!**\n\n**Strategy:**\n• Long-term direction\n• Overall approach\n• 'What' and 'Why'\n• Example: Become low-cost leader\n\n**Tactics:**\n• Specific actions\n• Short-term\n• 'How'\n• Example: Automate manufacturing\n\n**Strategic Objectives:**\n• SMART: Specific, Measurable, Attainable, Relevant, Time-bound\n• Cascades down to functional objectives\n• Links to performance measures\n\n**CMAs translate strategy into:**\n• Budgets\n• Performance measures\n• Resource allocation"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Mission: Why we exist; Vision: Where we're going",
+            "SWOT: Strengths/Weaknesses (internal), Opportunities/Threats (external)",
+            "PESTEL: Political, Economic, Social, Tech, Environmental, Legal",
+            "Five Forces: Industry competitive analysis",
+            "Porter strategies: Cost leadership, differentiation, focus",
+            "Strategic planning: 3-5+ years; Tactical: 1-3 years; Operational: <1 year",
+            "CMAs provide analysis to support strategy at all stages"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Strategic Concepts",
+          "knowledgeCheck": {
+            "question": "A company focusing on a narrow market segment while offering unique, premium-priced products is pursuing which competitive strategy?",
+            "options": [
+              "Cost leadership",
+              "Differentiation",
+              "Focused differentiation",
+              "Focused cost leadership"
+            ],
+            "correctIndex": 2,
+            "explanation": "Focused differentiation combines narrow market focus with differentiation (unique/premium). Plain differentiation targets broad market. Cost leadership focuses on lowest cost for broad market. Focused cost leadership would be narrow market + low cost.",
+            "hint": "Consider both scope (broad vs narrow) and basis (cost vs unique)."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-019",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Balanced Scorecard",
+    "description": "Implement multi-perspective performance measurement",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Balanced scorecard",
+      "Performance measurement",
+      "Strategy maps",
+      "KPIs"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Financial measures alone don't tell the whole story! The Balanced Scorecard links strategy to operations through four perspectives. CMAs play a central role in designing, implementing, and reporting on BSC measures. This is a heavily tested CMA topic."
+        },
+        {
+          "title": "What is the Balanced Scorecard?",
+          "type": "text",
+          "content": "**Definition:**\nPerformance management framework using four perspectives\n\n**Purpose:**\n• Translate strategy into action\n• Balance leading and lagging indicators\n• Link financial and non-financial measures\n• Align organization around strategy\n\n**Origin:**\nKaplan and Norton (1992)\n\n**Key Insight:**\nWhat you measure is what you get - measure strategically important outcomes AND their drivers"
+        },
+        {
+          "title": "Four Perspectives",
+          "type": "table",
+          "headers": [
+            "Perspective",
+            "Question",
+            "Sample Measures"
+          ],
+          "rows": [
+            [
+              "Financial",
+              "How do we look to shareholders?",
+              "ROE, EVA, Revenue growth"
+            ],
+            [
+              "Customer",
+              "How do customers see us?",
+              "Satisfaction, retention, share"
+            ],
+            [
+              "Internal Process",
+              "What must we excel at?",
+              "Quality, cycle time, cost"
+            ],
+            [
+              "Learning & Growth",
+              "Can we improve and create value?",
+              "Training, innovation, IT"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Cause and Effect",
+          "type": "callout",
+          "content": "**BSC Logic Flow (bottom to top):**\n\n**Learning & Growth →**\nTrained employees, good systems\n↓\n**Internal Process →**\nEfficient operations, quality products\n↓\n**Customer →**\nSatisfied customers, market share\n↓\n**Financial**\nRevenue, profit, shareholder value\n\n**Remember:**\nLearning & Growth is the FOUNDATION\nFinancial results are the OUTCOME\n\n**Strategy Map:**\nVisualizes these cause-effect relationships"
+        },
+        {
+          "title": "Perspective Deep Dive",
+          "type": "text",
+          "content": "**Financial Perspective:**\n• Lagging indicators - results\n• Revenue growth, cost reduction, asset utilization\n• Different by strategy stage\n\n**Customer Perspective:**\n• Market share, customer acquisition\n• Customer retention, satisfaction\n• Customer profitability\n\n**Internal Process:**\n• Innovation process (new products)\n• Operations process (quality, time, cost)\n• Post-sale service\n\n**Learning & Growth:**\n• Employee capabilities (training, skills)\n• Information systems\n• Motivation and alignment"
+        },
+        {
+          "title": "Leading vs Lagging Indicators",
+          "type": "text",
+          "content": "**Lagging Indicators:**\n• Measure outcomes/results\n• Historical\n• Financial measures typically lagging\n• Examples: Profit, market share\n\n**Leading Indicators:**\n• Predict future performance\n• Actionable\n• Non-financial often leading\n• Examples: Training hours, customer satisfaction\n\n**Balance Both:**\n• Lagging shows if strategy worked\n• Leading shows if you're on track\n• Each objective should have both\n\n**Key:**\n'Lead' indicators today drive 'lagging' results tomorrow"
+        },
+        {
+          "title": "⚠️ Exam Trap: BSC Problems",
+          "type": "warning",
+          "content": "**Common BSC Implementation Issues:**\n\n**Too Many Measures:**\n• Aim for 15-25 total, not 100\n• Focus on vital few\n\n**Weak Linkages:**\n• Must have cause-effect logic\n• Not just a list of metrics\n\n**Only Financial Focus:**\n• Defeats the purpose\n• Must balance perspectives\n\n**No Strategy Link:**\n• Measures must derive from strategy\n• Not just 'good to know' metrics\n\n**Set and Forget:**\n• Review and adjust measures\n• Cascaded to individuals"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "BSC: Four perspectives - Financial, Customer, Internal, Learning",
+            "Purpose: Translate strategy into measurable objectives",
+            "Cause-effect: Learning/Growth → Process → Customer → Financial",
+            "Strategy map: Visualizes linkages between objectives",
+            "Leading indicators: Predict; Lagging indicators: Result",
+            "Balance both: Non-financial lead to financial outcomes",
+            "Limit to 15-25 measures; link to strategy"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "BSC Perspectives",
+          "knowledgeCheck": {
+            "question": "Employee training hours and employee satisfaction would be classified under which Balanced Scorecard perspective?",
+            "options": [
+              "Financial",
+              "Customer",
+              "Internal Business Process",
+              "Learning and Growth"
+            ],
+            "correctIndex": 3,
+            "explanation": "Learning and Growth focuses on employee capabilities, information systems, and organizational culture. Training hours and employee satisfaction are key measures of the organization's ability to improve and innovate, which support the other three perspectives.",
+            "hint": "Which perspective focuses on employee capabilities and development?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-020",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Responsibility Centers and Transfer Pricing",
+    "description": "Structure accountability and price internal transactions",
+    "order": 20,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Responsibility centers",
+      "Transfer pricing",
+      "Decentralization",
+      "Performance measurement"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Organizations need structure for accountability! CMAs design responsibility accounting systems and transfer pricing policies. These decisions determine how managers are evaluated and can significantly impact decision-making behavior. This is a heavily tested CMA topic."
+        },
+        {
+          "title": "Responsibility Center Types",
+          "type": "text",
+          "content": "**Cost Center:**\n• Manager controls costs only\n• No revenue responsibility\n• Example: Manufacturing, HR\n• Performance: Cost variance, efficiency\n\n**Revenue Center:**\n• Manager controls revenue\n• Limited cost control\n• Example: Sales department\n• Performance: Revenue vs budget\n\n**Profit Center:**\n• Manager controls revenue AND costs\n• Example: Business unit\n• Performance: Profit margin\n\n**Investment Center:**\n• All of profit center PLUS asset decisions\n• Example: Division, subsidiary\n• Performance: ROI, EVA, RI"
+        },
+        {
+          "title": "Responsibility Center Metrics",
+          "type": "table",
+          "headers": [
+            "Center",
+            "Measure",
+            "Focus"
+          ],
+          "rows": [
+            [
+              "Cost",
+              "Cost variances, unit cost",
+              "Efficiency"
+            ],
+            [
+              "Revenue",
+              "Revenue vs budget, growth",
+              "Sales effectiveness"
+            ],
+            [
+              "Profit",
+              "Contribution margin, profit",
+              "Revenue and cost"
+            ],
+            [
+              "Investment",
+              "ROI, RI, EVA",
+              "Return on assets"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Transfer Pricing",
+          "type": "callout",
+          "content": "**Why Transfer Pricing Matters:**\n\nWhen Division A sells to Division B:\n• Higher transfer price = Higher profit for A, lower for B\n• Affects manager evaluation!\n• Should not affect company-wide profit\n\n**Three Approaches:**\n\n**1. Market-Based:**\n• Use external market price\n• Best when market exists\n• Fair benchmark\n\n**2. Cost-Based:**\n• Variable cost, full cost, cost-plus\n• When no external market\n• Easy to calculate\n\n**3. Negotiated:**\n• Divisions agree on price\n• Reflects bargaining power\n• May be contentious"
+        },
+        {
+          "title": "Transfer Pricing Range",
+          "type": "text",
+          "content": "**General Range:**\n\n**Minimum (Selling Division):**\n= Variable cost + Opportunity cost\n\n**Maximum (Buying Division):**\n= Lower of:\n  - Market price\n  - Contribution from buying outside\n\n**Example:**\n• Variable cost: $30\n• Selling division at full capacity\n• Market price for product: $50\n• Contribution margin if sold externally: $20\n\n**Minimum:** $30 + $20 = $50 (must cover opportunity cost)\n**Maximum:** $50 (market price)\n\n**Range is $50 - transfer at market!"
+        },
+        {
+          "title": "Transfer Pricing Issues",
+          "type": "text",
+          "content": "**Goal Congruence:**\n• Division decisions should benefit company\n• Wrong price = sub-optimal decisions\n\n**Autonomy:**\n• Divisions have freedom to negotiate\n• Headquarters intervention undermines\n\n**Performance Evaluation:**\n• Both divisions should be measured fairly\n• Transfer price affects profit\n\n**Capacity Issues:**\n• Excess capacity: Variable cost OK\n• Full capacity: Must cover opportunity cost\n\n**International:**\n• Tax implications\n• Arm's length requirement"
+        },
+        {
+          "title": "⚠️ Exam Trap: Make or Buy with Idle Capacity",
+          "type": "warning",
+          "content": "**Transfer price depends on capacity!**\n\n**Selling Division has EXCESS Capacity:**\n• Opportunity cost = $0\n• Minimum TP = Variable cost\n• Should transfer internally\n\n**Selling Division at FULL Capacity:**\n• Opportunity cost = CM from external sales\n• Minimum TP = Variable cost + Foregone CM\n• May be better to buy externally\n\n**Common Exam Mistake:**\nIgnoring opportunity cost when at capacity\n\n**Decision Rule:**\nFor the COMPANY - compare total relevant costs\nInternal: Variable cost\nExternal: Purchase price"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Centers: Cost (costs), Revenue, Profit (revenue + costs), Investment (+ assets)",
+            "Match measures to manager's control sphere",
+            "Transfer pricing: Market, cost-based, negotiated",
+            "Minimum TP: Variable cost + Opportunity cost",
+            "Maximum TP: Market price (or value to buying division)",
+            "With excess capacity: Transfer at variable cost OK",
+            "At full capacity: Include opportunity cost in minimum"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Transfer Pricing",
+          "knowledgeCheck": {
+            "question": "Division A makes a component with $25 variable cost. It's at full capacity and can sell externally for $40. What is the minimum transfer price to Division B?",
+            "options": [
+              "$25",
+              "$32.50",
+              "$40",
+              "$65"
+            ],
+            "correctIndex": 2,
+            "explanation": "Minimum transfer price = Variable cost + Opportunity cost. At full capacity, selling internally means giving up $40 - $25 = $15 contribution margin. Minimum = $25 + $15 = $40. Division A needs the transfer to be as beneficial as external sales.",
+            "hint": "At full capacity, include the foregone contribution margin."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-021",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Customer and Product Profitability Analysis",
+    "description": "Analyze profitability by customer and product",
+    "order": 21,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Customer profitability",
+      "Product profitability",
+      "ABC analysis",
+      "Customer lifetime value"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Not all customers and products are equally profitable! CMAs provide insights that drive strategic decisions about where to focus resources. Understanding profitability at the customer and product level enables better pricing, resource allocation, and strategic planning."
+        },
+        {
+          "title": "Profitability Analysis Overview",
+          "type": "text",
+          "content": "**Why Analyze Profitability?**\n• Identify profitable vs unprofitable segments\n• Support pricing decisions\n• Allocate resources effectively\n• Improve customer/product mix\n• Guide strategic investments\n\n**Key Principle:**\n• Revenue doesn't equal profitability\n• High-revenue customers may be unprofitable\n• Small customers may be highly profitable\n\n**Pareto Principle (80/20):**\n• Often 20% of customers = 80% of profits\n• Some customers actually destroy value"
+        },
+        {
+          "title": "Customer Profitability Components",
+          "type": "table",
+          "headers": [
+            "Revenue/Cost",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Revenue",
+              "List price, volume discounts, returns"
+            ],
+            [
+              "Cost of Goods Sold",
+              "Product costs, special packaging"
+            ],
+            [
+              "Order Processing",
+              "Number of orders, complexity"
+            ],
+            [
+              "Shipping/Delivery",
+              "Delivery frequency, location, rush orders"
+            ],
+            [
+              "Customer Service",
+              "Calls, complaints, returns processing"
+            ],
+            [
+              "Selling/Relationship",
+              "Sales visits, entertainment, negotiation"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Customer Profitability Analysis",
+          "type": "callout",
+          "content": "**CPA Formula:**\n\nCustomer Profitability =\nRevenue from customer\n- Direct product costs\n- Customer-specific costs\n- Allocated support costs\n\n**Customer-Specific Costs:**\n• Order processing (# orders × cost/order)\n• Delivery ($$ per delivery)\n• Special handling/packaging\n• Returns processing\n• Customer service time\n• Discounts and allowances\n\n**Use ABC to trace costs!**\n\n**Whale Curve:**\nGraph showing cumulative profit by customer\nMost profitable to least\nShape shows where value created/destroyed"
+        },
+        {
+          "title": "Product Profitability Analysis",
+          "type": "text",
+          "content": "**Product Profitability:**\nRevenue - All costs traceable to product\n\n**Direct Costs:**\n• Materials, labor, variable manufacturing\n\n**Traceable Indirect:**\n• Equipment dedicated to product\n• Product-specific marketing\n• Product manager salary\n• Product-line warehousing\n\n**Challenges:**\n• Common costs allocation\n• Joint product situations\n• Related product effects\n\n**Contribution Hierarchy:**\n• Unit-level\n• Batch-level\n• Product-level\n• Facility-level"
+        },
+        {
+          "title": "Customer Lifetime Value",
+          "type": "text",
+          "content": "**CLV Definition:**\nPV of all future profits from a customer\n\n**CLV Formula (Simple):**\nCLV = (Avg margin × Retention rate) / (1 + Discount rate - Retention rate)\n\n**Factors:**\n• Average purchase value\n• Purchase frequency\n• Customer lifespan (retention)\n• Acquisition cost\n• Service costs\n\n**Strategic Use:**\n• How much to spend on acquisition?\n• Which customers to retain?\n• Where to invest in relationships?\n• Prioritize high-CLV customers"
+        },
+        {
+          "title": "⚠️ Exam Trap: Dropping Products/Customers",
+          "type": "warning",
+          "content": "**Don't Drop Unless:**\n• Fixed costs will actually decrease\n• Or capacity can be used better\n\n**Contribution Margin Rule:**\n• Positive CM products contribute to fixed costs\n• Dropping them may not improve profits\n• Unless AVOIDABLE fixed costs > CM\n\n**Customer Considerations:**\n• Unprofitable customers might become profitable\n• Reference value (attract other customers)\n• Growth potential\n• Service cost reduction opportunities\n\n**Better Options:**\n• Raise prices\n• Reduce service levels\n• Change terms (min order size)\n• Charge for services"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Revenue ≠ Profitability - analyze at customer/product level",
+            "Customer profitability = Revenue - Direct - Customer-specific costs",
+            "Use ABC to trace customer/product costs accurately",
+            "Pareto: Often 20% of customers = 80% of profits",
+            "CLV: Present value of future customer profits",
+            "Don't drop products with positive contribution margin",
+            "Consider alternatives: repricing, service changes, minimums"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Customer Profitability",
+          "knowledgeCheck": {
+            "question": "Customer A generates $500K revenue with $350K product costs and $180K customer-specific costs. Customer A is:",
+            "options": [
+              "Profitable by $150,000",
+              "Profitable by $30,000",
+              "Unprofitable by $30,000",
+              "Break-even"
+            ],
+            "correctIndex": 2,
+            "explanation": "Customer profitability = Revenue - Product costs - Customer-specific costs = $500K - $350K - $180K = -$30K. Customer A is unprofitable by $30,000. This customer destroys value despite generating significant revenue.",
+            "hint": "Subtract all traceable costs from revenue."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-022",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Economic Value Added (EVA)",
+    "description": "Measure true economic profit creation",
+    "order": 22,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Economic Value Added",
+      "EVA",
+      "Residual income",
+      "Value creation"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Accounting profit doesn't capture true value creation! EVA measures whether a company earns more than its cost of capital. CMAs use EVA to evaluate business unit performance, guide investment decisions, and align management incentives with shareholder value."
+        },
+        {
+          "title": "EVA Concept",
+          "type": "text",
+          "content": "**The Problem with Accounting Profit:**\n• Doesn't consider cost of equity capital\n• Debt interest is expensed, but not equity cost\n• Can show profit while destroying value\n\n**Economic Value Added (EVA):**\n• Profit after ALL capital costs\n• Equals residual income concept\n• Developed by Stern Stewart & Co.\n• Also called Economic Profit\n\n**Key Insight:**\nPositive EVA = Value created\nNegative EVA = Value destroyed"
+        },
+        {
+          "title": "EVA Formulas",
+          "type": "table",
+          "headers": [
+            "Formula",
+            "Components"
+          ],
+          "rows": [
+            [
+              "EVA = NOPAT - Capital Charge",
+              "After-tax operating profit - (Capital × WACC)"
+            ],
+            [
+              "EVA = (ROIC - WACC) × Capital",
+              "Spread approach"
+            ],
+            [
+              "NOPAT = EBIT × (1 - Tax)",
+              "Net Operating Profit After Tax"
+            ],
+            [
+              "Capital Charge = Capital × WACC",
+              "Cost of capital employed"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: EVA Calculation",
+          "type": "callout",
+          "content": "**Basic EVA Formula:**\n\n**EVA = NOPAT - (Invested Capital × WACC)**\n\n**Example:**\n• EBIT: $1,000,000\n• Tax rate: 30%\n• NOPAT: $700,000\n• Invested capital: $5,000,000\n• WACC: 10%\n• Capital charge: $500,000\n\n**EVA = $700,000 - $500,000 = $200,000**\n\n**Interpretation:**\nCompany earned $200,000 ABOVE its cost of capital\nTrue economic profit = $200,000\nValue created for shareholders\n\n**Alternative View:**\nROIC = $700,000 / $5,000,000 = 14%\nSpread = 14% - 10% = 4% × $5,000,000 = $200,000"
+        },
+        {
+          "title": "EVA vs ROI",
+          "type": "text",
+          "content": "**Return on Investment (ROI):**\n• Percentage measure\n• May reject value-creating projects\n• Doesn't consider size\n• Can manipulate by avoiding investments\n\n**EVA Advantages:**\n• Dollar measure (size matters)\n• Encourages value-creating investments\n• Managers won't reject good projects\n• Aligns with shareholder value\n\n**Example - ROI Problem:**\nDivision with 25% ROI rejects 18% project\nBut if WACC = 10%, project creates value!\nROI goes down, but EVA goes up\n→ EVA gives correct signal"
+        },
+        {
+          "title": "NOPAT Adjustments",
+          "type": "text",
+          "content": "**Common Adjustments to Get NOPAT:**\n\n**Add Back:**\n• Interest expense (tax-effected)\n• R&D capitalization (if expensed)\n• Operating lease interest (old GAAP)\n• Goodwill amortization (if applicable)\n\n**Rationale:**\n• Remove financing effects\n• Capitalize investments that create future value\n• Compare operations, not capital structure\n\n**Invested Capital:**\n• Total debt + Equity\n• Or: Total assets - Non-interest-bearing liabilities\n• Represents capital providers' investment"
+        },
+        {
+          "title": "⚠️ Exam Trap: EVA and Investment Decisions",
+          "type": "warning",
+          "content": "**EVA vs ROI - Critical Difference:**\n\n**Scenario:**\nDivision ROI = 20%, WACC = 12%\nNew project: ROI = 15%, requires $1M capital\n\n**Using ROI:**\nManager rejects (15% < current 20%)\nDivision ROI stays at 20%\n✘ WRONG decision!\n\n**Using EVA:**\nProject EVA = 15% - 12% = 3% × $1M = $30,000\nPositive EVA = Accept!\n✔ CORRECT decision!\n\n**Key Point:**\nEVA accepts any project earning above WACC\nROI may reject value-creating projects\n\n**CMA Exam:**\nUnderstand why EVA aligns incentives better than ROI"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "EVA = NOPAT - (Invested Capital × WACC)",
+            "Measures profit AFTER all capital costs",
+            "Positive EVA = Value created for shareholders",
+            "Negative EVA = Value destroyed",
+            "Better than ROI for investment decisions",
+            "ROI may reject good projects; EVA won't",
+            "NOPAT = After-tax operating profit"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "EVA",
+          "knowledgeCheck": {
+            "question": "A division has NOPAT of $400,000, invested capital of $2,500,000, and WACC is 12%. What is EVA?",
+            "options": [
+              "$100,000",
+              "$300,000",
+              "$400,000",
+              "$700,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "EVA = NOPAT - Capital charge = $400,000 - ($2,500,000 × 12%) = $400,000 - $300,000 = $100,000. This division earned $100,000 above its cost of capital.",
+            "hint": "Calculate the capital charge first (Capital × WACC)."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-023",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Balanced Scorecard Implementation",
+    "description": "Link strategy to operational metrics across perspectives",
+    "order": 23,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Balanced scorecard",
+      "Strategy maps",
+      "KPIs",
+      "Perspectives"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Financial metrics alone don't tell the whole story! The Balanced Scorecard links strategy to operational measures across four perspectives. CMAs often lead BSC implementation to drive organizational performance."
+        },
+        {
+          "title": "BSC Overview",
+          "type": "text",
+          "content": "**Balanced Scorecard (BSC):**\n• Strategic performance management system\n• Developed by Kaplan and Norton\n• Balances financial and non-financial measures\n• Links metrics to strategy\n\n**Why 'Balanced'?**\n• Financial AND operational\n• Leading AND lagging indicators\n• Internal AND external focus\n• Short-term AND long-term\n\n**Purpose:**\n• Translate strategy into measurable objectives\n• Communicate strategy organization-wide\n• Align activities with strategic goals"
+        },
+        {
+          "title": "Four Perspectives",
+          "type": "table",
+          "headers": [
+            "Perspective",
+            "Question Answered",
+            "Example Measures"
+          ],
+          "rows": [
+            [
+              "Financial",
+              "How do we look to shareholders?",
+              "ROE, EVA, revenue growth"
+            ],
+            [
+              "Customer",
+              "How do customers see us?",
+              "Satisfaction, retention, NPS"
+            ],
+            [
+              "Internal Process",
+              "What must we excel at?",
+              "Cycle time, defect rate, efficiency"
+            ],
+            [
+              "Learning & Growth",
+              "Can we continue to improve?",
+              "Training hours, employee satisfaction"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Perspective Hierarchy",
+          "type": "callout",
+          "content": "**Cause-and-Effect Logic:**\n\n**Learning & Growth** (Foundation)\n→ Skilled, motivated employees\n\n**Internal Processes** (Operational)\n→ Better operations and innovation\n\n**Customer** (External)\n→ Satisfied, loyal customers\n\n**Financial** (Results)\n→ Strong financial performance\n\n**Memory:**\n'Learn to process, satisfy customers, make money'\n\n**Key Insight:**\nLeading indicators (L&G, Process) drive\nLagging indicators (Customer, Financial)"
+        },
+        {
+          "title": "Building a Strategy Map",
+          "type": "text",
+          "content": "**Strategy Map:**\n• Visual representation of strategy\n• Shows cause-and-effect relationships\n• Connects objectives across perspectives\n\n**Components:**\n• Strategic objectives within each perspective\n• Cause-effect arrows between objectives\n• Strategic themes grouping related objectives\n\n**Example Chain:**\nTrain employees (L&G)\n→ Reduce process errors (Internal)\n→ Improve quality scores (Customer)\n→ Increase profit margins (Financial)\n\n**Benefits:**\n• Clarifies strategy\n• Shows how activities drive results\n• Communication tool"
+        },
+        {
+          "title": "KPIs and Targets",
+          "type": "text",
+          "content": "**For Each Objective, Define:**\n• **Measure (KPI):** How to track it\n• **Target:** What level to achieve\n• **Initiative:** Actions to reach target\n\n**Good KPI Criteria:**\n• Relevant to objective\n• Measurable quantitatively\n• Controllable by responsible party\n• Timely data available\n\n**Leading vs Lagging:**\n• **Leading:** Predicts future (training hours)\n• **Lagging:** Confirms results (revenue)\n• Need both for balanced view\n\n**Typical BSC:** 15-25 measures total\nAvoid too many - focus on key drivers"
+        },
+        {
+          "title": "⚠️ Exam Trap: BSC Mistakes",
+          "type": "warning",
+          "content": "**Common Implementation Failures:**\n\n**Too Many Measures:**\n• Trying to measure everything\n• Focus on 4-7 per perspective\n\n**No Cause-Effect Links:**\n• Random metrics, not strategic\n• Must link to strategy\n\n**Set and Forget:**\n• Must review and update regularly\n• Strategy evolves\n\n**Only Financial Focus:**\n• Defeats purpose of BSC\n• All four perspectives matter\n\n**Exam Tip:**\nKnow which measures go with which perspective\nL&G = Employee/capability measures\nProcess = Operational efficiency\nCustomer = External satisfaction\nFinancial = Money metrics"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "BSC: Four perspectives - Financial, Customer, Process, Learning",
+            "Links strategy to measurable objectives",
+            "Balances financial with non-financial measures",
+            "Strategy map shows cause-and-effect relationships",
+            "Learning/Process drive Customer/Financial results",
+            "Each objective needs measure, target, initiative",
+            "Leading indicators predict; lagging confirm results"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Balanced Scorecard",
+          "knowledgeCheck": {
+            "question": "Employee training hours per year would be a measure in which Balanced Scorecard perspective?",
+            "options": [
+              "Financial",
+              "Customer",
+              "Internal Process",
+              "Learning & Growth"
+            ],
+            "correctIndex": 3,
+            "explanation": "Learning & Growth perspective focuses on organizational capacity to improve, including employee skills, training, and development. Employee training hours is a measure of investment in human capital, which is the foundation of the BSC.",
+            "hint": "Which perspective focuses on employee development and capability?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-F-024",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Key Performance Indicators and Dashboards",
+    "description": "Select and visualize effective performance metrics",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Key performance indicators",
+      "Dashboards",
+      "Performance metrics",
+      "Data visualization"
+    ],
+    "blueprintArea": "CMA1-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "What gets measured gets managed! CMAs design KPI systems and dashboards that drive organizational performance. Selecting the right metrics and presenting them effectively is a critical management accounting skill."
+        },
+        {
+          "title": "KPI Fundamentals",
+          "type": "text",
+          "content": "**Key Performance Indicator (KPI):**\nA quantifiable measure used to evaluate success in meeting objectives\n\n**Characteristics of Good KPIs:**\n• **Specific:** Clearly defined\n• **Measurable:** Quantifiable\n• **Achievable:** Realistic targets\n• **Relevant:** Aligned to strategy\n• **Time-bound:** Defined period\n\n**KPI Hierarchy:**\n• Strategic KPIs (board level)\n• Tactical KPIs (management level)\n• Operational KPIs (department level)\n• Cascade and align throughout organization"
+        },
+        {
+          "title": "Types of KPIs",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Leading",
+              "Predicts future results",
+              "Sales pipeline, training hours"
+            ],
+            [
+              "Lagging",
+              "Confirms past results",
+              "Revenue, profit, customer churn"
+            ],
+            [
+              "Financial",
+              "Money-based measures",
+              "ROI, margin, cash flow"
+            ],
+            [
+              "Non-Financial",
+              "Operational/qualitative",
+              "NPS, defect rate, cycle time"
+            ],
+            [
+              "Input",
+              "Resources used",
+              "Hours worked, materials"
+            ],
+            [
+              "Output",
+              "Results produced",
+              "Units produced, deals closed"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: KPI Selection",
+          "type": "callout",
+          "content": "**Selection Criteria:**\n\n**Strategic Alignment:**\n• Does it support strategic objectives?\n• Does leadership care about it?\n\n**Actionability:**\n• Can we influence the result?\n• Will it drive behavior?\n\n**Data Availability:**\n• Can we measure it accurately?\n• Is data timely enough?\n\n**Balance:**\n• Mix of leading and lagging\n• Financial and non-financial\n• Short and long-term\n\n**Less is More:**\n• 5-7 KPIs per area\n• Too many = no focus\n• 'Dashboard of everything' fails"
+        },
+        {
+          "title": "Dashboard Design",
+          "type": "text",
+          "content": "**Dashboard Purpose:**\n• Visual display of key metrics\n• At-a-glance performance view\n• Enables quick decisions\n\n**Design Principles:**\n• **Simplicity:** Not cluttered\n• **Focus:** Most important metrics first\n• **Context:** Show trends, comparisons\n• **Actionable:** Drive decisions\n• **Accurate:** Real-time or near-real-time\n\n**Visual Elements:**\n• Gauges for single metrics vs target\n• Line charts for trends\n• Bar charts for comparisons\n• Tables for detailed data\n• Color coding (red/yellow/green)"
+        },
+        {
+          "title": "Common Dashboard Mistakes",
+          "type": "text",
+          "content": "**Mistakes to Avoid:**\n\n**Too Many Metrics:**\n• Information overload\n• No clear priorities\n• Decision paralysis\n\n**Wrong Visualizations:**\n• Pie charts for many categories\n• 3D charts that distort\n• Inconsistent scales\n\n**Lack of Context:**\n• Numbers without targets\n• No historical comparison\n• Missing variance explanation\n\n**Poor Updating:**\n• Stale data\n• Manual processes\n• Inconsistent refresh\n\n**Not Audience-Appropriate:**\n• Executive dashboard ≠ operational\n• Match detail to user needs"
+        },
+        {
+          "title": "⚠️ Exam Trap: KPI vs Metric",
+          "type": "warning",
+          "content": "**All KPIs are Metrics, but Not All Metrics are KPIs**\n\n**Metric:**\n• Any quantifiable measure\n• May or may not be important\n• Hundreds possible in organization\n• Example: # of emails sent\n\n**KPI:**\n• KEY metrics - most important\n• Directly tied to strategic objectives\n• Limited set (5-20 total)\n• Example: Customer acquisition cost\n\n**Upgrade Path:**\n• Metric becomes KPI when:\n  - Linked to strategy\n  - Has target\n  - Has accountability\n  - Drives action\n\n**Exam Tip:**\nLook for strategic relevance when identifying KPIs"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "KPIs: Key metrics tied to strategic objectives",
+            "SMART: Specific, Measurable, Achievable, Relevant, Time-bound",
+            "Balance leading/lagging, financial/non-financial",
+            "Less is more - 5-7 KPIs per area",
+            "Dashboards: Visual display for at-a-glance decisions",
+            "Show context: trends, targets, comparisons",
+            "Match dashboard detail level to audience"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "KPIs",
+          "knowledgeCheck": {
+            "question": "A company tracks 'number of customer complaints in queue' as a performance metric. This is best classified as a:",
+            "options": [
+              "Lagging financial indicator",
+              "Leading operational indicator",
+              "Lagging non-financial indicator",
+              "Input financial indicator"
+            ],
+            "correctIndex": 1,
+            "explanation": "Customer complaints in queue is a LEADING indicator (predicts potential future churn/satisfaction) and OPERATIONAL (non-financial, process-based). It predicts future outcomes rather than confirming past results.",
+            "hint": "Does this metric predict future results or confirm past performance? Is it money or operations?"
+          }
+        }
+      ]
+    }
   }
 ]

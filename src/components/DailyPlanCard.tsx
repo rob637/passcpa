@@ -35,6 +35,7 @@ import { Card } from './common/Card';
 import { useAuth } from '../hooks/useAuth';
 import { useStudy } from '../hooks/useStudy';
 import { useCourse } from '../providers/CourseProvider';
+import { useStudyPlan } from '../hooks/useStudyPlan';
 import { useNavigation } from './navigation';
 import { DailyActivity, UserStudyState } from '../services/dailyPlanService';
 import { 
@@ -88,6 +89,7 @@ interface DailyPlanCardProps {
 const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivityStart }) => {
   const navigate = useNavigate();
   const { userProfile, user } = useAuth();
+  const { hasPlan: hasStudyPlan } = useStudyPlan();
   const { stats, dailyProgress, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId, course } = useCourse();
   const { startDailyPlanSession } = useNavigation();
@@ -121,29 +123,38 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       return;
     }
     
-    // Check if exam date is set - required for personalized planning
-    const examDate = getExamDate(userProfile, currentSection, courseId);
-    if (!examDate) {
-      setMissingExamDate(true);
-      setPastExamDate(false);
-      setHasAttemptedLoad(true);
-      return;
-    }
-    
-    // Check if exam date is in the past
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const examDateNormalized = new Date(examDate);
-    examDateNormalized.setHours(0, 0, 0, 0);
-    
-    if (examDateNormalized < today) {
-      setPastExamDate(true);
+    // If user has an active study plan, skip legacy exam date checks
+    // The study plan manages its own exam date and schedule
+    if (hasStudyPlan) {
       setMissingExamDate(false);
-      setHasAttemptedLoad(true);
-      return;
+      setPastExamDate(false);
+      // Note: If study plan exam date is past, let the Study Plan page handle it
+      // DailyPlanCard just generates activities based on the plan
+    } else {
+      // Legacy path: Check profile exam date for users without a study plan
+      const examDate = getExamDate(userProfile, currentSection, courseId);
+      if (!examDate) {
+        setMissingExamDate(true);
+        setPastExamDate(false);
+        setHasAttemptedLoad(true);
+        return;
+      }
+      
+      // Check if exam date is in the past
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const examDateNormalized = new Date(examDate);
+      examDateNormalized.setHours(0, 0, 0, 0);
+      
+      if (examDateNormalized < today) {
+        setPastExamDate(true);
+        setMissingExamDate(false);
+        setHasAttemptedLoad(true);
+        return;
+      }
     }
     
-    // Exam date exists and is in the future - clear flags and proceed
+    // Proceed with loading plan
     setMissingExamDate(false);
     setPastExamDate(false);
     setLoading(true);
@@ -283,7 +294,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     } finally {
       setLoading(false);
     }
-  }, [userProfile, user?.uid, getTopicPerformance, getLessonProgress, courseId, currentSection, course]);
+  }, [userProfile, user?.uid, getTopicPerformance, getLessonProgress, courseId, currentSection, course, hasStudyPlan]);
 
   // Track previous section to detect changes
   const prevSectionRef = useRef<string | null>(null);
@@ -403,45 +414,45 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     // Store the current activity ID for completion tracking
     const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;
+    // Always pass section for completion tracking - use activity section, plan section, or current section
+    const activitySection = activity.params?.section || plan?.section || currentSection;
     
     // Navigate based on activity type - using course-aware paths
     switch (activity.type) {
       case 'lesson':
-        navigate(`${getCourseLessonPath(courseId, activity.params.lessonId || '')}?${fromParam}`);
+        navigate(`${getCourseLessonPath(courseId, activity.params.lessonId || '')}?${fromParam}&section=${encodeURIComponent(activitySection)}`);
         break;
       case 'mcq':
         if (activity.params.topic) {
-          const sectionParam = activity.params.section ? `&section=${encodeURIComponent(activity.params.section)}` : '';
-          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}${sectionParam}&${fromParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&section=${encodeURIComponent(activitySection)}&${fromParam}`);
         } else {
-          const sectionParam = activity.params.section ? `?section=${encodeURIComponent(activity.params.section)}&${fromParam}` : `?${fromParam}`;
-          navigate(`${getCoursePracticePath(courseId)}${sectionParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         }
         break;
       case 'tbs':
-        navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
+        navigate(`${getCourseTBSPath(courseId)}?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       case 'flashcards':
         // Navigate directly to flashcard session (skip setup page) with daily plan params
         const flashcardParams = new URLSearchParams();
         flashcardParams.set('from', 'dailyplan');
         flashcardParams.set('activityId', activity.id);
+        flashcardParams.set('section', activitySection);
         if (activity.params?.mode) flashcardParams.set('mode', activity.params.mode);
         if (activity.params?.cardCount) flashcardParams.set('count', String(activity.params.cardCount));
-        if (activity.params?.section) flashcardParams.set('section', activity.params.section);
         navigate(`/flashcards/session?${flashcardParams.toString()}`);
         break;
       case 'essay':
         // CMA Essay Simulator
-        navigate(`/cma/essay?${fromParam}`);
+        navigate(`/cma/essay?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       case 'cbq':
         // CMA CBQ (Case-Based Questions) Simulator - Sept 2026+
-        navigate(`/cma/cbq?${fromParam}`);
+        navigate(`/cma/cbq?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       case 'case_study':
         // CFP Case Study - navigate to practice with case study mode
-        navigate(`/practice?mode=case_study&section=${activity.params.section || ''}&${fromParam}`);
+        navigate(`/practice?mode=case_study&section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       default:
         navigate(getCourseHomePath(courseId));
@@ -466,10 +477,11 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   };
 
   // Get color for activity type
+  // Colors match Home page quick access buttons for consistency
   const getActivityColor = (type: string) => {
     switch (type) {
-      case 'lesson': return 'text-primary-500 bg-primary-100 dark:bg-primary-900/30';
-      case 'mcq': return 'text-success-500 bg-success-100 dark:bg-success-900/30';
+      case 'lesson': return 'text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30';  // Green - matches Home
+      case 'mcq': return 'text-primary-600 bg-primary-100 dark:bg-primary-900/30';      // Blue - matches Home
       case 'tbs': return 'text-teal-500 bg-teal-100 dark:bg-teal-900/30';
       case 'flashcards': return 'text-amber-500 bg-amber-100 dark:bg-amber-900/30';
       case 'essay': return 'text-purple-500 bg-purple-100 dark:bg-purple-900/30';

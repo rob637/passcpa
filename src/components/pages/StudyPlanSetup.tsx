@@ -10,7 +10,7 @@
  * 6. Reality check & plan generation
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { 
   ChevronLeft, 
@@ -32,12 +32,12 @@ import { useCourse } from '../../providers/CourseProvider';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { generateRealityCheck, validatePlanInput, PlanValidation } from '../../services/studyPlanService';
+import { resolveStudySection } from '../../services/contentRegistry';
 import { COURSES } from '../../courses';
 import { CORE_SECTIONS, DISCIPLINE_SECTIONS_2026 } from '../../config/examConfig';
 import { getSectionDisplayInfo } from '../../utils/sectionUtils';
 import type { ExamSectionConfig } from '../../types/course';
 import type { StudyPlanSetupInput, RealityCheck } from '../../types/studyPlan';
-import { SECTION_STUDY_HOURS as INDUSTRY_HOURS } from '../../types/studyPlan';
 import { addMonths } from 'date-fns';
 import clsx from 'clsx';
 import logger from '../../utils/logger';
@@ -69,6 +69,9 @@ const StudyPlanSetup: React.FC = () => {
   const [assessmentChoice, setAssessmentChoice] = useState<'skip' | 'take' | null>('skip');
   const [savingPlan, setSavingPlan] = useState(false);
   
+  // Track if we've handled the return from diagnostic assessment
+  const returnedFromDiagnostic = useRef(false);
+  
   // Get course sections
   const course = COURSES[courseId];
   const sections = course?.sections || [];
@@ -80,6 +83,26 @@ const StudyPlanSetup: React.FC = () => {
   useEffect(() => {
     // Don't initialize while plan is still loading
     if (planLoading || initialized) return;
+    
+    // Check if returning from diagnostic assessment FIRST
+    // This prevents the initialization logic from clobbering the step set by diagnostic return
+    const state = location.state as { fromAssessment?: boolean; assessmentComplete?: boolean } | null;
+    if (state?.fromAssessment && state?.assessmentComplete) {
+      // Returning from diagnostic - set form values but skip to reality-check
+      if (isSingleExamCourse) {
+        setSection('ALL');
+      }
+      const defaultDate = new Date();
+      defaultDate.setDate(defaultDate.getDate() + 8 * 7);
+      setExamDate(examDate || defaultDate.toISOString().split('T')[0]);
+      setAssessmentChoice('take');
+      setCurrentStep('reality-check');
+      setInitialized(true);
+      returnedFromDiagnostic.current = true;
+      // Clear the state to prevent re-triggering
+      window.history.replaceState({}, document.title);
+      return;
+    }
     
     if (existingPlan) {
       // Pre-fill from existing plan
@@ -95,6 +118,8 @@ const StudyPlanSetup: React.FC = () => {
       if (existingPlan.setup?.priorExperience) {
         setPriorExperience(existingPlan.setup.priorExperience);
       }
+      // Skip section selection when editing - go straight to exam date
+      setCurrentStep('exam-date');
       setInitialized(true);
     } else if (isSingleExamCourse) {
       // Single-exam courses use 'ALL' to cover all domains and skip section selection
@@ -106,12 +131,28 @@ const StudyPlanSetup: React.FC = () => {
       setCurrentStep('exam-date');
       setInitialized(true);
     } else if (userProfile?.examSection) {
-      setSection(userProfile.examSection);
-      // Default to 8 weeks from today
-      const defaultDate = new Date();
-      defaultDate.setDate(defaultDate.getDate() + 8 * 7);
-      setExamDate(defaultDate.toISOString().split('T')[0]);
-      setInitialized(true);
+      // Validate that stored section belongs to current course
+      // If user switched courses (e.g., CPA → CIA), don't use mismatched section
+      const storedSection = userProfile.examSection;
+      const validSection = sections.some((s: ExamSectionConfig) => s.id === storedSection);
+      
+      if (validSection) {
+        setSection(storedSection);
+        // Default to 8 weeks from today
+        const defaultDate = new Date();
+        defaultDate.setDate(defaultDate.getDate() + 8 * 7);
+        setExamDate(defaultDate.toISOString().split('T')[0]);
+        // Skip section selection - user already chose on home page
+        setCurrentStep('exam-date');
+        setInitialized(true);
+      } else {
+        // Section doesn't match current course - show section selection
+        const defaultDate = new Date();
+        defaultDate.setDate(defaultDate.getDate() + 8 * 7);
+        setExamDate(defaultDate.toISOString().split('T')[0]);
+        setInitialized(true);
+        // Start on first step (section selection)
+      }
     } else {
       // No existing plan - default to 8 weeks from today
       const defaultDate = new Date();
@@ -119,15 +160,17 @@ const StudyPlanSetup: React.FC = () => {
       setExamDate(defaultDate.toISOString().split('T')[0]);
       setInitialized(true);
     }
-  }, [planLoading, existingPlan, isSingleExamCourse, sections, userProfile, initialized]);
+  }, [planLoading, existingPlan, isSingleExamCourse, sections, userProfile, initialized, location.state, examDate]);
   
-  // Handle return from diagnostic assessment
+  // Handle return from diagnostic assessment (legacy - now handled in main init effect)
+  // Keeping this for safety but it should no longer be the primary handler
   useEffect(() => {
     const state = location.state as { fromAssessment?: boolean; assessmentComplete?: boolean } | null;
-    if (state?.fromAssessment && state?.assessmentComplete) {
+    if (state?.fromAssessment && state?.assessmentComplete && !returnedFromDiagnostic.current) {
       // Returning from diagnostic - skip to reality check
       setAssessmentChoice('take');
       setCurrentStep('reality-check');
+      returnedFromDiagnostic.current = true;
       // Clear the state to prevent re-triggering
       window.history.replaceState({}, document.title);
     }
@@ -211,9 +254,8 @@ const StudyPlanSetup: React.FC = () => {
     const currentIndex = STEPS.indexOf(currentStep);
     if (currentIndex > 0) {
       let prevStep = STEPS[currentIndex - 1];
-      // Skip section step for single-exam courses
-      if (prevStep === 'section' && isSingleExamCourse) {
-        prevStep = 'section'; // Will actually go to intro, but we'll handle navigation
+      // Skip section step for single-exam courses OR when editing existing plan
+      if (prevStep === 'section' && (isSingleExamCourse || existingPlan)) {
         navigate(-1);
         return;
       }
@@ -244,15 +286,17 @@ const StudyPlanSetup: React.FC = () => {
       // Update the user's active section AND exam date to match the plan
       // This ensures Home, Daily Plan, and Study Plan all show the same section
       // CRITICAL: Updating examDates triggers daily plan regeneration
+      // For single-exam courses, normalize 'ALL' to the actual section ('CISA', 'CFP')
+      const normalizedSection = resolveStudySection(courseId, section) || section;
       const updates: Record<string, unknown> = {};
-      if (section !== userProfile?.examSection) {
-        updates.examSection = section;
+      if (normalizedSection !== userProfile?.examSection) {
+        updates.examSection = normalizedSection;
       }
       // Always sync exam date to user profile - this triggers daily plan invalidation
       const currentExamDates = userProfile?.examDates || {};
       updates.examDates = {
         ...currentExamDates,
-        [section]: examDate, // ISO date string
+        [normalizedSection]: examDate, // ISO date string
       };
       
       if (Object.keys(updates).length > 0) {
@@ -703,19 +747,6 @@ const StudyPlanSetup: React.FC = () => {
             
             {realityCheck && (
               <div className="max-w-md mx-auto space-y-6">
-                {/* Industry benchmark callout */}
-                <div className="flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-                  <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm font-medium text-blue-900 dark:text-blue-100">
-                      Industry Benchmark: {INDUSTRY_HOURS[section] || 100} hours
-                    </p>
-                    <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
-                      VoraPrep's adaptive learning optimizes your study time
-                    </p>
-                  </div>
-                </div>
-                
                 {/* Time breakdown */}
                 <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-5 space-y-4">
                   <div className="flex justify-between items-center">
@@ -723,9 +754,6 @@ const StudyPlanSetup: React.FC = () => {
                     <span className="font-bold text-slate-900 dark:text-white">
                       ~{realityCheck.hoursNeeded} hours
                     </span>
-                  </div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400 -mt-2">
-                    (Lessons + MCQs + Flashcards + TBS)
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-600 dark:text-slate-400">Hours available</span>
@@ -782,14 +810,39 @@ const StudyPlanSetup: React.FC = () => {
                         {examDate ? new Date(examDate + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—'}
                       </span>
                     </div>
-                    <input
-                      type="date"
-                      value={examDate}
-                      onChange={(e) => setExamDate(e.target.value)}
-                      min={new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
-                      max={new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                    />
+                    {(() => {
+                      const now = Date.now();
+                      const minDays = 14;
+                      const maxDays = 365;
+                      const minDate = new Date(now + minDays * 86400000);
+                      const currentDays = examDate
+                        ? Math.round((new Date(examDate + 'T12:00:00').getTime() - now) / 86400000)
+                        : 90;
+                      const clampedDays = Math.max(minDays, Math.min(maxDays, currentDays));
+                      const weeksOut = Math.round(clampedDays / 7);
+                      return (
+                        <>
+                          <input
+                            type="range"
+                            min={Math.ceil(minDays / 7)}
+                            max={Math.floor(maxDays / 7)}
+                            step="1"
+                            value={weeksOut}
+                            onChange={(e) => {
+                              const weeks = parseInt(e.target.value, 10);
+                              const d = new Date(now + weeks * 7 * 86400000);
+                              setExamDate(d.toISOString().split('T')[0]);
+                            }}
+                            className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary-500"
+                          />
+                          <div className="flex justify-between text-xs text-slate-400 mt-1">
+                            <span>{Math.ceil(minDays / 7)} wks</span>
+                            <span>~{Math.round(clampedDays / 7)} weeks ({Math.round(clampedDays / 30)} mo)</span>
+                            <span>{Math.floor(maxDays / 7)} wks</span>
+                          </div>
+                        </>
+                      );
+                    })()}
                   </div>
                   
                   {/* Hours per Day Slider */}
@@ -942,7 +995,7 @@ const StudyPlanSetup: React.FC = () => {
             
             {/* Progress bar */}
             <div className="flex gap-2">
-              {STEPS.filter(s => !(s === 'section' && isSingleExamCourse) && s !== 'complete').map((step) => (
+              {STEPS.filter(s => !(s === 'section' && (isSingleExamCourse || existingPlan)) && s !== 'complete').map((step) => (
                 <div
                   key={step}
                   className={clsx(

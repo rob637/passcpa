@@ -25,7 +25,6 @@ import {
   type SelectionReason,
   createEngineConfig,
   loadState,
-  saveState,
   initializeState,
   recordAnswerCore,
   getQuestionsDueForReview as coreGetQuestionsDueForReview,
@@ -189,13 +188,16 @@ function loadCPAState(): CPAAdaptiveState {
 let adaptiveState: CPAAdaptiveState = loadCPAState();
 
 function saveCPAState(state: CPAAdaptiveState): void {
-  // Manually build the complete state object to avoid TOCTOU race with saveState
+  // Save the complete state to localStorage
   try {
     const toSave = {
-      userId: state.userId,
-      lastUpdated: state.lastUpdated,
-      sectionStats: state.sectionStats,
+      currentDifficulty: state.currentDifficulty,
+      difficultyScore: state.difficultyScore,
+      targetAccuracy: state.targetAccuracy,
       recentResults: state.recentResults,
+      sectionPerformance: state.sectionPerformance,
+      lastSessionQuestions: state.lastSessionQuestions,
+      totalQuestionsAnswered: state.totalQuestionsAnswered,
       // CPA-specific field
       chosenDiscipline: state.chosenDiscipline,
     };

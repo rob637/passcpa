@@ -47,6 +47,8 @@ import analytics from '../../services/analytics';
 // Keep mock exam imports for blueprint weights and configurations
 import { getMockExamsBySection, MockExamConfig, loadTestletTBS, BLUEPRINT_WEIGHTS } from '../../data/cpa/mock-exams';
 import { getTBSBySection } from '../../data/cpa/tbs';
+import { saveExamSession } from '../../services/examSessionService';
+import ExamHistory from '../exam/ExamHistory';
 
 type ExamState = 'intro' | 'mock-selection' | 'exam' | 'break' | 'review' | 'complete';
 type ExamMode = 'mini' | 'mini-tbs' | 'full' | 'curated';
@@ -55,7 +57,7 @@ const ExamSimulator: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const courseHome = getHomePathFromLocation(location.pathname);
-  const { userProfile } = useAuth();
+  const { user, userProfile } = useAuth();
   const { completeSimulation } = useStudy();
   const { courseId, course } = useCourse();
 
@@ -536,6 +538,40 @@ const ExamSimulator: React.FC = () => {
     // Record simulation
     await completeSimulation('exam-sim-' + Date.now(), results.percentage, timeSpent);
 
+    // Save full exam session for later review
+    if (user?.uid) {
+      const sessionQuestions = questions.map(q => ({
+        id: q.id,
+        question: q.question,
+        options: q.options,
+        correctAnswer: q.correctAnswer,
+        userAnswer: answers[q.id],
+        explanation: q.explanation || '',
+        topic: q.topic || '',
+        blueprintArea: q.blueprintArea || '',
+      }));
+      saveExamSession(user.uid, {
+        courseId,
+        section: currentSection,
+        mode: examMode,
+        score: results.percentage,
+        mcqScore: results.mcqScore,
+        tbsScore: results.tbsScore,
+        passed: results.percentage >= examConfig.passingScore,
+        passingScore: examConfig.passingScore,
+        questionsTotal: questions.length,
+        questionsCorrect: results.correct,
+        questionsIncorrect: results.incorrect,
+        tbsTotal: results.tbsTotal,
+        tbsCorrect: Math.round(results.tbsCorrect || 0),
+        timeSpentMinutes: timeSpent,
+        completedAt: new Date(),
+        mockExamName: selectedMockExam?.name,
+        questions: sessionQuestions,
+        blueprintScores: results.blueprintResults,
+      });
+    }
+
     // GA4 analytics — track exam completion
     analytics.completeExam(currentSection, results.percentage, results.percentage >= examConfig.passingScore);
   };
@@ -813,6 +849,9 @@ const ExamSimulator: React.FC = () => {
               </button>
             </div>
           </div>
+
+          {/* Exam History */}
+          <ExamHistory />
         </div>
     );
   }

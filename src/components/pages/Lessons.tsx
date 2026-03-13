@@ -64,7 +64,7 @@ const blueprintToAreaDefinition = (blueprintAreas: BlueprintArea[]): AreaDefinit
 
 /**
  * Group lessons by topic area for display
- * Uses blueprintAreas from course config - no hardcoded exam-specific data
+ * Groups lessons by their actual blueprintArea field, matching against area IDs
  */
 const groupLessonsByArea = (
   lessons: Lesson[], 
@@ -82,16 +82,24 @@ const groupLessonsByArea = (
     ? blueprintToAreaDefinition(blueprintAreas)
     : defaultAreas;
 
-  // Distribute lessons across areas based on order
-  const lessonsPerArea = Math.ceil(lessons.length / areas.length);
-  
-  return areas.map((area, areaIndex) => {
-    const startIndex = areaIndex * lessonsPerArea;
-    const areaLessons = lessons.slice(startIndex, startIndex + lessonsPerArea);
+  // Group lessons by their blueprintArea field, matching the area ID prefix
+  // e.g., lesson with blueprintArea "AUD-I-A" matches area with id "AUD-I"
+  return areas.map((area) => {
+    // Find lessons whose blueprintArea starts with or equals this area's ID
+    const areaLessons = lessons.filter(lesson => {
+      const lessonArea = (lesson.blueprintArea || '').toUpperCase();
+      const areaId = area.id.toUpperCase();
+      // Match if lesson's blueprintArea starts with area ID (e.g., "AUD-I-A" starts with "AUD-I")
+      // or if they're exactly equal
+      return lessonArea.startsWith(areaId) || lessonArea === areaId;
+    });
+    
+    // Sort lessons within each area by their order field
+    const sortedAreaLessons = [...areaLessons].sort((a, b) => (a.order || 0) - (b.order || 0));
     
     return {
       ...area,
-      lessons: areaLessons.map(lesson => ({
+      lessons: sortedAreaLessons.map(lesson => ({
         id: lesson.id,
         title: lesson.title,
         duration: lesson.duration,
@@ -173,8 +181,12 @@ const Lessons: React.FC = () => {
   }, [getLessonProgress, currentSection]);
 
   // Get blueprint areas from current section config
+  // For 'ALL' section (single-exam courses), collect blueprint areas from all sections
   const currentSectionConfig = course.sections.find(s => s.id === currentSection);
-  const blueprintAreas = currentSectionConfig?.blueprintAreas;
+  const blueprintAreas = currentSectionConfig?.blueprintAreas 
+    || (currentSection === 'ALL' 
+        ? course.sections.flatMap(s => s.blueprintAreas || [])
+        : undefined);
 
   // Group lessons into areas with completion status
   const lessonAreas = groupLessonsByArea(rawLessons, completedLessons, blueprintAreas);
@@ -242,14 +254,14 @@ const Lessons: React.FC = () => {
             className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
             style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
           >
-            {sectionInfo?.shortName || currentSection}
+            {currentSection === 'ALL' ? courseId.toUpperCase() : (sectionInfo?.shortName || currentSection)}
           </div>
           <div>
             <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Lessons
             </h1>
             <p className="text-slate-600 dark:text-slate-300">
-              {sectionInfo?.name || currentSection}
+              {currentSection === 'ALL' ? (course?.shortName || `${courseId.toUpperCase()} Exam`) : (sectionInfo?.name || currentSection)}
             </p>
           </div>
         </div>

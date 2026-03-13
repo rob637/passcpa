@@ -11,6 +11,7 @@
  */
 
 import type { CourseId } from '../../types/course';
+import { COURSE_DISPLAY_STATS } from '../../config/contentStats';
 import type {
   ContentBrief,
   ContentTemplate,
@@ -290,7 +291,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cpa',
     price: '$19',
     annualPrice: '$99',
-    questionCount: '5,000+',
+    questionCount: COURSE_DISPLAY_STATS.cpa.questions,
     sections: [
       { id: 'FAR', name: 'Financial Accounting and Reporting', topics: ['Governmental Accounting', 'NFP Accounting', 'Financial Statements', 'Revenue Recognition', 'Leases', 'Bonds', 'Inventory', 'Fixed Assets', 'Equity', 'Business Combinations'] },
       { id: 'AUD', name: 'Auditing and Attestation', topics: ['Audit Planning', 'Internal Controls', 'Audit Evidence', 'Audit Reports', 'Ethics', 'Sampling', 'Review Engagements', 'SSARS', 'SOC Reports'] },
@@ -307,7 +308,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'ea',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '3,000+',
+    questionCount: COURSE_DISPLAY_STATS.ea.questions,
     sections: [
       { id: 'SEE1', name: 'Individual Taxation', topics: ['Filing Status', 'Income', 'Deductions', 'Credits', 'AMT', 'Capital Gains', 'Retirement Plans', 'Education Credits'] },
       { id: 'SEE2', name: 'Business Taxation', topics: ['Business Income', 'Business Deductions', 'Corporations', 'Partnerships', 'S Corporations', 'Depreciation', 'Payroll Tax'] },
@@ -321,7 +322,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cma',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '3,000+',
+    questionCount: COURSE_DISPLAY_STATS.cma.questions,
     sections: [
       { id: 'CMA1', name: 'Financial Planning, Performance & Analytics', topics: ['Budgeting', 'Forecasting', 'Cost Management', 'Internal Controls', 'Technology', 'Performance Measures'] },
       { id: 'CMA2', name: 'Strategic Financial Management', topics: ['Financial Statement Analysis', 'Corporate Finance', 'Decision Analysis', 'Risk Management', 'Investment Decisions', 'Ethics'] },
@@ -334,7 +335,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cia',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '2,500+',
+    questionCount: COURSE_DISPLAY_STATS.cia.questions,
     sections: [
       { id: 'CIA1', name: 'Essentials of Internal Auditing', topics: ['IIA Standards', 'Independence', 'Audit Planning', 'Engagement Procedures', 'Governance', 'Risk Management'] },
       { id: 'CIA2', name: 'Practice of Internal Auditing', topics: ['Engagement Planning', 'Data Analytics', 'Audit Testing', 'Communicating Results', 'Monitoring', 'Quality Assurance'] },
@@ -348,7 +349,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cfp',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '2,500+',
+    questionCount: COURSE_DISPLAY_STATS.cfp.questions,
     sections: [
       { id: 'CFP1', name: 'Professional Conduct & Regulation', topics: ['CFP Board Standards', 'Fiduciary Duty', 'Practice Standards'] },
       { id: 'CFP2', name: 'General Principles of Financial Planning', topics: ['Financial Planning Process', 'Time Value of Money', 'Economic Concepts'] },
@@ -367,7 +368,7 @@ export const EXAM_CONTENT_META: Record<CourseId, ExamContentMeta> = {
     course: 'cisa',
     price: '$14',
     annualPrice: '$69',
-    questionCount: '2,500+',
+    questionCount: COURSE_DISPLAY_STATS.cisa.questions,
     sections: [
       { id: 'CISA1', name: 'Information Systems Auditing Process', topics: ['IS Audit Standards', 'Risk-Based Audit Planning', 'Audit Execution', 'Control Self-Assessment'] },
       { id: 'CISA2', name: 'Governance and Management of IT', topics: ['IT Governance', 'IT Strategy', 'IT Resource Management', 'IT Risk Management', 'Compliance'] },

@@ -26,7 +26,9 @@ import {
   ChevronDown,
   ChevronRight,
   RefreshCw,
-  Loader2,
+  ClipboardList,
+  Layers,
+  GraduationCap,
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { StudyPlanCTA } from '../StudyPlanCTA';
@@ -34,10 +36,12 @@ import { useStudyPlan } from '../../hooks/useStudyPlan';
 import { useCourse } from '../../providers/CourseProvider';
 import { useAuth } from '../../hooks/useAuth';
 import { fetchAllLessons } from '../../services/lessonService';
-import { rebalanceStudyPlan, RebalanceResult } from '../../services/studyPlanService';
+// Rebalance imports removed - now uses setup page
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../config/firebase';
 import type { Lesson } from '../../types';
-import { format, isWithinInterval } from 'date-fns';
-import type { StudyPhase, PlanHealth } from '../../types/studyPlan';
+import { format, isWithinInterval, startOfDay } from 'date-fns';
+import type { StudyPhase, PlanHealth, StudyPlanMilestone } from '../../types/studyPlan';
 import clsx from 'clsx';
 
 import { toLocalDate } from '../../utils/dateHelpers';
@@ -89,44 +93,19 @@ const StudyPlan: React.FC = () => {
   const navigate = useNavigate();
   const { course, courseId } = useCourse();
   const { user } = useAuth();
-  const { plan, todaysPlan, hasPlan, loading, daysUntilExam, isOnTrack, refreshPlan } = useStudyPlan();
+  const { plan, hasPlan, loading, daysUntilExam, isOnTrack, refreshPlan: _refreshPlan } = useStudyPlan();
   
   // State for expandable weeks
   const [expandedWeek, setExpandedWeek] = useState<number | null>(null);
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [loadingLessons, setLoadingLessons] = useState(false);
-  
-  // Rebalance state
-  const [isRebalancing, setIsRebalancing] = useState(false);
-  const [rebalanceResult, setRebalanceResult] = useState<RebalanceResult | null>(null);
-  const [showRebalanceOptions, setShowRebalanceOptions] = useState(false);
+  const [completedLessonIds, setCompletedLessonIds] = useState<Set<string>>(new Set());
+  const [velocity, setVelocity] = useState<{ lessonsPerDay: number; questionsPerDay: number; minutesPerDay: number } | null>(null);
+  const [weeklyActivityProgress, setWeeklyActivityProgress] = useState<Record<number, { mcqs: number; tbs: number; flashcards: number; essays: number; caseStudies: number }>>({});
+  const [liveAccuracy, setLiveAccuracy] = useState<{ questionsAnswered: number; accuracy: number } | null>(null);
   
   // Check if user is behind and should see rebalance option
   const shouldShowRebalance = plan && ['behind', 'at-risk', 'critical'].includes(plan.health);
-  
-  // Handle rebalance
-  const handleRebalance = async (mode: 'increase-pace' | 'extend-date') => {
-    if (!user?.uid || !plan) return;
-    
-    setIsRebalancing(true);
-    try {
-      const result = await rebalanceStudyPlan(
-        user.uid,
-        plan.courseId,
-        plan.section,
-        { mode }
-      );
-      setRebalanceResult(result);
-      
-      if (result.success) {
-        // Refetch the plan to show updated data
-        refreshPlan();
-        setShowRebalanceOptions(false);
-      }
-    } finally {
-      setIsRebalancing(false);
-    }
-  };
   
   // Fetch lessons when plan loads
   useEffect(() => {
@@ -145,6 +124,112 @@ const StudyPlan: React.FC = () => {
         // Sort by order if available
         sectionLessons.sort((a, b) => (a.order || 0) - (b.order || 0));
         setLessons(sectionLessons);
+
+        // Fetch completed lesson IDs for per-week progress
+        if (user) {
+          const lessonsRef = collection(db, 'users', user.uid, 'lessons');
+          const snap = await getDocs(lessonsRef);
+          const completed = new Set<string>();
+          snap.docs.forEach(d => {
+            const data = d.data();
+            if (data.status === 'completed' || data.completedAt) {
+              completed.add(d.id);
+            }
+          });
+          setCompletedLessonIds(completed);
+
+          // Fetch daily_log for velocity + per-week progress
+          // Note: We fetch ALL logs (not just since plan start) so question counts
+          // match the Progress page - users expect "Questions" to mean all questions done
+          const logsRef = collection(db, 'users', user.uid, 'daily_log');
+          const logSnap = await getDocs(logsRef);
+
+          // 7-day velocity (only for current course)
+          const sevenDaysAgo = new Date();
+          sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+          const sevenDaysAgoStr = sevenDaysAgo.toISOString().split('T')[0];
+          let totalLessons7d = 0, totalQuestions7d = 0, totalMinutes7d = 0;
+          let recentCount = 0;
+          const coursePrefix = `${courseId}_`;
+          logSnap.docs.forEach(d => {
+            // Skip logs from other courses (format: {course}_{date})
+            if (d.id.includes('_') && !d.id.startsWith(coursePrefix)) return;
+            const data = d.data();
+            if ((data.date || d.id) >= sevenDaysAgoStr) {
+              totalLessons7d += data.lessonsCompleted || 0;
+              totalQuestions7d += data.questionsAttempted || data.questionsAnswered || 0;
+              totalMinutes7d += data.studyTimeMinutes || data.studyMinutes || 0;
+              recentCount++;
+            }
+          });
+          const activeDays = Math.max(1, recentCount);
+          setVelocity({
+            lessonsPerDay: Math.round((totalLessons7d / activeDays) * 10) / 10,
+            questionsPerDay: Math.round((totalQuestions7d / activeDays) * 10) / 10,
+            minutesPerDay: Math.round(totalMinutes7d / activeDays),
+          });
+
+          // Per-week activity progress from daily_log (only for current course)
+          const weekProgress: Record<number, { mcqs: number; tbs: number; flashcards: number; essays: number; caseStudies: number }> = {};
+          for (const w of plan.weeks) {
+            const wStart = format(toLocalDate(w.startDate), 'yyyy-MM-dd');
+            const wEnd = format(toLocalDate(w.endDate), 'yyyy-MM-dd');
+            let mcqs = 0, tbs = 0, flashcards = 0, essays = 0, caseStudies = 0;
+            logSnap.docs.forEach(d => {
+              // Skip logs from other courses
+              if (d.id.includes('_') && !d.id.startsWith(coursePrefix)) return;
+              const dateKey = d.data().date || d.id;
+              if (dateKey >= wStart && dateKey <= wEnd) {
+                const data = d.data();
+                mcqs += data.questionsAttempted || data.questionsAnswered || 0;
+                flashcards += data.flashcardsReviewed || 0;
+                if (Array.isArray(data.activities)) {
+                  for (const act of data.activities) {
+                    if (act.type === 'tbs') {
+                      tbs += act.tbsAttempted || 1;
+                    }
+                    if (act.type === 'essay') {
+                      essays += 1;
+                    }
+                    if (act.type === 'case_study') {
+                      caseStudies += 1;
+                    }
+                  }
+                }
+              }
+            });
+            weekProgress[w.weekNumber] = { mcqs, tbs, flashcards, essays, caseStudies };
+          }
+          setWeeklyActivityProgress(weekProgress);
+
+          // Compute live accuracy from daily_log activities (source of truth)
+          let totalMcqs = 0, totalCorrect = 0;
+          const sectionUpper = plan.section?.toUpperCase();
+          const singleExamCourses = ['cisa', 'cfp', 'cia'];
+          const isSingle = singleExamCourses.includes(courseId);
+          logSnap.docs.forEach(d => {
+            // Skip logs from other courses (format: {course}_{date})
+            if (d.id.includes('_') && !d.id.startsWith(coursePrefix)) return;
+            const data = d.data();
+            if (Array.isArray(data.activities)) {
+              for (const act of data.activities) {
+                if (act.type === 'mcq') {
+                  const matchesSection = isSingle || !sectionUpper || act.section?.toUpperCase() === sectionUpper;
+                  if (matchesSection) {
+                    totalMcqs++;
+                    if (act.isCorrect) totalCorrect++;
+                  }
+                }
+              }
+            }
+          });
+          if (totalMcqs > 0) {
+            setLiveAccuracy({
+              questionsAnswered: totalMcqs,
+              accuracy: Math.round((totalCorrect / totalMcqs) * 100),
+            });
+          }
+        }
       } catch (err) {
         console.error('Error loading lessons:', err);
       } finally {
@@ -183,6 +268,99 @@ const StudyPlan: React.FC = () => {
     const endIndex = Math.min(startIndex + week.goals.lessons, totalLessons);
     
     return lessons.slice(startIndex, endIndex);
+  };
+
+  // Calculate per-week completion including lessons, MCQs, TBS, flashcards, essays, and case studies
+  const getWeekCompletion = (weekNumber: number): { done: number; total: number; pct: number } => {
+    const week = plan?.weeks.find(w => w.weekNumber === weekNumber);
+    if (!week) return { done: 0, total: 0, pct: 0 };
+    
+    // Get lesson completion
+    const weekLessons = getLessonsForWeek(weekNumber);
+    const lessonsDone = weekLessons.filter(l => completedLessonIds.has(l.id)).length;
+    const lessonsGoal = week.goals?.lessons || weekLessons.length;
+    
+    // Get MCQ, TBS, flashcard, essay, case study progress from weeklyActivityProgress
+    const activityProgress = weeklyActivityProgress[weekNumber] || { mcqs: 0, tbs: 0, flashcards: 0, essays: 0, caseStudies: 0 };
+    const mcqsDone = activityProgress.mcqs;
+    const tbsDone = activityProgress.tbs;
+    const flashcardsDone = activityProgress.flashcards;
+    const essaysDone = activityProgress.essays || 0;
+    const caseStudiesDone = activityProgress.caseStudies || 0;
+    
+    // Get goals from the week
+    const mcqsGoal = week.goals?.questions || 0;
+    const tbsGoal = week.goals?.simulations || 0;
+    const flashcardsGoal = week.goals?.flashcards || 0;
+    const essaysGoal = (week.goals as any)?.essays || 0;
+    const caseStudiesGoal = (week.goals as any)?.caseStudies || 0;
+    
+    // Calculate total goals and done (cap done at goal to avoid >100%)
+    const totalGoals = lessonsGoal + mcqsGoal + tbsGoal + flashcardsGoal + essaysGoal + caseStudiesGoal;
+    if (totalGoals === 0) return { done: 0, total: 0, pct: 0 };
+    
+    const totalDone = 
+      Math.min(lessonsDone, lessonsGoal) + 
+      Math.min(mcqsDone, mcqsGoal) + 
+      Math.min(tbsDone, tbsGoal) + 
+      Math.min(flashcardsDone, flashcardsGoal) +
+      Math.min(essaysDone, essaysGoal) +
+      Math.min(caseStudiesDone, caseStudiesGoal);
+    
+    return { 
+      done: totalDone, 
+      total: totalGoals, 
+      pct: Math.round((totalDone / totalGoals) * 100) 
+    };
+  };
+
+  // Calculate actual milestone completion based on PROGRESS, not just dates
+  const getMilestoneCompletion = (milestone: StudyPlanMilestone): { isComplete: boolean; progressPct: number } => {
+    if (!plan) return { isComplete: false, progressPct: 0 };
+
+    if (milestone.type === 'phase-start') {
+      // Extract phase from milestone id (e.g., 'phase-foundation-1' → 'foundation')
+      const phaseMatch = milestone.id.match(/^phase-([^-]+)-/);
+      if (!phaseMatch) return { isComplete: false, progressPct: 0 };
+      const phase = phaseMatch[1];
+      
+      // Find all weeks in this phase
+      const phaseWeeks = plan.weeks.filter(w => w.phase === phase);
+      if (phaseWeeks.length === 0) return { isComplete: false, progressPct: 0 };
+      
+      // Sum completion across all weeks in phase
+      let totalDone = 0, totalGoals = 0;
+      for (const week of phaseWeeks) {
+        const completion = getWeekCompletion(week.weekNumber);
+        totalDone += completion.done;
+        totalGoals += completion.total;
+      }
+      
+      const pct = totalGoals > 0 ? Math.round((totalDone / totalGoals) * 100) : 0;
+      return { isComplete: pct >= 100, progressPct: pct };
+    }
+
+    if (milestone.type === 'checkpoint') {
+      // Extract target percentage from label (e.g., '25% Checkpoint' → 25)
+      const pctMatch = milestone.label.match(/^(\d+)%/);
+      const targetPct = pctMatch ? parseInt(pctMatch[1], 10) : 0;
+      
+      // Calculate overall plan completion
+      let totalDone = 0, totalGoals = 0;
+      for (const week of plan.weeks) {
+        const completion = getWeekCompletion(week.weekNumber);
+        totalDone += completion.done;
+        totalGoals += completion.total;
+      }
+      
+      const actualPct = totalGoals > 0 ? Math.round((totalDone / totalGoals) * 100) : 0;
+      return { isComplete: actualPct >= targetPct, progressPct: actualPct };
+    }
+
+    // For mock-exam and exam-day, keep date-based (they're future events, not progress markers)
+    // Use startOfDay to avoid same-day time comparison issues
+    const isPast = startOfDay(toLocalDate(milestone.date)) < startOfDay(today);
+    return { isComplete: isPast, progressPct: isPast ? 100 : 0 };
   };
   
   // Show loading state
@@ -225,6 +403,64 @@ const StudyPlan: React.FC = () => {
     const end = toLocalDate(w.endDate);
     return isWithinInterval(today, { start, end });
   });
+
+  // ── Progress Insight: specific lag/lead + predicted completion ──
+  const progressInsight = (() => {
+    if (!plan.progress || !plan.weeks || plan.weeks.length === 0) return null;
+
+    // Calculate expected lessons & questions up to now
+    let lessonsExpected = 0;
+    let questionsExpected = 0;
+    for (const w of plan.weeks) {
+      if (w.weekNumber < (currentWeek?.weekNumber || 1)) {
+        lessonsExpected += w.goals?.lessons || 0;
+        questionsExpected += w.goals?.questions || 0;
+      }
+    }
+    // Add partial-week expectation
+    if (currentWeek) {
+      const weekStart = toLocalDate(currentWeek.startDate);
+      const dayOfWeek = Math.max(1, Math.floor((today.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24)) + 1);
+      const weekFraction = Math.min(1, dayOfWeek / 7);
+      lessonsExpected += Math.floor((currentWeek.goals?.lessons || 0) * weekFraction);
+      questionsExpected += Math.floor((currentWeek.goals?.questions || 0) * weekFraction);
+    }
+
+    const lessonsActual = plan.progress.lessonsCompleted || 0;
+    const questionsActual = plan.progress.questionsAnswered || 0;
+    const lessonDelta = lessonsActual - lessonsExpected;
+    const questionDelta = questionsActual - questionsExpected;
+
+    // Predicted completion date based on velocity
+    const planStart = toLocalDate(plan.startDate);
+    const daysElapsed = Math.max(1, Math.floor((today.getTime() - planStart.getTime()) / (1000 * 60 * 60 * 24)));
+    const totalLessons = plan.progress.lessonsTotal || plan.weeks.reduce((s, w) => s + (w.goals?.lessons || 0), 0);
+    const lessonsRemaining = Math.max(0, totalLessons - lessonsActual);
+    const allTimeLessonsPerDay = lessonsActual > 0 ? lessonsActual / daysElapsed : 0;
+    // Prefer 7-day rolling velocity when available, fall back to all-time avg
+    const effectiveLessonsPerDay = velocity?.lessonsPerDay ?? allTimeLessonsPerDay;
+
+    // Don't project a completion date until we have enough data for a meaningful prediction.
+    // Require at least 7 days elapsed AND 5 lessons completed to avoid misleading early projections.
+    const hasEnoughData = daysElapsed >= 7 && lessonsActual >= 5;
+    const daysToFinish = hasEnoughData && effectiveLessonsPerDay > 0 ? Math.ceil(lessonsRemaining / effectiveLessonsPerDay) : null;
+    const predictedFinish = daysToFinish !== null ? new Date(today.getTime() + daysToFinish * 86400000) : null;
+    const examDate = toLocalDate(plan.examDate);
+    const daysBeforeExam = predictedFinish
+      ? Math.round((examDate.getTime() - predictedFinish.getTime()) / 86400000)
+      : null;
+
+    return {
+      lessonsExpected, lessonsActual, lessonDelta,
+      questionsExpected, questionsActual, questionDelta,
+      lessonsPerDay: Math.round(effectiveLessonsPerDay * 10) / 10,
+      questionsPerDay: velocity?.questionsPerDay ?? null,
+      minutesPerDay: velocity?.minutesPerDay ?? null,
+      predictedFinish, daysBeforeExam,
+      hasRecentVelocity: velocity !== null,
+      hasEnoughData,
+    };
+  })();
   
   return (
     <div className="max-w-4xl mx-auto py-6 px-4 space-y-6">
@@ -358,84 +594,145 @@ const StudyPlan: React.FC = () => {
             <div className="flex-1">
               <h3 className="font-bold text-lg text-slate-900 dark:text-white">Rebalance Your Plan?</h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                You're behind schedule. We can adjust your plan to help you catch up.
+                {progressInsight && progressInsight.lessonDelta < 0
+                  ? `You're ${Math.abs(progressInsight.lessonDelta)} lesson${Math.abs(progressInsight.lessonDelta) !== 1 ? 's' : ''} behind schedule. Adjust your hours or extend your exam date.`
+                  : 'You\'re behind schedule. Adjust your plan to get back on track.'
+                }
               </p>
               
-              {rebalanceResult?.success && (
-                <div className="mt-3 p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg text-emerald-800 dark:text-emerald-200 text-sm">
-                  <CheckCircle className="w-4 h-4 inline mr-2" />
-                  {rebalanceResult.message}
-                </div>
-              )}
-              
-              {rebalanceResult && !rebalanceResult.success && (
-                <div className="mt-3 p-3 bg-red-100 dark:bg-red-900/30 rounded-lg text-red-800 dark:text-red-200 text-sm">
-                  {rebalanceResult.message}
-                </div>
-              )}
-              
-              {!showRebalanceOptions && !rebalanceResult?.success && (
-                <Button
-                  onClick={() => setShowRebalanceOptions(true)}
-                  variant="primary"
-                  className="mt-4"
-                >
-                  <RefreshCw className="w-4 h-4 mr-2" />
-                  Rebalance Plan
-                </Button>
-              )}
-              
-              {showRebalanceOptions && (
-                <div className="mt-4 space-y-3">
-                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                    Choose how to catch up:
-                  </p>
-                  
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <button
-                      onClick={() => handleRebalance('increase-pace')}
-                      disabled={isRebalancing}
-                      className="p-4 bg-white dark:bg-slate-800 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-primary-500 dark:hover:border-primary-400 text-left transition-colors disabled:opacity-50"
-                    >
-                      <div className="flex items-center gap-2 mb-1">
-                        {isRebalancing ? (
-                          <Loader2 className="w-4 h-4 animate-spin text-primary-600" />
-                        ) : (
-                          <Zap className="w-4 h-4 text-primary-600" />
-                        )}
-                        <span className="font-medium text-slate-900 dark:text-white">Study Harder</span>
-                      </div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
-                        Increase daily pace to catch up by exam date
-                      </p>
-                    </button>
-                    
-                    <button
-                      onClick={() => navigate('/study-plan/setup')}
-                      className="p-4 bg-white dark:bg-slate-800 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-primary-500 dark:hover:border-primary-400 text-left transition-colors"
-                    >
-                      <div className="flex items-center gap-2 mb-1">
-                        <Calendar className="w-4 h-4 text-primary-600" />
-                        <span className="font-medium text-slate-900 dark:text-white">Extend Date</span>
-                      </div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
-                        Move exam date to give yourself more time
-                      </p>
-                    </button>
-                  </div>
-                  
-                  <button
-                    onClick={() => setShowRebalanceOptions(false)}
-                    className="text-sm text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              )}
+              <Button
+                onClick={() => navigate('/study-plan/setup')}
+                variant="primary"
+                className="mt-4"
+              >
+                <RefreshCw className="w-4 h-4 mr-2" />
+                Adjust Plan
+              </Button>
             </div>
           </div>
         </div>
       )}
+      
+      {/* Last Week Recap */}
+      {(() => {
+        const prevWeekNum = (currentWeek?.weekNumber || 1) - 1;
+        const prevWeek = prevWeekNum >= 1 ? plan.weeks.find(w => w.weekNumber === prevWeekNum) : null;
+        if (!prevWeek) return null;
+        const comp = getWeekCompletion(prevWeekNum);
+        const qGoal = prevWeek.goals?.questions || 0;
+        return (
+          <div className="rounded-xl p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Week {prevWeekNum} Recap</p>
+                <p className="text-slate-900 dark:text-white font-semibold">
+                  {comp.done}/{comp.total} lessons completed
+                  {qGoal > 0 && <span className="text-slate-500 dark:text-slate-400 font-normal"> · {qGoal} questions targeted</span>}
+                </p>
+              </div>
+              <div className={clsx(
+                'text-2xl font-bold',
+                comp.pct === 100 ? 'text-emerald-600 dark:text-emerald-400' :
+                comp.pct >= 70 ? 'text-primary-600 dark:text-primary-400' :
+                'text-amber-600 dark:text-amber-400'
+              )}>
+                {comp.pct}%
+              </div>
+            </div>
+            {comp.pct < 100 && comp.total - comp.done > 0 && (
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                {comp.total - comp.done} lesson{comp.total - comp.done !== 1 ? 's' : ''} carry forward to this week
+              </p>
+            )}
+          </div>
+        );
+      })()}
+
+      {/* Progress Insight Banner */}
+      {progressInsight && (progressInsight.lessonsActual > 0 || progressInsight.questionsActual > 0) && (() => {
+        // Velocity projection is the best overall indicator.
+        // Don't show "behind schedule" warnings when projected to finish early.
+        const projectsEarly = progressInsight.daysBeforeExam !== null && progressInsight.daysBeforeExam >= 0;
+
+        // Before we have enough data, show a simple progress summary instead of a prediction
+        if (!progressInsight.hasEnoughData) {
+          return (
+            <div className="rounded-xl p-4 border bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 shrink-0" />
+                <div className="flex-1 space-y-1">
+                  <p className="font-medium text-slate-900 dark:text-white">
+                    Getting started — keep it up!
+                  </p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    {progressInsight.lessonsActual}/{progressInsight.lessonsExpected} lessons
+                    {' · '}
+                    {progressInsight.questionsActual}/{progressInsight.questionsExpected} questions expected by now
+                  </p>
+                  <p className="text-xs text-slate-400 dark:text-slate-500">
+                    Pacing predictions will appear after your first week of studying
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const isPositive = projectsEarly || progressInsight.lessonDelta >= 0;
+
+        return (
+        <div className={clsx(
+          'rounded-xl p-4 border',
+          isPositive
+            ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800'
+            : 'bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800'
+        )}>
+          <div className="flex items-start gap-3">
+            {isPositive
+              ? <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+              : <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400 mt-0.5 shrink-0" />
+            }
+            <div className="flex-1 space-y-1">
+              <p className="font-medium text-slate-900 dark:text-white">
+                {projectsEarly
+                  ? `On track to finish ${progressInsight.daysBeforeExam} day${progressInsight.daysBeforeExam !== 1 ? 's' : ''} before your exam`
+                  : progressInsight.lessonDelta > 0
+                    ? `${progressInsight.lessonDelta} lesson${progressInsight.lessonDelta !== 1 ? 's' : ''} ahead of schedule`
+                    : progressInsight.lessonDelta < 0
+                      ? `${Math.abs(progressInsight.lessonDelta)} lesson${Math.abs(progressInsight.lessonDelta) !== 1 ? 's' : ''} behind schedule`
+                      : 'Right on track with lessons'}
+              </p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                {progressInsight.lessonsActual}/{progressInsight.lessonsExpected} lessons
+                {' · '}
+                {progressInsight.questionsActual}/{progressInsight.questionsExpected} questions expected by now
+              </p>
+              {(progressInsight.lessonsPerDay > 0 || progressInsight.questionsPerDay || progressInsight.minutesPerDay) && (
+                <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-sm text-slate-500 dark:text-slate-400">
+                  {progressInsight.lessonsPerDay > 0 && (
+                    <span>{progressInsight.lessonsPerDay} lessons/day</span>
+                  )}
+                  {progressInsight.questionsPerDay != null && progressInsight.questionsPerDay > 0 && (
+                    <span>{progressInsight.questionsPerDay} Qs/day</span>
+                  )}
+                  {progressInsight.minutesPerDay != null && progressInsight.minutesPerDay > 0 && (
+                    <span>{progressInsight.minutesPerDay} min/day</span>
+                  )}
+                  {progressInsight.hasRecentVelocity && (
+                    <span className="text-slate-400 dark:text-slate-500">(7-day avg)</span>
+                  )}
+                </div>
+              )}
+              {!projectsEarly && progressInsight.predictedFinish && progressInsight.daysBeforeExam !== null && (
+                <p className="text-sm font-medium text-red-600 dark:text-red-400">
+                  {`At your pace, you'll finish ${Math.abs(progressInsight.daysBeforeExam)} day${Math.abs(progressInsight.daysBeforeExam) !== 1 ? 's' : ''} after your exam — consider adjusting`}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+        );
+      })()}
       
       
       {/* Week-by-Week Roadmap */}
@@ -451,10 +748,11 @@ const StudyPlan: React.FC = () => {
             const phaseConfig = PHASE_CONFIG[week.phase];
             const PhaseIcon = phaseConfig.icon;
             const isCurrentWeek = week.weekNumber === currentWeek?.weekNumber;
-            const isPast = toLocalDate(week.endDate) < today;
+            const isPast = startOfDay(toLocalDate(week.endDate)) < startOfDay(today);
             const isExpanded = expandedWeek === week.weekNumber;
             const weekLessons = getLessonsForWeek(week.weekNumber);
             const hasLessons = week.goals.lessons > 0;
+            const weekComp = getWeekCompletion(week.weekNumber);
             
             return (
               <div key={week.weekNumber}>
@@ -510,8 +808,17 @@ const StudyPlan: React.FC = () => {
                     {week.goals.questions > 0 && (
                       <span>{week.goals.questions} Qs</span>
                     )}
+                    {week.goals.flashcards > 0 && (
+                      <span>{week.goals.flashcards} FCs</span>
+                    )}
                     {week.goals.simulations > 0 && (
                       <span>{week.goals.simulations} TBS</span>
+                    )}
+                    {(week.goals as any).essays > 0 && (
+                      <span>{(week.goals as any).essays} essay{(week.goals as any).essays > 1 ? 's' : ''}</span>
+                    )}
+                    {(week.goals as any).caseStudies > 0 && (
+                      <span>{(week.goals as any).caseStudies} case{(week.goals as any).caseStudies > 1 ? 's' : ''}</span>
                     )}
                     {week.goals.mockExams > 0 && (
                       <span>{week.goals.mockExams} mock</span>
@@ -520,7 +827,23 @@ const StudyPlan: React.FC = () => {
                   
                   {/* Expand/Status indicator */}
                   <div className="shrink-0 flex items-center gap-2">
-                    {isPast ? (
+                    {weekComp.total > 0 ? (
+                      <div className="relative w-8 h-8">
+                        <svg className="w-8 h-8 -rotate-90" viewBox="0 0 32 32">
+                          <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" className="text-slate-200 dark:text-slate-700" strokeWidth="3" />
+                          <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor"
+                            className={clsx(
+                              weekComp.pct >= 100 ? 'text-green-500' : isCurrentWeek ? 'text-primary-500' : 'text-slate-400'
+                            )}
+                            strokeWidth="3" strokeLinecap="round"
+                            strokeDasharray={`${weekComp.pct * 0.8168} 81.68`}
+                          />
+                        </svg>
+                        <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-slate-600 dark:text-slate-300">
+                          {weekComp.pct}%
+                        </span>
+                      </div>
+                    ) : isPast ? (
                       <CheckCircle className="w-5 h-5 text-green-500" />
                     ) : isCurrentWeek ? (
                       <div className="w-5 h-5 rounded-full bg-primary-600 flex items-center justify-center">
@@ -540,74 +863,263 @@ const StudyPlan: React.FC = () => {
                 {/* Expanded content */}
                 {isExpanded && (
                   <div className="bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700">
-                    {hasLessons ? (
-                      // Show lessons for learning weeks
+                    {/* Lessons section */}
+                    {hasLessons && (
                       loadingLessons ? (
                         <div className="p-4 text-center text-slate-500">
                           Loading lessons...
                         </div>
                       ) : weekLessons.length > 0 ? (
                         <div className="divide-y divide-slate-100 dark:divide-slate-800">
-                          {weekLessons.map((lesson, idx) => (
-                            <div 
-                              key={lesson.id}
-                              className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
-                              onClick={() => navigate(`/lessons/${lesson.id}`)}
-                            >
-                              <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400">
-                                {idx + 1}
+                          {weekLessons.map((lesson, idx) => {
+                            const isCompleted = completedLessonIds.has(lesson.id);
+                            return (
+                              <div 
+                                key={lesson.id}
+                                className={clsx(
+                                  'px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer',
+                                  isCompleted && 'opacity-70'
+                                )}
+                                onClick={() => navigate(`/lessons/${lesson.id}`)}
+                              >
+                                {isCompleted ? (
+                                  <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center shrink-0">
+                                    <CheckCircle className="w-4 h-4 text-white" />
+                                  </div>
+                                ) : (
+                                  <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-medium text-slate-600 dark:text-slate-400 shrink-0">
+                                    {idx + 1}
+                                  </div>
+                                )}
+                                <div className="flex-1 min-w-0">
+                                  <p className={clsx(
+                                    'text-sm font-medium truncate',
+                                    isCompleted ? 'text-slate-500 dark:text-slate-400 line-through' : 'text-slate-900 dark:text-white'
+                                  )}>
+                                    {lesson.title}
+                                  </p>
+                                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                                    {lesson.duration || 30} min
+                                  </p>
+                                </div>
+                                <BookOpen className={clsx('w-4 h-4', isCompleted ? 'text-green-500' : 'text-slate-400')} />
                               </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
-                                  {lesson.title}
-                                </p>
-                                <p className="text-xs text-slate-500 dark:text-slate-400">
-                                  {lesson.duration || 30} min
-                                </p>
-                              </div>
-                              <BookOpen className="w-4 h-4 text-slate-400" />
-                            </div>
-                          ))}
+                            );
+                          })}
                         </div>
                       ) : (
                         <div className="p-4 text-center text-slate-500 text-sm">
                           No lessons assigned for this week
                         </div>
                       )
-                    ) : (
-                      // Show focus areas for review/exam weeks
-                      <div className="p-4 pl-20 space-y-3">
-                        <div className="text-sm text-slate-700 dark:text-slate-300">
-                          <p className="font-medium mb-2">
-                            {week.phase === 'exam-week' ? '🎯 Exam Week Focus' : '📚 Review Focus'}
-                          </p>
-                          <ul className="space-y-2 text-slate-600 dark:text-slate-400">
-                            {week.goals.questions > 0 && (
-                              <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
-                                Practice {week.goals.questions} questions across all topics
-                              </li>
-                            )}
-                            {week.goals.simulations > 0 && (
-                              <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                                Complete {week.goals.simulations} task-based simulations
-                              </li>
-                            )}
-                            {week.goals.mockExams > 0 && (
-                              <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                                Take {week.goals.mockExams} full mock exam{week.goals.mockExams > 1 ? 's' : ''}
-                              </li>
-                            )}
-                            {week.phase === 'exam-week' && (
-                              <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                                Light review only — trust your preparation!
-                              </li>
-                            )}
-                          </ul>
-                        </div>
+                    )}
+
+                    {/* Practice activities section */}
+                    {(week.goals.questions > 0 || week.goals.simulations > 0 || week.goals.flashcards > 0 || week.goals.mockExams > 0 || (week.goals as any).essays > 0 || (week.goals as any).caseStudies > 0) && (
+                      <div className={clsx(
+                        'divide-y divide-slate-100 dark:divide-slate-800',
+                        hasLessons && weekLessons.length > 0 && 'border-t border-slate-200 dark:border-slate-700'
+                      )}>
+                        {(() => {
+                          const wp = weeklyActivityProgress[week.weekNumber];
+                          const sectionLabel = hasLessons ? 'Practice Activities' : (week.phase === 'exam-week' ? '🎯 Exam Week Focus' : '📚 Review Focus');
+                          return (
+                            <>
+                              <div className="px-4 py-2 pl-20 flex items-center justify-between">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                                  {sectionLabel}
+                                </p>
+                                <p className="text-[10px] text-slate-400 dark:text-slate-500 italic">
+                                  Scheduled in your daily plan
+                                </p>
+                              </div>
+                              {week.goals.questions > 0 && (
+                                <div
+                                  className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
+                                  onClick={() => navigate('/practice')}
+                                >
+                                  <div className="w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center shrink-0">
+                                    <Target className="w-3.5 h-3.5 text-primary-600 dark:text-primary-400" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2">
+                                      <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                        Practice {week.goals.questions} MCQs
+                                      </p>
+                                      {wp && wp.mcqs > 0 && (
+                                        <span className={clsx(
+                                          'text-xs font-medium px-1.5 py-0.5 rounded-full',
+                                          wp.mcqs >= week.goals.questions
+                                            ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                            : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+                                        )}>
+                                          {wp.mcqs}/{week.goals.questions}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                      Multiple choice questions
+                                    </p>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                                </div>
+                              )}
+                              {week.goals.simulations > 0 && (
+                                <div
+                                  className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
+                                  onClick={() => navigate('/tbs')}
+                                >
+                                  <div className="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center shrink-0">
+                                    <ClipboardList className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2">
+                                      <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                        Complete {week.goals.simulations} TBS
+                                      </p>
+                                      {wp && wp.tbs > 0 && (
+                                        <span className={clsx(
+                                          'text-xs font-medium px-1.5 py-0.5 rounded-full',
+                                          wp.tbs >= week.goals.simulations
+                                            ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                            : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+                                        )}>
+                                          {wp.tbs}/{week.goals.simulations}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                      Task-based simulations
+                                    </p>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                                </div>
+                              )}
+                              {week.goals.flashcards > 0 && (
+                                <div
+                                  className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
+                                  onClick={() => navigate('/flashcards')}
+                                >
+                                  <div className="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
+                                    <Layers className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2">
+                                      <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                        Review {week.goals.flashcards} flashcards
+                                      </p>
+                                      {wp && wp.flashcards > 0 && (
+                                        <span className={clsx(
+                                          'text-xs font-medium px-1.5 py-0.5 rounded-full',
+                                          wp.flashcards >= week.goals.flashcards
+                                            ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                            : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+                                        )}>
+                                          {wp.flashcards}/{week.goals.flashcards}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                      Spaced repetition review
+                                    </p>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                                </div>
+                              )}
+                              {(week.goals as any).essays > 0 && (
+                                <div
+                                  className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
+                                  onClick={() => navigate('/practice?type=essay')}
+                                >
+                                  <div className="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center shrink-0">
+                                    <FileText className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2">
+                                      <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                        Complete {(week.goals as any).essays} essay{(week.goals as any).essays > 1 ? 's' : ''}
+                                      </p>
+                                      {wp && wp.essays > 0 && (
+                                        <span className={clsx(
+                                          'text-xs font-medium px-1.5 py-0.5 rounded-full',
+                                          wp.essays >= (week.goals as any).essays
+                                            ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                            : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+                                        )}>
+                                          {wp.essays}/{(week.goals as any).essays}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                      CMA essay questions
+                                    </p>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                                </div>
+                              )}
+                              {(week.goals as any).caseStudies > 0 && (
+                                <div
+                                  className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
+                                  onClick={() => navigate('/practice?type=case')}
+                                >
+                                  <div className="w-6 h-6 rounded-full bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center shrink-0">
+                                    <FileText className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2">
+                                      <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                        Complete {(week.goals as any).caseStudies} case stud{(week.goals as any).caseStudies > 1 ? 'ies' : 'y'}
+                                      </p>
+                                      {wp && wp.caseStudies > 0 && (
+                                        <span className={clsx(
+                                          'text-xs font-medium px-1.5 py-0.5 rounded-full',
+                                          wp.caseStudies >= (week.goals as any).caseStudies
+                                            ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                            : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+                                        )}>
+                                          {wp.caseStudies}/{(week.goals as any).caseStudies}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                      CFP case-based scenarios
+                                    </p>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                                </div>
+                              )}
+                              {week.goals.mockExams > 0 && (
+                                <div
+                                  className="px-4 py-3 pl-20 flex items-center gap-3 hover:bg-slate-100 dark:hover:bg-slate-800/50 cursor-pointer"
+                                  onClick={() => navigate('/practice')}
+                                >
+                                  <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center shrink-0">
+                                    <GraduationCap className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                      Take {week.goals.mockExams} mock exam{week.goals.mockExams > 1 ? 's' : ''}
+                                    </p>
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                      Full-length practice exam
+                                    </p>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                                </div>
+                              )}
+                              {week.phase === 'exam-week' && (
+                                <div className="px-4 py-3 pl-20 flex items-center gap-3">
+                                  <div className="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
+                                    <CheckCircle className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+                                  </div>
+                                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                                    Light review only — trust your preparation!
+                                  </p>
+                                </div>
+                              )}
+                            </>
+                          );
+                        })()}
                       </div>
                     )}
                   </div>
@@ -630,36 +1142,48 @@ const StudyPlan: React.FC = () => {
           
           <div className="space-y-4">
             {plan.milestones.map((milestone, index) => {
-              const isPast = toLocalDate(milestone.date) < today;
-              const isNext = !isPast && (index === 0 || toLocalDate(plan.milestones[index - 1].date) < today);
+              // Compare at day level, not time level - prevents "behind schedule" on same day
+              const datePassed = startOfDay(toLocalDate(milestone.date)) < startOfDay(today);
+              const { isComplete, progressPct } = getMilestoneCompletion(milestone);
+              const isNext = !isComplete && (index === 0 || getMilestoneCompletion(plan.milestones[index - 1]).isComplete);
               
               return (
                 <div 
                   key={milestone.id}
                   className={clsx(
                     'relative pl-10',
-                    isPast && 'opacity-60'
+                    isComplete && 'opacity-60'
                   )}
                 >
                   {/* Circle marker */}
                   <div className={clsx(
                     'absolute left-2 w-5 h-5 rounded-full flex items-center justify-center',
-                    isPast 
+                    isComplete 
                       ? 'bg-green-500' 
                       : isNext
                       ? 'bg-primary-600 ring-4 ring-primary-100 dark:ring-primary-900/50'
                       : 'bg-slate-300 dark:bg-slate-600'
                   )}>
-                    {isPast && <CheckCircle className="w-3 h-3 text-white" />}
+                    {isComplete && <CheckCircle className="w-3 h-3 text-white" />}
                   </div>
                   
                   <div>
                     <p className="font-medium text-slate-900 dark:text-white">
                       {milestone.label}
+                      {/* Show progress for phase/checkpoint milestones if in progress */}
+                      {!isComplete && (milestone.type === 'phase-start' || milestone.type === 'checkpoint') && progressPct > 0 && (
+                        <span className="ml-2 text-sm font-normal text-slate-500 dark:text-slate-400">
+                          ({progressPct}%)
+                        </span>
+                      )}
                     </p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                    <p className={clsx(
+                      'text-sm',
+                      datePassed && !isComplete ? 'text-amber-600 dark:text-amber-400' : 'text-slate-500 dark:text-slate-400'
+                    )}>
                       {format(toLocalDate(milestone.date), 'MMMM d, yyyy')}
-                      {milestone.description && ` • ${milestone.description}`}
+                      {datePassed && !isComplete && ' • Behind schedule'}
+                      {milestone.description && !datePassed && ` • ${milestone.description}`}
                     </p>
                   </div>
                 </div>
@@ -673,19 +1197,25 @@ const StudyPlan: React.FC = () => {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="bg-white dark:bg-slate-800 rounded-xl p-4 text-center">
           <p className="text-2xl font-bold text-slate-900 dark:text-white">
-            {plan.progress.lessonsCompleted}/{plan.progress.lessonsTotal}
+            {lessons.length > 0 ? lessons.filter(l => completedLessonIds.has(l.id)).length : plan.progress.lessonsCompleted}/{plan.progress.lessonsTotal}
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400">Lessons</p>
         </div>
         <div className="bg-white dark:bg-slate-800 rounded-xl p-4 text-center">
           <p className="text-2xl font-bold text-slate-900 dark:text-white">
-            {plan.progress.questionsAnswered}
+            {liveAccuracy?.questionsAnswered ?? plan.progress.questionsAnswered}
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400">Questions</p>
         </div>
         <div className="bg-white dark:bg-slate-800 rounded-xl p-4 text-center">
-          <p className="text-2xl font-bold text-slate-900 dark:text-white">
-            {plan.progress.accuracy}%
+          <p className={clsx(
+            'text-2xl font-bold',
+            (liveAccuracy?.accuracy ?? plan.progress.accuracy) >= 75 ? 'text-green-600' :
+            (liveAccuracy?.accuracy ?? plan.progress.accuracy) >= 50 ? 'text-amber-600' :
+            (liveAccuracy?.accuracy ?? plan.progress.accuracy) > 0 ? 'text-red-500' :
+            'text-slate-900 dark:text-white'
+          )}>
+            {liveAccuracy?.accuracy ?? plan.progress.accuracy}%
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400">Accuracy</p>
         </div>

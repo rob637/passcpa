@@ -136,6 +136,9 @@ export interface ExamSimulatorConfig<SectionId extends string = string> {
   
   // Allow section multi-select (for domain-based exams like CISA)
   allowMultiSectionSelect?: boolean;
+  
+  // Hide section selector when user has already selected their section
+  hideSectionSelector?: boolean;
 }
 
 // ============================================
@@ -262,6 +265,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     calculateResults,
     passingScore = 70,
     allowMultiSectionSelect = false,
+    hideSectionSelector = false,
     getModes,
     testingProvider,
   } = config;
@@ -601,11 +605,14 @@ export function ExamSimulatorTemplate<SectionId extends string>({
               </h1>
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              {courseDescription}
+              {hideSectionSelector && !allowMultiSectionSelect 
+                ? `Practice exams and simulations for ${sections[selectedSection]?.name || selectedSection}`
+                : courseDescription}
             </p>
           </div>
 
-          {/* Section Selection */}
+          {/* Section Selection - hidden if user already selected their section */}
+          {!hideSectionSelector && (
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-6">
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               {allowMultiSectionSelect ? 'Select Domains' : 'Select Exam Part'}
@@ -674,6 +681,7 @@ export function ExamSimulatorTemplate<SectionId extends string>({
               </div>
             )}
           </div>
+          )}
 
           {/* Mode Selection */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-6">

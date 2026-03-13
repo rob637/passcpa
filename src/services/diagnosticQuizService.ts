@@ -5,11 +5,11 @@
  * Benefits: Single source of truth, balanced answers, enhanced explanations.
  */
 
-import type { DiagnosticQuiz, DiagnosticQuestion } from '../../types/diagnostic';
-import type { CourseId } from '../../types/course';
-import type { Question } from '../../types';
-import { fetchQuestions } from '../../services/questionService';
-import { COURSES } from '../../courses';
+import type { DiagnosticQuiz, DiagnosticQuestion } from '../types/diagnostic';
+import type { CourseId, ExamSectionConfig } from '../types/course';
+import type { Question } from '../types';
+import { fetchQuestions } from './questionService';
+import { COURSES } from '../courses';
 
 // Blueprint area names for display (kept from original files)
 export const AREA_NAMES: Record<CourseId, Record<string, string>> = {
@@ -98,6 +98,28 @@ const QUIZ_CONFIG = {
 };
 
 /**
+ * Normalize legacy difficulty values to standard 'easy' | 'medium' | 'hard'
+ */
+function normalizeDifficulty(difficulty: string): 'easy' | 'medium' | 'hard' {
+  switch (difficulty) {
+    case 'beginner':
+    case 'foundational':
+    case 'easy':
+      return 'easy';
+    case 'intermediate':
+    case 'moderate':
+    case 'medium':
+      return 'medium';
+    case 'advanced':
+    case 'tough':
+    case 'hard':
+      return 'hard';
+    default:
+      return 'medium';
+  }
+}
+
+/**
  * Convert a Question from the main bank to DiagnosticQuestion format
  */
 function toDiagnosticQuestion(q: Question): DiagnosticQuestion {
@@ -108,7 +130,7 @@ function toDiagnosticQuestion(q: Question): DiagnosticQuestion {
     correctAnswer: q.correctAnswer,
     blueprintArea: q.blueprintArea || q.section,
     topic: q.topic,
-    difficulty: q.difficulty,
+    difficulty: normalizeDifficulty(q.difficulty),
     explanation: q.explanation,
   };
 }
@@ -186,7 +208,7 @@ export async function generateDiagnosticQuiz(
 
   // Get course info for title
   const course = COURSES[courseId];
-  const sectionInfo = course?.sections.find(s => s.id === section);
+  const sectionInfo = course?.sections.find((s: ExamSectionConfig) => s.id === section);
   const sectionName = sectionInfo?.name || section;
 
   return {
@@ -206,7 +228,7 @@ export async function generateDiagnosticQuiz(
 export function getAvailableSections(courseId: CourseId): string[] {
   const course = COURSES[courseId];
   if (!course) return [];
-  return course.sections.map(s => s.id);
+  return course.sections.map((s: ExamSectionConfig) => s.id);
 }
 
 /**

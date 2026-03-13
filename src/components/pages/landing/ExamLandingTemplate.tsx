@@ -516,7 +516,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </table>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
-                *Founding member annual rate — sign up by April 30, 2026, rate locked for 2 years. Regular annual pricing shown for competitors.
+                *Founding member annual rate — sign up by August 31, 2026, rate locked for 2 years. Regular annual pricing shown for competitors.
               </p>
             </div>
           </section>

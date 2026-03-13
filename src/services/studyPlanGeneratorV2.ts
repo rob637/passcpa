@@ -29,8 +29,6 @@ import {
   differenceInDays, 
   addDays, 
   format,
-  startOfWeek,
-  endOfWeek,
 } from 'date-fns';
 import type { CourseId } from '../types/course';
 import {
@@ -531,7 +529,7 @@ function allocatePhases(
 
 function generateWeeks(
   startDate: Date,
-  examDate: Date,
+  _examDate: Date,
   hoursPerDay: number,
   studyDaysPerWeek: number,
   experience: 'none' | 'some' | 'retake',
@@ -583,7 +581,7 @@ function generateWeeks(
       
       const weekStart = currentDate;
       const weekEnd = addDays(currentDate, 6);
-      const isLastWeek = weekNumber === totalWeeks;
+      const _isLastWeek = weekNumber === totalWeeks;
       
       // Calculate this week's content allocation
       const remainingWeeks = totalWeeks - weekNumber + 1;

@@ -24,7 +24,6 @@ import type {
   StudyPlanAlert,
   StudyPlanSummary,
   TodaysPlan,
-  TodayActivity,
 } from '../types/studyPlan';
 import { SECTION_STUDY_HOURS, EXPERIENCE_MULTIPLIERS } from '../types/studyPlan';
 import { db, auth } from '../config/firebase';
@@ -75,7 +74,10 @@ export function validatePlanInput(input: StudyPlanSetupInput): PlanValidation {
   }
   
   // WARNINGS - Require acknowledgment
-  const hoursNeeded = calculateHoursNeeded(input.section, input.priorExperience);
+  // Use resolveStudySection to normalize 'ALL' to the proper section key (e.g., 'CFP', 'CISA')
+  // This ensures single-exam courses get accurate hours from contentRegistry
+  const sectionKey = resolveStudySection(input.courseId, input.section) || input.section;
+  const hoursNeeded = calculateHoursNeeded(sectionKey, input.priorExperience);
   const hoursAvailable = calculateHoursAvailable(startDate, input.examDate, input.hoursPerDay, input.studyDaysPerWeek);
   const deficitPercentage = (hoursNeeded - hoursAvailable) / hoursNeeded;
   
@@ -105,17 +107,15 @@ export function validatePlanInput(input: StudyPlanSetupInput): PlanValidation {
 
 /**
  * Calculate the total study hours needed for a section
- * Uses contentRegistry as the source of truth for content counts
- * 
- * VoraPrep's adaptive learning should result in LESS time than industry averages
- * for users with some experience. We cap estimates accordingly.
+ * Uses contentRegistry as the source of truth for content counts.
+ * Hours are derived from actual lesson minutes, MCQ targets, TBS, flashcards, and mock exams.
  */
 export function calculateHoursNeeded(
   section: string,
   priorExperience: 'none' | 'some' | 'retake',
   diagnosticScore?: number
 ): number {
-  // Get industry baseline for this section
+  // Get industry baseline for this section (used as fallback only)
   const industryBaseline = (SECTION_STUDY_HOURS as Record<string, number>)[section] || 100;
   
   // Try contentRegistry first (preferred - uses real content data)
@@ -138,19 +138,6 @@ export function calculateHoursNeeded(
     const scoreAdjustment = 1 - ((diagnosticScore - 50) / 100);
     hours = hours * Math.max(0.5, Math.min(1.5, scoreAdjustment));
   }
-  
-  // VoraPrep efficiency cap: We should NOT recommend MORE time than industry average
-  // for users with experience. Our adaptive learning should save time.
-  // - 'none': Allow up to 15% more than industry (beginners need more time)
-  // - 'some': Cap at industry average (VoraPrep is efficient)
-  // - 'retake': Cap at 80% of industry (focused review)
-  const efficiencyCap: Record<string, number> = {
-    'none': industryBaseline * 1.15,
-    'some': industryBaseline * 1.0,
-    'retake': industryBaseline * 0.80,
-  };
-  const maxHours = efficiencyCap[priorExperience] ?? industryBaseline;
-  hours = Math.min(hours, maxHours);
   
   return Math.round(hours);
 }
@@ -192,42 +179,13 @@ export function calculateHoursAvailable(
 export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
   const startDate = input.startDate || new Date();
   
-  // Calculate hours needed - prefer contentRegistry, fallback to user-provided
-  let hoursNeeded: number;
-  
-  // Try contentRegistry first (always accurate)
+  // Calculate hours needed - ALWAYS use contentRegistry for industry-aligned hours
   const sectionKey = resolveStudySection(input.courseId, input.section);
-  const contentInfo = sectionKey ? getSectionContent(sectionKey) : null;
-  
-  if (contentInfo && contentInfo.counts.lessons > 0) {
-    // Use contentRegistry data
-    hoursNeeded = calculateHoursNeeded(sectionKey!, input.priorExperience, input.diagnosticScore);
-  } else if (input.totalLessonMinutes && input.totalLessons) {
-    // Use actual lesson time + estimated practice time
-    const lessonHours = input.totalLessonMinutes / 60;
-    
-    // Estimate practice time: 
-    // - ~3 MCQs per lesson topic for mastery (~1500 MCQs for 77 lessons)
-    // - 2 min per MCQ = ~50 hours of MCQs
-    // - Add flashcard/simulation time (~20% overhead)
-    const estimatedMCQCount = input.totalLessons * 20; // ~20 MCQs per lesson topic
-    const mcqHours = (estimatedMCQCount * MINUTES_PER_MCQ) / 60;
-    const flashcardHours = (input.totalLessons * 30 * MINUTES_PER_FLASHCARD) / 60; // 30 cards per lesson
-    const simulationHours = (input.totalLessons / 3 * MINUTES_PER_SIMULATION) / 60; // 1 TBS per 3 lessons (TBS = 50% of exam)
-    
-    hoursNeeded = lessonHours + mcqHours + flashcardHours + simulationHours;
-    
-    // Adjust for experience
-    const experienceMultiplier = (EXPERIENCE_MULTIPLIERS as Record<string, number>)[input.priorExperience] || 1.0;
-    hoursNeeded = Math.round(hoursNeeded * experienceMultiplier);
-  } else {
-    // Fall back to section-based estimate
-    hoursNeeded = calculateHoursNeeded(
-      input.section,
-      input.priorExperience,
-      input.diagnosticScore
-    );
-  }
+  const hoursNeeded = calculateHoursNeeded(
+    sectionKey || input.section,
+    input.priorExperience,
+    input.diagnosticScore
+  );
   
   const hoursAvailable = calculateHoursAvailable(
     startDate,
@@ -331,12 +289,21 @@ export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
     message = `Heads up: You have ${hoursAvailable} hours but typically need ~${hoursNeeded} hours for ${input.section}. We recommend adjusting your timeline.`;
   }
   
+  // Resolve industry benchmark for display
+  // Use the resolved sectionKey (handles CISA→'CISA', CFP→'CFP' for full-exam courses)
+  // Falls back to input.section, then to courseId uppercase
+  const industryBenchmark = (SECTION_STUDY_HOURS as Record<string, number>)[sectionKey ?? '']
+    || (SECTION_STUDY_HOURS as Record<string, number>)[input.section]
+    || (SECTION_STUDY_HOURS as Record<string, number>)[input.courseId.toUpperCase()]
+    || 100;
+
   return {
     isRealistic: hourDeficit <= 0,
     hoursNeeded,
     hoursAvailable,
     hourDeficit: Math.max(0, hourDeficit),
     hourSurplus,
+    industryBenchmark,
     suggestedActions,
     message,
     severity,
@@ -376,11 +343,23 @@ export function determinePhase(
   return 'foundation';
 }
 
-// Time constants for realistic planning
-const MINUTES_PER_MCQ = 2;              // Average time per MCQ
-const MINUTES_PER_FLASHCARD = 0.5;      // Average time per flashcard review
-const MINUTES_PER_SIMULATION = 30;      // Average TBS/simulation time
-const _MINUTES_PER_MOCK_EXAM = 240;      // 4-hour mock exam
+// Time constants for realistic planning — aligned with contentRegistry.ts TIME_CONSTANTS
+const MINUTES_PER_MCQ = 1.8;            // Matches contentRegistry mcq.firstAttempt
+const MINUTES_PER_FLASHCARD = 0.3;      // Matches contentRegistry flashcard.perCard (×4 sessions handled by adaptive passes)
+const MINUTES_PER_SIMULATION = 18;      // Matches contentRegistry tbs.firstAttempt
+const _MINUTES_PER_ESSAY = 30;          // CMA essays take ~30 min each (same as dailyPlanService)
+const _MINUTES_PER_CASE_STUDY = 25;     // CFP case studies take ~25 min each
+const _MINUTES_PER_MOCK_EXAM = 240;     // 4-hour mock exam
+
+// MCQ Review Passes — controls how many times a user reviews questions across the study period.
+// More passes = better retention through spaced repetition.
+// IMPORTANT: This does NOT reduce the time budget — if user commits to 3h/day, they get 3h/day.
+// The adaptive engine decides WHICH questions to show, not how much time to allocate.
+const MCQ_REVIEW_PASSES: Record<string, number> = {
+  'none': 1.0,     // Single pass through question bank
+  'some': 1.0,     // Single pass (was 0.60 — this incorrectly reduced time budget)
+  'retake': 1.0,   // Single pass (was 0.45 — focus on time, adaptive handles selection)
+};
 
 /**
  * Generate weekly breakdown for the study plan - CONTENT-FIRST
@@ -401,7 +380,10 @@ export function generateWeeks(
   studyDaysPerWeek: number,
   totalLessons: number = 0,
   totalLessonMinutes: number = 0,
-  lessonDurations: number[] = []
+  lessonDurations: number[] = [],
+  sectionId?: string,
+  priorExperience: 'none' | 'some' | 'retake' = 'some',
+  courseId?: string
 ): StudyPlanWeek[] {
   const weeks: StudyPlanWeek[] = [];
   const totalDays = differenceInDays(examDate, startDate);
@@ -444,6 +426,47 @@ export function generateWeeks(
     }
     weekPhases.push(phase);
   }
+  
+  // ==========================================================================
+  // CONTENT-FIRST: Get total content requirements from registry
+  // ==========================================================================
+  const sectionContent = sectionId ? getSectionContent(sectionId) : null;
+  const hasTBS = (sectionContent?.counts.tbs ?? 0) > 0;
+  
+  // Coverage multipliers based on experience
+  const mcqCoverageByExp = { none: 0.80, some: 0.60, retake: 0.45 };
+  const mcqCoverage = mcqCoverageByExp[priorExperience] ?? 0.60;
+  
+  // Calculate REQUIRED content to cover
+  const totalMCQs = sectionContent?.counts.mcqs ?? 500;
+  const requiredMCQs = Math.round(totalMCQs * mcqCoverage);
+  
+  const totalFlashcards = sectionContent?.counts.flashcards ?? 200;
+  // Dynamic cycles: target ~50 flashcards/week, capped at 3 cycles
+  // 50/week = ~10/day with 5 study days, ~5 minutes of work
+  const targetFlashcardsPerWeek = 50;
+  const flashcardCycles = Math.min(3, (targetFlashcardsPerWeek * totalWeeks) / Math.max(totalFlashcards, 1));
+  const requiredFlashcardReviews = Math.round(totalFlashcards * flashcardCycles);
+  
+  const totalTBS = sectionContent?.counts.tbs ?? 0;
+  const requiredTBS = Math.round(totalTBS * 1.5); // 1.5 passes through TBS
+  
+  const totalCaseStudies = sectionContent?.counts.caseStudies ?? 0;
+  const requiredCaseStudies = totalCaseStudies; // Cover all at least once
+  
+  // Phase weights for practice distribution (how much practice per phase type)
+  const phaseWeights: Record<StudyPhase, number> = {
+    'foundation': 0.6,      // Learning mode: lighter practice
+    'building': 1.0,        // Full practice
+    'reinforcement': 1.3,   // Heavy practice
+    'final-review': 0.7,    // Winding down, mock exams take time
+    'exam-week': 0.3,       // Light touch
+  };
+  
+  // Calculate total phase weight for distribution
+  const totalPhaseWeight = weekPhases.reduce((sum, p) => sum + phaseWeights[p], 0);
+  
+  logger.info(`Study plan: ${totalWeeks} weeks, ${requiredMCQs} MCQs, ${requiredFlashcardReviews} flashcard reviews, ${requiredTBS} TBS`);
   
   // ==========================================================================
   // CONTENT-FIRST DISTRIBUTION: Ensure ALL lessons are covered
@@ -510,6 +533,63 @@ export function generateWeeks(
   }
   
   // ==========================================================================
+  // CONTENT-FIRST: Distribute practice content based on phase weights
+  // ==========================================================================
+  
+  // Calculate practice distribution per week based on phase weight
+  const mcqDistribution: Map<number, number> = new Map();
+  const flashcardDistribution: Map<number, number> = new Map();
+  const tbsDistribution: Map<number, number> = new Map();
+  const caseStudyDistribution: Map<number, number> = new Map();
+  
+  // Distribute MCQs - heavier in reinforcement phase
+  let mcqAssigned = 0;
+  for (let i = 0; i < totalWeeks; i++) {
+    const phase = weekPhases[i];
+    const weight = phaseWeights[phase];
+    const weekShare = Math.round((weight / totalPhaseWeight) * requiredMCQs);
+    mcqDistribution.set(i, weekShare);
+    mcqAssigned += weekShare;
+  }
+  // Distribute any remainder to reinforcement weeks
+  const reinforcementWeeks = weekPhases.map((p, i) => ({ p, i })).filter(w => w.p === 'reinforcement');
+  let mcqRemainder = requiredMCQs - mcqAssigned;
+  for (const w of reinforcementWeeks) {
+    if (mcqRemainder <= 0) break;
+    const current = mcqDistribution.get(w.i) || 0;
+    mcqDistribution.set(w.i, current + 1);
+    mcqRemainder--;
+  }
+  
+  // Distribute flashcards evenly (spaced repetition works best spread out)
+  const flashcardsPerWeek = Math.ceil(requiredFlashcardReviews / totalWeeks);
+  for (let i = 0; i < totalWeeks; i++) {
+    flashcardDistribution.set(i, flashcardsPerWeek);
+  }
+  
+  // Distribute TBS - start in building phase, heavier in reinforcement
+  if (hasTBS && requiredTBS > 0) {
+    const tbsWeeks = weekPhases.map((p, i) => ({ p, i })).filter(w => 
+      ['building', 'reinforcement', 'final-review'].includes(w.p)
+    );
+    const tbsPerWeek = Math.ceil(requiredTBS / Math.max(1, tbsWeeks.length));
+    for (const w of tbsWeeks) {
+      tbsDistribution.set(w.i, tbsPerWeek);
+    }
+  }
+  
+  // Distribute case studies (CFP) - start in building phase
+  if (requiredCaseStudies > 0) {
+    const csWeeks = weekPhases.map((p, i) => ({ p, i })).filter(w => 
+      ['building', 'reinforcement', 'final-review'].includes(w.p)
+    );
+    const csPerWeek = Math.ceil(requiredCaseStudies / Math.max(1, csWeeks.length));
+    for (const w of csWeeks) {
+      caseStudyDistribution.set(w.i, Math.min(csPerWeek, 3)); // Cap at 3/week
+    }
+  }
+  
+  // ==========================================================================
   // Build weeks with lesson distribution + practice activities
   // ==========================================================================
   
@@ -524,87 +604,50 @@ export function generateWeeks(
     const weekLessonMinutes = lessonMinutesDistribution.get(i) || 0;
     
     // Cap lesson time at 70% of weekly budget so there's always meaningful
-    // practice time. TBS is 50% of the CPA exam — if lessons consume 90%+
-    // of the week's time, students get almost no TBS practice.
+    // practice time. For exams with TBS, students need TBS practice time.
     const maxLessonMinutes = weeklyMinutes * 0.70;
     const effectiveLessonMinutes = Math.min(weekLessonMinutes, maxLessonMinutes);
     
     // Calculate remaining time for practice activities
     const remainingMinutes = Math.max(0, weeklyMinutes - effectiveLessonMinutes);
     
-    // Allocate practice time based on phase
-    let mcqPercent: number;
-    let flashcardPercent: number;
-    let simulationPercent: number;
-    let mockExamPercent: number;
+    // ========================================================================
+    // CONTENT-FIRST: Use pre-calculated distributions, not percentages
+    // ========================================================================
+    const questionCount = mcqDistribution.get(i) || 0;
+    const flashcardCount = flashcardDistribution.get(i) || 0;
+    const simulationCount = tbsDistribution.get(i) || 0;
+    const caseStudyCount = caseStudyDistribution.get(i) || 0;
     
-    switch (phase) {
-      case 'foundation':
-        mcqPercent = 0.50;
-        flashcardPercent = 0.35;
-        simulationPercent = 0.15;
-        mockExamPercent = 0;
-        break;
-      case 'building':
-        mcqPercent = 0.50;
-        flashcardPercent = 0.25;
-        simulationPercent = 0.25;
-        mockExamPercent = 0;
-        break;
-      case 'reinforcement':
-        mcqPercent = 0.50;
-        flashcardPercent = 0.20;
-        simulationPercent = 0.30;
-        mockExamPercent = 0;
-        break;
-      case 'final-review':
-        mcqPercent = 0.35;
-        flashcardPercent = 0.15;
-        simulationPercent = 0.20;
-        mockExamPercent = 0.30;
-        break;
-      case 'exam-week':
-        mcqPercent = 0.50;
-        flashcardPercent = 0.30;
-        simulationPercent = 0;
-        mockExamPercent = 0.20;
-        break;
-      default:
-        mcqPercent = 0.50;
-        flashcardPercent = 0.25;
-        simulationPercent = 0.25;
-        mockExamPercent = 0;
+    // Mock exams in final-review and exam-week phases
+    const mockExamCount = (phase === 'final-review' || phase === 'exam-week') ? 1 : 0;
+    
+    // CMA Essay Goals: Essays are 25% of the CMA exam score
+    let essayCount = 0;
+    if (courseId === 'cma' && phase !== 'foundation' && phase !== 'exam-week') {
+      const essaysPerPhase: Record<string, number> = {
+        'building': 1,
+        'reinforcement': 2,
+        'final-review': 1,
+      };
+      essayCount = essaysPerPhase[phase] || 0;
     }
     
-    // Calculate activity counts from remaining time
-    const mcqTimeBudget = remainingMinutes * mcqPercent;
-    const flashcardTimeBudget = remainingMinutes * flashcardPercent;
-    const simulationTimeBudget = remainingMinutes * simulationPercent;
-    
-    const questionCount = Math.round(mcqTimeBudget / MINUTES_PER_MCQ);
-    const flashcardCount = Math.round(flashcardTimeBudget / MINUTES_PER_FLASHCARD);
-    
-    // TBS is 50% of CPA exam - ensure minimum practice per phase
-    // This prevents lessons from consuming all time and leaving no TBS practice
-    const minSimulationsPerPhase: Record<string, number> = {
-      'foundation': 2,      // Start building TBS skills early
-      'building': 3,        // Ramp up TBS
-      'reinforcement': 4,   // Heavy TBS practice
-      'final-review': 3,    // Maintain TBS skills
-      'exam-week': 1,       // Light TBS review
-    };
-    const minSimulations = minSimulationsPerPhase[phase] || 1;
-    const calculatedSimulations = Math.round(simulationTimeBudget / MINUTES_PER_SIMULATION);
-    const simulationCount = Math.max(calculatedSimulations, minSimulations);
-    const mockExamCount = mockExamPercent > 0 ? 1 : 0;
+    // Calculate expected time for this week's activities
+    const mcqMinutes = questionCount * MINUTES_PER_MCQ;
+    const flashcardMinutes = flashcardCount * MINUTES_PER_FLASHCARD;
+    const tbsMinutes = simulationCount * MINUTES_PER_SIMULATION;
+    const practiceMinutes = mcqMinutes + flashcardMinutes + tbsMinutes;
     
     const goals = {
       lessons: weekLessonCount,
       lessonMinutes: Math.round(effectiveLessonMinutes),
       questions: questionCount,
-      questionMinutes: Math.round(mcqTimeBudget),
+      questionMinutes: Math.round(mcqMinutes),
       flashcards: flashcardCount,
       simulations: simulationCount,
+      essays: essayCount,
+      caseStudies: caseStudyCount,
       mockExams: mockExamCount,
     };
     
@@ -843,7 +886,10 @@ export function generateStudyPlan(
     input.studyDaysPerWeek,
     totalLessons,
     totalLessonMinutes,
-    lessonDurations
+    lessonDurations,
+    sectionKey || undefined,
+    input.priorExperience,
+    input.courseId
   );
   
   // Generate milestones
@@ -906,258 +952,6 @@ export function generateStudyPlan(
     createdAt: new Date(),
     updatedAt: new Date(),
   };
-}
-
-/**
- * Generate today's plan from the study plan
- */
-export function generateTodaysPlan(studyPlan: StudyPlan): TodaysPlan {
-  const today = new Date();
-  const todayStr = format(today, 'yyyy-MM-dd');
-  
-  // Find current week
-  const currentWeek = studyPlan.weeks.find(w =>
-    isWithinInterval(today, { start: w.startDate, end: w.endDate })
-  );
-  
-  if (!currentWeek) {
-    // Before plan starts or after exam
-    return {
-      date: todayStr,
-      phase: studyPlan.currentPhase,
-      isRestDay: true,
-      restDayReason: 'Your study plan hasn\'t started yet or the exam has passed.',
-      activities: [],
-      estimatedMinutes: 0,
-      completedMinutes: 0,
-    };
-  }
-  
-  // Check if it's a rest day (based on study days per week)
-  const dayOfWeek = today.getDay(); // 0 = Sunday
-  // For now, assume study days are Monday-Saturday if 6 days, etc.
-  const isRestDay = (7 - studyPlan.studyDaysPerWeek) > (6 - dayOfWeek);
-  
-  if (isRestDay) {
-    return {
-      date: todayStr,
-      phase: currentWeek.phase,
-      isRestDay: true,
-      restDayReason: 'Today is a scheduled rest day. Take a break!',
-      activities: [],
-      estimatedMinutes: 0,
-      completedMinutes: 0,
-      message: '🧘 Rest is part of the plan. Your brain consolidates learning while you rest.',
-    };
-  }
-  
-  // Generate activities based on phase
-  const activities: TodayActivity[] = [];
-  const dailyHours = studyPlan.hoursPerDay;
-  const dailyMinutes = dailyHours * 60;
-  
-  switch (currentWeek.phase) {
-    case 'foundation':
-      // 40% lessons, 40% practice, 20% flashcards
-      activities.push({
-        id: 'lesson-1',
-        type: 'lesson',
-        title: 'Continue Lessons',
-        description: 'Work through your next lesson',
-        estimatedMinutes: Math.round(dailyMinutes * 0.4),
-        priority: 'required',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      activities.push({
-        id: 'mcq-1',
-        type: 'mcq',
-        title: 'Practice Questions',
-        description: 'Test your knowledge with MCQs',
-        estimatedMinutes: Math.round(dailyMinutes * 0.4),
-        priority: 'required',
-        params: { 
-          section: studyPlan.section,
-          questionCount: Math.round(dailyMinutes * 0.4 / 2), // ~2 min per question
-        },
-        completed: false,
-      });
-      activities.push({
-        id: 'flashcards-1',
-        type: 'flashcards',
-        title: 'Review Flashcards',
-        description: 'Reinforce key concepts',
-        estimatedMinutes: Math.round(dailyMinutes * 0.2),
-        priority: 'recommended',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      break;
-      
-    case 'building':
-      // 30% lessons, 50% practice, 20% simulations
-      activities.push({
-        id: 'lesson-1',
-        type: 'lesson',
-        title: 'Continue Lessons',
-        description: 'Expand your knowledge',
-        estimatedMinutes: Math.round(dailyMinutes * 0.3),
-        priority: 'required',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      activities.push({
-        id: 'mcq-1',
-        type: 'mcq',
-        title: 'Practice Questions',
-        description: 'Build exam readiness',
-        estimatedMinutes: Math.round(dailyMinutes * 0.5),
-        priority: 'required',
-        params: { 
-          section: studyPlan.section,
-          questionCount: Math.round(dailyMinutes * 0.5 / 2),
-        },
-        completed: false,
-      });
-      activities.push({
-        id: 'tbs-1',
-        type: 'tbs',
-        title: 'Task-Based Simulation',
-        description: 'Practice exam-style simulations',
-        estimatedMinutes: Math.round(dailyMinutes * 0.2),
-        priority: 'recommended',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      break;
-      
-    case 'reinforcement':
-      // 10% lessons, 60% practice, 30% simulations
-      activities.push({
-        id: 'mcq-1',
-        type: 'mcq',
-        title: 'Practice Questions',
-        description: 'Focus on weak areas',
-        estimatedMinutes: Math.round(dailyMinutes * 0.6),
-        priority: 'required',
-        params: { 
-          section: studyPlan.section,
-          questionCount: Math.round(dailyMinutes * 0.6 / 2),
-        },
-        completed: false,
-      });
-      activities.push({
-        id: 'tbs-1',
-        type: 'tbs',
-        title: 'Task-Based Simulations',
-        description: 'Master complex scenarios',
-        estimatedMinutes: Math.round(dailyMinutes * 0.3),
-        priority: 'required',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      activities.push({
-        id: 'review-1',
-        type: 'review',
-        title: 'Review Weak Areas',
-        description: 'Targeted lesson review',
-        estimatedMinutes: Math.round(dailyMinutes * 0.1),
-        priority: 'recommended',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      break;
-      
-    case 'final-review':
-      activities.push({
-        id: 'mcq-1',
-        type: 'mcq',
-        title: 'Timed Practice',
-        description: 'Exam-paced questions',
-        estimatedMinutes: Math.round(dailyMinutes * 0.5),
-        priority: 'required',
-        params: { 
-          section: studyPlan.section,
-          questionCount: Math.round(dailyMinutes * 0.5 / 1.5), // Faster pace
-        },
-        completed: false,
-      });
-      activities.push({
-        id: 'flashcards-1',
-        type: 'flashcards',
-        title: 'Quick Review',
-        description: 'Refresh key concepts',
-        estimatedMinutes: Math.round(dailyMinutes * 0.3),
-        priority: 'recommended',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      activities.push({
-        id: 'review-1',
-        type: 'review',
-        title: 'Weak Area Review',
-        description: 'Final polish on trouble spots',
-        estimatedMinutes: Math.round(dailyMinutes * 0.2),
-        priority: 'optional',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      break;
-      
-    case 'exam-week':
-      activities.push({
-        id: 'review-1',
-        type: 'review',
-        title: 'Light Review',
-        description: 'Gentle refresh only',
-        estimatedMinutes: Math.round(dailyMinutes * 0.5),
-        priority: 'recommended',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      activities.push({
-        id: 'flashcards-1',
-        type: 'flashcards',
-        title: 'Key Concepts',
-        description: 'High-yield flashcards',
-        estimatedMinutes: Math.round(dailyMinutes * 0.3),
-        priority: 'optional',
-        params: { section: studyPlan.section },
-        completed: false,
-      });
-      break;
-  }
-  
-  const estimatedMinutes = activities.reduce((sum, a) => sum + a.estimatedMinutes, 0);
-  
-  return {
-    date: todayStr,
-    phase: currentWeek.phase,
-    isRestDay: false,
-    activities,
-    estimatedMinutes,
-    completedMinutes: 0,
-    message: getTodayMessage(currentWeek.phase, studyPlan.health),
-  };
-}
-
-function getTodayMessage(phase: StudyPhase, health: PlanHealth): string {
-  if (health === 'critical' || health === 'at-risk') {
-    return '⚠️ You\'re falling behind. Let\'s focus on catching up today.';
-  }
-  
-  switch (phase) {
-    case 'foundation':
-      return '📚 Focus on understanding the concepts. Take your time with lessons.';
-    case 'building':
-      return '🏗️ You\'re building momentum! Balance learning with practice.';
-    case 'reinforcement':
-      return '💪 Practice makes perfect. Focus on your weak areas today.';
-    case 'final-review':
-      return '🎯 Final stretch! Mock exams and targeted review.';
-    case 'exam-week':
-      return '🌟 Trust your preparation. Light review and stay confident!';
-  }
 }
 
 // ============================================================================
@@ -1289,7 +1083,9 @@ export async function incrementStudyPlanProgress(
   }
 ): Promise<void> {
   try {
-    const planKey = `${courseId}_${section}`;
+    // Normalize section to match how plans are stored (uppercase)
+    const normalizedSection = resolveStudySection(courseId, section) || section.toUpperCase();
+    const planKey = `${courseId}_${normalizedSection}`;
     const planRef = doc(db, 'users', userId, 'studyPlans', planKey);
     
     // Check if plan exists
@@ -1434,6 +1230,11 @@ export async function incrementStudyPlanProgress(
     
     await updateDoc(planRef, updatePayload);
     
+    // Notify UI components to refresh (e.g., StudyPlan page, nav dot)
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('studyPlanUpdated'));
+    }
+    
     logger.info(`Updated study plan progress: ${planKey}, accuracy: ${newAccuracy}%, health: ${newHealth}`);
   } catch (error) {
     logger.error('Error incrementing study plan progress:', error);
@@ -1474,7 +1275,9 @@ export async function rebalanceStudyPlan(
   options: RebalanceOptions
 ): Promise<RebalanceResult> {
   try {
-    const planKey = `${courseId}_${section}`;
+    // Normalize section to match how plans are stored (uppercase)
+    const normalizedSection = resolveStudySection(courseId, section) || section.toUpperCase();
+    const planKey = `${courseId}_${normalizedSection}`;
     const planRef = doc(db, 'users', userId, 'studyPlans', planKey);
     
     const planSnap = await getDoc(planRef);
@@ -1519,13 +1322,18 @@ export async function rebalanceStudyPlan(
     const remainingLessonMinutes = Math.round(lessonsRemaining * avgLessonMinutes);
     
     // Regenerate remaining weeks
+    const rebalanceSectionKey = resolveStudySection(courseId, section);
     const newWeeks = generateWeeks(
       today,
       examDate,
       options.newHoursPerDay || plan.hoursPerDay,
       studyDaysPerWeek,
       lessonsRemaining,
-      remainingLessonMinutes
+      remainingLessonMinutes,
+      [],
+      rebalanceSectionKey || undefined,
+      plan.setup?.priorExperience || 'some',
+      courseId
     );
     
     // Merge: keep completed weeks, replace future weeks

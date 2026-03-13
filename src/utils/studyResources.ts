@@ -69,7 +69,12 @@ const CMA_RESOURCES: CourseStudyResources = {
     { id: 'cma-mn-var', type: 'mnemonic', title: 'Variance Mnemonics', description: 'AQ-SQ, AP-SP variance analysis', section: 'CMA1' },
     { id: 'cma-mn-ratio', type: 'mnemonic', title: 'Ratio Mnemonics', description: 'Liquidity, profitability, leverage ratios', section: 'CMA2' },
   ],
-  references: [],
+  references: [
+    { id: 'cma-ref-blueprint-p1', type: 'reference', title: 'Part 1 Content Specification Outline', description: 'Official IMA blueprint: Financial Planning, Performance, and Analytics', section: 'CMA1' },
+    { id: 'cma-ref-blueprint-p2', type: 'reference', title: 'Part 2 Content Specification Outline', description: 'Official IMA blueprint: Strategic Financial Management', section: 'CMA2' },
+    { id: 'cma-ref-handbook', type: 'reference', title: 'CMA Candidate Handbook', description: 'Exam policies, scheduling, scoring, and requirements' },
+    { id: 'cma-ref-gleim', type: 'reference', title: 'Learning Outcome Statements', description: 'Detailed LOS for each topic area' },
+  ],
 };
 
 // EA Resources

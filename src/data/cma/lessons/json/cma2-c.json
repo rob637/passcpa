@@ -1900,5 +1900,2201 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA2-C-013",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Sensitivity and Scenario Analysis",
+    "description": "Learn techniques for analyzing how changes in key variables impact financial outcomes",
+    "order": 34,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Sensitivity analysis",
+      "Scenario analysis",
+      "What-if analysis",
+      "Monte Carlo simulation"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Real-world decisions involve uncertainty! CMAs use sensitivity and scenario analysis to understand how changes in assumptions affect outcomes. These techniques help quantify risk and support better decision-making under uncertainty."
+        },
+        {
+          "title": "Sensitivity Analysis",
+          "type": "text",
+          "content": "**Definition:** Changing ONE variable at a time to see its impact on the outcome\n\n**Also Called:** \"What-if\" analysis\n\n**Purpose:**\n• Identify which variables have the greatest impact\n• Determine \"break-even\" values for key inputs\n• Focus management attention on critical drivers\n\n**Example - Project NPV:**\nBase case NPV: $500,000\nIf sales volume decreases 10%: NPV = $320,000\nIf variable costs increase 10%: NPV = $380,000\nIf price decreases 10%: NPV = $100,000\n\n**Insight:** Price is the most sensitive variable - protect it!"
+        },
+        {
+          "title": "🧠 Memory Aid: Sensitivity vs. Scenario",
+          "type": "callout",
+          "content": "**\"Single vs. Story\"**\n\n**Sensitivity = Single variable**\n• Change ONE thing at a time\n• All else held constant\n• Isolates impact of each input\n\n**Scenario = Story (multiple variables)**\n• Change SEVERAL things together\n• Represents plausible future states\n• Captures correlations between variables"
+        },
+        {
+          "title": "Tornado Diagrams",
+          "type": "text",
+          "content": "**Visual Tool:** Shows relative sensitivity of each variable\n\n**How It Works:**\n1. For each input, calculate outcome at low and high values\n2. Plot the range of outcomes as horizontal bars\n3. Sort by magnitude (widest bar on top)\n\n**Interpretation:**\n• Longest bars = Most sensitive variables\n• Short bars = Variables with minimal impact\n• Shape resembles a tornado\n\n**Use:** Quickly identify which assumptions deserve the most scrutiny"
+        },
+        {
+          "title": "Scenario Analysis",
+          "type": "text",
+          "content": "**Definition:** Changing MULTIPLE variables simultaneously to represent coherent future states\n\n**Common Scenarios:**\n• **Base Case:** Most likely assumptions\n• **Best Case:** Optimistic assumptions (top 10%)\n• **Worst Case:** Pessimistic assumptions (bottom 10%)\n\n**Example - New Product Launch:**\n                  Price    Volume    NPV\nBest Case:        $120     50,000    $2.5M\nBase Case:        $100     35,000    $1.2M\nWorst Case:       $80      20,000    ($0.3M)\n\n**Key Point:** Scenarios combine related changes (recession = lower volume AND lower prices)"
+        },
+        {
+          "title": "Building Realistic Scenarios",
+          "type": "table",
+          "headers": [
+            "Scenario Type",
+            "Variable Changes",
+            "Probability"
+          ],
+          "rows": [
+            [
+              "Best Case",
+              "Revenue +20%, Costs -5%, Growth sustained",
+              "10-20%"
+            ],
+            [
+              "Base Case",
+              "Expected values for all inputs",
+              "50-60%"
+            ],
+            [
+              "Worst Case",
+              "Revenue -15%, Costs +10%, Market downturn",
+              "10-20%"
+            ],
+            [
+              "Stress Test",
+              "Extreme but plausible adverse conditions",
+              "<5%"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Scenario Limitations",
+          "type": "warning",
+          "content": "**Common Mistake:** Using arbitrary scenarios\n\n**Problems:**\n• Best/worst cases may be unrealistic extremes\n• Variables may not move independently\n• Limited number of scenarios tested\n• Equal-weight scenarios ignore probabilities\n\n**Solution:** \n• Ground scenarios in historical data or expert judgment\n• Recognize correlations (recession affects BOTH revenue and costs)\n• Assign probabilities to scenarios\n• Use Monte Carlo for comprehensive analysis"
+        },
+        {
+          "title": "Monte Carlo Simulation",
+          "type": "text",
+          "content": "**Definition:** Running thousands of scenarios using random values from probability distributions\n\n**How It Works:**\n1. Define probability distributions for each uncertain input\n2. Computer randomly samples values from each distribution\n3. Calculate outcome for each random combination\n4. Repeat thousands of times\n5. Analyze the distribution of outcomes\n\n**Output:**\n• Expected value (mean outcome)\n• Standard deviation (risk)\n• Probability of loss or breakeven\n• Value at risk (VaR)\n\n**Advantage:** Captures full range of possibilities, not just 3 scenarios"
+        },
+        {
+          "title": "Interpreting Simulation Results",
+          "type": "text",
+          "content": "**Example Output:**\nMean NPV: $1.2 million\nStandard deviation: $0.8 million\nProbability of negative NPV: 12%\n\n**Managerial Insights:**\n• Expected value positive, but significant uncertainty\n• 12% chance of losing money\n• Results are roughly normally distributed\n\n**Decision Rule:**\n• Risk-averse: May reject due to 12% loss probability\n• Risk-neutral: Accept based on positive expected value\n• Compare to alternatives and company risk appetite"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sensitivity analysis changes one variable at a time to isolate impact",
+            "Tornado diagrams visually rank variables by sensitivity",
+            "Scenario analysis changes multiple related variables together",
+            "Base/best/worst case scenarios represent coherent future states",
+            "Variables often move together - capture correlations in scenarios",
+            "Monte Carlo simulation runs thousands of random scenarios",
+            "Simulation provides probability distributions, not single answers",
+            "Use scenario probabilities to calculate expected values"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Sensitivity Analysis Application",
+          "knowledgeCheck": {
+            "question": "A project manager has identified that a 5% decrease in selling price reduces project NPV from $2 million to $0.5 million, while a 5% increase in material costs reduces NPV to $1.6 million. What should the manager conclude?",
+            "options": [
+              "Material costs are more important to monitor",
+              "Selling price is more sensitive and critical to protect",
+              "The project should be rejected due to price risk",
+              "Both variables have equal sensitivity"
+            ],
+            "correctIndex": 1,
+            "explanation": "A 5% change in price causes a $1.5 million NPV reduction (from $2M to $0.5M), while the same percentage change in material costs only reduces NPV by $0.4 million. Price is clearly more sensitive and requires more management attention.",
+            "hint": "Compare the magnitude of NPV change for each variable."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Scenario Analysis",
+          "knowledgeCheck": {
+            "question": "When building a worst-case scenario for a new product launch, which combination of assumptions is MOST realistic?",
+            "options": [
+              "Lower prices, higher volume, and reduced marketing costs",
+              "Lower prices, lower volume, and higher marketing costs to stimulate demand",
+              "Higher prices, lower volume, and stable costs",
+              "Stable prices, higher volume, and lower production costs"
+            ],
+            "correctIndex": 1,
+            "explanation": "A worst-case scenario should reflect realistically correlated adverse conditions. If demand is weak (lower volume), the company may need to reduce prices AND increase marketing spending to stimulate sales - these factors typically move together during difficult market conditions.",
+            "hint": "Think about what variables would realistically change together in difficult times."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Monte Carlo Benefits",
+          "reveal": {
+            "question": "What advantages does Monte Carlo simulation offer over traditional scenario analysis?",
+            "answer": "Monte Carlo simulation: (1) Considers thousands of scenarios instead of just 3, (2) Uses probability distributions instead of point estimates, (3) Provides probability of achieving various outcomes (e.g., 15% chance of loss), (4) Captures the full range of uncertainty, and (5) Can incorporate correlations between variables."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-014",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Decision Trees and Expected Value Analysis",
+    "description": "Structure complex decisions with multiple possible outcomes and probabilities",
+    "order": 35,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Decision trees",
+      "Expected value",
+      "Decision analysis",
+      "Risk assessment"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Business decisions rarely have certain outcomes! Decision trees help CMAs structure complex choices, incorporate probabilities, and calculate expected values. This is essential for capital budgeting, product launches, and strategic planning."
+        },
+        {
+          "title": "What Is a Decision Tree?",
+          "type": "text",
+          "content": "**Definition:** A graphical tool that maps decisions, possible outcomes, and their probabilities\n\n**Components:**\n\n**Decision Nodes (Squares)**\n• Points where manager chooses\n• \"What should we do?\"\n\n**Chance Nodes (Circles)**\n• Points where outcomes are uncertain\n• \"What might happen?\"\n\n**Branches**\n• Lines showing alternatives\n• Connect nodes to outcomes\n\n**End Points**\n• Final outcomes (payoffs)\n• Usually in dollar terms"
+        },
+        {
+          "title": "Expected Value Calculation",
+          "type": "text",
+          "content": "**Expected Value (EV):** Probability-weighted average of outcomes\n\n**Formula:**\nEV = Σ (Probability × Outcome)\n\n**Simple Example:**\n\n**Investment Decision:**\n• 60% chance of $100,000 profit\n• 40% chance of $30,000 loss\n\n**EV = (0.60 × $100,000) + (0.40 × -$30,000)**\n**EV = $60,000 - $12,000 = $48,000**\n\n**Interpretation:**\nOn average, this investment would return $48,000\n\n**Decision Rule:**\nChoose the alternative with highest expected value"
+        },
+        {
+          "title": "🧠 Memory Aid: Building Decision Trees",
+          "type": "callout",
+          "content": "**\"FOLD\" - Work BACKWARD through the tree:**\n\n**F**ind end values (payoffs)\n**O**utcome probabilities applied\n**L**ast chance nodes calculated first\n**D**ecision nodes pick best value\n\n**Key:** Always calculate from right to left!\nStart at endpoints, work backward to first decision."
+        },
+        {
+          "title": "Decision Tree Example",
+          "type": "text",
+          "content": "**Scenario:** Launch new product or not?\n\n**Option 1: Launch**\n• Strong demand (50%): $500,000 profit\n• Weak demand (50%): $100,000 loss\n\n**Option 2: Don't Launch**\n• Certain outcome: $0\n\n**Calculate EV for Option 1:**\nEV = (0.50 × $500,000) + (0.50 × -$100,000)\nEV = $250,000 - $50,000 = $200,000\n\n**Compare to Option 2:**\nDon't launch EV = $0\n\n**Decision:** Launch (EV = $200,000 > $0)\n\n**Note:** This assumes management is risk-neutral"
+        },
+        {
+          "title": "Multi-Stage Decisions",
+          "type": "text",
+          "content": "**Sequential Decisions:**\nSome trees have multiple decision points\n\n**Example: Test Market First?**\n\n**Decision 1:** Conduct market test ($50,000 cost)?\n\n**If test positive (60% chance):**\n• Decision 2: Launch or not?\n• Launch success rate higher (80%)\n\n**If test negative (40% chance):**\n• Decision 2: Launch anyway or not?\n• Launch success rate lower (30%)\n\n**Process:**\n1. Calculate EVs at each end\n2. Fold back through chance nodes\n3. Choose at decision nodes\n4. Compare test vs no-test paths"
+        },
+        {
+          "title": "⚠️ Exam Trap: Expected Value Limitations",
+          "type": "warning",
+          "content": "**EV assumes risk neutrality!**\n\n**Problems with EV:**\n• Ignores risk preferences\n• One-time decisions differ from repeated\n• Same EV can have very different risks\n\n**Example:**\nOption A: EV = $100,000 (certain)\nOption B: EV = $100,000 (50% chance of $250,000, 50% chance of -$50,000)\n\n**Same EV, very different risk profiles!**\n\n**Consider also:**\n• Standard deviation of outcomes\n• Worst-case scenario\n• Company's risk tolerance"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Decision trees structure complex choices with uncertain outcomes",
+            "Squares = decision nodes (choices); Circles = chance nodes (uncertainty)",
+            "Expected Value = Σ(Probability × Outcome)",
+            "Work backward from endpoints to first decision",
+            "Choose alternative with highest expected value",
+            "EV assumes risk neutrality - real decisions should consider risk tolerance",
+            "Especially useful for sequential decisions with multiple stages"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Expected Value Calculation",
+          "knowledgeCheck": {
+            "question": "A company is considering a capital investment with the following possible outcomes: 30% probability of $400,000 profit, 50% probability of $100,000 profit, and 20% probability of $150,000 loss. What is the expected value of this investment?",
+            "options": [
+              "$100,000",
+              "$140,000",
+              "$170,000",
+              "$200,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "EV = (0.30 × $400,000) + (0.50 × $100,000) + (0.20 × -$150,000) = $120,000 + $50,000 - $30,000 = $140,000.",
+            "hint": "Multiply each outcome by its probability and sum the results."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-015",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Regression Analysis for Decision Making",
+    "description": "Use statistical relationships to forecast costs, revenues, and business outcomes",
+    "order": 55,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Regression analysis",
+      "Cost estimation",
+      "Forecasting",
+      "Statistical analysis"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Regression analysis separates fixed from variable costs with statistical rigor! CMAs use it for cost estimation, sales forecasting, and understanding relationships between business drivers. It's more sophisticated than high-low method and provides measures of reliability."
+        },
+        {
+          "title": "Simple Linear Regression Basics",
+          "type": "text",
+          "content": "**The Equation:**\n\n**Y = a + bX**\n\n**Where:**\n• Y = Dependent variable (what we're predicting)\n• a = Intercept (fixed cost in cost estimation)\n• b = Slope (variable cost per unit of activity)\n• X = Independent variable (activity driver)\n\n**Example: Total Cost Estimation**\nY = Total maintenance cost\nX = Machine hours\na = Fixed maintenance cost\nb = Variable cost per machine hour\n\n**If regression gives:**\nY = $5,000 + $12X\n\nFixed cost: $5,000\nVariable cost: $12 per machine hour"
+        },
+        {
+          "title": "Coefficient of Determination (R²)",
+          "type": "text",
+          "content": "**Definition:** Percentage of variation in Y explained by X\n\n**Range:** 0 to 1 (or 0% to 100%)\n\n**Interpretation:**\n• R² = 0.85 means 85% of cost variation explained by activity\n• Higher R² = better fit\n• Lower R² = other factors affect Y\n\n**Guidelines:**\n• R² > 0.80: Strong relationship\n• R² = 0.50-0.80: Moderate relationship\n• R² < 0.50: Weak relationship\n\n**Exam Tip:** R² tells you how reliable the equation is for predictions"
+        },
+        {
+          "title": "🧠 Memory Aid: Regression Output",
+          "type": "callout",
+          "content": "**\"ICE\" - Understanding Output:**\n\n**I**ntercept = Fixed cost (where line crosses Y-axis)\n**C**oefficient = Variable cost (slope of line)\n**E**xplained = R² (how much variation is explained)\n\n**Prediction:**\nPlug your X value into Y = a + bX"
+        },
+        {
+          "title": "Standard Error of the Estimate",
+          "type": "text",
+          "content": "**Definition:** Average distance observations fall from regression line\n\n**Lower is better:**\n• Small SE = predictions closer to actual\n• Large SE = more scatter around line\n\n**Creating Prediction Intervals:**\n• ±1 SE captures ~68% of observations\n• ±2 SE captures ~95% of observations\n\n**Example:**\nPredicted cost: $50,000\nSE: $3,000\n\n95% confidence: $44,000 to $56,000"
+        },
+        {
+          "title": "Multiple Regression",
+          "type": "text",
+          "content": "**More than one independent variable:**\n\n**Y = a + b₁X₁ + b₂X₂ + ... + bₙXₙ**\n\n**Example: Overhead Cost**\n\nY = $10,000 + $15(Machine Hours) + $25(Setups)\n\n**Interpretation:**\n• Fixed overhead: $10,000\n• $15 per machine hour\n• $25 per setup\n\n**Advantages over simple regression:**\n• Captures multiple cost drivers\n• More accurate predictions\n• Better represents complex cost behavior"
+        },
+        {
+          "title": "⚠️ Exam Trap: Regression Assumptions",
+          "type": "warning",
+          "content": "**For valid regression:**\n\n• **Linearity** - Relationship is actually linear\n• **Independence** - Observations unrelated to each other\n• **Normality** - Errors normally distributed\n• **Homoscedasticity** - Equal variance at all X levels\n\n**Watch for:**\n• Outliers (can skew results)\n• Multicollinearity (correlated X variables)\n• Extrapolation (predicting outside data range)\n\n**Exam Note:** If R² is low, the equation is unreliable!"
+        },
+        {
+          "title": "Regression vs High-Low Method",
+          "type": "comparison",
+          "items": [
+            {
+              "name": "High-Low Method",
+              "points": [
+                "Uses only two data points",
+                "Simple to calculate",
+                "Ignores all other data",
+                "No reliability measure"
+              ]
+            },
+            {
+              "name": "Regression Analysis",
+              "points": [
+                "Uses all data points",
+                "Requires statistical software",
+                "More accurate estimates",
+                "Provides R² and standard error"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Y = a + bX: a is fixed cost, b is variable cost per unit",
+            "R² measures how well X explains variation in Y (higher = better)",
+            "Standard error measures prediction accuracy (lower = better)",
+            "Multiple regression uses multiple drivers for complex costs",
+            "Regression is more reliable than high-low method",
+            "Don't extrapolate beyond the range of data used",
+            "Check assumptions and watch for outliers"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Regression Interpretation",
+          "knowledgeCheck": {
+            "question": "A company develops a regression equation for maintenance cost: Y = $8,500 + $6.50X, where X is machine hours. The R² is 0.91. If the company operates 2,000 machine hours next month, what is the predicted maintenance cost?",
+            "options": [
+              "$6,500",
+              "$8,500",
+              "$21,500",
+              "$23,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "Predicted cost = $8,500 + ($6.50 × 2,000) = $8,500 + $13,000 = $21,500. The R² of 0.91 indicates this is a reliable estimate (91% of variation explained).",
+            "hint": "Substitute the X value into the regression equation."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-016",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Sensitivity Analysis and What-If Scenarios",
+    "description": "Test how sensitive outcomes are to changes in key assumptions",
+    "order": 56,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Sensitivity analysis",
+      "What-if analysis",
+      "Key assumptions",
+      "Risk assessment"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Business decisions are based on ASSUMPTIONS that may not hold! Sensitivity analysis shows how changes in key variables affect outcomes, helping identify which assumptions matter most and where to focus attention."
+        },
+        {
+          "title": "What Is Sensitivity Analysis?",
+          "type": "text",
+          "content": "**Definition:** Testing how changes in input variables affect output results\n\n**Key Questions:**\n• What happens if sales are 10% lower?\n• How much can costs rise before we lose money?\n• Which variable has the biggest impact on NPV?\n\n**Approach:**\n1. Build a model with base-case assumptions\n2. Change one variable at a time\n3. Observe impact on outcome\n4. Identify most sensitive variables\n5. Focus risk management there"
+        },
+        {
+          "title": "Breakeven Sensitivity Example",
+          "type": "text",
+          "content": "**Base Case:**\n• Price: $100\n• Variable cost: $60\n• Fixed costs: $400,000\n• Breakeven: 10,000 units\n\n**What if price drops to $90?**\n• CM = $90 - $60 = $30\n• New breakeven = $400,000 / $30 = 13,333 units\n• A 10% price drop requires 33% more sales!\n\n**What if variable cost rises to $70?**\n• CM = $100 - $70 = $30\n• New breakeven = $400,000 / $30 = 13,333 units\n\n**Insight:** Outcomes are very sensitive to anything affecting CM!"
+        },
+        {
+          "title": "🧠 Memory Aid: Sensitivity Variables",
+          "type": "callout",
+          "content": "**\"PROVE\" - Key Variables to Test:**\n\n**P**rice (selling price)\n**R**evenue (volume/units sold)\n**O**perating costs (fixed and variable)\n**V**ariable rate (VC per unit)\n**E**conomic factors (interest, inflation)\n\n**Test each one: How much can it change before the decision changes?**"
+        },
+        {
+          "title": "Scenario Analysis",
+          "type": "text",
+          "content": "**Goes beyond one-variable-at-a-time:**\n\n**Create complete scenarios:**\n\n**Optimistic Scenario**\n• High sales, low costs, favorable economy\n• Best-case outcome\n\n**Base Case Scenario**\n• Most likely assumptions\n• Expected outcome\n\n**Pessimistic Scenario**\n• Low sales, high costs, recession\n• Worst-case outcome\n\n**Analysis:**\n• Range of possible outcomes\n• What must go right for success?\n• What could cause failure?"
+        },
+        {
+          "title": "Tornado Diagram",
+          "type": "text",
+          "content": "**Visual tool for sensitivity:**\n\n**Format:** Horizontal bar chart showing impact of each variable\n\n**Construction:**\n1. Vary each input by same % (e.g., ±10%)\n2. Calculate impact on output (e.g., NPV)\n3. Plot bars longest to shortest\n\n**Shape:** Looks like tornado (widest at top)\n\n**Interpretation:**\n• Top bars = most sensitive variables\n• Focus risk management on these\n• Less sensitive variables at bottom"
+        },
+        {
+          "title": "⚠️ Exam Trap: Sensitivity vs Other Analyses",
+          "type": "warning",
+          "content": "**Know the differences:**\n\n**Sensitivity Analysis:**\n• Changes ONE variable at a time\n• Shows which variables matter most\n\n**Scenario Analysis:**\n• Changes MULTIPLE variables together\n• Shows range of outcomes\n\n**Simulation (Monte Carlo):**\n• Uses PROBABILITY distributions\n• Runs thousands of scenarios\n• Produces probability of outcomes\n\n**Exam Tip:** Sensitivity analysis = one variable at a time!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sensitivity analysis tests how changes in inputs affect outputs",
+            "Change ONE variable at a time to isolate its impact",
+            "Identify which assumptions have biggest effect on results",
+            "Scenario analysis changes multiple variables together",
+            "Tornado diagrams visualize relative sensitivity",
+            "Focus risk management on highly sensitive variables",
+            "Different from simulation which uses probability distributions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Sensitivity Analysis",
+          "knowledgeCheck": {
+            "question": "A project's NPV is most affected by changes in sales volume and least affected by changes in the discount rate. When constructing a tornado diagram, which variable would appear at the TOP of the chart?",
+            "options": [
+              "Discount rate",
+              "Sales volume",
+              "Initial investment",
+              "They would appear equal"
+            ],
+            "correctIndex": 1,
+            "explanation": "In a tornado diagram, variables with the greatest impact on the output appear at the top. Sales volume, having the most effect on NPV, would be the top bar (widest). Discount rate would appear lower on the chart.",
+            "hint": "Tornado diagrams order variables from most sensitive (top) to least sensitive (bottom)."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-017",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Marginal Analysis and Incremental Decisions",
+    "description": "Use marginal costs and revenues to make optimal short-term decisions",
+    "order": 57,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Marginal analysis",
+      "Incremental analysis",
+      "Relevant costs",
+      "Decision making"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Every business decision should focus on what CHANGES! Marginal analysis isolates incremental costs and revenues to determine the financial impact of choosing one alternative over another. This is the foundation of relevant cost accounting."
+        },
+        {
+          "title": "Marginal Analysis Fundamentals",
+          "type": "text",
+          "content": "**Core Principle:** Compare only the costs and revenues that DIFFER between alternatives\n\n**Key Terms:**\n• **Marginal Cost:** Additional cost of one more unit\n• **Marginal Revenue:** Additional revenue from one more unit\n• **Incremental Cost:** Total additional cost of a decision\n• **Incremental Revenue:** Total additional revenue from a decision\n\n**Decision Rule:**\nIf Incremental Revenue > Incremental Cost → Accept\nIf Incremental Revenue < Incremental Cost → Reject"
+        },
+        {
+          "title": "What Costs Are Relevant?",
+          "type": "table",
+          "headers": [
+            "Relevant Costs",
+            "Not Relevant"
+          ],
+          "rows": [
+            [
+              "Future costs",
+              "Past (sunk) costs"
+            ],
+            [
+              "Costs that differ",
+              "Costs same for all alternatives"
+            ],
+            [
+              "Cash flows",
+              "Non-cash allocations"
+            ],
+            [
+              "Opportunity costs",
+              "Unavoidable fixed costs"
+            ],
+            [
+              "Variable costs (usually)",
+              "Allocated fixed overhead"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Relevant Costs",
+          "type": "callout",
+          "content": "**\"FORD\" Rule for Relevant Costs:**\n\n**F**uture (not past/sunk)\n**O**pportunity (what are we giving up?)\n**R**elevant to decision (differs between alternatives)\n**D**ifferential (changes with the choice)\n\n**If it doesn't differ, ignore it!**"
+        },
+        {
+          "title": "Special Order Decision",
+          "type": "text",
+          "content": "**Scenario:** Customer offers lower price for large order\n\n**Analysis:**\n• Compare incremental revenue to incremental cost\n• Usually incremental cost = variable costs only\n• Fixed costs typically don't change\n\n**Example:**\nSpecial order: 1,000 units at $45 each\nVariable cost: $30 per unit\nAllocated fixed cost: $20 per unit\n\n**Wrong analysis:** $45 - $50 = ($5) loss per unit\n**Right analysis:** $45 - $30 = $15 contribution per unit\n\n**Accept if:**\n1. Capacity available\n2. Won't affect regular sales\n3. Incremental revenue > incremental cost"
+        },
+        {
+          "title": "Make or Buy Decision",
+          "type": "text",
+          "content": "**Scenario:** Should we make a component or buy it?\n\n**Relevant Make Costs:**\n• Variable manufacturing costs\n• Avoidable fixed costs\n• Opportunity cost of space/capacity\n\n**Irrelevant:**\n• Unavoidable fixed overhead\n• Allocated costs that won't go away\n\n**Example:**\nMake: Variable $8 + Avoidable fixed $2 = $10\nBuy: Purchase price $11\n\n**Decision:** Make saves $1 per unit\n\n**But consider:** What else could we do with capacity?\nIf freed capacity earns $50,000 and we need 40,000 units:\nOpportunity cost = $50,000 / 40,000 = $1.25 per unit\nNew comparison: Make $10 + $1.25 = $11.25 vs Buy $11\n**Now buy is better!**"
+        },
+        {
+          "title": "⚠️ Exam Trap: Sunk Costs",
+          "type": "warning",
+          "content": "**Never include sunk costs!**\n\n**Common Sunk Costs:**\n• Cost of equipment already purchased\n• R&D already spent\n• Training already completed\n• Book value of existing assets\n\n**Exam Example:**\n\"Machine originally cost $100,000, now has book value of $40,000\"\n\n**Trap:** Students include $40,000 in decision\n**Reality:** The $100,000 (and $40,000 book value) is GONE - it's irrelevant to future decisions!\n\n**Only current market/salvage value matters (what we could GET for it)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Marginal analysis compares only costs/revenues that differ",
+            "Relevant costs are future and differential",
+            "Sunk costs are never relevant - they're already spent",
+            "Opportunity costs are relevant - what are we giving up?",
+            "Special orders: focus on variable costs if capacity available",
+            "Make vs buy: include avoidable fixed costs and opportunity costs",
+            "Allocated fixed overhead is usually NOT relevant"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Relevant Costs",
+          "knowledgeCheck": {
+            "question": "A company is considering a special order. The product's full cost is $50 (variable $35, fixed $15). The special order price is $42. No additional fixed costs would be incurred. What is the change in profit per unit if the order is accepted?",
+            "options": [
+              "($8) decrease",
+              "($7) decrease",
+              "$7 increase",
+              "$42 increase"
+            ],
+            "correctIndex": 2,
+            "explanation": "Incremental revenue is $42 per unit. Incremental cost is only the $35 variable cost (fixed costs don't change). Contribution = $42 - $35 = $7 increase in profit per unit. The $15 fixed cost is not relevant because it won't change.",
+            "hint": "Only variable costs are relevant when fixed costs won't change."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-018",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Break-Even Analysis Extensions",
+    "description": "Apply CVP to multi-product companies, target profit, and margin of safety analysis",
+    "order": 58,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Break-even analysis",
+      "Multi-product CVP",
+      "Target profit",
+      "Margin of safety"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Most companies sell multiple products with different margins! CMAs must extend basic break-even analysis to handle product mix, target profit scenarios, and risk assessment through margin of safety. These are HEAVILY TESTED topics!"
+        },
+        {
+          "title": "Basic Break-Even Review",
+          "type": "text",
+          "content": "**Single Product:**\n\n**Break-Even Units = Fixed Costs / CM per Unit**\n\n**Break-Even Sales $ = Fixed Costs / CM Ratio**\n\n**Where:**\n• CM per Unit = Price - Variable Cost per Unit\n• CM Ratio = CM per Unit / Price\n\n**Example:**\nPrice = $100, VC = $60, FC = $200,000\nCM = $40, CM Ratio = 40%\n\nBE Units = $200,000 / $40 = 5,000 units\nBE Sales = $200,000 / 0.40 = $500,000"
+        },
+        {
+          "title": "Multi-Product Break-Even",
+          "type": "text",
+          "content": "**Requires weighted-average CM:**\n\n**Step 1:** Determine sales mix (units or revenue)\n**Step 2:** Calculate weighted-average CM or CM ratio\n**Step 3:** Apply standard break-even formula\n\n**Example:**\nProduct A: $50 CM, 60% of sales mix\nProduct B: $30 CM, 40% of sales mix\n\nWeighted CM = ($50 × 0.60) + ($30 × 0.40)\nWeighted CM = $30 + $12 = $42\n\nIf FC = $210,000:\nBE = $210,000 / $42 = 5,000 total units\n• Product A: 5,000 × 60% = 3,000 units\n• Product B: 5,000 × 40% = 2,000 units"
+        },
+        {
+          "title": "🧠 Memory Aid: Target Profit",
+          "type": "callout",
+          "content": "**Think of target profit as \"extra fixed costs to cover\":**\n\n**Units for Target Profit = (FC + Target Profit) / CM**\n\n**Why it works:**\n• First cover fixed costs (break-even)\n• Then earn target profit\n• Each unit contributes CM toward both\n\n**For after-tax target:**\nPre-tax needed = Target / (1 - Tax Rate)"
+        },
+        {
+          "title": "Target Profit Analysis",
+          "type": "text",
+          "content": "**Before-Tax Target:**\n\nUnits = (FC + Target Profit) / CM per Unit\n\n**After-Tax Target:**\n\nPre-tax Profit Needed = After-tax Target / (1 - Tax Rate)\n\n**Example:**\nFC = $200,000, CM = $40\nTarget after-tax profit = $75,000\nTax rate = 25%\n\nPre-tax needed = $75,000 / (1 - 0.25) = $100,000\n\nUnits = ($200,000 + $100,000) / $40 = 7,500 units\n\n**Check:**\nRevenue: 7,500 × $100 = $750,000\nVariable: 7,500 × $60 = $450,000\nCM: $300,000\nFixed: $200,000\nPre-tax profit: $100,000\nTax (25%): $25,000\nAfter-tax: $75,000 ✓"
+        },
+        {
+          "title": "Margin of Safety",
+          "type": "text",
+          "content": "**Definition:** How far sales can drop before reaching break-even\n\n**Formulas:**\n\nMargin of Safety (units) = Current Sales - BE Sales\n\nMargin of Safety (%) = (Current Sales - BE Sales) / Current Sales\n\n**Example:**\nCurrent sales: 8,000 units\nBreak-even: 5,000 units\n\nMoS = 8,000 - 5,000 = 3,000 units\nMoS % = 3,000 / 8,000 = 37.5%\n\n**Interpretation:**\nSales can drop 37.5% before company loses money\nHigher MoS = Lower risk\nLower MoS = Higher risk"
+        },
+        {
+          "title": "⚠️ Exam Trap: Sales Mix Changes",
+          "type": "warning",
+          "content": "**Multi-product break-even assumes CONSTANT sales mix!**\n\n**If mix changes:**\n• Weighted-average CM changes\n• Break-even point changes\n• Must recalculate\n\n**Example Impact:**\nShift from high-margin to low-margin product → Higher BE\nShift from low-margin to high-margin product → Lower BE\n\n**Exam often tests:**\n1. Calculate current weighted CM\n2. Change the mix\n3. Calculate new weighted CM\n4. Calculate new break-even"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Multi-product requires weighted-average contribution margin",
+            "Weight CM by sales mix percentage",
+            "Target profit: add target to fixed costs before dividing by CM",
+            "After-tax target: gross up for taxes first",
+            "Margin of safety = Current sales - Break-even sales",
+            "Higher MoS % means lower risk of losses",
+            "Sales mix changes require recalculation of break-even"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Multi-Product Break-Even",
+          "knowledgeCheck": {
+            "question": "Company sells Product X (CM $20, 70% of mix) and Product Y (CM $50, 30% of mix). Fixed costs are $145,000. What is the break-even in total units?",
+            "options": [
+              "2,900 units",
+              "4,833 units",
+              "5,000 units",
+              "7,250 units"
+            ],
+            "correctIndex": 2,
+            "explanation": "Weighted CM = ($20 × 0.70) + ($50 × 0.30) = $14 + $15 = $29. Break-even = $145,000 / $29 = 5,000 total units. (X: 3,500 units, Y: 1,500 units)",
+            "hint": "Calculate weighted-average CM first, then apply standard BE formula."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-019",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Linear Programming for Resource Optimization",
+    "description": "Use constrained optimization to maximize profit or minimize cost with limited resources",
+    "order": 59,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Linear programming",
+      "Constraints",
+      "Optimization",
+      "Resource allocation"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "When resources are limited, how do you maximize profit? Linear programming systematically finds the optimal product mix given constraints. CMAs use LP to make data-driven resource allocation decisions rather than guesswork."
+        },
+        {
+          "title": "Linear Programming Basics",
+          "type": "text",
+          "content": "**Components of an LP Problem:**\n\n**1. Decision Variables**\n• What we're deciding (usually quantities)\n• Example: Units of Product A and Product B\n\n**2. Objective Function**\n• What we're maximizing or minimizing\n• Usually: Max Profit or Min Cost\n• Example: Max Z = $40A + $50B\n\n**3. Constraints**\n• Resource limitations\n• Example: 2A + 3B ≤ 100 (labor hours)\n\n**4. Non-negativity**\n• Variables ≥ 0\n• Can't produce negative units"
+        },
+        {
+          "title": "Example Problem",
+          "type": "text",
+          "content": "**Scenario:**\n• Product X: CM = $30, requires 2 machine hours, 3 labor hours\n• Product Y: CM = $40, requires 4 machine hours, 2 labor hours\n• Available: 100 machine hours, 90 labor hours\n\n**Formulation:**\n\n**Maximize:** Z = 30X + 40Y\n\n**Subject to:**\n• 2X + 4Y ≤ 100 (machine hours)\n• 3X + 2Y ≤ 90 (labor hours)\n• X, Y ≥ 0\n\n**Goal:** Find values of X and Y that maximize Z"
+        },
+        {
+          "title": "🧠 Memory Aid: The Simplex Rule",
+          "type": "callout",
+          "content": "**For graphical LP (2 variables), optimal solution is at a CORNER!**\n\n**Steps:**\n1. Graph all constraint lines\n2. Identify feasible region (where all constraints satisfied)\n3. Find corner points of feasible region\n4. Evaluate objective function at each corner\n5. Pick the corner with best value\n\n**Why corners?** Linear functions are optimized at vertices, not interior points."
+        },
+        {
+          "title": "Solving the Example",
+          "type": "text",
+          "content": "**Find corner points:**\n\n**Point 1:** X=0, Y=0 → Z = $0\n\n**Point 2:** X=0, Y=25 (from machine constraint)\n• Z = 30(0) + 40(25) = $1,000\n\n**Point 3:** X=30, Y=0 (from labor constraint)\n• Z = 30(30) + 40(0) = $900\n\n**Point 4:** Intersection of constraints\n• 2X + 4Y = 100 and 3X + 2Y = 90\n• Solving: X = 20, Y = 15\n• Z = 30(20) + 40(15) = $1,200\n\n**Optimal Solution:** X = 20, Y = 15\n**Maximum Profit:** $1,200"
+        },
+        {
+          "title": "Sensitivity Analysis in LP",
+          "type": "text",
+          "content": "**Shadow Price (Dual Value):**\n• Value of ONE additional unit of constraint\n• How much would profit increase if you had one more machine hour?\n\n**Allowable Increase/Decrease:**\n• Range where optimal solution doesn't change\n• CM can change within this range\n\n**Binding Constraints:**\n• At their maximum/minimum\n• These limit the solution\n• Have positive shadow prices\n\n**Non-binding (Slack):**\n• Not fully used\n• Shadow price = 0 (more wouldn't help)"
+        },
+        {
+          "title": "⚠️ Exam Trap: When LP Works",
+          "type": "warning",
+          "content": "**LP requires LINEAR relationships:**\n\n✓ **Works when:**\n• Constant CM per unit\n• Constant resource usage per unit\n• Relationships can be expressed as linear equations\n\n✗ **Doesn't work when:**\n• Economies of scale (cost per unit decreases with volume)\n• Learning curves (labor decreases with experience)\n• Quantity discounts (prices change with volume)\n\n**Exam Note:** If problem has non-linear elements, LP is not appropriate!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "LP maximizes/minimizes objective function subject to constraints",
+            "Decision variables, objective function, constraints, non-negativity",
+            "Optimal solution is at a corner point of feasible region",
+            "Shadow price = value of one additional unit of constraint",
+            "Binding constraints limit the solution (shadow price > 0)",
+            "Slack in constraints means extra capacity (shadow price = 0)",
+            "Only works with linear relationships"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Linear Programming",
+          "knowledgeCheck": {
+            "question": "In an LP problem, the machine hours constraint has a shadow price of $8. What does this mean?",
+            "options": [
+              "Each product requires $8 of machine time",
+              "One additional machine hour would increase profit by $8",
+              "The company is using 8 machine hours",
+              "Machine hours cost $8 per hour"
+            ],
+            "correctIndex": 1,
+            "explanation": "Shadow price (dual value) represents the incremental value of one additional unit of a constrained resource. An $8 shadow price means adding one more machine hour would increase profit by $8 (within the allowable range).",
+            "hint": "Shadow price measures how much the objective function improves with one more unit of the constraint."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-020",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Operating Leverage and Risk",
+    "description": "Understand how cost structure affects profit volatility and business risk",
+    "order": 60,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Operating leverage",
+      "Cost structure",
+      "Business risk",
+      "Degree of operating leverage"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cost structure is a strategic choice with risk implications! High fixed costs amplify both profits and losses. CMAs analyze operating leverage to help management understand the risk/reward tradeoff of different cost structures."
+        },
+        {
+          "title": "Operating Leverage Defined",
+          "type": "text",
+          "content": "**Definition:** The degree to which a firm uses fixed costs in its cost structure\n\n**High Operating Leverage:**\n• High proportion of fixed costs\n• Low variable costs per unit\n• Examples: Airlines, software companies, factories\n\n**Low Operating Leverage:**\n• Low fixed costs\n• High variable costs per unit\n• Examples: Consulting firms, retailers\n\n**Key Insight:**\nHigh leverage = High risk AND high reward\nSmall sales changes cause large profit swings"
+        },
+        {
+          "title": "Degree of Operating Leverage (DOL)",
+          "type": "text",
+          "content": "**Formula:**\n\n**DOL = Contribution Margin / Operating Income**\n\n**Alternative Formula:**\n\n**DOL = % Change in Operating Income / % Change in Sales**\n\n**Example:**\nSales: $500,000\nVariable costs: $300,000\nContribution margin: $200,000\nFixed costs: $150,000\nOperating income: $50,000\n\n**DOL = $200,000 / $50,000 = 4.0**\n\n**Interpretation:**\nA 10% increase in sales will cause a 40% increase in operating income!"
+        },
+        {
+          "title": "🧠 Memory Aid: Leverage Sensitivity",
+          "type": "callout",
+          "content": "**\"Closer to breakeven = Higher leverage\"**\n\n**Why?** When operating income is small, DOL is high:\nDOL = CM / OI\n\nSmall denominator = Big ratio!\n\n**At breakeven:** DOL approaches infinity\n**Far from breakeven:** DOL approaches 1\n\n**Practical meaning:**\nCompanies near breakeven see dramatic profit swings from small sales changes"
+        },
+        {
+          "title": "Comparing Cost Structures",
+          "type": "table",
+          "headers": [
+            "High Operating Leverage",
+            "Low Operating Leverage"
+          ],
+          "rows": [
+            [
+              "High fixed costs",
+              "Low fixed costs"
+            ],
+            [
+              "Low variable costs/unit",
+              "High variable costs/unit"
+            ],
+            [
+              "Higher breakeven point",
+              "Lower breakeven point"
+            ],
+            [
+              "Higher profit when sales rise",
+              "Moderate profit when sales rise"
+            ],
+            [
+              "Higher losses when sales fall",
+              "Smaller losses when sales fall"
+            ],
+            [
+              "Higher business risk",
+              "Lower business risk"
+            ]
+          ]
+        },
+        {
+          "title": "Strategic Implications",
+          "type": "text",
+          "content": "**When to choose HIGH operating leverage:**\n• Confident in stable/growing demand\n• Want maximum profit from volume\n• Industry requires automation\n• Can sustain fixed costs in downturns\n\n**When to choose LOW operating leverage:**\n• Demand is uncertain/volatile\n• Want flexibility to scale down\n• Prefer steady, modest profits\n• Can't sustain losses in downturns\n\n**Examples:**\n• Automation (high fixed) vs Outsourcing (variable)\n• Own fleet (high fixed) vs Contract carriers (variable)\n• Salaried staff (fixed) vs Temps (variable)"
+        },
+        {
+          "title": "⚠️ Exam Trap: DOL Changes",
+          "type": "warning",
+          "content": "**DOL is not constant - it changes with sales level!**\n\n**As sales increase above breakeven:**\n• Operating income grows\n• DOL decreases\n• Profit becomes more stable\n\n**As sales decrease toward breakeven:**\n• Operating income shrinks\n• DOL increases\n• Profit becomes more volatile\n\n**Exam Tip:** Calculate DOL at the SPECIFIC sales level given.\nDon't assume it's constant!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Operating leverage = proportion of fixed costs in cost structure",
+            "DOL = Contribution Margin / Operating Income",
+            "High DOL means profit is sensitive to sales changes",
+            "High fixed costs = higher breakeven, higher risk, higher reward",
+            "DOL is highest near breakeven point",
+            "Cost structure is a strategic choice with risk implications",
+            "Match cost structure to demand stability and risk tolerance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Operating Leverage",
+          "knowledgeCheck": {
+            "question": "Company A has contribution margin of $300,000 and operating income of $60,000. If sales increase by 15%, what is the expected percentage change in operating income?",
+            "options": [
+              "15%",
+              "45%",
+              "60%",
+              "75%"
+            ],
+            "correctIndex": 3,
+            "explanation": "DOL = $300,000 / $60,000 = 5.0. Expected change in OI = DOL × % Change in Sales = 5.0 × 15% = 75%. A 15% sales increase causes a 75% increase in operating income.",
+            "hint": "Calculate DOL first, then multiply by the percentage change in sales."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-021",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Make-or-Buy and Outsourcing Decisions",
+    "description": "Apply relevant cost analysis to insourcing vs outsourcing decisions",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Make or buy",
+      "Outsourcing",
+      "Relevant costs",
+      "Qualitative factors"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Make or buy is one of the most common strategic decisions! CMAs provide the analysis, but the answer isn't just about cost. Qualitative factors like quality control, flexibility, and core competencies often determine the right choice."
+        },
+        {
+          "title": "The Make-or-Buy Decision",
+          "type": "text",
+          "content": "**Core Question:**\nShould we produce in-house or purchase from supplier?\n\n**Relevant Costs Only:**\n• Costs that DIFFER between alternatives\n• Future costs (not sunk)\n• Avoidable costs only\n\n**Typically Relevant:**\n• Direct materials\n• Direct labor\n• Variable overhead\n• Purchase price\n• Incremental fixed costs\n\n**Typically NOT Relevant:**\n• Allocated fixed overhead (continues regardless)\n• Depreciation on existing equipment\n• Sunk costs"
+        },
+        {
+          "title": "Make-or-Buy Analysis Framework",
+          "type": "table",
+          "headers": [
+            "Cost Type",
+            "Make",
+            "Buy"
+          ],
+          "rows": [
+            [
+              "Direct materials",
+              "Include",
+              "$0"
+            ],
+            [
+              "Direct labor",
+              "Include (if avoidable)",
+              "$0"
+            ],
+            [
+              "Variable overhead",
+              "Include",
+              "$0"
+            ],
+            [
+              "Avoidable fixed costs",
+              "Include",
+              "$0"
+            ],
+            [
+              "Purchase price",
+              "$0",
+              "Include"
+            ],
+            [
+              "Allocated fixed overhead",
+              "IGNORE",
+              "IGNORE"
+            ],
+            [
+              "Opportunity cost",
+              "Include if capacity has alternative",
+              "$0"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Relevant Cost Analysis",
+          "type": "callout",
+          "content": "**\"DAFO\" - What's relevant:**\n\n**D**ifferential - Changes between alternatives\n\n**A**voidable - Goes away if we don't make\n\n**F**uture - Not already spent\n\n**O**pportunity - What we give up\n\n**Key Question:**\n\"If we buy instead of make, which costs DISAPPEAR?\"\n\nOnly those disappearing costs are relevant to the decision!\n\n**Common Trap:**\nAllocated overhead that STAYS regardless = NOT relevant"
+        },
+        {
+          "title": "Make-or-Buy Example",
+          "type": "text",
+          "content": "**Current cost to make (10,000 units):**\n• Direct materials: $50,000\n• Direct labor: $80,000\n• Variable overhead: $30,000\n• Fixed overhead (avoidable): $20,000\n• Fixed overhead (allocated): $40,000\n• Total: $220,000 ($22/unit)\n\n**Supplier offers: $18/unit = $180,000**\n\n**Analysis:**\n| Cost | Make | Buy |\n|------|------|-----|\n| Direct materials | $50,000 | - |\n| Direct labor | $80,000 | - |\n| Variable OH | $30,000 | - |\n| Avoidable fixed | $20,000 | - |\n| Purchase | - | $180,000 |\n| **Total Relevant** | **$180,000** | **$180,000** |\n\n**Indifferent on cost - Consider qualitative factors!**"
+        },
+        {
+          "title": "Qualitative Factors",
+          "type": "text",
+          "content": "**Favor Make (In-House):**\n• Protect proprietary technology\n• Ensure quality control\n• Maintain supply security\n• Utilize existing capacity\n• Preserve jobs and morale\n\n**Favor Buy (Outsource):**\n• Focus on core competencies\n• Access supplier expertise\n• Reduce capital investment\n• Increase flexibility\n• Share risk with supplier\n\n**Always Consider:**\n• Supplier reliability\n• Long-term cost trends\n• Reversibility of decision\n• Impact on workforce"
+        },
+        {
+          "title": "⚠️ Exam Trap: Opportunity Costs",
+          "type": "warning",
+          "content": "**When capacity has alternative use:**\n\n**Include opportunity cost in \"Make\" column**\n\n**Example:**\nIf we make Part A, we can't use capacity for Product B\nProduct B contribution = $30,000\n\n**Make cost now includes:**\n• Variable costs: $160,000\n• Avoidable fixed: $20,000\n• Opportunity cost: $30,000\n• **Total: $210,000**\n\n**Buy: $180,000**\n→ Buy is now preferred ($30,000 savings)\n\n**Key:** Opportunity cost only applies if you have\na profitable alternative use for the capacity!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Include only relevant costs: Differential, Avoidable, Future, Opportunity",
+            "Allocated overhead that continues regardless is NOT relevant",
+            "Opportunity cost: Include if capacity has profitable alternative use",
+            "Qualitative factors often override quantitative analysis",
+            "Make favors: Quality control, proprietary technology, supply security",
+            "Buy favors: Core competency focus, flexibility, supplier expertise",
+            "Consider long-term implications, not just current costs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Make-or-Buy Analysis",
+          "knowledgeCheck": {
+            "question": "A company makes 5,000 components at: DM $10, DL $8, VOH $4, Allocated FOH $6. An outside supplier offers $23/unit. $2/unit of the fixed overhead is avoidable. What is the relevant cost per unit to MAKE?",
+            "options": [
+              "$22 (variable costs only)",
+              "$24 (variable + all fixed)",
+              "$24 (variable + avoidable fixed)",
+              "$28 (all costs)"
+            ],
+            "correctIndex": 2,
+            "explanation": "Relevant costs: DM $10 + DL $8 + VOH $4 + Avoidable Fixed $2 = $24. The $4 allocated but unavoidable fixed overhead is NOT relevant since it continues regardless of the decision.",
+            "hint": "Only include costs that would DISAPPEAR if you switch to buying."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-022",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "NPV, IRR, and Capital Budgeting",
+    "description": "Evaluate long-term investments using discounted cash flow techniques",
+    "order": 22,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "NPV",
+      "IRR",
+      "Capital budgeting",
+      "Payback period"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Capital budgeting determines how companies invest for the future! CMAs analyze major investments using NPV, IRR, and other techniques. These methods are heavily tested on the CMA exam - master the calculations AND know when each method works best."
+        },
+        {
+          "title": "Capital Budgeting Methods Overview",
+          "type": "text",
+          "content": "**Discounted Cash Flow Methods (Best):**\n• NPV - Net Present Value\n• IRR - Internal Rate of Return\n• MIRR - Modified IRR\n• Profitability Index\n\n**Non-Discounted Methods (Simpler):**\n• Payback Period\n• Discounted Payback\n• Accounting Rate of Return (ARR)\n\n**Key Principle:**\nAll methods should use CASH FLOWS, not accounting income\n• Operating cash flows\n• Initial investment\n• Working capital changes\n• Terminal value / salvage"
+        },
+        {
+          "title": "NPV and IRR Compared",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "NPV",
+            "IRR"
+          ],
+          "rows": [
+            [
+              "Definition",
+              "Sum of PV of cash flows - Initial investment",
+              "Discount rate where NPV = 0"
+            ],
+            [
+              "Decision Rule",
+              "Accept if NPV > 0",
+              "Accept if IRR > Required return"
+            ],
+            [
+              "Reinvestment",
+              "Assumes reinvest at cost of capital",
+              "Assumes reinvest at IRR (less realistic)"
+            ],
+            [
+              "Multiple rates?",
+              "No",
+              "Possible with unconventional cash flows"
+            ],
+            [
+              "Ranking",
+              "Dollar value created",
+              "Percentage return"
+            ],
+            [
+              "Scale",
+              "Reflects project size",
+              "Ignores project size"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: NPV Calculation Steps",
+          "type": "callout",
+          "content": "**\"ICFT\" - What goes into NPV:**\n\n**I**nitial investment (negative, at t=0)\n• Include installation, training, etc.\n\n**C**ash flows from operations\n• After-tax operating cash flows\n• Add back depreciation\n\n**F**ixed capital recovery (salvage)\n• PV of ending salvage value\n• Tax on gain/loss on sale\n\n**T**erminal working capital release\n• WC invested at start comes back at end\n\n**NPV = PV(All Future CFs) - Initial Investment**"
+        },
+        {
+          "title": "NPV Example",
+          "type": "text",
+          "content": "**Investment:**\n• Cost: $100,000\n• Annual cash flow: $30,000 for 5 years\n• Salvage value: $10,000\n• Required return: 10%\n\n**Calculation:**\nPV of annual CFs = $30,000 × PVIFA(10%, 5)\n= $30,000 × 3.7908 = $113,724\n\nPV of salvage = $10,000 × PVIF(10%, 5)\n= $10,000 × 0.6209 = $6,209\n\nTotal PV = $113,724 + $6,209 = $119,933\n\n**NPV = $119,933 - $100,000 = $19,933**\n\nDecision: Accept (NPV > 0)\nProject creates $19,933 of value"
+        },
+        {
+          "title": "IRR Limitations",
+          "type": "text",
+          "content": "**Problem 1: Multiple IRRs**\n• Non-conventional cash flows (sign changes > 1)\n• Can have multiple rates where NPV = 0\n• Solution: Use MIRR or NPV\n\n**Problem 2: Scale Differences**\n• Small project may have higher IRR\n• But large project creates more value\n• Solution: Consider NPV for ranking\n\n**Problem 3: Reinvestment Assumption**\n• IRR assumes reinvest at IRR rate\n• Unrealistic for high-IRR projects\n• Solution: MIRR uses more realistic rate\n\n**Bottom Line:**\nNPV is theoretically superior\nBut IRR is popular (\"we need 15% return\")"
+        },
+        {
+          "title": "⚠️ Exam Trap: Payback Period",
+          "type": "warning",
+          "content": "**Payback = Time to recover initial investment**\n\n**Limitations (Know for exam!):**\n• Ignores time value of money (unless discounted)\n• Ignores cash flows after payback\n• Arbitrary acceptance criterion\n\n**Why still used?**\n• Simple and intuitive\n• Measures liquidity risk\n• Useful for screening\n\n**Discounted Payback:**\n• Better - uses PV of cash flows\n• Still ignores post-payback cash flows\n\n**If asked which is theoretically best:**\nNPV is ALWAYS the answer!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "NPV: Accept if positive; Best method theoretically",
+            "IRR: Accept if > required return; Has limitations with non-conventional flows",
+            "Use cash flows, not accounting income",
+            "Include initial investment, operating CFs, salvage, working capital",
+            "NPV assumes reinvestment at cost of capital (realistic)",
+            "IRR assumes reinvestment at IRR (often unrealistic)",
+            "Payback ignores time value and post-payback flows"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NPV vs IRR",
+          "knowledgeCheck": {
+            "question": "Project A: NPV = $50,000, IRR = 18%. Project B: NPV = $80,000, IRR = 15%. Cost of capital is 10%. If you can only choose one, which is better and why?",
+            "options": [
+              "Project A - Higher IRR indicates better efficiency",
+              "Project B - Higher NPV means more value created",
+              "Both are acceptable - either choice is correct",
+              "Need more information about project size"
+            ],
+            "correctIndex": 1,
+            "explanation": "NPV is the superior method for ranking mutually exclusive projects because it measures absolute value creation. Project B creates $80,000 of value vs. $50,000 for A. IRR measures efficiency but not scale - A might be smaller.",
+            "hint": "When projects are mutually exclusive, which method better captures total value creation?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-023",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Pricing Strategies and Methods",
+    "description": "Set prices using cost-based, market-based, and value-based approaches",
+    "order": 23,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Pricing strategies",
+      "Cost-plus pricing",
+      "Target costing",
+      "Value pricing"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Pricing directly impacts profitability and market position! CMAs provide the cost data and analysis essential for pricing decisions. Understanding different pricing approaches helps you support strategic pricing across the organization."
+        },
+        {
+          "title": "Pricing Approaches",
+          "type": "text",
+          "content": "**Cost-Based Pricing:**\n• Start with costs, add markup\n• Ensures cost recovery\n• May ignore market conditions\n\n**Market-Based Pricing:**\n• Start with competitor prices\n• Position relative to market\n• May not cover costs\n\n**Value-Based Pricing:**\n• Start with customer value\n• Price reflects perceived value\n• Requires understanding customer\n\n**Target Costing:**\n• Start with market price\n• Back into allowable cost\n• Design to cost target"
+        },
+        {
+          "title": "Cost-Plus Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Formula",
+            "When Used"
+          ],
+          "rows": [
+            [
+              "Full Cost Plus",
+              "Full Cost + Markup %",
+              "Long-run pricing"
+            ],
+            [
+              "Variable Cost Plus",
+              "Variable Cost + Markup",
+              "Short-run, excess capacity"
+            ],
+            [
+              "Markup on COGS",
+              "COGS × (1 + Markup %)",
+              "Retail, distribution"
+            ],
+            [
+              "ROI Pricing",
+              "Cost + (Target ROI × Assets)",
+              "Capital-intensive"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Target Costing Process",
+          "type": "callout",
+          "content": "**\"PDCE\" - Target Costing Steps:**\n\n**P**rice - What will market pay?\n• Research competitive prices\n• Assess customer willingness\n\n**D**educt - Required profit margin\n• Target Price - Target Profit = Allowable Cost\n\n**C**ompare - Current cost estimate\n• Gap = Current estimate - Allowable cost\n• This is cost reduction target\n\n**E**ngineer - Design to cost\n• Value engineering\n• Design alternatives\n• Supplier negotiations\n\n**Example:**\nMarket price: $100\nRequired profit: $15\nAllowable cost: $85\nCurrent estimate: $95\nCost reduction target: $10"
+        },
+        {
+          "title": "Pricing Strategies",
+          "type": "text",
+          "content": "**Penetration Pricing:**\n• Low price to gain market share\n• Build volume, scale\n• Risk: May never reach profitability\n\n**Skimming:**\n• High initial price\n• Extract value from early adopters\n• Lower price over time\n\n**Premium Pricing:**\n• High price signals quality\n• Luxury, prestige positioning\n\n**Loss Leader:**\n• Below-cost pricing\n• Drive traffic for other sales\n\n**Dynamic Pricing:**\n• Prices vary with demand\n• Airlines, hotels, ride-sharing"
+        },
+        {
+          "title": "Special Pricing Situations",
+          "type": "text",
+          "content": "**Special Orders:**\n• One-time order, excess capacity\n• Accept if price > incremental cost\n• Consider opportunity cost\n\n**Product Line Pricing:**\n• Price products relative to each other\n• Good/Better/Best tiers\n• Complementary products\n\n**Bundling:**\n• Package products together\n• Increase total sale\n• May reduce perceived unit price\n\n**Transfer Pricing:**\n• Internal transactions\n• Cost, market, or negotiated\n• Tax implications"
+        },
+        {
+          "title": "⚠️ Exam Trap: Price Elasticity",
+          "type": "warning",
+          "content": "**Elasticity affects pricing decisions!**\n\n**Price Elasticity of Demand:**\n= % Change in Quantity / % Change in Price\n\n**Elastic (>1):**\n• Price increase → Big demand drop\n• Many substitutes\n• Commodities\n• Lower prices may increase revenue\n\n**Inelastic (<1):**\n• Price increase → Small demand drop\n• Few substitutes\n• Necessities, loyal customers\n• Can raise prices\n\n**Unit Elastic (=1):**\n• Revenue constant regardless of price\n\n**Know: Elastic products need competitive prices; Inelastic allows premium pricing"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cost-based: Start with costs + markup; ensures recovery",
+            "Market-based: Start with competitor prices",
+            "Value-based: Start with customer perceived value",
+            "Target costing: Market price - Profit = Allowable cost",
+            "Penetration: Low price for market share",
+            "Skimming: High initial price, reduce over time",
+            "Elastic demand: Price changes cause big volume changes",
+            "Special orders: Accept if price > incremental cost"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Target Costing",
+          "knowledgeCheck": {
+            "question": "Market research shows customers will pay $80 for a new product. The company requires a 20% profit margin on selling price. What is the target cost?",
+            "options": [
+              "$60",
+              "$64",
+              "$66.67",
+              "$16"
+            ],
+            "correctIndex": 1,
+            "explanation": "Target profit = $80 × 20% = $16. Target cost = $80 - $16 = $64. The engineering team must design the product to cost no more than $64 to achieve the required margin. If current cost estimate exceeds $64, value engineering is needed.",
+            "hint": "Calculate the required profit first, then subtract from the market price."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-024",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Revenue Analysis and Forecasting",
+    "description": "Analyze revenue drivers and build accurate revenue forecasts",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Revenue analysis",
+      "Sales forecasting",
+      "Revenue drivers",
+      "Forecast accuracy"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Revenue drives everything else! The revenue forecast cascades into production plans, inventory levels, staffing, and capital needs. CMAs must understand revenue drivers and forecasting methods to support effective planning."
+        },
+        {
+          "title": "Revenue Decomposition",
+          "type": "text",
+          "content": "**Revenue = Price × Volume**\n\n**Price Analysis:**\n• List price vs. realized price\n• Discount patterns\n• Mix effects\n• Price changes over time\n\n**Volume Analysis:**\n• Unit sales trends\n• Customer count\n• Transactions per customer\n• Market share changes\n\n**Revenue Variance:**\n• Price variance: (Actual - Budgeted price) × Actual volume\n• Volume variance: (Actual - Budgeted volume) × Budgeted price\n• Mix variance: Effect of product/customer mix"
+        },
+        {
+          "title": "Revenue Forecasting Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Approach",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Sales Force Composite",
+              "Aggregate sales rep estimates",
+              "B2B, known opportunities"
+            ],
+            [
+              "Customer Survey",
+              "Query buying intentions",
+              "Major customers"
+            ],
+            [
+              "Time Series",
+              "Project historical trends",
+              "Stable patterns"
+            ],
+            [
+              "Causal/Regression",
+              "Link to economic drivers",
+              "Understanding drivers"
+            ],
+            [
+              "Market Size/Share",
+              "Market forecast × share",
+              "Market dynamics"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Revenue Driver Tree",
+          "type": "callout",
+          "content": "**Break down revenue into components:**\n\n**For B2C:**\nRevenue = Customers × Visits × Conversion × Transaction Size\n\n**For B2B:**\nRevenue = Accounts × Products/Account × Units/Product × Price\n\n**For Subscription:**\nRevenue = Subscribers × Revenue/Sub × (1 - Churn)\n\n**For Services:**\nRevenue = Consultants × Utilization × Bill Rate\n\n**Why decompose?**\n• Identify which lever moved\n• Set targets for each driver\n• Improve forecast accuracy"
+        },
+        {
+          "title": "Time Series Components",
+          "type": "text",
+          "content": "**Trend (T):**\n• Long-term direction\n• Growth or decline\n• Linear, exponential, etc.\n\n**Seasonality (S):**\n• Regular, predictable patterns\n• Monthly, quarterly, annual\n• Adjust for comparison\n\n**Cyclical (C):**\n• Economic cycles\n• Multi-year patterns\n• Harder to predict\n\n**Irregular (I):**\n• Random variation\n• Unexplained noise\n• One-time events\n\n**Y = T × S × C × I (multiplicative)\nY = T + S + C + I (additive)"
+        },
+        {
+          "title": "Forecast Accuracy",
+          "type": "text",
+          "content": "**Error Measures:**\n• Mean Absolute Deviation (MAD)\n• Mean Absolute Percentage Error (MAPE)\n• Root Mean Square Error (RMSE)\n\n**MAPE = Average(|Actual - Forecast| / Actual)\n• < 10% = Excellent\n• 10-20% = Good\n• 20-50% = Reasonable\n• > 50% = Poor\n\n**Bias Detection:**\n• Consistently over or under?\n• Sales sandbagging?\n• Optimistic management?\n\n**Tracking Signal:**\n= Cumulative Error / MAD\n• Should stay within ±4\n• Outside = systematic bias"
+        },
+        {
+          "title": "⚠️ Exam Trap: Forecast Assumptions",
+          "type": "warning",
+          "content": "**Document and test assumptions!**\n\n**Common Assumption Errors:**\n• Past growth continues\n• Market share stable\n• No new competitors\n• Economy unchanged\n• Pricing power maintained\n\n**Scenario Analysis:**\n• Best case / Base case / Worst case\n• Vary key assumptions\n• Understand sensitivity\n\n**Sanity Checks:**\n• Is growth realistic?\n• Is market big enough?\n• Where does share come from?\n• What resources needed?\n\n**Hockey stick forecasts should be challenged!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Revenue = Price × Volume; decompose both",
+            "Methods: Sales force, time series, regression, market-based",
+            "Time series: Trend, Seasonality, Cyclical, Irregular",
+            "MAPE < 10% = excellent forecast accuracy",
+            "Track bias - over/under forecasting patterns",
+            "Document assumptions and test sensitivities",
+            "Break revenue into driver trees for better analysis"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Revenue Variance",
+          "knowledgeCheck": {
+            "question": "Budgeted: 10,000 units at $50. Actual: 9,000 units at $55. What is the favorable price variance?",
+            "options": [
+              "$50,000 favorable",
+              "$45,000 favorable",
+              "$5,000 favorable",
+              "$55,000 favorable"
+            ],
+            "correctIndex": 1,
+            "explanation": "Price Variance = (Actual Price - Budgeted Price) × Actual Volume = ($55 - $50) × 9,000 = $5 × 9,000 = $45,000 favorable. We earned $5 more per unit than budgeted on the 9,000 units actually sold.",
+            "hint": "Price variance uses actual volume. Calculate the per-unit difference times units sold."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-025",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capacity Analysis",
+    "description": "Understand and optimize production capacity utilization",
+    "order": 25,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Capacity utilization",
+      "Bottleneck analysis",
+      "Idle capacity",
+      "Capacity planning"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Capacity drives profitability and cost! CMAs analyze capacity utilization to find improvement opportunities, cost excess capacity accurately, and support capital investment decisions. Understanding capacity is essential for pricing and make-or-buy analysis."
+        },
+        {
+          "title": "Types of Capacity",
+          "type": "text",
+          "content": "**Theoretical Capacity:**\n• Maximum possible output\n• 24/7/365 operation\n• No downtime\n• Rarely achieved\n\n**Practical Capacity:**\n• Theoretical minus normal downtime\n• Maintenance, setups, breaks\n• Realistically achievable\n• Used for overhead rates\n\n**Normal Capacity:**\n• Average expected over time\n• Considers demand cycles\n• Traditional denominator\n\n**Budgeted Capacity:**\n• Expected for current period\n• Based on sales forecast\n• May vary widely"
+        },
+        {
+          "title": "Capacity Cost Behavior",
+          "type": "table",
+          "headers": [
+            "Concept",
+            "Description",
+            "Impact"
+          ],
+          "rows": [
+            [
+              "Used Capacity",
+              "Actually consumed",
+              "Product cost"
+            ],
+            [
+              "Idle Capacity",
+              "Available but unused",
+              "Period cost or loss"
+            ],
+            [
+              "Excess Capacity",
+              "Unneeded capacity",
+              "Investment waste"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Capacity Costing",
+          "type": "callout",
+          "content": "**Why Capacity Choice Matters:**\n\n**Using Normal Capacity:**\n• Spreads costs over 'normal' volume\n• Smooths product costs\n• May hide capacity costs\n\n**Using Practical Capacity:**\n• Product cost = only used capacity\n• Unused capacity = period expense\n• Shows true cost of idle capacity\n• GAAP and IFRS preferred\n\n**Example:**\n• Fixed overhead: $1,000,000\n• Practical capacity: 100,000 units\n• Actual production: 80,000 units\n\nPractical approach:\n• Rate: $10/unit\n• Applied: $800,000\n• Idle capacity cost: $200,000 (expense)"
+        },
+        {
+          "title": "Bottleneck Analysis",
+          "type": "text",
+          "content": "**Constraint/Bottleneck:**\nThe resource limiting total output\n\n**Identifying Bottlenecks:**\n• Highest utilization\n• Work-in-process buildup\n• Downstream waiting\n\n**Theory of Constraints (TOC):**\n• Focus on bottleneck\n• Maximize throughput at constraint\n• Non-bottleneck efficiency is secondary\n\n**Bottleneck Decisions:**\n• Contribution margin per constraint unit\n• Not total contribution\n• Maximize scarce resource use\n\n**Example:** If machine time is constraint:\nProduct A: $20 CM, takes 2 hours = $10/hour\nProduct B: $15 CM, takes 1 hour = $15/hour\n→ Prioritize Product B!"
+        },
+        {
+          "title": "Capacity Decisions",
+          "type": "text",
+          "content": "**When Capacity Constrained:**\n• Prioritize high-margin products\n• Consider outsourcing\n• Evaluate capacity expansion\n• Manage customer allocations\n\n**When Excess Capacity:**\n• Accept lower-margin work\n• Special orders above variable cost\n• Consider capacity reduction\n• Seek new markets/products\n\n**Make vs Buy with Capacity:**\n• If constrained: Outsource to free capacity\n• If excess: Use capacity even if slightly higher cost\n• Factor in opportunity cost"
+        },
+        {
+          "title": "⚠️ Exam Trap: Per-Unit vs Per-Constraint",
+          "type": "warning",
+          "content": "**When constrained, optimize the CONSTRAINT!**\n\n**Wrong Approach:**\nRank products by contribution margin per unit\n• Ignores different constraint consumption\n\n**Right Approach:**\nRank by contribution margin per constraint unit\n• Per machine hour, per labor hour\n• Whatever is the bottleneck\n\n**Example:**\nConstraint: 100 machine hours available\n• Product A: $50 CM, 5 hours each = $10/hour\n• Product B: $30 CM, 2 hours each = $15/hour\n\nProduce B first! 50 units × $30 = $1,500\nThen A if any capacity left\n\n**Always ask: What's the binding constraint?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capacity types: Theoretical > Practical > Normal > Budgeted",
+            "Practical capacity: Used for overhead rates (GAAP preferred)",
+            "Idle capacity: Should be reported as period cost, not in product",
+            "Bottleneck: The constraint limiting total output",
+            "Optimize contribution per constraint unit, not per product",
+            "When constrained: Prioritize high-margin per constraint",
+            "When excess: Accept work above variable cost"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Constraint Prioritization",
+          "knowledgeCheck": {
+            "question": "Machine time is the constraint. Product X: $60 CM, uses 4 machine hours. Product Y: $40 CM, uses 2 machine hours. Which should be produced first?",
+            "options": [
+              "Product X - higher total contribution margin",
+              "Product Y - higher contribution per machine hour",
+              "Equal - both contribute to profit",
+              "Cannot determine without demand data"
+            ],
+            "correctIndex": 1,
+            "explanation": "Product X: $60 / 4 hours = $15/machine hour. Product Y: $40 / 2 hours = $20/machine hour. Produce Y first because it generates more profit per unit of the constrained resource. When constraint is saturated, switch to X.",
+            "hint": "Calculate contribution margin divided by constraint consumption."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-026",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Sensitivity and Scenario Analysis",
+    "description": "Evaluate decisions under uncertainty using sensitivity and scenarios",
+    "order": 26,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Sensitivity analysis",
+      "Scenario analysis",
+      "What-if analysis",
+      "Risk assessment"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "The future is uncertain - smart analysis accounts for it! CMAs use sensitivity and scenario analysis to understand how changes in assumptions impact decisions. This helps identify key risks, focus attention on what matters, and make more robust decisions."
+        },
+        {
+          "title": "Sensitivity Analysis",
+          "type": "text",
+          "content": "**Definition:**\nMeasure how output changes when ONE input changes\n\n**Process:**\n1. Build base case model\n2. Change one variable at a time\n3. Observe impact on output\n4. Identify most sensitive variables\n\n**Output Formats:**\n• Sensitivity tables\n• Tornado diagrams\n• Spider charts\n\n**Key Question:**\n'What if X changes by 10%?'\n\n**Use:**\n• Identify key value drivers\n• Focus due diligence\n• Prioritize risk mitigation"
+        },
+        {
+          "title": "Tornado Diagram",
+          "type": "table",
+          "headers": [
+            "Variable",
+            "Low Case",
+            "Base",
+            "High Case"
+          ],
+          "rows": [
+            [
+              "Price (±10%)",
+              "NPV: -$2M",
+              "$5M",
+              "+$12M"
+            ],
+            [
+              "Volume (±5%)",
+              "NPV: $2M",
+              "$5M",
+              "+$8M"
+            ],
+            [
+              "Cost (±5%)",
+              "NPV: $3M",
+              "$5M",
+              "+$7M"
+            ],
+            [
+              "Discount rate",
+              "NPV: $4M",
+              "$5M",
+              "+$6M"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Sensitivity Steps",
+          "type": "callout",
+          "content": "**Building Sensitivity Analysis:**\n\n**1. Identify Key Variables:**\n• Price, volume, costs\n• Growth rates, margins\n• Discount rate, timing\n\n**2. Define Range:**\n• ±10%, ±20% from base\n• Or specific values (optimistic/pessimistic)\n\n**3. Calculate Impact:**\n• Change ONE variable\n• Hold others at base\n• Record new output\n\n**4. Rank Variables:**\n• Widest swing = most sensitive\n• Focus attention here\n\n**Tornado shows:**\n• Bars sorted by impact\n• Widest at top = most important"
+        },
+        {
+          "title": "Scenario Analysis",
+          "type": "text",
+          "content": "**Definition:**\nEvaluate multiple variables changing together\n\n**Common Scenarios:**\n• **Best case:** Optimistic assumptions\n• **Base case:** Most likely assumptions\n• **Worst case:** Pessimistic assumptions\n\n**More Sophisticated:**\n• Economic scenarios (recession, growth, stable)\n• Competitive scenarios\n• Regulatory scenarios\n\n**Advantages over Sensitivity:**\n• Variables often move together\n• More realistic combinations\n• Tests correlated risks\n\n**Output:**\nDecision metrics under each scenario"
+        },
+        {
+          "title": "Monte Carlo Simulation",
+          "type": "text",
+          "content": "**Advanced Approach:**\n• Define probability distributions for inputs\n• Run thousands of iterations\n• Generate probability distribution of outputs\n\n**Output:**\n• Expected value\n• Standard deviation\n• Confidence intervals\n• Probability of achieving target\n\n**Example Output:**\n'There is a 70% probability that NPV will exceed $0'\n\n**When to Use:**\n• Complex models\n• Many uncertain variables\n• Need probability estimates\n• High-stakes decisions"
+        },
+        {
+          "title": "⚠️ Exam Trap: Sensitivity Limitations",
+          "type": "warning",
+          "content": "**Sensitivity Analysis Limitations:**\n\n• **One-at-a-time:** Ignores interaction effects\n• **Linear:** May miss non-linear relationships\n• **Arbitrary ranges:** +/-10% may not be realistic\n• **No probabilities:** Doesn't say which is likely\n\n**Scenario Analysis Limitations:**\n\n• **Subjective:** Scenario selection is judgment\n• **Limited:** Only a few scenarios tested\n• **May miss:** Black swan events\n\n**Best Practice:**\nUse both! Sensitivity to find key drivers, scenario to test realistic combinations"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sensitivity: Change ONE variable, measure impact",
+            "Tornado diagram: Rank variables by impact (widest bar = most sensitive)",
+            "Scenario: Change MULTIPLE variables together",
+            "Scenarios: Best, base, worst case - or specific situations",
+            "Monte Carlo: Probability distributions, thousands of runs",
+            "Use sensitivity to identify key drivers",
+            "Use scenarios to test realistic combinations"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Analysis Types",
+          "knowledgeCheck": {
+            "question": "A capital project's NPV is most sensitive to sales volume among all variables tested. What does this imply for management?",
+            "options": [
+              "The project should be rejected",
+              "Sales volume forecasts deserve extra scrutiny and monitoring",
+              "The discount rate should be increased",
+              "Fixed costs should be reduced"
+            ],
+            "correctIndex": 1,
+            "explanation": "When NPV is most sensitive to a variable, small changes in that variable have the largest impact on project value. This means sales volume estimates deserve extra due diligence, and volume should be closely monitored post-implementation. It doesn't necessarily mean rejection.",
+            "hint": "Most sensitive variable = deserves most attention in validation."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-027",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Project Risk Analysis",
+    "description": "Assess and manage risks in capital investment projects",
+    "order": 27,
+    "duration": 40,
+    "difficulty": "advanced",
+    "topics": [
+      "Project risk",
+      "Risk-adjusted returns",
+      "Real options",
+      "Risk analysis"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Not all projects have equal risk! CMAs must assess project-specific risks and adjust analysis accordingly. A project's NPV means nothing without understanding its risk profile. Risk-adjusted capital budgeting leads to better investment decisions."
+        },
+        {
+          "title": "Sources of Project Risk",
+          "type": "text",
+          "content": "**Stand-Alone Risk:**\n• Project viewed in isolation\n• Variability of project's own returns\n\n**Corporate Risk:**\n• Project's impact on firm risk\n• Correlation with existing operations\n• Diversification effects\n\n**Market Risk (Beta):**\n• Project's systematic risk\n• Relevant for shareholders\n• Can't diversify away\n\n**Sources:**\n• Economic conditions\n• Competition\n• Technology changes\n• Input costs\n• Regulatory changes\n• Execution risk"
+        },
+        {
+          "title": "Risk Analysis Techniques",
+          "type": "table",
+          "headers": [
+            "Technique",
+            "Approach",
+            "Output"
+          ],
+          "rows": [
+            [
+              "Sensitivity",
+              "Change one variable",
+              "Impact on NPV"
+            ],
+            [
+              "Scenario",
+              "Change multiple variables",
+              "NPV under scenarios"
+            ],
+            [
+              "Simulation",
+              "Probability distributions",
+              "NPV distribution"
+            ],
+            [
+              "Decision Trees",
+              "Sequential decisions",
+              "Expected value"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Risk Adjustments",
+          "type": "callout",
+          "content": "**Two Approaches to Adjust for Risk:**\n\n**1. Risk-Adjusted Discount Rate (RADR):**\n• Add premium for riskier projects\n• Higher risk = higher discount rate\n• Example: WACC + 3% for high-risk\n\n**Pros:** Simple, intuitive\n**Cons:** Arbitrary premium, compounds over time\n\n**2. Certainty Equivalent (CE):**\n• Convert risky cash flows to certain equivalents\n• Use risk-free rate to discount\n• CE factor × Expected CF\n\n**Pros:** Theoretically correct\n**Cons:** Hard to estimate CE factors\n\n**Typical Practice:**\nRADR more commonly used"
+        },
+        {
+          "title": "Real Options",
+          "type": "text",
+          "content": "**Definition:**\nManagerial flexibility to adapt to future outcomes\n\n**Types of Real Options:**\n• **Option to Expand:** Scale up if successful\n• **Option to Abandon:** Exit if unsuccessful\n• **Option to Delay:** Wait for more info\n• **Option to Contract:** Scale down\n• **Option to Switch:** Change inputs/outputs\n\n**Value:**\n• Traditional NPV ignores flexibility\n• Real options add value!\n• Strategic NPV = NPV + Option value\n\n**When Valuable:**\n• High uncertainty\n• Significant flexibility\n• Time before commitment"
+        },
+        {
+          "title": "Decision Trees",
+          "type": "text",
+          "content": "**Purpose:**\nAnalyze sequential decisions under uncertainty\n\n**Components:**\n• **Decision nodes:** Choose action\n• **Chance nodes:** Uncertain outcomes\n• **End nodes:** Payoffs\n\n**Process:**\n1. Draw tree left to right\n2. Assign probabilities to chance nodes\n3. Work backward (roll back)\n4. Calculate expected values\n5. Choose highest EV path\n\n**Example:**\n• Pilot project: $1M\n• Success (60%): Full project NPV $5M\n• Failure (40%): Stop, lose $1M\n• Expected value: 0.6 × $5M - 0.4 × $1M - $1M = $1.6M"
+        },
+        {
+          "title": "⚠️ Exam Trap: WACC vs Project Rate",
+          "type": "warning",
+          "content": "**Don't use WACC for all projects!**\n\n**WACC is right when:**\n• Project has same risk as firm average\n• Same capital structure\n• Same industry\n\n**Adjust when:**\n• Project is riskier/safer than average\n• Different industry\n• Different financing\n\n**Example:**\nUtility company (low risk, 8% WACC)\nConsiders tech venture (high risk)\n• Using 8%: Project looks attractive\n• Using 15%: Project looks bad\n• Proper analysis: Use 15%!\n\n**Project-specific beta can be estimated from comparable firms"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Project risk: Stand-alone, corporate, market (beta)",
+            "Techniques: Sensitivity, scenario, simulation, decision trees",
+            "RADR: Add risk premium to discount rate (simpler)",
+            "Certainty equivalent: Convert to certain cash flows (theoretically better)",
+            "Real options: Value of managerial flexibility (expand, abandon, delay)",
+            "Strategic NPV = Traditional NPV + Option value",
+            "Don't use WACC for projects with different risk than firm average"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Assessment",
+          "knowledgeCheck": {
+            "question": "A company can invest now or delay one year to learn market conditions. This flexibility to postpone the decision represents which type of real option?",
+            "options": [
+              "Option to expand",
+              "Option to abandon",
+              "Option to delay",
+              "Option to switch"
+            ],
+            "correctIndex": 2,
+            "explanation": "The option to delay (or defer) allows the company to wait and gather more information before committing resources. This is valuable when there's significant uncertainty that will be resolved over time. Traditional NPV assumes immediate investment.",
+            "hint": "Which option involves timing flexibility?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-028",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cost of Capital Calculation",
+    "description": "Calculate component costs and WACC",
+    "order": 28,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Cost of capital",
+      "WACC",
+      "Cost of equity",
+      "Cost of debt"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cost of capital is THE hurdle rate for investment decisions! CMAs must calculate WACC for NPV analysis, evaluate capital structure decisions, and assess value creation. Understanding these calculations is essential for strategic financial analysis. Highly tested on CMA Part 2!"
+        },
+        {
+          "title": "Cost of Capital Components",
+          "type": "text",
+          "content": "**Weighted Average Cost of Capital (WACC):**\n• Weighted average of all financing costs\n• Reflects company's capital structure\n• Used as discount rate for NPV\n\n**Components:**\n• **Cost of Debt (rD):** Interest on borrowings\n• **Cost of Preferred Stock (rP):** Preferred dividends\n• **Cost of Equity (rE):** Required return by shareholders\n\n**Key Point:**\nDebt is cheapest (tax shield + less risk for lenders)\nEquity is most expensive (residual claim, most risk)"
+        },
+        {
+          "title": "WACC Formula",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Formula",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Cost of Debt",
+              "Interest rate × (1 - Tax rate)",
+              "After-tax cost"
+            ],
+            [
+              "Cost of Preferred",
+              "Dividend / Net proceeds",
+              "Not tax deductible"
+            ],
+            [
+              "Cost of Equity (CAPM)",
+              "Rf + β(Rm - Rf)",
+              "Risk premium approach"
+            ],
+            [
+              "WACC",
+              "Wd×rD(1-T) + Wp×rP + We×rE",
+              "Weighted average"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: CAPM",
+          "type": "callout",
+          "content": "**Capital Asset Pricing Model:**\n\n**rE = Rf + β(Rm - Rf)**\n\nWhere:\n• **Rf:** Risk-free rate (Treasury bonds)\n• **β:** Beta (stock's volatility vs market)\n• **Rm:** Expected market return\n• **(Rm - Rf):** Market risk premium\n\n**Example:**\n• Rf = 3%\n• β = 1.2\n• Rm = 10%\n• Market premium = 10% - 3% = 7%\n\n**rE = 3% + 1.2(7%) = 3% + 8.4% = 11.4%**\n\n**Beta Interpretation:**\n• β = 1.0: Same as market\n• β > 1.0: More volatile than market\n• β < 1.0: Less volatile than market"
+        },
+        {
+          "title": "WACC Calculation Example",
+          "type": "text",
+          "content": "**Given:**\n• Capital structure: 40% debt, 60% equity\n• Cost of debt: 8%\n• Tax rate: 25%\n• Cost of equity: 14%\n\n**WACC:**\n= (40% × 8% × (1 - 25%)) + (60% × 14%)\n= (40% × 8% × 0.75) + (60% × 14%)\n= 2.4% + 8.4%\n= **10.8%**\n\n**Interpretation:**\n• Minimum required return on investments\n• Projects earning > 10.8% create value\n• Projects earning < 10.8% destroy value"
+        },
+        {
+          "title": "Alternative Cost of Equity Methods",
+          "type": "text",
+          "content": "**Dividend Growth Model (Gordon):**\nrE = (D1 / P0) + g\n• D1: Next year's dividend\n• P0: Current stock price\n• g: Dividend growth rate\n\n**Example:**\n• D0 = $2.00, g = 5%, P0 = $40\n• D1 = $2.00 × 1.05 = $2.10\n• rE = ($2.10 / $40) + 5% = 5.25% + 5% = 10.25%\n\n**Bond-Yield-Plus-Risk-Premium:**\nrE = rD + Risk premium (typically 3-5%)\n\n**Build-Up Method:**\nrE = Rf + Industry premium + Size premium + Company premium"
+        },
+        {
+          "title": "⚠️ Exam Trap: Market vs Book Weights",
+          "type": "warning",
+          "content": "**Use MARKET VALUES for weights!**\n\n**Why Market, Not Book?**\n• WACC reflects current financing costs\n• Market values = current value\n• Book values may be outdated\n\n**Example:**\n• Book equity: $100M\n• Market cap: $200M\n• Debt: $50M (market ≈ book)\n\n**Correct weights:**\n• Equity: $200M / $250M = 80%\n• Debt: $50M / $250M = 20%\n\n**Common Errors:**\n• Using book equity weight\n• Forgetting after-tax cost of debt\n• Including short-term debt in permanent capital\n• Using coupon rate instead of yield"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "WACC = Wd×rD(1-T) + We×rE",
+            "Cost of debt = After-tax (Interest × (1-T))",
+            "CAPM: rE = Rf + β(Rm - Rf)",
+            "Dividend growth: rE = D1/P0 + g",
+            "Use market value weights, not book",
+            "Beta > 1 = more volatile than market",
+            "WACC is minimum required return for value creation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "WACC",
+          "knowledgeCheck": {
+            "question": "A company has 30% debt and 70% equity. Cost of debt is 6%, tax rate is 40%, and cost of equity is 12%. What is WACC?",
+            "options": [
+              "9.48%",
+              "9.60%",
+              "9.88%",
+              "10.20%"
+            ],
+            "correctIndex": 2,
+            "explanation": "WACC = (30% × 6% × (1-40%)) + (70% × 12%) = (30% × 6% × 0.60) + 8.4% = 1.08% + 8.40% = 9.48%. Wait, let me recalculate: 0.30 × 0.06 × 0.60 = 0.0108 = 1.08%, plus 0.70 × 0.12 = 8.40%. Total = 9.48%.",
+            "hint": "Remember to use after-tax cost for debt."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-029",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Real Options in Capital Budgeting",
+    "description": "Value flexibility in investment decisions",
+    "order": 29,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Real options",
+      "Strategic flexibility",
+      "Option to expand",
+      "Option to abandon"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional NPV ignores the value of flexibility! Real options analysis recognizes that management can adapt decisions as uncertainty resolves. CMAs who understand real options can better evaluate strategic investments where flexibility has significant value."
+        },
+        {
+          "title": "Limitations of Traditional NPV",
+          "type": "text",
+          "content": "**Traditional NPV Assumes:**\n• Now-or-never decision\n• Fixed path once invested\n• Passive management\n• All uncertainty resolved at start\n\n**Reality:**\n• Can delay investments\n• Can expand if successful\n• Can abandon if unsuccessful\n• Uncertainty resolves over time\n• Management actively adapts\n\n**Implication:**\nNPV may undervalue projects with flexibility\nStrategic investments often have embedded options"
+        },
+        {
+          "title": "Types of Real Options",
+          "type": "table",
+          "headers": [
+            "Option Type",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Option to Expand",
+              "Scale up if successful",
+              "Build Phase 2 factory"
+            ],
+            [
+              "Option to Abandon",
+              "Exit with salvage value",
+              "Sell equipment, exit market"
+            ],
+            [
+              "Option to Delay",
+              "Wait for information",
+              "Postpone R&D decision"
+            ],
+            [
+              "Option to Contract",
+              "Scale down operations",
+              "Reduce capacity if demand drops"
+            ],
+            [
+              "Switching Option",
+              "Change inputs or outputs",
+              "Flexible manufacturing"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Real Options Value",
+          "type": "callout",
+          "content": "**Expanded NPV:**\n\nStrategic NPV = Traditional NPV + Value of Flexibility\n\n**When Real Options Value is HIGH:**\n• High uncertainty\n• Long time horizons\n• Significant flexibility\n• Information reveals over time\n• NPV near zero (close call decisions)\n\n**When Real Options Value is LOW:**\n• Little uncertainty\n• Short time frame\n• Limited flexibility\n• Very positive or negative NPV\n\n**Think of it like stock options:**\nThe right to invest (exercise) if conditions are favorable\nPay small premium now for flexibility later"
+        },
+        {
+          "title": "Option to Abandon Example",
+          "type": "text",
+          "content": "**Scenario:**\n• Project NPV without abandonment: -$2M\n• 50% chance high demand: NPV = +$5M\n• 50% chance low demand: NPV = -$9M\n• Can abandon after Year 1 for $3M salvage\n\n**Without Option:**\nNPV = 0.5($5M) + 0.5(-$9M) = -$2M → REJECT\n\n**With Abandonment Option:**\n• High demand: Continue, NPV = +$5M\n• Low demand: Abandon, receive $3M (instead of -$9M)\nNPV = 0.5($5M) + 0.5($3M) = $4M → ACCEPT\n\n**Value of Abandonment Option:**\n$4M - (-$2M) = $6M\n\nThe flexibility to exit transforms a bad project!"
+        },
+        {
+          "title": "Valuation Approaches",
+          "type": "text",
+          "content": "**Qualitative Assessment:**\n• Identify embedded options\n• Assess their significance\n• Adjust judgment accordingly\n\n**Decision Tree Analysis:**\n• Map out decision points\n• Assign probabilities\n• Calculate expected values\n• Work backward (fold back)\n\n**Option Pricing Models:**\n• Black-Scholes adaptation\n• Binomial model\n• More theoretically rigorous\n• Requires more inputs\n\n**CMA Level:**\nConceptual understanding + decision trees\nNot complex option pricing math"
+        },
+        {
+          "title": "⚠️ Exam Trap: When Options Matter Most",
+          "type": "warning",
+          "content": "**High Option Value Situations:**\n\n**Uncertainty:**\n• Technology projects\n• New markets\n• R&D investments\n• Natural resources\n\n**Strategic Investments:**\n• Platform investments\n• Market entry\n• Partnerships/JVs\n\n**Low Option Value:**\n• Routine replacements\n• Cost reduction projects\n• Short payback\n\n**Exam Focus:**\n• Conceptual understanding\n• Types of options\n• When flexibility adds value\n• Simple decision tree calculations\n• NOT complex Black-Scholes math"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Traditional NPV ignores management flexibility",
+            "Strategic NPV = Traditional NPV + Option value",
+            "Option types: Expand, abandon, delay, contract, switch",
+            "Options most valuable with high uncertainty + long horizon",
+            "Decision trees: Map decisions, fold back expected values",
+            "Option to abandon can transform negative NPV projects",
+            "Real options justify some investments that NPV rejects"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Real Options",
+          "knowledgeCheck": {
+            "question": "An investment has negative NPV but includes flexibility to expand significantly if market conditions improve. Real options analysis suggests:",
+            "options": [
+              "Always reject negative NPV projects",
+              "The expansion option may make the project worthwhile",
+              "Flexibility never adds value",
+              "Use higher discount rate to compensate"
+            ],
+            "correctIndex": 1,
+            "explanation": "Real options analysis recognizes that flexibility has value. The option to expand if conditions are favorable adds value not captured in traditional NPV. This 'strategic NPV' (NPV + option value) may be positive even when traditional NPV is negative.",
+            "hint": "How does flexibility affect project value?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-030",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Lease vs Buy Analysis",
+    "description": "Evaluate lease and purchase alternatives",
+    "order": 30,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Lease vs buy",
+      "Capital decisions",
+      "Lease analysis",
+      "Tax considerations"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Should we lease or buy that equipment? CMAs analyze this decision considering cash flows, taxes, and risk. Proper lease vs buy analysis can save significant money over the asset's life. This is a practical application of capital budgeting concepts."
+        },
+        {
+          "title": "Lease vs Buy Overview",
+          "type": "text",
+          "content": "**The Decision:**\n• Acquire asset through purchase (own)\n• OR acquire use through lease (rent)\n• Same asset, different financing\n\n**Key Difference:**\n• Buy: Pay now, own asset, claim depreciation\n• Lease: Pay over time, don't own, lease payments deductible\n\n**Analysis Approach:**\n• Compare PV of all cash flows\n• Choose option with lower PV cost\n• Or higher NPV if analyzing differently\n\n**Assumption:**\n• Same asset, same use\n• Only financing decision differs"
+        },
+        {
+          "title": "Cash Flow Components",
+          "type": "table",
+          "headers": [
+            "Buy (Own)",
+            "Lease"
+          ],
+          "rows": [
+            [
+              "Purchase price (outflow)",
+              "Lease payments (outflow)"
+            ],
+            [
+              "Depreciation tax shield (+)",
+              "Tax deduction on payments (+)"
+            ],
+            [
+              "Maintenance costs",
+              "Often included in lease"
+            ],
+            [
+              "Insurance costs",
+              "May be included"
+            ],
+            [
+              "Salvage value (+)",
+              "Return asset"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Analysis Framework",
+          "type": "callout",
+          "content": "**Net Advantage to Leasing (NAL):**\n\nNAL = PV of Lease option - PV of Buy option\n\nIf NAL > 0 → Lease\nIf NAL < 0 → Buy\n\n**Buy Cash Flows:**\n- Initial cost\n+ PV of depreciation tax shield\n- PV of after-tax maintenance\n+ PV of after-tax salvage\n\n**Lease Cash Flows:**\n- PV of after-tax lease payments\n- PV of any additional costs\n\n**Discount Rate:**\nTypically after-tax cost of debt\n(Lease is like secured borrowing)\n\n**After-tax payment = Payment × (1 - Tax rate)**"
+        },
+        {
+          "title": "Simplified Example",
+          "type": "text",
+          "content": "**Equipment cost: $100,000**\n**5-year life, no salvage**\n**Straight-line depreciation**\n**Tax rate: 40%**\n**Borrowing rate: 10%, after-tax 6%**\n**Lease: $24,000/year**\n\n**Buy Analysis:**\n• Cost: -$100,000 at time 0\n• Depreciation: $20,000/year\n• Tax shield: $20,000 × 40% = $8,000/year\n• PV of tax shields: $8,000 × PVIFA(6%, 5)\n  = $8,000 × 4.212 = $33,696\n• PV of buying: $100,000 - $33,696 = $66,304\n\n**Lease Analysis:**\n• After-tax payment: $24,000 × (1 - 0.40) = $14,400\n• PV: $14,400 × 4.212 = $60,653\n\n**NAL = $66,304 - $60,653 = $5,651**\n→ Lease is better by $5,651"
+        },
+        {
+          "title": "Qualitative Factors",
+          "type": "text",
+          "content": "**Favoring Lease:**\n• Obsolescence risk (transfer to lessor)\n• Limited capital\n• Off-balance sheet (old GAAP)\n• Maintenance included\n• Flexibility\n• 100% financing\n\n**Favoring Buy:**\n• Build equity in asset\n• Modification allowed\n• Tax benefits of ownership\n• Long asset life beyond lease\n• Customization needs\n\n**Note:** ASC 842 now requires most leases on balance sheet, removing the 'off-balance sheet' advantage"
+        },
+        {
+          "title": "⚠️ Exam Trap: Discount Rate",
+          "type": "warning",
+          "content": "**Which Rate to Use?**\n\n**After-Tax Cost of Debt:**\n• Lease is like secured borrowing\n• Similar risk profile\n• Most common approach\n\n**NOT WACC:**\n• This is financing decision, not investment\n• Asset acquisition already decided\n• Just comparing financing methods\n\n**Common Mistakes:**\n• Using pre-tax rate\n• Forgetting to tax-adjust cash flows\n• Double-counting depreciation\n• Ignoring salvage value\n\n**Remember:**\n• Lease payments are FULLY deductible\n• Buying: Only depreciation is deductible"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Lease vs buy: Compare PV of all cash flows",
+            "NAL = PV(Lease) - PV(Buy); positive = lease better",
+            "Buy: Initial cost offset by depreciation tax shields + salvage",
+            "Lease: After-tax lease payments",
+            "Discount rate: After-tax cost of debt (not WACC)",
+            "Lease payments fully deductible; buying only depreciation",
+            "Consider qualitative factors: obsolescence, flexibility, control"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Lease vs Buy",
+          "knowledgeCheck": {
+            "question": "In a lease vs buy analysis, which discount rate is most appropriate?",
+            "options": [
+              "Company's WACC",
+              "Risk-free rate",
+              "After-tax cost of debt",
+              "Pre-tax cost of equity"
+            ],
+            "correctIndex": 2,
+            "explanation": "The after-tax cost of debt is appropriate because leasing is essentially a form of secured borrowing. Both the lease and the purchase with debt involve similar fixed payment obligations, so the comparison should use the after-tax borrowing rate.",
+            "hint": "Leasing is like what type of financing?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-031",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Capital Rationing and Project Selection",
+    "description": "Select optimal projects under capital constraints",
+    "order": 31,
+    "duration": 45,
+    "difficulty": "hard",
+    "topics": [
+      "Capital rationing",
+      "Profitability index",
+      "Project ranking",
+      "Budget constraints"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Companies rarely have unlimited capital! When investment funds are constrained, CMAs must help select the optimal mix of projects. Capital rationing skills ensure maximum value creation within budget limits."
+        },
+        {
+          "title": "Capital Rationing Basics",
+          "type": "text",
+          "content": "**What is Capital Rationing?**\n• Limited funds for capital investment\n• More positive-NPV projects than money\n• Must select subset of projects\n• Goal: Maximize total NPV\n\n**Why Does Rationing Occur?**\n• **Soft rationing:** Internal budget limits\n  - Self-imposed constraints\n  - Divisional budgets\n  - Management conservatism\n• **Hard rationing:** External constraints\n  - Cannot raise more capital\n  - Credit restrictions\n  - Debt covenants"
+        },
+        {
+          "title": "Profitability Index",
+          "type": "text",
+          "content": "**Profitability Index (PI):**\n\nPI = PV of Future Cash Flows / Initial Investment\n\nOR\n\nPI = (NPV + Initial Investment) / Initial Investment\n\nPI = 1 + (NPV / Initial Investment)\n\n**Interpretation:**\n• PI > 1: Accept (positive NPV)\n• PI < 1: Reject (negative NPV)\n• PI = 1: Break-even\n\n**Example:**\nPV of future cash flows: $150,000\nInitial investment: $100,000\n\nPI = $150,000 / $100,000 = 1.50\n• $1.50 PV for each $1.00 invested\n• NPV = $50,000 = $150K - $100K"
+        },
+        {
+          "title": "Project Selection Under Rationing",
+          "type": "table",
+          "headers": [
+            "Project",
+            "Investment",
+            "NPV",
+            "PI"
+          ],
+          "rows": [
+            [
+              "A",
+              "$100,000",
+              "$30,000",
+              "1.30"
+            ],
+            [
+              "B",
+              "$200,000",
+              "$50,000",
+              "1.25"
+            ],
+            [
+              "C",
+              "$150,000",
+              "$40,000",
+              "1.27"
+            ],
+            [
+              "D",
+              "$75,000",
+              "$25,000",
+              "1.33"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Selection Process",
+          "type": "callout",
+          "content": "**Budget: $300,000**\n\n**Step 1: Rank by PI (highest first)**\n• D: PI = 1.33\n• A: PI = 1.30\n• C: PI = 1.27\n• B: PI = 1.25\n\n**Step 2: Select in Order Until Budget Exhausted**\n• D: $75,000 (Remaining: $225,000) ✓\n• A: $100,000 (Remaining: $125,000) ✓\n• C: $150,000 exceeds $125,000 ✗\n• B: $200,000 exceeds $125,000 ✗\n\n**Selected:** D + A = $175,000\n**Total NPV:** $25,000 + $30,000 = $55,000\n\n**Key Insight:**\nPI ranks efficiency (NPV per dollar invested)\nMaximizes NPV for limited capital"
+        },
+        {
+          "title": "When PI Ranking Fails",
+          "type": "text",
+          "content": "**PI Ranking Limitations:**\n\n**Indivisible Projects:**\n• Can't do half a project\n• May need to try combinations\n\n**Different Project Lives:**\n• PI doesn't adjust for timing\n• May need equivalent annual annuity\n\n**Mutually Exclusive Projects:**\n• Must choose one or other\n• Use NPV for selection\n\n**Example of Combination Need:**\nBudget: $250,000\nOption 1: D + A + leave $75K = NPV $55K\nOption 2: Try B alone = NPV $50K\nOption 3: C + D = $225K = NPV $65K ✓\n\nBest combo may not follow strict PI ranking"
+        },
+        {
+          "title": "⚠️ Exam Trap: NPV vs PI",
+          "type": "warning",
+          "content": "**When to Use Which:**\n\n**No Capital Constraint:**\n• Accept ALL positive NPV projects\n• PI not needed - take everything\n• Use NPV for mutually exclusive choice\n\n**With Capital Constraint:**\n• Rank by PI to maximize total NPV\n• PI shows efficiency per dollar\n\n**Mutually Exclusive:**\n• ALWAYS use NPV, not PI\n• Even with rationing\n• PI can mislead on scale\n\n**Example:**\nProject A: $100 investment, $120 PV (PI = 1.20, NPV = $20)\nProject B: $1,000 investment, $1,100 PV (PI = 1.10, NPV = $100)\n\nIf mutually exclusive: B wins (higher NPV)\nEven though A has higher PI"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capital rationing: Limited funds, must select projects",
+            "PI = PV of cash flows / Initial investment",
+            "PI shows efficiency - NPV per dollar invested",
+            "Rank by PI, select highest until budget exhausted",
+            "May need to evaluate combinations for optimal mix",
+            "Mutually exclusive: Use NPV not PI",
+            "Without constraints: Accept all positive NPV"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Capital Rationing",
+          "knowledgeCheck": {
+            "question": "A company has a $500,000 capital budget. Project X requires $300,000 and has NPV of $60,000. Project Y requires $200,000 and has NPV of $50,000. If projects are independent, which should be selected?",
+            "options": [
+              "Project X only (higher NPV)",
+              "Project Y only (higher PI)",
+              "Both projects",
+              "Neither project"
+            ],
+            "correctIndex": 2,
+            "explanation": "Both projects have positive NPV and together require $500,000 ($300K + $200K), exactly matching the budget. Total NPV = $60,000 + $50,000 = $110,000. There's no capital rationing issue since both fit within budget.",
+            "hint": "Check if the budget can accommodate both projects."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-C-032",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Sensitivity and Scenario Analysis",
+    "description": "Test investment decisions under uncertainty",
+    "order": 32,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Sensitivity analysis",
+      "Scenario analysis",
+      "Monte Carlo simulation",
+      "Risk assessment"
+    ],
+    "blueprintArea": "CMA2-C",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "The future is uncertain! CMAs use sensitivity and scenario analysis to test how investment decisions hold up under different assumptions. These techniques reveal risks and help make better decisions under uncertainty."
+        },
+        {
+          "title": "Analysis Under Uncertainty",
+          "type": "text",
+          "content": "**The Problem:**\n• NPV calculations use estimates\n• Sales, costs, timing uncertain\n• Single-point estimates may mislead\n• Need to understand risk\n\n**Three Approaches:**\n• **Sensitivity Analysis:** Change one variable\n• **Scenario Analysis:** Change multiple variables\n• **Simulation:** Probabilistic modeling\n\n**Goal:**\n• Understand which variables matter most\n• See range of possible outcomes\n• Make more informed decisions"
+        },
+        {
+          "title": "Sensitivity Analysis",
+          "type": "text",
+          "content": "**What It Does:**\nChanges ONE variable at a time\nHolds all others constant\nShows impact on NPV/IRR\n\n**Process:**\n1. Build base case model\n2. Identify key variables\n3. Vary each variable (+/- 10%, 20%)\n4. Calculate new NPV for each\n5. Rank by impact\n\n**Output:**\n• Tornado diagram\n• Shows most sensitive variables at top\n• Longest bars = highest impact\n\n**Example:**\n10% decrease in sales volume → NPV drops 40%\n10% increase in costs → NPV drops 15%\n→ Volume is more critical than costs"
+        },
+        {
+          "title": "Sensitivity Example",
+          "type": "table",
+          "headers": [
+            "Variable",
+            "-10%",
+            "Base Case",
+            "+10%"
+          ],
+          "rows": [
+            [
+              "Sales Volume",
+              "NPV: $800K",
+              "NPV: $2M",
+              "NPV: $3.2M"
+            ],
+            [
+              "Selling Price",
+              "NPV: $1.2M",
+              "NPV: $2M",
+              "NPV: $2.8M"
+            ],
+            [
+              "Variable Cost",
+              "NPV: $2.4M",
+              "NPV: $2M",
+              "NPV: $1.6M"
+            ],
+            [
+              "Fixed Cost",
+              "NPV: $2.2M",
+              "NPV: $2M",
+              "NPV: $1.8M"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Scenario Analysis",
+          "type": "callout",
+          "content": "**Scenario Analysis:**\nChanges MULTIPLE variables simultaneously\nCreates alternative futures\n\n**Typical Scenarios:**\n• **Best Case:** Optimistic assumptions\n• **Base Case:** Most likely\n• **Worst Case:** Pessimistic assumptions\n\n**Example:**\n**Best:** High sales + Low costs + Strong economy\n**Worst:** Low sales + High costs + Recession\n\n**Advantage over Sensitivity:**\n• More realistic (variables correlate)\n• Shows combined effects\n• Better for storytelling\n\n**Memory:**\nSensitivity = One at a time\nScenario = Whole story"
+        },
+        {
+          "title": "Monte Carlo Simulation",
+          "type": "text",
+          "content": "**What It Is:**\n• Computer-based probabilistic analysis\n• Runs thousands of scenarios\n• Random sampling from distributions\n• Shows probability distribution of outcomes\n\n**Process:**\n1. Define probability distributions for variables\n2. Computer randomly samples values\n3. Calculate NPV for each combination\n4. Repeat 1,000+ times\n5. Analyze results\n\n**Output:**\n• Distribution of possible NPVs\n• Mean, median, standard deviation\n• Probability of positive NPV\n• Value at Risk (VaR)\n\n**Advantage:**\nMost comprehensive risk view\nCaptures all interactions"
+        },
+        {
+          "title": "⚠️ Exam Trap: When to Use Each",
+          "type": "warning",
+          "content": "**Choose the Right Tool:**\n\n**Sensitivity Analysis:**\n• Quick and simple\n• Identify key drivers\n• Early-stage analysis\n• Limited time/resources\n\n**Scenario Analysis:**\n• Board presentations\n• Strategic planning\n• Variables are related\n• Tell coherent stories\n\n**Monte Carlo:**\n• Complex projects\n• Many uncertain variables\n• Need probability of outcomes\n• High-stakes decisions\n\n**Limitation of All:**\nGarbage in, garbage out\nQuality depends on input estimates\n\n**Exam Tip:**\nKnow differences - often tested"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sensitivity: One variable at a time, find key drivers",
+            "Scenario: Multiple variables, coherent futures (best/base/worst)",
+            "Monte Carlo: Probabilistic, thousands of simulations",
+            "Tornado diagram ranks sensitivity of variables",
+            "Scenario analysis better captures correlated changes",
+            "Monte Carlo provides probability distributions",
+            "All methods depend on quality of input assumptions"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Risk Analysis",
+          "knowledgeCheck": {
+            "question": "An analyst wants to determine which single input variable has the greatest impact on a project's NPV. Which technique is most appropriate?",
+            "options": [
+              "Scenario analysis",
+              "Sensitivity analysis",
+              "Monte Carlo simulation",
+              "Break-even analysis"
+            ],
+            "correctIndex": 1,
+            "explanation": "Sensitivity analysis changes ONE variable at a time while holding others constant, making it ideal for identifying which single variable has the greatest impact on NPV. Scenario analysis changes multiple variables together.",
+            "hint": "Which technique varies one variable at a time?"
+          }
+        }
+      ]
+    }
   }
 ]

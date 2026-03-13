@@ -63,6 +63,9 @@ export interface StudyPlanWeek {
     questionMinutes: number;          // Target MCQ time (minutes) 
     flashcards: number;               // Target flashcard reviews
     simulations: number;              // Target TBS/simulations
+    essays?: number;                  // Target essays (CMA only, until Sept 2026)
+    cbqs?: number;                    // Target CBQs (CMA only, from May 2026)
+    caseStudies?: number;             // Target case studies (CFP only)
     mockExams: number;                // Target mock exams (usually 0 or 1)
   };
   isCurrentWeek?: boolean;
@@ -103,10 +106,11 @@ export interface TopicPlanItem {
  */
 export interface RealityCheck {
   isRealistic: boolean;
-  hoursNeeded: number;                // Total hours estimated to prepare
+  hoursNeeded: number;                // Total hours estimated to prepare (VoraPrep adaptive)
   hoursAvailable: number;             // Total hours based on user's schedule
   hourDeficit: number;                // hoursNeeded - hoursAvailable (0 if deficit)
   hourSurplus: number;                // hoursAvailable - hoursNeeded (0 if deficit)
+  industryBenchmark: number;          // Industry average study hours (always > hoursNeeded)
   suggestedActions: RealityCheckAction[];
   message: string;                    // Human-readable assessment
   severity: 'good' | 'warning' | 'critical';
@@ -253,10 +257,10 @@ export const SECTION_STUDY_HOURS: Record<string, number> = {
   // CMA sections (IMA recommendation: 150-170h per part)
   CMA1: 160,   // Financial Planning, Performance, Analytics
   CMA2: 160,   // Strategic Financial Management
-  // CIA sections (IIA standards)
-  CIA1: 100,   // Essentials of Internal Auditing
-  CIA2: 100,   // Practice of Internal Auditing
-  CIA3: 100,   // Business Knowledge
+  // CIA sections (IIA: ~300-400h total; Gleim/Wiley per-part estimates)
+  CIA1: 130,   // Essentials of Internal Auditing — foundational standards, heaviest
+  CIA2: 115,   // Practice of Internal Auditing — application-oriented
+  CIA3: 105,   // Business Knowledge — broadest scope, less depth
   // CISA (ISACA recommendation: 150-200h)
   CISA: 160,   // Single exam, 5 domains
   // CFP (CFP Board recommendation: 250-300h)
@@ -266,13 +270,12 @@ export const SECTION_STUDY_HOURS: Record<string, number> = {
 /**
  * Experience modifier for study hours
  * 
- * Based on how much content a user needs to learn vs review:
- * - No experience: Full curriculum coverage needed
- * - Some experience: Already know fundamentals, focus on gaps
- * - Retake: Seen all material, focused review on weak areas
+ * These multipliers apply to the FALLBACK calculation only (when contentRegistry
+ * is unavailable). The primary calculation uses mcqTarget + experience-scaled
+ * timing from contentRegistry.ts.
  */
 export const EXPERIENCE_MULTIPLIERS: Record<string, number> = {
-  'none': 1.0,      // 100% - Full study time needed
-  'some': 0.80,     // 80% - 20% reduction for existing knowledge
-  'retake': 0.60,   // 60% - 40% reduction, focused remediation
+  'none': 1.25,     // 125% - Beginners need more time
+  'some': 0.90,     // 90% - Some familiarity reduces time
+  'retake': 0.65,   // 65% - Focused remediation
 };

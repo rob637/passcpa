@@ -111,8 +111,11 @@ async function checkStudyPlanExists(
   section: string
 ): Promise<boolean> {
   try {
-    const planKey = `${courseId}_${section}`.toLowerCase();
-    const planRef = doc(db, 'users', userId, 'study_plans', planKey);
+    // Normalize section to match how plans are stored
+    const normalizedSection = resolveStudySection(courseId, section) || section.toUpperCase();
+    const planKey = `${courseId}_${normalizedSection}`;
+    // Use 'studyPlans' collection (camelCase) - matches where plans are saved in useStudyPlan.ts
+    const planRef = doc(db, 'users', userId, 'studyPlans', planKey);
     const snapshot = await getDoc(planRef);
     return snapshot.exists();
   } catch {
@@ -249,7 +252,7 @@ async function getStudyPlanContext(
     // Extract focus topics from this week's lessons
     const focusTopics = [...new Set(weekLessons.flatMap(l => l.topics || []))];
     
-    logger.info(`Study plan context for ${planKey}: Week ${currentWeek.weekNumber}, ${weekLessonIds.length} lessons`);
+    logger.info(`Study plan context for ${planKey}: Week ${currentWeek.weekNumber}, ${weekLessonIds.length} week lessons, goals: ${JSON.stringify(currentWeek.goals)}`);
     
     return {
       currentWeek: currentWeek.weekNumber,

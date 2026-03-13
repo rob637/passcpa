@@ -1640,5 +1640,1935 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA1-D-011",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Cost Estimation Methods",
+    "description": "Learn quantitative techniques for estimating costs and separating fixed from variable components",
+    "order": 46,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cost estimation",
+      "High-low method",
+      "Regression analysis",
+      "Learning curves"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Accurate cost estimation is essential for budgeting, pricing, and decision-making! CMAs must separate fixed and variable costs to forecast future costs, analyze cost behavior, and support strategic decisions. These techniques are heavily tested on the CMA exam."
+        },
+        {
+          "title": "Cost Estimation Approaches",
+          "type": "table",
+          "headers": [
+            "Method",
+            "How It Works",
+            "Accuracy"
+          ],
+          "rows": [
+            [
+              "Account Analysis",
+              "Classify each account as fixed or variable based on judgment",
+              "Low - subjective"
+            ],
+            [
+              "High-Low Method",
+              "Use highest and lowest activity points to calculate variable rate",
+              "Moderate - uses 2 points"
+            ],
+            [
+              "Scatter Plot",
+              "Plot costs against activity and visually fit a line",
+              "Moderate - visual"
+            ],
+            [
+              "Regression Analysis",
+              "Statistical technique using all data points",
+              "High - most accurate"
+            ]
+          ]
+        },
+        {
+          "title": "The High-Low Method",
+          "type": "text",
+          "content": "**Step-by-Step Process:**\n\n**Step 1:** Identify highest and lowest activity levels\n\n**Step 2:** Calculate variable cost per unit\nVariable Rate = (Cost at High - Cost at Low) / (High Activity - Low Activity)\n\n**Step 3:** Calculate fixed cost\nFixed Cost = Total Cost - (Variable Rate × Activity)\n\n**Example:**\nHigh: 10,000 units, $80,000 total cost\nLow: 6,000 units, $56,000 total cost\n\nVariable Rate = ($80,000 - $56,000) / (10,000 - 6,000)\n= $24,000 / 4,000 = $6 per unit\n\nFixed Cost = $80,000 - ($6 × 10,000) = $20,000\n\n**Cost Formula:** Y = $20,000 + $6X"
+        },
+        {
+          "title": "🧠 Memory Aid: High-Low Steps",
+          "type": "callout",
+          "content": "**\"HIgh LOw = HILO\"**\n\n**H**ighest and **L**owest points identified\n**I**ncremental cost calculated (cost change)\n**L**evel of activity change determined\n**O**utput: Variable rate = Cost change / Activity change\n\nThen: Fixed = Total - (Variable × Units)"
+        },
+        {
+          "title": "⚠️ Exam Trap: High-Low Limitations",
+          "type": "warning",
+          "content": "**The high-low method has significant limitations:**\n\n1. **Uses only 2 data points** - ignores all other observations\n2. **Outliers** - if high or low point is unusual, results are skewed\n3. **Assumes linearity** - relationship must be linear\n4. **Non-representative** - extreme points may not reflect normal operations\n\n**Best practice:** Use regression when data is available; high-low for quick estimates only."
+        },
+        {
+          "title": "Regression Analysis",
+          "type": "text",
+          "content": "**Linear Regression Formula:**\nY = a + bX\n\nWhere:\n• Y = Total cost (dependent variable)\n• a = Fixed cost (Y-intercept)\n• b = Variable cost per unit (slope)\n• X = Activity level (independent variable)\n\n**Advantages over High-Low:**\n• Uses ALL data points\n• Provides statistical measures of reliability\n• Identifies outliers and anomalies\n\n**Key Statistics:**\n• **R² (Coefficient of Determination):** % of cost variation explained by activity\n• **Standard Error:** Average prediction error\n• **t-statistic:** Tests if coefficients are statistically significant"
+        },
+        {
+          "title": "Interpreting R-Squared",
+          "type": "table",
+          "headers": [
+            "R² Value",
+            "Interpretation",
+            "Reliability"
+          ],
+          "rows": [
+            [
+              "0.90 - 1.00",
+              "Excellent fit - activity explains most cost variation",
+              "Very High"
+            ],
+            [
+              "0.70 - 0.89",
+              "Good fit - useful for predictions",
+              "High"
+            ],
+            [
+              "0.50 - 0.69",
+              "Moderate fit - other factors affect costs",
+              "Moderate"
+            ],
+            [
+              "Below 0.50",
+              "Weak fit - look for better cost drivers",
+              "Low"
+            ]
+          ]
+        },
+        {
+          "title": "Learning Curve Analysis",
+          "type": "text",
+          "content": "**Concept:** Labor time decreases as workers gain experience\n\n**Learning Curve Effect:**\nEach time cumulative production doubles, time per unit decreases by a constant percentage.\n\n**Example - 80% Learning Curve:**\n• 1st unit: 100 hours\n• 2nd unit (cumulative avg): 80 hours (100 × 0.80)\n• 4th unit (cumulative avg): 64 hours (80 × 0.80)\n• 8th unit (cumulative avg): 51.2 hours (64 × 0.80)\n\n**Applications:**\n• Bidding on new contracts\n• Setting labor standards\n• Planning production capacity\n• Pricing new products"
+        },
+        {
+          "title": "Learning Curve Formula",
+          "type": "text",
+          "content": "**Cumulative Average Time Model:**\nY = aX^b\n\nWhere:\n• Y = Cumulative average time per unit\n• a = Time for first unit\n• X = Cumulative number of units\n• b = Learning coefficient (log of learning rate / log 2)\n\n**For 80% Learning Curve:**\nb = log(0.80) / log(2) = -0.322\n\n**Key Insight:** Lower learning rate % = Faster learning\n• 70% curve: Very fast learning (complex assembly)\n• 90% curve: Slow learning (simple tasks)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cost estimation separates fixed and variable components for forecasting",
+            "High-low method uses only highest and lowest activity points",
+            "High-low: Variable Rate = Change in Cost / Change in Activity",
+            "Regression analysis uses all data points and is more accurate",
+            "R² measures how well activity explains cost variation",
+            "Learning curves show how labor time decreases with experience",
+            "Each doubling of production reduces time by the learning curve percentage"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "High-Low Method Calculation",
+          "knowledgeCheck": {
+            "question": "A company's highest production was 8,000 units with costs of $52,000. The lowest was 3,000 units with costs of $27,000. Using high-low, what is the variable cost per unit?",
+            "options": [
+              "$4.00",
+              "$5.00",
+              "$6.50",
+              "$9.00"
+            ],
+            "correctIndex": 1,
+            "explanation": "Variable cost = ($52,000 - $27,000) / (8,000 - 3,000) = $25,000 / 5,000 = $5.00 per unit.",
+            "hint": "Divide the change in cost by the change in activity."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Learning Curve Application",
+          "knowledgeCheck": {
+            "question": "A company has an 80% learning curve. The first unit took 100 hours. What is the cumulative average time per unit after producing 4 units?",
+            "options": [
+              "80 hours",
+              "64 hours",
+              "51.2 hours",
+              "40.96 hours"
+            ],
+            "correctIndex": 1,
+            "explanation": "With an 80% learning curve, each doubling reduces time to 80% of previous. 1 unit = 100 hours, 2 units = 80 hours, 4 units = 64 hours (80 × 0.80).",
+            "hint": "Count the doublings: 1→2→4 = two doublings."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "High-Low Limitations",
+          "reveal": {
+            "question": "What are the main limitations of the high-low method?",
+            "answer": "The high-low method: (1) Uses only two data points, ignoring all other observations, (2) Is sensitive to outliers if extreme points are unusual, (3) Assumes a perfectly linear relationship, and (4) May not represent normal operations if extreme points are anomalies."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-012",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Process Costing Systems",
+    "description": "Master the fundamentals of process costing for continuous production environments",
+    "order": 47,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Process costing",
+      "Equivalent units",
+      "FIFO vs weighted average",
+      "Cost reconciliation"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Process costing is essential for industries like chemicals, food processing, petroleum, and pharmaceuticals where products flow continuously through standardized processes. CMAs must understand equivalent unit calculations and cost flow assumptions!"
+        },
+        {
+          "title": "Job Costing vs Process Costing",
+          "type": "table",
+          "headers": [
+            "Characteristic",
+            "Job Costing",
+            "Process Costing"
+          ],
+          "rows": [
+            [
+              "Production Type",
+              "Custom, unique jobs",
+              "Homogeneous, continuous flow"
+            ],
+            [
+              "Cost Accumulation",
+              "By individual job/batch",
+              "By department/process"
+            ],
+            [
+              "Unit Cost Calculation",
+              "Total job cost ÷ units in job",
+              "Process cost ÷ equivalent units"
+            ],
+            [
+              "Industries",
+              "Construction, custom manufacturing",
+              "Chemicals, food, utilities"
+            ],
+            [
+              "Cost Tracing",
+              "Direct to job",
+              "Averaged over all units"
+            ]
+          ]
+        },
+        {
+          "title": "Equivalent Units of Production (EUP)",
+          "type": "text",
+          "content": "**The Core Concept:** Converting partially completed units to equivalent whole units\n\n**Why Needed:**\n• At period end, some units are partially complete\n• Can't just count physical units\n• Need to express work done in terms of complete units\n\n**Formula:**\nEquivalent Units = Physical Units × Percentage Complete\n\n**Example:**\n10,000 units that are 40% complete\n= 10,000 × 40% = 4,000 equivalent units\n\n**Key Point:** EUP is calculated separately for:\n• Direct materials (often added at specific point)\n• Conversion costs (usually applied evenly)"
+        },
+        {
+          "title": "🧠 Memory Aid: EUP Steps",
+          "type": "callout",
+          "content": "**\"SAUCE\" - Process Costing Steps:**\n\n**S**ummarize physical unit flow\n**A**ccumulate costs to account for\n**U**nit calculation (equivalent units)\n**C**ost per equivalent unit\n**E**valuate ending inventory & COGM\n\nAlways start with physical units, then convert to equivalent units!"
+        },
+        {
+          "title": "Weighted Average Method",
+          "type": "text",
+          "content": "**Approach:** Mixes beginning inventory costs with current period costs\n\n**EUP Calculation:**\nEUP = Units transferred out + (Ending WIP × % complete)\n\n**Cost per EUP:**\n= (Beginning WIP costs + Current period costs) ÷ EUP\n\n**Example:**\nBeginning WIP: 5,000 units, $15,000\nStarted: 45,000 units\nCompleted and transferred: 40,000 units\nEnding WIP: 10,000 units (60% complete for conversion)\n\nEUP = 40,000 + (10,000 × 60%) = 46,000\n\n**Advantage:** Simple to calculate\n**Disadvantage:** Blends periods, less accurate for performance evaluation"
+        },
+        {
+          "title": "FIFO Method",
+          "type": "text",
+          "content": "**Approach:** Separates beginning inventory from current period work\n\n**EUP Calculation:**\nEUP = Work to complete beginning WIP\n     + Units started and completed\n     + Work on ending WIP\n\n**Same Example with FIFO:**\nBeginning WIP: 5,000 units (40% complete)\n\nEUP = (5,000 × 60%)        Work to complete beginning\n    + 35,000               Started & completed\n    + (10,000 × 60%)       Work on ending WIP\n    = 3,000 + 35,000 + 6,000 = 44,000\n\n**Advantage:** Better for performance evaluation (current period only)\n**Disadvantage:** More complex calculation"
+        },
+        {
+          "title": "Comparison: Weighted Average vs FIFO",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Weighted Average",
+            "FIFO"
+          ],
+          "rows": [
+            [
+              "EUP for transferred",
+              "All units transferred out",
+              "Only current period work"
+            ],
+            [
+              "Cost per unit",
+              "Blends prior and current costs",
+              "Current period costs only"
+            ],
+            [
+              "Complexity",
+              "Simpler",
+              "More complex"
+            ],
+            [
+              "Performance evaluation",
+              "Less useful",
+              "More useful (isolates current period)"
+            ],
+            [
+              "When costs are stable",
+              "Results similar to FIFO",
+              "Same"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Materials Added at Different Points",
+          "type": "warning",
+          "content": "**Watch for: When materials are added**\n\n**Added at Beginning:** All units in WIP are 100% complete for materials\n\n**Added at End:** Only completed units have materials (0% for WIP)\n\n**Added Evenly:** Same as conversion costs\n\n**Example Trap:**\nEnding WIP: 8,000 units, 50% complete\nMaterials added at beginning\nConversion added evenly\n\nEUP for materials: 8,000 (100%)\nEUP for conversion: 4,000 (50%)\n\n**Exam often tests different % for materials vs conversion!"
+        },
+        {
+          "title": "Cost Reconciliation",
+          "type": "text",
+          "content": "**The Final Step:** Account for all costs\n\n**Costs to Account For:**\n• Beginning WIP costs\n• Current period costs added\n\n**Costs Accounted For:**\n• Transferred out (units × cost per EUP)\n• Ending WIP inventory\n  - Materials: EUP × cost per unit\n  - Conversion: EUP × cost per unit\n\n**These Must Equal!**\n\n**Check Your Work:**\nTotal costs to account for = Costs accounted for\n(If not equal, calculation error somewhere)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Process costing is for continuous, homogeneous production",
+            "Equivalent units convert partial completion to whole unit equivalents",
+            "Calculate EUP separately for materials and conversion costs",
+            "Weighted average blends periods; FIFO separates current period work",
+            "FIFO is better for performance evaluation",
+            "Watch for when materials are added (beginning, end, or evenly)",
+            "Cost reconciliation must balance: costs in = costs out"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Equivalent Unit Calculation",
+          "knowledgeCheck": {
+            "question": "A department completed and transferred 30,000 units during the month. Ending work-in-process consists of 8,000 units that are 100% complete for materials and 75% complete for conversion. Using the weighted average method, what are the equivalent units for conversion costs?",
+            "options": [
+              "30,000",
+              "36,000",
+              "38,000",
+              "44,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "EUP for conversion = Units transferred out + (Ending WIP × % complete) = 30,000 + (8,000 × 75%) = 30,000 + 6,000 = 36,000 equivalent units.",
+            "hint": "Under weighted average, EUP includes all completed units plus the equivalent work in ending inventory."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Why Use FIFO Over Weighted Average?",
+          "reveal": {
+            "question": "In what situations would FIFO process costing be preferred over weighted average?",
+            "answer": "FIFO is preferred when: (1) Costs fluctuate significantly between periods, (2) Management wants to evaluate current period performance separately from prior periods, (3) Beginning inventory is large relative to current production, and (4) More accurate cost information is needed for pricing and cost control decisions."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-013",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Transfer Pricing Strategies",
+    "description": "Set internal prices that promote goal congruence and optimal decision-making",
+    "order": 48,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Transfer pricing",
+      "Goal congruence",
+      "Market-based pricing",
+      "Cost-based pricing"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Transfer prices can make or break divisional performance evaluation! Set too high, the buying division looks unprofitable. Set too low, the selling division loses. CMAs must design transfer pricing policies that promote good decisions for the company as a whole."
+        },
+        {
+          "title": "Transfer Pricing Fundamentals",
+          "type": "text",
+          "content": "**Definition:** The price charged when one segment of a company provides goods or services to another segment\n\n**Why It Matters:**\n• Affects divisional profit measurement\n• Influences manager decisions\n• Tax implications for international transfers\n\n**The Challenge:**\nSet price so that:\n• Selling division is fairly compensated\n• Buying division pays a reasonable cost\n• Both divisions make decisions good for the company"
+        },
+        {
+          "title": "Transfer Pricing Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "How It Works",
+            "Best When"
+          ],
+          "rows": [
+            [
+              "Market Price",
+              "External market price for identical product",
+              "Active market exists; divisions are independent"
+            ],
+            [
+              "Cost-Based",
+              "Variable cost, full cost, or cost-plus",
+              "No external market; internal only product"
+            ],
+            [
+              "Negotiated",
+              "Divisions agree on price",
+              "Some external market; divisions have options"
+            ],
+            [
+              "Dual Pricing",
+              "Different price for buyer and seller",
+              "Conflicts can't be resolved with single price"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Market Price Rule",
+          "type": "callout",
+          "content": "**\"Market is Best\" - When it exists!**\n\n**Market-based transfer pricing:**\n• Promotes goal congruence\n• Divisional autonomy preserved\n• Fair to both parties\n• Matches external opportunity cost\n\n**The Golden Standard:**\nIf seller could sell externally at $100\nIf buyer could buy externally at $100\nTransfer price should be around $100"
+        },
+        {
+          "title": "Cost-Based Methods",
+          "type": "text",
+          "content": "**Variable Cost:**\n• Minimum transfer price\n• Good for decisions\n• Problem: Seller shows no profit\n\n**Full Cost:**\n• Variable + allocated fixed costs\n• Covers all costs\n• Problem: Fixed cost allocation is arbitrary\n\n**Cost-Plus:**\n• Full cost + markup for profit\n• Seller earns profit\n• Problem: Markup is arbitrary\n\n**Issue with All Cost Methods:**\nSelling division has no incentive to control costs!\n(Costs just get passed along)"
+        },
+        {
+          "title": "The General Transfer Pricing Rule",
+          "type": "text",
+          "content": "**Optimal Transfer Price:**\n\n**Minimum TP = Variable Cost + Opportunity Cost**\n\n**Where Opportunity Cost =**\n• Lost contribution margin from external sales\n• $0 if seller has excess capacity\n• Full margin if seller is at capacity\n\n**Example - Seller at Capacity:**\nVariable cost: $30\nExternal selling price: $50\nOpportunity cost: $50 - $30 = $20\n\nMinimum TP = $30 + $20 = $50 (market price)\n\n**Example - Seller with Excess Capacity:**\nVariable cost: $30\nOpportunity cost: $0 (no lost sales)\n\nMinimum TP = $30 + $0 = $30"
+        },
+        {
+          "title": "⚠️ Exam Trap: Range of Acceptable Prices",
+          "type": "warning",
+          "content": "**For transfers to occur, TP must be in the range:**\n\n**Minimum (Seller):** Variable cost + Opportunity cost\n**Maximum (Buyer):** Market price (what buyer would pay externally)\n\n**If Minimum > Maximum:** No internal transfer makes sense!\n• Seller better off selling externally\n• Buyer better off buying externally\n\n**Exam Calculation:**\n1. Calculate minimum TP (seller's perspective)\n2. Calculate maximum TP (buyer's perspective)\n3. If range exists, transfer should occur\n4. If no range, external transactions preferred"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Transfer prices affect divisional profits and manager decisions",
+            "Market-based pricing is best when external market exists",
+            "Cost-based pricing used when no external market exists",
+            "General rule: TP ≥ Variable cost + Opportunity cost",
+            "Excess capacity means opportunity cost = $0",
+            "At full capacity, opportunity cost = lost contribution margin",
+            "Transfer should occur only if acceptable range exists"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Transfer Pricing Calculation",
+          "knowledgeCheck": {
+            "question": "Division A produces a component with a variable cost of $40 and sells it externally for $65. Division A is operating at full capacity. What is the minimum transfer price Division A should accept for internal sales to Division B?",
+            "options": [
+              "$40",
+              "$52.50",
+              "$65",
+              "$105"
+            ],
+            "correctIndex": 2,
+            "explanation": "At full capacity, the minimum TP = Variable cost + Opportunity cost = $40 + ($65 - $40) = $40 + $25 = $65. The opportunity cost is the full contribution margin from external sales that would be lost.",
+            "hint": "When at full capacity, what does Division A give up by selling internally?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-014",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Spoilage, Rework, and Scrap Accounting",
+    "description": "Account for production losses and inefficiencies in manufacturing",
+    "order": 44,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Spoilage",
+      "Normal spoilage",
+      "Abnormal spoilage",
+      "Scrap",
+      "Rework"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Production is never 100% efficient! Understanding how to account for spoilage, scrap, and rework is essential for accurate product costing and identifying improvement opportunities. The treatment differs based on whether losses are normal or abnormal."
+        },
+        {
+          "title": "Key Terms Defined",
+          "type": "text",
+          "content": "**Spoilage:**\n• Units that fail to meet quality standards\n• Cannot be reworked economically\n• Either discarded or sold at salvage value\n\n**Rework:**\n• Defective units that CAN be corrected\n• Additional processing to meet standards\n• Adds cost but saves the unit\n\n**Scrap:**\n• Material left over from production\n• Cuttings, turnings, shavings\n• Has some residual value\n• Cannot be reworked into product"
+        },
+        {
+          "title": "Normal vs Abnormal Spoilage",
+          "type": "table",
+          "headers": [
+            "Normal Spoilage",
+            "Abnormal Spoilage"
+          ],
+          "rows": [
+            [
+              "Expected and inherent in process",
+              "NOT expected; due to inefficiency"
+            ],
+            [
+              "Uncontrollable at efficient operation",
+              "Controllable; should be prevented"
+            ],
+            [
+              "Part of product cost",
+              "Period expense (loss)"
+            ],
+            [
+              "Example: 2% defects expected",
+              "Example: Machine breakdown"
+            ],
+            [
+              "Allocated to good units",
+              "Written off immediately"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Normal vs Abnormal",
+          "type": "callout",
+          "content": "**\"Normal = Product, Abnormal = Period\"**\n\n**Normal Spoilage:**\n• \"Cost of doing business\"\n• Becomes part of inventory cost\n• Flows to COGS when sold\n\n**Abnormal Spoilage:**\n• \"Unexpected failure\"\n• Loss on income statement\n• Expensed immediately\n\n**Think of it this way:**\nNormal = Built into the product price\nAbnormal = Management's problem (a loss!)"
+        },
+        {
+          "title": "Calculating Normal Spoilage",
+          "type": "text",
+          "content": "**Formula:**\n\nNormal Spoilage = Good Output × Normal Spoilage Rate\n\n**Example:**\n• Normal spoilage rate: 5%\n• Good units produced: 10,000\n• Total spoiled: 700 units\n\nNormal spoilage = 10,000 × 5% = 500 units\nAbnormal spoilage = 700 - 500 = 200 units\n\n**Accounting:**\n• 500 units cost → Added to good units\n• 200 units cost → Loss on income statement\n\n**Net Salvage:**\n• Deduct salvage value from spoilage cost\n• Net cost is what gets allocated or expensed"
+        },
+        {
+          "title": "Accounting for Scrap",
+          "type": "text",
+          "content": "**Two Approaches:**\n\n**Method 1: Reduce Product Cost**\n• When scrap is traced to specific job\n• Credit WIP for scrap value\n• Reduces cost of that job\n\n**Method 2: Other Income**\n• When scrap is common to all production\n• Credit \"Scrap Revenue\" (other income)\n• OR credit Factory Overhead Control\n\n**Timing:**\n• Recognize when scrap is produced (if material)\n• Or when scrap is sold (if immaterial)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Rework Costs",
+          "type": "warning",
+          "content": "**Normal Rework (inherent to process):**\n• Charge to factory overhead\n• Spread across all production\n• Part of standard cost\n\n**Normal Rework (specific job/customer specs):**\n• Charge to specific job\n• Customer effectively pays for rework\n\n**Abnormal Rework (due to error):**\n• Charge to Period Expense (Loss)\n• NOT included in product cost\n\n**Key Question:** Was rework EXPECTED?\nYes → Product cost\nNo → Period expense"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Spoilage = failed units; Scrap = leftover materials; Rework = fixable defects",
+            "Normal spoilage is expected and becomes product cost",
+            "Abnormal spoilage is unexpected and becomes period expense",
+            "Normal spoilage = Good output × Normal rate",
+            "Excess over normal = abnormal spoilage",
+            "Scrap reduces product cost or is recorded as other income",
+            "Rework treatment depends on whether it's expected or not"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Spoilage Accounting",
+          "knowledgeCheck": {
+            "question": "A company has a 3% normal spoilage rate. It produced 8,000 good units and had 400 spoiled units. How should the spoilage be accounted for?",
+            "options": [
+              "All 400 units to product cost",
+              "240 units to product cost, 160 units to period expense",
+              "All 400 units to period expense",
+              "200 units to product cost, 200 units to period expense"
+            ],
+            "correctIndex": 1,
+            "explanation": "Normal spoilage = 8,000 good units × 3% = 240 units. These 240 units' costs are added to good units (product cost). The remaining 400 - 240 = 160 units are abnormal spoilage and charged to period expense.",
+            "hint": "Calculate normal spoilage using the rate applied to GOOD output, then the excess is abnormal."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-015",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Throughput Accounting and Theory of Constraints",
+    "description": "Apply TOC principles to maximize throughput and profitability",
+    "order": 15,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Theory of constraints",
+      "Throughput accounting",
+      "Bottleneck management",
+      "Product mix decisions"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Traditional costing spreads overhead everywhere - but TOC focuses on what REALLY limits profits! Understanding bottlenecks and throughput helps CMAs make better product mix and investment decisions. This is a favorite CMA exam topic!"
+        },
+        {
+          "title": "Theory of Constraints (TOC) Basics",
+          "type": "text",
+          "content": "**Core Concept:**\nEvery system has at least one constraint (bottleneck)\nThat constraint determines system throughput\n\n**TOC Philosophy:**\n• Focus ALL attention on the constraint\n• Don't optimize non-constraints (waste)\n• One hour lost at bottleneck = one hour lost forever\n• One hour saved at non-bottleneck = mirage\n\n**The Goal:**\nMaximize THROUGHPUT, not utilization\nProfit = Throughput - Operating Expenses"
+        },
+        {
+          "title": "TOC Five Focusing Steps",
+          "type": "text",
+          "content": "**Step 1: IDENTIFY the constraint**\n• What limits output?\n• Could be machine, person, policy, market\n\n**Step 2: EXPLOIT the constraint**\n• Get maximum output from existing constraint\n• No idle time at bottleneck\n\n**Step 3: SUBORDINATE everything else**\n• Non-constraints serve the constraint\n• Don't overproduce at non-bottlenecks\n\n**Step 4: ELEVATE the constraint**\n• Invest to increase constraint capacity\n• Add shifts, equipment, training\n\n**Step 5: REPEAT**\n• Constraint may move!\n• Start over at Step 1"
+        },
+        {
+          "title": "🧠 Memory Aid: Throughput Accounting Measures",
+          "type": "callout",
+          "content": "**\"TIO\" - The Three TOC Measures:**\n\n**T**hroughput = Revenue - Truly Variable Costs\n(Only raw materials - NOT labor!)\n\n**I**nventory = Money tied up in things to sell\n(All inventory at material cost only)\n\n**O**perating Expense = Everything else\n(All labor, overhead, fixed costs)\n\n**Profit = Throughput - Operating Expense**\n\n**Key Difference from Traditional:**\nLabor is NOT variable in TOC - it's fixed!"
+        },
+        {
+          "title": "Product Mix with Constraint",
+          "type": "text",
+          "content": "**When bottleneck capacity is limited:**\n\n**DON'T** rank by contribution margin\n**DO** rank by throughput per constraint unit\n\n**Formula:**\nThroughput per Constraint Hour\n= (Price - Materials) / Constraint Hours\n\n**Example:**\n|Product|Price|Materials|Throughput|Constraint Hrs|\n|A|$100|$30|$70|2 hrs|\n|B|$80|$20|$60|1 hr|\n\n**Traditional:** Product A has higher CM ($70 > $60)\n**TOC:** Product B has higher throughput/hour ($60 > $35)\n\n**Prioritize B when bottleneck is limiting!"
+        },
+        {
+          "title": "TOC vs Traditional Costing",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Traditional Costing",
+            "Throughput Accounting"
+          ],
+          "rows": [
+            [
+              "Variable costs",
+              "Materials + Labor + VOH",
+              "Only materials"
+            ],
+            [
+              "Labor treatment",
+              "Variable (often)",
+              "Fixed (operating expense)"
+            ],
+            [
+              "Product ranking",
+              "By contribution margin",
+              "By throughput per constraint"
+            ],
+            [
+              "Inventory valuation",
+              "Includes conversion costs",
+              "Materials only"
+            ],
+            [
+              "Focus",
+              "All operations",
+              "Constraint only"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Drum-Buffer-Rope",
+          "type": "warning",
+          "content": "**TOC scheduling system:**\n\n**Drum:** The constraint sets the pace\n(Like a drum beat - everyone follows)\n\n**Buffer:** Protective inventory before constraint\n(Never let constraint starve for work)\n\n**Rope:** Communication back to start\n(Only release material as fast as drum beats)\n\n**Purpose:**\n• Prevent WIP buildup\n• Maximize constraint utilization\n• Reduce inventory and lead times\n\n**Key Concept:** DON'T maximize machine utilization everywhere - only at constraint!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Constraint (bottleneck) determines system throughput",
+            "Five steps: Identify, Exploit, Subordinate, Elevate, Repeat",
+            "Throughput = Revenue - Truly Variable Costs (materials only)",
+            "Rank product mix by throughput per constraint hour",
+            "Traditional CM ranking fails when constraint is binding",
+            "Drum-Buffer-Rope: schedule based on constraint pace",
+            "Don't optimize non-constraints - it creates excess inventory"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "TOC Product Mix",
+          "knowledgeCheck": {
+            "question": "Machine X is a bottleneck with 100 hours available. Product P contributes $120 and uses 4 bottleneck hours. Product Q contributes $100 and uses 2 bottleneck hours. Which product should be prioritized?",
+            "options": [
+              "Product P (higher contribution margin)",
+              "Product Q (higher throughput per bottleneck hour)",
+              "Produce equal quantities of both",
+              "Need more information about demand"
+            ],
+            "correctIndex": 1,
+            "explanation": "Product P: $120 / 4 hrs = $30/hr. Product Q: $100 / 2 hrs = $50/hr. Even though P has higher CM ($120 vs $100), Q generates more throughput per scarce constraint hour. Prioritize Q!",
+            "hint": "When a bottleneck constrains output, maximize throughput per constraint hour, not total contribution margin."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-016",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Joint Product and By-Product Costing",
+    "description": "Allocate joint costs and account for by-products in process manufacturing",
+    "order": 16,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Joint products",
+      "By-products",
+      "Split-off point",
+      "Cost allocation"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "What happens when one process creates multiple products? CMAs must allocate joint costs for inventory valuation and profitability analysis. Warning: Joint cost allocations are ARBITRARY - don't use them for sell-or-process decisions!"
+        },
+        {
+          "title": "Key Terminology",
+          "type": "text",
+          "content": "**Joint Costs:**\nCosts incurred up to split-off point\nCannot be traced to individual products\nMust be allocated\n\n**Split-Off Point:**\nWhere joint products become separately identifiable\nWhere allocation decisions are made\n\n**Joint Products:**\n• Multiple products of significant value\n• Result from same process\n• Neither can be produced without others\n\n**By-Products:**\n• Minor product with little value\n• Incidental to main products\n\n**Separable Costs:**\nCosts incurred AFTER split-off\nCan be traced to specific products"
+        },
+        {
+          "title": "Joint Cost Allocation Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Basis",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Physical Units",
+              "Weight, volume, units",
+              "Products with similar value per unit"
+            ],
+            [
+              "Sales Value at Split-Off",
+              "Market price at split-off",
+              "Most common; assumes proportional value"
+            ],
+            [
+              "Net Realizable Value (NRV)",
+              "Final price - separable costs",
+              "Products processed further"
+            ],
+            [
+              "Constant Gross Margin %",
+              "Target same GM% for all",
+              "Management reporting consistency"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Sales Value Method",
+          "type": "callout",
+          "content": "**Most intuitive approach:**\n\n**Step 1:** Find sales value at split-off for each product\n\n**Step 2:** Calculate % of total sales value\nProduct A / Total Sales Value = A%\n\n**Step 3:** Allocate joint costs by %\nJoint Costs × A% = A's allocated cost\n\n**Example:**\n• Joint Costs: $100,000\n• Product A: $60,000 at split-off (60%)\n• Product B: $40,000 at split-off (40%)\n• A gets: $60,000 of costs\n• B gets: $40,000 of costs"
+        },
+        {
+          "title": "Net Realizable Value Method",
+          "type": "text",
+          "content": "**When products are processed further:**\n\n**NRV = Final Sales Value - Separable Costs**\n\n**Example:**\n| Product | Final Value | Separable | NRV |\n|---------|------------|-----------|-----|\n| A | $80,000 | $20,000 | $60,000 |\n| B | $70,000 | $30,000 | $40,000 |\n| Total | | | $100,000 |\n\n**Joint Costs: $80,000**\n\n**Allocation:**\n• A: 60% × $80,000 = $48,000\n• B: 40% × $80,000 = $32,000\n\n**Why NRV?**\nReflects actual value created by each product\nAvoids penalizing products requiring more processing"
+        },
+        {
+          "title": "By-Product Accounting",
+          "type": "text",
+          "content": "**Two Methods:**\n\n**Method 1: Reduce Joint Cost (Production Method)**\n• Recognize revenue when by-product is produced\n• NRV of by-product reduces joint costs\n• Main products bear lower costs\n\n**Method 2: Revenue at Sale (Sales Method)**\n• Recognize revenue when by-product is sold\n• Treated as Other Revenue or reduction to COGS\n• Simpler, no inventory carrying for by-product\n\n**Practical Approach:**\nBy-products are often treated as reducing joint costs\navoids tracking minimal-value inventory"
+        },
+        {
+          "title": "⚠️ Exam Trap: Decision Relevance",
+          "type": "warning",
+          "content": "**CRITICAL: Joint costs are IRRELEVANT for:**\n\n**Sell-or-Process-Further Decision:**\n• Joint costs are sunk at split-off\n• Compare: Additional revenue vs Separable costs\n• Ignore allocated joint costs!\n\n**Correct Analysis:**\n• Incremental revenue from processing\n• Minus incremental (separable) costs\n• If positive: Process further\n• If negative: Sell at split-off\n\n**Why?**\nJoint costs are incurred regardless of what you do with products after split-off\n\n**Exam loves this trap!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Joint costs occur before split-off and must be allocated",
+            "Methods: Physical units, Sales value, NRV, Constant GM%",
+            "Sales value at split-off is most common method",
+            "NRV = Final value - Separable costs (for further processed products)",
+            "By-products: Reduce joint cost or recognize revenue at sale",
+            "CRITICAL: Joint costs are irrelevant for sell-or-process decisions",
+            "Sell-or-process: Compare incremental revenue to separable costs only"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Sell-or-Process Decision",
+          "knowledgeCheck": {
+            "question": "Product X can sell at split-off for $50,000 or be processed further for $20,000 in additional costs and sold for $75,000. Joint cost allocated to X is $30,000. Should X be processed further?",
+            "options": [
+              "No, because total profit would only be $25,000",
+              "Yes, because incremental profit is $5,000",
+              "No, because processing cost exceeds allocated joint cost",
+              "Cannot determine without by-product information"
+            ],
+            "correctIndex": 1,
+            "explanation": "Ignore joint costs (sunk). Incremental revenue: $75,000 - $50,000 = $25,000. Incremental cost: $20,000. Incremental profit: $5,000 positive. Process further! The $30,000 joint cost is irrelevant.",
+            "hint": "Joint costs are sunk at split-off. Only compare incremental revenues and costs."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-017",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Transfer Pricing Methods",
+    "description": "Set transfer prices that optimize divisional performance and company-wide profits",
+    "order": 17,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Transfer pricing",
+      "Divisional performance",
+      "Market-based pricing",
+      "Cost-based pricing"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "When divisions trade with each other, at what price? Transfer pricing affects divisional profits, manager incentives, and overall company performance. CMAs must set prices that motivate good decisions across the organization."
+        },
+        {
+          "title": "Transfer Pricing Objectives",
+          "type": "text",
+          "content": "**Conflicting Goals:**\n\n**Goal Congruence:**\n• Divisions should make decisions good for company overall\n• Accept all transactions with positive company contribution\n\n**Performance Evaluation:**\n• Each division's profit should reflect its contribution\n• Fair measurement for bonus purposes\n\n**Autonomy:**\n• Divisional managers should have freedom\n• Make-or-buy decisions locally\n• No forced internal sourcing\n\n**Challenge:**\nNo single price achieves all objectives perfectly!"
+        },
+        {
+          "title": "Transfer Pricing Methods",
+          "type": "table",
+          "headers": [
+            "Method",
+            "Price Set At",
+            "Best When"
+          ],
+          "rows": [
+            [
+              "Market Price",
+              "External market price",
+              "Competitive market exists"
+            ],
+            [
+              "Variable Cost",
+              "Selling division's variable cost",
+              "No market, excess capacity"
+            ],
+            [
+              "Full Cost",
+              "Variable + allocated fixed costs",
+              "No market, simple approach"
+            ],
+            [
+              "Cost Plus",
+              "Cost plus markup for profit",
+              "No market, want profit allocation"
+            ],
+            [
+              "Negotiated",
+              "What divisions agree on",
+              "Internal market, preserve autonomy"
+            ],
+            [
+              "Dual Pricing",
+              "Different price to each division",
+              "Cost centers + profit centers"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Optimal Transfer Price",
+          "type": "callout",
+          "content": "**General Rule (Minimum Transfer Price):**\n\n**TP = Variable Cost + Opportunity Cost**\n\n**Opportunity Cost:**\n• If no excess capacity = Lost contribution margin\n• If excess capacity = $0 (no lost sales)\n\n**Examples:**\n\n**Excess capacity:**\nTP = $10 variable cost + $0 = **$10**\n\n**Full capacity, can sell externally:**\nExternal price = $25, Variable cost = $10\nTP = $10 + ($25 - $10) = **$25** (market price!)\n\n**Insight:** With perfect market, market price is optimal"
+        },
+        {
+          "title": "Method Analysis",
+          "type": "text",
+          "content": "**Market Price:**\n+ Best for goal congruence\n+ Fair performance evaluation\n- Requires competitive market\n- May not exist for specialized products\n\n**Variable Cost:**\n+ Simple\n+ Good for decisions with excess capacity\n- Selling division shows no profit\n- May understate value of resources used\n\n**Full Cost:**\n+ Covers all costs\n+ Simple to calculate\n- May lead to suboptimal decisions\n- Fixed costs aren't always relevant\n\n**Negotiated:**\n+ Preserves autonomy\n+ Flexible\n- Time-consuming\n- Depends on negotiating power"
+        },
+        {
+          "title": "Range of Acceptable Transfer Prices",
+          "type": "text",
+          "content": "**For voluntary internal trade:**\n\n**Minimum (Selling Division):**\n• Variable cost + Opportunity cost\n• Won't accept less - would lose money\n\n**Maximum (Buying Division):**\n• External purchase price\n• Won't pay more - would buy outside\n\n**If Range Exists (Min < Max):**\n• Trade is mutually beneficial\n• Negotiate within range\n\n**If No Range (Min > Max):**\n• No mutually beneficial price\n• Buying division should buy externally\n• Selling division should sell externally\n\n**Company Perspective:**\nEncourage trade if company contribution is positive"
+        },
+        {
+          "title": "⚠️ Exam Trap: International Transfer Pricing",
+          "type": "warning",
+          "content": "**Tax authorities watch transfer prices!**\n\n**Issue:**\n• Multinational companies can shift profits\n• High price to low-tax country\n• Reduces overall taxes\n\n**Requirements:**\n• \"Arm's length\" pricing\n• Price that unrelated parties would use\n• Documentation required\n\n**IRS Methods:**\n• Comparable uncontrolled price\n• Resale price method\n• Cost plus method\n• Profit split\n\n**Penalties:**\n• Significant fines for non-compliance\n• Double taxation possible\n\n**CMA Exam:** Focus on internal management, but know tax implications exist."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Transfer pricing affects division profits and company decisions",
+            "Methods: Market, Variable cost, Full cost, Cost-plus, Negotiated, Dual",
+            "General rule: TP = Variable Cost + Opportunity Cost",
+            "Market price is ideal when competitive market exists",
+            "Acceptable range: Selling division's minimum to Buying's maximum",
+            "No single method achieves all objectives perfectly",
+            "International TP requires arm's length pricing for tax purposes"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Transfer Pricing Decision",
+          "knowledgeCheck": {
+            "question": "Division A can sell externally for $50 with variable cost of $30 and is at full capacity. Division B wants to buy from A. What is the minimum acceptable transfer price for Division A?",
+            "options": [
+              "$30 (variable cost)",
+              "$40 (variable cost plus half margin)",
+              "$50 (market price)",
+              "$50 plus a premium (above market)"
+            ],
+            "correctIndex": 2,
+            "explanation": "Minimum TP = Variable cost + Opportunity cost = $30 + ($50-$30) = $50. Since A is at full capacity, selling internally means losing an external sale at $50. The opportunity cost is the lost contribution margin of $20.",
+            "hint": "When at full capacity, the opportunity cost is the contribution margin lost from the external sale foregone."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-018",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Operational Efficiency Metrics",
+    "description": "Measure and improve operational performance using key efficiency metrics",
+    "order": 18,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Efficiency metrics",
+      "Capacity utilization",
+      "Cycle time",
+      "Productivity"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Financial metrics alone don't tell the whole story! CMAs need operational metrics to understand what drives financial results. Efficiency metrics connect shop floor activities to financial outcomes."
+        },
+        {
+          "title": "Key Efficiency Metrics",
+          "type": "text",
+          "content": "**Capacity Metrics:**\n• Theoretical Capacity - Maximum possible\n• Practical Capacity - Allowing for maintenance, setup\n• Normal Capacity - Average expected use\n• Actual Capacity - What was achieved\n\n**Utilization Rate:**\n= Actual Output / Capacity\n• Higher = better asset use\n• But 100% may cause burnout\n\n**Efficiency Rate:**\n= Standard Hours / Actual Hours\n• > 100% = Better than standard\n• < 100% = Worse than standard"
+        },
+        {
+          "title": "Time-Based Metrics",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Formula",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Cycle Time",
+              "Processing + Waiting + Moving + Inspection",
+              "Total time through process"
+            ],
+            [
+              "Processing Time",
+              "Time actually working",
+              "Value-added time"
+            ],
+            [
+              "Throughput Time",
+              "Start to finish of production",
+              "Manufacturing lead time"
+            ],
+            [
+              "MCE",
+              "Processing Time / Cycle Time",
+              "Manufacturing Cycle Efficiency"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: MCE Analysis",
+          "type": "callout",
+          "content": "**Manufacturing Cycle Efficiency (MCE):**\n= Processing Time / Total Cycle Time\n\n**Example:**\n• Processing: 2 hours\n• Waiting: 10 hours\n• Moving: 1 hour\n• Inspection: 0.5 hours\n• Total Cycle Time: 13.5 hours\n\nMCE = 2 / 13.5 = 14.8%\n\n**Interpretation:**\n• Only 15% of time is value-added!\n• 85% is waste (waiting, moving, inspecting)\n• World-class target: > 50%\n• Most companies: 5-25%\n\n**Improvement focus:** Reduce non-processing time"
+        },
+        {
+          "title": "Productivity Metrics",
+          "type": "text",
+          "content": "**Labor Productivity:**\n= Output / Labor Hours\n• Units per labor hour\n• Revenue per employee\n\n**Machine Productivity:**\n= Output / Machine Hours\n• Units per machine hour\n• OEE (see below)\n\n**Total Factor Productivity:**\n= Output / (Labor + Capital + Materials + Energy)\n• Most comprehensive\n• Harder to calculate\n\n**Partial vs Total:**\n• Partial - one input category\n• Total - all inputs combined\n• Watch for trade-offs between inputs"
+        },
+        {
+          "title": "Overall Equipment Effectiveness (OEE)",
+          "type": "text",
+          "content": "**OEE = Availability × Performance × Quality**\n\n**Availability:**\n= Run Time / Planned Production Time\n• Losses: Breakdowns, changeovers\n\n**Performance:**\n= (Ideal Cycle Time × Output) / Run Time\n• Losses: Small stops, slow cycles\n\n**Quality:**\n= Good Units / Total Units\n• Losses: Defects, rework\n\n**Benchmarks:**\n• World-class: 85%+\n• Typical: 60%\n• Each component should be 95%+\n\n**Example:** 90% × 95% × 99% = 84.6% OEE"
+        },
+        {
+          "title": "⚠️ Exam Trap: Efficiency vs Effectiveness",
+          "type": "warning",
+          "content": "**Don't confuse these!**\n\n**Efficiency:**\n• Doing things right\n• Input/output ratio\n• Minimizing waste\n• Cost per unit\n\n**Effectiveness:**\n• Doing the right things\n• Achieving goals\n• Customer satisfaction\n• Market results\n\n**You can be:**\n• Efficient but ineffective (doing wrong things well)\n• Effective but inefficient (right things, high cost)\n\n**Goal:** Both efficient AND effective\n• Operational excellence + Strategic alignment"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Capacity: Theoretical > Practical > Normal > Actual",
+            "Utilization = Actual / Capacity",
+            "MCE = Processing Time / Total Cycle Time (target >50%)",
+            "OEE = Availability × Performance × Quality (target >85%)",
+            "Most companies have MCE of 5-25% - huge waste",
+            "Productivity = Output / Input for any resource",
+            "Balance efficiency (doing things right) with effectiveness (right things)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "MCE Calculation",
+          "knowledgeCheck": {
+            "question": "A product has processing time of 3 hours, wait time of 12 hours, move time of 2 hours, and inspection time of 1 hour. What is the Manufacturing Cycle Efficiency?",
+            "options": [
+              "16.7%",
+              "20.0%",
+              "25.0%",
+              "33.3%"
+            ],
+            "correctIndex": 0,
+            "explanation": "MCE = Processing Time / Total Cycle Time = 3 / (3 + 12 + 2 + 1) = 3 / 18 = 16.7%. Only about 1/6 of total time is actually adding value. This suggests major opportunities to reduce waiting and moving time.",
+            "hint": "Add all times for total cycle time, then divide processing time by that total."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-019",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Supply Chain Cost Management",
+    "description": "Analyze and optimize costs across the entire supply chain",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Supply chain costs",
+      "Logistics",
+      "Supplier management",
+      "Total cost of ownership"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Supply chain can be 50-70% of product cost! CMAs analyze supply chain costs to find savings beyond just purchase price. Understanding total cost of ownership helps make better sourcing decisions and identify improvement opportunities."
+        },
+        {
+          "title": "Supply Chain Cost Categories",
+          "type": "text",
+          "content": "**Procurement Costs:**\n• Purchase price\n• Ordering costs\n• Supplier qualification\n• Expediting\n\n**Logistics Costs:**\n• Transportation (inbound/outbound)\n• Warehousing\n• Material handling\n• Packaging\n\n**Inventory Costs:**\n• Carrying costs\n• Stockout costs\n• Obsolescence\n• Shrinkage\n\n**Quality Costs:**\n• Inspection\n• Returns\n• Rework from supplier defects\n\n**Risk Costs:**\n• Supply disruption\n• Price volatility\n• Supplier financial distress"
+        },
+        {
+          "title": "Total Cost of Ownership (TCO)",
+          "type": "table",
+          "headers": [
+            "Cost Element",
+            "Often Considered?",
+            "Hidden Impact"
+          ],
+          "rows": [
+            [
+              "Purchase Price",
+              "Always",
+              "May dominate analysis"
+            ],
+            [
+              "Transportation",
+              "Usually",
+              "Varies by mode/distance"
+            ],
+            [
+              "Quality Issues",
+              "Sometimes",
+              "Rework, returns, delays"
+            ],
+            [
+              "Ordering/Admin",
+              "Rarely",
+              "Staff time, systems"
+            ],
+            [
+              "Inventory Carrying",
+              "Rarely",
+              "Capital tied up, space"
+            ],
+            [
+              "Risk/Flexibility",
+              "Rarely",
+              "Single source, lead time"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: TCO Analysis",
+          "type": "callout",
+          "content": "**\"PIQRS\" - Total Cost Components:**\n\n**P**urchase price\n• Unit cost × quantity\n• Volume discounts\n\n**I**nbound logistics\n• Freight, customs, handling\n• Mode selection\n\n**Q**uality costs\n• Inspection, defect rate\n• Rework from supplier issues\n\n**R**elationship costs\n• Supplier management time\n• Communication, visits\n\n**S**ervice/support costs\n• Lead time (inventory impact)\n• Flexibility/responsiveness\n• Technical support\n\n**TCO often shows 'cheap' supplier is expensive!"
+        },
+        {
+          "title": "Supplier Cost Management",
+          "type": "text",
+          "content": "**Supplier Scorecards:**\n• Quality metrics\n• Delivery performance\n• Cost competitiveness\n• Responsiveness\n\n**Negotiation Approaches:**\n• Competitive bidding\n• Cost breakdown analysis\n• Should-cost models\n• Long-term contracts\n\n**Collaboration Methods:**\n• Early supplier involvement\n• Joint cost reduction\n• Open book costing\n• Value engineering\n\n**Consolidation vs Diversification:**\n• Consolidate for volume leverage\n• Diversify for risk management\n• Balance both factors"
+        },
+        {
+          "title": "Supply Chain Analytics",
+          "type": "text",
+          "content": "**Key Metrics:**\n• Days of Supply\n• Inventory Turns\n• Perfect Order Rate\n• On-Time In-Full (OTIF)\n• Total Supply Chain Cost %\n\n**Spend Analysis:**\n• Total spend by category\n• Spend by supplier\n• Maverick spend (off-contract)\n• Savings tracking\n\n**CMA Applications:**\n• Make-or-buy analysis\n• Outsourcing decisions\n• Supplier selection\n• Network optimization\n• Inventory investment"
+        },
+        {
+          "title": "⚠️ Exam Trap: Lowest Price Isn't Lowest Cost",
+          "type": "warning",
+          "content": "**Common scenario on CMA exam:**\n\nSupplier A: $10/unit, 3% defect rate\nSupplier B: $11/unit, 0.5% defect rate\n\n**Naive answer:** Choose A (lower price)\n\n**Right analysis:** Calculate total cost\n• Include rework cost per defect\n• Include inspection costs\n• Include customer returns\n• Include supply disruption risk\n\n**Hidden costs often reverse the decision!**\n\n**Same for:**\n• Distant supplier (lower price, higher freight)\n• Long lead time (lower price, higher inventory)\n• Payment terms (lower price, worse cash flow)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Supply chain: 50-70% of product cost",
+            "TCO includes: Price, logistics, quality, relationship, service costs",
+            "Low price often ≠ low total cost",
+            "Supplier scorecards: Quality, delivery, cost, responsiveness",
+            "Collaboration: Early involvement, joint cost reduction",
+            "Key metrics: Days of supply, turns, OTIF, perfect order rate",
+            "Balance consolidation (leverage) vs diversification (risk)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "TCO Analysis",
+          "knowledgeCheck": {
+            "question": "Supplier X offers parts at $8 each with 5% defect rate. Supplier Y offers $9 each with 1% defect rate. Each defect costs $30 to rework. For 1,000 units, which supplier has lower total cost?",
+            "options": [
+              "Supplier X: Total cost = $8,000",
+              "Supplier X: Total cost = $9,500",
+              "Supplier Y: Total cost = $9,300",
+              "Supplier Y: Total cost = $10,500"
+            ],
+            "correctIndex": 2,
+            "explanation": "Supplier X: ($8 × 1,000) + (50 defects × $30) = $8,000 + $1,500 = $9,500. Supplier Y: ($9 × 1,000) + (10 defects × $30) = $9,000 + $300 = $9,300. Despite higher unit price, Supplier Y has lower total cost due to better quality.",
+            "hint": "Calculate: (Unit price × quantity) + (Defects × rework cost)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-020",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Process Improvement and Lean",
+    "description": "Apply lean principles and continuous improvement methods",
+    "order": 20,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Lean management",
+      "Continuous improvement",
+      "Kaizen",
+      "Six Sigma"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "CMAs partner with operations to improve processes and reduce costs! Understanding lean and continuous improvement frameworks helps quantify improvement benefits, track progress metrics, and provide financial support for process excellence initiatives."
+        },
+        {
+          "title": "Lean Management Principles",
+          "type": "text",
+          "content": "**Core Lean Philosophy:**\nMaximize value, minimize waste\n\n**Five Lean Principles:**\n1. **Value:** Define from customer perspective\n2. **Value Stream:** Map all steps, identify waste\n3. **Flow:** Ensure smooth, uninterrupted flow\n4. **Pull:** Produce only what's demanded\n5. **Perfection:** Continuously improve\n\n**Origin:**\nToyota Production System (TPS)\n\n**Goal:**\nDeliver exactly what customer wants, when they want it, with minimum waste"
+        },
+        {
+          "title": "Eight Wastes (DOWNTIME)",
+          "type": "table",
+          "headers": [
+            "Waste",
+            "Description",
+            "Example"
+          ],
+          "rows": [
+            [
+              "D - Defects",
+              "Errors requiring rework",
+              "Quality rejects"
+            ],
+            [
+              "O - Overproduction",
+              "Making more than needed",
+              "Excess inventory"
+            ],
+            [
+              "W - Waiting",
+              "Idle time between steps",
+              "Queue time"
+            ],
+            [
+              "N - Non-utilized talent",
+              "Underusing people",
+              "Untapped skills"
+            ],
+            [
+              "T - Transportation",
+              "Unnecessary movement",
+              "Moving materials"
+            ],
+            [
+              "I - Inventory",
+              "Excess stock",
+              "Raw material piles"
+            ],
+            [
+              "M - Motion",
+              "Unnecessary worker movement",
+              "Searching for tools"
+            ],
+            [
+              "E - Extra processing",
+              "More work than needed",
+              "Over-engineering"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Lean Tools",
+          "type": "callout",
+          "content": "**Key Lean Tools:**\n\n**5S Workplace Organization:**\n• Sort - Remove unnecessary items\n• Set in order - Organize what remains\n• Shine - Clean and inspect\n• Standardize - Create consistent procedures\n• Sustain - Maintain discipline\n\n**Kanban:**\n• Visual signal system\n• Pull-based production\n• Limits work-in-process\n\n**Value Stream Mapping:**\n• Visualize entire process\n• Identify value-add vs waste\n• Design future state\n\n**Poka-yoke:**\n• Error-proofing\n• Prevent mistakes from occurring"
+        },
+        {
+          "title": "Kaizen - Continuous Improvement",
+          "type": "text",
+          "content": "**Kaizen Philosophy:**\n• Small, incremental improvements\n• Everyone involved\n• Daily improvements\n• Low-cost ideas\n\n**Kaizen Events:**\n• Focused improvement workshops\n• 3-5 day intense effort\n• Cross-functional team\n• Immediate implementation\n\n**Plan-Do-Check-Act (PDCA):**\n• Plan: Identify problem, plan solution\n• Do: Implement on small scale\n• Check: Measure results\n• Act: Standardize if successful, adjust if not\n\n**CMA Role:**\n• Quantify savings\n• Track improvement metrics\n• Cost-benefit analysis"
+        },
+        {
+          "title": "Six Sigma Overview",
+          "type": "text",
+          "content": "**Goal:**\nReduce variation and defects to 3.4 per million\n\n**DMAIC Methodology:**\n• **Define:** Problem and goals\n• **Measure:** Current performance\n• **Analyze:** Root causes\n• **Improve:** Implement solutions\n• **Control:** Sustain improvements\n\n**Key Concepts:**\n• Sigma level = standard deviations\n• Higher sigma = fewer defects\n• Data-driven decision making\n• Statistical process control\n\n**Lean Six Sigma:**\nCombines lean (eliminate waste) with Six Sigma (reduce variation)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Lean Accounting",
+          "type": "warning",
+          "content": "**Traditional vs Lean Accounting:**\n\n**Traditional Issues in Lean:**\n• Standard costing rewards overproduction\n• Labor efficiency focuses on keeping busy\n• Detailed tracking is non-value-add\n\n**Lean Accounting Features:**\n• Value stream costing\n• Focus on flow and throughput\n• Simplified transactions\n• Visual performance boards\n• Box scores (operational/capacity/financial)\n\n**Know the conflict:**\nTraditional metrics can undermine lean behaviors!\nExample: Producing to absorb overhead creates inventory waste"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Lean: Maximize value, minimize waste (Toyota origin)",
+            "8 wastes: DOWNTIME - Defects, Overproduction, Waiting, etc.",
+            "5S: Sort, Set in order, Shine, Standardize, Sustain",
+            "Kaizen: Continuous incremental improvement (PDCA cycle)",
+            "Six Sigma: Reduce variation via DMAIC (3.4 defects per million)",
+            "Lean Six Sigma: Combines both approaches",
+            "Lean accounting: Value stream based, simplified tracking"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Lean Concepts",
+          "knowledgeCheck": {
+            "question": "Which lean concept involves producing items only when downstream processes signal a need, rather than pushing production based on forecasts?",
+            "options": [
+              "Poka-yoke",
+              "Pull system (Kanban)",
+              "Five S (5S)",
+              "Value stream mapping"
+            ],
+            "correctIndex": 1,
+            "explanation": "Pull systems produce only in response to actual demand signals (kanban cards), avoiding overproduction waste. This contrasts with push systems that produce based on forecasts. Poka-yoke is error-proofing, 5S is workplace organization, and value stream mapping is process visualization.",
+            "hint": "Which system produces based on actual demand rather than forecast?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-021",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Total Quality Management",
+    "description": "Implement quality management principles for operational excellence",
+    "order": 21,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Total quality management",
+      "TQM",
+      "Quality principles",
+      "Continuous improvement"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Quality drives cost and customer satisfaction! CMAs measure quality costs, track quality metrics, and quantify the ROI of quality initiatives. Understanding TQM principles helps CMAs partner with operations to improve performance."
+        },
+        {
+          "title": "What is TQM?",
+          "type": "text",
+          "content": "**Definition:**\nOrganization-wide effort to embed quality in all processes\n\n**Core Principles:**\n• Customer focus\n• Total employee involvement\n• Process-centered approach\n• Integrated system thinking\n• Strategic and systematic\n• Continual improvement\n• Fact-based decisions\n• Communication\n\n**Origin:**\nDeming, Juran, Crosby - post-WWII Japan\n\n**Goal:**\nMeet or exceed customer expectations while reducing costs"
+        },
+        {
+          "title": "Quality Philosophies",
+          "type": "table",
+          "headers": [
+            "Thinker",
+            "Key Concept",
+            "Contribution"
+          ],
+          "rows": [
+            [
+              "Deming",
+              "14 Points",
+              "System thinking, reduce variation"
+            ],
+            [
+              "Juran",
+              "Quality trilogy",
+              "Plan, control, improve"
+            ],
+            [
+              "Crosby",
+              "Zero defects",
+              "Quality is free"
+            ],
+            [
+              "Ishikawa",
+              "Quality circles",
+              "Fishbone diagram"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Deming's 14 Points",
+          "type": "callout",
+          "content": "**Key Deming Principles:**\n\n**1. Create constancy of purpose**\n• Long-term improvement focus\n\n**2. Cease dependence on inspection**\n• Build quality in, don't inspect it in\n\n**3. End lowest-price contracts**\n• Work with fewer, better suppliers\n\n**4. Drive out fear**\n• People must feel safe to report problems\n\n**5. Break down barriers**\n• Cross-functional teamwork\n\n**6. Use statistical methods**\n• Data-driven improvement\n\n**Remember:**\nDeming emphasized SYSTEM causes, not blaming workers\nMost problems are system failures (85%), not worker failures"
+        },
+        {
+          "title": "Quality Tools",
+          "type": "text",
+          "content": "**Seven Basic Quality Tools:**\n\n**1. Cause-and-Effect (Fishbone):**\n• Identify root causes\n• Categories: Man, Machine, Method, Material\n\n**2. Check Sheet:**\n• Data collection form\n• Tally defect types/frequencies\n\n**3. Control Chart:**\n• Monitor process stability\n• UCL, LCL, centerline\n\n**4. Histogram:**\n• Distribution of data\n• Identify patterns\n\n**5. Pareto Chart:**\n• 80/20 rule\n• Focus on vital few\n\n**6. Scatter Diagram:**\n• Correlation between variables\n\n**7. Flowchart:**\n• Process mapping"
+        },
+        {
+          "title": "Quality Certifications",
+          "type": "text",
+          "content": "**ISO 9000 Series:**\n• International quality standards\n• ISO 9001 - Quality management system\n• Customer focus, process approach\n• Documentation requirements\n• Third-party certification\n\n**Malcolm Baldrige Award:**\n• US national quality award\n• Criteria categories:\n  - Leadership\n  - Strategy\n  - Customers\n  - Measurement and knowledge\n  - Workforce\n  - Operations\n  - Results\n\n**Benefits of Certification:**\n• Customer confidence\n• Market access\n• Systematic improvement"
+        },
+        {
+          "title": "⚠️ Exam Trap: TQM vs Traditional",
+          "type": "warning",
+          "content": "**TQM Philosophy Shifts:**\n\n**Traditional:**\n• Inspect quality in\n• Quality costs money\n• Workers cause problems\n• Meet specifications\n• Quality vs cost trade-off\n\n**TQM:**\n• Build quality in\n• Quality is free (Crosby)\n• System causes problems\n• Exceed expectations\n• Quality reduces cost\n\n**Key Insight:**\nThe cost of PREVENTING defects is less than the cost of FIXING them\n\nPrevention > Appraisal > Internal failure > External failure (worst!)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "TQM: Organization-wide quality culture, not just QC department",
+            "Key thinkers: Deming (system), Juran (trilogy), Crosby (zero defects)",
+            "Deming: 85% of problems are system failures",
+            "Seven tools: Fishbone, check sheet, control chart, histogram, Pareto, scatter, flowchart",
+            "ISO 9001: International quality management standard",
+            "Baldrige: US quality award with comprehensive criteria",
+            "TQM view: Quality reduces cost (quality is free)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Quality Concepts",
+          "knowledgeCheck": {
+            "question": "According to Deming's philosophy, what percentage of quality problems are caused by the system rather than individual workers?",
+            "options": [
+              "15%",
+              "50%",
+              "85%",
+              "100%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Deming emphasized that approximately 85% of quality problems result from the system (management-created processes, equipment, training) rather than individual workers. This shifts responsibility to management to improve systems rather than blame workers.",
+            "hint": "Deming's philosophy emphasizes system causes over worker causes."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-022",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Performance Reporting",
+    "description": "Design and communicate effective performance reports",
+    "order": 22,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Performance reporting",
+      "Management reporting",
+      "Variance reports",
+      "Exception reporting"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Reports drive decisions and behavior! CMAs design reports that inform action, not just inform. Effective performance reporting focuses attention on what matters, enables accountability, and drives improvement."
+        },
+        {
+          "title": "Reporting Principles",
+          "type": "text",
+          "content": "**Effective Reports Are:**\n• **Relevant:** Tied to user's decisions\n• **Timely:** Available when needed\n• **Accurate:** Reliable information\n• **Complete:** All material information\n• **Understandable:** Clear to intended audience\n• **Actionable:** Enable decisions\n\n**Report Design Questions:**\n• Who is the audience?\n• What decisions do they make?\n• What information drives those decisions?\n• How often do they need it?\n• What format works best?"
+        },
+        {
+          "title": "Report Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Purpose",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "Operating",
+              "Daily/weekly operations",
+              "Daily/weekly"
+            ],
+            [
+              "Financial",
+              "P&L, balance sheet",
+              "Monthly/quarterly"
+            ],
+            [
+              "Exception",
+              "Highlight variances",
+              "As needed"
+            ],
+            [
+              "Scorecard",
+              "Multi-dimension performance",
+              "Monthly/quarterly"
+            ],
+            [
+              "Ad-hoc",
+              "Specific issue analysis",
+              "As requested"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Exception Reporting",
+          "type": "callout",
+          "content": "**Management by Exception:**\n\nFocus attention on significant deviations\n\n**How It Works:**\n1. Set standards/budgets\n2. Track actual results\n3. Highlight exceptions (significant variances)\n4. Investigate and act on exceptions\n5. Don't waste time on items 'within tolerance'\n\n**Thresholds:**\n• Absolute: > $10,000 variance\n• Percentage: > 5% variance\n• Combination: Meet either\n\n**Benefits:**\n• Focus scarce attention\n• Prioritize investigation\n• Don't overwhelm with detail"
+        },
+        {
+          "title": "Responsibility Reporting",
+          "type": "text",
+          "content": "**Controllability Principle:**\nReport only items the manager can control\n\n**Responsibility Center Reports:**\n• **Cost Center:** Controllable costs only\n• **Revenue Center:** Sales performance\n• **Profit Center:** Revenue and controllable costs\n• **Investment Center:** Plus asset utilization\n\n**Report Characteristics:**\n• Segment contribution format\n• Controllable vs allocated\n• Budget vs actual\n• Variance analysis\n\n**Fairness:**\nDon't hold managers accountable for uncontrollable items"
+        },
+        {
+          "title": "Variance Report Format",
+          "type": "text",
+          "content": "**Typical Format:**\n\n| Item | Budget | Actual | Variance | % |\n|------|--------|--------|----------|---|\n| Revenue | $100K | $95K | ($5K) U | 5% |\n| Materials | $40K | $42K | ($2K) U | 5% |\n| Labor | $30K | $28K | $2K F | 7% |\n\n**Key Elements:**\n• Budget/standard\n• Actual\n• Variance ($ and %)\n• Favorable (F) / Unfavorable (U)\n• Prior period comparison (optional)\n\n**Drill-Down:**\nSummary to detail capability"
+        },
+        {
+          "title": "⚠️ Exam Trap: Controllable vs Traceable",
+          "type": "warning",
+          "content": "**Different Purposes!**\n\n**Controllable:**\n• Manager can influence\n• Use for performance evaluation\n• Example: Direct costs, discretionary spending\n\n**Traceable:**\n• Can be traced to segment\n• Use for segment profitability\n• May not be controllable by segment manager\n\n**Example:**\nBuilding depreciation:\n• Traceable to plant manager's segment\n• NOT controllable by plant manager\n• Don't use for manager evaluation!\n\n**Fair Evaluation:**\nUse controllable costs for manager accountability"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Effective reports: Relevant, timely, accurate, actionable",
+            "Design for audience and decisions they make",
+            "Exception reporting: Focus on significant variances",
+            "Management by exception: Set thresholds, investigate outliers",
+            "Responsibility reporting: Match to manager's control",
+            "Controllable costs for manager evaluation",
+            "Traceable costs for segment profitability analysis"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Performance Reporting",
+          "knowledgeCheck": {
+            "question": "Which approach focuses management attention on items that deviate significantly from expectations?",
+            "options": [
+              "Activity-based costing",
+              "Management by exception",
+              "Full absorption costing",
+              "Zero-based budgeting"
+            ],
+            "correctIndex": 1,
+            "explanation": "Management by exception focuses attention on significant variances from standards or budgets, rather than reviewing all items. This allows managers to use their limited time investigating and addressing the most important deviations.",
+            "hint": "Which approach highlights deviations from expected performance?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-023",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Materials and Labor Variances",
+    "description": "Calculate and analyze direct cost variances",
+    "order": 23,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Materials variance",
+      "Labor variance",
+      "Price variance",
+      "Quantity variance"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Variance analysis is the HEART of performance management! CMAs calculate variances to identify where actual results differ from plan and WHY. This enables corrective action and continuous improvement. Direct materials and labor variances are heavily tested on the CMA exam."
+        },
+        {
+          "title": "Variance Framework",
+          "type": "text",
+          "content": "**Basic Formula:**\nTotal Variance = Actual - Standard\n\n**Favorable (F):** Actual < Standard (good)\n**Unfavorable (U):** Actual > Standard (bad)\n\n**For Direct Costs:**\nTotal Variance = Price Variance + Quantity Variance\n\n**Price Variance:**\nDifference in RATE/PRICE\nActual vs standard price\n\n**Quantity Variance:**\nDifference in EFFICIENCY\nActual vs standard usage"
+        },
+        {
+          "title": "Variance Formulas",
+          "type": "table",
+          "headers": [
+            "Variance",
+            "Formula",
+            "Responsibility"
+          ],
+          "rows": [
+            [
+              "Materials Price (MPV)",
+              "(AP - SP) × AQ",
+              "Purchasing"
+            ],
+            [
+              "Materials Quantity (MQV)",
+              "(AQ - SQ) × SP",
+              "Production"
+            ],
+            [
+              "Labor Rate (LRV)",
+              "(AR - SR) × AH",
+              "HR/Scheduling"
+            ],
+            [
+              "Labor Efficiency (LEV)",
+              "(AH - SH) × SR",
+              "Production"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: The Three-Box Method",
+          "type": "callout",
+          "content": "**Materials Variances:**\n\n```\n      Box 1          Box 2          Box 3\n      AQ × AP        AQ × SP        SQ × SP\n     (Actual)     (Flex Budget)  (Standard)\n         |____________|____________|\n             MPV            MQV\n```\n\n**Where:**\n• AQ = Actual quantity used\n• AP = Actual price paid\n• SP = Standard price\n• SQ = Standard quantity allowed\n\n**Example:**\n• AQ = 5,200 lbs\n• AP = $4.10\n• SP = $4.00\n• SQ = 5,000 lbs (1,000 units × 5 lbs/unit)\n\n• MPV = ($4.10 - $4.00) × 5,200 = $520 U\n• MQV = (5,200 - 5,000) × $4.00 = $800 U"
+        },
+        {
+          "title": "Labor Variance Example",
+          "type": "text",
+          "content": "**Given:**\n• Standard: 2 hours @ $15/hour\n• Actual production: 500 units\n• Actual hours: 1,050\n• Actual rate: $15.50/hour\n\n**Standard hours allowed:**\n500 units × 2 hours = 1,000 hours\n\n**Labor Rate Variance:**\n($15.50 - $15.00) × 1,050 = $525 U\n\n**Labor Efficiency Variance:**\n(1,050 - 1,000) × $15.00 = $750 U\n\n**Interpretation:**\n• LRV: Paid more per hour than standard\n• LEV: Used more hours than should have"
+        },
+        {
+          "title": "Variance Interpretation",
+          "type": "text",
+          "content": "**Materials Price Variance:**\n• **U:** Market price increase, rush orders, quality change\n• **F:** Volume discounts, new supplier, lower quality\n\n**Materials Quantity Variance:**\n• **U:** Waste, theft, poor quality materials, untrained workers\n• **F:** Skilled workers, better equipment, quality materials\n\n**Labor Rate Variance:**\n• **U:** Higher skilled workers, overtime premium\n• **F:** Lower skilled workers, new hires\n\n**Labor Efficiency Variance:**\n• **U:** Untrained workers, poor materials, equipment issues\n• **F:** Skilled workers, improved processes\n\n**Interrelationship:** Trade-offs exist (cheap materials → more waste)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Timing of MPV",
+          "type": "warning",
+          "content": "**When to Calculate MPV?**\n\n**At Purchase:**\n• MPV = (AP - SP) × AQ PURCHASED\n• More timely\n• Isolates purchasing responsibility\n• AQ = quantity purchased\n\n**At Usage:**\n• MPV = (AP - SP) × AQ USED\n• AQ = quantity used in production\n• Delays variance recognition\n\n**Common Exam Scenario:**\nPurchased 6,000 lbs, used 5,200 lbs\n• At purchase: Use 6,000 lbs\n• At usage: Use 5,200 lbs\n\n**Read carefully** which quantity to use!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Total variance = Price variance + Quantity variance",
+            "MPV = (AP - SP) × AQ (Purchasing responsibility)",
+            "MQV = (AQ - SQ) × SP (Production responsibility)",
+            "LRV = (AR - SR) × AH (HR responsibility)",
+            "LEV = (AH - SH) × SR (Production responsibility)",
+            "SQ allowed = Actual output × Standard per unit",
+            "Consider trade-offs between price and efficiency"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Materials Variance",
+          "knowledgeCheck": {
+            "question": "Standard: 3 lbs @ $5/lb. Produced 1,000 units. Used 3,200 lbs @ $4.80/lb. What is the materials quantity variance?",
+            "options": [
+              "$640 F",
+              "$960 U",
+              "$1,000 U",
+              "$1,000 F"
+            ],
+            "correctIndex": 2,
+            "explanation": "MQV = (AQ - SQ) × SP. SQ allowed = 1,000 units × 3 lbs = 3,000 lbs. MQV = (3,200 - 3,000) × $5.00 = 200 × $5 = $1,000 U. We used 200 more pounds than standard, costed at standard price.",
+            "hint": "Calculate standard quantity allowed first."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-024",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Overhead Variance Analysis",
+    "description": "Analyze variable and fixed overhead variances",
+    "order": 24,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Overhead variances",
+      "Variable overhead",
+      "Fixed overhead",
+      "Three-way analysis"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Overhead is often the largest cost category! CMAs must analyze overhead variances to control these significant costs. Understanding the four-variance method (or three-way analysis) is essential for CMA exam success. This is one of the most complex but important variance topics."
+        },
+        {
+          "title": "Overhead Variance Overview",
+          "type": "text",
+          "content": "**Variable Overhead:**\n• Changes with production activity\n• Examples: Indirect materials, utilities\n• Two variances: Spending and Efficiency\n\n**Fixed Overhead:**\n• Stays constant regardless of volume\n• Examples: Rent, depreciation, salaries\n• Two variances: Spending and Volume\n\n**Allocation Base:**\n• Usually direct labor hours or machine hours\n• Connects overhead to products\n\n**Applied Overhead:**\n= Standard rate × Standard hours allowed"
+        },
+        {
+          "title": "Four-Variance Model",
+          "type": "table",
+          "headers": [
+            "Variance",
+            "Formula",
+            "Measures"
+          ],
+          "rows": [
+            [
+              "VOH Spending",
+              "(Actual VOH - (AH × SR))",
+              "Cost per hour control"
+            ],
+            [
+              "VOH Efficiency",
+              "(AH - SH) × SR",
+              "Hours used vs allowed"
+            ],
+            [
+              "FOH Spending (Budget)",
+              "Actual FOH - Budgeted FOH",
+              "Spending control"
+            ],
+            [
+              "FOH Volume",
+              "Budgeted FOH - Applied FOH",
+              "Capacity utilization"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Variable Overhead Variances",
+          "type": "callout",
+          "content": "**VOH Spending Variance:**\nActual VOH\n- (Actual Hours × Standard Rate)\n= VOH Spending Variance\n\n**What it measures:**\nDid we pay more/less per hour of activity?\n\n**VOH Efficiency Variance:**\n(Actual Hours - Standard Hours) × Std Rate\n= VOH Efficiency Variance\n\n**What it measures:**\nDid we use more/fewer hours than should have?\n\n**Note:** VOH efficiency is SAME calculation as labor efficiency!\nBoth use (AH - SH) × Rate\nIf labor efficiency is bad, VOH efficiency is bad too!"
+        },
+        {
+          "title": "Fixed Overhead Variances",
+          "type": "text",
+          "content": "**FOH Budget (Spending) Variance:**\nActual FOH - Budgeted FOH\n= FOH Spending Variance\n\n**What it measures:**\nDid we spend more/less than budgeted?\nControlled by management decisions\n\n**FOH Volume Variance:**\nBudgeted FOH - Applied FOH\n= FOH Volume Variance\n\n**Applied FOH = SH allowed × FOH Rate**\n\n**What it measures:**\nCapacity utilization\nProduced more/less than denominator activity?\n\n**Key insight:**\nVolume variance is NOT controllable by management\nIt's a result of production volume decisions"
+        },
+        {
+          "title": "Comprehensive Example",
+          "type": "text",
+          "content": "**Given:**\n• Standard: 2 DLH per unit at $5 VOH rate, $3 FOH rate\n• Budgeted production: 10,000 units (20,000 hours)\n• Budgeted FOH: $60,000\n• Actual: 9,500 units, 19,500 hours\n• Actual VOH: $100,000\n• Actual FOH: $62,000\n\n**SH allowed = 9,500 × 2 = 19,000 hours**\n\n**VOH Spending:**\n$100,000 - (19,500 × $5) = $100,000 - $97,500 = $2,500 U\n\n**VOH Efficiency:**\n(19,500 - 19,000) × $5 = 500 × $5 = $2,500 U\n\n**FOH Spending:**\n$62,000 - $60,000 = $2,000 U\n\n**FOH Volume:**\n$60,000 - (19,000 × $3) = $60,000 - $57,000 = $3,000 U"
+        },
+        {
+          "title": "⚠️ Exam Trap: Volume Variance Interpretation",
+          "type": "warning",
+          "content": "**FOH Volume Variance:**\n\n**Unfavorable:**\n• Produced LESS than budgeted\n• Fixed costs spread over fewer units\n• Under-applied overhead\n\n**Favorable:**\n• Produced MORE than budgeted\n• Fixed costs spread over more units\n• Over-applied overhead\n\n**Common Confusion:**\n• This is NOT a spending variance!\n• You didn't spend more or less\n• It's about UTILIZATION of capacity\n\n**Controllability:**\n• Spending variances = Controllable\n• Volume variance = Usually uncontrollable\n  (Depends on production decisions, demand)"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four variances: VOH spending, VOH efficiency, FOH spending, FOH volume",
+            "VOH spending: Price side - cost per hour vs standard",
+            "VOH efficiency: Same as labor efficiency - hours control",
+            "FOH spending: Actual vs budgeted fixed costs",
+            "FOH volume: Capacity utilization (budgeted vs applied)",
+            "Volume variance is NOT controllable - it's about utilization",
+            "Applied OH = Standard hours allowed × Standard rate"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Overhead Variances",
+          "knowledgeCheck": {
+            "question": "Budgeted FOH is $120,000 for 10,000 standard hours. Actual production allowed 9,200 standard hours. What is the FOH volume variance?",
+            "options": [
+              "$9,600 U",
+              "$9,600 F",
+              "$10,800 U",
+              "$10,800 F"
+            ],
+            "correctIndex": 0,
+            "explanation": "FOH rate = $120,000 / 10,000 = $12/hour. Applied FOH = 9,200 × $12 = $110,400. Volume variance = Budgeted - Applied = $120,000 - $110,400 = $9,600 U. Unfavorable because we produced less than budgeted capacity.",
+            "hint": "Calculate FOH rate first, then applied FOH."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-025",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Sales Volume and Mix Variances",
+    "description": "Analyze revenue variances by volume and product mix",
+    "order": 25,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Sales variances",
+      "Volume variance",
+      "Mix variance",
+      "Revenue analysis"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Revenue drives the business! CMAs analyze sales variances to understand WHY revenue differed from budget. Was it price? Was it volume? Was it the product mix? These insights guide sales strategy and forecasting improvements."
+        },
+        {
+          "title": "Sales Variance Overview",
+          "type": "text",
+          "content": "**Total Sales Variance:**\n= Actual Revenue - Budgeted Revenue\n\n**Breaks Down Into:**\n• Sales Price Variance\n• Sales Volume Variance\n\n**Volume Further Breaks Into:**\n• Sales Mix Variance\n• Sales Quantity Variance\n\n**Why Decompose?**\n• Different causes\n• Different responsibilities\n• Different actions needed\n• Better performance evaluation"
+        },
+        {
+          "title": "Sales Variance Formulas",
+          "type": "table",
+          "headers": [
+            "Variance",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Sales Price",
+              "(Actual Price - Budgeted Price) × Actual Qty"
+            ],
+            [
+              "Sales Volume",
+              "(Actual Qty - Budgeted Qty) × Budgeted CM"
+            ],
+            [
+              "Sales Mix",
+              "(Actual Mix - Budget Mix) × Actual Total Qty × Budget CM"
+            ],
+            [
+              "Sales Quantity",
+              "(Actual Total - Budget Total) × Budget Mix × Budget CM"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Volume vs Mix vs Quantity",
+          "type": "callout",
+          "content": "**Sales Volume Variance:**\nTotal effect of selling different quantities\nCombines both effects below\n\n**Sales Mix Variance:**\n• Did we sell the RIGHT MIX of products?\n• High-margin vs low-margin products\n• Holding total volume constant\n• Example: More premium, less basic\n\n**Sales Quantity Variance:**\n• Did we sell the RIGHT AMOUNT overall?\n• Total units vs budget\n• At budgeted mix\n• Example: Market grew/shrank\n\n**Relationship:**\nVolume = Mix + Quantity\n\n**Memory:**\nMix = WHAT we sold (product composition)\nQuantity = HOW MUCH total we sold"
+        },
+        {
+          "title": "Example Calculation",
+          "type": "text",
+          "content": "**Budget:**\n• Product A: 1,000 units × $50 CM = $50,000\n• Product B: 4,000 units × $20 CM = $80,000\n• Total: 5,000 units, $130,000 CM\n• Budget mix: A = 20%, B = 80%\n• Budget avg CM: $26\n\n**Actual:**\n• Product A: 1,500 units × $50 CM = $75,000\n• Product B: 4,500 units × $20 CM = $90,000\n• Total: 6,000 units, $165,000 CM\n• Actual mix: A = 25%, B = 75%\n\n**Sales Volume Variance:**\n$165,000 - $130,000 = $35,000 F\n\n**Sales Quantity:**\n(6,000 - 5,000) × $26 = $26,000 F\n\n**Sales Mix:**\n$35,000 - $26,000 = $9,000 F\n(Shifted toward higher-margin Product A)"
+        },
+        {
+          "title": "Contribution Margin Approach",
+          "type": "text",
+          "content": "**Why Use CM for Sales Variances?**\n• CM reflects true profit impact\n• Revenue alone doesn't show profit effect\n• Different products have different margins\n\n**CM-Based Analysis:**\n• More informative for management\n• Shows profit impact directly\n• Highlights mix effects\n\n**Alternative: Revenue Approach:**\n• Uses selling price instead of CM\n• Shows revenue impact\n• Doesn't show profit impact\n\n**CMA Exam:** Usually uses CM approach"
+        },
+        {
+          "title": "⚠️ Exam Trap: Market Size and Share",
+          "type": "warning",
+          "content": "**Advanced Decomposition:**\n\n**Sales Quantity can split into:**\n• Market Size Variance\n• Market Share Variance\n\n**Market Size:**\n• Did the total market grow/shrink?\n• Uncontrollable by company\n\n**Market Share:**\n• Did we gain/lose share?\n• Controllable, performance-related\n\n**Example:**\n• Budget: 10% share of 50,000 market = 5,000\n• Actual: 12% share of 60,000 market = 7,200\n• Market size effect: (60K - 50K) × 10% = 1,000 units\n• Market share effect: (12% - 10%) × 60K = 1,200 units\n\n**CMA Exam:** Know conceptually, detailed math less common"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Sales price variance: Different price × actual volume",
+            "Sales volume variance: Different volume × budgeted CM",
+            "Volume = Mix variance + Quantity variance",
+            "Mix: Selling different product proportions",
+            "Quantity: Selling different total units",
+            "Use contribution margin for profit impact",
+            "Favorable mix = More high-margin products sold"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Sales Variances",
+          "knowledgeCheck": {
+            "question": "A company's actual sales shifted toward products with higher contribution margins while total sales volume remained at budget. This would result in:",
+            "options": [
+              "Unfavorable mix variance only",
+              "Favorable quantity variance only",
+              "Favorable mix variance only",
+              "No variance since total volume is at budget"
+            ],
+            "correctIndex": 2,
+            "explanation": "A shift toward higher-margin products creates a favorable sales mix variance. Since total volume is at budget, the quantity variance is zero. The favorable mix shows the company optimized its product composition.",
+            "hint": "Mix variance measures the effect of selling different product proportions."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA1-D-026",
+    "courseId": "cma",
+    "section": "CMA1",
+    "title": "Flexible Budgets and Performance Reports",
+    "description": "Create budgets that adjust for activity levels",
+    "order": 26,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Flexible budgets",
+      "Performance reporting",
+      "Budget variances",
+      "Activity-based flex"
+    ],
+    "blueprintArea": "CMA1-D",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Static budgets become meaningless when activity changes! Flexible budgets adjust expectations to actual volume, giving fair performance evaluations. This is how real-world performance analysis works."
+        },
+        {
+          "title": "Static vs Flexible Budgets",
+          "type": "text",
+          "content": "**Static Budget:**\n• Prepared for ONE activity level\n• Does not change with actual volume\n• Useful for fixed costs\n• Unfair for variable costs\n\n**Flexible Budget:**\n• Adjusts to ACTUAL activity level\n• 'What should we have spent at this volume?'\n• Fair comparison for variable costs\n• Separates volume from efficiency\n\n**Key Insight:**\nIf actual volume differs from budget, static comparison is apples to oranges"
+        },
+        {
+          "title": "Flexible Budget Formula",
+          "type": "text",
+          "content": "**Flexible Budget = Fixed Costs + (Variable Cost per Unit × Actual Units)**\n\n**Example:**\nStatic budget: 10,000 units\nActual production: 12,000 units\n\nVariable cost: $5 per unit\nFixed costs: $50,000\n\n**Static Budget:**\n$5 × 10,000 + $50,000 = $100,000\n\n**Flexible Budget:**\n$5 × 12,000 + $50,000 = $110,000\n\n**Comparison:**\nCompare actual costs to $110,000\nNot to original $100,000 static budget"
+        },
+        {
+          "title": "Variance Framework",
+          "type": "table",
+          "headers": [
+            "Budget Type",
+            "Comparison",
+            "Variance Isolated"
+          ],
+          "rows": [
+            [
+              "Actual Results",
+              "vs Flexible Budget",
+              "Flexible Budget Variance (Efficiency/Spending)"
+            ],
+            [
+              "Flexible Budget",
+              "vs Static Budget",
+              "Sales Volume Variance"
+            ],
+            [
+              "Actual Results",
+              "vs Static Budget",
+              "Total (Static Budget) Variance"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Variance Breakdown",
+          "type": "callout",
+          "content": "**Total Variance = Volume Variance + Flexible Budget Variance**\n\n**Volume Variance:**\n(Actual Units - Budgeted Units) × Budgeted CM per unit\n• Did we sell more or less than planned?\n• Usually marketing/sales responsibility\n\n**Flexible Budget Variance:**\nActual - Flexible Budget\n• At actual volume, did we spend as expected?\n• Isolates efficiency/price issues\n• Operations responsibility\n\n**Key Insight:**\n• Volume variance: Activity level impact\n• Flex variance: Efficiency/spending impact\n• Together: Total static variance"
+        },
+        {
+          "title": "Performance Report Example",
+          "type": "text",
+          "content": "**Example Performance Report:**\n\nActual units: 12,000\nBudgeted units: 10,000\n\n| Item | Actual | Flexible Budget | Flex Variance | Static Budget | Volume Variance |\n|------|--------|-----------------|---------------|---------------|-----------------|\n| Units | 12,000 | 12,000 | - | 10,000 | 2,000 F |\n| Revenue | $228,000 | $240,000 | $12,000 U | $200,000 | $40,000 F |\n| Variable | $145,000 | $144,000 | $1,000 U | $120,000 | $24,000 U |\n| CM | $83,000 | $96,000 | $13,000 U | $80,000 | $16,000 F |\n\n**Analysis:**\n• Volume helped (+2,000 units)\n• But price was lower ($12,000 U)\n• And variable costs higher ($1,000 U)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Variance Signs",
+          "type": "warning",
+          "content": "**Favorable vs Unfavorable:**\n\n**For Revenue:**\n• Actual > Budget = Favorable\n• Actual < Budget = Unfavorable\n\n**For Costs:**\n• Actual < Budget = Favorable (spent less!)\n• Actual > Budget = Unfavorable (overspent!)\n\n**Common Exam Mistake:**\nConfusing direction of variance for costs\n\n**Memory:**\n'Good for the company = Favorable'\n• More revenue = F\n• Less cost = F\n\n**Net Income Impact:**\nFavorable increases income\nUnfavorable decreases income"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Static budget: One activity level, does not adjust",
+            "Flexible budget: Adjusts to actual activity level",
+            "Flexible = Fixed + (Variable rate × Actual units)",
+            "Volume variance: Budget vs Flex (activity impact)",
+            "Flex variance: Flex vs Actual (efficiency impact)",
+            "Revenue favorable: Actual > Budget",
+            "Cost favorable: Actual < Budget"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Flexible Budgets",
+          "knowledgeCheck": {
+            "question": "A static budget was prepared for 8,000 units with variable costs of $40,000. Actual production was 10,000 units with actual variable costs of $52,000. What is the flexible budget variance for variable costs?",
+            "options": [
+              "$12,000 Unfavorable",
+              "$2,000 Unfavorable",
+              "$2,000 Favorable",
+              "$12,000 Favorable"
+            ],
+            "correctIndex": 1,
+            "explanation": "Variable cost per unit = $40,000 / 8,000 = $5. Flexible budget at 10,000 units = $5 × 10,000 = $50,000. Flexible budget variance = Actual - Flexible = $52,000 - $50,000 = $2,000 Unfavorable (spent more than expected at actual volume).",
+            "hint": "First calculate the flexible budget at actual volume, then compare to actual costs."
+          }
+        }
+      ]
+    }
   }
 ]

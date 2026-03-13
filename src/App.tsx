@@ -45,40 +45,35 @@ const Home = lazyWithRetry(() => import('./components/pages/Home'));
 const Practice = lazyWithRetry(() => import('./components/pages/Practice'));
 const Progress = lazyWithRetry(() => import('./components/pages/Progress'));
 const Settings = lazyWithRetry(() => import('./components/pages/Settings'));
+const Subscription = lazyWithRetry(() => import('./components/pages/Subscription'));
 const You = lazyWithRetry(() => import('./components/pages/You'));
 
 // Training Modes
-const DailyChallenge = lazyWithRetry(() => import('./components/pages/DailyChallenge'));
 const Flashcards = lazyWithRetry(() => import('./components/pages/Flashcards'));
 const FlashcardSetup = lazyWithRetry(() => import('./components/FlashcardSetup'));
 const TimedQuiz = lazyWithRetry(() => import('./components/pages/TimedQuiz'));
 const ExamSimulator = lazyWithRetry(() => import('./components/pages/ExamSimulator'));
+const ExamReview = lazyWithRetry(() => import('./components/pages/ExamReview'));
 const CMAEssaySimulator = lazyWithRetry(() => import('./components/pages/CMAEssaySimulator'));
 const CMACBQSimulator = lazyWithRetry(() => import('./components/pages/CMACBQSimulator'));
 const EAExamSimulator = lazyWithRetry(() => import('./components/pages/EAExamSimulator'));
 const EAFormExplorer = lazyWithRetry(() => import('./components/pages/EAFormExplorer'));
 const EASection = lazyWithRetry(() => import('./components/pages/EASection'));
 const EAInfo = lazyWithRetry(() => import('./components/pages/EAInfo'));
-const EAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/EAStudyPlanSetup'));
 const CMAExamSimulator = lazyWithRetry(() => import('./components/pages/CMAExamSimulator'));
 const CIAExamSimulator = lazyWithRetry(() => import('./components/pages/CIAExamSimulator'));
 const CISAExamSimulator = lazyWithRetry(() => import('./components/pages/CISAExamSimulator'));
-const CMAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CMAStudyPlanSetup'));
 const CMASection = lazyWithRetry(() => import('./components/pages/CMASection'));
 const TBSSimulator = lazyWithRetry(() => import('./components/pages/TBSSimulator'));
-const WrittenCommunication = lazyWithRetry(() => import('./components/pages/WrittenCommunication'));
+
 const CISASection = lazyWithRetry(() => import('./components/pages/CISASection'));
 const CISAInfo = lazyWithRetry(() => import('./components/pages/CISAInfo'));
-const CISAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CISAStudyPlanSetup'));
 
 // Content Pages
 const Lessons = lazyWithRetry(() => import('./components/pages/Lessons'));
-const LessonMatrix = lazyWithRetry(() => import('./components/pages/LessonMatrix'));
 const LessonViewer = lazyWithRetry(() => import('./components/pages/LessonViewer'));
-const StudyJourney = lazyWithRetry(() => import('./components/pages/StudyJourney'));
 const AITutor = lazyWithRetry(() => import('./components/pages/AITutor'));
 const Achievements = lazyWithRetry(() => import('./components/pages/Achievements'));
-const Community = lazyWithRetry(() => import('./components/pages/Community'));
 
 // Study Plan (unified across all courses)
 const StudyPlan = lazyWithRetry(() => import('./components/pages/StudyPlan'));
@@ -107,6 +102,7 @@ const ReferralSystem = lazyWithRetry(() => import('./components/pages/admin/Refe
 const DiagnosticLeadMagnet = lazyWithRetry(() => import('./components/pages/admin/DiagnosticLeadMagnet'));
 const TestimonialHarvester = lazyWithRetry(() => import('./components/pages/admin/TestimonialHarvester'));
 const LinkedInPosts = lazyWithRetry(() => import('./components/pages/admin/LinkedInPosts'));
+const CourseFactory = lazyWithRetry(() => import('./components/pages/admin/CourseFactory'));
 
 // Blog Pages (public, SEO content)
 const BlogIndex = lazyWithRetry(() => import('./components/pages/blog/BlogIndex'));
@@ -148,15 +144,12 @@ const CISALanding = lazyWithRetry(() => import('./components/pages/landing/CISAL
 // Info pages (keep original)
 const CMAInfo = lazyWithRetry(() => import('./components/pages/CMAInfo'));
 const CIAInfo = lazyWithRetry(() => import('./courses/cia/CIAInfo'));
-const CIAStudyPlanSetup = lazyWithRetry(() => import('./courses/cia/CIAStudyPlanSetup'));
 const CIASection = lazyWithRetry(() => import('./courses/cia/CIASection'));
 const CFPSection = lazyWithRetry(() => import('./courses/cfp/CFPSection'));
 const CFPCaseStudy = lazyWithRetry(() => import('./courses/cfp/CFPCaseStudy'));
 const CFPExamSimulator = lazyWithRetry(() => import('./components/pages/CFPExamSimulator'));
 const CFPInfo = lazyWithRetry(() => import('./components/pages/CFPInfo'));
-const CFPStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CFPStudyPlanSetup'));
 const CPAInfo = lazyWithRetry(() => import('./components/pages/CPAInfo'));
-const CPAStudyPlanSetup = lazyWithRetry(() => import('./components/pages/CPAStudyPlanSetup'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -908,6 +901,16 @@ function App() {
                     </AdminRoute>
                   }
                 />
+                <Route
+                  path="/admin/course-factory"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <CourseFactory />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
 
                 {/* Protected Main App Routes */}
                 <Route
@@ -988,16 +991,6 @@ function App() {
                     }
                   />
                   <Route
-                    path="/daily-challenge"
-                    element={
-                      <PremiumPage>
-                        <CourseKeyed>
-                          <DailyChallenge />
-                        </CourseKeyed>
-                      </PremiumPage>
-                    }
-                  />
-                  <Route
                     path="/flashcards"
                     element={
                       <PremiumPage>
@@ -1029,6 +1022,14 @@ function App() {
                       </PremiumPage>
                     }
                   />
+                  <Route
+                    path="/exam-review/:sessionId"
+                    element={
+                      <SuspensePage>
+                        <ExamReview />
+                      </SuspensePage>
+                    }
+                  />
                   {ENABLE_EA_COURSE && (
                     <>
                       <Route
@@ -1041,6 +1042,14 @@ function App() {
                       />
                       <Route
                         path="/ea"
+                        element={
+                          <SuspensePage>
+                            <Home />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/ea/dashboard"
                         element={
                           <SuspensePage>
                             <Home />
@@ -1274,14 +1283,6 @@ function App() {
                     }
                   />
                   <Route
-                    path="/written-communication"
-                    element={
-                      <PremiumPage>
-                        <WrittenCommunication />
-                      </PremiumPage>
-                    }
-                  />
-                  <Route
                     path="/lessons"
                     element={
                       <PremiumPage>
@@ -1322,22 +1323,6 @@ function App() {
                     }
                   />
                   <Route
-                    path="/journey"
-                    element={
-                      <PremiumPage>
-                        <StudyJourney />
-                      </PremiumPage>
-                    }
-                  />
-                  <Route
-                    path="/lessons/matrix"
-                    element={
-                      <PremiumPage>
-                        <LessonMatrix />
-                      </PremiumPage>
-                    }
-                  />
-                  <Route
                     path="/lessons/:lessonId"
                     element={
                       <PremiumPage>
@@ -1350,14 +1335,6 @@ function App() {
                     element={
                       <SuspensePage>
                         <Progress />
-                      </SuspensePage>
-                    }
-                  />
-                  <Route
-                    path="/community"
-                    element={
-                      <SuspensePage>
-                        <Community />
                       </SuspensePage>
                     }
                   />
@@ -1390,6 +1367,14 @@ function App() {
                     element={
                       <SuspensePage>
                         <Settings />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/subscription"
+                    element={
+                      <SuspensePage>
+                        <Subscription />
                       </SuspensePage>
                     }
                   />

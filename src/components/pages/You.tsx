@@ -5,7 +5,6 @@ import {
   Settings,
   ChevronRight,
   Flame,
-  Calendar,
   BarChart3,
   Trophy,
   LogOut,
@@ -25,9 +24,10 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
-import { format, eachDayOfInterval, differenceInDays, startOfWeek, endOfWeek, isAfter } from 'date-fns';
+import { format, eachDayOfInterval, startOfWeek, endOfWeek, isAfter } from 'date-fns';
 import { calculateExamReadiness, ReadinessData } from '../../utils/examReadiness';
 import { fetchAllLessons } from '../../services/lessonService';
+import { getSectionContent } from '../../services/contentRegistry';
 import { Card } from '../common/Card';
 import { useSubscription } from '../../services/subscription';
 import logger from '../../utils/logger';
@@ -66,9 +66,7 @@ const You: React.FC = () => {
   const examSection = getCurrentSection(userProfile, courseId, getDefaultSection);
   const sectionInfo = getSectionDisplayInfo(examSection, courseId);
   
-  // Calculate days until exam - use getExamDate helper for multi-course support
   const examDate = getExamDate(userProfile, examSection, courseId);
-  const daysUntilExam = examDate ? differenceInDays(examDate, new Date()) : null;
 
   // Handle inline exam date save
   const handleExamDateChange = async (dateStr: string) => {
@@ -230,13 +228,20 @@ const You: React.FC = () => {
         });
 
         // Calculate readiness with proper parameters including TBS
+        const sectionContent = getSectionContent(examSection);
+        const hasTBS = (sectionContent?.counts.tbs ?? 0) > 0;
         const readiness = calculateExamReadiness(
           { totalQuestions: sectionQuestions, accuracy: sectionQuestions > 0 ? Math.round((sectionCorrect / sectionQuestions) * 100) : 0 },
           topicsData,
           lessonsCompletedCount,
           totalLessonsCount,
           sectionTbs,
-          20
+          sectionContent?.counts.tbs ?? 20,
+          { 
+            hasTBS,
+            volumeTarget: sectionContent?.counts.mcqs ?? 500,
+            totalTbsOverride: sectionContent?.counts.tbs ?? 20,
+          }
         );
         setReadinessData(readiness);
 
@@ -342,12 +347,7 @@ const You: React.FC = () => {
                 >
                   {sectionInfo?.shortName || examSection}
                 </span>
-                {daysUntilExam !== null && daysUntilExam > 0 && (
-                  <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {daysUntilExam}d to exam
-                  </span>
-                )}
+
               </div>
             </div>
 
@@ -395,7 +395,7 @@ const You: React.FC = () => {
 
           {/* Subscription */}
           <Link
-            to="/settings?tab=account"
+            to="/subscription"
             className="flex items-center gap-3 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
           >
             <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">

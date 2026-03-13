@@ -1012,7 +1012,7 @@ EXAMPLE GOOD HEADLINES (under 30 chars):
 
 EXAMPLE GOOD DESCRIPTIONS (under 90 chars):
 - "Every question has detailed explanations. Understand why answers are right or wrong." (84 chars)
-- "9,000+ CPA questions with expert breakdowns. Master concepts, not just memorize." (79 chars)
+- "9,100+ CPA questions with expert breakdowns. Master concepts, not just memorize." (79 chars)
 
 RESPONSE FORMAT (JSON only, no explanation):
 {

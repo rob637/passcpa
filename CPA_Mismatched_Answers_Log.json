@@ -24,59 +24,11 @@
     ]
   },
   {
-    "id": "far-gen-1346",
-    "section": "far",
-    "question": "Which of the following criteria, if met, would req...",
-    "issues": [
-      "Explanation says A but correctAnswer is D (3)"
-    ]
-  },
-  {
-    "id": "aud-gen-1377",
-    "section": "aud",
-    "question": "During the audit of Johnson Manufacturing, the aud...",
-    "issues": [
-      "Explanation says C but correctAnswer is A (0)"
-    ]
-  },
-  {
-    "id": "aud-gen-1419",
-    "section": "aud",
-    "question": "During the audit of Apex Manufacturing, the audito...",
-    "issues": [
-      "Explanation says A but correctAnswer is C (2)"
-    ]
-  },
-  {
-    "id": "tcp-gen-1138",
-    "section": "tcp",
-    "question": "John and Mary contribute $5,000 each year to a 529...",
-    "issues": [
-      "Explanation says A but correctAnswer is B (1)"
-    ]
-  },
-  {
-    "id": "tcp-gen-1473",
-    "section": "tcp",
-    "question": "Apex Corp. is a holding company that owns the foll...",
-    "issues": [
-      "Explanation says A but correctAnswer is B (1)"
-    ]
-  },
-  {
     "id": "bar-ta-003",
     "section": "bar",
     "question": "Vitality Fitness leases gym equipment. The lease a...",
     "issues": [
       "'All of the above' is at index 2 instead of the end."
-    ]
-  },
-  {
-    "id": "bar-gen-1534",
-    "section": "bar",
-    "question": "Apex Corporation has identified the following five...",
-    "issues": [
-      "Explanation says A but correctAnswer is C (2)"
     ]
   }
 ]

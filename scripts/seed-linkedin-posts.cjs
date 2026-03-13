@@ -171,7 +171,7 @@ If you don't know, find out. It matters.`,
 
 Content is 10% of the work.
 
-We have 20,000+ questions across 6 exams.
+We have 25,000+ questions across 6 exams.
 
 But what actually moves the needle?
 

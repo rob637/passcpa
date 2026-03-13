@@ -12,7 +12,6 @@
  */
 
 import type { CourseId } from '../types/course';
-import type { Lesson, Question } from '../types';
 import logger from '../utils/logger';
 
 // =============================================================================

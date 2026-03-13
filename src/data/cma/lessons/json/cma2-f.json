@@ -1192,5 +1192,1748 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA2-F-009",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Whistleblowing and Reporting Misconduct",
+    "description": "Understand the ethical and legal framework for reporting organizational misconduct",
+    "order": 54,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Whistleblowing",
+      "Reporting channels",
+      "Legal protections",
+      "Retaliation"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "CMAs have unique access to financial information and may be the first to detect fraud or misconduct. Understanding when and how to report - and the protections available - is essential for ethical practice. IMA specifically addresses this in the Statement of Ethical Professional Practice."
+        },
+        {
+          "title": "What Is Whistleblowing?",
+          "type": "text",
+          "content": "**Definition:** Disclosing illegal, unethical, or harmful practices within an organization to parties who can take corrective action\n\n**Types of Whistleblowing:**\n• **Internal:** Reporting to supervisor, compliance, audit committee\n• **External:** Reporting to regulators, law enforcement, media\n\n**Examples of Reportable Misconduct:**\n• Financial statement fraud\n• Bribery and corruption\n• Violations of securities laws\n• Environmental violations\n• Workplace safety hazards\n• Medicare/Medicaid fraud"
+        },
+        {
+          "title": "IMA's Recommended Process",
+          "type": "text",
+          "content": "**Step 1:** Follow organization's established policies\n• Use internal reporting channels first\n• Hotlines, ethics officers, compliance\n\n**Step 2:** Escalate to higher management\n• If immediate supervisor is involved\n• Go to skip-level management or audit committee\n\n**Step 3:** Contact IMA Ethics Counselor\n• Confidential guidance available\n• Helps clarify ethical obligations\n\n**Step 4:** External reporting\n• Only after exhausting internal channels\n• OR when internal channels are compromised\n• Consult legal counsel before external reporting"
+        },
+        {
+          "title": "🧠 Memory Aid: IMA Escalation",
+          "type": "callout",
+          "content": "**\"PICEA\"** - IMA's recommended order:\n\n**P**olicies - Follow established policies first\n**I**mmediate supervisor - Report up the chain\n**C**ommittee/Board - Escalate to audit committee if needed\n**E**thics counselor - Contact IMA for guidance\n**A**ttorney/External - Only as last resort\n\nAlways try internal channels before going external!"
+        },
+        {
+          "title": "Legal Protections for Whistleblowers",
+          "type": "table",
+          "headers": [
+            "Law",
+            "Coverage",
+            "Key Provisions"
+          ],
+          "rows": [
+            [
+              "Sarbanes-Oxley (SOX)",
+              "Public company employees",
+              "Protects reports of securities fraud; reinstatement, back pay"
+            ],
+            [
+              "Dodd-Frank Act",
+              "Reports to SEC",
+              "Financial rewards (10-30% of sanctions >$1M); strong anti-retaliation"
+            ],
+            [
+              "False Claims Act (Qui Tam)",
+              "Government contract fraud",
+              "Share of recovered funds (15-30%)"
+            ],
+            [
+              "State Laws",
+              "Varies by state",
+              "Additional protections and remedies"
+            ]
+          ]
+        },
+        {
+          "title": "Dodd-Frank Whistleblower Program",
+          "type": "text",
+          "content": "**SEC Whistleblower Program:**\n\n**Financial Incentives:**\n• 10-30% of sanctions collected over $1 million\n• Awards have exceeded $100 million in some cases\n\n**Protections:**\n• Confidentiality of identity\n• Anti-retaliation provisions\n• Reinstatement and double back pay if retaliation occurs\n\n**Requirements:**\n• Original information\n• Leads to successful enforcement action\n• Report to SEC (not just internally)\n\n**Note:** Dodd-Frank protections apply even when internal reporting comes first"
+        },
+        {
+          "title": "⚠️ Exam Trap: Internal vs. External First",
+          "type": "warning",
+          "content": "**CMA Exam Question Pattern:**\n\n**IMA Guidance:** Internal channels FIRST\n• Follow policies, escalate through management\n• Protect organization's opportunity to self-correct\n\n**Exception - Go External When:**\n• Internal channels are compromised/involved\n• Imminent harm to public\n• Reasonable belief internal report would lead to retaliation\n• Destruction of evidence likely\n\n**Key Point:** IMA favors internal resolution, but legal protections don't require internal reporting first"
+        },
+        {
+          "title": "Retaliation: What to Watch For",
+          "type": "list",
+          "items": [
+            "**Termination or demotion** without documented performance issues",
+            "**Reassignment** to less desirable duties or locations",
+            "**Exclusion** from meetings, projects, or advancement opportunities",
+            "**Negative performance reviews** after previously positive reviews",
+            "**Hostile work environment** created to force resignation",
+            "**Threats** against career, references, or reputation"
+          ]
+        },
+        {
+          "title": "Building a Speak-Up Culture",
+          "type": "text",
+          "content": "**Organization's Role:**\n• Establish confidential reporting channels (hotlines)\n• Train employees on reporting procedures\n• Investigate reports promptly and thoroughly\n• Enforce zero tolerance for retaliation\n• Communicate outcomes (maintain confidentiality)\n\n**CMA's Role:**\n• Know your organization's reporting policies\n• Document concerns with facts and evidence\n• Maintain confidentiality of sensitive information\n• Support colleagues who report in good faith\n• Model ethical behavior"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Whistleblowing means reporting illegal or unethical practices to those who can act",
+            "IMA recommends internal reporting before external disclosure",
+            "Escalation: policies → supervisor → audit committee → IMA counselor → external",
+            "SOX protects reports of securities fraud at public companies",
+            "Dodd-Frank offers financial incentives (10-30%) for SEC reports",
+            "False Claims Act allows sharing in government fraud recoveries",
+            "Document all concerns and any signs of retaliation",
+            "Organizations should foster a speak-up culture with multiple reporting channels"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "IMA's Recommended Process",
+          "knowledgeCheck": {
+            "question": "A CMA discovers that their CFO is manipulating revenue recognition to meet analyst expectations. According to IMA guidance, what should the CMA do FIRST?",
+            "options": [
+              "Report directly to the SEC under Dodd-Frank",
+              "Confront the CFO and demand they stop",
+              "Report to the audit committee of the board of directors",
+              "Contact IMA's Ethics Counselor for guidance"
+            ],
+            "correctIndex": 2,
+            "explanation": "Since the immediate supervisor (CFO) is the one involved in the misconduct, the CMA should bypass the CFO and report to a higher authority. The audit committee of the board is the appropriate escalation point for financial reporting fraud. The CMA should not report externally until internal channels are exhausted or compromised.",
+            "hint": "Think about to whom the CMA should report when the supervisor is involved in the misconduct."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Whistleblower Protections",
+          "knowledgeCheck": {
+            "question": "Under the Dodd-Frank Act, what financial incentive is available to whistleblowers who report securities violations to the SEC?",
+            "options": [
+              "Fixed payment of $100,000 per report",
+              "10-30% of monetary sanctions exceeding $1 million",
+              "Reimbursement of legal fees only",
+              "No financial incentive; only job protection"
+            ],
+            "correctIndex": 1,
+            "explanation": "Dodd-Frank's whistleblower program provides awards of 10-30% of monetary sanctions collected when sanctions exceed $1 million. The percentage depends on the significance of information provided, assistance given, and other factors.",
+            "hint": "The program provides a percentage of recovered funds, not a fixed amount."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "When to Report Externally",
+          "reveal": {
+            "question": "Under what circumstances might a CMA bypass internal reporting and go directly to external authorities?",
+            "answer": "External reporting may be appropriate when: (1) Internal reporting channels are themselves compromised or involved in the misconduct, (2) There is imminent harm to the public or investors, (3) There is reasonable belief that internal reporting would lead to retaliation or destruction of evidence, or (4) The organization has already been given an opportunity to address the issue and failed to act."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-010",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "ESG Reporting and Sustainability",
+    "description": "Understand environmental, social, and governance reporting requirements and frameworks",
+    "order": 60,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "ESG reporting",
+      "Sustainability frameworks",
+      "Carbon accounting",
+      "Stakeholder reporting"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "ESG is no longer optional! Investors, regulators, and customers demand sustainability information. CMAs are increasingly responsible for measuring, reporting, and assuring ESG data. The SEC climate disclosure rules make this a financial reporting issue."
+        },
+        {
+          "title": "What Is ESG?",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Key Topics",
+            "Example Metrics"
+          ],
+          "rows": [
+            [
+              "Environmental",
+              "Climate, pollution, resources",
+              "GHG emissions, water usage, waste recycled"
+            ],
+            [
+              "Social",
+              "Employees, communities, customers",
+              "Diversity %, safety incidents, employee turnover"
+            ],
+            [
+              "Governance",
+              "Board, ethics, transparency",
+              "Board independence, executive pay ratio, ethics violations"
+            ]
+          ]
+        },
+        {
+          "title": "Why ESG Matters to Finance",
+          "type": "text",
+          "content": "**Investor Demand:**\n• $35+ trillion in ESG-focused assets\n• Major institutions require ESG data\n• ESG ratings affect cost of capital\n\n**Regulatory Requirements:**\n• SEC climate disclosure rules (US)\n• EU Corporate Sustainability Reporting Directive\n• California climate laws\n\n**Risk Management:**\n• Physical climate risks\n• Transition risks (policy, technology)\n• Reputational risks\n\n**Value Creation:**\n• Operational efficiency (energy, waste)\n• Employee attraction/retention\n• Customer preference"
+        },
+        {
+          "title": "🧠 Memory Aid: ESG Frameworks",
+          "type": "callout",
+          "content": "**\"GRI SASB TCFD ISSB\" - The Big Four:**\n\n**GRI** (Global Reporting Initiative)\n→ Broadest stakeholder focus, comprehensive\n\n**SASB** (now ISSB)\n→ Industry-specific, investor-focused\n\n**TCFD** (Task Force on Climate Disclosures)\n→ Climate-specific, governance/strategy/risk/metrics\n\n**ISSB** (International Sustainability Standards Board)\n→ Global baseline, consolidating standards"
+        },
+        {
+          "title": "GHG Protocol: Carbon Accounting",
+          "type": "text",
+          "content": "**The standard for measuring carbon emissions:**\n\n**Scope 1: Direct Emissions**\n• Company-owned sources\n• Fleet vehicles, on-site fuel combustion\n• You control these directly\n\n**Scope 2: Indirect - Energy**\n• Purchased electricity, heat, cooling\n• Generated elsewhere but used by you\n• Can reduce by buying renewable energy\n\n**Scope 3: Indirect - Value Chain**\n• Upstream (suppliers, business travel)\n• Downstream (product use, disposal)\n• Often 70-90% of total emissions\n• Hardest to measure and control"
+        },
+        {
+          "title": "Scope 3 Categories",
+          "type": "table",
+          "headers": [
+            "Upstream",
+            "Downstream"
+          ],
+          "rows": [
+            [
+              "Purchased goods/services",
+              "Use of sold products"
+            ],
+            [
+              "Capital goods",
+              "End-of-life treatment"
+            ],
+            [
+              "Fuel/energy activities",
+              "Downstream transportation"
+            ],
+            [
+              "Transportation/distribution",
+              "Processing of sold products"
+            ],
+            [
+              "Waste generated",
+              "Franchises"
+            ],
+            [
+              "Business travel",
+              "Investments"
+            ],
+            [
+              "Employee commuting",
+              "Downstream leased assets"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Materiality in ESG",
+          "type": "warning",
+          "content": "**Two Concepts of Materiality:**\n\n**Financial Materiality (Single):**\n• Impact of ESG on company financials\n• Traditional investor focus\n• \"What affects our bottom line?\"\n\n**Double Materiality:**\n• ALSO includes company impact on world\n• Required in EU regulations\n• \"How do we affect society/environment?\"\n\n**CMA Exam Focus:**\nUnderstand both concepts - the US is moving toward financial materiality (SEC rules), while EU requires double materiality."
+        },
+        {
+          "title": "CMA Role in ESG",
+          "type": "text",
+          "content": "**Data Collection & Measurement:**\n• Design ESG data systems\n• Establish measurement methodologies\n• Ensure data quality and completeness\n\n**Integration with Financial Reporting:**\n• Climate risk disclosures\n• Sustainability-linked financing\n• Internal carbon pricing\n\n**Assurance:**\n• Internal controls over ESG data\n• Supporting external assurance\n• Consistency and comparability\n\n**Strategic Analysis:**\n• Climate scenario analysis\n• Transition planning\n• ROI of sustainability initiatives"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ESG covers Environmental, Social, and Governance factors",
+            "Major frameworks: GRI, SASB/ISSB, TCFD - evolving toward convergence",
+            "GHG Protocol uses Scopes 1 (direct), 2 (energy), and 3 (value chain)",
+            "Scope 3 is typically largest but hardest to measure",
+            "Financial materiality = ESG impact on company; Double materiality adds company impact on world",
+            "CMAs increasingly responsible for ESG data quality, integration, and assurance",
+            "SEC climate rules make this a financial reporting requirement"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "GHG Scopes",
+          "knowledgeCheck": {
+            "question": "A manufacturing company purchases electricity from the local utility to power its factory. The emissions from generating that electricity would be classified under which GHG Protocol scope?",
+            "options": [
+              "Scope 1 - Direct emissions",
+              "Scope 2 - Indirect energy emissions",
+              "Scope 3 - Value chain emissions",
+              "Not included in GHG reporting"
+            ],
+            "correctIndex": 1,
+            "explanation": "Scope 2 covers indirect emissions from purchased electricity, heat, and cooling. The emissions occur at the utility's power plant (not the company's facilities), but result from the company's energy consumption. This is the correct classification under the GHG Protocol.",
+            "hint": "Think about where the emissions physically occur versus who consumes the energy."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Double Materiality Explained",
+          "reveal": {
+            "question": "What is double materiality and why is it important in ESG reporting?",
+            "answer": "Double materiality considers two perspectives: (1) How ESG issues affect the company's financials (outside-in, financial materiality), and (2) How the company's operations impact society and the environment (inside-out, impact materiality). This is required under EU regulations and reflects the view that companies are accountable not just to shareholders but to all stakeholders. US regulations (SEC) primarily focus on financial materiality - what investors need to know about climate risks."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-011",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Non-Financial Performance Measures",
+    "description": "Design and use non-financial KPIs to drive strategic performance",
+    "order": 61,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Non-financial measures",
+      "KPIs",
+      "Leading indicators",
+      "Performance measurement"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Financial measures tell you what HAPPENED - they're lagging indicators! Non-financial measures predict what WILL happen, enabling proactive management. CMAs must balance both types to provide complete performance insights."
+        },
+        {
+          "title": "Leading vs Lagging Indicators",
+          "type": "table",
+          "headers": [
+            "Leading (Predictive)",
+            "Lagging (Outcome)"
+          ],
+          "rows": [
+            [
+              "Customer satisfaction scores",
+              "Revenue growth"
+            ],
+            [
+              "Employee training hours",
+              "Profit margin"
+            ],
+            [
+              "Product defect rate",
+              "Warranty costs"
+            ],
+            [
+              "Sales pipeline",
+              "Actual sales"
+            ],
+            [
+              "Employee engagement",
+              "Turnover rate"
+            ]
+          ]
+        },
+        {
+          "title": "Customer Perspective Measures",
+          "type": "text",
+          "content": "**External stakeholder focus:**\n\n**Satisfaction & Loyalty:**\n• Net Promoter Score (NPS)\n• Customer satisfaction index\n• Customer retention rate\n• Repeat purchase rate\n\n**Acquisition:**\n• Customer acquisition cost (CAC)\n• Time to acquire\n• Market share\n• Brand awareness\n\n**Service Quality:**\n• On-time delivery rate\n• Order accuracy\n• Response time\n• First-call resolution"
+        },
+        {
+          "title": "🧠 Memory Aid: Balanced Scorecard Perspectives",
+          "type": "callout",
+          "content": "**\"FCIL\" - Four Perspectives:**\n\n**F**inancial - How do we look to shareholders?\n**C**ustomer - How do customers see us?\n**I**nternal Process - What must we excel at?\n**L**earning & Growth - Can we improve and create value?\n\n**Balance financial + non-financial = complete picture**"
+        },
+        {
+          "title": "Internal Process Measures",
+          "type": "text",
+          "content": "**Operational excellence focus:**\n\n**Quality:**\n• Defect rate (defects per million)\n• Rework percentage\n• First-pass yield\n• Quality audit scores\n\n**Efficiency:**\n• Cycle time\n• Machine utilization\n• Process capability (Cp, Cpk)\n• On-time completion rate\n\n**Innovation:**\n• New product development time\n• R&D project completion rate\n• Patents filed\n• Revenue from new products"
+        },
+        {
+          "title": "Learning & Growth Measures",
+          "type": "text",
+          "content": "**Human capital and capabilities:**\n\n**Employee Capability:**\n• Training hours per employee\n• Skills certifications achieved\n• Cross-training percentage\n• Knowledge assessment scores\n\n**Employee Satisfaction:**\n• Employee engagement score\n• Employee NPS (eNPS)\n• Voluntary turnover rate\n• Absenteeism rate\n\n**Technology:**\n• System availability (uptime)\n• Technology adoption rate\n• Data quality metrics"
+        },
+        {
+          "title": "⚠️ Exam Trap: Measure Selection",
+          "type": "warning",
+          "content": "**Good non-financial KPIs are:**\n\n✓ Aligned with strategy\n✓ Actionable by managers\n✓ Measurable objectively\n✓ Timely (available when needed)\n✓ Understandable\n\n**Watch out for:**\n✗ Too many measures (analysis paralysis)\n✗ Measures that can be gamed\n✗ Conflicting measures\n✗ Measures not tied to outcomes\n✗ Difficult to collect or verify\n\n**Exam Tip:** Link measures to strategy - ask \"How does this KPI support our strategic objectives?\""
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Leading indicators predict future performance; lagging report past",
+            "Balance financial and non-financial measures",
+            "Customer measures: satisfaction, retention, acquisition cost",
+            "Process measures: quality, efficiency, cycle time",
+            "Learning measures: training, engagement, capabilities",
+            "KPIs should be aligned with strategy and actionable",
+            "Avoid too many measures or measures that can be gamed"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Leading vs Lagging",
+          "knowledgeCheck": {
+            "question": "Which of the following is a LEADING indicator of future financial performance?",
+            "options": [
+              "Last quarter's revenue",
+              "Customer satisfaction survey results",
+              "Annual profit margin",
+              "Year-end market share"
+            ],
+            "correctIndex": 1,
+            "explanation": "Customer satisfaction is a leading indicator because satisfied customers are more likely to remain loyal and make future purchases, predicting future revenue. Revenue, profit margin, and year-end market share are all lagging indicators that report what already happened.",
+            "hint": "Leading indicators predict future outcomes; lagging indicators report past results."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-012",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Balanced Scorecard Implementation",
+    "description": "Design and implement a balanced scorecard system for strategic performance management",
+    "order": 62,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Balanced scorecard",
+      "Strategy maps",
+      "Performance measurement",
+      "Strategic alignment"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Financial measures alone are like driving by looking in the rearview mirror! The Balanced Scorecard links strategy to operations through a comprehensive measurement system. CMAs often lead BSC implementation as the bridge between strategy and measurement."
+        },
+        {
+          "title": "Four Perspectives Review",
+          "type": "text",
+          "content": "**Financial Perspective**\n• How do we look to shareholders?\n• Revenue growth, profitability, ROI, EVA\n\n**Customer Perspective**\n• How do customers see us?\n• Satisfaction, retention, market share\n\n**Internal Process Perspective**\n• What must we excel at?\n• Quality, cycle time, efficiency\n\n**Learning & Growth Perspective**\n• Can we continue to improve?\n• Employee skills, systems, culture\n\n**Key: All perspectives LINK together through cause-and-effect!"
+        },
+        {
+          "title": "Strategy Maps",
+          "type": "text",
+          "content": "**Visual representation of cause-effect links:**\n\n**Bottom-up logic:**\n\n**Learning & Growth**\n→ Skilled employees\n→ Better technology\n\n**Internal Process**\n→ Faster delivery\n→ Higher quality\n\n**Customer**\n→ Customer satisfaction\n→ Loyalty and retention\n\n**Financial**\n→ Revenue growth\n→ Profitability\n\n**The logic:** Investing in people/systems → better processes → happier customers → financial results"
+        },
+        {
+          "title": "🧠 Memory Aid: Building a Strategy Map",
+          "type": "callout",
+          "content": "**\"Start at Top, Build from Bottom\":**\n\n**1. Start with financial objectives** (what stakeholders want)\n\n**2. Ask: What customer outcomes drive financial success?**\n→ Add customer objectives\n\n**3. Ask: What processes must we excel at?**\n→ Add process objectives\n\n**4. Ask: What capabilities enable those processes?**\n→ Add learning & growth objectives\n\n**Draw arrows showing cause-effect relationships!**"
+        },
+        {
+          "title": "BSC Building Blocks",
+          "type": "text",
+          "content": "**For EACH objective in each perspective:**\n\n**1. Objective**\n• What are we trying to achieve?\n• Action-oriented statement\n\n**2. Measure (KPI)**\n• How will we track progress?\n• Specific, quantifiable metric\n\n**3. Target**\n• What level of performance?\n• Specific number or percentage\n\n**4. Initiative**\n• What actions will we take?\n• Projects and programs\n\n**Example:**\nObjective: Improve on-time delivery\nMeasure: % orders delivered on time\nTarget: 98% by year-end\nInitiative: Implement new logistics system"
+        },
+        {
+          "title": "Common Challenges",
+          "type": "text",
+          "content": "**Implementation Obstacles:**\n\n**1. Too Many Measures**\n• Keep to 15-25 measures total\n• Focus on strategic priorities\n\n**2. No Cause-Effect Links**\n• Measures must connect\n• Not just four separate lists\n\n**3. Only Financial Focus**\n• Leading indicators matter too\n• Don't overweight lagging measures\n\n**4. No Ownership**\n• Each measure needs an owner\n• Accountability drives results\n\n**5. Static Implementation**\n• BSC should evolve with strategy\n• Regular review and update"
+        },
+        {
+          "title": "⚠️ Exam Trap: BSC Misconceptions",
+          "type": "warning",
+          "content": "**Common myths about BSC:**\n\n**Myth:** BSC is just a measurement system\n**Reality:** It's a STRATEGY MANAGEMENT system\n\n**Myth:** Add measures until all perspectives are equal\n**Reality:** Weight by strategic importance\n\n**Myth:** BSC replaces budgeting\n**Reality:** BSC complements budget with strategic focus\n\n**Myth:** More measures = better scorecard\n**Reality:** Fewer, better measures with clear links\n\n**Exam Focus:** Understand the LINKAGES - that's the key differentiator from other measurement systems!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four perspectives: Financial, Customer, Internal Process, Learning & Growth",
+            "Strategy maps show cause-effect links between objectives",
+            "Build from financial goals down to learning & growth enablers",
+            "Each objective needs measure, target, and initiative",
+            "BSC is strategy management, not just measurement",
+            "Keep to 15-25 measures focused on strategic priorities",
+            "The linkages between perspectives are the key value"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Balanced Scorecard",
+          "knowledgeCheck": {
+            "question": "A company's strategy map shows: Employee training → Process efficiency → Customer satisfaction → Revenue growth. This demonstrates the BSC concept of:",
+            "options": [
+              "Financial perspective dominance",
+              "Equal weighting of all perspectives",
+              "Cause-and-effect linkages",
+              "Leading indicator selection"
+            ],
+            "correctIndex": 2,
+            "explanation": "The strategy map demonstrates cause-and-effect linkages, the core BSC concept. Learning & Growth (training) enables Internal Process (efficiency), which drives Customer results (satisfaction), which leads to Financial outcomes (revenue). This bottom-up causality is what distinguishes BSC.",
+            "hint": "Strategy maps explicitly show how objectives in each perspective connect to drive results."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-013",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cost of Quality (COQ)",
+    "description": "Measure and manage quality costs to improve profitability",
+    "order": 13,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cost of quality",
+      "Prevention costs",
+      "Appraisal costs",
+      "Failure costs"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Poor quality is EXPENSIVE - but so is excessive inspection! CMAs must measure quality costs to find the optimal balance. Understanding the four COQ categories helps prioritize quality investments for maximum ROI."
+        },
+        {
+          "title": "Four Categories of Quality Costs",
+          "type": "text",
+          "content": "**Prevention Costs:**\n• Prevent defects before they occur\n• Quality planning and training\n• Process design and improvement\n• Supplier evaluation\n\n**Appraisal Costs:**\n• Detect defects before shipment\n• Inspection and testing\n• Quality audits\n• Lab testing\n\n**Internal Failure Costs:**\n• Defects found BEFORE customer receives\n• Scrap and rework\n• Reinspection\n• Production delays\n\n**External Failure Costs:**\n• Defects found AFTER customer receives\n• Warranty claims\n• Returns and recalls\n• Lost customers and reputation"
+        },
+        {
+          "title": "COQ Category Examples",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Prevention",
+              "Quality training, SPC implementation, Design reviews"
+            ],
+            [
+              "Appraisal",
+              "Final inspection, Supplier testing, Calibration"
+            ],
+            [
+              "Internal Failure",
+              "Scrap, Rework, Machine downtime from defects"
+            ],
+            [
+              "External Failure",
+              "Warranty, Returns, Lawsuits, Lost sales"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: COQ Categories",
+          "type": "callout",
+          "content": "**\"PAIF\" - Prevention, Appraisal, Internal, External Failure:**\n\n**Conformance Costs (Good spending):**\n• **P**revention - Stop defects from happening\n• **A**ppraisal - Find defects before shipping\n\n**Nonconformance Costs (Bad spending):**\n• **I**nternal Failure - Found internally\n• (External) **F**ailure - Found by customer\n\n**Goal:** Shift spending from failure to prevention!\nInvest upstream to save money downstream."
+        },
+        {
+          "title": "COQ Trade-off Model",
+          "type": "text",
+          "content": "**Traditional View:**\nThere's an \"optimal\" quality level\nMore prevention increases costs initially\nBut reduces failure costs\nFind the balance point\n\n**Modern View (TQM):**\nPrevention costs ALWAYS pay off\nZero defects is achievable goal\nThe optimal level is 100% quality\n\n**Key Insight:**\n• $1 in prevention saves $10 in inspection\n• $1 in inspection saves $100 in external failure\n\n**Reality:**\nExternal failure costs often hidden or underestimated\nInclude reputation damage and lost future sales"
+        },
+        {
+          "title": "Measuring Cost of Quality",
+          "type": "text",
+          "content": "**COQ Report Structure:**\n\n| Category | Amount | % of Sales |\n|----------|--------|------------|\n| Prevention | $50,000 | 0.5% |\n| Appraisal | $80,000 | 0.8% |\n| Internal Failure | $120,000 | 1.2% |\n| External Failure | $200,000 | 2.0% |\n| **Total COQ** | **$450,000** | **4.5%** |\n\n**Benchmark:**\n• Total COQ typically 10-25% of sales\n• World-class: Under 2.5%\n• Prevention should be largest category\n\n**Red Flag:**\nExternal failure > Prevention = Quality underinvestment"
+        },
+        {
+          "title": "⚠️ Exam Trap: Hidden Quality Costs",
+          "type": "warning",
+          "content": "**Often missed in COQ calculations:**\n\n**Hidden External Failure Costs:**\n• Customer ill will\n• Lost referrals\n• Management time on complaints\n• Expedited shipping for replacements\n\n**Hidden Internal Failure Costs:**\n• Opportunity cost of capacity used for rework\n• Engineering time troubleshooting\n• Excess inventory \"just in case\"\n\n**Exam Approach:**\nIf asked to classify a cost, ask:\n1. Before or after detection?\n2. Before or after shipment to customer?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Four COQ categories: Prevention, Appraisal, Internal Failure, External Failure",
+            "Prevention + Appraisal = Conformance costs (good investment)",
+            "Internal + External Failure = Nonconformance costs (waste)",
+            "Invest in prevention to reduce total COQ",
+            "External failure most expensive - includes hidden costs",
+            "World-class COQ: Under 2.5% of sales",
+            "Goal: Shift spending from failure to prevention"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "COQ Classification",
+          "knowledgeCheck": {
+            "question": "A manufacturing company pays $25,000 for statistical process control software. How should this be classified in the Cost of Quality framework?",
+            "options": [
+              "Appraisal cost",
+              "Prevention cost",
+              "Internal failure cost",
+              "External failure cost"
+            ],
+            "correctIndex": 1,
+            "explanation": "SPC software is a PREVENTION cost - it helps prevent defects from occurring by monitoring processes and catching variations before they produce defective products. Appraisal costs involve inspecting finished products.",
+            "hint": "Does this cost help PREVENT defects or DETECT them after production?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-014",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Strategic Performance Measurement",
+    "description": "Align performance metrics with strategic objectives using leading and lagging indicators",
+    "order": 14,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Performance measurement",
+      "Leading indicators",
+      "Lagging indicators",
+      "Strategic alignment"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "What gets measured gets managed! CMAs design performance measurement systems that drive the RIGHT behaviors. This means selecting metrics that align with strategy and balance short-term results with long-term value creation."
+        },
+        {
+          "title": "Leading vs Lagging Indicators",
+          "type": "text",
+          "content": "**Lagging Indicators (Results):**\n• Measure outcomes\n• Historical, backward-looking\n• Easy to measure\n• Hard to change once known\n• Examples: Revenue, profit, market share\n\n**Leading Indicators (Drivers):**\n• Predict future results\n• Forward-looking\n• Harder to measure\n• Actionable - can change\n• Examples: Customer satisfaction, employee training, pipeline\n\n**Balance Both:**\nLeading indicators drive lagging indicators\nNeed both to manage performance effectively"
+        },
+        {
+          "title": "Indicator Examples by Perspective",
+          "type": "table",
+          "headers": [
+            "Perspective",
+            "Leading",
+            "Lagging"
+          ],
+          "rows": [
+            [
+              "Financial",
+              "Sales pipeline, backlog",
+              "Revenue, profit, ROI"
+            ],
+            [
+              "Customer",
+              "Satisfaction survey, NPS",
+              "Market share, retention"
+            ],
+            [
+              "Process",
+              "Defect rate, cycle time",
+              "Cost per unit, throughput"
+            ],
+            [
+              "Learning",
+              "Training hours, R&D spend",
+              "Patents, employee turnover"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: SMART Metrics",
+          "type": "callout",
+          "content": "**Good metrics are SMART:**\n\n**S**pecific - Clear definition\n\n**M**easurable - Can be quantified\n\n**A**ction-oriented - Someone can influence it\n\n**R**elevant - Connects to strategy\n\n**T**imely - Available when needed\n\n**Test your metrics:**\n• Who is accountable?\n• What behavior does it drive?\n• How does it link to strategy?\n• Can gaming occur?"
+        },
+        {
+          "title": "Metric Selection Process",
+          "type": "text",
+          "content": "**Step 1: Start with Strategy**\n• What are strategic objectives?\n• What does success look like?\n\n**Step 2: Identify Causal Links**\n• What DRIVES those outcomes?\n• Build cause-effect chains\n\n**Step 3: Select Few Critical Metrics**\n• Less is more - focus attention\n• 20 metrics max, ideally fewer\n\n**Step 4: Balance Across Dimensions**\n• Financial + Non-financial\n• Leading + Lagging\n• Short-term + Long-term\n\n**Step 5: Set Targets**\n• Stretch but achievable\n• Benchmark if possible\n\n**Step 6: Review and Refine**\n• Are they driving right behavior?\n• Is gaming occurring?"
+        },
+        {
+          "title": "Common Measurement Pitfalls",
+          "type": "text",
+          "content": "**Too Many Metrics:**\n• Dilutes focus\n• Conflicting signals\n• Analysis paralysis\n\n**Only Financial Metrics:**\n• Miss operational drivers\n• Short-term bias\n• Lagging only\n\n**Gaming/Manipulation:**\n• Hitting target but missing point\n• Metric becomes goal instead of indicator\n• \"Goodhart's Law\" - measure stops being useful\n\n**No Connection to Strategy:**\n• Easy to measure \u2260 Important\n• Measure what matters, not what's easy\n\n**Lack of Accountability:**\n• No clear owner\n• Can't influence what you measure"
+        },
+        {
+          "title": "⚠️ Exam Trap: Controllability Principle",
+          "type": "warning",
+          "content": "**Managers should be evaluated on what they can control**\n\n**Controllable:**\n• Division costs, revenues\n• Local decisions\n• Team performance\n\n**Not Controllable:**\n• Allocated corporate overhead\n• Exchange rate changes\n• Economy-wide factors\n\n**Trade-off:**\n• Pure controllability: May miss interdependencies\n• Shared metrics: Promotes cooperation\n\n**Solution:**\n• Separate controllable from total\n• Use controllable for evaluation\n• Show total for information"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Leading indicators predict; Lagging indicators confirm",
+            "Balance: Financial + Non-financial, Leading + Lagging, Short + Long-term",
+            "SMART metrics: Specific, Measurable, Action-oriented, Relevant, Timely",
+            "Less is more - focus on few critical metrics",
+            "Avoid gaming by reviewing behaviors driven by metrics",
+            "Controllability: Evaluate managers on what they can influence",
+            "Connect all metrics to strategic objectives"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Indicator Classification",
+          "knowledgeCheck": {
+            "question": "A company tracks 'customer complaint resolution time' to improve customer retention. This metric is best classified as:",
+            "options": [
+              "Lagging indicator for customer perspective",
+              "Leading indicator for customer perspective",
+              "Lagging indicator for internal process perspective",
+              "Leading indicator for financial perspective"
+            ],
+            "correctIndex": 1,
+            "explanation": "Resolution time is a LEADING indicator that predicts future customer retention (lagging). It measures a driver that influences outcomes. It relates to the customer perspective because it directly affects customer experience.",
+            "hint": "Leading indicators are drivers that predict future outcomes. What does fast resolution time lead to?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-015",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Employee Incentive Compensation",
+    "description": "Design compensation systems that align employee behavior with organizational goals",
+    "order": 15,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Incentive compensation",
+      "Bonus plans",
+      "Stock options",
+      "Performance pay"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Pay drives behavior! CMAs help design incentive systems that motivate performance while controlling costs. Understanding the link between compensation structure and behavior is crucial for avoiding unintended consequences."
+        },
+        {
+          "title": "Compensation Components",
+          "type": "text",
+          "content": "**Base Salary:**\n• Fixed amount\n• Attracts and retains\n• No performance link\n\n**Short-Term Incentives:**\n• Annual bonuses\n• Tied to yearly performance\n• Cash​ payment\n\n**Long-Term Incentives:**\n• Stock options\n• Restricted stock\n• Performance shares\n• Align with shareholder value\n\n**Benefits:**\n• Health, retirement, etc.\n• Part of total compensation\n\n**Mix varies by level:**\nExecs: More incentive-based\nFront-line: More fixed"
+        },
+        {
+          "title": "Incentive Plan Design Elements",
+          "type": "table",
+          "headers": [
+            "Element",
+            "Options",
+            "Considerations"
+          ],
+          "rows": [
+            [
+              "Performance Measure",
+              "Financial, Non-financial, Mix",
+              "What behavior do you want?"
+            ],
+            [
+              "Performance Standard",
+              "Budget, Prior year, Peer comparison",
+              "How challenging should it be?"
+            ],
+            [
+              "Payout Structure",
+              "Linear, Threshold, Cap",
+              "At-risk amount, upside potential?"
+            ],
+            [
+              "Time Horizon",
+              "Annual, Multi-year, Rolling",
+              "Short-term vs long-term focus?"
+            ],
+            [
+              "Payment Form",
+              "Cash, Stock, Mix",
+              "Retention, cash flow, alignment?"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Bonus Plan Components",
+          "type": "callout",
+          "content": "**\"TMTPC\" - Target, Measure, Threshold, Payout, Cap:**\n\n**T**arget - Expected performance level (100%)\n\n**M**easure - What metric (Revenue? Profit? EVA?)\n\n**T**hreshold - Minimum to earn any bonus\n\n**P**ayout - Formula (% of salary, $ amount)\n\n**C**ap - Maximum payout (often 150-200%)\n\n**Example:**\nThreshold: 80% of target = 50% bonus\nTarget: 100% = 100% bonus\nCap: 120% of target = 150% bonus"
+        },
+        {
+          "title": "Stock-Based Compensation",
+          "type": "text",
+          "content": "**Stock Options:**\n• Right to buy stock at fixed price\n• Value if stock price rises\n• Nothing if price falls below strike\n• Promotes share price focus\n\n**Restricted Stock:**\n• Actual shares granted\n• Vest over time (e.g., 4 years)\n• Has value even if price drops\n• Promotes retention\n\n**Performance Shares:**\n• Shares based on performance goals\n• TSR, EPS growth targets\n• Combines performance + equity\n\n**Accounting:**\n• All stock comp expensed under ASC 718\n• Fair value at grant date"
+        },
+        {
+          "title": "Common Design Problems",
+          "type": "text",
+          "content": "**Gaming:**\n• Manipulating measures to earn bonus\n• Sandbagging targets\n• Shifting revenue/expenses between periods\n\n**Short-Termism:**\n• Sacrificing long-term for current bonus\n• Cutting R&D, maintenance\n• Solution: Multi-year metrics, deferrals\n\n**Uncontrollable Factors:**\n• Economy affects results\n• May demotivate if unfair\n• Solution: Relative performance\n\n**Suboptimization:**\n• Optimizing own bonus at company expense\n• Solution: Include company-wide metrics"
+        },
+        {
+          "title": "⚠️ Exam Trap: Bonus Plan Trade-offs",
+          "type": "warning",
+          "content": "**No perfect formula - everything has trade-offs:**\n\n**Individual Measures:**\n+ Direct line of sight\n- May encourage suboptimization\n\n**Team/Company Measures:**\n+ Encourages cooperation\n- Free-rider problem\n\n**Financial Measures:**\n+ Objective, verifiable\n- Lagging, manipulable\n\n**Non-Financial Measures:**\n+ Leading indicators\n- Subjective, hard to verify\n\n**Best Practice:**\nBlend measures to balance trade-offs\nNo single measure should dominate"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Compensation = Base + Short-term incentive + Long-term incentive + Benefits",
+            "Bonus plan elements: Target, Measure, Threshold, Payout, Cap",
+            "Stock options: Value only if price rises; Restricted stock: Always has value",
+            "Watch for gaming, short-termism, uncontrollables, suboptimization",
+            "Blend individual and company measures to balance trade-offs",
+            "Mix financial and non-financial, leading and lagging indicators",
+            "Executive comp is more incentive-based than front-line comp"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Incentive Design",
+          "knowledgeCheck": {
+            "question": "A company's salespeople are evaluated solely on revenue generated. They're giving excessive discounts to close deals. Which incentive design change would best address this?",
+            "options": [
+              "Increase the revenue target to make bonuses harder to earn",
+              "Switch to a team-based incentive structure",
+              "Add gross margin or profitability as a second metric",
+              "Replace cash bonus with stock options"
+            ],
+            "correctIndex": 2,
+            "explanation": "Adding gross margin as a metric encourages salespeople to consider pricing, not just volume. They'll earn more by selling at full price than by discounting. This addresses the root cause: the measure drove the wrong behavior.",
+            "hint": "The current metric (revenue only) doesn't penalize discounting. What would?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-016",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Sustainability and ESG Reporting",
+    "description": "Integrate environmental, social, and governance factors into performance measurement",
+    "order": 16,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "ESG",
+      "Sustainability reporting",
+      "Non-financial metrics",
+      "Stakeholder value"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "ESG is revolutionizing corporate reporting! Investors, regulators, and customers demand sustainability data. CMAs are increasingly responsible for measuring, reporting, and assuring ESG information alongside traditional financial data."
+        },
+        {
+          "title": "What is ESG?",
+          "type": "text",
+          "content": "**E - Environmental:**\n• Carbon emissions\n• Energy use\n• Water management\n• Waste and recycling\n• Climate risk\n\n**S - Social:**\n• Employee health and safety\n• Diversity and inclusion\n• Labor practices\n• Community impact\n• Supply chain standards\n\n**G - Governance:**\n• Board composition\n• Executive compensation\n• Ethics and anti-corruption\n• Risk management\n• Shareholder rights"
+        },
+        {
+          "title": "ESG Reporting Frameworks",
+          "type": "table",
+          "headers": [
+            "Framework",
+            "Focus",
+            "Users"
+          ],
+          "rows": [
+            [
+              "GRI",
+              "Broad stakeholder impact",
+              "All stakeholders"
+            ],
+            [
+              "SASB",
+              "Financially material ESG",
+              "Investors"
+            ],
+            [
+              "TCFD",
+              "Climate risk disclosure",
+              "Investors, regulators"
+            ],
+            [
+              "CDP",
+              "Environmental data",
+              "Investors, customers"
+            ],
+            [
+              "ISSB/IFRS S1, S2",
+              "Global baseline (new)",
+              "Investors globally"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Materiality Types",
+          "type": "callout",
+          "content": "**Two types of materiality in ESG:**\n\n**Financial Materiality (Outside-In):**\n• How does ESG affect company value?\n• Climate risks, regulatory costs\n• Investor-focused\n• SASB, ISSB approach\n\n**Impact Materiality (Inside-Out):**\n• How does company affect world?\n• Emissions, labor practices\n• Stakeholder-focused\n• GRI approach\n\n**Double Materiality:**\n• Both perspectives\n• EU CSRD requirement\n• Growing globally\n\n**CMA Focus:** Understand BOTH financial and impact materiality"
+        },
+        {
+          "title": "Key ESG Metrics",
+          "type": "text",
+          "content": "**Environmental:**\n• Scope 1, 2, 3 GHG emissions\n• Carbon intensity (per revenue, unit)\n• Renewable energy %\n• Water intensity\n• Waste diversion rate\n\n**Social:**\n• Employee turnover\n• Injury/illness rates (TRIR)\n• Diversity metrics\n• Training hours per employee\n• Community investment\n\n**Governance:**\n• Board independence %\n• Board diversity\n• CEO pay ratio\n• Whistleblower incidents\n• Data breaches"
+        },
+        {
+          "title": "Integrating ESG and Financial Performance",
+          "type": "text",
+          "content": "**Business Case for ESG:**\n• Risk reduction (reputation, regulatory)\n• Cost savings (energy, waste)\n• Innovation opportunities\n• Talent attraction\n• Customer preference\n• Access to capital\n\n**Integration Approaches:**\n• Balanced Scorecard with ESG perspective\n• Integrated reporting (IIRC)\n• ESG-linked compensation\n• Internal carbon pricing\n\n**CMA Role:**\n• Develop ESG metrics\n• Link to strategy\n• Ensure data quality\n• Provide assurance"
+        },
+        {
+          "title": "⚠️ Exam Trap: Greenwashing",
+          "type": "warning",
+          "content": "**Greenwashing = Misleading ESG claims!**\n\n**Common Problems:**\n• Vague claims without data\n• Cherry-picking positive metrics\n• Ignoring negative impacts\n• Offsetting without reduction\n• Aspirational goals without plans\n\n**Prevention:**\n• Rigorous data collection\n• Third-party assurance\n• Complete disclosure\n• Transparent methodology\n\n**Regulatory Risk:**\n• SEC climate rules\n• EU greenwashing regulations\n• Litigation exposure\n\n**CMA Responsibility:** Ensure ESG reporting is accurate and complete!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "ESG: Environmental, Social, Governance factors",
+            "Frameworks: GRI (stakeholders), SASB/ISSB (investors), TCFD (climate)",
+            "Financial materiality: ESG impact on company value",
+            "Impact materiality: Company impact on world",
+            "Double materiality: Both perspectives (EU CSRD)",
+            "Key metrics: GHG emissions, diversity, board independence",
+            "Greenwashing risks are increasing - accuracy essential"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "ESG Materiality",
+          "knowledgeCheck": {
+            "question": "A company's carbon emissions are causing regulatory risk and potential fines. From which materiality perspective is this most relevant?",
+            "options": [
+              "Impact materiality only",
+              "Financial materiality only",
+              "Both financial and impact materiality",
+              "Neither - this is an operational issue"
+            ],
+            "correctIndex": 2,
+            "explanation": "This is relevant to both perspectives. Financial materiality: Regulatory risk and fines affect company value. Impact materiality: Carbon emissions affect the environment. This is why 'double materiality' is increasingly required - ESG issues often have both dimensions.",
+            "hint": "Consider both how the issue affects the company AND how the company affects stakeholders."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-017",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Strategic Cost Management",
+    "description": "Align cost management with competitive strategy and value creation",
+    "order": 17,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Strategic cost management",
+      "Cost leadership",
+      "Differentiation",
+      "Value chain"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cost management isn't just about cutting costs - it's about strategic positioning! CMAs must align cost decisions with competitive strategy. Cost leadership requires different approaches than differentiation. Strategic cost management ensures we invest in the right places."
+        },
+        {
+          "title": "Strategic Positioning",
+          "type": "text",
+          "content": "**Porter's Generic Strategies:**\n\n**Cost Leadership:**\n• Be the lowest cost producer\n• Compete on price\n• Scale, efficiency, tight controls\n• Examples: Walmart, Southwest\n\n**Differentiation:**\n• Unique product/service\n• Command premium price\n• Quality, features, brand\n• Examples: Apple, Mercedes\n\n**Focus:**\n• Target narrow segment\n• Cost focus or differentiation focus\n• Deep segment expertise\n\n**Stuck in the Middle:**\n• No clear strategy\n• Worst of both worlds"
+        },
+        {
+          "title": "Cost Leadership vs Differentiation",
+          "type": "table",
+          "headers": [
+            "Dimension",
+            "Cost Leadership",
+            "Differentiation"
+          ],
+          "rows": [
+            [
+              "Cost focus",
+              "Minimize ALL costs",
+              "Minimize costs that don't add value"
+            ],
+            [
+              "Quality",
+              "Acceptable level",
+              "Premium quality"
+            ],
+            [
+              "Pricing",
+              "Low/competitive",
+              "Premium pricing"
+            ],
+            [
+              "Innovation",
+              "Process innovation",
+              "Product innovation"
+            ],
+            [
+              "Customer focus",
+              "Price-sensitive",
+              "Value-seeking"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Strategic Cost Analysis",
+          "type": "callout",
+          "content": "**\"VCA\" - Value Chain Analysis:**\n\n**Primary Activities:**\n• Inbound logistics\n• Operations\n• Outbound logistics\n• Marketing & Sales\n• Service\n\n**Support Activities:**\n• Firm infrastructure\n• HR management\n• Technology development\n• Procurement\n\n**Strategic Questions:**\n• Which activities create value?\n• Which are we better at than competitors?\n• Which should we outsource?\n• Where should we invest?\n\n**Link cost to VALUE, not just efficiency!"
+        },
+        {
+          "title": "Structural Cost Drivers",
+          "type": "text",
+          "content": "**Scale:**\n• Volume-based advantages\n• Fixed cost spreading\n• Bigger not always better\n\n**Scope:**\n• Breadth of products/markets\n• Shared resources\n• Complexity costs\n\n**Experience:**\n• Learning curve effects\n• Process improvements\n• Knowledge accumulation\n\n**Technology:**\n• Process technology choices\n• Automation level\n• Digital transformation\n\n**Complexity:**\n• Product variety\n• Customer segments\n• Hidden complexity costs"
+        },
+        {
+          "title": "Executional Cost Drivers",
+          "type": "text",
+          "content": "**Capacity Utilization:**\n• Higher utilization = lower unit cost\n• Balance with flexibility\n\n**Plant Layout:**\n• Efficient material flow\n• Minimize handling\n\n**Product Design:**\n• Design for manufacturing\n• Part standardization\n• Modularity\n\n**Workforce:**\n• Training and skills\n• Engagement\n• Continuous improvement\n\n**Supplier Relations:**\n• Partnership vs transactional\n• Total cost focus\n• Joint improvement"
+        },
+        {
+          "title": "⚠️ Exam Trap: Cost Cutting vs Strategic Cost Management",
+          "type": "warning",
+          "content": "**They are NOT the same!**\n\n**Cost Cutting (Tactical):**\n• Reduce expenses\n• Short-term focus\n• May cut value-creating activities\n• Can harm competitiveness\n\n**Strategic Cost Management:**\n• Align costs with strategy\n• Invest in differentiators\n• Cut non-value activities\n• Long-term perspective\n\n**Example:**\n• Cost cutting: Reduce all training by 20%\n• Strategic: Invest MORE in customer service training (differentiator), cut back-office training\n\n**Ask: Does this cost support our strategy?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Strategies: Cost leadership, Differentiation, or Focus",
+            "Cost leaders minimize ALL costs; Differentiators invest strategically",
+            "Value chain analysis identifies where value is created",
+            "Structural drivers: Scale, Scope, Experience, Technology",
+            "Executional drivers: Utilization, Layout, Design, Workforce",
+            "Cost cutting ≠ Strategic cost management",
+            "Align cost decisions with competitive strategy"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Strategic Cost",
+          "knowledgeCheck": {
+            "question": "A luxury watch manufacturer is deciding whether to cut costs by using cheaper materials. From a strategic cost management perspective, what should they consider?",
+            "options": [
+              "Focus only on cost savings from cheaper materials",
+              "Whether cost savings align with their differentiation strategy",
+              "Benchmark against cost leader competitors",
+              "Implement the change to improve margins"
+            ],
+            "correctIndex": 1,
+            "explanation": "A luxury watchmaker follows a differentiation strategy where quality materials support premium pricing and brand positioning. Cutting material quality could undermine the entire value proposition. Strategic cost management means costs should align with strategy - differentiators invest in quality.",
+            "hint": "What strategy does a luxury brand pursue?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-018",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Value-Based Management",
+    "description": "Drive shareholder value through value-based decision frameworks",
+    "order": 18,
+    "duration": 40,
+    "difficulty": "advanced",
+    "topics": [
+      "Value-based management",
+      "EVA",
+      "Shareholder value",
+      "Value drivers"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Value-based management (VBM) aligns all decisions with shareholder value creation! CMAs use VBM tools like EVA to evaluate investments, measure performance, and incentivize managers. This links financial metrics to the ultimate goal: creating value for shareholders."
+        },
+        {
+          "title": "What is Value-Based Management?",
+          "type": "text",
+          "content": "**Definition:**\nManagement approach focused on maximizing shareholder value\n\n**Core Principle:**\nValue is created when returns exceed cost of capital\n\n**VBM Framework:**\n1. **Valuation:** Understand what creates value\n2. **Strategy:** Develop value-creating strategies\n3. **Financial Policies:** Optimize capital structure\n4. **Performance Measures:** Track value creation\n5. **Incentives:** Align compensation with value\n\n**Key Insight:**\nAccounting profit ≠ Economic profit\nMust cover cost of ALL capital, including equity"
+        },
+        {
+          "title": "Economic Value Added (EVA)",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Formula",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "EVA",
+              "NOPAT - (Capital × WACC)",
+              "Core formula"
+            ],
+            [
+              "NOPAT",
+              "Operating profit after tax",
+              "Exclude financing"
+            ],
+            [
+              "Capital",
+              "Debt + Equity invested",
+              "At beginning"
+            ],
+            [
+              "WACC",
+              "Weighted average cost",
+              "Threshold return"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: EVA Calculation",
+          "type": "callout",
+          "content": "**EVA = NOPAT - (Capital × WACC)**\n\n**Example:**\n• Operating profit: $5,000,000\n• Tax rate: 30%\n• Invested capital: $25,000,000\n• WACC: 10%\n\n**Step 1: Calculate NOPAT**\n$5,000,000 × (1 - 0.30) = $3,500,000\n\n**Step 2: Calculate Capital Charge**\n$25,000,000 × 10% = $2,500,000\n\n**Step 3: Calculate EVA**\n$3,500,000 - $2,500,000 = **$1,000,000**\n\n**Interpretation:**\nPositive EVA = Created $1M of shareholder value!\nThe division earned MORE than its cost of capital"
+        },
+        {
+          "title": "Value Drivers",
+          "type": "text",
+          "content": "**Financial Value Drivers:**\n• Revenue growth\n• Operating margin\n• Tax efficiency\n• Capital efficiency\n• Cost of capital\n\n**Operational Value Drivers:**\n• Customer retention\n• New customer acquisition\n• Product mix\n• Process efficiency\n• Employee productivity\n\n**Value Tree:**\n• Link financial to operational drivers\n• Identify levers managers control\n• Focus improvement efforts\n\n**Key Insight:**\nSmall improvements in multiple drivers compound into significant value creation"
+        },
+        {
+          "title": "EVA vs Other Metrics",
+          "type": "text",
+          "content": "**ROI/ROIC Problems:**\n• Percentage obscures scale\n• Incentive to reject positive-EVA projects\n• Managers of strong divisions disadvantaged\n\n**Residual Income:**\n• Similar concept to EVA\n• Operating income - (Assets × Required return)\n• EVA uses more adjustments\n\n**Net Income Problems:**\n• Ignores cost of equity\n• Accounting distortions\n• Easy to manipulate\n\n**EVA Advantages:**\n• Dollar value of value created\n• Charges for ALL capital\n• Better incentive alignment\n• Adjustments for accounting distortions"
+        },
+        {
+          "title": "⚠️ Exam Trap: EVA Adjustments",
+          "type": "warning",
+          "content": "**EVA requires adjustments to GAAP numbers!**\n\n**Common Adjustments:**\n• **R&D:** Capitalize and amortize (GAAP expenses)\n• **Operating leases:** Add to capital (pre-ASC 842)\n• **Goodwill:** Don't amortize (add back)\n• **Deferred taxes:** Adjust for cash taxes\n• **Restructuring:** Capitalize one-time charges\n\n**Why Adjust?**\n• Match economic reality\n• Remove accounting distortions\n• Better measure of value creation\n\n**Exam Focus:**\nKnow why adjustments are made, not necessarily all details.\nR&D capitalization is most commonly tested!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "VBM: Focus all decisions on shareholder value creation",
+            "Value created when returns exceed cost of capital",
+            "EVA = NOPAT - (Capital × WACC)",
+            "Positive EVA = Economic profit, value created",
+            "Value drivers: Revenue growth, margins, capital efficiency, WACC",
+            "EVA advantages: Dollar measure, charges for equity, better incentives",
+            "Common adjustments: R&D capitalization, operating leases"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "EVA Calculation",
+          "knowledgeCheck": {
+            "question": "A division has NOPAT of $2.4 million, invested capital of $15 million, and WACC of 12%. What is the division's EVA?",
+            "options": [
+              "$600,000",
+              "$1,800,000",
+              "$(600,000)",
+              "$2,400,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "EVA = NOPAT - (Capital × WACC) = $2,400,000 - ($15,000,000 × 12%) = $2,400,000 - $1,800,000 = $600,000. Positive EVA indicates the division is creating shareholder value.",
+            "hint": "Capital charge = Capital × WACC. Subtract from NOPAT."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-019",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Strategic Positioning Analysis",
+    "description": "Analyze competitive position and strategic options",
+    "order": 19,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategic positioning",
+      "Competitive advantage",
+      "Industry analysis",
+      "Strategic options"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Strategy determines where resources go! CMAs support strategic decisions with financial analysis of options, competitive position assessment, and ROI projections. Understanding strategic positioning helps prioritize investments and measure strategic progress."
+        },
+        {
+          "title": "Competitive Advantage",
+          "type": "text",
+          "content": "**Definition:**\nAbility to outperform competitors sustainably\n\n**Sources of Advantage:**\n• Cost leadership - Lowest cost producer\n• Differentiation - Unique value customers pay for\n• Focus - Dominate narrow segment\n\n**Sustainable Advantage:**\n• Hard to imitate\n• Valuable to customers\n• Rare (not everyone has it)\n• No substitutes\n\n**VRIO Framework:**\n• Valuable, Rare, Inimitable, Organized"
+        },
+        {
+          "title": "Industry Analysis Tools",
+          "type": "table",
+          "headers": [
+            "Tool",
+            "Purpose",
+            "Key Elements"
+          ],
+          "rows": [
+            [
+              "Five Forces",
+              "Industry attractiveness",
+              "Rivalry, entry, subs, buyers, suppliers"
+            ],
+            [
+              "Value Chain",
+              "Cost/value activities",
+              "Primary and support activities"
+            ],
+            [
+              "SWOT",
+              "Internal/external fit",
+              "Strengths, Weaknesses, Opp, Threats"
+            ],
+            [
+              "BCG Matrix",
+              "Portfolio allocation",
+              "Stars, Cash cows, Dogs, ?"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Porter's Value Chain",
+          "type": "callout",
+          "content": "**Primary Activities (Create Value):**\n1. **Inbound Logistics** - Receiving, storing inputs\n2. **Operations** - Making the product\n3. **Outbound Logistics** - Distributing to customers\n4. **Marketing & Sales** - Getting customers to buy\n5. **Service** - After-sale support\n\n**Support Activities:**\n• **Infrastructure** - Finance, legal, management\n• **HR Management** - Recruiting, training\n• **Technology** - R&D, IT\n• **Procurement** - Purchasing\n\n**Use for:**\n• Identify cost drivers\n• Find differentiation opportunities\n• Benchmark vs competitors"
+        },
+        {
+          "title": "BCG Growth-Share Matrix",
+          "type": "text",
+          "content": "**Portfolio Planning Tool:**\n• X-axis: Relative market share (vs largest competitor)\n• Y-axis: Market growth rate\n\n**Four Quadrants:**\n\n**Stars (High share, High growth):**\n• Invest to maintain position\n• Eventual cash cows\n\n**Cash Cows (High share, Low growth):**\n• Generate cash\n• Fund stars and question marks\n\n**Question Marks (Low share, High growth):**\n• Invest to become star?\n• Or divest?\n\n**Dogs (Low share, Low growth):**\n• Consider divesting\n• Manage for cash"
+        },
+        {
+          "title": "Strategic Options",
+          "type": "text",
+          "content": "**Growth Strategies:**\n• **Market penetration:** More share in current market\n• **Market development:** New markets for current products\n• **Product development:** New products for current markets\n• **Diversification:** New products in new markets\n\n**Defensive Strategies:**\n• **Retrenchment:** Cut costs, divest\n• **Divestiture:** Sell business unit\n• **Liquidation:** Wind down\n\n**Integration:**\n• **Vertical:** Buy suppliers or distributors\n• **Horizontal:** Buy competitors\n\n**CMA Role:**\nFinancial analysis of each option"
+        },
+        {
+          "title": "⚠️ Exam Trap: Strategic Models",
+          "type": "warning",
+          "content": "**Know the differences!**\n\n**Five Forces:**\n• Industry-level analysis\n• 'How attractive is this industry?'\n• External focus\n\n**Value Chain:**\n• Firm-level analysis\n• 'Where do we add value?'\n• Internal focus\n\n**SWOT:**\n• Both internal AND external\n• Links to strategic options\n\n**BCG Matrix:**\n• Portfolio of businesses\n• Resource allocation decisions\n\n**Common Error:**\nMixing up Five Forces elements:\n• Rivalry = existing competitors\n• New entrants = potential future competitors\n• Substitutes = different products meeting same need"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Competitive advantage: Cost leadership, differentiation, focus",
+            "Sustainable: VRIO - Valuable, Rare, Inimitable, Organized",
+            "Five Forces: Industry attractiveness (external)",
+            "Value Chain: Primary (operations) + Support activities",
+            "BCG Matrix: Stars (invest), Cash cows (harvest), Dogs (divest)",
+            "Growth: Penetration, market dev, product dev, diversification",
+            "CMAs analyze financial implications of strategic options"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Strategic Analysis",
+          "knowledgeCheck": {
+            "question": "In the BCG Matrix, a business unit with high market share in a low-growth industry should be managed to:",
+            "options": [
+              "Invest heavily for growth",
+              "Generate cash to fund other businesses",
+              "Immediately divest",
+              "Acquire competitors to gain share"
+            ],
+            "correctIndex": 1,
+            "explanation": "High share in a low-growth market is a 'Cash Cow.' These units generate more cash than needed for their low-growth markets and should fund Stars and promising Question Marks. Minimal investment is needed to maintain position.",
+            "hint": "High share + low growth = which BCG quadrant?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-020",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Change Management in Organizations",
+    "description": "Lead and support organizational change initiatives",
+    "order": 20,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Change management",
+      "Organizational change",
+      "Resistance to change",
+      "Change leadership"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Change fails 70% of the time - usually due to people, not strategy! CMAs lead finance transformation, implement new systems, and support organization-wide change. Understanding change management increases the success rate of initiatives you lead or support."
+        },
+        {
+          "title": "Why Change Fails",
+          "type": "text",
+          "content": "**Common Reasons for Failure:**\n• Lack of urgency\n• Weak leadership coalition\n• No clear vision\n• Under-communication\n• Not removing obstacles\n• No short-term wins\n• Declaring victory too soon\n• Not anchoring in culture\n\n**Human Nature:**\n• People resist uncertainty\n• Comfort with status quo\n• Fear of loss (job, status, skills)\n• Don't see WIIFM (What's In It For Me)\n\n**Success Requires:**\nAttention to both technical AND people side"
+        },
+        {
+          "title": "Kotter's 8-Step Model",
+          "type": "table",
+          "headers": [
+            "Step",
+            "Action",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "1",
+              "Create urgency",
+              "Motivate action"
+            ],
+            [
+              "2",
+              "Build coalition",
+              "Powerful support group"
+            ],
+            [
+              "3",
+              "Form vision",
+              "Clear direction"
+            ],
+            [
+              "4",
+              "Communicate vision",
+              "Buy-in and understanding"
+            ],
+            [
+              "5",
+              "Remove obstacles",
+              "Empower action"
+            ],
+            [
+              "6",
+              "Short-term wins",
+              "Build momentum"
+            ],
+            [
+              "7",
+              "Consolidate gains",
+              "Keep pushing"
+            ],
+            [
+              "8",
+              "Anchor in culture",
+              "Sustain change"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Lewin's Change Model",
+          "type": "callout",
+          "content": "**Simple 3-Phase Model:**\n\n**1. Unfreeze:**\n• Create readiness for change\n• Challenge status quo\n• Build urgency\n• Reduce resistance\n\n**2. Change (Transition):**\n• Implement new ways\n• Training and support\n• Communication\n• Address concerns\n\n**3. Refreeze:**\n• Stabilize new state\n• Reinforce new behaviors\n• Update systems and structures\n• Celebrate success\n\n**Remember:**\nYou must UNFREEZE before changing!\nPeople can't change when frozen in old ways"
+        },
+        {
+          "title": "Managing Resistance",
+          "type": "text",
+          "content": "**Sources of Resistance:**\n• Fear of unknown\n• Loss of control\n• Bad timing\n• Habit and comfort\n• Lack of trust\n• Prior bad experiences\n\n**Overcoming Resistance:**\n• **Communicate:** Explain the why\n• **Involve:** Include people in design\n• **Support:** Training, resources\n• **Empathize:** Acknowledge concerns\n• **Negotiate:** Find win-win\n• **Lead by example:** Walk the talk\n\n**Finding Champions:**\nEarly adopters who influence others"
+        },
+        {
+          "title": "CMA Role in Change",
+          "type": "text",
+          "content": "**Finance Transformation:**\n• ERP implementations\n• Shared services\n• Process automation\n• New reporting systems\n\n**CMA Contributions:**\n• Quantify benefits/costs\n• Track progress metrics\n• Identify process impacts\n• Communicate with data\n• Build business cases\n\n**Change Agent Skills:**\n• Communication\n• Influence without authority\n• Stakeholder management\n• Problem solving\n• Patience and persistence"
+        },
+        {
+          "title": "⚠️ Exam Trap: Change Models",
+          "type": "warning",
+          "content": "**Know the Key Models:**\n\n**Lewin:**\n3 stages - Unfreeze, Change, Refreeze\nSimple, foundational\n\n**Kotter:**\n8 steps - More detailed\nLeadership focused\n\n**ADKAR (Prosci):**\nAwareness, Desire, Knowledge, Ability, Reinforcement\nIndividual change focus\n\n**Common Exam Focus:**\n• Sequence of steps\n• Purpose of each phase\n• Why changes fail\n• Role of communication\n• Importance of quick wins"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "70% of change initiatives fail - usually people issues",
+            "Lewin: Unfreeze → Change → Refreeze",
+            "Kotter: 8 steps starting with urgency, ending with culture",
+            "Resistance sources: Fear, loss of control, habit, distrust",
+            "Overcome resistance: Communicate, involve, support, empathize",
+            "Quick wins build momentum and credibility",
+            "CMAs: Quantify benefits, track metrics, communicate with data"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Change Management",
+          "knowledgeCheck": {
+            "question": "In Lewin's change model, preparing the organization and reducing resistance to change occurs in which phase?",
+            "options": [
+              "Unfreeze",
+              "Change",
+              "Refreeze",
+              "Transition"
+            ],
+            "correctIndex": 0,
+            "explanation": "The Unfreeze phase prepares the organization for change by creating awareness, building urgency, and reducing resistance. Change cannot effectively occur until people are 'unfrozen' from their current state and ready to embrace new ways.",
+            "hint": "Which phase comes before implementing the change?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-021",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Mergers and Acquisitions Fundamentals",
+    "description": "Understand M&A strategy, valuation, and integration",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Mergers and acquisitions",
+      "Deal types",
+      "Due diligence",
+      "Synergies"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "M&A drives corporate strategy and value creation! CMAs support deal analysis, due diligence, valuation, and post-merger integration. Understanding M&A fundamentals prepares CMAs to contribute to these high-stakes corporate decisions."
+        },
+        {
+          "title": "M&A Types",
+          "type": "text",
+          "content": "**Merger:**\nTwo companies combine into one\n• Merger of equals (rare)\n• One absorbs the other\n\n**Acquisition:**\nOne company buys another\n• Stock purchase\n• Asset purchase\n• Target may or may not continue\n\n**Classification by Relationship:**\n• **Horizontal:** Same industry, competitors\n• **Vertical:** Different supply chain levels\n• **Conglomerate:** Unrelated businesses\n\n**Friendly vs Hostile:**\n• Friendly: Target board agrees\n• Hostile: Acquirer bypasses board"
+        },
+        {
+          "title": "M&A Motivations",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Synergies",
+              "Cost savings, revenue enhancement"
+            ],
+            [
+              "Growth",
+              "Market share, geographic expansion"
+            ],
+            [
+              "Capabilities",
+              "Technology, talent, IP"
+            ],
+            [
+              "Financial",
+              "Tax benefits, undervalued target"
+            ],
+            [
+              "Diversification",
+              "Reduce business risk"
+            ],
+            [
+              "Defense",
+              "Prevent competitor acquisition"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Deal Value Analysis",
+          "type": "callout",
+          "content": "**Value Creation Framework:**\n\n**Deal Value =**\nStandalone value of target\n+ Value of synergies\n- Integration costs\n- Premium paid\n\n**Types of Synergies:**\n\n**Cost Synergies (more certain):**\n• Eliminate duplicate functions\n• Procurement savings\n• Facility consolidation\n• Headcount reduction\n\n**Revenue Synergies (less certain):**\n• Cross-selling\n• Access to new markets\n• Pricing power\n• Product bundling\n\n**Rule of Thumb:**\nDiscount revenue synergies heavily\nThey rarely materialize as expected"
+        },
+        {
+          "title": "Due Diligence Process",
+          "type": "text",
+          "content": "**Financial Due Diligence:**\n• Quality of earnings\n• Working capital needs\n• Capital expenditure requirements\n• Hidden liabilities\n• Tax positions\n\n**Operational Due Diligence:**\n• Operations capabilities\n• Technology systems\n• Key personnel\n• Customer relationships\n• Supplier dependencies\n\n**Legal Due Diligence:**\n• Contracts and agreements\n• Litigation risks\n• Regulatory compliance\n• IP ownership\n\n**CMA Role:**\nFinancial analysis, synergy validation, integration planning"
+        },
+        {
+          "title": "Post-Merger Integration",
+          "type": "text",
+          "content": "**Integration Challenges:**\n• Culture clash\n• Key talent retention\n• System integration\n• Customer retention\n• Communication\n\n**Finance Integration Tasks:**\n• Consolidate reporting\n• Harmonize policies\n• Integrate systems\n• Realize cost synergies\n• Track synergy capture\n\n**Success Factors:**\n• Quick decision-making\n• Clear leadership\n• Communication plan\n• Retain key people\n• Day 1 readiness\n\n**Statistic:**\n50-70% of mergers fail to create expected value"
+        },
+        {
+          "title": "⚠️ Exam Trap: Premium and Synergies",
+          "type": "warning",
+          "content": "**Acquisition Premium:**\nAmount paid above market value\n\nPremium = Purchase price - Pre-announcement value\n\n**Value Creation Test:**\nSynergies must exceed premium\nOtherwise, acquirer overpaid!\n\n**Common Errors:**\n• Overestimating synergies\n• Underestimating integration costs\n• Ignoring dis-synergies\n• Paying too much (winner's curse)\n\n**Balance Sheet Impact:**\n• Goodwill = Purchase price - Fair value of net assets\n• Goodwill tested for impairment annually\n• No amortization under US GAAP"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "M&A types: Horizontal, vertical, conglomerate",
+            "Motivations: Synergies, growth, capabilities, financial",
+            "Synergies: Cost (more certain), Revenue (less certain)",
+            "Value created only if synergies > premium + integration costs",
+            "Due diligence: Financial, operational, legal",
+            "Integration is critical - most M&A fails here",
+            "Goodwill = Purchase price - FV of net assets acquired"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "M&A",
+          "knowledgeCheck": {
+            "question": "Company A acquires Company B for $100M. B's market cap was $80M, and net assets at fair value are $70M. What is the goodwill recorded?",
+            "options": [
+              "$10M",
+              "$20M",
+              "$30M",
+              "$50M"
+            ],
+            "correctIndex": 2,
+            "explanation": "Goodwill = Purchase price - Fair value of net assets acquired = $100M - $70M = $30M. The $20M premium over market cap is part of what becomes goodwill when compared to fair value of identifiable net assets.",
+            "hint": "Goodwill is the excess over fair value of net assets."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-022",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Porter's Five Forces Industry Analysis",
+    "description": "Analyze industry competitive dynamics",
+    "order": 22,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Porter's Five Forces",
+      "Industry analysis",
+      "Competitive rivalry",
+      "Barriers to entry"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Industry structure determines profitability! CMAs use Porter's Five Forces to understand competitive dynamics and support strategic decisions. This framework helps analyze why some industries are more profitable than others and informs pricing, investment, and positioning decisions."
+        },
+        {
+          "title": "Porter's Five Forces",
+          "type": "text",
+          "content": "**Michael Porter's Framework:**\nAnalyzes industry competitive intensity\nDetermines long-run profitability potential\n\n**The Five Forces:**\n1. Threat of new entrants\n2. Bargaining power of suppliers\n3. Bargaining power of buyers\n4. Threat of substitute products\n5. Competitive rivalry among existing firms\n\n**Key Insight:**\nStronger forces = Lower industry profitability\nWeaker forces = Higher industry profitability"
+        },
+        {
+          "title": "Five Forces Summary",
+          "type": "table",
+          "headers": [
+            "Force",
+            "High When..."
+          ],
+          "rows": [
+            [
+              "New Entrants",
+              "Low barriers, low retaliation expected"
+            ],
+            [
+              "Supplier Power",
+              "Few suppliers, unique inputs, switching costs"
+            ],
+            [
+              "Buyer Power",
+              "Few buyers, standardized products, low switching"
+            ],
+            [
+              "Substitutes",
+              "Many alternatives, attractive price/performance"
+            ],
+            [
+              "Rivalry",
+              "Many competitors, slow growth, high fixed costs"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Each Force Explained",
+          "type": "callout",
+          "content": "**1. Threat of New Entrants:**\nBarriers to entry protect incumbents\n• Economies of scale\n• Capital requirements\n• Brand loyalty\n• Government regulation\n• Proprietary technology\n\n**2. Supplier Power:**\nSuppliers can raise prices when\n• Few alternative suppliers\n• Unique or differentiated inputs\n• High switching costs\n• Forward integration threat\n\n**3. Buyer Power:**\nBuyers can demand lower prices when\n• Large volume purchases\n• Standardized products\n• Low switching costs\n• Backward integration threat"
+        },
+        {
+          "title": "Forces 4 and 5",
+          "type": "text",
+          "content": "**4. Threat of Substitutes:**\n• Alternative products meeting same need\n• Limit price you can charge\n• Higher threat = lower profitability\n\n**Examples:**\n• Video streaming vs cable TV\n• Email vs postal mail\n• Video calls vs air travel\n\n**5. Competitive Rivalry:**\nIntensity of competition among existing firms\n\n**Factors increasing rivalry:**\n• Many competitors of similar size\n• Slow industry growth\n• High fixed costs (price pressure)\n• Low differentiation\n• High strategic stakes\n• High exit barriers"
+        },
+        {
+          "title": "Applying the Framework",
+          "type": "text",
+          "content": "**Analysis Process:**\n1. Define the industry\n2. Identify key players in each force\n3. Assess strength of each force\n4. Determine overall industry attractiveness\n5. Identify strategic implications\n\n**Strategic Responses:**\n• Position where forces are weakest\n• Influence industry structure\n• Exploit industry change\n\n**CMA Application:**\n• Support strategic planning\n• Inform investment decisions\n• Understand pricing power\n• Assess M&A targets"
+        },
+        {
+          "title": "⚠️ Exam Trap: Force Identification",
+          "type": "warning",
+          "content": "**Common Exam Questions:**\n\n**Which Force?**\n• 'Customers switching to competitor': Rivalry\n• 'New company enters market': New entrants\n• 'Customers using different product type': Substitutes\n• 'Supplier raises prices': Supplier power\n• 'Large retailer demands discounts': Buyer power\n\n**Distinguish:**\n• Competitor vs Substitute\n• Direct competitor = Same product type\n• Substitute = Different product, same need\n\n**Industry vs Company:**\n• Five Forces analyzes INDUSTRY\n• Not individual company performance\n• Determines industry attractiveness"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Five Forces: Entrants, Suppliers, Buyers, Substitutes, Rivalry",
+            "Stronger forces = Lower industry profitability",
+            "Entry barriers protect existing competitors",
+            "Supplier/Buyer power shifts value in supply chain",
+            "Substitutes limit pricing power",
+            "Rivalry factors: Growth rate, fixed costs, differentiation",
+            "Use to assess industry attractiveness for investment"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Porter's Five Forces",
+          "knowledgeCheck": {
+            "question": "A company faces many competitors of similar size in a slow-growth industry with high fixed costs. This describes high:",
+            "options": [
+              "Threat of new entrants",
+              "Supplier bargaining power",
+              "Threat of substitutes",
+              "Competitive rivalry"
+            ],
+            "correctIndex": 3,
+            "explanation": "Competitive rivalry is intensified by: many similar-sized competitors, slow industry growth (fighting for share), and high fixed costs (pressure to fill capacity). These factors lead to intense price competition and lower profitability.",
+            "hint": "Which force deals with competition among existing players?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-F-023",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "SWOT Analysis for Strategic Planning",
+    "description": "Assess internal and external strategic factors",
+    "order": 23,
+    "duration": 40,
+    "difficulty": "beginner",
+    "topics": [
+      "SWOT analysis",
+      "Strategic planning",
+      "Environmental analysis",
+      "Strategy formulation"
+    ],
+    "blueprintArea": "CMA2-F",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Strategy starts with understanding where you stand! SWOT analysis is a foundational tool for strategic planning, and CMAs often lead or contribute to this analysis. It informs resource allocation, investment decisions, and strategic priorities."
+        },
+        {
+          "title": "SWOT Framework",
+          "type": "text",
+          "content": "**SWOT = Strengths, Weaknesses, Opportunities, Threats**\n\n**Internal Factors (Controllable):**\n• **Strengths:** What we do well\n• **Weaknesses:** Where we need improvement\n\n**External Factors (Not Controllable):**\n• **Opportunities:** Favorable external conditions\n• **Threats:** Unfavorable external conditions\n\n**Purpose:**\n• Holistic strategic assessment\n• Basis for strategy formulation\n• Identifies strategic fit\n• Prioritizes actions"
+        },
+        {
+          "title": "SWOT Matrix",
+          "type": "table",
+          "headers": [
+            "Internal",
+            "Positive",
+            "Negative"
+          ],
+          "rows": [
+            [
+              "Internal",
+              "STRENGTHS",
+              "WEAKNESSES"
+            ],
+            [
+              "External",
+              "OPPORTUNITIES",
+              "THREATS"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Finding SWOTs",
+          "type": "callout",
+          "content": "**Strengths (Internal +):**\n• Core competencies\n• Strong brand\n• Skilled workforce\n• Financial resources\n• Patents, technology\n• Low-cost position\n\n**Weaknesses (Internal -):**\n• Gaps in capabilities\n• Outdated technology\n• Weak brand\n• High costs\n• Poor location\n• Limited resources\n\n**Opportunities (External +):**\n• Market growth\n• New customer segments\n• Competitor weaknesses\n• Favorable regulations\n• Technology changes\n\n**Threats (External -):**\n• New competitors\n• Substitute products\n• Changing customer needs\n• Economic downturn\n• Adverse regulations"
+        },
+        {
+          "title": "From SWOT to Strategy",
+          "type": "text",
+          "content": "**TOWS Matrix (Strategic Options):**\n\n**SO Strategies (Maxi-Maxi):**\nUse Strengths to exploit Opportunities\n• Aggressive growth\n• Market expansion\n\n**WO Strategies (Mini-Maxi):**\nOvercome Weaknesses to exploit Opportunities\n• Develop capabilities\n• Strategic partnerships\n\n**ST Strategies (Maxi-Mini):**\nUse Strengths to avoid Threats\n• Diversification\n• Competitive positioning\n\n**WT Strategies (Mini-Mini):**\nMinimize Weaknesses to avoid Threats\n• Defensive strategies\n• Retrenchment"
+        },
+        {
+          "title": "SWOT Best Practices",
+          "type": "text",
+          "content": "**Conducting Effective SWOT:**\n\n**Do:**\n• Be specific and concrete\n• Prioritize factors by importance\n• Use data, not just opinions\n• Include diverse perspectives\n• Update regularly\n• Link to action plans\n\n**Don't:**\n• List everything possible\n• Confuse internal/external\n• Ignore competitor analysis\n• Stop at the matrix - develop strategy\n\n**Integration:**\n• Combine with Porter's Five Forces\n• Use with PESTEL analysis\n• Feed into balanced scorecard"
+        },
+        {
+          "title": "⚠️ Exam Trap: Internal vs External",
+          "type": "warning",
+          "content": "**Common Classification Errors:**\n\n**Internal (S/W):**\n• Things company controls\n• Resources and capabilities\n• Culture and structure\n• Processes and systems\n• Brand reputation (internally built)\n\n**External (O/T):**\n• Industry and market conditions\n• Competitive dynamics\n• Economic environment\n• Technology trends\n• Regulations\n\n**Tricky Examples:**\n• Customer loyalty = Strength (we earned it)\n• Market growth = Opportunity (external)\n• Employee turnover = Weakness\n• New competitor = Threat\n\n**Test:** Can we directly change it?\nYes = Internal; No = External"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "SWOT: Strengths, Weaknesses, Opportunities, Threats",
+            "S/W are internal; O/T are external",
+            "Strengths/Opportunities are positive; Weaknesses/Threats negative",
+            "Use TOWS matrix to develop strategic options",
+            "Be specific, prioritize, use data",
+            "Don't stop at matrix - develop action plans",
+            "Combine with other tools (Five Forces, PESTEL)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SWOT Analysis",
+          "knowledgeCheck": {
+            "question": "A company's main competitor just filed for bankruptcy. In a SWOT analysis, this would be classified as:",
+            "options": [
+              "Strength",
+              "Weakness",
+              "Opportunity",
+              "Threat"
+            ],
+            "correctIndex": 2,
+            "explanation": "A competitor's bankruptcy is an OPPORTUNITY - it's an external factor (not within our control) that creates favorable conditions (potential to capture market share, acquire assets, etc.).",
+            "hint": "Is this internal or external? Positive or negative for your company?"
+          }
+        }
+      ]
+    }
   }
 ]

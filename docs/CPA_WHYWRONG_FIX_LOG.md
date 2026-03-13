@@ -1,28 +1,28 @@
 # CPA whyWrong Fix Log
 
-**Generated:** 2026-03-02T11:30:56.981Z
-**Mode:** DRY RUN (no changes made)
+**Generated:** 2026-03-12T23:59:03.414Z
+**Mode:** APPLIED
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Questions Processed | 9,002 |
-| Questions Fixed | 2977 |
-| whyWrong Entries Fixed | 4332 |
-| Letter References Fixed | 4112 |
-| CORRECT/WRONG Labels Fixed | 237 |
+| Questions Processed | 9,154 |
+| Questions Fixed | 20 |
+| whyWrong Entries Fixed | 21 |
+| Letter References Fixed | 0 |
+| CORRECT/WRONG Labels Fixed | 21 |
 
 ### By Section
 
 | Section | Questions Fixed |
 |---------|-----------------|
-| FAR | 610 |
-| AUD | 569 |
-| REG | 437 |
-| BAR | 479 |
-| ISC | 477 |
-| TCP | 405 |
+| FAR | 3 |
+| AUD | 3 |
+| REG | 4 |
+| BAR | 6 |
+| ISC | 0 |
+| TCP | 4 |
 
 ---
 
@@ -30,121 +30,92 @@
 
 ### FAR
 
-#### `far-add-001` (correct: A)
+#### `far-1530` (correct: B)
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option C:** Label: "is correct" → "is WRONG"
 
-#### `far-add-002` (correct: A)
+#### `far-1604` (correct: A)
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option D:** Label: "is correct" → "is WRONG"
 
-#### `far-add-003` (correct: A)
+#### `far-1605` (correct: D)
 
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option C:** Label: "is correct" → "is WRONG"
 
-#### `far-add-004` (correct: A)
+### AUD
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `aud-gen-1142` (correct: D)
 
-#### `far-add-009` (correct: A)
+- **Option B:** Label: "is correct" → "is WRONG"
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `aud-gen-1214` (correct: B)
 
-#### `far-add-010` (correct: A)
+- **Option D:** Label: "is correct" → "is WRONG"
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `aud-gen-1218` (correct: B)
 
-#### `far-add-011` (correct: A)
+- **Option A:** Label: "is correct" → "is WRONG"
 
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+### REG
 
-#### `far-add-012` (correct: A)
+#### `reg-gen-1025` (correct: A)
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option D:** Label: "is correct" → "is WRONG"
 
-#### `far-add-013` (correct: A)
+#### `reg-gen-1115` (correct: C)
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option A:** Label: "is correct" → "is WRONG"
 
-#### `far-add-014` (correct: A)
+#### `reg-gen-1116` (correct: A)
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option D:** Label: "is correct" → "is WRONG"
 
-#### `far-add-015` (correct: A)
+#### `reg-gen-1285` (correct: C)
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option B:** Label: "is correct" → "is WRONG"
 
-#### `far-add-016` (correct: A)
+### BAR
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `bar-wc-139` (correct: A)
 
-#### `far-add-019` (correct: A)
+- **Option C:** Label: "is correct" → "is WRONG"
 
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `bar-gen-1036` (correct: B)
 
-#### `far-add-020` (correct: A)
+- **Option C:** Label: "is CORRECT" → "is WRONG"
 
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `bar-gen-1270` (correct: C)
 
-#### `far-add-022` (correct: A)
+- **Option D:** Label: "is correct" → "is WRONG"
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `bar-gen-1357` (correct: A)
 
-#### `far-add-023` (correct: A)
+- **Option C:** Label: "is correct" → "is WRONG"
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `bar-gen-1508` (correct: A)
 
-#### `far-add-025` (correct: A)
+- **Option B:** Label: "is correct" → "is WRONG"
 
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+#### `bar-gen-1554` (correct: B)
 
-#### `far-add-027` (correct: A)
+- **Option D:** Label: "is correct" → "is WRONG"
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+### TCP
 
-#### `far-add-029` (correct: A)
+#### `tcp-gen-1013` (correct: D)
 
-- **Option A:** Letter: "option B" → "option A"
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option B:** Label: "is correct" → "is WRONG"
 
-#### `far-add-033` (correct: A)
+#### `tcp-gen-1027` (correct: A)
 
-- **Option B:** Letter: "option C" → "option B"
-- **Option C:** Letter: "option D" → "option C"
+- **Option B:** Label: "is correct" → "is WRONG"
 
-*...and 80 more in FAR*
+#### `tcp-gen-1037` (correct: C)
 
+- **Option A:** Label: "is correct" → "is WRONG"
 
-*Log truncated. Total changes: 2977*
+#### `tcp-gen-1166` (correct: D)
+
+- **Option A:** Label: "is correct" → "is WRONG"
+- **Option B:** Label: "is correct" → "is WRONG"
+

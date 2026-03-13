@@ -311,7 +311,7 @@ if (STRIPE_SECRET_KEY) {
 }
 
 // Founder pricing window - users who subscribe before this date get founder rates (~40-44% off, locked 2 years)
-const FOUNDER_DEADLINE = new Date('2026-04-30T23:59:59Z');
+const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
 
 // Price lookup keys - maps our internal keys to what we'll use in checkout
 // The lookup keys should match what you set in Stripe dashboard
@@ -3036,7 +3036,32 @@ exports.createCheckoutSession = onCall({
       }, { merge: true });
     }
 
-    // Create checkout session
+    // Idempotency: Check for recent pending checkout to prevent double-submissions
+    // Generate a unique key based on user+course+interval (valid for ~5 minutes)
+    const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+    const pendingCheckouts = await stripeClient.checkout.sessions.list({
+      customer: stripeCustomerId,
+      status: 'open',
+      limit: 5,
+      created: { gte: Math.floor(fiveMinutesAgo.getTime() / 1000) },
+    });
+    
+    // Check if there's already an open checkout for the same course
+    const existingSession = pendingCheckouts.data.find(s => 
+      s.metadata?.courseId === courseId && s.status === 'open'
+    );
+    
+    if (existingSession) {
+      console.log(`Returning existing checkout session ${existingSession.id} for user ${userId}`);
+      return {
+        sessionId: existingSession.id,
+        url: existingSession.url,
+        reused: true,
+      };
+    }
+
+    // Create checkout session with idempotency key
+    const idempotencyKey = `checkout_${userId}_${courseId}_${interval}_${Math.floor(Date.now() / 60000)}`; // Changes every minute
     const session = await stripeClient.checkout.sessions.create({
       customer: stripeCustomerId,
       payment_method_types: ['card'],
@@ -3060,6 +3085,8 @@ exports.createCheckoutSession = onCall({
         firebaseUserId: userId,
         courseId: courseId,
       },
+    }, {
+      idempotencyKey: idempotencyKey,
     });
 
     console.log(`Checkout session created for user ${userId}, course ${courseId}, price ${lookupKey}`);
@@ -3135,19 +3162,33 @@ exports.stripeWebhook = onRequest({
   console.log(`Stripe webhook received: ${event.type}`);
 
   try {
-    // Idempotency check: skip if we've already processed this event
+    // Idempotency check: skip if we've already COMPLETED this event
     const eventRef = db.collection('processed_stripe_events').doc(event.id);
     const existing = await eventRef.get();
+    
     if (existing.exists) {
-      console.log(`Skipping already-processed Stripe event: ${event.id} (${event.type})`);
-      res.status(200).json({ received: true, duplicate: true });
-      return;
+      const data = existing.data();
+      // Only skip if fully completed (not just in-progress)
+      if (data.status === 'completed') {
+        console.log(`Skipping already-completed Stripe event: ${event.id} (${event.type})`);
+        res.status(200).json({ received: true, duplicate: true });
+        return;
+      }
+      // If stuck in 'processing' for >5 minutes, allow retry (handler probably crashed)
+      const processingAt = data.processingAt?.toDate?.() || new Date(0);
+      const minutesAgo = (Date.now() - processingAt.getTime()) / 60000;
+      if (data.status === 'processing' && minutesAgo < 5) {
+        console.log(`Skipping in-progress Stripe event: ${event.id} (started ${minutesAgo.toFixed(1)} min ago)`);
+        res.status(200).json({ received: true, inProgress: true });
+        return;
+      }
     }
 
-    // Mark event as processing before handling (prevents concurrent duplicates)
+    // Mark event as processing (before handling)
     await eventRef.set({
       eventType: event.type,
-      processedAt: admin.firestore.FieldValue.serverTimestamp(),
+      status: 'processing',
+      processingAt: admin.firestore.FieldValue.serverTimestamp(),
       livemode: event.livemode,
     });
 
@@ -3187,10 +3228,28 @@ exports.stripeWebhook = onRequest({
         console.log(`Unhandled event type: ${event.type}`);
     }
 
+    // Mark as completed AFTER successful handling
+    await eventRef.update({
+      status: 'completed',
+      completedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+
     res.status(200).json({ received: true });
   } catch (error) {
     console.error('Webhook handler error:', error);
     console.error('Event details:', JSON.stringify({ eventId: event.id, eventType: event.type, livemode: event.livemode }));
+    
+    // Mark as failed so retry is allowed
+    try {
+      const eventRef = db.collection('processed_stripe_events').doc(event.id);
+      await eventRef.update({
+        status: 'failed',
+        failedAt: admin.firestore.FieldValue.serverTimestamp(),
+        errorMessage: error.message,
+      });
+    } catch (updateErr) {
+      console.error('Failed to update event status:', updateErr);
+    }
     
     // Log failure for monitoring and potential manual retry
     try {

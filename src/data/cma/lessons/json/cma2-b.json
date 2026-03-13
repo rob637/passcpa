@@ -1788,5 +1788,2036 @@
         }
       ]
     }
+  },
+  {
+    "id": "CMA2-B-012",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Short-Term Financing Options",
+    "description": "Understand the various sources of short-term financing and their appropriate uses",
+    "order": 22,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Short-term financing",
+      "Trade credit",
+      "Lines of credit",
+      "Commercial paper"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Even profitable companies need short-term financing to bridge timing gaps between cash outflows and inflows! CMAs help select the right financing sources based on cost, flexibility, and availability. Poor short-term financing decisions can be costly."
+        },
+        {
+          "title": "Why Companies Need Short-Term Financing",
+          "type": "text",
+          "content": "**Working Capital Cycle:**\n• Buy raw materials (cash out)\n• Produce and hold inventory (cash tied up)\n• Sell and create receivables (wait for payment)\n• Finally collect cash (cash in)\n\n**Gap to Fill:** Cash goes out before it comes back in\n\n**Seasonal Needs:**\n• Retailers build inventory before holidays\n• Agricultural businesses have seasonal peaks\n\n**Growth Financing:**\n• Rapid growth requires more working capital\n• Sales growth outpaces cash collection"
+        },
+        {
+          "title": "Sources of Short-Term Financing",
+          "type": "table",
+          "headers": [
+            "Source",
+            "How It Works",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Trade Credit",
+              "Delay payment to suppliers",
+              "All companies; essentially free if no discount lost"
+            ],
+            [
+              "Bank Line of Credit",
+              "Pre-approved borrowing capacity",
+              "Irregular or uncertain cash needs"
+            ],
+            [
+              "Bank Loan",
+              "Fixed-term borrowing",
+              "Known financing needs"
+            ],
+            [
+              "Commercial Paper",
+              "Short-term unsecured promissory notes",
+              "Large, creditworthy corporations"
+            ],
+            [
+              "Factoring",
+              "Sell receivables at discount",
+              "Quick cash; outsource collections"
+            ],
+            [
+              "Asset-Based Lending",
+              "Borrow against receivables/inventory",
+              "Companies with significant current assets"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Short-Term Sources",
+          "type": "callout",
+          "content": "**\"TABLC\" - From least to most formal:**\n\n**T**rade credit - Supplier financing (informal)\n**A**ccruals - Use wages/taxes timing (very short-term)\n**B**ank credit - Lines and loans (formal)\n**L**ending (asset-based) - Secured by current assets\n**C**ommercial paper - Large company unsecured debt\n\nCost and formality generally increase as you go down!"
+        },
+        {
+          "title": "Trade Credit Cost",
+          "type": "text",
+          "content": "**Typical Terms:** \"2/10, net 30\"\n• 2% discount if paid within 10 days\n• Otherwise, full amount due in 30 days\n\n**Implicit Cost of Forgoing Discount:**\n\nAnnualized Cost = [Discount / (100 - Discount)] × [365 / (Full Days - Discount Days)]\n\n**Example: 2/10, net 30**\n= (2/98) × (365/20)\n= 0.0204 × 18.25\n= 37.2% annual cost!\n\n**Decision Rule:** \n• If borrowing cost < 37.2%, borrow and take discount\n• If borrowing cost > 37.2%, forgo discount (use trade credit)"
+        },
+        {
+          "title": "⚠️ Exam Trap: Trade Credit Cost Formula",
+          "type": "warning",
+          "content": "**The CMA exam frequently tests this calculation!**\n\n**Formula:**\nCost = [Discount% / (100 - Discount%)] × [365 / (Net Days - Discount Days)]\n\n**Common Mistake:** Using \"Discount / 100\" instead of \"Discount / (100 - Discount)\"\n\n**Example: 3/15, net 45**\n= (3/97) × (365/30)\n= 0.0309 × 12.17\n= 37.6%\n\n**Key Insight:** Short discount periods and small day gaps = VERY expensive!"
+        },
+        {
+          "title": "Bank Lines of Credit",
+          "type": "text",
+          "content": "**Committed Line of Credit:**\n• Bank guarantees funds will be available\n• Commitment fee charged on unused portion (0.25-0.50%)\n• More expensive but reliable\n\n**Uncommitted Line of Credit:**\n• Bank may decline to lend\n• No commitment fee\n• Less reliable during credit crunches\n\n**Compensating Balance:**\n• Required minimum balance (10-20% of line)\n• Increases effective interest rate\n\n**Effective Rate Example:**\n$100,000 loan, 8% interest, 10% compensating balance\nUsable funds: $90,000\nEffective rate = $8,000 / $90,000 = 8.89%"
+        },
+        {
+          "title": "Commercial Paper",
+          "type": "text",
+          "content": "**Definition:** Short-term unsecured promissory notes issued by large corporations\n\n**Characteristics:**\n• Maturity: 1-270 days (typically under 90)\n• Sold at discount from face value\n• Minimum denominations: $100,000+\n• Requires high credit rating (A-1/P-1)\n\n**Advantages:**\n• Lower cost than bank loans (no intermediary)\n• Flexible amounts and maturities\n• Standardized market\n\n**Disadvantages:**\n• Only available to large, creditworthy issuers\n• Must maintain backup line of credit\n• Market can dry up in crisis"
+        },
+        {
+          "title": "Factoring Receivables",
+          "type": "text",
+          "content": "**Definition:** Selling accounts receivable to a third party (factor) at a discount\n\n**Types:**\n• **Recourse:** Seller retains credit risk\n• **Non-recourse:** Factor assumes credit risk (more expensive)\n\n**Benefits:**\n• Immediate cash\n• Outsource credit and collection\n• Off-balance sheet (if non-recourse)\n\n**Costs:**\n• Discount fee (1-5% of face value)\n• Interest on advance\n• May signal financial weakness\n\n**Example:**\n$1,000,000 receivables factored at 3% discount\nCash received: $970,000"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Short-term financing bridges timing gaps in the working capital cycle",
+            "Trade credit is common but forgoing discounts is expensive (often 30%+)",
+            "Cost formula: [Disc/(100-Disc)] × [365/(Net-Disc Days)]",
+            "Committed lines of credit charge fees but guarantee availability",
+            "Compensating balances increase effective interest rates",
+            "Commercial paper offers low rates but requires high credit rating",
+            "Factoring provides quick cash but at a cost"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Trade Credit Cost Calculation",
+          "knowledgeCheck": {
+            "question": "A supplier offers terms of 2/15, net 45. What is the approximate annualized cost of forgoing the cash discount?",
+            "options": [
+              "16.2%",
+              "24.5%",
+              "24.8%",
+              "36.7%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cost = (2/98) × (365/30) = 0.0204 × 12.17 = 24.8%. The company is effectively paying 24.8% annually to delay payment 30 days (from day 15 to day 45).",
+            "hint": "Use the formula: [Discount/(100-Discount)] × [365/(Net Days - Discount Days)]."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Compensating Balance Effect",
+          "knowledgeCheck": {
+            "question": "A company borrows $200,000 at 9% interest with a 20% compensating balance requirement. What is the effective interest rate?",
+            "options": [
+              "9.0%",
+              "10.8%",
+              "11.25%",
+              "12.0%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Interest = $200,000 × 9% = $18,000. Usable funds = $200,000 - $40,000 (20% comp balance) = $160,000. Effective rate = $18,000 / $160,000 = 11.25%.",
+            "hint": "The compensating balance reduces usable funds but interest is paid on the full amount."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Commercial Paper Requirements",
+          "reveal": {
+            "question": "What are the typical requirements for a company to issue commercial paper?",
+            "answer": "To issue commercial paper, a company typically needs: (1) High credit rating (A-1/P-1), (2) Established reputation in the market, (3) Backup line of credit from a bank (to ensure redemption), (4) Financial strength to support unsecured borrowing, and (5) Financing needs large enough to justify market access costs."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-013",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cash Management and Treasury Operations",
+    "description": "Optimize cash holdings and manage liquidity for organizational efficiency",
+    "order": 23,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cash management",
+      "Treasury operations",
+      "Float management",
+      "Cash concentration"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cash is the lifeblood of business! Holding too much cash means missed investment returns; holding too little risks liquidity crises. CMAs help optimize the cash position, implement collection strategies, and manage banking relationships effectively."
+        },
+        {
+          "title": "Cash Management Objectives",
+          "type": "text",
+          "content": "**Primary Goals:**\n\n**1. Ensure Adequate Liquidity**\n• Meet obligations as they come due\n• Maintain safety buffer\n\n**2. Minimize Idle Cash**\n• Invest excess cash productively\n• Avoid opportunity cost of cash sitting unused\n\n**3. Accelerate Collections**\n• Get cash in quickly\n• Reduce days sales outstanding (DSO)\n\n**4. Control Disbursements**\n• Pay on time but not early\n• Maximize days payable outstanding (DPO)"
+        },
+        {
+          "title": "Understanding Float",
+          "type": "text",
+          "content": "**Float = Time between when you pay/receive and when bank processes**\n\n**Collection Float (we want to minimize):**\n• Mail float - check in transit\n• Processing float - time to deposit\n• Availability float - bank clearing time\n\n**Disbursement Float (we may use strategically):**\n• Time between writing check and bank debit\n• Can manage payment timing\n\n**Example:**\nWrite check Monday, mailed Tuesday\nReceived Thursday, deposited Friday\nClears Monday\n\n**Total float: 7 days**\n(You have use of money for 7 extra days)"
+        },
+        {
+          "title": "🧠 Memory Aid: Float Management",
+          "type": "callout",
+          "content": "**\"SLAM\" - Reduce Collection Float:**\n\n**S**peed up mail (lockbox near customers)\n**L**ockbox processing (bank handles)\n**A**utomate with ACH/wire\n**M**obilize deposits immediately\n\n**For Disbursements - opposite!**\nSlow down (legally and ethically) to keep cash longer."
+        },
+        {
+          "title": "Collection Acceleration Techniques",
+          "type": "table",
+          "headers": [
+            "Technique",
+            "How It Works",
+            "Benefit"
+          ],
+          "rows": [
+            [
+              "Lockbox",
+              "Bank collects, deposits, reports",
+              "Reduces mail and processing float"
+            ],
+            [
+              "Concentration Banking",
+              "Move funds to central account",
+              "Better visibility and investment"
+            ],
+            [
+              "ACH/Wire Transfers",
+              "Electronic payment",
+              "Eliminates mail float entirely"
+            ],
+            [
+              "Remote Deposit",
+              "Scan and deposit checks immediately",
+              "Reduces processing float"
+            ],
+            [
+              "Preauthorized Debits",
+              "Automatic withdrawal from customer",
+              "Predictable, fast collection"
+            ]
+          ]
+        },
+        {
+          "title": "Cash Concentration",
+          "type": "text",
+          "content": "**Purpose:** Move cash from multiple accounts to central account\n\n**Benefits:**\n• Better control and visibility\n• More efficient investment\n• Reduced banking costs\n• Easier cash forecasting\n\n**Methods:**\n\n**Depository Transfer Checks (DTC)**\n• Paper-based, takes 1-2 days\n• Low cost, slower\n\n**ACH Transfers**\n• Electronic, 1-day settlement\n• Low cost, faster\n\n**Wire Transfers**\n• Same-day value\n• Higher cost, fastest"
+        },
+        {
+          "title": "⚠️ Exam Trap: Lockbox Economics",
+          "type": "warning",
+          "content": "**Is the lockbox worth it?**\n\n**Calculate the benefit:**\n\nDaily collections × Days saved × Interest rate = Benefit\n\n**Example:**\n• Average daily collections: $100,000\n• Float reduction: 3 days\n• Annual opportunity cost: 6%\n\n**Annual benefit:**\n$100,000 × 3 × 6% = $18,000\n\n**Decision:**\nIf lockbox costs < $18,000/year → Implement\nIf lockbox costs > $18,000/year → Don't\n\n**Exam likely tests this calculation!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cash management balances liquidity needs with minimizing idle cash",
+            "Float is the time between payment and bank processing",
+            "Collection strategies: lockbox, concentration, ACH, wire",
+            "Minimize collection float; may use disbursement float strategically",
+            "Lockbox value = Collections × Days saved × Interest rate",
+            "Cash concentration provides better control and investment opportunities",
+            "Treasury function coordinates all cash management activities"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Lockbox Analysis",
+          "knowledgeCheck": {
+            "question": "A company with average daily collections of $200,000 is considering a lockbox that would reduce float by 2 days. If the company's opportunity cost is 5%, what is the maximum annual fee the company should pay for the lockbox?",
+            "options": [
+              "$10,000",
+              "$20,000",
+              "$200,000",
+              "$400,000"
+            ],
+            "correctIndex": 1,
+            "explanation": "Annual benefit = Daily collections × Days saved × Opportunity cost = $200,000 × 2 × 5% = $20,000. The company should pay no more than $20,000 annually for the lockbox to make it worthwhile.",
+            "hint": "Calculate the value of having money 2 days sooner on average."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-014",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Working Capital Metrics and Analysis",
+    "description": "Calculate and interpret key ratios for receivables, inventory, and payables management",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Working capital",
+      "Receivables turnover",
+      "Inventory turnover",
+      "Days outstanding"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Working capital metrics reveal how efficiently a company manages its operating cycle! These ratios are HEAVILY TESTED on the CMA exam and essential for liquidity analysis, cash flow forecasting, and operational improvement initiatives."
+        },
+        {
+          "title": "Accounts Receivable Metrics",
+          "type": "text",
+          "content": "**Receivables Turnover:**\n\nReceivables Turnover = Credit Sales / Average A/R\n\n**Example:**\nCredit sales: $2,400,000\nAverage A/R: $200,000\n\nTurnover = $2,400,000 / $200,000 = 12 times\n\n**Days Sales Outstanding (DSO):**\n\nDSO = 365 / Receivables Turnover\n\nDSO = 365 / 12 = 30.4 days\n\n**Interpretation:**\n• Higher turnover = faster collections\n• Lower DSO = better liquidity\n• Compare to credit terms (if terms are 30, DSO of 30 is good)"
+        },
+        {
+          "title": "Inventory Metrics",
+          "type": "text",
+          "content": "**Inventory Turnover:**\n\nInventory Turnover = COGS / Average Inventory\n\n**Example:**\nCOGS: $1,800,000\nAverage inventory: $300,000\n\nTurnover = $1,800,000 / $300,000 = 6 times\n\n**Days Inventory Outstanding (DIO):**\n\nDIO = 365 / Inventory Turnover\n\nDIO = 365 / 6 = 60.8 days\n\n**Interpretation:**\n• Higher turnover = inventory moving faster\n• Lower DIO = less cash tied up\n• But watch out: too low may mean stockouts!"
+        },
+        {
+          "title": "Accounts Payable Metrics",
+          "type": "text",
+          "content": "**Payables Turnover:**\n\nPayables Turnover = Purchases / Average A/P\n\n**Example:**\nPurchases: $1,500,000\nAverage A/P: $125,000\n\nTurnover = $1,500,000 / $125,000 = 12 times\n\n**Days Payable Outstanding (DPO):**\n\nDPO = 365 / Payables Turnover\n\nDPO = 365 / 12 = 30.4 days\n\n**Interpretation:**\n• Lower turnover = paying slower (more float)\n• Higher DPO = keeping cash longer\n• But watch credit terms to avoid late fees!"
+        },
+        {
+          "title": "🧠 Memory Aid: The Cash Conversion Cycle",
+          "type": "callout",
+          "content": "**\"DIO + DSO - DPO\" = Cash Conversion Cycle**\n\n(Days Inventory) + (Days Receivables) - (Days Payables)\n\n**Example:**\nDIO: 60 days\nDSO: 30 days\nDPO: 30 days\n\nCCC = 60 + 30 - 30 = 60 days\n\n**Meaning:** 60 days from paying for inventory to collecting cash from customers\n\n**Goal:** Lower CCC = Less cash tied up = Better!"
+        },
+        {
+          "title": "Common Formulas Reference",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Formula",
+            "Good Direction"
+          ],
+          "rows": [
+            [
+              "A/R Turnover",
+              "Credit Sales / Avg A/R",
+              "Higher = Better"
+            ],
+            [
+              "DSO",
+              "365 / A/R Turnover",
+              "Lower = Better"
+            ],
+            [
+              "Inventory Turnover",
+              "COGS / Avg Inventory",
+              "Higher = Better*"
+            ],
+            [
+              "DIO",
+              "365 / Inv Turnover",
+              "Lower = Better*"
+            ],
+            [
+              "A/P Turnover",
+              "Purchases / Avg A/P",
+              "Lower = More float"
+            ],
+            [
+              "DPO",
+              "365 / A/P Turnover",
+              "Higher = More float"
+            ],
+            [
+              "CCC",
+              "DIO + DSO - DPO",
+              "Lower = Better"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Numerator/Denominator Watch",
+          "type": "warning",
+          "content": "**Use the RIGHT numerator:**\n\n• **A/R Turnover:** Use CREDIT SALES (not total sales)\n• **Inventory Turnover:** Use COGS (not sales)\n• **A/P Turnover:** Use PURCHASES (not COGS)\n\n**Use AVERAGE balances:**\n• (Beginning + Ending) / 2\n• Or use ending if only one balance given\n\n**Exam loves these formula traps!**"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "A/R turnover = Credit Sales / Avg A/R; DSO = 365 / Turnover",
+            "Inventory turnover = COGS / Avg Inventory; DIO = 365 / Turnover",
+            "A/P turnover = Purchases / Avg A/P; DPO = 365 / Turnover",
+            "Cash Conversion Cycle = DIO + DSO - DPO",
+            "Lower CCC means less cash tied up in working capital",
+            "Use correct numerators: credit sales, COGS, purchases",
+            "Compare ratios to industry benchmarks and credit terms"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Conversion Cycle",
+          "knowledgeCheck": {
+            "question": "A company has: Days Inventory Outstanding = 45 days, Days Sales Outstanding = 35 days, Days Payable Outstanding = 40 days. What is the Cash Conversion Cycle?",
+            "options": [
+              "40 days",
+              "80 days",
+              "120 days",
+              "160 days"
+            ],
+            "correctIndex": 0,
+            "explanation": "CCC = DIO + DSO - DPO = 45 + 35 - 40 = 40 days. This means the company takes 40 days from paying for inventory until collecting cash from customers.",
+            "hint": "Add days to convert inventory, add days to collect, subtract days of supplier financing."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-015",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Trade Credit and Accounts Payable Management",
+    "description": "Optimize supplier payment timing to balance cost savings and cash flow",
+    "order": 25,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Trade credit",
+      "Accounts payable",
+      "Cash discounts",
+      "Payment terms"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Trade credit is often the largest source of short-term financing! Understanding when to take discounts vs. preserve cash is a critical treasury decision. CMAs analyze the cost of foregoing discounts to determine optimal payment strategy."
+        },
+        {
+          "title": "Understanding Credit Terms",
+          "type": "text",
+          "content": "**Standard Format: X/Y, Net Z**\n\n**Example: 2/10, Net 30**\n• 2% discount if paid within 10 days\n• Full amount due in 30 days\n• Can keep money 20 extra days by skipping discount\n\n**Components:**\n• **Discount percentage:** 2%\n• **Discount period:** 10 days\n• **Net period:** 30 days\n• **Extra days by foregoing:** 30 - 10 = 20 days"
+        },
+        {
+          "title": "Cost of Forgoing Discount",
+          "type": "text",
+          "content": "**The Key Formula:**\n\n**Annualized Cost = [Discount % / (100% - Discount %)] × [365 / (Net Days - Discount Days)]**\n\n**Example: 2/10, Net 30**\n\nCost = [2% / 98%] × [365 / 20]\nCost = 0.0204 × 18.25\nCost = 37.2% annually!\n\n**Interpretation:**\nSkipping the 2% discount costs 37.2% on an annualized basis\nThis is the implicit interest rate of supplier financing\n\n**Decision Rule:**\nIf borrowing cost < 37.2%, take the discount (borrow to pay early)\nIf borrowing cost > 37.2%, skip the discount (use supplier financing)"
+        },
+        {
+          "title": "🧠 Memory Aid: Discount Formula",
+          "type": "callout",
+          "content": "**Break it into two parts:**\n\n**Part 1: Discount / (100 - Discount)**\n• What you pay for keeping the money\n• 2% discount = 2/98 = 2.04%\n\n**Part 2: 365 / Extra Days**\n• How many times per year\n• 20 extra days = 365/20 = 18.25 times\n\n**Annualize:** Multiply the parts!\n2.04% × 18.25 = 37.2%"
+        },
+        {
+          "title": "Common Discount Terms",
+          "type": "table",
+          "headers": [
+            "Terms",
+            "Extra Days",
+            "Annualized Cost"
+          ],
+          "rows": [
+            [
+              "1/10, Net 30",
+              "20",
+              "18.4%"
+            ],
+            [
+              "2/10, Net 30",
+              "20",
+              "37.2%"
+            ],
+            [
+              "2/10, Net 45",
+              "35",
+              "21.3%"
+            ],
+            [
+              "3/10, Net 30",
+              "20",
+              "56.4%"
+            ],
+            [
+              "2/15, Net 45",
+              "30",
+              "24.8%"
+            ]
+          ]
+        },
+        {
+          "title": "Stretching Payables",
+          "type": "text",
+          "content": "**Paying beyond normal terms:**\n\n**Potential Benefits:**\n• Free financing (beyond net period)\n• Preserves cash\n• Lowers cost of foregoing discount\n\n**Serious Risks:**\n• Supplier relationships damaged\n• Credit rating impact\n• Late fees and penalties\n• Supplier may refuse to ship\n• Lose access to future discounts\n\n**Best Practice:**\n• Pay on last possible day (but not late)\n• Take discounts if cost of capital permits\n• Maintain good supplier relationships"
+        },
+        {
+          "title": "⚠️ Exam Trap: Formula Variations",
+          "type": "warning",
+          "content": "**Watch for these exam variations:**\n\n**Variation 1:** Using 360 days instead of 365\n• Common in banking/finance questions\n• Will slightly change result\n\n**Variation 2:** Simplified formula\n• Some texts use: (Discount/Net Amount) × (365/Extra Days)\n• Same result, different presentation\n\n**Variation 3:** Compare to bank rate\n• Given bank loan at X%, should you take discount?\n• Compare calculated cost to X%\n\n**Key: Read the question carefully for which formula or days to use!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Credit terms: X/Y, Net Z (discount/discount period/net period)",
+            "Cost of forgoing = [Disc/(100-Disc)] × [365/(Net-Disc days)]",
+            "Typical early payment discounts have high annualized costs",
+            "Take discount if borrowing cost < cost of foregoing",
+            "Stretching payables damages relationships and credit",
+            "Pay on last day to maximize float without late payment",
+            "Compare implicit cost to available financing alternatives"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cost of Foregoing Discount",
+          "knowledgeCheck": {
+            "question": "A supplier offers terms of 3/15, Net 45. What is the approximate annualized cost of foregoing the discount?",
+            "options": [
+              "12.4%",
+              "24.5%",
+              "37.6%",
+              "55.7%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cost = [3/97] × [365/(45-15)] = (0.0309) × (365/30) = 0.0309 × 12.17 = 37.6%. Foregoing the 3% discount for 30 extra days costs 37.6% annually.",
+            "hint": "Use the formula: [Disc%/(100-Disc%)] × [365/(Net days - Discount days)]"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-016",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Banking Relationships and Treasury Management",
+    "description": "Manage relationships with financial institutions to optimize cash services and financing",
+    "order": 26,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Treasury management",
+      "Bank relationships",
+      "Cash management services",
+      "Compensating balances"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Banking relationships affect borrowing costs, cash efficiency, and access to credit! CMAs help evaluate bank service fees, negotiate terms, and determine the true cost of banking arrangements including compensating balance requirements."
+        },
+        {
+          "title": "Bank Services for Businesses",
+          "type": "text",
+          "content": "**Cash Management Services:**\n• Lockbox services (accelerate collections)\n• Zero-balance accounts (concentrate cash)\n• Controlled disbursement (predictable outflows)\n• Wire transfers and ACH\n• Positive pay (fraud protection)\n\n**Credit Services:**\n• Lines of credit\n• Revolving credit facilities\n• Term loans\n• Letters of credit\n\n**Other Services:**\n• Payroll processing\n• Foreign exchange\n• Investment sweep accounts"
+        },
+        {
+          "title": "Compensating Balances",
+          "type": "text",
+          "content": "**Definition:** Minimum balance required to maintain as condition of loan or services\n\n**Example:**\n$1,000,000 credit line\n10% compensating balance required\n$100,000 must stay on deposit\n\n**True Usable Credit:** $900,000\n\n**Impact on Effective Interest Rate:**\nStated rate: 8%\nInterest paid: $1,000,000 × 8% = $80,000\nUsable funds: $900,000\n\n**Effective Rate = $80,000 / $900,000 = 8.89%**\n\n**Key Point:** Compensating balances INCREASE effective borrowing cost!"
+        },
+        {
+          "title": "🧠 Memory Aid: Effective Rate",
+          "type": "callout",
+          "content": "**Compensating Balance Adjustment:**\n\n**Effective Rate = Stated Rate / (1 - Comp Balance %)**\n\n**Example:**\nStated rate: 8%\nCompensating balance: 10%\n\nEffective Rate = 8% / (1 - 0.10) = 8% / 0.90 = 8.89%\n\n**Higher comp balance = Higher effective rate**"
+        },
+        {
+          "title": "Bank Charges and Fees",
+          "type": "text",
+          "content": "**Two Payment Methods:**\n\n**1. Direct Fees (Cash Payment)**\n• Pay explicit charges for services\n• Transparent pricing\n• Example: $0.15 per check processed\n\n**2. Compensating Balances**\n• Maintain minimum balance instead of fees\n• Bank earns interest spread on balance\n• Less transparent\n\n**Analysis:**\n• Compare cost of leaving cash idle (opportunity cost)\n• vs. direct fee payment\n• Choose lower cost option\n\n**Earnings Credit Rate (ECR):**\n• Rate bank credits for balances\n• Offsets service charges"
+        },
+        {
+          "title": "Line of Credit Arrangements",
+          "type": "text",
+          "content": "**Uncommitted Line:**\n• Bank can refuse to lend\n• Lower fees\n• Less certainty\n\n**Committed Line:**\n• Bank obligated to lend (if terms met)\n• Commitment fee on unused portion\n• More certainty but higher cost\n\n**Revolving Credit:**\n• Formal committed facility\n• Typically 3-5 year term\n• Can borrow, repay, reborrow\n• Often includes financial covenants\n\n**Total Cost:**\n= Interest on borrowed amounts\n+ Commitment fee on unused amounts\n+ Any compensating balance cost"
+        },
+        {
+          "title": "⚠️ Exam Trap: Total Borrowing Cost",
+          "type": "warning",
+          "content": "**Calculate ALL costs:**\n\n**Example:**\n$5M revolving credit\n6% interest on borrowed amounts\n0.5% commitment fee on unused\nBorrow average of $3M\n\n**Interest:** $3M × 6% = $180,000\n**Commitment Fee:** $2M × 0.5% = $10,000\n**Total Cost:** $190,000\n\n**Effective Rate:** $190,000 / $3,000,000 = 6.33%\n\n**Don't forget:** Compensating balances or upfront fees!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Banks provide both cash management and credit services",
+            "Compensating balances increase effective borrowing cost",
+            "Effective rate = Stated rate / (1 - Comp balance %)",
+            "Compare direct fees vs compensating balance cost",
+            "Committed lines have fees but guaranteed access",
+            "Total cost includes interest + commitment fees + balance costs",
+            "Negotiate based on relationship value, not just one product"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Compensating Balance",
+          "knowledgeCheck": {
+            "question": "A bank offers a $500,000 loan at 9% interest with a 15% compensating balance requirement. The company holds no other deposits. What is the effective interest rate?",
+            "options": [
+              "9.00%",
+              "10.29%",
+              "10.59%",
+              "24.00%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Effective rate = Stated rate / (1 - CB%) = 9% / (1 - 0.15) = 9% / 0.85 = 10.59%. The company only has use of $425,000 (500,000 × 85%) but pays interest on the full amount.",
+            "hint": "Adjust for the portion of the loan that's locked up in compensating balances."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-017",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Accounts Receivable Management",
+    "description": "Optimize credit policies, collection procedures, and receivables financing",
+    "order": 27,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Accounts receivable",
+      "Credit policy",
+      "Collections",
+      "Factoring"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Receivables are money waiting to be collected! Poor A/R management ties up capital and increases bad debt losses. CMAs analyze credit policies, monitor collection metrics, and evaluate financing options to optimize the cash-to-cash cycle."
+        },
+        {
+          "title": "Credit Policy Components",
+          "type": "text",
+          "content": "**Credit Standards:**\n• Who gets credit?\n• Minimum credit score, ratios\n• Tighter = fewer sales, less bad debt\n• Looser = more sales, more bad debt\n\n**Credit Terms:**\n• Payment period (Net 30, Net 60)\n• Early payment discounts (2/10, Net 30)\n\n**Collection Procedures:**\n• When to follow up\n• Escalation process\n• Write-off policies\n\n**Credit Analysis Process:**\n• Application and approval\n• Credit limit determination\n• Ongoing monitoring"
+        },
+        {
+          "title": "Credit Policy Trade-offs",
+          "type": "table",
+          "headers": [
+            "Tighter Credit Policy",
+            "Looser Credit Policy"
+          ],
+          "rows": [
+            [
+              "Lower bad debt expense",
+              "Higher bad debt expense"
+            ],
+            [
+              "Lower A/R balance",
+              "Higher A/R balance"
+            ],
+            [
+              "Lower sales volume",
+              "Higher sales volume"
+            ],
+            [
+              "Less collection effort",
+              "More collection effort"
+            ],
+            [
+              "Less working capital needed",
+              "More working capital needed"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: The Five Cs of Credit",
+          "type": "callout",
+          "content": "**Evaluate creditworthiness:**\n\n**C**haracter - Will they pay? (History, reputation)\n**C**apacity - Can they pay? (Cash flow)\n**C**apital - Do they have resources? (Net worth)\n**C**ollateral - What secures the debt?\n**C**onditions - Economic/industry environment\n\n**All five matter - don't rely on just one!"
+        },
+        {
+          "title": "Credit Policy Change Analysis",
+          "type": "text",
+          "content": "**Framework for evaluating credit policy changes:**\n\n**Benefits:**\n+ Incremental sales revenue\n+ Incremental contribution margin\n\n**Costs:**\n- Higher bad debt expense\n- Higher collection costs\n- Opportunity cost of additional A/R\n\n**Example:**\nExtend credit terms from Net 30 to Net 45\n\n**Projected:**\n+ Sales increase: $200,000 (at 40% CM = $80,000)\n- Additional bad debts: $10,000\n- Additional A/R carrying cost: $15,000\n\n**Net benefit: $80,000 - $25,000 = $55,000**"
+        },
+        {
+          "title": "Receivables Financing Options",
+          "type": "text",
+          "content": "**Factoring:**\n• Sell receivables to factor (financing company)\n• Get cash immediately (less fee)\n• Factor collects from customers\n• With recourse (you bear bad debt risk)\n• Without recourse (factor bears risk)\n\n**Asset-Based Lending:**\n• Borrow against A/R as collateral\n• Typically 70-80% of A/R balance\n• You still collect and bear risk\n\n**When useful:**\n• Fast growth outpacing cash flow\n• Seasonal businesses\n• Need to accelerate cash"
+        },
+        {
+          "title": "⚠️ Exam Trap: Cost of Factoring",
+          "type": "warning",
+          "content": "**Factoring has explicit and implicit costs:**\n\n**Explicit Costs:**\n• Factor fee (1-5% of invoice face)\n• Interest on advance\n\n**What you give up:**\n• Discount if factor collects early\n• Potential customer relationship issues\n\n**Example:**\n$100,000 invoice\nFactor fee: 2%\nAdvance: 90%\nInterest on advance: 12% annually for 30 days\n\nCost = $2,000 + ($90,000 × 12% × 30/365) = $2,000 + $888 = $2,888\n\n**Annualized cost is HIGH for short periods!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Credit policy: standards, terms, collection procedures",
+            "Tighter credit = less bad debt but fewer sales",
+            "Five Cs: Character, Capacity, Capital, Collateral, Conditions",
+            "Analyze credit changes with incremental cost-benefit",
+            "Factoring provides quick cash but has significant costs",
+            "With recourse: you bear bad debt risk; without: factor does",
+            "Monitor DSO and aging schedules to track performance"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Credit Policy Analysis",
+          "knowledgeCheck": {
+            "question": "A company loosens credit standards, expecting: +$150,000 new sales (30% contribution margin), +$12,000 bad debts, +$8,000 carrying costs. Should they make the change?",
+            "options": [
+              "No, the costs outweigh benefits",
+              "Yes, net benefit is $25,000",
+              "Yes, net benefit is $130,000",
+              "Cannot determine without collection data"
+            ],
+            "correctIndex": 1,
+            "explanation": "Incremental CM: $150,000 × 30% = $45,000. Incremental costs: $12,000 + $8,000 = $20,000. Net benefit: $45,000 - $20,000 = $25,000 positive. The change should be made.",
+            "hint": "Calculate incremental contribution margin (not sales), then subtract incremental costs."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-018",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Inventory Management Systems",
+    "description": "Compare EOQ, JIT, and modern inventory management approaches",
+    "order": 28,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "EOQ",
+      "Just-in-time",
+      "Inventory management",
+      "Reorder point"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Inventory is expensive - too much ties up cash, too little means lost sales! CMAs analyze holding costs, ordering costs, and stockout risks to determine optimal inventory policies. EOQ calculations appear frequently on the CMA exam."
+        },
+        {
+          "title": "Inventory Cost Components",
+          "type": "text",
+          "content": "**Holding (Carrying) Costs:**\n• Storage space and utilities\n• Insurance and taxes\n• Obsolescence and spoilage\n• Opportunity cost of capital\n• Typically 20-30% of item cost annually\n\n**Ordering Costs:**\n• Purchase order processing\n• Shipping and receiving\n• Setup costs (for manufacturing)\n• Quality inspection\n\n**Stockout Costs:**\n• Lost sales and margin\n• Customer ill will\n• Expediting costs\n• Production disruption"
+        },
+        {
+          "title": "EOQ Model",
+          "type": "text",
+          "content": "**Economic Order Quantity Formula:**\n\nEOQ = √ (2 × D × O / H)\n\n**Where:**\n• D = Annual demand (units)\n• O = Ordering cost per order ($)\n• H = Holding cost per unit per year ($)\n\n**Example:**\nD = 10,000 units/year\nO = $50/order\nH = $2/unit/year\n\nEOQ = √ (2 × 10,000 × 50 / 2)\nEOQ = √ 500,000\nEOQ = **707 units**\n\n**Number of orders = 10,000 / 707 ≈ 14 orders/year**"
+        },
+        {
+          "title": "🧠 Memory Aid: EOQ Assumptions",
+          "type": "callout",
+          "content": "**EOQ assumes \"CCCLD\":**\n\n**C**onstant demand (no seasonality)\n**C**onstant costs (ordering and holding)\n**C**omplete replenishment (instant delivery)\n**L**ead time known\n**D**emand independent (not linked to other products)\n\n**When assumptions fail:**\n• Variable demand → Safety stock\n• Long lead time → Reorder point\n• Quantity discounts → Compare total costs"
+        },
+        {
+          "title": "Reorder Point and Safety Stock",
+          "type": "text",
+          "content": "**Reorder Point (ROP):**\n\nROP = Daily Demand × Lead Time + Safety Stock\n\n**Example:**\nDaily demand = 50 units\nLead time = 5 days\nSafety stock = 100 units\n\nROP = 50 × 5 + 100 = **350 units**\n\n**Safety Stock Factors:**\n• Demand variability\n• Lead time variability\n• Service level target\n• Stockout cost\n\n**Higher safety stock:**\n+ Fewer stockouts\n- Higher carrying costs"
+        },
+        {
+          "title": "EOQ vs JIT Comparison",
+          "type": "table",
+          "headers": [
+            "EOQ Approach",
+            "JIT Approach"
+          ],
+          "rows": [
+            [
+              "Order in economic batches",
+              "Order only when needed"
+            ],
+            [
+              "Accepts some inventory",
+              "Near-zero inventory goal"
+            ],
+            [
+              "Safety stock buffer",
+              "Eliminate root causes instead"
+            ],
+            [
+              "Ordering cost is fixed",
+              "Reduce ordering/setup costs"
+            ],
+            [
+              "Works with any supplier",
+              "Requires reliable suppliers"
+            ],
+            [
+              "Traditional manufacturing",
+              "Lean manufacturing"
+            ]
+          ]
+        },
+        {
+          "title": "⚠️ Exam Trap: Total Inventory Cost",
+          "type": "warning",
+          "content": "**Know how to calculate total annual cost:**\n\n**Total Cost = Purchase + Ordering + Holding**\n\n**Ordering Cost** = (D/Q) × O\n(Number of orders × Cost per order)\n\n**Holding Cost** = (Q/2) × H\n(Average inventory × Cost per unit)\n\n**At EOQ:**\nOrdering cost = Holding cost\n(This is the insight of EOQ!)\n\n**With Quantity Discounts:**\nCompare total costs at:\n• EOQ quantity\n• Each price break quantity\n• Choose lowest total cost"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Three cost types: Holding, Ordering, Stockout",
+            "EOQ formula: √(2DO/H) minimizes total inventory costs",
+            "At EOQ, ordering costs = holding costs",
+            "ROP = (Daily Demand × Lead Time) + Safety Stock",
+            "EOQ assumptions: Constant demand/costs, instant delivery",
+            "JIT seeks zero inventory by reducing setup costs and variability",
+            "Quantity discounts require comparing total costs, not just unit price"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "EOQ Calculation",
+          "knowledgeCheck": {
+            "question": "Annual demand is 4,000 units, ordering cost is $100 per order, and holding cost is $8 per unit per year. What is the EOQ?",
+            "options": [
+              "100 units",
+              "200 units",
+              "316 units",
+              "500 units"
+            ],
+            "correctIndex": 2,
+            "explanation": "EOQ = √(2 × 4,000 × 100 / 8) = √(800,000 / 8) = √100,000 = 316.2 units, rounded to 316 units.",
+            "hint": "Apply the EOQ formula: √(2DO/H) where D=demand, O=ordering cost, H=holding cost."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-019",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Short-Term Financing Instruments",
+    "description": "Compare commercial paper, lines of credit, and other short-term funding sources",
+    "order": 29,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Commercial paper",
+      "Lines of credit",
+      "Short-term debt",
+      "Working capital financing"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Every company needs short-term funding! CMAs evaluate financing options, compare costs, and ensure liquidity. Understanding the range of instruments helps optimize the cost of capital while maintaining flexibility."
+        },
+        {
+          "title": "Short-Term Financing Overview",
+          "type": "text",
+          "content": "**Spontaneous Financing:**\n• Accounts payable - Trade credit from suppliers\n• Accruals - Wages, taxes owed but not yet paid\n• \"Free\" if paid on time\n\n**Negotiated Financing:**\n• Bank loans - Term loans, lines of credit\n• Commercial paper - Direct market access\n• Factoring - Sell receivables\n• Asset-based lending - Borrow against assets\n\n**Matching Principle:**\nFund temporary needs with short-term debt\nFund permanent needs with long-term debt"
+        },
+        {
+          "title": "Financing Instrument Comparison",
+          "type": "table",
+          "headers": [
+            "Source",
+            "Cost",
+            "Flexibility",
+            "Requirements"
+          ],
+          "rows": [
+            [
+              "Trade Credit",
+              "Free (if no discount) or expensive",
+              "High",
+              "Vendor relationship"
+            ],
+            [
+              "Line of Credit",
+              "Interest + commitment fee",
+              "High",
+              "Bank relationship"
+            ],
+            [
+              "Term Loan",
+              "Interest rate",
+              "Low",
+              "Collateral often"
+            ],
+            [
+              "Commercial Paper",
+              "Low (market rates)",
+              "Medium",
+              "Strong credit rating"
+            ],
+            [
+              "Factoring",
+              "High (fees + interest)",
+              "Medium",
+              "Quality receivables"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Line of Credit Types",
+          "type": "callout",
+          "content": "**Bank Credit Lines:**\n\n**Uncommitted Line:**\n• Bank MAY lend, no guarantee\n• No commitment fee\n• Can be revoked anytime\n\n**Committed (Revolving) Line:**\n• Bank MUST lend up to limit\n• Pay commitment fee (0.25-0.50%)\n• Contractual guarantee\n• Draw and repay as needed\n\n**Costs:**\n• Interest on amounts borrowed\n• Commitment fee on unused portion\n• Sometimes: Compensating balance required"
+        },
+        {
+          "title": "Commercial Paper",
+          "type": "text",
+          "content": "**Definition:**\n• Unsecured short-term promissory notes\n• Issued directly in money market\n• Typically 1-270 days maturity\n\n**Advantages:**\n• Lower rates than bank loans\n• No compensating balance\n• Large amounts available\n\n**Disadvantages:**\n• Only investment-grade companies\n• Must maintain backup credit line\n• Market access can disappear\n\n**Backup Line:**\nFunding insurance - if CP market closes,\ndraw on bank line instead\nCritical for maintaining CP program!"
+        },
+        {
+          "title": "Cost Comparison Calculation",
+          "type": "text",
+          "content": "**Effective Annual Rate Formula:**\n\n**Bank Loan with Compensating Balance:**\nEffective Rate = Interest / (Loan - Balance)\n\n**Example:**\n$100,000 loan at 8%\n10% compensating balance required ($10,000)\nUsable funds: $90,000\n\nEffective Rate = $8,000 / $90,000 = **8.89%**\n\n**Discount Loan:**\nInterest deducted upfront\nUsable: $100,000 - $8,000 = $92,000\n\nEffective Rate = $8,000 / $92,000 = **8.70%**\n\n**Both increase effective cost above stated rate!"
+        },
+        {
+          "title": "⚠️ Exam Trap: Cost of Trade Credit",
+          "type": "warning",
+          "content": "**Forgoing discount is EXPENSIVE:**\n\n**Terms: 2/10, Net 30**\n• 2% discount if paid in 10 days\n• Otherwise pay full in 30 days\n\n**Cost of Forgoing:**\nDiscount % / (100% - Discount %) × 365 / (Pay Date - Discount Date)\n\n= 2/98 × 365/20\n= 0.0204 × 18.25\n= **37.2% annually!**\n\n**Key Insight:**\nAlways take discounts if borrowing cost < 37%\nWhich is almost always!\n\n**When to forgo:**\nOnly if company cannot borrow at all"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Spontaneous financing: Trade credit, accruals (automatic)",
+            "Negotiated: Bank loans, lines of credit, commercial paper",
+            "Committed line: Bank must lend; Uncommitted: Bank may lend",
+            "Commercial paper: Low cost but requires investment-grade rating",
+            "Compensating balances increase effective borrowing rate",
+            "Cost of forgoing trade discount is often extremely high (37%+ annualized)",
+            "Match financing term to asset/need duration"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Trade Credit Cost",
+          "knowledgeCheck": {
+            "question": "A supplier offers terms of 3/15, Net 45. If the company forgoes the discount, what is the approximate annualized cost?",
+            "options": [
+              "3%",
+              "24%",
+              "37%",
+              "55%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cost = (3/97) × (365/30) = 3.09% × 12.17 = 37.6% approximately. The 30 days comes from the difference between 45 days full payment and 15 days discount period.",
+            "hint": "Formula: (Discount / (100-Discount)) × (365 / (Pay Date - Discount Date))"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-020",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cash Budget Preparation",
+    "description": "Build comprehensive cash budgets to manage liquidity and plan financing",
+    "order": 30,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cash budget",
+      "Cash receipts",
+      "Cash disbursements",
+      "Financing needs"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "The cash budget is the MOST important short-term planning tool! It shows when cash shortages will occur and when excess cash needs investing. CMAs prepare cash budgets to ensure liquidity and minimize borrowing costs."
+        },
+        {
+          "title": "Cash Budget Structure",
+          "type": "text",
+          "content": "**Beginning Cash Balance**\n+ Cash Receipts\n  - Collections from customers\n  - Other cash income\n= Cash Available\n\n- Cash Disbursements\n  - Payments to suppliers\n  - Payroll\n  - Other operating payments\n  - Capital expenditures\n  - Debt service\n  - Dividends\n= Ending Cash Before Financing\n\n+/- Financing (borrowing or repayment)\n= Ending Cash Balance\n\n**Goal:** Maintain minimum cash balance"
+        },
+        {
+          "title": "Cash Receipts Calculation",
+          "type": "text",
+          "content": "**Most receipts come from sales collections:**\n\n**Collection Pattern Example:**\n• 20% collected in month of sale\n• 50% collected in following month\n• 25% collected in second month\n• 5% uncollectible\n\n**Example (Sales: Jan $100K, Feb $120K, Mar $150K):**\n\nMarch Collections:\n• March sales: $150,000 × 20% = $30,000\n• February sales: $120,000 × 50% = $60,000\n• January sales: $100,000 × 25% = $25,000\n• **Total March collections: $115,000**\n\n**Key:** Need several months' sales to calculate!"
+        },
+        {
+          "title": "🧠 Memory Aid: Cash Budget Components",
+          "type": "callout",
+          "content": "**\"PRIMO\" - What goes in cash budget:**\n\n**P**urchases/Payables\n• Raw materials, inventory\n• When paid (lag from purchase)\n\n**R**eceipts from customers\n• Collection pattern key\n\n**I**nvestments (capital expenditures)\n• Equipment, property\n\n**M**inimum cash balance\n• Target safety buffer\n• Determines financing needs\n\n**O**perating expenses\n• Payroll, rent, utilities\n• When paid, not accrued"
+        },
+        {
+          "title": "Cash Budget Example",
+          "type": "text",
+          "content": "**March Cash Budget:**\n\n| Item | Amount |\n|------|--------|\n| Beginning cash | $25,000 |\n| + Collections | $115,000 |\n| = Cash available | $140,000 |\n| - Material purchases | ($60,000) |\n| - Payroll | ($35,000) |\n| - Operating expenses | ($20,000) |\n| - Equipment purchase | ($40,000) |\n| = Cash before financing | ($15,000) |\n| Minimum required | $20,000 |\n| **Financing needed** | **$35,000** |\n| = Ending cash | $20,000 |\n\n**Insight:** Need to borrow $35,000 in March"
+        },
+        {
+          "title": "Financing Section",
+          "type": "text",
+          "content": "**When Cash < Minimum:**\n• Borrow from line of credit\n• Round up to convenient amounts\n• Plan for interest payments\n\n**When Cash > Needs:**\n• Repay borrowings\n• Invest excess in short-term securities\n\n**Financing Timing:**\n• Assume borrowing at start of month\n• Repayment at end of month\n• Interest on borrowings\n\n**Rolling 12-Month Budget:**\n• See seasonal patterns\n• Plan borrowing needs\n• Negotiate credit lines"
+        },
+        {
+          "title": "⚠️ Exam Trap: Timing of Cash Flows",
+          "type": "warning",
+          "content": "**Cash budget uses CASH flows, not accruals:**\n\n**Purchases vs Payments:**\n• If payment terms are Net 30...\n• January purchases paid in February\n• Must track purchase timing\n\n**Depreciation:**\n• NEVER in cash budget\n• It's non-cash!\n\n**Prepaid Expenses:**\n• Cash goes out when PAID\n• Not when expense recognized\n\n**Common Errors:**\n• Using sales instead of collections\n• Using COGS instead of cash payments\n• Including depreciation\n• Wrong month for cash flows"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cash budget: Beginning + Receipts - Disbursements = Ending",
+            "Collection patterns determine timing of cash from sales",
+            "Payment patterns determine timing of cash for purchases",
+            "Maintain minimum cash balance - difference drives financing",
+            "Exclude depreciation and non-cash items",
+            "Use CASH timing, not accrual timing",
+            "Cash budget reveals seasonal financing needs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Collections",
+          "knowledgeCheck": {
+            "question": "Sales are $80,000 (Jan), $90,000 (Feb), $100,000 (Mar). Collection pattern: 30% in month of sale, 60% next month, 10% two months later. What are March collections?",
+            "options": [
+              "$100,000",
+              "$92,000",
+              "$90,000",
+              "$84,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "March collections: March sales ($100K × 30% = $30K) + February sales ($90K × 60% = $54K) + January sales ($80K × 10% = $8K) = $30K + $54K + $8K = $92K. Correct answer should be $92,000, which is option B.",
+            "hint": "March collections come from three months: 30% of March, 60% of February, 10% of January."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-021",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "International Cash Management",
+    "description": "Manage cash across borders, currencies, and banking systems",
+    "order": 21,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "International cash management",
+      "Cross-border banking",
+      "Currency management",
+      "Cash pooling"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Global operations mean global cash! CMAs at multinational companies must manage cash across countries, currencies, and banking systems. International treasury adds complexity but also optimization opportunities through cash pooling and netting."
+        },
+        {
+          "title": "International Cash Challenges",
+          "type": "text",
+          "content": "**Currency Issues:**\n• Multiple currencies\n• Exchange rate volatility\n• Conversion costs\n• Hedging needs\n\n**Banking Complexity:**\n• Multiple banks per country\n• Different banking systems\n• Time zone differences\n• Varying technology\n\n**Regulatory Constraints:**\n• Capital controls\n• Repatriation restrictions\n• Tax implications\n• Local reserve requirements\n\n**Visibility:**\n• Fragmented accounts\n• Delayed reporting\n• Manual reconciliation"
+        },
+        {
+          "title": "Cash Concentration Structures",
+          "type": "table",
+          "headers": [
+            "Structure",
+            "How It Works",
+            "Benefit"
+          ],
+          "rows": [
+            [
+              "Physical Pooling",
+              "Actual cash movement to central account",
+              "Real cash concentration"
+            ],
+            [
+              "Notional Pooling",
+              "Balances offset without movement",
+              "Reduced FX, less movement"
+            ],
+            [
+              "Zero-Balance Accounts",
+              "Sweep to master at day-end",
+              "Automated concentration"
+            ],
+            [
+              "Target Balancing",
+              "Maintain minimum, sweep excess",
+              "Local liquidity preserved"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Netting Center",
+          "type": "callout",
+          "content": "**Multilateral Netting:**\n\n**Problem:** 10 subsidiaries paying each other\n• Without netting: 90 possible payments\n• High FX costs, bank fees\n\n**Solution: Netting Center**\n1. Each sub reports payables/receivables\n2. Center calculates net position\n3. Single payment per subsidiary\n\n**Example:**\n• Sub A owes Sub B: $100\n• Sub B owes Sub A: $70\n• Without netting: 2 payments ($170)\n• With netting: 1 payment ($30)\n\n**Savings:**\n• Fewer transactions\n• Lower FX costs\n• Reduced bank fees\n• Better visibility"
+        },
+        {
+          "title": "Payment Factory Concept",
+          "type": "text",
+          "content": "**What Is It?**\nCentralized payment processing center\n• All payments routed through one unit\n• On behalf of (OBO) payments\n\n**Benefits:**\n• Standardized processes\n• Bulk payments\n• Better bank negotiation\n• Fraud prevention\n• Payment visibility\n\n**In-House Bank:**\n• Internal bank for subsidiaries\n• Intercompany loans\n• FX services\n• Payment services\n• Reduces external banking"
+        },
+        {
+          "title": "Currency Management",
+          "type": "text",
+          "content": "**Natural Hedging:**\n• Match currency revenues and costs\n• Produce where you sell\n• Borrow in operating currencies\n\n**Leading and Lagging:**\n• Leading: Pay early if currency weakening\n• Lagging: Pay later if currency strengthening\n• Timing of intercompany payments\n\n**Currency Netting:**\n• Offset inflows and outflows\n• Reduces FX transaction volume\n\n**Reinvoicing Center:**\n• Central entity handles all FX\n• Subsidiaries transact in local currency\n• Centralizes FX exposure"
+        },
+        {
+          "title": "⚠️ Exam Trap: Trapped Cash",
+          "type": "warning",
+          "content": "**Some cash can't be moved!**\n\n**Causes of Trapped Cash:**\n• Capital controls (China, India, Brazil)\n• Regulatory approval needed\n• Tax cost of repatriation\n• Thin capitalization rules\n• Local statutory requirements\n\n**Solutions:**\n• Use cash locally (expansion, acquisitions)\n• Intercompany loans (with limits)\n• Transfer pricing (careful!)\n• Dividends (with tax planning)\n• Management fees, royalties\n\n**CMA Alert:**\nReported cash may not be available cash\nAlways note restricted cash separately!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "International treasure adds currency, banking, and regulatory complexity",
+            "Physical pooling: Actual cash movement to central account",
+            "Notional pooling: Offset balances without moving cash",
+            "Netting: Settle intercompany amounts with single net payment",
+            "Payment factory: Centralize payment processing",
+            "In-house bank: Internal banking for subsidiaries",
+            "Trapped cash: Regulatory or tax restrictions on moving cash"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Pooling",
+          "knowledgeCheck": {
+            "question": "A structure where subsidiary account balances are offset for interest calculation purposes but cash is not physically moved is called:",
+            "options": [
+              "Physical pooling",
+              "Notional pooling",
+              "Zero-balance account",
+              "Target balancing"
+            ],
+            "correctIndex": 1,
+            "explanation": "Notional pooling offsets balances mathematically without moving cash. Subsidiaries maintain their local accounts, but the bank calculates interest on the net position. This avoids cash movement costs and legal/tax issues while achieving interest optimization.",
+            "hint": "Which pooling method doesn't require actual cash transfers?"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-022",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Float Management",
+    "description": "Optimize cash through management of payment and collection timing",
+    "order": 22,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Float",
+      "Collection float",
+      "Disbursement float",
+      "Cash management"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Float is 'free money' - if you manage it well! Float represents the time between when you write a check and when it clears. CMAs optimize float to reduce borrowing needs and improve cash positions. As payments become electronic, float management evolves but remains relevant."
+        },
+        {
+          "title": "What is Float?",
+          "type": "text",
+          "content": "**Definition:**\nThe time delay between payment initiation and fund availability\n\n**Collection Float:**\n• Time until YOU receive funds\n• Want to MINIMIZE\n• Reduces your available cash\n\n**Disbursement Float:**\n• Time before funds LEAVE your account\n• Want to MAXIMIZE (ethically)\n• Extends your available cash\n\n**Net Float:**\n= Disbursement Float - Collection Float\n• Positive = You have extra cash\n• Negative = You're short cash\n\n**Book Balance vs Bank Balance:**\nDifference caused by outstanding checks/deposits"
+        },
+        {
+          "title": "Float Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Description",
+            "Collection"
+          ],
+          "rows": [
+            [
+              "Mail Float",
+              "Time in mail system",
+              "Reduce with lockbox"
+            ],
+            [
+              "Processing Float",
+              "Time to process payment",
+              "Automation"
+            ],
+            [
+              "Availability Float",
+              "Bank clearing time",
+              "Better banking"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Collection Techniques",
+          "type": "callout",
+          "content": "**Reduce Collection Float:**\n\n**Lockbox:**\n• Bank PO box near customers\n• Bank processes payments\n• Reduces mail and processing time\n\n**Concentration Banking:**\n• Multiple collection points\n• Sweep to central account\n• Regional lockboxes\n\n**Electronic Payments:**\n• ACH, wire transfers\n• Eliminate mail float\n• Same-day availability\n\n**Preauthorized Debits:**\n• Auto-debit customer accounts\n• Predictable cash flow\n• No collection effort"
+        },
+        {
+          "title": "Disbursement Techniques",
+          "type": "text",
+          "content": "**Controlled Disbursement:**\n• Bank notifies of daily clearings\n• Fund account only as needed\n• Maximize investment time\n\n**Zero-Balance Accounts:**\n• Operating accounts start at zero\n• Fund from master as checks clear\n• Concentration of funds\n\n**Remote Disbursement:**\n• Pay from distant banks\n• Extends clearing time\n• Less common now (ethics concerns)\n\n**Payment Timing:**\n• Pay on due date, not early\n• Use full payment terms\n• Consider early payment discounts"
+        },
+        {
+          "title": "Float Calculation",
+          "type": "text",
+          "content": "**Average Daily Float:**\n= Average check amount × Collection days\n\n**Annual Float Cost/Benefit:**\n= Average daily float × Interest rate\n\n**Example:**\nAverage daily collections: $100,000\nCollection float: 3 days\nInterest rate: 5%\n\nFloat = $100,000 × 3 = $300,000\nAnnual cost = $300,000 × 5% = $15,000\n\n**If lockbox reduces to 1 day:**\nNew float = $100,000 × 1 = $100,000\nSavings = ($300K - $100K) × 5% = $10,000\n\nCompare to lockbox cost to decide"
+        },
+        {
+          "title": "⚠️ Exam Trap: Electronic Payments",
+          "type": "warning",
+          "content": "**Float is shrinking with electronic payments!**\n\n**Impact:**\n• ACH/wire reduces float to near zero\n• Check usage declining\n• Real-time payments emerging\n\n**What doesn't change:**\n• Cash forecasting importance\n• Timing of payments for cash flow\n• Payment term optimization\n• Balance visibility needs\n\n**New Focus Areas:**\n• Bank fee optimization\n• Payment method selection\n• Working capital financing\n• Dynamic discounting\n\n**Understand traditional float AND modern alternatives"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Float: Time between payment initiation and fund movement",
+            "Collection float: Minimize (faster receipts)",
+            "Disbursement float: Maximize ethically (slower payments)",
+            "Components: Mail, processing, availability float",
+            "Collection tools: Lockbox, concentration banking, electronic",
+            "Disbursement: Controlled disbursement, ZBAs, timing",
+            "Electronic payments reduce traditional float opportunities"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Float Calculation",
+          "knowledgeCheck": {
+            "question": "A company collects $500,000 per day. A lockbox would reduce collection float from 4 days to 1.5 days. At 6% annual interest, what is the maximum annual cost the company should pay for the lockbox?",
+            "options": [
+              "$30,000",
+              "$45,000",
+              "$75,000",
+              "$120,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "Float reduction = 4 - 1.5 = 2.5 days. Cash freed = $500,000 × 2.5 = $1,250,000. Annual benefit = $1,250,000 × 6% = $75,000. The lockbox should cost less than $75,000 to be worthwhile.",
+            "hint": "Calculate the value of cash freed up × interest rate = maximum cost."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-023",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Working Capital Metrics",
+    "description": "Measure and optimize working capital performance",
+    "order": 23,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Working capital",
+      "Cash conversion cycle",
+      "Working capital ratios",
+      "Performance metrics"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Working capital efficiency directly impacts cash flow! CMAs track working capital metrics to identify improvement opportunities and optimize the cash tied up in operations. Even profitable companies struggle when cash is trapped in working capital."
+        },
+        {
+          "title": "Working Capital Defined",
+          "type": "text",
+          "content": "**Working Capital:**\nCurrent Assets - Current Liabilities\n\n**Operating Working Capital:**\n(Receivables + Inventory) - Payables\n\n**What It Represents:**\n• Cash invested in operations\n• Funds needed to bridge cash cycle\n• Day-to-day liquidity\n\n**Goal:**\n• Minimize without hurting operations\n• Balance liquidity and profitability\n• Free up cash for other uses\n\n**Key Insight:**\nWorking capital is an investment - it should earn a return!"
+        },
+        {
+          "title": "Cash Conversion Cycle",
+          "type": "table",
+          "headers": [
+            "Metric",
+            "Formula",
+            "Goal"
+          ],
+          "rows": [
+            [
+              "DIO",
+              "(Inventory / COGS) × 365",
+              "Lower"
+            ],
+            [
+              "DSO",
+              "(Receivables / Revenue) × 365",
+              "Lower"
+            ],
+            [
+              "DPO",
+              "(Payables / COGS) × 365",
+              "Higher*"
+            ],
+            [
+              "CCC",
+              "DIO + DSO - DPO",
+              "Lower"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Cash Conversion Cycle",
+          "type": "callout",
+          "content": "**CCC = DIO + DSO - DPO**\n\n**Think of it as:**\n1. Buy inventory (clock starts)\n2. Hold inventory (DIO days)\n3. Sell on credit (DSO more days)\n4. Minus: Time before paying supplier (DPO)\n\n**Example:**\n• DIO: 45 days (inventory sitting)\n• DSO: 35 days (waiting for customer)\n• DPO: 30 days (before paying supplier)\n\nCCC = 45 + 35 - 30 = **50 days**\n\nCash is tied up for 50 days!\n\n**Optimization Target:**\n• Reduce inventory (lower DIO)\n• Collect faster (lower DSO)\n• Negotiate terms (higher DPO)"
+        },
+        {
+          "title": "Key Working Capital Ratios",
+          "type": "text",
+          "content": "**Liquidity Ratios:**\n• Current Ratio = CA / CL (benchmark: 1.5-2.0)\n• Quick Ratio = (CA - Inventory) / CL (benchmark: 1.0)\n• Cash Ratio = Cash / CL\n\n**Activity Ratios:**\n• Inventory Turnover = COGS / Avg Inventory\n• Receivables Turnover = Revenue / Avg A/R\n• Payables Turnover = COGS / Avg A/P\n\n**Conversion:**\nDays = 365 / Turnover Ratio\n\n**Industry Comparison:**\n• Benchmarks vary by industry\n• Compare to peers\n• Track trends over time"
+        },
+        {
+          "title": "Working Capital Optimization",
+          "type": "text",
+          "content": "**Receivables:**\n• Credit policy optimization\n• Early payment discounts\n• Collection process\n• Factoring/securitization\n\n**Inventory:**\n• Demand forecasting\n• JIT/lean practices\n• Safety stock optimization\n• SKU rationalization\n\n**Payables:**\n• Negotiate better terms\n• Don't pay early (unless discount)\n• Supply chain financing\n• Payment term optimization\n\n**Balance:**\n• Don't stretch suppliers to damage relationships\n• Don't reduce inventory to harm service\n• Don't tighten credit to lose customers"
+        },
+        {
+          "title": "⚠️ Exam Trap: CCC Calculation",
+          "type": "warning",
+          "content": "**Watch the denominators!**\n\n**DIO and DPO:**\nUse COGS in denominator\n(Related to inventory/purchasing)\n\n**DSO:**\nUse Revenue in denominator\n(Related to sales)\n\n**Average vs Ending:**\n• Preferred: Average balances\n• Sometimes given: Ending balances\n• Read carefully what's provided\n\n**Negative CCC:**\n• Possible! (e.g., Dell, Amazon)\n• Collect from customers before paying suppliers\n• Very efficient but rare"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Working capital = Current assets - Current liabilities",
+            "CCC = DIO + DSO - DPO (days cash is tied up)",
+            "DIO/DPO: Use COGS; DSO: Use Revenue",
+            "Lower CCC = Less cash invested in operations",
+            "Current ratio benchmark: 1.5-2.0; Quick ratio: 1.0",
+            "Optimization: Balance efficiency with operational needs",
+            "Track trends and compare to industry peers"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Conversion Cycle",
+          "knowledgeCheck": {
+            "question": "A company has: Inventory $200K, COGS $730K, A/R $150K, Revenue $1,095K, A/P $100K. What is the cash conversion cycle?",
+            "options": [
+              "50 days",
+              "100 days",
+              "150 days",
+              "50 days"
+            ],
+            "correctIndex": 0,
+            "explanation": "DIO = ($200K / $730K) × 365 = 100 days. DSO = ($150K / $1,095K) × 365 = 50 days. DPO = ($100K / $730K) × 365 = 50 days. CCC = 100 + 50 - 50 = 100 days. Cash is tied up for 100 days.",
+            "hint": "DIO and DPO use COGS; DSO uses Revenue. CCC = DIO + DSO - DPO."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-024",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Accounts Receivable Management",
+    "description": "Optimize receivables through credit policy and collection management",
+    "order": 24,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Accounts receivable",
+      "Credit policy",
+      "Collection management",
+      "Receivables financing"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Receivables are a major investment - often 15-25% of assets! CMAs balance the sales benefits of offering credit against the costs of financing and bad debts. Effective A/R management directly improves cash flow and profitability."
+        },
+        {
+          "title": "Credit Policy Components",
+          "type": "text",
+          "content": "**Credit Standards:**\n• Who qualifies for credit?\n• Credit scoring/analysis\n• Tighter = fewer bad debts, maybe fewer sales\n\n**Credit Terms:**\n• Net 30, 2/10 net 30, etc.\n• Payment timing and discounts\n\n**Collection Policy:**\n• How aggressively pursue collection?\n• Follow-up procedures\n• When to use collection agency?\n\n**Trade-off:**\nLiberal credit → More sales but more bad debts and financing\nTight credit → Fewer sales but less risk"
+        },
+        {
+          "title": "Credit Analysis (5 C's)",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Evaluation",
+            "Sources"
+          ],
+          "rows": [
+            [
+              "Character",
+              "Willingness to pay",
+              "Credit history"
+            ],
+            [
+              "Capacity",
+              "Ability to pay",
+              "Cash flow, ratios"
+            ],
+            [
+              "Capital",
+              "Net worth cushion",
+              "Balance sheet"
+            ],
+            [
+              "Collateral",
+              "Security available",
+              "Assets pledged"
+            ],
+            [
+              "Conditions",
+              "Economic environment",
+              "Industry trends"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Credit Terms",
+          "type": "callout",
+          "content": "**Understanding Credit Terms:**\n\n**'2/10 net 30' means:**\n• 2% discount if paid within 10 days\n• Otherwise full amount due in 30 days\n\n**Cost of Not Taking Discount:**\n\nFormula:\n(Discount % / 100 - Discount %) × (365 / Days lost)\n\n**Example:**\n2/10 net 30\n• Discount: 2%\n• Days lost: 30 - 10 = 20 days\n• Cost: (2/98) × (365/20) = **37.2% annually!**\n\n**Decision:**\nCompare to borrowing cost - usually take discount!"
+        },
+        {
+          "title": "Receivables Metrics",
+          "type": "text",
+          "content": "**Days Sales Outstanding (DSO):**\n= (Accounts Receivable / Credit Sales) × 365\n• Shows average collection period\n• Compare to credit terms\n\n**Accounts Receivable Turnover:**\n= Credit Sales / Average A/R\n• How often A/R turns over\n• Higher = faster collection\n\n**Aging Schedule:**\n• Breakdown by days outstanding\n• Current, 30-60, 60-90, >90\n• Identifies collection issues\n\n**Bad Debt Expense:**\n• % of sales method\n• Aging analysis method"
+        },
+        {
+          "title": "Receivables Financing",
+          "type": "text",
+          "content": "**Factoring:**\n• Sell receivables to factor\n• Immediate cash (less discount)\n• Factor bears collection risk (without recourse)\n• Or you keep risk (with recourse)\n\n**Asset-Based Lending:**\n• Borrow against A/R as collateral\n• Typically 70-80% advance rate\n• You still collect\n\n**Securitization:**\n• Package and sell as securities\n• Off-balance sheet (if qualified)\n• Larger companies\n\n**Trade-offs:**\n• Cost vs speed of cash\n• Control vs convenience"
+        },
+        {
+          "title": "⚠️ Exam Trap: Credit Policy Changes",
+          "type": "warning",
+          "content": "**Analyzing Credit Policy Changes:**\n\n**Compare incremental benefits vs costs:**\n\n**Benefits:**\n• Increased sales contribution margin\n• Reduced financing cost (if tightening)\n\n**Costs:**\n• Increased bad debt expense\n• Increased financing cost (A/R investment)\n• Collection costs\n\n**Required Calculation:**\nΔ Profit = Δ CM - Δ Bad debts - Δ Financing cost\n\n**Key Variables:**\n• Current sales and expected change\n• Contribution margin %\n• Bad debt % (old vs new)\n• DSO (old vs new)\n• Cost of capital"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Credit policy: Standards, terms, collection procedures",
+            "5 C's: Character, Capacity, Capital, Collateral, Conditions",
+            "2/10 net 30: 2% discount if paid in 10 days, else due in 30",
+            "Cost of not taking discount = often 30%+ annually!",
+            "DSO: Average collection period; compare to credit terms",
+            "Factoring: Sell receivables for immediate cash",
+            "Evaluate credit changes: Δ CM vs Δ bad debts + Δ financing"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Credit Terms",
+          "knowledgeCheck": {
+            "question": "Credit terms are 3/15 net 45. What is the approximate annual cost of not taking the discount?",
+            "options": [
+              "12.2%",
+              "24.4%",
+              "37.6%",
+              "43.8%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cost = (Discount / 100 - Discount) × (365 / Days lost) = (3/97) × (365/30) = 0.0309 × 12.17 = 37.6%. Days lost = 45 - 15 = 30 days. This represents the annualized cost of forgoing the discount.",
+            "hint": "Formula: (Discount% / (100-Discount%)) × (365 / Extra days)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-025",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Cash Management Strategies",
+    "description": "Optimize cash position and liquidity",
+    "order": 25,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Cash management",
+      "Liquidity",
+      "Cash forecasting",
+      "Bank relations"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Cash is king - companies fail from lack of cash, not lack of profits! CMAs manage cash positions, forecast needs, and optimize liquidity. Effective cash management reduces borrowing costs and ensures the company can meet obligations. This is a core treasury function."
+        },
+        {
+          "title": "Cash Management Objectives",
+          "type": "text",
+          "content": "**Primary Goals:**\n• Ensure sufficient liquidity\n• Minimize idle cash\n• Maximize return on excess cash\n• Minimize borrowing costs\n\n**Balance Required:**\n• Too much cash: Opportunity cost\n• Too little cash: Liquidity risk, penalties\n\n**Key Activities:**\n• Cash forecasting\n• Collections management\n• Disbursements management\n• Short-term investing\n• Short-term borrowing\n• Bank relationship management"
+        },
+        {
+          "title": "Cash Flow Categories",
+          "type": "table",
+          "headers": [
+            "Category",
+            "Inflows",
+            "Outflows"
+          ],
+          "rows": [
+            [
+              "Operating",
+              "Customer collections",
+              "Supplier payments, payroll"
+            ],
+            [
+              "Investing",
+              "Asset sales",
+              "Capital expenditures"
+            ],
+            [
+              "Financing",
+              "Borrowings, equity",
+              "Debt repayment, dividends"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Cash Forecasting",
+          "type": "callout",
+          "content": "**Forecasting Approaches:**\n\n**Receipts and Disbursements:**\n• Detailed, short-term\n• Daily/weekly cash flows\n• Collection patterns\n• Payment schedules\n\n**Adjusted Net Income:**\n• Start with projected income\n• Adjust for non-cash items\n• Adjust for timing differences\n• More appropriate for longer term\n\n**Key Collection Variables:**\n• Credit terms offered\n• Customer payment patterns\n• Collection effort effectiveness\n\n**Example:**\nSales: 30% cash, 40% collected M+1, 25% M+2, 5% bad debt"
+        },
+        {
+          "title": "Collections Acceleration",
+          "type": "text",
+          "content": "**Reduce Mailing Float:**\n• Lockbox system\n• Electronic payments\n• Regional collection centers\n\n**Reduce Processing Float:**\n• Automated processing\n• Remote deposit capture\n• Same-day processing\n\n**Reduce Availability Float:**\n• Concentrate funds quickly\n• Choose banks with fast clearing\n• Electronic transfers\n\n**Credit Management:**\n• Evaluate customer creditworthiness\n• Offer discounts for early payment\n• Follow up on overdue accounts\n• Balance sales vs bad debt risk"
+        },
+        {
+          "title": "Disbursement Management",
+          "type": "text",
+          "content": "**Timing:**\n• Pay on due date (not early)\n• Take discounts if beneficial\n• Use appropriate payment methods\n\n**Controlled Disbursement:**\n• Know exact daily disbursement\n• Minimize excess balances\n• Fund accounts precisely\n\n**Centralized Payables:**\n• Consolidate payments\n• Better control and visibility\n• Negotiate better terms\n\n**Electronic Payments:**\n• ACH, wire transfers\n• Predictable timing\n• Audit trail\n• Reduced check fraud"
+        },
+        {
+          "title": "⚠️ Exam Trap: Cash Discount Decisions",
+          "type": "warning",
+          "content": "**Should You Take the Discount?**\n\n**Terms: 2/10, n/30**\n• 2% discount if pay in 10 days\n• Full amount due in 30 days\n• Giving up discount = 20 days extra\n\n**Cost of Not Taking Discount:**\n= (Discount % / (100 - Discount %)) × (365 / Days difference)\n= (2 / 98) × (365 / 20)\n= 0.0204 × 18.25\n= 37.2% annual cost!\n\n**Decision:**\n• If borrowing cost < 37.2%, TAKE discount\n• Borrow to pay early\n\n**Common Error:**\nCalculating discount as simple 2% instead of annualized rate"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Cash management balances liquidity and return",
+            "Too much cash = opportunity cost; too little = risk",
+            "Forecast using receipts/disbursements or adjusted income",
+            "Accelerate collections: Lockboxes, electronic, early discount",
+            "Control disbursements: Pay on time, take discounts, centralize",
+            "Cash discounts have high annualized cost if not taken",
+            "Compare discount cost to borrowing costs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Cash Management",
+          "knowledgeCheck": {
+            "question": "Terms are 1/10, n/40. What is the approximate annualized cost of not taking the discount?",
+            "options": [
+              "1.00%",
+              "12.17%",
+              "12.29%",
+              "36.87%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Cost = (1/99) × (365/30) = 0.0101 × 12.17 = 12.29%. Not taking the 1% discount costs about 12.3% annually. If you can borrow at less than 12.3%, you should take the discount.",
+            "hint": "Use the formula: (Discount/(100-Discount)) × (365/Days difference)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-026",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Short-Term Financing Options",
+    "description": "Understand sources of short-term borrowing",
+    "order": 26,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Short-term financing",
+      "Lines of credit",
+      "Commercial paper",
+      "Trade credit"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Companies need short-term financing to bridge timing gaps! CMAs evaluate financing options, calculate costs, and recommend optimal sources. Understanding short-term financing is essential for working capital management and liquidity planning."
+        },
+        {
+          "title": "Short-Term Financing Sources",
+          "type": "text",
+          "content": "**Spontaneous Sources:**\n• **Trade credit:** Extended by suppliers\n• **Accruals:** Wages, taxes payable\n• Automatic, no formal arrangement\n\n**Negotiated Sources:**\n• **Bank loans:** Short-term borrowing\n• **Lines of credit:** Pre-arranged borrowing\n• **Commercial paper:** Market-based\n• **Factoring:** Selling receivables\n• Requires formal arrangement\n\n**Secured vs Unsecured:**\n• Secured: Backed by collateral (A/R, inventory)\n• Unsecured: Based on creditworthiness"
+        },
+        {
+          "title": "Short-Term Financing Comparison",
+          "type": "table",
+          "headers": [
+            "Source",
+            "Pros",
+            "Cons"
+          ],
+          "rows": [
+            [
+              "Trade Credit",
+              "Easy, no formal process",
+              "Expensive if discount missed"
+            ],
+            [
+              "Bank Line",
+              "Flexible, relationship",
+              "Commitment fees, covenants"
+            ],
+            [
+              "Commercial Paper",
+              "Low cost for quality issuers",
+              "Only for creditworthy firms"
+            ],
+            [
+              "Factoring",
+              "Quick, improves ratios",
+              "Expensive, customer relations"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Bank Borrowing",
+          "type": "callout",
+          "content": "**Types of Bank Financing:**\n\n**Single Loan:**\n• One-time borrowing\n• Fixed amount, fixed term\n\n**Line of Credit:**\n• Maximum borrowing limit\n• Borrow as needed up to limit\n• Uncommitted: Bank can refuse\n• Committed: Bank must lend (for fee)\n\n**Revolving Credit:**\n• Like committed line\n• Longer term (multi-year)\n• Pay commitment fee on unused\n\n**Cost Components:**\n• Interest rate\n• Commitment fee (on unused)\n• Compensating balance requirement\n• All affect effective rate!"
+        },
+        {
+          "title": "Compensating Balance",
+          "type": "text",
+          "content": "**Definition:**\nMinimum balance required in bank account\nReduces usable funds from loan\n\n**Effective Rate Impact:**\n\nEffective rate = Interest / Net proceeds\n\n**Example:**\n• Borrow $100,000 at 8%\n• 20% compensating balance\n• Interest = $8,000\n• Usable funds = $80,000\n\nEffective rate = $8,000 / $80,000 = 10%\n\n**If You Already Keep Balance:**\nCompensating balance may not be incremental cost\nOnly calculate on ADDITIONAL funds tied up"
+        },
+        {
+          "title": "Commercial Paper",
+          "type": "text",
+          "content": "**Definition:**\nUnsecured promissory note\nShort-term (1-270 days typically)\nIssued by large, creditworthy corporations\n\n**Characteristics:**\n• Sold at discount\n• Low interest rate (below prime)\n• Not backed by collateral\n• Rated by agencies\n\n**Cost calculation (discount basis):**\nEffective rate = (Discount / Proceeds) × (360 / Days)\n\n**Example:**\n• $1M face value, 60 days\n• Discount = $10,000\n• Proceeds = $990,000\n\nRate = ($10,000 / $990,000) × (360/60) = 6.06%"
+        },
+        {
+          "title": "⚠️ Exam Trap: Effective Interest Rates",
+          "type": "warning",
+          "content": "**Common Adjustments:**\n\n**Discount Interest:**\nInterest deducted upfront\nEffective rate = Interest / (Principal - Interest)\n• HIGHER than stated rate\n\n**Compensating Balance:**\nEffective rate = Interest / (Principal - Balance required)\n• HIGHER than stated rate\n\n**Both Together:**\nEffective rate = Interest / (Principal - Interest - Balance)\n\n**Common Mistake:**\nUsing face value as denominator\n\n**Remember:**\nDenominator = USABLE funds\nNumerator = ACTUAL interest paid"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Spontaneous: Trade credit, accruals (automatic)",
+            "Negotiated: Bank loans, lines, commercial paper, factoring",
+            "Line of credit: Borrow up to limit as needed",
+            "Compensating balance raises effective rate",
+            "Discount interest raises effective rate",
+            "Commercial paper: Low cost, creditworthy issuers only",
+            "Effective rate = Interest / Usable proceeds"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Short-Term Financing",
+          "knowledgeCheck": {
+            "question": "A company borrows $500,000 at 9% for one year with a 10% compensating balance. What is the effective interest rate?",
+            "options": [
+              "9.0%",
+              "9.5%",
+              "10.0%",
+              "19.0%"
+            ],
+            "correctIndex": 2,
+            "explanation": "Interest = $500,000 × 9% = $45,000. Compensating balance = $500,000 × 10% = $50,000. Usable funds = $500,000 - $50,000 = $450,000. Effective rate = $45,000 / $450,000 = 10.0%.",
+            "hint": "Calculate interest, then divide by usable funds."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-027",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Inventory Management and EOQ",
+    "description": "Optimize inventory levels and ordering decisions",
+    "order": 27,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Inventory management",
+      "EOQ",
+      "Reorder point",
+      "Safety stock"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Inventory ties up significant capital! CMAs analyze inventory costs to minimize total cost while maintaining service levels. Understanding EOQ, reorder points, and safety stock is essential for working capital optimization. This is heavily tested on the CMA exam."
+        },
+        {
+          "title": "Inventory Costs",
+          "type": "text",
+          "content": "**Carrying (Holding) Costs:**\n• Storage and warehousing\n• Insurance\n• Obsolescence/spoilage\n• Opportunity cost of capital\n• Handling costs\n\n**Ordering Costs:**\n• Purchase order processing\n• Receiving and inspection\n• Shipping charges\n• Communications\n\n**Stockout Costs:**\n• Lost sales\n• Customer dissatisfaction\n• Production disruption\n• Expediting costs\n\n**Goal:** Minimize TOTAL cost"
+        },
+        {
+          "title": "EOQ Model",
+          "type": "table",
+          "headers": [
+            "Variable",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "D",
+              "Annual demand (units)"
+            ],
+            [
+              "S (or O)",
+              "Ordering cost per order"
+            ],
+            [
+              "H (or C)",
+              "Holding cost per unit per year"
+            ],
+            [
+              "EOQ",
+              "√(2DS/H)"
+            ],
+            [
+              "Number of Orders",
+              "D / EOQ"
+            ],
+            [
+              "Total Cost",
+              "(D/Q)×S + (Q/2)×H"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: EOQ Formula",
+          "type": "callout",
+          "content": "**Economic Order Quantity:**\n\n**EOQ = √(2DS / H)**\n\nWhere:\n• D = Annual demand\n• S = Cost per order (Setup)\n• H = Holding cost per unit per year\n\n**Example:**\n• D = 10,000 units/year\n• S = $50 per order\n• H = $2 per unit per year\n\n**EOQ = √(2 × 10,000 × 50 / 2)**\n     = √(500,000)\n     = 707 units\n\n**Orders per year:** 10,000 / 707 = 14.1\n**Average inventory:** 707 / 2 = 354 units\n\n**Remember:** EOQ balances ordering and holding costs"
+        },
+        {
+          "title": "Reorder Point and Safety Stock",
+          "type": "text",
+          "content": "**Reorder Point (ROP):**\nWhen to place an order\n\n**Basic ROP (no safety stock):**\nROP = Lead time demand\nROP = Daily demand × Lead time days\n\n**With Safety Stock:**\nROP = Lead time demand + Safety stock\n\n**Safety Stock:**\n• Buffer against uncertainty\n• Demand variability\n• Lead time variability\n• Higher service level = More safety stock\n\n**Example:**\n• Daily demand: 100 units\n• Lead time: 5 days\n• Safety stock: 200 units\n• ROP = (100 × 5) + 200 = 700 units"
+        },
+        {
+          "title": "EOQ Assumptions and Limitations",
+          "type": "text",
+          "content": "**EOQ Assumes:**\n• Constant demand rate\n• Fixed ordering cost\n• Fixed holding cost\n• Instantaneous replenishment\n• No quantity discounts\n• No stockouts\n\n**Real World Issues:**\n• Demand varies\n• Quantity discounts may exist\n• Lead time varies\n• Costs may not be linear\n\n**Extensions:**\n• EOQ with quantity discounts\n• Production EOQ (gradual replenishment)\n• Stochastic models (uncertain demand)"
+        },
+        {
+          "title": "⚠️ Exam Trap: EOQ Changes",
+          "type": "warning",
+          "content": "**How Changes Affect EOQ:**\n\n**If Demand (D) Increases:**\n• EOQ increases (√D)\n• But not proportionally\n• Double D → EOQ × 1.41\n\n**If Ordering Cost (S) Increases:**\n• EOQ increases\n• Order more per order (fewer orders)\n\n**If Holding Cost (H) Increases:**\n• EOQ decreases\n• Order less per order (more orders)\n\n**Common Exam Questions:**\n• Calculate EOQ\n• Calculate total cost at EOQ\n• What happens if variable changes?\n• Calculate reorder point\n\n**Remember:**\nAt EOQ: Ordering cost = Holding cost\nTotal cost minimized"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "EOQ = √(2DS/H) - minimizes total inventory cost",
+            "Ordering costs decrease with larger orders",
+            "Holding costs increase with larger orders",
+            "At EOQ: Order cost = Holding cost",
+            "ROP = Lead time demand + Safety stock",
+            "Safety stock protects against uncertainty",
+            "EOQ assumes constant demand and costs"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "EOQ",
+          "knowledgeCheck": {
+            "question": "Annual demand is 8,000 units, ordering cost is $100 per order, and holding cost is $4 per unit per year. What is the EOQ?",
+            "options": [
+              "200 units",
+              "400 units",
+              "632 units",
+              "800 units"
+            ],
+            "correctIndex": 2,
+            "explanation": "EOQ = √(2DS/H) = √(2 × 8,000 × 100 / 4) = √(400,000) = 632.5 ≈ 632 units. This order quantity minimizes total inventory costs.",
+            "hint": "Use the EOQ formula: √(2DS/H)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-028",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Factoring and Accounts Receivable Financing",
+    "description": "Monetize receivables for improved cash flow",
+    "order": 28,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Factoring",
+      "A/R financing",
+      "Asset-based lending",
+      "Working capital"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Need cash but have receivables tied up? Factoring and A/R financing convert future collections into immediate funds. CMAs evaluate these options to optimize working capital and compare costs to other financing sources."
+        },
+        {
+          "title": "A/R Financing Options",
+          "type": "text",
+          "content": "**Three Main Approaches:**\n\n**1. Pledging (Secured Loan):**\n• A/R as collateral for loan\n• Company still collects\n• Company retains risk\n• Customers unaware\n\n**2. Factoring (Assignment):**\n• Sell A/R to factor\n• Factor collects from customers\n• Customers notified\n• With or without recourse\n\n**3. Securitization:**\n• Package A/R into securities\n• Sell to investors\n• Used by large companies\n• Complex structure"
+        },
+        {
+          "title": "Factoring Comparison",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "With Recourse",
+            "Without Recourse"
+          ],
+          "rows": [
+            [
+              "Bad debt risk",
+              "Seller retains",
+              "Factor assumes"
+            ],
+            [
+              "Cost",
+              "Lower fee",
+              "Higher fee"
+            ],
+            [
+              "Accounting",
+              "May be borrowing",
+              "Usually a sale"
+            ],
+            [
+              "Balance sheet",
+              "May keep A/R",
+              "Remove A/R"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Factoring Terms",
+          "type": "callout",
+          "content": "**Key Factoring Concepts:**\n\n**Factor:** Financial institution buying receivables\n\n**Advance Rate:** % paid upfront (typically 80-90%)\n• Get $80K upfront on $100K receivables\n• Remainder when collected minus fees\n\n**Factoring Fee:** Cost of the service (1-5%)\n• Based on credit risk, industry, terms\n\n**Reserve/Holdback:** Amount retained until collection\n• Protects factor against returns, disputes\n\n**Notification:** Whether customers know\n• Notification: Factor collects directly\n• Non-notification: Company still collects\n\n**Recourse:** Who bears bad debt risk\n• With recourse: Seller takes back bad debts\n• Without: Factor absorbs losses"
+        },
+        {
+          "title": "Calculating Factoring Cost",
+          "type": "text",
+          "content": "**Example:**\n$100,000 receivables factored\nAdvance rate: 85%\nFactoring fee: 3%\nCollection period: 30 days\n\n**Immediate Cash:**\n$100,000 × 85% = $85,000\n\n**Factoring Fee:**\n$100,000 × 3% = $3,000\n\n**Net After Collection:**\n$100,000 - $3,000 = $97,000\nLess advance: - $85,000\nReceive later: $12,000\n\n**Annual Cost:**\n$3,000 / $85,000 = 3.53%\nAnnualized: 3.53% × (365/30) = 43%\n\n**Compare to:** Bank line of credit, other financing"
+        },
+        {
+          "title": "Benefits and Drawbacks",
+          "type": "text",
+          "content": "**Benefits:**\n• Immediate cash access\n• No additional debt on balance sheet (if sale)\n• Outsource collections\n• Credit expertise of factor\n• Scales with sales\n\n**Drawbacks:**\n• Can be expensive\n• Customer relationships (notification)\n• May signal financial weakness\n• Dependence on factor\n• Recourse liability\n\n**Best Suited For:**\n• Fast-growing companies\n• Seasonal businesses\n• Limited credit history\n• B2B with creditworthy customers"
+        },
+        {
+          "title": "⚠️ Exam Trap: Sale vs Borrowing",
+          "type": "warning",
+          "content": "**Accounting Treatment:**\n\n**Sale Treatment (Remove A/R):**\n• Transfer risks and rewards\n• Surrender control\n• No continuing involvement\n• Without recourse typically qualifies\n\n**Borrowing Treatment (Keep A/R):**\n• Recourse provisions\n• Retained servicing\n• Repurchase agreements\n• Record A/R and liability\n\n**Key Question:**\nWho bears the risk of bad debts?\n• Factor = Sale\n• Seller = Borrowing\n\n**Exam Tip:**\nWith recourse often treated as secured borrowing\nWithout recourse usually treated as sale"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Factoring: Sell receivables to factor for immediate cash",
+            "With recourse: Seller retains bad debt risk (cheaper)",
+            "Without recourse: Factor assumes risk (costlier)",
+            "Advance rate: % received upfront (80-90%)",
+            "Annualize factoring cost to compare alternatives",
+            "Sale vs borrowing depends on risk transfer",
+            "Good for fast growth, seasonal, limited credit"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Factoring",
+          "knowledgeCheck": {
+            "question": "A company factors $200,000 of receivables without recourse at 2% fee with 90% advance rate. How much cash is received immediately?",
+            "options": [
+              "$200,000",
+              "$196,000",
+              "$180,000",
+              "$176,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "Immediate cash = $200,000 × 90% advance rate = $180,000. The 2% fee ($4,000) is deducted from the holdback amount, not the advance. After collection, the company receives: $200,000 - $180,000 advance - $4,000 fee = $16,000.",
+            "hint": "The advance rate determines immediate cash; fees are typically deducted later."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CMA2-B-029",
+    "courseId": "cma",
+    "section": "CMA2",
+    "title": "Lines of Credit and Bank Financing",
+    "description": "Structure and manage bank credit facilities",
+    "order": 29,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Lines of credit",
+      "Bank loans",
+      "Credit facilities",
+      "Debt covenants"
+    ],
+    "blueprintArea": "CMA2-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters for Management Accountants",
+          "type": "callout",
+          "content": "Bank financing is a core funding source! CMAs help negotiate credit facilities, monitor covenants, and ensure compliance. Understanding bank financing structures is essential for treasury and working capital management."
+        },
+        {
+          "title": "Types of Bank Financing",
+          "type": "text",
+          "content": "**Short-Term Options:**\n• **Line of Credit:** Pre-approved borrowing limit\n• **Revolving Credit:** Borrow, repay, re-borrow\n• **Commercial Paper:** For large, creditworthy companies\n• **Banker's Acceptance:** Trade finance\n\n**Term Loans:**\n• Fixed amount, fixed term\n• Regular principal + interest payments\n• 1-7 years typically\n• Can be secured or unsecured\n\n**Asset-Based Lending:**\n• Secured by A/R, inventory, equipment\n• Borrowing base determined by collateral\n• Higher monitoring, more flexibility"
+        },
+        {
+          "title": "Line of Credit Features",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Uncommitted",
+            "Committed"
+          ],
+          "rows": [
+            [
+              "Bank obligation",
+              "None - can refuse",
+              "Must lend up to limit"
+            ],
+            [
+              "Typical term",
+              "Review annually",
+              "1-5 years"
+            ],
+            [
+              "Commitment fee",
+              "Usually none",
+              "0.25-0.50% on unused"
+            ],
+            [
+              "Cost",
+              "Lower (more risk)",
+              "Higher (guaranteed)"
+            ],
+            [
+              "Best for",
+              "Backup liquidity",
+              "Primary working capital"
+            ]
+          ]
+        },
+        {
+          "title": "🧠 Memory Aid: Credit Facility Costs",
+          "type": "callout",
+          "content": "**Total Cost of Credit Facility:**\n\n**Interest Cost:**\n• Prime + spread OR SOFR + spread\n• Applied to borrowed amount\n• May have floor rate\n\n**Commitment Fee:**\n• Fee on UNUSED portion of committed line\n• Typically 0.25-0.50%\n• Pays for guaranteed availability\n\n**Facility Fee:**\n• Fee on TOTAL line (used + unused)\n• Less common\n\n**Example:**\n$10M committed line\nBorrowed: $4M at 6%\nUnused: $6M at 0.5% commitment fee\n\nInterest: $4M × 6% = $240K\nCommitment: $6M × 0.5% = $30K\nTotal cost: $270K"
+        },
+        {
+          "title": "Debt Covenants",
+          "type": "text",
+          "content": "**What are Covenants?**\n• Promises borrower makes to lender\n• Protect lender's interests\n• Restrict borrower actions\n• Violation = default\n\n**Affirmative Covenants (Must Do):**\n• Provide financial statements\n• Maintain insurance\n• Pay taxes\n• Maintain assets\n\n**Negative Covenants (Can't Do):**\n• Limitations on additional debt\n• Restrictions on dividends\n• Limits on asset sales\n• Restrictions on M&A\n\n**Financial Covenants:**\n• Maintain minimum ratios\n• Debt-to-EBITDA, interest coverage\n• Current ratio, net worth"
+        },
+        {
+          "title": "Managing Covenant Compliance",
+          "type": "text",
+          "content": "**CMA Role:**\n• Monitor covenant ratios monthly\n• Forecast future compliance\n• Alert management to potential issues\n• Negotiate covenant structure\n\n**Covenant Violation Consequences:**\n• Technical default\n• Loan acceleration possible\n• Higher interest rate\n• Additional restrictions\n• Amendment fee\n\n**Prevention Strategies:**\n• Build adequate cushion in ratios\n• Negotiate realistic covenants upfront\n• Model scenarios in forecasts\n• Communicate early with lenders"
+        },
+        {
+          "title": "⚠️ Exam Trap: Effective Interest Rate",
+          "type": "warning",
+          "content": "**Watch for Compensating Balances:**\n\n**Compensating Balance:**\n• Minimum deposit required at bank\n• Reduces usable funds\n• Increases effective interest rate\n\n**Example:**\n$100,000 loan at 6%\n10% compensating balance required\n\nUsable funds: $100K - $10K = $90K\nInterest cost: $100K × 6% = $6K\n\nEffective rate: $6K / $90K = 6.67%\n\n**With Commitment Fee:**\n$100K line, use $60K\n6% interest, 0.5% commitment on unused\n\nInterest: $60K × 6% = $3,600\nCommitment: $40K × 0.5% = $200\nTotal: $3,800\nEffective rate on borrowed: $3,800 / $60K = 6.33%"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Line of credit: Pre-approved borrowing limit",
+            "Uncommitted: Bank can refuse; Committed: Guaranteed",
+            "Commitment fee: Cost of unused portion",
+            "Covenants: Affirmative (must do), Negative (can't do), Financial (ratios)",
+            "Covenant violation = technical default",
+            "Compensating balances increase effective rate",
+            "CMAs monitor compliance and forecast covenant risk"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Bank Financing",
+          "knowledgeCheck": {
+            "question": "A company has a $5 million committed line of credit with 0.4% commitment fee on unused amounts. If the company borrows $3 million, what is the annual commitment fee?",
+            "options": [
+              "$20,000",
+              "$12,000",
+              "$8,000",
+              "$2,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "Commitment fee is charged on the UNUSED portion. Unused = $5M - $3M = $2M. Commitment fee = $2M × 0.4% = $8,000 per year.",
+            "hint": "Calculate the unused portion first, then apply the fee percentage."
+          }
+        }
+      ]
+    }
   }
 ]

@@ -30,6 +30,7 @@ import {
   Zap,
   Home,
   GraduationCap,
+  Settings2,
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useStudy } from '../../hooks/useStudy';
@@ -59,6 +60,10 @@ import { useToast } from '../common/Toast';
 // Question status filter options (like Becker)
 type QuestionStatus = 'all' | 'unanswered' | 'incorrect' | 'correct';
 
+// Explanation display preference
+type ExplanationMode = 'auto' | 'always-show' | 'always-hide';
+const EXPLANATION_MODE_KEY = 'voraprep_explanation_mode';
+
 interface SessionConfig {
   section: ExamSection;
   mode: 'study' | 'timed' | 'exam' | 'weak';
@@ -72,7 +77,8 @@ interface SessionConfig {
 }
 
 interface AnswerState {
-  selected: number;
+  selected: number;          // Original index (for review/whyWrong lookup)
+  shuffledSelected?: number; // Shuffled index (for in-session UI highlighting)
   correct: boolean;
   time: number;
 }
@@ -351,6 +357,8 @@ const SessionResults: React.FC<SessionResultsProps> = ({
 }) => {
   const navigate = useNavigate();
   const { course } = useCourse();
+  const [reviewExpanded, setReviewExpanded] = useState(false);
+  const [expandedReviewQ, setExpandedReviewQ] = useState<string | null>(null);
   
   // Calculate results
   const answeredCount = Object.keys(answers).length;
@@ -471,6 +479,114 @@ const SessionResults: React.FC<SessionResultsProps> = ({
                 </span>
               ))}
             </div>
+          </Card>
+        )}
+        
+        {/* Review Wrong Answers — UWorld-style question-by-question review */}
+        {wrongQuestions.length > 0 && (
+          <Card className="mb-6 border border-slate-200 dark:border-slate-700">
+            <button
+              onClick={() => setReviewExpanded(!reviewExpanded)}
+              className="w-full flex items-center justify-between"
+            >
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-red-500" />
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+                  Review Wrong Answers ({wrongQuestions.length})
+                </h3>
+              </div>
+              <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${reviewExpanded ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {reviewExpanded && (
+              <div className="mt-4 space-y-3">
+                {wrongQuestions.map((q, idx) => {
+                  const isOpen = expandedReviewQ === q.id;
+                  const userAnswer = answers[q.id]?.selected;
+                  return (
+                    <div key={q.id} className="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+                      <button
+                        onClick={() => setExpandedReviewQ(isOpen ? null : q.id)}
+                        className="w-full p-3 flex items-start gap-3 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                      >
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 flex items-center justify-center text-xs font-bold">
+                          {idx + 1}
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-sm text-slate-900 dark:text-slate-100 line-clamp-2">{q.question}</p>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-xs text-slate-500 dark:text-slate-400">{q.topic}</span>
+                            {q.difficulty && (
+                              <span className={`text-xs px-1.5 py-0.5 rounded-full ${
+                                q.difficulty === 'easy' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' :
+                                q.difficulty === 'hard' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300' :
+                                'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'
+                              }`}>{q.difficulty}</span>
+                            )}
+                          </div>
+                        </div>
+                        <ChevronDown className={`w-4 h-4 text-slate-400 flex-shrink-0 mt-1 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      
+                      {isOpen && (
+                        <div className="px-3 pb-3 space-y-2 border-t border-slate-100 dark:border-slate-700 pt-3">
+                          {/* Show all options with correct/wrong indicators */}
+                          <div className="space-y-1.5">
+                            {q.options.map((opt, oi) => (
+                              <div key={oi} className={clsx(
+                                'flex items-start gap-2 p-2 rounded-lg text-sm',
+                                oi === q.correctAnswer && 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800',
+                                oi === userAnswer && oi !== q.correctAnswer && 'bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800',
+                                oi !== q.correctAnswer && oi !== userAnswer && 'text-slate-500 dark:text-slate-400'
+                              )}>
+                                <span className="font-bold flex-shrink-0 w-5">
+                                  {oi === q.correctAnswer ? <CheckCircle className="w-4 h-4 text-green-600" /> :
+                                   oi === userAnswer ? <XCircle className="w-4 h-4 text-red-500" /> :
+                                   <span className="text-slate-400">{String.fromCharCode(65 + oi)}.</span>}
+                                </span>
+                                <span className={clsx(
+                                  oi === q.correctAnswer && 'text-green-800 dark:text-green-300 font-medium',
+                                  oi === userAnswer && oi !== q.correctAnswer && 'text-red-800 dark:text-red-300'
+                                )}>{opt}</span>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          {/* Explanation */}
+                          <div className="p-2.5 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+                            <div className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                              <FormattedExplanation text={q.explanation} />
+                            </div>
+                          </div>
+                          
+                          {/* Why the user's answer was wrong */}
+                          {userAnswer !== undefined && q.whyWrong?.[userAnswer] && (
+                            <div className="p-2.5 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
+                              <p className="text-xs font-semibold text-red-700 dark:text-red-300 mb-1">
+                                Why {String.fromCharCode(65 + userAnswer)} is wrong:
+                              </p>
+                              <div className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                <FormattedExplanation text={q.whyWrong[userAnswer]} />
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Memory Aid if available */}
+                          {q.memoryAid && (
+                            <div className="p-2.5 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
+                              <div className="flex items-start gap-1.5">
+                                <Brain className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                                <p className="text-xs text-slate-700 dark:text-slate-300">{q.memoryAid}</p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </Card>
         )}
         
@@ -616,6 +732,7 @@ const Practice: React.FC = () => {
   const subtopicParam = searchParams.get('subtopic'); // Specific topic from lesson
   const topicParam = searchParams.get('topic'); // Section/topic from daily plan (e.g., CIA1)
   const countParam = searchParams.get('count'); // Question count from URL
+  const urlSection = searchParams.get('section'); // Section from URL - used for activity completion tracking
 
   // Session state
   const [sessionConfig, setSessionConfig] = useState<SessionConfig | null>(null);
@@ -648,6 +765,18 @@ const Practice: React.FC = () => {
   // Explanation UI state
   const [showWhyWrong, setShowWhyWrong] = useState(false);  // Collapsed by default
   const [explanationExpanded, setExplanationExpanded] = useState(false); // Collapsed for fast drilling
+  const [explanationMode, setExplanationMode] = useState<ExplanationMode>(() => {
+    const saved = localStorage.getItem(EXPLANATION_MODE_KEY);
+    return (saved as ExplanationMode) || 'auto';
+  });
+  const [showExplanationModeMenu, setShowExplanationModeMenu] = useState(false);
+
+  // Save explanation mode preference
+  const updateExplanationMode = useCallback((mode: ExplanationMode) => {
+    setExplanationMode(mode);
+    localStorage.setItem(EXPLANATION_MODE_KEY, mode);
+    setShowExplanationModeMenu(false);
+  }, []);
   
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
@@ -1238,15 +1367,29 @@ const Practice: React.FC = () => {
       feedback.haptic('error');
     }
 
+    // Convert shuffled selection to original index for review/analytics
+    const originalSelectedIndex = shuffledQuestion.shuffleMap[selectedAnswer];
+    
     setAnswers((prev) => ({
       ...prev,
       [currentQuestion.id]: {
-        selected: selectedAnswer,  // Store shuffled index for UI consistency
+        selected: originalSelectedIndex,     // Original index for review/whyWrong
+        shuffledSelected: selectedAnswer,    // Shuffled index for in-session UI
         correct: isCorrect,
         time: elapsed,
       },
     }));
     setShowExplanation(true);
+    // Respect user's explanation mode preference
+    if (explanationMode === 'always-show') {
+      setExplanationExpanded(true);
+    } else if (explanationMode === 'always-hide') {
+      setExplanationExpanded(false);
+    } else {
+      // Auto mode: expand on incorrect, collapse on correct
+      setExplanationExpanded(!isCorrect);
+    }
+    setShowWhyWrong(!isCorrect);
 
     // Record in study provider using ORIGINAL answer index for accurate analytics
     if (recordMCQAnswer) {
@@ -1265,10 +1408,13 @@ const Practice: React.FC = () => {
   // Navigation
   const goToQuestion = useCallback((index: number) => {
     setCurrentIndex(index);
-    setSelectedAnswer(answers[questions[index]?.id]?.selected ?? null);
-    setShowExplanation(answers[questions[index]?.id] !== undefined);
-    setShowWhyWrong(false); // Collapse why-wrong section for new question
-    setExplanationExpanded(false); // Collapse explanation for fast drilling
+    // Use shuffledSelected for UI (it's the display index user clicked)
+    const prevAns = answers[questions[index]?.id];
+    setSelectedAnswer(prevAns?.shuffledSelected ?? prevAns?.selected ?? null);
+    setShowExplanation(prevAns !== undefined);
+    // When navigating to a previously answered question, auto-expand if it was wrong
+    setShowWhyWrong(prevAns ? !prevAns.correct : false);
+    setExplanationExpanded(!!prevAnswer);
     
     // Blur any focused element first - prevents mobile browsers from auto-scrolling to focused buttons
     if (document.activeElement instanceof HTMLElement) {
@@ -1440,11 +1586,13 @@ const Practice: React.FC = () => {
     sessionEndedRef.current = true;
     
     // Mark daily plan activity complete if applicable
+    // Use section from URL first (matches the activity's plan), fall back to profile
+    const activitySection = urlSection || userProfile?.examSection || getDefaultSection(courseId);
     if (fromDailyPlan && activityId && user?.uid) {
       markActivityCompleted(
         user.uid,
         activityId,
-        userProfile?.examSection || getDefaultSection(courseId),
+        activitySection,
         undefined,
         undefined,
         courseId
@@ -1483,13 +1631,15 @@ const Practice: React.FC = () => {
   };
   
   // Auto-complete daily plan activity when results are shown
+  // Use section from URL first (matches the activity's plan), fall back to profile
+  const resultSectionForCompletion = urlSection || userProfile?.examSection || getDefaultSection(courseId);
   useEffect(() => {
     if (showResults && fromDailyPlan && activityId && user?.uid) {
       // Mark the activity complete via the persistent service
       markActivityCompleted(
         user.uid,
         activityId,
-        userProfile?.examSection || getDefaultSection(courseId),
+        resultSectionForCompletion,
         undefined,
         undefined,
         courseId
@@ -1506,7 +1656,7 @@ const Practice: React.FC = () => {
         }
       } catch { /* ignore */ }
     }
-  }, [showResults, fromDailyPlan, activityId, user?.uid, userProfile?.examSection, courseId]);
+  }, [showResults, fromDailyPlan, activityId, user?.uid, resultSectionForCompletion, courseId]);
 
   // Back to daily plan (marks activity complete)
   const handleBackToDailyPlan = () => {
@@ -1857,6 +2007,50 @@ const Practice: React.FC = () => {
                 <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${explanationExpanded ? 'rotate-180' : ''}`} />
               </div>
             </button>
+            
+            {/* Explanation Mode Preference Toggle */}
+            <div className="relative px-3 pb-2 flex justify-end border-b border-slate-100 dark:border-slate-700">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowExplanationModeMenu(!showExplanationModeMenu);
+                }}
+                className="flex items-center gap-1 text-xs text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
+                title="Explanation display preference"
+              >
+                <Settings2 className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">
+                  {explanationMode === 'auto' ? 'Auto' : explanationMode === 'always-show' ? 'Always Show' : 'Always Hide'}
+                </span>
+              </button>
+              
+              {showExplanationModeMenu && (
+                <div className="absolute right-0 top-full mt-1 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 py-1 z-20 min-w-[140px]">
+                  <button
+                    onClick={() => updateExplanationMode('auto')}
+                    className={`w-full px-3 py-1.5 text-left text-xs flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 ${explanationMode === 'auto' ? 'text-primary-600 dark:text-primary-400 font-medium' : 'text-slate-700 dark:text-slate-300'}`}
+                  >
+                    {explanationMode === 'auto' && <CheckCircle className="w-3 h-3" />}
+                    <span className={explanationMode === 'auto' ? '' : 'ml-5'}>Auto</span>
+                    <span className="text-slate-400 dark:text-slate-500 ml-auto">Wrong only</span>
+                  </button>
+                  <button
+                    onClick={() => updateExplanationMode('always-show')}
+                    className={`w-full px-3 py-1.5 text-left text-xs flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 ${explanationMode === 'always-show' ? 'text-primary-600 dark:text-primary-400 font-medium' : 'text-slate-700 dark:text-slate-300'}`}
+                  >
+                    {explanationMode === 'always-show' && <CheckCircle className="w-3 h-3" />}
+                    <span className={explanationMode === 'always-show' ? '' : 'ml-5'}>Always Show</span>
+                  </button>
+                  <button
+                    onClick={() => updateExplanationMode('always-hide')}
+                    className={`w-full px-3 py-1.5 text-left text-xs flex items-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-700 ${explanationMode === 'always-hide' ? 'text-primary-600 dark:text-primary-400 font-medium' : 'text-slate-700 dark:text-slate-300'}`}
+                  >
+                    {explanationMode === 'always-hide' && <CheckCircle className="w-3 h-3" />}
+                    <span className={explanationMode === 'always-hide' ? '' : 'ml-5'}>Always Hide</span>
+                  </button>
+                </div>
+              )}
+            </div>
 
             {/* Expanded Explanation Details */}
             {explanationExpanded && (

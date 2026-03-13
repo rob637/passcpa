@@ -6,7 +6,7 @@
  * without needing to know about specific courses.
  */
 
-import { Home, BookOpen, User, Compass, Target, LucideIcon, FileText, Map } from 'lucide-react';
+import { Home, User, Compass, LucideIcon, FileText, Map } from 'lucide-react';
 import { CourseId } from '../types/course';
 
 export type NavType = 'home' | 'learn' | 'practice' | 'you' | 'strategy' | 'exam' | 'study-plan';

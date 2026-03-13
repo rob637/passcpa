@@ -74,11 +74,21 @@ export async function fetchLessonsBySection(section: string, courseId: CourseId 
     
     const upperSection = section.toUpperCase();
     
+    // Full-exam courses (CFP, CISA): when querying by course code, return all lessons
+    // These courses have subsections (CFP-GEN, CISA1) but study plans use the course code
+    const isFullExamQuery = (courseId === 'cfp' && upperSection === 'CFP') ||
+                            (courseId === 'cisa' && upperSection === 'CISA');
+    if (isFullExamQuery) {
+      return lessons.sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+    
     // Filter by section, domain (CFP uses domain instead of section), or blueprintArea prefix
+    // Also match if lesson's section starts with the requested section (e.g., CFP-GEN starts with CFP)
     const filtered = lessons.filter(lesson => {
       const l = lesson as Lesson & { domain?: string };
       return (
         l.section?.toUpperCase() === upperSection ||
+        l.section?.toUpperCase().startsWith(upperSection + '-') ||
         l.domain?.toUpperCase() === upperSection ||
         l.blueprintArea?.toUpperCase().startsWith(upperSection)
       );

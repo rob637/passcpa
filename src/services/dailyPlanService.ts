@@ -1561,6 +1561,14 @@ export const generateDailyPlan = async (
     alreadyAddedLessonIds.add(nextLesson.id);
   }
   
+  // DEBUG: Log final lesson count after while loop
+  logger.info('After lesson loop', {
+    lessonsAdded,
+    dailyLessonCap,
+    remainingMinutes,
+    activitiesWithLessons: activities.filter(a => a.type === 'lesson').length,
+  });
+  
   // 5. MEDIUM: TBS practice (critical - 50% of CPA exam!)\n  // Phase gate: simulations only in building/reinforcement/finalReview phases\n  // Skip TBS entirely for courses that don't have it (EA, CMA, etc.)
   const courseConfig = getCourse(courseId);
   const courseHasTBS = courseConfig?.hasTBS ?? false;

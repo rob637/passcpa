@@ -233,6 +233,16 @@ async function getStudyPlanContext(
     const weekLessons = lessons.slice(startIndex, endIndex);
     const weekLessonIds = weekLessons.map(l => l.id);
     
+    // Pull-ahead: Calculate next week's lessons for users who finish early
+    let nextWeekLessonIds: string[] = [];
+    const nextWeek = plan.weeks.find(w => w.weekNumber === currentWeek.weekNumber + 1);
+    if (nextWeek && nextWeek.goals.lessons > 0) {
+      const nextStartIndex = endIndex;
+      const nextEndIndex = Math.min(nextStartIndex + nextWeek.goals.lessons, totalLessons);
+      nextWeekLessonIds = lessons.slice(nextStartIndex, nextEndIndex).map(l => l.id);
+      logger.info(`Pull-ahead: ${nextWeekLessonIds.length} lessons available from week ${nextWeek.weekNumber}`);
+    }
+    
     // Fetch completed lessons from user's lesson progress collection
     let completedLessonIds: string[] = [];
     try {
@@ -269,6 +279,7 @@ async function getStudyPlanContext(
       weekEndDate: typeof currentWeek.endDate === 'string' 
         ? currentWeek.endDate 
         : currentWeek.endDate.toISOString(),
+      nextWeekLessonIds,
     };
   } catch (err) {
     logger.warn(`Could not fetch study plan context for ${userId}/${courseId}/${section}:`, err);

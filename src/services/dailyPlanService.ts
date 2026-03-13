@@ -236,6 +236,8 @@ export interface StudyPlanContext {
   weekStartDate?: string;
   /** End date of current week (ISO string) - used for catch-up calculations */
   weekEndDate?: string;
+  /** Next week's lesson IDs for pull-ahead when current week is complete */
+  nextWeekLessonIds?: string[];
 }
 
 // ============================================================================
@@ -1171,6 +1173,26 @@ export const generateDailyPlan = async (
           }
         }
       }
+      
+      // PULL-AHEAD: If all current week lessons are done, pull from next week
+      if (!bestLesson && state.studyPlanContext.nextWeekLessonIds?.length) {
+        for (const lessonId of state.studyPlanContext.nextWeekLessonIds) {
+          if (!completedSet.has(lessonId)) {
+            const progress = state.lessonProgress[lessonId] || 0;
+            if (progress < 100) {
+              bestLesson = lessons.find(l => l.id === lessonId);
+              if (bestLesson) {
+                logger.info('Pull-ahead: using lesson from next week', { 
+                  lessonId, 
+                  currentWeek: state.studyPlanContext.currentWeek,
+                  nextWeek: state.studyPlanContext.currentWeek + 1
+                });
+                break;
+              }
+            }
+          }
+        }
+      }
     }
     
     // Fallback: Try to find a lesson that covers the weak topic
@@ -1189,8 +1211,11 @@ export const generateDailyPlan = async (
     }
     
     // Track if lesson was found via study plan or topic match
-    const lessonFromStudyPlan = state.studyPlanContext && 
+    const lessonFromCurrentWeek = state.studyPlanContext && 
       state.studyPlanContext.weekLessonIds.includes(bestLesson?.id || '');
+    const lessonFromNextWeek = state.studyPlanContext && 
+      state.studyPlanContext.nextWeekLessonIds?.includes(bestLesson?.id || '');
+    const lessonFromStudyPlan = lessonFromCurrentWeek || lessonFromNextWeek;
     const lessonMatchedWeakTopic = !lessonFromStudyPlan && !!bestLesson;
     
     // Fallback to incomplete or next unstarted lesson
@@ -1213,21 +1238,25 @@ export const generateDailyPlan = async (
         title: isIncomplete ? `Continue: ${bestLesson.title}` : `Learn: ${bestLesson.title}`,
         description: isIncomplete 
           ? `${progress}% complete - pick up where you left off`
-          : lessonFromStudyPlan
-            ? `Week ${state.studyPlanContext?.currentWeek} lesson from your study plan`
-            : lessonMatchedWeakTopic 
-              ? `Related to your weak area: ${weakestTopic}`
-              : 'New material to expand your knowledge',
+          : lessonFromNextWeek
+            ? `Getting ahead — Week ${(state.studyPlanContext?.currentWeek || 0) + 1} lesson`
+            : lessonFromCurrentWeek
+              ? `Week ${state.studyPlanContext?.currentWeek} lesson from your study plan`
+              : lessonMatchedWeakTopic 
+                ? `Related to your weak area: ${weakestTopic}`
+                : 'New material to expand your knowledge',
         estimatedMinutes: isIncomplete 
           ? Math.round((bestLesson.duration || 30) * (1 - progress / 100))
           : bestLesson.duration || getDuration('lesson_medium', 'lesson', pd),
         points: POINT_VALUES.lesson_medium,
         priority: lessonFromStudyPlan ? 'high' : 'medium',
-        reason: lessonFromStudyPlan
-          ? `Study plan: Week ${state.studyPlanContext?.currentWeek} assignment`
-          : lessonMatchedWeakTopic 
-            ? `Interleaved learning: lesson on ${weakestTopic} to reinforce practice`
-            : 'Interleaved learning: mixing content with practice improves retention',
+        reason: lessonFromNextWeek
+          ? `Ahead of schedule! Starting Week ${(state.studyPlanContext?.currentWeek || 0) + 1} early`
+          : lessonFromCurrentWeek
+            ? `Study plan: Week ${state.studyPlanContext?.currentWeek} assignment`
+            : lessonMatchedWeakTopic 
+              ? `Interleaved learning: lesson on ${weakestTopic} to reinforce practice`
+              : 'Interleaved learning: mixing content with practice improves retention',
         params: {
           lessonId: bestLesson.id,
           section: state.section,
@@ -1441,6 +1470,7 @@ export const generateDailyPlan = async (
   // Build a prioritised list of candidate lessons from the study plan
   const spCompletedSet = new Set(spCtx?.completedLessonIds || []);
   const planCandidateLessons: typeof lessons = [];
+  
   if (spCtx && spCtx.weekLessonIds.length > 0) {
     for (const lid of spCtx.weekLessonIds) {
       if (alreadyAddedLessonIds.has(lid)) continue;
@@ -1449,6 +1479,24 @@ export const generateDailyPlan = async (
       if (progress >= 100) continue;
       const l = lessons.find(x => x.id === lid);
       if (l) planCandidateLessons.push(l);
+    }
+    
+    // PULL-AHEAD: If current week's lessons are all done, add next week's lessons
+    if (planCandidateLessons.length === 0 && spCtx.nextWeekLessonIds?.length) {
+      for (const lid of spCtx.nextWeekLessonIds) {
+        if (alreadyAddedLessonIds.has(lid)) continue;
+        if (spCompletedSet.has(lid)) continue;
+        const progress = state.lessonProgress[lid] || 0;
+        if (progress >= 100) continue;
+        const l = lessons.find(x => x.id === lid);
+        if (l) planCandidateLessons.push(l);
+      }
+      if (planCandidateLessons.length > 0) {
+        logger.info('Pull-ahead: serving next week lessons', {
+          currentWeek: spCtx.currentWeek,
+          nextWeekLessonsAvailable: planCandidateLessons.length,
+        });
+      }
     }
   }
 
@@ -1473,7 +1521,9 @@ export const generateDailyPlan = async (
   // Always allow continuing incomplete lessons (even in exam week)
   if (incompleteLesson && remainingMinutes >= 15 && lessonsAdded < dailyLessonCap) {
     const progress = state.lessonProgress[incompleteLesson.id] || 0;
-    const fromPlan = spCtx?.weekLessonIds.includes(incompleteLesson.id);
+    const fromCurrentWeek = spCtx?.weekLessonIds.includes(incompleteLesson.id);
+    const fromNextWeek = spCtx?.nextWeekLessonIds?.includes(incompleteLesson.id);
+    const fromPlan = fromCurrentWeek || fromNextWeek;
     activities.push({
       id: `lesson-${incompleteLesson.id}`,
       type: 'lesson',
@@ -1482,9 +1532,11 @@ export const generateDailyPlan = async (
       estimatedMinutes: Math.round((incompleteLesson.duration || 30) * (1 - progress / 100)),
       points: POINT_VALUES.lesson_medium,
       priority: fromPlan ? 'high' : 'medium',
-      reason: fromPlan
-        ? `Study plan: Week ${spCtx?.currentWeek} — finish what you started`
-        : 'Finish what you started for better retention',
+      reason: fromNextWeek
+        ? `Ahead of schedule! Getting a head start on Week ${(spCtx?.currentWeek || 0) + 1}`
+        : fromCurrentWeek
+          ? `Study plan: Week ${spCtx?.currentWeek} — finish what you started`
+          : 'Finish what you started for better retention',
       params: {
         lessonId: incompleteLesson.id,
         section: state.section,
@@ -1494,20 +1546,26 @@ export const generateDailyPlan = async (
     lessonsAdded++;
     alreadyAddedLessonIds.add(incompleteLesson.id);
   } else if (unstartedLesson && remainingMinutes >= 15 && lessonsAdded < dailyLessonCap) {
-    const fromPlan = spCtx?.weekLessonIds.includes(unstartedLesson.id);
+    const fromCurrentWeek = spCtx?.weekLessonIds.includes(unstartedLesson.id);
+    const fromNextWeek = spCtx?.nextWeekLessonIds?.includes(unstartedLesson.id);
+    const fromPlan = fromCurrentWeek || fromNextWeek;
     activities.push({
       id: `lesson-${unstartedLesson.id}`,
       type: 'lesson',
       title: `Learn: ${unstartedLesson.title}`,
-      description: fromPlan
-        ? `Week ${spCtx?.currentWeek} lesson from your study plan`
-        : 'New material to expand your knowledge',
+      description: fromNextWeek
+        ? `Getting ahead — Week ${(spCtx?.currentWeek || 0) + 1} lesson`
+        : fromCurrentWeek
+          ? `Week ${spCtx?.currentWeek} lesson from your study plan`
+          : 'New material to expand your knowledge',
       estimatedMinutes: unstartedLesson.duration || getDuration('lesson_medium', 'lesson', pd),
       points: POINT_VALUES.lesson_medium,
       priority: fromPlan ? 'high' : 'medium',
-      reason: fromPlan
-        ? `Study plan: Week ${spCtx?.currentWeek} assignment`
-        : 'New content - keep progressing through the material',
+      reason: fromNextWeek
+        ? `Ahead of schedule! Starting Week ${(spCtx?.currentWeek || 0) + 1} early`
+        : fromCurrentWeek
+          ? `Study plan: Week ${spCtx?.currentWeek} assignment`
+          : 'New content - keep progressing through the material',
       params: {
         lessonId: unstartedLesson.id,
         section: state.section,
@@ -1534,24 +1592,30 @@ export const generateDailyPlan = async (
     if (!nextLesson) break;
     const progress = state.lessonProgress[nextLesson.id] || 0;
     const isIncomplete = progress > 0 && progress < 100;
-    const fromPlan = spCtx?.weekLessonIds.includes(nextLesson.id);
+    const fromCurrentWeek = spCtx?.weekLessonIds.includes(nextLesson.id);
+    const fromNextWeek = spCtx?.nextWeekLessonIds?.includes(nextLesson.id);
+    const fromPlan = fromCurrentWeek || fromNextWeek;
     activities.push({
       id: `lesson-${nextLesson.id}`,
       type: 'lesson',
       title: isIncomplete ? `Continue: ${nextLesson.title}` : `Learn: ${nextLesson.title}`,
       description: isIncomplete
         ? `${progress}% complete - pick up where you left off`
-        : fromPlan
-          ? `Week ${spCtx?.currentWeek} lesson`
-          : 'Build your knowledge base',
+        : fromNextWeek
+          ? `Getting ahead — Week ${(spCtx?.currentWeek || 0) + 1} lesson`
+          : fromCurrentWeek
+            ? `Week ${spCtx?.currentWeek} lesson`
+            : 'Build your knowledge base',
       estimatedMinutes: isIncomplete
         ? Math.round((nextLesson.duration || 30) * (1 - progress / 100))
         : nextLesson.duration || getDuration('lesson_medium', 'lesson', pd),
       points: POINT_VALUES.lesson_medium,
       priority: fromPlan ? 'high' : 'medium',
-      reason: fromPlan
-        ? `Study plan: Week ${spCtx?.currentWeek} assignment`
-        : `${phase} phase: keep progressing (${phaseReason})`,
+      reason: fromNextWeek
+        ? `Ahead of schedule! Starting Week ${(spCtx?.currentWeek || 0) + 1} early`
+        : fromCurrentWeek
+          ? `Study plan: Week ${spCtx?.currentWeek} assignment`
+          : `${phase} phase: keep progressing (${phaseReason})`,
       params: {
         lessonId: nextLesson.id,
         section: state.section,

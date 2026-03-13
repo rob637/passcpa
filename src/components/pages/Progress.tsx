@@ -185,7 +185,14 @@ const Progress: React.FC = () => {
           !l.section || l.section === currentSection || isSingleExamCourse
         );
         const completedLessons = Object.values(lessonProgress || {})
-          .filter((l: any) => l.status === 'completed' && (isSingleExamCourse || l.section === currentSection)).length;
+          .filter((l: any) => {
+            if (l.status !== 'completed') return false;
+            // Always filter by courseId to avoid cross-course pollution
+            if (l.courseId && l.courseId !== courseId) return false;
+            // For multi-section courses, also filter by section
+            if (!isSingleExamCourse && l.section && l.section !== currentSection) return false;
+            return true;
+          }).length;
 
         // Get TBS history for this course (EA doesn't have TBS)
         let tbsCompleted = 0;

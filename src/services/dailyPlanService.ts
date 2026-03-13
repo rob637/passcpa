@@ -977,7 +977,11 @@ export const generateDailyPlan = async (
     : null;
 
   // Rest day detection (streak fatigue, post-mock recovery, burnout signals)
-  const restDay = detectRestDay(state.currentStreak, weeklyGaps, phase);
+  // SKIP when study plan exists — user just committed to a schedule, don't
+  // punish them for past inactivity. The study plan is their fresh start.
+  const restDay = state.studyPlanContext 
+    ? { isRestDay: false, reason: '', volumeMultiplier: 1 }
+    : detectRestDay(state.currentStreak, weeklyGaps, phase);
   if (restDay.isRestDay) {
     // Scale plan volume down for rest/light days
     remainingMinutes = Math.round(remainingMinutes * restDay.volumeMultiplier);

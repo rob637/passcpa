@@ -104,6 +104,7 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
   const [missingExamDate, setMissingExamDate] = useState(false);
   const [pastExamDate, setPastExamDate] = useState(false);
+  const [nextLesson, setNextLesson] = useState<{ id: string; title: string } | null>(null);
   
   // Use refs for volatile values that shouldn't trigger plan regeneration
   // Stats and dailyProgress change frequently (after every activity), but the
@@ -283,6 +284,24 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       setPlan(persistedPlan);
       setCompletedActivities(new Set(persistedPlan.completedActivities || []));
       setHasCarryover(!!persistedPlan.carryoverFrom);
+      
+      // Compute next lesson for "Keep going" pull-ahead
+      // Find first incomplete lesson from all available lessons
+      try {
+        const allLessons = await fetchLessonsBySection(effectiveSection, courseId);
+        const nextUnstartedLesson = allLessons.find(l => {
+          const progress = lessonProgress[l.id] || 0;
+          return progress < 100;
+        });
+        if (nextUnstartedLesson) {
+          setNextLesson({ id: nextUnstartedLesson.id, title: nextUnstartedLesson.title });
+        } else {
+          setNextLesson(null);
+        }
+      } catch (err) {
+        logger.warn('Could not compute next lesson for pull-ahead:', err);
+        setNextLesson(null);
+      }
       
       // Also save to localStorage as fallback
       saveCompletedToStorage(new Set(persistedPlan.completedActivities || []));
@@ -829,12 +848,24 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         {completedCount === totalActivities && totalActivities > 0 && (
           <div 
             className="p-3 bg-success-50 dark:bg-success-900/20 border-t border-success-200 dark:border-success-800 cursor-pointer hover:bg-success-100 dark:hover:bg-success-900/30 transition-colors"
-            onClick={() => navigate(getCoursePracticePath(courseId))}
+            onClick={() => {
+              if (nextLesson) {
+                // Pull-ahead: Start the next lesson
+                navigate(getCourseLessonPath(courseId, nextLesson.id));
+              } else {
+                // All lessons done, go to practice
+                navigate(getCoursePracticePath(courseId));
+              }
+            }}
           >
             <div className="flex items-center justify-center gap-2 text-sm text-success-700 dark:text-success-300">
               <CheckCircle className="w-4 h-4" />
               <span className="font-medium">All done for today! 🎉</span>
-              <span className="text-success-600 dark:text-success-400">Keep going →</span>
+              {nextLesson ? (
+                <span className="text-success-600 dark:text-success-400">Start next lesson →</span>
+              ) : (
+                <span className="text-success-600 dark:text-success-400">Keep practicing →</span>
+              )}
             </div>
           </div>
         )}

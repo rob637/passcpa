@@ -181,9 +181,10 @@ Requirements:
 1. Questions must be CPA exam quality - challenging and professional
 2. Mix difficulty levels: easy (20%), medium (50%), hard (30%)
 3. Include realistic business scenarios with company names
-4. Each question needs 4 answer options (A-D)
-5. Provide comprehensive explanations for the correct answer
-6. Explain why each wrong answer is incorrect
+4. Each question needs 4 answer options
+5. CRITICAL: Do NOT include letter prefixes (A., B., C., D.) in the options text - just the answer content
+6. Provide comprehensive explanations for the correct answer
+7. Explain why each wrong answer is incorrect
 
 Topics to cover: ${topics.join(', ')}
 Blueprint areas: ${blueprints.join(', ')}
@@ -192,7 +193,7 @@ Return ONLY a valid JSON array with this exact structure for each question:
 [
   {
     "question": "Full question text with scenario",
-    "options": ["Option A", "Option B", "Option C", "Option D"],
+    "options": ["First option text", "Second option text", "Third option text", "Fourth option text"],
     "correctAnswer": 0,
     "explanation": "Detailed explanation of why the correct answer is right",
     "difficulty": "easy|medium|hard",
@@ -233,7 +234,19 @@ Generate exactly ${count} questions. Return ONLY the JSON array, no markdown or 
       .replace(/(?<!\\)\\(?!["\\/bfnrtu])/g, '\\\\'); // Escape unescaped backslashes
     
     const questions = JSON.parse(jsonStr);
-    return questions.filter(q => 
+    
+    // Strip any letter prefixes (A., B., etc.) from options - safety net
+    const LETTER_PREFIX_REGEX = /^[A-D]\.\s+/;
+    const cleanedQuestions = questions.map(q => {
+      if (Array.isArray(q.options)) {
+        q.options = q.options.map(opt => 
+          typeof opt === 'string' ? opt.replace(LETTER_PREFIX_REGEX, '') : opt
+        );
+      }
+      return q;
+    });
+    
+    return cleanedQuestions.filter(q => 
       q.question && 
       Array.isArray(q.options) && 
       q.options.length === 4 &&

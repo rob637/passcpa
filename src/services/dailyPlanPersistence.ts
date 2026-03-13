@@ -34,6 +34,7 @@ import {
 import { db } from '../config/firebase';
 import { DailyPlan, DailyActivity, UserStudyState, RecentDaySnapshot, ActivityFeedbackRecord, ActivityFeedbackStats, generateDailyPlan, StudyPlanContext } from './dailyPlanService';
 import { fetchLessonsBySection } from './lessonService';
+import { resolveStudySection } from './contentRegistry';
 import logger from '../utils/logger';
 import type { CourseId } from '../types';
 import type { StudyPlan } from '../types/studyPlan';
@@ -101,6 +102,25 @@ async function getAdaptiveEngineData(courseId: CourseId): Promise<{ questionsDue
 }
 
 /**
+ * Quick check if a study plan exists for this user/course/section.
+ * Used to invalidate cached daily plans when a study plan was created after the cache.
+ */
+async function checkStudyPlanExists(
+  userId: string,
+  courseId: CourseId,
+  section: string
+): Promise<boolean> {
+  try {
+    const planKey = `${courseId}_${section}`.toLowerCase();
+    const planRef = doc(db, 'users', userId, 'study_plans', planKey);
+    const snapshot = await getDoc(planRef);
+    return snapshot.exists();
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Fetch the user's study plan and calculate context for the current week.
  * Returns lessons scheduled for this week so the daily plan can prioritize them.
  */
@@ -110,8 +130,10 @@ async function getStudyPlanContext(
   section: string
 ): Promise<StudyPlanContext | null> {
   try {
+    // Normalize section to match how plans are stored (uppercase)
+    const normalizedSection = resolveStudySection(courseId, section) || section.toUpperCase();
     // Fetch the study plan from Firestore
-    const planKey = `${courseId}_${section}`;
+    const planKey = `${courseId}_${normalizedSection}`;
     const planDoc = await getDoc(doc(db, 'users', userId, 'studyPlans', planKey));
     
     if (!planDoc.exists()) {
@@ -566,8 +588,20 @@ export const getOrCreateTodaysPlan = async (
   if (!forceRegenerate) {
     const existingPlan = await fetchTodaysPlan(userId, cacheSection, state.examDate);
     if (existingPlan) {
-      logger.log(`Using cached daily plan for section ${cacheSection}`);
-      return existingPlan;
+      // Check if study plan was created AFTER this cached plan was generated
+      // If user now has a study plan but the cached plan doesn't reflect it,
+      // regenerate to include proper weekly goals
+      const sectionForPlan = state.section || cacheSection;
+      const studyPlanExists = await checkStudyPlanExists(userId, courseId, sectionForPlan);
+      const cachedHasStudyPlan = existingPlan.whatsNext?.studyPlanWeek !== undefined;
+      
+      if (studyPlanExists && !cachedHasStudyPlan) {
+        logger.log(`Study plan exists but cached plan doesn't reflect it - regenerating`);
+        // Fall through to regenerate
+      } else {
+        logger.log(`Using cached daily plan for section ${cacheSection}`);
+        return existingPlan;
+      }
     }
   }
 

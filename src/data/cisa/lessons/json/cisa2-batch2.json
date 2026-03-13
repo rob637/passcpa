@@ -739,10 +739,10 @@
           "knowledgeCheck": {
             "question": "Which of the following is the MOST important initial step when conducting workforce planning for the IT department?",
             "options": [
-              "A. Developing detailed job descriptions for all IT positions.",
-              "B. Performing a skills inventory to identify current IT staff capabilities.",
-              "C. Forecasting the demand for IT services based on business objectives.",
-              "D. Establishing a vendor/contractor strategy to supplement internal resources."
+              "Developing detailed job descriptions for all IT positions.",
+              "Performing a skills inventory to identify current IT staff capabilities.",
+              "Forecasting the demand for IT services based on business objectives.",
+              "Establishing a vendor/contractor strategy to supplement internal resources."
             ],
             "correctIndex": 2,
             "explanation": "Forecasting demand (C) is the most important initial step. It determines the organization's future IT needs, which then informs skills inventory, job descriptions, and vendor strategies. Understanding the 'why' (demand) precedes the 'how' (skills, descriptions, vendors).",

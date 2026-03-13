@@ -1378,6 +1378,15 @@ export const generateDailyPlan = async (
   // goals and prefer lessons from weekLessonIds so the daily plan stays on
   // the study-plan roadmap.
   const spCtx = state.studyPlanContext;
+  
+  // DEBUG: Log study plan context state
+  logger.info('Study plan context for lesson targeting', {
+    hasSpCtx: !!spCtx,
+    weekGoals: spCtx?.weekGoals,
+    weekLessonIdsCount: spCtx?.weekLessonIds?.length || 0,
+    studyDaysPerWeek: spCtx?.studyDaysPerWeek,
+  });
+  
   const studyDaysPerWeek = spCtx?.studyDaysPerWeek
     ? spCtx.studyDaysPerWeek
     : (state.studyDayPreferences && state.studyDayPreferences.length > 0)
@@ -1504,6 +1513,16 @@ export const generateDailyPlan = async (
     lessonsAdded++;
     alreadyAddedLessonIds.add(unstartedLesson.id);
   }
+  
+  // DEBUG: Log lesson cap vs actual before while loop
+  logger.info('Lesson loop state', {
+    lessonsAdded,
+    dailyLessonCap,
+    remainingMinutes,
+    planCandidateLessonsCount: planCandidateLessons.length,
+    totalLessonsCount: lessons.length,
+    weekLessonIdsCount: spCtx?.weekLessonIds?.length || 0,
+  });
   
   // Add more lessons if daily cap permits (foundation phase or study plan demands)
   while (lessonsAdded < dailyLessonCap && remainingMinutes >= 20) {

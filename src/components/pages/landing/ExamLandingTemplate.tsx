@@ -22,8 +22,9 @@ import {
   X,
   Menu,
   Users,
+  Quote
 } from 'lucide-react';
-import { ExamLandingConfig, SHARED_WHY_VORAPREP } from './ExamLandingData';
+import { ExamLandingConfig, SHARED_WHY_VORAPREP, SHARED_TESTIMONIALS } from './ExamLandingData';
 import { isFounderPricingActive, SOCIAL_PROOF, getSocialProofText } from '../../../services/subscription';
 import { useAuth } from '../../../hooks/useAuth';
 import { useExitIntent } from '../../../hooks/useExitIntent';
@@ -35,7 +36,8 @@ interface ExamLandingTemplateProps {
 }
 
 const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
-  const [isVisible, setIsVisible] = useState(false);
+  // Hero visible immediately for better LCP - no animation delay
+  const isVisible = true;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showExitModal, setShowExitModal] = useState(false);
   const { user } = useAuth();
@@ -59,10 +61,6 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
     setShowExitModal(false);
     markAsShown();
   };
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -99,8 +97,8 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         <div className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/">
-              <img src="/logo.svg" alt="VoraPrep" className="h-8 sm:h-10 dark:hidden" />
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 sm:h-10 hidden dark:block" />
+              <img src="/logo.svg" alt="VoraPrep" width="120" height="40" fetchPriority="high" className="h-8 sm:h-10 dark:hidden" />
+              <img src="/logo-white.svg" alt="VoraPrep" width="120" height="40" fetchPriority="high" className="h-8 sm:h-10 hidden dark:block" />
             </Link>
             <span className={`hidden sm:inline ${colors.text} font-bold text-lg`}>{config.name}</span>
           </div>
@@ -267,7 +265,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
               {config.description}
               <br className="hidden md:block" />
-              <span className={`font-semibold ${colors.text}`}>AI-powered prep</span> — start your free trial today.
+              <span className={`font-semibold ${colors.text}`}>Pass on your first try</span> — start your free trial today.
             </p>
 
             {/* CTA Buttons */}
@@ -332,7 +330,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               )}
               <div className="flex items-center gap-2">
                 <Check className={`w-4 h-4 ${colors.text}`} />
-                AI-Powered Learning
+                Adaptive Learning
               </div>
             </div>
           </div>
@@ -414,9 +412,9 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                       </li>
                     )}
                   </ul>
-                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-sm text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
                     <span>Start studying {part.part}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               ))}
@@ -433,8 +431,8 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
                 Why Study with VoraPrep?
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                Modern AI-powered learning designed for {config.name} exam success.
+              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                Everything you need to pass your {config.name} exam — in one powerful platform.
               </p>
             </div>
 
@@ -518,11 +516,119 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 </table>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-4 text-center">
-                *Founding member annual rate — sign up by April 30, 2026, rate locked for 2 years. Regular annual pricing shown for competitors.
+                *Founding member annual rate — sign up by August 31, 2026, rate locked for 2 years. Regular annual pricing shown for competitors.
               </p>
             </div>
           </section>
         )}
+
+        {/* ================================================================
+            TESTIMONIALS SECTION
+            ================================================================ */}
+        <section className="py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
+          <div className="max-w-7xl mx-auto">
+             <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+                Candidates Love VoraPrep
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300">
+                Join the early adopters switching from legacy review courses.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {(config.testimonials || SHARED_TESTIMONIALS).map((testimonial, idx) => (
+                <div key={idx} className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 shadow-sm relative flex flex-col justify-between h-full">
+                  <div className="mb-6">
+                    <Quote className={`absolute top-6 right-6 w-8 h-8 ${colors.text} opacity-20`} />
+                    <p className="text-slate-700 dark:text-slate-300 italic leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 mt-auto">
+                    <div className={`w-10 h-10 rounded-full ${colors.bg} flex items-center justify-center text-white font-bold flex-shrink-0`}>
+                      {testimonial.avatar ? (
+                        <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full rounded-full" />
+                      ) : (
+                        testimonial.name.charAt(0)
+                      )}
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900 dark:text-white">{testimonial.name}</div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">{testimonial.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            FOUNDER MESSAGE SECTION (Trust builder for new users)
+            ================================================================ */}
+        <section className="py-16 px-6 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800">
+          <div className="max-w-4xl mx-auto bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-sm">
+            {/* Background decoration */}
+            <div className={`absolute top-0 right-0 w-64 h-64 ${colors.bg}/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2`} />
+            
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                    A Note from the Founders
+                  </h3>
+                  <div className="text-slate-600 dark:text-slate-300 space-y-4 leading-relaxed">
+                    <p>
+                      "When we were studying for our exams, we had two choices: pay $3,000 for a 'big name' course or use cheap, outdated materials that didn't work."
+                    </p>
+                    <p>
+                      "We built VoraPrep to be the third option: <strong className={colors.text}>Premium, AI-powered prep that's actually affordable.</strong>"
+                    </p>
+                    <p>
+                      "We don't have thousands of reviews yet because we're brand new. That's your advantage — join as a <strong>Founding Member</strong> today, lock in our lowest price forever, and get direct access to shape the platform."
+                    </p>
+                  </div>
+                  
+                  <div className="mt-8 flex items-center gap-4">
+                    <div className={`w-12 h-12 ${colors.bg} rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg`}>
+                      VP
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900 dark:text-white">The VoraPrep Team</div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400">Practitioners & Educators</div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Founder Benefit Card */}
+                <div className="w-full md:w-72 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                    <span className="text-xl">🤝</span>
+                    Founder Promise
+                  </h4>
+                  <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className={`w-4 h-4 ${colors.text} mt-0.5 flex-shrink-0`} />
+                      <span>Rate locked for 2 years</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className={`w-4 h-4 ${colors.text} mt-0.5 flex-shrink-0`} />
+                      <span>Direct email access to team</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className={`w-4 h-4 ${colors.text} mt-0.5 flex-shrink-0`} />
+                      <span>Input on new features</span>
+                    </li>
+                  </ul>
+                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 text-xs text-slate-500 text-center font-medium">
+                    Limited to first 300 users
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ================================================================
             PRICING SECTION
@@ -566,7 +672,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 mb-4" />
+              <img src="/logo-white.svg" alt="VoraPrep" width="120" height="32" className="h-8 mb-4" />
               <p className="text-slate-400 text-sm mb-4 leading-relaxed">
                 Expert-crafted exam prep for accounting and finance professionals. 
                 Built by practitioners, powered by AI.
@@ -594,7 +700,7 @@ const ExamLandingTemplate = ({ config }: ExamLandingTemplateProps) => {
                 <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><Link to="/help" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><a href="https://discord.gg/XBjzDrws" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Community (Discord)</a></li>
+                <li><a href="https://discord.gg/SNZJHr26" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Community (Discord)</a></li>
               </ul>
             </div>
             
@@ -667,7 +773,7 @@ const PricingSection = ({ config, colors }: PricingSectionProps) => {
     `${config.questionCount} practice questions`,
     `${config.lessonCount || '100+'} expert lessons`,
     config.flashcardCount ? `${config.flashcardCount} flashcards` : null,
-    'Vory AI tutor - unlimited',
+    'Vory study assistant - unlimited',
     'Adaptive engine + response-time analysis',
     'Forgetting-curve spaced repetition',
     'Task-based simulations',

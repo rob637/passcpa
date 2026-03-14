@@ -4,11 +4,12 @@
  * Based on IIA Standards and best practices
  */
 
-import { CIAFlashcard } from './index';
+import type { Flashcard } from './index';
 
-// Extended CIAFlashcard with optional mnemonic field
-interface CIAMnemonicFlashcard extends CIAFlashcard {
+// Extended Flashcard with optional mnemonic field for CIA mnemonics
+interface CIAMnemonicFlashcard extends Flashcard {
   mnemonic?: string;
+  blueprintArea?: string;
 }
 
 // ==========================================
@@ -18,6 +19,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-001',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'IIA Standards',
     subtopic: 'Three Lines Model',
@@ -30,6 +32,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-002',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'IIA Standards',
     subtopic: 'Attribute Standards',
@@ -43,6 +46,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-003',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'IIA Standards',
     subtopic: 'Performance Standards',
@@ -56,6 +60,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-004',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'QAIP',
     subtopic: 'Assessment Types',
@@ -69,6 +74,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-005',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'Independence',
     subtopic: 'Reporting Lines',
@@ -82,6 +88,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-006',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'Fraud',
     subtopic: 'Fraud Triangle',
@@ -94,6 +101,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-007',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'Risk Management',
     subtopic: 'COSO ERM',
@@ -106,6 +114,7 @@ export const CIA1_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia1-mnem-008',
     section: 'CIA1',
+    blueprintArea: 'CIA1',
     type: 'mnemonic',
     topic: 'Internal Control',
     subtopic: 'COSO Components',
@@ -124,6 +133,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-001',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Engagement Planning',
     subtopic: 'Objectives',
@@ -136,6 +146,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-002',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Work Programs',
     subtopic: 'Steps',
@@ -148,6 +159,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-003',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Evidence',
     subtopic: 'Sufficiency',
@@ -160,6 +172,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-004',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Findings',
     subtopic: 'Elements',
@@ -172,6 +185,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-005',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Communication',
     subtopic: 'Report Quality',
@@ -184,6 +198,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-006',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Risk Assessment',
     subtopic: 'Annual Planning',
@@ -196,6 +211,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-007',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Sampling',
     subtopic: 'Methods',
@@ -208,6 +224,7 @@ export const CIA2_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia2-mnem-008',
     section: 'CIA2',
+    blueprintArea: 'CIA2',
     type: 'mnemonic',
     topic: 'Documentation',
     subtopic: 'Workpapers',
@@ -226,6 +243,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-001',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'IT Governance',
     subtopic: 'COBIT',
@@ -238,6 +256,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-002',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'Financial Management',
     subtopic: 'Ratios',
@@ -250,6 +269,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-003',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'IT Security',
     subtopic: 'CIA Triad',
@@ -262,6 +282,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-004',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'Business Continuity',
     subtopic: 'Recovery Metrics',
@@ -274,6 +295,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-005',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'Change Management',
     subtopic: 'ADKAR',
@@ -286,6 +308,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-006',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'Strategy',
     subtopic: 'Porter\'s Five Forces',
@@ -298,6 +321,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-007',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'Operations',
     subtopic: 'Six Sigma',
@@ -310,6 +334,7 @@ export const CIA3_MNEMONICS: CIAMnemonicFlashcard[] = [
   {
     id: 'cia3-mnem-008',
     section: 'CIA3',
+    blueprintArea: 'CIA3',
     type: 'mnemonic',
     topic: 'IT Applications',
     subtopic: 'SDLC',

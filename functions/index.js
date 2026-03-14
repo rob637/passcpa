@@ -74,6 +74,175 @@ async function enforceRateLimit(uid, functionName, maxPerHour) {
 }
 
 // ============================================================================
+// FUNCTION STATUS TRACKING
+// Logs last run time and status to Firestore for admin dashboard visibility
+// ============================================================================
+
+/**
+ * Update the status of a scheduled function in Firestore.
+ * Called at the end of each function run to record success/failure.
+ * @param {string} functionName - Name of the function
+ * @param {string} status - 'success' | 'error' | 'skipped'
+ * @param {object} details - Additional details (optional)
+ */
+async function updateFunctionStatus(functionName, status, details = {}) {
+  try {
+    await db.collection('system_status').doc(functionName).set({
+      functionName,
+      status,
+      lastRun: admin.firestore.FieldValue.serverTimestamp(),
+      details,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+  } catch (err) {
+    // Non-critical - don't fail the function if status update fails
+    console.warn(`[StatusTracker] Failed to update status for ${functionName}:`, err.message);
+  }
+}
+
+// ============================================================================
+// COMMUNICATION TEMPLATE SYSTEM
+// Centralized email/notification templates stored in Firestore
+// ============================================================================
+
+/**
+ * Get a communication template from Firestore.
+ * Falls back to default template if not found.
+ * @param {string} templateId - Template ID (e.g., 'welcome', 'trial-expired')
+ * @returns {Promise<{subject: string, body: string, enabled: boolean}>}
+ */
+async function getTemplate(templateId) {
+  try {
+    const templateDoc = await db.collection('communication_templates').doc(templateId).get();
+    if (templateDoc.exists) {
+      const data = templateDoc.data();
+      return {
+        id: templateId,
+        subject: data.subject || '',
+        body: data.body || '',
+        enabled: data.enabled !== false, // Default to enabled
+      };
+    }
+  } catch (err) {
+    console.warn(`[Templates] Failed to fetch template ${templateId}:`, err.message);
+  }
+  // Return null to signal caller should use hardcoded fallback
+  return null;
+}
+
+/**
+ * Replace template variables with actual values.
+ * Variables use {{variableName}} syntax.
+ * @param {string} template - Template string with {{variables}}
+ * @param {object} variables - Key-value pairs for substitution
+ * @returns {string} - Processed template
+ */
+function processTemplate(template, variables) {
+  if (!template) return '';
+  let result = template;
+  for (const [key, value] of Object.entries(variables)) {
+    const regex = new RegExp(`\\{\\{${key}\\}\\}`, 'g');
+    result = result.replace(regex, value || '');
+  }
+  return result;
+}
+
+// Default templates - used when Firestore templates don't exist
+const DEFAULT_TEMPLATES = {
+  'welcome': {
+    name: 'Welcome Email',
+    type: 'email',
+    category: 'user-facing',
+    subject: 'Welcome to VoraPrep, {{displayName}}! 🎉',
+    description: 'Sent immediately after user signup',
+    variables: ['displayName', 'examName', 'courseSlug', 'appBaseUrl'],
+    functionName: 'sendWelcomeEmail',
+    enabled: true,
+  },
+  'waitlist': {
+    name: 'Mailing List Confirmation',
+    type: 'email',
+    category: 'user-facing',
+    subject: "You're on the VoraPrep mailing list! 🎯",
+    description: 'Sent when joining mailing list',
+    variables: ['email', 'appBaseUrl'],
+    functionName: 'sendWaitlistConfirmation',
+    enabled: true,
+  },
+  'weekly-report': {
+    name: 'Weekly Progress Report',
+    type: 'email',
+    category: 'user-facing',
+    subject: '📊 Your Weekly {{examName}} Study Report - {{reportDate}}',
+    description: 'Sent every Sunday 9am ET',
+    variables: ['displayName', 'examName', 'reportDate', 'weeklyStats', 'appBaseUrl'],
+    functionName: 'sendWeeklyReports',
+    enabled: true,
+  },
+  'trial-expired': {
+    name: 'Trial Expired',
+    type: 'email',
+    category: 'user-facing',
+    subject: 'Your VoraPrep trial has ended - upgrade to continue studying',
+    description: 'Sent when 14-day trial ends',
+    variables: ['displayName', 'examName', 'courseSlug', 'appBaseUrl'],
+    functionName: 'checkTrialExpirations',
+    enabled: true,
+  },
+  'trial-day-7': {
+    name: 'Trial Day 7',
+    type: 'email',
+    category: 'user-facing',
+    subject: "How's your {{examName}} prep going?",
+    description: 'Mid-trial check-in',
+    variables: ['displayName', 'examName', 'daysRemaining', 'totalQuestions', 'accuracy', 'appBaseUrl'],
+    functionName: 'sendTrialReminderEmails',
+    enabled: true,
+  },
+  'trial-day-10': {
+    name: 'Trial Day 10',
+    type: 'email',
+    category: 'user-facing',
+    subject: "Don't lose your {{examName}} study progress!",
+    description: 'Urgency reminder',
+    variables: ['displayName', 'examName', 'daysRemaining', 'totalQuestions', 'accuracy', 'appBaseUrl'],
+    functionName: 'sendTrialReminderEmails',
+    enabled: true,
+  },
+  'trial-day-13': {
+    name: 'Trial Day 13',
+    type: 'email',
+    category: 'user-facing',
+    subject: '⏰ Last day of your free trial - lock in founder pricing!',
+    description: 'Final day before expiration',
+    variables: ['displayName', 'examName', 'daysRemaining', 'totalQuestions', 'accuracy', 'appBaseUrl'],
+    functionName: 'sendTrialReminderEmails',
+    enabled: true,
+  },
+  'payment-failed': {
+    name: 'Payment Failed',
+    type: 'email',
+    category: 'user-facing',
+    subject: '⚠️ Payment Failed - Action Required',
+    description: 'Sent when Stripe payment fails',
+    variables: ['displayName', 'appBaseUrl'],
+    functionName: 'stripeWebhook',
+    enabled: true,
+  },
+  'daily-reminder': {
+    name: 'Daily Study Reminder',
+    type: 'push',
+    category: 'user-facing',
+    subject: '🎯 Time to study!',
+    body: "Don't break your streak! A quick study session awaits.",
+    description: 'Push notification at user-selected time',
+    variables: ['displayName', 'earnedPoints'],
+    functionName: 'sendDailyReminders',
+    enabled: true,
+  },
+};
+
+// ============================================================================
 // STRIPE CONFIGURATION
 // ============================================================================
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY?.trim();
@@ -93,14 +262,16 @@ function detectAppBaseUrl() {
 }
 const APP_BASE_URL = detectAppBaseUrl();
 
-// Allowed origins for Stripe redirect URLs (prevents open redirect)
+// Allowed origins for CORS and Stripe redirect URLs (prevents open redirect)
 const ALLOWED_ORIGINS = [
   'https://voraprep.com',
   'https://www.voraprep.com',
-  'https://passcpa-dev.web.app',
-  'https://passcpa-dev.firebaseapp.com',
+  'https://voraprep-prod.web.app',
+  'https://voraprep-prod.firebaseapp.com',
   'https://voraprep-staging.web.app',
   'https://voraprep-staging.firebaseapp.com',
+  'https://passcpa-dev.web.app',
+  'https://passcpa-dev.firebaseapp.com',
   'http://localhost:5173',
   'http://localhost:3000',
 ];
@@ -140,7 +311,7 @@ if (STRIPE_SECRET_KEY) {
 }
 
 // Founder pricing window - users who subscribe before this date get founder rates (~40-44% off, locked 2 years)
-const FOUNDER_DEADLINE = new Date('2026-04-30T23:59:59Z');
+const FOUNDER_DEADLINE = new Date('2026-08-31T23:59:59Z');
 
 // Price lookup keys - maps our internal keys to what we'll use in checkout
 // The lookup keys should match what you set in Stripe dashboard
@@ -259,6 +430,16 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim();
 const FROM_EMAIL = 'VoraPrep <noreply@voraprep.com>';
 // Email to receive admin notifications (e.g. new signups)
 const ADMIN_EMAIL = 'support@voraprep.com';
+
+// Generate RFC 8058 compliant List-Unsubscribe headers for marketing emails
+// Required by Gmail/Yahoo for bulk senders (>5000 emails/day) since Feb 2024
+function getMarketingEmailHeaders(userEmail) {
+  const encodedEmail = encodeURIComponent(userEmail);
+  return {
+    'List-Unsubscribe': `<https://voraprep.com/unsubscribe?email=${encodedEmail}>, <mailto:unsubscribe@voraprep.com?subject=Unsubscribe%20${encodedEmail}>`,
+    'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+  };
+}
 
 let resend = null;
 if (RESEND_API_KEY) {
@@ -669,8 +850,10 @@ exports.sendDailyReminders = onSchedule({
     }
     
     console.log(`Processed ${notifications.length} reminder notifications`);
+    await updateFunctionStatus('sendDailyReminders', 'success', { notificationsSent: notifications.length });
   } catch (error) {
     console.error('Error sending daily reminders:', error);
+    await updateFunctionStatus('sendDailyReminders', 'error', { error: error.message });
     throw error;
   }
 });
@@ -730,6 +913,7 @@ exports.sendWeeklyReports = onSchedule({
           to: userEmail,
           subject: `📊 Your Weekly ${courseConfig.name} Study Report - ${now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`,
           html: emailContent,
+          headers: getMarketingEmailHeaders(userEmail),
         });
         
         if (error) throw new Error(error.message);
@@ -821,6 +1005,7 @@ exports.sendOnboardingReminders = onSchedule({
           to: userEmail,
           subject: `⏰ Finish setting up your ${courseConfig.name.replace(' Exam', '')} study plan, ${displayName}!`,
           html: generateOnboardingReminderEmail(displayName, courseConfig),
+          headers: getMarketingEmailHeaders(userEmail),
         });
         
         if (error) throw new Error(error.message);
@@ -860,6 +1045,424 @@ exports.sendOnboardingReminders = onSchedule({
     throw error;
   }
 });
+
+// ============================================================================
+// DIAGNOSTIC QUIZ REMINDER EMAIL
+// Runs daily at 11am - sends reminder to users who completed onboarding but skipped diagnostic
+// ============================================================================
+
+exports.sendDiagnosticReminders = onSchedule({
+  schedule: 'every day 11:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 180,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+  
+  console.log('Checking for users who skipped diagnostic quiz...');
+  
+  try {
+    const now = new Date();
+    const fortyEightHoursAgo = new Date(now.getTime() - 48 * 60 * 60 * 1000);
+    const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    
+    // Find users who completed onboarding 2-7 days ago
+    const usersSnapshot = await db.collection('users')
+      .where('onboardingComplete', '==', true)
+      .where('onboardingCompletedAt', '<=', fortyEightHoursAgo)
+      .where('onboardingCompletedAt', '>=', sevenDaysAgo)
+      .get();
+    
+    console.log(`Found ${usersSnapshot.size} users who completed onboarding 2-7 days ago`);
+    
+    let sentCount = 0;
+    let skippedCount = 0;
+    let errorCount = 0;
+    
+    for (const userDoc of usersSnapshot.docs) {
+      const userData = userDoc.data();
+      
+      // Skip users who have unsubscribed
+      if (userData.emailUnsubscribed) {
+        skippedCount++;
+        continue;
+      }
+      
+      // Skip if already sent this reminder (track with flag)
+      if (userData.diagnosticReminderSent) {
+        skippedCount++;
+        continue;
+      }
+      
+      try {
+        // Check if user has any diagnostic results
+        const diagnosticSnap = await db.collection('users')
+          .doc(userDoc.id)
+          .collection('diagnosticResults')
+          .limit(1)
+          .get();
+        
+        if (!diagnosticSnap.empty) {
+          // User already took diagnostic - skip
+          skippedCount++;
+          continue;
+        }
+        
+        // Check if user has any question history (they're actively studying)
+        const questionHistorySnap = await db.collection('users')
+          .doc(userDoc.id)
+          .collection('questionHistory')
+          .limit(1)
+          .get();
+        
+        if (!questionHistorySnap.empty) {
+          // User is actively practicing - skip (they don't need diagnostic)
+          skippedCount++;
+          continue;
+        }
+        
+        // Check Firebase Auth for email verification
+        const authUser = await admin.auth().getUser(userDoc.id);
+        
+        if (!authUser.emailVerified) {
+          skippedCount++;
+          continue;
+        }
+        
+        const userEmail = authUser.email;
+        const displayName = userData.displayName || authUser.displayName || 'there';
+        
+        if (!userEmail) {
+          skippedCount++;
+          continue;
+        }
+        
+        // Get course-specific content
+        const courseConfig = getCourseConfig(userData.activeCourse);
+        
+        // Send diagnostic reminder email
+        const { error } = await resend.emails.send({
+          from: FROM_EMAIL,
+          to: userEmail,
+          subject: `📊 ${displayName}, take 5 minutes to discover your weak spots`,
+          html: generateDiagnosticReminderEmail(displayName, courseConfig),
+          headers: getMarketingEmailHeaders(userEmail),
+        });
+        
+        if (error) throw new Error(error.message);
+        
+        // Mark that we sent this reminder
+        await db.collection('users').doc(userDoc.id).update({
+          diagnosticReminderSent: true,
+          diagnosticReminderSentAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+        
+        console.log(`Sent diagnostic reminder to ${userEmail}`);
+        sentCount++;
+        
+      } catch (authError) {
+        console.error(`Error processing user ${userDoc.id}:`, authError.message);
+        errorCount++;
+      }
+    }
+    
+    console.log(`Diagnostic reminders: ${sentCount} sent, ${skippedCount} skipped, ${errorCount} errors`);
+    
+  } catch (error) {
+    console.error('Error sending diagnostic reminders:', error);
+    throw error;
+  }
+});
+
+// Diagnostic Reminder Email Template
+function generateDiagnosticReminderEmail(displayName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Weak Spots</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0;">
+        Hey ${displayName}! 🎯
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        You haven't taken the <strong>diagnostic quiz</strong> yet — and that's the key to efficient studying!
+      </p>
+      
+      <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; padding: 20px; margin: 0 0 25px 0;">
+        <h3 style="color: #0369a1; font-size: 18px; margin: 0 0 10px 0;">
+          Why take the diagnostic?
+        </h3>
+        <ul style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0; padding-left: 18px;">
+          <li><strong>5 minutes</strong> — just 15 questions</li>
+          <li><strong>Discover weak areas</strong> you didn't know you had</li>
+          <li><strong>Personalized plan</strong> based on your results</li>
+          <li><strong>No guessing</strong> — study what matters</li>
+        </ul>
+      </div>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        Students who take the diagnostic pass at <strong>2× the rate</strong> of those who skip it. Don't study blind!
+      </p>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${APP_BASE_URL}/diagnostic" style="display: inline-block; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Take 5-Minute Diagnostic →
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Find your weak spots. Study smarter. Pass the ${examName}. 💪
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - ${courseConfig.tagline}
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
+// FIRST PRACTICE REMINDER EMAIL
+// Runs daily at 2pm - sends reminder to users who took diagnostic but never practiced
+// ============================================================================
+
+exports.sendFirstPracticeReminders = onSchedule({
+  schedule: 'every day 14:00',
+  timeZone: 'America/New_York',
+  memory: '256MiB',
+  timeoutSeconds: 180,
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  if (!resend) {
+    console.error('Email not configured (set RESEND_API_KEY)');
+    return;
+  }
+  
+  console.log('Checking for users who need first practice reminder...');
+  
+  try {
+    const now = new Date();
+    const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+    const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    
+    // Find users who completed onboarding 1-7 days ago
+    const usersSnapshot = await db.collection('users')
+      .where('onboardingComplete', '==', true)
+      .where('onboardingCompletedAt', '<=', twentyFourHoursAgo)
+      .where('onboardingCompletedAt', '>=', sevenDaysAgo)
+      .get();
+    
+    console.log(`Found ${usersSnapshot.size} users completed onboarding 1-7 days ago`);
+    
+    let sentCount = 0;
+    let skippedCount = 0;
+    let errorCount = 0;
+    
+    for (const userDoc of usersSnapshot.docs) {
+      const userData = userDoc.data();
+      
+      // Skip users who have unsubscribed
+      if (userData.emailUnsubscribed) {
+        skippedCount++;
+        continue;
+      }
+      
+      // Skip if already sent this reminder
+      if (userData.firstPracticeReminderSent) {
+        skippedCount++;
+        continue;
+      }
+      
+      try {
+        // Check if user has any question history
+        const questionHistorySnap = await db.collection('users')
+          .doc(userDoc.id)
+          .collection('questionHistory')
+          .limit(1)
+          .get();
+        
+        if (!questionHistorySnap.empty) {
+          // User already started practicing - skip
+          skippedCount++;
+          continue;
+        }
+        
+        // Check Firebase Auth for email verification
+        const authUser = await admin.auth().getUser(userDoc.id);
+        
+        if (!authUser.emailVerified) {
+          skippedCount++;
+          continue;
+        }
+        
+        const userEmail = authUser.email;
+        const displayName = userData.displayName || authUser.displayName || 'there';
+        
+        if (!userEmail) {
+          skippedCount++;
+          continue;
+        }
+        
+        // Get course-specific content
+        const courseConfig = getCourseConfig(userData.activeCourse);
+        
+        // Send first practice reminder email
+        const { error } = await resend.emails.send({
+          from: FROM_EMAIL,
+          to: userEmail,
+          subject: `⚡ ${displayName}, your first 10 questions are waiting`,
+          html: generateFirstPracticeReminderEmail(displayName, courseConfig),
+          headers: getMarketingEmailHeaders(userEmail),
+        });
+        
+        if (error) throw new Error(error.message);
+        
+        // Mark that we sent this reminder
+        await db.collection('users').doc(userDoc.id).update({
+          firstPracticeReminderSent: true,
+          firstPracticeReminderSentAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+        
+        console.log(`Sent first practice reminder to ${userEmail}`);
+        sentCount++;
+        
+      } catch (authError) {
+        console.error(`Error processing user ${userDoc.id}:`, authError.message);
+        errorCount++;
+      }
+    }
+    
+    console.log(`First practice reminders: ${sentCount} sent, ${skippedCount} skipped, ${errorCount} errors`);
+    
+  } catch (error) {
+    console.error('Error sending first practice reminders:', error);
+    throw error;
+  }
+});
+
+// First Practice Reminder Email Template
+function generateFirstPracticeReminderEmail(displayName, courseConfig = getCourseConfig('cpa')) {
+  const examName = courseConfig.name.replace(' Exam', '');
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Practicing Today</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 15px 0;">
+        Hey ${displayName}! ⚡
+      </h1>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        You set up your study plan, but you haven't answered any practice questions yet!
+      </p>
+      
+      <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 20px; margin: 0 0 25px 0; text-align: center;">
+        <p style="color: #92400e; font-size: 28px; font-weight: 700; margin: 0;">
+          10 questions = 5 minutes
+        </p>
+        <p style="color: #b45309; font-size: 14px; margin: 10px 0 0 0;">
+          That's all it takes to build momentum
+        </p>
+      </div>
+      
+      <p style="color: #475569; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+        The <strong>${examName}</strong> has thousands of concepts to master. The key to passing? <strong>Daily practice</strong> — even just 10 questions a day compounds over time.
+      </p>
+      
+      <ul style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0 0 25px 0; padding-left: 20px;">
+        <li>✅ Each session adapts to your weak areas</li>
+        <li>✅ Instant AI explanations when you're stuck</li>
+        <li>✅ Build a study streak for motivation</li>
+      </ul>
+      
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${APP_BASE_URL}/practice" style="display: inline-block; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px;">
+          Start My First 10 Questions →
+        </a>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
+        Your future self will thank you! 🙌
+      </p>
+      
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        VoraPrep - ${courseConfig.tagline}
+      </p>
+      <p style="font-size: 11px; margin-top: 10px;">
+        <a href="${APP_BASE_URL}/unsubscribe" style="color: #94a3b8;">Unsubscribe</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
 
 // Onboarding Reminder Email Template
 function generateOnboardingReminderEmail(displayName, courseConfig = getCourseConfig('cpa')) {
@@ -998,6 +1601,7 @@ exports.checkTrialExpirations = onSchedule({
                 to: userEmail,
                 subject: `Your VoraPrep trial has ended - upgrade to continue studying`,
                 html: generateTrialExpiredEmail(displayName, courseConfig),
+                headers: getMarketingEmailHeaders(userEmail),
               });
               
               if (error) {
@@ -1089,7 +1693,7 @@ function generateTrialExpiredEmail(displayName, courseConfig = getCourseConfig('
       </div>
       
       <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
-        Questions? Just reply to this email!
+        Questions? Email us at <a href="mailto:support@voraprep.com" style="color: #3b82f6;">support@voraprep.com</a>
       </p>
       
     </div>
@@ -1207,6 +1811,7 @@ exports.sendTrialReminderEmails = onSchedule({
             to: userEmail,
             subject: subject,
             html: generateTrialReminderEmail(displayName, courseConfig, reminder.template, reminder.day, userStats),
+            headers: getMarketingEmailHeaders(userEmail),
           });
           
           if (error) {
@@ -1442,7 +2047,7 @@ function generateTrialReminderEmail(displayName, courseConfig, template, dayNum,
       </div>
       
       <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 25px 0 0 0; text-align: center;">
-        Questions? Reply to this email — we're here to help!
+        Questions? Email us at <a href="mailto:support@voraprep.com" style="color: #3b82f6;">support@voraprep.com</a> — we're here to help!
       </p>
       
     </div>
@@ -1555,7 +2160,7 @@ exports.sendWelcomeDripEmails = onSchedule({
     // Drip schedule: Day 1, 3, 5, 7 (Day 0 is the instant welcome email)
     const dripDays = [
       { day: 1, template: 'first_practice', subject: '🎯 5-minute study hack for {examName} success' },
-      { day: 3, template: 'study_plan', subject: '📅 Your personalized {examName} study plan is ready' },
+      // { day: 3, template: 'study_plan', subject: '📅 Your personalized {examName} study plan is ready' }, // DISABLED - content needs improvement
       { day: 5, template: 'ai_tutor', subject: '🤖 Meet your AI tutor — instant help for tough questions' },
       { day: 7, template: 'progress_check', subject: "📊 Here's how your first week went" },
     ];
@@ -1617,6 +2222,7 @@ exports.sendWelcomeDripEmails = onSchedule({
             to: userEmail,
             subject: subject,
             html: generateWelcomeDripEmail(displayName, courseConfig, drip.template, userStats),
+            headers: getMarketingEmailHeaders(userEmail),
           });
           
           if (error) {
@@ -1891,19 +2497,19 @@ exports.sendWaitlistConfirmation = onDocumentCreated({
     const { error } = await resend.emails.send({
       from: FROM_EMAIL,
       to: email,
-      subject: "You're on the VoraPrep Beta List! 🚀",
+      subject: "You're on the VoraPrep mailing list! 🎯",
       html: generateWaitlistEmail(email),
     });
     
     if (error) throw new Error(error.message);
-    console.log(`Waitlist confirmation sent to ${email}`);
+    console.log(`Mailing list confirmation sent to ${email}`);
 
     // Notify Admin
     await resend.emails.send({
       from: FROM_EMAIL,
       to: ADMIN_EMAIL,
-      subject: `🚀 New Beta Signup: ${email}`,
-      html: `<p><strong>${email}</strong> just signed up for the VoraPrep Beta waitlist.</p>`,
+      subject: `📧 New Mailing List Signup: ${email}`,
+      html: `<p><strong>${email}</strong> just signed up for the VoraPrep mailing list.</p>`,
     });
 
   } catch (error) {
@@ -2235,7 +2841,7 @@ function generateWelcomeEmail(displayName, courseConfig = getCourseConfig('cpa')
   
   <!-- Footer -->
   <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
-    <p>Questions? Reply to this email or visit our <a href="${APP_BASE_URL}" style="color: #64748b;">website</a></p>
+    <p>Questions? Email us at <a href="mailto:support@voraprep.com" style="color: #64748b;">support@voraprep.com</a> or visit our <a href="${APP_BASE_URL}" style="color: #64748b;">website</a></p>
     <p style="margin-top: 15px;">
       VoraPrep - ${courseConfig.tagline}
     </p>
@@ -2260,7 +2866,7 @@ function generateWaitlistEmail(email) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're on the VoraPrep Beta List!</title>
+  <title>You're on the VoraPrep mailing list!</title>
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #334155; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8fafc;">
   
@@ -2278,7 +2884,7 @@ function generateWaitlistEmail(email) {
         You're on the list!
       </h1>
       <p style="color: #64748b; font-size: 16px;">
-        Thanks for joining VoraPrep. We're excited to help you pass your exam!
+        Thanks for joining VoraPrep. We'll keep you updated on exam tips, new features, and special offers!
       </p>
     </div>
     
@@ -2292,7 +2898,7 @@ function generateWaitlistEmail(email) {
       </a>
     </div>
     
-    <h2 style="color: #1e293b; font-size: 18px; margin: 30px 0 15px;">What you'll get:</h2>
+    <h2 style="color: #1e293b; font-size: 18px; margin: 30px 0 15px;">What you'll get with VoraPrep:</h2>
     
     <div style="margin: 20px 0;">
       <div style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
@@ -2317,10 +2923,10 @@ function generateWaitlistEmail(email) {
       </div>
     </div>
     
-    <div style="background: #fef3c7; border: 1px solid #fcd34d; padding: 20px; border-radius: 12px; margin: 25px 0;">
-      <div style="font-weight: 600; color: #92400e; margin-bottom: 5px;">⚡ Limited Time</div>
-      <div style="color: #78350f; font-size: 14px;">
-        Beta users will receive special <strong>Founding Member</strong> benefits (and lowest potential pricing) for life when we launch paid plans.
+    <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 20px; border-radius: 12px; margin: 25px 0;">
+      <div style="font-weight: 600; color: #1d4ed8; margin-bottom: 5px;">🎯 Ready to start?</div>
+      <div style="color: #1e40af; font-size: 14px;">
+        Create your free account today and get full access for 14 days. No credit card required.
       </div>
     </div>
     
@@ -2430,7 +3036,32 @@ exports.createCheckoutSession = onCall({
       }, { merge: true });
     }
 
-    // Create checkout session
+    // Idempotency: Check for recent pending checkout to prevent double-submissions
+    // Generate a unique key based on user+course+interval (valid for ~5 minutes)
+    const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+    const pendingCheckouts = await stripeClient.checkout.sessions.list({
+      customer: stripeCustomerId,
+      status: 'open',
+      limit: 5,
+      created: { gte: Math.floor(fiveMinutesAgo.getTime() / 1000) },
+    });
+    
+    // Check if there's already an open checkout for the same course
+    const existingSession = pendingCheckouts.data.find(s => 
+      s.metadata?.courseId === courseId && s.status === 'open'
+    );
+    
+    if (existingSession) {
+      console.log(`Returning existing checkout session ${existingSession.id} for user ${userId}`);
+      return {
+        sessionId: existingSession.id,
+        url: existingSession.url,
+        reused: true,
+      };
+    }
+
+    // Create checkout session with idempotency key
+    const idempotencyKey = `checkout_${userId}_${courseId}_${interval}_${Math.floor(Date.now() / 60000)}`; // Changes every minute
     const session = await stripeClient.checkout.sessions.create({
       customer: stripeCustomerId,
       payment_method_types: ['card'],
@@ -2454,6 +3085,8 @@ exports.createCheckoutSession = onCall({
         firebaseUserId: userId,
         courseId: courseId,
       },
+    }, {
+      idempotencyKey: idempotencyKey,
     });
 
     console.log(`Checkout session created for user ${userId}, course ${courseId}, price ${lookupKey}`);
@@ -2529,19 +3162,33 @@ exports.stripeWebhook = onRequest({
   console.log(`Stripe webhook received: ${event.type}`);
 
   try {
-    // Idempotency check: skip if we've already processed this event
+    // Idempotency check: skip if we've already COMPLETED this event
     const eventRef = db.collection('processed_stripe_events').doc(event.id);
     const existing = await eventRef.get();
+    
     if (existing.exists) {
-      console.log(`Skipping already-processed Stripe event: ${event.id} (${event.type})`);
-      res.status(200).json({ received: true, duplicate: true });
-      return;
+      const data = existing.data();
+      // Only skip if fully completed (not just in-progress)
+      if (data.status === 'completed') {
+        console.log(`Skipping already-completed Stripe event: ${event.id} (${event.type})`);
+        res.status(200).json({ received: true, duplicate: true });
+        return;
+      }
+      // If stuck in 'processing' for >5 minutes, allow retry (handler probably crashed)
+      const processingAt = data.processingAt?.toDate?.() || new Date(0);
+      const minutesAgo = (Date.now() - processingAt.getTime()) / 60000;
+      if (data.status === 'processing' && minutesAgo < 5) {
+        console.log(`Skipping in-progress Stripe event: ${event.id} (started ${minutesAgo.toFixed(1)} min ago)`);
+        res.status(200).json({ received: true, inProgress: true });
+        return;
+      }
     }
 
-    // Mark event as processing before handling (prevents concurrent duplicates)
+    // Mark event as processing (before handling)
     await eventRef.set({
       eventType: event.type,
-      processedAt: admin.firestore.FieldValue.serverTimestamp(),
+      status: 'processing',
+      processingAt: admin.firestore.FieldValue.serverTimestamp(),
       livemode: event.livemode,
     });
 
@@ -2581,10 +3228,28 @@ exports.stripeWebhook = onRequest({
         console.log(`Unhandled event type: ${event.type}`);
     }
 
+    // Mark as completed AFTER successful handling
+    await eventRef.update({
+      status: 'completed',
+      completedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+
     res.status(200).json({ received: true });
   } catch (error) {
     console.error('Webhook handler error:', error);
     console.error('Event details:', JSON.stringify({ eventId: event.id, eventType: event.type, livemode: event.livemode }));
+    
+    // Mark as failed so retry is allowed
+    try {
+      const eventRef = db.collection('processed_stripe_events').doc(event.id);
+      await eventRef.update({
+        status: 'failed',
+        failedAt: admin.firestore.FieldValue.serverTimestamp(),
+        errorMessage: error.message,
+      });
+    } catch (updateErr) {
+      console.error('Failed to update event status:', updateErr);
+    }
     
     // Log failure for monitoring and potential manual retry
     try {
@@ -3127,7 +3792,7 @@ function getPaymentFailedEmailHTML(name) {
       </div>
       
       <p style="color: #64748b; font-size: 14px;">
-        If you have any questions, reply to this email and we'll help you out.
+        If you have any questions, email us at <a href="mailto:support@voraprep.com" style="color: #3b82f6;">support@voraprep.com</a> and we'll help you out.
       </p>
     </div>
     
@@ -3149,9 +3814,10 @@ const GEMINI_API_URL =
   'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 exports.geminiProxy = onCall({
-  cors: true,
+  cors: true,  // Allow all origins - function is protected by auth check
   enforceAppCheck: false,
   secrets: ['GEMINI_API_KEY'],
+  invoker: 'public',  // Allow unauthenticated Cloud Run access (Firebase auth checked in function)
 }, async (request) => {
   // Must be authenticated
   if (!request.auth) {
@@ -4268,71 +4934,175 @@ exports.growthGenerateArticle = onCall({
     throw new HttpsError('invalid-argument', 'briefId is required.');
   }
 
-  // Load brief
-  const briefDoc = await db.collection('growth_content').doc(briefId).get();
+  // Load brief - try direct ID first, then fallback to slug search
+  let briefDoc = await db.collection('growth_content').doc(briefId).get();
+  let actualBriefId = briefId;
+  
   if (!briefDoc.exists) {
-    throw new HttpsError('not-found', 'Content brief not found.');
+    // Fallback: try to find by slug pattern derived from briefId
+    // briefId format: courseId-templateId-section-year -> slug might be different
+    console.log(`Brief ${briefId} not found by ID, searching in collection...`);
+    
+    // Try to match by title pattern or partial ID
+    const allBriefs = await db.collection('growth_content')
+      .where('status', '==', 'brief')
+      .limit(500)
+      .get();
+    
+    // Find a brief where the ID contains the key parts (courseId, section, year)
+    const parts = briefId.split('-');
+    const courseId = parts[0]; // e.g., 'cpa'
+    const year = parts[parts.length - 1]; // e.g., '2026'
+    
+    const matchingDoc = allBriefs.docs.find(d => {
+      const docId = d.id;
+      const data = d.data();
+      // Match if same course, year, and similar content
+      return docId.startsWith(courseId) && 
+             docId.endsWith(year) && 
+             data.status === 'brief';
+    });
+    
+    if (matchingDoc) {
+      briefDoc = matchingDoc;
+      actualBriefId = matchingDoc.id;
+      console.log(`Found matching brief: ${actualBriefId}`);
+    }
+  }
+  
+  if (!briefDoc.exists) {
+    throw new HttpsError('not-found', `Content brief not found: ${briefId}. Please run "Seed Briefs" first and then "Refresh" to load briefs from Firestore.`);
   }
   const brief = briefDoc.data();
 
   // Load config for guard rails
   const config = await getGrowthConfig();
 
-  // Check weekly article limit
-  const weekAgo = new Date();
-  weekAgo.setDate(weekAgo.getDate() - 7);
-  const recentArticles = await db.collection('growth_content')
-    .where('status', 'in', ['draft', 'review', 'published'])
-    .where('generatedAt', '>=', admin.firestore.Timestamp.fromDate(weekAgo))
-    .get();
+  // NOTE: Weekly limit only applies to PUBLISHING, not generation
+  // Generation and approval are unlimited - limit is enforced in growthAutoPublish
 
-  if (recentArticles.size >= config.maxArticlesPerWeek) {
-    throw new HttpsError(
-      'resource-exhausted',
-      `Weekly article limit reached (${config.maxArticlesPerWeek}/week). Increase in Settings.`
-    );
-  }
-
-  // Build the prompt
-  const examNames = {
-    cpa: 'CPA (Certified Public Accountant)',
-    ea: 'EA (Enrolled Agent)',
-    cma: 'CMA (Certified Management Accountant)',
-    cia: 'CIA (Certified Internal Auditor)',
-    cisa: 'CISA (Certified Information Systems Auditor)',
-    cfp: 'CFP (Certified Financial Planner)',
+  // Build the prompt with rich exam data
+  const examData = {
+    cpa: {
+      name: 'CPA (Certified Public Accountant)',
+      fullName: 'Certified Public Accountant',
+      sections: 'FAR, AUD, REG, and one discipline (BAR, ISC, or TCP)',
+      passRate: '49-55%',
+      studyHours: '300-400 hours total',
+      avgSalary: '$75,000-$150,000',
+      questionCount: '5,000+',
+      officialBody: 'AICPA',
+    },
+    ea: {
+      name: 'EA (Enrolled Agent)',
+      fullName: 'Enrolled Agent',
+      sections: 'SEE Part 1, 2, and 3',
+      passRate: '60-70%',
+      studyHours: '100-150 hours total',
+      avgSalary: '$55,000-$100,000',
+      questionCount: '3,000+',
+      officialBody: 'IRS',
+    },
+    cma: {
+      name: 'CMA (Certified Management Accountant)',
+      fullName: 'Certified Management Accountant',
+      sections: 'Part 1 and Part 2',
+      passRate: '40-45%',
+      studyHours: '150-170 hours per part',
+      avgSalary: '$85,000-$140,000',
+      questionCount: '2,500+',
+      officialBody: 'IMA',
+    },
+    cia: {
+      name: 'CIA (Certified Internal Auditor)',
+      fullName: 'Certified Internal Auditor',
+      sections: 'Part 1, 2, and 3',
+      passRate: '40-45%',
+      studyHours: '300-500 hours total',
+      avgSalary: '$80,000-$130,000',
+      questionCount: '2,000+',
+      officialBody: 'IIA',
+    },
+    cisa: {
+      name: 'CISA (Certified Information Systems Auditor)',
+      fullName: 'Certified Information Systems Auditor',
+      sections: '5 domains',
+      passRate: '50-55%',
+      studyHours: '150-200 hours',
+      avgSalary: '$100,000-$160,000',
+      questionCount: '2,500+',
+      officialBody: 'ISACA',
+    },
+    cfp: {
+      name: 'CFP (Certified Financial Planner)',
+      fullName: 'Certified Financial Planner',
+      sections: '8 principal knowledge areas',
+      passRate: '60-65%',
+      studyHours: '250-300 hours',
+      avgSalary: '$90,000-$150,000',
+      questionCount: '3,000+',
+      officialBody: 'CFP Board',
+    },
   };
 
-  const systemPrompt = `You are an expert SEO content writer specializing in professional certification exam preparation. 
+  const exam = examData[brief.courseId] || examData.cpa;
+
+  const systemPrompt = `You are an expert SEO content writer with deep expertise in ${exam.fullName} exam preparation.
 You write for VoraPrep (voraprep.com), an AI-powered exam prep platform.
 
-CRITICAL RULES:
-- Write genuinely helpful, comprehensive content — not thin SEO filler
-- Include specific, accurate facts (pass rates, exam structure, pricing)
-- Use natural language — DO NOT keyword-stuff
-- Include actionable advice from real exam prep experience
-- Cite official sources (AICPA, IRS, IMA, IIA, ISACA, CFP Board) where appropriate
-- Use H2/H3 headings for structure
-- Include a compelling meta description (155 chars max)
-- Target word count: ${brief.wordCountTarget || 2000} words
-- Write in Markdown format`;
+VORAPREP FACTS:
+- ${exam.questionCount} practice questions with AI explanations
+- Adaptive learning engine
+- AI tutor (Vory) available 24/7
+- $19/month or $149/year (7-day free trial)
 
-  const userPrompt = `Write a comprehensive article for the following content brief:
+${exam.name.split(' ')[0]} EXAM FACTS:
+- Official body: ${exam.officialBody}
+- Sections: ${exam.sections}
+- Pass rate: ${exam.passRate}
+- Study hours: ${exam.studyHours}
+- Salary: ${exam.avgSalary}
+
+CRITICAL RULES:
+- Write genuinely helpful, comprehensive content
+- Include specific facts from the data above
+- Natural language — no keyword stuffing
+- Start with "Meta Description: ..." (155 chars max), then a blank line
+- DO NOT include a title or H1 heading — the title is stored separately and will be rendered by the app
+- Start the body content directly with an introductory paragraph, then use H2/H3 headings for sections
+- Target word count: ${brief.wordCountTarget || 2000} words
+- Write in Markdown format
+
+CTA PLACEMENT (CRITICAL - ALL CTAs MUST BE CLICKABLE LINKS):
+- Every CTA MUST use markdown link format: [text](https://voraprep.com/path)
+- NEVER write a CTA as plain text - it MUST be a clickable link
+- Include a brief CTA within the first 250 words, e.g.: [Try VoraPrep's free ${exam.name.split(' ')[0]} practice questions](https://voraprep.com/${brief.courseId})
+- Add 1-2 natural mid-article CTAs as links
+- End with a STRONG closing CTA section:
+  - Horizontal rule (---)
+  - Bold header: **Ready to Pass Your ${exam.name.split(' ')[0]} Exam?**
+  - 2-3 sentences about VoraPrep (free trial, AI tutor, adaptive learning)
+  - Show the URL visibly: "Visit **voraprep.com** to get started"
+  - MANDATORY clickable button-style link on its own line: [Start Your Free 7-Day Trial at voraprep.com →](https://voraprep.com/register)
+- CTAs should feel helpful, not salesy
+- Link targets: /register, /cpa, /ea, /cma, /cia, /cisa, /cfp`;
+
+  const userPrompt = `Write a comprehensive article for:
 
 TITLE: ${brief.title}
-EXAM: ${examNames[brief.courseId] || brief.courseId.toUpperCase()}
+EXAM: ${exam.name}
 ${brief.section ? `SECTION: ${brief.section}` : ''}
 CONTENT TYPE: ${brief.contentType}
 TARGET KEYWORDS: ${(brief.targetKeywords || []).join(', ')}
 TARGET WORD COUNT: ${brief.wordCountTarget || 2000}
 
 OUTLINE:
-${(brief.outline || []).map((s, i) => `${i + 1}. ${s.heading}\n   ${s.keyPoints?.join('\n   ') || ''}`).join('\n')}
+${(brief.outline || []).map((s, i) => `## ${s.heading}\n~${s.wordCount} words\n${(s.keyPoints || []).map(kp => `• ${kp}`).join('\n')}`).join('\n\n')}
 
-INTERNAL LINKS TO INCLUDE:
-${(brief.internalLinks || []).map(l => `- ${l}`).join('\n')}
+INTERNAL LINKS:
+${(brief.internalLinks || []).map(l => `- https://voraprep.com${l}`).join('\n')}
 
-Please write the complete article in Markdown. Start with a meta description line, then the full article.`;
+Write the complete article. Start with "Meta Description: ..." then full Markdown.`;
 
   const apiKey = process.env.GEMINI_API_KEY?.trim();
   if (!apiKey) {
@@ -4361,16 +5131,19 @@ Please write the complete article in Markdown. Start with a meta description lin
     }
 
     const data = await response.json();
-    const generatedContent = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    let generatedContent = data.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!generatedContent) {
       throw new HttpsError('internal', 'No content generated.');
     }
 
+    // Trim whitespace only - keep the H1 title in the content so it can be edited
+    generatedContent = generatedContent.trim();
+
     // Save the generated draft
     const newStatus = config.contentReviewRequired ? 'review' : 'published';
 
-    await db.collection('growth_content').doc(briefId).update({
+    await db.collection('growth_content').doc(actualBriefId).update({
       status: newStatus,
       generatedContent,
       generatedAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -4563,173 +5336,796 @@ exports.growthAutoPublish = onSchedule({
     return;
   }
 
-  // 4. Pick a random unpublished brief
-  const briefsSnapshot = await db.collection('growth_content')
-    .where('status', '==', 'brief')
+  // 4. Try to publish from approved queue first (pre-reviewed articles)
+  const approvedSnapshot = await db.collection('growth_content')
+    .where('status', '==', 'approved')
     .limit(50)
     .get();
 
-  if (briefsSnapshot.empty) {
-    console.log('[AutoPublish] No unpublished briefs available. Content pool exhausted.');
+  if (!approvedSnapshot.empty) {
+    // Pick a random approved article to publish
+    const approvedDocs = approvedSnapshot.docs;
+    const randomIndex = Math.floor(Math.random() * approvedDocs.length);
+    const docToPublish = approvedDocs[randomIndex];
+    const articleData = docToPublish.data();
+
+    // Publish it with distribution tracking
+    const publishedAt = new Date();
+    const articleUrl = `https://voraprep.com/blog/${articleData.slug}`;
+    
+    // Initialize distribution tracking
+    const distribution = {
+      blog: {
+        status: 'published',
+        publishedAt: publishedAt,
+        url: articleUrl,
+      },
+      rss: {
+        status: 'included',
+        addedAt: publishedAt,
+        feedUrl: 'https://voraprep.com/feed.xml',
+      },
+      linkedin: {
+        status: 'pending',
+      },
+    };
+    
+    await db.collection('growth_content').doc(docToPublish.id).update({
+      status: 'published',
+      publishedAt: admin.firestore.FieldValue.serverTimestamp(),
+      autoPublished: true,
+      distribution: distribution,
+    });
+
+    console.log(`[AutoPublish] ✅ Published from queue: "${articleData.title}" (${docToPublish.id})`);
+
+    // DISABLED: LinkedIn auto-share from blog posts
+    // We've shifted to standalone story posts via postScheduledLinkedIn (Mon/Wed/Fri 9 AM)
+    // Blog promotional posts felt spammy — story posts drive better engagement
+    // See: linkedin_story_posts collection + LinkedInPosts admin UI
+    await db.collection('growth_content').doc(docToPublish.id).update({
+      'distribution.linkedin': {
+        status: 'disabled',
+        reason: 'Shifted to standalone story posts for better engagement',
+      },
+    });
+    console.log('[AutoPublish] LinkedIn auto-share disabled — using story posts instead');
+
+    // Share to Discord (if configured)
+    const discordResult = await shareToDiscord(articleData);
+    if (discordResult) {
+      await db.collection('growth_content').doc(docToPublish.id).update({
+        'distribution.discord': {
+          status: 'posted',
+          postedAt: discordResult.postedAt,
+        },
+      });
+    } else {
+      await db.collection('growth_content').doc(docToPublish.id).update({
+        'distribution.discord': {
+          status: 'skipped',
+          reason: 'No webhook configured or posting failed',
+        },
+      });
+    }
+
+    // Send notification email with distribution summary
+    const resendKey = process.env.RESEND_API_KEY?.trim();
+    if (resendKey) {
+      try {
+        const linkedInUrl = linkedInResult?.url;
+        const discordStatus = discordResult ? '✅ Posted' : '⏭️ Skipped';
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            from: 'VoraPrep <notifications@voraprep.com>',
+            to: 'rob@voraprep.com',
+            subject: `[Growth Engine] Published: ${articleData.title}`,
+            html: `
+              <p>Auto-published from approved queue:</p>
+              <p><strong>${articleData.title}</strong></p>
+              <h4>Distribution:</h4>
+              <ul>
+                <li>📰 Blog: <a href="${articleUrl}">${articleUrl}</a></li>
+                <li>📡 RSS: Included in feed</li>
+                <li>💼 LinkedIn: ${linkedInUrl ? `<a href="${linkedInUrl}">Posted</a>` : 'Skipped (no token)'}</li>
+                <li>💬 Discord: ${discordStatus}</li>
+              </ul>
+            `,
+          }),
+        });
+        console.log('[AutoPublish] Notification email sent');
+      } catch (emailErr) {
+        console.warn('[AutoPublish] Email failed:', emailErr.message);
+      }
+    }
+
+    await updateFunctionStatus('growthAutoPublish', 'success', { 
+      published: articleData.title,
+      linkedIn: linkedInResult ? 'posted' : 'skipped',
+      discord: discordResult ? 'posted' : 'skipped',
+    });
     return;
   }
 
-  // Pick a random brief from the pool
-  const briefs = briefsSnapshot.docs;
-  const randomIndex = Math.floor(Math.random() * briefs.length);
-  const briefDoc = briefs[randomIndex];
-  const brief = briefDoc.data();
-
-  console.log(`[AutoPublish] Selected brief: "${brief.title}" (${briefDoc.id})`);
-
-  // 5. Generate article via Gemini
-  const apiKey = process.env.GEMINI_API_KEY?.trim();
-  if (!apiKey) {
-    console.error('[AutoPublish] GEMINI_API_KEY not configured.');
-    return;
+  // No approved articles — notify admin so they can queue more
+  console.log('[AutoPublish] No approved articles in queue. Notifying admin...');
+  await updateFunctionStatus('growthAutoPublish', 'skipped', { reason: 'No approved articles in queue' });
+  const resendKey = process.env.RESEND_API_KEY?.trim();
+  if (resendKey) {
+    try {
+      await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          from: 'VoraPrep <notifications@voraprep.com>',
+          to: 'rob@voraprep.com',
+          subject: '[Growth Engine] Queue empty — no articles to publish',
+          html: `<p>The auto-publish job ran but found no approved articles in the queue.</p><p>Generate and approve some articles to keep the content pipeline flowing:</p><p><a href="https://voraprep.com/admin/growth">Go to Growth Engine</a></p>`,
+        }),
+      });
+      console.log('[AutoPublish] Empty queue notification sent');
+    } catch (emailErr) {
+      console.warn('[AutoPublish] Email failed:', emailErr.message);
+    }
   }
+});
 
-  const examNames = {
-    cpa: 'CPA (Certified Public Accountant)',
-    ea: 'EA (Enrolled Agent)',
-    cma: 'CMA (Certified Management Accountant)',
-    cia: 'CIA (Certified Internal Auditor)',
-    cisa: 'CISA (Certified Information Systems Auditor)',
-    cfp: 'CFP (Certified Financial Planner)',
-  };
+// ============================================================================
+// LINKEDIN SYNDICATION — Auto-share published articles to LinkedIn
+// ============================================================================
 
-  const systemPrompt = `You are an expert SEO content writer specializing in professional certification exam preparation. 
-You write for VoraPrep (voraprep.com), an AI-powered exam prep platform.
-
-CRITICAL RULES:
-- Write genuinely helpful, comprehensive content — not thin SEO filler
-- Include specific, accurate facts (pass rates, exam structure, pricing)
-- Use natural language — DO NOT keyword-stuff
-- Include actionable advice from real exam prep experience
-- Cite official sources (AICPA, IRS, IMA, IIA, ISACA, CFP Board) where appropriate
-- Use H2/H3 headings for structure
-- Write a compelling meta description on the FIRST LINE in format: "Meta Description: ..."
-- Target word count: ${brief.wordCountTarget || 2000} words
-- Write in Markdown format
-- Do NOT include the article title as an H1 (it's rendered separately)
-- Include a brief, engaging intro paragraph before the first H2
-- End with a concise summary or key takeaways`;
-
-  const userPrompt = `Write a comprehensive article for the following content brief:
-
-TITLE: ${brief.title}
-EXAM: ${examNames[brief.courseId] || brief.courseId?.toUpperCase() || 'Professional Certification'}
-${brief.section ? `SECTION: ${brief.section}` : ''}
-CONTENT TYPE: ${brief.contentType}
-TARGET KEYWORDS: ${(brief.targetKeywords || []).join(', ')}
-TARGET WORD COUNT: ${brief.wordCountTarget || 2000}
-
-OUTLINE:
-${(brief.outline || []).map((s, i) => `${i + 1}. ${s.heading}\n   ${(s.keyPoints || []).join('\n   ')}`).join('\n')}
-
-INTERNAL LINKS TO INCLUDE (use markdown links to voraprep.com):
-${(brief.internalLinks || []).map(l => `- https://voraprep.com${l}`).join('\n')}
-
-Please write the complete article in Markdown. Start with "Meta Description: ..." on the first line, then the full article.`;
-
-  const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
-
+/**
+ * Share an article to LinkedIn Company Page as a teaser post with link.
+ * Called after an article is published (from growthAutoPublish or manual publish).
+ * 
+ * Setup:
+ * 1. Create LinkedIn Developer App: https://www.linkedin.com/developers/apps
+ * 2. Add "Share on LinkedIn" and "Marketing Developer Platform" products
+ * 3. Get Company Page ID (from LinkedIn page URL or admin center)
+ * 4. Complete OAuth flow to get access token (valid 60 days, needs refresh)
+ * 5. firebase functions:secrets:set LINKEDIN_ACCESS_TOKEN -P production
+ * 6. firebase functions:secrets:set LINKEDIN_ORG_ID -P production
+ * 
+ * Note: LinkedIn access tokens expire every 60 days. Consider implementing
+ * refresh token flow for long-term automation.
+ */
+async function shareToLinkedIn(article) {
+  let linkedInToken = process.env.LINKEDIN_ACCESS_TOKEN?.trim();
+  let linkedInPersonId = null;
+  
+  // Get config from Firestore (includes personId and token)
   try {
-    const response = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+    const configDoc = await db.collection('system_config').doc('linkedin').get();
+    if (configDoc.exists) {
+      const config = configDoc.data();
+      linkedInToken = linkedInToken || config.accessToken;
+      linkedInPersonId = config.personId;
+      
+      // Check if token has expired
+      if (config.expiresAt && config.expiresAt.toDate() < new Date()) {
+        console.log('[LinkedIn] Token has expired. Re-authorize at https://us-central1-voraprep-prod.cloudfunctions.net/linkedinOAuthCallback');
+        return null;
+      }
+    }
+  } catch (err) {
+    console.log('[LinkedIn] Could not read config from Firestore:', err.message);
+  }
+  
+  if (!linkedInToken || !linkedInPersonId) {
+    console.log('[LinkedIn] Skipping — No token or personId. Visit https://us-central1-voraprep-prod.cloudfunctions.net/linkedinOAuthCallback to authorize.');
+    return null;
+  }
+
+  const articleUrl = `https://voraprep.com/blog/${article.slug}`;
+  
+  // Generate a short engaging teaser for LinkedIn
+  const examName = article.courseId?.toUpperCase() || 'Exam';
+  const contentType = article.contentType || 'article';
+  
+  const teaserText = generateLinkedInTeaser(article.title, examName, contentType, articleUrl);
+  
+  try {
+    // LinkedIn UGC Posts API
+    const response = await fetch('https://api.linkedin.com/v2/ugcPosts', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Authorization': `Bearer ${linkedInToken}`,
+        'Content-Type': 'application/json',
+        'X-Restli-Protocol-Version': '2.0.0',
+      },
       body: JSON.stringify({
-        contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-        systemInstruction: { parts: [{ text: systemPrompt }] },
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 8192,
+        author: `urn:li:person:${linkedInPersonId}`,
+        lifecycleState: 'PUBLISHED',
+        specificContent: {
+          'com.linkedin.ugc.ShareContent': {
+            shareCommentary: {
+              text: teaserText,
+            },
+            shareMediaCategory: 'ARTICLE',
+            media: [{
+              status: 'READY',
+              originalUrl: articleUrl,
+            }],
+          },
+        },
+        visibility: {
+          'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
         },
       }),
     });
 
     if (!response.ok) {
-      const errText = await response.text();
-      console.error('[AutoPublish] Gemini API error:', errText);
+      const errorText = await response.text();
+      console.error('[LinkedIn] Post failed:', response.status, errorText);
+      return null;
+    }
+
+    const result = await response.json();
+    const postId = result.id;
+    const linkedInUrl = postId ? `https://www.linkedin.com/feed/update/${postId}` : null;
+    console.log('[LinkedIn] Successfully shared to LinkedIn:', linkedInUrl || postId);
+    return { postId, url: linkedInUrl };
+  } catch (err) {
+    console.error('[LinkedIn] Error posting:', err.message);
+    return null;
+  }
+}
+
+/**
+ * Generate an engaging LinkedIn teaser post for an article.
+ */
+function generateLinkedInTeaser(title, examName, contentType, url) {
+  const emoji = {
+    'practice-questions': '📝',
+    'study-guide': '📚',
+    'requirements': '📋',
+    'exam-tips': '💡',
+    'mnemonics': '🧠',
+  }[contentType] || '📖';
+  
+  const ctaCopy = {
+    'practice-questions': 'Test yourself with detailed explanations for each answer.',
+    'study-guide': 'Get the complete breakdown of what you need to know.',
+    'requirements': 'Everything you need to know before applying.',
+    'exam-tips': 'Strategies from candidates who passed on their first try.',
+    'mnemonics': 'Memory tricks to help you retain key concepts.',
+  }[contentType] || 'Learn more about passing your exam.';
+
+  return `${emoji} ${title}
+
+${ctaCopy}
+
+👉 Read the full guide: ${url}
+
+#${examName}Exam #${examName} #ExamPrep #CareerDevelopment #Accounting #Finance`;
+}
+
+/**
+ * Share article to Discord via webhook.
+ * Much simpler than LinkedIn - just needs a webhook URL stored in Firestore.
+ * 
+ * Setup:
+ * 1. In your Discord server, go to Server Settings → Integrations → Webhooks
+ * 2. Create a new webhook, copy the URL
+ * 3. Store in Firestore: system_config/discord { webhookUrl: "...", enabled: true }
+ */
+async function shareToDiscord(article) {
+  try {
+    const configDoc = await db.collection('system_config').doc('discord').get();
+    if (!configDoc.exists) {
+      console.log('[Discord] Skipping — No config in system_config/discord');
+      return null;
+    }
+    
+    const config = configDoc.data();
+    if (!config.enabled || !config.webhookUrl) {
+      console.log('[Discord] Skipping — Disabled or no webhookUrl configured');
+      return null;
+    }
+    
+    const articleUrl = `https://voraprep.com/blog/${article.slug}`;
+    const examName = article.courseId?.toUpperCase() || 'Exam';
+    
+    const contentTypeEmoji = {
+      'practice-questions': '📝',
+      'study-guide': '📚',
+      'requirements': '📋',
+      'exam-tips': '💡',
+      'mnemonics': '🧠',
+    }[article.contentType] || '📖';
+    
+    // Discord embed for rich preview
+    const embed = {
+      title: article.title,
+      url: articleUrl,
+      description: article.metaDescription || `New ${examName} study resource available on VoraPrep.`,
+      color: 0x2563EB, // VoraPrep blue
+      footer: {
+        text: `VoraPrep ${examName} • ${article.contentType || 'Article'}`,
+      },
+      timestamp: new Date().toISOString(),
+    };
+    
+    const response = await fetch(config.webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        content: `${contentTypeEmoji} **New ${examName} Resource Published!**`,
+        embeds: [embed],
+      }),
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('[Discord] Post failed:', response.status, errorText);
+      return null;
+    }
+    
+    console.log('[Discord] Successfully posted to Discord webhook');
+    return { success: true, postedAt: new Date() };
+  } catch (err) {
+    console.error('[Discord] Error posting:', err.message);
+    return null;
+  }
+}
+
+// ============================================================================
+// LINKEDIN STORY POSTS — Scheduled posting of story-style content
+// Posts 3x/week (Mon, Wed, Fri) from linkedin_story_posts collection
+// ============================================================================
+
+/**
+ * Scheduled function to post story-style content to LinkedIn.
+ * Runs Monday, Wednesday, Friday at 9 AM EST (14:00 UTC).
+ * 
+ * Story posts are fundamentally different from blog teasers:
+ * - They don't promote a link
+ * - They tell a story or share an insight
+ * - They build brand affinity over direct conversion
+ * 
+ * Firestore collection: linkedin_story_posts
+ * Document structure:
+ * {
+ *   content: string;           // The full post text (max 3000 chars)
+ *   type: 'founder-story' | 'dear-candidate' | 'data-insight' | 'user-win' | 'industry';
+ *   status: 'draft' | 'scheduled' | 'posted' | 'failed';
+ *   scheduledFor?: Date;       // Optional: specific date to post
+ *   postedAt?: Date;
+ *   postId?: string;           // LinkedIn post ID after posting
+ *   postUrl?: string;
+ *   createdAt: Date;
+ *   author: string;
+ * }
+ */
+exports.postScheduledLinkedIn = onSchedule({
+  schedule: 'every monday,wednesday,friday 14:00',  // 9 AM EST = 14:00 UTC
+  timeZone: 'America/New_York',
+  timeoutSeconds: 60,
+  memory: '256MiB',
+  secrets: ['RESEND_API_KEY'],
+}, async (context) => {
+  console.log('[LinkedInStory] Starting scheduled story post check...');
+  
+  // Get LinkedIn credentials from Firestore
+  const configDoc = await db.collection('system_config').doc('linkedin').get();
+  if (!configDoc.exists) {
+    console.log('[LinkedInStory] No LinkedIn config found. Skipping.');
+    return;
+  }
+  
+  const config = configDoc.data();
+  const accessToken = config.accessToken;
+  const personId = config.personId;
+  
+  if (!accessToken || !personId) {
+    console.log('[LinkedInStory] No LinkedIn credentials configured. Skipping.');
+    return;
+  }
+  
+  // Check if token has expired
+  if (config.expiresAt && config.expiresAt.toDate() < new Date()) {
+    console.log('[LinkedInStory] LinkedIn token expired. Re-authorize needed.');
+    return;
+  }
+  
+  // Find the next APPROVED post to publish
+  // Posts must be explicitly approved before they can be auto-posted
+  const now = new Date();
+  
+  // First, check for approved posts scheduled for today or earlier
+  let postQuery = db.collection('linkedin_story_posts')
+    .where('status', '==', 'approved')
+    .where('scheduledFor', '<=', now)
+    .orderBy('scheduledFor', 'asc')
+    .limit(1);
+  
+  let snapshot = await postQuery.get();
+  
+  // If no specifically scheduled posts, pick from the general approved queue
+  if (snapshot.empty) {
+    postQuery = db.collection('linkedin_story_posts')
+      .where('status', '==', 'approved')
+      .where('scheduledFor', '==', null)
+      .orderBy('approvedAt', 'asc')
+      .limit(1);
+    
+    snapshot = await postQuery.get();
+  }
+  
+  // Still nothing? Try approved posts without scheduledFor field (backward compat)
+  if (snapshot.empty) {
+    const allApproved = await db.collection('linkedin_story_posts')
+      .where('status', '==', 'approved')
+      .orderBy('createdAt', 'asc')
+      .limit(1)
+      .get();
+    
+    if (allApproved.empty) {
+      console.log('[LinkedInStory] No approved posts available. Approve posts in Admin > LinkedIn Posts.');
       return;
     }
-
-    const data = await response.json();
-    const generatedContent = data.candidates?.[0]?.content?.parts?.[0]?.text;
-
-    if (!generatedContent) {
-      console.error('[AutoPublish] Gemini returned empty content.');
+    snapshot = allApproved;
+  }
+  
+  const postDoc = snapshot.docs[0];
+  const postData = postDoc.data();
+  const postId = postDoc.id;
+  
+  console.log(`[LinkedInStory] Found post to publish: ${postId} (type: ${postData.type})`);
+  
+  // Post to LinkedIn
+  try {
+    const response = await fetch('https://api.linkedin.com/v2/ugcPosts', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        'X-Restli-Protocol-Version': '2.0.0',
+      },
+      body: JSON.stringify({
+        author: `urn:li:person:${personId}`,
+        lifecycleState: 'PUBLISHED',
+        specificContent: {
+          'com.linkedin.ugc.ShareContent': {
+            shareCommentary: {
+              text: postData.content,
+            },
+            shareMediaCategory: 'NONE',  // Story posts = no link preview
+          },
+        },
+        visibility: {
+          'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
+        },
+      }),
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('[LinkedInStory] Post failed:', response.status, errorText);
+      
+      // Mark as failed
+      await db.collection('linkedin_story_posts').doc(postId).update({
+        status: 'failed',
+        error: `${response.status}: ${errorText}`,
+        failedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
       return;
     }
-
-    // 6. Extract meta description from the first line
-    let metaDescription = '';
-    const metaMatch = generatedContent.match(/^Meta\s*Description:\s*(.+)/im);
-    if (metaMatch) {
-      metaDescription = metaMatch[1].trim().substring(0, 160);
-    }
-
-    const wordCount = generatedContent.split(/\s+/).length;
-
-    // Save as published
-    await db.collection('growth_content').doc(briefDoc.id).update({
-      status: 'published',
-      generatedContent,
-      metaDescription,
-      metaTitle: brief.title,
-      generatedAt: admin.firestore.FieldValue.serverTimestamp(),
-      publishedAt: admin.firestore.FieldValue.serverTimestamp(),
-      wordCount,
-      generatedBy: 'gemini-2.0-flash',
-      autoPublished: true,
+    
+    const result = await response.json();
+    const linkedInPostId = result.id;
+    const linkedInUrl = linkedInPostId ? `https://www.linkedin.com/feed/update/${linkedInPostId}` : null;
+    
+    // Mark as posted
+    await db.collection('linkedin_story_posts').doc(postId).update({
+      status: 'posted',
+      postedAt: admin.firestore.FieldValue.serverTimestamp(),
+      linkedInPostId: linkedInPostId,
+      postUrl: linkedInUrl,
     });
+    
+    console.log(`[LinkedInStory] Successfully posted: ${linkedInUrl || linkedInPostId}`);
 
-    console.log(`[AutoPublish] ✅ Published: "${brief.title}" (${wordCount} words, slug: ${brief.slug})`);
-
-    // 7. Log the action
-    await db.collection('growth_actions').add({
-      type: 'auto-publish',
-      briefId: briefDoc.id,
-      title: brief.title,
-      slug: brief.slug,
-      courseId: brief.courseId,
-      wordCount,
-      timestamp: admin.firestore.FieldValue.serverTimestamp(),
-    });
-
-    // 8. Send notification email
-    const resendKey = process.env.RESEND_API_KEY?.trim();
-    if (resendKey) {
-      try {
-        const notifyResend = new Resend(resendKey);
-        const articleUrl = `https://voraprep.com/blog/${brief.slug}`;
-        await notifyResend.emails.send({
-          from: 'VoraPrep Content Engine <alerts@voraprep.com>',
+    // Send notification email to Rob
+    try {
+      const resendApiKey = process.env.RESEND_API_KEY?.trim();
+      if (resendApiKey) {
+        const resendClient = new Resend(resendApiKey);
+        await resendClient.emails.send({
+          from: 'VoraPrep <hello@voraprep.com>',
           to: 'rob@sagecg.com',
-          subject: `📝 New article published: ${brief.title}`,
+          subject: 'LinkedIn Post Published: ' + (postData.type || 'General'),
           html: `
-            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
-              <h2 style="color: #1e40af;">New Blog Article Published</h2>
-              <p style="font-size: 16px; color: #334155;"><strong>${brief.title}</strong></p>
-              <table style="margin: 16px 0; font-size: 14px; color: #64748b;">
-                <tr><td style="padding: 4px 12px 4px 0;">Exam:</td><td><strong>${(brief.courseId || '').toUpperCase()}</strong></td></tr>
-                <tr><td style="padding: 4px 12px 4px 0;">Type:</td><td>${brief.contentType || 'article'}</td></tr>
-                <tr><td style="padding: 4px 12px 4px 0;">Words:</td><td>${wordCount.toLocaleString()}</td></tr>
-                <tr><td style="padding: 4px 12px 4px 0;">Slug:</td><td>${brief.slug}</td></tr>
-              </table>
-              <a href="${articleUrl}" style="display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 8px 0;">Read Article →</a>
-              <p style="font-size: 13px; color: #94a3b8; margin-top: 24px;">Auto-published by VoraPrep Content Engine</p>
-            </div>
+            <h2>Your LinkedIn post is live!</h2>
+            <p><strong>Post Type:</strong> ${postData.type}</p>
+            <p><strong>View Post:</strong> <a href="${linkedInUrl}">${linkedInUrl}</a></p>
+            <hr />
+            <h3>Content:</h3>
+            <pre style="white-space: pre-wrap;">${postData.content}</pre>
+            <hr />
+            <p>Use <a href="https://voraprep.com/admin/linkedin">Admin Dashboard</a> to manage future posts.</p>
           `,
         });
-        console.log('[AutoPublish] Notification email sent to rob@sagecg.com');
-      } catch (emailErr) {
-        console.warn('[AutoPublish] Failed to send notification email:', emailErr.message);
+        console.log('[LinkedInStory] Notification email sent to rob@sagecg.com');
+      } else {
+        console.warn('[LinkedInStory] Skipping email notification: RESEND_API_KEY missing');
       }
+    } catch (emailErr) {
+      console.error('[LinkedInStory] Failed to send notification email:', emailErr);
+      // Don't fail the function if email fails
     }
+    
+  } catch (err) {
+    console.error('[LinkedInStory] Error posting:', err.message);
+    
+    await db.collection('linkedin_story_posts').doc(postId).update({
+      status: 'failed',
+      error: err.message,
+      failedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+  }
+});
 
-  } catch (error) {
-    console.error('[AutoPublish] Generation failed:', error);
+/**
+ * HTTP callable to manually trigger a LinkedIn story post (for testing).
+ * Only admins can call this.
+ */
+exports.postLinkedInStoryNow = onCall({
+  timeoutSeconds: 30,
+  memory: '256MiB',
+}, async (request) => {
+  // Check admin
+  const uid = request.auth?.uid;
+  if (!uid) {
+    throw new HttpsError('unauthenticated', 'Must be logged in');
+  }
+  
+  const userDoc = await db.collection('users').doc(uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin only');
+  }
+  
+  const { postId } = request.data;
+  if (!postId) {
+    throw new HttpsError('invalid-argument', 'postId required');
+  }
+  
+  // Get the post
+  const postDoc = await db.collection('linkedin_story_posts').doc(postId).get();
+  if (!postDoc.exists) {
+    throw new HttpsError('not-found', 'Post not found');
+  }
+  
+  const postData = postDoc.data();
+  
+  // Get LinkedIn credentials
+  const configDoc = await db.collection('system_config').doc('linkedin').get();
+  if (!configDoc.exists) {
+    throw new HttpsError('failed-precondition', 'LinkedIn not configured');
+  }
+  
+  const config = configDoc.data();
+  if (!config.accessToken || !config.personId) {
+    throw new HttpsError('failed-precondition', 'LinkedIn credentials missing');
+  }
+  
+  // Post it
+  const response = await fetch('https://api.linkedin.com/v2/ugcPosts', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${config.accessToken}`,
+      'Content-Type': 'application/json',
+      'X-Restli-Protocol-Version': '2.0.0',
+    },
+    body: JSON.stringify({
+      author: `urn:li:person:${config.personId}`,
+      lifecycleState: 'PUBLISHED',
+      specificContent: {
+        'com.linkedin.ugc.ShareContent': {
+          shareCommentary: {
+            text: postData.content,
+          },
+          shareMediaCategory: 'NONE',
+        },
+      },
+      visibility: {
+        'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC',
+      },
+    }),
+  });
+  
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new HttpsError('internal', `LinkedIn error: ${response.status} - ${errorText}`);
+  }
+  
+  const result = await response.json();
+  const linkedInPostId = result.id;
+  const linkedInUrl = linkedInPostId ? `https://www.linkedin.com/feed/update/${linkedInPostId}` : null;
+  
+  // Update post status
+  await db.collection('linkedin_story_posts').doc(postId).update({
+    status: 'posted',
+    postedAt: admin.firestore.FieldValue.serverTimestamp(),
+    linkedInPostId: linkedInPostId,
+    postUrl: linkedInUrl,
+  });
+  
+  return { success: true, postUrl: linkedInUrl };
+});
+
+// ============================================================================
+// LINKEDIN OAUTH CALLBACK — Exchange code for access token
+// ============================================================================
+
+/**
+ * LinkedIn OAuth callback handler.
+ * After user authorizes the app, LinkedIn redirects here with a code.
+ * We exchange the code for an access token and display it for manual secret setup.
+ * 
+ * Flow:
+ * 1. User visits the authorization URL (generated below)
+ * 2. User authorizes the app on LinkedIn
+ * 3. LinkedIn redirects to this endpoint with ?code=xxx
+ * 4. We exchange the code for an access token
+ * 5. Display the token for the admin to copy and store as Firebase secret
+ */
+exports.linkedinOAuthCallback = onRequest({
+  cors: false,
+  timeoutSeconds: 30,
+}, async (req, res) => {
+  const LINKEDIN_CLIENT_ID = '786537sg12kcn4';
+  const LINKEDIN_CLIENT_SECRET = 'WPL_AP1.IyXkIzztNJ9OMA2j.hnioXw==';
+  const LINKEDIN_ORG_ID = '111658460';
+  const REDIRECT_URI = 'https://us-central1-voraprep-prod.cloudfunctions.net/linkedinOAuthCallback';
+  
+  const { code, error, error_description } = req.query;
+  
+  // Handle errors from LinkedIn
+  if (error) {
+    console.error('[LinkedIn OAuth] Error:', error, error_description);
+    res.status(400).send(`
+      <html>
+        <head><title>LinkedIn OAuth Error</title></head>
+        <body style="font-family: system-ui; max-width: 600px; margin: 50px auto; padding: 20px;">
+          <h1>❌ Authorization Failed</h1>
+          <p><strong>Error:</strong> ${error}</p>
+          <p><strong>Details:</strong> ${error_description || 'No details provided'}</p>
+          <p><a href="https://voraprep.com/admin">Return to Admin</a></p>
+        </body>
+      </html>
+    `);
+    return;
+  }
+  
+  // If no code, show authorization link
+  if (!code) {
+    // openid + profile = get person ID via userinfo endpoint
+    // w_member_social = post to personal profile
+    const scopes = 'openid profile w_member_social';
+    const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${LINKEDIN_CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${encodeURIComponent(scopes)}`;
+    
+    res.status(200).send(`
+      <html>
+        <head><title>LinkedIn Authorization</title></head>
+        <body style="font-family: system-ui; max-width: 600px; margin: 50px auto; padding: 20px;">
+          <h1>🔗 Authorize LinkedIn Posting</h1>
+          <p>Click the button below to authorize VoraPrep to post to your personal LinkedIn profile.</p>
+          <p style="margin: 30px 0;">
+            <a href="${authUrl}" style="background: #0077b5; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold;">
+              Authorize with LinkedIn
+            </a>
+          </p>
+          <p style="color: #666; font-size: 14px;">
+            This will grant permission to post updates to your LinkedIn profile.<br>
+            The access token is valid for 60 days.
+          </p>
+        </body>
+      </html>
+    `);
+    return;
+  }
+  
+  // Exchange code for access token
+  try {
+    const tokenResponse = await fetch('https://www.linkedin.com/oauth/v2/accessToken', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        grant_type: 'authorization_code',
+        code,
+        client_id: LINKEDIN_CLIENT_ID,
+        client_secret: LINKEDIN_CLIENT_SECRET,
+        redirect_uri: REDIRECT_URI,
+      }),
+    });
+    
+    const tokenData = await tokenResponse.json();
+    
+    if (!tokenResponse.ok || !tokenData.access_token) {
+      throw new Error(tokenData.error_description || tokenData.error || 'Failed to get access token');
+    }
+    
+    const accessToken = tokenData.access_token;
+    const expiresIn = tokenData.expires_in; // seconds
+    const expiresDate = new Date(Date.now() + expiresIn * 1000).toLocaleDateString();
+    
+    console.log('[LinkedIn OAuth] Successfully obtained access token, expires:', expiresDate);
+    
+    // Fetch user's LinkedIn profile to get their person ID
+    let personId = null;
+    try {
+      const profileResponse = await fetch('https://api.linkedin.com/v2/userinfo', {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+        },
+      });
+      if (profileResponse.ok) {
+        const profile = await profileResponse.json();
+        personId = profile.sub; // LinkedIn person ID from OpenID Connect
+        console.log('[LinkedIn OAuth] Got person ID:', personId);
+      } else {
+        console.warn('[LinkedIn OAuth] /v2/userinfo failed:', await profileResponse.text());
+      }
+    } catch (profileErr) {
+      console.error('[LinkedIn OAuth] Could not fetch profile:', profileErr.message);
+    }
+    
+    // Store in Firestore for automatic use
+    await db.collection('system_config').doc('linkedin').set({
+      accessToken,
+      expiresIn,
+      expiresAt: new Date(Date.now() + expiresIn * 1000),
+      personId, // For posting as personal profile
+      orgId: LINKEDIN_ORG_ID, // For future org posting if approved
+      updatedAt: new Date(),
+    }, { merge: true });
+    
+    res.status(200).send(`
+      <html>
+        <head><title>LinkedIn Authorization Success</title></head>
+        <body style="font-family: system-ui; max-width: 700px; margin: 50px auto; padding: 20px;">
+          <h1>✅ Authorization Successful!</h1>
+          <p>LinkedIn access token obtained. It will expire on <strong>${expiresDate}</strong>.</p>
+          ${personId ? `<p>Posting as: <strong>Person ID ${personId}</strong></p>` : ''}
+          
+          <h3>✅ All Done!</h3>
+          <p>The token has been stored automatically. LinkedIn auto-posting is now active.</p>
+          <p>When new articles are published, they will be shared to your LinkedIn profile.</p>
+          
+          <p style="margin-top: 30px;">
+            <a href="https://voraprep.com/admin" style="background: #1a73e8; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px;">
+              Return to Admin Dashboard
+            </a>
+          </p>
+          
+          <details style="margin-top: 30px;">
+            <summary style="cursor: pointer; color: #666;">Manual setup (optional)</summary>
+            <pre style="background: #f4f4f4; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 12px; margin-top: 10px;">
+# Set the access token as Firebase secret
+echo "${accessToken}" | firebase functions:secrets:set LINKEDIN_ACCESS_TOKEN -P production
+            </pre>
+          </details>
+        </body>
+      </html>
+    `);
+  } catch (err) {
+    console.error('[LinkedIn OAuth] Token exchange failed:', err);
+    res.status(500).send(`
+      <html>
+        <head><title>LinkedIn OAuth Error</title></head>
+        <body style="font-family: system-ui; max-width: 600px; margin: 50px auto; padding: 20px;">
+          <h1>❌ Token Exchange Failed</h1>
+          <p><strong>Error:</strong> ${err.message}</p>
+          <p>Please try again or check the LinkedIn Developer Console.</p>
+          <p><a href="https://voraprep.com/admin">Return to Admin</a></p>
+        </body>
+      </html>
+    `);
   }
 });
 
@@ -4819,24 +6215,167 @@ exports.growthSeedBriefs = onCall({
     },
   ];
 
-  // Template types to generate
+  // Template types to generate with FULL OUTLINES for quality content
   const templates = [
-    { id: 'study-guide', title: 'Complete {exam} {section} Study Guide {year}', slug: '{course}-{sectionLower}-study-guide-{year}', perSection: true, wordCount: 2500, priority: 1 },
-    { id: 'pass-rates', title: '{exam} Pass Rates {year}: What to Expect', slug: '{course}-pass-rates-{year}', perSection: false, wordCount: 2000, priority: 2 },
-    { id: 'study-schedule', title: '{exam} Study Schedule {year}: Week-by-Week Plan', slug: '{course}-study-schedule-{year}', perSection: false, wordCount: 2200, priority: 2 },
-    { id: 'salary-guide', title: '{exam} Salary Guide {year}: How Much Do {exam}s Earn?', slug: '{course}-salary-guide-{year}', perSection: false, wordCount: 2000, priority: 3 },
-    { id: 'review-comparison', title: 'Best {exam} Review Courses {year}: Honest Comparison', slug: 'best-{course}-review-courses-{year}', perSection: false, wordCount: 2800, priority: 1 },
-    { id: 'exam-tips', title: '{count} Tips to Pass the {exam} Exam in {year}', slug: '{course}-exam-tips-{year}', perSection: false, wordCount: 2000, priority: 2 },
-    { id: 'requirements', title: '{exam} Requirements {year}: Education, Experience & Fees', slug: '{course}-requirements-{year}', perSection: false, wordCount: 2000, priority: 3 },
-    { id: 'free-practice', title: 'Free {exam} {section} Practice Questions ({year})', slug: 'free-{course}-{sectionLower}-practice-questions-{year}', perSection: true, wordCount: 3000, priority: 1 },
-    { id: 'topic-explainer', title: 'Understanding {sectionName}: {exam} {section} Breakdown', slug: '{course}-{sectionLower}-breakdown-{year}', perSection: true, wordCount: 1800, priority: 3 },
+    { 
+      id: 'study-guide-section', 
+      title: 'Complete {exam} {sectionName} Study Guide {year}', 
+      slug: '{course}-{sectionLower}-study-guide-{year}', 
+      perSection: true, 
+      wordCount: 2500, 
+      priority: 1,
+      outline: [
+        { heading: 'What Is {exam} {sectionName}?', level: 2, keyPoints: ['Overview of the section', 'What it tests', 'Weight on the exam', 'Who should take this section first'], wordCount: 300 },
+        { heading: '{sectionName} Exam Format and Structure', level: 2, keyPoints: ['Number of questions (MCQ and TBS)', 'Time allowed', 'Passing score requirements', 'Question types breakdown'], wordCount: 250 },
+        { heading: 'Key Topics You Must Master', level: 2, keyPoints: ['Blueprint areas with percentages', 'High-weight topics to prioritize', 'Common tested concepts with examples', 'Topics that appear repeatedly'], wordCount: 400 },
+        { heading: 'How to Study for {sectionName} Effectively', level: 2, keyPoints: ['Recommended study timeline', 'Daily study routine', 'Spaced repetition strategy', 'Practice question targets (aim for 2,000+)'], wordCount: 400 },
+        { heading: 'Common Mistakes to Avoid', level: 2, keyPoints: ['Time management errors', 'Skipping difficult topics', 'Not doing enough MCQs', 'Ignoring TBS practice', 'Studying passively'], wordCount: 300 },
+        { heading: '{sectionName} Pass Rates and Difficulty', level: 2, keyPoints: ['Current pass rates with data', 'Historical trends', 'Why this section is considered easy/hard', 'What a 75 really means'], wordCount: 250 },
+        { heading: 'Best Study Resources for {sectionName}', level: 2, keyPoints: ['VoraPrep adaptive learning', 'Official resources', 'Free vs paid options', 'What to look for in a review course'], wordCount: 300 },
+        { heading: 'FAQs About {exam} {sectionName}', level: 2, keyPoints: ['How long to study?', 'Best order to take sections?', 'Can I retake if I fail?', 'What score do I need?', 'How is it graded?'], wordCount: 300 },
+      ],
+    },
+    { 
+      id: 'pass-rates', 
+      title: '{exam} Pass Rates {year}: What to Expect', 
+      slug: '{course}-pass-rates-{year}', 
+      perSection: false, 
+      wordCount: 2000, 
+      priority: 2,
+      outline: [
+        { heading: '{exam} Pass Rate Overview', level: 2, keyPoints: ['Current overall pass rate', 'Year-over-year trends', 'Comparison to previous years', 'What the numbers really mean'], wordCount: 300 },
+        { heading: 'Pass Rates by Section', level: 2, keyPoints: ['Each section pass rate', 'Hardest vs easiest sections', 'Historical context', 'Why some sections are harder'], wordCount: 400 },
+        { heading: 'Why the {exam} Pass Rate Is Low', level: 2, keyPoints: ['Insufficient study time', 'Poor study materials', 'Not enough practice questions', 'Test anxiety', 'Underestimating difficulty'], wordCount: 300 },
+        { heading: 'How to Beat the Odds', level: 2, keyPoints: ['Study more than the average candidate', 'Use adaptive learning', 'Do 3,000+ practice questions', 'Simulate exam conditions'], wordCount: 400 },
+        { heading: 'VoraPrep Student Success Data', level: 2, keyPoints: ['Our students pass rate', 'Average score improvement', 'Questions completed by passers', 'Study time correlation'], wordCount: 300 },
+        { heading: '{exam} Pass Rate FAQs', level: 2, keyPoints: ['Is it getting harder?', 'First-time vs retaker rates', 'What if I fail?', 'How many attempts on average?'], wordCount: 300 },
+      ],
+    },
+    { 
+      id: 'study-schedule', 
+      title: '{exam} Study Schedule {year}: Week-by-Week Plan', 
+      slug: '{course}-study-schedule-{year}', 
+      perSection: false, 
+      wordCount: 2200, 
+      priority: 2,
+      outline: [
+        { heading: 'How Long Does It Take to Pass the {exam}?', level: 2, keyPoints: ['Total hours needed (300-400 typical)', 'Per section breakdown', 'Full-time vs part-time timeline', 'Working professional schedule'], wordCount: 300 },
+        { heading: 'Choosing Your Section Order', level: 2, keyPoints: ['Most common order strategy', 'Start with hardest vs easiest', 'Content overlap considerations', 'Momentum building'], wordCount: 300 },
+        { heading: '3-Month Intensive Schedule', level: 2, keyPoints: ['Week-by-week breakdown', 'Daily hour commitment', 'Best for full-time students', 'One section at a time'], wordCount: 350 },
+        { heading: '6-Month Balanced Schedule', level: 2, keyPoints: ['Recommended for working professionals', 'Two sections at once strategy', 'Weekend warrior approach', 'Buffer time for retakes'], wordCount: 350 },
+        { heading: '12-Month Extended Schedule', level: 2, keyPoints: ['Best for busy professionals', 'Steady sustainable pace', 'Risk of forgetting earlier sections', 'Review strategy'], wordCount: 350 },
+        { heading: 'Weekly Study Routine Template', level: 2, keyPoints: ['Monday-Friday evening plan', 'Weekend intensive sessions', 'When to do MCQs vs lessons', 'Rest and recovery'], wordCount: 300 },
+        { heading: 'Study Tips for Working Professionals', level: 2, keyPoints: ['Morning vs evening study', 'Using commute time', 'PTO strategy for exam week', 'Family communication'], wordCount: 250 },
+      ],
+    },
+    { 
+      id: 'salary-guide', 
+      title: '{exam} Salary Guide {year}: How Much Do {exam}s Earn?', 
+      slug: '{course}-salary-guide-{year}', 
+      perSection: false, 
+      wordCount: 2000, 
+      priority: 3,
+      outline: [
+        { heading: 'Average {exam} Salary in {year}', level: 2, keyPoints: ['National average', 'Entry level vs experienced', 'Salary range (10th to 90th percentile)', 'Total compensation'], wordCount: 300 },
+        { heading: 'Salary by Years of Experience', level: 2, keyPoints: ['0-2 years', '3-5 years', '6-10 years', '10+ years', 'Partner/Director level'], wordCount: 350 },
+        { heading: 'Salary by Industry', level: 2, keyPoints: ['Public accounting', 'Corporate finance', 'Government', 'Consulting', 'Tech companies'], wordCount: 300 },
+        { heading: 'Salary by Location', level: 2, keyPoints: ['Highest paying cities', 'Cost of living adjustment', 'Remote work impact', 'State-by-state data'], wordCount: 300 },
+        { heading: '{exam} vs Non-{exam} Salary Gap', level: 2, keyPoints: ['Percentage premium', 'Career advancement difference', 'Lifetime earnings impact', 'ROI of certification'], wordCount: 300 },
+        { heading: 'How to Maximize Your {exam} Salary', level: 2, keyPoints: ['Negotiate with credential', 'Target high-paying industries', 'Specialize in hot areas', 'Build complementary skills'], wordCount: 250 },
+        { heading: 'Is the {exam} Worth It Financially?', level: 2, keyPoints: ['Cost of exam and prep', 'Time investment', 'Payback period', 'Long-term value', 'Opportunity cost'], wordCount: 200 },
+      ],
+    },
+    { 
+      id: 'review-comparison', 
+      title: 'Best {exam} Review Courses {year}: Honest Comparison', 
+      slug: 'best-{course}-review-courses-{year}', 
+      perSection: false, 
+      wordCount: 2800, 
+      priority: 1,
+      outline: [
+        { heading: 'Best {exam} Review Courses at a Glance', level: 2, keyPoints: ['Quick comparison table', 'Price range', 'Key features', 'Our top pick'], wordCount: 300 },
+        { heading: 'How We Evaluated Each Course', level: 2, keyPoints: ['Content quality', 'Technology/UX', 'Price value', 'Pass guarantee', 'Student reviews'], wordCount: 200 },
+        { heading: 'Becker {exam} Review', level: 2, keyPoints: ['The industry standard', 'Premium pricing ($2,500+)', 'Pros and cons', 'Best for: big firm sponsorship'], wordCount: 350 },
+        { heading: 'Roger {exam} Review', level: 2, keyPoints: ['Engaging lectures', 'Mid-range pricing', 'Pros and cons', 'Best for: visual learners'], wordCount: 300 },
+        { heading: 'Surgent {exam} Review', level: 2, keyPoints: ['Adaptive technology pioneer', 'Competitive pricing', 'Pros and cons', 'Best for: efficient studiers'], wordCount: 300 },
+        { heading: 'VoraPrep: AI-Powered {exam} Prep', level: 2, keyPoints: ['Newest technology (AI tutor, adaptive)', 'Affordable ($19/mo)', 'Unlimited practice questions', 'Best for: budget-conscious, tech-savvy'], wordCount: 400 },
+        { heading: 'Price Comparison Table', level: 2, keyPoints: ['Side-by-side pricing', 'What is included at each tier', 'Hidden costs', 'Pass guarantee details'], wordCount: 300 },
+        { heading: 'Which Course Is Right for You?', level: 2, keyPoints: ['Budget decision tree', 'Learning style match', 'Time availability', 'Final recommendation'], wordCount: 350 },
+      ],
+    },
+    { 
+      id: 'exam-tips', 
+      title: '15 Tips to Pass the {exam} Exam in {year}', 
+      slug: '{course}-exam-tips-{year}', 
+      perSection: false, 
+      wordCount: 2000, 
+      priority: 2,
+      outline: [
+        { heading: 'Study Strategy Tips (1-5)', level: 2, keyPoints: ['Tip 1: Create a realistic study schedule', 'Tip 2: Use spaced repetition', 'Tip 3: Focus on weak areas first', 'Tip 4: Do 3,000+ practice questions', 'Tip 5: Simulate real exam conditions'], wordCount: 400 },
+        { heading: 'Exam Day Tips (6-10)', level: 2, keyPoints: ['Tip 6: Get there early', 'Tip 7: Manage your time per testlet', 'Tip 8: Don\'t second-guess yourself', 'Tip 9: Take short mental breaks', 'Tip 10: Flag and move on'], wordCount: 400 },
+        { heading: 'Mindset Tips (11-15)', level: 2, keyPoints: ['Tip 11: Don\'t compare yourself to others', 'Tip 12: Embrace the struggle', 'Tip 13: Celebrate small wins', 'Tip 14: Remember why you started', 'Tip 15: Trust your preparation'], wordCount: 400 },
+        { heading: 'Bonus: What to Do If You Fail', level: 2, keyPoints: ['Analyze your score report', 'Adjust study strategy', 'Don\'t wait too long to retake', 'You\'re not alone'], wordCount: 200 },
+        { heading: 'Success Stories', level: 2, keyPoints: ['Real examples of people who passed', 'Common traits of successful candidates', 'How VoraPrep helped them'], wordCount: 200 },
+      ],
+    },
+    { 
+      id: 'requirements-state', 
+      title: '{exam} Requirements {year}: Education, Experience & Fees', 
+      slug: '{course}-requirements-{year}', 
+      perSection: false, 
+      wordCount: 2000, 
+      priority: 3,
+      outline: [
+        { heading: '{exam} Requirements Overview', level: 2, keyPoints: ['Three pillars: education, exam, experience', 'Timeline to complete', 'Costs breakdown'], wordCount: 250 },
+        { heading: 'Education Requirements', level: 2, keyPoints: ['Degree requirements', 'Credit hour requirements', 'Approved majors', 'International education'], wordCount: 350 },
+        { heading: 'Exam Requirements', level: 2, keyPoints: ['All sections required', 'Time limits to complete', 'Passing score', 'Retake policies'], wordCount: 300 },
+        { heading: 'Experience Requirements', level: 2, keyPoints: ['Type of experience needed', 'Hours required', 'Supervisor requirements', 'Timeline flexibility'], wordCount: 300 },
+        { heading: '{exam} Exam Fees and Costs', level: 2, keyPoints: ['Application fees', 'Exam fees per section', 'Review course costs', 'Total investment'], wordCount: 300 },
+        { heading: 'State-by-State Differences', level: 2, keyPoints: ['Why requirements vary', 'Most lenient states', 'Most strict states', 'Reciprocity'], wordCount: 250 },
+        { heading: 'How to Get Started', level: 2, keyPoints: ['Step 1: Verify eligibility', 'Step 2: Apply to state board', 'Step 3: Get NTS', 'Step 4: Schedule exams', 'Step 5: Start studying'], wordCount: 250 },
+      ],
+    },
+    { 
+      id: 'free-practice', 
+      title: 'Free {exam} {sectionName} Practice Questions ({year})', 
+      slug: 'free-{course}-{sectionLower}-practice-questions-{year}', 
+      perSection: true, 
+      wordCount: 3000, 
+      priority: 1,
+      outline: [
+        { heading: 'Why Practice Questions Matter', level: 2, keyPoints: ['Correlation with pass rates', 'Active vs passive learning', 'Identifying weak areas', 'Building exam stamina'], wordCount: 300 },
+        { heading: '10 Free {sectionName} Practice Questions', level: 2, keyPoints: ['Question 1 with answer', 'Question 2 with answer', '...through Question 10', 'Detailed explanations for each'], wordCount: 1200 },
+        { heading: 'How These Questions Were Chosen', level: 2, keyPoints: ['Mirrors actual exam difficulty', 'Covers key blueprint areas', 'Common mistake triggers', 'High-value concepts'], wordCount: 250 },
+        { heading: 'How to Use Practice Questions Effectively', level: 2, keyPoints: ['Timed vs untimed practice', 'Review every wrong answer', 'Track patterns in mistakes', 'Spaced repetition'], wordCount: 300 },
+        { heading: 'Get 5,000+ More {sectionName} Questions', level: 2, keyPoints: ['VoraPrep question bank', 'Adaptive learning technology', 'AI explanations', 'Free trial available'], wordCount: 300 },
+        { heading: 'Additional Free Resources', level: 2, keyPoints: ['Official AICPA resources', 'Free flashcards', 'Study guides', 'Community forums'], wordCount: 200 },
+      ],
+    },
+    { 
+      id: 'topic-explainer', 
+      title: 'Understanding {sectionName}: {exam} Breakdown', 
+      slug: '{course}-{sectionLower}-breakdown-{year}', 
+      perSection: true, 
+      wordCount: 1800, 
+      priority: 3,
+      outline: [
+        { heading: 'What Is {sectionName}?', level: 2, keyPoints: ['Definition and scope', 'Why it matters for the exam', 'Real-world application'], wordCount: 250 },
+        { heading: '{sectionName} Blueprint Breakdown', level: 2, keyPoints: ['Content areas with weights', 'Which areas to prioritize', 'Time allocation strategy'], wordCount: 300 },
+        { heading: 'Key Concepts You Must Know', level: 2, keyPoints: ['Concept 1 explained', 'Concept 2 explained', 'Concept 3 explained', 'How they connect'], wordCount: 400 },
+        { heading: 'Common Question Types', level: 2, keyPoints: ['MCQ format examples', 'TBS format examples', 'Calculation questions', 'Conceptual questions'], wordCount: 300 },
+        { heading: 'Study Tips for {sectionName}', level: 2, keyPoints: ['Best resources', 'Effective techniques', 'Time investment needed', 'Practice question strategy'], wordCount: 300 },
+        { heading: 'Top {sectionName} Mistakes to Avoid', level: 2, keyPoints: ['Common misconceptions', 'Calculation errors', 'Time management issues', 'How to fix them'], wordCount: 250 },
+      ],
+    },
   ];
 
-  // Comparison briefs for exam pairs
+  // Comparison briefs for exam pairs (match client-side: 9 pairs)
   const comparisonPairs = [
-    ['cpa', 'ea', 'CPA vs EA'], ['cpa', 'cma', 'CPA vs CMA'],
-    ['cpa', 'cia', 'CPA vs CIA'], ['cma', 'cia', 'CMA vs CIA'],
-    ['cma', 'cfp', 'CMA vs CFP'], ['cisa', 'cia', 'CISA vs CIA'],
+    ['cpa', 'cma', 'CPA vs CMA'], ['cpa', 'ea', 'CPA vs EA'],
+    ['cpa', 'cia', 'CPA vs CIA'], ['ea', 'cpa', 'EA vs CPA'],
+    ['cma', 'cia', 'CMA vs CIA'], ['cma', 'cfp', 'CMA vs CFP'],
+    ['cia', 'cisa', 'CIA vs CISA'], ['cfp', 'cpa', 'CFP vs CPA'],
+    ['cisa', 'cia', 'CISA vs CIA'],
   ];
 
   let seeded = 0;
@@ -4862,6 +6401,22 @@ exports.growthSeedBriefs = onCall({
             .replace('{year}', CURRENT_YEAR)
             .replace('{count}', '15');
 
+          // Build outline with placeholders replaced
+          const outline = (template.outline || []).map(o => ({
+            heading: o.heading
+              .replace('{exam}', exam.exam)
+              .replace('{section}', section.id)
+              .replace('{sectionName}', section.name)
+              .replace('{year}', CURRENT_YEAR),
+            level: o.level,
+            keyPoints: o.keyPoints.map(kp => kp
+              .replace('{exam}', exam.exam)
+              .replace('{section}', section.id)
+              .replace('{sectionName}', section.name)
+              .replace('{year}', CURRENT_YEAR)),
+            wordCount: o.wordCount,
+          }));
+
           const briefId = `${exam.courseId}-${template.id}-${section.id.toLowerCase()}-${CURRENT_YEAR}`;
           const ref = db.collection('growth_content').doc(briefId);
           batch.set(ref, {
@@ -4872,12 +6427,12 @@ exports.growthSeedBriefs = onCall({
             targetKeywords: [`${exam.exam.toLowerCase()} ${section.id.toLowerCase()}`, `${exam.exam.toLowerCase()} ${section.name.toLowerCase()}`],
             primaryKeyword: `${exam.exam.toLowerCase()} ${section.id.toLowerCase()} study guide`,
             wordCountTarget: template.wordCount,
-            internalLinks: [`/${exam.courseId}`],
+            internalLinks: [`/${exam.courseId}`, `/${exam.courseId}/practice`, `/${exam.courseId}/study`],
             ctaType: 'register',
             ctaUrl: `/${exam.courseId}`,
             status: 'brief',
             priority: template.priority,
-            outline: [],
+            outline,
             searchIntent: 'informational',
             estimatedVolume: 0,
             competitorUrls: [],
@@ -4904,21 +6459,33 @@ exports.growthSeedBriefs = onCall({
           .replace('{year}', CURRENT_YEAR)
           .replace('{count}', '15');
 
+        // Build outline with placeholders replaced
+        const outline = (template.outline || []).map(o => ({
+          heading: o.heading
+            .replace('{exam}', exam.exam)
+            .replace('{year}', CURRENT_YEAR),
+          level: o.level,
+          keyPoints: o.keyPoints.map(kp => kp
+            .replace('{exam}', exam.exam)
+            .replace('{year}', CURRENT_YEAR)),
+          wordCount: o.wordCount,
+        }));
+
         const briefId = `${exam.courseId}-${template.id}-${CURRENT_YEAR}`;
         const ref = db.collection('growth_content').doc(briefId);
         batch.set(ref, {
           title, slug,
           courseId: exam.courseId,
           contentType: template.id,
-          targetKeywords: [`${exam.exam.toLowerCase()} prep`, `${exam.exam.toLowerCase()} exam`],
+          targetKeywords: [`${exam.exam.toLowerCase()} prep`, `${exam.exam.toLowerCase()} exam`, `${exam.exam.toLowerCase()} ${template.id.replace(/-/g, ' ')}`],
           primaryKeyword: `${exam.exam.toLowerCase()} ${template.id.replace(/-/g, ' ')}`,
           wordCountTarget: template.wordCount,
-          internalLinks: [`/${exam.courseId}`],
+          internalLinks: [`/${exam.courseId}`, `/${exam.courseId}/practice`, '/pricing'],
           ctaType: 'register',
           ctaUrl: `/${exam.courseId}`,
           status: 'brief',
           priority: template.priority,
-          outline: [],
+          outline,
           searchIntent: 'informational',
           estimatedVolume: 0,
           competitorUrls: [],
@@ -4936,10 +6503,24 @@ exports.growthSeedBriefs = onCall({
     }
   }
 
-  // Add comparison briefs
+  // Add comparison briefs with full outlines
   for (const [course1, course2, label] of comparisonPairs) {
     const slug = `${course1}-vs-${course2}-comparison-${CURRENT_YEAR}`;
     if (existingSlugs.has(slug)) { skipped++; continue; }
+
+    const exam1 = course1.toUpperCase();
+    const exam2 = course2.toUpperCase();
+
+    const comparisonOutline = [
+      { heading: `${exam1} vs ${exam2} at a Glance`, level: 2, keyPoints: ['Side-by-side comparison table', 'Key differences summary', 'Which is harder?', 'Which pays more?'], wordCount: 300 },
+      { heading: `What Is the ${exam1}?`, level: 2, keyPoints: ['Definition and scope', 'Who gets this certification', 'Career paths', 'Requirements overview'], wordCount: 350 },
+      { heading: `What Is the ${exam2}?`, level: 2, keyPoints: ['Definition and scope', 'Who gets this certification', 'Career paths', 'Requirements overview'], wordCount: 350 },
+      { heading: 'Exam Difficulty Comparison', level: 2, keyPoints: ['Pass rates for each', 'Study hours required', 'Content difficulty', 'Retake policies'], wordCount: 300 },
+      { heading: 'Salary and Career Outcomes', level: 2, keyPoints: ['Average salary comparison', 'Job market demand', 'Career advancement potential', '5-year earnings projection'], wordCount: 350 },
+      { heading: 'Cost and Time Investment', level: 2, keyPoints: ['Exam fees', 'Review course costs', 'Total time to complete', 'ROI analysis'], wordCount: 300 },
+      { heading: 'Which Should You Choose?', level: 2, keyPoints: ['Decision framework', 'If you want public accounting', 'If you want corporate finance', 'If you want flexibility'], wordCount: 300 },
+      { heading: 'Can You Get Both?', level: 2, keyPoints: ['Dual certification benefits', 'Content overlap', 'Timeline for both', 'Is it worth it?'], wordCount: 250 },
+    ];
 
     const briefId = `comparison-${course1}-${course2}-${CURRENT_YEAR}`;
     const ref = db.collection('growth_content').doc(briefId);
@@ -4948,15 +6529,15 @@ exports.growthSeedBriefs = onCall({
       slug,
       courseId: course1,
       contentType: 'comparison',
-      targetKeywords: [`${course1} vs ${course2}`, label.toLowerCase()],
+      targetKeywords: [`${course1} vs ${course2}`, label.toLowerCase(), `${exam1} or ${exam2}`],
       primaryKeyword: `${course1} vs ${course2}`,
       wordCountTarget: 2500,
-      internalLinks: [`/${course1}`, `/${course2}`],
+      internalLinks: [`/${course1}`, `/${course2}`, '/pricing'],
       ctaType: 'register',
       ctaUrl: '/',
       status: 'brief',
       priority: 1,
-      outline: [],
+      outline: comparisonOutline,
       searchIntent: 'informational',
       estimatedVolume: 0,
       competitorUrls: [],
@@ -4965,6 +6546,69 @@ exports.growthSeedBriefs = onCall({
     }, { merge: true });
     seeded++;
     batchCount++;
+  }
+
+  // ============================================================================
+  // State CPA Requirement Briefs (54 total: 50 states + DC + territories)
+  // ============================================================================
+  const US_STATES = [
+    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
+    'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
+    'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan',
+    'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+    'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio',
+    'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota',
+    'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia',
+    'Wisconsin', 'Wyoming', 'District of Columbia', 'Puerto Rico', 'Guam', 'Virgin Islands',
+  ];
+
+  const slugifyState = (s) => s.toLowerCase().replace(/\s+/g, '-');
+
+  for (const state of US_STATES) {
+    const stateSlug = slugifyState(state);
+    const slug = `cpa-requirements-${stateSlug}-${CURRENT_YEAR}`;
+    
+    if (existingSlugs.has(slug)) { skipped++; continue; }
+
+    const stateOutline = [
+      { heading: `CPA Requirements in ${state}`, level: 2, keyPoints: ['Overview of ${state} requirements', 'State board contact', 'Key differences from other states'], wordCount: 300 },
+      { heading: `${state} Education Requirements`, level: 2, keyPoints: ['Degree requirements', 'Credit hours needed', 'Accounting hours', 'Business hours'], wordCount: 350 },
+      { heading: `${state} Experience Requirements`, level: 2, keyPoints: ['Years of experience', 'Type of work required', 'Supervisor requirements', 'Part-time vs full-time'], wordCount: 300 },
+      { heading: `${state} CPA Exam Application`, level: 2, keyPoints: ['How to apply', 'Application deadlines', 'Required documents', 'Background check'], wordCount: 300 },
+      { heading: `${state} CPA License Fees`, level: 2, keyPoints: ['Application fee', 'Exam fees', 'License fee', 'Renewal costs'], wordCount: 250 },
+      { heading: `CPA Reciprocity in ${state}`, level: 2, keyPoints: ['Transferring from other states', 'International requirements', 'Mobility agreements'], wordCount: 250 },
+      { heading: 'How to Get Started', level: 2, keyPoints: ['Step-by-step guide', 'Timeline', 'Common mistakes to avoid'], wordCount: 250 },
+    ];
+
+    const briefId = `cpa-requirements-${stateSlug}-${CURRENT_YEAR}`;
+    const ref = db.collection('growth_content').doc(briefId);
+    batch.set(ref, {
+      title: `CPA Requirements in ${state} ${CURRENT_YEAR}: Complete Guide`,
+      slug,
+      courseId: 'cpa',
+      contentType: 'requirements',
+      targetKeywords: [`cpa requirements ${state.toLowerCase()}`, `how to become a cpa in ${state.toLowerCase()}`, `cpa license ${state.toLowerCase()}`, `${state.toLowerCase()} cpa exam`],
+      primaryKeyword: `cpa requirements ${state.toLowerCase()}`,
+      wordCountTarget: 2000,
+      internalLinks: ['/cpa', '/cpa/info', '/pricing'],
+      ctaType: 'register',
+      ctaUrl: '/cpa',
+      status: 'brief',
+      priority: ['California', 'Texas', 'New York', 'Florida'].includes(state) ? 2 : 3,
+      outline: stateOutline,
+      searchIntent: 'informational',
+      estimatedVolume: ['California', 'Texas', 'New York', 'Florida'].includes(state) ? 2000 : 500,
+      competitorUrls: [],
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+    seeded++;
+    batchCount++;
+
+    if (batchCount >= 450) {
+      await batch.commit();
+      batchCount = 0;
+    }
   }
 
   if (batchCount > 0) {
@@ -5027,7 +6671,8 @@ exports.dynamicSitemap = onRequest({
     { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },
     { loc: '/help', priority: '0.4', changefreq: 'monthly' },
     { loc: '/login', priority: '0.5', changefreq: 'monthly' },
-    { loc: '/signup', priority: '0.6', changefreq: 'monthly' },
+    { loc: '/register', priority: '0.6', changefreq: 'monthly' },
+    { loc: '/demo-practice', priority: '0.7', changefreq: 'monthly' },
   ];
 
   // Fetch published blog articles from Firestore
@@ -5077,6 +6722,116 @@ ${urls}
   res.set('Content-Type', 'application/xml');
   res.status(200).send(xml);
 });
+
+// ============================================================================
+// DYNAMIC RSS FEED — RSS 2.0 feed for blog articles
+// ============================================================================
+
+/**
+ * Serves a dynamic RSS feed with the latest published blog articles.
+ * Firebase Hosting rewrite: /feed.xml → this function.
+ * Also available at /rss.xml and /rss
+ * 
+ * Use cases:
+ * - IFTTT automation to post to Medium, Twitter, LinkedIn
+ * - Podcast apps, RSS readers
+ * - SEO (some crawlers follow RSS)
+ */
+exports.dynamicRssFeed = onRequest({
+  cors: false,
+  timeoutSeconds: 15,
+}, async (req, res) => {
+  const DOMAIN = 'https://voraprep.com';
+  const FEED_TITLE = 'VoraPrep Blog — CPA, EA, CMA, CIA, CFP & CISA Exam Prep';
+  const FEED_DESCRIPTION = 'Free study guides, practice questions, and exam tips for professional certification exams including CPA, Enrolled Agent (EA), CMA, CIA, CFP, and CISA.';
+  const FEED_URL = `${DOMAIN}/feed.xml`;
+
+  // Fetch latest 50 published articles
+  const articles = [];
+  try {
+    const publishedSnapshot = await db.collection('growth_content')
+      .where('status', '==', 'published')
+      .orderBy('publishedAt', 'desc')
+      .limit(50)
+      .get();
+
+    for (const doc of publishedSnapshot.docs) {
+      const data = doc.data();
+      if (!data.slug || !data.title) continue;
+
+      const pubDate = data.publishedAt?.toDate?.()
+        ? data.publishedAt.toDate().toUTCString()
+        : new Date().toUTCString();
+      
+      // Get first 300 characters of content as description
+      const rawContent = data.generatedContent || '';
+      const description = rawContent
+        .replace(/^(?:\*\*)?Meta\s*Description:?\*?\*?\s*.+\n+/im, '')
+        .replace(/^---\n+/, '')
+        .replace(/^#\s+.+\n+/, '')
+        .replace(/[#*_\[\]()]/g, '')
+        .substring(0, 300)
+        .trim() + '...';
+
+      articles.push({
+        title: escapeXml(data.title),
+        link: `${DOMAIN}/blog/${data.slug}`,
+        guid: `${DOMAIN}/blog/${data.slug}`,
+        pubDate,
+        description: escapeXml(description),
+        category: data.courseId?.toUpperCase() || 'Exam Prep',
+      });
+    }
+  } catch (err) {
+    console.error('[RSS] Error fetching published articles:', err);
+  }
+
+  // Generate RSS items
+  const items = articles.map(a => `    <item>
+      <title>${a.title}</title>
+      <link>${a.link}</link>
+      <guid isPermaLink="true">${a.guid}</guid>
+      <pubDate>${a.pubDate}</pubDate>
+      <description><![CDATA[${a.description}]]></description>
+      <category>${a.category}</category>
+    </item>`).join('\n');
+
+  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeXml(FEED_TITLE)}</title>
+    <link>${DOMAIN}/blog</link>
+    <description>${escapeXml(FEED_DESCRIPTION)}</description>
+    <language>en-us</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${FEED_URL}" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>${DOMAIN}/logo.svg</url>
+      <title>${escapeXml(FEED_TITLE)}</title>
+      <link>${DOMAIN}</link>
+    </image>
+${items}
+  </channel>
+</rss>`;
+
+  // Cache for 1 hour
+  res.set('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+  res.set('Content-Type', 'application/rss+xml; charset=utf-8');
+  res.status(200).send(rssXml);
+});
+
+/**
+ * Escape special characters for XML
+ */
+function escapeXml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
 
 // ============================================================================
 // ADMIN SEND BULK EMAIL
@@ -5338,4 +7093,674 @@ exports.adminSyncUserEmails = onCall({
     console.error('Email sync failed:', error);
     throw new HttpsError('internal', `Email sync failed: ${error.message}`);
   }
+});
+
+// ============================================================================
+// ADMIN: SEND EMAIL TO USER
+// Allows admins to send custom emails (e.g., responding to question reports)
+// ============================================================================
+
+const ADMIN_FROM_EMAIL = 'Rob from VoraPrep <rob@voraprep.com>';
+
+exports.sendAdminEmail = onCall({
+  cors: true,
+  invoker: 'public',
+  enforceAppCheck: false,
+  secrets: ['RESEND_API_KEY'],
+}, async (request) => {
+  // Require authentication
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'You must be logged in.');
+  }
+
+  const userId = request.auth.uid;
+  
+  // Check if user is admin
+  const userDoc = await db.collection('users').doc(userId).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const { to, subject, body, reportId } = request.data;
+
+  if (!to || !subject || !body) {
+    throw new HttpsError('invalid-argument', 'Missing required fields: to, subject, body');
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(to)) {
+    throw new HttpsError('invalid-argument', 'Invalid email address');
+  }
+
+  // Rate limit: 20 admin emails per hour per admin
+  await enforceRateLimit(userId, 'adminEmail', 20);
+
+  // Lazy-initialize Resend client
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  if (!apiKey) {
+    throw new HttpsError('failed-precondition', 'Email service not configured.');
+  }
+  const resendClient = new Resend(apiKey);
+
+  try {
+    // Send email
+    const { data, error } = await resendClient.emails.send({
+      from: ADMIN_FROM_EMAIL,
+      to: to,
+      subject: subject,
+      html: generateAdminEmailHTML(body),
+      replyTo: 'rob@voraprep.com',
+    });
+
+    if (error) {
+      console.error('Resend error:', error);
+      throw new Error(error.message);
+    }
+
+    console.log(`Admin email sent to ${to} by ${userId}, email ID: ${data?.id}`);
+
+    // If this is a response to a question report, mark it as resolved
+    if (reportId) {
+      try {
+        await db.collection('questionReports').doc(reportId).update({
+          status: 'resolved',
+          resolvedAt: admin.firestore.FieldValue.serverTimestamp(),
+          resolvedBy: userId,
+          responseEmailId: data?.id,
+        });
+        console.log(`Question report ${reportId} marked as resolved`);
+      } catch (reportError) {
+        console.error(`Failed to update report ${reportId}:`, reportError);
+        // Don't fail the function if report update fails
+      }
+    }
+
+    return { success: true, emailId: data?.id };
+  } catch (error) {
+    console.error('Admin email error:', error);
+    throw new HttpsError('internal', `Failed to send email: ${error.message}`);
+  }
+});
+
+// Admin Email HTML Template - Simple professional format
+function generateAdminEmailHTML(body) {
+  // Convert newlines to <br> and wrap in paragraph
+  const formattedBody = body.replace(/\n/g, '<br>');
+  
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message from VoraPrep</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto;">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      <div style="color: #1f2937; font-size: 16px; line-height: 1.7;">
+        ${formattedBody}
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 30px; padding: 20px;">
+      <p style="margin: 0;">
+        <strong>VoraPrep</strong> - Your AI-Powered Exam Prep Partner
+      </p>
+      <p style="margin: 15px 0 0 0;">
+        <a href="https://voraprep.com" style="color: #3b82f6; text-decoration: none;">voraprep.com</a>
+      </p>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+  `;
+}
+
+// ============================================================================
+// EXPORT ARTICLES — Returns published articles as JSON for Astro blog build
+// ============================================================================
+
+/**
+ * Export published articles as JSON.
+ * Called by GitHub Actions during blog build to get fresh article data.
+ * 
+ * Returns: Array of published articles with all needed fields for static rendering.
+ */
+exports.exportArticles = onRequest({
+  cors: true,
+  timeoutSeconds: 30,
+}, async (req, res) => {
+  try {
+    const snapshot = await db.collection('growth_content')
+      .where('status', '==', 'published')
+      .orderBy('publishedAt', 'desc')
+      .limit(200)
+      .get();
+
+    const articles = snapshot.docs.map(doc => {
+      const data = doc.data();
+      return {
+        id: doc.id,
+        slug: data.slug,
+        title: data.title,
+        metaTitle: data.metaTitle,
+        metaDescription: data.metaDescription,
+        courseId: data.courseId,
+        section: data.section,
+        contentType: data.contentType,
+        primaryKeyword: data.primaryKeyword,
+        generatedContent: data.generatedContent,
+        publishedAt: data.publishedAt?.toDate?.().toISOString() || new Date().toISOString(),
+        updatedAt: data.updatedAt?.toDate?.().toISOString(),
+        ogImage: data.ogImage,
+        author: data.author || 'VoraPrep Team',
+      };
+    });
+
+    // Cache for 5 minutes
+    res.set('Cache-Control', 'public, max-age=300, s-maxage=300');
+    res.json({ articles, count: articles.length });
+  } catch (err) {
+    console.error('[ExportArticles] Error:', err);
+    res.status(500).json({ error: 'Failed to export articles', message: err.message });
+  }
+});
+
+// ============================================================================
+// COMMUNICATION TEMPLATE MANAGEMENT
+// Admin functions for managing email/notification templates
+// ============================================================================
+
+/**
+ * Seed default templates to Firestore.
+ * Only creates templates that don't already exist.
+ * Admin-only callable function.
+ */
+exports.seedCommunicationTemplates = onCall({
+  cors: true,
+  enforceAppCheck: false,
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  console.log('[Templates] Seeding default templates...');
+
+  let created = 0;
+  let skipped = 0;
+
+  for (const [templateId, template] of Object.entries(DEFAULT_TEMPLATES)) {
+    const docRef = db.collection('communication_templates').doc(templateId);
+    const existing = await docRef.get();
+
+    if (existing.exists) {
+      skipped++;
+      console.log(`[Templates] Skipping ${templateId} - already exists`);
+      continue;
+    }
+
+    await docRef.set({
+      ...template,
+      id: templateId,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    created++;
+    console.log(`[Templates] Created ${templateId}`);
+  }
+
+  console.log(`[Templates] Seeding complete: ${created} created, ${skipped} skipped`);
+  return { success: true, created, skipped, total: Object.keys(DEFAULT_TEMPLATES).length };
+});
+
+/**
+ * Update a communication template.
+ * Admin-only callable function.
+ */
+exports.updateCommunicationTemplate = onCall({
+  cors: true,
+  enforceAppCheck: false,
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const { templateId, updates } = request.data;
+  if (!templateId) {
+    throw new HttpsError('invalid-argument', 'templateId is required');
+  }
+
+  // Validate allowed update fields
+  const allowedFields = ['subject', 'body', 'enabled', 'name', 'description'];
+  const sanitizedUpdates = {};
+  for (const [key, value] of Object.entries(updates || {})) {
+    if (allowedFields.includes(key)) {
+      sanitizedUpdates[key] = value;
+    }
+  }
+
+  if (Object.keys(sanitizedUpdates).length === 0) {
+    throw new HttpsError('invalid-argument', 'No valid update fields provided');
+  }
+
+  const docRef = db.collection('communication_templates').doc(templateId);
+  const existing = await docRef.get();
+
+  if (!existing.exists) {
+    // Create from default if it exists
+    const defaultTemplate = DEFAULT_TEMPLATES[templateId];
+    if (defaultTemplate) {
+      await docRef.set({
+        ...defaultTemplate,
+        ...sanitizedUpdates,
+        id: templateId,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      });
+      console.log(`[Templates] Created ${templateId} from default with updates`);
+    } else {
+      throw new HttpsError('not-found', `Template ${templateId} not found`);
+    }
+  } else {
+    await docRef.update({
+      ...sanitizedUpdates,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    console.log(`[Templates] Updated ${templateId}`);
+  }
+
+  return { success: true, templateId };
+});
+
+/**
+ * Get all communication templates.
+ * Returns templates from Firestore merged with defaults.
+ * Admin-only callable function.
+ */
+exports.getCommunicationTemplates = onCall({
+  cors: true,
+  enforceAppCheck: false,
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  // Get templates from Firestore
+  const snapshot = await db.collection('communication_templates').get();
+  const firestoreTemplates = {};
+  snapshot.forEach(doc => {
+    firestoreTemplates[doc.id] = { id: doc.id, ...doc.data() };
+  });
+
+  // Merge with defaults (Firestore takes precedence)
+  const templates = [];
+  for (const [templateId, defaultTemplate] of Object.entries(DEFAULT_TEMPLATES)) {
+    if (firestoreTemplates[templateId]) {
+      templates.push({
+        ...defaultTemplate,
+        ...firestoreTemplates[templateId],
+        isCustomized: true,
+      });
+    } else {
+      templates.push({
+        ...defaultTemplate,
+        id: templateId,
+        isCustomized: false,
+      });
+    }
+  }
+
+  // Add any Firestore templates not in defaults (custom templates)
+  for (const [templateId, template] of Object.entries(firestoreTemplates)) {
+    if (!DEFAULT_TEMPLATES[templateId]) {
+      templates.push({
+        ...template,
+        isCustomized: true,
+        isCustom: true,
+      });
+    }
+  }
+
+  return { templates };
+});
+
+// ============================================================================
+// ARTICLE PUBLICATION NOTIFICATION
+// Sends email to admin when an article is published via SEO Engine
+// ============================================================================
+
+const BLOG_ADMIN_EMAIL = 'rob@sagecg.com';
+const BLOG_BASE_URL = 'https://voraprep.com/blog';
+
+/**
+ * Firestore trigger: sends email notification when an article is published.
+ * Watches for status changing to 'published' in growth_content collection.
+ */
+exports.onArticlePublished = onDocumentUpdated({
+  document: 'growth_content/{articleId}',
+  secrets: ['RESEND_API_KEY'],
+}, async (event) => {
+  const beforeData = event.data.before.data();
+  const afterData = event.data.after.data();
+  const articleId = event.params.articleId;
+
+  // Only trigger when status changes TO 'published'
+  if (beforeData.status === afterData.status || afterData.status !== 'published') {
+    return null;
+  }
+
+  console.log(`[ArticlePublished] Article published: ${articleId}`);
+
+  // Get Resend API key
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  if (!apiKey) {
+    console.warn('[ArticlePublished] RESEND_API_KEY not set, skipping email notification');
+    return null;
+  }
+
+  const resendClient = new Resend(apiKey);
+  
+  // Build article info
+  const title = afterData.title || articleId;
+  const slug = afterData.slug || articleId;
+  const courseId = afterData.courseId || 'unknown';
+  const section = afterData.section || '';
+  const contentType = afterData.contentType || 'article';
+  const primaryKeyword = afterData.primaryKeyword || '';
+  const publishedAt = afterData.publishedAt?.toDate?.() || new Date();
+
+  // Generate URLs for different channels
+  const blogUrl = `${BLOG_BASE_URL}/${slug}/`;
+  const sitemapUrl = 'https://voraprep.com/sitemap.xml';
+  const rssUrl = 'https://voraprep.com/rss.xml';
+
+  // Build email HTML
+  const emailHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f1f5f9;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr>
+          <td style="width: 40px; height: 40px; background-color: #1a73e8; border-radius: 10px; text-align: center; vertical-align: middle; font-size: 20px; color: white; font-weight: bold; line-height: 40px;">V</td>
+          <td style="padding-left: 10px; font-size: 24px; font-weight: 700; color: #0f172a; vertical-align: middle;">VoraPrep</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Main Content -->
+    <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+      
+      <h1 style="color: #0f172a; font-size: 24px; margin: 0 0 20px 0; text-align: center;">
+        📝 New Article Published
+      </h1>
+
+      <!-- Article Details -->
+      <div style="background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0;">
+        <h2 style="color: #0f172a; font-size: 18px; margin: 0 0 15px 0;">${title}</h2>
+        <table style="width: 100%; font-size: 14px; color: #475569;">
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Course:</td>
+            <td style="padding: 8px 0;">${courseId.toUpperCase()}</td>
+          </tr>
+          ${section ? `<tr>
+            <td style="padding: 8px 0; font-weight: 600;">Section:</td>
+            <td style="padding: 8px 0;">${section}</td>
+          </tr>` : ''}
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Type:</td>
+            <td style="padding: 8px 0;">${contentType}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Keyword:</td>
+            <td style="padding: 8px 0;">${primaryKeyword || 'N/A'}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 600;">Published:</td>
+            <td style="padding: 8px 0;">${publishedAt.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Channel Status -->
+      <h3 style="color: #0f172a; font-size: 16px; margin: 25px 0 15px 0;">📍 Where It's Published</h3>
+      
+      <div style="font-size: 14px; line-height: 1.8; color: #475569;">
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ Firestore:</strong> Live in <code style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px;">growth_content</code>
+        </p>
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ Blog:</strong> <a href="${blogUrl}" style="color: #3b82f6;">${blogUrl}</a>
+        </p>
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ Sitemap:</strong> <a href="${sitemapUrl}" style="color: #3b82f6;">sitemap.xml</a> (auto-updated)
+        </p>
+        <p style="margin: 0 0 10px 0;">
+          <strong>✅ RSS:</strong> <a href="${rssUrl}" style="color: #3b82f6;">rss.xml</a> (auto-updated)
+        </p>
+      </div>
+
+      <!-- Next Steps -->
+      <h3 style="color: #0f172a; font-size: 16px; margin: 25px 0 15px 0;">🚀 Next Steps</h3>
+      
+      <div style="font-size: 14px; line-height: 1.8; color: #475569;">
+        <p style="margin: 0 0 8px 0;">1. <strong>Verify the article:</strong></p>
+        <code style="display: block; background: #1e293b; color: #e2e8f0; padding: 12px; border-radius: 8px; margin: 0 0 15px 0; font-size: 13px; overflow-x: auto;">npm run verify:article ${slug}</code>
+        
+        <p style="margin: 0 0 8px 0;">2. <strong>Share on LinkedIn:</strong> Copy this URL once verified</p>
+        <code style="display: block; background: #f1f5f9; color: #1e293b; padding: 12px; border-radius: 8px; margin: 0 0 15px 0; font-size: 13px; word-break: break-all;">${blogUrl}</code>
+        
+        <p style="margin: 0;">3. <strong>Static blog deploy</strong> will run automatically at 6 AM UTC (or trigger manually in GitHub Actions)</p>
+      </div>
+
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 30px 0 10px 0;">
+        <a href="${blogUrl}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 14px 35px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">
+          View Article →
+        </a>
+      </div>
+      
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; margin-top: 30px; color: #64748b; font-size: 13px;">
+      <p style="margin: 0;">This is an automated notification from VoraPrep SEO Engine.</p>
+      <p style="margin: 5px 0 0 0;">You're receiving this because you're an admin at VoraPrep.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+  `;
+
+  try {
+    const { error } = await resendClient.emails.send({
+      from: FROM_EMAIL,
+      to: BLOG_ADMIN_EMAIL,
+      subject: `📝 Article Published: ${title}`,
+      html: emailHtml,
+    });
+
+    if (error) {
+      console.error('[ArticlePublished] Email send error:', error);
+      return null;
+    }
+
+    console.log(`[ArticlePublished] Notification sent to ${BLOG_ADMIN_EMAIL}`);
+    return { success: true };
+  } catch (err) {
+    console.error('[ArticlePublished] Failed to send notification:', err);
+    return null;
+  }
+});
+
+// ============================================================================
+// ORPHANED USER DETECTION AND REPAIR
+// Find users in Firebase Auth who don't have Firestore documents
+// ============================================================================
+
+/**
+ * Find orphaned users: Auth users without proper Firestore documents.
+ * Admin-only callable function.
+ * 
+ * @param {Object} data.fix - If true, create missing Firestore documents
+ * @returns {Object} { total, orphaned, fixed, users[] }
+ */
+exports.findOrphanedUsers = onCall({
+  cors: true,
+  enforceAppCheck: false,
+  timeoutSeconds: 300,
+  memory: '512MiB',
+}, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Authentication required.');
+  }
+
+  // Admin check
+  const userDoc = await db.collection('users').doc(request.auth.uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin access required.');
+  }
+
+  const shouldFix = request.data?.fix === true;
+  console.log(`[OrphanedUsers] Starting scan. Fix mode: ${shouldFix}`);
+
+  // Get all Firebase Auth users
+  let authUsers = [];
+  let nextPageToken;
+  
+  do {
+    const listResult = await admin.auth().listUsers(1000, nextPageToken);
+    authUsers = authUsers.concat(listResult.users);
+    nextPageToken = listResult.pageToken;
+  } while (nextPageToken);
+
+  console.log(`[OrphanedUsers] Found ${authUsers.length} auth users`);
+
+  // Check each for Firestore document
+  const orphaned = [];
+  
+  for (const user of authUsers) {
+    const docSnap = await db.collection('users').doc(user.uid).get();
+    const data = docSnap.data() || {};
+    
+    // Check if document has actual user fields (not just subcollections)
+    const hasActualFields = data.email || data.displayName || data.createdAt;
+    
+    if (!docSnap.exists || !hasActualFields) {
+      orphaned.push({
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        emailVerified: user.emailVerified,
+        createdAt: user.metadata?.creationTime,
+        hasGhostDoc: docSnap.exists && !hasActualFields,
+      });
+    }
+  }
+
+  console.log(`[OrphanedUsers] Found ${orphaned.length} orphaned users`);
+
+  // Fix if requested
+  let fixed = 0;
+  if (shouldFix && orphaned.length > 0) {
+    for (const user of orphaned) {
+      const profile = {
+        email: user.email || '',
+        displayName: user.displayName || user.email?.split('@')[0] || 'User',
+        createdAt: user.createdAt 
+          ? admin.firestore.Timestamp.fromDate(new Date(user.createdAt))
+          : admin.firestore.FieldValue.serverTimestamp(),
+        activeCourse: 'cpa', // Default
+        onboardingComplete: false,
+        dailyGoal: 50,
+        settings: {
+          notifications: true,
+          darkMode: false,
+          soundEffects: true,
+        },
+        _repairedAt: admin.firestore.FieldValue.serverTimestamp(),
+        _repairReason: 'orphaned_auth_user_admin_fix',
+      };
+
+      try {
+        await db.collection('users').doc(user.uid).set(profile, { merge: true });
+        fixed++;
+        console.log(`[OrphanedUsers] Fixed: ${user.email || user.uid}`);
+      } catch (err) {
+        console.error(`[OrphanedUsers] Failed to fix ${user.uid}:`, err.message);
+      }
+    }
+  }
+
+  console.log(`[OrphanedUsers] Complete. Orphaned: ${orphaned.length}, Fixed: ${fixed}`);
+
+  // Also count soft-deleted and total Firestore users for debugging
+  let softDeleted = 0;
+  let firestoreTotal = 0;
+  const allUsersSnap = await db.collection('users').get();
+  firestoreTotal = allUsersSnap.size;
+  allUsersSnap.forEach(doc => {
+    if (doc.data().deletedAt) softDeleted++;
+  });
+
+  console.log(`[OrphanedUsers] Firestore docs: ${firestoreTotal}, Soft-deleted: ${softDeleted}`);
+
+  return {
+    total: authUsers.length,
+    orphaned: orphaned.length,
+    fixed,
+    firestoreTotal,
+    softDeleted,
+    activeUsers: firestoreTotal - softDeleted,
+    users: orphaned.map(u => ({
+      uid: u.uid,
+      email: u.email,
+      displayName: u.displayName,
+      hasGhostDoc: u.hasGhostDoc,
+    })),
+  };
 });

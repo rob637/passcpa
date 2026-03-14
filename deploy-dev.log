@@ -1,0 +1,233 @@
+
+> voraprep@3.0.0 deploy:dev
+> bash scripts/deploy.sh dev
+
+
+[1m═══════════════════════════════════════════════════[0m
+[1m  VoraPrep Deployment[0m
+[1m═══════════════════════════════════════════════════[0m
+
+  [0;34mTarget:[0m      dev
+  [0;34mScope:[0m       full
+  [0;34mBranch:[0m      feature/uworld-explanations
+  [0;34mLast commit:[0m 8f92a48 fix: Progress page now filters lessons by courseId
+  [0;34mUncommitted:[0m 9 file(s)
+  [0;34mTime:[0m        2026-03-14 12:37:43
+
+[1;33m⚠  WARNING: You have 9 uncommitted change(s).[0m
+[1;33m   These will NOT be included in the deployed build.[0m
+
+[0;32m→ Building and deploying to development...[0m
+
+> voraprep@3.0.0 build:dev
+> vite build --mode development
+
+vite v5.4.21 building for development...
+transforming...
+
+/grid.svg referenced in /grid.svg didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 3789 modules transformed.
+rendering chunks...
+warnings when minifying css:
+▲ [WARNING] Expected identifier but found "-" [css-syntax-error]
+
+    <stdin>:4611:2:
+      4611 │   -: |\s;
+           ╵   ^
+
+
+computing gzip size...
+dist/manifest.webmanifest                            0.86 kB
+dist/index.html                                      6.05 kB │ gzip:     2.02 kB
+dist/assets/ExamSimulatorTemplate-BTufylk0.css      11.36 kB │ gzip:     2.37 kB
+dist/assets/prometric-BGkbpHKf.css                  16.11 kB │ gzip:     2.77 kB
+dist/assets/index-DGju8GNm.css                     219.14 kB │ gzip:    29.28 kB
+dist/assets/index-C72BOF40.js                        0.35 kB │ gzip:     0.22 kB
+dist/assets/CPALandingNew-BiEZSKcf.js                0.62 kB │ gzip:     0.38 kB
+dist/assets/CMALandingNew-aber3ex0.js                0.62 kB │ gzip:     0.38 kB
+dist/assets/CIALandingNew-BK7CVy1u.js                0.62 kB │ gzip:     0.38 kB
+dist/assets/CFPLandingNew-BKvEUipL.js                0.62 kB │ gzip:     0.38 kB
+dist/assets/index-Vbn53ZXl.js                        0.62 kB │ gzip:     0.30 kB
+dist/assets/EALandingNew-iitIZqYm.js                 0.62 kB │ gzip:     0.38 kB
+dist/assets/CISALandingNew-D_IrJQxZ.js               0.63 kB │ gzip:     0.38 kB
+dist/assets/courseStats-DKzNe2U9.js                  0.78 kB │ gzip:     0.34 kB
+dist/assets/DiagnosticPage-Dt_LPg8r.js               0.79 kB │ gzip:     0.45 kB
+dist/assets/questionShuffle-BPQxkd4c.js              0.90 kB │ gzip:     0.52 kB
+dist/assets/examReadiness-DCmtfuVa.js                1.05 kB │ gzip:     0.56 kB
+dist/assets/NotFound-DAnrehjd.js                     1.23 kB │ gzip:     0.57 kB
+dist/assets/data-cpa-questions-misc-BFYNBGPL.js      1.58 kB │ gzip:     0.72 kB
+dist/assets/FormattedExplanation-BifcxDDA.js         1.64 kB │ gzip:     0.59 kB
+dist/assets/examSessionService-BaMds4qL.js           1.71 kB │ gzip:     0.64 kB
+dist/assets/cpa-ref-scoring-DybcH39P.js              2.09 kB │ gzip:     0.99 kB
+dist/assets/BackButton-DYLlHoYA.js                   2.19 kB │ gzip:     1.03 kB
+dist/assets/CMAExamSimulator-BmdLhr4E.js             2.27 kB │ gzip:     1.14 kB
+dist/assets/flashcardService-BkRlkidl.js             2.31 kB │ gzip:     0.92 kB
+dist/assets/EAExamSimulator-B41VIgKa.js              2.32 kB │ gzip:     1.18 kB
+dist/assets/CISAExamSimulator-wxCwyHqp.js            2.45 kB │ gzip:     1.19 kB
+dist/assets/useSEO-LZSj6LKe.js                       2.45 kB │ gzip:     1.01 kB
+dist/assets/CIAExamSimulator-CxT7_0vU.js             2.47 kB │ gzip:     1.24 kB
+dist/assets/StartCheckout-E0IH_UZa.js                2.61 kB │ gzip:     1.08 kB
+dist/assets/CFPExamSimulator-CR4Qn_PE.js             2.74 kB │ gzip:     1.31 kB
+dist/assets/CheckoutCancel-9XQ9m_zJ.js               2.75 kB │ gzip:     1.06 kB
+dist/assets/ea-ref-forms-Dp6XGkCz.js                 3.05 kB │ gzip:     1.16 kB
+dist/assets/cpa-ref-nts-AFdYkZHa.js                  3.10 kB │ gzip:     1.58 kB
+dist/assets/PageHeader-D9FK9nJj.js                   3.24 kB │ gzip:     1.27 kB
+dist/assets/cpa-ref-timeline-C0OZcR9t.js             3.26 kB │ gzip:     1.62 kB
+dist/assets/ForgotPassword-CFze4MY8.js               3.40 kB │ gzip:     1.39 kB
+dist/assets/web-DFzlcMYQ.js                          3.47 kB │ gzip:     1.12 kB
+dist/assets/ResourceList-BWqtlRi2.js                 3.61 kB │ gzip:     1.17 kB
+dist/assets/ea-ref-penalties-DAJzy7Xn.js             3.62 kB │ gzip:     1.48 kB
+dist/assets/eaAdaptiveEngine-DtDOsdH7.js             3.62 kB │ gzip:     1.54 kB
+dist/assets/feature-admin-seed-BTJUcDpm.js           3.63 kB │ gzip:     1.24 kB
+dist/assets/StudyPlanCTA-CTPlU-U-.js                 3.65 kB │ gzip:     1.13 kB
+dist/assets/cisaAdaptiveEngine-BnzRspGU.js           3.75 kB │ gzip:     1.62 kB
+dist/assets/cmaAdaptiveEngine-DYAxwuDe.js            3.93 kB │ gzip:     1.70 kB
+dist/assets/ea-ref-deadlines-y6eZZqsS.js             3.95 kB │ gzip:     1.40 kB
+dist/assets/CISAInfo-BnWfEW07.js                     4.15 kB │ gzip:     1.62 kB
+dist/assets/cpa-ref-ethics-DjFzYW1s.js               4.16 kB │ gzip:     1.86 kB
+dist/assets/Unsubscribe-cwlCQyNk.js                  5.02 kB │ gzip:     1.61 kB
+dist/assets/index-kXE3YXl_.js                        5.15 kB │ gzip:     2.07 kB
+dist/assets/Bookmarks-DLwc1OKG.js                    5.24 kB │ gzip:     1.96 kB
+dist/assets/cfpAdaptiveEngine-NIGGPd4y.js            5.24 kB │ gzip:     1.95 kB
+dist/assets/VerifyEmail-CqLSvgiT.js                  5.43 kB │ gzip:     1.67 kB
+dist/assets/workbox-window.prod.es5-vqzQaGvo.js      5.72 kB │ gzip:     2.35 kB
+dist/assets/CFPSection-D3DnstC2.js                   5.80 kB │ gzip:     2.56 kB
+dist/assets/BlogIndex-BQ4X0QOJ.js                    5.87 kB │ gzip:     2.44 kB
+dist/assets/CheckoutSuccess-xWIVkibB.js              5.93 kB │ gzip:     2.09 kB
+dist/assets/ShareNudge-jW_7_ZFo.js                   5.99 kB │ gzip:     2.18 kB
+dist/assets/web-vitals-xphS3Uu5.js                   6.23 kB │ gzip:     2.54 kB
+dist/assets/cpaAdaptiveEngine-B3-fN14i.js            6.32 kB │ gzip:     2.40 kB
+dist/assets/HelpLegal-CaJz3H-q.js                    6.54 kB │ gzip:     1.60 kB
+dist/assets/SectionTemplate-nix2gsKz.js              6.56 kB │ gzip:     2.04 kB
+dist/assets/CMASection-BDzgz7tw.js                   6.58 kB │ gzip:     2.79 kB
+dist/assets/Login-CaCquL_G.js                        6.65 kB │ gzip:     2.54 kB
+dist/assets/DynamicArticle-CPfkBlAo.js               6.71 kB │ gzip:     2.32 kB
+dist/assets/CIAInfo-BhAqqFXU.js                      6.76 kB │ gzip:     1.78 kB
+dist/assets/Privacy-DG9lQmqg.js                      7.31 kB │ gzip:     2.42 kB
+dist/assets/far-cheatsheet-EkKpcAQa.js               7.63 kB │ gzip:     3.41 kB
+dist/assets/reg-cheatsheet-wI9eTR9J.js               7.66 kB │ gzip:     3.55 kB
+dist/assets/see1-cheatsheet-Dm68daHI.js              7.68 kB │ gzip:     3.44 kB
+dist/assets/aud-cheatsheet-CDiPflT-.js               7.77 kB │ gzip:     3.26 kB
+dist/assets/ResourcesHub-BXj9Pjzk.js                 7.96 kB │ gzip:     1.92 kB
+dist/assets/ciaAdaptiveEngine-Dx6wUfqd.js            8.03 kB │ gzip:     3.27 kB
+dist/assets/see1-mnemonics-BsgnO5DI.js               8.27 kB │ gzip:     2.99 kB
+dist/assets/FlashcardSetup-BB2FVd8w.js               8.47 kB │ gzip:     2.52 kB
+dist/assets/CIASection-CPRn9jDh.js                   8.52 kB │ gzip:     3.32 kB
+dist/assets/see3-cheatsheet-C5xLF0SC.js              8.53 kB │ gzip:     3.57 kB
+dist/assets/see2-mnemonics-Vm15IzwM.js               8.57 kB │ gzip:     3.18 kB
+dist/assets/WCEditor-DlrJMAb3.js                     8.72 kB │ gzip:     2.54 kB
+dist/assets/bar-cheatsheet-D65U9miQ.js               9.09 kB │ gzip:     3.98 kB
+dist/assets/see2-cheatsheet-BowELpSI.js              9.16 kB │ gzip:     3.77 kB
+dist/assets/see3-mnemonics-CnmSLCYJ.js               9.25 kB │ gzip:     3.43 kB
+dist/assets/Subscription-CYvAE1tj.js                 9.43 kB │ gzip:     2.66 kB
+dist/assets/EASection-B2ubfYYk.js                    9.62 kB │ gzip:     3.22 kB
+dist/assets/CISASection-L1j14g8C.js                  9.80 kB │ gzip:     4.12 kB
+dist/assets/CMAInfo-BDrfSBtJ.js                      9.97 kB │ gzip:     2.48 kB
+dist/assets/TBSEditor-CZn1IQPX.js                   10.02 kB │ gzip:     2.80 kB
+dist/assets/LessonEditor-DT6ZmFmO.js                10.05 kB │ gzip:     2.78 kB
+dist/assets/ExamReview-DzNAs07L.js                  10.08 kB │ gzip:     2.69 kB
+dist/assets/Register-BYtilwyz.js                    10.38 kB │ gzip:     3.21 kB
+dist/assets/About-Bsh_VDd3.js                       10.62 kB │ gzip:     3.13 kB
+dist/assets/You-CEidVc7Z.js                         10.79 kB │ gzip:     3.20 kB
+dist/assets/CMAEssaySimulator-DtCrz70x.js           10.95 kB │ gzip:     3.65 kB
+dist/assets/CPAStudySchedule2026-DI1g3LeK.js        10.98 kB │ gzip:     3.71 kB
+dist/assets/QuestionEditor-wQO89LVg.js              11.00 kB │ gzip:     3.00 kB
+dist/assets/useStructuredData-DVnR5YBb.js           11.27 kB │ gzip:     3.47 kB
+dist/assets/EAvsCPA-6KlbX1sr.js                     11.31 kB │ gzip:     3.67 kB
+dist/assets/HowToPassFAR-6rYFLJW8.js                11.38 kB │ gzip:     4.17 kB
+dist/assets/EAInfo-CLdwplY3.js                      11.45 kB │ gzip:     2.54 kB
+dist/assets/Lessons-BE78ipaT.js                     11.77 kB │ gzip:     3.63 kB
+dist/assets/StrategyPage-DCa644BE.js                11.81 kB │ gzip:     2.23 kB
+dist/assets/PricingOverview-pZuD-XBw.js             12.15 kB │ gzip:     2.95 kB
+dist/assets/adaptiveEngineCore-Df01jDB7.js          12.19 kB │ gzip:     4.10 kB
+dist/assets/mnemonics-CUHUn8IT.js                   12.49 kB │ gzip:     4.54 kB
+dist/assets/Terms-CHPTa2h2.js                       14.05 kB │ gzip:     4.37 kB
+dist/assets/Compare-DV2-OT1n.js                     14.31 kB │ gzip:     4.16 kB
+dist/assets/PassGuarantee-Bwjtxd-N.js               15.49 kB │ gzip:     3.59 kB
+dist/assets/ReferralSystem-CWEdX-3t.js              15.74 kB │ gzip:     4.48 kB
+dist/assets/CFPCaseStudy-CxWFzznb.js                16.02 kB │ gzip:     4.29 kB
+dist/assets/index-CmkH6ucA.js                       16.21 kB │ gzip:     2.74 kB
+dist/assets/CPAInfo-8sDm-QDB.js                     17.96 kB │ gzip:     3.52 kB
+dist/assets/CFPInfo-DvJAa1DN.js                     18.22 kB │ gzip:     3.26 kB
+dist/assets/UserAnalyticsDashboard-DjgZgorF.js      18.58 kB │ gzip:     5.36 kB
+dist/assets/EAFormExplorer-Hlpv_W9N.js              19.02 kB │ gzip:     6.53 kB
+dist/assets/Flashcards-DwUs2-58.js                  19.66 kB │ gzip:     5.55 kB
+dist/assets/TestimonialHarvester-D4bh448t.js        20.11 kB │ gzip:     5.07 kB
+dist/assets/CMACBQSimulator-DnWolmwO.js             20.20 kB │ gzip:     5.32 kB
+dist/assets/DiagnosticLeadMagnet-BDVx1UJp.js        21.48 kB │ gzip:     5.96 kB
+dist/assets/TimedQuiz-C6Lywj1I.js                   21.50 kB │ gzip:     5.46 kB
+dist/assets/Onboarding-B1tau-9Q.js                  22.77 kB │ gzip:     6.32 kB
+dist/assets/StudyPlanSetup-CazeRNLg.js              24.13 kB │ gzip:     5.50 kB
+dist/assets/VoraPrep-DSdNX1iC.js                    26.42 kB │ gzip:     6.17 kB
+dist/assets/Progress-BIR5Yum8.js                    27.84 kB │ gzip:     7.89 kB
+dist/assets/CourseFactory-BAgDF1Ko.js               28.05 kB │ gzip:     7.79 kB
+dist/assets/Achievements-DXp4QgSB.js                29.12 kB │ gzip:     9.78 kB
+dist/assets/StudyPlan-I08eSGfW.js                   35.02 kB │ gzip:     8.30 kB
+dist/assets/index-iGnvOSTw.js                       35.42 kB │ gzip:     9.23 kB
+dist/assets/LinkedInPosts-CokB_BMT.js               37.71 kB │ gzip:    12.72 kB
+dist/assets/ExamSimulatorTemplate--4Bx6Mae.js       41.18 kB │ gzip:     8.41 kB
+dist/assets/Home-1JGOhUNE.js                        41.55 kB │ gzip:    10.55 kB
+dist/assets/resourceConfig-DvwELOZf.js              44.32 kB │ gzip:    11.37 kB
+dist/assets/LessonViewer-C50KG5mv.js                45.37 kB │ gzip:    12.24 kB
+dist/assets/Practice-CxONqaNy.js                    56.10 kB │ gzip:    13.47 kB
+dist/assets/Settings-Po11kuOV.js                    62.82 kB │ gzip:    15.18 kB
+dist/assets/DemoPractice-B3Aqvosl.js                65.85 kB │ gzip:    22.54 kB
+dist/assets/ExamLandingTemplate-BtaQ6MTT.js         69.45 kB │ gzip:    15.63 kB
+dist/assets/ExamSimulator-CEafQuGc.js               70.32 kB │ gzip:    15.15 kB
+dist/assets/vendor-ui-pgf68_7W.js                   77.47 kB │ gzip:    17.17 kB
+dist/assets/ResourceViewer-CAyQYMIM.js              81.06 kB │ gzip:    18.51 kB
+dist/assets/GrowthDashboard-B-JdJqH9.js            155.75 kB │ gzip:    38.53 kB
+dist/assets/vendor-react-Cly7dfvz.js               164.90 kB │ gzip:    53.84 kB
+dist/assets/html2canvas.esm-DsdFyeQk.js            203.17 kB │ gzip:    48.86 kB
+dist/assets/DiagnosticQuiz-DY-FmAwb.js             258.63 kB │ gzip:    76.64 kB
+dist/assets/index-CO8b5NuO.js                      275.52 kB │ gzip:    86.05 kB
+dist/assets/feature-ai-tbs-BHfBFDLq.js             287.96 kB │ gzip:    91.20 kB
+dist/assets/flashcards-CbBHu_ZU.js                 338.47 kB │ gzip:    92.66 kB
+dist/assets/feature-admin-cms-lbjtvbwp.js          398.42 kB │ gzip:    98.28 kB
+dist/assets/vendor-charts-CdG82Bn3.js              410.92 kB │ gzip:   110.70 kB
+dist/assets/vendor-firebase-DUxLKDBv.js            646.26 kB │ gzip:   146.91 kB
+dist/assets/data-cpa-tbs-BNcO4OwB.js               742.59 kB │ gzip:   209.65 kB
+dist/assets/data-ea-content-B589LYL3.js            846.13 kB │ gzip:   242.50 kB
+dist/assets/data-cisa-content-CQwY1XfY.js          957.95 kB │ gzip:   285.61 kB
+dist/assets/data-cfp-content-DLFu05Az.js         1,446.88 kB │ gzip:   448.48 kB
+dist/assets/data-cia-content-BpVCRM3J.js         1,995.13 kB │ gzip:   524.66 kB
+dist/assets/data-cma-content-BlK1eAed.js         2,354.22 kB │ gzip:   721.00 kB
+dist/assets/data-cpa-content-B_Nup5W3.js         4,058.12 kB │ gzip: 1,186.73 kB
+dist/assets/data-cisa-questions-CxaCaiFt.js      4,527.54 kB │ gzip:   914.83 kB
+dist/assets/data-cpa-questions-reg-Blp65uFj.js   4,791.86 kB │ gzip: 1,067.62 kB
+dist/assets/data-cpa-questions-tcp-B4eT2985.js   5,137.66 kB │ gzip: 1,183.28 kB
+dist/assets/data-cpa-questions-aud-dSkZqzGA.js   5,185.16 kB │ gzip: 1,152.40 kB
+dist/assets/data-cpa-questions-bar-CAoxVDX0.js   5,342.38 kB │ gzip: 1,234.65 kB
+dist/assets/data-cpa-questions-far-BNrcFWBU.js   5,465.71 kB │ gzip: 1,236.37 kB
+dist/assets/data-cpa-questions-isc-DUAAif26.js   5,473.92 kB │ gzip: 1,384.76 kB
+dist/assets/data-cia-questions-DN4vkOTI.js       6,388.76 kB │ gzip: 1,224.82 kB
+dist/assets/data-cma-questions-9yKF62cr.js       7,105.49 kB │ gzip: 1,361.13 kB
+dist/assets/data-cfp-questions-tTr2DXqX.js       8,602.38 kB │ gzip: 2,158.29 kB
+dist/assets/data-ea-questions-BNb8It-8.js        9,310.07 kB │ gzip: 2,133.23 kB
+
+(!) Some chunks are larger than 700 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 24.29s
+
+PWA v1.2.0
+mode      generateSW
+precache  35 entries (2167.30 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-ec372ce3.js
+Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+
+Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier

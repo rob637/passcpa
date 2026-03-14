@@ -18,6 +18,8 @@
  * its own singleton state and delegates to these shared functions.
  */
 
+import logger from '../utils/logger';
+
 // ============================================================================
 // Types
 // ============================================================================
@@ -381,7 +383,7 @@ export function loadState(config: EngineConfig): CoreAdaptiveState {
       return deserializeState(stored, config);
     }
   } catch (e) {
-    console.error(`Failed to load adaptive state (${config.storageKey}):`, e);
+    logger.error(`Failed to load adaptive state (${config.storageKey}):`, e);
   }
   return initializeState(config);
 }
@@ -393,7 +395,7 @@ export function saveState(state: CoreAdaptiveState, storageKey: string): void {
   try {
     localStorage.setItem(storageKey, serializeState(state));
   } catch (e) {
-    console.error(`Failed to save adaptive state (${storageKey}):`, e);
+    logger.error(`Failed to save adaptive state (${storageKey}):`, e);
   }
 }
 
@@ -428,7 +430,7 @@ export async function syncToFirestore(
     const docRef = doc(db, 'users', userId, 'adaptive_state', courseId);
     await setDoc(docRef, serialized, { merge: false });
   } catch (e) {
-    console.error(`Failed to sync adaptive state to Firestore (${courseId}):`, e);
+    logger.error(`Failed to sync adaptive state to Firestore (${courseId}):`, e);
   }
 }
 
@@ -457,7 +459,7 @@ export async function loadFromFirestore(
     const json = JSON.stringify(data);
     return deserializeState(json, config);
   } catch (e) {
-    console.error(`Failed to load adaptive state from Firestore (${courseId}):`, e);
+    logger.error(`Failed to load adaptive state from Firestore (${courseId}):`, e);
     return null;
   }
 }

@@ -35,6 +35,7 @@ import { Card } from './common/Card';
 import { useAuth } from '../hooks/useAuth';
 import { useStudy } from '../hooks/useStudy';
 import { useCourse } from '../providers/CourseProvider';
+import { useStudyPlan } from '../hooks/useStudyPlan';
 import { useNavigation } from './navigation';
 import { DailyActivity, UserStudyState } from '../services/dailyPlanService';
 import { 
@@ -49,9 +50,9 @@ import { getCurrentSection, getExamDate } from '../utils/profileHelpers';
 import { getDefaultSection } from '../utils/sectionUtils';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import type { DiagnosticAreaScore } from '../types/diagnostic';
 import { 
-  getCourseLessonPath, 
+  getCourseLearnPath,
+  getCourseLessonPath,
   getCoursePracticePath, 
   getCourseTBSPath, 
   getCourseHomePath,
@@ -88,25 +89,77 @@ interface DailyPlanCardProps {
 const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivityStart }) => {
   const navigate = useNavigate();
   const { userProfile, user } = useAuth();
+  const { hasPlan: hasStudyPlan } = useStudyPlan();
   const { stats, dailyProgress, getTopicPerformance, getLessonProgress } = useStudy();
   const { courseId, course } = useCourse();
   const { startDailyPlanSession } = useNavigation();
   
   const [plan, setPlan] = useState<PersistedDailyPlan | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Start with loading=false; we set to true only when actually loading
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [completedActivities, setCompletedActivities] = useState<Set<string>>(new Set());
   const [expanded, setExpanded] = useState(false);
   const [hasCarryover, setHasCarryover] = useState(false);
+  const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
+  const [missingExamDate, setMissingExamDate] = useState(false);
+  const [pastExamDate, setPastExamDate] = useState(false);
+  const [nextLesson, setNextLesson] = useState<{ id: string; title: string } | null>(null);
+  
+  // Use refs for volatile values that shouldn't trigger plan regeneration
+  // Stats and dailyProgress change frequently (after every activity), but the
+  // daily plan should only be generated once per day or when explicitly refreshed.
+  const statsRef = useRef(stats);
+  const dailyProgressRef = useRef(dailyProgress);
+  useEffect(() => { statsRef.current = stats; }, [stats]);
+  useEffect(() => { dailyProgressRef.current = dailyProgress; }, [dailyProgress]);
   
   // Track section to detect changes - course-aware
   const currentSection = getCurrentSection(userProfile, courseId, getDefaultSection);
 
   // Load daily plan from Firestore (with caching and carryover)
   const loadPlan = useCallback(async (forceRegenerate: boolean = false) => {
-    if (!userProfile || !user?.uid) return;
+    // Early return if profile not loaded yet
+    if (!userProfile || !user?.uid) {
+      return;
+    }
     
+    // If user has an active study plan, skip legacy exam date checks
+    // The study plan manages its own exam date and schedule
+    if (hasStudyPlan) {
+      setMissingExamDate(false);
+      setPastExamDate(false);
+      // Note: If study plan exam date is past, let the Study Plan page handle it
+      // DailyPlanCard just generates activities based on the plan
+    } else {
+      // Legacy path: Check profile exam date for users without a study plan
+      const examDate = getExamDate(userProfile, currentSection, courseId);
+      if (!examDate) {
+        setMissingExamDate(true);
+        setPastExamDate(false);
+        setHasAttemptedLoad(true);
+        return;
+      }
+      
+      // Check if exam date is in the past
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const examDateNormalized = new Date(examDate);
+      examDateNormalized.setHours(0, 0, 0, 0);
+      
+      if (examDateNormalized < today) {
+        setPastExamDate(true);
+        setMissingExamDate(false);
+        setHasAttemptedLoad(true);
+        return;
+      }
+    }
+    
+    // Proceed with loading plan
+    setMissingExamDate(false);
+    setPastExamDate(false);
     setLoading(true);
+    setHasAttemptedLoad(true);
     setError(null);
     
     try {
@@ -195,44 +248,11 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         lastPracticed: t.lastPracticed,
       }));
 
-      // Seed topicStats from diagnostic results if no practice history exists
-      // This ensures the daily plan knows about weak areas from the diagnostic quiz
-      let diagnosticWeakAreas: DiagnosticAreaScore[] = [];
-      if (mappedTopicStats.length === 0 || mappedTopicStats.every((t: any) => t.totalQuestions === 0)) {
-        try {
-          const diagDocId = `${courseId}-${effectiveSection}`;
-          const diagRef = doc(db, 'users', user.uid, 'diagnosticResults', diagDocId);
-          const diagSnap = await getDoc(diagRef);
-          if (diagSnap.exists()) {
-            const diagData = diagSnap.data();
-            const areaScores: DiagnosticAreaScore[] = diagData.areaScores || [];
-            diagnosticWeakAreas = diagData.weakAreas || [];
-            
-            // Convert diagnostic area scores to topicStats format
-            // This gives the plan generator weak-area data to work with
-            const diagnosticTopicStats = areaScores.map((area: DiagnosticAreaScore) => ({
-              topic: area.areaName,
-              topicId: area.area,
-              accuracy: area.percentage,
-              totalQuestions: area.total,
-              correct: area.score,
-              lastPracticed: diagData.completedAt ? new Date(diagData.completedAt.seconds ? diagData.completedAt.seconds * 1000 : diagData.completedAt).toISOString() : undefined,
-            }));
-            
-            // Use diagnostic stats as seed data
-            if (diagnosticTopicStats.length > 0) {
-              mappedTopicStats.push(...diagnosticTopicStats);
-              logger.info('Seeded topicStats from diagnostic results', {
-                areas: diagnosticTopicStats.length,
-                weakAreas: diagnosticWeakAreas.length,
-              });
-            }
-          }
-        } catch (err) {
-          logger.warn('Could not load diagnostic results for plan seeding:', err);
-          // Graceful degradation — plan generates without diagnostic data
-        }
-      }
+      // NOTE: Diagnostic quiz results are intentionally NOT seeded into topicStats.
+      // Diagnostic scores are rough assessments — they should not generate
+      // "Strengthen" activities for topics the user hasn't actually studied.
+      // The daily plan focuses on lessons first; "Strengthen" activities only
+      // appear for topics with real practice history.
 
       const studyState: UserStudyState = {
         section: effectiveSection,
@@ -242,9 +262,9 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
         tbsStats, 
         questionsDue,
         lessonProgress,
-        flashcardsDue: (stats as any)?.flashcardsDue || 0,
-        currentStreak: (stats as any)?.currentStreak || 0,
-        todayPoints: Math.round((dailyProgress / 100) * (userProfile.dailyGoal || 50)),
+        flashcardsDue: (statsRef.current as any)?.flashcardsDue || 0,
+        currentStreak: (statsRef.current as any)?.currentStreak || 0,
+        todayPoints: Math.round((dailyProgressRef.current / 100) * (userProfile.dailyGoal || 50)),
         // NEW: Enable curriculum-aware learning - only quiz on covered topics
         enableCurriculumFilter: userProfile.enableCurriculumFilter ?? true, // Default to enabled
         enablePreviewMode: userProfile.enablePreviewMode ?? false, // Optional 10% lookahead
@@ -265,6 +285,24 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
       setCompletedActivities(new Set(persistedPlan.completedActivities || []));
       setHasCarryover(!!persistedPlan.carryoverFrom);
       
+      // Compute next lesson for "Keep going" pull-ahead
+      // Find first incomplete lesson from all available lessons
+      try {
+        const allLessons = await fetchLessonsBySection(effectiveSection, courseId);
+        const nextUnstartedLesson = allLessons.find(l => {
+          const progress = lessonProgress[l.id] || 0;
+          return progress < 100;
+        });
+        if (nextUnstartedLesson) {
+          setNextLesson({ id: nextUnstartedLesson.id, title: nextUnstartedLesson.title });
+        } else {
+          setNextLesson(null);
+        }
+      } catch (err) {
+        logger.warn('Could not compute next lesson for pull-ahead:', err);
+        setNextLesson(null);
+      }
+      
       // Also save to localStorage as fallback
       saveCompletedToStorage(new Set(persistedPlan.completedActivities || []));
     } catch (err) {
@@ -275,13 +313,18 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     } finally {
       setLoading(false);
     }
-  }, [userProfile, user?.uid, stats, dailyProgress, getTopicPerformance, getLessonProgress, courseId, currentSection]);
+  }, [userProfile, user?.uid, getTopicPerformance, getLessonProgress, courseId, currentSection, course, hasStudyPlan]);
 
   // Track previous section to detect changes
   const prevSectionRef = useRef<string | null>(null);
   
   // Load plan on mount and when section changes
   useEffect(() => {
+    // Skip if auth not ready yet
+    if (!userProfile || !user?.uid) {
+      return;
+    }
+    
     // Determine if this is a section change (not initial load)
     const prevSection = prevSectionRef.current;
     const sectionChanged = prevSection !== null && prevSection !== currentSection;
@@ -298,7 +341,22 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     // Never force regenerate on section change - each section has its own plan
     // Only force regenerate when user explicitly requests it (e.g., refresh button)
     loadPlan(false);
-  }, [loadPlan, currentSection]);
+  }, [loadPlan, currentSection, userProfile, user?.uid]);
+
+  // Timeout: if loading takes more than 15 seconds, show error with retry
+  useEffect(() => {
+    if (!loading) return;
+    
+    const timeout = setTimeout(() => {
+      if (loading) {
+        setLoading(false);
+        setError('Plan generation timed out. Please try again.');
+        logger.warn('DailyPlanCard: Plan generation timed out after 15s');
+      }
+    }, 15000);
+    
+    return () => clearTimeout(timeout);
+  }, [loading]);
 
   // Track whether auto-completion from URL params has been handled
   const autoCompleteHandledRef = useRef(false);
@@ -375,43 +433,45 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     
     // Store the current activity ID for completion tracking
     const fromParam = `from=dailyplan&activityId=${encodeURIComponent(activity.id)}`;
+    // Always pass section for completion tracking - use activity section, plan section, or current section
+    const activitySection = activity.params?.section || plan?.section || currentSection;
     
     // Navigate based on activity type - using course-aware paths
     switch (activity.type) {
       case 'lesson':
-        navigate(`${getCourseLessonPath(courseId, activity.params.lessonId || '')}?${fromParam}`);
+        navigate(`${getCourseLessonPath(courseId, activity.params.lessonId || '')}?${fromParam}&section=${encodeURIComponent(activitySection)}`);
         break;
       case 'mcq':
         if (activity.params.topic) {
-          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&${fromParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?topic=${encodeURIComponent(activity.params.topic)}&count=${activity.params.questionCount || 10}&section=${encodeURIComponent(activitySection)}&${fromParam}`);
         } else {
-          navigate(`${getCoursePracticePath(courseId)}?${fromParam}`);
+          navigate(`${getCoursePracticePath(courseId)}?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         }
         break;
       case 'tbs':
-        navigate(`${getCourseTBSPath(courseId)}?${fromParam}`);
+        navigate(`${getCourseTBSPath(courseId)}?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       case 'flashcards':
         // Navigate directly to flashcard session (skip setup page) with daily plan params
         const flashcardParams = new URLSearchParams();
         flashcardParams.set('from', 'dailyplan');
         flashcardParams.set('activityId', activity.id);
+        flashcardParams.set('section', activitySection);
         if (activity.params?.mode) flashcardParams.set('mode', activity.params.mode);
         if (activity.params?.cardCount) flashcardParams.set('count', String(activity.params.cardCount));
-        if (activity.params?.section) flashcardParams.set('section', activity.params.section);
         navigate(`/flashcards/session?${flashcardParams.toString()}`);
         break;
       case 'essay':
         // CMA Essay Simulator
-        navigate(`/cma/essay?${fromParam}`);
+        navigate(`/cma/essay?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       case 'cbq':
         // CMA CBQ (Case-Based Questions) Simulator - Sept 2026+
-        navigate(`/cma/cbq?${fromParam}`);
+        navigate(`/cma/cbq?section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       case 'case_study':
         // CFP Case Study - navigate to practice with case study mode
-        navigate(`/practice?mode=case_study&section=${activity.params.section || ''}&${fromParam}`);
+        navigate(`/practice?mode=case_study&section=${encodeURIComponent(activitySection)}&${fromParam}`);
         break;
       default:
         navigate(getCourseHomePath(courseId));
@@ -436,10 +496,11 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
   };
 
   // Get color for activity type
+  // Colors match Home page quick access buttons for consistency
   const getActivityColor = (type: string) => {
     switch (type) {
-      case 'lesson': return 'text-primary-500 bg-primary-100 dark:bg-primary-900/30';
-      case 'mcq': return 'text-success-500 bg-success-100 dark:bg-success-900/30';
+      case 'lesson': return 'text-emerald-600 bg-emerald-100 dark:bg-emerald-900/30';  // Green - matches Home
+      case 'mcq': return 'text-primary-600 bg-primary-100 dark:bg-primary-900/30';      // Blue - matches Home
       case 'tbs': return 'text-teal-500 bg-teal-100 dark:bg-teal-900/30';
       case 'flashcards': return 'text-amber-500 bg-amber-100 dark:bg-amber-900/30';
       case 'essay': return 'text-purple-500 bg-purple-100 dark:bg-purple-900/30';
@@ -449,18 +510,148 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     }
   };
 
-  // Get priority badge
-  const getPriorityBadge = (priority: string) => {
+  // Get priority badge — only show when it adds information
+  // (skip if all activities share the same priority)
+  const getPriorityBadge = (priority: string, allActivities?: DailyActivity[]) => {
+    const items = allActivities || plan?.activities;
+    if (!items || items.length === 0) return null;
+    // Don't render badges when every activity has the same priority
+    const uniquePriorities = new Set(items.map(a => a.priority));
+    if (uniquePriorities.size <= 1) return null;
+
     switch (priority) {
       case 'critical':
-        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400">Critical</span>;
+        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400">Weak area</span>;
       case 'high':
-        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-400">High</span>;
+        return <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-400">Priority</span>;
       default:
         return null;
     }
   };
 
+  // Fallback "Get Started" card when we can't load a personalized plan
+  const renderFallbackCard = () => (
+    <Card className="p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <Calendar className="w-5 h-5 text-primary-500" />
+        <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
+      </div>
+      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+        Start learning to build your personalized study plan.
+      </p>
+      <div className="space-y-2">
+        <Button
+          variant="primary"
+          size="sm"
+          className="w-full"
+          onClick={() => navigate(getCourseLearnPath(courseId))}
+          leftIcon={BookOpen}
+        >
+          Start a Lesson
+        </Button>
+        <Button
+          variant="secondary"
+          size="sm"
+          className="w-full"
+          onClick={() => navigate(getCoursePracticePath(courseId))}
+          leftIcon={Target}
+        >
+          Practice Questions
+        </Button>
+      </div>
+    </Card>
+  );
+
+  // Waiting for auth/profile to load - show fallback immediately
+  // This avoids indefinite spinners for users without profile
+  if (!userProfile || !user?.uid) {
+    return renderFallbackCard();
+  }
+
+  // No exam date set - show friendly nudge to set one with direct link
+  if (missingExamDate) {
+    return (
+      <Card className="p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Calendar className="w-5 h-5 text-primary-500" />
+          <h3 className="font-semibold text-slate-900 dark:text-slate-100">Today's Plan</h3>
+        </div>
+        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+          <button 
+            onClick={() => navigate('/settings?tab=study')}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
+            Set your exam date
+          </button>
+          {' '}to unlock your personalized daily study plan.
+        </p>
+        <div className="space-y-2">
+          <Button
+            variant="primary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate(getCourseLearnPath(courseId))}
+            leftIcon={BookOpen}
+          >
+            Start a Lesson
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate(getCoursePracticePath(courseId))}
+            leftIcon={Target}
+          >
+            Practice Questions
+          </Button>
+        </div>
+      </Card>
+    );
+  }
+
+  // Exam date is in the past - prompt to update it
+  if (pastExamDate) {
+    return (
+      <Card className="p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Calendar className="w-5 h-5 text-amber-500" />
+          <h3 className="font-semibold text-slate-900 dark:text-slate-100">Update Your Exam Date</h3>
+        </div>
+        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+          Your exam date has passed.{' '}
+          <button 
+            onClick={() => navigate('/settings?tab=study')}
+            className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+          >
+            Update your exam date
+          </button>
+          {' '}to continue with a new personalized study plan.
+        </p>
+        <div className="space-y-2">
+          <Button
+            variant="primary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate('/settings?tab=study')}
+            leftIcon={Calendar}
+          >
+            Update Exam Date
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            className="w-full"
+            onClick={() => navigate(getCoursePracticePath(courseId))}
+            leftIcon={Target}
+          >
+            Practice Questions
+          </Button>
+        </div>
+      </Card>
+    );
+  }
+
+  // Actively generating plan
   if (loading) {
     return (
       <Card className="p-6">
@@ -472,12 +663,45 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
     );
   }
 
-  if (error || !plan) {
+  // Plan generation failed or hasn't loaded yet
+  if (error || (hasAttemptedLoad && !plan)) {
     return (
       <Card className="p-6">
-        <div className="flex items-center justify-center py-8 text-slate-600">
-          <AlertCircle className="w-5 h-5 mr-2" />
-          {error || 'Unable to load daily plan'}
+        <div className="flex flex-col items-center justify-center py-8 text-slate-600">
+          <div className="flex items-center mb-3">
+            <AlertCircle className="w-5 h-5 mr-2" />
+            {error || 'Unable to load daily plan'}
+          </div>
+          <div className="flex gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => loadPlan(true)}
+              leftIcon={RefreshCw}
+            >
+              Try Again
+            </Button>
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => navigate(getCourseLearnPath(courseId))}
+              leftIcon={BookOpen}
+            >
+              Start Learning
+            </Button>
+          </div>
+        </div>
+      </Card>
+    );
+  }
+
+  // Plan not loaded yet but no error - waiting for first load
+  if (!plan) {
+    return (
+      <Card className="p-6">
+        <div className="flex items-center justify-center py-8">
+          <Loader2 className="w-6 h-6 animate-spin text-primary-500" />
+          <span className="ml-2 text-slate-600">Creating your personalized plan...</span>
         </div>
       </Card>
     );
@@ -489,13 +713,14 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
 
   // Compact view for dashboard — shows full plan inline
   if (compact && !expanded) {
-    const nextActivity = plan.activities.find((a: DailyActivity) => !completedActivities.has(a.id));
-    const remainingActivities = plan.activities.filter(
-      (a: DailyActivity) => !completedActivities.has(a.id) && a.id !== nextActivity?.id
-    );
-    const completedList = plan.activities.filter(
-      (a: DailyActivity) => completedActivities.has(a.id)
-    );
+    // Show all activities (completed stay visible but marked as done)
+    // Sort: incomplete first, then completed
+    const allActivities = [...plan.activities].sort((a, b) => {
+      const aComplete = completedActivities.has(a.id);
+      const bComplete = completedActivities.has(b.id);
+      if (aComplete === bComplete) return 0;
+      return aComplete ? 1 : -1;
+    });
     
     return (
       <Card noPadding className="overflow-hidden">
@@ -529,112 +754,118 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
             />
           </div>
         </div>
-        
-        {/* Next Activity - highlighted as primary CTA */}
-        {nextActivity ? (
-          <div 
-            className="p-3 sm:p-4 bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
-            onClick={() => handleActivityClick(nextActivity)}
-          >
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="w-12 h-12 rounded-xl bg-white/20 flex shrink-0 items-center justify-center">
-                {React.createElement(getActivityIcon(nextActivity.type), { className: 'w-6 h-6 text-white' })}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-bold text-white text-lg leading-tight">
-                    {nextActivity.title}
-                  </span>
-                  {nextActivity.priority === 'critical' && (
-                    <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-white/20 text-white shrink-0">Critical</span>
-                  )}
-                </div>
-                <p className="text-sm text-white/80 mt-0.5 line-clamp-1">{nextActivity.reason}</p>
-              </div>
-              <div className="flex shrink-0 items-center gap-1 bg-white/20 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-white font-semibold text-sm sm:text-base">
-                Start <ChevronRight className="w-4 h-4" />
-              </div>
+
+        {/* What's Next insight strip */}
+        {plan.whatsNext && (
+          <div className="px-4 py-2 bg-primary-50 dark:bg-primary-900/20 border-b border-primary-100 dark:border-primary-800/40 flex items-start gap-2">
+            <Sparkles className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" />
+            <div className="min-w-0">
+              <span className="text-sm font-medium text-primary-900 dark:text-primary-100">
+                {plan.whatsNext.headline}
+              </span>
+              <p className="text-xs text-primary-700 dark:text-primary-300 line-clamp-1">
+                {plan.whatsNext.detail}
+              </p>
             </div>
-          </div>
-        ) : dailyProgress < 100 ? (
-          <div 
-            className="p-4 text-center bg-gradient-to-r from-primary-500 to-primary-600 cursor-pointer hover:from-primary-600 hover:to-primary-700 transition-all"
-            onClick={() => navigate(getCourseHomePath(courseId))}
-          >
-            <Target className="w-8 h-8 text-white mx-auto mb-2" />
-            <p className="text-white font-medium">Daily plan complete! 🎯</p>
-            <p className="text-white/80 text-sm">Continue studying to hit your daily goal</p>
-          </div>
-        ) : (
-          <div 
-            className="p-4 text-center bg-gradient-to-r from-success-500 to-success-600 cursor-pointer hover:from-success-600 hover:to-success-700 transition-all"
-            onClick={() => navigate(getCoursePracticePath(courseId))}
-          >
-            <CheckCircle className="w-8 h-8 text-white mx-auto mb-2" />
-            <p className="text-white font-medium">All done for today! 🎉</p>
-            <p className="text-white/80 text-sm">Want to keep going? Tap for extra practice →</p>
           </div>
         )}
         
-        {/* Remaining activities - show full list */}
-        {remainingActivities.length > 0 && (
+        {/* All activities - consistent styling */}
+        {allActivities.length > 0 ? (
           <div className="divide-y divide-slate-200 dark:divide-slate-700">
-            {remainingActivities.map((activity: DailyActivity) => {
+            {allActivities.map((activity: DailyActivity, index: number) => {
               const Icon = getActivityIcon(activity.type);
+              const isComplete = completedActivities.has(activity.id);
+              // "Start" button only on first incomplete activity
+              const firstIncompleteIndex = allActivities.findIndex(a => !completedActivities.has(a.id));
+              const isNext = index === firstIncompleteIndex && !isComplete;
               return (
                 <div
                   key={activity.id}
-                  className="p-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors flex items-center gap-3"
-                  onClick={() => handleActivityClick(activity)}
+                  className={clsx(
+                    "p-3 transition-colors flex items-center gap-3",
+                    isComplete 
+                      ? "bg-slate-50 dark:bg-slate-800/50 opacity-70" 
+                      : "hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer"
+                  )}
+                  onClick={() => !isComplete && handleActivityClick(activity)}
                 >
                   <div className={clsx(
                     'w-8 h-8 rounded-lg flex items-center justify-center shrink-0',
-                    getActivityColor(activity.type)
+                    isComplete ? 'bg-success-100 dark:bg-success-900/30' : getActivityColor(activity.type)
                   )}>
-                    <Icon className="w-4 h-4" />
+                    {isComplete ? (
+                      <CheckCircle className="w-4 h-4 text-success-500" />
+                    ) : (
+                      <Icon className="w-4 h-4" />
+                    )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-sm text-slate-900 dark:text-slate-100 truncate">
+                      <span className={clsx(
+                        "font-medium text-sm truncate",
+                        isComplete 
+                          ? "text-slate-500 dark:text-slate-400 line-through" 
+                          : "text-slate-900 dark:text-slate-100"
+                      )}>
                         {activity.title}
                       </span>
-                      {getPriorityBadge(activity.priority)}
+                      {!isComplete && getPriorityBadge(activity.priority)}
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">{activity.reason}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
+                      {isComplete ? 'Completed' : activity.reason}
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0 text-xs text-slate-500 dark:text-slate-400">
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {activity.estimatedMinutes}m
-                    </span>
-                    <ChevronRight className="w-4 h-4" />
+                  <div className="flex items-center gap-2 shrink-0">
+                    {isComplete ? (
+                      <span className="text-xs text-success-500 font-medium">Done</span>
+                    ) : (
+                      <>
+                        <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+                          <Clock className="w-3 h-3" />
+                          {activity.estimatedMinutes}m
+                        </span>
+                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                      </>
+                    )}
                   </div>
                 </div>
               );
             })}
           </div>
+        ) : (
+          <div 
+            className="p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+            onClick={() => navigate(getCoursePracticePath(courseId))}
+          >
+            <Target className="w-8 h-8 text-primary-500 mx-auto mb-2" />
+            <p className="text-slate-900 dark:text-white font-medium">No activities planned</p>
+            <p className="text-slate-500 dark:text-slate-400 text-sm">Tap to start practicing</p>
+          </div>
         )}
-
-        {/* Completed activities (collapsed) */}
-        {completedList.length > 0 && (
-          <div className="p-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-              <CheckCircle className="w-4 h-4 text-success-500" />
-              <span>{completedList.length} completed</span>
-              <div className="flex gap-1 ml-1">
-                {completedList.map((activity: DailyActivity) => (
-                  <div 
-                    key={activity.id}
-                    className={clsx(
-                      'w-5 h-5 rounded flex items-center justify-center opacity-60',
-                      getActivityColor(activity.type)
-                    )}
-                    title={`✓ ${activity.title}`}
-                  >
-                    {React.createElement(getActivityIcon(activity.type), { className: 'w-3 h-3' })}
-                  </div>
-                ))}
-              </div>
+        
+        {/* All complete celebration */}
+        {completedCount === totalActivities && totalActivities > 0 && (
+          <div 
+            className="p-3 bg-success-50 dark:bg-success-900/20 border-t border-success-200 dark:border-success-800 cursor-pointer hover:bg-success-100 dark:hover:bg-success-900/30 transition-colors"
+            onClick={() => {
+              if (nextLesson) {
+                // Pull-ahead: Start the next lesson
+                navigate(getCourseLessonPath(courseId, nextLesson.id));
+              } else {
+                // All lessons done, go to practice
+                navigate(getCoursePracticePath(courseId));
+              }
+            }}
+          >
+            <div className="flex items-center justify-center gap-2 text-sm text-success-700 dark:text-success-300">
+              <CheckCircle className="w-4 h-4" />
+              <span className="font-medium">All done for today! 🎉</span>
+              {nextLesson ? (
+                <span className="text-success-600 dark:text-success-400">Start next lesson →</span>
+              ) : (
+                <span className="text-success-600 dark:text-success-400">Keep practicing →</span>
+              )}
             </div>
           </div>
         )}
@@ -660,9 +891,11 @@ const DailyPlanCard: React.FC<DailyPlanCardProps> = ({ compact = false, onActivi
               )}
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-              {plan.summary?.weakAreaFocus?.length > 0 
-                ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
-                : 'Personalized for your progress'}
+              {plan.whatsNext
+                ? plan.whatsNext.headline
+                : plan.summary?.weakAreaFocus?.length > 0 
+                  ? `Focusing on: ${plan.summary.weakAreaFocus.slice(0, 2).join(', ')}`
+                  : 'Personalized for your progress'}
             </p>
           </div>
           <div className="flex items-center gap-2">

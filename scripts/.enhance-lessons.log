@@ -1,0 +1,307 @@
+nohup: ignoring input
+
+LLM Content Enhancement Pipeline
+Started: 2026-03-09 13:34:17
+======================================================================
+
+📚 Enhancing Lessons...
+  CIA1: 43 lessons to enhance...
+    [2/43] +2 enhanced
+    [4/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Batch error: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    [8/43] +2 enhanced
+    [10/43] +2 enhanced
+    [12/43] +2 enhanced
+    [14/43] +2 enhanced
+    [16/43] +2 enhanced
+    [18/43] +2 enhanced
+    [20/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [22/43] +2 enhanced
+    [24/43] +2 enhanced
+    [26/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [28/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [30/43] +2 enhanced
+    [32/43] +2 enhanced
+    [34/43] +2 enhanced
+    [36/43] +2 enhanced
+    [38/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [40/43] +2 enhanced
+    [42/43] +2 enhanced
+    [43/43] +1 enhanced
+  CIA1: 41/43 lessons enhanced ✓
+  CIA2: 43 lessons to enhance...
+    [2/43] +2 enhanced
+    [4/43] +2 enhanced
+    [6/43] +2 enhanced
+    [8/43] +2 enhanced
+    [10/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [12/43] +2 enhanced
+    [14/43] +2 enhanced
+    [16/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [18/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [20/43] +2 enhanced
+    [22/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [24/43] +2 enhanced
+    [26/43] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [28/43] +2 enhanced
+    [30/43] +2 enhanced
+    [32/43] +2 enhanced
+    [34/43] +2 enhanced
+    [36/43] +2 enhanced
+    [38/43] +2 enhanced
+    [40/43] +2 enhanced
+    [42/43] +2 enhanced
+    [43/43] +1 enhanced
+  CIA2: 43/43 lessons enhanced ✓
+  CIA3: 39 lessons to enhance...
+    JSON parse error (attempt 1), retrying...
+    [2/39] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [4/39] +2 enhanced
+    [6/39] +2 enhanced
+    [8/39] +2 enhanced
+    [10/39] +2 enhanced
+    [12/39] +2 enhanced
+    [14/39] +2 enhanced
+    [16/39] +2 enhanced
+    [18/39] +2 enhanced
+    [20/39] +2 enhanced
+    [22/39] +2 enhanced
+    [24/39] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [26/39] +2 enhanced
+    [28/39] +2 enhanced
+    [30/39] +2 enhanced
+    [32/39] +2 enhanced
+    [34/39] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [36/39] +2 enhanced
+    [38/39] +2 enhanced
+    [39/39] +1 enhanced
+  CIA3: 39/39 lessons enhanced ✓
+  CISA1: 9 lessons to enhance...
+    [2/9] +2 enhanced
+    [4/9] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [6/9] +2 enhanced
+    [8/9] +2 enhanced
+    [9/9] +1 enhanced
+  CISA1: 9/9 lessons enhanced ✓
+  CISA2: 7 lessons to enhance...
+    [2/7] +2 enhanced
+    [4/7] +2 enhanced
+    [6/7] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [7/7] +1 enhanced
+  CISA2: 7/7 lessons enhanced ✓
+  CISA3: 8 lessons to enhance...
+    [2/8] +2 enhanced
+    [4/8] +2 enhanced
+    [6/8] +2 enhanced
+    [8/8] +2 enhanced
+  CISA3: 8/8 lessons enhanced ✓
+  CISA4: 9 lessons to enhance...
+    [2/9] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [4/9] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [6/9] +2 enhanced
+    [8/9] +2 enhanced
+    [9/9] +1 enhanced
+  CISA4: 9/9 lessons enhanced ✓
+  CISA5: 10 lessons to enhance...
+    [2/10] +2 enhanced
+    [4/10] +2 enhanced
+    [6/10] +2 enhanced
+    [8/10] +2 enhanced
+    [10/10] +2 enhanced
+  CISA5: 10/10 lessons enhanced ✓
+  FAR: 8 lessons to enhance...
+    [2/8] +2 enhanced
+    [4/8] +2 enhanced
+    [6/8] +2 enhanced
+    [8/8] +2 enhanced
+  FAR: 8/8 lessons enhanced ✓
+  SEE1: 5 lessons to enhance...
+    [2/5] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    Rate limited, waiting 40s...
+    ✗ Batch error: argument of type 'NoneType' is not iterable
+    [5/5] +1 enhanced
+  SEE1: 3/5 lessons enhanced ✓
+  CFP-PCR: 7 lessons to enhance...
+    [2/7] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [4/7] +2 enhanced
+    [6/7] +2 enhanced
+    [7/7] +1 enhanced
+  CFP-PCR: 7/7 lessons enhanced ✓
+  CFP-GEN: 14 lessons to enhance...
+    JSON parse error (attempt 1), retrying...
+    [2/14] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [4/14] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [6/14] +2 enhanced
+    [8/14] +2 enhanced
+    [10/14] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [12/14] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [14/14] +2 enhanced
+  CFP-GEN: 14/14 lessons enhanced ✓
+  CFP-RISK: 10 lessons to enhance...
+    [2/10] +2 enhanced
+    [4/10] +2 enhanced
+    [6/10] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [8/10] +2 enhanced
+    [10/10] +2 enhanced
+  CFP-RISK: 10/10 lessons enhanced ✓
+  CFP-INV: 15 lessons to enhance...
+    [2/15] +2 enhanced
+    [4/15] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [6/15] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [8/15] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [10/15] +2 enhanced
+    [12/15] +2 enhanced
+    [14/15] +2 enhanced
+    [15/15] +1 enhanced
+  CFP-INV: 15/15 lessons enhanced ✓
+  CFP-TAX: 13 lessons to enhance...
+    [2/13] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [4/13] +2 enhanced
+    [6/13] +2 enhanced
+    [8/13] +2 enhanced
+    [10/13] +2 enhanced
+    [12/13] +2 enhanced
+    [13/13] +1 enhanced
+  CFP-TAX: 13/13 lessons enhanced ✓
+  CFP-RET: 16 lessons to enhance...
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Batch error: Could not parse JSON from response: line 1 column 1 (char 0)
+    [4/16] +2 enhanced
+    [6/16] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [8/16] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    Rate limited, waiting 20s...
+    [10/16] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    [12/16] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Batch error: Could not parse JSON from response: line 1 column 1 (char 0)
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Batch error: Could not parse JSON from response: line 1 column 1 (char 0)
+  CFP-RET: 10/16 lessons enhanced ✓
+  CFP-EST: 9 lessons to enhance...
+    [2/9] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    JSON parse error (attempt 2), retrying...
+    ✗ Batch error: Could not parse JSON from response: line 1 column 1 (char 0)
+    [6/9] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [8/9] +2 enhanced
+    [9/9] +1 enhanced
+  CFP-EST: 7/9 lessons enhanced ✓
+  CFP-PSY: 7 lessons to enhance...
+    JSON parse error (attempt 1), retrying...
+    [2/7] +2 enhanced
+    [4/7] +2 enhanced
+    JSON parse error (attempt 1), retrying...
+    [6/7] +2 enhanced
+    [7/7] +1 enhanced
+  CFP-PSY: 7/7 lessons enhanced ✓
+
+======================================================================
+COMPLETE: 260 items enhanced in 1h 12m
+======================================================================
+
+
+======================================================================
+ENHANCEMENT PROGRESS
+======================================================================
+
+MCQs:
+  CIA1      : ✓
+  CIA2      : ✓
+  CIA3      : ✓
+  CISA1     : ✓
+  CISA2     : ✓
+  CISA3     : ✓
+  CISA4     : ✓
+  CISA5     : ✓
+  FAR       : ✓
+  SEE1      : ✓
+  CFP-PCR   : ✓
+  CFP-GEN   : ✓
+  CFP-RISK  : ✓
+  CFP-INV   : ✓
+  CFP-TAX   : ✓
+  CFP-RET   : ✓
+  CFP-EST   : ✓
+  CFP-PSY   : ✓
+  TOTAL     : 4849/4849
+
+Lessons:
+  CIA1      : 41/43
+  CIA2      : ✓
+  CIA3      : ✓
+  CISA1     : ✓
+  CISA2     : ✓
+  CISA3     : ✓
+  CISA4     : ✓
+  CISA5     : ✓
+  FAR       : ✓
+  SEE1      : 3/5
+  CFP-PCR   : ✓
+  CFP-GEN   : ✓
+  CFP-RISK  : ✓
+  CFP-INV   : ✓
+  CFP-TAX   : ✓
+  CFP-RET   : 10/16
+  CFP-EST   : 7/9
+  CFP-PSY   : ✓
+  TOTAL     : 260/272
+
+Flashcards:
+  cia       : 0/991
+  cisa      : 0/315
+  cfp       : 0/704
+  cpa       : 0/64
+  ea        : 0/36
+  TOTAL     : 0/2110
+
+======================================================================
+GRAND TOTAL: 5109/7231 (70.7%)
+======================================================================
+

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logger from '../utils/logger';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Brain,
@@ -124,7 +125,7 @@ const FlashcardSetup: React.FC = () => {
           notWorked,
         });
       } catch (error) {
-        console.error('Error loading flashcard data:', error);
+        logger.error('Error loading flashcard data:', error);
       } finally {
         setLoading(false);
       }
@@ -189,13 +190,23 @@ const FlashcardSetup: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="max-w-md mx-auto">
-        <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-            Flashcards
-          </h1>
-          <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-            {sectionInfo?.name || currentSection}
-          </p>
+        <div className="mb-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
+              style={{ backgroundColor: sectionInfo?.color || '#2563EB' }}
+            >
+              {(sectionInfo as any)?.shortName || currentSection}
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                Flashcards
+              </h1>
+              <p className="text-slate-600 dark:text-slate-400">
+                {sectionInfo?.name || currentSection}
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="card">

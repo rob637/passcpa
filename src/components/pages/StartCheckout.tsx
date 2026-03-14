@@ -26,22 +26,21 @@ const StartCheckout = () => {
   const { user, loading: authLoading } = useAuth();
   const [error, setError] = useState<string | null>(null);
 
-  const courseId = searchParams.get('course') as CourseId;
-  const interval = searchParams.get('interval') as PricingInterval;
+  const courseId = searchParams.get('course') as CourseId | null;
+  const interval = searchParams.get('interval') as PricingInterval | null;
 
   useEffect(() => {
     const initCheckout = async () => {
       // Wait for auth to load
       if (authLoading) return;
 
-      // If not logged in, redirect to register
-      if (!user) {
-        navigate(`/register?course=${courseId}&redirect=checkout&interval=${interval}`);
-        return;
-      }
-
-      // Validate params
+      // Validate params early — before any redirects
       if (!courseId || !interval) {
+        // If not logged in and params missing, send to home
+        if (!user) {
+          navigate('/');
+          return;
+        }
         setError('Missing checkout parameters. Please try again from the pricing page.');
         return;
       }
@@ -51,6 +50,12 @@ const StartCheckout = () => {
 
       if (!validCourses.includes(courseId) || !validIntervals.includes(interval)) {
         setError('Invalid checkout parameters. Please try again from the pricing page.');
+        return;
+      }
+
+      // If not logged in, redirect to register with validated params
+      if (!user) {
+        navigate(`/register?course=${courseId}&redirect=checkout&interval=${interval}`);
         return;
       }
 

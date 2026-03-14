@@ -1,0 +1,7452 @@
+[
+  {
+    "id": "aud-accept-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-accept-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-accept-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-033",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-034",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-035",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-039",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-add-040",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-att-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-att-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-comp-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ctrl-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ctrl-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ctrl-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d1-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d10-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d11-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d12-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d13-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d2-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d3-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d4-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d5-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d6-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d7-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d8-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-d9-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-easy-exp-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-elite-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-eth-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-eth-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-eth-003",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation contradicts the answer. The explanation states 5 years for lead and concurring partners, but the question asks about \"audit partner\" and the answer says 7 years.",
+    "question": "Under SEC rules, audit partner rotation is required every:",
+    "markedAnswer": 1,
+    "options": [
+      "5 years",
+      "7 years",
+      "3 years",
+      "10 years"
+    ]
+  },
+  {
+    "id": "aud-eth-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-eth-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ev-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ev-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ev-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ev-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ev-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-056",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-evid-057",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-033",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-034",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-035",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-039",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-exp-040",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-101",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-102",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-103",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-104",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-105",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-106",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-107",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-108",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-109",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-110",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-111",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-112",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-113",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-114",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-115",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-116",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-117",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-118",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-119",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-120",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-121",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-122",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-123",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-124",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-125",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-126",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-127",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-128",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-129",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-130",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-131",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-132",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-133",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-134",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-135",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-136",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-137",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-138",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-139",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-140",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-141",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-142",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-143",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-144",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-145",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-146",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-147",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-148",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-149",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-150",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-151",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-152",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-153",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-154",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-155",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-156",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-157",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-158",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-159",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-160",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-161",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-162",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-163",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-164",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-165",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-166",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-167",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-168",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-169",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-170",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-171",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-172",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-173",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-174",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-175",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-176",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-177",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-178",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-179",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-180",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-181",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-182",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-183",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-184",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-185",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-186",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-187",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-188",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-189",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-190",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-191",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-192",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-193",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-194",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-195",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-196",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-197",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-198",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-199",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-200",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-add-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-add-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-add-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-add-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-add-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-add-006",
+    "verdict": "WRONG",
+    "reason": "Type 2 events require disclosure, not adjustment.",
+    "question": "Type 2 subsequent events are events that:",
+    "markedAnswer": 1,
+    "options": [
+      "Provide evidence about conditions that existed at the balance sheet date and require footnote disclosure.",
+      "Require adjustment to the financial statements to reflect their impact on the company's solvency and liquidity.",
+      "Existed at the balance sheet date and are indicative of a material weakness in internal control over financial reporting.",
+      "Occurred after the balance sheet date but before report release"
+    ]
+  },
+  {
+    "id": "aud-ext-eth-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-eth-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-eth-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-evid-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-evid-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-evid-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-evid-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-ic-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-ic-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-ic-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-ic-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-ic-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-plan-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-plan-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-plan-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rep-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rep-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rep-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rep-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rep-005",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be D because an emphasis of matter paragraph is required.",
+    "question": "When substantial doubt about going concern exists and management's plans adequately mitigate the dou",
+    "markedAnswer": 1,
+    "options": [
+      "No modification to the report is necessary",
+      "A qualified opinion is required, disclosing the uncertainty in an emphasis-of-matter paragraph.",
+      "An adverse opinion is required, due to the going concern issue, even with management's mitigation plans.",
+      "Emphasis of Matter paragraph is required"
+    ]
+  },
+  {
+    "id": "aud-ext-risk-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-risk-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-risk-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rpt-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rpt-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-rpt-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-samp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-samp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-samp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-samp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ext-samp-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-fraud-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-fraud-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-fraud-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-fraud-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-fraud-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-fraud-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-fraud-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-012",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be D because AU-C 230 states the auditor should assemble the audit documentation in an audit file and complete the administrative process of assembling the final audit file on a timely basis after the date of the auditor's report. After the assembly of the final audit file has been completed, the auditor should retain documentation for a period of no less than five years from the report release date.",
+    "question": "Under auditing standards, the minimum retention period for audit documentation after the report rele",
+    "markedAnswer": 1,
+    "options": [
+      "10 years",
+      "3 years",
+      "5 years",
+      "7 years"
+    ]
+  },
+  {
+    "id": "aud-gap-vii-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gap-vii-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-grp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ic-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-law-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-016",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because significant deficiencies should be communicated before audit completion to allow management time to remediate issues.",
+    "question": "The auditor must communicate significant deficiencies to governance:",
+    "markedAnswer": 3,
+    "options": [
+      "Only if requested by management and documented in the engagement letter",
+      "Annually, as part of the management representation letter review process",
+      "Before audit completion, to allow management time to remediate issues",
+      "In writing no later than 60 days after the report release date"
+    ]
+  },
+  {
+    "id": "aud-mast-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-mast-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-oth-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-oth-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-oth-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-oth-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-oth-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-other-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-other-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-other-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-other-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-other-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-plan-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-plan-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-pr-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-pr-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-pr-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-pr-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-pr-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-prof-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-prof-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-prof-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-prof-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-prof-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-qc-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-qc-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rep-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-report-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rev-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rev-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-risk-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-risk-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-risk-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-risk-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-risk-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-risk-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rp-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rp-ext-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-rp-ext-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-samp-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-samp-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-samp-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-se-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-se-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-se-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-se-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-spec-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ssars-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ssars-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ssars-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-ssars-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-std-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-std-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-std-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-sub-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-sub-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-sub-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-subseq-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-subseq-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-subst-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-subst-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-subst-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-008",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-018",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-019",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-020",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-021",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-033",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-034",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-035",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-039",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-040",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-047",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-048",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-049",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-056",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-057",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-058",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-059",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-060",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-061",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-062",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-063",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-064",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-065",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because other-matter paragraphs are used to describe matters not presented in the financial statements that are relevant to users' understanding, such as supplementary information.",
+    "question": "An auditor adds an other-matter paragraph to describe a matter not presented in the financial statem",
+    "markedAnswer": 1,
+    "options": [
+      "Supplementary information accompanying the financial statements requires explanation",
+      "Going concern uncertainty exists, and the auditor concludes that its effect is so pervasive that a disclaimer of opinion is appropriate.",
+      "The auditor wishes to describe the scope of testing performed on a significant account balance that was deemed immaterial to the financial statements taken as a whole.",
+      "There is a change in accounting principle that is immaterial to the current year's financial statements but is expected to have a material effect in future periods."
+    ]
+  },
+  {
+    "id": "aud-wc-066",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-067",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-068",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-069",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-070",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-071",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-072",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-074",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-075",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-077",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-078",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-079",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-080",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-081",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-082",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-083",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-084",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-085",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-086",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-087",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-088",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-089",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-090",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-091",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-092",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-093",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-094",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-095",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-096",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-097",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-098",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-099",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-100",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-101",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-102",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-103",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-104",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-105",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-106",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-107",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-108",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-109",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-110",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-111",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-112",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-113",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-114",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-115",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-116",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-117",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-118",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-119",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-120",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-122",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-123",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-124",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-125",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-126",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-127",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-128",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-129",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-130",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-131",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-132",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-133",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-134",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-135",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-136",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-137",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-138",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-139",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-140",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-141",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-142",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-143",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-144",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-145",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-146",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-147",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-148",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-149",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-150",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-151",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-152",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-153",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-154",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-155",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-156",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-157",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-158",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-159",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-160",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-161",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-162",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-163",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-164",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-165",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-166",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-167",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-168",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-169",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-170",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-171",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-172",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-173",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-174",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-175",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-176",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-177",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-178",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-179",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-180",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-181",
+    "verdict": "CORRECT",
+    "reason": "optional note"
+  },
+  {
+    "id": "aud-wc-182",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-183",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-184",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-185",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-186",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-187",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-188",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-189",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-190",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-191",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-192",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-193",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-194",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-195",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-196",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-197",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-198",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-199",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-200",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-201",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-202",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-203",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-204",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-205",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-206",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-207",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-208",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-209",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-210",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-211",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-212",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-213",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-wc-214",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1022",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1023",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1024",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1025",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1026",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1027",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1028",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1029",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1030",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1031",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1032",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1033",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1034",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1035",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1036",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1037",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1038",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1039",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1040",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because the aggregate misstatement exceeds performance materiality.",
+    "question": "During the planning phase of the audit of Nexus Corp, a publicly traded company, the audit partner s",
+    "markedAnswer": 3,
+    "options": [
+      "Accept the financial statements as fairly presented, as the aggregate misstatement ($510,000) does not exceed overall materiality ($500,000), and the auditor believes that the qualitative aspects of the misstatements are not pervasive enough to warrant adjustment.",
+      "Require Nexus Corp. to adjust the financial statements because the aggregate misstatement ($510,000) exceeds overall materiality ($500,000), regardless of performance materiality considerations or the qualitative nature of the identified misstatements.",
+      "Require Nexus Corp. to adjust the financial statements because the aggregate misstatement ($510,000) exceeds performance materiality ($375,000) after considering qualitative factors.",
+      "Accept the financial statements as fairly presented because each individual misstatement is below performance materiality ($375,000), and the auditor's professional judgment suggests that the cumulative effect is immaterial to the financial statements as a whole."
+    ]
+  },
+  {
+    "id": "aud-gen-1041",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because it is a reasonable approach when profit before tax is not a useful benchmark.",
+    "question": "During the planning phase of an audit, an auditor is determining materiality for a small manufacturi",
+    "markedAnswer": 3,
+    "options": [
+      "Use revenue as a benchmark instead of profit before tax, applying a lower percentage.",
+      "Set materiality at 10% of the absolute value of the loss before tax, justifying it in the audit file.",
+      "Use the average profit before tax over the last three years, if profitable.",
+      "Arbitrarily set a low materiality threshold due to the loss, ensuring no fraud could go undetected."
+    ]
+  },
+  {
+    "id": "aud-gen-1042",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1043",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1044",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1045",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1046",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1047",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1048",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1049",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1050",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1051",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1052",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1053",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1054",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1055",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1056",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1057",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1058",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1059",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1060",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1061",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1062",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1063",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1064",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1065",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1066",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1067",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1068",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1069",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1070",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1071",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1072",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1073",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1074",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1075",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1076",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1077",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1078",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1079",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1080",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1081",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1082",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1083",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1084",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1085",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1086",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1087",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1088",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1089",
+    "verdict": "QUESTIONABLE",
+    "reason": "While the explanation is correct, the question is ambiguous. The 5% ownership could be material.",
+    "question": "Sarah is a staff accountant at Smith & Jones LLP. She is assigned to the audit of ABC Corp. Sarah's ",
+    "markedAnswer": 2,
+    "options": [
+      "No, because Sarah is a staff accountant and her grandfather's investment is not material to her personal wealth.",
+      "Yes, because Sarah's grandfather's ownership is considered an indirect financial interest attributed to Sarah, and the percentage exceeds 5%.",
+      "Yes, because any ownership by a close relative of a covered member in an audit client is considered an independence impairment.",
+      "No, because the grandfather is not considered a covered member."
+    ]
+  },
+  {
+    "id": "aud-gen-1090",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1091",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1092",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1093",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be A because the staff accountant is unaware of the investment.",
+    "question": "Sarah is a staff accountant at Miller & Zois, CPA, and is assigned to the audit of ABC Corp. Sarah's",
+    "markedAnswer": 3,
+    "options": [
+      "No, because Sarah's lack of awareness of her father's investment eliminates any potential influence or bias in her audit work on ABC Corp.",
+      "Yes, because under the AICPA's ethical standards, any stock ownership by an immediate family member constitutes a direct financial interest, regardless of materiality.",
+      "No, because the shares are managed by an independent broker in a brokerage account, effectively creating a blind trust that eliminates Sarah's influence.",
+      "Yes, because Sarah's father's investment represents a material indirect financial interest in ABC Corp."
+    ]
+  },
+  {
+    "id": "aud-gen-1094",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1096",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1097",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1098",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1099",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1100",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1101",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1102",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1103",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1104",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1105",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1106",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1107",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1108",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1109",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1111",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1112",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1113",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1114",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the volatile industry makes total assets a more appropriate benchmark.",
+    "question": "During the planning phase of an audit, the auditor, Sarah, is determining materiality for the financ",
+    "markedAnswer": 3,
+    "options": [
+      "$2.5 million, based on 0.5% of revenue, due to the company's consistent profitability.",
+      "$4 million, based on 1% of total assets, due to the volatile industry.",
+      "$2.5 million, based on 5% of net income before tax, because this is the most conservative approach.",
+      "$5 million, based on 1% of revenue, as this is the most commonly used benchmark."
+    ]
+  },
+  {
+    "id": "aud-gen-1115",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1116",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1117",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1118",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1119",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1120",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1121",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1122",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1123",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1124",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1125",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1126",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1127",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1128",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1129",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1130",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1131",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1132",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1133",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1134",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1135",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1136",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1137",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1138",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1139",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1140",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1141",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1142",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1143",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1144",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1145",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1146",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1147",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1148",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1149",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1150",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1151",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1152",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1153",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1154",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1155",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1156",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1157",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1158",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1159",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1160",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1161",
+    "verdict": "WRONG",
+    "reason": "The explanation contradicts the answer. The explanation says independence is not impaired if management reviews and approves, but the answer says independence is not impaired because management *represented* they have the ability to oversee.",
+    "question": "Baker Tilly, LLP, has been engaged to audit the financial statements of Pinnacle Corporation for the",
+    "markedAnswer": 1,
+    "options": [
+      "Baker Tilly's independence is impaired because performing bookkeeping services for an audit client is always a prohibited service, regardless of management's ability to oversee the services.",
+      "Baker Tilly's independence is not impaired because Pinnacle's management has represented that they possess the skill, knowledge, and experience to oversee the bookkeeping services.",
+      "Baker Tilly's independence is impaired unless Pinnacle's management approves all journal entries and account classifications prepared by Baker Tilly before the audit begins.",
+      "Baker Tilly's independence is impaired unless Pinnacle hires a qualified CFO to oversee the bookkeeping services performed by Baker Tilly."
+    ]
+  },
+  {
+    "id": "aud-gen-1162",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1163",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1164",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1165",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1166",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1167",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1168",
+    "verdict": "WRONG",
+    "reason": "Sample size = (Sample Size Factor / Tolerable Deviation Rate - Expected Deviation Rate) = 3.05 / (0.06 - 0.02) = 3.05 / 0.04 = 76.25. Closest answer is A, 61, but the formula is not provided.",
+    "question": "An auditor is performing tests of controls over cash disbursements. They have determined the followi",
+    "markedAnswer": 1,
+    "options": [
+      "61",
+      "92",
+      "153",
+      "203"
+    ]
+  },
+  {
+    "id": "aud-gen-1169",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1170",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1171",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1172",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1173",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1174",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1175",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1176",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1177",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1178",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1179",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1180",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1181",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1182",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1183",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1184",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1185",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1186",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1187",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1188",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1189",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1190",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1191",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1192",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1193",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1194",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1195",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1196",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1197",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1198",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1199",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1200",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1201",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1202",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1203",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1204",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1205",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1206",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1207",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1208",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1209",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1210",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1211",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1212",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1213",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1214",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1215",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1216",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1217",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1218",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1220",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1221",
+    "verdict": "QUESTIONABLE",
+    "reason": "While D is likely the best answer, without the actual attribute sampling table used, it's impossible to definitively say. Sample size determination depends on the specific table and assumptions.",
+    "question": "During the audit of Apex Manufacturing, the auditor, Sarah, is testing the effectiveness of Apex's c",
+    "markedAnswer": 3,
+    "options": [
+      "50",
+      "100",
+      "150",
+      "200"
+    ]
+  },
+  {
+    "id": "aud-gen-1223",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1224",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1226",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1227",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1228",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1229",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1230",
+    "verdict": "QUESTIONABLE",
+    "reason": "The explanation references independence rules for a different question ID. The correct answer should be D (340) based on multiplying the population size factor (1.7) by 200 (100/0.5).",
+    "question": "An auditor is performing tests of controls over sales invoices. The auditor plans to use attribute s",
+    "markedAnswer": 1,
+    "options": [
+      "283",
+      "196",
+      "467",
+      "340"
+    ]
+  },
+  {
+    "id": "aud-gen-1231",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1232",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1233",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1234",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1235",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1236",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1238",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1239",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1240",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1241",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1242",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1243",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1244",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1245",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1246",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1247",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1248",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1249",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1250",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1251",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1252",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1253",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1254",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1255",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1256",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1257",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1258",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1259",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1260",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1261",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1262",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1263",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1264",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1265",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1266",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1267",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1268",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1269",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1270",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1271",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1272",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1273",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1274",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1275",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1276",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1277",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1278",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1279",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1280",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1281",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1282",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1283",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1284",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1285",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1286",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1287",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1288",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1289",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1290",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1291",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1292",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1293",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1294",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1296",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1297",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1298",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1299",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1301",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1302",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1303",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1304",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1305",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1306",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1307",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1308",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1309",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1310",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1311",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1312",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1313",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1314",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1315",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1316",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1317",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1318",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1319",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1320",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1321",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1322",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1323",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1324",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C. The auditor should consider sending confirmations to a sample of customers with small balances, as the aggregate of these balances may be material and provide evidence about the overall receivable balance.",
+    "question": "An auditor is performing an audit of ABC Company's financial statements. As part of their procedures",
+    "markedAnswer": 3,
+    "options": [
+      "The auditor should agree with the controller's suggestion, documenting the rationale that the cost of confirming immaterial balances outweighs the potential benefit, especially if alternative substantive procedures are planned to address the risk of material misstatement in accounts receivable.",
+      "The auditor should primarily focus on sending confirmations to customers with large outstanding balances, as these balances individually represent a significant portion of the accounts receivable balance and are therefore the most efficient way to detect material misstatements.",
+      "The auditor should consider sending confirmations to a sample of customers with small balances, as the aggregate of these balances may be material and provide evidence about the overall receivable balance.",
+      "The auditor is not required to perform confirmation procedures if the client objects and provides reasonable justification, such as concerns about maintaining customer relationships, provided the auditor can obtain sufficient appropriate audit evidence through alternative procedures to address the relevant assertion."
+    ]
+  },
+  {
+    "id": "aud-gen-1325",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1326",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1327",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1328",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1329",
+    "verdict": "QUESTIONABLE",
+    "reason": "The customer's bankruptcy is a Type II subsequent event, requiring disclosure. However, if management refuses to disclose, the auditor should consider modifying the opinion. An unqualified opinion with an emphasis-of-matter paragraph might be insufficient if the omission is material. A qualified or adverse opinion might be more appropriate.",
+    "question": "ABC Company's fiscal year ended December 31, Year 1. The auditor completed field work on March 15, Y",
+    "markedAnswer": 3,
+    "options": [
+      "Express a qualified opinion or disclaimer of opinion because of the customer's bankruptcy.",
+      "Advise management that the auditor will issue an adverse opinion.",
+      "Inform those charged with governance that the auditor will withdraw from the engagement.",
+      "Issue an unqualified opinion with an emphasis-of-matter paragraph describing the subsequent event."
+    ]
+  },
+  {
+    "id": "aud-gen-1330",
+    "verdict": "QUESTIONABLE",
+    "reason": "While the event is a Type II subsequent event, the client's refusal to disclose a material event could lead to a qualified or adverse opinion, not necessarily withdrawal. Withdrawal is an extreme measure usually reserved for situations involving serious ethical breaches or lack of client integrity beyond a single disclosure issue.",
+    "question": "During the subsequent events period, an auditor discovers that a major customer of the client, repre",
+    "markedAnswer": 3,
+    "options": [
+      "Issue an unqualified opinion because the event occurred after year-end.",
+      "Issue a qualified opinion due to the client's refusal to adjust the financial statements for a material event.",
+      "Issue an adverse opinion because the bankruptcy indicates that the financial statements are not fairly presented.",
+      "Withdraw from the engagement due to the client's lack of integrity."
+    ]
+  },
+  {
+    "id": "aud-gen-1332",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1333",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1334",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1335",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1336",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1337",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1338",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1339",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1340",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1341",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1342",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1343",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1344",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1345",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1346",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1347",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1348",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1349",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1350",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1351",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1352",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1353",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1354",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1355",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1356",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1357",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1358",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1359",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1360",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1361",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1362",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1363",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1364",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1365",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1366",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1367",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1368",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1369",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1370",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1371",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1372",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1373",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1374",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1375",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1377",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1378",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1379",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1380",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1381",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1382",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1383",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1384",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1385",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1386",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1387",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1388",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1389",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1390",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1391",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1392",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1393",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be B because the range is 0.5% - 1% of total revenue ($250,000 - $500,000) and 5% - 10% of net income before tax ($250,000 - $500,000). The combined range is $250,000 - $750,000.",
+    "question": "You are auditing Johnson Manufacturing, a publicly traded company. Preliminary net income before tax",
+    "markedAnswer": 3,
+    "options": [
+      "$250,000 - $500,000",
+      "$250,000 - $750,000",
+      "$500,000 - $1,000,000",
+      "$750,000 - $1,250,000"
+    ]
+  },
+  {
+    "id": "aud-gen-1394",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1395",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1396",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1397",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1398",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1399",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1400",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1401",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1402",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1403",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1404",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1405",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1406",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1407",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1408",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1409",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1410",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1411",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1412",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1413",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1414",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1415",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1416",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1417",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1418",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1419",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1420",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1421",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1422",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1423",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1424",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1425",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1426",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1427",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1428",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1430",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1431",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1432",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1433",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1434",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1435",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1436",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1437",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1438",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1439",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1440",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1441",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1442",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1443",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1444",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1445",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1446",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1448",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1449",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1450",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1451",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1452",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1453",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1454",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1455",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1456",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1457",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1458",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1459",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1460",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-gen-1461",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-001",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-002",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-003",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-004",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-005",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-006",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-007",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-008",
+    "verdict": "WRONG",
+    "reason": "The correct answer should be C because a material weakness in internal control, uncorrected, leads to an adverse opinion on internal control over financial reporting.",
+    "question": "During the audit of GlobalTech Inc., the auditor discovers a material weakness in internal control r",
+    "markedAnswer": 3,
+    "options": [
+      "A. Issue an unqualified opinion on the financial statements, as long as the financial statements are fairly presented.",
+      "B. Issue a qualified opinion on the financial statements due to the material weakness in internal control.",
+      "C. Issue an adverse opinion on the financial statements due to the material weakness in internal control.",
+      "D. Disclaim an opinion on the financial statements due to the scope limitation imposed by management."
+    ]
+  },
+  {
+    "id": "aud-9k-009",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-010",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-011",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-012",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-013",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-014",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-015",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-016",
+    "verdict": "CORRECT",
+    "reason": ""
+  },
+  {
+    "id": "aud-9k-017",
+    "verdict": "CORRECT",
+    "reason": ""
+  }
+]

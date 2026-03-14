@@ -1,0 +1,989 @@
+[
+  {
+    "id": "CFP-RET-L013",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Non-Qualified Deferred Compensation Plans",
+    "description": "Distinguish qualified from non-qualified plans",
+    "order": 13,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Distinguish qualified from non-qualified plans",
+      "Explain Section 409A requirements",
+      "Identify NQDC risks and planning considerations",
+      "Apply SERP and Top Hat plan concepts"
+    ],
+    "blueprintArea": "RET-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Non-qualified deferred compensation (NQDC) plans allow executives to defer income beyond qualified plan limits\u2014but with significant risks."
+        },
+        {
+          "title": "Qualified vs. Non-Qualified Plans",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Qualified Plans",
+            "NQDC Plans"
+          ],
+          "rows": [
+            [
+              "ERISA coverage",
+              "Yes",
+              "Limited"
+            ],
+            [
+              "Tax deduction timing",
+              "When contributed",
+              "When paid to employee"
+            ],
+            [
+              "Contribution limits",
+              "Statutory limits",
+              "None"
+            ],
+            [
+              "Discrimination testing",
+              "Required",
+              "Not required"
+            ],
+            [
+              "Vesting rules",
+              "3-7 years max",
+              "Any schedule"
+            ],
+            [
+              "Creditor protection",
+              "Protected",
+              "NOT protected"
+            ],
+            [
+              "Employer deduction",
+              "When contributed",
+              "When included in income"
+            ]
+          ]
+        },
+        {
+          "title": "The Fundamental Risk",
+          "type": "warning",
+          "content": "NQDC is an UNSECURED PROMISE to pay in the future. You are a general creditor. If employer is insolvent, you stand in line with other creditors and may receive pennies on the dollar\u2014or nothing."
+        },
+        {
+          "title": "Why Employers Use NQDC",
+          "type": "list",
+          "items": [
+            "For Executives: Defer income beyond 401(k) limits, tax benefits if lower future bracket, retention tool",
+            "For Employers: No cost until payment, can discriminate (select executives only), \"golden handcuffs\" retention"
+          ]
+        },
+        {
+          "title": "Section 409A Requirements",
+          "type": "table",
+          "headers": [
+            "Requirement",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Election timing",
+              "Deferral elections before year income is earned"
+            ],
+            [
+              "Distribution triggers",
+              "Limited to 6 events"
+            ],
+            [
+              "Acceleration",
+              "Generally prohibited"
+            ],
+            [
+              "Funding",
+              "Cannot be secured in offshore trust"
+            ]
+          ]
+        },
+        {
+          "title": "Six Permitted Distribution Events",
+          "type": "list",
+          "items": [
+            "1. Separation from service",
+            "2. Disability",
+            "3. Death",
+            "4. Change in ownership/control",
+            "5. Unforeseeable emergency",
+            "6. Specified date or fixed schedule"
+          ]
+        },
+        {
+          "title": "409A Violation Penalties",
+          "type": "callout",
+          "content": "If plan fails to comply: Immediate income inclusion of all vested deferrals + Income tax at ordinary rates + 20% additional penalty + Interest on underpayment from deferral year. Severe penalties make 409A compliance critical."
+        },
+        {
+          "title": "Types of NQDC Arrangements",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description"
+          ],
+          "rows": [
+            [
+              "SERP",
+              "Supplemental Executive Retirement Plan - employer-funded, formula-based"
+            ],
+            [
+              "Excess Benefit Plan",
+              "Makes up for qualified plan limits"
+            ],
+            [
+              "Top Hat Plan",
+              "Unfunded plan for select management/highly compensated"
+            ],
+            [
+              "Elective Deferral Plan",
+              "Executive chooses to defer salary/bonus"
+            ]
+          ]
+        },
+        {
+          "title": "Rabbi Trust",
+          "type": "text",
+          "content": "An irrevocable trust to hold NQDC assets, BUT assets remain subject to employer's creditors in bankruptcy. Provides protection against corporate changes (mergers, management changes), does NOT protect against employer insolvency. Why \"Rabbi\" Trust? First IRS ruling was for a synagogue rabbi's deferred compensation."
+        },
+        {
+          "title": "When NQDC Makes Sense",
+          "type": "table",
+          "headers": [
+            "Good Candidate",
+            "Poor Candidate"
+          ],
+          "rows": [
+            [
+              "Very high income now",
+              "Employer financial concerns"
+            ],
+            [
+              "Strong employer (low bankruptcy risk)",
+              "Similar current vs. future tax rate"
+            ],
+            [
+              "Retirement timing certain",
+              "Uncertain tenure"
+            ],
+            [
+              "Long tenure expected",
+              "Need liquidity"
+            ]
+          ]
+        },
+        {
+          "title": "Tax Treatment Summary",
+          "type": "text",
+          "content": "For Employee: Deferral - not taxed when earned; Growth - not taxed until distributed; Distribution - ordinary income when received; FICA - when no longer subject to substantial risk of forfeiture. For Employer: No deduction when promised, deduction when employee includes in income."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "NQDC = unsecured promise to pay; executive is a general creditor",
+            "Section 409A: Election timing, 6 distribution events, severe penalties",
+            "409A violation: Immediate income + 20% penalty + interest from deferral year",
+            "Rabbi trust: Protects against management changes, NOT insolvency",
+            "FICA taxed when vested; income tax when distributed"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NQDC Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is a key difference between a qualified retirement plan and a non-qualified deferred compensation (NQDC) plan?",
+            "options": [
+              "Qualified plans generally do not allow for elective deferrals, while NQDC plans always do.",
+              "Qualified plans are subject to ERISA and offer tax advantages, while NQDC plans may not be ERISA-covered and defer taxes without immediate taxation.",
+              "Qualified plans are primarily for highly compensated employees, while NQDC plans are for all employees.",
+              "Qualified plans are funded with after-tax dollars, while NQDC plans are funded with pre-tax dollars."
+            ],
+            "correctIndex": 1,
+            "explanation": "Qualified plans are subject to ERISA, and offer tax advantages like immediate deduction for contributions and tax-deferred growth. NQDC plans may or may not be subject to ERISA (depending on design, e.g., Top Hat plans). They defer taxes until distribution, but contributions are not immediately deductible by the employee. The employer receives a deduction when the employee recognizes the income.",
+            "hint": "Consider the ERISA implications and the timing of tax deductions for both the employee and the employer."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Section 409A Recall",
+          "reveal": {
+            "question": "What are the key requirements under Section 409A that must be followed to avoid immediate taxation and penalties on NQDC?",
+            "answer": "Section 409A requires that NQDC plans have a fixed deferral election, restrict distributions to specific permissible events (separation from service, disability, death, a specified time, change in control, or unforeseeable emergency), and prohibit acceleration of distributions except under very limited circumstances. Initial deferral elections generally must be made in the year preceding the year of service. Subsequent deferral elections are generally allowed, but must be made at least 12 months before the first scheduled payment."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SERP vs. Top Hat Plan",
+          "comparison": {
+            "headers": [
+              "SERP",
+              "Top Hat Plan"
+            ],
+            "rows": [
+              {
+                "label": "Employee Eligibility",
+                "values": [
+                  "May include a wider range of employees, although still generally management or highly compensated",
+                  "Strictly limited to a select group of management or highly compensated employees "
+                ]
+              },
+              {
+                "label": "ERISA Coverage",
+                "values": [
+                  "May be subject to some ERISA requirements (e.g., reporting and disclosure), depending on plan design",
+                  "Exempt from most ERISA provisions, including participation, vesting, funding, and fiduciary requirements"
+                ]
+              },
+              {
+                "label": "Funding",
+                "values": [
+                  "May be informally funded (e.g., with corporate owned life insurance) or unfunded",
+                  "Typically unfunded, relying on the employer's general assets"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L014",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Stock Options and Equity Compensation",
+    "description": "Compare incentive stock options (ISOs) to non-qualified options (NQSOs)",
+    "order": 14,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Compare incentive stock options (ISOs) to non-qualified options (NQSOs)",
+      "Calculate tax consequences of stock option exercises",
+      "Explain restricted stock and RSU taxation",
+      "Develop exercise and holding strategies"
+    ],
+    "blueprintArea": "RET-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Equity compensation aligns employee interests with shareholders and can create significant wealth\u2014but with complex tax considerations."
+        },
+        {
+          "title": "Stock Options Basics",
+          "type": "table",
+          "headers": [
+            "Term",
+            "Definition"
+          ],
+          "rows": [
+            [
+              "Grant date",
+              "When option is awarded"
+            ],
+            [
+              "Exercise price",
+              "Price to buy the stock"
+            ],
+            [
+              "Vesting",
+              "When option becomes exercisable"
+            ],
+            [
+              "Expiration",
+              "When option expires (typically 10 years)"
+            ],
+            [
+              "Intrinsic value",
+              "Current price - Exercise price"
+            ]
+          ]
+        },
+        {
+          "title": "Two Types of Stock Options",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "NQSO",
+            "ISO"
+          ],
+          "rows": [
+            [
+              "Full name",
+              "Non-Qualified Stock Option",
+              "Incentive Stock Option"
+            ],
+            [
+              "Tax at grant",
+              "None",
+              "None"
+            ],
+            [
+              "Tax at exercise",
+              "Ordinary income on spread",
+              "No regular tax (AMT preference)"
+            ],
+            [
+              "Tax at sale",
+              "Capital gains after exercise",
+              "Capital gains (if qualified)"
+            ],
+            [
+              "Employer deduction",
+              "Yes (at exercise)",
+              "No"
+            ],
+            [
+              "$100K annual limit",
+              "No",
+              "Yes"
+            ],
+            [
+              "Holding period for LTCG",
+              "1 year from exercise",
+              "2 years from grant AND 1 year from exercise"
+            ]
+          ]
+        },
+        {
+          "title": "NQSO Tax Treatment",
+          "type": "text",
+          "content": "At Exercise: Spread (FMV - Exercise Price) = ordinary income, added to W-2. At Sale: Capital gain/loss = Sale Price - FMV at exercise. Holding Period: \u22641 year = STCG, >1 year = LTCG."
+        },
+        {
+          "title": "NQSO Example",
+          "type": "text",
+          "content": "Grant at $10 exercise price. Exercise when FMV = $50. Ordinary income = $40/share. Sell at $70. Capital gain = $20/share (from $50 FMV at exercise)."
+        },
+        {
+          "title": "ISO Tax Treatment - Qualified",
+          "type": "text",
+          "content": "At Exercise: No regular income tax (but spread is AMT preference item). At Sale (if qualified): All gain is LTCG from exercise price. Holding requirements: 2+ years from grant date AND 1+ year from exercise date."
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "ISO Holding Period: 2-1 (2 years from grant, 1 year from exercise). Disqualifying disposition (sold before holding periods met) = spread at exercise becomes ordinary income."
+        },
+        {
+          "title": "$100,000 ISO Limit",
+          "type": "text",
+          "content": "ISOs that first become exercisable in any year cannot exceed $100,000 in value (based on grant date price). Excess is treated as NQSOs."
+        },
+        {
+          "title": "AMT Planning for ISOs",
+          "type": "text",
+          "content": "Problem: Exercising ISOs creates AMT preference item equal to the spread\u2014can trigger massive AMT without cash to pay. Strategies: Spread exercises over years, same-year sale (disqualifying), model AMT impact, exercise at low spread."
+        },
+        {
+          "title": "Restricted Stock and RSUs",
+          "type": "table",
+          "headers": [
+            "Event",
+            "Restricted Stock",
+            "RSUs"
+          ],
+          "rows": [
+            [
+              "Grant",
+              "None (unless 83(b) election)",
+              "None"
+            ],
+            [
+              "Vesting",
+              "FMV = ordinary income",
+              "FMV = ordinary income"
+            ],
+            [
+              "Sale",
+              "Capital gain from FMV at vest",
+              "Capital gain from FMV at vest"
+            ]
+          ]
+        },
+        {
+          "title": "Section 83(b) Election",
+          "type": "callout",
+          "content": "For restricted stock only (not RSUs). Elect to pay tax at grant instead of vesting. Pay tax on lower value, future appreciation = capital gain. Must file within 30 days of grant. Risk: Forfeit shares = no tax refund."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "NQSOs: Spread is ordinary income at exercise; employer deduction",
+            "ISOs: No regular tax at exercise (AMT preference); LTCG if qualified",
+            "ISO holding: 2 years from grant + 1 year from exercise for LTCG",
+            "83(b) election for restricted stock: Tax at grant, file within 30 days",
+            "RSUs: Taxed at vesting as ordinary income; no 83(b) election"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "NQSO Tax Consequences: Exercise",
+          "knowledgeCheck": {
+            "question": "An employee is granted NQSOs with an exercise price of $20 per share. When the fair market value (FMV) of the stock is $60 per share, the employee exercises the options for 100 shares. What is the amount of ordinary income the employee will recognize at the time of exercise?",
+            "options": [
+              "$0",
+              "$2,000",
+              "$4,000",
+              "$6,000"
+            ],
+            "correctIndex": 2,
+            "explanation": "The ordinary income recognized at exercise is the difference between the FMV and the exercise price, multiplied by the number of shares. ($60 - $20) * 100 = $4,000.",
+            "hint": "Remember that with NQSOs, the bargain element (FMV - exercise price) is taxed as ordinary income at the time of exercise."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "NQSO Holding Period",
+          "reveal": {
+            "question": "How is the holding period determined for shares acquired through the exercise of Non-Qualified Stock Options (NQSOs)?",
+            "answer": "The holding period for shares acquired through the exercise of NQSOs begins on the day *after* the options are exercised."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "NQSO Tax Treatment Recap",
+          "comparison": {
+            "headers": [
+              "Event",
+              "Tax Treatment"
+            ],
+            "rows": [
+              {
+                "label": "Grant",
+                "values": [
+                  "No Tax",
+                  "N/A"
+                ]
+              },
+              {
+                "label": "Exercise",
+                "values": [
+                  "Ordinary Income (FMV - Exercise Price)",
+                  "Added to W-2"
+                ]
+              },
+              {
+                "label": "Sale",
+                "values": [
+                  "Capital Gain/Loss (Sale Price - FMV at Exercise)",
+                  "STCG (<= 1 year holding), LTCG (> 1 year holding)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L015",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Retirement Planning for Business Owners",
+    "description": "Compare retirement plan options for business owners",
+    "order": 15,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Compare retirement plan options for business owners",
+      "Calculate maximum contributions for self-employed",
+      "Design plans to maximize owner vs. employee contributions",
+      "Apply plan selection criteria based on business goals"
+    ],
+    "blueprintArea": "RET-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Business owners have unique retirement planning opportunities\u2014and challenges\u2014compared to employees."
+        },
+        {
+          "title": "Plan Selection Framework",
+          "type": "table",
+          "headers": [
+            "Factor",
+            "Question"
+          ],
+          "rows": [
+            [
+              "Number of employees",
+              "Just owner? With employees?"
+            ],
+            [
+              "Cash flow",
+              "Predictable or variable?"
+            ],
+            [
+              "Owner age",
+              "Younger (more time) or older (catch up)?"
+            ],
+            [
+              "Contribution goals",
+              "Maximize for owner or include employees?"
+            ],
+            [
+              "Administrative burden",
+              "Want simplicity or flexibility?"
+            ]
+          ]
+        },
+        {
+          "title": "Plan Options Comparison",
+          "type": "table",
+          "headers": [
+            "Plan",
+            "Max Employer",
+            "Max Employee",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "SEP-IRA",
+              "25% (20% SE)",
+              "None",
+              "Variable income, few employees"
+            ],
+            [
+              "SIMPLE IRA",
+              "3% match",
+              "$17,000",
+              "Small employers"
+            ],
+            [
+              "Solo 401(k)",
+              "25%",
+              "$24,500",
+              "Solo practitioners"
+            ],
+            [
+              "Regular 401(k)",
+              "25%",
+              "$24,500",
+              "Larger businesses"
+            ],
+            [
+              "Traditional DB",
+              "Actuarial",
+              "None",
+              "Older owners, stable income"
+            ],
+            [
+              "Cash Balance",
+              "Actuarial",
+              "None",
+              "Professionals wanting high contributions"
+            ]
+          ]
+        },
+        {
+          "title": "Solo 401(k) Deep Dive",
+          "type": "text",
+          "content": "For self-employed with no employees (except spouse). Employee deferral: $24,500 ($32,000 if 50+). Employer contribution: 20% of net SE income. Total: $71,500 ($79,000 if 50+). Advantages: Roth option available, loans permitted, can contribute more than SEP at lower incomes."
+        },
+        {
+          "title": "SEP vs. Solo 401(k)",
+          "type": "table",
+          "headers": [
+            "Net SE Income",
+            "SEP (20%)",
+            "Solo 401(k)",
+            "Advantage"
+          ],
+          "rows": [
+            [
+              "$50,000",
+              "$10,000",
+              "$34,500 ($24.5K + $10K)",
+              "Solo +$24,500"
+            ],
+            [
+              "$100,000",
+              "$20,000",
+              "$44,500",
+              "Solo +$24,500"
+            ],
+            [
+              "$200,000",
+              "$40,000",
+              "$64,500",
+              "Solo +$24,500"
+            ],
+            [
+              "$360,000+",
+              "$71,500",
+              "$71,500",
+              "Equal"
+            ]
+          ]
+        },
+        {
+          "title": "Key Insight",
+          "type": "callout",
+          "content": "Solo 401(k) is almost always better for solo practitioners with income under ~$360,000 because of the employee deferral component."
+        },
+        {
+          "title": "Defined Benefit Plans for Owners",
+          "type": "text",
+          "content": "When DB plans shine: Age 50+, high stable income, want large deductions, few/no employees. Maximum benefit (2026): $290,000/year lifetime annuity at 62 OR 100% of 3-year average. Contribution determined by actuary - older owner = larger contribution needed."
+        },
+        {
+          "title": "DB Contribution Examples",
+          "type": "table",
+          "headers": [
+            "Age",
+            "Target Benefit",
+            "Approximate Annual Contribution"
+          ],
+          "rows": [
+            [
+              "45",
+              "$200,000/yr",
+              "~$50,000-$70,000"
+            ],
+            [
+              "55",
+              "$200,000/yr",
+              "~$120,000-$180,000"
+            ],
+            [
+              "60",
+              "$200,000/yr",
+              "~$200,000+"
+            ]
+          ]
+        },
+        {
+          "title": "Cash Balance Plans",
+          "type": "text",
+          "content": "Hybrid approach: Legally a defined benefit plan, looks like defined contribution (individual accounts). Pay credit (% of salary) + Interest credit (guaranteed return). Higher contributions than 401(k) limits, can be combined with 401(k)."
+        },
+        {
+          "title": "Owner Strategy by Age",
+          "type": "table",
+          "headers": [
+            "Age Range",
+            "Recommended Strategy"
+          ],
+          "rows": [
+            [
+              "Young (Under 40)",
+              "Solo 401(k) or SEP - time is the advantage"
+            ],
+            [
+              "Middle (40-55)",
+              "Solo 401(k) for most; consider DB add-on if high income"
+            ],
+            [
+              "Older (55+)",
+              "Defined Benefit becomes powerful; larger contributions allowed"
+            ]
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Solo 401(k) usually beats SEP for self-employed under $345K income",
+            "Defined benefit allows largest contributions, especially for older owners",
+            "Cash balance plans = hybrid with DB contribution levels, DC appearance",
+            "Must cover eligible employees at similar contribution rates",
+            "Combine DB + 401(k) for maximum contributions and flexibility"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Solo 401(k) Contribution Calculation",
+          "knowledgeCheck": {
+            "question": "Sarah, age 42 and self-employed, operates a consulting business as a sole proprietor. Her net self-employment income after business expenses is $100,000. What is the MAXIMUM total (employee + employer) contribution she can make to a Solo 401(k) for the current year, assuming the employee deferral limit is $24,500 and the total contribution limit is $71,500?",
+            "options": [
+              "$24,500",
+              "$44,500",
+              "$44,500",
+              "$71,500"
+            ],
+            "correctIndex": 2,
+            "explanation": "Sarah can defer $24,500 as the employee. As the employer, she can contribute 20% of her net self-employment income, which is 0.20 * $100,000 = $20,000. Her total contribution is $24,500 + $20,000 = $44,500. While the total contribution limit is $71,500, she is limited by her income and the 20% employer contribution rule.",
+            "hint": "Remember to calculate both the employee deferral and the employer contribution. The employer contribution is capped at 20% of net self-employment income."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Solo 401(k) Advantages",
+          "reveal": {
+            "question": "Name three advantages of a Solo 401(k) compared to a SEP IRA for a self-employed individual.",
+            "answer": "1. Higher potential contribution limits, especially at lower incomes. 2. The option to make Roth contributions. 3. The ability to take loans from the plan."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Solo 401(k) Contribution as Employee vs. Employer",
+          "comparison": {
+            "headers": [
+              "Employee (Deferral)",
+              "Employer (Contribution)"
+            ],
+            "rows": [
+              {
+                "label": "Contribution Type",
+                "values": [
+                  "Elective deferral from self-employment income",
+                  "Profit-sharing contribution based on net self-employment income"
+                ]
+              },
+              {
+                "label": "Contribution Limit (2023)",
+                "values": [
+                  "$24,500 (or $32,000 if age 50+)",
+                  "20% of net self-employment income"
+                ]
+              },
+              {
+                "label": "Impact on Taxable Income",
+                "values": [
+                  "Reduces taxable income (unless Roth)",
+                  "Reduces taxable income"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L016",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Retirement Plan Distribution Strategies",
+    "description": "Apply RMD rules across account types",
+    "order": 16,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Apply RMD rules across account types",
+      "Develop tax-efficient distribution sequencing",
+      "Evaluate 72(t) substantially equal periodic payments",
+      "Plan for qualified charitable distributions"
+    ],
+    "blueprintArea": "RET-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "How and when you take distributions can significantly impact after-tax retirement income."
+        },
+        {
+          "title": "RMD Requirements by Account Type",
+          "type": "table",
+          "headers": [
+            "Account Type",
+            "RMDs Required?"
+          ],
+          "rows": [
+            [
+              "Traditional IRA",
+              "Yes"
+            ],
+            [
+              "SEP-IRA",
+              "Yes"
+            ],
+            [
+              "SIMPLE IRA",
+              "Yes"
+            ],
+            [
+              "401(k), 403(b), 457(b)",
+              "Yes (unless still working)"
+            ],
+            [
+              "Roth IRA",
+              "No (for original owner)"
+            ],
+            [
+              "Roth 401(k)",
+              "No (SECURE 2.0)"
+            ],
+            [
+              "Inherited IRAs",
+              "Yes (different rules)"
+            ]
+          ]
+        },
+        {
+          "title": "RMD Aggregation Rules",
+          "type": "list",
+          "items": [
+            "Traditional IRAs: Calculate separately, aggregate, satisfy from ANY Traditional IRA",
+            "401(k) Plans: Each plan's RMD must be taken from that plan",
+            "403(b) Plans: Can aggregate like IRAs"
+          ]
+        },
+        {
+          "title": "Tax-Efficient Distribution Sequencing",
+          "type": "text",
+          "content": "Goal: Minimize lifetime taxes, not just current-year taxes. Common ordering (taxable \u2192 tax-deferred \u2192 tax-free) may not be optimal. Issues: Wasted low brackets early, large RMDs later, IRMAA surcharges, Social Security taxation. Better approach: Fill tax brackets strategically, consider Roth conversions during low-income years."
+        },
+        {
+          "title": "Roth Conversion Strategies",
+          "type": "table",
+          "headers": [
+            "When to Convert",
+            "Reason"
+          ],
+          "rows": [
+            [
+              "Pre-Social Security",
+              "Avoid SS taxation"
+            ],
+            [
+              "Pre-RMD",
+              "Reduce future RMDs"
+            ],
+            [
+              "Market downturns",
+              "Convert more shares for same tax"
+            ],
+            [
+              "Early retirement",
+              "Low income years"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "Know the 2026 tax bracket boundaries for MFJ: 10% up to $24,500, 12% up to $99,550, 22% up to $212,300, 24% up to $405,400. Fill lower brackets with taxable income; use Roth for overflow."
+        },
+        {
+          "title": "72(t) SEPP Requirements",
+          "type": "table",
+          "headers": [
+            "Requirement",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Duration",
+              "At least 5 years OR until age 59\u00bd (whichever is longer)"
+            ],
+            [
+              "Frequency",
+              "At least annual payments"
+            ],
+            [
+              "Methods",
+              "Life expectancy, Amortization, or Annuitization"
+            ],
+            [
+              "Modification",
+              "If modified, 10% penalty applies retroactively"
+            ]
+          ]
+        },
+        {
+          "title": "72(t) Example",
+          "type": "text",
+          "content": "IRA Balance: $500,000, Age: 50, Life expectancy: 34.2 years. Life Expectancy Method: Year 1 = $500,000 / 34.2 = $14,620/year. Amortization (at 5%): ~$30,000/year. Warning: Locked in for 5+ years or until 59\u00bd; modification = retroactive penalty on all withdrawals."
+        },
+        {
+          "title": "Qualified Charitable Distributions (QCDs)",
+          "type": "table",
+          "headers": [
+            "Requirement",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Age",
+              "70\u00bd or older"
+            ],
+            [
+              "Amount",
+              "Up to $105,000/year (2024)"
+            ],
+            [
+              "Account",
+              "Traditional IRA only"
+            ],
+            [
+              "Recipient",
+              "Qualified 501(c)(3) charity"
+            ]
+          ]
+        },
+        {
+          "title": "QCD Benefits",
+          "type": "callout",
+          "content": "Not included in income (unlike regular distribution), satisfies RMD, benefits even if taking standard deduction. For those who don't itemize, QCD is effectively better than taking distribution and donating."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "RMD starts at 73 (75 for 1960+); first year can delay to April 1 following",
+            "IRAs aggregate for RMDs (distribute from any); 401(k)s do not aggregate",
+            "Roth conversions: Fill low brackets in early retirement before SS/RMDs",
+            "72(t) SEPP: 5 years or until 59\u00bd (longer); modification = retroactive penalty",
+            "QCD at 70\u00bd+: Up to $105K excluded from income; counts toward RMD"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "RMD Rules Across Account Types",
+          "knowledgeCheck": {
+            "question": "Which of the following statements is CORRECT regarding Required Minimum Distributions (RMDs)?",
+            "options": [
+              "RMDs must be taken from each individual IRA account, calculating the RMD separately for each.",
+              "RMDs are not required for Roth IRAs during the owner's lifetime.",
+              "RMDs for 403(b) accounts can be satisfied by distributions from a Roth 401(k) account.",
+              "RMDs can be satisfied by taking distributions from a taxable brokerage account."
+            ],
+            "correctIndex": 1,
+            "explanation": "RMDs are not required from Roth IRAs during the owner's lifetime. RMDs are calculated across all traditional IRAs. 403(b) RMDs cannot be satisfied by a Roth 401(k). RMDs must come from qualified accounts.",
+            "hint": "Consider which accounts are subject to income tax."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "72(t) Substantially Equal Periodic Payments",
+          "reveal": {
+            "question": "What conditions trigger a penalty if a 72(t) distribution plan is modified before age 59 1/2 or 5 years, whichever is later?",
+            "answer": "Modification (other than death or disability) triggers retroactive penalties on all payments received prior to the modification, plus interest."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Tax-Efficient Distribution Sequencing",
+          "knowledgeCheck": {
+            "question": "Which of the following distribution sequences is MOST likely to minimize lifetime taxes for a client in retirement, assuming stable tax rates and a moderate income?",
+            "options": [
+              "Taxable, then tax-deferred, then tax-free.",
+              "Tax-deferred, then taxable, then tax-free.",
+              "A strategic mix of taxable, tax-deferred, and tax-free to fill lower tax brackets and manage IRMAA surcharges.",
+              "Tax-free, then tax-deferred, then taxable."
+            ],
+            "correctIndex": 2,
+            "explanation": "A strategic approach that fills lower tax brackets and manages potential issues like IRMAA surcharges is generally the most tax-efficient. The traditional order (taxable -> tax-deferred -> tax-free) often leads to higher RMDs and higher overall taxes.",
+            "hint": "Consider the impact of RMDs and Medicare surcharges on the long-term tax picture."
+          }
+        }
+      ]
+    }
+  }
+]

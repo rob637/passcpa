@@ -6,6 +6,7 @@
  */
 
 import { useState } from 'react';
+import logger from '../../utils/logger';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Gift, ArrowRight, Sparkles, Mail } from 'lucide-react';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
@@ -56,7 +57,7 @@ const ExitIntentModal = ({ isOpen, onClose, courseId, courseName }: ExitIntentMo
 
       setSubmitted(true);
     } catch (err) {
-      console.error('Failed to save email:', err);
+      logger.error('Failed to save email:', err);
       setError('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);

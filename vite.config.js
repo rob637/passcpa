@@ -49,7 +49,9 @@ function firebaseMessagingSWPlugin() {
   };
 }
 
-export default defineConfig({
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+  return {
   plugins: [
     react(),
     firebaseMessagingSWPlugin(),
@@ -106,11 +108,23 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024, // 8 MiB - CPA questions bundle is ~5.8MB
-        skipWaiting: false, // Don't auto-activate new service worker during exam!
+        // Exclude large data chunks from precache - they cache on-demand via runtimeCaching
+        // This reduces initial SW install from ~25MB to ~3MB for faster first load
+        globPatterns: ['**/*.{css,html,ico,png,svg,woff2}', 'assets/vendor-*.js', 'assets/index-*.js'],
+        globIgnores: ['**/data-*.js', '**/feature-*.js', '**/blog/**'],
+        maximumFileSizeToCacheInBytes: 25 * 1024 * 1024, // 25 MiB - main bundle grew with 9K questions
+        skipWaiting: true, // Force SW update - temporarily enabled to fix stale cache issue
         clientsClaim: true, // Take control immediately after activation (when user clicks Update)
         cleanupOutdatedCaches: true,
+        // Don't intercept these routes - let them serve directly from Firebase/Cloud Functions
+        navigateFallbackDenylist: [
+          /^\/blog\//,           // Static Astro blog pages
+          /^\/sitemap\.xml$/,    // Dynamic sitemap (Cloud Function)
+          /^\/rss\.xml$/,        // Dynamic RSS feed (Cloud Function)
+          /^\/feed\.xml$/,       // Alternative RSS URL (Cloud Function)
+          /^\/rss$/,             // RSS without extension
+          /^\/robots\.txt$/,     // Robots file
+        ],
         runtimeCaching: [
           // Cache question/lesson/content data chunks (Vite hashes them as data-*)
           {
@@ -121,6 +135,21 @@ export default defineConfig({
               expiration: {
                 maxEntries: 200,
                 maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days (hashed = immutable)
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          // Cache feature chunks (admin, AI tutor, etc.)
+          {
+            urlPattern: /\/assets\/feature-.*\.js$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'feature-chunks-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
               },
               cacheableResponse: {
                 statuses: [0, 200]
@@ -183,6 +212,8 @@ export default defineConfig({
   ].filter(Boolean),
   define: {
     __APP_VERSION__: JSON.stringify(packageJson.version),
+    // FORCE inject production GA4 ID if invalidly replaced
+    'import.meta.env.VITE_GA_MEASUREMENT_ID': JSON.stringify(process.env.VITE_GA_MEASUREMENT_ID || 'G-54Z8TZXMSK'),
   },
   resolve: {
     alias: {
@@ -221,16 +252,33 @@ export default defineConfig({
             }
           }
           
-          // Question data chunks - split CPA by section since it's very large
-          if (id.includes('/data/cpa/questions')) {
-            if (id.includes('far-questions') || id.includes('far_questions')) return 'data-cpa-questions-far';
-            if (id.includes('aud-questions') || id.includes('aud_questions')) return 'data-cpa-questions-aud';
-            if (id.includes('reg-questions') || id.includes('reg_questions')) return 'data-cpa-questions-reg';
-            if (id.includes('bar-questions') || id.includes('bar_questions')) return 'data-cpa-questions-bar';
-            if (id.includes('isc-questions') || id.includes('isc_questions')) return 'data-cpa-questions-isc';
-            if (id.includes('tcp-questions') || id.includes('tcp_questions')) return 'data-cpa-questions-tcp';
-            return 'data-cpa-questions-misc'; // world-class batches, easy-questions, etc.
+          // Question data from content/ JSON files - split CPA by section
+          if (id.includes('/content/cpa/')) {
+            if (id.includes('/far/questions')) return 'data-cpa-questions-far';
+            if (id.includes('/aud/questions')) return 'data-cpa-questions-aud';
+            if (id.includes('/reg/questions')) return 'data-cpa-questions-reg';
+            if (id.includes('/bar/questions')) return 'data-cpa-questions-bar';
+            if (id.includes('/isc/questions')) return 'data-cpa-questions-isc';
+            if (id.includes('/tcp/questions')) return 'data-cpa-questions-tcp';
           }
+          
+          // Question data chunks - legacy TS files in src/data (backwards compat)
+          if (id.includes('/data/cpa/questions')) {
+            if (id.includes('far-questions') || id.includes('far_questions') || id.includes('/far/')) return 'data-cpa-questions-far';
+            if (id.includes('aud-questions') || id.includes('aud_questions') || id.includes('/aud/')) return 'data-cpa-questions-aud';
+            if (id.includes('reg-questions') || id.includes('reg_questions') || id.includes('/reg/')) return 'data-cpa-questions-reg';
+            if (id.includes('bar-questions') || id.includes('bar_questions') || id.includes('/bar/')) return 'data-cpa-questions-bar';
+            if (id.includes('isc-questions') || id.includes('isc_questions') || id.includes('/isc/')) return 'data-cpa-questions-isc';
+            if (id.includes('tcp-questions') || id.includes('tcp_questions') || id.includes('/tcp/')) return 'data-cpa-questions-tcp';
+            return 'data-cpa-questions-misc'; // index file, helpers, etc.
+          }
+          // Other courses from content/ 
+          if (id.includes('/content/ea/')) return 'data-ea-questions';
+          if (id.includes('/content/cma/')) return 'data-cma-questions';
+          if (id.includes('/content/cia/')) return 'data-cia-questions';
+          if (id.includes('/content/cisa/')) return 'data-cisa-questions';
+          if (id.includes('/content/cfp/')) return 'data-cfp-questions';
+          
           if (id.includes('/data/ea/questions')) {
             return 'data-ea-questions';
           }
@@ -248,6 +296,10 @@ export default defineConfig({
           }
           
           // Study materials chunks - split by course
+          // TBS data - separate chunk (CPA only, ~1MB)
+          if (id.includes('/data/cpa/tbs')) {
+            return 'data-cpa-tbs';
+          }
           if (id.includes('/data/cpa/study-materials') || id.includes('/data/cpa/lessons')) {
             return 'data-cpa-content';
           }
@@ -268,7 +320,7 @@ export default defineConfig({
           }
           
           // Feature chunks
-          if (id.includes('AdminCMS')) {
+          if (id.includes('AdminCMS') || id.includes('ArticleReview')) {
             return 'feature-admin-cms';
           }
           if (id.includes('AdminSeed')) {
@@ -285,4 +337,5 @@ export default defineConfig({
     // Increase chunk warning limit since we're intentionally chunking
     chunkSizeWarningLimit: 700,
   },
+  };
 });

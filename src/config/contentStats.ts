@@ -11,7 +11,7 @@
  * 
  * To recount from data files, run: npx tsx scripts/count-content.ts
  * 
- * Last updated: 2026-02-16
+ * Last updated: 2026-02-27
  */
 
 import type { CourseId } from '../types/course';

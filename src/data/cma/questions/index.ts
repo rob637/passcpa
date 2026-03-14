@@ -1,258 +1,31 @@
-/**
- * CMA Questions Index
- * 
- * Exports all CMA question batches with helper functions
- * 
- * Part 1: Financial Planning, Performance, and Analytics
- * - CMA1-A: External Financial Reporting (15%)
- * - CMA1-B: Planning, Budgeting, and Forecasting (20%)
- * - CMA1-C: Performance Management (20%)
- * - CMA1-D: Cost Management (15%)
- * - CMA1-E: Internal Controls (15%)
- * - CMA1-F: Technology and Analytics (15%)
- * 
- * Part 2: Strategic Financial Management
- * - CMA2-A: Financial Statement Analysis (20%)
- * - CMA2-B: Corporate Finance (20%)
- * - CMA2-C: Decision Analysis (25%)
- * - CMA2-D: Risk Management (10%)
- * - CMA2-E: Investment Decisions (10%)
- * - CMA2-F: Professional Ethics (15%)
- */
+// CMA Question Bank Index — JSON-based
+// Loads all CMA questions from consolidated JSON files in content/cma/
+// Replaces 70+ TypeScript batch imports with 2 clean JSON imports
 
-// Part 1 Questions
-import { CMA1A_QUESTIONS_BATCH1 } from './cma1a-questions-batch1';
-import { CMA1A_QUESTIONS_BATCH2 } from './cma1a-questions-batch2';
-import { CMA1A_QUESTIONS_BATCH3 } from './cma1a-questions-batch3';
-import { CMA1B_QUESTIONS_BATCH1 } from './cma1b-questions-batch1';
-import { CMA1B_QUESTIONS_BATCH2 } from './cma1b-questions-batch2';
-import { CMA1B_QUESTIONS_BATCH3 } from './cma1b-questions-batch3';
-import { CMA1C_QUESTIONS_BATCH1 } from './cma1c-questions-batch1';
-import { CMA1C_QUESTIONS_BATCH2 } from './cma1c-questions-batch2';
-import { CMA1C_QUESTIONS_BATCH3 } from './cma1c-questions-batch3';
-import { CMA1D_QUESTIONS_BATCH1 } from './cma1d-questions-batch1';
-import { CMA1D_QUESTIONS_BATCH2 } from './cma1d-questions-batch2';
-import { CMA1D_QUESTIONS_BATCH3 } from './cma1d-questions-batch3';
-import { CMA1E_QUESTIONS_BATCH1 } from './cma1e-questions-batch1';
-import { CMA1E_QUESTIONS_BATCH2 } from './cma1e-questions-batch2';
-import { CMA1E_QUESTIONS_BATCH3 } from './cma1e-questions-batch3';
-import { CMA1F_QUESTIONS_BATCH1 } from './cma1f-questions-batch1';
-import { CMA1F_QUESTIONS_BATCH2 } from './cma1f-questions-batch2';
-import { CMA1F_QUESTIONS_BATCH3 } from './cma1f-questions-batch3';
+import type { Question } from '../../../types';
+import { Difficulty, normalizeDifficulty } from '../../../types';
 
-// Part 2 Questions
-import { CMA2A_QUESTIONS_BATCH1 } from './cma2a-questions-batch1';
-import { CMA2A_QUESTIONS_BATCH2 } from './cma2a-questions-batch2';
-import { CMA2A_QUESTIONS_BATCH3 } from './cma2a-questions-batch3';
-import { CMA2B_QUESTIONS_BATCH1 } from './cma2b-questions-batch1';
-import { CMA2B_QUESTIONS_BATCH2 } from './cma2b-questions-batch2';
-import { CMA2B_QUESTIONS_BATCH3 } from './cma2b-questions-batch3';
-import { CMA2C_QUESTIONS_BATCH1 } from './cma2c-questions-batch1';
-import { CMA2C_QUESTIONS_BATCH2 } from './cma2c-questions-batch2';
-import { CMA2C_QUESTIONS_BATCH3 } from './cma2c-questions-batch3';
-import { CMA2D_QUESTIONS_BATCH1 } from './cma2d-questions-batch1';
-import { CMA2D_QUESTIONS_BATCH2 } from './cma2d-questions-batch2';
-import { CMA2D_QUESTIONS_BATCH3 } from './cma2d-questions-batch3';
-import { CMA2E_QUESTIONS_BATCH1 } from './cma2e-questions-batch1';
-import { CMA2E_QUESTIONS_BATCH2 } from './cma2e-questions-batch2';
-import { CMA2E_QUESTIONS_BATCH3 } from './cma2e-questions-batch3';
-import { CMA2F_QUESTIONS_BATCH1 } from './cma2f-questions-batch1';
-import { CMA2F_QUESTIONS_BATCH2 } from './cma2f-questions-batch2';
-import { CMA2F_QUESTIONS_BATCH3 } from './cma2f-questions-batch3';
+// Import the consolidated JSON files (Vite handles JSON imports natively)
+import cma1Data from '../../../../content/cma/cma1/questions.json';
+import cma2Data from '../../../../content/cma/cma2/questions.json';
 
-// Batch 4 questions (additional blueprint area coverage)
-import { CMA1A_QUESTIONS_BATCH4 } from './cma1a-questions-batch4';
-import { CMA1B_QUESTIONS_BATCH4 } from './cma1b-questions-batch4';
-import { CMA1E_QUESTIONS_BATCH4 } from './cma1e-questions-batch4';
-import { CMA1F_QUESTIONS_BATCH4 } from './cma1f-questions-batch4';
-import { CMA2A_QUESTIONS_BATCH4 } from './cma2a-questions-batch4';
-import { CMA2B_QUESTIONS_BATCH4 } from './cma2b-questions-batch4';
-import { CMA2C_QUESTIONS_BATCH4 } from './cma2c-questions-batch4';
-import { CMA2D_QUESTIONS_BATCH4 } from './cma2d-questions-batch4';
-import { CMA2E_QUESTIONS_BATCH4 } from './cma2e-questions-batch4';
-import { CMA2F_QUESTIONS_BATCH4 } from './cma2f-questions-batch4';
+// Type for the JSON structure
+interface QuestionFile {
+  section: string;
+  exportedAt: string;
+  questions: Question[];
+}
 
-// Calculation Problems (computational practice)
-import { CMA1_CALCULATION_PROBLEMS } from './cma1-calculation-problems';
-import { CMA1_CALCULATION_PROBLEMS_BATCH2 } from './cma1-calculation-problems-batch2';
-import { CMA2_CALCULATION_PROBLEMS } from './cma2-calculation-problems';
-import { CMA2_CALCULATION_PROBLEMS_BATCH2 } from './cma2-calculation-problems-batch2';
-import { CMA1_BULK_QUESTIONS } from './cma1-bulk-questions';
-import { CMA2_BULK_QUESTIONS } from './cma2-bulk-questions';
+// Cast and extract questions arrays
+const cma1Questions = (cma1Data as QuestionFile).questions;
+const cma2Questions = (cma2Data as QuestionFile).questions;
 
-// MCQ Batch 4 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH4 } from './cma1-mcq-batch4';
-import { CMA2_MCQ_BATCH4 } from './cma2-mcq-batch4';
-
-// MCQ Batch 5 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH5 } from './cma1-mcq-batch5';
-import { CMA2_MCQ_BATCH5 } from './cma2-mcq-batch5';
-
-// MCQ Batch 6 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH6 } from './cma1-mcq-batch6';
-import { CMA2_MCQ_BATCH6 } from './cma2-mcq-batch6';
-
-// MCQ Batch 7 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH7 } from './cma1-mcq-batch7';
-import { CMA2_MCQ_BATCH7 } from './cma2-mcq-batch7';
-
-// MCQ Batch 8 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH8 } from './cma1-mcq-batch8';
-import { CMA2_MCQ_BATCH8 } from './cma2-mcq-batch8';
-
-// MCQ Batch 9 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH9 } from './cma1-mcq-batch9';
-import { CMA2_MCQ_BATCH9 } from './cma2-mcq-batch9';
-
-// MCQ Batch 10 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH10 } from './cma1-mcq-batch10';
-import { CMA2_MCQ_BATCH10 } from './cma2-mcq-batch10';
-
-// MCQ Batch 11 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH11 } from './cma1-mcq-batch11';
-import { CMA2_MCQ_BATCH11 } from './cma2-mcq-batch11';
-
-// MCQ Batch 12 (mixed blueprint areas)
-import { CMA1_MCQ_BATCH12 } from './cma1-mcq-batch12';
-import { CMA2_MCQ_BATCH12 } from './cma2-mcq-batch12';
-
-// Hard question batches
-import { CMA1_HARD_BATCH1 } from './cma1-hard-batch1';
-import { CMA1_HARD_BATCH2 } from './cma1-hard-batch2';
-
-// Re-export individual batches
-export {
-  CMA1A_QUESTIONS_BATCH1,
-  CMA1A_QUESTIONS_BATCH2,
-  CMA1A_QUESTIONS_BATCH3,
-  CMA1B_QUESTIONS_BATCH1,
-  CMA1B_QUESTIONS_BATCH2,
-  CMA1B_QUESTIONS_BATCH3,
-  CMA1C_QUESTIONS_BATCH1,
-  CMA1C_QUESTIONS_BATCH2,
-  CMA1C_QUESTIONS_BATCH3,
-  CMA1D_QUESTIONS_BATCH1,
-  CMA1D_QUESTIONS_BATCH2,
-  CMA1D_QUESTIONS_BATCH3,
-  CMA1E_QUESTIONS_BATCH1,
-  CMA1E_QUESTIONS_BATCH2,
-  CMA1E_QUESTIONS_BATCH3,
-  CMA1F_QUESTIONS_BATCH1,
-  CMA1F_QUESTIONS_BATCH2,
-  CMA1F_QUESTIONS_BATCH3,
-  CMA2A_QUESTIONS_BATCH1,
-  CMA2A_QUESTIONS_BATCH2,
-  CMA2A_QUESTIONS_BATCH3,
-  CMA2B_QUESTIONS_BATCH1,
-  CMA2B_QUESTIONS_BATCH2,
-  CMA2B_QUESTIONS_BATCH3,
-  CMA2C_QUESTIONS_BATCH1,
-  CMA2C_QUESTIONS_BATCH2,
-  CMA2C_QUESTIONS_BATCH3,
-  CMA2D_QUESTIONS_BATCH1,
-  CMA2D_QUESTIONS_BATCH2,
-  CMA2D_QUESTIONS_BATCH3,
-  CMA2E_QUESTIONS_BATCH1,
-  CMA2E_QUESTIONS_BATCH2,
-  CMA2E_QUESTIONS_BATCH3,
-  CMA2F_QUESTIONS_BATCH1,
-  CMA2F_QUESTIONS_BATCH2,
-  CMA2F_QUESTIONS_BATCH3,
-  CMA1_CALCULATION_PROBLEMS,
-  CMA1_CALCULATION_PROBLEMS_BATCH2,
-  CMA2_CALCULATION_PROBLEMS,
-  CMA2_CALCULATION_PROBLEMS_BATCH2,
-  CMA1_MCQ_BATCH4,
-  CMA2_MCQ_BATCH4,
-  CMA1_MCQ_BATCH5,
-  CMA2_MCQ_BATCH5,
-  CMA1_MCQ_BATCH6,
-  CMA2_MCQ_BATCH6,
-  CMA1_MCQ_BATCH7,
-  CMA2_MCQ_BATCH7,
-  CMA1_MCQ_BATCH8,
-  CMA2_MCQ_BATCH8,
-  CMA1_MCQ_BATCH9,
-  CMA2_MCQ_BATCH9,
-  CMA1_MCQ_BATCH10,
-  CMA2_MCQ_BATCH10,
-  CMA1_MCQ_BATCH11,
-  CMA2_MCQ_BATCH11,
-  CMA1_MCQ_BATCH12,
-  CMA2_MCQ_BATCH12,
-  CMA1A_QUESTIONS_BATCH4,
-  CMA1B_QUESTIONS_BATCH4,
-  CMA1E_QUESTIONS_BATCH4,
-  CMA1F_QUESTIONS_BATCH4,
-  CMA2A_QUESTIONS_BATCH4,
-  CMA2B_QUESTIONS_BATCH4,
-  CMA2C_QUESTIONS_BATCH4,
-  CMA2D_QUESTIONS_BATCH4,
-  CMA2E_QUESTIONS_BATCH4,
-  CMA2F_QUESTIONS_BATCH4,
-};
-
-// Combined by blueprint area
-export const CMA1A_ALL = [...CMA1A_QUESTIONS_BATCH1, ...CMA1A_QUESTIONS_BATCH2, ...CMA1A_QUESTIONS_BATCH3, ...CMA1A_QUESTIONS_BATCH4];
-export const CMA1B_ALL = [...CMA1B_QUESTIONS_BATCH1, ...CMA1B_QUESTIONS_BATCH2, ...CMA1B_QUESTIONS_BATCH3, ...CMA1B_QUESTIONS_BATCH4];
-export const CMA1C_ALL = [...CMA1C_QUESTIONS_BATCH1, ...CMA1C_QUESTIONS_BATCH2, ...CMA1C_QUESTIONS_BATCH3];
-export const CMA1D_ALL = [...CMA1D_QUESTIONS_BATCH1, ...CMA1D_QUESTIONS_BATCH2, ...CMA1D_QUESTIONS_BATCH3];
-export const CMA1E_ALL = [...CMA1E_QUESTIONS_BATCH1, ...CMA1E_QUESTIONS_BATCH2, ...CMA1E_QUESTIONS_BATCH3, ...CMA1E_QUESTIONS_BATCH4];
-export const CMA1F_ALL = [...CMA1F_QUESTIONS_BATCH1, ...CMA1F_QUESTIONS_BATCH2, ...CMA1F_QUESTIONS_BATCH3, ...CMA1F_QUESTIONS_BATCH4];
-export const CMA2A_ALL = [...CMA2A_QUESTIONS_BATCH1, ...CMA2A_QUESTIONS_BATCH2, ...CMA2A_QUESTIONS_BATCH3, ...CMA2A_QUESTIONS_BATCH4];
-export const CMA2B_ALL = [...CMA2B_QUESTIONS_BATCH1, ...CMA2B_QUESTIONS_BATCH2, ...CMA2B_QUESTIONS_BATCH3, ...CMA2B_QUESTIONS_BATCH4];
-export const CMA2C_ALL = [...CMA2C_QUESTIONS_BATCH1, ...CMA2C_QUESTIONS_BATCH2, ...CMA2C_QUESTIONS_BATCH3, ...CMA2C_QUESTIONS_BATCH4];
-export const CMA2D_ALL = [...CMA2D_QUESTIONS_BATCH1, ...CMA2D_QUESTIONS_BATCH2, ...CMA2D_QUESTIONS_BATCH3, ...CMA2D_QUESTIONS_BATCH4];
-export const CMA2E_ALL = [...CMA2E_QUESTIONS_BATCH1, ...CMA2E_QUESTIONS_BATCH2, ...CMA2E_QUESTIONS_BATCH3, ...CMA2E_QUESTIONS_BATCH4];
-export const CMA2F_ALL = [...CMA2F_QUESTIONS_BATCH1, ...CMA2F_QUESTIONS_BATCH2, ...CMA2F_QUESTIONS_BATCH3, ...CMA2F_QUESTIONS_BATCH4];
-
-// Combined question arrays by part
-export const CMA_PART1_QUESTIONS = [
-  ...CMA1A_ALL,
-  ...CMA1B_ALL,
-  ...CMA1C_ALL,
-  ...CMA1D_ALL,
-  ...CMA1E_ALL,
-  ...CMA1F_ALL,
-  ...CMA1_CALCULATION_PROBLEMS,
-  ...CMA1_CALCULATION_PROBLEMS_BATCH2,
-  ...CMA1_BULK_QUESTIONS,
-  ...CMA1_MCQ_BATCH4,
-  ...CMA1_MCQ_BATCH5,
-  ...CMA1_MCQ_BATCH6,
-  ...CMA1_MCQ_BATCH7,
-  ...CMA1_MCQ_BATCH8,
-  ...CMA1_MCQ_BATCH9,
-  ...CMA1_MCQ_BATCH10,
-  ...CMA1_MCQ_BATCH11,
-  ...CMA1_MCQ_BATCH12,
-  ...CMA1_HARD_BATCH1,
-  ...CMA1_HARD_BATCH2,
-];
-
-export const CMA_PART2_QUESTIONS = [
-  ...CMA2A_ALL,
-  ...CMA2B_ALL,
-  ...CMA2C_ALL,
-  ...CMA2D_ALL,
-  ...CMA2E_ALL,
-  ...CMA2F_ALL,
-  ...CMA2_CALCULATION_PROBLEMS,
-  ...CMA2_CALCULATION_PROBLEMS_BATCH2,
-  ...CMA2_BULK_QUESTIONS,
-  ...CMA2_MCQ_BATCH4,
-  ...CMA2_MCQ_BATCH5,
-  ...CMA2_MCQ_BATCH6,
-  ...CMA2_MCQ_BATCH7,
-  ...CMA2_MCQ_BATCH8,
-  ...CMA2_MCQ_BATCH9,
-  ...CMA2_MCQ_BATCH10,
-  ...CMA2_MCQ_BATCH11,
-  ...CMA2_MCQ_BATCH12,
-];
+// Section question banks
+export const CMA_PART1_QUESTIONS: Question[] = cma1Questions;
+export const CMA_PART2_QUESTIONS: Question[] = cma2Questions;
 
 // All CMA questions combined
-export const CMA_ALL_QUESTIONS = [
+export const CMA_ALL_QUESTIONS: Question[] = [
   ...CMA_PART1_QUESTIONS,
   ...CMA_PART2_QUESTIONS,
 ];
@@ -264,29 +37,30 @@ export const CMA_ALL_QUESTIONS = [
 /**
  * Get all questions for a specific section
  */
-export function getQuestionsBySection(section: 'CMA1' | 'CMA2') {
+export function getQuestionsBySection(section: 'CMA1' | 'CMA2'): Question[] {
   return section === 'CMA1' ? CMA_PART1_QUESTIONS : CMA_PART2_QUESTIONS;
 }
 
 /**
  * Get all questions for a specific blueprint area
  */
-export function getQuestionsByBlueprintArea(blueprintArea: string) {
+export function getQuestionsByBlueprintArea(blueprintArea: string): Question[] {
   return CMA_ALL_QUESTIONS.filter(q => q.blueprintArea === blueprintArea);
 }
 
 /**
- * Get questions by difficulty level
+ * Get questions by difficulty level (handles normalized difficulty matching)
  */
-export function getQuestionsByDifficulty(difficulty: 'easy' | 'medium' | 'hard') {
-  return CMA_ALL_QUESTIONS.filter(q => q.difficulty === difficulty);
+export function getQuestionsByDifficulty(difficulty: Difficulty): Question[] {
+  const normalized = normalizeDifficulty(difficulty);
+  return CMA_ALL_QUESTIONS.filter(q => normalizeDifficulty(q.difficulty) === normalized);
 }
 
 /**
  * Get questions by topic
  */
-export function getQuestionsByTopic(topic: string) {
-  return CMA_ALL_QUESTIONS.filter(q => 
+export function getQuestionsByTopic(topic: string): Question[] {
+  return CMA_ALL_QUESTIONS.filter(q =>
     q.topic.toLowerCase().includes(topic.toLowerCase())
   );
 }
@@ -294,7 +68,7 @@ export function getQuestionsByTopic(topic: string) {
 /**
  * Get a random subset of questions
  */
-export function getRandomQuestions(count: number, section?: 'CMA1' | 'CMA2') {
+export function getRandomQuestions(count: number, section?: 'CMA1' | 'CMA2'): Question[] {
   const pool = section ? getQuestionsBySection(section) : CMA_ALL_QUESTIONS;
   const shuffled = [...pool].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, Math.min(count, pool.length));
@@ -304,37 +78,36 @@ export function getRandomQuestions(count: number, section?: 'CMA1' | 'CMA2') {
  * Get question counts by section and blueprint area
  */
 export function getQuestionStats() {
-  const stats = {
+  return {
     total: CMA_ALL_QUESTIONS.length,
     part1: {
       total: CMA_PART1_QUESTIONS.length,
       byArea: {
-        'CMA1-A': CMA1A_ALL.length,
-        'CMA1-B': CMA1B_ALL.length,
-        'CMA1-C': CMA1C_ALL.length,
-        'CMA1-D': CMA1D_ALL.length,
-        'CMA1-E': CMA1E_ALL.length,
-        'CMA1-F': CMA1F_ALL.length,
+        'CMA1-A': CMA_PART1_QUESTIONS.filter(q => q.blueprintArea === 'CMA1-A').length,
+        'CMA1-B': CMA_PART1_QUESTIONS.filter(q => q.blueprintArea === 'CMA1-B').length,
+        'CMA1-C': CMA_PART1_QUESTIONS.filter(q => q.blueprintArea === 'CMA1-C').length,
+        'CMA1-D': CMA_PART1_QUESTIONS.filter(q => q.blueprintArea === 'CMA1-D').length,
+        'CMA1-E': CMA_PART1_QUESTIONS.filter(q => q.blueprintArea === 'CMA1-E').length,
+        'CMA1-F': CMA_PART1_QUESTIONS.filter(q => q.blueprintArea === 'CMA1-F').length,
       },
     },
     part2: {
       total: CMA_PART2_QUESTIONS.length,
       byArea: {
-        'CMA2-A': CMA2A_ALL.length,
-        'CMA2-B': CMA2B_ALL.length,
-        'CMA2-C': CMA2C_ALL.length,
-        'CMA2-D': CMA2D_ALL.length,
-        'CMA2-E': CMA2E_ALL.length,
-        'CMA2-F': CMA2F_ALL.length,
+        'CMA2-A': CMA_PART2_QUESTIONS.filter(q => q.blueprintArea === 'CMA2-A').length,
+        'CMA2-B': CMA_PART2_QUESTIONS.filter(q => q.blueprintArea === 'CMA2-B').length,
+        'CMA2-C': CMA_PART2_QUESTIONS.filter(q => q.blueprintArea === 'CMA2-C').length,
+        'CMA2-D': CMA_PART2_QUESTIONS.filter(q => q.blueprintArea === 'CMA2-D').length,
+        'CMA2-E': CMA_PART2_QUESTIONS.filter(q => q.blueprintArea === 'CMA2-E').length,
+        'CMA2-F': CMA_PART2_QUESTIONS.filter(q => q.blueprintArea === 'CMA2-F').length,
       },
     },
     byDifficulty: {
-      easy: CMA_ALL_QUESTIONS.filter(q => q.difficulty === 'easy').length,
-      medium: CMA_ALL_QUESTIONS.filter(q => q.difficulty === 'medium').length,
-      hard: CMA_ALL_QUESTIONS.filter(q => q.difficulty === 'hard').length,
+      easy: CMA_ALL_QUESTIONS.filter(q => normalizeDifficulty(q.difficulty) === 'easy').length,
+      medium: CMA_ALL_QUESTIONS.filter(q => normalizeDifficulty(q.difficulty) === 'medium').length,
+      hard: CMA_ALL_QUESTIONS.filter(q => normalizeDifficulty(q.difficulty) === 'hard').length,
     },
   };
-  return stats;
 }
 
 /**
@@ -343,7 +116,7 @@ export function getQuestionStats() {
 export function createPracticeExam(
   part: 'CMA1' | 'CMA2',
   questionCount: number = 100
-) {
+): Question[] {
   const weights = part === 'CMA1'
     ? {
         'CMA1-A': 0.15, // External Financial Reporting
@@ -362,7 +135,7 @@ export function createPracticeExam(
         'CMA2-F': 0.15, // Professional Ethics
       };
 
-  const examQuestions = [];
+  const examQuestions: Question[] = [];
 
   for (const [area, weight] of Object.entries(weights)) {
     const areaQuestions = getQuestionsByBlueprintArea(area);

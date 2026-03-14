@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import logger from '../utils/logger';
 import { collection, query, where, getDocs, limit, doc, getDoc, QueryConstraint } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { Question } from '../types';
@@ -84,7 +85,7 @@ export const useQuestions = (options: UseQuestionsOptions = {}): UseQuestionsRet
 
         return shuffled;
       } catch (err) {
-        console.error('Error fetching questions:', err);
+        logger.error('Error fetching questions:', err);
         setError(err instanceof Error ? err.message : 'Unknown error');
         return [];
       } finally {
@@ -106,7 +107,7 @@ export const useQuestions = (options: UseQuestionsOptions = {}): UseQuestionsRet
       }
       return null;
     } catch (err) {
-      console.error('Error fetching question:', err);
+      logger.error('Error fetching question:', err);
       return null;
     }
   }, []);

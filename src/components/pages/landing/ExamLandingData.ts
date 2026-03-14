@@ -24,6 +24,9 @@ import {
   Users,
   TrendingUp,
   Shield,
+  BookOpen,
+  BarChart3,
+  Sparkles,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -52,6 +55,14 @@ export interface CompetitorRow {
   competitor2: boolean | string;
   competitor3?: boolean | string;
   highlight?: boolean;
+}
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  avatar?: string;
+  quote: string;
+  examType?: string; // e.g. 'CPA', 'EA'
 }
 
 export interface ExamLandingConfig {
@@ -86,6 +97,9 @@ export interface ExamLandingConfig {
     names: string[];  // 2 or 3 competitors
     data: CompetitorRow[];
   };
+
+  // Testimonials (optional - overrides shared ones if provided)
+  testimonials?: Testimonial[];
   
   // Special banners/notices (optional)
   notices?: Array<{
@@ -117,41 +131,55 @@ export interface ExamLandingConfig {
 
 export const SHARED_WHY_VORAPREP = [
   {
+    icon: BookOpen,
+    title: '25,000+ Practice Questions',
+    description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
+    stat: '25,000+',
+  },
+  {
     icon: DollarSign,
-    title: 'Affordable Pricing',
-    description: 'Founding member rates save over 40%. Quality prep at a fraction of what others charge.',
+    title: 'A Fraction of the Cost',
+    description: 'Founding member rates save over 40%. Get everything Becker and Wiley offer — without the $3,000+ price tag.',
     stat: 'Save 40%+',
   },
   {
-    icon: Brain,
-    title: 'AI-Powered Learning',
-    description: 'Our adaptive engine continuously calibrates question difficulty, factors in your response time, and focuses 70% of practice on your weakest areas.',
-    stat: 'Adaptive',
+    icon: Sparkles,
+    title: 'Everything in One Place',
+    description: 'Lessons, flashcards, practice exams, daily study plans, and a score predictor — a complete study system. No more juggling multiple tools.',
+    stat: 'All-in-One',
   },
   {
-    icon: Bot,
-    title: 'Meet Vory',
-    description: 'Your AI study companion explains concepts until they click. Available 24/7, never judges, infinitely patient.',
-    stat: '24/7',
+    icon: BarChart3,
+    title: 'Know When You\'re Ready',
+    description: 'Score prediction tracks your mastery across every blueprint area and tells you exactly when you\'re ready to sit for the exam.',
+    stat: 'Score Predictor',
   },
   {
-    icon: RefreshCw,
-    title: 'Smart Spaced Repetition',
-    description: 'Forgetting-curve modeling predicts exactly when you\'ll forget each concept and resurfaces it at the optimal moment. Maximum retention, minimum time.',
-    stat: '2x Retention',
-  },
-  {
-    icon: Target,
-    title: 'Curriculum-Aware',
-    description: 'Only quiz you on topics you\'ve studied. No frustrating questions on material you haven\'t learned yet.',
-    stat: 'Smart Flow',
+    icon: Shield,
+    title: 'Exam-Day Confident',
+    description: 'Prometric-style simulator with timed sections and task-based simulations. Walk in knowing exactly what to expect.',
+    stat: 'Exam Sim',
   },
   {
     icon: Smartphone,
     title: 'Study Anywhere',
-    description: 'Full offline mode with PWA support. Study on the subway, in a coffee shop, anywhere without WiFi.',
-    stat: 'Offline Ready',
+    description: 'Full offline mode with mobile support. Study on the subway, in a coffee shop, or anywhere — your progress syncs automatically.',
+    stat: 'Mobile Ready',
   },
+];
+
+export const SHARED_TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Evan",
+    role: "Candidate",
+    quote: "I love Vora and the content on the app. I enjoy how the question types directly ask what the topic is looking for. Other platforms make their questions based around long complex scenarios... The shorter questions used in Vora help me better understand the concept."
+  },
+  {
+    name: "Emily",
+    role: "CPA Audit Candidate",
+    quote: "VoraPrep has been working pretty well for me. I originally was using UWorld and I'm studying for Audit currently. It seems to work nicely on my phone... as I've still been using UWorld while at my desk but VoraPrep while out and about. All in all seems like a great study tool!",
+    examType: "CPA"
+  }
 ];
 
 // ============================================================================
@@ -211,11 +239,11 @@ export const CPA_CONFIG: ExamLandingConfig = {
     names: ['Becker', 'Roger', 'Surgent'],
     data: [
       { feature: 'Price', voraprep: '$249/yr*', competitor1: '$3,499', competitor2: '$2,095', competitor3: '$1,799', highlight: true },
-      { feature: 'AI Tutor Included', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Practice Questions (MCQ)', voraprep: COURSE_DISPLAY_STATS.cpa.questions, competitor1: '6,500+', competitor2: '4,200+', competitor3: '6,800+', highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: 'Extra $$$', competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Extra $$$', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
-      { feature: '2025 & 2026 Blueprint', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
+      { feature: 'Interactive Lessons', voraprep: COURSE_DISPLAY_STATS.cpa.lessons, competitor1: 'Videos Only', competitor2: 'Videos Only', competitor3: 'Videos Only', highlight: true },
       { feature: 'Task-Based Simulations', voraprep: COURSE_DISPLAY_STATS.cpa.tbs || '280+', competitor1: '200+', competitor2: '175+', competitor3: '150+', highlight: true },
       { feature: 'Prometric-Style Interface', voraprep: true, competitor1: true, competitor2: false, competitor3: false, highlight: true },
       { feature: 'PWA + Offline Mode', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
@@ -273,8 +301,8 @@ export const EA_CONFIG: ExamLandingConfig = {
     names: ['Gleim', 'Passkey', 'Surgent'],
     data: [
       { feature: 'Price', voraprep: '$149/yr*', competitor1: '$629', competitor2: '$447', competitor3: '$599', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Text-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 SEE Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -336,8 +364,8 @@ export const CMA_CONFIG: ExamLandingConfig = {
     names: ['Gleim', 'Hock', 'Wiley'],
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,599', competitor2: '$1,199', competitor3: '$1,450', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Basic', competitor2: false, competitor3: 'Basic', highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'Both Parts Included', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -402,8 +430,8 @@ export const CIA_CONFIG: ExamLandingConfig = {
     names: ['Gleim', 'IIA Learning', 'Surgent'],
     data: [
       { feature: 'Price', voraprep: '$149/yr*', competitor1: '$1,299', competitor2: '$1,400', competitor3: '$999', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: 'Limited', highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Basic', competitor2: false, competitor3: false, highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 3 Parts', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -471,8 +499,8 @@ export const CFP_CONFIG: ExamLandingConfig = {
     names: ['Kaplan', 'Dalton', 'Zahn'],
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$1,299', competitor2: '$1,895', competitor3: '$1,450', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Limited', competitor2: false, competitor3: false, highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, competitor3: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Video-Based', competitor2: 'Video-Based', competitor3: 'Video-Based', highlight: true },
       { feature: 'All 8 Domains', voraprep: true, competitor1: true, competitor2: true, competitor3: true },
@@ -538,8 +566,8 @@ export const CISA_CONFIG: ExamLandingConfig = {
     names: ['ISACA', 'Hemang Doshi'],
     data: [
       { feature: 'Price', voraprep: '$199/yr*', competitor1: '$795', competitor2: '$299', highlight: true },
-      { feature: 'AI Tutor (24/7)', voraprep: true, competitor1: false, competitor2: false, highlight: true },
-      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced AI', competitor1: 'Limited', competitor2: false, highlight: true },
+      { feature: 'Study Assistant 24/7', voraprep: true, competitor1: false, competitor2: false, highlight: true },
+      { feature: 'Adaptive Engine + Response-Time Analysis', voraprep: 'Advanced', competitor1: 'Limited', competitor2: false, highlight: true },
       { feature: 'Forgetting-Curve Spaced Repetition', voraprep: true, competitor1: false, competitor2: false, highlight: true },
       { feature: 'Learning Style', voraprep: 'Active Practice', competitor1: 'Text-Based', competitor2: 'Video-Based', highlight: true },
       { feature: 'All 5 Domains', voraprep: true, competitor1: true, competitor2: true },

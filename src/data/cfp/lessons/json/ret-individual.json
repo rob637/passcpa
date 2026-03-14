@@ -1,0 +1,999 @@
+[
+  {
+    "id": "CFP-RET-L009",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Traditional IRA Rules and Strategies",
+    "description": "Explain Traditional IRA contribution eligibility",
+    "order": 9,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Explain Traditional IRA contribution eligibility",
+      "Apply deduction phase-outs for active participants",
+      "Calculate deductible and non-deductible contributions",
+      "Identify distribution rules and required minimum distributions"
+    ],
+    "blueprintArea": "RET-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "The Traditional IRA is a cornerstone of retirement planning, offering tax-deferred growth and potential tax deductions."
+        },
+        {
+          "title": "Eligibility",
+          "type": "text",
+          "content": "Must have earned income (or spouse must). Earned income includes: wages, salaries, tips, self-employment income, alimony (divorce decrees before 2019). Does NOT include: investment income, rental income, pension, Social Security, alimony (2019+)."
+        },
+        {
+          "title": "Contribution Limits (2026)",
+          "type": "table",
+          "headers": [
+            "Age",
+            "Limit"
+          ],
+          "rows": [
+            [
+              "Under 50",
+              "$7,500"
+            ],
+            [
+              "50+",
+              "$7,500 + $1,000 = $8,500"
+            ]
+          ]
+        },
+        {
+          "title": "No Age Limit",
+          "type": "callout",
+          "content": "SECURE Act eliminated the age 70\u00bd contribution prohibition. You can contribute at any age with earned income."
+        },
+        {
+          "title": "Deductibility Rules",
+          "type": "text",
+          "content": "Not an Active Participant: Full deduction allowed regardless of income. Active Participant (Box 13 on W-2 checked): Deduction phases out based on MAGI."
+        },
+        {
+          "title": "Active Participant Phase-Outs (2026)",
+          "type": "table",
+          "headers": [
+            "Filing Status",
+            "MAGI Range",
+            "Deduction"
+          ],
+          "rows": [
+            [
+              "Single/HOH",
+              "\u2264 $79,000",
+              "Full"
+            ],
+            [
+              "Single/HOH",
+              "$79,001 - $89,000",
+              "Partial"
+            ],
+            [
+              "Single/HOH",
+              "> $89,000",
+              "None"
+            ],
+            [
+              "MFJ",
+              "\u2264 $126,000",
+              "Full"
+            ],
+            [
+              "MFJ",
+              "$126,001 - $146,000",
+              "Partial"
+            ],
+            [
+              "MFJ",
+              "> $146,000",
+              "None"
+            ],
+            [
+              "Spousal IRA (non-working)",
+              "\u2264 $236,000",
+              "Full"
+            ],
+            [
+              "Spousal IRA (non-working)",
+              "$236,001 - $246,000",
+              "Partial"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "Being eligible but not contributing to an employer plan still makes you an active participant if employer contributions are made for you. Check Box 13 on W-2."
+        },
+        {
+          "title": "Non-Deductible Contributions",
+          "type": "text",
+          "content": "If income exceeds phase-out: Can still contribute $7,500/$8,500. Contribution is not tax-deductible. Must track basis on Form 8606. Earnings still grow tax-deferred. At distribution, pro-rata rule applies across ALL traditional IRAs."
+        },
+        {
+          "title": "Distribution Rules",
+          "type": "text",
+          "content": "Penalty-free after age 59\u00bd. Distributions taxed as ordinary income (except non-deductible basis). Before 59\u00bd: 10% penalty plus ordinary income tax."
+        },
+        {
+          "title": "Exceptions to 10% Penalty",
+          "type": "table",
+          "headers": [
+            "Exception",
+            "Details"
+          ],
+          "rows": [
+            [
+              "Death",
+              "To beneficiary"
+            ],
+            [
+              "Disability",
+              "Total and permanent"
+            ],
+            [
+              "Medical expenses",
+              "> 7.5% of AGI"
+            ],
+            [
+              "Health insurance",
+              "If unemployed"
+            ],
+            [
+              "Higher education",
+              "Qualified expenses"
+            ],
+            [
+              "First home",
+              "Up to $10,000 lifetime"
+            ],
+            [
+              "72(t)",
+              "Substantially equal payments"
+            ],
+            [
+              "IRS levy",
+              "If IRS seizes"
+            ],
+            [
+              "Birth/adoption",
+              "Up to $5,000 (SECURE Act)"
+            ]
+          ]
+        },
+        {
+          "title": "Required Minimum Distributions",
+          "type": "table",
+          "headers": [
+            "Birth Year",
+            "RMD Starting Age"
+          ],
+          "rows": [
+            [
+              "Before 1951",
+              "72"
+            ],
+            [
+              "1951-1959",
+              "73"
+            ],
+            [
+              "1960+",
+              "75"
+            ]
+          ]
+        },
+        {
+          "title": "RMD Calculation",
+          "type": "text",
+          "content": "RMD = Dec 31 Prior Year Balance / Distribution Period (Uniform Table). Example: Age 75, balance $500,000. RMD = $500,000 / 24.6 = $20,325. RMD Penalty: 25% on amount not taken (reduced from 50% by SECURE 2.0), reduced to 10% if corrected within 2 years."
+        },
+        {
+          "title": "IRA Aggregation Rule",
+          "type": "text",
+          "content": "For RMD purposes: Aggregate balances of all Traditional IRAs, calculate total RMD, can distribute from ANY IRA to satisfy. For Roth IRAs: Separate aggregation with different rules."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "2026 limit: $7,500 ($8,500 if 50+) with earned income",
+            "Deduction phase-out: Depends on active participant status and MAGI",
+            "Non-deductible contributions: Track basis on Form 8606",
+            "RMDs start: Age 73 (or 75 for those born 1960+)",
+            "10% penalty exceptions: Education, first home, disability, 72(t), more"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Traditional IRA Contribution Eligibility and Deduction Rules",
+          "knowledgeCheck": {
+            "question": "Sarah, who is single and covered by her employer's 401(k) plan, has a Modified Adjusted Gross Income (MAGI) of $78,000. Her husband, Tom, does not work and has no earned income. Assuming the annual IRA contribution limit is $7,000 and the single, active participant IRA deduction phase-out range is $73,000 - $83,000, what is the maximum deductible Traditional IRA contribution Sarah can make?",
+            "options": [
+              "$0",
+              "$3,500",
+              "$7,000",
+              "Tom can contribute $7,000 to a spousal IRA, and Sarah can deduct the amount she contributes up to $7,000."
+            ],
+            "correctIndex": 1,
+            "explanation": "Sarah is an active participant with a MAGI within the phase-out range. The phase-out range is $10,000 ($83,000-$73,000). Her MAGI is $5,000 over the bottom of the range ($78,000-$73,000). The deductible amount is reduced by ($5,000/$10,000) * $7,000 = $3,500. Therefore, the maximum deductible contribution is $7,000 - $3,500 = $3,500. Tom, who has no earned income, can make a deductible contribution to a spousal IRA.",
+            "hint": "Remember to consider both earned income requirements and the impact of active participant status on deductibility."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Earned Income Definition",
+          "reveal": {
+            "question": "What types of income are considered 'earned income' for Traditional IRA contribution eligibility?",
+            "answer": "Earned income includes wages, salaries, tips, self-employment income, and alimony received under divorce or separation instruments executed before 2019. It does NOT include investment income, rental income, pension income, Social Security benefits, or alimony received under divorce or separation instruments executed after December 31, 2018."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Deductible vs. Non-Deductible Traditional IRA Contributions",
+          "comparison": {
+            "headers": [
+              "Deductible Traditional IRA",
+              "Non-Deductible Traditional IRA"
+            ],
+            "rows": [
+              {
+                "label": "Tax Treatment of Contributions",
+                "values": [
+                  "Tax-deductible in the year of contribution (subject to limitations)",
+                  "Not tax-deductible in the year of contribution"
+                ]
+              },
+              {
+                "label": "Tax Treatment of Growth",
+                "values": [
+                  "Tax-deferred growth",
+                  "Tax-deferred growth"
+                ]
+              },
+              {
+                "label": "Tax Treatment of Distributions",
+                "values": [
+                  "Taxable in retirement",
+                  "Taxable portion in retirement (earnings); original contribution is returned tax-free"
+                ]
+              },
+              {
+                "label": "Suitability",
+                "values": [
+                  "Suitable when income is below deduction phase-out limits or when not an active participant in a retirement plan",
+                  "Suitable when income is too high to deduct contributions to a Traditional IRA or contribute to a Roth IRA"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L010",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Roth IRA Rules and Strategies",
+    "description": "Explain Roth IRA contribution eligibility and income limits",
+    "order": 10,
+    "duration": 55,
+    "difficulty": "intermediate",
+    "topics": [
+      "Explain Roth IRA contribution eligibility and income limits",
+      "Compare Roth vs. Traditional IRA benefits",
+      "Apply the 5-year rules for qualified distributions",
+      "Develop Roth conversion strategies"
+    ],
+    "blueprintArea": "RET-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "The Roth IRA offers tax-free growth and tax-free qualified distributions\u2014often the most powerful retirement account."
+        },
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Roth IRAs provide tax-free withdrawals, no RMDs for original owner, and excellent estate planning benefits. Understanding when Roth beats Traditional is crucial."
+        },
+        {
+          "title": "Contribution Limits (2026)",
+          "type": "text",
+          "content": "Same as Traditional IRA: Under 50: $7,500, Age 50+: $8,500. Combined limit: Traditional + Roth combined cannot exceed $7,500/$8,500."
+        },
+        {
+          "title": "Income Limits (2026)",
+          "type": "table",
+          "headers": [
+            "Filing Status",
+            "MAGI",
+            "Contribution"
+          ],
+          "rows": [
+            [
+              "Single/HOH",
+              "< $150,000",
+              "Full"
+            ],
+            [
+              "Single/HOH",
+              "$150,000 - $165,000",
+              "Partial"
+            ],
+            [
+              "Single/HOH",
+              "> $165,000",
+              "None"
+            ],
+            [
+              "MFJ",
+              "< $236,000",
+              "Full"
+            ],
+            [
+              "MFJ",
+              "$236,000 - $246,000",
+              "Partial"
+            ],
+            [
+              "MFJ",
+              "> $246,000",
+              "None"
+            ]
+          ]
+        },
+        {
+          "title": "Tax Treatment Comparison",
+          "type": "table",
+          "headers": [
+            "Event",
+            "Traditional IRA",
+            "Roth IRA"
+          ],
+          "rows": [
+            [
+              "Contribution",
+              "Tax-deductible (if eligible)",
+              "Never deductible"
+            ],
+            [
+              "Growth",
+              "Tax-deferred",
+              "Tax-free"
+            ],
+            [
+              "Qualified Distribution",
+              "Fully taxable",
+              "Tax-free"
+            ],
+            [
+              "Non-qualified Distribution",
+              "Taxable + penalty",
+              "Earnings taxable + penalty"
+            ]
+          ]
+        },
+        {
+          "title": "Qualified Distributions (Tax-Free)",
+          "type": "text",
+          "content": "Must meet BOTH requirements: (1) 5-Year Rule: Account held 5 tax years from first contribution (starts January 1 of contribution year), AND (2) Triggering Event: Age 59\u00bd, OR Death, OR Disability, OR First-time home purchase (up to $10,000)."
+        },
+        {
+          "title": "Distribution Ordering Rules",
+          "type": "list",
+          "items": [
+            "1. Regular contributions (always tax-free, penalty-free)",
+            "2. Conversion amounts (tax-free; penalty if under 59\u00bd and within 5 years)",
+            "3. Earnings (taxable + penalty if not qualified)"
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "You can always withdraw contributions tax-free and penalty-free at any time! Only earnings are subject to the 5-year rule and triggering event requirements."
+        },
+        {
+          "title": "Roth Conversions",
+          "type": "text",
+          "content": "Move money from Traditional IRA to Roth IRA. Pay taxes now on converted amount. Grows tax-free forever. No income limits for conversions. Each conversion has its own 5-year holding period for penalty-free access."
+        },
+        {
+          "title": "When Conversions Make Sense",
+          "type": "table",
+          "headers": [
+            "Good Time to Convert",
+            "Why"
+          ],
+          "rows": [
+            [
+              "Low-income year",
+              "Pay taxes at lower rate"
+            ],
+            [
+              "Early retirement",
+              "Before SS, RMDs begin"
+            ],
+            [
+              "Stock market drop",
+              "Convert more shares for same tax cost"
+            ],
+            [
+              "Long time horizon",
+              "More years for tax-free growth"
+            ],
+            [
+              "Expect higher future rates",
+              "Pay tax now at lower rates"
+            ]
+          ]
+        },
+        {
+          "title": "Backdoor Roth IRA",
+          "type": "text",
+          "content": "For high earners above income limits: (1) Contribute to non-deductible Traditional IRA, (2) Convert to Roth IRA immediately, (3) Pay tax only on earnings (minimal if done quickly). Pro-Rata Rule Warning: If you have existing Traditional IRA balances, conversion is taxed proportionally across ALL Traditional IRAs."
+        },
+        {
+          "title": "Roth vs. Traditional Decision",
+          "type": "table",
+          "headers": [
+            "Choose Roth When",
+            "Choose Traditional When"
+          ],
+          "rows": [
+            [
+              "Current bracket LOWER than retirement",
+              "Current bracket HIGHER than retirement"
+            ],
+            [
+              "Long time horizon",
+              "Shorter time horizon"
+            ],
+            [
+              "Want tax diversification",
+              "Need the deduction now"
+            ],
+            [
+              "Want tax-free inheritance",
+              "Will be in lower bracket in retirement"
+            ],
+            [
+              "Want to avoid RMDs",
+              "N/A"
+            ]
+          ]
+        },
+        {
+          "title": "No RMDs for Roth IRAs",
+          "type": "callout",
+          "content": "Original owner never has to take RMDs. Money can grow tax-free for entire lifetime. Powerful for estate planning. SECURE 2.0: Roth 401(k) RMDs also eliminated."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Income limits (2026): Phase-out at $150K-$165K single / $236K-$246K MFJ",
+            "5-year rule: Must hold 5 years + triggering event for tax-free earnings",
+            "Distribution order: Contributions (tax-free) \u2192 Conversions \u2192 Earnings",
+            "Backdoor Roth: Non-deductible Traditional + convert; beware pro-rata rule",
+            "No RMDs for original owner; ideal for estate planning"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Roth IRA Contribution Eligibility Check",
+          "knowledgeCheck": {
+            "question": "In 2026, Sarah, age 45, has modified adjusted gross income (MAGI) that exceeds the Roth IRA contribution limit for single filers. Her spouse, David, age 48, does not work and has no income. Which of the following statements is CORRECT regarding their ability to contribute to a Roth IRA?",
+            "options": [
+              "Neither Sarah nor David can contribute to a Roth IRA.",
+              "Sarah can contribute to a Roth IRA up to the annual limit for those under age 50, and David can also contribute up to the same limit as long as a spousal Roth IRA is established for him.",
+              "Sarah cannot contribute to a Roth IRA, but David can contribute up to the annual limit for those under age 50 as long as a spousal Roth IRA is established for him, regardless of Sarah's income.",
+              "Sarah can contribute to a Roth IRA, but only up to a reduced amount based on her MAGI. David cannot contribute to a Roth IRA because he has no income."
+            ],
+            "correctIndex": 0,
+            "explanation": "Because Sarah's MAGI exceeds the Roth IRA contribution limit, she cannot contribute. David cannot contribute because, despite the spousal IRA rules, the household income disqualifies them from contributing.",
+            "hint": "Remember to consider both individual income limits and the impact of spousal IRAs."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "5-Year Rule Deep Dive",
+          "reveal": {
+            "question": "Explain the general purpose of the 5-year rule as it applies to Roth IRA qualified distributions, and describe the starting point for this 5-year period.",
+            "answer": "The 5-year rule determines when distributions of earnings from a Roth IRA become qualified (tax and penalty-free). There are actually multiple 5-year rules. The first 5-year rule applies to Roth IRA contributions, meaning that the contributions can always be withdrawn tax and penalty free. The second 5-year rule applies to Roth IRA conversions; for each conversion, there is a separate 5-year holding period that must be satisfied before the converted amount can be withdrawn without penalty (even if it is not a qualified distribution). The third 5-year rule applies to Roth IRA earnings. The 5-year period for Roth IRA earnings begins on January 1 of the year for which the first contribution was made (either a regular contribution or a conversion). It's important to note that the 5-year rule only applies to earnings. Contributions can always be withdrawn tax and penalty free."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Roth vs. Traditional IRA: Key Differences",
+          "comparison": {
+            "headers": [
+              "Roth IRA",
+              "Traditional IRA"
+            ],
+            "rows": [
+              {
+                "label": "Tax Treatment of Contributions",
+                "values": [
+                  "Made with after-tax dollars",
+                  "Often made with pre-tax dollars (deductible)"
+                ]
+              },
+              {
+                "label": "Tax Treatment of Growth",
+                "values": [
+                  "Tax-free growth",
+                  "Tax-deferred growth"
+                ]
+              },
+              {
+                "label": "Tax Treatment of Qualified Distributions",
+                "values": [
+                  "Tax-free and penalty-free",
+                  "Taxed as ordinary income; penalty may apply for early withdrawals"
+                ]
+              },
+              {
+                "label": "Income Limits for Contributions",
+                "values": [
+                  "Contribution limits based on MAGI",
+                  "No income limits for contributions (though deductibility may be limited)"
+                ]
+              },
+              {
+                "label": "Required Minimum Distributions (RMDs)",
+                "values": [
+                  "No RMDs during the owner's lifetime",
+                  "RMDs are required starting at age 73 (as of 2023)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L011",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "SEP-IRA and SIMPLE IRA Plans",
+    "description": "Explain SEP-IRA eligibility and contribution calculations",
+    "order": 11,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Explain SEP-IRA eligibility and contribution calculations",
+      "Describe SIMPLE IRA rules for small employers",
+      "Compare SEP and SIMPLE plans",
+      "Apply self-employment contribution calculations"
+    ],
+    "blueprintArea": "RET-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "SEP-IRAs and SIMPLE IRAs allow small businesses and self-employed individuals to establish retirement savings with minimal administrative burden."
+        },
+        {
+          "title": "SEP-IRA Overview",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Ideal for",
+              "Self-employed, small businesses with few employees"
+            ],
+            [
+              "Contributions",
+              "Employer only (no employee deferrals)"
+            ],
+            [
+              "Maximum",
+              "25% of compensation or $71,500 (2026)"
+            ],
+            [
+              "Deadline",
+              "Tax return deadline (including extensions)"
+            ],
+            [
+              "Administration",
+              "Minimal - just an IRA for each participant"
+            ],
+            [
+              "Vesting",
+              "100% immediate"
+            ]
+          ]
+        },
+        {
+          "title": "SEP Contribution Calculations",
+          "type": "text",
+          "content": "For Employees: Contribution = Compensation \u00d7 25%. Max $71,500, max compensation considered $360,000. For Self-Employed: Contribution = Net SE Income \u00d7 20%. The 20% (not 25%) accounts for the circular calculation where you deduct the contribution from income."
+        },
+        {
+          "title": "SEP Eligibility Requirements",
+          "type": "text",
+          "content": "Employer must include employees who: Age 21+, Worked 3 of the last 5 years, Earned at least $750. Warning: Must contribute same percentage for all eligible employees."
+        },
+        {
+          "title": "SIMPLE IRA Overview",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Ideal for",
+              "Small employers (\u2264100 employees)"
+            ],
+            [
+              "Contributions",
+              "Employee deferrals + employer contribution"
+            ],
+            [
+              "Employee limit (2026)",
+              "$17,000 ($20,500 if 50+)"
+            ],
+            [
+              "Employer contribution",
+              "Required (matching or non-elective)"
+            ],
+            [
+              "Other plans",
+              "Cannot maintain with other qualified plans"
+            ]
+          ]
+        },
+        {
+          "title": "SIMPLE Employer Contribution Options",
+          "type": "list",
+          "items": [
+            "Option 1: Matching - Dollar-for-dollar up to 3% of compensation (can reduce to 2% for 2 of any 5 years)",
+            "Option 2: Non-Elective - 2% of compensation to all eligible employees regardless of whether they contribute"
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "SIMPLE IRA 2-year rule: If distributions taken within first 2 years of participation, the 10% penalty becomes 25% penalty. After 2 years, standard 10% applies."
+        },
+        {
+          "title": "SEP vs. SIMPLE Comparison",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "SEP-IRA",
+            "SIMPLE IRA"
+          ],
+          "rows": [
+            [
+              "Contributions",
+              "Employer only",
+              "Employee + Employer"
+            ],
+            [
+              "Maximum",
+              "25% / $71,500",
+              "$17,000 + match"
+            ],
+            [
+              "Employer requirement",
+              "3 of 5 years, $750",
+              "2 years, $5,000"
+            ],
+            [
+              "Employer size",
+              "Any",
+              "\u2264100 employees"
+            ],
+            [
+              "Deadline",
+              "Tax return deadline",
+              "October 1 (new plans)"
+            ],
+            [
+              "Early withdrawal penalty",
+              "10%",
+              "25% (first 2 years)"
+            ],
+            [
+              "Flexibility",
+              "More (discretionary)",
+              "Less (required match)"
+            ]
+          ]
+        },
+        {
+          "title": "Solo 401(k) Alternative",
+          "type": "text",
+          "content": "For self-employed with no employees (except spouse): Employee deferral $24,500 (+ $7,500 catch-up), Employer contribution 25% of compensation, Total maximum $71,500 ($79,000 with catch-up), Roth option available, Loans permitted. Often better than SEP because of employee deferral component."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "SEP: Employer-only contributions, 25% of comp (20% for self-employed), $71.5K max",
+            "SEP flexibility: Can vary/skip contributions; deadline = tax return deadline",
+            "SIMPLE: Employee deferrals $17K + employer 3% match or 2% non-elective",
+            "SIMPLE 2-year rule: 25% early withdrawal penalty for first 2 years",
+            "Solo 401(k): Often better for solo practitioners (both deferral + employer)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SEP-IRA Contribution Calculation Challenge",
+          "knowledgeCheck": {
+            "question": "Sarah is self-employed and has net self-employment income of $100,000 before any SEP-IRA deduction. What is the maximum SEP-IRA contribution she can make for the year, assuming no other deductions are relevant to the calculation, and ignoring any other retirement savings?",
+            "options": [
+              "$20,000",
+              "$25,000",
+              "$22,500",
+              "$18,000"
+            ],
+            "correctIndex": 0,
+            "explanation": "The correct answer is $20,000. The calculation is net self-employment income ($100,000) multiplied by 20%.",
+            "hint": "Remember the adjusted percentage for self-employed individuals."
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "SEP-IRA Eligibility Requirements",
+          "knowledgeCheck": {
+            "question": "Which of the following employees *must* be included in an employer's SEP-IRA plan?",
+            "options": [
+              "An employee who is 19 years old, has worked for the company for 4 of the last 5 years, and earned $800 this year.",
+              "An employee who is 25 years old, has worked for the company for 1 of the last 5 years, and earned $1,000 this year.",
+              "An employee who is 23 years old, has worked for the company for 3 of the last 5 years, and earned $700 this year.",
+              "An employee who is 22 years old, has worked for the company for 3 of the last 5 years, and earned $800 this year."
+            ],
+            "correctIndex": 3,
+            "explanation": "The correct answer is 'An employee who is 22 years old, has worked for the company for 3 of the last 5 years, and earned $800 this year.' To be eligible, an employee must be at least 21 years old, have worked for 3 of the last 5 years, and earned at least $750.",
+            "hint": "Carefully review the age, service, and compensation requirements."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SEP Contribution Limit (Employee)",
+          "reveal": {
+            "question": "What is the maximum percentage of compensation that can be contributed to an employee's SEP-IRA?",
+            "answer": "25% of the employee's compensation, up to a maximum dollar amount ($71,500 in 2024). Compensation is also capped ($360,000 in 2024).",
+            "hint": "Think about the percentage limit, not the total dollar limit."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L012",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "IRA Rollovers and Transfers",
+    "description": "Distinguish between direct transfers and rollovers",
+    "order": 12,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Distinguish between direct transfers and rollovers",
+      "Apply the 60-day rollover rule and exceptions",
+      "Identify rollover eligibility between account types",
+      "Avoid common rollover mistakes and tax traps"
+    ],
+    "blueprintArea": "RET-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Moving retirement assets between accounts is common\u2014but the rules are complex and mistakes are costly."
+        },
+        {
+          "title": "Transfers vs. Rollovers",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Direct Transfer",
+            "Rollover (60-Day)"
+          ],
+          "rows": [
+            [
+              "Method",
+              "Funds go directly between institutions",
+              "Check made to participant"
+            ],
+            [
+              "Reporting",
+              "No 1099-R taxable event",
+              "1099-R issued"
+            ],
+            [
+              "Frequency",
+              "Unlimited",
+              "One per 12 months (IRA-to-IRA)"
+            ],
+            [
+              "Withholding",
+              "None",
+              "20% on employer plans"
+            ],
+            [
+              "Deadline",
+              "N/A",
+              "60 days to complete"
+            ]
+          ]
+        },
+        {
+          "title": "Always Prefer Direct Transfer",
+          "type": "callout",
+          "content": "Direct transfers are simpler, have no limits, no withholding, and no risk of missing deadlines. Always use direct transfer when possible."
+        },
+        {
+          "title": "One-Rollover-Per-Year Rule",
+          "type": "text",
+          "content": "Only one IRA-to-IRA rollover (60-day) per 12-month period. Does NOT count: Direct transfers, Rollovers from employer plans, Roth conversions. Violation: Second rollover = taxable distribution + penalty."
+        },
+        {
+          "title": "60-Day Rollover Rule",
+          "type": "text",
+          "content": "Must deposit funds within 60 days of receipt. Late penalty: Full distribution is taxable + 10% penalty. IRS may grant extension for: Financial institution error, Disability, Death in family, Other valid reasons. Self-certification available under Rev Proc 2016-47."
+        },
+        {
+          "title": "Rollover Eligibility Chart",
+          "type": "table",
+          "headers": [
+            "From",
+            "To Traditional IRA",
+            "To Roth IRA",
+            "To 401(k)"
+          ],
+          "rows": [
+            [
+              "Traditional IRA",
+              "\u2713",
+              "\u2713 (conversion)",
+              "\u2713"
+            ],
+            [
+              "Roth IRA",
+              "\u2717",
+              "\u2713",
+              "\u2717"
+            ],
+            [
+              "401(k) Pre-Tax",
+              "\u2713",
+              "\u2713 (conversion)",
+              "\u2713"
+            ],
+            [
+              "401(k) Roth",
+              "\u2717",
+              "\u2713",
+              "\u2713 Roth"
+            ],
+            [
+              "403(b)",
+              "\u2713",
+              "\u2713 (conversion)",
+              "\u2713"
+            ],
+            [
+              "Governmental 457(b)",
+              "\u2713",
+              "\u2713 (conversion)",
+              "\u2713"
+            ]
+          ]
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "Roth IRAs can ONLY go to Roth IRAs. Non-governmental 457(b) cannot roll to IRA. Pre-tax to Roth = taxable conversion."
+        },
+        {
+          "title": "20% Mandatory Withholding",
+          "type": "text",
+          "content": "Applies to distributions from employer plans (not IRAs) paid directly to participant. Example: $100,000 distribution = receive $80,000 (20% withheld). To avoid tax on full amount, must deposit $100,000 (find $20,000 elsewhere). Withheld amount recovered at tax filing as refund. Solution: Use direct rollover to avoid withholding."
+        },
+        {
+          "title": "Common Rollover Mistakes",
+          "type": "list",
+          "items": [
+            "Missing 60-day deadline - even one day late = fully taxable",
+            "Multiple 60-day rollovers - second IRA-to-IRA in 12 months = taxable",
+            "Not making up withholding - shortfall is taxable",
+            "Rolling over RMD - RMDs are NOT eligible for rollover",
+            "Rolling into wrong account type - Roth to Traditional = excess contribution"
+          ]
+        },
+        {
+          "title": "Inherited IRA Rules",
+          "type": "text",
+          "content": "Non-Spouse Beneficiary: Cannot roll into own IRA, must take distributions (10-year rule for most). Spouse Beneficiary Options: Treat as own IRA, Remain as beneficiary, Roll to own IRA."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Direct transfer preferred\u2014unlimited, no tax reporting",
+            "60-day rule: Funds must be deposited within 60 days",
+            "One per year: Only one IRA-to-IRA 60-day rollover per 12 months",
+            "20% withholding: Applies to employer plan distributions (not direct)",
+            "RMDs cannot be rolled over\u2014take distribution first, then roll excess"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "One-Rollover-Per-Year Rule",
+          "knowledgeCheck": {
+            "question": "Sarah received a distribution from her Traditional IRA on March 1st and rolled it over into another Traditional IRA on April 15th. Later that year, on November 1st, she took another distribution from a different Traditional IRA with the intention of rolling it over. What are the tax implications of this second distribution and intended rollover?",
+            "options": [
+              "The second distribution will be treated as a taxable distribution, subject to ordinary income tax and potentially a 10% penalty if Sarah is under age 59 1/2, because it violates the one-rollover-per-year rule.",
+              "The second distribution can be rolled over as long as it is completed within 60 days, and it will not be subject to any taxes or penalties.",
+              "The second distribution will be treated as a Roth conversion and subject to conversion rules, but it will not violate the one-rollover-per-year rule.",
+              "The one-rollover-per-year rule only applies to rollovers from employer-sponsored plans, so Sarah can complete this second rollover without any tax implications."
+            ],
+            "correctIndex": 0,
+            "explanation": "The one-rollover-per-year rule states that you can only make one rollover from one IRA to another IRA in any 12-month period. Taking a second distribution with the intent to rollover within that 12-month period violates this rule, resulting in the distribution being treated as taxable income and potentially subject to a 10% early withdrawal penalty if applicable.",
+            "hint": "Remember the specific restriction on IRA-to-IRA rollovers within a 12-month period."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "60-Day Rollover Deadline",
+          "reveal": {
+            "question": "What happens if you fail to deposit the funds from an IRA distribution into another qualified retirement account within the 60-day rollover period?",
+            "answer": "The entire distribution becomes taxable as ordinary income, and it may also be subject to a 10% early withdrawal penalty if you are under age 59 1/2. It's crucial to meet the 60-day deadline to avoid these tax consequences."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Direct Transfer vs. Rollover",
+          "comparison": {
+            "headers": [
+              "Direct Transfer",
+              "Rollover"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Funds move directly from one retirement account to another without the individual taking possession.",
+                  "Individual receives a distribution and then reinvests it into another retirement account within 60 days."
+                ]
+              },
+              {
+                "label": "One-Per-Year Rule",
+                "values": [
+                  "Not subject to the one-rollover-per-year rule.",
+                  "Subject to the one-rollover-per-year rule (for IRA-to-IRA rollovers)."
+                ]
+              },
+              {
+                "label": "Tax Implications",
+                "values": [
+                  "No immediate tax implications.",
+                  "Potentially taxable if the 60-day rule is not followed."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

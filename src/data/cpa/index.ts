@@ -11,7 +11,7 @@ import type { CourseData } from '../../types/courseData';
 // Questions
 import { ALL_QUESTIONS } from './questions';
 
-// Flashcards
+// Flashcards (from JSON)
 import { CPA_FLASHCARDS } from './flashcards';
 
 // Lessons

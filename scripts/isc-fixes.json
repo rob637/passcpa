@@ -1,0 +1,54 @@
+{
+  "isc-d2-013": {
+    "correctAnswer": 1,
+    "explanation": "PAM controls should include all accounts, including emergency break-glass accounts. These accounts require even stricter controls due to their elevated privileges. Excluding them creates a significant security gap."
+  },
+  "isc-wc-117": {
+    "correctAnswer": 2,
+    "explanation": "An incremental backup copies only the data that has changed since the *last full backup*. This differs from a differential backup, which copies all data changed since the last full backup. The key characteristic of incremental backups is that restoration requires the last full backup *and* all subsequent incremental backups."
+  },
+  "isc-gen-0945": {
+    "correctAnswer": 0,
+    "explanation": "Option A (Hot site with synchronous replication) meets both the RTO (0 hours < 4 hours) and RPO (0 hours < 1 hour) requirements. Option D (Cloud-based solution with snapshot replication every 30 minutes) also meets the RTO (3 hours < 4 hours) and RPO (30 minutes < 1 hour) requirements. However, the question asks for the *best* solution while considering cost-effectiveness. The cloud-based solution is less expensive than the hot site, making it the better choice. The original explanation incorrectly stated that D was the best choice."
+  },
+  "isc-gen-0979": {
+    "correctAnswer": 2,
+    "explanation": "An external penetration test is the MOST suitable option when balancing thoroughness with minimal risk of disruption to a live production environment. It focuses on publicly accessible systems, reducing the chance of impacting internal operations. While a white box test can be thorough, it requires significant access and knowledge of the internal systems, increasing the potential for disruption."
+  },
+  "isc-gen-1036": {
+    "correctAnswer": 0,
+    "explanation": "IaaS provides the firm with the hardware and networking infrastructure (outsourced), while allowing them to control the operating system, database, and applications. PaaS abstracts away the operating system, which is not what the firm wants."
+  },
+  "isc-gen-1064": {
+    "correctAnswer": 2,
+    "explanation": "The team member contributes 20% of the sprint capacity, which is 25 * 0.20 = 5 story points. Since the team member will be out for two days, the sprint backlog should be reduced by 5 story points to reflect the reduced capacity."
+  },
+  "isc-gen-1080": {
+    "correctAnswer": 0,
+    "explanation": "IaaS provides the highest level of control over the infrastructure (OS, servers, networking) while still offloading the physical hardware management to the cloud provider. PaaS abstracts away more of the infrastructure, which is not ideal when maximum control is desired. NIST SP 800-145 defines IaaS as providing the capability to provision processing, storage, networks, and other fundamental computing resources where the consumer is able to deploy and run arbitrary software, which can include operating systems and applications."
+  },
+  "isc-gen-1160": {
+    "correctAnswer": 0,
+    "explanation": "PaaS allows XYZ Company to customize the CRM application to meet their specific business needs without managing the underlying infrastructure. While SaaS could be an option if customization needs are minimal, the question specifies a need for customization, making PaaS the more suitable choice. NIST Cybersecurity Framework encourages organizations to consider PaaS when needing customized solutions without managing the infrastructure."
+  },
+  "isc-gen-1210": {
+    "correctAnswer": 2,
+    "explanation": "The five domains of the COBIT framework are Evaluate, Direct, and Monitor (EDM); Align, Plan, and Organize (APO); Build, Acquire, and Implement (BAI); Deliver, Service, and Support (DSS); and Monitor, Evaluate, and Assess (MEA). Acquire, Implement, and Deliver (AID) is not a correct domain."
+  },
+  "isc-gen-1281": {
+    "correctAnswer": 0,
+    "explanation": "Symmetric encryption with a pre-shared key is the most appropriate choice for the initial data exchange, given the need for speed and ease of implementation. While key distribution is a challenge, physically delivering the key via registered mail addresses this concern. AES-256 is a strong encryption algorithm, and CBC mode provides confidentiality. Asymmetric encryption (RSA) is slower and more complex for initial setup, and HTTPS only secures the transmission channel, not the document itself."
+  },
+  "isc-gen-1299": {
+    "correctAnswer": 3,
+    "explanation": "ABAC is the MOST appropriate choice. It uses attributes of the user (e.g., role, department), the resource (e.g., patient record type, sensitivity), and the environment (e.g., time of day, location) to make access control decisions. This allows for granular control based on patient assignment, job function, and other relevant factors, which is crucial for HIPAA compliance and managing access across a large organization. RBAC is a good starting point, but ABAC provides the fine-grained control needed in this scenario. NIST SP 800-162 provides detailed guidance on ABAC."
+  },
+  "isc-gen-1359": {
+    "correctAnswer": 3,
+    "explanation": "GDPR's \"right to be forgotten\" (Article 17) requires data controllers to erase personal data. However, a temporary retention in backups for disaster recovery purposes is generally permitted, provided the data is not actively processed and is eventually deleted. Option D balances the right to erasure with legitimate business needs. Option A is too strict, as it doesn't allow for disaster recovery."
+  },
+  "isc-gen-1478": {
+    "correctAnswer": 2,
+    "explanation": "Symmetric encryption is indeed more efficient for encrypting data at rest. However, using individual keys for each of 500 clients (Option A) creates a significant key management burden. Option C, using a single symmetric key rotated annually, provides a reasonable balance between security and manageability. While not as secure as individual keys, it's far more practical. Options B and D are incorrect because asymmetric encryption is less efficient for encrypting large amounts of data at rest, and the key exchange described is not appropriate for data at rest."
+  }
+}

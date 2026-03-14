@@ -21,6 +21,7 @@ import { format, addDays, differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
+import { parseLocalDate } from '../../utils/dateHelpers';
 import { useAuth } from '../../hooks/useAuth';
 import { setDoc, doc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
@@ -264,7 +265,7 @@ const CFPStudyPlanSetup: React.FC = () => {
                 value={examDate ? format(examDate, 'yyyy-MM-dd') : ''}
                 min={minDate}
                 max={maxDate}
-                onChange={(e) => setExamDate(e.target.value ? new Date(e.target.value) : null)}
+                onChange={(e) => setExamDate(e.target.value ? parseLocalDate(e.target.value) : null)}
                 className="input w-full text-lg"
               />
             </div>

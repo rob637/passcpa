@@ -29,6 +29,9 @@ vi.mock('../../../config/examConfig', () => ({
     { questions: 40, label: 'Moderate' },
     { questions: 60, label: 'Intensive' },
   ],
+  CORE_SECTIONS: ['AUD', 'FAR', 'REG'],
+  DISCIPLINE_SECTIONS_2026: ['BAR', 'ISC', 'TCP'],
+  EXAM_SECTIONS: ['FAR', 'AUD', 'REG', 'BAR'],
 }));
 
 // Mock useNavigate

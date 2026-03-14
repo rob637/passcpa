@@ -8,9 +8,16 @@ import {
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
+import { useSEO } from '../../hooks/useSEO';
 
 export default function CISAInfo() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: 'CISA Exam Guide 2026 | Information Systems Auditing',
+    description: 'Complete guide to the CISA exam: 5 domains covering IS auditing, governance, acquisition, operations, and security. Learn how to prepare and pass.',
+    canonicalUrl: 'https://voraprep.com/cisa-exam-info',
+  });
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pb-20">

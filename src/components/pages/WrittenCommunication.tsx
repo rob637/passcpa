@@ -63,6 +63,9 @@ interface ExamTimerProps {
 
 const ExamTimer: React.FC<ExamTimerProps> = ({ initialMinutes, onTimeUp, isPaused }) => {
   const [timeLeft, setTimeLeft] = useState(initialMinutes * 60);
+  // Use ref to avoid restarting the timer when onTimeUp callback identity changes
+  const onTimeUpRef = React.useRef(onTimeUp);
+  onTimeUpRef.current = onTimeUp;
 
   useEffect(() => {
     if (isPaused || timeLeft <= 0) return;
@@ -71,7 +74,7 @@ const ExamTimer: React.FC<ExamTimerProps> = ({ initialMinutes, onTimeUp, isPause
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          onTimeUp?.();
+          onTimeUpRef.current?.();
           return 0;
         }
         return prev - 1;
@@ -79,7 +82,7 @@ const ExamTimer: React.FC<ExamTimerProps> = ({ initialMinutes, onTimeUp, isPause
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isPaused, timeLeft, onTimeUp]);
+  }, [isPaused, timeLeft]);
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
@@ -416,14 +419,77 @@ const WrittenCommunication: React.FC = () => {
   const handleSubmit = useCallback(() => {
     if(!activeTask) return;
 
-    // Mock grading logic
-    const wordCount = response.trim().split(/\s+/).length;
+    const text = response.trim();
+    const wordCount = text ? text.split(/\s+/).length : 0;
+    
+    // Guard: don't score blank responses
+    if (wordCount < 5) {
+      return;
+    }
+
+    // Content-aware grading based on rubric criteria
+    const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 3);
+    const hasGreeting = /^(dear|to:|memo|from:|re:|subject:)/im.test(text);
+    const hasConclusion = /(in conclusion|therefore|recommend|in summary|accordingly)/i.test(text);
+    const hasTransitions = (text.match(/(however|furthermore|additionally|moreover|consequently|in contrast|on the other hand|first|second|third|finally)/gi) || []).length;
+    
+    // Check for key points from the task if available
+    const keyPoints = activeTask.keyPoints || [];
+    const keyPointsHit = keyPoints.filter(kp => 
+      text.toLowerCase().includes(kp.toLowerCase().substring(0, 20))
+    ).length;
+    const keyPointRatio = keyPoints.length > 0 ? keyPointsHit / keyPoints.length : 0.5;
+
+    // Organization (1-5): structure, format, logical flow
+    let organization = 2;
+    if (hasGreeting) organization += 0.5;
+    if (hasConclusion) organization += 0.5;
+    if (paragraphs.length >= 3) organization += 1;
+    if (paragraphs.length >= 4 && hasTransitions >= 2) organization += 1;
+    organization = Math.min(5, Math.round(organization));
+
+    // Development (1-5): depth, key points addressed, supporting detail
+    let development = 2;
+    if (wordCount >= 200) development += 0.5;
+    if (wordCount >= 300) development += 0.5;
+    if (keyPointRatio >= 0.3) development += 0.5;
+    if (keyPointRatio >= 0.6) development += 0.5;
+    if (sentences.length >= 10) development += 0.5;
+    if (wordCount >= 400 && keyPointRatio >= 0.5) development += 0.5;
+    development = Math.min(5, Math.round(development));
+
+    // Analysis (1-5): reasoning quality, use of technical terms
+    let analysis = 2;
+    const technicalTerms = (text.match(/\b(gaap|fasb|asc|ifrs|sec|pcaob|aicpa|audit|financial statement|internal control|materiality|revenue recognition|depreciation|amortization|liability|asset|equity|journal entry|t-account|variance|budgeting)\b/gi) || []).length;
+    if (technicalTerms >= 2) analysis += 1;
+    if (technicalTerms >= 5) analysis += 1;
+    if (keyPointRatio >= 0.5) analysis += 1;
+    analysis = Math.min(5, Math.round(analysis));
+
+    // Clarity (1-5): sentence variety, readability
+    let clarity = 3;
+    const avgSentenceLen = wordCount / Math.max(sentences.length, 1);
+    if (avgSentenceLen >= 10 && avgSentenceLen <= 25) clarity += 1;
+    if (hasTransitions >= 3) clarity += 1;
+    if (avgSentenceLen > 35 || avgSentenceLen < 5) clarity -= 1;
+    clarity = Math.max(1, Math.min(5, Math.round(clarity)));
+
+    // Mechanics (1-5): basic checks for common issues
+    let mechanics = 4;
+    const doubleSpaces = (text.match(/  +/g) || []).length;
+    const missingCapitals = (text.match(/\.\s+[a-z]/g) || []).length;
+    if (doubleSpaces > 5) mechanics -= 1;
+    if (missingCapitals > 3) mechanics -= 1;
+    if (wordCount < 150) mechanics -= 1;
+    mechanics = Math.max(1, Math.min(5, Math.round(mechanics)));
+
     const newScores = {
-       organization: wordCount > 200 ? 5 : 3,
-       development: wordCount > 300 ? 5 : 3,
-       analysis: 4,
-       clarity: 4,
-       mechanics: 5
+       organization,
+       development,
+       analysis,
+       clarity,
+       mechanics
     };
     setScores(newScores);
     setIsSubmitted(true);
@@ -432,7 +498,7 @@ const WrittenCommunication: React.FC = () => {
     recordStudyActivity('written_communication', 15, 10, {
       taskId: activeTask.id,
       section: activeTask.section,
-    }).catch(() => { /* fire-and-forget */ });
+    }).catch((e) => { logger.warn('Failed to record study activity:', e); });
   }, [activeTask, response, recordStudyActivity]);
 
   if (!activeTask) {

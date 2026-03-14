@@ -14,6 +14,7 @@ import {
   Send,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   X,
   Clock,
   FileSpreadsheet,
@@ -33,6 +34,7 @@ const TBS_LABELS: Record<string, string> = {
   journal: 'Journal Entry',
   calculation: 'Calculation',
   mcq: 'Multiple Choice',
+  classification: 'Classification',
   wc: 'Written Communication',
   journal_entry: 'Journal Entry',
   reconciliation: 'Reconciliation',
@@ -40,6 +42,14 @@ const TBS_LABELS: Record<string, string> = {
   research: 'Research',
   form_completion: 'Form Completion',
   written_communication: 'Written Communication',
+  amortization_table: 'Amortization Schedule',
+  calculation_table: 'Calculation Table',
+  basis_schedule: 'Basis Schedule',
+  true_false: 'True/False',
+  short_answer: 'Short Answer',
+  multiple_select: 'Multiple Select',
+  matching: 'Matching',
+  form_field: 'Form Field',
 };
 
 // Types and Interfaces
@@ -63,7 +73,7 @@ interface CalculationInputProps {
   onChange: (value: string) => void;
   disabled?: boolean;
   showCorrect?: boolean;
-  correctAnswer: number;
+  correctAnswer: number | Record<string, unknown>;
   tolerance?: number;
   explanation?: string;
 }
@@ -90,7 +100,7 @@ interface WrittenCommunicationInputProps {
 // Individual task/requirement within a TBS
 interface TBSTask {
   id: string;
-  type: 'journal' | 'calculation' | 'mcq' | 'wc';
+  type: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification';
   question: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any; // Flexible data depending on type
@@ -109,6 +119,104 @@ interface TBSQuestion {
   exhibits?: any[];
   hints?: string[];
 }
+
+// Transform raw TBS data into the format expected by the component (pure function, no deps)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const transformTbs = (rawTbs: any): TBSQuestion | null => {
+  if (!rawTbs) return null;
+  
+  // Get all requirements/tasks
+  const requirements = rawTbs.requirements || [];
+  
+  // Transform each requirement into a task
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const tasks: TBSTask[] = requirements.map((req: any, index: number) => {
+    // Map requirement type to component type
+    // Many data types exist but we map to the 6 supported render types
+    let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification' = 'calculation';
+    const rawType = req.type?.toLowerCase() || '';
+    
+    if (rawType === 'journal_entry' || rawType === 'journal') {
+      taskType = 'journal';
+    } else if (rawType === 'multiple_choice' || rawType === 'true_false' || rawType === 'multiple_select' || rawType === 'document_review') {
+      taskType = 'mcq';
+    } else if (rawType === 'classification' || rawType === 'classification_table' || rawType === 'matching') {
+      taskType = 'classification';
+    } else if (rawType === 'written_communication' || rawType === 'short_answer') {
+      taskType = 'wc';
+    } else if (rawType === 'reconciliation') {
+      taskType = 'reconciliation';
+    }
+    // All other types (calculation, amortization_table, calculation_table, basis_schedule, 
+    // form_completion, form_field) default to 'calculation'
+    
+    return {
+      id: req.id || `task-${index + 1}`,
+      type: taskType,
+      question: req.question || '',
+      data: {
+        // For journal entries
+        template: req.template || [{ account: '', debit: '', credit: '' }],
+        correctEntries: req.correctEntries,
+        // For calculations
+        correctAnswer: req.correctAnswer ?? 0,
+        tolerance: req.tolerance ?? 1,
+        // For multiple choice
+        options: req.options || [],
+        correctAnswer_mcq: req.correctAnswer, // Store separately for MCQ
+        // For classification
+        items: req.items || [],
+        correctAnswers: req.correctAnswers || [],
+      },
+      explanation: req.explanation,
+    };
+  });
+  
+  // If no requirements, create a single task from the TBS itself (legacy format)
+  if (tasks.length === 0) {
+    let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' | 'reconciliation' | 'classification' = 'calculation';
+    const rawType = rawTbs.type?.toLowerCase() || '';
+    
+    if (rawType === 'journal_entry' || rawType === 'journal') {
+      taskType = 'journal';
+    } else if (rawType === 'multiple_choice' || rawType === 'true_false' || rawType === 'multiple_select' || rawType === 'document_review') {
+      taskType = 'mcq';
+    } else if (rawType === 'classification' || rawType === 'classification_table' || rawType === 'matching') {
+      taskType = 'classification';
+    } else if (rawType === 'written_communication' || rawType === 'short_answer') {
+      taskType = 'wc';
+    } else if (rawType === 'reconciliation') {
+      taskType = 'reconciliation';
+    }
+    // All other types default to 'calculation'
+    
+    tasks.push({
+      id: 'task-1',
+      type: taskType,
+      question: rawTbs.question || '',
+      data: {
+        template: rawTbs.template || [{ account: '', debit: '', credit: '' }],
+        correctEntries: rawTbs.correctEntries,
+        correctAnswer: rawTbs.correctAnswer ?? 0,
+        tolerance: rawTbs.tolerance ?? 1,
+        options: rawTbs.options || [],
+        correctAnswer_mcq: rawTbs.correctAnswer,
+      },
+      explanation: rawTbs.explanation,
+    });
+  }
+  
+  return {
+    id: rawTbs.id,
+    title: rawTbs.title,
+    description: rawTbs.scenario || rawTbs.description || '',
+    tasks,
+    estimatedTime: rawTbs.timeEstimate,
+    difficulty: rawTbs.difficulty,
+    exhibits: rawTbs.exhibits,
+    hints: rawTbs.hints,
+  };
+};
 
 // Journal Entry Component
 const JournalEntryInput: React.FC<JournalEntryInputProps> = ({
@@ -259,7 +367,52 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
   tolerance,
   explanation,
 }) => {
-  const isCorrect = showCorrect && Math.abs(Number(value) - correctAnswer) <= (tolerance || 0);
+  // Handle case where correctAnswer is an object (e.g., reconciliation type)
+  const isComplexAnswer = typeof correctAnswer === 'object' && correctAnswer !== null;
+  const numericCorrect = isComplexAnswer ? 0 : Number(correctAnswer);
+  const isCorrect = showCorrect && !isComplexAnswer && Math.abs(Number(value) - numericCorrect) <= (tolerance || 0);
+
+  // Format complex answers for display
+  const formatComplexAnswer = (answer: unknown): string => {
+    // Handle array answers (amortization schedules, multi-period calculations)
+    if (Array.isArray(answer)) {
+      // Check if it's an amortization-style array
+      const firstItem = answer[0];
+      if (firstItem && typeof firstItem === 'object' && 'period' in firstItem) {
+        // Format as amortization schedule summary
+        return answer.map((row: Record<string, number>) => {
+          const period = row.period ?? 0;
+          const carryingValue = row.carryingValue ?? row.endingBalance ?? 0;
+          const interestExpense = row.interestExpense ?? 0;
+          return `Period ${period}: Interest $${interestExpense.toLocaleString()}, CV $${carryingValue.toLocaleString()}`;
+        }).join(' | ');
+      }
+      // Generic array - show count and first value
+      return `${answer.length} entries required`;
+    }
+    
+    // Handle object answers
+    if (typeof answer === 'object' && answer !== null) {
+      const obj = answer as Record<string, unknown>;
+      if ('adjustedBalance' in obj) {
+        return `Adjusted Balance: $${(obj.adjustedBalance as number).toLocaleString()}`;
+      }
+      if ('bankSection' in obj && 'bookSection' in obj) {
+        const bank = obj.bankSection as { adjustedBalance?: number };
+        const book = obj.bookSection as { adjustedBalance?: number };
+        return `Adjusted Balance: $${(bank.adjustedBalance || book.adjustedBalance || 0).toLocaleString()}`;
+      }
+      // Try to extract a meaningful value
+      const keys = Object.keys(obj);
+      if (keys.length === 1) {
+        const val = obj[keys[0]];
+        if (typeof val === 'number') return `$${val.toLocaleString()}`;
+      }
+    }
+    
+    // Fallback: try to show a readable version
+    return String(answer);
+  };
 
   return (
     <div className="space-y-2">
@@ -290,8 +443,173 @@ const CalculationInput: React.FC<CalculationInputProps> = ({
 
       {showCorrect && !isCorrect && (
         <div className="p-3 bg-error-50 dark:bg-red-900/20 rounded-lg text-sm">
-          <p className="font-medium text-error-800 dark:text-red-200">Correct: ${correctAnswer.toLocaleString()}</p>
+          <p className="font-medium text-error-800 dark:text-red-200">
+            Correct: {isComplexAnswer 
+              ? formatComplexAnswer(correctAnswer as Record<string, unknown>) 
+              : `$${numericCorrect.toLocaleString()}`}
+          </p>
           {explanation && <p className="text-error-700 dark:text-red-300 mt-1">{explanation}</p>}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Reconciliation Section Types
+interface ReconciliationSection {
+  startingBalance: number;
+  additions: { description: string; amount: number }[];
+  deductions: { description: string; amount: number }[];
+  adjustedBalance: number;
+}
+
+interface ReconciliationAnswer {
+  bankSection: ReconciliationSection;
+  bookSection: ReconciliationSection;
+}
+
+interface ReconciliationInputProps {
+  value?: ReconciliationAnswer;
+  onChange: (value: ReconciliationAnswer) => void;
+  disabled?: boolean;
+  showCorrect?: boolean;
+  correctAnswer: ReconciliationAnswer;
+  explanation?: string;
+}
+
+// Reconciliation Input Component for Bank Reconciliation TBS
+const ReconciliationInput: React.FC<ReconciliationInputProps> = ({
+  value: _value, // Currently unused, but preserved for future full reconciliation UI
+  onChange,
+  disabled,
+  showCorrect,
+  correctAnswer,
+  explanation,
+}) => {
+  const [adjustedBalanceInput, setAdjustedBalanceInput] = useState('');
+  
+  const correctAdjustedBalance = correctAnswer?.bankSection?.adjustedBalance || 
+    correctAnswer?.bookSection?.adjustedBalance || 0;
+  
+  const isCorrect = showCorrect && 
+    Math.abs(Number(adjustedBalanceInput) - correctAdjustedBalance) <= 1;
+
+  const handleBalanceChange = (val: string) => {
+    setAdjustedBalanceInput(val);
+    // Create a simplified answer object with the adjusted balance
+    onChange({
+      bankSection: { 
+        startingBalance: 0, 
+        additions: [], 
+        deductions: [], 
+        adjustedBalance: Number(val) || 0 
+      },
+      bookSection: { 
+        startingBalance: 0, 
+        additions: [], 
+        deductions: [], 
+        adjustedBalance: Number(val) || 0 
+      },
+    });
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Simplified input: just ask for adjusted balance */}
+      <div className="space-y-3">
+        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
+          Enter the adjusted cash balance:
+        </label>
+        <div className="flex items-center gap-3">
+          <span className="text-slate-600 dark:text-slate-400">$</span>
+          <input
+            type="number"
+            value={adjustedBalanceInput}
+            onChange={(e) => handleBalanceChange(e.target.value)}
+            disabled={disabled}
+            placeholder="Enter adjusted balance"
+            className={clsx(
+              'w-48 px-4 py-2 border rounded-lg text-right font-mono',
+              'bg-white dark:bg-slate-700 text-slate-900 dark:text-white border-slate-300 dark:border-slate-600',
+              'placeholder:text-slate-400 dark:placeholder:text-slate-500',
+              disabled && 'bg-slate-50 dark:bg-slate-800',
+              showCorrect &&
+                (isCorrect ? 'border-success-500 bg-success-50 dark:bg-green-900/20' : 'border-error-500 bg-error-50 dark:bg-red-900/20')
+            )}
+          />
+          {showCorrect &&
+            (isCorrect ? (
+              <CheckCircle className="w-5 h-5 text-success-500" />
+            ) : (
+              <XCircle className="w-5 h-5 text-error-500" />
+            ))}
+        </div>
+      </div>
+
+      {/* Show detailed correct answer when submitted */}
+      {showCorrect && !isCorrect && correctAnswer && (
+        <div className="p-4 bg-error-50 dark:bg-red-900/20 rounded-lg space-y-4">
+          <p className="font-medium text-error-800 dark:text-red-200">
+            Correct Adjusted Balance: ${correctAdjustedBalance.toLocaleString()}
+          </p>
+          
+          {/* Bank Section Breakdown */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-slate-800 dark:text-slate-200">Bank Side:</h4>
+            <div className="bg-white dark:bg-slate-800 rounded p-3 text-sm font-mono space-y-1">
+              <div className="flex justify-between">
+                <span>Balance per bank statement:</span>
+                <span>${correctAnswer.bankSection.startingBalance?.toLocaleString()}</span>
+              </div>
+              {correctAnswer.bankSection.additions?.map((item, i) => (
+                <div key={`add-${i}`} className="flex justify-between text-success-700 dark:text-success-400">
+                  <span>+ {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              {correctAnswer.bankSection.deductions?.map((item, i) => (
+                <div key={`ded-${i}`} className="flex justify-between text-error-700 dark:text-error-400">
+                  <span>- {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              <div className="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1">
+                <span>Adjusted bank balance:</span>
+                <span>${correctAnswer.bankSection.adjustedBalance?.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Book Section Breakdown */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-slate-800 dark:text-slate-200">Book Side:</h4>
+            <div className="bg-white dark:bg-slate-800 rounded p-3 text-sm font-mono space-y-1">
+              <div className="flex justify-between">
+                <span>Balance per company books:</span>
+                <span>${correctAnswer.bookSection.startingBalance?.toLocaleString()}</span>
+              </div>
+              {correctAnswer.bookSection.additions?.map((item, i) => (
+                <div key={`add-${i}`} className="flex justify-between text-success-700 dark:text-success-400">
+                  <span>+ {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              {correctAnswer.bookSection.deductions?.map((item, i) => (
+                <div key={`ded-${i}`} className="flex justify-between text-error-700 dark:text-error-400">
+                  <span>- {item.description}</span>
+                  <span>${item.amount.toLocaleString()}</span>
+                </div>
+              ))}
+              <div className="flex justify-between font-bold border-t border-slate-300 dark:border-slate-600 pt-1">
+                <span>Adjusted book balance:</span>
+                <span>${correctAnswer.bookSection.adjustedBalance?.toLocaleString()}</span>
+              </div>
+            </div>
+          </div>
+
+          {explanation && (
+            <p className="text-error-700 dark:text-red-300 mt-2">{explanation}</p>
+          )}
         </div>
       )}
     </div>
@@ -345,6 +663,82 @@ const MultipleChoiceInput: React.FC<MultipleChoiceInputProps> = ({
               <XCircle className="w-5 h-5 text-error-500" />
             )}
           </button>
+        );
+      })}
+
+      {showCorrect && explanation && (
+        <div className="p-3 bg-slate-50 dark:bg-slate-700 rounded-lg text-sm text-slate-700 dark:text-slate-200 mt-2">
+          <strong>Explanation:</strong> {explanation}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Classification / Matching Component
+const ClassificationInput: React.FC<{
+  items: string[];
+  options: string[];
+  value?: Record<string, string>;
+  onChange: (value: Record<string, string>) => void;
+  disabled?: boolean;
+  showCorrect?: boolean;
+  correctAnswers?: Array<{ item: string; answer: string }>;
+  explanation?: string;
+}> = ({ items, options, value = {}, onChange, disabled, showCorrect, correctAnswers, explanation }) => {
+  const handleSelect = (item: string, selectedOption: string) => {
+    if (disabled) return;
+    onChange({ ...value, [item]: selectedOption });
+  };
+
+  const correctMap = new Map((correctAnswers || []).map(ca => [ca.item, ca.answer]));
+
+  return (
+    <div className="space-y-3">
+      {items.map((item) => {
+        const selected = value[item] || '';
+        const correctOption = correctMap.get(item);
+        const isCorrect = showCorrect && selected === correctOption;
+        const isWrong = showCorrect && selected && selected !== correctOption;
+
+        return (
+          <div
+            key={item}
+            className={clsx(
+              'p-3 rounded-lg border-2 transition-all',
+              showCorrect && isCorrect && 'border-success-500 bg-success-50 dark:bg-success-900/30',
+              showCorrect && isWrong && 'border-error-500 bg-error-50 dark:bg-error-900/30',
+              !showCorrect && selected && 'border-primary-300 bg-primary-50/50 dark:border-primary-600 dark:bg-primary-900/20',
+              !showCorrect && !selected && 'border-slate-200 dark:border-slate-600'
+            )}
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <span className="font-medium text-slate-900 dark:text-white sm:min-w-[180px]">{item}</span>
+              <select
+                value={selected}
+                onChange={(e) => handleSelect(item, e.target.value)}
+                disabled={disabled}
+                className={clsx(
+                  'flex-1 px-3 py-2 rounded-lg border text-sm transition-colors',
+                  'bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100',
+                  'border-slate-300 dark:border-slate-600',
+                  disabled && 'opacity-60 cursor-not-allowed'
+                )}
+              >
+                <option value="">-- Select --</option>
+                {options.map((opt) => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
+              </select>
+              {showCorrect && isCorrect && <CheckCircle className="w-5 h-5 text-success-500 flex-shrink-0" />}
+              {showCorrect && isWrong && <XCircle className="w-5 h-5 text-error-500 flex-shrink-0" />}
+            </div>
+            {showCorrect && isWrong && correctOption && (
+              <div className="mt-1 text-sm text-success-700 dark:text-success-400">
+                Correct: {correctOption}
+              </div>
+            )}
+          </div>
         );
       })}
 
@@ -522,13 +916,23 @@ const SimpleCalculator: React.FC = () => {
 /**
  * Renders TBS scenario text with proper formatting:
  * - Detects tabular data (lines with multiple space-separated columns) and renders in monospace
+ * - Detects markdown pipe tables (| col1 | col2 |) and renders as HTML tables
  * - Converts bullet points (•) to styled list items
  * - Renders section headers (lines ending with :) as bold
  * - Regular paragraphs get normal text styling
  */
 const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
   const lines = text.split('\n');
-  const blocks: { type: 'paragraph' | 'table' | 'bullets' | 'header'; lines: string[] }[] = [];
+  const blocks: { type: 'paragraph' | 'table' | 'pipeTable' | 'bullets' | 'header'; lines: string[] }[] = [];
+  
+  // Detect pipe table line (markdown table format)
+  const isPipeTableLine = (l: string) => {
+    const t = l.trim();
+    return t.startsWith('|') && t.includes('|') && t.split('|').length >= 3;
+  };
+  
+  // Check if line is a separator row (|---|---|)
+  const isSeparatorRow = (l: string) => /^\|[\s\-:|]+\|$/.test(l.trim());
   
   let i = 0;
   while (i < lines.length) {
@@ -538,6 +942,21 @@ const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
     // Skip empty lines
     if (!trimmed) {
       i++;
+      continue;
+    }
+    
+    // Pipe table detection (markdown format: | col1 | col2 | col3 |)
+    if (isPipeTableLine(line)) {
+      const tableLines: string[] = [];
+      while (i < lines.length && (isPipeTableLine(lines[i]) || !lines[i].trim())) {
+        if (lines[i].trim() && !isSeparatorRow(lines[i])) {
+          tableLines.push(lines[i].trim());
+        }
+        i++;
+      }
+      if (tableLines.length > 0) {
+        blocks.push({ type: 'pipeTable', lines: tableLines });
+      }
       continue;
     }
     
@@ -587,7 +1006,8 @@ const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
       !lines[i].trim().startsWith('•') &&
       !lines[i].trim().startsWith('- ') &&
       !(lines[i].trim().endsWith(':') && lines[i].trim().length < 80 && !lines[i].trim().includes('$')) &&
-      !isTabularLine(lines[i])
+      !isTabularLine(lines[i]) &&
+      !isPipeTableLine(lines[i])
     ) {
       paraLines.push(lines[i].trim());
       i++;
@@ -630,6 +1050,40 @@ const ScenarioRenderer: React.FC<{ text: string }> = ({ text }) => {
                 </div>
               </div>
             );
+          case 'pipeTable': {
+            // Parse markdown pipe table: | col1 | col2 | col3 |
+            const dataRows = block.lines.filter(l => !isSeparatorRow(l));
+            const parseRow = (row: string) => 
+              row.split('|').map(c => c.trim()).filter((c, i, arr) => i > 0 && i < arr.length - 1);
+            const headerCells = dataRows.length > 0 ? parseRow(dataRows[0]) : [];
+            const bodyRows = dataRows.slice(1).map(parseRow);
+            return (
+              <div key={idx} className="overflow-x-auto -mx-2 px-2">
+                <table className="min-w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-slate-100 dark:bg-slate-700">
+                      {headerCells.map((cell, ci) => (
+                        <th key={ci} className="border border-slate-300 dark:border-slate-600 px-3 py-2 text-left font-semibold text-slate-900 dark:text-white">
+                          {cell}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bodyRows.map((row, ri) => (
+                      <tr key={ri} className={ri % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-700/50'}>
+                        {row.map((cell, ci) => (
+                          <td key={ci} className="border border-slate-300 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-200">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
           default:
             return null;
         }
@@ -646,6 +1100,39 @@ const TBSSimulator: React.FC = () => {
   const { userProfile, user } = useAuth();
   const { completeSimulation } = useStudy();
   const { courseId } = useCourse();
+
+  // TBS is CPA-only — show friendly message for other courses
+  if (courseId !== 'cpa') {
+    return (
+      <div className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 p-4">
+        <div className="text-center max-w-md">
+          <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <FileSpreadsheet className="w-10 h-10 text-slate-400 dark:text-slate-500" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            Task-Based Simulations
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300 mb-6">
+            TBS practice is currently available for the CPA exam only. Use Practice Questions to study for your exam.
+          </p>
+          <div className="flex gap-3 justify-center">
+            <button
+              onClick={() => navigate('/practice')}
+              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Practice Questions
+            </button>
+            <button
+              onClick={() => navigate(courseHome)}
+              className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 px-6 py-3 rounded-xl font-semibold transition-colors"
+            >
+              Back to Home
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   // Ref for scrolling to top when entering active view
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -669,6 +1156,7 @@ const TBSSimulator: React.FC = () => {
   const [tbsList, setTbsList] = useState<TBS[]>([]);
   const [tbsLoading, setTbsLoading] = useState(false);
   const [tbsHistory, setTbsHistory] = useState<Map<string, TBSHistoryEntry>>(new Map());
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
 
   // Use getCurrentSectionForCourse to ensure section is valid for this course
   const currentSection = getCurrentSectionForCourse(userProfile?.examSection, courseId) as ExamSection;
@@ -686,77 +1174,6 @@ const TBSSimulator: React.FC = () => {
   // Get current task
   const currentTask = tbs?.tasks[currentTaskIndex] || null;
   const totalTasks = tbs?.tasks.length || 0;
-
-  // Transform raw TBS data into the format expected by the component
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const transformTbs = (rawTbs: any): TBSQuestion | null => {
-    if (!rawTbs) return null;
-    
-    // Get all requirements/tasks
-    const requirements = rawTbs.requirements || [];
-    
-    // Transform each requirement into a task
-    const tasks: TBSTask[] = requirements.map((req: any, index: number) => {
-      // Map requirement type to component type
-      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
-      if (req.type === 'journal_entry' || req.type === 'journal') taskType = 'journal';
-      else if (req.type === 'multiple_choice') taskType = 'mcq';
-      else if (req.type === 'written_communication') taskType = 'wc';
-      else if (req.type === 'calculation') taskType = 'calculation';
-      
-      return {
-        id: req.id || `task-${index + 1}`,
-        type: taskType,
-        question: req.question || '',
-        data: {
-          // For journal entries
-          template: req.template || [{ account: '', debit: '', credit: '' }],
-          correctEntries: req.correctEntries,
-          // For calculations
-          correctAnswer: req.correctAnswer ?? 0,
-          tolerance: req.tolerance ?? 1,
-          // For multiple choice
-          options: req.options || [],
-          correctAnswer_mcq: req.correctAnswer, // Store separately for MCQ
-        },
-        explanation: req.explanation,
-      };
-    });
-    
-    // If no requirements, create a single task from the TBS itself (legacy format)
-    if (tasks.length === 0) {
-      let taskType: 'journal' | 'calculation' | 'mcq' | 'wc' = 'calculation';
-      if (rawTbs.type === 'journal_entry' || rawTbs.type === 'journal') taskType = 'journal';
-      else if (rawTbs.type === 'multiple_choice') taskType = 'mcq';
-      else if (rawTbs.type === 'written_communication') taskType = 'wc';
-      
-      tasks.push({
-        id: 'task-1',
-        type: taskType,
-        question: rawTbs.question || '',
-        data: {
-          template: rawTbs.template || [{ account: '', debit: '', credit: '' }],
-          correctEntries: rawTbs.correctEntries,
-          correctAnswer: rawTbs.correctAnswer ?? 0,
-          tolerance: rawTbs.tolerance ?? 1,
-          options: rawTbs.options || [],
-          correctAnswer_mcq: rawTbs.correctAnswer,
-        },
-        explanation: rawTbs.explanation,
-      });
-    }
-    
-    return {
-      id: rawTbs.id,
-      title: rawTbs.title,
-      description: rawTbs.scenario || rawTbs.description || '',
-      tasks,
-      estimatedTime: rawTbs.timeEstimate,
-      difficulty: rawTbs.difficulty,
-      exhibits: rawTbs.exhibits,
-      hints: rawTbs.hints,
-    };
-  };
 
   // Update answer for current task
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -795,19 +1212,25 @@ const TBSSimulator: React.FC = () => {
     let cancelled = false;
     const loadTBSList = async () => {
       setTbsLoading(true);
-      const sectionTbs = await fetchTBSBySection(selectedSection as ExamSection);
+      
+      // Load TBS data and history in parallel
+      const tbsPromise = fetchTBSBySection(selectedSection as ExamSection);
+      const historyPromise = user?.uid 
+        ? getTBSHistory(user.uid, selectedSection)
+        : Promise.resolve([]);
+      
+      const sectionTbs = await tbsPromise;
       if (cancelled) return;
       setTbsList(sectionTbs || []);
+      setTbsLoading(false); // Show list immediately while history may still load
       
-      // Load TBS history for completion indicators
-      if (user?.uid) {
-        const history = await getTBSHistory(user.uid, selectedSection);
-        if (cancelled) return;
+      // Apply history when it resolves
+      const history = await historyPromise;
+      if (cancelled) return;
+      if (history.length > 0) {
         const historyMap = new Map(history.map(h => [h.tbsId, h]));
         setTbsHistory(historyMap);
       }
-      
-      setTbsLoading(false);
     };
     loadTBSList();
     return () => { cancelled = true; };
@@ -848,7 +1271,7 @@ const TBSSimulator: React.FC = () => {
     setViewState('select');
   };
 
-  // Score Written Communication responses based on AICPA criteria
+  // Score Written Communication responses based on AICPA/Professional criteria
   // Evaluates: Organization, Development, Expression
   const scoreWrittenCommunication = (
     response: string,
@@ -903,13 +1326,15 @@ const TBSSimulator: React.FC = () => {
     if (avgSentencesPerParagraph >= 3) devScore += 10;
     else if (avgSentencesPerParagraph >= 2) devScore += 5;
     
-    // Technical/professional vocabulary usage
+    // Technical/professional vocabulary usage (exam-agnostic terms)
     const technicalTerms = [
       'internal control', 'audit', 'financial statement', 'material', 'reasonable',
-      'compliance', 'gaap', 'gasb', 'fasb', 'aicpa', 'pcaob', 'sox', 'coso',
-      'risk', 'procedure', 'assessment', 'framework', 'disclosure', 'opinion',
+      'compliance', 'standard', 'framework', 'policy', 'procedure',
+      'risk', 'assessment', 'analysis', 'disclosure', 'opinion',
       'deficiency', 'significant', 'management', 'governance', 'objective',
-      'component', 'monitoring', 'environment', 'activities', 'information'
+      'component', 'monitoring', 'environment', 'activities', 'information',
+      // Accounting standards (CPA-specific but acceptable for all)
+      'gaap', 'gasb', 'fasb', 'aicpa', 'pcaob', 'sox', 'coso'
     ];
     const technicalCount = technicalTerms.filter(term => lowerText.includes(term)).length;
     if (technicalCount >= 5) devScore += 15;
@@ -1073,12 +1498,32 @@ const TBSSimulator: React.FC = () => {
       const tolerance = task.data.tolerance || 5;
       return scoreJournalEntry(userEntries, correctEntries, tolerance);
     } else if (task.type === 'calculation') {
-      const isCorrect = Math.abs(Number(answer) - task.data.correctAnswer) <= (task.data.tolerance || 0);
+      const numericCorrect = typeof task.data.correctAnswer === 'number' ? task.data.correctAnswer : 0;
+      const isCorrect = Math.abs(Number(answer) - numericCorrect) <= (task.data.tolerance || 0);
+      return isCorrect ? 100 : 0;
+    } else if (task.type === 'reconciliation') {
+      // For reconciliation, check if the adjusted balance matches
+      const correctAnswer = task.data.correctAnswer as ReconciliationAnswer;
+      const correctAdjustedBalance = correctAnswer?.bankSection?.adjustedBalance || 
+        correctAnswer?.bookSection?.adjustedBalance || 0;
+      const userAdjustedBalance = answer?.bankSection?.adjustedBalance || 
+        answer?.bookSection?.adjustedBalance || 0;
+      const isCorrect = Math.abs(userAdjustedBalance - correctAdjustedBalance) <= 1;
       return isCorrect ? 100 : 0;
     } else if (task.type === 'mcq') {
       // MCQ correct answer is stored in correctAnswer_mcq (index) or correctAnswer
       const correctIndex = task.data.correctAnswer_mcq ?? task.data.correctAnswer;
       return answer === correctIndex ? 100 : 0;
+    } else if (task.type === 'classification') {
+      // Classification: compare user selections to correct item→answer mapping
+      const correctAnswers: Array<{ item: string; answer: string }> = task.data.correctAnswers || [];
+      if (correctAnswers.length === 0) return 0;
+      const userAnswers = (answer || {}) as Record<string, string>;
+      let correct = 0;
+      for (const ca of correctAnswers) {
+        if (userAnswers[ca.item] === ca.answer) correct++;
+      }
+      return Math.round((correct / correctAnswers.length) * 100);
     } else if (task.type === 'wc') {
       return scoreWrittenCommunication(answer as string || '', task.data);
     }
@@ -1114,12 +1559,16 @@ const TBSSimulator: React.FC = () => {
     
     // If from daily plan, save completion to localStorage
     if (fromDailyPlan && activityId) {
-      const today = new Date().toISOString().split('T')[0];
-      const storageKey = `dailyplan_completed_${today}`;
-      const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
-      if (!existing.includes(activityId)) {
-        existing.push(activityId);
-        localStorage.setItem(storageKey, JSON.stringify(existing));
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const storageKey = `dailyplan_completed_${today}`;
+        const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+        if (!existing.includes(activityId)) {
+          existing.push(activityId);
+          localStorage.setItem(storageKey, JSON.stringify(existing));
+        }
+      } catch {
+        // Ignore corrupted storage
       }
     }
   };
@@ -1138,41 +1587,25 @@ const TBSSimulator: React.FC = () => {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 pb-24">
         {/* Header */}
-        <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-6 pb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <Link to={courseHome}>
-              <Button variant="ghost" size="icon" className="hover:bg-white/10 text-white">
-                <ArrowLeft className="w-5 h-5" />
-              </Button>
-            </Link>
-            <h1 className="text-2xl font-bold">Task-Based Simulations</h1>
-          </div>
-          <p className="text-teal-100">Practice realistic CPA exam simulations</p>
-
-          {/* Section Filter */}
-          <div className="mt-4 flex gap-2 flex-wrap">
-            {availableSections.map((sectionId) => {
-              const info = getSectionDisplayInfo(sectionId, courseId);
-              return (
-                <button
-                  key={sectionId}
-                  onClick={() => setSelectedSection(sectionId)}
-                  className={clsx(
-                    'px-4 py-2 rounded-lg font-medium transition-colors text-sm',
-                    selectedSection === sectionId
-                      ? 'bg-white text-teal-700'
-                      : 'bg-white/20 text-white hover:bg-white/30'
-                  )}
-                >
-                  {info?.name || sectionId}
-                </button>
-              );
-            })}
+        <div className="max-w-4xl mx-auto px-4 pt-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold"
+              style={{ backgroundColor: sectionInfo?.color || '#0d9488' }}
+            >
+              {sectionInfo?.shortName || currentSection}
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Task-Based Simulations</h1>
+              <p className="text-slate-600 dark:text-slate-400">
+                {sectionInfo?.name || 'All Sections'}
+              </p>
+            </div>
           </div>
         </div>
 
         {/* TBS Info Card */}
-        <div className="px-4 mt-4 mb-6">
+        <div className="max-w-4xl mx-auto px-4 mt-4 mb-6">
           <div className="bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 rounded-xl p-4">
             <div className="flex items-start gap-3">
               <FileSpreadsheet className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />
@@ -1189,8 +1622,8 @@ const TBSSimulator: React.FC = () => {
           </div>
         </div>
 
-        {/* TBS List */}
-        <div className="px-4 space-y-3">
+        {/* TBS List - Grouped by Blueprint Area */}
+        <div className="max-w-4xl mx-auto px-4 space-y-3">
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
             {getSectionDisplayInfo(selectedSection, courseId)?.name || selectedSection} Simulations
             {!tbsLoading && <span className="text-sm font-normal text-slate-500 dark:text-slate-400 ml-2">({tbsList.length})</span>}
@@ -1205,84 +1638,141 @@ const TBSSimulator: React.FC = () => {
               <AlertCircle className="w-12 h-12 mx-auto text-slate-400 mb-3" />
               <p className="text-slate-600 dark:text-slate-400">No simulations available for this section yet.</p>
             </div>
-          ) : (
-            tbsList.map((tbsItem) => {
-              const history = tbsHistory.get(tbsItem.id);
-              const isCompleted = history?.mastered;
-              const hasAttempted = history && history.attempts > 0;
+          ) : (() => {
+            // Group TBS by blueprintArea
+            const grouped = tbsList.reduce((acc, tbs) => {
+              const area = tbs.blueprintArea || 'Other';
+              if (!acc[area]) acc[area] = [];
+              acc[area].push(tbs);
+              return acc;
+            }, {} as Record<string, TBS[]>);
+            
+            const sortedAreas = Object.keys(grouped).sort((a, b) => {
+              if (a === 'Other') return 1;
+              if (b === 'Other') return -1;
+              return a.localeCompare(b);
+            });
+            
+            const toggleGroup = (area: string) => {
+              setExpandedGroups(prev => {
+                const next = new Set(prev);
+                if (next.has(area)) {
+                  next.delete(area);
+                } else {
+                  next.add(area);
+                }
+                return next;
+              });
+            };
+            
+            return sortedAreas.map((area) => {
+              const items = grouped[area];
+              const isExpanded = expandedGroups.has(area);
+              const completedCount = items.filter(t => tbsHistory.get(t.id)?.mastered).length;
               
               return (
-              <div key={tbsItem.id} className={clsx(
-                'bg-white dark:bg-slate-800 rounded-xl border overflow-hidden',
-                isCompleted 
-                  ? 'border-success-300 dark:border-success-700' 
-                  : 'border-slate-200 dark:border-slate-700'
-              )}>
-                <button
-                  onClick={() => handleSelectTBS(tbsItem)}
-                  className="w-full text-left p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-slate-900 dark:text-white truncate">
-                          {tbsItem.title || 'Untitled Simulation'}
-                        </h3>
-                        {isCompleted && (
-                          <CheckCircle className="w-4 h-4 text-success-500 flex-shrink-0" />
-                        )}
-                        {hasAttempted && !isCompleted && (
-                          <span className="px-1.5 py-0.5 bg-warning-100 dark:bg-warning-900/30 rounded text-xs font-medium text-warning-700 dark:text-warning-300">
-                            {history.bestScore}%
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-400">
-                        {(tbsItem.estimatedTime || tbsItem.timeEstimate) && (
-                          <span className="flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5" />
-                            {tbsItem.estimatedTime || tbsItem.timeEstimate} min
-                          </span>
-                        )}
-                        {tbsItem.requirements && tbsItem.requirements.length > 0 && (
-                          <span className="flex items-center gap-1">
-                            <FileText className="w-3.5 h-3.5" />
-                            {tbsItem.requirements.length} {tbsItem.requirements.length === 1 ? 'task' : 'tasks'}
-                          </span>
-                        )}
-                        <span className={clsx(
-                          'px-2 py-0.5 rounded-full text-xs font-medium',
-                          tbsItem.difficulty === 'easy' && 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300',
-                          tbsItem.difficulty === 'medium' && 'bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-300',
-                          tbsItem.difficulty === 'hard' && 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-300',
-                        )}>
-                          {tbsItem.difficulty}
-                        </span>
-                      </div>
-                      {/* Type badge + topic */}
-                      <div className="mt-2 flex flex-wrap gap-1.5">
-                        <span className="px-2 py-0.5 bg-teal-100 dark:bg-teal-900/30 rounded text-xs font-medium text-teal-700 dark:text-teal-300">
-                          {TBS_LABELS[tbsItem.type] || tbsItem.type}
-                        </span>
-                        {tbsItem.topic && (
-                          <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
-                            {tbsItem.topic}
-                          </span>
-                        )}
-                        {tbsItem.blueprintArea && (
-                          <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
-                            {tbsItem.blueprintArea}
-                          </span>
-                        )}
+                <div key={area} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+                  {/* Group Header - Clickable */}
+                  <button
+                    onClick={() => toggleGroup(area)}
+                    className="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <ChevronDown className={clsx(
+                        'w-5 h-5 text-slate-500 transition-transform',
+                        !isExpanded && '-rotate-90'
+                      )} />
+                      <div>
+                        <h3 className="font-semibold text-slate-900 dark:text-white text-left">{area}</h3>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                          {items.length} simulation{items.length !== 1 ? 's' : ''}
+                          {completedCount > 0 && (
+                            <span className="text-success-600 dark:text-success-400 ml-2">
+                              • {completedCount} completed
+                            </span>
+                          )}
+                        </p>
                       </div>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2 mt-1" />
-                  </div>
-                </button>
-              </div>
+                  </button>
+                  
+                  {/* Group Items - Collapsible */}
+                  {isExpanded && (
+                    <div className="border-t border-slate-200 dark:border-slate-700 divide-y divide-slate-100 dark:divide-slate-700">
+                      {items.map((tbsItem) => {
+                        const history = tbsHistory.get(tbsItem.id);
+                        const isCompleted = history?.mastered;
+                        const hasAttempted = history && history.attempts > 0;
+                        
+                        return (
+                          <button
+                            key={tbsItem.id}
+                            onClick={() => handleSelectTBS(tbsItem)}
+                            className={clsx(
+                              'w-full text-left p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors',
+                              isCompleted && 'bg-success-50/50 dark:bg-success-900/10'
+                            )}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1">
+                                  <h4 className="font-medium text-slate-900 dark:text-white truncate">
+                                    {tbsItem.title || 'Untitled Simulation'}
+                                  </h4>
+                                  {isCompleted && (
+                                    <CheckCircle className="w-4 h-4 text-success-500 flex-shrink-0" />
+                                  )}
+                                  {hasAttempted && !isCompleted && (
+                                    <span className="px-1.5 py-0.5 bg-warning-100 dark:bg-warning-900/30 rounded text-xs font-medium text-warning-700 dark:text-warning-300">
+                                      {history.bestScore}%
+                                    </span>
+                                  )}
+                                </div>
+                                <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                  {(tbsItem.estimatedTime || tbsItem.timeEstimate) && (
+                                    <span className="flex items-center gap-1">
+                                      <Clock className="w-3.5 h-3.5" />
+                                      {tbsItem.estimatedTime || tbsItem.timeEstimate} min
+                                    </span>
+                                  )}
+                                  {tbsItem.requirements && tbsItem.requirements.length > 0 && (
+                                    <span className="flex items-center gap-1">
+                                      <FileText className="w-3.5 h-3.5" />
+                                      {tbsItem.requirements.length} task{tbsItem.requirements.length !== 1 ? 's' : ''}
+                                    </span>
+                                  )}
+                                  <span className={clsx(
+                                    'px-2 py-0.5 rounded-full text-xs font-medium',
+                                    tbsItem.difficulty === 'easy' && 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300',
+                                    tbsItem.difficulty === 'medium' && 'bg-warning-100 text-warning-700 dark:bg-warning-900/30 dark:text-warning-300',
+                                    tbsItem.difficulty === 'hard' && 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-300',
+                                  )}>
+                                    {tbsItem.difficulty}
+                                  </span>
+                                </div>
+                                {/* Type badge + topic */}
+                                <div className="mt-2 flex flex-wrap gap-1.5">
+                                  <span className="px-2 py-0.5 bg-teal-100 dark:bg-teal-900/30 rounded text-xs font-medium text-teal-700 dark:text-teal-300">
+                                    {TBS_LABELS[tbsItem.type] || tbsItem.type}
+                                  </span>
+                                  {tbsItem.topic && (
+                                    <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded text-xs text-slate-600 dark:text-slate-300">
+                                      {tbsItem.topic}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                              <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2 mt-1" />
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               );
-            })
-          )}
+            });
+          })()}
         </div>
       </div>
     );
@@ -1541,6 +2031,17 @@ const TBSSimulator: React.FC = () => {
                     />
                   )}
 
+                  {currentTask.type === 'reconciliation' && (
+                    <ReconciliationInput
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                      correctAnswer={currentTask.data.correctAnswer}
+                      explanation={currentTask.explanation}
+                    />
+                  )}
+
                   {currentTask.type === 'mcq' && (
                     <MultipleChoiceInput
                       options={currentTask.data.options}
@@ -1549,6 +2050,19 @@ const TBSSimulator: React.FC = () => {
                       disabled={submitted}
                       showCorrect={submitted}
                       correctAnswer={currentTask.data.correctAnswer_mcq ?? currentTask.data.correctAnswer}
+                      explanation={currentTask.explanation}
+                    />
+                  )}
+
+                  {currentTask.type === 'classification' && (
+                    <ClassificationInput
+                      items={currentTask.data.items}
+                      options={currentTask.data.options}
+                      value={currentAnswer}
+                      onChange={updateAnswer}
+                      disabled={submitted}
+                      showCorrect={submitted}
+                      correctAnswers={currentTask.data.correctAnswers}
                       explanation={currentTask.explanation}
                     />
                   )}
@@ -1563,7 +2077,8 @@ const TBSSimulator: React.FC = () => {
                   )}
                 </div>
 
-                {submitted && currentTask.explanation && (
+                {/* Show explanation for types that don't render it inline (journal, wc) */}
+                {submitted && currentTask.explanation && !['mcq', 'calculation', 'reconciliation', 'classification'].includes(currentTask.type) && (
                   <div className="bg-blue-50 p-6 border-t border-blue-100">
                     <h4 className="font-bold text-blue-900 mb-2">Explanation</h4>
                     <p className="text-blue-800">{currentTask.explanation}</p>

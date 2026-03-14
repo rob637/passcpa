@@ -11,7 +11,7 @@ import type { CourseData } from '../../types/courseData';
 // Questions
 import { CFP_QUESTIONS_ALL } from './questions';
 
-// Flashcards
+// Flashcards (from JSON)
 import { CFP_FLASHCARDS } from './flashcards';
 
 // Lessons

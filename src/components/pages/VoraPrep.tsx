@@ -138,24 +138,24 @@ const COURSES: CourseInfo[] = [
 // Why VoraPrep section data
 const WHY_VORAPREP = [
   {
-    icon: Brain,
-    title: 'AI-Powered Learning',
-    description: 'Our adaptive engine calibrates difficulty on a continuous scale, factors in your response time, and targets your weakest areas.',
+    icon: BookOpen,
+    title: '25,000+ Practice Questions',
+    description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
   },
   {
-    icon: Target,
-    title: 'Adaptive Practice',
-    description: 'Difficulty adjusts smoothly as you improve. 70% of practice focuses on topics where you struggle most.',
+    icon: Sparkles,
+    title: 'Everything in One Place',
+    description: 'Lessons, flashcards, practice exams, daily study plans, and an exam simulator — a complete study system. No more juggling 5 different tools.',
   },
   {
-    icon: Zap,
-    title: 'Smart Spaced Repetition',
-    description: 'Forgetting-curve modeling predicts when you\'ll forget each concept and resurfaces it at the perfect moment.',
+    icon: BarChart3,
+    title: 'Know When You\'re Ready',
+    description: 'Score prediction tracks your performance across every blueprint area and tells you exactly when you\'re ready to sit for the exam.',
   },
   {
     icon: Shield,
-    title: 'Exam-Day Ready',
-    description: 'Prometric-style interface and timed exams so nothing surprises you on test day.',
+    title: 'Exam-Day Confident',
+    description: 'Prometric-style simulator with timed sections and task-based simulations. Walk in knowing exactly what to expect.',
   },
 ];
 
@@ -291,11 +291,17 @@ const VoraPrep = () => {
             <img 
               src="/logo.svg" 
               alt="VoraPrep" 
+              width="120" 
+              height="40" 
+              fetchPriority="high"
               className="h-10 dark:hidden" 
             />
             <img 
               src="/logo-white.svg" 
               alt="VoraPrep" 
+              width="120" 
+              height="40" 
+              fetchPriority="high"
               className="h-10 hidden dark:block" 
             />
           </div>
@@ -384,7 +390,7 @@ const VoraPrep = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
-              <span className="font-semibold">AI-powered exam prep</span> for accounting and finance professionals.
+              <span className="font-semibold">Pass your exam on the first try</span> for accounting and finance professionals.
               <br className="hidden md:block" />
               CPA, EA, CMA, CIA, CFP, and CISA — all on one platform.
             </p>
@@ -460,7 +466,7 @@ const VoraPrep = () => {
               </h2>
               <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
                 Each exam has its own dedicated prep program with tailored content, 
-                practice exams, and AI-powered study tools.
+                practice exams, and adaptive study tools.
               </p>
             </div>
 
@@ -493,8 +499,8 @@ const VoraPrep = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
                 Why VoraPrep?
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                We built the study platform we wished existed when we were candidates.
+              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                6 certifications. 25,000+ questions. One platform built by people who&apos;ve been in your seat.
               </p>
             </div>
 
@@ -532,12 +538,12 @@ const VoraPrep = () => {
                 <div className="text-sm text-white/80">Founder Rates Available</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
-                <div className="text-2xl font-bold text-white">AI-First</div>
-                <div className="text-sm text-white/80">Adaptive Learning</div>
+                <div className="text-2xl font-bold text-white">Comprehensive</div>
+                <div className="text-sm text-white/80">6 Certifications, One Platform</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4">
-                <div className="text-2xl font-bold text-white">Modern</div>
-                <div className="text-sm text-white/80">Current Blueprints</div>
+                <div className="text-2xl font-bold text-white">Current</div>
+                <div className="text-sm text-white/80">2025 & 2026 Blueprints</div>
               </div>
             </div>
           </div>
@@ -568,9 +574,9 @@ const VoraPrep = () => {
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-slate-950 py-12 px-6 border-t border-slate-800">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <img src="/logo-white.svg" alt="VoraPrep" className="h-8 mb-4" />
+          <div className="grid md:grid-cols-5 gap-8 mb-8">
+            <div className="md:col-span-1">
+              <img src="/logo-white.svg" alt="VoraPrep" width="120" height="32" className="h-8 mb-4" />
               <p className="text-slate-400 text-sm leading-relaxed">
                 Expert-crafted exam prep for accounting and finance professionals. 
                 Built by practitioners, powered by AI.
@@ -585,6 +591,15 @@ const VoraPrep = () => {
                 <li><Link to="/cia" className="hover:text-white transition-colors">CIA Exam Prep</Link></li>
                 <li><Link to="/cfp" className="hover:text-white transition-colors">CFP Exam Prep</Link></li>
                 <li><Link to="/cisa" className="hover:text-white transition-colors">CISA Exam Prep</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-4">Resources</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><Link to="/blog" className="hover:text-white transition-colors">Study Blog</Link></li>
+                <li><Link to="/diagnostic/cpa-far-mini" className="hover:text-white transition-colors text-emerald-400 font-medium">Free CPA Quiz</Link></li>
+                <li><Link to="/diagnostic/ea-see1-mini" className="hover:text-white transition-colors text-emerald-400 font-medium">Free EA Quiz</Link></li>
+                <li><Link to="/blog/cpa-exam-study-schedule-2026" className="hover:text-white transition-colors">Study Schedules</Link></li>
               </ul>
             </div>
             <div>

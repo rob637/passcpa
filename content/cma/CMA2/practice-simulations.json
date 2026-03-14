@@ -1,0 +1,1409 @@
+{
+  "$schema": "../schema/practice-simulation.schema.json",
+  "version": "1.0.0",
+  "courseId": "cma",
+  "section": "CMA2",
+  "generatedAt": "2026-03-01T12:27:20.347Z",
+  "simulations": [
+    {
+      "id": "cma2-sim-001",
+      "section": "CMA2",
+      "title": "Capital Investment Analysis",
+      "blueprintArea": "CMA2-C",
+      "topic": "NPV, IRR, and Project Evaluation",
+      "difficulty": "hard",
+      "estimatedTime": 30,
+      "scenario": "TechCorp Industries is evaluating a new manufacturing equipment investment. The CFO has asked you to perform a comprehensive capital budgeting analysis.\n\nThe project details are provided in Exhibit 1. Assume a discount rate of 12% (company's WACC) and a 25% tax rate.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Project Details",
+          "type": "table",
+          "data": "**Initial Investment:**\n- Equipment Cost: $500,000\n- Installation: $50,000\n- Increase in Net Working Capital: $30,000\n\n**Operating Data (Annual):**\n- Annual Revenue: $300,000\n- Annual Operating Costs (excluding depreciation): $120,000\n- Project Life: 5 years\n\n**Depreciation:**\n- Straight-line over 5 years to $0 salvage\n\n**End of Project:**\n- Equipment salvage value: $40,000\n- Working capital recovered: $30,000\n\n**Present Value Factors (12%):**\n| Year | PV Factor | Cumulative |\n|------|-----------|------------|\n| 1 | 0.8929 | 0.8929 |\n| 2 | 0.7972 | 1.6901 |\n| 3 | 0.7118 | 2.4018 |\n| 4 | 0.6355 | 3.0373 |\n| 5 | 0.5674 | 3.6048 |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the total initial investment (Year 0 cash outflow).",
+          "solution": {
+            "approach": "Sum all initial costs including working capital",
+            "calculations": "Equipment Cost: $500,000\nInstallation: $50,000\nWorking Capital: $30,000\n**Total Initial Investment: $580,000**",
+            "answer": 580000,
+            "explanation": "Total initial cash outflow includes equipment, installation, and working capital investment."
+          },
+          "points": 10,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the total initial investment for the TechCorp project:\n\n1. **Given Information:**\n   * Equipment Cost: $500,000\n   * Installation Costs: $50,000\n   * Working Capital Investment: $30,000\n\n2. **Formula:**\n   Total Initial Investment = Equipment Cost + Installation Costs + Working Capital Investment\n\n3. **Calculation:**\n   Total Initial Investment = $500,000 + $50,000 + $30,000\n   Total Initial Investment = $580,000\n\n4. **Answer:**\n   The total initial investment (Year 0 cash outflow) is $580,000.",
+          "keyFormula": "Total Initial Investment = Equipment Cost + Installation Costs + Working Capital Investment",
+          "commonMistakes": [
+            "Forgetting to include the working capital investment as part of the initial cash outflow. Working capital is a necessary investment to support the project's operations.",
+            "Failing to include installation costs. These are directly attributable to getting the equipment ready for its intended use and are therefore part of the initial investment according to capital budgeting principles.",
+            "Incorrectly treating installation costs as an operating expense rather than a capital expenditure."
+          ],
+          "examTip": "Always double-check that you've included all relevant costs associated with the initial investment, including working capital, installation, and any other directly attributable expenses. A quick scan of the problem details before finalizing your answer can help prevent costly errors."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the annual operating cash flows (Years 1-5).",
+          "hints": [
+            "Use: OCF = (Revenue - Costs)(1-T) + Depreciation × T"
+          ],
+          "solution": {
+            "approach": "Calculate after-tax operating income plus depreciation tax shield",
+            "calculations": "Depreciation = ($500,000 + $50,000) / 5 = $110,000 per year\n\n**Method 1: Tax Shield Approach**\nAfter-tax Operating Income = (Revenue - Costs) × (1 - T)\n= ($300,000 - $120,000) × (1 - 0.25)\n= $180,000 × 0.75 = $135,000\n\nDepreciation Tax Shield = $110,000 × 0.25 = $27,500\n\n**Annual Operating Cash Flow = $135,000 + $27,500 = $162,500**\n\n**Verification Method 2:**\nEBIT = $300,000 - $120,000 - $110,000 = $70,000\nTaxes = $70,000 × 0.25 = $17,500\nNet Income = $52,500\nAdd back Depreciation = $110,000\n**OCF = $162,500** ✓",
+            "answer": 162500,
+            "explanation": "Operating cash flow accounts for the tax benefit of depreciation. Both methods yield the same result."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the annual operating cash flows for TechCorp Industries' new manufacturing equipment investment:\n\n1. **Given Information:**\n   * Revenue: $300,000 per year\n   * Costs (excluding depreciation): $120,000 per year\n   * Initial Investment: $500,000\n   * Installation Costs: $50,000\n   * Project Life: 5 years\n   * Tax Rate: 25%\n   * Depreciation Method: Straight-line\n\n2. **Formula:**\n   We will use the tax shield approach to calculate the operating cash flow (OCF):\n   *OCF = (Revenue - Costs) × (1 - Tax Rate) + (Depreciation × Tax Rate)*\n\n3. **Calculation:**\n   * **Step 1: Calculate Depreciation:**\n      The depreciable base is the initial investment plus installation costs: $500,000 + $50,000 = $550,000\n      Annual Depreciation = Depreciable Base / Useful Life = $550,000 / 5 = $110,000\n\n   * **Step 2: Calculate After-Tax Operating Income (excluding depreciation):**\n      After-tax Operating Income = (Revenue - Costs) × (1 - Tax Rate)\n      = ($300,000 - $120,000) × (1 - 0.25)\n      = $180,000 × 0.75 = $135,000\n\n   * **Step 3: Calculate Depreciation Tax Shield:**\n      Depreciation Tax Shield = Depreciation × Tax Rate\n      = $110,000 × 0.25 = $27,500\n\n   * **Step 4: Calculate Annual Operating Cash Flow:**\n      OCF = After-tax Operating Income + Depreciation Tax Shield\n      = $135,000 + $27,500 = $162,500\n\n4. **Answer:**\nThe annual operating cash flow for Years 1-5 is $162,500.",
+          "keyFormula": "OCF = (Revenue - Costs) × (1 - Tax Rate) + (Depreciation × Tax Rate)",
+          "commonMistakes": [
+            "Forgetting to include installation costs in the depreciable base. The initial investment is $500,000, but the installation costs of $50,000 must be added to arrive at the total depreciable amount of $550,000.",
+            "Using the wrong tax rate. The problem states a 25% tax rate, so ensure you are using 0.25 in your calculations.",
+            "Calculating depreciation incorrectly. Double-check that you are dividing the total depreciable base by the correct useful life (5 years in this case).",
+            "Failing to calculate the depreciation tax shield. Remember that depreciation is a non-cash expense that reduces taxable income, resulting in a tax savings."
+          ],
+          "examTip": "On the exam, quickly calculate depreciation first. Then, use the tax shield approach (After-tax Operating Income + Depreciation Tax Shield) as it's often faster than calculating EBIT, taxes, net income, and then adding back depreciation. Always double-check your work, especially the depreciation calculation, as it impacts the final OCF."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the terminal cash flow in Year 5 (including salvage and working capital recovery).",
+          "hints": [
+            "Salvage has tax implications if book value differs from sale price"
+          ],
+          "solution": {
+            "approach": "Terminal = After-tax salvage + Working capital recovery",
+            "calculations": "**Salvage Value Calculation:**\nSale Price: $40,000\nBook Value at end of Year 5: $0 (fully depreciated)\nGain on Sale: $40,000 - $0 = $40,000\nTax on Gain: $40,000 × 0.25 = $10,000\nAfter-tax Salvage: $40,000 - $10,000 = $30,000\n\n**Total Terminal Cash Flow:**\nAfter-tax Salvage: $30,000\nWorking Capital Recovery: $30,000\n**Total: $60,000**",
+            "answer": 60000,
+            "explanation": "Salvage above book value creates taxable gain. Working capital is recovered tax-free."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the terminal cash flow for Year 5:\n\n1. **Given Information:**\n   * Salvage Value in Year 5: $40,000\n   * Book Value at end of Year 5: $0 (fully depreciated)\n   * Tax Rate: 25%\n   * Working Capital Recovery: $30,000\n\n2. **Formula:**\n   * Gain on Sale = Sale Price - Book Value\n   * Tax on Gain = Gain on Sale × Tax Rate\n   * After-tax Salvage Value = Sale Price - Tax on Gain\n   * Total Terminal Cash Flow = After-tax Salvage Value + Working Capital Recovery\n\n3. **Calculation:**\n   * **Salvage Value Calculation:**\n      * Gain on Sale = $40,000 - $0 = $40,000\n      * Tax on Gain = $40,000 × 0.25 = $10,000\n      * After-tax Salvage Value = $40,000 - $10,000 = $30,000\n   * **Total Terminal Cash Flow:**\n      * After-tax Salvage Value: $30,000\n      * Working Capital Recovery: $30,000\n      * Total Terminal Cash Flow: $30,000 + $30,000 = $60,000\n\n4. **Answer:** The total terminal cash flow in Year 5 is $60,000.",
+          "keyFormula": "Total Terminal Cash Flow = After-tax Salvage Value + Working Capital Recovery; After-tax Salvage Value = Sale Price - (Tax Rate * (Sale Price - Book Value))",
+          "commonMistakes": [
+            "Forgetting to calculate the tax implications of the salvage value. If the salvage value differs from the book value, there will be a taxable gain or loss.",
+            "Failing to include the recovery of working capital in the terminal cash flow. Working capital is initially invested and then recovered at the end of the project's life.",
+            "Incorrectly calculating the gain or loss on the sale of the asset. Remember that the gain or loss is the difference between the sale price and the book value at the time of the sale.",
+            "Using the tax rate incorrectly. Make sure to multiply the gain by the tax rate, and then subtract that amount from the salvage value."
+          ],
+          "examTip": "Always remember to consider the tax implications of salvage value. If the asset is fully depreciated, the entire salvage value is taxable. Also, remember that working capital is recovered at the end of the project, so it's added to the terminal cash flow."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Calculate the Net Present Value (NPV) of the project.",
+          "solution": {
+            "approach": "NPV = PV of cash flows - Initial investment",
+            "calculations": "**Year 0:** -$580,000\n\n**Years 1-4:** $162,500 each year\nPV of Years 1-4 = $162,500 × (0.8929 + 0.7972 + 0.7118 + 0.6355)\n= $162,500 × 3.0373 = $493,562\n\n**Year 5:** $162,500 + $60,000 = $222,500\nPV of Year 5 = $222,500 × 0.5674 = $126,247\n\n**NPV = -$580,000 + $493,562 + $126,247 = $39,809**\n\nAlternatively using annuity:\nPV of Operating CFs = $162,500 × 3.6048 = $585,780\nPV of Terminal = $60,000 × 0.5674 = $34,044\nNPV = $585,780 + $34,044 - $580,000 = **$39,824** (slight difference due to rounding)",
+            "answer": 39824,
+            "explanation": "NPV is positive ($39,824), meaning the project adds value and should be accepted under NPV rule."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Net Present Value (NPV) of the project:\n\n1. **Given Information:**\n   *   Initial Investment (Year 0): -$580,000\n   *   Operating Cash Flows (Years 1-4): $162,500 per year\n   *   Terminal Cash Flow (Year 5): $60,000 (Salvage Value)\n   *   Operating Cash Flow Year 5: $162,500\n   *   Discount Rate (WACC): 12%\n\n2. **Formula:**\n   *   NPV = ∑ [Cash Flow / (1 + Discount Rate)^Year] - Initial Investment\n\n3. **Calculation:**\n   *   **Year 0:** -$580,000\n\n   *   **Year 1:** $162,500 / (1 + 0.12)^1 = $162,500 / 1.12 = $145,089.29\n   *   **Year 2:** $162,500 / (1 + 0.12)^2 = $162,500 / 1.2544 = $129,543.21\n   *   **Year 3:** $162,500 / (1 + 0.12)^3 = $162,500 / 1.4049 = $115,666.96\n   *   **Year 4:** $162,500 / (1 + 0.12)^4 = $162,500 / 1.5735 = $103,272.32\n\n   *   **Year 5:** ($162,500 + $60,000) / (1 + 0.12)^5 = $222,500 / 1.7623 = $126,250.92\n\n   *   **NPV:** -$580,000 + $145,089.29 + $129,543.21 + $115,666.96 + $103,272.32 + $126,250.92 = $39,822.70\n\n   *   **Alternative Calculation using PV Factors:**\n        * PV of Operating CFs (Years 1-4) = $162,500 * 3.0373 = $493,561.25 (using provided PV factors)\n        * PV of Terminal Value (Year 5) = $60,000 * 0.5674 = $34,044\n        * PV of Operating CF Year 5 = $162,500 * 0.5674 = $92,102.50\n        * Total PV of Inflows = $493,561.25 + $34,044 + $92,102.50 = $619,707.75\n        * NPV = $619,707.75 - $580,000 = $39,707.75\n\n4. **Answer:** The Net Present Value (NPV) of the project is approximately $39,823 (rounding the more precise calculation).",
+          "keyFormula": "NPV = ∑ [Cash Flow / (1 + Discount Rate)^Year] - Initial Investment",
+          "commonMistakes": [
+            "Forgetting to include the terminal cash flow (salvage value) in the final year's cash flow.",
+            "Using the wrong discount rate. Always use the company's Weighted Average Cost of Capital (WACC) as the discount rate unless otherwise specified.",
+            "Incorrectly calculating the present value of the cash flows by either using the wrong year or misapplying the discount factor.",
+            "Not subtracting the initial investment, resulting in an inflated NPV."
+          ],
+          "examTip": "On the exam, if you're short on time, focus on accurately calculating the present value of the largest cash flows first, as these will have the most significant impact on the NPV. Double-check your discount factors and ensure you're using the correct year for each cash flow."
+        },
+        {
+          "id": "t5",
+          "taskNumber": 5,
+          "requirement": "Recommend whether to accept or reject the project, and explain why.",
+          "solution": {
+            "approach": "Apply decision criteria based on NPV rule",
+            "calculations": "**Decision Criteria:**\n- NPV = $39,824 > $0 ✓\n- Project returns exceed 12% cost of capital\n\n**Additional Analysis:**\nProfitability Index = PV of inflows / Initial investment\n= $619,824 / $580,000 = 1.069\n\nFor every $1 invested, the project returns $1.07 in present value terms.",
+            "answer": "Accept",
+            "explanation": "The project should be ACCEPTED because NPV is positive ($39,824) and PI > 1. The project generates returns exceeding the 12% required return and adds value to shareholders."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to determine whether to accept or reject the project:\n\n1. **Given Information:**\n   * Initial Investment: $580,000\n   * Discount Rate (WACC): 12%\n   * Project NPV: $39,824\n   * Tax Rate: 25%\n\n2. **Decision Criteria:**\n   * Net Present Value (NPV): If NPV > $0, accept the project.\n   * Profitability Index (PI): If PI > 1, accept the project.\n\n3. **Calculation:**\n   * **NPV Rule:** The problem states the NPV is $39,824. Since $39,824 > $0, the project is acceptable based on the NPV rule.\n   * **Profitability Index (PI):** The profitability index is calculated as the present value of future cash flows divided by the initial investment. The present value of future cash flows is the initial investment plus the NPV. Therefore, the PV of inflows is $580,000 + $39,824 = $619,824.\n      * PI = Present Value of Future Cash Flows / Initial Investment\n      * PI = $619,824 / $580,000 = 1.069\n   * **Cost of Capital:** The project returns exceed the 12% cost of capital, as evidenced by the positive NPV.\n\n4. **Answer:**\n   * Accept the project because the NPV is positive ($39,824) and the Profitability Index (PI) is greater than 1 (1.069). The project generates returns exceeding the 12% required return and adds value to the shareholders.",
+          "keyFormula": "NPV > $0: Accept; NPV < $0: Reject. Profitability Index = Present Value of Future Cash Flows / Initial Investment",
+          "commonMistakes": [
+            "Forgetting to add the initial investment back to the NPV to get the present value of future cash flows when calculating the Profitability Index.",
+            "Incorrectly using the discount rate to calculate the PI directly, rather than using the already calculated NPV.",
+            "Rejecting a project with a positive NPV because the IRR is less than the discount rate (if IRR was provided). The NPV rule should always take precedence."
+          ],
+          "examTip": "Focus on the NPV rule as the primary decision criterion. A positive NPV always indicates a value-adding project. The PI provides additional context but should not override the NPV decision."
+        }
+      ],
+      "skills": [
+        "NPV calculation",
+        "Cash flow estimation",
+        "Tax effects",
+        "Investment decisions"
+      ],
+      "relatedConcepts": [
+        "IRR",
+        "Payback period",
+        "Profitability index",
+        "WACC"
+      ]
+    },
+    {
+      "id": "cma2-sim-002",
+      "section": "CMA2",
+      "title": "Comprehensive Ratio Analysis",
+      "blueprintArea": "CMA2-A",
+      "topic": "Financial Statement Analysis",
+      "difficulty": "medium",
+      "estimatedTime": 25,
+      "scenario": "You are a financial analyst reviewing the financial statements of Growth Industries Inc. for potential investment. The CEO is concerned about the company's performance trend and has asked for a thorough ratio analysis.\n\nFinancial data for the current and prior year is provided in the exhibits.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Income Statement (in thousands)",
+          "type": "table",
+          "data": "| Item | Current Year | Prior Year |\n|------|--------------|------------|\n| Sales | $2,400 | $2,000 |\n| Cost of Goods Sold | 1,680 | 1,360 |\n| Gross Profit | 720 | 640 |\n| Operating Expenses | 360 | 280 |\n| EBIT | 360 | 360 |\n| Interest Expense | 60 | 40 |\n| EBT | 300 | 320 |\n| Income Tax (25%) | 75 | 80 |\n| Net Income | $225 | $240 |"
+        },
+        {
+          "id": "ex2",
+          "title": "Balance Sheet (in thousands)",
+          "type": "table",
+          "data": "| Item | Current Year | Prior Year |\n|------|--------------|------------|\n| Cash | $50 | $80 |\n| Accounts Receivable | 300 | 200 |\n| Inventory | 400 | 240 |\n| Current Assets | 750 | 520 |\n| Fixed Assets (net) | 750 | 680 |\n| **Total Assets** | **$1,500** | **$1,200** |\n| Accounts Payable | 200 | 140 |\n| Short-term Debt | 100 | 60 |\n| Current Liabilities | 300 | 200 |\n| Long-term Debt | 400 | 300 |\n| Total Liabilities | 700 | 500 |\n| Shareholders' Equity | 800 | 700 |\n| **Total L + E** | **$1,500** | **$1,200** |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the following liquidity ratios for both years: Current Ratio and Quick Ratio.",
+          "solution": {
+            "approach": "Current = CA/CL; Quick = (CA - Inventory)/CL",
+            "calculations": "**Current Year:**\nCurrent Ratio = $750 / $300 = 2.50\nQuick Ratio = ($750 - $400) / $300 = $350 / $300 = 1.17\n\n**Prior Year:**\nCurrent Ratio = $520 / $200 = 2.60\nQuick Ratio = ($520 - $240) / $200 = $280 / $200 = 1.40",
+            "answer": {
+              "currentYearCR": 2.5,
+              "currentYearQR": 1.17,
+              "priorYearCR": 2.6,
+              "priorYearQR": 1.4
+            },
+            "explanation": "Liquidity has declined from prior year. While ratios are still healthy (>1), the trend is concerning."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the current and quick ratios for Growth Industries Inc. for both the current and prior year:\n\n1. **Given Information:**\n   *   **Current Year:**\n        *   Current Assets: $750\n        *   Inventory: $400\n        *   Current Liabilities: $300\n   *   **Prior Year:**\n        *   Current Assets: $520\n        *   Inventory: $240\n        *   Current Liabilities: $200\n\n2. **Formula:**\n   *   Current Ratio = Current Assets / Current Liabilities\n   *   Quick Ratio = (Current Assets - Inventory) / Current Liabilities\n\n3. **Calculation:**\n   *   **Current Year:**\n        *   Current Ratio = $750 / $300 = 2.50\n        *   Quick Ratio = ($750 - $400) / $300 = $350 / $300 = 1.17\n   *   **Prior Year:**\n        *   Current Ratio = $520 / $200 = 2.60\n        *   Quick Ratio = ($520 - $240) / $200 = $280 / $200 = 1.40\n\n4. **Answer:**\n   *   Current Year Current Ratio: 2.50\n   *   Current Year Quick Ratio: 1.17\n   *   Prior Year Current Ratio: 2.60\n   *   Prior Year Quick Ratio: 1.40",
+          "keyFormula": "Current Ratio = Current Assets / Current Liabilities; Quick Ratio = (Current Assets - Inventory) / Current Liabilities",
+          "commonMistakes": [
+            "Forgetting to subtract inventory from current assets when calculating the quick ratio. The quick ratio, also known as the acid-test ratio, excludes inventory because it is often the least liquid current asset.",
+            "Using total assets instead of current assets in the current ratio calculation. Remember that the current ratio specifically focuses on the relationship between current assets and current liabilities.",
+            "Incorrectly identifying current assets or current liabilities from the financial statements. Ensure you are using the correct figures from the balance sheet.",
+            "Rounding errors can occur if intermediate calculations are not carried out to a sufficient number of decimal places. Maintain precision throughout the calculation and round only the final answer."
+          ],
+          "examTip": "Memorize the formulas for both ratios. On exam day, quickly identify the necessary components from the balance sheet (Current Assets, Inventory, and Current Liabilities). Double-check that you're using the correct numbers before performing the calculations to avoid careless errors."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the DuPont 3-factor decomposition of ROE for both years.",
+          "hints": [
+            "ROE = Profit Margin × Asset Turnover × Equity Multiplier"
+          ],
+          "solution": {
+            "approach": "Calculate each component then multiply",
+            "calculations": "**Current Year:**\nProfit Margin = $225 / $2,400 = 9.38%\nAsset Turnover = $2,400 / $1,500 = 1.60\nEquity Multiplier = $1,500 / $800 = 1.875\nROE = 9.38% × 1.60 × 1.875 = **28.13%**\n\nVerification: $225 / $800 = 28.13% ✓\n\n**Prior Year:**\nProfit Margin = $240 / $2,000 = 12.00%\nAsset Turnover = $2,000 / $1,200 = 1.67\nEquity Multiplier = $1,200 / $700 = 1.714\nROE = 12.00% × 1.67 × 1.714 = **34.29%**\n\nVerification: $240 / $700 = 34.29% ✓",
+            "answer": {
+              "currentROE": 28.13,
+              "priorROE": 34.29
+            },
+            "explanation": "ROE declined from 34.29% to 28.13%. Main driver: Profit margin dropped from 12% to 9.38%."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the DuPont 3-factor decomposition of ROE for both the current and prior years:\n\n**1. Given Information:**\n   *Current Year:*\n      * Net Income: $225\n      * Sales: $2,400\n      * Total Assets: $1,500\n      * Total Equity: $800\n   *Prior Year:*\n      * Net Income: $240\n      * Sales: $2,000\n      * Total Assets: $1,200\n      * Total Equity: $700\n\n**2. Formula:**\n   The DuPont 3-factor decomposition of ROE is:\n   ROE = Profit Margin × Asset Turnover × Equity Multiplier\n   Where:\n      * Profit Margin = Net Income / Sales\n      * Asset Turnover = Sales / Total Assets\n      * Equity Multiplier = Total Assets / Total Equity\n\n**3. Calculation:**\n   *Current Year:*\n      * Profit Margin = $225 / $2,400 = 0.09375 or 9.38%\n      * Asset Turnover = $2,400 / $1,500 = 1.60\n      * Equity Multiplier = $1,500 / $800 = 1.875\n      * ROE = 9.38% × 1.60 × 1.875 = 0.28125 or 28.13%\n\n   *Prior Year:*\n      * Profit Margin = $240 / $2,000 = 0.12 or 12.00%\n      * Asset Turnover = $2,000 / $1,200 = 1.67\n      * Equity Multiplier = $1,200 / $700 = 1.714\n      * ROE = 12.00% × 1.67 × 1.714 = 0.34286 or 34.29%\n\n**4. Answer:**\n   * Current Year ROE: 28.13%\n   * Prior Year ROE: 34.29%",
+          "keyFormula": "ROE = Profit Margin × Asset Turnover × Equity Multiplier",
+          "commonMistakes": [
+            "Incorrectly calculating profit margin by using revenue instead of sales.",
+            "Using the wrong average balances for assets or equity when calculating turnover or the equity multiplier. The problem did not specify average balances, so beginning or ending balances were used.",
+            "Forgetting to convert the profit margin (which is a decimal) into a percentage before multiplying it with the other ratios."
+          ],
+          "examTip": "Memorize the DuPont formula and its components. Practice breaking down ROE into its drivers to quickly identify areas of strength and weakness in a company's performance. Pay close attention to the numbers provided and ensure you are using the correct figures for each calculation."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate Days Sales Outstanding (DSO) and Inventory Turnover for both years.",
+          "hints": [
+            "Use average balances for turnover ratios"
+          ],
+          "solution": {
+            "approach": "DSO = (AR/Sales) × 365; Inv Turnover = COGS/Avg Inventory",
+            "calculations": "**Current Year:**\nDSO = ($300 / $2,400) × 365 = 45.6 days\nAvg Inventory = ($400 + $240) / 2 = $320\nInventory Turnover = $1,680 / $320 = 5.25 times\nDays in Inventory = 365 / 5.25 = 69.5 days\n\n**Prior Year:**\nDSO = ($200 / $2,000) × 365 = 36.5 days\n(Using ending inventory only for prior year)\nInventory Turnover = $1,360 / $240 = 5.67 times\nDays in Inventory = 365 / 5.67 = 64.4 days",
+            "answer": {
+              "currentDSO": 45.6,
+              "currentInvTurn": 5.25,
+              "priorDSO": 36.5,
+              "priorInvTurn": 5.67
+            },
+            "explanation": "Collections have slowed (DSO up 9 days) and inventory is turning slower. Working capital efficiency has deteriorated."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate Days Sales Outstanding (DSO) and Inventory Turnover for both the current and prior years:\n\n1. **Given Information:**\n   *   **Current Year:**\n        *   Accounts Receivable: $300\n        *   Sales: $2,400\n        *   Cost of Goods Sold (COGS): $1,680\n        *   Beginning Inventory: $400\n        *   Ending Inventory: $240\n   *   **Prior Year:**\n        *   Accounts Receivable: $200\n        *   Sales: $2,000\n        *   Cost of Goods Sold (COGS): $1,360\n        *   Ending Inventory: $240\n\n2. **Formula:**\n   *   Days Sales Outstanding (DSO) = (Accounts Receivable / Sales) × 365\n   *   Inventory Turnover = Cost of Goods Sold / Average Inventory\n   *   Average Inventory = (Beginning Inventory + Ending Inventory) / 2\n\n3. **Calculation:**\n   *   **Current Year:**\n        *   DSO = ($300 / $2,400) × 365 = 0.125 x 365 = 45.625 days. Rounded to 45.6 days.\n        *   Average Inventory = ($400 + $240) / 2 = $640 / 2 = $320\n        *   Inventory Turnover = $1,680 / $320 = 5.25 times\n        *   Days in Inventory = 365 / 5.25 = 69.52 days. Rounded to 69.5 days\n   *   **Prior Year:**\n        *   DSO = ($200 / $2,000) × 365 = 0.1 x 365 = 36.5 days\n        *   Average Inventory = Since beginning inventory is not provided, we will use ending inventory as a proxy. Average inventory = $240\n        *   Inventory Turnover = $1,360 / $240 = 5.6667 times. Rounded to 5.67 times\n        *   Days in Inventory = 365 / 5.67 = 64.37 days. Rounded to 64.4 days\n\n4. **Answer:**\n   *   Current Year DSO: 45.6 days\n   *   Current Year Inventory Turnover: 5.25 times\n   *   Prior Year DSO: 36.5 days\n   *   Prior Year Inventory Turnover: 5.67 times",
+          "keyFormula": "Days Sales Outstanding (DSO) = (Accounts Receivable / Sales) × 365; Inventory Turnover = Cost of Goods Sold / Average Inventory",
+          "commonMistakes": [
+            "Using ending inventory instead of average inventory for the inventory turnover calculation. Remember to use the average inventory to get a more accurate representation of how efficiently inventory is being managed.",
+            "Forgetting to annualize the DSO calculation by multiplying the (AR/Sales) ratio by 365. This step is crucial to express DSO in terms of days.",
+            "Using Sales instead of Cost of Goods Sold (COGS) in the inventory turnover calculation. Inventory turnover measures how many times a company has sold and replaced inventory during a period, which is directly related to COGS."
+          ],
+          "examTip": "When calculating ratios, double-check that you are using the correct figures from the financial statements. A simple mistake in transcribing a number can lead to a completely wrong answer. Pay close attention to whether the problem requires you to use average balances or year-end balances."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Provide a summary assessment of the company's financial performance trend with specific concerns.",
+          "solution": {
+            "approach": "Synthesize ratio analysis into actionable insights",
+            "calculations": "**Performance Summary:**\n\n| Metric | Current | Prior | Trend |\n|--------|---------|-------|-------|\n| ROE | 28.1% | 34.3% | ↓ |\n| Profit Margin | 9.4% | 12.0% | ↓ |\n| Current Ratio | 2.50 | 2.60 | ↓ |\n| Quick Ratio | 1.17 | 1.40 | ↓ |\n| DSO | 45.6 days | 36.5 days | ↓ |\n| Inventory Turnover | 5.25× | 5.67× | ↓ |\n| Debt/Equity | 87.5% | 71.4% | ↑ |",
+            "answer": "Declining profitability and working capital efficiency",
+            "explanation": "**Key Concerns:**\n\n1. **Profitability Decline**: Despite 20% sales growth, net income fell 6%. COGS increased from 68% to 70% of sales, and operating expenses rose faster than revenue.\n\n2. **Working Capital Deterioration**: AR and inventory grew faster than sales, indicating collection and inventory management issues. Cash declined significantly.\n\n3. **Increased Leverage**: Debt-to-equity rose from 71% to 88%. Interest expense increased 50% while EBIT was flat, causing EBT to decline.\n\n4. **Collection Slowdown**: DSO increased from 36.5 to 45.6 days, potentially indicating credit quality issues or more aggressive credit terms.\n\n**Recommendations:**\n- Investigate pricing power and cost control\n- Review credit policies and collection efforts\n- Assess inventory management practices\n- Evaluate capital structure sustainability"
+          },
+          "points": 25,
+          "enhanced": true
+        }
+      ],
+      "skills": [
+        "Ratio analysis",
+        "DuPont analysis",
+        "Trend analysis",
+        "Financial interpretation"
+      ],
+      "relatedConcepts": [
+        "Liquidity",
+        "Profitability",
+        "Efficiency",
+        "Leverage"
+      ]
+    },
+    {
+      "id": "cma2-sim-003",
+      "section": "CMA2",
+      "title": "Cost of Capital Calculation",
+      "blueprintArea": "CMA2-B",
+      "topic": "WACC and Component Costs",
+      "difficulty": "hard",
+      "estimatedTime": 25,
+      "scenario": "Global Manufacturing Corp. is evaluating its cost of capital for an upcoming investment decision. The CFO has asked you to calculate the weighted average cost of capital (WACC) using current market data.\n\nCapital structure and market information is provided in Exhibit 1.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Capital Structure and Market Data",
+          "type": "table",
+          "data": "**Current Capital Structure:**\n| Source | Book Value | Market Value |\n|--------|------------|--------------|\n| Common Stock (2M shares) | $20M | $30M |\n| Preferred Stock (500K shares) | $5M | $4M |\n| Bonds (8% coupon, 10-year) | $15M | $14M |\n| **Total** | **$40M** | **$48M** |\n\n**Additional Information:**\n- Common stock current price: $15.00 per share\n- Last dividend paid: $1.20 per share\n- Expected dividend growth rate: 5% annually\n- Risk-free rate: 4%\n- Market risk premium: 6%\n- Company beta: 1.25\n- Preferred stock dividend: $2.00 per share\n- Preferred stock current price: $8.00 per share\n- Bonds yield to maturity: 9%\n- Corporate tax rate: 25%"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the cost of common equity using both CAPM and the Dividend Growth Model. Average the two methods for your final cost of equity.",
+          "hints": [
+            "CAPM: re = rf + β(rm-rf)",
+            "Gordon: re = D1/P0 + g"
+          ],
+          "solution": {
+            "approach": "Apply both models and average",
+            "calculations": "**CAPM Method:**\nre = rf + β(rm - rf)\nre = 4% + 1.25 × 6%\nre = 4% + 7.5% = **11.5%**\n\n**Dividend Growth Model (Gordon):**\nD1 = D0 × (1 + g) = $1.20 × 1.05 = $1.26\nre = D1/P0 + g\nre = $1.26/$15.00 + 5%\nre = 8.4% + 5% = **13.4%**\n\n**Average Cost of Equity:**\nre = (11.5% + 13.4%) / 2 = **12.45%**",
+            "answer": 12.45,
+            "explanation": "Using both methods and averaging provides a more robust estimate. The difference suggests some uncertainty in inputs."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of common equity using both the Capital Asset Pricing Model (CAPM) and the Dividend Growth Model, and then average the results:\n\n1. **Given Information:**\n   * Risk-free rate (rf) = 4%\n   * Beta (β) = 1.25\n   * Market risk premium (rm - rf) = 6%\n   * Current dividend per share (D0) = $1.20\n   * Dividend growth rate (g) = 5%\n   * Current stock price (P0) = $15.00\n\n2. **Formula:**\n   * CAPM: re = rf + β(rm - rf)\n   * Dividend Growth Model (Gordon): re = D1/P0 + g, where D1 = D0 * (1 + g)\n\n3. **Calculation:**\n   * **CAPM Method:**\n      * re = 4% + 1.25 × 6%\n      * re = 4% + 7.5%\n      * re = 11.5%\n   * **Dividend Growth Model (Gordon):**\n      * First, calculate the expected dividend for next year (D1):\n         * D1 = $1.20 × (1 + 5%)\n         * D1 = $1.20 × 1.05\n         * D1 = $1.26\n      * Now, calculate the cost of equity using the Gordon Growth Model:\n         * re = $1.26 / $15.00 + 5%\n         * re = 0.084 + 0.05\n         * re = 8.4% + 5%\n         * re = 13.4%\n   * **Average Cost of Equity:**\n      * re = (11.5% + 13.4%) / 2\n      * re = 24.9% / 2\n      * re = 12.45%\n\n4. **Answer:**\nThe average cost of common equity is 12.45%.",
+          "keyFormula": "CAPM: re = rf + β(rm - rf); Gordon: re = D1/P0 + g, where D1 = D0 * (1 + g)",
+          "commonMistakes": [
+            "Forgetting to calculate D1 (the dividend expected next year) before applying the Gordon Growth Model. Using D0 instead of D1 will lead to an incorrect cost of equity.",
+            "Using the market return (rm) instead of the market risk premium (rm - rf) in the CAPM formula. The market risk premium is the *difference* between the market return and the risk-free rate.",
+            "Failing to convert percentages to decimals (or vice versa) consistently throughout the calculation. For example, using 4 instead of 0.04 for the risk-free rate."
+          ],
+          "examTip": "When calculating the cost of equity using multiple methods, pay close attention to the inputs provided. If the dividend growth rate is not explicitly given, you may need to calculate it from historical dividend data. Always double-check your formulas and ensure you are using the correct values for each variable."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the cost of preferred stock.",
+          "solution": {
+            "approach": "Cost of preferred = Dividend / Price",
+            "calculations": "rp = Annual Dividend / Current Price\nrp = $2.00 / $8.00\nrp = **25%**",
+            "answer": 25,
+            "explanation": "Preferred stock cost is high because the stock is trading at a discount to its par value ($8 vs implied par of ~$10)."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of preferred stock:\n\n1. **Given Information:**\n   *   Annual Preferred Stock Dividend: $2.00 per share\n   *   Current Market Price of Preferred Stock: $8.00 per share\n\n2. **Formula:**\n   The cost of preferred stock (rp) is calculated as:\n   rp = Annual Preferred Stock Dividend / Current Market Price of Preferred Stock\n\n3. **Calculation:**\n   rp = $2.00 / $8.00\n   rp = 0.25\n   rp = 25%\n\n4. **Answer:**\n   The cost of preferred stock is 25%.",
+          "keyFormula": "Cost of Preferred Stock = Annual Preferred Stock Dividend / Current Market Price of Preferred Stock",
+          "commonMistakes": [
+            "Using the par value of the preferred stock instead of the current market price. The cost of capital calculation should always use current market values.",
+            "Forgetting to convert the result to a percentage. The cost of preferred stock is typically expressed as a percentage.",
+            "Incorrectly identifying the annual dividend. Make sure to use the *annual* dividend per share, not any other dividend amount (e.g., quarterly)."
+          ],
+          "examTip": "Quickly identify the dividend and market price. Divide the dividend by the price and convert to a percentage. Don't overthink it!"
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the after-tax cost of debt.",
+          "solution": {
+            "approach": "After-tax cost = YTM × (1 - Tax rate)",
+            "calculations": "Before-tax cost of debt = YTM = 9%\n\nAfter-tax cost of debt:\nrd × (1 - T) = 9% × (1 - 0.25)\nrd × (1 - T) = 9% × 0.75 = **6.75%**",
+            "answer": 6.75,
+            "explanation": "Debt cost is reduced by the tax shield because interest is tax-deductible."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *  Yield to Maturity (YTM) on Debt: 9%\n   *  Tax Rate: 25%\n\n2. **Formula:**\n   *  After-tax cost of debt = Before-tax cost of debt × (1 - Tax rate)\n   *  rd (after-tax) = rd (before-tax) × (1 - T)\n\n3. **Calculation:**\n   *  The before-tax cost of debt is the YTM, which is 9%.\n   *  After-tax cost of debt = 9% × (1 - 25%)\n   *  After-tax cost of debt = 9% × (1 - 0.25)\n   *  After-tax cost of debt = 9% × 0.75\n   *  After-tax cost of debt = 6.75%\n\n4. **Answer:**\n   *  The after-tax cost of debt is 6.75%.",
+          "keyFormula": "After-tax cost of debt = Before-tax cost of debt × (1 - Tax rate)",
+          "commonMistakes": [
+            "Forgetting to adjust the cost of debt for the tax shield. Interest expense is tax-deductible, so the after-tax cost is lower than the before-tax cost.",
+            "Using the coupon rate of the debt instead of the yield to maturity (YTM). The YTM reflects the current market rate for the company's debt, which is the relevant rate for WACC calculations. The coupon rate is a historical rate.",
+            "Incorrectly calculating (1 - Tax rate). Ensure you are subtracting the tax rate from 1 (100%) before multiplying by the YTM.",
+            "Using the effective interest rate instead of the YTM. The YTM is the appropriate rate to use for WACC calculations."
+          ],
+          "examTip": "Always remember that interest expense is tax deductible, so the after-tax cost of debt will always be lower than the before-tax cost. If you calculate an after-tax cost of debt higher than the before-tax cost, you've made a mistake."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Calculate the WACC using market value weights.",
+          "hints": [
+            "Use market values, not book values for weights"
+          ],
+          "solution": {
+            "approach": "WACC = weighted sum of component costs",
+            "calculations": "**Market Value Weights:**\nTotal Market Value = $30M + $4M + $14M = $48M\n\nEquity Weight = $30M / $48M = 62.5%\nPreferred Weight = $4M / $48M = 8.33%\nDebt Weight = $14M / $48M = 29.17%\n\n**WACC Calculation:**\nWACC = (we × re) + (wp × rp) + (wd × rd × (1-T))\nWACC = (0.625 × 12.45%) + (0.0833 × 25%) + (0.2917 × 6.75%)\nWACC = 7.78% + 2.08% + 1.97%\nWACC = **11.83%**",
+            "answer": 11.83,
+            "explanation": "WACC of 11.83% is the hurdle rate for investment decisions. Projects must earn above this to create value."
+          },
+          "points": 40,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Weighted Average Cost of Capital (WACC) using market value weights:\n\n1. **Given Information:**\n   *   Market Value of Equity: $30,000,000\n   *   Market Value of Preferred Stock: $4,000,000\n   *   Market Value of Debt: $14,000,000\n   *   Cost of Equity (re): 12.45%\n   *   Cost of Preferred Stock (rp): 25%\n   *   Cost of Debt (rd): 6.75%\n   *   Tax Rate (T): Assume 0% since not provided in the scenario. If a tax rate was provided, it would be used in the after-tax cost of debt calculation.\n\n2. **Formula:**\n   *   WACC = (we × re) + (wp × rp) + (wd × rd × (1-T))\n   *   Where:\n        *   we = weight of equity\n        *   re = cost of equity\n        *   wp = weight of preferred stock\n        *   rp = cost of preferred stock\n        *   wd = weight of debt\n        *   rd = cost of debt\n        *   T = tax rate\n\n3. **Calculation:**\n   *   **Step 1: Calculate Total Market Value**\n        *   Total Market Value = Market Value of Equity + Market Value of Preferred Stock + Market Value of Debt\n        *   Total Market Value = $30,000,000 + $4,000,000 + $14,000,000 = $48,000,000\n\n   *   **Step 2: Calculate Market Value Weights**\n        *   Equity Weight (we) = Market Value of Equity / Total Market Value\n        *   we = $30,000,000 / $48,000,000 = 0.625 or 62.5%\n        *   Preferred Stock Weight (wp) = Market Value of Preferred Stock / Total Market Value\n        *   wp = $4,000,000 / $48,000,000 = 0.0833 or 8.33%\n        *   Debt Weight (wd) = Market Value of Debt / Total Market Value\n        *   wd = $14,000,000 / $48,000,000 = 0.2917 or 29.17%\n\n   *   **Step 3: Calculate WACC**\n        *   WACC = (we × re) + (wp × rp) + (wd × rd × (1-T))\n        *   WACC = (0.625 × 12.45%) + (0.0833 × 25%) + (0.2917 × 6.75% × (1-0))\n        *   WACC = (0.625 × 0.1245) + (0.0833 × 0.25) + (0.2917 × 0.0675)\n        *   WACC = 0.0778 + 0.0208 + 0.0197\n        *   WACC = 0.1183 or 11.83%\n\n4. **Answer:**\n   *   The Weighted Average Cost of Capital (WACC) is 11.83%.",
+          "keyFormula": "WACC = (we × re) + (wp × rp) + (wd × rd × (1-T))",
+          "commonMistakes": [
+            "Using book values instead of market values for calculating the weights. Market values reflect the current cost of capital more accurately.",
+            "Forgetting to adjust the cost of debt for the tax rate. The interest expense on debt is tax-deductible, which reduces the effective cost of debt. In this case, the tax rate was assumed to be 0%.",
+            "Incorrectly calculating the market value weights. Ensure that the weights are calculated by dividing the market value of each component by the TOTAL market value of all components.",
+            "Using the coupon rate of existing debt instead of the current yield to maturity (YTM) of similar debt. The YTM reflects the current market cost of borrowing."
+          ],
+          "examTip": "Always double-check that your weights add up to 100%. This is a quick way to verify that you haven't made a calculation error in determining the capital structure weights. Also, pay close attention to whether the problem provides book values or market values and use the correct values for the calculation."
+        }
+      ],
+      "skills": [
+        "WACC calculation",
+        "Cost of equity",
+        "Cost of debt",
+        "Capital structure"
+      ],
+      "relatedConcepts": [
+        "CAPM",
+        "Gordon Growth Model",
+        "Tax shield",
+        "Market values"
+      ]
+    },
+    {
+      "id": "cma2-sim-004",
+      "section": "CMA2",
+      "title": "Enterprise Risk Assessment",
+      "blueprintArea": "CMA2-D",
+      "topic": "Risk Identification and Response",
+      "difficulty": "medium",
+      "estimatedTime": 20,
+      "scenario": "TechStart Inc., a growing SaaS company, is implementing an enterprise risk management (ERM) program. As the new risk manager, you've been asked to assess the company's top risks and recommend appropriate responses.\n\nThe company's risk register and financial context are provided in the exhibits.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Identified Risks",
+          "type": "table",
+          "data": "| Risk ID | Risk Description | Likelihood (1-5) | Impact (1-5) |\n|---------|------------------|------------------|--------------|\n| R1 | Customer data breach | 3 | 5 |\n| R2 | Key developer resignation | 4 | 4 |\n| R3 | Cloud provider outage | 2 | 5 |\n| R4 | Customer concentration (top 3 = 40%) | 3 | 4 |\n| R5 | Foreign currency exposure | 4 | 2 |\n| R6 | Regulatory compliance changes | 2 | 3 |"
+        },
+        {
+          "id": "ex2",
+          "title": "Company Context",
+          "type": "text",
+          "data": "- Annual revenue: $25 million\n- EBITDA margin: 15%\n- Cash reserves: $5 million\n- Employee count: 120 (25 developers)\n- Primary market: US (70%), Europe (30%)\n- Customer base: 500 enterprise clients\n- Average contract value: $50,000"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the risk score for each identified risk and rank them by priority.",
+          "solution": {
+            "approach": "Risk Score = Likelihood × Impact; rank highest to lowest",
+            "calculations": "| Risk ID | Likelihood | Impact | Score | Rank |\n|---------|------------|--------|-------|------|\n| R1 | 3 | 5 | 15 | 2 |\n| R2 | 4 | 4 | 16 | 1 |\n| R3 | 2 | 5 | 10 | 4 |\n| R4 | 3 | 4 | 12 | 3 |\n| R5 | 4 | 2 | 8 | 5 |\n| R6 | 2 | 3 | 6 | 6 |\n\n**Priority Ranking:**\n1. R2 - Key developer resignation (16)\n2. R1 - Customer data breach (15)\n3. R4 - Customer concentration (12)\n4. R3 - Cloud provider outage (10)\n5. R5 - Foreign currency (8)\n6. R6 - Regulatory changes (6)",
+            "answer": {
+              "r1": 15,
+              "r2": 16,
+              "r3": 10,
+              "r4": 12,
+              "r5": 8,
+              "r6": 6
+            },
+            "explanation": "Key talent risk ranks highest due to frequency and significant business impact."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   - Risk R1 (Customer data breach): Likelihood = 3, Impact = 5\n   - Risk R2 (Key developer resignation): Likelihood = 4, Impact = 4\n   - Risk R3 (Cloud provider outage): Likelihood = 2, Impact = 5\n   - Risk R4 (Customer concentration): Likelihood = 3, Impact = 4\n   - Risk R5 (Foreign currency): Likelihood = 4, Impact = 2\n   - Risk R6 (Regulatory changes): Likelihood = 2, Impact = 3\n\n2. **Formula:**\n   - Risk Score = Likelihood × Impact\n\n3. **Calculation:**\n   - Risk R1: Risk Score = 3 × 5 = 15\n   - Risk R2: Risk Score = 4 × 4 = 16\n   - Risk R3: Risk Score = 2 × 5 = 10\n   - Risk R4: Risk Score = 3 × 4 = 12\n   - Risk R5: Risk Score = 4 × 2 = 8\n   - Risk R6: Risk Score = 2 × 3 = 6\n\n4. **Answer:**\n   - R1 = 15\n   - R2 = 16\n   - R3 = 10\n   - R4 = 12\n   - R5 = 8\n   - R6 = 6",
+          "keyFormula": "Risk Score = Likelihood × Impact",
+          "commonMistakes": [
+            "Multiplying instead of adding likelihood and impact.",
+            "Incorrectly assigning the likelihood or impact values to the wrong risk.",
+            "Forgetting to calculate the risk score for all identified risks before ranking."
+          ],
+          "examTip": "Quickly scan the exhibit for likelihood and impact values. Write them down next to the risk description to avoid errors. Double-check your multiplication before ranking to ensure accuracy. Focus on the highest scores first, as those will likely determine the correct answer."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "For the top 3 risks, recommend an appropriate risk response strategy (Avoid, Reduce, Share, Accept) and specific actions.",
+          "solution": {
+            "approach": "Apply TARA framework with specific mitigations",
+            "calculations": "**R2: Key Developer Resignation (Score: 16)**\nStrategy: REDUCE\nActions:\n- Implement retention bonuses tied to vesting\n- Cross-train team members on critical systems\n- Document all proprietary code and processes\n- Establish competitive compensation benchmarking\nEst. cost: $200K annually for retention + training\n\n**R1: Customer Data Breach (Score: 15)**\nStrategy: SHARE + REDUCE\nActions:\n- Purchase cyber liability insurance ($2M coverage)\n- Implement SOC 2 Type II certification\n- Deploy advanced threat detection\n- Regular penetration testing\nEst. cost: $150K insurance + $100K security improvements\n\n**R4: Customer Concentration (Score: 12)**\nStrategy: REDUCE\nActions:\n- Accelerate marketing to mid-market segment\n- Develop partner/reseller channel\n- Implement customer diversification targets\n- Limit new contracts with top customers to 5% growth\nEst. cost: $300K increased marketing",
+            "answer": "R2-Reduce, R1-Share/Reduce, R4-Reduce",
+            "explanation": "Risk response strategies should be proportional to risk score and aligned with company resources."
+          },
+          "points": 35,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   **R2: Key Developer Resignation (Score: 16)** - Impact: High, Probability: Likely\n   *   **R1: Customer Data Breach (Score: 15)** - Impact: High, Probability: Possible\n   *   **R4: Customer Concentration (Score: 12)** - Impact: Medium, Probability: Likely\n   *   Risk Response Strategies: Avoid, Reduce, Share, Accept\n\n2. **Formula:**\n   *   Risk Score = Impact x Probability (This is implied from the scenario, not explicitly stated)\n   *   TARA Framework: Transfer, Avoid, Reduce, Accept. This framework guides the selection of risk response strategies.\n\n3. **Calculation:**\n   *   **R2: Key Developer Resignation (Score: 16)**\n      *   Strategy: REDUCE - Reducing the likelihood or impact of the risk.\n      *   Actions:\n          *   Implement retention bonuses tied to vesting: Estimated cost $200K annually.\n          *   Cross-train team members on critical systems: Included in $200K estimate.\n          *   Document all proprietary code and processes: Included in $200K estimate.\n          *   Establish competitive compensation benchmarking: Included in $200K estimate.\n   *   **R1: Customer Data Breach (Score: 15)**\n      *   Strategy: SHARE + REDUCE - Sharing the risk through insurance and reducing the likelihood and impact through security measures.\n      *   Actions:\n          *   Purchase cyber liability insurance ($2M coverage): Estimated cost $150K annually.\n          *   Implement SOC 2 Type II certification: Estimated cost included in security improvements.\n          *   Deploy advanced threat detection: Estimated cost included in security improvements.\n          *   Regular penetration testing: Estimated cost included in security improvements.\n          *   Total Security Improvements: $100K\n   *   **R4: Customer Concentration (Score: 12)**\n      *   Strategy: REDUCE - Reducing the impact of the risk by diversifying the customer base.\n      *   Actions:\n          *   Accelerate marketing to mid-market segment: Estimated cost $300K.\n          *   Develop partner/reseller channel: Included in $300K estimate.\n          *   Implement customer diversification targets: Included in $300K estimate.\n          *   Limit new contracts with top customers to 5% growth: Included in $300K estimate.\n\n4. **Answer:**\n   *   R2 - Reduce\n   *   R1 - Share/Reduce\n   *   R4 - Reduce",
+          "keyFormula": "Risk Score = Impact x Probability; TARA (Transfer, Avoid, Reduce, Accept) Framework",
+          "commonMistakes": [
+            "Choosing an inappropriate risk response strategy (e.g., Avoid for a risk that can be easily mitigated).",
+            "Failing to consider the cost-benefit of each risk response action.",
+            "Selecting only one risk response strategy when a combination of strategies (e.g., Share and Reduce) is more appropriate.",
+            "Not aligning the risk response strategy with the company's risk appetite."
+          ],
+          "examTip": "Prioritize risks based on their risk score and select risk responses that are both effective and cost-efficient. Consider the long-term implications of each risk response strategy."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the potential financial impact if each top 3 risk materializes.",
+          "solution": {
+            "approach": "Estimate revenue/cost impact using company context",
+            "calculations": "**R2: Key Developer Impact**\n- Critical developer supports $8M ARR products\n- 6-month replacement time = $4M at risk\n- Productivity loss during transition: $500K\n**Potential Impact: $4.5M (18% of revenue)**\n\n**R1: Data Breach Impact**\n- Average data breach cost per Ponemon: $150/record\n- Estimated records: 500 customers × 1000 users = 500K\n- But SaaS likely 50K actual PII records\n- Direct cost: $7.5M (but likely $2-5M range)\n- Reputation damage: 10% customer churn = $2.5M\n**Potential Impact: $5-10M (20-40% of revenue)**\n\n**R4: Customer Concentration Impact**\n- Top 3 customers = 40% × $25M = $10M\n- Loss of largest customer (est. $4M): 16% revenue\n**Potential Impact: $2-4M per major customer loss**",
+            "answer": {
+              "r2Impact": 4500000,
+              "r1Impact": 7500000,
+              "r4Impact": 4000000
+            },
+            "explanation": "Data breach has highest potential impact, but key talent has highest combined probability × impact."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the potential financial impact of each of the top 3 risks identified by TechStart Inc.:\n\n1. **Given Information:**\n   *   **R2: Key Developer Departure:** Critical developer supports $8M Annual Recurring Revenue (ARR) products. Replacement time is estimated at 6 months. Productivity loss during the transition is estimated at $500K.\n   *   **R1: Data Breach:** Average data breach cost is $150 per record (based on Ponemon Institute data). TechStart has 500 customers, each with approximately 1,000 users. The number of Personally Identifiable Information (PII) records is estimated at 50,000. Potential customer churn due to reputation damage is estimated at 10%.\n   *   **R4: Customer Concentration:** Top 3 customers account for 40% of the company's $25M total revenue. The loss of the largest customer is estimated to impact $4M in revenue.\n\n2. **Formula:**\n   *   **R2 Impact:** (ARR Supported by Developer / 2) + Productivity Loss\n   *   **R1 Impact (Direct Cost):** Cost per Record * Number of PII Records\n   *   **R1 Impact (Reputation Damage):** Churn Percentage * Total Revenue\n   *   **R4 Impact:** Revenue from Largest Customer\n\n3. **Calculation:**\n   *   **R2: Key Developer Departure Impact**\n        *   ARR Supported by Developer: $8,000,000\n        *   6-Month Revenue at Risk: $8,000,000 / 2 = $4,000,000\n        *   Productivity Loss: $500,000\n        *   Total Potential Impact: $4,000,000 + $500,000 = $4,500,000\n\n   *   **R1: Data Breach Impact**\n        *   Cost per Record: $150\n        *   Number of PII Records: 50,000\n        *   Direct Cost: $150 * 50,000 = $7,500,000\n        *   Churn Percentage: 10%\n        *   Total Revenue: $25,000,000\n        *   Reputation Damage: 10% * $25,000,000 = $2,500,000\n        *   Total Potential Impact: $7,500,000 + $2,500,000 = $10,000,000\n\n   *   **R4: Customer Concentration Impact**\n        *   Revenue from Largest Customer: $4,000,000\n\n4. **Answer:**\n   *   R2 Impact: $4,500,000\n   *   R1 Impact: $10,000,000\n   *   R4 Impact: $4,000,000",
+          "keyFormula": "Impact Calculation = Probability of Occurrence * Estimated Financial Loss",
+          "commonMistakes": [
+            "Failing to correctly identify the number of PII records in the data breach scenario, leading to an inaccurate direct cost calculation. Candidates might use the total number of user accounts instead of the number of records containing sensitive information.",
+            "Forgetting to include the productivity loss when calculating the impact of the key developer departure.",
+            "Using the total revenue from the top 3 customers instead of the revenue associated with the *largest* customer when calculating the impact of customer concentration."
+          ],
+          "examTip": "Focus on identifying the most relevant data provided in the scenario. Not all information is necessary for every calculation. Pay close attention to units (e.g., ARR vs. total revenue) and percentages to avoid calculation errors. Always double-check your work!"
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Recommend key risk indicators (KRIs) to monitor for the highest-priority risk.",
+          "solution": {
+            "approach": "Identify leading indicators for R2 (talent risk)",
+            "calculations": "**Key Risk Indicators for R2 (Key Developer Risk):**\n\n| KRI | Target | Red Flag |\n|-----|--------|----------|\n| Developer turnover rate | <10% | >15% |\n| Time to fill open positions | <45 days | >90 days |\n| Employee engagement score | >4.0/5.0 | <3.5 |\n| Comp ratio to market | 90-100% | <85% |\n| GitHub commit activity | Stable | -30% trend |\n| Training hours per dev | >40/year | <20/year |\n| Cross-training coverage | >2 per system | <2 |\n\n**Monitoring Frequency:** Monthly review with quarterly deep-dive",
+            "answer": "Turnover rate, engagement score, comp ratio, cross-training coverage",
+            "explanation": "KRIs should be leading indicators that provide early warning before the risk materializes."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   The scenario identifies the need to recommend Key Risk Indicators (KRIs) for the highest-priority risk, which based on the risk register (not provided, but assumed to be R2 - Key Developer Risk based on the solution approach). We need to identify leading indicators for this risk.\n   *   The solution approach suggests the following KRIs to monitor: Developer turnover rate, Time to fill open positions, Employee engagement score, Comp ratio to market, GitHub commit activity, Training hours per dev, and Cross-training coverage.\n   *   The solution approach also provides target and red flag values for each KRI.\n\n2. **Formula:**\n   *   Developer Turnover Rate = (Number of Developers Who Left During the Period / Average Number of Developers During the Period) * 100\n   *   Time to Fill Open Positions = (Total Days to Fill All Open Positions) / (Number of Open Positions Filled)\n   *   Employee Engagement Score: This is typically derived from employee surveys and is a direct measure.\n   *   Comp Ratio to Market = (Employee's Salary / Market Salary for Similar Role) * 100\n   *   GitHub Commit Activity: Track the trend of code commits over time.\n   *   Training Hours per Dev = (Total Training Hours for Developers) / (Number of Developers)\n   *   Cross-Training Coverage = (Number of Systems with at Least Two Developers Trained) / (Total Number of Systems)\n\n3. **Calculation:**\n   *   Since we are recommending KRIs and not calculating them, we will focus on how these indicators provide early warnings.\n   *   **Developer Turnover Rate:** If the target is <10% and the red flag is >15%, monitoring this rate monthly allows for early intervention if the rate starts trending upwards towards 15%.\n   *   **Time to Fill Open Positions:** If the target is <45 days and the red flag is >90 days, a consistent increase in the time to fill positions suggests potential issues with recruitment or the attractiveness of the company to developers.\n   *   **Employee Engagement Score:** A score consistently below 3.5 (red flag) indicates dissatisfaction and potential attrition risk.\n   *   **Comp Ratio to Market:** A comp ratio below 85% (red flag) suggests that developers are being underpaid compared to the market, which could lead to them seeking employment elsewhere.\n   *   **GitHub Commit Activity:** A -30% trend in commit activity could indicate developers are disengaged or facing challenges.\n   *   **Training Hours per Dev:** If training hours are consistently below 20 hours per year (red flag), developers may not be receiving adequate professional development, leading to dissatisfaction.\n   *   **Cross-Training Coverage:** Having less than 2 developers trained per system (red flag) creates a single point of failure and increases risk if a key developer leaves.\n\n4. **Answer:**\n   The recommended key risk indicators (KRIs) to monitor for the highest-priority risk (Key Developer Risk) are: Developer turnover rate, Employee engagement score, Comp ratio to market, and Cross-training coverage.",
+          "keyFormula": "Key Risk Indicators (KRIs) are not calculated using a single formula but are metrics chosen to provide early warning signals of potential risks. The formulas above are used to calculate the individual KRI values.",
+          "commonMistakes": [
+            "Choosing lagging indicators instead of leading indicators. KRIs should predict potential problems, not just reflect past events.",
+            "Selecting too many KRIs, making it difficult to monitor effectively. Focus on the most critical indicators.",
+            "Failing to set clear targets and red flag thresholds. Without these, it's difficult to interpret the KRI values.",
+            "Not regularly reviewing and updating the KRIs. As the business changes, the relevant KRIs may also change."
+          ],
+          "examTip": "When selecting KRIs, think about the root causes of the risk and what metrics would provide the earliest warning signs. Consider both quantitative (e.g., turnover rate) and qualitative (e.g., engagement score) indicators."
+        }
+      ],
+      "skills": [
+        "Risk assessment",
+        "Risk response",
+        "Impact analysis"
+      ],
+      "relatedConcepts": [
+        "ERM",
+        "COSO framework",
+        "Risk appetite",
+        "KRIs"
+      ]
+    },
+    {
+      "id": "cma2-sim-005",
+      "section": "CMA2",
+      "title": "Working Capital Optimization",
+      "blueprintArea": "CMA2-B",
+      "topic": "Cash Conversion Cycle",
+      "difficulty": "medium",
+      "estimatedTime": 20,
+      "scenario": "Industrial Supply Co. is reviewing its working capital management. The CFO wants to improve cash flow by optimizing the cash conversion cycle.\n\nCurrent working capital data is provided in Exhibit 1, along with industry benchmarks.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Working Capital Data",
+          "type": "table",
+          "data": "| Item | Company | Industry Avg |\n|------|---------|--------------|\n| Annual Sales | $50M | - |\n| Annual COGS | $35M | - |\n| Annual Purchases | $30M | - |\n| Accounts Receivable | $8M | - |\n| Inventory | $10M | - |\n| Accounts Payable | $4M | - |\n| DSO (Days Sales Outstanding) | ? | 45 days |\n| DIO (Days Inventory Outstanding) | ? | 85 days |\n| DPO (Days Payable Outstanding) | ? | 40 days |\n| Cash Conversion Cycle | ? | 90 days |\n\n**Assumptions:** Use 365 days per year"
+        },
+        {
+          "id": "ex2",
+          "title": "Improvement Options",
+          "type": "text",
+          "data": "**Option A: Factoring Receivables**\n- Factor 50% of receivables at 2% discount\n- Reduces DSO by 20 days\n\n**Option B: Inventory Reduction**\n- Implement JIT for select items\n- Reduce inventory by $2M\n- One-time implementation cost: $150,000\n\n**Option C: Extend Payables**\n- Forgo 2/10 net 30 discount\n- Extend payment from 15 to 30 days\n- Current discount utilization: 60% of purchases"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate DSO, DIO, DPO, and the Cash Conversion Cycle.",
+          "solution": {
+            "approach": "Use standard formulas with 365 days",
+            "calculations": "**DSO = (AR / Sales) × 365**\nDSO = ($8M / $50M) × 365 = 58.4 days\n\n**DIO = (Inventory / COGS) × 365**\nDIO = ($10M / $35M) × 365 = 104.3 days\n\n**DPO = (AP / Purchases) × 365**\nDPO = ($4M / $30M) × 365 = 48.7 days\n\n**Cash Conversion Cycle = DSO + DIO - DPO**\nCCC = 58.4 + 104.3 - 48.7 = **114 days**\n\nIndustry CCC = 90 days\nGap = 24 days longer than industry",
+            "answer": {
+              "dso": 58.4,
+              "dio": 104.3,
+              "dpo": 48.7,
+              "ccc": 114
+            },
+            "explanation": "Company's CCC is 24 days longer than industry, indicating working capital inefficiency."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Days Sales Outstanding (DSO), Days Inventory Outstanding (DIO), Days Payable Outstanding (DPO), and Cash Conversion Cycle (CCC) for Industrial Supply Co.:\n\n1. **Given Information:**\n   * Accounts Receivable (AR): $8 million\n   * Sales: $50 million\n   * Inventory: $10 million\n   * Cost of Goods Sold (COGS): $35 million\n   * Accounts Payable (AP): $4 million\n   * Purchases: $30 million\n\n2. **Formula:**\n   * Days Sales Outstanding (DSO) = (Accounts Receivable / Sales) * 365\n   * Days Inventory Outstanding (DIO) = (Inventory / Cost of Goods Sold) * 365\n   * Days Payable Outstanding (DPO) = (Accounts Payable / Purchases) * 365\n   * Cash Conversion Cycle (CCC) = DSO + DIO - DPO\n\n3. **Calculation:**\n   * **DSO Calculation:**\n      * DSO = ($8,000,000 / $50,000,000) * 365\n      * DSO = 0.16 * 365\n      * DSO = 58.4 days\n\n   * **DIO Calculation:**\n      * DIO = ($10,000,000 / $35,000,000) * 365\n      * DIO = 0.2857 * 365\n      * DIO = 104.3 days\n\n   * **DPO Calculation:**\n      * DPO = ($4,000,000 / $30,000,000) * 365\n      * DPO = 0.1333 * 365\n      * DPO = 48.7 days\n\n   * **CCC Calculation:**\n      * CCC = 58.4 + 104.3 - 48.7\n      * CCC = 114 days\n\n4. **Answer:**\n   * DSO = 58.4 days\n   * DIO = 104.3 days\n   * DPO = 48.7 days\n   * CCC = 114 days",
+          "keyFormula": "Cash Conversion Cycle = Days Sales Outstanding + Days Inventory Outstanding - Days Payable Outstanding",
+          "commonMistakes": [
+            "Using Sales instead of COGS in the DIO calculation. Remember DIO measures how long inventory sits before being *sold*, so COGS is the relevant cost.",
+            "Using Sales instead of Purchases in the DPO calculation. DPO measures how long it takes to pay *suppliers*, so Purchases is the relevant figure.",
+            "Incorrectly adding or subtracting the DSO, DIO, and DPO in the CCC calculation. Double-check the formula to ensure you are adding DSO and DIO, and then subtracting DPO.",
+            "Forgetting to annualize the ratios by multiplying by 365. The ratios of AR/Sales, Inventory/COGS, and AP/Purchases must be multiplied by 365 to express the results in days."
+          ],
+          "examTip": "Write down the formulas for DSO, DIO, DPO, and CCC at the beginning of the exam (on your scratch paper). This will help you avoid confusion and save time when you encounter working capital problems. Also, pay close attention to whether the problem provides Sales or COGS, and Purchases or COGS, as using the wrong value will lead to an incorrect answer."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the annual cost of capital tied up in the cash conversion cycle (assume 8% cost of capital).",
+          "solution": {
+            "approach": "Calculate working capital investment and financing cost",
+            "calculations": "**Working Capital Requirements:**\nAR: $8M\nInventory: $10M\nLess: AP: ($4M)\n**Net Working Capital: $14M**\n\n**Annual Financing Cost:**\n$14M × 8% = **$1,120,000 per year**\n\n**Alternative - Daily Sales Basis:**\nDaily sales = $50M / 365 = $136,986\nCapital tied up = Daily sales × CCC = $136,986 × 114 = $15.6M\nAnnual cost = $15.6M × 8% = $1,248,000",
+            "answer": 1120000,
+            "explanation": "The company spends over $1M annually financing its working capital cycle."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the annual cost of capital tied up in the cash conversion cycle:\n\n1. **Given Information:**\n   * Accounts Receivable (AR): $8,000,000\n   * Inventory: $10,000,000\n   * Accounts Payable (AP): $4,000,000\n   * Cost of Capital: 8%\n\n2. **Formula:**\n   * Net Working Capital (NWC) = Accounts Receivable + Inventory - Accounts Payable\n   * Annual Financing Cost = Net Working Capital × Cost of Capital\n\n3. **Calculation:**\n   * **Step 1: Calculate Net Working Capital**\n      NWC = $8,000,000 + $10,000,000 - $4,000,000 = $14,000,000\n   * **Step 2: Calculate Annual Financing Cost**\n      Annual Financing Cost = $14,000,000 × 0.08 = $1,120,000\n\n4. **Answer:**\nThe annual cost of capital tied up in the cash conversion cycle is $1,120,000.",
+          "keyFormula": "Net Working Capital (NWC) = Accounts Receivable + Inventory - Accounts Payable\nAnnual Financing Cost = Net Working Capital × Cost of Capital",
+          "commonMistakes": [
+            "Forgetting to subtract Accounts Payable when calculating Net Working Capital. Accounts Payable reduces the amount of capital tied up in the cash conversion cycle.",
+            "Using the wrong cost of capital. Make sure to use the correct percentage provided in the problem.",
+            "Calculating daily sales and multiplying by the Cash Conversion Cycle (CCC) when a simpler approach is available using the provided AR, Inventory, and AP balances. While the CCC approach is valid, it introduces an extra step and potential for rounding errors if daily sales are not precise."
+          ],
+          "examTip": "Carefully read the problem to identify the most efficient method for calculating the financing cost. In this case, using the provided AR, Inventory, and AP balances directly is faster and less prone to error than calculating daily sales and using the CCC."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Evaluate each improvement option and calculate the net annual benefit or cost.",
+          "solution": {
+            "approach": "Calculate savings vs costs for each option",
+            "calculations": "**Option A: Factoring Receivables**\nAR factored = $8M × 50% = $4M\nFactoring cost = $4M × 2% = $80,000/year\nFinancing savings = ($4M × 20/58.4) × 8% = $109,589\n**Net Benefit: $29,589/year**\n\n**Option B: Inventory Reduction**\nInventory reduction: $2M\nAnnual financing savings: $2M × 8% = $160,000\nLess: One-time cost amortized over 3 years: $50,000\n**Net Benefit: $110,000/year**\n\n**Option C: Extend Payables**\nLost discounts:\n60% of $30M = $18M eligible for discount\nDiscount = $18M × 2% = $360,000/year\nFinancing savings: $4M additional AP × 8% = $320,000\n**Net Cost: ($40,000)/year**",
+            "answer": {
+              "optionA": 29589,
+              "optionB": 110000,
+              "optionC": -40000
+            },
+            "explanation": "Option B provides the highest net benefit. Option C is costly because forgoing the discount has a 36.7% annualized cost."
+          },
+          "points": 35,
+          "enhanced": true,
+          "stepByStep": "Here's how to evaluate each working capital improvement option:\n\n**Option A: Factoring Receivables**\n1. **Given Information:**\n   *   Accounts Receivable (AR) to be factored: 50% of $8,000,000\n   *   Factoring cost: 2% of AR factored\n   *   Financing cost: 8%\n   *   Days Sales Outstanding (DSO) reduction: 20 days (from 58.4 to 38.4)\n2. **Formula:**\n   *   AR Factored = Total AR × Percentage Factored\n   *   Factoring Cost = AR Factored × Factoring Rate\n   *   Financing Savings = (AR Factored × (DSO Reduction / Original DSO)) × Financing Cost\n   *   Net Benefit = Financing Savings - Factoring Cost\n3. **Calculation:**\n   *   AR Factored = $8,000,000 × 50% = $4,000,000\n   *   Factoring Cost = $4,000,000 × 2% = $80,000\n   *   Financing Savings = ($4,000,000 × (20 / 58.4)) × 8% = $109,589.04\n   *   Net Benefit = $109,589.04 - $80,000 = $29,589.04\n4. **Answer:** The net annual benefit of factoring receivables is approximately $29,589.\n\n**Option B: Inventory Reduction**\n1. **Given Information:**\n   *   Inventory Reduction: $2,000,000\n   *   Financing cost: 8%\n   *   One-time cost: $150,000\n   *   Amortization period: 3 years\n2. **Formula:**\n   *   Annual Financing Savings = Inventory Reduction × Financing Cost\n   *   Annual Amortization = One-time Cost / Amortization Period\n   *   Net Benefit = Annual Financing Savings - Annual Amortization\n3. **Calculation:**\n   *   Annual Financing Savings = $2,000,000 × 8% = $160,000\n   *   Annual Amortization = $150,000 / 3 = $50,000\n   *   Net Benefit = $160,000 - $50,000 = $110,000\n4. **Answer:** The net annual benefit of inventory reduction is $110,000.\n\n**Option C: Extend Payables**\n1. **Given Information:**\n   *   Total Purchases: $30,000,000\n   *   Percentage of purchases eligible for discount: 60%\n   *   Discount rate: 2%\n   *   Additional Accounts Payable (AP): $4,000,000\n   *   Financing cost: 8%\n2. **Formula:**\n   *   Purchases Eligible for Discount = Total Purchases × Percentage Eligible\n   *   Lost Discounts = Purchases Eligible for Discount × Discount Rate\n   *   Financing Savings = Additional AP × Financing Cost\n   *   Net Cost = Lost Discounts - Financing Savings\n3. **Calculation:**\n   *   Purchases Eligible for Discount = $30,000,000 × 60% = $18,000,000\n   *   Lost Discounts = $18,000,000 × 2% = $360,000\n   *   Financing Savings = $4,000,000 × 8% = $320,000\n   *   Net Cost = $360,000 - $320,000 = $40,000\n4. **Answer:** The net cost of extending payables is $40,000.",
+          "keyFormula": "Net Benefit/Cost = Savings - Costs. This is applied differently to each option, calculating the specific savings and costs associated with each.",
+          "commonMistakes": [
+            "Forgetting to annualize the one-time cost in Option B by dividing by the amortization period.",
+            "Incorrectly calculating the purchases eligible for discount in Option C. Make sure to only apply the discount rate to the portion of purchases that qualify.",
+            "Not recognizing that forgoing the discount in Option C is a cost, not a benefit."
+          ],
+          "examTip": "When evaluating working capital options, carefully identify all relevant costs and benefits. Pay close attention to whether costs are one-time or recurring, and annualize them appropriately. Always compare the net impact (benefits minus costs) to determine the best option."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Recommend a working capital strategy and calculate the new CCC if implemented.",
+          "solution": {
+            "approach": "Combine beneficial options and recalculate",
+            "calculations": "**Recommended Strategy:**\nImplement Option A + Option B\nReject Option C (too expensive)\n\n**New CCC Calculation:**\nNew DSO: 58.4 - 20 = 38.4 days (Option A)\nNew DIO: ($8M / $35M) × 365 = 83.4 days (Option B: $10M - $2M)\nDPO: 48.7 days (unchanged)\n\n**New CCC = 38.4 + 83.4 - 48.7 = 73.1 days**\n\n**Improvement:**\nOld CCC: 114 days → New CCC: 73.1 days\nImprovement: 40.9 days (36% reduction)\nNow BETTER than industry (73 vs 90)\n\n**Total Annual Benefit:**\nOption A: $29,589\nOption B: $110,000\n**Combined: $139,589/year**",
+            "answer": {
+              "newCCC": 73.1,
+              "improvement": 40.9,
+              "benefit": 139589
+            },
+            "explanation": "Implementing A+B achieves a 41-day improvement, making CCC better than industry average."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   * Current Days Sales Outstanding (DSO): 58.4 days\n   * Current Days Inventory Outstanding (DIO): 114 - 58.4 + 48.7 = 104.9 days\n   * Current Days Payable Outstanding (DPO): 48.7 days\n   * Option A: Reduce DSO by 20 days at a cost of $29,589\n   * Option B: Reduce Inventory to $8 million at a cost of $110,000\n   * Option C: Increase DPO by 10 days at a cost of $150,000\n   * Current Inventory: $10 million\n   * Cost of Goods Sold (COGS): $35 million\n\n2. **Formula:**\n   * Cash Conversion Cycle (CCC) = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days Payable Outstanding (DPO)\n   * Days Inventory Outstanding (DIO) = (Average Inventory / Cost of Goods Sold) * 365\n\n3. **Calculation:**\n   * **Recommended Strategy:** Implement Option A and Option B, reject Option C due to its high cost.\n   * **New DSO:** 58.4 days - 20 days = 38.4 days (Option A)\n   * **New Inventory:** $8 million (Option B)\n   * **New DIO:** ($8,000,000 / $35,000,000) * 365 days = 83.4 days\n   * **DPO:** 48.7 days (unchanged)\n   * **New CCC:** 38.4 days + 83.4 days - 48.7 days = 73.1 days\n   * **Improvement:** 114 days (old CCC) - 73.1 days (new CCC) = 40.9 days\n   * **Percentage Improvement:** (40.9 days / 114 days) * 100% = 35.88% (approximately 36%)\n   * **Total Annual Benefit:** $29,589 (Option A) + $110,000 (Option B) = $139,589\n\n4. **Answer:**\n   * New CCC: 73.1 days\n   * Improvement: 40.9 days\n   * Total Annual Benefit: $139,589",
+          "keyFormula": "Cash Conversion Cycle (CCC) = Days Sales Outstanding (DSO) + Days Inventory Outstanding (DIO) - Days Payable Outstanding (DPO)",
+          "commonMistakes": [
+            "Forgetting to annualize the DIO calculation by multiplying by 365. DIO = (Inventory / COGS) * 365",
+            "Incorrectly calculating the initial DIO. The problem only gives the CCC, DSO, and DPO. DIO must be derived from those numbers",
+            "Not considering the cost of each option when deciding which to implement. A reduction in CCC is only beneficial if the cost is justified."
+          ],
+          "examTip": "On the exam, quickly assess the cost-benefit of each option. Focus on the options that provide the most significant CCC improvement for the lowest cost. Time is of the essence!"
+        }
+      ],
+      "skills": [
+        "Working capital analysis",
+        "CCC optimization",
+        "Trade-off analysis"
+      ],
+      "relatedConcepts": [
+        "Liquidity",
+        "Cash management",
+        "Trade credit"
+      ]
+    },
+    {
+      "id": "cma2-sim-006",
+      "section": "CMA2",
+      "title": "Comprehensive Capital Budgeting Analysis",
+      "blueprintArea": "CMA2-E",
+      "topic": "Capital Investment Decisions",
+      "difficulty": "hard",
+      "estimatedTime": 35,
+      "scenario": "AutoParts Manufacturing is evaluating a $2,000,000 investment in new automated production equipment. The CFO has requested a complete capital budgeting analysis using multiple methods.\n\nThe project details are provided in the exhibits below. The company's required rate of return (cost of capital) is 12%.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Project Cash Flows",
+          "type": "table",
+          "data": "| Year | Operating Cash Inflows | Additional Working Capital | Salvage Value |\n|------|----------------------|---------------------------|---------------|\n| 0 | — | ($150,000) | — |\n| 1 | $580,000 | — | — |\n| 2 | $620,000 | — | — |\n| 3 | $650,000 | — | — |\n| 4 | $600,000 | — | — |\n| 5 | $550,000 | $150,000 recovery | $200,000 |\n\n**Initial Investment:** $2,000,000 (depreciated straight-line over 5 years)\n**Tax Rate:** 30%"
+        },
+        {
+          "id": "ex2",
+          "title": "Present Value Factors (12%)",
+          "type": "table",
+          "data": "| Year | PV Factor (12%) | Cumulative PV Factor |\n|------|-----------------|---------------------|\n| 1 | 0.8929 | 0.8929 |\n| 2 | 0.7972 | 1.6901 |\n| 3 | 0.7118 | 2.4018 |\n| 4 | 0.6355 | 3.0373 |\n| 5 | 0.5674 | 3.6048 |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the total initial investment (outflow at Year 0).",
+          "hints": [
+            "Include both equipment cost and working capital"
+          ],
+          "solution": {
+            "approach": "Sum all Year 0 outflows",
+            "calculations": "**Initial Investment:**\nEquipment cost: $2,000,000\nWorking capital: $150,000\n**Total Initial Investment: $2,150,000**\n\n*Working capital is recovered at end of project life and is not depreciated.*",
+            "answer": {
+              "initialInvestment": 2150000
+            },
+            "explanation": "Initial investment includes all outflows at project inception."
+          },
+          "points": 10,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   * Equipment Cost: $2,000,000\n   * Working Capital Investment: $150,000\n\n2. **Formula:**\n   Total Initial Investment = Equipment Cost + Working Capital Investment\n\n3. **Calculation:**\n   Total Initial Investment = $2,000,000 + $150,000\n   Total Initial Investment = $2,150,000\n\n4. **Answer:**\n   The total initial investment is $2,150,000.",
+          "keyFormula": "Total Initial Investment = Equipment Cost + Working Capital Investment",
+          "commonMistakes": [
+            "Forgetting to include the working capital investment in the initial outflow. Working capital, although recovered at the end of the project, represents an immediate cash outflow at the beginning.",
+            "Including depreciation on working capital. Working capital is not a depreciable asset."
+          ],
+          "examTip": "Carefully read the problem to identify all cash flows occurring at Year 0. Working capital is a common element that is often overlooked. Remember that working capital is recovered at the end of the project's life."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the Net Present Value (NPV) of the project.",
+          "hints": [
+            "Terminal year includes salvage value and WC recovery"
+          ],
+          "solution": {
+            "approach": "Calculate PV of each year cash flow, sum, and subtract initial investment",
+            "calculations": "**NPV Calculation:**\n\n| Year | Cash Flow | × PV Factor | = Present Value |\n|------|-----------|-------------|-----------------|\n| 1 | $580,000 | × 0.8929 | = $517,882 |\n| 2 | $620,000 | × 0.7972 | = $494,264 |\n| 3 | $650,000 | × 0.7118 | = $462,670 |\n| 4 | $600,000 | × 0.6355 | = $381,300 |\n| 5 | $900,000* | × 0.5674 | = $510,660 |\n| **Total PV of Inflows** | | | **$2,366,776** |\n\n*Year 5: $550,000 + $150,000 WC + $200,000 salvage = $900,000*\n\n**NPV = PV of Inflows - Initial Investment**\nNPV = $2,366,776 - $2,150,000 = **$216,776**\n\n**Decision: ACCEPT** (NPV > 0)",
+            "answer": {
+              "npv": 216776,
+              "decision": 1
+            },
+            "explanation": "Positive NPV indicates the project exceeds the required return. Decision: ACCEPT."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Net Present Value (NPV) of the automated production equipment project:\n\n1. **Given Information:**\n   * Initial Investment: $2,000,000\n   * Year 1 Cash Flow: $580,000\n   * Year 2 Cash Flow: $620,000\n   * Year 3 Cash Flow: $650,000\n   * Year 4 Cash Flow: $600,000\n   * Year 5 Cash Flow: $550,000\n   * Working Capital Recovery (Year 5): $150,000\n   * Salvage Value (Year 5): $200,000\n   * Required Rate of Return (Cost of Capital): 12%\n\n2. **Formula:**\n   * Present Value (PV) = Future Value / (1 + Discount Rate)^Number of Periods\n   * Net Present Value (NPV) = ∑ Present Values of Cash Inflows - Initial Investment\n\n3. **Calculation:**\n   * **Year 1:** PV = $580,000 / (1 + 0.12)^1 = $580,000 / 1.12 = $517,857.14 (Rounded: $517,882)\n   * **Year 2:** PV = $620,000 / (1 + 0.12)^2 = $620,000 / 1.2544 = $494,259.40 (Rounded: $494,264)\n   * **Year 3:** PV = $650,000 / (1 + 0.12)^3 = $650,000 / 1.404928 = $462,665.77 (Rounded: $462,670)\n   * **Year 4:** PV = $600,000 / (1 + 0.12)^4 = $600,000 / 1.57351936 = $381,300.00 (Rounded: $381,300)\n   * **Year 5:**  First, calculate the total cash flow for Year 5: $550,000 (Operating Cash Flow) + $150,000 (Working Capital Recovery) + $200,000 (Salvage Value) = $900,000\n   * **Year 5:** PV = $900,000 / (1 + 0.12)^5 = $900,000 / 1.7623416832 = $510,623.68 (Rounded: $510,660)\n   * **Total Present Value of Inflows:** $517,882 + $494,264 + $462,670 + $381,300 + $510,660 = $2,366,776\n   * **NPV:** $2,366,776 (Total PV of Inflows) - $2,000,000 (Initial Investment) = $366,776\n\n4. **Answer:**\n   * The Net Present Value (NPV) of the project is $366,776. Since the NPV is positive, the project should be accepted.",
+          "keyFormula": "NPV = ∑ [Cash Flow / (1 + Discount Rate)^Period] - Initial Investment",
+          "commonMistakes": [
+            "Forgetting to include the working capital recovery and salvage value in the terminal year (Year 5) cash flow. These are inflows that increase the project's overall value.",
+            "Using the wrong discount rate. The problem states the company's required rate of return (cost of capital) is 12%, which is the appropriate discount rate for this NPV calculation.",
+            "Incorrectly calculating the present value factors. Ensure you are using the correct exponent for each year when discounting the cash flows.",
+            "Failing to subtract the initial investment from the total present value of inflows. The NPV represents the *net* gain or loss from the project after accounting for the initial cost."
+          ],
+          "examTip": "On the exam, carefully read the problem to identify all relevant cash flows, including working capital changes and salvage values. Create a timeline of cash flows to avoid missing any values. Double-check your present value factor calculations to minimize errors."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the Internal Rate of Return (IRR) using interpolation.",
+          "hints": [
+            "Try 15% and 18% discount rates, then interpolate"
+          ],
+          "solution": {
+            "approach": "Calculate NPV at two rates, then interpolate to find IRR",
+            "calculations": "**PV Factors:**\n| Year | 15% Factor | 18% Factor |\n|------|------------|------------|\n| 1 | 0.8696 | 0.8475 |\n| 2 | 0.7561 | 0.7182 |\n| 3 | 0.6575 | 0.6086 |\n| 4 | 0.5718 | 0.5158 |\n| 5 | 0.4972 | 0.4371 |\n\n**NPV at 15%:**\n= (580K×.8696) + (620K×.7561) + (650K×.6575) + (600K×.5718) + (900K×.4972) - 2,150K\n= 504,368 + 468,782 + 427,375 + 343,080 + 447,480 - 2,150,000\n= 2,191,085 - 2,150,000 = **$41,085**\n\n**NPV at 18%:**\n= (580K×.8475) + (620K×.7182) + (650K×.6086) + (600K×.5158) + (900K×.4371) - 2,150K\n= 491,550 + 445,284 + 395,590 + 309,480 + 393,390 - 2,150,000\n= 2,035,294 - 2,150,000 = **($114,706)**\n\n**Interpolation:**\nIRR = 15% + [41,085 / (41,085 + 114,706)] × (18% - 15%)\nIRR = 15% + [0.264] × 3%\nIRR = 15% + 0.79% = **15.79%**\n\n**Decision: ACCEPT** (IRR 15.79% > Required 12%)",
+            "answer": {
+              "irr": 15.79,
+              "decision": 1
+            },
+            "explanation": "IRR exceeds the cost of capital, confirming the NPV decision. Decision: ACCEPT."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Internal Rate of Return (IRR) using interpolation for the AutoParts Manufacturing project:\n\n1. **Given Information:**\n   * Initial Investment: $2,000,000\n   * Additional Investment in Year 0: $150,000\n   * Total Initial Investment: $2,150,000\n   * Cash Flows:\n      * Year 1: $580,000\n      * Year 2: $620,000\n      * Year 3: $650,000\n      * Year 4: $600,000\n      * Year 5: $900,000\n   * Required Rate of Return (Cost of Capital): 12%\n\n2. **Formula:**\n   * IRR Interpolation Formula:  IRR = Lower Rate + [NPV at Lower Rate / (NPV at Lower Rate - NPV at Higher Rate)] × (Higher Rate - Lower Rate)\n\n3. **Calculation:**\n   * **Step 1: Calculate the Net Present Value (NPV) at 15%**\n      * Year 1: $580,000 × 0.8696 = $504,368\n      * Year 2: $620,000 × 0.7561 = $468,782\n      * Year 3: $650,000 × 0.6575 = $427,375\n      * Year 4: $600,000 × 0.5718 = $343,080\n      * Year 5: $900,000 × 0.4972 = $447,480\n      * Total PV of Cash Flows: $504,368 + $468,782 + $427,375 + $343,080 + $447,480 = $2,191,085\n      * NPV at 15%: $2,191,085 - $2,150,000 = $41,085\n\n   * **Step 2: Calculate the Net Present Value (NPV) at 18%**\n      * Year 1: $580,000 × 0.8475 = $491,550\n      * Year 2: $620,000 × 0.7182 = $445,284\n      * Year 3: $650,000 × 0.6086 = $395,590\n      * Year 4: $600,000 × 0.5158 = $309,480\n      * Year 5: $900,000 × 0.4371 = $393,390\n      * Total PV of Cash Flows: $491,550 + $445,284 + $395,590 + $309,480 + $393,390 = $2,035,294\n      * NPV at 18%: $2,035,294 - $2,150,000 = -$114,706\n\n   * **Step 3: Interpolate to find the IRR**\n      * IRR = 15% + [$41,085 / ($41,085 - (-$114,706))] × (18% - 15%)\n      * IRR = 15% + [$41,085 / ($41,085 + $114,706)] × (3%)\n      * IRR = 15% + [$41,085 / $155,791] × (3%)\n      * IRR = 15% + [0.2637] × (3%)\n      * IRR = 15% + 0.79% = 15.79%\n\n4. **Answer:**\n   * The Internal Rate of Return (IRR) is approximately 15.79%.\n   * **Decision:** Since the IRR of 15.79% is greater than the required rate of return (cost of capital) of 12%, the project should be accepted.",
+          "keyFormula": "IRR Interpolation Formula: IRR = Lower Rate + [NPV at Lower Rate / (NPV at Lower Rate - NPV at Higher Rate)] × (Higher Rate - Lower Rate)",
+          "commonMistakes": [
+            "Forgetting to include the initial investment (including any additional year 0 investments) when calculating NPV at each rate. This will significantly skew the NPV results and the subsequent IRR calculation.",
+            "Using incorrect PV factors. Ensure you are using the correct discount rate and year when applying the PV factors to the cash flows.",
+            "Making errors in the interpolation formula. Double-check the placement of the NPVs and discount rates to avoid calculation mistakes.",
+            "Not understanding the decision rule. Even if the IRR is calculated correctly, failing to compare it to the cost of capital will lead to an incorrect accept/reject decision."
+          ],
+          "examTip": "On the exam, if you're short on time, estimate the IRR by picking rates that give you NPVs that are reasonably close to zero. This will minimize the interpolation needed. Also, remember that the IRR is the discount rate that makes NPV equal to zero."
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Calculate the Payback Period and Discounted Payback Period.",
+          "hints": [
+            "Track cumulative cash flows until investment is recovered"
+          ],
+          "solution": {
+            "approach": "Calculate cumulative cash flows for both methods",
+            "calculations": "**Simple Payback:**\n| Year | Cash Flow | Cumulative |\n|------|-----------|------------|\n| 0 | ($2,150,000) | ($2,150,000) |\n| 1 | 580,000 | (1,570,000) |\n| 2 | 620,000 | (950,000) |\n| 3 | 650,000 | (300,000) |\n| 4 | 600,000 | 300,000 ← Recovered |\n\nPayback = 3 + (300,000/600,000) = **3.5 years**\n\n**Discounted Payback:**\n| Year | Cash Flow | PV | Cumulative PV |\n|------|-----------|-----|---------------|\n| 0 | ($2,150,000) | ($2,150,000) | ($2,150,000) |\n| 1 | 580,000 | 517,882 | (1,632,118) |\n| 2 | 620,000 | 494,264 | (1,137,854) |\n| 3 | 650,000 | 462,670 | (675,184) |\n| 4 | 600,000 | 381,300 | (293,884) |\n| 5 | 900,000 | 510,660 | 216,776 ← Recovered |\n\nDiscounted Payback = 4 + (293,884/510,660) = **4.58 years**",
+            "answer": {
+              "payback": 3.5,
+              "discountedPayback": 4.58
+            },
+            "explanation": "Discounted payback accounts for time value of money, always longer than simple payback."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the Payback Period and Discounted Payback Period for AutoParts Manufacturing's investment:\n\n**Given Information:**\n*   Initial Investment: $2,150,000\n*   Year 1 Cash Flow: $580,000\n*   Year 2 Cash Flow: $620,000\n*   Year 3 Cash Flow: $650,000\n*   Year 4 Cash Flow: $600,000\n*   Year 5 Cash Flow: $900,000\n*   Required Rate of Return (Cost of Capital): 12%\n\n**Part 1: Simple Payback Period**\n\n1.  **Formula:**\n    Payback Period = Years before full recovery + (Unrecovered cost at the beginning of the year / Cash flow during the year)\n\n2.  **Calculation:**\n    *   Year 0: Cumulative Cash Flow = -$2,150,000\n    *   Year 1: Cumulative Cash Flow = -$2,150,000 + $580,000 = -$1,570,000\n    *   Year 2: Cumulative Cash Flow = -$1,570,000 + $620,000 = -$950,000\n    *   Year 3: Cumulative Cash Flow = -$950,000 + $650,000 = -$300,000\n    *   Year 4: Cumulative Cash Flow = -$300,000 + $600,000 = $300,000\n\n    The investment is recovered during Year 4.\n\n    Payback Period = 3 + ($300,000 / $600,000) = 3 + 0.5 = 3.5 years\n\n3.  **Answer:** The simple payback period is 3.5 years.\n\n**Part 2: Discounted Payback Period**\n\n1.  **Formula:**\n    Discounted Payback Period = Years before full recovery + (Unrecovered cost at the beginning of the year / Present value of cash flow during the year)\n\n2.  **Calculation:**\n    First, calculate the present value (PV) of each cash flow using the formula: PV = Cash Flow / (1 + Discount Rate)^Year\n\n    *   Year 0: PV = -$2,150,000 / (1 + 0.12)^0 = -$2,150,000\n    *   Year 1: PV = $580,000 / (1 + 0.12)^1 = $517,857.14 ≈ $517,882\n    *   Year 2: PV = $620,000 / (1 + 0.12)^2 = $494,234.97 ≈ $494,264\n    *   Year 3: PV = $650,000 / (1 + 0.12)^3 = $462,633.90 ≈ $462,670\n    *   Year 4: PV = $600,000 / (1 + 0.12)^4 = $381,266.88 ≈ $381,300\n    *   Year 5: PV = $900,000 / (1 + 0.12)^5 = $510,621.68 ≈ $510,660\n\n    Now, calculate the cumulative present values:\n\n    *   Year 0: Cumulative PV = -$2,150,000\n    *   Year 1: Cumulative PV = -$2,150,000 + $517,882 = -$1,632,118\n    *   Year 2: Cumulative PV = -$1,632,118 + $494,264 = -$1,137,854\n    *   Year 3: Cumulative PV = -$1,137,854 + $462,670 = -$675,184\n    *   Year 4: Cumulative PV = -$675,184 + $381,300 = -$293,884\n    *   Year 5: Cumulative PV = -$293,884 + $510,660 = $216,776\n\n    The investment is recovered during Year 5.\n\n    Discounted Payback Period = 4 + ($293,884 / $510,660) = 4 + 0.5755 ≈ 4.58 years\n\n3.  **Answer:** The discounted payback period is approximately 4.58 years.",
+          "keyFormula": "Payback Period = Years before full recovery + (Unrecovered cost at the beginning of the year / Cash flow during the year)\nPresent Value = Cash Flow / (1 + Discount Rate)^Year",
+          "commonMistakes": [
+            "Forgetting to discount the cash flows when calculating the discounted payback period. This leads to an incorrect and shorter payback period.",
+            "Using the wrong discount rate. Always use the company's required rate of return (cost of capital) for discounting.",
+            "Incorrectly calculating the present value of the cash flows. Double-check the exponent in the present value formula.",
+            "Not tracking the cumulative cash flows carefully, leading to errors in determining the year of recovery and the remaining unrecovered cost."
+          ],
+          "examTip": "On the exam, create a simple table to track the cumulative cash flows (both undiscounted and discounted). This helps prevent errors and allows you to quickly determine the payback period. If time is short, estimate the discounted payback period by inflating the simple payback period, since it will always be longer."
+        },
+        {
+          "id": "t5",
+          "taskNumber": 5,
+          "requirement": "Calculate the Profitability Index and summarize your recommendation.",
+          "hints": [
+            "PI = PV of Inflows / Initial Investment"
+          ],
+          "solution": {
+            "approach": "Calculate PI ratio and provide comprehensive recommendation",
+            "calculations": "**Profitability Index:**\nPI = PV of Inflows / Initial Investment\nPI = $2,366,776 / $2,150,000 = **1.101**\n\n**Decision Summary:**\n| Method | Result | Decision Rule | Accept? |\n|--------|--------|---------------|---------|\n| NPV | $216,776 | > 0 | ✓ Yes |\n| IRR | 15.79% | > 12% cost of capital | ✓ Yes |\n| PI | 1.101 | > 1.0 | ✓ Yes |\n| Payback | 3.5 years | Depends on policy | Likely ✓ |\n| Discounted Payback | 4.58 years | < Project life | ✓ Yes |\n\n**RECOMMENDATION: ACCEPT THE PROJECT**\nAll capital budgeting measures support investment. NPV of $216,776 represents value creation exceeding the required return.",
+            "answer": {
+              "pi": 1.101,
+              "recommendation": 1
+            },
+            "explanation": "PI > 1.0 indicates $1.101 in PV for every $1 invested. Recommendation: ACCEPT."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   * Initial Investment: $2,000,000\n   * Installation Costs: $150,000\n   * Total Initial Investment: $2,000,000 + $150,000 = $2,150,000\n   * Present Value of Future Cash Flows: $2,366,776 (This was calculated in a prior step, but is needed for this calculation)\n\n2. **Formula:**\n   * Profitability Index (PI) = Present Value of Future Cash Flows / Initial Investment\n\n3. **Calculation:**\n   * PI = $2,366,776 / $2,150,000\n   * PI = 1.1008255813953488\n   * PI ≈ 1.101 (Rounded to three decimal places)\n\n4. **Answer:**\n   * The Profitability Index is 1.101. Since the PI is greater than 1, the project should be accepted.",
+          "keyFormula": "Profitability Index (PI) = Present Value of Future Cash Flows / Initial Investment",
+          "commonMistakes": [
+            "Forgetting to include all initial investment costs (e.g., installation costs) in the denominator. The initial investment should include all upfront cash outflows.",
+            "Using undiscounted cash flows in the numerator instead of the present value of the cash flows. The time value of money is critical in capital budgeting decisions.",
+            "Rounding intermediate calculations too early, which can lead to a significant error in the final PI calculation. Keep as many decimal places as possible until the final rounding step."
+          ],
+          "examTip": "Remember that a PI greater than 1 indicates that the project's present value of inflows exceeds the initial investment, making it a potentially acceptable project. Quickly calculate the PI if you've already determined the NPV. If NPV is positive, PI will be > 1."
+        }
+      ],
+      "skills": [
+        "NPV analysis",
+        "IRR calculation",
+        "Payback period",
+        "Investment decision-making"
+      ],
+      "relatedConcepts": [
+        "Time value of money",
+        "Cost of capital",
+        "Project evaluation",
+        "Capital allocation"
+      ]
+    },
+    {
+      "id": "cma2-sim-007",
+      "section": "CMA2",
+      "title": "Comprehensive Financial Statement Analysis",
+      "blueprintArea": "CMA2-A",
+      "topic": "Financial Ratio Analysis",
+      "difficulty": "hard",
+      "estimatedTime": 30,
+      "scenario": "You are the financial analyst for a private equity firm evaluating a potential acquisition of RetailCo Inc. Using the financial statements provided, prepare a comprehensive ratio analysis to assess the company's financial health and performance.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Condensed Balance Sheet (December 31)",
+          "type": "table",
+          "data": "| Assets | Amount | Liabilities & Equity | Amount |\n|--------|--------|---------------------|--------|\n| Cash | $85,000 | Accounts Payable | $180,000 |\n| Accounts Receivable | $220,000 | Accrued Expenses | $45,000 |\n| Inventory | $310,000 | Current Portion LT Debt | $75,000 |\n| Prepaid Expenses | $25,000 | **Total Current Liabilities** | **$300,000** |\n| **Total Current Assets** | **$640,000** | Long-term Debt | $400,000 |\n| Property, Plant & Equipment (net) | $680,000 | **Total Liabilities** | **$700,000** |\n| Intangible Assets | $180,000 | Common Stock | $200,000 |\n| | | Retained Earnings | $600,000 |\n| | | **Total Equity** | **$800,000** |\n| **Total Assets** | **$1,500,000** | **Total L&E** | **$1,500,000** |"
+        },
+        {
+          "id": "ex2",
+          "title": "Income Statement (Year Ended December 31)",
+          "type": "table",
+          "data": "| Item | Amount |\n|------|--------|\n| Net Sales | $2,400,000 |\n| Cost of Goods Sold | (1,680,000) |\n| **Gross Profit** | **$720,000** |\n| Operating Expenses | (480,000) |\n| **Operating Income (EBIT)** | **$240,000** |\n| Interest Expense | (40,000) |\n| **Income Before Tax** | **$200,000** |\n| Income Tax Expense (25%) | (50,000) |\n| **Net Income** | **$150,000** |\n\n**Additional Info:**\n- Industry Average ROE: 15%\n- Beginning Total Equity: $750,000\n- Beginning Total Assets: $1,400,000\n- Beginning Inventory: $290,000\n- Beginning Accounts Receivable: $200,000"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the key liquidity ratios: Current Ratio, Quick Ratio, and Cash Ratio.",
+          "hints": [
+            "Quick assets = Current assets - Inventory - Prepaids"
+          ],
+          "solution": {
+            "approach": "Calculate each ratio using appropriate current items",
+            "calculations": "**Liquidity Ratios:**\n\n**Current Ratio:**\n= Current Assets / Current Liabilities\n= $640,000 / $300,000 = **2.13:1**\n\n**Quick Ratio (Acid-Test):**\n= (Cash + A/R) / Current Liabilities\n= ($85,000 + $220,000) / $300,000\n= $305,000 / $300,000 = **1.02:1**\n\n**Cash Ratio:**\n= Cash / Current Liabilities\n= $85,000 / $300,000 = **0.28:1**\n\n**Assessment:**\n- Current ratio strong (>2.0)\n- Quick ratio adequate (>1.0)\n- Cash ratio shows some dependency on A/R collections",
+            "answer": {
+              "currentRatio": 2.13,
+              "quickRatio": 1.02,
+              "cashRatio": 0.28
+            },
+            "explanation": "Multiple liquidity measures provide different perspectives on short-term solvency."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate RetailCo Inc.'s key liquidity ratios:\n\n1. **Given Information:**\n   *   Current Assets: $640,000\n   *   Cash: $85,000\n   *   Accounts Receivable (A/R): $220,000\n   *   Current Liabilities: $300,000\n\n2. **Formula:**\n   *   Current Ratio = Current Assets / Current Liabilities\n   *   Quick Ratio = (Cash + Accounts Receivable) / Current Liabilities\n   *   Cash Ratio = Cash / Current Liabilities\n\n3. **Calculation:**\n   *   **Current Ratio:**\n      *   Current Ratio = $640,000 / $300,000\n      *   Current Ratio = 2.13\n   *   **Quick Ratio:**\n      *   Quick Ratio = ($85,000 + $220,000) / $300,000\n      *   Quick Ratio = $305,000 / $300,000\n      *   Quick Ratio = 1.02\n   *   **Cash Ratio:**\n      *   Cash Ratio = $85,000 / $300,000\n      *   Cash Ratio = 0.28\n\n4. **Answer:**\n   *   Current Ratio = 2.13:1\n   *   Quick Ratio = 1.02:1\n   *   Cash Ratio = 0.28:1",
+          "keyFormula": "The key formulas used are:\n* Current Ratio = Current Assets / Current Liabilities\n* Quick Ratio = (Cash + Accounts Receivable) / Current Liabilities\n* Cash Ratio = Cash / Current Liabilities",
+          "commonMistakes": [
+            "Forgetting to exclude inventory and prepaid expenses when calculating the Quick Ratio. These assets are not easily converted to cash.",
+            "Using total assets instead of current assets in the Current Ratio calculation.",
+            "Incorrectly identifying current assets and current liabilities from the financial statements. Make sure to only include items expected to be converted to cash or paid within one year (or the operating cycle, if longer)."
+          ],
+          "examTip": "Memorize the formulas for liquidity ratios. Pay close attention to the components of each ratio, especially the Quick Ratio, which excludes inventory and prepaid expenses. Practice identifying current assets and liabilities quickly from a balance sheet."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate efficiency ratios: Inventory Turnover, Days Sales Outstanding (DSO), and Asset Turnover.",
+          "hints": [
+            "Use average balances for balance sheet items"
+          ],
+          "solution": {
+            "approach": "Calculate turnover ratios using appropriate income and balance sheet items",
+            "calculations": "**Efficiency Ratios:**\n\n**Inventory Turnover:**\nAverage Inventory = ($290,000 + $310,000) / 2 = $300,000\nInventory Turnover = COGS / Avg Inventory\n= $1,680,000 / $300,000 = **5.6 times**\nDays in Inventory = 365 / 5.6 = **65.2 days**\n\n**Accounts Receivable Turnover:**\nAverage A/R = ($200,000 + $220,000) / 2 = $210,000\nA/R Turnover = Net Sales / Avg A/R\n= $2,400,000 / $210,000 = **11.43 times**\nDSO = 365 / 11.43 = **31.9 days**\n\n**Total Asset Turnover:**\nAverage Total Assets = ($1,400,000 + $1,500,000) / 2 = $1,450,000\nAsset Turnover = Net Sales / Avg Total Assets\n= $2,400,000 / $1,450,000 = **1.66 times**",
+            "answer": {
+              "inventoryTurnover": 5.6,
+              "dso": 31.9,
+              "assetTurnover": 1.66
+            },
+            "explanation": "Efficiency ratios measure how effectively assets are used to generate sales."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the efficiency ratios:\n\n**1. Inventory Turnover:**\n   *Efficiency ratios measure how effectively a company utilizes its assets, such as inventory, to generate sales. Inventory turnover indicates how many times a company has sold and replaced its inventory during a period. A higher turnover generally suggests efficient inventory management.\n\n   **Given Information:**\n   *   Cost of Goods Sold (COGS): $1,680,000\n   *   Beginning Inventory: $290,000\n   *   Ending Inventory: $310,000\n\n   **Formula:**\n   *   Average Inventory = (Beginning Inventory + Ending Inventory) / 2\n   *   Inventory Turnover = Cost of Goods Sold / Average Inventory\n   *   Days in Inventory = 365 / Inventory Turnover\n\n   **Calculation:**\n   *   Average Inventory = ($290,000 + $310,000) / 2 = $300,000\n   *   Inventory Turnover = $1,680,000 / $300,000 = 5.6 times\n   *   Days in Inventory = 365 / 5.6 = 65.2 days\n\n   **Answer:**\n   *   Inventory Turnover: 5.6 times\n   *   Days in Inventory: 65.2 days\n\n**2. Days Sales Outstanding (DSO):**\n   *DSO, also known as average collection period, measures the average number of days that a company takes to collect revenue after a sale. A lower DSO indicates that a company is collecting its receivables more quickly.\n\n   **Given Information:**\n   *   Net Sales: $2,400,000\n   *   Beginning Accounts Receivable: $200,000\n   *   Ending Accounts Receivable: $220,000\n\n   **Formula:**\n   *   Average Accounts Receivable = (Beginning Accounts Receivable + Ending Accounts Receivable) / 2\n   *   Accounts Receivable Turnover = Net Sales / Average Accounts Receivable\n   *   Days Sales Outstanding (DSO) = 365 / Accounts Receivable Turnover\n\n   **Calculation:**\n   *   Average Accounts Receivable = ($200,000 + $220,000) / 2 = $210,000\n   *   Accounts Receivable Turnover = $2,400,000 / $210,000 = 11.43 times\n   *   DSO = 365 / 11.43 = 31.9 days\n\n   **Answer:**\n   *   Days Sales Outstanding (DSO): 31.9 days\n\n**3. Total Asset Turnover:**\n   *Asset turnover measures how efficiently a company uses its assets to generate sales revenue. A higher asset turnover ratio indicates that a company is more effective in using its assets to generate revenue.\n\n   **Given Information:**\n   *   Net Sales: $2,400,000\n   *   Beginning Total Assets: $1,400,000\n   *   Ending Total Assets: $1,500,000\n\n   **Formula:**\n   *   Average Total Assets = (Beginning Total Assets + Ending Total Assets) / 2\n   *   Asset Turnover = Net Sales / Average Total Assets\n\n   **Calculation:**\n   *   Average Total Assets = ($1,400,000 + $1,500,000) / 2 = $1,450,000\n   *   Asset Turnover = $2,400,000 / $1,450,000 = 1.66 times\n\n   **Answer:**\n   *   Asset Turnover: 1.66 times",
+          "keyFormula": "Key formulas include: Inventory Turnover = COGS / Avg Inventory; DSO = 365 / (Net Sales / Avg A/R); Asset Turnover = Net Sales / Avg Total Assets",
+          "commonMistakes": [
+            "Using ending inventory instead of average inventory for the inventory turnover calculation. Always use the average balance when available.",
+            "Using cost of goods sold instead of net sales when calculating Days Sales Outstanding (DSO). DSO requires net sales.",
+            "Forgetting to annualize the ratios. If given quarterly data, you must multiply by 4 to get annual sales or COGS before calculating the turnover ratios.",
+            "Using the wrong average balances. Make sure to use the average of beginning and ending balances for the period in question."
+          ],
+          "examTip": "Memorize the formulas for these ratios. Pay close attention to whether the problem provides beginning and ending balances, requiring you to calculate the average. If only one year-end balance is provided, use that balance as the average."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate profitability ratios: Gross Margin, Operating Margin, Net Profit Margin, ROA, and ROE.",
+          "hints": [
+            "Use average assets and equity for ROA and ROE"
+          ],
+          "solution": {
+            "approach": "Calculate margin ratios from income statement, return ratios using averages",
+            "calculations": "**Profitability Ratios:**\n\n**Gross Profit Margin:**\n= Gross Profit / Net Sales\n= $720,000 / $2,400,000 = **30.0%**\n\n**Operating Margin:**\n= Operating Income / Net Sales\n= $240,000 / $2,400,000 = **10.0%**\n\n**Net Profit Margin:**\n= Net Income / Net Sales\n= $150,000 / $2,400,000 = **6.25%**\n\n**Return on Assets (ROA):**\nAverage Assets = $1,450,000\n= Net Income / Avg Total Assets\n= $150,000 / $1,450,000 = **10.34%**\n\n**Return on Equity (ROE):**\nAverage Equity = ($750,000 + $800,000) / 2 = $775,000\n= Net Income / Avg Equity\n= $150,000 / $775,000 = **19.35%**\n\n*Note: ROE of 19.35% exceeds industry average of 15%*",
+            "answer": {
+              "grossMargin": 30,
+              "operatingMargin": 10,
+              "netMargin": 6.25,
+              "roa": 10.34,
+              "roe": 19.35
+            },
+            "explanation": "Profitability ratios show margins at different income levels and returns on investment."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the profitability ratios for RetailCo Inc:\n\n1. **Given Information:**\n   *   Net Sales: $2,400,000\n   *   Gross Profit: $720,000\n   *   Operating Income: $240,000\n   *   Net Income: $150,000\n   *   Beginning Total Assets: $1,400,000\n   *   Ending Total Assets: $1,500,000\n   *   Beginning Equity: $750,000\n   *   Ending Equity: $800,000\n\n2. **Gross Profit Margin:**\n   *   **Formula:** Gross Profit Margin = Gross Profit / Net Sales\n   *   **Calculation:** Gross Profit Margin = $720,000 / $2,400,000 = 0.30\n   *   **Answer:** 30.0%\n\n3. **Operating Margin:**\n   *   **Formula:** Operating Margin = Operating Income / Net Sales\n   *   **Calculation:** Operating Margin = $240,000 / $2,400,000 = 0.10\n   *   **Answer:** 10.0%\n\n4. **Net Profit Margin:**\n   *   **Formula:** Net Profit Margin = Net Income / Net Sales\n   *   **Calculation:** Net Profit Margin = $150,000 / $2,400,000 = 0.0625\n   *   **Answer:** 6.25%\n\n5. **Return on Assets (ROA):**\n   *   **Formula:** ROA = Net Income / Average Total Assets\n   *   **Calculation:** Average Total Assets = ($1,400,000 + $1,500,000) / 2 = $1,450,000\n   *   **Calculation:** ROA = $150,000 / $1,450,000 = 0.1034\n   *   **Answer:** 10.34%\n\n6. **Return on Equity (ROE):**\n   *   **Formula:** ROE = Net Income / Average Equity\n   *   **Calculation:** Average Equity = ($750,000 + $800,000) / 2 = $775,000\n   *   **Calculation:** ROE = $150,000 / $775,000 = 0.1935\n   *   **Answer:** 19.35%",
+          "keyFormula": "Key profitability formulas include: Gross Profit Margin = Gross Profit / Net Sales; Operating Margin = Operating Income / Net Sales; Net Profit Margin = Net Income / Net Sales; ROA = Net Income / Average Total Assets; ROE = Net Income / Average Equity",
+          "commonMistakes": [
+            "Failing to use average assets and equity when calculating ROA and ROE. Using ending balances will skew the results.",
+            "Incorrectly calculating average assets or equity. Remember to add the beginning and ending balances and divide by 2.",
+            "Using the wrong income figure (e.g., operating income instead of net income) in the ROA or ROE calculation."
+          ],
+          "examTip": "Memorize the formulas for profitability ratios. Pay close attention to whether the problem requires you to use average values for assets or equity. If beginning and ending balances are provided, calculate the average!"
+        },
+        {
+          "id": "t4",
+          "taskNumber": 4,
+          "requirement": "Calculate leverage ratios: Debt-to-Equity, Debt-to-Assets, Times Interest Earned, and Equity Multiplier.",
+          "hints": [
+            "Total debt includes both current and long-term debt portions"
+          ],
+          "solution": {
+            "approach": "Calculate solvency and coverage ratios",
+            "calculations": "**Leverage Ratios:**\n\n**Debt-to-Equity Ratio:**\nTotal Debt = Current Liabilities + LT Debt = $300,000 + $400,000 = $700,000\n= Total Debt / Total Equity\n= $700,000 / $800,000 = **0.875:1 or 87.5%**\n\n**Debt-to-Assets Ratio:**\n= Total Liabilities / Total Assets\n= $700,000 / $1,500,000 = **46.7%**\n\n**Times Interest Earned (TIE):**\n= EBIT / Interest Expense\n= $240,000 / $40,000 = **6.0 times**\n\n**Equity Multiplier:**\n= Total Assets / Total Equity\n= $1,500,000 / $800,000 = **1.875**\n\n**Assessment:**\n- Moderate leverage (D/E < 1.0)\n- Strong interest coverage (TIE > 5.0)\n- Financial flexibility appears adequate",
+            "answer": {
+              "debtToEquity": 0.875,
+              "debtToAssets": 0.467,
+              "tie": 6,
+              "equityMultiplier": 1.875
+            },
+            "explanation": "Leverage ratios assess financial risk and debt service capability."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the leverage ratios for RetailCo Inc.:\n\n1. **Given Information:**\n   *   Current Liabilities: $300,000\n   *   Long-Term Debt: $400,000\n   *   Total Assets: $1,500,000\n   *   Total Equity: $800,000\n   *   EBIT (Earnings Before Interest and Taxes): $240,000\n   *   Interest Expense: $40,000\n\n2. **Debt-to-Equity Ratio:**\n   *   **Formula:** Debt-to-Equity Ratio = Total Debt / Total Equity\n   *   **Calculation:**\n        *   First, calculate Total Debt: Total Debt = Current Liabilities + Long-Term Debt = $300,000 + $400,000 = $700,000\n        *   Then, calculate the Debt-to-Equity Ratio: $700,000 / $800,000 = 0.875\n   *   **Answer:** The Debt-to-Equity Ratio is 0.875:1 or 87.5%\n\n3. **Debt-to-Assets Ratio:**\n   *   **Formula:** Debt-to-Assets Ratio = Total Debt / Total Assets\n   *   **Calculation:** $700,000 / $1,500,000 = 0.466666... (rounded to 0.467)\n   *   **Answer:** The Debt-to-Assets Ratio is 46.7%\n\n4. **Times Interest Earned (TIE):**\n   *   **Formula:** Times Interest Earned = EBIT / Interest Expense\n   *   **Calculation:** $240,000 / $40,000 = 6\n   *   **Answer:** The Times Interest Earned is 6.0 times\n\n5. **Equity Multiplier:**\n   *   **Formula:** Equity Multiplier = Total Assets / Total Equity\n   *   **Calculation:** $1,500,000 / $800,000 = 1.875\n   *   **Answer:** The Equity Multiplier is 1.875",
+          "keyFormula": "Key Formulas:\n* Debt-to-Equity Ratio = Total Debt / Total Equity\n* Debt-to-Assets Ratio = Total Debt / Total Assets\n* Times Interest Earned = EBIT / Interest Expense\n* Equity Multiplier = Total Assets / Total Equity",
+          "commonMistakes": [
+            "Forgetting to include both current and long-term debt when calculating total debt. The problem statement specifies that total debt includes both.",
+            "Using net income instead of EBIT in the Times Interest Earned ratio. TIE measures the company's ability to cover interest expense from its operating income (EBIT).",
+            "Incorrectly calculating the Equity Multiplier by dividing total equity by total assets instead of total assets by total equity. Remember that the Equity Multiplier shows how many assets are supported by each dollar of equity.",
+            "Confusing the Debt-to-Assets ratio with the Assets-to-Equity ratio. Make sure you are using the correct numerator and denominator."
+          ],
+          "examTip": "Memorize the formulas for leverage ratios. During the exam, quickly jot them down on your scratch paper to avoid confusion. Pay close attention to whether the problem provides EBIT or net income, as this will affect the Times Interest Earned calculation. Double-check that you are using the correct figures for total debt, which includes both current and long-term portions."
+        },
+        {
+          "id": "t5",
+          "taskNumber": 5,
+          "requirement": "Perform DuPont Analysis to decompose ROE and provide an overall assessment.",
+          "hints": [
+            "DuPont: ROE = Net Margin × Asset Turnover × Equity Multiplier"
+          ],
+          "solution": {
+            "approach": "Break down ROE using three-factor DuPont model",
+            "calculations": "**DuPont Analysis:**\n\nROE = Net Profit Margin × Asset Turnover × Equity Multiplier\n\n**Components:**\nNet Profit Margin = 6.25%\nAsset Turnover = 1.66 times\nEquity Multiplier = 1.875\n\n**Verification:**\nROE = 6.25% × 1.66 × 1.875\nROE = 6.25% × 3.11 = **19.4%** ✓ (matches calculated 19.35%)\n\n**Component Analysis:**\n| Component | Value | Interpretation |\n|-----------|-------|----------------|\n| Net Margin | 6.25% | Moderate profitability per dollar of sales |\n| Asset Turnover | 1.66x | Good asset utilization |\n| Equity Multiplier | 1.875x | Moderate leverage |\n\n**OVERALL ASSESSMENT:**\n✓ ROE (19.35%) exceeds industry average (15%)\n✓ Strong liquidity position\n✓ Efficient asset utilization\n✓ Manageable debt levels with strong coverage\n⚠️ Gross margin (30%) and net margin could improve\n\n**RECOMMENDATION:** Favorable acquisition candidate with solid fundamentals. Focus due diligence on margin improvement opportunities.",
+            "answer": {
+              "dupontROE": 19.4,
+              "favorable": 1
+            },
+            "explanation": "DuPont analysis reveals the drivers of ROE: profitability, efficiency, and leverage. Recommendation: Favorable acquisition candidate."
+          },
+          "points": 10,
+          "enhanced": true,
+          "stepByStep": "Here's how to perform a DuPont analysis to decompose RetailCo's Return on Equity (ROE):\n\n1. **Given Information:**\n   *   Net Profit Margin = 6.25%\n   *   Asset Turnover = 1.66 times\n   *   Equity Multiplier = 1.875\n\n2. **Formula:**\n   *   DuPont Analysis: ROE = Net Profit Margin × Asset Turnover × Equity Multiplier\n\n3. **Calculation:**\n   *   ROE = 6.25% × 1.66 × 1.875\n   *   ROE = 0.0625 * 1.66 * 1.875\n   *   ROE = 0.1036 * 1.875\n   *   ROE = 0.194 or 19.4%\n\n4. **Answer:**\n   *   The Return on Equity (ROE) using DuPont analysis is 19.4%. This indicates that for every dollar of equity, RetailCo generates 19.4 cents in profit.",
+          "keyFormula": "ROE = Net Profit Margin × Asset Turnover × Equity Multiplier",
+          "commonMistakes": [
+            "Forgetting to convert the Net Profit Margin from a percentage to a decimal before multiplying. For example, using 6.25 instead of 0.0625.",
+            "Rounding intermediate calculations too early, which can lead to a significant difference in the final ROE calculation. Carry calculations to at least four decimal places.",
+            "Incorrectly calculating or interpreting the Equity Multiplier. Remember that Equity Multiplier = Total Assets / Total Equity."
+          ],
+          "examTip": "Memorize the DuPont formula. On the exam, quickly identify and extract the necessary components (Net Profit Margin, Asset Turnover, and Equity Multiplier) from the financial statements provided. Double-check your calculations, especially when dealing with percentages and decimals, to avoid simple arithmetic errors."
+        }
+      ],
+      "skills": [
+        "Financial ratio analysis",
+        "DuPont analysis",
+        "Trend interpretation",
+        "Investment evaluation"
+      ],
+      "relatedConcepts": [
+        "Liquidity",
+        "Profitability",
+        "Solvency",
+        "Efficiency"
+      ]
+    },
+    {
+      "id": "cma2-sim-008",
+      "section": "CMA2",
+      "title": "Optimal Capital Structure & WACC Analysis",
+      "blueprintArea": "CMA2-B",
+      "topic": "WACC and Capital Structure Optimization",
+      "difficulty": "hard",
+      "estimatedTime": 25,
+      "scenario": "TechVenture Corp is considering restructuring its capital to fund a major expansion. The CFO has asked you to analyze the impact of different debt levels on WACC and firm value to determine the optimal capital structure.\n\nCurrent market data and proposed scenarios are provided in the exhibits.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Current Capital Structure & Market Data",
+          "type": "table",
+          "data": "| Item | Value |\n|------|-------|\n| Market value of equity | $500 million |\n| Market value of debt | $200 million |\n| Total firm value | $700 million |\n| Risk-free rate | 4.0% |\n| Market risk premium | 6.0% |\n| Current beta (levered) | 1.20 |\n| Current cost of debt (pre-tax) | 5.5% |\n| Corporate tax rate | 25% |\n| Current EBIT | $105 million |"
+        },
+        {
+          "id": "ex2",
+          "title": "Proposed Capital Structure Scenarios",
+          "type": "table",
+          "data": "| Scenario | D/V Ratio | Pre-tax Cost of Debt | Levered Beta |\n|----------|----------|---------------------|-------------|\n| A - Conservative | 20% | 5.0% | 1.05 |\n| B - Current | 28.6% | 5.5% | 1.20 |\n| C - Moderate | 40% | 6.5% | 1.45 |\n| D - Aggressive | 55% | 8.5% | 1.90 |\n| E - Highly Leveraged | 70% | 12.0% | 2.80 |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the cost of equity (CAPM) and WACC for each of the 5 scenarios.",
+          "hints": [
+            "ke = Rf + β(Rm-Rf)",
+            "WACC = we × ke + wd × kd × (1-T)"
+          ],
+          "solution": {
+            "approach": "Apply CAPM for cost of equity, then weighted average for WACC",
+            "calculations": "**Cost of Equity = Rf + β × MRP = 4% + β × 6%**\n\n| Scenario | D/V | E/V | Beta | ke | kd(1-T) | WACC |\n|----------|-----|-----|------|-----|---------|------|\n| A | 20% | 80% | 1.05 | 10.30% | 3.75% | 8.99% |\n| B | 28.6% | 71.4% | 1.20 | 11.20% | 4.125% | 9.18% |\n| C | 40% | 60% | 1.45 | 12.70% | 4.875% | 9.57% |\n| D | 55% | 45% | 1.90 | 15.40% | 6.375% | 10.44% |\n| E | 70% | 30% | 2.80 | 20.80% | 9.00% | 12.54% |\n\n**Detailed Scenario A:**\nke = 4% + 1.05 × 6% = 10.30%\nkd(1-T) = 5.0% × (1-0.25) = 3.75%\nWACC = 0.80 × 10.30% + 0.20 × 3.75% = 8.24% + 0.75% = **8.99%**",
+            "answer": {
+              "waccA": 8.99,
+              "waccB": 9.18,
+              "waccC": 9.57,
+              "waccD": 10.44,
+              "waccE": 12.54
+            },
+            "explanation": "WACC increases with leverage because the rising cost of debt and equity from financial risk more than offsets the tax benefit of debt beyond the optimal point."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the cost of equity and WACC for each scenario:\n\n**Scenario A:**\n1. **Given Information:**\n   * Debt/Value (D/V) = 20%\n   * Equity/Value (E/V) = 80%\n   * Beta = 1.05\n   * Risk-Free Rate (Rf) = 4%\n   * Market Risk Premium (MRP) = 6%\n   * Cost of Debt (kd) = 5.0%\n   * Tax Rate (T) = 25%\n\n2. **Formula:**\n   * Cost of Equity (ke) = Rf + β × MRP\n   * After-tax Cost of Debt (kd(1-T)) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.05 × 6%) = 4% + 6.3% = 10.30%\n   * kd(1-T) = 5.0% × (1 - 0.25) = 5.0% × 0.75 = 3.75%\n   * WACC = (0.80 × 10.30%) + (0.20 × 3.75%) = 8.24% + 0.75% = 8.99%\n\n4. **Answer:**\n   * WACC for Scenario A = 8.99%\n\n**Scenario B:**\n1. **Given Information:**\n   * D/V = 28.6%\n   * E/V = 71.4%\n   * Beta = 1.20\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 5.5%\n   * T = 25%\n\n2. **Formula:**\n   * ke = Rf + β × MRP\n   * kd(1-T) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.20 × 6%) = 4% + 7.2% = 11.20%\n   * kd(1-T) = 5.5% × (1 - 0.25) = 5.5% × 0.75 = 4.125%\n   * WACC = (0.714 × 11.20%) + (0.286 × 4.125%) = 8.00% + 1.18% = 9.18%\n\n4. **Answer:**\n   * WACC for Scenario B = 9.18%\n\n**Scenario C:**\n1. **Given Information:**\n   * D/V = 40%\n   * E/V = 60%\n   * Beta = 1.45\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 6.5%\n   * T = 25%\n\n2. **Formula:**\n   * ke = Rf + β × MRP\n   * kd(1-T) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.45 × 6%) = 4% + 8.7% = 12.70%\n   * kd(1-T) = 6.5% × (1 - 0.25) = 6.5% × 0.75 = 4.875%\n   * WACC = (0.60 × 12.70%) + (0.40 × 4.875%) = 7.62% + 1.95% = 9.57%\n\n4. **Answer:**\n   * WACC for Scenario C = 9.57%\n\n**Scenario D:**\n1. **Given Information:**\n   * D/V = 55%\n   * E/V = 45%\n   * Beta = 1.90\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 8.5%\n   * T = 25%\n\n2. **Formula:**\n   * ke = Rf + β × MRP\n   * kd(1-T) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (1.90 × 6%) = 4% + 11.4% = 15.40%\n   * kd(1-T) = 8.5% × (1 - 0.25) = 8.5% × 0.75 = 6.375%\n   * WACC = (0.45 × 15.40%) + (0.55 × 6.375%) = 6.93% + 3.51% = 10.44%\n\n4. **Answer:**\n   * WACC for Scenario D = 10.44%\n\n**Scenario E:**\n1. **Given Information:**\n   * D/V = 70%\n   * E/V = 30%\n   * Beta = 2.80\n   * Rf = 4%\n   * MRP = 6%\n   * kd = 12.0%\n   * T = 25%\n\n2. **Formula:**\n   * Cost of Equity (ke) = Rf + β × MRP\n   * After-tax Cost of Debt (kd(1-T)) = kd × (1 - T)\n   * WACC = (we × ke) + (wd × kd × (1-T))\n\n3. **Calculation:**\n   * ke = 4% + (2.80 × 6%) = 4% + 16.8% = 20.80%\n   * kd(1-T) = 12.0% × (1 - 0.25) = 12.0% × 0.75 = 9.00%\n   * WACC = (0.30 × 20.80%) + (0.70 × 9.00%) = 6.24% + 6.30% = 12.54%\n\n4. **Answer:**\n   * WACC for Scenario E = 12.54%",
+          "keyFormula": "WACC = (we × ke) + (wd × kd × (1-T))",
+          "commonMistakes": [
+            "Forgetting to adjust the cost of debt for the tax shield. The interest expense is tax deductible, so you need to use the after-tax cost of debt.",
+            "Using the book value weights instead of the market value weights for debt and equity. WACC should be calculated using market values because they reflect the current cost of capital.",
+            "Incorrectly calculating the cost of equity using CAPM. Ensure you are using the correct beta, risk-free rate, and market risk premium.",
+            "Not converting percentages to decimals (or vice versa) when performing calculations. This can lead to significant errors in the final WACC calculation."
+          ],
+          "examTip": "On the exam, double-check that you're using market values for weighting debt and equity in the WACC calculation. Also, quickly verify that your WACC result falls within a reasonable range given the individual costs of debt and equity."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Calculate the estimated firm value under each scenario using the perpetuity approach: V = EBIT(1-T) / WACC. Which scenario maximizes firm value?",
+          "hints": [
+            "V = NOPAT / WACC where NOPAT = EBIT × (1-T)"
+          ],
+          "solution": {
+            "approach": "Calculate NOPAT, then divide by WACC for each scenario",
+            "calculations": "**NOPAT = $105M × (1 - 0.25) = $78.75M**\n\n| Scenario | WACC | V = $78.75M / WACC | Δ vs Current |\n|----------|------|---------------------|-------------|\n| A | 8.99% | $876.0M | +$176.0M |\n| B (current) | 9.18% | $857.7M | — |\n| C | 9.57% | $822.9M | -$34.8M |\n| D | 10.44% | $754.3M | -$103.4M |\n| E | 12.54% | $628.0M | -$229.7M |\n\n**Scenario A maximizes firm value at $876.0M** (+$176M vs current)\n\nThe lowest WACC (8.99%) corresponds to the highest firm value.",
+            "answer": {
+              "firmValueA": 876,
+              "firmValueB": 857.7,
+              "optimalScenario": 1
+            },
+            "explanation": "Scenario A (conservative 20% D/V) maximizes firm value because the cost savings from lower-risk borrowing exceed the reduced tax shield from less debt."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to determine the optimal capital structure for TechVenture Corp:\n\n1. **Given Information:**\n   *   EBIT = $105 million\n   *   Tax Rate (T) = 25% or 0.25\n   *   We need the WACC for each scenario (A, B, C, D, and E) from the exhibits.\n   *   Scenario A WACC = 8.99% or 0.0899\n   *   Scenario B WACC = 9.18% or 0.0918\n   *   Scenario C WACC = 9.57% or 0.0957\n   *   Scenario D WACC = 10.44% or 0.1044\n   *   Scenario E WACC = 12.54% or 0.1254\n\n2. **Formula:**\n   *   Net Operating Profit After Tax (NOPAT) = EBIT × (1 - Tax Rate)\n   *   Firm Value (V) = NOPAT / WACC\n\n3. **Calculation:**\n   *   **Calculate NOPAT:**\n        *   NOPAT = $105,000,000 × (1 - 0.25)\n        *   NOPAT = $105,000,000 × 0.75\n        *   NOPAT = $78,750,000\n\n   *   **Calculate Firm Value for each scenario:**\n        *   Scenario A: V = $78,750,000 / 0.0899 = $876,008,900 (rounded to $876.0M)\n        *   Scenario B: V = $78,750,000 / 0.0918 = $857,843,137 (rounded to $857.7M)\n        *   Scenario C: V = $78,750,000 / 0.0957 = $822,884,013 (rounded to $822.9M)\n        *   Scenario D: V = $78,750,000 / 0.1044 = $754,310,345 (rounded to $754.3M)\n        *   Scenario E: V = $78,750,000 / 0.1254 = $627,990,431 (rounded to $628.0M)\n\n4. **Answer:**\n   *   Scenario A maximizes firm value at $876.0 million.",
+          "keyFormula": "V = NOPAT / WACC where NOPAT = EBIT × (1-T)",
+          "commonMistakes": [
+            "Forgetting to calculate NOPAT by multiplying EBIT by (1 - Tax Rate). Using EBIT directly in the Firm Value calculation will lead to an incorrect result.",
+            "Using the debt or equity cost directly instead of the WACC. The WACC represents the overall cost of capital and must be used in the firm valuation formula.",
+            "Incorrectly calculating NOPAT by adding back depreciation or other non-cash charges when they are not relevant to the NOPAT calculation in this specific scenario. NOPAT is simply EBIT adjusted for taxes in this case."
+          ],
+          "examTip": "Remember that, all else being equal, a lower WACC will result in a higher firm value. Therefore, quickly scan the WACCs provided and start your detailed calculations with the lowest WACC scenario."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "Calculate the unlevered (asset) beta using the Hamada equation from the current structure, then verify the levered betas are consistent across scenarios.",
+          "hints": [
+            "βu = βL / [1 + (1-T)(D/E)]"
+          ],
+          "solution": {
+            "approach": "Unlever current beta, then re-lever for each scenario to check consistency",
+            "calculations": "**Hamada Equation: βL = βu × [1 + (1-T)(D/E)]**\n**Unlevering: βu = βL / [1 + (1-T)(D/E)]**\n\n**Current (Scenario B):**\nD/E = 28.6% / 71.4% = 0.40\nβu = 1.20 / [1 + (1 - 0.25)(0.40)]\nβu = 1.20 / [1 + 0.30]\nβu = 1.20 / 1.30 = **0.923**\n\n**Verification for each scenario:**\n| Scenario | D/E | (1-T)(D/E) | 1 + factor | βL = 0.923 × factor | Given βL |\n|----------|-----|-----------|-----------|---------------------|----------|\n| A | 0.25 | 0.1875 | 1.1875 | 1.10 | 1.05 |\n| B | 0.40 | 0.30 | 1.30 | 1.20 | 1.20 ✓ |\n| C | 0.667 | 0.50 | 1.50 | 1.38 | 1.45 |\n| D | 1.222 | 0.917 | 1.917 | 1.77 | 1.90 |\n| E | 2.333 | 1.75 | 2.75 | 2.54 | 2.80 |\n\nBetas roughly consistent but given betas are slightly higher in high-leverage scenarios — reflecting additional distress risk premium beyond Hamada.",
+            "answer": {
+              "unleveredBeta": 0.923
+            },
+            "explanation": "The unlevered beta of 0.923 represents purely business risk. The divergence at high leverage levels reflects bankruptcy/distress costs not captured by the basic Hamada equation."
+          },
+          "points": 20,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the unlevered beta and verify the levered betas across different capital structure scenarios:\n\n1. **Given Information:**\n   *   Current Debt-to-Equity Ratio (Scenario B): 28.6% / 71.4% = 0.40\n   *   Current Levered Beta (Scenario B): 1.20\n   *   Tax Rate (T): 25% or 0.25\n   *   Hamada Equation: βL = βu × [1 + (1-T)(D/E)]\n\n2. **Formula:**\n   *   Unlevered Beta (βu): βu = βL / [1 + (1-T)(D/E)]\n\n3. **Calculation:**\n   *   **Step 1: Calculate the unlevered beta (βu) using the current capital structure (Scenario B).**\n       *   βu = 1.20 / [1 + (1 - 0.25)(0.40)]\n       *   βu = 1.20 / [1 + (0.75)(0.40)]\n       *   βu = 1.20 / [1 + 0.30]\n       *   βu = 1.20 / 1.30\n       *   βu = 0.923 (rounded to three decimal places)\n\n   *   **Step 2: Verify the levered betas (βL) for each scenario using the calculated unlevered beta (0.923).**\n\n      *   **Scenario A:** D/E = 0.25\n          *   (1-T)(D/E) = (1-0.25)(0.25) = (0.75)(0.25) = 0.1875\n          *   1 + (1-T)(D/E) = 1 + 0.1875 = 1.1875\n          *   βL = 0.923 * 1.1875 = 1.096 ≈ 1.10\n\n      *   **Scenario B:** D/E = 0.40\n          *   (1-T)(D/E) = (1-0.25)(0.40) = (0.75)(0.40) = 0.30\n          *   1 + (1-T)(D/E) = 1 + 0.30 = 1.30\n          *   βL = 0.923 * 1.30 = 1.20\n\n      *   **Scenario C:** D/E = 0.667\n          *   (1-T)(D/E) = (1-0.25)(0.667) = (0.75)(0.667) = 0.50\n          *   1 + (1-T)(D/E) = 1 + 0.50 = 1.50\n          *   βL = 0.923 * 1.50 = 1.38\n\n      *   **Scenario D:** D/E = 1.222\n          *   (1-T)(D/E) = (1-0.25)(1.222) = (0.75)(1.222) = 0.917\n          *   1 + (1-T)(D/E) = 1 + 0.917 = 1.917\n          *   βL = 0.923 * 1.917 = 1.77\n\n      *   **Scenario E:** D/E = 2.333\n          *   (1-T)(D/E) = (1-0.25)(2.333) = (0.75)(2.333) = 1.75\n          *   1 + (1-T)(D/E) = 1 + 1.75 = 2.75\n          *   βL = 0.923 * 2.75 = 2.54\n\n4. **Answer:**\nThe unlevered beta is 0.923.",
+          "keyFormula": "βu = βL / [1 + (1-T)(D/E)]",
+          "commonMistakes": [
+            "Forgetting to adjust the D/E ratio by (1-Tax Rate). This significantly impacts the unlevered beta calculation.",
+            "Using the wrong levered beta or D/E ratio from the incorrect scenario. Always double-check the scenario you are using for the initial unlevering calculation.",
+            "Rounding intermediate calculations too early, which can lead to a significant difference in the final unlevered beta."
+          ],
+          "examTip": "On the exam, if you're short on time, focus on accurately calculating the unlevered beta first. Then, if time permits, verify a couple of the levered betas from the other scenarios. If the calculated levered betas are close to the given ones, you can be reasonably confident in your unlevered beta calculation."
+        }
+      ],
+      "skills": [
+        "WACC calculation",
+        "Capital structure analysis",
+        "CAPM",
+        "Hamada equation"
+      ],
+      "relatedConcepts": [
+        "Cost of capital",
+        "MM propositions",
+        "Trade-off theory",
+        "Financial leverage"
+      ]
+    },
+    {
+      "id": "cma2-sim-009",
+      "section": "CMA2",
+      "title": "Multi-Product Profitability & Constraint Optimization",
+      "blueprintArea": "CMA2-C",
+      "topic": "Product Mix with Constraints and Make-vs-Buy",
+      "difficulty": "hard",
+      "estimatedTime": 25,
+      "scenario": "MetalWorks Manufacturing produces three products: Standard Brackets (SB), Premium Brackets (PB), and Custom Assemblies (CA). The company faces a machine-hour constraint and has received an outsourcing offer for one product line.\n\nYou must determine the optimal product mix and evaluate the outsourcing decision.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Product Data",
+          "type": "table",
+          "data": "| Item | Standard (SB) | Premium (PB) | Custom (CA) |\n|------|--------------|-------------|-------------|\n| Selling price | $80 | $150 | $220 |\n| Direct materials | $25 | $45 | $70 |\n| Direct labor ($30/hr) | $15 (0.5 hr) | $30 (1.0 hr) | $45 (1.5 hr) |\n| Variable overhead | $10 | $20 | $30 |\n| **Variable cost** | **$50** | **$95** | **$145** |\n| **CM per unit** | **$30** | **$55** | **$75** |\n| Machine hours/unit | 1.0 hr | 2.0 hr | 3.5 hr |\n| Demand (units/month) | 3,000 | 2,000 | 800 |\n\n**Available machine hours/month:** 8,000 hours\n**Fixed manufacturing overhead:** $120,000/month (allocated based on machine hours)"
+        },
+        {
+          "id": "ex2",
+          "title": "Outsourcing Offer",
+          "type": "table",
+          "data": "| Detail | Information |\n|--------|------------|\n| Product offered to outsource | Standard Brackets (SB) |\n| External supplier price per unit | $62 per unit |\n| Avoidable fixed costs if outsourced | $18,000/month |\n| Machine hours freed | All SB machine hours |\n| Quality | Meets specifications |\n| Delivery | Reliable |"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the CM per machine hour for each product. Determine the optimal product mix given the 8,000 machine-hour constraint. What is the maximum total CM?",
+          "hints": [
+            "Rank by CM per constrained resource. Allocate constraint to highest-ranked first."
+          ],
+          "solution": {
+            "approach": "Calculate CM per machine hour, rank products, allocate to demand in order",
+            "calculations": "**CM per Machine Hour:**\nSB: $30 / 1.0 hr = **$30/hr**\nPB: $55 / 2.0 hr = **$27.50/hr**\nCA: $75 / 3.5 hr = **$21.43/hr**\n\n**Ranking:** SB ($30) > PB ($27.50) > CA ($21.43)\n\n**Machine Hours Required to Meet Full Demand:**\nSB: 3,000 × 1.0 = 3,000 hrs\nPB: 2,000 × 2.0 = 4,000 hrs\nCA: 800 × 3.5 = 2,800 hrs\n**Total needed: 9,800 hrs** (exceeds 8,000 by 1,800)\n\n**Optimal allocation (highest CM/hr first):**\n1. SB: 3,000 units × 1.0 hr = 3,000 hrs → CM = 3,000 × $30 = $90,000\n2. PB: 2,000 units × 2.0 hr = 4,000 hrs → CM = 2,000 × $55 = $110,000\n   Remaining: 8,000 - 3,000 - 4,000 = 1,000 hrs\n3. CA: 1,000 / 3.5 = 285 units → CM = 285 × $75 = $21,375\n\n**Maximum Total CM = $90,000 + $110,000 + $21,375 = $221,375**\n**Unfulfilled CA demand: 800 - 285 = 515 units**",
+            "answer": {
+              "sbCMperHr": 30,
+              "pbCMperHr": 27.5,
+              "caCMperHr": 21.43,
+              "maxCM": 221375
+            },
+            "explanation": "Optimal mix: SB 3,000 + PB 2,000 + CA 285 units. CA is partially constrained because it has the lowest CM per machine hour."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "1. **Given Information:**\n   *   Standard Brackets (SB): CM = $30/unit, Machine Hours = 1.0 hr/unit, Demand = 3,000 units\n   *   Premium Brackets (PB): CM = $55/unit, Machine Hours = 2.0 hr/unit, Demand = 2,000 units\n   *   Custom Assemblies (CA): CM = $75/unit, Machine Hours = 3.5 hr/unit, Demand = 800 units\n   *   Total Available Machine Hours: 8,000\n\n2. **Formula:**\n   *   Contribution Margin (CM) per Machine Hour = Contribution Margin per Unit / Machine Hours per Unit\n   *   Total Contribution Margin = (Units Produced * Contribution Margin per Unit) for each product, summed together.\n\n3. **Calculation:**\n   *   **Calculate CM per Machine Hour for each product:**\n      *   SB: $30 / 1.0 hr = $30/hr\n      *   PB: $55 / 2.0 hr = $27.50/hr\n      *   CA: $75 / 3.5 hr = $21.43/hr (rounded to two decimal places)\n   *   **Rank products based on CM per Machine Hour:** SB ($30) > PB ($27.50) > CA ($21.43)\n   *   **Calculate Machine Hours Required to Meet Full Demand:**\n      *   SB: 3,000 units * 1.0 hr/unit = 3,000 hrs\n      *   PB: 2,000 units * 2.0 hr/unit = 4,000 hrs\n      *   CA: 800 units * 3.5 hr/unit = 2,800 hrs\n      *   Total Machine Hours Required: 3,000 + 4,000 + 2,800 = 9,800 hrs\n   *   **Determine Optimal Product Mix (allocate machine hours based on ranking):**\n      *   Allocate all available machine hours to SB first (highest CM/hr):\n          *   SB: Produce 3,000 units (full demand) * 1.0 hr/unit = 3,000 hrs. Contribution Margin = 3,000 * $30 = $90,000\n      *   Allocate remaining machine hours to PB (second highest CM/hr):\n          *   PB: Produce 2,000 units (full demand) * 2.0 hr/unit = 4,000 hrs. Contribution Margin = 2,000 * $55 = $110,000\n      *   Remaining Machine Hours: 8,000 (total) - 3,000 (SB) - 4,000 (PB) = 1,000 hrs\n      *   Allocate remaining machine hours to CA (lowest CM/hr):\n          *   CA: 1,000 hrs / 3.5 hr/unit = 285.71 units. Since we can't produce partial units, round down to 285 units. Contribution Margin = 285 * $75 = $21,375\n   *   **Calculate Maximum Total Contribution Margin:**\n      *   Total CM = $90,000 (SB) + $110,000 (PB) + $21,375 (CA) = $221,375\n\n4. **Answer:**\n   *   Maximum Total Contribution Margin = $221,375\n",
+          "keyFormula": "Contribution Margin per Machine Hour = Contribution Margin per Unit / Machine Hours per Unit",
+          "commonMistakes": [
+            "Forgetting to rank the products by contribution margin *per constrained resource* (machine hour in this case). Ranking by total contribution margin per product will lead to a suboptimal solution.",
+            "Not considering the demand for each product. You can't produce more units than the market demands, even if it would maximize contribution margin per machine hour.",
+            "Rounding up the number of units produced when allocating the constrained resource. You can only produce whole units, so always round down to the nearest whole number when calculating the number of units that can be produced with the remaining machine hours. Rounding up would exceed the constraint.",
+            "Failing to subtract the machine hours used by previously allocated products when allocating the constrained resource to subsequent products."
+          ],
+          "examTip": "On the exam, quickly calculate the CM per constrained resource for each product. Then, create a table to allocate the constraint, ensuring you don't exceed demand for any product. This structured approach minimizes errors under time pressure. Remember to double-check your calculations!"
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Evaluate the outsourcing offer for Standard Brackets. Should MetalWorks outsource SB and use freed machine hours for other products? Show the financial impact.",
+          "hints": [
+            "Compare: cost to buy vs cost to make + opportunity cost of freed hours"
+          ],
+          "solution": {
+            "approach": "Calculate incremental cost of outsourcing vs making, considering freed capacity reallocation",
+            "calculations": "**Make vs Buy Analysis (per unit):**\n| Cost | Make | Buy |\n|------|------|-----|\n| Variable cost | $50 | — |\n| Purchase price | — | $62 |\n| **Differential** | | **$12 more to buy** |\n\n**Cost to outsource 3,000 SB:** 3,000 × $12 = $36,000/month MORE\n**Avoidable fixed costs saved:** $18,000/month\n**Net outsourcing cost:** $36,000 - $18,000 = $18,000/month MORE\n\n**BUT — freed machine hours create opportunity:**\nFreed hours from SB: 3,000 machine hours\nThese can produce additional CA units:\nAdditional CA: 3,000 hr / 3.5 hr = 857 units\nBut CA demand is only 800 total, currently making 285\nAdditional CA possible: 800 - 285 = 515 units × 3.5 hr = 1,802.5 hrs\n\nRemaining hrs: 3,000 - 1,802.5 = 1,197.5 hrs\nAdditional PB possible: Demand already met (2,000), so $0\n\n**Value of additional CA production:**\n515 units × $75 CM = $38,625\n\n**Net benefit of outsourcing:**\nAdditional CM from CA: $38,625\nLess: Net outsourcing cost: ($18,000)\n**Net benefit: $38,625 - $18,000 = $20,625/month**\n\n**RECOMMEND: OUTSOURCE Standard Brackets**",
+            "answer": {
+              "outsourceCostPerUnit": 12,
+              "netBenefit": 20625
+            },
+            "explanation": "Despite costing $12 more per unit to buy, outsourcing SB frees machine hours to produce 515 more Custom Assemblies, generating $20,625/month net benefit."
+          },
+          "points": 30,
+          "enhanced": true,
+          "stepByStep": "Here's how to evaluate the outsourcing offer for Standard Brackets (SB) and determine the financial impact:\n\n1. **Given Information:**\n   *   Variable cost to make SB: $50/unit\n   *   Purchase price to buy SB: $62/unit\n   *   Fixed costs avoidable by outsourcing SB: $18,000/month\n   *   Machine hours required to produce SB: 1 hour/unit\n   *   Machine hours required to produce CA: 3.5 hours/unit\n   *   Contribution Margin (CM) of CA: $75/unit\n   *   Current production of CA: 285 units\n   *   Total demand for CA: 800 units\n   *   Current production of PB: 2,000 units\n   *   Total demand for PB: 2,000 units\n   *   Current production of SB: 3,000 units\n\n2. **Formula:**\n   *   Differential Cost = Purchase Price - Variable Cost to Make\n   *   Net Outsourcing Cost = (Differential Cost * Number of Units) - Avoidable Fixed Costs\n   *   Additional Units Possible = Freed Machine Hours / Machine Hours per Unit\n   *   Value of Additional Production = Additional Units * Contribution Margin\n   *   Net Benefit of Outsourcing = Value of Additional Production - Net Outsourcing Cost\n\n3. **Calculation:**\n   *   **Make vs. Buy Analysis (per unit):**\n       *   Differential Cost = $62 (Buy) - $50 (Make) = $12/unit\n   *   **Cost to outsource 3,000 SB:**\n       *   Additional cost = 3,000 units * $12/unit = $36,000/month\n   *   **Net outsourcing cost:**\n       *   Net outsourcing cost = $36,000 - $18,000 = $18,000/month\n   *   **Freed machine hours from SB:**\n       *   Freed hours = 3,000 units * 1 hour/unit = 3,000 hours\n   *   **Additional CA units possible:**\n       *   Demand for CA not yet met: 800 units - 285 units = 515 units\n       *   Machine hours needed to meet CA demand: 515 units * 3.5 hours/unit = 1,802.5 hours\n       *   Remaining hours after meeting CA demand: 3,000 hours - 1,802.5 hours = 1,197.5 hours\n       *   Since demand for PB is already met, the remaining hours cannot be used to produce additional PB.\n   *   **Value of additional CA production:**\n       *   Value = 515 units * $75/unit = $38,625\n   *   **Net benefit of outsourcing:**\n       *   Net benefit = $38,625 - $18,000 = $20,625/month\n\n4. **Answer:**\n   *   Outsource cost per unit: $12\n   *   Net benefit of outsourcing: $20,625/month\n   *   Recommendation: Outsource Standard Brackets.\n",
+          "keyFormula": "Net Benefit of Outsourcing = (Additional Units of CA * CA Contribution Margin) - ((Purchase Price - Variable Cost to Make) * Number of SB Units) + Avoidable Fixed Costs",
+          "commonMistakes": [
+            "Forgetting to include the avoidable fixed costs when calculating the net outsourcing cost. This leads to an inaccurate assessment of the true cost of outsourcing.",
+            "Failing to consider the opportunity cost of the freed machine hours. If the freed hours can be used to produce other profitable products, this must be factored into the decision.",
+            "Incorrectly calculating the number of additional units that can be produced with the freed machine hours. Ensure you are using the correct machine hour requirements for each product.",
+            "Not considering demand constraints. Even if you have enough freed capacity, you can only produce and sell up to the demand limit."
+          ],
+          "examTip": "When evaluating outsourcing decisions with constraints, first calculate the incremental cost of outsourcing. Then, determine how the freed capacity can be best utilized to maximize profit. Finally, compare the incremental cost to the incremental profit from the freed capacity."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "What is the maximum price MetalWorks should pay the external supplier for Standard Brackets?",
+          "hints": [
+            "Maximum price = variable cost + opportunity cost per unit of the freed resource"
+          ],
+          "solution": {
+            "approach": "Add opportunity cost of freed machine hours to variable production cost",
+            "calculations": "**Opportunity cost of machine hours freed by outsourcing SB:**\nEach SB uses 1.0 machine hour\nThe freed hours would produce CA at $21.43 CM per machine hour (for next 515 units)\n\n**But we must also add back the avoidable fixed costs per unit:**\nAvoidable fixed = $18,000 / 3,000 units = $6/unit\n\n**Maximum purchase price = Variable cost + Avoidable FC per unit + Opportunity cost/hr**\n= $50 + $6 + $21.43 × 1.0 hr\n= $50 + $6 + $21.43\n= **$77.43 per unit**\n\n**Verification at $77.43:**\nAdditional cost: (77.43 - 50) × 3,000 = $82,290\nAvoidable FC savings: $18,000\nNet cash out: $82,290 - $18,000 = $64,290\nCM from 515 extra CA: 515 × $75 = $38,625\nCM from remaining hrs (1,197.5 hrs with no demand): $0\n=> Need to consider hours with no product demand have $0 opportunity\n\n**Refined maximum = $50 + ($18,000 + 515 × $75) / 3,000**\n= $50 + ($18,000 + $38,625) / 3,000\n= $50 + $56,625 / 3,000\n= $50 + $18.88 = **$68.88**",
+            "answer": {
+              "maxPrice": 68.88
+            },
+            "explanation": "The maximum price is $68.88 — the variable cost ($50) plus the savings and opportunity value ($18.88) that outsourcing generates per unit."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "Here's how to determine the maximum price MetalWorks should pay for outsourcing Standard Brackets (SB):\n\n1. **Given Information:**\n   *   Variable cost per SB: $50\n   *   Fixed costs directly attributable to SB: $18,000\n   *   Current production volume of SB: 3,000 units\n   *   Machine hours required per SB: 1.0 hour\n   *   Contribution Margin (CM) per Custom Assembly (CA): $75\n   *   Machine hours required per CA: 3.5 hours\n   *   Available machine hours freed by outsourcing SB: 3,000 hours (3,000 units * 1 hour/unit)\n   *   Maximum demand for CA beyond current production using freed hours: 515 units\n\n2. **Formula:**\n   *   Maximum Purchase Price = Variable Cost per Unit + Avoidable Fixed Cost per Unit + Opportunity Cost per Unit (considering limited demand)\n   *   Avoidable Fixed Cost per Unit = Total Avoidable Fixed Costs / Number of Units\n   *   Opportunity Cost per Unit = (Contribution Margin from Additional Production using Freed Resources) / Number of Outsourced Units\n\n3. **Calculation:**\n   *   **Step 1: Calculate Avoidable Fixed Cost per Unit**\n        *   Avoidable Fixed Cost per Unit = $18,000 / 3,000 units = $6 per unit\n   *   **Step 2: Calculate Contribution Margin from Additional CA Production**\n        *   Additional CA Production = 515 units (limited by demand)\n        *   Total CM from Additional CA = 515 units * $75/unit = $38,625\n   *   **Step 3: Calculate Opportunity Cost per Outsourced SB**\n        *   Opportunity Cost per Outsourced SB = $38,625 / 3,000 units = $12.875\n   *   **Step 4: Calculate Maximum Purchase Price**\n        *   Maximum Purchase Price = $50 (Variable Cost) + $6 (Avoidable Fixed Cost) + $12.875 (Opportunity Cost) = $68.875\n   *   **Step 5: Round to nearest cent**\n        *   Maximum Purchase Price = $68.88\n\n4. **Answer:**\nThe maximum price MetalWorks should pay the external supplier for Standard Brackets is $68.88.",
+          "keyFormula": "Maximum Purchase Price = Variable Cost per Unit + Avoidable Fixed Cost per Unit + Opportunity Cost per Unit (considering limited demand)",
+          "commonMistakes": [
+            "Failing to consider the limited demand for Custom Assemblies (CA) when calculating the opportunity cost. Assuming all 3,000 freed machine hours can be used to produce CA at full capacity leads to an overstated opportunity cost.",
+            "Forgetting to include the avoidable fixed costs in the calculation of the maximum purchase price. Only considering the variable cost and the opportunity cost will result in an incorrect decision.",
+            "Calculating the opportunity cost per machine hour instead of the opportunity cost per unit of Standard Brackets (SB). The opportunity cost needs to be allocated back to each SB that is outsourced.",
+            "Not recognizing that the remaining hours after producing the maximum demand of CA have a $0 opportunity cost."
+          ],
+          "examTip": "When dealing with outsourcing decisions and constrained resources, always remember to consider both the cost savings (avoidable fixed costs) and the potential lost profits (opportunity cost) due to the constraint. Carefully analyze the demand for other products that could utilize the freed resources. If demand is limited, the opportunity cost will be lower than initially calculated."
+        }
+      ],
+      "skills": [
+        "Constraint analysis",
+        "Product mix optimization",
+        "Make-vs-buy",
+        "Opportunity cost"
+      ],
+      "relatedConcepts": [
+        "TOC",
+        "Relevant costs",
+        "Outsourcing",
+        "Linear programming"
+      ]
+    },
+    {
+      "id": "cma2-sim-010",
+      "section": "CMA2",
+      "title": "Enterprise Risk Management & Hedging",
+      "blueprintArea": "CMA2-D",
+      "topic": "Foreign Currency Risk and Hedging Strategies",
+      "difficulty": "expert",
+      "estimatedTime": 30,
+      "scenario": "GlobalTech Inc., a U.S.-based manufacturer, has significant international operations. The treasury department needs to assess and hedge the company's foreign currency exposure for the upcoming quarter.\n\nThe company expects to receive €5,000,000 in 90 days from a large European contract and pay ¥800,000,000 to a Japanese supplier in 60 days.",
+      "exhibits": [
+        {
+          "id": "ex1",
+          "title": "Current Exchange Rates and Forward Rates",
+          "type": "table",
+          "data": "| Currency Pair | Spot Rate | 60-Day Forward | 90-Day Forward |\n|--------------|-----------|---------------|---------------|\n| EUR/USD | 1.0850 | 1.0870 | 1.0890 |\n| USD/JPY | 148.50 | 147.80 | 147.20 |\n\n**Note:** EUR/USD = dollars per euro. USD/JPY = yen per dollar."
+        },
+        {
+          "id": "ex2",
+          "title": "Options Available",
+          "type": "table",
+          "data": "| Option | Type | Strike | Premium | Expiration |\n|--------|------|--------|---------|-----------|\n| EUR Put | Right to sell € | $1.0825/€ | $0.0120/€ | 90 days |\n| EUR Call | Right to buy € | $1.0900/€ | $0.0095/€ | 90 days |\n| JPY Call | Right to buy ¥ | $0.00680/¥ | $0.000085/¥ | 60 days |\n\n**Company's risk management policy:**\n- Hedge at least 75% of exposures > $1 million\n- Prefer forwards for committed transactions\n- Use options when flexibility is needed"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t1",
+          "taskNumber": 1,
+          "requirement": "Calculate the USD value of both exposures at spot rates and forward rates. Determine the net exposure.",
+          "hints": [
+            "For EUR receivable, use EUR/USD directly. For JPY payable, convert from USD/JPY."
+          ],
+          "solution": {
+            "approach": "Convert each exposure to USD at both spot and forward rates",
+            "calculations": "**Euro Receivable (€5,000,000 in 90 days):**\nAt spot: €5,000,000 × $1.0850 = **$5,425,000**\nAt 90-day forward: €5,000,000 × $1.0890 = **$5,445,000**\nForward premium: $5,445,000 - $5,425,000 = $20,000 (EUR appreciating)\n\n**Yen Payable (¥800,000,000 in 60 days):**\nAt spot: ¥800,000,000 / 148.50 = **$5,387,205**\nAt 60-day forward: ¥800,000,000 / 147.80 = **$5,412,719**\nForward premium: $5,412,719 - $5,387,205 = $25,514 (JPY appreciating → more costly)\n\n**Net Exposure Summary:**\n| Exposure | Spot Value (USD) | Forward Value (USD) | Direction |\n|----------|-----------------|--------------------|-----------| \n| EUR Receivable | $5,425,000 | $5,445,000 | Favorable if EUR rises |\n| JPY Payable | ($5,387,205) | ($5,412,719) | Unfavorable if JPY rises |\n| **Net** | **$37,795** | **$32,281** | Approximately offsetting |",
+            "answer": {
+              "eurSpot": 5425000,
+              "eurForward": 5445000,
+              "jpySpot": 5387205,
+              "jpyForward": 5412719
+            },
+            "explanation": "The exposures are roughly equal in size but opposite in direction, creating a natural hedge. However, timing differs (60 vs 90 days), so specific hedging is still needed."
+          },
+          "points": 25,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate GlobalTech's foreign currency exposure:\n\n1. **Given Information:**\n   * EUR Receivable: €5,000,000 in 90 days\n   * JPY Payable: ¥800,000,000 in 60 days\n   * EUR/USD Spot Rate: $1.0850\n   * EUR/USD 90-day Forward Rate: $1.0890\n   * USD/JPY Spot Rate: 148.50\n   * USD/JPY 60-day Forward Rate: 147.80\n\n2. **Formula:**\n   * USD Value of EUR Receivable = EUR Amount × EUR/USD Rate\n   * USD Value of JPY Payable = JPY Amount / USD/JPY Rate\n\n3. **Calculation:**\n   * **Euro Receivable (€5,000,000 in 90 days):**\n      * At spot: €5,000,000 × $1.0850 = $5,425,000\n      * At 90-day forward: €5,000,000 × $1.0890 = $5,445,000\n\n   * **Yen Payable (¥800,000,000 in 60 days):**\n      * At spot: ¥800,000,000 / 148.50 = $5,387,205\n      * At 60-day forward: ¥800,000,000 / 147.80 = $5,412,719\n\n4. **Answer:**\n   * eurSpot: $5,425,000\n   * eurForward: $5,445,000\n   * jpySpot: $5,387,205\n   * jpyForward: $5,412,719",
+          "keyFormula": "USD Value of Foreign Currency = Foreign Currency Amount × Exchange Rate (or / Exchange Rate, depending on the quote)",
+          "commonMistakes": [
+            "Incorrectly multiplying instead of dividing (or vice versa) when converting JPY to USD. Remember to divide the JPY amount by the USD/JPY exchange rate.",
+            "Using the wrong forward rate. Make sure to match the forward rate's term (e.g., 60-day, 90-day) with the timing of the exposure.",
+            "Forgetting to consider the direction of the exposure (receivable vs. payable). A receivable benefits from the foreign currency strengthening, while a payable is hurt by it strengthening."
+          ],
+          "examTip": "Double-check whether you need to multiply or divide by the exchange rate based on the currency pair provided. A quick sketch of the currency relationship (e.g., EUR/USD means 1 EUR = X USD) can help prevent errors."
+        },
+        {
+          "id": "t2",
+          "taskNumber": 2,
+          "requirement": "Design a hedging strategy: (a) Use forward contracts for both exposures. Calculate the locked-in USD amounts. (b) Calculate the cost/benefit of using an option instead for the EUR receivable.",
+          "hints": [
+            "Forward locks in the rate. Option provides a floor with upside potential."
+          ],
+          "solution": {
+            "approach": "Calculate forward hedge outcomes and compare with option strategy",
+            "calculations": "**(a) Forward Hedge:**\nEUR Receivable (90-day forward at $1.0890):\nLocked-in receipt: €5,000,000 × $1.0890 = **$5,445,000**\n\nJPY Payable (60-day forward at 147.80):\nLocked-in payment: ¥800,000,000 / 147.80 = **$5,412,719**\n\nNet locked-in: $5,445,000 - $5,412,719 = **$32,281 net receipt**\nCost of forwards: $0 (no upfront cost)\n\n**(b) Option for EUR Receivable:**\nEUR Put option (right to sell € at $1.0825):\nPremium: $0.0120 × 5,000,000 = **$60,000**\n\n**Scenario analysis:**\nIf EUR/USD falls to $1.0600:\n- Put exercised: sell at $1.0825 → $5,412,500\n- Net after premium: $5,412,500 - $60,000 = $5,352,500\n- Forward would have given: $5,445,000\n- Option LOSES $92,500 vs forward\n\nIf EUR/USD rises to $1.1200:\n- Put expires worthless, sell at spot: $5,600,000\n- Net after premium: $5,600,000 - $60,000 = $5,540,000\n- Forward would have given: $5,445,000\n- Option WINS $95,000 vs forward\n\n**Breakeven EUR/USD rate for option vs forward:**\n$1.0890 + $0.0120 = **$1.1010**\nAbove $1.1010, option outperforms forward.",
+            "answer": {
+              "forwardEUR": 5445000,
+              "forwardJPY": 5412719,
+              "optionPremium": 60000,
+              "breakeven": 1.101
+            },
+            "explanation": "The forward provides certainty at $5,445,000. The option costs $60,000 but provides upside. Option outperforms if EUR/USD exceeds $1.1010."
+          },
+          "points": 35,
+          "enhanced": true,
+          "stepByStep": "Here's how to design a hedging strategy using forward contracts and options, and calculate the associated costs and benefits:\n\n**Part (a): Forward Hedge**\n\n1. **Given Information:**\n   *   EUR Receivable: €5,000,000 in 90 days\n   *   90-day forward rate: $1.0890/€\n   *   JPY Payable: ¥800,000,000 in 60 days\n   *   60-day forward rate: 147.80 ¥/$ (or $0.006766/¥)\n\n2. **Formula:**\n   *   USD equivalent of EUR receivable = EUR amount × Forward rate\n   *   USD equivalent of JPY payable = JPY amount / Forward rate\n\n3. **Calculation:**\n   *   EUR Receivable (90-day forward):\n        *   Locked-in receipt: €5,000,000 × $1.0890/€ = $5,445,000\n   *   JPY Payable (60-day forward):\n        *   Locked-in payment: ¥800,000,000 / 147.80 ¥/$ = $5,412,719\n   *   Net locked-in:\n        *   $5,445,000 - $5,412,719 = $32,281 net receipt\n   *   Cost of forwards: $0 (forward contracts typically have no upfront cost)\n\n4. **Answer:**\n   *   Locked-in USD amount for EUR receivable: $5,445,000\n   *   Locked-in USD amount for JPY payable: $5,412,719\n\n**Part (b): Option for EUR Receivable**\n\n1. **Given Information:**\n   *   EUR Put option (right to sell € at $1.0825/€)\n   *   Premium: $0.0120/€\n   *   EUR Receivable: €5,000,000\n\n2. **Formula:**\n   *   Total premium cost = Premium per EUR × EUR amount\n   *   Breakeven exchange rate = Forward rate + Option premium\n\n3. **Calculation:**\n   *   Total premium cost:\n        *   $0.0120/€ × €5,000,000 = $60,000\n   *   Breakeven EUR/USD rate for option vs forward:\n        *   $1.0890 + $0.0120 = $1.1010\n\n4. **Answer:**\n   *   Option Premium: $60,000\n   *   Breakeven EUR/USD rate: $1.1010",
+          "keyFormula": "USD equivalent = Foreign Currency Amount * Exchange Rate (or / Exchange Rate, depending on the quote)",
+          "commonMistakes": [
+            "Incorrectly dividing instead of multiplying (or vice versa) when converting between currencies. Always double-check the currency quotation (e.g., EUR/USD vs. USD/EUR).",
+            "Forgetting to account for the option premium when comparing the option strategy to the forward strategy. The premium reduces the benefit of favorable movements and increases the cost of unfavorable movements.",
+            "Not understanding the breakeven calculation. The breakeven point is where the option strategy equals the forward strategy. It's crucial for deciding which strategy is more beneficial based on expected exchange rate movements."
+          ],
+          "examTip": "On the exam, quickly sketch a simple payoff diagram for the option strategy. This will help you visualize the potential gains and losses compared to the forward contract and avoid calculation errors. Remember that options limit downside risk but also cap potential gains (less the premium)."
+        },
+        {
+          "id": "t3",
+          "taskNumber": 3,
+          "requirement": "If the company hedges 80% with forwards and 20% with options, calculate the minimum and expected USD receipt from the EUR exposure.",
+          "hints": [
+            "80% locked in at forward rate, 20% has a floor from the put option"
+          ],
+          "solution": {
+            "approach": "Blend forward and option strategies for the EUR receivable",
+            "calculations": "**Blended Strategy for €5,000,000:**\nForward hedge: 80% = €4,000,000 at $1.0890\nOption hedge: 20% = €1,000,000 with put at $1.0825\n\n**Forward portion (certain):**\n€4,000,000 × $1.0890 = $4,356,000\n\n**Option portion:**\nPremium paid: $0.0120 × 1,000,000 = $12,000\n\nMinimum (put exercised):\n€1,000,000 × $1.0825 = $1,082,500\nNet: $1,082,500 - $12,000 = $1,070,500\n\n**Total minimum receipt:**\n$4,356,000 + $1,070,500 = **$5,426,500**\n\n**Expected (if EUR/USD stays at $1.0890):**\n€1,000,000 × $1.0890 = $1,089,000\nNet: $1,089,000 - $12,000 = $1,077,000\nTotal: $4,356,000 + $1,077,000 = **$5,433,000**\n\n**Comparison:**\n100% Forward: $5,445,000 (certain)\n80/20 Blend minimum: $5,426,500 (floor)\n80/20 Blend if no premium: Unlimited upside on 20%\n\n**Effective cost of flexibility:** $5,445,000 - $5,433,000 = $12,000 (the option premium)",
+            "answer": {
+              "minimumReceipt": 5426500,
+              "expectedReceipt": 5433000
+            },
+            "explanation": "The blended 80/20 strategy provides a floor of $5,426,500 (vs $5,445,000 pure forward) while preserving upside on 20% of the position."
+          },
+          "points": 15,
+          "enhanced": true,
+          "stepByStep": "Here's how to calculate the minimum and expected USD receipt from the EUR exposure using the blended hedging strategy:\n\n1. **Given Information:**\n   *   EUR Receivable: €5,000,000 in 90 days\n   *   Forward Hedge: 80% of EUR receivable at $1.0890/€\n   *   Option Hedge: 20% of EUR receivable with a put option at $1.0825/€\n   *   Option Premium: $0.0120 per €\n\n2. **Formula:**\n   *   Forward Hedge Amount (USD) = EUR Amount × Forward Rate\n   *   Option Hedge Amount (USD) = EUR Amount × Strike Price (if exercised) - Premium\n   *   Total Minimum Receipt = Forward Hedge Amount + Minimum Option Hedge Amount\n   *   Total Expected Receipt = Forward Hedge Amount + Expected Option Hedge Amount\n\n3. **Calculation:**\n   *   **Forward Portion:**\n        *   EUR Amount Hedged with Forward: €5,000,000 × 80% = €4,000,000\n        *   USD Receipt from Forward Hedge: €4,000,000 × $1.0890/€ = $4,356,000\n   *   **Option Portion:**\n        *   EUR Amount Hedged with Option: €5,000,000 × 20% = €1,000,000\n        *   Option Premium Paid: €1,000,000 × $0.0120/€ = $12,000\n        *   **Minimum Receipt (Put Option Exercised):**\n            *   USD Receipt from Put Option: €1,000,000 × $1.0825/€ = $1,082,500\n            *   Net USD Receipt from Put Option: $1,082,500 - $12,000 = $1,070,500\n        *   **Expected Receipt (EUR/USD stays at $1.0890):**\n            *   USD Receipt if not exercised: €1,000,000 × $1.0890/€ = $1,089,000\n            *   Net USD Receipt if not exercised: $1,089,000 - $12,000 = $1,077,000\n   *   **Total Minimum Receipt:**\n        *   $4,356,000 (Forward) + $1,070,500 (Option - Put Exercised) = $5,426,500\n   *   **Total Expected Receipt:**\n        *   $4,356,000 (Forward) + $1,077,000 (Option - Not Exercised) = $5,433,000\n\n4. **Answer:**\n   *   Minimum USD Receipt: $5,426,500\n   *   Expected USD Receipt: $5,433,000",
+          "keyFormula": "Forward Hedge Amount = EUR Amount × Forward Rate\nOption Hedge Amount = (EUR Amount × Strike Price) - Premium (if exercised)\nTotal Receipt = Forward Hedge Amount + Option Hedge Amount",
+          "commonMistakes": [
+            "Forgetting to subtract the option premium from the option proceeds. The premium is a cost that must be considered when calculating the net receipt.",
+            "Incorrectly applying the percentages. Make sure to apply the 80% and 20% to the correct EUR amount before calculating the USD amounts.",
+            "Not understanding when the put option would be exercised. The put option is exercised when the spot rate is *below* the strike price. In this case, we are calculating the *minimum* receipt, which assumes the put is exercised."
+          ],
+          "examTip": "Always double-check if the question asks for the *minimum*, *maximum*, or *expected* outcome. This will determine whether you should use the strike price of the option or the expected future spot rate in your calculations. Also, remember to account for the option premium!"
+        }
+      ],
+      "skills": [
+        "Foreign currency exposure",
+        "Forward contracts",
+        "Option strategies",
+        "Risk management"
+      ],
+      "relatedConcepts": [
+        "Transaction exposure",
+        "Natural hedging",
+        "Options pricing",
+        "COSO ERM"
+      ]
+    }
+  ],
+  "enhancedAt": "2026-03-01T12:47:09.712Z"
+}

@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CMA Practice Simulation Schema",
+  "description": "Schema for CMA practice simulations - interactive calculation-based scenarios",
+  "type": "object",
+  "required": ["$schema", "version", "courseId", "section", "simulations"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema file"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Schema version (semver)"
+    },
+    "courseId": {
+      "type": "string",
+      "const": "cma",
+      "description": "Course identifier"
+    },
+    "section": {
+      "type": "string",
+      "enum": ["CMA1", "CMA2"],
+      "description": "CMA exam part"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this file was generated"
+    },
+    "enhancedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When explanations were last enhanced"
+    },
+    "simulations": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/PracticeSimulation" },
+      "description": "Array of practice simulations"
+    }
+  },
+  "definitions": {
+    "PracticeSimulation": {
+      "type": "object",
+      "required": ["id", "section", "title", "blueprintArea", "topic", "difficulty", "estimatedTime", "scenario", "exhibits", "tasks", "skills", "relatedConcepts"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^cma[12]-sim-\\d{3}$",
+          "description": "Unique simulation ID"
+        },
+        "section": {
+          "type": "string",
+          "enum": ["CMA1", "CMA2"]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5,
+          "description": "Descriptive title for the simulation"
+        },
+        "blueprintArea": {
+          "type": "string",
+          "description": "Blueprint area covered"
+        },
+        "topic": {
+          "type": "string",
+          "description": "Main topic being tested"
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["medium", "hard", "expert"]
+        },
+        "estimatedTime": {
+          "type": "number",
+          "minimum": 10,
+          "description": "Estimated time in minutes"
+        },
+        "scenario": {
+          "type": "string",
+          "minLength": 100,
+          "description": "Scenario description"
+        },
+        "exhibits": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/SimulationExhibit" },
+          "description": "Supporting exhibits/data"
+        },
+        "tasks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/SimulationTask" },
+          "minItems": 1,
+          "description": "Tasks to complete"
+        },
+        "skills": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Skills being tested"
+        },
+        "relatedConcepts": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Related concepts"
+        }
+      }
+    },
+    "SimulationExhibit": {
+      "type": "object",
+      "required": ["id", "title", "type", "data"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Exhibit identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "Exhibit title"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["table", "text", "chart"]
+        },
+        "data": {
+          "type": "string",
+          "description": "Markdown-formatted content"
+        }
+      }
+    },
+    "SimulationTask": {
+      "type": "object",
+      "required": ["id", "taskNumber", "requirement", "solution", "points"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Task identifier"
+        },
+        "taskNumber": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Task number"
+        },
+        "requirement": {
+          "type": "string",
+          "minLength": 10,
+          "description": "What to calculate/determine"
+        },
+        "hints": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional hints"
+        },
+        "solution": {
+          "$ref": "#/definitions/TaskSolution"
+        },
+        "points": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Points for this task"
+        },
+        "stepByStep": {
+          "type": "string",
+          "description": "UWorld-style step-by-step walkthrough"
+        },
+        "keyFormula": {
+          "type": "string",
+          "description": "Key formula or concept"
+        },
+        "commonMistakes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Common errors to avoid"
+        },
+        "examTip": {
+          "type": "string",
+          "description": "Exam strategy tip"
+        },
+        "enhanced": {
+          "type": "boolean",
+          "description": "Whether this task has enhanced explanations"
+        }
+      }
+    },
+    "TaskSolution": {
+      "type": "object",
+      "required": ["approach", "calculations", "answer", "explanation"],
+      "properties": {
+        "approach": {
+          "type": "string",
+          "description": "How to approach the problem"
+        },
+        "calculations": {
+          "type": "string",
+          "description": "Detailed calculations"
+        },
+        "answer": {
+          "description": "The answer (string, number, or object)"
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Explanation of the answer"
+        }
+      }
+    }
+  }
+}

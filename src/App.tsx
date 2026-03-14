@@ -1,7 +1,8 @@
-import React, { lazy, Suspense, ReactNode, useEffect, useCallback } from 'react';
+import React, { Suspense, ReactNode, useEffect, useCallback } from 'react';
 import { Routes, Route, Navigate, useLocation, useSearchParams, useParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { ENABLE_CPA_COURSE, ENABLE_EA_COURSE, ENABLE_CMA_COURSE, ENABLE_CIA_COURSE, ENABLE_CFP_COURSE, ENABLE_CISA_COURSE } from './config/featureFlags';
+import { lazyWithRetry } from './utils/lazyWithRetry';
 import { scrollToTop } from './utils/scroll';
 import { saveCoursePreference } from './utils/courseDetection';
 import { isAdminEmail } from './config/adminConfig';
@@ -34,104 +35,121 @@ import { NavigationProvider } from './components/navigation';
 // ============================================
 
 // Auth Pages
-const Login = lazy(() => import('./components/pages/auth/Login'));
-const Register = lazy(() => import('./components/pages/auth/Register'));
-const ForgotPassword = lazy(() => import('./components/pages/auth/ForgotPassword'));
-const VerifyEmail = lazy(() => import('./components/pages/auth/VerifyEmail'));
+const Login = lazyWithRetry(() => import('./components/pages/auth/Login'));
+const Register = lazyWithRetry(() => import('./components/pages/auth/Register'));
+const ForgotPassword = lazyWithRetry(() => import('./components/pages/auth/ForgotPassword'));
+const VerifyEmail = lazyWithRetry(() => import('./components/pages/auth/VerifyEmail'));
 
 // Core Pages (most used)
-const Home = lazy(() => import('./components/pages/Home'));
-const Practice = lazy(() => import('./components/pages/Practice'));
-const Progress = lazy(() => import('./components/pages/Progress'));
-const Settings = lazy(() => import('./components/pages/Settings'));
-const You = lazy(() => import('./components/pages/You'));
+const Home = lazyWithRetry(() => import('./components/pages/Home'));
+const Practice = lazyWithRetry(() => import('./components/pages/Practice'));
+const Progress = lazyWithRetry(() => import('./components/pages/Progress'));
+const Settings = lazyWithRetry(() => import('./components/pages/Settings'));
+const Subscription = lazyWithRetry(() => import('./components/pages/Subscription'));
+const You = lazyWithRetry(() => import('./components/pages/You'));
 
 // Training Modes
-const Flashcards = lazy(() => import('./components/pages/Flashcards'));
-const FlashcardSetup = lazy(() => import('./components/FlashcardSetup'));
-const TimedQuiz = lazy(() => import('./components/pages/TimedQuiz'));
-const ExamSimulator = lazy(() => import('./components/pages/ExamSimulator'));
-const CMAEssaySimulator = lazy(() => import('./components/pages/CMAEssaySimulator'));
-const CMACBQSimulator = lazy(() => import('./components/pages/CMACBQSimulator'));
-const EAExamSimulator = lazy(() => import('./components/pages/EAExamSimulator'));
-const EAFormExplorer = lazy(() => import('./components/pages/EAFormExplorer'));
-const EASection = lazy(() => import('./components/pages/EASection'));
-const EAInfo = lazy(() => import('./components/pages/EAInfo'));
-const EAStudyPlanSetup = lazy(() => import('./components/pages/EAStudyPlanSetup'));
-const CMAExamSimulator = lazy(() => import('./components/pages/CMAExamSimulator'));
-const CIAExamSimulator = lazy(() => import('./components/pages/CIAExamSimulator'));
-const CISAExamSimulator = lazy(() => import('./components/pages/CISAExamSimulator'));
-const CMAStudyPlanSetup = lazy(() => import('./components/pages/CMAStudyPlanSetup'));
-const CMASection = lazy(() => import('./components/pages/CMASection'));
-const TBSSimulator = lazy(() => import('./components/pages/TBSSimulator'));
-const WrittenCommunication = lazy(() => import('./components/pages/WrittenCommunication'));
-const CISASection = lazy(() => import('./components/pages/CISASection'));
-const CISAInfo = lazy(() => import('./components/pages/CISAInfo'));
-const CISAStudyPlanSetup = lazy(() => import('./components/pages/CISAStudyPlanSetup'));
+const Flashcards = lazyWithRetry(() => import('./components/pages/Flashcards'));
+const FlashcardSetup = lazyWithRetry(() => import('./components/FlashcardSetup'));
+const TimedQuiz = lazyWithRetry(() => import('./components/pages/TimedQuiz'));
+const ExamSimulator = lazyWithRetry(() => import('./components/pages/ExamSimulator'));
+const ExamReview = lazyWithRetry(() => import('./components/pages/ExamReview'));
+const CMAEssaySimulator = lazyWithRetry(() => import('./components/pages/CMAEssaySimulator'));
+const CMACBQSimulator = lazyWithRetry(() => import('./components/pages/CMACBQSimulator'));
+const EAExamSimulator = lazyWithRetry(() => import('./components/pages/EAExamSimulator'));
+const EAFormExplorer = lazyWithRetry(() => import('./components/pages/EAFormExplorer'));
+const EASection = lazyWithRetry(() => import('./components/pages/EASection'));
+const EAInfo = lazyWithRetry(() => import('./components/pages/EAInfo'));
+const CMAExamSimulator = lazyWithRetry(() => import('./components/pages/CMAExamSimulator'));
+const CIAExamSimulator = lazyWithRetry(() => import('./components/pages/CIAExamSimulator'));
+const CISAExamSimulator = lazyWithRetry(() => import('./components/pages/CISAExamSimulator'));
+const CMASection = lazyWithRetry(() => import('./components/pages/CMASection'));
+const TBSSimulator = lazyWithRetry(() => import('./components/pages/TBSSimulator'));
+
+const CISASection = lazyWithRetry(() => import('./components/pages/CISASection'));
+const CISAInfo = lazyWithRetry(() => import('./components/pages/CISAInfo'));
 
 // Content Pages
-const Lessons = lazy(() => import('./components/pages/Lessons'));
-const LessonMatrix = lazy(() => import('./components/pages/LessonMatrix'));
-const LessonViewer = lazy(() => import('./components/pages/LessonViewer'));
-const StudyJourney = lazy(() => import('./components/pages/StudyJourney'));
-const AITutor = lazy(() => import('./components/pages/AITutor'));
-const Achievements = lazy(() => import('./components/pages/Achievements'));
-const Community = lazy(() => import('./components/pages/Community'));
+const Lessons = lazyWithRetry(() => import('./components/pages/Lessons'));
+const LessonViewer = lazyWithRetry(() => import('./components/pages/LessonViewer'));
+const AITutor = lazyWithRetry(() => import('./components/pages/AITutor'));
+const Achievements = lazyWithRetry(() => import('./components/pages/Achievements'));
+
+// Study Plan (unified across all courses)
+const StudyPlan = lazyWithRetry(() => import('./components/pages/StudyPlan'));
+const StudyPlanSetup = lazyWithRetry(() => import('./components/pages/StudyPlanSetup'));
 
 // Resources Pages
-const ResourcesHub = lazy(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
-const ResourceList = lazy(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
-const ResourceViewer = lazy(() => import('./components/pages/resources/ResourceViewer').then(m => ({ default: m.default })));
-const StrategyPage = lazy(() => import('./components/pages/resources/StrategyPage').then(m => ({ default: m.default })));
+const ResourcesHub = lazyWithRetry(() => import('./components/pages/resources/ResourcesHub').then(m => ({ default: m.default })));
+const ResourceList = lazyWithRetry(() => import('./components/pages/resources/ResourceList').then(m => ({ default: m.default })));
+const ResourceViewer = lazyWithRetry(() => import('./components/pages/resources/ResourceViewer').then(m => ({ default: m.default })));
+const StrategyPage = lazyWithRetry(() => import('./components/pages/resources/StrategyPage').then(m => ({ default: m.default })));
 
 // Onboarding & Admin
-const Onboarding = lazy(() => import('./components/pages/Onboarding'));
-const DiagnosticQuiz = lazy(() => import('./components/pages/DiagnosticQuiz'));
-const DemoPractice = lazy(() => import('./components/pages/DemoPractice'));
-const AdminSeed = lazy(() => import('./components/pages/AdminSeed'));
-const AdminCMS = lazy(() => import('./components/pages/admin/AdminCMS'));
-const GrowthDashboard = lazy(() => import('./components/pages/admin/GrowthDashboard'));
-const QuestionEditor = lazy(() => import('./components/pages/admin/QuestionEditor'));
-const LessonEditor = lazy(() => import('./components/pages/admin/LessonEditor'));
-const WCEditor = lazy(() => import('./components/pages/admin/WCEditor'));
-const TBSEditor = lazy(() => import('./components/pages/admin/TBSEditor'));
+const Onboarding = lazyWithRetry(() => import('./components/pages/Onboarding'));
+const DiagnosticQuiz = lazyWithRetry(() => import('./components/pages/DiagnosticQuiz'));
+const DemoPractice = lazyWithRetry(() => import('./components/pages/DemoPractice'));
+const AdminSeed = lazyWithRetry(() => import('./components/pages/AdminSeed'));
+const AdminCMS = lazyWithRetry(() => import('./components/pages/admin/AdminCMS'));
+const GrowthDashboard = lazyWithRetry(() => import('./components/pages/admin/GrowthDashboard'));
+const ArticleReview = lazyWithRetry(() => import('./components/pages/admin/ArticleReview'));
+const QuestionEditor = lazyWithRetry(() => import('./components/pages/admin/QuestionEditor'));
+const LessonEditor = lazyWithRetry(() => import('./components/pages/admin/LessonEditor'));
+const WCEditor = lazyWithRetry(() => import('./components/pages/admin/WCEditor'));
+const TBSEditor = lazyWithRetry(() => import('./components/pages/admin/TBSEditor'));
+const UserAnalyticsDashboard = lazyWithRetry(() => import('./components/pages/admin/UserAnalyticsDashboard'));
+const ReferralSystem = lazyWithRetry(() => import('./components/pages/admin/ReferralSystem'));
+const DiagnosticLeadMagnet = lazyWithRetry(() => import('./components/pages/admin/DiagnosticLeadMagnet'));
+const TestimonialHarvester = lazyWithRetry(() => import('./components/pages/admin/TestimonialHarvester'));
+const LinkedInPosts = lazyWithRetry(() => import('./components/pages/admin/LinkedInPosts'));
+const CourseFactory = lazyWithRetry(() => import('./components/pages/admin/CourseFactory'));
+
+// Blog Pages (public, SEO content)
+const BlogIndex = lazyWithRetry(() => import('./components/pages/blog/BlogIndex'));
+const DynamicArticle = lazyWithRetry(() => import('./components/pages/blog/DynamicArticle'));
+const HowToPassFAR = lazyWithRetry(() => import('./components/pages/blog/HowToPassFAR'));
+const EAvsCPA = lazyWithRetry(() => import('./components/pages/blog/EAvsCPA'));
+const CPAStudySchedule2026 = lazyWithRetry(() => import('./components/pages/blog/CPAStudySchedule2026'));
+
+// Public Lead Magnet Pages
+const DiagnosticPage = lazyWithRetry(() => import('./components/pages/DiagnosticPage'));
 
 // Legal Pages
-const Terms = lazy(() => import('./components/pages/legal/Terms'));
-const Privacy = lazy(() => import('./components/pages/legal/Privacy'));
-const HelpLegal = lazy(() => import('./components/pages/legal/HelpLegal'));
-const PassGuarantee = lazy(() => import('./components/pages/legal/PassGuarantee'));
+const Terms = lazyWithRetry(() => import('./components/pages/legal/Terms'));
+const Privacy = lazyWithRetry(() => import('./components/pages/legal/Privacy'));
+const HelpLegal = lazyWithRetry(() => import('./components/pages/legal/HelpLegal'));
+const PassGuarantee = lazyWithRetry(() => import('./components/pages/legal/PassGuarantee'));
 
 // Error Pages
-const NotFound = lazy(() => import('./components/pages/NotFound'));
-const Unsubscribe = lazy(() => import('./components/pages/Unsubscribe'));
+const NotFound = lazyWithRetry(() => import('./components/pages/NotFound'));
+const Unsubscribe = lazyWithRetry(() => import('./components/pages/Unsubscribe'));
 
 // Checkout Pages
-const CheckoutSuccess = lazy(() => import('./components/pages/CheckoutSuccess'));
-const CheckoutCancel = lazy(() => import('./components/pages/CheckoutCancel'));
-const StartCheckout = lazy(() => import('./components/pages/StartCheckout'));
+const CheckoutSuccess = lazyWithRetry(() => import('./components/pages/CheckoutSuccess'));
+const CheckoutCancel = lazyWithRetry(() => import('./components/pages/CheckoutCancel'));
+const StartCheckout = lazyWithRetry(() => import('./components/pages/StartCheckout'));
 
 // Business Pages
-const VoraPrep = lazy(() => import('./components/pages/VoraPrep'));
+const VoraPrep = lazyWithRetry(() => import('./components/pages/VoraPrep'));
+const About = lazyWithRetry(() => import('./components/pages/About'));
+const Compare = lazyWithRetry(() => import('./components/pages/Compare'));
+const Pricing = lazyWithRetry(() => import('./components/pages/PricingOverview'));
 // Unified Landing Pages (new template system)
-const CPALanding = lazy(() => import('./components/pages/landing/CPALandingNew'));
-const EALanding = lazy(() => import('./components/pages/landing/EALandingNew'));
-const CMALanding = lazy(() => import('./components/pages/landing/CMALandingNew'));
-const CIALanding = lazy(() => import('./components/pages/landing/CIALandingNew'));
-const CFPLanding = lazy(() => import('./components/pages/landing/CFPLandingNew'));
-const CISALanding = lazy(() => import('./components/pages/landing/CISALandingNew'));
+const CPALanding = lazyWithRetry(() => import('./components/pages/landing/CPALandingNew'));
+const EALanding = lazyWithRetry(() => import('./components/pages/landing/EALandingNew'));
+const CMALanding = lazyWithRetry(() => import('./components/pages/landing/CMALandingNew'));
+const CIALanding = lazyWithRetry(() => import('./components/pages/landing/CIALandingNew'));
+const CFPLanding = lazyWithRetry(() => import('./components/pages/landing/CFPLandingNew'));
+const CISALanding = lazyWithRetry(() => import('./components/pages/landing/CISALandingNew'));
 // Info pages (keep original)
-const CMAInfo = lazy(() => import('./components/pages/CMAInfo'));
-const CIAInfo = lazy(() => import('./courses/cia/CIAInfo'));
-const CIAStudyPlanSetup = lazy(() => import('./courses/cia/CIAStudyPlanSetup'));
-const CIASection = lazy(() => import('./courses/cia/CIASection'));
-const CFPSection = lazy(() => import('./courses/cfp/CFPSection'));
-const CFPCaseStudy = lazy(() => import('./courses/cfp/CFPCaseStudy'));
-const CFPExamSimulator = lazy(() => import('./components/pages/CFPExamSimulator'));
-const CFPInfo = lazy(() => import('./components/pages/CFPInfo'));
-const CFPStudyPlanSetup = lazy(() => import('./components/pages/CFPStudyPlanSetup'));
-const CPAInfo = lazy(() => import('./components/pages/CPAInfo'));
-const CPAStudyPlanSetup = lazy(() => import('./components/pages/CPAStudyPlanSetup'));
+const CMAInfo = lazyWithRetry(() => import('./components/pages/CMAInfo'));
+const CIAInfo = lazyWithRetry(() => import('./courses/cia/CIAInfo'));
+const CIASection = lazyWithRetry(() => import('./courses/cia/CIASection'));
+const CFPSection = lazyWithRetry(() => import('./courses/cfp/CFPSection'));
+const CFPCaseStudy = lazyWithRetry(() => import('./courses/cfp/CFPCaseStudy'));
+const CFPExamSimulator = lazyWithRetry(() => import('./components/pages/CFPExamSimulator'));
+const CFPInfo = lazyWithRetry(() => import('./components/pages/CFPInfo'));
+const CPAInfo = lazyWithRetry(() => import('./components/pages/CPAInfo'));
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -147,10 +165,21 @@ const ScrollToTop = () => {
 // Global page tracker - initializes analytics and tracks ALL page views (including public landing pages)
 const GlobalPageTracker = () => {
   const { pathname } = useLocation();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     initAnalytics();
-  }, []);
+    
+    // Capture UTM params and gclid on first landing for attribution
+    // These persist in localStorage until user signs up
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid'];
+    utmParams.forEach(param => {
+      const value = searchParams.get(param);
+      if (value) {
+        localStorage.setItem(param, value);
+      }
+    });
+  }, [searchParams]);
 
   useEffect(() => {
     const title = document.title || 'VoraPrep';
@@ -175,9 +204,9 @@ interface RouteProps {
   skipOnboarding?: boolean;
 }
 
-const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
-  const { user, userProfile, loading, profileLoaded } = useAuth();
-  const { courseId } = useCourse();
+const ProtectedRoute = ({ children, skipOnboarding: _skipOnboarding = false }: RouteProps) => {
+  const { user, userProfile: _userProfile, loading, profileLoaded } = useAuth();
+  const { courseId: _courseId } = useCourse();
   const location = useLocation();
 
   if (loading) {
@@ -189,7 +218,15 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
   }
 
   // Require email verification before accessing protected routes
-  if (!user.emailVerified && location.pathname !== '/verify-email') {
+  // Grace period: new accounts get 3 days before we require verification
+  // This reduces friction during initial signup flow
+  const accountAgeMs = user.metadata?.creationTime 
+    ? Date.now() - new Date(user.metadata.creationTime).getTime()
+    : Infinity;
+  const gracePeriodMs = 3 * 24 * 60 * 60 * 1000; // 3 days
+  const withinGracePeriod = accountAgeMs < gracePeriodMs;
+  
+  if (!user.emailVerified && !withinGracePeriod && location.pathname !== '/verify-email') {
     return <Navigate to="/verify-email" replace />;
   }
 
@@ -199,27 +236,13 @@ const ProtectedRoute = ({ children, skipOnboarding = false }: RouteProps) => {
     return <FullPageLoader />;
   }
 
-  // Redirect to onboarding if not complete for the current course
-  // Check per-course onboarding status (with fallback to legacy global flag for existing users)
-  if (!skipOnboarding && userProfile && location.pathname !== '/onboarding') {
-    const activeCourse = courseId; // Use courseId from CourseProvider
-    const courseOnboarded = userProfile.onboardingCompleted?.[activeCourse];
-    const legacyOnboarded = userProfile.onboardingComplete; // Legacy global flag
-    
-    // If course-specific onboarding is not done, redirect
-    // Use legacy flag only if onboardingCompleted map doesn't exist yet (for migration)
-    const isOnboarded = courseOnboarded ?? (legacyOnboarded && !userProfile.onboardingCompleted);
-    
-    if (!isOnboarded) {
-      // Preserve the course context by storing it before redirect
-      // This allows Onboarding to pick up the correct course
-      // Only set if not already present (don't overwrite registration-flow pendingCourse)
-      if (!localStorage.getItem('pendingCourse')) {
-        localStorage.setItem('pendingCourse', activeCourse);
-      }
-      return <Navigate to="/onboarding" replace />;
-    }
-  }
+  // ONBOARDING REMOVED: Users land directly on dashboard
+  // The dashboard now has all the contextual prompts they need:
+  // - Exam date prompt at top of Home
+  // - Section picker in header
+  // - Daily Plan card with "set exam date" message
+  // - Diagnostic quiz prompt can appear in Practice page
+  // This gets users to value in 0 screens after registration.
 
   return children;
 };
@@ -257,9 +280,15 @@ const PublicRoute = ({ children }: RouteProps) => {
   }
 
   if (user) {
-    // Unverified users must verify their email first
-    // Don't sign them out - redirect to verification page
-    if (!user.emailVerified) {
+    // Unverified users must verify their email first (after 3-day grace period)
+    // Grace period allows new users to explore before requiring verification
+    const accountAgeMs = user.metadata?.creationTime 
+      ? Date.now() - new Date(user.metadata.creationTime).getTime()
+      : Infinity;
+    const gracePeriodMs = 3 * 24 * 60 * 60 * 1000; // 3 days
+    const withinGracePeriod = accountAgeMs < gracePeriodMs;
+    
+    if (!user.emailVerified && !withinGracePeriod) {
       return <Navigate to="/verify-email" replace />;
     }
 
@@ -296,6 +325,7 @@ const PremiumPage = ({ children }: { children: ReactNode }) => (
 // Handles URLs like /cpa/practice, /ea/study-plan from email links
 const CourseRedirect = ({ to }: { to: string }) => {
   const { courseId } = useParams<{ courseId: string }>();
+  const location = useLocation();
   const validCourses = ['cpa', 'ea', 'cma', 'cia', 'cfp', 'cisa'];
   
   // Save course preference if valid
@@ -303,7 +333,9 @@ const CourseRedirect = ({ to }: { to: string }) => {
     saveCoursePreference(courseId.toLowerCase() as CourseId);
   }
   
-  return <Navigate to={to} replace />;
+  // Preserve query parameters (e.g. ?section=FAR from campaign links)
+  const destination = location.search ? `${to}${location.search}` : to;
+  return <Navigate to={destination} replace />;
 };
 
 function App() {
@@ -432,11 +464,7 @@ function App() {
                     />
                     <Route
                       path="/cpa/study-plan"
-                      element={
-                        <SuspensePage>
-                          <CPAStudyPlanSetup />
-                        </SuspensePage>
-                      }
+                      element={<Navigate to="/study-plan/setup" replace />}
                     />
                   </>
                 )}
@@ -582,6 +610,60 @@ function App() {
                     </SuspensePage>
                   }
                 />
+
+                {/* Blog Routes (public, SEO content) */}
+                <Route
+                  path="/blog"
+                  element={
+                    <SuspensePage>
+                      <BlogIndex />
+                    </SuspensePage>
+                  }
+                />
+                {/* Static blog articles (hand-crafted) */}
+                <Route
+                  path="/blog/how-to-pass-far-first-try"
+                  element={
+                    <SuspensePage>
+                      <HowToPassFAR />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/blog/ea-vs-cpa-which-certification"
+                  element={
+                    <SuspensePage>
+                      <EAvsCPA />
+                    </SuspensePage>
+                  }
+                />
+                <Route
+                  path="/blog/cpa-exam-study-schedule-2026"
+                  element={
+                    <SuspensePage>
+                      <CPAStudySchedule2026 />
+                    </SuspensePage>
+                  }
+                />
+                {/* Dynamic blog articles (from Firestore/growth_content) */}
+                <Route
+                  path="/blog/:slug"
+                  element={
+                    <SuspensePage>
+                      <DynamicArticle />
+                    </SuspensePage>
+                  }
+                />
+                
+                {/* Public Diagnostic Quiz (lead magnet) */}
+                <Route
+                  path="/diagnostic/:configId"
+                  element={
+                    <SuspensePage>
+                      <DiagnosticPage />
+                    </SuspensePage>
+                  }
+                />
                 
                 {/* Email unsubscribe (public, one-click) */}
                 <Route
@@ -594,10 +676,32 @@ function App() {
                 />
                 
                 {/* Business Pages (public) */}
-                {/* Pricing is now per-exam - redirect to home */}
+                {/* Pricing comparison page */}
                 <Route
                   path="/pricing"
-                  element={<Navigate to="/" replace />}
+                  element={
+                    <SuspensePage>
+                      <Pricing />
+                    </SuspensePage>
+                  }
+                />
+                {/* Compare with competitors page */}
+                <Route
+                  path="/compare"
+                  element={
+                    <SuspensePage>
+                      <Compare />
+                    </SuspensePage>
+                  }
+                />
+                {/* About VoraPrep page */}
+                <Route
+                  path="/about"
+                  element={
+                    <SuspensePage>
+                      <About />
+                    </SuspensePage>
+                  }
                 />
                 {/* About redirect - no dedicated page, redirect to home */}
                 <Route
@@ -609,17 +713,21 @@ function App() {
                 <Route
                   path="/checkout-success"
                   element={
-                    <SuspensePage>
-                      <CheckoutSuccess />
-                    </SuspensePage>
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <CheckoutSuccess />
+                      </SuspensePage>
+                    </ProtectedRoute>
                   }
                 />
                 <Route
                   path="/checkout-cancel"
                   element={
-                    <SuspensePage>
-                      <CheckoutCancel />
-                    </SuspensePage>
+                    <ProtectedRoute skipOnboarding>
+                      <SuspensePage>
+                        <CheckoutCancel />
+                      </SuspensePage>
+                    </ProtectedRoute>
                   }
                 />
                 <Route
@@ -659,11 +767,41 @@ function App() {
 
                 {/* Admin Routes - requires isAdmin: true in user profile */}
                 <Route
+                  path="/admin"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <AdminCMS />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
                   path="/admin/cms"
                   element={
                     <AdminRoute>
                       <SuspensePage>
                         <AdminCMS />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/articles"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <ArticleReview />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/linkedin"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <LinkedInPosts />
                       </SuspensePage>
                     </AdminRoute>
                   }
@@ -728,6 +866,56 @@ function App() {
                     </AdminRoute>
                   }
                 />
+                <Route
+                  path="/admin/analytics"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <UserAnalyticsDashboard />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/referrals"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <ReferralSystem />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/diagnostics"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <DiagnosticLeadMagnet />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/testimonials"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <TestimonialHarvester />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
+                <Route
+                  path="/admin/course-factory"
+                  element={
+                    <AdminRoute>
+                      <SuspensePage>
+                        <CourseFactory />
+                      </SuspensePage>
+                    </AdminRoute>
+                  }
+                />
 
                 {/* Protected Main App Routes */}
                 <Route
@@ -763,6 +951,24 @@ function App() {
                     }
                   />
                   
+                  {/* Study Plan routes */}
+                  <Route
+                    path="/study-plan"
+                    element={
+                      <SuspensePage>
+                        <StudyPlan />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/study-plan/setup"
+                    element={
+                      <SuspensePage>
+                        <StudyPlanSetup />
+                      </SuspensePage>
+                    }
+                  />
+                  
                   {/* Legacy route redirects for backwards compatibility */}
                   <Route
                     path="/dashboard"
@@ -775,7 +981,7 @@ function App() {
                   
                   {/* Course-prefixed redirects for email links */}
                   <Route path="/:courseId/practice" element={<CourseRedirect to="/practice" />} />
-                  <Route path="/:courseId/study-plan" element={<CourseRedirect to="/you/study-plan" />} />
+                  <Route path="/:courseId/study-plan" element={<CourseRedirect to="/study-plan" />} />
                   <Route path="/:courseId/ai-tutor" element={<CourseRedirect to="/ai-tutor" />} />
                   
                   {/* Keep these routes accessible */}
@@ -821,6 +1027,14 @@ function App() {
                       </PremiumPage>
                     }
                   />
+                  <Route
+                    path="/exam-review/:sessionId"
+                    element={
+                      <SuspensePage>
+                        <ExamReview />
+                      </SuspensePage>
+                    }
+                  />
                   {ENABLE_EA_COURSE && (
                     <>
                       <Route
@@ -833,6 +1047,14 @@ function App() {
                       />
                       <Route
                         path="/ea"
+                        element={
+                          <SuspensePage>
+                            <Home />
+                          </SuspensePage>
+                        }
+                      />
+                      <Route
+                        path="/ea/dashboard"
                         element={
                           <SuspensePage>
                             <Home />
@@ -857,11 +1079,7 @@ function App() {
                       />
                       <Route
                         path="/ea/study-plan"
-                        element={
-                          <SuspensePage>
-                            <EAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/ea/forms"
@@ -897,11 +1115,7 @@ function App() {
                       />
                       <Route
                         path="/cma/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CMAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cma/essay"
@@ -957,11 +1171,7 @@ function App() {
                       />
                       <Route
                         path="/cia/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CIAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cia/section/:sectionId"
@@ -1007,11 +1217,7 @@ function App() {
                       />
                       <Route
                         path="/cfp/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CFPStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cfp/domain/:sectionId"
@@ -1057,11 +1263,7 @@ function App() {
                       />
                       <Route
                         path="/cisa/study-plan"
-                        element={
-                          <SuspensePage>
-                            <CISAStudyPlanSetup />
-                          </SuspensePage>
-                        }
+                        element={<Navigate to="/study-plan/setup" replace />}
                       />
                       <Route
                         path="/cisa/section/:id"
@@ -1082,14 +1284,6 @@ function App() {
                     element={
                       <PremiumPage>
                         <TBSSimulator />
-                      </PremiumPage>
-                    }
-                  />
-                  <Route
-                    path="/written-communication"
-                    element={
-                      <PremiumPage>
-                        <WrittenCommunication />
                       </PremiumPage>
                     }
                   />
@@ -1134,22 +1328,6 @@ function App() {
                     }
                   />
                   <Route
-                    path="/journey"
-                    element={
-                      <PremiumPage>
-                        <StudyJourney />
-                      </PremiumPage>
-                    }
-                  />
-                  <Route
-                    path="/lessons/matrix"
-                    element={
-                      <PremiumPage>
-                        <LessonMatrix />
-                      </PremiumPage>
-                    }
-                  />
-                  <Route
                     path="/lessons/:lessonId"
                     element={
                       <PremiumPage>
@@ -1162,14 +1340,6 @@ function App() {
                     element={
                       <SuspensePage>
                         <Progress />
-                      </SuspensePage>
-                    }
-                  />
-                  <Route
-                    path="/community"
-                    element={
-                      <SuspensePage>
-                        <Community />
                       </SuspensePage>
                     }
                   />
@@ -1202,6 +1372,14 @@ function App() {
                     element={
                       <SuspensePage>
                         <Settings />
+                      </SuspensePage>
+                    }
+                  />
+                  <Route
+                    path="/subscription"
+                    element={
+                      <SuspensePage>
+                        <Subscription />
                       </SuspensePage>
                     }
                   />

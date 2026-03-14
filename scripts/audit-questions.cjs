@@ -2,7 +2,7 @@
 /**
  * Comprehensive Question Quality Audit
  * 
- * Checks ~14,800 questions across all 6 exams for quality issues that
+ * Checks ~20,700 questions across all 6 exams for quality issues that
  * would hurt user experience.
  * 
  * Run: node scripts/audit-questions.cjs [--fix] [--course cpa] [--severity critical]

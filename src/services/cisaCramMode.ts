@@ -10,6 +10,7 @@
  */
 
 import { CISASectionId } from '../courses/cisa/config';
+import logger from '../utils/logger';
 
 // Types
 export interface CramTopic {
@@ -464,7 +465,7 @@ function loadCramState(): CramState {
       return parsed;
     }
   } catch (e) {
-    console.error('Failed to load cram state:', e);
+    logger.error('Failed to load cram state:', e);
   }
   return {
     currentDay: 1,
@@ -484,7 +485,7 @@ function saveCramState(): void {
   try {
     localStorage.setItem(CRAM_STATE_KEY, JSON.stringify(cramState));
   } catch (e) {
-    console.error('Failed to save cram state:', e);
+    logger.error('Failed to save cram state:', e);
   }
 }
 

@@ -1,8 +1,8 @@
 {
-  "cpa":  { "questions": 9154, "flashcards": 616, "lessons": 471, "tbs": 277 },
-  "ea":   { "questions": 3078, "flashcards": 475, "lessons": 157 },
+  "cpa":  { "questions": 9154, "flashcards": 616, "lessons": 481, "tbs": 277 },
+  "ea":   { "questions": 2997, "flashcards": 439, "lessons": 157 },
   "cma":  { "questions": 2528, "flashcards": 501, "lessons": 319, "essays": 42, "cbqs": 226 },
-  "cia":  { "questions": 4447, "flashcards": 1532, "lessons": 265 },
-  "cfp":  { "questions": 3991, "flashcards": 1421, "lessons": 210, "caseStudies": 52 },
-  "cisa": { "questions": 2278, "flashcards": 835, "lessons": 152 }
+  "cia":  { "questions": 2212, "flashcards": 541, "lessons": 324 },
+  "cfp":  { "questions": 2368, "flashcards": 717, "lessons": 210, "caseStudies": 52 },
+  "cisa": { "questions": 1520, "flashcards": 521, "lessons": 152 }
 }

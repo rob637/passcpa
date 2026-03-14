@@ -10,6 +10,7 @@ import { Card } from '../../common/Card';
 import { captureReferralFromUrl } from '../../../services/referral';
 import { saveCoursePreference } from '../../../utils/courseDetection';
 import { isValidCourseId } from '../../../types/course';
+import { TOTAL_DISPLAY } from '../../../config/contentStats';
 import type { CourseId } from '../../../types/course';
 
 const Register = () => {
@@ -20,7 +21,7 @@ const Register = () => {
   // SEO - canonical URL strips query params to avoid duplicate content
   useSEO({
     title: 'Create Account',
-    description: 'Sign up for VoraPrep to access 25,000+ practice questions for CPA, EA, CMA, CIA, CFP, and CISA exams.',
+    description: `Sign up for VoraPrep to access ${TOTAL_DISPLAY.questions} practice questions for CPA, EA, CMA, CIA, CFP, and CISA exams.`,
     canonicalUrl: 'https://voraprep.com/register',
   });
 

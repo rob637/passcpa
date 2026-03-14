@@ -5,13 +5,9 @@
  * Content stats are imported from contentStats.ts — the single source of truth.
  */
 
-import { COURSE_DISPLAY_STATS } from '../../../config/contentStats';
+import { COURSE_DISPLAY_STATS, TOTAL_DISPLAY } from '../../../config/contentStats';
 
 import { 
-  Brain,
-  Target,
-  Bot,
-  RefreshCw,
   Smartphone,
   DollarSign,
   Briefcase,
@@ -132,9 +128,9 @@ export interface ExamLandingConfig {
 export const SHARED_WHY_VORAPREP = [
   {
     icon: BookOpen,
-    title: '25,000+ Practice Questions',
+    title: `${TOTAL_DISPLAY.questions} Practice Questions`,
     description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
-    stat: '25,000+',
+    stat: TOTAL_DISPLAY.questions,
   },
   {
     icon: DollarSign,

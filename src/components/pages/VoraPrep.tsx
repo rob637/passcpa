@@ -7,9 +7,7 @@ import { EXAM_PRICING, isFounderPricingActive } from '../../services/subscriptio
 import { 
   BookOpen, 
   Brain, 
-  Target, 
   ArrowRight,
-  Zap,
   Shield,
   Sparkles,
   CheckCircle,
@@ -139,7 +137,7 @@ const COURSES: CourseInfo[] = [
 const WHY_VORAPREP = [
   {
     icon: BookOpen,
-    title: '25,000+ Practice Questions',
+    title: `${getFormattedTotal()} Practice Questions`,
     description: 'Massive question banks covering every blueprint area and difficulty level. Detailed "why wrong" explanations for every single answer.',
   },
   {

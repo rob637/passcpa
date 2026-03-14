@@ -7,6 +7,7 @@ import { Lesson } from '../../../types';
 // Import lesson data from JSON files
 import prepData from './json/prep.json';
 import farData from './json/far.json';
+import farBatch2Data from './json/far-batch2.json';
 import audData from './json/aud.json';
 import regData from './json/reg.json';
 import barData from './json/bar.json';
@@ -15,7 +16,7 @@ import tcpData from './json/tcp.json';
 
 // Type assertion - JSON imports are validated at build time
 export const prepLessons: Lesson[] = prepData as Lesson[];
-export const farLessons: Lesson[] = farData as Lesson[];
+export const farLessons: Lesson[] = [...(farData as Lesson[]), ...(farBatch2Data as Lesson[]).filter(l => l.section === 'FAR')];
 export const audLessons: Lesson[] = audData as Lesson[];
 export const regLessons: Lesson[] = regData as Lesson[];
 export const barLessons: Lesson[] = barData as Lesson[];

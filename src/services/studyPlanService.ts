@@ -824,12 +824,20 @@ export function calculatePlanHealth(
  * 
  * Auto-fills lesson counts and durations from contentRegistry when not provided.
  * This means callers no longer need to fetch lesson data manually.
+ * 
+ * When `existingPlan` is provided (edit mode):
+ * - Preserves completed weeks as historical record
+ * - Only regenerates future weeks with remaining content
+ * - Keeps the original plan ID and createdAt
+ * - Merges existing progress data
  */
 export function generateStudyPlan(
   input: StudyPlanSetupInput,
-  userId: string
+  userId: string,
+  existingPlan?: StudyPlan
 ): StudyPlan {
-  const startDate = input.startDate || new Date();
+  const today = new Date();
+  const startDate = existingPlan ? today : (input.startDate || today);
   const totalDays = differenceInDays(input.examDate, startDate);
   
   // Auto-fill content data from contentRegistry if not provided
@@ -879,21 +887,205 @@ export function generateStudyPlan(
       : input.hoursPerDay;
   }
 
-  const weeks = generateWeeks(
-    startDate,
-    input.examDate,
-    effectiveHoursPerDay,
-    input.studyDaysPerWeek,
-    totalLessons,
-    totalLessonMinutes,
-    lessonDurations,
-    sectionKey || undefined,
-    input.priorExperience,
-    input.courseId
-  );
+  // ─── Smart Plan Generation ─────────────────────────────────────────
+  // Three scenarios:
+  // 1. Editing existing plan with weeks → preserve historical weeks
+  // 2. New plan but user has prior activity → schedule for REMAINING content
+  // 3. Brand new user → schedule for total content
+  //
+  // This ensures users who study before creating a plan get a schedule
+  // that acknowledges their existing work, not one that starts them over.
+  
+  let finalWeeks: StudyPlanWeek[];
+  let preservedProgress = existingPlan?.progress;
+  let historicalWeekCount = 0;
+  
+  // Check if we have progress data (either from existing plan or prior activity)
+  // Consider ALL activity types, not just lessons
+  const priorProgress = existingPlan?.progress;
+  const priorLessonsCompleted = priorProgress?.lessonsCompleted || 0;
+  const priorQuestionsAnswered = priorProgress?.questionsAnswered || 0;
+  const priorSimulationsCompleted = priorProgress?.simulationsCompleted || 0;
+  const priorFlashcardsReviewed = priorProgress?.flashcardsReviewed || 0;
+  const priorEssaysCompleted = priorProgress?.essaysCompleted || 0;
+  const priorCbqsCompleted = priorProgress?.cbqsCompleted || 0;
+  const priorCaseStudiesCompleted = priorProgress?.caseStudiesCompleted || 0;
+  const priorMockExamsCompleted = priorProgress?.mockExamsCompleted || 0;
+  
+  const hasPriorActivity = 
+    priorLessonsCompleted > 0 || 
+    priorQuestionsAnswered > 0 ||
+    priorSimulationsCompleted > 0 ||
+    priorFlashcardsReviewed > 0 ||
+    priorEssaysCompleted > 0 ||
+    priorCbqsCompleted > 0 ||
+    priorCaseStudiesCompleted > 0 ||
+    priorMockExamsCompleted > 0;
+  
+  if (existingPlan && existingPlan.weeks && existingPlan.weeks.length > 0) {
+    // ═══ SCENARIO 1: Editing existing plan — preserve historical weeks ═══
+    // Find current week in existing plan
+    const existingCurrentWeekNum = existingPlan.weeks.find(w => {
+      const wStart = w.startDate instanceof Date ? w.startDate : new Date(w.startDate);
+      const wEnd = w.endDate instanceof Date ? w.endDate : new Date(w.endDate);
+      return isWithinInterval(today, { start: wStart, end: wEnd });
+    })?.weekNumber || 1;
+    
+    // Keep all weeks BEFORE current week as historical record
+    const historicalWeeks = existingPlan.weeks
+      .filter(w => w.weekNumber < existingCurrentWeekNum)
+      .map(w => ({
+        ...w,
+        startDate: w.startDate instanceof Date ? w.startDate : new Date(w.startDate),
+        endDate: w.endDate instanceof Date ? w.endDate : new Date(w.endDate),
+      }));
+    historicalWeekCount = historicalWeeks.length;
+    
+    // Calculate remaining content (what hasn't been completed yet)
+    const lessonsRemaining = Math.max(0, totalLessons - priorLessonsCompleted);
+    const avgLessonMinutes = totalLessons > 0 ? totalLessonMinutes / totalLessons : 30;
+    const remainingLessonMinutes = Math.round(lessonsRemaining * avgLessonMinutes);
+    
+    logger.info('Edit plan: preserving historical weeks', {
+      historicalWeeks: historicalWeekCount,
+      lessonsCompleted: priorLessonsCompleted,
+      lessonsRemaining,
+      questionsAnswered: priorQuestionsAnswered,
+      simulationsCompleted: priorSimulationsCompleted,
+      existingCurrentWeekNum,
+    });
+    
+    // Generate new weeks starting from TODAY (not original start date)
+    // with only the REMAINING content
+    const newWeeks = generateWeeks(
+      today,
+      input.examDate,
+      effectiveHoursPerDay,
+      input.studyDaysPerWeek,
+      lessonsRemaining,
+      remainingLessonMinutes,
+      [], // Don't pass individual durations for remaining - let it distribute evenly
+      sectionKey || undefined,
+      input.priorExperience,
+      input.courseId
+    );
+    
+    // Renumber new weeks to continue from after historical weeks
+    const renumberedNewWeeks = newWeeks.map((w, i) => ({
+      ...w,
+      weekNumber: historicalWeekCount + 1 + i,
+    }));
+    
+    // Merge: historical weeks + new future weeks
+    finalWeeks = [...historicalWeeks, ...renumberedNewWeeks];
+    
+    // Calculate targets from merged weeks (both historical and new)
+    const totalQuestionsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.questions, 0);
+    const totalSimulationsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.simulations, 0);
+    const totalFlashcardsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.flashcards, 0);
+    const totalMockExamsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.mockExams, 0);
+    const totalEssaysTarget = finalWeeks.reduce((sum, w) => sum + (w.goals.essays || 0), 0);
+    const totalCbqsTarget = finalWeeks.reduce((sum, w) => sum + (w.goals.cbqs || 0), 0);
+    const totalCaseStudiesTarget = finalWeeks.reduce((sum, w) => sum + (w.goals.caseStudies || 0), 0);
+    
+    // Preserve existing progress with updated targets
+    // Real progress values will be merged from fetchRealProgress in useStudyPlan
+    preservedProgress = {
+      lessonsCompleted: priorLessonsCompleted,
+      lessonsTotal: totalLessons,
+      questionsAnswered: priorQuestionsAnswered,
+      questionsTarget: totalQuestionsTarget,
+      accuracy: priorProgress?.accuracy || 0,
+      accuracyTrend: priorProgress?.accuracyTrend || 'stable',
+      daysStudied: priorProgress?.daysStudied || 0,
+      daysMissed: priorProgress?.daysMissed || 0,
+      simulationsCompleted: priorSimulationsCompleted,
+      simulationsTarget: totalSimulationsTarget,
+      flashcardsReviewed: priorFlashcardsReviewed,
+      flashcardsTarget: totalFlashcardsTarget,
+      mockExamsCompleted: priorMockExamsCompleted,
+      mockExamsTarget: totalMockExamsTarget,
+      essaysCompleted: priorEssaysCompleted,
+      essaysTarget: totalEssaysTarget > 0 ? totalEssaysTarget : undefined,
+      cbqsCompleted: priorCbqsCompleted,
+      cbqsTarget: totalCbqsTarget > 0 ? totalCbqsTarget : undefined,
+      caseStudiesCompleted: priorCaseStudiesCompleted,
+      caseStudiesTarget: totalCaseStudiesTarget > 0 ? totalCaseStudiesTarget : undefined,
+    };
+  } else if (hasPriorActivity) {
+    // ═══ SCENARIO 2: New plan but user has prior activity ═══
+    // Generate schedule for REMAINING content, not total.
+    // This respects work done before a plan existed.
+    const lessonsRemaining = Math.max(0, totalLessons - priorLessonsCompleted);
+    const avgLessonMinutes = totalLessons > 0 ? totalLessonMinutes / totalLessons : 30;
+    const remainingLessonMinutes = Math.round(lessonsRemaining * avgLessonMinutes);
+    
+    logger.info('New plan with prior activity: scheduling for remaining content', {
+      totalLessons,
+      priorLessonsCompleted,
+      lessonsRemaining,
+      questionsAnswered: priorQuestionsAnswered,
+      simulationsCompleted: priorSimulationsCompleted,
+      flashcardsReviewed: priorFlashcardsReviewed,
+    });
+    
+    finalWeeks = generateWeeks(
+      startDate,
+      input.examDate,
+      effectiveHoursPerDay,
+      input.studyDaysPerWeek,
+      lessonsRemaining, // Only remaining lessons, not total
+      remainingLessonMinutes,
+      [], // Don't pass individual durations - let it distribute evenly
+      sectionKey || undefined,
+      input.priorExperience,
+      input.courseId
+    );
+    
+    // Build progress with all prior activity
+    const newQuestionsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.questions, 0);
+    const newSimulationsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.simulations, 0);
+    const newFlashcardsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.flashcards, 0);
+    const newMockExamsTarget = finalWeeks.reduce((sum, w) => sum + w.goals.mockExams, 0);
+    
+    preservedProgress = {
+      lessonsCompleted: priorLessonsCompleted,
+      lessonsTotal: totalLessons,
+      questionsAnswered: priorQuestionsAnswered,
+      questionsTarget: newQuestionsTarget,
+      accuracy: priorProgress?.accuracy || 0,
+      accuracyTrend: 'stable' as const,
+      daysStudied: priorProgress?.daysStudied || 0,
+      daysMissed: 0,
+      simulationsCompleted: priorSimulationsCompleted,
+      simulationsTarget: newSimulationsTarget,
+      flashcardsReviewed: priorFlashcardsReviewed,
+      flashcardsTarget: newFlashcardsTarget,
+      mockExamsCompleted: priorMockExamsCompleted,
+      mockExamsTarget: newMockExamsTarget,
+      essaysCompleted: priorEssaysCompleted,
+      cbqsCompleted: priorCbqsCompleted,
+      caseStudiesCompleted: priorCaseStudiesCompleted,
+    };
+  } else {
+    // ═══ SCENARIO 3: Brand new user — no prior activity ═══
+    // Generate full schedule from scratch
+    finalWeeks = generateWeeks(
+      startDate,
+      input.examDate,
+      effectiveHoursPerDay,
+      input.studyDaysPerWeek,
+      totalLessons,
+      totalLessonMinutes,
+      lessonDurations,
+      sectionKey || undefined,
+      input.priorExperience,
+      input.courseId
+    );
+  }
   
   // Generate milestones
-  const milestones = generateMilestones(weeks, input.examDate);
+  const milestones = generateMilestones(finalWeeks, input.examDate);
   
   // Initial alerts
   const alerts: StudyPlanAlert[] = [];
@@ -908,27 +1100,56 @@ export function generateStudyPlan(
     });
   }
   
+  // Add "plan created with prior activity" alert when applicable
+  if (hasPriorActivity && (!existingPlan?.weeks || existingPlan.weeks.length === 0)) {
+    alerts.push({
+      id: `prior-activity-${Date.now()}`,
+      type: 'info',
+      title: 'Prior Progress Recognized',
+      message: `Your existing progress (${priorLessonsCompleted} lesson${priorLessonsCompleted !== 1 ? 's' : ''} completed) has been factored into your schedule.`,
+      dismissible: true,
+      createdAt: new Date(),
+    });
+  }
+  
+  // Add "plan updated" alert when editing
+  if (existingPlan && existingPlan.weeks && existingPlan.weeks.length > 0) {
+    alerts.push({
+      id: `plan-updated-${Date.now()}`,
+      type: 'info',
+      title: 'Plan Updated',
+      message: `Your plan has been adjusted. ${historicalWeekCount} completed week${historicalWeekCount !== 1 ? 's' : ''} preserved.`,
+      dismissible: true,
+      createdAt: new Date(),
+    });
+  }
+  
   // Find current week
-  const today = new Date();
-  const currentWeekData = weeks.find(w => 
+  const currentWeekData = finalWeeks.find(w => 
     isWithinInterval(today, { start: w.startDate, end: w.endDate })
   );
   const currentWeek = currentWeekData?.weekNumber || 1;
   const currentPhase = currentWeekData?.phase || 'foundation';
   
+  // Preserve ID and createdAt when editing, generate new for fresh plans
+  const planId = existingPlan?.id || `plan-${input.courseId}-${input.section}-${Date.now()}`;
+  const createdAt = existingPlan?.createdAt 
+    ? (existingPlan.createdAt instanceof Date ? existingPlan.createdAt : new Date(existingPlan.createdAt))
+    : new Date();
+  
   return {
-    id: `plan-${input.courseId}-${input.section}-${Date.now()}`,
+    id: planId,
     courseId: input.courseId,
     section: input.section,
     userId,
     setup: enrichedInput,
-    startDate,
+    startDate: existingPlan ? (existingPlan.startDate instanceof Date ? existingPlan.startDate : new Date(existingPlan.startDate)) : startDate,
     examDate: input.examDate,
     totalDays,
-    totalWeeks: weeks.length,
+    totalWeeks: finalWeeks.length,
     hoursPerDay: Math.round(effectiveHoursPerDay * 10) / 10,
     studyDaysPerWeek: input.studyDaysPerWeek,
-    weeks,
+    weeks: finalWeeks,
     milestones,
     topics: [], // Will be populated based on curriculum
     realityCheck,
@@ -938,18 +1159,38 @@ export function generateStudyPlan(
     health: realityCheck.severity === 'good' ? 'on-track' 
           : realityCheck.severity === 'warning' ? 'slightly-behind' 
           : 'at-risk',
-    progress: {
+    progress: preservedProgress || {
       lessonsCompleted: 0,
       lessonsTotal: totalLessons,
       questionsAnswered: 0,
-      questionsTarget: weeks.reduce((sum, w) => sum + w.goals.questions, 0),
+      questionsTarget: finalWeeks.reduce((sum, w) => sum + w.goals.questions, 0),
       accuracy: 0,
       accuracyTrend: 'stable',
       daysStudied: 0,
       daysMissed: 0,
+      // Extended progress (all start at 0 for new plans)
+      simulationsCompleted: 0,
+      simulationsTarget: finalWeeks.reduce((sum, w) => sum + w.goals.simulations, 0),
+      flashcardsReviewed: 0,
+      flashcardsTarget: finalWeeks.reduce((sum, w) => sum + w.goals.flashcards, 0),
+      mockExamsCompleted: 0,
+      mockExamsTarget: finalWeeks.reduce((sum, w) => sum + w.goals.mockExams, 0),
+      // Course-specific (only set if > 0)
+      ...(finalWeeks.some(w => w.goals.essays) ? {
+        essaysCompleted: 0,
+        essaysTarget: finalWeeks.reduce((sum, w) => sum + (w.goals.essays || 0), 0),
+      } : {}),
+      ...(finalWeeks.some(w => w.goals.cbqs) ? {
+        cbqsCompleted: 0,
+        cbqsTarget: finalWeeks.reduce((sum, w) => sum + (w.goals.cbqs || 0), 0),
+      } : {}),
+      ...(finalWeeks.some(w => w.goals.caseStudies) ? {
+        caseStudiesCompleted: 0,
+        caseStudiesTarget: finalWeeks.reduce((sum, w) => sum + (w.goals.caseStudies || 0), 0),
+      } : {}),
     },
     alerts,
-    createdAt: new Date(),
+    createdAt,
     updatedAt: new Date(),
   };
 }

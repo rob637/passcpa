@@ -89,9 +89,10 @@ const groupLessonsByArea = (
     const areaLessons = lessons.filter(lesson => {
       const lessonArea = (lesson.blueprintArea || '').toUpperCase();
       const areaId = area.id.toUpperCase();
-      // Match if lesson's blueprintArea starts with area ID (e.g., "AUD-I-A" starts with "AUD-I")
-      // or if they're exactly equal
-      return lessonArea.startsWith(areaId) || lessonArea === areaId;
+      // Match if lesson's blueprintArea equals area ID exactly,
+      // OR starts with area ID followed by a dash (e.g., "AUD-I-A" matches "AUD-I")
+      // This prevents "CIA1-II" from matching "CIA1-I" (roman numeral collision)
+      return lessonArea === areaId || lessonArea.startsWith(areaId + '-');
     });
     
     // Sort lessons within each area by their order field

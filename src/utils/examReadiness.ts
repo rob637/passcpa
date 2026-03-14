@@ -4,7 +4,7 @@
  * Calculates a student's readiness score for certification exams based on:
  * - MCQ Accuracy: Multiple choice question accuracy (weight varies by exam)
  * - TBS Practice: Task-based simulation completion (0% for exams without TBS)
- * - Coverage: Number of topics practiced
+ * - MCQ Coverage: Number of topics practiced via MCQs (3+ questions per topic)
  * - Volume: Total questions + TBS attempted
  * - Lessons: Lesson completion progress
  * 

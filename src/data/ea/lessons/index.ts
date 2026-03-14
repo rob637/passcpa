@@ -5,11 +5,12 @@ import type { Lesson } from '../../../types';
 
 // Import lesson data from JSON files
 import see1Data from './json/see1.json';
+import see1Batch2Data from './json/see1-batch2.json';
 import see2Data from './json/see2.json';
 import see3Data from './json/see3.json';
 
 // Type assertion
-export const eaPart1Lessons: Lesson[] = see1Data as Lesson[];
+export const eaPart1Lessons: Lesson[] = [...(see1Data as Lesson[]), ...(see1Batch2Data as Lesson[])];
 export const eaPart2Lessons: Lesson[] = see2Data as Lesson[];
 export const eaPart3Lessons: Lesson[] = see3Data as Lesson[];
 

@@ -187,8 +187,8 @@ const Progress: React.FC = () => {
         const completedLessons = Object.values(lessonProgress || {})
           .filter((l: any) => {
             if (l.status !== 'completed') return false;
-            // Always filter by courseId to avoid cross-course pollution
-            if (l.courseId && l.courseId !== courseId) return false;
+            // Require courseId to match - entries without courseId are skipped to avoid cross-course pollution
+            if (!l.courseId || l.courseId !== courseId) return false;
             // For multi-section courses, also filter by section
             if (!isSingleExamCourse && l.section && l.section !== currentSection) return false;
             return true;
@@ -210,9 +210,10 @@ const Progress: React.FC = () => {
         const topics = await getTopicPerformance(currentSection);
         setTopicPerformance(topics || []);
 
-        // Calculate overall stats
-        const totalQuestions = sectionQuestions || topics?.reduce((sum: number, t: TopicStat) => sum + t.questions, 0) || 0;
-        const correctAnswers = sectionCorrect || topics?.reduce((sum: number, t: TopicStat) => sum + Math.round(t.questions * t.accuracy / 100), 0) || 0;
+        // Calculate overall stats from topics (all-time data, consistent source for both)
+        // Note: sectionQuestions/sectionCorrect are from 7-day window (used only for weekly chart)
+        const totalQuestions = topics?.reduce((sum: number, t: TopicStat) => sum + t.questions, 0) || 0;
+        const correctAnswers = topics?.reduce((sum: number, t: TopicStat) => sum + Math.round(t.questions * t.accuracy / 100), 0) || 0;
 
         setOverallStats({
           totalQuestions,

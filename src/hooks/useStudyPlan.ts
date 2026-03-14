@@ -70,11 +70,23 @@ async function fetchRealProgress(
   questionsAnswered: number;
   accuracy: number;
   daysStudied: number;
+  simulationsCompleted: number;
+  flashcardsReviewed: number;
+  essaysCompleted: number;
+  cbqsCompleted: number;
+  caseStudiesCompleted: number;
+  mockExamsCompleted: number;
 }> {
   let lessonsCompleted = 0;
   let questionsAnswered = 0;
   let questionsCorrect = 0;
   let daysStudied = 0;
+  let simulationsCompleted = 0;
+  let flashcardsReviewed = 0;
+  let essaysCompleted = 0;
+  let cbqsCompleted = 0;
+  let caseStudiesCompleted = 0;
+  let mockExamsCompleted = 0;
 
   try {
     // 1. Count completed lessons for this course/section
@@ -112,17 +124,39 @@ async function fetchRealProgress(
   }
 
   try {
-    // 3. Count distinct days studied from daily_log for this course
+    // 3. Count TBS/simulations completed
+    const tbsRef = collection(db, 'users', userId, 'tbs_history');
+    const tbsSnap = await getDocs(tbsRef);
+    simulationsCompleted = tbsSnap.docs.filter(docSnap => {
+      const data = docSnap.data();
+      const matchesCourse = !data.courseId || data.courseId === courseId;
+      const matchesSection = !data.section || data.section === section || section === 'ALL';
+      return matchesCourse && matchesSection;
+    }).length;
+  } catch (err) {
+    logger.warn('Could not fetch TBS history:', err);
+  }
+
+  try {
+    // 4. Count distinct days studied AND aggregate flashcards/essays/CBQs/mockExams from daily_log
     const logsRef = collection(db, 'users', userId, 'daily_log');
     const logsSnap = await getDocs(logsRef);
     const coursePrefix = `${courseId}_`;
-    daysStudied = logsSnap.docs.filter(docSnap => {
+    logsSnap.docs.forEach(docSnap => {
       // Only count logs for this specific course
-      if (!docSnap.id.startsWith(coursePrefix)) return false;
+      if (!docSnap.id.startsWith(coursePrefix)) return;
       const data = docSnap.data();
       // Count if any meaningful activity on that day
-      return (data.questionsAnswered > 0 || data.lessonsCompleted > 0 || data.minutesStudied > 0);
-    }).length;
+      if (data.questionsAnswered > 0 || data.lessonsCompleted > 0 || data.minutesStudied > 0) {
+        daysStudied++;
+      }
+      // Aggregate activity counts from daily logs
+      flashcardsReviewed += data.flashcardsReviewed || 0;
+      essaysCompleted += data.essaysCompleted || 0;
+      cbqsCompleted += data.cbqsCompleted || 0;
+      caseStudiesCompleted += data.caseStudiesCompleted || 0;
+      mockExamsCompleted += data.mockExamsCompleted || 0;
+    });
   } catch (err) {
     logger.warn('Could not fetch daily logs:', err);
   }
@@ -131,7 +165,18 @@ async function fetchRealProgress(
     ? Math.round((questionsCorrect / questionsAnswered) * 100) 
     : 0;
 
-  return { lessonsCompleted, questionsAnswered, accuracy, daysStudied };
+  return { 
+    lessonsCompleted, 
+    questionsAnswered, 
+    accuracy, 
+    daysStudied,
+    simulationsCompleted,
+    flashcardsReviewed,
+    essaysCompleted,
+    cbqsCompleted,
+    caseStudiesCompleted,
+    mockExamsCompleted,
+  };
 }
 
 /**
@@ -333,7 +378,7 @@ export function useStudyPlan(): UseStudyPlanReturn {
     };
   }, [plan]);
   
-  // Create a new study plan
+  // Create a new study plan (or edit existing one, preserving history)
   const createPlan = useCallback(async (input: StudyPlanSetupInput): Promise<StudyPlan> => {
     if (!user) {
       throw new Error('Must be logged in to create a study plan');
@@ -343,28 +388,121 @@ export function useStudyPlan(): UseStudyPlanReturn {
       setLoading(true);
       setError(null);
       
-      // Generate the plan
-      const newPlan = generateStudyPlan(input, user.uid);
-      
-      // IMPORTANT: Preserve existing progress when editing/rebalancing a plan
-      // Fetch real progress from Firestore (lessons, questions, daily logs)
-      // This ensures users don't lose their metrics when they modify their plan
+      // ═══════════════════════════════════════════════════════════════════════
+      // STEP 1: Fetch real progress FIRST — before generating the plan
+      // This ensures the schedule accounts for work done BEFORE the plan existed.
+      // Without this, a user who completed 20 lessons then creates a plan would
+      // get a schedule for 45 lessons instead of 25 remaining.
+      // ═══════════════════════════════════════════════════════════════════════
       const realProgress = await fetchRealProgress(user.uid, input.courseId, input.section);
+      logger.info('Fetched real progress before plan generation', {
+        lessonsCompleted: realProgress.lessonsCompleted,
+        questionsAnswered: realProgress.questionsAnswered,
+        simulationsCompleted: realProgress.simulationsCompleted,
+      });
       
-      // Merge real progress into the new plan
+      // Check for existing plan to preserve historical weeks when editing
+      const normalizedSection = resolveStudySection(input.courseId, input.section) || input.section;
+      const existingPlanKey = `${input.courseId}_${normalizedSection}`;
+      const existingPlanDoc = await getDoc(
+        doc(db, 'users', user.uid, 'studyPlans', existingPlanKey)
+      );
+      
+      // Convert existing plan dates if it exists (Firestore Timestamps → JS Dates)
+      let existingPlan: StudyPlan | undefined;
+      if (existingPlanDoc.exists()) {
+        const data = existingPlanDoc.data() as StudyPlan;
+        existingPlan = {
+          ...data,
+          startDate: toLocalDate(data.startDate),
+          examDate: toLocalDate(data.examDate),
+          createdAt: toLocalDate(data.createdAt),
+          updatedAt: toLocalDate(data.updatedAt),
+          weeks: data.weeks?.map(w => ({
+            ...w,
+            startDate: toLocalDate(w.startDate),
+            endDate: toLocalDate(w.endDate),
+          })) || [],
+          // Inject real progress so generateStudyPlan knows what's already done
+          progress: {
+            ...data.progress,
+            lessonsCompleted: realProgress.lessonsCompleted,
+            questionsAnswered: realProgress.questionsAnswered,
+            simulationsCompleted: realProgress.simulationsCompleted,
+            flashcardsReviewed: realProgress.flashcardsReviewed,
+          },
+        };
+        logger.info('Existing plan found — will preserve historical weeks', {
+          planId: existingPlan.id,
+          currentWeek: existingPlan.currentWeek,
+          lessonsCompleted: realProgress.lessonsCompleted,
+        });
+      } else {
+        // No existing plan — create a synthetic "existingPlan" with just progress
+        // so generateStudyPlan can account for already-completed work
+        // Check ALL activity types, not just lessons and questions
+        const hasPriorActivity = 
+          realProgress.lessonsCompleted > 0 || 
+          realProgress.questionsAnswered > 0 ||
+          realProgress.simulationsCompleted > 0 ||
+          realProgress.flashcardsReviewed > 0 ||
+          realProgress.essaysCompleted > 0 ||
+          realProgress.cbqsCompleted > 0 ||
+          realProgress.caseStudiesCompleted > 0 ||
+          realProgress.mockExamsCompleted > 0;
+          
+        if (hasPriorActivity) {
+          existingPlan = {
+            progress: {
+              lessonsCompleted: realProgress.lessonsCompleted,
+              lessonsTotal: 0, // Will be filled in by generateStudyPlan
+              questionsAnswered: realProgress.questionsAnswered,
+              questionsTarget: 0,
+              accuracy: realProgress.accuracy,
+              accuracyTrend: 'stable',
+              daysStudied: realProgress.daysStudied,
+              daysMissed: 0,
+              simulationsCompleted: realProgress.simulationsCompleted,
+              flashcardsReviewed: realProgress.flashcardsReviewed,
+              essaysCompleted: realProgress.essaysCompleted,
+              cbqsCompleted: realProgress.cbqsCompleted,
+              caseStudiesCompleted: realProgress.caseStudiesCompleted,
+              mockExamsCompleted: realProgress.mockExamsCompleted,
+            },
+            weeks: [], // No historical weeks to preserve
+          } as unknown as StudyPlan; // Partial object - generateStudyPlan only needs progress
+          logger.info('No existing plan, but prior activity found — will generate schedule for remaining content', {
+            lessonsCompleted: realProgress.lessonsCompleted,
+            questionsAnswered: realProgress.questionsAnswered,
+            simulationsCompleted: realProgress.simulationsCompleted,
+            flashcardsReviewed: realProgress.flashcardsReviewed,
+          });
+        }
+      }
+      
+      // Generate the plan (passes existing plan/progress for proper scheduling)
+      const newPlan = generateStudyPlan(input, user.uid, existingPlan);
+      
+      // Merge all real progress into the new plan (all activity types)
       newPlan.progress = {
         ...newPlan.progress,
+        // Core metrics
         lessonsCompleted: realProgress.lessonsCompleted,
         questionsAnswered: realProgress.questionsAnswered,
         accuracy: realProgress.accuracy,
         daysStudied: realProgress.daysStudied,
+        // Extended metrics (TBS, flashcards, essays, etc.)
+        simulationsCompleted: realProgress.simulationsCompleted,
+        flashcardsReviewed: realProgress.flashcardsReviewed,
+        essaysCompleted: realProgress.essaysCompleted,
+        cbqsCompleted: realProgress.cbqsCompleted,
+        caseStudiesCompleted: realProgress.caseStudiesCompleted,
+        mockExamsCompleted: realProgress.mockExamsCompleted,
       };
       
       // Save to Firestore under user's studyPlans subcollection
       // Key is courseId_section, with section normalized for single-exam courses
-      // IMPORTANT: Use resolveStudySection to normalize 'ALL' -> 'CISA'/'CFP' for consistency
-      const normalizedSection = resolveStudySection(input.courseId, input.section) || input.section;
-      const savePlanKey = `${input.courseId}_${normalizedSection}`;
+      const savePlanKey = existingPlanKey;
       
       // Firestore doesn't accept undefined values - use JSON serialization to strip them
       // This converts Date objects to ISO strings, which Firestore handles fine

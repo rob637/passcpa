@@ -154,8 +154,8 @@ export default function EAExamSimulatorNew() {
   const config: ExamSimulatorConfig<EASection> = {
     ...baseConfig,
     defaultSection,
-    // Hide section selector if user already selected their part
-    hideSectionSelector: isValidSection,
+    // Always hide - user picks their part on dashboard, not in simulator (matches CPA behavior)
+    hideSectionSelector: true,
   };
   
   return <ExamSimulatorTemplate<EASection> config={config} />;

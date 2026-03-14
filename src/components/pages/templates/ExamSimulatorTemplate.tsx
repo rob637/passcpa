@@ -351,6 +351,14 @@ export function ExamSimulatorTemplate<SectionId extends string>({
     }
   }, [selectedSection]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Auto-select all domains for Full Exam mode (realistic exam simulation)
+  useEffect(() => {
+    if (allowMultiSectionSelect && (selectedMode.id === 'full' || selectedMode.id === 'half')) {
+      const allSectionIds = Object.keys(sections) as SectionId[];
+      setSelectedSections(allSectionIds);
+    }
+  }, [selectedMode.id, allowMultiSectionSelect, sections]);
+
   // Exam state
   const [exam, setExam] = useState<GeneratedExam | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -614,16 +622,29 @@ export function ExamSimulatorTemplate<SectionId extends string>({
           {/* Section Selection - hidden if user already selected their section */}
           {!hideSectionSelector && (
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
               {allowMultiSectionSelect ? 'Select Domains' : 'Select Exam Part'}
             </h2>
+            {allowMultiSectionSelect && (
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                {selectedMode.id === 'full' || selectedMode.id === 'half' 
+                  ? '✓ All domains included for realistic exam simulation'
+                  : 'Select specific domains for focused practice, or choose all for full coverage'}
+              </p>
+            )}
             
             {allowMultiSectionSelect ? (
               <div className="space-y-2">
-                <label className="flex items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded cursor-pointer">
+                <label className={clsx(
+                  "flex items-center space-x-3 p-2 rounded cursor-pointer",
+                  (selectedMode.id === 'full' || selectedMode.id === 'half') 
+                    ? "bg-indigo-50 dark:bg-indigo-900/20" 
+                    : "hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                )}>
                   <input 
                     type="checkbox" 
                     checked={selectedSections.length === Object.keys(sections).length}
+                    disabled={selectedMode.id === 'full' || selectedMode.id === 'half'}
                     onChange={() => {
                       if (selectedSections.length === Object.keys(sections).length) {
                         setSelectedSections([]);
@@ -631,16 +652,28 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                         setSelectedSections(Object.keys(sections) as SectionId[]);
                       }
                     }}
-                    className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-gray-300 dark:border-gray-600"
+                    className={clsx(
+                      "w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-gray-300 dark:border-gray-600",
+                      (selectedMode.id === 'full' || selectedMode.id === 'half') && "cursor-not-allowed"
+                    )}
                   />
                   <span className="font-medium text-gray-900 dark:text-white">All Domains</span>
+                  {(selectedMode.id === 'full' || selectedMode.id === 'half') && (
+                    <span className="text-xs text-indigo-600 dark:text-indigo-400 ml-2">(required for {selectedMode.name})</span>
+                  )}
                 </label>
                 <div className="h-px bg-gray-200 dark:bg-gray-700 my-2" />
                 {(Object.entries(sections) as [SectionId, SectionInfo][]).map(([id, info]) => (
-                  <label key={id} className="flex items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded cursor-pointer">
+                  <label key={id} className={clsx(
+                    "flex items-center space-x-3 p-2 rounded",
+                    (selectedMode.id === 'full' || selectedMode.id === 'half') 
+                      ? "opacity-60 cursor-not-allowed" 
+                      : "cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                  )}>
                     <input 
                       type="checkbox"
                       checked={selectedSections.includes(id)}
+                      disabled={selectedMode.id === 'full' || selectedMode.id === 'half'}
                       onChange={(e) => {
                         if (e.target.checked) {
                           setSelectedSections([...selectedSections, id]);
@@ -648,7 +681,10 @@ export function ExamSimulatorTemplate<SectionId extends string>({
                           setSelectedSections(selectedSections.filter(s => s !== id));
                         }
                       }}
-                      className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-gray-300 dark:border-gray-600"
+                      className={clsx(
+                        "w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-gray-300 dark:border-gray-600",
+                        (selectedMode.id === 'full' || selectedMode.id === 'half') && "cursor-not-allowed"
+                      )}
                     />
                     <span className="text-sm text-gray-700 dark:text-gray-300">{info.name}</span>
                   </label>

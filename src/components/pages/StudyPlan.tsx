@@ -9,7 +9,7 @@
  * - Alerts and recommendations
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Calendar,
@@ -29,6 +29,7 @@ import {
   ClipboardList,
   Layers,
   GraduationCap,
+  RotateCcw,
 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { StudyPlanCTA } from '../StudyPlanCTA';
@@ -37,7 +38,7 @@ import { useCourse } from '../../providers/CourseProvider';
 import { useAuth } from '../../hooks/useAuth';
 import { fetchAllLessons } from '../../services/lessonService';
 // Rebalance imports removed - now uses setup page
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import type { Lesson } from '../../types';
 import { format, isWithinInterval, startOfDay } from 'date-fns';
@@ -89,6 +90,114 @@ const HEALTH_CONFIG: Record<PlanHealth, { color: string; bgColor: string; label:
   'critical': { color: 'text-red-700', bgColor: 'bg-red-200', label: 'Critical' },
 };
 
+/**
+ * Dropdown menu for plan actions (Edit / Start Fresh)
+ */
+const PlanActionsMenu: React.FC<{
+  onEdit: () => void;
+  onReset: () => void;
+}> = ({ onEdit, onReset }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+  
+  return (
+    <div className="relative" ref={menuRef}>
+      <Button
+        onClick={() => setIsOpen(!isOpen)}
+        variant="secondary"
+        className="flex items-center gap-2"
+      >
+        <Settings className="w-4 h-4" />
+        Plan Options
+        <ChevronDown className={clsx("w-4 h-4 transition-transform", isOpen && "rotate-180")} />
+      </Button>
+      
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 z-50">
+          <div className="py-1">
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                onEdit();
+              }}
+              className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              <Settings className="w-4 h-4" />
+              <div>
+                <div className="font-medium">Edit Plan</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Adjust settings, keeps history</div>
+              </div>
+            </button>
+            
+            <hr className="my-1 border-slate-200 dark:border-slate-700" />
+            
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                setShowConfirm(true);
+              }}
+              className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20"
+            >
+              <RotateCcw className="w-4 h-4" />
+              <div>
+                <div className="font-medium">Start Fresh</div>
+                <div className="text-xs text-red-500 dark:text-red-400">Delete plan, start over</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      )}
+      
+      {/* Confirmation Modal */}
+      {showConfirm && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-slate-800 rounded-xl p-6 max-w-md mx-4 shadow-xl">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+              Start Fresh?
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-4">
+              This will delete your current plan schedule. Your completed lessons, questions, 
+              and other study progress will <span className="font-medium text-slate-900 dark:text-white">not</span> be affected.
+            </p>
+            <div className="flex gap-3 justify-end">
+              <Button
+                variant="secondary"
+                onClick={() => setShowConfirm(false)}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="primary"
+                className="bg-red-600 hover:bg-red-700"
+                onClick={() => {
+                  setShowConfirm(false);
+                  onReset();
+                }}
+              >
+                Start Fresh
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const StudyPlan: React.FC = () => {
   const navigate = useNavigate();
   const { course, courseId } = useCourse();
@@ -103,6 +212,7 @@ const StudyPlan: React.FC = () => {
   const [velocity, setVelocity] = useState<{ lessonsPerDay: number; questionsPerDay: number; minutesPerDay: number } | null>(null);
   const [weeklyActivityProgress, setWeeklyActivityProgress] = useState<Record<number, { mcqs: number; tbs: number; flashcards: number; essays: number; caseStudies: number }>>({});
   const [liveAccuracy, setLiveAccuracy] = useState<{ questionsAnswered: number; accuracy: number } | null>(null);
+  const [liveDaysStudied, setLiveDaysStudied] = useState<number | null>(null);
   
   // Check if user is behind and should see rebalance option
   const shouldShowRebalance = plan && ['behind', 'at-risk', 'critical'].includes(plan.health);
@@ -150,11 +260,22 @@ const StudyPlan: React.FC = () => {
           const sevenDaysAgoStr = sevenDaysAgo.toISOString().split('T')[0];
           let totalLessons7d = 0, totalQuestions7d = 0, totalMinutes7d = 0;
           let recentCount = 0;
+          let allTimeDaysStudied = 0;
           const coursePrefix = `${courseId}_`;
           logSnap.docs.forEach(d => {
             // Skip logs from other courses (format: {course}_{date})
             if (d.id.includes('_') && !d.id.startsWith(coursePrefix)) return;
             const data = d.data();
+            
+            // Count all-time days with any activity (questions, lessons, or earned points)
+            const hasActivity = (data.questionsAttempted || 0) > 0 || 
+                               (data.questionsAnswered || 0) > 0 || 
+                               (data.lessonsCompleted || 0) > 0 || 
+                               (data.earnedPoints || 0) > 0;
+            if (hasActivity) {
+              allTimeDaysStudied++;
+            }
+            
             if ((data.date || d.id) >= sevenDaysAgoStr) {
               totalLessons7d += data.lessonsCompleted || 0;
               totalQuestions7d += data.questionsAttempted || data.questionsAnswered || 0;
@@ -168,6 +289,7 @@ const StudyPlan: React.FC = () => {
             questionsPerDay: Math.round((totalQuestions7d / activeDays) * 10) / 10,
             minutesPerDay: Math.round(totalMinutes7d / activeDays),
           });
+          setLiveDaysStudied(allTimeDaysStudied);
 
           // Per-week activity progress from daily_log (only for current course)
           const weekProgress: Record<number, { mcqs: number; tbs: number; flashcards: number; essays: number; caseStudies: number }> = {};
@@ -475,14 +597,22 @@ const StudyPlan: React.FC = () => {
           </p>
         </div>
         
-        <Button
-          onClick={() => navigate('/study-plan/setup')}
-          variant="secondary"
-          className="flex items-center gap-2"
-        >
-          <Settings className="w-4 h-4" />
-          Edit Plan
-        </Button>
+        <PlanActionsMenu 
+          onEdit={() => navigate('/study-plan/setup')}
+          onReset={async () => {
+            // Delete existing plan, then navigate to setup for fresh start
+            if (user && plan) {
+              const normalizedSection = plan.section;
+              const planKey = `${courseId}_${normalizedSection}`;
+              try {
+                await deleteDoc(doc(db, 'users', user.uid, 'studyPlans', planKey));
+              } catch (err) {
+                console.error('Error deleting plan:', err);
+              }
+            }
+            navigate('/study-plan/setup', { state: { resetPlan: true } });
+          }}
+        />
       </div>
       
       {/* Overview Cards */}
@@ -1221,7 +1351,7 @@ const StudyPlan: React.FC = () => {
         </div>
         <div className="bg-white dark:bg-slate-800 rounded-xl p-4 text-center">
           <p className="text-2xl font-bold text-slate-900 dark:text-white">
-            {plan.progress.daysStudied}
+            {liveDaysStudied ?? plan.progress.daysStudied}
           </p>
           <p className="text-sm text-slate-500 dark:text-slate-400">Days Studied</p>
         </div>

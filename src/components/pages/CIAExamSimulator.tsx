@@ -166,8 +166,8 @@ export default function CIAExamSimulatorNew() {
   const config: ExamSimulatorConfig<CIASectionId> = {
     ...baseConfig,
     defaultSection,
-    // Hide section selector if user already selected their part
-    hideSectionSelector: isValidSection,
+    // Always hide - user picks their part on dashboard, not in simulator (matches CPA behavior)
+    hideSectionSelector: true,
   };
   
   return <ExamSimulatorTemplate<CIASectionId> config={config} />;

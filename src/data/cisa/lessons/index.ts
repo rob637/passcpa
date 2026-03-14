@@ -7,42 +7,52 @@ import { Lesson } from '../../../types';
 import cisa1Data from './json/cisa1.json';
 import cisa1Batch2Data from './json/cisa1-batch2.json';
 import cisa1Batch3Data from './json/cisa1-batch3.json';
+import cisa1Batch4Data from './json/cisa1-batch4.json';
 
 // Domain 2 imports
 import cisa2Data from './json/cisa2.json';
 import cisa2Batch2Data from './json/cisa2-batch2.json';
+import cisa2Batch3Data from './json/cisa2-batch3.json';
 
 // Domain 3 imports
 import cisa3Data from './json/cisa3.json';
 import cisa3Batch2Data from './json/cisa3-batch2.json';
+import cisa3Batch3Data from './json/cisa3-batch3.json';
 
 // Domain 4 imports
 import cisa4Data from './json/cisa4.json';
 import cisa4Batch2Data from './json/cisa4-batch2.json';
+import cisa4Batch3Data from './json/cisa4-batch3.json';
 
 // Domain 5 imports
 import cisa5Data from './json/cisa5.json';
 import cisa5Batch2Data from './json/cisa5-batch2.json';
+import cisa5Batch3Data from './json/cisa5-batch3.json';
 
 // Type assertions
 export const cisa1Lessons: Lesson[] = cisa1Data as Lesson[];
 export const cisa1LessonsBatch2: Lesson[] = cisa1Batch2Data as Lesson[];
 export const cisa1LessonsBatch3: Lesson[] = cisa1Batch3Data as Lesson[];
+export const cisa1LessonsBatch4: Lesson[] = cisa1Batch4Data as Lesson[];
 export const cisa2Lessons: Lesson[] = cisa2Data as Lesson[];
 export const cisa2LessonsBatch2: Lesson[] = cisa2Batch2Data as Lesson[];
+export const cisa2LessonsBatch3: Lesson[] = cisa2Batch3Data as Lesson[];
 export const cisa3Lessons: Lesson[] = cisa3Data as Lesson[];
 export const cisa3LessonsBatch2: Lesson[] = cisa3Batch2Data as Lesson[];
+export const cisa3LessonsBatch3: Lesson[] = cisa3Batch3Data as Lesson[];
 export const cisa4Lessons: Lesson[] = cisa4Data as Lesson[];
 export const cisa4LessonsBatch2: Lesson[] = cisa4Batch2Data as Lesson[];
+export const cisa4LessonsBatch3: Lesson[] = cisa4Batch3Data as Lesson[];
 export const cisa5Lessons: Lesson[] = cisa5Data as Lesson[];
 export const cisa5LessonsBatch2: Lesson[] = cisa5Batch2Data as Lesson[];
+export const cisa5LessonsBatch3: Lesson[] = cisa5Batch3Data as Lesson[];
 
 // Combined by domain
-export const CISA1_LESSONS: Lesson[] = [...cisa1Lessons, ...cisa1LessonsBatch2, ...cisa1LessonsBatch3];
-export const CISA2_LESSONS: Lesson[] = [...cisa2Lessons, ...cisa2LessonsBatch2];
-export const CISA3_LESSONS: Lesson[] = [...cisa3Lessons, ...cisa3LessonsBatch2];
-export const CISA4_LESSONS: Lesson[] = [...cisa4Lessons, ...cisa4LessonsBatch2];
-export const CISA5_LESSONS: Lesson[] = [...cisa5Lessons, ...cisa5LessonsBatch2];
+export const CISA1_LESSONS: Lesson[] = [...cisa1Lessons, ...cisa1LessonsBatch2, ...cisa1LessonsBatch3, ...cisa1LessonsBatch4];
+export const CISA2_LESSONS: Lesson[] = [...cisa2Lessons, ...cisa2LessonsBatch2, ...cisa2LessonsBatch3];
+export const CISA3_LESSONS: Lesson[] = [...cisa3Lessons, ...cisa3LessonsBatch2, ...cisa3LessonsBatch3];
+export const CISA4_LESSONS: Lesson[] = [...cisa4Lessons, ...cisa4LessonsBatch2, ...cisa4LessonsBatch3];
+export const CISA5_LESSONS: Lesson[] = [...cisa5Lessons, ...cisa5LessonsBatch2, ...cisa5LessonsBatch3];
 
 // All CISA lessons
 export const ALL_CISA_LESSONS: Lesson[] = [

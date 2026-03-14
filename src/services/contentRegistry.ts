@@ -250,7 +250,7 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'SEE1',
     sectionName: 'Individuals',
     counts: {
-      lessons: 50,
+      lessons: 55,
       lessonMinutes: 2335,
       mcqs: 819,
       tbs: 0,
@@ -348,12 +348,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CIA1',
     sectionName: 'Essentials of Internal Auditing',
     counts: {
-      lessons: 100,
+      lessons: 116,
       lessonMinutes: 3969,
-      mcqs: 1779,
+      mcqs: 735,
       tbs: 0,
       simulations: 0,
-      flashcards: 594,
+      flashcards: 188,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -366,12 +366,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CIA2',
     sectionName: 'Practice of Internal Auditing',
     counts: {
-      lessons: 93,
+      lessons: 106,
       lessonMinutes: 3729,
-      mcqs: 1606,
+      mcqs: 713,
       tbs: 0,
       simulations: 0,
-      flashcards: 555,
+      flashcards: 181,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -384,12 +384,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CIA3',
     sectionName: 'Business Knowledge for Internal Auditing',
     counts: {
-      lessons: 80,
+      lessons: 102,
       lessonMinutes: 3183,
-      mcqs: 1637,
+      mcqs: 764,
       tbs: 0,
       simulations: 0,
-      flashcards: 523,
+      flashcards: 172,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -406,12 +406,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA1',
     sectionName: 'Information Systems Auditing Process',
     counts: {
-      lessons: 33,
+      lessons: 34,
       lessonMinutes: 1530,
-      mcqs: 450,
+      mcqs: 291,
       tbs: 0,
       simulations: 0,
-      flashcards: 173,
+      flashcards: 107,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -424,12 +424,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA2',
     sectionName: 'Governance and Management of IT',
     counts: {
-      lessons: 24,
+      lessons: 25,
       lessonMinutes: 1075,
-      mcqs: 408,
+      mcqs: 286,
       tbs: 0,
       simulations: 0,
-      flashcards: 149,
+      flashcards: 99,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -442,12 +442,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     section: 'CISA3',
     sectionName: 'Information Systems Acquisition, Development, and Implementation',
     counts: {
-      lessons: 27,
+      lessons: 28,
       lessonMinutes: 1215,
-      mcqs: 417,
+      mcqs: 280,
       tbs: 0,
       simulations: 0,
-      flashcards: 151,
+      flashcards: 91,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -462,10 +462,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 31,
       lessonMinutes: 1425,
-      mcqs: 457,
+      mcqs: 305,
       tbs: 0,
       simulations: 0,
-      flashcards: 156,
+      flashcards: 96,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -480,10 +480,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 34,
       lessonMinutes: 1555,
-      mcqs: 546,
+      mcqs: 358,
       tbs: 0,
       simulations: 0,
-      flashcards: 206,
+      flashcards: 128,
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -502,10 +502,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 32,
       lessonMinutes: 1340,
-      mcqs: 549,
+      mcqs: 305,
       tbs: 0,
       simulations: 0,
-      flashcards: 204,
+      flashcards: 100,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -520,10 +520,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 17,
       lessonMinutes: 715,
-      mcqs: 297,
+      mcqs: 183,
       tbs: 0,
       simulations: 0,
-      flashcards: 98,
+      flashcards: 50,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -538,10 +538,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 27,
       lessonMinutes: 1140,
-      mcqs: 613,
+      mcqs: 337,
       tbs: 0,
       simulations: 0,
-      flashcards: 220,
+      flashcards: 100,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -556,10 +556,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 24,
       lessonMinutes: 790,
-      mcqs: 500,
+      mcqs: 322,
       tbs: 0,
       simulations: 0,
-      flashcards: 168,
+      flashcards: 90,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -574,10 +574,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 25,
       lessonMinutes: 1025,
-      mcqs: 564,
+      mcqs: 337,
       tbs: 0,
       simulations: 0,
-      flashcards: 199,
+      flashcards: 100,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -592,10 +592,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 41,
       lessonMinutes: 1810,
-      mcqs: 641,
+      mcqs: 349,
       tbs: 0,
       simulations: 0,
-      flashcards: 248,
+      flashcards: 120,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -610,10 +610,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 25,
       lessonMinutes: 945,
-      mcqs: 441,
+      mcqs: 279,
       tbs: 0,
       simulations: 0,
-      flashcards: 162,
+      flashcards: 90,
       caseStudies: 6,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -628,10 +628,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     counts: {
       lessons: 19,
       lessonMinutes: 630,
-      mcqs: 386,
+      mcqs: 256,
       tbs: 0,
       simulations: 0,
-      flashcards: 122,
+      flashcards: 67,
       caseStudies: 7,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],
@@ -650,12 +650,12 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
     sectionName: 'CISA Full Exam (All 5 Domains)',
     counts: {
       // Aggregated from CISA1-5
-      lessons: 33 + 24 + 27 + 31 + 34,               // 149 total
+      lessons: 34 + 25 + 28 + 31 + 34,               // 152 total
       lessonMinutes: 1530 + 1075 + 1215 + 1425 + 1555,  // 6800 total
-      mcqs: 450 + 408 + 417 + 457 + 546,             // 2278 total
+      mcqs: 291 + 286 + 280 + 305 + 358,             // 1520 total
       tbs: 0,
       simulations: 0,
-      flashcards: 173 + 149 + 151 + 156 + 206,           // 835 total
+      flashcards: 107 + 99 + 91 + 96 + 128,           // 521 total
       caseStudies: 0,
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'mockExam'],
@@ -673,10 +673,10 @@ const SECTION_CONTENT: Record<string, SectionContentInfo> = {
       // Aggregated from all CFP sections
       lessons: 32 + 17 + 27 + 24 + 25 + 41 + 25 + 19,   // 210 total
       lessonMinutes: 1340 + 715 + 1140 + 790 + 1025 + 1810 + 945 + 630, // 8395 total
-      mcqs: 549 + 297 + 613 + 500 + 564 + 641 + 441 + 386, // 3991 total
+      mcqs: 305 + 183 + 337 + 322 + 337 + 349 + 279 + 256, // 2368 total
       tbs: 0,
       simulations: 0,
-      flashcards: 204 + 98 + 220 + 168 + 199 + 248 + 162 + 122,  // 1421 total
+      flashcards: 100 + 50 + 100 + 90 + 100 + 120 + 90 + 67,  // 717 total
       caseStudies: 6 + 6 + 7 + 7 + 6 + 7 + 6 + 7,            // 52 total
     },
     contentTypes: ['lesson', 'mcq', 'flashcard', 'caseStudy', 'mockExam'],

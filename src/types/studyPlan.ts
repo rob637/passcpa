@@ -170,6 +170,19 @@ export interface StudyPlan {
     daysStudied: number;
     daysMissed: number;
     lastStudyDate?: Date;
+    // Extended progress tracking (optional for backward compatibility)
+    flashcardsReviewed?: number;
+    flashcardsTarget?: number;
+    simulationsCompleted?: number;    // TBS
+    simulationsTarget?: number;
+    essaysCompleted?: number;         // CMA only
+    essaysTarget?: number;
+    cbqsCompleted?: number;           // CMA only
+    cbqsTarget?: number;
+    caseStudiesCompleted?: number;    // CFP only
+    caseStudiesTarget?: number;
+    mockExamsCompleted?: number;
+    mockExamsTarget?: number;
   };
   
   // Alerts and notifications

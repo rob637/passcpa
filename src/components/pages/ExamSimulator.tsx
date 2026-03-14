@@ -89,6 +89,7 @@ const ExamSimulator: React.FC = () => {
   // Answer review state (for results screen)
   const [reviewExpanded, setReviewExpanded] = useState(false);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'incorrect'>('incorrect');
+  const [tbsReviewExpanded, setTbsReviewExpanded] = useState(false);
 
   // Calculator functions
   const calcInputDigit = useCallback((digit: string) => {
@@ -1253,6 +1254,87 @@ const ExamSimulator: React.FC = () => {
                 )}
               </div>
 
+              {/* TBS Review Section (Prometric) */}
+              {tbsItems.length > 0 && (
+                <>
+                  <div className="prometric-results-divider" />
+                  <div className="prometric-results-section">
+                    <button
+                      onClick={() => setTbsReviewExpanded(!tbsReviewExpanded)}
+                      className="prometric-btn w-full flex items-center justify-between"
+                    >
+                      <span>Review TBS ({tbsItems.length} simulations)</span>
+                      <span>{tbsReviewExpanded ? '▲' : '▼'}</span>
+                    </button>
+                    
+                    {tbsReviewExpanded && (
+                      <div className="mt-4 max-h-[40vh] overflow-y-auto">
+                        {tbsItems.map((tbs, tbsIndex) => (
+                          <div key={tbs.id} className="mb-4 p-3 border border-gray-400 bg-white">
+                            <div className="flex items-start gap-2 mb-2">
+                              <span className="font-bold">TBS {tbsIndex + 1}.</span>
+                              <span className="font-medium">{tbs.title}</span>
+                            </div>
+                            <p className="text-xs text-gray-600 mb-2">{tbs.type?.replace(/_/g, ' ')} • {tbs.blueprintArea}</p>
+                            
+                            {tbs.scenario && (
+                              <p className="mb-3 text-sm p-2 bg-gray-100 border">{typeof tbs.scenario === 'string' ? tbs.scenario.substring(0, 200) + '...' : ''}</p>
+                            )}
+                            
+                            {(tbs.requirements || []).map((req, reqIndex) => {
+                              const userAnswer = tbsAnswers[tbs.id]?.[req.id];
+                              let isCorrect = false;
+                              let userAnswerDisplay = 'Not answered';
+                              let correctAnswerDisplay = '';
+                              
+                              if (req.type === 'dropdown' || req.options) {
+                                const correctIdx = typeof req.correctAnswer === 'number' ? req.correctAnswer : undefined;
+                                isCorrect = userAnswer === correctIdx;
+                                userAnswerDisplay = typeof userAnswer === 'number' && req.options ? req.options[userAnswer] : 'Not answered';
+                                correctAnswerDisplay = typeof correctIdx === 'number' && req.options ? req.options[correctIdx] : '';
+                              } else if (req.type === 'calculation' || typeof req.correctAnswer === 'number') {
+                                const correctVal = typeof req.correctAnswer === 'number' ? req.correctAnswer : 0;
+                                const userVal = parseFloat(String(userAnswer || '0'));
+                                isCorrect = Math.abs(userVal - correctVal) <= (req.tolerance || 0);
+                                userAnswerDisplay = userAnswer !== undefined ? `$${Number(userAnswer).toLocaleString()}` : 'Not answered';
+                                correctAnswerDisplay = `$${correctVal.toLocaleString()}`;
+                              } else if (req.correctEntries) {
+                                userAnswerDisplay = userAnswer ? 'Entries provided' : 'Not answered';
+                                correctAnswerDisplay = 'See explanation';
+                              } else {
+                                userAnswerDisplay = userAnswer ? String(userAnswer) : 'Not answered';
+                                correctAnswerDisplay = req.correctAnswer ? String(req.correctAnswer) : '';
+                                isCorrect = String(userAnswer) === String(req.correctAnswer);
+                              }
+                              
+                              return (
+                                <div key={req.id} className="mb-2 p-2 border" style={{ backgroundColor: isCorrect ? '#e6f5e6' : '#ffe6e6' }}>
+                                  <p className="text-sm font-medium mb-1">
+                                    <span className={isCorrect ? 'text-green-700' : 'text-red-700'}>
+                                      {isCorrect ? '✓' : '✗'}
+                                    </span>{' '}
+                                    {req.question || req.text || `Requirement ${reqIndex + 1}`}
+                                  </p>
+                                  <p className="text-sm"><strong>Your answer:</strong> {userAnswerDisplay}</p>
+                                  {!isCorrect && correctAnswerDisplay && (
+                                    <p className="text-sm text-green-700"><strong>Correct:</strong> {correctAnswerDisplay}</p>
+                                  )}
+                                  {req.explanation && (
+                                    <div className="mt-1 p-2 bg-white border text-sm">
+                                      <strong>Explanation:</strong> {req.explanation}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
+
               <div className="prometric-results-divider" />
 
               <div className="prometric-results-actions">
@@ -1540,6 +1622,152 @@ const ExamSimulator: React.FC = () => {
               </div>
             )}
           </div>
+
+          {/* TBS Review Section */}
+          {tbsItems.length > 0 && (
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden mb-6">
+              <button
+                onClick={() => setTbsReviewExpanded(!tbsReviewExpanded)}
+                className="w-full flex items-center justify-between p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+              >
+                <div className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                  <h3 className="text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                    Review Task-Based Simulations
+                  </h3>
+                  <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-1 rounded-full">
+                    {tbsItems.length} TBS
+                  </span>
+                </div>
+                <ChevronDown className={clsx(
+                  'w-5 h-5 text-slate-400 transition-transform',
+                  tbsReviewExpanded && 'rotate-180'
+                )} />
+              </button>
+              
+              {tbsReviewExpanded && (
+                <div className="border-t border-slate-200 dark:border-slate-700 divide-y divide-slate-200 dark:divide-slate-700 max-h-[70vh] overflow-y-auto">
+                  {tbsItems.map((tbs, tbsIndex) => (
+                    <div key={tbs.id} className="p-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="w-8 h-8 rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                          {tbsIndex + 1}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                            {tbs.title}
+                          </h4>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">
+                            {tbs.type?.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())} • {tbs.blueprintArea}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Scenario */}
+                      {tbs.scenario && (
+                        <div className="mb-4 p-4 bg-slate-50 dark:bg-slate-700/50 rounded-lg text-sm text-slate-700 dark:text-slate-300">
+                          <p className="font-medium mb-2">Scenario:</p>
+                          <p>{typeof tbs.scenario === 'string' ? tbs.scenario : JSON.stringify(tbs.scenario)}</p>
+                        </div>
+                      )}
+                      
+                      {/* Requirements review */}
+                      <div className="space-y-4">
+                        {(tbs.requirements || []).map((req, reqIndex) => {
+                          const userAnswer = tbsAnswers[tbs.id]?.[req.id];
+                          let isCorrect = false;
+                          let userAnswerDisplay = 'Not answered';
+                          let correctAnswerDisplay = '';
+                          
+                          // Handle different requirement types
+                          if (req.type === 'dropdown' || req.options) {
+                            const correctIdx = typeof req.correctAnswer === 'number' ? req.correctAnswer : undefined;
+                            isCorrect = userAnswer === correctIdx;
+                            userAnswerDisplay = typeof userAnswer === 'number' && req.options 
+                              ? req.options[userAnswer] 
+                              : 'Not answered';
+                            correctAnswerDisplay = typeof correctIdx === 'number' && req.options 
+                              ? req.options[correctIdx] 
+                              : '';
+                          } else if (req.type === 'calculation' || typeof req.correctAnswer === 'number') {
+                            const correctVal = typeof req.correctAnswer === 'number' ? req.correctAnswer : 0;
+                            const tolerance = req.tolerance || 0;
+                            const userVal = parseFloat(String(userAnswer || '0'));
+                            isCorrect = Math.abs(userVal - correctVal) <= tolerance;
+                            userAnswerDisplay = userAnswer !== undefined ? `$${Number(userAnswer).toLocaleString()}` : 'Not answered';
+                            correctAnswerDisplay = `$${correctVal.toLocaleString()}`;
+                          } else if (req.correctEntries) {
+                            // Journal entry type - simplified display
+                            userAnswerDisplay = userAnswer ? 'Entries provided' : 'Not answered';
+                            correctAnswerDisplay = req.correctEntries.map(e => 
+                              `${e.account}: ${e.debit ? `Dr ${e.debit}` : ''} ${e.credit ? `Cr ${e.credit}` : ''}`
+                            ).join('; ');
+                            // Basic check - would need more sophisticated scoring
+                            isCorrect = false; // Journal entries require complex matching
+                          } else {
+                            userAnswerDisplay = userAnswer ? String(userAnswer) : 'Not answered';
+                            correctAnswerDisplay = req.correctAnswer ? String(req.correctAnswer) : '';
+                            isCorrect = String(userAnswer) === String(req.correctAnswer);
+                          }
+                          
+                          return (
+                            <div key={req.id} className="border border-slate-200 dark:border-slate-600 rounded-lg p-4">
+                              <div className="flex items-start gap-2 mb-3">
+                                <div className={clsx(
+                                  'w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0',
+                                  isCorrect 
+                                    ? 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-400'
+                                    : 'bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-400'
+                                )}>
+                                  {isCorrect ? <CheckCircle className="w-3 h-3" /> : <XCircle className="w-3 h-3" />}
+                                </div>
+                                <div className="flex-1">
+                                  <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                                    Requirement {reqIndex + 1}
+                                  </p>
+                                  <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                    {req.question || req.text || `Requirement ${reqIndex + 1}`}
+                                  </p>
+                                </div>
+                              </div>
+                              
+                              <div className="ml-8 space-y-2">
+                                <div className={clsx(
+                                  'p-3 rounded-lg text-sm',
+                                  isCorrect 
+                                    ? 'bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800'
+                                    : 'bg-error-50 dark:bg-error-900/20 border border-error-200 dark:border-error-800'
+                                )}>
+                                  <span className="font-medium text-slate-700 dark:text-slate-300">Your answer: </span>
+                                  <span className={isCorrect ? 'text-success-700 dark:text-success-400' : 'text-error-700 dark:text-error-400'}>
+                                    {userAnswerDisplay}
+                                  </span>
+                                </div>
+                                
+                                {!isCorrect && correctAnswerDisplay && (
+                                  <div className="p-3 rounded-lg text-sm bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800">
+                                    <span className="font-medium text-slate-700 dark:text-slate-300">Correct answer: </span>
+                                    <span className="text-success-700 dark:text-success-400">{correctAnswerDisplay}</span>
+                                  </div>
+                                )}
+                                
+                                {req.explanation && (
+                                  <div className="p-3 rounded-lg text-sm bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
+                                    <p className="font-medium text-slate-700 dark:text-slate-300 mb-1">Explanation:</p>
+                                    <p className="text-slate-600 dark:text-slate-400">{req.explanation}</p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Action Buttons */}
           <div className="flex gap-4">

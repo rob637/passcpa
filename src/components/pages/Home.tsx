@@ -724,12 +724,12 @@ const Home = () => {
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
             {[
               { label: 'Accuracy', value: readinessData.breakdown.accuracy },
-              { label: 'Coverage', value: readinessData.breakdown.coverage },
+              { label: 'MCQ Coverage', value: readinessData.breakdown.coverage },
               { label: 'Questions', value: readinessData.breakdown.volume },
               { label: 'Lessons', value: readinessData.breakdown.lessons },
             ].map(item => (
               <div key={item.label} className="flex items-center gap-2">
-                <span className="text-slate-500 dark:text-slate-400 w-16">{item.label}</span>
+                <span className="text-slate-500 dark:text-slate-400 w-20">{item.label}</span>
                 <div className="flex-1 h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                   <div
                     className={clsx(

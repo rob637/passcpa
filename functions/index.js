@@ -7769,3 +7769,316 @@ exports.findOrphanedUsers = onCall({
     })),
   };
 });
+
+// ============================================================================
+// YOUTUBE SHORTS AUTO-UPLOADER
+// Uploads videos from Firebase Storage to YouTube on a schedule
+// ============================================================================
+
+/**
+ * Scheduled function to upload YouTube Shorts from Storage.
+ * 
+ * Workflow:
+ * 1. Check shorts/pending/ for videos ready to upload
+ * 2. Pick the oldest video (by filename date prefix)
+ * 3. Upload to YouTube via Data API
+ * 4. Move video to shorts/published/
+ * 5. Log upload record in Firestore
+ * 
+ * Secrets required:
+ * - YOUTUBE_CLIENT_ID
+ * - YOUTUBE_CLIENT_SECRET
+ * - YOUTUBE_REFRESH_TOKEN
+ * - YOUTUBE_CHANNEL_ID
+ */
+exports.uploadYouTubeShorts = onSchedule({
+  schedule: 'every day 09:00',
+  timeZone: 'America/New_York',
+  timeoutSeconds: 300,
+  memory: '1GiB',
+  secrets: ['YOUTUBE_CLIENT_ID', 'YOUTUBE_CLIENT_SECRET', 'YOUTUBE_REFRESH_TOKEN', 'YOUTUBE_CHANNEL_ID'],
+}, async () => {
+  console.log('[YouTubeShorts] Starting scheduled upload check...');
+
+  const bucket = admin.storage().bucket();
+  
+  // Check if YouTube secrets are configured
+  const clientId = process.env.YOUTUBE_CLIENT_ID;
+  const clientSecret = process.env.YOUTUBE_CLIENT_SECRET;
+  const refreshToken = process.env.YOUTUBE_REFRESH_TOKEN;
+  const channelId = process.env.YOUTUBE_CHANNEL_ID;
+  
+  if (!clientId || !clientSecret || !refreshToken || !channelId) {
+    console.log('[YouTubeShorts] YouTube credentials not configured. Skipping.');
+    await updateFunctionStatus('uploadYouTubeShorts', 'skipped', { reason: 'credentials_missing' });
+    return;
+  }
+
+  try {
+    // List files in shorts/pending/
+    const [files] = await bucket.getFiles({ prefix: 'shorts/pending/' });
+    
+    // Filter to only .mp4 files
+    const videoFiles = files.filter(f => f.name.endsWith('.mp4'));
+    
+    if (videoFiles.length === 0) {
+      console.log('[YouTubeShorts] No pending videos found.');
+      await updateFunctionStatus('uploadYouTubeShorts', 'skipped', { reason: 'no_pending_videos' });
+      return;
+    }
+    
+    // Sort by filename (date prefix) to get oldest first
+    videoFiles.sort((a, b) => a.name.localeCompare(b.name));
+    const videoFile = videoFiles[0];
+    const fileName = videoFile.name.split('/').pop(); // e.g., "2026-03-17_far-consolidation.mp4"
+    const baseName = fileName.replace('.mp4', '');
+    
+    console.log(`[YouTubeShorts] Processing: ${fileName} (${videoFiles.length} pending)`);
+    
+    // Check for metadata sidecar file
+    let metadata = {};
+    const metadataPath = `shorts/pending/${baseName}.json`;
+    try {
+      const [metaFile] = await bucket.file(metadataPath).download();
+      metadata = JSON.parse(metaFile.toString());
+      console.log('[YouTubeShorts] Found metadata file');
+    } catch {
+      // No metadata file, use defaults
+      console.log('[YouTubeShorts] No metadata file, using defaults');
+    }
+    
+    // Generate title from filename if not in metadata
+    // "2026-03-17_far-consolidation" -> "Far Consolidation | CPA Exam Tips"
+    const topicSlug = baseName.replace(/^\d{4}-\d{2}-\d{2}_/, '');
+    const titleFromSlug = topicSlug
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ') + ' | CPA Exam Tips';
+    
+    const title = metadata.title || titleFromSlug;
+    const description = metadata.description || 
+      `Quick CPA exam tip to help you pass!\n\n` +
+      `📚 Free practice questions: https://voraprep.com\n` +
+      `🎯 AI-powered adaptive learning\n` +
+      `✅ 9,000+ practice questions\n\n` +
+      `#CPAExam #CPA #Accounting #VoraPrep`;
+    const tags = metadata.tags || ['CPA exam', 'CPA prep', 'accounting', 'VoraPrep', 'study tips'];
+    const categoryId = metadata.categoryId || '27'; // Education
+    
+    // Get OAuth access token
+    const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        refresh_token: refreshToken,
+        grant_type: 'refresh_token',
+      }),
+    });
+    
+    if (!tokenResponse.ok) {
+      const errorText = await tokenResponse.text();
+      throw new Error(`Failed to get access token: ${errorText}`);
+    }
+    
+    const tokenData = await tokenResponse.json();
+    const accessToken = tokenData.access_token;
+    
+    // Download video to memory
+    console.log('[YouTubeShorts] Downloading video from Storage...');
+    const [videoBuffer] = await videoFile.download();
+    console.log(`[YouTubeShorts] Video size: ${(videoBuffer.length / 1024 / 1024).toFixed(2)} MB`);
+    
+    // Upload to YouTube (resumable upload)
+    console.log('[YouTubeShorts] Initiating YouTube upload...');
+    
+    // Step 1: Start resumable upload session
+    const initResponse = await fetch(
+      'https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+          'X-Upload-Content-Type': 'video/mp4',
+          'X-Upload-Content-Length': videoBuffer.length.toString(),
+        },
+        body: JSON.stringify({
+          snippet: {
+            title: title.substring(0, 100), // YouTube limit
+            description: description.substring(0, 5000),
+            tags: tags.slice(0, 30),
+            categoryId: categoryId,
+          },
+          status: {
+            privacyStatus: 'public',
+            selfDeclaredMadeForKids: false,
+          },
+        }),
+      }
+    );
+    
+    if (!initResponse.ok) {
+      const errorText = await initResponse.text();
+      throw new Error(`Failed to init upload: ${errorText}`);
+    }
+    
+    const uploadUrl = initResponse.headers.get('location');
+    if (!uploadUrl) {
+      throw new Error('No upload URL returned from YouTube');
+    }
+    
+    // Step 2: Upload the video data
+    console.log('[YouTubeShorts] Uploading video data...');
+    const uploadResponse = await fetch(uploadUrl, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'video/mp4',
+        'Content-Length': videoBuffer.length.toString(),
+      },
+      body: videoBuffer,
+    });
+    
+    if (!uploadResponse.ok) {
+      const errorText = await uploadResponse.text();
+      throw new Error(`Failed to upload video: ${errorText}`);
+    }
+    
+    const uploadResult = await uploadResponse.json();
+    const youtubeVideoId = uploadResult.id;
+    console.log(`[YouTubeShorts] Upload complete! Video ID: ${youtubeVideoId}`);
+    
+    // Move video to published folder
+    const publishedPath = `shorts/published/${fileName}`;
+    await videoFile.move(publishedPath);
+    console.log(`[YouTubeShorts] Moved to ${publishedPath}`);
+    
+    // Also move metadata file if it exists
+    try {
+      const metaFileRef = bucket.file(metadataPath);
+      const [metaExists] = await metaFileRef.exists();
+      if (metaExists) {
+        await metaFileRef.move(`shorts/published/${baseName}.json`);
+      }
+    } catch {
+      // Ignore metadata move errors
+    }
+    
+    // Log to Firestore
+    await db.collection('youtube_shorts').doc(baseName).set({
+      fileName,
+      title,
+      description,
+      tags,
+      youtubeId: youtubeVideoId,
+      youtubeUrl: `https://youtube.com/shorts/${youtubeVideoId}`,
+      uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
+      status: 'published',
+      pendingCount: videoFiles.length - 1,
+    });
+    
+    await updateFunctionStatus('uploadYouTubeShorts', 'success', { 
+      videoId: youtubeVideoId,
+      title,
+      remaining: videoFiles.length - 1,
+    });
+    
+    console.log(`[YouTubeShorts] Success! ${videoFiles.length - 1} videos remaining in queue.`);
+    
+  } catch (error) {
+    console.error('[YouTubeShorts] Error:', error);
+    await updateFunctionStatus('uploadYouTubeShorts', 'error', { 
+      error: error.message,
+    });
+    throw error;
+  }
+});
+
+/**
+ * Manual trigger to upload a specific YouTube Short (admin only).
+ */
+exports.uploadYouTubeShortNow = onCall({
+  timeoutSeconds: 300,
+  memory: '1GiB',
+  secrets: ['YOUTUBE_CLIENT_ID', 'YOUTUBE_CLIENT_SECRET', 'YOUTUBE_REFRESH_TOKEN', 'YOUTUBE_CHANNEL_ID'],
+}, async (request) => {
+  // Check admin
+  const uid = request.auth?.uid;
+  if (!uid) {
+    throw new HttpsError('unauthenticated', 'Must be logged in');
+  }
+  
+  const userDoc = await db.collection('users').doc(uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin only');
+  }
+  
+  const { fileName } = request.data;
+  if (!fileName) {
+    throw new HttpsError('invalid-argument', 'fileName required');
+  }
+  
+  const bucket = admin.storage().bucket();
+  const videoFile = bucket.file(`shorts/pending/${fileName}`);
+  
+  const [exists] = await videoFile.exists();
+  if (!exists) {
+    throw new HttpsError('not-found', `Video not found: ${fileName}`);
+  }
+  
+  // The actual upload logic is shared with the scheduled function
+  // For now, return instructions to use the dashboard
+  return {
+    success: false,
+    message: 'Manual upload not yet implemented. Use the scheduled function or upload directly to YouTube.',
+  };
+});
+
+/**
+ * List pending YouTube Shorts for admin dashboard.
+ */
+exports.listPendingYouTubeShorts = onCall({
+  timeoutSeconds: 30,
+}, async (request) => {
+  // Check admin
+  const uid = request.auth?.uid;
+  if (!uid) {
+    throw new HttpsError('unauthenticated', 'Must be logged in');
+  }
+  
+  const userDoc = await db.collection('users').doc(uid).get();
+  if (!userDoc.exists || !userDoc.data()?.isAdmin) {
+    throw new HttpsError('permission-denied', 'Admin only');
+  }
+  
+  const bucket = admin.storage().bucket();
+  
+  try {
+    const [pendingFiles] = await bucket.getFiles({ prefix: 'shorts/pending/' });
+    const [publishedFiles] = await bucket.getFiles({ prefix: 'shorts/published/' });
+    
+    const pendingVideos = pendingFiles
+      .filter(f => f.name.endsWith('.mp4'))
+      .map(f => ({
+        name: f.name.split('/').pop(),
+        path: f.name,
+        size: f.metadata.size,
+        updated: f.metadata.updated,
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    
+    const publishedVideos = publishedFiles
+      .filter(f => f.name.endsWith('.mp4'))
+      .map(f => f.name.split('/').pop());
+    
+    return {
+      pending: pendingVideos,
+      pendingCount: pendingVideos.length,
+      publishedCount: publishedVideos.length,
+    };
+  } catch (error) {
+    console.error('[YouTubeShorts] Error listing files:', error);
+    throw new HttpsError('internal', 'Failed to list videos');
+  }
+});

@@ -10,6 +10,7 @@
  */
 
 import { CISASectionId } from '../courses/cisa/config';
+import logger from '../utils/logger';
 
 // Exam configuration matching ISACA CISA exam
 export const CISA_EXAM_CONFIG = {
@@ -106,7 +107,7 @@ function loadSession(): ExamSession | null {
       return parsed;
     }
   } catch (e) {
-    console.error('Failed to load exam session:', e);
+    logger.error('Failed to load exam session:', e);
   }
   return null;
 }
@@ -122,7 +123,7 @@ function saveSession(session: ExamSession): void {
     };
     localStorage.setItem(SESSION_KEY, JSON.stringify(toStore));
   } catch (e) {
-    console.error('Failed to save exam session:', e);
+    logger.error('Failed to save exam session:', e);
   }
 }
 
@@ -148,7 +149,7 @@ export function loadPreviousResults(): ExamResult[] {
       }));
     }
   } catch (e) {
-    console.error('Failed to load exam results:', e);
+    logger.error('Failed to load exam results:', e);
   }
   return [];
 }
@@ -164,7 +165,7 @@ function saveResult(result: ExamResult): void {
     const toKeep = existing.slice(-10);
     localStorage.setItem(RESULTS_KEY, JSON.stringify(toKeep));
   } catch (e) {
-    console.error('Failed to save exam result:', e);
+    logger.error('Failed to save exam result:', e);
   }
 }
 
@@ -217,7 +218,7 @@ function selectExamQuestions(allQuestions: ExamQuestion[]): ExamQuestion[] {
     
     // If not enough questions, log warning
     if (toSelect.length < count) {
-      console.warn(`Only ${toSelect.length}/${count} questions available for ${domain}`);
+      logger.warn(`Only ${toSelect.length}/${count} questions available for ${domain}`);
     }
     
     selected.push(...toSelect);

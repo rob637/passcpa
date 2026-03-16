@@ -381,7 +381,7 @@ export function getStudyPlanSummary(plan: EAStudyPlan): string {
     `${s.sectionId}: ${s.daysAllocated} days (${s.questionsPerDay} Q/day)`
   ).join(', ');
 
-  return `${plan.totalDays} days total | ${plan.hoursPerDay}h/day | ${sections}`;
+  return `${plan.totalDays} days total | ${Math.round(plan.hoursPerDay * 10) / 10}h/day | ${sections}`;
 }
 
 /**

@@ -9,6 +9,7 @@
  */
 
 import React, { useState } from 'react';
+import logger from '../utils/logger';
 import {
   Calendar,
   CheckCircle,
@@ -95,7 +96,7 @@ const ExamDateTracker: React.FC<ExamDateTrackerProps> = ({
       setEditingSection(null);
       setDateInput('');
     } catch (error) {
-      console.error('Error saving exam date:', error);
+      logger.error('Error saving exam date:', error);
     }
     setSaving(false);
   };

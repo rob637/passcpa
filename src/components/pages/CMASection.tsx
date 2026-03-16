@@ -6,6 +6,7 @@
  */
 
 import { useMemo, useCallback, useState, useEffect } from 'react';
+import logger from '../../utils/logger';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { CMA_COURSE, CMA_SECTION_CONFIG, CMASectionId } from '../../courses/cma';
@@ -35,7 +36,7 @@ export default function CMASection() {
         const data = await getCMAProgress(user.uid);
         setProgress(data);
       } catch (error) {
-        console.error('Error loading CMA progress:', error);
+        logger.error('Error loading CMA progress:', error);
       } finally {
         setLoading(false);
       }

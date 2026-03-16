@@ -26,7 +26,6 @@ import {
   Users,
   Brain,
   Globe,
-  Lightbulb,
   Map,
 } from 'lucide-react';
 import { useCourse } from '../../../providers/CourseProvider';
@@ -87,7 +86,7 @@ const ResourceCategoryTile: React.FC<ResourceCategoryTileProps> = ({ category, o
  * ResourcesHub - Main component
  */
 const ResourcesHub: React.FC = () => {
-  const { course, courseId } = useCourse();
+  const { course: _course, courseId } = useCourse();
   const navigate = useNavigate();
   const resourceConfig = getResourceConfig(courseId);
 
@@ -109,13 +108,13 @@ const ResourcesHub: React.FC = () => {
   };
 
   return (
-    <div className="px-2 py-1 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+    <div className="px-4 py-6 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-6">
       {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-          {course.shortName} Resources
+      <div>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+          Resources
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 mt-2">
+        <p className="text-slate-600 dark:text-slate-400">
           Study materials, quick references, and memory aids
         </p>
       </div>
@@ -219,33 +218,7 @@ const ResourcesHub: React.FC = () => {
         </div>
       )}
 
-      {/* Exam Tips Section */}
-      {resourceConfig.examTips && (
-        <div className="card mb-8 border-amber-200 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-900/10">
-          <div className="card-body">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
-                <Lightbulb className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-              </div>
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                {resourceConfig.examTips.title}
-              </h2>
-            </div>
-            <ol className="space-y-2">
-              {resourceConfig.examTips.tips.map((tip, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-200 dark:bg-amber-800 text-amber-800 dark:text-amber-200 text-xs font-bold flex items-center justify-center">
-                    {idx + 1}
-                  </span>
-                  <span className="text-sm text-slate-700 dark:text-slate-300">{tip}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      )}
-
-      {/* Strategy & Tips Card */}
+      {/* Strategy & Tips Card - consolidated exam tips and strategies */}
       {resourceConfig.strategyContent && (
         <button
           onClick={() => navigate('/resources/strategy')}

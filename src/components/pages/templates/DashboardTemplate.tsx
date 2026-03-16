@@ -414,6 +414,36 @@ export const DashboardTemplate: React.FC<DashboardTemplateProps> = ({
         </div>
       </div>
 
+      {/* Daily Challenge CTA */}
+      <Card 
+        className="p-6 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 border-orange-200 dark:border-orange-800 cursor-pointer hover:shadow-lg transition-all"
+        onClick={() => navigate('/daily-challenge')}
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center shadow-lg">
+              <Flame className="w-7 h-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                Daily Challenge
+                {stats.studyStreak > 0 && (
+                  <span className="text-sm font-normal px-2 py-0.5 bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-300 rounded-full">
+                    🔥 {stats.studyStreak} day streak
+                  </span>
+                )}
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400">
+                5 quick questions · Build your streak · Stay sharp
+              </p>
+            </div>
+          </div>
+          <Button variant="primary" className="bg-gradient-to-r from-orange-500 to-amber-500 border-none">
+            Start <ChevronRight className="w-4 h-4 ml-1" />
+          </Button>
+        </div>
+      </Card>
+
       {/* Daily Plan Card (optional) */}
       {showDailyPlan && <DailyPlanCard compact />}
 

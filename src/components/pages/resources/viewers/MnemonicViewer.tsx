@@ -5,6 +5,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import logger from '../../../../utils/logger';
 import { Loader2, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
 import { ResourceItem } from '../resourceConfig';
 
@@ -92,19 +93,19 @@ export const MnemonicViewer: React.FC<MnemonicViewerProps> = ({ courseId, item }
           // CIA - consolidated (check both topic and subtopic)
           'cia-mn-3lines': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+            return ((m.CIA1_MNEMONICS || []) as MnemonicCard[]).filter((c) => 
               c.topic?.includes('Three Lines') || c.subtopic?.includes('Three Lines')
             );
           },
           'cia-mn-qaip': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+            return ((m.CIA1_MNEMONICS || []) as MnemonicCard[]).filter((c) => 
               c.topic?.includes('QAIP') || c.subtopic?.includes('QAIP')
             );
           },
           'cia-mn-fraud': async () => {
             const m = await import(`../../../../data/cia/flashcards/mnemonics`);
-            return (m.CIA1_MNEMONICS || []).filter((c: MnemonicCard) => 
+            return ((m.CIA1_MNEMONICS || []) as MnemonicCard[]).filter((c) => 
               c.topic?.includes('Fraud') || c.subtopic?.includes('Fraud')
             );
           },
@@ -184,7 +185,7 @@ export const MnemonicViewer: React.FC<MnemonicViewerProps> = ({ courseId, item }
           setError(`Mnemonics not found: ${item.id}`);
         }
       } catch (err) {
-        console.error('Failed to load mnemonics:', err);
+        logger.error('Failed to load mnemonics:', err);
         setError('Unable to load mnemonic content');
       } finally {
         setLoading(false);

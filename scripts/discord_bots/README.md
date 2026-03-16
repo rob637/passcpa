@@ -23,7 +23,7 @@ quiz_engine.py          ← Platform-agnostic core (questions, leaderboard, stat
 | 🔐 CISA | 200 | CISA1-CISA5 |
 | 💰 CFP | 200 | 8 sections |
 
-**Total: 1,200 questions** (~1.2% of 16,366 in the full platform — enough to hook users, not give away the farm)
+**Total: 1,200 questions** (~6% of 20,749 in the full platform — enough to hook users, not give away the farm)
 
 ## Quick Start
 

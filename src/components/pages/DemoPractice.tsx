@@ -26,6 +26,8 @@ import { getDemoQuestions } from '../../data/demoQuestions';
 import { COURSES } from '../../courses';
 import { CourseId } from '../../types/course';
 import { trackEvent } from '../../services/analytics';
+import { useSEO } from '../../hooks/useSEO';
+import FormattedExplanation from '../common/FormattedExplanation';
 
 const COURSE_COLORS: Record<string, { gradient: string; bg: string; text: string; light: string }> = {
   cpa: { gradient: 'from-blue-600 to-blue-700', bg: 'bg-blue-600', text: 'text-blue-600', light: 'bg-blue-50' },
@@ -45,6 +47,13 @@ const DemoPractice = () => {
   const course = COURSES[courseId];
   const colors = COURSE_COLORS[courseId] || COURSE_COLORS.cpa;
   const questions = getDemoQuestions(courseId);
+  
+  // SEO - canonical URL strips query params for consistent indexing
+  useSEO({
+    title: `Free ${course?.name || 'CPA'} Practice Questions | VoraPrep Demo`,
+    description: `Try 5 free ${course?.name || 'CPA'} exam practice questions. No signup required. Get instant feedback and detailed explanations. Experience VoraPrep's adaptive learning.`,
+    canonicalUrl: 'https://voraprep.com/demo-practice',
+  });
   
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -171,7 +180,7 @@ const DemoPractice = () => {
                 </div>
                 <div className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
                   <Zap className="w-5 h-5 text-amber-500" />
-                  <span>AI-powered adaptive learning focuses on your weak areas</span>
+                  <span>Adaptive learning focuses on your weak areas</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
                   <Sparkles className="w-5 h-5 text-purple-500" />
@@ -213,7 +222,7 @@ const DemoPractice = () => {
       {/* Header */}
       <header className="p-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/logo-icon.svg" alt="VoraPrep" className="h-8" />
+          <img src="/logo-icon.svg" alt="VoraPrep" width="32" height="32" className="h-8" />
           <span className="text-white font-bold hidden sm:inline">VoraPrep</span>
         </Link>
         <div className="flex items-center gap-4">
@@ -342,7 +351,7 @@ const DemoPractice = () => {
                     </span>
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {currentQuestion.explanation}
+                    <FormattedExplanation text={currentQuestion.explanation} className="text-sm text-slate-600 dark:text-slate-400" />
                   </p>
                 </div>
               )}

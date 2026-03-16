@@ -1,0 +1,3179 @@
+[
+  {
+    "id": "PREP-001",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "CPA Evolution 2026: Your Complete Roadmap",
+    "description": "Understand the new 3 Core + 1 Discipline structure and 30-month testing window",
+    "order": 1,
+    "duration": 45,
+    "difficulty": "beginner",
+    "topics": [
+      "Exam Structure",
+      "CPA Evolution",
+      "2026 Blueprint"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "2026 Blueprint Compliant",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "This course is fully aligned with the 2026 CPA Exam Blueprint. The CPA Evolution model (launched January 2024) transforms how you become a CPA. Understanding this structure is your first step to passing efficiently."
+        },
+        {
+          "title": "The New CPA Exam Structure",
+          "type": "text",
+          "content": "Gone is the old 4-section exam! CPA Evolution introduces a Core + Discipline model. You'll take 3 Core sections that every CPA needs, plus 1 Discipline section in your chosen specialty. This reflects how modern CPAs actually work."
+        },
+        {
+          "title": "Core Sections (Required for All)",
+          "type": "table",
+          "headers": [
+            "Section",
+            "Full Name",
+            "Hours",
+            "Focus"
+          ],
+          "rows": [
+            [
+              "FAR",
+              "Financial Accounting & Reporting",
+              "4 hours",
+              "GAAP, government, nonprofit"
+            ],
+            [
+              "AUD",
+              "Auditing & Attestation",
+              "4 hours",
+              "Audit procedures, ethics, reports"
+            ],
+            [
+              "REG",
+              "Taxation & Regulation",
+              "4 hours",
+              "Individual, business tax, ethics"
+            ]
+          ]
+        },
+        {
+          "title": "Discipline Sections (Choose ONE)",
+          "type": "table",
+          "headers": [
+            "Section",
+            "Full Name",
+            "Hours",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "BAR",
+              "Business Analysis & Reporting",
+              "4 hours",
+              "Traditional accounting, financial analysis"
+            ],
+            [
+              "ISC",
+              "Information Systems & Controls",
+              "4 hours",
+              "IT audit, cybersecurity, systems"
+            ],
+            [
+              "TCP",
+              "Tax Compliance & Planning",
+              "4 hours",
+              "Tax practice, planning, advisory"
+            ]
+          ]
+        },
+        {
+          "title": "Choosing Your Discipline",
+          "type": "list",
+          "items": [
+            "BAR: Best if you'll work in financial reporting, FP&A, or traditional public accounting",
+            "ISC: Best if interested in IT audit, systems consulting, or cybersecurity",
+            "TCP: Best if pursuing tax practice, planning, or tax advisory services",
+            "Your discipline does NOT limit your career\u2014all CPAs can do all work",
+            "Choose based on interest and career goals, not perceived difficulty"
+          ]
+        },
+        {
+          "title": "The 30-Month Window",
+          "type": "text",
+          "content": "You have 30 months from passing your first section to pass all four. This replaces the old 18-month window. Strategic planning matters: If you fail a section after 30 months, your first passed section expires!"
+        },
+        {
+          "title": "Sample Timeline",
+          "type": "example",
+          "content": "Recommended approach (working full-time):\n\nMonth 1-3: FAR (most content, tackle fresh)\nMonth 4-5: AUD (builds on FAR concepts)\nMonth 6-7: REG (self-contained, different material)\nMonth 8-9: Discipline of choice\n\nTotal: 9 months active study\nRemaining buffer: 21 months\n\nKey: Don't use all 30 months! Leave buffer for retakes."
+        },
+        {
+          "title": "\u26a0\ufe0f 2026 Tax Law Transition",
+          "type": "callout",
+          "calloutType": "warning",
+          "content": "CRITICAL FOR REG AND TCP CANDIDATES:\n\n\u2022 Through June 30, 2026: Test on pre-OBBBA (old) tax law\n\u2022 Starting July 1, 2026: OBBBA (H.R. 1 'One Big Beautiful Bill Act') provisions become testable\n\nIf testing near July 1, study BOTH sets of rules! Our H.R. 1 lessons are clearly marked with \ud83c\udd95."
+        },
+        {
+          "title": "Passing Score",
+          "type": "text",
+          "content": "Each section requires a scaled score of 75 to pass. This isn't 75%\u2014it's a scaled score based on question difficulty. Roughly, you need about 65-70% correct on medium-difficulty questions to pass."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Core + Discipline: What's the Big Deal?",
+          "content": "Alright, future CPAs, let's be real. The old exam was like learning to bake a cake by memorizing the periodic table. Useful, sure, but not exactly practical. The Core + Discipline model? It's like finally getting a recipe! Everyone learns the basics (Core), then you specialize (Discipline) based on your interests. Think of it as choosing your accounting superpower. You're not just a CPA, you're a CPA *with* a focus. So pick wisely, grasshopper, your career depends on it! And remember, 30 months... don't procrastinate!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the 30-Month Clock",
+          "content": "A common mistake is not fully grasping the 30-month testing window. Students often pass one exam and then relax, thinking they have plenty of time. But that clock starts ticking from the *first* exam passed. If you don't pass the other three sections within those 30 months, you lose credit for the one you initially passed and have to retake it. Don't let all your hard work go to waste! Plan your study schedule meticulously and stay on track. Treat it like a countdown timer on a bomb disposal mission (except with less explosions and more debits)."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Tax Trap",
+          "content": "Sarah, a bright accounting grad, chose the Tax Compliance discipline. She passed FAR and AUD quickly but struggled with REG. Because of work deadlines, she put off studying for BEC. 28 months in, she finally passed BEC, but she failed REG again. Now, she's scrambling to retake FAR before her credit expires in two months. The lesson? Don't underestimate any section, and manage your time wisely. A balanced approach is key to conquering the CPA exam under the new structure."
+        },
+        {
+          "type": "in-practice",
+          "title": "Choosing the Right Discipline: Real-World Impact",
+          "content": "In practice, your chosen discipline significantly shapes your career path. If you select Business Analysis and Reporting (BAR), you're likely to find roles in financial planning, analysis, and consulting. Tax Compliance (TCP) opens doors to tax accounting and advisory services. Information Systems and Controls (ISC) positions you for IT auditing and cybersecurity roles. Understanding the Blueprint for your chosen discipline is crucial. It dictates the knowledge you'll apply daily, impacting everything from client interactions to project management. It's not just about passing the exam; it's about building a career you enjoy."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 3 Core sections (FAR, AUD, REG) + 1 Discipline (BAR, ISC, or TCP)\n\u2022 30-month window from first passed section\n\u2022 75 scaled score to pass each section\n\u2022 Choose discipline based on career interest, not difficulty\n\u2022 Tax candidates: Watch for July 1, 2026 OBBBA transition"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-002",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Anatomy of the Exam: Testlets, Timing, Scoring",
+    "description": "Master the exam structure, question types, and time allocation for each section",
+    "order": 2,
+    "duration": 45,
+    "difficulty": "beginner",
+    "topics": [
+      "Exam Structure",
+      "Timing",
+      "2026 Blueprint"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Know Your Battlefield",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Understanding the exam structure isn't just helpful\u2014it's strategic. Knowing how many questions, how much time, and what's weighted most lets you allocate your energy where it counts. This knowledge alone can add points to your score."
+        },
+        {
+          "title": "Question Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Abbreviation",
+            "What It Is"
+          ],
+          "rows": [
+            [
+              "Multiple Choice Questions",
+              "MCQ",
+              "4-option questions, one correct answer"
+            ],
+            [
+              "Task-Based Simulations",
+              "TBS",
+              "Realistic scenarios with multiple parts"
+            ],
+            [
+              "Written Communication",
+              "WC",
+              "Professional memos/letters (REG/BAR only)"
+            ]
+          ]
+        },
+        {
+          "title": "Section Structure (2026 Blueprint)",
+          "type": "table",
+          "headers": [
+            "Section",
+            "MCQs",
+            "TBS",
+            "WC",
+            "Total Time"
+          ],
+          "rows": [
+            [
+              "FAR",
+              "50 (50%)",
+              "7 (50%)",
+              "0",
+              "4 hours"
+            ],
+            [
+              "AUD",
+              "78 (50%)",
+              "7 (50%)",
+              "0",
+              "4 hours"
+            ],
+            [
+              "REG",
+              "72 (50%)",
+              "6 (40%)",
+              "1 (10%)",
+              "4 hours"
+            ],
+            [
+              "BAR",
+              "50 (50%)",
+              "6 (40%)",
+              "1 (10%)",
+              "4 hours"
+            ],
+            [
+              "ISC",
+              "82 (60%)",
+              "6 (40%)",
+              "0",
+              "4 hours"
+            ],
+            [
+              "TCP",
+              "68 (50%)",
+              "6 (40%)",
+              "1 (10%)",
+              "4 hours"
+            ]
+          ]
+        },
+        {
+          "title": "Testlet Structure",
+          "type": "text",
+          "content": "Each exam is divided into testlets (groups of questions). You must complete a testlet before moving to the next, and you CANNOT go back to previous testlets. Typically: 2-3 MCQ testlets, followed by 2-3 TBS testlets."
+        },
+        {
+          "title": "Time Allocation Strategy",
+          "type": "example",
+          "content": "For a 4-hour exam with 50 MCQs and 7 TBS:\n\nMCQ Time: ~90 seconds per question\n50 MCQs \u00d7 1.5 min = 75 minutes (~1.25 hours)\n\nTBS Time: Remaining 2.75 hours for 7 TBS\n~23 minutes per TBS average\n\nBuffer: Build in 15 minutes for review/unexpected\n\nGOLDEN RULE: Don't spend more than 2 minutes on any MCQ!"
+        },
+        {
+          "title": "The 15-Minute Break",
+          "type": "text",
+          "content": "You get one optional 15-minute break, typically between MCQ and TBS testlets. The clock stops during this break. USE IT! Get up, stretch, use the restroom, clear your mind. You'll perform better on TBS with a mental reset."
+        },
+        {
+          "title": "Scoring Weights",
+          "type": "list",
+          "items": [
+            "MCQs count for 50-60% depending on section (see table above)",
+            "TBS count for 40-50% of your score",
+            "Written Communication (where applicable): 10%",
+            "Pretest questions: Some MCQs/TBS don't count (you won't know which)",
+            "No penalty for wrong answers\u2014ALWAYS answer everything!"
+          ]
+        },
+        {
+          "title": "Pretest Questions",
+          "type": "callout",
+          "calloutType": "tip",
+          "content": "About 10-15% of questions are 'pretest'\u2014they don't count toward your score but are being tested for future exams. You won't know which ones! Treat every question as if it counts. This also means a few 'impossible' questions might be pretests."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Testlet Trauma: My First CPA Exam",
+          "content": "Alright, let's be real. The 'can't go back' rule on the testlets? Brutal. My first CPA exam, I spent way too long on the first MCQ testlet, second-guessing everything. By the time I got to the TBS, my brain was fried and the clock was mocking me. Don't be me! Practice time management like your career depends on it (because, well, kinda does). Seriously, know your limits and move on. Better to get some points than zero points. And for the love of all that is holy, take the practice exams under timed conditions."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The Timing Trap: Ignoring the Clock",
+          "content": "Students often underestimate the time pressure of the CPA exam, especially with the TBS testlets. They spend too much time on MCQ questions, leaving insufficient time for the simulations, which are worth significantly more points. The common mistake is thinking 'I'll get through the MCQs quickly and then have plenty of time for TBS'. Nope. Practice under timed conditions. Aim for roughly 1.5-2 minutes per MCQ. If you're stuck, make an educated guess and move on. Track your progress on practice exams and adjust your strategy. Don't let the clock be your enemy."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Simulation Struggle",
+          "content": "Sarah, a bright CPA candidate, sailed through the MCQ section of REG. Confident, she entered the TBS section only to realize she had barely an hour left. Frantically rushing through complex tax simulations, she missed key details and lost valuable points. The lesson? Time management isn't just about speed; it's about strategic allocation. Prioritize TBS sections and practice them extensively. Understand their weight and plan your exam approach accordingly. Don't let a strong MCQ performance be undone by poor TBS time management."
+        },
+        {
+          "type": "in-practice",
+          "title": "Exam Blueprint: Your Daily Guide",
+          "content": "In practice, understanding the exam blueprint is like having a roadmap for your daily tasks. As a CPA, you'll constantly refer to authoritative guidance to solve complex issues. The exam blueprint is the same concept, just for the exam. The AICPA updates the blueprint regularly (like the 2026 changes), so professionals need to stay current. You will be expected to know the content areas and their relative weight. Knowing the blueprint ensures you focus on the most critical areas, both for exam success and real-world application."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 MCQs = 50-60% of score; TBS = 40-50%\n\u2022 ~90 seconds per MCQ; ~20 minutes per TBS\n\u2022 Take the 15-minute break\u2014it's free time!\n\u2022 Can't go back to previous testlets\n\u2022 Pretest questions exist\u2014treat all as real\n\u2022 ALWAYS answer every question (no penalty)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-003",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Adaptive Testing: What It Means for You",
+    "description": "Understand how MCQ difficulty adapts based on your performance",
+    "order": 3,
+    "duration": 35,
+    "difficulty": "beginner",
+    "topics": [
+      "Adaptive Testing",
+      "MCQ",
+      "Strategy"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "The Test Adapts to YOU",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "The CPA Exam uses Multi-Stage Testing (MST), a form of adaptive testing. Your performance on the first MCQ testlet determines the difficulty of the second. Understanding this helps you interpret your exam experience correctly."
+        },
+        {
+          "title": "How It Works",
+          "type": "text",
+          "content": "The first MCQ testlet is 'medium' difficulty for everyone. Based on your performance, the second testlet is either 'medium' or 'difficult.' Performing well on harder questions gives you more points\u2014the exam rewards those who can handle tougher material."
+        },
+        {
+          "title": "Difficulty Levels",
+          "type": "table",
+          "headers": [
+            "Testlet 1",
+            "Your Performance",
+            "Testlet 2"
+          ],
+          "rows": [
+            [
+              "Medium",
+              "Below threshold",
+              "Medium (stay)"
+            ],
+            [
+              "Medium",
+              "Above threshold",
+              "Difficult (move up)"
+            ],
+            [
+              "Medium",
+              "Way above",
+              "Difficult (move up)"
+            ]
+          ]
+        },
+        {
+          "title": "The Psychology Trap",
+          "type": "callout",
+          "calloutType": "warning",
+          "content": "DANGER: Many candidates feel devastated when the second testlet seems harder. They think they're failing! In reality, harder questions often mean you're DOING WELL. Don't let psychology defeat you\u2014harder questions are a GOOD sign."
+        },
+        {
+          "title": "What This Means Strategically",
+          "type": "list",
+          "items": [
+            "First testlet matters most for 'setting your level'",
+            "Getting harder questions = potentially passing",
+            "Getting easier questions = warning sign, but not fatal",
+            "Correct answers on hard questions = more points",
+            "Wrong answers on hard questions = less penalty",
+            "You can still pass either way\u2014just keep working!"
+          ]
+        },
+        {
+          "title": "Example: Two Candidates",
+          "type": "example",
+          "content": "Candidate A: Gets easier second testlet, answers 85% correct\nCandidate B: Gets harder second testlet, answers 65% correct\n\nWho passes? Possibly BOTH\u2014or Candidate B might score higher!\n\nThe scoring algorithm accounts for difficulty. Getting 65% on hard questions can equal 85% on easy ones. Don't judge your performance by how questions 'felt.'"
+        },
+        {
+          "title": "TBS Are NOT Adaptive",
+          "type": "text",
+          "content": "Important: Only MCQ testlets adapt. TBS (Task-Based Simulations) are pre-selected and don't change based on your MCQ performance. Everyone gets the same TBS difficulty mix, so your TBS strategy doesn't change based on MCQ performance."
+        },
+        {
+          "title": "Mental Game",
+          "type": "callout",
+          "calloutType": "tip",
+          "content": "If questions feel harder in testlet 2, tell yourself: 'The exam thinks I'm smart!' This reframe keeps you confident. Doubt and panic are your real enemies\u2014not difficult questions."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Adaptive Testing: It's Like a Video Game!",
+          "content": "Okay, so adaptive testing sounds fancy, but really, it's like a video game. You start at a medium level. Crush it? You level up! Stumble? You stay put. The CPA exam is the same. Nail that first MCQ testlet, and you're facing harder questions, which, yeah, are scarier, but they're also worth MORE points. Think of it as a high-stakes reward system. The AICPA wants to see if you can handle the pressure, so bring your A-game and level up to that sweet, sweet passing score!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Thinking All MCQs Are Created Equal",
+          "content": "A HUGE mistake is treating every MCQ as worth the same. They aren't! Because of adaptive testing, harder questions are weighted more heavily. Students often blindly guess on difficult questions, thinking it's no different than guessing on an easier one. Wrong! A correct answer on a difficult question significantly boosts your score. Focus your time and energy on really understanding the trickier concepts. Don't just skim; truly master them. That's where the real points are hiding."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Score Surge",
+          "content": "Sarah felt defeated after her first MCQ testlet, thinking she'd bombed it. Turns out, she did well enough to get a harder second testlet. She panicked, but decided to focus. By tackling those difficult questions head-on, even getting some right, she ended up with a surprisingly high score. The lesson? Don't be intimidated by a hard testlet; it means you're doing something right and have a chance to really shine."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Application: Risk Assessment",
+          "content": "Think about risk assessment in auditing. If initial procedures show low risk, you do less testing. But if initial procedures reveal high risk, you ramp up your testing and investigation. Adaptive testing mirrors this. If you demonstrate competence early on, the exam challenges you with more complex scenarios. This directly translates to your ability to handle complex client situations in the field. Mastering the adaptive strategy helps you become a more effective and efficient CPA."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 First MCQ testlet is always medium difficulty\n\u2022 Second testlet adapts based on your performance\n\u2022 Harder questions = likely doing well (good sign!)\n\u2022 Harder questions earn more points per correct answer\n\u2022 TBS don't adapt\u2014same for everyone\n\u2022 Don't judge your score by question difficulty"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-004",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "How the CPA Exam is Scored",
+    "description": "Understand raw scores, scaled scores, and what 75 really means",
+    "order": 4,
+    "duration": 40,
+    "difficulty": "beginner",
+    "topics": [
+      "Scoring",
+      "Exam Structure"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Demystifying the 75",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "You need a 75 to pass\u2014but that's not 75%! Understanding how scoring works removes anxiety and helps you target your studying effectively. The 75 is a scaled score that accounts for question difficulty."
+        },
+        {
+          "title": "Raw Score vs Scaled Score",
+          "type": "table",
+          "headers": [
+            "Type",
+            "What It Is",
+            "Range"
+          ],
+          "rows": [
+            [
+              "Raw Score",
+              "Actual % of questions correct",
+              "0-100%"
+            ],
+            [
+              "Scaled Score",
+              "Adjusted for difficulty, reported",
+              "0-99"
+            ],
+            [
+              "Passing Score",
+              "Minimum scaled score needed",
+              "75"
+            ]
+          ]
+        },
+        {
+          "title": "Why Scaling Matters",
+          "type": "text",
+          "content": "Different exams have slightly different difficulty levels. Scaling ensures fairness\u2014if you get a harder exam, your raw score is adjusted upward. If easier, adjusted downward. A 75 means 'minimally competent' regardless of which exam version you took."
+        },
+        {
+          "title": "What Does 75 Actually Require?",
+          "type": "example",
+          "content": "General estimates (not official):\n\nMCQs: ~65-70% correct on medium difficulty\nTBS: ~60-65% correct\nWC: 'Sufficient' rating (coherent, addresses topic)\n\nThis means you DON'T need perfection!\n\n\u2022 You can miss ~30-35% of MCQs\n\u2022 You can bomb 1-2 TBS completely\n\u2022 You can write a mediocre WC\n\nAim for solid performance, not perfection."
+        },
+        {
+          "title": "How Each Component Is Scored",
+          "type": "list",
+          "items": [
+            "MCQs: Correct = 1 point (weighted by difficulty); Wrong = 0",
+            "TBS: Partial credit available\u2014each cell/entry scored separately",
+            "WC: Holistic 0-2 scale (off-topic, below, sufficient, above)",
+            "Pretest items: Don't count, but you can't identify them",
+            "All components combined and scaled to 0-99"
+          ]
+        },
+        {
+          "title": "Partial Credit on TBS",
+          "type": "callout",
+          "calloutType": "tip",
+          "content": "TBS give PARTIAL CREDIT! If a TBS has 10 blanks and you get 6 right, you get 60% credit\u2014not zero. This is huge! Always attempt every part of a TBS. Even getting the easy parts right while missing hard parts earns points."
+        },
+        {
+          "title": "Written Communication Scoring",
+          "type": "table",
+          "headers": [
+            "Rating",
+            "Description",
+            "Requirements"
+          ],
+          "rows": [
+            [
+              "0 - Deficient",
+              "Off-topic or unintelligible",
+              "Nothing salvageable"
+            ],
+            [
+              "1 - Below",
+              "On-topic but weak",
+              "Attempts to address issue"
+            ],
+            [
+              "2 - Sufficient",
+              "Adequately addresses",
+              "Clear, organized, relevant"
+            ],
+            [
+              "3+ - Above",
+              "Exceeds expectations",
+              "Outstanding (rare)"
+            ]
+          ]
+        },
+        {
+          "title": "Score Release Timeline",
+          "type": "text",
+          "content": "Scores are released in 'windows' throughout the year\u2014typically 2-3 weeks after the testing window closes. You'll receive your scaled score (0-99) but NOT a breakdown by topic. If you fail, you'll get a performance report showing weak areas."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "75 Ain't Just a Number, It's Your Ticket!",
+          "content": "Alright, future CPAs, let's get real. The CPA exam isn't about getting 100%. Think of 75 as your golden ticket to the accounting promised land. It's 'minimally competent,' which honestly, is all you need to prove you know enough to not bankrupt a company. Don't obsess over perfection; focus on understanding the core concepts. I've seen people with perfect GPAs fail because they overthink. Aim for solid understanding and strategic studying, and that 75 will be yours. Plus, nobody ever asks what you got on the exam once you're licensed!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Raw vs. Scaled: The Confusion Trap",
+          "content": "A common mistake is thinking your raw score directly translates to your final score. Students panic when they miss a few questions during the exam, assuming they've blown it. Remember, the AICPA scales scores to account for exam difficulty. A lower raw score on a harder exam might still result in a 75 or higher scaled score. Don't get bogged down in estimating your raw score during the exam; focus on answering each question to the best of your ability, and trust the scaling process to do its job. It's designed to be fair!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Exam Day Surprise",
+          "content": "Sarah walked out of the REG exam feeling defeated. She thought she bombed the simulations. Turns out, her exam version was statistically more difficult. When scores came out, she was shocked to see a 78! The moral of Sarah's story? The AICPA's scaling process is legit. Don't let perceived difficulty discourage you during the exam. Focus on what you know, and trust the process to adjust for any variations in exam difficulty. Your perception may not always align with the reality of the exam's statistical analysis."
+        },
+        {
+          "type": "in-practice",
+          "title": "Fairness in Practice: Standardizing Competence",
+          "content": "Understanding the scoring system is crucial for maintaining the integrity of the CPA license. Think about it: companies rely on CPAs to provide accurate and reliable financial information. The scaling process ensures that all licensed CPAs have demonstrated a baseline level of competence, regardless of which exam version they took. This standardization builds trust in the profession and protects the public. So, when you see that 75, remember it represents a commitment to quality and ethical practice, not just a passing grade."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 75 scaled score to pass (not 75% raw)\n\u2022 Scaling adjusts for exam difficulty\n\u2022 Need roughly 65-70% on MCQs, 60-65% on TBS\n\u2022 TBS give partial credit\u2014attempt everything!\n\u2022 WC just needs to be 'sufficient' (not perfect)\n\u2022 Scores released in windows, 2-3 weeks after testing"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-005",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Strategic Section Order",
+    "description": "Plan your optimal exam sequence: FAR first? Save your discipline for last?",
+    "order": 5,
+    "duration": 35,
+    "difficulty": "beginner",
+    "topics": [
+      "Strategy",
+      "Planning",
+      "2026 Blueprint"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Order Matters",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "There's no required order, but strategy matters! The sequence you choose affects your momentum, knowledge retention, and risk management. Most successful candidates think carefully about their path."
+        },
+        {
+          "title": "Popular Approaches",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "Order",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "FAR First (Classic)",
+              "FAR \u2192 AUD \u2192 REG \u2192 Discipline",
+              "Most candidates; tackle hardest fresh"
+            ],
+            [
+              "AUD First (Confidence)",
+              "AUD \u2192 FAR \u2192 REG \u2192 Discipline",
+              "Need early win; AUD has good pass rate"
+            ],
+            [
+              "REG First (Tax Focus)",
+              "REG \u2192 TCP \u2192 FAR \u2192 AUD",
+              "Tax-focused; keep REG/TCP together"
+            ],
+            [
+              "Discipline First",
+              "Discipline \u2192 Cores",
+              "Very strong in specialty area"
+            ]
+          ]
+        },
+        {
+          "title": "The Case for FAR First",
+          "type": "list",
+          "items": [
+            "Largest section with most content (~65 lessons)",
+            "Foundation for other sections (AUD tests FAR knowledge)",
+            "Best tackled when you're freshest and most motivated",
+            "Passing FAR first builds massive confidence",
+            "If you can pass FAR, you can pass anything"
+          ]
+        },
+        {
+          "title": "The Case for AUD Second",
+          "type": "text",
+          "content": "AUD builds directly on FAR knowledge\u2014you need to understand financial statements to audit them. Taking AUD shortly after FAR lets you leverage that knowledge while it's fresh. Many FAR concepts appear in AUD context."
+        },
+        {
+          "title": "The Case for REG Flexibility",
+          "type": "text",
+          "content": "REG is relatively self-contained. Tax law doesn't depend much on FAR or AUD content. This makes REG flexible in your sequence. If choosing TCP as your discipline, consider REG\u2192TCP back-to-back to keep tax knowledge consolidated."
+        },
+        {
+          "title": "\u26a0\ufe0f 2026 Tax Timing Consideration",
+          "type": "callout",
+          "calloutType": "warning",
+          "content": "TAX LAW TRANSITION (REG and TCP):\n\n\u2022 Testing before July 1, 2026: Old law (pre-OBBBA)\n\u2022 Testing July 1, 2026 or later: OBBBA (H.R. 1) provisions\n\nIf testing near July, consider scheduling REG and TCP on the SAME SIDE of July 1 to avoid studying two different tax law regimes!"
+        },
+        {
+          "title": "Save Your Discipline for Last?",
+          "type": "text",
+          "content": "Many advise saving your discipline for last: You'll have exam experience, you're choosing an area of interest (more motivating), and it's lower stakes if you've passed 3 cores. However, if you're VERY strong in your discipline, taking it earlier can build confidence."
+        },
+        {
+          "title": "Example Timeline: Full-Time Worker",
+          "type": "example",
+          "content": "Starting January 2026:\n\nJan-Mar: FAR (3 months, hardest section)\nApr-May: AUD (2 months, leverage FAR)\nJun: REG (before July 1 OBBBA transition)\nAug-Sep: Discipline of choice\n\nTotal: 9 months\nWindow remaining: 21 months buffer\n\nAlternate if testing REG after July 1:\nStudy OBBBA provisions starting June!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The CPA Exam: A Marathon, Not a Sprint (Order Matters!)",
+          "content": "Alright, future CPAs, let's get real. Picking your section order is like choosing your starting Pokemon. You *could* pick Charmander, but is fire really the best choice against that first water gym? Probably not. Seriously though, slamming FAR first sets a solid foundation. Think of it as the bedrock. Then, AUD is like building the first floor \u2013 it uses a lot of that FAR bedrock. Don't underestimate a smart order, it can save you time and headaches down the road. Trust me, your brain will thank you."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The 'Random Order' Trap: Don't Fall For It!",
+          "content": "One huge mistake students make is picking their exam order randomly, or based solely on personal preference *before* understanding the content overlap. They think, 'Oh, I hate tax, so I'll get it out of the way first.' But REG is relatively independent! You might be better off tackling FAR first, then AUD to capitalize on knowledge retention. Ignoring the interconnectedness of the exams can lead to inefficient studying and feeling overwhelmed. Analyze the blueprint, understand dependencies, and THEN make your decision."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Sequence Struggle: Learning the Hard Way",
+          "content": "Sarah decided to take REG first, thinking it would be 'easy'. She passed, but then struggled with AUD. During her AUD prep, she realized how much easier it would have been if she had a stronger grasp of FAR's internal controls section, which she briefly touched on in her intro accounting courses. Now, she's reviewing FAR while studying for AUD, essentially doubling her workload. The lesson? Don't underestimate the value of strategic sequencing."
+        },
+        {
+          "type": "in-practice",
+          "title": "Strategic Order: It's Not Just About the Exam",
+          "content": "In the real world, you'll rarely work in a vacuum. Understanding financial reporting (FAR) is crucial for auditing (AUD) and even for advising clients on tax strategies (REG). For example, a client's depreciation method (FAR) directly impacts their tax liability (REG). By taking FAR and AUD earlier, you build a holistic understanding that will make you a more effective and well-rounded CPA. This integrated knowledge translates into better decision-making and client service."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 FAR first is most common (hardest, foundational)\n\u2022 AUD after FAR (builds on financial statement knowledge)\n\u2022 REG is flexible (self-contained tax content)\n\u2022 Consider keeping REG+TCP together if tax-focused\n\u2022 Watch July 1, 2026 OBBBA transition for REG/TCP timing\n\u2022 Leave buffer in your 30-month window for retakes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-006",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "The 90-Second Rule: MCQ Time Management",
+    "description": "Master the timing discipline that separates passers from failers",
+    "order": 6,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "MCQ",
+      "Time Management"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Time Is Your Enemy",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "The #1 reason candidates fail isn't knowledge\u2014it's time management. Getting stuck on hard MCQs steals time from easier questions you'd get right. The 90-second rule prevents this trap."
+        },
+        {
+          "title": "The 90-Second Rule",
+          "type": "text",
+          "content": "If you've spent 90 seconds on an MCQ and aren't close to answering, STOP. Mark it, make your best guess, and move on. You can return if time permits. Spending 3-4 minutes on one question means losing 2-3 easier questions."
+        },
+        {
+          "title": "Time Budget by Section",
+          "type": "table",
+          "headers": [
+            "Section",
+            "MCQs",
+            "Target Time",
+            "Per MCQ"
+          ],
+          "rows": [
+            [
+              "FAR",
+              "50",
+              "75-80 min",
+              "90 sec"
+            ],
+            [
+              "AUD",
+              "78",
+              "100-110 min",
+              "80 sec"
+            ],
+            [
+              "REG",
+              "72",
+              "95-100 min",
+              "80 sec"
+            ],
+            [
+              "BAR",
+              "50",
+              "75-80 min",
+              "90 sec"
+            ],
+            [
+              "ISC",
+              "82",
+              "105-115 min",
+              "80 sec"
+            ],
+            [
+              "TCP",
+              "68",
+              "90-95 min",
+              "80 sec"
+            ]
+          ]
+        },
+        {
+          "title": "When to Spend More Time",
+          "type": "list",
+          "items": [
+            "Calculation questions: May need 2 minutes\u2014that's OK",
+            "You're 90% there: Extra 30 seconds might get it",
+            "You've banked time: Ahead of schedule allows flexibility",
+            "Never exceed 3 minutes on ANY MCQ, regardless of situation"
+          ]
+        },
+        {
+          "title": "The Math of Moving On",
+          "type": "example",
+          "content": "Scenario: 50 MCQs, 75 minutes\n\nBad approach: Spend 4 minutes on 5 hard questions\n= 20 minutes on 5 questions (10%)\n= 55 minutes for 45 questions (1.2 min each)\n= Rushing, making careless errors\n\nGood approach: Spend 90 sec max, guess and move\n= 7.5 minutes on 5 hard questions\n= 67.5 minutes for 45 questions (1.5 min each)\n= Calm, thoughtful answers\n\nEven if you'd have gotten 2 more hard ones right, you likely lose 3+ easy ones rushing!"
+        },
+        {
+          "title": "Building Time Discipline",
+          "type": "list",
+          "items": [
+            "Practice with a timer ALWAYS",
+            "During practice, force yourself to move at 90 seconds",
+            "Check your pace every 10 questions",
+            "If behind, move faster on next 10",
+            "It feels wrong at first\u2014trust the process"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The 90-Second Struggle is Real (and Avoidable)",
+          "content": "Let's be honest, staring blankly at an MCQ feels awful. You're thinking, 'I *should* know this!' But the CPA exam isn't about proving you know everything; it's about maximizing points. I've seen brilliant people fail because they got bogged down. Treat the MCQs like speed dating. If there's no spark in 90 seconds, move on! You'll thank yourself later when you've scooped up all the low-hanging fruit and have time to revisit the tough ones."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Sunk Cost Fallacy: Don't Throw Good Time After Bad",
+          "content": "A common mistake is thinking, 'I've already spent a minute on this question, I can't give up now!' This is the sunk cost fallacy. The time is gone! Continuing to struggle just burns more precious minutes. It's better to cut your losses, make an educated guess, and move on to a question you can answer quickly. Remember, each MCQ is worth the same, regardless of difficulty. Don't let one question rob you of points you could easily earn elsewhere."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's MCQ Meltdown: A Cautionary Tale",
+          "content": "Sarah, cramming for REG, fixated on a complex partnership tax question. She spent nearly five minutes trying to decipher it, getting increasingly frustrated. By the time she moved on, she was flustered and rushed through the remaining questions, missing several easy ones. The result? A 74. Don't be Sarah. The 90-second rule is your shield against MCQ meltdowns. Recognize the point of diminishing returns and strategically move on."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Relevance: Efficiency is Key",
+          "content": "Think about it: as a CPA, you'll constantly face situations where you need to make quick decisions with incomplete information. Tax law changes *constantly*. The 90-second rule is training for that. It's not just about the exam; it's about developing the discipline to assess, prioritize, and act efficiently. Mastering this now translates into being a more effective and valuable CPA in the long run. You won't have unlimited time to solve problems in the real world either!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 90 seconds per MCQ maximum (80 for high-MCQ sections)\n\u2022 Mark and guess if stuck\u2014don't burn time\n\u2022 Calculations may need 2 minutes, never more than 3\n\u2022 Check pace every 10 questions\n\u2022 Practice with timers to build discipline\n\u2022 Moving on saves more points than staying saves"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-007",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Reading MCQs Effectively",
+    "description": "Stem first or options first? Master the reading strategy that works",
+    "order": 7,
+    "duration": 25,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "MCQ",
+      "Reading"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Read Smart, Not Just Fast",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "HOW you read an MCQ matters as much as what you know. Many candidates misread questions or miss key words, losing points they should have earned. A systematic reading approach prevents these costly errors."
+        },
+        {
+          "title": "Two Approaches",
+          "type": "table",
+          "headers": [
+            "Approach",
+            "Method",
+            "Best For"
+          ],
+          "rows": [
+            [
+              "Stem First",
+              "Read question, then options",
+              "Most questions, conceptual"
+            ],
+            [
+              "Options First",
+              "Scan options, then read stem",
+              "'Which is correct' questions"
+            ]
+          ]
+        },
+        {
+          "title": "Stem-First Method (Default)",
+          "type": "list",
+          "items": [
+            "Read the entire question stem carefully",
+            "Identify what's being asked BEFORE looking at options",
+            "Form your own answer in your head",
+            "Then find the matching option",
+            "Prevents options from confusing you"
+          ]
+        },
+        {
+          "title": "Key Words to Circle (Mentally)",
+          "type": "table",
+          "headers": [
+            "Word",
+            "Why It Matters"
+          ],
+          "rows": [
+            [
+              "NOT, EXCEPT",
+              "Reverses what you're looking for"
+            ],
+            [
+              "MOST, LEAST",
+              "Requires comparison, not absolute"
+            ],
+            [
+              "ALWAYS, NEVER",
+              "Absolute statements (usually wrong)"
+            ],
+            [
+              "PRIMARY, MAIN",
+              "Best answer, not just correct"
+            ],
+            [
+              "FIRST, LAST",
+              "Order matters"
+            ]
+          ]
+        },
+        {
+          "title": "Example: Missing Key Words",
+          "type": "example",
+          "content": "Question: Which is NOT a characteristic of internal control?\n\nCandidate reads: 'Which is a characteristic...'\nChooses: 'Segregation of duties' (IS a characteristic)\nResult: WRONG\n\nThe word 'NOT' changes everything!\n\nFix: Underline/circle negative words mentally.\nRead them as: 'Which is NOT...' (emphasis)."
+        },
+        {
+          "title": "For Calculation Questions",
+          "type": "list",
+          "items": [
+            "Read the stem completely before calculating",
+            "Note ALL given numbers (some are distractors)",
+            "Identify exactly what's being asked",
+            "Set up the calculation before punching numbers",
+            "Check units (thousands? percentages?)"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The MCQ Reading Wars: My Take (Stem vs. Options)",
+          "content": "Alright, listen up future CPAs. I've seen so many people get hung up on the 'stem first' vs. 'options first' debate. Honestly? There's no one-size-fits-all. Some questions scream for you to read the options first to prime your brain (think: list of ratios). Others are crystal clear in the stem and the options just muddy the waters. My advice? Experiment! Find what works for YOU. Don't blindly follow some guru. If you're consistently missing MCQs because you're forcing a strategy, ditch it. Adapt and conquer!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Tunnel Vision: Focusing on Keywords, Missing the Point",
+          "content": "A huge mistake students make is hunting for keywords in the stem and matching them to keywords in the options. This often leads to selecting the answer that SOUNDS right, but isn't actually the BEST answer. For example, you might see the word 'materiality' in the stem and immediately jump to an option that also uses 'materiality,' without fully understanding the context of the question. Avoid this by first understanding what the question is ACTUALLY asking. What concept is being tested? Read the entire stem and options carefully, and don't let keywords lead you astray."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Audit Blunder: The Premature Click",
+          "content": "Sarah, a bright CPA candidate, was taking a practice audit exam. She read the stem of an MCQ about internal controls, saw 'segregation of duties,' and immediately clicked the answer option that mentioned it. Unfortunately, the option was only partially correct and a different option addressed the core deficiency more comprehensively. Sarah learned a valuable lesson: Always read ALL the options, even if you think you've found the right answer immediately. Don't let excitement be your downfall!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Relevance: Minimizing Review Time",
+          "content": "In practice, effective MCQ reading translates directly to efficient research and problem-solving. When faced with a complex tax issue, for instance, you'll need to quickly digest the facts, identify the relevant code sections, and evaluate different interpretations. By honing your MCQ reading skills, you're essentially practicing the same process you'll use daily in your career. Master this skill now, and you'll not only pass the CPA exam but also save countless hours of review time in your professional life, allowing you to focus on higher-level analysis and client service."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Stem first for most questions\n\u2022 Form your answer before looking at options\n\u2022 Watch for NOT, EXCEPT, MOST, LEAST\n\u2022 Absolute words (always/never) are usually wrong\n\u2022 For calculations, read everything before computing\n\u2022 Slow down to speed up\u2014careful reading saves time"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-008",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Process of Elimination (POE)",
+    "description": "Turn 'I don't know' into 'I can figure this out' by eliminating wrong answers",
+    "order": 8,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "MCQ",
+      "POE"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "You Don't Need to Know the Answer",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Here's a secret: You don't need to KNOW the right answer\u2014you need to FIND it. Process of Elimination (POE) turns a 25% guess into a 50%+ educated choice. Master POE and you'll pass questions you 'don't know.'"
+        },
+        {
+          "title": "The Math of POE",
+          "type": "table",
+          "headers": [
+            "Options Eliminated",
+            "Remaining",
+            "Probability"
+          ],
+          "rows": [
+            [
+              "0",
+              "4",
+              "25%"
+            ],
+            [
+              "1",
+              "3",
+              "33%"
+            ],
+            [
+              "2",
+              "2",
+              "50%"
+            ],
+            [
+              "3",
+              "1",
+              "100%"
+            ]
+          ]
+        },
+        {
+          "title": "POE Strategy",
+          "type": "list",
+          "items": [
+            "Read all four options before choosing",
+            "Eliminate obviously wrong answers first",
+            "Look for 'too extreme' options (always, never, all)",
+            "Identify answers outside the topic",
+            "Between remaining, look for nuances"
+          ]
+        },
+        {
+          "title": "Common Elimination Triggers",
+          "type": "table",
+          "headers": [
+            "Red Flag",
+            "Why Often Wrong"
+          ],
+          "rows": [
+            [
+              "Always, never, all, none",
+              "Absolutes rarely true in accounting"
+            ],
+            [
+              "Opposite of another option",
+              "Usually one is right, other wrong"
+            ],
+            [
+              "Off-topic answer",
+              "Doesn't address the question"
+            ],
+            [
+              "Too simple/obvious",
+              "May be a trap (but not always)"
+            ],
+            [
+              "Contradicts basic principles",
+              "Violates fundamental rules"
+            ]
+          ]
+        },
+        {
+          "title": "Example: POE in Action",
+          "type": "example",
+          "content": "Q: Which depreciation method results in highest expense in Year 1?\n\nA) Straight-line \u2014 ELIMINATE (lowest in early years)\nB) Double-declining balance \u2014 Keep (accelerated)\nC) Units of production \u2014 Keep (depends on usage)\nD) Sum-of-years digits \u2014 Keep (accelerated)\n\nNow compare B, C, D...\n\nC depends on usage\u2014not ALWAYS highest\nB and D are accelerated methods...\nDDB is typically MORE accelerated than SYD\n\nAnswer: B (Double-declining balance)"
+        },
+        {
+          "title": "When Two Options Look Right",
+          "type": "list",
+          "items": [
+            "Re-read the question\u2014what EXACTLY is asked?",
+            "Look for the 'most' correct vs 'also correct'",
+            "Check if one is more specific/complete",
+            "Consider scope: Is one too broad/narrow?",
+            "Trust your first instinct if truly stuck"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Guessing Smart: My Secret Weapon",
+          "content": "Alright, listen up. I've been there, staring blankly at a MCQ thinking, 'I'm doomed.' But here's the thing: the CPA exam isn't always about KNOWING the answer. It's about FIGURING it out. Process of Elimination (POE) saved my bacon more times than I care to admit. Think of it like detective work. Even if you're unsure, knocking out a couple of obviously wrong answers dramatically boosts your chances. Don't just pick randomly; eliminate strategically. Trust me, mastering POE is like having a superpower on exam day."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Falling for the 'Almost Right' Trap",
+          "content": "A common mistake students make with POE is selecting an answer that SOUNDS correct but contains one tiny, fatal flaw. For example, an answer might correctly identify three out of four accounting treatments but get the fourth one completely wrong. Students often skim it, see the familiar parts, and mark it as right. The key is to read EVERY word of EVERY answer choice carefully. Don't let familiarity bias your judgment. One wrong detail makes the whole answer wrong. Double-check, and actively look for the error."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's POE Save: Inventory Valuation",
+          "content": "Sarah, a CPA candidate, faced a tricky MCQ on inventory valuation methods. She didn't immediately know the answer but remembered the FIFO method generally assumes that the first units purchased are the first ones sold. One answer choice explicitly stated that FIFO assumes the last units purchased are the first sold. With that, Sarah confidently eliminated the incorrect option, improving her odds drastically on a difficult question. Remembering the core principles helped her identify a clear falsehood."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Application: Error Detection",
+          "content": "In practice, you'll use POE skills constantly when reviewing financial statements or tax returns. Imagine you're auditing a client's depreciation schedule. You might not know the exact depreciation method used for every asset immediately, but you can quickly eliminate options based on basic accounting principles or tax law. For instance, if the client is claiming MACRS depreciation on land, you know that's incorrect and can flag it. This skill saves you time and helps you focus on the areas that truly need investigation."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 POE increases odds even when you don't know the answer\n\u2022 Eliminating 2 options = 50% success rate\n\u2022 Watch for absolutes (always/never)\u2014usually wrong\n\u2022 Opposite options: One is likely right\n\u2022 When stuck between two, re-read the question\n\u2022 Practice POE systematically during study"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-009",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Recognizing Distractor Patterns",
+    "description": "Learn how test writers craft wrong answers and avoid their traps",
+    "order": 9,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "MCQ",
+      "Distractors"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Know Your Enemy",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Wrong answers aren't random\u2014they're carefully designed to trap candidates who know some, but not all, of the material. Understanding distractor patterns helps you spot and avoid traps."
+        },
+        {
+          "title": "Common Distractor Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "What It Does",
+            "How to Spot"
+          ],
+          "rows": [
+            [
+              "Partial Truth",
+              "True statement but doesn't answer question",
+              "Re-read: Does it answer what's asked?"
+            ],
+            [
+              "Calculation Trap",
+              "Right method, wrong step",
+              "Check your work; verify each step"
+            ],
+            [
+              "Reversed Logic",
+              "Opposite of correct answer",
+              "DR vs CR, increase vs decrease"
+            ],
+            [
+              "Similar Concept",
+              "Related topic, wrong application",
+              "Verify the specific rule applies"
+            ],
+            [
+              "Scope Error",
+              "Right answer to different question",
+              "Match answer to actual question"
+            ]
+          ]
+        },
+        {
+          "title": "Example: Calculation Trap",
+          "type": "example",
+          "content": "Q: Company bought equipment for $100,000, salvage $10,000, 5-year life.\nYear 2 depreciation using DDB?\n\nCommon distractors:\nA) $40,000 \u2014 Year 1 DDB (forgot it's Year 2!)\nB) $18,000 \u2014 Straight-line ($90k/5)\nC) $24,000 \u2014 Correct Year 2 DDB\nD) $36,000 \u2014 DDB on original cost (forgot Year 1)\n\nThree wrong answers catch common mistakes!\nAlways verify you're answering the RIGHT year/period."
+        },
+        {
+          "title": "The \"Almost Right\" Trap",
+          "type": "text",
+          "content": "The most dangerous distractors are 90% correct. They might state a true principle but apply it to the wrong situation, or get 3 of 4 elements right. Always verify EVERY element of your answer matches the question."
+        },
+        {
+          "title": "Numeric Distractors",
+          "type": "list",
+          "items": [
+            "Transposed numbers: $45,000 vs $54,000",
+            "Missing a step: Forgot to add back, subtract, or adjust",
+            "Wrong formula: Used similar but incorrect calculation",
+            "Sign error: Debit vs credit, gain vs loss",
+            "Units: Answer in thousands when question asks actual"
+          ]
+        },
+        {
+          "title": "Conceptual Traps",
+          "type": "list",
+          "items": [
+            "Exception to the rule (but rule applies here)",
+            "Rule stated correctly but situation is the exception",
+            "Confusing similar standards (GAAP vs IFRS)",
+            "Right answer for old law (watch tax law changes!)",
+            "Technically true but not the BEST answer"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The Devil's in the 10%",
+          "content": "Alright, future CPAs, let's be real. These exam writers are sneaky! They know you know your stuff. So they'll throw you a 'mostly right' answer. It's like they're saying, 'Hey, you're smart, but are you *detail-oriented* smart?' I've seen candidates nail the big picture, only to get tripped up by one little word or phrase. Don't be that person! Read every answer choice like you're auditing it for fraud. Assume nothing, verify everything. Your career depends on it... or at least, passing this darn exam does!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Jumping the Gun: Premature Selection",
+          "content": "Students often select the first answer that 'sounds right' without fully evaluating all options. They see a familiar term or concept and think, 'Yep, that's it!' This is dangerous because distractors are designed to capitalize on this tendency. For example, a question about revenue recognition might include an answer that correctly states the 5-step model *but* applies it to a scenario where a different standard is relevant. Avoid this by forcing yourself to read *every* answer choice, even if you're 99% sure the first one is correct. That 1% can cost you points!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Sales Snafu",
+          "content": "Sarah, a bright-eyed CPA candidate, breezed through a question on deferred tax assets. She confidently selected an answer that correctly calculated the DTA based on a temporary difference. However, she missed the fact that the question specifically asked for the impact on *net income* \u2013 requiring her to consider the valuation allowance implications. Sarah lost points because she didn't fully process the question's specific requirements. Always, always, always read the question again before finalizing your answer."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Relevance: Avoiding Audit Errors",
+          "content": "In practice, you'll constantly encounter situations where you need to discern between 'mostly right' and 'completely right'. Think about reviewing a complex contract: 90% of the clauses might seem standard, but that one overlooked clause could have a material impact on revenue recognition or lease accounting. Mastering the art of identifying subtle errors on the CPA exam translates directly to avoiding costly mistakes in your professional career. The attention to detail you cultivate now will save you (and your clients) significant headaches later."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Wrong answers are designed to trap common errors\n\u2022 'Partial truth' is most common\u2014must answer the actual question\n\u2022 Calculation distractors use wrong steps/years/methods\n\u2022 Verify EVERY element of your answer\n\u2022 Watch for reversed logic (DR/CR, increase/decrease)\n\u2022 When unsure, ask: 'Does this answer THIS question?'"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-010",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Calculation MCQs: Set Up First",
+    "description": "Avoid calculation traps by setting up the problem before computing",
+    "order": 10,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "MCQ",
+      "Calculations"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Set Up Before You Calculate",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "The biggest calculation mistakes happen when candidates start computing before understanding what's asked. Take 30 seconds to set up the problem structure\u2014it saves time and errors."
+        },
+        {
+          "title": "The 5-Step Calculation Method",
+          "type": "list",
+          "items": [
+            "1. What's asked? (Net income? EPS? Taxable income?)",
+            "2. What formula? (Write it out or visualize)",
+            "3. What's given? (List relevant numbers)",
+            "4. What adjustments? (Add-backs, deductions, timing)",
+            "5. Calculate and verify (check reasonableness)"
+          ]
+        },
+        {
+          "title": "Example: Setting Up",
+          "type": "example",
+          "content": "Q: ABC Corp reported $500,000 pretax income. Included were:\n\u2022 Municipal bond interest: $20,000\n\u2022 Depreciation: Book $50,000, Tax $80,000\n\u2022 Warranty expense: Book $30,000, Cash paid $10,000\n\nWhat is current tax expense? (21% rate)\n\nSET UP FIRST:\n1. Asked: Current tax expense (not total, not deferred)\n2. Formula: Taxable income \u00d7 Rate\n3. Start: $500,000 pretax book income\n4. Adjustments to get TAXABLE income:\n   \u2022 Muni interest: -$20,000 (tax-exempt)\n   \u2022 Depreciation: -$30,000 (tax > book)\n   \u2022 Warranty: +$20,000 (expense > cash)\n5. Taxable: $470,000 \u00d7 21% = $98,700"
+        },
+        {
+          "title": "Common Calculation Traps",
+          "type": "table",
+          "headers": [
+            "Trap",
+            "How to Avoid"
+          ],
+          "rows": [
+            [
+              "Using wrong year",
+              "Circle the year asked"
+            ],
+            [
+              "Book vs Tax confusion",
+              "Label which basis"
+            ],
+            [
+              "Forgetting an adjustment",
+              "List ALL given info first"
+            ],
+            [
+              "Direction error (+/-)",
+              "Think: Does this INCREASE or DECREASE?"
+            ],
+            [
+              "Units mismatch",
+              "Check: thousands? actual? percentages?"
+            ]
+          ]
+        },
+        {
+          "title": "Reasonableness Check",
+          "type": "text",
+          "content": "After calculating, ask: Does this make sense? If the answer seems wildly different from the given numbers, you may have made an error. A $10 million company probably doesn't have $500 million in depreciation!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Sense Check: The 'Does This Smell Right?' Test",
+          "content": "Alright, future CPAs, let's be honest. Calculation MCQs can feel like a race against the clock. But slamming numbers into your calculator without a thought is a recipe for disaster. Seriously, take a breath! Before you even touch your calculator, map out the formula or steps. And AFTER you get an answer, ask yourself: 'Does this even remotely make sense?' If a company with $1 million in revenue somehow generates $5 million in net income according to your calculations, Houston, we have a problem! Trust your gut; it's often right."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Formula Blindness: Plugging In Without Thinking",
+          "content": "A frequent error is blindly applying a formula without considering the context. For example, with depreciation, students often forget to subtract the salvage value from the asset's cost before calculating the annual depreciation expense. They see 'straight-line depreciation' and immediately divide the cost by the useful life. This leads to an inflated depreciation expense and an incorrect net book value. Always identify all components needed for the calculation *before* you start crunching numbers. Read carefully!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Inventory Snafu: The Importance of Setup",
+          "content": "Sarah, a CPA candidate, was rushing through a FIFO inventory calculation. She quickly multiplied the last units purchased by the cost, but forgot to check if that quantity even covered the sales. As a result, she significantly underestimated the cost of goods sold. The lesson? Before jumping to conclusions, take 30 seconds to visualize the inventory flow. Had she done this, she would have realized her error immediately and avoided the incorrect answer."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Application: Budgeting and Forecasting",
+          "content": "In the real world, you'll use these calculation skills constantly for budgeting and forecasting. Imagine you're projecting sales growth. If you just randomly increase sales by 50% without considering market trends, competitor activities, or your company's capacity, your forecast will be useless (or worse, misleading). Setting up a proper model with realistic assumptions and checking the reasonableness of your results is crucial for making sound business decisions. This isn't just about passing the exam; it's about being a competent professional."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 30 seconds setting up saves minutes and errors\n\u2022 Identify: What's asked, what formula, what's given\n\u2022 List all adjustments before calculating\n\u2022 Check direction: increase or decrease?\n\u2022 Verify reasonableness of final answer\n\u2022 Watch units: thousands vs actual"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-011",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "The \"I Have No Idea\" Protocol",
+    "description": "What to do when you're completely stumped on an MCQ",
+    "order": 11,
+    "duration": 25,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "Guessing",
+      "MCQ"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "It Will Happen",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Every candidate hits questions where they have NO IDEA. This is normal\u2014some may be pretest questions on topics you haven't seen. Having a protocol prevents panic and maximizes your guessing success rate."
+        },
+        {
+          "title": "The Protocol",
+          "type": "list",
+          "items": [
+            "1. DON'T PANIC. Take a breath. This is expected.",
+            "2. Read the question again slowly. Sometimes clarity emerges.",
+            "3. Apply POE. Eliminate what you CAN.",
+            "4. Look for patterns in remaining answers.",
+            "5. Make educated guess using strategies below.",
+            "6. Mark for review if time permits.",
+            "7. MOVE ON. Don't spend more than 90 seconds total."
+          ]
+        },
+        {
+          "title": "Strategic Guessing Tips",
+          "type": "table",
+          "headers": [
+            "Strategy",
+            "When to Use"
+          ],
+          "rows": [
+            [
+              "Middle values",
+              "Calculation questions with numeric options"
+            ],
+            [
+              "Longest answer",
+              "When one option has most detail"
+            ],
+            [
+              "Avoid absolutes",
+              "Options with 'always/never' usually wrong"
+            ],
+            [
+              "Opposite options",
+              "If two are opposites, one is likely right"
+            ],
+            [
+              "Gut feeling",
+              "When all else fails, first instinct"
+            ]
+          ]
+        },
+        {
+          "title": "The Middle Value Strategy",
+          "type": "example",
+          "content": "Numeric options: A) $10,000  B) $25,000  C) $35,000  D) $50,000\n\nNo idea? Choose B or C (middle values).\n\nWhy? Test writers often put the correct answer in the middle, with high/low distractors based on common errors. This isn't foolproof, but it beats random guessing."
+        },
+        {
+          "title": "Why You Should ALWAYS Answer",
+          "type": "text",
+          "content": "There is NO PENALTY for wrong answers. Blank = 0% chance. Random guess = 25% chance. Strategic guess = 33-50% chance. ALWAYS answer every question, even if pure guess."
+        },
+        {
+          "title": "Mark for Review Strategy",
+          "type": "list",
+          "items": [
+            "Mark the question AND enter an answer",
+            "If time permits, return after finishing testlet",
+            "Don't change unless you have clear reason",
+            "Most first instincts are correct",
+            "If testlet ends, your answer counts (not blank)"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "The 'Guessing Tax' - It's Not a Thing!",
+          "content": "Alright, future CPAs, let's be real. We've all stared blankly at an MCQ that looks like it's written in Klingon. But here's the golden rule: NEVER leave it blank. Think of it like this: there's no 'guessing tax' on the CPA exam! Unlike some professors in college, the AICPA isn't docking you points for wrong answers. So, embrace the educated guess, use your process of elimination, and for the love of Pete, fill in that bubble!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Paralysis by Analysis: Overthinking It!",
+          "content": "A common mistake is spending way too long on a question you don't know. Students get stuck in 'paralysis by analysis,' wasting valuable time that could be used on questions they *do* understand. Remember, each MCQ is worth the same amount of points. If you've spent 2 minutes and are still clueless, make a strategic guess based on your best deduction, mark the question, and MOVE ON. You can always come back later if time permits. Don't let one tricky question derail your entire exam strategy."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Last-Minute Save",
+          "content": "Sarah was down to the wire on the REG section. With only 5 minutes left, she had 5 MCQs she hadn't even looked at. Instead of panicking, she quickly eliminated obviously wrong answers on each, made an educated guess, and bubbled them in. Later, she discovered she got two of those guesses right! The takeaway: even a rushed, strategic guess can significantly improve your score. Never give up, even in the final moments."
+        },
+        {
+          "type": "in-practice",
+          "title": "Risk Assessment: Guessing Edition",
+          "content": "In practice, you're constantly making decisions with incomplete information. Think of guessing on an MCQ as a mini risk assessment. You're weighing the potential reward (getting it right) against the cost (no penalty for wrong). This translates directly to professional scenarios. For example, when advising a client on a complex tax strategy, you might have some uncertainty. You'll weigh the potential benefits against the risks, just like you do when making an educated guess on the CPA exam. Master it now, and you'll be a more confident and effective CPA later."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 'No idea' questions are normal\u2014don't panic\n\u2022 Always answer (no penalty for wrong)\n\u2022 Apply POE first, then strategic guessing\n\u2022 Middle values for calculations\n\u2022 Avoid absolutes (always/never)\n\u2022 Mark, answer, and move on\u201490 seconds max"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-012",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "TBS Overview: Types & Weighting",
+    "description": "Understand Task-Based Simulations and their heavy weight in your score",
+    "order": 12,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "TBS",
+      "Simulations"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "TBS: Where Exams Are Won or Lost",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Task-Based Simulations (TBS) count for 50% of your score on Core sections and 40-50% on Discipline sections. Many candidates pass MCQs but fail TBS. Mastering simulations is essential to passing."
+        },
+        {
+          "title": "TBS Weighting by Section",
+          "type": "table",
+          "headers": [
+            "Section",
+            "MCQ Weight",
+            "TBS Weight",
+            "# of TBS"
+          ],
+          "rows": [
+            [
+              "FAR",
+              "50%",
+              "50%",
+              "7 TBS"
+            ],
+            [
+              "AUD",
+              "50%",
+              "50%",
+              "7 TBS"
+            ],
+            [
+              "REG",
+              "50%",
+              "50%",
+              "7 TBS"
+            ],
+            [
+              "BAR",
+              "50%",
+              "50%",
+              "7 TBS"
+            ],
+            [
+              "ISC",
+              "60%",
+              "40%",
+              "6 TBS"
+            ],
+            [
+              "TCP",
+              "50%",
+              "50%",
+              "7 TBS"
+            ]
+          ]
+        },
+        {
+          "title": "Types of TBS",
+          "type": "list",
+          "items": [
+            "Research: Find authoritative guidance in database",
+            "Document Review: Analyze documents, extract data",
+            "Journal Entries: Create/correct accounting entries",
+            "Calculations: Multi-step computations with exhibits",
+            "Form Completion: Tax forms, reconciliations",
+            "Analysis: Evaluate situations, make recommendations"
+          ]
+        },
+        {
+          "title": "TBS Format Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Scenario",
+              "Background information, situation"
+            ],
+            [
+              "Exhibits",
+              "Supporting documents, data, forms"
+            ],
+            [
+              "Tabs",
+              "Multiple sections to navigate"
+            ],
+            [
+              "Resources",
+              "Authoritative literature, spreadsheets"
+            ],
+            [
+              "Response Area",
+              "Where you enter answers"
+            ]
+          ]
+        },
+        {
+          "title": "TBS vs MCQ Skills",
+          "type": "text",
+          "content": "TBS require APPLICATION of knowledge, not just recall. You must read exhibits, synthesize information, and perform multi-step tasks. Strong MCQ performance doesn't guarantee TBS success\u2014different skills, different practice needed."
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "TBS: The CPA Exam's Hunger Games",
+          "content": "Alright, future CPAs, let's be real. Multiple-choice? That's just the appetizer. Task-Based Simulations? That's the main course, the dessert, and the coffee all rolled into one. They're worth a TON of points, and they're designed to make you sweat. Think of it like this: MCQs test your memory, TBS test if you can actually *do* the job. So, don't just memorize formulas; learn how to apply them. Trust me, your future self (and your bonus) will thank you."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The MCQ Trap: Thinking You're Ready",
+          "content": "A common mistake is thinking strong MCQ performance automatically translates to TBS success. They're different beasts! MCQs often test isolated concepts, while TBS demand integration. Students ace MCQs by recognizing patterns, but then bomb TBS because they can't synthesize information from multiple exhibits. The key is practice, practice, practice with realistic simulations. Don't just passively read the answer explanations; actively work through the problem yourself, step-by-step."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Simulation Struggle",
+          "content": "Sarah, fresh out of college and scoring well on MCQs, felt confident going into the BEC section. However, when faced with a TBS requiring her to analyze a company's budget variances and recommend corrective actions based on multiple exhibits, she froze. The issue? Sarah hadn't practiced applying her knowledge in a simulated environment. The lesson: Practice TBS under timed conditions to build your application skills, not just your recall."
+        },
+        {
+          "type": "in-practice",
+          "title": "Daily Grind: Applying TBS Skills on the Job",
+          "content": "In practice, you'll use TBS-type skills constantly. Think about analyzing a client's financial statements to identify potential audit risks, or preparing a complex tax projection based on various assumptions and data points. These aren't just theoretical exercises. If you can effectively synthesize information from multiple sources, identify key issues, and develop practical solutions in the TBS section, you'll be light-years ahead of the curve when you enter the professional world. It's about real-world application, which is why the CPA exam tests for it so heavily."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 TBS = 50%+ of your score\u2014cannot be ignored\n\u2022 Types: Research, Document Review, Journal Entry, Calculations\n\u2022 Requires application, not just recall\n\u2022 Multiple exhibits and tabs to navigate\n\u2022 One pretest TBS per testlet (unscored)\n\u2022 Practice TBS separately from MCQs"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-013",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "TBS Time Management: 15-Minute Rule",
+    "description": "Budget your simulation time to maximize points across all TBS",
+    "order": 13,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "TBS",
+      "Time Management"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Time Kills on TBS",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "The #1 TBS mistake: Spending too much time on early simulations and rushing (or missing) later ones. Each TBS is worth similar points. The 15-minute rule keeps you on track."
+        },
+        {
+          "title": "The 15-Minute Rule",
+          "type": "text",
+          "content": "Allocate approximately 15 minutes per TBS. Some simpler ones take 10 minutes, some complex ones need 20, but 15 is your baseline. If you hit 15 minutes and aren't close to done, make strategic choices."
+        },
+        {
+          "title": "Time Budget by Section",
+          "type": "table",
+          "headers": [
+            "Section",
+            "TBS Count",
+            "TBS Time",
+            "Per TBS Avg"
+          ],
+          "rows": [
+            [
+              "FAR",
+              "7",
+              "~105 min",
+              "15 min"
+            ],
+            [
+              "AUD",
+              "7",
+              "~105 min",
+              "15 min"
+            ],
+            [
+              "REG",
+              "7",
+              "~105 min",
+              "15 min"
+            ],
+            [
+              "BAR",
+              "7",
+              "~105 min",
+              "15 min"
+            ],
+            [
+              "ISC",
+              "6",
+              "~90 min",
+              "15 min"
+            ],
+            [
+              "TCP",
+              "7",
+              "~105 min",
+              "15 min"
+            ]
+          ]
+        },
+        {
+          "title": "TBS Triage Strategy",
+          "type": "list",
+          "items": [
+            "Scan ALL TBS first (2-3 min total)",
+            "Identify the Research TBS (do early for guaranteed points)",
+            "Identify easiest/shortest TBS (quick wins)",
+            "Leave most complex for later (with fresh time budget)",
+            "NEVER skip a TBS entirely\u2014partial credit exists"
+          ]
+        },
+        {
+          "title": "At the 15-Minute Mark",
+          "type": "list",
+          "items": [
+            "Near done? Finish it (2-3 more minutes OK)",
+            "Halfway done? Complete what you can, move on",
+            "Stuck early? Cut losses, enter best guesses, move on",
+            "The next TBS might be easier and worth the same points"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "15 Minutes? More Like 15 Minutes of Panic!",
+          "content": "Alright, let's be real. The CPA exam TBS section isn't a leisurely stroll through a park. It's more like a sprint through a minefield. That 15-minute rule? It's not just a suggestion; it's your lifeline. I've seen too many candidates get sucked into a complex simulation, only to realize they've blown half their time on one problem. Don't let that be you. Stick to the timer, make educated guesses, and move on. You can always come back later if you have time!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "The Perfectionist's Trap: A TBS Time Killer",
+          "content": "A common mistake is spending excessive time on a single TBS, striving for perfection. Students think, 'If I just get this one right, I'll get full credit.' But each TBS is often worth similar points. You're better off getting partial credit on all TBS than perfect credit on one and zero on another because you ran out of time. Learn to identify when you're hitting diminishing returns on a TBS and strategically move on to maximize your overall score."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Simulation Struggle: The Time Crunch",
+          "content": "Sarah, a bright candidate, spent 40 minutes meticulously working through a complex consolidation TBS. She felt confident she nailed it, but then realized she only had 15 minutes left for the remaining two simulations. She had to rush, guessing on many parts, ultimately failing the section. The lesson? Even if you're a consolidation whiz, stick to the 15-minute rule and allocate time wisely across all TBS."
+        },
+        {
+          "type": "in-practice",
+          "title": "Time Management in Real-World Accounting",
+          "content": "In practice, this translates to managing project deadlines. As a CPA, you'll often face situations where you need to allocate your time effectively across multiple clients and tasks. For example, when reviewing a complex tax return, you might spend 15 minutes on a specific section, then move on, knowing you can revisit it later. This approach ensures you address all critical areas within the allotted time, preventing missed deadlines and maximizing efficiency. The 15-minute TBS rule is essentially a microcosm of project management in the real world."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 15 minutes per TBS baseline\n\u2022 Scan all TBS first to identify quick wins\n\u2022 Do Research TBS early (guaranteed points)\n\u2022 At 15 min: assess and decide whether to continue\n\u2022 Partial credit > rushing through remaining TBS\n\u2022 NEVER leave a TBS blank\u2014enter something"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-014",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Research TBS: Guaranteed Points",
+    "description": "Master the research simulation for nearly free points on exam day",
+    "order": 14,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "TBS",
+      "Research"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "The Easiest Points on the Exam",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Research TBS are the closest thing to 'free points' on the CPA exam. You don't need to memorize\u2014just find the right citation in the authoritative literature. With practice, these take 5-8 minutes and are nearly 100% accurate."
+        },
+        {
+          "title": "Research Databases by Section",
+          "type": "table",
+          "headers": [
+            "Section",
+            "Primary Database",
+            "Format"
+          ],
+          "rows": [
+            [
+              "FAR",
+              "FASB Codification",
+              "ASC XXX-XX-XX-X"
+            ],
+            [
+              "AUD",
+              "AICPA Standards",
+              "AU-C/AT-C/AR-C Section XXX.XX"
+            ],
+            [
+              "REG",
+              "IRC/Treasury Regs",
+              "IRC Sec. XXX(x)(X)"
+            ],
+            [
+              "BAR",
+              "Various standards",
+              "Depends on topic"
+            ],
+            [
+              "ISC",
+              "IT frameworks/AICPA",
+              "Depends on topic"
+            ],
+            [
+              "TCP",
+              "IRC/Treasury Regs",
+              "IRC Sec. XXX(x)(X)"
+            ]
+          ]
+        },
+        {
+          "title": "Search Strategy",
+          "type": "list",
+          "items": [
+            "Identify key terms in the question",
+            "Search using 2-3 specific keywords",
+            "Too many results? Add more specific terms",
+            "No results? Try synonyms or broader terms",
+            "Use Table of Contents if keyword search fails",
+            "Read the section to confirm it addresses the issue"
+          ]
+        },
+        {
+          "title": "Example: FAR Research",
+          "type": "example",
+          "content": "Q: Where is guidance on accounting for stock compensation?\n\nSearch: 'stock compensation'\nResults: ASC 718\n\nNavigate to ASC 718-10-25 for recognition\n\nAnswer: ASC 718-10-25-1 (or similar specific paragraph)\n\nTip: The paragraph number matters! Read to find the MOST RELEVANT section."
+        },
+        {
+          "title": "Common Mistakes",
+          "type": "list",
+          "items": [
+            "Too broad citation (Topic only, not section/paragraph)",
+            "Wrong paragraph (right area, wrong specific guidance)",
+            "Skipping verification (assuming first result is right)",
+            "Spending too long (5-10 minutes max)",
+            "Not practicing (unfamiliar with database navigation)"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Research TBS: Your Secret Weapon",
+          "content": "Alright, let's be honest, nobody *loves* wading through the IRS code. But think of the Research TBS as a free point buffet on exam day. Seriously, it's almost like they *want* you to pass this part. I know guys who bombed MCQ sections but passed because they nailed the research. Don't overthink it. Practice the search techniques, know your keywords, and grab those easy points. Trust me, you'll thank yourself later when you're sipping celebratory margaritas."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The Keyword Conundrum: Searching Blindly",
+          "content": "A common mistake is using overly broad keywords. Students often search for something like 'tax deduction' without specifying the context. This will flood you with irrelevant results, wasting precious time. Instead, be precise! If the question mentions 'rental property' and 'depreciation,' use those specific terms together in your search. Learn to use boolean operators like 'AND' and 'OR' to narrow your results. A targeted search is a successful search. Time is money (and exam points)!"
+        },
+        {
+          "type": "case-study",
+          "title": "John's Research Rescue",
+          "content": "John, a CPA candidate, was stumped on a TBS about the qualified business income (QBI) deduction. He initially panicked, but then remembered the research skills he practiced. He used keywords like 'QBI deduction limitations' and quickly found the relevant section in the IRS code that addressed the income thresholds. John correctly answered the question, saving valuable time and points thanks to effective research."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Research: Beyond the Exam",
+          "content": "In practice, you'll frequently use online tax research databases like CCH or Checkpoint to answer client questions or resolve complex tax issues. While the exam uses a simplified interface, the core skills of keyword selection, boolean logic, and understanding the structure of tax law are directly transferable. Mastering research now isn't just about passing the CPA exam; it's about building a fundamental skill that will serve you throughout your career. Think of it as an investment in your future professional success."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Research TBS = easiest points (no memorization needed)\n\u2022 Practice with actual database interfaces\n\u2022 Use specific keywords, narrow down results\n\u2022 Verify by reading the section\n\u2022 Cite specific paragraph, not just topic\n\u2022 Do Research TBS EARLY in your TBS time"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-015",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Document Review TBS",
+    "description": "Master the art of extracting data from complex exhibit packages",
+    "order": 15,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "TBS",
+      "Document Review"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Real-World Simulations",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Document Review TBS mirror real CPA work: You receive a package of documents (contracts, emails, reports, financial data) and must extract relevant information to answer questions."
+        },
+        {
+          "title": "Common Document Types",
+          "type": "table",
+          "headers": [
+            "Document Type",
+            "What to Look For"
+          ],
+          "rows": [
+            [
+              "Contracts/Leases",
+              "Terms, dates, amounts, conditions"
+            ],
+            [
+              "Emails/Memos",
+              "Key facts, decisions, issues raised"
+            ],
+            [
+              "Financial Statements",
+              "Balances, changes, unusual items"
+            ],
+            [
+              "Trial Balances",
+              "Account balances, classifications"
+            ],
+            [
+              "Invoices/Receipts",
+              "Dates, amounts, descriptions"
+            ],
+            [
+              "Meeting Minutes",
+              "Decisions, authorizations, disclosures"
+            ]
+          ]
+        },
+        {
+          "title": "Document Review Strategy",
+          "type": "list",
+          "items": [
+            "1. Read the QUESTION first (know what you're looking for)",
+            "2. Scan exhibit tabs to understand what's available",
+            "3. Read documents strategically (not word-for-word)",
+            "4. Highlight/note key facts mentally",
+            "5. Cross-reference between documents",
+            "6. Verify answers against exhibit evidence"
+          ]
+        },
+        {
+          "title": "Example: Lease Document Review",
+          "type": "example",
+          "content": "Question: Determine lease classification.\n\nExhibits: Lease agreement, Equipment appraisal, Payment schedule\n\nStrategy:\n1. Question asks: Operating vs Finance lease\n2. Need: Lease term, useful life, PV of payments, fair value\n3. Lease agreement: 5-year term, monthly payments\n4. Appraisal: 8-year useful life, $100,000 FV\n5. Payment schedule: $1,500/month\n6. Calculate PV, compare to FV, assess term vs life"
+        },
+        {
+          "title": "Common Traps",
+          "type": "list",
+          "items": [
+            "Irrelevant data: Some exhibit info is distractor",
+            "Contradictory info: Documents may conflict (trust primary source)",
+            "Hidden details: Key facts in footnotes or fine print",
+            "Date sensitivity: Watch for cutoff issues"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Exhibit Overload? We've All Been There!",
+          "content": "Okay, let's be honest. When you first see those TBS exhibit packages, your brain probably screams 'fire hazard!' I get it. But trust me, with the right strategy, you can tame the document beast. Don't just start reading everything cover to cover. That's a recipe for burnout. Instead, skim the requirements first. What are they *actually* asking you to find? Then, target your exhibit review based on those needs. Think 'surgical strike,' not 'carpet bombing.' You got this!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Ignoring the Question Requirements (D'oh!)",
+          "content": "A really common mistake is diving headfirst into the exhibits *before* carefully reading the TBS question requirements. Students often miss key details or assumptions embedded in the prompt. For example, a question might specify 'using the accrual method' or 'assuming materiality,' which significantly narrows down your relevant data. Ignoring these qualifiers leads to wasted time analyzing irrelevant information and ultimately, incorrect answers. Read the question TWICE before you even glance at the exhibits. Seriously."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Missed Deduction Disaster",
+          "content": "Sarah, a bright CPA candidate, was tackling a TBS involving a business tax return. She spent ages meticulously reviewing invoices for expenses but completely overlooked a key footnote in the depreciation schedule outlining a significant Section 179 deduction limitation. Because she missed this small detail, she calculated taxable income incorrectly. The lesson? Always read *everything*, even the seemingly insignificant fine print. Every exhibit has a purpose!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Impact: Efficiency = Billable Hours",
+          "content": "In the real world, efficient document review translates directly to billable hours. Imagine you're reviewing a client's loan agreement for compliance purposes. A structured approach, similar to the TBS strategy, allows you to quickly identify key covenants, potential breaches, and related financial metrics. Without this skill, you'll spend hours sifting through irrelevant clauses, costing your firm (and your client) money. Mastering this now makes you a valuable asset from day one."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Read question FIRST to know what you need\n\u2022 Scan all exhibits before deep reading\n\u2022 Read strategically\u2014don't read every word\n\u2022 Cross-reference documents for conflicts\n\u2022 Watch for hidden details in footnotes\n\u2022 Some exhibit info is intentionally irrelevant"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-016",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Journal Entry TBS",
+    "description": "Approach journal entry simulations with confidence and precision",
+    "order": 16,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "TBS",
+      "Journal Entries"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Back to Basics",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Journal Entry TBS test the fundamental skill of accounting: recording transactions. Despite being 'basic,' these simulations trip up many candidates. Success requires systematic thinking and attention to detail."
+        },
+        {
+          "title": "Journal Entry TBS Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Record Transactions",
+              "Create entries from scratch"
+            ],
+            [
+              "Correcting Entries",
+              "Fix errors in existing entries"
+            ],
+            [
+              "Adjusting Entries",
+              "Period-end adjustments"
+            ],
+            [
+              "Closing Entries",
+              "Year-end close procedures"
+            ],
+            [
+              "Consolidation Entries",
+              "Elimination/consolidating entries"
+            ]
+          ]
+        },
+        {
+          "title": "The DEAD CLIC Method",
+          "type": "list",
+          "items": [
+            "D - Dividends (Debit to close)",
+            "E - Expenses (Debit to increase)",
+            "A - Assets (Debit to increase)",
+            "D - Draws (Debit to increase)",
+            "C - Capital/Equity (Credit to increase)",
+            "L - Liabilities (Credit to increase)",
+            "I - Income/Revenue (Credit to increase)",
+            "C - Contra accounts (Opposite of main)"
+          ]
+        },
+        {
+          "title": "Journal Entry Strategy",
+          "type": "list",
+          "items": [
+            "1. Read the scenario completely",
+            "2. Identify all accounts affected",
+            "3. Determine direction (increase/decrease)",
+            "4. Apply normal balance rules (DEAD CLIC)",
+            "5. Calculate amounts carefully",
+            "6. Verify debits = credits",
+            "7. Check account names match dropdown options"
+          ]
+        },
+        {
+          "title": "Example: Correcting Entry",
+          "type": "example",
+          "content": "Situation: Company recorded equipment purchase as expense.\nOriginal entry: DR Repairs Expense $50,000; CR Cash $50,000\n\nCorrection needed:\n1. Reverse the wrong part: CR Repairs Expense $50,000\n2. Record correctly: DR Equipment $50,000\n\nCorrecting Entry:\nDR Equipment        $50,000\n    CR Repairs Expense    $50,000\n\n(No need to touch Cash\u2014that part was correct)"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Journal Entries: The Language of Accounting (Seriously!)",
+          "content": "Okay, let's be real. Journal entries aren't exactly thrilling. But think of them as accounting's native language. If you can fluently speak 'journal entry,' you can understand any financial statement. The CPA Exam throws Journal Entry TBSs at you to see if you can translate business events into debits and credits. Nail this, and the rest of the exam gets a whole lot easier. Consider it the Rosetta Stone of accounting! Don't just memorize, *understand* the 'why' behind each entry."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Forgetting the Chart of Accounts Structure",
+          "content": "A frequent error is slapping debits and credits anywhere without considering the chart of accounts structure. Students often debit the wrong expense account or credit a revenue account when it should be an unearned revenue account. This happens because they skip understanding where the account *lives* in the chart of accounts. Before making any entry, quickly visualize the chart of accounts hierarchy. Is it an asset, liability, equity, revenue, or expense? Sub-categories matter too. This prevents costly mistakes and wasted time on the TBS."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Lease Dilemma",
+          "content": "Sarah, an accounting intern, was tasked with recording a new lease agreement. She immediately debited 'Rent Expense' for the entire year's payment. However, this was a capital lease. The correct approach? Recognize the lease asset and lease liability initially, then depreciate the asset and amortize the liability over the lease term. Sarah learned the hard way that understanding lease classifications (operating vs. capital) is crucial for accurate journal entries."
+        },
+        {
+          "type": "in-practice",
+          "title": "Day-to-Day: Correcting Errors and Month-End Close",
+          "content": "In practice, you'll be using journal entries constantly. Think about correcting errors found during an audit, adjusting for accruals at month-end, or recording complex transactions like stock options or deferred taxes. For example, imagine you find a $5,000 revenue recognition error. The correcting entry will directly impact the income statement and balance sheet, which then impacts key performance indicators. Mastering these entries now will make you a valuable asset to any accounting team."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Journal entries = fundamental accounting skill\n\u2022 Use DEAD CLIC to remember normal balances\n\u2022 Always verify debits = credits\n\u2022 For corrections, reverse wrong part only\n\u2022 Match account names to dropdown options exactly\n\u2022 Show all compound entry elements"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-017",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Spreadsheet TBS: Excel for CPAs",
+    "description": "Leverage spreadsheet tools in TBS for faster, accurate calculations",
+    "order": 17,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "TBS",
+      "Spreadsheet"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Built-In Advantage",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Many TBS include a spreadsheet tool (like Excel). This isn't just for your scratch work\u2014it's a powerful tool to speed calculations and reduce errors. Knowing basic spreadsheet functions can save significant time."
+        },
+        {
+          "title": "Available Functions",
+          "type": "table",
+          "headers": [
+            "Function",
+            "Use Case",
+            "Syntax"
+          ],
+          "rows": [
+            [
+              "SUM",
+              "Add values",
+              "=SUM(A1:A10)"
+            ],
+            [
+              "AVERAGE",
+              "Calculate mean",
+              "=AVERAGE(A1:A10)"
+            ],
+            [
+              "IF",
+              "Conditional logic",
+              "=IF(A1>100,\"Yes\",\"No\")"
+            ],
+            [
+              "PV",
+              "Present value",
+              "=PV(rate,nper,pmt)"
+            ],
+            [
+              "FV",
+              "Future value",
+              "=FV(rate,nper,pmt)"
+            ],
+            [
+              "PMT",
+              "Payment amount",
+              "=PMT(rate,nper,pv)"
+            ],
+            [
+              "ABS",
+              "Absolute value",
+              "=ABS(A1)"
+            ]
+          ]
+        },
+        {
+          "title": "When to Use Spreadsheets",
+          "type": "list",
+          "items": [
+            "Multiple calculations with similar structure",
+            "Present/future value problems",
+            "Amortization schedules",
+            "Depreciation calculations over multiple years",
+            "Comparative analysis (ratios, percentages)",
+            "Any calculation you might make an arithmetic error on"
+          ]
+        },
+        {
+          "title": "Example: Lease PV Calculation",
+          "type": "example",
+          "content": "Given: 5-year lease, $10,000 annual payment, 6% rate\nFind: Present value of lease payments\n\nSpreadsheet approach:\nCell A1: Rate = 0.06\nCell A2: Periods = 5\nCell A3: Payment = 10000\nCell A4: =PV(A1,A2,-A3) = $42,124\n\nFaster and more accurate than manual calculation!\n\nNote: Payment is negative in PV formula for correct sign."
+        },
+        {
+          "title": "Best Practices",
+          "type": "list",
+          "items": [
+            "Label your cells (helps you stay organized)",
+            "Put inputs in separate cells (easy to change)",
+            "Double-check formula references",
+            "Use absolute references ($A$1) when copying formulas",
+            "Test with known values if unsure about syntax"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Spreadsheets: Your CPA Exam BFF",
+          "content": "Alright, listen up! I've seen too many candidates struggle on the TBS because they're trying to do everything by hand. Seriously, don't be a hero. The spreadsheet is your friend! Learn those formulas, especially the financial ones like PV, FV, and NPV. Trust me, knowing how to quickly calculate depreciation schedules or loan amortization in Excel will save you precious time and mental energy for the trickier conceptual questions. Plus, it's way more accurate than scribbling on a notepad!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Ignoring Relative vs. Absolute References",
+          "content": "One of the biggest spreadsheet blunders? Forgetting the difference between relative and absolute cell references ($A$1 vs. A1). Students often copy formulas down a column, expecting the cell references to stay fixed, only to get completely wrong results. Understand that A1 will change as you copy, while $A$1 will always refer to that specific cell. Use absolute references when you need a constant value, like a tax rate, to be used across multiple calculations. Practice using F4 to quickly toggle between reference types!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Budget Nightmare (Saved by SUMIF)",
+          "content": "Sarah, a newly minted CPA, was tasked with analyzing budget variances. She had a massive spreadsheet with hundreds of transactions, categorized by department. Initially, she tried manually filtering and summing the values for each department. After hours of tedious work and several errors, a senior colleague showed her the power of the SUMIF function. Using SUMIF, Sarah quickly and accurately calculated the total expenses for each department, saving her hours of work and preventing further costly mistakes. The moral: learn your SUMIF and SUMIFS!"
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Impact: Forecasting & Analysis",
+          "content": "In practice, you'll constantly use spreadsheet skills for forecasting, budgeting, and financial analysis. Think about projecting revenue growth, analyzing investment opportunities, or preparing pro forma financial statements. Knowing how to use functions like INDEX/MATCH, VLOOKUP, and pivot tables will drastically improve your efficiency and accuracy. These aren't just exam skills; they're essential tools for any CPA. Mastering them now will pay dividends throughout your career, allowing you to provide valuable insights and drive better business decisions."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Spreadsheet tool is available in many TBS\n\u2022 Key functions: SUM, PV, FV, PMT, IF\n\u2022 Use for complex/repetitive calculations\n\u2022 Label inputs, keep formulas simple\n\u2022 Practice spreadsheet functions before exam\n\u2022 Saves time and reduces arithmetic errors"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-018",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Written Communication: What Graders Want",
+    "description": "Understand the rubric and maximize your WC scores",
+    "order": 18,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "WC",
+      "Written Communication"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "WC Counts (On Some Sections)",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Written Communication (WC) tasks appear on FAR, AUD, and REG. They're graded on how well you communicate, not just accuracy. Even if your technical answer isn't perfect, strong writing can earn significant points."
+        },
+        {
+          "title": "The Grading Rubric",
+          "type": "table",
+          "headers": [
+            "Criterion",
+            "What Graders Assess"
+          ],
+          "rows": [
+            [
+              "Organization",
+              "Logical structure, clear intro/body/conclusion"
+            ],
+            [
+              "Development",
+              "Adequate detail, examples, explanations"
+            ],
+            [
+              "Expression",
+              "Clear, professional language, proper grammar"
+            ],
+            [
+              "Technical Content",
+              "Relevant, accurate application of concepts"
+            ]
+          ]
+        },
+        {
+          "title": "WC Structure Template",
+          "type": "list",
+          "items": [
+            "Opening: State the issue/purpose (1-2 sentences)",
+            "Body: Address each point with explanation (3-5 paragraphs)",
+            "Conclusion: Summarize recommendation/conclusion (1-2 sentences)",
+            "Professional greeting and closing (memo/letter format)"
+          ]
+        },
+        {
+          "title": "Example Opening",
+          "type": "example",
+          "content": "Dear [Client/Partner Name],\n\nPurpose: You have asked me to analyze the tax implications of [specific situation]. This memorandum addresses the treatment of [topic] under current tax law.\n\nOR\n\nRE: Analysis of Revenue Recognition for Contract XYZ\n\nThis memo provides guidance on the proper accounting treatment..."
+        },
+        {
+          "title": "What Earns Points",
+          "type": "list",
+          "items": [
+            "Professional tone (you're writing to a client/supervisor)",
+            "Organized paragraphs (one topic per paragraph)",
+            "Complete sentences (no bullet points in final answer)",
+            "Correct grammar and spelling (use spell check!)",
+            "Logical flow from point to point",
+            "Direct answer to the question asked"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "WC Grading: Think Like *They* Think",
+          "content": "Alright, future CPAs, let's be real. The graders aren't looking for Shakespeare. They're looking for competence. They want to see you can understand a scenario, apply relevant knowledge, and communicate clearly. Think about it: they're sifting through hundreds of these things. Make their lives easy! Clear, concise, well-organized responses are your best friend. Don't overcomplicate it. Nail the key points, show you understand the issue, and you're golden. Seriously, a well-structured but slightly less eloquent answer will often beat a beautifully written but rambling one."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The 'Kitchen Sink' Response: Avoid the Info Dump!",
+          "content": "One of the biggest mistakes students make is throwing every possible accounting concept at the problem, hoping something sticks. This 'kitchen sink' approach signals a lack of understanding. The graders aren't impressed by your ability to regurgitate information; they want to see that you can *apply* it appropriately. Instead of listing every relevant standard, carefully select the ones that directly address the specific issue in the scenario. A focused, well-reasoned response is far more effective than a broad, unfocused one. Quality over quantity, always!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's WC Nightmare: Too Much, Too Little",
+          "content": "Sarah, eager to impress, spent hours crafting a beautifully written response to a WC question. She used sophisticated vocabulary and cited numerous authorities. However, she failed to directly address the specific requirements of the prompt. Her score? Surprisingly low. The lesson? Don't let style overshadow substance. Prioritize answering the question directly and completely, even if it means sacrificing some stylistic flair. Always focus on the core requirements first."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Relevance: Client Communications",
+          "content": "Think about the reports you'll be writing as a CPA: audit findings, tax advice, consulting recommendations. Clients are paying you for clear, actionable insights. The written communication skills you hone for the CPA exam are directly applicable to those scenarios. If you can't explain complex accounting issues in a way that a non-accountant can understand, you're not providing value. Mastering these skills now will save you countless hours of revisions and client misunderstandings later in your career. This isn't just about passing a test; it's about becoming a better professional."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 WC graded on communication quality, not just accuracy\n\u2022 Use intro/body/conclusion structure\n\u2022 Professional memo or letter format\n\u2022 One topic per paragraph\n\u2022 Complete sentences, proper grammar\n\u2022 Spell check before submitting"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-019",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "IRAC Method for Tax Memos",
+    "description": "The proven legal/tax writing framework that graders love",
+    "order": 19,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "WC",
+      "Tax Memos"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "IRAC: The Gold Standard",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "IRAC (Issue, Rule, Analysis, Conclusion) is the standard framework for legal and tax writing. Using this structure ensures you address all elements graders look for and keeps your response organized."
+        },
+        {
+          "title": "IRAC Components",
+          "type": "table",
+          "headers": [
+            "Component",
+            "Purpose",
+            "Example Start"
+          ],
+          "rows": [
+            [
+              "Issue",
+              "State the question to be resolved",
+              "The issue is whether..."
+            ],
+            [
+              "Rule",
+              "State the applicable law/standard",
+              "Under IRC Section..."
+            ],
+            [
+              "Analysis",
+              "Apply rule to facts",
+              "In this case..."
+            ],
+            [
+              "Conclusion",
+              "Answer the question",
+              "Therefore..."
+            ]
+          ]
+        },
+        {
+          "title": "Example: IRAC Tax Memo",
+          "type": "example",
+          "content": "ISSUE: The issue is whether the $50,000 payment from ABC Corp to Mr. Smith constitutes compensation or a gift for tax purposes.\n\nRULE: Under IRC Section 102, gross income does not include the value of property acquired by gift. However, IRC Section 102(c) excludes from this treatment any amount transferred by an employer to an employee. The determination depends on the intent of the transferor.\n\nANALYSIS: In this case, Mr. Smith received the payment while employed by ABC Corp. The payment was designated as a 'retirement bonus.' Although ABC characterized it as a gift, the Supreme Court in Commissioner v. Duberstein established that the critical consideration is whether the payment was made from 'detached and disinterested generosity.'\n\nCONCLUSION: Therefore, the $50,000 payment should be treated as compensation and included in Mr. Smith's gross income."
+        },
+        {
+          "title": "IRAC Tips",
+          "type": "list",
+          "items": [
+            "State the issue as a question or 'whether' statement",
+            "Cite specific code sections/standards in the Rule",
+            "Analysis should connect facts to the rule",
+            "Conclusion should directly answer the issue",
+            "Don't introduce new information in Conclusion"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "IRAC: Your Secret Weapon for Tax Memo Domination",
+          "content": "Alright, future CPAs, let's talk turkey. The IRAC method isn't just some academic exercise. It's how real-world tax research and writing gets done. Think of it as your tax memo superpower. Graders (and partners!) LOVE a well-structured IRAC. Why? Because it shows clear thinking. Messy thinking = messy memos = unhappy bosses. Master IRAC, and you're not just passing the exam, you're setting yourself up to impress from day one. Trust me, it's worth the effort. Plus, less time agonizing over structure means more time\u2026 well, sleeping!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Issue Confusion: Don't Bury the Lede!",
+          "content": "A frequent error is failing to clearly and concisely state the Issue at the very beginning. Students often bury it within a lengthy factual recitation. The correct approach is to immediately identify the specific tax question being addressed. For example, instead of starting with \"John Smith sold his stock on December 31st...\", begin with \"The issue is whether the gain on the sale of stock by John Smith qualifies for the preferential capital gains rate under Section 1(h).\" Clarity upfront saves the reader time and sets the stage for a focused analysis. A well-defined issue is half the battle!"
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Tax Memo Mishap",
+          "content": "Sarah, a bright-eyed tax associate, drafted a memo on the deductibility of business meals. She spent hours researching the relevant code sections but forgot to explicitly apply the rules to the client's specific situation. The partner returned the memo, noting the lack of a clear 'Application' section. Sarah learned a valuable lesson: even perfect research is useless without a strong connection to the facts. Always tell the reader how the law applies to *this* specific client's situation."
+        },
+        {
+          "type": "in-practice",
+          "title": "IRAC: The Foundation of Tax Advice",
+          "content": "In practice, the IRAC method is the backbone of nearly every piece of tax advice you'll provide. Whether you're advising a client on a complex merger or simply answering a quick question about a deduction, a structured approach is essential. You'll use IRAC to analyze proposed transactions, document your reasoning for tax positions, and communicate your findings to clients and colleagues. Mastering IRAC now isn't just about passing the CPA exam; it's about building a solid foundation for a successful career in tax. Think of it as your professional 'north star'."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 IRAC = Issue, Rule, Analysis, Conclusion\n\u2022 Standard framework for tax/legal writing\n\u2022 Issue: State the question\n\u2022 Rule: Cite applicable law\n\u2022 Analysis: Apply rule to facts\n\u2022 Conclusion: Answer the question directly"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-020",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Common WC Mistakes",
+    "description": "Avoid these errors that cost candidates easy points",
+    "order": 20,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Strategy",
+      "WC",
+      "Mistakes"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Easy Points Lost",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Written Communication is one of the easiest places to earn points\u2014and lose them. These common mistakes cost candidates more than any technical errors. Avoid them and you're ahead of most test-takers."
+        },
+        {
+          "title": "Top WC Mistakes",
+          "type": "table",
+          "headers": [
+            "Mistake",
+            "Impact",
+            "Fix"
+          ],
+          "rows": [
+            [
+              "Bullet points only",
+              "Loses organization points",
+              "Write complete sentences/paragraphs"
+            ],
+            [
+              "No structure",
+              "Loses organization points",
+              "Use intro/body/conclusion"
+            ],
+            [
+              "Casual tone",
+              "Loses expression points",
+              "Professional language"
+            ],
+            [
+              "Spelling errors",
+              "Loses expression points",
+              "Use spell check"
+            ],
+            [
+              "Not answering the question",
+              "Loses all categories",
+              "Re-read prompt, address it directly"
+            ],
+            [
+              "Too short",
+              "Loses development points",
+              "Aim for 150-300 words"
+            ]
+          ]
+        },
+        {
+          "title": "Bullet Point Trap",
+          "type": "text",
+          "content": "Many candidates outline their answer in bullets and run out of time to convert to paragraphs. The grading rubric specifically looks for organized paragraphs. If you must start with bullets, LEAVE TIME to convert them."
+        },
+        {
+          "title": "Tone Problems",
+          "type": "example",
+          "content": "TOO CASUAL:\n'So basically the client can't deduct this because the IRS says no.'\n\nPROFESSIONAL:\n'Based on the applicable tax regulations, the deduction would not be allowable under IRC Section 162. Therefore, we recommend that the client not claim this expense on the return.'"
+        },
+        {
+          "title": "Quick WC Checklist",
+          "type": "list",
+          "items": [
+            "\u2610 Did I answer the actual question asked?",
+            "\u2610 Do I have intro, body, conclusion?",
+            "\u2610 Are all sentences complete (not bullets)?",
+            "\u2610 Is my tone professional?",
+            "\u2610 Did I run spell check?",
+            "\u2610 Is it long enough (150+ words)?"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Paragraphs, People! (Or Kiss Points Goodbye)",
+          "content": "Alright, future CPAs, let's be real. I've graded hundreds of these WC responses. I get it, time's tight. But listen, the graders aren't looking for a laundry list of bullet points. They want to see coherent, well-structured paragraphs. Think of it like this: are you trying to sound like a sophisticated CPA or a frantic student? Leave enough time to transform those bullets into prose. Trust me, those few minutes can make or break your score. You've got this, just don't skip the final polish!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "Bullet Point Prison: The Time Trap",
+          "content": "A common mistake is spending too long outlining in bullet points and then running out of time to convert them into proper paragraphs. Candidates think they're being efficient by listing ideas quickly, but they underestimate the time needed for synthesis and coherent writing. The grading rubric penalizes bullet-point responses. To avoid this, either skip bullets entirely and write directly in paragraphs from the start, or strictly time your outlining and allocate at least 20% of your time to paragraph conversion. Practice is key to estimating this conversion time."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Last-Minute Rewrite Regret",
+          "content": "Sarah, prepping for her BEC retake, outlined a brilliant WC response with detailed bullets. Feeling confident, she left only 10 minutes to convert them. Panic set in. The resulting paragraphs were rushed and disjointed. She missed key transitions and failed to fully develop her points. The lesson? Sarah learned the hard way that a well-structured outline is useless if you can't translate it into a polished final product with ample time."
+        },
+        {
+          "type": "in-practice",
+          "title": "Paragraphs: Not Just for Exams!",
+          "content": "In your professional life, you'll frequently draft memos, reports, and client communications. Imagine sending a partner a bullet-point summary of a complex tax issue! Unacceptable. The CPA exam's WC section is training you for this reality. The ability to articulate complex ideas in organized paragraphs is essential for effective communication and builds credibility. Mastering this skill now will benefit you daily, whether you're explaining audit findings to a client or justifying a tax position to the IRS."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 No bullet points\u2014write paragraphs\n\u2022 Always use intro/body/conclusion\n\u2022 Professional tone (not casual)\n\u2022 Run spell check (always!)\n\u2022 Answer the specific question asked\n\u2022 Aim for 150-300 words minimum"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-021",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Building Your Study Schedule",
+    "description": "Create a realistic, effective study plan for all four sections",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "beginner",
+    "topics": [
+      "Strategy",
+      "Planning",
+      "Schedule"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Plan to Win",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Candidates who create and follow a study schedule pass at significantly higher rates. Random studying leads to gaps in knowledge and wasted time. A structured plan ensures you cover everything and peak at the right time."
+        },
+        {
+          "title": "Recommended Study Hours",
+          "type": "table",
+          "headers": [
+            "Section",
+            "Study Hours",
+            "Typical Timeline"
+          ],
+          "rows": [
+            [
+              "FAR",
+              "120-150",
+              "8-12 weeks"
+            ],
+            [
+              "AUD",
+              "80-100",
+              "6-8 weeks"
+            ],
+            [
+              "REG",
+              "100-120",
+              "8-10 weeks"
+            ],
+            [
+              "Discipline (BAR/ISC/TCP)",
+              "80-100",
+              "6-8 weeks"
+            ]
+          ]
+        },
+        {
+          "title": "Study Schedule Framework",
+          "type": "list",
+          "items": [
+            "Week 1-2: Foundation (30% of content)",
+            "Week 3-5: Core learning (50% of content)",
+            "Week 6-7: Final content (20% of content)",
+            "Week 8: Comprehensive review",
+            "Final 3-5 days: Final review, practice exams"
+          ]
+        },
+        {
+          "title": "Daily Study Structure",
+          "type": "table",
+          "headers": [
+            "Time",
+            "Activity",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "First 15 min",
+              "Review yesterday's weak areas",
+              "Reinforce learning"
+            ],
+            [
+              "Main block",
+              "New content + practice",
+              "Core learning"
+            ],
+            [
+              "Last 15 min",
+              "Quick quiz on new material",
+              "Test understanding"
+            ],
+            [
+              "Throughout",
+              "70% practice, 30% reading",
+              "Active learning"
+            ]
+          ]
+        },
+        {
+          "title": "Weekly Check-ins",
+          "type": "text",
+          "content": "Every weekend, assess: Did I hit my targets? What topics need more work? Adjust your plan accordingly. Falling behind early compounds\u2014catch up immediately, don't push it to 'later.'"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Procrastination is a CPA Killer!",
+          "content": "Alright, future CPAs, let's be blunt. We've all been there: 'I'll catch up on Reg later.' Famous last words! This isn't undergrad; you can't cram. The CPA exam demands consistent effort. Treat your study schedule like a client deadline. Miss a client deadline, you get fired. Miss your CPA deadline, well, you're just delaying your career. Each weekend, be brutally honest with yourself. Did you REALLY understand those FAR journal entries? No? Then drill them! Don't let 'later' become 'never'."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The 'Perfect' Schedule Illusion",
+          "content": "A common mistake is spending more time *planning* the perfect study schedule than actually *studying*. Students get caught up in elaborate spreadsheets with color-coded time blocks, only to abandon them after a week. The problem? They're unrealistic. Life happens! Aim for a flexible schedule that allows for adjustments. Focus on hitting weekly targets, not adhering to a rigid minute-by-minute plan. A good guideline is to allocate 10-12 hours of study time per week per section. Remember, consistency trumps perfection."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Audit Nightmare",
+          "content": "Sarah, juggling audit busy season and BEC prep, consistently postponed BEC material review to weekends 'when she had more time.' Unexpected overtime at work ate into her weekend, leaving her scrambling. Result? She felt overwhelmed and bombed the BEC section by 10 points. The lesson: Prioritize even small blocks of study time during the week, even 30-60 minutes. Consistent exposure is more effective than sporadic marathon sessions. Don't let work completely derail your CPA dream."
+        },
+        {
+          "type": "in-practice",
+          "title": "Time Management: A CPA Superpower",
+          "content": "In practice, you're constantly managing multiple client deadlines simultaneously. Mastering your CPA study schedule is essentially a dry run for that reality. You'll need to prioritize tasks, allocate time effectively, and adapt to unexpected interruptions. Think of each section as a client. Neglecting one can lead to missed deadlines and compromised quality (and ultimately, a failed exam). The discipline you develop now will directly translate into increased efficiency and success as a CPA. Plus, less stress!"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Total: 350-450 hours across all sections\n\u2022 Plan 6-12 weeks per section\n\u2022 70% practice, 30% learning\n\u2022 Build in review time weekly\n\u2022 Final week = comprehensive review only\n\u2022 Adjust plan weekly based on progress"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-022",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Active vs Passive Studying",
+    "description": "Why practice beats reading and how to study effectively",
+    "order": 22,
+    "duration": 35,
+    "difficulty": "beginner",
+    "topics": [
+      "Strategy",
+      "Habits",
+      "Learning"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "The 70/30 Rule",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "The most effective CPA study ratio is 70% active practice, 30% passive learning. Most candidates do the opposite\u2014they read and watch lectures but don't practice enough. Practice is where learning becomes retention."
+        },
+        {
+          "title": "Active vs Passive",
+          "type": "table",
+          "headers": [
+            "Passive (30%)",
+            "Active (70%)"
+          ],
+          "rows": [
+            [
+              "Reading textbook",
+              "Doing MCQs"
+            ],
+            [
+              "Watching lectures",
+              "Working TBS"
+            ],
+            [
+              "Highlighting notes",
+              "Teaching concepts aloud"
+            ],
+            [
+              "Reviewing flashcards",
+              "Creating flashcards"
+            ],
+            [
+              "Listening to audio",
+              "Solving problems"
+            ]
+          ]
+        },
+        {
+          "title": "Why Active Learning Works",
+          "type": "list",
+          "items": [
+            "Retrieval practice strengthens memory",
+            "Mistakes identify knowledge gaps immediately",
+            "Simulates exam conditions",
+            "Builds pattern recognition for question types",
+            "Reveals what you THINK you know vs what you ACTUALLY know"
+          ]
+        },
+        {
+          "title": "The Illusion of Learning",
+          "type": "text",
+          "content": "Reading feels productive but creates 'familiarity' not 'knowledge.' You recognize a concept when you see it, but can't recall it on the exam. Only active practice creates true recall ability."
+        },
+        {
+          "title": "Effective Study Session",
+          "type": "example",
+          "content": "PASSIVE APPROACH (less effective):\n\u2022 Watch 2-hour lecture on leases\n\u2022 Read chapter on leases\n\u2022 Review notes\nTime: 3+ hours, Retention: Low\n\nACTIVE APPROACH (more effective):\n\u2022 Watch lecture (1.5x speed): 80 min\n\u2022 Do 20 MCQs on leases: 40 min\n\u2022 Review wrong answers: 20 min\n\u2022 Attempt 1 lease TBS: 20 min\nTime: 2.5 hours, Retention: High"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "My Biggest CPA Exam Regret (Don't Be Me!)",
+          "content": "Alright, listen up future CPAs. I spent way too much time *reading* Becker. Highlighted everything, felt like a genius. Then, BAM! Exam day, total brain freeze. Why? Because I thought passively absorbing information was enough. It's NOT. Treat your CPA prep like learning a sport. You can read about hitting a baseball all day, but until you actually *swing*, you're gonna strike out. So ditch the highlighter, grab those practice questions, and get your hands dirty. Trust me, your future self will thank you (and maybe buy you a beer)."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The 'Familiarity Trap' - Avoid This At All Costs!",
+          "content": "Students often confuse 'recognizing' a concept with 'knowing' a concept. You read about the Allowance for Doubtful Accounts, think 'Oh yeah, I remember that!' But can you actually calculate the required balance using the aging of receivables method under pressure? Probably not if all you did was read. The key difference is active recall. Force yourself to retrieve information from memory, rather than just passively re-reading it. Flashcards, practice questions, and teaching others are your best weapons against the familiarity trap."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Costly Mistake: The Power of Practice",
+          "content": "Sarah, a diligent CPA candidate, sailed through the REG textbook, acing all the chapter quizzes. Confident, she tackled a mock exam and\u2026 bombed the tax section. Turns out, she only 'knew' tax law conceptually, but couldn't apply it to complex scenarios. Her error? Insufficient practice. Sarah doubled down on simulations, forcing herself to actively apply the rules. The result? A passing score on the actual exam. Active practice, not passive reading, saved her CPA dream."
+        },
+        {
+          "type": "in-practice",
+          "title": "Real-World Impact: From Theory to Tax Returns",
+          "content": "In a typical month as a CPA, you'll encounter situations requiring active recall constantly. Think about preparing a client's Schedule C. You need to actively remember depreciation rules, expense deductibility criteria, and self-employment tax calculations \u2013 all on the fly. No one's going to let you passively read the tax code during a client meeting! Mastering active study techniques now ensures you can confidently and efficiently handle real-world accounting challenges, saving you (and your firm) time and money."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 70% active (practice), 30% passive (reading/lectures)\n\u2022 Reading creates familiarity, not knowledge\n\u2022 Practice reveals actual knowledge level\n\u2022 Speed up lectures (1.5x), maximize practice\n\u2022 Review wrong answers thoroughly\n\u2022 If you're not struggling, you're not learning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-023",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Final Review: Last 2 Weeks",
+    "description": "Maximize your score in the critical final stretch before exam day",
+    "order": 23,
+    "duration": 45,
+    "difficulty": "advanced",
+    "topics": [
+      "Strategy",
+      "Review",
+      "Final Prep"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "The Home Stretch",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "The final 2 weeks before your exam are critical. This isn't the time to learn new material\u2014it's time to consolidate, review, and peak at the right moment. Your final review strategy can make or break your score."
+        },
+        {
+          "title": "Final 2-Week Timeline",
+          "type": "table",
+          "headers": [
+            "Days Out",
+            "Focus",
+            "Activities"
+          ],
+          "rows": [
+            [
+              "14-10",
+              "Weak area intensive",
+              "Target lowest-scoring topics"
+            ],
+            [
+              "9-7",
+              "Comprehensive review",
+              "Full-length practice exams"
+            ],
+            [
+              "6-4",
+              "TBS and simulations",
+              "Timed TBS practice"
+            ],
+            [
+              "3-2",
+              "High-yield review",
+              "Key formulas, rules, concepts"
+            ],
+            [
+              "1",
+              "Light review only",
+              "Rest, confidence building"
+            ]
+          ]
+        },
+        {
+          "title": "Weak Area Strategy",
+          "type": "list",
+          "items": [
+            "Review your MCQ analytics\u2014which topics are lowest?",
+            "Focus 70% of time on bottom 3-5 topics",
+            "Do targeted practice sets (20-30 MCQs per topic)",
+            "Don't try to master everything\u2014aim for 'competent'",
+            "Diminishing returns: Stop when you plateau"
+          ]
+        },
+        {
+          "title": "Practice Exam Strategy",
+          "type": "text",
+          "content": "Take 2-3 full practice exams under real conditions: Timed, no breaks except scheduled, no reference materials. Review results to identify patterns. Your practice exam score will likely be close to your real score."
+        },
+        {
+          "title": "Day Before Exam",
+          "type": "list",
+          "items": [
+            "Light review only (1-2 hours max)",
+            "Review high-yield summary sheets",
+            "NO new material\u2014it creates anxiety",
+            "Confirm test center location and time",
+            "Prepare ID, confirmation, snacks",
+            "Get full night's sleep (8+ hours)"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Practice Exams: Your Crystal Ball?",
+          "content": "Alright, future CPAs, let's be real. These last two weeks are about fine-tuning, not cramming. Think of those practice exams as your crystal ball. They're not perfect, but they give you a pretty darn good idea of what's coming. Treat them like the real deal \u2013 timed, silent, and as uncomfortable as possible. Seriously, wear that tie and sit in a dimly lit room if you have to! The closer you simulate the actual exam, the more accurate the prediction. Don't freak out if you're not hitting 75%, just learn from those mistakes and adjust your strategy."
+        },
+        {
+          "type": "common-mistake",
+          "title": "Ignoring Weak Areas (Big No-No!)",
+          "content": "A common mistake is only reviewing topics you're comfortable with. It *feels* good, but it's a terrible strategy. If your practice exams consistently show weakness in, say, governmental accounting, you need to laser-focus on that area. Don't brush it off hoping it won't show up. The AICPA is sneaky! Identify those problem areas, drill down with targeted questions, and conquer them. Ignoring them is like leaving a gaping hole in your armor \u2013 the exam will find it."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Simulated Stress Test",
+          "content": "Sarah scheduled three full practice exams in the final two weeks. On the first one, she panicked under time pressure, leaving two simulations completely blank. Instead of giving up, she analyzed why she ran out of time and adjusted her pacing strategy. By the third exam, she had a much better grasp of time management and completed everything. The lesson? Practice isn't just about content; it's about building exam stamina and strategy."
+        },
+        {
+          "type": "in-practice",
+          "title": "Time Management is Key to Real-World Success",
+          "content": "In practice, tight deadlines are the norm. Think tax season! The ability to quickly analyze information, prioritize tasks, and efficiently allocate your time is critical. These practice exams are more than just CPA prep; they're building the skills you'll use every day as a CPA. If you can't manage time effectively on a practice exam, you'll struggle to meet deadlines and manage multiple clients in the real world. Master it now and save yourself headaches (and potential penalties) later."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Final 2 weeks = consolidation, not new learning\n\u2022 Focus 70% on weakest topics\n\u2022 Take 2-3 full practice exams\n\u2022 Last 3 days = high-yield review only\n\u2022 Day before = rest and preparation\n\u2022 Peak at the right time\u2014don't burn out early"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-024",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Test Day Protocol",
+    "description": "Everything you need to know from morning routine to walking out",
+    "order": 24,
+    "duration": 40,
+    "difficulty": "beginner",
+    "topics": [
+      "Logistics",
+      "Test Day"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Game Day",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Test day logistics matter more than most candidates realize. Arriving stressed, forgetting required items, or mismanaging your energy can cost points. Follow this protocol to arrive calm and ready to perform."
+        },
+        {
+          "title": "What to Bring",
+          "type": "table",
+          "headers": [
+            "Required",
+            "Recommended"
+          ],
+          "rows": [
+            [
+              "Two forms of valid ID",
+              "Snacks (for breaks)"
+            ],
+            [
+              "NTS (Notice to Schedule)",
+              "Water bottle"
+            ],
+            [
+              "Confirmation email",
+              "Light jacket (rooms are cold)"
+            ],
+            [
+              "Nothing else allowed in room",
+              "Earplugs (if sensitive to noise)"
+            ]
+          ]
+        },
+        {
+          "title": "Morning Routine",
+          "type": "list",
+          "items": [
+            "Wake up 3+ hours before exam",
+            "Eat a normal breakfast (protein, not sugar)",
+            "Light physical activity (walk, stretch)",
+            "Review 1-page summary sheet (optional)",
+            "Arrive at test center 30 min early",
+            "Use restroom before check-in"
+          ]
+        },
+        {
+          "title": "At the Test Center",
+          "type": "list",
+          "items": [
+            "Check in with ID and confirmation",
+            "Store belongings in locker (phone OFF)",
+            "Read and sign agreements",
+            "Photo and palm scan taken",
+            "Escorted to your workstation",
+            "Tutorial time doesn't count against exam time"
+          ]
+        },
+        {
+          "title": "During the Exam",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Strategy"
+          ],
+          "rows": [
+            [
+              "First 5 min",
+              "Calm down, read carefully, find rhythm"
+            ],
+            [
+              "MCQ testlets",
+              "Pace yourself, mark and move"
+            ],
+            [
+              "Break",
+              "Restroom, snack, stretch, deep breaths"
+            ],
+            [
+              "TBS testlets",
+              "Scan all, prioritize, manage time"
+            ],
+            [
+              "Final 15 min",
+              "Review marked items, enter all answers"
+            ]
+          ]
+        },
+        {
+          "title": "After the Exam",
+          "type": "text",
+          "content": "You'll see a 'Testing Complete' screen but NOT your score. Scores are released on specific dates (usually 1-2 weeks for most windows). Don't obsess over questions you remember\u2014it's done. Celebrate completing a section!"
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Test Day Sanity: My Pre-Exam Ritual (and why)",
+          "content": "Okay, let's be real. Test day is nerve-wracking. My personal strategy? I treated it like a game day \u2013 remember those? Solid breakfast (no crazy new foods!), a playlist that pumps me up (think less Mozart, more Queen), and a practice run to the testing center a week before. Knowing exactly where to park and how long it takes to get inside cut my anxiety in half. Trust me, plan ahead! Also, pack a protein bar. That mid-exam hunger pang can kill your focus."
+        },
+        {
+          "type": "common-mistake",
+          "title": "The 'Forgot My ID' Fiasco",
+          "content": "A common mistake? Assuming any old ID will do. The AICPA is super strict. Your ID must be current, government-issued, and include your photo and signature. Expired driver's licenses or student IDs won't cut it. Double, triple check the name on your ID matches EXACTLY the name you registered with. Even a slight discrepancy can lead to denial. Before you leave the house, confirm your ID is in your bag! Save yourself the stress and potential rescheduling fees."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Scheduling Snafu",
+          "content": "Sarah booked her FAR exam for 8 AM, thinking she'd get it over with early. However, she forgot about rush hour traffic in her city. She arrived at the testing center flustered, 15 minutes late, and was denied entry. The lesson here? Factor in travel time, potential delays, and give yourself a buffer. Consider booking a later slot if mornings are hectic. A calm start is crucial for performance."
+        },
+        {
+          "type": "in-practice",
+          "title": "Test Day Prep = Professionalism",
+          "content": "While this lesson seems focused on test day, it mirrors real-world deadlines. Missing a filing deadline for a client because you weren't prepared is unacceptable. The meticulous planning required for the CPA exam \u2013 knowing your schedule, gathering documents, anticipating potential issues \u2013 directly translates to managing client engagements and meeting tight deadlines in your future career. Treat the exam like your first big professional project."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Two valid IDs + NTS required\n\u2022 Arrive 30 min early\n\u2022 Normal breakfast, no cramming morning of\n\u2022 Use breaks strategically\n\u2022 Scores released later (not immediate)\n\u2022 Celebrate completing each section!"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PREP-025",
+    "section": "PREP",
+    "courseId": "cpa",
+    "title": "Managing Test Anxiety",
+    "description": "Mental strategies to stay calm and perform at your best",
+    "order": 25,
+    "duration": 40,
+    "difficulty": "beginner",
+    "topics": [
+      "Mental Game",
+      "Anxiety",
+      "Performance"
+    ],
+    "content": {
+      "sections": [
+        {
+          "title": "Anxiety Is Normal",
+          "type": "callout",
+          "calloutType": "important",
+          "content": "Every candidate experiences test anxiety\u2014it's hardwired into humans. The goal isn't to eliminate anxiety (impossible), but to manage it so it doesn't hurt your performance. Managed well, some anxiety actually improves focus."
+        },
+        {
+          "title": "Physical Symptoms & Solutions",
+          "type": "table",
+          "headers": [
+            "Symptom",
+            "Quick Fix"
+          ],
+          "rows": [
+            [
+              "Racing heart",
+              "Deep breaths: 4 sec in, 4 sec hold, 4 sec out"
+            ],
+            [
+              "Sweaty palms",
+              "Wipe hands, focus on next question"
+            ],
+            [
+              "Mind blank",
+              "Close eyes, breathe, re-read question slowly"
+            ],
+            [
+              "Nausea",
+              "Sip water, focus on breathing"
+            ],
+            [
+              "Shaking hands",
+              "Squeeze fists tight 5 sec, release, repeat"
+            ]
+          ]
+        },
+        {
+          "title": "Mental Reframes",
+          "type": "list",
+          "items": [
+            "'I'm nervous' \u2192 'I'm excited and ready'",
+            "'I don't know this' \u2192 'I can figure this out'",
+            "'I'm going to fail' \u2192 'I'm prepared and capable'",
+            "'This is hard' \u2192 'This is supposed to be hard'",
+            "'Everyone else is smarter' \u2192 'Everyone feels this way'"
+          ]
+        },
+        {
+          "title": "The Box Breathing Technique",
+          "type": "example",
+          "content": "When panic hits, use Box Breathing (used by Navy SEALs):\n\n1. Breathe IN for 4 seconds\n2. HOLD for 4 seconds\n3. Breathe OUT for 4 seconds\n4. HOLD for 4 seconds\n5. Repeat 4 times\n\nThis activates your parasympathetic nervous system and physically calms your body. Do this before the exam starts and during breaks."
+        },
+        {
+          "title": "Panic Protocol",
+          "type": "list",
+          "items": [
+            "STOP: Recognize you're panicking",
+            "BREATHE: 4 box breaths",
+            "GROUND: Feel your feet on floor, hands on desk",
+            "REFOCUS: Read the current question slowly",
+            "CONTINUE: Answer this one question, then the next"
+          ]
+        },
+        {
+          "title": "Long-Term Anxiety Management",
+          "type": "list",
+          "items": [
+            "Practice under timed conditions regularly",
+            "Simulate test environment during practice",
+            "Visualize success (not failure)",
+            "Exercise regularly during study period",
+            "Maintain sleep schedule (anxiety worsens with fatigue)"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "",
+          "content": "<!-- ENGAGEMENT SECTIONS (2026-02-28) -->"
+        },
+        {
+          "type": "real-talk",
+          "title": "Confessions of a Recovering CPA Exam Anxious",
+          "content": "Alright, let's be real. I almost threw up before FAR. Seriously. The key is acknowledging the anxiety is there. Don't fight it! Treat it like that annoying coworker \u2013 acknowledge them, but don't let them run the show. I used to visualize crushing the exam like smashing a watermelon. Corny, I know, but it helped. Deep breaths, positive self-talk, and maybe skip the caffeine the morning of. You've put in the work; trust your preparation. You got this!"
+        },
+        {
+          "type": "common-mistake",
+          "title": "The 'I'll Power Through' Trap",
+          "content": "A common mistake is ignoring anxiety symptoms until they become overwhelming. Students think they can just 'tough it out.' This backfires spectacularly. Anxiety unchecked spirals. Instead, recognize your triggers (e.g., a tricky SIM, running out of time on a practice exam). Then, have a pre-planned response: close your eyes, take 3 deep breaths, and re-focus on the next question. Small, consistent interventions are far more effective than a last-minute panic attack."
+        },
+        {
+          "type": "case-study",
+          "title": "Sarah's Mid-Exam Meltdown",
+          "content": "Sarah, nearing the end of her REG exam, hit a tax SIM she couldn't crack. Her heart raced, her palms sweated, and self-doubt flooded her mind. Instead of panicking, Sarah remembered her practice drills. She took a minute to breathe, skipped the SIM, and moved on to the next question. By returning to it later with a clearer head, she managed to salvage the points and pass the exam. The lesson? Prioritize self-regulation over perfection on every single question."
+        },
+        {
+          "type": "in-practice",
+          "title": "Anxiety in the Real World: Deadlines and Demands",
+          "content": "As a CPA, you'll face constant deadlines and pressure. Tax season, audit fieldwork, SEC filings \u2013 all high-stress environments. The mental strategies you learn for the CPA exam are directly applicable. If you can manage your anxiety during a 4-hour exam, you can handle a demanding client. Practice techniques like mindfulness and time management. These aren't just exam hacks; they're essential skills for a successful and sustainable career in accounting."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": "\u2022 Anxiety is normal\u2014everyone experiences it\n\u2022 Box breathing calms physical symptoms\n\u2022 Reframe negative thoughts to positive\n\u2022 Practice under test conditions to reduce fear\n\u2022 If you panic: Stop, Breathe, Ground, Refocus\n\u2022 Sleep and exercise reduce baseline anxiety"
+        }
+      ]
+    }
+  }
+]

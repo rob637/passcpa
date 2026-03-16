@@ -31,7 +31,7 @@ interface StudyMode {
 
 const Study = () => {
   const { userProfile } = useAuth();
-  const { todayLog, dailyProgress, dailyGoalMet } = useStudy();
+  const { todayLog, dailyProgress, dailyGoalMet, sectionEarnedPoints } = useStudy();
   const { courseId, course } = useCourse();
   const [recentItems, setRecentItems] = useState<{ type: string; title: string; subtitle: string; link: string }[]>([]);
 
@@ -247,7 +247,7 @@ const Study = () => {
 
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-xl font-bold text-slate-900 dark:text-white">{todayLog?.earnedPoints || 0}</div>
+              <div className="text-xl font-bold text-slate-900 dark:text-white">{sectionEarnedPoints || 0}</div>
               <div className="text-xs text-slate-600 dark:text-slate-400">Points Earned</div>
             </div>
             <div>

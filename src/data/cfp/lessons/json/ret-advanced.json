@@ -1,0 +1,1270 @@
+[
+  {
+    "id": "CFP-RET-L021",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "SECURE Act 2.0 and Legislative Updates",
+    "description": "Apply key provisions of SECURE Act 2.0",
+    "order": 21,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Apply key provisions of SECURE Act 2.0",
+      "Explain changes to RMD rules and age thresholds",
+      "Evaluate new Roth options in employer plans",
+      "Analyze emergency savings provisions"
+    ],
+    "blueprintArea": "RET-5",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "SECURE 2.0 (2022) builds on the original SECURE Act (2019), implementing dozens of retirement planning changes. Understanding these provisions is essential for current practice."
+        },
+        {
+          "title": "RMD Age Changes",
+          "type": "table",
+          "headers": [
+            "Birth Year Range",
+            "RMD Beginning Age"
+          ],
+          "rows": [
+            [
+              "Before 1951",
+              "70\u00bd (old rule)"
+            ],
+            [
+              "1951-1959",
+              "73 (SECURE 2.0)"
+            ],
+            [
+              "1960 or later",
+              "75 (effective 2033)"
+            ]
+          ]
+        },
+        {
+          "title": "RMD Penalty Reduction",
+          "type": "text",
+          "content": "Old rule: 50% penalty on missed RMD. New rule (SECURE 2.0): 25% penalty, reduced to 10% if corrected within 2 years."
+        },
+        {
+          "title": "Roth Accounts in Plans",
+          "type": "callout",
+          "content": "Starting 2024, Roth 401(k)/403(b) accounts have NO RMDs for original owner. This aligns them with Roth IRAs\u2014major planning change."
+        },
+        {
+          "title": "Enhanced Catch-Up Contributions",
+          "type": "table",
+          "headers": [
+            "Age",
+            "Standard 401(k)/403(b) Limit (2026)",
+            "Catch-Up"
+          ],
+          "rows": [
+            [
+              "Under 50",
+              "$24,500",
+              "N/A"
+            ],
+            [
+              "50-59",
+              "$24,500",
+              "+$7,500"
+            ],
+            [
+              "60-63",
+              "$24,500",
+              "+$11,250 (super catch-up)"
+            ],
+            [
+              "64+",
+              "$24,500",
+              "+$7,500"
+            ]
+          ]
+        },
+        {
+          "title": "Mandatory Roth Catch-Ups",
+          "type": "warning",
+          "content": "Starting 2026, catch-up contributions for those earning >$145,000 must be designated Roth. No more pre-tax catch-ups for high earners."
+        },
+        {
+          "title": "New Account Types and Features",
+          "type": "table",
+          "headers": [
+            "Feature",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Emergency Savings Accounts",
+              "$2,500 limit, Roth treatment, tax-free withdrawals"
+            ],
+            [
+              "529-to-Roth Rollovers",
+              "529 must be open 15+ years, $35,000 lifetime limit per beneficiary"
+            ],
+            [
+              "Starter 401(k)",
+              "Simplified plan with IRA limits, exempt from testing"
+            ],
+            [
+              "Student Loan Match",
+              "Employer can match student loan payments"
+            ]
+          ]
+        },
+        {
+          "title": "Penalty-Free Withdrawals Expanded",
+          "type": "table",
+          "headers": [
+            "Exception",
+            "Amount",
+            "Status"
+          ],
+          "rows": [
+            [
+              "Domestic abuse victim",
+              "Lesser of $10,000 or 50% vested",
+              "New"
+            ],
+            [
+              "Terminal illness",
+              "Any amount",
+              "Clarified"
+            ],
+            [
+              "Disaster",
+              "$22,000",
+              "Expanded"
+            ],
+            [
+              "Emergency personal expenses",
+              "$1,000/year (repayable)",
+              "New"
+            ]
+          ]
+        },
+        {
+          "title": "Auto-Enrollment Expansion",
+          "type": "text",
+          "content": "Effective 2025, new 401(k) and 403(b) plans must include automatic enrollment: Initial rate 3-10%, auto-escalation 1%/year until 10-15%, opt-out permitted. Exempted: Plans before 2025, employers with <10 employees, churches, governmental plans."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "RMD age rises to 73 (2023) and 75 (2033)",
+            "No RMDs from Roth 401(k)/403(b) starting 2024",
+            "Super catch-up for ages 60-63 starting 2025",
+            "529-to-Roth transfers now possible with restrictions",
+            "Student loan matching helps debt-burdened savers"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "RMD Penalty Reduction: Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Under SECURE Act 2.0, what is the standard penalty for failing to take a Required Minimum Distribution (RMD) if the failure is NOT corrected within two years?",
+            "options": [
+              "10%",
+              "25%",
+              "50%",
+              "There is no penalty under SECURE Act 2.0"
+            ],
+            "correctIndex": 1,
+            "explanation": "SECURE Act 2.0 reduced the penalty for failing to take an RMD to 25%. The penalty can be further reduced to 10% if the error is corrected within two years. If not corrected within two years, the penalty remains at 25%.",
+            "hint": "Consider the timeline for correction."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Emergency Savings Account Recall",
+          "reveal": {
+            "question": "Under SECURE Act 2.0, what's a key benefit for lower-income workers regarding employer-sponsored emergency savings accounts?",
+            "answer": "Employers may be able to automatically enroll employees in emergency savings accounts, often Roth-designated, and may be able to match employee contributions, providing a significant boost to savings for those who need it most."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "RMD Penalty: Before and After SECURE Act 2.0",
+          "comparison": {
+            "headers": [
+              "Pre-SECURE Act 2.0",
+              "SECURE Act 2.0"
+            ],
+            "rows": [
+              {
+                "label": "Standard Penalty for Missed RMD",
+                "values": [
+                  "50%",
+                  "25%"
+                ]
+              },
+              {
+                "label": "Reduced Penalty if Corrected Within 2 Years",
+                "values": [
+                  "Not Applicable",
+                  "10%"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L022",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Tax-Efficient Retirement Income Strategies",
+    "description": "Optimize withdrawal sequencing across account types",
+    "order": 22,
+    "duration": 55,
+    "difficulty": "advanced",
+    "topics": [
+      "Optimize withdrawal sequencing across account types",
+      "Apply tax bracket management strategies",
+      "Evaluate Roth conversion opportunities in retirement",
+      "Minimize impact on Social Security and Medicare"
+    ],
+    "blueprintArea": "RET-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "How you withdraw from retirement accounts matters as much as how you save. Strategic withdrawal sequencing can save hundreds of thousands in lifetime taxes."
+        },
+        {
+          "title": "The Three Account Types",
+          "type": "table",
+          "headers": [
+            "Account Type",
+            "Contributions",
+            "Growth",
+            "Withdrawals"
+          ],
+          "rows": [
+            [
+              "Tax-Deferred (Traditional IRA, 401k)",
+              "Pre-tax deduction",
+              "Tax-deferred",
+              "Ordinary income"
+            ],
+            [
+              "Tax-Free (Roth IRA, Roth 401k)",
+              "After-tax",
+              "Tax-free",
+              "Tax-free (qualified)"
+            ],
+            [
+              "Taxable (Brokerage)",
+              "After-tax",
+              "Taxed annually",
+              "Capital gains on sale"
+            ]
+          ]
+        },
+        {
+          "title": "Why Sequencing Matters",
+          "type": "text",
+          "content": "Withdrawing from the wrong account can push you into higher tax brackets, increase Medicare premiums (IRMAA), increase Social Security taxation, and trigger Net Investment Income Tax."
+        },
+        {
+          "title": "Traditional vs. Dynamic Withdrawal",
+          "type": "table",
+          "headers": [
+            "Traditional Wisdom",
+            "Problems",
+            "Better Approach"
+          ],
+          "rows": [
+            [
+              "Taxable first",
+              "Wastes low brackets early",
+              "Fill low brackets with pre-tax"
+            ],
+            [
+              "Tax-deferred second",
+              "Large RMDs later",
+              "Strategic Roth conversions"
+            ],
+            [
+              "Tax-free last",
+              "May not use it yourself",
+              "Use Roth for bracket overflow"
+            ]
+          ]
+        },
+        {
+          "title": "Dynamic Withdrawal Strategy",
+          "type": "table",
+          "headers": [
+            "Year Type",
+            "Strategy"
+          ],
+          "rows": [
+            [
+              "Low-income years (early retirement)",
+              "Roth conversions, realize capital gains"
+            ],
+            [
+              "Pre-RMD years",
+              "Draw down taxable + strategic conversions"
+            ],
+            [
+              "RMD years",
+              "Satisfy RMDs, minimize other taxable income"
+            ],
+            [
+              "High-income years",
+              "Tap Roth accounts to avoid bracket creep"
+            ]
+          ]
+        },
+        {
+          "title": "2026 Tax Bracket Boundaries (MFJ)",
+          "type": "table",
+          "headers": [
+            "Bracket",
+            "Top of Bracket"
+          ],
+          "rows": [
+            [
+              "10%",
+              "$24,500"
+            ],
+            [
+              "12%",
+              "$99,550"
+            ],
+            [
+              "22%",
+              "$212,300"
+            ],
+            [
+              "24%",
+              "$405,400"
+            ]
+          ]
+        },
+        {
+          "title": "Roth Conversions in Retirement",
+          "type": "table",
+          "headers": [
+            "When Conversions Make Sense",
+            "Why"
+          ],
+          "rows": [
+            [
+              "Early retirement with low income",
+              "Convert at low rates"
+            ],
+            [
+              "Before Social Security starts",
+              "Avoid SS taxation"
+            ],
+            [
+              "Before RMDs begin",
+              "Reduce future RMDs"
+            ],
+            [
+              "Estate planning priority",
+              "Leave tax-free assets to heirs"
+            ]
+          ]
+        },
+        {
+          "title": "Calculating Conversion \"Room\"",
+          "type": "text",
+          "content": "Example: Standard deduction (MFJ) $30,700, Other income $30,000, Top of 12% bracket $99,400. \"Room\" in 12% bracket = $99,400 - $30,700 - $30,000 = $38,700. Convert up to $38,700 without entering 22% bracket."
+        },
+        {
+          "title": "Social Security Taxation",
+          "type": "table",
+          "headers": [
+            "Combined Income (MFJ)",
+            "% of SS Taxable"
+          ],
+          "rows": [
+            [
+              "<$32,000",
+              "0%"
+            ],
+            [
+              "$32,000-$44,000",
+              "Up to 50%"
+            ],
+            [
+              ">$44,000",
+              "Up to 85%"
+            ]
+          ]
+        },
+        {
+          "title": "Key Strategy",
+          "type": "callout",
+          "content": "Roth withdrawals don't count in \"combined income\" for SS taxation or IRMAA thresholds. Use Roth to keep combined income below critical thresholds."
+        },
+        {
+          "title": "IRMAA Planning",
+          "type": "text",
+          "content": "Medicare premiums increase for higher earners based on MAGI from 2 years prior. Strategy: Manage income two years before Medicare enrollment, do large Roth conversions before age 63 (before affecting premiums at 65), use Roth distributions to stay below thresholds."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Sequence withdrawals to minimize lifetime taxes, not just this year's",
+            "Fill lower brackets with taxable income; use Roth for overflow",
+            "Convert to Roth during low-income years before RMDs and SS",
+            "Roth withdrawals don't affect SS taxation or IRMAA",
+            "Plan two years ahead for Medicare premium management"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Understanding Tax Bracket Management",
+          "knowledgeCheck": {
+            "question": "Which of the following strategies is MOST effective for managing tax brackets during retirement withdrawals?",
+            "options": [
+              "Maximizing withdrawals from tax-deferred accounts early in retirement, regardless of current tax bracket.",
+              "Withdrawing from Roth accounts exclusively to avoid any current taxation.",
+              "Strategically combining withdrawals from taxable, tax-deferred, and tax-free accounts to stay within desired tax brackets.",
+              "Ignoring tax implications and focusing solely on maximizing investment returns."
+            ],
+            "correctIndex": 2,
+            "explanation": "Strategic tax bracket management involves carefully planning withdrawals from different account types to avoid pushing into higher tax brackets. This often means combining taxable, tax-deferred, and tax-free withdrawals to optimize the tax burden.",
+            "hint": "Consider the impact of different account types on your taxable income."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall: IRMAA Thresholds",
+          "reveal": {
+            "question": "What does IRMAA stand for, and why is it important to consider during retirement income planning?",
+            "answer": "IRMAA stands for Income-Related Monthly Adjustment Amount. It's important because it can significantly increase Medicare Part B and Part D premiums for high-income retirees. Strategic withdrawal planning can help minimize or avoid IRMAA surcharges."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Roth Conversions: Pros and Cons",
+          "comparison": {
+            "headers": [
+              "Pros of Roth Conversions in Retirement",
+              "Cons of Roth Conversions in Retirement"
+            ],
+            "rows": [
+              {
+                "label": "Tax Implications",
+                "values": [
+                  "Pay taxes now at potentially lower rates than future required minimum distributions (RMDs).",
+                  "Conversion amount is taxed as ordinary income in the year of conversion."
+                ]
+              },
+              {
+                "label": "Future Tax Benefits",
+                "values": [
+                  "Qualified withdrawals in retirement are tax-free, providing tax diversification.",
+                  "Can increase current tax liability and potentially push you into a higher tax bracket or trigger IRMAA."
+                ]
+              },
+              {
+                "label": "Estate Planning",
+                "values": [
+                  "Beneficiaries receive tax-free inheritances.",
+                  "May not be beneficial if you anticipate being in a lower tax bracket in retirement."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L023",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Early Retirement Strategies",
+    "description": "Apply Rule of 55 and SEPP (72(t)) exceptions",
+    "order": 23,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Apply Rule of 55 and SEPP (72(t)) exceptions",
+      "Evaluate bridge strategies to age 59\u00bd",
+      "Calculate sustainable withdrawal rates for early retirees",
+      "Plan healthcare coverage before Medicare eligibility"
+    ],
+    "blueprintArea": "RET-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Retiring before 59\u00bd requires careful planning to access retirement funds without penalties. Understanding the available exceptions is essential."
+        },
+        {
+          "title": "Key Penalty Exceptions",
+          "type": "table",
+          "headers": [
+            "Exception",
+            "401(k)/403(b)",
+            "IRA"
+          ],
+          "rows": [
+            [
+              "Rule of 55",
+              "\u2705",
+              "\u274c"
+            ],
+            [
+              "SEPP/72(t)",
+              "\u2705",
+              "\u2705"
+            ],
+            [
+              "Disability",
+              "\u2705",
+              "\u2705"
+            ],
+            [
+              "Death",
+              "\u2705",
+              "\u2705"
+            ],
+            [
+              "Medical expenses >7.5% AGI",
+              "\u2705",
+              "\u2705"
+            ],
+            [
+              "First-time home ($10K)",
+              "\u274c",
+              "\u2705"
+            ],
+            [
+              "Higher education",
+              "\u274c",
+              "\u2705"
+            ]
+          ]
+        },
+        {
+          "title": "Rule of 55",
+          "type": "text",
+          "content": "Penalty-free access to 401(k)/403(b) if you leave employment at age 55 or older in the year of separation. Only applies to the plan at that employer\u2014not IRAs, not rolled-over plans from previous employers. SECURE 2.0: Lowered to age 50 for public safety employees."
+        },
+        {
+          "title": "Exam Tip",
+          "type": "warning",
+          "content": "If you quit at 54, even if you turn 55 the same year, the Rule of 55 doesn't apply. You must be 55 or older in the year of separation."
+        },
+        {
+          "title": "SEPP (72(t)) Requirements",
+          "type": "table",
+          "headers": [
+            "Requirement",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Duration",
+              "5 years or until age 59\u00bd, whichever is LATER"
+            ],
+            [
+              "Frequency",
+              "At least annual payments"
+            ],
+            [
+              "Methods",
+              "RMD, Fixed Amortization, Fixed Annuitization"
+            ],
+            [
+              "Modification",
+              "If modified, retroactive 10% penalty applies"
+            ]
+          ]
+        },
+        {
+          "title": "SEPP Calculation Example",
+          "type": "text",
+          "content": "IRA Balance: $1,000,000, Age: 50. Life Expectancy Method: Balance / 34.2 years = ~$29,240/year. Fixed Amortization (at 4%): ~$52,000/year. Warning: Locked in for 9.5 years (longer of 5 years or until 59\u00bd). Cannot modify without retroactive penalty."
+        },
+        {
+          "title": "Taxable Account Bridge Strategy",
+          "type": "text",
+          "content": "Use taxable investments to fund living expenses until age 59\u00bd, leaving retirement accounts intact. Ages 50-54: Live on taxable account. Age 55: Rule of 55 unlocks 401(k). Age 59\u00bd: All accounts accessible. Tax efficiency: Long-term capital gains may be taxed at 0%/15%/20%."
+        },
+        {
+          "title": "Roth Conversion Ladder",
+          "type": "list",
+          "items": [
+            "1. Convert Traditional IRA to Roth each year",
+            "2. Wait 5 years (seasoning requirement)",
+            "3. Withdraw converted amounts penalty-free",
+            "Each conversion has its own 5-year clock",
+            "Requires planning 5+ years ahead"
+          ]
+        },
+        {
+          "title": "Healthcare Bridge Options",
+          "type": "table",
+          "headers": [
+            "Option",
+            "Pros",
+            "Cons"
+          ],
+          "rows": [
+            [
+              "ACA Marketplace",
+              "Income-based subsidies",
+              "Must manage income carefully"
+            ],
+            [
+              "COBRA",
+              "Continue employer coverage",
+              "Expensive (full cost + 2%)"
+            ],
+            [
+              "Spouse coverage",
+              "May be generous",
+              "Tied to spouse's employment"
+            ],
+            [
+              "Short-term plans",
+              "Cheap",
+              "Limited coverage"
+            ]
+          ]
+        },
+        {
+          "title": "ACA Subsidy Strategy",
+          "type": "callout",
+          "content": "Keep MAGI below 400% of FPL for premium tax credits (~$60,240 single, ~$124,800 family of 4). Use Roth withdrawals (not counted in MAGI) to stay below subsidy thresholds."
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Rule of 55 unlocks 401(k) at separation from service at 55+",
+            "SEPP/72(t) allows any-age access with serious commitment",
+            "Taxable accounts bridge to 59\u00bd at favorable rates",
+            "Roth ladder provides penalty-free access after 5-year seasoning",
+            "Healthcare costs are the biggest early retirement wildcard"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Rule of 55 Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Sarah, age 56, is considering early retirement. She currently works for Acme Corp and has a 401(k) with them. She also has a traditional IRA funded with rollovers from previous employers. If Sarah separates from service with Acme Corp this year, which of the following statements is CORRECT regarding penalty-free withdrawals?",
+            "options": [
+              "Sarah can take penalty-free withdrawals from both her Acme Corp 401(k) and her traditional IRA.",
+              "Sarah can take penalty-free withdrawals only from her traditional IRA.",
+              "Sarah can take penalty-free withdrawals only from her Acme Corp 401(k).",
+              "Sarah must wait until age 59\u00bd to take penalty-free withdrawals from both her Acme Corp 401(k) and her traditional IRA."
+            ],
+            "correctIndex": 2,
+            "explanation": "The Rule of 55 allows penalty-free withdrawals from a 401(k) or 403(b) plan if the employee separates from service in or after the year they turn age 55. However, this rule only applies to the plan at the *current* employer where the separation occurs. Rolled-over IRAs are not eligible for the Rule of 55 exception.",
+            "hint": "Consider which accounts are directly tied to her current employer."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "SEPP (72(t)) Requirements",
+          "reveal": {
+            "question": "How long must SEPP (72(t)) payments continue to avoid a retroactive penalty?",
+            "answer": "Payments must continue for at least 5 years, or until age 59\u00bd, whichever period is longer. Modifying or stopping payments before this requirement is met results in a retroactive penalty on all prior distributions."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Rule of 55 vs. SEPP (72(t))",
+          "comparison": {
+            "headers": [
+              "Rule of 55",
+              "SEPP (72(t))"
+            ],
+            "rows": [
+              {
+                "label": "Triggering Event",
+                "values": [
+                  "Separation from Service (age 55+)",
+                  "Any age (before 59\u00bd)"
+                ]
+              },
+              {
+                "label": "Applicable Accounts",
+                "values": [
+                  "401(k)/403(b) of separating employer",
+                  "IRAs and qualified plans"
+                ]
+              },
+              {
+                "label": "Withdrawal Flexibility",
+                "values": [
+                  "Flexible; take any amount",
+                  "Strict; calculated using IRS-approved methods"
+                ]
+              },
+              {
+                "label": "Early Retirement Penalty",
+                "values": [
+                  "Avoids 10% penalty",
+                  "Avoids 10% penalty"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L024",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Working in Retirement",
+    "description": "Apply Social Security earnings test rules",
+    "order": 24,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Apply Social Security earnings test rules",
+      "Analyze impact of retirement work on benefits",
+      "Evaluate encore career and phased retirement options",
+      "Plan for continued retirement contributions"
+    ],
+    "blueprintArea": "RET-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Many retirees continue working for income, purpose, or both. Understanding how work affects retirement benefits is essential."
+        },
+        {
+          "title": "Social Security Earnings Test (2026)",
+          "type": "table",
+          "headers": [
+            "Age",
+            "Earnings Limit",
+            "Penalty"
+          ],
+          "rows": [
+            [
+              "Under FRA all year",
+              "$23,400/year",
+              "$1 withheld per $2 over limit"
+            ],
+            [
+              "Year reaching FRA",
+              "$59,520 (months before FRA)",
+              "$1 withheld per $3 over limit"
+            ],
+            [
+              "At or after FRA",
+              "No limit",
+              "No reduction"
+            ]
+          ]
+        },
+        {
+          "title": "Good News",
+          "type": "callout",
+          "content": "Withheld benefits aren't lost forever. At FRA, benefits are recalculated to account for withheld months, resulting in higher monthly benefit. May \"break even\" within 12-15 years."
+        },
+        {
+          "title": "What Counts as Earnings",
+          "type": "table",
+          "headers": [
+            "Counted",
+            "Not Counted"
+          ],
+          "rows": [
+            [
+              "W-2 wages",
+              "Investment income"
+            ],
+            [
+              "Self-employment income",
+              "Pension"
+            ],
+            [
+              "Bonus, commission",
+              "IRA/401(k) distributions"
+            ],
+            [
+              "",
+              "Capital gains, rental income"
+            ]
+          ]
+        },
+        {
+          "title": "Delayed Retirement Credits",
+          "type": "text",
+          "content": "Each year past FRA: 8% increase until age 70. Working past FRA and delaying benefits provides both delayed retirement credits AND potentially higher AIME from continued earnings."
+        },
+        {
+          "title": "Medicare While Working",
+          "type": "table",
+          "headers": [
+            "Situation",
+            "Primary Payer"
+          ],
+          "rows": [
+            [
+              "Employer with <20 employees",
+              "Medicare"
+            ],
+            [
+              "Employer with 20+ employees",
+              "Employer plan"
+            ],
+            [
+              "Self-employed",
+              "Medicare"
+            ]
+          ]
+        },
+        {
+          "title": "HSA Considerations",
+          "type": "warning",
+          "content": "Enrolled in Medicare Part A or B: Cannot contribute to HSA. Still on HDHP, not on Medicare: Can contribute. Stop HSA contributions 6 months before Medicare (retroactive Part A enrollment)."
+        },
+        {
+          "title": "Continuing Retirement Contributions",
+          "type": "table",
+          "headers": [
+            "Account",
+            "While Working"
+          ],
+          "rows": [
+            [
+              "401(k)/403(b)",
+              "Yes, if employer offers"
+            ],
+            [
+              "Traditional IRA",
+              "Yes (with earned income)"
+            ],
+            [
+              "Roth IRA",
+              "Yes (income limits apply)"
+            ],
+            [
+              "SEP-IRA",
+              "Yes (self-employed income)"
+            ]
+          ]
+        },
+        {
+          "title": "RMDs While Working",
+          "type": "table",
+          "headers": [
+            "Situation",
+            "RMD Required?"
+          ],
+          "rows": [
+            [
+              "Traditional IRA",
+              "Yes, at RMD age"
+            ],
+            [
+              "Current employer 401(k)",
+              "No, if still working (5% exception)"
+            ],
+            [
+              "Former employer 401(k)",
+              "Yes"
+            ],
+            [
+              "Roth IRA",
+              "No"
+            ],
+            [
+              "Roth 401(k)",
+              "No (SECURE 2.0)"
+            ]
+          ]
+        },
+        {
+          "title": "Phased Retirement Options",
+          "type": "list",
+          "items": [
+            "Employer programs: Reduced hours, in-service distributions (62+), mentoring role",
+            "Self-directed: Contract/consultant, encore career, part-time W-2"
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "Earnings test reduces SS benefits before FRA (but increases later)",
+            "Investment income doesn't count against earnings test",
+            "Delayed retirement credits (8%/year) reward working past FRA",
+            "Medicare enrollment timing matters when employer coverage exists",
+            "Stop HSA contributions 6 months before Medicare enrollment"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Social Security Earnings Test",
+          "knowledgeCheck": {
+            "question": "Sarah, age 63, is considering taking Social Security benefits while continuing to work. In 2024, she expects to earn $60,000. Assuming the annual earnings limit for those under FRA is $22,320, what is the approximate reduction in her Social Security benefits for the year?",
+            "options": [
+              "$0",
+              "$12,550",
+              "$18,840",
+              "$37,680"
+            ],
+            "correctIndex": 1,
+            "explanation": "For every $2 earned above the annual limit ($22,320), Social Security benefits are reduced by $1. Sarah's earnings exceed the limit by $60,000 - $22,320 = $37,680. Dividing this amount by 2 gives the reduction in benefits: $37,680 / 2 = $18,840. Because her benefits are reduced by $1 for every $2 earned, and we want to calculate the reduction in benefits, we take the amount OVER the limit and divide by 2. This result is incorrect because it's asking for her benefits reduction, not how much she can earn before reduction. The reduction is $1 for every $2 earned over the limit, so you divide the excess amount by 2 to get the benefit reduction. Therefore, ($60,000 - $22,320) / 2 = $18,840. However, the reduction is only applied to the amount of benefits she receives, so we need to determine if she will receive that amount in benefits for the year. It's possible that her benefits would be suspended entirely. This question is designed to test comprehension of the earnings test rules.",
+            "hint": "Remember the $2 for $1 reduction rule for those under Full Retirement Age (FRA)."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Delayed Retirement Credits",
+          "reveal": {
+            "question": "What is the annual percentage increase in Social Security benefits for each year benefits are delayed past Full Retirement Age (FRA)?",
+            "answer": "8% per year, until age 70."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Encore Career vs. Phased Retirement",
+          "comparison": {
+            "headers": [
+              "Encore Career",
+              "Phased Retirement"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "A new career pursued after a traditional retirement age, often in a different field.",
+                  "A gradual reduction in work hours or responsibilities leading up to full retirement, often with the same employer."
+                ]
+              },
+              {
+                "label": "Employer",
+                "values": [
+                  "Typically a new employer or self-employment.",
+                  "Usually the same employer."
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "Often driven by a desire for purpose, social impact, or continued income.",
+                  "Primarily focused on a smooth transition to full retirement."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CFP-RET-L025",
+    "courseId": "cfp",
+    "section": "CFP-RET",
+    "title": "Annuities in Retirement Income Planning",
+    "description": "Compare immediate vs. deferred annuity structures",
+    "order": 25,
+    "duration": 50,
+    "difficulty": "advanced",
+    "topics": [
+      "Compare immediate vs. deferred annuity structures",
+      "Evaluate income annuity features and guarantees",
+      "Apply annuity taxation rules",
+      "Determine appropriate annuity allocation in retirement"
+    ],
+    "blueprintArea": "RET-3",
+    "content": {
+      "sections": [
+        {
+          "title": "Introduction",
+          "type": "text",
+          "content": "Annuities can provide guaranteed lifetime income. Understanding when and how to use them helps create secure retirement income plans."
+        },
+        {
+          "title": "Types of Annuities for Income",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Purpose",
+            "Risk"
+          ],
+          "rows": [
+            [
+              "SPIA (Single Premium Immediate)",
+              "Immediate income",
+              "Longevity protection"
+            ],
+            [
+              "DIA (Deferred Income)",
+              "Future income",
+              "Longevity protection"
+            ],
+            [
+              "Variable with GLWB",
+              "Growth + guaranteed floor",
+              "Market + longevity"
+            ],
+            [
+              "Fixed Index Annuity",
+              "Moderate growth + protection",
+              "Longevity"
+            ]
+          ]
+        },
+        {
+          "title": "SPIA - How It Works",
+          "type": "text",
+          "content": "Pay lump sum to insurance company. Begin receiving lifetime monthly payments immediately. Payments continue until death (or term/period certain)."
+        },
+        {
+          "title": "SPIA Payment Options",
+          "type": "table",
+          "headers": [
+            "Option",
+            "Description"
+          ],
+          "rows": [
+            [
+              "Life only",
+              "Highest payout; stops at death"
+            ],
+            [
+              "Life with period certain",
+              "Guaranteed period even if death"
+            ],
+            [
+              "Joint and survivor",
+              "Covers two lives; lower initial payout"
+            ],
+            [
+              "Life with cash refund",
+              "Beneficiaries receive remaining premium"
+            ]
+          ]
+        },
+        {
+          "title": "Deferred Income Annuity (DIA/QLAC)",
+          "type": "text",
+          "content": "Pay premium now, receive income starting in the future (often 10-20 years later). Benefits: Longevity insurance, lower cost (mortality credits), RMD reduction with QLAC."
+        },
+        {
+          "title": "QLAC Rules",
+          "type": "table",
+          "headers": [
+            "Rule",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Maximum purchase",
+              "$200,000 (SECURE 2.0)"
+            ],
+            [
+              "Account source",
+              "IRA, 401(k), 403(b)"
+            ],
+            [
+              "RMD exclusion",
+              "QLAC value excluded from RMD calculation"
+            ],
+            [
+              "Start date",
+              "Can be as late as age 85"
+            ]
+          ]
+        },
+        {
+          "title": "Variable Annuity with GLWB",
+          "type": "text",
+          "content": "Guaranteed Lifetime Withdrawal Benefit: Benefit base (notional value) for calculating withdrawals. Withdrawal rate typically 4-6% of benefit base guaranteed for life. Step-ups if market performs well. Fees: 0.75-1.5% for rider plus fund expenses."
+        },
+        {
+          "title": "Annuity Taxation",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Non-Qualified",
+            "Qualified (IRA/401k)"
+          ],
+          "rows": [
+            [
+              "Contributions",
+              "After-tax",
+              "Pre-tax"
+            ],
+            [
+              "Growth",
+              "Tax-deferred",
+              "Tax-deferred"
+            ],
+            [
+              "Withdrawal",
+              "Gain first (LIFO), ordinary income",
+              "All ordinary income"
+            ],
+            [
+              "Annuitization",
+              "Exclusion ratio applies",
+              "All ordinary income"
+            ]
+          ]
+        },
+        {
+          "title": "Exclusion Ratio Example",
+          "type": "text",
+          "content": "Premium $100,000, Expected return (total payments) $200,000. Exclusion ratio = 50%. Monthly payment $1,000: Taxable $500, Tax-free return of principal $500."
+        },
+        {
+          "title": "How Much to Annuitize?",
+          "type": "table",
+          "headers": [
+            "Guideline",
+            "Rationale"
+          ],
+          "rows": [
+            [
+              "Cover essential expenses",
+              "Annuity income + SS \u2265 needs"
+            ],
+            [
+              "Annuitize 20-40% of portfolio",
+              "Balance guarantee and flexibility"
+            ],
+            [
+              "Consider deferred for longevity",
+              "QLAC or DIA at 10-20%"
+            ],
+            [
+              "Don't over-annuitize",
+              "Keep liquidity for emergencies/legacy"
+            ]
+          ]
+        },
+        {
+          "title": "When Annuities Make Sense",
+          "type": "table",
+          "headers": [
+            "Good Fit",
+            "Poor Fit"
+          ],
+          "rows": [
+            [
+              "No pension, wants guaranteed income",
+              "Wealthy with ample assets"
+            ],
+            [
+              "Long life expectancy",
+              "Poor health/short life expectancy"
+            ],
+            [
+              "High legacy priority with guarantees",
+              "Need maximum flexibility"
+            ],
+            [
+              "Risk-averse with longevity concern",
+              "Confident in self-management"
+            ]
+          ]
+        },
+        {
+          "title": "Summary",
+          "type": "summary",
+          "items": [
+            "SPIAs provide immediate guaranteed income for life",
+            "DIAs/QLACs provide longevity insurance starting later",
+            "Variable annuities with GLWB offer market upside with income floor",
+            "Exclusion ratio determines tax treatment of non-qualified annuities",
+            "Annuitize essential expenses\u2014don't over-commit liquidity"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Immediate vs. Deferred Annuities",
+          "knowledgeCheck": {
+            "question": "Which of the following statements BEST describes the primary difference between a Single Premium Immediate Annuity (SPIA) and a Deferred Income Annuity (DIA)?",
+            "options": [
+              "A SPIA begins payments immediately upon purchase, while a DIA delays payments to a future date.",
+              "A SPIA is always tax-qualified, while a DIA is always non-qualified.",
+              "A SPIA offers a death benefit, while a DIA does not.",
+              "A SPIA is only available for individuals over age 70, while a DIA is available at any age."
+            ],
+            "correctIndex": 0,
+            "explanation": "The key difference lies in the timing of payments. SPIAs provide immediate income, whereas DIAs defer payments to a later date. The other options are not universally true.",
+            "hint": "Consider when the income stream begins for each type of annuity."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "QLAC and RMDs",
+          "reveal": {
+            "question": "How can a Qualified Longevity Annuity Contract (QLAC) help reduce Required Minimum Distributions (RMDs)?",
+            "answer": "A QLAC allows a portion of retirement assets to be excluded from the RMD calculation until payments begin. This is because the assets used to purchase the QLAC are not considered part of the account balance subject to RMDs, potentially lowering the annual RMD amount."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "SPIA vs. DIA: A Closer Look",
+          "comparison": {
+            "headers": [
+              "SPIA (Immediate Annuity)",
+              "DIA (Deferred Annuity)"
+            ],
+            "rows": [
+              {
+                "label": "Payment Start",
+                "values": [
+                  "Immediately",
+                  "Future Date"
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "Immediate Income",
+                  "Longevity Insurance & RMD Reduction"
+                ]
+              },
+              {
+                "label": "Cost",
+                "values": [
+                  "Generally Higher (due to immediate payout)",
+                  "Generally Lower (due to mortality credits and time value of money)"
+                ]
+              },
+              {
+                "label": "Mortality Credits",
+                "values": [
+                  "Less Significant",
+                  "More Significant"
+                ]
+              },
+              {
+                "label": "Suitability",
+                "values": [
+                  "Retirees needing immediate income",
+                  "Younger individuals planning for very late-life income needs"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

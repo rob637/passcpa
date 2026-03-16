@@ -77,8 +77,7 @@ const TimedQuiz: React.FC = () => {
   const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
   const [reviewIndex, setReviewIndex] = useState(0);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const timerRef = useRef<any>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   // Ref for scrolling to top of question on navigation (mobile fix)
   const questionTopRef = useRef<HTMLDivElement>(null);
   const mode = searchParams.get('mode') || 'quick';
@@ -133,7 +132,7 @@ const TimedQuiz: React.FC = () => {
     timerRef.current = setInterval(() => {
       setTimeLeft((t) => {
         if (t <= 1) {
-          clearInterval(timerRef.current);
+          if (timerRef.current) clearInterval(timerRef.current);
           setQuizState('complete');
           feedback.complete();
           return 0;
@@ -146,7 +145,7 @@ const TimedQuiz: React.FC = () => {
       });
     }, 1000);
 
-    return () => clearInterval(timerRef.current);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [quizState, isPaused]);
 
   // Keyboard shortcuts

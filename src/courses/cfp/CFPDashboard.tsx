@@ -22,7 +22,7 @@ export default function CFPDashboard() {
   const navigate = useNavigate();
   const { userProfile } = useAuth();
   const { progress, loading } = useCFPProgress();
-  const { daysToExam } = useStudyPlan('cfp');
+  const { daysUntilExam } = useStudyPlan();
   
   // Get config for CFP
   const config = getDashboardConfig('cfp');
@@ -36,8 +36,8 @@ export default function CFPDashboard() {
     questionsAnswered: progress?.totalQuestionsAttempted || 0,
     studyStreak: progress?.streakDays || 0,
     accuracy: Math.round(progress?.overallAccuracy || 0),
-    daysToExam,
-  }), [progress, daysToExam]);
+    daysToExam: daysUntilExam,
+  }), [progress, daysUntilExam]);
   
   // Transform sections into template format
   const sections: ExamSection[] = useMemo(() => 

@@ -1,0 +1,486 @@
+nohup: ignoring input
+============================================================
+  LESSON ENHANCEMENT - JSON Pipeline
+============================================================
+
+📚 Processing FAR...
+  Found 92 lessons
+  📁 Backed up to far_20260228_193503.json
+  ⏭️  FAR-I-001 - already enhanced
+  ⏭️  FAR-I-002 - already enhanced
+  🔄 FAR-I-003... ✅ +3 sections
+  🔄 FAR-I-004... ✅ +3 sections
+  🔄 FAR-I-005... ✅ +4 sections
+  🔄 FAR-I-006... ✅ +3 sections
+  🔄 FAR-I-007... ✅ +4 sections
+  🔄 FAR-II-001... ✅ +3 sections
+  🔄 FAR-II-002... ✅ +3 sections
+  🔄 FAR-II-003... ✅ +4 sections
+  🔄 FAR-II-004... ✅ +3 sections
+  🔄 FAR-II-005... ✅ +3 sections
+  🔄 FAR-II-006... ❌ failed
+  🔄 FAR-II-007... ✅ +3 sections
+  🔄 FAR-II-008... ✅ +3 sections
+  🔄 FAR-II-009... ✅ +3 sections
+  🔄 FAR-II-010... ✅ +3 sections
+  🔄 FAR-II-011... ✅ +3 sections
+  🔄 FAR-II-012... ✅ +3 sections
+  🔄 FAR-II-013... ✅ +3 sections
+  🔄 FAR-II-014... ✅ +3 sections
+  🔄 FAR-II-015... ✅ +3 sections
+  🔄 FAR-II-016... ✅ +3 sections
+  🔄 FAR-II-017... ✅ +3 sections
+  🔄 FAR-II-018... ✅ +3 sections
+  🔄 FAR-II-019... ✅ +3 sections
+  🔄 FAR-II-020... ✅ +3 sections
+  🔄 FAR-II-021... ✅ +3 sections
+  🔄 FAR-II-022... ✅ +3 sections
+  🔄 FAR-II-023... ✅ +3 sections
+  🔄 FAR-II-024... ✅ +3 sections
+  🔄 FAR-II-025... ✅ +3 sections
+  🔄 FAR-II-026... ✅ +3 sections
+  🔄 FAR-II-027... ✅ +3 sections
+  🔄 FAR-II-028... ✅ +3 sections
+  🔄 FAR-II-029... ✅ +3 sections
+  🔄 FAR-II-030... ✅ +3 sections
+  🔄 FAR-III-001... ✅ +3 sections
+  🔄 FAR-III-002... ✅ +3 sections
+  🔄 FAR-III-003... ❌ failed
+  🔄 FAR-III-004... ✅ +3 sections
+  🔄 FAR-III-005... ✅ +3 sections
+  🔄 FAR-III-006... ✅ +3 sections
+  🔄 FAR-III-007... ✅ +3 sections
+  🔄 FAR-III-008... ✅ +3 sections
+  🔄 FAR-III-009... ✅ +3 sections
+  🔄 FAR-III-010... ✅ +3 sections
+  🔄 FAR-III-011... ✅ +4 sections
+  🔄 FAR-III-012... ✅ +3 sections
+  🔄 FAR-III-013... ✅ +3 sections
+  🔄 FAR-III-014... ✅ +4 sections
+  🔄 FAR-III-015... ✅ +3 sections
+  🔄 FAR-III-016... ✅ +3 sections
+  🔄 FAR-III-017... ✅ +3 sections
+  🔄 FAR-IV-001... ✅ +3 sections
+  🔄 FAR-IV-002... ✅ +3 sections
+  🔄 FAR-IV-003... ✅ +3 sections
+  🔄 FAR-IV-004... ✅ +3 sections
+  🔄 FAR-IV-005... ✅ +3 sections
+  🔄 FAR-IV-006... ✅ +3 sections
+  🔄 FAR-IV-007... ✅ +3 sections
+  🔄 FAR-IV-008... ❌ failed
+  🔄 FAR-IV-009... ✅ +3 sections
+  🔄 FAR-IV-010... ✅ +3 sections
+  🔄 FAR-V-001... ✅ +3 sections
+  🔄 FAR-V-002... ✅ +3 sections
+  🔄 FAR-V-003... ✅ +3 sections
+  🔄 FAR-V-004... ✅ +3 sections
+  🔄 FAR-V-005... ✅ +3 sections
+  🔄 FAR-V-006... ✅ +3 sections
+  🔄 FAR-V-007... ✅ +3 sections
+  🔄 FAR-III-018... ✅ +3 sections
+  🔄 FAR-III-019... ✅ +3 sections
+  🔄 FAR-III-020... ✅ +3 sections
+  🔄 FAR-III-021... ✅ +4 sections
+  🔄 FAR-III-022... ✅ +3 sections
+  🔄 FAR-V-020... ✅ +3 sections
+  🔄 FAR-V-021... ✅ +3 sections
+  🔄 FAR-V-022... ✅ +3 sections
+  🔄 FAR-V-023... ✅ +3 sections
+  🔄 FAR-V-024... ✅ +4 sections
+  🔄 FAR-V-025... ✅ +3 sections
+  🔄 FAR-V-026... ✅ +3 sections
+  🔄 FAR-V-027... ✅ +3 sections
+  🔄 FAR-V-028... ✅ +3 sections
+  🔄 FAR-V-029... ✅ +3 sections
+  🔄 FAR-V-030... ✅ +4 sections
+  🔄 FAR-V-031... ✅ +3 sections
+  🔄 FAR-V-032... ✅ +3 sections
+  🔄 FAR-V-033... ✅ +3 sections
+  🔄 FAR-III-120... ✅ +3 sections
+  🔄 FAR-III-121... ✅ +3 sections
+
+  💾 Saved far.json with 87 enhanced lessons
+
+📚 Processing AUD...
+  Found 73 lessons
+  📁 Backed up to aud_20260228_194106.json
+  🔄 AUD-I-001... ✅ +3 sections
+  🔄 AUD-I-002... ✅ +3 sections
+  🔄 AUD-I-003... ✅ +3 sections
+  🔄 AUD-I-004... ✅ +3 sections
+  🔄 AUD-I-005... ✅ +3 sections
+  🔄 AUD-I-006... ✅ +3 sections
+  🔄 AUD-I-007... ✅ +4 sections
+  🔄 AUD-I-008... ✅ +3 sections
+  🔄 AUD-I-009... ✅ +3 sections
+  🔄 AUD-I-010... ✅ +3 sections
+  🔄 AUD-II-001... ✅ +3 sections
+  🔄 AUD-II-002... ✅ +3 sections
+  🔄 AUD-II-003... ✅ +3 sections
+  🔄 AUD-II-004... ✅ +3 sections
+  🔄 AUD-II-005... ✅ +4 sections
+  🔄 AUD-II-006... ✅ +3 sections
+  🔄 AUD-II-007... ✅ +4 sections
+  🔄 AUD-II-008... ✅ +4 sections
+  🔄 AUD-II-009... ❌ failed
+  🔄 AUD-II-010... ❌ failed
+  🔄 AUD-II-011... ✅ +3 sections
+  🔄 AUD-II-012... ✅ +3 sections
+  🔄 AUD-III-001... ✅ +3 sections
+  🔄 AUD-III-002... ✅ +3 sections
+  🔄 AUD-III-003... ✅ +3 sections
+  🔄 AUD-III-004... ✅ +3 sections
+  🔄 AUD-III-005... ✅ +4 sections
+  🔄 AUD-III-006... ✅ +3 sections
+  🔄 AUD-III-007... ✅ +3 sections
+  🔄 AUD-III-008... ✅ +3 sections
+  🔄 AUD-III-009... ✅ +3 sections
+  🔄 AUD-III-010... ✅ +4 sections
+  🔄 AUD-III-011... ✅ +3 sections
+  🔄 AUD-III-012... ✅ +3 sections
+  🔄 AUD-III-013... ✅ +3 sections
+  🔄 AUD-III-014... ✅ +3 sections
+  🔄 AUD-III-015... ✅ +3 sections
+  🔄 AUD-IV-001... ✅ +3 sections
+  🔄 AUD-IV-002... ✅ +3 sections
+  🔄 AUD-IV-003... ✅ +3 sections
+  🔄 AUD-IV-004... ✅ +3 sections
+  🔄 AUD-IV-005... ✅ +3 sections
+  🔄 AUD-IV-006... ✅ +3 sections
+  🔄 AUD-IV-007... ✅ +3 sections
+  🔄 AUD-IV-008... ✅ +3 sections
+  🔄 AUD-IV-009... ✅ +3 sections
+  🔄 AUD-IV-010... ✅ +3 sections
+  🔄 AUD-IV-011... ✅ +3 sections
+  🔄 AUD-IV-012... ✅ +3 sections
+  🔄 AUD-IV-013... ✅ +3 sections
+  🔄 AUD-II-110... ✅ +3 sections
+  🔄 AUD-II-111... ✅ +3 sections
+  🔄 AUD-II-112... ✅ +3 sections
+  🔄 AUD-II-013... ✅ +3 sections
+  🔄 AUD-III-113... ✅ +3 sections
+  🔄 AUD-III-114... ✅ +3 sections
+  🔄 AUD-IV-112... ❌ failed
+  🔄 AUD-IV-113... ✅ +3 sections
+  🔄 AUD-IV-014... ✅ +3 sections
+  🔄 AUD-IV-015... ✅ +3 sections
+  🔄 AUD-IV-016... ✅ +3 sections
+  🔄 AUD-IV-017... ✅ +3 sections
+  🔄 AUD-IV-018... ✅ +3 sections
+  🔄 AUD-IV-019... ✅ +3 sections
+  🔄 AUD-IV-020... ✅ +3 sections
+  🔄 AUD-I-015... ✅ +4 sections
+  🔄 AUD-II-015... ✅ +3 sections
+  🔄 AUD-II-016... ✅ +3 sections
+  🔄 AUD-II-017... ✅ +3 sections
+  🔄 AUD-III-115... ✅ +3 sections
+  🔄 AUD-III-016... ✅ +3 sections
+  🔄 AUD-IV-021... ✅ +3 sections
+  🔄 AUD-IV-022... ❌ failed
+
+  💾 Saved aud.json with 69 enhanced lessons
+
+📚 Processing REG...
+  Found 83 lessons
+  📁 Backed up to reg_20260228_194549.json
+  🔄 REG-I-001... ✅ +3 sections
+  🔄 REG-I-002... ✅ +3 sections
+  🔄 REG-I-003... ✅ +3 sections
+  🔄 REG-I-004... ✅ +3 sections
+  🔄 REG-I-005... ✅ +3 sections
+  🔄 REG-I-006... ✅ +3 sections
+  🔄 REG-I-007... ✅ +3 sections
+  🔄 REG-I-008... ✅ +3 sections
+  🔄 REG-II-001... ✅ +3 sections
+  🔄 REG-II-002... ✅ +3 sections
+  🔄 REG-II-003... ✅ +4 sections
+  🔄 REG-II-004... ✅ +3 sections
+  🔄 REG-II-005... ✅ +3 sections
+  🔄 REG-II-006... ✅ +3 sections
+  🔄 REG-II-007... ✅ +3 sections
+  🔄 REG-II-008... ✅ +4 sections
+  🔄 REG-II-009... ✅ +3 sections
+  🔄 REG-II-010... ✅ +3 sections
+  🔄 REG-II-011... ✅ +3 sections
+  🔄 REG-II-012... ✅ +3 sections
+  🔄 REG-II-013... ✅ +3 sections
+  🔄 REG-II-014... ✅ +3 sections
+  🔄 REG-II-015... ✅ +4 sections
+  🔄 REG-III-001... ✅ +3 sections
+  🔄 REG-III-002... ✅ +3 sections
+  🔄 REG-III-003... ✅ +3 sections
+  🔄 REG-III-004... ✅ +3 sections
+  🔄 REG-III-005... ✅ +3 sections
+  🔄 REG-III-006... ✅ +3 sections
+  🔄 REG-III-007... ✅ +3 sections
+  🔄 REG-III-008... ✅ +3 sections
+  🔄 REG-III-009... ✅ +3 sections
+  🔄 REG-III-010... ✅ +3 sections
+  🔄 REG-III-011... ✅ +3 sections
+  🔄 REG-III-012... ✅ +3 sections
+  🔄 REG-III-013... ✅ +3 sections
+  🔄 REG-III-014... ✅ +3 sections
+  🔄 REG-III-015... ✅ +3 sections
+  🔄 REG-III-016... ✅ +3 sections
+  🔄 REG-III-017... ✅ +3 sections
+  🔄 REG-III-018... ✅ +3 sections
+  🔄 REG-III-019... ✅ +3 sections
+  🔄 REG-III-020... ✅ +3 sections
+  🔄 REG-III-021... ✅ +3 sections
+  🔄 REG-III-022... ✅ +3 sections
+  🔄 REG-III-023... ✅ +3 sections
+  🔄 REG-IV-001... ✅ +3 sections
+  🔄 REG-IV-002... ✅ +3 sections
+  🔄 REG-IV-003... ✅ +3 sections
+  🔄 REG-IV-004... ✅ +3 sections
+  🔄 REG-IV-005... ✅ +3 sections
+  🔄 REG-IV-006... ✅ +3 sections
+  🔄 REG-IV-007... ✅ +3 sections
+  🔄 REG-IV-008... ✅ +3 sections
+  🔄 REG-IV-009... ✅ +3 sections
+  🔄 REG-IV-010... ✅ +3 sections
+  🔄 REG-IV-011... ✅ +3 sections
+  🔄 REG-IV-012... ✅ +3 sections
+  🔄 REG-IV-013... ✅ +3 sections
+  🔄 REG-IV-014... ✅ +3 sections
+  🔄 REG-IV-015... ✅ +3 sections
+  🔄 REG-IV-016... ✅ +4 sections
+  🔄 REG-IV-017... ✅ +3 sections
+  🔄 REG-IV-018... ✅ +3 sections
+  🔄 REG-IV-019... ✅ +3 sections
+  🔄 REG-V-001... ✅ +3 sections
+  🔄 REG-V-002... ✅ +3 sections
+  🔄 REG-III-024... ✅ +3 sections
+  🔄 REG-III-025... ✅ +3 sections
+  🔄 REG-V-012... ✅ +3 sections
+  🔄 REG-V-013... ✅ +3 sections
+  🔄 REG-V-014... ✅ +3 sections
+  🔄 REG-V-015... ✅ +4 sections
+  🔄 REG-II-115... ✅ +3 sections
+  🔄 REG-II-016... ✅ +3 sections
+  🔄 REG-III-026... ✅ +3 sections
+  🔄 REG-III-027... ✅ +3 sections
+  🔄 REG-III-028... ✅ +3 sections
+  🔄 REG-III-029... ✅ +3 sections
+  🔄 REG-III-030... ✅ +3 sections
+  🔄 REG-V-003... ✅ +3 sections
+  🔄 REG-V-004... ✅ +3 sections
+  🔄 REG-V-005... ✅ +3 sections
+
+  💾 Saved reg.json with 83 enhanced lessons
+
+📚 Processing BAR...
+  Found 77 lessons
+  📁 Backed up to bar_20260228_195143.json
+  🔄 BAR-I-001... ✅ +3 sections
+  🔄 BAR-I-002... ✅ +3 sections
+  🔄 BAR-I-003... ✅ +3 sections
+  🔄 BAR-I-004... ✅ +3 sections
+  🔄 BAR-I-005... ✅ +3 sections
+  🔄 BAR-I-006... ✅ +3 sections
+  🔄 BAR-I-007... ✅ +3 sections
+  🔄 BAR-I-008... ✅ +3 sections
+  🔄 BAR-I-009... ✅ +3 sections
+  🔄 BAR-I-010... ✅ +3 sections
+  🔄 BAR-II-001... ✅ +3 sections
+  🔄 BAR-II-002... ✅ +3 sections
+  🔄 BAR-II-003... ✅ +3 sections
+  🔄 BAR-II-004... ✅ +3 sections
+  🔄 BAR-II-005... ✅ +3 sections
+  🔄 BAR-II-006... ✅ +3 sections
+  🔄 BAR-II-007... ✅ +3 sections
+  🔄 BAR-II-008... ✅ +3 sections
+  🔄 BAR-II-009... ✅ +3 sections
+  🔄 BAR-II-010... ✅ +3 sections
+  🔄 BAR-II-011... ✅ +3 sections
+  🔄 BAR-II-012... ✅ +3 sections
+  🔄 BAR-III-001... ✅ +3 sections
+  🔄 BAR-III-002... ✅ +3 sections
+  🔄 BAR-III-003... ✅ +3 sections
+  🔄 BAR-III-004... ✅ +3 sections
+  🔄 BAR-III-005... ✅ +3 sections
+  🔄 BAR-III-006... ❌ failed
+  🔄 BAR-III-007... ✅ +3 sections
+  🔄 BAR-III-008... ✅ +3 sections
+  🔄 BAR-III-009... ✅ +3 sections
+  🔄 BAR-IV-001... ✅ +3 sections
+  🔄 BAR-IV-002... ✅ +3 sections
+  🔄 BAR-IV-003... ✅ +3 sections
+  🔄 BAR-IV-004... ✅ +3 sections
+  🔄 BAR-IV-005... ✅ +3 sections
+  🔄 BAR-IV-006... ✅ +3 sections
+  🔄 BAR-IV-007... ✅ +3 sections
+  🔄 BAR-IV-008... ✅ +3 sections
+  🔄 BAR-IV-009... ✅ +3 sections
+  🔄 BAR-V-001... ✅ +4 sections
+  🔄 BAR-V-002... ✅ +3 sections
+  🔄 BAR-V-003... ✅ +3 sections
+  🔄 BAR-V-004... ✅ +3 sections
+  🔄 BAR-V-005... ✅ +3 sections
+  🔄 BAR-V-006... ✅ +4 sections
+  🔄 BAR-V-007... ✅ +3 sections
+  🔄 BAR-V-008... ✅ +4 sections
+  🔄 BAR-V-009... ✅ +3 sections
+  🔄 BAR-V-010... ✅ +3 sections
+  🔄 BAR-V-011... ✅ +3 sections
+  🔄 BAR-V-012... ✅ +3 sections
+  🔄 BAR-V-013... ✅ +3 sections
+  🔄 BAR-V-014... ✅ +3 sections
+  🔄 BAR-V-015... ✅ +4 sections
+  🔄 BAR-I-016... ✅ +3 sections
+  🔄 BAR-I-017... ✅ +3 sections
+  🔄 BAR-I-018... ✅ +3 sections
+  🔄 BAR-I-019... ✅ +3 sections
+  🔄 BAR-I-020... ✅ +3 sections
+  🔄 BAR-I-021... ✅ +3 sections
+  🔄 BAR-I-022... ✅ +3 sections
+  🔄 BAR-I-023... ✅ +3 sections
+  🔄 BAR-I-024... ✅ +3 sections
+  🔄 BAR-IV-010... ✅ +3 sections
+  🔄 BAR-III-010... ✅ +4 sections
+  🔄 BAR-III-011... ✅ +3 sections
+  🔄 BAR-II-110... ✅ +4 sections
+  🔄 BAR-II-111... ✅ +3 sections
+  🔄 BAR-I-015... ✅ +3 sections
+  🔄 BAR-VII-001... ✅ +3 sections
+  🔄 BAR-VII-002... ✅ +3 sections
+  🔄 BAR-VII-003... ✅ +3 sections
+  🔄 BAR-VII-004... ✅ +3 sections
+  🔄 BAR-VII-005... ✅ +3 sections
+  🔄 BAR-VII-006... ✅ +3 sections
+  🔄 BAR-VII-007... ✅ +3 sections
+
+  💾 Saved bar.json with 76 enhanced lessons
+
+📚 Processing ISC...
+  Found 59 lessons
+  📁 Backed up to isc_20260228_195637.json
+  🔄 ISC-I-001... ✅ +3 sections
+  🔄 ISC-I-002... ✅ +3 sections
+  🔄 ISC-I-003... ✅ +3 sections
+  🔄 ISC-I-004... ✅ +3 sections
+  🔄 ISC-I-005... ✅ +3 sections
+  🔄 ISC-I-006... ✅ +3 sections
+  🔄 ISC-I-007... ✅ +3 sections
+  🔄 ISC-I-008... ✅ +3 sections
+  🔄 ISC-I-009... ✅ +3 sections
+  🔄 ISC-I-010... ✅ +3 sections
+  🔄 ISC-I-011... ✅ +3 sections
+  🔄 ISC-I-012... ✅ +3 sections
+  🔄 ISC-II-001... ❌ failed
+  🔄 ISC-II-002... ❌ failed
+  🔄 ISC-II-003... ✅ +3 sections
+  🔄 ISC-II-004... ✅ +3 sections
+  🔄 ISC-II-005... ✅ +3 sections
+  🔄 ISC-II-006... ✅ +3 sections
+  🔄 ISC-II-007... ❌ failed
+  🔄 ISC-II-008... ✅ +3 sections
+  🔄 ISC-II-009... ✅ +3 sections
+  🔄 ISC-II-010... ✅ +3 sections
+  🔄 ISC-II-011... ✅ +3 sections
+  🔄 ISC-III-001... ✅ +3 sections
+  🔄 ISC-III-002... ✅ +3 sections
+  🔄 ISC-III-003... ✅ +3 sections
+  🔄 ISC-III-004... ✅ +3 sections
+  🔄 ISC-III-005... ✅ +3 sections
+  🔄 ISC-III-006... ✅ +3 sections
+  🔄 ISC-III-007... ✅ +3 sections
+  🔄 ISC-III-008... ✅ +3 sections
+  🔄 ISC-III-009... ✅ +3 sections
+  🔄 ISC-III-010... ✅ +3 sections
+  🔄 ISC-IV-001... ✅ +3 sections
+  🔄 ISC-IV-002... ❌ failed
+  🔄 ISC-IV-003... ✅ +3 sections
+  🔄 ISC-IV-004... ✅ +3 sections
+  🔄 ISC-IV-005... ✅ +3 sections
+  🔄 ISC-IV-006... ✅ +3 sections
+  🔄 ISC-IV-007... ✅ +3 sections
+  🔄 ISC-IV-008... ✅ +3 sections
+  🔄 ISC-IV-009... ✅ +3 sections
+  🔄 ISC-IV-010... ✅ +3 sections
+  🔄 ISC-IV-011... ✅ +3 sections
+  🔄 ISC-IV-013... ✅ +3 sections
+  🔄 ISC-IV-014... ✅ +3 sections
+  🔄 ISC-IV-015... ✅ +4 sections
+  🔄 ISC-IV-016... ✅ +4 sections
+  🔄 ISC-IV-017... ✅ +3 sections
+  🔄 ISC-IV-018... ✅ +3 sections
+  🔄 ISC-II-015... ✅ +3 sections
+  🔄 ISC-II-016... ✅ +3 sections
+  🔄 ISC-III-012... ✅ +3 sections
+  🔄 ISC-III-011... ✅ +3 sections
+  🔄 ISC-I-015... ✅ +3 sections
+  🔄 ISC-IV-019... ✅ +3 sections
+  🔄 ISC-IV-020... ✅ +3 sections
+  🔄 ISC-IV-021... ✅ +3 sections
+  🔄 ISC-IV-012... ✅ +3 sections
+
+  💾 Saved isc.json with 55 enhanced lessons
+
+📚 Processing TCP...
+  Found 54 lessons
+  📁 Backed up to tcp_20260228_200028.json
+  🔄 TCP-I-001... ✅ +3 sections
+  🔄 TCP-I-002... ✅ +3 sections
+  🔄 TCP-I-003... ✅ +3 sections
+  🔄 TCP-I-004... ✅ +3 sections
+  🔄 TCP-I-005... ✅ +3 sections
+  🔄 TCP-I-006... ✅ +3 sections
+  🔄 TCP-I-007... ✅ +3 sections
+  🔄 TCP-I-008... ✅ +3 sections
+  🔄 TCP-I-009... ✅ +3 sections
+  🔄 TCP-I-010... ✅ +3 sections
+  🔄 TCP-II-001... ✅ +3 sections
+  🔄 TCP-II-002... ✅ +3 sections
+  🔄 TCP-II-003... ✅ +3 sections
+  🔄 TCP-II-004... ✅ +3 sections
+  🔄 TCP-II-005... ✅ +3 sections
+  🔄 TCP-II-006... ✅ +4 sections
+  🔄 TCP-II-007... ✅ +3 sections
+  🔄 TCP-II-008... ✅ +3 sections
+  🔄 TCP-II-009... ✅ +3 sections
+  🔄 TCP-II-010... ✅ +3 sections
+  🔄 TCP-II-011... ✅ +3 sections
+  🔄 TCP-II-012... ❌ failed
+  🔄 TCP-II-013... ✅ +3 sections
+  🔄 TCP-II-014... ❌ failed
+  🔄 TCP-III-001... ✅ +3 sections
+  🔄 TCP-III-002... ✅ +3 sections
+  🔄 TCP-III-003... ✅ +3 sections
+  🔄 TCP-III-004... ✅ +3 sections
+  🔄 TCP-III-005... ✅ +3 sections
+  🔄 TCP-III-006... ✅ +3 sections
+  🔄 TCP-IV-001... ✅ +3 sections
+  🔄 TCP-IV-002... ✅ +3 sections
+  🔄 TCP-IV-003... ❌ failed
+  🔄 TCP-IV-004... ✅ +3 sections
+  🔄 TCP-IV-005... ✅ +3 sections
+  🔄 TCP-IV-006... ✅ +3 sections
+  🔄 TCP-II-110... ✅ +3 sections
+  🔄 TCP-III-010... ✅ +3 sections
+  🔄 TCP-II-111... ✅ +3 sections
+  🔄 TCP-III-011... ✅ +3 sections
+  🔄 TCP-III-012... ✅ +4 sections
+  🔄 TCP-III-013... ✅ +3 sections
+  🔄 TCP-III-014... ✅ +3 sections
+  🔄 TCP-III-015... ✅ +3 sections
+  🔄 TCP-III-016... ✅ +3 sections
+  🔄 TCP-III-017... ✅ +3 sections
+  🔄 TCP-III-018... ✅ +3 sections
+  🔄 TCP-III-019... ✅ +3 sections
+  🔄 TCP-III-020... ✅ +3 sections
+  🔄 TCP-II-015... ✅ +3 sections
+  🔄 TCP-II-016... ✅ +3 sections
+  🔄 TCP-II-017... ✅ +3 sections
+  🔄 TCP-I-110... ✅ +3 sections
+  🔄 TCP-I-011... ✅ +4 sections
+
+  💾 Saved tcp.json with 51 enhanced lessons
+
+============================================================
+  ENHANCEMENT SUMMARY
+============================================================
+  Processed: 436
+  Enhanced:  421
+  Skipped:   2
+  Failed:    15

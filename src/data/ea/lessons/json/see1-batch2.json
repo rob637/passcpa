@@ -1,0 +1,247 @@
+[
+  {
+    "id": "SEE1-051",
+    "courseId": "ea",
+    "section": "SEE1",
+    "title": "AMT for Individuals: Alternative Minimum Tax Calculation",
+    "description": "This lesson provides a comprehensive overview of the Alternative Minimum Tax (AMT) for individuals, focusing on the calculation process and key components. Understanding AMT is critical for tax professionals preparing returns for higher-income taxpayers.",
+    "order": 51,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "AMT for individuals",
+      "Alternative minimum tax calculation"
+    ],
+    "blueprintArea": "SEE1-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The AMT ensures that high-income taxpayers pay at least a minimum amount of tax, even if they utilize various deductions and credits to significantly reduce their regular income tax liability. Familiarity with AMT is crucial for accurate tax planning and compliance."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "The **Alternative Minimum Tax (AMT)** is a separate tax system that operates alongside the regular income tax. It has its own set of rules regarding income inclusion, deductions, and exemptions. The purpose of the AMT is to prevent high-income individuals from avoiding income tax entirely through the use of deductions, credits, and exclusions.  The AMT calculation starts with **Taxable Income** from Form 1040. Adjustments and Preferences are then added back. Common adjustments and preferences include:\n\n*   **Standard Deduction:** Added back if used for regular tax. \n*   **Personal Exemptions:** Added back. (Note: this is less relevant post-TCJA but could still appear in hypothetical questions.)\n*   **State and Local Taxes (SALT):** Added back, as the AMT does not allow a deduction for state and local taxes. (Subject to the $10,000 limit under TCJA, but the full amount is generally added back for AMT purposes).\n*   **Depreciation Adjustments:** Certain accelerated depreciation methods must be recalculated using the Alternative Depreciation System (ADS).\n*   **Incentive Stock Options (ISOs):** The difference between the fair market value of the stock at the time of exercise and the option price is an AMT preference item. \n*   **Tax-Exempt Interest from Private Activity Bonds:** This interest is taxable for AMT purposes. \n\nAfter adding back these adjustments and preferences, the result is **Alternative Minimum Taxable Income (AMTI)**. The taxpayer then subtracts the **AMT Exemption Amount** (which phases out at higher AMTI levels) to arrive at the **AMT Tax Base**."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's break down the AMT calculation process with an example:\n\n1.  **Start with Taxable Income:** Assume a taxpayer has taxable income of $200,000.\n2.  **Add Back Adjustments and Preferences:**\n    *   State and Local Taxes deducted on Schedule A: $10,000 (add back fully)\n    *   Excess Depreciation: $2,000 (adjustment)\n    *   Tax-Exempt Interest from Private Activity Bonds: $5,000 (preference)\n    *   AMT adjustment for incentive stock options (ISO). Jane exercised ISOs and the FMV exceeded the purchase price by $50,000. Add back.\n3.  **Calculate AMTI:** $200,000 (Taxable Income) + $10,000 (SALT) + $2,000 (Depreciation) + $5,000 (Tax-Exempt Interest) + $50,000 (ISO adjustment)= $267,000 AMTI.\n4.  **Subtract AMT Exemption:** Assume the AMT exemption amount is $81,300 (single, 2023, subject to phase-out). $267,000 - $81,300 = $185,700.\n5.  **Calculate AMT Tax Base:** The AMT Tax Base is $185,700.\n6.  **Apply AMT Tax Rates:** The AMT tax rates are tiered: 26% on the first $220,700 (2023, single) of the AMT tax base and 28% on the amount exceeding that threshold.  In our example, the AMT tax rate is 26% x $185,700 = $48,282. This results in a tax liability of $48,282.\n7.  **Determine the AMT:** The AMT is the excess of the Tentative Minimum Tax (TMT) over the Regular Tax.  Let's assume the taxpayer's regular tax liability is $40,000. The AMT is $48,282 - $40,000 = $8,282. The taxpayer will pay the regular tax liability PLUS the AMT. The taxpayer will pay total tax of $48,282.\n\n**Important Considerations:**\n\n*   The AMT exemption amount phases out for higher AMTI levels. This phase-out reduces or eliminates the exemption for many high-income taxpayers.\n*   The AMT credit can be carried forward indefinitely to reduce regular tax liability in future years, to the extent the regular tax liability exceeds the TMT in those years. The AMT credit is generated when AMT is paid due to timing differences between the regular tax system and the AMT system (e.g., accelerated depreciation)."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The SEE exam frequently tests your understanding of the AMT calculation process. Be prepared to identify common adjustments and preferences and their impact on AMTI. Pay close attention to the AMT exemption amount and its phase-out thresholds. Questions often involve scenarios where you need to calculate AMTI, TMT, and the actual AMT liability. Be aware that questions might include outdated rules, so ensure to apply current tax law unless explicitly stated otherwise. Practice questions involving ISOs and depreciation adjustments. Recognize the difference between adjustments and preferences."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "John, a self-employed consultant, has a taxable income of $300,000. He deducted $10,000 in state and local taxes and claimed accelerated depreciation that exceeded the ADS depreciation by $3,000. John also exercised ISOs, and the FMV exceeded his purchase price by $80,000. Assume his regular tax liability is $60,000 and the AMT exemption is $81,300. Calculate his AMT liability.\n\n1.  **AMTI:** $300,000 + $10,000 + $3,000 + $80,000= $393,000.\n2.  **AMT Tax Base:** $393,000 - $81,300 = $311,700.\n3.  **Tentative Minimum Tax (TMT):** ($220,700 x 26%) + (($311,700 - $220,700) x 28% ) = $57,382 + $25,480 = $82,862\n4.  **AMT:** $82,862 - $60,000 = $22,862. John's total tax liability is $82,862 ($60,000 regular tax + $22,862 AMT)."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• AMT is a separate tax system designed to ensure high-income taxpayers pay a minimum amount of tax.\n• AMTI is calculated by adding back certain adjustments and preferences to taxable income.\n• The AMT exemption amount phases out at higher AMTI levels.\n• AMT is the excess of the Tentative Minimum Tax (TMT) over the Regular Tax.\n• Familiarize yourself with common AMT adjustments and preferences such as state and local taxes, depreciation adjustments, and ISOs."
+        }
+      ]
+    }
+  },
+  {
+    "id": "SEE1-052",
+    "courseId": "ea",
+    "section": "SEE1",
+    "title": "Self-Employment Tax: SE Tax Calculation and Deduction",
+    "description": "This lesson covers the self-employment tax (SE tax), its calculation, and the deduction allowed for one-half of the SE tax paid. Understanding SE tax is critical for tax professionals dealing with self-employed individuals.",
+    "order": 52,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Self-employment tax",
+      "SE tax calculation and deduction"
+    ],
+    "blueprintArea": "SEE1-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Self-employed individuals are responsible for paying both the employer and employee portions of Social Security and Medicare taxes, collectively known as self-employment tax. Knowing how to accurately calculate and deduct SE tax is essential for compliance and minimizing tax liability for these clients."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "**Self-employment (SE) tax** is the Social Security and Medicare tax for individuals who work for themselves. Unlike employees who have these taxes withheld from their wages, self-employed individuals are responsible for paying both the employer and employee portions. The SE tax is calculated on **net earnings from self-employment**, which is generally the profit reported on Schedule C (Profit or Loss from Business) or Schedule F (Profit or Loss from Farming).  The SE tax rate consists of two components:\n\n*   **Social Security Tax:** 12.4% on net earnings up to the Social Security wage base ($160,200 for 2023).\n*   **Medicare Tax:** 2.9% on all net earnings. \n\nIn addition to SE tax, individuals with high self-employment income may also be subject to the **Additional Medicare Tax** of 0.9% on self-employment income exceeding certain thresholds (e.g., $200,000 for single filers, $250,000 for married filing jointly).  Self-employed individuals can deduct **one-half of their SE tax** as an above-the-line deduction on Form 1040. This deduction reduces their adjusted gross income (AGI)."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "The SE tax calculation involves several steps:\n\n1.  **Calculate Net Earnings from Self-Employment:** This is typically the profit shown on Schedule C or Schedule F. For example, Sarah's Schedule C shows a profit of $100,000.\n2.  **Multiply by 92.35%:** Self-employment income is subject to SE tax only on 92.35% of the net earnings.  This adjustment is made to account for the fact that employees do not pay Social Security and Medicare taxes on the employer’s share of these taxes. $100,000 x 0.9235 = $92,350.  This is known as the SE taxable base.\n3.  **Calculate Social Security Tax:** Multiply the SE taxable base by 12.4%, up to the Social Security wage base ($160,200 in 2023). $92,350 x 0.124 = $11,451.40. Since Sarah's SE taxable base is below the wage base, we use the entire amount.\n4.  **Calculate Medicare Tax:** Multiply the SE taxable base by 2.9%. $92,350 x 0.029 = $2,678.15\n5.  **Calculate Additional Medicare Tax (if applicable):** If the sum of wages and self-employment income exceeds the applicable threshold, calculate the 0.9% Additional Medicare Tax on the excess. Assume Sarah had $150,000 in wages, so her total income subject to medicare tax is $242,350 ($150,000 + $92,350). Since this is above the single threshold of $200,000, Sarah will have to pay an additional 0.9% on the excess $42,350.  $42,350 x 0.009 = $381.15.\n6.  **Calculate Total SE Tax:** Add the Social Security tax, Medicare tax, and Additional Medicare tax (if applicable). $11,451.40 + $2,678.15 + $381.15 = $14,510.70\n7.  **Calculate the Deduction for One-Half of SE Tax:** Divide the total SE tax by 2. $14,510.70 / 2 = $7,255.35. This amount is deductible as an above-the-line deduction on Schedule 1 (Form 1040), line 15.\n\n**Important Considerations:**\n\n*   Losses from self-employment can offset self-employment income. \n*   If an individual has both wages and self-employment income, the Social Security tax is first calculated on the wages. The remaining Social Security wage base is then applied to the self-employment income.\n*   Partners in a partnership are subject to SE tax on their distributive share of partnership income. This is reported on Schedule K-1 (Form 1065)."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The SEE exam often tests your ability to calculate net earnings from self-employment, the SE tax, and the deduction for one-half of the SE tax. Pay attention to the Social Security wage base and the Additional Medicare Tax thresholds. Questions may involve scenarios with both wages and self-employment income. Ensure that you apply the 92.35% factor correctly. Understand how losses from self-employment impact SE tax calculations. Be prepared to correctly use Schedules C, F, and SE."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Michael is self-employed and reports a profit of $80,000 on Schedule C. He also received $70,000 in wages from his part-time job. Calculate Michael's SE tax liability and the deductible portion of his SE tax.\n\n1.  **Net Earnings from Self-Employment:** $80,000.\n2.  **Multiply by 92.35%:** $80,000 x 0.9235 = $73,880.\n3.  **Social Security Tax:** Since Michael has wages of $70,000, the remaining Social Security wage base is $160,200 - $70,000 = $90,200. His self-employment income of $73,880 falls within this remaining wage base, so the full $73,880 is subject to Social Security tax.  $73,880 x 0.124 = $9,161.12.\n4.  **Medicare Tax:** $73,880 x 0.029 = $2,142.52.\n5.  **Additional Medicare Tax:** Since Michael's total income ($70,000 + $73,880 = $143,880) is below the single threshold, he is not subject to Additional Medicare Tax.\n6.  **Total SE Tax:** $9,161.12 + $2,142.52 = $11,303.64.\n7.  **Deduction for One-Half of SE Tax:** $11,303.64 / 2 = $5,651.82. Michael can deduct $5,651.82 as an above-the-line deduction on Schedule 1 (Form 1040)."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Self-employment tax consists of Social Security and Medicare taxes for self-employed individuals.\n• SE tax is calculated on 92.35% of net earnings from self-employment.\n• The Social Security tax rate is 12.4% up to the Social Security wage base.\n• The Medicare tax rate is 2.9% on all net earnings.\n• One-half of the SE tax is deductible as an above-the-line deduction."
+        }
+      ]
+    }
+  },
+  {
+    "id": "SEE1-053",
+    "courseId": "ea",
+    "section": "SEE1",
+    "title": "Net investment income tax: 3.8% NIIT rules",
+    "description": "This lesson covers the 3.8% Net Investment Income Tax (NIIT) imposed by IRC Section 1411, focusing on who is subject to the tax, what constitutes net investment income, and how to calculate the tax.",
+    "order": 53,
+    "duration": 30,
+    "difficulty": "intermediate",
+    "topics": [
+      "Net investment income tax",
+      "3.8% NIIT rules"
+    ],
+    "blueprintArea": "SEE1-4",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "The Net Investment Income Tax (NIIT) affects many taxpayers, particularly those with significant investment income. Understanding the NIIT is essential for properly advising clients and preparing accurate tax returns. The SEE exam will test your knowledge of the income thresholds and investment income items relevant to the NIIT calculation."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "The 3.8% Net Investment Income Tax (NIIT), established under IRC Section 1411, is imposed on individuals, estates, and trusts whose income exceeds certain threshold amounts. The tax is applied to the *smaller* of the following two amounts:\n\n*   Net Investment Income (NII)\n*   The excess of modified adjusted gross income (MAGI) over the applicable threshold.\n\n**Modified Adjusted Gross Income (MAGI)**: For most individuals, MAGI is AGI with the addition of tax-exempt interest income. The MAGI thresholds vary based on filing status:\n\n*   Single: $200,000\n*   Married Filing Jointly: $250,000\n*   Married Filing Separately: $125,000\n*   Head of Household: $200,000\n*   Qualifying Widow(er): $250,000\n\n**Net Investment Income (NII)**: This generally includes, but is not limited to:\n\n*   Interest, dividends, annuities, royalties, and rents.\n*   Income from businesses that are considered passive activities to the taxpayer (e.g., rental real estate). A material participation exception exists, meaning if the taxpayer materially participates in the business, the income is not considered NII.\n*   Net gain from the disposition of property (e.g., stocks, bonds, real estate). Capital gains and losses are relevant here.\n\nNII does *not* include wages, unemployment compensation, operating income from a non-passive business, or Social Security benefits. Investment expenses can reduce NII. Examples of deductible investment expenses include investment advisory fees, safe deposit box fees, and state and local income taxes attributable to NII."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's explore the components of NIIT in more detail. Rental income is typically considered NII unless the taxpayer is a real estate professional who materially participates in the rental activity. The IRS provides guidance on what constitutes material participation; generally, this involves regular, continuous, and substantial involvement in the operations of the rental property.\n\nFor gains from the sale of property, it's crucial to understand basis. The basis is generally the original cost of the asset, adjusted for items such as depreciation or improvements. The gain or loss is the difference between the amount realized (sales price less selling expenses) and the adjusted basis. Remember that capital losses can offset capital gains, and a net capital loss is limited to $3,000 per year ($1,500 if married filing separately).\n\nExample: John, single, has MAGI of $260,000. His NII includes $20,000 in dividends and $10,000 in capital gains, totaling $30,000. His MAGI exceeds the $200,000 threshold by $60,000. The NIIT is calculated on the *smaller* of $30,000 (NII) and $60,000 (MAGI exceeding the threshold). Therefore, the NIIT is 3.8% of $30,000, which equals $1,140.\n\nExample: Mary and Tom are married filing jointly and have MAGI of $300,000. Their NII is $15,000. Their MAGI exceeds the threshold ($250,000) by $50,000. The NIIT is calculated on the smaller of $15,000 (NII) and $50,000 (MAGI exceeding the threshold). The NIIT is 3.8% of $15,000, which equals $570.\n\nPassive activity losses can reduce NII, but only to the extent allowed under the passive activity loss rules (IRC Section 469). Remember that disallowed passive activity losses can be carried forward to future years."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The SEE exam commonly tests the following:\n\n*   **Identifying NII:** Be able to distinguish between items that are and are not included in NII (e.g., wages vs. dividends).\n*   **Calculating MAGI:** Know how to calculate MAGI, especially the treatment of tax-exempt interest.\n*   **Determining the NIIT:** Calculate the NIIT given a taxpayer's MAGI and NII.\n*   **Threshold Amounts:** Memorize the MAGI thresholds for different filing statuses. Questions may try to trick you with incorrect thresholds.\n*   **Passive Activities:** Understand the rules related to passive activities and how they impact NII. Be aware of the material participation exception.\n*   **Capital Gains/Losses:** Be proficient in capital gain and loss calculations, as these are frequently tested within the NIIT context."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "Sarah, a single taxpayer, has the following income:\n\n*   Wages: $150,000\n*   Dividends: $60,000\n*   Tax-Exempt Interest: $5,000\n*   Rental Income (passive activity): $20,000\n*   Capital Gains: $10,000\n*   Capital Losses: $2,000\n\nFirst, calculate MAGI: AGI is $150,000 + $60,000 + $20,000 + ($10,000 - $2,000) = $238,000. MAGI = $238,000 + $5,000 = $243,000.\nNext, calculate NII: $60,000 (dividends) + $20,000 (rental income) + ($10,000 - $2,000) = $88,000.\nDetermine the NIIT: MAGI exceeds the threshold ($200,000) by $43,000. The smaller of $88,000 (NII) and $43,000 is $43,000. The NIIT is 3.8% of $43,000 = $1,634."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• The NIIT rate is 3.8%.\n• The NIIT applies to individuals, estates, and trusts exceeding certain MAGI thresholds.\n• Net Investment Income (NII) includes interest, dividends, rents, royalties, and capital gains.\n• Passive activity income is generally considered NII unless material participation requirements are met.\n• The tax is calculated on the *smaller* of NII and the excess of MAGI over the threshold."
+        }
+      ]
+    }
+  },
+  {
+    "id": "SEE1-054",
+    "courseId": "ea",
+    "section": "SEE1",
+    "title": "Tax planning strategies: Year-end strategies",
+    "description": "This lesson explores various year-end tax planning strategies that taxpayers can use to minimize their tax liability, focusing on strategies related to deductions, income recognition, and investment management.",
+    "order": 54,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Tax planning strategies",
+      "Year-end strategies"
+    ],
+    "blueprintArea": "SEE1-5",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Year-end tax planning is a crucial service tax professionals provide. Understanding strategies to reduce tax liability can significantly benefit clients. The SEE exam will test your ability to apply these strategies in various scenarios."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "Year-end tax planning involves strategies implemented near the end of the tax year (typically October-December) to optimize a taxpayer's tax situation. The goals are typically to:\n\n*   Reduce taxable income through maximizing deductions.\n*   Defer income to a later year.\n*   Accelerate deductions into the current year.\n*   Manage capital gains and losses.\n\nSeveral strategies can be employed, focusing on deductions, income recognition, and investment management. It's important to consider the taxpayer's current and projected future income, tax bracket, and any expected changes in tax laws. Taxpayers should consult a qualified tax professional for advice tailored to their specific situation.\n\n**Deduction Strategies:**\n\n*   **Bunching Itemized Deductions:** If itemized deductions are close to the standard deduction amount, consider \"bunching\" deductible expenses (e.g., charitable contributions, medical expenses) into one year to exceed the standard deduction threshold. This is particularly effective in alternating years.\n*   **Making Charitable Contributions:** Donations to qualified charities are deductible. Consider donating appreciated stock instead of cash to avoid capital gains taxes. Keep accurate records of donations, especially for items valued over $500.\n*   **Prepaying State and Local Taxes:** If allowed, consider prepaying state and local taxes (property taxes, estimated income taxes) before year-end to increase itemized deductions, subject to the SALT limitation of $10,000 (IRC Section 164).\n*   **Maximizing Retirement Contributions:** Contribute to tax-deferred retirement accounts like 401(k)s and IRAs to reduce current taxable income. Consider Roth IRA conversions if it makes sense for your tax situation.\n\n**Income Strategies:**\n\n*   **Deferring Income:** If possible, delay receiving income until the following year. This can be achieved by delaying invoicing or postponing bonus payments.\n*   **Accelerating Income:** If you anticipate being in a higher tax bracket next year, consider accelerating income into the current year.\n\n**Investment Strategies:**\n\n*   **Tax-Loss Harvesting:** Sell losing investments to offset capital gains. If capital losses exceed capital gains, you can deduct up to $3,000 ($1,500 if married filing separately) of the excess loss against ordinary income. Unused capital losses can be carried forward indefinitely."
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's delve deeper into some of these strategies. With **bunching itemized deductions**, consider a scenario where a taxpayer's itemized deductions typically total $10,000. The standard deduction for a single individual in 2024 is $14,600. By strategically paying deductible expenses in one year (e.g., making two years' worth of charitable contributions in one year), the taxpayer can exceed the standard deduction and itemize, resulting in a lower tax liability for that year. The following year, they would take the standard deduction. This requires careful planning and monitoring of deductible expenses throughout the year.\n\n**Charitable contributions** are another area ripe for planning. Donating appreciated stock held for more than one year allows the taxpayer to deduct the fair market value of the stock while avoiding capital gains taxes. The charity must be a qualified organization under IRC Section 170. Remember that deductions for cash contributions are generally limited to 60% of AGI, while deductions for contributions of appreciated property are generally limited to 30% of AGI.\n\n**Tax-loss harvesting** is a valuable tool for managing capital gains. By strategically selling losing investments, taxpayers can offset capital gains and potentially reduce their overall tax liability. However, be mindful of the wash sale rule (IRC Section 1091), which disallows a loss if you purchase substantially identical stock or securities within 30 days before or after the sale. For example, if you sell stock at a loss and repurchase it within 30 days, the loss is disallowed and added to the basis of the repurchased stock. This rule prevents taxpayers from artificially creating losses for tax purposes while maintaining their investment position."
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "The SEE exam commonly tests the following:\n\n*   **Identifying appropriate year-end strategies:** Given a taxpayer's situation, determine the most effective strategies to minimize their tax liability.\n*   **Understanding deduction limitations:** Be aware of the limitations on various deductions, such as the SALT limitation, charitable contribution limits, and the capital loss deduction limit.\n*   **Applying the wash sale rule:** Recognize situations where the wash sale rule applies and disallows a loss.\n*   **Calculating the tax impact of different strategies:** Be able to calculate the tax savings resulting from implementing various year-end strategies.\n*   **Distinguishing between accelerating and deferring income/deductions:** Understand when it is beneficial to accelerate or defer income and deductions, and how to accomplish this."
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "John and Mary, married filing jointly, have AGI of $100,000. Their itemized deductions typically total $20,000, consisting of $8,000 in state and local taxes (already limited by SALT), $5,000 in charitable contributions, and $7,000 in mortgage interest. The standard deduction for married filing jointly in 2024 is $29,200. They realize that if they make an additional $10,000 charitable contribution before year-end, they can exceed the standard deduction. This will result in an additional itemized deduction of $7,800 ($27,000 total itemized - $29,200 standard). This will save them $7,800 * their marginal tax rate (e.g. 22%), which is $1,716.\n\nAlternatively, they could choose to sell some stock at a loss to offset $5,000 in capital gains they realized earlier in the year. By selling the stock at a $5,000 loss, they will eliminate their capital gains tax. This strategy would make the most sense if the stock has poor future prospects."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "• Year-end tax planning aims to minimize tax liability through deductions, income recognition, and investment management.\n• Key strategies include bunching itemized deductions, maximizing retirement contributions, deferring or accelerating income, and tax-loss harvesting.\n• Be aware of deduction limitations, such as the SALT limitation, charitable contribution limits, and the capital loss deduction limit.\n• The wash sale rule prevents taxpayers from artificially creating losses for tax purposes.\n• Consider a taxpayer's current and projected future income, tax bracket, and expected changes in tax laws when developing year-end strategies."
+        }
+      ]
+    }
+  },
+  {
+    "id": "SEE1-055",
+    "courseId": "ea",
+    "section": "SEE1",
+    "title": "Education tax benefits: AOTC, LLC, student loan interest",
+    "description": "This lesson covers the American Opportunity Tax Credit (AOTC), Lifetime Learning Credit (LLC), and the student loan interest deduction, crucial for understanding individual tax returns with education expenses.",
+    "order": 55,
+    "duration": 35,
+    "difficulty": "intermediate",
+    "topics": [
+      "Education tax benefits",
+      "AOTC, LLC, student loan interest"
+    ],
+    "blueprintArea": "SEE1-5",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Education tax benefits are frequently tested on the SEE exam because they represent significant tax savings opportunities for many taxpayers. Understanding the eligibility requirements, limitations, and interaction between these benefits is crucial for providing accurate tax advice and maximizing client savings."
+        },
+        {
+          "title": "Key Concepts",
+          "type": "text",
+          "content": "This lesson will cover three major education tax benefits: the American Opportunity Tax Credit (AOTC), the Lifetime Learning Credit (LLC), and the student loan interest deduction. Understanding the differences between these is essential for correctly applying them to a taxpayer's situation.\n\n*   **American Opportunity Tax Credit (AOTC):** A credit for qualified education expenses paid for the first four years of higher education. The student must be pursuing a degree or other credential and be enrolled at least half-time. AOTC is claimed using Form 8863.\n*   **Lifetime Learning Credit (LLC):** A credit for qualified education expenses paid for undergraduate, graduate, and professional degree courses, including courses taken to improve job skills. There is no requirement for the student to be enrolled at least half-time. LLC is also claimed using Form 8863.\n*   **Student Loan Interest Deduction:** An above-the-line deduction for interest paid on qualified student loans. The student loan must have been taken out for the taxpayer, their spouse, or their dependent. This deduction is claimed on Schedule 1 (Form 1040), line 33.\n\nUnderstanding the phase-out rules for both credits and the income limitations for the student loan interest deduction are critical for determining eligibility. Remember, a taxpayer cannot claim both the AOTC and LLC for the same student in the same tax year. The choice depends on the specific circumstances and which credit provides the greatest benefit.\n"
+        },
+        {
+          "title": "Detailed Analysis",
+          "type": "text",
+          "content": "Let's delve deeper into each education tax benefit:\n\n*   **AOTC:** The maximum AOTC amount is $2,500 per student, per year. It's calculated as 100% of the first $2,000 in qualified education expenses, plus 25% of the next $2,000.  40% of the credit (up to $1,000) is refundable, meaning you can get it back as a refund even if you don't owe any taxes. Qualified expenses include tuition, fees, and course materials required for enrollment. Room and board are *not* qualified expenses. The student must not have completed the first four years of higher education, must not have a felony drug conviction, and must be enrolled at least half-time for at least one academic period beginning during the year.  A taxpayer with modified adjusted gross income (MAGI) above a certain limit cannot claim the AOTC. For 2023, the AOTC begins to phase out for single filers with MAGI above $80,000 and is completely phased out at $90,000. For married filing jointly, the phase-out range is $160,000 to $180,000. See IRS Publication 970 for current thresholds.\n\n*   **LLC:** The LLC is a nonrefundable credit of up to $2,000 per tax return (not per student). It is calculated as 20% of the first $10,000 in qualified education expenses. Qualified expenses include tuition, fees, and course materials for undergraduate, graduate, and professional degree courses. Courses taken to improve job skills also qualify. The LLC phase-out thresholds are different from the AOTC. For 2023, the LLC begins to phase out for single filers with MAGI above $69,000 and is completely phased out at $89,000. For married filing jointly, the phase-out range is $138,000 to $178,000. See IRS Publication 970 for current thresholds.\n\n*   **Student Loan Interest Deduction:**  Taxpayers can deduct the amount of student loan interest they paid during the year, up to a maximum of $2,500. The loan must have been taken out to pay for qualified education expenses, which include tuition, fees, room and board, and books.  The student must have been enrolled at least half-time. The deduction is phased out for taxpayers with higher incomes. For 2023, the deduction begins to phase out for single filers with MAGI above $75,000 and is completely phased out at $90,000. For married filing jointly, the phase-out range is $155,000 to $185,000. See IRS Publication 970 for current thresholds. The interest must be legally obligated to be paid and must actually be paid within the tax year to be deductible.\n"
+        },
+        {
+          "title": "Exam Focus Areas",
+          "type": "text",
+          "content": "Expect exam questions to test your understanding of the following:\n\n*   **Eligibility Requirements:** Can the taxpayer claim the AOTC, LLC, or student loan interest deduction based on their income, student status, and expenses?\n*   **Phase-Outs:** How do the AOTC, LLC, and student loan interest deduction phase out based on MAGI?\n*   **Qualified Expenses:** What expenses qualify for each benefit (tuition, fees, books vs. room and board)?\n*   **Interaction of Benefits:** Can a taxpayer claim both the AOTC and LLC in the same year? Can they claim the student loan interest deduction and also claim one of the education credits?\n*   **Form 1098-T:** Be familiar with the information provided on Form 1098-T, Tuition Statement, and how it relates to claiming these benefits. Note that Box 1 (payments received) is generally the amount used to determine the credit amount. Also, be aware of situations where Box 2 (amounts billed) was used in previous years (but no longer is).\n\nCommon question patterns include:\n\n*   Calculating the maximum AOTC or LLC amount a taxpayer can claim.\n*   Determining whether a taxpayer is eligible for the student loan interest deduction.\n*   Identifying qualified education expenses.\n*   Choosing the optimal tax benefit for a taxpayer given their specific circumstances.\n"
+        },
+        {
+          "title": "Practical Example",
+          "type": "text",
+          "content": "John and Mary are married and have a combined MAGI of $170,000. Their daughter, Sarah, is a full-time student in her second year of college. They paid $4,000 in tuition and fees and $500 for required textbooks. They also paid $2,000 in student loan interest during the year.\n\nAnalysis:\n\n*   **AOTC:**  Since their MAGI is $170,000, they are within the phase-out range for the AOTC ($160,000 - $180,000). The credit amount is calculated as 100% of the first $2,000 in expenses plus 25% of the next $2,000. In this case, Sarah's expenses were $4,500 ($4,000 tuition + $500 books).  Therefore the AOTC before phase-out is $2,000 + ($2,000 * 0.25) = $2,500. Given their income, it would be phased out partially.\n*   **LLC:** They could potentially claim the LLC. The LLC is 20% of the first $10,000 in qualified expenses, up to a maximum credit of $2,000. Since their MAGI is $170,000, they are within the phase-out range for the LLC ($138,000 - $178,000).\n*   **Student Loan Interest Deduction:** Since their MAGI is $170,000, they are within the phase-out range for the student loan interest deduction ($155,000 - $185,000). They can deduct a portion of the $2,000 interest paid, subject to the phase-out calculation using IRS worksheets.\n\nTo determine the best option, they would need to calculate the phased-out amounts of each credit/deduction and compare the resulting tax savings. In a test question, you might not have time to perform exact calculations, so focus on understanding the eligibility and phase-out rules to estimate the most beneficial option.\n"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "callout",
+          "content": "•   AOTC is a credit for the first four years of higher education; LLC is for any educational pursuit.\n•   AOTC is per student; LLC is per tax return.\n•   The AOTC can be partially refundable, while the LLC is nonrefundable.\n•   Student loan interest is an above-the-line deduction, subject to income limitations.\n•   Be familiar with the MAGI phase-out thresholds for each benefit (check IRS Publication 970 for the most up-to-date figures).\n•   You cannot claim both AOTC and LLC for the same student in the same tax year."
+        }
+      ]
+    }
+  }
+]

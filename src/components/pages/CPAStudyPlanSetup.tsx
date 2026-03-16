@@ -5,7 +5,7 @@
  * Handles CPA's unique structure: 3 Core sections + 1 Discipline choice.
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ChevronLeft,
@@ -22,6 +22,7 @@ import { format, addDays, differenceInDays } from 'date-fns';
 import clsx from 'clsx';
 import { Button } from '../common/Button';
 import { Card } from '../common/Card';
+import { parseLocalDate } from '../../utils/dateHelpers';
 import { 
   CPASectionId, 
   CPACoreSectionId,
@@ -37,7 +38,7 @@ import {
   getRecommendedOrderReason,
 } from '../../utils/cpaStudyPlanner';
 import { useAuth } from '../../hooks/useAuth';
-import { setDoc, doc } from 'firebase/firestore';
+import { setDoc, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import logger from '../../utils/logger';
 
@@ -163,7 +164,7 @@ const CoreExamDateCard: React.FC<CoreExamDateCardProps> = ({ sectionId, date, on
               value={date ? format(date, 'yyyy-MM-dd') : ''}
               min={minDate}
               max={maxDate}
-              onChange={(e) => onDateChange(e.target.value ? new Date(e.target.value) : null)}
+              onChange={(e) => onDateChange(e.target.value ? parseLocalDate(e.target.value) : null)}
               className="input flex-1"
             />
             {date && (
@@ -325,7 +326,7 @@ const PlanPreview: React.FC<PlanPreviewProps> = ({ plan }) => (
         <div className="flex items-center gap-2">
           <Clock className="w-4 h-4 text-warning-500" />
           <span className="text-sm text-slate-700 dark:text-slate-300">
-            {plan.hoursPerDay}h study time
+            {Math.round(plan.hoursPerDay * 10) / 10}h study time
           </span>
         </div>
         <div className="flex items-center gap-2">
@@ -372,6 +373,7 @@ const CPAStudyPlanSetup: React.FC = () => {
   const { user } = useAuth();
   const [step, setStep] = useState(1);
   const totalSteps = 5;
+  const [loadingExisting, setLoadingExisting] = useState(true);
 
   // Form state
   const [discipline, setDiscipline] = useState<CPADisciplineSectionId | null>(null);
@@ -379,6 +381,54 @@ const CPAStudyPlanSetup: React.FC = () => {
   const [hoursPerDay, setHoursPerDay] = useState(2);
   const [studyDaysPerWeek, setStudyDaysPerWeek] = useState(5);
   const [generatedPlan, setGeneratedPlan] = useState<CPAStudyPlan | null>(null);
+
+  // Load existing plan values on mount (for editing)
+  useEffect(() => {
+    async function loadExistingPlan() {
+      if (!user?.uid) {
+        setLoadingExisting(false);
+        return;
+      }
+      try {
+        const planDoc = await getDoc(doc(db, 'users', user.uid, 'settings', 'cpaStudyPlan'));
+        if (planDoc.exists()) {
+          const data = planDoc.data();
+          // Load discipline
+          if (data.discipline) {
+            setDiscipline(data.discipline);
+          }
+          // Load exam dates (convert from ISO strings or Timestamps)
+          if (data.examDates) {
+            const dates: Partial<Record<CPASectionId, Date>> = {};
+            for (const [key, value] of Object.entries(data.examDates)) {
+              if (value) {
+                // Handle Firestore Timestamp or ISO string
+                const dateVal = (value as { toDate?: () => Date }).toDate?.() ?? parseLocalDate(value as string);
+                if (!isNaN(dateVal.getTime())) {
+                  dates[key as CPASectionId] = dateVal;
+                }
+              }
+            }
+            setExamDates(dates);
+          }
+          // Load hours per day
+          if (data.hoursPerDay && typeof data.hoursPerDay === 'number') {
+            setHoursPerDay(data.hoursPerDay);
+          }
+          // Load study days per week
+          if (data.studyDaysPerWeek && typeof data.studyDaysPerWeek === 'number') {
+            setStudyDaysPerWeek(data.studyDaysPerWeek);
+          }
+          logger.info('Loaded existing CPA study plan for editing');
+        }
+      } catch (error) {
+        logger.warn('Could not load existing CPA study plan', error);
+      } finally {
+        setLoadingExisting(false);
+      }
+    }
+    loadExistingPlan();
+  }, [user?.uid]);
 
   const hasAtLeastOneDate = Object.values(examDates).some(d => d !== undefined);
 
@@ -412,9 +462,10 @@ const CPAStudyPlanSetup: React.FC = () => {
     }
     
     try {
-      // Save the generated plan to Firestore
+      // Save the generated plan to Firestore (include studyDaysPerWeek for editing)
       await setDoc(doc(db, 'users', user.uid, 'settings', 'cpaStudyPlan'), {
         ...generatedPlan,
+        studyDaysPerWeek,
         savedAt: new Date().toISOString(),
       });
       
@@ -445,6 +496,15 @@ const CPAStudyPlanSetup: React.FC = () => {
 
   return (
     <div className="p-4 sm:p-6 max-w-2xl mx-auto page-enter">
+      {/* Loading state while fetching existing plan */}
+      {loadingExisting && (
+        <div className="flex items-center justify-center py-12">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500" />
+        </div>
+      )}
+      
+      {!loadingExisting && (
+        <>
       {/* Back button */}
       <Link
         to="/cpa"
@@ -622,6 +682,8 @@ const CPAStudyPlanSetup: React.FC = () => {
           </Button>
         )}
       </div>
+        </>
+      )}
     </div>
   );
 };

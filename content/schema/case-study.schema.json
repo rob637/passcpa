@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CFP Case Study Schema",
+  "description": "Schema for CFP exam case studies - multi-part scenarios testing integrated knowledge",
+  "type": "object",
+  "required": ["$schema", "version", "courseId", "caseStudies"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema file"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Schema version (semver)"
+    },
+    "courseId": {
+      "type": "string",
+      "const": "cfp",
+      "description": "Course identifier"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this file was generated"
+    },
+    "enhancedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When explanations were last enhanced"
+    },
+    "caseStudies": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/CaseStudy" },
+      "description": "Array of case studies"
+    }
+  },
+  "definitions": {
+    "CaseStudy": {
+      "type": "object",
+      "required": ["id", "title", "courseId", "difficulty", "estimatedTime", "domains", "scenario", "questions"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^cfp-case-\\d{3}$",
+          "description": "Unique case study ID"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5,
+          "description": "Descriptive title for the case study"
+        },
+        "courseId": {
+          "type": "string",
+          "const": "cfp"
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium", "hard"]
+        },
+        "estimatedTime": {
+          "type": "number",
+          "minimum": 10,
+          "description": "Estimated time in minutes"
+        },
+        "domains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "CFP domains covered (RET, TAX, INV, EST, RISK, etc.)"
+        },
+        "scenario": {
+          "type": "string",
+          "minLength": 100,
+          "description": "Markdown-formatted scenario"
+        },
+        "questions": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/CaseStudyQuestion" },
+          "minItems": 1,
+          "description": "Questions within the case study"
+        },
+        "scoringGuide": {
+          "type": "string",
+          "description": "Markdown-formatted scoring guide"
+        }
+      }
+    },
+    "CaseStudyQuestion": {
+      "type": "object",
+      "required": ["id", "domain", "question", "options", "correctOptionId", "explanation"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Question identifier"
+        },
+        "domain": {
+          "type": "string",
+          "description": "CFP domain (RET, TAX, INV, EST, RISK, etc.)"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Question text"
+        },
+        "options": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/QuestionOption" },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "Answer options (A-D)"
+        },
+        "correctOptionId": {
+          "type": "string",
+          "description": "ID of the correct option"
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 50,
+          "description": "Explanation of the correct answer"
+        },
+        "stepByStep": {
+          "type": "string",
+          "description": "UWorld-style step-by-step solution"
+        },
+        "keyFormula": {
+          "type": "string",
+          "description": "Key formula or concept"
+        },
+        "whyWrong": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Why each wrong option is incorrect"
+        },
+        "commonMistakes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Common errors to avoid"
+        },
+        "examTip": {
+          "type": "string",
+          "description": "Exam strategy tip"
+        },
+        "enhanced": {
+          "type": "boolean",
+          "description": "Whether this question has enhanced explanations"
+        }
+      }
+    },
+    "QuestionOption": {
+      "type": "object",
+      "required": ["id", "text"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Option identifier (a, b, c, d)"
+        },
+        "text": {
+          "type": "string",
+          "description": "Option text"
+        }
+      }
+    }
+  }
+}

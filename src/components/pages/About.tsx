@@ -28,7 +28,7 @@ const SUPPORTED_EXAMS = [
 const About = () => {
   useSEO({
     title: 'About VoraPrep',
-    description: 'VoraPrep is an AI-powered exam prep platform for professional certifications. Learn about our mission, technology, and how we help thousands of candidates pass CPA, EA, CMA, CIA, CFP, and CISA exams.',
+    description: 'VoraPrep helps thousands of candidates pass CPA, EA, CMA, CIA, CFP, and CISA exams on the first try. 25,000+ questions with detailed explanations. 97% more affordable than traditional prep.',
     canonicalUrl: 'https://voraprep.com/about',
   });
   useOrganizationSchema();
@@ -51,7 +51,7 @@ const About = () => {
             About VoraPrep
           </h1>
           <p className="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            AI-powered exam prep that makes professional certification accessible to everyone.
+            Exam prep that helps you pass on the first try — at a price that makes sense.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ const About = () => {
               Professional certification exams like the CPA, EA, and CMA are gateways to better careers — but traditional prep courses cost $2,000–$4,000 and haven't evolved in decades.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-              VoraPrep was built to change that. We use adaptive learning, spaced repetition, and AI to deliver a prep experience that's <strong className="text-slate-900 dark:text-white">more effective and 97% more affordable</strong> than legacy providers.
+              VoraPrep was built to change that. We use adaptive learning, spaced repetition, and detailed explanations to deliver a prep experience that's <strong className="text-slate-900 dark:text-white">more effective and 97% more affordable</strong> than legacy providers.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Every working professional deserves access to high-quality exam prep — regardless of budget.

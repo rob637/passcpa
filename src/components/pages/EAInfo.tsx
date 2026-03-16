@@ -8,8 +8,15 @@ import {
   Info,
   Users
 } from 'lucide-react';
+import { useSEO } from '../../hooks/useSEO';
 
 const EAInfo = () => {
+  useSEO({
+    title: 'Enrolled Agent Exam Guide 2026 | IRS SEE Exam',
+    description: 'Complete guide to the EA exam (Special Enrollment Examination): 3 parts covering individuals, businesses, and representation. Learn how to become an Enrolled Agent.',
+    canonicalUrl: 'https://voraprep.com/ea-exam-info',
+  });
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Header */}

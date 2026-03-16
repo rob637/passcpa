@@ -132,9 +132,81 @@ export interface TBSRequirement {
   [key: string]: unknown; // Allow additional properties
 }
 
+// ============================================================================
+// Interactive Lesson Section Types (2026 Enhancement)
+// ============================================================================
+
+/** Knowledge check question embedded in a lesson */
+export interface KnowledgeCheckData {
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+  hint?: string;
+}
+
+/** Reveal/expand section - hides answer until clicked */
+export interface RevealData {
+  question: string;
+  answer: string;
+  hint?: string;
+}
+
+/** Side-by-side comparison for confusing distinctions */
+export interface ComparisonData {
+  title: string;
+  items: {
+    label: string;
+    points: string[];
+    color?: 'blue' | 'green' | 'amber' | 'red' | 'purple';
+  }[];
+}
+
+/** Link to related practice questions */
+export interface PracticeLinkData {
+  text: string;
+  questionIds: string[];
+  difficulty?: 'easy' | 'medium' | 'hard' | 'mixed';
+}
+
+/** Flowchart node for decision trees */
+export interface FlowchartNode {
+  id: number;
+  text: string;
+  yes?: number;
+  no?: number;
+  next?: number;
+  terminal?: boolean;
+  result?: string;
+}
+
+/** Flowchart/decision tree visualization */
+export interface FlowchartData {
+  title: string;
+  nodes: FlowchartNode[];
+}
+
+/** Interactive calculation step */
+export interface CalculationStep {
+  label: string;
+  value: string;
+  formula?: string;
+  editable?: boolean;
+  answer?: string;
+}
+
+/** Fill-in-the-blank calculation exercise */
+export interface CalculationData {
+  title: string;
+  scenario?: string;
+  steps: CalculationStep[];
+  solution?: string;
+}
+
 export interface LessonContentSection {
   title: string;
-  type: 'text' | 'list' | 'table' | 'interactive' | 'dates' | 'callout' | 'example' | 'warning' | 'summary';
+  type: 'text' | 'list' | 'table' | 'interactive' | 'dates' | 'callout' | 'example' | 'warning' | 'summary' 
+      | 'knowledge-check' | 'reveal' | 'comparison' | 'practice-link' | 'flowchart' | 'calculation';
   
   // Content can be various formats depending on type
   content?: string | string[] | DefinitionListItem[] | string[][] | Record<string, unknown>;
@@ -148,6 +220,14 @@ export interface LessonContentSection {
   // For 'table' type
   headers?: string[];
   rows?: string[][];
+  
+  // For interactive section types (2026 Enhancement)
+  knowledgeCheck?: KnowledgeCheckData;
+  reveal?: RevealData;
+  comparison?: ComparisonData;
+  practiceLink?: PracticeLinkData;
+  flowchart?: FlowchartData;
+  calculation?: CalculationData;
 }
 
 export interface LessonContent {
@@ -234,6 +314,20 @@ export interface Question {
   options: string[];
   correctAnswer: number;
   explanation: string;
+  
+  // UWorld-style enhanced explanations
+  whyWrong?: {
+    [key: number]: string;  // Index maps to option index (0-3), explains why that option is incorrect
+  };
+  memoryAid?: string;       // Mnemonic, acronym, or memory trick
+  examTip?: string;         // Exam strategy advice for this question type
+  educational?: string;     // Deeper learning context
+  bottomLine?: string;      // One-sentence exam takeaway
+  diagram?: {
+    url: string;            // URL to diagram image
+    alt: string;            // Alt text for accessibility
+    caption?: string;       // Optional caption
+  };
   
   // Blueprint tagging
   blueprintArea?: string;
@@ -481,6 +575,19 @@ export interface UserProfile {
   // Study schedule — which days the user intends to study (0=Sun, 1=Mon, ..., 6=Sat)
   // If omitted, all 7 days are assumed.
   studyDayPreferences?: number[];
+  
+  // Signup source tracking (UTM, timezone, etc.)
+  signupSource?: {
+    utm_source?: string;
+    utm_medium?: string;
+    utm_campaign?: string;
+    utm_content?: string;
+    utm_term?: string;
+    gclid?: string;
+    referrer?: string;
+    timezone?: string;
+    language?: string;
+  };
   
   // Timestamps (FieldValue allowed for serverTimestamp() during writes)
   createdAt?: FirestoreTimestamp;

@@ -28,11 +28,11 @@ const FAQ_SECTIONS: FAQSection[] = [
     faqs: [
       {
         question: 'What is VoraPrep?',
-        answer: 'VoraPrep is an AI-powered exam prep platform for professional certifications including CPA, EA, CMA, CIA, CFP, and CISA. We combine adaptive learning, spaced repetition, and an AI tutor to help you pass your exam on the first try — at a fraction of the cost of traditional review courses.',
+        answer: 'VoraPrep is an exam prep platform for professional certifications including CPA, EA, CMA, CIA, CFP, and CISA. We combine adaptive learning, spaced repetition, and detailed explanations to help you pass your exam on the first try — at a fraction of the cost of traditional review courses.',
       },
       {
         question: 'How is VoraPrep different from Becker, Wiley, or Surgent?',
-        answer: 'VoraPrep uses AI and learning science (adaptive algorithms, SM-2 spaced repetition) to personalize your study plan — features that legacy providers charge $2,000–$4,000 for or don\'t offer at all. Our CPA prep starts at $29/month with founder pricing, vs. $2,000+ for Becker. You also get an AI tutor that can explain concepts, work through problems, and answer your questions 24/7.',
+        answer: 'VoraPrep uses learning science (adaptive algorithms, SM-2 spaced repetition) to personalize your study plan — features that legacy providers charge $2,000–$4,000 for or don\'t offer at all. Our CPA prep starts at $29/month with founder pricing, vs. $2,000+ for Becker. You also get instant explanations for every question and a study assistant that can help you work through problems 24/7.',
       },
       {
         question: 'Is there a free trial?',

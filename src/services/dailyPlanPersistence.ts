@@ -21,6 +21,7 @@ import {
   getDoc,
   setDoc,
   updateDoc,
+  deleteDoc,
   arrayUnion,
   Timestamp,
   collection,
@@ -31,9 +32,13 @@ import {
   getDocs,
 } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { DailyPlan, DailyActivity, UserStudyState, RecentDaySnapshot, ActivityFeedbackRecord, ActivityFeedbackStats, generateDailyPlan } from './dailyPlanService';
+import { DailyPlan, DailyActivity, UserStudyState, RecentDaySnapshot, ActivityFeedbackRecord, ActivityFeedbackStats, generateDailyPlan, StudyPlanContext } from './dailyPlanService';
+import { fetchLessonsBySection } from './lessonService';
+import { resolveStudySection } from './contentRegistry';
 import logger from '../utils/logger';
 import type { CourseId } from '../types';
+import type { StudyPlan } from '../types/studyPlan';
+import { isWithinInterval } from 'date-fns';
 
 /**
  * Fetch adaptive engine data (review-due questions, weak areas) for a given course.
@@ -96,6 +101,192 @@ async function getAdaptiveEngineData(courseId: CourseId): Promise<{ questionsDue
   }
 }
 
+/**
+ * Quick check if a study plan exists for this user/course/section.
+ * Used to invalidate cached daily plans when a study plan was created after the cache.
+ */
+async function checkStudyPlanExists(
+  userId: string,
+  courseId: CourseId,
+  section: string
+): Promise<boolean> {
+  try {
+    // Normalize section to match how plans are stored
+    const normalizedSection = resolveStudySection(courseId, section) || section.toUpperCase();
+    const planKey = `${courseId}_${normalizedSection}`;
+    // Use 'studyPlans' collection (camelCase) - matches where plans are saved in useStudyPlan.ts
+    const planRef = doc(db, 'users', userId, 'studyPlans', planKey);
+    const snapshot = await getDoc(planRef);
+    return snapshot.exists();
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Fetch the user's study plan and calculate context for the current week.
+ * Returns lessons scheduled for this week so the daily plan can prioritize them.
+ */
+async function getStudyPlanContext(
+  userId: string,
+  courseId: CourseId,
+  section: string
+): Promise<StudyPlanContext | null> {
+  try {
+    // Normalize section to match how plans are stored (uppercase)
+    const normalizedSection = resolveStudySection(courseId, section) || section.toUpperCase();
+    // Fetch the study plan from Firestore
+    const planKey = `${courseId}_${normalizedSection}`;
+    const planDoc = await getDoc(doc(db, 'users', userId, 'studyPlans', planKey));
+    
+    if (!planDoc.exists()) {
+      logger.info(`No study plan found for ${planKey}`);
+      return null;
+    }
+    
+    const plan = planDoc.data() as StudyPlan;
+    
+    // Compute hoursPerDay robustly — older plans may not have this field,
+    // or it may have been lost during JSON serialization.
+    let hoursPerDay = plan.hoursPerDay;
+    if (!hoursPerDay || hoursPerDay <= 0) {
+      // Fallback 1: Compute from setup.weekdayHours / weekendHours
+      const setup = (plan as any).setup;
+      if (setup?.weekdayHours != null && setup?.weekendHours != null && plan.studyDaysPerWeek) {
+        const weekendDays = Math.min(plan.studyDaysPerWeek, 2);
+        const weekdayDays = Math.max(0, plan.studyDaysPerWeek - weekendDays);
+        const totalDays = weekdayDays + weekendDays;
+        hoursPerDay = totalDays > 0
+          ? (weekdayDays * setup.weekdayHours + weekendDays * setup.weekendHours) / totalDays
+          : setup.hoursPerDay || 0;
+      } else if (setup?.hoursPerDay) {
+        hoursPerDay = setup.hoursPerDay;
+      }
+      // Fallback 2: Derive from week goals (totalMinutes / studyDaysPerWeek / 60)
+      // Week goals have questions × 1.5min + lessons × 30min + simulations × 30min
+      if ((!hoursPerDay || hoursPerDay <= 0) && plan.weeks?.length > 0) {
+        const firstWeek = plan.weeks[0];
+        const weekMinutes = (firstWeek.goals.questions * 1.5) + (firstWeek.goals.lessons * 30) + (firstWeek.goals.simulations * 30);
+        const daysPerWeek = plan.studyDaysPerWeek || 5;
+        hoursPerDay = weekMinutes / daysPerWeek / 60;
+      }
+      if (hoursPerDay && hoursPerDay > 0) {
+        hoursPerDay = Math.round(hoursPerDay * 10) / 10;
+        logger.info(`Computed hoursPerDay from fallback: ${hoursPerDay}`);
+      }
+    }
+    const studyDaysPerWeek = plan.studyDaysPerWeek || 5;
+    
+    // Find current week
+    const today = new Date();
+    const currentWeek = plan.weeks.find(w => {
+      const start = new Date(w.startDate);
+      const end = new Date(w.endDate);
+      return isWithinInterval(today, { start, end });
+    });
+    
+    if (!currentWeek) {
+      logger.info(`No current week found in study plan for ${planKey}`);
+      return null;
+    }
+    
+    // Fetch lessons for this section
+    const lessons = await fetchLessonsBySection(section, courseId);
+    if (lessons.length === 0) {
+      return null;
+    }
+    
+    // Calculate which lessons belong to current week (same logic as StudyPlan.tsx)
+    const totalLessons = lessons.length;
+    const learningWeeks = plan.weeks.filter(w => 
+      ['foundation', 'building', 'reinforcement'].includes(w.phase)
+    ).length;
+    
+    if (learningWeeks === 0 || currentWeek.goals.lessons === 0) {
+      return {
+        currentWeek: currentWeek.weekNumber,
+        phase: currentWeek.phase,
+        weekLessonIds: [],
+        completedLessonIds: [],
+        focusTopics: [],
+        weekGoals: currentWeek.goals,
+        hoursPerDay,
+        studyDaysPerWeek,
+        weekStartDate: typeof currentWeek.startDate === 'string' 
+          ? currentWeek.startDate 
+          : currentWeek.startDate.toISOString(),
+        weekEndDate: typeof currentWeek.endDate === 'string' 
+          ? currentWeek.endDate 
+          : currentWeek.endDate.toISOString(),
+      };
+    }
+    
+    // Calculate cumulative lessons up to this week
+    let lessonsBeforeThisWeek = 0;
+    for (const w of plan.weeks) {
+      if (w.weekNumber >= currentWeek.weekNumber) break;
+      lessonsBeforeThisWeek += w.goals.lessons;
+    }
+    
+    const startIndex = Math.min(lessonsBeforeThisWeek, totalLessons);
+    const endIndex = Math.min(startIndex + currentWeek.goals.lessons, totalLessons);
+    const weekLessons = lessons.slice(startIndex, endIndex);
+    const weekLessonIds = weekLessons.map(l => l.id);
+    
+    // Pull-ahead: Calculate next week's lessons for users who finish early
+    let nextWeekLessonIds: string[] = [];
+    const nextWeek = plan.weeks.find(w => w.weekNumber === currentWeek.weekNumber + 1);
+    if (nextWeek && nextWeek.goals.lessons > 0) {
+      const nextStartIndex = endIndex;
+      const nextEndIndex = Math.min(nextStartIndex + nextWeek.goals.lessons, totalLessons);
+      nextWeekLessonIds = lessons.slice(nextStartIndex, nextEndIndex).map(l => l.id);
+      logger.info(`Pull-ahead: ${nextWeekLessonIds.length} lessons available from week ${nextWeek.weekNumber}`);
+    }
+    
+    // Fetch completed lessons from user's lesson progress collection
+    let completedLessonIds: string[] = [];
+    try {
+      const lessonsCollection = collection(db, 'users', userId, 'lessons');
+      const lessonsSnapshot = await getDocs(lessonsCollection);
+      completedLessonIds = lessonsSnapshot.docs
+        .filter(docSnap => {
+          const data = docSnap.data();
+          return data.status === 'completed' || data.completedAt || data.progress >= 100;
+        })
+        .map(docSnap => docSnap.id);
+      logger.info(`Found ${completedLessonIds.length} completed lessons for user`);
+    } catch (err) {
+      logger.warn('Could not fetch lesson progress, assuming none completed:', err);
+    }
+    
+    // Extract focus topics from this week's lessons
+    const focusTopics = [...new Set(weekLessons.flatMap(l => l.topics || []))];
+    
+    logger.info(`Study plan context for ${planKey}: Week ${currentWeek.weekNumber}, ${weekLessonIds.length} week lessons, goals: ${JSON.stringify(currentWeek.goals)}`);
+    
+    return {
+      currentWeek: currentWeek.weekNumber,
+      phase: currentWeek.phase,
+      weekLessonIds,
+      completedLessonIds,
+      focusTopics,
+      weekGoals: currentWeek.goals,
+      hoursPerDay,
+      studyDaysPerWeek,
+      weekStartDate: typeof currentWeek.startDate === 'string' 
+        ? currentWeek.startDate 
+        : currentWeek.startDate.toISOString(),
+      weekEndDate: typeof currentWeek.endDate === 'string' 
+        ? currentWeek.endDate 
+        : currentWeek.endDate.toISOString(),
+      nextWeekLessonIds,
+    };
+  } catch (err) {
+    logger.warn(`Could not fetch study plan context for ${userId}/${courseId}/${section}:`, err);
+    return null;
+  }
+}
+
 export interface PersistedDailyPlan extends DailyPlan {
   userId: string;
   completedActivities: string[];
@@ -123,7 +314,7 @@ const DURATION_STORAGE_KEY = 'voraprep_activity_durations';
 const ACTIVITY_START_KEY = 'voraprep_activity_start';
 const FEEDBACK_STORAGE_KEY = 'voraprep_activity_feedback';
 
-const PLAN_VERSION = 1;
+const PLAN_VERSION = 6;
 
 /**
  * Single-exam courses use one unified daily plan across all domains.
@@ -177,6 +368,11 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
               logger.log(`Cached plan section (${parsed.section}) doesn't match requested (${section}), will regenerate`);
               return null;
           }
+          // Check plan version - invalidate stale plans from older code
+          if ((parsed.version || 0) < PLAN_VERSION) {
+              logger.log(`Plan version (${parsed.version}) outdated (current: ${PLAN_VERSION}), regenerating`);
+              return null;
+          }
           // Check if exam date changed - invalidate cache if so
           if (currentExamDate !== undefined && parsed.examDate !== currentExamDate) {
               logger.log(`Exam date changed (was: ${parsed.examDate}, now: ${currentExamDate}), regenerating plan`);
@@ -190,7 +386,7 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
           } as PersistedDailyPlan;
       }
   } catch (e) {
-      // Ignore LC errors
+      logger.warn('Failed to parse daily plan from localStorage cache:', e);
   }
 
   try {
@@ -214,6 +410,12 @@ export const fetchTodaysPlan = async (userId: string, section?: string, currentE
       // plans under 'ALL' but the plan's internal .section may be the domain (e.g. 'CISA1')
       if (section && section !== 'ALL' && plan.section !== section) {
         logger.log(`Firestore plan section (${plan.section}) doesn't match requested (${section}), will regenerate`);
+        return null;
+      }
+      
+      // Check plan version - invalidate stale plans from older code
+      if ((plan.version || 0) < PLAN_VERSION) {
+        logger.log(`Firestore plan version (${plan.version}) outdated (current: ${PLAN_VERSION}), regenerating`);
         return null;
       }
       
@@ -271,6 +473,23 @@ export const clearTodaysPlan = async (userId: string, section?: string): Promise
     }
   } catch (e) {
     logger.error('Error clearing localStorage cache:', e);
+  }
+  
+  // Also clear Firestore cache so the plan regenerates on next load
+  try {
+    if (section) {
+      const docPath = `${today}_${section}`;
+      await deleteDoc(doc(db, 'users', userId, 'daily_plans', docPath));
+      logger.log(`Cleared Firestore daily plan for section ${section}`);
+    } else {
+      // Clear all sections - delete the main daily plan doc for today
+      // Note: This clears only the date-keyed doc; section-specific docs require section param
+      await deleteDoc(doc(db, 'users', userId, 'daily_plans', today));
+      logger.log(`Cleared Firestore daily plan for today`);
+    }
+  } catch (e) {
+    // Firestore deletion may fail (doc doesn't exist, offline, etc.) - that's OK
+    logger.log('Could not clear Firestore daily plan (may not exist):', e);
   }
 };
 
@@ -383,8 +602,20 @@ export const getOrCreateTodaysPlan = async (
   if (!forceRegenerate) {
     const existingPlan = await fetchTodaysPlan(userId, cacheSection, state.examDate);
     if (existingPlan) {
-      logger.log(`Using cached daily plan for section ${cacheSection}`);
-      return existingPlan;
+      // Check if study plan was created AFTER this cached plan was generated
+      // If user now has a study plan but the cached plan doesn't reflect it,
+      // regenerate to include proper weekly goals
+      const sectionForPlan = state.section || cacheSection;
+      const studyPlanExists = await checkStudyPlanExists(userId, courseId, sectionForPlan);
+      const cachedHasStudyPlan = existingPlan.whatsNext?.studyPlanWeek !== undefined;
+      
+      if (studyPlanExists && !cachedHasStudyPlan) {
+        logger.log(`Study plan exists but cached plan doesn't reflect it - regenerating`);
+        // Fall through to regenerate
+      } else {
+        logger.log(`Using cached daily plan for section ${cacheSection}`);
+        return existingPlan;
+      }
     }
   }
 
@@ -446,11 +677,15 @@ export const getOrCreateTodaysPlan = async (
       adaptiveQuestionsDue = adaptiveData.questionsDue;
     }
     // Inject weak sections as synthetic low-accuracy topic stats so the plan
-    // generator naturally schedules practice for them
+    // generator naturally schedules practice for them.
+    // IMPORTANT: Only inject the section matching state.section so the plan
+    // doesn't show "Strengthen: FAR" when the user is studying ISC/BAR/etc.
     if (adaptiveData.weakSections.length > 0) {
       const existingTopics = new Set((state.topicStats || []).map(t => t.topic));
+      const currentSection = state.section?.toUpperCase();
       const syntheticStats = adaptiveData.weakSections
         .filter(section => !existingTopics.has(section))
+        .filter(section => section.toUpperCase() === currentSection)
         .map(section => ({
           topic: section,
           accuracy: 0.45, // Below the 60% threshold → marked as critical weak area
@@ -466,12 +701,27 @@ export const getOrCreateTodaysPlan = async (
     // Graceful degradation — plan generates without adaptive engine data
   }
 
+  // Fetch study plan context for the current week's lessons
+  let studyPlanContext: StudyPlanContext | undefined;
+  try {
+    // Use the original section (not cacheSection) for study plan lookup
+    const sectionForPlan = state.section || cacheSection;
+    const context = await getStudyPlanContext(userId, courseId, sectionForPlan);
+    if (context) {
+      studyPlanContext = context;
+      logger.info(`Loaded study plan context: Week ${context.currentWeek}, ${context.weekLessonIds.length} lessons`);
+    }
+  } catch {
+    // Graceful degradation — plan generates without study plan integration
+  }
+
   const enrichedState: UserStudyState = {
     ...state,
     recentHistory,
     personalizedDurations,
     activityFeedback,
     ...(adaptiveQuestionsDue ? { questionsDue: adaptiveQuestionsDue } : {}),
+    ...(studyPlanContext ? { studyPlanContext } : {}),
   };
   const newPlan = await generateDailyPlan(enrichedState, courseId);
 

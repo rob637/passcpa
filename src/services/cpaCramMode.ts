@@ -12,6 +12,7 @@
  */
 
 import type { CPASectionId } from '../courses/cpa';
+import logger from '../utils/logger';
 
 // Types
 export interface CPACramTopic {
@@ -1284,7 +1285,7 @@ export function loadCramState(): CPACramState | null {
       return cramState;
     }
   } catch (e) {
-    console.error('Error loading CPA cram state:', e);
+    logger.error('Error loading CPA cram state:', e);
   }
   return null;
 }
@@ -1296,7 +1297,7 @@ function saveCramState(): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cramState));
   } catch (e) {
-    console.error('Error saving CPA cram state:', e);
+    logger.error('Error saving CPA cram state:', e);
   }
 }
 

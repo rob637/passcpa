@@ -18,6 +18,7 @@ import {
   Timestamp,
 } from 'firebase/firestore';
 import { EASectionId, EA_SECTION_CONFIG } from '../courses/ea';
+import { getSectionContent } from './contentRegistry';
 import logger from '../utils/logger';
 
 // Types
@@ -83,7 +84,7 @@ export async function getEAProgress(userId: string): Promise<EAOverallProgress> 
       questionsCorrect: 0,
       accuracy: 0,
       lessonsCompleted: 0,
-      totalLessons: 10, // Placeholder
+      totalLessons: getSectionContent(sectionId)?.counts.lessons ?? 10,
       flashcardsReviewed: 0,
       examsTaken: 0,
       lastStudied: null,
@@ -213,8 +214,9 @@ export async function getEAProgress(userId: string): Promise<EAOverallProgress> 
         ? Math.round((section.questionsCorrect / section.questionsAttempted) * 100)
         : 0;
 
-      // Calculate progress percent (questions attempted as % of target ~500 per section)
-      const targetQuestions = 500;
+      // Calculate progress percent (questions attempted as % of available content)
+      const sectionContent = getSectionContent(sectionId);
+      const targetQuestions = sectionContent?.counts.mcqs ?? 500;
       section.progressPercent = Math.min(100, Math.round((section.questionsAttempted / targetQuestions) * 100));
 
       // Calculate readiness score (weighted: 60% accuracy, 40% coverage)

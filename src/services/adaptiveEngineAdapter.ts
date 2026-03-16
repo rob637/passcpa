@@ -113,8 +113,29 @@ export async function recordAnswerToEngine(
         );
         break;
       }
-      default:
-        logger.warn(`No adaptive engine for course: ${courseId}`);
+      default: {
+        // Fallback for auto-generated courses which use a standard uniform API
+        try {
+          const engines = import.meta.glob('./*AdaptiveEngine.ts');
+          const getEngine = engines[`./${courseId}AdaptiveEngine.ts`];
+          if (getEngine) {
+            const engine: any = await getEngine();
+            engine.recordAnswer(
+              questionId,
+              section,
+              options.blueprintArea,
+              isCorrect,
+              [],
+              timeMs
+            );
+          } else {
+            logger.warn(`No adaptive engine for course: ${courseId}`);
+          }
+        } catch (e) {
+          logger.warn(`Failed to dynamically load adaptive engine for course: ${courseId}`, e);
+        }
+        break;
+      }
     }
   } catch (error) {
     // Fire-and-forget: log but don't throw
@@ -261,9 +282,35 @@ export async function selectQuestionsFromEngine(
         );
         return results as unknown as Question[];
       }
-      default:
-        logger.warn(`No adaptive engine for course: ${courseId}`);
-        return [];
+      default: {
+        // Fallback for auto-generated courses which use a standard uniform API
+        try {
+          const engines = import.meta.glob('./*AdaptiveEngine.ts');
+          const getEngine = engines[`./${courseId}AdaptiveEngine.ts`];
+          if (getEngine) {
+            const engine: any = await getEngine();
+            const results = engine.selectQuestions(
+              allQuestions,
+              {
+                sections: section ? [section] : undefined,
+                difficulty,
+                count,
+                excludeRecent: true,
+                prioritizeWeakAreas,
+                includeReviewDue,
+                examWeighted,
+              }
+            );
+            return results as unknown as Question[];
+          } else {
+            logger.warn(`No adaptive engine for course: ${courseId}`);
+            return [];
+          }
+        } catch (e) {
+          logger.warn(`Failed to dynamically load adaptive engine for course: ${courseId}`, e);
+          return [];
+        }
+      }
     }
   } catch (error) {
     logger.error(`Failed to select questions via ${courseId} adaptive engine:`, error);

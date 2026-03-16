@@ -52,14 +52,16 @@ const InstallPrompt = () => {
     window.addEventListener('beforeinstallprompt', handler);
 
     // Listen for successful install
-    window.addEventListener('appinstalled', () => {
+    const handleInstalled = () => {
       setIsInstalled(true);
       setShowPrompt(false);
       setDeferredPrompt(null);
-    });
+    };
+    window.addEventListener('appinstalled', handleInstalled);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handler);
+      window.removeEventListener('appinstalled', handleInstalled);
     };
   }, []);
 

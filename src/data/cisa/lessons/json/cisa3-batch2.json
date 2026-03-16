@@ -1,0 +1,947 @@
+[
+  {
+    "id": "CISA3-016",
+    "courseId": "cisa",
+    "section": "CISA3",
+    "title": "Software Development Life Cycle Models",
+    "description": "Compare SDLC methodologies including Waterfall, Agile, and DevOps",
+    "order": 16,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "SDLC",
+      "Waterfall",
+      "Agile",
+      "DevOps",
+      "Methodologies"
+    ],
+    "blueprintArea": "CISA3-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Different SDLC methodologies have different risk profiles and control points. Auditors must understand the methodology to identify appropriate controls."
+        },
+        {
+          "title": "Traditional Waterfall Model",
+          "type": "text",
+          "content": "**Phases (Sequential):**\n\n**1. Requirements:**\n\u2022 Gather and document requirements\n\u2022 Sign-off before proceeding\n\n**2. Design:**\n\u2022 System architecture\n\u2022 Detailed specifications\n\n**3. Development:**\n\u2022 Code the solution\n\u2022 Unit testing\n\n**4. Testing:**\n\u2022 Integration testing\n\u2022 System testing\n\u2022 User acceptance testing\n\n**5. Deployment:**\n\u2022 Implementation\n\u2022 Production release\n\n**6. Maintenance:**\n\u2022 Ongoing support\n\u2022 Enhancements\n\n**Characteristics:**\n\u2022 Sequential phases\n\u2022 Heavy documentation\n\u2022 Formal sign-offs between phases\n\u2022 Changes are costly\n\u2022 Best for stable, well-understood requirements"
+        },
+        {
+          "title": "Waterfall vs Agile",
+          "type": "table",
+          "headers": [
+            "Aspect",
+            "Waterfall",
+            "Agile"
+          ],
+          "rows": [
+            [
+              "Approach",
+              "Sequential phases",
+              "Iterative sprints"
+            ],
+            [
+              "Requirements",
+              "Fixed upfront",
+              "Evolving"
+            ],
+            [
+              "Changes",
+              "Costly, discouraged",
+              "Embraced"
+            ],
+            [
+              "Documentation",
+              "Extensive",
+              "Minimal/just enough"
+            ],
+            [
+              "Delivery",
+              "End of project",
+              "Incremental/continuous"
+            ],
+            [
+              "Customer Involvement",
+              "Beginning and end",
+              "Throughout"
+            ],
+            [
+              "Risk",
+              "Late discovery of issues",
+              "Early feedback reduces risk"
+            ]
+          ]
+        },
+        {
+          "title": "Agile Principles",
+          "type": "text",
+          "content": "**Agile Manifesto Values:**\n\n\u2022 **Individuals and interactions** over processes and tools\n\u2022 **Working software** over comprehensive documentation\n\u2022 **Customer collaboration** over contract negotiation\n\u2022 **Responding to change** over following a plan\n\n**Popular Agile Frameworks:**\n\n**Scrum:**\n\u2022 Fixed-length sprints (2-4 weeks)\n\u2022 Roles: Product Owner, Scrum Master, Team\n\u2022 Ceremonies: Sprint planning, daily standup, review, retrospective\n\u2022 Artifacts: Product backlog, sprint backlog, increment\n\n**Kanban:**\n\u2022 Continuous flow (no fixed iterations)\n\u2022 Visualize workflow\n\u2022 Limit work in progress (WIP)\n\u2022 Optimize flow"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Scrum Ceremonies",
+          "type": "callout",
+          "content": "**Scrum has 4 ceremonies: PSRR**\n\n\u2022 **P**lanning - What will we build this sprint?\n\u2022 **S**tandup (Daily) - What did I do? What will I do? Blockers?\n\u2022 **R**eview - Demo the working software\n\u2022 **R**etrospective - How can we improve?\n\nThink: \"Plan, Stand, Review, Reflect\""
+        },
+        {
+          "title": "DevOps and CI/CD",
+          "type": "text",
+          "content": "**DevOps = Development + Operations**\n\nCultural and technical practices that unite development and operations.\n\n**Key Practices:**\n\n**Continuous Integration (CI):**\n\u2022 Frequent code commits\n\u2022 Automated builds\n\u2022 Automated testing\n\u2022 Fast feedback\n\n**Continuous Delivery (CD):**\n\u2022 Code always deployable\n\u2022 Automated deployment pipeline\n\u2022 Manual approval for production\n\n**Continuous Deployment:**\n\u2022 Fully automated to production\n\u2022 No manual gates\n\u2022 Requires mature automation\n\n**Infrastructure as Code (IaC):**\n\u2022 Infrastructure defined in code\n\u2022 Version controlled\n\u2022 Consistent environments\n\u2022 Automated provisioning"
+        },
+        {
+          "title": "Choosing a Methodology",
+          "type": "text",
+          "content": "**Waterfall Best For:**\n\u2022 Stable, well-understood requirements\n\u2022 Regulatory requirements for documentation\n\u2022 Fixed-price contracts\n\u2022 Hardware-integrated systems\n\n**Agile Best For:**\n\u2022 Evolving requirements\n\u2022 Need for rapid delivery\n\u2022 Customer available for feedback\n\u2022 Innovation projects\n\n**Hybrid Approaches:**\n\u2022 Combine elements of both\n\u2022 Large programs with Agile teams\n\u2022 Governance phases with Agile execution\n\n**Audit Implications:**\n\u2022 Methodology affects control points\n\u2022 Agile requires different controls than Waterfall\n\u2022 Controls must fit the approach used"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Waterfall is sequential with fixed requirements; Agile is iterative with evolving requirements",
+            "Agile values working software, customer collaboration, and responding to change",
+            "Scrum uses fixed sprints with defined ceremonies; Kanban uses continuous flow",
+            "DevOps unites Dev and Ops with CI/CD pipelines and Infrastructure as Code",
+            "Methodology choice affects risk profile and appropriate controls"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Waterfall Model Knowledge Check",
+          "knowledgeCheck": {
+            "question": "In a traditional Waterfall SDLC model, which of the following is the MOST critical activity to ensure successful project completion BEFORE proceeding to the Design phase?",
+            "options": [
+              "Obtaining sign-off on the documented requirements.",
+              "Developing a high-level system architecture diagram.",
+              "Conducting a preliminary risk assessment.",
+              "Establishing a change management process."
+            ],
+            "correctIndex": 0,
+            "explanation": "In the Waterfall model, each phase must be completed and approved before moving to the next. Sign-off on documented requirements is crucial because later phases depend heavily on these requirements. Changes later in the process are costly and disruptive.",
+            "hint": "Think about the sequential and rigid nature of the Waterfall model."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Agile Manifesto: Recall the Values",
+          "reveal": {
+            "question": "What are the four values outlined in the Agile Manifesto?",
+            "answer": "1. Individuals and interactions over processes and tools.\n2. Working software over comprehensive documentation.\n3. Customer collaboration over contract negotiation.\n4. Responding to change over following a plan."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Waterfall vs. Agile: A Comparison",
+          "comparison": {
+            "headers": [
+              "Waterfall",
+              "Agile"
+            ],
+            "rows": [
+              {
+                "label": "Approach",
+                "values": [
+                  "Sequential, phase-based",
+                  "Iterative, incremental"
+                ]
+              },
+              {
+                "label": "Change Management",
+                "values": [
+                  "Resistant to change; changes are costly",
+                  "Embraces change; adaptable to new requirements"
+                ]
+              },
+              {
+                "label": "Customer Involvement",
+                "values": [
+                  "Limited customer involvement after requirements gathering",
+                  "Continuous customer collaboration"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA3-017",
+    "courseId": "cisa",
+    "section": "CISA3",
+    "title": "Requirements Management",
+    "description": "Learn how to define, document, and manage system requirements",
+    "order": 17,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Requirements",
+      "Elicitation",
+      "Traceability",
+      "Validation"
+    ],
+    "blueprintArea": "CISA3-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Poor requirements are the leading cause of project failure. Auditors must understand requirements management to evaluate project risk."
+        },
+        {
+          "title": "Types of Requirements",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Functional",
+              "What the system must do",
+              "Process payment, generate report"
+            ],
+            [
+              "Non-Functional",
+              "How the system must perform",
+              "Response time, availability, security"
+            ],
+            [
+              "Business",
+              "High-level organizational needs",
+              "Reduce processing time by 50%"
+            ],
+            [
+              "User",
+              "What users need to accomplish",
+              "Search for customer records"
+            ],
+            [
+              "System",
+              "Technical specifications",
+              "Interface with API, support 1000 users"
+            ],
+            [
+              "Regulatory",
+              "Compliance requirements",
+              "Data retention, audit trails"
+            ]
+          ]
+        },
+        {
+          "title": "Requirements Elicitation Techniques",
+          "type": "text",
+          "content": "**Common Techniques:**\n\n**Interviews:**\n\u2022 One-on-one discussions\n\u2022 Good for detailed understanding\n\u2022 Time-consuming for many stakeholders\n\n**Workshops/JAD Sessions:**\n\u2022 Joint Application Development\n\u2022 Collaborative group sessions\n\u2022 Efficient for consensus building\n\n**Surveys/Questionnaires:**\n\u2022 Collect from many stakeholders\n\u2022 Quantifiable results\n\u2022 May miss nuances\n\n**Document Analysis:**\n\u2022 Review existing documentation\n\u2022 Understand current state\n\u2022 Identify implicit requirements\n\n**Observation:**\n\u2022 Watch users perform tasks\n\u2022 Understand real workflow\n\u2022 Identify unstated needs\n\n**Prototyping:**\n\u2022 Build mockups for feedback\n\u2022 Validate understanding\n\u2022 Iterative refinement"
+        },
+        {
+          "title": "SMART Requirements",
+          "type": "text",
+          "content": "**Good Requirements Are SMART:**\n\n**S - Specific:**\n\u2022 Clear and unambiguous\n\u2022 One interpretation only\n\n**M - Measurable:**\n\u2022 Criteria for verification\n\u2022 Can be tested\n\n**A - Achievable:**\n\u2022 Technically feasible\n\u2022 Within project constraints\n\n**R - Relevant:**\n\u2022 Supports business objectives\n\u2022 Necessary for the system\n\n**T - Time-bound:**\n\u2022 When it's needed\n\u2022 Priority relative to others\n\n**Example:**\n\u274c \"The system should be fast\"\n\u2705 \"The search results page shall load within 2 seconds for 95% of requests under normal load conditions\""
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Requirements Quality",
+          "type": "callout",
+          "content": "**Check requirements with CURT:**\n\n\u2022 **C**omplete - Nothing missing?\n\u2022 **U**nambiguous - Only one interpretation?\n\u2022 **R**ealizable - Can we build it?\n\u2022 **T**estable - Can we verify it?\n\n\"Be CURT with bad requirements!\""
+        },
+        {
+          "title": "Requirements Traceability",
+          "type": "text",
+          "content": "**Requirements Traceability Matrix (RTM):**\n\nLinks requirements through the entire lifecycle:\n\nBusiness Need \u2192 Requirement \u2192 Design \u2192 Code \u2192 Test \u2192 Implementation\n\n**Benefits:**\n\u2022 Verify all requirements implemented\n\u2022 Impact analysis for changes\n\u2022 Test coverage confirmation\n\u2022 Audit trail\n\n**Traceability Questions:**\n\u2022 Forward: Is each requirement implemented and tested?\n\u2022 Backward: Does each feature trace to a requirement?\n\u2022 Coverage: Are test cases covering all requirements?\n\n**Audit Consideration:**\nAsk to see the RTM; verify it's maintained and used."
+        },
+        {
+          "title": "Managing Requirements Changes",
+          "type": "text",
+          "content": "**Change Control for Requirements:**\n\n**1. Request:**\n\u2022 Document the change request\n\u2022 Identify requester and rationale\n\n**2. Analyze:**\n\u2022 Assess impact on scope, schedule, cost\n\u2022 Evaluate technical feasibility\n\u2022 Identify affected components\n\n**3. Approve:**\n\u2022 Appropriate authority decides\n\u2022 Document decision\n\u2022 Update baselines\n\n**4. Implement:**\n\u2022 Make the change\n\u2022 Update all related artifacts\n\u2022 Verify implementation\n\n**Scope Creep:**\nUncontrolled expansion of requirements.\nPrevented by: Change control, baseline management, governance."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Requirements include functional, non-functional, business, user, system, and regulatory",
+            "Elicitation techniques: interviews, workshops, surveys, document analysis, observation, prototyping",
+            "Good requirements are SMART: Specific, Measurable, Achievable, Relevant, Time-bound",
+            "Traceability links requirements to design, code, and tests throughout the lifecycle",
+            "Requirements changes must be controlled to prevent scope creep"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Requirements Elicitation Techniques - Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which requirements elicitation technique is MOST suitable when a large number of stakeholders need to provide input efficiently, but detailed individual understanding is less critical?",
+            "options": [
+              "Interviews",
+              "Workshops/JAD Sessions",
+              "Surveys/Questionnaires",
+              "Prototyping"
+            ],
+            "correctIndex": 2,
+            "explanation": "Surveys/Questionnaires are the most efficient method for gathering input from a large number of stakeholders. Interviews are time-consuming, and workshops, while collaborative, may not be feasible with a very large group. Prototyping is not explicitly covered in the lesson, but also not efficient for the initial gathering of requirements from a large group.",
+            "hint": "Consider the trade-off between depth of understanding and the number of stakeholders involved."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "The SMART Acronym",
+          "reveal": {
+            "question": "What does the 'R' in the SMART requirements acronym stand for, and why is it important?",
+            "answer": "The 'R' stands for 'Relevant'. A requirement is relevant if it supports the business objectives. Irrelevant requirements add unnecessary complexity and cost, and may detract from the overall goal of the project."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Interviews vs. Workshops/JAD Sessions",
+          "comparison": {
+            "headers": [
+              "Interviews",
+              "Workshops/JAD Sessions"
+            ],
+            "rows": [
+              {
+                "label": "Stakeholder Involvement",
+                "values": [
+                  "One-on-one",
+                  "Collaborative group"
+                ]
+              },
+              {
+                "label": "Time Efficiency",
+                "values": [
+                  "Time-consuming for many stakeholders",
+                  "Efficient for consensus building"
+                ]
+              },
+              {
+                "label": "Depth of Understanding",
+                "values": [
+                  "Good for detailed understanding",
+                  "Suitable for general agreement and brainstorming"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA3-018",
+    "courseId": "cisa",
+    "section": "CISA3",
+    "title": "Application Testing",
+    "description": "Master testing methodologies, levels, and quality assurance practices",
+    "order": 18,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Testing",
+      "Test Levels",
+      "Test Types",
+      "Quality Assurance"
+    ],
+    "blueprintArea": "CISA3-A",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Testing verifies that systems work correctly and securely. Auditors must understand testing to evaluate whether quality controls are adequate."
+        },
+        {
+          "title": "Testing Levels",
+          "type": "table",
+          "headers": [
+            "Level",
+            "Scope",
+            "Performed By",
+            "Purpose"
+          ],
+          "rows": [
+            [
+              "Unit Testing",
+              "Individual components",
+              "Developers",
+              "Verify code modules work"
+            ],
+            [
+              "Integration Testing",
+              "Component interfaces",
+              "Developers/QA",
+              "Verify components work together"
+            ],
+            [
+              "System Testing",
+              "Complete system",
+              "QA team",
+              "Verify end-to-end functionality"
+            ],
+            [
+              "UAT",
+              "Business acceptance",
+              "Business users",
+              "Verify meets business needs"
+            ],
+            [
+              "Regression Testing",
+              "After changes",
+              "QA/Automated",
+              "Verify no new defects introduced"
+            ]
+          ]
+        },
+        {
+          "title": "Testing Types",
+          "type": "text",
+          "content": "**Functional Testing:**\n\u2022 Verify features work as specified\n\u2022 Positive tests (happy path)\n\u2022 Negative tests (error handling)\n\n**Non-Functional Testing:**\n\n**Performance Testing:**\n\u2022 Load testing (normal conditions)\n\u2022 Stress testing (beyond normal)\n\u2022 Scalability testing (growth capacity)\n\n**Security Testing:**\n\u2022 Vulnerability scanning\n\u2022 Penetration testing\n\u2022 Code analysis (SAST/DAST)\n\n**Usability Testing:**\n\u2022 User experience evaluation\n\u2022 Accessibility testing\n\n**Compatibility Testing:**\n\u2022 Browser/device compatibility\n\u2022 Operating system compatibility\n\n**Recovery Testing:**\n\u2022 Failover testing\n\u2022 Backup/restore verification"
+        },
+        {
+          "title": "Black Box vs White Box Testing",
+          "type": "text",
+          "content": "**Black Box Testing:**\n\u2022 Test without seeing internal code\n\u2022 Focus on inputs and outputs\n\u2022 Based on requirements/specifications\n\u2022 Performed by QA, users\n\n**White Box Testing:**\n\u2022 Test with knowledge of code\n\u2022 Focus on internal logic\n\u2022 Code coverage analysis\n\u2022 Performed by developers\n\n**Gray Box Testing:**\n\u2022 Partial knowledge of internals\n\u2022 Combination approach\n\u2022 Common for integration testing"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Testing Colors",
+          "type": "callout",
+          "content": "**BLACK Box = Blind to code**\nYou can't see inside; test from outside\n\n**WHITE Box = Window into code**\nYou can see everything; test the logic\n\n**GRAY Box = Glasses on**\nYou can see some things; combination"
+        },
+        {
+          "title": "Test Documentation",
+          "type": "text",
+          "content": "**Test Plan:**\n\u2022 Strategy and approach\n\u2022 Scope and objectives\n\u2022 Resources and schedule\n\u2022 Entry and exit criteria\n\u2022 Risk assessment\n\n**Test Cases:**\n\u2022 Unique identifier\n\u2022 Preconditions\n\u2022 Test steps\n\u2022 Expected results\n\u2022 Actual results\n\u2022 Pass/Fail status\n\n**Test Scripts:**\n\u2022 Automated test code\n\u2022 Reusable across cycles\n\u2022 Version controlled\n\n**Defect Reports:**\n\u2022 Description and steps to reproduce\n\u2022 Severity and priority\n\u2022 Screenshots/evidence\n\u2022 Status tracking"
+        },
+        {
+          "title": "User Acceptance Testing (UAT)",
+          "type": "text",
+          "content": "**Purpose:**\nBusiness validation that the system meets their needs.\n\n**Critical Success Factors:**\n\n**Business Ownership:**\n\u2022 Business users execute tests\n\u2022 IT supports, doesn't perform UAT\n\u2022 Sign-off demonstrates acceptance\n\n**Representative Testing:**\n\u2022 Realistic test data\n\u2022 Real-world scenarios\n\u2022 Include exception cases\n\n**Independence:**\n\u2022 Separate from development environment\n\u2022 Production-like configuration\n\n**Acceptance Criteria:**\n\u2022 Pre-defined criteria for success\n\u2022 Documented before testing starts\n\u2022 Linked to requirements\n\n**Audit Tip:** Always ask who performed UAT and whether business sign-off was obtained."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Test levels: Unit \u2192 Integration \u2192 System \u2192 UAT (increasing scope)",
+            "Test types include functional, performance, security, usability, compatibility",
+            "Black box tests without code knowledge; White box tests with code visibility",
+            "Test documentation: Plan, Cases, Scripts, Defect reports",
+            "UAT must be performed by business users with documented acceptance criteria"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Functional vs. Non-Functional Testing",
+          "knowledgeCheck": {
+            "question": "Which of the following testing types is PRIMARILY concerned with verifying that the 'Forgot Password' feature in a web application functions as designed, including handling invalid email addresses?",
+            "options": [
+              "Performance Testing",
+              "Functional Testing",
+              "Security Testing",
+              "Scalability Testing"
+            ],
+            "correctIndex": 1,
+            "explanation": "Functional testing focuses on verifying that specific features of an application work as intended, covering both positive (happy path) and negative (error handling) scenarios. The 'Forgot Password' feature and its associated error handling directly relate to its functionality.",
+            "hint": "Consider what aspect of the application is being directly evaluated: its features or its attributes."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Testing Types Recall",
+          "reveal": {
+            "question": "Define 'Stress Testing' and explain its purpose.",
+            "answer": "Stress testing involves subjecting a system to conditions beyond its normal operating capacity. Its purpose is to identify the breaking point of the system, determine its stability under extreme loads, and uncover vulnerabilities that may not be apparent under normal conditions. This helps ensure the system can handle unexpected spikes in demand or resource consumption."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Black Box vs. White Box Testing",
+          "comparison": {
+            "headers": [
+              "Black Box Testing",
+              "White Box Testing"
+            ],
+            "rows": [
+              {
+                "label": "Knowledge of Code",
+                "values": [
+                  "No knowledge of internal code required",
+                  "Requires knowledge of internal code"
+                ]
+              },
+              {
+                "label": "Focus",
+                "values": [
+                  "Focuses on inputs and outputs",
+                  "Focuses on internal logic and code coverage"
+                ]
+              },
+              {
+                "label": "Tester Profile",
+                "values": [
+                  "Typically performed by QA engineers or end-users",
+                  "Typically performed by developers"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA3-019",
+    "courseId": "cisa",
+    "section": "CISA3",
+    "title": "Change and Release Management",
+    "description": "Understand controls for managing changes to production systems",
+    "order": 19,
+    "duration": 50,
+    "difficulty": "intermediate",
+    "topics": [
+      "Change Management",
+      "Release Management",
+      "CAB",
+      "Emergency Changes"
+    ],
+    "blueprintArea": "CISA3-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Uncontrolled changes are a leading cause of outages and security incidents. Change management is one of the most audited IT controls."
+        },
+        {
+          "title": "Change Management Process",
+          "type": "text",
+          "content": "**1. Request:**\n\u2022 Submit change request\n\u2022 Document business justification\n\u2022 Identify affected systems\n\n**2. Assess:**\n\u2022 Evaluate impact and risk\n\u2022 Resource requirements\n\u2022 Dependencies\n\n**3. Approve:**\n\u2022 Change Advisory Board (CAB) review\n\u2022 Appropriate authority approval\n\u2022 Schedule assignment\n\n**4. Build:**\n\u2022 Develop and configure change\n\u2022 Prepare documentation\n\u2022 Create back-out plan\n\n**5. Test:**\n\u2022 Test in non-production\n\u2022 Verify functionality\n\u2022 UAT where appropriate\n\n**6. Implement:**\n\u2022 Execute per schedule\n\u2022 Monitor for issues\n\u2022 Validate success\n\n**7. Review:**\n\u2022 Post-implementation review\n\u2022 Close change ticket\n\u2022 Lessons learned"
+        },
+        {
+          "title": "Change Types",
+          "type": "table",
+          "headers": [
+            "Type",
+            "Description",
+            "Approval",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Standard",
+              "Pre-approved, low risk, routine",
+              "Pre-authorized",
+              "User account creation"
+            ],
+            [
+              "Normal",
+              "Follows full process",
+              "CAB/approver",
+              "Application enhancement"
+            ],
+            [
+              "Emergency",
+              "Urgent fix required",
+              "Expedited, post-approval",
+              "Security patch for active exploit"
+            ],
+            [
+              "Major/Significant",
+              "High impact or risk",
+              "Executive/CAB",
+              "Core system replacement"
+            ]
+          ]
+        },
+        {
+          "title": "Change Advisory Board (CAB)",
+          "type": "text",
+          "content": "**Purpose:**\nReview and authorize changes to minimize risk.\n\n**Typical Composition:**\n\u2022 Change manager (chair)\n\u2022 Technical representatives\n\u2022 Operations/support\n\u2022 Security representative\n\u2022 Business representatives (as needed)\n\n**CAB Reviews:**\n\u2022 Risk and impact assessment\n\u2022 Resource availability\n\u2022 Scheduling conflicts\n\u2022 Back-out plans\n\u2022 Test results\n\n**ECAB (Emergency CAB):**\n\u2022 Subset available for emergency changes\n\u2022 Smaller group for quick decisions\n\u2022 Still provides oversight"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Change Control",
+          "type": "callout",
+          "content": "**Change Request needs: RABBIT**\n\n\u2022 **R**eason for change\n\u2022 **A**ffected systems\n\u2022 **B**ack-out plan\n\u2022 **B**usiness sign-off\n\u2022 **I**mpact assessment\n\u2022 **T**esting evidence\n\nEvery change needs a RABBIT to survive!"
+        },
+        {
+          "title": "Segregation of Duties in Changes",
+          "type": "text",
+          "content": "**Key Separations:**\n\n**Developer \u2260 Production Access:**\n\u2022 Developers code in dev/test\n\u2022 Separate team deploys to production\n\u2022 Prevents unauthorized changes\n\n**Requestor \u2260 Approver:**\n\u2022 Cannot approve own changes\n\u2022 Independent review required\n\n**Developer \u2260 Tester (for critical systems):**\n\u2022 Independent testing\n\u2022 Unbiased validation\n\n**Audit Focus:**\n\u2022 Review who can access production\n\u2022 Verify approval is independent\n\u2022 Check for segregation violations\n\u2022 Sample emergency changes for compliance"
+        },
+        {
+          "title": "Emergency Change Controls",
+          "type": "text",
+          "content": "**Emergency Change Requirements:**\n\n**During Emergency:**\n\u2022 Verbal authorization acceptable\n\u2022 Document who authorized\n\u2022 Implement fix\n\u2022 Basic testing if possible\n\n**After Emergency:**\n\u2022 Create retrospective change ticket\n\u2022 Document what was done\n\u2022 CAB post-review\n\u2022 Root cause analysis\n\u2022 Lessons learned\n\n**Red Flags:**\n\u2022 High volume of emergency changes\n\u2022 Emergency changes not documented\n\u2022 No post-review performed\n\u2022 Emergency used to bypass controls"
+        },
+        {
+          "title": "Release Management",
+          "type": "text",
+          "content": "**Release vs. Change:**\n\u2022 Change = Individual modification\n\u2022 Release = Bundle of changes deployed together\n\n**Release Process:**\n\u2022 Package multiple changes\n\u2022 Coordinated testing\n\u2022 Scheduled deployment windows\n\u2022 Communication plan\n\u2022 Rollback strategy\n\n**Release Types:**\n\u2022 Major Release: Significant new functionality\n\u2022 Minor Release: Enhancements and fixes\n\u2022 Patch: Urgent fixes between releases\n\n**Environments:**\nDevelopment \u2192 Test \u2192 Staging \u2192 Production\nEach has its own controls and access restrictions."
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Change process: Request \u2192 Assess \u2192 Approve \u2192 Build \u2192 Test \u2192 Implement \u2192 Review",
+            "Change types: Standard (pre-approved), Normal (full process), Emergency (expedited)",
+            "CAB reviews changes for risk, impact, and scheduling",
+            "Segregation of duties: Developers shouldn't have production access or approve their own changes",
+            "Emergency changes require post-implementation review and documentation"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Change Management Process Knowledge Check",
+          "knowledgeCheck": {
+            "question": "Which of the following is the MOST important reason for documenting the business justification during the 'Request' phase of the change management process?",
+            "options": [
+              "To ensure the change is technically feasible.",
+              "To provide a clear understanding of the change's objectives and benefits, enabling informed decision-making.",
+              "To identify all affected systems and components.",
+              "To streamline the change approval process."
+            ],
+            "correctIndex": 1,
+            "explanation": "Documenting the business justification provides the context for evaluating the change's value and alignment with organizational goals. While technical feasibility and affected systems are important, the business justification drives the decision to proceed or not. Streamlining the process is a secondary benefit.",
+            "hint": "Consider the overall goals of change management and why changes are even proposed in the first place."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "CAB Composition Recall",
+          "reveal": {
+            "question": "Name four typical members of a Change Advisory Board (CAB).",
+            "answer": "Typical CAB members include: Change Manager (chair), Technical Representatives, Operations/Support Representatives, Security Representative, and Business Representatives (as needed)."
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Change Management vs. Release Management",
+          "comparison": {
+            "headers": [
+              "Change Management",
+              "Release Management"
+            ],
+            "rows": [
+              {
+                "label": "Focus",
+                "values": [
+                  "Managing individual changes to IT infrastructure and applications.",
+                  "Planning, scheduling, and controlling the movement of software changes into production environments."
+                ]
+              },
+              {
+                "label": "Primary Goal",
+                "values": [
+                  "Minimize disruption and risk associated with changes.",
+                  "Ensure smooth and efficient deployment of releases with minimal impact on services."
+                ]
+              },
+              {
+                "label": "Activities",
+                "values": [
+                  "Request submission, impact assessment, approval, implementation, and review.",
+                  "Release planning, build management, testing, deployment, and post-implementation review."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA3-020",
+    "courseId": "cisa",
+    "section": "CISA3",
+    "title": "Project Management Fundamentals",
+    "description": "Learn project management principles and audit considerations for IT projects",
+    "order": 20,
+    "duration": 45,
+    "difficulty": "intermediate",
+    "topics": [
+      "Project Management",
+      "Project Lifecycle",
+      "Risk Management",
+      "Governance"
+    ],
+    "blueprintArea": "CISA3-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "IT projects frequently fail or exceed budgets. Understanding project management helps auditors identify and escalate project risks."
+        },
+        {
+          "title": "Project Management Knowledge Areas",
+          "type": "text",
+          "content": "**PMBOK 10 Knowledge Areas:**\n\n1. **Integration Management**: Coordinate all elements\n2. **Scope Management**: Define and control what's included\n3. **Schedule Management**: Plan and control timeline\n4. **Cost Management**: Estimate, budget, control costs\n5. **Quality Management**: Ensure quality requirements met\n6. **Resource Management**: Acquire and manage team\n7. **Communications Management**: Plan and manage communications\n8. **Risk Management**: Identify and respond to risks\n9. **Procurement Management**: Acquire goods and services\n10. **Stakeholder Management**: Engage stakeholders"
+        },
+        {
+          "title": "Project Lifecycle Phases",
+          "type": "table",
+          "headers": [
+            "Phase",
+            "Key Activities",
+            "Key Deliverables"
+          ],
+          "rows": [
+            [
+              "Initiation",
+              "Define project, obtain authorization",
+              "Project charter, stakeholder register"
+            ],
+            [
+              "Planning",
+              "Define scope, schedule, budget",
+              "Project plan, WBS, schedule, budget"
+            ],
+            [
+              "Execution",
+              "Perform work, manage team",
+              "Deliverables, status reports"
+            ],
+            [
+              "Monitoring & Control",
+              "Track progress, manage changes",
+              "Performance reports, change log"
+            ],
+            [
+              "Closing",
+              "Finalize and hand off",
+              "Lessons learned, project closure"
+            ]
+          ]
+        },
+        {
+          "title": "Triple Constraint",
+          "type": "text",
+          "content": "**The Iron Triangle:**\n\nScope, Schedule, Cost are interconnected.\n\n\u2022 Increase Scope \u2192 Need more Time or Money\n\u2022 Reduce Schedule \u2192 Need to cut Scope or add Resources (Cost)\n\u2022 Reduce Cost \u2192 Need to cut Scope or extend Schedule\n\n**Quality** is often placed in the center - affected by trade-offs in the triangle.\n\n**Audit Perspective:**\n\u2022 Are constraints realistic?\n\u2022 Are trade-offs documented and approved?\n\u2022 Is quality being sacrificed?"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Project Risks",
+          "type": "callout",
+          "content": "**Common project risks follow SCOPE:**\n\n\u2022 **S**chedule risk - Will it be on time?\n\u2022 **C**ost risk - Will it be on budget?\n\u2022 **O**perational risk - Will it work in production?\n\u2022 **P**eople risk - Do we have the right skills?\n\u2022 **E**xternal risk - Vendor, regulatory, market"
+        },
+        {
+          "title": "Project Risk Management",
+          "type": "text",
+          "content": "**Risk Management Process:**\n\n**1. Identify Risks:**\n\u2022 Brainstorming\n\u2022 Checklists\n\u2022 Expert judgment\n\u2022 Requirements review\n\n**2. Analyze Risks:**\n\u2022 Probability assessment\n\u2022 Impact assessment\n\u2022 Risk ranking/prioritization\n\n**3. Plan Responses:**\n\u2022 Avoid: Eliminate the risk\n\u2022 Mitigate: Reduce likelihood/impact\n\u2022 Transfer: Shift to third party\n\u2022 Accept: Acknowledge and proceed\n\n**4. Monitor Risks:**\n\u2022 Track identified risks\n\u2022 Watch for new risks\n\u2022 Execute responses when triggered"
+        },
+        {
+          "title": "Project Governance",
+          "type": "text",
+          "content": "**Governance Elements:**\n\n**Project Steering Committee:**\n\u2022 Executive oversight\n\u2022 Major decision authority\n\u2022 Escalation point\n\u2022 Resource prioritization\n\n**Project Sponsor:**\n\u2022 Executive accountable for success\n\u2022 Provides resources and authority\n\u2022 Removes barriers\n\u2022 Champions the project\n\n**Project Manager:**\n\u2022 Day-to-day management\n\u2022 Manages team and tasks\n\u2022 Reports status\n\u2022 Manages risks and issues\n\n**Gates/Stage Reviews:**\n\u2022 Milestones requiring approval\n\u2022 Go/no-go decisions\n\u2022 Quality gates"
+        },
+        {
+          "title": "Common Project Failure Indicators",
+          "type": "text",
+          "content": "**Red Flags for Auditors:**\n\n**Scope:**\n\u2022 Unclear or changing requirements\n\u2022 Scope creep without change control\n\u2022 No documented scope statement\n\n**Schedule:**\n\u2022 Unrealistic timeline\n\u2022 Consistently missed milestones\n\u2022 No contingency buffer\n\n**Resources:**\n\u2022 Key resources not available\n\u2022 High team turnover\n\u2022 Skill gaps\n\n**Governance:**\n\u2022 No executive sponsorship\n\u2022 Infrequent steering meetings\n\u2022 Issues not escalated\n\n**Communication:**\n\u2022 Stakeholders surprised\n\u2022 Status reports not accurate\n\u2022 Problems hidden"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "PMBOK defines 10 knowledge areas covering all aspects of project management",
+            "Project phases: Initiation \u2192 Planning \u2192 Execution \u2192 Monitoring \u2192 Closing",
+            "Triple constraint: Scope, Schedule, and Cost are interdependent trade-offs",
+            "Risk responses: Avoid, Mitigate, Transfer, Accept",
+            "Strong governance requires steering committee, sponsor, PM, and stage gates"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Triple Constraint",
+          "knowledgeCheck": {
+            "question": "During a project, the project sponsor mandates a significant reduction in the project budget. According to the 'Iron Triangle' principle, what is the MOST likely consequence?",
+            "options": [
+              "The project schedule will be shortened without impacting scope or quality.",
+              "The project scope will need to be reduced or the project schedule extended to maintain quality.",
+              "The project team will need to work overtime to compensate for the budget reduction, maintaining scope and schedule.",
+              "The project's risk management plan will need to be updated to reflect the increased financial risk, but scope and schedule will remain unchanged."
+            ],
+            "correctIndex": 1,
+            "explanation": "The 'Iron Triangle' (Scope, Schedule, Cost) highlights the interconnectedness of these constraints. Reducing cost (budget) typically necessitates a trade-off in either scope (reducing what's delivered) or schedule (extending the timeline) to maintain quality. Options A, C and D are unrealistic given the constraints of the Iron Triangle.",
+            "hint": "Consider the direct relationships between cost, scope, and schedule."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Reveal: PMBOK Knowledge Areas",
+          "reveal": {
+            "question": "Name the 10 Project Management Body of Knowledge (PMBOK) Knowledge Areas.",
+            "answer": "1. Integration Management, 2. Scope Management, 3. Schedule Management, 4. Cost Management, 5. Quality Management, 6. Resource Management, 7. Communications Management, 8. Risk Management, 9. Procurement Management, 10. Stakeholder Management"
+          }
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Knowledge Check: Project Integration Management",
+          "knowledgeCheck": {
+            "question": "Which project management knowledge area is MOST concerned with coordinating all other knowledge areas and processes throughout the project lifecycle?",
+            "options": [
+              "Project Scope Management",
+              "Project Risk Management",
+              "Project Integration Management",
+              "Project Communications Management"
+            ],
+            "correctIndex": 2,
+            "explanation": "Project Integration Management is the overarching knowledge area focused on coordinating and unifying all other project management processes. It ensures that the various elements of the project are properly aligned and working together to achieve the project objectives. The other options focus on specific aspects of the project, rather than the overall coordination.",
+            "hint": "Think about which area is the 'glue' that holds everything together."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "CISA3-021",
+    "courseId": "cisa",
+    "section": "CISA3",
+    "title": "Configuration Management",
+    "description": "Understand configuration management and version control practices",
+    "order": 21,
+    "duration": 40,
+    "difficulty": "intermediate",
+    "topics": [
+      "Configuration Management",
+      "Version Control",
+      "CMDB",
+      "Baselines"
+    ],
+    "blueprintArea": "CISA3-B",
+    "content": {
+      "sections": [
+        {
+          "title": "Why This Matters",
+          "type": "callout",
+          "content": "Configuration management ensures systems are in a known, approved state. It's essential for change impact analysis, troubleshooting, and security."
+        },
+        {
+          "title": "Configuration Management Concepts",
+          "type": "text",
+          "content": "**Configuration Item (CI):**\nAny component that needs to be managed:\n\u2022 Hardware (servers, network devices)\n\u2022 Software (applications, operating systems)\n\u2022 Documentation (policies, procedures)\n\u2022 Services\n\n**Configuration Baseline:**\n\u2022 Approved state at a point in time\n\u2022 Reference for changes\n\u2022 Enables rollback\n\n**Configuration Management Database (CMDB):**\n\u2022 Repository of all CIs\n\u2022 Attributes and relationships\n\u2022 Change history\n\u2022 Enables impact analysis"
+        },
+        {
+          "title": "CMDB Structure",
+          "type": "table",
+          "headers": [
+            "Element",
+            "Description",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "CI Type",
+              "Category of item",
+              "Server, Application, Database"
+            ],
+            [
+              "Attributes",
+              "Properties of the CI",
+              "Owner, Location, Version, Status"
+            ],
+            [
+              "Relationships",
+              "How CIs connect",
+              "App runs on Server, DB supports App"
+            ],
+            [
+              "Status",
+              "Current state",
+              "Production, Development, Retired"
+            ],
+            [
+              "History",
+              "Change over time",
+              "Version changes, ownership changes"
+            ]
+          ]
+        },
+        {
+          "title": "Configuration Management Process",
+          "type": "text",
+          "content": "**1. Identification:**\n\u2022 Define what CIs to track\n\u2022 Naming conventions\n\u2022 Categorization scheme\n\n**2. Control:**\n\u2022 Only authorized changes\n\u2022 Change management integration\n\u2022 Version control\n\n**3. Status Accounting:**\n\u2022 Track current state of all CIs\n\u2022 Report changes\n\u2022 Maintain history\n\n**4. Verification and Audit:**\n\u2022 Compare actual to CMDB\n\u2022 Identify discrepancies\n\u2022 Ensure accuracy"
+        },
+        {
+          "title": "\ud83e\udde0 Memory Aid: Configuration Management",
+          "type": "callout",
+          "content": "**ICSA Process:**\n\n\u2022 **I**dentify what to track\n\u2022 **C**ontrol changes to it\n\u2022 **S**tatus accounting (track state)\n\u2022 **A**udit for accuracy\n\nThink: \"I C Servers Always\" - I always see what's configured!"
+        },
+        {
+          "title": "Version Control",
+          "type": "text",
+          "content": "**Version Control Systems:**\n\u2022 Track changes to code/documents\n\u2022 Maintain history\n\u2022 Enable collaboration\n\u2022 Support rollback\n\n**Key Features:**\n\u2022 Check-in/check-out\n\u2022 Branching and merging\n\u2022 Conflict resolution\n\u2022 Audit trail\n\n**Popular Tools:**\n\u2022 Git (most common)\n\u2022 Subversion (SVN)\n\u2022 Perforce\n\u2022 Team Foundation Server\n\n**Best Practices:**\n\u2022 Frequent commits with meaningful messages\n\u2022 Branch for features/releases\n\u2022 Code review before merge\n\u2022 Protect main/master branch"
+        },
+        {
+          "title": "Auditing Configuration Management",
+          "type": "text",
+          "content": "**Audit Areas:**\n\n**CMDB Accuracy:**\n\u2022 Is the CMDB current?\n\u2022 Do physical audits match CMDB?\n\u2022 Are discrepancies investigated?\n\n**Change Control:**\n\u2022 Are all changes reflected in CMDB?\n\u2022 Is CMDB updated as part of change process?\n\u2022 Is history maintained?\n\n**Version Control:**\n\u2022 Is all code in version control?\n\u2022 Are access controls appropriate?\n\u2022 Is the audit trail complete?\n\u2022 Can any version be reconstructed?\n\n**Baselines:**\n\u2022 Are baselines established?\n\u2022 Can systems be compared to baseline?\n\u2022 Is baseline deviation reported?"
+        },
+        {
+          "title": "Key Takeaways",
+          "type": "summary",
+          "content": [
+            "Configuration Items (CIs) are components needing management - hardware, software, docs",
+            "CMDB stores CIs with attributes, relationships, and change history",
+            "CM process: Identify \u2192 Control \u2192 Status Accounting \u2192 Audit",
+            "Version control tracks code changes with history, branching, and rollback capability",
+            "CMDB accuracy must be verified through periodic audits comparing actual to recorded state"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "title": "Configuration Management Concepts Quiz",
+          "knowledgeCheck": {
+            "question": "Which of the following BEST describes the primary purpose of establishing a configuration baseline?",
+            "options": [
+              "To document all known vulnerabilities in a system.",
+              "To provide a reference point for future changes and ensure deviations are properly managed.",
+              "To automatically remediate any unauthorized changes to system configurations.",
+              "To grant all users administrator privileges for maximum flexibility."
+            ],
+            "correctIndex": 1,
+            "explanation": "A configuration baseline represents an approved state of a configuration item at a specific point in time. It serves as a reference point for managing changes and ensuring deviations are properly controlled and authorized. The other options are incorrect because they do not accurately describe the primary purpose of a configuration baseline.",
+            "hint": "Think about what a baseline represents in terms of a starting point or standard."
+          }
+        },
+        {
+          "type": "reveal",
+          "title": "Recall the Configuration Management Process",
+          "reveal": {
+            "question": "List the four main stages of the Configuration Management Process.",
+            "answer": "1. Identification\n2. Control\n3. Status Accounting\n4. Verification and Audit"
+          }
+        },
+        {
+          "type": "comparison",
+          "title": "Configuration Item vs. Configuration Baseline",
+          "comparison": {
+            "headers": [
+              "Configuration Item (CI)",
+              "Configuration Baseline"
+            ],
+            "rows": [
+              {
+                "label": "Definition",
+                "values": [
+                  "Any component that needs to be managed and controlled within an organization's IT environment.",
+                  "An approved and documented state of a CI at a specific point in time, serving as a reference for future changes."
+                ]
+              },
+              {
+                "label": "Purpose",
+                "values": [
+                  "To identify and track all components relevant to IT service delivery.",
+                  "To provide a stable and known state for comparison, enabling effective change management and risk assessment."
+                ]
+              },
+              {
+                "label": "Example",
+                "values": [
+                  "A server, a software application, a network device, or a policy document.",
+                  "The documented configuration of a server after applying security patches and hardening measures."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

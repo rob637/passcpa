@@ -4,7 +4,7 @@
  * Calculates a student's readiness score for certification exams based on:
  * - MCQ Accuracy: Multiple choice question accuracy (weight varies by exam)
  * - TBS Practice: Task-based simulation completion (0% for exams without TBS)
- * - Coverage: Number of topics practiced
+ * - MCQ Coverage: Number of topics practiced via MCQs (3+ questions per topic)
  * - Volume: Total questions + TBS attempted
  * - Lessons: Lesson completion progress
  * 
@@ -45,6 +45,12 @@ export interface StudyStats {
 export interface ReadinessOptions {
   /** Whether this exam has TBS (task-based simulations). Defaults to true for backwards compatibility. */
   hasTBS?: boolean;
+  /** Total number of unique topics available for this section. Used for coverage calculation. */
+  totalTopics?: number;
+  /** Target number of MCQs for volume score. Defaults to 500 if not provided. */
+  volumeTarget?: number;
+  /** Total TBS available for this section. Overrides the totalTbs parameter when provided. */
+  totalTbsOverride?: number;
 }
 
 /**
@@ -93,20 +99,26 @@ export const calculateExamReadiness = (
   // Accuracy: 80% accuracy = 100 score (scaled by 1.25)
   const accuracyScore = Math.min(100, (stats.accuracy || 0) * 1.25);
   
-  // TBS: Based on TBS completed vs expected (20 TBS = 100%)
+  // TBS: Based on TBS completed vs expected
   // For non-TBS exams, this will be 0 but weight is also 0 so it doesn't matter
+  const effectiveTotalTbs = options.totalTbsOverride ?? totalTbs;
   const tbsScore = hasTBS
-    ? (totalTbs > 0 
-        ? Math.min(100, (tbsCompleted / totalTbs) * 100) 
+    ? (effectiveTotalTbs > 0 
+        ? Math.min(100, (tbsCompleted / effectiveTotalTbs) * 100) 
         : (tbsCompleted >= 10 ? 100 : (tbsCompleted / 10) * 100))
     : 0;
   
-  // Coverage: Based on topics practiced vs expected (15 is baseline)
-  const coverageScore = Math.min(100, (topicPerformance.length / 15) * 100);
+  // Coverage: Based on topics MEANINGFULLY practiced vs total available topics
+  // A topic is "covered" only if you've done at least 3 questions on it
+  // This prevents inflated coverage from just touching topics once
+  const MIN_QUESTIONS_FOR_COVERAGE = 3;
+  const coveredTopics = topicPerformance.filter(t => t.questions >= MIN_QUESTIONS_FOR_COVERAGE);
+  const totalTopics = options.totalTopics || Math.max(30, topicPerformance.length);
+  const coverageScore = Math.min(100, (coveredTopics.length / totalTopics) * 100);
   
-  // Volume: For TBS exams: 500 questions + 20 TBS = 100%
-  // For non-TBS exams: 500 questions = 100% (no TBS component)
-  const volumeTarget = 500;
+  // Volume: For TBS exams: volumeTarget questions + TBS = 100%
+  // For non-TBS exams: volumeTarget questions = 100%
+  const volumeTarget = options.volumeTarget ?? 500;
   const volumeScore = hasTBS
     ? Math.min(100, ((stats.totalQuestions + tbsCompleted * 10) / volumeTarget) * 100)
     : Math.min(100, (stats.totalQuestions / volumeTarget) * 100);

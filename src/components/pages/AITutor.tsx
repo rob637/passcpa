@@ -33,6 +33,7 @@ import {
 } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { generateAIResponse } from '../../services/aiService';
+import analytics from '../../services/analytics';
 import clsx from 'clsx';
 import { LucideIcon } from 'lucide-react';
 
@@ -559,6 +560,9 @@ const AITutor: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
+
+    // GA4 analytics — track AI tutor usage
+    analytics.askAITutor(currentSection, tutorMode);
 
     const userMessage: Message = {
       id: Date.now().toString(),

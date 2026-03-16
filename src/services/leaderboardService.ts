@@ -261,7 +261,7 @@ export const recordStreak = async (userId: string, streak: number): Promise<void
       let sum = 0;
       let max = 0;
       Object.entries(distribution).forEach(([s, count]) => {
-        const streakNum = parseInt(s);
+        const streakNum = parseInt(s, 10);
         total += count;
         sum += streakNum * count;
         if (streakNum > max && count > 0) max = streakNum;
@@ -344,7 +344,7 @@ export const getUserRanking = async (
       const data = streakSnap.data() as StreakLeaderboard;
       let belowCount = 0;
       Object.entries(data.distribution).forEach(([s, count]) => {
-        if (parseInt(s) < currentStreak) {
+        if (parseInt(s, 10) < currentStreak) {
           belowCount += count;
         }
       });

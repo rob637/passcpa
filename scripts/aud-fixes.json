@@ -1,0 +1,90 @@
+{
+  "aud-eth-003": {
+    "correctAnswer": 1,
+    "explanation": "SEC rules require rotation of the lead audit partner and the concurring review partner every 5 years, with a 5-year cooling off period before returning to that role. A partner can only serve for a maximum of 7 years on the audit.\n\n[ID=aud-ext-add-006]"
+  },
+  "aud-ext-add-006": {
+    "correctAnswer": 1,
+    "explanation": "SEC rules require rotation of the lead audit partner and the concurring review partner every 5 years, with a 5-year cooling off period before returning to that role. A partner can only serve for a maximum of 7 years on the audit.\n\n[ID=aud-ext-add-006]"
+  },
+  "aud-ext-rep-005": {
+    "correctAnswer": 1,
+    "explanation": "SEC rules require rotation of the lead audit partner and the concurring review partner every 5 years, with a 5-year cooling off period before returning to that role. A partner can only serve for a maximum of 7 years on the audit.\n\n[ID=aud-ext-add-006]"
+  },
+  "aud-gap-vii-012": {
+    "correctAnswer": 1,
+    "explanation": "SEC rules require rotation of the lead audit partner and the concurring review partner every 5 years, with a 5-year cooling off period before returning to that role. A partner can only serve for a maximum of 7 years on the audit.\n\n[ID=aud-ext-add-006]"
+  },
+  "aud-wc-065": {
+    "correctAnswer": 1,
+    "explanation": "SEC rules require rotation of the lead audit partner and the concurring review partner every 5 years, with a 5-year cooling off period before returning to that role. A partner can only serve for a maximum of 7 years on the audit.\n\n[ID=aud-ext-add-006]"
+  },
+  "aud-wc-211": {
+    "correctAnswer": 3,
+    "explanation": "A Type 1 SOC 1 report only provides assurance about the design of controls at a specific point in time. It does not provide evidence about the operating effectiveness of those controls throughout a period. Since the report is dated September 30 and the fiscal year-end is December 31, the auditor must perform additional procedures to obtain sufficient appropriate audit evidence for the period from September 30 to December 31.\n\n[ID=aud-gen-1040]"
+  },
+  "aud-gen-1040": {
+    "correctAnswer": 3,
+    "explanation": "A Type 1 SOC 1 report only provides assurance about the design of controls at a specific point in time. It does not provide evidence about the operating effectiveness of those controls throughout a period. Since the report is dated September 30 and the fiscal year-end is December 31, the auditor must perform additional procedures to obtain sufficient appropriate audit evidence for the period from September 30 to December 31.\n\n[ID=aud-gen-1040]"
+  },
+  "aud-gen-1041": {
+    "correctAnswer": 3,
+    "explanation": "A Type 1 SOC 1 report only provides assurance about the design of controls at a specific point in time. It does not provide evidence about the operating effectiveness of those controls throughout a period. Since the report is dated September 30 and the fiscal year-end is December 31, the auditor must perform additional procedures to obtain sufficient appropriate audit evidence for the period from September 30 to December 31.\n\n[ID=aud-gen-1040]"
+  },
+  "aud-gen-1093": {
+    "correctAnswer": 3,
+    "explanation": "A Type 1 SOC 1 report only provides assurance about the design of controls at a specific point in time. It does not provide evidence about the operating effectiveness of those controls throughout a period. Since the report is dated September 30 and the fiscal year-end is December 31, the auditor must perform additional procedures to obtain sufficient appropriate audit evidence for the period from September 30 to December 31.\n\n[ID=aud-gen-1040]"
+  },
+  "aud-gen-1114": {
+    "correctAnswer": 3,
+    "explanation": "A Type 1 SOC 1 report only provides assurance about the design of controls at a specific point in time. It does not provide evidence about the operating effectiveness of those controls throughout a period. Since the report is dated September 30 and the fiscal year-end is December 31, the auditor must perform additional procedures to obtain sufficient appropriate audit evidence for the period from September 30 to December 31.\n\n[ID=aud-gen-1040]"
+  },
+  "aud-gen-1146": {
+    "correctAnswer": 1,
+    "explanation": "According to the AICPA Code of Professional Conduct, for non-issuers, independence is not necessarily impaired if the client oversees the bookkeeping services. Independence would not be impaired as long as Apex's management reviews and approves all journal entries and financial statements prepared by Smith & Jones.\n\n[ID=aud-gen-1161]"
+  },
+  "aud-gen-1161": {
+    "correctAnswer": 1,
+    "explanation": "According to the AICPA Code of Professional Conduct, for non-issuers, independence is not necessarily impaired if the client oversees the bookkeeping services. Independence would not be impaired as long as Apex's management reviews and approves all journal entries and financial statements prepared by Smith & Jones.\n\n[ID=aud-gen-1161]"
+  },
+  "aud-gen-1168": {
+    "correctAnswer": 1,
+    "explanation": "According to the AICPA Code of Professional Conduct, for non-issuers, independence is not necessarily impaired if the client oversees the bookkeeping services. Independence would not be impaired as long as Apex's management reviews and approves all journal entries and financial statements prepared by Smith & Jones.\n\n[ID=aud-gen-1161]"
+  },
+  "aud-gen-1180": {
+    "correctAnswer": 1,
+    "explanation": "According to the AICPA Code of Professional Conduct, for non-issuers, independence is not necessarily impaired if the client oversees the bookkeeping services. Independence would not be impaired as long as Apex's management reviews and approves all journal entries and financial statements prepared by Smith & Jones.\n\n[ID=aud-gen-1161]"
+  },
+  "aud-gen-1230": {
+    "correctAnswer": 1,
+    "explanation": "According to the AICPA Code of Professional Conduct, for non-issuers, independence is not necessarily impaired if the client oversees the bookkeeping services. Independence would not be impaired as long as Apex's management reviews and approves all journal entries and financial statements prepared by Smith & Jones.\n\n[ID=aud-gen-1161]"
+  },
+  "aud-gen-1241": {
+    "correctAnswer": 3,
+    "explanation": "The formula provided in the original explanation is incorrect for determining the sample size in attribute sampling. While a precise calculation requires statistical software or tables, a reasonable approximation can be achieved using standard sample size tables or formulas. Using such resources, with a 2% expected deviation rate, 6% tolerable deviation rate, and 95% confidence level, the required sample size is approximately 383.\n\n[ID=aud-gen-1324]"
+  },
+  "aud-gen-1324": {
+    "correctAnswer": 3,
+    "explanation": "The formula provided in the original explanation is incorrect for determining the sample size in attribute sampling. While a precise calculation requires statistical software or tables, a reasonable approximation can be achieved using standard sample size tables or formulas. Using such resources, with a 2% expected deviation rate, 6% tolerable deviation rate, and 95% confidence level, the required sample size is approximately 383.\n\n[ID=aud-gen-1324]"
+  },
+  "aud-gen-1329": {
+    "correctAnswer": 3,
+    "explanation": "The formula provided in the original explanation is incorrect for determining the sample size in attribute sampling. While a precise calculation requires statistical software or tables, a reasonable approximation can be achieved using standard sample size tables or formulas. Using such resources, with a 2% expected deviation rate, 6% tolerable deviation rate, and 95% confidence level, the required sample size is approximately 383.\n\n[ID=aud-gen-1324]"
+  },
+  "aud-gen-1330": {
+    "correctAnswer": 3,
+    "explanation": "The formula provided in the original explanation is incorrect for determining the sample size in attribute sampling. While a precise calculation requires statistical software or tables, a reasonable approximation can be achieved using standard sample size tables or formulas. Using such resources, with a 2% expected deviation rate, 6% tolerable deviation rate, and 95% confidence level, the required sample size is approximately 383.\n\n[ID=aud-gen-1324]"
+  },
+  "aud-gen-1393": {
+    "correctAnswer": 3,
+    "explanation": "The formula provided in the original explanation is incorrect for determining the sample size in attribute sampling. While a precise calculation requires statistical software or tables, a reasonable approximation can be achieved using standard sample size tables or formulas. Using such resources, with a 2% expected deviation rate, 6% tolerable deviation rate, and 95% confidence level, the required sample size is approximately 383.\n\n[ID=aud-gen-1324]"
+  },
+  "aud-gen-1449": {
+    "correctAnswer": 3,
+    "explanation": "Independence is impaired when the accounting firm makes decisions that are the responsibility of management. Even with management oversight, if ABC personnel are making decisions regarding the classification or recording of transactions, they are effectively acting as management, which impairs independence.\n\n[ID=aud-9k-008]"
+  },
+  "aud-9k-008": {
+    "correctAnswer": 3,
+    "explanation": "Independence is impaired when the accounting firm makes decisions that are the responsibility of management. Even with management oversight, if ABC personnel are making decisions regarding the classification or recording of transactions, they are effectively acting as management, which impairs independence.\n\n[ID=aud-9k-008]"
+  }
+}

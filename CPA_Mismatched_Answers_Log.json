@@ -1,0 +1,34 @@
+[
+  {
+    "id": "far-d14-014",
+    "section": "far",
+    "question": "Under ASC 805, at the acquisition date, the noncon...",
+    "issues": [
+      "Explanation says A but correctAnswer is C (2)"
+    ]
+  },
+  {
+    "id": "far-d20-011",
+    "section": "far",
+    "question": "Parent Corp acquires 80% of Sub Corp for $4,000,00...",
+    "issues": [
+      "Explanation says B but correctAnswer is D (3)"
+    ]
+  },
+  {
+    "id": "far-scf-001",
+    "section": "far",
+    "question": "During the year, Davis Industries paid $75,000 in ...",
+    "issues": [
+      "Explanation says B but correctAnswer is C (2)"
+    ]
+  },
+  {
+    "id": "bar-ta-003",
+    "section": "bar",
+    "question": "Vitality Fitness leases gym equipment. The lease a...",
+    "issues": [
+      "'All of the above' is at index 2 instead of the end."
+    ]
+  }
+]

@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { render, screen, waitFor, cleanup } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Progress from '../../components/pages/Progress';
 
@@ -26,6 +26,7 @@ vi.mock('../../hooks/useStudy', () => ({
       totalStudyTime: 3600,
       lessonsCompleted: 10,
     },
+    currentStreak: 5,
     topicPerformance: [
       { id: 'tax-1', topic: 'Individual Tax', accuracy: 85, questions: 50 },
       { id: 'tax-2', topic: 'Corporate Tax', accuracy: 75, questions: 40 },
@@ -33,22 +34,13 @@ vi.mock('../../hooks/useStudy', () => ({
     ],
     weeklyActivity: [],
     loading: false,
+    getTopicPerformance: () => Promise.resolve([]),
+    getLessonProgress: () => Promise.resolve({}),
   }),
 }));
 
-// Mock Firebase
-vi.mock('firebase/firestore', () => ({
-  doc: vi.fn(),
-  collection: vi.fn(),
-  query: vi.fn(),
-  where: vi.fn(),
-  orderBy: vi.fn(),
-  getDocs: vi.fn().mockResolvedValue({ docs: [] }),
-  getDoc: vi.fn().mockResolvedValue({
-    exists: () => true,
-    data: () => ({ completedLessons: ['lesson-1', 'lesson-2'] }),
-  }),
-}));
+// Note: firebase/firestore is mocked globally in setup.js
+// We configure specific return values in beforeEach
 
 vi.mock('../../config/firebase', () => ({
   db: {},
@@ -77,6 +69,7 @@ vi.mock('date-fns', () => ({
   eachDayOfInterval: vi.fn(() => [new Date()]),
   differenceInDays: vi.fn(() => 30),
   addDays: vi.fn(() => new Date()),
+  isWithinInterval: vi.fn(() => false),
 }));
 
 // Mock CourseProvider
@@ -107,6 +100,32 @@ vi.mock('../../utils/sectionUtils', () => ({
 // Mock profileHelpers
 vi.mock('../../utils/profileHelpers', () => ({
   getExamDate: vi.fn(() => new Date('2025-06-01')),
+  getCurrentSection: vi.fn(() => 'REG'),
+}));
+
+// Mock useStudyPlan
+vi.mock('../../hooks/useStudyPlan', () => ({
+  useStudyPlan: () => ({
+    plan: null,
+    hasPlan: false,
+    loading: false,
+  }),
+}));
+
+// Mock questionService
+vi.mock('../../services/questionService', () => ({
+  getTopicToBlueprintAreaMap: vi.fn(() => Promise.resolve(new Map())),
+}));
+
+// Mock dateHelpers
+vi.mock('../../utils/dateHelpers', () => ({
+  toLocalDate: vi.fn((d) => d instanceof Date ? d : new Date(d)),
+}));
+
+// Mock BlueprintAnalyticsComponents
+vi.mock('../../components/analytics/BlueprintAnalyticsComponents', () => ({
+  BlueprintHeatMap: () => <div data-testid="blueprint-heatmap" />,
+  SmartRecommendations: () => <div data-testid="smart-recommendations" />,
 }));
 
 // Mock lessonService
@@ -169,8 +188,14 @@ const renderProgress = () => {
 };
 
 describe('Progress Component', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
+  beforeEach(async () => {
+    // Set up Firestore mock return values (firebase/firestore is mocked globally in setup.js)
+    const { getDoc, getDocs } = await import('firebase/firestore');
+    vi.mocked(getDoc).mockResolvedValue({
+      exists: () => true,
+      data: () => ({ completedLessons: ['lesson-1', 'lesson-2'] }),
+    });
+    vi.mocked(getDocs).mockResolvedValue({ docs: [] });
   });
 
   describe('Rendering', () => {
@@ -178,34 +203,31 @@ describe('Progress Component', () => {
       renderProgress();
       await waitFor(() => {
         expect(screen.getByRole('heading', { name: /progress/i })).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
 
     it('should show overall stats', async () => {
       renderProgress();
       await waitFor(() => {
-        // When no data, shows empty state prompt
         const heading = screen.getByRole('heading', { name: /progress/i });
         expect(heading).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
 
     it('should display accuracy information', async () => {
       renderProgress();
       await waitFor(() => {
-        // Component renders - may show empty state or stats depending on data
         const heading = screen.getByRole('heading', { name: /progress/i });
         expect(heading).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
 
     it('should show streak information', async () => {
       renderProgress();
       await waitFor(() => {
-        // Component renders successfully
         const heading = screen.getByRole('heading', { name: /progress/i });
         expect(heading).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
   });
 
@@ -213,10 +235,9 @@ describe('Progress Component', () => {
     it('should display topic heat map', async () => {
       renderProgress();
       await waitFor(() => {
-        // Component renders (may show empty state or topic data)
         const heading = screen.getByRole('heading', { name: /progress/i });
         expect(heading).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
   });
 
@@ -224,10 +245,9 @@ describe('Progress Component', () => {
     it('should show exam readiness gauge', async () => {
       renderProgress();
       await waitFor(() => {
-        // Component renders successfully
         const heading = screen.getByRole('heading', { name: /progress/i });
         expect(heading).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
   });
 });

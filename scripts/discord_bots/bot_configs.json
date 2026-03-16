@@ -15,7 +15,7 @@
       "TCP": "Tax Compliance & Planning"
     },
     "url": "https://voraprep.com/cpa",
-    "invite_prompt": "Master the CPA exam with 4,789 questions, AI tutor, and score prediction",
+    "invite_prompt": "Master the CPA exam with 9,000+ questions, AI tutor, and score prediction",
     "env_token_key": "DISCORD_BOT_TOKEN_CPA"
   },
   "ea": {
@@ -31,7 +31,7 @@
       "SEE3": "Representation, Practices & Procedures"
     },
     "url": "https://voraprep.com/ea",
-    "invite_prompt": "Ace the EA exam with 4,210 questions, IRC citations, and adaptive practice",
+    "invite_prompt": "Ace the EA exam with 3,000 questions, IRC citations, and adaptive practice",
     "env_token_key": "DISCORD_BOT_TOKEN_EA"
   },
   "cma": {
@@ -46,7 +46,7 @@
       "CMA2": "Strategic Financial Management"
     },
     "url": "https://voraprep.com/cma",
-    "invite_prompt": "Crush the CMA exam with 2,834 questions — CBQ format coming Sept 2026",
+    "invite_prompt": "Crush the CMA exam with 2,500+ questions — CBQ format coming Sept 2026",
     "env_token_key": "DISCORD_BOT_TOKEN_CMA"
   },
   "cia": {
@@ -62,7 +62,7 @@
       "CIA3": "Business Knowledge for Internal Auditing"
     },
     "url": "https://voraprep.com/cia",
-    "invite_prompt": "Prepare for the CIA exam with 2,196 questions and adaptive learning",
+    "invite_prompt": "Prepare for the CIA exam with 2,200+ questions and adaptive learning",
     "env_token_key": "DISCORD_BOT_TOKEN_CIA"
   },
   "cisa": {
@@ -80,7 +80,7 @@
       "CISA5": "Protection of Information Assets"
     },
     "url": "https://voraprep.com/cisa",
-    "invite_prompt": "Pass the CISA exam with 1,501 questions across all 5 domains",
+    "invite_prompt": "Pass the CISA exam with 1,500+ questions across all 5 domains",
     "env_token_key": "DISCORD_BOT_TOKEN_CISA"
   },
   "cfp": {

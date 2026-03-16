@@ -10,6 +10,7 @@ import { Card } from '../../common/Card';
 import { captureReferralFromUrl } from '../../../services/referral';
 import { saveCoursePreference } from '../../../utils/courseDetection';
 import { isValidCourseId } from '../../../types/course';
+import { TOTAL_DISPLAY } from '../../../config/contentStats';
 import type { CourseId } from '../../../types/course';
 
 const Register = () => {
@@ -20,7 +21,7 @@ const Register = () => {
   // SEO - canonical URL strips query params to avoid duplicate content
   useSEO({
     title: 'Create Account',
-    description: 'Sign up for VoraPrep to access 21,000+ practice questions for CPA, EA, CMA, CIA, CFP, and CISA exams.',
+    description: `Sign up for VoraPrep to access ${TOTAL_DISPLAY.questions} practice questions for CPA, EA, CMA, CIA, CFP, and CISA exams.`,
     canonicalUrl: 'https://voraprep.com/register',
   });
 
@@ -98,8 +99,10 @@ const Register = () => {
 
     try {
       const displayName = `${formData.firstName} ${formData.lastName}`.trim();
-      await signUp(formData.email, formData.password, displayName);
+      const userCredential = await signUp(formData.email, formData.password, displayName);
       trackEvent('signup_completed', { method: 'email' });
+      // Note: Google Ads conversion tracking is handled inside AuthProvider.signUp()
+      void userCredential;
       navigate('/verify-email');
     } catch (err: any) {
       logger.error('Registration error:', err);
@@ -120,9 +123,11 @@ const Register = () => {
   const handleGoogleSignUp = async () => {
     setError('');
     try {
-      await signInWithGoogle();
+      const googleResult = await signInWithGoogle();
       trackEvent('signup_completed', { method: 'google' });
-      navigate('/onboarding');
+      // Note: Google Ads conversion tracking for new Google users is handled in AuthProvider
+      void googleResult;
+      navigate('/'); // Go directly to dashboard - contextual prompts handle setup
     } catch (err: any) {
       logger.error('Google sign-up error:', err);
       if (err.code === 'auth/popup-closed-by-user') {

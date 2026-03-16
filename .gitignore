@@ -1,13 +1,16 @@
 # Dependencies
 node_modules/
+blog/node_modules/
 .pnp
 .pnp.js
 
 # Build outputs
 dist/
+dist-blog/
 dev-dist/
 build/
 .next/
+blog/src/data/articles.json
 
 # Python virtual environments
 .venv/
@@ -70,3 +73,4 @@ scripts/ux-audit/screenshots/
 *.keystore.base64
 firebase-debug.log
 **/firebase-debug.log
+serviceAccountKey.json

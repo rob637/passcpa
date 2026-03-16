@@ -312,7 +312,12 @@ export function selectQuestions(
     (q) => q.domain,
   );
 
-  return shuffleArray(results);
+  // Lightly shuffle to add variety while preserving adaptive priority ordering:
+  // Keep high-priority items in the first half, shuffle within halves
+  const midpoint = Math.ceil(results.length / 2);
+  const highPriority = shuffleArray(results.slice(0, midpoint));
+  const lowPriority = shuffleArray(results.slice(midpoint));
+  return [...highPriority, ...lowPriority];
 }
 
 // ============================================================================

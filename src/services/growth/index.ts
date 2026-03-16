@@ -73,6 +73,12 @@ export {
   mineNegativeKeywords,
   buildAdCopyPrompt,
   getCampaignSummary,
+  createCustomAdGroup,
+  getAICampaignPrompt,
+} from './semEngine';
+
+export type {
+  CustomAdGroupInput,
 } from './semEngine';
 
 // Types (re-export growth types)

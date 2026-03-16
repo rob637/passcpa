@@ -3,9 +3,9 @@
  * Memory aids for the Individuals section
  */
 
-import { EAFlashcard } from './types';
+import type { Flashcard } from './index';
 
-export const SEE1_MNEMONICS: EAFlashcard[] = [
+export const SEE1_MNEMONICS: Flashcard[] = [
   // ============================================
   // Filing & Basic Concepts
   // ============================================

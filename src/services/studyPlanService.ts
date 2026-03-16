@@ -176,16 +176,49 @@ export function calculateHoursAvailable(
  * Uses contentRegistry as the source of truth for content counts. 
  * Falls back to user-provided data or section-based estimates if needed.
  */
-export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
+/**
+ * Progress data for calculating remaining hours
+ */
+interface SectionProgressData {
+  lessonsCompleted: number;
+  totalLessons: number;
+  questionsAttempted?: number;
+  questionsCorrect?: number;
+  tbsAttempted?: number;
+  flashcardsReviewed?: number;
+}
+
+export function generateRealityCheck(
+  input: StudyPlanSetupInput,
+  progress?: SectionProgressData
+): RealityCheck {
   const startDate = input.startDate || new Date();
   
   // Calculate hours needed - ALWAYS use contentRegistry for industry-aligned hours
   const sectionKey = resolveStudySection(input.courseId, input.section);
-  const hoursNeeded = calculateHoursNeeded(
+  const totalHoursRequired = calculateHoursNeeded(
     sectionKey || input.section,
     input.priorExperience,
     input.diagnosticScore
   );
+  
+  // Calculate hours already completed based on progress
+  let hoursCompleted = 0;
+  if (progress && progress.totalLessons > 0 && progress.lessonsCompleted > 0) {
+    // Get breakdown to know lesson hours portion
+    const breakdown = calculateSectionStudyHours(sectionKey || input.section, input.priorExperience);
+    const lessonHours = breakdown.breakdown.lessons;
+    
+    // Calculate completed lesson hours (proportional)
+    const lessonCompletionRate = Math.min(1, progress.lessonsCompleted / progress.totalLessons);
+    hoursCompleted = Math.round(lessonHours * lessonCompletionRate);
+    
+    // Note: We could also subtract MCQ/TBS progress, but those are repeated for mastery,
+    // so lessons are the most meaningful "one-and-done" progress indicator.
+  }
+  
+  // Remaining hours = total - completed
+  const hoursNeeded = Math.max(0, totalHoursRequired - hoursCompleted);
   
   const hoursAvailable = calculateHoursAvailable(
     startDate,
@@ -300,6 +333,8 @@ export function generateRealityCheck(input: StudyPlanSetupInput): RealityCheck {
   return {
     isRealistic: hourDeficit <= 0,
     hoursNeeded,
+    hoursCompleted,
+    hoursTotalRequired: totalHoursRequired,
     hoursAvailable,
     hourDeficit: Math.max(0, hourDeficit),
     hourSurplus,

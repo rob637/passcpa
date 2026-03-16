@@ -40,7 +40,7 @@ jobs:
         run: npx tsc --noEmit
 
       - name: Unit Tests
-        run: npm run test:run -- --no-file-parallelism
+        run: npm run test:run -- --pool=forks --poolOptions.forks.singleFork --no-file-parallelism
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
 
